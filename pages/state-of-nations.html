@@ -1,0 +1,1367 @@
+<!-- ===========================================================================
+PERFECT NATIONS - STATE OF NATIONS PAGE - v6.1 - 2026-10-31 - LIVE DATA
+/state-of-nations/. One Elementor Custom HTML widget: Full Width, padding 0, Hide Title.
+Paste once. From v6.1 the page updates itself: on every visit it reads data/state-of-nations.json
+from the Perfect Nations GitHub repository (preetisinha70-PN/perfect-nations, branch main), which
+the Correspondent updates in its 8 am, 12 noon and 8 pm runs. The wire, the dispatch cards, the
+counts and the ticker all come from that file. If the file cannot be read, the copy below shows:
+  DISPATCHES: No. 01 to No. 07.  THE WIRE: 50 instruments across 37 nations, newest first.
+DISPATCHES: a dispatch in the data file with its full text opens in a reader on this page (link:
+  /state-of-nations/#dispatch-NN); one with a url links to its WordPress post. The page also reads
+  the Dispatches category (id 644): a published post with no card here is added automatically.
+  New dispatches reach the data file only when the Steward-General merges the Correspondent's
+  pull request ("For approval: Dispatch No. NN").
+v6.1 also fixes the sideways shift on phones: the bands are measured against the screen on load
+and on every resize, and the page can no longer scroll sideways.
+v6.0: one consolidated page; WebGL contour field behind the masthead (off for reduced motion, in
+  hidden tabs and off screen); filters by region and instrument; two-column wire on laptops showing
+  the newest 16 (10 on phones); a swipe rail of dispatches on phones; compact spacing; phone type.
+EDITORIAL: the live Suriname post (No. 05) carries the Bangkok standfirst as its excerpt and is dated
+  17 October; the dispatch is dated 14 October. Correct both under Posts so archive pages match.
+=========================================================================== -->
+<style>
+#pn-son{
+  --g:var(--pn-brand-gold,#E3C258); --gs:#F0D68F; --gd:#7E5A0C;
+  --iv:#F5F1E8; --tm:rgba(245,241,232,.84); --td:rgba(245,241,232,.64); --hair:rgba(245,241,232,.18);
+  --ink:#1A140C; --im:rgba(26,20,12,.80); --idm:rgba(26,20,12,.60); --ihair:rgba(26,20,12,.14);
+  --ocean:#0E4563; --lat:#8A3A22;
+  --hd:var(--pn-font-heading,"Barlow Condensed","Arial Narrow",Arial,sans-serif);
+  --bd:var(--pn-font-body,"Barlow Semi Condensed",Arial,sans-serif);
+  --sf:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,"Times New Roman",serif;
+  --px:clamp(16px,5vw,72px);
+  position:relative; width:100vw; margin-left:calc(50% - 50vw); box-sizing:border-box;
+  overflow-x:hidden; overflow-x:clip; color:var(--iv); font-family:var(--bd); font-size:16px; line-height:1.55;
+}
+#pn-son *,#pn-son *::before,#pn-son *::after{ box-sizing:border-box; }
+.elementor-widget-html:has(#pn-son),.elementor-widget:has(#pn-son),.elementor-widget-wrap:has(#pn-son),
+.elementor-container:has(#pn-son),.elementor-column:has(#pn-son),.elementor-section:has(#pn-son),
+.e-con-inner:has(#pn-son),.e-con:has(#pn-son),#content:has(#pn-son),.site-content:has(#pn-son),.ast-container:has(#pn-son){
+  padding-top:0 !important; padding-bottom:0 !important; margin-top:0 !important; margin-bottom:0 !important;
+  --widgets-spacing:0px !important; row-gap:0 !important;
+}
+#primary:has(#pn-son),.site-main:has(#pn-son),article:has(#pn-son),.ast-article-single:has(#pn-son),
+.entry-content:has(#pn-son),.wp-block-html:has(#pn-son){
+  margin-top:0 !important; padding-top:0 !important; margin-bottom:0 !important; padding-bottom:0 !important;
+  border:0 !important; box-shadow:none !important; background:transparent !important; max-width:none !important;
+}
+article:has(#pn-son) .entry-header,article:has(#pn-son) .post-thumb-img-content{ display:none !important; }
+html:has(#pn-son),body:has(#pn-son){ overflow-x:clip; }
+html.pn-son-lock,html.pn-son-lock body{ overflow:hidden; }
+#pn-son .so-band{ position:relative; isolation:isolate; padding:clamp(36px,5.4vh,64px) var(--px); }
+#pn-son .so-in{ max-width:1320px; margin:0 auto; }
+#pn-son .so-eb{ display:flex; align-items:center; gap:10px; margin:0 0 10px; font-family:var(--hd); font-size:.68rem; font-weight:700; letter-spacing:.28em; text-transform:uppercase; color:var(--tm); }
+#pn-son .so-eb::before{ content:""; width:22px; height:2px; background:currentColor; }
+#pn-son h2.so-h2{ margin:0; max-width:22ch; font-family:var(--hd); font-weight:600; font-size:clamp(2rem,3.1vw,2.8rem); line-height:1; letter-spacing:-.025em; color:inherit !important; text-transform:none; }
+#pn-son .so-lead{ margin:10px 0 0; max-width:50ch; font-size:clamp(.98rem,1.05vw,1.06rem); line-height:1.5; color:var(--tm); }
+#pn-son .so-head{ display:flex; flex-wrap:wrap; align-items:flex-end; justify-content:space-between; gap:14px 40px; }
+#pn-son .so-btn{ display:inline-flex; align-items:center; justify-content:center; gap:12px; padding:13px 26px 11px; border-radius:999px; text-decoration:none; cursor:pointer; border:1px solid var(--g); background:var(--g); color:#1A140C; font-family:var(--hd); font-size:.74rem; font-weight:700; letter-spacing:.18em; text-transform:uppercase; box-shadow:0 12px 30px rgba(227,194,88,.24); transition:transform .22s ease, background .22s ease; }
+#pn-son .so-btn::after{ content:"\2192"; font-family:Arial,sans-serif; font-size:1rem; letter-spacing:0; transition:transform .3s cubic-bezier(.22,1,.36,1); }
+#pn-son .so-btn:hover{ background:var(--gs); transform:translateY(-2px); }
+#pn-son .so-btn:hover::after{ transform:translateX(6px); }
+#pn-son .so-btn--line{ background:transparent; color:var(--g); box-shadow:none; }
+#pn-son .so-btn--line:hover{ background:rgba(227,194,88,.12); }
+#pn-son a:focus-visible,#pn-son button:focus-visible,#pn-son input:focus-visible{ outline:2px solid var(--gs); outline-offset:3px; }
+
+/* 1 the masthead: ocean, with a live contour field drawn in WebGL behind it */
+#pn-son .so-hero{ overflow:hidden; padding-top:clamp(16px,2.6vh,26px); padding-bottom:0; background:radial-gradient(60% 55% at 50% 0%, rgba(110,190,230,.24) 0%, transparent 70%), linear-gradient(180deg,#0E4563 0%,#0A3550 50%,#072638 100%); }
+#pn-son .so-gl{ position:absolute; inset:0; z-index:-1; display:block; width:100%; height:100%; opacity:0; pointer-events:none; transition:opacity 1.8s ease; }
+#pn-son .so-gl.is-on{ opacity:1; }
+#pn-son .so-hero::after{ content:""; position:absolute; inset:0; z-index:-1; pointer-events:none; background:radial-gradient(46% 42% at 50% 42%, rgba(7,38,56,.55) 0%, transparent 100%); }
+#pn-son .so-mast{ display:flex; flex-wrap:wrap; justify-content:space-between; gap:6px 20px; padding:10px 0; border-top:2px solid var(--iv); border-bottom:1px solid var(--hair); font-family:var(--hd); font-size:.64rem; font-weight:700; letter-spacing:.24em; text-transform:uppercase; color:var(--tm); }
+#pn-son .so-mast b{ color:var(--iv); }
+#pn-son .so-title{ text-align:center; padding:clamp(18px,3.2vh,34px) 0 clamp(18px,2.8vh,28px); }
+#pn-son .so-laurel{ display:block; width:clamp(84px,7vw,118px); aspect-ratio:2/1; margin:0 auto 2px; color:var(--g); }
+#pn-son h1.so-h1{ margin:0; font-family:var(--hd); font-weight:600; font-size:clamp(3rem,7.2vw,6.4rem); line-height:.86; letter-spacing:-.045em; color:var(--iv) !important; text-transform:none; text-shadow:0 2px 30px rgba(7,38,56,.55); }
+#pn-son h1.so-h1 span{ display:block; margin-bottom:4px; font-family:var(--sf); font-style:italic; font-weight:400; font-size:clamp(1.15rem,1.8vw,1.6rem); line-height:1.2; letter-spacing:0; color:var(--tm); }
+#pn-son .so-hero .so-lead{ margin:clamp(12px,2vh,18px) auto 0; max-width:46ch; text-align:center; font-size:clamp(1rem,1.2vw,1.14rem); }
+#pn-son .so-stats{ display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); max-width:680px; margin:clamp(16px,2.6vh,24px) auto 0; border-top:1px solid var(--hair); border-bottom:1px solid var(--hair); }
+#pn-son .so-stats a{ display:flex; flex-direction:column; align-items:center; padding:12px 6px 10px; border-left:1px solid var(--hair); color:var(--iv); text-decoration:none; transition:background .25s ease; }
+#pn-son .so-stats a:first-child{ border-left:0; }
+#pn-son .so-stats a:hover{ background:rgba(245,241,232,.07); }
+#pn-son .so-stats b{ font-family:var(--hd); font-weight:600; font-size:clamp(2rem,3.2vw,2.8rem); line-height:1; letter-spacing:-.02em; font-variant-numeric:tabular-nums; transition:color .25s ease; }
+#pn-son .so-stats a:hover b{ color:var(--gs); }
+#pn-son .so-stats span{ margin-top:5px; font-family:var(--hd); font-size:.62rem; font-weight:700; letter-spacing:.2em; text-transform:uppercase; color:var(--tm); }
+/* the ticker */
+#pn-son .so-tick{ position:relative; display:flex; margin:clamp(18px,3vh,28px) calc(-1 * var(--px)) 0; padding:13px 0; overflow:hidden; background:#F5F1E8; color:var(--ink); }
+#pn-son .so-tick__k{ position:relative; z-index:2; flex:none; display:flex; align-items:center; gap:8px; padding:0 16px 0 var(--px); background:#F5F1E8; font-family:var(--hd); font-size:.64rem; font-weight:700; letter-spacing:.24em; text-transform:uppercase; color:var(--lat); box-shadow:18px 0 18px -6px #F5F1E8; }
+#pn-son .so-tick__k i{ width:8px; height:8px; border-radius:50%; background:#C2603A; animation:soPulse 1.6s ease-in-out infinite; }
+@keyframes soPulse{ 0%,100%{ opacity:1; } 50%{ opacity:.25; } }
+#pn-son .so-tick__track{ display:flex; flex:none; animation:soRun 90s linear infinite; }
+#pn-son .so-tick:hover .so-tick__track{ animation-play-state:paused; }
+#pn-son .so-tick__dup{ display:contents; }
+#pn-son .so-tick__track a{ flex:none; display:inline-flex; align-items:baseline; gap:10px; padding:0 30px; white-space:nowrap; color:var(--ink); text-decoration:none; font-family:var(--hd); font-weight:600; font-size:.98rem; border-right:1px solid var(--ihair); }
+#pn-son .so-tick__track a span{ font-size:.58rem; font-weight:700; letter-spacing:.2em; text-transform:uppercase; color:var(--idm); }
+#pn-son .so-tick__track a:hover{ color:var(--lat); }
+@keyframes soRun{ from{ transform:translateX(0); } to{ transform:translateX(-50%); } }
+
+/* 2 dispatches: basalt, each card a post in the Dispatches category */
+#pn-son .so-disp{ background:radial-gradient(60% 50% at 85% 0%, rgba(255,150,80,.16) 0%, transparent 70%), linear-gradient(180deg,#342C27 0%,#161210 100%); }
+#pn-son .so-dlist{ display:grid; gap:14px; margin:clamp(20px,3vh,30px) 0 0; padding:0; list-style:none; grid-template-columns:minmax(0,1fr); }
+@media (min-width:760px){ #pn-son .so-dlist{ grid-template-columns:repeat(2,minmax(0,1fr)); } }
+@media (min-width:1120px){ #pn-son .so-dlist{ grid-template-columns:repeat(3,minmax(0,1fr)); } }
+#pn-son .so-dc{ position:relative; display:flex; flex-direction:column; justify-content:space-between; gap:14px; padding:20px 22px 18px; border-radius:6px; background:#F5F1E8; color:var(--ink); box-shadow:0 22px 50px rgba(0,0,0,.38); transform:perspective(900px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg)) translateY(var(--ty,0px)); transition:transform .45s cubic-bezier(.22,1,.36,1), box-shadow .3s ease; }
+#pn-son .so-dc::after{ content:""; position:absolute; inset:8px; border:1px solid var(--ihair); border-radius:2px; pointer-events:none; }
+#pn-son .so-dc:hover{ --ty:-4px; box-shadow:0 32px 70px rgba(0,0,0,.5); }
+#pn-son .so-dc__k{ display:flex; flex-wrap:wrap; align-items:baseline; gap:4px 12px; padding-bottom:8px; border-bottom:2px solid var(--ink); font-family:var(--hd); font-size:.6rem; font-weight:700; letter-spacing:.2em; text-transform:uppercase; color:var(--idm); }
+#pn-son .so-dc__k b{ color:var(--lat); }
+#pn-son .so-dc__k time{ margin-left:auto; }
+#pn-son .so-dc h3{ margin:12px 0 0; font-family:var(--hd); font-weight:600; font-size:clamp(1.24rem,1.5vw,1.46rem); line-height:1.06; letter-spacing:-.012em; color:var(--ink); }
+#pn-son .so-dc h3 a{ color:inherit; text-decoration:none; }
+#pn-son .so-dc h3 a::before{ content:""; position:absolute; inset:0; z-index:1; }
+#pn-son .so-dc__s{ margin:8px 0 0; font-family:var(--sf); font-style:italic; font-size:.95rem; line-height:1.45; color:var(--im); display:-webkit-box; -webkit-box-orient:vertical; -webkit-line-clamp:3; overflow:hidden; }
+#pn-son .so-dc__go{ display:inline-block; margin-top:12px; font-family:var(--hd); font-size:.68rem; font-weight:700; letter-spacing:.18em; text-transform:uppercase; color:var(--gd); }
+#pn-son .so-dc__go::after{ content:" \2192"; font-family:Arial,sans-serif; }
+#pn-son .so-dc__f{ display:flex; align-items:baseline; gap:10px; margin:0; padding-top:10px; border-top:1px solid var(--ihair); }
+#pn-son .so-dc__f b{ flex:none; font-family:var(--hd); font-weight:700; font-size:1.7rem; line-height:1; letter-spacing:-.02em; color:var(--lat); font-variant-numeric:tabular-nums; }
+#pn-son .so-dc__f span{ font-size:.76rem; line-height:1.3; color:var(--im); }
+/* the newest published dispatch leads, across the full row */
+#pn-son .so-dc--lead{ grid-column:1 / -1; padding:clamp(22px,3vw,40px); }
+#pn-son .so-dc--lead h3{ max-width:24ch; font-size:clamp(1.8rem,3.2vw,3rem); line-height:1; letter-spacing:-.022em; }
+#pn-son .so-dc--lead .so-dc__s{ max-width:60ch; font-size:clamp(1rem,1.25vw,1.16rem); -webkit-line-clamp:5; }
+#pn-son .so-dc--lead .so-dc__go{ margin-top:18px; padding:12px 24px 10px; border-radius:999px; background:var(--gd); color:#FBF6EA; letter-spacing:.18em; }
+#pn-son .so-dc--lead .so-dc__f b{ font-size:clamp(2.4rem,4.6vw,4.4rem); }
+#pn-son .so-dc--lead .so-dc__f span{ font-size:.86rem; }
+@media (min-width:900px){
+  #pn-son .so-dc--lead{ display:grid; grid-template-columns:minmax(0,1fr) minmax(200px,.36fr); gap:40px; align-items:end; }
+  #pn-son .so-dc--lead .so-dc__f{ flex-direction:column; align-items:flex-start; gap:8px; padding:0 0 4px 26px; border-top:0; border-left:2px solid var(--lat); }
+}
+#pn-son .so-dc.is-press{ background:#E6DECB; box-shadow:0 14px 34px rgba(0,0,0,.3); }
+#pn-son .so-dc.is-press::after{ border-style:dashed; border-color:rgba(26,20,12,.3); }
+#pn-son .so-dc.is-press .so-dc__go{ padding:4px 10px 3px; border:1px dashed currentColor; border-radius:999px; color:var(--idm); }
+#pn-son .so-dc.is-press .so-dc__go::after{ content:none; }
+#pn-son .so-swipe{ display:none; align-items:center; gap:8px; margin-top:6px; font-family:var(--hd); font-size:.62rem; font-weight:700; letter-spacing:.2em; text-transform:uppercase; color:var(--td); }
+#pn-son .so-dfoot{ display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:10px; margin:18px 0 0; font-size:.86rem; color:var(--td); }
+#pn-son .so-dfoot a{ color:var(--g); font-family:var(--hd); font-size:.72rem; font-weight:700; letter-spacing:.18em; text-transform:uppercase; text-decoration:none; }
+#pn-son .so-dfoot a::after{ content:" \2192"; font-family:Arial,sans-serif; }
+
+/* 3 the wire: savanna paper */
+#pn-son .so-wire{ color:var(--ink); background:radial-gradient(60% 40% at 50% 0%, rgba(255,252,240,.95) 0%, transparent 70%), linear-gradient(180deg,#F4ECD8 0%,#E2D2AE 100%); }
+#pn-son .so-wire .so-eb,#pn-son .so-wire .so-lead{ color:var(--im); }
+#pn-son .so-search{ display:flex; align-items:center; gap:10px; width:min(100%,400px); padding:11px 16px; border-radius:999px; background:rgba(255,252,242,.85); border:1px solid var(--ihair); }
+#pn-son .so-search:focus-within{ border-color:rgba(126,90,12,.55); }
+#pn-son .so-search svg{ width:18px; height:18px; flex:none; color:var(--gd); }
+#pn-son .so-search input{ flex:1; min-width:0; border:0 !important; outline:0 !important; background:transparent !important; box-shadow:none !important; padding:0 !important; margin:0 !important; font-family:var(--bd); font-size:1rem; color:var(--ink) !important; -webkit-text-fill-color:var(--ink) !important; caret-color:var(--gd); -webkit-appearance:none; appearance:none; }
+#pn-son .so-search input::placeholder{ color:var(--idm); -webkit-text-fill-color:var(--idm); }
+#pn-son .so-search input::-webkit-search-cancel-button{ -webkit-appearance:none; appearance:none; }
+#pn-son .so-clear{ flex:none; border:0; background:none; cursor:pointer; padding:2px 4px; font:700 .62rem/1 var(--hd); letter-spacing:.16em; text-transform:uppercase; color:var(--idm); }
+#pn-son .so-filters{ display:flex; flex-wrap:wrap; gap:6px; margin:14px 0 0; }
+#pn-son .so-filters[hidden]{ display:none; }
+#pn-son .so-filters--reg{ margin-top:clamp(16px,2.4vh,22px); }
+#pn-son .so-fb{ display:inline-flex; align-items:center; gap:6px; padding:7px 13px 5px; border-radius:999px; border:1px solid var(--ihair); background:rgba(255,252,242,.7); color:var(--im); cursor:pointer; font-family:var(--hd); font-size:.66rem; font-weight:700; letter-spacing:.13em; text-transform:uppercase; transition:background .2s ease, color .2s ease, border-color .2s ease; }
+#pn-son .so-fb span{ opacity:.65; }
+#pn-son .so-fb:hover{ border-color:var(--gd); color:var(--ink); }
+#pn-son .so-fb.is-on{ background:var(--ocean); border-color:var(--ocean); color:#F5F1E8; }
+#pn-son .so-filters--reg .so-fb.is-on{ background:var(--ink); border-color:var(--ink); }
+#pn-son .so-fb--more{ border-style:dashed; background:transparent; color:var(--gd); }
+@media (min-width:641px){ #pn-son .so-filters:not(.is-open) .so-fb.is-x{ display:none; } }
+#pn-son .so-count{ margin:clamp(16px,2.4vh,22px) 0 0; padding-bottom:8px; border-bottom:2px solid var(--ink); font-family:var(--hd); font-size:.64rem; font-weight:700; letter-spacing:.22em; text-transform:uppercase; color:var(--idm); }
+#pn-son .so-list{ display:grid; grid-template-columns:minmax(0,1fr); column-gap:44px; margin:0; padding:0; list-style:none; }
+@media (min-width:1100px){ #pn-son .so-list{ grid-template-columns:repeat(2,minmax(0,1fr)); } }
+#pn-son .so-i{ display:grid; grid-template-columns:52px minmax(0,1fr) auto; gap:14px; align-items:start; padding:14px 0 13px; border-bottom:1px solid var(--ihair); }
+#pn-son .so-i[hidden]{ display:none; }
+#pn-son .so-date{ display:flex; flex-direction:column; line-height:1; padding-top:2px; }
+#pn-son .so-date b{ font-family:var(--hd); font-weight:700; font-size:1.9rem; letter-spacing:-.03em; color:var(--ink); }
+#pn-son .so-date span{ margin-top:4px; font-family:var(--hd); font-size:.56rem; font-weight:700; letter-spacing:.16em; text-transform:uppercase; color:var(--idm); }
+#pn-son .so-b{ min-width:0; }
+#pn-son .so-src{ display:inline-flex; align-items:center; margin:0 6px 4px 0; padding:4px 10px 2px; border-radius:999px; background:var(--ocean); color:#F5F1E8; font-family:var(--hd); font-size:.56rem; font-weight:700; letter-spacing:.16em; text-transform:uppercase; vertical-align:middle; }
+#pn-son .so-type{ display:inline-flex; align-items:center; margin:0 6px 4px 0; padding:3px 9px 1px; border-radius:999px; border:1px solid rgba(126,90,12,.45); color:var(--gd); font-family:var(--hd); font-size:.56rem; font-weight:700; letter-spacing:.14em; text-transform:uppercase; vertical-align:middle; }
+#pn-son .so-where{ display:inline-block; margin:0 0 4px; font-family:var(--hd); font-size:.6rem; font-weight:700; letter-spacing:.16em; text-transform:uppercase; color:var(--lat); vertical-align:middle; }
+#pn-son .so-i h3{ margin:4px 0 0; font-family:var(--hd); font-weight:600; font-size:clamp(1.08rem,1.25vw,1.22rem); line-height:1.16; letter-spacing:-.005em; }
+#pn-son .so-i h3 a{ color:var(--ink); text-decoration:none; background-image:linear-gradient(currentColor,currentColor); background-size:0 1.5px; background-repeat:no-repeat; background-position:0 100%; transition:background-size .35s ease, color .2s ease; }
+#pn-son .so-i h3 a:hover{ color:var(--ocean); background-size:100% 1.5px; }
+#pn-son .so-by{ margin:5px 0 0; font-size:.84rem; line-height:1.35; color:var(--im); }
+#pn-son .so-by b{ color:var(--ink); font-weight:600; }
+#pn-son .so-go{ display:inline-flex; align-items:center; justify-content:center; width:38px; height:38px; border-radius:50%; border:1px solid var(--ihair); color:var(--ink); text-decoration:none; font-family:Arial,sans-serif; font-size:.95rem; transition:background .2s ease, color .2s ease, transform .3s cubic-bezier(.22,1,.36,1); }
+#pn-son .so-go:hover{ background:var(--gd); border-color:var(--gd); color:#FBF6EA; transform:rotate(-45deg); }
+#pn-son .so-more{ display:flex; justify-content:center; margin-top:18px; }
+#pn-son .so-more[hidden]{ display:none; }
+#pn-son .so-more button{ display:inline-flex; align-items:center; gap:10px; padding:12px 24px 10px; border-radius:999px; border:1px solid var(--gd); background:transparent; color:var(--gd); cursor:pointer; font-family:var(--hd); font-size:.72rem; font-weight:700; letter-spacing:.18em; text-transform:uppercase; transition:background .2s ease, color .2s ease; }
+#pn-son .so-more button::after{ content:"+"; font-family:Arial,sans-serif; font-size:1rem; letter-spacing:0; }
+#pn-son .so-more button:hover{ background:var(--gd); color:#FBF6EA; }
+#pn-son .so-empty{ margin:16px 0 0; color:var(--im); }
+#pn-son .so-fine{ margin:14px 0 0; font-size:.78rem; color:var(--idm); }
+/* a soft rise as each line of the wire arrives */
+#pn-son.is-rv .so-i:not(.is-in){ opacity:0; transform:translateY(12px); }
+#pn-son.is-rv .so-i.is-in{ opacity:1; transform:none; transition:opacity .6s ease, transform .7s cubic-bezier(.22,1,.36,1); }
+
+/* 4 close: laterite */
+#pn-son .so-close{ text-align:center; background:radial-gradient(60% 50% at 50% 0%, rgba(255,190,120,.28) 0%, transparent 70%), linear-gradient(180deg,#8A3A22 0%,#4C1D12 100%); }
+#pn-son .so-close .so-eb{ justify-content:center; }
+#pn-son .so-close .so-eb::after{ content:""; width:22px; height:2px; background:currentColor; }
+#pn-son .so-close h2.so-h2{ margin:0 auto; }
+#pn-son .so-close .so-lead{ margin-left:auto; margin-right:auto; }
+#pn-son .so-ctas{ display:flex; justify-content:center; gap:12px; flex-wrap:wrap; margin-top:clamp(18px,2.8vh,26px); }
+
+/* phones: compact bands and type sized for the hand */
+@media (max-width:640px){
+  #pn-son .so-band{ padding:30px 16px; }
+  #pn-son .so-hero{ padding-top:12px; padding-bottom:0; }
+  #pn-son .so-mast{ font-size:.56rem; letter-spacing:.18em; padding:8px 0; }
+  #pn-son .so-mast span:nth-child(2){ display:none; }
+  #pn-son .so-title{ padding:16px 0 16px; }
+  #pn-son .so-laurel{ width:72px; }
+  #pn-son h1.so-h1{ font-size:3.15rem; line-height:.88; }
+  #pn-son h1.so-h1 span{ font-size:1.05rem; }
+  #pn-son .so-hero .so-lead{ font-size:.95rem; line-height:1.45; }
+  #pn-son .so-stats{ margin-top:14px; }
+  #pn-son .so-stats a{ padding:10px 4px 8px; }
+  #pn-son .so-stats b{ font-size:1.75rem; }
+  #pn-son .so-stats span{ font-size:.52rem; letter-spacing:.14em; text-align:center; }
+  #pn-son .so-tick{ margin-top:16px; padding:10px 0; }
+  #pn-son .so-tick__k{ font-size:.56rem; padding-right:12px; }
+  #pn-son .so-tick__track a{ font-size:.86rem; padding:0 20px; }
+  #pn-son .so-eb{ font-size:.6rem; letter-spacing:.22em; margin-bottom:8px; }
+  #pn-son h2.so-h2{ font-size:1.8rem; }
+  #pn-son .so-lead{ font-size:.92rem; margin-top:8px; }
+  #pn-son .so-dlist{ grid-template-columns:none; grid-auto-flow:column; grid-auto-columns:86%; gap:10px; margin:14px -16px 0; padding:4px 16px 16px; overflow-x:auto; scroll-snap-type:x mandatory; scroll-padding-left:16px; scrollbar-width:none; }
+  #pn-son .so-dlist::-webkit-scrollbar{ display:none; }
+  #pn-son .so-dc{ scroll-snap-align:start; }
+  #pn-son .so-dc--lead{ grid-column:auto; }
+  #pn-son .so-swipe{ display:inline-flex; }
+  #pn-son .so-fb--more{ display:none; }
+  #pn-son .so-dc{ padding:16px 16px 14px; gap:10px; }
+  #pn-son .so-dc h3{ font-size:1.18rem; margin-top:10px; }
+  #pn-son .so-dc__s{ font-size:.88rem; -webkit-line-clamp:3; }
+  #pn-son .so-dc__f b{ font-size:1.45rem; }
+  #pn-son .so-dc__f span{ font-size:.72rem; }
+  #pn-son .so-dc--lead{ padding:20px 18px 16px; }
+  #pn-son .so-dc--lead h3{ font-size:1.62rem; }
+  #pn-son .so-dc--lead .so-dc__s{ font-size:.94rem; -webkit-line-clamp:6; }
+  #pn-son .so-dc--lead .so-dc__go{ display:block; text-align:center; margin-top:14px; }
+  #pn-son .so-dc--lead .so-dc__f b{ font-size:2.2rem; }
+  #pn-son .so-dfoot{ font-size:.78rem; margin-top:14px; }
+  #pn-son .so-search{ width:100%; padding:10px 14px; }
+  #pn-son .so-search input{ font-size:16px; }
+  #pn-son .so-filters{ flex-wrap:nowrap; overflow-x:auto; scrollbar-width:none; margin-left:-16px; margin-right:-16px; padding:2px 16px 4px; }
+  #pn-son .so-filters::-webkit-scrollbar{ display:none; }
+  #pn-son .so-fb{ flex:none; font-size:.6rem; padding:7px 11px 5px; }
+  #pn-son .so-i{ grid-template-columns:42px minmax(0,1fr); gap:10px; padding:12px 0 11px; }
+  #pn-son .so-date b{ font-size:1.55rem; }
+  #pn-son .so-date span{ font-size:.5rem; letter-spacing:.1em; }
+  #pn-son .so-go{ display:none; }
+  #pn-son .so-src,#pn-son .so-type{ font-size:.5rem; letter-spacing:.12em; margin-bottom:3px; }
+  #pn-son .so-where{ font-size:.54rem; letter-spacing:.12em; }
+  #pn-son .so-i h3{ font-size:1.02rem; line-height:1.18; }
+  #pn-son .so-by{ font-size:.78rem; }
+  #pn-son .so-ctas{ flex-direction:column; align-items:stretch; max-width:340px; margin-left:auto; margin-right:auto; }
+}
+@media (prefers-reduced-motion:reduce){
+  #pn-son *{ transition:none !important; }
+  #pn-son .so-tick__track,#pn-son .so-tick__k i{ animation:none; }
+  #pn-son .so-dc{ transform:none !important; }
+  #pn-son.is-rv .so-i:not(.is-in){ opacity:1; transform:none; }
+}
+/* 5 the reader: a dispatch from the data file, opened on the page as a sheet of paper */
+#pn-son-rd{ --ink:#1A140C; --im:rgba(26,20,12,.80); --idm:rgba(26,20,12,.60); --ihair:rgba(26,20,12,.14); --lat:#8A3A22; --gd:#7E5A0C; --g:var(--pn-brand-gold,#E3C258);
+  --hd:var(--pn-font-heading,"Barlow Condensed","Arial Narrow",Arial,sans-serif); --bd:var(--pn-font-body,"Barlow Semi Condensed",Arial,sans-serif);
+  --sf:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,"Times New Roman",serif;
+  position:fixed; inset:0; z-index:100000; overflow-y:auto; -webkit-overflow-scrolling:touch; overscroll-behavior:contain; font-family:var(--bd); line-height:1.6; }
+#pn-son-rd[hidden]{ display:none; }
+#pn-son-rd *,#pn-son-rd *::before,#pn-son-rd *::after{ box-sizing:border-box; }
+#pn-son-rd .rd-bg{ position:fixed; inset:0; background:radial-gradient(60% 50% at 50% 0%, rgba(255,150,80,.14) 0%, transparent 70%), rgba(14,10,7,.92); }
+#pn-son-rd .rd-sheet{ position:relative; max-width:780px; margin:clamp(16px,6vh,64px) auto; padding:clamp(24px,4.4vw,56px); border-radius:6px; background:#F5F1E8; color:var(--ink); box-shadow:0 40px 100px rgba(0,0,0,.6); outline:0; animation:rdIn .5s cubic-bezier(.22,1,.36,1); }
+@keyframes rdIn{ from{ opacity:0; transform:translateY(24px); } to{ opacity:1; transform:none; } }
+#pn-son-rd .rd-sheet::after{ content:""; position:absolute; inset:10px; border:1px solid var(--ihair); border-radius:2px; pointer-events:none; }
+#pn-son-rd .rd-x{ position:absolute; top:14px; right:14px; z-index:2; width:40px; height:40px; border-radius:50%; border:1px solid var(--ihair); background:#FFFBF1; color:var(--ink); cursor:pointer; font:400 1.4rem/1 Arial,sans-serif; }
+#pn-son-rd .rd-x:hover{ background:var(--ink); color:#F5F1E8; }
+#pn-son-rd .rd-k{ display:flex; flex-wrap:wrap; gap:4px 14px; margin-right:48px; padding:10px 0; border-top:2px solid var(--ink); border-bottom:1px solid var(--ihair); font-family:var(--hd); font-size:.64rem; font-weight:700; letter-spacing:.2em; text-transform:uppercase; color:var(--idm); }
+#pn-son-rd .rd-k b{ color:var(--lat); }
+#pn-son-rd h2{ margin:18px 0 0; font-family:var(--hd); font-weight:600; font-size:clamp(1.9rem,4vw,3rem); line-height:.98; letter-spacing:-.025em; color:var(--ink) !important; text-transform:none; }
+#pn-son-rd .rd-s{ margin:14px 0 0; font-family:var(--sf); font-style:italic; font-size:clamp(1.05rem,1.6vw,1.24rem); line-height:1.45; color:var(--im); }
+#pn-son-rd .rd-figs{ display:grid; gap:8px; margin:22px 0 0; padding:0; list-style:none; grid-template-columns:repeat(2,minmax(0,1fr)); }
+@media (min-width:760px){ #pn-son-rd .rd-figs{ grid-template-columns:repeat(4,minmax(0,1fr)); } }
+#pn-son-rd .rd-figs[hidden]{ display:none; }
+#pn-son-rd .rd-figs li{ padding:12px 14px 10px; border-radius:10px; background:#FFFBF1; border:1px solid var(--ihair); }
+#pn-son-rd .rd-figs b{ display:block; font-family:var(--hd); font-weight:700; font-size:clamp(1.5rem,2.4vw,2rem); line-height:1; color:var(--lat); font-variant-numeric:tabular-nums; }
+#pn-son-rd .rd-figs span{ display:block; margin-top:5px; font-size:.76rem; line-height:1.35; color:var(--im); }
+#pn-son-rd .rd-body{ margin:24px 0 0; font-family:var(--sf); font-size:clamp(1rem,1.15vw,1.1rem); line-height:1.72; color:#2A2116; }
+#pn-son-rd .rd-body p{ margin:0 0 1em; }
+#pn-son-rd .rd-body p:first-child::first-letter{ float:left; margin:6px 10px 0 0; font-family:var(--hd); font-weight:700; font-size:4rem; line-height:.8; color:var(--lat); }
+#pn-son-rd .rd-body h4{ margin:1.5em 0 .4em; font-family:var(--hd); font-weight:700; font-size:.74rem; letter-spacing:.22em; text-transform:uppercase; color:var(--lat); }
+#pn-son-rd .rd-kick{ margin:8px 0 0; padding-top:16px; border-top:1px solid var(--ihair); font-family:var(--hd); font-weight:600; font-size:clamp(1.3rem,2vw,1.7rem); line-height:1.2; color:var(--ink); }
+#pn-son-rd .rd-src{ margin:18px 0 0; font-size:.78rem; line-height:1.6; color:var(--idm); }
+#pn-son-rd .rd-src a{ color:var(--im); }
+#pn-son-rd .rd-kick[hidden],#pn-son-rd .rd-src[hidden]{ display:none; }
+#pn-son-rd .rd-end{ display:flex; justify-content:center; margin-top:24px; }
+#pn-son-rd .rd-back{ display:inline-flex; align-items:center; gap:12px; padding:13px 26px 11px; border-radius:999px; border:1px solid var(--g); background:var(--g); color:#1A140C; cursor:pointer; font-family:var(--hd); font-size:.74rem; font-weight:700; letter-spacing:.18em; text-transform:uppercase; }
+#pn-son-rd .rd-back::after{ content:"\2192"; font-family:Arial,sans-serif; letter-spacing:0; }
+#pn-son-rd button:focus-visible,#pn-son-rd a:focus-visible{ outline:2px solid var(--gd); outline-offset:3px; }
+@media (max-width:640px){
+  #pn-son-rd .rd-sheet{ margin:0; min-height:100%; border-radius:0; padding:20px 18px 28px; }
+  #pn-son-rd .rd-sheet::after{ inset:6px; }
+  #pn-son-rd .rd-x{ top:10px; right:10px; width:36px; height:36px; }
+  #pn-son-rd h2{ font-size:1.8rem; }
+  #pn-son-rd .rd-s{ font-size:1rem; }
+  #pn-son-rd .rd-body{ font-size:1rem; line-height:1.65; }
+  #pn-son-rd .rd-back{ width:100%; justify-content:center; }
+}
+@media (prefers-reduced-motion:reduce){ #pn-son-rd .rd-sheet{ animation:none; } }
+</style>
+
+<svg width="0" height="0" style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true" focusable="false">
+  <defs>
+    <g id="pnso-laurel-branch">
+      <path d="M56 30 Q30 34 4 27" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round"/>
+      <ellipse cx="49" cy="28.4" rx="4.4" ry="1.7" fill="currentColor" transform="rotate(-24 49 28.4)"/>
+      <ellipse cx="43" cy="34.6" rx="4.4" ry="1.7" fill="currentColor" transform="rotate(26 43 34.6)"/>
+      <ellipse cx="36" cy="28.9" rx="4.3" ry="1.7" fill="currentColor" transform="rotate(-20 36 28.9)"/>
+      <ellipse cx="29" cy="34.8" rx="4.2" ry="1.6" fill="currentColor" transform="rotate(30 29 34.8)"/>
+      <ellipse cx="22" cy="28.2" rx="4" ry="1.6" fill="currentColor" transform="rotate(-14 22 28.2)"/>
+      <ellipse cx="15" cy="33.2" rx="3.8" ry="1.5" fill="currentColor" transform="rotate(34 15 33.2)"/>
+      <ellipse cx="7.4" cy="25.6" rx="3.6" ry="1.5" fill="currentColor" transform="rotate(-6 7.4 25.6)"/>
+    </g>
+    <symbol id="pnso-laurel" viewBox="0 0 120 60">
+      <use href="#pnso-laurel-branch"/>
+      <use href="#pnso-laurel-branch" transform="matrix(-1 0 0 1 120 0)"/>
+      <polygon fill="currentColor" points="60,25 61.18,28.38 64.76,28.45 61.9,30.62 62.94,34.05 60,32 57.06,34.05 58.1,30.62 55.24,28.45 58.82,28.38"/>
+    </symbol>
+  </defs>
+</svg>
+<div id="pn-son" data-cat="dispatches" data-feed="https://raw.githubusercontent.com/preetisinha70-PN/perfect-nations/main/data/state-of-nations.json https://cdn.jsdelivr.net/gh/preetisinha70-PN/perfect-nations@main/data/state-of-nations.json">
+
+  <section class="so-band so-hero" aria-labelledby="so-h1">
+    <canvas class="so-gl" aria-hidden="true"></canvas>
+    <div class="so-in">
+      <div class="so-mast"><span><b>Perfect Nations</b></span><span>Dispatches &middot; The Instruments</span><span class="so-edition">Updated 31 October 2026</span></div>
+      <div class="so-title">
+        <svg class="so-laurel" aria-hidden="true" focusable="false"><use href="#pnso-laurel"></use></svg>
+        <h1 class="so-h1" id="so-h1"><span>The</span>State of Nations</h1>
+        <p class="so-lead">How 195 nations finance what their people are owed: every bond, swap, guarantee and fund, as it happens.</p>
+        <nav class="so-stats" aria-label="On this page">
+          <a href="#so-dispatches"><b data-count-d>07</b><span>Dispatches</span></a>
+          <a href="#so-wire"><b data-count-w>50</b><span>Instruments</span></a>
+          <a href="#so-wire"><b data-count-n>37</b><span>Nations</span></a>
+        </nav>
+      </div>
+      <div class="so-tick" aria-label="Latest from State of Nations">
+        <span class="so-tick__k"><i aria-hidden="true"></i>Latest</span>
+        <div class="so-tick__track"><a href="https://perfectnations.org/ghana-turns-its-pensions-into-venture-capital/">Dispatch No. 07: Ghana turns its pensions into venture capital<span>Perfect Nations</span></a><a href="https://perfectnations.org/ethiopia-trades-a-haircut-for-a-seat-at-its-next-bond/">Dispatch No. 06: Ethiopia trades a haircut for a seat at its next bond<span>Perfect Nations</span></a><a href="https://perfectnations.org/suriname-now-owes-in-the-currency-it-earns/">Dispatch No. 05: Suriname now owes in the currency it earns<span>Perfect Nations</span></a><a href="https://www.app.com.pk/national/wb-approves-150-mln-programme-to-boost-municipal-revenues-services-in-sindh/" target="_blank" rel="noopener noreferrer">WB approves $150 mln programme to boost municipal revenues, services in Sindh<span>APP</span></a><a href="https://pina.com.fj/2026/10/29/gcf-approves-us250m-grant-for-climate-resilience-in-14-pacific-countries/" target="_blank" rel="noopener noreferrer">GCF approves US$250m grant for climate resilience in 14 Pacific countries<span>PINA</span></a><a href="https://www.artemis.bm/news/california-earthquake-authority-seeks-600m-reinsurance-with-ursa-re-2026-1-cat-bond/" target="_blank" rel="noopener noreferrer">California Earthquake Authority seeks $600m reinsurance with Ursa Re 2026-1 cat bond<span>Artemis</span></a><a href="https://www.eib.org/en/press/all/2026-358-varazdin-to-upgrade-public-services-and-quality-of-life-with-eib-financing-of-25-million" target="_blank" rel="noopener noreferrer">Vara&#382;din to upgrade public services and quality of life with EIB financing of 25 million<span>EIB</span></a><a href="https://www.gov.si/en/news/2026-10-27-the-republic-of-slovenia-us-500mn-5-600-percent-10-year-144areg-s-bond-offering/" target="_blank" rel="noopener noreferrer">The Republic of Slovenia: US$ 500mn 5.600 percent 10-year 144A/Reg S Bond offering<span>Government of Slovenia</span></a><a href="https://www.argusmedia.com/en/news-and-insights/latest-market-news/2896215-netherlands-pledges-500mn-to-brazil-s-tfff" target="_blank" rel="noopener noreferrer">Netherlands pledges $500mn to Brazil&#8217;s TFFF<span>Argus</span></a><a href="https://www.adb.org/news/adb-accelerates-nature-finance-cop17-new-bond-incubator-and-tracking-report" target="_blank" rel="noopener noreferrer">ADB Accelerates Nature Finance at COP17 with New Bond, Incubator, and Tracking Report<span>ADB</span></a><a href="https://www.semana.com/economia/macroeconomia/articulo/colombia-logra-emision-record-de-deuda-externa-por-usd-5200-millones/202655/" target="_blank" rel="noopener noreferrer">Colombia logra emisi&#243;n r&#233;cord de deuda externa por USD $5.200 millones<span>Semana</span></a><span class="so-tick__dup" aria-hidden="true"><a tabindex="-1" href="https://perfectnations.org/ghana-turns-its-pensions-into-venture-capital/">Dispatch No. 07: Ghana turns its pensions into venture capital<span>Perfect Nations</span></a><a tabindex="-1" href="https://perfectnations.org/ethiopia-trades-a-haircut-for-a-seat-at-its-next-bond/">Dispatch No. 06: Ethiopia trades a haircut for a seat at its next bond<span>Perfect Nations</span></a><a tabindex="-1" href="https://perfectnations.org/suriname-now-owes-in-the-currency-it-earns/">Dispatch No. 05: Suriname now owes in the currency it earns<span>Perfect Nations</span></a><a tabindex="-1" href="https://www.app.com.pk/national/wb-approves-150-mln-programme-to-boost-municipal-revenues-services-in-sindh/" target="_blank" rel="noopener noreferrer">WB approves $150 mln programme to boost municipal revenues, services in Sindh<span>APP</span></a><a tabindex="-1" href="https://pina.com.fj/2026/10/29/gcf-approves-us250m-grant-for-climate-resilience-in-14-pacific-countries/" target="_blank" rel="noopener noreferrer">GCF approves US$250m grant for climate resilience in 14 Pacific countries<span>PINA</span></a><a tabindex="-1" href="https://www.artemis.bm/news/california-earthquake-authority-seeks-600m-reinsurance-with-ursa-re-2026-1-cat-bond/" target="_blank" rel="noopener noreferrer">California Earthquake Authority seeks $600m reinsurance with Ursa Re 2026-1 cat bond<span>Artemis</span></a><a tabindex="-1" href="https://www.eib.org/en/press/all/2026-358-varazdin-to-upgrade-public-services-and-quality-of-life-with-eib-financing-of-25-million" target="_blank" rel="noopener noreferrer">Vara&#382;din to upgrade public services and quality of life with EIB financing of 25 million<span>EIB</span></a><a tabindex="-1" href="https://www.gov.si/en/news/2026-10-27-the-republic-of-slovenia-us-500mn-5-600-percent-10-year-144areg-s-bond-offering/" target="_blank" rel="noopener noreferrer">The Republic of Slovenia: US$ 500mn 5.600 percent 10-year 144A/Reg S Bond offering<span>Government of Slovenia</span></a><a tabindex="-1" href="https://www.argusmedia.com/en/news-and-insights/latest-market-news/2896215-netherlands-pledges-500mn-to-brazil-s-tfff" target="_blank" rel="noopener noreferrer">Netherlands pledges $500mn to Brazil&#8217;s TFFF<span>Argus</span></a><a tabindex="-1" href="https://www.adb.org/news/adb-accelerates-nature-finance-cop17-new-bond-incubator-and-tracking-report" target="_blank" rel="noopener noreferrer">ADB Accelerates Nature Finance at COP17 with New Bond, Incubator, and Tracking Report<span>ADB</span></a><a tabindex="-1" href="https://www.semana.com/economia/macroeconomia/articulo/colombia-logra-emision-record-de-deuda-externa-por-usd-5200-millones/202655/" target="_blank" rel="noopener noreferrer">Colombia logra emisi&#243;n r&#233;cord de deuda externa por USD $5.200 millones<span>Semana</span></a></span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="so-band so-disp" id="so-dispatches" aria-labelledby="so-disp-h">
+    <div class="so-in">
+      <div class="so-head">
+        <div>
+          <p class="so-eb">Dispatches</p>
+          <h2 class="so-h2" id="so-disp-h">From the Studio</h2>
+        </div>
+        <p class="so-lead" style="max-width:40ch;">One instrument at a time: what it financed, and where it could work next.</p>
+        <span class="so-swipe" aria-hidden="true">Swipe for all 7 &#8594;</span>
+      </div>
+      <ol class="so-dlist" id="soDList" aria-live="polite">
+        <li class="so-dc so-dc--lead" data-slug="ghana-turns-its-pensions-into-venture-capital" data-no="7">
+          <div class="so-dc__t">
+            <div class="so-dc__k"><b>Dispatch No. 07</b><span>Building local markets &middot; Accra</span><time datetime="2026-10-19">19 October 2026</time></div>
+            <h3><a href="https://perfectnations.org/ghana-turns-its-pensions-into-venture-capital/">Ghana turns its pensions into venture capital</a></h3>
+            <p class="so-dc__s">West Africa&#8217;s first private, local-currency fund of funds has shown that a nation&#8217;s own savings can finance its own small businesses. The instrument is Ci Gaba, which means &#8216;progress&#8217; in Hausa.</p>
+            <span class="so-dc__go">Read the dispatch</span>
+          </div>
+          <p class="so-dc__f"><b>GHS 383m</b><span>first close of the Ci Gaba Fund of Funds, March 2026</span></p>
+        </li>
+        <li class="so-dc" data-slug="ethiopia-trades-a-haircut-for-a-seat-at-its-next-bond" data-no="6">
+          <div class="so-dc__t">
+            <div class="so-dc__k"><b>Dispatch No. 06</b><span>Liability management &middot; Addis Ababa</span><time datetime="2026-10-19">19 October 2026</time></div>
+            <h3><a href="https://perfectnations.org/ethiopia-trades-a-haircut-for-a-seat-at-its-next-bond/">Ethiopia trades a haircut for a seat at its next bond</a></h3>
+            <p class="so-dc__s">To settle its defaulted US$1 billion Eurobond, Ethiopia is offering bondholders less principal today and a tradable right to buy its next international bond. The exchange is reported to be near; the design is the news.</p>
+            <span class="so-dc__go">Read the dispatch</span>
+          </div>
+          <p class="so-dc__f"><b>$880m</b><span>new bond offered for the US$1 billion 6.625% Notes due 2024</span></p>
+        </li>
+        <li class="so-dc" data-slug="suriname-now-owes-in-the-currency-it-earns" data-no="5">
+          <div class="so-dc__t">
+            <div class="so-dc__k"><b>Dispatch No. 05</b><span>Liability management &middot; Paramaribo</span><time datetime="2026-10-14">14 October 2026</time></div>
+            <h3><a href="https://perfectnations.org/suriname-now-owes-in-the-currency-it-earns/">Suriname now owes in the currency it earns</a></h3>
+            <p class="so-dc__s">Suriname has turned a US$150 million foreign-currency loan from the Inter-American Development Bank into a fixed-rate loan in its own currency. The debt is no smaller, but a devaluation can no longer make it larger.</p>
+            <span class="so-dc__go">Read the dispatch</span>
+          </div>
+          <p class="so-dc__f"><b>$150m</b><span>IDB loan converted into fixed-rate Surinamese dollars</span></p>
+        </li>
+        <li class="so-dc" data-slug="how-to-finance-a-nations-future" data-no="4">
+          <div class="so-dc__t">
+            <div class="so-dc__k"><b>Dispatch No. 04</b><span>The Template &middot; Five nations</span><time datetime="2026-10-12">12 October 2026</time></div>
+            <h3><a href="https://perfectnations.org/how-to-finance-a-nations-future/">How to finance a nation&#8217;s future: five instruments, five countries</a></h3>
+            <p class="so-dc__s">Outcome bonds, impact bonds, social bonds, sustainability-linked bonds and mobile retail bonds each solve a different financing problem. Five countries show how.</p>
+            <span class="so-dc__go">Read the dispatch</span>
+          </div>
+          <p class="so-dc__f"><b>$2bn</b><span>Chile&#8217;s 20-year sustainability-linked bond, the first by a sovereign, 2022</span></p>
+        </li>
+        <li class="so-dc" data-slug="kenya-has-bought-time" data-no="3">
+          <div class="so-dc__t">
+            <div class="so-dc__k"><b>Dispatch No. 03</b><span>The Price &middot; Nairobi</span><time datetime="2026-10-12">12 October 2026</time></div>
+            <h3><a href="https://perfectnations.org/kenya-has-bought-time/">Kenya has bought time. Now it should buy down the price.</a></h3>
+            <p class="so-dc__s">Kenya has pushed its dollar debt further out, at 9.5 per cent. As the IMF and the World Bank meet in Bangkok, the better trade is cheaper debt with the Living Line written into it.</p>
+            <span class="so-dc__go">Read the dispatch</span>
+          </div>
+          <p class="so-dc__f"><b>9.5%</b><span>coupon on the US$1.5 billion bond sold in February 2025</span></p>
+        </li>
+        <li class="so-dc" data-slug="barbados-has-priced-its-future" data-no="2">
+          <div class="so-dc__t">
+            <div class="so-dc__k"><b>Dispatch No. 02</b><span>The Deal &middot; Bridgetown</span><time datetime="2026-10-12">12 October 2026</time></div>
+            <h3><a href="https://perfectnations.org/barbados-has-priced-its-future/">The Caribbean&#8217;s first pooled sustainability bond needs a pipeline</a></h3>
+            <p class="so-dc__s">A regional vehicle seeking up to US$250 million now exists. Barbados alone needs US$11.6 billion by 2035. The bond will be judged by the projects ready to fill it.</p>
+            <span class="so-dc__go">Read the dispatch</span>
+          </div>
+          <p class="so-dc__f"><b>$250m</b><span>the most the Caribbean Sustainability Bond seeks to raise</span></p>
+        </li>
+        <li class="so-dc" data-slug="five_instruments_bangkok_should_put_on_the_table" data-no="1">
+          <div class="so-dc__t">
+            <div class="so-dc__k"><b>Dispatch No. 01</b><span>The Template &middot; Bangkok</span><time datetime="2026-10-11">11 October 2026</time></div>
+            <h3><a href="https://perfectnations.org/five_instruments_bangkok_should_put_on_the_table/">Five instruments Bangkok should put on the table</a></h3>
+            <p class="so-dc__s">Developing nations paid their creditors $741 billion more than they received in three years. The instruments that turn debt into development already exist, and each has been used.</p>
+            <span class="so-dc__go">Read the dispatch</span>
+          </div>
+          <p class="so-dc__f"><b>$741bn</b><span>more paid on external debt than received in new financing, 2022 to 2024</span></p>
+        </li>
+      </ol>
+      <div class="so-dfoot"><span id="soDNote">7 dispatches, newest first.</span><a href="https://perfectnations.org/category/dispatches/">All dispatches</a></div>
+    </div>
+  </section>
+
+  <section class="so-band so-wire" id="so-wire" aria-labelledby="so-wire-h">
+    <div class="so-in">
+      <div class="so-head">
+        <div>
+          <p class="so-eb">The Wire</p>
+          <h2 class="so-h2" id="so-wire-h">The Instruments</h2>
+          <p class="so-lead" style="max-width:46ch;">New deals from every nation: bonds, swaps, guarantees and funds, each linked to its source.</p>
+        </div>
+        <div class="so-search">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10.5 4a6.5 6.5 0 1 0 4.03 11.6l4.43 4.42 1.41-1.41-4.42-4.43A6.5 6.5 0 0 0 10.5 4Zm0 2a4.5 4.5 0 1 1 0 9 4.5 4.5 0 0 1 0-9Z" fill="currentColor"/></svg>
+          <input id="soSearch" type="search" placeholder="A nation, an instrument, a writer&hellip;" autocomplete="off" aria-label="Search the wire">
+          <button class="so-clear" type="button" id="soClear" hidden>Clear</button>
+        </div>
+      </div>
+      <div class="so-filters so-filters--reg" id="soRegions" role="group" aria-label="Filter by region" hidden></div>
+      <div class="so-filters" id="soFilters" role="group" aria-label="Filter by instrument" hidden></div>
+      <p class="so-count" id="soCount" aria-live="polite">50 instruments on the wire &middot; 37 nations</p>
+      <!-- TO ADD A WIRE ITEM: paste one <li class="so-i"> block anywhere in this list. -->
+      <ol class="so-list" id="soList">
+        <li class="so-i" data-type="Results-based finance" data-region="Asia-Pacific" data-nation="Pakistan">
+          <time class="so-date" datetime="2026-10-31"><b>31</b><span>Oct 2026</span></time>
+          <div class="so-b">
+            <span class="so-src">Via APP</span><span class="so-type">Results-based finance</span><span class="so-where">Pakistan</span>
+            <h3><a href="https://www.app.com.pk/national/wb-approves-150-mln-programme-to-boost-municipal-revenues-services-in-sindh/" target="_blank" rel="noopener noreferrer">WB approves $150 mln programme to boost municipal revenues, services in Sindh</a></h3>
+            <p class="so-by"><b>Qadir Rajpoot</b></p>
+          </div>
+          <a class="so-go" href="https://www.app.com.pk/national/wb-approves-150-mln-programme-to-boost-municipal-revenues-services-in-sindh/" target="_blank" rel="noopener noreferrer" aria-label="Read at APP">&#8599;</a>
+        </li>
+        <li class="so-i" data-type="Blended finance" data-region="Asia-Pacific" data-nation="">
+          <time class="so-date" datetime="2026-10-29"><b>29</b><span>Oct 2026</span></time>
+          <div class="so-b">
+            <span class="so-src">Via PINA</span><span class="so-type">Blended finance</span><span class="so-where">The Pacific</span>
+            <h3><a href="https://pina.com.fj/2026/10/29/gcf-approves-us250m-grant-for-climate-resilience-in-14-pacific-countries/" target="_blank" rel="noopener noreferrer">GCF approves US$250m grant for climate resilience in 14 Pacific countries</a></h3>
+            <p class="so-by"><b>Pita Ligaiula</b></p>
+          </div>
+          <a class="so-go" href="https://pina.com.fj/2026/10/29/gcf-approves-us250m-grant-for-climate-resilience-in-14-pacific-countries/" target="_blank" rel="noopener noreferrer" aria-label="Read at PINA">&#8599;</a>
+        </li>
+        <li class="so-i" data-type="Catastrophe bond" data-region="Americas" data-nation="United States">
+          <time class="so-date" datetime="2026-10-29"><b>29</b><span>Oct 2026</span></time>
+          <div class="so-b">
+            <span class="so-src">Via Artemis</span><span class="so-type">Catastrophe bond</span><span class="so-where">United States</span>
+            <h3><a href="https://www.artemis.bm/news/california-earthquake-authority-seeks-600m-reinsurance-with-ursa-re-2026-1-cat-bond/" target="_blank" rel="noopener noreferrer">California Earthquake Authority seeks $600m reinsurance with Ursa Re 2026-1 cat bond</a></h3>
+            <p class="so-by"><b>Steve Evans</b></p>
+          </div>
+          <a class="so-go" href="https://www.artemis.bm/news/california-earthquake-authority-seeks-600m-reinsurance-with-ursa-re-2026-1-cat-bond/" target="_blank" rel="noopener noreferrer" aria-label="Read at Artemis">&#8599;</a>
+        </li>
+        <li class="so-i" data-type="Development bank loan" data-region="Europe" data-nation="Croatia">
+          <time class="so-date" datetime="2026-10-28"><b>28</b><span>Oct 2026</span></time>
+          <div class="so-b">
+            <span class="so-src">Via EIB</span><span class="so-type">Development bank loan</span><span class="so-where">Croatia</span>
+            <h3><a href="https://www.eib.org/en/press/all/2026-358-varazdin-to-upgrade-public-services-and-quality-of-life-with-eib-financing-of-25-million" target="_blank" rel="noopener noreferrer">Vara&#382;din to upgrade public services and quality of life with EIB financing of 25 million</a></h3>
+            <p class="so-by"><b>Press release</b></p>
+          </div>
+          <a class="so-go" href="https://www.eib.org/en/press/all/2026-358-varazdin-to-upgrade-public-services-and-quality-of-life-with-eib-financing-of-25-million" target="_blank" rel="noopener noreferrer" aria-label="Read at EIB">&#8599;</a>
+        </li>
+        <li class="so-i" data-type="Eurobond" data-region="Europe" data-nation="Slovenia">
+          <time class="so-date" datetime="2026-10-27"><b>27</b><span>Oct 2026</span></time>
+          <div class="so-b">
+            <span class="so-src">Via Government of Slovenia</span><span class="so-type">Eurobond</span><span class="so-where">Slovenia</span>
+            <h3><a href="https://www.gov.si/en/news/2026-10-27-the-republic-of-slovenia-us-500mn-5-600-percent-10-year-144areg-s-bond-offering/" target="_blank" rel="noopener noreferrer">The Republic of Slovenia: US$ 500mn 5.600 percent 10-year 144A/Reg S Bond offering</a></h3>
+            <p class="so-by"><b>Press release</b></p>
+          </div>
+          <a class="so-go" href="https://www.gov.si/en/news/2026-10-27-the-republic-of-slovenia-us-500mn-5-600-percent-10-year-144areg-s-bond-offering/" target="_blank" rel="noopener noreferrer" aria-label="Read at Government of Slovenia">&#8599;</a>
+        </li>
+        <li class="so-i" data-type="Forest fund" data-region="Americas" data-nation="Brazil">
+          <time class="so-date" datetime="2026-10-27"><b>27</b><span>Oct 2026</span></time>
+          <div class="so-b">
+            <span class="so-src">Via Argus</span><span class="so-type">Forest fund</span><span class="so-where">Brazil</span>
+            <h3><a href="https://www.argusmedia.com/en/news-and-insights/latest-market-news/2896215-netherlands-pledges-500mn-to-brazil-s-tfff" target="_blank" rel="noopener noreferrer">Netherlands pledges $500mn to Brazil&#8217;s TFFF</a></h3>
+            <p class="so-by"><b>Lucas Parolin</b></p>
+          </div>
+          <a class="so-go" href="https://www.argusmedia.com/en/news-and-insights/latest-market-news/2896215-netherlands-pledges-500mn-to-brazil-s-tfff" target="_blank" rel="noopener noreferrer" aria-label="Read at Argus">&#8599;</a>
+        </li>
+        <li class="so-i" data-type="Biodiversity bond" data-region="Asia-Pacific" data-nation="">
+          <time class="so-date" datetime="2026-10-27"><b>27</b><span>Oct 2026</span></time>
+          <div class="so-b">
+            <span class="so-src">Via ADB</span><span class="so-type">Biodiversity bond</span><span class="so-where">Asia and the Pacific</span>
+            <h3><a href="https://www.adb.org/news/adb-accelerates-nature-finance-cop17-new-bond-incubator-and-tracking-report" target="_blank" rel="noopener noreferrer">ADB Accelerates Nature Finance at COP17 with New Bond, Incubator, and Tracking Report</a></h3>
+            <p class="so-by"><b>Press release</b></p>
+          </div>
+          <a class="so-go" href="https://www.adb.org/news/adb-accelerates-nature-finance-cop17-new-bond-incubator-and-tracking-report" target="_blank" rel="noopener noreferrer" aria-label="Read at ADB">&#8599;</a>
+        </li>
+        <li class="so-i" data-type="Eurobond" data-region="Americas" data-nation="Colombia">
+          <time class="so-date" datetime="2026-10-26"><b>26</b><span>Oct 2026</span></time>
+          <div class="so-b">
+            <span class="so-src">Via Semana</span><span class="so-type">Eurobond</span><span class="so-where">Colombia</span>
+            <h3><a href="https://www.semana.com/economia/macroeconomia/articulo/colombia-logra-emision-record-de-deuda-externa-por-usd-5200-millones/202655/" target="_blank" rel="noopener noreferrer">Colombia logra emisi&#243;n r&#233;cord de deuda externa por USD $5.200 millones</a></h3>
+            <p class="so-by"><b>Evelyn Acevedo Rueda</b></p>
+          </div>
+          <a class="so-go" href="https://www.semana.com/economia/macroeconomia/articulo/colombia-logra-emision-record-de-deuda-externa-por-usd-5200-millones/202655/" target="_blank" rel="noopener noreferrer" aria-label="Read at Semana">&#8599;</a>
+        </li>
+        <li class="so-i" data-type="Blended finance" data-region="Asia-Pacific" data-nation="Cambodia">
+          <time class="so-date" datetime="2026-10-26"><b>26</b><span>Oct 2026</span></time>
+          <div class="so-b">
+            <span class="so-src">Via ADB</span><span class="so-type">Blended finance</span><span class="so-where">Cambodia</span>
+            <h3><a href="https://www.adb.org/news/adb-advances-resilient-agriculture-and-womens-economic-empowerment-rural-cambodia" target="_blank" rel="noopener noreferrer">ADB Advances Resilient Agriculture and Women&#8217;s Economic Empowerment in Rural Cambodia</a></h3>
+            <p class="so-by"><b>Press release</b></p>
+          </div>
+          <a class="so-go" href="https://www.adb.org/news/adb-advances-resilient-agriculture-and-womens-economic-empowerment-rural-cambodia" target="_blank" rel="noopener noreferrer" aria-label="Read at ADB">&#8599;</a>
+        </li>
+        <li class="so-i" data-type="Eurobond" data-region="Americas" data-nation="The Bahamas">
+          <time class="so-date" datetime="2026-10-22"><b>22</b><span>Oct 2026</span></time>
+          <div class="so-b">
+            <span class="so-src">Via The Tribune</span><span class="so-type">Eurobond</span><span class="so-where">The Bahamas</span>
+            <h3><a href="https://www.tribune242.com/news/2026/oct/22/bahamas-finalises-11bn-bond-at-lower-interest-cost/" target="_blank" rel="noopener noreferrer">Bahamas finalises $1.1bn bond at lower interest cost</a></h3>
+            <p class="so-by"><b>Neil Hartnell</b></p>
+          </div>
+          <a class="so-go" href="https://www.tribune242.com/news/2026/oct/22/bahamas-finalises-11bn-bond-at-lower-interest-cost/" target="_blank" rel="noopener noreferrer" aria-label="Read at The Tribune">&#8599;</a>
+        </li>
+        <li class="so-i" data-type="Development bank loan" data-region="Europe" data-nation="Ukraine">
+          <time class="so-date" datetime="2026-10-21"><b>21</b><span>Oct 2026</span></time>
+          <div class="so-b">
+            <span class="so-src">Via EIB</span><span class="so-type">Development bank loan</span><span class="so-where">Ukraine</span>
+            <h3><a href="https://www.eib.org/en/press/all/2026-349-with-eu-support-eib-group-provides-ukraine-with-financing-of-60-million-to-upgrade-western-border-infrastructure" target="_blank" rel="noopener noreferrer">With EU support, EIB Group provides Ukraine with financing of &#8364;60 million to upgrade western border infrastructure</a></h3>
+            <p class="so-by"><b>Press release</b></p>
+          </div>
+          <a class="so-go" href="https://www.eib.org/en/press/all/2026-349-with-eu-support-eib-group-provides-ukraine-with-financing-of-60-million-to-upgrade-western-border-infrastructure" target="_blank" rel="noopener noreferrer" aria-label="Read at EIB">&#8599;</a>
+        </li>
+        <li class="so-i" data-type="Development bank loan" data-region="Africa" data-nation="Nigeria">
+          <time class="so-date" datetime="2026-10-20"><b>20</b><span>Oct 2026</span></time>
+          <div class="so-b">
+            <span class="so-src">Via Nairametrics</span><span class="so-type">Development bank loan</span><span class="so-where">Nigeria</span>
+            <h3><a href="https://nairametrics.com/2026/10/20/world-bank-sets-conditions-as-nigeria-signs-500-million-development-loan-agreement/" target="_blank" rel="noopener noreferrer">World Bank sets conditions as Nigeria signs $500 million development loan agreement</a></h3>
+            <p class="so-by"><b>Samson Akintaro</b></p>
+          </div>
+          <a class="so-go" href="https://nairametrics.com/2026/10/20/world-bank-sets-conditions-as-nigeria-signs-500-million-development-loan-agreement/" target="_blank" rel="noopener noreferrer" aria-label="Read at Nairametrics">&#8599;</a>
+        </li>
+        <li class="so-i" data-type="Eurobond" data-region="Africa" data-nation="Cameroon">
+          <time class="so-date" datetime="2026-10-20"><b>20</b><span>Oct 2026</span></time>
+          <div class="so-b">
+            <span class="so-src">Via Ecofin Agency</span><span class="so-type">Eurobond</span><span class="so-where">Cameroon</span>
+            <h3><a href="https://www.ecofinagency.com/news-finances/2010-59937-cameroon-s-eurobond-yields-hit-record-high-after-fitch-downgrade" target="_blank" rel="noopener noreferrer">Cameroon&#8217;s Eurobond Yields Hit Record High After Fitch Downgrade</a></h3>
+            <p class="so-by"><b>Fiacre E. Kakpo</b></p>
+          </div>
+          <a class="so-go" href="https://www.ecofinagency.com/news-finances/2010-59937-cameroon-s-eurobond-yields-hit-record-high-after-fitch-downgrade" target="_blank" rel="noopener noreferrer" aria-label="Read at Ecofin Agency">&#8599;</a>
+        </li>
+        <li class="so-i" data-type="Liability management" data-region="Americas" data-nation="The Bahamas">
+          <time class="so-date" datetime="2026-10-19"><b>19</b><span>Oct 2026</span></time>
+          <div class="so-b">
+            <span class="so-src">Via PR Newswire</span><span class="so-type">Liability management</span><span class="so-where">The Bahamas</span>
+            <h3><a href="https://www.prnewswire.com/news-releases/the-commonwealth-of-the-bahamas-announces-an-offer-to-purchase-for-cash-five-series-of-its-notes-302912572.html" target="_blank" rel="noopener noreferrer">The Commonwealth of The Bahamas Announces an Offer to Purchase for Cash Five Series of its Notes</a></h3>
+            <p class="so-by"><b>Press release</b></p>
+          </div>
+          <a class="so-go" href="https://www.prnewswire.com/news-releases/the-commonwealth-of-the-bahamas-announces-an-offer-to-purchase-for-cash-five-series-of-its-notes-302912572.html" target="_blank" rel="noopener noreferrer" aria-label="Read at PR Newswire">&#8599;</a>
+        </li>
+        <li class="so-i" data-type="Local-currency bond" data-region="Africa" data-nation="Nigeria">
+          <time class="so-date" datetime="2026-10-19"><b>19</b><span>Oct 2026</span></time>
+          <div class="so-b">
+            <span class="so-src">Via Vanguard</span><span class="so-type">Local-currency bond</span><span class="so-where">Nigeria</span>
+            <h3><a href="https://www.vanguardngr.com/2026/10/fg-turns-to-bonds-to-tackle-n6trn-debt/" target="_blank" rel="noopener noreferrer">FG turns to bonds to tackle N6trn debt</a></h3>
+            <p class="so-by"><b>Urowayino Jeremiah</b></p>
+          </div>
+          <a class="so-go" href="https://www.vanguardngr.com/2026/10/fg-turns-to-bonds-to-tackle-n6trn-debt/" target="_blank" rel="noopener noreferrer" aria-label="Read at Vanguard">&#8599;</a>
+        </li>
+        <li class="so-i" data-type="Sukuk" data-region="Middle East" data-nation="Oman">
+          <time class="so-date" datetime="2026-10-18"><b>18</b><span>Oct 2026</span></time>
+          <div class="so-b">
+            <span class="so-src">Via Muscat Daily</span><span class="so-type">Sukuk</span><span class="so-where">Oman</span>
+            <h3><a href="https://www.muscatdaily.com/2026/10/18/oman-to-raise-up-to-ro150mn-through-local-sukuk/" target="_blank" rel="noopener noreferrer">Oman to raise up to RO150mn through local sukuk</a></h3>
+            <p class="so-by"><b>Muscat Daily</b></p>
+          </div>
+          <a class="so-go" href="https://www.muscatdaily.com/2026/10/18/oman-to-raise-up-to-ro150mn-through-local-sukuk/" target="_blank" rel="noopener noreferrer" aria-label="Read at Muscat Daily">&#8599;</a>
+        </li>
+        <li class="so-i" data-type="Liability management" data-region="Africa" data-nation="Ethiopia">
+          <time class="so-date" datetime="2026-10-17"><b>17</b><span>Oct 2026</span></time>
+          <div class="so-b">
+            <span class="so-src">Via Capital Ethiopia</span><span class="so-type">Liability management</span><span class="so-where">Ethiopia</span>
+            <h3><a href="https://capitalethiopia.com/2026/10/17/ethiopia-nears-eurobond-exchange-deal-as-fitch-flags-path-out-of-default/" target="_blank" rel="noopener noreferrer">Ethiopia nears eurobond exchange deal as Fitch flags path out of default</a></h3>
+            <p class="so-by"><b>Eyasu Zekarias</b></p>
+          </div>
+          <a class="so-go" href="https://capitalethiopia.com/2026/10/17/ethiopia-nears-eurobond-exchange-deal-as-fitch-flags-path-out-of-default/" target="_blank" rel="noopener noreferrer" aria-label="Read at Capital Ethiopia">&#8599;</a>
+        </li>
+        <li class="so-i" data-type="Development bank loan" data-region="Americas" data-nation="Venezuela">
+          <time class="so-date" datetime="2026-10-16"><b>16</b><span>Oct 2026</span></time>
+          <div class="so-b">
+            <span class="so-src">Via Bloomberg L&#237;nea</span><span class="so-type">Development bank loan</span><span class="so-where">Venezuela</span>
+            <h3><a href="https://www.bloomberglinea.com/latinoamerica/venezuela/banco-mundial-contempla-posibles-prestamos-de-hasta-us5000-millones-para-venezuela/" target="_blank" rel="noopener noreferrer">Banco Mundial contempla posibles pr&#233;stamos de hasta US$5.000 millones para Venezuela</a></h3>
+            <p class="so-by"><b>Jorgelina Do Rosario</b> and <b>Manuela Tob&#237;as</b></p>
+          </div>
+          <a class="so-go" href="https://www.bloomberglinea.com/latinoamerica/venezuela/banco-mundial-contempla-posibles-prestamos-de-hasta-us5000-millones-para-venezuela/" target="_blank" rel="noopener noreferrer" aria-label="Read at Bloomberg L&#237;nea">&#8599;</a>
+        </li>
+        <li class="so-i" data-type="Liability management" data-region="Europe" data-nation="Ukraine">
+          <time class="so-date" datetime="2026-10-16"><b>16</b><span>Oct 2026</span></time>
+          <div class="so-b">
+            <span class="so-src">Via LIGA.net</span><span class="so-type">Liability management</span><span class="so-where">Ukraine</span>
+            <h3><a href="https://biz.liga.net/en/energy/news/nec-ukrenergo-has-completed-the-restructuring-of-its-green-bonds" target="_blank" rel="noopener noreferrer">NEC &#8216;Ukrenergo&#8217; has completed the restructuring of its green bonds</a></h3>
+            <p class="so-by"><b>Vira Kasiyan</b></p>
+          </div>
+          <a class="so-go" href="https://biz.liga.net/en/energy/news/nec-ukrenergo-has-completed-the-restructuring-of-its-green-bonds" target="_blank" rel="noopener noreferrer" aria-label="Read at LIGA.net">&#8599;</a>
+        </li>
+        <li class="so-i" data-type="Currency swap" data-region="Asia-Pacific" data-nation="Maldives">
+          <time class="so-date" datetime="2026-10-16"><b>16</b><span>Oct 2026</span></time>
+          <div class="so-b">
+            <span class="so-src">Via ANI</span><span class="so-type">Currency swap</span><span class="so-where">Maldives</span>
+            <h3><a href="https://aninews.in/news/world/asia/india-approves-rollover-of-rs-3000-crore-currency-swap-facility-with-maldives20261016221631/" target="_blank" rel="noopener noreferrer">India approves rollover of Rs 3,000 crore currency swap facility with Maldives</a></h3>
+            <p class="so-by"><b>ANI</b></p>
+          </div>
+          <a class="so-go" href="https://aninews.in/news/world/asia/india-approves-rollover-of-rs-3000-crore-currency-swap-facility-with-maldives20261016221631/" target="_blank" rel="noopener noreferrer" aria-label="Read at ANI">&#8599;</a>
+        </li>
+        <li class="so-i" data-type="Parametric insurance" data-region="Americas" data-nation="Panama">
+          <time class="so-date" datetime="2026-10-16"><b>16</b><span>Oct 2026</span></time>
+          <div class="so-b">
+            <span class="so-src">Via Artemis</span><span class="so-type">Parametric insurance</span><span class="so-where">Panama</span>
+            <h3><a href="https://www.artemis.bm/news/ccrif-to-pay-us-17-4m-to-panama-after-m7-7-quake-triggers-parametric-coverage/" target="_blank" rel="noopener noreferrer">CCRIF to pay US $17.4m to Panama after M7.7 quake triggers parametric coverage</a></h3>
+            <p class="so-by"><b>Steve Evans</b></p>
+          </div>
+          <a class="so-go" href="https://www.artemis.bm/news/ccrif-to-pay-us-17-4m-to-panama-after-m7-7-quake-triggers-parametric-coverage/" target="_blank" rel="noopener noreferrer" aria-label="Read at Artemis">&#8599;</a>
+        </li>
+        <li class="so-i" data-type="Local-currency bond" data-region="Africa" data-nation="Senegal">
+          <time class="so-date" datetime="2026-10-16"><b>16</b><span>Oct 2026</span></time>
+          <div class="so-b">
+            <span class="so-src">Via CNBC Africa</span><span class="so-type">Local-currency bond</span><span class="so-where">Senegal</span>
+            <h3><a href="https://www.cnbcafrica.com/2026/senegal-raises-582-million-via-regional-debt-market-in-second-bond-issue-this-year" target="_blank" rel="noopener noreferrer">Senegal raises $582 million via regional debt market in second bond issue this year</a></h3>
+            <p class="so-by"><b>Ayen Deng Bior</b>, Reuters</p>
+          </div>
+          <a class="so-go" href="https://www.cnbcafrica.com/2026/senegal-raises-582-million-via-regional-debt-market-in-second-bond-issue-this-year" target="_blank" rel="noopener noreferrer" aria-label="Read at CNBC Africa">&#8599;</a>
+        </li>
+        <li class="so-i" data-type="Social bond" data-region="Africa" data-nation="">
+          <time class="so-date" datetime="2026-10-15"><b>15</b><span>Oct 2026</span></time>
+          <div class="so-b">
+            <span class="so-src">Via AfDB</span><span class="so-type">Social bond</span><span class="so-where">Africa</span>
+            <h3><a href="https://www.afdb.org/en/news-and-events/press-releases/african-development-bank-launches-new-eur-1-97565" target="_blank" rel="noopener noreferrer">The African Development Bank launches a new EUR 1 billion 3.500% 5-year Social Benchmark due October 2031</a></h3>
+            <p class="so-by"><b>Press release</b></p>
+          </div>
+          <a class="so-go" href="https://www.afdb.org/en/news-and-events/press-releases/african-development-bank-launches-new-eur-1-97565" target="_blank" rel="noopener noreferrer" aria-label="Read at AfDB">&#8599;</a>
+        </li>
+        <li class="so-i" data-type="Guarantee" data-region="Africa" data-nation="Djibouti">
+          <time class="so-date" datetime="2026-10-15"><b>15</b><span>Oct 2026</span></time>
+          <div class="so-b">
+            <span class="so-src">Via AfDB</span><span class="so-type">Guarantee</span><span class="so-where">Djibouti</span>
+            <h3><a href="https://www.afdb.org/en/news-and-events/press-releases/african-development-bank-extends-8-million-97562" target="_blank" rel="noopener noreferrer">African Development Bank extends an $8 million guarantee to Exim Bank Djibouti to support businesses</a></h3>
+            <p class="so-by"><b>Press release</b></p>
+          </div>
+          <a class="so-go" href="https://www.afdb.org/en/news-and-events/press-releases/african-development-bank-extends-8-million-97562" target="_blank" rel="noopener noreferrer" aria-label="Read at AfDB">&#8599;</a>
+        </li>
+        <li class="so-i" data-type="Development bank loan" data-region="Asia-Pacific" data-nation="Thailand">
+          <time class="so-date" datetime="2026-10-15"><b>15</b><span>Oct 2026</span></time>
+          <div class="so-b">
+            <span class="so-src">Via ADB</span><span class="so-type">Development bank loan</span><span class="so-where">Thailand</span>
+            <h3><a href="https://www.adb.org/news/adb-president-meets-thai-finance-minister-marks-212-million-adb-financing-hospitals-project" target="_blank" rel="noopener noreferrer">ADB President Meets Thai Finance Minister, Marks $212 Million in ADB Financing for Hospitals Project</a></h3>
+            <p class="so-by"><b>Press release</b></p>
+          </div>
+          <a class="so-go" href="https://www.adb.org/news/adb-president-meets-thai-finance-minister-marks-212-million-adb-financing-hospitals-project" target="_blank" rel="noopener noreferrer" aria-label="Read at ADB">&#8599;</a>
+        </li>
+        <li class="so-i" data-type="Eurobond" data-region="Africa" data-nation="Gabon">
+          <time class="so-date" datetime="2026-10-15"><b>15</b><span>Oct 2026</span></time>
+          <div class="so-b">
+            <span class="so-src">Via Ecofin Agency</span><span class="so-type">Eurobond</span><span class="so-where">Gabon</span>
+            <h3><a href="https://www.ecofinagency.com/news-finances/1510-59786-gabon-raises-580-million-in-eurobond-sale-taking-2026-total-to-1-5-billion" target="_blank" rel="noopener noreferrer">Gabon Raises $580 Million in Eurobond Sale, Taking 2026 Total to $1.5 Billion</a></h3>
+            <p class="so-by"><b>Fiacre E. Kakpo</b></p>
+          </div>
+          <a class="so-go" href="https://www.ecofinagency.com/news-finances/1510-59786-gabon-raises-580-million-in-eurobond-sale-taking-2026-total-to-1-5-billion" target="_blank" rel="noopener noreferrer" aria-label="Read at Ecofin Agency">&#8599;</a>
+        </li>
+        <li class="so-i" data-type="Development bank loan" data-region="Americas" data-nation="Argentina">
+          <time class="so-date" datetime="2026-10-14"><b>14</b><span>Oct 2026</span></time>
+          <div class="so-b">
+            <span class="so-src">Via The Rio Times</span><span class="so-type">Development bank loan</span><span class="so-where">Argentina</span>
+            <h3><a href="https://www.riotimesonline.com/argentina-800-million-in-loans-idb-2026/" target="_blank" rel="noopener noreferrer">Argentina Lines Up US$800 Million in Loans</a></h3>
+            <p class="so-by"><b>Rocco Caldero</b></p>
+          </div>
+          <a class="so-go" href="https://www.riotimesonline.com/argentina-800-million-in-loans-idb-2026/" target="_blank" rel="noopener noreferrer" aria-label="Read at The Rio Times">&#8599;</a>
+        </li>
+        <li class="so-i" data-type="EU loan" data-region="Europe" data-nation="Ukraine">
+          <time class="so-date" datetime="2026-10-14"><b>14</b><span>Oct 2026</span></time>
+          <div class="so-b">
+            <span class="so-src">Via EEAS</span><span class="so-type">EU loan</span><span class="so-where">Ukraine</span>
+            <h3><a href="https://www.eeas.europa.eu/delegations/ukraine/commission-disburses-eur286-billion-ukraine-drones-missiles-and-urgent-battlefield-needs_en" target="_blank" rel="noopener noreferrer">Commission disburses &#8364;2.86 billion to Ukraine for drones, missiles and urgent battlefield needs</a></h3>
+            <p class="so-by"><b>Press release</b></p>
+          </div>
+          <a class="so-go" href="https://www.eeas.europa.eu/delegations/ukraine/commission-disburses-eur286-billion-ukraine-drones-missiles-and-urgent-battlefield-needs_en" target="_blank" rel="noopener noreferrer" aria-label="Read at EEAS">&#8599;</a>
+        </li>
+        <li class="so-i" data-type="Sukuk" data-region="Asia-Pacific" data-nation="Malaysia">
+          <time class="so-date" datetime="2026-10-14"><b>14</b><span>Oct 2026</span></time>
+          <div class="so-b">
+            <span class="so-src">Via Environmental Finance</span><span class="so-type">Sukuk</span><span class="so-where">Malaysia</span>
+            <h3><a href="https://www.environmental-finance.com/content/news/microfinance-in-focus-with-pioneering-malaysian-social-sukuk.html" target="_blank" rel="noopener noreferrer">Microfinance in focus with pioneering Malaysian social sukuk</a></h3>
+            <p class="so-by"><b>Ahren Lester</b></p>
+          </div>
+          <a class="so-go" href="https://www.environmental-finance.com/content/news/microfinance-in-focus-with-pioneering-malaysian-social-sukuk.html" target="_blank" rel="noopener noreferrer" aria-label="Read at Environmental Finance">&#8599;</a>
+        </li>
+        <li class="so-i" data-type="Development bank grant" data-region="Asia-Pacific" data-nation="">
+          <time class="so-date" datetime="2026-10-12"><b>12</b><span>Oct 2026</span></time>
+          <div class="so-b">
+            <span class="so-src">Via ADB</span><span class="so-type">Development bank grant</span><span class="so-where">The Pacific</span>
+            <h3><a href="https://www.adb.org/news/amid-middle-east-crisis-adb-supports-energy-security-pacific-40-1-million" target="_blank" rel="noopener noreferrer">Amid Middle East Crisis, ADB Supports Energy Security in the Pacific with $40.1 Million</a></h3>
+            <p class="so-by"><b>Press release</b></p>
+          </div>
+          <a class="so-go" href="https://www.adb.org/news/amid-middle-east-crisis-adb-supports-energy-security-pacific-40-1-million" target="_blank" rel="noopener noreferrer" aria-label="Read at ADB">&#8599;</a>
+        </li>
+        <li class="so-i" data-type="Sukuk" data-region="Middle East" data-nation="Jordan">
+          <time class="so-date" datetime="2026-10-12"><b>12</b><span>Oct 2026</span></time>
+          <div class="so-b">
+            <span class="so-src">Via Arab News</span><span class="so-type">Sukuk</span><span class="so-where">Jordan</span>
+            <h3><a href="https://www.arabnews.com/finance/jordan-approves-landmark-564m-sukuk-for-greater-amman-municipality-3005888" target="_blank" rel="noopener noreferrer">Jordan approves &#8216;landmark&#8217; $564m sukuk for Greater Amman Municipality</a></h3>
+            <p class="so-by"><b>Arab News</b></p>
+          </div>
+          <a class="so-go" href="https://www.arabnews.com/finance/jordan-approves-landmark-564m-sukuk-for-greater-amman-municipality-3005888" target="_blank" rel="noopener noreferrer" aria-label="Read at Arab News">&#8599;</a>
+        </li>
+        <li class="so-i" data-type="Guarantee" data-region="Europe" data-nation="Ireland">
+          <time class="so-date" datetime="2026-10-12"><b>12</b><span>Oct 2026</span></time>
+          <div class="so-b">
+            <span class="so-src">Via EIB</span><span class="so-type">Guarantee</span><span class="so-where">Ireland</span>
+            <h3><a href="https://www.eib.org/en/press/all/2026-329-eib-group-partnership-unlocks-eur1-billion-to-help-irish-businesses-and-farmers-invest-grow-and-create-jobs" target="_blank" rel="noopener noreferrer">EIB Group partnership unlocks &#8364;1 billion to help Irish businesses and farmers invest, grow and create jobs</a></h3>
+            <p class="so-by"><b>Press release</b></p>
+          </div>
+          <a class="so-go" href="https://www.eib.org/en/press/all/2026-329-eib-group-partnership-unlocks-eur1-billion-to-help-irish-businesses-and-farmers-invest-grow-and-create-jobs" target="_blank" rel="noopener noreferrer" aria-label="Read at EIB">&#8599;</a>
+        </li>
+        <li class="so-i" data-type="Catastrophe bond" data-region="Americas" data-nation="Mexico">
+          <time class="so-date" datetime="2026-10-12"><b>12</b><span>Oct 2026</span></time>
+          <div class="so-b">
+            <span class="so-src">Via Artemis</span><span class="so-type">Catastrophe bond</span><span class="so-where">Mexico</span>
+            <h3><a href="https://www.artemis.bm/news/hurricane-simon-track-remained-outside-of-mexico-cat-bond-parametric-trigger-zones-loconte/" target="_blank" rel="noopener noreferrer">Hurricane Simon track remained outside of Mexico cat bond parametric trigger zones: Loconte</a></h3>
+            <p class="so-by"><b>Steve Evans</b></p>
+          </div>
+          <a class="so-go" href="https://www.artemis.bm/news/hurricane-simon-track-remained-outside-of-mexico-cat-bond-parametric-trigger-zones-loconte/" target="_blank" rel="noopener noreferrer" aria-label="Read at Artemis">&#8599;</a>
+        </li>
+        <li class="so-i" data-type="Contingent credit" data-region="Americas" data-nation="Panama">
+          <time class="so-date" datetime="2026-10-10"><b>10</b><span>Oct 2026</span></time>
+          <div class="so-b">
+            <span class="so-src">Via IDB</span><span class="so-type">Contingent credit</span><span class="so-where">Panama</span>
+            <h3><a href="https://www.iadb.org/en/news/panama-can-access-300-million-financing-and-receive-500000-grant-idb-earthquake-response" target="_blank" rel="noopener noreferrer">Panama Can Access up to $300 Million in Financing and Receive $500,000 Grant from IDB for Earthquake Response</a></h3>
+            <p class="so-by"><b>Press release</b></p>
+          </div>
+          <a class="so-go" href="https://www.iadb.org/en/news/panama-can-access-300-million-financing-and-receive-500000-grant-idb-earthquake-response" target="_blank" rel="noopener noreferrer" aria-label="Read at IDB">&#8599;</a>
+        </li>
+        <li class="so-i" data-type="Debt-for-development swap" data-region="Americas" data-nation="Barbados">
+          <time class="so-date" datetime="2026-10-09"><b>9</b><span>Oct 2026</span></time>
+          <div class="so-b">
+            <span class="so-src">Via Barbados Today</span><span class="so-type">Debt-for-development swap</span><span class="so-where">Barbados</span>
+            <h3><a href="https://barbadostoday.bb/2026/10/09/1-2bn-debt-swap-by-january-1-to-fund-healthcare-fight-childhood-obesity/" target="_blank" rel="noopener noreferrer">$1.2bn debt swap by January 1 to fund healthcare, fight childhood obesity</a></h3>
+            <p class="so-by"><b>Emmanuel Joseph</b></p>
+          </div>
+          <a class="so-go" href="https://barbadostoday.bb/2026/10/09/1-2bn-debt-swap-by-january-1-to-fund-healthcare-fight-childhood-obesity/" target="_blank" rel="noopener noreferrer" aria-label="Read at Barbados Today">&#8599;</a>
+        </li>
+        <li class="so-i" data-type="Green bond" data-region="Americas" data-nation="Canada">
+          <time class="so-date" datetime="2026-10-09"><b>9</b><span>Oct 2026</span></time>
+          <div class="so-b">
+            <span class="so-src">Via Department of Finance Canada</span><span class="so-type">Green bond</span><span class="so-where">Canada</span>
+            <h3><a href="https://www.canada.ca/en/department-finance/news/2026/10/canada-successfully-prices-seventh-green-bond-issuance-raising-2-billion.html" target="_blank" rel="noopener noreferrer">Canada successfully prices seventh green bond issuance, raising $2 billion</a></h3>
+            <p class="so-by"><b>Press release</b></p>
+          </div>
+          <a class="so-go" href="https://www.canada.ca/en/department-finance/news/2026/10/canada-successfully-prices-seventh-green-bond-issuance-raising-2-billion.html" target="_blank" rel="noopener noreferrer" aria-label="Read at Department of Finance Canada">&#8599;</a>
+        </li>
+        <li class="so-i" data-type="IMF programme" data-region="Africa" data-nation="Zambia">
+          <time class="so-date" datetime="2026-10-09"><b>9</b><span>Oct 2026</span></time>
+          <div class="so-b">
+            <span class="so-src">Via CNBC Africa</span><span class="so-type">IMF programme</span><span class="so-where">Zambia</span>
+            <h3><a href="https://www.cnbcafrica.com/2026/imf-reaches-staff-level-agreement-with-zambia-on-new-credit-facility" target="_blank" rel="noopener noreferrer">IMF reaches staff-level agreement with Zambia on new credit facility</a></h3>
+            <p class="so-by"><b>Gnaneshwar Rajan</b> and <b>Sfundo Parakozov</b>, Reuters</p>
+          </div>
+          <a class="so-go" href="https://www.cnbcafrica.com/2026/imf-reaches-staff-level-agreement-with-zambia-on-new-credit-facility" target="_blank" rel="noopener noreferrer" aria-label="Read at CNBC Africa">&#8599;</a>
+        </li>
+        <li class="so-i" data-type="Catastrophe bond" data-region="Asia-Pacific" data-nation="Nepal">
+          <time class="so-date" datetime="2026-10-09"><b>9</b><span>Oct 2026</span></time>
+          <div class="so-b">
+            <span class="so-src">Via Artemis</span><span class="so-type">Catastrophe bond</span><span class="so-where">Nepal</span>
+            <h3><a href="https://www.artemis.bm/news/nepal-government-approves-world-bank-earthquake-cat-bond-mandate-agreement/" target="_blank" rel="noopener noreferrer">Nepal government approves World Bank earthquake cat bond mandate agreement</a></h3>
+            <p class="so-by"><b>Jack Willard</b></p>
+          </div>
+          <a class="so-go" href="https://www.artemis.bm/news/nepal-government-approves-world-bank-earthquake-cat-bond-mandate-agreement/" target="_blank" rel="noopener noreferrer" aria-label="Read at Artemis">&#8599;</a>
+        </li>
+        <li class="so-i" data-type="Liability management" data-region="Americas" data-nation="Suriname">
+          <time class="so-date" datetime="2026-10-08"><b>8</b><span>Oct 2026</span></time>
+          <div class="so-b">
+            <span class="so-src">Via IDB</span><span class="so-type">Liability management</span><span class="so-where">Suriname</span>
+            <h3><a href="https://www.iadb.org/en/news/suriname-completes-landmark-150-million-external-debt-conversion-local-currency-loan" target="_blank" rel="noopener noreferrer">Suriname Completes Landmark $150 Million External Debt Conversion Into Local Currency Loan</a></h3>
+            <p class="so-by"><b>Press release</b></p>
+          </div>
+          <a class="so-go" href="https://www.iadb.org/en/news/suriname-completes-landmark-150-million-external-debt-conversion-local-currency-loan" target="_blank" rel="noopener noreferrer" aria-label="Read at IDB">&#8599;</a>
+        </li>
+        <li class="so-i" data-type="IMF programme" data-region="Africa" data-nation="Niger">
+          <time class="so-date" datetime="2026-10-08"><b>8</b><span>Oct 2026</span></time>
+          <div class="so-b">
+            <span class="so-src">Via IMF</span><span class="so-type">IMF programme</span><span class="so-where">Niger</span>
+            <h3><a href="https://www.imf.org/en/news/articles/2026/10/08/pr26328-imf-staff-completes-the-2026-iv-consultation-and-reaches-staff-level-agreement-with-niger" target="_blank" rel="noopener noreferrer">IMF Staff completes the 2026 Article IV Consultation and reaches Staff-Level Agreement with Niger on the Tenth Review under the Extended Credit Facility and a new 38-month Extended Credit Facility Request</a></h3>
+            <p class="so-by"><b>Press release</b></p>
+          </div>
+          <a class="so-go" href="https://www.imf.org/en/news/articles/2026/10/08/pr26328-imf-staff-completes-the-2026-iv-consultation-and-reaches-staff-level-agreement-with-niger" target="_blank" rel="noopener noreferrer" aria-label="Read at IMF">&#8599;</a>
+        </li>
+        <li class="so-i" data-type="Sustainability bond" data-region="Africa" data-nation="">
+          <time class="so-date" datetime="2026-10-08"><b>8</b><span>Oct 2026</span></time>
+          <div class="so-b">
+            <span class="so-src">Via Nigeria Housing Market</span><span class="so-type">Sustainability bond</span><span class="so-where">West Africa</span>
+            <h3><a href="https://www.nigeriahousingmarket.com/news/shafdb-fcfa60bn-sustainable-bond-affordable-housing-west-africa" target="_blank" rel="noopener noreferrer">ShafDB Launches FCFA60bn Bond to Finance Affordable Housing Across West Africa</a></h3>
+            <p class="so-by"><b>Ayomide Fiyinfunoluwa</b></p>
+          </div>
+          <a class="so-go" href="https://www.nigeriahousingmarket.com/news/shafdb-fcfa60bn-sustainable-bond-affordable-housing-west-africa" target="_blank" rel="noopener noreferrer" aria-label="Read at Nigeria Housing Market">&#8599;</a>
+        </li>
+        <li class="so-i" data-type="Eurobond" data-region="Africa" data-nation="Cameroon">
+          <time class="so-date" datetime="2026-10-07"><b>7</b><span>Oct 2026</span></time>
+          <div class="so-b">
+            <span class="so-src">Via Ecofin Agency</span><span class="so-type">Eurobond</span><span class="so-where">Cameroon</span>
+            <h3><a href="https://www.ecofinagency.com/news-finances/0710-59519-cameroon-plans-to-raise-300-million-through-existing-2033-eurobond" target="_blank" rel="noopener noreferrer">Cameroon Plans to Raise $300 Million Through Existing 2033 Eurobond</a></h3>
+            <p class="so-by"><b>Chamberline Moko</b></p>
+          </div>
+          <a class="so-go" href="https://www.ecofinagency.com/news-finances/0710-59519-cameroon-plans-to-raise-300-million-through-existing-2033-eurobond" target="_blank" rel="noopener noreferrer" aria-label="Read at Ecofin Agency">&#8599;</a>
+        </li>
+        <li class="so-i" data-type="Pooled bond" data-region="Americas" data-nation="">
+          <time class="so-date" datetime="2026-10-07"><b>7</b><span>Oct 2026</span></time>
+          <div class="so-b">
+            <span class="so-src">Via Barbados Today</span><span class="so-type">Pooled bond</span><span class="so-where">The Caribbean</span>
+            <h3><a href="https://barbadostoday.bb/2026/10/07/new-regional-sustainability-bond-targets-us250m/" target="_blank" rel="noopener noreferrer">New regional sustainability bond targets US$250m</a></h3>
+            <p class="so-by"><b>Lourianne Graham</b></p>
+          </div>
+          <a class="so-go" href="https://barbadostoday.bb/2026/10/07/new-regional-sustainability-bond-targets-us250m/" target="_blank" rel="noopener noreferrer" aria-label="Read at Barbados Today">&#8599;</a>
+        </li>
+        <li class="so-i" data-type="Local-currency bond" data-region="Africa" data-nation="Cote d Ivoire">
+          <time class="so-date" datetime="2026-10-06"><b>6</b><span>Oct 2026</span></time>
+          <div class="so-b">
+            <span class="so-src">Via Daba Finance</span><span class="so-type">Local-currency bond</span><span class="so-where">C&#244;te d&#8217;Ivoire</span>
+            <h3><a href="https://dabafinance.com/en/news/ivory-coast-issues-a-20-year-bond-a-first-for-the-region-2026-10-06" target="_blank" rel="noopener noreferrer">Ivory Coast Issues a 20-Year Bond, a First for the Region</a></h3>
+            <p class="so-by"><b>Daba Finance</b></p>
+          </div>
+          <a class="so-go" href="https://dabafinance.com/en/news/ivory-coast-issues-a-20-year-bond-a-first-for-the-region-2026-10-06" target="_blank" rel="noopener noreferrer" aria-label="Read at Daba Finance">&#8599;</a>
+        </li>
+        <li class="so-i" data-type="IMF programme" data-region="Africa" data-nation="Kenya">
+          <time class="so-date" datetime="2026-10-04"><b>4</b><span>Oct 2026</span></time>
+          <div class="so-b">
+            <span class="so-src">Via Business Daily</span><span class="so-type">IMF programme</span><span class="so-where">Kenya</span>
+            <h3><a href="https://www.businessdailyafrica.com/bd/economy/why-kenya-is-unlikely-to-ink-a-new-imf-deal-before-2027-polls-5619716" target="_blank" rel="noopener noreferrer">Why Kenya is unlikely to ink a new IMF deal before 2027 polls</a></h3>
+            <p class="so-by"><b>Kepha Muiruri</b></p>
+          </div>
+          <a class="so-go" href="https://www.businessdailyafrica.com/bd/economy/why-kenya-is-unlikely-to-ink-a-new-imf-deal-before-2027-polls-5619716" target="_blank" rel="noopener noreferrer" aria-label="Read at Business Daily">&#8599;</a>
+        </li>
+        <li class="so-i" data-type="Development bank loan" data-region="Africa" data-nation="Kenya">
+          <time class="so-date" datetime="2026-10-02"><b>2</b><span>Oct 2026</span></time>
+          <div class="so-b">
+            <span class="so-src">Via Kenyans.co.ke</span><span class="so-type">Development bank loan</span><span class="so-where">Kenya</span>
+            <h3><a href="https://www.kenyans.co.ke/news/127530-kenya-eyes-ksh127-billion-world-bank-afdb-loan-amid-imf-setback" target="_blank" rel="noopener noreferrer">Kenya Eyes Ksh127 Billion World Bank, AfDB Loan Amid IMF Setback</a></h3>
+            <p class="so-by"><b>Timothy Cerullo</b></p>
+          </div>
+          <a class="so-go" href="https://www.kenyans.co.ke/news/127530-kenya-eyes-ksh127-billion-world-bank-afdb-loan-amid-imf-setback" target="_blank" rel="noopener noreferrer" aria-label="Read at Kenyans.co.ke">&#8599;</a>
+        </li>
+        <li class="so-i" data-type="Catastrophe bond" data-region="Americas" data-nation="Jamaica">
+          <time class="so-date" datetime="2026-05-18"><b>18</b><span>May 2026</span></time>
+          <div class="so-b">
+            <span class="so-src">Via World Bank</span><span class="so-type">Catastrophe bond</span><span class="so-where">Jamaica</span>
+            <h3><a href="https://www.worldbank.org/en/news/press-release/2026/05/18/world-bank-prices-catastrophe-bond-for-disaster-protection-for-jamaica" target="_blank" rel="noopener noreferrer">World Bank Prices Catastrophe Bond for Disaster Protection for Jamaica</a></h3>
+            <p class="so-by"><b>Press release</b></p>
+          </div>
+          <a class="so-go" href="https://www.worldbank.org/en/news/press-release/2026/05/18/world-bank-prices-catastrophe-bond-for-disaster-protection-for-jamaica" target="_blank" rel="noopener noreferrer" aria-label="Read at World Bank">&#8599;</a>
+        </li>
+        <li class="so-i" data-type="Catastrophe bond" data-region="Asia-Pacific" data-nation="Kyrgyz Republic;Tajikistan">
+          <time class="so-date" datetime="2026-04-24"><b>24</b><span>Apr 2026</span></time>
+          <div class="so-b">
+            <span class="so-src">Via Artemis</span><span class="so-type">Catastrophe bond</span><span class="so-where">Kyrgyz Republic &amp; Tajikistan</span>
+            <h3><a href="https://www.artemis.bm/news/adb-prices-first-cat-bonds-secures-160m-disaster-risk-finance-for-kyrgyz-republic-tajikistan/" target="_blank" rel="noopener noreferrer">ADB prices first cat bonds, secures $160m disaster risk finance for Kyrgyz Republic &amp; Tajikistan</a></h3>
+            <p class="so-by"><b>Steve Evans</b></p>
+          </div>
+          <a class="so-go" href="https://www.artemis.bm/news/adb-prices-first-cat-bonds-secures-160m-disaster-risk-finance-for-kyrgyz-republic-tajikistan/" target="_blank" rel="noopener noreferrer" aria-label="Read at Artemis">&#8599;</a>
+        </li>
+        <li class="so-i" data-type="Eurobond" data-region="Africa" data-nation="DR Congo">
+          <time class="so-date" datetime="2026-04-10"><b>10</b><span>Apr 2026</span></time>
+          <div class="so-b">
+            <span class="so-src">Via Semafor</span><span class="so-type">Eurobond</span><span class="so-where">DR Congo</span>
+            <h3><a href="https://www.semafor.com/article/04/10/2026/drc-raises-125b-from-debut-eurobond" target="_blank" rel="noopener noreferrer">DRC raises $1.25B from debut sovereign eurobond</a></h3>
+            <p class="so-by"><b>Ruben Nyanguila</b></p>
+          </div>
+          <a class="so-go" href="https://www.semafor.com/article/04/10/2026/drc-raises-125b-from-debut-eurobond" target="_blank" rel="noopener noreferrer" aria-label="Read at Semafor">&#8599;</a>
+        </li>
+        <li class="so-i" data-type="Debt-for-nature swap" data-region="Africa" data-nation="">
+          <time class="so-date" datetime="2026-03-23"><b>23</b><span>Mar 2026</span></time>
+          <div class="so-b">
+            <span class="so-src">Via CNBC Africa</span><span class="so-type">Debt-for-nature swap</span><span class="so-where">Africa</span>
+            <h3><a href="https://www.cnbcafrica.com/2026/trio-of-african-countries-eyeing-debt-for-nature-swaps-nature-conservancy-says" target="_blank" rel="noopener noreferrer">Trio of African countries eyeing debt-for-nature swaps, Nature Conservancy says</a></h3>
+            <p class="so-by"><b>Duncan Miriri</b>, Reuters</p>
+          </div>
+          <a class="so-go" href="https://www.cnbcafrica.com/2026/trio-of-african-countries-eyeing-debt-for-nature-swaps-nature-conservancy-says" target="_blank" rel="noopener noreferrer" aria-label="Read at CNBC Africa">&#8599;</a>
+        </li>
+      </ol>
+      <div class="so-more" id="soMore" hidden><button type="button" id="soMoreBtn">Show all 50 instruments</button></div>
+      <p class="so-empty" id="soEmpty" hidden>Nothing on the wire matches that.</p>
+      <p class="so-fine">Each headline opens the original at its publisher. Credit belongs to the writer. Covering all 195 nations.</p>
+    </div>
+  </section>
+
+  <section class="so-band so-close" aria-labelledby="so-close-h">
+    <div class="so-in">
+      <p class="so-eb">Nation by nation</p>
+      <h2 class="so-h2" id="so-close-h">Behind every headline, a blueprint</h2>
+      <p class="so-lead">What each nation holds, what its people are owed, and the capital that closes the distance.</p>
+      <div class="so-ctas">
+        <a class="so-btn" href="https://perfectnations.org/blueprints/">Explore the blueprints</a>
+        <a class="so-btn so-btn--line" href="https://perfectnations.org/design-studio/">Enter the Design Studio</a>
+        <a class="so-btn so-btn--line" href="https://perfectnations.org/contact/">Start a conversation</a>
+      </div>
+    </div>
+  </section>
+
+</div>
+<script>
+(function () {
+  var root = document.getElementById('pn-son');
+  if (!root || root.getAttribute('data-so') === '1') { return; }
+  root.setAttribute('data-so', '1');
+  var MONTHS = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+  var REGIONS = ['Africa','Americas','Asia-Pacific','Europe','Middle East'];
+  var DOT = String.fromCharCode(183), ELL = String.fromCharCode(8230), ARR = String.fromCharCode(8594), TIMES = String.fromCharCode(215);
+  var MARKS = new RegExp('[' + String.fromCharCode(768) + '-' + String.fromCharCode(879) + ']', 'g');
+  var phone = !!(window.matchMedia && window.matchMedia('(max-width: 640px)').matches);
+  var still = !!(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+  var LIMIT = phone ? 10 : 16;
+  function el(tag, cls, text) { var e = document.createElement(tag); if (cls) { e.className = cls; } if (text != null) { e.textContent = text; } return e; }
+  function longDate(iso) { var p = String(iso || '').slice(0, 10).split('-'); if (p.length !== 3 || !MONTHS[(+p[1]) - 1]) { return ''; } return (+p[2]) + ' ' + MONTHS[(+p[1]) - 1] + ' ' + p[0]; }
+  function txt(h) { try { return (new DOMParser().parseFromString(String(h || ''), 'text/html').body.textContent || '').replace(/\s+/g, ' ').trim(); } catch (e) { return ''; } }
+  function pad(n) { return n < 10 ? '0' + n : String(n); }
+  function norm(s) { return String(s || '').toLowerCase().replace(/_/g, '-').replace(/^\/+|\/+$/g, ''); }
+  function nrm(s) { return String(s).toLowerCase().normalize('NFD').replace(MARKS, '').replace(/[^a-z0-9]+/g, ' ').trim(); }
+  function safe(u) { return /^https:\/\//.test(String(u || '')); }
+  function isDate(d) { return /^\d{4}-\d{2}-\d{2}$/.test(String(d || '')); }
+
+  /* 0 THE PAGE FITS THE SCREEN: the bands are measured against the screen itself, so a theme
+     container that sits off centre can never push them sideways, on any phone. */
+  function bleed() {
+    root.style.marginLeft = ''; root.style.width = '';
+    var cw = document.documentElement.clientWidth, r = root.getBoundingClientRect();
+    var ml = parseFloat(window.getComputedStyle(root).marginLeft) || 0, left = r.left + (window.pageXOffset || 0);
+    root.style.width = cw + 'px';
+    if (Math.abs(left) > 0.5) { root.style.marginLeft = (ml - left) + 'px'; }
+  }
+  bleed();
+  var bt = 0;
+  window.addEventListener('resize', function () { clearTimeout(bt); bt = setTimeout(bleed, 120); });
+  window.addEventListener('load', bleed);
+  if (window.pageXOffset) { window.scrollTo(0, window.pageYOffset); }
+
+  /* the masthead carries today's date */
+  var ed = root.querySelector('.so-edition');
+  if (ed) { var now = new Date(); ed.textContent = 'Edition of ' + now.getDate() + ' ' + MONTHS[now.getMonth()] + ' ' + now.getFullYear(); }
+
+  /* ===== THE WIRE ===== */
+  var list = document.getElementById('soList');
+  var input = document.getElementById('soSearch'), clear = document.getElementById('soClear'), count = document.getElementById('soCount'),
+      empty = document.getElementById('soEmpty'), more = document.getElementById('soMore'), moreBtn = document.getElementById('soMoreBtn'),
+      regBox = document.getElementById('soRegions'), typeBox = document.getElementById('soFilters');
+  var wires = [], NATS = 0, TOTAL = 0, rv = false, io = null;
+  var state = { q: '', type: 'all', region: 'all', all: false };
+  function when(x) { var t = x.querySelector('time'); return t ? (t.getAttribute('datetime') || '') : ''; }
+
+  function wireLi(w) {
+    var li = el('li', 'so-i'), d = w.date.split('-');
+    li.setAttribute('data-type', w.type || ''); li.setAttribute('data-region', w.region || '');
+    li.setAttribute('data-nation', (w.nations || []).join(';'));
+    var tm = el('time', 'so-date'); tm.setAttribute('datetime', w.date);
+    tm.appendChild(el('b', '', String(+d[2]))); tm.appendChild(el('span', '', MONTHS[(+d[1]) - 1].slice(0, 3) + ' ' + d[0]));
+    var b = el('div', 'so-b');
+    b.appendChild(el('span', 'so-src', 'Via ' + (w.source || '')));
+    if (w.type) { b.appendChild(el('span', 'so-type', w.type)); }
+    if (w.where) { b.appendChild(el('span', 'so-where', w.where)); }
+    var h = el('h3'), a = el('a', '', w.title); a.href = w.url; a.target = '_blank'; a.rel = 'noopener noreferrer'; h.appendChild(a); b.appendChild(h);
+    var by = el('p', 'so-by'), names = (w.by && w.by.length) ? w.by : ['Press release'];
+    names.forEach(function (n, i) { if (i) { by.appendChild(document.createTextNode(' and ')); } by.appendChild(el('b', '', n)); });
+    if (w.agency) { by.appendChild(document.createTextNode(', ' + w.agency)); }
+    b.appendChild(by);
+    var go = el('a', 'so-go', String.fromCharCode(8599)); go.href = w.url; go.target = '_blank'; go.rel = 'noopener noreferrer'; go.setAttribute('aria-label', 'Read at ' + (w.source || 'the publisher'));
+    li.appendChild(tm); li.appendChild(b); li.appendChild(go);
+    return li;
+  }
+
+  function buttons(box, key, entries, cap) {
+    if (!box) { return; }
+    box.textContent = ''; box.classList.remove('is-open'); box.hidden = true;
+    if (entries.length < 2) { return; }
+    entries.unshift(['all', 'All', TOTAL]);
+    var extra = 0;
+    entries.forEach(function (e, i) {
+      var b = el('button', 'so-fb' + (e[0] === 'all' ? ' is-on' : '') + (cap && i > cap ? ' is-x' : ''));
+      if (cap && i > cap) { extra++; }
+      b.type = 'button'; b.setAttribute('data-k', e[0]); b.setAttribute('aria-pressed', e[0] === 'all' ? 'true' : 'false');
+      b.appendChild(document.createTextNode(e[1] + ' ')); b.appendChild(el('span', '', e[2]));
+      b.addEventListener('click', function () {
+        state[key] = e[0];
+        Array.prototype.forEach.call(box.querySelectorAll('.so-fb[data-k]'), function (x) { var on = x === b; x.classList.toggle('is-on', on); x.setAttribute('aria-pressed', on ? 'true' : 'false'); });
+        apply();
+      });
+      box.appendChild(b);
+    });
+    if (extra) {
+      /* laptops show the most used instruments first; the rest are one click away */
+      var t = el('button', 'so-fb so-fb--more', '+ ' + extra + ' more');
+      t.type = 'button'; t.setAttribute('aria-expanded', 'false');
+      t.addEventListener('click', function () { var open = box.classList.toggle('is-open'); t.textContent = open ? 'Fewer' : '+ ' + extra + ' more'; t.setAttribute('aria-expanded', open ? 'true' : 'false'); });
+      box.appendChild(t);
+    }
+    box.hidden = false;
+  }
+
+  function apply() {
+    var n = 0, cut = 0, open = state.all || state.q || state.type !== 'all' || state.region !== 'all';
+    wires.forEach(function (c) {
+      var ok = (!state.q || c._h.indexOf(state.q) > -1) && (state.type === 'all' || c.getAttribute('data-type') === state.type) && (state.region === 'all' || c.getAttribute('data-region') === state.region);
+      if (ok) { n++; }
+      var show = ok && (open || n <= LIMIT);
+      if (ok && !show) { cut++; }
+      c.hidden = !show;
+      if (show && rv && n > LIMIT) { c.classList.add('is-in'); }
+    });
+    if (empty) { empty.hidden = n !== 0; }
+    if (clear) { clear.hidden = !state.q; }
+    if (more) { more.hidden = cut === 0; }
+    if (count) { count.textContent = (n === TOTAL ? TOTAL + ' instruments on the wire' : n + ' of ' + TOTAL + ' instruments') + (n === TOTAL && NATS ? ' ' + DOT + ' ' + NATS + ' nations' : ''); }
+  }
+
+  function setupWire() {
+    if (!list) { return; }
+    wires = Array.prototype.slice.call(list.querySelectorAll('.so-i'));
+    wires.forEach(function (w, i) { w._i = i; });
+    wires.sort(function (a, b) { var x = when(a), y = when(b); return x < y ? 1 : (x > y ? -1 : a._i - b._i); });
+    var seen = {}, tally = {}, order = [], rt = {};
+    wires.forEach(function (w) {
+      list.appendChild(w);
+      /* a pasted block without its labels gets them from its attributes */
+      var src = w.querySelector('.so-src'), k = w.getAttribute('data-type'), nat = w.getAttribute('data-nation'), r = w.getAttribute('data-region');
+      if (src && k && !w.querySelector('.so-type')) { src.parentNode.insertBefore(el('span', 'so-type', k), src.nextSibling); }
+      if (src && nat && !w.querySelector('.so-where')) { var ty = w.querySelector('.so-type') || src; ty.parentNode.insertBefore(el('span', 'so-where', nat.split(';').join(' & ')), ty.nextSibling); }
+      String(nat || '').split(';').forEach(function (x) { x = x.replace(/^\s+|\s+$/g, '').toLowerCase(); if (x) { seen[x] = 1; } });
+      if (k) { if (!tally[k]) { tally[k] = 0; order.push(k); } tally[k]++; }
+      if (r) { rt[r] = (rt[r] || 0) + 1; }
+      w._h = nrm(w.textContent + ' ' + (nat || '') + ' ' + (r || ''));
+    });
+    NATS = Object.keys(seen).length; TOTAL = wires.length;
+    var cw = root.querySelector('[data-count-w]'), cn = root.querySelector('[data-count-n]');
+    if (cw) { cw.textContent = TOTAL; }
+    if (cn && NATS) { cn.textContent = NATS; }
+    state = { q: input ? nrm(input.value) : '', type: 'all', region: 'all', all: false };
+    order.sort(function (a, b) { return tally[b] - tally[a] || (a < b ? -1 : 1); });
+    buttons(regBox, 'region', REGIONS.filter(function (r) { return rt[r]; }).map(function (r) { return [r, r, rt[r]]; }));
+    buttons(typeBox, 'type', order.map(function (k) { return [k, k, tally[k]]; }), 11);
+    if (moreBtn) { moreBtn.textContent = 'Show all ' + TOTAL + ' instruments'; }
+    apply();
+    if (io) { wires.forEach(function (w) { if (!w.hidden && !w.classList.contains('is-in')) { io.observe(w); } else { w.classList.add('is-in'); } }); }
+  }
+  if (moreBtn) { moreBtn.addEventListener('click', function () { state.all = true; apply(); }); }
+  if (input) {
+    var tmr = 0;
+    input.addEventListener('input', function () { clearTimeout(tmr); tmr = setTimeout(function () { state.q = nrm(input.value); apply(); }, 110); });
+    input.addEventListener('keydown', function (e) { if (e.key === 'Escape' && input.value) { input.value = ''; state.q = ''; apply(); } });
+  }
+  if (clear) { clear.addEventListener('click', function () { input.value = ''; state.q = ''; apply(); input.focus(); }); }
+  /* a soft rise as the wire scrolls in */
+  if (!still && 'IntersectionObserver' in window) {
+    rv = true; root.classList.add('is-rv');
+    io = new IntersectionObserver(function (es) {
+      es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('is-in'); io.unobserve(e.target); } });
+    }, { rootMargin: '0px 0px -6% 0px' });
+  }
+  setupWire();
+
+  /* ===== DISPATCHES ===== */
+  var dl = document.getElementById('soDList');
+  var cards = [];
+  function dWhen(c) { var t = c.querySelector('time'); return t ? (t.getAttribute('datetime') || '') : ''; }
+  function inPage(c) { return !!(c._d && c._d.body && c._d.body.length); }
+
+  function dispCard(d) {
+    var li = el('li', 'so-dc'), t = el('div', 'so-dc__t'), k = el('div', 'so-dc__k');
+    li._d = d; li.setAttribute('data-slug', d.slug || ''); li.setAttribute('data-no', String(d.no));
+    k.appendChild(el('b', '', 'Dispatch No. ' + pad(d.no)));
+    if (d.kicker) { k.appendChild(el('span', '', d.kicker)); }
+    var tm = el('time', '', longDate(d.date)); tm.setAttribute('datetime', d.date); k.appendChild(tm);
+    t.appendChild(k);
+    var h = el('h3'), readable = safe(d.url) || (d.body && d.body.length);
+    if (readable) { var a = el('a', '', d.title); a.href = safe(d.url) ? d.url : '#dispatch-' + pad(d.no); h.appendChild(a); }
+    else { h.textContent = d.title; li.classList.add('is-press'); }
+    t.appendChild(h);
+    if (d.standfirst) { t.appendChild(el('p', 'so-dc__s', d.standfirst)); }
+    t.appendChild(el('span', 'so-dc__go', readable ? 'Read the dispatch' : 'In press'));
+    li.appendChild(t);
+    if (d.figure) { var f = el('p', 'so-dc__f'); f.appendChild(el('b', '', d.figure)); if (d.caption) { f.appendChild(el('span', '', d.caption)); } li.appendChild(f); }
+    return li;
+  }
+  function press(c) {
+    if (inPage(c) || c.classList.contains('is-press')) { return; }
+    c.classList.add('is-press');
+    var a = c.querySelector('h3 a'); if (a) { a.parentNode.replaceChild(document.createTextNode(a.textContent), a); }
+    var go = c.querySelector('.so-dc__go'); if (go) { go.textContent = 'In press'; }
+  }
+  function postCard(p, n) {
+    return dispCard({ no: n, slug: p.slug || '', title: txt(p.title && p.title.rendered), date: String(p.date || '').slice(0, 10), url: p.link,
+      standfirst: txt(p.excerpt && p.excerpt.rendered).replace(new RegExp('\\s*\\[' + ELL + '\\]\\s*$'), ELL) });
+  }
+  function arrange() {
+    if (!dl) { return; }
+    cards = Array.prototype.slice.call(dl.querySelectorAll('.so-dc'));
+    cards.sort(function (a, b) { var x = dWhen(a), y = dWhen(b); return x < y ? 1 : (x > y ? -1 : (+b.getAttribute('data-no') || 0) - (+a.getAttribute('data-no') || 0)); });
+    var lead = null;
+    cards.forEach(function (c) { c.classList.remove('so-dc--lead'); if (!lead && !c.classList.contains('is-press')) { lead = c; } });
+    if (lead) { lead.classList.add('so-dc--lead'); dl.appendChild(lead); }
+    cards.forEach(function (c) { if (c !== lead) { dl.appendChild(c); } });
+    /* on phones the rail opens on the newest published dispatch */
+    dl.scrollLeft = 0; requestAnimationFrame(function () { dl.scrollLeft = 0; });
+    var cd = root.querySelector('[data-count-d]'); if (cd) { cd.textContent = pad(cards.length); }
+    var live = cards.filter(function (c) { return !c.classList.contains('is-press'); }).length, note = document.getElementById('soDNote');
+    if (note) { note.textContent = cards.length + ' dispatches, newest first' + (live < cards.length ? '; ' + (cards.length - live) + ' in press.' : '.'); }
+    var sw = root.querySelector('.so-swipe'); if (sw) { sw.textContent = 'Swipe for all ' + cards.length + ' ' + ARR; }
+  }
+
+  /* THE TICKER: three dispatches and eight instruments, read from the page */
+  function refresh() {
+    var track = root.querySelector('.so-tick__track'); if (!track) { return; }
+    var items = [];
+    cards.forEach(function (c) {
+      if (items.length > 2 || c.classList.contains('is-press')) { return; }
+      var a = c.querySelector('h3 a'), k = c.querySelector('.so-dc__k b'); if (!a) { return; }
+      var x = el('a', '', (k ? k.textContent + ': ' : '') + a.textContent); x.href = a.getAttribute('href'); x.appendChild(el('span', '', 'Perfect Nations')); items.push(x);
+    });
+    wires.slice(0, 8).forEach(function (w) {
+      var a = w.querySelector('h3 a'), s = w.querySelector('.so-src'); if (!a) { return; }
+      var x = el('a', '', a.textContent); x.href = a.href; x.target = '_blank'; x.rel = 'noopener noreferrer';
+      x.appendChild(el('span', '', s ? s.textContent.replace(/^(Via|Reprinted from)\s+/, '') : '')); items.push(x);
+    });
+    if (!items.length) { return; }
+    track.textContent = '';
+    var dup = el('span', 'so-tick__dup'); dup.setAttribute('aria-hidden', 'true');
+    items.forEach(function (x) { track.appendChild(x); var y = x.cloneNode(true); y.setAttribute('tabindex', '-1'); dup.appendChild(y); });
+    track.appendChild(dup);
+    requestAnimationFrame(function () { var w = track.scrollWidth / 2; if (w > 0) { track.style.animationDuration = Math.max(40, Math.round(w / 55)) + 's'; } });
+  }
+  arrange(); refresh();
+
+  /* a slight lift and tilt under the pointer, on laptops only */
+  if (!still && dl && window.matchMedia && window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+    dl.addEventListener('pointermove', function (e) {
+      var c = e.target.closest ? e.target.closest('.so-dc') : null; if (!c) { return; }
+      var r = c.getBoundingClientRect(), x = (e.clientX - r.left) / r.width - 0.5, y = (e.clientY - r.top) / r.height - 0.5;
+      var s = c.classList.contains('so-dc--lead') ? 1.2 : 3.2;
+      c.style.setProperty('--ry', (x * s).toFixed(2) + 'deg'); c.style.setProperty('--rx', (-y * s).toFixed(2) + 'deg');
+    });
+    dl.addEventListener('pointerout', function (e) {
+      var c = e.target.closest ? e.target.closest('.so-dc') : null;
+      if (c && !c.contains(e.relatedTarget)) { c.style.setProperty('--ry', '0deg'); c.style.setProperty('--rx', '0deg'); }
+    });
+  }
+
+  /* THE READER: a dispatch kept in the data file opens here, on the page, as a sheet of paper */
+  var rd = null, rdLast = null;
+  function reader() {
+    if (rd) { return rd; }
+    rd = el('div'); rd.id = 'pn-son-rd'; rd.hidden = true;
+    rd.setAttribute('role', 'dialog'); rd.setAttribute('aria-modal', 'true'); rd.setAttribute('aria-labelledby', 'soRdH');
+    rd.innerHTML = '<div class="rd-bg"></div><article class="rd-sheet" tabindex="-1"><button type="button" class="rd-x" aria-label="Close the dispatch"></button><div class="rd-k"></div><h2 id="soRdH"></h2><p class="rd-s"></p><ul class="rd-figs"></ul><div class="rd-body"></div><p class="rd-kick"></p><p class="rd-src"></p><div class="rd-end"><button type="button" class="rd-back">Back to State of Nations</button></div></article>';
+    rd.querySelector('.rd-x').textContent = TIMES;
+    document.body.appendChild(rd);
+    rd.addEventListener('click', function (e) { if (e.target.classList.contains('rd-bg') || e.target.classList.contains('rd-x') || e.target.classList.contains('rd-back')) { shut(); } });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && rd && !rd.hidden) { shut(); } });
+    return rd;
+  }
+  function open(d, from) {
+    var r = reader(), q = function (s) { return r.querySelector(s); };
+    var k = q('.rd-k'); k.textContent = '';
+    k.appendChild(el('b', '', 'Dispatch No. ' + pad(d.no))); if (d.kicker) { k.appendChild(el('span', '', d.kicker)); } k.appendChild(el('span', '', longDate(d.date)));
+    q('#soRdH').textContent = d.title; q('.rd-s').textContent = d.standfirst || '';
+    var figs = q('.rd-figs'); figs.textContent = '';
+    (d.figures || []).forEach(function (f) { var li = el('li'); li.appendChild(el('b', '', f[0])); li.appendChild(el('span', '', f[1])); figs.appendChild(li); });
+    figs.hidden = !figs.children.length;
+    var body = q('.rd-body'); body.textContent = '';
+    (d.body || []).forEach(function (p) { p = String(p); body.appendChild(/^##\s/.test(p) ? el('h4', '', p.replace(/^##\s+/, '')) : el('p', '', p)); });
+    q('.rd-kick').textContent = d.kick || ''; q('.rd-kick').hidden = !d.kick;
+    var src = q('.rd-src'); src.textContent = '';
+    var ss = (d.sources || []).filter(function (s) { return s && safe(s.url); });
+    if (ss.length) {
+      src.appendChild(document.createTextNode('Sources: '));
+      ss.forEach(function (s, i) { if (i) { src.appendChild(document.createTextNode(' ' + DOT + ' ')); } var a = el('a', '', s.label || s.url); a.href = s.url; a.target = '_blank'; a.rel = 'noopener noreferrer'; src.appendChild(a); });
+    }
+    src.hidden = !ss.length;
+    rdLast = from || null;
+    r.hidden = false; document.documentElement.classList.add('pn-son-lock');
+    try { q('.rd-sheet').focus({ preventScroll: true }); } catch (e) { q('.rd-sheet').focus(); }
+    r.scrollTop = 0;
+    try { history.replaceState(null, '', '#dispatch-' + pad(d.no)); } catch (e) {}
+  }
+  function shut() {
+    if (!rd) { return; }
+    rd.hidden = true; document.documentElement.classList.remove('pn-son-lock');
+    try { history.replaceState(null, '', window.location.pathname + window.location.search); } catch (e) {}
+    if (rdLast && rdLast.focus) { rdLast.focus(); }
+  }
+  if (dl) {
+    dl.addEventListener('click', function (e) {
+      var a = e.target.closest ? e.target.closest('h3 a') : null, c = a ? a.closest('.so-dc') : null;
+      if (c && inPage(c) && a.getAttribute('href').charAt(0) === '#') { e.preventDefault(); open(c._d, a); }
+    });
+  }
+  function deepLink() {
+    var m = /^#dispatch-(\d+)$/.exec(window.location.hash || ''); if (!m) { return; }
+    cards.forEach(function (c) { if (inPage(c) && (+c.getAttribute('data-no')) === (+m[1])) { open(c._d, c.querySelector('h3 a')); } });
+  }
+
+  /* ===== THE LIVE RECORD =====
+     On every visit the page reads data/state-of-nations.json, which the Correspondent keeps in the
+     Perfect Nations GitHub repository. If the file cannot be read, the content above stays. */
+  var FEEDS = (root.getAttribute('data-feed') || '').split(' ').filter(function (x) { return safe(x); });
+  function getFeed(i) {
+    if (i >= FEEDS.length || !window.fetch) { return Promise.reject(new Error('no feed')); }
+    return fetch(FEEDS[i], { cache: 'no-store' }).then(function (r) { if (!r.ok) { throw new Error('feed ' + r.status); } return r.json(); })
+      .catch(function () { return getFeed(i + 1); });
+  }
+  function useFeed(d) {
+    if (!d || d.page !== 'state-of-nations') { return; }
+    var ws = (d.wire || []).filter(function (w) { return w && isDate(w.date) && w.title && safe(w.url) && MONTHS[(+w.date.slice(5, 7)) - 1]; });
+    if (ws.length && list) {
+      var frag = document.createDocumentFragment();
+      ws.forEach(function (w) { frag.appendChild(wireLi(w)); });
+      list.textContent = ''; list.appendChild(frag); setupWire();
+    }
+    var ds = (d.dispatches || []).filter(function (x) { return x && +x.no > 0 && x.title && isDate(x.date); });
+    if (ds.length && dl) {
+      var f2 = document.createDocumentFragment();
+      ds.forEach(function (x) { f2.appendChild(dispCard(x)); });
+      dl.textContent = ''; dl.appendChild(f2); arrange();
+    }
+    refresh();
+  }
+  function mergePosts(posts) {
+    if (!posts || typeof posts.length !== 'number' || !dl) { return; }
+    var bySlug = {}, seen = {}, top = 0;
+    cards.forEach(function (c) { bySlug[norm(c.getAttribute('data-slug'))] = c; top = Math.max(top, +c.getAttribute('data-no') || 0); });
+    var extra = [];
+    posts.forEach(function (p) {
+      var s = norm(p.slug), c = bySlug[s];
+      if (c) {
+        seen[s] = 1;
+        var a = c.querySelector('h3 a');
+        if (safe(p.link)) {
+          if (a) { a.href = p.link; }
+          else if (c.classList.contains('is-press')) {
+            var h = c.querySelector('h3'), na = el('a', '', h.textContent); na.href = p.link; h.textContent = ''; h.appendChild(na);
+            c.classList.remove('is-press'); var go = c.querySelector('.so-dc__go'); if (go) { go.textContent = 'Read the dispatch'; }
+          }
+        }
+      } else if (safe(p.link)) { extra.push(p); }
+    });
+    cards.forEach(function (c) { if (!seen[norm(c.getAttribute('data-slug'))]) { press(c); } });
+    extra.forEach(function (p) { top++; dl.appendChild(postCard(p, top)); });
+    arrange(); refresh();
+  }
+  var api = root.getAttribute('data-api') || '/wp-json/wp/v2/', slug = root.getAttribute('data-cat') || 'dispatches';
+  function getPosts() {
+    if (!window.fetch) { return Promise.reject(new Error('no fetch')); }
+    return fetch(api + 'categories?slug=' + encodeURIComponent(slug) + '&_fields=id', { credentials: 'same-origin' })
+      .then(function (r) { if (!r.ok) { throw new Error('categories ' + r.status); } return r.json(); })
+      .then(function (c) {
+        if (!c || !c.length) { throw new Error('no Dispatches category'); }
+        return fetch(api + 'posts?categories=' + c[0].id + '&per_page=100&orderby=date&order=asc&_fields=id,date,link,slug,title,excerpt', { credentials: 'same-origin' });
+      })
+      .then(function (r) { if (!r.ok) { throw new Error('posts ' + r.status); } return r.json(); });
+  }
+  var postsP = getPosts().catch(function (e) { if (window.console) { console.warn('[pn-son] dispatch posts not read:', e && e.message); } return null; });
+  getFeed(0)
+    .then(function (d) { try { useFeed(d); } catch (e) { if (window.console) { console.warn('[pn-son] live record not used:', e && e.message); } } })
+    .catch(function (e) { if (window.console) { console.warn('[pn-son] live record not read; the page shows its own copy:', e && e.message); } })
+    .then(function () { return postsP; })
+    .then(function (posts) { if (posts) { mergePosts(posts); } deepLink(); });
+})();
+</script>
+<script>
+(function () {
+  /* The masthead contour field: one WebGL shader, no library. It draws only while the masthead is on
+     screen and the tab is visible, at a capped resolution, and stays still for reduced motion.
+     Without WebGL the ocean gradient beneath it is the masthead. */
+  var root = document.getElementById('pn-son');
+  var hero = root && root.querySelector('.so-hero'), cv = root && root.querySelector('.so-gl');
+  if (!hero || !cv || cv.getAttribute('data-ready') === '1') { return; }
+  cv.setAttribute('data-ready', '1');
+  var gl = null;
+  try { gl = cv.getContext('webgl', { alpha: false, antialias: false, depth: false, stencil: false, powerPreference: 'low-power' }) || cv.getContext('experimental-webgl'); } catch (e) { gl = null; }
+  if (!gl) { return; }
+  var VS = 'attribute vec2 p;void main(){gl_Position=vec4(p,0.0,1.0);}';
+  var FS = [
+    'precision mediump float;',
+    'uniform vec2 r;uniform float t;uniform vec2 m;uniform float a;',
+    'float h(vec2 p){return fract(sin(dot(p,vec2(127.1,311.7)))*43758.5453);}',
+    'float n(vec2 p){vec2 i=floor(p),f=fract(p);vec2 u=f*f*(3.0-2.0*f);',
+    ' return mix(mix(h(i),h(i+vec2(1.0,0.0)),u.x),mix(h(i+vec2(0.0,1.0)),h(i+vec2(1.0,1.0)),u.x),u.y);}',
+    'float fb(vec2 p){float v=0.0,w=0.5;for(int i=0;i<5;i++){v+=w*n(p);p=p*2.02+vec2(3.1,1.7);w*=0.5;}return v;}',
+    'void main(){',
+    ' vec2 s=gl_FragCoord.xy/r;vec2 q=gl_FragCoord.xy/r.y*1.25;',
+    ' float w=fb(q+vec2(t*0.016,-t*0.010));',
+    ' float f=fb(q*1.08+vec2(w*1.7,w*0.9)+vec2(-t*0.011,t*0.018));',
+    ' vec2 d=(s-m)*vec2(r.x/r.y,1.0);float g=exp(-dot(d,d)*7.0);',
+    ' f+=0.10*g*a;',
+    ' float k=f*24.0;float e=abs(fract(k)-0.5);',
+    ' float ln=1.0-smoothstep(0.035,0.11,e);',
+    ' float mj=1.0-step(0.5,mod(floor(k+0.5),6.0));',
+    ' vec3 c=mix(vec3(0.027,0.149,0.220),vec3(0.055,0.271,0.388),smoothstep(0.0,1.0,s.y));',
+    ' c+=vec3(0.43,0.75,0.90)*0.12*exp(-dot((s-vec2(0.5,1.05))*vec2(1.0,1.7),(s-vec2(0.5,1.05))*vec2(1.0,1.7))*3.0);',
+    ' vec3 lc=mix(vec3(0.50,0.78,0.90),vec3(0.96,0.945,0.91),mj);',
+    ' float al=ln*(0.11+0.24*mj)*(0.55+0.6*f)*(1.0+1.6*g*a);',
+    ' c=mix(c,lc,clamp(al,0.0,1.0));',
+    ' c*=0.80+0.20*smoothstep(1.25,0.15,length((s-vec2(0.5,0.55))*vec2(1.0,1.3)));',
+    ' gl_FragColor=vec4(c,1.0);',
+    '}'
+  ].join('\n');
+  var uR, uT, uM, uA;
+  function sh(type, src) { var s = gl.createShader(type); gl.shaderSource(s, src); gl.compileShader(s); return gl.getShaderParameter(s, gl.COMPILE_STATUS) ? s : null; }
+  function init() {
+    var vs = sh(gl.VERTEX_SHADER, VS), fs = sh(gl.FRAGMENT_SHADER, FS);
+    if (!vs || !fs) { return false; }
+    var pr = gl.createProgram(); gl.attachShader(pr, vs); gl.attachShader(pr, fs); gl.linkProgram(pr);
+    if (!gl.getProgramParameter(pr, gl.LINK_STATUS)) { return false; }
+    gl.useProgram(pr);
+    var buf = gl.createBuffer(); gl.bindBuffer(gl.ARRAY_BUFFER, buf);
+    gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1, -1, 1, -1, -1, 1, 1, 1]), gl.STATIC_DRAW);
+    var loc = gl.getAttribLocation(pr, 'p'); gl.enableVertexAttribArray(loc); gl.vertexAttribPointer(loc, 2, gl.FLOAT, false, 0, 0);
+    uR = gl.getUniformLocation(pr, 'r'); uT = gl.getUniformLocation(pr, 't'); uM = gl.getUniformLocation(pr, 'm'); uA = gl.getUniformLocation(pr, 'a');
+    return true;
+  }
+  if (!init()) { return; }
+  var phone = window.matchMedia && window.matchMedia('(max-width: 767px)').matches;
+  var still = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var scale = Math.min(window.devicePixelRatio || 1, phone ? 1 : 1.5) * (phone ? 0.6 : 0.8);
+  var mx = 0.5, my = 0.6, tx = 0.5, ty = 0.6, act = 0, tact = 0, lost = false;
+  function size() {
+    var w = hero.clientWidth, h = hero.clientHeight; if (!w || !h) { return; }
+    cv.width = Math.max(1, Math.round(w * scale)); cv.height = Math.max(1, Math.round(h * scale));
+    gl.viewport(0, 0, cv.width, cv.height);
+  }
+  var t0 = performance.now(), last = 0, on = true, raf = 0, drawn = false;
+  function draw(now) {
+    if (lost) { return; }
+    mx += (tx - mx) * 0.06; my += (ty - my) * 0.06; act += (tact - act) * 0.05;
+    gl.uniform2f(uR, cv.width, cv.height); gl.uniform1f(uT, still ? 14.0 : (now - t0) / 1000 + 14.0);
+    gl.uniform2f(uM, mx, my); gl.uniform1f(uA, act);
+    gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+    if (!drawn) { drawn = true; cv.classList.add('is-on'); }
+  }
+  function loop(now) {
+    raf = 0; if (!on || lost) { return; }
+    if (!phone || now - last > 30) { last = now; draw(now); }
+    raf = requestAnimationFrame(loop);
+  }
+  function go() { var want = vis && !document.hidden && !still; if (want && !raf) { on = true; raf = requestAnimationFrame(loop); } else if (!want) { on = false; } }
+  var vis = true;
+  size(); draw(performance.now());
+  window.addEventListener('resize', function () { size(); if (still || !on) { draw(performance.now()); } });
+  hero.addEventListener('pointermove', function (e) {
+    var b = hero.getBoundingClientRect(); tx = (e.clientX - b.left) / b.width; ty = 1 - (e.clientY - b.top) / b.height; tact = 1;
+  });
+  hero.addEventListener('pointerleave', function () { tact = 0; });
+  if ('IntersectionObserver' in window) { new IntersectionObserver(function (es) { vis = es[0].isIntersecting; go(); }).observe(hero); }
+  document.addEventListener('visibilitychange', go);
+  cv.addEventListener('webglcontextlost', function (e) { e.preventDefault(); lost = true; cv.classList.remove('is-on'); }, false);
+  cv.addEventListener('webglcontextrestored', function () { if (init()) { lost = false; size(); draw(performance.now()); go(); } }, false);
+  go();
+})();
+</script>

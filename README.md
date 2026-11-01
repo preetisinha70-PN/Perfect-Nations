@@ -42,6 +42,15 @@ Rules: every figure must have a primary source; no contractions; plain ASCII whe
 - `author: "steward"`: written by the Nation Steward of that nation (for example Wanjiru Mwangi for Kenya), audited, and committed straight to main.
 - `author: "preeti"`: signed by Preeti Sinha, President and CEO. Proposed only as a pull request; it goes live when she merges it. Never committed to main directly.
 
+## Pages (the code of each page)
+
+`pages/` holds the full code of each page that is served live, and `pages/manifest.json` lists them by the id of their root element (for example `pn-bp-barbados`). The **Perfect Nations Live Pages** WordPress plugin reads the manifest and serves each file in place of the Custom HTML widget pasted in Elementor, so a page changes without copying and pasting. The plugin keeps each file for ten minutes and keeps the last good copy if GitHub cannot be reached; with nothing fetched, the pasted code shows.
+
+- Merging into main publishes a page within about ten minutes (or at once with Settings > Perfect Nations Live > Refresh now).
+- Every change to `pages/` goes through a pull request titled "For approval: [page] vX.Y, [what changed]"; the Steward-General approves by merging. Stewards never commit to `pages/` on main.
+- Each file must keep its root id, stay plain ASCII, keep its CSS scoped to its root id, and pass `node --check` on every script block.
+- To add a page: put its file in `pages/`, add its root id to the manifest, and paste the same code once into the page's Custom HTML widget (the paste is the fallback).
+
 ## Nations
 
 Each live blueprint reads its own file: `data/<nation>.json` (barbados, kenya, ...). A Steward edits only the file for its own nation.
