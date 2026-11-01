@@ -37,6 +37,7 @@ Each live blueprint reads its own file: `data/<nation>.json` (barbados, kenya, .
 
 - Barbados is kept by its own daily run (Nia Carrington, 7:36 am New York).
 - Every other nation file is kept by the Nation Stewards rotation, which runs three times a day and checks the five nations checked longest ago. A new nation file joins the rotation automatically. The seven standards are checked once a month per nation; the Newswire at every visit.
+- The Correspondent (8 am, 12 noon and 8 pm) also adds every instrument it verifies for a nation to that nation's `newswire`, and sets that file's `updated`. It never edits `barbados.json` (Nia keeps the Barbados Newswire) and changes nothing else in a nation file.
 - Dispatches share one numbered series across every file in `data/` and every open pull request.
 
 ## The State of Nations file
