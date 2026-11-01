@@ -21,6 +21,8 @@ and, if that fails, from the jsDelivr mirror. If neither can be read, the page s
 | `dispatches` | The Dispatches under the Letter, newest first, at most three shown. Each has `no`, `date` (YYYY-MM-DD), `label` (for example "2 Nov 2026"), `author` (`preeti`, or `nia` on Barbados and `steward` on every other nation), `title` and `summary`. Either a `url` to a published post, or `body` (a list of paragraphs) and `sources` (a list of `label` and `url`), which the page opens in place. |
 | `newswire` | The Barbados Newswire, newest first, at most eight items. `highlight` is an optional part of the title shown in gold. Every `url` must start with https://. |
 
+Every nation file except Barbados also carries `checked`: the date and time (YYYY-MM-DDTHH:MMZ, UTC) the Nation Stewards rotation last checked it. The rotation uses it to choose which nations to check next; it does not show on the page.
+
 Rules: every figure must have a primary source; no contractions; plain ASCII where possible. A file that breaks these rules (wrong nation, not seven guarantees, a value outside 0 to 100) is ignored by the page, which then keeps its pasted version.
 
 ## Who may publish a dispatch
@@ -32,6 +34,10 @@ Rules: every figure must have a primary source; no contractions; plain ASCII whe
 ## Nations
 
 Each live blueprint reads its own file: `data/<nation>.json` (barbados, kenya, ...). A Steward edits only the file for its own nation.
+
+- Barbados is kept by its own daily run (Nia Carrington, 7:36 am New York).
+- Every other nation file is kept by the Nation Stewards rotation, which runs three times a day and checks the five nations checked longest ago. A new nation file joins the rotation automatically. The seven standards are checked once a month per nation; the Newswire at every visit.
+- Dispatches share one numbered series across every file in `data/` and every open pull request.
 
 ## The State of Nations file
 
