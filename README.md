@@ -16,14 +16,25 @@ and, if that fails, from the jsDelivr mirror. If neither can be read, the page s
 | `updated` | The Nation Steward card: "Last updated D Month YYYY" (YYYY-MM-DD) |
 | `coverage.score` | The centre of the wheel, the heading and the first of the three numbers |
 | `coverage.gap`, `coverage.gap_text` | The Gap card |
-| `coverage.perfect_capita` | The Perfect Capita card ("To set" until it is costed with Barbados) |
-| `guarantees` | Exactly seven, in this order: Food, Water, Shelter, Energy, Education, Health, Livelihoods. `value` is 0 to 100 and fills the wheel; `display`, `note`, `source` and `url` fill the tiles. The lowest value is marked as the guarantee that sets Coverage. |
+| `coverage.perfect_capita` | The Perfect Capita card: the yearly cost per person, for example "$6,204" ("To set" until it is costed with the nation) |
+| `coverage.price`, `coverage.price_note` | Optional. The price of Perfect [Nation]: Perfect Capita times population, for example "$1.75bn", and one sentence on how it was set (page v11.8 and later) |
+| `guarantees` | The seven basic living standards. The field keeps its name so older pages still read it. Exactly seven, in this order: Food, Water, Shelter, Energy, Education, Health, Livelihoods (the name stays "Livelihoods"; pages show "Livelihood"). `value` is 0 to 100 and fills the wheel; `display`, `note`, `source` and `url` fill the tiles. The lowest value is marked as the standard that sets Coverage. |
 | `dispatches` | The Dispatches under the Letter, newest first, at most three shown. Each has `no`, `date` (YYYY-MM-DD), `label` (for example "2 Nov 2026"), `author` (`preeti`, or `nia` on Barbados and `steward` on every other nation), `title` and `summary`. Either a `url` to a published post, or `body` (a list of paragraphs) and `sources` (a list of `label` and `url`), which the page opens in place. |
 | `newswire` | The Barbados Newswire, newest first, at most eight items. `highlight` is an optional part of the title shown in gold. Every `url` must start with https://. |
 
 Every nation file except Barbados also carries `checked`: the date and time (YYYY-MM-DDTHH:MMZ, UTC) the Nation Stewards rotation last checked it. The rotation uses it to choose which nations to check next; it does not show on the page.
 
-Rules: every figure must have a primary source; no contractions; plain ASCII where possible. A file that breaks these rules (wrong nation, not seven guarantees, a value outside 0 to 100) is ignored by the page, which then keeps its pasted version.
+## Words we use (Steward-General, 1 November 2026)
+
+- **The seven basic living standards**, in running text "the seven standards": food, water, shelter, energy, education, health and livelihood.
+- **Perfect Capita**: the yearly cost, per person, of lifting everyone above the Living Line in all seven basic living standards.
+- **The price of Perfect [Nation]**: Perfect Capita times population, the national bill ("The price of Perfect Barbados: $1.75 billion a year"). It is also the denominator of the Perfect Nations Ratio.
+- **Coverage** shows how close a nation is, out of 100, set by its weakest standard. **The Gap** counts who is still below.
+- **The Living Line** names the threshold only: "The poverty line measures income. The Living Line measures a life: food, water, shelter, energy, education, health and livelihood." Use it on the Perfect Capita page and in Coverage explanations (for example a `gap_text`); keep it out of headlines and most dispatches.
+- Never "Human Guarantees". "Guarantee" is a verb only in the mission line ("Every nation can guarantee seven basic living standards to every citizen."), because on the wire a guarantee is a financial instrument.
+- Field names in these files (`guarantees`, `Livelihoods`) are unchanged, so nothing breaks.
+
+Rules: every figure must have a primary source; no contractions; plain ASCII where possible. A file that breaks these rules (wrong nation, not seven standards, a value outside 0 to 100) is ignored by the page, which then keeps its pasted version.
 
 ## Who may publish a dispatch
 
