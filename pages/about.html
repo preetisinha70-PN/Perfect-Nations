@@ -1,0 +1,435 @@
+<!-- ==========================================================================
+PERFECT NATIONS - ABOUT - v8.5 - 2026-10-30
+v8.5: every section is more compact, the quote section most of all.
+v8.4: the six research Stewards use the same portrait cards and sizes as the Nation Stewards.
+v8.3: the Stewards are shown as portraits in the same arched window as the President and CEO, at a
+smaller scale, like an editorial team page rather than app avatars; names come first, then nation or role.
+They are described as SI Researchers.
+v8.2: the Council of Stewards is larger: research Stewards as portrait cards, Nation
+Stewards as a grid of portrait cards with name and nation. Nation Steward portraits use
+the Media Library names (e.g. aline-iradukunda-nation-steward-of-burundi.png); if one
+ever fails to load, the previous image is shown instead (data-fallback).
+v8.1: titles updated (Senior President, YES Global Institute; President and CEO, FFD;
+Chief Resource Mobilization Officer, African Development Bank); the Stewards are described
+as super intelligence (SI) research agents; new portrait for the Nation Steward of Somalia.
+TO CHANGE A NATION STEWARD PORTRAIT: find the nation's name in the Nation Stewards
+list and replace the address inside src="..." with the image address from the Media Library.
+Replaces the Stewards page. One Elementor Custom HTML widget. Scoped to #pn-about.
+v8.0: the founder is named: Preeti Sinha, Founder, President and Chief Executive
+Officer, with her portrait and a sourced record (UNCDF announcement, preetisinha.com).
+The office of Steward-General is retired. The research team becomes the Council of
+Stewards, shown small: six research Stewards and 24 Nation Stewards as a compact
+roll, clearly labelled as SI research agents approved by the President and CEO.
+Suggested URL: /about/ (redirect /stewards/ to it).
+TO ADD A NATION STEWARD: copy one <li> in the Nation Stewards list and change the
+slug, nation and portrait.
+=========================================================================== -->
+<style>
+#pn-about{
+  --g:var(--pn-brand-gold,#E3C258); --gs:#F0D68F; --gd:#7E5A0C;
+  --iv:#F5F1E8; --tm:rgba(245,241,232,.84); --td:rgba(245,241,232,.62); --hair:rgba(245,241,232,.16);
+  --ink:#1A140C; --im:rgba(26,20,12,.8); --idm:rgba(26,20,12,.6); --ihair:rgba(26,20,12,.14);
+  --hd:var(--pn-font-heading,"Barlow Condensed","Arial Narrow",Arial,sans-serif);
+  --bd:var(--pn-font-body,"Barlow Semi Condensed",Arial,sans-serif);
+  --sf:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,"Times New Roman",serif;
+  position:relative; width:100vw; margin-left:calc(50% - 50vw); box-sizing:border-box;
+  overflow-x:hidden; overflow-x:clip; color:var(--iv); font-family:var(--bd); line-height:1.6;
+}
+#pn-about *,#pn-about *::before,#pn-about *::after{ box-sizing:border-box; }
+.elementor-widget-html:has(#pn-about),.elementor-widget:has(#pn-about),.elementor-widget-wrap:has(#pn-about),
+.elementor-container:has(#pn-about),.elementor-column:has(#pn-about),.elementor-section:has(#pn-about),
+.e-con-inner:has(#pn-about),.e-con:has(#pn-about),#content:has(#pn-about),.site-content:has(#pn-about),.ast-container:has(#pn-about){
+  padding-top:0 !important; padding-bottom:0 !important; margin-top:0 !important; margin-bottom:0 !important;
+  --widgets-spacing:0px !important; row-gap:0 !important;
+}
+#pn-about .ab-band{ position:relative; isolation:isolate; padding:clamp(72px,11vh,130px) clamp(24px,5vw,72px); }
+#pn-about .ab-band::before{ content:""; position:absolute; inset:0; z-index:-1; pointer-events:none; opacity:.07;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .6 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); }
+#pn-about .ab-in{ max-width:1320px; margin:0 auto; }
+#pn-about .ab-eb{ display:flex; align-items:center; gap:10px; margin:0 0 14px; font-family:var(--hd); font-size:.72rem; font-weight:700; letter-spacing:.3em; text-transform:uppercase; color:var(--tm); }
+#pn-about .ab-eb::before{ content:""; width:24px; height:2px; background:currentColor; }
+#pn-about h2.ab-h2{ margin:0; max-width:22ch; font-family:var(--hd); font-weight:600; font-size:clamp(2.3rem,4.6vw,4.4rem); line-height:.94; letter-spacing:-.025em; color:inherit !important; text-transform:none; }
+#pn-about .ab-lead{ margin:18px 0 0; max-width:56ch; font-size:clamp(1.04rem,1.25vw,1.2rem); line-height:1.6; color:var(--tm); }
+#pn-about .ab-btn{ display:inline-flex; align-items:center; gap:14px; padding:15px 30px 13px; border-radius:999px; text-decoration:none; border:1px solid var(--g); background:var(--g); color:#1A140C; font-family:var(--hd); font-size:.76rem; font-weight:700; letter-spacing:.19em; text-transform:uppercase; box-shadow:0 12px 30px rgba(227,194,88,.26); transition:transform .22s ease, background .22s ease; }
+#pn-about .ab-btn::after{ content:"\2192"; font-family:Arial,sans-serif; font-size:1rem; letter-spacing:0; transition:transform .3s cubic-bezier(.22,1,.36,1); }
+#pn-about .ab-btn:hover{ background:var(--gs); transform:translateY(-2px); }
+#pn-about .ab-btn:hover::after{ transform:translateX(6px); }
+#pn-about .ab-btn--line{ background:transparent; color:var(--g); box-shadow:none; }
+#pn-about .ab-btn--line:hover{ background:rgba(227,194,88,.12); }
+#pn-about .ab-ctas{ display:flex; gap:14px; flex-wrap:wrap; margin-top:clamp(24px,3.6vh,36px); }
+#pn-about a:focus-visible{ outline:2px solid var(--gs); outline-offset:3px; }
+
+/* ================= 1 the founder: deep canopy, lit from above ================= */
+#pn-about .ab-hero{ overflow:hidden; padding-top:clamp(56px,9vh,110px);
+  background:radial-gradient(55% 60% at 72% 30%, rgba(227,194,88,.20) 0%, transparent 62%),
+             radial-gradient(60% 50% at 10% 100%, rgba(23,100,79,.45) 0%, transparent 70%),
+             linear-gradient(180deg,#0B2E24 0%,#082219 55%,#06170F 100%); }
+#pn-about .ab-hero__grid{ display:grid; gap:clamp(36px,5vw,80px); grid-template-columns:minmax(0,1fr); align-items:center; }
+@media (min-width:980px){ #pn-about .ab-hero__grid{ grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr); } }
+#pn-about .ab-hero .ab-eb{ color:var(--gs); }
+#pn-about h1.ab-h1{ margin:0; font-family:var(--hd); font-weight:600; font-size:clamp(3.6rem,8.4vw,8.4rem); line-height:.86; letter-spacing:-.035em; color:var(--iv) !important; text-transform:none; }
+#pn-about .ab-title{ margin:18px 0 0; font-family:var(--hd); font-weight:600; font-size:clamp(1.1rem,1.7vw,1.5rem); letter-spacing:.16em; text-transform:uppercase; color:var(--g); line-height:1.25; }
+#pn-about .ab-hero .ab-lead{ font-size:clamp(1.12rem,1.45vw,1.34rem); max-width:44ch; }
+#pn-about .ab-frame{ position:relative; width:min(100%,460px); margin:0 auto; }
+#pn-about .ab-frame::before{ content:""; position:absolute; inset:-14px; border-radius:999px 999px 26px 26px; border:1px solid rgba(227,194,88,.55); pointer-events:none; }
+#pn-about .ab-frame::after{ content:""; position:absolute; inset:-40px; z-index:-1; border-radius:50%; background:radial-gradient(closest-side, rgba(227,194,88,.28), transparent); pointer-events:none; }
+#pn-about .ab-photo{ position:relative; display:block; overflow:hidden; aspect-ratio:4/5; border-radius:999px 999px 18px 18px; background:#102A20; box-shadow:0 30px 70px rgba(0,0,0,.5), inset 0 0 0 1px rgba(245,241,232,.14); }
+#pn-about .ab-photo img{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center 22%; display:block; }
+#pn-about .ab-photo--logo{ display:flex; align-items:center; justify-content:center; }
+#pn-about .ab-photo--logo img{ position:static; width:52%; height:auto; object-fit:contain; }
+#pn-about .ab-cap{ display:block; margin-top:26px; text-align:center; font-family:var(--hd); font-size:.72rem; font-weight:700; letter-spacing:.24em; text-transform:uppercase; color:var(--td); }
+@media (prefers-reduced-motion:no-preference){
+  #pn-about .ab-frame::after{ animation:abGlow 7s ease-in-out infinite alternate; }
+  #pn-about .ab-rise{ animation:abRise .7s cubic-bezier(.22,.8,.28,1) both; }
+  #pn-about .ab-rise--2{ animation-delay:.12s; } #pn-about .ab-rise--3{ animation-delay:.24s; } #pn-about .ab-rise--4{ animation-delay:.36s; }
+}
+@keyframes abGlow{ from{ opacity:.55; transform:scale(.96); } to{ opacity:1; transform:scale(1.04); } }
+@keyframes abRise{ from{ opacity:0; transform:translateY(18px); } to{ opacity:1; transform:none; } }
+
+/* the figures */
+#pn-about .ab-figs{ display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:0; margin:clamp(48px,7vh,80px) 0 0; padding:0; list-style:none; border-top:1px solid var(--hair); }
+@media (min-width:860px){ #pn-about .ab-figs{ grid-template-columns:repeat(4,minmax(0,1fr)); } }
+#pn-about .ab-figs li{ padding:22px clamp(12px,2vw,28px) 4px 0; }
+#pn-about .ab-figs b{ display:block; font-family:var(--hd); font-weight:600; font-size:clamp(2.4rem,4.4vw,4rem); line-height:1; letter-spacing:-.02em; color:var(--iv); font-variant-numeric:tabular-nums; }
+#pn-about .ab-figs li.is-money b{ color:var(--g); }   /* one gold: only the sourced monetary figure */
+#pn-about .ab-figs span{ display:block; margin-top:8px; max-width:24ch; font-size:.92rem; line-height:1.4; color:var(--tm); }
+
+/* ================= 2 the founder statement: savanna ================= */
+#pn-about .ab-why{ color:var(--ink); background:radial-gradient(60% 40% at 50% 0%, rgba(255,252,240,.95) 0%, transparent 70%), linear-gradient(180deg,#F4ECD8 0%,#E6D6B2 100%); }
+#pn-about .ab-why .ab-eb{ color:var(--im); justify-content:center; }
+#pn-about .ab-why .ab-eb::after{ content:""; width:24px; height:2px; background:currentColor; }
+#pn-about .ab-quote{ margin:0 auto; max-width:30ch; text-align:center; font-family:var(--sf); font-weight:400; font-size:clamp(1.7rem,3.2vw,2.9rem); line-height:1.22; color:var(--ink); }
+#pn-about .ab-quote::before{ content:"\201C"; display:block; margin-bottom:-.3em; font-size:2.4em; line-height:1; color:var(--gd); }
+#pn-about .ab-sign{ margin:26px 0 0; text-align:center; font-family:var(--hd); font-size:.8rem; font-weight:700; letter-spacing:.22em; text-transform:uppercase; color:var(--im); }
+#pn-about .ab-mission{ display:grid; gap:12px; grid-template-columns:minmax(0,1fr); max-width:1100px; margin:clamp(40px,6vh,64px) auto 0; padding:0; list-style:none; }
+@media (min-width:860px){ #pn-about .ab-mission{ grid-template-columns:repeat(3,minmax(0,1fr)); } }
+#pn-about .ab-mission li{ padding:22px 22px 20px; border-radius:18px; background:#1A140C; color:#F5F1E8; }
+#pn-about .ab-mission b{ display:block; font-family:var(--hd); font-size:1.4rem; font-weight:600; line-height:1.1; }
+#pn-about .ab-mission b::before{ display:block; margin-bottom:10px; font-size:.62rem; font-weight:700; letter-spacing:.22em; text-transform:uppercase; color:var(--gs); content:attr(data-n); }
+#pn-about .ab-mission span{ display:block; margin-top:8px; font-size:.95rem; line-height:1.5; color:rgba(245,241,232,.82); }
+
+/* ================= 3 the record: ocean ================= */
+#pn-about .ab-rec{ background:radial-gradient(60% 45% at 85% 0%, rgba(110,190,230,.2) 0%, transparent 70%), linear-gradient(180deg,#0E4563 0%,#0A3550 45%,#072638 100%); }
+#pn-about .ab-tl{ position:relative; margin:clamp(36px,5vh,56px) 0 0; padding:0; list-style:none; }
+#pn-about .ab-tl::before{ content:""; position:absolute; left:11px; top:6px; bottom:6px; width:1px; background:linear-gradient(180deg, var(--g), rgba(227,194,88,.1)); }
+#pn-about .ab-tl li{ position:relative; display:grid; gap:4px 40px; grid-template-columns:minmax(0,1fr); padding:0 0 30px 48px; }
+@media (min-width:900px){ #pn-about .ab-tl li{ grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr); } }
+#pn-about .ab-tl li::before{ content:""; position:absolute; left:4px; top:7px; width:15px; height:15px; border-radius:50%; background:#0A3550; border:2px solid var(--g); }
+#pn-about .ab-tl li:first-child::before{ background:var(--g); box-shadow:0 0 0 6px rgba(227,194,88,.18); }
+#pn-about .ab-tl h3{ margin:0; font-family:var(--hd); font-weight:600; font-size:clamp(1.5rem,2.3vw,2.1rem); line-height:1.02; color:var(--iv); }
+#pn-about .ab-tl .ab-org{ display:block; margin-top:6px; font-family:var(--hd); font-size:.78rem; font-weight:700; letter-spacing:.16em; text-transform:uppercase; color:var(--gs); }
+#pn-about .ab-tl p{ margin:0; font-size:1rem; line-height:1.55; color:var(--tm); }
+#pn-about .ab-tl p b{ color:var(--iv); font-weight:600; }
+#pn-about .ab-src{ display:inline-block; margin-top:8px; font-size:.78rem; letter-spacing:.06em; color:var(--td); text-decoration:none; border-bottom:1px solid rgba(245,241,232,.25); }
+#pn-about .ab-src:hover{ color:var(--iv); border-color:var(--iv); }
+#pn-about .ab-edu{ display:grid; gap:10px; grid-template-columns:minmax(0,1fr); margin:clamp(20px,3vh,32px) 0 0; padding:0; list-style:none; }
+@media (min-width:760px){ #pn-about .ab-edu{ grid-template-columns:repeat(2,minmax(0,1fr)); } }
+@media (min-width:1100px){ #pn-about .ab-edu{ grid-template-columns:repeat(4,minmax(0,1fr)); } }
+#pn-about .ab-edu li{ padding:18px 18px 16px; border-radius:16px; background:rgba(245,241,232,.07); border:1px solid var(--hair); }
+#pn-about .ab-edu b{ display:block; font-family:var(--hd); font-size:1.25rem; font-weight:600; line-height:1.1; color:var(--iv); }
+#pn-about .ab-edu span{ display:block; margin-top:6px; font-size:.9rem; line-height:1.4; color:var(--tm); }
+#pn-about .ab-sub{ margin:clamp(44px,6vh,64px) 0 0; font-family:var(--hd); font-size:.72rem; font-weight:700; letter-spacing:.26em; text-transform:uppercase; color:var(--td); }
+
+/* ================= 4 the Council of Stewards: basalt ================= */
+#pn-about .ab-council{ background:radial-gradient(60% 45% at 85% 0%, rgba(227,194,88,.10) 0%, transparent 70%), linear-gradient(180deg,#2A2420 0%,#161210 100%); }
+#pn-about .ab-council .ab-lead{ max-width:62ch; }
+#pn-about .ab-note{ margin:18px 0 0; max-width:80ch; padding:14px 18px; border-left:3px solid var(--g); background:rgba(245,241,232,.05); font-size:.95rem; line-height:1.55; color:var(--tm); }
+#pn-about .ab-note strong{ color:var(--iv); }
+#pn-about .ab-av{ position:relative; flex:none; display:block; overflow:hidden; border-radius:999px 999px 14px 14px; background:var(--c,#282828); aspect-ratio:4/5; }
+#pn-about .ab-av::after{ content:""; position:absolute; inset:0; border-radius:inherit; box-shadow:inset 0 0 0 1px rgba(245,241,232,.18), inset 0 -40px 50px -30px rgba(10,8,6,.35); pointer-events:none; }
+#pn-about .ab-av img{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center 22%; display:block; filter:saturate(.94) contrast(1.03); transition:transform .8s cubic-bezier(.22,1,.36,1); }
+#pn-about .ab-sub{ color:var(--gs); }
+/* research Stewards: portrait cards */
+#pn-about .ab-rss{ display:grid; gap:16px; grid-template-columns:minmax(0,1fr); margin:28px 0 0; padding:0; list-style:none; }
+@media (min-width:640px){ #pn-about .ab-rss{ grid-template-columns:repeat(2,minmax(0,1fr)); } }
+@media (min-width:1080px){ #pn-about .ab-rss{ grid-template-columns:repeat(3,minmax(0,1fr)); } }
+#pn-about .ab-rs{ display:flex; align-items:center; gap:20px; padding:16px 20px 16px 16px; border-radius:20px; background:rgba(245,241,232,.05); border:1px solid var(--hair); transition:border-color .25s ease, background .25s ease, transform .3s cubic-bezier(.22,1,.36,1); }
+#pn-about .ab-rs:hover{ border-color:rgba(227,194,88,.5); background:rgba(245,241,232,.08); transform:translateY(-3px); }
+#pn-about .ab-rs .ab-av{ width:108px; height:auto; box-shadow:0 14px 30px rgba(0,0,0,.35); }
+#pn-about .ab-rs:hover .ab-av img, #pn-about .ab-ns:hover .ab-av img{ transform:scale(1.05); }
+#pn-about .ab-rs__t b{ display:block; font-family:var(--hd); font-size:1.5rem; font-weight:600; line-height:1.05; color:var(--iv); }
+#pn-about .ab-rs__t i{ display:block; margin-top:4px; font-family:var(--sf); font-style:italic; font-size:1.02rem; color:var(--gs); }
+#pn-about .ab-rs__t span{ display:block; margin-top:4px; font-size:.95rem; line-height:1.4; color:var(--tm); }
+/* Nation Stewards: portrait grid */
+#pn-about .ab-nss{ display:grid; gap:14px; grid-template-columns:repeat(2,minmax(0,1fr)); margin:18px 0 0; padding:0; list-style:none; }
+@media (min-width:700px){ #pn-about .ab-nss{ grid-template-columns:repeat(3,minmax(0,1fr)); } }
+@media (min-width:980px){ #pn-about .ab-nss{ grid-template-columns:repeat(4,minmax(0,1fr)); } }
+@media (min-width:1240px){ #pn-about .ab-nss{ grid-template-columns:repeat(6,minmax(0,1fr)); } }
+#pn-about .ab-ns{ display:flex; flex-direction:column; align-items:center; gap:6px; height:100%; padding:12px 12px 16px; border-radius:18px; text-align:center; border:1px solid var(--hair); background:rgba(245,241,232,.04); text-decoration:none; color:var(--tm); transition:border-color .25s ease, background .25s ease, transform .3s cubic-bezier(.22,1,.36,1); }
+#pn-about .ab-ns:hover{ border-color:rgba(227,194,88,.6); background:rgba(245,241,232,.08); transform:translateY(-3px); }
+#pn-about .ab-ns .ab-av{ width:100%; max-width:170px; height:auto; margin-bottom:8px; box-shadow:0 12px 26px rgba(0,0,0,.32); }
+#pn-about .ab-ns__p{ order:2; }
+#pn-about .ab-ns__n{ order:3; }
+#pn-about .ab-ns__n{ font-family:var(--sf); font-style:italic; font-size:.92rem; color:var(--gs); line-height:1.25; }
+#pn-about .ab-ns__p{ font-family:var(--hd); font-size:1.16rem; font-weight:600; line-height:1.1; color:var(--iv); }
+
+/* ================= 5 close: laterite ================= */
+#pn-about .ab-close{ text-align:center; background:radial-gradient(60% 50% at 50% 0%, rgba(255,190,120,.28) 0%, transparent 70%), linear-gradient(180deg,#8A3A22 0%,#4C1D12 100%); }
+#pn-about .ab-close .ab-eb{ justify-content:center; }
+#pn-about .ab-close .ab-eb::after{ content:""; width:24px; height:2px; background:currentColor; }
+#pn-about .ab-close h2.ab-h2{ margin:0 auto; }
+#pn-about .ab-close .ab-lead{ margin-left:auto; margin-right:auto; }
+#pn-about .ab-close .ab-ctas{ justify-content:center; }
+#pn-about .ab-laurel{ display:block; width:120px; aspect-ratio:2/1; margin:0 auto 10px; color:var(--g); }
+
+@media (max-width:640px){
+  #pn-about .ab-ctas{ flex-direction:column; align-items:stretch; }
+  #pn-about .ab-btn{ justify-content:center; }
+  #pn-about .ab-frame{ width:min(100%,300px); }
+  #pn-about .ab-tl li{ padding-left:40px; }
+  #pn-about .ab-rs .ab-av{ width:92px; }
+  #pn-about .ab-ns{ padding:10px 8px 14px; }
+}
+/* v8.5: a more compact page */
+#pn-about .ab-band{ padding:clamp(44px,6.5vh,84px) clamp(20px,5vw,72px); }
+#pn-about .ab-hero{ padding-top:clamp(40px,6vh,80px); }
+#pn-about h2.ab-h2{ font-size:clamp(2rem,3.6vw,3.4rem); }
+#pn-about .ab-lead{ margin-top:12px; font-size:clamp(.98rem,1.1vw,1.1rem); line-height:1.55; }
+#pn-about h1.ab-h1{ font-size:clamp(3.2rem,7vw,6.8rem); }
+#pn-about .ab-title{ margin-top:12px; }
+#pn-about .ab-frame{ width:min(100%,400px); }
+#pn-about .ab-figs{ margin-top:clamp(28px,4.5vh,52px); }
+#pn-about .ab-figs li{ padding-top:16px; }
+#pn-about .ab-figs b{ font-size:clamp(2rem,3.4vw,3.2rem); }
+/* the quote section */
+#pn-about .ab-why{ padding-top:clamp(36px,5vh,64px); padding-bottom:clamp(36px,5vh,64px); }
+#pn-about .ab-why .ab-eb{ margin-bottom:8px; }
+#pn-about .ab-quote{ max-width:38ch; font-size:clamp(1.3rem,2.2vw,2rem); line-height:1.28; }
+#pn-about .ab-quote::before{ margin-bottom:-.45em; font-size:1.8em; }
+#pn-about .ab-sign{ margin-top:14px; font-size:.72rem; }
+#pn-about .ab-mission{ gap:10px; margin-top:clamp(22px,3.5vh,36px); }
+#pn-about .ab-mission li{ padding:16px 18px 14px; border-radius:16px; }
+#pn-about .ab-mission b{ font-size:1.2rem; }
+#pn-about .ab-mission b::before{ margin-bottom:6px; }
+#pn-about .ab-mission span{ margin-top:6px; font-size:.88rem; line-height:1.45; }
+/* the record */
+#pn-about .ab-tl{ margin-top:clamp(22px,3.5vh,36px); }
+#pn-about .ab-tl li{ padding-bottom:20px; }
+#pn-about .ab-tl h3{ font-size:clamp(1.3rem,1.9vw,1.75rem); }
+#pn-about .ab-tl p{ font-size:.94rem; }
+#pn-about .ab-sub{ margin-top:clamp(26px,4vh,40px); }
+#pn-about .ab-edu li{ padding:14px 16px 12px; }
+#pn-about .ab-edu b{ font-size:1.12rem; }
+#pn-about .ab-edu span{ font-size:.84rem; }
+/* the Council and the close */
+#pn-about .ab-note{ margin-top:12px; padding:12px 16px; font-size:.88rem; }
+#pn-about .ab-laurel{ width:96px; margin-bottom:6px; }
+@media (max-width:640px){
+  #pn-about .ab-band{ padding:36px 18px; }
+  #pn-about h1.ab-h1{ font-size:3rem; }
+  #pn-about h2.ab-h2{ font-size:1.8rem; }
+  #pn-about .ab-title{ font-size:.92rem; }
+  #pn-about .ab-lead{ font-size:.95rem; }
+  #pn-about .ab-btn{ padding:12px 20px 10px; font-size:.68rem; }
+  #pn-about .ab-frame{ width:min(100%,240px); }
+  #pn-about .ab-cap{ margin-top:16px; }
+  #pn-about .ab-figs b{ font-size:1.9rem; }
+  #pn-about .ab-figs span{ font-size:.82rem; }
+  #pn-about .ab-quote{ font-size:1.2rem; }
+  #pn-about .ab-mission li{ padding:14px 16px 12px; }
+  #pn-about .ab-tl li{ padding-bottom:16px; }
+  #pn-about .ab-tl p{ font-size:.88rem; }
+}
+/* v8.4: research Stewards in the same cards and sizes as the Nation Stewards */
+#pn-about .ab-rss{ gap:14px; grid-template-columns:repeat(2,minmax(0,1fr)); margin-top:24px; }
+@media (min-width:700px){ #pn-about .ab-rss{ grid-template-columns:repeat(3,minmax(0,1fr)); } }
+@media (min-width:980px){ #pn-about .ab-rss{ grid-template-columns:repeat(4,minmax(0,1fr)); } }
+@media (min-width:1240px){ #pn-about .ab-rss{ grid-template-columns:repeat(6,minmax(0,1fr)); } }
+#pn-about .ab-rs{ flex-direction:column; align-items:center; gap:6px; height:100%; padding:12px 12px 16px; border-radius:18px; text-align:center; background:rgba(245,241,232,.04); }
+#pn-about .ab-rs .ab-av{ width:100%; max-width:170px; height:auto; margin-bottom:8px; box-shadow:0 12px 26px rgba(0,0,0,.32); }
+#pn-about .ab-rs__t b{ font-size:1.16rem; line-height:1.1; }
+#pn-about .ab-rs__t i{ margin-top:2px; font-size:.92rem; line-height:1.25; }
+#pn-about .ab-rs__t span{ margin-top:6px; font-size:.84rem; line-height:1.35; }
+@media (max-width:640px){ #pn-about .ab-rs .ab-av{ width:100%; } #pn-about .ab-rs{ padding:10px 8px 14px; } }
+@media (prefers-reduced-motion:reduce){ #pn-about *{ transition:none !important; animation:none !important; } }
+</style>
+<svg width="0" height="0" style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true" focusable="false">
+  <defs>
+    <g id="pnab-laurel-branch">
+      <path d="M56 30 Q30 34 4 27" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round"/>
+      <ellipse cx="49" cy="28.4" rx="4.4" ry="1.7" fill="currentColor" transform="rotate(-24 49 28.4)"/>
+      <ellipse cx="43" cy="34.6" rx="4.4" ry="1.7" fill="currentColor" transform="rotate(26 43 34.6)"/>
+      <ellipse cx="36" cy="28.9" rx="4.3" ry="1.7" fill="currentColor" transform="rotate(-20 36 28.9)"/>
+      <ellipse cx="29" cy="34.8" rx="4.2" ry="1.6" fill="currentColor" transform="rotate(30 29 34.8)"/>
+      <ellipse cx="22" cy="28.2" rx="4" ry="1.6" fill="currentColor" transform="rotate(-14 22 28.2)"/>
+      <ellipse cx="15" cy="33.2" rx="3.8" ry="1.5" fill="currentColor" transform="rotate(34 15 33.2)"/>
+      <ellipse cx="7.4" cy="25.6" rx="3.6" ry="1.5" fill="currentColor" transform="rotate(-6 7.4 25.6)"/>
+    </g>
+    <symbol id="pnab-laurel" viewBox="0 0 120 60">
+      <use href="#pnab-laurel-branch"/>
+      <use href="#pnab-laurel-branch" transform="matrix(-1 0 0 1 120 0)"/>
+      <polygon fill="currentColor" points="60,25 61.18,28.38 64.76,28.45 61.9,30.62 62.94,34.05 60,32 57.06,34.05 58.1,30.62 55.24,28.45 58.82,28.38"/>
+    </symbol>
+  </defs>
+</svg>
+<div id="pn-about">
+
+  <section class="ab-band ab-hero" aria-labelledby="ab-h1">
+    <div class="ab-in">
+      <div class="ab-hero__grid">
+        <div>
+          <p class="ab-eb ab-rise">About Perfect Nations</p>
+          <h1 class="ab-h1 ab-rise ab-rise--2" id="ab-h1">Preeti Sinha</h1>
+          <p class="ab-title ab-rise ab-rise--3">Founder, President and Chief Executive Officer</p>
+          <p class="ab-lead ab-rise ab-rise--4">Thirty years in investment and development finance, from the trading floors of Wall Street to the leadership of a United Nations fund. Perfect Nations is where that experience is now put to work for every nation on Earth.</p>
+          <div class="ab-ctas ab-rise ab-rise--4">
+            <a class="ab-btn" href="https://perfectnations.org/contact/">Start a conversation</a>
+            <a class="ab-btn ab-btn--line" href="#ab-record">Read the record</a>
+          </div>
+        </div>
+        <figure class="ab-frame" style="margin:0 auto;">
+          <!-- EDITORIAL: the portrait. To change it, replace the src. If the file ever fails to load, the Perfect Nations mark takes its place. -->
+          <span class="ab-photo" id="ab-photo"><img src="https://perfectnations.org/wp-content/uploads/2026/02/Preeti-BW.jpeg" alt="Preeti Sinha, Founder, President and Chief Executive Officer of Perfect Nations" width="900" height="1125" decoding="async" fetchpriority="high"></span>
+          <figcaption class="ab-cap">New York</figcaption>
+        </figure>
+      </div>
+
+      <ul class="ab-figs" aria-label="The record in figures">
+        <li><b>30</b><span>years in investment and development finance</span></li>
+        <li class="is-money"><b>$7.3bn</b><span>raised from 27 donor countries for the African Development Fund</span></li>
+        <li><b>46</b><span>least developed countries served by the UN fund she led</span></li>
+        <li><b>4</b><span>continents: New York, London, Geneva, Tunis, Mumbai, New Delhi, Hong Kong</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="ab-band ab-why" aria-labelledby="ab-why-h">
+    <div class="ab-in">
+      <p class="ab-eb" id="ab-why-h">Why Perfect Nations</p>
+      <!-- EDITORIAL: a draft in the founder&#8217;s voice. Edit freely. -->
+      <blockquote class="ab-quote" style="margin:0 auto;">Every nation already owns what it needs to guarantee a basic standard of living for its people. My work is to help it see those assets, price that standard, and build the capital to close the distance.</blockquote>
+      <p class="ab-sign">Preeti Sinha &middot; Founder, President and CEO</p>
+      <ul class="ab-mission" aria-label="What Perfect Nations does">
+        <li><b data-n="01 &middot; Sovereign Assets">Count what a nation owns</b><span>Land, water, coast, forest, energy, institutions and people: the wealth no balance sheet records.</span></li>
+        <li><b data-n="02 &middot; Perfect Capita">Measure what matters</b><span>Perfect Capita, the new GDP: the yearly cost, per person, of lifting everyone above the Living Line in all seven basic living standards.</span></li>
+        <li><b data-n="03 &middot; Capital Architecture">Finance the distance</b><span>Bonds, guarantees, swaps and blended facilities, matched to each nation in a public blueprint.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="ab-band ab-rec" id="ab-record" aria-labelledby="ab-rec-h">
+    <div class="ab-in">
+      <p class="ab-eb">The record</p>
+      <h2 class="ab-h2" id="ab-rec-h">A career built where capital meets development</h2>
+      <ol class="ab-tl">
+        <li>
+          <div><h3>Executive Secretary</h3><span class="ab-org">UN Capital Development Fund &middot; New York</span></div>
+          <div><p>Appointed in <b>February 2021</b> to lead the United Nations fund that finances loans and guarantees in the <b>46 least developed countries</b>.</p><a class="ab-src" href="https://www.uncdf.org/article/6505/announcement-of-preeti-sinha-as-executive-secretary" target="_blank" rel="noopener noreferrer">Source: UNCDF</a> &middot; <a class="ab-src" href="https://preetisinha.com/about-preeti/" target="_blank" rel="noopener noreferrer">preetisinha.com</a></div>
+        </li>
+        <li>
+          <div><h3>President and Chief Executive Officer</h3><span class="ab-org">FFD Financing for Development &middot; Geneva</span></div>
+          <div><p>Led her own development finance advisory firm in Geneva.</p><a class="ab-src" href="https://www.uncdf.org/article/6505/announcement-of-preeti-sinha-as-executive-secretary" target="_blank" rel="noopener noreferrer">Source: UNCDF</a></div>
+        </li>
+        <li>
+          <div><h3>Senior President</h3><span class="ab-org">YES Global Institute &middot; New Delhi</span></div>
+          <div><p>Built a practicing think tank inside a private bank, developing India&#8217;s impact investment ecosystem.</p><a class="ab-src" href="https://www.uncdf.org/article/6505/announcement-of-preeti-sinha-as-executive-secretary" target="_blank" rel="noopener noreferrer">Source: UNCDF</a></div>
+        </li>
+        <li>
+          <div><h3>Chief Resource Mobilization Officer</h3><span class="ab-org">African Development Bank &middot; Tunis</span></div>
+          <div><p>Managed the thirteenth replenishment of the African Development Fund: <b>US$7.3 billion from 27 donor countries</b>.</p><a class="ab-src" href="https://www.uncdf.org/article/6505/announcement-of-preeti-sinha-as-executive-secretary" target="_blank" rel="noopener noreferrer">Source: UNCDF</a></div>
+        </li>
+        <li>
+          <div><h3>Global Leadership Fellow</h3><span class="ab-org">World Economic Forum &middot; Geneva</span></div>
+          <div><p>Among the first Global Leadership Fellows. Ran the Financing for Development Initiative with the UN Financing for Development Office.</p><a class="ab-src" href="https://www.uncdf.org/article/6505/announcement-of-preeti-sinha-as-executive-secretary" target="_blank" rel="noopener noreferrer">Source: UNCDF</a></div>
+        </li>
+        <li>
+          <div><h3>Investment Banking</h3><span class="ab-org">JP Morgan &middot; Lehman Brothers &middot; HSBC &middot; Rabobank</span></div>
+          <div><p>New York, London, Hong Kong and Mumbai: mergers and acquisitions for financial institutions, bond syndication on the Lehman Brothers trading floor, and the start-up team of Rabobank in India.</p><a class="ab-src" href="https://preetisinha.com/about-preeti/" target="_blank" rel="noopener noreferrer">Source: preetisinha.com</a> &middot; <a class="ab-src" href="https://www.uncdf.org/article/6505/announcement-of-preeti-sinha-as-executive-secretary" target="_blank" rel="noopener noreferrer">UNCDF</a></div>
+        </li>
+      </ol>
+
+      <p class="ab-sub" style="color:var(--td);">Education</p>
+      <ul class="ab-edu">
+        <li><b>Yale School of Management</b><span>Master of Public and Private Management (MBA)</span></li>
+        <li><b>Dartmouth College</b><span>BA, Economics and Computer Science</span></li>
+        <li><b>Harvard Kennedy School</b><span>Executive Education, Public Financial Management</span></li>
+        <li><b>World Economic Forum</b><span>Master&#8217;s in Global Leadership</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="ab-band ab-council" id="ab-council" aria-labelledby="ab-council-h">
+    <div class="ab-in">
+      <p class="ab-eb">The Council of Stewards</p>
+      <h2 class="ab-h2" id="ab-council-h">The research team behind every blueprint</h2>
+      <p class="ab-lead">Thirty SI Researchers work under the direction of the President and CEO: six research Stewards, each with one mandate, and a Nation Steward for every open blueprint.</p>
+      <p class="ab-note"><strong>Who they are.</strong> The Stewards are SI Researchers, super intelligence research agents with representative names and portraits, not people. They survey, price, draft and verify. Every figure, blueprint and Letter is reviewed and approved by Preeti Sinha before it is published.</p>
+
+      <ul class="ab-rss" aria-label="The research Stewards">
+          <li class="ab-rs"><span class="ab-av" style="--c:#8A3A22;"><img src="https://perfectnations.org/wp-content/uploads/2026/10/elias-rowan-surveyor.jpg" alt="" width="512" height="512" loading="lazy" decoding="async"></span><span class="ab-rs__t"><b>Elias Rowan</b><i>The Surveyor</i><span>Records what a nation owns</span></span></li>
+          <li class="ab-rs"><span class="ab-av" style="--c:#6E4A14;"><img src="https://perfectnations.org/wp-content/uploads/2026/10/mira-sen-measurer.jpg" alt="" width="512" height="512" loading="lazy" decoding="async"></span><span class="ab-rs__t"><b>Mira Sen</b><i>The Measurer</i><span>Prices the seven standards</span></span></li>
+          <li class="ab-rs"><span class="ab-av" style="--c:#1F4A8C;"><img src="https://perfectnations.org/wp-content/uploads/2026/10/leila-hart-architect.jpg" alt="" width="512" height="512" loading="lazy" decoding="async"></span><span class="ab-rs__t"><b>Leila Hart</b><i>The Architect</i><span>Draws the blueprint</span></span></li>
+          <li class="ab-rs"><span class="ab-av" style="--c:#164A37;"><img src="https://perfectnations.org/wp-content/uploads/2026/10/adrian-cole-financier.jpg" alt="" width="512" height="512" loading="lazy" decoding="async"></span><span class="ab-rs__t"><b>Adrian Cole</b><i>The Financier</i><span>Matches gaps to instruments</span></span></li>
+          <li class="ab-rs"><span class="ab-av" style="--c:#342C27;"><img src="https://perfectnations.org/wp-content/uploads/2026/10/clara-reed-auditor.jpg" alt="" width="512" height="512" loading="lazy" decoding="async"></span><span class="ab-rs__t"><b>Clara Reed</b><i>The Auditor</i><span>Checks every figure and source</span></span></li>
+          <li class="ab-rs"><span class="ab-av" style="--c:#0E4563;"><img src="https://perfectnations.org/wp-content/uploads/2026/10/julian-vale-correspondent.jpg" alt="" width="512" height="512" loading="lazy" decoding="async"></span><span class="ab-rs__t"><b>Julian Vale</b><i>The Correspondent</i><span>Keeps State of Nations current</span></span></li>
+      </ul>
+
+      <p class="ab-sub" style="margin-top:48px;">Nation Stewards &middot; one for each open blueprint</p>
+      <ul class="ab-nss" aria-label="The Nation Stewards"><li><a class="ab-ns" href="https://perfectnations.org/blueprints/afghanistan/" title="Farid Rahimi, Nation Steward of Afghanistan"><span class="ab-av" style="--c:#6E4A14;"><img src="https://perfectnations.org/wp-content/uploads/2026/10/professional-man-mountains.png" alt="Farid Rahimi, Nation Steward of Afghanistan" width="600" height="600" loading="lazy" decoding="async"></span><span class="ab-ns__n">Afghanistan</span><span class="ab-ns__p">Farid Rahimi</span></a></li>
+        <li><a class="ab-ns" href="https://perfectnations.org/blueprints/angola/" title="Joana Kiala, Nation Steward of Angola"><span class="ab-av" style="--c:#8A3A22;"><img src="https://perfectnations.org/wp-content/uploads/2026/10/joana-kiala-nation-steward-of-angola.png" data-fallback="https://perfectnations.org/wp-content/uploads/2026/10/Joana-Kiala-Nation-Steward-of-Angola-600x600.png" alt="Joana Kiala, Nation Steward of Angola" width="600" height="600" loading="lazy" decoding="async"></span><span class="ab-ns__n">Angola</span><span class="ab-ns__p">Joana Kiala</span></a></li>
+        <li><a class="ab-ns" href="https://perfectnations.org/blueprints/barbados/" title="Nia Carrington, Nation Steward of Barbados"><span class="ab-av" style="--c:#0E4563;"><img src="https://perfectnations.org/wp-content/uploads/2026/10/nia-carrington-nation-steward-of-barbados.png" data-fallback="https://perfectnations.org/wp-content/uploads/2026/10/Nia-Carrington-Nation-Steward-of-Barbados-600x600.png" alt="Nia Carrington, Nation Steward of Barbados" width="600" height="600" loading="lazy" decoding="async"></span><span class="ab-ns__n">Barbados</span><span class="ab-ns__p">Nia Carrington</span></a></li>
+        <li><a class="ab-ns" href="https://perfectnations.org/blueprints/botswana/" title="Kagiso Molefe, Nation Steward of Botswana"><span class="ab-av" style="--c:#164A37;"><img src="https://perfectnations.org/wp-content/uploads/2026/10/kagiso-molefe-nation-steward-of-botswana.png" data-fallback="https://perfectnations.org/wp-content/uploads/2026/10/Kagiso-Molefe-Nation-Steward-of-Botswana-600x600.png" alt="Kagiso Molefe, Nation Steward of Botswana" width="600" height="600" loading="lazy" decoding="async"></span><span class="ab-ns__n">Botswana</span><span class="ab-ns__p">Kagiso Molefe</span></a></li>
+        <li><a class="ab-ns" href="https://perfectnations.org/blueprints/brazil/" title="Luana Ferraz, Nation Steward of Brazil"><span class="ab-av" style="--c:#17644F;"><img src="https://perfectnations.org/wp-content/uploads/2026/10/luana-ferraz-nation-steward-of-brazil.png" data-fallback="https://perfectnations.org/wp-content/uploads/2026/10/Luana-Ferraz-Nation-Steward-of-Brazil-600x600.png" alt="Luana Ferraz, Nation Steward of Brazil" width="600" height="600" loading="lazy" decoding="async"></span><span class="ab-ns__n">Brazil</span><span class="ab-ns__p">Luana Ferraz</span></a></li>
+        <li><a class="ab-ns" href="https://perfectnations.org/blueprints/burundi/" title="Aline Iradukunda, Nation Steward of Burundi"><span class="ab-av" style="--c:#8A3A22;"><img src="https://perfectnations.org/wp-content/uploads/2026/10/aline-iradukunda-nation-steward-of-burundi.png" data-fallback="https://perfectnations.org/wp-content/uploads/2026/10/Aline-Iradukunda-Nation-Steward-of-Burundi-600x600.png" alt="Aline Iradukunda, Nation Steward of Burundi" width="600" height="600" loading="lazy" decoding="async"></span><span class="ab-ns__n">Burundi</span><span class="ab-ns__p">Aline Iradukunda</span></a></li>
+        <li><a class="ab-ns" href="https://perfectnations.org/blueprints/dr-congo/" title="Patrick Mbuyi, Nation Steward of DR Congo"><span class="ab-av" style="--c:#1F4A8C;"><img src="https://perfectnations.org/wp-content/uploads/2026/10/patrick-mbuyi-nation-steward-of-dr-congo.png" data-fallback="https://perfectnations.org/wp-content/uploads/2026/10/Patrick-Mbuyi-Nation-Steward-of-DR-Congo-600x600.png" alt="Patrick Mbuyi, Nation Steward of DR Congo" width="600" height="600" loading="lazy" decoding="async"></span><span class="ab-ns__n">DR Congo</span><span class="ab-ns__p">Patrick Mbuyi</span></a></li>
+        <li><a class="ab-ns" href="https://perfectnations.org/blueprints/eswatini/" title="Lindiwe Simelane, Nation Steward of Eswatini"><span class="ab-av" style="--c:#17644F;"><img src="https://perfectnations.org/wp-content/uploads/2026/10/lindiwe-simelane-nation-steward-of-eswatini.png" data-fallback="https://perfectnations.org/wp-content/uploads/2026/10/Lindiwe-Simelane-Nation-Steward-of-Eswatini-600x600.png" alt="Lindiwe Simelane, Nation Steward of Eswatini" width="600" height="600" loading="lazy" decoding="async"></span><span class="ab-ns__n">Eswatini</span><span class="ab-ns__p">Lindiwe Simelane</span></a></li>
+        <li><a class="ab-ns" href="https://perfectnations.org/blueprints/india/" title="Ananya Rao, Nation Steward of India"><span class="ab-av" style="--c:#B08A3E;"><img src="https://perfectnations.org/wp-content/uploads/2026/10/ananya-rao-nation-steward-of-india.png" data-fallback="https://perfectnations.org/wp-content/uploads/2026/10/Ananya-Rao-Nation-Steward-of-India-600x600.png" alt="Ananya Rao, Nation Steward of India" width="600" height="600" loading="lazy" decoding="async"></span><span class="ab-ns__n">India</span><span class="ab-ns__p">Ananya Rao</span></a></li>
+        <li><a class="ab-ns" href="https://perfectnations.org/blueprints/kenya/" title="Wanjiru Mwangi, Nation Steward of Kenya"><span class="ab-av" style="--c:#164A37;"><img src="https://perfectnations.org/wp-content/uploads/2026/10/wanjiru-mwangi-nation-steward-of-kenya.png" data-fallback="https://perfectnations.org/wp-content/uploads/2026/10/Wanjiru-Mwangi-Nation-Steward-of-Kenya-600x600.png" alt="Wanjiru Mwangi, Nation Steward of Kenya" width="600" height="600" loading="lazy" decoding="async"></span><span class="ab-ns__n">Kenya</span><span class="ab-ns__p">Wanjiru Mwangi</span></a></li>
+        <li><a class="ab-ns" href="https://perfectnations.org/blueprints/lesotho/" title="Thabo Mokoena, Nation Steward of Lesotho"><span class="ab-av" style="--c:#1F4A8C;"><img src="https://perfectnations.org/wp-content/uploads/2026/10/thabo-mokoena-nation-steward-of-lesotho.png" data-fallback="https://perfectnations.org/wp-content/uploads/2026/10/Thabo-Mokoena-Nation-Steward-of-Lesotho-600x600.png" alt="Thabo Mokoena, Nation Steward of Lesotho" width="600" height="600" loading="lazy" decoding="async"></span><span class="ab-ns__n">Lesotho</span><span class="ab-ns__p">Thabo Mokoena</span></a></li>
+        <li><a class="ab-ns" href="https://perfectnations.org/blueprints/madagascar/" title="Fanja Rasoanaivo, Nation Steward of Madagascar"><span class="ab-av" style="--c:#8A3A22;"><img src="https://perfectnations.org/wp-content/uploads/2026/10/fanja-rasoanaivo-nation-steward-of-madagascar.png" data-fallback="https://perfectnations.org/wp-content/uploads/2026/10/Fanja-Rasoanaivo-Nation-Steward-of-Madagascar-600x600.png" alt="Fanja Rasoanaivo, Nation Steward of Madagascar" width="600" height="600" loading="lazy" decoding="async"></span><span class="ab-ns__n">Madagascar</span><span class="ab-ns__p">Fanja Rasoanaivo</span></a></li>
+        <li><a class="ab-ns" href="https://perfectnations.org/blueprints/malawi/" title="Chikondi Phiri, Nation Steward of Malawi"><span class="ab-av" style="--c:#0E4563;"><img src="https://perfectnations.org/wp-content/uploads/2026/10/chikondi-phiri-nation-steward-of-malawi.png" data-fallback="https://perfectnations.org/wp-content/uploads/2026/10/Chikondi-Phiri-Nation-Steward-of-Malawi-600x600.png" alt="Chikondi Phiri, Nation Steward of Malawi" width="600" height="600" loading="lazy" decoding="async"></span><span class="ab-ns__n">Malawi</span><span class="ab-ns__p">Chikondi Phiri</span></a></li>
+        <li><a class="ab-ns" href="https://perfectnations.org/blueprints/mozambique/" title="Tomas Macuacua, Nation Steward of Mozambique"><span class="ab-av" style="--c:#6E4A14;"><img src="https://perfectnations.org/wp-content/uploads/2026/10/tomas-macuacua-nation-steward-of-mozambique.png" data-fallback="https://perfectnations.org/wp-content/uploads/2026/10/Tomas-Macuacua-Nation-Steward-of-Mozambique-600x600.png" alt="Tomas Macuacua, Nation Steward of Mozambique" width="600" height="600" loading="lazy" decoding="async"></span><span class="ab-ns__n">Mozambique</span><span class="ab-ns__p">Tomas Macuacua</span></a></li>
+        <li><a class="ab-ns" href="https://perfectnations.org/blueprints/namibia/" title="Ndapewa Shikongo, Nation Steward of Namibia"><span class="ab-av" style="--c:#8A3A22;"><img src="https://perfectnations.org/wp-content/uploads/2026/10/ndapewa-shikongo-nation-steward-of-namibia.png" data-fallback="https://perfectnations.org/wp-content/uploads/2026/10/Ndapewa-Shikongo-Nation-Steward-of-Namibia-600x600.png" alt="Ndapewa Shikongo, Nation Steward of Namibia" width="600" height="600" loading="lazy" decoding="async"></span><span class="ab-ns__n">Namibia</span><span class="ab-ns__p">Ndapewa Shikongo</span></a></li>
+        <li><a class="ab-ns" href="https://perfectnations.org/blueprints/republic-of-congo/" title="Merveille Okemba, Nation Steward of Republic of the Congo"><span class="ab-av" style="--c:#164A37;"><img src="https://perfectnations.org/wp-content/uploads/2026/10/merveille-okemba-nation-steward-of-the-republic-of-the-congo.png" data-fallback="https://perfectnations.org/wp-content/uploads/2026/10/Merveille-Okemba-Nation-Steward-of-the-Republic-of-the-Congo-600x600.png" alt="Merveille Okemba, Nation Steward of Republic of the Congo" width="600" height="600" loading="lazy" decoding="async"></span><span class="ab-ns__n">Republic of the Congo</span><span class="ab-ns__p">Merveille Okemba</span></a></li>
+        <li><a class="ab-ns" href="https://perfectnations.org/blueprints/rwanda/" title="Jean-Paul Mugisha, Nation Steward of Rwanda"><span class="ab-av" style="--c:#17644F;"><img src="https://perfectnations.org/wp-content/uploads/2026/10/jean-paul-mugisha-nation-steward-of-rwanda.png" data-fallback="https://perfectnations.org/wp-content/uploads/2026/10/Jean-Paul-Mugisha-Nation-Steward-of-Rwanda-600x600.png" alt="Jean-Paul Mugisha, Nation Steward of Rwanda" width="600" height="600" loading="lazy" decoding="async"></span><span class="ab-ns__n">Rwanda</span><span class="ab-ns__p">Jean-Paul Mugisha</span></a></li>
+        <li><a class="ab-ns" href="https://perfectnations.org/blueprints/somalia/" title="Hodan Warsame, Nation Steward of Somalia"><span class="ab-av" style="--c:#0E4563;"><img src="https://perfectnations.org/wp-content/uploads/2026/10/woman-in-hijab-coastal-town.png" alt="Hodan Warsame, Nation Steward of Somalia" width="600" height="600" loading="lazy" decoding="async"></span><span class="ab-ns__n">Somalia</span><span class="ab-ns__p">Hodan Warsame</span></a></li>
+        <li><a class="ab-ns" href="https://perfectnations.org/blueprints/south-africa/" title="Sizwe Khumalo, Nation Steward of South Africa"><span class="ab-av" style="--c:#342C27;"><img src="https://perfectnations.org/wp-content/uploads/2026/10/sizwe-khumalo-nation-steward-of-south-africa.png" data-fallback="https://perfectnations.org/wp-content/uploads/2026/10/Sizwe-Khumalo-Nation-Steward-of-South-Africa-600x600.png" alt="Sizwe Khumalo, Nation Steward of South Africa" width="600" height="600" loading="lazy" decoding="async"></span><span class="ab-ns__n">South Africa</span><span class="ab-ns__p">Sizwe Khumalo</span></a></li>
+        <li><a class="ab-ns" href="https://perfectnations.org/blueprints/south-sudan/" title="Achol Deng, Nation Steward of South Sudan"><span class="ab-av" style="--c:#B08A3E;"><img src="https://perfectnations.org/wp-content/uploads/2026/10/achol-deng-nation-steward-of-south-sudan.png" data-fallback="https://perfectnations.org/wp-content/uploads/2026/10/Achol-Deng-Nation-Steward-of-South-Sudan-600x600.png" alt="Achol Deng, Nation Steward of South Sudan" width="600" height="600" loading="lazy" decoding="async"></span><span class="ab-ns__n">South Sudan</span><span class="ab-ns__p">Achol Deng</span></a></li>
+        <li><a class="ab-ns" href="https://perfectnations.org/blueprints/tanzania/" title="Neema Mwakyusa, Nation Steward of Tanzania"><span class="ab-av" style="--c:#1F4A8C;"><img src="https://perfectnations.org/wp-content/uploads/2026/10/neema-mwakyusa-nation-steward-of-tanzania.png" data-fallback="https://perfectnations.org/wp-content/uploads/2026/10/Neema-Mwakyusa-Nation-Steward-of-Tanzania-600x600.png" alt="Neema Mwakyusa, Nation Steward of Tanzania" width="600" height="600" loading="lazy" decoding="async"></span><span class="ab-ns__n">Tanzania</span><span class="ab-ns__p">Neema Mwakyusa</span></a></li>
+        <li><a class="ab-ns" href="https://perfectnations.org/blueprints/uganda/" title="Daniel Okello, Nation Steward of Uganda"><span class="ab-av" style="--c:#164A37;"><img src="https://perfectnations.org/wp-content/uploads/2026/10/daniel-okello-nation-steward-of-uganda.png" data-fallback="https://perfectnations.org/wp-content/uploads/2026/10/Daniel-Okello-Nation-Steward-of-Uganda-600x600.png" alt="Daniel Okello, Nation Steward of Uganda" width="600" height="600" loading="lazy" decoding="async"></span><span class="ab-ns__n">Uganda</span><span class="ab-ns__p">Daniel Okello</span></a></li>
+        <li><a class="ab-ns" href="https://perfectnations.org/blueprints/zambia/" title="Mutale Chanda, Nation Steward of Zambia"><span class="ab-av" style="--c:#6E4A14;"><img src="https://perfectnations.org/wp-content/uploads/2026/10/mutale-chanda-nation-steward-of-zambia.png" data-fallback="https://perfectnations.org/wp-content/uploads/2026/10/Mutale-Chanda-Nation-Steward-of-Zambia-600x600.png" alt="Mutale Chanda, Nation Steward of Zambia" width="600" height="600" loading="lazy" decoding="async"></span><span class="ab-ns__n">Zambia</span><span class="ab-ns__p">Mutale Chanda</span></a></li>
+        <li><a class="ab-ns" href="https://perfectnations.org/blueprints/zimbabwe/" title="Tendai Moyo, Nation Steward of Zimbabwe"><span class="ab-av" style="--c:#17644F;"><img src="https://perfectnations.org/wp-content/uploads/2026/10/tendai-moyo-nation-steward-of-zimbabwe.png" data-fallback="https://perfectnations.org/wp-content/uploads/2026/10/Tendai-Moyo-Nation-Steward-of-Zimbabwe-600x600.png" alt="Tendai Moyo, Nation Steward of Zimbabwe" width="600" height="600" loading="lazy" decoding="async"></span><span class="ab-ns__n">Zimbabwe</span><span class="ab-ns__p">Tendai Moyo</span></a></li></ul>
+    </div>
+  </section>
+
+  <section class="ab-band ab-close" aria-labelledby="ab-close-h">
+    <div class="ab-in">
+      <svg class="ab-laurel" aria-hidden="true" focusable="false"><use href="#pnab-laurel"></use></svg>
+      <p class="ab-eb">Work with Perfect Nations</p>
+      <h2 class="ab-h2" id="ab-close-h">Bring your nation to the table</h2>
+      <p class="ab-lead">Governments, development banks and investors: every enquiry receives a personal reply from the President and CEO.</p>
+      <div class="ab-ctas">
+        <a class="ab-btn" href="https://perfectnations.org/contact/">Start a conversation</a>
+        <a class="ab-btn ab-btn--line" href="https://perfectnations.org/blueprints/">Explore the blueprints</a>
+      </div>
+    </div>
+  </section>
+
+</div>
+<script>
+(function(){
+  /* if the portrait cannot load, the Perfect Nations mark takes its place */
+  var box = document.getElementById('ab-photo');
+  if (!box) { return; }
+  var img = box.querySelector('img');
+  function fallback(){
+    box.classList.add('ab-photo--logo');
+    img.setAttribute('alt', 'Perfect Nations');
+    img.src = 'https://perfectnations.org/wp-content/uploads/2026/08/pnlogolight.png';
+    img.onerror = null;
+  }
+  if (img.complete && img.naturalWidth === 0) { fallback(); }
+  else { img.onerror = fallback; }
+})();
+(function(){
+  /* a Nation Steward portrait that cannot load falls back to its previous image */
+  var imgs = document.querySelectorAll('#pn-about img[data-fallback]');
+  for (var i = 0; i < imgs.length; i++){
+    (function(im){
+      function back(){ var f = im.getAttribute('data-fallback'); if (f){ im.removeAttribute('data-fallback'); im.src = f; } }
+      if (im.complete && im.naturalWidth === 0 && im.getAttribute('loading') !== 'lazy') { back(); }
+      im.addEventListener('error', back);
+    })(imgs[i]);
+  }
+})();
+</script>
