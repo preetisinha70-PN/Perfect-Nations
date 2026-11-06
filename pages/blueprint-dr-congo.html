@@ -1,5 +1,6 @@
 <!-- PERFECT NATIONS . NATIONAL BLUEPRINT . DR CONGO . v9.5 LIVE DATA . 2026-11-06 . Built on the Barbados v11.7 template . One Elementor Custom HTML widget, Full Width, padding 0, Hide Title -->
 <!-- v9.5 (6 November 2026): the whole page follows its Nation Steward. The hero figures and lead, the register (with its filters, counts and Show all), the record in figures, the Sovereign Assets and the enterprises, with their headings, now come from data/dr-congo.json, as the Newswire, the seven standards and the Dispatches already did; the code below is the fallback. -->
+<!-- v9.4.1 (6 November 2026): speed only; no word, colour or layout changes. The globe no longer loads a second copy of three.js (globe.gl carries its own); the nation outline is built in, so the 250 KB world file is not downloaded; the portrait and the Nation Steward photo use the smaller copies WordPress already made; the Caveat font no longer holds up the first paint; live data is revalidated, not downloaded again. -->
 <!-- v9.4 (6 November 2026): All news. The Newswire shows its newest eight headlines; older ones are kept in archive/newswire/dr-congo.json, and when there are any, an All news button opens the full list in place. The show-all buttons now hide when they are meant to. Nothing else changes. -->
 <!-- v9.3 (1 November 2026): brought in from the Drive copy of 1 November 2026 (globe and portrait fix): the globe draws only the nation&#8217;s outline, which removes the flicker; the finished nation portrait (.png, then .jpg); the uploaded asset images. -->
 <!-- v9.2 (1 November 2026): the Health source opens on the nation&rsquo;s own WHO service coverage index chart (Our World in Data, from the WHO Global Health Observatory); the World Bank page no longer shows the figure. -->
@@ -8,7 +9,9 @@
      bill (shown "To set" until the nation is priced). Served live from GitHub (pages/blueprint-dr-congo.html) by the Perfect
      Nations Live Pages plugin. -->
 <!-- v9.0: the Design Studio and the three mandates follow the hero; Writings sit under the Letter and Dispatches; Perfect Capita is the DR Congo wheel of the seven basic living standards; Enterprises follow the Newswire. Patrick Mbuyi, Nation Steward of DR Congo, keeps the page current: on every visit it reads data/dr-congo.json from the Perfect Nations GitHub repository, and keeps the content below if that file cannot be read. -->
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600&amp;display=swap">
+<link rel="preconnect" href="https://raw.githubusercontent.com" crossorigin>
+<link rel="preload" as="script" href="https://cdn.jsdelivr.net/npm/globe.gl@2.31.0/dist/globe.gl.min.js">
+<script>(function () { var h = "https://fonts.googleapis.com/css2?family=Caveat:wght@500;600&display=swap"; if (document.querySelector('link[data-pn-caveat]')) return; var l = document.createElement("link"); l.rel = "stylesheet"; l.href = h; l.setAttribute("data-pn-caveat", "1"); document.head.appendChild(l); })();</script>
 <style>
 #pn-bp-dr-congo{
   --g:var(--pn-brand-gold,#E3C258); --gs:#F0D68F; --gd:#7E5A0C;
@@ -749,7 +752,7 @@ article:has(#pn-bp-dr-congo) .entry-header,article:has(#pn-bp-dr-congo) .post-th
   <section class="bp-band bp-art" id="bp-letter" aria-labelledby="bp-letter-h">
     <div class="bp-in bp-art__grid">
       <div>
-        <span class="bp-frame"><span role="img" aria-label="DR Congo in Bloom, nation portrait of DR Congo" style="background-image:url('https://perfectnations.org/wp-content/uploads/2026/10/pn-portrait-dr-congo.png'), url('https://perfectnations.org/wp-content/uploads/2026/10/pn-portrait-dr-congo.jpg'), radial-gradient(70% 60% at 50% 35%, #1F5A43 0%, #0A251C 100%);"></span></span>
+        <span class="bp-frame"><span role="img" aria-label="DR Congo in Bloom, nation portrait of DR Congo" style="background-image:url('https://perfectnations.org/wp-content/uploads/2026/10/pn-portrait-dr-congo-768x768.png'), radial-gradient(70% 60% at 50% 35%, #1F5A43 0%, #0A251C 100%);"></span></span>
         <span class="bp-art__cap">DR Congo in Bloom<small>Nation Portrait &middot; <a href="https://perfectnations.org/gallery/" target="_blank" rel="noopener noreferrer">The Gallery</a></small></span>
       </div>
       <article class="bp-sheet">
@@ -1050,7 +1053,7 @@ article:has(#pn-bp-dr-congo) .entry-header,article:has(#pn-bp-dr-congo) .post-th
       <div class="bp-disp" id="bp-newswire">
         <div class="bp-disp__h"><h3 class="bp-nw">The DR Congo Newswire</h3><a class="bp-link" href="https://perfectnations.org/state-of-nations/" target="_blank" rel="noopener noreferrer">State of Nations</a></div>
         <div class="bp-stew">
-          <img src="https://perfectnations.org/wp-content/uploads/2026/10/patrick-mbuyi-nation-steward-of-dr-congo.png" alt="Patrick Mbuyi, Nation Steward of DR Congo" width="64" height="64" loading="lazy" decoding="async" onerror="this.style.display='none'">
+          <img src="https://perfectnations.org/wp-content/uploads/2026/10/patrick-mbuyi-nation-steward-of-dr-congo-150x150.png" alt="Patrick Mbuyi, Nation Steward of DR Congo" width="64" height="64" loading="lazy" decoding="async" onerror="this.style.display='none'">
           <p><b>Patrick Mbuyi</b><span>Nation Steward of DR Congo &middot; SI Researcher</span>Every change is sourced and reviewed before it is published. <time class="bp-stew__d" datetime="2026-10-30">Last updated 30 October 2026</time></p>
         </div>
         <ul class="bp-wire">
@@ -1158,7 +1161,7 @@ article:has(#pn-bp-dr-congo) .entry-header,article:has(#pn-bp-dr-congo) .post-th
 <script>
 (async function () {
   /* The DR Congo globe. Libraries load dynamically: static script tags are
-     blocked on this host. Versions are pinned together: globe.gl 2.31.0 matches three r159.
+     blocked on this host. globe.gl 2.31.0 carries its own copy of three.js, so three is not loaded separately.
      If anything fails, the static ocean sphere behind the globe stays visible. */
   var container = document.getElementById('dr-congo-globe');
   var wrap = document.getElementById('dr-congo-globe-wrap');
@@ -1173,11 +1176,9 @@ article:has(#pn-bp-dr-congo) .entry-header,article:has(#pn-bp-dr-congo) .post-th
       document.head.appendChild(s);
     });
   }
-  var PN_THREE_SRC = 'https://cdn.jsdelivr.net/npm/three@0.159.0/build/three.min.js';
   var PN_GLOBE_SRC = 'https://cdn.jsdelivr.net/npm/globe.gl@2.31.0/dist/globe.gl.min.js';
   try {
     if (typeof Globe === 'undefined') {
-      if (typeof THREE === 'undefined') await pnLoadScript(PN_THREE_SRC);
       await pnLoadScript(PN_GLOBE_SRC);
     }
     if (typeof Globe === 'undefined') return;
@@ -1194,18 +1195,14 @@ article:has(#pn-bp-dr-congo) .entry-header,article:has(#pn-bp-dr-congo) .post-th
       probe.onerror = function () { resolve(EARTH_NIGHT); };
       probe.src = EARTH_DAY;
     });
-    var WORLD_GEOJSON_URL = 'https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/world.geojson';
     var NAME_CANDIDATES = ['democratic republic of the congo', 'dem. rep. congo', 'congo, dem. rep.', 'democratic republic of congo'];
     var isTarget = function (f) {
       var p = f.properties || {};
       var n = String(p.name || p.NAME || '').toLowerCase();
       return NAME_CANDIDATES.indexOf(n) !== -1;
     };
-    var features = [];
-    try {
-      var worldRaw = await fetch(WORLD_GEOJSON_URL).then(function (r) { return r.json(); });
-      if (worldRaw && worldRaw.features) features = worldRaw.features;
-    } catch (geoErr) { features = []; }
+    /* v9.4.1: the outline (Democratic Republic of the Congo) is built in, taken from the same world file the page used to download. */
+    var features = [{"type":"Feature","properties":{"name":"Democratic Republic of the Congo"},"geometry":{"type":"Polygon","coordinates":[[[30.83386,3.509166],[30.773347,2.339883],[31.174149,2.204465],[30.85267,1.849396],[30.468508,1.583805],[30.086154,1.062313],[29.875779,0.59738],[29.819503,-0.20531],[29.587838,-0.587406],[29.579466,-1.341313],[29.291887,-1.620056],[29.254835,-2.21511],[29.117479,-2.292211],[29.024926,-2.839258],[29.276384,-3.293907],[29.339998,-4.499983],[29.519987,-5.419979],[29.419993,-5.939999],[29.620032,-6.520015],[30.199997,-7.079981],[30.740015,-8.340007],[30.346086,-8.238257],[29.002912,-8.407032],[28.734867,-8.526559],[28.449871,-9.164918],[28.673682,-9.605925],[28.49607,-10.789884],[28.372253,-11.793647],[28.642417,-11.971569],[29.341548,-12.360744],[29.616001,-12.178895],[29.699614,-13.257227],[28.934286,-13.248958],[28.523562,-12.698604],[28.155109,-12.272481],[27.388799,-12.132747],[27.16442,-11.608748],[26.553088,-11.92444],[25.75231,-11.784965],[25.418118,-11.330936],[24.78317,-11.238694],[24.314516,-11.262826],[24.257155,-10.951993],[23.912215,-10.926826],[23.456791,-10.867863],[22.837345,-11.017622],[22.402798,-10.993075],[22.155268,-11.084801],[22.208753,-9.894796],[21.875182,-9.523708],[21.801801,-8.908707],[21.949131,-8.305901],[21.746456,-7.920085],[21.728111,-7.290872],[20.514748,-7.299606],[20.601823,-6.939318],[20.091622,-6.94309],[20.037723,-7.116361],[19.417502,-7.155429],[19.166613,-7.738184],[19.016752,-7.988246],[18.464176,-7.847014],[18.134222,-7.987678],[17.47297,-8.068551],[17.089996,-7.545689],[16.860191,-7.222298],[16.57318,-6.622645],[16.326528,-5.87747],[13.375597,-5.864241],[13.024869,-5.984389],[12.735171,-5.965682],[12.322432,-6.100092],[12.182337,-5.789931],[12.436688,-5.684304],[12.468004,-5.248362],[12.631612,-4.991271],[12.995517,-4.781103],[13.25824,-4.882957],[13.600235,-4.500138],[14.144956,-4.510009],[14.209035,-4.793092],[14.582604,-4.970239],[15.170992,-4.343507],[15.75354,-3.855165],[16.00629,-3.535133],[15.972803,-2.712392],[16.407092,-1.740927],[16.865307,-1.225816],[17.523716,-0.74383],[17.638645,-0.424832],[17.663553,-0.058084],[17.82654,0.288923],[17.774192,0.855659],[17.898835,1.741832],[18.094276,2.365722],[18.393792,2.900443],[18.453065,3.504386],[18.542982,4.201785],[18.932312,4.709506],[19.467784,5.031528],[20.290679,4.691678],[20.927591,4.322786],[21.659123,4.224342],[22.405124,4.02916],[22.704124,4.633051],[22.84148,4.710126],[23.297214,4.609693],[24.410531,5.108784],[24.805029,4.897247],[25.128833,4.927245],[25.278798,5.170408],[25.650455,5.256088],[26.402761,5.150875],[27.044065,5.127853],[27.374226,5.233944],[27.979977,4.408413],[28.428994,4.287155],[28.696678,4.455077],[29.159078,4.389267],[29.715995,4.600805],[29.9535,4.173699],[30.83386,3.509166]]]}}];
     var natLat = -4.0383, natLng = 21.7587;
     var globe = Globe()(container)
       .globeImageUrl(EARTH_IMG)
@@ -1339,7 +1336,7 @@ article:has(#pn-bp-dr-congo) .entry-header,article:has(#pn-bp-dr-congo) .post-th
   function longDate(iso){ var p=String(iso||'').split('-'); if(p.length!==3)return ''; return (+p[2])+' '+MONTHS[(+p[1])-1]+' '+p[0]; }
   function load(i){
     if(i>=URLS.length)return;
-    fetch(URLS[i],{cache:'no-store'}).then(function(r){ if(!r.ok)throw 0; return r.json(); })
+    fetch(URLS[i],{cache:'no-cache'}).then(function(r){ if(!r.ok)throw 0; return r.json(); })
       .then(apply).catch(function(){ load(i+1); });
   }
   function renderDispatches(d){

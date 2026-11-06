@@ -1,5 +1,6 @@
 <!-- PERFECT NATIONS . NATIONAL BLUEPRINT . ETHIOPIA . v9.4 LIVE DATA . 2026-11-06 . Built on the Barbados v11.7 template . One Elementor Custom HTML widget, Full Width, padding 0, Hide Title -->
 <!-- v9.4 (6 November 2026): the whole page follows its Nation Steward. The hero figures and lead, the register (with its filters, counts and Show all), the record in figures, the Sovereign Assets and the enterprises, with their headings, now come from data/ethiopia.json, as the Newswire, the seven standards and the Dispatches already did; the code below is the fallback. -->
+<!-- v9.3.1 (6 November 2026): speed only; no word, colour or layout changes. The globe no longer loads a second copy of three.js (globe.gl carries its own); the nation outline is built in, so the 250 KB world file is not downloaded; the portrait and the Nation Steward photo use the smaller copies WordPress already made; the Caveat font no longer holds up the first paint; live data is revalidated, not downloaded again. -->
 <!-- v9.3 (6 November 2026): All news. The Newswire shows its newest eight headlines; older ones are kept in archive/newswire/ethiopia.json, and when there are any, an All news button opens the full list in place. The show-all buttons now hide when they are meant to. Nothing else changes. -->
 <!-- v9.2 (1 November 2026): the Health source opens on the nation&rsquo;s own WHO service coverage index chart (Our World in Data, from the WHO Global Health Observatory); the World Bank page no longer shows the figure. Built from the Drive copy of 1 November 2026 (globe and portrait fix: only the nation&rsquo;s outline is drawn on the globe; the nation portrait loads as .png, then .jpg). -->
 <!-- v9.1 (1 November 2026): the words of 1 November 2026: the seven basic living standards; Perfect Capita is the yearly
@@ -7,7 +8,9 @@
      bill (shown "To set" until the nation is priced). Served live from GitHub (pages/blueprint-ethiopia.html) by the Perfect
      Nations Live Pages plugin. -->
 <!-- v9.0: the Design Studio and the three mandates follow the hero; Writings sit under the Letter and Dispatches; Perfect Capita is the Ethiopia wheel of the seven basic living standards; Enterprises follow the Newswire. Selam Tesfaye, Nation Steward of Ethiopia, keeps the page current: on every visit it reads data/ethiopia.json from the Perfect Nations GitHub repository, and keeps the content below if that file cannot be read. -->
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600&amp;display=swap">
+<link rel="preconnect" href="https://raw.githubusercontent.com" crossorigin>
+<link rel="preload" as="script" href="https://cdn.jsdelivr.net/npm/globe.gl@2.31.0/dist/globe.gl.min.js">
+<script>(function () { var h = "https://fonts.googleapis.com/css2?family=Caveat:wght@500;600&display=swap"; if (document.querySelector('link[data-pn-caveat]')) return; var l = document.createElement("link"); l.rel = "stylesheet"; l.href = h; l.setAttribute("data-pn-caveat", "1"); document.head.appendChild(l); })();</script>
 <style>
 #pn-bp-ethiopia{
   --g:var(--pn-brand-gold,#E3C258); --gs:#F0D68F; --gd:#7E5A0C;
@@ -750,7 +753,7 @@ article:has(#pn-bp-ethiopia) .entry-header,article:has(#pn-bp-ethiopia) .post-th
   <section class="bp-band bp-art" id="bp-letter" aria-labelledby="bp-letter-h">
     <div class="bp-in bp-art__grid">
       <div>
-        <span class="bp-frame"><span role="img" aria-label="Ethiopia in Bloom, nation portrait of Ethiopia" style="background-image:url('https://perfectnations.org/wp-content/uploads/2026/10/pn-portrait-ethiopia.png'), url('https://perfectnations.org/wp-content/uploads/2026/10/pn-portrait-ethiopia.jpg'), radial-gradient(70% 60% at 50% 35%, #1F5A43 0%, #0A251C 100%);"></span></span>
+        <span class="bp-frame"><span role="img" aria-label="Ethiopia in Bloom, nation portrait of Ethiopia" style="background-image:url('https://perfectnations.org/wp-content/uploads/2026/10/pn-portrait-ethiopia-768x768.png'), radial-gradient(70% 60% at 50% 35%, #1F5A43 0%, #0A251C 100%);"></span></span>
         <span class="bp-art__cap">Ethiopia in Bloom<small>Nation Portrait &middot; <a href="https://perfectnations.org/gallery/" target="_blank" rel="noopener noreferrer">The Gallery</a></small></span>
       </div>
       <article class="bp-sheet">
@@ -941,7 +944,7 @@ article:has(#pn-bp-ethiopia) .entry-header,article:has(#pn-bp-ethiopia) .post-th
       <div class="bp-disp" id="bp-newswire">
         <div class="bp-disp__h"><h3 class="bp-nw">The Ethiopia Newswire</h3><a class="bp-link" href="https://perfectnations.org/state-of-nations/" target="_blank" rel="noopener noreferrer">State of Nations</a></div>
         <div class="bp-stew">
-          <img src="https://perfectnations.org/wp-content/uploads/2026/10/selam-tesfaye-nation-steward-of-ethiopia.png" alt="Selam Tesfaye, Nation Steward of Ethiopia" width="64" height="64" loading="lazy" decoding="async" onerror="this.style.display='none'">
+          <img src="https://perfectnations.org/wp-content/uploads/2026/10/selam-tesfaye-nation-steward-of-ethiopia-150x150.png" alt="Selam Tesfaye, Nation Steward of Ethiopia" width="64" height="64" loading="lazy" decoding="async" onerror="this.style.display='none'">
           <p><b>Selam Tesfaye</b><span>Nation Steward of Ethiopia &middot; SI Researcher</span>Every change is sourced and reviewed before it is published. <time class="bp-stew__d" datetime="2026-10-30">Last updated 30 October 2026</time></p>
         </div>
         <ul class="bp-wire">
@@ -1040,7 +1043,7 @@ article:has(#pn-bp-ethiopia) .entry-header,article:has(#pn-bp-ethiopia) .post-th
 <script>
 (async function () {
   /* The Ethiopia globe. Libraries load dynamically: static script tags are
-     blocked on this host. Versions are pinned together: globe.gl 2.31.0 matches three r159.
+     blocked on this host. globe.gl 2.31.0 carries its own copy of three.js, so three is not loaded separately.
      If anything fails, the static ocean sphere behind the globe stays visible. */
   var container = document.getElementById('ethiopia-globe');
   var wrap = document.getElementById('ethiopia-globe-wrap');
@@ -1055,11 +1058,9 @@ article:has(#pn-bp-ethiopia) .entry-header,article:has(#pn-bp-ethiopia) .post-th
       document.head.appendChild(s);
     });
   }
-  var PN_THREE_SRC = 'https://cdn.jsdelivr.net/npm/three@0.159.0/build/three.min.js';
   var PN_GLOBE_SRC = 'https://cdn.jsdelivr.net/npm/globe.gl@2.31.0/dist/globe.gl.min.js';
   try {
     if (typeof Globe === 'undefined') {
-      if (typeof THREE === 'undefined') await pnLoadScript(PN_THREE_SRC);
       await pnLoadScript(PN_GLOBE_SRC);
     }
     if (typeof Globe === 'undefined') return;
@@ -1076,18 +1077,14 @@ article:has(#pn-bp-ethiopia) .entry-header,article:has(#pn-bp-ethiopia) .post-th
       probe.onerror = function () { resolve(EARTH_NIGHT); };
       probe.src = EARTH_DAY;
     });
-    var WORLD_GEOJSON_URL = 'https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/world.geojson';
     var NAME_CANDIDATES = ['ethiopia'];
     var isTarget = function (f) {
       var p = f.properties || {};
       var n = String(p.name || p.NAME || '').toLowerCase();
       return NAME_CANDIDATES.indexOf(n) !== -1;
     };
-    var features = [];
-    try {
-      var worldRaw = await fetch(WORLD_GEOJSON_URL).then(function (r) { return r.json(); });
-      if (worldRaw && worldRaw.features) features = worldRaw.features;
-    } catch (geoErr) { features = []; }
+    /* v9.3.1: the outline (Ethiopia) is built in, taken from the same world file the page used to download. */
+    var features = [{"type":"Feature","properties":{"name":"Ethiopia"},"geometry":{"type":"Polygon","coordinates":[[[37.90607,14.95943],[38.51295,14.50547],[39.0994,14.74064],[39.34061,14.53155],[40.02625,14.51959],[40.8966,14.11864],[41.1552,13.77333],[41.59856,13.45209],[42.00975,12.86582],[42.35156,12.54223],[42,12.1],[41.66176,11.6312],[41.73959,11.35511],[41.75557,11.05091],[42.31414,11.0342],[42.55493,11.10511],[42.776852,10.926879],[42.55876,10.57258],[42.92812,10.02194],[43.29699,9.54048],[43.67875,9.18358],[46.94834,7.99688],[47.78942,8.003],[44.9636,5.00162],[43.66087,4.95755],[42.76967,4.25259],[42.12861,4.23413],[41.855083,3.918912],[41.1718,3.91909],[40.76848,4.25702],[39.85494,3.83879],[39.559384,3.42206],[38.89251,3.50074],[38.67114,3.61607],[38.43697,3.58851],[38.120915,3.598605],[36.855093,4.447864],[36.159079,4.447864],[35.817448,4.776966],[35.817448,5.338232],[35.298007,5.506],[34.70702,6.59422],[34.25032,6.82607],[34.0751,7.22595],[33.56829,7.71334],[32.95418,7.78497],[33.2948,8.35458],[33.8255,8.37916],[33.97498,8.68456],[33.96162,9.58358],[34.25745,10.63009],[34.73115,10.91017],[34.83163,11.31896],[35.26049,12.08286],[35.86363,12.57828],[36.27022,13.56333],[36.42951,14.42211],[37.59377,14.2131],[37.90607,14.95943]]]}}];
     var natLat = 9.145, natLng = 40.4897;
     var globe = Globe()(container)
       .globeImageUrl(EARTH_IMG)
@@ -1221,7 +1218,7 @@ article:has(#pn-bp-ethiopia) .entry-header,article:has(#pn-bp-ethiopia) .post-th
   function longDate(iso){ var p=String(iso||'').split('-'); if(p.length!==3)return ''; return (+p[2])+' '+MONTHS[(+p[1])-1]+' '+p[0]; }
   function load(i){
     if(i>=URLS.length)return;
-    fetch(URLS[i],{cache:'no-store'}).then(function(r){ if(!r.ok)throw 0; return r.json(); })
+    fetch(URLS[i],{cache:'no-cache'}).then(function(r){ if(!r.ok)throw 0; return r.json(); })
       .then(apply).catch(function(){ load(i+1); });
   }
   function renderDispatches(d){

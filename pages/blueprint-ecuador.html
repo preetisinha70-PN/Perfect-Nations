@@ -1,5 +1,6 @@
 <!-- PERFECT NATIONS . NATIONAL BLUEPRINT . ECUADOR . v9.4 LIVE DATA . 2026-11-06 . Built on the Barbados v11.7 template . One Elementor Custom HTML widget, Full Width, padding 0, Hide Title -->
 <!-- v9.4 (6 November 2026): the whole page follows its Nation Steward. The hero figures and lead, the register (with its filters, counts and Show all), the record in figures, the Sovereign Assets and the enterprises, with their headings, now come from data/ecuador.json, as the Newswire, the seven standards and the Dispatches already did; the code below is the fallback. -->
+<!-- v9.3.1 (6 November 2026): speed only; no word, colour or layout changes. The globe no longer loads a second copy of three.js (globe.gl carries its own); the nation outline is built in, so the 250 KB world file is not downloaded; the portrait and the Nation Steward photo use the smaller copies WordPress already made; the Caveat font no longer holds up the first paint; live data is revalidated, not downloaded again. -->
 <!-- v9.3 (6 November 2026): All news. The Newswire shows its newest eight headlines; older ones are kept in archive/newswire/ecuador.json, and when there are any, an All news button opens the full list in place. The show-all buttons now hide when they are meant to. Nothing else changes. -->
 <!-- v9.2 (1 November 2026): the Health source opens on the nation&rsquo;s own WHO service coverage index chart (Our World in Data, from the WHO Global Health Observatory); the World Bank page no longer shows the figure. Built from the Drive copy of 1 November 2026 (globe and portrait fix: only the nation&rsquo;s outline is drawn on the globe; the nation portrait loads as .png, then .jpg). -->
 <!-- v9.1 (1 November 2026): the words of 1 November 2026: the seven basic living standards; Perfect Capita is the yearly
@@ -7,7 +8,9 @@
      bill (shown "To set" until the nation is priced). Served live from GitHub (pages/blueprint-ecuador.html) by the Perfect
      Nations Live Pages plugin. -->
 <!-- v9.0: the Design Studio and the three mandates follow the hero; Writings sit under the Letter and Dispatches; Perfect Capita is the Ecuador wheel of the seven basic living standards; Enterprises follow the Newswire. Paola Andrade, Nation Steward of Ecuador, keeps the page current: on every visit it reads data/ecuador.json from the Perfect Nations GitHub repository, and keeps the content below if that file cannot be read. -->
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600&amp;display=swap">
+<link rel="preconnect" href="https://raw.githubusercontent.com" crossorigin>
+<link rel="preload" as="script" href="https://cdn.jsdelivr.net/npm/globe.gl@2.31.0/dist/globe.gl.min.js">
+<script>(function () { var h = "https://fonts.googleapis.com/css2?family=Caveat:wght@500;600&display=swap"; if (document.querySelector('link[data-pn-caveat]')) return; var l = document.createElement("link"); l.rel = "stylesheet"; l.href = h; l.setAttribute("data-pn-caveat", "1"); document.head.appendChild(l); })();</script>
 <style>
 #pn-bp-ecuador{
   --g:var(--pn-brand-gold,#E3C258); --gs:#F0D68F; --gd:#7E5A0C;
@@ -750,7 +753,7 @@ article:has(#pn-bp-ecuador) .entry-header,article:has(#pn-bp-ecuador) .post-thum
   <section class="bp-band bp-art" id="bp-letter" aria-labelledby="bp-letter-h">
     <div class="bp-in bp-art__grid">
       <div>
-        <span class="bp-frame"><span role="img" aria-label="Ecuador in Bloom, nation portrait of Ecuador" style="background-image:url('https://perfectnations.org/wp-content/uploads/2026/10/pn-portrait-ecuador.png'), url('https://perfectnations.org/wp-content/uploads/2026/10/pn-portrait-ecuador.jpg'), radial-gradient(70% 60% at 50% 35%, #1F5A43 0%, #0A251C 100%);"></span></span>
+        <span class="bp-frame"><span role="img" aria-label="Ecuador in Bloom, nation portrait of Ecuador" style="background-image:url('https://perfectnations.org/wp-content/uploads/2026/10/pn-portrait-ecuador-768x768.png'), radial-gradient(70% 60% at 50% 35%, #1F5A43 0%, #0A251C 100%);"></span></span>
         <span class="bp-art__cap">Ecuador in Bloom<small>Nation Portrait &middot; <a href="https://perfectnations.org/gallery/" target="_blank" rel="noopener noreferrer">The Gallery</a></small></span>
       </div>
       <article class="bp-sheet">
@@ -930,7 +933,7 @@ article:has(#pn-bp-ecuador) .entry-header,article:has(#pn-bp-ecuador) .post-thum
       <div class="bp-disp" id="bp-newswire">
         <div class="bp-disp__h"><h3 class="bp-nw">The Ecuador Newswire</h3><a class="bp-link" href="https://perfectnations.org/state-of-nations/" target="_blank" rel="noopener noreferrer">State of Nations</a></div>
         <div class="bp-stew">
-          <img src="https://perfectnations.org/wp-content/uploads/2026/10/paola-andrade-nation-steward-of-ecuador.png" alt="Paola Andrade, Nation Steward of Ecuador" width="64" height="64" loading="lazy" decoding="async" onerror="this.style.display='none'">
+          <img src="https://perfectnations.org/wp-content/uploads/2026/10/paola-andrade-nation-steward-of-ecuador-150x150.png" alt="Paola Andrade, Nation Steward of Ecuador" width="64" height="64" loading="lazy" decoding="async" onerror="this.style.display='none'">
           <p><b>Paola Andrade</b><span>Nation Steward of Ecuador &middot; SI Researcher</span>Every change is sourced and reviewed before it is published. <time class="bp-stew__d" datetime="2026-10-30">Last updated 30 October 2026</time></p>
         </div>
         <ul class="bp-wire">
@@ -1029,7 +1032,7 @@ article:has(#pn-bp-ecuador) .entry-header,article:has(#pn-bp-ecuador) .post-thum
 <script>
 (async function () {
   /* The Ecuador globe. Libraries load dynamically: static script tags are
-     blocked on this host. Versions are pinned together: globe.gl 2.31.0 matches three r159.
+     blocked on this host. globe.gl 2.31.0 carries its own copy of three.js, so three is not loaded separately.
      If anything fails, the static ocean sphere behind the globe stays visible. */
   var container = document.getElementById('ecuador-globe');
   var wrap = document.getElementById('ecuador-globe-wrap');
@@ -1044,11 +1047,9 @@ article:has(#pn-bp-ecuador) .entry-header,article:has(#pn-bp-ecuador) .post-thum
       document.head.appendChild(s);
     });
   }
-  var PN_THREE_SRC = 'https://cdn.jsdelivr.net/npm/three@0.159.0/build/three.min.js';
   var PN_GLOBE_SRC = 'https://cdn.jsdelivr.net/npm/globe.gl@2.31.0/dist/globe.gl.min.js';
   try {
     if (typeof Globe === 'undefined') {
-      if (typeof THREE === 'undefined') await pnLoadScript(PN_THREE_SRC);
       await pnLoadScript(PN_GLOBE_SRC);
     }
     if (typeof Globe === 'undefined') return;
@@ -1065,18 +1066,14 @@ article:has(#pn-bp-ecuador) .entry-header,article:has(#pn-bp-ecuador) .post-thum
       probe.onerror = function () { resolve(EARTH_NIGHT); };
       probe.src = EARTH_DAY;
     });
-    var WORLD_GEOJSON_URL = 'https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/world.geojson';
     var NAME_CANDIDATES = ['ecuador'];
     var isTarget = function (f) {
       var p = f.properties || {};
       var n = String(p.name || p.NAME || '').toLowerCase();
       return NAME_CANDIDATES.indexOf(n) !== -1;
     };
-    var features = [];
-    try {
-      var worldRaw = await fetch(WORLD_GEOJSON_URL).then(function (r) { return r.json(); });
-      if (worldRaw && worldRaw.features) features = worldRaw.features;
-    } catch (geoErr) { features = []; }
+    /* v9.3.1: the outline (Ecuador) is built in, taken from the same world file the page used to download. */
+    var features = [{"type":"Feature","properties":{"name":"Ecuador"},"geometry":{"type":"Polygon","coordinates":[[[-80.302561,-3.404856],[-79.770293,-2.657512],[-79.986559,-2.220794],[-80.368784,-2.685159],[-80.967765,-2.246943],[-80.764806,-1.965048],[-80.933659,-1.057455],[-80.58337,-0.906663],[-80.399325,-0.283703],[-80.020898,0.36034],[-80.09061,0.768429],[-79.542762,0.982938],[-78.855259,1.380924],[-77.855061,0.809925],[-77.668613,0.825893],[-77.424984,0.395687],[-76.57638,0.256936],[-76.292314,0.416047],[-75.801466,0.084801],[-75.373223,-0.152032],[-75.233723,-0.911417],[-75.544996,-1.56161],[-76.635394,-2.608678],[-77.837905,-3.003021],[-78.450684,-3.873097],[-78.639897,-4.547784],[-79.205289,-4.959129],[-79.624979,-4.454198],[-80.028908,-4.346091],[-80.442242,-4.425724],[-80.469295,-4.059287],[-80.184015,-3.821162],[-80.302561,-3.404856]]]}}];
     var natLat = -1.8312, natLng = -78.1834;
     var globe = Globe()(container)
       .globeImageUrl(EARTH_IMG)
@@ -1210,7 +1207,7 @@ article:has(#pn-bp-ecuador) .entry-header,article:has(#pn-bp-ecuador) .post-thum
   function longDate(iso){ var p=String(iso||'').split('-'); if(p.length!==3)return ''; return (+p[2])+' '+MONTHS[(+p[1])-1]+' '+p[0]; }
   function load(i){
     if(i>=URLS.length)return;
-    fetch(URLS[i],{cache:'no-store'}).then(function(r){ if(!r.ok)throw 0; return r.json(); })
+    fetch(URLS[i],{cache:'no-cache'}).then(function(r){ if(!r.ok)throw 0; return r.json(); })
       .then(apply).catch(function(){ load(i+1); });
   }
   function renderDispatches(d){

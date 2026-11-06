@@ -4,7 +4,7 @@
   "pages": {
     "pn-hd": {
       "file": "pages/header.html",
-      "version": "19.1",
+      "version": "19.1.1",
       "title": "Header (every page)",
       "url": "https://perfectnations.org/"
     },
@@ -16,7 +16,7 @@
     },
     "pn-son": {
       "file": "pages/state-of-nations.html",
-      "version": "6.2",
+      "version": "6.2.1",
       "title": "State of Nations",
       "url": "https://perfectnations.org/state-of-nations/"
     },
@@ -586,27 +586,43 @@
     },
     "pn-ci-blueprint": {
       "file": "pages/blueprint-cote-divoire.html",
-      "version": "9.2",
+      "version": "9.3.1",
       "title": "Côte d’Ivoire blueprint (replaces the August 2026 page, root pn-ci-blueprint)",
       "url": "https://perfectnations.org/blueprints/cote-d-ivoire/"
     },
     "pn-nations": {
       "file": "pages/nations-menu.html",
-      "version": "2.1",
+      "version": "2.2",
       "title": "Nations Menu (the moving list of nations, every page it sits on)",
       "url": "https://perfectnations.org/"
     },
     "pn-hero": {
       "file": "pages/home-hero.html",
-      "version": "5.3",
+      "version": "5.4",
       "title": "Homepage section 01, Civilization Re-Defined (the golden planet), and section 01a, The Story of Perfect Nations",
+      "url": "https://perfectnations.org/"
+    },
+    "pn-tick": {
+      "file": "pages/home-capital-wire.html",
+      "version": "2.0",
+      "title": "Homepage section 01b, the Capital Wire (the deal tape under the golden planet)",
       "url": "https://perfectnations.org/"
     }
   },
   "redirects": {
-    "/dear-zimbabwe-2/": "/dear-zimbabwe/"
+    "/dear-zimbabwe-2/": "/dear-zimbabwe/",
+    "/cart/": "/perfect-nations-gallery/",
+    "/checkout/": "/perfect-nations-gallery/",
+    "/my-account/": "/perfect-nations-gallery/",
+    "/store/": "/perfect-nations-gallery/",
+    "/blueprints/shop/": "/perfect-nations-gallery/"
   },
   "redirects_about": {
-    "/dear-zimbabwe-2/": "A second copy of the Zimbabwe letter (post 17327). The Zimbabwe blueprint links to /dear-zimbabwe/ (post 16630), which shows the current letter."
+    "/dear-zimbabwe-2/": "A second copy of the Zimbabwe letter (post 17327). The Zimbabwe blueprint links to /dear-zimbabwe/ (post 16630), which shows the current letter.",
+    "/cart/": "WooCommerce was switched off on 6 Nov 2026 (works are sold by enquiry from the Gallery), so the old store pages lead to the Gallery. Remove this line if the store is switched on again.",
+    "/checkout/": "WooCommerce was switched off on 6 Nov 2026 (works are sold by enquiry from the Gallery), so the old store pages lead to the Gallery. Remove this line if the store is switched on again.",
+    "/my-account/": "WooCommerce was switched off on 6 Nov 2026 (works are sold by enquiry from the Gallery), so the old store pages lead to the Gallery. Remove this line if the store is switched on again.",
+    "/store/": "WooCommerce was switched off on 6 Nov 2026 (works are sold by enquiry from the Gallery), so the old store pages lead to the Gallery. Remove this line if the store is switched on again.",
+    "/blueprints/shop/": "WooCommerce was switched off on 6 Nov 2026 (works are sold by enquiry from the Gallery), so the old store pages lead to the Gallery. Remove this line if the store is switched on again."
   }
 }

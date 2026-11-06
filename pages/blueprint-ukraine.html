@@ -1,5 +1,6 @@
 <!-- PERFECT NATIONS . NATIONAL BLUEPRINT . UKRAINE . v9.4 LIVE DATA . 2026-11-06 . Built on the Barbados v11.7 template . One Elementor Custom HTML widget, Full Width, padding 0, Hide Title -->
 <!-- v9.4 (6 November 2026): the whole page follows its Nation Steward. The hero figures and lead, the register (with its filters, counts and Show all), the record in figures, the Sovereign Assets and the enterprises, with their headings, now come from data/ukraine.json, as the Newswire, the seven standards and the Dispatches already did; the code below is the fallback. -->
+<!-- v9.3.1 (6 November 2026): speed only; no word, colour or layout changes. The globe no longer loads a second copy of three.js (globe.gl carries its own); the nation outline is built in, so the 250 KB world file is not downloaded; the portrait and the Nation Steward photo use the smaller copies WordPress already made; the Caveat font no longer holds up the first paint; live data is revalidated, not downloaded again. -->
 <!-- v9.3 (6 November 2026): All news. The Newswire shows its newest eight headlines; older ones are kept in archive/newswire/ukraine.json, and when there are any, an All news button opens the full list in place. The show-all buttons now hide when they are meant to. Nothing else changes. -->
 <!-- v9.2 (1 November 2026): the Health source opens on the nation&rsquo;s own WHO service coverage index chart (Our World in Data, from the WHO Global Health Observatory); the World Bank page no longer shows the figure. Built from the Drive copy of 1 November 2026 (globe and portrait fix: only the nation&rsquo;s outline is drawn on the globe; the nation portrait loads as .png, then .jpg). -->
 <!-- v9.1 (1 November 2026): the words of 1 November 2026: the seven basic living standards; Perfect Capita is the yearly
@@ -7,7 +8,9 @@
      bill (shown "To set" until the nation is priced). Served live from GitHub (pages/blueprint-ukraine.html) by the Perfect
      Nations Live Pages plugin. -->
 <!-- v9.0: the Design Studio and the three mandates follow the hero; Writings sit under the Letter and Dispatches; Perfect Capita is the Ukraine wheel of the seven basic living standards; Enterprises follow the Newswire. Oksana Kovalenko, Nation Steward of Ukraine, keeps the page current: on every visit it reads data/ukraine.json from the Perfect Nations GitHub repository, and keeps the content below if that file cannot be read. -->
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600&amp;display=swap">
+<link rel="preconnect" href="https://raw.githubusercontent.com" crossorigin>
+<link rel="preload" as="script" href="https://cdn.jsdelivr.net/npm/globe.gl@2.31.0/dist/globe.gl.min.js">
+<script>(function () { var h = "https://fonts.googleapis.com/css2?family=Caveat:wght@500;600&display=swap"; if (document.querySelector('link[data-pn-caveat]')) return; var l = document.createElement("link"); l.rel = "stylesheet"; l.href = h; l.setAttribute("data-pn-caveat", "1"); document.head.appendChild(l); })();</script>
 <style>
 #pn-bp-ukraine{
   --g:var(--pn-brand-gold,#E3C258); --gs:#F0D68F; --gd:#7E5A0C;
@@ -750,7 +753,7 @@ article:has(#pn-bp-ukraine) .entry-header,article:has(#pn-bp-ukraine) .post-thum
   <section class="bp-band bp-art" id="bp-letter" aria-labelledby="bp-letter-h">
     <div class="bp-in bp-art__grid">
       <div>
-        <span class="bp-frame"><span role="img" aria-label="Ukraine in Bloom, nation portrait of Ukraine" style="background-image:url('https://perfectnations.org/wp-content/uploads/2026/10/pn-portrait-ukraine.png'), url('https://perfectnations.org/wp-content/uploads/2026/10/pn-portrait-ukraine.jpg'), radial-gradient(70% 60% at 50% 35%, #1F5A43 0%, #0A251C 100%);"></span></span>
+        <span class="bp-frame"><span role="img" aria-label="Ukraine in Bloom, nation portrait of Ukraine" style="background-image:url('https://perfectnations.org/wp-content/uploads/2026/10/pn-portrait-ukraine-768x768.png'), radial-gradient(70% 60% at 50% 35%, #1F5A43 0%, #0A251C 100%);"></span></span>
         <span class="bp-art__cap">Ukraine in Bloom<small>Nation Portrait &middot; <a href="https://perfectnations.org/gallery/" target="_blank" rel="noopener noreferrer">The Gallery</a></small></span>
       </div>
       <article class="bp-sheet">
@@ -930,7 +933,7 @@ article:has(#pn-bp-ukraine) .entry-header,article:has(#pn-bp-ukraine) .post-thum
       <div class="bp-disp" id="bp-newswire">
         <div class="bp-disp__h"><h3 class="bp-nw">The Ukraine Newswire</h3><a class="bp-link" href="https://perfectnations.org/state-of-nations/" target="_blank" rel="noopener noreferrer">State of Nations</a></div>
         <div class="bp-stew">
-          <img src="https://perfectnations.org/wp-content/uploads/2026/10/oksana-kovalenko-nation-steward-of-ukraine.png" alt="Oksana Kovalenko, Nation Steward of Ukraine" width="64" height="64" loading="lazy" decoding="async" onerror="this.style.display='none'">
+          <img src="https://perfectnations.org/wp-content/uploads/2026/10/oksana-kovalenko-nation-steward-of-ukraine-150x150.png" alt="Oksana Kovalenko, Nation Steward of Ukraine" width="64" height="64" loading="lazy" decoding="async" onerror="this.style.display='none'">
           <p><b>Oksana Kovalenko</b><span>Nation Steward of Ukraine &middot; SI Researcher</span>Every change is sourced and reviewed before it is published. <time class="bp-stew__d" datetime="2026-10-30">Last updated 30 October 2026</time></p>
         </div>
         <ul class="bp-wire">
@@ -1029,7 +1032,7 @@ article:has(#pn-bp-ukraine) .entry-header,article:has(#pn-bp-ukraine) .post-thum
 <script>
 (async function () {
   /* The Ukraine globe. Libraries load dynamically: static script tags are
-     blocked on this host. Versions are pinned together: globe.gl 2.31.0 matches three r159.
+     blocked on this host. globe.gl 2.31.0 carries its own copy of three.js, so three is not loaded separately.
      If anything fails, the static ocean sphere behind the globe stays visible. */
   var container = document.getElementById('ukraine-globe');
   var wrap = document.getElementById('ukraine-globe-wrap');
@@ -1044,11 +1047,9 @@ article:has(#pn-bp-ukraine) .entry-header,article:has(#pn-bp-ukraine) .post-thum
       document.head.appendChild(s);
     });
   }
-  var PN_THREE_SRC = 'https://cdn.jsdelivr.net/npm/three@0.159.0/build/three.min.js';
   var PN_GLOBE_SRC = 'https://cdn.jsdelivr.net/npm/globe.gl@2.31.0/dist/globe.gl.min.js';
   try {
     if (typeof Globe === 'undefined') {
-      if (typeof THREE === 'undefined') await pnLoadScript(PN_THREE_SRC);
       await pnLoadScript(PN_GLOBE_SRC);
     }
     if (typeof Globe === 'undefined') return;
@@ -1065,18 +1066,14 @@ article:has(#pn-bp-ukraine) .entry-header,article:has(#pn-bp-ukraine) .post-thum
       probe.onerror = function () { resolve(EARTH_NIGHT); };
       probe.src = EARTH_DAY;
     });
-    var WORLD_GEOJSON_URL = 'https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/world.geojson';
     var NAME_CANDIDATES = ['ukraine'];
     var isTarget = function (f) {
       var p = f.properties || {};
       var n = String(p.name || p.NAME || '').toLowerCase();
       return NAME_CANDIDATES.indexOf(n) !== -1;
     };
-    var features = [];
-    try {
-      var worldRaw = await fetch(WORLD_GEOJSON_URL).then(function (r) { return r.json(); });
-      if (worldRaw && worldRaw.features) features = worldRaw.features;
-    } catch (geoErr) { features = []; }
+    /* v9.3.1: the outline (Ukraine) is built in, taken from the same world file the page used to download. */
+    var features = [{"type":"Feature","properties":{"name":"Ukraine"},"geometry":{"type":"Polygon","coordinates":[[[31.785998,52.101678],[32.159412,52.061267],[32.412058,52.288695],[32.715761,52.238465],[33.7527,52.335075],[34.391731,51.768882],[34.141978,51.566413],[34.224816,51.255993],[35.022183,51.207572],[35.377924,50.773955],[35.356116,50.577197],[36.626168,50.225591],[37.39346,50.383953],[38.010631,49.915662],[38.594988,49.926462],[40.069058,49.601055],[40.080789,49.30743],[39.674664,48.783818],[39.895632,48.232405],[39.738278,47.898937],[38.770585,47.825608],[38.255112,47.5464],[38.223538,47.10219],[37.425137,47.022221],[36.759855,46.6987],[35.823685,46.645964],[34.962342,46.273197],[35.020788,45.651219],[35.510009,45.409993],[36.529998,45.46999],[36.334713,45.113216],[35.239999,44.939996],[33.882511,44.361479],[33.326421,44.564877],[33.546924,45.034771],[32.454174,45.327466],[32.630804,45.519186],[33.588162,45.851569],[33.298567,46.080598],[31.74414,46.333348],[31.675307,46.706245],[30.748749,46.5831],[30.377609,46.03241],[29.603289,45.293308],[29.149725,45.464925],[28.679779,45.304031],[28.233554,45.488283],[28.485269,45.596907],[28.659987,45.939987],[28.933717,46.25883],[28.862972,46.437889],[29.072107,46.517678],[29.170654,46.379262],[29.759972,46.349988],[30.024659,46.423937],[29.83821,46.525326],[29.908852,46.674361],[29.559674,46.928583],[29.415135,47.346645],[29.050868,47.510227],[29.122698,47.849095],[28.670891,48.118149],[28.259547,48.155562],[27.522537,48.467119],[26.857824,48.368211],[26.619337,48.220726],[26.19745,48.220881],[25.945941,47.987149],[25.207743,47.891056],[24.866317,47.737526],[24.402056,47.981878],[23.760958,47.985598],[23.142236,48.096341],[22.710531,47.882194],[22.64082,48.15024],[22.085608,48.422264],[22.280842,48.825392],[22.558138,49.085738],[22.776419,49.027395],[22.51845,49.476774],[23.426508,50.308506],[23.922757,50.424881],[24.029986,50.705407],[23.527071,51.578454],[24.005078,51.617444],[24.553106,51.888461],[25.327788,51.910656],[26.337959,51.832289],[27.454066,51.592303],[28.241615,51.572227],[28.617613,51.427714],[28.992835,51.602044],[29.254938,51.368234],[30.157364,51.416138],[30.555117,51.319503],[30.619454,51.822806],[30.927549,52.042353],[31.785998,52.101678]]]}}];
     var natLat = 48.3794, natLng = 31.1656;
     var globe = Globe()(container)
       .globeImageUrl(EARTH_IMG)
@@ -1210,7 +1207,7 @@ article:has(#pn-bp-ukraine) .entry-header,article:has(#pn-bp-ukraine) .post-thum
   function longDate(iso){ var p=String(iso||'').split('-'); if(p.length!==3)return ''; return (+p[2])+' '+MONTHS[(+p[1])-1]+' '+p[0]; }
   function load(i){
     if(i>=URLS.length)return;
-    fetch(URLS[i],{cache:'no-store'}).then(function(r){ if(!r.ok)throw 0; return r.json(); })
+    fetch(URLS[i],{cache:'no-cache'}).then(function(r){ if(!r.ok)throw 0; return r.json(); })
       .then(apply).catch(function(){ load(i+1); });
   }
   function renderDispatches(d){

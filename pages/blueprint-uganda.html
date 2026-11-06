@@ -1,5 +1,6 @@
 <!-- PERFECT NATIONS . NATIONAL BLUEPRINT . UGANDA . v9.5 LIVE DATA . 2026-11-06 . Built on the Barbados v11.7 template . One Elementor Custom HTML widget, Full Width, padding 0, Hide Title -->
 <!-- v9.5 (6 November 2026): the whole page follows its Nation Steward. The hero figures and lead, the register (with its filters, counts and Show all), the record in figures, the Sovereign Assets and the enterprises, with their headings, now come from data/uganda.json, as the Newswire, the seven standards and the Dispatches already did; the code below is the fallback. -->
+<!-- v9.4.1 (6 November 2026): speed only; no word, colour or layout changes. The globe no longer loads a second copy of three.js (globe.gl carries its own); the nation outline is built in, so the 250 KB world file is not downloaded; the portrait and the Nation Steward photo use the smaller copies WordPress already made; the Caveat font no longer holds up the first paint; live data is revalidated, not downloaded again. -->
 <!-- v9.4 (6 November 2026): All news. The Newswire shows its newest eight headlines; older ones are kept in archive/newswire/uganda.json, and when there are any, an All news button opens the full list in place. The show-all buttons now hide when they are meant to. Nothing else changes. -->
 <!-- v9.3 (1 November 2026): brought in from the Drive copy of 1 November 2026 (globe and portrait fix): the globe draws only the nation&#8217;s outline, which removes the flicker; the finished nation portrait (.png, then .jpg); the uploaded asset images. -->
 <!-- v9.2 (1 November 2026): the Health source opens on the nation&rsquo;s own WHO service coverage index chart (Our World in Data, from the WHO Global Health Observatory); the World Bank page no longer shows the figure. The Design Studio line names the people of the nation (a word was missing). -->
@@ -8,7 +9,9 @@
      bill (shown "To set" until the nation is priced). Served live from GitHub (pages/blueprint-uganda.html) by the Perfect
      Nations Live Pages plugin. -->
 <!-- v9.0: the Design Studio and the three mandates follow the hero; Writings sit under the Letter and Dispatches; Perfect Capita is the Uganda wheel of the seven basic living standards; Enterprises follow the Newswire. Daniel Okello, Nation Steward of Uganda, keeps the page current: on every visit it reads data/uganda.json from the Perfect Nations GitHub repository, and keeps the content below if that file cannot be read. -->
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600&amp;display=swap">
+<link rel="preconnect" href="https://raw.githubusercontent.com" crossorigin>
+<link rel="preload" as="script" href="https://cdn.jsdelivr.net/npm/globe.gl@2.31.0/dist/globe.gl.min.js">
+<script>(function () { var h = "https://fonts.googleapis.com/css2?family=Caveat:wght@500;600&display=swap"; if (document.querySelector('link[data-pn-caveat]')) return; var l = document.createElement("link"); l.rel = "stylesheet"; l.href = h; l.setAttribute("data-pn-caveat", "1"); document.head.appendChild(l); })();</script>
 <style>
 #pn-bp-uganda{
   --g:var(--pn-brand-gold,#E3C258); --gs:#F0D68F; --gd:#7E5A0C;
@@ -751,7 +754,7 @@ article:has(#pn-bp-uganda) .entry-header,article:has(#pn-bp-uganda) .post-thumb-
   <section class="bp-band bp-art" id="bp-letter" aria-labelledby="bp-letter-h">
     <div class="bp-in bp-art__grid">
       <div>
-        <span class="bp-frame"><span role="img" aria-label="Uganda in Bloom, nation portrait of Uganda" style="background-image:url('https://perfectnations.org/wp-content/uploads/2026/10/pn-portrait-uganda.png'), url('https://perfectnations.org/wp-content/uploads/2026/10/pn-portrait-uganda.jpg'), radial-gradient(70% 60% at 50% 35%, #1F5A43 0%, #0A251C 100%);"></span></span>
+        <span class="bp-frame"><span role="img" aria-label="Uganda in Bloom, nation portrait of Uganda" style="background-image:url('https://perfectnations.org/wp-content/uploads/2026/10/pn-portrait-uganda-768x768.png'), radial-gradient(70% 60% at 50% 35%, #1F5A43 0%, #0A251C 100%);"></span></span>
         <span class="bp-art__cap">Uganda in Bloom<small>Nation Portrait &middot; <a href="https://perfectnations.org/gallery/" target="_blank" rel="noopener noreferrer">The Gallery</a></small></span>
       </div>
       <article class="bp-sheet">
@@ -986,7 +989,7 @@ article:has(#pn-bp-uganda) .entry-header,article:has(#pn-bp-uganda) .post-thumb-
       <div class="bp-disp" id="bp-newswire">
         <div class="bp-disp__h"><h3 class="bp-nw">The Uganda Newswire</h3><a class="bp-link" href="https://perfectnations.org/state-of-nations/" target="_blank" rel="noopener noreferrer">State of Nations</a></div>
         <div class="bp-stew">
-          <img src="https://perfectnations.org/wp-content/uploads/2026/10/daniel-okello-nation-steward-of-uganda.png" alt="Daniel Okello, Nation Steward of Uganda" width="64" height="64" loading="lazy" decoding="async" onerror="this.style.display='none'">
+          <img src="https://perfectnations.org/wp-content/uploads/2026/10/daniel-okello-nation-steward-of-uganda-150x150.png" alt="Daniel Okello, Nation Steward of Uganda" width="64" height="64" loading="lazy" decoding="async" onerror="this.style.display='none'">
           <p><b>Daniel Okello</b><span>Nation Steward of Uganda &middot; SI Researcher</span>Every change is sourced and reviewed before it is published. <time class="bp-stew__d" datetime="2026-10-30">Last updated 30 October 2026</time></p>
         </div>
         <ul class="bp-wire">
@@ -1085,7 +1088,7 @@ article:has(#pn-bp-uganda) .entry-header,article:has(#pn-bp-uganda) .post-thumb-
 <script>
 (async function () {
   /* The Uganda globe. Libraries load dynamically: static script tags are
-     blocked on this host. Versions are pinned together: globe.gl 2.31.0 matches three r159.
+     blocked on this host. globe.gl 2.31.0 carries its own copy of three.js, so three is not loaded separately.
      If anything fails, the static ocean sphere behind the globe stays visible. */
   var container = document.getElementById('uganda-globe');
   var wrap = document.getElementById('uganda-globe-wrap');
@@ -1100,11 +1103,9 @@ article:has(#pn-bp-uganda) .entry-header,article:has(#pn-bp-uganda) .post-thumb-
       document.head.appendChild(s);
     });
   }
-  var PN_THREE_SRC = 'https://cdn.jsdelivr.net/npm/three@0.159.0/build/three.min.js';
   var PN_GLOBE_SRC = 'https://cdn.jsdelivr.net/npm/globe.gl@2.31.0/dist/globe.gl.min.js';
   try {
     if (typeof Globe === 'undefined') {
-      if (typeof THREE === 'undefined') await pnLoadScript(PN_THREE_SRC);
       await pnLoadScript(PN_GLOBE_SRC);
     }
     if (typeof Globe === 'undefined') return;
@@ -1121,18 +1122,14 @@ article:has(#pn-bp-uganda) .entry-header,article:has(#pn-bp-uganda) .post-thumb-
       probe.onerror = function () { resolve(EARTH_NIGHT); };
       probe.src = EARTH_DAY;
     });
-    var WORLD_GEOJSON_URL = 'https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/world.geojson';
     var NAME_CANDIDATES = ['uganda'];
     var isTarget = function (f) {
       var p = f.properties || {};
       var n = String(p.name || p.NAME || '').toLowerCase();
       return NAME_CANDIDATES.indexOf(n) !== -1;
     };
-    var features = [];
-    try {
-      var worldRaw = await fetch(WORLD_GEOJSON_URL).then(function (r) { return r.json(); });
-      if (worldRaw && worldRaw.features) features = worldRaw.features;
-    } catch (geoErr) { features = []; }
+    /* v9.4.1: the outline (Uganda) is built in, taken from the same world file the page used to download. */
+    var features = [{"type":"Feature","properties":{"name":"Uganda"},"geometry":{"type":"Polygon","coordinates":[[[31.86617,-1.02736],[30.76986,-1.01455],[30.419105,-1.134659],[29.821519,-1.443322],[29.579466,-1.341313],[29.587838,-0.587406],[29.8195,-0.2053],[29.875779,0.59738],[30.086154,1.062313],[30.468508,1.583805],[30.85267,1.849396],[31.174149,2.204465],[30.77332,2.33989],[30.83385,3.50917],[31.24556,3.7819],[31.88145,3.55827],[32.68642,3.79232],[33.39,3.79],[34.005,4.249885],[34.47913,3.5556],[34.59607,3.05374],[35.03599,1.90584],[34.6721,1.17694],[34.18,0.515],[33.893569,0.109814],[33.903711,-0.95],[31.86617,-1.02736]]]}}];
     var natLat = 1.3733, natLng = 32.2903;
     var globe = Globe()(container)
       .globeImageUrl(EARTH_IMG)
@@ -1266,7 +1263,7 @@ article:has(#pn-bp-uganda) .entry-header,article:has(#pn-bp-uganda) .post-thumb-
   function longDate(iso){ var p=String(iso||'').split('-'); if(p.length!==3)return ''; return (+p[2])+' '+MONTHS[(+p[1])-1]+' '+p[0]; }
   function load(i){
     if(i>=URLS.length)return;
-    fetch(URLS[i],{cache:'no-store'}).then(function(r){ if(!r.ok)throw 0; return r.json(); })
+    fetch(URLS[i],{cache:'no-cache'}).then(function(r){ if(!r.ok)throw 0; return r.json(); })
       .then(apply).catch(function(){ load(i+1); });
   }
   function renderDispatches(d){

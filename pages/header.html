@@ -1,5 +1,7 @@
 <!-- ==========================================================================
-PERFECT NATIONS - CUSTOM HEADER - v19.1 EARTHRISE - 2026-11-05
+PERFECT NATIONS - CUSTOM HEADER - v19.1.1 EARTHRISE - 2026-11-06
+v19.1.1: the store is switched off, so View Cart in the open menu shows only while a cart holds
+something (never, while WooCommerce is off). No other change.
 v19.1: the cup mark (the championship cup of the logo between two short solid lines on each side)
 replaces the laurels and star in the open menu, and, through one sitewide rule, on every
 page that still carries the old laurel drawing.
@@ -468,6 +470,9 @@ html:has(#pn-hd), html:has(#pn-hd) body{ overflow-x:clip; }
     if(badge){ badge.textContent = n; badge.style.display = n > 0 ? 'block' : 'none'; }
     var mc = panel ? panel.querySelector('.pn-hd__mcartcount') : null;
     if(mc) mc.textContent = n > 0 ? ' (' + n + ')' : '';
+    /* v19.1.1: View Cart shows only while the cart holds something */
+    var ml = panel ? panel.querySelector('.pn-hd__mcart') : null;
+    if(ml) ml.style.display = n > 0 ? '' : 'none';
   }
   function readCart(url, thenTry){
     fetch(url, {credentials:'same-origin'})
