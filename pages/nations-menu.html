@@ -1,0 +1,1229 @@
+<!-- ===========================================================================
+PERFECT NATIONS - THE NATIONS MENU - v2.1 - 2026-11-05
+One Elementor Custom HTML widget, directly under the header (homepage, and any page).
+v2.1: every nation is open.
+  - All 195 names in the moving list and in the menu are gold and can be chosen.
+    A star marks a blueprint published in full.
+  - A chosen nation opens in the Nation Viewer, over the page, with no new tab:
+    a gold "Go Back" arrow on the left and a gold X in a circle on the right,
+    both returning the visitor to the page they came from. The phone's own back
+    gesture and the Escape key do the same.
+  - A published blueprint opens inside the viewer. A nation whose page is not yet
+    published opens a short card: blueprint in preparation, and a button to ask for it.
+    The moment its page exists at /blueprints/<slug>/, the viewer opens the page instead,
+    with no change to this widget.
+  - The menu ("All 195 Nations" and the search) also has "Go Back" and the gold X.
+  - The homepage globe can open the same viewer (window.pnNationViewer.open).
+Live by itself: on every visit the menu reads pages/manifest.json in the GitHub
+repository preetisinha70-PN/perfect-nations. Any blueprint listed there (pn-bp-slug)
+gets its star here, with no paste.
+Regions (data-r): af Africa, as Asia, me The Middle East, eu Europe, am The Americas,
+oc Australia and Oceania.
+=========================================================================== -->
+<style>
+#pn-nations{
+  --g:var(--pn-brand-gold,#E3C258);
+  --gs:#F0D68F;
+  --on-g:#1A140C;
+  --iv:#F5F1E8;
+  --iv2:rgba(245,241,232,.82);
+  --iv3:rgba(245,241,232,.56);
+  --hair:rgba(245,241,232,.14);
+  --er:#0B3D45; --er2:#093239; --er3:#082A30;
+  --hd:var(--pn-font-heading,"Barlow Condensed","Arial Narrow",Arial,sans-serif);
+  --bd:var(--pn-font-body,"Barlow Semi Condensed",Arial,sans-serif);
+  --pnn-top:0px;
+  position:relative; z-index:9980;
+  width:100vw; margin-left:calc(50% - 50vw);
+  box-sizing:border-box; text-align:left;
+  font-family:var(--hd); color:var(--iv); line-height:1.3;
+}
+#pn-nations.is-open{ z-index:100000; }
+#pn-nations *,#pn-nations *::before,#pn-nations *::after{ box-sizing:border-box; }
+.elementor-widget-html:has(#pn-nations),.elementor-widget:has(#pn-nations),.elementor-widget-wrap:has(#pn-nations),
+.elementor-container:has(#pn-nations),.elementor-column:has(#pn-nations),.elementor-section:has(#pn-nations),
+.e-con-inner:has(#pn-nations),.e-con:has(#pn-nations){
+  padding-top:0 !important; padding-bottom:0 !important; margin-top:0 !important; margin-bottom:0 !important;
+  --widgets-spacing:0px !important; row-gap:0 !important;
+}
+
+/* ---------- the bar ---------- */
+#pn-nations .pnn-bar{
+  display:flex; align-items:stretch; height:46px; overflow:hidden;
+  background:linear-gradient(180deg,#14100A 0%,#0B0906 100%);
+  border-bottom:1px solid rgba(227,194,88,.28);
+}
+#pn-nations .pnn-all{
+  flex:none; position:relative; z-index:2;
+  display:flex; align-items:center; gap:9px;
+  margin:0; padding:0 20px 0 clamp(14px,2.4vw,28px); border:0; border-radius:0;
+  background:linear-gradient(90deg,#1E1810 0%,#1E1810 84%,rgba(30,24,16,0) 100%);
+  color:var(--iv); cursor:pointer; text-decoration:none; white-space:nowrap;
+  font-family:var(--hd); font-size:.72rem; font-weight:700; letter-spacing:.2em; text-transform:uppercase; line-height:1;
+  transition:color .2s ease;
+}
+#pn-nations .pnn-all:hover{ color:var(--gs); }
+#pn-nations .pnn-all b{ font-weight:700; }
+#pn-nations .pnn-ico{ width:16px; height:16px; flex:none; display:block; }
+#pn-nations .pnn-chev{ width:10px; height:10px; flex:none; display:block; transition:transform .3s cubic-bezier(.22,1,.36,1); }
+#pn-nations .pnn-all[aria-expanded="true"] .pnn-chev{ transform:rotate(180deg); }
+
+#pn-nations .pnn-view{
+  position:relative; flex:1 1 auto; min-width:0; overflow:hidden;
+  -webkit-mask-image:linear-gradient(90deg,transparent 0,#000 40px,#000 calc(100% - 40px),transparent 100%);
+          mask-image:linear-gradient(90deg,transparent 0,#000 40px,#000 calc(100% - 40px),transparent 100%);
+}
+#pn-nations .pnn-track{ display:flex; width:max-content; height:100%; animation:pnnTk var(--tk-dur,420s) linear infinite; will-change:transform; }
+#pn-nations .pnn-tl{ display:flex; align-items:center; height:100%; margin:0; padding:0; list-style:none; }
+#pn-nations .pnn-t{
+  display:flex; align-items:center; height:100%; margin:0; padding:0; white-space:nowrap;
+  font-size:.86rem; font-weight:600; letter-spacing:.06em; text-transform:uppercase; color:var(--g);
+}
+#pn-nations .pnn-t::after{ content:""; width:4px; height:4px; margin:0 14px; border-radius:50%; background:rgba(227,194,88,.32); }
+#pn-nations .pnn-t a{
+  display:inline-flex; align-items:center; gap:7px; padding:5px 10px 4px; border-radius:999px;
+  color:var(--g); text-decoration:none; border:1px solid transparent;
+  transition:background .2s ease,color .2s ease,border-color .2s ease;
+}
+#pn-nations .pnn-t--live a{ border-color:rgba(227,194,88,.45); background:rgba(227,194,88,.08); padding:5px 12px 4px; }
+#pn-nations .pnn-t--live a::before{ content:"\2605"; font-family:Arial,sans-serif; font-size:.7rem; }
+#pn-nations .pnn-t a:hover,#pn-nations .pnn-t a:focus-visible{ background:var(--g); border-color:var(--g); color:var(--on-g); outline:none; }
+#pn-nations .pnn-t a[aria-current="page"]{ background:var(--g); color:var(--on-g); }
+#pn-nations .pnn-bar:hover .pnn-track,
+#pn-nations .pnn-bar:focus-within .pnn-track,
+#pn-nations.is-paused .pnn-track,
+#pn-nations.is-open .pnn-track{ animation-play-state:paused; }
+
+#pn-nations .pnn-side{
+  flex:none; position:relative; z-index:2; display:flex; align-items:center; gap:8px;
+  padding:0 clamp(10px,2vw,24px) 0 12px; background:#1E1810;
+}
+#pn-nations .pnn-find{
+  display:inline-flex; align-items:center; justify-content:center; gap:8px;
+  height:30px; margin:0; padding:0 15px 0 12px; border-radius:999px;
+  border:1px solid var(--g); background:var(--g); color:var(--on-g); cursor:pointer; white-space:nowrap;
+  font-family:var(--hd); font-size:.72rem; font-weight:700; letter-spacing:.14em; text-transform:uppercase; line-height:1;
+  box-shadow:0 6px 18px rgba(227,194,88,.22);
+  transition:background .2s ease;
+}
+#pn-nations .pnn-find:hover{ background:var(--gs); }
+#pn-nations .pnn-find .pnn-ico{ width:14px; height:14px; }
+#pn-nations .pnn-pause{
+  display:inline-flex; align-items:center; justify-content:center; width:30px; height:30px; flex:none;
+  margin:0; padding:0; border-radius:50%; border:1px solid var(--hair); background:transparent;
+  color:var(--iv); cursor:pointer; font-family:Arial,sans-serif; font-size:.7rem; line-height:1;
+}
+#pn-nations .pnn-pause:hover{ border-color:var(--g); color:var(--g); }
+#pn-nations button:focus-visible,#pn-nations a:focus-visible,#pn-nations input:focus-visible{ outline:2px solid var(--gs); outline-offset:2px; }
+#pn-nations .pnn-sr{ position:absolute !important; width:1px; height:1px; margin:-1px; padding:0; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; border:0; }
+@keyframes pnnTk{ from{ transform:translateX(0); } to{ transform:translateX(-50%); } }
+
+/* ---------- Go Back and the gold X (menu and viewer) ---------- */
+#pn-nations .pnn-back{
+  display:inline-flex; align-items:center; gap:10px; height:42px; margin:0; padding:0 18px 0 14px;
+  border-radius:999px; border:1.5px solid var(--g); background:rgba(227,194,88,.08); color:var(--g); cursor:pointer;
+  font-family:var(--hd); font-size:.8rem; font-weight:700; letter-spacing:.16em; text-transform:uppercase; line-height:1; white-space:nowrap;
+  transition:background .2s ease,color .2s ease;
+}
+#pn-nations .pnn-back svg{ width:18px; height:18px; flex:none; display:block; transition:transform .25s cubic-bezier(.22,1,.36,1); }
+#pn-nations .pnn-back:hover{ background:var(--g); color:var(--on-g); }
+#pn-nations .pnn-back:hover svg{ transform:translateX(-3px); }
+#pn-nations .pnn-x{
+  position:relative; display:inline-flex; align-items:center; justify-content:center; flex:none;
+  width:48px; height:48px; margin:0; padding:0; border-radius:50%;
+  border:2px solid var(--g); background:rgba(11,61,69,.6); color:var(--g); cursor:pointer;
+  box-shadow:0 0 0 4px rgba(227,194,88,.14), 0 8px 24px rgba(0,0,0,.35);
+  transition:background .2s ease,color .2s ease,transform .2s ease;
+}
+#pn-nations .pnn-x svg{ width:20px; height:20px; display:block; }
+#pn-nations .pnn-x:hover{ background:var(--g); color:var(--on-g); transform:rotate(90deg); }
+
+/* ---------- the menu ---------- */
+#pn-nations .pnn-scrim{
+  position:fixed; left:0; right:0; bottom:0; top:var(--pnn-top); z-index:1;
+  background:rgba(2,12,18,.55); opacity:0; transition:opacity .25s ease;
+}
+#pn-nations .pnn-panel{
+  position:fixed; left:0; right:0; top:var(--pnn-top); z-index:2;
+  display:flex; flex-direction:column;
+  max-height:calc(100vh - var(--pnn-top) - 12px);
+  max-height:calc(100dvh - var(--pnn-top) - 12px);
+  background:
+    radial-gradient(70% 55% at 50% 0%, rgba(255,214,140,.10) 0%, transparent 70%),
+    linear-gradient(180deg,var(--er) 0%,var(--er2) 50%,var(--er3) 100%);
+  border-bottom:1px solid rgba(227,194,88,.38);
+  box-shadow:0 34px 80px rgba(0,0,0,.45);
+  opacity:0; transform:translateY(-10px);
+  transition:opacity .22s ease, transform .34s cubic-bezier(.22,1,.36,1);
+  outline:none;
+}
+#pn-nations .pnn-panel[hidden],#pn-nations .pnn-scrim[hidden],#pn-nations .pnn-viewer[hidden]{ display:none; }
+#pn-nations.is-shown .pnn-panel{ opacity:1; transform:none; }
+#pn-nations.is-shown .pnn-scrim{ opacity:1; }
+#pn-nations .pnn-in{ width:100%; max-width:1360px; margin:0 auto; padding:0 clamp(16px,3vw,40px); }
+
+#pn-nations .pnn-nav{ display:flex; align-items:center; justify-content:space-between; gap:12px; padding-top:14px; }
+#pn-nations .pnn-head{
+  display:grid; grid-template-columns:minmax(0,1fr) minmax(240px,420px);
+  align-items:center; gap:12px 22px; padding-top:10px;
+}
+#pn-nations .pnn-title{
+  margin:0; font-family:var(--hd); font-weight:600; text-transform:none;
+  font-size:clamp(1.5rem,2.3vw,2.15rem); line-height:1; letter-spacing:-.005em; color:var(--iv);
+}
+#pn-nations .pnn-sub{ margin:6px 0 0; font-family:var(--bd); font-size:.92rem; line-height:1.4; color:var(--iv2); }
+#pn-nations .pnn-sub b{ color:var(--g); font-weight:600; }
+#pn-nations .pnn-search{ position:relative; display:block; margin:0; }
+#pn-nations .pnn-search .pnn-ico{ position:absolute; left:16px; top:50%; width:16px; height:16px; transform:translateY(-50%); color:var(--iv3); pointer-events:none; }
+#pn-nations .pnn-search input{
+  display:block; width:100%; height:44px; margin:0; padding:0 16px 0 42px; border-radius:999px;
+  border:1px solid rgba(245,241,232,.26); background:rgba(245,241,232,.08); color:var(--iv);
+  font-family:var(--bd); font-size:16px; line-height:1; box-shadow:none;
+  -webkit-appearance:none; appearance:none;
+}
+#pn-nations .pnn-search input::placeholder{ color:var(--iv3); opacity:1; }
+#pn-nations .pnn-search input:focus{ outline:none; border-color:var(--g); background:rgba(245,241,232,.11); }
+#pn-nations .pnn-search input::-webkit-search-cancel-button{ -webkit-appearance:none; }
+
+#pn-nations .pnn-tools{
+  display:flex; flex-wrap:wrap; align-items:center; gap:10px 12px;
+  padding:14px 0 12px; border-bottom:1px solid var(--hair);
+}
+#pn-nations .pnn-seg{ display:inline-flex; padding:3px; border-radius:999px; border:1px solid rgba(245,241,232,.24); }
+#pn-nations .pnn-seg button,#pn-nations .pnn-only{
+  display:inline-flex; align-items:center; gap:7px; height:30px; margin:0; padding:0 14px; border-radius:999px;
+  border:0; background:transparent; color:var(--iv2); cursor:pointer; white-space:nowrap;
+  font-family:var(--hd); font-size:.74rem; font-weight:700; letter-spacing:.12em; text-transform:uppercase; line-height:1;
+  transition:background .2s ease,color .2s ease;
+}
+#pn-nations .pnn-seg button[aria-pressed="true"]{ background:var(--iv); color:var(--er); }
+#pn-nations .pnn-seg button[aria-pressed="false"]:hover{ color:var(--iv); }
+#pn-nations .pnn-only{ height:36px; border:1px solid rgba(227,194,88,.5); color:var(--g); }
+#pn-nations .pnn-only::before{ content:"\2605"; font-family:Arial,sans-serif; font-size:.72rem; }
+#pn-nations .pnn-only:hover{ background:rgba(227,194,88,.12); }
+#pn-nations .pnn-only[aria-pressed="true"]{ background:var(--g); color:var(--on-g); }
+#pn-nations .pnn-jump{ display:flex; flex-wrap:wrap; gap:2px; margin-left:auto; }
+#pn-nations .pnn-jump button{
+  position:relative; min-width:26px; height:30px; margin:0; padding:0 6px; border:0; border-radius:6px;
+  background:transparent; color:var(--iv); cursor:pointer;
+  font-family:var(--hd); font-size:.86rem; font-weight:700; letter-spacing:.04em; line-height:1;
+  transition:background .2s ease;
+}
+#pn-nations .pnn-jump button:hover{ background:rgba(245,241,232,.12); }
+#pn-nations .pnn-jump button.has-live::after{
+  content:""; position:absolute; left:50%; bottom:2px; width:4px; height:4px; margin-left:-2px; border-radius:50%; background:var(--g);
+}
+#pn-nations .pnn-jump button:disabled{ color:rgba(245,241,232,.22); cursor:default; background:transparent; }
+#pn-nations .pnn-jump button:disabled::after{ display:none; }
+#pn-nations .pnn-jump--region button{ padding:0 10px; font-size:.74rem; letter-spacing:.12em; text-transform:uppercase; }
+
+#pn-nations .pnn-body{
+  position:relative; flex:1 1 auto; min-height:0; overflow-y:auto; overscroll-behavior:contain;
+  -webkit-overflow-scrolling:touch; scrollbar-width:thin; scrollbar-color:rgba(245,241,232,.25) transparent;
+  outline:none;
+}
+#pn-nations .pnn-list{ padding-bottom:6px; }
+#pn-nations .pnn-g{
+  display:grid; grid-template-columns:60px minmax(0,1fr); gap:0 18px;
+  padding:12px 0 10px; border-top:1px solid var(--hair);
+}
+#pn-nations .pnn-g:first-child{ border-top:0; }
+#pn-nations .pnn-k{
+  margin:0; padding-top:2px;
+  font-family:var(--hd); font-weight:600; font-size:2.5rem; line-height:.86; color:rgba(245,241,232,.4);
+}
+@supports (-webkit-text-stroke:1px #000){
+  #pn-nations .pnn-k{ color:transparent; -webkit-text-stroke:1px rgba(245,241,232,.6); }
+}
+#pn-nations .pnn-k small{ display:none; }
+#pn-nations.is-region .pnn-g{ grid-template-columns:minmax(0,1fr); gap:6px 0; }
+#pn-nations.is-region .pnn-k{
+  display:flex; align-items:baseline; gap:12px; padding:0;
+  font-size:1.3rem; line-height:1.1; color:var(--iv); -webkit-text-stroke:0;
+}
+#pn-nations.is-region .pnn-k small{ display:inline; font-family:var(--bd); font-size:.82rem; font-weight:500; color:var(--iv3); }
+#pn-nations .pnn-ul{ margin:0; padding:0; list-style:none; columns:6 150px; column-gap:22px; }
+#pn-nations .pnn-i{
+  display:flex; align-items:center; margin:0; padding:1px 0; break-inside:avoid;
+  font-family:var(--bd); font-size:.95rem; font-weight:500; line-height:1.25;
+}
+#pn-nations .pnn-i > a{
+  display:inline-flex; align-items:center; gap:8px; margin-left:-8px; padding:3px 8px; border-radius:8px;
+  color:var(--g); font-weight:500; text-decoration:none;
+  transition:background .18s ease,color .18s ease;
+}
+#pn-nations .pnn-i > a::before{
+  content:""; flex:none; width:12px; height:12px; border-radius:50%;
+  background:radial-gradient(circle, transparent 0 2.4px, rgba(227,194,88,.75) 2.6px 3.6px, transparent 3.9px);
+}
+#pn-nations .pnn-i--live > a{ font-weight:600; }
+#pn-nations .pnn-i--live > a::before{ content:"\2605"; width:12px; height:auto; background:none; text-align:center; font-family:Arial,sans-serif; font-size:.72rem; }
+#pn-nations .pnn-i > a::after{
+  content:"\2192"; font-family:Arial,sans-serif; font-size:.78rem; opacity:0; transform:translate(-4px,0);
+  transition:opacity .18s ease,transform .18s ease;
+}
+#pn-nations .pnn-i > a:hover,#pn-nations .pnn-i > a:focus-visible{ background:rgba(227,194,88,.13); color:var(--gs); }
+#pn-nations .pnn-i > a:hover::after,#pn-nations .pnn-i > a:focus-visible::after{ opacity:1; transform:none; }
+#pn-nations .pnn-empty{ margin:0; padding:26px 0 30px; font-family:var(--bd); font-size:1rem; color:var(--iv2); }
+#pn-nations .pnn-empty b{ color:var(--iv); }
+
+#pn-nations .pnn-foot{
+  margin:0; padding:11px 0 14px; border-top:1px solid var(--hair);
+  font-family:var(--bd); font-size:.88rem; line-height:1.4; color:var(--iv2);
+}
+#pn-nations .pnn-foot a{ color:var(--g); font-weight:600; text-decoration:none; border-bottom:1px solid rgba(227,194,88,.5); }
+#pn-nations .pnn-foot a:hover{ color:var(--gs); border-bottom-color:var(--gs); }
+
+/* ---------- the Nation Viewer ---------- */
+#pn-nations .pnn-viewer{
+  position:fixed; inset:0; z-index:3; display:flex; flex-direction:column;
+  background:var(--er3);
+  opacity:0; transform:translateY(18px);
+  transition:opacity .24s ease, transform .4s cubic-bezier(.22,1,.36,1);
+}
+#pn-nations.is-viewing .pnn-viewer{ opacity:1; transform:none; }
+#pn-nations .pnn-vbar{
+  flex:none; display:flex; align-items:center; gap:12px;
+  min-height:68px; padding:10px clamp(12px,2.6vw,32px);
+  background:linear-gradient(180deg,var(--er) 0%,var(--er2) 100%);
+  border-bottom:1px solid rgba(227,194,88,.42);
+  box-shadow:0 10px 30px rgba(0,0,0,.28);
+}
+#pn-nations .pnn-vt{ flex:1 1 auto; min-width:0; text-align:center; }
+#pn-nations .pnn-vt b{
+  display:block; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;
+  font-family:var(--hd); font-weight:600; font-size:clamp(1.15rem,2vw,1.6rem); line-height:1.05; color:var(--iv);
+}
+#pn-nations .pnn-vt i{
+  display:block; margin-top:3px; font-style:normal; font-family:var(--hd); font-weight:700;
+  font-size:.62rem; letter-spacing:.24em; text-transform:uppercase; color:var(--g);
+}
+#pn-nations .pnn-vend{ flex:none; display:flex; align-items:center; gap:14px; }
+#pn-nations .pnn-vnew{
+  font-family:var(--hd); font-size:.7rem; font-weight:700; letter-spacing:.16em; text-transform:uppercase;
+  color:var(--iv2); text-decoration:none; white-space:nowrap; border-bottom:1px solid rgba(245,241,232,.3); padding-bottom:2px;
+}
+#pn-nations .pnn-vnew:hover{ color:var(--g); border-bottom-color:var(--g); }
+#pn-nations .pnn-vnew[hidden]{ display:none; }
+#pn-nations .pnn-vbody{ position:relative; flex:1 1 auto; min-height:0; background:#F4ECD8; }
+#pn-nations .pnn-vbody iframe{ position:absolute; inset:0; display:block; width:100%; height:100%; border:0; background:#fff; opacity:0; transition:opacity .35s ease; }
+#pn-nations .pnn-vbody iframe.is-ready{ opacity:1; }
+#pn-nations .pnn-vload{
+  position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:18px;
+  background:linear-gradient(180deg,var(--er2) 0%,var(--er3) 100%);
+  font-family:var(--hd); font-size:.74rem; font-weight:700; letter-spacing:.24em; text-transform:uppercase; color:var(--iv2);
+  transition:opacity .35s ease;
+}
+#pn-nations .pnn-vload.is-gone{ opacity:0; pointer-events:none; }
+#pn-nations .pnn-vload[hidden]{ display:none; }
+#pn-nations .pnn-spin{ width:54px; height:54px; border-radius:50%; border:2px solid rgba(227,194,88,.2); border-top-color:var(--g); animation:pnnSpin 1s linear infinite; }
+@keyframes pnnSpin{ to{ transform:rotate(360deg); } }
+
+#pn-nations .pnn-soon{
+  position:absolute; inset:0; overflow-y:auto; display:flex; align-items:center; justify-content:center;
+  padding:clamp(24px,5vh,56px) clamp(16px,4vw,48px);
+  background:
+    radial-gradient(60% 50% at 50% 0%, rgba(255,214,140,.12) 0%, transparent 70%),
+    linear-gradient(180deg,var(--er) 0%,var(--er2) 55%,var(--er3) 100%);
+  text-align:center;
+}
+#pn-nations .pnn-soon[hidden]{ display:none; }
+#pn-nations .pnn-card{
+  position:relative; width:100%; max-width:620px; padding:clamp(26px,4vw,44px) clamp(20px,4vw,48px);
+  border:1px solid rgba(227,194,88,.55); border-radius:4px;
+  box-shadow:inset 0 0 0 6px rgba(11,61,69,1), inset 0 0 0 7px rgba(227,194,88,.28);
+}
+#pn-nations .pnn-cup{ display:block; width:96px; height:48px; margin:0 auto 10px; color:var(--g); }
+#pn-nations .pnn-eb{ margin:0; font-family:var(--hd); font-size:.7rem; font-weight:700; letter-spacing:.3em; text-transform:uppercase; color:var(--g); }
+#pn-nations .pnn-cn{ margin:8px 0 0; font-family:var(--hd); font-weight:600; font-size:clamp(2.2rem,5vw,3.4rem); line-height:.95; letter-spacing:-.01em; color:var(--iv); }
+#pn-nations .pnn-cp{ margin:14px auto 0; max-width:44ch; font-family:var(--bd); font-size:1.02rem; line-height:1.5; color:var(--iv2); }
+#pn-nations .pnn-cta{ display:flex; flex-wrap:wrap; justify-content:center; gap:10px; margin-top:22px; }
+#pn-nations .pnn-ask{
+  display:inline-flex; align-items:center; gap:12px; height:46px; padding:0 24px; border-radius:999px;
+  background:var(--g); color:var(--on-g); text-decoration:none; border:1px solid var(--g);
+  font-family:var(--hd); font-size:.78rem; font-weight:700; letter-spacing:.16em; text-transform:uppercase;
+  box-shadow:0 12px 30px rgba(227,194,88,.28); transition:background .2s ease,transform .2s ease;
+}
+#pn-nations .pnn-ask::after{ content:"\2192"; font-family:Arial,sans-serif; font-size:1rem; letter-spacing:0; }
+#pn-nations .pnn-ask:hover{ background:var(--gs); transform:translateY(-2px); }
+#pn-nations .pnn-pub{
+  display:inline-flex; align-items:center; gap:8px; height:46px; padding:0 20px; margin:0; border-radius:999px;
+  border:1px solid rgba(245,241,232,.3); background:transparent; color:var(--iv); cursor:pointer;
+  font-family:var(--hd); font-size:.74rem; font-weight:700; letter-spacing:.14em; text-transform:uppercase;
+}
+#pn-nations .pnn-pub::before{ content:"\2605"; font-family:Arial,sans-serif; font-size:.72rem; color:var(--g); }
+#pn-nations .pnn-pub:hover{ border-color:var(--g); color:var(--g); }
+
+@media (prefers-reduced-motion:no-preference){
+  #pn-nations.is-shown .pnn-g{ animation:pnnRise .42s cubic-bezier(.22,1,.36,1) both; animation-delay:var(--d,0ms); }
+}
+@keyframes pnnRise{ from{ opacity:0; transform:translateY(8px); } to{ opacity:1; transform:none; } }
+
+/* ---------- tablet ---------- */
+@media (max-width:1100px){
+  #pn-nations .pnn-jump{ margin-left:0; width:100%; }
+}
+
+/* ---------- phone ---------- */
+@media (max-width:760px){
+  #pn-nations .pnn-bar{ height:42px; }
+  #pn-nations .pnn-all{ gap:6px; padding:0 12px 0 12px; font-size:.64rem; letter-spacing:.14em; }
+  #pn-nations .pnn-all .pnn-w{ display:none; }
+  #pn-nations .pnn-t{ font-size:.78rem; }
+  #pn-nations .pnn-t::after{ margin:0 9px; }
+  #pn-nations .pnn-side{ padding:0 10px 0 6px; }
+  #pn-nations .pnn-find{ width:32px; height:32px; padding:0; }
+  #pn-nations .pnn-find .pnn-w{ display:none; }
+  #pn-nations .pnn-pause{ display:none; }
+
+  #pn-nations .pnn-scrim{ display:none; }
+  #pn-nations .pnn-panel{ top:0; bottom:0; height:100vh; height:100dvh; max-height:none; border-bottom:0; box-shadow:none; }
+  #pn-nations .pnn-nav{ padding-top:max(12px, env(safe-area-inset-top,0px)); }
+  #pn-nations .pnn-head{ grid-template-columns:minmax(0,1fr); gap:10px; padding-top:10px; }
+  #pn-nations .pnn-title{ font-size:1.45rem; }
+  #pn-nations .pnn-sub{ font-size:.86rem; }
+  #pn-nations .pnn-tools{ gap:8px; padding:10px 0 8px; }
+  #pn-nations .pnn-seg button,#pn-nations .pnn-only{ padding:0 11px; font-size:.66rem; letter-spacing:.1em; }
+  #pn-nations .pnn-only .pnn-w{ display:none; }
+  #pn-nations .pnn-jump{
+    flex-wrap:nowrap; overflow-x:auto; width:auto; margin:0 -16px; padding:0 16px;
+    scrollbar-width:none;
+  }
+  #pn-nations .pnn-jump::-webkit-scrollbar{ display:none; }
+  #pn-nations .pnn-jump button{ flex:none; min-width:30px; height:32px; }
+  #pn-nations .pnn-g{ grid-template-columns:34px minmax(0,1fr); gap:0 10px; padding:10px 0 8px; }
+  #pn-nations .pnn-k{ font-size:1.9rem; }
+  #pn-nations.is-region .pnn-k{ font-size:1.15rem; }
+  #pn-nations .pnn-ul{ columns:2; column-gap:12px; }
+  #pn-nations .pnn-i{ font-size:.98rem; }
+  #pn-nations .pnn-i > a{ padding:6px 8px; }
+  #pn-nations .pnn-foot{ padding:10px 0 calc(12px + env(safe-area-inset-bottom,0px)); font-size:.86rem; }
+
+  #pn-nations .pnn-back{ height:40px; padding:0 14px 0 11px; font-size:.72rem; letter-spacing:.12em; gap:8px; }
+  #pn-nations .pnn-vbar{ min-height:62px; gap:8px; padding:8px 10px; padding-top:max(8px, env(safe-area-inset-top,0px)); }
+  #pn-nations .pnn-vt b{ font-size:1.1rem; }
+  #pn-nations .pnn-vt i{ font-size:.56rem; letter-spacing:.18em; }
+  #pn-nations .pnn-vnew{ display:none; }
+  #pn-nations .pnn-x{ width:46px; height:46px; }
+  #pn-nations .pnn-cp{ font-size:.98rem; }
+  #pn-nations .pnn-cta{ flex-direction:column; align-items:stretch; }
+  #pn-nations .pnn-ask,#pn-nations .pnn-pub{ justify-content:center; }
+}
+@media (max-width:360px){
+  #pn-nations .pnn-ul{ columns:1; }
+  #pn-nations .pnn-back .pnn-w{ display:none; }
+}
+@media (prefers-reduced-motion:reduce){
+  #pn-nations .pnn-track{ animation:none; }
+  #pn-nations .pnn-view{ overflow-x:auto; scrollbar-width:none; }
+  #pn-nations .pnn-view::-webkit-scrollbar{ display:none; }
+  #pn-nations .pnn-tl[aria-hidden="true"]{ display:none; }
+  #pn-nations .pnn-pause{ display:none; }
+  #pn-nations *{ transition:none !important; }
+}
+</style>
+
+<div id="pn-nations">
+  <nav class="pnn-bar" aria-label="Blueprints for all 195 nations">
+    <a class="pnn-all" id="pnn-all" href="https://perfectnations.org/blueprints/" aria-controls="pnn-panel" aria-expanded="false" aria-haspopup="dialog">
+      <svg class="pnn-ico" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><circle cx="10" cy="10" r="8" fill="none" stroke="currentColor" stroke-width="1.4"/><ellipse cx="10" cy="10" rx="3.6" ry="8" fill="none" stroke="currentColor" stroke-width="1.2"/><path d="M2.4 7.4h15.2M2.4 12.6h15.2" fill="none" stroke="currentColor" stroke-width="1.2"/></svg>
+      <span><span class="pnn-w">All <b data-n-all>195</b> </span>Nations</span>
+      <svg class="pnn-chev" viewBox="0 0 10 10" aria-hidden="true" focusable="false"><path d="M1.5 3.5 5 7l3.5-3.5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+    <div class="pnn-view">
+      <div class="pnn-track" id="pnn-track">
+        <ul class="pnn-tl">
+          <li class="pnn-t pnn-t--live" data-s="afghanistan" data-r="as"><a href="https://perfectnations.org/blueprints/afghanistan/" data-s="afghanistan">Afghanistan</a></li>
+          <li class="pnn-t pnn-t--soon" data-s="albania" data-r="eu"><a href="https://perfectnations.org/blueprints/albania/" data-s="albania" rel="nofollow">Albania</a></li>
+          <li class="pnn-t pnn-t--soon" data-s="algeria" data-r="af"><a href="https://perfectnations.org/blueprints/algeria/" data-s="algeria" rel="nofollow">Algeria</a></li>
+          <li class="pnn-t pnn-t--soon" data-s="andorra" data-r="eu"><a href="https://perfectnations.org/blueprints/andorra/" data-s="andorra" rel="nofollow">Andorra</a></li>
+          <li class="pnn-t pnn-t--live" data-s="angola" data-r="af"><a href="https://perfectnations.org/blueprints/angola/" data-s="angola">Angola</a></li>
+          <li class="pnn-t pnn-t--soon" data-s="antigua-and-barbuda" data-r="am"><a href="https://perfectnations.org/blueprints/antigua-and-barbuda/" data-s="antigua-and-barbuda" rel="nofollow">Antigua and Barbuda</a></li>
+          <li class="pnn-t pnn-t--soon" data-s="argentina" data-r="am"><a href="https://perfectnations.org/blueprints/argentina/" data-s="argentina" rel="nofollow">Argentina</a></li>
+          <li class="pnn-t pnn-t--soon" data-s="armenia" data-r="as"><a href="https://perfectnations.org/blueprints/armenia/" data-s="armenia" rel="nofollow">Armenia</a></li>
+          <li class="pnn-t pnn-t--soon" data-s="australia" data-r="oc"><a href="https://perfectnations.org/blueprints/australia/" data-s="australia" rel="nofollow">Australia</a></li>
+          <li class="pnn-t pnn-t--soon" data-s="austria" data-r="eu"><a href="https://perfectnations.org/blueprints/austria/" data-s="austria" rel="nofollow">Austria</a></li>
+          <li class="pnn-t pnn-t--soon" data-s="azerbaijan" data-r="as"><a href="https://perfectnations.org/blueprints/azerbaijan/" data-s="azerbaijan" rel="nofollow">Azerbaijan</a></li>
+          <li class="pnn-t pnn-t--soon" data-s="bahamas" data-r="am"><a href="https://perfectnations.org/blueprints/bahamas/" data-s="bahamas" rel="nofollow">Bahamas</a></li>
+          <li class="pnn-t pnn-t--soon" data-s="bahrain" data-r="me"><a href="https://perfectnations.org/blueprints/bahrain/" data-s="bahrain" rel="nofollow">Bahrain</a></li>
+          <li class="pnn-t pnn-t--live" data-s="bangladesh" data-r="as"><a href="https://perfectnations.org/blueprints/bangladesh/" data-s="bangladesh">Bangladesh</a></li>
+          <li class="pnn-t pnn-t--live" data-s="barbados" data-r="am"><a href="https://perfectnations.org/blueprints/barbados/" data-s="barbados">Barbados</a></li>
+          <li class="pnn-t pnn-t--soon" data-s="belarus" data-r="eu"><a href="https://perfectnations.org/blueprints/belarus/" data-s="belarus" rel="nofollow">Belarus</a></li>
+          <li class="pnn-t pnn-t--soon" data-s="belgium" data-r="eu"><a href="https://perfectnations.org/blueprints/belgium/" data-s="belgium" rel="nofollow">Belgium</a></li>
+          <li class="pnn-t pnn-t--soon" data-s="belize" data-r="am"><a href="https://perfectnations.org/blueprints/belize/" data-s="belize" rel="nofollow">Belize</a></li>
+          <li class="pnn-t pnn-t--soon" data-s="benin" data-r="af"><a href="https://perfectnations.org/blueprints/benin/" data-s="benin" rel="nofollow">Benin</a></li>
+          <li class="pnn-t pnn-t--soon" data-s="bhutan" data-r="as"><a href="https://perfectnations.org/blueprints/bhutan/" data-s="bhutan" rel="nofollow">Bhutan</a></li>
+          <li class="pnn-t pnn-t--soon" data-s="bolivia" data-r="am"><a href="https://perfectnations.org/blueprints/bolivia/" data-s="bolivia" rel="nofollow">Bolivia</a></li>
+          <li class="pnn-t pnn-t--soon" data-s="bosnia-and-herzegovina" data-r="eu"><a href="https://perfectnations.org/blueprints/bosnia-and-herzegovina/" data-s="bosnia-and-herzegovina" rel="nofollow">Bosnia and Herzegovina</a></li>
+          <li class="pnn-t pnn-t--live" data-s="botswana" data-r="af"><a href="https://perfectnations.org/blueprints/botswana/" data-s="botswana">Botswana</a></li>
+          <li class="pnn-t pnn-t--live" data-s="brazil" data-r="am"><a href="https://perfectnations.org/blueprints/brazil/" data-s="brazil">Brazil</a></li>
+          <li class="pnn-t pnn-t--soon" data-s="brunei" data-r="as"><a href="https://perfectnations.org/blueprints/brunei/" data-s="brunei" rel="nofollow">Brunei</a></li>
+          <li class="pnn-t pnn-t--soon" data-s="bulgaria" data-r="eu"><a href="https://perfectnations.org/blueprints/bulgaria/" data-s="bulgaria" rel="nofollow">Bulgaria</a></li>
+          <li class="pnn-t pnn-t--soon" data-s="burkina-faso" data-r="af"><a href="https://perfectnations.org/blueprints/burkina-faso/" data-s="burkina-faso" rel="nofollow">Burkina Faso</a></li>
+          <li class="pnn-t pnn-t--live" data-s="burundi" data-r="af"><a href="https://perfectnations.org/blueprints/burundi/" data-s="burundi">Burundi</a></li>
+          <li class="pnn-t pnn-t--soon" data-s="cabo-verde" data-r="af"><a href="https://perfectnations.org/blueprints/cabo-verde/" data-s="cabo-verde" rel="nofollow">Cabo Verde</a></li>
+          <li class="pnn-t pnn-t--soon" data-s="cambodia" data-r="as"><a href="https://perfectnations.org/blueprints/cambodia/" data-s="cambodia" rel="nofollow">Cambodia</a></li>
+          <li class="pnn-t pnn-t--soon" data-s="cameroon" data-r="af"><a href="https://perfectnations.org/blueprints/cameroon/" data-s="cameroon" rel="nofollow">Cameroon</a></li>
+          <li class="pnn-t pnn-t--soon" data-s="canada" data-r="am"><a href="https://perfectnations.org/blueprints/canada/" data-s="canada" rel="nofollow">Canada</a></li>
+          <li class="pnn-t pnn-t--soon" data-s="central-african-republic" data-r="af"><a href="https://perfectnations.org/blueprints/central-african-republic/" data-s="central-african-republic" rel="nofollow">Central African Republic</a></li>
+          <li class="pnn-t pnn-t--soon" data-s="chad" data-r="af"><a href="https://perfectnations.org/blueprints/chad/" data-s="chad" rel="nofollow">Chad</a></li>
+          <li class="pnn-t pnn-t--soon" data-s="chile" data-r="am"><a href="https://perfectnations.org/blueprints/chile/" data-s="chile" rel="nofollow">Chile</a></li>
+          <li class="pnn-t pnn-t--soon" data-s="china" data-r="as"><a href="https://perfectnations.org/blueprints/china/" data-s="china" rel="nofollow">China</a></li>
+          <li class="pnn-t pnn-t--live" data-s="colombia" data-r="am"><a href="https://perfectnations.org/blueprints/colombia/" data-s="colombia">Colombia</a></li>
+          <li class="pnn-t pnn-t--soon" data-s="comoros" data-r="af"><a href="https://perfectnations.org/blueprints/comoros/" data-s="comoros" rel="nofollow">Comoros</a></li>
+          <li class="pnn-t pnn-t--soon" data-s="costa-rica" data-r="am"><a href="https://perfectnations.org/blueprints/costa-rica/" data-s="costa-rica" rel="nofollow">Costa Rica</a></li>
+          <li class="pnn-t pnn-t--live" data-s="cote-divoire" data-r="af"><a href="https://perfectnations.org/blueprints/cote-d-ivoire/" data-s="cote-divoire">C&ocirc;te d&rsquo;Ivoire</a></li>
+          <li class="pnn-t pnn-t--soon" data-s="croatia" data-r="eu"><a href="https://perfectnations.org/blueprints/croatia/" data-s="croatia" rel="nofollow">Croatia</a></li>
+          <li class="pnn-t pnn-t--soon" data-s="cuba" data-r="am"><a href="https://perfectnations.org/blueprints/cuba/" data-s="cuba" rel="nofollow">Cuba</a></li>
+          <li class="pnn-t pnn-t--soon" data-s="cyprus" data-r="eu"><a href="https://perfectnations.org/blueprints/cyprus/" data-s="cyprus" rel="nofollow">Cyprus</a></li>
+          <li class="pnn-t pnn-t--soon" data-s="czechia" data-r="eu"><a href="https://perfectnations.org/blueprints/czechia/" data-s="czechia" rel="nofollow">Czechia</a></li>
+          <li class="pnn-t pnn-t--soon" data-s="denmark" data-r="eu"><a href="https://perfectnations.org/blueprints/denmark/" data-s="denmark" rel="nofollow">Denmark</a></li>
+          <li class="pnn-t pnn-t--soon" data-s="djibouti" data-r="af"><a href="https://perfectnations.org/blueprints/djibouti/" data-s="djibouti" rel="nofollow">Djibouti</a></li>
+          <li class="pnn-t pnn-t--soon" data-s="dominica" data-r="am"><a href="https://perfectnations.org/blueprints/dominica/" data-s="dominica" rel="nofollow">Dominica</a></li>
+          <li class="pnn-t pnn-t--soon" data-s="dominican-republic" data-r="am"><a href="https://perfectnations.org/blueprints/dominican-republic/" data-s="dominican-republic" rel="nofollow">Dominican Republic</a></li>
+          <li class="pnn-t pnn-t--live" data-s="dr-congo" data-r="af"><a href="https://perfectnations.org/blueprints/dr-congo/" data-s="dr-congo">DR Congo</a></li>
+          <li class="pnn-t pnn-t--live" data-s="ecuador" data-r="am"><a href="https://perfectnations.org/blueprints/ecuador/" data-s="ecuador">Ecuador</a></li>
+          <li class="pnn-t pnn-t--live" data-s="egypt" data-r="af"><a href="https://perfectnations.org/blueprints/egypt/" data-s="egypt">Egypt</a></li>
+          <li class="pnn-t pnn-t--soon" data-s="el-salvador" data-r="am"><a href="https://perfectnations.org/blueprints/el-salvador/" data-s="el-salvador" rel="nofollow">El Salvador</a></li>
+          <li class="pnn-t pnn-t--soon" data-s="equatorial-guinea" data-r="af"><a href="https://perfectnations.org/blueprints/equatorial-guinea/" data-s="equatorial-guinea" rel="nofollow">Equatorial Guinea</a></li>
+          <li class="pnn-t pnn-t--soon" data-s="eritrea" data-r="af"><a href="https://perfectnations.org/blueprints/eritrea/" data-s="eritrea" rel="nofollow">Eritrea</a></li>
+          <li class="pnn-t pnn-t--soon" data-s="estonia" data-r="eu"><a href="https://perfectnations.org/blueprints/estonia/" data-s="estonia" rel="nofollow">Estonia</a></li>
+          <li class="pnn-t pnn-t--live" data-s="eswatini" data-r="af"><a href="https://perfectnations.org/blueprints/eswatini/" data-s="eswatini">Eswatini</a></li>
+          <li class="pnn-t pnn-t--live" data-s="ethiopia" data-r="af"><a href="https://perfectnations.org/blueprints/ethiopia/" data-s="ethiopia">Ethiopia</a></li>
+          <li class="pnn-t pnn-t--live" data-s="fiji" data-r="oc"><a href="https://perfectnations.org/blueprints/fiji/" data-s="fiji">Fiji</a></li>
+          <li class="pnn-t pnn-t--soon" data-s="finland" data-r="eu"><a href="https://perfectnations.org/blueprints/finland/" data-s="finland" rel="nofollow">Finland</a></li>
+          <li class="pnn-t pnn-t--soon" data-s="france" data-r="eu"><a href="https://perfectnations.org/blueprints/france/" data-s="france" rel="nofollow">France</a></li>
+          <li class="pnn-t pnn-t--soon" data-s="gabon" data-r="af"><a href="https://perfectnations.org/blueprints/gabon/" data-s="gabon" rel="nofollow">Gabon</a></li>
+          <li class="pnn-t pnn-t--soon" data-s="gambia" data-r="af"><a href="https://perfectnations.org/blueprints/gambia/" data-s="gambia" rel="nofollow">Gambia</a></li>
+          <li class="pnn-t pnn-t--soon" data-s="georgia" data-r="as"><a href="https://perfectnations.org/blueprints/georgia/" data-s="georgia" rel="nofollow">Georgia</a></li>
+          <li class="pnn-t pnn-t--soon" data-s="germany" data-r="eu"><a href="https://perfectnations.org/blueprints/germany/" data-s="germany" rel="nofollow">Germany</a></li>
+          <li class="pnn-t pnn-t--live" data-s="ghana" data-r="af"><a href="https://perfectnations.org/blueprints/ghana/" data-s="ghana">Ghana</a></li>
+          <li class="pnn-t pnn-t--soon" data-s="greece" data-r="eu"><a href="https://perfectnations.org/blueprints/greece/" data-s="greece" rel="nofollow">Greece</a></li>
+          <li class="pnn-t pnn-t--soon" data-s="grenada" data-r="am"><a href="https://perfectnations.org/blueprints/grenada/" data-s="grenada" rel="nofollow">Grenada</a></li>
+          <li class="pnn-t pnn-t--soon" data-s="guatemala" data-r="am"><a href="https://perfectnations.org/blueprints/guatemala/" data-s="guatemala" rel="nofollow">Guatemala</a></li>
+          <li class="pnn-t pnn-t--soon" data-s="guinea" data-r="af"><a href="https://perfectnations.org/blueprints/guinea/" data-s="guinea" rel="nofollow">Guinea</a></li>
+          <li class="pnn-t pnn-t--soon" data-s="guinea-bissau" data-r="af"><a href="https://perfectnations.org/blueprints/guinea-bissau/" data-s="guinea-bissau" rel="nofollow">Guinea-Bissau</a></li>
+          <li class="pnn-t pnn-t--soon" data-s="guyana" data-r="am"><a href="https://perfectnations.org/blueprints/guyana/" data-s="guyana" rel="nofollow">Guyana</a></li>
+          <li class="pnn-t pnn-t--soon" data-s="haiti" data-r="am"><a href="https://perfectnations.org/blueprints/haiti/" data-s="haiti" rel="nofollow">Haiti</a></li>
+          <li class="pnn-t pnn-t--soon" data-s="holy-see" data-r="eu"><a href="https://perfectnations.org/blueprints/holy-see/" data-s="holy-see" rel="nofollow">Holy See</a></li>
+          <li class="pnn-t pnn-t--soon" data-s="honduras" data-r="am"><a href="https://perfectnations.org/blueprints/honduras/" data-s="honduras" rel="nofollow">Honduras</a></li>
+          <li class="pnn-t pnn-t--soon" data-s="hungary" data-r="eu"><a href="https://perfectnations.org/blueprints/hungary/" data-s="hungary" rel="nofollow">Hungary</a></li>
+          <li class="pnn-t pnn-t--soon" data-s="iceland" data-r="eu"><a href="https://perfectnations.org/blueprints/iceland/" data-s="iceland" rel="nofollow">Iceland</a></li>
+          <li class="pnn-t pnn-t--live" data-s="india" data-r="as"><a href="https://perfectnations.org/blueprints/india/" data-s="india">India</a></li>
+          <li class="pnn-t pnn-t--live" data-s="indonesia" data-r="as"><a href="https://perfectnations.org/blueprints/indonesia/" data-s="indonesia">Indonesia</a></li>
+          <li class="pnn-t pnn-t--soon" data-s="iran" data-r="me"><a href="https://perfectnations.org/blueprints/iran/" data-s="iran" rel="nofollow">Iran</a></li>
+          <li class="pnn-t pnn-t--soon" data-s="iraq" data-r="me"><a href="https://perfectnations.org/blueprints/iraq/" data-s="iraq" rel="nofollow">Iraq</a></li>
+          <li class="pnn-t pnn-t--soon" data-s="ireland" data-r="eu"><a href="https://perfectnations.org/blueprints/ireland/" data-s="ireland" rel="nofollow">Ireland</a></li>
+          <li class="pnn-t pnn-t--soon" data-s="israel" data-r="me"><a href="https://perfectnations.org/blueprints/israel/" data-s="israel" rel="nofollow">Israel</a></li>
+          <li class="pnn-t pnn-t--soon" data-s="italy" data-r="eu"><a href="https://perfectnations.org/blueprints/italy/" data-s="italy" rel="nofollow">Italy</a></li>
+          <li class="pnn-t pnn-t--live" data-s="jamaica" data-r="am"><a href="https://perfectnations.org/blueprints/jamaica/" data-s="jamaica">Jamaica</a></li>
+          <li class="pnn-t pnn-t--soon" data-s="japan" data-r="as"><a href="https://perfectnations.org/blueprints/japan/" data-s="japan" rel="nofollow">Japan</a></li>
+          <li class="pnn-t pnn-t--live" data-s="jordan" data-r="me"><a href="https://perfectnations.org/blueprints/jordan/" data-s="jordan">Jordan</a></li>
+          <li class="pnn-t pnn-t--soon" data-s="kazakhstan" data-r="as"><a href="https://perfectnations.org/blueprints/kazakhstan/" data-s="kazakhstan" rel="nofollow">Kazakhstan</a></li>
+          <li class="pnn-t pnn-t--live" data-s="kenya" data-r="af"><a href="https://perfectnations.org/blueprints/kenya/" data-s="kenya">Kenya</a></li>
+          <li class="pnn-t pnn-t--soon" data-s="kiribati" data-r="oc"><a href="https://perfectnations.org/blueprints/kiribati/" data-s="kiribati" rel="nofollow">Kiribati</a></li>
+          <li class="pnn-t pnn-t--soon" data-s="kuwait" data-r="me"><a href="https://perfectnations.org/blueprints/kuwait/" data-s="kuwait" rel="nofollow">Kuwait</a></li>
+          <li class="pnn-t pnn-t--soon" data-s="kyrgyzstan" data-r="as"><a href="https://perfectnations.org/blueprints/kyrgyzstan/" data-s="kyrgyzstan" rel="nofollow">Kyrgyzstan</a></li>
+          <li class="pnn-t pnn-t--soon" data-s="laos" data-r="as"><a href="https://perfectnations.org/blueprints/laos/" data-s="laos" rel="nofollow">Laos</a></li>
+          <li class="pnn-t pnn-t--soon" data-s="latvia" data-r="eu"><a href="https://perfectnations.org/blueprints/latvia/" data-s="latvia" rel="nofollow">Latvia</a></li>
+          <li class="pnn-t pnn-t--soon" data-s="lebanon" data-r="me"><a href="https://perfectnations.org/blueprints/lebanon/" data-s="lebanon" rel="nofollow">Lebanon</a></li>
+          <li class="pnn-t pnn-t--live" data-s="lesotho" data-r="af"><a href="https://perfectnations.org/blueprints/lesotho/" data-s="lesotho">Lesotho</a></li>
+          <li class="pnn-t pnn-t--soon" data-s="liberia" data-r="af"><a href="https://perfectnations.org/blueprints/liberia/" data-s="liberia" rel="nofollow">Liberia</a></li>
+          <li class="pnn-t pnn-t--soon" data-s="libya" data-r="af"><a href="https://perfectnations.org/blueprints/libya/" data-s="libya" rel="nofollow">Libya</a></li>
+          <li class="pnn-t pnn-t--soon" data-s="liechtenstein" data-r="eu"><a href="https://perfectnations.org/blueprints/liechtenstein/" data-s="liechtenstein" rel="nofollow">Liechtenstein</a></li>
+          <li class="pnn-t pnn-t--soon" data-s="lithuania" data-r="eu"><a href="https://perfectnations.org/blueprints/lithuania/" data-s="lithuania" rel="nofollow">Lithuania</a></li>
+          <li class="pnn-t pnn-t--soon" data-s="luxembourg" data-r="eu"><a href="https://perfectnations.org/blueprints/luxembourg/" data-s="luxembourg" rel="nofollow">Luxembourg</a></li>
+          <li class="pnn-t pnn-t--live" data-s="madagascar" data-r="af"><a href="https://perfectnations.org/blueprints/madagascar/" data-s="madagascar">Madagascar</a></li>
+          <li class="pnn-t pnn-t--live" data-s="malawi" data-r="af"><a href="https://perfectnations.org/blueprints/malawi/" data-s="malawi">Malawi</a></li>
+          <li class="pnn-t pnn-t--soon" data-s="malaysia" data-r="as"><a href="https://perfectnations.org/blueprints/malaysia/" data-s="malaysia" rel="nofollow">Malaysia</a></li>
+          <li class="pnn-t pnn-t--soon" data-s="maldives" data-r="as"><a href="https://perfectnations.org/blueprints/maldives/" data-s="maldives" rel="nofollow">Maldives</a></li>
+          <li class="pnn-t pnn-t--soon" data-s="mali" data-r="af"><a href="https://perfectnations.org/blueprints/mali/" data-s="mali" rel="nofollow">Mali</a></li>
+          <li class="pnn-t pnn-t--soon" data-s="malta" data-r="eu"><a href="https://perfectnations.org/blueprints/malta/" data-s="malta" rel="nofollow">Malta</a></li>
+          <li class="pnn-t pnn-t--soon" data-s="marshall-islands" data-r="oc"><a href="https://perfectnations.org/blueprints/marshall-islands/" data-s="marshall-islands" rel="nofollow">Marshall Islands</a></li>
+          <li class="pnn-t pnn-t--soon" data-s="mauritania" data-r="af"><a href="https://perfectnations.org/blueprints/mauritania/" data-s="mauritania" rel="nofollow">Mauritania</a></li>
+          <li class="pnn-t pnn-t--soon" data-s="mauritius" data-r="af"><a href="https://perfectnations.org/blueprints/mauritius/" data-s="mauritius" rel="nofollow">Mauritius</a></li>
+          <li class="pnn-t pnn-t--live" data-s="mexico" data-r="am"><a href="https://perfectnations.org/blueprints/mexico/" data-s="mexico">Mexico</a></li>
+          <li class="pnn-t pnn-t--soon" data-s="micronesia" data-r="oc"><a href="https://perfectnations.org/blueprints/micronesia/" data-s="micronesia" rel="nofollow">Micronesia</a></li>
+          <li class="pnn-t pnn-t--soon" data-s="moldova" data-r="eu"><a href="https://perfectnations.org/blueprints/moldova/" data-s="moldova" rel="nofollow">Moldova</a></li>
+          <li class="pnn-t pnn-t--soon" data-s="monaco" data-r="eu"><a href="https://perfectnations.org/blueprints/monaco/" data-s="monaco" rel="nofollow">Monaco</a></li>
+          <li class="pnn-t pnn-t--soon" data-s="mongolia" data-r="as"><a href="https://perfectnations.org/blueprints/mongolia/" data-s="mongolia" rel="nofollow">Mongolia</a></li>
+          <li class="pnn-t pnn-t--soon" data-s="montenegro" data-r="eu"><a href="https://perfectnations.org/blueprints/montenegro/" data-s="montenegro" rel="nofollow">Montenegro</a></li>
+          <li class="pnn-t pnn-t--live" data-s="morocco" data-r="af"><a href="https://perfectnations.org/blueprints/morocco/" data-s="morocco">Morocco</a></li>
+          <li class="pnn-t pnn-t--live" data-s="mozambique" data-r="af"><a href="https://perfectnations.org/blueprints/mozambique/" data-s="mozambique">Mozambique</a></li>
+          <li class="pnn-t pnn-t--soon" data-s="myanmar" data-r="as"><a href="https://perfectnations.org/blueprints/myanmar/" data-s="myanmar" rel="nofollow">Myanmar</a></li>
+          <li class="pnn-t pnn-t--live" data-s="namibia" data-r="af"><a href="https://perfectnations.org/blueprints/namibia/" data-s="namibia">Namibia</a></li>
+          <li class="pnn-t pnn-t--soon" data-s="nauru" data-r="oc"><a href="https://perfectnations.org/blueprints/nauru/" data-s="nauru" rel="nofollow">Nauru</a></li>
+          <li class="pnn-t pnn-t--soon" data-s="nepal" data-r="as"><a href="https://perfectnations.org/blueprints/nepal/" data-s="nepal" rel="nofollow">Nepal</a></li>
+          <li class="pnn-t pnn-t--soon" data-s="netherlands" data-r="eu"><a href="https://perfectnations.org/blueprints/netherlands/" data-s="netherlands" rel="nofollow">Netherlands</a></li>
+          <li class="pnn-t pnn-t--soon" data-s="new-zealand" data-r="oc"><a href="https://perfectnations.org/blueprints/new-zealand/" data-s="new-zealand" rel="nofollow">New Zealand</a></li>
+          <li class="pnn-t pnn-t--soon" data-s="nicaragua" data-r="am"><a href="https://perfectnations.org/blueprints/nicaragua/" data-s="nicaragua" rel="nofollow">Nicaragua</a></li>
+          <li class="pnn-t pnn-t--soon" data-s="niger" data-r="af"><a href="https://perfectnations.org/blueprints/niger/" data-s="niger" rel="nofollow">Niger</a></li>
+          <li class="pnn-t pnn-t--live" data-s="nigeria" data-r="af"><a href="https://perfectnations.org/blueprints/nigeria/" data-s="nigeria">Nigeria</a></li>
+          <li class="pnn-t pnn-t--soon" data-s="north-korea" data-r="as"><a href="https://perfectnations.org/blueprints/north-korea/" data-s="north-korea" rel="nofollow">North Korea</a></li>
+          <li class="pnn-t pnn-t--soon" data-s="north-macedonia" data-r="eu"><a href="https://perfectnations.org/blueprints/north-macedonia/" data-s="north-macedonia" rel="nofollow">North Macedonia</a></li>
+          <li class="pnn-t pnn-t--soon" data-s="norway" data-r="eu"><a href="https://perfectnations.org/blueprints/norway/" data-s="norway" rel="nofollow">Norway</a></li>
+          <li class="pnn-t pnn-t--soon" data-s="oman" data-r="me"><a href="https://perfectnations.org/blueprints/oman/" data-s="oman" rel="nofollow">Oman</a></li>
+          <li class="pnn-t pnn-t--live" data-s="pakistan" data-r="as"><a href="https://perfectnations.org/blueprints/pakistan/" data-s="pakistan">Pakistan</a></li>
+          <li class="pnn-t pnn-t--soon" data-s="palau" data-r="oc"><a href="https://perfectnations.org/blueprints/palau/" data-s="palau" rel="nofollow">Palau</a></li>
+          <li class="pnn-t pnn-t--soon" data-s="palestine" data-r="me"><a href="https://perfectnations.org/blueprints/palestine/" data-s="palestine" rel="nofollow">Palestine</a></li>
+          <li class="pnn-t pnn-t--soon" data-s="panama" data-r="am"><a href="https://perfectnations.org/blueprints/panama/" data-s="panama" rel="nofollow">Panama</a></li>
+          <li class="pnn-t pnn-t--soon" data-s="papua-new-guinea" data-r="oc"><a href="https://perfectnations.org/blueprints/papua-new-guinea/" data-s="papua-new-guinea" rel="nofollow">Papua New Guinea</a></li>
+          <li class="pnn-t pnn-t--soon" data-s="paraguay" data-r="am"><a href="https://perfectnations.org/blueprints/paraguay/" data-s="paraguay" rel="nofollow">Paraguay</a></li>
+          <li class="pnn-t pnn-t--soon" data-s="peru" data-r="am"><a href="https://perfectnations.org/blueprints/peru/" data-s="peru" rel="nofollow">Peru</a></li>
+          <li class="pnn-t pnn-t--live" data-s="philippines" data-r="as"><a href="https://perfectnations.org/blueprints/philippines/" data-s="philippines">Philippines</a></li>
+          <li class="pnn-t pnn-t--soon" data-s="poland" data-r="eu"><a href="https://perfectnations.org/blueprints/poland/" data-s="poland" rel="nofollow">Poland</a></li>
+          <li class="pnn-t pnn-t--soon" data-s="portugal" data-r="eu"><a href="https://perfectnations.org/blueprints/portugal/" data-s="portugal" rel="nofollow">Portugal</a></li>
+          <li class="pnn-t pnn-t--soon" data-s="qatar" data-r="me"><a href="https://perfectnations.org/blueprints/qatar/" data-s="qatar" rel="nofollow">Qatar</a></li>
+          <li class="pnn-t pnn-t--live" data-s="republic-of-congo" data-r="af"><a href="https://perfectnations.org/blueprints/republic-of-congo/" data-s="republic-of-congo">Republic of the Congo</a></li>
+          <li class="pnn-t pnn-t--soon" data-s="romania" data-r="eu"><a href="https://perfectnations.org/blueprints/romania/" data-s="romania" rel="nofollow">Romania</a></li>
+          <li class="pnn-t pnn-t--soon" data-s="russia" data-r="eu"><a href="https://perfectnations.org/blueprints/russia/" data-s="russia" rel="nofollow">Russia</a></li>
+          <li class="pnn-t pnn-t--live" data-s="rwanda" data-r="af"><a href="https://perfectnations.org/blueprints/rwanda/" data-s="rwanda">Rwanda</a></li>
+          <li class="pnn-t pnn-t--soon" data-s="saint-kitts-and-nevis" data-r="am"><a href="https://perfectnations.org/blueprints/saint-kitts-and-nevis/" data-s="saint-kitts-and-nevis" rel="nofollow">Saint Kitts and Nevis</a></li>
+          <li class="pnn-t pnn-t--soon" data-s="saint-lucia" data-r="am"><a href="https://perfectnations.org/blueprints/saint-lucia/" data-s="saint-lucia" rel="nofollow">Saint Lucia</a></li>
+          <li class="pnn-t pnn-t--soon" data-s="saint-vincent-and-the-grenadines" data-r="am"><a href="https://perfectnations.org/blueprints/saint-vincent-and-the-grenadines/" data-s="saint-vincent-and-the-grenadines" rel="nofollow">Saint Vincent and the Grenadines</a></li>
+          <li class="pnn-t pnn-t--soon" data-s="samoa" data-r="oc"><a href="https://perfectnations.org/blueprints/samoa/" data-s="samoa" rel="nofollow">Samoa</a></li>
+          <li class="pnn-t pnn-t--soon" data-s="san-marino" data-r="eu"><a href="https://perfectnations.org/blueprints/san-marino/" data-s="san-marino" rel="nofollow">San Marino</a></li>
+          <li class="pnn-t pnn-t--soon" data-s="sao-tome-and-principe" data-r="af"><a href="https://perfectnations.org/blueprints/sao-tome-and-principe/" data-s="sao-tome-and-principe" rel="nofollow">S&atilde;o Tom&eacute; and Pr&iacute;ncipe</a></li>
+          <li class="pnn-t pnn-t--soon" data-s="saudi-arabia" data-r="me"><a href="https://perfectnations.org/blueprints/saudi-arabia/" data-s="saudi-arabia" rel="nofollow">Saudi Arabia</a></li>
+          <li class="pnn-t pnn-t--live" data-s="senegal" data-r="af"><a href="https://perfectnations.org/blueprints/senegal/" data-s="senegal">Senegal</a></li>
+          <li class="pnn-t pnn-t--soon" data-s="serbia" data-r="eu"><a href="https://perfectnations.org/blueprints/serbia/" data-s="serbia" rel="nofollow">Serbia</a></li>
+          <li class="pnn-t pnn-t--soon" data-s="seychelles" data-r="af"><a href="https://perfectnations.org/blueprints/seychelles/" data-s="seychelles" rel="nofollow">Seychelles</a></li>
+          <li class="pnn-t pnn-t--soon" data-s="sierra-leone" data-r="af"><a href="https://perfectnations.org/blueprints/sierra-leone/" data-s="sierra-leone" rel="nofollow">Sierra Leone</a></li>
+          <li class="pnn-t pnn-t--soon" data-s="singapore" data-r="as"><a href="https://perfectnations.org/blueprints/singapore/" data-s="singapore" rel="nofollow">Singapore</a></li>
+          <li class="pnn-t pnn-t--soon" data-s="slovakia" data-r="eu"><a href="https://perfectnations.org/blueprints/slovakia/" data-s="slovakia" rel="nofollow">Slovakia</a></li>
+          <li class="pnn-t pnn-t--soon" data-s="slovenia" data-r="eu"><a href="https://perfectnations.org/blueprints/slovenia/" data-s="slovenia" rel="nofollow">Slovenia</a></li>
+          <li class="pnn-t pnn-t--soon" data-s="solomon-islands" data-r="oc"><a href="https://perfectnations.org/blueprints/solomon-islands/" data-s="solomon-islands" rel="nofollow">Solomon Islands</a></li>
+          <li class="pnn-t pnn-t--live" data-s="somalia" data-r="af"><a href="https://perfectnations.org/blueprints/somalia/" data-s="somalia">Somalia</a></li>
+          <li class="pnn-t pnn-t--live" data-s="south-africa" data-r="af"><a href="https://perfectnations.org/blueprints/south-africa/" data-s="south-africa">South Africa</a></li>
+          <li class="pnn-t pnn-t--soon" data-s="south-korea" data-r="as"><a href="https://perfectnations.org/blueprints/south-korea/" data-s="south-korea" rel="nofollow">South Korea</a></li>
+          <li class="pnn-t pnn-t--live" data-s="south-sudan" data-r="af"><a href="https://perfectnations.org/blueprints/south-sudan/" data-s="south-sudan">South Sudan</a></li>
+          <li class="pnn-t pnn-t--soon" data-s="spain" data-r="eu"><a href="https://perfectnations.org/blueprints/spain/" data-s="spain" rel="nofollow">Spain</a></li>
+          <li class="pnn-t pnn-t--live" data-s="sri-lanka" data-r="as"><a href="https://perfectnations.org/blueprints/sri-lanka/" data-s="sri-lanka">Sri Lanka</a></li>
+          <li class="pnn-t pnn-t--soon" data-s="sudan" data-r="af"><a href="https://perfectnations.org/blueprints/sudan/" data-s="sudan" rel="nofollow">Sudan</a></li>
+          <li class="pnn-t pnn-t--soon" data-s="suriname" data-r="am"><a href="https://perfectnations.org/blueprints/suriname/" data-s="suriname" rel="nofollow">Suriname</a></li>
+          <li class="pnn-t pnn-t--soon" data-s="sweden" data-r="eu"><a href="https://perfectnations.org/blueprints/sweden/" data-s="sweden" rel="nofollow">Sweden</a></li>
+          <li class="pnn-t pnn-t--soon" data-s="switzerland" data-r="eu"><a href="https://perfectnations.org/blueprints/switzerland/" data-s="switzerland" rel="nofollow">Switzerland</a></li>
+          <li class="pnn-t pnn-t--soon" data-s="syria" data-r="me"><a href="https://perfectnations.org/blueprints/syria/" data-s="syria" rel="nofollow">Syria</a></li>
+          <li class="pnn-t pnn-t--soon" data-s="tajikistan" data-r="as"><a href="https://perfectnations.org/blueprints/tajikistan/" data-s="tajikistan" rel="nofollow">Tajikistan</a></li>
+          <li class="pnn-t pnn-t--live" data-s="tanzania" data-r="af"><a href="https://perfectnations.org/blueprints/tanzania/" data-s="tanzania">Tanzania</a></li>
+          <li class="pnn-t pnn-t--soon" data-s="thailand" data-r="as"><a href="https://perfectnations.org/blueprints/thailand/" data-s="thailand" rel="nofollow">Thailand</a></li>
+          <li class="pnn-t pnn-t--soon" data-s="timor-leste" data-r="as"><a href="https://perfectnations.org/blueprints/timor-leste/" data-s="timor-leste" rel="nofollow">Timor-Leste</a></li>
+          <li class="pnn-t pnn-t--soon" data-s="togo" data-r="af"><a href="https://perfectnations.org/blueprints/togo/" data-s="togo" rel="nofollow">Togo</a></li>
+          <li class="pnn-t pnn-t--soon" data-s="tonga" data-r="oc"><a href="https://perfectnations.org/blueprints/tonga/" data-s="tonga" rel="nofollow">Tonga</a></li>
+          <li class="pnn-t pnn-t--soon" data-s="trinidad-and-tobago" data-r="am"><a href="https://perfectnations.org/blueprints/trinidad-and-tobago/" data-s="trinidad-and-tobago" rel="nofollow">Trinidad and Tobago</a></li>
+          <li class="pnn-t pnn-t--soon" data-s="tunisia" data-r="af"><a href="https://perfectnations.org/blueprints/tunisia/" data-s="tunisia" rel="nofollow">Tunisia</a></li>
+          <li class="pnn-t pnn-t--soon" data-s="turkiye" data-r="me"><a href="https://perfectnations.org/blueprints/turkiye/" data-s="turkiye" rel="nofollow">T&uuml;rkiye</a></li>
+          <li class="pnn-t pnn-t--soon" data-s="turkmenistan" data-r="as"><a href="https://perfectnations.org/blueprints/turkmenistan/" data-s="turkmenistan" rel="nofollow">Turkmenistan</a></li>
+          <li class="pnn-t pnn-t--soon" data-s="tuvalu" data-r="oc"><a href="https://perfectnations.org/blueprints/tuvalu/" data-s="tuvalu" rel="nofollow">Tuvalu</a></li>
+          <li class="pnn-t pnn-t--live" data-s="uganda" data-r="af"><a href="https://perfectnations.org/blueprints/uganda/" data-s="uganda">Uganda</a></li>
+          <li class="pnn-t pnn-t--live" data-s="ukraine" data-r="eu"><a href="https://perfectnations.org/blueprints/ukraine/" data-s="ukraine">Ukraine</a></li>
+          <li class="pnn-t pnn-t--soon" data-s="united-arab-emirates" data-r="me"><a href="https://perfectnations.org/blueprints/united-arab-emirates/" data-s="united-arab-emirates" rel="nofollow">United Arab Emirates</a></li>
+          <li class="pnn-t pnn-t--soon" data-s="united-kingdom" data-r="eu"><a href="https://perfectnations.org/blueprints/united-kingdom/" data-s="united-kingdom" rel="nofollow">United Kingdom</a></li>
+          <li class="pnn-t pnn-t--soon" data-s="united-states" data-r="am"><a href="https://perfectnations.org/blueprints/united-states/" data-s="united-states" rel="nofollow">United States</a></li>
+          <li class="pnn-t pnn-t--soon" data-s="uruguay" data-r="am"><a href="https://perfectnations.org/blueprints/uruguay/" data-s="uruguay" rel="nofollow">Uruguay</a></li>
+          <li class="pnn-t pnn-t--soon" data-s="uzbekistan" data-r="as"><a href="https://perfectnations.org/blueprints/uzbekistan/" data-s="uzbekistan" rel="nofollow">Uzbekistan</a></li>
+          <li class="pnn-t pnn-t--soon" data-s="vanuatu" data-r="oc"><a href="https://perfectnations.org/blueprints/vanuatu/" data-s="vanuatu" rel="nofollow">Vanuatu</a></li>
+          <li class="pnn-t pnn-t--soon" data-s="venezuela" data-r="am"><a href="https://perfectnations.org/blueprints/venezuela/" data-s="venezuela" rel="nofollow">Venezuela</a></li>
+          <li class="pnn-t pnn-t--live" data-s="vietnam" data-r="as"><a href="https://perfectnations.org/blueprints/vietnam/" data-s="vietnam">Vietnam</a></li>
+          <li class="pnn-t pnn-t--soon" data-s="yemen" data-r="me"><a href="https://perfectnations.org/blueprints/yemen/" data-s="yemen" rel="nofollow">Yemen</a></li>
+          <li class="pnn-t pnn-t--live" data-s="zambia" data-r="af"><a href="https://perfectnations.org/blueprints/zambia/" data-s="zambia">Zambia</a></li>
+          <li class="pnn-t pnn-t--live" data-s="zimbabwe" data-r="af"><a href="https://perfectnations.org/blueprints/zimbabwe/" data-s="zimbabwe">Zimbabwe</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="pnn-side">
+      <button type="button" class="pnn-find" id="pnn-find" aria-controls="pnn-panel" aria-expanded="false" aria-haspopup="dialog">
+        <svg class="pnn-ico" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><circle cx="8.6" cy="8.6" r="5.6" fill="none" stroke="currentColor" stroke-width="1.9"/><path d="M12.8 12.8 17.4 17.4" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/></svg>
+        <span class="pnn-w">Find a nation</span><span class="pnn-sr">Find a nation</span>
+      </button>
+      <button type="button" class="pnn-pause" id="pnn-pause" aria-pressed="false" aria-label="Pause the moving list">&#10074;&#10074;</button>
+    </div>
+  </nav>
+
+  <div class="pnn-scrim" id="pnn-scrim" hidden></div>
+  <div class="pnn-panel" id="pnn-panel" role="dialog" aria-modal="false" aria-labelledby="pnn-title" tabindex="-1" hidden>
+    <div class="pnn-in">
+      <div class="pnn-nav">
+        <button type="button" class="pnn-back" data-pnn-close><svg viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M16 10H4.5M9.5 4.5 4 10l5.5 5.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Go Back</span></button>
+        <button type="button" class="pnn-x" data-pnn-close aria-label="Close the nations menu"><svg viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M5 5l10 10M15 5 5 15" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></button>
+      </div>
+      <div class="pnn-head">
+        <div>
+          <p class="pnn-title" id="pnn-title">Blueprints for all <span data-n-all>195</span> nations</p>
+          <p class="pnn-sub">Every nation opens here. <b>&#9733; <span data-n-live>44</span></b> blueprints are published in full.</p>
+        </div>
+        <label class="pnn-search">
+          <span class="pnn-sr">Search for a nation</span>
+          <svg class="pnn-ico" viewBox="0 0 20 20" aria-hidden="true" focusable="false"><circle cx="8.6" cy="8.6" r="5.6" fill="none" stroke="currentColor" stroke-width="1.9"/><path d="M12.8 12.8 17.4 17.4" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"/></svg>
+          <input type="search" id="pnn-q" placeholder="Search for a nation" autocomplete="off" autocapitalize="off" spellcheck="false" enterkeyhint="go" aria-controls="pnn-list">
+        </label>
+      </div>
+      <div class="pnn-tools">
+        <div class="pnn-seg" role="group" aria-label="Arrange the nations">
+          <button type="button" data-order="az" aria-pressed="true">A to Z</button>
+          <button type="button" data-order="region" aria-pressed="false">By region</button>
+        </div>
+        <button type="button" class="pnn-only" id="pnn-only" aria-pressed="false">Published <span class="pnn-w">in full </span>only</button>
+        <div class="pnn-jump" id="pnn-jump" role="group" aria-label="Jump to"></div>
+      </div>
+    </div>
+    <div class="pnn-body" id="pnn-body">
+      <div class="pnn-in pnn-list" id="pnn-list"></div>
+      <p class="pnn-sr" id="pnn-status" aria-live="polite"></p>
+    </div>
+    <div class="pnn-in">
+      <p class="pnn-foot">Want a blueprint the day it is published? <a href="https://perfectnations.org/contact/">Ask for it</a></p>
+    </div>
+  </div>
+
+  <div class="pnn-viewer" id="pnn-viewer" role="dialog" aria-modal="true" aria-labelledby="pnn-vname" tabindex="-1" hidden>
+    <div class="pnn-vbar">
+      <button type="button" class="pnn-back" data-pnn-close><svg viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M16 10H4.5M9.5 4.5 4 10l5.5 5.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="pnn-w">Go Back</span></button>
+      <div class="pnn-vt"><b id="pnn-vname">Nation</b><i id="pnn-vreg"></i></div>
+      <div class="pnn-vend">
+        <a class="pnn-vnew" id="pnn-vnew" href="https://perfectnations.org/blueprints/" target="_blank" rel="noopener">Full page &#8599;</a>
+        <button type="button" class="pnn-x" data-pnn-close aria-label="Close and go back"><svg viewBox="0 0 20 20" aria-hidden="true" focusable="false"><path d="M5 5l10 10M15 5 5 15" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></button>
+      </div>
+    </div>
+    <div class="pnn-vbody" id="pnn-vbody">
+      <div class="pnn-vload" id="pnn-vload"><span class="pnn-spin" aria-hidden="true"></span><span id="pnn-vlt">Opening the blueprint</span></div>
+      <div class="pnn-soon" id="pnn-soon" hidden>
+        <div class="pnn-card">
+          <svg class="pnn-cup" data-pn-cup="1" viewBox="0 0 120 60" aria-hidden="true" focusable="false"><g fill="currentColor"><path fill-rule="evenodd" d="M51.7 55C51.6 55 51.6 54.8 51.6 53.3L51.6 51.9L51.8 51.7C51.9 51.6 52.2 51.4 52.4 51.2C52.6 51 52.8 50.9 52.8 50.9C52.8 50.8 54.4 50 54.5 50C54.6 50 54.8 49.9 54.9 49.8C55.1 49.7 55.4 49.6 55.7 49.6C55.9 49.5 56.2 49.4 56.3 49.4L56.5 49.3L56.5 49.1C56.5 48.5 56.6 48.3 57.3 48.3C57.6 48.3 57.8 48.3 57.8 48.3C57.8 48.3 57.8 46.6 57.8 44.6L57.8 41L58 40.8C58.8 39.8 58.9 38.5 58.5 37.3C58.4 37.1 58.3 36.9 58.3 36.8C58.3 36.7 58.1 36.5 57.6 36.2C56.4 35.4 55.1 33.7 54 31.6C53.7 31.1 53.8 31.1 53.7 31.1C53.6 31.1 53.6 31.2 53.5 31.3C53 32.3 51.7 32.4 50.8 31.6C50.2 31.1 50.8 30.4 51.4 30.7C52.2 31.1 52.4 31.1 52.6 30.6C52.8 29.7 51.8 28.5 47.6 24.2C43.2 19.8 41.6 17.8 40.8 15.7C40.7 15.5 40.7 15.3 40.6 15.2C39.7 12.9 40.1 10.6 41.8 8.9C42.9 7.7 44.1 7.3 45.4 7.6C46.3 7.7 47.6 8.4 49 9.6C51.1 11.2 52 11.5 52.6 11C52.8 10.8 52.8 10.8 52.6 10.5C52.3 10.2 52.3 10.1 52.4 9.9C52.8 9.1 53.9 9.8 53.9 10.9C53.9 11.1 53.9 11.2 53.9 11.2C54 11.2 55 10.7 55.4 10.5C55.8 10.2 56 9.7 55.9 9.1C55.9 8.5 55.7 8.4 54.2 7.6C52.8 6.9 52.7 6.8 52.6 6.6C52.5 6.2 52.4 5.3 52.6 5.1L52.7 5L53.4 5L54.1 5L54.1 5.8C54.2 6.8 54.1 6.7 55.6 7.7C55.7 7.7 55.8 7.8 55.8 7.8C55.9 7.8 55.9 7.9 56 7.9C56.7 8.4 57 9.1 56.7 9.8C56.6 10.3 56.5 10.3 55.3 11.1C53.7 12 53.3 12.2 53 12.5C51.8 13.2 51.4 14.3 51.7 16C52.8 23.1 53.9 27.6 55.2 30.9C55.4 31.3 55.5 31.7 55.6 31.8C56 33.1 57.3 35 58.1 35.7C58.4 35.9 58.6 35.9 58.4 35.6C57.8 34.8 57 31.9 56.4 29.1C56.2 27.8 55.9 25.9 55.8 25.2C55.8 25 55.7 24.7 55.7 24.6C55.6 23.9 55.1 19.7 55 18.8C55 18.7 55 18.3 54.9 17.9C54.7 16.2 54.7 14.5 54.9 13.9C55.1 13.1 55.2 12.9 56.7 11.4C57.8 10.2 57.9 10.1 57.9 9.4C57.9 8.6 57.8 8.4 57 7.5C56.4 6.9 56.3 6.7 56.3 6.2C56.2 5.9 56.2 5.2 56.3 5.1L56.4 5L61.8 5L67.3 5L67.4 5.1C67.5 5.2 67.5 5.2 67.5 5.8C67.5 6.7 67.5 6.7 66 7.5C64.2 8.4 64.1 8.6 64.1 9.4C64.1 10 64.3 10.3 65.5 10.9C66.2 11.2 66.1 11.2 66.1 10.8C66.1 9.8 67.2 9.1 67.6 9.9C67.7 10.1 67.7 10.2 67.3 10.7C67.1 11 67.9 11.3 68.5 11.1C69.2 10.9 69.6 10.6 71.2 9.4C74.1 7.1 76 6.9 78 8.6C80.4 10.8 80.5 14 78.2 17.6C76.9 19.5 75.9 20.7 72.3 24.3C67.9 28.7 67.2 29.7 67.5 30.7C67.6 31.1 67.8 31.1 68.5 30.8C68.9 30.5 69 30.5 69.3 30.8C69.6 31 69.5 31.4 69.2 31.7C68.1 32.4 66.9 32.3 66.5 31.3C66.4 31 66.3 31 66.2 31.2C66.1 31.5 65.3 33 64.9 33.5C64.1 34.8 63.3 35.6 62.4 36.2C61.7 36.7 61.7 36.7 61.5 37.4C61.2 38.4 61.2 39.4 61.6 40.1C61.7 40.4 62 40.9 62.1 41C62.2 41.1 62.2 41.4 62.2 44.5C62.2 46.4 62.2 48 62.2 48.1L62.2 48.3L62.6 48.3C63.4 48.3 63.6 48.5 63.6 49.1C63.6 49.3 63.6 49.3 64.3 49.6C64.7 49.7 65.1 49.8 65.6 50.1C66 50.3 66.5 50.5 66.8 50.6C67 50.8 67.2 50.9 67.2 50.9C67.2 50.9 67.3 51 67.5 51.1C67.7 51.3 68 51.5 68.1 51.6L68.5 51.9L68.4 53.4C68.4 54.2 68.4 54.9 68.4 54.9C68.4 55 67.3 55 61.8 55C57.7 55 56.8 55 56.7 55C56.6 54.9 56.6 52.4 56.7 52C56.8 51.3 57.8 50 58.7 49.3C58.9 49.2 58.6 49.2 58.2 49.3C57.2 49.5 55 51.2 54.8 51.9C54.7 52.2 54.6 52.9 54.6 53.9C54.6 54.5 54.6 54.9 54.6 54.9C54.6 55 51.9 55 51.7 55ZM52.2 27.1C52.2 27.1 52.1 26.8 52 26.6C51.5 25.1 50.6 21.8 50 19C49.2 15.4 49.2 14.9 49.6 14C49.9 13.4 50.3 13 51 12.6C51.5 12.3 51.5 12.3 51.1 12.2C50.5 12 49.5 11.4 48.5 10.6C45.4 8.2 44.2 8.1 42.6 9.7C40.5 11.9 40.9 14.6 43.8 18.4C44.8 19.7 45.8 20.8 48.3 23.3C50.8 25.8 51.3 26.3 51.7 26.9C52.1 27.3 52.2 27.3 52.2 27.1ZM68.2 26.9C68.5 26.6 69.1 26 70.9 24.1C72.7 22.3 73.5 21.4 74.2 20.7C79 15.5 79.9 12.2 77.3 9.6C76.5 8.8 75.8 8.5 74.7 8.7C74.1 8.8 73.1 9.4 71.8 10.4C70.3 11.5 69.5 12.1 68.8 12.2C68.7 12.3 68.6 12.3 68.6 12.3C68.6 12.4 68.7 12.4 68.8 12.5C70.5 13.4 70.9 14.5 70.5 16.4C69.8 20.3 68.9 23.9 68.1 26.4C67.7 27.4 67.7 27.5 68.2 26.9Z"/><rect x="6.13" y="16.60" width="30.0" height="1.8"/><rect x="83.87" y="16.60" width="30.0" height="1.8"/><rect x="6.13" y="41.60" width="30.0" height="1.8"/><rect x="83.87" y="41.60" width="30.0" height="1.8"/></g></svg>
+          <p class="pnn-eb">Blueprint in preparation</p>
+          <p class="pnn-cn" id="pnn-cn">Nation</p>
+          <p class="pnn-cp">Perfect Nations is completing this blueprint: what the nation owns, what the seven basic standards of living cost for every citizen, and the capital architecture that pays for them.</p>
+          <div class="pnn-cta">
+            <a class="pnn-ask" id="pnn-ask" href="https://perfectnations.org/contact/">Ask for this blueprint</a>
+            <button type="button" class="pnn-pub" id="pnn-pub">See the published blueprints</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+(function () {
+  'use strict';
+
+  var BASE = 'https://perfectnations.org/blueprints/';
+  /* a nation whose page lives at another address */
+  var PATH = { 'cote-divoire': 'cote-d-ivoire' };
+  var MANIFEST = [
+    'https://raw.githubusercontent.com/preetisinha70-PN/perfect-nations/main/pages/manifest.json',
+    'https://cdn.jsdelivr.net/gh/preetisinha70-PN/perfect-nations@main/pages/manifest.json'
+  ];
+  var REGIONS = [
+    ['af', 'Africa', 'Africa'],
+    ['as', 'Asia', 'Asia'],
+    ['me', 'The Middle East', 'Middle East'],
+    ['eu', 'Europe', 'Europe'],
+    ['am', 'The Americas', 'Americas'],
+    ['oc', 'Australia and Oceania', 'Oceania']
+  ];
+  /* other names visitors type */
+  var ALIAS = {
+    'cote-divoire': 'ivory coast', 'turkiye': 'turkey', 'eswatini': 'swaziland', 'myanmar': 'burma',
+    'holy-see': 'vatican city', 'czechia': 'czech republic', 'united-states': 'usa us america united states of america',
+    'united-kingdom': 'uk britain great britain england scotland wales northern ireland', 'united-arab-emirates': 'uae emirates dubai',
+    'timor-leste': 'east timor', 'cabo-verde': 'cape verde', 'dr-congo': 'drc democratic republic of the congo kinshasa zaire',
+    'republic-of-congo': 'congo brazzaville', 'north-macedonia': 'macedonia', 'south-korea': 'korea republic of korea',
+    'north-korea': 'korea dprk', 'netherlands': 'holland', 'gambia': 'the gambia', 'bahamas': 'the bahamas',
+    'palestine': 'state of palestine', 'russia': 'russian federation', 'laos': 'lao pdr', 'iran': 'persia',
+    'sri-lanka': 'ceylon', 'saint-kitts-and-nevis': 'st kitts', 'saint-lucia': 'st lucia',
+    'saint-vincent-and-the-grenadines': 'st vincent', 'brunei': 'brunei darussalam', 'micronesia': 'federated states of micronesia'
+  };
+  /* what the viewer hides on a page opened inside it: the site header and this menu */
+  var EMBED_CSS = '.elementor-location-header,#masthead,header.site-header,.pn-hd,#pn-hd,#pn-nations,' +
+    '.elementor-widget-html:has(#pn-nations){display:none !important}' +
+    'html,body{margin-top:0 !important;padding-top:0 !important}';
+
+  function liveSlugs() {
+    if (window.pnLiveSlugs) { return window.pnLiveSlugs; }
+    function get(i) {
+      if (i >= MANIFEST.length || !window.fetch) { return Promise.resolve([]); }
+      return fetch(MANIFEST[i]).then(function (r) {
+        if (!r.ok) { throw new Error('manifest ' + r.status); }
+        return r.json();
+      }).then(function (m) {
+        var out = [], k, hit;
+        for (k in (m && m.pages) || {}) {
+          hit = /^pn-bp-([a-z0-9-]+)$/.exec(k);
+          if (hit) { out.push(hit[1]); }
+        }
+        return out;
+      }).catch(function () { return get(i + 1); });
+    }
+    window.pnLiveSlugs = get(0);
+    return window.pnLiveSlugs;
+  }
+
+  function norm(s) {
+    s = String(s || '');
+    if (s.normalize) { s = s.normalize('NFD').replace(/[\u0300-\u036f]/g, ''); }
+    return s.toLowerCase().replace(/[\u2019']/g, '').replace(/[^a-z0-9]+/g, ' ').replace(/^\s+|\s+$/g, '');
+  }
+  function esc(s) {
+    return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+  }
+  function pageOf(slug) { return (PATH[slug] || slug); }
+  function urlOf(slug) { return BASE + pageOf(slug) + '/'; }
+
+  function boot() {
+    var root = document.getElementById('pn-nations');
+    if (!root || root.getAttribute('data-ready') === '1') { return; }
+    root.setAttribute('data-ready', '1');
+
+    var bar = root.querySelector('.pnn-bar');
+    var track = root.querySelector('#pnn-track');
+    var list0 = root.querySelector('.pnn-tl');
+    var allBtn = root.querySelector('#pnn-all');
+    var findBtn = root.querySelector('#pnn-find');
+    var pauseBtn = root.querySelector('#pnn-pause');
+    var panel = root.querySelector('#pnn-panel');
+    var scrim = root.querySelector('#pnn-scrim');
+    var body = root.querySelector('#pnn-body');
+    var listEl = root.querySelector('#pnn-list');
+    var jump = root.querySelector('#pnn-jump');
+    var input = root.querySelector('#pnn-q');
+    var onlyBtn = root.querySelector('#pnn-only');
+    var segBtns = root.querySelectorAll('.pnn-seg button');
+    var status = root.querySelector('#pnn-status');
+    var viewer = root.querySelector('#pnn-viewer');
+    var vbody = root.querySelector('#pnn-vbody');
+    var vname = root.querySelector('#pnn-vname');
+    var vreg = root.querySelector('#pnn-vreg');
+    var vnew = root.querySelector('#pnn-vnew');
+    var vload = root.querySelector('#pnn-vload');
+    var vlt = root.querySelector('#pnn-vlt');
+    var soon = root.querySelector('#pnn-soon');
+    var cn = root.querySelector('#pnn-cn');
+    var ask = root.querySelector('#pnn-ask');
+    var pubBtn = root.querySelector('#pnn-pub');
+    if (!track || !list0 || !panel || !viewer) { return; }
+
+    var REGNAME = {}, REGSHORT = {}, r;
+    for (r = 0; r < REGIONS.length; r++) { REGNAME[REGIONS[r][0]] = REGIONS[r][1]; REGSHORT[REGIONS[r][0]] = REGIONS[r][2]; }
+
+    /* the nations are read from the moving list, so there is one list to keep */
+    var N = [], bySlug = {};
+    Array.prototype.forEach.call(list0.querySelectorAll('li[data-s]'), function (li) {
+      var slug = li.getAttribute('data-s');
+      var name = (li.textContent || '').replace(/^\s+|\s+$/g, '');
+      var n = { slug: slug, name: name, r: li.getAttribute('data-r') || '', live: li.classList.contains('pnn-t--live'), li: li };
+      n.key = norm(name);
+      n.q = ' ' + n.key + ' ' + (ALIAS[slug] || '') + ' ' + slug.replace(/-/g, ' ') + ' ';
+      n.letter = n.key.charAt(0).toUpperCase();
+      N.push(n); bySlug[slug] = n;
+    });
+    N.sort(function (a, b) { return a.key < b.key ? -1 : (a.key > b.key ? 1 : 0); });
+
+    var state = { order: 'az', only: false, q: '' };
+    var layer = null;            /* null, 'menu' or 'view' */
+    var pushed = false, ignorePop = false;
+    var lastTrigger = null, closeTimer = null, placeQueued = false;
+    var exists = {};             /* slug: true when its page answers, false when it does not */
+    var frame = null, frameTimer = null, viewToken = 0;
+
+    function phone() { return window.matchMedia('(max-width:760px)').matches; }
+    function reduced() { return window.matchMedia('(prefers-reduced-motion: reduce)').matches; }
+    function liveCount() { var c = 0, i; for (i = 0; i < N.length; i++) { if (N[i].live) { c++; } } return c; }
+
+    function counts() {
+      var all = root.querySelectorAll('[data-n-all]'), lv = root.querySelectorAll('[data-n-live]'), i, lc = liveCount();
+      for (i = 0; i < all.length; i++) { all[i].textContent = N.length; }
+      for (i = 0; i < lv.length; i++) { lv[i].textContent = lc; }
+      bar.setAttribute('aria-label', 'Blueprints for all ' + N.length + ' nations. Every nation can be opened; ' + lc + ' are published in full.');
+    }
+
+    /* ---- the moving list ---- */
+    function markCurrent(scope) {
+      var path = window.location.pathname.replace(/\/+$/, '');
+      Array.prototype.forEach.call(scope.querySelectorAll('a[data-s]'), function (a) {
+        if (path === '/blueprints/' + pageOf(a.getAttribute('data-s'))) { a.setAttribute('aria-current', 'page'); }
+      });
+    }
+    function buildTicker() {
+      var old = track.querySelector('.pnn-tl[aria-hidden="true"]');
+      if (old) { track.removeChild(old); }
+      var dup = list0.cloneNode(true);
+      dup.setAttribute('aria-hidden', 'true');
+      Array.prototype.forEach.call(dup.querySelectorAll('a'), function (a) { a.tabIndex = -1; });
+      track.appendChild(dup);
+      markCurrent(track);
+      track.style.setProperty('--tk-dur', Math.max(140, Math.round(track.scrollWidth / 2 / 55)) + 's');
+    }
+    function setLive(slugs) {
+      var changed = false;
+      (slugs || []).forEach(function (s) {
+        var n = bySlug[s];
+        if (!n || n.live) { return; }
+        n.live = true; changed = true; exists[s] = true;
+        n.li.classList.add('pnn-t--live');
+        n.li.classList.remove('pnn-t--soon');
+      });
+      if (changed) { buildTicker(); counts(); if (layer === 'menu') { render(); } }
+    }
+
+    /* ---- the menu ---- */
+    function visible() {
+      var q = norm(state.q), out = [], i, n, hit;
+      for (i = 0; i < N.length; i++) {
+        n = N[i];
+        if (state.only && !n.live) { continue; }
+        if (q) {
+          hit = q.length < 3 ? n.q.indexOf(' ' + q) >= 0 : n.q.indexOf(q) >= 0;
+          if (!hit) { continue; }
+        }
+        out.push(n);
+      }
+      return out;
+    }
+    function item(n) {
+      return '<li class="pnn-i' + (n.live ? ' pnn-i--live' : '') + '"><a href="' + urlOf(n.slug) + '" data-s="' + esc(n.slug) + '"' +
+        (n.live ? '' : ' rel="nofollow"') + ' title="' + (n.live ? 'Blueprint published in full' : 'Blueprint in preparation') + '">' + esc(n.name) + '</a></li>';
+    }
+    function groupsOf(vis) {
+      var groups = [], idx = {}, i, k, n;
+      if (state.order === 'region') {
+        for (i = 0; i < REGIONS.length; i++) { idx[REGIONS[i][0]] = groups.length; groups.push({ k: REGIONS[i][0], items: [] }); }
+      }
+      for (i = 0; i < vis.length; i++) {
+        n = vis[i];
+        k = state.order === 'region' ? n.r : n.letter;
+        if (!(k in idx)) { idx[k] = groups.length; groups.push({ k: k, items: [] }); }
+        groups[idx[k]].items.push(n);
+      }
+      return groups.filter(function (g) { return g.items.length > 0; });
+    }
+    function regionTally(k) {
+      var t = 0, l = 0, i;
+      for (i = 0; i < N.length; i++) { if (N[i].r === k) { t++; if (N[i].live) { l++; } } }
+      return t + ' nations, ' + l + ' published in full';
+    }
+    function render() {
+      var vis = visible(), groups = groupsOf(vis), html = '', i, g, hasLive = {}, j;
+      root.classList.toggle('is-region', state.order === 'region');
+      if (!groups.length) {
+        listEl.innerHTML = '<p class="pnn-empty">No nation matches <b>&ldquo;' + esc(state.q) + '&rdquo;</b>. ' +
+          (state.only ? 'Show all nations, or try another spelling.' : 'Try another spelling, or an English name such as Ivory Coast.') + '</p>';
+      } else {
+        for (i = 0; i < groups.length; i++) {
+          g = groups[i];
+          for (j = 0; j < g.items.length; j++) { if (g.items[j].live) { hasLive[g.k] = true; } }
+          html += '<section class="pnn-g" id="pnn-g-' + esc(g.k) + '" style="--d:' + Math.min(i * 16, 320) + 'ms">' +
+            (state.order === 'region'
+              ? '<p class="pnn-k">' + esc(REGNAME[g.k] || g.k) + ' <small>' + regionTally(g.k) + '</small></p>'
+              : '<p class="pnn-k" aria-hidden="true">' + esc(g.k) + '</p>') +
+            '<ul class="pnn-ul" aria-label="' + esc(state.order === 'region' ? (REGNAME[g.k] || g.k) : 'Nations under ' + g.k) + '">' +
+            g.items.map(item).join('') + '</ul></section>';
+        }
+        listEl.innerHTML = html;
+      }
+      var keys = state.order === 'region'
+        ? REGIONS.map(function (x) { return x[0]; })
+        : 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
+      var present = {};
+      for (i = 0; i < groups.length; i++) { present[groups[i].k] = true; }
+      jump.className = 'pnn-jump' + (state.order === 'region' ? ' pnn-jump--region' : '');
+      jump.innerHTML = keys.map(function (k) {
+        var label = state.order === 'region' ? REGSHORT[k] : k;
+        return '<button type="button" data-k="' + k + '"' + (hasLive[k] ? ' class="has-live"' : '') +
+          (present[k] ? '' : ' disabled') + ' aria-label="' + esc(state.order === 'region' ? (REGNAME[k] || k) : 'Nations under ' + k) + '">' + esc(label) + '</button>';
+      }).join('');
+      if (!state.q) { body.scrollTop = 0; }
+    }
+
+    function floatHeaderBottom() {
+      var h = document.querySelector('.pn-hd');
+      if (!h) { return 0; }
+      if (window.getComputedStyle(h).position !== 'fixed') { return 0; }
+      var b = h.getBoundingClientRect();
+      return (b.height > 20 && b.height < 260 && b.bottom > 0) ? Math.round(b.bottom) : 0;
+    }
+    function place() {
+      placeQueued = false;
+      if (phone()) { root.style.setProperty('--pnn-top', '0px'); return; }
+      var top = Math.max(0, Math.round(bar.getBoundingClientRect().bottom), floatHeaderBottom());
+      root.style.setProperty('--pnn-top', top + 'px');
+    }
+    function queuePlace() { if (layer === 'menu' && !placeQueued) { placeQueued = true; window.requestAnimationFrame(place); } }
+    function lock(on) {
+      document.documentElement.style.overflow = on ? 'hidden' : '';
+      document.body.style.overflow = on ? 'hidden' : '';
+    }
+    function expanded(v) {
+      allBtn.setAttribute('aria-expanded', v ? 'true' : 'false');
+      findBtn.setAttribute('aria-expanded', v ? 'true' : 'false');
+    }
+    function focusOn(el) { if (!el) { return; } try { el.focus({ preventScroll: true }); } catch (e) { el.focus(); } }
+
+    /* one entry in the browser history while a layer is open, so the phone's back gesture closes it */
+    function pushLayer() {
+      if (pushed || !window.history || !history.pushState) { return; }
+      try { history.pushState({ pnn: 1 }, ''); pushed = true; } catch (e) {}
+    }
+    function popLayer() {
+      if (!pushed) { return; }
+      pushed = false; ignorePop = true;
+      try { history.back(); } catch (e) { ignorePop = false; }
+      setTimeout(function () { ignorePop = false; }, 600);
+    }
+
+    function showMenu(toSearch) {
+      if (closeTimer) { clearTimeout(closeTimer); closeTimer = null; }
+      render(); place();
+      panel.hidden = false; scrim.hidden = false;
+      root.classList.add('is-open');
+      window.requestAnimationFrame(function () { window.requestAnimationFrame(function () { root.classList.add('is-shown'); }); });
+      expanded(true);
+      if (phone()) { lock(true); }
+      focusOn(toSearch ? input : panel);
+    }
+    function hideMenu(instant) {
+      root.classList.remove('is-shown');
+      expanded(false);
+      if (instant || reduced()) { panel.hidden = true; scrim.hidden = true; return; }
+      closeTimer = setTimeout(function () { panel.hidden = true; scrim.hidden = true; closeTimer = null; }, 260);
+    }
+    function openMenu(toSearch, trigger) {
+      if (layer === 'menu') { if (toSearch) { focusOn(input); } return; }
+      if (layer === 'view') { hideView(); } else { lastTrigger = trigger || null; pushLayer(); }
+      layer = 'menu';
+      showMenu(toSearch);
+    }
+
+    /* ---- the Nation Viewer ---- */
+    function regionOf(n) { return REGNAME[n.r] || ''; }
+    function check(slug) {
+      if (exists[slug] !== undefined) { return Promise.resolve(exists[slug]); }
+      if (!window.fetch) { return Promise.resolve(true); }
+      var path = '/blueprints/' + pageOf(slug) + '/';
+      return fetch(window.location.origin + path, { method: 'HEAD', credentials: 'same-origin', cache: 'no-store' }).then(function (r) {
+        var landed = '';
+        try { landed = new URL(r.url).pathname.replace(/\/+$/, '') + '/'; } catch (e) { landed = path; }
+        var ok = r.status === 404 || r.status === 410 ? false : (r.ok ? landed === path : true);
+        exists[slug] = ok;
+        return ok;
+      }).catch(function () { return true; });
+    }
+    function clearFrame() {
+      if (frameTimer) { clearInterval(frameTimer); frameTimer = null; }
+      if (frame && frame.parentNode) { frame.parentNode.removeChild(frame); }
+      frame = null;
+    }
+    function reveal() {
+      if (frameTimer) { clearInterval(frameTimer); frameTimer = null; }
+      if (frame) { frame.classList.add('is-ready'); }
+      vload.classList.add('is-gone');
+    }
+    function dress(fr) {
+      try {
+        var d = fr.contentDocument;
+        if (!d || !d.head || d.getElementById('pnn-embed')) { return !!(d && d.getElementById('pnn-embed')); }
+        var st = d.createElement('style'); st.id = 'pnn-embed'; st.textContent = EMBED_CSS;
+        d.head.appendChild(st);
+        return true;
+      } catch (e) { return false; }
+    }
+    function loadFrame(n, token) {
+      clearFrame();
+      var fr = document.createElement('iframe');
+      fr.title = n.name + ' blueprint';
+      fr.setAttribute('referrerpolicy', 'same-origin');
+      fr.src = window.location.origin + '/blueprints/' + pageOf(n.slug) + '/';
+      frame = fr;
+      var started = Date.now();
+      frameTimer = setInterval(function () {
+        if (token !== viewToken) { return; }
+        var ok = false, rs = '';
+        try { rs = fr.contentDocument ? fr.contentDocument.readyState : ''; } catch (e) { rs = 'blocked'; }
+        if (rs === 'interactive' || rs === 'complete') { ok = dress(fr); }
+        if ((ok && Date.now() - started > 350) || rs === 'complete' || rs === 'blocked' || Date.now() - started > 12000) { reveal(); }
+      }, 120);
+      fr.addEventListener('load', function () { if (token === viewToken) { dress(fr); reveal(); } });
+      vbody.insertBefore(fr, vbody.firstChild);
+    }
+    function showSoon(n) {
+      clearFrame();
+      cn.textContent = n.name;
+      ask.href = 'https://perfectnations.org/contact/?nation=' + encodeURIComponent(n.slug);
+      ask.textContent = 'Ask for the ' + n.name + ' blueprint';
+      soon.hidden = false;
+      vload.classList.add('is-gone');
+    }
+    function showView(n) {
+      var token = ++viewToken;
+      vname.textContent = n.name;
+      vreg.textContent = (n.live ? '\u2605 Published in full \u00b7 ' : 'In preparation \u00b7 ') + regionOf(n);
+      vnew.href = urlOf(n.slug);
+      vnew.hidden = !n.live && exists[n.slug] !== true;
+      vlt.textContent = 'Opening ' + n.name;
+      soon.hidden = true;
+      vload.hidden = false; vload.classList.remove('is-gone');
+      viewer.hidden = false;
+      root.classList.add('is-open');
+      window.requestAnimationFrame(function () { window.requestAnimationFrame(function () { root.classList.add('is-viewing'); }); });
+      lock(true);
+      focusOn(viewer.querySelector('.pnn-back'));
+      (n.live ? Promise.resolve(true) : check(n.slug)).then(function (ok) {
+        if (token !== viewToken) { return; }
+        if (ok) { vnew.hidden = false; loadFrame(n, token); } else { showSoon(n); }
+      });
+    }
+    function hideView() {
+      viewToken++;
+      root.classList.remove('is-viewing');
+      viewer.hidden = true;
+      clearFrame();
+    }
+    function openNation(slug, trigger) {
+      var n = bySlug[slug];
+      if (!n) { window.location.href = urlOf(slug); return; }
+      if (layer === 'menu') { hideMenu(true); } else if (layer !== 'view') { lastTrigger = trigger || null; pushLayer(); }
+      layer = 'view';
+      showView(n);
+    }
+
+    /* Go Back, the gold X, Escape and the phone's back gesture all return to the page */
+    function closeAll(fromHistory) {
+      if (!layer) { return; }
+      if (layer === 'view') { hideView(); }
+      hideMenu(layer !== 'menu');
+      layer = null;
+      lock(false);
+      if (!reduced()) {
+        setTimeout(function () { if (!layer) { root.classList.remove('is-open'); } }, 280);
+      } else { root.classList.remove('is-open'); }
+      if (!fromHistory) { popLayer(); } else { pushed = false; }
+      if (lastTrigger && document.contains(lastTrigger)) { focusOn(lastTrigger); }
+      lastTrigger = null;
+    }
+    window.addEventListener('popstate', function () {
+      if (ignorePop) { ignorePop = false; return; }
+      if (layer) { closeAll(true); }
+    });
+
+    root.addEventListener('click', function (e) {
+      var t = e.target;
+      var closer = t.closest ? t.closest('[data-pnn-close]') : null;
+      if (closer) { e.preventDefault(); closeAll(false); return; }
+      var a = t.closest ? t.closest('a[data-s]') : null;
+      if (!a || !root.contains(a)) { return; }
+      if (e.ctrlKey || e.metaKey || e.shiftKey || e.altKey || (e.button && e.button !== 0)) { return; }
+      e.preventDefault();
+      openNation(a.getAttribute('data-s'), a);
+    });
+
+    allBtn.addEventListener('click', function (e) {
+      if (e.ctrlKey || e.metaKey || e.shiftKey || (e.button && e.button !== 0)) { return; }
+      e.preventDefault();
+      if (layer === 'menu') { closeAll(false); } else { openMenu(false, allBtn); }
+    });
+    allBtn.setAttribute('role', 'button');
+    allBtn.addEventListener('keydown', function (e) {
+      if (e.key === ' ' || e.key === 'Spacebar') { e.preventDefault(); allBtn.click(); }
+    });
+    findBtn.addEventListener('click', function () { openMenu(true, findBtn); });
+    scrim.addEventListener('click', function () { closeAll(false); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && layer) { closeAll(false); } });
+    pubBtn.addEventListener('click', function () {
+      state.only = true; state.q = ''; input.value = '';
+      onlyBtn.setAttribute('aria-pressed', 'true');
+      openMenu(false, null);
+    });
+
+    var qTimer = null;
+    input.addEventListener('input', function () {
+      if (qTimer) { clearTimeout(qTimer); }
+      qTimer = setTimeout(function () {
+        state.q = input.value; render(); body.scrollTop = 0;
+        if (status) {
+          var c = visible(), l = 0, i;
+          for (i = 0; i < c.length; i++) { if (c[i].live) { l++; } }
+          status.textContent = state.q ? c.length + (c.length === 1 ? ' nation' : ' nations') + ' found, ' + l + ' published in full.' : '';
+        }
+      }, 60);
+    });
+    input.addEventListener('keydown', function (e) {
+      if (e.key !== 'Enter') { return; }
+      e.preventDefault();
+      state.q = input.value; render();
+      var first = listEl.querySelector('a[data-s]');
+      if (first) { openNation(first.getAttribute('data-s'), input); }
+    });
+    Array.prototype.forEach.call(segBtns, function (b) {
+      b.addEventListener('click', function () {
+        state.order = b.getAttribute('data-order');
+        Array.prototype.forEach.call(segBtns, function (x) { x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); });
+        render();
+      });
+    });
+    onlyBtn.addEventListener('click', function () {
+      state.only = !state.only;
+      onlyBtn.setAttribute('aria-pressed', state.only ? 'true' : 'false');
+      render();
+    });
+    jump.addEventListener('click', function (e) {
+      var b = e.target.closest ? e.target.closest('button[data-k]') : null;
+      if (!b || b.disabled) { return; }
+      var g = listEl.querySelector('#pnn-g-' + b.getAttribute('data-k'));
+      if (!g) { return; }
+      var y = g.getBoundingClientRect().top - body.getBoundingClientRect().top + body.scrollTop - 2;
+      if (body.scrollTo) { body.scrollTo({ top: y, behavior: reduced() ? 'auto' : 'smooth' }); } else { body.scrollTop = y; }
+    });
+    window.addEventListener('scroll', queuePlace, { passive: true });
+    window.addEventListener('resize', function () {
+      queuePlace();
+      if (layer === 'menu') { lock(phone()); }
+    });
+
+    if (pauseBtn) {
+      pauseBtn.addEventListener('click', function () {
+        var p = root.classList.toggle('is-paused');
+        pauseBtn.setAttribute('aria-pressed', p ? 'true' : 'false');
+        pauseBtn.setAttribute('aria-label', p ? 'Play the moving list' : 'Pause the moving list');
+        pauseBtn.innerHTML = p ? '&#9654;' : '&#10074;&#10074;';
+      });
+    }
+
+    /* if the site header floats over the page, the bar sits just below it */
+    function offset() {
+      var h = document.querySelector('.pn-hd'), m = 0;
+      root.style.marginTop = '';
+      if (h) {
+        var cs = window.getComputedStyle(h), hb;
+        if (cs.position === 'fixed' || cs.position === 'absolute') {
+          var hr = h.getBoundingClientRect();
+          hb = cs.position === 'fixed' ? hr.bottom : hr.bottom + window.pageYOffset;
+          m = Math.round(hb - (root.getBoundingClientRect().top + window.pageYOffset));
+          if (!(hr.height > 20 && hr.height < 260) || m < 0) { m = 0; }
+        }
+      }
+      if (m) { root.style.marginTop = m + 'px'; }
+      try { window.dispatchEvent(new CustomEvent('pn:layout')); } catch (e) {}
+    }
+    var ot = null;
+    window.addEventListener('resize', function () { if (ot) { clearTimeout(ot); } ot = setTimeout(offset, 200); });
+    window.addEventListener('load', function () { offset(); buildTicker(); });
+
+    /* the homepage globe and the live pages list on GitHub both decide what carries a star */
+    var CFG = window.PNHG_CFG, k0, fromCfg = [];
+    if (CFG && CFG.nations) {
+      for (k0 in CFG.nations) { if (CFG.nations[k0][1] === 'live') { fromCfg.push(k0); } }
+    }
+
+    /* other widgets (the homepage globe) open nations in the same viewer */
+    window.pnNationViewer = { open: function (slug) { openNation(slug, document.activeElement); } };
+
+    counts();
+    buildTicker();
+    offset();
+    setLive(fromCfg);
+    liveSlugs().then(setLive);
+  }
+
+  if (document.readyState === 'loading') { document.addEventListener('DOMContentLoaded', boot); } else { boot(); }
+})();
+</script>
