@@ -1,8 +1,10 @@
 <!-- ===========================================================================
-PERFECT NATIONS - HOMEPAGE - SECTION 06 - THE REDESIGN STUDIO - v6.0 THE FIVE MOVES - 2026-11-06
+PERFECT NATIONS - HOMEPAGE - SECTION 06 - THE REDESIGN STUDIO - v6.1 THE FIVE MOVES - 2026-11-06
 One Elementor Custom HTML widget, Full Width, padding 0. Served live from GitHub
 (pages/home-studio.html) by the Perfect Nations Live Pages plugin, in place of the pasted
 section 06 v5 (root id pn-studio).
+v6.1: a shorter lead; move 02 (Perfect Capita) turns amethyst, the new ground of its section.
+The hero button "How it works" and the gold chapter marks land here, below the header bar.
 v6.0: the Studio becomes the map of the homepage. It sits directly under The Story of Perfect
 Nations and the dispatch ticker, and shows how a nation is re-designed in five moves. Each move is
 a tile in the colour of the section that opens it further down the page: 01 Assets (Sovereign
@@ -13,10 +15,12 @@ breathes between the dark bands. About half the height of v5 on laptops.
 Phones have their own layout: the moves in two columns (the fifth across the full width), the
 numbers inside the tiles, and the three mandates as three small cards in one row.
 ORDER: the page reads in the order of the moves: Sovereign Assets, Perfect Capita, National
-Blueprints, Capital Architecture. If National Blueprints still sits above Sovereign Assets in
-Elementor, this widget moves it below Perfect Capita in the visitor's browser before it comes into
-view. To make the order permanent, drag the National Blueprints widget below Perfect Capita in
-Elementor (Navigator); the script then has nothing to do.
+Blueprints, Capital Architecture. Since 6 November 2026 this is fixed on the server by four
+homepage-only entries in pages/manifest.json (keys ending @home-2): the widget pasted as National
+Blueprints now shows Sovereign Assets, the one pasted as Sovereign Assets shows Perfect Capita, and
+the one pasted as Perfect Capita shows National Blueprints. If those widgets are ever dragged into
+the new order in Elementor, delete the four @home-2 entries the same day. The script below still
+moves National Blueprints in the browser if it ever arrives above Sovereign Assets.
 =========================================================================== -->
 <style>
 #pn-studio{
@@ -47,7 +51,7 @@ Elementor (Navigator); the script then has nothing to do.
   --widgets-spacing:0px !important; row-gap:0 !important;
 }
 /* the sections the moves open: land below the header bar */
-#pn-assets,#pn-capita,#pn-featured,#pn-capital{ scroll-margin-top:var(--pn-head-off,72px); }
+#pn-studio,#pn-assets,#pn-capita,#pn-featured,#pn-capital{ scroll-margin-top:var(--pn-head-off,72px); }
 
 #pn-studio .pnst-in{ position:relative; width:100%; max-width:1400px; margin:0 auto; padding:0 clamp(18px,4.5vw,72px); }
 
@@ -215,7 +219,7 @@ Elementor (Navigator); the script then has nothing to do.
         <p class="pnst-eb">The ReDesign Studio</p>
         <h2 class="pnst-h2" id="pnst-h">Where a nation is <em>re&#8209;designed</em></h2>
       </div>
-      <p class="pnst-lead">Five moves take a nation from <b>what it owns</b> to <b>a basic standard of living for every citizen</b>. Each move opens below.</p>
+      <p class="pnst-lead">Five moves take a nation from <b>what it owns</b> to <b>a basic standard of living for every citizen</b>.</p>
     </div>
 
     <ol class="pnst-moves" aria-label="The five moves">
@@ -228,7 +232,7 @@ Elementor (Navigator); the script then has nothing to do.
           <span class="pnst-go" aria-hidden="true">&darr;</span>
         </a>
       </li>
-      <li class="pnst-m" style="--c1:#1B5640; --c2:#0B2219; --i:1">
+      <li class="pnst-m" style="--c1:#5E3466; --c2:#26112C; --i:1">
         <span class="pnst-n" aria-hidden="true">02</span>
         <a class="pnst-t" href="#pn-capita" data-to="pn-capita" data-page="https://perfectnations.org/perfect-capita/">
           <svg class="pnst-ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="8.6"/><circle cx="12" cy="12" r="3.2"/><path d="M12.00 8.80L12.00 3.40M14.50 10.00L18.72 6.64M15.12 12.71L20.38 13.91M13.39 14.88L15.73 19.75M10.61 14.88L8.27 19.75M8.88 12.71L3.62 13.91M9.50 10.00L5.28 6.64"/></svg>

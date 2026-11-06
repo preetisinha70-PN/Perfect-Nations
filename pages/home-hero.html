@@ -1,7 +1,12 @@
 <!-- ===========================================================================
-PERFECT NATIONS - HOMEPAGE - SECTION 01 - CIVILIZATION RE-DEFINED - v5.4 - 2026-11-06
+PERFECT NATIONS - HOMEPAGE - SECTION 01 - CIVILIZATION RE-DEFINED - v5.5 - 2026-11-06
 Served live from GitHub (pages/home-hero.html) by the Perfect Nations Live Pages plugin;
 the root id stays pn-hero, so the widget already on the homepage is the one replaced.
+v5.5: the objective in one line, directly under "Designing the Prosperity of Nations": Perfect
+  Nations helps every nation guarantee seven basic standards of living to every citizen, paid for
+  by the wealth it already owns. The planet band is 40 px shorter on laptops, so the line shows on
+  the first screen. The second button is "How it works" (the five moves). The Story
+  of Perfect Nations loses its lead paragraph, which the new line now says.
 v5.4: "Find on the planet". The Capital Wire (Section 01b v2.0) can turn the planet to a nation,
   raise it in bright gold and pin it with gold rings and the deal figure for nine seconds
   (window.pnhgFocus). Nothing else changes.
@@ -39,7 +44,7 @@ If the address differs, change it in the two places it appears (search for pn-ho
   --hd:var(--pn-font-heading,"Barlow Condensed","Arial Narrow",Arial,sans-serif);
   --bd:var(--pn-font-body,"Barlow Semi Condensed",Arial,sans-serif);
   --pnhg-headh:0px;
-  --pd:clamp(300px, min(86vw, calc((100svh - 310px) * .86)), 690px);
+  --pd:clamp(300px, min(86vw, calc((100svh - 350px) * .86)), 690px);
 
   position:relative; isolation:isolate;
   width:100vw; margin-left:calc(50% - 50vw);
@@ -102,7 +107,7 @@ If the address differs, change it in the two places it appears (search for pn-ho
   position:relative; z-index:1;
   margin:clamp(2px,.6vh,8px) calc(50% - 50vw) 0;
   width:100vw; max-width:none;
-  height:clamp(480px, calc(100svh - 310px), 800px);
+  height:clamp(460px, calc(100svh - 350px), 780px);
 }
 #pn-hero .pnhg-rose{
   position:absolute; left:50%; top:50%; z-index:0; pointer-events:none;
@@ -139,6 +144,13 @@ If the address differs, change it in the two places it appears (search for pn-ho
 }
 #pn-hero .pnhg-sub::after{ background:linear-gradient(90deg,rgba(227,194,88,.85),rgba(227,194,88,0)); }
 
+/* v5.5: the objective, in one line */
+#pn-hero .pnhg-obj{
+  position:relative; z-index:3; margin:clamp(8px,1.4vh,14px) auto 0; max-width:62ch;
+  font-family:var(--bd); font-weight:400; font-size:clamp(1.02rem,1.35vw,1.22rem); line-height:1.45;
+  color:rgba(245,241,232,.88); text-wrap:balance;
+}
+#pn-hero .pnhg-obj b{ font-weight:600; color:var(--g); }
 #pn-hero .pnhg-ctas{
   position:relative; z-index:3;
   display:flex; justify-content:center; align-items:center; gap:12px; flex-wrap:wrap;
@@ -267,6 +279,7 @@ If the address differs, change it in the two places it appears (search for pn-ho
   #pn-hero .pnhg-sub{ font-size:clamp(1.05rem,5vw,1.3rem); letter-spacing:.12em; }
   #pn-hero .pnhg-sub__t > span{ display:block; }
   #pn-hero .pnhg-sub::before,#pn-hero .pnhg-sub::after{ display:none; }
+  #pn-hero .pnhg-obj{ max-width:30ch; margin-top:10px; font-size:1rem; line-height:1.42; }
   #pn-hero .pnhg-ctas{ flex-direction:column; align-items:stretch; gap:10px; max-width:320px; margin-left:auto; margin-right:auto; }
   #pn-hero .pnhg-btn{ padding:12px 22px 10px; justify-content:center; }
   #pn-hero .pnhg-ctl{ display:none; }
@@ -413,10 +426,11 @@ If the address differs, change it in the two places it appears (search for pn-ho
   </div>
 
   <p class="pnhg-sub"><span class="pnhg-sub__t"><span>Designing the</span> <span>Prosperity of Nations</span></span></p>
+  <p class="pnhg-obj">Perfect Nations helps every nation guarantee <b>seven basic standards of living to every citizen</b>, paid for by the wealth it already owns.</p>
 
   <div class="pnhg-ctas">
     <a class="pnhg-btn pnhg-btn--gold" href="https://perfectnations.org/blueprints/">Explore the blueprints</a>
-    <a class="pnhg-btn pnhg-btn--line" href="https://perfectnations.org/capital-architecture/">Capital Architecture</a>
+    <a class="pnhg-btn pnhg-btn--line" href="#pn-studio">How it works</a>
   </div>
 
 </section>
@@ -425,7 +439,6 @@ If the address differs, change it in the two places it appears (search for pn-ho
   <div class="pnr-in pnr-top">
     <p class="pnr-eb">The Story of Perfect Nations</p>
     <h2 class="pnr-h2" id="pnr-h"><span class="pnr-h2a">The Only Race Worth Winning</span><span class="pnr-h2b">is Enabling Basic Standards of Living for All</span></h2>
-    <p class="pnr-lead">Perfect Nations turns the contest between nations into the one race worth winning: <b>the race to guarantee seven basic living standards to every citizen.</b></p>
   </div>
   <div class="pnr-band">
 <svg class="pnr-art" viewBox="0 30 1600 420" preserveAspectRatio="xMidYMid slice" role="img" aria-labelledby="pnr-art-t" focusable="false">

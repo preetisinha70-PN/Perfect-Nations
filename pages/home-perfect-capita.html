@@ -1,5 +1,9 @@
 <!-- ===========================================================================
-PERFECT NATIONS - HOMEPAGE - SECTION 04 - PERFECT CAPITA - v4.1 MOVE 02 - 2026-11-06
+PERFECT NATIONS - HOMEPAGE - SECTION 04 - PERFECT CAPITA - v4.2 AMETHYST - 2026-11-06
+v4.2: a ground of its own, deep amethyst, so Perfect Capita no longer reads as part of Sovereign
+Assets (malachite) above it; gold and the seven colours of the wheel stand out on it. More compact:
+the Living Line sentence is removed, the wheel is smaller, less air above and below, and phones
+get a tighter layout (a 290 px wheel, smaller sum, two buttons side by side).
 v4.1: the second of the five moves. The eyebrow carries the gold chapter mark 02, which leads back
 to the five moves in The ReDesign Studio. Nothing else changes.
 v4.0 THE WHEEL - 2026-11-02
@@ -17,12 +21,12 @@ SOFI page once its address is confirmed.
 <style>
 #pn-capita{
   --g:var(--pn-brand-gold,#E3C258); --gs:#F0D68F; --iv:#F5F1E8; --ink:#1A140C;
-  --tm:rgba(245,241,232,.84); --td:rgba(245,241,232,.62); --hair:rgba(245,241,232,.16); --em:#CFE8D8;
+  --tm:rgba(245,241,232,.84); --td:rgba(245,241,232,.62); --hair:rgba(245,241,232,.16); --em:#E8CDEE;
   --hd:var(--pn-font-heading,"Barlow Condensed","Arial Narrow",Arial,sans-serif);
   --bd:var(--pn-font-body,"Barlow Semi Condensed",Arial,sans-serif);
   position:relative; isolation:isolate; width:100vw; margin-left:calc(50% - 50vw); overflow-x:hidden; overflow-x:clip; box-sizing:border-box;
-  padding:clamp(34px,5vh,60px) 0; color:var(--iv); font-family:var(--bd); line-height:1.5;
-  background:radial-gradient(45% 60% at 22% 50%, rgba(227,194,88,.12) 0%, transparent 62%), radial-gradient(50% 55% at 96% 100%, rgba(30,120,90,.32) 0%, transparent 64%), linear-gradient(180deg,#123A2C 0%,#0E2E22 55%,#0B2219 100%);
+  padding:clamp(26px,4.2vh,48px) 0 clamp(24px,3.8vh,42px); color:var(--iv); font-family:var(--bd); line-height:1.5;
+  background:radial-gradient(45% 60% at 22% 50%, rgba(227,194,88,.12) 0%, transparent 62%), radial-gradient(50% 55% at 96% 100%, rgba(150,78,160,.34) 0%, transparent 64%), linear-gradient(180deg,#3F2147 0%,#2C1533 55%,#1F0E25 100%);
 }
 #pn-capita *,#pn-capita *::before,#pn-capita *::after{ box-sizing:border-box; }
 .elementor-widget-html:has(#pn-capita),.elementor-widget:has(#pn-capita),.elementor-widget-wrap:has(#pn-capita),
@@ -42,11 +46,11 @@ SOFI page once its address is confirmed.
 
 /* the wheel */
 #pn-capita .pc4-wheelcol{ display:flex; flex-direction:column; align-items:center; }
-#pn-capita .pc4-wheel{ display:block; width:100%; max-width:470px; height:auto; overflow:visible; }
+#pn-capita .pc4-wheel{ display:block; width:100%; max-width:420px; height:auto; overflow:visible; }
 #pn-capita .pc4-ring{ fill:none; stroke:rgba(227,194,88,.38); stroke-width:1.2; }
 #pn-capita .pc4-ticks line{ stroke:rgba(227,194,88,.7); stroke-width:2; }
 #pn-capita .pc4-seg{ cursor:pointer; outline:none; transform-box:view-box; transform-origin:300px 300px; transition:transform .45s cubic-bezier(.22,1,.36,1), opacity .35s ease; }
-#pn-capita .pc4-fill{ stroke:#0E2E22; stroke-width:2; }
+#pn-capita .pc4-fill{ stroke:#2A1431; stroke-width:2; }
 #pn-capita .pc4-ic{ fill:none; stroke:#FFF4D6; stroke-width:1.6; stroke-linecap:round; stroke-linejoin:round; pointer-events:none; }
 #pn-capita .pc4-lab{ font-family:var(--hd); font-size:13.5px; font-weight:700; letter-spacing:.14em; fill:rgba(255,244,214,.92); pointer-events:none; }
 #pn-capita .pc4-val{ font-family:var(--hd); font-size:25px; font-weight:700; fill:#FFF4D6; pointer-events:none; }
@@ -54,7 +58,7 @@ SOFI page once its address is confirmed.
 #pn-capita .pc4-wheel.has-on .pc4-seg.is-on{ opacity:1; transform:translate(var(--dx),var(--dy)); }
 #pn-capita .pc4-seg.is-on .pc4-fill{ filter:drop-shadow(0 10px 18px rgba(0,0,0,.4)); }
 #pn-capita .pc4-seg:focus-visible .pc4-fill{ stroke:var(--gs); stroke-width:3; }
-#pn-capita .pc4-core{ fill:#0B2219; stroke:rgba(227,194,88,.5); stroke-width:1.5; }
+#pn-capita .pc4-core{ fill:#1F0E25; stroke:rgba(227,194,88,.5); stroke-width:1.5; }
 #pn-capita .pc4-core-line{ fill:none; stroke:rgba(227,194,88,.45); stroke-width:1; stroke-dasharray:2 5; }
 #pn-capita .pc4-c1{ font-family:var(--hd); font-size:15px; font-weight:700; letter-spacing:.24em; fill:var(--em); }
 #pn-capita .pc4-c2{ font-family:var(--hd); font-size:96px; font-weight:600; fill:var(--iv); }
@@ -146,6 +150,36 @@ SOFI page once its address is confirmed.
 #pn-capita .pn-ch:hover{ background:var(--g); color:#1A140C; }
 #pn-capita .pn-ch:focus-visible{ outline:2px solid #F0D68F; outline-offset:3px; }
 #pn-capita .pc4-eb::before{ display:none !important; }
+/* v4.2 compact */
+#pn-capita .pc4-call{ max-width:420px; margin-top:10px; }
+#pn-capita .pc4-cap{ max-width:420px; margin-top:8px; }
+#pn-capita .pc4-def{ margin-top:12px; }
+#pn-capita .pc4-sum{ margin-top:clamp(14px,2.2vh,20px); }
+#pn-capita .pc4-btns{ margin-top:clamp(14px,2vh,18px); }
+#pn-capita h2,#pn-capita b{ text-shadow:none !important; }
+@media (max-width:640px){
+  #pn-capita{ padding:22px 0 24px !important; }
+  #pn-capita .pc4-in{ padding:0 18px; }
+  #pn-capita .pc4-grid{ gap:14px; }
+  #pn-capita h2.pc4-h2{ font-size:clamp(1.7rem,7.6vw,2rem); }
+  #pn-capita .pc4-def{ margin-top:8px; font-size:.98rem; line-height:1.25; }
+  #pn-capita .pc4-wheel{ max-width:290px; }
+  #pn-capita .pc4-call{ margin-top:8px; padding:9px 12px 9px 16px; }
+  #pn-capita .pc4-call b{ font-size:1.7rem; }
+  #pn-capita .pc4-call__t{ font-size:.8rem; }
+  #pn-capita .pc4-cap{ margin-top:6px; font-size:.7rem; }
+  #pn-capita .pc4-sum{ margin-top:0; padding:10px; border-radius:14px; }
+  #pn-capita .pc4-sum__k{ margin-bottom:8px; font-size:.58rem; }
+  #pn-capita .pc4-t{ padding:9px 9px 8px; border-radius:11px; }
+  #pn-capita .pc4-t b{ font-size:1.35rem; }
+  #pn-capita .pc4-t span{ font-size:.68rem; }
+  #pn-capita .pc4-cov{ margin-top:10px; font-size:.72rem; }
+  #pn-capita .pc4-cov b{ font-size:1.2rem; }
+  #pn-capita .pc4-btns{ display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:8px; margin-top:12px; }
+  #pn-capita .pc4-btn{ justify-content:center; min-height:44px; padding:11px 10px 9px; font-size:.62rem; letter-spacing:.1em; text-align:center; }
+  #pn-capita .pc4-btn::after{ display:none; }
+  #pn-capita .pc4-note{ margin-top:8px; font-size:.66rem; }
+}
 </style>
 <section id="pn-capita" aria-labelledby="pc4-h">
   <span id="pn-hpc" hidden></span>
@@ -154,7 +188,6 @@ SOFI page once its address is confirmed.
       <p class="pc4-eb"><a class="pn-ch" href="#pn-studio" aria-label="Move 02 of 05, Perfect Capita. Back to the five moves">02</a><span>Perfect Capita &middot; The new GDP</span></p>
       <h2 class="pc4-h2" id="pc4-h">GDP counts what a nation makes. <em>Perfect Capita</em> counts what it costs to reach everyone.</h2>
       <p class="pc4-def">The yearly cost, per person, of lifting everyone above the Living Line in all seven basic living standards.</p>
-      <p class="pc4-ll"><span aria-hidden="true"></span>The poverty line measures income. The Living Line measures a life.</p>
     </div>
     <div class="pc4-wheelcol">
       <svg class="pc4-wheel" viewBox="0 0 600 600" role="group" aria-labelledby="pc4-wt" focusable="false"><title id="pc4-wt">The seven basic living standards, and the people still below the line on each</title><circle cx="300" cy="300" r="290" class="pc4-ring"/><g class="pc4-ticks"><line x1="300.0" y1="16.0" x2="300.0" y2="4.0"/><line x1="522.0" y1="122.9" x2="531.4" y2="115.4"/><line x1="576.9" y1="363.2" x2="588.6" y2="365.9"/><line x1="423.2" y1="555.9" x2="428.4" y2="566.7"/><line x1="176.8" y1="555.9" x2="171.6" y2="566.7"/><line x1="23.1" y1="363.2" x2="11.4" y2="365.9"/><line x1="78.0" y1="122.9" x2="68.6" y2="115.4"/></g><g class="pc4-seg" data-i="0" role="button" tabindex="0" aria-label="Food: 2.1bn people are moderately or severely food insecure" style="--c:#8A5A12;--dx:6.1px;--dy:-12.6px;--d:0.00s"><path class="pc4-fill" d="M304.3 24.0A276 276 0 0 1 513.1 124.5L412.7 207.2A146 146 0 0 0 302.3 154.0Z" fill="#8A5A12"/><g transform="translate(390.2 90.6) scale(1.45) translate(-12 -12)" class="pc4-ic"><path d="M3 11h18a9 9 0 0 1-18 0z"/><path d="M8 3c-1 1.5 1 2.5 0 4M12 3c-1 1.5 1 2.5 0 4M16 3c-1 1.5 1 2.5 0 4"/></g><text x="390.2" y="126.6" text-anchor="middle" class="pc4-lab">FOOD</text><text x="390.2" y="152.6" text-anchor="middle" class="pc4-val">2.1bn</text></g><g class="pc4-seg" data-i="1" role="button" tabindex="0" aria-label="Water: 2.1bn people lack safely managed drinking water at home" style="--c:#0E5A80;--dx:13.6px;--dy:-3.1px;--d:0.08s"><path class="pc4-fill" d="M518.5 131.3A276 276 0 0 1 570.0 357.2L442.8 330.2A146 146 0 0 0 415.6 210.8Z" fill="#0E5A80"/><g transform="translate(502.8 231.7) scale(1.45) translate(-12 -12)" class="pc4-ic"><path d="M12 3s-6 7-6 11a6 6 0 0 0 12 0c0-4-6-11-6-11z"/><path d="M9.5 15a2.5 2.5 0 0 0 2.5 2.5"/></g><text x="502.8" y="267.7" text-anchor="middle" class="pc4-lab">WATER</text><text x="502.8" y="293.7" text-anchor="middle" class="pc4-val">2.1bn</text></g><g class="pc4-seg" data-i="2" role="button" tabindex="0" aria-label="Shelter: 3.4bn people lack safely managed sanitation, the first test of a decent home" style="--c:#9A3E22;--dx:10.9px;--dy:8.7px;--d:0.16s"><path class="pc4-fill" d="M568.1 365.6A276 276 0 0 1 423.6 546.8L365.4 430.5A146 146 0 0 0 441.8 334.7Z" fill="#9A3E22"/><g transform="translate(462.6 407.7) scale(1.45) translate(-12 -12)" class="pc4-ic"><path d="M3 11l9-7 9 7"/><path d="M5 9.5V20h14V9.5"/><path d="M10 20v-6h4v6"/></g><text x="462.6" y="443.7" text-anchor="middle" class="pc4-lab">SHELTER</text><text x="462.6" y="469.7" text-anchor="middle" class="pc4-val">3.4bn</text></g><g class="pc4-seg" data-i="3" role="button" tabindex="0" aria-label="Energy: 2.1bn people still cook with polluting fuels" style="--c:#C08A12;--dx:0.0px;--dy:14.0px;--d:0.24s"><path class="pc4-fill" d="M415.8 550.5A276 276 0 0 1 184.2 550.5L238.7 432.5A146 146 0 0 0 361.3 432.5Z" fill="#C08A12"/><g transform="translate(300.0 486.0) scale(1.45) translate(-12 -12)" class="pc4-ic"><path d="M13 2L4 14h7l-1 8 9-12h-7z"/></g><text x="300.0" y="522.0" text-anchor="middle" class="pc4-lab">ENERGY</text><text x="300.0" y="548.0" text-anchor="middle" class="pc4-val">2.1bn</text></g><g class="pc4-seg" data-i="4" role="button" tabindex="0" aria-label="Education: 7 in 10 ten-year-olds in low- and middle-income nations cannot read a simple text" style="--c:#1F4C96;--dx:-10.9px;--dy:8.7px;--d:0.32s"><path class="pc4-fill" d="M176.4 546.8A276 276 0 0 1 31.9 365.6L158.2 334.7A146 146 0 0 0 234.6 430.5Z" fill="#1F4C96"/><g transform="translate(137.4 407.7) scale(1.45) translate(-12 -12)" class="pc4-ic"><path d="M2 5c3-1 7-1 10 1 3-2 7-2 10-1v14c-3-1-7-1-10 1-3-2-7-2-10-1z"/><path d="M12 6v14"/></g><text x="137.4" y="443.7" text-anchor="middle" class="pc4-lab">EDUCATION</text><text x="137.4" y="469.7" text-anchor="middle" class="pc4-val">7 in 10</text></g><g class="pc4-seg" data-i="5" role="button" tabindex="0" aria-label="Health: 4.6bn people lack full access to essential health services" style="--c:#167A5F;--dx:-13.6px;--dy:-3.1px;--d:0.40s"><path class="pc4-fill" d="M30.0 357.2A276 276 0 0 1 81.5 131.3L184.4 210.8A146 146 0 0 0 157.2 330.2Z" fill="#167A5F"/><g transform="translate(97.2 231.7) scale(1.45) translate(-12 -12)" class="pc4-ic"><path d="M12 21s-8-5-8-11a4.5 4.5 0 0 1 8-3 4.5 4.5 0 0 1 8 3c0 6-8 11-8 11z"/><path d="M7 12h3l1-2 2 4 1-2h3"/></g><text x="97.2" y="267.7" text-anchor="middle" class="pc4-lab">HEALTH</text><text x="97.2" y="293.7" text-anchor="middle" class="pc4-val">4.6bn</text></g><g class="pc4-seg" data-i="6" role="button" tabindex="0" aria-label="Livelihood: 838m people live on less than $3.00 a day" style="--c:#2F5A2A;--dx:-6.1px;--dy:-12.6px;--d:0.48s"><path class="pc4-fill" d="M86.9 124.5A276 276 0 0 1 295.7 24.0L297.7 154.0A146 146 0 0 0 187.3 207.2Z" fill="#2F5A2A"/><g transform="translate(209.8 90.6) scale(1.45) translate(-12 -12)" class="pc4-ic"><path d="M12 21v-9"/><path d="M12 12C12 8 9 6 5 6c0 4 3 6 7 6z"/><path d="M12 10c0-3 2-5 6-5 0 3-2 5-6 5z"/><path d="M7 21h10"/></g><text x="209.8" y="126.6" text-anchor="middle" class="pc4-lab">LIVELIHOOD</text><text x="209.8" y="152.6" text-anchor="middle" class="pc4-val">838m</text></g><circle cx="300" cy="300" r="134" class="pc4-core"/><circle cx="300" cy="300" r="120" class="pc4-core-line"/><text x="300" y="262" text-anchor="middle" class="pc4-c1">PERFECT CAPITA</text><text x="300" y="340" text-anchor="middle" class="pc4-c2">7</text><text x="300" y="368" text-anchor="middle" class="pc4-c3">BASIC LIVING STANDARDS</text></svg>
@@ -162,7 +195,7 @@ SOFI page once its address is confirmed.
         <b id="pc4-f">2.1bn</b>
         <div class="pc4-call__t" id="pc4-body"><small id="pc4-n">Food</small><span id="pc4-l">people are moderately or severely food insecure</span><br><a id="pc4-s" href="https://www.unicef.ca/en/press-release/un-report-global-hunger-levels-ease-third-consecutive-year-regional-disparities" target="_blank" rel="noopener noreferrer">UN hunger report (SOFI), 2025 data</a></div>
       </div>
-      <p class="pc4-cap">The world today: people below the line on each standard. The groups overlap, so they are never added.</p>
+      <p class="pc4-cap">People below the line on each standard today. The groups overlap, so they are never added.</p>
     </div>
     <div class="pc4-rest">
       <div class="pc4-sum">
