@@ -1,5 +1,6 @@
 <!-- ===========================================================================
-PERFECT NATIONS - HOMEPAGE - SECTION 02 - NATIONAL BLUEPRINTS - v5.0 MOVE 03 - 2026-11-06
+PERFECT NATIONS - HOMEPAGE - SECTION 02 - NATIONAL BLUEPRINTS - v5.1 MOVE 03 - 2026-11-06
+v5.1: Earthrise ground (was laterite), as the whole homepage keeps one palette.
 One Elementor Custom HTML widget, Full Width, padding 0. Served live from GitHub
 (pages/home-blueprints.html) by the Perfect Nations Live Pages plugin, in place of the pasted v4
 (root id pn-featured).
@@ -237,6 +238,16 @@ Ground: laterite (red earth). Photographs at full colour, no veil; text sits on 
   #pn-featured .pnfb-foot{ display:block; margin-top:14px; }
   #pn-featured .pnfb-foot .pnfb-btn{ display:flex; width:100%; }
 }
+/* v7: one palette - Earthrise and ivory, gold for what a visitor can act on; the painted seams carry the colour */
+#pn-featured{
+  --bg:#0F4C5C; --bg2:#082A30; --plate:#0A3840; --plate2:#072A30;
+  background:
+    radial-gradient(70% 55% at 82% 0%, rgba(120,200,205,.14) 0%, transparent 64%),
+    radial-gradient(50% 45% at 8% 100%, rgba(227,194,88,.07) 0%, transparent 62%),
+    linear-gradient(180deg, var(--bg) 0%, var(--bg2) 100%);
+}
+#pn-featured .pnfb-modal{ background:rgba(4,22,26,.78); }
+#pn-featured .pnfb-card,#pn-featured .pnfb-card:hover{ box-shadow:0 22px 50px rgba(2,16,20,.45); }
 </style>
 
 <section id="pn-featured" aria-labelledby="pnfb-h">

@@ -1,0 +1,123 @@
+<!-- ===========================================================================
+PERFECT NATIONS - HOMEPAGE - THE PAINTED SEAMS - v1.0 - 2026-11-06
+The seams between the homepage sections: a slim ivory strip of canvas carrying motifs from
+Preeti Sinha's garden painting (a fern frond, dotted leaves, coral flowers, striped seed pods, a red
+feather, a yellow bowl, a petal rosette, blue dots, loops, dashes and a rayed sun). The sections
+themselves keep one palette (Earthrise and ivory, with gold for what a visitor can act on); the
+painting brings the colour, in the seams only.
+This part holds the drawings once (the symbols) and the strip style. The homepage build
+(tools/build_home.py) places a seam between sections with <div class="pn-seam pn-seam--a">...;
+the arrangement of each seam is written by the build, so every seam differs.
+The ids here start "pns-", so the Live Pages plugin never mistakes them for a page.
+=========================================================================== -->
+<style>
+.pn-seam{
+  position:relative; display:block; width:100vw; margin-left:calc(50% - 50vw); box-sizing:border-box;
+  height:clamp(40px,3.8vw,58px); overflow:hidden; line-height:0;
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.35), rgba(255,255,255,0) 40%, rgba(120,90,40,.06)),
+    #F4ECD8;
+  border-top:1px solid rgba(227,194,88,.75); border-bottom:1px solid rgba(227,194,88,.75);
+}
+.pn-seam::before{
+  content:""; position:absolute; inset:0; pointer-events:none; opacity:.09;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.1' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .3 0 0 0 0 .22 0 0 0 0 .1 0 0 0 .7 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+.pn-seam svg{ position:relative; display:block; width:100%; height:100%; }
+@media (prefers-reduced-motion:no-preference){
+  .pn-seam.is-armed svg > g{ opacity:0; transition:opacity .8s ease; }
+  .pn-seam.is-armed.is-in svg > g{ opacity:1; }
+}
+</style>
+<svg class="pn-seam-sprite" width="0" height="0" style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true" focusable="false">
+  <defs>
+    <symbol id="pns-fern" viewBox="0 0 200 60">
+      <g fill="none" stroke="#2FB58C" stroke-linecap="round" stroke-width="3">
+        <path d="M6 36C60 31 120 27 194 30"/>
+        <path stroke-width="2.4" d="M22.0 35.5q4.0 -11.4 15.5 -16.3M26.0 35.5q4.0 9.8 15.5 14.7M37.0 35.0q4.0 -11.0 15.0 -15.7M41.0 35.0q4.0 9.4 15.0 14.2M52.0 34.5q4.0 -10.6 14.4 -15.1M56.0 34.5q4.0 9.1 14.4 13.6M67.0 34.1q4.0 -10.2 13.8 -14.5M71.0 34.1q4.0 8.7 13.8 13.1M82.0 33.6q4.0 -9.7 13.2 -13.9M86.0 33.6q4.0 8.3 13.2 12.5M97.0 33.1q4.0 -9.3 12.6 -13.3M101.0 33.1q4.0 8.0 12.6 12.0M112.0 32.6q4.0 -8.9 12.1 -12.7M116.0 32.6q4.0 7.6 12.1 11.4M127.0 32.1q4.0 -8.5 11.5 -12.1M131.0 32.1q4.0 7.2 11.5 10.9M142.0 31.7q4.0 -8.0 10.9 -11.5M146.0 31.7q4.0 6.9 10.9 10.3M157.0 31.2q4.0 -7.6 10.3 -10.9M161.0 31.2q4.0 6.5 10.3 9.8M172.0 30.7q4.0 -7.2 9.7 -10.2M176.0 30.7q4.0 6.1 9.7 9.2"/>
+      </g>
+    </symbol>
+    <symbol id="pns-flower" viewBox="-14 -14 28 28">
+      <g fill="#F2836B" stroke="#FFF6EC" stroke-width="1">
+        <ellipse cx="0" cy="-6.2" rx="4" ry="6"/>
+        <ellipse cx="0" cy="-6.2" rx="4" ry="6" transform="rotate(72)"/>
+        <ellipse cx="0" cy="-6.2" rx="4" ry="6" transform="rotate(144)"/>
+        <ellipse cx="0" cy="-6.2" rx="4" ry="6" transform="rotate(216)"/>
+        <ellipse cx="0" cy="-6.2" rx="4" ry="6" transform="rotate(288)"/>
+      </g>
+      <circle r="2.3" fill="#FFF6EC"/>
+    </symbol>
+    <symbol id="pns-leaf" viewBox="0 0 70 56">
+      <path d="M8 30C4 18 16 8 26 14C30 4 44 4 46 14C58 10 66 22 58 30C66 38 58 50 46 44C42 54 28 54 26 44C14 50 4 42 8 30Z" fill="#2E6B4A" stroke="#7CC8F0" stroke-width="2.4" stroke-linejoin="round"/>
+      <g fill="#6FC3F2"><circle cx="20" cy="26" r="1.9"/><circle cx="28" cy="20" r="1.9"/><circle cx="36" cy="16" r="1.9"/><circle cx="44" cy="22" r="1.9"/><circle cx="52" cy="28" r="1.9"/><circle cx="30" cy="32" r="1.9"/><circle cx="40" cy="30" r="1.9"/><circle cx="24" cy="38" r="1.9"/><circle cx="34" cy="42" r="1.9"/><circle cx="46" cy="38" r="1.9"/><circle cx="16" cy="32" r="1.9"/><circle cx="54" cy="36" r="1.9"/></g>
+    </symbol>
+    <symbol id="pns-loops" viewBox="0 0 92 32">
+      <path d="M3 22c7 0 12-7 7-10c-6-3-10 8-2 11c6 2 11-1 14-4c5-6 12-6 9 1c-3 6-11 4-5-3c4-5 12-5 15 1c2 4 7 5 11 1c5-6 12-6 9 1c-3 6-11 4-5-3c4-5 12-5 15 1c2 4 7 5 12 3" fill="none" stroke="#5DB5E8" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+    <symbol id="pns-dashes" viewBox="0 0 40 32">
+      <g fill="#8EA6BC"><rect x="2" y="3" width="3.2" height="8" rx="1.2"/><rect x="11" y="3" width="3.2" height="8" rx="1.2"/><rect x="20" y="3" width="3.2" height="8" rx="1.2"/><rect x="29" y="3" width="3.2" height="8" rx="1.2"/><rect x="6" y="13" width="3.2" height="8" rx="1.2"/><rect x="15" y="13" width="3.2" height="8" rx="1.2"/><rect x="24" y="13" width="3.2" height="8" rx="1.2"/><rect x="33" y="13" width="3.2" height="8" rx="1.2"/><rect x="2" y="23" width="3.2" height="8" rx="1.2"/><rect x="11" y="23" width="3.2" height="8" rx="1.2"/><rect x="20" y="23" width="3.2" height="8" rx="1.2"/></g>
+    </symbol>
+    <symbol id="pns-pods" viewBox="0 0 64 64">
+      <g fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"><path d="M32 62L16 26"/><path d="M32 62L32 22"/><path d="M32 62L48 26"/></g>
+      <g stroke="#2350D8" stroke-width="2.4" fill="#F7EEDB">
+        <ellipse cx="0" cy="0" rx="7" ry="12" transform="translate(14 18) rotate(-28)"/>
+        <ellipse cx="0" cy="0" rx="7" ry="12" transform="translate(32 13)"/>
+        <ellipse cx="0" cy="0" rx="7" ry="12" transform="translate(50 18) rotate(28)"/>
+      </g>
+      <g stroke="#3D8FE0" stroke-width="1.6" stroke-linecap="round" fill="none">
+        <path d="M0 -8V8M-3 -6V6M3 -6V6" transform="translate(14 18) rotate(-28)"/>
+        <path d="M0 -8V8M-3 -6V6M3 -6V6" transform="translate(32 13)"/>
+        <path d="M0 -8V8M-3 -6V6M3 -6V6" transform="translate(50 18) rotate(28)"/>
+      </g>
+    </symbol>
+    <symbol id="pns-feather" viewBox="0 0 140 44">
+      <path d="M14.8 24.8l7 19M25.7 22.1l7 19M36.6 19.4l7 19M47.4 16.6l7 19M58.3 13.9l7 19M69.2 11.2l7 19M80.1 8.5l7 19M91.0 5.8l7 19M101.8 3.0l7 19M112.7 0.3l7 19" fill="none" stroke="#E0352B" stroke-width="4.4" stroke-linecap="round" transform="translate(0 -6)"/>
+      <path d="M6 38L134 6" fill="none" stroke="#2FB58C" stroke-width="2.6" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="pns-bowl" viewBox="0 0 56 56">
+      <g stroke="#FFFFFF" stroke-width="1.8" fill="none" stroke-linecap="round"><path d="M18 26L12 9"/><path d="M28 26L28 6"/><path d="M38 26L44 9"/></g>
+      <g fill="#B08A2E"><circle cx="12" cy="8" r="3.2"/><circle cx="28" cy="5" r="3.2"/><circle cx="44" cy="8" r="3.2"/></g>
+      <path d="M8 26H48C48 41 40 51 28 51C16 51 8 41 8 26Z" fill="#F2C230" stroke="#B8862A" stroke-width="1.4"/>
+      <g fill="none" stroke="#B8862A" stroke-width="1.2"><path d="M13 26C13 37 20 45 28 45C36 45 43 37 43 26"/><path d="M18 26C18 34 23 40 28 40C33 40 38 34 38 26"/><path d="M23 26C23 31 25 35 28 35C31 35 33 31 33 26"/></g>
+    </symbol>
+    <symbol id="pns-rosette" viewBox="-32 -32 64 64">
+      <g fill="#A9C8F5" stroke="#8C6E3C" stroke-width="1.2">
+        <ellipse cx="0" cy="-15" rx="4.6" ry="10.5"/><ellipse cx="0" cy="-15" rx="4.6" ry="10.5" transform="rotate(45)"/><ellipse cx="0" cy="-15" rx="4.6" ry="10.5" transform="rotate(90)"/><ellipse cx="0" cy="-15" rx="4.6" ry="10.5" transform="rotate(135)"/>
+        <ellipse cx="0" cy="-15" rx="4.6" ry="10.5" transform="rotate(180)"/><ellipse cx="0" cy="-15" rx="4.6" ry="10.5" transform="rotate(225)"/><ellipse cx="0" cy="-15" rx="4.6" ry="10.5" transform="rotate(270)"/><ellipse cx="0" cy="-15" rx="4.6" ry="10.5" transform="rotate(315)"/>
+      </g>
+      <circle r="3.4" fill="#2350D8"/>
+    </symbol>
+    <symbol id="pns-dots" viewBox="0 0 34 34">
+      <g fill="#2350D8"><circle cx="9" cy="6" r="2"/><circle cx="17" cy="6" r="2"/><circle cx="25" cy="6" r="2"/><circle cx="5" cy="13" r="2"/><circle cx="13" cy="13" r="2"/><circle cx="21" cy="13" r="2"/><circle cx="29" cy="13" r="2"/><circle cx="9" cy="20" r="2"/><circle cx="17" cy="20" r="2"/><circle cx="25" cy="20" r="2"/><circle cx="13" cy="27" r="2"/><circle cx="21" cy="27" r="2"/></g>
+    </symbol>
+    <symbol id="pns-squares" viewBox="0 0 46 46">
+      <g fill="#E8604A"><rect x="3" y="4" width="14" height="14" rx="2"/><rect x="21" y="2" width="14" height="14" rx="2"/><rect x="8" y="23" width="14" height="14" rx="2"/><rect x="27" y="22" width="14" height="14" rx="2"/></g>
+      <g stroke="#F9C3B4" stroke-width="1.3" stroke-linecap="round"><path d="M7 8v6M10 8v6M13 8v6M25 6v6M28 6v6M31 6v6M12 27v6M15 27v6M18 27v6M31 26v6M34 26v6M37 26v6"/></g>
+    </symbol>
+    <symbol id="pns-sun" viewBox="-24 -24 48 48">
+      <circle r="9.5" fill="none" stroke="#4FA8E8" stroke-width="6"/>
+      <path d="M-13.2 4.8L-19.7 7.2M-11.1 8.5L-16.7 12.8M-8.0 11.5L-12.0 17.2M-4.2 13.4L-6.3 20.0M0 14L0 21M4.2 13.4L6.3 20.0M8.0 11.5L12.0 17.2M11.1 8.5L16.7 12.8M13.2 4.8L19.7 7.2" stroke="#2F6FD8" stroke-width="2.2" stroke-linecap="round"/>
+    </symbol>
+  </defs>
+</svg>
+<script>
+(function(){
+  if (window.__pnSeams) { return; }
+  window.__pnSeams = 1;
+  function run(){
+    var seams = document.querySelectorAll('.pn-seam');
+    if (!seams.length) { return; }
+    var still = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (still || !('IntersectionObserver' in window)) { return; }
+    var io = new IntersectionObserver(function(es){
+      es.forEach(function(en){ if (en.isIntersecting) { en.target.classList.add('is-in'); io.unobserve(en.target); } });
+    }, { threshold: 0.3 });
+    Array.prototype.forEach.call(seams, function(s){
+      var uses = s.querySelectorAll('svg > g');
+      Array.prototype.forEach.call(uses, function(u, i){ u.style.transitionDelay = (i * 0.05) + 's'; });
+      s.classList.add('is-armed'); io.observe(s);
+    });
+  }
+  if (document.readyState === 'loading') { document.addEventListener('DOMContentLoaded', run); } else { run(); }
+})();
+</script>

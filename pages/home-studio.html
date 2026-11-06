@@ -1,8 +1,13 @@
 <!-- ===========================================================================
-PERFECT NATIONS - HOMEPAGE - SECTION 06 - THE REDESIGN STUDIO - v6.0 THE FIVE MOVES - 2026-11-06
+PERFECT NATIONS - HOMEPAGE - SECTION 06 - THE REDESIGN STUDIO - v7.0 THE FIVE MOVES - 2026-11-06
 One Elementor Custom HTML widget, Full Width, padding 0. Served live from GitHub
 (pages/home-studio.html) by the Perfect Nations Live Pages plugin, in place of the pasted
 section 06 v5 (root id pn-studio).
+v7.0: the lead names the mission (super intelligence and innovative financing for development,
+co-designing with each nation); the five tiles share one Earthrise ground with gold drawings, as the
+whole page now keeps one palette, and the painted seams carry the colour.
+v6.1: a shorter lead; move 02 (Perfect Capita) turns amethyst, the new ground of its section.
+The hero button "How it works" and the gold chapter marks land here, below the header bar.
 v6.0: the Studio becomes the map of the homepage. It sits directly under The Story of Perfect
 Nations and the dispatch ticker, and shows how a nation is re-designed in five moves. Each move is
 a tile in the colour of the section that opens it further down the page: 01 Assets (Sovereign
@@ -13,10 +18,12 @@ breathes between the dark bands. About half the height of v5 on laptops.
 Phones have their own layout: the moves in two columns (the fifth across the full width), the
 numbers inside the tiles, and the three mandates as three small cards in one row.
 ORDER: the page reads in the order of the moves: Sovereign Assets, Perfect Capita, National
-Blueprints, Capital Architecture. If National Blueprints still sits above Sovereign Assets in
-Elementor, this widget moves it below Perfect Capita in the visitor's browser before it comes into
-view. To make the order permanent, drag the National Blueprints widget below Perfect Capita in
-Elementor (Navigator); the script then has nothing to do.
+Blueprints, Capital Architecture. Since 6 November 2026 this is fixed on the server by four
+homepage-only entries in pages/manifest.json (keys ending @home-2): the widget pasted as National
+Blueprints now shows Sovereign Assets, the one pasted as Sovereign Assets shows Perfect Capita, and
+the one pasted as Perfect Capita shows National Blueprints. If those widgets are ever dragged into
+the new order in Elementor, delete the four @home-2 entries the same day. The script below still
+moves National Blueprints in the browser if it ever arrives above Sovereign Assets.
 =========================================================================== -->
 <style>
 #pn-studio{
@@ -47,7 +54,7 @@ Elementor (Navigator); the script then has nothing to do.
   --widgets-spacing:0px !important; row-gap:0 !important;
 }
 /* the sections the moves open: land below the header bar */
-#pn-assets,#pn-capita,#pn-featured,#pn-capital{ scroll-margin-top:var(--pn-head-off,72px); }
+#pn-studio,#pn-assets,#pn-capita,#pn-featured,#pn-capital{ scroll-margin-top:var(--pn-head-off,72px); }
 
 #pn-studio .pnst-in{ position:relative; width:100%; max-width:1400px; margin:0 auto; padding:0 clamp(18px,4.5vw,72px); }
 
@@ -110,7 +117,7 @@ Elementor (Navigator); the script then has nothing to do.
 #pn-studio .pnst-t:hover{ transform:translateY(-6px); box-shadow:0 24px 44px rgba(52,34,12,.3), inset 0 1px 0 rgba(255,255,255,.18); }
 #pn-studio .pnst-t:focus-visible{ outline:2px solid var(--gd); outline-offset:3px; }
 #pn-studio .pnst-m:hover .pnst-n{ background:var(--g); transform:scale(1.08); }
-#pn-studio .pnst-ic{ display:block; width:30px; height:30px; fill:none; stroke:#FFF4D6; stroke-width:1.5; stroke-linecap:round; stroke-linejoin:round; opacity:.95; }
+#pn-studio .pnst-ic{ display:block; width:30px; height:30px; fill:none; stroke:#E3C258; stroke-width:1.6; stroke-linecap:round; stroke-linejoin:round; opacity:.95; }
 #pn-studio .pnst-t b{
   display:block; margin-top:auto; padding-top:14px;
   font-family:var(--hd); font-weight:600; font-size:clamp(1.35rem,1.75vw,1.75rem); line-height:1; letter-spacing:-.01em;
@@ -215,11 +222,11 @@ Elementor (Navigator); the script then has nothing to do.
         <p class="pnst-eb">The ReDesign Studio</p>
         <h2 class="pnst-h2" id="pnst-h">Where a nation is <em>re&#8209;designed</em></h2>
       </div>
-      <p class="pnst-lead">Five moves take a nation from <b>what it owns</b> to <b>a basic standard of living for every citizen</b>. Each move opens below.</p>
+      <p class="pnst-lead"><b>Super intelligence (SI)</b> and <b>innovative financing for development</b> co-design with each nation in five moves, from what it owns to a basic standard of living for every citizen.</p>
     </div>
 
     <ol class="pnst-moves" aria-label="The five moves">
-      <li class="pnst-m" style="--c1:#1F7D62; --c2:#0A4134; --i:0">
+      <li class="pnst-m" style="--c1:#12586A; --c2:#082A30; --i:0">
         <span class="pnst-n" aria-hidden="true">01</span>
         <a class="pnst-t" href="#pn-assets" data-to="pn-assets" data-page="https://perfectnations.org/sovereign-assets/">
           <svg class="pnst-ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M2.5 19.5h19"/><path d="M3.8 19.5l5.4-8.4 3.4 4.7 2.7-3.5 4.9 7.2"/><circle cx="17.2" cy="6.4" r="2.3"/></svg>
@@ -228,7 +235,7 @@ Elementor (Navigator); the script then has nothing to do.
           <span class="pnst-go" aria-hidden="true">&darr;</span>
         </a>
       </li>
-      <li class="pnst-m" style="--c1:#1B5640; --c2:#0B2219; --i:1">
+      <li class="pnst-m" style="--c1:#12586A; --c2:#082A30; --i:1">
         <span class="pnst-n" aria-hidden="true">02</span>
         <a class="pnst-t" href="#pn-capita" data-to="pn-capita" data-page="https://perfectnations.org/perfect-capita/">
           <svg class="pnst-ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="8.6"/><circle cx="12" cy="12" r="3.2"/><path d="M12.00 8.80L12.00 3.40M14.50 10.00L18.72 6.64M15.12 12.71L20.38 13.91M13.39 14.88L15.73 19.75M10.61 14.88L8.27 19.75M8.88 12.71L3.62 13.91M9.50 10.00L5.28 6.64"/></svg>
@@ -237,21 +244,21 @@ Elementor (Navigator); the script then has nothing to do.
           <span class="pnst-go" aria-hidden="true">&darr;</span>
         </a>
       </li>
-      <li class="pnst-m" style="--c1:#A8502F; --c2:#561F12; --i:2">
+      <li class="pnst-m" style="--c1:#12586A; --c2:#082A30; --i:2">
         <span class="pnst-n" aria-hidden="true">03</span>
         <a class="pnst-t" href="#pn-featured" data-to="pn-featured" data-page="https://perfectnations.org/blueprints/">
           <svg class="pnst-ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 20.2V4.6l15.6 15.6z"/><path d="M7.6 16.6v-4.4l4.4 4.4z"/><path d="M4 8.4h2.2M4 12.2h2.2"/><path d="M14.6 3.6l5.8 5.8-2 2-5.8-5.8z"/></svg>
           <b>Co-Design</b>
-          <i>The blueprint, drawn with the nation</i>
+          <i>The blueprint, drawn with the nation and SI</i>
           <span class="pnst-go" aria-hidden="true">&darr;</span>
         </a>
       </li>
-      <li class="pnst-m" style="--c1:#2D5FAA; --c2:#11295A; --i:3">
+      <li class="pnst-m" style="--c1:#12586A; --c2:#082A30; --i:3">
         <span class="pnst-n" aria-hidden="true">04</span>
         <a class="pnst-t" href="#pn-capital" data-to="pn-capital" data-page="https://perfectnations.org/capital-architecture/">
           <svg class="pnst-ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 9.4L12 4l9 5.4"/><path d="M4.2 9.4h15.6"/><path d="M6.4 12v5.6M10 12v5.6M14 12v5.6M17.6 12v5.6"/><path d="M3.4 20.4h17.2"/></svg>
           <b>Capital</b>
-          <i>The instruments that carry it</i>
+          <i>Innovative finance that carries it</i>
           <span class="pnst-go" aria-hidden="true">&darr;</span>
         </a>
       </li>
