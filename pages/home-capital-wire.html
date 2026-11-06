@@ -1,0 +1,391 @@
+<!-- ===========================================================================
+PERFECT NATIONS - HOMEPAGE - SECTION 01b - THE CAPITAL WIRE - v2.0 - 2026-11-06
+Replaces the Dispatch Ticker (v1.2). Same place: its own Elementor HTML widget directly
+UNDER Section 01 (the golden planet). Same root id, pn-tick, so the Perfect Nations Live
+Pages plugin serves this file in place of the widget already on the homepage.
+What it shows: the most striking capital markets deals on the State of Nations wire, as a
+moving tape. Each deal: the nation, the sourced headline figure in gold, what it is, and a
+signal (Record, First, Oversubscribed, Innovative). Tap a deal: its card opens under the
+tape with the headline as published, the source, "Read the source" and "Find on the
+planet", which turns the homepage planet to that nation and pins it with gold rings
+and the deal figure.
+Live by itself: after the page has loaded, it reads data/ticker.json (about 5 KB) from
+the GitHub repository preetisinha70-PN/perfect-nations, kept by the Correspondent at
+8 am and 8 pm New York time. The read is kept for 30 minutes in the visitor&#8217;s browser.
+If the file cannot be read, the deals built into this widget show.
+Fast: the motion is one CSS transform (no script runs while it moves); it stops when the
+tape is off screen or the tab is hidden; visitors who ask for reduced motion get a still
+row they can scroll. No libraries, no images, no fonts of its own.
+EDITORIAL: "Find on the planet" needs Section 01 v5.4 or later (window.pnhgFocus). With an
+earlier Section 01 the button still scrolls up to the planet.
+=========================================================================== -->
+<style>
+#pn-tick{
+  --g:var(--pn-brand-gold,#E3C258); --gs:#F0D68F; --on-g:#1A140C;
+  --iv:#F5F1E8; --iv2:rgba(245,241,232,.84); --iv3:rgba(245,241,232,.6); --hair:rgba(245,241,232,.14);
+  --er:#0B3D45; --er2:#093239; --er3:#082A30; --lag:#0F4C5C; --live:#5DCAA5;
+  --hd:var(--pn-font-heading,"Barlow Condensed","Arial Narrow",Arial,sans-serif);
+  --bd:var(--pn-font-body,"Barlow Semi Condensed",Arial,sans-serif);
+  --sf:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,"Times New Roman",serif;
+  --speed:80s; --bar:54px;
+  position:relative; width:100vw; margin-left:calc(50% - 50vw); box-sizing:border-box;
+  color:var(--iv); font-family:var(--bd); line-height:1.3; text-align:left;
+  background:var(--er3);
+}
+#pn-tick *,#pn-tick *::before,#pn-tick *::after{ box-sizing:border-box; }
+.elementor-widget-html:has(#pn-tick),.elementor-widget:has(#pn-tick),.elementor-widget-wrap:has(#pn-tick),
+.elementor-container:has(#pn-tick),.elementor-column:has(#pn-tick),.elementor-section:has(#pn-tick),
+.e-con-inner:has(#pn-tick),.e-con:has(#pn-tick){
+  padding-top:0 !important; padding-bottom:0 !important; margin-top:0 !important; margin-bottom:0 !important;
+  --widgets-spacing:0px !important; row-gap:0 !important;
+}
+#pn-tick .cw-bar{
+  position:relative; display:flex; align-items:stretch; height:var(--bar); overflow:hidden;
+  background:linear-gradient(180deg,var(--er) 0%,var(--er2) 100%);
+  border-top:1px solid rgba(227,194,88,.5); border-bottom:1px solid rgba(227,194,88,.18);
+}
+#pn-tick .cw-lab{
+  position:relative; z-index:2; flex:0 0 auto; display:flex; flex-direction:column; justify-content:center; gap:3px;
+  padding:0 clamp(14px,2vw,26px); background:var(--g); color:var(--on-g); text-decoration:none;
+}
+#pn-tick .cw-lab b{ font-family:var(--hd); font-size:.78rem; font-weight:700; letter-spacing:.22em; text-transform:uppercase; line-height:1; }
+#pn-tick .cw-lab i{ display:flex; align-items:center; gap:6px; font-style:normal; font-family:var(--hd); font-size:.6rem; font-weight:600; letter-spacing:.18em; text-transform:uppercase; line-height:1; opacity:.8; }
+#pn-tick .cw-dot{ width:7px; height:7px; border-radius:50%; background:#0B5F4F; animation:pnCwBeat 2s ease-in-out infinite; }
+@keyframes pnCwBeat{ 50%{ opacity:.3; } }
+#pn-tick .cw-lab:hover b,#pn-tick .cw-lab:focus-visible b{ text-decoration:underline; text-underline-offset:3px; }
+#pn-tick .cw-view{ position:relative; flex:1 1 auto; min-width:0; overflow:hidden;
+  -webkit-mask-image:linear-gradient(90deg,transparent 0,#000 28px,#000 calc(100% - 44px),transparent 100%);
+          mask-image:linear-gradient(90deg,transparent 0,#000 28px,#000 calc(100% - 44px),transparent 100%); }
+#pn-tick .cw-track{ display:flex; width:max-content; height:100%; animation:pnCwRun var(--speed) linear infinite; will-change:transform; }
+@keyframes pnCwRun{ from{ transform:translate3d(0,0,0); } to{ transform:translate3d(-50%,0,0); } }
+#pn-tick .cw-bar:hover .cw-track,#pn-tick .cw-bar:focus-within .cw-track,
+#pn-tick.is-paused .cw-track,#pn-tick.is-off .cw-track,#pn-tick.is-card .cw-track{ animation-play-state:paused; }
+#pn-tick .cw-list{ display:flex; align-items:stretch; margin:0; padding:0; list-style:none; }
+#pn-tick .cw-list li{ display:flex; align-items:stretch; }
+#pn-tick .cw-i{
+  display:flex; align-items:center; gap:10px; height:100%; margin:0; padding:0 clamp(18px,2vw,28px);
+  border:0; border-right:1px solid var(--hair); background:none; color:var(--iv); cursor:pointer;
+  font:inherit; white-space:nowrap; text-align:left;
+}
+#pn-tick .cw-n{ font-family:var(--hd); font-size:.74rem; font-weight:700; letter-spacing:.16em; text-transform:uppercase; color:var(--iv); }
+#pn-tick .cw-f{ font-family:var(--hd); font-size:clamp(1.06rem,1.3vw,1.24rem); font-weight:700; letter-spacing:.01em; color:var(--g); }
+#pn-tick .cw-l{ font-size:clamp(.92rem,1.05vw,1.02rem); color:var(--iv2); }
+#pn-tick .cw-s{ font-family:var(--hd); font-size:.6rem; font-weight:700; letter-spacing:.16em; text-transform:uppercase; color:var(--iv); padding:3px 7px 2px; border:1px solid rgba(245,241,232,.5); border-radius:3px; }
+#pn-tick .cw-i:hover .cw-l,#pn-tick .cw-i:focus-visible .cw-l,#pn-tick .cw-i.is-on .cw-l{ color:var(--iv); text-decoration:underline; text-decoration-color:var(--gs); text-underline-offset:4px; }
+#pn-tick .cw-i.is-on{ background:rgba(15,76,92,.6); }
+#pn-tick a:focus-visible,#pn-tick button:focus-visible{ outline:2px solid var(--gs); outline-offset:-3px; }
+#pn-tick .cw-stat{ position:relative; z-index:2; flex:0 0 auto; display:flex; flex-direction:column; justify-content:center; gap:3px;
+  padding:0 16px; border-left:1px solid var(--hair); background:var(--er2); font-family:var(--hd); text-transform:uppercase; letter-spacing:.14em; }
+#pn-tick .cw-stat b{ font-size:.74rem; font-weight:700; color:var(--iv); white-space:nowrap; }
+#pn-tick .cw-stat span{ font-size:.6rem; font-weight:600; color:var(--iv3); white-space:nowrap; }
+#pn-tick .cw-pause{ position:relative; z-index:2; flex:0 0 auto; width:48px; border:0; border-left:1px solid var(--hair);
+  background:var(--er3); color:var(--iv); cursor:pointer; padding:0; font:700 .8rem/1 Arial,sans-serif; }
+#pn-tick .cw-pause:hover{ background:var(--lag); }
+#pn-tick .cw-pause .i-play{ display:none; }
+#pn-tick.is-paused .cw-pause .i-play{ display:inline; }
+#pn-tick.is-paused .cw-pause .i-stop{ display:none; }
+#pn-tick .cw-meta{ display:none; }
+#pn-tick .cw-card{ display:none; background:var(--er3); border-bottom:1px solid rgba(227,194,88,.18); }
+#pn-tick.is-card .cw-card{ display:block; }
+#pn-tick .cw-in{ position:relative; max-width:1180px; margin:0 auto; padding:16px clamp(18px,4vw,48px) 18px; }
+#pn-tick .cw-k{ display:flex; flex-wrap:wrap; align-items:center; gap:8px 12px; margin:0 52px 8px 0; font-family:var(--hd); font-size:.7rem; font-weight:700; letter-spacing:.2em; text-transform:uppercase; color:var(--iv3); }
+#pn-tick .cw-k .cw-kn{ color:var(--iv); }
+#pn-tick .cw-k .cw-kf{ color:var(--g); font-size:.95rem; letter-spacing:.02em; text-transform:none; }
+#pn-tick .cw-h{ margin:0 52px 6px 0; font-family:var(--sf); font-size:clamp(1.08rem,1.7vw,1.36rem); font-weight:400; line-height:1.3; color:var(--iv); text-shadow:none !important; }
+#pn-tick .cw-by{ margin:0 0 14px; font-size:.92rem; color:var(--iv3); }
+#pn-tick .cw-acts{ display:flex; flex-wrap:wrap; gap:10px; }
+#pn-tick .cw-btn{ display:inline-flex; align-items:center; justify-content:center; gap:8px; min-height:44px; padding:0 18px;
+  font-family:var(--hd); font-size:.74rem; font-weight:700; letter-spacing:.19em; text-transform:uppercase; text-decoration:none; cursor:pointer;
+  border-radius:2px; border:1px solid var(--g); }
+#pn-tick .cw-go{ background:var(--g); color:var(--on-g); }
+#pn-tick .cw-go:hover{ background:var(--gs); }
+#pn-tick .cw-find{ background:transparent; color:var(--g); }
+#pn-tick .cw-find:hover{ background:rgba(227,194,88,.12); }
+#pn-tick .cw-find[hidden]{ display:none; }
+#pn-tick .cw-x{ position:absolute; top:12px; right:clamp(12px,3vw,40px); width:44px; height:44px; border-radius:50%;
+  border:1px solid rgba(227,194,88,.7); background:transparent; color:var(--g); cursor:pointer; font:400 1.3rem/1 Arial,sans-serif; padding:0; }
+#pn-tick .cw-x:hover{ background:rgba(227,194,88,.12); }
+@media (max-width:899px){
+  #pn-tick .cw-stat{ display:none; }
+  #pn-tick .cw-meta{ display:flex; justify-content:space-between; gap:10px; padding:5px 14px 6px; background:var(--er3);
+    font-family:var(--hd); font-size:.6rem; font-weight:600; letter-spacing:.14em; text-transform:uppercase; color:var(--iv3); border-bottom:1px solid var(--hair); }
+  #pn-tick .cw-meta b{ color:var(--iv2); font-weight:700; }
+}
+@media (max-width:640px){
+  #pn-tick{ --bar:46px; }
+  #pn-tick .cw-lab{ padding:0 10px; }
+  #pn-tick .cw-lab b{ font-size:.62rem; letter-spacing:.16em; }
+  #pn-tick .cw-lab i{ font-size:.52rem; letter-spacing:.14em; }
+  #pn-tick .cw-i{ gap:7px; padding:0 14px; }
+  #pn-tick .cw-n{ font-size:.62rem; letter-spacing:.12em; }
+  #pn-tick .cw-f{ font-size:1rem; }
+  #pn-tick .cw-l{ font-size:.84rem; }
+  #pn-tick .cw-s{ font-size:.52rem; padding:2px 5px 1px; }
+  #pn-tick .cw-pause{ width:40px; }
+  #pn-tick .cw-in{ padding:12px 16px 14px; }
+  #pn-tick .cw-k{ font-size:.6rem; letter-spacing:.16em; margin-right:50px; }
+  #pn-tick .cw-k .cw-kf{ font-size:.82rem; }
+  #pn-tick .cw-h{ font-size:1.02rem; margin-right:50px; }
+  #pn-tick .cw-by{ font-size:.84rem; margin-bottom:12px; }
+  #pn-tick .cw-acts{ display:grid; grid-template-columns:1fr 1fr; gap:8px; }
+  #pn-tick .cw-btn{ padding:0 10px; font-size:.64rem; letter-spacing:.14em; }
+  #pn-tick .cw-x{ top:8px; right:10px; }
+}
+@media (prefers-reduced-motion:reduce){
+  #pn-tick .cw-track{ animation:none; }
+  #pn-tick .cw-view{ overflow-x:auto; -webkit-mask-image:none; mask-image:none; }
+  #pn-tick .cw-list[aria-hidden="true"]{ display:none; }
+  #pn-tick .cw-pause{ display:none; }
+  #pn-tick .cw-dot{ animation:none; }
+}
+</style>
+
+<div id="pn-tick" data-src="https://raw.githubusercontent.com/preetisinha70-PN/perfect-nations/main/data/ticker.json" data-mirror="https://cdn.jsdelivr.net/gh/preetisinha70-PN/perfect-nations@main/data/ticker.json">
+  <div class="cw-bar">
+    <a class="cw-lab" href="https://perfectnations.org/state-of-nations/" aria-label="Capital Wire: open the full wire on State of Nations"><b>Capital Wire</b><i><span class="cw-dot" aria-hidden="true"></span>Live</i></a>
+    <div class="cw-view" role="region" aria-label="The newest capital markets deals for nations">
+      <div class="cw-track">
+        <ul class="cw-list" id="pnCwList">
+          <li><button class="cw-i" type="button" data-i="0" aria-label="Colombia, US$5.2bn, External bond, Record. Open the deal"><span class="cw-n">Colombia</span><span class="cw-f">US$5.2bn</span><span class="cw-l">External bond</span><span class="cw-s">Record</span></button></li>
+          <li><button class="cw-i" type="button" data-i="1" aria-label="Morocco, MAD 1bn, AfDB dirham bond, First. Open the deal"><span class="cw-n">Morocco</span><span class="cw-f">MAD 1bn</span><span class="cw-l">AfDB dirham bond</span><span class="cw-s">First</span></button></li>
+          <li><button class="cw-i" type="button" data-i="2" aria-label="Burkina Faso, FCFA 143bn, Local bond, 43% above target, Oversubscribed. Open the deal"><span class="cw-n">Burkina Faso</span><span class="cw-f">FCFA 143bn</span><span class="cw-l">Local bond, 43% above target</span><span class="cw-s">Oversubscribed</span></button></li>
+          <li><button class="cw-i" type="button" data-i="3" aria-label="Barbados, US$175m, IDB guarantee turns debt savings into health, Innovative. Open the deal"><span class="cw-n">Barbados</span><span class="cw-f">US$175m</span><span class="cw-l">IDB guarantee turns debt savings into health</span><span class="cw-s">Innovative</span></button></li>
+          <li><button class="cw-i" type="button" data-i="4" aria-label="Brazil, US$500m, Netherlands pledge to the TFFF forest fund, Innovative. Open the deal"><span class="cw-n">Brazil</span><span class="cw-f">US$500m</span><span class="cw-l">Netherlands pledge to the TFFF forest fund</span><span class="cw-s">Innovative</span></button></li>
+          <li><button class="cw-i" type="button" data-i="5" aria-label="United States, US$600m, California quake catastrophe bond, Innovative. Open the deal"><span class="cw-n">United States</span><span class="cw-f">US$600m</span><span class="cw-l">California quake catastrophe bond</span><span class="cw-s">Innovative</span></button></li>
+          <li><button class="cw-i" type="button" data-i="6" aria-label="Pakistan, US$150m, Results-based programme for Sindh cities, Innovative. Open the deal"><span class="cw-n">Pakistan</span><span class="cw-f">US$150m</span><span class="cw-l">Results-based programme for Sindh cities</span><span class="cw-s">Innovative</span></button></li>
+          <li><button class="cw-i" type="button" data-i="7" aria-label="Romania, EUR 4.5bn, Eurobonds. Open the deal"><span class="cw-n">Romania</span><span class="cw-f">EUR 4.5bn</span><span class="cw-l">Eurobonds</span></button></li>
+          <li><button class="cw-i" type="button" data-i="8" aria-label="Ukraine, EUR 4.36bn, EU budget and defence disbursement. Open the deal"><span class="cw-n">Ukraine</span><span class="cw-f">EUR 4.36bn</span><span class="cw-l">EU budget and defence disbursement</span></button></li>
+          <li><button class="cw-i" type="button" data-i="9" aria-label="Pakistan, US$3bn, Saudi deposit rolled over. Open the deal"><span class="cw-n">Pakistan</span><span class="cw-f">US$3bn</span><span class="cw-l">Saudi deposit rolled over</span></button></li>
+          <li><button class="cw-i" type="button" data-i="10" aria-label="Egypt, US$1bn, World Bank reform financing. Open the deal"><span class="cw-n">Egypt</span><span class="cw-f">US$1bn</span><span class="cw-l">World Bank reform financing</span></button></li>
+          <li><button class="cw-i" type="button" data-i="11" aria-label="Morocco, EUR 100m, AFD loan for Atlantic port. Open the deal"><span class="cw-n">Morocco</span><span class="cw-f">EUR 100m</span><span class="cw-l">AFD loan for Atlantic port</span></button></li>
+        </ul>
+      </div>
+    </div>
+    <div class="cw-stat"><b class="cw-cnt">64 deals &#183; 44 nations</b><span class="cw-upd">Updated 5 Nov, 8 pm</span></div>
+    <button class="cw-pause" type="button" aria-pressed="false" aria-label="Pause the Capital Wire"><span class="i-stop" aria-hidden="true">&#10073;&#10073;</span><span class="i-play" aria-hidden="true">&#9654;</span></button>
+  </div>
+  <div class="cw-meta"><b class="cw-cnt">64 deals &#183; 44 nations</b><span class="cw-upd">Updated 5 Nov, 8 pm</span></div>
+  <div class="cw-card" id="pnCwCard" role="region" aria-label="The chosen deal" aria-live="polite">
+    <div class="cw-in">
+      <p class="cw-k"><span class="cw-kn"></span><span class="cw-kf"></span><span class="cw-kd"></span><span class="cw-ks"></span></p>
+      <h3 class="cw-h"></h3>
+      <p class="cw-by"></p>
+      <div class="cw-acts">
+        <a class="cw-btn cw-go" href="https://perfectnations.org/state-of-nations/" target="_blank" rel="noopener noreferrer">Read the source <span aria-hidden="true">&#8599;</span></a>
+        <button class="cw-btn cw-find" type="button">Find on the planet</button>
+      </div>
+      <button class="cw-x" type="button" aria-label="Close the deal card">&#215;</button>
+    </div>
+  </div>
+</div>
+<script type="application/json" id="pnCwSeed">{"page":"ticker","updated":"2026-11-05","edition":"8 pm","count":{"deals":64,"nations":44},"items":[{"date":"2026-10-26","nation":"Colombia","slug":"colombia","figure":"US$5.2bn","line":"External bond","signal":"Record","type":"Eurobond","title":"Colombia logra emisi\u00f3n r\u00e9cord de deuda externa por USD $5.200 millones","source":"Semana","url":"https://www.semana.com/economia/macroeconomia/articulo/colombia-logra-emision-record-de-deuda-externa-por-usd-5200-millones/202655/"},{"date":"2026-10-30","nation":"Morocco","slug":"morocco","figure":"MAD 1bn","line":"AfDB dirham bond","signal":"First","type":"Local-currency bond","title":"African Development Bank Raises MAD 1 Billion in First Moroccan Dirham Bond Issuance","source":"Morocco World News","url":"https://www.moroccoworldnews.com/2026/10/344404/african-development-bank-raises-mad-1-billion-in-first-moroccan-dirham-bond-issuance/"},{"date":"2026-11-03","nation":"Burkina Faso","slug":"burkina-faso","figure":"FCFA 143bn","line":"Local bond, 43% above target","signal":"Oversubscribed","type":"Local-currency bond","title":"Burkina Faso : l\u2019emprunt obligataire l\u00e8ve 143 milliards FCFA, 43 % au-dessus de l\u2019objectif","source":"MADAR","url":"https://fr.madar.mr/actualites/sahel/burkina-faso-bond-offering-raises-143-billion-cfa-43-percent-above-target-umoa-market-20261102"},{"date":"2026-10-30","nation":"Barbados","slug":"barbados","figure":"US$175m","line":"IDB guarantee turns debt savings into health","signal":"Innovative","type":"Guarantee","title":"Barbados Turns Debt savings into health investment with IDB\u2019s $175 million guarantee","source":"Devdiscourse","url":"https://www.devdiscourse.com/article/business/3999333-barbados-turns-debt-savings-into-health-investment-with-idbs-175-million-guarantee"},{"date":"2026-10-27","nation":"Brazil","slug":"brazil","figure":"US$500m","line":"Netherlands pledge to the TFFF forest fund","signal":"Innovative","type":"Forest fund","title":"Netherlands pledges $500mn to Brazil\u2019s TFFF","source":"Argus","url":"https://www.argusmedia.com/en/news-and-insights/latest-market-news/2896215-netherlands-pledges-500mn-to-brazil-s-tfff"},{"date":"2026-10-29","nation":"United States","slug":"united-states","figure":"US$600m","line":"California quake catastrophe bond","signal":"Innovative","type":"Catastrophe bond","title":"California Earthquake Authority seeks $600m reinsurance with Ursa Re 2026-1 cat bond","source":"Artemis","url":"https://www.artemis.bm/news/california-earthquake-authority-seeks-600m-reinsurance-with-ursa-re-2026-1-cat-bond/"},{"date":"2026-10-31","nation":"Pakistan","slug":"pakistan","figure":"US$150m","line":"Results-based programme for Sindh cities","signal":"Innovative","type":"Results-based finance","title":"WB approves $150 mln programme to boost municipal revenues, services in Sindh","source":"APP","url":"https://www.app.com.pk/national/wb-approves-150-mln-programme-to-boost-municipal-revenues-services-in-sindh/"},{"date":"2026-11-04","nation":"Romania","slug":"romania","figure":"EUR 4.5bn","line":"Eurobonds","signal":"","type":"Eurobond","title":"Romania issues EUR 4.5 bln Eurobonds, but borrowing cost rises","source":"Romania Insider","url":"https://www.romania-insider.com/business/romania-issues-eur-45-bln-eurobonds-borrowing-cost"},{"date":"2026-11-05","nation":"Ukraine","slug":"ukraine","figure":"EUR 4.36bn","line":"EU budget and defence disbursement","signal":"","type":"EU loan","title":"EU has disbursed \u20ac4.36 billion to Ukraine for budgetary and defence needs","source":"European Pravda","url":"https://www.eurointegration.com.ua/eng/news/2026/11/5/7249343/"},{"date":"2026-11-05","nation":"Pakistan","slug":"pakistan","figure":"US$3bn","line":"Saudi deposit rolled over","signal":"","type":"Liability management","title":"Saudi Arabia rolls over Pakistan\u2019s additional $3b deposit: Aurangzeb","source":"The Nation","url":"https://www.nation.com.pk/05-Nov-2026/saudi-arabia-rolls-pakistan-s-additional-dollar-3b-deposit-aurangzeb"},{"date":"2026-11-01","nation":"Egypt","slug":"egypt","figure":"US$1bn","line":"World Bank reform financing","signal":"","type":"Development bank loan","title":"Egypt signs $1bn World Bank financing agreement under second phase of reform programme","source":"Daily News Egypt","url":"https://dailynewsegypt.com/2026/11/01/egypt-signs-1bn-world-bank-financing-agreement-under-second-phase-of-reform-programme/"},{"date":"2026-11-04","nation":"Morocco","slug":"morocco","figure":"EUR 100m","line":"AFD loan for Atlantic port","signal":"","type":"Development bank loan","title":"Morocco Secures \u20ac100 Million AFD Loan to Expand Atlantic Port Infrastructure","source":"Ecofin Agency","url":"https://www.ecofinagency.com/news-infrastructures/0411-60487-morocco-secures-100-million-afd-loan-to-expand-atlantic-port-infrastructure"}]}</script>
+
+<script>
+(function(){
+  var root = document.getElementById('pn-tick');
+  if (!root || root.getAttribute('data-cw') === '1') { return; }
+  root.setAttribute('data-cw', '1');
+
+  var track = root.querySelector('.cw-track');
+  var list = document.getElementById('pnCwList');
+  var card = document.getElementById('pnCwCard');
+  var pauseBtn = root.querySelector('.cw-pause');
+  var findBtn = card.querySelector('.cw-find');
+  var goLink = card.querySelector('.cw-go');
+  var MONTHS = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  var SIGNALS = { 'Record':1, 'First':1, 'Oversubscribed':1, 'Innovative':1 };
+  var STORE = 'pnCwV20', KEEP_MS = 30 * 60 * 1000;
+  var items = [], current = -1;
+
+  function phone(){ return window.matchMedia && window.matchMedia('(max-width:640px)').matches; }
+  function reduced(){ return window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches; }
+  function day(iso){
+    var m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(iso || '');
+    return m ? (parseInt(m[3], 10) + ' ' + MONTHS[parseInt(m[2], 10) - 1]) : '';
+  }
+  function okUrl(u){ return typeof u === 'string' && u.indexOf('https://') === 0 && u.indexOf('?') < 0; }
+
+  /* a file that breaks the format is ignored, so the tape never shows a broken deal */
+  function clean(d){
+    if (!d || d.page !== 'ticker' || !Array.isArray(d.items)) { return null; }
+    var out = [];
+    for (var i = 0; i < d.items.length && out.length < 12; i++){
+      var x = d.items[i];
+      if (!x || !x.nation || !x.figure || !x.line || !x.title || !x.source || !okUrl(x.url)) { continue; }
+      out.push({ date:String(x.date || ''), nation:String(x.nation), slug:String(x.slug || ''), figure:String(x.figure),
+                 line:String(x.line), signal:SIGNALS[x.signal] ? x.signal : '', title:String(x.title),
+                 source:String(x.source), url:x.url });
+    }
+    if (out.length < 4) { return null; }
+    return { items:out, updated:String(d.updated || ''), edition:String(d.edition || ''),
+             deals:d.count && d.count.deals, nations:d.count && d.count.nations };
+  }
+
+  function el(tag, cls, text){
+    var e = document.createElement(tag);
+    if (cls) { e.className = cls; }
+    if (text) { e.textContent = text; }
+    return e;
+  }
+
+  /* the second copy makes the loop seamless; it is hidden from screen readers and the keyboard */
+  function loop(){
+    var old = track.querySelector('.cw-list[aria-hidden="true"]');
+    if (old) { track.removeChild(old); }
+    var copy = list.cloneNode(true);
+    copy.removeAttribute('id');
+    copy.setAttribute('aria-hidden', 'true');
+    var b = copy.querySelectorAll('button');
+    for (var i = 0; i < b.length; i++) { b[i].setAttribute('tabindex', '-1'); }
+    track.appendChild(copy);
+    var w = list.getBoundingClientRect().width;
+    if (w > 0) { root.style.setProperty('--speed', Math.max(30, Math.round(w / (phone() ? 34 : 46))) + 's'); }
+  }
+
+  function counts(data){
+    var cnt = (data.deals > 0 && data.nations > 0) ? (data.deals + ' deals \u00b7 ' + data.nations + ' nations') : '';
+    var upd = data.updated ? ('Updated ' + day(data.updated) + (data.edition ? ', ' + data.edition : '')) : '';
+    var c = root.querySelectorAll('.cw-cnt'), u = root.querySelectorAll('.cw-upd'), k;
+    for (k = 0; k < c.length; k++) { if (cnt) { c[k].textContent = cnt; } }
+    for (k = 0; k < u.length; k++) { if (upd) { u[k].textContent = upd; } }
+  }
+
+  function render(data){
+    items = data.items;
+    var frag = document.createDocumentFragment();
+    for (var i = 0; i < items.length; i++){
+      var x = items[i], li = el('li'), b = el('button', 'cw-i');
+      b.type = 'button';
+      b.setAttribute('data-i', String(i));
+      b.setAttribute('aria-label', x.nation + ', ' + x.figure + ', ' + x.line + (x.signal ? ', ' + x.signal : '') + '. Open the deal');
+      b.appendChild(el('span', 'cw-n', x.nation));
+      b.appendChild(el('span', 'cw-f', x.figure));
+      b.appendChild(el('span', 'cw-l', x.line));
+      if (x.signal) { b.appendChild(el('span', 'cw-s', x.signal)); }
+      li.appendChild(b); frag.appendChild(li);
+    }
+    list.innerHTML = '';
+    list.appendChild(frag);
+    counts(data);
+    if (current >= 0) { close(); }
+    loop();
+  }
+
+  function planetKnows(slug){
+    try { return !!(slug && window.PNHG_CFG && window.PNHG_CFG.nations && window.PNHG_CFG.nations[slug]); } catch (e) { return false; }
+  }
+
+  function open(i){
+    var x = items[i]; if (!x) { return; }
+    current = i;
+    card.querySelector('.cw-kn').textContent = x.nation;
+    card.querySelector('.cw-kf').textContent = x.figure;
+    card.querySelector('.cw-kd').textContent = day(x.date);
+    card.querySelector('.cw-ks').textContent = x.signal;
+    card.querySelector('.cw-h').textContent = x.title;
+    card.querySelector('.cw-by').textContent = 'Reported by ' + x.source;
+    goLink.href = x.url;
+    goLink.setAttribute('aria-label', 'Read the source at ' + x.source + ' (opens in a new tab)');
+    findBtn.hidden = !planetKnows(x.slug);
+    var on = root.querySelectorAll('.cw-i.is-on');
+    for (var k = 0; k < on.length; k++) { on[k].classList.remove('is-on'); }
+    var mine = root.querySelectorAll('.cw-i[data-i="' + i + '"]');
+    for (k = 0; k < mine.length; k++) { mine[k].classList.add('is-on'); }
+    root.classList.add('is-card');
+  }
+  function close(){
+    current = -1;
+    root.classList.remove('is-card');
+    var on = root.querySelectorAll('.cw-i.is-on');
+    for (var k = 0; k < on.length; k++) { on[k].classList.remove('is-on'); }
+  }
+
+  track.addEventListener('click', function(ev){
+    var b = ev.target.closest ? ev.target.closest('.cw-i') : null;
+    if (!b) { return; }
+    var i = parseInt(b.getAttribute('data-i'), 10);
+    if (i === current) { close(); } else { open(i); }
+  });
+  card.querySelector('.cw-x').addEventListener('click', close);
+  root.addEventListener('keydown', function(ev){ if (ev.key === 'Escape' && current >= 0) { close(); } });
+
+  /* Find on the planet: up to the golden planet, which turns to the nation and rings it */
+  findBtn.addEventListener('click', function(){
+    var x = items[current]; if (!x) { return; }
+    var band = document.getElementById('pnhgGlobe') || document.getElementById('pn-hero');
+    if (band && band.scrollIntoView) {
+      try { band.scrollIntoView({ behavior: reduced() ? 'auto' : 'smooth', block: 'center' }); } catch (e) { band.scrollIntoView(); }
+    }
+    setTimeout(function(){
+      if (typeof window.pnhgFocus === 'function') { try { window.pnhgFocus(x.slug, x.figure); } catch (e) {} }
+    }, reduced() ? 0 : 650);
+  });
+
+  pauseBtn.addEventListener('click', function(){
+    var p = root.classList.toggle('is-paused');
+    pauseBtn.setAttribute('aria-pressed', p ? 'true' : 'false');
+    pauseBtn.setAttribute('aria-label', p ? 'Play the Capital Wire' : 'Pause the Capital Wire');
+  });
+
+  /* no motion off screen or in a hidden tab */
+  var seen = true;
+  function sync(){ root.classList.toggle('is-off', !seen || document.hidden); }
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(function(en){ seen = en[0].isIntersecting; sync(); }, { rootMargin: '80px 0px' }).observe(root);
+  }
+  document.addEventListener('visibilitychange', sync);
+
+  /* the deals built into this widget, until the live file arrives */
+  try {
+    var seed = clean(JSON.parse(document.getElementById('pnCwSeed').textContent));
+    if (seed) { items = seed.items; }
+  } catch (e) {}
+  loop();
+  if (document.fonts && document.fonts.ready) { document.fonts.ready.then(loop); }
+  var rz = null, lastW = window.innerWidth;
+  window.addEventListener('resize', function(){
+    if (window.innerWidth === lastW) { return; }
+    lastW = window.innerWidth; clearTimeout(rz); rz = setTimeout(loop, 200);
+  });
+
+  function remember(d){ try { window.sessionStorage.setItem(STORE, JSON.stringify({ at: Date.now(), d: d })); } catch (e) {} }
+  function kept(){
+    try {
+      var k = JSON.parse(window.sessionStorage.getItem(STORE) || 'null');
+      if (k && k.at && (Date.now() - k.at) < KEEP_MS) { return clean(k.d); }
+    } catch (e) {}
+    return null;
+  }
+  function same(a){
+    if (!a || a.items.length !== items.length) { return false; }
+    for (var i = 0; i < a.items.length; i++) { var o = a.items[i], q = items[i]; if (o.url !== q.url || o.figure !== q.figure || o.line !== q.line || o.signal !== q.signal || o.nation !== q.nation) { return false; } }
+    return true;
+  }
+  /* the same deals keep their place on the tape; only the counts change */
+  function apply(d){ if (!d) { return; } if (same(d)) { counts(d); } else { render(d); } }
+
+  /* the live file is read only after the page has loaded, so the planet loads first */
+  function fetchLive(){
+    var k = kept();
+    if (k) { apply(k); return; }
+    if (!window.fetch) { return; }
+    var urls = [root.getAttribute('data-src'), root.getAttribute('data-mirror')];
+    (function get(n){
+      if (n >= urls.length || !urls[n]) { return; }
+      fetch(urls[n], { cache: 'no-cache' }).then(function(r){
+        if (!r.ok) { throw new Error(String(r.status)); }
+        return r.json();
+      }).then(function(raw){
+        var d = clean(raw);
+        if (!d) { throw new Error('format'); }
+        remember(raw); apply(d);
+      }).catch(function(){ get(n + 1); });
+    })(0);
+  }
+  function later(){
+    if ('requestIdleCallback' in window) { window.requestIdleCallback(fetchLive, { timeout: 3000 }); }
+    else { setTimeout(fetchLive, 1200); }
+  }
+  if (document.readyState === 'complete') { later(); } else { window.addEventListener('load', later); }
+})();
+</script>
