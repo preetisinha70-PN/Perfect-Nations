@@ -2,9 +2,21 @@
   "updated": "2026-11-05",
   "about": "Pages served live on perfectnations.org by the Perfect Nations Live Pages plugin. Each key is the id of the page's root element; the plugin serves the file in place of any pasted Custom HTML widget that contains that id. A key written as root@post-slug applies on that one post only, and is used before the plain root (plugin 1.1 or later). 'redirects' lists same-site paths answered with a 301 (plugin 1.1 or later). A change merged into main appears on the site within about ten minutes.",
   "pages": {
+    "pn-hd": {
+      "file": "pages/header.html",
+      "version": "19.1",
+      "title": "Header (every page)",
+      "url": "https://perfectnations.org/"
+    },
+    "pn-ft": {
+      "file": "pages/footer.html",
+      "version": "8.1",
+      "title": "Footer (every page)",
+      "url": "https://perfectnations.org/"
+    },
     "pn-son": {
       "file": "pages/state-of-nations.html",
-      "version": "6.1",
+      "version": "6.2",
       "title": "State of Nations",
       "url": "https://perfectnations.org/state-of-nations/"
     },
@@ -28,7 +40,7 @@
     },
     "pn-about": {
       "file": "pages/about.html",
-      "version": "8.8",
+      "version": "8.9",
       "title": "About",
       "url": "https://perfectnations.org/about/"
     },

@@ -1,0 +1,125 @@
+<!-- ===========================================================================
+PERFECT NATIONS - FOOTER - v8.1 DEEP OCEAN - 2026-11-05
+v8.1: the ground turns Deep Ocean (#0A3550 falling to #072638), the deep sea beneath the
+Earthrise header. The logo is the new seven-star mark, with the earlier file as a fallback.
+The seven earths band, every link and the legal line stay the same.
+v8.0: a slim footer: one row with the mark, every link and the way in; one line of legal text below.
+The seven earths band is kept, thinner. About a third of the former height.
+v7.8: Perfect Nations Gallery links to /perfect-nations-gallery/.
+v7.7: The Collection becomes Perfect Nations Gallery (/gallery/); The Stewards becomes About (/about/).
+v7.6: the Store link is removed from The Studio column.
+v7.5: the Gallery link becomes The Collection (/collection/). The band of country
+blueprints is removed; the Blueprints link in The Nations column remains.
+v7.4: Perfect Capita keeps its name.
+v7.2: the Publications column (Dispatches, Newswire, The Book) is retired; State of Nations joins The Nations. Four columns.
+Deep Ocean ground: the page ends in the deep sea. A band of the seven earths runs
+along the top, one for each standard of living.
+Gold is used only for the call to action and the email address.
+=========================================================================== -->
+<style>
+#pn-ft{
+  --g:var(--pn-brand-gold,#E3C258); --grgb:var(--pn-brand-gold-rgb,227,194,88);
+  --iv:#F5F1E8; --mut:rgba(245,241,232,.78); --dim:rgba(245,241,232,.58); --hair:rgba(245,241,232,.12);
+  --hd:var(--pn-font-heading,'Barlow Condensed','Arial Narrow',Arial,sans-serif);
+  --bd:var(--pn-font-body,'Barlow Semi Condensed','Arial Narrow',Arial,sans-serif);
+  position:relative; overflow:hidden; isolation:isolate;
+  background:linear-gradient(180deg,#0A3550 0%,#072638 100%);
+  color:var(--iv); font-family:var(--bd); line-height:1.5;
+}
+#pn-ft *,#pn-ft *::before,#pn-ft *::after{ box-sizing:border-box; }
+.elementor-location-footer .e-con, .elementor-location-footer .e-con-inner, .elementor-location-footer .elementor-container,
+.elementor-location-footer .elementor-widget-wrap, .elementor-location-footer .elementor-widget-html, .elementor-location-footer .elementor-element{
+  padding-top:0 !important; padding-bottom:0 !important; margin-top:0 !important; margin-bottom:0 !important;
+}
+/* the seven earths */
+#pn-ft .pnft-strata{ display:flex; height:3px; margin:0; padding:0; list-style:none; }
+#pn-ft .pnft-strata li{ flex:1; background:var(--c); }
+#pn-ft .pnft-in{ width:100%; max-width:1480px; margin:0 auto; padding:22px clamp(20px,5vw,72px) 16px; }
+/* one row: mark, links, the way in */
+#pn-ft .pnft-row{ display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:16px 32px; padding-bottom:16px; border-bottom:1px solid var(--hair); }
+#pn-ft .pnft-brand{ display:inline-flex; align-items:center; gap:10px; text-decoration:none; color:var(--iv); flex:none; }
+#pn-ft .pnft-logo{ width:30px; height:30px; object-fit:contain; display:block; }
+#pn-ft .pnft-word{ font-family:var(--hd); font-weight:700; font-size:1.05rem; letter-spacing:.12em; text-transform:uppercase; line-height:1; }
+#pn-ft .pnft-word sup{ font-size:.5em; letter-spacing:0; margin-left:1px; }
+#pn-ft .pnft-nav{ flex:1 1 520px; min-width:0; }
+#pn-ft .pnft-nav ul{ display:flex; flex-wrap:wrap; justify-content:center; gap:6px 18px; margin:0; padding:0; list-style:none; }
+#pn-ft .pnft-nav a{ color:var(--mut); text-decoration:none; font-family:var(--hd); font-size:.76rem; font-weight:600; letter-spacing:.09em; text-transform:uppercase; white-space:nowrap; transition:color .2s ease; }
+#pn-ft .pnft-nav a:hover{ color:var(--iv); }
+#pn-ft .pnft-reach{ display:flex; align-items:center; gap:16px; flex:none; }
+#pn-ft .pnft-mail{ color:var(--g); text-decoration:none; font-size:inherit; border-bottom:1px solid rgba(var(--grgb),.35); padding-bottom:1px; }
+#pn-ft .pnft-mail:hover{ border-color:var(--g); }
+#pn-ft .pnft-btn{ display:inline-flex; align-items:center; gap:10px; padding:10px 18px 8px; border-radius:999px; text-decoration:none; background:var(--g); color:#1A140C; font-family:var(--hd); font-size:.68rem; font-weight:700; letter-spacing:.18em; text-transform:uppercase; transition:background .22s ease; }
+#pn-ft .pnft-btn::after{ content:"\2192"; font-family:Arial,sans-serif; font-size:.9rem; letter-spacing:0; }
+#pn-ft .pnft-btn:hover{ background:#F0D68F; }
+#pn-ft :focus-visible{ outline:2px solid #F0D68F; outline-offset:3px; border-radius:4px; }
+/* one line of legal text */
+#pn-ft .pnft-legal{ display:flex; justify-content:space-between; align-items:baseline; gap:6px 32px; flex-wrap:wrap; padding-top:12px; font-size:.68rem; line-height:1.5; color:var(--dim); }
+#pn-ft .pnft-legal p{ margin:0; max-width:120ch; }
+#pn-ft .pnft-copy{ white-space:nowrap; letter-spacing:.06em; }
+@media (max-width:1180px){
+  #pn-ft .pnft-row{ justify-content:center; text-align:center; }
+  #pn-ft .pnft-nav{ order:3; flex-basis:100%; }
+  #pn-ft .pnft-reach{ order:2; }
+}
+@media (max-width:560px){
+  #pn-ft .pnft-in{ padding:20px 18px 14px; }
+  #pn-ft .pnft-row{ flex-direction:column; gap:14px; }
+  #pn-ft .pnft-nav ul{ gap:8px 16px; }
+  #pn-ft .pnft-nav a{ font-size:.76rem; }
+  #pn-ft .pnft-reach{ flex-direction:column; gap:10px; }
+  #pn-ft .pnft-legal{ justify-content:center; text-align:center; }
+}
+@media (prefers-reduced-motion:reduce){ #pn-ft *{ transition:none !important; } }
+
+/* ---- FULL WIDTH, EDGE TO EDGE ----
+   The black strips at the sides were the template's boxed container and its
+   side padding showing the page background. These release both, and the
+   bar itself is drawn to the full width of the screen. overflow-x:clip on the
+   page stops the full-width bar adding a sideways scroll on Windows. */
+html:has(#pn-ft), html:has(#pn-ft) body{ overflow-x:clip; }
+.elementor-location-footer, .elementor-location-footer .e-con, .elementor-location-footer .e-con-inner,
+.elementor-location-footer .elementor-section, .elementor-location-footer .elementor-container,
+.elementor-location-footer .elementor-column, .elementor-location-footer .elementor-widget-wrap,
+.elementor-location-footer .elementor-element-populated, .elementor-location-footer .elementor-widget-html{
+  --content-width:100%; --container-max-width:100%;
+  --padding-left:0px; --padding-right:0px;
+  max-width:none !important; padding-left:0 !important; padding-right:0 !important;
+  margin-left:0 !important; margin-right:0 !important;
+  background-color:transparent;
+}
+#pn-ft{ width:100vw; max-width:100vw; margin-left:calc(50% - 50vw); }
+</style>
+<footer id="pn-ft">
+  <ul class="pnft-strata" aria-hidden="true">
+    <li style="--c:#D9C293;"></li><li style="--c:#0C3A52;"></li><li style="--c:#7A3420;"></li><li style="--c:#5E5048;"></li><li style="--c:#1B3F7A;"></li><li style="--c:#145C4B;"></li><li style="--c:#123A2C;"></li>
+  </ul>
+  <div class="pnft-in">
+    <div class="pnft-row">
+      <a class="pnft-brand" href="https://perfectnations.org/" aria-label="Perfect Nations - home">
+        <img class="pnft-logo" src="https://perfectnations.org/wp-content/uploads/2026/11/pn-logo-gold-7-stars.png" alt="" width="30" height="30"
+             onerror="this.onerror=function(){this.onerror=null;this.style.display='none'};this.src='https://perfectnations.org/wp-content/uploads/2026/08/pnlogoe3c258.png'">
+        <span class="pnft-word">Perfect Nations<sup>&trade;</sup></span>
+      </a>
+      <nav class="pnft-nav" aria-label="Footer navigation">
+        <ul>
+          <li><a href="https://perfectnations.org/blueprints/">Blueprints</a></li>
+          <li><a href="https://perfectnations.org/sovereign-assets/">Sovereign Assets</a></li>
+          <li><a href="https://perfectnations.org/perfect-capita/">Perfect Capita</a></li>
+          <li><a href="https://perfectnations.org/capital-architecture/">Capital Architecture</a></li>
+          <li><a href="https://perfectnations.org/design-studio/">Design Studio</a></li>
+          <li><a href="https://perfectnations.org/perfect-nations-gallery/">Perfect Nations Gallery</a></li>
+          <li><a href="https://perfectnations.org/state-of-nations/">State of Nations</a></li>
+          <li><a href="https://perfectnations.org/about/">About</a></li>
+          <li><a href="https://perfectnations.org/contact/">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="pnft-reach">
+        <a class="pnft-btn" href="https://perfectnations.org/contact/">Start a conversation</a>
+      </div>
+    </div>
+    <div class="pnft-legal">
+      <p>Perfect Nations&trade; is a trademark of Perfect Nations LLC, New York. Publications and products are for research, strategy, education and creative purposes, and are not investment advice, legal advice, securities offerings or official government documents.</p>
+      <p class="pnft-copy"><a class="pnft-mail" href="mailto:contact@perfectnations.org">contact@perfectnations.org</a> &middot; &copy; 2026 Perfect Nations LLC</p>
+    </div>
+  </div>
+</footer>
