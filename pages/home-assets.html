@@ -1,5 +1,6 @@
 <!-- ===========================================================================
-PERFECT NATIONS - HOMEPAGE - SECTION 03 - SOVEREIGN ASSETS - v5.0 MOVE 01 - 2026-11-06
+PERFECT NATIONS - HOMEPAGE - SECTION 03 - SOVEREIGN ASSETS - v5.1 MOVE 01 - 2026-11-06
+v5.1: Earthrise ground (was malachite), as the whole homepage keeps one palette.
 One Elementor Custom HTML widget, Full Width, padding 0. Served live from GitHub
 (pages/home-assets.html) by the Perfect Nations Live Pages plugin, in place of the pasted v4
 (root id pn-assets).
@@ -220,6 +221,14 @@ Ground: malachite. Photographs at full colour, no veil; text sits on solid plate
   #pn-assets .pna-nav{ display:none !important; }
   #pn-assets .pna-in > p:last-child{ margin-top:14px !important; }
   #pn-assets .pna-in > p:last-child .pna-btn{ display:flex; width:100%; }
+}
+/* v7: one palette - Earthrise and ivory, gold for what a visitor can act on; the painted seams carry the colour */
+#pn-assets{
+  --bg:#0F4C5C; --bg2:#082A30; --plate:#0A3840; --plate2:#072A30;
+  background:
+    radial-gradient(70% 55% at 82% 0%, rgba(120,200,205,.14) 0%, transparent 64%),
+    radial-gradient(50% 45% at 8% 100%, rgba(227,194,88,.07) 0%, transparent 62%),
+    linear-gradient(180deg, var(--bg) 0%, var(--bg2) 100%);
 }
 </style>
 

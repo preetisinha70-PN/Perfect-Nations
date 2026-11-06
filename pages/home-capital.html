@@ -1,5 +1,7 @@
 <!-- ===========================================================================
-PERFECT NATIONS - HOMEPAGE - SECTION 05 - CAPITAL ARCHITECTURE - v6.1 MOVE 04 - 2026-11-06
+PERFECT NATIONS - HOMEPAGE - SECTION 05 - CAPITAL ARCHITECTURE - v6.2 MOVE 04 - 2026-11-06
+v6.2: Earthrise ground (was lapis), as the whole homepage keeps one palette; the ivory panel and
+the Standard Tokens card are set in Earthrise ink.
 One Elementor Custom HTML widget, Full Width, padding 0. Served live from GitHub
 (pages/home-capital.html) by the Perfect Nations Live Pages plugin, in place of the pasted v5.3
 (root id pn-capital). Replaces v5.4 too.
@@ -277,6 +279,18 @@ Ground: lapis. Photographs at full colour, no veil; text sits on solid plates.
   #pn-capital .pnca-foot{ display:grid !important; grid-template-columns:minmax(0,1fr); gap:8px; margin-top:16px; padding:0 18px !important; }
   #pn-capital .pnca-foot .pnca-btn{ width:100%; }
 }
+/* v7: one palette - Earthrise and ivory, gold for what a visitor can act on; the painted seams carry the colour */
+#pn-capital{
+  --bg:#0B3D45; --bg2:#072429; --plate:#0A3840; --plate2:#072A30;
+  background:
+    radial-gradient(70% 55% at 82% 0%, rgba(120,200,205,.14) 0%, transparent 64%),
+    radial-gradient(50% 45% at 8% 100%, rgba(227,194,88,.07) 0%, transparent 62%),
+    linear-gradient(180deg, var(--bg) 0%, var(--bg2) 100%);
+}
+#pn-capital .pnca-panel,#pn-capital .pnca-card--own,#pn-capital .pnca-card--own .pnca-num,#pn-capital .pnca-card--own h3{ color:#0E2F35; }
+#pn-capital .pnca-panel b,#pn-capital .pnca-card--own .pnca-tag{ color:#8A3A22; }
+#pn-capital .pnca-card--own .pnca-eg{ color:rgba(14,47,53,.75); }
+#pn-capital .pnca-card,#pn-capital .pnca-card:hover{ box-shadow:0 22px 50px rgba(2,16,20,.45); }
 </style>
 
 <section id="pn-capital" aria-labelledby="pnca-h">

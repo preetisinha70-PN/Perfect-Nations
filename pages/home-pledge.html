@@ -1,0 +1,81 @@
+<!-- ===========================================================================
+PERFECT NATIONS - HOMEPAGE - SECTION 09 - THE PLEDGE - v6.0 CLOSING BAND - 2026-11-06
+Served live from GitHub (pages/home-pledge.html); part of the one-file homepage (pages/home.html).
+v6.0: Earthrise ground (was forest green), as the whole homepage keeps one palette. Words unchanged.
+=========================================================================== -->
+<style>
+#pn-pledge{
+  --bg:#164A37; --bg2:#0A251C;
+  --fg:#F5F1E8; --mut:rgba(245,241,232,.82);
+  --acc:#E3C258; --accs:#F0D68F; --accrgb:227,194,88; --onacc:#1A140C;
+  --hd:var(--pn-font-heading,"Barlow Condensed","Arial Narrow",Arial,sans-serif);
+  --bd:var(--pn-font-body,"Barlow Semi Condensed",Arial,sans-serif);
+  position:relative; isolation:isolate;
+  width:100vw; margin-left:calc(50% - 50vw);
+  overflow-x:hidden; overflow-x:clip;
+  padding:clamp(26px,4.2vh,46px) 0;
+  color:var(--fg); font-family:var(--bd); line-height:1.5; box-sizing:border-box;
+  background:
+    radial-gradient(60% 120% at 85% 0%, rgba(255,214,140,.20) 0%, transparent 64%),
+    linear-gradient(180deg, var(--bg) 0%, var(--bg2) 100%);
+}
+#pn-pledge *,#pn-pledge *::before,#pn-pledge *::after{ box-sizing:border-box; }
+.elementor-widget-html:has(#pn-pledge),
+.elementor-widget:has(#pn-pledge),
+.e-con-inner:has(#pn-pledge),
+.e-con:has(#pn-pledge){
+  padding-top:0 !important; padding-bottom:0 !important;
+  --widgets-spacing:0px !important; row-gap:0 !important;
+}
+#pn-pledge .pnpl-in{
+  width:100%; max-width:1480px; margin:0 auto; padding:0 clamp(20px,5vw,72px);
+  display:flex; align-items:center; justify-content:space-between; gap:18px 40px; flex-wrap:wrap;
+}
+#pn-pledge h2.pnpl-h{
+  margin:0; font-family:var(--hd); font-weight:600;
+  font-size:clamp(1.6rem,2.6vw,2.4rem); line-height:1; letter-spacing:-.015em;
+  color:var(--fg) !important; text-transform:none;
+}
+#pn-pledge .pnpl-line{ margin:8px 0 0; max-width:none; text-wrap:balance; font-size:clamp(.95rem,1.1vw,1.05rem); line-height:1.45; color:var(--mut); }
+#pn-pledge .pnpl-ctas{ display:flex; gap:12px; flex-wrap:wrap; flex:none; }
+#pn-pledge .pnpl-btn{
+  display:inline-flex; align-items:center; justify-content:center; gap:12px;
+  padding:13px 26px 11px; border-radius:999px; text-decoration:none; cursor:pointer;
+  font-family:var(--hd); font-size:.74rem; font-weight:700; letter-spacing:.19em; text-transform:uppercase;
+  border:1px solid var(--acc); background:var(--acc); color:var(--onacc);
+  box-shadow:0 10px 28px rgba(var(--accrgb),.24);
+  transition:transform .22s ease, background .22s ease, border-color .22s ease;
+}
+#pn-pledge .pnpl-btn::after{ content:"\2192"; font-family:Arial,sans-serif; font-size:1rem; letter-spacing:0; transition:transform .3s cubic-bezier(.22,1,.36,1); }
+#pn-pledge .pnpl-btn:hover{ transform:translateY(-2px); background:var(--accs); border-color:var(--accs); }
+#pn-pledge .pnpl-btn:hover::after{ transform:translateX(6px); }
+#pn-pledge .pnpl-btn:focus-visible{ outline:2px solid var(--accs); outline-offset:3px; }
+#pn-pledge .pnpl-btn--line{ background:transparent; color:var(--acc); border-color:rgba(var(--accrgb),.6); box-shadow:none; }
+#pn-pledge .pnpl-btn--line:hover{ background:rgba(var(--accrgb),.12); color:var(--acc); }
+@media (max-width:760px){
+  #pn-pledge .pnpl-in{ flex-direction:column; align-items:stretch; text-align:center; gap:16px; }
+  #pn-pledge h2.pnpl-h{ font-size:1.55rem; }
+  #pn-pledge .pnpl-line{ margin-left:auto; margin-right:auto; font-size:.94rem; }
+  #pn-pledge .pnpl-ctas{ flex-direction:column; gap:10px; width:100%; max-width:320px; margin:0 auto; }
+  #pn-pledge .pnpl-btn{ padding:12px 22px 10px; }
+}
+@media (prefers-reduced-motion:reduce){
+  #pn-pledge *{ transition:none !important; animation:none !important; }
+}
+/* v6.0 */
+#pn-pledge{ --bg:#0F4C5C; --bg2:#082A30; }
+#pn-pledge h2,#pn-pledge p{ text-shadow:none !important; }
+</style>
+
+<section id="pn-pledge" aria-labelledby="pnpl-h">
+  <div class="pnpl-in">
+    <div>
+      <h2 class="pnpl-h" id="pnpl-h">What could your nation become?</h2>
+      <p class="pnpl-line">The success of our civilization must be defined by basic standards of living for all.</p>
+    </div>
+    <div class="pnpl-ctas">
+      <a class="pnpl-btn" href="https://perfectnations.org/contact/">Start a conversation</a>
+      <a class="pnpl-btn pnpl-btn--line" href="https://perfectnations.org/blueprints/">Explore the blueprints</a>
+    </div>
+  </div>
+</section>
