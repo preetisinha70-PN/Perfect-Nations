@@ -1,5 +1,5 @@
 <!-- ===========================================================================
-PERFECT NATIONS - STATE OF NATIONS PAGE - v6.2 - 2026-11-05 - LIVE DATA
+PERFECT NATIONS - STATE OF NATIONS PAGE - v6.2.1 - 2026-11-06 - LIVE DATA
 v6.2: the cup mark (the championship cup of the logo between two short solid lines on each side) replaces the
 laurels and star above the title.
 /state-of-nations/. One Elementor Custom HTML widget: Full Width, padding 0, Hide Title.
@@ -1201,7 +1201,7 @@ html.pn-son-lock,html.pn-son-lock body{ overflow:hidden; }
   var FEEDS = (root.getAttribute('data-feed') || '').split(' ').filter(function (x) { return safe(x); });
   function getFeed(i) {
     if (i >= FEEDS.length || !window.fetch) { return Promise.reject(new Error('no feed')); }
-    return fetch(FEEDS[i], { cache: 'no-store' }).then(function (r) { if (!r.ok) { throw new Error('feed ' + r.status); } return r.json(); })
+    return fetch(FEEDS[i], { cache: 'no-cache' }).then(function (r) { if (!r.ok) { throw new Error('feed ' + r.status); } return r.json(); })
       .catch(function () { return getFeed(i + 1); });
   }
   function useFeed(d) {
