@@ -4,7 +4,7 @@
   "pages": {
     "pn-hd": {
       "file": "pages/header.html",
-      "version": "19.1",
+      "version": "19.1.1",
       "title": "Header (every page)",
       "url": "https://perfectnations.org/"
     },
@@ -604,9 +604,19 @@
     }
   },
   "redirects": {
-    "/dear-zimbabwe-2/": "/dear-zimbabwe/"
+    "/dear-zimbabwe-2/": "/dear-zimbabwe/",
+    "/cart/": "/perfect-nations-gallery/",
+    "/checkout/": "/perfect-nations-gallery/",
+    "/my-account/": "/perfect-nations-gallery/",
+    "/store/": "/perfect-nations-gallery/",
+    "/blueprints/shop/": "/perfect-nations-gallery/"
   },
   "redirects_about": {
-    "/dear-zimbabwe-2/": "A second copy of the Zimbabwe letter (post 17327). The Zimbabwe blueprint links to /dear-zimbabwe/ (post 16630), which shows the current letter."
+    "/dear-zimbabwe-2/": "A second copy of the Zimbabwe letter (post 17327). The Zimbabwe blueprint links to /dear-zimbabwe/ (post 16630), which shows the current letter.",
+    "/cart/": "WooCommerce was switched off on 6 Nov 2026 (works are sold by enquiry from the Gallery), so the old store pages lead to the Gallery. Remove this line if the store is switched on again.",
+    "/checkout/": "WooCommerce was switched off on 6 Nov 2026 (works are sold by enquiry from the Gallery), so the old store pages lead to the Gallery. Remove this line if the store is switched on again.",
+    "/my-account/": "WooCommerce was switched off on 6 Nov 2026 (works are sold by enquiry from the Gallery), so the old store pages lead to the Gallery. Remove this line if the store is switched on again.",
+    "/store/": "WooCommerce was switched off on 6 Nov 2026 (works are sold by enquiry from the Gallery), so the old store pages lead to the Gallery. Remove this line if the store is switched on again.",
+    "/blueprints/shop/": "WooCommerce was switched off on 6 Nov 2026 (works are sold by enquiry from the Gallery), so the old store pages lead to the Gallery. Remove this line if the store is switched on again."
   }
 }
