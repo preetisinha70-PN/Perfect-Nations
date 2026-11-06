@@ -1,5 +1,5 @@
 <!-- ===========================================================================
-PERFECT NATIONS - HOMEPAGE - THE WHOLE PAGE IN ONE FILE - v7.1 - 2026-11-06
+PERFECT NATIONS - HOMEPAGE - THE WHOLE PAGE IN ONE FILE - v7.2 - 2026-11-06
 Paste this file ONCE into ONE Elementor Custom HTML widget on the homepage (page 13465), in a Full
 Width container with padding 0, and delete every other widget on the page. From then on the Perfect
 Nations Live Pages plugin serves pages/home.html from GitHub in place of the paste (root id pn-home,
@@ -1376,9 +1376,11 @@ oc Australia and Oceania.
 </script>
 <!-- ======== part: pages/home-hero.html ======== -->
 <!-- ===========================================================================
-PERFECT NATIONS - HOMEPAGE - SECTION 01 - CIVILIZATION RE-DEFINED - v6.0 THE IGNITION - 2026-11-06
+PERFECT NATIONS - HOMEPAGE - SECTION 01 - CIVILIZATION RE-DEFINED - v6.1 THE IGNITION - 2026-11-06
 Served live from GitHub (pages/home-hero.html) by the Perfect Nations Live Pages plugin;
 the root id stays pn-hero, so the widget already on the homepage is the one replaced.
+v6.1: the counter of open blueprints is removed from the planet (decision of the Steward-General).
+  The gold ripples of the ignition stay.
 v6.0: the planet opens the blueprints and lights up. Choosing a published nation opens its blueprint
   at once in a new tab (it used to open the Nations Menu card, then the page in the same tab). The
   ignition: when the planet appears, the 44 open blueprints light up one by one with gold ripples
@@ -1580,36 +1582,6 @@ If the address differs, change it in the two places it appears (search for pn-ho
 #pn-hero .pnhg-ctl button:focus-visible{ outline:2px solid var(--gs); outline-offset:2px; }
 #pn-hero .pnhg-ctl button.is-off{ border-color:var(--iv); color:var(--iv); }
 
-/* ---------- v6.0: the counter of open blueprints, lit by the ignition ---------- */
-#pn-hero .pnhg-count{
-  position:absolute; z-index:5; left:clamp(18px,4.6vw,76px); bottom:clamp(24px,6vh,70px);
-  display:flex; flex-direction:column; align-items:flex-start; gap:8px;
-  text-align:left; text-decoration:none !important; color:var(--iv);
-}
-#pn-hero .pnhg-count__n{ display:flex; align-items:flex-start; gap:4px; font-family:var(--hd); font-weight:700; line-height:.8; }
-#pn-hero .pnhg-count__n b{
-  display:inline-block; min-width:1.1em; transform-origin:0 100%;
-  font-size:clamp(4.4rem,8.6vw,8.4rem); font-weight:700; letter-spacing:-.035em; font-variant-numeric:tabular-nums;
-  color:#FFD45C; background:linear-gradient(180deg,#FFF6D2 0%,#FFD45C 50%,#D9A92E 100%);
-  -webkit-background-clip:text; background-clip:text;
-  filter:drop-shadow(0 0 16px rgba(255,212,92,.32));
-}
-@supports ((-webkit-background-clip:text) or (background-clip:text)){
-  #pn-hero .pnhg-count__n b{ -webkit-text-fill-color:transparent; }
-}
-#pn-hero .pnhg-count__n small{ margin-top:.45em; font-size:clamp(1rem,1.5vw,1.45rem); font-weight:600; letter-spacing:.02em; color:rgba(244,236,216,.72); }
-#pn-hero .pnhg-count__t{
-  padding-top:9px; border-top:1px solid rgba(227,194,88,.6); white-space:nowrap;
-  font-family:var(--hd); font-size:.72rem; font-weight:700; line-height:1.35; letter-spacing:.2em; text-transform:uppercase; color:var(--iv);
-  transition:color .2s ease;
-}
-#pn-hero .pnhg-count:hover .pnhg-count__t{ color:var(--g); }
-#pn-hero .pnhg-count:focus-visible{ outline:2px solid var(--gs); outline-offset:6px; }
-@media (prefers-reduced-motion:no-preference){
-  #pn-hero .pnhg-count.is-done .pnhg-count__n b{ animation:pnhgGlow 3.4s ease-in-out infinite alternate; }
-}
-@keyframes pnhgGlow{ from{ filter:drop-shadow(0 0 10px rgba(255,212,92,.22)); } to{ filter:drop-shadow(0 0 28px rgba(255,212,92,.62)); } }
-
 /* ---------- name card: shown when a nation is chosen on the planet ---------- */
 #pn-hero .pnhg-plate{
   position:absolute; z-index:7; left:50%; top:50%;
@@ -1704,14 +1676,6 @@ If the address differs, change it in the two places it appears (search for pn-ho
   #pn-hero .pnhg-ctas{ flex-direction:column; align-items:stretch; gap:10px; max-width:320px; margin-left:auto; margin-right:auto; }
   #pn-hero .pnhg-btn{ padding:12px 22px 10px; justify-content:center; }
   #pn-hero .pnhg-ctl{ display:none; }
-  #pn-hero .pnhg-count{
-    left:50%; bottom:2px; transform:translateX(-50%); flex-direction:row; align-items:center; gap:12px;
-    padding:7px 18px 7px 16px; border-radius:999px; white-space:nowrap;
-    background:rgba(8,42,48,.9); border:1px solid rgba(227,194,88,.55); box-shadow:0 12px 30px rgba(2,14,22,.45);
-  }
-  #pn-hero .pnhg-count__n b{ font-size:2.7rem; }
-  #pn-hero .pnhg-count__n small{ margin-top:.3em; font-size:.9rem; }
-  #pn-hero .pnhg-count__t{ padding:0 0 0 12px; border-top:0; border-left:1px solid rgba(227,194,88,.55); font-size:.62rem; letter-spacing:.15em; }
 }
 @media (prefers-reduced-motion:reduce){
   #pn-hero *{ transition:none !important; animation:none !important; }
@@ -1865,11 +1829,6 @@ If the address differs, change it in the two places it appears (search for pn-ho
       <button type="button" data-act="reset" aria-label="Reset the globe">&#8962;</button>
       <button type="button" data-act="spin" aria-label="Pause or resume rotation">&#10227;</button>
     </div>
-
-    <a class="pnhg-count" id="pnhgCount" href="https://perfectnations.org/blueprints/">
-      <span class="pnhg-count__n"><b data-n>44</b><small>/195</small></span>
-      <span class="pnhg-count__t">nations with an<br>open blueprint</span>
-    </a>
 
     <div class="pnhg-plate" id="pnhgPlate" aria-live="polite"></div>
 
@@ -2631,22 +2590,13 @@ window.PNHG_CFG={"base":"https://perfectnations.org/blueprints/","paths":{"cote-
     };
 
     /* v6.0: the ignition. When the planet first appears, every open blueprint lights up in turn,
-       nearest first, each with a gold ripple, while the counter climbs to the number of open
-       blueprints. Afterwards an open nation ripples every few seconds, so the planet stays alive. */
-    var count = document.getElementById('pnhgCount');
-    var countN = count ? count.querySelector('[data-n]') : null;
+       nearest first, each with a gold ripple. Afterwards an open nation ripples every few
+       seconds, so the planet stays alive. */
     var ignited = false, beat = null, relightT = null;
     function liveList(){
       var out = [], s;
       for (s in NAT){ if (Object.prototype.hasOwnProperty.call(NAT, s) && NAT[s][1] === 'live') { out.push(s); } }
       return out;
-    }
-    function setCount(n, bump){
-      if (!countN) { return; }
-      countN.textContent = String(n);
-      if (bump && countN.animate) {
-        try { countN.animate([{ transform:'scale(1.14)' }, { transform:'scale(1)' }], { duration:240, easing:'ease-out' }); } catch (e) {}
-      }
     }
     function queueRelight(){
       if (relightT) { return; }
@@ -2683,9 +2633,7 @@ window.PNHG_CFG={"base":"https://perfectnations.org/blueprints/","paths":{"cote-
       if (ignited) { return; }
       ignited = true;
       var list = nearFirst(liveList());
-      if (reduce || !list.length) { setCount(list.length, false); if (count) { count.classList.add('is-done'); } return; }
-      setCount(0, false);
-      if (count) { count.classList.add('is-lit'); }
+      if (reduce || !list.length) { return; }
       /* paced by the clock, not by frames: about four seconds on any device, slow at first,
          then a flood of gold */
       var N = list.length, done = 0, t0 = Date.now(), D = Math.min(4400, 1200 + N * 70);
@@ -2700,9 +2648,7 @@ window.PNHG_CFG={"base":"https://perfectnations.org/blueprints/","paths":{"cote-
         var target = k < 1 ? Math.min(N, Math.max(1, Math.round(e * N))) : N;
         var burst = 0;
         while (done < target) { if (burst < 4) { light(list[done]); burst++; } done++; }
-        setCount(done, burst > 0);
         if (done >= N) {
-          if (count) { count.classList.add('is-done'); }
           window.setTimeout(heartbeat, 1800);
           return;
         }
@@ -2711,13 +2657,6 @@ window.PNHG_CFG={"base":"https://perfectnations.org/blueprints/","paths":{"cote-
     }
     window.pnhgIgnite = ignite;
     window.setTimeout(ignite, 5200);
-
-    /* a blueprint published after the ignition raises the counter too */
-    var promote = window.pnhgPromote;
-    window.pnhgPromote = function(slugs){
-      promote(slugs);
-      if (ignited && count && count.classList.contains('is-done')) { setCount(liveList().length, true); }
-    };
   }
 
   /* one shared reading of the live pages list (also used by the Nations Menu) */
