@@ -56,10 +56,25 @@ Rules: every figure must have a primary source; no contractions; plain ASCII whe
 
 Each live blueprint reads its own file: `data/<nation>.json` (barbados, kenya, ...). A Steward edits only the file for its own nation.
 
-- Every nation file is kept by the Nations Newswire Stewards rotation, which runs three times a day and checks the five nations checked longest ago; Barbados is checked at least once a day, and its register and page changes are proposed by pull request. A new nation file joins the rotation automatically. The seven standards are checked once a month per nation; the Newswire at every visit.
+- Each nation has its own Nation Steward (named in `steward.name`), which reviews its whole blueprint once a week in the Nation Stewards rotation: the hero figures, the register, the record in figures, the Sovereign Assets, the enterprises, the seven standards and the Dispatches. Everything it changes is in the data file and is published automatically after the Auditor; changes to the design or the page code still go through a pull request.
+- The Nations Newswire Stewards rotation runs three times a day and keeps every nation's Newswire current, the five nations checked longest ago at each run, with Barbados at least once a day. A new nation file joins both rotations automatically.
 - No limit on the number of Newswire items or dispatches (Steward-General, 6 November 2026). A Newswire item names an instrument, approval, debt operation or investment, with an issuer and terms, verified on the article page, one item per announcement. A dispatch is written only for a landmark: an instrument approved, priced, signed or closed, or a watched item resolved.
 - The Correspondent (8 am and 8 pm) also adds every instrument it verifies for a nation to that nation's `newswire`, and sets that file's `updated`. It never edits `barbados.json` and changes nothing else in a nation file.
 - Dispatches share one numbered series across every file in `data/` and `archive/` and every open pull request.
+
+## The whole blueprint page (from 6 November 2026)
+
+Every nation file also drives the rest of its page. Each part is optional: when it is missing or malformed, the page shows its own code instead. Every `url` is https (an enterprise may also use `mailto:`), and URLs may not contain quotes, brackets or spaces. `money: true` shows the value in gold; use it only for sourced monetary values.
+
+| Field | What it drives on the page |
+|---|---|
+| `hero.lead` | The sentence under the nation's name |
+| `hero.stats` | The three figures in the hero: `value` and `label`. A stat labelled "Instruments and investments on record" always shows the number of register lines |
+| `capital.heading` | The heading of the Capital Architecture section |
+| `capital.record` | The record in figures: `value`, `money`, `text`, `source` (the link text, for example "IMF, 2024") and `url` |
+| `capital.register` | The register, in the order shown; the page shows the first eight and a Show all button for the rest, and builds the filters and counts. Each line: `cat` (govt, humanitarian, multi, regional, bilat, private or impact), `status` (the label shown, for example "Active", "Approved", "Pipeline"), `tone` (the badge style: active, completed, pipeline, advocacy, annual, appeal or granted), `name`, `detail` (the small line under the name), `amount`, `money`, `note`, `text`, `by` (a list of the institutions) and `url` (the primary source) |
+| `assets.heading`, `assets.items` | The Sovereign Assets cards: `name`, `figure`, `money`, `label` (the small line under the figure), `text`, `alt` (a description of the picture), `images` (one or more https picture URLs, the first that loads is shown) and `tint` (two colours, for example ["#E07A3A", "#6A2410"], behind the picture) |
+| `enterprises.heading`, `enterprises.items` | The enterprise cards: `standard` (one of the seven, or "In preparation"), `name`, `text`, `source` (the link text) and `url` |
 
 ## The archive
 

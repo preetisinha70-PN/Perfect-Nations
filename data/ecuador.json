@@ -7,6 +7,188 @@
     "role": "Nation Steward of Ecuador"
   },
   "population": 18289896,
+  "hero": {
+    "lead": "A nation of 18.3 million from the Galapagos to the Amazon, backed by a $5 billion IMF programme and $1.55 billion of new World Bank finance in 2026.",
+    "stats": [
+      {
+        "value": "18.3m",
+        "label": "Citizens, 2025"
+      },
+      {
+        "value": "$5B",
+        "label": "IMF programme, 2024"
+      },
+      {
+        "value": "$1.55B",
+        "label": "World Bank finance, 2026"
+      }
+    ]
+  },
+  "capital": {
+    "heading": "Ecuador is financing reform and local infrastructure at once. Next, every child reading by ten.",
+    "record": [
+      {
+        "value": "$5B",
+        "money": true,
+        "text": "Extended Fund Facility: About $3.7 billion disbursed; about $394 million released in April 2026",
+        "source": "IMF, 2026",
+        "url": "https://www.imf.org/en/news/articles/2026/04/22/pr26126-ecuador-the-imf-concludes-5th-review-of-eff-arrangement"
+      },
+      {
+        "value": "$800M",
+        "money": true,
+        "text": "Subnational infrastructure finance: Through Banco de Desarrollo del Ecuador",
+        "source": "World Bank, 2026",
+        "url": "https://www.worldbank.org/en/news/press-release/2026/09/24/world-bank-group-expands-subnational-infrastructure-finance-in-ecuador"
+      },
+      {
+        "value": "$750M",
+        "money": true,
+        "text": "Reforms for investment and jobs: IBRD loan",
+        "source": "World Bank, 2026",
+        "url": "https://www.worldbank.org/en/news/press-release/2026/07/28/world-bank-group-supports-reforms-to-promote-investment-and-jobs-in-ecuador"
+      }
+    ],
+    "register": [
+      {
+        "cat": "multi",
+        "status": "Active",
+        "tone": "active",
+        "name": "Extended Fund Facility",
+        "detail": "Approved May 2024, augmented July 2025 · Fifth review 22 April 2026",
+        "amount": "$5B",
+        "money": true,
+        "note": "About $3.7 billion disbursed; about $394 million released in April 2026",
+        "text": "Growth of 2.5 percent is projected for 2026.",
+        "by": [
+          "International Monetary Fund"
+        ],
+        "url": "https://www.imf.org/en/news/articles/2026/04/22/pr26126-ecuador-the-imf-concludes-5th-review-of-eff-arrangement"
+      },
+      {
+        "cat": "multi",
+        "status": "Active",
+        "tone": "active",
+        "name": "Subnational infrastructure finance",
+        "detail": "Approved September 2026 · Multiphase programme",
+        "amount": "$800M",
+        "money": true,
+        "note": "Through Banco de Desarrollo del Ecuador",
+        "text": "Finances energy, transport, housing and disaster-risk projects for local governments.",
+        "by": [
+          "World Bank"
+        ],
+        "url": "https://www.worldbank.org/en/news/press-release/2026/09/24/world-bank-group-expands-subnational-infrastructure-finance-in-ecuador"
+      },
+      {
+        "cat": "multi",
+        "status": "Active",
+        "tone": "active",
+        "name": "Reforms for investment and jobs",
+        "detail": "Approved July 2026 · Budget support",
+        "amount": "$750M",
+        "money": true,
+        "note": "IBRD loan",
+        "text": "Makes public spending more efficient, improves social transfers and manages fiscal risks.",
+        "by": [
+          "World Bank"
+        ],
+        "url": "https://www.worldbank.org/en/news/press-release/2026/07/28/world-bank-group-supports-reforms-to-promote-investment-and-jobs-in-ecuador"
+      }
+    ]
+  },
+  "assets": {
+    "heading": "Five assets no balance sheet counts.",
+    "items": [
+      {
+        "name": "The People",
+        "figure": "18.3m",
+        "money": false,
+        "label": "Citizens, 2025",
+        "text": "63 in every hundred live in towns and cities; the rest live on the land they farm and fish.",
+        "alt": "A market in an Andean town in Ecuador",
+        "images": [
+          "https://perfectnations.org/wp-content/uploads/2026/10/The-People-Ecuador-768x560.png"
+        ],
+        "tint": [
+          "#C7684A",
+          "#5A2414"
+        ]
+      },
+      {
+        "name": "The Land",
+        "figure": "20.3%",
+        "money": false,
+        "label": "Of land in farms and pasture",
+        "text": "The land that feeds the nation, and the first place a citizen dividend can be earned.",
+        "alt": "Banana plantations in the coastal lowlands of Ecuador",
+        "images": [
+          "https://perfectnations.org/wp-content/uploads/2026/10/The-Land-Ecuador-768x560.png"
+        ],
+        "tint": [
+          "#B9A04A",
+          "#4E4216"
+        ]
+      },
+      {
+        "name": "The Forest",
+        "figure": "49.7%",
+        "money": false,
+        "label": "Of land under forest",
+        "text": "Standing forest holds the water, soil and carbon that the world will pay to keep.",
+        "alt": "Cloud forest in the Andes of Ecuador, mist among the trees",
+        "images": [
+          "https://perfectnations.org/wp-content/uploads/2026/10/The-Forest-Ecuador-768x560.png"
+        ],
+        "tint": [
+          "#2F6B3F",
+          "#0F2A18"
+        ]
+      },
+      {
+        "name": "The Water",
+        "figure": "24,821 m³",
+        "money": false,
+        "label": "Renewable fresh water per person",
+        "text": "Enough to supply every home, once it is stored, treated and piped.",
+        "alt": "A river in the Ecuadorian Amazon",
+        "images": [
+          "https://perfectnations.org/wp-content/uploads/2026/10/The-Water-Ecuador-768x560.png"
+        ],
+        "tint": [
+          "#3FB3A5",
+          "#14596A"
+        ]
+      },
+      {
+        "name": "The Power",
+        "figure": "80.9%",
+        "money": false,
+        "label": "Of energy from renewables, 2021",
+        "text": "Sun, wind, water and biomass already carry part of the load; the rest is the opportunity.",
+        "alt": "A hydropower dam in the Andes of Ecuador",
+        "images": [
+          "https://perfectnations.org/wp-content/uploads/2026/10/The-Power-Ecuador-768x560.png"
+        ],
+        "tint": [
+          "#E0A33A",
+          "#6A3E0C"
+        ]
+      }
+    ]
+  },
+  "enterprises": {
+    "heading": "Already working in Ecuador.",
+    "items": [
+      {
+        "standard": "In preparation",
+        "name": "The enterprises building Perfect Ecuador",
+        "text": "The Stewards are verifying the companies and social enterprises already delivering the seven basic living standards in Ecuador. Suggest one to include.",
+        "source": "Suggest an enterprise",
+        "url": "mailto:contact@perfectnations.org?subject=An%20enterprise%20for%20Perfect%20Ecuador"
+      }
+    ]
+  },
   "coverage": {
     "score": 34.1,
     "set_by": "Education",
