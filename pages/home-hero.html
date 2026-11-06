@@ -1,28 +1,27 @@
 <!-- ===========================================================================
-PERFECT NATIONS - HOMEPAGE - SECTION 01 - CIVILIZATION RE-DEFINED - v5.1 - 2026-11-06
+PERFECT NATIONS - HOMEPAGE - SECTION 01 - CIVILIZATION RE-DEFINED - v5.2 - 2026-11-06
 Served live from GitHub (pages/home-hero.html) by the Perfect Nations Live Pages plugin;
 the root id stays pn-hero, so the widget already on the homepage is the one replaced.
-v5.1:
-  - The natural Earth: the Blue Marble of the blueprint pages, with the sea catching the sun,
-    the relief of mountains and slowly drifting clouds. A sharper 4096 px Earth is swapped in on
-    larger screens once the planet is showing. Fine gold borders mark every nation (brightest
-    where the blueprint is published); the nation under the pointer lights in gold with its name.
-  - No stars above the planet. A gold ring on its edge and a slowly turning bezel remain.
-  - Faster: the planet appears with no grow-in and no shapes built in advance; it starts the
-    moment the two libraries arrive. Until then the still picture shows inside the seven stars
-    of the logo, revolving, with "Drawing the world".
-  - Section 01a is now "The Story of Perfect Nations": the description of the logo is gone; the
-    runner is a joyous figure drawn in three gold strokes, and the tape is gold.
-v5.0: "Civilization Re-Defined" above the planet, "Designing the Prosperity of Nations" below.
+v5.2, the golden planet, refined:
+  - Every nation in gold on a deep sapphire sea with glinting gold flecks, a gold halo, a gold ring
+    on its edge and a slowly turning bezel. No stars above the planet. The sun on the gold is
+    softer, so the land never glares white.
+  - Faster: the planet appears at once (no grow-in) and starts the moment the two libraries arrive.
+    Until then the still planet shows inside the seven stars of the logo, revolving, with
+    "Drawing the world".
+  - Proportions: a smaller cup, a calmer headline, a larger planet band.
+  - Section 01a is "The Story of Perfect Nations": compact, no description of the logo, a joyous
+    runner drawn in three gold strokes, gold tape and bursting gold stars.
+v5.1 (natural Earth) was not published; v5.0: "Civilization Re-Defined" above, "Designing the
+Prosperity of Nations" below.
 Declares PNHG_WORLD and PNHG_CFG, which the continent maps read, so it must stay ABOVE them.
 Country outlines: Natural Earth 1:50m (world-atlas 2.0), simplified to a tenth of a degree.
 EDITORIAL: the still picture shown while the planet loads is
-https://perfectnations.org/wp-content/uploads/2026/11/pn-home-globe-earth-poster.webp
+https://perfectnations.org/wp-content/uploads/2026/11/pn-home-globe-gold-poster-v2.webp
 If the address differs, change it in the two places it appears (search for pn-home-globe-gold).
 =========================================================================== -->
 <link rel="preconnect" href="https://cdn.jsdelivr.net">
-<link rel="preload" as="image" href="https://perfectnations.org/wp-content/uploads/2026/11/pn-home-globe-earth-poster.webp" fetchpriority="high">
-<link rel="preload" as="image" href="https://perfectnations.org/wp-content/uploads/2026/10/pn-globe-earth-day.jpg">
+<link rel="preload" as="image" href="https://perfectnations.org/wp-content/uploads/2026/11/pn-home-globe-gold-poster-v2.webp" fetchpriority="high">
 <link rel="preload" as="script" href="https://cdn.jsdelivr.net/npm/three@0.159.0/build/three.min.js">
 <link rel="preload" as="script" href="https://cdn.jsdelivr.net/npm/globe.gl@2.31.0/dist/globe.gl.min.js">
 <style>
@@ -36,7 +35,7 @@ If the address differs, change it in the two places it appears (search for pn-ho
   --hd:var(--pn-font-heading,"Barlow Condensed","Arial Narrow",Arial,sans-serif);
   --bd:var(--pn-font-body,"Barlow Semi Condensed",Arial,sans-serif);
   --pnhg-headh:0px;
-  --pd:clamp(300px, min(86vw, calc((100svh - 340px) * .86)), 670px);
+  --pd:clamp(300px, min(86vw, calc((100svh - 310px) * .86)), 690px);
 
   position:relative; isolation:isolate;
   width:100vw; margin-left:calc(50% - 50vw);
@@ -77,15 +76,15 @@ If the address differs, change it in the two places it appears (search for pn-ho
 
 /* ---------- the crown ---------- */
 #pn-hero .pnhg-crown{ position:relative; z-index:3; display:flex; justify-content:center; }
-#pn-hero svg.pnhg-cup{ display:block; width:clamp(86px,7vw,118px); height:auto; aspect-ratio:2/1; color:var(--g); overflow:visible; }
+#pn-hero svg.pnhg-cup{ display:block; width:clamp(66px,5.2vw,94px); height:auto; aspect-ratio:2/1; color:var(--g); overflow:visible; }
 #pn-hero svg.pnhg-cup path,#pn-hero svg.pnhg-cup rect{ fill:currentColor; }
 
 /* ---------- Civilization Re-Defined ---------- */
 #pn-hero h1.pnhg-h1{
   position:relative; z-index:3;
-  margin:clamp(4px,.9vh,10px) auto 0; max-width:none;
+  margin:clamp(2px,.6vh,8px) auto 0; max-width:none;
   font-family:var(--hd); font-weight:600; text-transform:none;
-  font-size:clamp(2.6rem,6.8vw,6.6rem); line-height:.92; letter-spacing:-.025em; text-wrap:balance;
+  font-size:clamp(2.5rem,6.2vw,6rem); line-height:.92; letter-spacing:-.025em; text-wrap:balance;
   color:#F5ECD2 !important; text-shadow:none !important;
   background:linear-gradient(180deg,#FFFDF4 0%,#F6E9C4 52%,#E5CB86 100%);
   -webkit-background-clip:text; background-clip:text;
@@ -99,7 +98,7 @@ If the address differs, change it in the two places it appears (search for pn-ho
   position:relative; z-index:1;
   margin:clamp(2px,.6vh,8px) calc(50% - 50vw) 0;
   width:100vw; max-width:none;
-  height:clamp(480px, calc(100svh - 340px), 780px);
+  height:clamp(480px, calc(100svh - 310px), 800px);
 }
 #pn-hero .pnhg-rose{
   position:absolute; left:50%; top:50%; z-index:0; pointer-events:none;
@@ -128,7 +127,7 @@ If the address differs, change it in the two places it appears (search for pn-ho
   display:flex; align-items:center; justify-content:center; gap:clamp(14px,2vw,26px);
   margin:clamp(4px,1vh,12px) auto 0; max-width:none;
   font-family:var(--hd); font-weight:600; text-transform:uppercase;
-  font-size:clamp(1.05rem,2.3vw,2rem); line-height:1.15; letter-spacing:.16em; color:var(--iv);
+  font-size:clamp(1.05rem,2vw,1.75rem); line-height:1.15; letter-spacing:.16em; color:var(--iv);
 }
 #pn-hero .pnhg-sub::before,#pn-hero .pnhg-sub::after{
   content:""; flex:0 0 clamp(36px,6vw,96px); height:1px;
@@ -254,23 +253,13 @@ If the address differs, change it in the two places it appears (search for pn-ho
 #pn-hero .pnhg-fallback.is-waiting p,
 #pn-hero .pnhg-fallback.is-waiting a{ display:none; }
 
-/* ---------- the name under the pointer ---------- */
-#pn-hero .pnhg-hover{
-  position:absolute; left:0; top:0; z-index:8; pointer-events:none; text-align:left;
-  padding:8px 14px; border-radius:12px; background:rgba(8,42,48,.92); border:1px solid rgba(227,194,88,.6);
-  box-shadow:0 10px 26px rgba(2,14,22,.45); white-space:nowrap;
-  opacity:0; transition:opacity .15s ease;
-}
-#pn-hero .pnhg-hover.is-on{ opacity:1; }
-#pn-hero .pnhg-hover b{ display:block; font-family:var(--hd); font-size:1.1rem; font-weight:600; line-height:1.15; color:var(--iv); }
-#pn-hero .pnhg-hover i{ display:block; font-style:normal; font-family:var(--hd); font-size:.6rem; font-weight:700; letter-spacing:.18em; text-transform:uppercase; color:var(--g); }
-
 /* ---------- phone ---------- */
 @media (max-width:760px){
   #pn-hero{ padding-bottom:30px; }
   #pn-hero::after{ display:none; }
   #pn-hero .pnhg-globe{ height:clamp(360px, 108vw, 70svh); margin:4px calc(50% - 50vw) 0; }
-  #pn-hero h1.pnhg-h1{ font-size:clamp(2.45rem,12vw,3.3rem); line-height:.94; }
+  #pn-hero h1.pnhg-h1{ font-size:clamp(2.3rem,11.2vw,3rem); line-height:.94; }
+  #pn-hero svg.pnhg-cup{ width:64px; }
   #pn-hero .pnhg-sub{ font-size:clamp(1.05rem,5vw,1.3rem); letter-spacing:.12em; }
   #pn-hero .pnhg-sub__t > span{ display:block; }
   #pn-hero .pnhg-sub::before,#pn-hero .pnhg-sub::after{ display:none; }
@@ -388,7 +377,7 @@ If the address differs, change it in the two places it appears (search for pn-ho
   <div class="pnhg-globe" id="pnhgGlobe">
     <div class="pnhg-well" aria-hidden="true"></div>
     <div class="pnhg-rose" aria-hidden="true"><svg viewBox="-500 -500 1000 1000" focusable="false"><g fill="none" stroke="#E9DDB8" stroke-opacity=".11" stroke-width="1" vector-effect="non-scaling-stroke"><ellipse rx="490" ry="200" transform="rotate(0)" vector-effect="non-scaling-stroke"/><ellipse rx="490" ry="200" transform="rotate(5)" vector-effect="non-scaling-stroke"/><ellipse rx="490" ry="200" transform="rotate(10)" vector-effect="non-scaling-stroke"/><ellipse rx="490" ry="200" transform="rotate(15)" vector-effect="non-scaling-stroke"/><ellipse rx="490" ry="200" transform="rotate(20)" vector-effect="non-scaling-stroke"/><ellipse rx="490" ry="200" transform="rotate(25)" vector-effect="non-scaling-stroke"/><ellipse rx="490" ry="200" transform="rotate(30)" vector-effect="non-scaling-stroke"/><ellipse rx="490" ry="200" transform="rotate(35)" vector-effect="non-scaling-stroke"/><ellipse rx="490" ry="200" transform="rotate(40)" vector-effect="non-scaling-stroke"/><ellipse rx="490" ry="200" transform="rotate(45)" vector-effect="non-scaling-stroke"/><ellipse rx="490" ry="200" transform="rotate(50)" vector-effect="non-scaling-stroke"/><ellipse rx="490" ry="200" transform="rotate(55)" vector-effect="non-scaling-stroke"/><ellipse rx="490" ry="200" transform="rotate(60)" vector-effect="non-scaling-stroke"/><ellipse rx="490" ry="200" transform="rotate(65)" vector-effect="non-scaling-stroke"/><ellipse rx="490" ry="200" transform="rotate(70)" vector-effect="non-scaling-stroke"/><ellipse rx="490" ry="200" transform="rotate(75)" vector-effect="non-scaling-stroke"/><ellipse rx="490" ry="200" transform="rotate(80)" vector-effect="non-scaling-stroke"/><ellipse rx="490" ry="200" transform="rotate(85)" vector-effect="non-scaling-stroke"/><ellipse rx="490" ry="200" transform="rotate(90)" vector-effect="non-scaling-stroke"/><ellipse rx="490" ry="200" transform="rotate(95)" vector-effect="non-scaling-stroke"/><ellipse rx="490" ry="200" transform="rotate(100)" vector-effect="non-scaling-stroke"/><ellipse rx="490" ry="200" transform="rotate(105)" vector-effect="non-scaling-stroke"/><ellipse rx="490" ry="200" transform="rotate(110)" vector-effect="non-scaling-stroke"/><ellipse rx="490" ry="200" transform="rotate(115)" vector-effect="non-scaling-stroke"/><ellipse rx="490" ry="200" transform="rotate(120)" vector-effect="non-scaling-stroke"/><ellipse rx="490" ry="200" transform="rotate(125)" vector-effect="non-scaling-stroke"/><ellipse rx="490" ry="200" transform="rotate(130)" vector-effect="non-scaling-stroke"/><ellipse rx="490" ry="200" transform="rotate(135)" vector-effect="non-scaling-stroke"/><ellipse rx="490" ry="200" transform="rotate(140)" vector-effect="non-scaling-stroke"/><ellipse rx="490" ry="200" transform="rotate(145)" vector-effect="non-scaling-stroke"/><ellipse rx="490" ry="200" transform="rotate(150)" vector-effect="non-scaling-stroke"/><ellipse rx="490" ry="200" transform="rotate(155)" vector-effect="non-scaling-stroke"/><ellipse rx="490" ry="200" transform="rotate(160)" vector-effect="non-scaling-stroke"/><ellipse rx="490" ry="200" transform="rotate(165)" vector-effect="non-scaling-stroke"/><ellipse rx="490" ry="200" transform="rotate(170)" vector-effect="non-scaling-stroke"/><ellipse rx="490" ry="200" transform="rotate(175)" vector-effect="non-scaling-stroke"/><ellipse rx="330" ry="120" transform="rotate(0)" vector-effect="non-scaling-stroke"/><ellipse rx="330" ry="120" transform="rotate(7.5)" vector-effect="non-scaling-stroke"/><ellipse rx="330" ry="120" transform="rotate(15)" vector-effect="non-scaling-stroke"/><ellipse rx="330" ry="120" transform="rotate(22.5)" vector-effect="non-scaling-stroke"/><ellipse rx="330" ry="120" transform="rotate(30)" vector-effect="non-scaling-stroke"/><ellipse rx="330" ry="120" transform="rotate(37.5)" vector-effect="non-scaling-stroke"/><ellipse rx="330" ry="120" transform="rotate(45)" vector-effect="non-scaling-stroke"/><ellipse rx="330" ry="120" transform="rotate(52.5)" vector-effect="non-scaling-stroke"/><ellipse rx="330" ry="120" transform="rotate(60)" vector-effect="non-scaling-stroke"/><ellipse rx="330" ry="120" transform="rotate(67.5)" vector-effect="non-scaling-stroke"/><ellipse rx="330" ry="120" transform="rotate(75)" vector-effect="non-scaling-stroke"/><ellipse rx="330" ry="120" transform="rotate(82.5)" vector-effect="non-scaling-stroke"/><ellipse rx="330" ry="120" transform="rotate(90)" vector-effect="non-scaling-stroke"/><ellipse rx="330" ry="120" transform="rotate(97.5)" vector-effect="non-scaling-stroke"/><ellipse rx="330" ry="120" transform="rotate(105)" vector-effect="non-scaling-stroke"/><ellipse rx="330" ry="120" transform="rotate(112.5)" vector-effect="non-scaling-stroke"/><ellipse rx="330" ry="120" transform="rotate(120)" vector-effect="non-scaling-stroke"/><ellipse rx="330" ry="120" transform="rotate(127.5)" vector-effect="non-scaling-stroke"/><ellipse rx="330" ry="120" transform="rotate(135)" vector-effect="non-scaling-stroke"/><ellipse rx="330" ry="120" transform="rotate(142.5)" vector-effect="non-scaling-stroke"/><ellipse rx="330" ry="120" transform="rotate(150)" vector-effect="non-scaling-stroke"/><ellipse rx="330" ry="120" transform="rotate(157.5)" vector-effect="non-scaling-stroke"/><ellipse rx="330" ry="120" transform="rotate(165)" vector-effect="non-scaling-stroke"/><ellipse rx="330" ry="120" transform="rotate(172.5)" vector-effect="non-scaling-stroke"/><circle r="497" stroke="#E3C258" stroke-opacity=".28" vector-effect="non-scaling-stroke"/><circle r="430" stroke="#E3C258" stroke-opacity=".16" vector-effect="non-scaling-stroke"/></g></svg></div>
-    <div class="pnhg-stage" id="pnhgStage" role="img" aria-label="The Earth, with every nation outlined in gold. Choose a nation to open its blueprint."></div>
+    <div class="pnhg-stage" id="pnhgStage" role="img" aria-label="A golden globe of every nation on Earth, set in deep blue oceans. Choose a nation to open its blueprint."></div>
 
     <div class="pnhg-ctl" id="pnhgCtl" aria-label="Globe controls">
       <button type="button" data-act="in" aria-label="Zoom in">+</button>
@@ -400,7 +389,7 @@ If the address differs, change it in the two places it appears (search for pn-ho
     <div class="pnhg-plate" id="pnhgPlate" aria-live="polite"></div>
 
     <div class="pnhg-fallback is-waiting" id="pnhgFallback">
-      <img class="pnhg-poster" id="pnhgPoster" src="https://perfectnations.org/wp-content/uploads/2026/11/pn-home-globe-earth-poster.webp" alt="" width="820" height="820" decoding="async" fetchpriority="high">
+      <img class="pnhg-poster" id="pnhgPoster" src="https://perfectnations.org/wp-content/uploads/2026/11/pn-home-globe-gold-poster-v2.webp" alt="" width="820" height="820" decoding="async" fetchpriority="high">
       <span class="pnhg-orbit" aria-hidden="true"><svg viewBox="-100 -100 200 200" focusable="false"><defs><path id="pnhg-st" fill="#E3C258" d="M0 -6 1.41 -1.94 5.71 -1.85 2.28 .74 3.53 4.85 0 2.4 -3.53 4.85 -2.28 .74 -5.71 -1.85 -1.41 -1.94Z"/></defs><circle r="92" fill="none" stroke="#E3C258" stroke-opacity=".28" stroke-width=".6"/><use href="#pnhg-st" transform="rotate(0) translate(0 -92) scale(1.15)"/><use href="#pnhg-st" transform="rotate(51) translate(0 -92) scale(1)"/><use href="#pnhg-st" transform="rotate(103) translate(0 -92) scale(1)"/><use href="#pnhg-st" transform="rotate(154) translate(0 -92) scale(1)"/><use href="#pnhg-st" transform="rotate(206) translate(0 -92) scale(1)"/><use href="#pnhg-st" transform="rotate(257) translate(0 -92) scale(1)"/><use href="#pnhg-st" transform="rotate(309) translate(0 -92) scale(1)"/></svg></span>
       <span class="pnhg-wait" role="status">Drawing the world</span>
       <p>Every nation is on the maps below.</p>
@@ -655,18 +644,22 @@ window.PNHG_CFG={"base":"https://perfectnations.org/blueprints/","paths":{"cote-
     return new Promise(function(_, rej){ setTimeout(function(){ rej(new Error('libraries timed out')); }, ms); });
   }
 
-  /* ---- THE NATURAL EARTH ---- */
-  var EARTH    = 'https://perfectnations.org/wp-content/uploads/2026/10/pn-globe-earth-day.jpg';  /* the Earth of the blueprint pages, 2048 px, often already in the browser */
-  var EARTH_HI = 'https://perfectnations.org/wp-content/uploads/2026/11/pn-globe-earth-4096.jpg';   /* 4096 px, swapped in on larger screens once the planet is showing */
-  var WATER    = 'https://perfectnations.org/wp-content/uploads/2026/11/pn-globe-water-1024.jpg';      /* the seas, so only the oceans catch the sun */
-  var RELIEF   = 'https://perfectnations.org/wp-content/uploads/2026/11/pn-globe-topology-1024.jpg';     /* mountains and valleys */
-  var CLOUDS   = 'https://perfectnations.org/wp-content/uploads/2026/11/pn-globe-clouds-2048.jpg';     /* the weather, drifting slowly */
-  var ATMO = 0.18, ATMO_COLOR = '#A9D8FF';
-  var LINE = { live:{ c:'#F6DC86', o:0.9 }, soon:{ c:'#E3C258', o:0.42 }, none:{ c:'#F5F1E8', o:0.14 } };
-  var HI = { cap:'rgba(227,194,88,0.36)', side:'rgba(227,194,88,0.16)', line:'#FBE391', alt:0.007 };
+  /* ---- THE GOLDEN EARTH ---- */
+  var OCEAN = '#0A2B5C', OCEAN_DEEP = '#04122E', OCEAN_SPEC = '#4C7FC4';
+  var GOLD = {
+    live: { c:'#E6C35A', e:'#5A4210', ei:0.40, s:'#8C7434', sh:16 },
+    soon: { c:'#CDA645', e:'#4A350C', ei:0.36, s:'#7A6430', sh:14 },
+    none: { c:'#94793A', e:'#2E230A', ei:0.32, s:'#5E4D26', sh:10 },
+    hov:  { c:'#F5DA86', e:'#7A5A18', ei:0.50, s:'#B89A4E', sh:20 }
+  };
+  var SIDE = '#5A4413';
+  var ALT = { none:0.0080, soon:0.0120, live:0.0120 }, ALT_HOV = 0.0260, ALT_UP = 0.0030;
+  var ENCLAVE = { 'lesotho':1, 'san-marino':1, 'holy-see':1 };
+  var BORDER = '#0A1E3F';
   var LABEL = { live:'Blueprint published in full', soon:'Blueprint in preparation' };
-  var MARK = { live:{ color:'#F6DC86', alt:0.01, rad:0.4 }, soon:{ color:'#E3C258', alt:0.008, rad:0.34 } };
+  var MARK = { live:{ color:'#F5DFA0', alt:0.016, rad:0.42 }, soon:{ color:'#E3C258', alt:0.014, rad:0.36 } };
   var MIN_ALT = 0.55, MAX_ALT = 4.2, STEP = 1.22;
+  var ATMO = 0.17, ATMO_COLOR = '#E9C562';
   var HOLD_MS = 1600;
   var MIN_ISLAND = 0.5, DOT_BELOW = 0.25;
   var TAN25 = Math.tan(25 * Math.PI / 180);
@@ -692,9 +685,6 @@ window.PNHG_CFG={"base":"https://perfectnations.org/blueprints/","paths":{"cote-
     if (win) { try { win.opener = null; } catch (e) {} return; }
     window.location.href = href;
   }
-  function later(fn, ms){
-    if (window.requestIdleCallback) { window.requestIdleCallback(fn, { timeout: ms }); } else { window.setTimeout(fn, ms); }
-  }
 
   function start(){
     if (typeof Globe === 'undefined' || typeof THREE === 'undefined') { fail('Globe is undefined'); return; }
@@ -703,6 +693,8 @@ window.PNHG_CFG={"base":"https://perfectnations.org/blueprints/","paths":{"cote-
     var REGION = {};
     for (var rg = 0; rg < CFG.regions.length; rg++){ REGION[CFG.regions[rg].key] = CFG.regions[rg].name; }
 
+    /* every ring, decoded once: drawn on the globe, and used to keep the gold flecks at sea */
+    var ALLRINGS = [];
     function decode(enc){
       var ring = [], x = 0, y = 0, k, minx = 1e9, maxx = -1e9, miny = 1e9, maxy = -1e9, a = 0;
       for (k = 0; k < enc.length; k += 2){
@@ -720,42 +712,35 @@ window.PNHG_CFG={"base":"https://perfectnations.org/blueprints/","paths":{"cote-
       }
       return { ring: ring, area: Math.abs(a) / 2, b: [minx, miny, maxx, maxy] };
     }
+    function coords(rings){
+      var all = [], i, big = 0;
+      for (i = 0; i < rings.length; i++){
+        var d = decode(rings[i]);
+        ALLRINGS.push(d);
+        all.push(d);
+        if (d.area > all[big].area) { big = all.length - 1; }
+      }
+      var polys = [];
+      for (i = 0; i < all.length; i++){
+        if (i === big || all[i].area >= MIN_ISLAND) { polys.push([all[i].ring]); }
+      }
+      return { polys: polys, biggest: all.length ? all[big].area : 0 };
+    }
 
-    /* every nation: its outline for the gold borders, and all of its rings to find it under a finger */
     var lands = [], drawn = {}, c, dots = [];
     for (c = 0; c < WORLD.length; c++){
       slug = WORLD[c][0];
       rec = slug ? NAT[slug] : null;
-      var rings = [], big = 0, i;
-      for (i = 0; i < WORLD[c][1].length; i++){
-        rings.push(decode(WORLD[c][1][i]));
-        if (rings[i].area > rings[big].area) { big = i; }
-      }
-      var polys = [];
-      for (i = 0; i < rings.length; i++){ if (i === big || rings[i].area >= MIN_ISLAND) { polys.push([rings[i].ring]); } }
+      var cd = coords(WORLD[c][1]);
       if (slug) { drawn[slug] = true; }
-      lands.push({
+      var L = {
         slug: slug, name: rec ? rec[0] : '', state: rec ? rec[1] : 'none',
         href: rec ? CFG.base + (CFG.paths[slug] || slug) + '/' : '',
-        rings: rings, geometry: { type: 'MultiPolygon', coordinates: polys }
-      });
-      if (rec && rings.length && rings[big].area < DOT_BELOW) { dots.push(slug); }
-    }
-    function landAt(lat, lng){
-      for (var a = 0; a < lands.length; a++){
-        var Ld = lands[a];
-        for (var r = 0; r < Ld.rings.length; r++){
-          var Q = Ld.rings[r], bb = Q.b;
-          if (lng < bb[0] || lng > bb[2] || lat < bb[1] || lat > bb[3]) { continue; }
-          var ring = Q.ring, inside = false, j, k;
-          for (j = 0, k = ring.length - 1; j < ring.length; k = j++){
-            var xi = ring[j][0], yi = ring[j][1], xj = ring[k][0], yj = ring[k][1];
-            if (((yi > lat) !== (yj > lat)) && (lng < (xj - xi) * (lat - yi) / (yj - yi) + xi)) { inside = !inside; }
-          }
-          if (inside) { return Ld; }
-        }
-      }
-      return null;
+        up: ENCLAVE[slug] ? ALT_UP : 0,
+        geometry: { type: 'MultiPolygon', coordinates: cd.polys }
+      };
+      lands.push(L);
+      if (rec && cd.biggest < DOT_BELOW) { dots.push(slug); }
     }
 
     /* nations too small to see, or not drawn at all, get a gold point */
@@ -788,32 +773,40 @@ window.PNHG_CFG={"base":"https://perfectnations.org/blueprints/","paths":{"cote-
       }, HOLD_MS);
     }
 
+    function phong(g){
+      return new THREE.MeshPhongMaterial({ color: new THREE.Color(g.c), emissive: new THREE.Color(g.e),
+        emissiveIntensity: g.ei, specular: new THREE.Color(g.s), shininess: g.sh, side: THREE.DoubleSide });
+    }
+    var MAT = { live: phong(GOLD.live), soon: phong(GOLD.soon), none: phong(GOLD.none), hov: phong(GOLD.hov) };
+
     var box = sizeStage();
     var home = { lat: 6, lng: 24, altitude: fitAltitude(box) };
-    var small = window.matchMedia('(max-width: 760px)').matches;
+    var hovered = null;
 
-    /* the planet appears at once (no grow-in); the only shapes built are the one under the pointer */
     var globe = Globe({ animateIn: false })(stage)
       .width(box.w).height(box.h)
       .backgroundColor('rgba(0,0,0,0)')
-      .globeImageUrl(EARTH)
       .showAtmosphere(true)
       .atmosphereColor(ATMO_COLOR)
       .atmosphereAltitude(ATMO)
-      .polygonsData([])
+      .polygonsData(lands)
       .polygonGeoJsonGeometry('geometry')
-      .polygonCapCurvatureResolution(6)
-      .polygonAltitude(HI.alt)
-      .polygonCapColor(function(){ return HI.cap; })
-      .polygonSideColor(function(){ return HI.side; })
-      .polygonStrokeColor(function(){ return HI.line; })
-      .polygonsTransitionDuration(0)
-      .polygonLabel(function(){ return ''; })
-      .onPolygonClick(function(d){ enter(d); })
-      .onGlobeClick(function(pt){
-        var Ld = (pt && typeof pt.lat === 'number') ? landAt(pt.lat, pt.lng) : null;
-        if (Ld && Ld.state !== 'none') { enter(Ld); }
+      .polygonCapCurvatureResolution(10)
+      .polygonAltitude(function(d){ return (d === hovered ? ALT_HOV : (ALT[d.state] || ALT.none)) + d.up; })
+      .polygonCapMaterial(function(d){ return d === hovered ? MAT.hov : (MAT[d.state] || MAT.none); })
+      .polygonSideColor(function(){ return SIDE; })
+      .polygonStrokeColor(function(){ return false; })
+      .polygonsTransitionDuration(260)
+      .polygonLabel(function(d){
+        if (d.state === 'none') { return ''; }
+        return '<span class="pnhg-tip"><b>' + d.name + '</b><i>' + LABEL[d.state] + '</i></span>';
       })
+      .onPolygonHover(function(d){
+        hovered = (d && d.state !== 'none') ? d : null;
+        globe.polygonAltitude(globe.polygonAltitude()).polygonCapMaterial(globe.polygonCapMaterial());
+        stage.style.cursor = hovered ? 'pointer' : 'grab';
+      })
+      .onPolygonClick(function(d){ enter(d); })
       .pointsData(islands)
       .pointLat('lat').pointLng('lng')
       .pointColor(function(d){ return (MARK[d.state] || MARK.soon).color; })
@@ -825,95 +818,141 @@ window.PNHG_CFG={"base":"https://perfectnations.org/blueprints/","paths":{"cote-
       })
       .onPointClick(function(d){ enter(d); });
 
-    var shown = false;
-    function ready(){ if (shown) { return; } shown = true; window.requestAnimationFrame(function(){ window.requestAnimationFrame(clearPlaceholder); }); }
-    try { globe.onGlobeReady(ready); } catch (e) {}
-    window.setTimeout(ready, 4000);
+    try {
+      globe.onGlobeReady(function(){
+        window.requestAnimationFrame(function(){ window.requestAnimationFrame(clearPlaceholder); });
+      });
+    } catch (e) {}
+    window.setTimeout(clearPlaceholder, 4000);
 
-    /* the oceans catch a soft sun; the land stays matte */
+    /* deep sapphire seas */
     try {
       var mat = globe.globeMaterial();
-      mat.shininess = 16;
-      mat.specular = new THREE.Color('#0d1a26');
+      mat.color = new THREE.Color(OCEAN);
+      mat.emissive = new THREE.Color(OCEAN_DEEP);
+      mat.emissiveIntensity = 0.55;
+      mat.specular = new THREE.Color(OCEAN_SPEC);
+      mat.shininess = 18;
       mat.needsUpdate = true;
     } catch (e) {}
 
-    /* daylight, gently warm */
+    /* warm sunlight from the upper left, so the gold catches it as the planet turns */
     try {
       var lights = (typeof globe.lights === 'function') ? globe.lights() : null;
       if (lights && lights.length){
+        var keyI = 1, out = [];
+        lights.forEach(function(l){ if (l.isDirectionalLight) { keyI = l.intensity; } });
         lights.forEach(function(l){
-          if (l.isAmbientLight){ l.color = new THREE.Color('#FFFFFF'); }
-          else if (l.isDirectionalLight){ l.color = new THREE.Color('#FFF6E6'); l.position.set(-1.1, 0.9, 1.5); }
+          if (l.isAmbientLight){ l.color = new THREE.Color('#FFF1DA'); l.intensity = l.intensity * 0.95; }
+          else if (l.isDirectionalLight){ l.color = new THREE.Color('#FFF0CC'); l.intensity = l.intensity * 1.05; l.position.set(-1.2, 0.7, 1.6); }
+          out.push(l);
         });
-        globe.lights(lights);
+        var rimL = new THREE.DirectionalLight(new THREE.Color('#F2C14E'), keyI * 0.45);
+        rimL.position.set(1.5, -0.2, -1.1);
+        out.push(rimL);
+        globe.lights(out);
       }
     } catch (e) {}
 
-    /* fine gold borders: bright where the blueprint is published, softer where it is in preparation */
-    var borderSets = {};
+    /* every border, as one object per height, drawn in the colour of the deep sea */
     function borders(){
-      Object.keys(borderSets).forEach(function(k){ globe.scene().remove(borderSets[k]); });
-      borderSets = {};
-      ['none', 'soon', 'live'].forEach(function(st){
-        var v = [], alt = 0.0016, i2, j2, k2, a, b;
-        lands.forEach(function(Ld){
-          if (Ld.state !== st) { return; }
-          var P = Ld.geometry.coordinates;
-          for (i2 = 0; i2 < P.length; i2++){
-            var rgn = P[i2][0];
-            for (j2 = 0; j2 < rgn.length - 1; j2++){
-              k2 = j2 + 1;
-              a = globe.getCoords(rgn[j2][1], rgn[j2][0], alt); b = globe.getCoords(rgn[k2][1], rgn[k2][0], alt);
+      var groups = {}, k;
+      lands.forEach(function(Ld){
+        var alt = (ALT[Ld.state] || ALT.none) + Ld.up + 0.0012;
+        k = alt.toFixed(4);
+        (groups[k] = groups[k] || { alt: alt, polys: [] }).polys.push(Ld.geometry.coordinates);
+      });
+      var made = [];
+      Object.keys(groups).forEach(function(key){
+        var G = groups[key], v = [], i2, j2, k2, a, b;
+        G.polys.forEach(function(polys){
+          for (i2 = 0; i2 < polys.length; i2++){
+            var rgn = polys[i2][0];
+            for (j2 = 0; j2 < rgn.length; j2++){
+              k2 = (j2 + 1) % rgn.length;
+              a = globe.getCoords(rgn[j2][1], rgn[j2][0], G.alt); b = globe.getCoords(rgn[k2][1], rgn[k2][0], G.alt);
               v.push(a.x, a.y, a.z, b.x, b.y, b.z);
             }
           }
         });
-        if (!v.length) { return; }
         var g = new THREE.BufferGeometry();
         g.setAttribute('position', new THREE.Float32BufferAttribute(v, 3));
-        var ln = new THREE.LineSegments(g, new THREE.LineBasicMaterial({ color: new THREE.Color(LINE[st].c), transparent: true, opacity: LINE[st].o, depthWrite: false }));
+        var ln = new THREE.LineSegments(g, new THREE.LineBasicMaterial({ color: new THREE.Color(BORDER), transparent: true, opacity: 0.72, depthWrite: false }));
         ln.raycast = function(){};
         globe.scene().add(ln);
-        borderSets[st] = ln;
+        made.push(ln);
       });
+      return made;
     }
     try { borders(); } catch (e) {}
 
-    /* the name under the pointer, and the nation lit in gold */
-    var tipEl = document.createElement('div');
-    tipEl.className = 'pnhg-hover'; tipEl.setAttribute('aria-hidden', 'true');
-    band.appendChild(tipEl);
-    var hov = null, pend = 0;
-    function setHover(Ld, x, y){
-      if (Ld !== hov){
-        hov = Ld;
-        globe.polygonsData(Ld ? [Ld] : []);
-        stage.style.cursor = Ld ? 'pointer' : 'grab';
+    /* ---- gold flecks of ocean life: points on the sea only, each glinting in its own time ---- */
+    var fleckMat = null;
+    function atSea(lng, lat){
+      for (var i = 0; i < ALLRINGS.length; i++){
+        var Q = ALLRINGS[i], bb = Q.b;
+        if (lng < bb[0] || lng > bb[2] || lat < bb[1] || lat > bb[3]) { continue; }
+        var ring = Q.ring, inside = false, j, k;
+        for (j = 0, k = ring.length - 1; j < ring.length; k = j++){
+          var xi = ring[j][0], yi = ring[j][1], xj = ring[k][0], yj = ring[k][1];
+          if (((yi > lat) !== (yj > lat)) && (lng < (xj - xi) * (lat - yi) / (yj - yi) + xi)) { inside = !inside; }
+        }
+        if (inside) { return false; }
       }
-      if (Ld){
-        tipEl.innerHTML = '<b>' + Ld.name + '</b><i>' + (LABEL[Ld.state] || '') + '</i>';
-        tipEl.style.transform = 'translate(' + Math.round(x + 16) + 'px,' + Math.round(y + 14) + 'px)';
-        tipEl.classList.add('is-on');
-      } else { tipEl.classList.remove('is-on'); }
+      return true;
     }
-    stage.addEventListener('pointermove', function(ev){
-      if (ev.pointerType && ev.pointerType !== 'mouse') { return; }
-      var r = stage.getBoundingClientRect(), x = ev.clientX - r.left, y = ev.clientY - r.top;
-      if (pend) { return; }
-      pend = window.requestAnimationFrame(function(){
-        pend = 0;
-        var pt = null;
-        try { pt = globe.toGlobeCoords(x, y); } catch (e) {}
-        var Ld = pt ? landAt(pt.lat, pt.lng) : null;
-        if (Ld && Ld.state === 'none') { Ld = null; }
-        setHover(Ld, x, y);
+    try {
+      var small = window.matchMedia('(max-width: 760px)').matches;
+      var NS = small ? 3400 : 5200, GA = Math.PI * (3 - Math.sqrt(5)), seed = 7;
+      function rnd(){ seed = (seed * 16807) % 2147483647; return (seed - 1) / 2147483646; }
+      var pos = [], size = [], phase = [], speed = [], n;
+      for (n = 0; n < NS; n++){
+        var yy = 1 - (n + 0.5) / NS * 2, rr = Math.sqrt(1 - yy * yy), th = GA * n;
+        var lat = Math.asin(yy) * 180 / Math.PI + (rnd() - 0.5) * 1.6;
+        var lng = (Math.atan2(Math.sin(th) * rr, Math.cos(th) * rr) * 180 / Math.PI) + (rnd() - 0.5) * 1.6;
+        if (Math.abs(lat) > 74 || rnd() > 0.62 || !atSea(lng, lat)) { continue; }
+        var p = globe.getCoords(lat, lng, 0.004);
+        pos.push(p.x, p.y, p.z);
+        var glint = rnd() < 0.05;
+        size.push(glint ? 4.2 + rnd() * 1.6 : 1.5 + rnd() * 1.5);
+        phase.push(rnd() * 6.283);
+        speed.push(0.5 + rnd() * 1.4);
+      }
+      var fg = new THREE.BufferGeometry();
+      fg.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3));
+      fg.setAttribute('aSize', new THREE.Float32BufferAttribute(size, 1));
+      fg.setAttribute('aPhase', new THREE.Float32BufferAttribute(phase, 1));
+      fg.setAttribute('aSpeed', new THREE.Float32BufferAttribute(speed, 1));
+      fleckMat = new THREE.ShaderMaterial({
+        uniforms: { uTime: { value: 0 }, uPR: { value: 1 }, uColor: { value: new THREE.Color('#F6D677') } },
+        vertexShader: [
+          'attribute float aSize; attribute float aPhase; attribute float aSpeed;',
+          'uniform float uTime; uniform float uPR; varying float vA;',
+          'void main(){',
+          '  vec4 mv = modelViewMatrix * vec4(position, 1.0);',
+          '  float tw = 0.5 + 0.5 * sin(uTime * aSpeed + aPhase);',
+          '  vA = 0.22 + 0.78 * tw * tw;',
+          '  gl_PointSize = aSize * uPR * (300.0 / -mv.z) * (0.75 + 0.45 * tw);',
+          '  gl_Position = projectionMatrix * mv;',
+          '}'
+        ].join('\n'),
+        fragmentShader: [
+          'uniform vec3 uColor; varying float vA;',
+          'void main(){',
+          '  float d = length(gl_PointCoord - vec2(0.5));',
+          '  float a = smoothstep(0.5, 0.0, d); a = a * a;',
+          '  gl_FragColor = vec4(uColor * (1.0 + 0.7 * (1.0 - 2.0 * d)), a * vA);',
+          '}'
+        ].join('\n'),
+        transparent: true, depthWrite: false, blending: THREE.AdditiveBlending
       });
-    });
-    stage.addEventListener('pointerleave', function(){ setHover(null); });
+      var flecks = new THREE.Points(fg, fleckMat);
+      flecks.raycast = function(){};
+      globe.scene().add(flecks);
+    } catch (e) { fleckMat = null; }
 
     /* ---- the gold ring on the edge and the turning bezel ---- */
-    var crown = null, bezel = null, clouds = null, cloudOp = 0;
+    var crown = null, bezel = null;
     try {
       var cam = globe.camera();
       crown = new THREE.Group();
@@ -922,18 +961,18 @@ window.PNHG_CFG={"base":"https://perfectnations.org/blueprints/","paths":{"cote-
         return new THREE.Mesh(new THREE.RingGeometry(r0, r1, 256),
           new THREE.MeshBasicMaterial({ color: col, transparent: true, opacity: op, side: THREE.DoubleSide, depthWrite: false }));
       }
-      crown.add(ringMesh(1.0, 1.006, paleC, 0.92));
-      crown.add(ringMesh(1.064, 1.0662, goldC, 0.5));
+      crown.add(ringMesh(1.0, 1.0075, paleC, 0.95));
+      crown.add(ringMesh(1.064, 1.0665, goldC, 0.55));
       bezel = new THREE.Group();
       var tv = [], t, ang, r0, r1;
       for (t = 0; t < 180; t++){
         ang = t / 180 * Math.PI * 2;
-        r0 = 1.036; r1 = (t % 15 === 0) ? 1.058 : (t % 5 === 0 ? 1.050 : 1.044);
+        r0 = 1.036; r1 = (t % 15 === 0) ? 1.060 : (t % 5 === 0 ? 1.052 : 1.046);
         tv.push(Math.cos(ang) * r0, Math.sin(ang) * r0, 0, Math.cos(ang) * r1, Math.sin(ang) * r1, 0);
       }
       var tg = new THREE.BufferGeometry();
       tg.setAttribute('position', new THREE.Float32BufferAttribute(tv, 3));
-      bezel.add(new THREE.LineSegments(tg, new THREE.LineBasicMaterial({ color: goldC, transparent: true, opacity: 0.45, depthWrite: false })));
+      bezel.add(new THREE.LineSegments(tg, new THREE.LineBasicMaterial({ color: goldC, transparent: true, opacity: 0.5, depthWrite: false })));
       crown.add(bezel);
       crown.traverse(function(o){ o.raycast = function(){}; });
       globe.scene().add(crown);
@@ -947,46 +986,18 @@ window.PNHG_CFG={"base":"https://perfectnations.org/blueprints/","paths":{"cote-
         crown.quaternion.copy(cam.quaternion);
         if (!reduce) {
           bezel.rotation.z = -now * 0.00004;
-          if (clouds) {
-            clouds.rotation.y = now * 0.0000045;
-            if (cloudOp < 0.72) { cloudOp = Math.min(0.72, cloudOp + 0.01); clouds.material.opacity = cloudOp; }
-          }
-        } else if (clouds && cloudOp < 0.72) { cloudOp = 0.72; clouds.material.opacity = cloudOp; }
+          if (fleckMat) { fleckMat.uniforms.uTime.value = now * 0.001; }
+        }
         window.requestAnimationFrame(trace);
       };
       window.pnhgRimOn = true; window.pnhgRimTrace();
     } catch (e) {}
 
-    /* once the planet is showing: the sea's shine, the relief, the clouds and, on larger screens, the sharper Earth */
-    later(function(){
-      try {
-        var TL = new THREE.TextureLoader();
-        TL.load(WATER, function(tex){
-          try {
-            var m = globe.globeMaterial();
-            m.specularMap = tex; m.specular = new THREE.Color('#9fb6cf'); m.shininess = 22; m.needsUpdate = true;
-          } catch (e) {}
-        });
-        globe.bumpImageUrl(RELIEF);
-        TL.load(CLOUDS, function(tex){
-          try {
-            clouds = new THREE.Mesh(new THREE.SphereGeometry(R * 1.0055, small ? 48 : 72, small ? 36 : 54),
-              new THREE.MeshPhongMaterial({ color: 0xffffff, alphaMap: tex, transparent: true, opacity: 0, depthWrite: false }));
-            clouds.raycast = function(){};
-            globe.scene().add(clouds);
-          } catch (e) {}
-        });
-        if (!small && (window.devicePixelRatio || 1) * box.w > 900) {
-          var hi = new Image();
-          hi.onload = function(){ try { globe.globeImageUrl(EARTH_HI); } catch (e) {} };
-          hi.src = EARTH_HI;
-        }
-      } catch (e) {}
-    }, 1600);
-
     try {
       var capPR = (box.w * box.h > 1600000) ? 1.25 : 1.5;
-      globe.renderer().setPixelRatio(Math.min(window.devicePixelRatio || 1, capPR));
+      var pr = Math.min(window.devicePixelRatio || 1, capPR);
+      globe.renderer().setPixelRatio(pr);
+      if (fleckMat) { fleckMat.uniforms.uPR.value = pr; }
     } catch (e) {}
 
     var controls = globe.controls();
@@ -1058,7 +1069,7 @@ window.PNHG_CFG={"base":"https://perfectnations.org/blueprints/","paths":{"cote-
     window.addEventListener('resize', queueResize);
     if ('ResizeObserver' in window) { new ResizeObserver(queueResize).observe(band); }
 
-    /* a nation published on GitHub after the globe started gets its bright gold border in place */
+    /* a nation published on GitHub after the globe started turns bright gold in place */
     window.pnhgPromote = function(slugs){
       var changed = false;
       (slugs || []).forEach(function(s){
@@ -1067,7 +1078,7 @@ window.PNHG_CFG={"base":"https://perfectnations.org/blueprints/","paths":{"cote-
         lands.forEach(function(Ld){ if (Ld.slug === s) { Ld.state = 'live'; } });
         islands.forEach(function(I){ if (I.slug === s) { I.state = 'live'; } });
       });
-      if (changed){ try { borders(); } catch (e) {} globe.pointsData(islands.slice()); }
+      if (changed){ globe.polygonsData(lands.slice()); globe.pointsData(islands.slice()); }
     };
   }
 
