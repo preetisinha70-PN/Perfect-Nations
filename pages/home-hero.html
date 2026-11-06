@@ -1,11 +1,12 @@
 <!-- ===========================================================================
-PERFECT NATIONS - HOMEPAGE - SECTION 01 - CIVILIZATION RE-DEFINED - v5.2 - 2026-11-06
+PERFECT NATIONS - HOMEPAGE - SECTION 01 - CIVILIZATION RE-DEFINED - v5.3 - 2026-11-06
 Served live from GitHub (pages/home-hero.html) by the Perfect Nations Live Pages plugin;
 the root id stays pn-hero, so the widget already on the homepage is the one replaced.
+v5.3: brighter for phones: richer gold with its shine, a brighter sapphire sea, a stronger gold
+  halo, brighter flecks and ring, sharper drawing and a larger planet on phones.
 v5.2, the golden planet, refined:
   - Every nation in gold on a deep sapphire sea with glinting gold flecks, a gold halo, a gold ring
-    on its edge and a slowly turning bezel. No stars above the planet. The sun on the gold is
-    softer, so the land never glares white.
+    on its edge and a slowly turning bezel. No stars above the planet.
   - Faster: the planet appears at once (no grow-in) and starts the moment the two libraries arrive.
     Until then the still planet shows inside the seven stars of the logo, revolving, with
     "Drawing the world".
@@ -17,11 +18,11 @@ Prosperity of Nations" below.
 Declares PNHG_WORLD and PNHG_CFG, which the continent maps read, so it must stay ABOVE them.
 Country outlines: Natural Earth 1:50m (world-atlas 2.0), simplified to a tenth of a degree.
 EDITORIAL: the still picture shown while the planet loads is
-https://perfectnations.org/wp-content/uploads/2026/11/pn-home-globe-gold-poster-v2.webp
+https://perfectnations.org/wp-content/uploads/2026/11/pn-home-globe-gold-poster-v3.webp
 If the address differs, change it in the two places it appears (search for pn-home-globe-gold).
 =========================================================================== -->
 <link rel="preconnect" href="https://cdn.jsdelivr.net">
-<link rel="preload" as="image" href="https://perfectnations.org/wp-content/uploads/2026/11/pn-home-globe-gold-poster-v2.webp" fetchpriority="high">
+<link rel="preload" as="image" href="https://perfectnations.org/wp-content/uploads/2026/11/pn-home-globe-gold-poster-v3.webp" fetchpriority="high">
 <link rel="preload" as="script" href="https://cdn.jsdelivr.net/npm/three@0.159.0/build/three.min.js">
 <link rel="preload" as="script" href="https://cdn.jsdelivr.net/npm/globe.gl@2.31.0/dist/globe.gl.min.js">
 <style>
@@ -389,7 +390,7 @@ If the address differs, change it in the two places it appears (search for pn-ho
     <div class="pnhg-plate" id="pnhgPlate" aria-live="polite"></div>
 
     <div class="pnhg-fallback is-waiting" id="pnhgFallback">
-      <img class="pnhg-poster" id="pnhgPoster" src="https://perfectnations.org/wp-content/uploads/2026/11/pn-home-globe-gold-poster-v2.webp" alt="" width="820" height="820" decoding="async" fetchpriority="high">
+      <img class="pnhg-poster" id="pnhgPoster" src="https://perfectnations.org/wp-content/uploads/2026/11/pn-home-globe-gold-poster-v3.webp" alt="" width="820" height="820" decoding="async" fetchpriority="high">
       <span class="pnhg-orbit" aria-hidden="true"><svg viewBox="-100 -100 200 200" focusable="false"><defs><path id="pnhg-st" fill="#E3C258" d="M0 -6 1.41 -1.94 5.71 -1.85 2.28 .74 3.53 4.85 0 2.4 -3.53 4.85 -2.28 .74 -5.71 -1.85 -1.41 -1.94Z"/></defs><circle r="92" fill="none" stroke="#E3C258" stroke-opacity=".28" stroke-width=".6"/><use href="#pnhg-st" transform="rotate(0) translate(0 -92) scale(1.15)"/><use href="#pnhg-st" transform="rotate(51) translate(0 -92) scale(1)"/><use href="#pnhg-st" transform="rotate(103) translate(0 -92) scale(1)"/><use href="#pnhg-st" transform="rotate(154) translate(0 -92) scale(1)"/><use href="#pnhg-st" transform="rotate(206) translate(0 -92) scale(1)"/><use href="#pnhg-st" transform="rotate(257) translate(0 -92) scale(1)"/><use href="#pnhg-st" transform="rotate(309) translate(0 -92) scale(1)"/></svg></span>
       <span class="pnhg-wait" role="status">Drawing the world</span>
       <p>Every nation is on the maps below.</p>
@@ -570,7 +571,7 @@ window.PNHG_CFG={"base":"https://perfectnations.org/blueprints/","paths":{"cote-
 
   /* the planet, its gold ring and its bezel fit the band, with room for the halo */
   var REACH_Y = 1.13, REACH_X = 1.10, FILL = 0.97;
-  function planetDiameter(W, H){ return Math.min(W / REACH_X, H / REACH_Y) * FILL; }
+  function planetDiameter(W, H){ var rx = W < 761 ? 1.075 : REACH_X; return Math.min(W / rx, H / REACH_Y) * FILL; }
   function sizeVars(){
     var W = band.clientWidth || 900, H = band.clientHeight || 620;
     band.style.setProperty('--pd', Math.round(planetDiameter(W, H)) + 'px');
@@ -645,12 +646,12 @@ window.PNHG_CFG={"base":"https://perfectnations.org/blueprints/","paths":{"cote-
   }
 
   /* ---- THE GOLDEN EARTH ---- */
-  var OCEAN = '#0A2B5C', OCEAN_DEEP = '#04122E', OCEAN_SPEC = '#4C7FC4';
+  var OCEAN = '#123F86', OCEAN_DEEP = '#0A2558', OCEAN_SPEC = '#7FAEE8';
   var GOLD = {
-    live: { c:'#E6C35A', e:'#5A4210', ei:0.40, s:'#8C7434', sh:16 },
-    soon: { c:'#CDA645', e:'#4A350C', ei:0.36, s:'#7A6430', sh:14 },
-    none: { c:'#94793A', e:'#2E230A', ei:0.32, s:'#5E4D26', sh:10 },
-    hov:  { c:'#F5DA86', e:'#7A5A18', ei:0.50, s:'#B89A4E', sh:20 }
+    live: { c:'#F5D36C', e:'#7A5A16', ei:0.55, s:'#FFF6D2', sh:30 },
+    soon: { c:'#EDC95E', e:'#6E5214', ei:0.52, s:'#FFF1C4', sh:28 },
+    none: { c:'#C9A552', e:'#4A3A12', ei:0.45, s:'#E8D49A', sh:20 },
+    hov:  { c:'#FFE59A', e:'#8E6A1E', ei:0.62, s:'#FFFFFF', sh:36 }
   };
   var SIDE = '#5A4413';
   var ALT = { none:0.0080, soon:0.0120, live:0.0120 }, ALT_HOV = 0.0260, ALT_UP = 0.0030;
@@ -659,7 +660,7 @@ window.PNHG_CFG={"base":"https://perfectnations.org/blueprints/","paths":{"cote-
   var LABEL = { live:'Blueprint published in full', soon:'Blueprint in preparation' };
   var MARK = { live:{ color:'#F5DFA0', alt:0.016, rad:0.42 }, soon:{ color:'#E3C258', alt:0.014, rad:0.36 } };
   var MIN_ALT = 0.55, MAX_ALT = 4.2, STEP = 1.22;
-  var ATMO = 0.17, ATMO_COLOR = '#E9C562';
+  var ATMO = 0.2, ATMO_COLOR = '#F4D06A';
   var HOLD_MS = 1600;
   var MIN_ISLAND = 0.5, DOT_BELOW = 0.25;
   var TAN25 = Math.tan(25 * Math.PI / 180);
@@ -843,11 +844,11 @@ window.PNHG_CFG={"base":"https://perfectnations.org/blueprints/","paths":{"cote-
         var keyI = 1, out = [];
         lights.forEach(function(l){ if (l.isDirectionalLight) { keyI = l.intensity; } });
         lights.forEach(function(l){
-          if (l.isAmbientLight){ l.color = new THREE.Color('#FFF1DA'); l.intensity = l.intensity * 0.95; }
-          else if (l.isDirectionalLight){ l.color = new THREE.Color('#FFF0CC'); l.intensity = l.intensity * 1.05; l.position.set(-1.2, 0.7, 1.6); }
+          if (l.isAmbientLight){ l.color = new THREE.Color('#FFF4E0'); l.intensity = l.intensity * 1.2; }
+          else if (l.isDirectionalLight){ l.color = new THREE.Color('#FFF0CC'); l.intensity = l.intensity * 1.45; l.position.set(-1.1, 0.9, 1.5); }
           out.push(l);
         });
-        var rimL = new THREE.DirectionalLight(new THREE.Color('#F2C14E'), keyI * 0.45);
+        var rimL = new THREE.DirectionalLight(new THREE.Color('#F7D37A'), keyI * 0.7);
         rimL.position.set(1.5, -0.2, -1.1);
         out.push(rimL);
         globe.lights(out);
@@ -914,7 +915,7 @@ window.PNHG_CFG={"base":"https://perfectnations.org/blueprints/","paths":{"cote-
         var p = globe.getCoords(lat, lng, 0.004);
         pos.push(p.x, p.y, p.z);
         var glint = rnd() < 0.05;
-        size.push(glint ? 4.2 + rnd() * 1.6 : 1.5 + rnd() * 1.5);
+        size.push(glint ? 4.6 + rnd() * 1.8 : 1.8 + rnd() * 1.6);
         phase.push(rnd() * 6.283);
         speed.push(0.5 + rnd() * 1.4);
       }
@@ -924,7 +925,7 @@ window.PNHG_CFG={"base":"https://perfectnations.org/blueprints/","paths":{"cote-
       fg.setAttribute('aPhase', new THREE.Float32BufferAttribute(phase, 1));
       fg.setAttribute('aSpeed', new THREE.Float32BufferAttribute(speed, 1));
       fleckMat = new THREE.ShaderMaterial({
-        uniforms: { uTime: { value: 0 }, uPR: { value: 1 }, uColor: { value: new THREE.Color('#F6D677') } },
+        uniforms: { uTime: { value: 0 }, uPR: { value: 1 }, uColor: { value: new THREE.Color('#FFE69A') } },
         vertexShader: [
           'attribute float aSize; attribute float aPhase; attribute float aSpeed;',
           'uniform float uTime; uniform float uPR; varying float vA;',
@@ -961,7 +962,7 @@ window.PNHG_CFG={"base":"https://perfectnations.org/blueprints/","paths":{"cote-
         return new THREE.Mesh(new THREE.RingGeometry(r0, r1, 256),
           new THREE.MeshBasicMaterial({ color: col, transparent: true, opacity: op, side: THREE.DoubleSide, depthWrite: false }));
       }
-      crown.add(ringMesh(1.0, 1.0075, paleC, 0.95));
+      crown.add(ringMesh(1.0, 1.009, paleC, 1.0));
       crown.add(ringMesh(1.064, 1.0665, goldC, 0.55));
       bezel = new THREE.Group();
       var tv = [], t, ang, r0, r1;
@@ -994,7 +995,7 @@ window.PNHG_CFG={"base":"https://perfectnations.org/blueprints/","paths":{"cote-
     } catch (e) {}
 
     try {
-      var capPR = (box.w * box.h > 1600000) ? 1.25 : 1.5;
+      var capPR = (box.w * box.h > 1600000) ? 1.25 : (box.w < 761 ? 2 : 1.5);
       var pr = Math.min(window.devicePixelRatio || 1, capPR);
       globe.renderer().setPixelRatio(pr);
       if (fleckMat) { fleckMat.uniforms.uPR.value = pr; }
