@@ -1,0 +1,346 @@
+<!-- ===========================================================================
+PERFECT NATIONS - HOMEPAGE - SECTION 06 - THE REDESIGN STUDIO - v6.0 THE FIVE MOVES - 2026-11-06
+One Elementor Custom HTML widget, Full Width, padding 0. Served live from GitHub
+(pages/home-studio.html) by the Perfect Nations Live Pages plugin, in place of the pasted
+section 06 v5 (root id pn-studio).
+v6.0: the Studio becomes the map of the homepage. It sits directly under The Story of Perfect
+Nations and the dispatch ticker, and shows how a nation is re-designed in five moves. Each move is
+a tile in the colour of the section that opens it further down the page: 01 Assets (Sovereign
+Assets), 02 Perfect Capita, 03 Co-Design (National Blueprints), 04 Capital (Capital Architecture);
+05 Launch opens the Design Studio page. A gold line joins the five moves, with a light that
+travels along it. The three mandates and the way in sit in one slim row. Ivory ground, so the page
+breathes between the dark bands. About half the height of v5 on laptops.
+Phones have their own layout: the moves in two columns (the fifth across the full width), the
+numbers inside the tiles, and the three mandates as three small cards in one row.
+ORDER: the page reads in the order of the moves: Sovereign Assets, Perfect Capita, National
+Blueprints, Capital Architecture. If National Blueprints still sits above Sovereign Assets in
+Elementor, this widget moves it below Perfect Capita in the visitor's browser before it comes into
+view. To make the order permanent, drag the National Blueprints widget below Perfect Capita in
+Elementor (Navigator); the script then has nothing to do.
+=========================================================================== -->
+<style>
+#pn-studio{
+  --iv:#F5EEDC; --ink:#1A140C; --ink2:rgba(26,20,12,.76); --ink3:rgba(26,20,12,.58); --hair:rgba(26,20,12,.14);
+  --terra:#8A3A22; --g:#E3C258; --gs:#F0D68F; --gd:#7E5A0C; --grgb:227,194,88;
+  --hd:var(--pn-font-heading,"Barlow Condensed","Arial Narrow",Arial,sans-serif);
+  --bd:var(--pn-font-body,"Barlow Semi Condensed",Arial,sans-serif);
+  position:relative; isolation:isolate;
+  width:100vw; margin-left:calc(50% - 50vw);
+  overflow-x:hidden; overflow-x:clip; box-sizing:border-box;
+  padding:clamp(26px,4.2vh,48px) 0 clamp(24px,3.8vh,42px);
+  color:var(--ink); font-family:var(--bd); line-height:1.5; text-align:left;
+  background:
+    radial-gradient(55% 90% at 100% 0%, rgba(227,194,88,.26) 0%, transparent 62%),
+    radial-gradient(40% 70% at 0% 100%, rgba(138,58,34,.10) 0%, transparent 64%),
+    linear-gradient(180deg,#F7F0DE 0%,#EEE3C8 100%);
+}
+#pn-studio::before{
+  content:""; position:absolute; inset:0; z-index:-1; pointer-events:none; opacity:.05;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .6 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+#pn-studio *,#pn-studio *::before,#pn-studio *::after{ box-sizing:border-box; }
+#pn-studio [hidden]{ display:none !important; }
+.elementor-widget-html:has(#pn-studio),.elementor-widget:has(#pn-studio),.elementor-widget-wrap:has(#pn-studio),
+.elementor-container:has(#pn-studio),.elementor-column:has(#pn-studio),.elementor-section:has(#pn-studio),
+.e-con-inner:has(#pn-studio),.e-con:has(#pn-studio){
+  padding-top:0 !important; padding-bottom:0 !important; margin-top:0 !important; margin-bottom:0 !important;
+  --widgets-spacing:0px !important; row-gap:0 !important;
+}
+/* the sections the moves open: land below the header bar */
+#pn-assets,#pn-capita,#pn-featured,#pn-capital{ scroll-margin-top:var(--pn-head-off,72px); }
+
+#pn-studio .pnst-in{ position:relative; width:100%; max-width:1400px; margin:0 auto; padding:0 clamp(18px,4.5vw,72px); }
+
+/* the head: title left, the promise right */
+#pn-studio .pnst-head{ display:grid; gap:10px clamp(24px,4vw,64px); grid-template-columns:minmax(0,1fr); align-items:end; }
+@media (min-width:900px){ #pn-studio .pnst-head{ grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr); } }
+#pn-studio .pnst-eb{
+  display:flex; align-items:center; gap:10px; margin:0 0 10px;
+  font-family:var(--hd); font-size:.72rem; font-weight:700; letter-spacing:.3em; text-transform:uppercase; color:var(--terra);
+}
+#pn-studio .pnst-eb::before{ content:""; width:24px; height:2px; flex:none; background:var(--terra); }
+#pn-studio h2.pnst-h2{
+  margin:0; max-width:16ch;
+  font-family:var(--hd); font-weight:600; font-size:clamp(2.3rem,5vw,4.6rem); line-height:.92; letter-spacing:-.025em;
+  color:var(--ink) !important; text-transform:none !important; text-shadow:none !important; text-wrap:balance;
+}
+#pn-studio h2.pnst-h2 em{ font-style:normal; color:var(--terra); }
+#pn-studio .pnst-lead{ margin:0; max-width:44ch; text-wrap:pretty; font-size:clamp(1rem,1.25vw,1.14rem); line-height:1.5; color:var(--ink2); }
+#pn-studio .pnst-lead b{ font-weight:600; color:var(--ink); }
+
+/* the five moves on one gold line */
+#pn-studio .pnst-moves{
+  position:relative; display:grid; gap:clamp(10px,1vw,14px); grid-template-columns:repeat(5,minmax(0,1fr));
+  margin:clamp(18px,2.8vh,28px) 0 0; padding:0; list-style:none; counter-reset:none;
+}
+#pn-studio .pnst-moves::before,#pn-studio .pnst-moves::after{
+  content:""; position:absolute; left:16px; right:0; top:15px; height:2px; pointer-events:none; border-radius:2px;
+}
+#pn-studio .pnst-moves::before{ background:linear-gradient(90deg,var(--g),rgba(var(--grgb),.85) 80%,rgba(var(--grgb),0)); }
+#pn-studio .pnst-moves::after{
+  height:4px; top:14px; opacity:0;
+  background:linear-gradient(90deg,rgba(255,243,196,0),#FFF6D2 50%,rgba(255,243,196,0)) no-repeat;
+  background-size:18% 100%; background-position:-20% 0;
+  filter:drop-shadow(0 0 6px rgba(255,214,120,.9));
+}
+#pn-studio .pnst-m{ position:relative; display:flex; flex-direction:column; margin:0; padding:0; min-width:0; }
+#pn-studio .pnst-n{
+  position:relative; z-index:2; display:flex; align-items:center; justify-content:center;
+  width:32px; height:32px; margin:0 0 10px; border-radius:50%;
+  background:#FBF6EA; border:2px solid var(--g); color:var(--ink);
+  font-family:var(--hd); font-size:.8rem; font-weight:700; letter-spacing:.04em;
+  box-shadow:0 0 0 4px #F3EAD3;
+  transition:background .3s ease, color .3s ease, transform .3s ease;
+}
+#pn-studio .pnst-t{
+  position:relative; display:flex; flex-direction:column; flex:1 1 auto; min-height:clamp(150px,17vw,178px);
+  padding:16px 16px 14px; border-radius:18px; overflow:hidden; text-decoration:none; color:#F5F1E8;
+  background:linear-gradient(155deg,var(--c1) 0%,var(--c2) 100%);
+  box-shadow:0 14px 30px rgba(52,34,12,.22), inset 0 1px 0 rgba(255,255,255,.14);
+  transition:transform .4s cubic-bezier(.22,1,.36,1), box-shadow .4s ease;
+}
+#pn-studio .pnst-t::before{
+  content:""; position:absolute; left:16px; right:16px; top:0; height:2px; transform:scaleX(0); transform-origin:left;
+  background:#FFE6A0; box-shadow:0 0 12px rgba(255,200,110,.75);
+}
+#pn-studio .pnst-t::after{
+  content:""; position:absolute; right:-30%; top:-40%; width:80%; aspect-ratio:1; border-radius:50%; pointer-events:none;
+  background:radial-gradient(closest-side,rgba(255,255,255,.16),rgba(255,255,255,0));
+}
+#pn-studio .pnst-t:hover{ transform:translateY(-6px); box-shadow:0 24px 44px rgba(52,34,12,.3), inset 0 1px 0 rgba(255,255,255,.18); }
+#pn-studio .pnst-t:focus-visible{ outline:2px solid var(--gd); outline-offset:3px; }
+#pn-studio .pnst-m:hover .pnst-n{ background:var(--g); transform:scale(1.08); }
+#pn-studio .pnst-ic{ display:block; width:30px; height:30px; fill:none; stroke:#FFF4D6; stroke-width:1.5; stroke-linecap:round; stroke-linejoin:round; opacity:.95; }
+#pn-studio .pnst-t b{
+  display:block; margin-top:auto; padding-top:14px;
+  font-family:var(--hd); font-weight:600; font-size:clamp(1.35rem,1.75vw,1.75rem); line-height:1; letter-spacing:-.01em;
+}
+#pn-studio .pnst-t i{ display:block; margin-top:6px; padding-right:34px; font-style:normal; font-size:.86rem; line-height:1.35; color:rgba(245,241,232,.82); }
+#pn-studio .pnst-go{
+  position:absolute; right:12px; bottom:12px; width:30px; height:30px; border-radius:50%;
+  display:flex; align-items:center; justify-content:center;
+  border:1px solid rgba(var(--grgb),.75); color:var(--g); font-family:Arial,sans-serif; font-size:.9rem; line-height:1;
+  transition:background .25s ease, color .25s ease, transform .25s ease;
+}
+#pn-studio .pnst-t:hover .pnst-go{ background:var(--g); color:var(--ink); transform:translateY(2px); }
+#pn-studio .pnst-m--out .pnst-t:hover .pnst-go{ transform:translateX(2px); }
+
+/* three ways to begin, and the way in */
+#pn-studio .pnst-begin{
+  display:flex; flex-wrap:wrap; align-items:center; gap:10px 12px;
+  margin-top:clamp(16px,2.4vh,24px); padding-top:clamp(14px,2vh,20px); border-top:1px solid var(--hair);
+}
+#pn-studio .pnst-bk{ margin:0 6px 0 0; font-family:var(--hd); font-size:.72rem; font-weight:700; letter-spacing:.24em; text-transform:uppercase; color:var(--ink3); }
+#pn-studio .pnst-mand{ display:flex; flex-wrap:wrap; gap:8px; margin:0; padding:0; list-style:none; }
+#pn-studio .pnst-mand li{ margin:0; }
+#pn-studio .pnst-mand a{
+  display:flex; align-items:baseline; gap:9px; min-height:44px; padding:12px 16px 11px; border-radius:999px; text-decoration:none;
+  border:1px solid rgba(26,20,12,.18); background:rgba(255,255,255,.42); color:var(--ink);
+  transition:border-color .22s ease, background .22s ease, transform .22s ease;
+}
+#pn-studio .pnst-mand a:hover{ border-color:var(--gd); background:rgba(var(--grgb),.22); transform:translateY(-2px); }
+#pn-studio .pnst-mand a:focus-visible{ outline:2px solid var(--gd); outline-offset:3px; }
+#pn-studio .pnst-mand small{ font-family:var(--hd); font-size:.68rem; font-weight:700; letter-spacing:.14em; color:var(--gd); }
+#pn-studio .pnst-mand b{ font-family:var(--hd); font-size:.8rem; font-weight:700; letter-spacing:.14em; text-transform:uppercase; white-space:nowrap; }
+#pn-studio .pnst-mand i{ font-style:normal; font-size:.7rem; letter-spacing:.14em; text-transform:uppercase; color:var(--ink3); white-space:nowrap; }
+#pn-studio .pnst-btn{
+  display:inline-flex; align-items:center; justify-content:center; gap:14px; min-height:46px; margin-left:auto;
+  padding:14px 26px 12px; border-radius:999px; text-decoration:none; cursor:pointer;
+  font-family:var(--hd); font-size:.74rem; font-weight:700; letter-spacing:.19em; text-transform:uppercase;
+  border:1px solid #C9A33E; background:var(--g); color:var(--ink);
+  box-shadow:0 10px 26px rgba(150,110,20,.28);
+  transition:transform .22s ease, background .22s ease;
+}
+#pn-studio .pnst-btn::after{ content:"\2192"; font-family:Arial,sans-serif; font-size:1rem; letter-spacing:0; transition:transform .3s cubic-bezier(.22,1,.36,1); }
+#pn-studio .pnst-btn:hover{ transform:translateY(-2px); background:var(--gs); }
+#pn-studio .pnst-btn:hover::after{ transform:translateX(6px); }
+#pn-studio .pnst-btn:focus-visible{ outline:2px solid var(--gd); outline-offset:3px; }
+
+/* motion: the tiles rise in order once, the line lights, then a slow pulse runs along it */
+@media (prefers-reduced-motion:no-preference){
+  #pn-studio.is-armed .pnst-m{ opacity:0; transform:translateY(16px); transition:opacity .6s ease, transform .7s cubic-bezier(.22,1,.36,1); transition-delay:calc(var(--i) * .14s); }
+  #pn-studio.is-armed.is-in .pnst-m{ opacity:1; transform:none; }
+  #pn-studio.is-armed .pnst-moves::before{ transform:scaleX(0); transform-origin:left; transition:transform 1.3s cubic-bezier(.65,0,.35,1) .1s; }
+  #pn-studio.is-armed.is-in .pnst-moves::before{ transform:scaleX(1); }
+  #pn-studio.is-in .pnst-moves::after{ animation:pnstRun 5s linear 1.6s infinite; }
+  #pn-studio.is-in .pnst-t::before{ animation:pnstSweep 5s ease-in-out infinite; animation-delay:calc(1.6s + var(--i) * .82s); }
+}
+@keyframes pnstRun{ 0%{ opacity:0; background-position:-20% 0; } 8%{ opacity:1; } 88%{ opacity:1; } 100%{ opacity:0; background-position:120% 0; } }
+@keyframes pnstSweep{ 0%,64%,100%{ transform:scaleX(0); opacity:0; } 8%{ transform:scaleX(1); opacity:1; } 30%{ transform:scaleX(1); opacity:.25; } }
+@media (prefers-reduced-motion:reduce){ #pn-studio *{ transition:none !important; animation:none !important; } }
+
+/* tablets: three and two */
+@media (min-width:641px) and (max-width:899px){
+  #pn-studio .pnst-moves{ grid-template-columns:repeat(6,minmax(0,1fr)); }
+  #pn-studio .pnst-m{ grid-column:span 2; }
+  #pn-studio .pnst-m:nth-child(n+4){ grid-column:span 3; }
+  #pn-studio .pnst-moves::before,#pn-studio .pnst-moves::after{ display:none; }
+  #pn-studio .pnst-btn{ margin-left:0; }
+}
+
+/* phones: a layout of their own, two columns, everything closer */
+@media (max-width:640px){
+  #pn-studio{ padding:22px 0 22px; }
+  #pn-studio .pnst-eb{ font-size:.68rem; letter-spacing:.26em; margin-bottom:8px; }
+  #pn-studio h2.pnst-h2{ font-size:clamp(2.2rem,10.4vw,2.9rem); }
+  #pn-studio .pnst-lead{ font-size:.96rem; line-height:1.42; }
+  #pn-studio .pnst-moves{ grid-template-columns:repeat(2,minmax(0,1fr)); gap:8px; margin-top:16px; }
+  #pn-studio .pnst-moves::before,#pn-studio .pnst-moves::after{ display:none; }
+  #pn-studio .pnst-n{ position:absolute; right:10px; top:10px; z-index:3; width:26px; height:26px; margin:0; font-size:.7rem; border-width:1.5px; background:rgba(251,246,234,.95); box-shadow:none; }
+  #pn-studio .pnst-t{ min-height:104px; padding:11px 12px 11px; border-radius:14px; }
+  #pn-studio .pnst-ic{ width:24px; height:24px; }
+  #pn-studio .pnst-t b{ padding-top:8px; font-size:1.26rem; }
+  #pn-studio .pnst-t i{ margin-top:3px; padding-right:0; font-size:.76rem; line-height:1.3; }
+  #pn-studio .pnst-go{ display:none; }
+  #pn-studio .pnst-m:nth-child(5){ grid-column:1 / -1; }
+  #pn-studio .pnst-m:nth-child(5) .pnst-t{ min-height:0; display:grid; grid-template-columns:24px minmax(0,1fr); column-gap:12px; align-items:center; padding-right:46px; }
+  #pn-studio .pnst-m:nth-child(5) .pnst-ic{ grid-row:span 2; }
+  #pn-studio .pnst-m:nth-child(5) .pnst-t b{ padding-top:0; }
+  #pn-studio .pnst-m:nth-child(5) .pnst-n{ top:50%; margin-top:-13px; }
+  #pn-studio .pnst-begin{ display:block; margin-top:16px; padding-top:14px; }
+  #pn-studio .pnst-bk{ margin:0 0 8px; font-size:.66rem; letter-spacing:.2em; }
+  #pn-studio .pnst-mand{ display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:6px; }
+  #pn-studio .pnst-mand a{ display:flex; flex-direction:column; align-items:flex-start; gap:3px; height:100%; min-height:0; padding:10px 10px 9px; border-radius:12px; }
+  #pn-studio .pnst-mand b{ font-size:.7rem; letter-spacing:.08em; line-height:1.15; white-space:normal; }
+  #pn-studio .pnst-mand i{ font-size:.6rem; letter-spacing:.1em; }
+  #pn-studio .pnst-btn{ display:flex; width:100%; margin:10px 0 0; }
+}
+#pn-studio h2,#pn-studio b{ text-shadow:none !important; }
+</style>
+
+<section id="pn-studio" aria-labelledby="pnst-h">
+  <div class="pnst-in">
+    <div class="pnst-head">
+      <div>
+        <p class="pnst-eb">The ReDesign Studio</p>
+        <h2 class="pnst-h2" id="pnst-h">Where a nation is <em>re&#8209;designed</em></h2>
+      </div>
+      <p class="pnst-lead">Five moves take a nation from <b>what it owns</b> to <b>a basic standard of living for every citizen</b>. Each move opens below.</p>
+    </div>
+
+    <ol class="pnst-moves" aria-label="The five moves">
+      <li class="pnst-m" style="--c1:#1F7D62; --c2:#0A4134; --i:0">
+        <span class="pnst-n" aria-hidden="true">01</span>
+        <a class="pnst-t" href="#pn-assets" data-to="pn-assets" data-page="https://perfectnations.org/sovereign-assets/">
+          <svg class="pnst-ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M2.5 19.5h19"/><path d="M3.8 19.5l5.4-8.4 3.4 4.7 2.7-3.5 4.9 7.2"/><circle cx="17.2" cy="6.4" r="2.3"/></svg>
+          <b>Assets</b>
+          <i>What the nation owns</i>
+          <span class="pnst-go" aria-hidden="true">&darr;</span>
+        </a>
+      </li>
+      <li class="pnst-m" style="--c1:#1B5640; --c2:#0B2219; --i:1">
+        <span class="pnst-n" aria-hidden="true">02</span>
+        <a class="pnst-t" href="#pn-capita" data-to="pn-capita" data-page="https://perfectnations.org/perfect-capita/">
+          <svg class="pnst-ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="8.6"/><circle cx="12" cy="12" r="3.2"/><path d="M12.00 8.80L12.00 3.40M14.50 10.00L18.72 6.64M15.12 12.71L20.38 13.91M13.39 14.88L15.73 19.75M10.61 14.88L8.27 19.75M8.88 12.71L3.62 13.91M9.50 10.00L5.28 6.64"/></svg>
+          <b>Perfect Capita</b>
+          <i>What every citizen is owed</i>
+          <span class="pnst-go" aria-hidden="true">&darr;</span>
+        </a>
+      </li>
+      <li class="pnst-m" style="--c1:#A8502F; --c2:#561F12; --i:2">
+        <span class="pnst-n" aria-hidden="true">03</span>
+        <a class="pnst-t" href="#pn-featured" data-to="pn-featured" data-page="https://perfectnations.org/blueprints/">
+          <svg class="pnst-ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 20.2V4.6l15.6 15.6z"/><path d="M7.6 16.6v-4.4l4.4 4.4z"/><path d="M4 8.4h2.2M4 12.2h2.2"/><path d="M14.6 3.6l5.8 5.8-2 2-5.8-5.8z"/></svg>
+          <b>Co-Design</b>
+          <i>The blueprint, drawn with the nation</i>
+          <span class="pnst-go" aria-hidden="true">&darr;</span>
+        </a>
+      </li>
+      <li class="pnst-m" style="--c1:#2D5FAA; --c2:#11295A; --i:3">
+        <span class="pnst-n" aria-hidden="true">04</span>
+        <a class="pnst-t" href="#pn-capital" data-to="pn-capital" data-page="https://perfectnations.org/capital-architecture/">
+          <svg class="pnst-ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 9.4L12 4l9 5.4"/><path d="M4.2 9.4h15.6"/><path d="M6.4 12v5.6M10 12v5.6M14 12v5.6M17.6 12v5.6"/><path d="M3.4 20.4h17.2"/></svg>
+          <b>Capital</b>
+          <i>The instruments that carry it</i>
+          <span class="pnst-go" aria-hidden="true">&darr;</span>
+        </a>
+      </li>
+      <li class="pnst-m pnst-m--out" style="--c1:#12586A; --c2:#082A30; --i:4">
+        <span class="pnst-n" aria-hidden="true">05</span>
+        <a class="pnst-t" href="https://perfectnations.org/design-studio/">
+          <svg class="pnst-ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2.6c3.1 2.7 4.4 6.6 3.7 11.4H8.3C7.6 9.2 8.9 5.3 12 2.6z"/><circle cx="12" cy="8.8" r="1.6"/><path d="M8.5 12.4L5.8 15.8l2.9.2M15.5 12.4l2.7 3.4-2.9.2"/><path d="M10.4 17.1l1.6 4 1.6-4"/></svg>
+          <b>Launch</b>
+          <i>Built, financed and measured</i>
+          <span class="pnst-go" aria-hidden="true">&rarr;</span>
+        </a>
+      </li>
+    </ol>
+
+    <div class="pnst-begin">
+      <p class="pnst-bk">Three ways to begin</p>
+      <ol class="pnst-mand" aria-label="The three mandates">
+        <li><a href="https://perfectnations.org/contact/?about=studio"><small>I</small><b>The Nation Briefing</b><i>Three hours</i></a></li>
+        <li><a href="https://perfectnations.org/contact/?about=studio"><small>II</small><b>The Blueprint Lab</b><i>Three days</i></a></li>
+        <li><a href="https://perfectnations.org/contact/?about=commission"><small>III</small><b>The Sovereign Mandate</b><i>End to end</i></a></li>
+      </ol>
+      <a class="pnst-btn" href="https://perfectnations.org/design-studio/">Enter the Design Studio</a>
+    </div>
+  </div>
+</section>
+
+<script>
+(function(){
+  var root = document.getElementById('pn-studio');
+  if (!root || root.getAttribute('data-moves') === '1') { return; }
+  root.setAttribute('data-moves', '1');
+  var still = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* the header bar the page scrolls under */
+  function headOffset(){
+    var h = document.querySelector('.elementor-location-header') || document.getElementById('pn-hd');
+    if (!h) { return 0; }
+    var bar = h.querySelector('header') || h;
+    var pos = window.getComputedStyle(bar).position;
+    if (pos !== 'fixed' && pos !== 'sticky') { pos = window.getComputedStyle(h).position; }
+    return (pos === 'fixed' || pos === 'sticky') ? Math.round(bar.getBoundingClientRect().height) + 8 : 8;
+  }
+
+  /* each move opens its section; if the section is not on this page, its own page */
+  var links = root.querySelectorAll('.pnst-t[data-to]');
+  Array.prototype.forEach.call(links, function(a){
+    a.addEventListener('click', function(e){
+      var t = document.getElementById(a.getAttribute('data-to'));
+      if (!t) {
+        var pg = a.getAttribute('data-page');
+        if (pg) { e.preventDefault(); window.location.href = pg; }
+        return;
+      }
+      e.preventDefault();
+      var y = t.getBoundingClientRect().top + window.pageYOffset - headOffset();
+      window.scrollTo({ top: Math.max(0, y), behavior: still ? 'auto' : 'smooth' });
+      try { window.history.replaceState(null, '', '#' + t.id); } catch (err) {}
+    });
+  });
+
+  /* the page in the order of the moves: Assets, Perfect Capita, Blueprints, Capital */
+  function block(el){
+    var n = el.closest('.elementor-element') || el;
+    while (n.parentElement && n.parentElement.children.length === 1 &&
+           !n.parentElement.matches('body, main, .elementor, [data-elementor-type], .site-content, .entry-content')) {
+      n = n.parentElement;
+    }
+    return n;
+  }
+  function order(){
+    var a = document.getElementById('pn-assets'), c = document.getElementById('pn-capita'), f = document.getElementById('pn-featured');
+    if (!a || !c || !f) { return; }
+    var FOLLOWING = 4;
+    if (!(f.compareDocumentPosition(a) & FOLLOWING)) { return; }
+    if (!(a.compareDocumentPosition(c) & FOLLOWING)) { return; }
+    var fb = block(f), cb = block(c);
+    if (fb.contains(c) || cb.contains(f) || fb.contains(a)) { return; }
+    var r = f.getBoundingClientRect();
+    if (r.top < window.innerHeight) { return; }
+    cb.parentNode.insertBefore(fb, cb.nextSibling);
+  }
+  if (document.readyState === 'loading') { document.addEventListener('DOMContentLoaded', order); } else { order(); }
+
+  /* reveal once */
+  if (still || !('IntersectionObserver' in window)) { root.classList.add('is-in'); return; }
+  root.classList.add('is-armed');
+  var io = new IntersectionObserver(function(es){
+    es.forEach(function(en){ if (en.isIntersecting) { root.classList.add('is-in'); io.disconnect(); } });
+  }, { threshold: 0.2 });
+  io.observe(root);
+})();
+</script>

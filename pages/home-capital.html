@@ -1,0 +1,409 @@
+<!-- ===========================================================================
+PERFECT NATIONS - HOMEPAGE - SECTION 05 - CAPITAL ARCHITECTURE - v6.0 MOVE 04 - 2026-11-06
+One Elementor Custom HTML widget, Full Width, padding 0. Served live from GitHub
+(pages/home-capital.html) by the Perfect Nations Live Pages plugin, in place of the pasted v5.3
+(root id pn-capital). Replaces v5.4 too.
+v6.0: the fourth of the five moves. The eyebrow carries the gold chapter mark 04, which leads back
+to the five moves in The ReDesign Studio. Compact padding, as the design system.
+Phones have their own layout and never scroll sideways. "Already pioneered" is two columns of four
+cards, with "Show four more" for the other four. The five instruments are two columns of
+photograph cards, with Standard Tokens, designed by Perfect Nations, across the full width. The
+two buttons stack across the full width.
+Tablets keep "Already pioneered" as one row that swipes; laptops keep four columns and the rail.
+Every figure is unchanged from v5.4 and sourced in the blueprint registers.
+Ground: lapis. Photographs at full colour, no veil; text sits on solid plates.
+=========================================================================== -->
+<style>
+#pn-capital{
+  --bg:#1F4A8C; --bg2:#0E254D; --plate:#132E60; --plate2:#0C1F44;
+  --fg:#F5F1E8; --mut:rgba(245,241,232,.82); --dim:rgba(245,241,232,.64); --hair:rgba(245,241,232,.16);
+  --acc:#E3C258; --accs:#F0D68F; --accrgb:227,194,88; --onacc:#1A140C;
+  --iv:#F5F1E8; --g:#E3C258;
+  --hd:var(--pn-font-heading,"Barlow Condensed","Arial Narrow",Arial,sans-serif);
+  --bd:var(--pn-font-body,"Barlow Semi Condensed",Arial,sans-serif);
+  position:relative; isolation:isolate;
+  width:100vw; margin-left:calc(50% - 50vw);
+  overflow-x:hidden; overflow-x:clip;
+  padding:clamp(26px,4.2vh,48px) 0 clamp(24px,3.8vh,42px);
+  color:var(--fg); font-family:var(--bd); line-height:1.6; box-sizing:border-box;
+  background:
+    radial-gradient(70% 55% at 82% 0%, rgba(130,170,240,.26) 0%, transparent 64%),
+    linear-gradient(180deg, var(--bg) 0%, var(--bg2) 100%);
+}
+#pn-capital::before{
+  content:""; position:absolute; inset:0; z-index:-1; pointer-events:none; opacity:.07;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .6 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+#pn-capital *,#pn-capital *::before,#pn-capital *::after{ box-sizing:border-box; }
+#pn-capital img{ display:block; max-width:100%; }
+#pn-capital [hidden]{ display:none !important; }
+.elementor-widget-html:has(#pn-capital),
+.elementor-widget:has(#pn-capital),
+.e-con-inner:has(#pn-capital),
+.e-con:has(#pn-capital){
+  padding-top:0 !important; padding-bottom:0 !important;
+  --widgets-spacing:0px !important; row-gap:0 !important;
+}
+#pn-capital .pnca-in{ position:relative; width:100%; max-width:1480px; margin:0 auto; padding:0 clamp(24px,5vw,72px); }
+#pn-capital .pnca-eb{
+  display:flex; align-items:center; gap:10px; margin:0 0 14px;
+  font-family:var(--hd); font-size:.68rem; font-weight:700;
+  letter-spacing:.3em; text-transform:uppercase; color:var(--mut);
+}
+#pn-capital .pnca-eb::before{ content:""; width:24px; height:2px; flex:none; background:var(--mut); }
+#pn-capital h2.pnca-h2{
+  margin:0; max-width:17ch;
+  font-family:var(--hd); font-weight:600;
+  font-size:clamp(2.3rem,4.6vw,4.6rem); line-height:.94; letter-spacing:-.025em;
+  color:var(--fg) !important; text-transform:none;
+}
+#pn-capital .pnca-lead{
+  margin:clamp(14px,2vh,22px) 0 0; max-width:52ch;
+  font-size:clamp(1rem,1.2vw,1.14rem); line-height:1.58; color:var(--mut);
+}
+#pn-capital .pnca-btn{
+  display:inline-flex; align-items:center; justify-content:center; gap:14px; flex:none;
+  padding:15px 30px 13px; border-radius:999px; text-decoration:none; cursor:pointer;
+  font-family:var(--hd); font-size:.74rem; font-weight:700;
+  letter-spacing:.19em; text-transform:uppercase;
+  border:1px solid var(--acc); background:var(--acc); color:var(--onacc);
+  box-shadow:0 12px 32px rgba(var(--accrgb),.26);
+  transition:transform .22s ease, background .22s ease, color .22s ease, border-color .22s ease;
+}
+#pn-capital .pnca-btn::after{
+  content:"\2192"; font-family:Arial,sans-serif; font-size:1rem; letter-spacing:0;
+  transition:transform .3s cubic-bezier(.22,1,.36,1);
+}
+#pn-capital .pnca-btn:hover{ transform:translateY(-2px); background:var(--accs); border-color:var(--accs); }
+#pn-capital .pnca-btn:hover::after{ transform:translateX(6px); }
+#pn-capital .pnca-btn:focus-visible{ outline:2px solid var(--accs); outline-offset:3px; }
+#pn-capital .pnca-btn--line{ background:transparent; color:var(--acc); border-color:rgba(var(--accrgb),.6); box-shadow:none; }
+#pn-capital .pnca-btn--line:hover{ background:rgba(var(--accrgb),.12); color:var(--acc); }
+@media (prefers-reduced-motion:reduce){
+  #pn-capital *{ transition:none !important; animation:none !important; }
+}
+
+#pn-capital .pnca-stage{ position:relative; margin-top:clamp(18px,2.6vh,30px); }
+#pn-capital .pnca-track{
+  display:flex; gap:clamp(14px,1.6vw,22px);
+  overflow-x:auto; overflow-y:hidden; overscroll-behavior-x:contain;
+  scroll-snap-type:x mandatory; -webkit-overflow-scrolling:touch; scrollbar-width:none;
+  padding:6px clamp(24px,5vw,72px) 60px; margin-bottom:-46px;
+  scroll-padding-left:clamp(24px,5vw,72px);
+}
+#pn-capital .pnca-track::-webkit-scrollbar{ display:none; }
+#pn-capital .pnca-track:focus-visible{ outline:2px solid var(--accs); outline-offset:4px; }
+#pn-capital .pnca-arrow{
+  position:absolute; z-index:5; top:38%; transform:translateY(-50%);
+  display:flex; align-items:center; justify-content:center; padding:0;
+  width:50px; height:50px; border-radius:50%; cursor:pointer;
+  border:1px solid var(--acc); background:var(--acc); color:var(--onacc);
+  font-family:var(--hd); font-size:1.4rem; line-height:1;
+  box-shadow:0 10px 26px rgba(0,0,0,.28);
+  transition:transform .2s ease, background .2s ease;
+}
+#pn-capital .pnca-arrow:hover{ background:var(--accs); transform:translateY(-50%) scale(1.06); }
+#pn-capital .pnca-arrow:focus-visible{ outline:2px solid var(--accs); outline-offset:3px; }
+#pn-capital .pnca-arrow--p{ left:clamp(8px,1.8vw,24px); }
+#pn-capital .pnca-arrow--n{ right:clamp(8px,1.8vw,24px); }
+@media (max-width:640px){ #pn-capital .pnca-arrow{ display:none !important; } }
+
+#pn-capital .pnca-head{ display:grid; gap:clamp(24px,3.4vw,56px); grid-template-columns:minmax(0,1fr); align-items:end; }
+@media (min-width:1000px){ #pn-capital .pnca-head{ grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr); } }
+#pn-capital .pnca-panel{
+  margin:0; padding:clamp(20px,2.2vw,30px); border-radius:18px;
+  background:#F5F1E8; color:#14254A;
+  font-size:1rem; line-height:1.55;
+}
+#pn-capital .pnca-panel b{ display:block; margin-bottom:8px; font-family:var(--hd); font-size:.64rem; font-weight:700; letter-spacing:.22em; text-transform:uppercase; color:#1F4A8C; }
+
+#pn-capital .pnca-card{
+  position:relative; flex:0 0 auto; scroll-snap-align:start;
+  width:min(80vw,340px);
+  display:flex; flex-direction:column; text-decoration:none; color:var(--fg);
+  border-radius:20px; overflow:hidden; background:var(--plate);
+  box-shadow:0 22px 50px rgba(4,12,34,.42);
+  transition:transform .45s cubic-bezier(.22,1,.36,1), box-shadow .45s ease;
+}
+#pn-capital .pnca-card:hover{ transform:translateY(-8px); box-shadow:0 34px 70px rgba(4,12,34,.55); }
+#pn-capital .pnca-card:focus-visible{ outline:2px solid var(--accs); outline-offset:4px; }
+#pn-capital .pnca-card__ph{ position:relative; display:block; aspect-ratio:4/3.6; overflow:hidden; background:var(--plate2); }
+#pn-capital .pnca-card__img{
+  position:absolute; inset:0;
+  background-image:var(--pnca-img,none); background-size:cover; background-position:var(--pnca-pos,50% 50%);
+  filter:saturate(1.2) contrast(1.06) brightness(1.05);
+  transition:transform 6s cubic-bezier(.2,.7,.2,1);
+}
+#pn-capital .pnca-card:hover .pnca-card__img{ transform:scale(1.08); }
+#pn-capital .pnca-num{
+  position:absolute; left:16px; bottom:-1px; z-index:2;
+  padding:8px 14px 6px; border-radius:12px 12px 0 0; background:var(--plate);
+  font-family:var(--hd); font-weight:700; font-size:1.1rem; letter-spacing:.06em; color:var(--fg);
+}
+#pn-capital .pnca-card__b{ display:flex; flex-direction:column; flex:1; padding:16px 20px 22px; }
+#pn-capital .pnca-tag{ font-family:var(--hd); font-size:.6rem; font-weight:700; letter-spacing:.2em; text-transform:uppercase; color:var(--dim); }
+#pn-capital .pnca-card h3{ margin:10px 0 0; font-family:var(--hd); font-weight:600; font-size:clamp(1.5rem,2vw,1.9rem); line-height:1; letter-spacing:-.015em; color:var(--fg); }
+#pn-capital .pnca-eg{ display:flex; align-items:center; justify-content:space-between; gap:12px; margin-top:auto; padding-top:16px; font-size:.8rem; line-height:1.4; color:var(--mut); }
+#pn-capital .pnca-eg i{
+  flex:none; width:34px; height:34px; border-radius:50%; display:flex; align-items:center; justify-content:center;
+  font-style:normal; font-family:Arial,sans-serif; border:1px solid rgba(227,194,88,.6); color:var(--acc);
+  transition:background .25s ease, color .25s ease;
+}
+#pn-capital .pnca-card:hover .pnca-eg i{ background:var(--acc); color:var(--onacc); }
+#pn-capital .pnca-card--own{ background:#F5F1E8; color:#14254A; }
+#pn-capital .pnca-card--own .pnca-num{ background:#F5F1E8; color:#14254A; }
+#pn-capital .pnca-card--own h3{ color:#14254A; }
+#pn-capital .pnca-card--own .pnca-tag{ color:#1F4A8C; }
+#pn-capital .pnca-card--own .pnca-eg{ color:rgba(20,37,74,.72); }
+#pn-capital .pnca-card--own .pnca-eg i{ border-color:#7E5A0C; color:#7E5A0C; }
+#pn-capital .pnca-card--own:hover .pnca-eg i{ background:#7E5A0C; color:#FBF6EA; }
+#pn-capital .pnca-foot{ margin-top:clamp(16px,2.4vh,28px); }
+/* v5: the two toolkits */
+#pn-capital .pnca-part{ margin-top:clamp(28px,4vh,48px); }
+#pn-capital .pnca-ph2{ display:flex; flex-wrap:wrap; align-items:flex-end; justify-content:space-between; gap:12px 40px; }
+#pn-capital .pnca-pk{ display:inline-flex; align-items:center; gap:10px; margin:0 0 10px; font-family:var(--hd); font-size:.7rem; font-weight:700; letter-spacing:.26em; text-transform:uppercase; color:var(--acc); }
+#pn-capital h3.pnca-h3{ margin:0; max-width:22ch; font-family:var(--hd); font-weight:600; font-size:clamp(1.8rem,3.2vw,3rem); line-height:.98; letter-spacing:-.02em; color:var(--fg) !important; }
+#pn-capital .pnca-pl{ margin:0; max-width:46ch; font-size:1rem; line-height:1.55; color:var(--mut); }
+#pn-capital .pnca-swipe{
+  display:none; margin:8px 0 0; font-family:var(--hd); font-size:.62rem; font-weight:700;
+  letter-spacing:.2em; text-transform:uppercase; color:var(--dim);
+}
+@media (max-width:560px){
+  #pn-capital h2.pnca-h2{ font-size:2.05rem; }
+  #pn-capital h3.pnca-h3{ font-size:1.6rem; }
+  #pn-capital .pnca-panel{ padding:16px 18px; font-size:.94rem; }
+  #pn-capital .pnca-pl{ font-size:.94rem; }
+}
+#pn-capital .pnca-p2{ margin-top:clamp(28px,4vh,48px); padding-top:clamp(24px,3.4vh,40px); border-top:1px solid var(--hair); }
+#pn-capital .pnca-pion{ margin-top:clamp(22px,3vh,34px); }
+#pn-capital .pnca-pion h4{ margin:0 0 10px; font-family:var(--hd); font-size:.7rem; font-weight:700; letter-spacing:.24em; text-transform:uppercase; color:var(--mut); }
+#pn-capital .pnca-pions{ display:grid; gap:10px; grid-template-columns:minmax(0,1fr); margin:0; padding:0; list-style:none; }
+@media (min-width:900px){ #pn-capital .pnca-pions{ grid-template-columns:repeat(4,minmax(0,1fr)); } }
+#pn-capital .pnca-pions li{ padding:12px 16px; border-radius:14px; background:rgba(245,241,232,.06); border:1px solid rgba(var(--accrgb),.35); }
+#pn-capital .pnca-pions small{ font-family:var(--hd); font-size:.6rem; font-weight:700; letter-spacing:.2em; text-transform:uppercase; color:var(--acc); }
+#pn-capital .pnca-pions b{ display:block; margin-top:4px; font-family:var(--hd); font-weight:600; font-size:1.1rem; line-height:1.1; }
+#pn-capital .pnca-pions span{ display:block; margin-top:4px; font-size:.84rem; line-height:1.38; color:var(--mut); }
+#pn-capital .pnca-foot{ display:flex; flex-wrap:wrap; gap:12px; }
+@media (max-width:560px){
+  #pn-capital .pnca-pion h4{ font-size:.64rem; letter-spacing:.16em; line-height:1.5; }
+  #pn-capital .pnca-pions b{ font-size:1.05rem; }
+}
+#pn-capital h3.pnca-h3,#pn-capital .pnca-card h3{ text-transform:none !important; }
+/* chapter mark: the move this section opens, linked back to the five moves */
+#pn-capital .pn-ch{
+  display:inline-flex; align-items:center; justify-content:center; flex:none; width:30px; height:30px; border-radius:50%;
+  border:1.5px solid var(--acc,#E3C258); color:var(--acc,#E3C258); text-decoration:none;
+  font-family:var(--hd); font-size:.74rem; font-weight:700; letter-spacing:.02em; line-height:1;
+  transition:background .2s ease, color .2s ease;
+}
+#pn-capital .pn-ch:hover{ background:var(--acc,#E3C258); color:#1A140C; }
+#pn-capital .pn-ch:focus-visible{ outline:2px solid #F0D68F; outline-offset:3px; }
+#pn-capital .pnca-eb::before{ display:none !important; }
+
+/* v6.0 compact on laptops */
+#pn-capital h2.pnca-h2{ font-size:clamp(2.3rem,5vw,4.6rem); text-shadow:none !important; text-transform:none !important; }
+#pn-capital .pnca-pion{ margin-top:clamp(16px,2.4vh,26px); }
+#pn-capital .pnca-p2{ margin-top:clamp(18px,2.8vh,30px); padding-top:clamp(16px,2.4vh,26px); }
+#pn-capital h3,#pn-capital h4{ text-shadow:none !important; }
+#pn-capital .pnca-more{
+  display:none; align-items:center; justify-content:center; gap:10px; width:100%; min-height:44px; margin:8px 0 0; padding:10px 16px;
+  border-radius:999px; border:1px solid rgba(var(--accrgb),.6); background:transparent; color:var(--acc); cursor:pointer;
+  font-family:var(--hd); font-size:.72rem; font-weight:700; letter-spacing:.18em; text-transform:uppercase;
+}
+#pn-capital .pnca-more::after{ content:"+"; font-family:Arial,sans-serif; font-size:1rem; letter-spacing:0; }
+#pn-capital .pnca-pion.is-all .pnca-more::after{ content:"\2212"; }
+#pn-capital .pnca-more:focus-visible{ outline:2px solid var(--accs); outline-offset:3px; }
+/* v6.0 tablets: one row that swipes */
+@media (min-width:641px) and (max-width:899px){
+  #pn-capital ul.pnca-pions{
+    display:flex !important; flex-wrap:nowrap !important; gap:10px !important; grid-template-columns:none !important;
+    overflow-x:auto !important; overflow-y:hidden !important; overscroll-behavior-x:contain;
+    scroll-snap-type:x mandatory; -webkit-overflow-scrolling:touch; scrollbar-width:none;
+    margin:0 calc(-1 * clamp(24px,5vw,72px)) !important; padding:0 clamp(24px,5vw,72px) 4px !important;
+    scroll-padding-left:clamp(24px,5vw,72px);
+  }
+  #pn-capital ul.pnca-pions::-webkit-scrollbar{ display:none; }
+  #pn-capital ul.pnca-pions > li{ flex:0 0 min(44vw,320px) !important; min-width:0 !important; margin:0 !important; scroll-snap-align:start; }
+  #pn-capital .pnca-swipe{ display:block; }
+}
+/* v6.0 phones: a layout of their own; two columns, nothing sideways */
+@media (max-width:640px){
+  #pn-capital{ padding:22px 0 24px !important; }
+  #pn-capital .pnca-in{ padding:0 18px !important; }
+  #pn-capital .pnca-eb{ font-size:.66rem; letter-spacing:.24em; margin-bottom:8px; }
+  #pn-capital h2.pnca-h2{ font-size:clamp(2.1rem,9.6vw,2.7rem) !important; line-height:.94; }
+  #pn-capital .pnca-head{ gap:12px !important; }
+  #pn-capital .pnca-panel{ padding:12px 14px !important; font-size:.9rem !important; line-height:1.45; border-radius:14px; }
+  #pn-capital .pnca-panel b{ margin-bottom:4px; }
+  #pn-capital .pnca-pion{ margin-top:16px; }
+  #pn-capital .pnca-pion h4{ margin:0 0 8px; font-size:.64rem; letter-spacing:.16em; line-height:1.5; }
+  #pn-capital ul.pnca-pions{
+    display:grid !important; grid-template-columns:repeat(2,minmax(0,1fr)) !important; gap:8px !important;
+    overflow:visible !important; margin:0 !important; padding:0 !important;
+  }
+  #pn-capital ul.pnca-pions > li{ min-width:0 !important; width:auto !important; margin:0 !important; padding:10px 11px 11px; border-radius:12px; }
+  #pn-capital .pnca-pion:not(.is-all) ul.pnca-pions > li:nth-child(n+5){ display:none; }
+  #pn-capital .pnca-pions small{ font-size:.54rem; letter-spacing:.14em; }
+  #pn-capital .pnca-pions b{ font-size:.98rem !important; line-height:1.08; }
+  #pn-capital .pnca-pions span{ font-size:.76rem; line-height:1.34; }
+  #pn-capital .pnca-swipe{ display:none !important; }
+  #pn-capital .pnca-more{ display:flex; }
+  #pn-capital .pnca-p2{ margin-top:18px; padding-top:16px; }
+  #pn-capital .pnca-ph2{ gap:8px !important; }
+  #pn-capital h3.pnca-h3{ font-size:1.55rem !important; }
+  #pn-capital .pnca-pk{ margin-bottom:6px; font-size:.62rem; letter-spacing:.2em; }
+  #pn-capital .pnca-pl{ font-size:.9rem !important; line-height:1.45; }
+  #pn-capital .pnca-stage{ margin-top:12px; }
+  #pn-capital .pnca-track{
+    display:grid !important; grid-template-columns:repeat(2,minmax(0,1fr)); gap:8px;
+    overflow:visible !important; scroll-snap-type:none !important; padding:0 18px !important; margin:0 !important;
+  }
+  #pn-capital .pnca-card{ width:auto !important; min-width:0; border-radius:14px; box-shadow:0 10px 24px rgba(4,12,34,.36); }
+  #pn-capital .pnca-card:hover{ transform:none; }
+  #pn-capital .pnca-card__ph{ aspect-ratio:16 / 11; }
+  #pn-capital .pnca-num{ left:10px; padding:5px 9px 3px; font-size:.84rem; border-radius:9px 9px 0 0; }
+  #pn-capital .pnca-card__b{ padding:9px 11px 12px; }
+  #pn-capital .pnca-tag{ font-size:.52rem; letter-spacing:.14em; line-height:1.3; }
+  #pn-capital .pnca-card h3{ margin-top:5px; font-size:1.12rem !important; line-height:1.02; }
+  #pn-capital .pnca-eg{ display:none; }
+  #pn-capital .pnca-card--own{ grid-column:1 / -1; flex-direction:row; }
+  #pn-capital .pnca-card--own .pnca-card__ph{ flex:0 0 42%; aspect-ratio:auto; min-height:124px; }
+  #pn-capital .pnca-card--own .pnca-num{ display:none; }
+  #pn-capital .pnca-card--own .pnca-card__b{ justify-content:center; padding:12px 14px; }
+  #pn-capital .pnca-card--own h3{ font-size:1.4rem !important; }
+  #pn-capital .pnca-card--own .pnca-eg{ display:flex; margin-top:8px; padding-top:0; font-size:.72rem; }
+  #pn-capital .pnca-card--own .pnca-eg i{ width:28px; height:28px; }
+  #pn-capital .pnca-foot{ display:grid !important; grid-template-columns:minmax(0,1fr); gap:8px; margin-top:16px; padding:0 18px !important; }
+  #pn-capital .pnca-foot .pnca-btn{ width:100%; }
+}
+</style>
+
+<section id="pn-capital" aria-labelledby="pnca-h">
+  <div class="pnca-in">
+    <div class="pnca-head">
+      <div>
+        <p class="pnca-eb"><a class="pn-ch" href="#pn-studio" aria-label="Move 04 of 05, Capital. Back to the five moves">04</a><span>Capital &middot; Capital Architecture</span></p>
+        <h2 class="pnca-h2" id="pnca-h">Capital tied to human outcomes</h2>
+      </div>
+      <p class="pnca-panel"><b>What we design</b>Every blueprint pairs what a nation owns with capital that pays for results. We design the structure: which instrument closes which gap, for which nation, against which asset.</p>
+    </div>
+    <div class="pnca-pion">
+      <h4>Already pioneered by nations around the world</h4>
+      <ul class="pnca-pions" id="pncaPions"><li><small>Barbados &#183; 2024</small><b>Debt-for-climate-resilience conversion</b><span>The world&#8217;s first, guaranteed by the IDB and EIB, with the savings directed to water.</span></li><li><small>Ecuador &#183; 2023</small><b>Debt-for-nature swap</b><span>About $1.6B of bonds bought back, with the savings funding the Gal&#225;pagos marine reserve.</span></li><li><small>Chile &#183; 2022</small><b>Sustainability-linked sovereign bond</b><span>The world&#8217;s first: $2B whose terms are tied to national climate targets.</span></li><li><small>Seychelles &#183; 2018</small><b>Sovereign blue bond</b><span>The world&#8217;s first, financing sustainable fisheries and marine protection.</span></li><li><small>Indonesia &#183; 2018</small><b>Sovereign green sukuk</b><span>The world&#8217;s first Islamic green bond from a sovereign: $1.25B.</span></li><li><small>India &#183; since 2023</small><b>Sovereign green bonds</b><span>INR 16,000 crore in the first issuance alone.</span></li><li><small>Brazil &#183; 2025</small><b>Tropical Forest Forever Facility</b><span>A global fund that pays nations to keep forests standing, $7.3B committed.</span></li><li><small>DR Congo &#183; 2025</small><b>Resilience and Sustainability Facility</b><span>$1.038B of IMF climate finance beside its core programme.</span></li></ul>
+      <p class="pnca-swipe" aria-hidden="true">Swipe for more</p>
+      <button class="pnca-more" type="button" id="pncaMore" aria-expanded="false" aria-controls="pncaPions">Show four more</button>
+    </div>
+
+    <div class="pnca-part pnca-p2" aria-labelledby="pnca-p2">
+      <div class="pnca-ph2">
+        <div>
+          <p class="pnca-pk">Innovative finance for development</p>
+          <h3 class="pnca-h3" id="pnca-p2">Capital that pays for results</h3>
+        </div>
+        <p class="pnca-pl">Four are established instruments that tie money to measured outcomes. The fifth, Standard Tokens, is designed by Perfect Nations.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="pnca-stage">
+    <div class="pnca-track" tabindex="0" role="group" aria-label="Financing instruments">
+      <a class="pnca-card" href="https://perfectnations.org/capital-architecture/" style="--pnca-img:url('https://perfectnations.org/wp-content/uploads/2026/04/a4_xh2njphm.jpg');">
+        <span class="pnca-card__ph"><span class="pnca-card__img" aria-hidden="true"></span><span class="pnca-num">01</span></span>
+        <span class="pnca-card__b">
+          <span class="pnca-tag">Results-based finance</span>
+          <h3>Outcome Bonds</h3>
+          <span class="pnca-eg"><span>Verified outcomes &middot; public value</span><i aria-hidden="true">&rarr;</i></span>
+        </span>
+      </a>
+      <a class="pnca-card" href="https://perfectnations.org/capital-architecture/" style="--pnca-img:url('https://perfectnations.org/wp-content/uploads/2026/04/nyecjxfoz6a.jpg');">
+        <span class="pnca-card__ph"><span class="pnca-card__img" aria-hidden="true"></span><span class="pnca-num">02</span></span>
+        <span class="pnca-card__b">
+          <span class="pnca-tag">Development finance</span>
+          <h3>Development Impact Bonds</h3>
+          <span class="pnca-eg"><span>Risk capital &middot; results payments</span><i aria-hidden="true">&rarr;</i></span>
+        </span>
+      </a>
+      <a class="pnca-card" href="https://perfectnations.org/capital-architecture/" style="--pnca-img:url('https://perfectnations.org/wp-content/uploads/2026/04/11538902.jpeg');">
+        <span class="pnca-card__ph"><span class="pnca-card__img" aria-hidden="true"></span><span class="pnca-num">03</span></span>
+        <span class="pnca-card__b">
+          <span class="pnca-tag">Inclusive capital markets</span>
+          <h3>Social Bonds</h3>
+          <span class="pnca-eg"><span>Inclusive markets &middot; essential services</span><i aria-hidden="true">&rarr;</i></span>
+        </span>
+      </a>
+      <a class="pnca-card" href="https://perfectnations.org/capital-architecture/" style="--pnca-img:url('https://perfectnations.org/wp-content/uploads/2026/04/9893729.jpeg');">
+        <span class="pnca-card__ph"><span class="pnca-card__img" aria-hidden="true"></span><span class="pnca-num">04</span></span>
+        <span class="pnca-card__b">
+          <span class="pnca-tag">Performance-linked</span>
+          <h3>Sustainability-Linked Bonds</h3>
+          <span class="pnca-eg"><span>KPI-linked capital &middot; climate resilience</span><i aria-hidden="true">&rarr;</i></span>
+        </span>
+      </a>
+      <a class="pnca-card pnca-card--own" href="https://perfectnations.org/tokenization/" style="--pnca-img:url('https://perfectnations.org/wp-content/uploads/2026/09/owxxyezyluq.jpg');">
+        <span class="pnca-card__ph"><span class="pnca-card__img" aria-hidden="true"></span><span class="pnca-num">05</span></span>
+        <span class="pnca-card__b">
+          <span class="pnca-tag">Designed by Perfect Nations</span>
+          <h3>Standard Tokens</h3>
+          <span class="pnca-eg"><span>Priced by region &middot; pending compliance</span><i aria-hidden="true">&rarr;</i></span>
+        </span>
+      </a>
+    </div>
+    <button class="pnca-arrow pnca-arrow--p" type="button" aria-label="Previous instruments">&#8249;</button>
+    <button class="pnca-arrow pnca-arrow--n" type="button" aria-label="More instruments">&#8250;</button>
+  </div>
+
+
+  <div class="pnca-in pnca-foot">
+    <a class="pnca-btn" href="https://perfectnations.org/capital-architecture/">Capital architecture</a>
+    <a class="pnca-btn pnca-btn--line" href="https://perfectnations.org/contact/?about=studio">Design your structure</a>
+  </div>
+</section>
+
+<script>
+(function(){
+  var root = document.getElementById('pn-capital');
+  if (!root || root.getAttribute('data-rail') === '1') { return; }
+  root.setAttribute('data-rail', '1');
+  var track = root.querySelector('.pnca-track');
+  if (!track) { return; }
+  var soft = !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var prev = root.querySelector('.pnca-arrow--p');
+  var next = root.querySelector('.pnca-arrow--n');
+  function step(dir){
+    var c = track.querySelector('.pnca-card');
+    var by = c ? c.offsetWidth + 18 : track.clientWidth * 0.8;
+    track.scrollBy({ left: by * dir, behavior: soft ? 'smooth' : 'auto' });
+  }
+  function mark(){
+    var max = track.scrollWidth - track.clientWidth;
+    if (prev) { prev.hidden = track.scrollLeft < 8; }
+    if (next) { next.hidden = track.scrollLeft > max - 8; }
+  }
+  var tick = null;
+  track.addEventListener('scroll', function(){
+    if (tick) { return; }
+    tick = window.requestAnimationFrame(function(){ tick = null; mark(); });
+  });
+  window.addEventListener('resize', mark);
+  if (prev) { prev.addEventListener('click', function(){ step(-1); }); }
+  if (next) { next.addEventListener('click', function(){ step(1); }); }
+  track.addEventListener('keydown', function(e){
+    if (e.key === 'ArrowRight'){ e.preventDefault(); step(1); }
+    if (e.key === 'ArrowLeft'){ e.preventDefault(); step(-1); }
+  });
+  mark();
+})();
+
+(function(){
+  var b = document.getElementById('pncaMore');
+  if (!b || b.getAttribute('data-on') === '1') { return; }
+  b.setAttribute('data-on', '1');
+  var box = b.closest('.pnca-pion');
+  b.addEventListener('click', function(){
+    var all = !box.classList.contains('is-all');
+    box.classList.toggle('is-all', all);
+    b.setAttribute('aria-expanded', all ? 'true' : 'false');
+    b.textContent = all ? 'Show fewer' : 'Show four more';
+  });
+})();
+</script>

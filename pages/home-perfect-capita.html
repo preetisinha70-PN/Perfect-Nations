@@ -1,5 +1,8 @@
 <!-- ===========================================================================
-PERFECT NATIONS - HOMEPAGE - SECTION 04 - PERFECT CAPITA - v4.0 THE WHEEL - 2026-11-02
+PERFECT NATIONS - HOMEPAGE - SECTION 04 - PERFECT CAPITA - v4.1 MOVE 02 - 2026-11-06
+v4.1: the second of the five moves. The eyebrow carries the gold chapter mark 02, which leads back
+to the five moves in The ReDesign Studio. Nothing else changes.
+v4.0 THE WHEEL - 2026-11-02
 One Elementor Custom HTML widget, Full Width, padding 0. Served live from GitHub
 (pages/home-perfect-capita.html) by the Perfect Nations Live Pages plugin. Root id pn-capita (the live
 section 04); an empty alias carries pn-hpc, so a pasted v3 is replaced too.
@@ -133,12 +136,22 @@ SOFI page once its address is confirmed.
   #pn-capita .pc4-btn{ justify-content:center; padding:12px 20px 10px; font-size:.68rem; }
 }
 @media (prefers-reduced-motion:reduce){ #pn-capita *{ transition:none !important; animation:none !important; } }
+/* chapter mark: the move this section opens, linked back to the five moves */
+#pn-capita .pn-ch{
+  display:inline-flex; align-items:center; justify-content:center; flex:none; width:30px; height:30px; border-radius:50%;
+  border:1.5px solid var(--g); color:var(--g); text-decoration:none;
+  font-family:var(--hd); font-size:.74rem; font-weight:700; letter-spacing:.02em; line-height:1;
+  transition:background .2s ease, color .2s ease;
+}
+#pn-capita .pn-ch:hover{ background:var(--g); color:#1A140C; }
+#pn-capita .pn-ch:focus-visible{ outline:2px solid #F0D68F; outline-offset:3px; }
+#pn-capita .pc4-eb::before{ display:none !important; }
 </style>
 <section id="pn-capita" aria-labelledby="pc4-h">
   <span id="pn-hpc" hidden></span>
   <div class="pc4-in pc4-grid">
     <div class="pc4-head">
-      <p class="pc4-eb">Perfect Capita &middot; The new GDP</p>
+      <p class="pc4-eb"><a class="pn-ch" href="#pn-studio" aria-label="Move 02 of 05, Perfect Capita. Back to the five moves">02</a><span>Perfect Capita &middot; The new GDP</span></p>
       <h2 class="pc4-h2" id="pc4-h">GDP counts what a nation makes. <em>Perfect Capita</em> counts what it costs to reach everyone.</h2>
       <p class="pc4-def">The yearly cost, per person, of lifting everyone above the Living Line in all seven basic living standards.</p>
       <p class="pc4-ll"><span aria-hidden="true"></span>The poverty line measures income. The Living Line measures a life.</p>
