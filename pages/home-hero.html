@@ -12,7 +12,7 @@ v5.0, the refocus:
     a gold ring on its edge, a turning bezel and the seven stars of the mark above it.
   - Any nation opens in the Nation Viewer of the Nations Menu (v2.1), with Go Back and the gold X.
   - New section 01a below the planet: "The Only Race Worth Winning", with the story of the mark
-    and a full-width drawing of a gold runner breaking the finish tape on a seven-lane track.
+    and a full-width emblem: a runner drawn in one gold line, arms raised, breaking the finish tape.
 Declares PNHG_WORLD and PNHG_CFG, which the continent maps read, so it must stay ABOVE them.
 Country outlines: Natural Earth 1:50m (world-atlas 2.0), simplified to a tenth of a degree.
 EDITORIAL: the still picture shown while the planet loads is
@@ -301,39 +301,40 @@ If the address differs, change it in the two places it appears (search for pn-ho
 }
 #pn-race .pnr-lead b{ color:var(--ink); font-weight:600; }
 
-#pn-race .pnr-band{ position:relative; width:100%; aspect-ratio:1600/560; overflow:hidden; background:var(--er); }
+#pn-race .pnr-band{ position:relative; width:100%; aspect-ratio:1600/480; overflow:hidden; background:var(--er); }
 #pn-race .pnr-band svg.pnr-art{ position:absolute; inset:0; display:block; width:100%; height:100%; }
-#pn-race .pnr-runner{ transform-box:fill-box; transform-origin:50% 100%; }
-#pn-race .pnr-rays{ transform-origin:800px 232px; }
-#pn-race .pnr-tapeL{ transform-origin:0 254px; }
-#pn-race .pnr-tapeR{ transform-origin:1600px 254px; }
-#pn-race .pnr-snap{ opacity:.9; }
+#pn-race .pnr-line{ stroke-dasharray:var(--pnr-len,none); stroke-dashoffset:var(--pnr-off,0); }
+#pn-race .pnr-head,#pn-race .pnr-snap,#pn-race .pnr-tapeL,#pn-race .pnr-tapeR{ transform-box:fill-box; }
+#pn-race .pnr-head{ transform-origin:50% 50%; }
+#pn-race .pnr-tapeL{ transform-origin:100% 50%; }
+#pn-race .pnr-tapeR{ transform-origin:0 50%; }
+#pn-race .pnr-snap{ transform-origin:50% 50%; }
 @media (prefers-reduced-motion:no-preference){
-  #pn-race .pnr-rays{ animation:pnrSpin 160s linear infinite; }
-  #pn-race .pnr-flecks rect{ animation:pnrTw 3.6s ease-in-out infinite; }
-  #pn-race .pnr-flecks rect:nth-child(2n){ animation-delay:-1.2s; }
-  #pn-race .pnr-flecks rect:nth-child(3n){ animation-delay:-2.4s; }
-  #pn-race.is-in .pnr-runner{ animation:pnrRun 1.1s cubic-bezier(.22,1,.36,1) both, pnrBob 1.8s ease-in-out 1.1s infinite alternate; }
-  #pn-race.is-in .pnr-tapeL{ animation:pnrTapeL 1.2s cubic-bezier(.22,1,.36,1) .55s both; }
-  #pn-race.is-in .pnr-tapeR{ animation:pnrTapeR 1.2s cubic-bezier(.22,1,.36,1) .55s both; }
-  #pn-race.is-in .pnr-snap{ animation:pnrSnap 1.4s ease-out .6s both; }
-  #pn-race:not(.is-in) .pnr-snap{ opacity:0; }
+  #pn-race.is-in .pnr-line{ transition:stroke-dashoffset 2.1s cubic-bezier(.65,0,.35,1); }
+  #pn-race.is-armed .pnr-halo,#pn-race.is-armed .pnr-head,#pn-race.is-armed .pnr-snap,#pn-race.is-armed .pnr-speed{ opacity:0; }
+  #pn-race.is-armed .pnr-tapeL{ transform:translateX(26px); }
+  #pn-race.is-armed .pnr-tapeR{ transform:translateX(-26px); }
+  #pn-race.is-in .pnr-head{ animation:pnrPop .5s cubic-bezier(.34,1.56,.64,1) 1.05s both; }
+  #pn-race.is-in .pnr-halo{ animation:pnrFade .8s ease 1.6s both, pnrPulse 3.2s ease-in-out 2.4s infinite alternate; }
+  #pn-race.is-in .pnr-tapeL,#pn-race.is-in .pnr-tapeR{ transition:transform .7s cubic-bezier(.22,1.4,.36,1) 1.55s; transform:none; }
+  #pn-race.is-in .pnr-snap{ animation:pnrSnap 1s ease-out 1.6s both; }
+  #pn-race.is-in .pnr-speed{ animation:pnrFade .6s ease 1.9s both; }
+  #pn-race .pnr-flecks circle{ animation:pnrTw 3.6s ease-in-out infinite; }
+  #pn-race .pnr-flecks circle:nth-child(2n){ animation-delay:-1.2s; }
+  #pn-race .pnr-flecks circle:nth-child(3n){ animation-delay:-2.4s; }
 }
-@keyframes pnrSpin{ to{ transform:rotate(360deg); } }
+@keyframes pnrPop{ from{ opacity:0; transform:scale(0); } to{ opacity:1; transform:none; } }
+@keyframes pnrFade{ from{ opacity:0; } to{ opacity:1; } }
+@keyframes pnrPulse{ from{ opacity:1; } to{ opacity:.45; } }
 @keyframes pnrTw{ 0%,100%{ opacity:.35; } 50%{ opacity:1; } }
-@keyframes pnrRun{ from{ transform:translateY(26px) scale(.9); opacity:0; } to{ transform:none; opacity:1; } }
-@keyframes pnrBob{ from{ transform:translateY(0); } to{ transform:translateY(-6px); } }
-@keyframes pnrTapeL{ from{ transform:scaleX(1.18); } to{ transform:none; } }
-@keyframes pnrTapeR{ from{ transform:scaleX(1.18); } to{ transform:none; } }
-@keyframes pnrSnap{ 0%{ opacity:0; transform:scale(.6); } 30%{ opacity:1; transform:scale(1.15); } 100%{ opacity:.85; transform:none; } }
-#pn-race .pnr-snap{ transform-box:fill-box; transform-origin:50% 50%; }
+@keyframes pnrSnap{ 0%{ opacity:0; transform:scale(.4); } 35%{ opacity:1; transform:scale(1.2); } 100%{ opacity:.9; transform:none; } }
 
 #pn-race .pnr-seven{
-  display:none; margin:0; padding:12px clamp(12px,4vw,24px); list-style:none;
-  background:var(--er3); color:#F4ECD8;
-  font-family:var(--hd); font-size:.72rem; font-weight:700; letter-spacing:.16em; text-transform:uppercase;
+  display:flex; flex-wrap:wrap; justify-content:center; gap:4px 18px; margin:0; padding:12px clamp(12px,4vw,24px) 13px; list-style:none;
+  background:var(--er3); color:#F4ECD8; border-top:1px solid rgba(227,194,88,.3);
+  font-family:var(--hd); font-size:.76rem; font-weight:700; letter-spacing:.18em; text-transform:uppercase;
 }
-#pn-race .pnr-seven li{ display:inline-flex; align-items:center; gap:6px; margin:3px 7px; }
+#pn-race .pnr-seven li{ display:inline-flex; align-items:center; gap:7px; margin:0; }
 #pn-race .pnr-seven li::before{ content:"\2605"; font-family:Arial,sans-serif; font-size:.7rem; color:var(--g); }
 
 #pn-race .pnr-story{
@@ -364,9 +365,8 @@ If the address differs, change it in the two places it appears (search for pn-ho
   #pn-race .pnr-story{ grid-template-columns:repeat(2,minmax(0,1fr)); }
 }
 @media (max-width:760px){
-  #pn-race .pnr-band{ aspect-ratio:4/3.1; }
-  #pn-race .pnr-lab{ display:none; }
-  #pn-race .pnr-seven{ display:block; }
+  #pn-race .pnr-band{ aspect-ratio:4/3.3; }
+  #pn-race .pnr-seven{ gap:2px 12px; font-size:.7rem; letter-spacing:.14em; }
   #pn-race .pnr-h2a{ font-size:clamp(2.2rem,10.4vw,2.9rem); }
   #pn-race .pnr-h2b{ font-size:clamp(1.15rem,5.2vw,1.4rem); }
   #pn-race .pnr-story{ grid-template-columns:minmax(0,1fr); gap:14px; }
@@ -425,102 +425,50 @@ If the address differs, change it in the two places it appears (search for pn-ho
     <p class="pnr-lead">The Perfect Nations mark turns the contest between nations into the one race worth winning: <b>the race to guarantee seven basic living standards to every citizen.</b></p>
   </div>
   <div class="pnr-band">
-<svg class="pnr-art" viewBox="0 0 1600 560" preserveAspectRatio="xMidYMid slice" role="img" aria-labelledby="pnr-art-t" focusable="false">
-  <title id="pnr-art-t">A gold runner breaks the finish tape at the end of a seven-lane track, one lane for each basic living standard, as the sun rises behind.</title>
+<svg class="pnr-art" viewBox="0 0 1600 480" preserveAspectRatio="xMidYMid slice" role="img" aria-labelledby="pnr-art-t" focusable="false">
+  <title id="pnr-art-t">A runner drawn in one gold line, arms raised, breaks the finish tape.</title>
   <defs>
-    <linearGradient id="pnr-sky" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#0B3D45"/><stop offset=".72" stop-color="#0E4C56"/><stop offset="1" stop-color="#1D6461"/>
-    </linearGradient>
-    <radialGradient id="pnr-sun" cx="800" cy="232" r="330" gradientUnits="userSpaceOnUse">
-      <stop offset="0" stop-color="#FFF8E4" stop-opacity="1"/><stop offset=".26" stop-color="#F7E7BC" stop-opacity=".95"/>
-      <stop offset=".5" stop-color="#E3C258" stop-opacity=".32"/><stop offset="1" stop-color="#E3C258" stop-opacity="0"/>
+    <radialGradient id="pnr-glow" cx="800" cy="240" r="420" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#14606A" stop-opacity="1"/><stop offset=".55" stop-color="#0D4A52" stop-opacity=".6"/><stop offset="1" stop-color="#0B3D45" stop-opacity="0"/>
     </radialGradient>
-    <linearGradient id="pnr-track" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#5E2717"/><stop offset=".45" stop-color="#8A3A22"/><stop offset="1" stop-color="#A2492B"/>
+    <linearGradient id="pnr-gold" x1="700" y1="80" x2="900" y2="400" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#FBE391"/><stop offset=".5" stop-color="#E3C258"/><stop offset="1" stop-color="#C9A13C"/>
     </linearGradient>
-    <linearGradient id="pnr-field" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#0D4A4E"/><stop offset="1" stop-color="#082A30"/>
-    </linearGradient>
-    <linearGradient id="pnr-gold" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#FBE391"/><stop offset=".45" stop-color="#E3C258"/><stop offset="1" stop-color="#B8902C"/>
-    </linearGradient>
-    <linearGradient id="pnr-goldx" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0" stop-color="#C9A13C"/><stop offset=".5" stop-color="#FBE391"/><stop offset="1" stop-color="#C9A13C"/>
-    </linearGradient>
-    <pattern id="pnr-crowd" width="13" height="7" patternUnits="userSpaceOnUse">
-      <circle cx="3.5" cy="3.5" r="1.7" fill="#E3C258" fill-opacity=".42"/><circle cx="10" cy="5.5" r="1.4" fill="#F4ECD8" fill-opacity=".22"/>
-    </pattern>
-    <pattern id="pnr-check" width="24" height="8" patternUnits="userSpaceOnUse">
-      <rect width="24" height="8" fill="#F4ECD8"/><rect width="12" height="4" fill="#0B3D45"/><rect x="12" y="4" width="12" height="4" fill="#0B3D45"/>
-    </pattern>
-    <clipPath id="pnr-skyclip"><rect x="0" y="0" width="1600" height="232"/></clipPath>
-    <clipPath id="pnr-trackclip"><path d="M656 232H944L1520 560H80Z"/></clipPath>
+    <filter id="pnr-blur" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="9"/></filter>
   </defs>
 
-  <rect width="1600" height="232" fill="url(#pnr-sky)"/>
-  <g clip-path="url(#pnr-skyclip)">
-    <g class="pnr-rays" fill="#FFF3D2" fill-opacity=".075"><path d="M800 232 791 -520 809 -520Z" transform="rotate(0.0 800 232)"/><path d="M800 232 791 -520 809 -520Z" transform="rotate(12.9 800 232)"/><path d="M800 232 791 -520 809 -520Z" transform="rotate(25.7 800 232)"/><path d="M800 232 791 -520 809 -520Z" transform="rotate(38.6 800 232)"/><path d="M800 232 791 -520 809 -520Z" transform="rotate(51.4 800 232)"/><path d="M800 232 791 -520 809 -520Z" transform="rotate(64.3 800 232)"/><path d="M800 232 791 -520 809 -520Z" transform="rotate(77.1 800 232)"/><path d="M800 232 791 -520 809 -520Z" transform="rotate(90.0 800 232)"/><path d="M800 232 791 -520 809 -520Z" transform="rotate(102.9 800 232)"/><path d="M800 232 791 -520 809 -520Z" transform="rotate(115.7 800 232)"/><path d="M800 232 791 -520 809 -520Z" transform="rotate(128.6 800 232)"/><path d="M800 232 791 -520 809 -520Z" transform="rotate(141.4 800 232)"/><path d="M800 232 791 -520 809 -520Z" transform="rotate(154.3 800 232)"/><path d="M800 232 791 -520 809 -520Z" transform="rotate(167.1 800 232)"/><path d="M800 232 791 -520 809 -520Z" transform="rotate(180.0 800 232)"/><path d="M800 232 791 -520 809 -520Z" transform="rotate(192.9 800 232)"/><path d="M800 232 791 -520 809 -520Z" transform="rotate(205.7 800 232)"/><path d="M800 232 791 -520 809 -520Z" transform="rotate(218.6 800 232)"/><path d="M800 232 791 -520 809 -520Z" transform="rotate(231.4 800 232)"/><path d="M800 232 791 -520 809 -520Z" transform="rotate(244.3 800 232)"/><path d="M800 232 791 -520 809 -520Z" transform="rotate(257.1 800 232)"/><path d="M800 232 791 -520 809 -520Z" transform="rotate(270.0 800 232)"/><path d="M800 232 791 -520 809 -520Z" transform="rotate(282.9 800 232)"/><path d="M800 232 791 -520 809 -520Z" transform="rotate(295.7 800 232)"/><path d="M800 232 791 -520 809 -520Z" transform="rotate(308.6 800 232)"/><path d="M800 232 791 -520 809 -520Z" transform="rotate(321.4 800 232)"/><path d="M800 232 791 -520 809 -520Z" transform="rotate(334.3 800 232)"/><path d="M800 232 791 -520 809 -520Z" transform="rotate(347.1 800 232)"/></g>
-    <circle cx="800" cy="232" r="330" fill="url(#pnr-sun)"/>
-    <circle cx="800" cy="232" r="96" fill="#FFF6DD"/>
+  <rect width="1600" height="480" fill="#0B3D45"/>
+  <rect width="1600" height="480" fill="url(#pnr-glow)"/>
+
+  <g class="pnr-rings" fill="none" stroke="#E3C258">
+    <circle cx="800" cy="240" r="206" stroke-opacity=".55" stroke-width="1.6"/>
+    <circle cx="800" cy="240" r="194" stroke-opacity=".22" stroke-width="1"/>
   </g>
+
   <g class="pnr-flecks" fill="#E3C258">
-    <rect x="212" y="58" width="9" height="9" transform="rotate(45 216 62)" fill-opacity=".8"/>
-    <rect x="342" y="128" width="6" height="6" transform="rotate(45 345 131)" fill="#F4ECD8" fill-opacity=".6"/>
-    <rect x="470" y="40" width="7" height="7" transform="rotate(45 473 43)"/>
-    <rect x="1120" y="70" width="8" height="8" transform="rotate(45 1124 74)" fill-opacity=".85"/>
-    <rect x="1262" y="140" width="6" height="6" transform="rotate(45 1265 143)" fill="#F4ECD8" fill-opacity=".6"/>
-    <rect x="1394" y="52" width="9" height="9" transform="rotate(45 1398 56)" fill-opacity=".7"/>
-    <rect x="610" y="96" width="5" height="5" transform="rotate(45 612 98)"/>
-    <rect x="990" y="30" width="6" height="6" transform="rotate(45 993 33)" fill-opacity=".8"/>
-    <rect x="96" y="160" width="6" height="6" transform="rotate(45 99 163)" fill-opacity=".6"/>
-    <rect x="1500" y="170" width="7" height="7" transform="rotate(45 1503 173)" fill-opacity=".6"/>
+    <circle cx="232" cy="96" r="2.4" fill-opacity=".7"/><circle cx="388" cy="372" r="1.8" fill-opacity=".5"/>
+    <circle cx="520" cy="150" r="2" fill-opacity=".6"/><circle cx="1090" cy="118" r="2.2" fill-opacity=".7"/>
+    <circle cx="1236" cy="360" r="1.8" fill-opacity=".5"/><circle cx="1388" cy="132" r="2.4" fill-opacity=".6"/>
+    <circle cx="640" cy="404" r="1.6" fill-opacity=".45"/><circle cx="968" cy="420" r="1.6" fill-opacity=".45"/>
   </g>
 
-  <rect y="232" width="1600" height="328" fill="url(#pnr-field)"/>
-  <rect y="206" width="1600" height="26" fill="#0A3238"/>
-  <rect y="206" width="1600" height="26" fill="url(#pnr-crowd)"/>
-  <rect y="231" width="1600" height="1.5" fill="#E3C258" fill-opacity=".55"/>
-
-  <path d="M656 232H944L1520 560H80Z" fill="url(#pnr-track)"/>
-  <g stroke="#F4ECD8" stroke-opacity=".9" fill="none" stroke-linecap="round">
-    <path d="M656 232 80 560" stroke-width="5"/><path d="M944 232 1520 560" stroke-width="5"/>
-    <path d="M697 232 285.7 560" stroke-width="2.6"/><path d="M738 232 491.4 560" stroke-width="2.6"/>
-    <path d="M779 232 697.1 560" stroke-width="2.6"/><path d="M821 232 902.9 560" stroke-width="2.6"/>
-    <path d="M862 232 1108.6 560" stroke-width="2.6"/><path d="M903 232 1314.3 560" stroke-width="2.6"/>
-  </g>
-  <rect x="0" y="463" width="1600" height="16" fill="url(#pnr-check)" clip-path="url(#pnr-trackclip)"/>
-  <g class="pnr-lab" fill="#F4ECD8" fill-opacity=".92" font-family="Barlow Condensed, Arial Narrow, Arial, sans-serif" font-size="17" font-weight="700" letter-spacing="3" text-anchor="middle">
-    <text x="204" y="546">FOOD</text><text x="403" y="546">WATER</text><text x="601" y="546">SHELTER</text>
-    <text x="800" y="546">ENERGY</text><text x="999" y="546">EDUCATION</text><text x="1197" y="546">HEALTH</text><text x="1396" y="546">LIVELIHOOD</text>
+  <g class="pnr-tape" fill="none" stroke="#F4ECD8" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round">
+    <path class="pnr-tapeL" d="M-20 238H600C668 238 716 239 752 242C768 244 772 254 764 264C756 274 762 286 774 290C786 294 784 306 772 312"/>
+    <path class="pnr-tapeR" d="M1620 238H1000C932 238 884 239 852 242C836 244 832 254 840 264C848 274 842 286 830 290C818 294 820 306 832 312"/>
   </g>
 
-  <ellipse cx="800" cy="482" rx="84" ry="11" fill="#2A0E06" fill-opacity=".42"/>
-
-  <g class="pnr-tape" fill="none" stroke-linecap="round" stroke-linejoin="round">
-    <path class="pnr-tapeL" d="M-20 254C260 256 520 259 684 262C726 263 744 276 738 294C732 312 750 326 740 344" stroke="#F4ECD8" stroke-width="9"/>
-    <path class="pnr-tapeR" d="M1620 254C1340 256 1080 259 916 262C874 263 856 276 862 294C868 312 850 326 860 344" stroke="#F4ECD8" stroke-width="9"/>
+  <g class="pnr-speed" fill="none" stroke="#E3C258" stroke-width="3" stroke-linecap="round" stroke-opacity=".5">
+    <path d="M652 296C676 292 698 292 720 296"/><path d="M630 330C660 326 690 326 716 330"/><path d="M662 364C684 360 704 360 724 364"/>
   </g>
 
-  <g class="pnr-runner">
-    <g stroke="#082A30" stroke-width="32" stroke-linecap="round" stroke-linejoin="round" fill="none">
-      <path d="M757 222 713 166 703 108"/><path d="M843 222 887 166 897 108"/>
-      <path d="M785 350 773 410 769 470"/><path d="M815 350 846 396 830 446"/>
-    </g>
-    <g stroke="url(#pnr-gold)" stroke-width="25" stroke-linecap="round" stroke-linejoin="round" fill="none">
-      <path d="M757 222 713 166 703 108"/><path d="M843 222 887 166 897 108"/>
-      <path d="M785 350 773 410 769 470"/><path d="M815 350 846 396 830 446"/>
-    </g>
-    <path d="M790 186H810V208H790Z" fill="url(#pnr-gold)" stroke="#082A30" stroke-width="3"/>
-    <path d="M748 216C748 207 755 201 764 201H836C845 201 852 207 852 216L827 320H773Z" fill="url(#pnr-gold)" stroke="#082A30" stroke-width="3.5" stroke-linejoin="round"/>
-    <path d="M771 318H829L836 358H806L800 344 794 358H764Z" fill="#0B3D45" stroke="#E3C258" stroke-width="2.5" stroke-linejoin="round"/>
-    <circle cx="800" cy="168" r="24" fill="url(#pnr-gold)" stroke="#082A30" stroke-width="3.5"/>
-    <path d="M800 240 804.7 250.4 816 251.6 807.5 259.2 810 270.4 800 264.6 790 270.4 792.5 259.2 784 251.6 795.3 250.4Z" fill="#0B3D45"/>
-    <ellipse cx="763" cy="474" rx="16" ry="7" fill="#082A30"/><ellipse cx="830" cy="450" rx="15" ry="7" fill="#082A30"/>
+  <g class="pnr-runner" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path class="pnr-halo" d="M736 396C748 380 756 364 764 346C772 326 786 306 800 290C808 262 812 236 808 206C790 186 768 160 752 132C744 118 738 104 734 88C732 80 742 78 744 86C752 108 772 150 802 196C824 160 848 128 864 96C868 86 878 82 880 92C874 120 848 168 814 212C810 236 808 262 802 288C824 290 848 292 866 300C874 312 866 340 858 364C856 374 862 380 878 378" stroke="#E3C258" stroke-opacity=".55" stroke-width="16" filter="url(#pnr-blur)"/>
+    <path class="pnr-line" d="M736 396C748 380 756 364 764 346C772 326 786 306 800 290C808 262 812 236 808 206C790 186 768 160 752 132C744 118 738 104 734 88C732 80 742 78 744 86C752 108 772 150 802 196C824 160 848 128 864 96C868 86 878 82 880 92C874 120 848 168 814 212C810 236 808 262 802 288C824 290 848 292 866 300C874 312 866 340 858 364C856 374 862 380 878 378" stroke="url(#pnr-gold)" stroke-width="9"/>
+    <circle class="pnr-head" cx="810" cy="150" r="17" fill="url(#pnr-gold)"/>
   </g>
 
-  <g class="pnr-snap" stroke="#FBE391" stroke-width="3.5" stroke-linecap="round">
-    <path d="M730 252 708 240"/><path d="M728 266 702 266"/><path d="M732 280 712 292"/>
-    <path d="M870 252 892 240"/><path d="M872 266 898 266"/><path d="M868 280 888 292"/>
+  <g class="pnr-snap" stroke="#FBE391" stroke-width="2.6" stroke-linecap="round">
+    <path d="M782 226 770 214"/><path d="M778 238 762 238"/><path d="M826 226 838 214"/><path d="M830 238 846 238"/>
   </g>
 </svg>
   </div>
@@ -572,15 +520,27 @@ window.PNHG_CFG={"base":"https://perfectnations.org/blueprints/","paths":{"cote-
   var mt = null;
   window.addEventListener('resize', function(){ if (mt) { clearTimeout(mt); } mt = setTimeout(measure, 200); });
 
-  /* the race: the runner breaks the tape when the drawing comes into view */
+  /* the race: the gold line draws the runner, then the tape snaps, when the drawing comes into view */
   var race = document.getElementById('pn-race');
   if (race){
-    if ('IntersectionObserver' in window){
+    var still = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var line = race.querySelector('.pnr-line');
+    if (!still && line && line.getTotalLength && 'IntersectionObserver' in window){
+      var len = Math.ceil(line.getTotalLength()) + 2;
+      race.style.setProperty('--pnr-len', len + 'px');
+      race.style.setProperty('--pnr-off', len + 'px');
+      race.classList.add('is-armed');
       var io = new IntersectionObserver(function(en){
-        if (en[0].isIntersecting){ race.classList.add('is-in'); io.disconnect(); }
-      }, { threshold: 0.28 });
+        if (!en[0].isIntersecting) { return; }
+        io.disconnect();
+        window.requestAnimationFrame(function(){
+          race.classList.add('is-in');
+          race.classList.remove('is-armed');
+          race.style.setProperty('--pnr-off', '0px');
+        });
+      }, { threshold: 0.35 });
       io.observe(race.querySelector('.pnr-band') || race);
-    } else { race.classList.add('is-in'); }
+    }
   }
 })();
 </script>
