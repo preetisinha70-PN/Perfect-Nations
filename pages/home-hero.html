@@ -1,7 +1,12 @@
 <!-- ===========================================================================
-PERFECT NATIONS - HOMEPAGE - SECTION 01 - CIVILIZATION RE-DEFINED - v5.7 - 2026-11-06
+PERFECT NATIONS - HOMEPAGE - SECTION 01 - CIVILIZATION RE-DEFINED - v6.0 THE IGNITION - 2026-11-06
 Served live from GitHub (pages/home-hero.html) by the Perfect Nations Live Pages plugin;
 the root id stays pn-hero, so the widget already on the homepage is the one replaced.
+v6.0: the planet opens the blueprints and lights up. Choosing a published nation opens its blueprint
+  at once in a new tab (it used to open the Nations Menu card, then the page in the same tab). The
+  ignition: when the planet appears, the 44 open blueprints light up one by one with gold ripples
+  while a large gold counter climbs to 44 of 195; afterwards one open nation ripples every few
+  seconds. On phones the counter is a gold pill under the planet.
 v5.7: the objective line names the mission: super intelligence (SI) and innovative financing for
   development, co-designing with every nation seven basic standards of living for all.
 v5.6: the planet's colours carry meaning. The 44 open blueprints are bright gold (#FFD45C) with a
@@ -198,7 +203,37 @@ If the address differs, change it in the two places it appears (search for pn-ho
 #pn-hero .pnhg-ctl button:focus-visible{ outline:2px solid var(--gs); outline-offset:2px; }
 #pn-hero .pnhg-ctl button.is-off{ border-color:var(--iv); color:var(--iv); }
 
-/* ---------- name card (used only when the Nations Menu is not on the page) ---------- */
+/* ---------- v6.0: the counter of open blueprints, lit by the ignition ---------- */
+#pn-hero .pnhg-count{
+  position:absolute; z-index:5; left:clamp(18px,4.6vw,76px); bottom:clamp(24px,6vh,70px);
+  display:flex; flex-direction:column; align-items:flex-start; gap:8px;
+  text-align:left; text-decoration:none !important; color:var(--iv);
+}
+#pn-hero .pnhg-count__n{ display:flex; align-items:flex-start; gap:4px; font-family:var(--hd); font-weight:700; line-height:.8; }
+#pn-hero .pnhg-count__n b{
+  display:inline-block; min-width:1.1em; transform-origin:0 100%;
+  font-size:clamp(4.4rem,8.6vw,8.4rem); font-weight:700; letter-spacing:-.035em; font-variant-numeric:tabular-nums;
+  color:#FFD45C; background:linear-gradient(180deg,#FFF6D2 0%,#FFD45C 50%,#D9A92E 100%);
+  -webkit-background-clip:text; background-clip:text;
+  filter:drop-shadow(0 0 16px rgba(255,212,92,.32));
+}
+@supports ((-webkit-background-clip:text) or (background-clip:text)){
+  #pn-hero .pnhg-count__n b{ -webkit-text-fill-color:transparent; }
+}
+#pn-hero .pnhg-count__n small{ margin-top:.45em; font-size:clamp(1rem,1.5vw,1.45rem); font-weight:600; letter-spacing:.02em; color:rgba(244,236,216,.72); }
+#pn-hero .pnhg-count__t{
+  padding-top:9px; border-top:1px solid rgba(227,194,88,.6); white-space:nowrap;
+  font-family:var(--hd); font-size:.72rem; font-weight:700; line-height:1.35; letter-spacing:.2em; text-transform:uppercase; color:var(--iv);
+  transition:color .2s ease;
+}
+#pn-hero .pnhg-count:hover .pnhg-count__t{ color:var(--g); }
+#pn-hero .pnhg-count:focus-visible{ outline:2px solid var(--gs); outline-offset:6px; }
+@media (prefers-reduced-motion:no-preference){
+  #pn-hero .pnhg-count.is-done .pnhg-count__n b{ animation:pnhgGlow 3.4s ease-in-out infinite alternate; }
+}
+@keyframes pnhgGlow{ from{ filter:drop-shadow(0 0 10px rgba(255,212,92,.22)); } to{ filter:drop-shadow(0 0 28px rgba(255,212,92,.62)); } }
+
+/* ---------- name card: shown when a nation is chosen on the planet ---------- */
 #pn-hero .pnhg-plate{
   position:absolute; z-index:7; left:50%; top:50%;
   transform:translate(-50%,-50%) scale(.96);
@@ -208,7 +243,7 @@ If the address differs, change it in the two places it appears (search for pn-ho
   box-shadow:0 22px 60px rgba(2,14,22,.55);
   opacity:0; transition:opacity .2s ease, transform .2s ease;
 }
-#pn-hero .pnhg-plate.is-on{ opacity:1; transform:translate(-50%,-50%) scale(1); }
+#pn-hero .pnhg-plate.is-on{ opacity:1; transform:translate(-50%,-50%) scale(1); pointer-events:auto; }
 #pn-hero .pnhg-plate b{
   display:block; font-family:var(--hd); font-weight:600;
   font-size:clamp(1.6rem,3.2vw,2.3rem); line-height:1.02; letter-spacing:-.01em; color:var(--iv);
@@ -218,8 +253,9 @@ If the address differs, change it in the two places it appears (search for pn-ho
   font-size:.68rem; letter-spacing:.2em; text-transform:uppercase; color:var(--td);
 }
 #pn-hero .pnhg-plate__go{
-  display:block; margin-top:14px; font-family:var(--hd); font-size:.62rem; font-weight:700;
-  letter-spacing:.2em; text-transform:uppercase; color:var(--g);
+  display:inline-block; margin-top:14px; font-family:var(--hd); font-size:.66rem; font-weight:700;
+  letter-spacing:.2em; text-transform:uppercase; color:var(--g) !important; text-decoration:none !important;
+  border-bottom:1px solid rgba(227,194,88,.55); padding-bottom:3px;
 }
 
 /* ---------- tooltip ---------- */
@@ -291,6 +327,14 @@ If the address differs, change it in the two places it appears (search for pn-ho
   #pn-hero .pnhg-ctas{ flex-direction:column; align-items:stretch; gap:10px; max-width:320px; margin-left:auto; margin-right:auto; }
   #pn-hero .pnhg-btn{ padding:12px 22px 10px; justify-content:center; }
   #pn-hero .pnhg-ctl{ display:none; }
+  #pn-hero .pnhg-count{
+    left:50%; bottom:2px; transform:translateX(-50%); flex-direction:row; align-items:center; gap:12px;
+    padding:7px 18px 7px 16px; border-radius:999px; white-space:nowrap;
+    background:rgba(8,42,48,.9); border:1px solid rgba(227,194,88,.55); box-shadow:0 12px 30px rgba(2,14,22,.45);
+  }
+  #pn-hero .pnhg-count__n b{ font-size:2.7rem; }
+  #pn-hero .pnhg-count__n small{ margin-top:.3em; font-size:.9rem; }
+  #pn-hero .pnhg-count__t{ padding:0 0 0 12px; border-top:0; border-left:1px solid rgba(227,194,88,.55); font-size:.62rem; letter-spacing:.15em; }
 }
 @media (prefers-reduced-motion:reduce){
   #pn-hero *{ transition:none !important; animation:none !important; }
@@ -391,6 +435,27 @@ If the address differs, change it in the two places it appears (search for pn-ho
 @media (prefers-reduced-motion:reduce){
   #pn-race *{ animation:none !important; }
 }
+/* v6.0: the gold ripples of the ignition */
+#pn-hero .pnhg-rip{ position:relative; width:0; height:0; pointer-events:none; }
+#pn-hero .pnhg-rip i{
+  position:absolute; left:-30px; top:-30px; width:60px; height:60px; border-radius:50%;
+  border:2px solid #FFE9A6; box-shadow:0 0 14px rgba(255,212,92,.75), inset 0 0 10px rgba(255,212,92,.45);
+  opacity:0; animation:pnhgRip 1.4s cubic-bezier(.2,.7,.3,1) forwards;
+}
+#pn-hero .pnhg-rip i + i{ animation-delay:.22s; border-width:1px; }
+#pn-hero .pnhg-rip b{
+  position:absolute; left:-5px; top:-5px; width:10px; height:10px; border-radius:50%;
+  background:#FFF6D2; box-shadow:0 0 12px 4px rgba(255,224,122,.9), 0 0 30px 10px rgba(255,212,92,.45);
+  opacity:0; animation:pnhgSpark 1.2s ease-out forwards;
+}
+#pn-hero .pnhg-rip:not(.is-big) i{ animation-duration:2s; }
+#pn-hero .pnhg-rip:not(.is-big) i + i{ display:none; }
+#pn-hero .pnhg-rip:not(.is-big) b{ width:8px; height:8px; left:-4px; top:-4px; }
+@keyframes pnhgRip{ 0%{ transform:scale(.15); opacity:1; } 100%{ transform:scale(2.4); opacity:0; } }
+@keyframes pnhgSpark{ 0%{ transform:scale(.4); opacity:0; } 18%{ transform:scale(1.4); opacity:1; } 100%{ transform:scale(.6); opacity:0; } }
+@media (max-width:760px){
+  #pn-hero .pnhg-rip i{ left:-22px; top:-22px; width:44px; height:44px; }
+}
 /* v5.4: the pin the Capital Wire sets on the planet */
 #pn-hero .pnhg-pin{ position:relative; width:0; height:0; pointer-events:none; }
 #pn-hero .pnhg-pin i{ position:absolute; left:-32px; top:-32px; width:64px; height:64px; border-radius:50%; border:2px solid #F0D68F; opacity:0; animation:pnhgPin 2.2s ease-out infinite; }
@@ -423,6 +488,11 @@ If the address differs, change it in the two places it appears (search for pn-ho
       <button type="button" data-act="reset" aria-label="Reset the globe">&#8962;</button>
       <button type="button" data-act="spin" aria-label="Pause or resume rotation">&#10227;</button>
     </div>
+
+    <a class="pnhg-count" id="pnhgCount" href="https://perfectnations.org/blueprints/">
+      <span class="pnhg-count__n"><b data-n>44</b><small>/195</small></span>
+      <span class="pnhg-count__t">nations with an<br>open blueprint</span>
+    </a>
 
     <div class="pnhg-plate" id="pnhgPlate" aria-live="polite"></div>
 
@@ -698,7 +768,6 @@ window.PNHG_CFG={"base":"https://perfectnations.org/blueprints/","paths":{"cote-
   var MARK = { live:{ color:'#FFE07A', alt:0.018, rad:0.44 }, soon:{ color:'#D2B266', alt:0.013, rad:0.34 } };
   var MIN_ALT = 0.55, MAX_ALT = 4.2, STEP = 1.22;
   var ATMO = 0.2, ATMO_COLOR = '#F4D06A';
-  var HOLD_MS = 1600;
   var MIN_ISLAND = 0.5, DOT_BELOW = 0.25;
   var TAN25 = Math.tan(25 * Math.PI / 180);
   var R = 100;
@@ -717,11 +786,14 @@ window.PNHG_CFG={"base":"https://perfectnations.org/blueprints/","paths":{"cote-
     return Math.max(MIN_ALT, Math.min(MAX_ALT, alt));
   }
 
+  /* v6.0: a published nation opens its blueprint at once, in a new tab, inside the visitor's own
+     click or tap (a delayed open is blocked by phones). If a browser still blocks it, the name card
+     keeps a gold link to tap. */
   function openBlueprint(href){
     var win = null;
     try { win = window.open(href, '_blank'); } catch (e) {}
-    if (win) { try { win.opener = null; } catch (e) {} return; }
-    window.location.href = href;
+    if (win) { try { win.opener = null; } catch (e) {} return true; }
+    return false;
   }
 
   function start(){
@@ -791,24 +863,30 @@ window.PNHG_CFG={"base":"https://perfectnations.org/blueprints/","paths":{"cote-
                      href: CFG.base + (CFG.paths[slug] || slug) + '/' });
     }
 
-    var waitTimer = null;
+    var plateT = null;
+    function showPlate(nrec, href, label, hold){
+      if (!plate) { return; }
+      plate.innerHTML = '<b>' + nrec[0] + '</b><i>' + (REGION[nrec[4]] || '') + '</i>' +
+                        '<a class="pnhg-plate__go" href="' + href + '" target="_blank" rel="noopener">' + label + '</a>';
+      plate.classList.add('is-on');
+      if (plateT) { window.clearTimeout(plateT); }
+      plateT = window.setTimeout(function(){ plate.classList.remove('is-on'); }, hold ? 7000 : 2600);
+    }
     function enter(d){
-      if (!d || !d.slug || waitTimer) { return; }
-      if (window.pnNationViewer && typeof window.pnNationViewer.open === 'function'){
-        window.pnNationViewer.open(d.slug); return;
-      }
+      if (!d || !d.slug) { return; }
       var nrec = NAT[d.slug];
       if (!nrec) { return; }
-      var href = nrec[1] === 'live' ? d.href : 'https://perfectnations.org/contact/?nation=' + encodeURIComponent(d.slug);
-      if (!plate || reduce){ openBlueprint(href); return; }
-      plate.innerHTML = '<b>' + nrec[0] + '</b><i>' + (REGION[nrec[4]] || '') + '</i>' +
-                        '<span class="pnhg-plate__go">' + (nrec[1] === 'live' ? 'Opening the blueprint' : 'Blueprint in preparation') + '</span>';
-      plate.classList.add('is-on');
-      waitTimer = window.setTimeout(function(){
-        waitTimer = null;
-        plate.classList.remove('is-on');
-        openBlueprint(href);
-      }, HOLD_MS);
+      if (nrec[1] !== 'live'){
+        /* a blueprint in preparation: the Nations Menu card says so, or the name card does */
+        if (window.pnNationViewer && typeof window.pnNationViewer.open === 'function'){
+          window.pnNationViewer.open(d.slug); return;
+        }
+        showPlate(nrec, 'https://perfectnations.org/contact/?nation=' + encodeURIComponent(d.slug), 'Blueprint in preparation', false);
+        return;
+      }
+      var href = CFG.base + (CFG.paths[d.slug] || d.slug) + '/';
+      var opened = openBlueprint(href);
+      showPlate(nrec, href, opened ? 'Opened in a new tab' : 'Open the blueprint', !opened);
     }
 
     function phong(g){
@@ -820,6 +898,7 @@ window.PNHG_CFG={"base":"https://perfectnations.org/blueprints/","paths":{"cote-
     var box = sizeStage();
     var home = { lat: 6, lng: 24, altitude: fitAltitude(box) };
     var hovered = null;
+    var flash = {};
 
     var globe = Globe({ animateIn: false })(stage)
       .width(box.w).height(box.h)
@@ -830,8 +909,8 @@ window.PNHG_CFG={"base":"https://perfectnations.org/blueprints/","paths":{"cote-
       .polygonsData(lands)
       .polygonGeoJsonGeometry('geometry')
       .polygonCapCurvatureResolution(10)
-      .polygonAltitude(function(d){ return (d === hovered ? ALT_HOV : (ALT[d.state] || ALT.none)) + d.up; })
-      .polygonCapMaterial(function(d){ return d === hovered ? MAT.hov : (MAT[d.state] || MAT.none); })
+      .polygonAltitude(function(d){ return (d === hovered || flash[d.slug] ? ALT_HOV : (ALT[d.state] || ALT.none)) + d.up; })
+      .polygonCapMaterial(function(d){ return (d === hovered || flash[d.slug]) ? MAT.hov : (MAT[d.state] || MAT.none); })
       .polygonSideColor(function(){ return SIDE; })
       .polygonStrokeColor(function(){ return false; })
       .polygonsTransitionDuration(260)
@@ -859,6 +938,7 @@ window.PNHG_CFG={"base":"https://perfectnations.org/blueprints/","paths":{"cote-
     try {
       globe.onGlobeReady(function(){
         window.requestAnimationFrame(function(){ window.requestAnimationFrame(clearPlaceholder); });
+        window.setTimeout(function(){ if (window.pnhgIgnite) { window.pnhgIgnite(); } }, 900);
       });
     } catch (e) {}
     window.setTimeout(clearPlaceholder, 4000);
@@ -1122,41 +1202,144 @@ window.PNHG_CFG={"base":"https://perfectnations.org/blueprints/","paths":{"cote-
     /* v5.4: the Capital Wire (Section 01b) asks the planet to find a nation: it turns to it,
        raises it in bright gold and pins it with two gold rings and its deal figure, then
        turns on again after nine seconds */
-    var focusT = null, pinSet = false;
+    var focusT = null;
     function relight(){ globe.polygonAltitude(globe.polygonAltitude()).polygonCapMaterial(globe.polygonCapMaterial()); }
+    /* one layer of marks on the planet: the Capital Wire pin and the gold ripples of the ignition
+       (marks on the far side of the planet are hidden by the library) */
+    var pins = [], ripples = [];
+    function syncMarks(){ globe.htmlElementsData(pins.concat(ripples)); }
+    function makePin(d){
+      var pin = document.createElement('div'), tag = document.createElement('b'), nm = document.createElement('em');
+      pin.className = 'pnhg-pin';
+      pin.appendChild(document.createElement('i'));
+      pin.appendChild(document.createElement('i'));
+      nm.innerHTML = d.name;
+      tag.appendChild(nm);
+      if (d.figure) { var f = document.createElement('span'); f.textContent = d.figure; tag.appendChild(f); }
+      pin.appendChild(tag);
+      return pin;
+    }
+    function makeRipple(d){
+      var el = document.createElement('div');
+      el.className = 'pnhg-rip' + (d.big ? ' is-big' : '');
+      el.appendChild(document.createElement('i'));
+      el.appendChild(document.createElement('i'));
+      el.appendChild(document.createElement('b'));
+      return el;
+    }
+    globe.htmlTransitionDuration(0).htmlLat('lat').htmlLng('lng')
+      .htmlAltitude(function(d){ return d.kind === 'pin' ? 0.02 : 0.03; })
+      .htmlElement(function(d){ return d.kind === 'pin' ? makePin(d) : makeRipple(d); });
+
     window.pnhgFocus = function(s, figure){
       var r = NAT[s];
       if (!r) { return false; }
       var hit = null;
       lands.forEach(function(Ld){ if (Ld.slug === s) { hit = Ld; } });
-      if (!pinSet) {
-        pinSet = true;
-        globe.htmlLat('lat').htmlLng('lng').htmlAltitude(0.02).htmlElement(function(d){
-          var pin = document.createElement('div'), tag = document.createElement('b'), nm = document.createElement('em');
-          pin.className = 'pnhg-pin';
-          pin.appendChild(document.createElement('i'));
-          pin.appendChild(document.createElement('i'));
-          nm.innerHTML = d.name;
-          tag.appendChild(nm);
-          if (d.figure) { var f = document.createElement('span'); f.textContent = d.figure; tag.appendChild(f); }
-          pin.appendChild(tag);
-          return pin;
-        });
-      }
       controls.autoRotate = false;
       if (spinBtn) { spinBtn.classList.add('is-off'); }
       hovered = hit;
       relight();
-      globe.htmlElementsData([{ lat: r[2], lng: r[3], name: r[0], figure: figure ? String(figure).slice(0, 24) : '' }]);
+      pins = [{ kind: 'pin', lat: r[2], lng: r[3], name: r[0], figure: figure ? String(figure).slice(0, 24) : '' }];
+      syncMarks();
       globe.pointOfView({ lat: r[2], lng: r[3], altitude: home.altitude }, reduce ? 0 : 1600);
       if (focusT) { clearTimeout(focusT); }
       focusT = setTimeout(function(){
-        globe.htmlElementsData([]);
+        pins = []; syncMarks();
         if (hovered === hit) { hovered = null; relight(); }
         controls.autoRotate = !reduce;
         if (spinBtn) { spinBtn.classList.toggle('is-off', reduce); }
       }, 9000);
       return true;
+    };
+
+    /* v6.0: the ignition. When the planet first appears, every open blueprint lights up in turn,
+       nearest first, each with a gold ripple, while the counter climbs to the number of open
+       blueprints. Afterwards an open nation ripples every few seconds, so the planet stays alive. */
+    var count = document.getElementById('pnhgCount');
+    var countN = count ? count.querySelector('[data-n]') : null;
+    var ignited = false, beat = null, relightT = null;
+    function liveList(){
+      var out = [], s;
+      for (s in NAT){ if (Object.prototype.hasOwnProperty.call(NAT, s) && NAT[s][1] === 'live') { out.push(s); } }
+      return out;
+    }
+    function setCount(n, bump){
+      if (!countN) { return; }
+      countN.textContent = String(n);
+      if (bump && countN.animate) {
+        try { countN.animate([{ transform:'scale(1.14)' }, { transform:'scale(1)' }], { duration:240, easing:'ease-out' }); } catch (e) {}
+      }
+    }
+    function queueRelight(){
+      if (relightT) { return; }
+      relightT = window.setTimeout(function(){ relightT = null; relight(); }, 90);
+    }
+    function ripple(lat, lng, big){
+      var r = { kind: 'rip', lat: lat, lng: lng, big: !!big };
+      ripples.push(r);
+      syncMarks();
+      window.setTimeout(function(){
+        var i = ripples.indexOf(r);
+        if (i > -1) { ripples.splice(i, 1); syncMarks(); }
+      }, big ? 1500 : 2100);
+    }
+    function nearFirst(list){
+      var pov = globe.pointOfView(), la = pov.lat * Math.PI / 180, lo = pov.lng * Math.PI / 180;
+      return list.map(function(s){
+        var a = NAT[s][2] * Math.PI / 180, b = NAT[s][3] * Math.PI / 180;
+        var c = Math.sin(la) * Math.sin(a) + Math.cos(la) * Math.cos(a) * Math.cos(b - lo);
+        return { s: s, d: Math.acos(Math.max(-1, Math.min(1, c))) };
+      }).sort(function(x, y){ return x.d - y.d; });
+    }
+    function heartbeat(){
+      if (beat || reduce) { return; }
+      beat = window.setInterval(function(){
+        if (!running || hovered) { return; }
+        var near = nearFirst(liveList()).filter(function(x){ return x.d < 1.25; });
+        if (!near.length) { return; }
+        var n = near[Math.floor(Math.random() * near.length)];
+        ripple(NAT[n.s][2], NAT[n.s][3], false);
+      }, 2600);
+    }
+    function ignite(){
+      if (ignited) { return; }
+      ignited = true;
+      var list = nearFirst(liveList());
+      if (reduce || !list.length) { setCount(list.length, false); if (count) { count.classList.add('is-done'); } return; }
+      setCount(0, false);
+      if (count) { count.classList.add('is-lit'); }
+      /* paced by the clock, not by frames: about four seconds on any device, slow at first,
+         then a flood of gold */
+      var N = list.length, done = 0, t0 = Date.now(), D = Math.min(4400, 1200 + N * 70);
+      function light(n){
+        ripple(NAT[n.s][2], NAT[n.s][3], true);
+        flash[n.s] = 1; queueRelight();
+        window.setTimeout(function(){ delete flash[n.s]; queueRelight(); }, 700);
+      }
+      (function tick(){
+        var k = Math.min(1, (Date.now() - t0) / D);
+        var e = k < 0.5 ? 2 * k * k : 1 - Math.pow(-2 * k + 2, 2) / 2;
+        var target = k < 1 ? Math.min(N, Math.max(1, Math.round(e * N))) : N;
+        var burst = 0;
+        while (done < target) { if (burst < 4) { light(list[done]); burst++; } done++; }
+        setCount(done, burst > 0);
+        if (done >= N) {
+          if (count) { count.classList.add('is-done'); }
+          window.setTimeout(heartbeat, 1800);
+          return;
+        }
+        window.setTimeout(tick, 70);
+      })();
+    }
+    window.pnhgIgnite = ignite;
+    window.setTimeout(ignite, 5200);
+
+    /* a blueprint published after the ignition raises the counter too */
+    var promote = window.pnhgPromote;
+    window.pnhgPromote = function(slugs){
+      promote(slugs);
+      if (ignited && count && count.classList.contains('is-done')) { setCount(liveList().length, true); }
     };
   }
 
