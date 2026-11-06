@@ -1,4 +1,5 @@
-<!-- PERFECT NATIONS . NATIONAL BLUEPRINT . REPUBLIC OF THE CONGO . v9.4.1 LIVE DATA . 2026-11-06 . Built on the Barbados v11.7 template . One Elementor Custom HTML widget, Full Width, padding 0, Hide Title -->
+<!-- PERFECT NATIONS . NATIONAL BLUEPRINT . REPUBLIC OF THE CONGO . v9.5 LIVE DATA . 2026-11-06 . Built on the Barbados v11.7 template . One Elementor Custom HTML widget, Full Width, padding 0, Hide Title -->
+<!-- v9.5 (6 November 2026): the whole page follows its Nation Steward. The hero figures and lead, the register (with its filters, counts and Show all), the record in figures, the Sovereign Assets and the enterprises, with their headings, now come from data/republic-of-congo.json, as the Newswire, the seven standards and the Dispatches already did; the code below is the fallback. -->
 <!-- v9.4.1 (6 November 2026): speed only; no word, colour or layout changes. The globe no longer loads a second copy of three.js (globe.gl carries its own); the nation outline is built in, so the 250 KB world file is not downloaded; the portrait and the Nation Steward photo use the smaller copies WordPress already made; the Caveat font no longer holds up the first paint; live data is revalidated, not downloaded again. -->
 <!-- v9.4 (6 November 2026): All news. The Newswire shows its newest eight headlines; older ones are kept in archive/newswire/republic-of-congo.json, and when there are any, an All news button opens the full list in place. The show-all buttons now hide when they are meant to. Nothing else changes. -->
 <!-- v9.3 (1 November 2026): brought in from the Drive copy of 1 November 2026 (globe and portrait fix): the globe draws only the nation&#8217;s outline, which removes the flicker; the finished nation portrait (.png, then .jpg); the uploaded asset images. -->
@@ -1344,8 +1345,120 @@ article:has(#pn-bp-republic-of-congo) .entry-header,article:has(#pn-bp-republic-
     }
     get(0);
   }
+  /* Live sections (6 November 2026): the register, the record in figures, the Sovereign Assets and the
+     enterprises, with their headings, come from the Nation Steward's data file. The page code stays if anything fails. */
+  var LV_CAT={govt:'Government',humanitarian:'Humanitarian',multi:'Multilateral',regional:'Regional',bilat:'Bilateral','private':'Private',impact:'Impact'};
+  var LV_ORDER=['govt','humanitarian','multi','regional','bilat','private','impact'];
+  function lvTxt(v){ return typeof v==='string'?v:''; }
+  function lvUrl(u){ return typeof u==='string'&&/^https:\/\/[^\s'"()<>\\]+$/.test(u); }
+  function lvLink(a,u){ a.href=u; a.target='_blank'; a.rel='noopener noreferrer'; return a; }
+  function lvHead(id,s){ var h=root.querySelector('#'+id); if(h&&lvTxt(s))h.textContent=s; }
+  function lvMoney(parent,v,m){ if(m)parent.appendChild(el('span','bp-money',v)); else parent.appendChild(document.createTextNode(v)); }
+  function lvRecord(list){
+    var ul=q('.bp-recs'); if(!ul||!list||!list.length)return;
+    var items=list.filter(function(x){ return x&&lvTxt(x.value)&&lvTxt(x.text)&&lvUrl(x.url); }); if(!items.length)return;
+    ul.textContent='';
+    items.forEach(function(x){
+      var li=el('li'), b=el('b'); lvMoney(b,x.value,x.money); li.appendChild(b);
+      li.appendChild(el('span','',x.text)); li.appendChild(lvLink(el('a','',lvTxt(x.source)||'Source'),x.url)); ul.appendChild(li);
+    });
+  }
+  function lvRegister(list){
+    var irs=q('#bp-irs'); if(!irs||!irs.parentNode||!list||!list.length)return;
+    var lines=list.filter(function(x){ return x&&lvTxt(x.name)&&lvTxt(x.cat)&&lvUrl(x.url); }); if(!lines.length)return;
+    var count={}, buttons=[];
+    irs.textContent=''; irs.classList.remove('is-all');
+    lines.forEach(function(x,i){
+      var cat=x.cat.replace(/[^a-z]/g,''), tone=lvTxt(x.tone).replace(/[^a-z]/g,'')||'active';
+      count[cat]=(count[cat]||0)+1;
+      var li=el('li','bp-ir'+(i>=8?' bp-ir--more':'')); li.setAttribute('data-cat',cat);
+      var det=el('details'), sm=el('summary'), tags=el('span','bp-tags');
+      tags.appendChild(el('span','bp-cat bp-cat--'+cat,LV_CAT[cat]||cat.charAt(0).toUpperCase()+cat.slice(1)));
+      tags.appendChild(el('span','bp-stat bp-stat--'+tone,lvTxt(x.status)||'Active')); sm.appendChild(tags);
+      var n=el('span','bp-ir__n',x.name); if(lvTxt(x.detail))n.appendChild(el('small','',x.detail)); sm.appendChild(n);
+      var a=el('span','bp-ir__a'); if(lvTxt(x.amount))lvMoney(a,x.amount,x.money); sm.appendChild(a); det.appendChild(sm);
+      var b=el('div','bp-ir__b');
+      if(lvTxt(x.note))b.appendChild(el('p','bp-ir__note',x.note));
+      if(lvTxt(x.text))b.appendChild(el('p','',x.text));
+      if(x.by&&x.by.length){ var by=el('p','bp-ir__by'); x.by.forEach(function(s){ if(lvTxt(s))by.appendChild(el('span','',s)); }); if(by.children.length)b.appendChild(by); }
+      b.appendChild(lvLink(el('a','bp-ir__src','Source'),x.url));
+      det.appendChild(b); li.appendChild(det); irs.appendChild(li);
+    });
+    root.setAttribute('data-filter-ready','true');
+    var more=q('#bp-showall');
+    if(more){ var c=more.cloneNode(false); more.parentNode.replaceChild(c,more); more=c; }
+    if(lines.length>8){
+      if(!more){ more=el('button','bp-showall'); more.type='button'; more.id='bp-showall'; irs.parentNode.insertBefore(more,irs.nextSibling); }
+      more.textContent='Show all '+lines.length+' lines'; more.hidden=false;
+      more.addEventListener('click',function(){ irs.classList.add('is-all'); more.hidden=true; });
+    } else if(more){ more.hidden=true; }
+    var fw=q('.bp-reg .bp-filters');
+    if(fw){
+      fw.textContent='';
+      var keys=['all'].concat(LV_ORDER.filter(function(k){ return count[k]; }), Object.keys(count).filter(function(k){ return LV_ORDER.indexOf(k)<0; }));
+      keys.forEach(function(k){
+        var bt=el('button','bp-fb'+(k==='all'?' is-on':'')); bt.type='button'; bt.setAttribute('data-filter',k); bt.setAttribute('aria-pressed',k==='all'?'true':'false');
+        bt.appendChild(document.createTextNode((k==='all'?'All':(LV_CAT[k]||k))+' ')); bt.appendChild(el('span','',String(k==='all'?lines.length:count[k])));
+        fw.appendChild(bt); buttons.push(bt);
+      });
+      buttons.forEach(function(btn){
+        btn.addEventListener('click',function(){
+          var f=btn.getAttribute('data-filter');
+          buttons.forEach(function(x){ var on=x===btn; x.classList.toggle('is-on',on); x.setAttribute('aria-pressed',on?'true':'false'); });
+          if(f!=='all'){ irs.classList.add('is-all'); if(more)more.hidden=true; }
+          Array.prototype.forEach.call(irs.querySelectorAll('.bp-ir'),function(r){ r.hidden=!(f==='all'||r.getAttribute('data-cat')===f); });
+        });
+      });
+    }
+    Array.prototype.forEach.call(root.querySelectorAll('.bp-stats li'),function(li){
+      var s=li.querySelector('span'), b=li.querySelector('b'); if(s&&b&&s.textContent==='Instruments and investments on record')b.textContent=String(lines.length);
+    });
+  }
+  function lvAssets(list){
+    var ul=q('.bp-acards'); if(!ul||!list||!list.length)return;
+    var items=list.filter(function(x){ return x&&lvTxt(x.name)&&lvTxt(x.figure); }); if(!items.length)return;
+    ul.textContent='';
+    items.forEach(function(x,i){
+      var li=el('li','bp-acard'), plate=el('span','bp-plate');
+      plate.setAttribute('role','img'); plate.setAttribute('aria-label',lvTxt(x.alt)||x.name);
+      var bg=(x.images||[]).filter(lvUrl).map(function(u){ return "url('"+u+"')"; });
+      var t=(x.tint&&x.tint.length===2&&/^#[0-9a-fA-F]{6}$/.test(x.tint[0])&&/^#[0-9a-fA-F]{6}$/.test(x.tint[1]))?x.tint:['#3A5A40','#1E2E22'];
+      bg.push('linear-gradient(160deg,'+t[0]+' 0%,'+t[1]+' 100%)');
+      plate.setAttribute('style','background-image:'+bg.join(', ')+';');
+      plate.appendChild(el('span','bp-plate__n',(i<9?'0':'')+(i+1))); li.appendChild(plate);
+      var b=el('div','bp-acard__b'); b.appendChild(el('h3','',x.name));
+      var fig=el('span','bp-acard__fig'); lvMoney(fig,x.figure,x.money); if(lvTxt(x.label))fig.appendChild(el('small','',x.label)); b.appendChild(fig);
+      if(lvTxt(x.text))b.appendChild(el('p','',x.text));
+      li.appendChild(b); ul.appendChild(li);
+    });
+  }
+  function lvEnterprises(list){
+    var ul=q('.bp-ents'); if(!ul||!list||!list.length)return;
+    var items=list.filter(function(x){ return x&&lvTxt(x.name)&&(lvUrl(x.url)||/^mailto:[^\s'"<>]+$/.test(x.url||'')); }); if(!items.length)return;
+    ul.textContent='';
+    items.forEach(function(x){
+      var li=el('li'); li.appendChild(el('span','bp-ent__s',lvTxt(x.standard))); li.appendChild(el('h3','',x.name));
+      if(lvTxt(x.text))li.appendChild(el('p','',x.text));
+      li.appendChild(lvLink(el('a','',lvTxt(x.source)||'Source'),x.url)); ul.appendChild(li);
+    });
+  }
+  function lvHero(h){
+    if(!h)return;
+    var ld=q('.bp-hero .bp-lead'); if(ld&&lvTxt(h.lead))ld.textContent=h.lead;
+    var ul=q('.bp-hero .bp-stats'); if(!ul||!h.stats||!h.stats.length)return;
+    var items=h.stats.filter(function(x){ return x&&lvTxt(x.value)&&lvTxt(x.label); }); if(!items.length)return;
+    ul.textContent='';
+    items.forEach(function(x){ var li=el('li'); li.appendChild(el('b','',x.value)); li.appendChild(el('span','',x.label)); ul.appendChild(li); });
+  }
+  function sections(d){
+    var c=d.capital, a=d.assets, e=d.enterprises;
+    try{ lvHero(d.hero); }catch(x){}
+    if(c){ lvHead('bp-cap-h',c.heading); try{ lvRecord(c.record); }catch(x){} try{ lvRegister(c.register); }catch(x){} }
+    if(a){ lvHead('bp-assets-h',a.heading); try{ lvAssets(a.items); }catch(x){} }
+    if(e){ lvHead('bp-ent-h',e.heading); try{ lvEnterprises(e.items); }catch(x){} }
+  }
   function apply(d){
-    if(d&&d.nation==='Republic of the Congo'){ try{ renderDispatches(d); }catch(e){} try{ news(d); }catch(e){} }
+    if(d&&d.nation==='Republic of the Congo'){ try{ renderDispatches(d); }catch(e){} try{ sections(d); }catch(e){} try{ news(d); }catch(e){} }
     if(!d||d.nation!=='Republic of the Congo'||!d.guarantees||d.guarantees.length!==7)return;
     var g={}, ok=true;
     d.guarantees.forEach(function(x){ if(!x||ORDER.indexOf(x.name)<0||!num(x.value))ok=false; else g[x.name]=x; });
