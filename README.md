@@ -2,8 +2,9 @@
 
 This repository holds the live data that the Perfect Nations blueprints on perfectnations.org read each time a visitor opens a page.
 
-- `data/barbados.json`: the Barbados blueprint. Kept current every morning by Nia Carrington, Nation Steward of Barbados.
-- `data/state-of-nations.json`: the State of Nations page (the wire of instruments and the dispatches). Kept current at 8 am, 12 noon and 8 pm New York time by the Correspondent, Steward of the Wire.
+- `data/<nation>.json`: each nation blueprint (barbados, kenya, ...). Kept current by its Nation Steward in the Nations Newswire Stewards rotation; Barbados (Nia Carrington) at least once a day.
+- `data/state-of-nations.json`: the State of Nations page (the wire of instruments and the dispatches). Kept current at 8 am and 8 pm New York time by the Correspondent, Steward of the Wire.
+- `archive/`: older Newswire items and dispatches, moved out of the nation files and never deleted (see The archive).
 
 Each page reads its file from
 `https://raw.githubusercontent.com/preetisinha70-PN/perfect-nations/main/data/<nation>.json`
@@ -20,9 +21,9 @@ and, if that fails, from the jsDelivr mirror. If neither can be read, the page s
 | `coverage.price`, `coverage.price_note` | Optional. The price of Perfect [Nation]: Perfect Capita times population, for example "$1.75bn", and one sentence on how it was set (page v11.8 and later) |
 | `guarantees` | The seven basic living standards. The field keeps its name so older pages still read it. Exactly seven, in this order: Food, Water, Shelter, Energy, Education, Health, Livelihoods (the name stays "Livelihoods"; pages show "Livelihood"). `value` is 0 to 100 and fills the wheel; `display`, `note`, `source` and `url` fill the tiles. The lowest value is marked as the standard that sets Coverage. |
 | `dispatches` | The Dispatches under the Letter, newest first, at most three shown. Each has `no`, `date` (YYYY-MM-DD), `label` (for example "2 Nov 2026"), `author` (`preeti`, or `nia` on Barbados and `steward` on every other nation), `title` and `summary`. Either a `url` to a published post, or `body` (a list of paragraphs) and `sources` (a list of `label` and `url`), which the page opens in place. |
-| `newswire` | The Barbados Newswire, newest first, at most eight items. `highlight` is an optional part of the title shown in gold. Every `url` must start with https://. |
+| `newswire` | The Barbados Newswire, newest first. The file keeps the newest eight, which the page shows; older items move to `archive/newswire/barbados.json` and open under All news. `highlight` is an optional part of the title shown in gold. Every `url` must start with https://. |
 
-Every nation file except Barbados also carries `checked`: the date and time (YYYY-MM-DDTHH:MMZ, UTC) the Nation Stewards rotation last checked it. The rotation uses it to choose which nations to check next; it does not show on the page.
+Every nation file, Barbados included since 6 November 2026, carries `checked`: the date and time (YYYY-MM-DDTHH:MMZ, UTC) the rotation last checked it. The rotation uses it to choose which nations to check next; it does not show on the page.
 
 ## Words we use (Steward-General, 1 November 2026)
 
@@ -55,10 +56,19 @@ Rules: every figure must have a primary source; no contractions; plain ASCII whe
 
 Each live blueprint reads its own file: `data/<nation>.json` (barbados, kenya, ...). A Steward edits only the file for its own nation.
 
-- Barbados is kept by its own daily run (Nia Carrington, 7:36 am New York).
-- Every other nation file is kept by the Nation Stewards rotation, which runs three times a day and checks the five nations checked longest ago. A new nation file joins the rotation automatically. The seven standards are checked once a month per nation; the Newswire at every visit.
-- The Correspondent (8 am, 12 noon and 8 pm) also adds every instrument it verifies for a nation to that nation's `newswire`, and sets that file's `updated`. It never edits `barbados.json` (Nia keeps the Barbados Newswire) and changes nothing else in a nation file.
-- Dispatches share one numbered series across every file in `data/` and every open pull request.
+- Every nation file is kept by the Nations Newswire Stewards rotation, which runs three times a day and checks the five nations checked longest ago; Barbados is checked at least once a day, and its register and page changes are proposed by pull request. A new nation file joins the rotation automatically. The seven standards are checked once a month per nation; the Newswire at every visit.
+- No limit on the number of Newswire items or dispatches (Steward-General, 6 November 2026). A Newswire item names an instrument, approval, debt operation or investment, with an issuer and terms, verified on the article page, one item per announcement. A dispatch is written only for a landmark: an instrument approved, priced, signed or closed, or a watched item resolved.
+- The Correspondent (8 am and 8 pm) also adds every instrument it verifies for a nation to that nation's `newswire`, and sets that file's `updated`. It never edits `barbados.json` and changes nothing else in a nation file.
+- Dispatches share one numbered series across every file in `data/` and `archive/` and every open pull request.
+
+## The archive
+
+Nothing published is deleted. When a list grows past what its page shows, the oldest entries move, unchanged, to the top of an archive file (a JSON list, newest first), created when first needed:
+
+- `archive/newswire/<nation>.json`: Newswire items beyond the newest eight. Each blueprint (from 6 November 2026) reads it when its Newswire is full and shows an All news button that opens the full list in place.
+- `archive/dispatches/<nation>.json`: dispatches beyond the newest six. Their numbers still count in the shared series.
+
+Entries keep the fields they had in the nation file. A URL already in a nation file or its archive is never added again.
 
 ## The Capital Wire file (homepage ticker)
 

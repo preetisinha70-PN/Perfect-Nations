@@ -1,4 +1,5 @@
-<!-- PERFECT NATIONS . NATIONAL BLUEPRINT . BURUNDI . v9.3 LIVE DATA . 2026-11-01 . Built on the Barbados v11.7 template . One Elementor Custom HTML widget, Full Width, padding 0, Hide Title -->
+<!-- PERFECT NATIONS . NATIONAL BLUEPRINT . BURUNDI . v9.4 LIVE DATA . 2026-11-06 . Built on the Barbados v11.7 template . One Elementor Custom HTML widget, Full Width, padding 0, Hide Title -->
+<!-- v9.4 (6 November 2026): All news. The Newswire shows its newest eight headlines; older ones are kept in archive/newswire/burundi.json, and when there are any, an All news button opens the full list in place. The show-all buttons now hide when they are meant to. Nothing else changes. -->
 <!-- v9.3 (1 November 2026): brought in from the Drive copy of 1 November 2026 (globe and portrait fix): the globe draws only the nation&#8217;s outline, which removes the flicker; the finished nation portrait (.png, then .jpg); the uploaded asset images. -->
 <!-- v9.2 (1 November 2026): the Health source opens on the nation&rsquo;s own WHO service coverage index chart (Our World in Data, from the WHO Global Health Observatory); the World Bank page no longer shows the figure. The Design Studio line names the people of the nation (a word was missing). -->
 <!-- v9.1 (1 November 2026): the words of 1 November 2026: the seven basic living standards; Perfect Capita is the yearly
@@ -649,6 +650,12 @@ article:has(#pn-bp-burundi) .entry-header,article:has(#pn-bp-burundi) .post-thum
 #pn-bp-burundi .bp-pcx__src a{ color:#7A3420; }
 #pn-bp-burundi .bp-std li.is-gap{ background:transparent; border-style:dashed; border-color:rgba(26,20,12,.35); }
 #pn-bp-burundi .bp-std li.is-gap b{ font-size:1.35rem; line-height:1.1; }
+/* v9.4 (6 November 2026): All news under the Newswire; the show-all buttons hide when asked */
+#pn-bp-burundi .bp-showall[hidden]{ display:none; }
+#pn-bp-burundi #bp-newswire .bp-wire--more{ border-top:0; }
+#pn-bp-burundi #bp-newswire .bp-wire--more[hidden]{ display:none; }
+#pn-bp-burundi #bp-newswire .bp-allnews{ margin-top:14px; }
+#pn-bp-burundi #bp-newswire .bp-allnews[aria-expanded="true"]::after{ content:"\2212"; }
 </style>
 
 <div id="pn-bp-burundi">
@@ -985,6 +992,7 @@ article:has(#pn-bp-burundi) .entry-header,article:has(#pn-bp-burundi) .post-thum
         <li><time datetime="2024-12-19">19 Dec 2024</time><a href="https://projects.worldbank.org/en/projects-operations/project-detail/P180864" target="_blank" rel="noopener noreferrer"><b>World Bank approves <span class="bp-money">USD 70m</span> for hillside climate resilience</b></a><span class="bp-src">World Bank</span></li>
         <li><time datetime="2024-07-22">22 Jul 2024</time><a href="https://projects.worldbank.org/en/projects-operations/project-detail/P180925" target="_blank" rel="noopener noreferrer"><b>World Bank approves <span class="bp-money">USD 200m</span> for human capital</b></a><span class="bp-src">World Bank</span></li>
         </ul>
+        <button type="button" class="bp-showall bp-allnews" hidden>All news</button>
       </div>
         <div class="bp-reg__end"><a class="bp-link" href="https://perfectnations.org/capital-architecture/" target="_blank" rel="noopener noreferrer">Capital Architecture</a></div>
       </div>
@@ -1296,18 +1304,47 @@ article:has(#pn-bp-burundi) .entry-header,article:has(#pn-bp-burundi) .post-thum
     var wire=q('#bp-newswire .bp-wire');
     if(wire&&d.newswire&&d.newswire.length){
       wire.textContent='';
-      d.newswire.slice(0,8).forEach(function(w){
-        if(!w||!w.title||!/^https:\/\//.test(w.url||''))return;
-        var item=el('li'), tm=el('time','',w.label||w.date); tm.setAttribute('datetime',w.date||''); item.appendChild(tm);
-        var a=document.createElement('a'); a.href=w.url; a.target='_blank'; a.rel='noopener noreferrer';
-        var b=el('b'), t=w.title, hl=w.highlight, at=hl?t.indexOf(hl):-1;
-        if(at>=0){ b.appendChild(document.createTextNode(t.slice(0,at))); b.appendChild(el('span','bp-money',hl)); b.appendChild(document.createTextNode(t.slice(at+hl.length))); }
-        else b.textContent=t;
-        a.appendChild(b); item.appendChild(a); item.appendChild(el('span','bp-src',w.source||'')); wire.appendChild(item);
-      });
+      d.newswire.slice(0,8).forEach(function(w){ var li=wireLi(w); if(li)wire.appendChild(li); });
+      if(d.newswire.length>=8)allNews(wire,d.newswire);
     }
     /* the Nation Steward's date */
     var sd=q('.bp-stew__d'); if(sd&&d.updated){ var L=longDate(d.updated); if(L){ sd.setAttribute('datetime',d.updated); sd.textContent='Last updated '+L; } }
+  }
+  function wireLi(w){
+    if(!w||!w.title||!/^https:\/\//.test(w.url||''))return null;
+    var item=el('li'), tm=el('time','',w.label||w.date); tm.setAttribute('datetime',w.date||''); item.appendChild(tm);
+    var a=document.createElement('a'); a.href=w.url; a.target='_blank'; a.rel='noopener noreferrer';
+    var b=el('b'), t=w.title, hl=w.highlight, at=hl?t.indexOf(hl):-1;
+    if(at>=0){ b.appendChild(document.createTextNode(t.slice(0,at))); b.appendChild(el('span','bp-money',hl)); b.appendChild(document.createTextNode(t.slice(at+hl.length))); }
+    else b.textContent=t;
+    a.appendChild(b); item.appendChild(a); item.appendChild(el('span','bp-src',w.source||'')); return item;
+  }
+  function allNews(wire,shown){
+    /* All news (6 November 2026): the Newswire shows its newest eight; older items are kept in
+       archive/newswire/<nation>.json, read only when the Newswire is full, and opened in place. */
+    var btn=q('#bp-newswire .bp-allnews'); if(!btn||!wire.parentNode)return;
+    var seen={}, extra=[], done=false;
+    function add(w){ if(w&&w.title&&/^https:\/\//.test(w.url||'')&&!seen[w.url]){ seen[w.url]=1; extra.push(w); } }
+    shown.slice(0,8).forEach(function(w){ if(w&&w.url)seen[w.url]=1; });
+    shown.slice(8).forEach(add);
+    var AU=URLS.map(function(u){ return u.replace('/data/','/archive/newswire/'); });
+    function show(){
+      if(done)return; done=true;
+      var more=el('ul','bp-wire bp-wire--more'); more.id='bp-wire-more'; more.hidden=true;
+      extra.forEach(function(w){ var li=wireLi(w); if(li)more.appendChild(li); });
+      if(!more.children.length)return;
+      wire.parentNode.insertBefore(more,btn);
+      var label='All news ('+(wire.children.length+more.children.length)+')';
+      btn.textContent=label; btn.setAttribute('aria-controls','bp-wire-more'); btn.setAttribute('aria-expanded','false'); btn.hidden=false;
+      btn.addEventListener('click',function(){ var open=more.hidden; more.hidden=!open; btn.setAttribute('aria-expanded',open?'true':'false'); btn.textContent=open?'Show fewer':label; });
+    }
+    function get(i){
+      if(i>=AU.length){ show(); return; }
+      fetch(AU[i],{cache:'no-store'}).then(function(r){ if(!r.ok)throw 0; return r.json(); })
+        .then(function(list){ if(list&&typeof list.length==='number'){ for(var k=0;k<list.length;k++)add(list[k]); } show(); })
+        .catch(function(){ if(!done)get(i+1); });
+    }
+    get(0);
   }
   function apply(d){
     if(d&&d.nation==='Burundi'){ try{ renderDispatches(d); }catch(e){} try{ news(d); }catch(e){} }
