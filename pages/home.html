@@ -1,5 +1,5 @@
 <!-- ===========================================================================
-PERFECT NATIONS - HOMEPAGE - THE WHOLE PAGE IN ONE FILE - v7.0 - 2026-11-06
+PERFECT NATIONS - HOMEPAGE - THE WHOLE PAGE IN ONE FILE - v7.1 - 2026-11-06
 Paste this file ONCE into ONE Elementor Custom HTML widget on the homepage (page 13465), in a Full
 Width container with padding 0, and delete every other widget on the page. From then on the Perfect
 Nations Live Pages plugin serves pages/home.html from GitHub in place of the paste (root id pn-home,
@@ -1376,9 +1376,14 @@ oc Australia and Oceania.
 </script>
 <!-- ======== part: pages/home-hero.html ======== -->
 <!-- ===========================================================================
-PERFECT NATIONS - HOMEPAGE - SECTION 01 - CIVILIZATION RE-DEFINED - v5.7 - 2026-11-06
+PERFECT NATIONS - HOMEPAGE - SECTION 01 - CIVILIZATION RE-DEFINED - v6.0 THE IGNITION - 2026-11-06
 Served live from GitHub (pages/home-hero.html) by the Perfect Nations Live Pages plugin;
 the root id stays pn-hero, so the widget already on the homepage is the one replaced.
+v6.0: the planet opens the blueprints and lights up. Choosing a published nation opens its blueprint
+  at once in a new tab (it used to open the Nations Menu card, then the page in the same tab). The
+  ignition: when the planet appears, the 44 open blueprints light up one by one with gold ripples
+  while a large gold counter climbs to 44 of 195; afterwards one open nation ripples every few
+  seconds. On phones the counter is a gold pill under the planet.
 v5.7: the objective line names the mission: super intelligence (SI) and innovative financing for
   development, co-designing with every nation seven basic standards of living for all.
 v5.6: the planet's colours carry meaning. The 44 open blueprints are bright gold (#FFD45C) with a
@@ -1575,7 +1580,37 @@ If the address differs, change it in the two places it appears (search for pn-ho
 #pn-hero .pnhg-ctl button:focus-visible{ outline:2px solid var(--gs); outline-offset:2px; }
 #pn-hero .pnhg-ctl button.is-off{ border-color:var(--iv); color:var(--iv); }
 
-/* ---------- name card (used only when the Nations Menu is not on the page) ---------- */
+/* ---------- v6.0: the counter of open blueprints, lit by the ignition ---------- */
+#pn-hero .pnhg-count{
+  position:absolute; z-index:5; left:clamp(18px,4.6vw,76px); bottom:clamp(24px,6vh,70px);
+  display:flex; flex-direction:column; align-items:flex-start; gap:8px;
+  text-align:left; text-decoration:none !important; color:var(--iv);
+}
+#pn-hero .pnhg-count__n{ display:flex; align-items:flex-start; gap:4px; font-family:var(--hd); font-weight:700; line-height:.8; }
+#pn-hero .pnhg-count__n b{
+  display:inline-block; min-width:1.1em; transform-origin:0 100%;
+  font-size:clamp(4.4rem,8.6vw,8.4rem); font-weight:700; letter-spacing:-.035em; font-variant-numeric:tabular-nums;
+  color:#FFD45C; background:linear-gradient(180deg,#FFF6D2 0%,#FFD45C 50%,#D9A92E 100%);
+  -webkit-background-clip:text; background-clip:text;
+  filter:drop-shadow(0 0 16px rgba(255,212,92,.32));
+}
+@supports ((-webkit-background-clip:text) or (background-clip:text)){
+  #pn-hero .pnhg-count__n b{ -webkit-text-fill-color:transparent; }
+}
+#pn-hero .pnhg-count__n small{ margin-top:.45em; font-size:clamp(1rem,1.5vw,1.45rem); font-weight:600; letter-spacing:.02em; color:rgba(244,236,216,.72); }
+#pn-hero .pnhg-count__t{
+  padding-top:9px; border-top:1px solid rgba(227,194,88,.6); white-space:nowrap;
+  font-family:var(--hd); font-size:.72rem; font-weight:700; line-height:1.35; letter-spacing:.2em; text-transform:uppercase; color:var(--iv);
+  transition:color .2s ease;
+}
+#pn-hero .pnhg-count:hover .pnhg-count__t{ color:var(--g); }
+#pn-hero .pnhg-count:focus-visible{ outline:2px solid var(--gs); outline-offset:6px; }
+@media (prefers-reduced-motion:no-preference){
+  #pn-hero .pnhg-count.is-done .pnhg-count__n b{ animation:pnhgGlow 3.4s ease-in-out infinite alternate; }
+}
+@keyframes pnhgGlow{ from{ filter:drop-shadow(0 0 10px rgba(255,212,92,.22)); } to{ filter:drop-shadow(0 0 28px rgba(255,212,92,.62)); } }
+
+/* ---------- name card: shown when a nation is chosen on the planet ---------- */
 #pn-hero .pnhg-plate{
   position:absolute; z-index:7; left:50%; top:50%;
   transform:translate(-50%,-50%) scale(.96);
@@ -1585,7 +1620,7 @@ If the address differs, change it in the two places it appears (search for pn-ho
   box-shadow:0 22px 60px rgba(2,14,22,.55);
   opacity:0; transition:opacity .2s ease, transform .2s ease;
 }
-#pn-hero .pnhg-plate.is-on{ opacity:1; transform:translate(-50%,-50%) scale(1); }
+#pn-hero .pnhg-plate.is-on{ opacity:1; transform:translate(-50%,-50%) scale(1); pointer-events:auto; }
 #pn-hero .pnhg-plate b{
   display:block; font-family:var(--hd); font-weight:600;
   font-size:clamp(1.6rem,3.2vw,2.3rem); line-height:1.02; letter-spacing:-.01em; color:var(--iv);
@@ -1595,8 +1630,9 @@ If the address differs, change it in the two places it appears (search for pn-ho
   font-size:.68rem; letter-spacing:.2em; text-transform:uppercase; color:var(--td);
 }
 #pn-hero .pnhg-plate__go{
-  display:block; margin-top:14px; font-family:var(--hd); font-size:.62rem; font-weight:700;
-  letter-spacing:.2em; text-transform:uppercase; color:var(--g);
+  display:inline-block; margin-top:14px; font-family:var(--hd); font-size:.66rem; font-weight:700;
+  letter-spacing:.2em; text-transform:uppercase; color:var(--g) !important; text-decoration:none !important;
+  border-bottom:1px solid rgba(227,194,88,.55); padding-bottom:3px;
 }
 
 /* ---------- tooltip ---------- */
@@ -1668,6 +1704,14 @@ If the address differs, change it in the two places it appears (search for pn-ho
   #pn-hero .pnhg-ctas{ flex-direction:column; align-items:stretch; gap:10px; max-width:320px; margin-left:auto; margin-right:auto; }
   #pn-hero .pnhg-btn{ padding:12px 22px 10px; justify-content:center; }
   #pn-hero .pnhg-ctl{ display:none; }
+  #pn-hero .pnhg-count{
+    left:50%; bottom:2px; transform:translateX(-50%); flex-direction:row; align-items:center; gap:12px;
+    padding:7px 18px 7px 16px; border-radius:999px; white-space:nowrap;
+    background:rgba(8,42,48,.9); border:1px solid rgba(227,194,88,.55); box-shadow:0 12px 30px rgba(2,14,22,.45);
+  }
+  #pn-hero .pnhg-count__n b{ font-size:2.7rem; }
+  #pn-hero .pnhg-count__n small{ margin-top:.3em; font-size:.9rem; }
+  #pn-hero .pnhg-count__t{ padding:0 0 0 12px; border-top:0; border-left:1px solid rgba(227,194,88,.55); font-size:.62rem; letter-spacing:.15em; }
 }
 @media (prefers-reduced-motion:reduce){
   #pn-hero *{ transition:none !important; animation:none !important; }
@@ -1768,6 +1812,27 @@ If the address differs, change it in the two places it appears (search for pn-ho
 @media (prefers-reduced-motion:reduce){
   #pn-race *{ animation:none !important; }
 }
+/* v6.0: the gold ripples of the ignition */
+#pn-hero .pnhg-rip{ position:relative; width:0; height:0; pointer-events:none; }
+#pn-hero .pnhg-rip i{
+  position:absolute; left:-30px; top:-30px; width:60px; height:60px; border-radius:50%;
+  border:2px solid #FFE9A6; box-shadow:0 0 14px rgba(255,212,92,.75), inset 0 0 10px rgba(255,212,92,.45);
+  opacity:0; animation:pnhgRip 1.4s cubic-bezier(.2,.7,.3,1) forwards;
+}
+#pn-hero .pnhg-rip i + i{ animation-delay:.22s; border-width:1px; }
+#pn-hero .pnhg-rip b{
+  position:absolute; left:-5px; top:-5px; width:10px; height:10px; border-radius:50%;
+  background:#FFF6D2; box-shadow:0 0 12px 4px rgba(255,224,122,.9), 0 0 30px 10px rgba(255,212,92,.45);
+  opacity:0; animation:pnhgSpark 1.2s ease-out forwards;
+}
+#pn-hero .pnhg-rip:not(.is-big) i{ animation-duration:2s; }
+#pn-hero .pnhg-rip:not(.is-big) i + i{ display:none; }
+#pn-hero .pnhg-rip:not(.is-big) b{ width:8px; height:8px; left:-4px; top:-4px; }
+@keyframes pnhgRip{ 0%{ transform:scale(.15); opacity:1; } 100%{ transform:scale(2.4); opacity:0; } }
+@keyframes pnhgSpark{ 0%{ transform:scale(.4); opacity:0; } 18%{ transform:scale(1.4); opacity:1; } 100%{ transform:scale(.6); opacity:0; } }
+@media (max-width:760px){
+  #pn-hero .pnhg-rip i{ left:-22px; top:-22px; width:44px; height:44px; }
+}
 /* v5.4: the pin the Capital Wire sets on the planet */
 #pn-hero .pnhg-pin{ position:relative; width:0; height:0; pointer-events:none; }
 #pn-hero .pnhg-pin i{ position:absolute; left:-32px; top:-32px; width:64px; height:64px; border-radius:50%; border:2px solid #F0D68F; opacity:0; animation:pnhgPin 2.2s ease-out infinite; }
@@ -1800,6 +1865,11 @@ If the address differs, change it in the two places it appears (search for pn-ho
       <button type="button" data-act="reset" aria-label="Reset the globe">&#8962;</button>
       <button type="button" data-act="spin" aria-label="Pause or resume rotation">&#10227;</button>
     </div>
+
+    <a class="pnhg-count" id="pnhgCount" href="https://perfectnations.org/blueprints/">
+      <span class="pnhg-count__n"><b data-n>44</b><small>/195</small></span>
+      <span class="pnhg-count__t">nations with an<br>open blueprint</span>
+    </a>
 
     <div class="pnhg-plate" id="pnhgPlate" aria-live="polite"></div>
 
@@ -2075,7 +2145,6 @@ window.PNHG_CFG={"base":"https://perfectnations.org/blueprints/","paths":{"cote-
   var MARK = { live:{ color:'#FFE07A', alt:0.018, rad:0.44 }, soon:{ color:'#D2B266', alt:0.013, rad:0.34 } };
   var MIN_ALT = 0.55, MAX_ALT = 4.2, STEP = 1.22;
   var ATMO = 0.2, ATMO_COLOR = '#F4D06A';
-  var HOLD_MS = 1600;
   var MIN_ISLAND = 0.5, DOT_BELOW = 0.25;
   var TAN25 = Math.tan(25 * Math.PI / 180);
   var R = 100;
@@ -2094,11 +2163,14 @@ window.PNHG_CFG={"base":"https://perfectnations.org/blueprints/","paths":{"cote-
     return Math.max(MIN_ALT, Math.min(MAX_ALT, alt));
   }
 
+  /* v6.0: a published nation opens its blueprint at once, in a new tab, inside the visitor's own
+     click or tap (a delayed open is blocked by phones). If a browser still blocks it, the name card
+     keeps a gold link to tap. */
   function openBlueprint(href){
     var win = null;
     try { win = window.open(href, '_blank'); } catch (e) {}
-    if (win) { try { win.opener = null; } catch (e) {} return; }
-    window.location.href = href;
+    if (win) { try { win.opener = null; } catch (e) {} return true; }
+    return false;
   }
 
   function start(){
@@ -2168,24 +2240,30 @@ window.PNHG_CFG={"base":"https://perfectnations.org/blueprints/","paths":{"cote-
                      href: CFG.base + (CFG.paths[slug] || slug) + '/' });
     }
 
-    var waitTimer = null;
+    var plateT = null;
+    function showPlate(nrec, href, label, hold){
+      if (!plate) { return; }
+      plate.innerHTML = '<b>' + nrec[0] + '</b><i>' + (REGION[nrec[4]] || '') + '</i>' +
+                        '<a class="pnhg-plate__go" href="' + href + '" target="_blank" rel="noopener">' + label + '</a>';
+      plate.classList.add('is-on');
+      if (plateT) { window.clearTimeout(plateT); }
+      plateT = window.setTimeout(function(){ plate.classList.remove('is-on'); }, hold ? 7000 : 2600);
+    }
     function enter(d){
-      if (!d || !d.slug || waitTimer) { return; }
-      if (window.pnNationViewer && typeof window.pnNationViewer.open === 'function'){
-        window.pnNationViewer.open(d.slug); return;
-      }
+      if (!d || !d.slug) { return; }
       var nrec = NAT[d.slug];
       if (!nrec) { return; }
-      var href = nrec[1] === 'live' ? d.href : 'https://perfectnations.org/contact/?nation=' + encodeURIComponent(d.slug);
-      if (!plate || reduce){ openBlueprint(href); return; }
-      plate.innerHTML = '<b>' + nrec[0] + '</b><i>' + (REGION[nrec[4]] || '') + '</i>' +
-                        '<span class="pnhg-plate__go">' + (nrec[1] === 'live' ? 'Opening the blueprint' : 'Blueprint in preparation') + '</span>';
-      plate.classList.add('is-on');
-      waitTimer = window.setTimeout(function(){
-        waitTimer = null;
-        plate.classList.remove('is-on');
-        openBlueprint(href);
-      }, HOLD_MS);
+      if (nrec[1] !== 'live'){
+        /* a blueprint in preparation: the Nations Menu card says so, or the name card does */
+        if (window.pnNationViewer && typeof window.pnNationViewer.open === 'function'){
+          window.pnNationViewer.open(d.slug); return;
+        }
+        showPlate(nrec, 'https://perfectnations.org/contact/?nation=' + encodeURIComponent(d.slug), 'Blueprint in preparation', false);
+        return;
+      }
+      var href = CFG.base + (CFG.paths[d.slug] || d.slug) + '/';
+      var opened = openBlueprint(href);
+      showPlate(nrec, href, opened ? 'Opened in a new tab' : 'Open the blueprint', !opened);
     }
 
     function phong(g){
@@ -2197,6 +2275,7 @@ window.PNHG_CFG={"base":"https://perfectnations.org/blueprints/","paths":{"cote-
     var box = sizeStage();
     var home = { lat: 6, lng: 24, altitude: fitAltitude(box) };
     var hovered = null;
+    var flash = {};
 
     var globe = Globe({ animateIn: false })(stage)
       .width(box.w).height(box.h)
@@ -2207,8 +2286,8 @@ window.PNHG_CFG={"base":"https://perfectnations.org/blueprints/","paths":{"cote-
       .polygonsData(lands)
       .polygonGeoJsonGeometry('geometry')
       .polygonCapCurvatureResolution(10)
-      .polygonAltitude(function(d){ return (d === hovered ? ALT_HOV : (ALT[d.state] || ALT.none)) + d.up; })
-      .polygonCapMaterial(function(d){ return d === hovered ? MAT.hov : (MAT[d.state] || MAT.none); })
+      .polygonAltitude(function(d){ return (d === hovered || flash[d.slug] ? ALT_HOV : (ALT[d.state] || ALT.none)) + d.up; })
+      .polygonCapMaterial(function(d){ return (d === hovered || flash[d.slug]) ? MAT.hov : (MAT[d.state] || MAT.none); })
       .polygonSideColor(function(){ return SIDE; })
       .polygonStrokeColor(function(){ return false; })
       .polygonsTransitionDuration(260)
@@ -2236,6 +2315,7 @@ window.PNHG_CFG={"base":"https://perfectnations.org/blueprints/","paths":{"cote-
     try {
       globe.onGlobeReady(function(){
         window.requestAnimationFrame(function(){ window.requestAnimationFrame(clearPlaceholder); });
+        window.setTimeout(function(){ if (window.pnhgIgnite) { window.pnhgIgnite(); } }, 900);
       });
     } catch (e) {}
     window.setTimeout(clearPlaceholder, 4000);
@@ -2499,41 +2579,144 @@ window.PNHG_CFG={"base":"https://perfectnations.org/blueprints/","paths":{"cote-
     /* v5.4: the Capital Wire (Section 01b) asks the planet to find a nation: it turns to it,
        raises it in bright gold and pins it with two gold rings and its deal figure, then
        turns on again after nine seconds */
-    var focusT = null, pinSet = false;
+    var focusT = null;
     function relight(){ globe.polygonAltitude(globe.polygonAltitude()).polygonCapMaterial(globe.polygonCapMaterial()); }
+    /* one layer of marks on the planet: the Capital Wire pin and the gold ripples of the ignition
+       (marks on the far side of the planet are hidden by the library) */
+    var pins = [], ripples = [];
+    function syncMarks(){ globe.htmlElementsData(pins.concat(ripples)); }
+    function makePin(d){
+      var pin = document.createElement('div'), tag = document.createElement('b'), nm = document.createElement('em');
+      pin.className = 'pnhg-pin';
+      pin.appendChild(document.createElement('i'));
+      pin.appendChild(document.createElement('i'));
+      nm.innerHTML = d.name;
+      tag.appendChild(nm);
+      if (d.figure) { var f = document.createElement('span'); f.textContent = d.figure; tag.appendChild(f); }
+      pin.appendChild(tag);
+      return pin;
+    }
+    function makeRipple(d){
+      var el = document.createElement('div');
+      el.className = 'pnhg-rip' + (d.big ? ' is-big' : '');
+      el.appendChild(document.createElement('i'));
+      el.appendChild(document.createElement('i'));
+      el.appendChild(document.createElement('b'));
+      return el;
+    }
+    globe.htmlTransitionDuration(0).htmlLat('lat').htmlLng('lng')
+      .htmlAltitude(function(d){ return d.kind === 'pin' ? 0.02 : 0.03; })
+      .htmlElement(function(d){ return d.kind === 'pin' ? makePin(d) : makeRipple(d); });
+
     window.pnhgFocus = function(s, figure){
       var r = NAT[s];
       if (!r) { return false; }
       var hit = null;
       lands.forEach(function(Ld){ if (Ld.slug === s) { hit = Ld; } });
-      if (!pinSet) {
-        pinSet = true;
-        globe.htmlLat('lat').htmlLng('lng').htmlAltitude(0.02).htmlElement(function(d){
-          var pin = document.createElement('div'), tag = document.createElement('b'), nm = document.createElement('em');
-          pin.className = 'pnhg-pin';
-          pin.appendChild(document.createElement('i'));
-          pin.appendChild(document.createElement('i'));
-          nm.innerHTML = d.name;
-          tag.appendChild(nm);
-          if (d.figure) { var f = document.createElement('span'); f.textContent = d.figure; tag.appendChild(f); }
-          pin.appendChild(tag);
-          return pin;
-        });
-      }
       controls.autoRotate = false;
       if (spinBtn) { spinBtn.classList.add('is-off'); }
       hovered = hit;
       relight();
-      globe.htmlElementsData([{ lat: r[2], lng: r[3], name: r[0], figure: figure ? String(figure).slice(0, 24) : '' }]);
+      pins = [{ kind: 'pin', lat: r[2], lng: r[3], name: r[0], figure: figure ? String(figure).slice(0, 24) : '' }];
+      syncMarks();
       globe.pointOfView({ lat: r[2], lng: r[3], altitude: home.altitude }, reduce ? 0 : 1600);
       if (focusT) { clearTimeout(focusT); }
       focusT = setTimeout(function(){
-        globe.htmlElementsData([]);
+        pins = []; syncMarks();
         if (hovered === hit) { hovered = null; relight(); }
         controls.autoRotate = !reduce;
         if (spinBtn) { spinBtn.classList.toggle('is-off', reduce); }
       }, 9000);
       return true;
+    };
+
+    /* v6.0: the ignition. When the planet first appears, every open blueprint lights up in turn,
+       nearest first, each with a gold ripple, while the counter climbs to the number of open
+       blueprints. Afterwards an open nation ripples every few seconds, so the planet stays alive. */
+    var count = document.getElementById('pnhgCount');
+    var countN = count ? count.querySelector('[data-n]') : null;
+    var ignited = false, beat = null, relightT = null;
+    function liveList(){
+      var out = [], s;
+      for (s in NAT){ if (Object.prototype.hasOwnProperty.call(NAT, s) && NAT[s][1] === 'live') { out.push(s); } }
+      return out;
+    }
+    function setCount(n, bump){
+      if (!countN) { return; }
+      countN.textContent = String(n);
+      if (bump && countN.animate) {
+        try { countN.animate([{ transform:'scale(1.14)' }, { transform:'scale(1)' }], { duration:240, easing:'ease-out' }); } catch (e) {}
+      }
+    }
+    function queueRelight(){
+      if (relightT) { return; }
+      relightT = window.setTimeout(function(){ relightT = null; relight(); }, 90);
+    }
+    function ripple(lat, lng, big){
+      var r = { kind: 'rip', lat: lat, lng: lng, big: !!big };
+      ripples.push(r);
+      syncMarks();
+      window.setTimeout(function(){
+        var i = ripples.indexOf(r);
+        if (i > -1) { ripples.splice(i, 1); syncMarks(); }
+      }, big ? 1500 : 2100);
+    }
+    function nearFirst(list){
+      var pov = globe.pointOfView(), la = pov.lat * Math.PI / 180, lo = pov.lng * Math.PI / 180;
+      return list.map(function(s){
+        var a = NAT[s][2] * Math.PI / 180, b = NAT[s][3] * Math.PI / 180;
+        var c = Math.sin(la) * Math.sin(a) + Math.cos(la) * Math.cos(a) * Math.cos(b - lo);
+        return { s: s, d: Math.acos(Math.max(-1, Math.min(1, c))) };
+      }).sort(function(x, y){ return x.d - y.d; });
+    }
+    function heartbeat(){
+      if (beat || reduce) { return; }
+      beat = window.setInterval(function(){
+        if (!running || hovered) { return; }
+        var near = nearFirst(liveList()).filter(function(x){ return x.d < 1.25; });
+        if (!near.length) { return; }
+        var n = near[Math.floor(Math.random() * near.length)];
+        ripple(NAT[n.s][2], NAT[n.s][3], false);
+      }, 2600);
+    }
+    function ignite(){
+      if (ignited) { return; }
+      ignited = true;
+      var list = nearFirst(liveList());
+      if (reduce || !list.length) { setCount(list.length, false); if (count) { count.classList.add('is-done'); } return; }
+      setCount(0, false);
+      if (count) { count.classList.add('is-lit'); }
+      /* paced by the clock, not by frames: about four seconds on any device, slow at first,
+         then a flood of gold */
+      var N = list.length, done = 0, t0 = Date.now(), D = Math.min(4400, 1200 + N * 70);
+      function light(n){
+        ripple(NAT[n.s][2], NAT[n.s][3], true);
+        flash[n.s] = 1; queueRelight();
+        window.setTimeout(function(){ delete flash[n.s]; queueRelight(); }, 700);
+      }
+      (function tick(){
+        var k = Math.min(1, (Date.now() - t0) / D);
+        var e = k < 0.5 ? 2 * k * k : 1 - Math.pow(-2 * k + 2, 2) / 2;
+        var target = k < 1 ? Math.min(N, Math.max(1, Math.round(e * N))) : N;
+        var burst = 0;
+        while (done < target) { if (burst < 4) { light(list[done]); burst++; } done++; }
+        setCount(done, burst > 0);
+        if (done >= N) {
+          if (count) { count.classList.add('is-done'); }
+          window.setTimeout(heartbeat, 1800);
+          return;
+        }
+        window.setTimeout(tick, 70);
+      })();
+    }
+    window.pnhgIgnite = ignite;
+    window.setTimeout(ignite, 5200);
+
+    /* a blueprint published after the ignition raises the counter too */
+    var promote = window.pnhgPromote;
+    window.pnhgPromote = function(slugs){
+      promote(slugs);
+      if (ignited && count && count.classList.contains('is-done')) { setCount(liveList().length, true); }
     };
   }
 
@@ -2974,10 +3157,12 @@ earlier Section 01 the button still scrolls up to the planet.
 </script>
 <!-- ======== part: pages/home-studio.html ======== -->
 <!-- ===========================================================================
-PERFECT NATIONS - HOMEPAGE - SECTION 06 - THE REDESIGN STUDIO - v7.0 THE FIVE MOVES - 2026-11-06
+PERFECT NATIONS - HOMEPAGE - SECTION 06 - THE REDESIGN STUDIO - v7.1 THE FIVE MOVES - 2026-11-06
 One Elementor Custom HTML widget, Full Width, padding 0. Served live from GitHub
 (pages/home-studio.html) by the Perfect Nations Live Pages plugin, in place of the pasted
 section 06 v5 (root id pn-studio).
+v7.1: fewer words. The lead is removed (the hero already states the mission), and two moves have
+shorter lines.
 v7.0: the lead names the mission (super intelligence and innovative financing for development,
 co-designing with each nation); the five tiles share one Earthrise ground with gold drawings, as the
 whole page now keeps one palette, and the painted seams carry the colour.
@@ -3197,7 +3382,6 @@ moves National Blueprints in the browser if it ever arrives above Sovereign Asse
         <p class="pnst-eb">The ReDesign Studio</p>
         <h2 class="pnst-h2" id="pnst-h">Where a nation is <em>re&#8209;designed</em></h2>
       </div>
-      <p class="pnst-lead"><b>Super intelligence (SI)</b> and <b>innovative financing for development</b> co-design with each nation in five moves, from what it owns to a basic standard of living for every citizen.</p>
     </div>
 
     <ol class="pnst-moves" aria-label="The five moves">
@@ -3224,7 +3408,7 @@ moves National Blueprints in the browser if it ever arrives above Sovereign Asse
         <a class="pnst-t" href="#pn-featured" data-to="pn-featured" data-page="https://perfectnations.org/blueprints/">
           <svg class="pnst-ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 20.2V4.6l15.6 15.6z"/><path d="M7.6 16.6v-4.4l4.4 4.4z"/><path d="M4 8.4h2.2M4 12.2h2.2"/><path d="M14.6 3.6l5.8 5.8-2 2-5.8-5.8z"/></svg>
           <b>Co-Design</b>
-          <i>The blueprint, drawn with the nation and SI</i>
+          <i>Drawn with the nation and SI</i>
           <span class="pnst-go" aria-hidden="true">&darr;</span>
         </a>
       </li>
@@ -3233,7 +3417,7 @@ moves National Blueprints in the browser if it ever arrives above Sovereign Asse
         <a class="pnst-t" href="#pn-capital" data-to="pn-capital" data-page="https://perfectnations.org/capital-architecture/">
           <svg class="pnst-ic" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 9.4L12 4l9 5.4"/><path d="M4.2 9.4h15.6"/><path d="M6.4 12v5.6M10 12v5.6M14 12v5.6M17.6 12v5.6"/><path d="M3.4 20.4h17.2"/></svg>
           <b>Capital</b>
-          <i>Innovative finance that carries it</i>
+          <i>Innovative finance</i>
           <span class="pnst-go" aria-hidden="true">&darr;</span>
         </a>
       </li>
@@ -3328,7 +3512,8 @@ moves National Blueprints in the browser if it ever arrives above Sovereign Asse
 </script>
 <!-- ======== part: pages/home-assets.html ======== -->
 <!-- ===========================================================================
-PERFECT NATIONS - HOMEPAGE - SECTION 03 - SOVEREIGN ASSETS - v5.1 MOVE 01 - 2026-11-06
+PERFECT NATIONS - HOMEPAGE - SECTION 03 - SOVEREIGN ASSETS - v5.2 MOVE 01 - 2026-11-06
+v5.2: fewer words: each asset has one short line instead of two sentences.
 v5.1: Earthrise ground (was malachite), as the whole homepage keeps one palette.
 One Elementor Custom HTML widget, Full Width, padding 0. Served live from GitHub
 (pages/home-assets.html) by the Perfect Nations Live Pages plugin, in place of the pasted v4
@@ -3575,7 +3760,7 @@ Ground: malachite. Photographs at full colour, no veil; text sits on solid plate
             <p class="pna-k">Second-largest rainforest on Earth</p>
             <h3 class="pna-h">The Congo Basin</h3>
             <span class="pna-s">Forest &amp; Wild</span>
-            <p class="pna-p">The largest tropical carbon sink still absorbing more than it emits. Almost none of its value is recorded on a national account.</p>
+            <p class="pna-p">Still absorbing more carbon than it emits, yet almost absent from national accounts.</p>
             <p class="pna-who"><span class="pna-flags"><img class="pna-flag" src="https://flagcdn.com/w80/cg.png" alt="" width="80" height="60" loading="lazy" decoding="async"></span><span>Republic of the Congo &middot; and five neighbours</span></p>
           </div>
         </article>
@@ -3585,7 +3770,7 @@ Ground: malachite. Photographs at full colour, no veil; text sits on solid plate
             <p class="pna-k">One waterfall, two economies</p>
             <h3 class="pna-h">Mosi-oa-Tunya</h3>
             <span class="pna-s">Water &amp; Rivers</span>
-            <p class="pna-p">The largest sheet of falling water in the world, held jointly by two nations. The same river carries Kariba, which lights both grids.</p>
+            <p class="pna-p">The largest sheet of falling water on Earth, shared by two nations.</p>
             <p class="pna-who"><span class="pna-flags"><img class="pna-flag" src="https://flagcdn.com/w80/zm.png" alt="" width="80" height="60" loading="lazy" decoding="async"><img class="pna-flag" src="https://flagcdn.com/w80/zw.png" alt="" width="80" height="60" loading="lazy" decoding="async"></span><span>Zambia and Zimbabwe</span></p>
           </div>
         </article>
@@ -3595,7 +3780,7 @@ Ground: malachite. Photographs at full colour, no veil; text sits on solid plate
             <p class="pna-k">A river that ends in the desert</p>
             <h3 class="pna-h">The Okavango Delta</h3>
             <span class="pna-s">Water &amp; Rivers</span>
-            <p class="pna-p">A river that never reaches the sea, run on high-value, low-volume terms. Botswana chose to earn more from fewer visitors.</p>
+            <p class="pna-p">A river that never reaches the sea, earning more from fewer visitors.</p>
             <p class="pna-who"><span class="pna-flags"><img class="pna-flag" src="https://flagcdn.com/w80/bw.png" alt="" width="80" height="60" loading="lazy" decoding="async"></span><span>Botswana</span></p>
           </div>
         </article>
@@ -3605,7 +3790,7 @@ Ground: malachite. Photographs at full colour, no veil; text sits on solid plate
             <p class="pna-k">Light never invoiced</p>
             <h3 class="pna-h">The Namib and the Sperrgebiet</h3>
             <span class="pna-s">Sun, Wind &amp; Power</span>
-            <p class="pna-p">Among the best combined sun and wind resources anywhere. Green ammonia at Tsau Khaeb would turn that light into an export.</p>
+            <p class="pna-p">Among the best sun and wind on Earth, ready to become green ammonia exports.</p>
             <p class="pna-who"><span class="pna-flags"><img class="pna-flag" src="https://flagcdn.com/w80/na.png" alt="" width="80" height="60" loading="lazy" decoding="async"></span><span>Namibia</span></p>
           </div>
         </article>
@@ -3615,7 +3800,7 @@ Ground: malachite. Photographs at full colour, no veil; text sits on solid plate
             <p class="pna-k">The largest overland migration</p>
             <h3 class="pna-h">The Great Migration</h3>
             <span class="pna-s">Forest &amp; Wild</span>
-            <p class="pna-p">Close to two million animals crossing the Serengeti and the Mara every year, anchoring two premium tourism economies.</p>
+            <p class="pna-p">Close to two million animals a year, anchoring two tourism economies.</p>
             <p class="pna-who"><span class="pna-flags"><img class="pna-flag" src="https://flagcdn.com/w80/tz.png" alt="" width="80" height="60" loading="lazy" decoding="async"><img class="pna-flag" src="https://flagcdn.com/w80/ke.png" alt="" width="80" height="60" loading="lazy" decoding="async"></span><span>Tanzania and Kenya</span></p>
           </div>
         </article>
@@ -3688,7 +3873,9 @@ Ground: malachite. Photographs at full colour, no veil; text sits on solid plate
 <div class="pn-seam pn-seam--a" aria-hidden="true"><svg viewBox="0 0 1600 60" preserveAspectRatio="xMidYMid slice" focusable="false"><g transform="translate(40.0 6.1)"><use href="#pns-fern" width="156.3" height="46.9"/></g><g transform="translate(224.1 23.0)"><use href="#pns-flower" width="19.5" height="19.5"/></g><g transform="translate(241.7 11.0)"><use href="#pns-flower" width="13.7" height="13.7"/></g><g transform="translate(269.1 19.3)"><use href="#pns-dots" width="26.2" height="26.2"/></g><g transform="translate(330.1 8.8)"><use href="#pns-leaf" width="50.5" height="40.4"/></g><g transform="translate(402.6 20.8)"><use href="#pns-loops" width="61.0" height="21.2"/></g><g transform="translate(484.3 4.4)"><use href="#pns-pods" width="47.6" height="47.6"/></g><g transform="translate(555.4 18.3)"><use href="#pns-flower" width="21.2" height="21.2"/></g><g transform="translate(609.3 13.6)"><use href="#pns-feather" width="111.0" height="34.9"/></g><g transform="translate(748.3 19.0)"><use href="#pns-squares" width="26.5" height="26.5"/></g><g transform="translate(811.1 12.0)"><use href="#pns-bowl" width="39.1" height="39.1"/></g><g transform="translate(879.9 6.4)"><use href="#pns-rosette" width="42.2" height="42.2"/></g><g transform="translate(952.2 19.5)"><use href="#pns-dashes" width="28.6" height="22.9"/></g><g transform="translate(1018.3 14.8)"><use href="#pns-sun" width="36.2" height="36.2"/></g><g transform="translate(1089.3 22.9)"><use href="#pns-flower" width="18.2" height="18.2"/></g><g transform="translate(1105.7 10.9)"><use href="#pns-flower" width="12.7" height="12.7"/></g><g transform="translate(1296.5 4.4) scale(-1 1)"><use href="#pns-fern" x="0.0" y="0" width="162.0" height="48.6"/></g><g transform="translate(1334.4 10.7)"><use href="#pns-leaf" width="51.0" height="40.8"/></g><g transform="translate(1426.0 16.3)"><use href="#pns-dots" width="22.0" height="22.0"/></g><g transform="translate(1471.0 4.3)"><use href="#pns-fern" width="160.6" height="48.2"/></g></svg></div>
 <!-- ======== part: pages/home-perfect-capita.html ======== -->
 <!-- ===========================================================================
-PERFECT NATIONS - HOMEPAGE - SECTION 04 - PERFECT CAPITA - v4.3 EARTHRISE - 2026-11-06
+PERFECT NATIONS - HOMEPAGE - SECTION 04 - PERFECT CAPITA - v4.4 EARTHRISE - 2026-11-06
+v4.4: fewer words. The caption under the wheel is one short line, and the coverage bar (a composite
+score, which the Standard holds back until the method is revised) is removed.
 v4.3: Earthrise ground (was amethyst), as the whole homepage keeps one palette; the painted seams
 above and below separate it from its neighbours. "Perfect Capita" in the title is pale gold.
 v4.2: a ground of its own, deep amethyst, so Perfect Capita no longer reads as part of Sovereign
@@ -3886,7 +4073,7 @@ SOFI page once its address is confirmed.
         <b id="pc4-f">2.1bn</b>
         <div class="pc4-call__t" id="pc4-body"><small id="pc4-n">Food</small><span id="pc4-l">people are moderately or severely food insecure</span><br><a id="pc4-s" href="https://www.unicef.ca/en/press-release/un-report-global-hunger-levels-ease-third-consecutive-year-regional-disparities" target="_blank" rel="noopener noreferrer">UN hunger report (SOFI), 2025 data</a></div>
       </div>
-      <p class="pc4-cap">People below the line on each standard today. The groups overlap, so they are never added.</p>
+      <p class="pc4-cap">People below each standard today. The groups overlap.</p>
     </div>
     <div class="pc4-rest">
       <div class="pc4-sum">
@@ -3898,7 +4085,6 @@ SOFI page once its address is confirmed.
           <i aria-hidden="true">=</i>
           <div class="pc4-t pc4-t--total"><b class="pc4-money">$1.75bn</b><span>The price of Perfect Barbados, a year</span></div>
         </div>
-        <div class="pc4-cov"><span>Coverage</span><span class="pc4-bar" aria-hidden="true"><i></i></span><span><b>69</b> of 100, held by food</span></div>
       </div>
       <div class="pc4-btns">
         <a class="pc4-btn pc4-btn--gold" href="https://perfectnations.org/perfect-capita/">How Perfect Capita works</a>
@@ -3962,7 +4148,8 @@ SOFI page once its address is confirmed.
 <div class="pn-seam pn-seam--b" aria-hidden="true"><svg viewBox="0 0 1600 60" preserveAspectRatio="xMidYMid slice" focusable="false"><g transform="translate(40.0 15.5)"><use href="#pns-feather" width="107.9" height="33.9"/></g><g transform="translate(177.2 21.9)"><use href="#pns-flower" width="20.4" height="20.4"/></g><g transform="translate(195.6 35.9)"><use href="#pns-flower" width="14.3" height="14.3"/></g><g transform="translate(238.1 11.3)"><use href="#pns-rosette" width="40.4" height="40.4"/></g><g transform="translate(318.2 16.3)"><use href="#pns-loops" width="63.7" height="22.2"/></g><g transform="translate(403.5 12.7)"><use href="#pns-squares" width="29.3" height="29.3"/></g><g transform="translate(471.5 5.1)"><use href="#pns-fern" width="168.1" height="50.4"/></g><g transform="translate(679.2 20.4)"><use href="#pns-flower" width="20.8" height="20.8"/></g><g transform="translate(698.0 34.4)"><use href="#pns-flower" width="14.6" height="14.6"/></g><g transform="translate(742.0 9.5)"><use href="#pns-bowl" width="40.1" height="40.1"/></g><g transform="translate(818.5 20.2)"><use href="#pns-dots" width="22.9" height="22.9"/></g><g transform="translate(875.9 9.2)"><use href="#pns-leaf" width="49.1" height="39.3"/></g><g transform="translate(956.9 12.3)"><use href="#pns-sun" width="41.3" height="41.3"/></g><g transform="translate(1030.3 7.6)"><use href="#pns-pods" width="44.5" height="44.5"/></g><g transform="translate(1113.7 17.8)"><use href="#pns-dashes" width="29.4" height="23.6"/></g><g transform="translate(1169.3 19.2)"><use href="#pns-flower" width="20.8" height="20.8"/></g><g transform="translate(1188.0 33.2)"><use href="#pns-flower" width="14.6" height="14.6"/></g><g transform="translate(1321.9 16.2) scale(-1 1)"><use href="#pns-feather" x="0.0" y="0" width="102.9" height="32.3"/></g><g transform="translate(1345.2 11.4)"><use href="#pns-rosette" width="38.8" height="38.8"/></g><g transform="translate(1413.2 16.6)"><use href="#pns-feather" width="98.4" height="30.9"/></g><g transform="translate(1533.7 19.9)"><use href="#pns-flower" width="20.4" height="20.4"/></g><g transform="translate(1552.1 33.9)"><use href="#pns-flower" width="14.3" height="14.3"/></g></svg></div>
 <!-- ======== part: pages/home-blueprints.html ======== -->
 <!-- ===========================================================================
-PERFECT NATIONS - HOMEPAGE - SECTION 02 - NATIONAL BLUEPRINTS - v5.1 MOVE 03 - 2026-11-06
+PERFECT NATIONS - HOMEPAGE - SECTION 02 - NATIONAL BLUEPRINTS - v5.2 MOVE 03 - 2026-11-06
+v5.2: fewer words: the lead line is removed; the title and the live count say it.
 v5.1: Earthrise ground (was laterite), as the whole homepage keeps one palette.
 One Elementor Custom HTML widget, Full Width, padding 0. Served live from GitHub
 (pages/home-blueprints.html) by the Perfect Nations Live Pages plugin, in place of the pasted v4
@@ -4219,7 +4406,6 @@ Ground: laterite (red earth). Photographs at full colour, no veil; text sits on 
       <div>
         <p class="pnfb-eb"><a class="pn-ch" href="#pn-studio" aria-label="Move 03 of 05, Co-Design. Back to the five moves">03</a><span>Co-Design &middot; National Blueprints</span></p>
         <h2 class="pnfb-h2" id="pnfb-h">Blueprints of Nations</h2>
-        <p class="pnfb-lead">Capital architecture built on the sovereign assets each nation already holds.</p>
         <p class="pnfb-count"><b id="pnfbCount">44</b> of 195 nations now have an open blueprint</p>
       </div>
       <a class="pnfb-btn" href="https://perfectnations.org/blueprints/">View all blueprints</a>
@@ -4403,7 +4589,9 @@ Ground: laterite (red earth). Photographs at full colour, no veil; text sits on 
 <div class="pn-seam pn-seam--c" aria-hidden="true"><svg viewBox="0 0 1600 60" preserveAspectRatio="xMidYMid slice" focusable="false"><g transform="translate(40.0 4.3)"><use href="#pns-pods" width="50.5" height="50.5"/></g><g transform="translate(113.9 19.4)"><use href="#pns-dashes" width="24.8" height="19.8"/></g><g transform="translate(159.6 9.9)"><use href="#pns-leaf" width="53.8" height="43.1"/></g><g transform="translate(252.0 21.2)"><use href="#pns-flower" width="21.2" height="21.2"/></g><g transform="translate(271.1 35.2)"><use href="#pns-flower" width="14.8" height="14.8"/></g><g transform="translate(408.3 13.9) scale(-1 1)"><use href="#pns-feather" x="0.0" y="0" width="106.8" height="33.6"/></g><g transform="translate(429.9 12.2)"><use href="#pns-sun" width="36.8" height="36.8"/></g><g transform="translate(504.8 17.1)"><use href="#pns-loops" width="65.7" height="22.8"/></g><g transform="translate(595.5 0.9)"><use href="#pns-fern" width="183.3" height="55.0"/></g><g transform="translate(811.7 19.2)"><use href="#pns-flower" width="18.5" height="18.5"/></g><g transform="translate(828.3 33.2)"><use href="#pns-flower" width="13.0" height="13.0"/></g><g transform="translate(851.4 16.3)"><use href="#pns-squares" width="28.1" height="28.1"/></g><g transform="translate(907.4 12.2)"><use href="#pns-rosette" width="37.2" height="37.2"/></g><g transform="translate(978.6 10.9)"><use href="#pns-bowl" width="43.4" height="43.4"/></g><g transform="translate(1053.7 19.3)"><use href="#pns-flower" width="19.8" height="19.8"/></g><g transform="translate(1071.5 33.3)"><use href="#pns-flower" width="13.9" height="13.9"/></g><g transform="translate(1113.0 19.5)"><use href="#pns-dots" width="24.8" height="24.8"/></g><g transform="translate(1164.7 11.5)"><use href="#pns-leaf" width="53.0" height="42.4"/></g><g transform="translate(1402.7 8.3) scale(-1 1)"><use href="#pns-fern" x="0.0" y="0" width="160.5" height="48.1"/></g><g transform="translate(1431.7 3.5)"><use href="#pns-pods" width="48.2" height="48.2"/></g><g transform="translate(1517.4 19.0)"><use href="#pns-dashes" width="26.3" height="21.0"/></g><g transform="translate(1567.4 7.4)"><use href="#pns-leaf" width="54.2" height="43.4"/></g></svg></div>
 <!-- ======== part: pages/home-capital.html ======== -->
 <!-- ===========================================================================
-PERFECT NATIONS - HOMEPAGE - SECTION 05 - CAPITAL ARCHITECTURE - v6.2 MOVE 04 - 2026-11-06
+PERFECT NATIONS - HOMEPAGE - SECTION 05 - CAPITAL ARCHITECTURE - v6.3 MOVE 04 - 2026-11-06
+v6.3: fewer words. Each pioneering deal keeps its figure in one short line; the instruments lose
+their lead sentence.
 v6.2: Earthrise ground (was lapis), as the whole homepage keeps one palette; the ivory panel and
 the Standard Tokens card are set in Earthrise ink.
 One Elementor Custom HTML widget, Full Width, padding 0. Served live from GitHub
@@ -4708,7 +4896,7 @@ Ground: lapis. Photographs at full colour, no veil; text sits on solid plates.
     </div>
     <div class="pnca-pion">
       <h4>Already pioneered by nations around the world</h4>
-      <ul class="pnca-pions" id="pncaPions"><li><small>Barbados &#183; 2024</small><b>Debt-for-climate-resilience conversion</b><span>The world&#8217;s first, guaranteed by the IDB and EIB, with the savings directed to water.</span></li><li><small>Ecuador &#183; 2023</small><b>Debt-for-nature swap</b><span>About $1.6B of bonds bought back, with the savings funding the Gal&#225;pagos marine reserve.</span></li><li><small>Chile &#183; 2022</small><b>Sustainability-linked sovereign bond</b><span>The world&#8217;s first: $2B whose terms are tied to national climate targets.</span></li><li><small>Seychelles &#183; 2018</small><b>Sovereign blue bond</b><span>The world&#8217;s first, financing sustainable fisheries and marine protection.</span></li><li><small>Indonesia &#183; 2018</small><b>Sovereign green sukuk</b><span>The world&#8217;s first Islamic green bond from a sovereign: $1.25B.</span></li><li><small>India &#183; since 2023</small><b>Sovereign green bonds</b><span>INR 16,000 crore in the first issuance alone.</span></li><li><small>Brazil &#183; 2025</small><b>Tropical Forest Forever Facility</b><span>A global fund that pays nations to keep forests standing, $7.3B committed.</span></li><li><small>DR Congo &#183; 2025</small><b>Resilience and Sustainability Facility</b><span>$1.038B of IMF climate finance beside its core programme.</span></li></ul>
+      <ul class="pnca-pions" id="pncaPions"><li><small>Barbados &#183; 2024</small><b>Debt-for-climate-resilience conversion</b><span>The world&#8217;s first; the savings go to water.</span></li><li><small>Ecuador &#183; 2023</small><b>Debt-for-nature swap</b><span>About $1.6B of bonds bought back for the Gal&#225;pagos.</span></li><li><small>Chile &#183; 2022</small><b>Sustainability-linked sovereign bond</b><span>The world&#8217;s first: $2B tied to climate targets.</span></li><li><small>Seychelles &#183; 2018</small><b>Sovereign blue bond</b><span>The world&#8217;s first, for fisheries and the sea.</span></li><li><small>Indonesia &#183; 2018</small><b>Sovereign green sukuk</b><span>The world&#8217;s first sovereign green sukuk: $1.25B.</span></li><li><small>India &#183; since 2023</small><b>Sovereign green bonds</b><span>INR 16,000 crore in the first issue.</span></li><li><small>Brazil &#183; 2025</small><b>Tropical Forest Forever Facility</b><span>$7.3B committed to keep forests standing.</span></li><li><small>DR Congo &#183; 2025</small><b>Resilience and Sustainability Facility</b><span>$1.038B of IMF climate finance.</span></li></ul>
       <p class="pnca-swipe" aria-hidden="true">Swipe for more</p>
       <button class="pnca-more" type="button" id="pncaMore" aria-expanded="false" aria-controls="pncaPions">Show four more</button>
     </div>
@@ -4719,7 +4907,6 @@ Ground: lapis. Photographs at full colour, no veil; text sits on solid plates.
           <p class="pnca-pk">Innovative finance for development</p>
           <h3 class="pnca-h3" id="pnca-p2">Capital that pays for results</h3>
         </div>
-        <p class="pnca-pl">Four proven instruments that pay for measured results, and a fifth designed by Perfect Nations.</p>
       </div>
     </div>
   </div>
