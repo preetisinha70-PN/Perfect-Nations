@@ -1,4 +1,5 @@
-<!-- PERFECT NATIONS . NATIONAL BLUEPRINT . BARBADOS . v11.9 LIVE DATA . 2026-11-01 . Strict Perfect Capita . One Elementor Custom HTML widget, Full Width, padding 0, Hide Title -->
+<!-- PERFECT NATIONS . NATIONAL BLUEPRINT . BARBADOS . v12.0 LIVE DATA . 2026-11-06 . Strict Perfect Capita . One Elementor Custom HTML widget, Full Width, padding 0, Hide Title -->
+<!-- v12.0 (6 November 2026): All news. The Newswire shows its newest eight headlines; older ones are kept in archive/newswire/barbados.json, and when there are any, an All news button opens the full list in place. The show-all buttons now hide when they are meant to. Nothing else changes. -->
 <!-- v11.9 (1 November 2026): the globe fix of the other blueprints: no country outlines are redrawn while the globe turns, which removes
      the flicker. Barbados is too small for the world map, so the globe shows the Earth and the glowing Barbados marker. -->
 <!-- v11.8: the words of 1 November 2026. The seven basic living standards replace the retired term for the seven;
@@ -678,6 +679,12 @@ article:has(#pn-bp-barbados) .entry-header,article:has(#pn-bp-barbados) .post-th
   #pn-bp-barbados .bp-wire b{ font-size:1.02rem; }
   #pn-bp-barbados .bp-assets__foot p{ font-size:.86rem; }
 }
+/* v12.0 (6 November 2026): All news under the Newswire; the show-all buttons hide when asked */
+#pn-bp-barbados .bp-showall[hidden]{ display:none; }
+#pn-bp-barbados #bp-newswire .bp-wire--more{ border-top:0; }
+#pn-bp-barbados #bp-newswire .bp-wire--more[hidden]{ display:none; }
+#pn-bp-barbados #bp-newswire .bp-allnews{ margin-top:14px; }
+#pn-bp-barbados #bp-newswire .bp-allnews[aria-expanded="true"]::after{ content:"\2212"; }
 </style>
 
 <div id="pn-bp-barbados">
@@ -1219,6 +1226,7 @@ article:has(#pn-bp-barbados) .entry-header,article:has(#pn-bp-barbados) .post-th
         <li><time datetime="2026-04-16">16 Apr 2026</time><a href="https://barbadostoday.bb/2026/04/16/govt-secures-160m-idb-deal-to-tackle-water-infrastructure/" target="_blank" rel="noopener noreferrer"><b>Gov&#8217;t secures <span class="bp-money">$160m</span> IDB deal to tackle water infrastructure</b></a><span class="bp-src">Barbados Today</span></li>
         <li><time datetime="2025-02-20">20 Feb 2025</time><a href="https://www.centralbank.org.bb/news/general-press-release/debt-for-development-swaps" target="_blank" rel="noopener noreferrer"><b>Central Bank sets out the 2024 debt-for-climate conversion and its 2030 water targets</b></a><span class="bp-src">Central Bank of Barbados</span></li>
         </ul>
+        <button type="button" class="bp-showall bp-allnews" hidden>All news</button>
       </div>
         <div class="bp-reg__end"><a class="bp-link" href="https://perfectnations.org/capital-architecture/" target="_blank" rel="noopener noreferrer">Capital Architecture</a></div>
       </div>
@@ -1537,6 +1545,42 @@ article:has(#pn-bp-barbados) .entry-header,article:has(#pn-bp-barbados) .post-th
       art.appendChild(foot); list.appendChild(art);
     });
   }
+  function wireLi(w){
+    if(!w||!w.title||!/^https:\/\//.test(w.url||''))return null;
+    var item=el('li'), tm=el('time','',w.label||w.date); tm.setAttribute('datetime',w.date||''); item.appendChild(tm);
+    var a=document.createElement('a'); a.href=w.url; a.target='_blank'; a.rel='noopener noreferrer';
+    var b=el('b'), t=w.title, hl=w.highlight, at=hl?t.indexOf(hl):-1;
+    if(at>=0){ b.appendChild(document.createTextNode(t.slice(0,at))); b.appendChild(el('span','bp-money',hl)); b.appendChild(document.createTextNode(t.slice(at+hl.length))); }
+    else b.textContent=t;
+    a.appendChild(b); item.appendChild(a); item.appendChild(el('span','bp-src',w.source||'')); return item;
+  }
+  function allNews(wire,shown){
+    /* All news (6 November 2026): the Newswire shows its newest eight; older items are kept in
+       archive/newswire/<nation>.json, read only when the Newswire is full, and opened in place. */
+    var btn=q('#bp-newswire .bp-allnews'); if(!btn||!wire.parentNode)return;
+    var seen={}, extra=[], done=false;
+    function add(w){ if(w&&w.title&&/^https:\/\//.test(w.url||'')&&!seen[w.url]){ seen[w.url]=1; extra.push(w); } }
+    shown.slice(0,8).forEach(function(w){ if(w&&w.url)seen[w.url]=1; });
+    shown.slice(8).forEach(add);
+    var AU=URLS.map(function(u){ return u.replace('/data/','/archive/newswire/'); });
+    function show(){
+      if(done)return; done=true;
+      var more=el('ul','bp-wire bp-wire--more'); more.id='bp-wire-more'; more.hidden=true;
+      extra.forEach(function(w){ var li=wireLi(w); if(li)more.appendChild(li); });
+      if(!more.children.length)return;
+      wire.parentNode.insertBefore(more,btn);
+      var label='All news ('+(wire.children.length+more.children.length)+')';
+      btn.textContent=label; btn.setAttribute('aria-controls','bp-wire-more'); btn.setAttribute('aria-expanded','false'); btn.hidden=false;
+      btn.addEventListener('click',function(){ var open=more.hidden; more.hidden=!open; btn.setAttribute('aria-expanded',open?'true':'false'); btn.textContent=open?'Show fewer':label; });
+    }
+    function get(i){
+      if(i>=AU.length){ show(); return; }
+      fetch(AU[i],{cache:'no-store'}).then(function(r){ if(!r.ok)throw 0; return r.json(); })
+        .then(function(list){ if(list&&typeof list.length==='number'){ for(var k=0;k<list.length;k++)add(list[k]); } show(); })
+        .catch(function(){ if(!done)get(i+1); });
+    }
+    get(0);
+  }
   function apply(d){
     if(d&&d.nation==='Barbados'){ try{ renderDispatches(d); }catch(e){} }
     if(!d||d.nation!=='Barbados'||!d.guarantees||d.guarantees.length!==7)return;
@@ -1588,15 +1632,8 @@ article:has(#pn-bp-barbados) .entry-header,article:has(#pn-bp-barbados) .post-th
     var wire=q('#bp-newswire .bp-wire');
     if(wire&&d.newswire&&d.newswire.length){
       wire.textContent='';
-      d.newswire.slice(0,8).forEach(function(w){
-        if(!w||!w.title||!/^https:\/\//.test(w.url||''))return;
-        var item=el('li'), tm=el('time','',w.label||w.date); tm.setAttribute('datetime',w.date||''); item.appendChild(tm);
-        var a=document.createElement('a'); a.href=w.url; a.target='_blank'; a.rel='noopener noreferrer';
-        var b=el('b'), t=w.title, hl=w.highlight, at=hl?t.indexOf(hl):-1;
-        if(at>=0){ b.appendChild(document.createTextNode(t.slice(0,at))); b.appendChild(el('span','bp-money',hl)); b.appendChild(document.createTextNode(t.slice(at+hl.length))); }
-        else b.textContent=t;
-        a.appendChild(b); item.appendChild(a); item.appendChild(el('span','bp-src',w.source||'')); wire.appendChild(item);
-      });
+      d.newswire.slice(0,8).forEach(function(w){ var li=wireLi(w); if(li)wire.appendChild(li); });
+      if(d.newswire.length>=8)allNews(wire,d.newswire);
     }
     /* the Nation Steward's date */
     var sd=q('.bp-stew__d'); if(sd&&d.updated){ var L=longDate(d.updated); if(L){ sd.setAttribute('datetime',d.updated); sd.textContent='Last updated '+L; } }
