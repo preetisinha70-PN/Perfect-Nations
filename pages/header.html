@@ -1,0 +1,500 @@
+<!-- ==========================================================================
+PERFECT NATIONS - CUSTOM HEADER - v19.1 EARTHRISE - 2026-11-05
+v19.1: the cup mark (the championship cup of the logo between two short solid lines on each side)
+replaces the laurels and star in the open menu, and, through one sitewide rule, on every
+page that still carries the old laurel drawing.
+v19.0: the bar turns Earthrise (#0B3D45), the deep blue-green of the Earth as seen
+from the Moon. The open menu runs from Lagoon (#0F4C5C) down to Earthrise Depth
+(#082A30). The menu button and the cart now light up in Lagoon on hover.
+The laurel in the open menu draws both stems in gold (the mirrored stem showed black).
+The logo is the new seven-star mark (one star for each of the seven standards),
+uploaded to the media library on 5 November 2026; if it cannot load, the earlier
+five-star file shows instead. Nothing else changes: the same menu, links, markup and script.
+v18.9: Perfect Nations Gallery links to /perfect-nations-gallery/.
+v18.8: The Collection becomes Perfect Nations Gallery (/gallery/); About (/about/) and
+Contact (/contact/) are added after State of Nations.
+v18.7: Blueprints is a plain menu item again; the list of nation names under it
+is removed (the ticker and the Blueprints page carry them). The cart is checked
+only when the visitor has something in it, so most page views make no extra
+server request.
+v18.6: the Gallery menu item becomes The Collection (/collection/).
+v18.5: the Perfect Capita menu item keeps its name.
+v18.4: Brazil added under the Americas.
+v18.2: Dispatches and Newswire become one page, State of Nations (/state-of-nations/).
+Earthrise bar. Mark and name on the left, one menu control on the right.
+The panel colors each destination with the earth of its homepage section.
+Gold is used only for the name, which links home, and the one call to action.
+
+OPTIONAL: add pn-hd--float to the header tag to lay the bar over the page,
+transparent at the top and solid Earthrise once scrolled.
+Still true: no blur behind the bar, no filters or transforms on the bar, forms use
+aria-label (not role="search"), and everything works with the script removed.
+=========================================================================== -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Barlow+Semi+Condensed:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+.pn-hd{
+  --pn-gold:var(--pn-brand-gold,#E3C258);
+  --pn-gold-rgb:var(--pn-brand-gold-rgb,227,194,88);
+  /* v19.0 Earthrise: bar, open state, depth, and Lagoon for hovers */
+  --pn-sea:#0B3D45;
+  --pn-sea-2:#093239;
+  --pn-sea-3:#082A30;
+  --pn-lagoon:#0F4C5C;
+  --pn-on-gold:#1A140C;
+  --pn-ink:#F5F1E8;
+  --pn-ink-dim:rgba(245,241,232,.78);
+  --pn-ink-low:rgba(245,241,232,.60);
+  --pn-hair:rgba(245,241,232,.14);
+  --pn-head:var(--pn-font-heading,'Barlow Condensed','Arial Narrow',Arial,sans-serif);
+  --pn-body:var(--pn-font-body,'Barlow Semi Condensed','Arial Narrow',Arial,sans-serif);
+
+  position:relative; z-index:9990;
+  background:var(--pn-sea);
+  border-bottom:1px solid transparent;
+  font-family:var(--pn-head);
+  transition:background .3s ease, border-color .3s ease;
+}
+.pn-hd--scrolled{ background:rgba(11,61,69,.97); border-bottom-color:var(--pn-hair); }
+.pn-hd:has(.pn-hd__toggle:checked){ background:var(--pn-sea-2); border-bottom-color:var(--pn-hair); }
+
+/* optional overlay mode */
+.pn-hd--float{ position:fixed; top:0; left:0; right:0; background:transparent; }
+.pn-hd--float.pn-hd--scrolled{ background:rgba(11,61,69,.97); }
+body.admin-bar .pn-hd--float{ top:32px; }
+@media screen and (max-width:782px){ body.admin-bar .pn-hd--float{ top:46px; } }
+
+.pn-hd *,.pn-hd *::before,.pn-hd *::after{ box-sizing:border-box; margin:0; padding:0; }
+.pn-hd a{ text-decoration:none; }
+.pn-hd button{ background:none; border:0; cursor:pointer; font:inherit; color:inherit; }
+.pn-hd :focus-visible{ outline:2px solid var(--pn-gold); outline-offset:3px; border-radius:4px; }
+
+/* immunity from the sitewide search-hiding rule in Additional CSS section 8 */
+.pn-hd form,
+.pn-hd__panel form{
+  display:flex !important; visibility:visible !important; opacity:1 !important;
+  pointer-events:auto !important; width:auto !important; height:auto !important;
+}
+.pn-hd form input[type="search"],
+.pn-hd__panel form input[type="search"]{ visibility:visible !important; pointer-events:auto !important; height:auto !important; }
+
+.pn-hd__toggle{ position:absolute; width:1px; height:1px; opacity:0; pointer-events:none; }
+
+.pn-hd__in{
+  position:relative; z-index:2;
+  max-width:1820px; margin:0 auto;
+  display:flex; align-items:center; justify-content:space-between; gap:20px;
+  padding:10px 34px; min-height:72px;
+}
+
+.elementor-location-header .e-con,
+.elementor-location-header .e-con-inner,
+.elementor-location-header .elementor-container,
+.elementor-location-header .elementor-widget-wrap,
+.elementor-location-header .elementor-widget-html,
+.elementor-location-header .elementor-element{
+  padding-top:0 !important; padding-bottom:0 !important;
+  margin-top:0 !important; margin-bottom:0 !important;
+  border-bottom:0 !important;
+}
+
+/* ---------- brand ---------- */
+.pn-hd__brand{ display:flex; align-items:center; gap:14px; flex:0 0 auto; min-width:0; }
+.pn-hd__logo{ width:48px; height:48px; object-fit:contain; display:block; }
+.pn-hd__logo--ivory{ display:none; }
+.pn-hd__monogram{
+  display:none; width:44px; height:44px; border-radius:50%;
+  align-items:center; justify-content:center;
+  border:1px solid rgba(var(--pn-gold-rgb),.55);
+  font-family:var(--pn-head); font-size:17px; color:var(--pn-gold);
+  background:radial-gradient(circle at 32% 28%, #1A6E78, var(--pn-sea-3));
+}
+.pn-hd--noimg .pn-hd__logo{ display:none !important; }
+.pn-hd--noimg .pn-hd__monogram{ display:flex; }
+.pn-hd__word{
+  font-family:var(--pn-head); font-weight:700;
+  font-size:clamp(22px,2.4vw,32px); letter-spacing:.10em;
+  text-transform:uppercase; white-space:nowrap; line-height:1;
+  color:var(--pn-gold);
+  transition:color .2s ease;
+}
+.pn-hd__brand:hover .pn-hd__word{ color:#F0D68F; }
+.pn-hd__br{ display:none; }
+
+/* ---------- the menu control ---------- */
+.pn-hd__right{ display:flex; align-items:center; gap:8px; flex:0 0 auto; margin-left:auto; }
+.pn-hd__menubtn{
+  display:inline-flex; align-items:center; gap:13px;
+  padding:11px 10px 11px 18px; border-radius:999px;
+  border:1px solid rgba(245,241,232,.28);
+  color:var(--pn-ink); cursor:pointer;
+  transition:color .2s ease, background .2s ease, border-color .2s ease;
+}
+.pn-hd__menubtn:hover{ background:var(--pn-lagoon); color:var(--pn-ink); border-color:var(--pn-ink); }
+.pn-hd__menuwords{ font-size:14px; font-weight:600; letter-spacing:.20em; text-transform:uppercase; line-height:1; }
+.pn-hd__menuword--close{ display:none; }
+.pn-hd__toggle:checked ~ .pn-hd__in .pn-hd__menuword--open{ display:none; }
+.pn-hd__toggle:checked ~ .pn-hd__in .pn-hd__menuword--close{ display:inline; }
+
+.pn-hd__burger{ position:relative; width:30px; height:20px; flex:0 0 auto; }
+.pn-hd__burger span{
+  position:absolute; left:0; right:0; height:2px; border-radius:2px;
+  background:currentColor; transition:transform .3s ease, opacity .2s ease, top .3s ease, width .3s ease;
+}
+.pn-hd__burger span:nth-child(1){ top:3px; }
+.pn-hd__burger span:nth-child(2){ top:9px; width:70%; }
+.pn-hd__burger span:nth-child(3){ top:15px; }
+.pn-hd__menubtn:hover .pn-hd__burger span:nth-child(2){ width:100%; }
+.pn-hd__toggle:checked ~ .pn-hd__in .pn-hd__burger span:nth-child(1){ top:9px; transform:rotate(45deg); }
+.pn-hd__toggle:checked ~ .pn-hd__in .pn-hd__burger span:nth-child(2){ opacity:0; }
+.pn-hd__toggle:checked ~ .pn-hd__in .pn-hd__burger span:nth-child(3){ top:9px; transform:rotate(-45deg); }
+
+/* optional bar items: add pn-hd--withcta or pn-hd--withcart to the header tag */
+.pn-hd__cta,
+.pn-hd__cart{ display:none; }
+.pn-hd svg{ width:19px; height:19px; }
+.pn-hd svg path,.pn-hd svg circle{ stroke:currentColor; stroke-width:1.8; fill:none; stroke-linecap:round; stroke-linejoin:round; }
+@media (min-width:900px){
+  .pn-hd--withcart .pn-hd__cart{
+    display:inline-flex; align-items:center; justify-content:center;
+    position:relative; width:42px; height:42px; border-radius:50%;
+    color:var(--pn-ink); transition:background .2s ease;
+  }
+  .pn-hd--withcart .pn-hd__cart:hover{ background:var(--pn-lagoon); }
+  .pn-hd--withcta .pn-hd__cta{
+    display:inline-flex; align-items:center; margin-right:6px;
+    padding:12px 20px; border-radius:999px;
+    background:var(--pn-gold); color:var(--pn-on-gold);
+    font-size:13px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; white-space:nowrap;
+    transition:background .2s ease;
+  }
+  .pn-hd--withcta .pn-hd__cta:hover{ background:#F0D68F; }
+}
+.pn-hd__cartbadge{
+  position:absolute; top:0; right:-2px; display:none;
+  min-width:18px; height:18px; padding:0 4px; border-radius:999px;
+  background:var(--pn-gold); color:var(--pn-on-gold);
+  font-size:11px; font-weight:700; line-height:18px; text-align:center;
+  box-shadow:0 0 0 2px var(--pn-sea);
+}
+
+/* ---------- the panel ---------- */
+.pn-hd__panel{
+  display:none; position:fixed; z-index:1;
+  top:0; left:0; right:0; bottom:0; padding:104px 34px 56px;
+  background:
+    radial-gradient(60% 40% at 50% 0%, rgba(255,214,140,.14) 0%, transparent 70%),
+    linear-gradient(180deg,#0F4C5C 0%,#0B3D45 55%,#082A30 100%);
+  overflow-y:auto; -webkit-overflow-scrolling:touch;
+  font-family:var(--pn-head);
+}
+.pn-hd__toggle:checked ~ .pn-hd__panel{ display:block; }
+html:has(.pn-hd__toggle:checked){ overflow:hidden; }
+
+.pn-hd__panelin{ max-width:1180px; margin:0 auto; display:grid; grid-template-columns:1fr; gap:38px; }
+
+.pn-hd__mmenu{ list-style:none; }
+.pn-hd__mmenu > li{ border-bottom:1px solid var(--pn-hair); }
+.pn-hd__mmenu > li:last-child{ border-bottom:0; }
+.pn-hd__mrow{ display:flex; align-items:center; justify-content:space-between; }
+
+/* each destination carries the earth of its homepage section */
+.pn-hd__mmenu > li > a,
+.pn-hd__mlabel{
+  display:flex; align-items:center; gap:16px;
+  padding:15px 4px; color:var(--pn-ink);
+  font-family:var(--pn-head); font-weight:600;
+  font-size:clamp(20px,2.8vw,32px); letter-spacing:.06em; line-height:1.1;
+  text-transform:uppercase;
+  transition:color .18s ease;
+}
+.pn-hd__mmenu > li > a::before,
+.pn-hd__mlabel::before{
+  content:""; flex:none; width:14px; height:14px; border-radius:50%;
+  background:var(--e,#F5F1E8);
+  box-shadow:0 0 0 2px rgba(245,241,232,.85);
+  transition:transform .25s ease;
+}
+.pn-hd__mmenu > li > a:hover{ color:#F0D68F; }
+.pn-hd__mmenu > li > a:hover::before{ transform:scale(1.3); }
+
+.pn-hd__mcaret{
+  width:52px; height:52px; display:inline-flex; align-items:center; justify-content:center;
+  color:var(--pn-ink); border-radius:8px; cursor:pointer; flex:0 0 auto;
+}
+.pn-hd__mcaret svg{ width:13px; height:13px; transition:transform .3s ease; }
+.pn-hd__msub{
+  list-style:none; overflow:hidden; max-height:0; transition:max-height .35s ease;
+  padding-left:30px; margin:0 0 0 4px;
+}
+.pn-hd__msub a{
+  display:block; padding:12px 4px;
+  font-family:var(--pn-head); font-size:14px; font-weight:600;
+  text-transform:uppercase; letter-spacing:.14em; color:var(--pn-ink-dim);
+  transition:color .18s ease;
+}
+.pn-hd__msub a:hover{ color:var(--pn-ink); }
+.pn-hd__subtoggle{ position:absolute; width:1px; height:1px; opacity:0; pointer-events:none; }
+.pn-hd__subtoggle:checked ~ .pn-hd__msub{ max-height:340px; }
+.pn-hd__subtoggle:checked ~ .pn-hd__mrow .pn-hd__mcaret svg{ transform:rotate(180deg); }
+
+/* ---------- the panel side column ---------- */
+.pn-hd__side{ display:flex; flex-direction:column; gap:16px; }
+.pn-hd svg.pn-hd__laurel{ display:block; width:120px; height:60px; color:var(--pn-gold); }
+.pn-hd svg.pn-hd__laurel path{ fill:currentColor; stroke:none; }
+/* v19.1 sitewide: the cup mark replaces the laurels and star on every page. Pages not yet rebuilt
+   still carry the old laurel drawing; this draws the gold cup in its place until they are. */
+svg[class*="laurel"]:not([data-pn-cup]){ background:url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 120 60%22%3E%3Cg fill=%22%23E3C258%22%3E%3Cpath fill-rule=%22evenodd%22 d=%22M51.7 55C51.6 55 51.6 54.8 51.6 53.3L51.6 51.9L51.8 51.7C51.9 51.6 52.2 51.4 52.4 51.2C52.6 51 52.8 50.9 52.8 50.9C52.8 50.8 54.4 50 54.5 50C54.6 50 54.8 49.9 54.9 49.8C55.1 49.7 55.4 49.6 55.7 49.6C55.9 49.5 56.2 49.4 56.3 49.4L56.5 49.3L56.5 49.1C56.5 48.5 56.6 48.3 57.3 48.3C57.6 48.3 57.8 48.3 57.8 48.3C57.8 48.3 57.8 46.6 57.8 44.6L57.8 41L58 40.8C58.8 39.8 58.9 38.5 58.5 37.3C58.4 37.1 58.3 36.9 58.3 36.8C58.3 36.7 58.1 36.5 57.6 36.2C56.4 35.4 55.1 33.7 54 31.6C53.7 31.1 53.8 31.1 53.7 31.1C53.6 31.1 53.6 31.2 53.5 31.3C53 32.3 51.7 32.4 50.8 31.6C50.2 31.1 50.8 30.4 51.4 30.7C52.2 31.1 52.4 31.1 52.6 30.6C52.8 29.7 51.8 28.5 47.6 24.2C43.2 19.8 41.6 17.8 40.8 15.7C40.7 15.5 40.7 15.3 40.6 15.2C39.7 12.9 40.1 10.6 41.8 8.9C42.9 7.7 44.1 7.3 45.4 7.6C46.3 7.7 47.6 8.4 49 9.6C51.1 11.2 52 11.5 52.6 11C52.8 10.8 52.8 10.8 52.6 10.5C52.3 10.2 52.3 10.1 52.4 9.9C52.8 9.1 53.9 9.8 53.9 10.9C53.9 11.1 53.9 11.2 53.9 11.2C54 11.2 55 10.7 55.4 10.5C55.8 10.2 56 9.7 55.9 9.1C55.9 8.5 55.7 8.4 54.2 7.6C52.8 6.9 52.7 6.8 52.6 6.6C52.5 6.2 52.4 5.3 52.6 5.1L52.7 5L53.4 5L54.1 5L54.1 5.8C54.2 6.8 54.1 6.7 55.6 7.7C55.7 7.7 55.8 7.8 55.8 7.8C55.9 7.8 55.9 7.9 56 7.9C56.7 8.4 57 9.1 56.7 9.8C56.6 10.3 56.5 10.3 55.3 11.1C53.7 12 53.3 12.2 53 12.5C51.8 13.2 51.4 14.3 51.7 16C52.8 23.1 53.9 27.6 55.2 30.9C55.4 31.3 55.5 31.7 55.6 31.8C56 33.1 57.3 35 58.1 35.7C58.4 35.9 58.6 35.9 58.4 35.6C57.8 34.8 57 31.9 56.4 29.1C56.2 27.8 55.9 25.9 55.8 25.2C55.8 25 55.7 24.7 55.7 24.6C55.6 23.9 55.1 19.7 55 18.8C55 18.7 55 18.3 54.9 17.9C54.7 16.2 54.7 14.5 54.9 13.9C55.1 13.1 55.2 12.9 56.7 11.4C57.8 10.2 57.9 10.1 57.9 9.4C57.9 8.6 57.8 8.4 57 7.5C56.4 6.9 56.3 6.7 56.3 6.2C56.2 5.9 56.2 5.2 56.3 5.1L56.4 5L61.8 5L67.3 5L67.4 5.1C67.5 5.2 67.5 5.2 67.5 5.8C67.5 6.7 67.5 6.7 66 7.5C64.2 8.4 64.1 8.6 64.1 9.4C64.1 10 64.3 10.3 65.5 10.9C66.2 11.2 66.1 11.2 66.1 10.8C66.1 9.8 67.2 9.1 67.6 9.9C67.7 10.1 67.7 10.2 67.3 10.7C67.1 11 67.9 11.3 68.5 11.1C69.2 10.9 69.6 10.6 71.2 9.4C74.1 7.1 76 6.9 78 8.6C80.4 10.8 80.5 14 78.2 17.6C76.9 19.5 75.9 20.7 72.3 24.3C67.9 28.7 67.2 29.7 67.5 30.7C67.6 31.1 67.8 31.1 68.5 30.8C68.9 30.5 69 30.5 69.3 30.8C69.6 31 69.5 31.4 69.2 31.7C68.1 32.4 66.9 32.3 66.5 31.3C66.4 31 66.3 31 66.2 31.2C66.1 31.5 65.3 33 64.9 33.5C64.1 34.8 63.3 35.6 62.4 36.2C61.7 36.7 61.7 36.7 61.5 37.4C61.2 38.4 61.2 39.4 61.6 40.1C61.7 40.4 62 40.9 62.1 41C62.2 41.1 62.2 41.4 62.2 44.5C62.2 46.4 62.2 48 62.2 48.1L62.2 48.3L62.6 48.3C63.4 48.3 63.6 48.5 63.6 49.1C63.6 49.3 63.6 49.3 64.3 49.6C64.7 49.7 65.1 49.8 65.6 50.1C66 50.3 66.5 50.5 66.8 50.6C67 50.8 67.2 50.9 67.2 50.9C67.2 50.9 67.3 51 67.5 51.1C67.7 51.3 68 51.5 68.1 51.6L68.5 51.9L68.4 53.4C68.4 54.2 68.4 54.9 68.4 54.9C68.4 55 67.3 55 61.8 55C57.7 55 56.8 55 56.7 55C56.6 54.9 56.6 52.4 56.7 52C56.8 51.3 57.8 50 58.7 49.3C58.9 49.2 58.6 49.2 58.2 49.3C57.2 49.5 55 51.2 54.8 51.9C54.7 52.2 54.6 52.9 54.6 53.9C54.6 54.5 54.6 54.9 54.6 54.9C54.6 55 51.9 55 51.7 55ZM52.2 27.1C52.2 27.1 52.1 26.8 52 26.6C51.5 25.1 50.6 21.8 50 19C49.2 15.4 49.2 14.9 49.6 14C49.9 13.4 50.3 13 51 12.6C51.5 12.3 51.5 12.3 51.1 12.2C50.5 12 49.5 11.4 48.5 10.6C45.4 8.2 44.2 8.1 42.6 9.7C40.5 11.9 40.9 14.6 43.8 18.4C44.8 19.7 45.8 20.8 48.3 23.3C50.8 25.8 51.3 26.3 51.7 26.9C52.1 27.3 52.2 27.3 52.2 27.1ZM68.2 26.9C68.5 26.6 69.1 26 70.9 24.1C72.7 22.3 73.5 21.4 74.2 20.7C79 15.5 79.9 12.2 77.3 9.6C76.5 8.8 75.8 8.5 74.7 8.7C74.1 8.8 73.1 9.4 71.8 10.4C70.3 11.5 69.5 12.1 68.8 12.2C68.7 12.3 68.6 12.3 68.6 12.3C68.6 12.4 68.7 12.4 68.8 12.5C70.5 13.4 70.9 14.5 70.5 16.4C69.8 20.3 68.9 23.9 68.1 26.4C67.7 27.4 67.7 27.5 68.2 26.9Z%22/%3E%3Crect x=%226.13%22 y=%2216.60%22 width=%2230.0%22 height=%221.8%22/%3E%3Crect x=%2283.87%22 y=%2216.60%22 width=%2230.0%22 height=%221.8%22/%3E%3Crect x=%226.13%22 y=%2241.60%22 width=%2230.0%22 height=%221.8%22/%3E%3Crect x=%2283.87%22 y=%2241.60%22 width=%2230.0%22 height=%221.8%22/%3E%3C/g%3E%3C/svg%3E") center / contain no-repeat; }
+svg[class*="laurel"]:not([data-pn-cup]) > *{ display:none !important; }
+.pn-hd__msearch{ display:flex; }
+.pn-hd__msearch input{
+  flex:1; min-width:0; padding:14px 18px; border-radius:999px 0 0 999px;
+  background:rgba(245,241,232,.10); color:var(--pn-ink);
+  border:1px solid rgba(245,241,232,.26); border-right:0;
+  font-family:var(--pn-body); font-size:16px;
+}
+.pn-hd__msearch input::placeholder{ color:var(--pn-ink-low); }
+.pn-hd__msearch input:focus{ outline:none; border-color:var(--pn-ink); }
+.pn-hd__msearch button{
+  padding:0 20px; border-radius:0 999px 999px 0;
+  border:1px solid rgba(245,241,232,.26); border-left:0; color:var(--pn-ink);
+  display:inline-flex; align-items:center;
+}
+.pn-hd__mcta{
+  text-align:center; padding:16px 22px; border-radius:999px;
+  background:var(--pn-gold); color:var(--pn-on-gold);
+  font-family:var(--pn-head); font-size:14px; font-weight:700;
+  letter-spacing:.16em; text-transform:uppercase;
+  box-shadow:0 12px 30px rgba(var(--pn-gold-rgb),.28);
+  transition:background .2s ease;
+}
+.pn-hd__mcta:hover{ background:#F0D68F; }
+.pn-hd__mcart{
+  text-align:center; color:var(--pn-ink-dim);
+  font-family:var(--pn-head); font-size:14px; font-weight:600; letter-spacing:.14em;
+  text-transform:uppercase; transition:color .18s ease;
+}
+.pn-hd__mcart:hover{ color:var(--pn-ink); }
+
+@media (min-width:900px){
+  .pn-hd__panelin{
+    grid-template-columns:minmax(0,1.3fr) minmax(0,.85fr); gap:72px;
+    min-height:calc(100vh - 200px); align-content:center;
+  }
+  .pn-hd__mcaret{ display:none; }
+  .pn-hd__msub,
+  .pn-hd__subtoggle:checked ~ .pn-hd__msub{
+    max-height:none; overflow:visible;
+    display:flex; flex-wrap:wrap; gap:0 26px;
+    padding:0 0 14px 34px; margin:0;
+  }
+  .pn-hd__msub a{ padding:6px 0; }
+  .pn-hd__mmenu > li > a,.pn-hd__mlabel{ padding:16px 4px 12px; }
+  .pn-hd__side{ gap:18px; padding-left:40px; border-left:1px solid var(--pn-hair); justify-content:center; }
+}
+
+@media (max-width:1180px){
+  .pn-hd__in{ padding:9px 24px; min-height:68px; }
+  .pn-hd__logo{ width:44px; height:44px; }
+  .pn-hd__panel{ padding-left:24px; padding-right:24px; }
+}
+@media (max-width:899px){
+  .pn-hd__panel{ padding:92px 24px 48px; }
+  .pn-hd__side{ padding-top:22px; border-top:1px solid var(--pn-hair); }
+}
+@media (max-width:560px){
+  .pn-hd__in{ padding:8px 16px; }
+  .pn-hd__logo{ width:42px; height:42px; }
+  .pn-hd__word{ letter-spacing:.06em; }
+  .pn-hd__menuwords{ display:none; }
+  .pn-hd__menubtn{ padding:11px; }
+  .pn-hd__panel{ padding:84px 16px 44px; }
+}
+@media (max-width:400px){
+  .pn-hd__in{ padding:8px 12px; }
+  .pn-hd__logo{ width:38px; height:38px; }
+  .pn-hd__word{ font-size:20px; letter-spacing:.04em; }
+}
+@media (max-width:340px){
+  .pn-hd__word{ font-size:18px; letter-spacing:.02em; }
+  .pn-hd__logo{ width:34px; height:34px; }
+}
+@media (prefers-reduced-motion:reduce){
+  .pn-hd *{ transition:none !important; }
+}
+
+@media screen and (min-width:783px){
+  body.admin-bar .elementor-location-header .elementor-sticky--active,
+  body.admin-bar .elementor-location-header.elementor-sticky--effects{ top:32px !important; }
+}
+@media screen and (max-width:782px){
+  body.admin-bar .elementor-location-header .elementor-sticky--active,
+  body.admin-bar .elementor-location-header.elementor-sticky--effects{ top:46px !important; }
+}
+
+/* ---- FULL WIDTH, EDGE TO EDGE ----
+   The black strips at the sides were the template's boxed container and its
+   side padding showing the page background. These release both, and the
+   bar itself is drawn to the full width of the screen. overflow-x:clip on the
+   page stops the full-width bar adding a sideways scroll on Windows. */
+html:has(#pn-hd), html:has(#pn-hd) body{ overflow-x:clip; }
+.elementor-location-header, .elementor-location-header .e-con, .elementor-location-header .e-con-inner,
+.elementor-location-header .elementor-section, .elementor-location-header .elementor-container,
+.elementor-location-header .elementor-column, .elementor-location-header .elementor-widget-wrap,
+.elementor-location-header .elementor-element-populated, .elementor-location-header .elementor-widget-html{
+  --content-width:100%; --container-max-width:100%;
+  --padding-left:0px; --padding-right:0px;
+  max-width:none !important; padding-left:0 !important; padding-right:0 !important;
+  margin-left:0 !important; margin-right:0 !important;
+  background-color:transparent;
+}
+.pn-hd:not(.pn-hd--float){ width:100vw; max-width:100vw; margin-left:calc(50% - 50vw); }
+</style>
+
+<header class="pn-hd" id="pn-hd">
+
+  <input type="checkbox" class="pn-hd__toggle" id="pn-hd-toggle" aria-label="Menu">
+
+  <div class="pn-hd__in">
+
+    <a class="pn-hd__brand" href="https://perfectnations.org/" aria-label="Perfect Nations - home">
+      <img class="pn-hd__logo pn-hd__logo--gold"
+           src="https://perfectnations.org/wp-content/uploads/2026/11/pn-logo-gold-7-stars.png"
+           alt="" width="48" height="48"
+           onerror="this.onerror=function(){this.onerror=null;this.style.display='none'};this.src='https://perfectnations.org/wp-content/uploads/2026/08/pnlogoe3c258.png'">
+      <span class="pn-hd__monogram" aria-hidden="true">PN</span>
+      <span class="pn-hd__word">Perfect<br class="pn-hd__br"> Nations</span>
+    </a>
+
+    <div class="pn-hd__right">
+      <a class="pn-hd__cta" href="https://perfectnations.org/contact/">Start a Conversation</a>
+      <a class="pn-hd__cart" href="https://perfectnations.org/cart/" aria-label="Cart">
+        <svg viewBox="0 0 22 22" aria-hidden="true"><path d="M3 4h2.2l2.1 10.4a1.6 1.6 0 0 0 1.6 1.3h7.4a1.6 1.6 0 0 0 1.6-1.2L19.6 8H6.1"/><circle cx="9.6" cy="19" r="1.15"/><circle cx="16.4" cy="19" r="1.15"/></svg>
+        <span class="pn-hd__cartbadge" aria-hidden="true"></span>
+      </a>
+      <label class="pn-hd__menubtn" for="pn-hd-toggle" role="button" tabindex="0"
+             aria-controls="pn-hd-panel" aria-expanded="false">
+        <span class="pn-hd__menuwords">
+          <span class="pn-hd__menuword--open">Menu</span>
+          <span class="pn-hd__menuword--close">Close</span>
+        </span>
+        <span class="pn-hd__burger" aria-hidden="true"><span></span><span></span><span></span></span>
+      </label>
+    </div>
+  </div>
+
+  <div class="pn-hd__panel" id="pn-hd-panel">
+    <div class="pn-hd__panelin">
+
+      <nav aria-label="Primary">
+        <ul class="pn-hd__mmenu">
+          <li><a href="https://perfectnations.org/blueprints/" style="--e:#8A3A22;">Blueprints</a></li>
+          <li><a href="https://perfectnations.org/sovereign-assets/" style="--e:#17644F;">Sovereign Assets</a></li>
+          <li><a href="https://perfectnations.org/perfect-capita/" style="--e:#E6D3A8;">Perfect Capita</a></li>
+          <li><a href="https://perfectnations.org/capital-architecture/" style="--e:#1F4A8C;">Capital Architecture</a></li>
+          <li><a href="https://perfectnations.org/design-studio/" style="--e:#342C27;">Design Studio</a></li>
+          <li><a href="https://perfectnations.org/perfect-nations-gallery/" style="--e:#F4ECD8;">Perfect Nations Gallery</a></li>
+          <li><a href="https://perfectnations.org/state-of-nations/" style="--e:#4FA7D2;">State of Nations</a></li>
+          <li><a href="https://perfectnations.org/about/" style="--e:#164A37;">About</a></li>
+          <li><a href="https://perfectnations.org/contact/" style="--e:#8A3A22;">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="pn-hd__side">
+        <svg class="pn-hd__laurel" data-pn-cup="1" aria-hidden="true" focusable="false" viewBox="0 0 120 60"><g fill="currentColor"><path fill-rule="evenodd" d="M51.7 55C51.6 55 51.6 54.8 51.6 53.3L51.6 51.9L51.8 51.7C51.9 51.6 52.2 51.4 52.4 51.2C52.6 51 52.8 50.9 52.8 50.9C52.8 50.8 54.4 50 54.5 50C54.6 50 54.8 49.9 54.9 49.8C55.1 49.7 55.4 49.6 55.7 49.6C55.9 49.5 56.2 49.4 56.3 49.4L56.5 49.3L56.5 49.1C56.5 48.5 56.6 48.3 57.3 48.3C57.6 48.3 57.8 48.3 57.8 48.3C57.8 48.3 57.8 46.6 57.8 44.6L57.8 41L58 40.8C58.8 39.8 58.9 38.5 58.5 37.3C58.4 37.1 58.3 36.9 58.3 36.8C58.3 36.7 58.1 36.5 57.6 36.2C56.4 35.4 55.1 33.7 54 31.6C53.7 31.1 53.8 31.1 53.7 31.1C53.6 31.1 53.6 31.2 53.5 31.3C53 32.3 51.7 32.4 50.8 31.6C50.2 31.1 50.8 30.4 51.4 30.7C52.2 31.1 52.4 31.1 52.6 30.6C52.8 29.7 51.8 28.5 47.6 24.2C43.2 19.8 41.6 17.8 40.8 15.7C40.7 15.5 40.7 15.3 40.6 15.2C39.7 12.9 40.1 10.6 41.8 8.9C42.9 7.7 44.1 7.3 45.4 7.6C46.3 7.7 47.6 8.4 49 9.6C51.1 11.2 52 11.5 52.6 11C52.8 10.8 52.8 10.8 52.6 10.5C52.3 10.2 52.3 10.1 52.4 9.9C52.8 9.1 53.9 9.8 53.9 10.9C53.9 11.1 53.9 11.2 53.9 11.2C54 11.2 55 10.7 55.4 10.5C55.8 10.2 56 9.7 55.9 9.1C55.9 8.5 55.7 8.4 54.2 7.6C52.8 6.9 52.7 6.8 52.6 6.6C52.5 6.2 52.4 5.3 52.6 5.1L52.7 5L53.4 5L54.1 5L54.1 5.8C54.2 6.8 54.1 6.7 55.6 7.7C55.7 7.7 55.8 7.8 55.8 7.8C55.9 7.8 55.9 7.9 56 7.9C56.7 8.4 57 9.1 56.7 9.8C56.6 10.3 56.5 10.3 55.3 11.1C53.7 12 53.3 12.2 53 12.5C51.8 13.2 51.4 14.3 51.7 16C52.8 23.1 53.9 27.6 55.2 30.9C55.4 31.3 55.5 31.7 55.6 31.8C56 33.1 57.3 35 58.1 35.7C58.4 35.9 58.6 35.9 58.4 35.6C57.8 34.8 57 31.9 56.4 29.1C56.2 27.8 55.9 25.9 55.8 25.2C55.8 25 55.7 24.7 55.7 24.6C55.6 23.9 55.1 19.7 55 18.8C55 18.7 55 18.3 54.9 17.9C54.7 16.2 54.7 14.5 54.9 13.9C55.1 13.1 55.2 12.9 56.7 11.4C57.8 10.2 57.9 10.1 57.9 9.4C57.9 8.6 57.8 8.4 57 7.5C56.4 6.9 56.3 6.7 56.3 6.2C56.2 5.9 56.2 5.2 56.3 5.1L56.4 5L61.8 5L67.3 5L67.4 5.1C67.5 5.2 67.5 5.2 67.5 5.8C67.5 6.7 67.5 6.7 66 7.5C64.2 8.4 64.1 8.6 64.1 9.4C64.1 10 64.3 10.3 65.5 10.9C66.2 11.2 66.1 11.2 66.1 10.8C66.1 9.8 67.2 9.1 67.6 9.9C67.7 10.1 67.7 10.2 67.3 10.7C67.1 11 67.9 11.3 68.5 11.1C69.2 10.9 69.6 10.6 71.2 9.4C74.1 7.1 76 6.9 78 8.6C80.4 10.8 80.5 14 78.2 17.6C76.9 19.5 75.9 20.7 72.3 24.3C67.9 28.7 67.2 29.7 67.5 30.7C67.6 31.1 67.8 31.1 68.5 30.8C68.9 30.5 69 30.5 69.3 30.8C69.6 31 69.5 31.4 69.2 31.7C68.1 32.4 66.9 32.3 66.5 31.3C66.4 31 66.3 31 66.2 31.2C66.1 31.5 65.3 33 64.9 33.5C64.1 34.8 63.3 35.6 62.4 36.2C61.7 36.7 61.7 36.7 61.5 37.4C61.2 38.4 61.2 39.4 61.6 40.1C61.7 40.4 62 40.9 62.1 41C62.2 41.1 62.2 41.4 62.2 44.5C62.2 46.4 62.2 48 62.2 48.1L62.2 48.3L62.6 48.3C63.4 48.3 63.6 48.5 63.6 49.1C63.6 49.3 63.6 49.3 64.3 49.6C64.7 49.7 65.1 49.8 65.6 50.1C66 50.3 66.5 50.5 66.8 50.6C67 50.8 67.2 50.9 67.2 50.9C67.2 50.9 67.3 51 67.5 51.1C67.7 51.3 68 51.5 68.1 51.6L68.5 51.9L68.4 53.4C68.4 54.2 68.4 54.9 68.4 54.9C68.4 55 67.3 55 61.8 55C57.7 55 56.8 55 56.7 55C56.6 54.9 56.6 52.4 56.7 52C56.8 51.3 57.8 50 58.7 49.3C58.9 49.2 58.6 49.2 58.2 49.3C57.2 49.5 55 51.2 54.8 51.9C54.7 52.2 54.6 52.9 54.6 53.9C54.6 54.5 54.6 54.9 54.6 54.9C54.6 55 51.9 55 51.7 55ZM52.2 27.1C52.2 27.1 52.1 26.8 52 26.6C51.5 25.1 50.6 21.8 50 19C49.2 15.4 49.2 14.9 49.6 14C49.9 13.4 50.3 13 51 12.6C51.5 12.3 51.5 12.3 51.1 12.2C50.5 12 49.5 11.4 48.5 10.6C45.4 8.2 44.2 8.1 42.6 9.7C40.5 11.9 40.9 14.6 43.8 18.4C44.8 19.7 45.8 20.8 48.3 23.3C50.8 25.8 51.3 26.3 51.7 26.9C52.1 27.3 52.2 27.3 52.2 27.1ZM68.2 26.9C68.5 26.6 69.1 26 70.9 24.1C72.7 22.3 73.5 21.4 74.2 20.7C79 15.5 79.9 12.2 77.3 9.6C76.5 8.8 75.8 8.5 74.7 8.7C74.1 8.8 73.1 9.4 71.8 10.4C70.3 11.5 69.5 12.1 68.8 12.2C68.7 12.3 68.6 12.3 68.6 12.3C68.6 12.4 68.7 12.4 68.8 12.5C70.5 13.4 70.9 14.5 70.5 16.4C69.8 20.3 68.9 23.9 68.1 26.4C67.7 27.4 67.7 27.5 68.2 26.9Z"/><rect x="6.13" y="16.60" width="30.0" height="1.8"/><rect x="83.87" y="16.60" width="30.0" height="1.8"/><rect x="6.13" y="41.60" width="30.0" height="1.8"/><rect x="83.87" y="41.60" width="30.0" height="1.8"/></g></svg>
+
+        <form class="pn-hd__msearch" action="https://perfectnations.org/" method="get" aria-label="Search this site">
+          <input type="search" name="s" placeholder="Search the nations&hellip;" aria-label="Search">
+          <input type="hidden" name="post_type[]" value="page">
+          <input type="hidden" name="post_type[]" value="product">
+          <button type="submit" aria-label="Search">
+            <svg viewBox="0 0 22 22" aria-hidden="true"><circle cx="9.5" cy="9.5" r="6.2"/><path d="M14.2 14.2 19 19"/></svg>
+          </button>
+        </form>
+
+        <a class="pn-hd__mcta" href="https://perfectnations.org/contact/">Start a Conversation</a>
+        <a class="pn-hd__mcart" href="https://perfectnations.org/cart/">View Cart<span class="pn-hd__mcartcount"></span></a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<script>
+(function(){
+  var hd = document.getElementById('pn-hd');
+  if(!hd) return;
+  var toggle = document.getElementById('pn-hd-toggle');
+  var panel  = document.getElementById('pn-hd-panel');
+  var menubtn = hd.querySelector('.pn-hd__menubtn');
+
+  function onScroll(){
+    hd.classList.toggle('pn-hd--scrolled', (window.scrollY||document.documentElement.scrollTop) > 8);
+  }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+
+  function syncPanel(){
+    var open = !!(toggle && toggle.checked);
+    document.documentElement.style.overflow = open ? 'hidden' : '';
+    document.body.style.overflow = open ? 'hidden' : '';
+    if(menubtn) menubtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  }
+  if(toggle) toggle.addEventListener('change', syncPanel);
+
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape' && toggle && toggle.checked){ toggle.checked = false; syncPanel(); }
+  });
+
+  if(panel){
+    panel.addEventListener('click', function(e){
+      var a = e.target.closest ? e.target.closest('a') : null;
+      if(a && toggle){ toggle.checked = false; syncPanel(); }
+    });
+  }
+
+  var labels = hd.querySelectorAll('label[for][tabindex]');
+  for(var i=0;i<labels.length;i++){
+    labels[i].addEventListener('keydown', function(e){
+      if(e.key === 'Enter' || e.key === ' ' || e.key === 'Spacebar'){ e.preventDefault(); this.click(); }
+    });
+  }
+
+
+  function setCount(n){
+    var badge = hd.querySelector('.pn-hd__cartbadge');
+    if(badge){ badge.textContent = n; badge.style.display = n > 0 ? 'block' : 'none'; }
+    var mc = panel ? panel.querySelector('.pn-hd__mcartcount') : null;
+    if(mc) mc.textContent = n > 0 ? ' (' + n + ')' : '';
+  }
+  function readCart(url, thenTry){
+    fetch(url, {credentials:'same-origin'})
+      .then(function(r){ return r.ok ? r.json() : Promise.reject(); })
+      .then(function(d){ if(d && typeof d.items_count === 'number') setCount(d.items_count); })
+      .catch(function(){ if(thenTry) readCart(thenTry, null); });
+  }
+  /* v18.7: WooCommerce sets this cookie only while the cart holds something */
+  function hasCart(){ return /(^|;\s*)woocommerce_items_in_cart=1/.test(document.cookie); }
+  function updateCart(force){
+    if(typeof window.__PN_PREVIEW_CART === 'number'){ setCount(window.__PN_PREVIEW_CART); return; }
+    if(!window.fetch) return;
+    if(force !== true && !hasCart()){ setCount(0); return; }
+    readCart('/wp-json/wc/store/v1/cart', '/?rest_route=/wc/store/v1/cart');
+  }
+  updateCart();
+  window.addEventListener('pageshow', function(e){
+    if(e.persisted){
+      if(toggle && toggle.checked){ toggle.checked = false; }
+      syncPanel();
+      updateCart();
+    }
+  });
+  if(window.jQuery){
+    window.jQuery(document.body).on(
+      'added_to_cart removed_from_cart updated_cart_totals wc_fragments_refreshed wc_fragments_loaded',
+      function(){ updateCart(true); });
+  }
+})();
+</script>
