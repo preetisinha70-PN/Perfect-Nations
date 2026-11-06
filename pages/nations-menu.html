@@ -1,7 +1,9 @@
 <!-- ===========================================================================
-PERFECT NATIONS - THE NATIONS MENU - v2.1 - 2026-11-05
+PERFECT NATIONS - THE NATIONS MENU - v2.2 - 2026-11-06
 One Elementor Custom HTML widget, directly under the header (homepage, and any page).
 The bar is Earthrise, so the header flows through it into the homepage section below.
+v2.2: on the homepage the moving list holds still, so the Capital Wire under the planet is the
+  one moving band there; the play button starts the list. Every other page is unchanged.
 v2.1: every nation is open.
   - All 195 names in the moving list and in the menu are gold and can be chosen.
     A star marks a blueprint published in full.
@@ -1181,6 +1183,13 @@ oc Australia and Oceania.
       if (layer === 'menu') { lock(phone()); }
     });
 
+    /* v2.2: on the homepage the list holds still (the Capital Wire is the one moving band there) */
+    if (pauseBtn && document.body && document.body.classList.contains('home')) {
+      root.classList.add('is-paused');
+      pauseBtn.setAttribute('aria-pressed', 'true');
+      pauseBtn.setAttribute('aria-label', 'Play the moving list');
+      pauseBtn.innerHTML = '&#9654;';
+    }
     if (pauseBtn) {
       pauseBtn.addEventListener('click', function () {
         var p = root.classList.toggle('is-paused');
