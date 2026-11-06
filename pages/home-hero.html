@@ -1,12 +1,18 @@
 <!-- ===========================================================================
-PERFECT NATIONS - HOMEPAGE - SECTION 01 - CIVILIZATION RE-DEFINED - v5.5 - 2026-11-06
+PERFECT NATIONS - HOMEPAGE - SECTION 01 - CIVILIZATION RE-DEFINED - v5.6 - 2026-11-06
 Served live from GitHub (pages/home-hero.html) by the Perfect Nations Live Pages plugin;
 the root id stays pn-hero, so the widget already on the homepage is the one replaced.
+v5.6: the planet's colours carry meaning. The 44 open blueprints are bright gold (#FFD45C) with a
+  soft glow and stand a little higher; every other nation is a quieter antique gold (#CDAC60); a touched
+  nation turns pale gold (#FFE9A6). Borders are deep bronze. The sea is a deeper ultramarine
+  (#1440A0 falling to #081D52), which stands apart from the Earthrise ground. The gold flecks are
+  fewer and smaller, so the open nations lead. Ring, halo and background are unchanged.
 v5.5: the objective in one line, directly under "Designing the Prosperity of Nations": Perfect
   Nations helps every nation guarantee seven basic standards of living to every citizen, paid for
   by the wealth it already owns. The planet band is 40 px shorter on laptops, so the line shows on
   the first screen. The second button is "How it works" (the five moves). The Story
-  of Perfect Nations loses its lead paragraph, which the new line now says.
+  of Perfect Nations loses its lead paragraph, which the new line now says. Its closing line is
+  smaller, and on phones the runner band is shorter (3:2) with wider margins (24 px).
 v5.4: "Find on the planet". The Capital Wire (Section 01b v2.0) can turn the planet to a nation,
   raise it in bright gold and pin it with gold rings and the deal figure for nine seconds
   (window.pnhgFocus). Nothing else changes.
@@ -358,8 +364,8 @@ If the address differs, change it in the two places it appears (search for pn-ho
 #pn-race .pnr-seven li::before{ content:"\2605"; font-family:Arial,sans-serif; font-size:.7rem; color:var(--g); }
 
 #pn-race .pnr-close{
-  margin:clamp(16px,2.6vh,26px) auto 0; padding:0 0 clamp(20px,3.4vh,36px); max-width:34ch;
-  font-family:var(--hd); font-weight:500; font-size:clamp(1.35rem,2.4vw,2.1rem); line-height:1.12; letter-spacing:-.01em; color:var(--er);
+  margin:clamp(14px,2.2vh,22px) auto 0; padding:0 0 clamp(18px,3vh,30px); max-width:40ch;
+  font-family:var(--hd); font-weight:500; font-size:clamp(1.2rem,1.9vw,1.7rem); line-height:1.15; letter-spacing:-.005em; color:var(--er);
   text-wrap:balance;
 }
 #pn-race .pnr-close a{
@@ -372,11 +378,13 @@ If the address differs, change it in the two places it appears (search for pn-ho
 #pn-race .pnr-close span{ display:block; }
 
 @media (max-width:760px){
-  #pn-race .pnr-band{ aspect-ratio:4/3.1; }
+  #pn-race .pnr-band{ aspect-ratio:3/2; }
+  #pn-race .pnr-in{ padding:0 24px; }
+  #pn-race .pnr-top{ padding:22px 0 14px; }
   #pn-race .pnr-seven{ gap:2px 12px; font-size:.7rem; letter-spacing:.14em; }
   #pn-race .pnr-h2a{ font-size:clamp(2.2rem,10.4vw,2.9rem); }
-  #pn-race .pnr-h2b{ font-size:clamp(1.15rem,5.2vw,1.4rem); }
-  #pn-race .pnr-close{ font-size:clamp(1.3rem,6vw,1.55rem); }
+  #pn-race .pnr-h2b{ font-size:clamp(1.05rem,4.7vw,1.28rem); }
+  #pn-race .pnr-close{ margin-top:14px; padding-bottom:20px; font-size:clamp(1.05rem,4.6vw,1.2rem); line-height:1.2; }
 }
 @media (prefers-reduced-motion:reduce){
   #pn-race *{ animation:none !important; }
@@ -673,19 +681,19 @@ window.PNHG_CFG={"base":"https://perfectnations.org/blueprints/","paths":{"cote-
   }
 
   /* ---- THE GOLDEN EARTH ---- */
-  var OCEAN = '#123F86', OCEAN_DEEP = '#0A2558', OCEAN_SPEC = '#7FAEE8';
+  var OCEAN = '#1440A0', OCEAN_DEEP = '#081D52', OCEAN_SPEC = '#86B2EE';
   var GOLD = {
-    live: { c:'#F5D36C', e:'#7A5A16', ei:0.55, s:'#FFF6D2', sh:30 },
-    soon: { c:'#EDC95E', e:'#6E5214', ei:0.52, s:'#FFF1C4', sh:28 },
-    none: { c:'#C9A552', e:'#4A3A12', ei:0.45, s:'#E8D49A', sh:20 },
-    hov:  { c:'#FFE59A', e:'#8E6A1E', ei:0.62, s:'#FFFFFF', sh:36 }
+    live: { c:'#FFD45C', e:'#A57A14', ei:0.72, s:'#FFF6D2', sh:34 },
+    soon: { c:'#D2B266', e:'#5E4916', ei:0.50, s:'#EAD8A4', sh:20 },
+    none: { c:'#CDAC60', e:'#584414', ei:0.48, s:'#E6D29C', sh:18 },
+    hov:  { c:'#FFE9A6', e:'#9A7420', ei:0.70, s:'#FFFFFF', sh:38 }
   };
   var SIDE = '#5A4413';
-  var ALT = { none:0.0080, soon:0.0120, live:0.0120 }, ALT_HOV = 0.0260, ALT_UP = 0.0030;
+  var ALT = { none:0.0080, soon:0.0100, live:0.0150 }, ALT_HOV = 0.0260, ALT_UP = 0.0030;
   var ENCLAVE = { 'lesotho':1, 'san-marino':1, 'holy-see':1 };
-  var BORDER = '#0A1E3F';
+  var BORDER = '#4A360C';
   var LABEL = { live:'Blueprint published in full', soon:'Blueprint in preparation' };
-  var MARK = { live:{ color:'#F5DFA0', alt:0.016, rad:0.42 }, soon:{ color:'#E3C258', alt:0.014, rad:0.36 } };
+  var MARK = { live:{ color:'#FFE07A', alt:0.018, rad:0.44 }, soon:{ color:'#D2B266', alt:0.013, rad:0.34 } };
   var MIN_ALT = 0.55, MAX_ALT = 4.2, STEP = 1.22;
   var ATMO = 0.2, ATMO_COLOR = '#F4D06A';
   var HOLD_MS = 1600;
@@ -905,7 +913,7 @@ window.PNHG_CFG={"base":"https://perfectnations.org/blueprints/","paths":{"cote-
         });
         var g = new THREE.BufferGeometry();
         g.setAttribute('position', new THREE.Float32BufferAttribute(v, 3));
-        var ln = new THREE.LineSegments(g, new THREE.LineBasicMaterial({ color: new THREE.Color(BORDER), transparent: true, opacity: 0.72, depthWrite: false }));
+        var ln = new THREE.LineSegments(g, new THREE.LineBasicMaterial({ color: new THREE.Color(BORDER), transparent: true, opacity: 0.85, depthWrite: false }));
         ln.raycast = function(){};
         globe.scene().add(ln);
         made.push(ln);
@@ -931,7 +939,7 @@ window.PNHG_CFG={"base":"https://perfectnations.org/blueprints/","paths":{"cote-
     }
     try {
       var small = window.matchMedia('(max-width: 760px)').matches;
-      var NS = small ? 3400 : 5200, GA = Math.PI * (3 - Math.sqrt(5)), seed = 7;
+      var NS = small ? 2200 : 3300, GA = Math.PI * (3 - Math.sqrt(5)), seed = 7;
       function rnd(){ seed = (seed * 16807) % 2147483647; return (seed - 1) / 2147483646; }
       var pos = [], size = [], phase = [], speed = [], n;
       for (n = 0; n < NS; n++){
@@ -941,8 +949,8 @@ window.PNHG_CFG={"base":"https://perfectnations.org/blueprints/","paths":{"cote-
         if (Math.abs(lat) > 74 || rnd() > 0.62 || !atSea(lng, lat)) { continue; }
         var p = globe.getCoords(lat, lng, 0.004);
         pos.push(p.x, p.y, p.z);
-        var glint = rnd() < 0.05;
-        size.push(glint ? 4.6 + rnd() * 1.8 : 1.8 + rnd() * 1.6);
+        var glint = rnd() < 0.04;
+        size.push(glint ? 3.6 + rnd() * 1.4 : 1.4 + rnd() * 1.2);
         phase.push(rnd() * 6.283);
         speed.push(0.5 + rnd() * 1.4);
       }
