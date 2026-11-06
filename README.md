@@ -60,6 +60,35 @@ Each live blueprint reads its own file: `data/<nation>.json` (barbados, kenya, .
 - The Correspondent (8 am, 12 noon and 8 pm) also adds every instrument it verifies for a nation to that nation's `newswire`, and sets that file's `updated`. It never edits `barbados.json` (Nia keeps the Barbados Newswire) and changes nothing else in a nation file.
 - Dispatches share one numbered series across every file in `data/` and every open pull request.
 
+## The Capital Wire file (homepage ticker)
+
+`data/ticker.json` drives the Capital Wire, the moving deal tape under the homepage hero (Section 01b v2.0 and later, root id `pn-tick`). It is a short extract of the wire, about 5 KB, so the homepage never downloads the full State of Nations file. Kept by the Correspondent: rebuilt on every run that changes the wire, and on the first run of each day so items older than 14 days leave the tape. If the file is missing or malformed, the tape shows the deals built into the widget.
+
+```
+{
+ "page": "ticker",                      // must be exactly this
+ "updated": "YYYY-MM-DD",               // the run that last changed the wire
+ "edition": "8 am",                     // "8 am" or "8 pm" (New York)
+ "count": { "deals": 64, "nations": 44 },  // wire entries in state-of-nations.json; distinct names in their nations lists
+ "items": [ ... ]                       // 8 to 12, in the order shown
+}
+```
+
+**Item**
+
+| field | rule |
+|---|---|
+| `date`, `type`, `title`, `source`, `url` | copied unchanged from the item's entry in `data/state-of-nations.json`; the url must be on the wire |
+| `nation` | the label shown, from the wire entry's `where` |
+| `slug` | the nation's slug on the homepage planet (lowercase, hyphens, no "The": `bahamas`, `cote-divoire`, `dr-congo`, `united-states`); "" for a regional item. A slug the planet does not know simply hides "Find on the planet" |
+| `figure` | the headline amount as the source states it, compact: `US$5.2bn`, `EUR 4.5bn`, `US$175m`, `FCFA 143bn`, `MAD 1bn`. Never converted, never estimated; an item without a sourced amount does not go on the tape |
+| `line` | what it is, 2 to 7 words, sentence case, no figure, no contractions ("External bond", "IDB guarantee turns debt savings into health") |
+| `signal` | one of `Record`, `First`, `Oversubscribed`, `Innovative`, or "" (see below) |
+
+**Signals**: `Record` only when the source calls it a record (largest, lowest cost, record demand); `First` only when the source calls it a first (first issue, first in a currency, first of its kind); `Oversubscribed` only when the source reports demand or proceeds above the amount offered or targeted; `Innovative` for debt swaps, guarantees and credit enhancement, catastrophe bonds and parametric cover, forest and nature funds, results-based and outcome finance, carbon and Article 6, and tokenisation.
+
+**Order**: wire items from the last 14 days (30 if fewer than eight qualify): first those with a signal, in the order Record, First, Oversubscribed, Innovative; then the rest, largest amount first (rank by the US dollar size the source gives or implies; the figure shown stays in the source's currency); newest first on ties. At most 12.
+
 ## The State of Nations file
 
 Read on every visit by https://perfectnations.org/state-of-nations/ (page v6.1 and later). Kept by the Correspondent, Steward of the Wire. If the file is missing or malformed, the page shows the copy built into it.
