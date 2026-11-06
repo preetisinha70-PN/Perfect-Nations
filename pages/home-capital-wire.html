@@ -358,7 +358,7 @@ earlier Section 01 the button still scrolls up to the planet.
   }
   function same(a){
     if (!a || a.items.length !== items.length) { return false; }
-    for (var i = 0; i < a.items.length; i++) { if (a.items[i].url !== items[i].url || a.items[i].figure !== items[i].figure) { return false; } }
+    for (var i = 0; i < a.items.length; i++) { var o = a.items[i], q = items[i]; if (o.url !== q.url || o.figure !== q.figure || o.line !== q.line || o.signal !== q.signal || o.nation !== q.nation) { return false; } }
     return true;
   }
   /* the same deals keep their place on the tape; only the counts change */
