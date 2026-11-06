@@ -1,6 +1,7 @@
 <!-- ===========================================================================
 PERFECT NATIONS - THE NATIONS MENU - v2.1 - 2026-11-05
 One Elementor Custom HTML widget, directly under the header (homepage, and any page).
+The bar is Earthrise, so the header flows through it into the homepage section below.
 v2.1: every nation is open.
   - All 195 names in the moving list and in the menu are gold and can be chosen.
     A star marks a blueprint published in full.
@@ -50,14 +51,15 @@ oc Australia and Oceania.
 /* ---------- the bar ---------- */
 #pn-nations .pnn-bar{
   display:flex; align-items:stretch; height:46px; overflow:hidden;
-  background:linear-gradient(180deg,#14100A 0%,#0B0906 100%);
-  border-bottom:1px solid rgba(227,194,88,.28);
+  background:linear-gradient(180deg,var(--er) 0%,var(--er2) 100%);
+  border-top:1px solid rgba(227,194,88,.16);
+  border-bottom:1px solid rgba(227,194,88,.3);
 }
 #pn-nations .pnn-all{
   flex:none; position:relative; z-index:2;
   display:flex; align-items:center; gap:9px;
   margin:0; padding:0 20px 0 clamp(14px,2.4vw,28px); border:0; border-radius:0;
-  background:linear-gradient(90deg,#1E1810 0%,#1E1810 84%,rgba(30,24,16,0) 100%);
+  background:linear-gradient(90deg,var(--er3) 0%,var(--er3) 84%,rgba(8,42,48,0) 100%);
   color:var(--iv); cursor:pointer; text-decoration:none; white-space:nowrap;
   font-family:var(--hd); font-size:.72rem; font-weight:700; letter-spacing:.2em; text-transform:uppercase; line-height:1;
   transition:color .2s ease;
@@ -96,7 +98,7 @@ oc Australia and Oceania.
 
 #pn-nations .pnn-side{
   flex:none; position:relative; z-index:2; display:flex; align-items:center; gap:8px;
-  padding:0 clamp(10px,2vw,24px) 0 12px; background:#1E1810;
+  padding:0 clamp(10px,2vw,24px) 0 12px; background:var(--er3);
 }
 #pn-nations .pnn-find{
   display:inline-flex; align-items:center; justify-content:center; gap:8px;
