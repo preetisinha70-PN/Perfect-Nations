@@ -415,7 +415,7 @@ Ground: laterite (red earth). Photographs at full colour, no veil; text sits on 
 (function(){
   var el = document.getElementById('pnfbCount');
   if (!el || !window.fetch) { return; }
-  fetch('https://raw.githubusercontent.com/preetisinha70-PN/perfect-nations/main/pages/manifest.json', { cache: 'default' })
+  fetch('https://raw.githubusercontent.com/preetisinha70-PN/perfect-nations/main/pages/manifest.json', { cache: 'no-cache' })
     .then(function(r){ return r.ok ? r.json() : null; })
     .then(function(d){
       if (!d || !d.pages) { return; }
