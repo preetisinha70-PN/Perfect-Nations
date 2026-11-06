@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-05",
+  "updated": "2026-11-06",
   "about": "Pages served live on perfectnations.org by the Perfect Nations Live Pages plugin. Each key is the id of the page's root element; the plugin serves the file in place of any pasted Custom HTML widget that contains that id. A key written as root@post-slug applies on that one post only, and is used before the plain root (plugin 1.1 or later). 'redirects' lists same-site paths answered with a 301 (plugin 1.1 or later). A change merged into main appears on the site within about ten minutes.",
   "pages": {
     "pn-hd": {
@@ -589,6 +589,18 @@
       "version": "9.2",
       "title": "Côte d’Ivoire blueprint (replaces the August 2026 page, root pn-ci-blueprint)",
       "url": "https://perfectnations.org/blueprints/cote-d-ivoire/"
+    },
+    "pn-nations": {
+      "file": "pages/nations-menu.html",
+      "version": "2.1",
+      "title": "Nations Menu (the moving list of nations, every page it sits on)",
+      "url": "https://perfectnations.org/"
+    },
+    "pn-hero": {
+      "file": "pages/home-hero.html",
+      "version": "5.0",
+      "title": "Homepage section 01, Civilization Re-Defined (the golden planet), and section 01a, The Only Race Worth Winning",
+      "url": "https://perfectnations.org/"
     }
   },
   "redirects": {
