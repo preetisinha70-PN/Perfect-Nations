@@ -5,6 +5,7 @@ This repository holds the live data that the Perfect Nations blueprints on perfe
 - `data/<nation>.json`: each nation blueprint (barbados, kenya, ...). Kept current by its Nation Steward in the Nations Newswire Stewards rotation; Barbados (Nia Carrington) at least once a day.
 - `data/state-of-nations.json`: the State of Nations page (the wire of instruments and the dispatches). Kept current at 8 am and 8 pm New York time by the Correspondent, Steward of the Wire.
 - `archive/`: older Newswire items and dispatches, moved out of the nation files and never deleted (see The archive).
+- `figures/perfect-capita.json`: the live figures on the Perfect Capita page (perfectnations.org/perfect-capita/). Kept by the Perfect Capita Steward (see The Perfect Capita page). It is not a nation file, which is why it sits outside `data/`.
 
 Each page reads its file from
 `https://raw.githubusercontent.com/preetisinha70-PN/perfect-nations/main/data/<nation>.json`
@@ -160,3 +161,20 @@ Outline (the comments are notes, not part of the file):
 | `sources` | list of {"label", "url"}, every url https |
 
 A dispatch with neither `url` nor `body` shows "In press". Wire items are committed straight to main. A new dispatch is proposed only as a pull request titled "For approval: Dispatch No. NN" and goes live when Preeti Sinha, President and CEO, merges it.
+
+## The Perfect Capita page
+
+The page is one file, `pages/perfect-capita.html` (root `pn-pcap`), served by the Live Pages plugin. It is kept by the **Perfect Capita Steward**, which owns the page and nothing else.
+
+- **Page code** goes through a pull request. Edit `src/perfect-capita.html`, never the built file, then run `python3 tools/build_perfect_capita.py`: it adds the painted seams (shared with the homepage, `pages/home-seams.html`), writes `pages/perfect-capita.html` and runs the validation suite (`tools/check_page.py`). Raise the version in the source banner and in `pages/manifest.json`, render previews with `python3 tools/preview_page.py pages/perfect-capita.html`, and open "For approval: Perfect Capita vX.Y, [what changed]".
+- **Figures** live in `figures/perfect-capita.json`. The page reads it on every visit (raw.githubusercontent.com, then jsDelivr) and fills every element marked `data-pc="path"` with the text at that path, and every `data-pc-href` link with an https url. After the Auditor the Steward commits this file straight to main, like a nation file. If the file is unreadable, is for another page, or breaks the rules below, the page keeps the figures written into it.
+
+| Field | What it drives on the page |
+|---|---|
+| `page` | Must be `"perfect-capita"` |
+| `updated`, `checked` | The last change (YYYY-MM-DD) and the last check (YYYY-MM-DDTHH:MMZ, UTC); not shown |
+| `world` | The world today: exactly seven, in the order Food, Water, Shelter, Energy, Education, Health, Livelihood. Each: `standard`, `value` (for example "2.1"), `unit` ("bn", "m", " in 10"), `text` (one line, starting with the people it counts), `source` (the link text: publisher, year, and the data year) and `url` (the primary source) |
+| `nations` | It has been done: exactly five, in the order Thailand, Vietnam, Singapore, Brazil, Rwanda (to change a nation, change the page by pull request). Each: `nation`, `standard`, `figure`, `what`, `source`, `url` |
+| `first` | The first nation priced (Barbados), copied from `data/barbados.json` `coverage` and the Measurer's floor: `perfect_capita`, `price`, `coverage`, `set_by`, `gap` and `lead` (two sentences). Never changed here before the Measurer changes them |
+
+Every text is plain, without contractions, under 400 characters; every url https with no quotes, brackets or spaces. The seven world figures overlap and are never added together.
