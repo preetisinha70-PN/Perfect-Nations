@@ -98,8 +98,10 @@ def count_ledger():
             missing.append('%s: add its latitude and longitude to PLACES in this script' % stem)
             continue
         lat, lon = PLACES[stem]
+        lead = items[0]
+        top = {'name': lead['name'], 'figure': lead['figure'], 'label': lead.get('label') or '', 'money': bool(lead.get('money'))}
         nations.append({'file': stem, 'name': d.get('nation') or stem, 'url': urls[stem], 'assets': len(items),
-                        'lat': lat, 'lon': lon})
+                        'lat': lat, 'lon': lon, 'top': top})
     if missing:
         sys.exit('cannot count the ledger:\n  ' + '\n  '.join(missing))
     nations.sort(key=lambda n: n['name'])
@@ -208,7 +210,7 @@ def build(d):
     src = src.split('-->', 1)[1].lstrip('\n')   # the source banner is not served
     seams = (PAGES / 'home-seams.html').read_text(encoding='utf-8').strip()
     ledger = d['ledger']
-    seed = {'nations': [{k: n[k] for k in ('name', 'url', 'assets', 'lat', 'lon')} for n in d['nations']]}
+    seed = {'nations': [{k: n[k] for k in ('name', 'url', 'assets', 'lat', 'lon', 'top')} for n in d['nations']]}
     page = (src.replace('@@SEAMS@@', seams)
                .replace('@@FEATURED@@', render_featured(d['featured']))
                .replace('@@NATIONLIST@@', render_nations(d['nations']))

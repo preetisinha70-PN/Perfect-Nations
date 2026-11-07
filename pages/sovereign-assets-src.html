@@ -15,8 +15,12 @@ goes through a pull request "For approval: Sovereign Assets vX.Y, [what changed]
 v6.0 (6 Nov 2026): one file, kept in GitHub; the homepage design system (Earthrise and ivory
 grounds, gold only for actions, the cup icon, the painted seams, the five moves, SI); compact on
 laptops and phones; the ledger counted live from the 44 open blueprints.
+v6.1 (6 Nov 2026): the gold lights open their nation (a tap or click shows the nation, its lead
+asset and a link to its blueprint; a hover names it). On laptops the stage of five assets grows to
+fit its tallest panel, so no figure is cut on shorter laptop windows (seen at 1366 x 657). On
+phones each class label keeps to one line, so the figures in a row line up.
 =========================================================================== -->
-<div id="pn-sov" class="pnsa" data-v="6.0">
+<div id="pn-sov" class="pnsa" data-v="6.1">
 <style>
 #pn-sov{
   --er:#0B3D45; --lg:#0F4C5C; --dp:#082A30; --plate:#0A3840;
@@ -131,6 +135,22 @@ laptops and phones; the ledger counted live from the 44 open blueprints.
 }
 #pn-sov .sa-planet canvas{ position:absolute; inset:0; width:100%; height:100%; touch-action:pan-y; cursor:grab; }
 #pn-sov .sa-planet canvas:active{ cursor:grabbing; }
+#pn-sov .sa-pin{
+  position:absolute; z-index:3; width:min(250px,84%); padding:12px 14px 12px 16px; border-radius:16px; text-align:left;
+  background:var(--plate); border:1px solid rgba(var(--grgb),.6); box-shadow:0 18px 42px rgba(2,20,24,.55); color:var(--fg);
+}
+#pn-sov .sa-pin__k{ margin:0; padding-right:50px; font-family:var(--hd); font-size:.6rem; font-weight:700; letter-spacing:.2em; text-transform:uppercase; color:var(--dim); }
+#pn-sov .sa-pin__h{ margin:3px 0 0; padding-right:50px; font-family:var(--hd); font-weight:600; font-size:1.5rem; line-height:1; letter-spacing:-.01em; color:var(--fg); }
+#pn-sov .sa-pin__a{ margin:8px 0 0; font-size:.84rem; line-height:1.35; color:var(--mut); }
+#pn-sov .sa-pin__a b{ display:block; margin-bottom:2px; font-family:var(--hd); font-weight:700; font-size:1.6rem; line-height:1; letter-spacing:-.02em; color:var(--fg); }
+#pn-sov .sa-pin__a b.is-money{ color:var(--g); }
+#pn-sov .sa-pin .sa-go{ margin-top:6px; }
+#pn-sov .sa-pin__x{
+  position:absolute; top:6px; right:6px; display:flex; align-items:center; justify-content:center; width:46px; height:46px; padding:0;
+  border-radius:50%; border:1.5px solid var(--g); background:transparent; color:var(--g); cursor:pointer;
+  font-family:Arial,sans-serif; font-size:1.25rem; line-height:1;
+}
+#pn-sov .sa-pin__x:hover{ background:var(--g); color:var(--onacc); }
 #pn-sov .sa-planet figcaption{ margin:6px auto 0; max-width:34ch; text-align:center; font-size:.8rem; line-height:1.4; color:var(--dim); }
 #pn-sov .sa-planet figcaption b{ color:var(--fg); font-weight:600; }
 
@@ -219,8 +239,8 @@ laptops and phones; the ledger counted live from the 44 open blueprints.
 /* laptops, with the script: one stage, five tabs */
 @media (min-width:900px){
   #pn-sov.is-js .sa-stage{ display:grid; grid-template-columns:minmax(0,1fr) clamp(236px,21vw,290px); gap:12px; }
-  #pn-sov.is-js .sa-scenes{ display:block; position:relative; height:clamp(400px,61vh,570px); border-radius:22px; overflow:hidden; background:var(--dp); box-shadow:0 24px 60px rgba(2,20,24,.42); }
-  #pn-sov.is-js .sa-sc{ position:absolute; inset:0; display:block; border-radius:0; box-shadow:none; background:transparent; opacity:0; visibility:hidden; transition:opacity .7s ease, visibility 0s linear .7s; }
+  #pn-sov.is-js .sa-scenes{ display:grid; grid-template-columns:minmax(0,1fr); position:relative; min-height:clamp(400px,61vh,570px); border-radius:22px; overflow:hidden; background:var(--dp); box-shadow:0 24px 60px rgba(2,20,24,.42); }
+  #pn-sov.is-js .sa-sc{ grid-area:1 / 1; position:relative; display:flex; flex-direction:row; align-items:flex-end; border-radius:0; box-shadow:none; background:transparent; opacity:0; visibility:hidden; transition:opacity .7s ease, visibility 0s linear .7s; }
   #pn-sov.is-js .sa-sc.is-on{ opacity:1; visibility:visible; transition:opacity .7s ease; }
   #pn-sov.is-js .sa-sc{ z-index:0; }
   #pn-sov.is-js .sa-sc.is-on{ z-index:1; }
@@ -229,11 +249,11 @@ laptops and phones; the ledger counted live from the 44 open blueprints.
   #pn-sov.is-js .sa-sc.is-on .sa-sc__img{ transform:scale(1); }
   #pn-sov.is-js .sa-sc__n{ display:none; }
   #pn-sov.is-js .sa-sc__plate{
-    position:absolute; z-index:2; left:16px; bottom:16px; width:min(450px,47%); max-height:calc(100% - 32px); justify-content:flex-end;
+    position:relative; z-index:2; flex:none; margin:16px; width:min(450px,47%); justify-content:flex-end;
     padding:clamp(18px,2vw,30px); border-radius:18px; border-top:3px solid var(--iv); background:var(--plate);
     box-shadow:0 24px 54px rgba(2,20,24,.5);
   }
-  #pn-sov.is-js .sa-sc__fig b{ font-size:clamp(3.6rem,min(6.6vw,11vh),7rem); }
+  #pn-sov.is-js .sa-sc__fig b{ font-size:clamp(3.4rem,min(6.2vw,10.5vh),6.6rem); }
   #pn-sov.is-js .sa-sc__fig small{ font-size:clamp(1.5rem,min(2.6vw,4.4vh),2.8rem); }
   #pn-sov.is-js .sa-sc__line{ margin-top:8px; font-family:var(--hd); font-weight:600; font-size:clamp(1rem,1.3vw,1.2rem); letter-spacing:.01em; line-height:1.2; color:var(--fg); }
   #pn-sov.is-js .sa-sc__h{ margin-top:clamp(12px,2vh,20px); font-size:clamp(1.7rem,2.6vw,2.4rem); }
@@ -354,6 +374,8 @@ laptops and phones; the ledger counted live from the 44 open blueprints.
   #pn-sov .sa-sc__line{ font-size:.76rem; }
   #pn-sov .sa-sc__h{ font-size:1.1rem; }
   #pn-sov .sa-sc__who{ font-size:.54rem; letter-spacing:.1em; }
+  #pn-sov .sa-sc:not(:first-child) .sa-sc__cls{ gap:6px; font-size:.54rem; letter-spacing:.09em; white-space:nowrap; }
+  #pn-sov .sa-sc:not(:first-child) .sa-sc__cls::before{ width:8px; height:8px; }
   #pn-sov .sa-sc__src{ font-size:.6rem; }
   #pn-sov .sa-sc:first-child .sa-sc__fig b{ font-size:2.9rem; }
   #pn-sov .sa-sc:first-child .sa-sc__h{ font-size:1.5rem; }
@@ -394,8 +416,16 @@ laptops and phones; the ledger counted live from the 44 open blueprints.
         <p class="sa-lead">Water, land, people, coast, forest, energy, minerals and institutions: recorded nation by nation with super intelligence (SI), so that what a country holds can finance seven basic standards of living for all.</p>
       </div>
       <figure class="sa-planet" aria-label="The golden planet of the ledger: one gold light for each recorded asset">
-        <div class="sa-planet__box"><span class="sa-planet__disc" aria-hidden="true"></span><canvas id="saPlanet" aria-hidden="true"></canvas></div>
-        <figcaption>Each gold light is one recorded asset. Drag to turn the planet.</figcaption>
+        <div class="sa-planet__box"><span class="sa-planet__disc" aria-hidden="true"></span><canvas id="saPlanet" aria-hidden="true"></canvas>
+          <div class="sa-pin" id="saPin" role="dialog" aria-labelledby="saPinH" hidden>
+            <button class="sa-pin__x" type="button" aria-label="Close">&times;</button>
+            <p class="sa-pin__k"><span id="saPinN">5</span> recorded assets</p>
+            <h3 class="sa-pin__h" id="saPinH">Nation</h3>
+            <p class="sa-pin__a" id="saPinA"></p>
+            <a class="sa-go" id="saPinGo" href="https://perfectnations.org/blueprints/">Open the blueprint</a>
+          </div>
+        </div>
+        <figcaption>Each gold light is one recorded asset. Tap a nation to open it; drag to turn the planet.</figcaption>
       </figure>
       <div class="sa-facts">
         <ul class="sa-figs" aria-label="The ledger so far">
@@ -572,7 +602,8 @@ laptops and phones; the ledger counted live from the 44 open blueprints.
     });
   }
 
-  /* ---------- the golden planet: the land in antique gold, one bright light per recorded asset ---------- */
+  /* ---------- the golden planet: the land in antique gold, one bright light per recorded asset.
+     A tap or click on a nation opens its card (lead asset and blueprint); a hover names it. ---------- */
   var planet = (function(){
     var cv = document.getElementById('saPlanet');
     var land = json('saLand');
@@ -586,22 +617,25 @@ laptops and phones; the ledger counted live from the 44 open blueprints.
         if (bits.charCodeAt(k >> 3) & (128 >> (k & 7))){ L.push([lat * D, (-180 + (i + 0.5) * 360 / n) * D]); }
       }
     }
-    var P = [], lon0 = 22 * D, tilt = 14 * D, dpr = 1, W = 0, R = 0, cx = 0, cy = 0, run = false, seen = true, last = 0, raf = 0;
+    var P = [], NAT = [], lon0 = 22 * D, tilt = 14 * D, dpr = 1, W = 0, R = 0, cx = 0, cy = 0, run = false, seen = true, last = 0, raf = 0;
+    var hover = -1, picked = -1, mouse = null, held = false;
+    var pin = document.getElementById('saPin'), box = cv.parentNode;
     var glow = document.createElement('canvas'); glow.width = glow.height = 64;
     var gx = glow.getContext('2d'), gg = gx.createRadialGradient(32, 32, 0, 32, 32, 32);
     gg.addColorStop(0, 'rgba(255,240,190,1)'); gg.addColorStop(0.18, 'rgba(255,212,92,.95)'); gg.addColorStop(0.5, 'rgba(255,212,92,.28)'); gg.addColorStop(1, 'rgba(255,212,92,0)');
     gx.fillStyle = gg; gx.fillRect(0, 0, 64, 64);
     function setNations(list){
-      P = [];
+      P = []; NAT = [];
       (list || []).forEach(function(nt, j){
         if (typeof nt.lat !== 'number' || typeof nt.lon !== 'number') { return; }
+        NAT.push({ lat:nt.lat * D, lon:nt.lon * D, d:nt });
         var c = Math.max(1, Math.min(12, int(nt.assets) ? nt.assets : 1)), cl = Math.max(0.3, Math.cos(nt.lat * D));
         for (var a = 0; a < c; a++){
           var ang = a === 0 ? 0 : (a - 1) / Math.max(1, c - 1) * 2 * Math.PI + j, rr = a === 0 ? 0 : 1.5;
           P.push([(nt.lat + rr * Math.sin(ang)) * D, (nt.lon + rr * Math.cos(ang) / cl) * D, (j * 1.7 + a) % 6.28]);
         }
       });
-      if (!run) { draw(performance.now()); }
+      closePin(); redraw();
     }
     function size(){
       var w = cv.clientWidth; if (!w) { return; }
@@ -614,6 +648,35 @@ laptops and phones; the ledger counted live from the 44 open blueprints.
       var cl = Math.cos(lat), x = cl * Math.sin(lon - lon0), y = Math.sin(lat), z = cl * Math.cos(lon - lon0);
       var y2 = y * Math.cos(tilt) - z * Math.sin(tilt), z2 = y * Math.sin(tilt) + z * Math.cos(tilt);
       return [cx + R * x, cy - R * y2, z2];
+    }
+    /* the nation under a point given in CSS pixels of the canvas, or -1 */
+    function hit(x, y){
+      var best = -1, bd = Math.max(16 * dpr, R * 0.075), px2 = x * W / cv.clientWidth, py2 = y * W / cv.clientWidth;
+      for (var i = 0; i < NAT.length; i++){
+        var p = proj(NAT[i].lat, NAT[i].lon);
+        if (p[2] < 0.12) { continue; }
+        var dd = Math.sqrt((p[0] - px2) * (p[0] - px2) + (p[1] - py2) * (p[1] - py2));
+        if (dd < bd){ bd = dd; best = i; }
+      }
+      return best;
+    }
+    function ring(i, label){
+      if (i < 0 || !NAT[i]) { return; }
+      var p = proj(NAT[i].lat, NAT[i].lon);
+      if (p[2] < 0.05) { return; }
+      var rr = Math.max(14 * dpr, R * 0.07);
+      ctx.beginPath(); ctx.arc(p[0], p[1], rr, 0, 2 * Math.PI); ctx.lineWidth = 1.6 * dpr; ctx.strokeStyle = 'rgba(255,212,92,.95)'; ctx.stroke();
+      if (!label) { return; }
+      var t = NAT[i].d.name, fs = 13 * dpr;
+      ctx.font = '600 ' + fs + 'px "Barlow Condensed", "Arial Narrow", Arial, sans-serif';
+      var tw = ctx.measureText(t).width, bw = tw + 16 * dpr, bh = fs + 10 * dpr;
+      var bx = Math.max(2, Math.min(W - bw - 2, p[0] - bw / 2)), by = p[1] - rr - bh - 4 * dpr;
+      if (by < 2) { by = p[1] + rr + 4 * dpr; }
+      ctx.fillStyle = 'rgba(10,56,64,.94)'; ctx.strokeStyle = 'rgba(227,194,88,.7)'; ctx.lineWidth = 1 * dpr;
+      ctx.beginPath();
+      if (ctx.roundRect) { ctx.roundRect(bx, by, bw, bh, bh / 2); } else { ctx.rect(bx, by, bw, bh); }
+      ctx.fill(); ctx.stroke();
+      ctx.fillStyle = '#F4ECD8'; ctx.textBaseline = 'middle'; ctx.fillText(t, bx + 8 * dpr, by + bh / 2 + 0.5 * dpr);
     }
     function draw(t){
       if (!W) { return; }
@@ -650,25 +713,70 @@ laptops and phones; the ledger counted live from the 44 open blueprints.
       var lit = ctx.createRadialGradient(cx - R * 0.45, cy - R * 0.5, 0, cx - R * 0.45, cy - R * 0.5, R * 1.2);
       lit.addColorStop(0, 'rgba(255,255,255,.07)'); lit.addColorStop(1, 'rgba(255,255,255,0)');
       ctx.beginPath(); ctx.arc(cx, cy, R, 0, 2 * Math.PI); ctx.fillStyle = lit; ctx.fill();
+      if (mouse && !drag){ hover = hit(mouse[0], mouse[1]); cv.style.cursor = hover >= 0 ? 'pointer' : ''; }
+      ring(picked, false);
+      if (hover !== picked) { ring(hover, true); }
     }
+    function redraw(){ if (!run) { draw(performance.now()); } }
     function frame(t){
       raf = 0;
       if (!run) { return; }
       if (t - last > 32){
-        if (last && !drag) { lon0 += Math.min(64, t - last) * 0.0045 * D; }
+        if (last && !drag && !held && hover < 0) { lon0 += Math.min(64, t - last) * 0.0045 * D; }
         last = t; draw(t);
       }
       raf = window.requestAnimationFrame(frame);
     }
     function go(){ var want = seen && !document.hidden && !still; if (want && !run){ run = true; last = 0; if (!raf) { raf = window.requestAnimationFrame(frame); } } else if (!want){ run = false; } }
-    var drag = false, px = 0;
-    cv.addEventListener('pointerdown', function(e){ drag = true; px = e.clientX; });
-    window.addEventListener('pointermove', function(e){ if (!drag) { return; } lon0 -= (e.clientX - px) * 0.45 * D; px = e.clientX; if (!run) { draw(performance.now()); } });
-    window.addEventListener('pointerup', function(){ drag = false; });
+    function openPin(i, x, y){
+      var nt = NAT[i] && NAT[i].d;
+      if (!pin || !nt || !okUrl(nt.url, 'https://perfectnations.org/')) { return; }
+      picked = i; held = true;
+      document.getElementById('saPinN').textContent = int(nt.assets) ? nt.assets : '';
+      document.getElementById('saPinH').textContent = nt.name;
+      var a = document.getElementById('saPinA'), go2 = document.getElementById('saPinGo');
+      a.textContent = '';
+      if (nt.top && nt.top.figure && nt.top.name){
+        var fb = mk('b', nt.top.money ? 'is-money' : '', nt.top.figure);
+        a.appendChild(fb); a.appendChild(mk('span', '', nt.top.name + (nt.top.label ? ' \u00b7 ' + nt.top.label : '')));
+        a.hidden = false;
+      } else { a.hidden = true; }
+      go2.href = nt.url; go2.setAttribute('aria-label', 'Open the blueprint of ' + nt.name);
+      pin.hidden = false;
+      var bw = box.clientWidth, cw = pin.offsetWidth, ch = pin.offsetHeight;
+      var left = Math.max(4, Math.min(bw - cw - 4, x - cw / 2));
+      var top = y < bw * 0.5 ? y + 22 : y - ch - 22;
+      pin.style.left = left + 'px'; pin.style.top = Math.max(0, Math.min(bw - ch, top)) + 'px';
+      redraw();
+    }
+    function closePin(){ if (pin) { pin.hidden = true; } picked = -1; held = false; redraw(); }
+    var drag = false, px = 0, dx0 = 0, dy0 = 0, moved = 0;
+    cv.addEventListener('pointerdown', function(e){ drag = true; px = e.clientX; dx0 = e.clientX; dy0 = e.clientY; moved = 0; });
+    window.addEventListener('pointermove', function(e){
+      if (!drag) { return; }
+      moved = Math.max(moved, Math.abs(e.clientX - dx0) + Math.abs(e.clientY - dy0));
+      if (moved < 6) { return; }
+      if (picked >= 0) { closePin(); }
+      lon0 -= (e.clientX - px) * 0.45 * D; px = e.clientX; redraw();
+    });
+    window.addEventListener('pointerup', function(e){
+      if (!drag) { return; }
+      drag = false;
+      if (moved >= 6) { return; }
+      var rc = cv.getBoundingClientRect(), x = e.clientX - rc.left, y = e.clientY - rc.top, i = hit(x, y);
+      if (i >= 0) { openPin(i, x, y); } else if (picked >= 0) { closePin(); }
+    });
     window.addEventListener('pointercancel', function(){ drag = false; });
+    cv.addEventListener('pointermove', function(e){ if (e.pointerType === 'mouse'){ var rc = cv.getBoundingClientRect(); mouse = [e.clientX - rc.left, e.clientY - rc.top]; redraw(); } });
+    cv.addEventListener('pointerleave', function(){ mouse = null; hover = -1; cv.style.cursor = ''; redraw(); });
+    if (pin){
+      q('.sa-pin__x', pin).addEventListener('click', closePin);
+      document.addEventListener('keydown', function(e){ if (e.key === 'Escape' && !pin.hidden) { closePin(); } });
+      document.addEventListener('pointerdown', function(e){ if (!pin.hidden && !pin.contains(e.target) && e.target !== cv) { closePin(); } });
+    }
     size();
     var rt = null;
-    window.addEventListener('resize', function(){ if (rt) { clearTimeout(rt); } rt = setTimeout(function(){ size(); draw(performance.now()); }, 150); });
+    window.addEventListener('resize', function(){ if (rt) { clearTimeout(rt); } rt = setTimeout(function(){ size(); closePin(); }, 150); });
     if ('IntersectionObserver' in window){ new IntersectionObserver(function(es){ seen = es[0].isIntersecting; go(); }, { threshold:0.05 }).observe(cv); }
     document.addEventListener('visibilitychange', go);
     var seed = json('saSeed');
