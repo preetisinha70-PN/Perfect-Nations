@@ -1,7 +1,7 @@
 {
   "nation": "Ecuador",
   "page_version": "9.0",
-  "updated": "2026-11-05",
+  "updated": "2026-11-07",
   "steward": {
     "name": "Paola Andrade",
     "role": "Nation Steward of Ecuador"
@@ -35,9 +35,16 @@
         "url": "https://www.imf.org/en/news/articles/2026/04/22/pr26126-ecuador-the-imf-concludes-5th-review-of-eff-arrangement"
       },
       {
+        "value": "$4B",
+        "money": true,
+        "text": "International bonds 2034 and 2039, January 2026, at an average interest rate of 8.98%; $3 billion used to buy back earlier bonds",
+        "source": "IMF, 2026",
+        "url": "https://www.imf.org/-/media/files/publications/cr/2026/english/1ecuea2026001-source-pdf.pdf"
+      },
+      {
         "value": "$800M",
         "money": true,
-        "text": "Subnational infrastructure finance: Through Banco de Desarrollo del Ecuador",
+        "text": "Subnational infrastructure finance through Banco de Desarrollo del Ecuador, approved September 2026: three phases over ten years, the first of $200 million",
         "source": "World Bank, 2026",
         "url": "https://www.worldbank.org/en/news/press-release/2026/09/24/world-bank-group-expands-subnational-infrastructure-finance-in-ecuador"
       },
@@ -47,34 +54,76 @@
         "text": "Reforms for investment and jobs: IBRD loan",
         "source": "World Bank, 2026",
         "url": "https://www.worldbank.org/en/news/press-release/2026/07/28/world-bank-group-supports-reforms-to-promote-investment-and-jobs-in-ecuador"
+      },
+      {
+        "value": "54.3%",
+        "money": false,
+        "text": "Public sector debt to GDP at end-2025",
+        "source": "IMF, 2026",
+        "url": "https://www.imf.org/-/media/files/publications/cr/2026/english/1ecuea2026001-source-pdf.pdf"
       }
     ],
     "register": [
       {
-        "cat": "multi",
-        "status": "Active",
+        "cat": "govt",
+        "status": "Priced",
         "tone": "active",
-        "name": "Extended Fund Facility",
-        "detail": "Approved May 2024, augmented July 2025 · Fifth review 22 April 2026",
-        "amount": "$5B",
+        "name": "International bonds 2034 and 2039",
+        "detail": "Issued January 2026 · average interest rate 8.98% · $3 billion used to buy back earlier bonds",
+        "amount": "$4B",
         "money": true,
-        "note": "About $3.7 billion disbursed; about $394 million released in April 2026",
-        "text": "Growth of 2.5 percent is projected for 2026.",
+        "note": "Net $1 billion for fiscal financing",
+        "text": "Ecuador’s return to the international bond market, with new bonds maturing in 2034 and 2039. Three-quarters of the proceeds bought back earlier bonds, and the rest financed the budget that carries the seven standards.",
         "by": [
-          "International Monetary Fund"
+          "Republic of Ecuador"
         ],
-        "url": "https://www.imf.org/en/news/articles/2026/04/22/pr26126-ecuador-the-imf-concludes-5th-review-of-eff-arrangement"
+        "url": "https://www.imf.org/-/media/files/publications/cr/2026/english/1ecuea2026001-source-pdf.pdf"
+      },
+      {
+        "cat": "govt",
+        "status": "Completed",
+        "tone": "completed",
+        "name": "Amazon Biocorridor debt conversion",
+        "detail": "Announced 17 December 2024 · $1 billion of DFC political risk insurance · IDB liquidity guarantee",
+        "amount": "$1.53B",
+        "money": true,
+        "note": "About $1.53 billion of international bonds refinanced",
+        "text": "A debt conversion that refinanced international bonds and is expected to generate about $460 million for Amazon conservation over 17 years. It aims to improve the management of 4.6 million hectares of protected areas and protect 1.8 million more hectares of forests and wetlands, the source of the water and livelihoods of the Amazon.",
+        "by": [
+          "Republic of Ecuador",
+          "U.S. International Development Finance Corporation",
+          "Inter-American Development Bank"
+        ],
+        "url": "https://dfc.gov/media/press-releases/dfc-announces-1-billion-political-risk-insurance-ecuadors-first-debt"
+      },
+      {
+        "cat": "govt",
+        "status": "Completed",
+        "tone": "completed",
+        "name": "Galapagos debt-for-nature swap",
+        "detail": "11 May 2023 · $656 million blue loan · $656 million of DFC political risk insurance · $85 million IDB guarantee",
+        "amount": "$1.63B",
+        "money": true,
+        "note": "Global bonds of 2030, 2035 and 2040 exchanged",
+        "text": "Ecuador exchanged about $1.63 billion of global bonds for a $656 million blue loan, freeing more than $18 million a year for 18.5 years for marine conservation in the Galapagos through the Galapagos Life Fund. Healthy fisheries sustain food and livelihood on the islands.",
+        "by": [
+          "Republic of Ecuador",
+          "U.S. International Development Finance Corporation",
+          "Inter-American Development Bank",
+          "Galapagos Life Fund"
+        ],
+        "url": "https://ire.finanzas.gob.ec/content/2023/05/16.05.2023_Debt_for_Nature.pdf"
       },
       {
         "cat": "multi",
         "status": "Active",
         "tone": "active",
         "name": "Subnational infrastructure finance",
-        "detail": "Approved September 2026 · Multiphase programme",
+        "detail": "Approved 24 September 2026 · Multiphase programme, three phases over ten years · first phase $200 million",
         "amount": "$800M",
         "money": true,
-        "note": "Through Banco de Desarrollo del Ecuador",
-        "text": "Finances energy, transport, housing and disaster-risk projects for local governments.",
+        "note": "Through Banco de Desarrollo del Ecuador; $50 million of parallel cofinancing from AECID",
+        "text": "A ten-year programme that finances energy, transport and sustainable mobility, urban development, disaster-risk management and affordable housing for local governments. Local roads, power and homes carry the shelter and energy standards to towns that national budgets reach last.",
         "by": [
           "World Bank"
         ],
@@ -94,6 +143,237 @@
           "World Bank"
         ],
         "url": "https://www.worldbank.org/en/news/press-release/2026/07/28/world-bank-group-supports-reforms-to-promote-investment-and-jobs-in-ecuador"
+      },
+      {
+        "cat": "multi",
+        "status": "Approved",
+        "tone": "active",
+        "name": "Fiscal and jobs programme with a Catastrophe Deferred Drawdown Option",
+        "detail": "Approved 26 November 2025 · $900 million programme · $200 million Cat DDO",
+        "amount": "$1.1B",
+        "money": true,
+        "note": "Two operations in one package",
+        "text": "Budget support for sound fiscal management, private-sector growth and jobs while protecting the most vulnerable, and a contingent credit line for climate, geophysical and public health risks. It keeps health and livelihood financed when a shock strikes.",
+        "by": [
+          "World Bank"
+        ],
+        "url": "https://www.worldbank.org/en/news/press-release/2025/11/26/world-bank-supports-economic-reform-agenda-and-disaster-risk-management-efforts-in-ecuador"
+      },
+      {
+        "cat": "multi",
+        "status": "Approved",
+        "tone": "active",
+        "name": "Social Safety Net, additional financing",
+        "detail": "11 February 2025 · includes a $10 million grant from the Global Concessional Financing Facility",
+        "amount": "$110M",
+        "money": true,
+        "note": "Cash transfers for the first 1,000 days of life",
+        "text": "Cash transfers, conditional on health and child development services, for poor households with young children, with an updated Social Registry. It aims to reduce chronic child malnutrition, for the food and health standards.",
+        "by": [
+          "World Bank",
+          "Global Concessional Financing Facility"
+        ],
+        "url": "https://www.worldbank.org/en/news/press-release/2025/02/11/ecuador-and-the-world-bank-join-forces-to-strengthen-social-protection-programs"
+      },
+      {
+        "cat": "multi",
+        "status": "Active",
+        "tone": "active",
+        "name": "Mangroves for Climate (FP235)",
+        "detail": "Approved 18 July 2024 · grant · under implementation to 2030",
+        "amount": "$36.4M",
+        "money": true,
+        "note": "About 30% disbursed",
+        "text": "Restores and manages mangroves on Ecuador’s coast with local communities and shrimp farms, with results-based payments to end deforestation. Mangroves protect the fisheries and livelihoods of the coast.",
+        "by": [
+          "Green Climate Fund",
+          "Conservation International"
+        ],
+        "url": "https://www.greenclimate.fund/project/fp235"
+      },
+      {
+        "cat": "multi",
+        "status": "Active",
+        "tone": "active",
+        "name": "Extended Fund Facility",
+        "detail": "Approved May 2024, augmented July 2025 · Fifth review 22 April 2026",
+        "amount": "$5B",
+        "money": true,
+        "note": "About $3.7 billion disbursed; about $394 million released in April 2026",
+        "text": "Growth of 2.5 percent is projected for 2026.",
+        "by": [
+          "International Monetary Fund"
+        ],
+        "url": "https://www.imf.org/en/news/articles/2026/04/22/pr26126-ecuador-the-imf-concludes-5th-review-of-eff-arrangement"
+      },
+      {
+        "cat": "regional",
+        "status": "Approved",
+        "tone": "active",
+        "name": "IDB CLIMA National Water Security Program",
+        "detail": "Approved 21 October 2026 · $124.76 million IDB and GCF loans · $3.72 million GCF grant",
+        "amount": "$128.48M",
+        "money": true,
+        "note": "Green lending through Banco de Desarrollo del Ecuador",
+        "text": "A programme to improve water security for the population groups it targets, by expanding the green lending of the Development Bank of Ecuador. It is aimed at the water standard.",
+        "by": [
+          "Inter-American Development Bank",
+          "Green Climate Fund"
+        ],
+        "url": "https://www.iadb.org/en/project/EC-L1318"
+      },
+      {
+        "cat": "regional",
+        "status": "Approved",
+        "tone": "active",
+        "name": "Program to Strengthen Macroeconomic Stabilization",
+        "detail": "Approved 2 September 2026 · Special Development Lending, multi-tranche",
+        "amount": "$500M",
+        "money": true,
+        "note": "Budget support",
+        "text": "Budget support to reinforce fiscal sustainability and stability in monetary markets. A stable budget keeps the public services behind the seven standards funded.",
+        "by": [
+          "Inter-American Development Bank"
+        ],
+        "url": "https://www.iadb.org/en/project/EC-L1348"
+      },
+      {
+        "cat": "regional",
+        "status": "Approved",
+        "tone": "active",
+        "name": "Financing Low-Income Housing in Ecuador II",
+        "detail": "Approved 10 December 2025 · partial credit guarantee",
+        "amount": "$250M",
+        "money": true,
+        "note": "Affordable mortgages through financial intermediaries",
+        "text": "A guarantee that expands affordable mortgage credit for middle-income households, to reduce the housing deficit. It is aimed at the shelter standard.",
+        "by": [
+          "Inter-American Development Bank"
+        ],
+        "url": "https://www.iadb.org/en/project/EC-U0010"
+      },
+      {
+        "cat": "regional",
+        "status": "Completed",
+        "tone": "completed",
+        "name": "Institution-Strengthening Program to Prevent and Respond to Violence and Crime (IS-PREVIC)",
+        "detail": "Approved 25 June 2025 · policy-based loan · closed",
+        "amount": "$400M",
+        "money": true,
+        "note": "Budget support",
+        "text": "A policy-based loan to strengthen the State’s capacity to reduce criminal violence and illicit financial flows. Safety is the condition for a livelihood.",
+        "by": [
+          "Inter-American Development Bank"
+        ],
+        "url": "https://www.iadb.org/en/project/EC-L1301"
+      },
+      {
+        "cat": "private",
+        "status": "Approved",
+        "tone": "active",
+        "name": "Caja Central Financoop, bond for women-led microenterprises",
+        "detail": "29 September 2026 · bond of up to $20 million",
+        "amount": "$10M",
+        "money": true,
+        "note": "IDB Invest share; the rest from other investors",
+        "text": "Financing for microenterprises owned or led by women, lent through the savings and credit cooperatives affiliated with Financoop. It is aimed at the livelihood standard.",
+        "by": [
+          "IDB Invest"
+        ],
+        "url": "https://idbinvest.org/en/news-media/idb-invest-and-financoop-expand-access-financing-microenterprises-ecuador"
+      },
+      {
+        "cat": "private",
+        "status": "Approved",
+        "tone": "active",
+        "name": "Banco Internacional, syndicated loan for small and medium enterprises",
+        "detail": "24 September 2026 · IDB Invest up to $50 million · JICA TADAC fund up to $25 million",
+        "amount": "$100M",
+        "money": true,
+        "note": "With technical assistance to digitise SME lending",
+        "text": "A syndicated loan of up to $100 million that widens credit for small and medium enterprises. It is aimed at the livelihood standard.",
+        "by": [
+          "IDB Invest",
+          "JICA"
+        ],
+        "url": "https://idbinvest.org/en/news-media/idb-invest-supports-growth-smes-ecuador-together-banco-internacional"
+      },
+      {
+        "cat": "private",
+        "status": "Approved",
+        "tone": "active",
+        "name": "Villonaco III wind farm",
+        "detail": "Approved 2026 · loan · not yet signed · about 112 MW in Loja",
+        "amount": "$100M",
+        "money": true,
+        "note": "Sponsor: Cobra Group",
+        "text": "A loan for a wind farm of about 112 MW in the province of Loja, developed by Villonacoenergy. New wind power adds to the renewable electricity that already carries most of the grid, for the energy standard.",
+        "by": [
+          "IDB Invest"
+        ],
+        "url": "https://idbinvest.org/en/projects/villonaco-iii-wind-project-financing-ecuador"
+      },
+      {
+        "cat": "private",
+        "status": "Active",
+        "tone": "active",
+        "name": "Produbanco, subordinated loan",
+        "detail": "29 April 2026 · $20 million disbursed",
+        "amount": "$50M",
+        "money": true,
+        "note": "Small businesses, including those of older adults",
+        "text": "A subordinated loan that strengthens Produbanco’s capital so that it can lend more to small and medium enterprises, and to agriculture, construction, water efficiency and energy projects. It is aimed at the livelihood standard.",
+        "by": [
+          "IDB Invest"
+        ],
+        "url": "https://idbinvest.org/en/news-media/idb-invest-supports-produbanco-boost-financing-small-businesses-ecuador"
+      },
+      {
+        "cat": "private",
+        "status": "Issued",
+        "tone": "active",
+        "name": "Banco Bolivariano biodiversity bond",
+        "detail": "6 March 2026 · IDB Invest $50 million · IFC $50 million · FMO $20 million",
+        "amount": "$120M",
+        "money": true,
+        "note": "Ecuador’s first biodiversity bond",
+        "text": "A bond whose proceeds finance projects under Banco Bolivariano’s Biodiversity Financing Framework. It puts private credit behind the land and water that sustain livelihoods.",
+        "by": [
+          "IDB Invest",
+          "IFC",
+          "FMO"
+        ],
+        "url": "https://idbinvest.org/en/news-media/idb-invest-and-banco-bolivariano-launch-ecuadors-first-biodiversity-bond"
+      },
+      {
+        "cat": "private",
+        "status": "Signed",
+        "tone": "active",
+        "name": "Banco Pichincha, subordinated loan",
+        "detail": "20 January 2025 · IFC $55 million · $45 million mobilised",
+        "amount": "$100M",
+        "money": true,
+        "note": "Women-led microenterprises and climate-resilient farming and fishing",
+        "text": "A subordinated loan that expands lending to women-led microenterprises and to sustainable, climate-resilient agriculture and fishing. It is aimed at the livelihood and food standards.",
+        "by": [
+          "IFC"
+        ],
+        "url": "https://www.ifc.org/es/pressroom/2025/ifc-and-banco-pichincha-support-sustainable-development-in-ecuador"
+      },
+      {
+        "cat": "private",
+        "status": "Signed",
+        "tone": "active",
+        "name": "Produbanco, loan for biodiversity and women-owned firms",
+        "detail": "29 October 2024 · loan of up to $100 million",
+        "amount": "$100M",
+        "money": true,
+        "note": "The first loan in Ecuador with a component earmarked for biodiversity",
+        "text": "A loan for projects that conserve and restore biodiversity, climate-smart projects and credit for women-owned small and medium enterprises. It is aimed at the livelihood standard.",
+        "by": [
+          "IFC"
+        ],
+        "url": "https://www.ifc.org/en/pressroom/2024/ifc-invests-us-100-million-in-produbanco-to-promote-sustainable-development-in-ecuador-including-biodiversity"
       }
     ]
   },
@@ -162,9 +442,9 @@
       },
       {
         "name": "The Power",
-        "figure": "80.9%",
+        "figure": "73%",
         "money": false,
-        "label": "Of energy from renewables, 2021",
+        "label": "Of electricity from renewables, 2023",
         "text": "Sun, wind, water and biomass already carry part of the load; the rest is the opportunity.",
         "alt": "A hydropower dam in the Andes of Ecuador",
         "images": [
@@ -181,11 +461,46 @@
     "heading": "Already working in Ecuador.",
     "items": [
       {
-        "standard": "In preparation",
-        "name": "The enterprises building Perfect Ecuador",
-        "text": "The Stewards are verifying the companies and social enterprises already delivering the seven basic living standards in Ecuador. Suggest one to include.",
-        "source": "Suggest an enterprise",
-        "url": "mailto:contact@perfectnations.org?subject=An%20enterprise%20for%20Perfect%20Ecuador"
+        "standard": "Food",
+        "name": "Omarsa",
+        "text": "One of Ecuador’s two largest shrimp exporters, farming, processing and exporting shrimp since 1977; IFC lent up to $20 million in 2023 for a new 536-hectare farm in Guayas.",
+        "source": "IFC, 2023",
+        "url": "https://ifc.org/en/pressroom/2023/ifc-grants-loan-to-omarsa-to-boost-shrimp-production-in-ecuador"
+      },
+      {
+        "standard": "Water",
+        "name": "Interagua",
+        "text": "The private company that runs water and sanitation for Guayaquil under a 30-year concession, financed to raise water and wastewater coverage to 95% of the population by 2031.",
+        "source": "IDB Invest, 2018",
+        "url": "https://idbinvest.org/es/medios-y-prensa/bid-invest-financia-interagua-para-mejorar-el-sistema-de-agua-y-saneamiento-de-guayaquil"
+      },
+      {
+        "standard": "Shelter",
+        "name": "Compañía de Titularización Hipotecaria (CTH)",
+        "text": "Buys home mortgages from lenders and sells them as securities on Ecuador’s stock market, widening finance for housing.",
+        "source": "IDB Invest, 2019",
+        "url": "https://idbinvest.org/en/news-media/idb-invest-supports-growth-mortgage-financing-housing-ecuador"
+      },
+      {
+        "standard": "Education",
+        "name": "Universidad de Las Américas (UDLA)",
+        "text": "A private university in Quito with about 15,700 students, financed to build a new campus for up to 2,000 more.",
+        "source": "IDB Invest, 2019",
+        "url": "https://idbinvest.org/en/news-media/idb-invest-provides-financing-universidad-de-las-americas-build-its-new-campus-quito"
+      },
+      {
+        "standard": "Health",
+        "name": "Grupo Conclina",
+        "text": "Ecuador’s leading health services group and owner of the Hospital Metropolitano, the largest private hospital in the country; IFC lent $25 million in 2024 for a new hospital in Cumbayá.",
+        "source": "IFC, 2024",
+        "url": "https://www.ifc.org/en/pressroom/2024/ifc-grants-us25-million-loan-to-grupo-conclina-to-promote-health-services-in-ecuador"
+      },
+      {
+        "standard": "Livelihood",
+        "name": "Caja Central Financoop",
+        "text": "A cooperative second-tier lender with 27 years of experience, financing women-led microenterprises through savings and credit cooperatives across Ecuador.",
+        "source": "IDB Invest, 2026",
+        "url": "https://idbinvest.org/en/news-media/idb-invest-and-financoop-expand-access-financing-microenterprises-ecuador"
       }
     ]
   },
@@ -321,5 +636,6 @@
     }
   ],
   "dispatches": [],
-  "checked": "2026-11-05T11:20Z"
+  "checked": "2026-11-05T11:20Z",
+  "reviewed": "2026-11-07T19:15Z"
 }
