@@ -108,7 +108,7 @@ Entries keep the fields they had in the nation file. A URL already in a nation f
 | `updated` | "Ledger updated D Month YYYY" in the hero; set by the build whenever the ledger changes |
 | `featured` | The five assets, in order. Each: `cls` (one of the eight classes), `figure`, `unit`, `line` (the words under the figure), `name`, `nation`, `flags` (two-letter codes), `text`, `source` (the link text), `url` (the source), `link` (the blueprint), `image` (1536 px copy) and `image_small` (768 px copy) from the Media Library, and `alt` |
 
-The page itself is built, never edited by hand: `pages/sovereign-assets-src.html` (the design) and this file make `pages/sovereign-assets.html` through `python3 tools/build_sovereign_assets.py`, which also runs the validation suite. The page reads this file on every visit, so a new nation file or a refreshed figure shows without a pull request; a change to the design goes through a pull request. If the file is missing or malformed, the page shows the figures built into it.
+The page itself is built, never edited by hand: `pages/sovereign-assets-src.html` (the design) and this file make `pages/sovereign-assets.html` through `python3 tools/build_sovereign_assets.py`, which also runs the validation suite. The page reads this file on every visit, so a new nation file or a refreshed figure shows without a pull request; a change to the design goes through a pull request. If the file is missing or malformed, the page shows the figures built into it. Previews: `python3 tools/preview_sovereign_assets.py --all`.
 
 ## The Capital Wire file (homepage ticker)
 
