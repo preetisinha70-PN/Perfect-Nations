@@ -1,5 +1,10 @@
 <!-- ===========================================================================
-PERFECT NATIONS - FOOTER - v8.1 DEEP OCEAN - 2026-11-05
+PERFECT NATIONS - FOOTER - v9.0 DEEP OCEAN - 2026-11-06
+v9.0: organised. On the left, the logo and name, the line "Designing the Prosperity of Nations"
+and the one call to action. On the right, three labelled groups: The Work (Blueprints, Sovereign
+Assets, Perfect Capita, Capital Architecture, ReDesign Studio), Read (State of Nations, Letters to
+the Nations, Perfect Nations Gallery) and Perfect Nations (About, Contact, the email address). One
+line of legal text below. Phones: the logo and the button first, then the groups two across.
 v8.1: the ground turns Deep Ocean (#0A3550 falling to #072638), the deep sea beneath the
 Earthrise header. The logo is the new seven-star mark, with the earlier file as a fallback.
 The seven earths band, every link and the legal line stay the same.
@@ -35,39 +40,41 @@ Gold is used only for the call to action and the email address.
 #pn-ft .pnft-strata{ display:flex; height:3px; margin:0; padding:0; list-style:none; }
 #pn-ft .pnft-strata li{ flex:1; background:var(--c); }
 #pn-ft .pnft-in{ width:100%; max-width:1480px; margin:0 auto; padding:22px clamp(20px,5vw,72px) 16px; }
-/* one row: mark, links, the way in */
-#pn-ft .pnft-row{ display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:16px 32px; padding-bottom:16px; border-bottom:1px solid var(--hair); }
-#pn-ft .pnft-brand{ display:inline-flex; align-items:center; gap:10px; text-decoration:none; color:var(--iv); flex:none; }
-#pn-ft .pnft-logo{ width:30px; height:30px; object-fit:contain; display:block; }
-#pn-ft .pnft-word{ font-family:var(--hd); font-weight:700; font-size:1.05rem; letter-spacing:.12em; text-transform:uppercase; line-height:1; }
+/* v9.0: the brand on the left, three labelled groups on the right */
+#pn-ft .pnft-top{ display:grid; grid-template-columns:minmax(0,1fr) minmax(0,2.1fr); gap:24px clamp(32px,5vw,88px); align-items:start; padding:6px 0 20px; border-bottom:1px solid var(--hair); }
+#pn-ft .pnft-me{ display:flex; flex-direction:column; align-items:flex-start; gap:12px; }
+#pn-ft .pnft-brand{ display:inline-flex; align-items:center; gap:12px; text-decoration:none; color:var(--iv); }
+#pn-ft .pnft-logo{ width:40px; height:40px; object-fit:contain; display:block; }
+#pn-ft .pnft-word{ font-family:var(--hd); font-weight:700; font-size:1.2rem; letter-spacing:.12em; text-transform:uppercase; line-height:1; }
 #pn-ft .pnft-word sup{ font-size:.5em; letter-spacing:0; margin-left:1px; }
-#pn-ft .pnft-nav{ flex:1 1 520px; min-width:0; }
-#pn-ft .pnft-nav ul{ display:flex; flex-wrap:wrap; justify-content:center; gap:6px 18px; margin:0; padding:0; list-style:none; }
-#pn-ft .pnft-nav a{ color:var(--mut); text-decoration:none; font-family:var(--hd); font-size:.76rem; font-weight:600; letter-spacing:.09em; text-transform:uppercase; white-space:nowrap; transition:color .2s ease; }
-#pn-ft .pnft-nav a:hover{ color:var(--iv); }
-#pn-ft .pnft-reach{ display:flex; align-items:center; gap:16px; flex:none; }
-#pn-ft .pnft-mail{ color:var(--g); text-decoration:none; font-size:inherit; border-bottom:1px solid rgba(var(--grgb),.35); padding-bottom:1px; }
-#pn-ft .pnft-mail:hover{ border-color:var(--g); }
-#pn-ft .pnft-btn{ display:inline-flex; align-items:center; gap:10px; padding:10px 18px 8px; border-radius:999px; text-decoration:none; background:var(--g); color:#1A140C; font-family:var(--hd); font-size:.68rem; font-weight:700; letter-spacing:.18em; text-transform:uppercase; transition:background .22s ease; }
+#pn-ft .pnft-tag{ margin:0; font-family:var(--hd); font-size:.74rem; font-weight:600; letter-spacing:.2em; text-transform:uppercase; color:var(--mut); }
+#pn-ft .pnft-btn{ display:inline-flex; align-items:center; gap:10px; margin-top:4px; padding:11px 20px 9px; border-radius:999px; text-decoration:none; background:var(--g); color:#1A140C; font-family:var(--hd); font-size:.7rem; font-weight:700; letter-spacing:.18em; text-transform:uppercase; transition:background .22s ease; }
 #pn-ft .pnft-btn::after{ content:"\2192"; font-family:Arial,sans-serif; font-size:.9rem; letter-spacing:0; }
 #pn-ft .pnft-btn:hover{ background:#F0D68F; }
+#pn-ft .pnft-cols{ display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:18px clamp(20px,3vw,44px); }
+#pn-ft .pnft-h{ margin:0 0 10px; padding-bottom:8px; border-bottom:1px solid var(--hair); font-family:var(--hd); font-size:.64rem; font-weight:700; letter-spacing:.26em; text-transform:uppercase; color:var(--dim); }
+#pn-ft .pnft-cols ul{ display:grid; gap:7px; margin:0; padding:0; list-style:none; }
+#pn-ft .pnft-cols a{ color:var(--iv); text-decoration:none; font-family:var(--hd); font-size:.98rem; font-weight:500; letter-spacing:.02em; line-height:1.25; transition:color .2s ease; }
+#pn-ft .pnft-cols a:hover{ color:#F0D68F; }
+#pn-ft .pnft-cols a.pnft-mail{ color:var(--g); font-family:var(--bd); font-size:.9rem; border-bottom:1px solid rgba(var(--grgb),.35); padding-bottom:1px; word-break:break-all; }
+#pn-ft .pnft-cols a.pnft-mail:hover{ border-color:var(--g); }
 #pn-ft :focus-visible{ outline:2px solid #F0D68F; outline-offset:3px; border-radius:4px; }
 /* one line of legal text */
 #pn-ft .pnft-legal{ display:flex; justify-content:space-between; align-items:baseline; gap:6px 32px; flex-wrap:wrap; padding-top:12px; font-size:.68rem; line-height:1.5; color:var(--dim); }
 #pn-ft .pnft-legal p{ margin:0; max-width:120ch; }
 #pn-ft .pnft-copy{ white-space:nowrap; letter-spacing:.06em; }
-@media (max-width:1180px){
-  #pn-ft .pnft-row{ justify-content:center; text-align:center; }
-  #pn-ft .pnft-nav{ order:3; flex-basis:100%; }
-  #pn-ft .pnft-reach{ order:2; }
+@media (max-width:900px){
+  #pn-ft .pnft-top{ grid-template-columns:minmax(0,1fr); gap:20px; }
 }
 @media (max-width:560px){
   #pn-ft .pnft-in{ padding:20px 18px 14px; }
-  #pn-ft .pnft-row{ flex-direction:column; gap:14px; }
-  #pn-ft .pnft-nav ul{ gap:8px 16px; }
-  #pn-ft .pnft-nav a{ font-size:.76rem; }
-  #pn-ft .pnft-reach{ flex-direction:column; gap:10px; }
-  #pn-ft .pnft-legal{ justify-content:center; text-align:center; }
+  #pn-ft .pnft-me{ align-items:stretch; }
+  #pn-ft .pnft-btn{ justify-content:center; }
+  #pn-ft .pnft-cols{ grid-template-columns:repeat(2,minmax(0,1fr)); gap:18px 16px; }
+  #pn-ft .pnft-cols > div:last-child{ grid-column:1 / -1; }
+  #pn-ft .pnft-cols > div:last-child ul{ grid-template-columns:repeat(2,max-content); gap:7px 22px; }
+  #pn-ft .pnft-cols > div:last-child li:last-child{ grid-column:1 / -1; }
+  #pn-ft .pnft-legal{ text-align:left; }
 }
 @media (prefers-reduced-motion:reduce){ #pn-ft *{ transition:none !important; } }
 
@@ -94,32 +101,48 @@ html:has(#pn-ft), html:has(#pn-ft) body{ overflow-x:clip; }
     <li style="--c:#D9C293;"></li><li style="--c:#0C3A52;"></li><li style="--c:#7A3420;"></li><li style="--c:#5E5048;"></li><li style="--c:#1B3F7A;"></li><li style="--c:#145C4B;"></li><li style="--c:#123A2C;"></li>
   </ul>
   <div class="pnft-in">
-    <div class="pnft-row">
-      <a class="pnft-brand" href="https://perfectnations.org/" aria-label="Perfect Nations - home">
-        <img class="pnft-logo" src="https://perfectnations.org/wp-content/uploads/2026/11/pn-logo-gold-7-stars.png" alt="" width="30" height="30"
-             onerror="this.onerror=function(){this.onerror=null;this.style.display='none'};this.src='https://perfectnations.org/wp-content/uploads/2026/08/pnlogoe3c258.png'">
-        <span class="pnft-word">Perfect Nations<sup>&trade;</sup></span>
-      </a>
-      <nav class="pnft-nav" aria-label="Footer navigation">
-        <ul>
-          <li><a href="https://perfectnations.org/blueprints/">Blueprints</a></li>
-          <li><a href="https://perfectnations.org/sovereign-assets/">Sovereign Assets</a></li>
-          <li><a href="https://perfectnations.org/perfect-capita/">Perfect Capita</a></li>
-          <li><a href="https://perfectnations.org/capital-architecture/">Capital Architecture</a></li>
-          <li><a href="https://perfectnations.org/design-studio/">Design Studio</a></li>
-          <li><a href="https://perfectnations.org/perfect-nations-gallery/">Perfect Nations Gallery</a></li>
-          <li><a href="https://perfectnations.org/state-of-nations/">State of Nations</a></li>
-          <li><a href="https://perfectnations.org/about/">About</a></li>
-          <li><a href="https://perfectnations.org/contact/">Contact</a></li>
-        </ul>
-      </nav>
-      <div class="pnft-reach">
+    <div class="pnft-top">
+      <div class="pnft-me">
+        <a class="pnft-brand" href="https://perfectnations.org/" aria-label="Perfect Nations - home">
+          <img class="pnft-logo" src="https://perfectnations.org/wp-content/uploads/2026/11/pn-logo-gold-7-stars.png" alt="" width="40" height="40" loading="lazy" decoding="async"
+               onerror="this.onerror=function(){this.onerror=null;this.style.display='none'};this.src='https://perfectnations.org/wp-content/uploads/2026/08/pnlogoe3c258.png'">
+          <span class="pnft-word">Perfect Nations<sup>&trade;</sup></span>
+        </a>
+        <p class="pnft-tag">Designing the Prosperity of Nations</p>
         <a class="pnft-btn" href="https://perfectnations.org/contact/">Start a conversation</a>
       </div>
+      <nav class="pnft-cols" aria-label="Footer navigation">
+        <div>
+          <p class="pnft-h">The Work</p>
+          <ul>
+            <li><a href="https://perfectnations.org/blueprints/">Blueprints</a></li>
+            <li><a href="https://perfectnations.org/sovereign-assets/">Sovereign Assets</a></li>
+            <li><a href="https://perfectnations.org/perfect-capita/">Perfect Capita</a></li>
+            <li><a href="https://perfectnations.org/capital-architecture/">Capital Architecture</a></li>
+            <li><a href="https://perfectnations.org/design-studio/">ReDesign Studio</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="pnft-h">Read</p>
+          <ul>
+            <li><a href="https://perfectnations.org/state-of-nations/">State of Nations</a></li>
+            <li><a href="https://perfectnations.org/category/letters-to-the-nations/">Letters to the Nations</a></li>
+            <li><a href="https://perfectnations.org/perfect-nations-gallery/">Perfect Nations Gallery</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="pnft-h">Perfect Nations</p>
+          <ul>
+            <li><a href="https://perfectnations.org/about/">About</a></li>
+            <li><a href="https://perfectnations.org/contact/">Contact</a></li>
+            <li><a class="pnft-mail" href="mailto:contact@perfectnations.org">contact@perfectnations.org</a></li>
+          </ul>
+        </div>
+      </nav>
     </div>
     <div class="pnft-legal">
       <p>Perfect Nations&trade; is a trademark of Perfect Nations LLC, New York. Publications and products are for research, strategy, education and creative purposes, and are not investment advice, legal advice, securities offerings or official government documents.</p>
-      <p class="pnft-copy"><a class="pnft-mail" href="mailto:contact@perfectnations.org">contact@perfectnations.org</a> &middot; &copy; 2026 Perfect Nations LLC</p>
+      <p class="pnft-copy">&copy; 2026 Perfect Nations LLC</p>
     </div>
   </div>
 </footer>
