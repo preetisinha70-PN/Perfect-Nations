@@ -1,3970 +1,1736 @@
 [
  {
+  "ttfb": 30,
+  "dcl": 0,
+  "load": 0,
+  "fcp": 2236,
+  "lcp": 2476,
+  "lcpEl": "IMG#pnhgPoster",
+  "tbt": 853,
+  "globe": true,
+  "canvas": false,
+  "libs": [
+   [
+    "https://unpkg.com/globe.gl",
+    211,
+    1421
+   ],
+   [
+    "https://cdn.jsdelivr.net/npm/three@0.159.0/build/three.min.js",
+    276,
+    895
+   ],
+   [
+    "https://cdn.jsdelivr.net/npm/globe.gl@2.31.0/dist/globe.gl.min.js",
+    276,
+    1103
+   ]
+  ],
+  "path": "/",
+  "kind": "phone",
+  "cond": "now",
+  "errors": [
+   "console error: Failed to load resource: the server responded with a status of 403 ()",
+   "console error: Failed to load resource: the server responded with a status of 404 ()",
+   "evaluate: Page.evaluate: Execution context was destroyed, most likely because of a navigat",
+   "console warning: [pnhg-globe] no WebGL"
+  ],
+  "navs": [
+   [
+    0.37,
+    "https://perfectnations.org/"
+   ],
+   [
+    4.07,
+    "https://perfectnations.org/"
+   ]
+  ],
+  "docs": [
+   [
+    0.24,
+    403,
+    "https://perfectnations.org/",
+    "",
+    "",
+    "text/html"
+   ],
+   [
+    4.05,
+    200,
+    "https://perfectnations.org/",
+    "hit",
+    "",
+    "text/html; charset=UTF-8"
+   ]
+  ],
+  "final_url": "https://perfectnations.org/",
+  "round": 1
+ },
+ {
+  "ttfb": 55,
+  "dcl": 0,
+  "load": 0,
+  "fcp": 0,
+  "lcp": 0,
+  "lcpEl": "",
+  "tbt": 0,
+  "globe": false,
+  "canvas": false,
+  "libs": [
+   [
+    "https://unpkg.com/globe.gl",
+    216,
+    19
+   ]
+  ],
+  "path": "/",
+  "kind": "phone",
+  "cond": "no-unpkg",
+  "errors": [
+   "console error: Failed to load resource: the server responded with a status of 403 ()",
+   "console error: Failed to load resource: net::ERR_FAILED"
+  ],
+  "navs": [
+   [
+    0.25,
+    "https://perfectnations.org/"
+   ],
+   [
+    3.84,
+    "https://perfectnations.org/"
+   ]
+  ],
+  "docs": [
+   [
+    0.23,
+    403,
+    "https://perfectnations.org/",
+    "",
+    "",
+    "text/html"
+   ],
+   [
+    3.83,
+    200,
+    "https://perfectnations.org/",
+    "hit",
+    "",
+    "text/html; charset=UTF-8"
+   ]
+  ],
+  "final_url": "https://perfectnations.org/",
+  "round": 1
+ },
+ {
+  "ttfb": 30,
+  "dcl": 0,
+  "load": 0,
+  "fcp": 0,
+  "lcp": 0,
+  "lcpEl": "",
+  "tbt": 0,
+  "globe": false,
+  "canvas": false,
+  "libs": [],
+  "path": "/",
+  "kind": "laptop",
+  "cond": "now",
+  "errors": [
+   "console error: Failed to load resource: the server responded with a status of 403 ()"
+  ],
+  "navs": [
+   [
+    0.1,
+    "https://perfectnations.org/"
+   ],
+   [
+    3.26,
+    "https://perfectnations.org/"
+   ]
+  ],
+  "docs": [
+   [
+    0.09,
+    403,
+    "https://perfectnations.org/",
+    "",
+    "",
+    "text/html"
+   ],
+   [
+    3.25,
+    200,
+    "https://perfectnations.org/",
+    "hit",
+    "",
+    "text/html; charset=UTF-8"
+   ]
+  ],
+  "final_url": "https://perfectnations.org/",
+  "round": 1
+ },
+ {
   "ttfb": 27,
-  "html_done": 905,
   "dcl": 0,
   "load": 0,
   "fcp": 0,
   "lcp": 0,
   "lcpEl": "",
-  "tbt": 19,
-  "longN": 1,
-  "cls": 0,
-  "html_bytes": 288240,
-  "html_size": 873639,
-  "n_res": 25,
-  "bytes": 487644,
-  "res": [
-   {
-    "u": "https://perfectnations.org/wp-content/astra-local-fonts/barlow-condensed/HTxwL3I-JCGChYJ8VI-L6OO_au7B46r2z3bWuQ.woff2",
-    "t": "link",
-    "s": 22744,
-    "d": 293,
-    "st": 169,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://perfectnations.org/wp-content/astra-local-fonts/barlow-semi-condensed/wlpvgxjLBV1hqnzfr-F8sEYMB0Yybp0mudRXeIqq.woff2",
-    "t": "link",
-    "s": 22600,
-    "d": 297,
-    "st": 171,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://spcdn.shortpixel.ai/spio/ret_auto+v_1+q_cdnize+to_webp+s_webp/perfectnations.org/wp-content/themes/astra/assets/css/minified/main.min.css?ver=",
-    "t": "link",
-    "s": 0,
-    "d": 248,
-    "st": 171,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://spcdn.shortpixel.ai/spio/ret_auto+v_1+q_cdnize+to_webp+s_webp/perfectnations.org/wp-content/astra-local-fonts/astra-local-fonts.css?ver=4.14.2",
-    "t": "link",
-    "s": 0,
-    "d": 157,
-    "st": 171,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://spcdn.shortpixel.ai/spio/ret_auto+v_1+q_cdnize+to_webp+s_webp/perfectnations.org/wp-content/plugins/jetpack/jetpack_vendor/automattic/jetpack-",
-    "t": "link",
-    "s": 0,
-    "d": 183,
-    "st": 171,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://perfectnations.org/wp-includes/js/mediaelement/mediaelementplayer-legacy.min.css",
-    "t": "link",
-    "s": 2679,
-    "d": 134,
-    "st": 171,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://spcdn.shortpixel.ai/spio/ret_auto+v_1+q_cdnize+to_webp+s_webp/perfectnations.org/wp-content/plugins/jetpack/jetpack_vendor/automattic/jetpack-",
-    "t": "link",
-    "s": 0,
-    "d": 178,
-    "st": 171,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://perfectnations.org/wp-includes/js/mediaelement/wp-mediaelement.min.css",
-    "t": "link",
-    "s": 1279,
-    "d": 127,
-    "st": 173,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://spcdn.shortpixel.ai/spio/ret_auto+v_1+q_cdnize+to_webp+s_webp/perfectnations.org/wp-content/plugins/elementor/assets/css/frontend.min.css?ver=",
-    "t": "link",
-    "s": 0,
-    "d": 237,
-    "st": 174,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://spcdn.shortpixel.ai/spio/ret_auto+v_1+q_cdnize+to_webp+s_webp/perfectnations.org/wp-content/uploads/elementor/css/post-648.css?ver=1794021427",
-    "t": "link",
-    "s": 0,
-    "d": 183,
-    "st": 174,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://spcdn.shortpixel.ai/spio/ret_auto+v_1+q_cdnize+to_webp+s_webp/perfectnations.org/wp-content/uploads/elementor/css/post-13465.css?ver=179402143",
-    "t": "link",
-    "s": 0,
-    "d": 169,
-    "st": 174,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://spcdn.shortpixel.ai/spio/ret_auto+v_1+q_cdnize+to_webp+s_webp/perfectnations.org/wp-content/uploads/elementor/css/base-desktop.css?ver=6aee983",
-    "t": "link",
-    "s": 0,
-    "d": 185,
-    "st": 175,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://spcdn.shortpixel.ai/spio/ret_auto+v_1+q_cdnize+to_webp+s_webp/perfectnations.org/wp-content/uploads/elementor/css/local-15388-frontend-desktop",
-    "t": "link",
-    "s": 0,
-    "d": 170,
-    "st": 175,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://spcdn.shortpixel.ai/spio/ret_auto+v_1+q_cdnize+to_webp+s_webp/perfectnations.org/wp-content/uploads/elementor/css/base-mobile.css?ver=6aee9833",
-    "t": "link",
-    "s": 0,
-    "d": 163,
-    "st": 175,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://spcdn.shortpixel.ai/spio/ret_auto+v_1+q_cdnize+to_webp+s_webp/perfectnations.org/wp-content/uploads/elementor/css/post-15388.css?ver=179402142",
-    "t": "link",
-    "s": 0,
-    "d": 171,
-    "st": 175,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://spcdn.shortpixel.ai/spio/ret_auto+v_1+q_cdnize+to_webp+s_webp/perfectnations.org/wp-content/uploads/elementor/css/post-10809.css?ver=179402142",
-    "t": "link",
-    "s": 0,
-    "d": 184,
-    "st": 175,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed:100,100italic,200,200italic,300,300italic,400,400italic,500,500italic,600,600italic,700,",
-    "t": "link",
-    "s": 1292,
-    "d": 132,
-    "st": 175,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://fonts.googleapis.com/css?family=Barlow+Condensed:100,100italic,200,200italic,300,300italic,400,400italic,500,500italic,600,600italic,700,700it",
-    "t": "link",
-    "s": 1282,
-    "d": 137,
-    "st": 175,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://fonts.googleapis.com/css?family=PT+Sans+Narrow:100,100italic,200,200italic,300,300italic,400,400italic,500,500italic,600,600italic,700,700ital",
-    "t": "link",
-    "s": 860,
-    "d": 137,
-    "st": 176,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://perfectnations.org/wp-includes/js/jquery/jquery-migrate.min.js",
-    "t": "script",
-    "s": 4971,
-    "d": 186,
-    "st": 176,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://perfectnations.org/wp-includes/js/jquery/jquery.min.js",
-    "t": "script",
-    "s": 29831,
-    "d": 346,
-    "st": 176,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap",
-    "t": "link",
-    "s": 1246,
-    "d": 139,
-    "st": 176,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Barlow+Semi+Condensed:wght@400;500;600&display=swap",
-    "t": "link",
-    "s": 998,
-    "d": 144,
-    "st": 214,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://perfectnations.org/wp-content/uploads/2026/11/pn-home-globe-gold-poster-v5.webp",
-    "t": "link",
-    "s": 109622,
-    "d": 734,
-    "st": 240,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://spcdn.shortpixel.ai/spio/ret_img+q_cdnize+to_webp+s_webp/perfectnations.org/wp-content/uploads/2026/11/pn-home-globe-gold-poster-v5.webp",
-    "t": "img",
-    "s": 0,
-    "d": 731,
-    "st": 248,
-    "rb": "non-blocking"
-   }
+  "tbt": 0,
+  "globe": false,
+  "canvas": false,
+  "libs": [
+   [
+    "https://unpkg.com/globe.gl",
+    55,
+    10
+   ],
+   [
+    "https://cdn.jsdelivr.net/npm/three@0.159.0/build/three.min.js",
+    90,
+    50
+   ],
+   [
+    "https://cdn.jsdelivr.net/npm/globe.gl@2.31.0/dist/globe.gl.min.js",
+    90,
+    52
+   ]
   ],
-  "x-litespeed-cache": "hit",
-  "status": 200,
   "path": "/",
-  "kind": "phone"
+  "kind": "laptop",
+  "cond": "no-unpkg",
+  "errors": [
+   "console error: Failed to load resource: the server responded with a status of 403 ()",
+   "console error: Failed to load resource: net::ERR_FAILED"
+  ],
+  "navs": [
+   [
+    0.1,
+    "https://perfectnations.org/"
+   ],
+   [
+    3.23,
+    "https://perfectnations.org/"
+   ]
+  ],
+  "docs": [
+   [
+    0.09,
+    403,
+    "https://perfectnations.org/",
+    "",
+    "",
+    "text/html"
+   ],
+   [
+    3.23,
+    200,
+    "https://perfectnations.org/",
+    "hit",
+    "",
+    "text/html; charset=UTF-8"
+   ]
+  ],
+  "final_url": "https://perfectnations.org/",
+  "round": 1
  },
  {
-  "ttfb": 54,
-  "html_done": 131,
-  "dcl": 0,
-  "load": 0,
-  "fcp": 544,
-  "lcp": 692,
-  "lcpEl": "IMG#pnhgPoster.pnhg-poster",
-  "tbt": 164,
-  "longN": 3,
-  "cls": 0.014,
-  "html_bytes": 288240,
-  "html_size": 873639,
-  "n_res": 57,
-  "bytes": 1661898,
-  "res": [
-   {
-    "u": "https://perfectnations.org/wp-content/astra-local-fonts/barlow-condensed/HTxwL3I-JCGChYJ8VI-L6OO_au7B46r2z3bWuQ.woff2",
-    "t": "link",
-    "s": 22744,
-    "d": 85,
-    "st": 62,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://perfectnations.org/wp-content/astra-local-fonts/barlow-semi-condensed/wlpvgxjLBV1hqnzfr-F8sEYMB0Yybp0mudRXeIqq.woff2",
-    "t": "link",
-    "s": 22600,
-    "d": 79,
-    "st": 62,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://spcdn.shortpixel.ai/spio/ret_auto+v_1+q_cdnize+to_webp+s_webp/perfectnations.org/wp-content/themes/astra/assets/css/minified/main.min.css?ver=",
-    "t": "link",
-    "s": 0,
-    "d": 22,
-    "st": 63,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://spcdn.shortpixel.ai/spio/ret_auto+v_1+q_cdnize+to_webp+s_webp/perfectnations.org/wp-content/astra-local-fonts/astra-local-fonts.css?ver=4.14.2",
-    "t": "link",
-    "s": 0,
-    "d": 29,
-    "st": 79,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://spcdn.shortpixel.ai/spio/ret_auto+v_1+q_cdnize+to_webp+s_webp/perfectnations.org/wp-content/plugins/jetpack/jetpack_vendor/automattic/jetpack-",
-    "t": "link",
-    "s": 0,
-    "d": 30,
-    "st": 79,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://spcdn.shortpixel.ai/spio/ret_auto+v_1+q_cdnize+to_webp+s_webp/perfectnations.org/wp-content/plugins/jetpack/jetpack_vendor/automattic/jetpack-",
-    "t": "link",
-    "s": 0,
-    "d": 31,
-    "st": 79,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://perfectnations.org/wp-includes/js/mediaelement/mediaelementplayer-legacy.min.css",
-    "t": "link",
-    "s": 2679,
-    "d": 63,
-    "st": 79,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://perfectnations.org/wp-includes/js/mediaelement/wp-mediaelement.min.css",
-    "t": "link",
-    "s": 1279,
-    "d": 64,
-    "st": 79,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://spcdn.shortpixel.ai/spio/ret_auto+v_1+q_cdnize+to_webp+s_webp/perfectnations.org/wp-content/plugins/elementor/assets/css/frontend.min.css?ver=",
-    "t": "link",
-    "s": 0,
-    "d": 30,
-    "st": 80,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://spcdn.shortpixel.ai/spio/ret_auto+v_1+q_cdnize+to_webp+s_webp/perfectnations.org/wp-content/uploads/elementor/css/post-648.css?ver=1794021427",
-    "t": "link",
-    "s": 0,
-    "d": 31,
-    "st": 81,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://spcdn.shortpixel.ai/spio/ret_auto+v_1+q_cdnize+to_webp+s_webp/perfectnations.org/wp-content/uploads/elementor/css/post-13465.css?ver=179402143",
-    "t": "link",
-    "s": 0,
-    "d": 37,
-    "st": 81,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://spcdn.shortpixel.ai/spio/ret_auto+v_1+q_cdnize+to_webp+s_webp/perfectnations.org/wp-content/uploads/elementor/css/base-desktop.css?ver=6aee983",
-    "t": "link",
-    "s": 0,
-    "d": 35,
-    "st": 81,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://spcdn.shortpixel.ai/spio/ret_auto+v_1+q_cdnize+to_webp+s_webp/perfectnations.org/wp-content/uploads/elementor/css/local-15388-frontend-desktop",
-    "t": "link",
-    "s": 0,
-    "d": 32,
-    "st": 81,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://spcdn.shortpixel.ai/spio/ret_auto+v_1+q_cdnize+to_webp+s_webp/perfectnations.org/wp-content/uploads/elementor/css/base-mobile.css?ver=6aee9833",
-    "t": "link",
-    "s": 0,
-    "d": 423,
-    "st": 81,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://spcdn.shortpixel.ai/spio/ret_auto+v_1+q_cdnize+to_webp+s_webp/perfectnations.org/wp-content/uploads/elementor/css/post-15388.css?ver=179402142",
-    "t": "link",
-    "s": 0,
-    "d": 33,
-    "st": 81,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://spcdn.shortpixel.ai/spio/ret_auto+v_1+q_cdnize+to_webp+s_webp/perfectnations.org/wp-content/uploads/elementor/css/post-10809.css?ver=179402142",
-    "t": "link",
-    "s": 0,
-    "d": 33,
-    "st": 81,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://fonts.googleapis.com/css?family=Barlow+Condensed:100,100italic,200,200italic,300,300italic,400,400italic,500,500italic,600,600italic,700,700it",
-    "t": "link",
-    "s": 1217,
-    "d": 38,
-    "st": 82,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed:100,100italic,200,200italic,300,300italic,400,400italic,500,500italic,600,600italic,700,",
-    "t": "link",
-    "s": 1231,
-    "d": 38,
-    "st": 82,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://fonts.googleapis.com/css?family=PT+Sans+Narrow:100,100italic,200,200italic,300,300italic,400,400italic,500,500italic,600,600italic,700,700ital",
-    "t": "link",
-    "s": 852,
-    "d": 91,
-    "st": 82,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://perfectnations.org/wp-includes/js/jquery/jquery.min.js",
-    "t": "script",
-    "s": 29831,
-    "d": 68,
-    "st": 82,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://perfectnations.org/wp-includes/js/jquery/jquery-migrate.min.js",
-    "t": "script",
-    "s": 4971,
-    "d": 68,
-    "st": 83,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://unpkg.com/globe.gl",
-    "t": "script",
-    "s": 0,
-    "d": 203,
-    "st": 83,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap",
-    "t": "link",
-    "s": 1215,
-    "d": 95,
-    "st": 83,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://www.googletagmanager.com/gtag/js?id=G-K84C0WC986",
-    "t": "script",
-    "s": 0,
-    "d": 363,
-    "st": 83,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Barlow+Semi+Condensed:wght@400;500;600&display=swap",
-    "t": "link",
-    "s": 972,
-    "d": 40,
-    "st": 99,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://spcdn.shortpixel.ai/spio/ret_img+q_cdnize+to_webp+s_webp/perfectnations.org/wp-content/uploads/2026/11/pn-logo-gold-7-stars.png",
-    "t": "img",
-    "s": 0,
-    "d": 395,
-    "st": 99,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://perfectnations.org/wp-content/uploads/2026/11/pn-home-globe-gold-poster-v5.webp",
-    "t": "link",
-    "s": 109622,
-    "d": 56,
-    "st": 125,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://cdn.jsdelivr.net/npm/three@0.159.0/build/three.min.js",
-    "t": "link",
-    "s": 135225,
-    "d": 73,
-    "st": 125,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://cdn.jsdelivr.net/npm/globe.gl@2.31.0/dist/globe.gl.min.js",
-    "t": "link",
-    "s": 227877,
-    "d": 74,
-    "st": 125,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://spcdn.shortpixel.ai/spio/ret_img+q_cdnize+to_webp+s_webp/perfectnations.org/wp-content/uploads/2026/11/pn-home-globe-gold-poster-v5.webp",
-    "t": "img",
-    "s": 0,
-    "d": 115,
-    "st": 125,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://perfectnations.org/wp-content/themes/astra/assets/js/minified/frontend.min.js",
-    "t": "script",
-    "s": 6158,
-    "d": 114,
-    "st": 131,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://perfectnations.org/wp-content/plugins/elementor/assets/js/webpack.runtime.min.js",
-    "t": "script",
-    "s": 385,
-    "d": 120,
-    "st": 131,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://perfectnations.org/wp-content/plugins/elementor/assets/js/frontend-modules.min.js",
-    "t": "script",
-    "s": 16125,
-    "d": 135,
-    "st": 132,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://perfectnations.org/wp-includes/js/jquery/ui/core.min.js",
-    "t": "script",
-    "s": 6550,
-    "d": 141,
-    "st": 132,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://perfectnations.org/wp-content/plugins/elementor/assets/js/frontend.min.js",
-    "t": "script",
-    "s": 18451,
-    "d": 160,
-    "st": 132,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://stats.wp.com/e-202645.js",
-    "t": "script",
-    "s": 0,
-    "d": 383,
-    "st": 132,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://perfectnations.org/wp-includes/js/dist/hooks.min.js",
-    "t": "script",
-    "s": 2058,
-    "d": 163,
-    "st": 132,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://perfectnations.org/wp-includes/js/dist/i18n.min.js",
-    "t": "script",
-    "s": 2676,
-    "d": 190,
-    "st": 132,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://perfectnations.org/wp-content/plugins/elementor-pro/assets/js/frontend.min.js",
-    "t": "script",
-    "s": 24049,
-    "d": 191,
-    "st": 132,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://perfectnations.org/wp-content/plugins/elementor-pro/assets/js/elements-handlers.min.js",
-    "t": "script",
-    "s": 69377,
-    "d": 215,
-    "st": 132,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://spcdn.shortpixel.ai/spio/ret_img+q_cdnize+to_webp+s_webp/perfectnations.org/wp-content/uploads/2026/09/perfectnations_Aerial_view_of_the_Congo",
-    "t": "css",
-    "s": 0,
-    "d": 14,
-    "st": 678,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://spcdn.shortpixel.ai/spio/ret_img+q_cdnize+to_webp+s_webp/perfectnations.org/wp-content/uploads/2026/09/perfectnations_Aerial_view_of_Mosi-oa-T",
-    "t": "css",
-    "s": 0,
-    "d": 21,
-    "st": 679,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://spcdn.shortpixel.ai/spio/ret_img+q_cdnize+to_webp+s_webp/perfectnations.org/wp-content/uploads/2026/09/perfectnations_Low_aerial_view_of_the_O",
-    "t": "css",
-    "s": 0,
-    "d": 22,
-    "st": 679,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://spcdn.shortpixel.ai/spio/ret_img+q_cdnize+to_webp+s_webp/perfectnations.org/wp-content/uploads/2026/09/perfectnations_Aerial_view_of_the_Namib",
-    "t": "css",
-    "s": 0,
-    "d": 22,
-    "st": 681,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://spcdn.shortpixel.ai/spio/ret_img+q_cdnize+to_webp+s_webp/perfectnations.org/wp-content/uploads/2026/09/perfectnations_Aerial_view_of_the_great",
-    "t": "css",
-    "s": 0,
-    "d": 207,
-    "st": 681,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://spcdn.shortpixel.ai/spio/ret_img+q_cdnize+to_webp+s_webp/perfectnations.org/wp-content/uploads/2026/06/create-a-featured-image-showcasing-a-vi",
-    "t": "css",
-    "s": 0,
-    "d": 88,
-    "st": 806,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://spcdn.shortpixel.ai/spio/ret_img+q_cdnize+to_webp+s_webp/perfectnations.org/wp-content/uploads/2026/09/dwxr-nabxck.jpg",
-    "t": "css",
-    "s": 0,
-    "d": 153,
-    "st": 806,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://spcdn.shortpixel.ai/spio/ret_img+q_cdnize+to_webp+s_webp/perfectnations.org/wp-content/uploads/2026/03/oegxap8gfga.jpg",
-    "t": "css",
-    "s": 0,
-    "d": 18,
-    "st": 808,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://spcdn.shortpixel.ai/spio/ret_img+q_cdnize+to_webp+s_webp/perfectnations.org/wp-content/uploads/2026/09/iib4ruct44g.jpg",
-    "t": "css",
-    "s": 0,
-    "d": 16,
-    "st": 811,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://spcdn.shortpixel.ai/spio/ret_img+q_cdnize+to_webp+s_webp/perfectnations.org/wp-content/uploads/2026/09/p4-d9whi0ts.jpg",
-    "t": "css",
-    "s": 0,
-    "d": 16,
-    "st": 812,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://raw.githubusercontent.com/preetisinha70-PN/perfect-nations/main/pages/manifest.json",
-    "t": "fetch",
-    "s": 0,
-    "d": 84,
-    "st": 823,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://perfectnations.org/wp-content/uploads/2026/04/a4_xh2njphm.jpg",
-    "t": "css",
-    "s": 92528,
-    "d": 135,
-    "st": 834,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://perfectnations.org/wp-content/uploads/2026/04/nyecjxfoz6a.jpg",
-    "t": "css",
-    "s": 82598,
-    "d": 53,
-    "st": 834,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://perfectnations.org/wp-content/uploads/2026/04/11538902.jpeg",
-    "t": "css",
-    "s": 132802,
-    "d": 72,
-    "st": 835,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://perfectnations.org/wp-content/uploads/2026/04/9893729.jpeg",
-    "t": "css",
-    "s": 231170,
-    "d": 177,
-    "st": 835,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://perfectnations.org/wp-content/uploads/2026/09/owxxyezyluq.jpg",
-    "t": "css",
-    "s": 126416,
-    "d": 77,
-    "st": 835,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://spcdn.shortpixel.ai/spio/ret_img+q_cdnize+to_webp+s_webp/perfectnations.org/wp-content/uploads/2026/04/20260315_135326-1-e1775330836566.jpg",
-    "t": "css",
-    "s": 0,
-    "d": 7,
-    "st": 974,
-    "rb": "non-blocking"
-   }
+  "ttfb": 29,
+  "dcl": 3355,
+  "load": 3725,
+  "fcp": 1696,
+  "lcp": 1968,
+  "lcpEl": "P",
+  "tbt": 1288,
+  "globe": true,
+  "canvas": true,
+  "libs": [
+   [
+    "https://unpkg.com/globe.gl",
+    205,
+    900
+   ]
   ],
-  "x-litespeed-cache": "hit",
-  "status": 200,
-  "path": "/",
-  "kind": "laptop"
- },
- {
-  "ttfb": 56,
-  "html_done": 427,
-  "dcl": 0,
-  "load": 0,
-  "fcp": 0,
-  "lcp": 0,
-  "lcpEl": "",
-  "tbt": 11,
-  "longN": 1,
-  "cls": 0,
-  "html_bytes": 211212,
-  "html_size": 708623,
-  "n_res": 30,
-  "bytes": 353397,
-  "res": [
-   {
-    "u": "https://perfectnations.org/wp-content/astra-local-fonts/barlow-condensed/HTxwL3I-JCGChYJ8VI-L6OO_au7B46r2z3bWuQ.woff2",
-    "t": "link",
-    "s": 22744,
-    "d": 244,
-    "st": 176,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://perfectnations.org/wp-content/astra-local-fonts/barlow-semi-condensed/wlpvgxjLBV1hqnzfr-F8sEYMB0Yybp0mudRXeIqq.woff2",
-    "t": "link",
-    "s": 22600,
-    "d": 266,
-    "st": 177,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://spcdn.shortpixel.ai/spio/ret_auto+v_1+q_cdnize+to_webp+s_webp/perfectnations.org/wp-content/astra-local-fonts/astra-local-fonts.css?ver=4.14.2",
-    "t": "link",
-    "s": 0,
-    "d": 172,
-    "st": 177,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://spcdn.shortpixel.ai/spio/ret_auto+v_1+q_cdnize+to_webp+s_webp/perfectnations.org/wp-content/themes/astra/assets/css/minified/main.min.css?ver=",
-    "t": "link",
-    "s": 0,
-    "d": 244,
-    "st": 177,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://spcdn.shortpixel.ai/spio/ret_auto+v_1+q_cdnize+to_webp+s_webp/perfectnations.org/wp-content/plugins/jetpack/jetpack_vendor/automattic/jetpack-",
-    "t": "link",
-    "s": 0,
-    "d": 195,
-    "st": 178,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://perfectnations.org/wp-includes/js/mediaelement/mediaelementplayer-legacy.min.css",
-    "t": "link",
-    "s": 2679,
-    "d": 142,
-    "st": 179,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://spcdn.shortpixel.ai/spio/ret_auto+v_1+q_cdnize+to_webp+s_webp/perfectnations.org/wp-content/plugins/jetpack/jetpack_vendor/automattic/jetpack-",
-    "t": "link",
-    "s": 0,
-    "d": 183,
-    "st": 179,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://perfectnations.org/wp-includes/js/mediaelement/wp-mediaelement.min.css",
-    "t": "link",
-    "s": 1279,
-    "d": 139,
-    "st": 179,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://spcdn.shortpixel.ai/spio/ret_auto+v_1+q_cdnize+to_webp+s_webp/perfectnations.org/wp-content/plugins/elementor/assets/css/frontend.min.css?ver=",
-    "t": "link",
-    "s": 0,
-    "d": 231,
-    "st": 180,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://spcdn.shortpixel.ai/spio/ret_auto+v_1+q_cdnize+to_webp+s_webp/perfectnations.org/wp-content/uploads/elementor/css/post-648.css?ver=1794021427",
-    "t": "link",
-    "s": 0,
-    "d": 184,
-    "st": 180,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://spcdn.shortpixel.ai/spio/ret_auto+v_1+q_cdnize+to_webp+s_webp/perfectnations.org/wp-content/uploads/elementor/css/post-14775.css?ver=179402142",
-    "t": "link",
-    "s": 0,
-    "d": 162,
-    "st": 180,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://spcdn.shortpixel.ai/spio/ret_auto+v_1+q_cdnize+to_webp+s_webp/perfectnations.org/wp-content/uploads/elementor/css/local-15388-frontend-desktop",
-    "t": "link",
-    "s": 0,
-    "d": 165,
-    "st": 181,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://spcdn.shortpixel.ai/spio/ret_auto+v_1+q_cdnize+to_webp+s_webp/perfectnations.org/wp-content/uploads/elementor/css/base-desktop.css?ver=6aee983",
-    "t": "link",
-    "s": 0,
-    "d": 186,
-    "st": 181,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://spcdn.shortpixel.ai/spio/ret_auto+v_1+q_cdnize+to_webp+s_webp/perfectnations.org/wp-content/uploads/elementor/css/base-mobile.css?ver=6aee9833",
-    "t": "link",
-    "s": 0,
-    "d": 173,
-    "st": 181,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://spcdn.shortpixel.ai/spio/ret_auto+v_1+q_cdnize+to_webp+s_webp/perfectnations.org/wp-content/uploads/elementor/css/post-15388.css?ver=179402142",
-    "t": "link",
-    "s": 0,
-    "d": 170,
-    "st": 181,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://spcdn.shortpixel.ai/spio/ret_auto+v_1+q_cdnize+to_webp+s_webp/perfectnations.org/wp-content/uploads/elementor/css/post-10809.css?ver=179402142",
-    "t": "link",
-    "s": 0,
-    "d": 189,
-    "st": 182,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed:100,100italic,200,200italic,300,300italic,400,400italic,500,500italic,600,600italic,700,",
-    "t": "link",
-    "s": 1292,
-    "d": 148,
-    "st": 182,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://fonts.googleapis.com/css?family=Barlow+Condensed:100,100italic,200,200italic,300,300italic,400,400italic,500,500italic,600,600italic,700,700it",
-    "t": "link",
-    "s": 1282,
-    "d": 148,
-    "st": 182,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://fonts.googleapis.com/css?family=PT+Sans+Narrow:100,100italic,200,200italic,300,300italic,400,400italic,500,500italic,600,600italic,700,700ital",
-    "t": "link",
-    "s": 860,
-    "d": 151,
-    "st": 182,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://perfectnations.org/wp-includes/js/jquery/jquery.min.js",
-    "t": "script",
-    "s": 29831,
-    "d": 266,
-    "st": 182,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://perfectnations.org/wp-includes/js/jquery/jquery-migrate.min.js",
-    "t": "script",
-    "s": 4971,
-    "d": 193,
-    "st": 183,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap",
-    "t": "link",
-    "s": 1246,
-    "d": 147,
-    "st": 183,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Barlow+Semi+Condensed:wght@400;500;600&display=swap",
-    "t": "link",
-    "s": 998,
-    "d": 139,
-    "st": 231,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://perfectnations.org/wp-content/themes/astra/assets/js/minified/frontend.min.js",
-    "t": "script",
-    "s": 6158,
-    "d": 134,
-    "st": 431,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://perfectnations.org/wp-content/plugins/elementor/assets/js/webpack.runtime.min.js",
-    "t": "script",
-    "s": 385,
-    "d": 124,
-    "st": 431,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://perfectnations.org/wp-includes/js/jquery/ui/core.min.js",
-    "t": "script",
-    "s": 6550,
-    "d": 274,
-    "st": 431,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://perfectnations.org/wp-content/plugins/elementor/assets/js/frontend-modules.min.js",
-    "t": "script",
-    "s": 16125,
-    "d": 281,
-    "st": 431,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://perfectnations.org/wp-content/plugins/elementor/assets/js/frontend.min.js",
-    "t": "script",
-    "s": 18451,
-    "d": 432,
-    "st": 431,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://perfectnations.org/wp-includes/js/dist/hooks.min.js",
-    "t": "script",
-    "s": 2058,
-    "d": 417,
-    "st": 431,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://perfectnations.org/wp-includes/js/dist/i18n.min.js",
-    "t": "script",
-    "s": 2676,
-    "d": 546,
-    "st": 431,
-    "rb": "non-blocking"
-   }
-  ],
-  "x-litespeed-cache": "miss",
-  "status": 200,
-  "path": "/blueprints/",
-  "kind": "phone"
- },
- {
-  "ttfb": 56,
-  "html_done": 144,
-  "dcl": 666,
-  "load": 870,
-  "fcp": 468,
-  "lcp": 556,
-  "lcpEl": "H1#pnbpaH1.pnbpa-h1",
-  "tbt": 67,
-  "longN": 2,
-  "cls": 0.046,
-  "html_bytes": 211212,
-  "html_size": 708623,
-  "n_res": 43,
-  "bytes": 464088,
-  "res": [
-   {
-    "u": "https://perfectnations.org/wp-content/astra-local-fonts/barlow-condensed/HTxwL3I-JCGChYJ8VI-L6OO_au7B46r2z3bWuQ.woff2",
-    "t": "link",
-    "s": 22744,
-    "d": 87,
-    "st": 62,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://perfectnations.org/wp-content/astra-local-fonts/barlow-semi-condensed/wlpvgxjLBV1hqnzfr-F8sEYMB0Yybp0mudRXeIqq.woff2",
-    "t": "link",
-    "s": 22600,
-    "d": 87,
-    "st": 62,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://spcdn.shortpixel.ai/spio/ret_auto+v_1+q_cdnize+to_webp+s_webp/perfectnations.org/wp-content/themes/astra/assets/css/minified/main.min.css?ver=",
-    "t": "link",
-    "s": 0,
-    "d": 15,
-    "st": 63,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://spcdn.shortpixel.ai/spio/ret_auto+v_1+q_cdnize+to_webp+s_webp/perfectnations.org/wp-content/astra-local-fonts/astra-local-fonts.css?ver=4.14.2",
-    "t": "link",
-    "s": 0,
-    "d": 9,
-    "st": 83,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://spcdn.shortpixel.ai/spio/ret_auto+v_1+q_cdnize+to_webp+s_webp/perfectnations.org/wp-content/plugins/jetpack/jetpack_vendor/automattic/jetpack-",
-    "t": "link",
-    "s": 0,
-    "d": 14,
-    "st": 83,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://spcdn.shortpixel.ai/spio/ret_auto+v_1+q_cdnize+to_webp+s_webp/perfectnations.org/wp-content/plugins/jetpack/jetpack_vendor/automattic/jetpack-",
-    "t": "link",
-    "s": 0,
-    "d": 12,
-    "st": 83,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://perfectnations.org/wp-includes/js/mediaelement/mediaelementplayer-legacy.min.css",
-    "t": "link",
-    "s": 2679,
-    "d": 64,
-    "st": 83,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://perfectnations.org/wp-includes/js/mediaelement/wp-mediaelement.min.css",
-    "t": "link",
-    "s": 1279,
-    "d": 64,
-    "st": 83,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://spcdn.shortpixel.ai/spio/ret_auto+v_1+q_cdnize+to_webp+s_webp/perfectnations.org/wp-content/plugins/elementor/assets/css/frontend.min.css?ver=",
-    "t": "link",
-    "s": 0,
-    "d": 8,
-    "st": 84,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://spcdn.shortpixel.ai/spio/ret_auto+v_1+q_cdnize+to_webp+s_webp/perfectnations.org/wp-content/uploads/elementor/css/post-648.css?ver=1794021427",
-    "t": "link",
-    "s": 0,
-    "d": 13,
-    "st": 85,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://spcdn.shortpixel.ai/spio/ret_auto+v_1+q_cdnize+to_webp+s_webp/perfectnations.org/wp-content/uploads/elementor/css/post-14775.css?ver=179402142",
-    "t": "link",
-    "s": 0,
-    "d": 9,
-    "st": 85,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://spcdn.shortpixel.ai/spio/ret_auto+v_1+q_cdnize+to_webp+s_webp/perfectnations.org/wp-content/uploads/elementor/css/base-desktop.css?ver=6aee983",
-    "t": "link",
-    "s": 0,
-    "d": 8,
-    "st": 85,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://spcdn.shortpixel.ai/spio/ret_auto+v_1+q_cdnize+to_webp+s_webp/perfectnations.org/wp-content/uploads/elementor/css/local-15388-frontend-desktop",
-    "t": "link",
-    "s": 0,
-    "d": 12,
-    "st": 85,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://spcdn.shortpixel.ai/spio/ret_auto+v_1+q_cdnize+to_webp+s_webp/perfectnations.org/wp-content/uploads/elementor/css/base-mobile.css?ver=6aee9833",
-    "t": "link",
-    "s": 0,
-    "d": 345,
-    "st": 86,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://spcdn.shortpixel.ai/spio/ret_auto+v_1+q_cdnize+to_webp+s_webp/perfectnations.org/wp-content/uploads/elementor/css/post-15388.css?ver=179402142",
-    "t": "link",
-    "s": 0,
-    "d": 17,
-    "st": 86,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://spcdn.shortpixel.ai/spio/ret_auto+v_1+q_cdnize+to_webp+s_webp/perfectnations.org/wp-content/uploads/elementor/css/post-10809.css?ver=179402142",
-    "t": "link",
-    "s": 0,
-    "d": 18,
-    "st": 86,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://fonts.googleapis.com/css?family=Barlow+Condensed:100,100italic,200,200italic,300,300italic,400,400italic,500,500italic,600,600italic,700,700it",
-    "t": "link",
-    "s": 1217,
-    "d": 35,
-    "st": 86,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed:100,100italic,200,200italic,300,300italic,400,400italic,500,500italic,600,600italic,700,",
-    "t": "link",
-    "s": 1231,
-    "d": 33,
-    "st": 86,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://fonts.googleapis.com/css?family=PT+Sans+Narrow:100,100italic,200,200italic,300,300italic,400,400italic,500,500italic,600,600italic,700,700ital",
-    "t": "link",
-    "s": 852,
-    "d": 36,
-    "st": 86,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://perfectnations.org/wp-includes/js/jquery/jquery.min.js",
-    "t": "script",
-    "s": 29831,
-    "d": 64,
-    "st": 87,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://perfectnations.org/wp-includes/js/jquery/jquery-migrate.min.js",
-    "t": "script",
-    "s": 4971,
-    "d": 63,
-    "st": 87,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://unpkg.com/globe.gl",
-    "t": "script",
-    "s": 0,
-    "d": 180,
-    "st": 87,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap",
-    "t": "link",
-    "s": 1215,
-    "d": 39,
-    "st": 88,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://www.googletagmanager.com/gtag/js?id=G-K84C0WC986",
-    "t": "script",
-    "s": 0,
-    "d": 287,
-    "st": 88,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Barlow+Semi+Condensed:wght@400;500;600&display=swap",
-    "t": "link",
-    "s": 972,
-    "d": 36,
-    "st": 106,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://spcdn.shortpixel.ai/spio/ret_img+q_cdnize+to_webp+s_webp/perfectnations.org/wp-content/uploads/2026/11/pn-logo-gold-7-stars.png",
-    "t": "img",
-    "s": 0,
-    "d": 207,
-    "st": 107,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://perfectnations.org/wp-content/themes/astra/assets/js/minified/frontend.min.js",
-    "t": "script",
-    "s": 6158,
-    "d": 25,
-    "st": 144,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://perfectnations.org/wp-content/plugins/elementor/assets/js/webpack.runtime.min.js",
-    "t": "script",
-    "s": 385,
-    "d": 25,
-    "st": 144,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://perfectnations.org/wp-content/plugins/elementor/assets/js/frontend-modules.min.js",
-    "t": "script",
-    "s": 16125,
-    "d": 54,
-    "st": 144,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://perfectnations.org/wp-includes/js/jquery/ui/core.min.js",
-    "t": "script",
-    "s": 6550,
-    "d": 54,
-    "st": 144,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://perfectnations.org/wp-content/plugins/elementor/assets/js/frontend.min.js",
-    "t": "script",
-    "s": 18451,
-    "d": 78,
-    "st": 144,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://perfectnations.org/wp-includes/js/dist/hooks.min.js",
-    "t": "script",
-    "s": 2058,
-    "d": 81,
-    "st": 144,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://stats.wp.com/e-202645.js",
-    "t": "script",
-    "s": 0,
-    "d": 300,
-    "st": 144,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://perfectnations.org/wp-includes/js/dist/i18n.min.js",
-    "t": "script",
-    "s": 2676,
-    "d": 105,
-    "st": 145,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://perfectnations.org/wp-content/plugins/elementor-pro/assets/js/frontend.min.js",
-    "t": "script",
-    "s": 24049,
-    "d": 112,
-    "st": 145,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://perfectnations.org/wp-content/plugins/elementor-pro/assets/js/elements-handlers.min.js",
-    "t": "script",
-    "s": 69378,
-    "d": 131,
-    "st": 145,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://raw.githubusercontent.com/preetisinha70-PN/perfect-nations/main/data/blueprints.json",
-    "t": "fetch",
-    "s": 0,
-    "d": 73,
-    "st": 557,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://pixel.wp.com/g.gif?v=ext&blog=253016453&post=14775&tz=-4&srv=perfectnations.org&j=1%3A16.4&host=perfectnations.org&ref=https%3A%2F%2Fperfectna",
-    "t": "img",
-    "s": 0,
-    "d": 7,
-    "st": 650,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://raw.githubusercontent.com/preetisinha70-PN/perfect-nations/main/pages/manifest.json",
-    "t": "fetch",
-    "s": 0,
-    "d": 4,
-    "st": 662,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://perfectnations.org/wp-content/plugins/elementor/assets/js/chunks/background-slideshow.min.js?ver=4.3.6",
-    "t": "script",
-    "s": 7982,
-    "d": 28,
-    "st": 748,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://perfectnations.org/wp-content/plugins/elementor/assets/js/chunks/background-video.min.js?ver=4.3.6",
-    "t": "script",
-    "s": 8285,
-    "d": 28,
-    "st": 749,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://www.google-analytics.com/g/collect?v=2&tid=G-K84C0WC986&gtm=45je6b41h1v9249213363za208zd9249213363xf1&_p=1794026458381&gcd=13l3l3l3l1l1&npa=0&",
-    "t": "fetch",
-    "s": 0,
-    "d": 42,
-    "st": 854,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://perfectnations.org/wp-content/uploads/2025/01/cropped-14-cropped-32x32.png",
-    "t": "other",
-    "s": 1188,
-    "d": 57,
-    "st": 887,
-    "rb": "non-blocking"
-   }
-  ],
-  "x-litespeed-cache": "hit",
-  "status": 200,
-  "path": "/blueprints/",
-  "kind": "laptop"
- },
- {
-  "ttfb": 26,
-  "html_done": 264,
-  "dcl": 0,
-  "load": 0,
-  "fcp": 0,
-  "lcp": 0,
-  "lcpEl": "",
-  "tbt": 6,
-  "longN": 1,
-  "cls": 0,
-  "html_bytes": 154929,
-  "html_size": 528059,
-  "n_res": 31,
-  "bytes": 321163,
-  "res": [
-   {
-    "u": "https://perfectnations.org/wp-content/astra-local-fonts/barlow-condensed/HTxwL3I-JCGChYJ8VI-L6OO_au7B46r2z3bWuQ.woff2",
-    "t": "link",
-    "s": 22744,
-    "d": 240,
-    "st": 167,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://perfectnations.org/wp-content/astra-local-fonts/barlow-semi-condensed/wlpvgxjLBV1hqnzfr-F8sEYMB0Yybp0mudRXeIqq.woff2",
-    "t": "link",
-    "s": 22600,
-    "d": 244,
-    "st": 168,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://spcdn.shortpixel.ai/spio/ret_auto+v_1+q_cdnize+to_webp+s_webp/perfectnations.org/wp-content/themes/astra/assets/css/minified/main.min.css?ver=",
-    "t": "link",
-    "s": 0,
-    "d": 226,
-    "st": 169,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://spcdn.shortpixel.ai/spio/ret_auto+v_1+q_cdnize+to_webp+s_webp/perfectnations.org/wp-content/astra-local-fonts/astra-local-fonts.css?ver=4.14.2",
-    "t": "link",
-    "s": 0,
-    "d": 154,
-    "st": 169,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://spcdn.shortpixel.ai/spio/ret_auto+v_1+q_cdnize+to_webp+s_webp/perfectnations.org/wp-content/plugins/jetpack/jetpack_vendor/automattic/jetpack-",
-    "t": "link",
-    "s": 0,
-    "d": 173,
-    "st": 170,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://spcdn.shortpixel.ai/spio/ret_auto+v_1+q_cdnize+to_webp+s_webp/perfectnations.org/wp-content/plugins/jetpack/jetpack_vendor/automattic/jetpack-",
-    "t": "link",
-    "s": 0,
-    "d": 175,
-    "st": 170,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://perfectnations.org/wp-includes/js/mediaelement/mediaelementplayer-legacy.min.css",
-    "t": "link",
-    "s": 2679,
-    "d": 131,
-    "st": 170,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://perfectnations.org/wp-includes/js/mediaelement/wp-mediaelement.min.css",
-    "t": "link",
-    "s": 1279,
-    "d": 126,
-    "st": 170,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://spcdn.shortpixel.ai/spio/ret_auto+v_1+q_cdnize+to_webp+s_webp/perfectnations.org/wp-content/plugins/elementor/assets/css/frontend.min.css?ver=",
-    "t": "link",
-    "s": 0,
-    "d": 215,
-    "st": 172,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://spcdn.shortpixel.ai/spio/ret_auto+v_1+q_cdnize+to_webp+s_webp/perfectnations.org/wp-content/uploads/elementor/css/post-648.css?ver=1794021427",
-    "t": "link",
-    "s": 0,
-    "d": 174,
-    "st": 172,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://spcdn.shortpixel.ai/spio/ret_auto+v_1+q_cdnize+to_webp+s_webp/perfectnations.org/wp-content/uploads/elementor/css/post-10496.css?ver=179402145",
-    "t": "link",
-    "s": 0,
-    "d": 166,
-    "st": 173,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://spcdn.shortpixel.ai/spio/ret_auto+v_1+q_cdnize+to_webp+s_webp/perfectnations.org/wp-content/uploads/elementor/css/base-desktop.css?ver=6aee983",
-    "t": "link",
-    "s": 0,
-    "d": 176,
-    "st": 173,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://spcdn.shortpixel.ai/spio/ret_auto+v_1+q_cdnize+to_webp+s_webp/perfectnations.org/wp-content/uploads/elementor/css/local-15388-frontend-desktop",
-    "t": "link",
-    "s": 0,
-    "d": 159,
-    "st": 173,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://spcdn.shortpixel.ai/spio/ret_auto+v_1+q_cdnize+to_webp+s_webp/perfectnations.org/wp-content/uploads/elementor/css/base-mobile.css?ver=6aee9833",
-    "t": "link",
-    "s": 0,
-    "d": 156,
-    "st": 174,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://spcdn.shortpixel.ai/spio/ret_auto+v_1+q_cdnize+to_webp+s_webp/perfectnations.org/wp-content/uploads/elementor/css/post-15388.css?ver=179402142",
-    "t": "link",
-    "s": 0,
-    "d": 155,
-    "st": 175,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://spcdn.shortpixel.ai/spio/ret_auto+v_1+q_cdnize+to_webp+s_webp/perfectnations.org/wp-content/uploads/elementor/css/post-10809.css?ver=179402142",
-    "t": "link",
-    "s": 0,
-    "d": 172,
-    "st": 175,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://fonts.googleapis.com/css?family=Barlow+Condensed:100,100italic,200,200italic,300,300italic,400,400italic,500,500italic,600,600italic,700,700it",
-    "t": "link",
-    "s": 1282,
-    "d": 138,
-    "st": 176,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed:100,100italic,200,200italic,300,300italic,400,400italic,500,500italic,600,600italic,700,",
-    "t": "link",
-    "s": 1292,
-    "d": 136,
-    "st": 176,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://fonts.googleapis.com/css?family=PT+Sans+Narrow:100,100italic,200,200italic,300,300italic,400,400italic,500,500italic,600,600italic,700,700ital",
-    "t": "link",
-    "s": 860,
-    "d": 137,
-    "st": 176,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://perfectnations.org/wp-includes/js/jquery/jquery.min.js",
-    "t": "script",
-    "s": 29831,
-    "d": 246,
-    "st": 177,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://perfectnations.org/wp-includes/js/jquery/jquery-migrate.min.js",
-    "t": "script",
-    "s": 4971,
-    "d": 182,
-    "st": 177,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap",
-    "t": "link",
-    "s": 1246,
-    "d": 137,
-    "st": 179,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Barlow+Semi+Condensed:wght@400;500;600&display=swap",
-    "t": "link",
-    "s": 998,
-    "d": 141,
-    "st": 211,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://perfectnations.org/wp-content/themes/astra/assets/js/minified/frontend.min.js",
-    "t": "script",
-    "s": 6158,
-    "d": 151,
-    "st": 263,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://perfectnations.org/wp-content/plugins/elementor/assets/js/webpack.runtime.min.js",
-    "t": "script",
-    "s": 385,
-    "d": 130,
-    "st": 263,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://perfectnations.org/wp-content/plugins/elementor/assets/js/frontend-modules.min.js",
-    "t": "script",
-    "s": 16125,
-    "d": 282,
-    "st": 264,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://perfectnations.org/wp-includes/js/jquery/ui/core.min.js",
-    "t": "script",
-    "s": 6550,
-    "d": 291,
-    "st": 264,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://perfectnations.org/wp-content/plugins/elementor/assets/js/frontend.min.js",
-    "t": "script",
-    "s": 18451,
-    "d": 441,
-    "st": 265,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://perfectnations.org/wp-includes/js/dist/hooks.min.js",
-    "t": "script",
-    "s": 2058,
-    "d": 416,
-    "st": 266,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://perfectnations.org/wp-includes/js/dist/i18n.min.js",
-    "t": "script",
-    "s": 2676,
-    "d": 543,
-    "st": 266,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://perfectnations.org/wp-content/plugins/elementor-pro/assets/js/frontend.min.js",
-    "t": "script",
-    "s": 24049,
-    "d": 608,
-    "st": 266,
-    "rb": "non-blocking"
-   }
-  ],
-  "x-litespeed-cache": "hit",
-  "status": 200,
   "path": "/blueprints/kenya/",
-  "kind": "phone"
- },
- {
-  "ttfb": 61,
-  "html_done": 131,
-  "dcl": 845,
-  "load": 1016,
-  "fcp": 500,
-  "lcp": 644,
-  "lcpEl": "H2#bp-entry-h.bpx-studio__h",
-  "tbt": 126,
-  "longN": 4,
-  "cls": 0.01,
-  "html_bytes": 154929,
-  "html_size": 528059,
-  "n_res": 43,
-  "bytes": 511078,
-  "res": [
-   {
-    "u": "https://perfectnations.org/wp-content/astra-local-fonts/barlow-condensed/HTxwL3I-JCGChYJ8VI-L6OO_au7B46r2z3bWuQ.woff2",
-    "t": "link",
-    "s": 22744,
-    "d": 68,
-    "st": 67,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://perfectnations.org/wp-content/astra-local-fonts/barlow-semi-condensed/wlpvgxjLBV1hqnzfr-F8sEYMB0Yybp0mudRXeIqq.woff2",
-    "t": "link",
-    "s": 22600,
-    "d": 84,
-    "st": 67,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://spcdn.shortpixel.ai/spio/ret_auto+v_1+q_cdnize+to_webp+s_webp/perfectnations.org/wp-content/themes/astra/assets/css/minified/main.min.css?ver=",
-    "t": "link",
-    "s": 0,
-    "d": 14,
-    "st": 67,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://spcdn.shortpixel.ai/spio/ret_auto+v_1+q_cdnize+to_webp+s_webp/perfectnations.org/wp-content/astra-local-fonts/astra-local-fonts.css?ver=4.14.2",
-    "t": "link",
-    "s": 0,
-    "d": 12,
-    "st": 86,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://spcdn.shortpixel.ai/spio/ret_auto+v_1+q_cdnize+to_webp+s_webp/perfectnations.org/wp-content/plugins/jetpack/jetpack_vendor/automattic/jetpack-",
-    "t": "link",
-    "s": 0,
-    "d": 13,
-    "st": 86,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://spcdn.shortpixel.ai/spio/ret_auto+v_1+q_cdnize+to_webp+s_webp/perfectnations.org/wp-content/plugins/jetpack/jetpack_vendor/automattic/jetpack-",
-    "t": "link",
-    "s": 0,
-    "d": 13,
-    "st": 87,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://perfectnations.org/wp-includes/js/mediaelement/mediaelementplayer-legacy.min.css",
-    "t": "link",
-    "s": 2679,
-    "d": 65,
-    "st": 87,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://perfectnations.org/wp-includes/js/mediaelement/wp-mediaelement.min.css",
-    "t": "link",
-    "s": 1279,
-    "d": 67,
-    "st": 87,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://spcdn.shortpixel.ai/spio/ret_auto+v_1+q_cdnize+to_webp+s_webp/perfectnations.org/wp-content/plugins/elementor/assets/css/frontend.min.css?ver=",
-    "t": "link",
-    "s": 0,
-    "d": 13,
-    "st": 87,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://spcdn.shortpixel.ai/spio/ret_auto+v_1+q_cdnize+to_webp+s_webp/perfectnations.org/wp-content/uploads/elementor/css/post-10496.css?ver=179402145",
-    "t": "link",
-    "s": 0,
-    "d": 14,
-    "st": 88,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://spcdn.shortpixel.ai/spio/ret_auto+v_1+q_cdnize+to_webp+s_webp/perfectnations.org/wp-content/uploads/elementor/css/post-648.css?ver=1794021427",
-    "t": "link",
-    "s": 0,
-    "d": 15,
-    "st": 88,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://spcdn.shortpixel.ai/spio/ret_auto+v_1+q_cdnize+to_webp+s_webp/perfectnations.org/wp-content/uploads/elementor/css/base-desktop.css?ver=6aee983",
-    "t": "link",
-    "s": 0,
-    "d": 14,
-    "st": 88,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://spcdn.shortpixel.ai/spio/ret_auto+v_1+q_cdnize+to_webp+s_webp/perfectnations.org/wp-content/uploads/elementor/css/local-15388-frontend-desktop",
-    "t": "link",
-    "s": 0,
-    "d": 18,
-    "st": 88,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://spcdn.shortpixel.ai/spio/ret_auto+v_1+q_cdnize+to_webp+s_webp/perfectnations.org/wp-content/uploads/elementor/css/base-mobile.css?ver=6aee9833",
-    "t": "link",
-    "s": 0,
-    "d": 384,
-    "st": 88,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://spcdn.shortpixel.ai/spio/ret_auto+v_1+q_cdnize+to_webp+s_webp/perfectnations.org/wp-content/uploads/elementor/css/post-15388.css?ver=179402142",
-    "t": "link",
-    "s": 0,
-    "d": 16,
-    "st": 88,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://spcdn.shortpixel.ai/spio/ret_auto+v_1+q_cdnize+to_webp+s_webp/perfectnations.org/wp-content/uploads/elementor/css/post-10809.css?ver=179402142",
-    "t": "link",
-    "s": 0,
-    "d": 17,
-    "st": 88,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://fonts.googleapis.com/css?family=Barlow+Condensed:100,100italic,200,200italic,300,300italic,400,400italic,500,500italic,600,600italic,700,700it",
-    "t": "link",
-    "s": 1217,
-    "d": 25,
-    "st": 89,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed:100,100italic,200,200italic,300,300italic,400,400italic,500,500italic,600,600italic,700,",
-    "t": "link",
-    "s": 1231,
-    "d": 26,
-    "st": 89,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://fonts.googleapis.com/css?family=PT+Sans+Narrow:100,100italic,200,200italic,300,300italic,400,400italic,500,500italic,600,600italic,700,700ital",
-    "t": "link",
-    "s": 852,
-    "d": 30,
-    "st": 89,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://perfectnations.org/wp-includes/js/jquery/jquery.min.js",
-    "t": "script",
-    "s": 29831,
-    "d": 68,
-    "st": 89,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://perfectnations.org/wp-includes/js/jquery/jquery-migrate.min.js",
-    "t": "script",
-    "s": 4971,
-    "d": 67,
-    "st": 89,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap",
-    "t": "link",
-    "s": 1215,
-    "d": 30,
-    "st": 90,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://unpkg.com/globe.gl",
-    "t": "script",
-    "s": 0,
-    "d": 224,
-    "st": 90,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://www.googletagmanager.com/gtag/js?id=G-K84C0WC986",
-    "t": "script",
-    "s": 0,
-    "d": 265,
-    "st": 90,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Barlow+Semi+Condensed:wght@400;500;600&display=swap",
-    "t": "link",
-    "s": 972,
-    "d": 23,
-    "st": 111,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://spcdn.shortpixel.ai/spio/ret_img+q_cdnize+to_webp+s_webp/perfectnations.org/wp-content/uploads/2026/11/pn-logo-gold-7-stars.png",
-    "t": "img",
-    "s": 0,
-    "d": 249,
-    "st": 111,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://perfectnations.org/wp-content/uploads/2026/10/pn-globe-earth-day-1536x768.jpg",
-    "t": "link",
-    "s": 103676,
-    "d": 496,
-    "st": 113,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://perfectnations.org/wp-content/themes/astra/assets/js/minified/frontend.min.js",
-    "t": "script",
-    "s": 6158,
-    "d": 29,
-    "st": 131,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://perfectnations.org/wp-content/plugins/elementor/assets/js/webpack.runtime.min.js",
-    "t": "script",
-    "s": 385,
-    "d": 29,
-    "st": 131,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://perfectnations.org/wp-content/plugins/elementor/assets/js/frontend-modules.min.js",
-    "t": "script",
-    "s": 16125,
-    "d": 55,
-    "st": 131,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://perfectnations.org/wp-includes/js/jquery/ui/core.min.js",
-    "t": "script",
-    "s": 6550,
-    "d": 67,
-    "st": 131,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://perfectnations.org/wp-content/plugins/elementor/assets/js/frontend.min.js",
-    "t": "script",
-    "s": 18451,
-    "d": 82,
-    "st": 132,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://perfectnations.org/wp-includes/js/dist/hooks.min.js",
-    "t": "script",
-    "s": 2058,
-    "d": 91,
-    "st": 132,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://stats.wp.com/e-202645.js",
-    "t": "script",
-    "s": 0,
-    "d": 346,
-    "st": 132,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://perfectnations.org/wp-includes/js/dist/i18n.min.js",
-    "t": "script",
-    "s": 2676,
-    "d": 108,
-    "st": 132,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://perfectnations.org/wp-content/plugins/elementor-pro/assets/js/frontend.min.js",
-    "t": "script",
-    "s": 24049,
-    "d": 115,
-    "st": 132,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://perfectnations.org/wp-content/plugins/elementor-pro/assets/js/elements-handlers.min.js",
-    "t": "script",
-    "s": 69378,
-    "d": 134,
-    "st": 132,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://raw.githubusercontent.com/preetisinha70-PN/perfect-nations/main/data/kenya.json",
-    "t": "fetch",
-    "s": 0,
-    "d": 89,
-    "st": 504,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://spcdn.shortpixel.ai/spio/ret_img+q_cdnize+to_webp+s_webp/perfectnations.org/wp-content/uploads/2026/10/vibrant-floral-artwork-mountain-600x750",
-    "t": "img",
-    "s": 0,
-    "d": 104,
-    "st": 586,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://fonts.googleapis.com/css2?family=Caveat:wght@600&display=swap",
-    "t": "link",
-    "s": 785,
-    "d": 19,
-    "st": 662,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://pixel.wp.com/g.gif?v=ext&blog=253016453&post=10496&tz=-4&srv=perfectnations.org&j=1%3A16.4&host=perfectnations.org&ref=https%3A%2F%2Fperfectna",
-    "t": "img",
-    "s": 0,
-    "d": 7,
-    "st": 843,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://perfectnations.org/wp-content/plugins/elementor/assets/js/chunks/background-slideshow.min.js?ver=4.3.6",
-    "t": "script",
-    "s": 7982,
-    "d": 24,
-    "st": 924,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://perfectnations.org/wp-content/plugins/elementor/assets/js/chunks/background-video.min.js?ver=4.3.6",
-    "t": "script",
-    "s": 8285,
-    "d": 25,
-    "st": 924,
-    "rb": "non-blocking"
-   }
+  "kind": "phone",
+  "cond": "now",
+  "errors": [
+   "console error: Failed to load resource: the server responded with a status of 403 ()"
   ],
-  "x-litespeed-cache": "miss",
-  "status": 200,
-  "path": "/blueprints/kenya/",
-  "kind": "laptop"
+  "navs": [
+   [
+    0.24,
+    "https://perfectnations.org/blueprints/kenya/"
+   ],
+   [
+    3.82,
+    "https://perfectnations.org/blueprints/kenya/"
+   ]
+  ],
+  "docs": [
+   [
+    0.22,
+    403,
+    "https://perfectnations.org/blueprints/kenya/",
+    "",
+    "",
+    "text/html"
+   ],
+   [
+    3.81,
+    200,
+    "https://perfectnations.org/blueprints/kenya/",
+    "hit",
+    "",
+    "text/html; charset=UTF-8"
+   ]
+  ],
+  "final_url": "https://perfectnations.org/blueprints/kenya/",
+  "round": 1
  },
  {
-  "ttfb": 25,
-  "html_done": 254,
+  "ttfb": 31,
+  "dcl": 1853,
+  "load": 2431,
+  "fcp": 648,
+  "lcp": 884,
+  "lcpEl": "P",
+  "tbt": 429,
+  "globe": false,
+  "canvas": true,
+  "libs": [
+   [
+    "https://unpkg.com/globe.gl",
+    227,
+    10
+   ]
+  ],
+  "path": "/blueprints/kenya/",
+  "kind": "phone",
+  "cond": "no-unpkg",
+  "errors": [
+   "console error: Failed to load resource: the server responded with a status of 403 ()",
+   "console error: Failed to load resource: net::ERR_FAILED"
+  ],
+  "navs": [
+   [
+    0.24,
+    "https://perfectnations.org/blueprints/kenya/"
+   ],
+   [
+    3.82,
+    "https://perfectnations.org/blueprints/kenya/"
+   ]
+  ],
+  "docs": [
+   [
+    0.22,
+    403,
+    "https://perfectnations.org/blueprints/kenya/",
+    "",
+    "",
+    "text/html"
+   ],
+   [
+    3.8,
+    200,
+    "https://perfectnations.org/blueprints/kenya/",
+    "hit",
+    "",
+    "text/html; charset=UTF-8"
+   ]
+  ],
+  "final_url": "https://perfectnations.org/blueprints/kenya/",
+  "round": 1
+ },
+ {
+  "ttfb": 30,
+  "dcl": 807,
+  "load": 975,
+  "fcp": 440,
+  "lcp": 588,
+  "lcpEl": "H2#bp-entry-h",
+  "tbt": 150,
+  "globe": true,
+  "canvas": true,
+  "libs": [
+   [
+    "https://unpkg.com/globe.gl",
+    59,
+    198
+   ]
+  ],
+  "path": "/blueprints/kenya/",
+  "kind": "laptop",
+  "cond": "now",
+  "errors": [
+   "console error: Failed to load resource: the server responded with a status of 403 ()",
+   "console warning: The resource https://perfectnations.org/wp-content/astra-local-fonts/barlow-semi-condensed/wlpvgxjLBV1hqnzfr-F8sEYMB0Yybp0mudRXeIqq.woff2 wa",
+   "console warning: The resource https://perfectnations.org/wp-content/astra-local-fonts/barlow-condensed/HTxwL3I-JCGChYJ8VI-L6OO_au7B46r2z3bWuQ.woff2 was prelo"
+  ],
+  "navs": [
+   [
+    0.1,
+    "https://perfectnations.org/blueprints/kenya/"
+   ],
+   [
+    3.23,
+    "https://perfectnations.org/blueprints/kenya/"
+   ]
+  ],
+  "docs": [
+   [
+    0.09,
+    403,
+    "https://perfectnations.org/blueprints/kenya/",
+    "",
+    "",
+    "text/html"
+   ],
+   [
+    3.22,
+    200,
+    "https://perfectnations.org/blueprints/kenya/",
+    "hit",
+    "",
+    "text/html; charset=UTF-8"
+   ]
+  ],
+  "final_url": "https://perfectnations.org/blueprints/kenya/",
+  "round": 1
+ },
+ {
+  "ttfb": 30,
+  "dcl": 558,
+  "load": 754,
+  "fcp": 204,
+  "lcp": 316,
+  "lcpEl": "H2#bp-entry-h",
+  "tbt": 37,
+  "globe": false,
+  "canvas": true,
+  "libs": [
+   [
+    "https://unpkg.com/globe.gl",
+    60,
+    11
+   ]
+  ],
+  "path": "/blueprints/kenya/",
+  "kind": "laptop",
+  "cond": "no-unpkg",
+  "errors": [
+   "console error: Failed to load resource: the server responded with a status of 403 ()",
+   "console error: Failed to load resource: net::ERR_FAILED",
+   "console warning: The resource https://perfectnations.org/wp-content/astra-local-fonts/barlow-semi-condensed/wlpvgxjLBV1hqnzfr-F8sEYMB0Yybp0mudRXeIqq.woff2 wa",
+   "console warning: The resource https://perfectnations.org/wp-content/astra-local-fonts/barlow-condensed/HTxwL3I-JCGChYJ8VI-L6OO_au7B46r2z3bWuQ.woff2 was prelo"
+  ],
+  "navs": [
+   [
+    0.09,
+    "https://perfectnations.org/blueprints/kenya/"
+   ],
+   [
+    5.14,
+    "https://perfectnations.org/blueprints/kenya/"
+   ]
+  ],
+  "docs": [
+   [
+    0.08,
+    403,
+    "https://perfectnations.org/blueprints/kenya/",
+    "",
+    "",
+    "text/html"
+   ],
+   [
+    5.13,
+    200,
+    "https://perfectnations.org/blueprints/kenya/",
+    "hit",
+    "",
+    "text/html; charset=UTF-8"
+   ]
+  ],
+  "final_url": "https://perfectnations.org/blueprints/kenya/",
+  "round": 1
+ },
+ {
+  "ttfb": 27,
   "dcl": 0,
   "load": 0,
   "fcp": 0,
   "lcp": 0,
   "lcpEl": "",
-  "tbt": 5,
-  "longN": 1,
-  "cls": 0,
-  "html_bytes": 138025,
-  "html_size": 482940,
-  "n_res": 31,
-  "bytes": 304259,
-  "res": [
-   {
-    "u": "https://perfectnations.org/wp-content/astra-local-fonts/barlow-condensed/HTxwL3I-JCGChYJ8VI-L6OO_au7B46r2z3bWuQ.woff2",
-    "t": "link",
-    "s": 22744,
-    "d": 245,
-    "st": 167,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://perfectnations.org/wp-content/astra-local-fonts/barlow-semi-condensed/wlpvgxjLBV1hqnzfr-F8sEYMB0Yybp0mudRXeIqq.woff2",
-    "t": "link",
-    "s": 22600,
-    "d": 246,
-    "st": 167,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://spcdn.shortpixel.ai/spio/ret_auto+v_1+q_cdnize+to_webp+s_webp/perfectnations.org/wp-content/themes/astra/assets/css/minified/main.min.css?ver=",
-    "t": "link",
-    "s": 0,
-    "d": 226,
-    "st": 169,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://spcdn.shortpixel.ai/spio/ret_auto+v_1+q_cdnize+to_webp+s_webp/perfectnations.org/wp-content/astra-local-fonts/astra-local-fonts.css?ver=4.14.2",
-    "t": "link",
-    "s": 0,
-    "d": 146,
-    "st": 169,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://perfectnations.org/wp-includes/js/mediaelement/mediaelementplayer-legacy.min.css",
-    "t": "link",
-    "s": 2679,
-    "d": 130,
-    "st": 169,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://spcdn.shortpixel.ai/spio/ret_auto+v_1+q_cdnize+to_webp+s_webp/perfectnations.org/wp-content/plugins/jetpack/jetpack_vendor/automattic/jetpack-",
-    "t": "link",
-    "s": 0,
-    "d": 172,
-    "st": 169,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://spcdn.shortpixel.ai/spio/ret_auto+v_1+q_cdnize+to_webp+s_webp/perfectnations.org/wp-content/plugins/jetpack/jetpack_vendor/automattic/jetpack-",
-    "t": "link",
-    "s": 0,
-    "d": 178,
-    "st": 169,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://perfectnations.org/wp-includes/js/mediaelement/wp-mediaelement.min.css",
-    "t": "link",
-    "s": 1279,
-    "d": 125,
-    "st": 171,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://spcdn.shortpixel.ai/spio/ret_auto+v_1+q_cdnize+to_webp+s_webp/perfectnations.org/wp-content/plugins/elementor/assets/css/frontend.min.css?ver=",
-    "t": "link",
-    "s": 0,
-    "d": 217,
-    "st": 171,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://spcdn.shortpixel.ai/spio/ret_auto+v_1+q_cdnize+to_webp+s_webp/perfectnations.org/wp-content/uploads/elementor/css/post-15201.css?ver=179402143",
-    "t": "link",
-    "s": 0,
-    "d": 160,
-    "st": 173,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://spcdn.shortpixel.ai/spio/ret_auto+v_1+q_cdnize+to_webp+s_webp/perfectnations.org/wp-content/uploads/elementor/css/post-648.css?ver=1794021427",
-    "t": "link",
-    "s": 0,
-    "d": 172,
-    "st": 173,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://spcdn.shortpixel.ai/spio/ret_auto+v_1+q_cdnize+to_webp+s_webp/perfectnations.org/wp-content/uploads/elementor/css/base-desktop.css?ver=6aee983",
-    "t": "link",
-    "s": 0,
-    "d": 176,
-    "st": 173,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://spcdn.shortpixel.ai/spio/ret_auto+v_1+q_cdnize+to_webp+s_webp/perfectnations.org/wp-content/uploads/elementor/css/local-15388-frontend-desktop",
-    "t": "link",
-    "s": 0,
-    "d": 159,
-    "st": 173,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://spcdn.shortpixel.ai/spio/ret_auto+v_1+q_cdnize+to_webp+s_webp/perfectnations.org/wp-content/uploads/elementor/css/base-mobile.css?ver=6aee9833",
-    "t": "link",
-    "s": 0,
-    "d": 157,
-    "st": 174,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://spcdn.shortpixel.ai/spio/ret_auto+v_1+q_cdnize+to_webp+s_webp/perfectnations.org/wp-content/uploads/elementor/css/post-15388.css?ver=179402142",
-    "t": "link",
-    "s": 0,
-    "d": 160,
-    "st": 175,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://spcdn.shortpixel.ai/spio/ret_auto+v_1+q_cdnize+to_webp+s_webp/perfectnations.org/wp-content/uploads/elementor/css/post-10809.css?ver=179402142",
-    "t": "link",
-    "s": 0,
-    "d": 176,
-    "st": 175,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://fonts.googleapis.com/css?family=Barlow+Condensed:100,100italic,200,200italic,300,300italic,400,400italic,500,500italic,600,600italic,700,700it",
-    "t": "link",
-    "s": 1282,
-    "d": 149,
-    "st": 175,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed:100,100italic,200,200italic,300,300italic,400,400italic,500,500italic,600,600italic,700,",
-    "t": "link",
-    "s": 1292,
-    "d": 146,
-    "st": 177,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://fonts.googleapis.com/css?family=PT+Sans+Narrow:100,100italic,200,200italic,300,300italic,400,400italic,500,500italic,600,600italic,700,700ital",
-    "t": "link",
-    "s": 860,
-    "d": 144,
-    "st": 177,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://perfectnations.org/wp-includes/js/jquery/jquery.min.js",
-    "t": "script",
-    "s": 29831,
-    "d": 247,
-    "st": 177,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://perfectnations.org/wp-includes/js/jquery/jquery-migrate.min.js",
-    "t": "script",
-    "s": 4971,
-    "d": 179,
-    "st": 177,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap",
-    "t": "link",
-    "s": 1246,
-    "d": 148,
-    "st": 177,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Barlow+Semi+Condensed:wght@400;500;600&display=swap",
-    "t": "link",
-    "s": 998,
-    "d": 139,
-    "st": 215,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://perfectnations.org/wp-content/plugins/elementor/assets/js/webpack.runtime.min.js",
-    "t": "script",
-    "s": 385,
-    "d": 131,
-    "st": 252,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://perfectnations.org/wp-content/themes/astra/assets/js/minified/frontend.min.js",
-    "t": "script",
-    "s": 6158,
-    "d": 155,
-    "st": 252,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://perfectnations.org/wp-content/plugins/elementor/assets/js/frontend-modules.min.js",
-    "t": "script",
-    "s": 16125,
-    "d": 286,
-    "st": 252,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://perfectnations.org/wp-includes/js/jquery/ui/core.min.js",
-    "t": "script",
-    "s": 6550,
-    "d": 293,
-    "st": 253,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://perfectnations.org/wp-content/plugins/elementor/assets/js/frontend.min.js",
-    "t": "script",
-    "s": 18451,
-    "d": 446,
-    "st": 253,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://perfectnations.org/wp-includes/js/dist/hooks.min.js",
-    "t": "script",
-    "s": 2058,
-    "d": 421,
-    "st": 255,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://perfectnations.org/wp-includes/js/dist/i18n.min.js",
-    "t": "script",
-    "s": 2676,
-    "d": 548,
-    "st": 256,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://perfectnations.org/wp-content/plugins/elementor-pro/assets/js/frontend.min.js",
-    "t": "script",
-    "s": 24049,
-    "d": 610,
-    "st": 256,
-    "rb": "non-blocking"
-   }
-  ],
-  "x-litespeed-cache": "hit",
-  "status": 200,
+  "tbt": 0,
+  "globe": false,
+  "canvas": false,
+  "libs": [],
   "path": "/about/",
-  "kind": "phone"
+  "kind": "phone",
+  "cond": "now",
+  "errors": [
+   "console error: Failed to load resource: the server responded with a status of 403 ()"
+  ],
+  "navs": [
+   [
+    0.24,
+    "https://perfectnations.org/about/"
+   ],
+   [
+    3.8,
+    "https://perfectnations.org/about/"
+   ]
+  ],
+  "docs": [
+   [
+    0.21,
+    403,
+    "https://perfectnations.org/about/",
+    "",
+    "",
+    "text/html"
+   ],
+   [
+    3.79,
+    200,
+    "https://perfectnations.org/about/",
+    "hit",
+    "",
+    "text/html; charset=UTF-8"
+   ]
+  ],
+  "final_url": "https://perfectnations.org/about/",
+  "round": 1
  },
  {
-  "ttfb": 56,
-  "html_done": 117,
-  "dcl": 672,
-  "load": 850,
-  "fcp": 496,
-  "lcp": 776,
-  "lcpEl": "IMG",
-  "tbt": 72,
-  "longN": 2,
-  "cls": 0.039,
-  "html_bytes": 138025,
-  "html_size": 482940,
-  "n_res": 42,
-  "bytes": 390901,
-  "res": [
-   {
-    "u": "https://perfectnations.org/wp-content/astra-local-fonts/barlow-condensed/HTxwL3I-JCGChYJ8VI-L6OO_au7B46r2z3bWuQ.woff2",
-    "t": "link",
-    "s": 22744,
-    "d": 57,
-    "st": 62,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://perfectnations.org/wp-content/astra-local-fonts/barlow-semi-condensed/wlpvgxjLBV1hqnzfr-F8sEYMB0Yybp0mudRXeIqq.woff2",
-    "t": "link",
-    "s": 22600,
-    "d": 64,
-    "st": 62,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://spcdn.shortpixel.ai/spio/ret_auto+v_1+q_cdnize+to_webp+s_webp/perfectnations.org/wp-content/themes/astra/assets/css/minified/main.min.css?ver=",
-    "t": "link",
-    "s": 0,
-    "d": 13,
-    "st": 63,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://spcdn.shortpixel.ai/spio/ret_auto+v_1+q_cdnize+to_webp+s_webp/perfectnations.org/wp-content/astra-local-fonts/astra-local-fonts.css?ver=4.14.2",
-    "t": "link",
-    "s": 0,
-    "d": 21,
-    "st": 82,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://spcdn.shortpixel.ai/spio/ret_auto+v_1+q_cdnize+to_webp+s_webp/perfectnations.org/wp-content/plugins/jetpack/jetpack_vendor/automattic/jetpack-",
-    "t": "link",
-    "s": 0,
-    "d": 22,
-    "st": 82,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://spcdn.shortpixel.ai/spio/ret_auto+v_1+q_cdnize+to_webp+s_webp/perfectnations.org/wp-content/plugins/jetpack/jetpack_vendor/automattic/jetpack-",
-    "t": "link",
-    "s": 0,
-    "d": 16,
-    "st": 82,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://perfectnations.org/wp-includes/js/mediaelement/mediaelementplayer-legacy.min.css",
-    "t": "link",
-    "s": 2679,
-    "d": 45,
-    "st": 82,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://perfectnations.org/wp-includes/js/mediaelement/wp-mediaelement.min.css",
-    "t": "link",
-    "s": 1279,
-    "d": 46,
-    "st": 82,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://spcdn.shortpixel.ai/spio/ret_auto+v_1+q_cdnize+to_webp+s_webp/perfectnations.org/wp-content/plugins/elementor/assets/css/frontend.min.css?ver=",
-    "t": "link",
-    "s": 0,
-    "d": 16,
-    "st": 83,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://spcdn.shortpixel.ai/spio/ret_auto+v_1+q_cdnize+to_webp+s_webp/perfectnations.org/wp-content/uploads/elementor/css/post-648.css?ver=1794021427",
-    "t": "link",
-    "s": 0,
-    "d": 18,
-    "st": 83,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://spcdn.shortpixel.ai/spio/ret_auto+v_1+q_cdnize+to_webp+s_webp/perfectnations.org/wp-content/uploads/elementor/css/post-15201.css?ver=179402143",
-    "t": "link",
-    "s": 0,
-    "d": 17,
-    "st": 83,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://spcdn.shortpixel.ai/spio/ret_auto+v_1+q_cdnize+to_webp+s_webp/perfectnations.org/wp-content/uploads/elementor/css/base-desktop.css?ver=6aee983",
-    "t": "link",
-    "s": 0,
-    "d": 16,
-    "st": 83,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://spcdn.shortpixel.ai/spio/ret_auto+v_1+q_cdnize+to_webp+s_webp/perfectnations.org/wp-content/uploads/elementor/css/local-15388-frontend-desktop",
-    "t": "link",
-    "s": 0,
-    "d": 21,
-    "st": 84,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://spcdn.shortpixel.ai/spio/ret_auto+v_1+q_cdnize+to_webp+s_webp/perfectnations.org/wp-content/uploads/elementor/css/base-mobile.css?ver=6aee9833",
-    "t": "link",
-    "s": 0,
-    "d": 354,
-    "st": 84,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://spcdn.shortpixel.ai/spio/ret_auto+v_1+q_cdnize+to_webp+s_webp/perfectnations.org/wp-content/uploads/elementor/css/post-15388.css?ver=179402142",
-    "t": "link",
-    "s": 0,
-    "d": 22,
-    "st": 84,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://spcdn.shortpixel.ai/spio/ret_auto+v_1+q_cdnize+to_webp+s_webp/perfectnations.org/wp-content/uploads/elementor/css/post-10809.css?ver=179402142",
-    "t": "link",
-    "s": 0,
-    "d": 18,
-    "st": 84,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://fonts.googleapis.com/css?family=Barlow+Condensed:100,100italic,200,200italic,300,300italic,400,400italic,500,500italic,600,600italic,700,700it",
-    "t": "link",
-    "s": 1217,
-    "d": 25,
-    "st": 84,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed:100,100italic,200,200italic,300,300italic,400,400italic,500,500italic,600,600italic,700,",
-    "t": "link",
-    "s": 1231,
-    "d": 28,
-    "st": 84,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://fonts.googleapis.com/css?family=PT+Sans+Narrow:100,100italic,200,200italic,300,300italic,400,400italic,500,500italic,600,600italic,700,700ital",
-    "t": "link",
-    "s": 852,
-    "d": 25,
-    "st": 84,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://perfectnations.org/wp-includes/js/jquery/jquery.min.js",
-    "t": "script",
-    "s": 29831,
-    "d": 51,
-    "st": 84,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://perfectnations.org/wp-includes/js/jquery/jquery-migrate.min.js",
-    "t": "script",
-    "s": 4971,
-    "d": 51,
-    "st": 85,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://unpkg.com/globe.gl",
-    "t": "script",
-    "s": 0,
-    "d": 182,
-    "st": 85,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap",
-    "t": "link",
-    "s": 1215,
-    "d": 39,
-    "st": 86,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://www.googletagmanager.com/gtag/js?id=G-K84C0WC986",
-    "t": "script",
-    "s": 0,
-    "d": 269,
-    "st": 86,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Barlow+Semi+Condensed:wght@400;500;600&display=swap",
-    "t": "link",
-    "s": 972,
-    "d": 31,
-    "st": 98,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://spcdn.shortpixel.ai/spio/ret_img+q_cdnize+to_webp+s_webp/perfectnations.org/wp-content/uploads/2026/11/pn-logo-gold-7-stars.png",
-    "t": "img",
-    "s": 0,
-    "d": 209,
-    "st": 109,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://perfectnations.org/wp-content/themes/astra/assets/js/minified/frontend.min.js",
-    "t": "script",
-    "s": 6158,
-    "d": 26,
-    "st": 118,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://perfectnations.org/wp-content/plugins/elementor/assets/js/webpack.runtime.min.js",
-    "t": "script",
-    "s": 385,
-    "d": 26,
-    "st": 118,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://perfectnations.org/wp-content/plugins/elementor/assets/js/frontend-modules.min.js",
-    "t": "script",
-    "s": 16125,
-    "d": 59,
-    "st": 118,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://perfectnations.org/wp-includes/js/jquery/ui/core.min.js",
-    "t": "script",
-    "s": 6550,
-    "d": 59,
-    "st": 118,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://perfectnations.org/wp-content/plugins/elementor/assets/js/frontend.min.js",
-    "t": "script",
-    "s": 18451,
-    "d": 86,
-    "st": 118,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://perfectnations.org/wp-includes/js/dist/hooks.min.js",
-    "t": "script",
-    "s": 2058,
-    "d": 86,
-    "st": 118,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://stats.wp.com/e-202645.js",
-    "t": "script",
-    "s": 0,
-    "d": 330,
-    "st": 118,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://perfectnations.org/wp-includes/js/dist/i18n.min.js",
-    "t": "script",
-    "s": 2676,
-    "d": 109,
-    "st": 119,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://perfectnations.org/wp-content/plugins/elementor-pro/assets/js/frontend.min.js",
-    "t": "script",
-    "s": 24049,
-    "d": 112,
-    "st": 119,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://perfectnations.org/wp-content/plugins/elementor-pro/assets/js/elements-handlers.min.js",
-    "t": "script",
-    "s": 69378,
-    "d": 133,
-    "st": 119,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://spcdn.shortpixel.ai/spio/ret_img+q_cdnize+to_webp+s_webp/perfectnations.org/wp-content/uploads/2026/02/Preeti-BW.jpeg",
-    "t": "img",
-    "s": 0,
-    "d": 100,
-    "st": 543,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://pixel.wp.com/g.gif?v=ext&blog=253016453&post=15201&tz=-4&srv=perfectnations.org&j=1%3A16.4&host=perfectnations.org&ref=https%3A%2F%2Fperfectna",
-    "t": "img",
-    "s": 0,
-    "d": 10,
-    "st": 670,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://perfectnations.org/wp-content/plugins/elementor/assets/js/chunks/background-slideshow.min.js?ver=4.3.6",
-    "t": "script",
-    "s": 7982,
-    "d": 23,
-    "st": 732,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://perfectnations.org/wp-content/plugins/elementor/assets/js/chunks/background-video.min.js?ver=4.3.6",
-    "t": "script",
-    "s": 8285,
-    "d": 23,
-    "st": 733,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://www.google-analytics.com/g/collect?v=2&tid=G-K84C0WC986&gtm=45je6b41v9249213363za208zd9249213363xf1&_p=1794026476588&gcd=13l3l3l3l1l1&npa=0&dm",
-    "t": "fetch",
-    "s": 0,
-    "d": 34,
-    "st": 835,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://perfectnations.org/wp-content/uploads/2025/01/cropped-14-cropped-32x32.png",
-    "t": "other",
-    "s": 1188,
-    "d": 51,
-    "st": 852,
-    "rb": "non-blocking"
-   }
+  "ttfb": 29,
+  "dcl": 0,
+  "load": 0,
+  "fcp": 0,
+  "lcp": 0,
+  "lcpEl": "",
+  "tbt": 0,
+  "globe": false,
+  "canvas": false,
+  "libs": [
+   [
+    "https://unpkg.com/globe.gl",
+    203,
+    16
+   ]
   ],
-  "x-litespeed-cache": "hit",
-  "status": 200,
   "path": "/about/",
-  "kind": "laptop"
+  "kind": "phone",
+  "cond": "no-unpkg",
+  "errors": [
+   "console error: Failed to load resource: the server responded with a status of 403 ()",
+   "console error: Failed to load resource: net::ERR_FAILED"
+  ],
+  "navs": [
+   [
+    0.3,
+    "https://perfectnations.org/about/"
+   ],
+   [
+    3.87,
+    "https://perfectnations.org/about/"
+   ]
+  ],
+  "docs": [
+   [
+    0.28,
+    403,
+    "https://perfectnations.org/about/",
+    "",
+    "",
+    "text/html"
+   ],
+   [
+    3.86,
+    200,
+    "https://perfectnations.org/about/",
+    "hit",
+    "",
+    "text/html; charset=UTF-8"
+   ]
+  ],
+  "final_url": "https://perfectnations.org/about/",
+  "round": 1
+ },
+ {
+  "ttfb": 57,
+  "dcl": 0,
+  "load": 0,
+  "fcp": 0,
+  "lcp": 0,
+  "lcpEl": "",
+  "tbt": 0,
+  "globe": false,
+  "canvas": false,
+  "libs": [],
+  "path": "/about/",
+  "kind": "laptop",
+  "cond": "now",
+  "errors": [
+   "console error: Failed to load resource: the server responded with a status of 403 ()"
+  ],
+  "navs": [
+   [
+    0.1,
+    "https://perfectnations.org/about/"
+   ],
+   [
+    3.25,
+    "https://perfectnations.org/about/"
+   ]
+  ],
+  "docs": [
+   [
+    0.08,
+    403,
+    "https://perfectnations.org/about/",
+    "",
+    "",
+    "text/html"
+   ],
+   [
+    3.25,
+    200,
+    "https://perfectnations.org/about/",
+    "hit",
+    "",
+    "text/html; charset=UTF-8"
+   ]
+  ],
+  "final_url": "https://perfectnations.org/about/",
+  "round": 1
+ },
+ {
+  "ttfb": 29,
+  "dcl": 0,
+  "load": 0,
+  "fcp": 192,
+  "lcp": 0,
+  "lcpEl": "",
+  "tbt": 0,
+  "globe": false,
+  "canvas": false,
+  "libs": [
+   [
+    "https://unpkg.com/globe.gl",
+    59,
+    11
+   ]
+  ],
+  "path": "/about/",
+  "kind": "laptop",
+  "cond": "no-unpkg",
+  "errors": [
+   "console error: Failed to load resource: the server responded with a status of 403 ()",
+   "console error: Failed to load resource: net::ERR_FAILED"
+  ],
+  "navs": [
+   [
+    0.09,
+    "https://perfectnations.org/about/"
+   ],
+   [
+    3.2,
+    "https://perfectnations.org/about/"
+   ]
+  ],
+  "docs": [
+   [
+    0.09,
+    403,
+    "https://perfectnations.org/about/",
+    "",
+    "",
+    "text/html"
+   ],
+   [
+    3.2,
+    200,
+    "https://perfectnations.org/about/",
+    "hit",
+    "",
+    "text/html; charset=UTF-8"
+   ]
+  ],
+  "final_url": "https://perfectnations.org/about/",
+  "round": 1
+ },
+ {
+  "ttfb": 57,
+  "dcl": 0,
+  "load": 0,
+  "fcp": 0,
+  "lcp": 0,
+  "lcpEl": "",
+  "tbt": 0,
+  "globe": false,
+  "canvas": false,
+  "libs": [],
+  "path": "/state-of-nations/",
+  "kind": "phone",
+  "cond": "now",
+  "errors": [
+   "console error: Failed to load resource: the server responded with a status of 403 ()"
+  ],
+  "navs": [
+   [
+    0.24,
+    "https://perfectnations.org/state-of-nations/"
+   ],
+   [
+    3.81,
+    "https://perfectnations.org/state-of-nations/"
+   ]
+  ],
+  "docs": [
+   [
+    0.22,
+    403,
+    "https://perfectnations.org/state-of-nations/",
+    "",
+    "",
+    "text/html"
+   ],
+   [
+    3.8,
+    200,
+    "https://perfectnations.org/state-of-nations/",
+    "hit",
+    "",
+    "text/html; charset=UTF-8"
+   ]
+  ],
+  "final_url": "https://perfectnations.org/state-of-nations/",
+  "round": 1
+ },
+ {
+  "ttfb": 33,
+  "dcl": 0,
+  "load": 0,
+  "fcp": 0,
+  "lcp": 0,
+  "lcpEl": "",
+  "tbt": 0,
+  "globe": false,
+  "canvas": false,
+  "libs": [
+   [
+    "https://unpkg.com/globe.gl",
+    217,
+    19
+   ]
+  ],
+  "path": "/state-of-nations/",
+  "kind": "phone",
+  "cond": "no-unpkg",
+  "errors": [
+   "console error: Failed to load resource: the server responded with a status of 403 ()",
+   "console error: Failed to load resource: net::ERR_FAILED"
+  ],
+  "navs": [
+   [
+    0.24,
+    "https://perfectnations.org/state-of-nations/"
+   ],
+   [
+    3.81,
+    "https://perfectnations.org/state-of-nations/"
+   ]
+  ],
+  "docs": [
+   [
+    0.22,
+    403,
+    "https://perfectnations.org/state-of-nations/",
+    "",
+    "",
+    "text/html"
+   ],
+   [
+    3.8,
+    200,
+    "https://perfectnations.org/state-of-nations/",
+    "hit",
+    "",
+    "text/html; charset=UTF-8"
+   ]
+  ],
+  "final_url": "https://perfectnations.org/state-of-nations/",
+  "round": 1
  },
  {
   "ttfb": 28,
-  "html_done": 259,
   "dcl": 0,
   "load": 0,
   "fcp": 0,
   "lcp": 0,
   "lcpEl": "",
-  "tbt": 18,
-  "longN": 1,
-  "cls": 0,
-  "html_bytes": 146937,
-  "html_size": 513471,
-  "n_res": 32,
-  "bytes": 313226,
-  "res": [
-   {
-    "u": "https://perfectnations.org/wp-content/astra-local-fonts/barlow-condensed/HTxwL3I-JCGChYJ8VI-L6OO_au7B46r2z3bWuQ.woff2",
-    "t": "link",
-    "s": 22744,
-    "d": 197,
-    "st": 168,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://perfectnations.org/wp-content/astra-local-fonts/barlow-semi-condensed/wlpvgxjLBV1hqnzfr-F8sEYMB0Yybp0mudRXeIqq.woff2",
-    "t": "link",
-    "s": 22600,
-    "d": 199,
-    "st": 168,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://spcdn.shortpixel.ai/spio/ret_auto+v_1+q_cdnize+to_webp+s_webp/perfectnations.org/wp-content/themes/astra/assets/css/minified/main.min.css?ver=",
-    "t": "link",
-    "s": 0,
-    "d": 312,
-    "st": 169,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://spcdn.shortpixel.ai/spio/ret_auto+v_1+q_cdnize+to_webp+s_webp/perfectnations.org/wp-content/astra-local-fonts/astra-local-fonts.css?ver=4.14.2",
-    "t": "link",
-    "s": 0,
-    "d": 267,
-    "st": 170,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://spcdn.shortpixel.ai/spio/ret_auto+v_1+q_cdnize+to_webp+s_webp/perfectnations.org/wp-content/plugins/jetpack/jetpack_vendor/automattic/jetpack-",
-    "t": "link",
-    "s": 0,
-    "d": 282,
-    "st": 170,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://spcdn.shortpixel.ai/spio/ret_auto+v_1+q_cdnize+to_webp+s_webp/perfectnations.org/wp-content/plugins/jetpack/jetpack_vendor/automattic/jetpack-",
-    "t": "link",
-    "s": 0,
-    "d": 287,
-    "st": 171,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://perfectnations.org/wp-includes/js/mediaelement/mediaelementplayer-legacy.min.css",
-    "t": "link",
-    "s": 2679,
-    "d": 129,
-    "st": 172,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://perfectnations.org/wp-includes/js/mediaelement/wp-mediaelement.min.css",
-    "t": "link",
-    "s": 1279,
-    "d": 125,
-    "st": 172,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://spcdn.shortpixel.ai/spio/ret_auto+v_1+q_cdnize+to_webp+s_webp/perfectnations.org/wp-content/plugins/elementor/assets/css/frontend.min.css?ver=",
-    "t": "link",
-    "s": 0,
-    "d": 308,
-    "st": 172,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://spcdn.shortpixel.ai/spio/ret_auto+v_1+q_cdnize+to_webp+s_webp/perfectnations.org/wp-content/uploads/elementor/css/post-648.css?ver=1794021427",
-    "t": "link",
-    "s": 0,
-    "d": 283,
-    "st": 172,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://spcdn.shortpixel.ai/spio/ret_auto+v_1+q_cdnize+to_webp+s_webp/perfectnations.org/wp-content/uploads/elementor/css/post-15051.css?ver=179402144",
-    "t": "link",
-    "s": 0,
-    "d": 269,
-    "st": 173,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://spcdn.shortpixel.ai/spio/ret_auto+v_1+q_cdnize+to_webp+s_webp/perfectnations.org/wp-content/uploads/elementor/css/base-desktop.css?ver=6aee983",
-    "t": "link",
-    "s": 0,
-    "d": 287,
-    "st": 174,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://spcdn.shortpixel.ai/spio/ret_auto+v_1+q_cdnize+to_webp+s_webp/perfectnations.org/wp-content/uploads/elementor/css/local-15388-frontend-desktop",
-    "t": "link",
-    "s": 0,
-    "d": 271,
-    "st": 175,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://spcdn.shortpixel.ai/spio/ret_auto+v_1+q_cdnize+to_webp+s_webp/perfectnations.org/wp-content/uploads/elementor/css/local-15051-frontend-desktop",
-    "t": "link",
-    "s": 0,
-    "d": 277,
-    "st": 175,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://spcdn.shortpixel.ai/spio/ret_auto+v_1+q_cdnize+to_webp+s_webp/perfectnations.org/wp-content/uploads/elementor/css/base-mobile.css?ver=6aee9833",
-    "t": "link",
-    "s": 0,
-    "d": 270,
-    "st": 175,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://spcdn.shortpixel.ai/spio/ret_auto+v_1+q_cdnize+to_webp+s_webp/perfectnations.org/wp-content/uploads/elementor/css/post-15388.css?ver=179402142",
-    "t": "link",
-    "s": 0,
-    "d": 273,
-    "st": 176,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://spcdn.shortpixel.ai/spio/ret_auto+v_1+q_cdnize+to_webp+s_webp/perfectnations.org/wp-content/uploads/elementor/css/post-10809.css?ver=179402142",
-    "t": "link",
-    "s": 0,
-    "d": 280,
-    "st": 177,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://fonts.googleapis.com/css?family=Barlow+Condensed:100,100italic,200,200italic,300,300italic,400,400italic,500,500italic,600,600italic,700,700it",
-    "t": "link",
-    "s": 1282,
-    "d": 129,
-    "st": 177,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed:100,100italic,200,200italic,300,300italic,400,400italic,500,500italic,600,600italic,700,",
-    "t": "link",
-    "s": 1292,
-    "d": 130,
-    "st": 177,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://fonts.googleapis.com/css?family=PT+Sans+Narrow:100,100italic,200,200italic,300,300italic,400,400italic,500,500italic,600,600italic,700,700ital",
-    "t": "link",
-    "s": 860,
-    "d": 134,
-    "st": 177,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://perfectnations.org/wp-includes/js/jquery/jquery.min.js",
-    "t": "script",
-    "s": 29831,
-    "d": 199,
-    "st": 177,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://perfectnations.org/wp-includes/js/jquery/jquery-migrate.min.js",
-    "t": "script",
-    "s": 4971,
-    "d": 149,
-    "st": 179,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap",
-    "t": "link",
-    "s": 1301,
-    "d": 133,
-    "st": 179,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Barlow+Semi+Condensed:wght@400;500;600&display=swap",
-    "t": "link",
-    "s": 998,
-    "d": 127,
-    "st": 214,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://perfectnations.org/wp-content/themes/astra/assets/js/minified/frontend.min.js",
-    "t": "script",
-    "s": 6158,
-    "d": 132,
-    "st": 258,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://perfectnations.org/wp-content/plugins/elementor/assets/js/webpack.runtime.min.js",
-    "t": "script",
-    "s": 385,
-    "d": 128,
-    "st": 258,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://perfectnations.org/wp-content/plugins/elementor/assets/js/frontend-modules.min.js",
-    "t": "script",
-    "s": 16125,
-    "d": 286,
-    "st": 258,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://perfectnations.org/wp-includes/js/jquery/ui/core.min.js",
-    "t": "script",
-    "s": 6550,
-    "d": 273,
-    "st": 259,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://perfectnations.org/wp-content/plugins/elementor/assets/js/frontend.min.js",
-    "t": "script",
-    "s": 18451,
-    "d": 458,
-    "st": 260,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://perfectnations.org/wp-includes/js/dist/hooks.min.js",
-    "t": "script",
-    "s": 2058,
-    "d": 430,
-    "st": 260,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://perfectnations.org/wp-includes/js/dist/i18n.min.js",
-    "t": "script",
-    "s": 2676,
-    "d": 556,
-    "st": 260,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://perfectnations.org/wp-content/plugins/elementor-pro/assets/js/frontend.min.js",
-    "t": "script",
-    "s": 24049,
-    "d": 627,
-    "st": 261,
-    "rb": "non-blocking"
-   }
-  ],
-  "x-litespeed-cache": "hit",
-  "status": 200,
+  "tbt": 0,
+  "globe": false,
+  "canvas": false,
+  "libs": [],
   "path": "/state-of-nations/",
-  "kind": "phone"
+  "kind": "laptop",
+  "cond": "now",
+  "errors": [
+   "console error: Failed to load resource: the server responded with a status of 403 ()"
+  ],
+  "navs": [
+   [
+    0.09,
+    "https://perfectnations.org/state-of-nations/"
+   ],
+   [
+    3.23,
+    "https://perfectnations.org/state-of-nations/"
+   ]
+  ],
+  "docs": [
+   [
+    0.09,
+    403,
+    "https://perfectnations.org/state-of-nations/",
+    "",
+    "",
+    "text/html"
+   ],
+   [
+    3.23,
+    200,
+    "https://perfectnations.org/state-of-nations/",
+    "hit",
+    "",
+    "text/html; charset=UTF-8"
+   ]
+  ],
+  "final_url": "https://perfectnations.org/state-of-nations/",
+  "round": 1
  },
  {
   "ttfb": 26,
-  "html_done": 88,
-  "dcl": 672,
-  "load": 858,
-  "fcp": 520,
-  "lcp": 620,
-  "lcpEl": "H1#sn-h1.sn-h1",
-  "tbt": 86,
-  "longN": 2,
-  "cls": 0,
-  "html_bytes": 146937,
-  "html_size": 513471,
-  "n_res": 45,
-  "bytes": 400128,
-  "res": [
-   {
-    "u": "https://perfectnations.org/wp-content/astra-local-fonts/barlow-condensed/HTxwL3I-JCGChYJ8VI-L6OO_au7B46r2z3bWuQ.woff2",
-    "t": "link",
-    "s": 22744,
-    "d": 57,
-    "st": 33,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://perfectnations.org/wp-content/astra-local-fonts/barlow-semi-condensed/wlpvgxjLBV1hqnzfr-F8sEYMB0Yybp0mudRXeIqq.woff2",
-    "t": "link",
-    "s": 22600,
-    "d": 58,
-    "st": 33,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://spcdn.shortpixel.ai/spio/ret_auto+v_1+q_cdnize+to_webp+s_webp/perfectnations.org/wp-content/themes/astra/assets/css/minified/main.min.css?ver=",
-    "t": "link",
-    "s": 0,
-    "d": 14,
-    "st": 33,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://spcdn.shortpixel.ai/spio/ret_auto+v_1+q_cdnize+to_webp+s_webp/perfectnations.org/wp-content/astra-local-fonts/astra-local-fonts.css?ver=4.14.2",
-    "t": "link",
-    "s": 0,
-    "d": 17,
-    "st": 52,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://spcdn.shortpixel.ai/spio/ret_auto+v_1+q_cdnize+to_webp+s_webp/perfectnations.org/wp-content/plugins/jetpack/jetpack_vendor/automattic/jetpack-",
-    "t": "link",
-    "s": 0,
-    "d": 17,
-    "st": 52,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://spcdn.shortpixel.ai/spio/ret_auto+v_1+q_cdnize+to_webp+s_webp/perfectnations.org/wp-content/plugins/jetpack/jetpack_vendor/automattic/jetpack-",
-    "t": "link",
-    "s": 0,
-    "d": 18,
-    "st": 52,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://perfectnations.org/wp-includes/js/mediaelement/mediaelementplayer-legacy.min.css",
-    "t": "link",
-    "s": 2679,
-    "d": 52,
-    "st": 52,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://perfectnations.org/wp-includes/js/mediaelement/wp-mediaelement.min.css",
-    "t": "link",
-    "s": 1279,
-    "d": 53,
-    "st": 52,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://spcdn.shortpixel.ai/spio/ret_auto+v_1+q_cdnize+to_webp+s_webp/perfectnations.org/wp-content/plugins/elementor/assets/css/frontend.min.css?ver=",
-    "t": "link",
-    "s": 0,
-    "d": 19,
-    "st": 53,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://spcdn.shortpixel.ai/spio/ret_auto+v_1+q_cdnize+to_webp+s_webp/perfectnations.org/wp-content/uploads/elementor/css/post-648.css?ver=1794021427",
-    "t": "link",
-    "s": 0,
-    "d": 17,
-    "st": 54,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://spcdn.shortpixel.ai/spio/ret_auto+v_1+q_cdnize+to_webp+s_webp/perfectnations.org/wp-content/uploads/elementor/css/post-15051.css?ver=179402144",
-    "t": "link",
-    "s": 0,
-    "d": 19,
-    "st": 54,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://spcdn.shortpixel.ai/spio/ret_auto+v_1+q_cdnize+to_webp+s_webp/perfectnations.org/wp-content/uploads/elementor/css/base-desktop.css?ver=6aee983",
-    "t": "link",
-    "s": 0,
-    "d": 20,
-    "st": 54,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://spcdn.shortpixel.ai/spio/ret_auto+v_1+q_cdnize+to_webp+s_webp/perfectnations.org/wp-content/uploads/elementor/css/local-15388-frontend-desktop",
-    "t": "link",
-    "s": 0,
-    "d": 29,
-    "st": 54,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://spcdn.shortpixel.ai/spio/ret_auto+v_1+q_cdnize+to_webp+s_webp/perfectnations.org/wp-content/uploads/elementor/css/local-15051-frontend-desktop",
-    "t": "link",
-    "s": 0,
-    "d": 22,
-    "st": 54,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://spcdn.shortpixel.ai/spio/ret_auto+v_1+q_cdnize+to_webp+s_webp/perfectnations.org/wp-content/uploads/elementor/css/base-mobile.css?ver=6aee9833",
-    "t": "link",
-    "s": 0,
-    "d": 300,
-    "st": 54,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://spcdn.shortpixel.ai/spio/ret_auto+v_1+q_cdnize+to_webp+s_webp/perfectnations.org/wp-content/uploads/elementor/css/post-15388.css?ver=179402142",
-    "t": "link",
-    "s": 0,
-    "d": 20,
-    "st": 54,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://spcdn.shortpixel.ai/spio/ret_auto+v_1+q_cdnize+to_webp+s_webp/perfectnations.org/wp-content/uploads/elementor/css/post-10809.css?ver=179402142",
-    "t": "link",
-    "s": 0,
-    "d": 21,
-    "st": 55,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://fonts.googleapis.com/css?family=Barlow+Condensed:100,100italic,200,200italic,300,300italic,400,400italic,500,500italic,600,600italic,700,700it",
-    "t": "link",
-    "s": 1217,
-    "d": 29,
-    "st": 55,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed:100,100italic,200,200italic,300,300italic,400,400italic,500,500italic,600,600italic,700,",
-    "t": "link",
-    "s": 1231,
-    "d": 27,
-    "st": 55,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://fonts.googleapis.com/css?family=PT+Sans+Narrow:100,100italic,200,200italic,300,300italic,400,400italic,500,500italic,600,600italic,700,700ital",
-    "t": "link",
-    "s": 852,
-    "d": 26,
-    "st": 55,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://perfectnations.org/wp-includes/js/jquery/jquery.min.js",
-    "t": "script",
-    "s": 29831,
-    "d": 53,
-    "st": 55,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://perfectnations.org/wp-includes/js/jquery/jquery-migrate.min.js",
-    "t": "script",
-    "s": 4971,
-    "d": 52,
-    "st": 56,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://unpkg.com/globe.gl",
-    "t": "script",
-    "s": 0,
-    "d": 242,
-    "st": 56,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap",
-    "t": "link",
-    "s": 1215,
-    "d": 84,
-    "st": 56,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://www.googletagmanager.com/gtag/js?id=G-K84C0WC986",
-    "t": "script",
-    "s": 0,
-    "d": 259,
-    "st": 56,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Barlow+Semi+Condensed:wght@400;500;600&display=swap",
-    "t": "link",
-    "s": 972,
-    "d": 30,
-    "st": 67,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://spcdn.shortpixel.ai/spio/ret_img+q_cdnize+to_webp+s_webp/perfectnations.org/wp-content/uploads/2026/11/pn-logo-gold-7-stars.png",
-    "t": "img",
-    "s": 0,
-    "d": 270,
-    "st": 68,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://perfectnations.org/wp-content/themes/astra/assets/js/minified/frontend.min.js",
-    "t": "script",
-    "s": 6158,
-    "d": 23,
-    "st": 90,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://perfectnations.org/wp-content/plugins/elementor/assets/js/webpack.runtime.min.js",
-    "t": "script",
-    "s": 385,
-    "d": 23,
-    "st": 90,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://perfectnations.org/wp-content/plugins/elementor/assets/js/frontend-modules.min.js",
-    "t": "script",
-    "s": 16125,
-    "d": 57,
-    "st": 90,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://perfectnations.org/wp-includes/js/jquery/ui/core.min.js",
-    "t": "script",
-    "s": 6550,
-    "d": 58,
-    "st": 90,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://perfectnations.org/wp-content/plugins/elementor/assets/js/frontend.min.js",
-    "t": "script",
-    "s": 18451,
-    "d": 81,
-    "st": 90,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://perfectnations.org/wp-includes/js/dist/hooks.min.js",
-    "t": "script",
-    "s": 2058,
-    "d": 82,
-    "st": 91,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://perfectnations.org/wp-includes/js/dist/i18n.min.js",
-    "t": "script",
-    "s": 2676,
-    "d": 106,
-    "st": 91,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://stats.wp.com/e-202645.js",
-    "t": "script",
-    "s": 0,
-    "d": 264,
-    "st": 91,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://perfectnations.org/wp-content/plugins/elementor-pro/assets/js/frontend.min.js",
-    "t": "script",
-    "s": 24049,
-    "d": 109,
-    "st": 91,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://perfectnations.org/wp-content/plugins/elementor-pro/assets/js/elements-handlers.min.js",
-    "t": "script",
-    "s": 69377,
-    "d": 131,
-    "st": 91,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://perfectnations.org/wp-json/wp/v2/categories?slug=dispatches&_fields=id",
-    "t": "fetch",
-    "s": 316,
-    "d": 303,
-    "st": 569,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://raw.githubusercontent.com/preetisinha70-PN/perfect-nations/main/data/solutions-by-nation.json",
-    "t": "fetch",
-    "s": 0,
-    "d": 76,
-    "st": 570,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://raw.githubusercontent.com/preetisinha70-PN/perfect-nations/main/data/state-of-nations.json",
-    "t": "fetch",
-    "s": 0,
-    "d": 68,
-    "st": 570,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://pixel.wp.com/g.gif?v=ext&blog=253016453&post=15051&tz=-4&srv=perfectnations.org&j=1%3A16.4&host=perfectnations.org&ref=https%3A%2F%2Fperfectna",
-    "t": "img",
-    "s": 0,
-    "d": 6,
-    "st": 670,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://perfectnations.org/wp-content/plugins/elementor/assets/js/chunks/background-slideshow.min.js?ver=4.3.6",
-    "t": "script",
-    "s": 7982,
-    "d": 24,
-    "st": 766,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://perfectnations.org/wp-content/plugins/elementor/assets/js/chunks/background-video.min.js?ver=4.3.6",
-    "t": "script",
-    "s": 8285,
-    "d": 25,
-    "st": 766,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://www.google-analytics.com/g/collect?v=2&tid=G-K84C0WC986&gtm=45je6b41v9249213363za208zd9249213363xf1&_p=1794026485733&gcd=13l3l3l3l1l1&npa=0&dm",
-    "t": "fetch",
-    "s": 0,
-    "d": 27,
-    "st": 843,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://perfectnations.org/wp-content/uploads/2025/01/cropped-14-cropped-32x32.png",
-    "t": "other",
-    "s": 1188,
-    "d": 21,
-    "st": 861,
-    "rb": "non-blocking"
-   }
-  ],
-  "x-litespeed-cache": "hit",
-  "status": 200,
-  "path": "/state-of-nations/",
-  "kind": "laptop"
- },
- {
-  "ttfb": 24,
-  "html_done": 234,
   "dcl": 0,
   "load": 0,
   "fcp": 0,
   "lcp": 0,
   "lcpEl": "",
-  "tbt": 5,
-  "longN": 1,
-  "cls": 0,
-  "html_bytes": 115065,
-  "html_size": 415854,
-  "n_res": 32,
-  "bytes": 281299,
-  "res": [
-   {
-    "u": "https://perfectnations.org/wp-content/astra-local-fonts/barlow-condensed/HTxwL3I-JCGChYJ8VI-L6OO_au7B46r2z3bWuQ.woff2",
-    "t": "link",
-    "s": 22744,
-    "d": 250,
-    "st": 164,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://spcdn.shortpixel.ai/spio/ret_auto+v_1+q_cdnize+to_webp+s_webp/perfectnations.org/wp-content/themes/astra/assets/css/minified/main.min.css?ver=",
-    "t": "link",
-    "s": 0,
-    "d": 242,
-    "st": 166,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://perfectnations.org/wp-content/astra-local-fonts/barlow-semi-condensed/wlpvgxjLBV1hqnzfr-F8sEYMB0Yybp0mudRXeIqq.woff2",
-    "t": "link",
-    "s": 22600,
-    "d": 253,
-    "st": 166,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://spcdn.shortpixel.ai/spio/ret_auto+v_1+q_cdnize+to_webp+s_webp/perfectnations.org/wp-content/astra-local-fonts/astra-local-fonts.css?ver=4.14.2",
-    "t": "link",
-    "s": 0,
-    "d": 156,
-    "st": 166,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://spcdn.shortpixel.ai/spio/ret_auto+v_1+q_cdnize+to_webp+s_webp/perfectnations.org/wp-content/plugins/jetpack/jetpack_vendor/automattic/jetpack-",
-    "t": "link",
-    "s": 0,
-    "d": 173,
-    "st": 167,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://spcdn.shortpixel.ai/spio/ret_auto+v_1+q_cdnize+to_webp+s_webp/perfectnations.org/wp-content/plugins/jetpack/jetpack_vendor/automattic/jetpack-",
-    "t": "link",
-    "s": 0,
-    "d": 175,
-    "st": 168,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://perfectnations.org/wp-includes/js/mediaelement/mediaelementplayer-legacy.min.css",
-    "t": "link",
-    "s": 2679,
-    "d": 129,
-    "st": 168,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://perfectnations.org/wp-includes/js/mediaelement/wp-mediaelement.min.css",
-    "t": "link",
-    "s": 1279,
-    "d": 125,
-    "st": 168,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://spcdn.shortpixel.ai/spio/ret_auto+v_1+q_cdnize+to_webp+s_webp/perfectnations.org/wp-content/plugins/elementor/assets/css/frontend.min.css?ver=",
-    "t": "link",
-    "s": 0,
-    "d": 231,
-    "st": 169,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://spcdn.shortpixel.ai/spio/ret_auto+v_1+q_cdnize+to_webp+s_webp/perfectnations.org/wp-content/uploads/elementor/css/post-648.css?ver=1794021427",
-    "t": "link",
-    "s": 0,
-    "d": 176,
-    "st": 170,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://spcdn.shortpixel.ai/spio/ret_auto+v_1+q_cdnize+to_webp+s_webp/perfectnations.org/wp-content/uploads/elementor/css/base-desktop.css?ver=6aee983",
-    "t": "link",
-    "s": 0,
-    "d": 177,
-    "st": 170,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://spcdn.shortpixel.ai/spio/ret_auto+v_1+q_cdnize+to_webp+s_webp/perfectnations.org/wp-content/uploads/elementor/css/local-15388-frontend-desktop",
-    "t": "link",
-    "s": 0,
-    "d": 162,
-    "st": 170,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://spcdn.shortpixel.ai/spio/ret_auto+v_1+q_cdnize+to_webp+s_webp/perfectnations.org/wp-content/uploads/elementor/css/local-16839-frontend-desktop",
-    "t": "link",
-    "s": 0,
-    "d": 162,
-    "st": 170,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://spcdn.shortpixel.ai/spio/ret_auto+v_1+q_cdnize+to_webp+s_webp/perfectnations.org/wp-content/uploads/elementor/css/base-mobile.css?ver=6aee9833",
-    "t": "link",
-    "s": 0,
-    "d": 159,
-    "st": 170,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://spcdn.shortpixel.ai/spio/ret_auto+v_1+q_cdnize+to_webp+s_webp/perfectnations.org/wp-content/uploads/elementor/css/post-15388.css?ver=179402142",
-    "t": "link",
-    "s": 0,
-    "d": 159,
-    "st": 172,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://spcdn.shortpixel.ai/spio/ret_auto+v_1+q_cdnize+to_webp+s_webp/perfectnations.org/wp-content/uploads/elementor/css/post-10809.css?ver=179402142",
-    "t": "link",
-    "s": 0,
-    "d": 177,
-    "st": 172,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://fonts.googleapis.com/css?family=Barlow+Condensed:100,100italic,200,200italic,300,300italic,400,400italic,500,500italic,600,600italic,700,700it",
-    "t": "link",
-    "s": 1282,
-    "d": 138,
-    "st": 173,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed:100,100italic,200,200italic,300,300italic,400,400italic,500,500italic,600,600italic,700,",
-    "t": "link",
-    "s": 1292,
-    "d": 138,
-    "st": 173,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://fonts.googleapis.com/css?family=PT+Sans+Narrow:100,100italic,200,200italic,300,300italic,400,400italic,500,500italic,600,600italic,700,700ital",
-    "t": "link",
-    "s": 860,
-    "d": 138,
-    "st": 174,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://perfectnations.org/wp-includes/js/jquery/jquery.min.js",
-    "t": "script",
-    "s": 29831,
-    "d": 267,
-    "st": 174,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://perfectnations.org/wp-includes/js/jquery/jquery-migrate.min.js",
-    "t": "script",
-    "s": 4971,
-    "d": 185,
-    "st": 175,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap",
-    "t": "link",
-    "s": 1246,
-    "d": 138,
-    "st": 176,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Barlow+Semi+Condensed:wght@400;500;600&display=swap",
-    "t": "link",
-    "s": 998,
-    "d": 138,
-    "st": 215,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://spcdn.shortpixel.ai/spio/ret_img+q_cdnize+to_webp+s_webp/perfectnations.org/wp-content/uploads/2026/07/afghanistan-hindu-kush-in-bloom.png-768",
-    "t": "img",
-    "s": 0,
-    "d": 456,
-    "st": 220,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://perfectnations.org/wp-content/themes/astra/assets/js/minified/frontend.min.js",
-    "t": "script",
-    "s": 6158,
-    "d": 170,
-    "st": 234,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://perfectnations.org/wp-content/plugins/elementor/assets/js/webpack.runtime.min.js",
-    "t": "script",
-    "s": 385,
-    "d": 133,
-    "st": 234,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://perfectnations.org/wp-content/plugins/elementor/assets/js/frontend-modules.min.js",
-    "t": "script",
-    "s": 16125,
-    "d": 299,
-    "st": 234,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://perfectnations.org/wp-includes/js/jquery/ui/core.min.js",
-    "t": "script",
-    "s": 6550,
-    "d": 313,
-    "st": 234,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://perfectnations.org/wp-content/plugins/elementor/assets/js/frontend.min.js",
-    "t": "script",
-    "s": 18451,
-    "d": 465,
-    "st": 236,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://perfectnations.org/wp-includes/js/dist/hooks.min.js",
-    "t": "script",
-    "s": 2058,
-    "d": 442,
-    "st": 237,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://perfectnations.org/wp-includes/js/dist/i18n.min.js",
-    "t": "script",
-    "s": 2676,
-    "d": 568,
-    "st": 237,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://perfectnations.org/wp-content/plugins/elementor-pro/assets/js/frontend.min.js",
-    "t": "script",
-    "s": 24049,
-    "d": 631,
-    "st": 237,
-    "rb": "non-blocking"
-   }
+  "tbt": 0,
+  "globe": false,
+  "canvas": false,
+  "libs": [
+   [
+    "https://unpkg.com/globe.gl",
+    53,
+    11
+   ]
   ],
-  "x-litespeed-cache": "hit",
-  "status": 200,
-  "path": "/art-of-nations/",
-  "kind": "phone"
+  "path": "/state-of-nations/",
+  "kind": "laptop",
+  "cond": "no-unpkg",
+  "errors": [
+   "console error: Failed to load resource: the server responded with a status of 403 ()",
+   "console error: Failed to load resource: net::ERR_FAILED"
+  ],
+  "navs": [
+   [
+    0.09,
+    "https://perfectnations.org/state-of-nations/"
+   ],
+   [
+    3.27,
+    "https://perfectnations.org/state-of-nations/"
+   ]
+  ],
+  "docs": [
+   [
+    0.08,
+    403,
+    "https://perfectnations.org/state-of-nations/",
+    "",
+    "",
+    "text/html"
+   ],
+   [
+    3.27,
+    200,
+    "https://perfectnations.org/state-of-nations/",
+    "hit",
+    "",
+    "text/html; charset=UTF-8"
+   ]
+  ],
+  "final_url": "https://perfectnations.org/state-of-nations/",
+  "round": 1
  },
  {
-  "ttfb": 51,
-  "html_done": 117,
-  "dcl": 575,
-  "load": 777,
-  "fcp": 452,
-  "lcp": 588,
-  "lcpEl": "IMG.aon-slide",
-  "tbt": 68,
-  "longN": 3,
-  "cls": 0.003,
-  "html_bytes": 115065,
-  "html_size": 415854,
-  "n_res": 52,
-  "bytes": 407414,
-  "res": [
-   {
-    "u": "https://perfectnations.org/wp-content/astra-local-fonts/barlow-condensed/HTxwL3I-JCGChYJ8VI-L6OO_au7B46r2z3bWuQ.woff2",
-    "t": "link",
-    "s": 22744,
-    "d": 61,
-    "st": 58,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://perfectnations.org/wp-content/astra-local-fonts/barlow-semi-condensed/wlpvgxjLBV1hqnzfr-F8sEYMB0Yybp0mudRXeIqq.woff2",
-    "t": "link",
-    "s": 22600,
-    "d": 63,
-    "st": 58,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://spcdn.shortpixel.ai/spio/ret_auto+v_1+q_cdnize+to_webp+s_webp/perfectnations.org/wp-content/themes/astra/assets/css/minified/main.min.css?ver=",
-    "t": "link",
-    "s": 0,
-    "d": 14,
-    "st": 58,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://spcdn.shortpixel.ai/spio/ret_auto+v_1+q_cdnize+to_webp+s_webp/perfectnations.org/wp-content/astra-local-fonts/astra-local-fonts.css?ver=4.14.2",
-    "t": "link",
-    "s": 0,
-    "d": 12,
-    "st": 77,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://spcdn.shortpixel.ai/spio/ret_auto+v_1+q_cdnize+to_webp+s_webp/perfectnations.org/wp-content/plugins/jetpack/jetpack_vendor/automattic/jetpack-",
-    "t": "link",
-    "s": 0,
-    "d": 13,
-    "st": 77,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://spcdn.shortpixel.ai/spio/ret_auto+v_1+q_cdnize+to_webp+s_webp/perfectnations.org/wp-content/plugins/jetpack/jetpack_vendor/automattic/jetpack-",
-    "t": "link",
-    "s": 0,
-    "d": 13,
-    "st": 77,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://perfectnations.org/wp-includes/js/mediaelement/mediaelementplayer-legacy.min.css",
-    "t": "link",
-    "s": 2679,
-    "d": 41,
-    "st": 78,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://perfectnations.org/wp-includes/js/mediaelement/wp-mediaelement.min.css",
-    "t": "link",
-    "s": 1279,
-    "d": 42,
-    "st": 78,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://spcdn.shortpixel.ai/spio/ret_auto+v_1+q_cdnize+to_webp+s_webp/perfectnations.org/wp-content/plugins/elementor/assets/css/frontend.min.css?ver=",
-    "t": "link",
-    "s": 0,
-    "d": 15,
-    "st": 79,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://spcdn.shortpixel.ai/spio/ret_auto+v_1+q_cdnize+to_webp+s_webp/perfectnations.org/wp-content/uploads/elementor/css/post-648.css?ver=1794021427",
-    "t": "link",
-    "s": 0,
-    "d": 13,
-    "st": 79,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://spcdn.shortpixel.ai/spio/ret_auto+v_1+q_cdnize+to_webp+s_webp/perfectnations.org/wp-content/uploads/elementor/css/base-desktop.css?ver=6aee983",
-    "t": "link",
-    "s": 0,
-    "d": 13,
-    "st": 79,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://spcdn.shortpixel.ai/spio/ret_auto+v_1+q_cdnize+to_webp+s_webp/perfectnations.org/wp-content/uploads/elementor/css/local-15388-frontend-desktop",
-    "t": "link",
-    "s": 0,
-    "d": 13,
-    "st": 79,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://spcdn.shortpixel.ai/spio/ret_auto+v_1+q_cdnize+to_webp+s_webp/perfectnations.org/wp-content/uploads/elementor/css/local-16839-frontend-desktop",
-    "t": "link",
-    "s": 0,
-    "d": 16,
-    "st": 79,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://spcdn.shortpixel.ai/spio/ret_auto+v_1+q_cdnize+to_webp+s_webp/perfectnations.org/wp-content/uploads/elementor/css/base-mobile.css?ver=6aee9833",
-    "t": "link",
-    "s": 0,
-    "d": 341,
-    "st": 80,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://spcdn.shortpixel.ai/spio/ret_auto+v_1+q_cdnize+to_webp+s_webp/perfectnations.org/wp-content/uploads/elementor/css/post-15388.css?ver=179402142",
-    "t": "link",
-    "s": 0,
-    "d": 14,
-    "st": 80,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://spcdn.shortpixel.ai/spio/ret_auto+v_1+q_cdnize+to_webp+s_webp/perfectnations.org/wp-content/uploads/elementor/css/post-10809.css?ver=179402142",
-    "t": "link",
-    "s": 0,
-    "d": 15,
-    "st": 80,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://fonts.googleapis.com/css?family=Barlow+Condensed:100,100italic,200,200italic,300,300italic,400,400italic,500,500italic,600,600italic,700,700it",
-    "t": "link",
-    "s": 1217,
-    "d": 27,
-    "st": 80,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed:100,100italic,200,200italic,300,300italic,400,400italic,500,500italic,600,600italic,700,",
-    "t": "link",
-    "s": 1231,
-    "d": 24,
-    "st": 80,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://fonts.googleapis.com/css?family=PT+Sans+Narrow:100,100italic,200,200italic,300,300italic,400,400italic,500,500italic,600,600italic,700,700ital",
-    "t": "link",
-    "s": 852,
-    "d": 24,
-    "st": 80,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://perfectnations.org/wp-includes/js/jquery/jquery.min.js",
-    "t": "script",
-    "s": 29831,
-    "d": 42,
-    "st": 80,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://perfectnations.org/wp-includes/js/jquery/jquery-migrate.min.js",
-    "t": "script",
-    "s": 4971,
-    "d": 55,
-    "st": 81,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://unpkg.com/globe.gl",
-    "t": "script",
-    "s": 0,
-    "d": 177,
-    "st": 81,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap",
-    "t": "link",
-    "s": 1215,
-    "d": 23,
-    "st": 82,
-    "rb": "blocking"
-   },
-   {
-    "u": "https://www.googletagmanager.com/gtag/js?id=G-K84C0WC986",
-    "t": "script",
-    "s": 0,
-    "d": 255,
-    "st": 82,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Barlow+Semi+Condensed:wght@400;500;600&display=swap",
-    "t": "link",
-    "s": 972,
-    "d": 21,
-    "st": 100,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://spcdn.shortpixel.ai/spio/ret_img+q_cdnize+to_webp+s_webp/perfectnations.org/wp-content/uploads/2026/11/pn-logo-gold-7-stars.png",
-    "t": "img",
-    "s": 0,
-    "d": 204,
-    "st": 100,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://spcdn.shortpixel.ai/spio/ret_img+q_cdnize+to_webp+s_webp/perfectnations.org/wp-content/uploads/2026/07/afghanistan-hindu-kush-in-bloom.png-600",
-    "t": "img",
-    "s": 0,
-    "d": 93,
-    "st": 117,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://perfectnations.org/wp-content/themes/astra/assets/js/minified/frontend.min.js",
-    "t": "script",
-    "s": 6158,
-    "d": 25,
-    "st": 118,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://perfectnations.org/wp-content/plugins/elementor/assets/js/webpack.runtime.min.js",
-    "t": "script",
-    "s": 385,
-    "d": 26,
-    "st": 118,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://perfectnations.org/wp-includes/js/jquery/ui/core.min.js",
-    "t": "script",
-    "s": 6550,
-    "d": 52,
-    "st": 118,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://perfectnations.org/wp-content/plugins/elementor/assets/js/frontend-modules.min.js",
-    "t": "script",
-    "s": 16125,
-    "d": 52,
-    "st": 118,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://perfectnations.org/wp-includes/js/dist/hooks.min.js",
-    "t": "script",
-    "s": 2058,
-    "d": 77,
-    "st": 118,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://perfectnations.org/wp-content/plugins/elementor/assets/js/frontend.min.js",
-    "t": "script",
-    "s": 18451,
-    "d": 76,
-    "st": 118,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://stats.wp.com/e-202645.js",
-    "t": "script",
-    "s": 0,
-    "d": 314,
-    "st": 118,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://perfectnations.org/wp-includes/js/dist/i18n.min.js",
-    "t": "script",
-    "s": 2676,
-    "d": 100,
-    "st": 118,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://perfectnations.org/wp-content/plugins/elementor-pro/assets/js/frontend.min.js",
-    "t": "script",
-    "s": 24049,
-    "d": 102,
-    "st": 118,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://perfectnations.org/wp-content/plugins/elementor-pro/assets/js/elements-handlers.min.js",
-    "t": "script",
-    "s": 69377,
-    "d": 125,
-    "st": 118,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://spcdn.shortpixel.ai/spio/ret_img+q_cdnize+to_webp+s_webp/perfectnations.org/wp-content/uploads/2026/11/pn-art-botanical-origins-preeti-sinha-7",
-    "t": "img",
-    "s": 0,
-    "d": 97,
-    "st": 501,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://spcdn.shortpixel.ai/spio/ret_img+q_cdnize+to_webp+s_webp/perfectnations.org/wp-content/uploads/2026/07/barbado-trident-in-bloom-300x300.png",
-    "t": "img",
-    "s": 0,
-    "d": 86,
-    "st": 502,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://spcdn.shortpixel.ai/spio/ret_img+q_cdnize+to_webp+s_webp/perfectnations.org/wp-content/uploads/2026/10/vibrant-floral-artwork-mountain-300x300",
-    "t": "img",
-    "s": 0,
-    "d": 145,
-    "st": 502,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://spcdn.shortpixel.ai/spio/ret_img+q_cdnize+to_webp+s_webp/perfectnations.org/wp-content/uploads/2026/08/Thousand-Hills-in-Bloom-Rwanda-1-300x30",
-    "t": "img",
-    "s": 0,
-    "d": 129,
-    "st": 502,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://pixel.wp.com/g.gif?v=ext&blog=253016453&post=16839&tz=-4&srv=perfectnations.org&j=1%3A16.4&host=perfectnations.org&ref=https%3A%2F%2Fperfectna",
-    "t": "img",
-    "s": 0,
-    "d": 10,
-    "st": 574,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://perfectnations.org/wp-content/plugins/elementor/assets/js/chunks/lightbox-lightbox.min.js?ver=4.3.6",
-    "t": "script",
-    "s": 25944,
-    "d": 60,
-    "st": 600,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://perfectnations.org/wp-content/plugins/elementor/assets/lib/dialog/dialog.min.js?ver=4.9.3",
-    "t": "script",
-    "s": 3882,
-    "d": 59,
-    "st": 600,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://perfectnations.org/wp-content/plugins/elementor/assets/css/conditionals/dialog.min.css?ver=4.3.6",
-    "t": "link",
-    "s": 1715,
-    "d": 61,
-    "st": 601,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://perfectnations.org/wp-content/plugins/elementor/assets/lib/share-link/share-link.min.js?ver=4.3.6",
-    "t": "script",
-    "s": 1372,
-    "d": 64,
-    "st": 601,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://perfectnations.org/wp-content/plugins/elementor/assets/lib/swiper/v8/css/swiper.min.css?ver=8.4.5",
-    "t": "link",
-    "s": 4514,
-    "d": 62,
-    "st": 601,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://perfectnations.org/wp-content/plugins/elementor/assets/css/conditionals/lightbox.min.css?ver=4.3.6",
-    "t": "link",
-    "s": 2047,
-    "d": 62,
-    "st": 602,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://perfectnations.org/wp-content/plugins/elementor/assets/js/chunks/background-slideshow.min.js?ver=4.3.6",
-    "t": "script",
-    "s": 7982,
-    "d": 22,
-    "st": 613,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://perfectnations.org/wp-content/plugins/elementor/assets/js/chunks/background-video.min.js?ver=4.3.6",
-    "t": "script",
-    "s": 8285,
-    "d": 23,
-    "st": 613,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://www.google-analytics.com/g/collect?v=2&tid=G-K84C0WC986&gtm=45je6b41v9249213363za208zd9249213363xf1&_p=1794026494769&gcd=13l3l3l3l1l1&npa=0&dm",
-    "t": "fetch",
-    "s": 0,
-    "d": 32,
-    "st": 743,
-    "rb": "non-blocking"
-   },
-   {
-    "u": "https://perfectnations.org/wp-content/uploads/2025/01/cropped-14-cropped-32x32.png",
-    "t": "other",
-    "s": 1188,
-    "d": 51,
-    "st": 783,
-    "rb": "non-blocking"
-   }
+  "ttfb": 28,
+  "dcl": 0,
+  "load": 0,
+  "fcp": 0,
+  "lcp": 0,
+  "lcpEl": "",
+  "tbt": 0,
+  "globe": false,
+  "canvas": false,
+  "libs": [
+   [
+    "https://unpkg.com/globe.gl",
+    208,
+    14
+   ]
   ],
-  "x-litespeed-cache": "hit",
-  "status": 200,
-  "path": "/art-of-nations/",
-  "kind": "laptop"
+  "path": "/",
+  "kind": "phone",
+  "cond": "no-unpkg",
+  "errors": [
+   "console error: Failed to load resource: the server responded with a status of 403 ()",
+   "console error: Failed to load resource: net::ERR_FAILED"
+  ],
+  "navs": [
+   [
+    0.24,
+    "https://perfectnations.org/"
+   ],
+   [
+    3.81,
+    "https://perfectnations.org/"
+   ]
+  ],
+  "docs": [
+   [
+    0.21,
+    403,
+    "https://perfectnations.org/",
+    "",
+    "",
+    "text/html"
+   ],
+   [
+    3.79,
+    200,
+    "https://perfectnations.org/",
+    "hit",
+    "",
+    "text/html; charset=UTF-8"
+   ]
+  ],
+  "final_url": "https://perfectnations.org/",
+  "round": 2
+ },
+ {
+  "ttfb": 31,
+  "dcl": 0,
+  "load": 0,
+  "fcp": 2188,
+  "lcp": 2448,
+  "lcpEl": "IMG#pnhgPoster",
+  "tbt": 1060,
+  "globe": true,
+  "canvas": false,
+  "libs": [
+   [
+    "https://unpkg.com/globe.gl",
+    206,
+    1402
+   ],
+   [
+    "https://cdn.jsdelivr.net/npm/three@0.159.0/build/three.min.js",
+    274,
+    823
+   ],
+   [
+    "https://cdn.jsdelivr.net/npm/globe.gl@2.31.0/dist/globe.gl.min.js",
+    275,
+    1082
+   ]
+  ],
+  "path": "/",
+  "kind": "phone",
+  "cond": "now",
+  "errors": [
+   "console error: Failed to load resource: the server responded with a status of 403 ()",
+   "evaluate: Page.evaluate: Execution context was destroyed, most likely because of a navigat",
+   "console warning: [pnhg-globe] no WebGL"
+  ],
+  "navs": [
+   [
+    0.24,
+    "https://perfectnations.org/"
+   ],
+   [
+    3.83,
+    "https://perfectnations.org/"
+   ]
+  ],
+  "docs": [
+   [
+    0.21,
+    403,
+    "https://perfectnations.org/",
+    "",
+    "",
+    "text/html"
+   ],
+   [
+    3.81,
+    200,
+    "https://perfectnations.org/",
+    "hit",
+    "",
+    "text/html; charset=UTF-8"
+   ]
+  ],
+  "final_url": "https://perfectnations.org/",
+  "round": 2
+ },
+ {
+  "ttfb": 26,
+  "dcl": 0,
+  "load": 0,
+  "fcp": 208,
+  "lcp": 0,
+  "lcpEl": "",
+  "tbt": 0,
+  "globe": false,
+  "canvas": false,
+  "libs": [
+   [
+    "https://unpkg.com/globe.gl",
+    53,
+    10
+   ],
+   [
+    "https://cdn.jsdelivr.net/npm/three@0.159.0/build/three.min.js",
+    93,
+    110
+   ]
+  ],
+  "path": "/",
+  "kind": "laptop",
+  "cond": "no-unpkg",
+  "errors": [
+   "console error: Failed to load resource: the server responded with a status of 403 ()",
+   "console error: Failed to load resource: net::ERR_FAILED",
+   "console warning: [pnhg-globe] no WebGL"
+  ],
+  "navs": [
+   [
+    0.1,
+    "https://perfectnations.org/"
+   ],
+   [
+    3.23,
+    "https://perfectnations.org/"
+   ]
+  ],
+  "docs": [
+   [
+    0.09,
+    403,
+    "https://perfectnations.org/",
+    "",
+    "",
+    "text/html"
+   ],
+   [
+    3.23,
+    200,
+    "https://perfectnations.org/",
+    "hit",
+    "",
+    "text/html; charset=UTF-8"
+   ]
+  ],
+  "final_url": "https://perfectnations.org/",
+  "round": 2
+ },
+ {
+  "ttfb": 30,
+  "dcl": 0,
+  "load": 0,
+  "fcp": 0,
+  "lcp": 0,
+  "lcpEl": "",
+  "tbt": 0,
+  "globe": false,
+  "canvas": false,
+  "libs": [],
+  "path": "/",
+  "kind": "laptop",
+  "cond": "now",
+  "errors": [
+   "console error: Failed to load resource: the server responded with a status of 403 ()"
+  ],
+  "navs": [
+   [
+    0.09,
+    "https://perfectnations.org/"
+   ],
+   [
+    3.22,
+    "https://perfectnations.org/"
+   ]
+  ],
+  "docs": [
+   [
+    0.08,
+    403,
+    "https://perfectnations.org/",
+    "",
+    "",
+    "text/html"
+   ],
+   [
+    3.21,
+    200,
+    "https://perfectnations.org/",
+    "hit",
+    "",
+    "text/html; charset=UTF-8"
+   ]
+  ],
+  "final_url": "https://perfectnations.org/",
+  "round": 2
+ },
+ {
+  "ttfb": 31,
+  "dcl": 1995,
+  "load": 2635,
+  "fcp": 664,
+  "lcp": 968,
+  "lcpEl": "P",
+  "tbt": 532,
+  "globe": false,
+  "canvas": true,
+  "libs": [
+   [
+    "https://unpkg.com/globe.gl",
+    211,
+    16
+   ]
+  ],
+  "path": "/blueprints/kenya/",
+  "kind": "phone",
+  "cond": "no-unpkg",
+  "errors": [
+   "console error: Failed to load resource: the server responded with a status of 403 ()",
+   "console error: Failed to load resource: net::ERR_FAILED"
+  ],
+  "navs": [
+   [
+    0.24,
+    "https://perfectnations.org/blueprints/kenya/"
+   ],
+   [
+    3.83,
+    "https://perfectnations.org/blueprints/kenya/"
+   ]
+  ],
+  "docs": [
+   [
+    0.22,
+    403,
+    "https://perfectnations.org/blueprints/kenya/",
+    "",
+    "",
+    "text/html"
+   ],
+   [
+    3.81,
+    200,
+    "https://perfectnations.org/blueprints/kenya/",
+    "hit",
+    "",
+    "text/html; charset=UTF-8"
+   ]
+  ],
+  "final_url": "https://perfectnations.org/blueprints/kenya/",
+  "round": 2
+ },
+ {
+  "ttfb": 30,
+  "dcl": 3336,
+  "load": 3721,
+  "fcp": 1720,
+  "lcp": 1980,
+  "lcpEl": "P",
+  "tbt": 1304,
+  "globe": true,
+  "canvas": true,
+  "libs": [
+   [
+    "https://unpkg.com/globe.gl",
+    206,
+    881
+   ]
+  ],
+  "path": "/blueprints/kenya/",
+  "kind": "phone",
+  "cond": "now",
+  "errors": [
+   "console error: Failed to load resource: the server responded with a status of 403 ()"
+  ],
+  "navs": [
+   [
+    0.24,
+    "https://perfectnations.org/blueprints/kenya/"
+   ],
+   [
+    3.82,
+    "https://perfectnations.org/blueprints/kenya/"
+   ]
+  ],
+  "docs": [
+   [
+    0.23,
+    403,
+    "https://perfectnations.org/blueprints/kenya/",
+    "",
+    "",
+    "text/html"
+   ],
+   [
+    3.8,
+    200,
+    "https://perfectnations.org/blueprints/kenya/",
+    "hit",
+    "",
+    "text/html; charset=UTF-8"
+   ]
+  ],
+  "final_url": "https://perfectnations.org/blueprints/kenya/",
+  "round": 2
+ },
+ {
+  "ttfb": 28,
+  "dcl": 566,
+  "load": 754,
+  "fcp": 184,
+  "lcp": 336,
+  "lcpEl": "H2#bp-entry-h",
+  "tbt": 65,
+  "globe": false,
+  "canvas": true,
+  "libs": [
+   [
+    "https://unpkg.com/globe.gl",
+    56,
+    11
+   ]
+  ],
+  "path": "/blueprints/kenya/",
+  "kind": "laptop",
+  "cond": "no-unpkg",
+  "errors": [
+   "console error: Failed to load resource: the server responded with a status of 403 ()",
+   "console error: Failed to load resource: net::ERR_FAILED",
+   "console warning: The resource https://perfectnations.org/wp-content/astra-local-fonts/barlow-semi-condensed/wlpvgxjLBV1hqnzfr-F8sEYMB0Yybp0mudRXeIqq.woff2 wa",
+   "console warning: The resource https://perfectnations.org/wp-content/astra-local-fonts/barlow-condensed/HTxwL3I-JCGChYJ8VI-L6OO_au7B46r2z3bWuQ.woff2 was prelo"
+  ],
+  "navs": [
+   [
+    0.1,
+    "https://perfectnations.org/blueprints/kenya/"
+   ],
+   [
+    3.23,
+    "https://perfectnations.org/blueprints/kenya/"
+   ]
+  ],
+  "docs": [
+   [
+    0.1,
+    403,
+    "https://perfectnations.org/blueprints/kenya/",
+    "",
+    "",
+    "text/html"
+   ],
+   [
+    3.23,
+    200,
+    "https://perfectnations.org/blueprints/kenya/",
+    "hit",
+    "",
+    "text/html; charset=UTF-8"
+   ]
+  ],
+  "final_url": "https://perfectnations.org/blueprints/kenya/",
+  "round": 2
+ },
+ {
+  "ttfb": 30,
+  "dcl": 784,
+  "load": 973,
+  "fcp": 444,
+  "lcp": 564,
+  "lcpEl": "H2#bp-entry-h",
+  "tbt": 135,
+  "globe": true,
+  "canvas": true,
+  "libs": [
+   [
+    "https://unpkg.com/globe.gl",
+    59,
+    185
+   ]
+  ],
+  "path": "/blueprints/kenya/",
+  "kind": "laptop",
+  "cond": "now",
+  "errors": [
+   "console error: Failed to load resource: the server responded with a status of 403 ()",
+   "console warning: The resource https://perfectnations.org/wp-content/astra-local-fonts/barlow-semi-condensed/wlpvgxjLBV1hqnzfr-F8sEYMB0Yybp0mudRXeIqq.woff2 wa",
+   "console warning: The resource https://perfectnations.org/wp-content/astra-local-fonts/barlow-condensed/HTxwL3I-JCGChYJ8VI-L6OO_au7B46r2z3bWuQ.woff2 was prelo"
+  ],
+  "navs": [
+   [
+    0.09,
+    "https://perfectnations.org/blueprints/kenya/"
+   ],
+   [
+    3.21,
+    "https://perfectnations.org/blueprints/kenya/"
+   ]
+  ],
+  "docs": [
+   [
+    0.08,
+    403,
+    "https://perfectnations.org/blueprints/kenya/",
+    "",
+    "",
+    "text/html"
+   ],
+   [
+    3.2,
+    200,
+    "https://perfectnations.org/blueprints/kenya/",
+    "hit",
+    "",
+    "text/html; charset=UTF-8"
+   ]
+  ],
+  "final_url": "https://perfectnations.org/blueprints/kenya/",
+  "round": 2
+ },
+ {
+  "ttfb": 30,
+  "dcl": 0,
+  "load": 0,
+  "fcp": 0,
+  "lcp": 0,
+  "lcpEl": "",
+  "tbt": 0,
+  "globe": false,
+  "canvas": false,
+  "libs": [
+   [
+    "https://unpkg.com/globe.gl",
+    206,
+    13
+   ]
+  ],
+  "path": "/about/",
+  "kind": "phone",
+  "cond": "no-unpkg",
+  "errors": [
+   "console error: Failed to load resource: the server responded with a status of 403 ()",
+   "console error: Failed to load resource: net::ERR_FAILED"
+  ],
+  "navs": [
+   [
+    0.24,
+    "https://perfectnations.org/about/"
+   ],
+   [
+    3.81,
+    "https://perfectnations.org/about/"
+   ]
+  ],
+  "docs": [
+   [
+    0.22,
+    403,
+    "https://perfectnations.org/about/",
+    "",
+    "",
+    "text/html"
+   ],
+   [
+    3.8,
+    200,
+    "https://perfectnations.org/about/",
+    "hit",
+    "",
+    "text/html; charset=UTF-8"
+   ]
+  ],
+  "final_url": "https://perfectnations.org/about/",
+  "round": 2
+ },
+ {
+  "ttfb": 29,
+  "dcl": 0,
+  "load": 0,
+  "fcp": 0,
+  "lcp": 0,
+  "lcpEl": "",
+  "tbt": 0,
+  "globe": false,
+  "canvas": false,
+  "libs": [],
+  "path": "/about/",
+  "kind": "phone",
+  "cond": "now",
+  "errors": [
+   "console error: Failed to load resource: the server responded with a status of 403 ()"
+  ],
+  "navs": [
+   [
+    0.26,
+    "https://perfectnations.org/about/"
+   ],
+   [
+    3.83,
+    "https://perfectnations.org/about/"
+   ]
+  ],
+  "docs": [
+   [
+    0.23,
+    403,
+    "https://perfectnations.org/about/",
+    "",
+    "",
+    "text/html"
+   ],
+   [
+    3.81,
+    200,
+    "https://perfectnations.org/about/",
+    "hit",
+    "",
+    "text/html; charset=UTF-8"
+   ]
+  ],
+  "final_url": "https://perfectnations.org/about/",
+  "round": 2
+ },
+ {
+  "ttfb": 30,
+  "dcl": 0,
+  "load": 0,
+  "fcp": 180,
+  "lcp": 0,
+  "lcpEl": "",
+  "tbt": 9,
+  "globe": false,
+  "canvas": false,
+  "libs": [
+   [
+    "https://unpkg.com/globe.gl",
+    59,
+    12
+   ]
+  ],
+  "path": "/about/",
+  "kind": "laptop",
+  "cond": "no-unpkg",
+  "errors": [
+   "console error: Failed to load resource: the server responded with a status of 403 ()",
+   "console error: Failed to load resource: net::ERR_FAILED"
+  ],
+  "navs": [
+   [
+    0.1,
+    "https://perfectnations.org/about/"
+   ],
+   [
+    3.22,
+    "https://perfectnations.org/about/"
+   ]
+  ],
+  "docs": [
+   [
+    0.09,
+    403,
+    "https://perfectnations.org/about/",
+    "",
+    "",
+    "text/html"
+   ],
+   [
+    3.22,
+    200,
+    "https://perfectnations.org/about/",
+    "hit",
+    "",
+    "text/html; charset=UTF-8"
+   ]
+  ],
+  "final_url": "https://perfectnations.org/about/",
+  "round": 2
+ },
+ {
+  "ttfb": 28,
+  "dcl": 0,
+  "load": 0,
+  "fcp": 0,
+  "lcp": 0,
+  "lcpEl": "",
+  "tbt": 0,
+  "globe": false,
+  "canvas": false,
+  "libs": [],
+  "path": "/about/",
+  "kind": "laptop",
+  "cond": "now",
+  "errors": [
+   "console error: Failed to load resource: the server responded with a status of 403 ()"
+  ],
+  "navs": [
+   [
+    0.09,
+    "https://perfectnations.org/about/"
+   ],
+   [
+    3.21,
+    "https://perfectnations.org/about/"
+   ]
+  ],
+  "docs": [
+   [
+    0.08,
+    403,
+    "https://perfectnations.org/about/",
+    "",
+    "",
+    "text/html"
+   ],
+   [
+    3.21,
+    200,
+    "https://perfectnations.org/about/",
+    "hit",
+    "",
+    "text/html; charset=UTF-8"
+   ]
+  ],
+  "final_url": "https://perfectnations.org/about/",
+  "round": 2
+ },
+ {
+  "ttfb": 57,
+  "dcl": 1726,
+  "load": 2249,
+  "fcp": 676,
+  "lcp": 896,
+  "lcpEl": "P",
+  "tbt": 524,
+  "globe": false,
+  "canvas": true,
+  "libs": [
+   [
+    "https://unpkg.com/globe.gl",
+    208,
+    17
+   ]
+  ],
+  "path": "/state-of-nations/",
+  "kind": "phone",
+  "cond": "no-unpkg",
+  "errors": [
+   "console error: Failed to load resource: the server responded with a status of 403 ()",
+   "evaluate: Page.evaluate: Execution context was destroyed, most likely because of a navigat",
+   "console error: Failed to load resource: net::ERR_FAILED"
+  ],
+  "navs": [
+   [
+    0.24,
+    "https://perfectnations.org/state-of-nations/"
+   ],
+   [
+    3.83,
+    "https://perfectnations.org/state-of-nations/"
+   ]
+  ],
+  "docs": [
+   [
+    0.22,
+    403,
+    "https://perfectnations.org/state-of-nations/",
+    "",
+    "",
+    "text/html"
+   ],
+   [
+    3.81,
+    200,
+    "https://perfectnations.org/state-of-nations/",
+    "hit",
+    "",
+    "text/html; charset=UTF-8"
+   ]
+  ],
+  "final_url": "https://perfectnations.org/state-of-nations/",
+  "round": 2
+ },
+ {
+  "ttfb": 28,
+  "dcl": 0,
+  "load": 0,
+  "fcp": 0,
+  "lcp": 0,
+  "lcpEl": "",
+  "tbt": 0,
+  "globe": false,
+  "canvas": false,
+  "libs": [],
+  "path": "/state-of-nations/",
+  "kind": "phone",
+  "cond": "now",
+  "errors": [
+   "console error: Failed to load resource: the server responded with a status of 403 ()"
+  ],
+  "navs": [
+   [
+    0.24,
+    "https://perfectnations.org/state-of-nations/"
+   ],
+   [
+    3.81,
+    "https://perfectnations.org/state-of-nations/"
+   ]
+  ],
+  "docs": [
+   [
+    0.22,
+    403,
+    "https://perfectnations.org/state-of-nations/",
+    "",
+    "",
+    "text/html"
+   ],
+   [
+    3.8,
+    200,
+    "https://perfectnations.org/state-of-nations/",
+    "hit",
+    "",
+    "text/html; charset=UTF-8"
+   ]
+  ],
+  "final_url": "https://perfectnations.org/state-of-nations/",
+  "round": 2
+ },
+ {
+  "ttfb": 30,
+  "dcl": 0,
+  "load": 0,
+  "fcp": 192,
+  "lcp": 0,
+  "lcpEl": "",
+  "tbt": 34,
+  "globe": false,
+  "canvas": true,
+  "libs": [
+   [
+    "https://unpkg.com/globe.gl",
+    61,
+    9
+   ]
+  ],
+  "path": "/state-of-nations/",
+  "kind": "laptop",
+  "cond": "no-unpkg",
+  "errors": [
+   "console error: Failed to load resource: the server responded with a status of 403 ()",
+   "console error: Failed to load resource: net::ERR_FAILED"
+  ],
+  "navs": [
+   [
+    0.08,
+    "https://perfectnations.org/state-of-nations/"
+   ],
+   [
+    3.2,
+    "https://perfectnations.org/state-of-nations/"
+   ]
+  ],
+  "docs": [
+   [
+    0.08,
+    403,
+    "https://perfectnations.org/state-of-nations/",
+    "",
+    "",
+    "text/html"
+   ],
+   [
+    3.2,
+    200,
+    "https://perfectnations.org/state-of-nations/",
+    "hit",
+    "",
+    "text/html; charset=UTF-8"
+   ]
+  ],
+  "final_url": "https://perfectnations.org/state-of-nations/",
+  "round": 2
+ },
+ {
+  "ttfb": 28,
+  "dcl": 0,
+  "load": 0,
+  "fcp": 0,
+  "lcp": 0,
+  "lcpEl": "",
+  "tbt": 0,
+  "globe": false,
+  "canvas": false,
+  "libs": [],
+  "path": "/state-of-nations/",
+  "kind": "laptop",
+  "cond": "now",
+  "errors": [
+   "console error: Failed to load resource: the server responded with a status of 403 ()"
+  ],
+  "navs": [
+   [
+    0.09,
+    "https://perfectnations.org/state-of-nations/"
+   ],
+   [
+    3.23,
+    "https://perfectnations.org/state-of-nations/"
+   ]
+  ],
+  "docs": [
+   [
+    0.08,
+    403,
+    "https://perfectnations.org/state-of-nations/",
+    "",
+    "",
+    "text/html"
+   ],
+   [
+    3.22,
+    200,
+    "https://perfectnations.org/state-of-nations/",
+    "hit",
+    "",
+    "text/html; charset=UTF-8"
+   ]
+  ],
+  "final_url": "https://perfectnations.org/state-of-nations/",
+  "round": 2
  }
 ]
