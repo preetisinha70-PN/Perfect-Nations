@@ -1,7 +1,13 @@
 <!-- ===========================================================================
-PERFECT NATIONS - HOMEPAGE - SECTION 01 - CIVILIZATION RE-DEFINED - v6.1 THE IGNITION - 2026-11-06
+PERFECT NATIONS - HOMEPAGE - SECTION 01 - CIVILIZATION RE-DEFINED - v6.2 THE CLEAR SEA - 2026-11-06
 Served live from GitHub (pages/home-hero.html) by the Perfect Nations Live Pages plugin;
 the root id stays pn-hero, so the widget already on the homepage is the one replaced.
+v6.2: calmer and larger, at the Steward-General's request. The race band is much slimmer (about
+  half its height on laptops; 2:1 on phones). The ignition ripples are removed (they
+  read as explosions), the sea is a darker ultramarine (#0B2A72 falling to #041238) with no gold
+  flecks, and on laptops the planet is larger: the band is taller and tucks under the title. A new
+  loading still (pn-home-globe-gold-poster-v5.webp, Media 17748) matches. Hovering a published nation
+  fetches its blueprint ahead, so a click opens it sooner.
 v6.1: the counter of open blueprints is removed from the planet (decision of the Steward-General).
   The gold ripples of the ignition stay.
 v6.0: the planet opens the blueprints and lights up. Choosing a published nation opens its blueprint
@@ -41,11 +47,11 @@ Prosperity of Nations" below.
 Declares PNHG_WORLD and PNHG_CFG, which the continent maps read, so it must stay ABOVE them.
 Country outlines: Natural Earth 1:50m (world-atlas 2.0), simplified to a tenth of a degree.
 EDITORIAL: the still picture shown while the planet loads is
-https://perfectnations.org/wp-content/uploads/2026/11/pn-home-globe-gold-poster-v4.webp
+https://perfectnations.org/wp-content/uploads/2026/11/pn-home-globe-gold-poster-v5.webp
 If the address differs, change it in the two places it appears (search for pn-home-globe-gold).
 =========================================================================== -->
 <link rel="preconnect" href="https://cdn.jsdelivr.net">
-<link rel="preload" as="image" href="https://perfectnations.org/wp-content/uploads/2026/11/pn-home-globe-gold-poster-v4.webp" fetchpriority="high">
+<link rel="preload" as="image" href="https://perfectnations.org/wp-content/uploads/2026/11/pn-home-globe-gold-poster-v5.webp" fetchpriority="high">
 <link rel="preload" as="script" href="https://cdn.jsdelivr.net/npm/three@0.159.0/build/three.min.js">
 <link rel="preload" as="script" href="https://cdn.jsdelivr.net/npm/globe.gl@2.31.0/dist/globe.gl.min.js">
 <style>
@@ -59,7 +65,7 @@ If the address differs, change it in the two places it appears (search for pn-ho
   --hd:var(--pn-font-heading,"Barlow Condensed","Arial Narrow",Arial,sans-serif);
   --bd:var(--pn-font-body,"Barlow Semi Condensed",Arial,sans-serif);
   --pnhg-headh:0px;
-  --pd:clamp(300px, min(86vw, calc((100svh - 350px) * .86)), 690px);
+  --pd:clamp(300px, min(86vw, calc((100svh - 245px) * .86)), 780px);
 
   position:relative; isolation:isolate;
   width:100vw; margin-left:calc(50% - 50vw);
@@ -122,7 +128,10 @@ If the address differs, change it in the two places it appears (search for pn-ho
   position:relative; z-index:1;
   margin:clamp(2px,.6vh,8px) calc(50% - 50vw) 0;
   width:100vw; max-width:none;
-  height:clamp(460px, calc(100svh - 350px), 780px);
+  height:clamp(520px, calc(100svh - 245px), 900px);
+}
+@media (min-width:761px){
+  #pn-hero .pnhg-globe{ margin-top:calc(-1 * clamp(26px, 4.6vh, 56px)); }
 }
 #pn-hero .pnhg-rose{
   position:absolute; left:50%; top:50%; z-index:0; pointer-events:none;
@@ -336,8 +345,13 @@ If the address differs, change it in the two places it appears (search for pn-ho
 }
 #pn-race .pnr-lead b{ color:var(--ink); font-weight:600; }
 
-#pn-race .pnr-band{ position:relative; width:100%; aspect-ratio:1600/420; overflow:hidden; background:var(--er); }
-#pn-race .pnr-band svg.pnr-art{ position:absolute; inset:0; display:block; width:100%; height:100%; }
+/* v6.2: a much slimmer band. On laptops the drawing keeps its proportions at the band's height,
+   centred, and the finish tape runs on to both edges. */
+#pn-race .pnr-band{ position:relative; width:100%; height:clamp(170px,15vw,232px); overflow:hidden; background:#0B3D45; }
+#pn-race .pnr-band svg.pnr-art{
+  position:absolute; top:0; left:50%; display:block; height:100%; width:auto; aspect-ratio:1600/420; max-width:none;
+  transform:translateX(-50%); overflow:visible;
+}
 #pn-race .pnr-head,#pn-race .pnr-snap,#pn-race .pnr-tapeL,#pn-race .pnr-tapeR,#pn-race .pnr-joy use,#pn-race .pnr-joy circle{ transform-box:fill-box; }
 #pn-race .pnr-head,#pn-race .pnr-snap{ transform-origin:50% 50%; }
 #pn-race .pnr-tapeL{ transform-origin:100% 50%; }
@@ -388,7 +402,8 @@ If the address differs, change it in the two places it appears (search for pn-ho
 #pn-race .pnr-close span{ display:block; }
 
 @media (max-width:760px){
-  #pn-race .pnr-band{ aspect-ratio:3/2; }
+  #pn-race .pnr-band{ height:auto; aspect-ratio:2/1; }
+  #pn-race .pnr-band svg.pnr-art{ left:0; width:100%; aspect-ratio:auto; transform:none; overflow:hidden; }
   #pn-race .pnr-in{ padding:0 24px; }
   #pn-race .pnr-top{ padding:22px 0 14px; }
   #pn-race .pnr-seven{ gap:2px 12px; font-size:.7rem; letter-spacing:.14em; }
@@ -398,27 +413,6 @@ If the address differs, change it in the two places it appears (search for pn-ho
 }
 @media (prefers-reduced-motion:reduce){
   #pn-race *{ animation:none !important; }
-}
-/* v6.0: the gold ripples of the ignition */
-#pn-hero .pnhg-rip{ position:relative; width:0; height:0; pointer-events:none; }
-#pn-hero .pnhg-rip i{
-  position:absolute; left:-30px; top:-30px; width:60px; height:60px; border-radius:50%;
-  border:2px solid #FFE9A6; box-shadow:0 0 14px rgba(255,212,92,.75), inset 0 0 10px rgba(255,212,92,.45);
-  opacity:0; animation:pnhgRip 1.4s cubic-bezier(.2,.7,.3,1) forwards;
-}
-#pn-hero .pnhg-rip i + i{ animation-delay:.22s; border-width:1px; }
-#pn-hero .pnhg-rip b{
-  position:absolute; left:-5px; top:-5px; width:10px; height:10px; border-radius:50%;
-  background:#FFF6D2; box-shadow:0 0 12px 4px rgba(255,224,122,.9), 0 0 30px 10px rgba(255,212,92,.45);
-  opacity:0; animation:pnhgSpark 1.2s ease-out forwards;
-}
-#pn-hero .pnhg-rip:not(.is-big) i{ animation-duration:2s; }
-#pn-hero .pnhg-rip:not(.is-big) i + i{ display:none; }
-#pn-hero .pnhg-rip:not(.is-big) b{ width:8px; height:8px; left:-4px; top:-4px; }
-@keyframes pnhgRip{ 0%{ transform:scale(.15); opacity:1; } 100%{ transform:scale(2.4); opacity:0; } }
-@keyframes pnhgSpark{ 0%{ transform:scale(.4); opacity:0; } 18%{ transform:scale(1.4); opacity:1; } 100%{ transform:scale(.6); opacity:0; } }
-@media (max-width:760px){
-  #pn-hero .pnhg-rip i{ left:-22px; top:-22px; width:44px; height:44px; }
 }
 /* v5.4: the pin the Capital Wire sets on the planet */
 #pn-hero .pnhg-pin{ position:relative; width:0; height:0; pointer-events:none; }
@@ -456,7 +450,7 @@ If the address differs, change it in the two places it appears (search for pn-ho
     <div class="pnhg-plate" id="pnhgPlate" aria-live="polite"></div>
 
     <div class="pnhg-fallback is-waiting" id="pnhgFallback">
-      <img class="pnhg-poster" id="pnhgPoster" src="https://perfectnations.org/wp-content/uploads/2026/11/pn-home-globe-gold-poster-v4.webp" alt="" width="820" height="820" decoding="async" fetchpriority="high">
+      <img class="pnhg-poster" id="pnhgPoster" src="https://perfectnations.org/wp-content/uploads/2026/11/pn-home-globe-gold-poster-v5.webp" alt="" width="820" height="820" decoding="async" fetchpriority="high">
       <span class="pnhg-orbit" aria-hidden="true"><svg viewBox="-100 -100 200 200" focusable="false"><defs><path id="pnhg-st" fill="#E3C258" d="M0 -6 1.41 -1.94 5.71 -1.85 2.28 .74 3.53 4.85 0 2.4 -3.53 4.85 -2.28 .74 -5.71 -1.85 -1.41 -1.94Z"/></defs><circle r="92" fill="none" stroke="#E3C258" stroke-opacity=".28" stroke-width=".6"/><use href="#pnhg-st" transform="rotate(0) translate(0 -92) scale(1.15)"/><use href="#pnhg-st" transform="rotate(51) translate(0 -92) scale(1)"/><use href="#pnhg-st" transform="rotate(103) translate(0 -92) scale(1)"/><use href="#pnhg-st" transform="rotate(154) translate(0 -92) scale(1)"/><use href="#pnhg-st" transform="rotate(206) translate(0 -92) scale(1)"/><use href="#pnhg-st" transform="rotate(257) translate(0 -92) scale(1)"/><use href="#pnhg-st" transform="rotate(309) translate(0 -92) scale(1)"/></svg></span>
       <span class="pnhg-wait" role="status">Drawing the world</span>
       <p>Every nation is on the maps below.</p>
@@ -506,8 +500,8 @@ If the address differs, change it in the two places it appears (search for pn-ho
   </g>
 
   <g class="pnr-tape" fill="none" stroke="url(#pnr-tapeg)" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.4">
-    <path class="pnr-tapeL" d="M-20 236H560C640 236 700 237 742 240C762 242 770 250 762 262C752 276 740 282 746 296C752 308 766 306 768 296"/>
-    <path class="pnr-tapeR" d="M1620 236H1040C960 236 902 237 870 240C896 238 922 228 936 212C948 198 962 196 968 206C974 218 962 226 954 218"/>
+    <path class="pnr-tapeL" d="M-3200 236H560C640 236 700 237 742 240C762 242 770 250 762 262C752 276 740 282 746 296C752 308 766 306 768 296"/>
+    <path class="pnr-tapeR" d="M4800 236H1040C960 236 902 237 870 240C896 238 922 228 936 212C948 198 962 196 968 206C974 218 962 226 954 218"/>
   </g>
 
   <g class="pnr-speed" fill="none" stroke="#E3C258" stroke-width="3" stroke-linecap="round" stroke-opacity=".6">
@@ -712,7 +706,7 @@ window.PNHG_CFG={"base":"https://perfectnations.org/blueprints/","paths":{"cote-
   }
 
   /* ---- THE GOLDEN EARTH ---- */
-  var OCEAN = '#1440A0', OCEAN_DEEP = '#081D52', OCEAN_SPEC = '#86B2EE';
+  var OCEAN = '#0B2A72', OCEAN_DEEP = '#041238', OCEAN_SPEC = '#4F6FA6';
   var GOLD = {
     live: { c:'#FFD45C', e:'#A57A14', ei:0.72, s:'#FFF6D2', sh:34 },
     soon: { c:'#D2B266', e:'#5E4916', ei:0.50, s:'#EAD8A4', sh:20 },
@@ -748,6 +742,17 @@ window.PNHG_CFG={"base":"https://perfectnations.org/blueprints/","paths":{"cote-
   /* v6.0: a published nation opens its blueprint at once, in a new tab, inside the visitor's own
      click or tap (a delayed open is blocked by phones). If a browser still blocks it, the name card
      keeps a gold link to tap. */
+  /* v6.2: a published blueprint is fetched ahead while the pointer rests on its nation */
+  var warmed = {};
+  function warm(slug){
+    if (!slug || warmed[slug] || !document.head) { return; }
+    warmed[slug] = true;
+    try {
+      var l = document.createElement('link');
+      l.rel = 'prefetch'; l.as = 'document'; l.href = CFG.base + (CFG.paths[slug] || slug) + '/';
+      document.head.appendChild(l);
+    } catch (e) {}
+  }
   function openBlueprint(href){
     var win = null;
     try { win = window.open(href, '_blank'); } catch (e) {}
@@ -857,7 +862,6 @@ window.PNHG_CFG={"base":"https://perfectnations.org/blueprints/","paths":{"cote-
     var box = sizeStage();
     var home = { lat: 6, lng: 24, altitude: fitAltitude(box) };
     var hovered = null;
-    var flash = {};
 
     var globe = Globe({ animateIn: false })(stage)
       .width(box.w).height(box.h)
@@ -868,8 +872,8 @@ window.PNHG_CFG={"base":"https://perfectnations.org/blueprints/","paths":{"cote-
       .polygonsData(lands)
       .polygonGeoJsonGeometry('geometry')
       .polygonCapCurvatureResolution(10)
-      .polygonAltitude(function(d){ return (d === hovered || flash[d.slug] ? ALT_HOV : (ALT[d.state] || ALT.none)) + d.up; })
-      .polygonCapMaterial(function(d){ return (d === hovered || flash[d.slug]) ? MAT.hov : (MAT[d.state] || MAT.none); })
+      .polygonAltitude(function(d){ return (d === hovered ? ALT_HOV : (ALT[d.state] || ALT.none)) + d.up; })
+      .polygonCapMaterial(function(d){ return d === hovered ? MAT.hov : (MAT[d.state] || MAT.none); })
       .polygonSideColor(function(){ return SIDE; })
       .polygonStrokeColor(function(){ return false; })
       .polygonsTransitionDuration(260)
@@ -881,6 +885,7 @@ window.PNHG_CFG={"base":"https://perfectnations.org/blueprints/","paths":{"cote-
         hovered = (d && d.state !== 'none') ? d : null;
         globe.polygonAltitude(globe.polygonAltitude()).polygonCapMaterial(globe.polygonCapMaterial());
         stage.style.cursor = hovered ? 'pointer' : 'grab';
+        if (hovered && NAT[hovered.slug] && NAT[hovered.slug][1] === 'live') { warm(hovered.slug); }
       })
       .onPolygonClick(function(d){ enter(d); })
       .pointsData(islands)
@@ -897,7 +902,6 @@ window.PNHG_CFG={"base":"https://perfectnations.org/blueprints/","paths":{"cote-
     try {
       globe.onGlobeReady(function(){
         window.requestAnimationFrame(function(){ window.requestAnimationFrame(clearPlaceholder); });
-        window.setTimeout(function(){ if (window.pnhgIgnite) { window.pnhgIgnite(); } }, 900);
       });
     } catch (e) {}
     window.setTimeout(clearPlaceholder, 4000);
@@ -963,70 +967,8 @@ window.PNHG_CFG={"base":"https://perfectnations.org/blueprints/","paths":{"cote-
     }
     try { borders(); } catch (e) {}
 
-    /* ---- gold flecks of ocean life: points on the sea only, each glinting in its own time ---- */
+    /* v6.2: the sea is clear; the gold flecks are gone */
     var fleckMat = null;
-    function atSea(lng, lat){
-      for (var i = 0; i < ALLRINGS.length; i++){
-        var Q = ALLRINGS[i], bb = Q.b;
-        if (lng < bb[0] || lng > bb[2] || lat < bb[1] || lat > bb[3]) { continue; }
-        var ring = Q.ring, inside = false, j, k;
-        for (j = 0, k = ring.length - 1; j < ring.length; k = j++){
-          var xi = ring[j][0], yi = ring[j][1], xj = ring[k][0], yj = ring[k][1];
-          if (((yi > lat) !== (yj > lat)) && (lng < (xj - xi) * (lat - yi) / (yj - yi) + xi)) { inside = !inside; }
-        }
-        if (inside) { return false; }
-      }
-      return true;
-    }
-    try {
-      var small = window.matchMedia('(max-width: 760px)').matches;
-      var NS = small ? 2200 : 3300, GA = Math.PI * (3 - Math.sqrt(5)), seed = 7;
-      function rnd(){ seed = (seed * 16807) % 2147483647; return (seed - 1) / 2147483646; }
-      var pos = [], size = [], phase = [], speed = [], n;
-      for (n = 0; n < NS; n++){
-        var yy = 1 - (n + 0.5) / NS * 2, rr = Math.sqrt(1 - yy * yy), th = GA * n;
-        var lat = Math.asin(yy) * 180 / Math.PI + (rnd() - 0.5) * 1.6;
-        var lng = (Math.atan2(Math.sin(th) * rr, Math.cos(th) * rr) * 180 / Math.PI) + (rnd() - 0.5) * 1.6;
-        if (Math.abs(lat) > 74 || rnd() > 0.62 || !atSea(lng, lat)) { continue; }
-        var p = globe.getCoords(lat, lng, 0.004);
-        pos.push(p.x, p.y, p.z);
-        var glint = rnd() < 0.04;
-        size.push(glint ? 3.6 + rnd() * 1.4 : 1.4 + rnd() * 1.2);
-        phase.push(rnd() * 6.283);
-        speed.push(0.5 + rnd() * 1.4);
-      }
-      var fg = new THREE.BufferGeometry();
-      fg.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3));
-      fg.setAttribute('aSize', new THREE.Float32BufferAttribute(size, 1));
-      fg.setAttribute('aPhase', new THREE.Float32BufferAttribute(phase, 1));
-      fg.setAttribute('aSpeed', new THREE.Float32BufferAttribute(speed, 1));
-      fleckMat = new THREE.ShaderMaterial({
-        uniforms: { uTime: { value: 0 }, uPR: { value: 1 }, uColor: { value: new THREE.Color('#FFE69A') } },
-        vertexShader: [
-          'attribute float aSize; attribute float aPhase; attribute float aSpeed;',
-          'uniform float uTime; uniform float uPR; varying float vA;',
-          'void main(){',
-          '  vec4 mv = modelViewMatrix * vec4(position, 1.0);',
-          '  float tw = 0.5 + 0.5 * sin(uTime * aSpeed + aPhase);',
-          '  vA = 0.22 + 0.78 * tw * tw;',
-          '  gl_PointSize = aSize * uPR * (300.0 / -mv.z) * (0.75 + 0.45 * tw);',
-          '  gl_Position = projectionMatrix * mv;',
-          '}'
-        ].join('\n'),
-        fragmentShader: [
-          'uniform vec3 uColor; varying float vA;',
-          'void main(){',
-          '  float d = length(gl_PointCoord - vec2(0.5));',
-          '  float a = smoothstep(0.5, 0.0, d); a = a * a;',
-          '  gl_FragColor = vec4(uColor * (1.0 + 0.7 * (1.0 - 2.0 * d)), a * vA);',
-          '}'
-        ].join('\n'),
-        transparent: true, depthWrite: false, blending: THREE.AdditiveBlending
-      });
-      var flecks = new THREE.Points(fg, fleckMat);
-      flecks.raycast = function(){};
-      globe.scene().add(flecks);
-    } catch (e) { fleckMat = null; }
 
     /* ---- the gold ring on the edge and the turning bezel ---- */
     var crown = null, bezel = null;
@@ -1163,10 +1105,9 @@ window.PNHG_CFG={"base":"https://perfectnations.org/blueprints/","paths":{"cote-
        turns on again after nine seconds */
     var focusT = null;
     function relight(){ globe.polygonAltitude(globe.polygonAltitude()).polygonCapMaterial(globe.polygonCapMaterial()); }
-    /* one layer of marks on the planet: the Capital Wire pin and the gold ripples of the ignition
-       (marks on the far side of the planet are hidden by the library) */
-    var pins = [], ripples = [];
-    function syncMarks(){ globe.htmlElementsData(pins.concat(ripples)); }
+    /* the Capital Wire pin (marks on the far side of the planet are hidden by the library) */
+    var pins = [];
+    function syncMarks(){ globe.htmlElementsData(pins); }
     function makePin(d){
       var pin = document.createElement('div'), tag = document.createElement('b'), nm = document.createElement('em');
       pin.className = 'pnhg-pin';
@@ -1178,17 +1119,9 @@ window.PNHG_CFG={"base":"https://perfectnations.org/blueprints/","paths":{"cote-
       pin.appendChild(tag);
       return pin;
     }
-    function makeRipple(d){
-      var el = document.createElement('div');
-      el.className = 'pnhg-rip' + (d.big ? ' is-big' : '');
-      el.appendChild(document.createElement('i'));
-      el.appendChild(document.createElement('i'));
-      el.appendChild(document.createElement('b'));
-      return el;
-    }
     globe.htmlTransitionDuration(0).htmlLat('lat').htmlLng('lng')
-      .htmlAltitude(function(d){ return d.kind === 'pin' ? 0.02 : 0.03; })
-      .htmlElement(function(d){ return d.kind === 'pin' ? makePin(d) : makeRipple(d); });
+      .htmlAltitude(0.02)
+      .htmlElement(makePin);
 
     window.pnhgFocus = function(s, figure){
       var r = NAT[s];
@@ -1212,74 +1145,6 @@ window.PNHG_CFG={"base":"https://perfectnations.org/blueprints/","paths":{"cote-
       return true;
     };
 
-    /* v6.0: the ignition. When the planet first appears, every open blueprint lights up in turn,
-       nearest first, each with a gold ripple. Afterwards an open nation ripples every few
-       seconds, so the planet stays alive. */
-    var ignited = false, beat = null, relightT = null;
-    function liveList(){
-      var out = [], s;
-      for (s in NAT){ if (Object.prototype.hasOwnProperty.call(NAT, s) && NAT[s][1] === 'live') { out.push(s); } }
-      return out;
-    }
-    function queueRelight(){
-      if (relightT) { return; }
-      relightT = window.setTimeout(function(){ relightT = null; relight(); }, 90);
-    }
-    function ripple(lat, lng, big){
-      var r = { kind: 'rip', lat: lat, lng: lng, big: !!big };
-      ripples.push(r);
-      syncMarks();
-      window.setTimeout(function(){
-        var i = ripples.indexOf(r);
-        if (i > -1) { ripples.splice(i, 1); syncMarks(); }
-      }, big ? 1500 : 2100);
-    }
-    function nearFirst(list){
-      var pov = globe.pointOfView(), la = pov.lat * Math.PI / 180, lo = pov.lng * Math.PI / 180;
-      return list.map(function(s){
-        var a = NAT[s][2] * Math.PI / 180, b = NAT[s][3] * Math.PI / 180;
-        var c = Math.sin(la) * Math.sin(a) + Math.cos(la) * Math.cos(a) * Math.cos(b - lo);
-        return { s: s, d: Math.acos(Math.max(-1, Math.min(1, c))) };
-      }).sort(function(x, y){ return x.d - y.d; });
-    }
-    function heartbeat(){
-      if (beat || reduce) { return; }
-      beat = window.setInterval(function(){
-        if (!running || hovered) { return; }
-        var near = nearFirst(liveList()).filter(function(x){ return x.d < 1.25; });
-        if (!near.length) { return; }
-        var n = near[Math.floor(Math.random() * near.length)];
-        ripple(NAT[n.s][2], NAT[n.s][3], false);
-      }, 2600);
-    }
-    function ignite(){
-      if (ignited) { return; }
-      ignited = true;
-      var list = nearFirst(liveList());
-      if (reduce || !list.length) { return; }
-      /* paced by the clock, not by frames: about four seconds on any device, slow at first,
-         then a flood of gold */
-      var N = list.length, done = 0, t0 = Date.now(), D = Math.min(4400, 1200 + N * 70);
-      function light(n){
-        ripple(NAT[n.s][2], NAT[n.s][3], true);
-        flash[n.s] = 1; queueRelight();
-        window.setTimeout(function(){ delete flash[n.s]; queueRelight(); }, 700);
-      }
-      (function tick(){
-        var k = Math.min(1, (Date.now() - t0) / D);
-        var e = k < 0.5 ? 2 * k * k : 1 - Math.pow(-2 * k + 2, 2) / 2;
-        var target = k < 1 ? Math.min(N, Math.max(1, Math.round(e * N))) : N;
-        var burst = 0;
-        while (done < target) { if (burst < 4) { light(list[done]); burst++; } done++; }
-        if (done >= N) {
-          window.setTimeout(heartbeat, 1800);
-          return;
-        }
-        window.setTimeout(tick, 70);
-      })();
-    }
-    window.pnhgIgnite = ignite;
-    window.setTimeout(ignite, 5200);
   }
 
   /* one shared reading of the live pages list (also used by the Nations Menu) */
