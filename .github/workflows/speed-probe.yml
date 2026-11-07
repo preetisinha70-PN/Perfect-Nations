@@ -1,4 +1,4 @@
-# Temporary (7 Nov 2026): real Chrome timing of the main pages. Runs only on this branch.
+# Temporary (7 Nov 2026): Lighthouse in a visible Chrome window (phone and laptop). Runs only on this branch.
 name: speed-probe
 on:
   push:
@@ -9,11 +9,25 @@ jobs:
   probe:
     if: ${{ !contains(github.event.head_commit.message, 'probe results') && !contains(github.event.head_commit.message, 'remove the probe') }}
     runs-on: ubuntu-latest
-    timeout-minutes: 25
+    timeout-minutes: 30
     steps:
       - uses: actions/checkout@v4
-      - run: pip install -q playwright==1.48.0 && sudo apt-get install -y -qq xvfb > /dev/null
-      - run: mkdir -p probe-out && xvfb-run -a python probe/browser_timing.py
+      - run: npm i -g lighthouse@12 >/dev/null 2>&1 && sudo apt-get install -y -qq xvfb > /dev/null
+      - name: Lighthouse
+        run: |
+          set +e
+          mkdir -p probe-out/lh
+          export CHROME_PATH=$(which google-chrome)
+          for p in home:/ kenya:/blueprints/kenya/ blueprints:/blueprints/ about:/about/; do
+            n=${p%%:*}; path=${p#*:}
+            xvfb-run -a lighthouse "https://perfectnations.org${path}" --chrome-flags="--no-sandbox --window-size=1350,940" \
+              --only-categories=performance --output=json --output-path=probe-out/lh/$n-phone.json --quiet
+            xvfb-run -a lighthouse "https://perfectnations.org${path}" --preset=desktop --chrome-flags="--no-sandbox --window-size=1350,940" \
+              --only-categories=performance --output=json --output-path=probe-out/lh/$n-laptop.json --quiet
+            for f in probe-out/lh/$n-phone.json probe-out/lh/$n-laptop.json; do
+              jq -r '"\(input_filename|split("/")[-1]) " + ((.runtimeError.message // "ok")[0:60]) + " score=\(.categories.performance.score) FCP=\(.audits["first-contentful-paint"].displayValue) LCP=\(.audits["largest-contentful-paint"].displayValue) TBT=\(.audits["total-blocking-time"].displayValue) SI=\(.audits["speed-index"].displayValue) weight=\(.audits["total-byte-weight"].displayValue)"' $f
+            done
+          done
       - run: |
           git config user.name "speed-probe"; git config user.email "noreply@github.com"
           git add probe-out && git commit -q -m "probe results" && git push -q
