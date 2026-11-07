@@ -52,6 +52,16 @@ Rules: every figure must have a primary source; no contractions; plain ASCII whe
 - Every change to `pages/` goes through a pull request titled "For approval: [page] vX.Y, [what changed]"; the Steward-General approves by merging. Stewards never commit to `pages/` on main.
 - Each file must keep its root id, stay plain ASCII, keep its CSS scoped to its root id, and pass `node --check` on every script block.
 - To add a page: put its file in `pages/`, add its root id to the manifest, and paste the same code once into the page's Custom HTML widget (the paste is the fallback).
+- Check any page file with `python3 tools/check_page.py pages/<file>.html` (ASCII, CSS, scripts, tags, ids, copy).
+
+## The Blueprints page (from 6 November 2026)
+
+perfectnations.org/blueprints/ is one file, `pages/blueprints.html` (root `pn-blueprints`), kept by the Blueprints Steward.
+
+- **Built, never edited by hand.** `python3 tools/build_blueprints.py` joins `pages/nations-menu.html`, `pages/home-seams.html` and `pages/blueprints-atlas.html` (the page itself: style, markup and script). It draws the golden map from the world outlines in `pages/home-hero.html`, so the homepage planet and the map share one source.
+- **A new blueprint needs no new build.** On every visit the page reads `pages/manifest.json`: a blueprint merged there (its `pn-bp-<slug>` key) turns gold on the map, joins the tiles, the counts, the region tabs and the atlas at once. If it is not yet in `data/blueprints.json`, the page reads `data/<slug>.json` for its tile.
+- **`data/blueprints.json`** is the live index of open blueprints: for each, `slug`, `name`, `region`, `url`, `steward` (from `steward.name`) and `figure` (the first sourced monetary figure of the hero, else its first figure: `value`, `label`, `money`). It mirrors the nation files and adds no fact of its own. Rebuild it with `python3 tools/build_blueprints.py --index`; it is data, so it may go straight to main.
+- **Page changes** (design, words, a rebuilt fallback) go through a pull request "For approval: Blueprints page vX.Y, ...", with the `pn-blueprints` version raised in the manifest.
 
 ## Nations
 

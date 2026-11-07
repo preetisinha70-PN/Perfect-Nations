@@ -6,7 +6,7 @@ root id is pn-pcap, so the Perfect Nations Live Pages plugin serves pages/perfec
 of the paste. Edit src/perfect-capita.html, never the built file. This script:
   - puts the painted seams library (pages/home-seams.html, shared with the homepage) where the source
     says <!--@SEAMS-LIBRARY-->, and a painted seam where it says <!--@SEAM:x--> (x is a to e);
-  - refuses non-ASCII characters and a missing root id;
+  - refuses non-ASCII characters, a missing root id and images from any host but the Media Library;
   - runs the validation suite (tools/check_page.py) on the result.
 
 Run from the repository root:  python3 tools/build_perfect_capita.py
@@ -42,9 +42,12 @@ def main():
         sys.exit('non-ASCII characters in the source: %r' % bad[:5])
     if '<!--@' in html:
         sys.exit('an unknown <!--@ marker is left in the page')
+    foreign = [u for u in re.findall(r'<img[^>]+src="([^"]+)"', html) if not u.startswith('https://perfectnations.org/')]
+    if foreign:
+        sys.exit('images from another host (the speed standard allows the Media Library only): %r' % foreign[:5])
     OUT.write_text(html, encoding='utf-8')
     print('pages/perfect-capita.html', len(html), 'characters,', n, 'seams')
-    r = subprocess.run([sys.executable, str(ROOT / 'tools' / 'check_page.py'), str(OUT), '--root', ROOT_ID])
+    r = subprocess.run([sys.executable, str(ROOT / 'tools' / 'check_page.py'), str(OUT)])
     sys.exit(r.returncode)
 
 
