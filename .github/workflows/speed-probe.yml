@@ -1,0 +1,35 @@
+# Temporary (7 Nov 2026): save every live page as served, and every stylesheet it loads, for the Additional CSS rebuild.
+name: speed-probe
+on:
+  push:
+    branches: [speed-probe-2026-11-06]
+permissions:
+  contents: write
+jobs:
+  probe:
+    if: ${{ !contains(github.event.head_commit.message, 'probe results') && !contains(github.event.head_commit.message, 'remove the probe') }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - name: Save pages and their stylesheets
+        run: |
+          set +e
+          mkdir -p probe-out/pages probe-out/css
+          UA="Mozilla/5.0 (Linux; Android 13; Pixel 7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Mobile Safari/537.36"
+          ACC="text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8"
+          while read -r u; do
+            [ -z "$u" ] && continue
+            n=$(echo "$u" | sed 's#https://perfectnations.org/##; s#/$##; s#/#_#g'); [ -z "$n" ] && n=home
+            curl -s --compressed -A "$UA" -H "Accept: $ACC" -o "probe-out/pages/$n.html" -w "%{http_code} $n\n" "$u"
+          done < probe-urls.txt
+          grep -ohE "<link[^>]+rel=['\"]stylesheet['\"][^>]*>" probe-out/pages/*.html | grep -oE "href=['\"][^'\"]+['\"]" | sed "s/^href=['\"]//; s/['\"]$//; s/&#038;/\&/g" | sort -u > probe-out/css/urls.txt
+          i=0; : > probe-out/css/map.tsv
+          while read -r c; do i=$((i+1)); f=css$i.css
+            curl -s --compressed -A "$UA" -o probe-out/css/$f "$c"; printf "%s\t%s\n" "$c" "$f" >> probe-out/css/map.tsv
+          done < probe-out/css/urls.txt
+          wc -l probe-out/css/map.tsv; ls probe-out/pages | wc -l
+      - name: Commit results to this branch
+        run: |
+          git config user.name "speed-probe"; git config user.email "noreply@github.com"
+          git add probe-out && git commit -q -m "probe results" && git push -q
