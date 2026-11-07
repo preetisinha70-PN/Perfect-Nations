@@ -12,6 +12,8 @@ Two inputs, one output:
   art/art-of-nations.template.html the design: style, markup and script, with [[SLOTS]]
   pages/art-of-nations.html        BUILT here; never edit it by hand
 
+Every work names its artist ("artist", for example Preeti Sinha). "origins" holds the artist's founding
+works (Botanical Origins): shown whole, before the nation portraits, and not counted among the 195.
 To add a painting, add one entry to "paintings" in the catalogue (newest last), raise "version",
 run this build, run tools/check_page.py, preview with tools/preview_art.py, raise pn-art in
 pages/manifest.json and open a pull request "For approval: Art of Nations vX.Y, [what changed]".
@@ -93,9 +95,9 @@ def pick(images, width):
     return (min(ok, key=lambda p: int(p[1])) if ok else max(images, key=lambda p: int(p[1])))[0]
 
 
-def card(i, p, cat):
+def card(i, p, cat, n):
     where = 'painting %s' % p.get('slug', i)
-    need(p, where, 'slug', 'nation', 'title', 'statement', 'alt', 'spec', 'enquire', 'images', 'zoom', 'colours')
+    need(p, where, 'slug', 'nation', 'title', 'artist', 'statement', 'alt', 'spec', 'enquire', 'images', 'zoom', 'colours')
     if PROBLEMS and not p.get('images'):
         return ''
     enquire = link(where, cat['contact'] + '?about=' + p['enquire'])
@@ -115,22 +117,63 @@ def card(i, p, cat):
     if status != DEFAULT_STATUS:
         extra += '\n        <p class="aon-chip">%s</p>' % copy(where, status)
     data = {
-        'nation': copy(where, p['nation']), 'title': copy(where, p['title']), 'statement': copy(where, p['statement']),
+        'nation': copy(where, p['nation']), 'title': copy(where, p['title']), 'artist': copy(where, p['artist']),
+        'statement': copy(where, p['statement']),
         'spec': copy(where, p['spec']), 'alt': copy(where, p['alt']), 'zoom': media(where, p['zoom']),
         'src': media(where, pick(p['images'], 768)), 'srcset': srcset(where, p['images']), 'sw': esc(sw[5:]),
         'enquire': enquire, 'buy': buy, 'price': price,
     }
     attrs = ' '.join('data-%s="%s"' % (k, v) for k, v in data.items() if v != '')
-    return '''      <article class="aon-card aon-rv" id="aon-%(slug)s" %(attrs)s>
-        <a class="aon-frame" href="%(zoom)s" data-open="%(i)d" aria-label="Open %(title)s at full size"><span class="aon-mat"><span class="aon-pic"><img src="%(src)s" srcset="%(srcset)s" sizes="(min-width:1100px) 250px, (min-width:600px) 44vw, 44vw" alt="%(alt)s" width="600" height="600" loading="lazy" decoding="async"></span></span></a>
+    return '''      <article class="aon-card aon-rv" id="aon-%(slug)s" data-work %(attrs)s>
+        <a class="aon-frame" href="%(zoom)s" data-open="%(i)d" aria-label="Open %(title)s by %(artist)s at full size"><span class="aon-mat"><span class="aon-pic"><img src="%(src)s" srcset="%(srcset)s" sizes="(min-width:1100px) 250px, (min-width:600px) 44vw, 44vw" alt="%(alt)s" width="600" height="600" loading="lazy" decoding="async"></span></span></a>
         <p class="aon-nation"><i class="aon-sw" style="%(sw)s"></i>%(nation)s</p>
         <h3 class="aon-h3">%(title)s</h3>
+        <p class="aon-by">by %(artist)s</p>
         <p class="aon-stmt">%(statement)s</p>%(extra)s
         <div class="aon-acts">%(acts)s</div>
       </article>''' % {
-        'slug': esc(p['slug']), 'attrs': attrs, 'zoom': data['zoom'], 'i': i, 'title': data['title'],
+        'slug': esc(p['slug']), 'attrs': attrs, 'zoom': data['zoom'], 'i': n, 'title': data['title'], 'artist': data['artist'],
         'src': media(where, pick(p['images'], 600)), 'srcset': data['srcset'], 'alt': data['alt'], 'sw': esc(sw),
         'nation': data['nation'], 'statement': data['statement'], 'extra': extra, 'acts': ''.join(acts),
+    }
+
+
+def origin(n, o, cat):
+    """An origin: the artist's founding work, shown whole in a landscape (or any) frame."""
+    where = 'origin %s' % o.get('slug', n)
+    need(o, where, 'slug', 'kicker', 'title', 'artist', 'statement', 'alt', 'spec', 'enquire', 'images', 'zoom', 'size')
+    if not o.get('images') or not o.get('size'):
+        return ''
+    w, h = (int(x) for x in o['size'])
+    enquire = link(where, cat['contact'] + '?about=' + o['enquire'])
+    buy = link(where, o['buy_url']) if o.get('buy_url') else ''
+    data = {
+        'title': copy(where, o['title']), 'artist': copy(where, o['artist']), 'statement': copy(where, o['statement']),
+        'spec': copy(where, o['spec']), 'alt': copy(where, o['alt']), 'zoom': media(where, o['zoom']),
+        'src': media(where, pick(o['images'], 768)), 'srcset': srcset(where, o['images']),
+        'enquire': enquire, 'buy': buy, 'price': copy(where, o.get('price', '')),
+    }
+    attrs = ' '.join('data-%s="%s"' % (k, v) for k, v in data.items() if v != '')
+    acts = ['<a class="aon-btn aon-btn--sm aon-btn--line" href="%s" data-open="%d">View it whole</a>' % (data['zoom'], n)]
+    if buy:
+        acts.append('<a class="aon-btn aon-btn--sm" href="%s">Buy</a>' % buy)
+    else:
+        acts.append('<a class="aon-btn aon-btn--sm" href="%s">Enquire</a>' % enquire)
+    k = ' &#183; '.join(x for x in (copy(where, o.get('price', '')), data['spec']) if x)
+    return '''    <div class="aon-origin aon-rv" id="aon-%(slug)s" data-work %(attrs)s>
+      <a class="aon-frame" href="%(zoom)s" data-open="%(n)d" aria-label="Open %(title)s by %(artist)s at full size"><span class="aon-mat"><span class="aon-pic aon-pic--land" style="--ar:%(w)d/%(h)d"><img src="%(src)s" srcset="%(srcset)s" sizes="(min-width:900px) 600px, 92vw" alt="%(alt)s" width="%(w)d" height="%(h)d" loading="lazy" decoding="async"></span></span></a>
+      <div class="aon-origin__txt">
+        <p class="aon-eb">%(kicker)s</p>
+        <h2 class="aon-h2">%(title)s</h2>
+        <p class="aon-by">by %(artist)s</p>
+        <p class="aon-stmt">%(statement)s</p>
+        <p class="aon-k">%(k)s</p>
+        <div class="aon-acts">%(acts)s</div>
+      </div>
+    </div>''' % {
+        'slug': esc(o['slug']), 'attrs': attrs, 'zoom': data['zoom'], 'n': n, 'title': data['title'], 'artist': data['artist'],
+        'w': w, 'h': h, 'src': data['src'], 'srcset': data['srcset'], 'alt': data['alt'], 'kicker': copy(where, o['kicker']),
+        'statement': data['statement'], 'k': k, 'acts': ''.join(acts),
     }
 
 
@@ -183,7 +226,9 @@ def main():
     slugs = [p.get('slug') for p in paintings]
     if len(set(slugs)) != len(slugs):
         PROBLEMS.append('two paintings share a slug: %r' % slugs)
-    cards = '\n'.join(card(i, p, cat) for i, p in enumerate(paintings))
+    origins = cat.get('origins') or []
+    found = '\n'.join(origin(j, o, cat) for j, o in enumerate(origins))
+    cards = '\n'.join(card(i, p, cat, len(origins) + i) for i, p in enumerate(paintings))
     books = '\n'.join(book(b, cat) for b in cat.get('books') or [])
     dots = ''.join('<i class="on is-new"></i>' if k == n - 1 else ('<i class="on"></i>' if k < n else '<i></i>') for k in range(total))
     first = paintings[0] if paintings else {}
@@ -195,6 +240,7 @@ def main():
         'FIRST_ZOOM': esc(first['zoom']), 'FIRST_SRC': esc(pick(first['images'], 768)),
         'FIRST_SRCSET': srcset('hero', first['images']), 'FIRST_ALT': esc(first['alt']),
         'FIRST_TITLE': esc(first['title']), 'FIRST_NATION': esc(first['nation']), 'FIRST_SW': esc(swatch(first['colours'])),
+        'FIRST_ARTIST': esc(first['artist']), 'FIRST_INDEX': str(len(origins)), 'ORIGINS': found,
     }
     out = tpl
     for k, v in slots.items():
@@ -211,7 +257,7 @@ def main():
     if bad:
         sys.exit('non-ASCII characters in the result: %r' % bad[:5])
     OUT.write_text(out, encoding='utf-8')
-    print('%s: v%s, %d paintings, %d books, %d characters' % (OUT.relative_to(ROOT), cat['version'], n, len(cat.get('books') or []), len(out)))
+    print('%s: v%s, %d origin(s), %d paintings, %d books, %d characters' % (OUT.relative_to(ROOT), cat['version'], len(origins), n, len(cat.get('books') or []), len(out)))
 
 
 if __name__ == '__main__':

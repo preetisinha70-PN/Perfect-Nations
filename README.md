@@ -78,6 +78,8 @@ perfectnations.org/perfect-nations-gallery/ (page 16839) is one file, `pages/art
 
 - **Built, never edited by hand.** `python3 tools/build_art.py` reads `art/catalogue.json` (the paintings and books: words, nation colours, images, enquiry links) and `art/art-of-nations.template.html` (style, markup, script) and writes the page. The build refuses straight apostrophes, contractions, image URLs outside the Media Library, copies wider than 768 px in `images`, and any non-ASCII character.
 - **A new painting** is one new entry in `paintings` (newest last): the hero, the wall, the count ("5 of 195 nations painted"), the 195 dots and the viewer all follow.
+- **The artist.** Every work names its artist (`artist`, today Preeti Sinha on every work): on the card, in the hero caption and in the viewer.
+- **Origins** (`origins`) are the artist’s founding works, shown whole before the nation portraits and not counted among the 195. The first is *Botanical Origins* by Preeti Sinha, the garden painting the series grew from (Media Library 17752).
 - **Images** are the copies WordPress makes (300, 600 and 768 px under `images`; `zoom` is the copy the viewer opens). Check each one exists in the Media Library first.
 - **Ready for a shop.** Put the store address in `shop` and a `buy_url` (and `price`, if wanted) on a work: it shows Buy beside Enquire. Without a `buy_url` a work stays by enquiry.
 - **Checks and previews:** `python3 tools/check_page.py pages/art-of-nations.html art/art-of-nations.template.html`, then `python3 tools/preview_art.py` (laptop 1440 x 900, phone 390 x 844; screenshots in /tmp/pn-preview).
