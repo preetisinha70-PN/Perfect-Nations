@@ -1,4 +1,4 @@
-# Temporary check (7 Nov 2026): do pages stay cached past ten minutes now? Runs only on this branch.
+# Temporary check (7 Nov 2026): minute by minute, when do cached pages drop out, together or one by one?
 name: speed-probe
 on:
   push:
@@ -13,8 +13,13 @@ jobs:
           set +e
           UA="Mozilla/5.0 (Linux; Android 13; Pixel 7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Mobile Safari/537.36"
           ACC="text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8"
-          check(){ for path in / /blueprints/ /about/ /state-of-nations/ /blueprints/kenya/ /blueprints/barbados/ /blueprints/ghana/ /blueprints/fiji/ /dear-kenya/; do
-              r=$(curl -s -o /dev/null --compressed -A "$UA" -H "Accept: $ACC" -D /tmp/h -w "%{http_code} %{time_starttransfer}" "https://perfectnations.org${path}")
-              c=$(grep -i '^x-litespeed-cache:' /tmp/h | tr -d '\r' | awk '{print $2}'); a=$(grep -i '^age:' /tmp/h | tr -d '\r' | awk '{print $2}')
-              echo "$1 $path $r cache=${c:-none} age=${a:--}"; sleep 1; done; }
-          check NOW; sleep 720; check AFTER12MIN
+          get(){ curl -s --compressed -A "$UA" -H "Accept: $ACC" -D /tmp/h -o /tmp/b "https://perfectnations.org$1"
+                 c=$(grep -i '^x-litespeed-cache:' /tmp/h | tr -d '\r' | awk '{print $2}')
+                 t=$(grep -o 'Page cached by LiteSpeed Cache [0-9.]* on [0-9: -]*' /tmp/b | sed 's/.* on //')
+                 echo "$(date -u +%H:%M:%S) $1 ${c:-none} cached_on=${t:-none}"; }
+          for p in /blueprints/ghana/ /blueprints/fiji/ /dear-kenya/ /blueprints/kenya/; do get $p; done
+          for m in $(seq 1 16); do
+            sleep 55
+            [ $m -eq 4 ] && get /blueprints/egypt/
+            for p in /blueprints/ghana/ /blueprints/fiji/ /dear-kenya/ /blueprints/kenya/ /blueprints/egypt/; do get $p; done
+          done
