@@ -92,6 +92,16 @@ perfectnations.org/about/ is one file, `pages/about.html` (root `pn-about`), kep
 - **Checks and previews:** `python3 tools/check_page.py pages/about.html`, then `python3 tools/preview_page.py pages/about.html --out <folder> --fonts <node_modules/@fontsource>`.
 - **Every change** goes through a pull request "For approval: About vX.Y, ...", with `pn-about` raised in the manifest.
 
+## The Contact page (from 7 November 2026)
+
+perfectnations.org/contact/ (page 12711) is one file, `pages/contact.html` (root `pn-contact`), kept by the Contact Steward. Its Elementor Custom HTML widget (v5.1) already contains `pn-contact`, so the plugin serves the file in its place; the paste stays as the fallback.
+
+- **Edited by hand**, except three blocks that `python3 tools/build_contact.py` writes: the painted seams (from `pages/home-seams.html`), the seam under the letterhead, and a JSON block with the open blueprints (from `pages/manifest.json`) and the paintings and books (from `art/catalogue.json`). Run the build whenever a blueprint is published or a painting or book is added.
+- **Every button on the site lands here with its intent**: `?about=studio` or `briefing` (The Nation Briefing), `lab` (The Blueprint Lab), `commission` or `sovereign` (The Sovereign Mandate), `original-<nation>` (a painting), `perfect-<nation>-book` (a book), `gallery`, `speaking`; `?topic=nominate-self`, `guest`, `nominate`, `story`, `enterprise`, `codesigner`; `?nation=<slug>` (an open blueprint opens "Share a vision or story", any other nation "Ask for a blueprint"); `?country=<Name>`.
+- **Sending** opens the visitor's own email to contact@perfectnations.org, with Gmail, Outlook and Copy as fallbacks. Nothing is stored on the site.
+- **Checks and previews:** `python3 tools/check_page.py pages/contact.html`, then `python3 tools/preview_page.py pages/contact.html --out <folder> --fonts <folder holding node_modules/@fontsource>`.
+- **Every change** goes through a pull request "For approval: Contact vX.Y, ...", with `pn-contact` raised in the manifest.
+
 ## Nations
 
 Each live blueprint reads its own file: `data/<nation>.json` (barbados, kenya, ...). A Steward edits only the file for its own nation.
