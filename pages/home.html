@@ -1,5 +1,5 @@
 <!-- ===========================================================================
-PERFECT NATIONS - HOMEPAGE - THE WHOLE PAGE IN ONE FILE - v7.4 - 2026-11-06
+PERFECT NATIONS - HOMEPAGE - THE WHOLE PAGE IN ONE FILE - v7.5 - 2026-11-06
 Paste this file ONCE into ONE Elementor Custom HTML widget on the homepage (page 13465), in a Full
 Width container with padding 0, and delete every other widget on the page. From then on the Perfect
 Nations Live Pages plugin serves pages/home.html from GitHub in place of the paste (root id pn-home,
@@ -1555,9 +1555,12 @@ oc Australia and Oceania.
 </script>
 <!-- ======== part: pages/home-hero.html ======== -->
 <!-- ===========================================================================
-PERFECT NATIONS - HOMEPAGE - SECTION 01 - CIVILIZATION RE-DEFINED - v6.3 THE CLEAR SEA - 2026-11-06
+PERFECT NATIONS - HOMEPAGE - SECTION 01 - CIVILIZATION RE-DEFINED - v6.4 THE CLEAR SEA - 2026-11-06
 Served live from GitHub (pages/home-hero.html) by the Perfect Nations Live Pages plugin;
 the root id stays pn-hero, so the widget already on the homepage is the one replaced.
+v6.4: room to breathe on laptops. The band no longer tucks under the title; it starts just below it,
+  so the top of the planet sits clear of "Civilization Re-Defined" (about 50 px at 1440 x 900). The
+  planet stays larger than before v6.2 (about 540 px across at 1440 x 900, against 472 px).
 v6.3: the planet survives a graphics reset. A laptop browser can take the planet's drawing surface
   away (a graphics reset, after a long scroll, a sleep or a switch between graphics chips); the page
   then showed a blank white panel with a sad face. Now the still planet shows in its place at once,
@@ -1626,7 +1629,7 @@ If the address differs, change it in the two places it appears (search for pn-ho
   --hd:var(--pn-font-heading,"Barlow Condensed","Arial Narrow",Arial,sans-serif);
   --bd:var(--pn-font-body,"Barlow Semi Condensed",Arial,sans-serif);
   --pnhg-headh:0px;
-  --pd:clamp(300px, min(86vw, calc((100svh - 245px) * .86)), 780px);
+  --pd:clamp(300px, min(86vw, calc((100svh - 270px) * .86)), 760px);
 
   position:relative; isolation:isolate;
   width:100vw; margin-left:calc(50% - 50vw);
@@ -1689,10 +1692,10 @@ If the address differs, change it in the two places it appears (search for pn-ho
   position:relative; z-index:1;
   margin:clamp(2px,.6vh,8px) calc(50% - 50vw) 0;
   width:100vw; max-width:none;
-  height:clamp(520px, calc(100svh - 245px), 900px);
+  height:clamp(500px, calc(100svh - 270px), 880px);
 }
 @media (min-width:761px){
-  #pn-hero .pnhg-globe{ margin-top:calc(-1 * clamp(26px, 4.6vh, 56px)); }
+  #pn-hero .pnhg-globe{ margin-top:clamp(6px, 1.2vh, 14px); }
 }
 #pn-hero .pnhg-rose{
   position:absolute; left:50%; top:50%; z-index:0; pointer-events:none;

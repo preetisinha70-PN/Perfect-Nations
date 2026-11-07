@@ -17,7 +17,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 PAGES = ROOT / 'pages'
-VERSION = '7.4'
+VERSION = '7.5'
 
 # The page, top to bottom. 'seam' places a painted seam (variant a, b, c, ...).
 ORDER = [
