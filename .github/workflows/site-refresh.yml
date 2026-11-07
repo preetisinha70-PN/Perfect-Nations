@@ -35,7 +35,7 @@ jobs:
           PHONE="Mozilla/5.0 (Linux; Android 13; Pixel 7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Mobile Safari/537.36"
           LAPTOP="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36"
           ACC="text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8"
-          for path in / /blueprints/ /about/ /state-of-nations/ /perfect-nations-gallery/ /design-studio/ /perfect-capita/ /sovereign-assets/ /contact/ \
+          for path in / /blueprints/ /about/ /state-of-nations/ /art-of-nations/ /design-studio/ /perfect-capita/ /sovereign-assets/ /contact/ \
                       /blueprints/barbados/ /blueprints/kenya/ /blueprints/india/ /blueprints/brazil/ /blueprints/rwanda/ /blueprints/afghanistan/; do
             for ua in "$PHONE" "$LAPTOP"; do
               curl -s -o /dev/null --compressed -A "$ua" -H "Accept: $ACC" -w "%{http_code} %{time_starttransfer}s ${path}\n" "https://perfectnations.org${path}"

@@ -1,6 +1,7 @@
 <!-- ===========================================================================
-PERFECT NATIONS - ART OF NATIONS (THE PERFECT NATIONS GALLERY) - v[[VERSION]] - [[DATE]]
-The whole Gallery page in one file: perfectnations.org/perfect-nations-gallery/ (page 16839).
+PERFECT NATIONS - ART OF NATIONS - v[[VERSION]] - [[DATE]]
+The whole Art of Nations page in one file: perfectnations.org/art-of-nations/ (page 16839; the old
+address /perfect-nations-gallery/ leads here).
 Root id pn-art. The page's Elementor Custom HTML widget already contains pn-art, so the Perfect
 Nations Live Pages plugin serves this file in its place: nothing needs pasting.
 BUILT by tools/build_art.py from art/catalogue.json (the works) and art/art-of-nations.template.html
@@ -14,6 +15,9 @@ a work with a buy_url shows Buy beside Enquire.
 v4.1 (7 Nov 2026): every work names its artist, Preeti Sinha (cards, hero, viewer). Botanical
 Origins, the garden painting the series grew from, opens the gallery wall ("Where it began"),
 shown whole in a landscape frame; it is not counted among the 195 nation portraits.
+v4.2 (7 Nov 2026): the page is Art of Nations everywhere (menu, footer, address /art-of-nations/).
+Botanical Origins: acrylic on canvas, 12 x 18 in, 2026, not for sale (no Enquire). A work marked
+"Not for sale" or "Sold" shows its status and no Enquire.
 =========================================================================== -->
 <div id="pn-art" class="aon" data-version="[[VERSION]]">
 <style>
@@ -354,7 +358,7 @@ shown whole in a landscape frame; it is not counted among the 195 nation portrai
 [[ORIGINS]]
     <div class="aon-head">
       <div><p class="aon-eb">Original paintings</p><h2 class="aon-h2" id="aon-works-h">The nation, as a living bloom</h2></div>
-      <p class="aon-note">Acrylic on canvas, 24 &#215; 24 in, one of one and signed. Every painting is offered by private enquiry.</p>
+      <p class="aon-note">Acrylic on canvas, 24 &#215; 24 in, one of one and signed. Every portrait is offered by private enquiry.</p>
     </div>
     <div class="aon-grid">
 [[CARDS]]
@@ -372,7 +376,7 @@ shown whole in a landscape frame; it is not counted among the 195 nation portrai
 [[BOOKS]]
     </div>
     <div class="aon-close">
-      <p>Every work is offered by private enquiry.</p>
+      <p>Nation portraits and books are offered by private enquiry.</p>
       <div class="aon-ctas">
         <a class="aon-btn" href="[[CONTACT]]?about=gallery">Write to the studio</a>
         <a class="aon-btn aon-btn--line" href="https://perfectnations.org/blueprints/">National blueprints</a>
@@ -420,7 +424,7 @@ shown whole in a landscape frame; it is not counted among the 195 nation portrai
     var d=c.dataset;
     return { n:n, hero:c.classList.contains('aon-card'), nation:d.nation||'', title:d.title, artist:d.artist||'',
       statement:d.statement||'', spec:d.spec||'', alt:d.alt||'', zoom:d.zoom, src:d.src, srcset:d.srcset||'',
-      sw:d.sw||'', enquire:d.enquire||'', buy:d.buy||'', price:d.price||'' };
+      sw:d.sw||'', enquire:d.enquire||'', buy:d.buy||'', price:d.price||'', status:d.status||'' };
   });
   var works=items.filter(function(w){ return w.hero; });
 
@@ -543,8 +547,8 @@ shown whole in a landscape frame; it is not counted among the 195 nation portrai
       return items.map(function(w){
         var acts=[];
         if(w.buy){ acts.push(['Buy',w.buy,false]); }
-        acts.push(['Enquire about this painting',w.enquire,!!w.buy]);
-        var k=[w.artist,w.price,w.spec].filter(Boolean).join(' \u00b7 ');
+        if(w.enquire){ acts.push(['Enquire about this painting',w.enquire,!!w.buy]); }
+        var k=[w.artist,w.price,w.spec,w.status].filter(Boolean).join(' \u00b7 ');
         return { src:w.zoom, alt:w.alt, h:(w.nation?w.nation+' \u00b7 ':'')+w.title, s:w.statement, k:k, acts:acts };
       });
     };
