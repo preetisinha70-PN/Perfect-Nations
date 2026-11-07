@@ -1,0 +1,19 @@
+# Temporary (7 Nov 2026): real Chrome timing of the main pages. Runs only on this branch.
+name: speed-probe
+on:
+  push:
+    branches: [speed-probe-2026-11-06]
+permissions:
+  contents: write
+jobs:
+  probe:
+    if: ${{ !contains(github.event.head_commit.message, 'probe results') && !contains(github.event.head_commit.message, 'remove the probe') }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - run: pip install -q playwright==1.48.0 && sudo apt-get install -y -qq xvfb > /dev/null
+      - run: mkdir -p probe-out && xvfb-run -a python probe/browser_timing.py
+      - run: |
+          git config user.name "speed-probe"; git config user.email "noreply@github.com"
+          git add probe-out && git commit -q -m "probe results" && git push -q
