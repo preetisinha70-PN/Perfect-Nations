@@ -2,7 +2,7 @@
 /**
  * Plugin Name:       Perfect Nations Live Pages
  * Description:       Serves each Perfect Nations page from the Perfect Nations GitHub repository, so a page updates without copying and pasting its code. Pages stay in Elementor; if GitHub cannot be reached, the page shows the code pasted in its widget.
- * Version:           1.2.0
+ * Version:           1.3.0
  * Requires at least: 6.0
  * Requires PHP:      7.4
  * Author:            Perfect Nations
@@ -23,6 +23,10 @@
  *    Pages therefore stay in the LiteSpeed page cache for a week, or until their code changes,
  *    instead of the ten minutes of 1.1. If nothing has ever been fetched, the pasted code is shown.
  * 4. Settings > Perfect Nations Live: what is live, Refresh now, and Export page code.
+ * 6. v1.3: when the manifest names {"additional_css": {"file": "pages/additional.css"}}, that file is served
+ *    as the sitewide Additional CSS, in place of the copy kept in Appearance > Customize > Additional CSS
+ *    (which stays untouched, as the fallback). If that WordPress copy is edited after the switch, the
+ *    WordPress copy wins, until Settings > Perfect Nations Live > Use the GitHub copy again is pressed.
  * 5. v1.1: a manifest key may name one post, "pn-disp@post-slug", so posts that share a root id
  *    (dispatches, a duplicate widget) can each be served on their own; and the manifest may list
  *    same-site redirects, {"redirects": {"/old-path/": "/new-path/"}}, answered with a 301.
@@ -34,7 +38,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 final class PN_Live_Pages {
 
-	const VERSION  = '1.2.0';
+	const VERSION  = '1.3.0';
 	const REPO     = 'preetisinha70-PN/perfect-nations';
 	const BRANCH   = 'main';
 	const MANIFEST = 'pages/manifest.json';
@@ -80,6 +84,9 @@ final class PN_Live_Pages {
 		add_filter( 'cron_schedules', array( $this, 'cron_schedules' ) );
 		add_action( 'init', array( $this, 'ensure_schedule' ) );
 		add_action( 'pn_live_refresh_event', array( $this, 'cron_refresh' ) );
+		// v1.3: the sitewide Additional CSS from GitHub.
+		add_filter( 'wp_get_custom_css', array( $this, 'filter_custom_css' ), 20, 2 );
+		add_action( 'admin_post_pn_live_css_reset', array( $this, 'handle_css_reset' ) );
 	}
 
 	/* ------------------------------------------------------------------ */
@@ -282,6 +289,11 @@ final class PN_Live_Pages {
 				}
 			}
 			$out['updated'] = isset( $data['updated'] ) ? (string) $data['updated'] : '';
+			$out['css']     = '';
+			if ( ! empty( $data['additional_css']['file'] ) && is_string( $data['additional_css']['file'] ) && preg_match( '#^pages/[a-z0-9][a-z0-9-]{0,80}\.css$#', $data['additional_css']['file'] ) ) {
+				$out['css']         = $data['additional_css']['file'];
+				$out['css_version'] = isset( $data['additional_css']['version'] ) ? preg_replace( '/[^0-9A-Za-z.\-]/', '', (string) $data['additional_css']['version'] ) : '';
+			}
 		}
 		$this->manifest = $out;
 		return $out;
@@ -466,6 +478,14 @@ final class PN_Live_Pages {
 				$failed[] = $file;
 			}
 		}
+		if ( ! empty( $manifest['css'] ) ) {
+			$r = $this->fetch_into( $manifest['css'], $sha, array( $this, 'valid_css' ) );
+			if ( 'changed' === $r ) {
+				$changed[] = $manifest['css'];
+			} elseif ( 'failed' === $r ) {
+				$failed[] = $manifest['css'];
+			}
+		}
 		$meta            = get_option( self::OPT . 'meta', array() );
 		$meta            = is_array( $meta ) ? $meta : array();
 		$meta['checked'] = time();
@@ -488,6 +508,51 @@ final class PN_Live_Pages {
 			'changed' => $changed,
 			'failed'  => $failed,
 		);
+	}
+
+	/**
+	 * v1.3: serve pages/additional.css in place of Appearance > Customize > Additional CSS.
+	 *
+	 * @param string $css        The Additional CSS kept in WordPress.
+	 * @param string $stylesheet Theme.
+	 * @return string
+	 */
+	public function filter_custom_css( $css, $stylesheet = '' ) {
+		if ( ! $this->enabled() || ( function_exists( 'is_customize_preview' ) && is_customize_preview() ) ) {
+			return $css;
+		}
+		$manifest = $this->manifest();
+		if ( empty( $manifest['css'] ) ) {
+			return $css;
+		}
+		$now  = md5( (string) $css );
+		$base = (string) get_option( self::OPT . 'css_base', '' );
+		if ( '' === $base ) {
+			update_option( self::OPT . 'css_base', $now, false );
+			$base = $now;
+		}
+		if ( $base !== $now ) {
+			return $css; // edited in WordPress after the switch: the edit wins
+		}
+		$live = $this->get_file( $manifest['css'], array( $this, 'valid_css' ) );
+		return ( is_string( $live ) && '' !== $live ) ? $live : $css;
+	}
+
+	/** A sitewide stylesheet from the repository: marked as ours, no markup, a sane size. */
+	public function valid_css( $body ) {
+		$body = (string) $body;
+		return 0 === strpos( ltrim( $body ), '/* Perfect Nations' ) && false === strpos( $body, '<' ) && strlen( $body ) < 400000;
+	}
+
+	public function handle_css_reset() {
+		if ( ! current_user_can( 'manage_options' ) ) {
+			wp_die( 'Not allowed.' );
+		}
+		check_admin_referer( 'pn_live_css_reset' );
+		delete_option( self::OPT . 'css_base' );
+		do_action( 'litespeed_purge_all' );
+		wp_safe_redirect( admin_url( 'options-general.php?page=pn-live&pn-done=css' ) );
+		exit;
 	}
 
 	/* WordPress's own schedule: a check every ten minutes, whenever the site runs. */
@@ -614,6 +679,8 @@ final class PN_Live_Pages {
 		echo '<div class="wrap"><h1>Perfect Nations Live Pages</h1>';
 		if ( 'refreshed' === $notice ) {
 			echo '<div class="notice notice-success"><p>Refreshed. Every live page has been fetched again from GitHub and the page cache has been cleared.</p></div>';
+		} elseif ( 'css' === $notice ) {
+			echo '<div class="notice notice-success"><p>The Additional CSS from GitHub is served again.</p></div>';
 		} elseif ( 'toggled' === $notice ) {
 			echo '<div class="notice notice-success"><p>Saved.</p></div>';
 		}
@@ -624,6 +691,21 @@ final class PN_Live_Pages {
 		}
 
 		echo '<p><strong>Status:</strong> ' . ( $on ? 'Live pages are on.' : 'Live pages are off: every page shows its pasted code.' ) . '</p>';
+		if ( ! empty( $manifest['css'] ) ) {
+			$wp_css = function_exists( 'wp_get_custom_css_post' ) ? wp_get_custom_css_post() : null;
+			$wp_raw = ( is_object( $wp_css ) && isset( $wp_css->post_content ) ) ? (string) $wp_css->post_content : '';
+			$base   = (string) get_option( self::OPT . 'css_base', '' );
+			$paused = '' !== $base && md5( $wp_raw ) !== $base;
+			$copy   = get_option( self::OPT . 'l_' . substr( md5( $manifest['css'] ), 0, 16 ), '' );
+			echo '<p><strong>Additional CSS:</strong> ' . ( $paused
+				? 'paused. The Additional CSS in Appearance &gt; Customize was edited after the switch, so the WordPress copy is served.'
+				: 'served from GitHub (<code>' . esc_html( $manifest['css'] ) . '</code>' . ( ! empty( $manifest['css_version'] ) ? ' v' . esc_html( $manifest['css_version'] ) : '' ) . ', ' . esc_html( (string) round( strlen( (string) $copy ) / 1024 ) ) . ' KB) in place of the ' . esc_html( (string) round( strlen( $wp_raw ) / 1024 ) ) . ' KB kept in Appearance &gt; Customize, which stays as the fallback.' ) . '</p>';
+			if ( $paused ) {
+				echo '<form method="post" action="' . esc_url( admin_url( 'admin-post.php' ) ) . '" style="margin:0 0 16px 0">';
+				wp_nonce_field( 'pn_live_css_reset' );
+				echo '<input type="hidden" name="action" value="pn_live_css_reset"><button class="button">Use the GitHub copy again</button></form>';
+			}
+		}
 
 		echo '<form method="post" action="' . esc_url( admin_url( 'admin-post.php' ) ) . '" style="display:inline-block;margin:0 8px 16px 0">';
 		wp_nonce_field( 'pn_live_refresh' );

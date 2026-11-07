@@ -1,5 +1,5 @@
 === Perfect Nations Live Pages ===
-Version: 1.2.0
+Version: 1.3.0
 Requires PHP: 7.4
 
 Serves each Perfect Nations page from the Perfect Nations GitHub repository, so a page updates
@@ -36,6 +36,14 @@ Plugins > Add New Plugin > Upload Plugin, choose the new perfect-nations-live.zi
 then "Replace current with uploaded". Settings stay as they are.
 
 == Changes ==
+1.3.0 (7 November 2026) - sitewide CSS
+- When pages/manifest.json names {"additional_css": {"file": "pages/additional.css"}}, that file is
+  served as the sitewide Additional CSS in place of the copy in Appearance > Customize > Additional CSS.
+  The WordPress copy stays untouched as the fallback; if it is edited there after the switch, the
+  edited WordPress copy is served until Settings > Perfect Nations Live > Use the GitHub copy again.
+- The Customizer preview always shows the WordPress copy. The file is checked with the pages and must
+  begin with "/* Perfect Nations" and hold no markup.
+
 1.2.0 (7 November 2026) - speed
 - Pages stay in the LiteSpeed page cache for a week, or until their code changes (1.1 told
   LiteSpeed to drop every page after ten minutes, so most visitors waited for a fresh build).
