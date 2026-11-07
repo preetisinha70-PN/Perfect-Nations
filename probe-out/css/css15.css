@@ -1,0 +1,250 @@
+.elementor-10809 .elementor-element.elementor-element-380432c{--display:flex;}.elementor-10809 .elementor-element.elementor-element-380432c:not(.elementor-motion-effects-element-type-background), .elementor-10809 .elementor-element.elementor-element-380432c > .elementor-motion-effects-container > .elementor-motion-effects-layer{background-color:#000000;}.elementor-theme-builder-content-area{height:400px;}.elementor-location-header:before, .elementor-location-footer:before{content:"";display:table;clear:both;}/* Start custom CSS for html, class: .elementor-element-7da1eab *//* =========================================================
+PERFECT NATIONS™ — CLEAN CINEMATIC FOOTER
+Slimmer footer block / normal text width / refined address
+========================================================= */
+
+.pn-footer-cinematic {
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 50% 0%, rgba(80,140,255,0.10), transparent 34%),
+    linear-gradient(180deg, #050505 0%, #000000 100%);
+  border-top: 1px solid rgba(255,255,255,0.08);
+  padding: 30px 20px 22px;
+}
+
+.pn-footer-glow {
+  position: absolute;
+  top: -120px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 680px;
+  height: 220px;
+  background: radial-gradient(
+    circle,
+    rgba(255,255,255,0.06) 0%,
+    rgba(255,255,255,0.015) 35%,
+    transparent 70%
+  );
+  pointer-events: none;
+  filter: blur(18px);
+  opacity: 0.85;
+}
+
+.pn-footer-inner {
+  position: relative;
+  z-index: 2;
+  max-width: 1240px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* Logo */
+
+.pn-footer-logo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+  opacity: 0.96;
+  transition: transform 0.35s ease, opacity 0.35s ease;
+}
+
+.pn-footer-logo img {
+  width: 52px;
+  height: auto;
+  display: block;
+  filter: drop-shadow(0 0 14px rgba(255,255,255,0.08));
+}
+
+.pn-footer-logo:hover {
+  transform: translateY(-2px) scale(1.02);
+  opacity: 1;
+}
+
+/* Brand title */
+
+.pn-footer-brand,
+.pn-footer-title {
+  margin: 0 auto 10px;
+  color: #ffffff;
+  font-family: "PT Sans Narrow", sans-serif;
+  font-size: 26px;
+  line-height: 1.1;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+
+/* Description — wide, not narrow */
+
+.pn-footer-description {
+  max-width: 1040px;
+  margin: 0 auto;
+  color: rgba(255,255,255,0.76);
+  font-family: "PT Sans Narrow", sans-serif;
+  font-size: 23px;
+  line-height: 1.34;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  text-align: center;
+}
+
+/* Address — smaller, aligned with description */
+
+.pn-footer-address {
+  max-width: 1040px;
+  margin: 10px auto 0;
+  color: rgba(255,255,255,0.62);
+  font-family: "PT Sans Narrow", sans-serif;
+  font-size: 12px;
+  line-height: 1.45;
+  font-weight: 400;
+  letter-spacing: 0.045em;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+/* Navigation */
+
+.pn-footer-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px 28px;
+  margin-top: 13px;
+  margin-bottom: 0;
+}
+
+.pn-footer-nav a {
+  position: relative;
+  color: rgba(255,255,255,0.70);
+  text-decoration: none;
+  font-family: "PT Sans Narrow", sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+  transition: color 0.28s ease, opacity 0.28s ease;
+}
+
+.pn-footer-nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 0;
+  height: 1px;
+  background: rgba(255,255,255,0.85);
+  transition: width 0.28s ease;
+}
+
+.pn-footer-nav a:hover {
+  color: #ffffff;
+}
+
+.pn-footer-nav a:hover::after {
+  width: 100%;
+}
+
+/* Footer meta */
+
+.pn-footer-meta {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+  margin-top: 13px;
+}
+
+.pn-footer-meta span,
+.pn-footer-meta a {
+  color: rgba(255,255,255,0.45);
+  text-decoration: none;
+  font-family: "PT Sans Narrow", sans-serif;
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  transition: color 0.25s ease;
+}
+
+.pn-footer-meta a:hover {
+  color: rgba(255,255,255,0.82);
+}
+
+/* Mobile */
+
+@media (max-width: 767px) {
+  .pn-footer-cinematic {
+    padding: 26px 16px 20px;
+  }
+
+  .pn-footer-glow {
+    width: 380px;
+    height: 170px;
+    top: -90px;
+    opacity: 0.75;
+  }
+
+  .pn-footer-inner {
+    max-width: 100%;
+  }
+
+  .pn-footer-logo {
+    margin-bottom: 9px;
+  }
+
+  .pn-footer-logo img {
+    width: 46px;
+  }
+
+  .pn-footer-brand,
+  .pn-footer-title {
+    font-size: 24px;
+    margin-bottom: 9px;
+  }
+
+  .pn-footer-description {
+    max-width: 100%;
+    font-size: 19px;
+    line-height: 1.38;
+  }
+
+  .pn-footer-address {
+    max-width: 100%;
+    margin-top: 9px;
+    font-size: 10.5px;
+    line-height: 1.5;
+    letter-spacing: 0.045em;
+  }
+
+  .pn-footer-nav {
+    gap: 9px 16px;
+    margin-top: 13px;
+  }
+
+  .pn-footer-nav a {
+    font-size: 11px;
+    letter-spacing: 1.4px;
+  }
+
+  .pn-footer-meta {
+    gap: 7px 12px;
+    margin-top: 12px;
+  }
+
+  .pn-footer-meta span,
+  .pn-footer-meta a {
+    font-size: 10px;
+    letter-spacing: 1.05px;
+  }
+}
+  .pn-footer-copyright {
+  margin: 20px 0 0;
+  color: rgba(255,255,255,0.82);
+  font-size: 13px;
+  line-height: 1.8;
+  letter-spacing: 0.05em;
+}/* End custom CSS */
