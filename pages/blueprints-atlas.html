@@ -1,0 +1,792 @@
+<!-- ===========================================================================
+PERFECT NATIONS - THE BLUEPRINTS PAGE - 01 THE GOLDEN MAP, 02 THE OPEN BLUEPRINTS, 03 EVERY NATION
+part v6.0 - 2026-11-06 - kept by the Blueprints Steward
+This part is the body of pages/blueprints.html. Edit this file, then run tools/build_blueprints.py,
+which fills the slots (the map, the tabs, the tiles, the region lists, the counts and the settings)
+and joins it with the Nations Menu and the painted seams. Never edit pages/blueprints.html by hand.
+v6.0 (6 Nov 2026), the page in one file:
+  - One palette: 01 Earthrise, then a painted seam, 02 Lagoon, 03 ivory (the reading band). The old
+    terracotta hero, sand bar and six region colours are retired, as on the homepage.
+  - The golden map: the colours of the homepage planet (open blueprints bright gold, every other
+    nation antique gold, the clear dark ultramarine sea of hero v6.2 with no flecks, a gold rim) on
+    the Equal Earth projection. The region
+    tabs fly the map to a region; the six region maps of the old atlas are gone, and phones no
+    longer drag a map sideways.
+  - The open blueprints as tiles: each nation in its own gold outline, its headline figure from the
+    blueprint hero, and its Nation Steward. Phones show eight, laptops fifteen, then Show all.
+  - Every nation as six folding regions; a nation in preparation opens the Nation Viewer card.
+  - Live by itself: on every visit the page reads pages/manifest.json and data/blueprints.json, so a
+    blueprint merged on GitHub turns gold, joins the tiles and recounts the page, with no paste.
+All CSS is scoped to #pn-bpa; ids and classes start pnbpa-. Gold marks only what can be clicked and
+sourced money figures. Copy: no contractions, curly apostrophes.
+=========================================================================== -->
+<style>
+.elementor-widget-html:has(#pn-bpa),.elementor-widget:has(#pn-bpa),.elementor-widget-wrap:has(#pn-bpa),
+.elementor-container:has(#pn-bpa),.elementor-column:has(#pn-bpa),.elementor-section:has(#pn-bpa),
+.e-con-inner:has(#pn-bpa),.e-con:has(#pn-bpa),#content:has(#pn-bpa),.site-content:has(#pn-bpa),.ast-container:has(#pn-bpa){
+  padding-top:0 !important; padding-bottom:0 !important; margin-top:0 !important; margin-bottom:0 !important;
+  --widgets-spacing:0px !important; row-gap:0 !important;
+}
+#pn-bpa{
+  --g:#E3C258; --gs:#F0D68F; --gb:#FFD45C; --ga:#CDAC60; --gd:#7E5A0C; --on-g:#1A140C;
+  --er:#0B3D45; --er2:#093239; --la:#0F4C5C; --dp:#082A30; --iv:#F4ECD8; --iv2:#F5F1E8; --tc:#8A3A22;
+  --ink:#14262B; --tx:#F5F1E8; --tm:rgba(245,241,232,.84); --td:rgba(245,241,232,.62); --hair:rgba(245,241,232,.16);
+  --hd:var(--pn-font-heading,"Barlow Condensed","Arial Narrow",Arial,sans-serif);
+  --bd:var(--pn-font-body,"Barlow Semi Condensed",Arial,sans-serif);
+  --gut:clamp(18px,4vw,48px);
+  position:relative; width:100vw; margin-left:calc(50% - 50vw); box-sizing:border-box;
+  overflow-x:hidden; overflow-x:clip; color:var(--tx); font-family:var(--bd); line-height:1.5; text-align:left;
+}
+#pn-bpa *,#pn-bpa *::before,#pn-bpa *::after{ box-sizing:border-box; }
+#pn-bpa ul,#pn-bpa ol{ margin:0; padding:0; list-style:none; }
+#pn-bpa li{ margin:0; }
+#pn-bpa p{ margin:0; }
+#pn-bpa a{ text-decoration:none; }
+#pn-bpa h1,#pn-bpa h2,#pn-bpa h3{ text-shadow:none !important; text-transform:none; }
+#pn-bpa .pnbpa-vh{ position:absolute; width:1px; height:1px; margin:-1px; padding:0; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; border:0; }
+#pn-bpa .pnbpa-in{ max-width:1180px; margin:0 auto; }
+#pn-bpa button{ font-family:var(--hd); }
+#pn-bpa :focus-visible{ outline:2px solid var(--gs); outline-offset:2px; }
+
+/* ---------- shared type ---------- */
+#pn-bpa .pnbpa-eyebrow{
+  display:flex; align-items:center; gap:12px; margin:0 0 8px;
+  font-family:var(--hd); font-size:.72rem; font-weight:700; line-height:1.2; letter-spacing:.3em; text-transform:uppercase; color:var(--tm);
+}
+#pn-bpa .pnbpa-eyebrow::after{ content:""; width:28px; height:1px; background:currentColor; opacity:.6; }
+#pn-bpa .pnbpa-h2{
+  margin:0; font-family:var(--hd); font-weight:600; font-size:clamp(2.3rem,5.6vw,5.2rem); line-height:.92; letter-spacing:-.025em;
+  color:var(--iv2) !important;
+}
+#pn-bpa .pnbpa-lead{ margin:10px 0 0; max-width:64ch; font-size:clamp(1rem,1.25vw,1.14rem); line-height:1.5; color:var(--tm); }
+#pn-bpa .pnbpa-btn{
+  display:inline-flex; align-items:center; justify-content:center; gap:10px; min-height:44px; margin:0; padding:0 22px;
+  border:0 !important; border-radius:999px; background:var(--g) !important; color:var(--on-g) !important; cursor:pointer;
+  font-family:var(--hd); font-size:.74rem; font-weight:700; letter-spacing:.19em; text-transform:uppercase; text-decoration:none;
+  box-shadow:none; transition:background .2s ease;
+}
+#pn-bpa .pnbpa-btn:hover{ background:var(--gs) !important; }
+
+/* ---------- 01 the golden map (Earthrise) ---------- */
+#pn-bpa .pnbpa-hero{
+  position:relative; isolation:isolate;
+  padding:clamp(22px,3.6vh,40px) var(--gut) clamp(20px,3.4vh,36px);
+  background:
+    radial-gradient(70% 55% at 72% 0%, rgba(93,181,232,.12) 0%, transparent 62%),
+    linear-gradient(180deg,var(--er) 0%,var(--er2) 100%);
+}
+#pn-bpa .pnbpa-head{ display:grid; grid-template-columns:minmax(0,1fr) auto; gap:14px 44px; align-items:end; }
+#pn-bpa .pnbpa-brand{ display:flex; align-items:center; gap:14px; margin:0 0 8px; }
+#pn-bpa .pnbpa-brand .pnbpa-eyebrow{ margin:0; }
+#pn-bpa .pnbpa-cup{ flex:none; display:block; width:clamp(66px,5.2vw,94px); height:auto; aspect-ratio:2/1; margin:0 0 0 -4px; color:var(--g); }
+#pn-bpa h1.pnbpa-h1{
+  margin:0; font-family:var(--hd); font-weight:600; font-size:clamp(2.5rem,6.2vw,6rem); line-height:.92; letter-spacing:-.025em;
+  color:var(--iv2) !important;
+}
+#pn-bpa .pnbpa-stats{ display:flex; margin:0; padding:0 0 4px; }
+#pn-bpa .pnbpa-stats > div{ display:flex; flex-direction:column; padding:0 clamp(14px,2vw,28px); border-left:1px solid var(--hair); }
+#pn-bpa .pnbpa-stats > div:first-child{ padding-left:0; border-left:0; }
+#pn-bpa .pnbpa-stats dd{ order:1; margin:0; font-family:var(--hd); font-weight:600; font-size:clamp(1.9rem,2.8vw,2.7rem); line-height:1; letter-spacing:-.02em; color:var(--iv2); font-variant-numeric:tabular-nums; }
+#pn-bpa .pnbpa-stats > div:first-child dd{ color:var(--g); }
+#pn-bpa .pnbpa-stats dt{ order:2; margin-top:6px; font-family:var(--hd); font-size:.64rem; font-weight:700; letter-spacing:.22em; text-transform:uppercase; color:var(--td); white-space:nowrap; }
+
+#pn-bpa .pnbpa-tabs{ display:flex; flex-wrap:wrap; gap:8px; margin:clamp(14px,2.2vh,22px) 0 12px; }
+#pn-bpa .pnbpa-tab{
+  display:inline-flex; align-items:center; justify-content:center; gap:8px; min-height:44px; margin:0; padding:0 16px;
+  border:1px solid rgba(245,241,232,.28) !important; border-radius:999px; background:transparent !important; color:var(--iv2) !important;
+  font-size:.74rem; font-weight:700; letter-spacing:.16em; text-transform:uppercase; line-height:1; cursor:pointer; box-shadow:none;
+  transition:background .2s ease,border-color .2s ease,color .2s ease;
+}
+#pn-bpa .pnbpa-tab b{ font-weight:700; letter-spacing:.04em; color:var(--g); }
+#pn-bpa .pnbpa-tab:hover{ border-color:var(--g) !important; }
+#pn-bpa .pnbpa-tab[aria-pressed="true"]{ background:var(--g) !important; border-color:var(--g) !important; color:var(--on-g) !important; }
+#pn-bpa .pnbpa-tab[aria-pressed="true"] b{ color:var(--on-g); }
+
+#pn-bpa .pnbpa-map{
+  position:relative; width:100%; margin:0 auto; aspect-ratio:var(--asp,2.4);
+  max-width:calc((100vh - 330px) * var(--asp,2.4)); max-width:calc((100svh - 330px) * var(--asp,2.4)); min-height:220px;
+  border-radius:18px; overflow:hidden;
+  background:radial-gradient(64% 76% at 46% 42%, #123A8E 0%, #0B2A72 46%, #07205A 78%, #041238 100%);
+  box-shadow:0 28px 70px rgba(2,14,22,.45), inset 0 0 0 1px rgba(227,194,88,.3);
+}
+#pn-bpa .pnbpa-svg{ position:relative; z-index:1; display:block; width:100%; height:100%; overflow:hidden; }
+#pn-bpa .pnbpa-svg a{ cursor:pointer; }
+#pn-bpa .pnbpa-svg a:focus-visible{ outline:none; }
+#pn-bpa .pnbpa-svg a:focus-visible .pnbpa-c,#pn-bpa .pnbpa-svg a:focus-visible .pnbpa-dot{ stroke:#FFFFFF; stroke-width:2.4; }
+#pn-bpa .pnbpa-rimfill{ fill:rgba(40,100,210,.14); }
+#pn-bpa .pnbpa-grat{ fill:none; stroke:rgba(227,194,88,.17); stroke-width:.8; vector-effect:non-scaling-stroke; }
+#pn-bpa .pnbpa-rim{ fill:none; stroke:var(--g); stroke-width:2.6; vector-effect:non-scaling-stroke; }
+#pn-bpa .pnbpa-lands path{ fill:#8E7840; stroke:rgba(40,28,6,.45); stroke-width:.5; vector-effect:non-scaling-stroke; }
+#pn-bpa .pnbpa-c{ stroke-linejoin:round; vector-effect:non-scaling-stroke; transition:fill .18s ease; }
+#pn-bpa .pnbpa-c--soon{ fill:#B4985A; stroke:rgba(58,40,8,.55); stroke-width:.6; }
+#pn-bpa .pnbpa-c--live{ fill:var(--gb); stroke:#FFF6D2; stroke-width:.9; }
+#pn-bpa .pnbpa-c--soon.is-hot{ fill:#D6BC7A; }
+#pn-bpa .pnbpa-c--live.is-hot{ fill:#FFE79A; }
+#pn-bpa .pnbpa-dot{ vector-effect:non-scaling-stroke; }
+#pn-bpa .pnbpa-dot--soon{ fill:#B4985A; stroke:rgba(8,29,82,.9); stroke-width:1; }
+#pn-bpa .pnbpa-dot--live{ fill:var(--gb); stroke:#FFF6D2; stroke-width:1.4; }
+#pn-bpa .pnbpa-dot.is-hot{ fill:#FFE79A; }
+#pn-bpa .pnbpa-map.is-wide .pnbpa-rim{ stroke-opacity:.5; }
+
+#pn-bpa .pnbpa-tip{
+  position:absolute; z-index:4; left:0; top:0; display:none; padding:8px 13px; border-radius:12px; pointer-events:none;
+  transform:translate(-50%,-130%); background:var(--iv2); color:var(--ink); box-shadow:0 12px 30px rgba(2,14,22,.35);
+  font-size:.84rem; line-height:1.3; white-space:nowrap;
+}
+#pn-bpa .pnbpa-tip b{ display:block; font-family:var(--hd); font-size:1.05rem; font-weight:600; }
+#pn-bpa .pnbpa-tip i{ font-style:normal; font-family:var(--hd); font-size:.6rem; font-weight:700; letter-spacing:.16em; text-transform:uppercase; color:rgba(20,38,43,.62); }
+#pn-bpa .pnbpa-tip.is-live i{ color:var(--gd); }
+#pn-bpa .pnbpa-plate{
+  position:absolute; z-index:6; left:50%; bottom:14px; transform:translate(-50%,8px); min-width:min(86%,320px); max-width:92%;
+  padding:14px 18px 14px; border-radius:16px; text-align:center; background:var(--iv2); color:var(--ink);
+  border-top:3px solid var(--g); box-shadow:0 22px 50px rgba(2,14,22,.45); opacity:0; pointer-events:none;
+  transition:opacity .2s ease,transform .2s ease;
+}
+#pn-bpa .pnbpa-plate.is-on{ opacity:1; transform:translate(-50%,0); pointer-events:auto; }
+#pn-bpa .pnbpa-plate b{ display:block; font-family:var(--hd); font-weight:600; font-size:clamp(1.4rem,2.6vw,2rem); line-height:1.02; }
+#pn-bpa .pnbpa-plate i{ display:block; margin-top:4px; font-style:normal; font-family:var(--hd); font-size:.64rem; font-weight:700; letter-spacing:.2em; text-transform:uppercase; color:rgba(20,38,43,.62); }
+#pn-bpa .pnbpa-plate a{ display:inline-block; margin-top:10px; font-family:var(--hd); font-size:.7rem; font-weight:700; letter-spacing:.18em; text-transform:uppercase; color:var(--gd); border-bottom:1px solid currentColor; }
+
+#pn-bpa .pnbpa-key{ display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:6px 18px; margin:10px auto 0; max-width:calc((100vh - 330px) * var(--asp,2.4)); max-width:calc((100svh - 330px) * var(--asp,2.4)); }
+#pn-bpa .pnbpa-legend{ display:flex; flex-wrap:wrap; gap:6px 18px; }
+#pn-bpa .pnbpa-legend li,#pn-bpa .pnbpa-hint{ display:flex; align-items:center; gap:8px; font-family:var(--hd); font-size:.66rem; font-weight:700; letter-spacing:.18em; text-transform:uppercase; color:var(--td); }
+#pn-bpa .pnbpa-legend i{ width:13px; height:13px; border-radius:4px; background:var(--c); box-shadow:0 0 0 1.5px rgba(245,241,232,.6); }
+
+/* ---------- 02 the open blueprints (Lagoon) ---------- */
+#pn-bpa .pnbpa-open{
+  padding:clamp(22px,3.6vh,40px) var(--gut) clamp(22px,3.6vh,40px);
+  background:linear-gradient(180deg,var(--la) 0%,#0C4351 100%);
+}
+#pn-bpa .pnbpa-tools{ display:grid; grid-template-columns:minmax(240px,420px) minmax(0,1fr); gap:10px 20px; align-items:center; margin:16px 0 14px; }
+#pn-bpa .pnbpa-field{
+  display:flex; align-items:center; gap:10px; height:46px; padding:0 6px 0 16px; border-radius:999px;
+  border:1px solid rgba(245,241,232,.3); background:rgba(8,42,48,.55);
+}
+#pn-bpa .pnbpa-field:focus-within{ border-color:var(--g); box-shadow:0 0 0 3px rgba(227,194,88,.3); }
+#pn-bpa .pnbpa-field svg{ flex:none; width:17px; height:17px; color:var(--g); }
+#pn-bpa .pnbpa-field input,#pn-bpa .pnbpa-field input:focus,#pn-bpa .pnbpa-field input:hover{
+  flex:1; min-width:0; height:44px; margin:0; padding:0; border:0 !important; outline:0 !important; box-shadow:none !important;
+  background:transparent !important; color:var(--iv2) !important; -webkit-text-fill-color:var(--iv2) !important; caret-color:var(--g);
+  font-family:var(--bd); font-size:16px; line-height:44px; -webkit-appearance:none; appearance:none; border-radius:0;
+}
+#pn-bpa .pnbpa-field input::placeholder{ color:var(--td) !important; -webkit-text-fill-color:var(--td) !important; opacity:1; }
+#pn-bpa .pnbpa-field input::-webkit-search-cancel-button,#pn-bpa .pnbpa-field input::-webkit-search-decoration{ -webkit-appearance:none; appearance:none; }
+#pn-bpa .pnbpa-clear{
+  flex:none; display:inline-flex; align-items:center; justify-content:center; width:34px; height:34px; margin:0; padding:0;
+  border:1px solid rgba(227,194,88,.6) !important; border-radius:50%; background:transparent !important; color:var(--g) !important;
+  font-family:Arial,sans-serif; font-size:1.05rem; line-height:1; cursor:pointer;
+}
+#pn-bpa .pnbpa-clear[hidden]{ display:none; }
+#pn-bpa .pnbpa-status{ display:flex; flex-wrap:wrap; align-items:center; gap:6px 14px; font-family:var(--hd); font-size:.68rem; font-weight:700; letter-spacing:.18em; text-transform:uppercase; color:var(--td); }
+#pn-bpa .pnbpa-reset{
+  display:inline-flex; align-items:center; min-height:32px; margin:0; padding:0 2px; border:0 !important; border-bottom:1px solid currentColor !important;
+  background:transparent !important; color:var(--g) !important; font-size:.68rem; font-weight:700; letter-spacing:.18em; text-transform:uppercase; cursor:pointer; border-radius:0;
+}
+#pn-bpa .pnbpa-reset[hidden]{ display:none; }
+
+#pn-bpa .pnbpa-tiles{ display:grid; grid-template-columns:repeat(auto-fill,minmax(212px,1fr)); gap:10px; }
+#pn-bpa .pnbpa-t[hidden]{ display:none; }
+#pn-bpa .pnbpa-t a{
+  position:relative; display:grid; grid-template-columns:44px minmax(0,1fr); column-gap:12px; align-content:start; height:100%;
+  padding:12px 14px 13px; border-radius:14px; color:var(--iv2);
+  background:linear-gradient(180deg,rgba(245,241,232,.07),rgba(245,241,232,.03)); border:1px solid rgba(245,241,232,.14);
+  transition:border-color .18s ease,background .18s ease,transform .18s ease;
+}
+#pn-bpa .pnbpa-t a:hover,#pn-bpa .pnbpa-t.is-hot a{ border-color:var(--g); background:rgba(245,241,232,.1); transform:translateY(-2px); }
+#pn-bpa .pnbpa-t__sil{ grid-row:1 / span 2; width:44px; height:44px; overflow:hidden; fill:var(--gb); stroke:none; }
+#pn-bpa .pnbpa-t__n{ align-self:end; padding-right:26px; font-family:var(--hd); font-size:1.28rem; font-weight:600; line-height:1.04; color:var(--iv2); }
+#pn-bpa .pnbpa-t__r{ align-self:start; margin-top:3px; font-family:var(--hd); font-size:.6rem; font-weight:700; letter-spacing:.2em; text-transform:uppercase; color:var(--td); }
+#pn-bpa .pnbpa-t__v{ grid-column:1 / -1; margin-top:12px; font-family:var(--hd); font-size:1.5rem; font-weight:600; line-height:1; color:var(--iv2); font-variant-numeric:tabular-nums; }
+#pn-bpa .pnbpa-t__v.is-money{ color:var(--g); }
+#pn-bpa .pnbpa-t__l{ grid-column:1 / -1; margin-top:5px; font-size:.82rem; line-height:1.35; color:var(--tm); display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden; }
+#pn-bpa .pnbpa-t__s{ grid-column:1 / -1; margin-top:9px; padding-top:8px; border-top:1px solid var(--hair); font-size:.74rem; line-height:1.3; color:var(--td); }
+#pn-bpa .pnbpa-t__go{ position:absolute; top:12px; right:12px; width:22px; height:22px; border-radius:50%; background:var(--g); }
+#pn-bpa .pnbpa-t__go::before{ content:"\2197"; position:absolute; inset:0; display:flex; align-items:center; justify-content:center; font-family:Arial,sans-serif; font-size:.72rem; color:var(--on-g); }
+#pn-bpa .pnbpa-none{ padding:16px 0 4px; color:var(--tm); }
+#pn-bpa .pnbpa-none[hidden]{ display:none; }
+#pn-bpa .pnbpa-morewrap{ display:flex; justify-content:center; margin:16px 0 0; }
+#pn-bpa .pnbpa-morewrap[hidden]{ display:none; }
+
+/* ---------- 03 every nation (ivory) ---------- */
+#pn-bpa .pnbpa-every{
+  position:relative; padding:clamp(22px,3.6vh,40px) var(--gut) clamp(24px,3.8vh,44px); color:var(--ink);
+  background:linear-gradient(180deg,rgba(255,255,255,.35),rgba(255,255,255,0) 30%),var(--iv);
+}
+#pn-bpa .pnbpa-every .pnbpa-eyebrow{ color:var(--tc); }
+#pn-bpa .pnbpa-every .pnbpa-h2{ color:var(--er) !important; }
+#pn-bpa .pnbpa-every .pnbpa-lead{ color:rgba(20,38,43,.78); }
+#pn-bpa .pnbpa-regs{ margin:16px 0 0; border-top:1px solid rgba(11,61,69,.22); }
+#pn-bpa .pnbpa-reg{ border-bottom:1px solid rgba(11,61,69,.22); }
+#pn-bpa .pnbpa-reg[hidden]{ display:none; }
+#pn-bpa .pnbpa-reg summary{
+  display:grid; grid-template-columns:auto minmax(0,1fr) auto auto; gap:14px; align-items:center; min-height:54px; padding:6px 2px;
+  cursor:pointer; list-style:none; color:var(--er);
+}
+#pn-bpa .pnbpa-reg summary::-webkit-details-marker{ display:none; }
+#pn-bpa .pnbpa-reg summary::marker{ content:""; }
+#pn-bpa .pnbpa-reg__no{ font-family:var(--hd); font-weight:700; font-size:1.55rem; line-height:1; letter-spacing:-.02em; color:transparent; -webkit-text-stroke:1px rgba(11,61,69,.55); }
+#pn-bpa .pnbpa-reg__h{ font-family:var(--hd); font-weight:600; font-size:clamp(1.3rem,2.2vw,1.8rem); line-height:1; letter-spacing:-.01em; }
+#pn-bpa .pnbpa-reg__m{ font-family:var(--hd); font-size:.68rem; font-weight:700; letter-spacing:.16em; text-transform:uppercase; color:rgba(20,38,43,.66); white-space:nowrap; }
+#pn-bpa .pnbpa-reg__m b{ color:var(--er); }
+#pn-bpa .pnbpa-reg__m .pnbpa-reg__open{ color:var(--gd); }
+#pn-bpa .pnbpa-reg__chev{ position:relative; width:30px; height:30px; border-radius:50%; border:1px solid rgba(11,61,69,.35); transition:transform .25s ease,background .2s ease; }
+#pn-bpa .pnbpa-reg__chev::before{ content:""; position:absolute; left:50%; top:45%; width:8px; height:8px; border-right:2px solid var(--er); border-bottom:2px solid var(--er); transform:translate(-50%,-50%) rotate(45deg); }
+#pn-bpa .pnbpa-reg[open] .pnbpa-reg__chev{ transform:rotate(180deg); background:var(--g); border-color:var(--g); }
+#pn-bpa .pnbpa-reg summary:hover .pnbpa-reg__chev{ border-color:var(--gd); }
+#pn-bpa .pnbpa-names{ display:grid; grid-template-columns:repeat(auto-fill,minmax(176px,1fr)); gap:0 18px; padding:4px 2px 16px; }
+#pn-bpa .pnbpa-names li[hidden]{ display:none; }
+#pn-bpa .pnbpa-n{ display:flex; align-items:center; gap:8px; min-height:40px; font-size:.96rem; line-height:1.25; color:rgba(20,38,43,.7); }
+#pn-bpa .pnbpa-n.is-open{ color:var(--er); font-weight:600; }
+#pn-bpa .pnbpa-n.is-open::after{
+  content:"\2197"; flex:none; display:inline-flex; align-items:center; justify-content:center; width:20px; height:20px; border-radius:50%;
+  background:var(--g); color:var(--on-g); font-family:Arial,sans-serif; font-size:.66rem; font-weight:400;
+}
+#pn-bpa .pnbpa-n.is-open:hover{ color:var(--gd); }
+#pn-bpa .pnbpa-n.is-tap{ cursor:pointer; }
+#pn-bpa .pnbpa-n.is-tap:hover{ color:var(--er); text-decoration:underline; text-decoration-color:rgba(126,90,12,.6); text-underline-offset:3px; }
+#pn-bpa .pnbpa-ask{
+  display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:12px 20px; margin:20px 0 0; padding:14px 16px 14px 20px;
+  border-radius:16px; background:var(--er); color:var(--iv2);
+}
+#pn-bpa .pnbpa-ask p{ font-family:var(--hd); font-size:clamp(1.15rem,2vw,1.5rem); font-weight:600; line-height:1.15; }
+
+/* ---------- laptops: compact ---------- */
+@media (min-width:1100px){
+  #pn-bpa .pnbpa-names{ grid-template-columns:repeat(5,minmax(0,1fr)); }
+}
+
+/* ---------- tablets and phones ---------- */
+@media (max-width:860px){
+  #pn-bpa .pnbpa-head{ grid-template-columns:minmax(0,1fr); }
+  #pn-bpa .pnbpa-tools{ grid-template-columns:minmax(0,1fr); }
+}
+@media (max-width:640px){
+  #pn-bpa{ --gut:16px; }
+  #pn-bpa .pnbpa-hero{ padding-top:18px; padding-bottom:18px; }
+  #pn-bpa .pnbpa-cup{ width:64px; }
+  #pn-bpa .pnbpa-brand{ gap:10px; margin-bottom:6px; }
+  #pn-bpa .pnbpa-eyebrow{ font-size:.66rem; letter-spacing:.24em; margin-bottom:6px; }
+  #pn-bpa h1.pnbpa-h1{ font-size:clamp(2.3rem,11.2vw,3rem); }
+  #pn-bpa .pnbpa-h2{ font-size:clamp(2.1rem,10vw,2.7rem); }
+  #pn-bpa .pnbpa-lead{ margin-top:8px; font-size:.98rem; line-height:1.45; }
+  #pn-bpa .pnbpa-stats{ padding:2px 0 0; }
+  #pn-bpa .pnbpa-stats > div{ flex:1; padding:0 10px; }
+  #pn-bpa .pnbpa-stats dd{ font-size:1.75rem; }
+  #pn-bpa .pnbpa-stats dt{ font-size:.56rem; letter-spacing:.14em; }
+  #pn-bpa .pnbpa-tabs{ display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:6px; margin:14px 0 10px; }
+  #pn-bpa .pnbpa-tab{ min-height:44px; padding:0 4px; gap:5px; font-size:.62rem; letter-spacing:.08em; }
+  #pn-bpa .pnbpa-tab b{ font-size:.66rem; }
+  #pn-bpa .pnbpa-map{ aspect-ratio:1.75/1; max-width:none; min-height:0; border-radius:14px; }
+  #pn-bpa .pnbpa-key{ max-width:none; margin-top:8px; }
+  #pn-bpa .pnbpa-legend li,#pn-bpa .pnbpa-hint{ font-size:.58rem; letter-spacing:.12em; }
+  #pn-bpa .pnbpa-legend .pnbpa-proj{ display:none; }
+  #pn-bpa .pnbpa-open,#pn-bpa .pnbpa-every{ padding-top:20px; padding-bottom:22px; }
+  #pn-bpa .pnbpa-tools{ margin:12px 0 10px; gap:8px; }
+  #pn-bpa .pnbpa-tiles{ grid-template-columns:repeat(2,minmax(0,1fr)); gap:8px; }
+  #pn-bpa .pnbpa-t a{ grid-template-columns:30px minmax(0,1fr); column-gap:8px; padding:10px 10px 11px; border-radius:12px; }
+  #pn-bpa .pnbpa-t__sil{ width:30px; height:30px; }
+  #pn-bpa .pnbpa-t__n{ padding-right:20px; font-size:1.06rem; }
+  #pn-bpa .pnbpa-t__r{ font-size:.54rem; letter-spacing:.14em; }
+  #pn-bpa .pnbpa-t__v{ margin-top:9px; font-size:1.2rem; }
+  #pn-bpa .pnbpa-t__l{ font-size:.74rem; }
+  #pn-bpa .pnbpa-t__s{ display:none; }
+  #pn-bpa .pnbpa-t__go{ top:9px; right:9px; width:18px; height:18px; }
+  #pn-bpa .pnbpa-t__go::before{ font-size:.6rem; }
+  #pn-bpa .pnbpa-morewrap{ margin-top:12px; }
+  #pn-bpa .pnbpa-morewrap .pnbpa-btn{ width:100%; }
+  #pn-bpa .pnbpa-reg summary{ gap:10px; min-height:50px; grid-template-columns:auto minmax(0,1fr) auto; }
+  #pn-bpa .pnbpa-reg__chev{ display:none; }
+  #pn-bpa .pnbpa-reg__no{ font-size:1.25rem; }
+  #pn-bpa .pnbpa-reg__m{ font-size:.6rem; letter-spacing:.1em; }
+  #pn-bpa .pnbpa-names{ grid-template-columns:repeat(2,minmax(0,1fr)); gap:0 12px; padding-bottom:12px; }
+  #pn-bpa .pnbpa-n{ min-height:44px; font-size:.92rem; }
+  #pn-bpa .pnbpa-ask{ padding:14px; }
+  #pn-bpa .pnbpa-ask .pnbpa-btn{ width:100%; }
+}
+@media (prefers-reduced-motion:reduce){ #pn-bpa *{ transition:none !important; animation:none !important; } }
+</style>
+
+<div id="pn-bpa">
+  <svg width="0" height="0" style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true" focusable="false">
+    <defs>
+      <symbol id="pnbpa-cup" viewBox="0 0 120 60"><g fill="currentColor"><path fill-rule="evenodd" d="M51.7 55C51.6 55 51.6 54.8 51.6 53.3L51.6 51.9L51.8 51.7C51.9 51.6 52.2 51.4 52.4 51.2C52.6 51 52.8 50.9 52.8 50.9C52.8 50.8 54.4 50 54.5 50C54.6 50 54.8 49.9 54.9 49.8C55.1 49.7 55.4 49.6 55.7 49.6C55.9 49.5 56.2 49.4 56.3 49.4L56.5 49.3L56.5 49.1C56.5 48.5 56.6 48.3 57.3 48.3C57.6 48.3 57.8 48.3 57.8 48.3C57.8 48.3 57.8 46.6 57.8 44.6L57.8 41L58 40.8C58.8 39.8 58.9 38.5 58.5 37.3C58.4 37.1 58.3 36.9 58.3 36.8C58.3 36.7 58.1 36.5 57.6 36.2C56.4 35.4 55.1 33.7 54 31.6C53.7 31.1 53.8 31.1 53.7 31.1C53.6 31.1 53.6 31.2 53.5 31.3C53 32.3 51.7 32.4 50.8 31.6C50.2 31.1 50.8 30.4 51.4 30.7C52.2 31.1 52.4 31.1 52.6 30.6C52.8 29.7 51.8 28.5 47.6 24.2C43.2 19.8 41.6 17.8 40.8 15.7C40.7 15.5 40.7 15.3 40.6 15.2C39.7 12.9 40.1 10.6 41.8 8.9C42.9 7.7 44.1 7.3 45.4 7.6C46.3 7.7 47.6 8.4 49 9.6C51.1 11.2 52 11.5 52.6 11C52.8 10.8 52.8 10.8 52.6 10.5C52.3 10.2 52.3 10.1 52.4 9.9C52.8 9.1 53.9 9.8 53.9 10.9C53.9 11.1 53.9 11.2 53.9 11.2C54 11.2 55 10.7 55.4 10.5C55.8 10.2 56 9.7 55.9 9.1C55.9 8.5 55.7 8.4 54.2 7.6C52.8 6.9 52.7 6.8 52.6 6.6C52.5 6.2 52.4 5.3 52.6 5.1L52.7 5L53.4 5L54.1 5L54.1 5.8C54.2 6.8 54.1 6.7 55.6 7.7C55.7 7.7 55.8 7.8 55.8 7.8C55.9 7.8 55.9 7.9 56 7.9C56.7 8.4 57 9.1 56.7 9.8C56.6 10.3 56.5 10.3 55.3 11.1C53.7 12 53.3 12.2 53 12.5C51.8 13.2 51.4 14.3 51.7 16C52.8 23.1 53.9 27.6 55.2 30.9C55.4 31.3 55.5 31.7 55.6 31.8C56 33.1 57.3 35 58.1 35.7C58.4 35.9 58.6 35.9 58.4 35.6C57.8 34.8 57 31.9 56.4 29.1C56.2 27.8 55.9 25.9 55.8 25.2C55.8 25 55.7 24.7 55.7 24.6C55.6 23.9 55.1 19.7 55 18.8C55 18.7 55 18.3 54.9 17.9C54.7 16.2 54.7 14.5 54.9 13.9C55.1 13.1 55.2 12.9 56.7 11.4C57.8 10.2 57.9 10.1 57.9 9.4C57.9 8.6 57.8 8.4 57 7.5C56.4 6.9 56.3 6.7 56.3 6.2C56.2 5.9 56.2 5.2 56.3 5.1L56.4 5L61.8 5L67.3 5L67.4 5.1C67.5 5.2 67.5 5.2 67.5 5.8C67.5 6.7 67.5 6.7 66 7.5C64.2 8.4 64.1 8.6 64.1 9.4C64.1 10 64.3 10.3 65.5 10.9C66.2 11.2 66.1 11.2 66.1 10.8C66.1 9.8 67.2 9.1 67.6 9.9C67.7 10.1 67.7 10.2 67.3 10.7C67.1 11 67.9 11.3 68.5 11.1C69.2 10.9 69.6 10.6 71.2 9.4C74.1 7.1 76 6.9 78 8.6C80.4 10.8 80.5 14 78.2 17.6C76.9 19.5 75.9 20.7 72.3 24.3C67.9 28.7 67.2 29.7 67.5 30.7C67.6 31.1 67.8 31.1 68.5 30.8C68.9 30.5 69 30.5 69.3 30.8C69.6 31 69.5 31.4 69.2 31.7C68.1 32.4 66.9 32.3 66.5 31.3C66.4 31 66.3 31 66.2 31.2C66.1 31.5 65.3 33 64.9 33.5C64.1 34.8 63.3 35.6 62.4 36.2C61.7 36.7 61.7 36.7 61.5 37.4C61.2 38.4 61.2 39.4 61.6 40.1C61.7 40.4 62 40.9 62.1 41C62.2 41.1 62.2 41.4 62.2 44.5C62.2 46.4 62.2 48 62.2 48.1L62.2 48.3L62.6 48.3C63.4 48.3 63.6 48.5 63.6 49.1C63.6 49.3 63.6 49.3 64.3 49.6C64.7 49.7 65.1 49.8 65.6 50.1C66 50.3 66.5 50.5 66.8 50.6C67 50.8 67.2 50.9 67.2 50.9C67.2 50.9 67.3 51 67.5 51.1C67.7 51.3 68 51.5 68.1 51.6L68.5 51.9L68.4 53.4C68.4 54.2 68.4 54.9 68.4 54.9C68.4 55 67.3 55 61.8 55C57.7 55 56.8 55 56.7 55C56.6 54.9 56.6 52.4 56.7 52C56.8 51.3 57.8 50 58.7 49.3C58.9 49.2 58.6 49.2 58.2 49.3C57.2 49.5 55 51.2 54.8 51.9C54.7 52.2 54.6 52.9 54.6 53.9C54.6 54.5 54.6 54.9 54.6 54.9C54.6 55 51.9 55 51.7 55ZM52.2 27.1C52.2 27.1 52.1 26.8 52 26.6C51.5 25.1 50.6 21.8 50 19C49.2 15.4 49.2 14.9 49.6 14C49.9 13.4 50.3 13 51 12.6C51.5 12.3 51.5 12.3 51.1 12.2C50.5 12 49.5 11.4 48.5 10.6C45.4 8.2 44.2 8.1 42.6 9.7C40.5 11.9 40.9 14.6 43.8 18.4C44.8 19.7 45.8 20.8 48.3 23.3C50.8 25.8 51.3 26.3 51.7 26.9C52.1 27.3 52.2 27.3 52.2 27.1ZM68.2 26.9C68.5 26.6 69.1 26 70.9 24.1C72.7 22.3 73.5 21.4 74.2 20.7C79 15.5 79.9 12.2 77.3 9.6C76.5 8.8 75.8 8.5 74.7 8.7C74.1 8.8 73.1 9.4 71.8 10.4C70.3 11.5 69.5 12.1 68.8 12.2C68.7 12.3 68.6 12.3 68.6 12.3C68.6 12.4 68.7 12.4 68.8 12.5C70.5 13.4 70.9 14.5 70.5 16.4C69.8 20.3 68.9 23.9 68.1 26.4C67.7 27.4 67.7 27.5 68.2 26.9Z"/><rect x="6.13" y="16.60" width="30.0" height="1.8"/><rect x="83.87" y="16.60" width="30.0" height="1.8"/><rect x="6.13" y="41.60" width="30.0" height="1.8"/><rect x="83.87" y="41.60" width="30.0" height="1.8"/></g></symbol>
+    </defs>
+  </svg>
+
+  <!-- 01 THE GOLDEN MAP -->
+  <section class="pnbpa-hero" aria-labelledby="pnbpaH1">
+    <div class="pnbpa-in">
+      <div class="pnbpa-head">
+        <div>
+          <div class="pnbpa-brand">
+            <svg class="pnbpa-cup" aria-hidden="true" focusable="false"><use href="#pnbpa-cup"></use></svg>
+            <p class="pnbpa-eyebrow">The Atlas of Blueprints</p>
+          </div>
+          <h1 class="pnbpa-h1" id="pnbpaH1">National Blueprints</h1>
+          <p class="pnbpa-lead">Every nation already owns what it needs. Each blueprint, drawn with super intelligence (SI), shows what a nation holds and how innovative financing can secure seven basic standards of living for all.</p>
+        </div>
+        <dl class="pnbpa-stats">
+          <div><dt>Blueprints open</dt><dd data-k="live"><!--pn:n-live--></dd></div>
+          <div><dt>Regions</dt><dd data-k="regions"><!--pn:n-regions--></dd></div>
+          <div><dt>Nations in scope</dt><dd data-k="total"><!--pn:n-total--></dd></div>
+        </dl>
+      </div>
+
+      <div class="pnbpa-tabs" role="group" aria-label="Show a region on the map"><!--pn:tabs--></div>
+
+      <div class="pnbpa-map" id="pnbpaMap" style="--asp:<!--pn:asp-->;">
+        <!--pn:map-->
+        <div class="pnbpa-tip" aria-hidden="true"></div>
+        <div class="pnbpa-plate" aria-live="polite"></div>
+      </div>
+      <div class="pnbpa-key">
+        <ul class="pnbpa-legend" aria-label="Map key">
+          <li><i style="--c:#FFD45C;"></i>Blueprint open</li>
+          <li><i style="--c:#B4985A;"></i>In preparation</li>
+          <li class="pnbpa-proj">Equal Earth: every nation at its true size</li>
+        </ul>
+        <p class="pnbpa-hint" id="pnbpaHint">Choose a region, then a gold nation</p>
+      </div>
+    </div>
+  </section>
+
+<!--pn:seam-->
+
+  <!-- 02 THE OPEN BLUEPRINTS -->
+  <section class="pnbpa-open" id="pnbpa-open" aria-labelledby="pnbpaOpenH">
+    <div class="pnbpa-in">
+      <p class="pnbpa-eyebrow">Open now</p>
+      <h2 class="pnbpa-h2" id="pnbpaOpenH"><span data-k="live"><!--pn:n-live--></span> blueprints, open to read</h2>
+      <p class="pnbpa-lead">Each one is kept current by its own Nation Steward.</p>
+      <div class="pnbpa-tools">
+        <div class="pnbpa-field">
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M10.5 4a6.5 6.5 0 1 0 4.03 11.6l4.43 4.42 1.41-1.41-4.42-4.43A6.5 6.5 0 0 0 10.5 4Zm0 2a4.5 4.5 0 1 1 0 9 4.5 4.5 0 0 1 0-9Z"/></svg>
+          <label class="pnbpa-vh" for="pnbpaQ">Find a nation</label>
+          <input id="pnbpaQ" type="search" placeholder="Find a nation" autocomplete="off" autocapitalize="off" spellcheck="false" enterkeyhint="go">
+          <button type="button" class="pnbpa-clear" id="pnbpaClear" aria-label="Clear the search" hidden>&times;</button>
+        </div>
+        <p class="pnbpa-status"><span id="pnbpaStatus" aria-live="polite">Every region, A to Z</span><button type="button" class="pnbpa-reset" id="pnbpaReset" hidden>Show every region</button></p>
+      </div>
+      <ul class="pnbpa-tiles" id="pnbpaTiles"><!--pn:tiles--></ul>
+      <p class="pnbpa-none" id="pnbpaNone" hidden>No open blueprint matches yet. The nation may be in preparation: see every nation below.</p>
+      <div class="pnbpa-morewrap" id="pnbpaMoreWrap" hidden><button type="button" class="pnbpa-btn" id="pnbpaMore">Show all <span data-k="live"><!--pn:n-live--></span> blueprints</button></div>
+    </div>
+  </section>
+
+  <!-- 03 EVERY NATION -->
+  <section class="pnbpa-every" id="pnbpa-every" aria-labelledby="pnbpaEveryH">
+    <div class="pnbpa-in">
+      <p class="pnbpa-eyebrow">The atlas</p>
+      <h2 class="pnbpa-h2" id="pnbpaEveryH">Every nation on Earth</h2>
+      <p class="pnbpa-lead"><span data-k="total"><!--pn:n-total--></span> nations in six regions: <span data-k="live"><!--pn:n-live--></span> blueprints open, <span data-k="soon"><!--pn:n-soon--></span> in preparation.</p>
+      <div class="pnbpa-regs" id="pnbpaRegs"><!--pn:regions--></div>
+      <div class="pnbpa-ask">
+        <p>Is your nation in preparation? Ask for its blueprint.</p>
+        <a class="pnbpa-btn" href="https://perfectnations.org/contact/" target="_blank" rel="noopener noreferrer">Ask for a blueprint</a>
+      </div>
+    </div>
+  </section>
+</div>
+
+<script>
+/* The Blueprints page: the region tabs, the map, the tiles, the search, the atlas, and the live list.
+   The page is complete without this script; the script adds the motion and keeps it current. */
+(function(){
+  'use strict';
+  var root = document.getElementById('pn-bpa');
+  if (!root || root.getAttribute('data-ready') === '1') { return; }
+  root.setAttribute('data-ready', '1');
+  var CFG = /*pn:cfg*/null;
+  if (!CFG) { return; }
+
+  var REPO = [
+    'https://raw.githubusercontent.com/preetisinha70-PN/perfect-nations/main/',
+    'https://cdn.jsdelivr.net/gh/preetisinha70-PN/perfect-nations@main/'
+  ];
+  var SVGNS = 'http://www.w3.org/2000/svg';
+  var NAT = CFG.nations, LIVE = {}, SHORT = {}, NAME = {};
+  CFG.baked.forEach(function(s){ LIVE[s] = true; });
+  CFG.regions.forEach(function(r){ NAME[r[0]] = r[1]; SHORT[r[0]] = r[2]; });
+  var reduce = !!(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+  function q1(sel, el){ return (el || root).querySelector(sel); }
+  function qa(sel, el){ return Array.prototype.slice.call((el || root).querySelectorAll(sel)); }
+  function urlOf(s){ return CFG.base + (CFG.paths[s] || s) + '/'; }
+  function phone(){ return !!(window.matchMedia && window.matchMedia('(max-width: 640px)').matches); }
+
+  /* ---------- reading the repository ---------- */
+  function getJSON(path){
+    function at(k){
+      if (k >= REPO.length || !window.fetch) { return Promise.reject(new Error('unreachable')); }
+      return fetch(REPO[k] + path, { cache: 'no-cache' }).then(function(r){
+        if (!r.ok) { throw new Error(path + ' ' + r.status); }
+        return r.json();
+      }).catch(function(){ return at(k + 1); });
+    }
+    return at(0);
+  }
+  /* one shared reading of the live pages list, used by every part of the site on the page */
+  function liveSlugs(){
+    if (window.pnLiveSlugs) { return window.pnLiveSlugs; }
+    window.pnLiveSlugs = getJSON('pages/manifest.json').then(function(m){
+      var out = [], k, hit;
+      for (k in (m && m.pages) || {}) {
+        hit = /^pn-bp-([a-z0-9-]+)$/.exec(k);
+        if (hit) { out.push(hit[1]); }
+      }
+      return out;
+    }).catch(function(){ return []; });
+    return window.pnLiveSlugs;
+  }
+
+  /* ---------- the map ---------- */
+  var box = document.getElementById('pnbpaMap');
+  var svg = document.getElementById('pnbpaSvg');
+  var tip = q1('.pnbpa-tip', box), plate = q1('.pnbpa-plate', box);
+  var current = 'world', view = CFG.views.world.slice(), flight = null;
+
+  function fit(v){
+    var r = box.getBoundingClientRect();
+    var asp = (r.width && r.height) ? r.width / r.height : 2.4;
+    var x = v[0], y = v[1], w = v[2], h = v[3];
+    if (w / h < asp){ var nw = h * asp; x -= (nw - w) / 2; w = nw; }
+    else { var nh = w / asp; y -= (nh - h) / 2; h = nh; }
+    return [x, y, w, h];
+  }
+  function sizeDots(){
+    var r = box.getBoundingClientRect();
+    if (!r.width) { return; }
+    var upp = view[2] / r.width, small = r.width < 600;
+    qa('.pnbpa-dot', svg).forEach(function(c){
+      var live = c.getAttribute('class').indexOf('--live') > -1;
+      c.setAttribute('r', String(Math.round((live ? (small ? 3.6 : 5) : (small ? 2.3 : 3.4)) * upp)));
+    });
+  }
+  function setView(v){
+    view = v;
+    svg.setAttribute('viewBox', v.map(function(n){ return Math.round(n); }).join(' '));
+    box.classList.toggle('is-wide', v[2] < CFG.vw * 0.8);
+    sizeDots();
+  }
+  function fly(key){
+    var to = fit(CFG.views[key] || CFG.views.world), from = view.slice();
+    if (flight) { window.cancelAnimationFrame(flight); flight = null; }
+    if (reduce){ setView(to); return; }
+    var t0 = null, dur = 720;
+    function step(ts){
+      if (t0 === null) { t0 = ts; }
+      var t = Math.min(1, (ts - t0) / dur);
+      var e = t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+      setView(from.map(function(a, i){ return a + (to[i] - a) * e; }));
+      if (t < 1) { flight = window.requestAnimationFrame(step); } else { flight = null; }
+    }
+    flight = window.requestAnimationFrame(step);
+  }
+
+  function showTip(slug, ev){
+    if (!tip) { return; }
+    if (!slug || !NAT[slug] || !ev || typeof ev.clientX !== 'number'){ tip.style.display = 'none'; return; }
+    tip.innerHTML = '';
+    var b = document.createElement('b'); b.textContent = NAT[slug][0];
+    var i = document.createElement('i'); i.textContent = LIVE[slug] ? 'Blueprint open' : 'Blueprint in preparation';
+    tip.appendChild(b); tip.appendChild(i);
+    tip.classList.toggle('is-live', !!LIVE[slug]);
+    var r = box.getBoundingClientRect();
+    tip.style.left = (ev.clientX - r.left) + 'px';
+    tip.style.top = (ev.clientY - r.top) + 'px';
+    tip.style.display = 'block';
+  }
+  var hot = null;
+  function light(slug, on){
+    qa('[data-s="' + slug + '"]', svg).forEach(function(el){ el.classList.toggle('is-hot', on); });
+    var t = q1('.pnbpa-t[data-s="' + slug + '"]');
+    if (t) { t.classList.toggle('is-hot', on); }
+  }
+  box.addEventListener('mousemove', function(e){
+    var el = e.target.closest ? e.target.closest('[data-s]') : null;
+    var s = el ? el.getAttribute('data-s') : null;
+    if (s !== hot){ if (hot) { light(hot, false); } hot = s; if (s) { light(s, true); } }
+    showTip(s, e);
+  });
+  box.addEventListener('mouseleave', function(){ if (hot) { light(hot, false); } hot = null; showTip(null); });
+
+  var plateT = null;
+  function showPlate(slug, line, link){
+    if (!plate || !NAT[slug]) { return; }
+    plate.innerHTML = '';
+    var b = document.createElement('b'); b.textContent = NAT[slug][0];
+    var i = document.createElement('i'); i.textContent = (NAME[NAT[slug][1]] || '') + ' \u00b7 ' + line;
+    plate.appendChild(b); plate.appendChild(i);
+    if (link){
+      var a = document.createElement('a');
+      a.href = link[0]; a.textContent = link[1]; a.target = '_blank'; a.rel = 'noopener noreferrer';
+      plate.appendChild(a);
+    }
+    plate.classList.add('is-on');
+    if (plateT) { window.clearTimeout(plateT); }
+    plateT = window.setTimeout(function(){ plate.classList.remove('is-on'); }, link ? 6000 : 2600);
+  }
+  function viewer(){ return window.pnNationViewer && typeof window.pnNationViewer.open === 'function' ? window.pnNationViewer : null; }
+  function openPrep(slug){
+    var v = viewer();
+    if (v) { v.open(slug); return; }
+    showPlate(slug, 'Blueprint in preparation', ['https://perfectnations.org/contact/?nation=' + encodeURIComponent(slug), 'Ask for this blueprint']);
+  }
+  svg.addEventListener('click', function(e){
+    var el = e.target.closest ? e.target.closest('[data-s]') : null;
+    if (!el) { return; }
+    var s = el.getAttribute('data-s');
+    if (LIVE[s]){ showPlate(s, 'Opened in a new tab'); return; }  /* the link itself opens the page */
+    e.preventDefault();
+    openPrep(s);
+  });
+
+  /* ---------- the tabs ---------- */
+  var tabs = qa('.pnbpa-tab');
+  function choose(key){
+    current = key;
+    tabs.forEach(function(b){ b.setAttribute('aria-pressed', b.getAttribute('data-r') === key ? 'true' : 'false'); });
+    fly(key);
+    if (key !== 'world'){
+      qa('.pnbpa-reg').forEach(function(d){ d.open = d.getAttribute('data-r') === key; });
+    }
+    filter();
+  }
+  tabs.forEach(function(b){ b.addEventListener('click', function(){ choose(b.getAttribute('data-r')); }); });
+
+  /* ---------- the tiles and the search ---------- */
+  var list = document.getElementById('pnbpaTiles');
+  var more = document.getElementById('pnbpaMore'), moreWrap = document.getElementById('pnbpaMoreWrap');
+  var none = document.getElementById('pnbpaNone'), status = document.getElementById('pnbpaStatus');
+  var reset = document.getElementById('pnbpaReset');
+  var input = document.getElementById('pnbpaQ'), clear = document.getElementById('pnbpaClear');
+  var query = '', all = false;
+  var ALIAS = {
+    'cote-divoire': 'ivory coast', 'turkiye': 'turkey', 'eswatini': 'swaziland', 'myanmar': 'burma',
+    'holy-see': 'vatican city', 'czechia': 'czech republic', 'united-states': 'usa us america united states of america',
+    'united-kingdom': 'uk britain great britain england scotland wales', 'united-arab-emirates': 'uae emirates dubai',
+    'timor-leste': 'east timor', 'cabo-verde': 'cape verde', 'dr-congo': 'drc democratic republic of the congo kinshasa zaire',
+    'republic-of-congo': 'congo brazzaville', 'north-macedonia': 'macedonia', 'south-korea': 'korea republic of korea',
+    'north-korea': 'korea dprk', 'netherlands': 'holland', 'gambia': 'the gambia', 'bahamas': 'the bahamas',
+    'palestine': 'state of palestine', 'russia': 'russian federation', 'laos': 'lao pdr', 'iran': 'persia',
+    'sri-lanka': 'ceylon', 'saint-kitts-and-nevis': 'st kitts', 'saint-lucia': 'st lucia',
+    'saint-vincent-and-the-grenadines': 'st vincent', 'brunei': 'brunei darussalam', 'micronesia': 'federated states of micronesia'
+  };
+  function norm(s){
+    s = String(s || '');
+    if (s.normalize) { s = s.normalize('NFD').replace(/[\u0300-\u036f]/g, ''); }
+    return s.toLowerCase().replace(/[\u2019']/g, '').replace(/[^a-z0-9]+/g, ' ').replace(/^\s+|\s+$/g, '');
+  }
+  var KEY = {};
+  Object.keys(NAT).forEach(function(s){ KEY[s] = ' ' + norm(NAT[s][0]) + ' ' + (ALIAS[s] || '') + ' '; });
+  function hit(s){ return !query || (KEY[s] || '').indexOf(' ' + query) > -1; }
+
+  function filter(){
+    var lim = phone() ? 8 : 15, n = 0, shown = 0;
+    var narrowed = current !== 'world' || !!query;
+    qa('.pnbpa-t', list).forEach(function(li){
+      var s = li.getAttribute('data-s');
+      var ok = (current === 'world' || li.getAttribute('data-r') === current) && hit(s);
+      if (ok) { n++; }
+      var vis = ok && (narrowed || all || n <= lim);
+      li.hidden = !vis;
+      if (vis) { shown++; }
+    });
+    if (none) { none.hidden = n > 0; }
+    if (moreWrap) { moreWrap.hidden = narrowed || n <= lim; }
+    if (more) { more.innerHTML = all ? 'Show fewer' : 'Show all <span data-k="live">' + n + '</span> blueprints'; }
+    var where = current === 'world' ? 'Every region' : NAME[current];
+    if (status) {
+      status.textContent = query ? (n + (n === 1 ? ' open blueprint' : ' open blueprints') + ' match \u201c' + input.value.trim() + '\u201d')
+                                 : (current === 'world' ? 'Every region, A to Z' : where + ': ' + n + ' open, A to Z');
+    }
+    if (reset) { reset.hidden = current === 'world'; }
+    /* the atlas follows the search */
+    qa('.pnbpa-reg').forEach(function(d){
+      var any = 0;
+      qa('.pnbpa-n', d).forEach(function(el){
+        var ok = hit(el.getAttribute('data-s'));
+        el.parentNode.hidden = !ok;
+        if (ok) { any++; }
+      });
+      d.hidden = !!query && !any;
+      if (query) { d.open = any > 0; }
+    });
+  }
+  if (more) { more.addEventListener('click', function(){ all = !all; filter(); }); }
+  if (reset) { reset.addEventListener('click', function(){ choose('world'); }); }
+  if (input){
+    input.addEventListener('input', function(){
+      query = norm(input.value);
+      if (clear) { clear.hidden = !input.value; }
+      filter();
+    });
+    input.addEventListener('keydown', function(e){
+      if (e.key === 'Escape'){ input.value = ''; query = ''; if (clear) { clear.hidden = true; } filter(); return; }
+      if (e.key !== 'Enter') { return; }
+      e.preventDefault();
+      var open = qa('.pnbpa-t', list).filter(function(li){ return !li.hidden; });
+      if (open.length === 1){
+        var a = q1('a', open[0]);
+        var w = null;
+        try { w = window.open(a.href, '_blank'); } catch (err) {}
+        if (w) { try { w.opener = null; } catch (err) {} } else { window.location.href = a.href; }
+        return;
+      }
+      var names = qa('.pnbpa-n', root).filter(function(el){ return !el.parentNode.hidden; });
+      if (names.length === 1 && !LIVE[names[0].getAttribute('data-s')]) { openPrep(names[0].getAttribute('data-s')); }
+    });
+  }
+  if (clear){
+    clear.addEventListener('click', function(){ input.value = ''; query = ''; clear.hidden = true; filter(); input.focus(); });
+  }
+
+  /* ---------- the atlas: a nation in preparation opens the Nation Viewer card ---------- */
+  function armAtlas(){
+    if (!viewer()) { return; }
+    qa('.pnbpa-n:not(.is-open)').forEach(function(el){
+      el.classList.add('is-tap'); el.setAttribute('role', 'button'); el.setAttribute('tabindex', '0');
+    });
+  }
+  var regs = document.getElementById('pnbpaRegs');
+  if (regs){
+    regs.addEventListener('click', function(e){
+      var el = e.target.closest ? e.target.closest('.pnbpa-n.is-tap') : null;
+      if (el) { openPrep(el.getAttribute('data-s')); }
+    });
+    regs.addEventListener('keydown', function(e){
+      var el = e.target.closest ? e.target.closest('.pnbpa-n.is-tap') : null;
+      if (el && (e.key === 'Enter' || e.key === ' ')) { e.preventDefault(); openPrep(el.getAttribute('data-s')); }
+    });
+  }
+
+  /* ---------- keeping the page current ---------- */
+  var MONEY = /(US\$|\$|\u20ac|\u00a3|\u00a5|RMB|billion|million|trillion|\bbn\b)/i;
+  function figureOf(stats){
+    stats = (stats || []).filter(function(s){ return s && s.value; });
+    var i;
+    for (i = 0; i < stats.length; i++){ if (MONEY.test(String(stats[i].value))) { return { value: stats[i].value, label: stats[i].label || '', money: true }; } }
+    return stats.length ? { value: stats[0].value, label: stats[0].label || '', money: false } : null;
+  }
+  function el(tag, cls, text){
+    var e = document.createElement(tag);
+    if (cls) { e.className = cls; }
+    if (text !== undefined) { e.textContent = text; }
+    return e;
+  }
+  function fillTile(a, c){
+    qa('.pnbpa-t__v,.pnbpa-t__l,.pnbpa-t__s', a).forEach(function(x){ x.parentNode.removeChild(x); });
+    var go = q1('.pnbpa-t__go', a);
+    if (c.figure && c.figure.value){
+      a.insertBefore(el('span', 'pnbpa-t__v' + (c.figure.money ? ' is-money' : ''), String(c.figure.value)), go);
+      a.insertBefore(el('span', 'pnbpa-t__l', String(c.figure.label || '')), go);
+    }
+    if (c.steward) { a.insertBefore(el('span', 'pnbpa-t__s', c.steward + ', Nation Steward'), go); }
+  }
+  function makeTile(s){
+    var li = el('li', 'pnbpa-t');
+    li.setAttribute('data-s', s); li.setAttribute('data-r', NAT[s][1]);
+    var a = el('a');
+    a.href = urlOf(s); a.target = '_blank'; a.rel = 'noopener noreferrer';
+    var sil = document.createElementNS(SVGNS, 'svg');
+    sil.setAttribute('class', 'pnbpa-t__sil'); sil.setAttribute('viewBox', CFG.boxes[s] || '0 0 10 10');
+    sil.setAttribute('aria-hidden', 'true'); sil.setAttribute('focusable', 'false');
+    var use = document.createElementNS(SVGNS, 'use');
+    use.setAttribute('href', '#pnbpa-c-' + s);
+    sil.appendChild(use);
+    a.appendChild(sil);
+    a.appendChild(el('span', 'pnbpa-t__n', NAT[s][0]));
+    a.appendChild(el('span', 'pnbpa-t__r', SHORT[NAT[s][1]] || ''));
+    var go = el('span', 'pnbpa-t__go'); go.setAttribute('aria-hidden', 'true');
+    a.appendChild(go);
+    li.appendChild(a);
+    var after = null;
+    qa('.pnbpa-t', list).some(function(x){
+      if (norm(NAT[x.getAttribute('data-s')][0]) > norm(NAT[s][0])) { after = x; return true; }
+      return false;
+    });
+    list.insertBefore(li, after);
+    return li;
+  }
+  function wrap(node, s){
+    if (node.parentNode && node.parentNode.nodeName.toLowerCase() === 'a') { return; }
+    var a = document.createElementNS(SVGNS, 'a');
+    a.setAttribute('href', urlOf(s)); a.setAttribute('target', '_blank'); a.setAttribute('rel', 'noopener noreferrer');
+    a.setAttribute('aria-label', NAT[s][0] + ', open the blueprint in a new tab');
+    node.parentNode.insertBefore(a, node);
+    a.appendChild(node);
+    return a;
+  }
+  function markLive(s, card){
+    if (!NAT[s]) { return; }
+    var fresh = !LIVE[s];
+    LIVE[s] = true;
+    if (fresh){
+      var p = document.getElementById('pnbpa-c-' + s);
+      if (p){
+        p.setAttribute('class', 'pnbpa-c pnbpa-c--live');
+        var a = wrap(p, s), g = q1('.pnbpa-live', svg);
+        if (a && g) { g.appendChild(a); }
+      }
+      qa('.pnbpa-dot[data-s="' + s + '"]', svg).forEach(function(c){ c.setAttribute('class', 'pnbpa-dot pnbpa-dot--live'); wrap(c, s); });
+      var n = q1('.pnbpa-n[data-s="' + s + '"]');
+      if (n && n.nodeName.toLowerCase() !== 'a'){
+        var link = el('a', 'pnbpa-n is-open', NAT[s][0]);
+        link.setAttribute('data-s', s); link.href = urlOf(s); link.target = '_blank'; link.rel = 'noopener noreferrer';
+        n.parentNode.replaceChild(link, n);
+      }
+    }
+    var t = q1('.pnbpa-t[data-s="' + s + '"]') || makeTile(s);
+    if (card) { fillTile(q1('a', t), card); }
+  }
+  function recount(){
+    var total = 0, live = 0, per = {};
+    Object.keys(NAT).forEach(function(s){
+      total++;
+      if (LIVE[s]){ live++; per[NAT[s][1]] = (per[NAT[s][1]] || 0) + 1; }
+    });
+    var regions = Object.keys(per).length;
+    function put(key, v){ qa('[data-k="' + key + '"]').forEach(function(e){ e.textContent = String(v); }); }
+    put('live', live); put('regions', regions); put('total', total); put('soon', total - live);
+    tabs.forEach(function(b){
+      var r = b.getAttribute('data-r'), c = q1('b', b);
+      if (c) { c.textContent = String(r === 'world' ? live : (per[r] || 0)); }
+    });
+    qa('.pnbpa-reg').forEach(function(d){
+      var o = q1('.pnbpa-reg__open', d);
+      if (o) { o.textContent = String(per[d.getAttribute('data-r')] || 0); }
+    });
+    sizeDots();
+  }
+
+  function refresh(){
+    getJSON('data/blueprints.json').then(function(ix){
+      ((ix && ix.open) || []).forEach(function(c){ if (c && NAT[c.slug]) { markLive(c.slug, c); } });
+    }).catch(function(){}).then(function(){ return liveSlugs(); }).then(function(slugs){
+      (slugs || []).forEach(function(s){
+        if (!NAT[s] || (LIVE[s] && q1('.pnbpa-t[data-s="' + s + '"]'))) { return; }
+        markLive(s, null);
+        getJSON('data/' + s + '.json').then(function(d){
+          markLive(s, { steward: (d && d.steward && d.steward.name) || '', figure: figureOf(d && d.hero && d.hero.stats) });
+        }).catch(function(){});
+      });
+      recount();
+      filter();
+    });
+  }
+
+  /* ---------- start ---------- */
+  var hint = document.getElementById('pnbpaHint');
+  function setHint(){ if (hint) { hint.textContent = phone() ? 'Tap a region, then a gold nation' : 'Choose a region, then a gold nation'; } }
+  var rt = null;
+  window.addEventListener('resize', function(){
+    if (rt) { window.clearTimeout(rt); }
+    rt = window.setTimeout(function(){ setView(fit(CFG.views[current] || CFG.views.world)); setHint(); filter(); }, 120);
+  });
+  setView(fit(CFG.views.world));
+  setHint();
+  filter();
+  armAtlas();
+  window.setTimeout(armAtlas, 1200);
+  refresh();
+})();
+</script>
