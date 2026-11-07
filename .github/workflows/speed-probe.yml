@@ -6,42 +6,36 @@ on:
 jobs:
   probe:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 25
     steps:
-      - name: Server response times (cached and uncached)
+      - name: Save served pages
         run: |
-          set +e
+          mkdir -p out
           UA="Mozilla/5.0 (Linux; Android 13) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120 Mobile Safari/537.36 PNSpeedProbe"
-          for path in / /blueprints/kenya/ /blueprints/barbados/ /about/ /state-of-nations/ /perfect-nations-gallery/ /blueprints/; do
-            for mode in plain plain bust bust; do
-              url="https://perfectnations.org${path}"
-              [ "$mode" = bust ] && url="${url}?pnprobe=$RANDOM$RANDOM"
-              curl -s -o /tmp/body -D /tmp/h -A "$UA" -H 'Accept-Encoding: gzip, br' \
-                -w "TIMING path=${path} mode=${mode} code=%{http_code} dns=%{time_namelookup} connect=%{time_connect} tls=%{time_appconnect} ttfb=%{time_starttransfer} total=%{time_total} bytes=%{size_download}\n" "$url"
-              grep -iE '^(x-litespeed-cache|x-litespeed-cache-control|x-litespeed-tag|cache-control|x-qc-cache|x-qc-pop|server|content-encoding|x-turbo-charged-by|x-hcdn|platform|panel|age|expires|x-pn-live|vary):' /tmp/h | tr -d '\r' | sed "s#^#HDR path=${path} mode=${mode} #"
-              sleep 1
-            done
+          for p in home:/ kenya:/blueprints/kenya/ about:/about/ blueprints:/blueprints/; do
+            n=${p%%:*}; path=${p#*:}
+            curl -s --compressed -A "$UA" -D out/$n.headers "https://perfectnations.org${path}" -o out/$n.html
+            wc -c out/$n.html
           done
-          echo "== raw page size (uncompressed) for /"
-          curl -s --compressed -A "$UA" "https://perfectnations.org/?pnprobe=size$RANDOM" | wc -c
-      - name: Lighthouse (mobile)
+      - name: Lighthouse (mobile and desktop)
         run: |
           set +e
           npm i -g lighthouse@12 >/dev/null 2>&1
-          for path in / /blueprints/kenya/; do
-            name=$(echo "$path" | tr '/' '_')
-            lighthouse "https://perfectnations.org${path}" --quiet --chrome-flags="--headless=new --no-sandbox" \
-              --only-categories=performance --output=json --output-path=/tmp/lh${name}.json >/dev/null 2>&1
-            echo "== LIGHTHOUSE ${path}"
-            jq -r '"score=\(.categories.performance.score) FCP=\(.audits["first-contentful-paint"].displayValue) LCP=\(.audits["largest-contentful-paint"].displayValue) TBT=\(.audits["total-blocking-time"].displayValue) SI=\(.audits["speed-index"].displayValue) CLS=\(.audits["cumulative-layout-shift"].displayValue) TTFB=\(.audits["server-response-time"].displayValue) weight=\(.audits["total-byte-weight"].displayValue) requests=\(.audits["network-requests"].details.items|length)"' /tmp/lh${name}.json
-            echo "-- largest requests"
-            jq -r '.audits["network-requests"].details.items | sort_by(-.transferSize) | .[0:15][] | "\(.transferSize)\t\(.resourceType)\t\(.endTime-.startTime|floor)ms\t\(.url[0:140])"' /tmp/lh${name}.json
-            echo "-- main thread by category"
-            jq -r '.audits["mainthread-work-breakdown"].details.items[]? | "\(.groupLabel)\t\(.duration|floor)ms"' /tmp/lh${name}.json
-            echo "-- slowest scripts (bootup)"
-            jq -r '.audits["bootup-time"].details.items[0:8][]? | "\(.total|floor)ms\t\(.url[0:140])"' /tmp/lh${name}.json
-            echo "-- opportunities"
-            jq -r '.audits | to_entries[] | select(.value.details.type=="opportunity" and (.value.numericValue//0)>100) | "\(.key)\t\(.value.displayValue)"' /tmp/lh${name}.json
-            echo "-- third parties"
-            jq -r '.audits["third-party-summary"].details.items[0:8][]? | "\(.entity)\t\(.transferSize)\t\(.blockingTime|floor)ms"' /tmp/lh${name}.json
+          CHROME=$(which google-chrome || which chromium || which chromium-browser); echo "chrome: $CHROME"; $CHROME --version
+          export CHROME_PATH=$CHROME
+          for p in home:/ kenya:/blueprints/kenya/; do
+            n=${p%%:*}; path=${p#*:}
+            lighthouse "https://perfectnations.org${path}" --chrome-flags="--headless --no-sandbox --disable-gpu" \
+              --only-categories=performance --output=json --output-path=out/lh-$n-mobile.json --max-wait-for-load=90000 2>&1 | tail -3
+            lighthouse "https://perfectnations.org${path}" --preset=desktop --chrome-flags="--headless --no-sandbox --disable-gpu" \
+              --only-categories=performance --output=json --output-path=out/lh-$n-desktop.json --max-wait-for-load=90000 2>&1 | tail -3
+            for f in out/lh-$n-mobile.json out/lh-$n-desktop.json; do
+              echo "== $f"; jq -r '.runtimeError // "ok"' $f
+              jq -r '"score=\(.categories.performance.score) FCP=\(.audits["first-contentful-paint"].displayValue) LCP=\(.audits["largest-contentful-paint"].displayValue) TBT=\(.audits["total-blocking-time"].displayValue) SI=\(.audits["speed-index"].displayValue) TTFB=\(.audits["server-response-time"].displayValue) weight=\(.audits["total-byte-weight"].displayValue)"' $f
+            done
           done
+      - uses: actions/upload-artifact@v4
+        with:
+          name: probe
+          path: out/
+          retention-days: 1
