@@ -63,6 +63,17 @@ perfectnations.org/blueprints/ is one file, `pages/blueprints.html` (root `pn-bl
 - **`data/blueprints.json`** is the live index of open blueprints: for each, `slug`, `name`, `region`, `url`, `steward` (from `steward.name`) and `figure` (the first sourced monetary figure of the hero, else its first figure: `value`, `label`, `money`). It mirrors the nation files and adds no fact of its own. Rebuild it with `python3 tools/build_blueprints.py --index`; it is data, so it may go straight to main.
 - **Page changes** (design, words, a rebuilt fallback) go through a pull request "For approval: Blueprints page vX.Y, ...", with the `pn-blueprints` version raised in the manifest.
 
+## The Art of Nations page (from 7 November 2026)
+
+perfectnations.org/perfect-nations-gallery/ (page 16839) is one file, `pages/art-of-nations.html` (root `pn-art`), kept by the Art of Nations Steward. Its Elementor widget already contains `pn-art`, so the plugin serves the file in its place; nothing is pasted. The old two-part widget (v3.0, roots `pn-art` and `pn-gal`) is archived at `archive/elementor/gallery-16839-before-one-file-2026-11-07.json`.
+
+- **Built, never edited by hand.** `python3 tools/build_art.py` reads `art/catalogue.json` (the paintings and books: words, nation colours, images, enquiry links) and `art/art-of-nations.template.html` (style, markup, script) and writes the page. The build refuses straight apostrophes, contractions, image URLs outside the Media Library, copies wider than 768 px in `images`, and any non-ASCII character.
+- **A new painting** is one new entry in `paintings` (newest last): the hero, the wall, the count ("5 of 195 nations painted"), the 195 dots and the viewer all follow.
+- **Images** are the copies WordPress makes (300, 600 and 768 px under `images`; `zoom` is the copy the viewer opens). Check each one exists in the Media Library first.
+- **Ready for a shop.** Put the store address in `shop` and a `buy_url` (and `price`, if wanted) on a work: it shows Buy beside Enquire. Without a `buy_url` a work stays by enquiry.
+- **Checks and previews:** `python3 tools/check_page.py pages/art-of-nations.html art/art-of-nations.template.html`, then `python3 tools/preview_art.py` (laptop 1440 x 900, phone 390 x 844; screenshots in /tmp/pn-preview).
+- **Every change** goes through a pull request "For approval: Art of Nations vX.Y, ...", with `pn-art` raised in the manifest.
+
 ## Nations
 
 Each live blueprint reads its own file: `data/<nation>.json` (barbados, kenya, ...). A Steward edits only the file for its own nation.

@@ -1,0 +1,568 @@
+<!-- ===========================================================================
+PERFECT NATIONS - ART OF NATIONS (THE PERFECT NATIONS GALLERY) - v[[VERSION]] - [[DATE]]
+The whole Gallery page in one file: perfectnations.org/perfect-nations-gallery/ (page 16839).
+Root id pn-art. The page's Elementor Custom HTML widget already contains pn-art, so the Perfect
+Nations Live Pages plugin serves this file in its place: nothing needs pasting.
+BUILT by tools/build_art.py from art/catalogue.json (the works) and art/art-of-nations.template.html
+(the design). Never edit pages/art-of-nations.html by hand. Kept by the Art of Nations Steward.
+v4.0 (7 Nov 2026): one root and one file (v3.0 was two widgets, pn-art and pn-gal). Compact on
+phones and laptops. Earthrise hero with the featured painting in a gilded frame that turns toward
+the visitor; an ivory gallery wall; Earthrise for the books. The paintings bring the colour; each
+work carries a small swatch of its nation's colours. Images use the copies WordPress makes (the
+9.3 MB Rwanda upload is never loaded). One viewer for paintings and book pages. Ready for a shop:
+a work with a buy_url shows Buy beside Enquire.
+=========================================================================== -->
+<div id="pn-art" class="aon" data-version="[[VERSION]]">
+<style>
+#pn-art{
+  --er:#0B3D45; --lag:#0F4C5C; --dep:#082A30; --iv:#F4ECD8; --ivt:rgba(244,236,216,.84); --ivd:rgba(244,236,216,.62);
+  --g:#E3C258; --gs:#F0D68F; --gd:#7E5A0C; --tc:#8A3A22; --ink:#1A140C; --inkm:rgba(26,20,12,.74); --inkd:rgba(26,20,12,.6);
+  --hd:var(--pn-font-heading,"Barlow Condensed","Arial Narrow",Arial,sans-serif);
+  --bd:var(--pn-font-body,"Barlow Semi Condensed",Arial,sans-serif);
+  --gut:clamp(18px,4vw,48px);
+  position:relative; display:block; width:100vw; margin-left:calc(50% - 50vw); box-sizing:border-box;
+  overflow-x:hidden; overflow-x:clip; font-family:var(--bd); line-height:1.5; color:var(--ink);
+  -webkit-font-smoothing:antialiased;
+}
+#pn-art *,#pn-art *::before,#pn-art *::after{ box-sizing:border-box; }
+#pn-art img{ display:block; max-width:100%; }
+#pn-art [hidden]{ display:none !important; }
+#pn-art h1,#pn-art h2,#pn-art h3,#pn-art p{ text-shadow:none !important; }
+#pn-art button{ -webkit-appearance:none; appearance:none; margin:0; font:inherit; color:inherit; background:none; border:0; padding:0; box-shadow:none; text-transform:none; letter-spacing:inherit; line-height:inherit; border-radius:0; cursor:pointer; min-height:0; }
+#pn-art a{ color:inherit; }
+#pn-art a:focus-visible,#pn-art button:focus-visible{ outline:2px solid var(--g); outline-offset:3px; }
+.elementor-widget-html:has(#pn-art),.elementor-widget:has(#pn-art),.elementor-widget-wrap:has(#pn-art),
+.elementor-container:has(#pn-art),.elementor-column:has(#pn-art),.elementor-section:has(#pn-art),
+.e-con-inner:has(#pn-art),.e-con:has(#pn-art),#content:has(#pn-art),.site-content:has(#pn-art),.ast-container:has(#pn-art){
+  padding-top:0 !important; padding-bottom:0 !important; margin-top:0 !important; margin-bottom:0 !important;
+  --widgets-spacing:0px !important; row-gap:0 !important;
+}
+
+/* shared */
+#pn-art .aon-band{ position:relative; padding:clamp(22px,3.6vh,40px) 0 clamp(20px,3.4vh,36px); }
+#pn-art .aon-in{ position:relative; width:100%; max-width:1180px; margin:0 auto; padding:0 var(--gut); }
+#pn-art .aon-eb{
+  display:flex; align-items:center; gap:10px; margin:0 0 10px;
+  font-family:var(--hd); font-size:.7rem; font-weight:700; letter-spacing:.3em; text-transform:uppercase; color:var(--ivt);
+}
+#pn-art .aon-eb::before{ content:""; width:24px; height:1px; flex:none; background:currentColor; }
+#pn-art .aon-h1{
+  margin:0; font-family:var(--hd); font-weight:600; font-size:clamp(2.5rem,6.2vw,6rem); line-height:.92;
+  letter-spacing:-.025em; color:var(--iv); text-transform:none;
+}
+#pn-art .aon-h2{
+  margin:0; font-family:var(--hd); font-weight:600; font-size:clamp(2.3rem,5.6vw,5.2rem); line-height:.92;
+  letter-spacing:-.025em; color:inherit; text-transform:none;
+}
+#pn-art .aon-h3{
+  margin:4px 0 0; font-family:var(--hd); font-weight:600; font-size:clamp(1.2rem,1.75vw,1.6rem); line-height:1.02;
+  letter-spacing:-.01em; color:inherit; text-transform:none;
+}
+#pn-art .aon-head{ display:flex; flex-wrap:wrap; align-items:flex-end; justify-content:space-between; gap:12px 40px; }
+#pn-art .aon-note{ margin:0; max-width:40ch; font-size:clamp(1rem,1.25vw,1.14rem); line-height:1.5; }
+@media (min-width:1100px){
+  #pn-art .aon-head{ flex-wrap:nowrap; }
+  #pn-art .aon-head > div{ flex:1 1 auto; min-width:0; }
+  #pn-art .aon-note{ flex:0 0 30ch; max-width:30ch; padding-bottom:6px; }
+}
+#pn-art .aon-btn{
+  display:inline-flex !important; align-items:center; justify-content:center; gap:10px; min-height:44px !important;
+  padding:12px 24px 10px !important; border-radius:999px !important; border:1px solid var(--g) !important;
+  background:var(--g) !important; color:var(--ink) !important; box-shadow:0 10px 26px rgba(227,194,88,.22) !important;
+  font-family:var(--hd) !important; font-size:.74rem !important; font-weight:700 !important; letter-spacing:.19em !important;
+  text-transform:uppercase !important; line-height:1.1 !important; text-decoration:none !important; white-space:nowrap;
+  transition:transform .22s ease, background-color .22s ease;
+}
+#pn-art .aon-btn::after{ content:"\2192"; font-family:Arial,sans-serif; font-size:.95rem; letter-spacing:0; transition:transform .3s cubic-bezier(.22,1,.36,1); }
+#pn-art .aon-btn:hover{ background:var(--gs) !important; transform:translateY(-2px); }
+#pn-art .aon-btn:hover::after{ transform:translateX(5px); }
+#pn-art .aon-btn--line{ background:transparent !important; color:var(--g) !important; box-shadow:none !important; border-color:rgba(227,194,88,.7) !important; }
+#pn-art .aon-btn--line:hover{ background:rgba(227,194,88,.12) !important; }
+#pn-art .aon-btn--sm{ padding:10px 18px 9px !important; font-size:.7rem !important; letter-spacing:.17em !important; }
+#pn-art .aon-ctas{ display:flex; flex-wrap:wrap; gap:10px 12px; }
+#pn-art .aon-sw{ display:inline-block; flex:none; width:24px; height:5px; border-radius:2px; background:var(--sw,#999); box-shadow:0 0 0 1px rgba(26,20,12,.2); }
+#pn-art .aon-nation{
+  display:flex; align-items:center; gap:8px; margin:0;
+  font-family:var(--hd); font-size:.66rem; font-weight:700; letter-spacing:.24em; text-transform:uppercase;
+}
+
+/* the gilded frame: the one place a range of golds belongs */
+#pn-art .aon-frame{
+  position:relative; display:block; width:100%; text-decoration:none; cursor:zoom-in;
+  padding:clamp(6px,.8vw,11px); border-radius:2px;
+  background:linear-gradient(135deg,#5A4518 0%,#C9A94A 18%,#F2E1A4 38%,#B0903C 58%,#E7C866 78%,#5A4518 100%);
+  background-size:240% 240%; background-position:0% 50%;
+  box-shadow:inset 0 0 0 1px rgba(56,45,18,.75), inset 0 0 0 4px rgba(120,86,12,.26), 0 22px 44px rgba(20,14,4,.32);
+}
+#pn-art .aon-mat{ display:block; padding:clamp(6px,1vw,14px); background:#FFFCF3; box-shadow:inset 0 0 0 1px rgba(25,20,16,.1), inset 0 2px 6px rgba(25,20,16,.14); }
+#pn-art .aon-pic{ position:relative; display:block; overflow:hidden; aspect-ratio:1/1; background:#E9E0CC; }
+#pn-art .aon-pic img{ width:100%; height:100%; object-fit:cover; transition:transform .7s cubic-bezier(.22,1,.36,1), opacity .9s ease; }
+
+/* 1. hero: the featured painting on the Earthrise wall */
+#pn-art .aon-hero{
+  color:var(--iv); border-bottom:1px solid rgba(227,194,88,.55);
+  padding-top:clamp(18px,3.2vh,38px);
+  background:
+    radial-gradient(40% 60% at var(--sx,74%) var(--sy,42%), rgba(255,222,150,.2) 0%, rgba(255,222,150,0) 70%),
+    radial-gradient(70% 60% at 0% 110%, rgba(15,76,92,.95) 0%, rgba(15,76,92,0) 70%),
+    linear-gradient(180deg,var(--er) 0%,var(--dep) 100%);
+}
+#pn-art .aon-hero__grid{ display:grid; grid-template-columns:minmax(0,1fr); grid-template-areas:"head" "stage" "foot"; gap:16px; }
+#pn-art .aon-hero__head{ grid-area:head; }
+#pn-art .aon-stage{ grid-area:stage; justify-self:center; width:min(100%,380px); margin:0; }
+#pn-art .aon-hero__foot{ grid-area:foot; }
+#pn-art .aon-hero .aon-eb{ color:var(--gs); }
+#pn-art .aon-lead{ margin:0; max-width:46ch; font-size:clamp(1rem,1.25vw,1.14rem); line-height:1.5; color:var(--ivt); }
+#pn-art .aon-pillars{ margin:10px 0 0; font-family:var(--hd); font-size:.68rem; font-weight:700; letter-spacing:.2em; text-transform:uppercase; color:var(--ivd); }
+#pn-art .aon-pillars b{ color:var(--g); font-weight:700; padding:0 .35em; }
+#pn-art .aon-tally{ display:flex; align-items:center; gap:14px 18px; flex-wrap:wrap; margin:16px 0 18px; }
+#pn-art .aon-tally__n{ margin:0; font-family:var(--hd); font-size:.74rem; font-weight:700; letter-spacing:.18em; text-transform:uppercase; color:var(--ivt); white-space:nowrap; }
+#pn-art .aon-tally__n strong{ font-size:2rem; font-weight:600; letter-spacing:-.01em; color:var(--iv); margin-right:4px; vertical-align:-3px; }
+#pn-art .aon-dots{ display:grid; grid-template-columns:repeat(39,minmax(0,1fr)); gap:3px; width:min(100%,312px); }
+#pn-art .aon-dots i{ display:block; aspect-ratio:1/1; border-radius:50%; background:rgba(244,236,216,.17); }
+#pn-art .aon-dots i.on{ background:#FFD45C; box-shadow:0 0 6px rgba(255,212,92,.75); }
+#pn-art .aon-tilt{ position:relative; transform:perspective(1100px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg)); transition:transform .7s cubic-bezier(.22,1,.36,1); }
+#pn-art .aon-tilt::after{
+  content:""; position:absolute; inset:0; pointer-events:none; border-radius:2px; mix-blend-mode:soft-light;
+  background:radial-gradient(circle at var(--gx,30%) var(--gy,18%), rgba(255,255,255,.5) 0%, rgba(255,255,255,0) 46%);
+}
+#pn-art .aon-frame--hero{ box-shadow:inset 0 0 0 1px rgba(56,45,18,.75), inset 0 0 0 4px rgba(120,86,12,.26), 0 34px 70px rgba(0,0,0,.5), 0 0 90px rgba(255,214,140,.12); }
+#pn-art .aon-slide{ position:absolute; inset:0; }
+#pn-art .aon-slide:first-child{ position:relative; }
+#pn-art .aon-slide:not(.is-on){ opacity:0; }
+#pn-art .aon-cap{ display:flex; align-items:center; justify-content:space-between; gap:12px; margin-top:14px; }
+#pn-art .aon-cap .aon-nation{ color:var(--ivd); }
+#pn-art .aon-cap .aon-sw{ box-shadow:0 0 0 1px rgba(244,236,216,.32); }
+#pn-art .aon-cap__title{ display:block; margin-top:3px; font-family:var(--hd); font-size:clamp(1.15rem,1.6vw,1.45rem); font-weight:600; line-height:1.05; color:var(--iv); }
+#pn-art .aon-cap__nav{ display:flex; align-items:center; gap:8px; flex:none; }
+#pn-art .aon-count{ min-width:4.4em; text-align:center; font-family:var(--hd); font-size:.74rem; font-weight:700; letter-spacing:.14em; font-variant-numeric:tabular-nums; color:var(--ivt); }
+#pn-art .aon-round{
+  display:grid !important; place-items:center; width:44px !important; height:44px !important; padding:0 !important; border-radius:50% !important;
+  border:1px solid rgba(227,194,88,.7) !important; background:rgba(8,42,48,.55) !important; color:var(--g) !important;
+  transition:background-color .2s ease, transform .2s ease;
+}
+#pn-art .aon-round:hover:not(:disabled){ background:rgba(227,194,88,.16) !important; transform:translateY(-1px); }
+#pn-art .aon-round:disabled{ opacity:.3; cursor:default; }
+#pn-art .aon-round svg{ display:block; width:18px; height:18px; pointer-events:none; }
+@media (min-width:900px){
+  #pn-art .aon-hero__grid{ grid-template-columns:minmax(0,1fr) minmax(0,1.04fr); grid-template-areas:"head stage" "foot stage"; column-gap:clamp(32px,5vw,80px); row-gap:18px; }
+  #pn-art .aon-hero__head{ align-self:end; }
+  #pn-art .aon-hero__foot{ align-self:start; }
+  #pn-art .aon-stage{ width:min(100%,clamp(340px,calc(100vh - 290px),560px)); width:min(100%,clamp(340px,calc(100svh - 290px),560px)); }
+  #pn-art .aon-lead{ margin-top:4px; }
+}
+
+/* 2. the gallery wall: ivory, so the paintings carry the colour */
+#pn-art .aon-wall{
+  color:var(--ink);
+  background:radial-gradient(70% 50% at 80% 0%, rgba(227,194,88,.18) 0%, rgba(227,194,88,0) 64%), linear-gradient(180deg,#F4ECD8 0%,#EBDFC2 100%);
+}
+#pn-art .aon-wall::before{
+  content:""; position:absolute; inset:0; pointer-events:none; opacity:.07;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .6 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+#pn-art .aon-wall .aon-eb{ color:var(--tc); }
+#pn-art .aon-wall .aon-note{ color:var(--inkm); }
+#pn-art .aon-wall .aon-btn--line{ color:var(--gd) !important; border-color:rgba(126,90,12,.55) !important; }
+#pn-art .aon-wall .aon-btn--line:hover{ background:rgba(126,90,12,.1) !important; }
+#pn-art .aon-grid{ display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:clamp(24px,3vw,40px) clamp(14px,2.2vw,30px); margin-top:clamp(18px,2.6vh,26px); }
+@media (min-width:1100px){ #pn-art .aon-grid{ grid-template-columns:repeat(4,minmax(0,1fr)); } }
+#pn-art .aon-card{ position:relative; display:flex; flex-direction:column; min-width:0; }
+#pn-art .aon-card .aon-frame{ transition:transform .45s cubic-bezier(.22,1,.36,1), box-shadow .45s ease; }
+#pn-art .aon-card .aon-frame:hover{ transform:translateY(-5px); box-shadow:inset 0 0 0 1px rgba(56,45,18,.75), inset 0 0 0 4px rgba(120,86,12,.26), 0 30px 54px rgba(20,14,4,.36); }
+#pn-art .aon-card .aon-frame:hover img{ transform:scale(1.035); }
+#pn-art .aon-card .aon-nation{ margin-top:14px; color:var(--inkd); }
+#pn-art .aon-card .aon-h3{ color:var(--ink); }
+#pn-art .aon-stmt{ margin:6px 0 0; font-size:clamp(.92rem,1vw,1rem); line-height:1.45; color:var(--inkm); }
+#pn-art .aon-price{ margin:8px 0 0; font-family:var(--hd); font-size:1.3rem; font-weight:600; color:var(--gd); }
+#pn-art .aon-chip{ align-self:flex-start; margin:8px 0 0; padding:4px 10px 3px; border-radius:999px; border:1px solid rgba(26,20,12,.25); font-family:var(--hd); font-size:.62rem; font-weight:700; letter-spacing:.18em; text-transform:uppercase; color:var(--inkm); }
+#pn-art .aon-card .aon-acts{ display:flex; flex-wrap:wrap; gap:8px; margin-top:auto; padding-top:12px; }
+
+/* 3. the books, on Earthrise */
+#pn-art .aon-books{
+  color:var(--iv);
+  background:radial-gradient(60% 80% at 88% 0%, rgba(15,76,92,.95) 0%, rgba(15,76,92,0) 70%), linear-gradient(180deg,var(--er) 0%,var(--dep) 100%);
+}
+#pn-art .aon-books .aon-note{ color:var(--ivt); }
+#pn-art .aon-shelf{ display:grid; grid-template-columns:minmax(0,1fr); gap:clamp(14px,2.4vw,30px); margin-top:clamp(18px,2.6vh,26px); }
+@media (min-width:900px){ #pn-art .aon-shelf{ grid-template-columns:repeat(2,minmax(0,1fr)); } }
+#pn-art .aon-bk{
+  display:grid; grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr); grid-template-areas:"obj txt" "acts acts";
+  align-items:center; gap:14px clamp(18px,2.4vw,30px); padding:clamp(16px,2vw,24px);
+  border:1px solid rgba(244,236,216,.14); border-radius:4px; background:rgba(4,24,28,.38);
+}
+#pn-art .aon-bk__obj{ grid-area:obj; display:block; width:100%; perspective:1100px; padding:0 14px 0 4px; }
+#pn-art .aon-bk__book{
+  position:relative; display:block; transform:rotateY(-22deg) rotateX(3deg); transform-origin:left center;
+  transition:transform .7s cubic-bezier(.22,1,.36,1);
+  box-shadow:5px 3px 0 -1px #EFE6D2, 7px 5px 0 -1px #CDBF9F, 9px 7px 0 -1px #EFE6D2, 22px 24px 38px rgba(0,0,0,.5);
+}
+#pn-art .aon-bk__book::before{
+  content:""; position:absolute; z-index:1; left:0; top:0; bottom:0; width:8%;
+  background:linear-gradient(90deg, rgba(0,0,0,.5) 0%, rgba(255,255,255,.2) 45%, rgba(0,0,0,.18) 100%);
+}
+#pn-art .aon-bk__book img{ width:100%; height:auto; aspect-ratio:1/1; object-fit:cover; }
+#pn-art .aon-bk__obj:hover .aon-bk__book,#pn-art .aon-bk__obj:focus-visible .aon-bk__book{ transform:rotateY(-7deg) rotateX(1deg); }
+#pn-art .aon-bk__txt{ grid-area:txt; min-width:0; }
+#pn-art .aon-tag{ margin:0 0 6px; font-family:var(--hd); font-size:.64rem; font-weight:700; letter-spacing:.18em; line-height:1.4; text-transform:uppercase; color:var(--gs); }
+#pn-art .aon-bk .aon-h3{ color:var(--iv); font-size:clamp(1.5rem,2.4vw,2.2rem); }
+#pn-art .aon-bk .aon-stmt{ color:var(--ivt); }
+#pn-art .aon-spec{ margin:8px 0 0; font-family:var(--hd); font-size:.68rem; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--ivd); }
+#pn-art .aon-bk .aon-acts{ grid-area:acts; display:grid; grid-template-columns:1fr 1fr; gap:10px; }
+#pn-art .aon-bk .aon-acts .aon-btn{ padding-left:12px !important; padding-right:12px !important; }
+#pn-art .aon-bk .aon-acts small{ font-size:.62rem; letter-spacing:.12em; opacity:.75; }
+#pn-art .aon-close{ display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:14px 24px; margin-top:clamp(18px,3vh,28px); padding-top:clamp(16px,2.4vh,22px); border-top:1px solid rgba(227,194,88,.32); }
+#pn-art .aon-close p{ margin:0; font-family:var(--hd); font-size:clamp(1.15rem,1.6vw,1.45rem); font-weight:600; color:var(--iv); }
+
+/* phones: their own layouts, nothing scrolls sideways, buttons across the full width */
+@media (max-width:599px){
+  #pn-art .aon-h1{ font-size:clamp(2.3rem,11.2vw,3rem); }
+  #pn-art .aon-h2{ font-size:clamp(2.2rem,10.4vw,2.9rem); }
+  #pn-art .aon-hero .aon-ctas{ display:grid; grid-template-columns:1fr 1fr; }
+  #pn-art .aon-hero .aon-btn{ padding-left:12px !important; padding-right:12px !important; }
+  #pn-art .aon-tally{ margin:14px 0 16px; }
+  #pn-art .aon-dots{ width:100%; gap:2px; }
+  #pn-art .aon-grid{ gap:22px 14px; }
+  #pn-art .aon-card .aon-stmt{ display:none; }
+  #pn-art .aon-card .aon-h3{ font-size:1.12rem; }
+  #pn-art .aon-card .aon-nation{ margin-top:10px; font-size:.6rem; letter-spacing:.18em; }
+  #pn-art .aon-card .aon-acts .aon-btn{ width:100%; padding-left:10px !important; padding-right:10px !important; }
+  #pn-art .aon-bk{ padding:14px; }
+  #pn-art .aon-bk .aon-stmt{ font-size:.9rem; display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; overflow:hidden; }
+  #pn-art .aon-tag{ font-size:.58rem; letter-spacing:.12em; }
+  #pn-art .aon-close .aon-ctas{ display:grid; grid-template-columns:1fr; width:100%; }
+}
+
+/* the viewer: paintings at full size, and the pages of the books */
+#pn-art .aon-view{
+  position:fixed; inset:0; width:100vw; height:100vh; height:100dvh; max-width:none; max-height:none; margin:0;
+  padding:0; border:0; color:var(--iv); overflow:hidden;
+  background:radial-gradient(60% 50% at 50% 40%, rgba(15,76,92,.55) 0%, rgba(15,76,92,0) 70%), linear-gradient(180deg,#082A30 0%,#03161A 100%);
+}
+#pn-art .aon-view[open]{ display:flex; flex-direction:column; }
+#pn-art .aon-view::backdrop{ background:rgba(3,20,24,.95); }
+#pn-art .aon-view__top{ display:flex; align-items:center; gap:14px; padding:12px clamp(12px,2.4vw,28px); }
+#pn-art .aon-view__t{ flex:1; min-width:0; margin:0; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; font-family:var(--hd); font-size:.72rem; font-weight:700; letter-spacing:.24em; text-transform:uppercase; color:var(--ivt); }
+#pn-art .aon-view__n{ font-family:var(--hd); font-size:.78rem; font-weight:700; letter-spacing:.14em; font-variant-numeric:tabular-nums; color:var(--ivt); }
+#pn-art .aon-x{
+  display:grid !important; place-items:center; width:46px !important; height:46px !important; padding:0 !important;
+  border-radius:50% !important; border:1px solid var(--g) !important; background:rgba(8,42,48,.6) !important; color:var(--g) !important;
+}
+#pn-art .aon-x svg{ width:18px; height:18px; pointer-events:none; }
+#pn-art .aon-view__stage{ position:relative; flex:1 1 auto; min-height:0; display:flex; align-items:center; justify-content:center; padding:0 clamp(10px,7vw,90px); touch-action:pan-y; }
+#pn-art .aon-view__img{
+  max-width:100%; max-height:calc(100vh - 230px); max-height:calc(100dvh - 230px); width:auto; height:auto; object-fit:contain;
+  box-shadow:0 0 0 1px rgba(227,194,88,.55), 0 26px 70px rgba(0,0,0,.6); background:#F4ECD8; opacity:0; transition:opacity .35s ease;
+}
+#pn-art .aon-view__img.is-in{ opacity:1; }
+#pn-art .aon-view .aon-round{ position:absolute; top:50%; transform:translateY(-50%); width:48px !important; height:48px !important; }
+#pn-art .aon-view .aon-round:hover:not(:disabled){ transform:translateY(-50%); }
+#pn-art .aon-view .aon-prev{ left:clamp(6px,1.6vw,22px); }
+#pn-art .aon-view .aon-next{ right:clamp(6px,1.6vw,22px); }
+#pn-art .aon-view__cap{ padding:12px clamp(16px,3vw,32px) 18px; padding-bottom:max(18px,env(safe-area-inset-bottom)); text-align:center; }
+#pn-art .aon-view__h{ margin:0; font-family:var(--hd); font-size:clamp(1.3rem,2.2vw,1.9rem); font-weight:600; line-height:1.05; color:var(--iv); }
+#pn-art .aon-view__s{ margin:5px auto 0; max-width:60ch; font-size:.96rem; line-height:1.45; color:var(--ivt); }
+#pn-art .aon-view__s:empty,#pn-art .aon-view__k:empty{ display:none; }
+#pn-art .aon-view__k{ margin:6px 0 0; font-family:var(--hd); font-size:.66rem; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--ivd); }
+#pn-art .aon-view__acts{ display:flex; flex-wrap:wrap; justify-content:center; gap:10px; margin-top:12px; }
+#pn-art .aon-view__acts:empty{ display:none; }
+@media (max-width:599px){
+  #pn-art .aon-view__stage{ padding:0 10px; }
+  #pn-art .aon-view .aon-round{ top:auto; bottom:-58px; transform:none; width:44px !important; height:44px !important; }
+  #pn-art .aon-view .aon-round:hover:not(:disabled){ transform:none; }
+  #pn-art .aon-view__img{ max-height:calc(100vh - 300px); max-height:calc(100dvh - 300px); }
+  #pn-art .aon-view__cap{ padding-left:64px; padding-right:64px; }
+  #pn-art .aon-view__s{ font-size:.9rem; }
+}
+
+/* motion: reveal once, slow idle light on the hero frame */
+@media (prefers-reduced-motion:no-preference){
+  #pn-art .aon-frame--hero{ animation:aon-sheen 11s ease-in-out infinite; }
+  #pn-art .aon-dots i.is-new{ animation:aon-pulse 2.6s ease-in-out infinite; }
+  #pn-art.aon-anim .aon-rv{ opacity:0; transform:translateY(16px); transition:opacity .7s ease, transform .9s cubic-bezier(.22,1,.36,1); }
+  #pn-art.aon-anim .aon-rv.is-in{ opacity:1; transform:none; }
+}
+@keyframes aon-sheen{ 0%,100%{ background-position:0% 50%; } 50%{ background-position:100% 50%; } }
+@keyframes aon-pulse{ 0%,100%{ box-shadow:0 0 4px rgba(255,212,92,.6); } 50%{ box-shadow:0 0 12px 3px rgba(255,212,92,.95); } }
+@media (prefers-reduced-motion:reduce){
+  #pn-art *{ transition:none !important; animation:none !important; }
+  #pn-art .aon-tilt{ transform:none !important; }
+}
+</style>
+
+<section class="aon-band aon-hero" aria-labelledby="aon-h1">
+  <div class="aon-in aon-hero__grid">
+    <div class="aon-hero__head">
+      <p class="aon-eb">Perfect Nations Gallery</p>
+      <h1 class="aon-h1" id="aon-h1">Art of Nations</h1>
+    </div>
+    <figure class="aon-stage" aria-label="Featured paintings">
+      <div class="aon-tilt">
+        <a class="aon-frame aon-frame--hero" href="[[FIRST_ZOOM]]" data-open="0" aria-label="Open [[FIRST_TITLE]] at full size">
+          <span class="aon-mat"><span class="aon-pic"><img class="aon-slide is-on" src="[[FIRST_SRC]]" srcset="[[FIRST_SRCSET]]" sizes="(min-width:900px) 560px, 92vw" alt="[[FIRST_ALT]]" width="768" height="768" fetchpriority="high" decoding="async"><img class="aon-slide" alt="" aria-hidden="true" width="768" height="768" decoding="async" sizes="(min-width:900px) 560px, 92vw"></span></span>
+        </a>
+      </div>
+      <figcaption class="aon-cap">
+        <span aria-live="polite"><span class="aon-nation"><i class="aon-sw" style="[[FIRST_SW]]"></i><span data-cap-nation>[[FIRST_NATION]]</span></span><strong class="aon-cap__title" data-cap-title>[[FIRST_TITLE]]</strong></span>
+        <span class="aon-cap__nav">
+          <button class="aon-round" type="button" data-hero="-1" aria-label="Previous painting"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M19 12H5M11 6l-6 6 6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          <span class="aon-count" data-cap-count>01 / [[COUNT2]]</span>
+          <button class="aon-round" type="button" data-hero="1" aria-label="Next painting"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+        </span>
+      </figcaption>
+    </figure>
+    <div class="aon-hero__foot">
+      <p class="aon-lead">Each nation, painted as a living bloom: its mountains, coasts and colours redrawn in acrylic, one of one. A portrait for every one of the [[TOTAL]] nations.</p>
+      <p class="aon-pillars">Culture as capital<b>&#183;</b>Identity as asset<b>&#183;</b>Beauty as public value</p>
+      <div class="aon-tally">
+        <p class="aon-tally__n"><strong>[[COUNT]]</strong> of [[TOTAL]] nations painted</p>
+        <span class="aon-dots" role="img" aria-label="[[COUNT]] of [[TOTAL]] nations painted">[[DOTS]]</span>
+      </div>
+      <div class="aon-ctas">
+        <a class="aon-btn" href="#aon-works">The paintings</a>
+        <a class="aon-btn aon-btn--line" href="#aon-books">The books</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="aon-band aon-wall" id="aon-works" aria-labelledby="aon-works-h">
+  <div class="aon-in">
+    <div class="aon-head">
+      <div><p class="aon-eb">Original paintings</p><h2 class="aon-h2" id="aon-works-h">The nation, as a living bloom</h2></div>
+      <p class="aon-note">Acrylic on canvas, 24 &#215; 24 in, one of one and signed. Every painting is offered by private enquiry.</p>
+    </div>
+    <div class="aon-grid">
+[[CARDS]]
+    </div>
+  </div>
+</section>
+
+<section class="aon-band aon-books" id="aon-books" aria-labelledby="aon-books-h">
+  <div class="aon-in">
+    <div class="aon-head">
+      <div><p class="aon-eb">Coffee table books</p><h2 class="aon-h2" id="aon-books-h">A nation to return to, page after page</h2></div>
+      <p class="aon-note">A national portrait for each of the [[TOTAL]] nations, each in [[TOTAL]] numbered copies. Turn the pages, then reserve a copy.</p>
+    </div>
+    <div class="aon-shelf">
+[[BOOKS]]
+    </div>
+    <div class="aon-close">
+      <p>Every work is offered by private enquiry.</p>
+      <div class="aon-ctas">
+        <a class="aon-btn" href="[[CONTACT]]?about=gallery">Write to the studio</a>
+        <a class="aon-btn aon-btn--line" href="https://perfectnations.org/blueprints/">National blueprints</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<dialog class="aon-view" aria-labelledby="aon-view-t">
+  <div class="aon-view__top">
+    <p class="aon-view__t" id="aon-view-t">Art of Nations</p>
+    <span class="aon-view__n" aria-live="polite"></span>
+    <button class="aon-x" type="button" aria-label="Close"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6L6 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
+  </div>
+  <div class="aon-view__stage">
+    <button class="aon-round aon-prev" type="button" aria-label="Previous"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M19 12H5M11 6l-6 6 6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+    <img class="aon-view__img" alt="" decoding="async">
+    <button class="aon-round aon-next" type="button" aria-label="Next"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+  </div>
+  <div class="aon-view__cap">
+    <p class="aon-view__h"></p>
+    <p class="aon-view__s"></p>
+    <p class="aon-view__k"></p>
+    <div class="aon-view__acts"></div>
+  </div>
+</dialog>
+
+<script>
+(function(){
+  'use strict';
+  var root=document.getElementById('pn-art');
+  if(!root||root.getAttribute('data-aon')==='1'){ return; }
+  root.setAttribute('data-aon','1');
+  var mq=function(q){ return !!(window.matchMedia&&window.matchMedia(q).matches); };
+  var reduce=mq('(prefers-reduced-motion: reduce)');
+  var fine=mq('(hover: hover) and (pointer: fine)');
+  var hasIO='IntersectionObserver' in window;
+  function pad(n){ return (n<10?'0':'')+n; }
+  function $(sel,el){ return (el||root).querySelector(sel); }
+  function all(sel,el){ return Array.prototype.slice.call((el||root).querySelectorAll(sel)); }
+
+  /* the works, read from the cards on the wall (one source for the hero and the viewer) */
+  var works=all('.aon-card').map(function(c){
+    var d=c.dataset;
+    return { nation:d.nation, title:d.title, statement:d.statement||'', spec:d.spec||'', alt:d.alt||'', zoom:d.zoom,
+      src:d.src, srcset:d.srcset||'', sw:d.sw||'', enquire:d.enquire||'', buy:d.buy||'', price:d.price||'' };
+  });
+
+  /* ---------- the hero: the featured painting ---------- */
+  var hero=$('.aon-hero'), tilt=$('.aon-tilt'), heroLink=$('.aon-frame--hero');
+  var slides=all('.aon-slide'), on=0, cur=0, timer=0, inView=true, held=false, stopped=false;
+  var capN=$('[data-cap-nation]'), capT=$('[data-cap-title]'), capC=$('[data-cap-count]'), capS=$('.aon-cap .aon-sw');
+  function feature(i){
+    if(works.length<2||slides.length<2){ return; }
+    i=(i+works.length)%works.length;
+    if(i===cur){ return; }
+    cur=i;
+    var w=works[i], next=slides[1-on], done=false;
+    function swap(){
+      if(done||cur!==i){ return; }
+      done=true;
+      slides[on].classList.remove('is-on'); slides[on].setAttribute('aria-hidden','true'); slides[on].alt='';
+      next.classList.add('is-on'); next.removeAttribute('aria-hidden'); next.alt=w.alt;
+      on=1-on;
+    }
+    next.onload=swap;
+    next.onerror=function(){ done=true; };
+    if(w.srcset){ next.srcset=w.srcset; }
+    next.src=w.src;
+    if(next.complete&&next.naturalWidth){ swap(); }
+    capN.textContent=w.nation; capT.textContent=w.title; capC.textContent=pad(i+1)+' / '+pad(works.length);
+    if(w.sw){ capS.style.setProperty('--sw',w.sw); }
+    heroLink.href=w.zoom; heroLink.setAttribute('data-open',String(i));
+    heroLink.setAttribute('aria-label','Open '+w.title+' at full size');
+  }
+  function schedule(){
+    clearTimeout(timer);
+    if(reduce||stopped||works.length<2){ return; }
+    timer=setTimeout(function(){
+      if(inView&&!held&&!document.hidden){ feature(cur+1); }
+      schedule();
+    },6500);
+  }
+  if(hero){
+    all('[data-hero]',hero).forEach(function(b){
+      b.addEventListener('click',function(){ stopped=true; clearTimeout(timer); feature(cur+Number(b.getAttribute('data-hero'))); });
+    });
+    var stage=$('.aon-stage');
+    stage.addEventListener('pointerenter',function(){ held=true; });
+    stage.addEventListener('pointerleave',function(){ held=false; });
+    stage.addEventListener('focusin',function(){ held=true; });
+    stage.addEventListener('focusout',function(){ held=false; });
+    var sx=null, sy=null;
+    stage.addEventListener('pointerdown',function(e){ if(e.pointerType!=='mouse'){ sx=e.clientX; sy=e.clientY; } });
+    stage.addEventListener('pointerup',function(e){
+      if(sx===null){ return; }
+      var dx=e.clientX-sx, dy=e.clientY-sy; sx=null;
+      if(Math.abs(dx)>44&&Math.abs(dx)>Math.abs(dy)*1.4){ stopped=true; clearTimeout(timer); feature(cur+(dx<0?1:-1)); stage.setAttribute('data-swiped','1'); }
+    });
+    stage.addEventListener('click',function(e){ if(stage.getAttribute('data-swiped')){ stage.removeAttribute('data-swiped'); e.preventDefault(); e.stopPropagation(); } },true);
+    if(hasIO){
+      new IntersectionObserver(function(es){ inView=es[0].isIntersecting; },{threshold:.25}).observe(hero);
+    }
+    schedule();
+    /* the frame turns toward the visitor, and the light follows (laptops only) */
+    if(fine&&!reduce&&tilt){
+      var raf=0, px=0, py=0;
+      var apply=function(){
+        raf=0;
+        var r=tilt.getBoundingClientRect(), h=hero.getBoundingClientRect();
+        var x=Math.max(-1,Math.min(1,(px-(r.left+r.width/2))/(r.width*.9)));
+        var y=Math.max(-1,Math.min(1,(py-(r.top+r.height/2))/(r.height*.9)));
+        tilt.style.setProperty('--ry',(x*7).toFixed(2)+'deg');
+        tilt.style.setProperty('--rx',(-y*5).toFixed(2)+'deg');
+        tilt.style.setProperty('--gx',(50+x*42).toFixed(1)+'%');
+        tilt.style.setProperty('--gy',(40+y*40).toFixed(1)+'%');
+        hero.style.setProperty('--sx',(74+((px-h.left)/h.width*100-74)*.3).toFixed(1)+'%');
+        hero.style.setProperty('--sy',(42+((py-h.top)/h.height*100-42)*.3).toFixed(1)+'%');
+      };
+      hero.addEventListener('pointermove',function(e){ px=e.clientX; py=e.clientY; if(!raf){ raf=requestAnimationFrame(apply); } });
+      hero.addEventListener('pointerleave',function(){
+        ['--rx','--ry'].forEach(function(k){ tilt.style.setProperty(k,'0deg'); });
+        tilt.style.removeProperty('--gx'); tilt.style.removeProperty('--gy');
+        hero.style.removeProperty('--sx'); hero.style.removeProperty('--sy');
+      });
+    }
+  }
+
+  /* ---------- the viewer: paintings at full size and the pages of the books ---------- */
+  var view=$('.aon-view');
+  if(view&&typeof view.showModal==='function'){
+    var vImg=$('.aon-view__img',view), vT=$('.aon-view__t',view), vN=$('.aon-view__n',view);
+    var vH=$('.aon-view__h',view), vS=$('.aon-view__s',view), vK=$('.aon-view__k',view), vA=$('.aon-view__acts',view);
+    var vPrev=$('.aon-prev',view), vNext=$('.aon-next',view), vStage=$('.aon-view__stage',view);
+    var list=[], at=0, wrap=true, opener=null;
+    var button=function(label,href,line){
+      var a=document.createElement('a');
+      a.className='aon-btn'+(line?' aon-btn--line':''); a.href=href; a.textContent=label;
+      return a;
+    };
+    var show=function(n){
+      if(!list.length){ return; }
+      at=wrap?(n+list.length)%list.length:Math.max(0,Math.min(list.length-1,n));
+      var it=list[at];
+      vImg.classList.remove('is-in');
+      vImg.onload=function(){ vImg.classList.add('is-in'); };
+      vImg.onerror=function(){ if(list.length>1){ list.splice(at,1); show(at); } };
+      vImg.src=it.src; vImg.alt=it.alt;
+      if(vImg.complete&&vImg.naturalWidth){ vImg.classList.add('is-in'); }
+      vN.textContent=list.length>1?pad(at+1)+' / '+pad(list.length):'';
+      vH.textContent=it.h; vS.textContent=it.s||''; vK.textContent=it.k||'';
+      vA.textContent='';
+      (it.acts||[]).forEach(function(a){ vA.appendChild(button(a[0],a[1],a[2])); });
+      vPrev.hidden=vNext.hidden=list.length<2;
+      vPrev.disabled=!wrap&&at===0; vNext.disabled=!wrap&&at===list.length-1;
+      [at-1,at+1].forEach(function(k){ var j=wrap?(k+list.length)%list.length:k; if(list[j]&&j!==at){ var p=new Image(); p.src=list[j].src; } });
+    };
+    var open=function(title,items,n,loop,from){
+      list=items; wrap=loop; opener=from||null; vT.textContent=title;
+      show(n||0);
+      if(!view.open){ view.showModal(); }
+      try{ $('.aon-x',view).focus({preventScroll:true}); }catch(e){}
+    };
+    var paintingItems=function(){
+      return works.map(function(w){
+        var acts=[];
+        if(w.buy){ acts.push(['Buy',w.buy,false]); }
+        acts.push(['Enquire about this painting',w.enquire,!!w.buy]);
+        return { src:w.zoom, alt:w.alt, h:w.nation+' \u00b7 '+w.title, s:w.statement, k:(w.price?w.price+' \u00b7 ':'')+w.spec, acts:acts };
+      });
+    };
+    root.addEventListener('click',function(e){
+      var t=e.target.closest('[data-open],[data-look]');
+      if(!t||!root.contains(t)){ return; }
+      e.preventDefault();
+      if(t.hasAttribute('data-open')){
+        open('Art of Nations',paintingItems(),Number(t.getAttribute('data-open'))||0,true,t);
+        return;
+      }
+      var bk=t.closest('.aon-bk');
+      if(!bk){ return; }
+      var name=bk.getAttribute('data-book'), reserve=bk.getAttribute('data-enquire');
+      var pages=all('.aon-pages li',bk).map(function(li){
+        return { src:li.getAttribute('data-src'), alt:name+', '+li.textContent, h:li.textContent, acts:[['Reserve a copy',reserve,false]] };
+      });
+      if(pages.length){ open(name,pages,0,false,t); }
+    });
+    vPrev.addEventListener('click',function(){ show(at-1); });
+    vNext.addEventListener('click',function(){ show(at+1); });
+    $('.aon-x',view).addEventListener('click',function(){ view.close(); });
+    view.addEventListener('keydown',function(e){
+      if(e.key==='ArrowLeft'){ e.preventDefault(); show(at-1); }
+      if(e.key==='ArrowRight'){ e.preventDefault(); show(at+1); }
+    });
+    view.addEventListener('click',function(e){ if(e.target===view||e.target===vStage){ view.close(); } });
+    view.addEventListener('close',function(){ if(opener){ try{ opener.focus({preventScroll:true}); }catch(err){} } });
+    var tx=null, ty=null;
+    vStage.addEventListener('pointerdown',function(e){ tx=e.clientX; ty=e.clientY; });
+    vStage.addEventListener('pointerup',function(e){
+      if(tx===null){ return; }
+      var dx=e.clientX-tx, dy=e.clientY-ty; tx=null;
+      if(Math.abs(dx)>44&&Math.abs(dx)>Math.abs(dy)*1.4){ show(at+(dx<0?1:-1)); }
+    });
+  }
+
+  /* ---------- reveal once, as the wall comes into view ---------- */
+  var rv=all('.aon-rv');
+  if(hasIO&&!reduce&&rv.length){
+    root.classList.add('aon-anim');
+    var io=new IntersectionObserver(function(es){
+      es.forEach(function(en){ if(en.isIntersecting){ en.target.classList.add('is-in'); io.unobserve(en.target); } });
+    },{rootMargin:'0px 0px -6% 0px'});
+    rv.forEach(function(n,i){ n.style.transitionDelay=((i%4)*90)+'ms'; io.observe(n); });
+  }
+})();
+</script>
+</div>
