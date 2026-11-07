@@ -1,5 +1,5 @@
 <!-- ===========================================================================
-PERFECT NATIONS - SOVEREIGN ASSETS PAGE - THE WHOLE PAGE IN ONE FILE - v6.0 - built 2026-11-06
+PERFECT NATIONS - SOVEREIGN ASSETS PAGE - THE WHOLE PAGE IN ONE FILE - v6.1 - built 2026-11-06
 Served live on perfectnations.org/sovereign-assets/ (page 15125) by the Perfect Nations Live Pages
 plugin, in place of the code pasted in its one Elementor Custom HTML widget (root id pn-sov).
 BUILT by tools/build_sovereign_assets.py from pages/sovereign-assets-src.html (the design) and
@@ -8,7 +8,7 @@ Never edit this file by hand; kept by the Sovereign Assets Steward (skill stewar
 Palette: Earthrise and ivory grounds, gold only for what a visitor can act on; the colour comes
 from the painted seams (Preeti Sinha&#8217;s garden painting) between the Earthrise sections.
 =========================================================================== -->
-<div id="pn-sov" class="pnsa" data-v="6.0">
+<div id="pn-sov" class="pnsa" data-v="6.1">
 <style>
 #pn-sov{
   --er:#0B3D45; --lg:#0F4C5C; --dp:#082A30; --plate:#0A3840;
@@ -123,6 +123,22 @@ from the painted seams (Preeti Sinha&#8217;s garden painting) between the Earthr
 }
 #pn-sov .sa-planet canvas{ position:absolute; inset:0; width:100%; height:100%; touch-action:pan-y; cursor:grab; }
 #pn-sov .sa-planet canvas:active{ cursor:grabbing; }
+#pn-sov .sa-pin{
+  position:absolute; z-index:3; width:min(250px,84%); padding:12px 14px 12px 16px; border-radius:16px; text-align:left;
+  background:var(--plate); border:1px solid rgba(var(--grgb),.6); box-shadow:0 18px 42px rgba(2,20,24,.55); color:var(--fg);
+}
+#pn-sov .sa-pin__k{ margin:0; padding-right:50px; font-family:var(--hd); font-size:.6rem; font-weight:700; letter-spacing:.2em; text-transform:uppercase; color:var(--dim); }
+#pn-sov .sa-pin__h{ margin:3px 0 0; padding-right:50px; font-family:var(--hd); font-weight:600; font-size:1.5rem; line-height:1; letter-spacing:-.01em; color:var(--fg); }
+#pn-sov .sa-pin__a{ margin:8px 0 0; font-size:.84rem; line-height:1.35; color:var(--mut); }
+#pn-sov .sa-pin__a b{ display:block; margin-bottom:2px; font-family:var(--hd); font-weight:700; font-size:1.6rem; line-height:1; letter-spacing:-.02em; color:var(--fg); }
+#pn-sov .sa-pin__a b.is-money{ color:var(--g); }
+#pn-sov .sa-pin .sa-go{ margin-top:6px; }
+#pn-sov .sa-pin__x{
+  position:absolute; top:6px; right:6px; display:flex; align-items:center; justify-content:center; width:46px; height:46px; padding:0;
+  border-radius:50%; border:1.5px solid var(--g); background:transparent; color:var(--g); cursor:pointer;
+  font-family:Arial,sans-serif; font-size:1.25rem; line-height:1;
+}
+#pn-sov .sa-pin__x:hover{ background:var(--g); color:var(--onacc); }
 #pn-sov .sa-planet figcaption{ margin:6px auto 0; max-width:34ch; text-align:center; font-size:.8rem; line-height:1.4; color:var(--dim); }
 #pn-sov .sa-planet figcaption b{ color:var(--fg); font-weight:600; }
 
@@ -211,8 +227,8 @@ from the painted seams (Preeti Sinha&#8217;s garden painting) between the Earthr
 /* laptops, with the script: one stage, five tabs */
 @media (min-width:900px){
   #pn-sov.is-js .sa-stage{ display:grid; grid-template-columns:minmax(0,1fr) clamp(236px,21vw,290px); gap:12px; }
-  #pn-sov.is-js .sa-scenes{ display:block; position:relative; height:clamp(400px,61vh,570px); border-radius:22px; overflow:hidden; background:var(--dp); box-shadow:0 24px 60px rgba(2,20,24,.42); }
-  #pn-sov.is-js .sa-sc{ position:absolute; inset:0; display:block; border-radius:0; box-shadow:none; background:transparent; opacity:0; visibility:hidden; transition:opacity .7s ease, visibility 0s linear .7s; }
+  #pn-sov.is-js .sa-scenes{ display:grid; grid-template-columns:minmax(0,1fr); position:relative; min-height:clamp(400px,61vh,570px); border-radius:22px; overflow:hidden; background:var(--dp); box-shadow:0 24px 60px rgba(2,20,24,.42); }
+  #pn-sov.is-js .sa-sc{ grid-area:1 / 1; position:relative; display:flex; flex-direction:row; align-items:flex-end; border-radius:0; box-shadow:none; background:transparent; opacity:0; visibility:hidden; transition:opacity .7s ease, visibility 0s linear .7s; }
   #pn-sov.is-js .sa-sc.is-on{ opacity:1; visibility:visible; transition:opacity .7s ease; }
   #pn-sov.is-js .sa-sc{ z-index:0; }
   #pn-sov.is-js .sa-sc.is-on{ z-index:1; }
@@ -221,11 +237,11 @@ from the painted seams (Preeti Sinha&#8217;s garden painting) between the Earthr
   #pn-sov.is-js .sa-sc.is-on .sa-sc__img{ transform:scale(1); }
   #pn-sov.is-js .sa-sc__n{ display:none; }
   #pn-sov.is-js .sa-sc__plate{
-    position:absolute; z-index:2; left:16px; bottom:16px; width:min(450px,47%); max-height:calc(100% - 32px); justify-content:flex-end;
+    position:relative; z-index:2; flex:none; margin:16px; width:min(450px,47%); justify-content:flex-end;
     padding:clamp(18px,2vw,30px); border-radius:18px; border-top:3px solid var(--iv); background:var(--plate);
     box-shadow:0 24px 54px rgba(2,20,24,.5);
   }
-  #pn-sov.is-js .sa-sc__fig b{ font-size:clamp(3.6rem,min(6.6vw,11vh),7rem); }
+  #pn-sov.is-js .sa-sc__fig b{ font-size:clamp(3.4rem,min(6.2vw,10.5vh),6.6rem); }
   #pn-sov.is-js .sa-sc__fig small{ font-size:clamp(1.5rem,min(2.6vw,4.4vh),2.8rem); }
   #pn-sov.is-js .sa-sc__line{ margin-top:8px; font-family:var(--hd); font-weight:600; font-size:clamp(1rem,1.3vw,1.2rem); letter-spacing:.01em; line-height:1.2; color:var(--fg); }
   #pn-sov.is-js .sa-sc__h{ margin-top:clamp(12px,2vh,20px); font-size:clamp(1.7rem,2.6vw,2.4rem); }
@@ -346,6 +362,8 @@ from the painted seams (Preeti Sinha&#8217;s garden painting) between the Earthr
   #pn-sov .sa-sc__line{ font-size:.76rem; }
   #pn-sov .sa-sc__h{ font-size:1.1rem; }
   #pn-sov .sa-sc__who{ font-size:.54rem; letter-spacing:.1em; }
+  #pn-sov .sa-sc:not(:first-child) .sa-sc__cls{ gap:6px; font-size:.54rem; letter-spacing:.09em; white-space:nowrap; }
+  #pn-sov .sa-sc:not(:first-child) .sa-sc__cls::before{ width:8px; height:8px; }
   #pn-sov .sa-sc__src{ font-size:.6rem; }
   #pn-sov .sa-sc:first-child .sa-sc__fig b{ font-size:2.9rem; }
   #pn-sov .sa-sc:first-child .sa-sc__h{ font-size:1.5rem; }
@@ -508,8 +526,16 @@ The ids here start "pns-", so the Live Pages plugin never mistakes them for a pa
         <p class="sa-lead">Water, land, people, coast, forest, energy, minerals and institutions: recorded nation by nation with super intelligence (SI), so that what a country holds can finance seven basic standards of living for all.</p>
       </div>
       <figure class="sa-planet" aria-label="The golden planet of the ledger: one gold light for each recorded asset">
-        <div class="sa-planet__box"><span class="sa-planet__disc" aria-hidden="true"></span><canvas id="saPlanet" aria-hidden="true"></canvas></div>
-        <figcaption>Each gold light is one recorded asset. Drag to turn the planet.</figcaption>
+        <div class="sa-planet__box"><span class="sa-planet__disc" aria-hidden="true"></span><canvas id="saPlanet" aria-hidden="true"></canvas>
+          <div class="sa-pin" id="saPin" role="dialog" aria-labelledby="saPinH" hidden>
+            <button class="sa-pin__x" type="button" aria-label="Close">&times;</button>
+            <p class="sa-pin__k"><span id="saPinN">5</span> recorded assets</p>
+            <h3 class="sa-pin__h" id="saPinH">Nation</h3>
+            <p class="sa-pin__a" id="saPinA"></p>
+            <a class="sa-go" id="saPinGo" href="https://perfectnations.org/blueprints/">Open the blueprint</a>
+          </div>
+        </div>
+        <figcaption>Each gold light is one recorded asset. Tap a nation to open it; drag to turn the planet.</figcaption>
       </figure>
       <div class="sa-facts">
         <ul class="sa-figs" aria-label="The ledger so far">
@@ -726,7 +752,7 @@ The ids here start "pns-", so the Live Pages plugin never mistakes them for a pa
     </div>
   </section>
 
-<script type="application/json" id="saSeed">{"nations":[{"name":"Afghanistan","url":"https://perfectnations.org/blueprints/afghanistan/","assets":5,"lat":33.9,"lon":67.7},{"name":"Angola","url":"https://perfectnations.org/blueprints/angola/","assets":5,"lat":-11.2,"lon":17.9},{"name":"Bangladesh","url":"https://perfectnations.org/blueprints/bangladesh/","assets":5,"lat":23.7,"lon":90.4},{"name":"Barbados","url":"https://perfectnations.org/blueprints/barbados/","assets":5,"lat":13.2,"lon":-59.5},{"name":"Botswana","url":"https://perfectnations.org/blueprints/botswana/","assets":5,"lat":-22.3,"lon":24.7},{"name":"Brazil","url":"https://perfectnations.org/blueprints/brazil/","assets":5,"lat":-10.3,"lon":-53.2},{"name":"Burundi","url":"https://perfectnations.org/blueprints/burundi/","assets":5,"lat":-3.4,"lon":29.9},{"name":"Colombia","url":"https://perfectnations.org/blueprints/colombia/","assets":5,"lat":4.6,"lon":-74.3},{"name":"C\u00f4te d\u2019Ivoire","url":"https://perfectnations.org/blueprints/cote-d-ivoire/","assets":5,"lat":7.5,"lon":-5.5},{"name":"DR Congo","url":"https://perfectnations.org/blueprints/dr-congo/","assets":5,"lat":-2.9,"lon":23.7},{"name":"Ecuador","url":"https://perfectnations.org/blueprints/ecuador/","assets":5,"lat":-1.8,"lon":-78.2},{"name":"Egypt","url":"https://perfectnations.org/blueprints/egypt/","assets":5,"lat":26.8,"lon":30.8},{"name":"Eswatini","url":"https://perfectnations.org/blueprints/eswatini/","assets":5,"lat":-26.5,"lon":31.5},{"name":"Ethiopia","url":"https://perfectnations.org/blueprints/ethiopia/","assets":5,"lat":9.1,"lon":40.5},{"name":"Fiji","url":"https://perfectnations.org/blueprints/fiji/","assets":5,"lat":-17.7,"lon":178.1},{"name":"Ghana","url":"https://perfectnations.org/blueprints/ghana/","assets":5,"lat":7.9,"lon":-1.0},{"name":"India","url":"https://perfectnations.org/blueprints/india/","assets":5,"lat":21.0,"lon":78.0},{"name":"Indonesia","url":"https://perfectnations.org/blueprints/indonesia/","assets":5,"lat":-2.5,"lon":118.0},{"name":"Jamaica","url":"https://perfectnations.org/blueprints/jamaica/","assets":5,"lat":18.1,"lon":-77.3},{"name":"Jordan","url":"https://perfectnations.org/blueprints/jordan/","assets":5,"lat":31.2,"lon":36.5},{"name":"Kenya","url":"https://perfectnations.org/blueprints/kenya/","assets":5,"lat":0.0,"lon":37.9},{"name":"Lesotho","url":"https://perfectnations.org/blueprints/lesotho/","assets":5,"lat":-29.6,"lon":28.2},{"name":"Madagascar","url":"https://perfectnations.org/blueprints/madagascar/","assets":5,"lat":-18.8,"lon":46.9},{"name":"Malawi","url":"https://perfectnations.org/blueprints/malawi/","assets":5,"lat":-13.3,"lon":34.3},{"name":"Mexico","url":"https://perfectnations.org/blueprints/mexico/","assets":5,"lat":23.6,"lon":-102.5},{"name":"Morocco","url":"https://perfectnations.org/blueprints/morocco/","assets":5,"lat":31.8,"lon":-7.1},{"name":"Mozambique","url":"https://perfectnations.org/blueprints/mozambique/","assets":5,"lat":-18.7,"lon":35.5},{"name":"Namibia","url":"https://perfectnations.org/blueprints/namibia/","assets":5,"lat":-22.9,"lon":18.5},{"name":"Nigeria","url":"https://perfectnations.org/blueprints/nigeria/","assets":5,"lat":9.1,"lon":8.7},{"name":"Pakistan","url":"https://perfectnations.org/blueprints/pakistan/","assets":5,"lat":30.4,"lon":69.3},{"name":"Philippines","url":"https://perfectnations.org/blueprints/philippines/","assets":5,"lat":12.9,"lon":121.8},{"name":"Republic of the Congo","url":"https://perfectnations.org/blueprints/republic-of-congo/","assets":5,"lat":-0.2,"lon":15.8},{"name":"Rwanda","url":"https://perfectnations.org/blueprints/rwanda/","assets":5,"lat":-1.9,"lon":29.9},{"name":"Senegal","url":"https://perfectnations.org/blueprints/senegal/","assets":5,"lat":14.5,"lon":-14.5},{"name":"Somalia","url":"https://perfectnations.org/blueprints/somalia/","assets":5,"lat":5.2,"lon":46.2},{"name":"South Africa","url":"https://perfectnations.org/blueprints/south-africa/","assets":5,"lat":-30.6,"lon":22.9},{"name":"South Sudan","url":"https://perfectnations.org/blueprints/south-sudan/","assets":5,"lat":6.9,"lon":31.3},{"name":"Sri Lanka","url":"https://perfectnations.org/blueprints/sri-lanka/","assets":5,"lat":7.9,"lon":80.8},{"name":"Tanzania","url":"https://perfectnations.org/blueprints/tanzania/","assets":5,"lat":-6.4,"lon":34.9},{"name":"Uganda","url":"https://perfectnations.org/blueprints/uganda/","assets":5,"lat":1.4,"lon":32.3},{"name":"Ukraine","url":"https://perfectnations.org/blueprints/ukraine/","assets":5,"lat":48.4,"lon":31.2},{"name":"Vietnam","url":"https://perfectnations.org/blueprints/vietnam/","assets":5,"lat":14.1,"lon":108.3},{"name":"Zambia","url":"https://perfectnations.org/blueprints/zambia/","assets":5,"lat":-13.1,"lon":27.8},{"name":"Zimbabwe","url":"https://perfectnations.org/blueprints/zimbabwe/","assets":5,"lat":-19.0,"lon":29.2}]}</script>
+<script type="application/json" id="saSeed">{"nations":[{"name":"Afghanistan","url":"https://perfectnations.org/blueprints/afghanistan/","assets":5,"lat":33.9,"lon":67.7,"top":{"name":"The Land","figure":"58.4%","label":"Of land in agriculture, 2024","money":false}},{"name":"Angola","url":"https://perfectnations.org/blueprints/angola/","assets":5,"lat":-11.2,"lon":17.9,"top":{"name":"The Oil","figure":"28.3%","label":"Oil rents, share of GDP, 2021","money":false}},{"name":"Bangladesh","url":"https://perfectnations.org/blueprints/bangladesh/","assets":5,"lat":23.7,"lon":90.4,"top":{"name":"The People","figure":"175.7m","label":"Citizens, 2025","money":false}},{"name":"Barbados","url":"https://perfectnations.org/blueprints/barbados/","assets":5,"lat":13.2,"lon":-59.5,"top":{"name":"The Sea","figure":"185,000+ km\u00b2","label":"Exclusive economic zone","money":false}},{"name":"Botswana","url":"https://perfectnations.org/blueprints/botswana/","assets":5,"lat":-22.3,"lon":24.7,"top":{"name":"The Diamonds","figure":"80%","label":"Of exports, IMF, 2025","money":false}},{"name":"Brazil","url":"https://perfectnations.org/blueprints/brazil/","assets":5,"lat":-10.3,"lon":-53.2,"top":{"name":"The Forest","figure":"58.5%","label":"Of land under forest, 2024","money":false}},{"name":"Burundi","url":"https://perfectnations.org/blueprints/burundi/","assets":5,"lat":-3.4,"lon":29.9,"top":{"name":"The Lake","figure":"18,880 km\u00b3","label":"Volume of Lake Tanganyika","money":false}},{"name":"Colombia","url":"https://perfectnations.org/blueprints/colombia/","assets":5,"lat":4.6,"lon":-74.3,"top":{"name":"The People","figure":"53.4m","label":"Citizens, 2025","money":false}},{"name":"C\u00f4te d\u2019Ivoire","url":"https://perfectnations.org/blueprints/cote-d-ivoire/","assets":5,"lat":7.5,"lon":-5.5,"top":{"name":"The People","figure":"32.7m","label":"Citizens, 2025","money":false}},{"name":"DR Congo","url":"https://perfectnations.org/blueprints/dr-congo/","assets":5,"lat":-2.9,"lon":23.7,"top":{"name":"The Cobalt","figure":"230,000 t","label":"Mined in 2025, of 310,000 t worldwide","money":false}},{"name":"Ecuador","url":"https://perfectnations.org/blueprints/ecuador/","assets":5,"lat":-1.8,"lon":-78.2,"top":{"name":"The People","figure":"18.3m","label":"Citizens, 2025","money":false}},{"name":"Egypt","url":"https://perfectnations.org/blueprints/egypt/","assets":5,"lat":26.8,"lon":30.8,"top":{"name":"The People","figure":"118.4m","label":"Citizens, 2025","money":false}},{"name":"Eswatini","url":"https://perfectnations.org/blueprints/eswatini/","assets":5,"lat":-26.5,"lon":31.5,"top":{"name":"The Health System","figure":"95-95-95","label":"HIV targets met, a decade early","money":false}},{"name":"Ethiopia","url":"https://perfectnations.org/blueprints/ethiopia/","assets":5,"lat":9.1,"lon":40.5,"top":{"name":"The People","figure":"135.5m","label":"Citizens, 2025","money":false}},{"name":"Fiji","url":"https://perfectnations.org/blueprints/fiji/","assets":5,"lat":-17.7,"lon":178.1,"top":{"name":"The People","figure":"933,000","label":"Citizens, 2025","money":false}},{"name":"Ghana","url":"https://perfectnations.org/blueprints/ghana/","assets":5,"lat":7.9,"lon":-1.0,"top":{"name":"The People","figure":"35.1m","label":"Citizens, 2025","money":false}},{"name":"India","url":"https://perfectnations.org/blueprints/india/","assets":5,"lat":21.0,"lon":78.0,"top":{"name":"The Sun","figure":"171 GW","label":"Solar installed, 30 Sept 2026","money":false}},{"name":"Indonesia","url":"https://perfectnations.org/blueprints/indonesia/","assets":5,"lat":-2.5,"lon":118.0,"top":{"name":"The People","figure":"285.7m","label":"Citizens, 2025","money":false}},{"name":"Jamaica","url":"https://perfectnations.org/blueprints/jamaica/","assets":5,"lat":18.1,"lon":-77.3,"top":{"name":"The People","figure":"2.8m","label":"Citizens, 2025","money":false}},{"name":"Jordan","url":"https://perfectnations.org/blueprints/jordan/","assets":5,"lat":31.2,"lon":36.5,"top":{"name":"The People","figure":"11.5m","label":"Citizens, 2025","money":false}},{"name":"Kenya","url":"https://perfectnations.org/blueprints/kenya/","assets":5,"lat":0.0,"lon":37.9,"top":{"name":"The Rift Heat","figure":"943.7 MW","label":"Geothermal capacity, FY 2024/25","money":false}},{"name":"Lesotho","url":"https://perfectnations.org/blueprints/lesotho/","assets":5,"lat":-29.6,"lon":28.2,"top":{"name":"The Highland Water","figure":"780M m\u00b3","label":"Supplied to South Africa a year","money":false}},{"name":"Madagascar","url":"https://perfectnations.org/blueprints/madagascar/","assets":5,"lat":-18.8,"lon":46.9,"top":{"name":"The Vanilla","figure":"42%","label":"Of world production, 2018 to 2023, FAO","money":false}},{"name":"Malawi","url":"https://perfectnations.org/blueprints/malawi/","assets":5,"lat":-13.3,"lon":34.3,"top":{"name":"The Lake","figure":"350+","label":"Mbuna species, all but five endemic","money":false}},{"name":"Mexico","url":"https://perfectnations.org/blueprints/mexico/","assets":5,"lat":23.6,"lon":-102.5,"top":{"name":"The People","figure":"131.9m","label":"Citizens, 2025","money":false}},{"name":"Morocco","url":"https://perfectnations.org/blueprints/morocco/","assets":5,"lat":31.8,"lon":-7.1,"top":{"name":"The People","figure":"38.4m","label":"Citizens, 2025","money":false}},{"name":"Mozambique","url":"https://perfectnations.org/blueprints/mozambique/","assets":5,"lat":-18.7,"lon":35.5,"top":{"name":"The Gas","figure":"$20B","label":"Mozambique LNG, first gas expected 2029","money":false}},{"name":"Namibia","url":"https://perfectnations.org/blueprints/namibia/","assets":5,"lat":-22.9,"lon":18.5,"top":{"name":"The Sun and Wind","figure":"$10B","label":"Green hydrogen agreement, May 2023","money":false}},{"name":"Nigeria","url":"https://perfectnations.org/blueprints/nigeria/","assets":5,"lat":9.1,"lon":8.7,"top":{"name":"The People","figure":"237.5m","label":"Citizens, 2025","money":false}},{"name":"Pakistan","url":"https://perfectnations.org/blueprints/pakistan/","assets":5,"lat":30.4,"lon":69.3,"top":{"name":"The People","figure":"255.2m","label":"Citizens, 2025","money":false}},{"name":"Philippines","url":"https://perfectnations.org/blueprints/philippines/","assets":5,"lat":12.9,"lon":121.8,"top":{"name":"The People","figure":"116.8m","label":"Citizens, 2025","money":false}},{"name":"Republic of the Congo","url":"https://perfectnations.org/blueprints/republic-of-congo/","assets":5,"lat":-0.2,"lon":15.8,"top":{"name":"The Forest","figure":"64.0%","label":"Of land under forest, 2024","money":false}},{"name":"Rwanda","url":"https://perfectnations.org/blueprints/rwanda/","assets":5,"lat":-1.9,"lon":29.9,"top":{"name":"The Hills","figure":"75.7%","label":"Of land in agriculture, 2024","money":false}},{"name":"Senegal","url":"https://perfectnations.org/blueprints/senegal/","assets":5,"lat":14.5,"lon":-14.5,"top":{"name":"The People","figure":"18.9m","label":"Citizens, 2025","money":false}},{"name":"Somalia","url":"https://perfectnations.org/blueprints/somalia/","assets":5,"lat":5.2,"lon":46.2,"top":{"name":"The Clean Ledger","figure":"<6%","label":"External debt to GDP, end-2023, from 64%","money":false}},{"name":"South Africa","url":"https://perfectnations.org/blueprints/south-africa/","assets":5,"lat":-30.6,"lon":22.9,"top":{"name":"The Wildlife","figure":"$150M","label":"Wildlife Conservation Bond, March 2022","money":false}},{"name":"South Sudan","url":"https://perfectnations.org/blueprints/south-sudan/","assets":5,"lat":6.9,"lon":31.3,"top":{"name":"The Oil","figure":"About 90%","label":"Of government revenue, World Bank, 2022","money":false}},{"name":"Sri Lanka","url":"https://perfectnations.org/blueprints/sri-lanka/","assets":5,"lat":7.9,"lon":80.8,"top":{"name":"The People","figure":"21.8m","label":"Citizens, 2025","money":false}},{"name":"Tanzania","url":"https://perfectnations.org/blueprints/tanzania/","assets":5,"lat":-6.4,"lon":34.9,"top":{"name":"The Rufiji","figure":"2,115 MW","label":"Julius Nyerere Hydropower Station, 2025","money":false}},{"name":"Uganda","url":"https://perfectnations.org/blueprints/uganda/","assets":5,"lat":1.4,"lon":32.3,"top":{"name":"The Nile","figure":"600 MW","label":"Karuma hydropower, commissioned September 2024","money":false}},{"name":"Ukraine","url":"https://perfectnations.org/blueprints/ukraine/","assets":5,"lat":48.4,"lon":31.2,"top":{"name":"The People","figure":"39m","label":"Citizens, 2025","money":false}},{"name":"Vietnam","url":"https://perfectnations.org/blueprints/vietnam/","assets":5,"lat":14.1,"lon":108.3,"top":{"name":"The People","figure":"101.6m","label":"Citizens, 2025","money":false}},{"name":"Zambia","url":"https://perfectnations.org/blueprints/zambia/","assets":5,"lat":-13.1,"lon":27.8,"top":{"name":"The Copper","figure":"35.3%","label":"Natural resource rents, share of GDP, 2021","money":false}},{"name":"Zimbabwe","url":"https://perfectnations.org/blueprints/zimbabwe/","assets":5,"lat":-19.0,"lon":29.2,"top":{"name":"The Lithium","figure":"$782M","label":"Exports, first half of 2026, up from $237M","money":false}}]}</script>
 <script type="application/json" id="saLand">{"lat0":88.75,"step":2.5,"rows":[3,9,16,22,28,34,40,46,52,58,64,69,75,80,85,90,95,100,104,108,112,116,120,123,126,129,132,134,136,138,140,141,142,143,144,144,144,144,143,142,141,140,138,136,134,132,129,126,123,120,116,112,108,104,100,95,90,85,80,75,69,64,58,52,46,40,34,28,22,16,9,3],"bits":"AAAAADwgAPxAABR4AMACY8AHgADM8AD/wP4kcDj////vm4hz///x//2Yg/////H/eIQB0///8wY+4wAAX///8ACB/4wAAH///+EAAP/vgAj/////EAAD//4ABf////+AAAA/7lAAf/////8AAAA//8AAD/Xf///QAAAD/+wAADXHf///kAAAAf/8AAB4vu///+AAAAAP/+AAAcC/n//+QAAAAAf/8AAADgb////kgAAAAB//AAAB/AP////GAAAAAAf/AAAA/7v////wAAAAAAB8EAAAD//vv///4AAAAAAB+CAAAD//94///8AAAAAAAFwAAAAP//7+H//6AAAAAAAA4iAAAH//+/h+fgAAAAAAAAHYEAAA///z8Hw9AAAAAAAAAHgAAAB///3gHB8EAAAAAAAAAYAAAA///9gBgPhAAAAAAAAABFAAAH///0AMAYIAAAAAAAAAG/AAAf///wAwAAQAAAAAAAAAD/AAA+///AAgIAAAAAAAAAAAH/wAAAP/+AAAYYAAAAAAAAAAP/wAAAP/8AAAI+AAAAAAAAAAP/0AAAP/4AAAM4MAAAAAAAAAP//gAAP/wAAAEIDwAAAAAAAAf//wAAP/gAAAAABwAAAAAAAAf//AAAfvAAAAAUGhAAAAAAAB//4AAB/4AAAAAMAAAAAAAAAP/+AAAf7EAAAADkAAAAAAAABf/AAAP/MAAAAP2AAAAAAAAB/+AAAf8YAAAA/4AAAAAAAAH/wAAD/GAAAA//ggAAAAAAD/gAAB/iAAAA//gAAAAAAAH+AAAD8AAAAH/+AAAAAAAB/gAAA+AAAAD//AAAAAAAD+AAAB4AAAAP/4AAAAAAA/AAAA4AAAAMDwAAAAAAB8AAAAAAAAAAcAAAAAAB4AAAAAAAAAAACAAAAAMAAAAAAAAAAYAAAAAAYAAAAAAAAAABAAAAAYAAAAAAAAAAAAAAADAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAgAAQMIAAAIAA//8AACA///+AHg///wf8///P////////////w"}</script>
 <script>
 (function(){
@@ -793,7 +819,8 @@ The ids here start "pns-", so the Live Pages plugin never mistakes them for a pa
     });
   }
 
-  /* ---------- the golden planet: the land in antique gold, one bright light per recorded asset ---------- */
+  /* ---------- the golden planet: the land in antique gold, one bright light per recorded asset.
+     A tap or click on a nation opens its card (lead asset and blueprint); a hover names it. ---------- */
   var planet = (function(){
     var cv = document.getElementById('saPlanet');
     var land = json('saLand');
@@ -807,22 +834,25 @@ The ids here start "pns-", so the Live Pages plugin never mistakes them for a pa
         if (bits.charCodeAt(k >> 3) & (128 >> (k & 7))){ L.push([lat * D, (-180 + (i + 0.5) * 360 / n) * D]); }
       }
     }
-    var P = [], lon0 = 22 * D, tilt = 14 * D, dpr = 1, W = 0, R = 0, cx = 0, cy = 0, run = false, seen = true, last = 0, raf = 0;
+    var P = [], NAT = [], lon0 = 22 * D, tilt = 14 * D, dpr = 1, W = 0, R = 0, cx = 0, cy = 0, run = false, seen = true, last = 0, raf = 0;
+    var hover = -1, picked = -1, mouse = null, held = false;
+    var pin = document.getElementById('saPin'), box = cv.parentNode;
     var glow = document.createElement('canvas'); glow.width = glow.height = 64;
     var gx = glow.getContext('2d'), gg = gx.createRadialGradient(32, 32, 0, 32, 32, 32);
     gg.addColorStop(0, 'rgba(255,240,190,1)'); gg.addColorStop(0.18, 'rgba(255,212,92,.95)'); gg.addColorStop(0.5, 'rgba(255,212,92,.28)'); gg.addColorStop(1, 'rgba(255,212,92,0)');
     gx.fillStyle = gg; gx.fillRect(0, 0, 64, 64);
     function setNations(list){
-      P = [];
+      P = []; NAT = [];
       (list || []).forEach(function(nt, j){
         if (typeof nt.lat !== 'number' || typeof nt.lon !== 'number') { return; }
+        NAT.push({ lat:nt.lat * D, lon:nt.lon * D, d:nt });
         var c = Math.max(1, Math.min(12, int(nt.assets) ? nt.assets : 1)), cl = Math.max(0.3, Math.cos(nt.lat * D));
         for (var a = 0; a < c; a++){
           var ang = a === 0 ? 0 : (a - 1) / Math.max(1, c - 1) * 2 * Math.PI + j, rr = a === 0 ? 0 : 1.5;
           P.push([(nt.lat + rr * Math.sin(ang)) * D, (nt.lon + rr * Math.cos(ang) / cl) * D, (j * 1.7 + a) % 6.28]);
         }
       });
-      if (!run) { draw(performance.now()); }
+      closePin(); redraw();
     }
     function size(){
       var w = cv.clientWidth; if (!w) { return; }
@@ -835,6 +865,35 @@ The ids here start "pns-", so the Live Pages plugin never mistakes them for a pa
       var cl = Math.cos(lat), x = cl * Math.sin(lon - lon0), y = Math.sin(lat), z = cl * Math.cos(lon - lon0);
       var y2 = y * Math.cos(tilt) - z * Math.sin(tilt), z2 = y * Math.sin(tilt) + z * Math.cos(tilt);
       return [cx + R * x, cy - R * y2, z2];
+    }
+    /* the nation under a point given in CSS pixels of the canvas, or -1 */
+    function hit(x, y){
+      var best = -1, bd = Math.max(16 * dpr, R * 0.075), px2 = x * W / cv.clientWidth, py2 = y * W / cv.clientWidth;
+      for (var i = 0; i < NAT.length; i++){
+        var p = proj(NAT[i].lat, NAT[i].lon);
+        if (p[2] < 0.12) { continue; }
+        var dd = Math.sqrt((p[0] - px2) * (p[0] - px2) + (p[1] - py2) * (p[1] - py2));
+        if (dd < bd){ bd = dd; best = i; }
+      }
+      return best;
+    }
+    function ring(i, label){
+      if (i < 0 || !NAT[i]) { return; }
+      var p = proj(NAT[i].lat, NAT[i].lon);
+      if (p[2] < 0.05) { return; }
+      var rr = Math.max(14 * dpr, R * 0.07);
+      ctx.beginPath(); ctx.arc(p[0], p[1], rr, 0, 2 * Math.PI); ctx.lineWidth = 1.6 * dpr; ctx.strokeStyle = 'rgba(255,212,92,.95)'; ctx.stroke();
+      if (!label) { return; }
+      var t = NAT[i].d.name, fs = 13 * dpr;
+      ctx.font = '600 ' + fs + 'px "Barlow Condensed", "Arial Narrow", Arial, sans-serif';
+      var tw = ctx.measureText(t).width, bw = tw + 16 * dpr, bh = fs + 10 * dpr;
+      var bx = Math.max(2, Math.min(W - bw - 2, p[0] - bw / 2)), by = p[1] - rr - bh - 4 * dpr;
+      if (by < 2) { by = p[1] + rr + 4 * dpr; }
+      ctx.fillStyle = 'rgba(10,56,64,.94)'; ctx.strokeStyle = 'rgba(227,194,88,.7)'; ctx.lineWidth = 1 * dpr;
+      ctx.beginPath();
+      if (ctx.roundRect) { ctx.roundRect(bx, by, bw, bh, bh / 2); } else { ctx.rect(bx, by, bw, bh); }
+      ctx.fill(); ctx.stroke();
+      ctx.fillStyle = '#F4ECD8'; ctx.textBaseline = 'middle'; ctx.fillText(t, bx + 8 * dpr, by + bh / 2 + 0.5 * dpr);
     }
     function draw(t){
       if (!W) { return; }
@@ -871,25 +930,70 @@ The ids here start "pns-", so the Live Pages plugin never mistakes them for a pa
       var lit = ctx.createRadialGradient(cx - R * 0.45, cy - R * 0.5, 0, cx - R * 0.45, cy - R * 0.5, R * 1.2);
       lit.addColorStop(0, 'rgba(255,255,255,.07)'); lit.addColorStop(1, 'rgba(255,255,255,0)');
       ctx.beginPath(); ctx.arc(cx, cy, R, 0, 2 * Math.PI); ctx.fillStyle = lit; ctx.fill();
+      if (mouse && !drag){ hover = hit(mouse[0], mouse[1]); cv.style.cursor = hover >= 0 ? 'pointer' : ''; }
+      ring(picked, false);
+      if (hover !== picked) { ring(hover, true); }
     }
+    function redraw(){ if (!run) { draw(performance.now()); } }
     function frame(t){
       raf = 0;
       if (!run) { return; }
       if (t - last > 32){
-        if (last && !drag) { lon0 += Math.min(64, t - last) * 0.0045 * D; }
+        if (last && !drag && !held && hover < 0) { lon0 += Math.min(64, t - last) * 0.0045 * D; }
         last = t; draw(t);
       }
       raf = window.requestAnimationFrame(frame);
     }
     function go(){ var want = seen && !document.hidden && !still; if (want && !run){ run = true; last = 0; if (!raf) { raf = window.requestAnimationFrame(frame); } } else if (!want){ run = false; } }
-    var drag = false, px = 0;
-    cv.addEventListener('pointerdown', function(e){ drag = true; px = e.clientX; });
-    window.addEventListener('pointermove', function(e){ if (!drag) { return; } lon0 -= (e.clientX - px) * 0.45 * D; px = e.clientX; if (!run) { draw(performance.now()); } });
-    window.addEventListener('pointerup', function(){ drag = false; });
+    function openPin(i, x, y){
+      var nt = NAT[i] && NAT[i].d;
+      if (!pin || !nt || !okUrl(nt.url, 'https://perfectnations.org/')) { return; }
+      picked = i; held = true;
+      document.getElementById('saPinN').textContent = int(nt.assets) ? nt.assets : '';
+      document.getElementById('saPinH').textContent = nt.name;
+      var a = document.getElementById('saPinA'), go2 = document.getElementById('saPinGo');
+      a.textContent = '';
+      if (nt.top && nt.top.figure && nt.top.name){
+        var fb = mk('b', nt.top.money ? 'is-money' : '', nt.top.figure);
+        a.appendChild(fb); a.appendChild(mk('span', '', nt.top.name + (nt.top.label ? ' \u00b7 ' + nt.top.label : '')));
+        a.hidden = false;
+      } else { a.hidden = true; }
+      go2.href = nt.url; go2.setAttribute('aria-label', 'Open the blueprint of ' + nt.name);
+      pin.hidden = false;
+      var bw = box.clientWidth, cw = pin.offsetWidth, ch = pin.offsetHeight;
+      var left = Math.max(4, Math.min(bw - cw - 4, x - cw / 2));
+      var top = y < bw * 0.5 ? y + 22 : y - ch - 22;
+      pin.style.left = left + 'px'; pin.style.top = Math.max(0, Math.min(bw - ch, top)) + 'px';
+      redraw();
+    }
+    function closePin(){ if (pin) { pin.hidden = true; } picked = -1; held = false; redraw(); }
+    var drag = false, px = 0, dx0 = 0, dy0 = 0, moved = 0;
+    cv.addEventListener('pointerdown', function(e){ drag = true; px = e.clientX; dx0 = e.clientX; dy0 = e.clientY; moved = 0; });
+    window.addEventListener('pointermove', function(e){
+      if (!drag) { return; }
+      moved = Math.max(moved, Math.abs(e.clientX - dx0) + Math.abs(e.clientY - dy0));
+      if (moved < 6) { return; }
+      if (picked >= 0) { closePin(); }
+      lon0 -= (e.clientX - px) * 0.45 * D; px = e.clientX; redraw();
+    });
+    window.addEventListener('pointerup', function(e){
+      if (!drag) { return; }
+      drag = false;
+      if (moved >= 6) { return; }
+      var rc = cv.getBoundingClientRect(), x = e.clientX - rc.left, y = e.clientY - rc.top, i = hit(x, y);
+      if (i >= 0) { openPin(i, x, y); } else if (picked >= 0) { closePin(); }
+    });
     window.addEventListener('pointercancel', function(){ drag = false; });
+    cv.addEventListener('pointermove', function(e){ if (e.pointerType === 'mouse'){ var rc = cv.getBoundingClientRect(); mouse = [e.clientX - rc.left, e.clientY - rc.top]; redraw(); } });
+    cv.addEventListener('pointerleave', function(){ mouse = null; hover = -1; cv.style.cursor = ''; redraw(); });
+    if (pin){
+      q('.sa-pin__x', pin).addEventListener('click', closePin);
+      document.addEventListener('keydown', function(e){ if (e.key === 'Escape' && !pin.hidden) { closePin(); } });
+      document.addEventListener('pointerdown', function(e){ if (!pin.hidden && !pin.contains(e.target) && e.target !== cv) { closePin(); } });
+    }
     size();
     var rt = null;
-    window.addEventListener('resize', function(){ if (rt) { clearTimeout(rt); } rt = setTimeout(function(){ size(); draw(performance.now()); }, 150); });
+    window.addEventListener('resize', function(){ if (rt) { clearTimeout(rt); } rt = setTimeout(function(){ size(); closePin(); }, 150); });
     if ('IntersectionObserver' in window){ new IntersectionObserver(function(es){ seen = es[0].isIntersecting; go(); }, { threshold:0.05 }).observe(cv); }
     document.addEventListener('visibilitychange', go);
     var seed = json('saSeed');

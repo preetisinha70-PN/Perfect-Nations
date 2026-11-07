@@ -134,7 +134,7 @@ Entries keep the fields they had in the nation file. A URL already in a nation f
 | Field | What it drives on the page |
 |---|---|
 | `ledger` | The three figures in the hero (assets recorded, nations, asset classes) and the count in the full ledger. Counted by `python3 tools/build_sovereign_assets.py --data` from every nation file's `assets.items`; never edited by hand |
-| `nations` | The golden planet (one gold light per recorded asset, placed at `lat`, `lon`) and the list of nations, each linking to its blueprint. Counted with the ledger |
+| `nations` | The golden planet (one gold light per recorded asset, placed at `lat`, `lon`; a tap or click opens the nation's card with its lead asset, `top`, the first card of its blueprint) and the list of nations, each linking to its blueprint. Counted with the ledger |
 | `updated` | "Ledger updated D Month YYYY" in the hero; set by the build whenever the ledger changes |
 | `featured` | The five assets, in order. Each: `cls` (one of the eight classes), `figure`, `unit`, `line` (the words under the figure), `name`, `nation`, `flags` (two-letter codes), `text`, `source` (the link text), `url` (the source), `link` (the blueprint), `image` (1536 px copy) and `image_small` (768 px copy) from the Media Library, and `alt` |
 
