@@ -30,22 +30,38 @@ async def one(b, path, kind, cond):
     else:
         await ctx.route('**/unpkg.com/**', lambda r: r.continue_())
     page = await ctx.new_page()
-    errs = []
+    errs = []; navs = []; docs = []
+    import time; t0 = [time.time()]
     page.on('pageerror', lambda e: errs.append(str(e)[:160]))
+    page.on('framenavigated', lambda f: navs.append([round(time.time() - t0[0], 2), f.url[:120]]) if f == page.main_frame else None)
+    page.on('response', lambda r: docs.append([round(time.time() - t0[0], 2), r.status, r.url[:120], r.headers.get('x-litespeed-cache', ''), r.headers.get('location', ''), r.headers.get('content-type', '')[:30]]) if r.request.resource_type == 'document' else None)
+    page.on('console', lambda m: errs.append('console ' + m.type + ': ' + m.text[:140]) if m.type in ('error', 'warning') else None)
     cdp = await ctx.new_cdp_session(page)
     await cdp.send('Network.enable')
     await cdp.send('Network.setCacheDisabled', {'cacheDisabled': True})
     if kind == 'phone':
         await cdp.send('Network.emulateNetworkConditions', {'offline': False, 'latency': 150, 'downloadThroughput': 9e6 / 8, 'uploadThroughput': 1.5e6 / 8})
         await cdp.send('Emulation.setCPUThrottlingRate', {'rate': 4})
+    t0[0] = time.time()
     try:
         await page.goto('https://perfectnations.org' + path, wait_until='commit', timeout=60000)
         await page.wait_for_function("document.readyState === 'complete' && performance.getEntriesByType('navigation')[0].loadEventEnd > 0", timeout=90000, polling=250)
     except Exception as e:
         errs.append('wait: ' + str(e)[:120])
     await page.wait_for_timeout(8000 if 'kenya' in path else 3000)
-    d = await page.evaluate(READ)
-    d.update({'path': path, 'kind': kind, 'cond': cond, 'errors': errs[:6]})
+    d = None
+    for _ in range(4):
+        try:
+            d = await page.evaluate(READ); break
+        except Exception as e:
+            errs.append('evaluate: ' + str(e)[:80])
+            try:
+                await page.wait_for_load_state('load', timeout=60000)
+            except Exception:
+                pass
+            await page.wait_for_timeout(3000)
+    d = d or {'ttfb': 0, 'dcl': 0, 'load': 0, 'fcp': 0, 'lcp': 0, 'lcpEl': '', 'tbt': 0, 'globe': None, 'canvas': None, 'libs': []}
+    d.update({'path': path, 'kind': kind, 'cond': cond, 'errors': errs[:10], 'navs': navs, 'docs': docs, 'final_url': page.url})
     await ctx.close()
     return d
 async def main():
@@ -57,7 +73,9 @@ async def main():
                 for kind in ('phone', 'laptop'):
                     for cond in (('now', 'no-unpkg') if rnd == 1 else ('no-unpkg', 'now')):
                         d = await one(b, path, kind, cond); d['round'] = rnd; out.append(d)
-                        print(f"r{rnd} {kind:6} {cond:8} {path:20} FCP={d['fcp']} LCP={d['lcp']} DCL={d['dcl']} load={d['load']} TBT={d['tbt']} globe={d['globe']} canvas={d['canvas']} err={len(d['errors'])} {d['errors'][:2]}", flush=True)
+                        print(f"r{rnd} {kind:6} {cond:8} {path:20} FCP={d['fcp']} LCP={d['lcp']} DCL={d['dcl']} load={d['load']} TBT={d['tbt']} globe={d['globe']} canvas={d['canvas']} err={len(d['errors'])} navs={len(d['navs'])}", flush=True)
+                        if len(d['navs']) > 1 or d['errors']:
+                            print('   navs', d['navs']); print('   docs', d['docs']); print('   errs', d['errors'][:6], flush=True)
         await b.close()
     json.dump(out, open('probe-out/browser.json', 'w'), indent=1)
 asyncio.run(main())
