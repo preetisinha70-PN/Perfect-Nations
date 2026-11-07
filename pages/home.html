@@ -1,5 +1,5 @@
 <!-- ===========================================================================
-PERFECT NATIONS - HOMEPAGE - THE WHOLE PAGE IN ONE FILE - v7.2 - 2026-11-06
+PERFECT NATIONS - HOMEPAGE - THE WHOLE PAGE IN ONE FILE - v7.4 - 2026-11-06
 Paste this file ONCE into ONE Elementor Custom HTML widget on the homepage (page 13465), in a Full
 Width container with padding 0, and delete every other widget on the page. From then on the Perfect
 Nations Live Pages plugin serves pages/home.html from GitHub in place of the paste (root id pn-home,
@@ -1555,9 +1555,14 @@ oc Australia and Oceania.
 </script>
 <!-- ======== part: pages/home-hero.html ======== -->
 <!-- ===========================================================================
-PERFECT NATIONS - HOMEPAGE - SECTION 01 - CIVILIZATION RE-DEFINED - v6.2 THE CLEAR SEA - 2026-11-06
+PERFECT NATIONS - HOMEPAGE - SECTION 01 - CIVILIZATION RE-DEFINED - v6.3 THE CLEAR SEA - 2026-11-06
 Served live from GitHub (pages/home-hero.html) by the Perfect Nations Live Pages plugin;
 the root id stays pn-hero, so the widget already on the homepage is the one replaced.
+v6.3: the planet survives a graphics reset. A laptop browser can take the planet's drawing surface
+  away (a graphics reset, after a long scroll, a sleep or a switch between graphics chips); the page
+  then showed a blank white panel with a sad face. Now the still planet shows in its place at once,
+  and the moving planet returns as soon as the browser gives the surface back. The planet also asks
+  for the low-power graphics chip, which avoids the switch that causes most resets on laptops.
 v6.2: calmer and larger, at the Steward-General's request. The race band is much slimmer (about
   half its height on laptops; 2:1 on phones). The ignition ripples are removed (they
   read as explosions), the sea is a darker ultramarine (#0B2A72 falling to #041238) with no gold
@@ -1709,6 +1714,8 @@ If the address differs, change it in the two places it appears (search for pn-ho
 #pn-hero .pnhg-stage,
 #pn-hero .pnhg-stage canvas{ touch-action:pan-y !important; }
 #pn-hero .pnhg-stage canvas{ display:block; outline:none; }
+#pn-hero .pnhg-stage.is-lost{ visibility:hidden; }
+#pn-hero .pnhg-fallback.is-still p,#pn-hero .pnhg-fallback.is-still a{ display:none; }
 
 /* ---------- Designing the Prosperity of Nations ---------- */
 #pn-hero .pnhg-sub{
@@ -2419,7 +2426,7 @@ window.PNHG_CFG={"base":"https://perfectnations.org/blueprints/","paths":{"cote-
     var home = { lat: 6, lng: 24, altitude: fitAltitude(box) };
     var hovered = null;
 
-    var globe = Globe({ animateIn: false })(stage)
+    var globe = Globe({ animateIn: false, rendererConfig: { antialias: true, alpha: true, powerPreference: 'low-power' } })(stage)
       .width(box.w).height(box.h)
       .backgroundColor('rgba(0,0,0,0)')
       .showAtmosphere(true)
@@ -2573,6 +2580,29 @@ window.PNHG_CFG={"base":"https://perfectnations.org/blueprints/","paths":{"cote-
       var pr = Math.min(window.devicePixelRatio || 1, capPR);
       globe.renderer().setPixelRatio(pr);
       if (fleckMat) { fleckMat.uniforms.uPR.value = pr; }
+    } catch (e) {}
+
+    /* v6.3: a graphics reset shows the still planet, never a blank panel; the moving planet returns
+       when the browser restores the surface */
+    try {
+      var cvs = globe.renderer().domElement;
+      cvs.addEventListener('webglcontextlost', function(ev){
+        ev.preventDefault();
+        stage.classList.add('is-lost');
+        if (fallback){
+          fallback.classList.remove('is-waiting', 'is-fading');
+          fallback.classList.add('is-still');
+          fallback.hidden = false;
+        }
+      }, false);
+      cvs.addEventListener('webglcontextrestored', function(){
+        stage.classList.remove('is-lost');
+        try { relight(); } catch (e) {}
+        if (fallback && !fallback.hidden){
+          fallback.classList.add('is-fading');
+          window.setTimeout(function(){ fallback.classList.remove('is-fading', 'is-still'); fallback.hidden = true; }, reduce ? 0 : 520);
+        }
+      }, false);
     } catch (e) {}
 
     var controls = globe.controls();
