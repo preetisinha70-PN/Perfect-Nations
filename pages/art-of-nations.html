@@ -1,5 +1,5 @@
 <!-- ===========================================================================
-PERFECT NATIONS - ART OF NATIONS (THE PERFECT NATIONS GALLERY) - v4.0 - 2026-11-07
+PERFECT NATIONS - ART OF NATIONS (THE PERFECT NATIONS GALLERY) - v4.1 - 2026-11-07
 The whole Gallery page in one file: perfectnations.org/perfect-nations-gallery/ (page 16839).
 Root id pn-art. The page's Elementor Custom HTML widget already contains pn-art, so the Perfect
 Nations Live Pages plugin serves this file in its place: nothing needs pasting.
@@ -11,8 +11,11 @@ the visitor; an ivory gallery wall; Earthrise for the books. The paintings bring
 work carries a small swatch of its nation's colours. Images use the copies WordPress makes (the
 9.3 MB Rwanda upload is never loaded). One viewer for paintings and book pages. Ready for a shop:
 a work with a buy_url shows Buy beside Enquire.
+v4.1 (7 Nov 2026): every work names its artist, Preeti Sinha (cards, hero, viewer). Botanical
+Origins, the garden painting the series grew from, opens the gallery wall ("Where it began"),
+shown whole in a landscape frame; it is not counted among the 195 nation portraits.
 =========================================================================== -->
-<div id="pn-art" class="aon" data-version="4.0">
+<div id="pn-art" class="aon" data-version="4.1">
 <style>
 #pn-art{
   --er:#0B3D45; --lag:#0F4C5C; --dep:#082A30; --iv:#F4ECD8; --ivt:rgba(244,236,216,.84); --ivd:rgba(244,236,216,.62);
@@ -173,6 +176,26 @@ a work with a buy_url shows Buy beside Enquire.
 #pn-art .aon-card .aon-frame:hover img{ transform:scale(1.035); }
 #pn-art .aon-card .aon-nation{ margin-top:14px; color:var(--inkd); }
 #pn-art .aon-card .aon-h3{ color:var(--ink); }
+#pn-art .aon-by{ display:block; margin:3px 0 0; font-family:var(--bd); font-size:.9rem; font-weight:500; letter-spacing:.01em; color:var(--inkd); }
+#pn-art .aon-cap .aon-by{ margin-top:2px; font-size:.86rem; color:var(--ivd); }
+/* the origin: the artist's founding work, shown whole in a landscape frame */
+#pn-art .aon-origin{ display:grid; grid-template-columns:minmax(0,1fr); gap:16px; align-items:center; margin:0 0 clamp(26px,4vh,44px); padding-bottom:clamp(22px,3.4vh,36px); border-bottom:1px solid rgba(126,90,12,.28); }
+#pn-art .aon-origin .aon-frame{ max-width:640px; }
+#pn-art .aon-pic--land{ aspect-ratio:var(--ar,4/3); }
+#pn-art .aon-origin .aon-h2{ font-size:clamp(2.1rem,4.2vw,3.9rem); color:var(--ink); }
+#pn-art .aon-origin .aon-by{ margin-top:6px; font-family:var(--hd); font-size:clamp(1.05rem,1.5vw,1.3rem); font-weight:600; letter-spacing:.02em; color:var(--tc); }
+#pn-art .aon-origin .aon-stmt{ max-width:44ch; margin-top:10px; font-size:clamp(1rem,1.2vw,1.1rem); }
+#pn-art .aon-origin .aon-k{ margin:10px 0 0; font-family:var(--hd); font-size:.68rem; font-weight:700; letter-spacing:.16em; text-transform:uppercase; color:var(--inkd); }
+#pn-art .aon-origin .aon-acts{ display:flex; flex-wrap:wrap; gap:10px; margin-top:16px; }
+#pn-art .aon-origin .aon-frame:hover img{ transform:scale(1.025); }
+@media (min-width:900px){
+  #pn-art .aon-origin{ grid-template-columns:minmax(0,1.12fr) minmax(0,.88fr); column-gap:clamp(30px,4.4vw,64px); }
+}
+@media (max-width:599px){
+  #pn-art .aon-origin .aon-acts{ display:grid; grid-template-columns:1fr 1fr; }
+  #pn-art .aon-origin .aon-acts .aon-btn{ padding-left:10px !important; padding-right:10px !important; }
+  #pn-art .aon-card .aon-by{ font-size:.8rem; }
+}
 #pn-art .aon-stmt{ margin:6px 0 0; font-size:clamp(.92rem,1vw,1rem); line-height:1.45; color:var(--inkm); }
 #pn-art .aon-price{ margin:8px 0 0; font-family:var(--hd); font-size:1.3rem; font-weight:600; color:var(--gd); }
 #pn-art .aon-chip{ align-self:flex-start; margin:8px 0 0; padding:4px 10px 3px; border-radius:999px; border:1px solid rgba(26,20,12,.25); font-family:var(--hd); font-size:.62rem; font-weight:700; letter-spacing:.18em; text-transform:uppercase; color:var(--inkm); }
@@ -298,12 +321,12 @@ a work with a buy_url shows Buy beside Enquire.
     </div>
     <figure class="aon-stage" aria-label="Featured paintings">
       <div class="aon-tilt">
-        <a class="aon-frame aon-frame--hero" href="https://perfectnations.org/wp-content/uploads/2026/07/afghanistan-hindu-kush-in-bloom.png.png" data-open="0" aria-label="Open Hindu Kush in Bloom at full size">
+        <a class="aon-frame aon-frame--hero" href="https://perfectnations.org/wp-content/uploads/2026/07/afghanistan-hindu-kush-in-bloom.png.png" data-open="1" aria-label="Open Hindu Kush in Bloom at full size">
           <span class="aon-mat"><span class="aon-pic"><img class="aon-slide is-on" src="https://perfectnations.org/wp-content/uploads/2026/07/afghanistan-hindu-kush-in-bloom.png-768x768.png" srcset="https://perfectnations.org/wp-content/uploads/2026/07/afghanistan-hindu-kush-in-bloom.png-300x300.png 300w, https://perfectnations.org/wp-content/uploads/2026/07/afghanistan-hindu-kush-in-bloom.png-600x600.png 600w, https://perfectnations.org/wp-content/uploads/2026/07/afghanistan-hindu-kush-in-bloom.png-768x768.png 768w" sizes="(min-width:900px) 560px, 92vw" alt="Hindu Kush in Bloom: the Afghan mountains redrawn as a radiant flowering peak in black, red and green, with a pomegranate trailing beside it" width="768" height="768" fetchpriority="high" decoding="async"><img class="aon-slide" alt="" aria-hidden="true" width="768" height="768" decoding="async" sizes="(min-width:900px) 560px, 92vw"></span></span>
         </a>
       </div>
       <figcaption class="aon-cap">
-        <span aria-live="polite"><span class="aon-nation"><i class="aon-sw" style="--sw:linear-gradient(90deg,#000000 0.00% 33.33%,#BE0000 33.33% 66.67%,#007A36 66.67% 100.00%)"></i><span data-cap-nation>Afghanistan</span></span><strong class="aon-cap__title" data-cap-title>Hindu Kush in Bloom</strong></span>
+        <span aria-live="polite"><span class="aon-nation"><i class="aon-sw" style="--sw:linear-gradient(90deg,#000000 0.00% 33.33%,#BE0000 33.33% 66.67%,#007A36 66.67% 100.00%)"></i><span data-cap-nation>Afghanistan</span></span><strong class="aon-cap__title" data-cap-title>Hindu Kush in Bloom</strong><span class="aon-by" data-cap-by>by Preeti Sinha</span></span>
         <span class="aon-cap__nav">
           <button class="aon-round" type="button" data-hero="-1" aria-label="Previous painting"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M19 12H5M11 6l-6 6 6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
           <span class="aon-count" data-cap-count>01 / 04</span>
@@ -312,7 +335,7 @@ a work with a buy_url shows Buy beside Enquire.
       </figcaption>
     </figure>
     <div class="aon-hero__foot">
-      <p class="aon-lead">Each nation, painted as a living bloom: its mountains, coasts and colours redrawn in acrylic, one of one. A portrait for every one of the 195 nations.</p>
+      <p class="aon-lead">Each nation, painted by Preeti Sinha as a living bloom: its mountains, coasts and colours redrawn in acrylic, one of one. A portrait for every one of the 195 nations.</p>
       <p class="aon-pillars">Culture as capital<b>&#183;</b>Identity as asset<b>&#183;</b>Beauty as public value</p>
       <div class="aon-tally">
         <p class="aon-tally__n"><strong>4</strong> of 195 nations painted</p>
@@ -328,36 +351,51 @@ a work with a buy_url shows Buy beside Enquire.
 
 <section class="aon-band aon-wall" id="aon-works" aria-labelledby="aon-works-h">
   <div class="aon-in">
+    <div class="aon-origin aon-rv" id="aon-botanical-origins" data-work data-title="Botanical Origins" data-artist="Preeti Sinha" data-statement="The garden painting from which the Art of Nations grew. Its fern, dotted leaves, coral flowers and red feather now run through the pages of Perfect Nations." data-spec="Original painting" data-alt="Botanical Origins by Preeti Sinha: a garden painted in ochre, sky blue, coral and cobalt, with a sweeping green fern, dotted leaves, coral flowers, striped seed pods, a red feather and a yellow bowl" data-zoom="https://perfectnations.org/wp-content/uploads/2026/11/pn-art-botanical-origins-preeti-sinha-1536x1178.jpg" data-src="https://perfectnations.org/wp-content/uploads/2026/11/pn-art-botanical-origins-preeti-sinha-768x589.jpg" data-srcset="https://perfectnations.org/wp-content/uploads/2026/11/pn-art-botanical-origins-preeti-sinha-300x230.jpg 300w, https://perfectnations.org/wp-content/uploads/2026/11/pn-art-botanical-origins-preeti-sinha-768x589.jpg 768w" data-enquire="https://perfectnations.org/contact/?about=original-botanical-origins">
+      <a class="aon-frame" href="https://perfectnations.org/wp-content/uploads/2026/11/pn-art-botanical-origins-preeti-sinha-1536x1178.jpg" data-open="0" aria-label="Open Botanical Origins by Preeti Sinha at full size"><span class="aon-mat"><span class="aon-pic aon-pic--land" style="--ar:1600/1227"><img src="https://perfectnations.org/wp-content/uploads/2026/11/pn-art-botanical-origins-preeti-sinha-768x589.jpg" srcset="https://perfectnations.org/wp-content/uploads/2026/11/pn-art-botanical-origins-preeti-sinha-300x230.jpg 300w, https://perfectnations.org/wp-content/uploads/2026/11/pn-art-botanical-origins-preeti-sinha-768x589.jpg 768w" sizes="(min-width:900px) 600px, 92vw" alt="Botanical Origins by Preeti Sinha: a garden painted in ochre, sky blue, coral and cobalt, with a sweeping green fern, dotted leaves, coral flowers, striped seed pods, a red feather and a yellow bowl" width="1600" height="1227" loading="lazy" decoding="async"></span></span></a>
+      <div class="aon-origin__txt">
+        <p class="aon-eb">Where it began</p>
+        <h2 class="aon-h2">Botanical Origins</h2>
+        <p class="aon-by">by Preeti Sinha</p>
+        <p class="aon-stmt">The garden painting from which the Art of Nations grew. Its fern, dotted leaves, coral flowers and red feather now run through the pages of Perfect Nations.</p>
+        <p class="aon-k">Original painting</p>
+        <div class="aon-acts"><a class="aon-btn aon-btn--sm aon-btn--line" href="https://perfectnations.org/wp-content/uploads/2026/11/pn-art-botanical-origins-preeti-sinha-1536x1178.jpg" data-open="0">View it whole</a><a class="aon-btn aon-btn--sm" href="https://perfectnations.org/contact/?about=original-botanical-origins">Enquire</a></div>
+      </div>
+    </div>
     <div class="aon-head">
       <div><p class="aon-eb">Original paintings</p><h2 class="aon-h2" id="aon-works-h">The nation, as a living bloom</h2></div>
       <p class="aon-note">Acrylic on canvas, 24 &#215; 24 in, one of one and signed. Every painting is offered by private enquiry.</p>
     </div>
     <div class="aon-grid">
-      <article class="aon-card aon-rv" id="aon-afghanistan" data-nation="Afghanistan" data-title="Hindu Kush in Bloom" data-statement="The Hindu Kush rises as a flame-shaped bloom in the flag&#8217;s black, red and green." data-spec="One of one &#183; Acrylic on canvas &#183; 24 &#215; 24 in &#183; signed" data-alt="Hindu Kush in Bloom: the Afghan mountains redrawn as a radiant flowering peak in black, red and green, with a pomegranate trailing beside it" data-zoom="https://perfectnations.org/wp-content/uploads/2026/07/afghanistan-hindu-kush-in-bloom.png.png" data-src="https://perfectnations.org/wp-content/uploads/2026/07/afghanistan-hindu-kush-in-bloom.png-768x768.png" data-srcset="https://perfectnations.org/wp-content/uploads/2026/07/afghanistan-hindu-kush-in-bloom.png-300x300.png 300w, https://perfectnations.org/wp-content/uploads/2026/07/afghanistan-hindu-kush-in-bloom.png-600x600.png 600w, https://perfectnations.org/wp-content/uploads/2026/07/afghanistan-hindu-kush-in-bloom.png-768x768.png 768w" data-sw="linear-gradient(90deg,#000000 0.00% 33.33%,#BE0000 33.33% 66.67%,#007A36 66.67% 100.00%)" data-enquire="https://perfectnations.org/contact/?about=original-afghanistan">
-        <a class="aon-frame" href="https://perfectnations.org/wp-content/uploads/2026/07/afghanistan-hindu-kush-in-bloom.png.png" data-open="0" aria-label="Open Hindu Kush in Bloom at full size"><span class="aon-mat"><span class="aon-pic"><img src="https://perfectnations.org/wp-content/uploads/2026/07/afghanistan-hindu-kush-in-bloom.png-600x600.png" srcset="https://perfectnations.org/wp-content/uploads/2026/07/afghanistan-hindu-kush-in-bloom.png-300x300.png 300w, https://perfectnations.org/wp-content/uploads/2026/07/afghanistan-hindu-kush-in-bloom.png-600x600.png 600w, https://perfectnations.org/wp-content/uploads/2026/07/afghanistan-hindu-kush-in-bloom.png-768x768.png 768w" sizes="(min-width:1100px) 250px, (min-width:600px) 44vw, 44vw" alt="Hindu Kush in Bloom: the Afghan mountains redrawn as a radiant flowering peak in black, red and green, with a pomegranate trailing beside it" width="600" height="600" loading="lazy" decoding="async"></span></span></a>
+      <article class="aon-card aon-rv" id="aon-afghanistan" data-work data-nation="Afghanistan" data-title="Hindu Kush in Bloom" data-artist="Preeti Sinha" data-statement="The Hindu Kush rises as a flame-shaped bloom in the flag&#8217;s black, red and green." data-spec="One of one &#183; Acrylic on canvas &#183; 24 &#215; 24 in &#183; signed" data-alt="Hindu Kush in Bloom: the Afghan mountains redrawn as a radiant flowering peak in black, red and green, with a pomegranate trailing beside it" data-zoom="https://perfectnations.org/wp-content/uploads/2026/07/afghanistan-hindu-kush-in-bloom.png.png" data-src="https://perfectnations.org/wp-content/uploads/2026/07/afghanistan-hindu-kush-in-bloom.png-768x768.png" data-srcset="https://perfectnations.org/wp-content/uploads/2026/07/afghanistan-hindu-kush-in-bloom.png-300x300.png 300w, https://perfectnations.org/wp-content/uploads/2026/07/afghanistan-hindu-kush-in-bloom.png-600x600.png 600w, https://perfectnations.org/wp-content/uploads/2026/07/afghanistan-hindu-kush-in-bloom.png-768x768.png 768w" data-sw="linear-gradient(90deg,#000000 0.00% 33.33%,#BE0000 33.33% 66.67%,#007A36 66.67% 100.00%)" data-enquire="https://perfectnations.org/contact/?about=original-afghanistan">
+        <a class="aon-frame" href="https://perfectnations.org/wp-content/uploads/2026/07/afghanistan-hindu-kush-in-bloom.png.png" data-open="1" aria-label="Open Hindu Kush in Bloom by Preeti Sinha at full size"><span class="aon-mat"><span class="aon-pic"><img src="https://perfectnations.org/wp-content/uploads/2026/07/afghanistan-hindu-kush-in-bloom.png-600x600.png" srcset="https://perfectnations.org/wp-content/uploads/2026/07/afghanistan-hindu-kush-in-bloom.png-300x300.png 300w, https://perfectnations.org/wp-content/uploads/2026/07/afghanistan-hindu-kush-in-bloom.png-600x600.png 600w, https://perfectnations.org/wp-content/uploads/2026/07/afghanistan-hindu-kush-in-bloom.png-768x768.png 768w" sizes="(min-width:1100px) 250px, (min-width:600px) 44vw, 44vw" alt="Hindu Kush in Bloom: the Afghan mountains redrawn as a radiant flowering peak in black, red and green, with a pomegranate trailing beside it" width="600" height="600" loading="lazy" decoding="async"></span></span></a>
         <p class="aon-nation"><i class="aon-sw" style="--sw:linear-gradient(90deg,#000000 0.00% 33.33%,#BE0000 33.33% 66.67%,#007A36 66.67% 100.00%)"></i>Afghanistan</p>
         <h3 class="aon-h3">Hindu Kush in Bloom</h3>
+        <p class="aon-by">by Preeti Sinha</p>
         <p class="aon-stmt">The Hindu Kush rises as a flame-shaped bloom in the flag&#8217;s black, red and green.</p>
         <div class="aon-acts"><a class="aon-btn aon-btn--sm" href="https://perfectnations.org/contact/?about=original-afghanistan">Enquire</a></div>
       </article>
-      <article class="aon-card aon-rv" id="aon-barbados" data-nation="Barbados" data-title="The Trident in Bloom" data-statement="Where the old flag breaks, this one begins again, in ultramarine and gold." data-spec="One of one &#183; Acrylic on canvas &#183; 24 &#215; 24 in &#183; signed" data-alt="The Trident in Bloom: the broken trident of Barbados opening into a botanical bloom in ultramarine and gold, with sugarcane trailing beside it" data-zoom="https://perfectnations.org/wp-content/uploads/2026/07/barbado-trident-in-bloom.png" data-src="https://perfectnations.org/wp-content/uploads/2026/07/barbado-trident-in-bloom-768x768.png" data-srcset="https://perfectnations.org/wp-content/uploads/2026/07/barbado-trident-in-bloom-300x300.png 300w, https://perfectnations.org/wp-content/uploads/2026/07/barbado-trident-in-bloom-600x600.png 600w, https://perfectnations.org/wp-content/uploads/2026/07/barbado-trident-in-bloom-768x768.png 768w" data-sw="linear-gradient(90deg,#00267F 0.00% 50.00%,#FFC726 50.00% 100.00%)" data-enquire="https://perfectnations.org/contact/?about=original-barbados">
-        <a class="aon-frame" href="https://perfectnations.org/wp-content/uploads/2026/07/barbado-trident-in-bloom.png" data-open="1" aria-label="Open The Trident in Bloom at full size"><span class="aon-mat"><span class="aon-pic"><img src="https://perfectnations.org/wp-content/uploads/2026/07/barbado-trident-in-bloom-600x600.png" srcset="https://perfectnations.org/wp-content/uploads/2026/07/barbado-trident-in-bloom-300x300.png 300w, https://perfectnations.org/wp-content/uploads/2026/07/barbado-trident-in-bloom-600x600.png 600w, https://perfectnations.org/wp-content/uploads/2026/07/barbado-trident-in-bloom-768x768.png 768w" sizes="(min-width:1100px) 250px, (min-width:600px) 44vw, 44vw" alt="The Trident in Bloom: the broken trident of Barbados opening into a botanical bloom in ultramarine and gold, with sugarcane trailing beside it" width="600" height="600" loading="lazy" decoding="async"></span></span></a>
+      <article class="aon-card aon-rv" id="aon-barbados" data-work data-nation="Barbados" data-title="The Trident in Bloom" data-artist="Preeti Sinha" data-statement="Where the old flag breaks, this one begins again, in ultramarine and gold." data-spec="One of one &#183; Acrylic on canvas &#183; 24 &#215; 24 in &#183; signed" data-alt="The Trident in Bloom: the broken trident of Barbados opening into a botanical bloom in ultramarine and gold, with sugarcane trailing beside it" data-zoom="https://perfectnations.org/wp-content/uploads/2026/07/barbado-trident-in-bloom.png" data-src="https://perfectnations.org/wp-content/uploads/2026/07/barbado-trident-in-bloom-768x768.png" data-srcset="https://perfectnations.org/wp-content/uploads/2026/07/barbado-trident-in-bloom-300x300.png 300w, https://perfectnations.org/wp-content/uploads/2026/07/barbado-trident-in-bloom-600x600.png 600w, https://perfectnations.org/wp-content/uploads/2026/07/barbado-trident-in-bloom-768x768.png 768w" data-sw="linear-gradient(90deg,#00267F 0.00% 50.00%,#FFC726 50.00% 100.00%)" data-enquire="https://perfectnations.org/contact/?about=original-barbados">
+        <a class="aon-frame" href="https://perfectnations.org/wp-content/uploads/2026/07/barbado-trident-in-bloom.png" data-open="2" aria-label="Open The Trident in Bloom by Preeti Sinha at full size"><span class="aon-mat"><span class="aon-pic"><img src="https://perfectnations.org/wp-content/uploads/2026/07/barbado-trident-in-bloom-600x600.png" srcset="https://perfectnations.org/wp-content/uploads/2026/07/barbado-trident-in-bloom-300x300.png 300w, https://perfectnations.org/wp-content/uploads/2026/07/barbado-trident-in-bloom-600x600.png 600w, https://perfectnations.org/wp-content/uploads/2026/07/barbado-trident-in-bloom-768x768.png 768w" sizes="(min-width:1100px) 250px, (min-width:600px) 44vw, 44vw" alt="The Trident in Bloom: the broken trident of Barbados opening into a botanical bloom in ultramarine and gold, with sugarcane trailing beside it" width="600" height="600" loading="lazy" decoding="async"></span></span></a>
         <p class="aon-nation"><i class="aon-sw" style="--sw:linear-gradient(90deg,#00267F 0.00% 50.00%,#FFC726 50.00% 100.00%)"></i>Barbados</p>
         <h3 class="aon-h3">The Trident in Bloom</h3>
+        <p class="aon-by">by Preeti Sinha</p>
         <p class="aon-stmt">Where the old flag breaks, this one begins again, in ultramarine and gold.</p>
         <div class="aon-acts"><a class="aon-btn aon-btn--sm" href="https://perfectnations.org/contact/?about=original-barbados">Enquire</a></div>
       </article>
-      <article class="aon-card aon-rv" id="aon-kenya" data-nation="Kenya" data-title="Mount Kenya in Bloom" data-statement="The mountain that names the nation flowers in black, red, green and white." data-spec="One of one &#183; Acrylic on canvas &#183; 24 &#215; 24 in &#183; signed" data-alt="Mount Kenya in Bloom: the snow peak of Mount Kenya redrawn as a radiant flowering summit in black, red, green and white" data-zoom="https://perfectnations.org/wp-content/uploads/2026/10/vibrant-floral-artwork-mountain.png" data-src="https://perfectnations.org/wp-content/uploads/2026/10/vibrant-floral-artwork-mountain-768x960.png" data-srcset="https://perfectnations.org/wp-content/uploads/2026/10/vibrant-floral-artwork-mountain-300x300.png 300w, https://perfectnations.org/wp-content/uploads/2026/10/vibrant-floral-artwork-mountain-600x750.png 600w, https://perfectnations.org/wp-content/uploads/2026/10/vibrant-floral-artwork-mountain-768x960.png 768w" data-sw="linear-gradient(90deg,#000000 0.00% 25.00%,#BB0000 25.00% 50.00%,#006600 50.00% 75.00%,#FFFFFF 75.00% 100.00%)" data-enquire="https://perfectnations.org/contact/?about=original-kenya">
-        <a class="aon-frame" href="https://perfectnations.org/wp-content/uploads/2026/10/vibrant-floral-artwork-mountain.png" data-open="2" aria-label="Open Mount Kenya in Bloom at full size"><span class="aon-mat"><span class="aon-pic"><img src="https://perfectnations.org/wp-content/uploads/2026/10/vibrant-floral-artwork-mountain-600x750.png" srcset="https://perfectnations.org/wp-content/uploads/2026/10/vibrant-floral-artwork-mountain-300x300.png 300w, https://perfectnations.org/wp-content/uploads/2026/10/vibrant-floral-artwork-mountain-600x750.png 600w, https://perfectnations.org/wp-content/uploads/2026/10/vibrant-floral-artwork-mountain-768x960.png 768w" sizes="(min-width:1100px) 250px, (min-width:600px) 44vw, 44vw" alt="Mount Kenya in Bloom: the snow peak of Mount Kenya redrawn as a radiant flowering summit in black, red, green and white" width="600" height="600" loading="lazy" decoding="async"></span></span></a>
+      <article class="aon-card aon-rv" id="aon-kenya" data-work data-nation="Kenya" data-title="Mount Kenya in Bloom" data-artist="Preeti Sinha" data-statement="The mountain that names the nation flowers in black, red, green and white." data-spec="One of one &#183; Acrylic on canvas &#183; 24 &#215; 24 in &#183; signed" data-alt="Mount Kenya in Bloom: the snow peak of Mount Kenya redrawn as a radiant flowering summit in black, red, green and white" data-zoom="https://perfectnations.org/wp-content/uploads/2026/10/vibrant-floral-artwork-mountain.png" data-src="https://perfectnations.org/wp-content/uploads/2026/10/vibrant-floral-artwork-mountain-768x960.png" data-srcset="https://perfectnations.org/wp-content/uploads/2026/10/vibrant-floral-artwork-mountain-300x300.png 300w, https://perfectnations.org/wp-content/uploads/2026/10/vibrant-floral-artwork-mountain-600x750.png 600w, https://perfectnations.org/wp-content/uploads/2026/10/vibrant-floral-artwork-mountain-768x960.png 768w" data-sw="linear-gradient(90deg,#000000 0.00% 25.00%,#BB0000 25.00% 50.00%,#006600 50.00% 75.00%,#FFFFFF 75.00% 100.00%)" data-enquire="https://perfectnations.org/contact/?about=original-kenya">
+        <a class="aon-frame" href="https://perfectnations.org/wp-content/uploads/2026/10/vibrant-floral-artwork-mountain.png" data-open="3" aria-label="Open Mount Kenya in Bloom by Preeti Sinha at full size"><span class="aon-mat"><span class="aon-pic"><img src="https://perfectnations.org/wp-content/uploads/2026/10/vibrant-floral-artwork-mountain-600x750.png" srcset="https://perfectnations.org/wp-content/uploads/2026/10/vibrant-floral-artwork-mountain-300x300.png 300w, https://perfectnations.org/wp-content/uploads/2026/10/vibrant-floral-artwork-mountain-600x750.png 600w, https://perfectnations.org/wp-content/uploads/2026/10/vibrant-floral-artwork-mountain-768x960.png 768w" sizes="(min-width:1100px) 250px, (min-width:600px) 44vw, 44vw" alt="Mount Kenya in Bloom: the snow peak of Mount Kenya redrawn as a radiant flowering summit in black, red, green and white" width="600" height="600" loading="lazy" decoding="async"></span></span></a>
         <p class="aon-nation"><i class="aon-sw" style="--sw:linear-gradient(90deg,#000000 0.00% 25.00%,#BB0000 25.00% 50.00%,#006600 50.00% 75.00%,#FFFFFF 75.00% 100.00%)"></i>Kenya</p>
         <h3 class="aon-h3">Mount Kenya in Bloom</h3>
+        <p class="aon-by">by Preeti Sinha</p>
         <p class="aon-stmt">The mountain that names the nation flowers in black, red, green and white.</p>
         <div class="aon-acts"><a class="aon-btn aon-btn--sm" href="https://perfectnations.org/contact/?about=original-kenya">Enquire</a></div>
       </article>
-      <article class="aon-card aon-rv" id="aon-rwanda" data-nation="Rwanda" data-title="The Thousand Hills in Bloom" data-statement="A thousand hills unfold as a flowering wave in blue, yellow and green." data-spec="One of one &#183; Acrylic on canvas &#183; 24 &#215; 24 in &#183; signed" data-alt="The Thousand Hills in Bloom: the rolling hills of Rwanda redrawn as a radiant flowering wave in blue, yellow and green" data-zoom="https://perfectnations.org/wp-content/uploads/2026/08/Thousand-Hills-in-Bloom-Rwanda-1-1157x1536.png" data-src="https://perfectnations.org/wp-content/uploads/2026/08/Thousand-Hills-in-Bloom-Rwanda-1-768x1020.png" data-srcset="https://perfectnations.org/wp-content/uploads/2026/08/Thousand-Hills-in-Bloom-Rwanda-1-300x300.png 300w, https://perfectnations.org/wp-content/uploads/2026/08/Thousand-Hills-in-Bloom-Rwanda-1-600x797.png 600w, https://perfectnations.org/wp-content/uploads/2026/08/Thousand-Hills-in-Bloom-Rwanda-1-768x1020.png 768w" data-sw="linear-gradient(90deg,#00A1DE 0.00% 33.33%,#FAD201 33.33% 66.67%,#20603D 66.67% 100.00%)" data-enquire="https://perfectnations.org/contact/?about=original-rwanda">
-        <a class="aon-frame" href="https://perfectnations.org/wp-content/uploads/2026/08/Thousand-Hills-in-Bloom-Rwanda-1-1157x1536.png" data-open="3" aria-label="Open The Thousand Hills in Bloom at full size"><span class="aon-mat"><span class="aon-pic"><img src="https://perfectnations.org/wp-content/uploads/2026/08/Thousand-Hills-in-Bloom-Rwanda-1-600x797.png" srcset="https://perfectnations.org/wp-content/uploads/2026/08/Thousand-Hills-in-Bloom-Rwanda-1-300x300.png 300w, https://perfectnations.org/wp-content/uploads/2026/08/Thousand-Hills-in-Bloom-Rwanda-1-600x797.png 600w, https://perfectnations.org/wp-content/uploads/2026/08/Thousand-Hills-in-Bloom-Rwanda-1-768x1020.png 768w" sizes="(min-width:1100px) 250px, (min-width:600px) 44vw, 44vw" alt="The Thousand Hills in Bloom: the rolling hills of Rwanda redrawn as a radiant flowering wave in blue, yellow and green" width="600" height="600" loading="lazy" decoding="async"></span></span></a>
+      <article class="aon-card aon-rv" id="aon-rwanda" data-work data-nation="Rwanda" data-title="The Thousand Hills in Bloom" data-artist="Preeti Sinha" data-statement="A thousand hills unfold as a flowering wave in blue, yellow and green." data-spec="One of one &#183; Acrylic on canvas &#183; 24 &#215; 24 in &#183; signed" data-alt="The Thousand Hills in Bloom: the rolling hills of Rwanda redrawn as a radiant flowering wave in blue, yellow and green" data-zoom="https://perfectnations.org/wp-content/uploads/2026/08/Thousand-Hills-in-Bloom-Rwanda-1-1157x1536.png" data-src="https://perfectnations.org/wp-content/uploads/2026/08/Thousand-Hills-in-Bloom-Rwanda-1-768x1020.png" data-srcset="https://perfectnations.org/wp-content/uploads/2026/08/Thousand-Hills-in-Bloom-Rwanda-1-300x300.png 300w, https://perfectnations.org/wp-content/uploads/2026/08/Thousand-Hills-in-Bloom-Rwanda-1-600x797.png 600w, https://perfectnations.org/wp-content/uploads/2026/08/Thousand-Hills-in-Bloom-Rwanda-1-768x1020.png 768w" data-sw="linear-gradient(90deg,#00A1DE 0.00% 33.33%,#FAD201 33.33% 66.67%,#20603D 66.67% 100.00%)" data-enquire="https://perfectnations.org/contact/?about=original-rwanda">
+        <a class="aon-frame" href="https://perfectnations.org/wp-content/uploads/2026/08/Thousand-Hills-in-Bloom-Rwanda-1-1157x1536.png" data-open="4" aria-label="Open The Thousand Hills in Bloom by Preeti Sinha at full size"><span class="aon-mat"><span class="aon-pic"><img src="https://perfectnations.org/wp-content/uploads/2026/08/Thousand-Hills-in-Bloom-Rwanda-1-600x797.png" srcset="https://perfectnations.org/wp-content/uploads/2026/08/Thousand-Hills-in-Bloom-Rwanda-1-300x300.png 300w, https://perfectnations.org/wp-content/uploads/2026/08/Thousand-Hills-in-Bloom-Rwanda-1-600x797.png 600w, https://perfectnations.org/wp-content/uploads/2026/08/Thousand-Hills-in-Bloom-Rwanda-1-768x1020.png 768w" sizes="(min-width:1100px) 250px, (min-width:600px) 44vw, 44vw" alt="The Thousand Hills in Bloom: the rolling hills of Rwanda redrawn as a radiant flowering wave in blue, yellow and green" width="600" height="600" loading="lazy" decoding="async"></span></span></a>
         <p class="aon-nation"><i class="aon-sw" style="--sw:linear-gradient(90deg,#00A1DE 0.00% 33.33%,#FAD201 33.33% 66.67%,#20603D 66.67% 100.00%)"></i>Rwanda</p>
         <h3 class="aon-h3">The Thousand Hills in Bloom</h3>
+        <p class="aon-by">by Preeti Sinha</p>
         <p class="aon-stmt">A thousand hills unfold as a flowering wave in blue, yellow and green.</p>
         <div class="aon-acts"><a class="aon-btn aon-btn--sm" href="https://perfectnations.org/contact/?about=original-rwanda">Enquire</a></div>
       </article>
@@ -438,17 +476,20 @@ a work with a buy_url shows Buy beside Enquire.
   function $(sel,el){ return (el||root).querySelector(sel); }
   function all(sel,el){ return Array.prototype.slice.call((el||root).querySelectorAll(sel)); }
 
-  /* the works, read from the cards on the wall (one source for the hero and the viewer) */
-  var works=all('.aon-card').map(function(c){
+  /* the works, read from the wall in page order (one source for the hero and the viewer);
+     the hero turns through the nation portraits (.aon-card) only */
+  var items=all('[data-work]').map(function(c,n){
     var d=c.dataset;
-    return { nation:d.nation, title:d.title, statement:d.statement||'', spec:d.spec||'', alt:d.alt||'', zoom:d.zoom,
-      src:d.src, srcset:d.srcset||'', sw:d.sw||'', enquire:d.enquire||'', buy:d.buy||'', price:d.price||'' };
+    return { n:n, hero:c.classList.contains('aon-card'), nation:d.nation||'', title:d.title, artist:d.artist||'',
+      statement:d.statement||'', spec:d.spec||'', alt:d.alt||'', zoom:d.zoom, src:d.src, srcset:d.srcset||'',
+      sw:d.sw||'', enquire:d.enquire||'', buy:d.buy||'', price:d.price||'' };
   });
+  var works=items.filter(function(w){ return w.hero; });
 
   /* ---------- the hero: the featured painting ---------- */
   var hero=$('.aon-hero'), tilt=$('.aon-tilt'), heroLink=$('.aon-frame--hero');
   var slides=all('.aon-slide'), on=0, cur=0, timer=0, inView=true, held=false, stopped=false;
-  var capN=$('[data-cap-nation]'), capT=$('[data-cap-title]'), capC=$('[data-cap-count]'), capS=$('.aon-cap .aon-sw');
+  var capN=$('[data-cap-nation]'), capT=$('[data-cap-title]'), capB=$('[data-cap-by]'), capC=$('[data-cap-count]'), capS=$('.aon-cap .aon-sw');
   function feature(i){
     if(works.length<2||slides.length<2){ return; }
     i=(i+works.length)%works.length;
@@ -467,9 +508,9 @@ a work with a buy_url shows Buy beside Enquire.
     if(w.srcset){ next.srcset=w.srcset; }
     next.src=w.src;
     if(next.complete&&next.naturalWidth){ swap(); }
-    capN.textContent=w.nation; capT.textContent=w.title; capC.textContent=pad(i+1)+' / '+pad(works.length);
+    capN.textContent=w.nation; capT.textContent=w.title; if(capB){ capB.textContent=w.artist?'by '+w.artist:''; } capC.textContent=pad(i+1)+' / '+pad(works.length);
     if(w.sw){ capS.style.setProperty('--sw',w.sw); }
-    heroLink.href=w.zoom; heroLink.setAttribute('data-open',String(i));
+    heroLink.href=w.zoom; heroLink.setAttribute('data-open',String(w.n));
     heroLink.setAttribute('aria-label','Open '+w.title+' at full size');
   }
   function schedule(){
@@ -561,11 +602,12 @@ a work with a buy_url shows Buy beside Enquire.
       try{ $('.aon-x',view).focus({preventScroll:true}); }catch(e){}
     };
     var paintingItems=function(){
-      return works.map(function(w){
+      return items.map(function(w){
         var acts=[];
         if(w.buy){ acts.push(['Buy',w.buy,false]); }
         acts.push(['Enquire about this painting',w.enquire,!!w.buy]);
-        return { src:w.zoom, alt:w.alt, h:w.nation+' \u00b7 '+w.title, s:w.statement, k:(w.price?w.price+' \u00b7 ':'')+w.spec, acts:acts };
+        var k=[w.artist,w.price,w.spec].filter(Boolean).join(' \u00b7 ');
+        return { src:w.zoom, alt:w.alt, h:(w.nation?w.nation+' \u00b7 ':'')+w.title, s:w.statement, k:k, acts:acts };
       });
     };
     root.addEventListener('click',function(e){

@@ -77,6 +77,11 @@ for p in CAT['paintings']:
     for url, _ in p['images']:
         IMAGES[url] = data
     IMAGES[p['zoom']] = data
+for o in CAT.get('origins') or []:
+    data = stand_in(o['slug'], ['#F2C230', '#2FB58C', '#F2836B'], o['title'])
+    for url, _ in o['images']:
+        IMAGES[url] = data
+    IMAGES[o['zoom']] = data
 for b in CAT['books']:
     cover = stand_in(b['slug'], ['#0B3D45', '#E3C258', '#2FB58C'], b['title'], book=True)
     for url, _ in b['cover']:
@@ -170,6 +175,16 @@ def run():
             pg.wait_for_timeout(200)
             pg.screenshot(path=str(OUT / ('art-%s-3-page.png' % name)), full_page=True, clip={'x': 0, 'y': top, 'width': vp['width'], 'height': ph})
             wide = pg.evaluate('document.documentElement.scrollWidth')
+            origin = ''
+            if pg.locator('.aon-origin').count():
+                pg.locator('.aon-origin .aon-frame').scroll_into_view_if_needed()
+                pg.wait_for_timeout(400)
+                pg.screenshot(path=str(OUT / ('art-%s-6-origin.png' % name)))
+                pg.click('.aon-origin .aon-frame')
+                pg.wait_for_timeout(700)
+                origin = pg.inner_text('.aon-view__h') + ' | ' + pg.inner_text('.aon-view__k')
+                pg.keyboard.press('Escape')
+                pg.wait_for_timeout(300)
             pg.locator('#aon-kenya .aon-frame').scroll_into_view_if_needed()
             pg.click('#aon-kenya .aon-frame')
             pg.wait_for_timeout(900)
@@ -189,7 +204,7 @@ def run():
             book_page = pg.inner_text('.aon-view__h') + ' ' + pg.inner_text('.aon-view__n')
             pg.keyboard.press('Escape')
             report[name] = {'page height': ph, 'document width': wide, 'hero': [before, after, clicked],
-                            'viewer': [viewer_title, next_title], 'book': book_page}
+                            'viewer': [viewer_title, next_title], 'book': book_page, 'origin': origin}
             ctx.close()
         b.close()
     print(json.dumps(report, indent=2))

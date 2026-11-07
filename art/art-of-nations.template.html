@@ -11,6 +11,9 @@ the visitor; an ivory gallery wall; Earthrise for the books. The paintings bring
 work carries a small swatch of its nation's colours. Images use the copies WordPress makes (the
 9.3 MB Rwanda upload is never loaded). One viewer for paintings and book pages. Ready for a shop:
 a work with a buy_url shows Buy beside Enquire.
+v4.1 (7 Nov 2026): every work names its artist, Preeti Sinha (cards, hero, viewer). Botanical
+Origins, the garden painting the series grew from, opens the gallery wall ("Where it began"),
+shown whole in a landscape frame; it is not counted among the 195 nation portraits.
 =========================================================================== -->
 <div id="pn-art" class="aon" data-version="[[VERSION]]">
 <style>
@@ -173,6 +176,26 @@ a work with a buy_url shows Buy beside Enquire.
 #pn-art .aon-card .aon-frame:hover img{ transform:scale(1.035); }
 #pn-art .aon-card .aon-nation{ margin-top:14px; color:var(--inkd); }
 #pn-art .aon-card .aon-h3{ color:var(--ink); }
+#pn-art .aon-by{ display:block; margin:3px 0 0; font-family:var(--bd); font-size:.9rem; font-weight:500; letter-spacing:.01em; color:var(--inkd); }
+#pn-art .aon-cap .aon-by{ margin-top:2px; font-size:.86rem; color:var(--ivd); }
+/* the origin: the artist's founding work, shown whole in a landscape frame */
+#pn-art .aon-origin{ display:grid; grid-template-columns:minmax(0,1fr); gap:16px; align-items:center; margin:0 0 clamp(26px,4vh,44px); padding-bottom:clamp(22px,3.4vh,36px); border-bottom:1px solid rgba(126,90,12,.28); }
+#pn-art .aon-origin .aon-frame{ max-width:640px; }
+#pn-art .aon-pic--land{ aspect-ratio:var(--ar,4/3); }
+#pn-art .aon-origin .aon-h2{ font-size:clamp(2.1rem,4.2vw,3.9rem); color:var(--ink); }
+#pn-art .aon-origin .aon-by{ margin-top:6px; font-family:var(--hd); font-size:clamp(1.05rem,1.5vw,1.3rem); font-weight:600; letter-spacing:.02em; color:var(--tc); }
+#pn-art .aon-origin .aon-stmt{ max-width:44ch; margin-top:10px; font-size:clamp(1rem,1.2vw,1.1rem); }
+#pn-art .aon-origin .aon-k{ margin:10px 0 0; font-family:var(--hd); font-size:.68rem; font-weight:700; letter-spacing:.16em; text-transform:uppercase; color:var(--inkd); }
+#pn-art .aon-origin .aon-acts{ display:flex; flex-wrap:wrap; gap:10px; margin-top:16px; }
+#pn-art .aon-origin .aon-frame:hover img{ transform:scale(1.025); }
+@media (min-width:900px){
+  #pn-art .aon-origin{ grid-template-columns:minmax(0,1.12fr) minmax(0,.88fr); column-gap:clamp(30px,4.4vw,64px); }
+}
+@media (max-width:599px){
+  #pn-art .aon-origin .aon-acts{ display:grid; grid-template-columns:1fr 1fr; }
+  #pn-art .aon-origin .aon-acts .aon-btn{ padding-left:10px !important; padding-right:10px !important; }
+  #pn-art .aon-card .aon-by{ font-size:.8rem; }
+}
 #pn-art .aon-stmt{ margin:6px 0 0; font-size:clamp(.92rem,1vw,1rem); line-height:1.45; color:var(--inkm); }
 #pn-art .aon-price{ margin:8px 0 0; font-family:var(--hd); font-size:1.3rem; font-weight:600; color:var(--gd); }
 #pn-art .aon-chip{ align-self:flex-start; margin:8px 0 0; padding:4px 10px 3px; border-radius:999px; border:1px solid rgba(26,20,12,.25); font-family:var(--hd); font-size:.62rem; font-weight:700; letter-spacing:.18em; text-transform:uppercase; color:var(--inkm); }
@@ -298,12 +321,12 @@ a work with a buy_url shows Buy beside Enquire.
     </div>
     <figure class="aon-stage" aria-label="Featured paintings">
       <div class="aon-tilt">
-        <a class="aon-frame aon-frame--hero" href="[[FIRST_ZOOM]]" data-open="0" aria-label="Open [[FIRST_TITLE]] at full size">
+        <a class="aon-frame aon-frame--hero" href="[[FIRST_ZOOM]]" data-open="[[FIRST_INDEX]]" aria-label="Open [[FIRST_TITLE]] at full size">
           <span class="aon-mat"><span class="aon-pic"><img class="aon-slide is-on" src="[[FIRST_SRC]]" srcset="[[FIRST_SRCSET]]" sizes="(min-width:900px) 560px, 92vw" alt="[[FIRST_ALT]]" width="768" height="768" fetchpriority="high" decoding="async"><img class="aon-slide" alt="" aria-hidden="true" width="768" height="768" decoding="async" sizes="(min-width:900px) 560px, 92vw"></span></span>
         </a>
       </div>
       <figcaption class="aon-cap">
-        <span aria-live="polite"><span class="aon-nation"><i class="aon-sw" style="[[FIRST_SW]]"></i><span data-cap-nation>[[FIRST_NATION]]</span></span><strong class="aon-cap__title" data-cap-title>[[FIRST_TITLE]]</strong></span>
+        <span aria-live="polite"><span class="aon-nation"><i class="aon-sw" style="[[FIRST_SW]]"></i><span data-cap-nation>[[FIRST_NATION]]</span></span><strong class="aon-cap__title" data-cap-title>[[FIRST_TITLE]]</strong><span class="aon-by" data-cap-by>by [[FIRST_ARTIST]]</span></span>
         <span class="aon-cap__nav">
           <button class="aon-round" type="button" data-hero="-1" aria-label="Previous painting"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M19 12H5M11 6l-6 6 6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
           <span class="aon-count" data-cap-count>01 / [[COUNT2]]</span>
@@ -312,7 +335,7 @@ a work with a buy_url shows Buy beside Enquire.
       </figcaption>
     </figure>
     <div class="aon-hero__foot">
-      <p class="aon-lead">Each nation, painted as a living bloom: its mountains, coasts and colours redrawn in acrylic, one of one. A portrait for every one of the [[TOTAL]] nations.</p>
+      <p class="aon-lead">Each nation, painted by Preeti Sinha as a living bloom: its mountains, coasts and colours redrawn in acrylic, one of one. A portrait for every one of the [[TOTAL]] nations.</p>
       <p class="aon-pillars">Culture as capital<b>&#183;</b>Identity as asset<b>&#183;</b>Beauty as public value</p>
       <div class="aon-tally">
         <p class="aon-tally__n"><strong>[[COUNT]]</strong> of [[TOTAL]] nations painted</p>
@@ -328,6 +351,7 @@ a work with a buy_url shows Buy beside Enquire.
 
 <section class="aon-band aon-wall" id="aon-works" aria-labelledby="aon-works-h">
   <div class="aon-in">
+[[ORIGINS]]
     <div class="aon-head">
       <div><p class="aon-eb">Original paintings</p><h2 class="aon-h2" id="aon-works-h">The nation, as a living bloom</h2></div>
       <p class="aon-note">Acrylic on canvas, 24 &#215; 24 in, one of one and signed. Every painting is offered by private enquiry.</p>
@@ -390,17 +414,20 @@ a work with a buy_url shows Buy beside Enquire.
   function $(sel,el){ return (el||root).querySelector(sel); }
   function all(sel,el){ return Array.prototype.slice.call((el||root).querySelectorAll(sel)); }
 
-  /* the works, read from the cards on the wall (one source for the hero and the viewer) */
-  var works=all('.aon-card').map(function(c){
+  /* the works, read from the wall in page order (one source for the hero and the viewer);
+     the hero turns through the nation portraits (.aon-card) only */
+  var items=all('[data-work]').map(function(c,n){
     var d=c.dataset;
-    return { nation:d.nation, title:d.title, statement:d.statement||'', spec:d.spec||'', alt:d.alt||'', zoom:d.zoom,
-      src:d.src, srcset:d.srcset||'', sw:d.sw||'', enquire:d.enquire||'', buy:d.buy||'', price:d.price||'' };
+    return { n:n, hero:c.classList.contains('aon-card'), nation:d.nation||'', title:d.title, artist:d.artist||'',
+      statement:d.statement||'', spec:d.spec||'', alt:d.alt||'', zoom:d.zoom, src:d.src, srcset:d.srcset||'',
+      sw:d.sw||'', enquire:d.enquire||'', buy:d.buy||'', price:d.price||'' };
   });
+  var works=items.filter(function(w){ return w.hero; });
 
   /* ---------- the hero: the featured painting ---------- */
   var hero=$('.aon-hero'), tilt=$('.aon-tilt'), heroLink=$('.aon-frame--hero');
   var slides=all('.aon-slide'), on=0, cur=0, timer=0, inView=true, held=false, stopped=false;
-  var capN=$('[data-cap-nation]'), capT=$('[data-cap-title]'), capC=$('[data-cap-count]'), capS=$('.aon-cap .aon-sw');
+  var capN=$('[data-cap-nation]'), capT=$('[data-cap-title]'), capB=$('[data-cap-by]'), capC=$('[data-cap-count]'), capS=$('.aon-cap .aon-sw');
   function feature(i){
     if(works.length<2||slides.length<2){ return; }
     i=(i+works.length)%works.length;
@@ -419,9 +446,9 @@ a work with a buy_url shows Buy beside Enquire.
     if(w.srcset){ next.srcset=w.srcset; }
     next.src=w.src;
     if(next.complete&&next.naturalWidth){ swap(); }
-    capN.textContent=w.nation; capT.textContent=w.title; capC.textContent=pad(i+1)+' / '+pad(works.length);
+    capN.textContent=w.nation; capT.textContent=w.title; if(capB){ capB.textContent=w.artist?'by '+w.artist:''; } capC.textContent=pad(i+1)+' / '+pad(works.length);
     if(w.sw){ capS.style.setProperty('--sw',w.sw); }
-    heroLink.href=w.zoom; heroLink.setAttribute('data-open',String(i));
+    heroLink.href=w.zoom; heroLink.setAttribute('data-open',String(w.n));
     heroLink.setAttribute('aria-label','Open '+w.title+' at full size');
   }
   function schedule(){
@@ -513,11 +540,12 @@ a work with a buy_url shows Buy beside Enquire.
       try{ $('.aon-x',view).focus({preventScroll:true}); }catch(e){}
     };
     var paintingItems=function(){
-      return works.map(function(w){
+      return items.map(function(w){
         var acts=[];
         if(w.buy){ acts.push(['Buy',w.buy,false]); }
         acts.push(['Enquire about this painting',w.enquire,!!w.buy]);
-        return { src:w.zoom, alt:w.alt, h:w.nation+' \u00b7 '+w.title, s:w.statement, k:(w.price?w.price+' \u00b7 ':'')+w.spec, acts:acts };
+        var k=[w.artist,w.price,w.spec].filter(Boolean).join(' \u00b7 ');
+        return { src:w.zoom, alt:w.alt, h:(w.nation?w.nation+' \u00b7 ':'')+w.title, s:w.statement, k:k, acts:acts };
       });
     };
     root.addEventListener('click',function(e){
