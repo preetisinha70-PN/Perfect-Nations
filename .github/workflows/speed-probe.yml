@@ -3,39 +3,38 @@ name: speed-probe
 on:
   push:
     branches: [speed-probe-2026-11-06]
+permissions:
+  contents: write
 jobs:
   probe:
+    if: ${{ !contains(github.event.head_commit.message, 'probe results') }}
     runs-on: ubuntu-latest
     timeout-minutes: 25
     steps:
+      - uses: actions/checkout@v4
       - name: Save served pages
         run: |
-          mkdir -p out
-          UA="Mozilla/5.0 (Linux; Android 13) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120 Mobile Safari/537.36 PNSpeedProbe"
-          for p in home:/ kenya:/blueprints/kenya/ about:/about/ blueprints:/blueprints/; do
+          mkdir -p probe-out
+          UA="Mozilla/5.0 (Linux; Android 13; Pixel 7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Mobile Safari/537.36"
+          for p in home:/ kenya:/blueprints/kenya/ about:/about/; do
             n=${p%%:*}; path=${p#*:}
-            curl -s --compressed -A "$UA" -D out/$n.headers "https://perfectnations.org${path}" -o out/$n.html
-            wc -c out/$n.html
+            curl -s --compressed -A "$UA" -D probe-out/$n.headers "https://perfectnations.org${path}" -o probe-out/$n.html
           done
       - name: Lighthouse (mobile and desktop)
         run: |
           set +e
           npm i -g lighthouse@12 >/dev/null 2>&1
-          CHROME=$(which google-chrome || which chromium || which chromium-browser); echo "chrome: $CHROME"; $CHROME --version
-          export CHROME_PATH=$CHROME
+          UA="Mozilla/5.0 (Linux; Android 13; Pixel 7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Mobile Safari/537.36"
+          DUA="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36"
           for p in home:/ kenya:/blueprints/kenya/; do
             n=${p%%:*}; path=${p#*:}
-            lighthouse "https://perfectnations.org${path}" --chrome-flags="--headless --no-sandbox --disable-gpu" \
-              --only-categories=performance --output=json --output-path=out/lh-$n-mobile.json --max-wait-for-load=90000 2>&1 | tail -3
-            lighthouse "https://perfectnations.org${path}" --preset=desktop --chrome-flags="--headless --no-sandbox --disable-gpu" \
-              --only-categories=performance --output=json --output-path=out/lh-$n-desktop.json --max-wait-for-load=90000 2>&1 | tail -3
-            for f in out/lh-$n-mobile.json out/lh-$n-desktop.json; do
-              echo "== $f"; jq -r '.runtimeError // "ok"' $f
-              jq -r '"score=\(.categories.performance.score) FCP=\(.audits["first-contentful-paint"].displayValue) LCP=\(.audits["largest-contentful-paint"].displayValue) TBT=\(.audits["total-blocking-time"].displayValue) SI=\(.audits["speed-index"].displayValue) TTFB=\(.audits["server-response-time"].displayValue) weight=\(.audits["total-byte-weight"].displayValue)"' $f
-            done
+            lighthouse "https://perfectnations.org${path}" --chrome-flags="--headless --no-sandbox --user-agent='$UA'" --emulated-user-agent="$UA" \
+              --only-categories=performance --output=json --output-path=probe-out/lh-$n-mobile.json --max-wait-for-load=90000 >/dev/null 2>&1
+            lighthouse "https://perfectnations.org${path}" --preset=desktop --chrome-flags="--headless --no-sandbox --user-agent='$DUA'" --emulated-user-agent="$DUA" \
+              --only-categories=performance --output=json --output-path=probe-out/lh-$n-desktop.json --max-wait-for-load=90000 >/dev/null 2>&1
+            for f in probe-out/lh-$n-mobile.json probe-out/lh-$n-desktop.json; do echo "== $f"; jq -r '.runtimeError.message // "ok"' $f; done
           done
-      - uses: actions/upload-artifact@v4
-        with:
-          name: probe
-          path: out/
-          retention-days: 1
+      - name: Commit results to this branch
+        run: |
+          git config user.name "speed-probe"; git config user.email "noreply@github.com"
+          git add probe-out && git commit -q -m "probe results" && git push -q
