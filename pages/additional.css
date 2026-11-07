@@ -1,0 +1,499 @@
+/* Perfect Nations - Additional CSS - v1.0 - 7 November 2026
+   Served by the Live Pages plugin (1.3 and later) in place of Appearance > Customize > Additional CSS,
+   which stays in WordPress as the fallback (and wins if it is edited there).
+   Trimmed from the 148 KB copy (archive/additional-css/additional-css-original-2026-11-07.css): rules for
+   WooCommerce (switched off on 6 Nov 2026) and for page parts found on no live page were removed, after a
+   check of all 102 live pages at phone, tablet and laptop widths. Change this file through a pull request. */
+/* =========================================================================
+   1. DESIGN TOKENS
+   ========================================================================= */
+:root{/* Type families */
+  --pn-font-heading: "Barlow Condensed", sans-serif;
+  --pn-font-body:    "Barlow Semi Condensed", sans-serif;
+  --pn-font-button:  "Barlow Condensed", sans-serif;
+  --pn-font-quote:   Georgia, "Times New Roman", serif;
+
+  /* Type scale (steps down at 767px) */
+  --pn-kicker-size: 0.72rem; --pn-kicker-weight: 600; --pn-kicker-spacing: 0.16em; --pn-kicker-line: 1.2;
+  --pn-heading-primary-size: clamp(28px, 4vw, 52px); --pn-heading-primary-weight: 700;
+  --pn-heading-primary-line: 1.00; --pn-heading-primary-spacing: -0.015em;
+  --pn-heading-secondary-size: clamp(22px, 2.5vw, 34px); --pn-heading-secondary-weight: 600;
+  --pn-heading-secondary-line: 1.10; --pn-heading-secondary-spacing: -0.01em;
+  --pn-body-size: clamp(15px, 1.15vw, 19px); --pn-body-weight: 400; --pn-body-line: 1.8;
+  --pn-small-text-size: 12px; --pn-small-text-weight: 500; --pn-small-text-line: 1.5; --pn-small-text-spacing: 0.12em;
+  --pn-button-font-size: 14px; --pn-button-weight: 600; --pn-button-spacing: 0.14em;
+  --pn-button-height: 44px; --pn-button-radius: 999px;
+
+  /* WooCommerce interface controls (compact) */
+  --pn-ui-font-size: 14px; --pn-ui-font-weight: 600; --pn-ui-letter-spacing: 0.075em;
+  --pn-ui-control-height: 46px; --pn-ui-control-radius: 12px;
+  --pn-button-ink: #09101A;
+  --pn-woo-top: 40px;      /* space above WooCommerce page content. Raise if the header overlaps a title. */
+  --pn-woo-bottom: 40px;   /* space below WooCommerce page content */
+
+  /* THE ONE GOLD. Change both lines together and the whole site follows. */
+  --pn-brand-gold:     #E3C258;
+  --pn-brand-gold-rgb: 227,194,88;
+  --pn-gold:           var(--pn-brand-gold);
+  --pn-gold-rgb:       var(--pn-brand-gold-rgb);
+  --pn-accent-gold:       var(--pn-gold);
+  --pn-accent-gold-soft:  var(--pn-gold);
+  --pn-accent-gold-light: var(--pn-gold);
+  --pn-gold-bright:       var(--pn-gold);
+  --pn-gold-deep:         var(--pn-gold);
+  --pn-button-gold-top:   var(--pn-gold);
+  --pn-button-gold-mid:   var(--pn-gold);
+  --pn-button-gold-edge:  var(--pn-gold);
+  --pn-rule-gold:         rgba(var(--pn-gold-rgb),0.34);
+
+  /* Blue: reserved for live-signal moments and soft glows */
+  --pn-accent-blue: rgba(143,220,255,0.72);
+
+  /* Dark surfaces */
+  --pn-ground: #04070c;   /* the flat site background (non-commerce pages) */
+
+  /* EARTH TONES: the Perfect Nations "rooms" used on every WooCommerce page.
+     Shop and product pages are the green room, the cart is the ochre room and
+     the checkout is the laterite room. Gold stays the only actionable color. */
+  --pn-earth-green: #164A37;          --pn-earth-green-deep: #0A251C;
+  --pn-earth-ochre: #6E4A14;          --pn-earth-ochre-deep: #3E2A0B;   --pn-earth-ochre-night: #241806;
+  --pn-earth-ochre-rgb: 110,74,20;
+  --pn-earth-laterite: #8A3A22;       --pn-earth-laterite-deep: #4C1D12; --pn-earth-laterite-night: #2A100A;
+  --pn-earth-laterite-rgb: 138,58,34;
+  --pn-earth-teal: #143d40;           --pn-earth-teal-deep: #072b35;
+  --pn-earth-savanna: #F4ECD8;        --pn-earth-sand: #E2D2AE;
+  --pn-earth-umber: #241B14;          /* warm near-black for menus, plates and autofill */
+  --pn-earth-panel: rgba(4,20,14,0.42);   /* translucent deep panels */
+  --pn-earth-field: rgba(4,20,14,0.55);   /* form fields */
+  --pn-bg: #02040a; --pn-bg-2: #06101c;
+  --pn-navy: #081B2B; --pn-navy-deep: #04121D; --pn-navy-lift: #0D2739;
+  --pn-panel: rgba(255,255,255,0.060); --pn-panel-soft: rgba(255,255,255,0.034);
+
+  /* Light surfaces */
+  --pn-paper: #FFFCF2; --pn-paper-warm: #F6EFDD; --pn-paper-edge: #E4D9BE;
+
+  /* Text on dark */
+  --pn-text: #ffffff; --pn-text-strong: rgba(255,255,255,0.94); --pn-text-medium: rgba(255,255,255,0.80);
+  --pn-text-soft: rgba(255,255,255,0.76); --pn-text-faint: rgba(255,255,255,0.62);
+  --pn-muted: rgba(255,255,255,0.74); --pn-muted-2: rgba(255,255,255,0.58);
+
+  /* Text on light */
+  --pn-ink-strong: #081B2B; --pn-ink-medium: rgba(8,27,43,0.74); --pn-ink-faint: rgba(8,27,43,0.48);
+
+  /* Hairlines */
+  --pn-line: rgba(255,255,255,0.13); --pn-line-strong: rgba(255,255,255,0.20);
+  --pn-rule-on-navy: rgba(255,255,255,0.13); --pn-rule-on-paper: rgba(8,27,43,0.15);
+  --pn-line-color: rgba(255,255,255,0.58); --pn-line-width: 72px; --pn-line-height: 1px;
+
+  /* Shadow and radius */
+  --pn-shadow: 0 32px 90px rgba(0,0,0,0.44);
+  --pn-shadow-heading: 0 6px 20px rgba(0,0,0,0.24);
+  --pn-shadow-text: 0 4px 16px rgba(0,0,0,0.22);
+  --pn-radius-lg: 32px; --pn-radius-md: 22px;
+
+  /* Frame system. These six are the light and shade of one carved gilt
+     moulding, derived from the one gold. */
+  --pn-frame-cream: #F7EED0; --pn-frame-light: #EEDA9B; --pn-frame-mid: #E3C258;
+  --pn-frame-dark: #98813A; --pn-frame-deep: #4E401C; --pn-frame-black: #2D240E;
+  --pn-frame-width: 3px;
+
+  /* Layout rhythm */
+  --pn-section-y: clamp(56px, 7vw, 104px);
+  --pn-gutter: clamp(16px, 4vw, 40px);
+  --pn-measure: min(1240px, calc(100% - 2 * var(--pn-gutter)));
+
+  /* Block 00 namespace, pointed at the same gold (safety net) */
+  --png-gold: var(--pn-gold); --png-gold-soft: var(--pn-gold); --png-gold-light: var(--pn-gold);
+  --png-gold-bright: var(--pn-gold); --png-gold-deep: var(--pn-gold);}
+@media (max-width: 767px){
+:root{--pn-heading-primary-size: clamp(24px, 7vw, 40px);
+    --pn-heading-secondary-size: clamp(18px, 5vw, 26px);
+    --pn-body-size: 15px; --pn-small-text-size: 10px;
+    --pn-button-font-size: 13px; --pn-button-height: 42px;
+    --pn-woo-top: 32px; --pn-woo-bottom: 32px;}
+}
+/* =========================================================================
+   2. FOUNDATION
+   ========================================================================= */
+html,
+body{max-width: 100%; overflow-x: hidden; background: var(--pn-ground);}
+body{font-family: var(--pn-font-body); color: var(--pn-text); line-height: 1.6;}
+@media (prefers-reduced-motion: no-preference){
+html{scroll-behavior: smooth;}
+}
+/* Body font. No !important, so class or ID rules can override it. */
+body,
+p,
+li,
+blockquote,
+figcaption,
+small,
+input,
+textarea,
+select,
+label,
+table,
+td,
+th,
+a,
+span,
+div,
+.elementor-widget-text-editor,
+.elementor-widget-text-editor p,
+.elementor-post__excerpt,
+.entry-content,
+.entry-summary{font-family: var(--pn-font-body);}
+/* Heading font. Color is deliberately not !important so light sections can set their own. */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.elementor-heading-title,
+.entry-title,
+.entry-title a,
+.elementor-post__title,
+.elementor-post__title a,
+body.category .entry-title,
+body.category .entry-title a,
+body.category .elementor-post__title,
+body.category .elementor-post__title a{font-family: var(--pn-font-heading) !important;
+  letter-spacing: 0.03em; line-height: 1.05; text-transform: uppercase; color: var(--pn-text);}
+/* Button, label and nav font. [class*="btn"] matches any class containing "btn",
+   so name non-button classes carefully. */
+.elementor-button,
+.elementor-button-text,
+.ast-button,
+.ast-custom-button,
+.wp-element-button,
+button,
+.menu-item a,
+.main-navigation a,
+.button,
+[class*="btn"]{font-family: var(--pn-font-button) !important;
+  letter-spacing: 0.06em; text-transform: uppercase;
+  -webkit-font-smoothing: auto !important; -moz-osx-font-smoothing: auto !important;
+  text-rendering: auto !important; font-synthesis: none; text-shadow: none;}
+body.category .entry-meta,
+body.category .elementor-post__meta-data,
+body.category .posted-on{color: rgba(255,255,255,0.52); font-size: var(--pn-small-text-size); letter-spacing: 0.08em; text-transform: uppercase;}
+section [class*="btn"]{font-size: var(--pn-button-font-size); font-weight: var(--pn-button-weight);
+  letter-spacing: var(--pn-button-spacing); min-height: var(--pn-button-height); border-radius: var(--pn-button-radius);}
+/* =========================================================================
+   4. TYPOGRAPHY UTILITIES
+   ========================================================================= */
+section [class*="kicker"]{font-family: var(--pn-font-button) !important; color: var(--pn-gold); font-size: var(--pn-kicker-size);
+  font-weight: var(--pn-kicker-weight); letter-spacing: var(--pn-kicker-spacing); text-transform: uppercase; line-height: var(--pn-kicker-line);}
+section h3{font-family: var(--pn-font-heading) !important; font-size: var(--pn-heading-secondary-size); line-height: var(--pn-heading-secondary-line);
+  font-weight: var(--pn-heading-secondary-weight); letter-spacing: var(--pn-heading-secondary-spacing);
+  color: var(--pn-text-strong); text-shadow: var(--pn-shadow-heading);}
+.highlight{color: var(--pn-gold);}
+/* =========================================================================
+   5. HOMEPAGE FONT INHERITANCE AND SECTION OVERRIDES
+   Custom HTML sections do not inherit theme typography, so these force it.
+   Override with ID-scoped selectors (see the second half of this section).
+   ========================================================================= */
+.home section p,
+.home section li,
+.home section a,
+.home section span{font-family: var(--pn-font-body) !important;}
+.home section h1,
+.home section h2,
+.home section h3,
+.home section h4,
+.home section h5,
+.home section h6{font-family: var(--pn-font-heading) !important;}
+@media (max-width: 921px){
+.ast-header-break-point .main-navigation ul.sub-menu{display: none; padding-left: 18px; margin-top: 6px; border-left: 1px solid rgba(255,255,255,0.12);}
+.ast-header-break-point .main-navigation .menu-item-has-children.ast-submenu-expanded > ul.sub-menu,
+.ast-header-break-point .main-navigation .menu-item-has-children.focus > ul.sub-menu{display: block;}
+.ast-header-break-point .main-navigation .menu-item-has-children > a,
+.ast-header-break-point .main-navigation .menu-item-has-children > .menu-link{position: relative;}
+.ast-header-break-point .main-navigation .menu-item-has-children > a:after,
+.ast-header-break-point .main-navigation .menu-item-has-children > .menu-link:after{content: " \25BE "; font-size: 14px; opacity: 0.75; margin-left: 6px;}
+.ast-header-break-point .main-navigation ul.sub-menu li a{font-size: 16px; opacity: 0.95;}
+}
+/* Theme search widgets are hidden sitewide. If the box still shows, clear the
+   page cache first. This does not touch .pn-search-box (the nations search). */
+.ast-search-menu-icon,
+.ast-search-icon,
+.astra-search-icon,
+.elementor-search-form__toggle,
+.elementor-widget-search-form,
+.elementor-search-form,
+.search-form,
+form[role="search"],
+.ast-search-wrapper{display: none !important; visibility: hidden !important; opacity: 0 !important;
+  pointer-events: none !important; width: 0 !important; height: 0 !important;}
+/* The custom header's own search forms are immune to the rule above. Keep this after it. */
+.pn-hd form,
+.pn-hd__panel form,
+.pn-hd form input[type="search"],
+.pn-hd__panel form input[type="search"]{display: flex !important; visibility: visible !important; opacity: 1 !important;
+  pointer-events: auto !important; width: auto !important; height: auto !important;}
+.pn-hd form input[type="search"],
+.pn-hd__panel form input[type="search"]{display: block !important;}
+/* Astra swaps the page-builder background to white on mobile, which hides white text */
+.ast-plain-container.ast-page-builder-template,
+.ast-page-builder-template{background-color: #060d1c !important;}
+/* The site content container must never be switched off (blueprint pages depend on it) */
+#primary{display: block !important;}
+/* =========================================================================
+   7. SEARCH RESULTS TEMPLATE
+   Scoped to body.search so the header height elsewhere is unaffected.
+   Border, shadow and hover are owned by section 12.
+   ========================================================================= */
+body.search .site-header,
+body.search .ast-primary-header-bar,
+body.search .main-header-bar,
+body.search .elementor-location-header,
+body.search .elementor-location-header .elementor-section,
+body.search .elementor-location-header .elementor-container{min-height: 110px !important; height: auto !important; padding-top: 0 !important; padding-bottom: 0 !important;
+  margin-bottom: 0 !important; align-items: center !important;}
+body.search .site-header .ast-builder-grid-row,
+body.search .site-header .ast-container,
+body.search .main-header-container,
+body.search .elementor-location-header nav,
+body.search .elementor-location-header .elementor-nav-menu{min-height: 90px !important; padding-top: 0 !important; padding-bottom: 0 !important; align-items: center !important;}
+body.search .site-content,
+body.search .content-area,
+body.search .ast-container,
+body.search main.site-main{background: #050b16 !important;}
+body.search .site-content .ast-container,
+body.search .content-area .ast-container,
+body.search main.site-main{max-width: 1320px !important; padding: 48px 32px 80px !important; margin: 0 auto !important;}
+body.search .page-header,
+body.search .ast-archive-description,
+body.search main.site-main > header{width: 100% !important; margin: 0 0 34px 0 !important; padding: 0 0 20px 0 !important;
+  border-bottom: 1px solid rgba(var(--pn-gold-rgb),0.24) !important; background: transparent !important; position: relative !important; z-index: 2 !important;}
+body.search .page-title,
+body.search h1.page-title,
+body.search .ast-archive-title{color: var(--pn-gold) !important; font-family: var(--pn-font-heading) !important; font-size: clamp(34px, 3.6vw, 56px) !important;
+  line-height: 1 !important; letter-spacing: 0.05em !important; text-transform: uppercase !important; margin: 0 !important; padding: 0 !important;}
+body.search .ast-row,
+body.search .site-main .ast-row,
+body.search .site-main > .ast-row,
+body.search .elementor-posts-container,
+body.search .elementor-posts{display: grid !important; grid-template-columns: repeat(3, minmax(0, 1fr)) !important; gap: 34px !important;
+  align-items: stretch !important; margin: 0 !important; padding: 0 !important;}
+body.search .ast-grid-common-col,
+body.search .ast-width-md-4,
+body.search .ast-width-md-6,
+body.search .ast-width-md-12,
+body.search .ast-col-sm-12,
+body.search .ast-col-md-4,
+body.search .ast-col-md-6,
+body.search .ast-col-md-12{width: auto !important; max-width: none !important; min-width: 0 !important; float: none !important; clear: none !important; padding: 0 !important; margin: 0 !important;}
+body.search article,
+body.search .post,
+body.search .ast-article-post,
+body.search .elementor-post{position: relative !important; display: flex !important; flex-direction: column !important; width: 100% !important;
+  min-height: 0 !important; height: auto !important; margin: 0 !important; padding: 18px !important; overflow: hidden !important;}
+/* ::before is left alone because section 12 uses it for the gold ring */
+body.search article::after,
+body.search .post::after,
+body.search .ast-article-post::after,
+body.search .elementor-post::after{content: none !important; display: none !important;}
+body.search .post-thumb,
+body.search .ast-blog-featured-section,
+body.search .post-thumb-img-content,
+body.search .elementor-post__thumbnail,
+body.search .elementor-post__thumbnail__link{position: relative !important; display: block !important; width: 100% !important; height: 165px !important; min-height: 165px !important;
+  max-height: 165px !important; margin: 0 0 18px 0 !important; padding: 0 !important; border-radius: 14px !important; overflow: hidden !important; background: rgba(255,255,255,0.04) !important;}
+body.search article img,
+body.search .post-thumb img,
+body.search .ast-blog-featured-section img,
+body.search .post-thumb-img-content img,
+body.search .wp-post-image,
+body.search .elementor-post__thumbnail img{position: static !important; display: block !important; width: 100% !important; height: 165px !important; min-height: 165px !important;
+  max-height: 165px !important; object-fit: cover !important; object-position: center center !important; margin: 0 !important;
+  padding: 0 !important; border-radius: 14px !important; transform: none !important; scale: 1 !important;}
+body.search .entry-header,
+body.search .entry-content,
+body.search .entry-summary,
+body.search .elementor-post__text{margin: 0 !important; padding: 0 !important; max-width: 100% !important;}
+body.search article .entry-title,
+body.search article .entry-title a,
+body.search .ast-article-post .entry-title,
+body.search .ast-article-post .entry-title a,
+body.search .elementor-post__title,
+body.search .elementor-post__title a{color: var(--pn-text) !important; font-family: var(--pn-font-heading) !important; font-size: clamp(22px, 1.75vw, 29px) !important;
+  line-height: 1.12 !important; letter-spacing: 0.04em !important; text-transform: uppercase !important; margin: 0 0 10px 0 !important;
+  padding: 0 !important; text-decoration: none !important; word-break: normal !important; overflow-wrap: normal !important;}
+body.search article .entry-title a:hover,
+body.search .elementor-post__title a:hover{color: var(--pn-gold) !important;}
+body.search .entry-meta,
+body.search .posted-on,
+body.search .cat-links,
+body.search .comments-link,
+body.search .elementor-post__meta-data{color: var(--pn-gold) !important; font-size: 11px !important; line-height: 1.3 !important; letter-spacing: 0.10em !important;
+  text-transform: uppercase !important; margin: 0 0 10px 0 !important; padding: 0 !important;}
+body.search .entry-summary,
+body.search .entry-summary p,
+body.search .entry-content,
+body.search .entry-content p,
+body.search .elementor-post__excerpt,
+body.search .elementor-post__excerpt p{color: var(--pn-text-soft) !important; font-size: 14px !important; line-height: 1.48 !important; margin: 0 0 12px 0 !important; padding: 0 !important;}
+body.search .entry-summary,
+body.search .entry-content,
+body.search .elementor-post__excerpt{max-height: 64px !important; overflow: hidden !important;}
+body.search .read-more,
+body.search .ast-button,
+body.search .elementor-post__read-more{display: inline-flex !important; color: var(--pn-gold) !important; background: transparent !important; border: none !important;
+  box-shadow: none !important; padding: 0 !important; min-height: 0 !important; font-size: 12px !important; line-height: 1.2 !important;
+  font-weight: 700 !important; letter-spacing: 0.10em !important; text-transform: uppercase !important; text-decoration: none !important;}
+body.search .navigation,
+body.search .pagination,
+body.search .nav-links{margin-top: 38px !important;}
+@media (max-width: 1100px){
+body.search .ast-row,
+body.search .site-main .ast-row,
+body.search .site-main > .ast-row,
+body.search .elementor-posts-container,
+body.search .elementor-posts{grid-template-columns: repeat(2, minmax(0, 1fr)) !important; gap: 26px !important;}
+}
+@media (max-width: 700px){
+body.search .site-content .ast-container,
+body.search .content-area .ast-container,
+body.search main.site-main{padding: 34px 16px 56px !important;}
+body.search .ast-row,
+body.search .site-main .ast-row,
+body.search .site-main > .ast-row,
+body.search .elementor-posts-container,
+body.search .elementor-posts{grid-template-columns: 1fr !important; gap: 22px !important;}
+body.search .post-thumb,
+body.search .ast-blog-featured-section,
+body.search .post-thumb-img-content,
+body.search .elementor-post__thumbnail,
+body.search .elementor-post__thumbnail__link,
+body.search article img,
+body.search .wp-post-image,
+body.search .elementor-post__thumbnail img{height: 170px !important; min-height: 170px !important; max-height: 170px !important;}
+}
+/* =========================================================================
+   8. CATEGORY ARCHIVE TEMPLATE
+   The hero image below is hotlinked. Host a real on-brand image when you can.
+   ========================================================================= */
+body.category{background: #04070c; color: #f4f7fb;}
+body.category .site-content,
+body.category .content-area,
+body.category .ast-container{max-width: 1420px; margin: 0 auto; padding-left: 24px; padding-right: 24px; background: transparent;}
+.elementor-widget-theme-archive-posts,
+.elementor-widget-posts{padding-bottom: 60px;}
+body.category article,
+body.category .post,
+body.category .elementor-post{position: relative; background: linear-gradient(180deg, rgba(14,18,28,0.97), rgba(8,11,17,0.99)); overflow: hidden;}
+body.category .elementor-post__thumbnail img,
+body.category .post-thumb img,
+body.category .ast-blog-featured-section img{width: 100%; height: auto; display: block;}
+body.category .entry-title,
+body.category .entry-title a,
+body.category .elementor-post__title,
+body.category .elementor-post__title a{text-decoration: none; font-size: clamp(22px, 2.2vw, 34px); line-height: 1.14;}
+body.category .entry-title a:hover,
+body.category .elementor-post__title a:hover{color: var(--pn-gold);}
+body.category .entry-content,
+body.category .entry-summary,
+body.category .elementor-post__excerpt{font-family: var(--pn-font-body); color: rgba(255,255,255,0.74); font-size: 16px; line-height: 1.72;}
+body.category .elementor-post__read-more,
+body.category .ast-more-link{color: var(--pn-gold); text-decoration: none; font-weight: 600; letter-spacing: 0.04em;}
+body.category .elementor-post__read-more:hover,
+body.category .ast-more-link:hover{color: var(--pn-text);}
+@media (max-width: 768px){
+body.category .site-content,
+body.category .content-area,
+body.category .ast-container{padding-left: 16px; padding-right: 16px;}
+}
+@keyframes pnTickerScroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+/* =========================================================================
+   12. CARD FRAMES AND MUSEUM FRAME
+   12.1 is the ONLY place border, shadow and hover are declared for these
+   cards. It does not frame buttons, fields, notices or product cards.
+   ========================================================================= */
+body.category article,
+body.category .post,
+body.category .elementor-post,
+body.search article,
+body.search .post,
+body.search .ast-article-post,
+body.search .elementor-post{position: relative !important; border: none !important; border-radius: 24px !important;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.12), inset 0 -1px 0 rgba(0,0,0,.32), 0 20px 50px rgba(0,0,0,.38) !important;
+  transition: transform .3s ease, box-shadow .3s ease !important;}
+body.category article::before,
+body.category .post::before,
+body.category .elementor-post::before,
+body.search article::before,
+body.search .post::before,
+body.search .ast-article-post::before,
+body.search .elementor-post::before{content: "" !important; position: absolute !important; inset: 0 !important; z-index: 5 !important; border-radius: inherit !important;
+  padding: var(--pn-frame-width) !important;
+  background: linear-gradient(155deg, var(--pn-frame-light) 0%, var(--pn-frame-mid) 26%, var(--pn-frame-dark) 50%, var(--pn-frame-mid) 74%, var(--pn-frame-light) 100%) !important;
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0) !important;
+  -webkit-mask-composite: xor !important; mask-composite: exclude !important;
+  pointer-events: none !important; opacity: .92 !important; transition: opacity .3s ease !important;}
+body.category article:hover,
+body.category .post:hover,
+body.category .elementor-post:hover,
+body.search article:hover,
+body.search .post:hover,
+body.search .ast-article-post:hover,
+body.search .elementor-post:hover{transform: translateY(-6px) !important;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.18), inset 0 -1px 0 rgba(0,0,0,.28), 0 26px 64px rgba(0,0,0,.46), 0 0 30px rgba(var(--pn-gold-rgb),.16) !important;}
+body.category article:hover::before,
+body.category .post:hover::before,
+body.category .elementor-post:hover::before,
+body.search article:hover::before,
+body.search .post:hover::before,
+body.search .ast-article-post:hover::before,
+body.search .elementor-post:hover::before{opacity: 1 !important;}
+#africa,
+#asia{contain-intrinsic-size: 0 2600px;}
+/* Let each room reach the bottom of the screen on short pages */
+html:has(body.woocommerce-page),
+html:has(body.single-product),
+html:has(body.post-type-archive-product),
+html:has(body.tax-product_cat),
+html:has(body.woocommerce-account){background: none !important;}
+/* Universal WooCommerce button: one flat gold, one shape. No transform on hover (it blurs small type). */
+.wp-element-button{box-sizing: border-box !important; display: inline-flex !important; align-items: center !important; justify-content: center !important;
+  min-height: var(--pn-ui-control-height) !important; padding: 0 22px !important;
+  border: 1px solid var(--pn-gold) !important; border-radius: var(--pn-button-radius) !important;
+  background: var(--pn-gold) !important; color: var(--pn-button-ink) !important; -webkit-text-fill-color: var(--pn-button-ink) !important;
+  font-family: var(--pn-font-body) !important; font-size: var(--pn-ui-font-size) !important; font-weight: var(--pn-ui-font-weight) !important;
+  font-style: normal !important; font-synthesis: none !important; line-height: 1 !important; letter-spacing: var(--pn-ui-letter-spacing) !important;
+  text-align: center !important; text-decoration: none !important; text-shadow: none !important; text-transform: uppercase !important; white-space: nowrap !important;
+  appearance: none !important; -webkit-appearance: none !important; transform: none !important;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.22) !important; transition: background 180ms ease, box-shadow 180ms ease !important;}
+.wp-element-button *{color: inherit !important; font: inherit !important; letter-spacing: inherit !important; line-height: inherit !important; text-transform: inherit !important;}
+.wp-element-button:hover{color: var(--pn-button-ink) !important; -webkit-text-fill-color: var(--pn-button-ink) !important;
+  background: var(--pn-gold) !important; background: color-mix(in srgb, var(--pn-gold) 86%, #fff) !important;
+  box-shadow: 0 10px 24px rgba(0,0,0,0.26), 0 0 22px rgba(var(--pn-gold-rgb),0.20) !important;}
+.wp-element-button:focus-visible{outline: 3px solid var(--pn-gold) !important; outline-offset: 3px !important;}
+textarea{box-sizing: border-box !important; width: 100% !important; min-height: 96px !important; padding: 12px 14px !important;
+  border: 1px solid rgba(var(--pn-gold-rgb),0.55) !important; border-radius: 16px !important; background: var(--pn-earth-field) !important;
+  color: var(--pn-text) !important; -webkit-text-fill-color: var(--pn-text) !important; caret-color: var(--pn-gold) !important;
+  font-family: var(--pn-font-body) !important; font-size: 15px !important; font-weight: 400 !important; line-height: 1.55 !important;
+  resize: vertical; box-shadow: none !important; outline: none !important;}
+input::placeholder,
+textarea::placeholder{color: rgba(var(--pn-gold-rgb),0.70) !important; -webkit-text-fill-color: rgba(var(--pn-gold-rgb),0.70) !important;}
+@media (prefers-reduced-motion: reduce){
+body.category article,
+body.category .post,
+body.category .elementor-post,
+body.search article,
+body.search .post,
+body.search .ast-article-post,
+body.search .elementor-post{transition: none !important;}
+}
+/* =========================================================================
+   22. COLLECTION PAGE COMPATIBILITY (#pn-gal)
+   The collection page carries its own styles. These lines stop sitewide
+   rules from leaking into it.
+   ========================================================================= */
+#pn-gal h1,
+#pn-gal h2,
+#pn-gal h3,
+#pn-gal p,
+#pn-gal li{text-shadow: none;}
+#pn-gal a{text-underline-offset: 3px;}
