@@ -97,6 +97,19 @@ Nothing published is deleted. When a list grows past what its page shows, the ol
 
 Entries keep the fields they had in the nation file. A URL already in a nation file or its archive is never added again.
 
+## The Sovereign Assets file (from 6 November 2026)
+
+`data/sovereign-assets.json` drives the Sovereign Assets page (perfectnations.org/sovereign-assets/, root id `pn-sov`, page v6.0 and later). Kept by the Sovereign Assets Steward (skill `steward-sovereign-assets`).
+
+| Field | What it drives on the page |
+|---|---|
+| `ledger` | The three figures in the hero (assets recorded, nations, asset classes) and the count in the full ledger. Counted by `python3 tools/build_sovereign_assets.py --data` from every nation file's `assets.items`; never edited by hand |
+| `nations` | The golden planet (one gold light per recorded asset, placed at `lat`, `lon`) and the list of nations, each linking to its blueprint. Counted with the ledger |
+| `updated` | "Ledger updated D Month YYYY" in the hero; set by the build whenever the ledger changes |
+| `featured` | The five assets, in order. Each: `cls` (one of the eight classes), `figure`, `unit`, `line` (the words under the figure), `name`, `nation`, `flags` (two-letter codes), `text`, `source` (the link text), `url` (the source), `link` (the blueprint), `image` (1536 px copy) and `image_small` (768 px copy) from the Media Library, and `alt` |
+
+The page itself is built, never edited by hand: `pages/sovereign-assets-src.html` (the design) and this file make `pages/sovereign-assets.html` through `python3 tools/build_sovereign_assets.py`, which also runs the validation suite. The page reads this file on every visit, so a new nation file or a refreshed figure shows without a pull request; a change to the design goes through a pull request. If the file is missing or malformed, the page shows the figures built into it.
+
 ## The Capital Wire file (homepage ticker)
 
 `data/ticker.json` drives the Capital Wire, the moving deal tape under the homepage hero (Section 01b v2.0 and later, root id `pn-tick`). It is a short extract of the wire, about 5 KB, so the homepage never downloads the full State of Nations file. Kept by the Correspondent: rebuilt on every run that changes the wire, and on the first run of each day so items older than 14 days leave the tape. If the file is missing or malformed, the tape shows the deals built into the widget.
