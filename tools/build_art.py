@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
-"""Build the one-file Art of Nations page (the Perfect Nations Gallery), pages/art-of-nations.html.
+"""Build the one-file Art of Nations page, pages/art-of-nations.html.
 
     python3 tools/build_art.py
 
-The page is perfectnations.org/perfect-nations-gallery/ (page 16839). Its Elementor Custom HTML widget
+The page is perfectnations.org/art-of-nations/ (page 16839; /perfect-nations-gallery/ leads to it). Its Elementor Custom HTML widget
 already contains the root id pn-art, so the Perfect Nations Live Pages plugin serves this file in its
 place. Nothing is pasted.
 
@@ -34,6 +34,12 @@ MEDIA = 'https://perfectnations.org/wp-content/uploads/'
 DEFAULT_STATUS = 'Available by private enquiry'
 CONTRACTION = re.compile(r"\b\w+(n['’]t|['’](re|ve|ll|d|m))\b|\b(it|that|there|here|what|who|let)['’]s\b", re.I)
 PROBLEMS = []
+
+
+def for_sale(status):
+    """A work marked "Not for sale" or "Sold" shows its status and no Enquire or Buy."""
+    s = str(status or '').strip().lower()
+    return not (s.startswith('not for sale') or s == 'sold')
 
 
 def esc(s):
@@ -106,7 +112,9 @@ def card(i, p, cat, n):
     status = p.get('status') or DEFAULT_STATUS
     sw = swatch(p['colours'])
     acts = []
-    if buy:
+    if not for_sale(status):
+        enquire = buy = ''
+    elif buy:
         acts.append('<a class="aon-btn aon-btn--sm" href="%s">Buy</a>' % buy)
         acts.append('<a class="aon-btn aon-btn--sm aon-btn--line" href="%s">Enquire</a>' % enquire)
     else:
@@ -122,6 +130,7 @@ def card(i, p, cat, n):
         'spec': copy(where, p['spec']), 'alt': copy(where, p['alt']), 'zoom': media(where, p['zoom']),
         'src': media(where, pick(p['images'], 768)), 'srcset': srcset(where, p['images']), 'sw': esc(sw[5:]),
         'enquire': enquire, 'buy': buy, 'price': price,
+        'status': copy(where, status) if status != DEFAULT_STATUS else '',
     }
     attrs = ' '.join('data-%s="%s"' % (k, v) for k, v in data.items() if v != '')
     return '''      <article class="aon-card aon-rv" id="aon-%(slug)s" data-work %(attrs)s>
@@ -145,21 +154,25 @@ def origin(n, o, cat):
     if not o.get('images') or not o.get('size'):
         return ''
     w, h = (int(x) for x in o['size'])
+    status = o.get('status') or DEFAULT_STATUS
     enquire = link(where, cat['contact'] + '?about=' + o['enquire'])
     buy = link(where, o['buy_url']) if o.get('buy_url') else ''
+    if not for_sale(status):
+        enquire = buy = ''
     data = {
         'title': copy(where, o['title']), 'artist': copy(where, o['artist']), 'statement': copy(where, o['statement']),
         'spec': copy(where, o['spec']), 'alt': copy(where, o['alt']), 'zoom': media(where, o['zoom']),
         'src': media(where, pick(o['images'], 768)), 'srcset': srcset(where, o['images']),
         'enquire': enquire, 'buy': buy, 'price': copy(where, o.get('price', '')),
+        'status': copy(where, status) if status != DEFAULT_STATUS else '',
     }
     attrs = ' '.join('data-%s="%s"' % (k, v) for k, v in data.items() if v != '')
     acts = ['<a class="aon-btn aon-btn--sm aon-btn--line" href="%s" data-open="%d">View it whole</a>' % (data['zoom'], n)]
     if buy:
         acts.append('<a class="aon-btn aon-btn--sm" href="%s">Buy</a>' % buy)
-    else:
+    elif enquire:
         acts.append('<a class="aon-btn aon-btn--sm" href="%s">Enquire</a>' % enquire)
-    k = ' &#183; '.join(x for x in (copy(where, o.get('price', '')), data['spec']) if x)
+    k = ' &#183; '.join(x for x in (copy(where, o.get('price', '')), data['spec'], data['status']) if x)
     return '''    <div class="aon-origin aon-rv" id="aon-%(slug)s" data-work %(attrs)s>
       <a class="aon-frame" href="%(zoom)s" data-open="%(n)d" aria-label="Open %(title)s by %(artist)s at full size"><span class="aon-mat"><span class="aon-pic aon-pic--land" style="--ar:%(w)d/%(h)d"><img src="%(src)s" srcset="%(srcset)s" sizes="(min-width:900px) 600px, 92vw" alt="%(alt)s" width="%(w)d" height="%(h)d" loading="lazy" decoding="async"></span></span></a>
       <div class="aon-origin__txt">
