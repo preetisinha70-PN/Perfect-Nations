@@ -3,7 +3,8 @@
 This repository holds the live data that the Perfect Nations blueprints on perfectnations.org read each time a visitor opens a page.
 
 - `data/<nation>.json`: each nation blueprint (barbados, kenya, ...). Kept current by its Nation Steward in the Nations Newswire Stewards rotation; Barbados (Nia Carrington) at least once a day.
-- `data/state-of-nations.json`: the State of Nations page (the wire of instruments and the dispatches). Kept current at 8 am and 8 pm New York time by the Correspondent, Steward of the Wire.
+- `data/state-of-nations.json`: the State of Nations page (the wire of instruments and the Solutions, called dispatches until 7 November 2026). Kept current at 8 am, 12 noon and 8 pm New York time by the Correspondent, Steward of the Wire.
+- `data/solutions-by-nation.json`: Solutions for every nation on the State of Nations page, built from the nation files by `tools/build_state_of_nations.py --data` (see The State of Nations page).
 - `archive/`: older Newswire items and dispatches, moved out of the nation files and never deleted (see The archive).
 - `figures/perfect-capita.json`: the live figures on the Perfect Capita page (perfectnations.org/perfect-capita/). Kept by the Perfect Capita Steward (see The Perfect Capita page). It is not a nation file, which is why it sits outside `data/`.
 
@@ -74,12 +75,12 @@ perfectnations.org/capital-architecture/ is one file, `pages/capital-architectur
 
 ## The Art of Nations page (from 7 November 2026)
 
-perfectnations.org/perfect-nations-gallery/ (page 16839) is one file, `pages/art-of-nations.html` (root `pn-art`), kept by the Art of Nations Steward. Its Elementor widget already contains `pn-art`, so the plugin serves the file in its place; nothing is pasted. The old two-part widget (v3.0, roots `pn-art` and `pn-gal`) is archived at `archive/elementor/gallery-16839-before-one-file-2026-11-07.json`.
+perfectnations.org/art-of-nations/ (page 16839; the old address /perfect-nations-gallery/ leads to it) is one file, `pages/art-of-nations.html` (root `pn-art`), kept by the Art of Nations Steward. Its Elementor widget already contains `pn-art`, so the plugin serves the file in its place; nothing is pasted. The old two-part widget (v3.0, roots `pn-art` and `pn-gal`) is archived at `archive/elementor/gallery-16839-before-one-file-2026-11-07.json`.
 
 - **Built, never edited by hand.** `python3 tools/build_art.py` reads `art/catalogue.json` (the paintings and books: words, nation colours, images, enquiry links) and `art/art-of-nations.template.html` (style, markup, script) and writes the page. The build refuses straight apostrophes, contractions, image URLs outside the Media Library, copies wider than 768 px in `images`, and any non-ASCII character.
 - **A new painting** is one new entry in `paintings` (newest last): the hero, the wall, the count ("5 of 195 nations painted"), the 195 dots and the viewer all follow.
 - **The artist.** Every work names its artist (`artist`, today Preeti Sinha on every work): on the card, in the hero caption and in the viewer.
-- **Origins** (`origins`) are the artist’s founding works, shown whole before the nation portraits and not counted among the 195. The first is *Botanical Origins* by Preeti Sinha, the garden painting the series grew from (Media Library 17752).
+- **Origins** (`origins`) are the artist’s founding works, shown whole before the nation portraits and not counted among the 195. The first is *Botanical Origins* by Preeti Sinha (acrylic on canvas, 12 × 18 in, 2026, not for sale), the garden painting the series grew from (Media Library 17752). A work whose `status` is "Not for sale" or "Sold" shows that status and no Enquire.
 - **Images** are the copies WordPress makes (300, 600 and 768 px under `images`; `zoom` is the copy the viewer opens). Check each one exists in the Media Library first.
 - **Ready for a shop.** Put the store address in `shop` and a `buy_url` (and `price`, if wanted) on a work: it shows Buy beside Enquire. Without a `buy_url` a work stays by enquiry.
 - **Checks and previews:** `python3 tools/check_page.py pages/art-of-nations.html art/art-of-nations.template.html`, then `python3 tools/preview_art.py` (laptop 1440 x 900, phone 390 x 844; screenshots in /tmp/pn-preview).
@@ -103,6 +104,18 @@ perfectnations.org/contact/ (page 12711) is one file, `pages/contact.html` (root
 - **Sending** opens the visitor's own email to contact@perfectnations.org, with Gmail, Outlook and Copy as fallbacks. Nothing is stored on the site.
 - **Checks and previews:** `python3 tools/check_page.py pages/contact.html`, then `python3 tools/preview_page.py pages/contact.html --out <folder> --fonts <folder holding node_modules/@fontsource>`.
 - **Every change** goes through a pull request "For approval: Contact vX.Y, ...", with `pn-contact` raised in the manifest.
+
+## The State of Nations page (from 7 November 2026)
+
+perfectnations.org/state-of-nations/ (page 15051) is one file, `pages/state-of-nations.html` (root `pn-son`), kept by the State of Nations Steward. The page's one Elementor Custom HTML widget already contains `pn-son`, so the plugin serves the file in its place.
+
+The page is about Solutions: how super intelligence (SI) and innovative financing for development (FFD) close the gap to the seven basic standards of living, nation by nation. Bands: the hero (Earthrise); the Solutions (ivory); Solutions for every nation (Lagoon); a painted seam; the Solutions Wire and the close (Earthrise Depth).
+
+- **Built, never edited by hand.** Edit `src/state-of-nations.html` (style, markup, script), then run `python3 tools/build_state_of_nations.py`. It fills the slots from `data/state-of-nations.json`, `data/solutions-by-nation.json` and the painted seams in `pages/home-seams.html`, and refuses any non-ASCII character. Check with `python3 tools/check_page.py pages/state-of-nations.html`; previews with `python3 tools/preview_page.py pages/state-of-nations.html`.
+- **The playbook** (for each of the seven standards: the FFD instrument, the deal that proved it, the SI move and the first move for a nation with nothing at work) lives in `PLAYBOOK` in the build script. Five proofs are read from `data/capital-architecture.json` by instrument id, so the figure and source stay those of the Capital Architecture page; Food and Health carry their own primary source. Changing it is a page change.
+- **`data/solutions-by-nation.json`** mirrors the nation files and adds no fact: for each open blueprint, the standard furthest from reach (`coverage.set_by`), the gap and its sentence (`coverage.gap`, `gap_text`) with the source of that standard (`guarantees`), the seven standards as published on the blueprint, the instrument already at work on that standard (the best match in `capital.register`, or none), and the Solutions about that nation. Rebuild it with `python3 tools/build_state_of_nations.py --data`; it is data, so it may go straight to main. The Correspondent rebuilds it after every watch.
+- **It updates itself.** On every visit the page reads both files; a Solution or wire item merged into `data/state-of-nations.json`, or a nation file changed and rebuilt into the nation data, shows at once. If a file cannot be read, the copy built into the page shows.
+- **Page changes** go through a pull request "For approval: State of Nations vX.Y, ...", with `pn-son` raised in the manifest.
 
 ## Nations
 
@@ -211,20 +224,25 @@ Outline (the comments are notes, not part of the file):
 | `nations` | list of nations counted on the page; empty for a regional item |
 | `region` | one of: Africa, Americas, Asia-Pacific, Europe, Middle East |
 
-**Dispatch entry**
+**Solution entry** (the `dispatches` list keeps its name, so older readers of the file keep working; on the site each entry is a Solution)
 
 | field | rule |
 |---|---|
-| `no` | dispatch number, unique; the next is the highest number plus one |
+| `no` | Solution number, unique; the next is the highest number plus one |
 | `slug`, `title`, `kicker`, `date`, `standfirst` | as on the card ("Liability management · Addis Ababa") |
+| `nation` | the nation the Solution is about, exactly as its blueprint names it ("Côte d’Ivoire"), or a group ("Five nations") |
+| `standards` | the standards it moves, in the order Food, Water, Shelter, Energy, Education, Health, Livelihood; an empty list when it moves them only through the budget |
+| `challenge` | one sentence: the challenge to the seven standards, in the words of the sources |
+| `ffd` | one sentence: the instrument and how it solves the challenge, with its sourced figure |
+| `si` | one sentence: what SI does next (what it tracks, prices or screens, and the nation it screens first) |
 | `figure`, `caption` | the lead figure on the card and its caption |
 | `url` | the WordPress post, when the dispatch is published as a post |
-| `body` | the full text as a list of paragraphs; a line starting "## " is a section heading. With a body and no url, the dispatch opens in a reader on the page (link: /state-of-nations/#dispatch-NN) |
+| `body` | the full text as a list of paragraphs; a line starting "## " is a section heading. With a body and no url, the Solution opens in a reader on the page (link: /state-of-nations/#solution-NN; #dispatch-NN still works) |
 | `figures` | up to four [value, caption] pairs for the reader |
 | `kick` | the closing line |
 | `sources` | list of {"label", "url"}, every url https |
 
-A dispatch with neither `url` nor `body` shows "In press". Wire items are committed straight to main. A new dispatch is proposed only as a pull request titled "For approval: Dispatch No. NN" and goes live when Preeti Sinha, President and CEO, merges it.
+A Solution with neither `url` nor `body` shows "In press". Wire items are committed straight to main. A new Solution is proposed only as a pull request titled "For approval: Solution No. NN" and goes live when Preeti Sinha, President and CEO, merges it.
 
 ## The Perfect Capita page
 

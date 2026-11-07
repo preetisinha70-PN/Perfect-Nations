@@ -98,7 +98,7 @@ page = (REPO / 'pages/art-of-nations.html').read_text()
 header = (REPO / 'pages/header.html').read_text()
 footer = (REPO / 'pages/footer.html').read_text()
 HTML = """<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Perfect Nations Gallery - Perfect Nations</title>
+<title>Art of Nations - Perfect Nations</title>
 <style>%s
 html,body{margin:0;padding:0;background:#0B3D45;}
 body{font-family:'Barlow Semi Condensed',Arial,sans-serif;}
