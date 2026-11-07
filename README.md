@@ -83,6 +83,15 @@ perfectnations.org/perfect-nations-gallery/ (page 16839) is one file, `pages/art
 - **Checks and previews:** `python3 tools/check_page.py pages/art-of-nations.html art/art-of-nations.template.html`, then `python3 tools/preview_art.py` (laptop 1440 x 900, phone 390 x 844; screenshots in /tmp/pn-preview).
 - **Every change** goes through a pull request "For approval: Art of Nations vX.Y, ...", with `pn-art` raised in the manifest.
 
+## The About page (from 7 November 2026)
+
+perfectnations.org/about/ is one file, `pages/about.html` (root `pn-about`), kept by the About Steward.
+
+- **Edited by hand, except the GENERATED blocks.** `python3 tools/build_about.py` refreshes them: the painted seams (from `pages/home-seams.html` and `tools/build_home.py`), the counts of Stewards, and the Nation Stewards roll, one card per open blueprint in `data/blueprints.json`, with the Steward's name from `data/<slug>.json` and the 150 px portrait the nation's own blueprint shows. Run it whenever a blueprint is added; the roll and the counts follow.
+- **The bands, in order (v10.0):** the logo, the Vision and the Mission (Earthrise); the President and CEO and the three moves (ivory); the record (Lagoon); a painted seam; the Council of Stewards (Earthrise); a painted seam; the close (Earthrise Depth).
+- **Checks and previews:** `python3 tools/check_page.py pages/about.html`, then `python3 tools/preview_page.py pages/about.html --out <folder> --fonts <node_modules/@fontsource>`.
+- **Every change** goes through a pull request "For approval: About vX.Y, ...", with `pn-about` raised in the manifest.
+
 ## Nations
 
 Each live blueprint reads its own file: `data/<nation>.json` (barbados, kenya, ...). A Steward edits only the file for its own nation.
