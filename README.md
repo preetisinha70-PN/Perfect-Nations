@@ -63,6 +63,15 @@ perfectnations.org/blueprints/ is one file, `pages/blueprints.html` (root `pn-bl
 - **`data/blueprints.json`** is the live index of open blueprints: for each, `slug`, `name`, `region`, `url`, `steward` (from `steward.name`) and `figure` (the first sourced monetary figure of the hero, else its first figure: `value`, `label`, `money`). It mirrors the nation files and adds no fact of its own. Rebuild it with `python3 tools/build_blueprints.py --index`; it is data, so it may go straight to main.
 - **Page changes** (design, words, a rebuilt fallback) go through a pull request "For approval: Blueprints page vX.Y, ...", with the `pn-blueprints` version raised in the manifest.
 
+## The Capital Architecture page (from 7 November 2026)
+
+perfectnations.org/capital-architecture/ is one file, `pages/capital-architecture.html` (root `pn-arch`, page 8549), kept by the Capital Architecture Steward.
+
+- **Built, never edited by hand.** `python3 tools/build_capital.py` builds the page from `data/capital-architecture.json` (the words and figures), `tools/capital/style.css` and `tools/capital/script.js` (the design), the painted seams in `pages/home-seams.html` and the cup in `pages/header.html`. Previews: `python3 tools/preview_capital.py`.
+- **`data/capital-architecture.json`**: `hero`; `five` (the five instruments we lead with: `name`, `headline`, `where`, `year`, `figure`, `label`, `source`, `url`, `nation`, `image`, `alt`); `index.families` (six families, each with `name`, `short`, `line` and `items`: `name`, `headline` (one line, at most about ten words), `how` (one sentence), `where`, `year`, `figure` (shown in gold, sourced money or a sourced result only), `label`, `source`, `url` (the primary source, https), `nation` (the slug of an open blueprint, or empty)); `record`; `close`.
+- **The record is live.** `record` counts every line of `capital.register` across the open blueprints (counts, never sums) and lists each nation with its count and first register line. The build recounts it; `python3 tools/build_capital.py --record` refreshes only the record, which is data and may go straight to main. The page reads it on every visit.
+- **Page changes** (an instrument added or reworded, a new landmark, design) go through a pull request "For approval: Capital Architecture vX.Y, ...", with the `pn-arch` version raised in the manifest.
+
 ## Nations
 
 Each live blueprint reads its own file: `data/<nation>.json` (barbados, kenya, ...). A Steward edits only the file for its own nation.
