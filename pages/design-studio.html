@@ -1,519 +1,624 @@
 <!-- ===========================================================================
-PERFECT NATIONS - THE REDESIGN STUDIO PAGE - v5.1 EARTH - 2026-11-06
-/design-studio/ (the header, footer, homepage and every blueprint link here; redirect /studio/).
-Six bands: the drafting table, the five moves, the six mandates, how to begin (each step with its
-own booking link), the community of Co-designers, and the close.
-v5.1: served live from GitHub (pages/design-studio.html, root pn-ds) by the Perfect Nations Live
-Pages plugin; the code pasted in the page's Elementor widget (c20519d) stays as the fallback. The
-Studio is called the ReDesign Studio throughout, at the Steward-General's request (6 November 2026).
-v5.0: the Living Line costing ("Try the room") is removed; Perfect Capita names the measure throughout.
-Mandate horizons are opening positions; edit them in the cards.
+PERFECT NATIONS - THE REDESIGN STUDIO PAGE - v6.0 EARTHRISE - 2026-11-06
+/design-studio/ (page 14106; the header, footer, homepage and every blueprint link here).
+Served live from GitHub (pages/design-studio.html, root pn-ds) by the Perfect Nations Live Pages
+plugin; the code pasted in the page's Elementor widget (c20519d) is only the fallback.
+Kept by the ReDesign Studio Steward (skill steward-redesign-studio). Change it through a pull
+request; refresh the GENERATED blocks with: python3 tools/build_studio.py
+
+Four bands, one palette (Earthrise, Lagoon, Earthrise Depth and one ivory reading band; gold only
+for what a visitor can act on; the painted seam carries the colour):
+  1 Hero (Earthrise): the mission, two actions, and the drafting table, which draws the five moves
+    (Assets, Perfect Capita, Co-Design, Capital, Launch) with a chapter bar a visitor can tap.
+  2 The three mandates (ivory): The Nation Briefing, The Blueprint Lab, The Sovereign Mandate, side
+    by side on laptops with the five moves aligned row by row; on phones, a three-way switch shows
+    one mandate at a time.
+  3 The Co-designers (Lagoon): four ways to contribute, and a finder for the open nation Studios.
+  4 The close (Earthrise Depth), after a painted seam, with the cup icon.
+v6.0 (6 November 2026, at the Steward-General's request): the six mandates, the "who is asking"
+filter, the separate how-to-begin staircase and the Masterclass row are removed; the page offers
+only the three mandates, with the same names, durations and moves as the homepage and the 44
+blueprints. The five moves now match the homepage. Half the height on laptops (5,419 to 2,568 px)
+and a third on phones (9,666 to 3,298 px), measured with tools/preview_page.py.
+The hero headline is set a step smaller than the homepage display size because it shares the
+first screen with the drafting table.
 =========================================================================== -->
+<div id="pn-ds">
+<!-- GENERATED:SEAMS (from pages/home-seams.html; do not edit here) -->
+<style>
+.pn-seam{
+  position:relative; display:block; width:100vw; margin-left:calc(50% - 50vw); box-sizing:border-box;
+  height:clamp(40px,3.8vw,58px); overflow:hidden; line-height:0;
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.35), rgba(255,255,255,0) 40%, rgba(120,90,40,.06)),
+    #F4ECD8;
+  border-top:1px solid rgba(227,194,88,.75); border-bottom:1px solid rgba(227,194,88,.75);
+}
+.pn-seam::before{
+  content:""; position:absolute; inset:0; pointer-events:none; opacity:.09;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.1' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .3 0 0 0 0 .22 0 0 0 0 .1 0 0 0 .7 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+.pn-seam svg{ position:relative; display:block; width:100%; height:100%; }
+@media (prefers-reduced-motion:no-preference){
+  .pn-seam.is-armed svg > g{ opacity:0; transition:opacity .8s ease; }
+  .pn-seam.is-armed.is-in svg > g{ opacity:1; }
+}
+</style>
+<svg class="pn-seam-sprite" width="0" height="0" style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true" focusable="false">
+  <defs>
+    <symbol id="pns-fern" viewBox="0 0 200 60">
+      <g fill="none" stroke="#2FB58C" stroke-linecap="round" stroke-width="3">
+        <path d="M6 36C60 31 120 27 194 30"/>
+        <path stroke-width="2.4" d="M22.0 35.5q4.0 -11.4 15.5 -16.3M26.0 35.5q4.0 9.8 15.5 14.7M37.0 35.0q4.0 -11.0 15.0 -15.7M41.0 35.0q4.0 9.4 15.0 14.2M52.0 34.5q4.0 -10.6 14.4 -15.1M56.0 34.5q4.0 9.1 14.4 13.6M67.0 34.1q4.0 -10.2 13.8 -14.5M71.0 34.1q4.0 8.7 13.8 13.1M82.0 33.6q4.0 -9.7 13.2 -13.9M86.0 33.6q4.0 8.3 13.2 12.5M97.0 33.1q4.0 -9.3 12.6 -13.3M101.0 33.1q4.0 8.0 12.6 12.0M112.0 32.6q4.0 -8.9 12.1 -12.7M116.0 32.6q4.0 7.6 12.1 11.4M127.0 32.1q4.0 -8.5 11.5 -12.1M131.0 32.1q4.0 7.2 11.5 10.9M142.0 31.7q4.0 -8.0 10.9 -11.5M146.0 31.7q4.0 6.9 10.9 10.3M157.0 31.2q4.0 -7.6 10.3 -10.9M161.0 31.2q4.0 6.5 10.3 9.8M172.0 30.7q4.0 -7.2 9.7 -10.2M176.0 30.7q4.0 6.1 9.7 9.2"/>
+      </g>
+    </symbol>
+    <symbol id="pns-flower" viewBox="-14 -14 28 28">
+      <g fill="#F2836B" stroke="#FFF6EC" stroke-width="1">
+        <ellipse cx="0" cy="-6.2" rx="4" ry="6"/>
+        <ellipse cx="0" cy="-6.2" rx="4" ry="6" transform="rotate(72)"/>
+        <ellipse cx="0" cy="-6.2" rx="4" ry="6" transform="rotate(144)"/>
+        <ellipse cx="0" cy="-6.2" rx="4" ry="6" transform="rotate(216)"/>
+        <ellipse cx="0" cy="-6.2" rx="4" ry="6" transform="rotate(288)"/>
+      </g>
+      <circle r="2.3" fill="#FFF6EC"/>
+    </symbol>
+    <symbol id="pns-leaf" viewBox="0 0 70 56">
+      <path d="M8 30C4 18 16 8 26 14C30 4 44 4 46 14C58 10 66 22 58 30C66 38 58 50 46 44C42 54 28 54 26 44C14 50 4 42 8 30Z" fill="#2E6B4A" stroke="#7CC8F0" stroke-width="2.4" stroke-linejoin="round"/>
+      <g fill="#6FC3F2"><circle cx="20" cy="26" r="1.9"/><circle cx="28" cy="20" r="1.9"/><circle cx="36" cy="16" r="1.9"/><circle cx="44" cy="22" r="1.9"/><circle cx="52" cy="28" r="1.9"/><circle cx="30" cy="32" r="1.9"/><circle cx="40" cy="30" r="1.9"/><circle cx="24" cy="38" r="1.9"/><circle cx="34" cy="42" r="1.9"/><circle cx="46" cy="38" r="1.9"/><circle cx="16" cy="32" r="1.9"/><circle cx="54" cy="36" r="1.9"/></g>
+    </symbol>
+    <symbol id="pns-loops" viewBox="0 0 92 32">
+      <path d="M3 22c7 0 12-7 7-10c-6-3-10 8-2 11c6 2 11-1 14-4c5-6 12-6 9 1c-3 6-11 4-5-3c4-5 12-5 15 1c2 4 7 5 11 1c5-6 12-6 9 1c-3 6-11 4-5-3c4-5 12-5 15 1c2 4 7 5 12 3" fill="none" stroke="#5DB5E8" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+    <symbol id="pns-dashes" viewBox="0 0 40 32">
+      <g fill="#8EA6BC"><rect x="2" y="3" width="3.2" height="8" rx="1.2"/><rect x="11" y="3" width="3.2" height="8" rx="1.2"/><rect x="20" y="3" width="3.2" height="8" rx="1.2"/><rect x="29" y="3" width="3.2" height="8" rx="1.2"/><rect x="6" y="13" width="3.2" height="8" rx="1.2"/><rect x="15" y="13" width="3.2" height="8" rx="1.2"/><rect x="24" y="13" width="3.2" height="8" rx="1.2"/><rect x="33" y="13" width="3.2" height="8" rx="1.2"/><rect x="2" y="23" width="3.2" height="8" rx="1.2"/><rect x="11" y="23" width="3.2" height="8" rx="1.2"/><rect x="20" y="23" width="3.2" height="8" rx="1.2"/></g>
+    </symbol>
+    <symbol id="pns-pods" viewBox="0 0 64 64">
+      <g fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"><path d="M32 62L16 26"/><path d="M32 62L32 22"/><path d="M32 62L48 26"/></g>
+      <g stroke="#2350D8" stroke-width="2.4" fill="#F7EEDB">
+        <ellipse cx="0" cy="0" rx="7" ry="12" transform="translate(14 18) rotate(-28)"/>
+        <ellipse cx="0" cy="0" rx="7" ry="12" transform="translate(32 13)"/>
+        <ellipse cx="0" cy="0" rx="7" ry="12" transform="translate(50 18) rotate(28)"/>
+      </g>
+      <g stroke="#3D8FE0" stroke-width="1.6" stroke-linecap="round" fill="none">
+        <path d="M0 -8V8M-3 -6V6M3 -6V6" transform="translate(14 18) rotate(-28)"/>
+        <path d="M0 -8V8M-3 -6V6M3 -6V6" transform="translate(32 13)"/>
+        <path d="M0 -8V8M-3 -6V6M3 -6V6" transform="translate(50 18) rotate(28)"/>
+      </g>
+    </symbol>
+    <symbol id="pns-feather" viewBox="0 0 140 44">
+      <path d="M14.8 24.8l7 19M25.7 22.1l7 19M36.6 19.4l7 19M47.4 16.6l7 19M58.3 13.9l7 19M69.2 11.2l7 19M80.1 8.5l7 19M91.0 5.8l7 19M101.8 3.0l7 19M112.7 0.3l7 19" fill="none" stroke="#E0352B" stroke-width="4.4" stroke-linecap="round" transform="translate(0 -6)"/>
+      <path d="M6 38L134 6" fill="none" stroke="#2FB58C" stroke-width="2.6" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="pns-bowl" viewBox="0 0 56 56">
+      <g stroke="#FFFFFF" stroke-width="1.8" fill="none" stroke-linecap="round"><path d="M18 26L12 9"/><path d="M28 26L28 6"/><path d="M38 26L44 9"/></g>
+      <g fill="#B08A2E"><circle cx="12" cy="8" r="3.2"/><circle cx="28" cy="5" r="3.2"/><circle cx="44" cy="8" r="3.2"/></g>
+      <path d="M8 26H48C48 41 40 51 28 51C16 51 8 41 8 26Z" fill="#F2C230" stroke="#B8862A" stroke-width="1.4"/>
+      <g fill="none" stroke="#B8862A" stroke-width="1.2"><path d="M13 26C13 37 20 45 28 45C36 45 43 37 43 26"/><path d="M18 26C18 34 23 40 28 40C33 40 38 34 38 26"/><path d="M23 26C23 31 25 35 28 35C31 35 33 31 33 26"/></g>
+    </symbol>
+    <symbol id="pns-rosette" viewBox="-32 -32 64 64">
+      <g fill="#A9C8F5" stroke="#8C6E3C" stroke-width="1.2">
+        <ellipse cx="0" cy="-15" rx="4.6" ry="10.5"/><ellipse cx="0" cy="-15" rx="4.6" ry="10.5" transform="rotate(45)"/><ellipse cx="0" cy="-15" rx="4.6" ry="10.5" transform="rotate(90)"/><ellipse cx="0" cy="-15" rx="4.6" ry="10.5" transform="rotate(135)"/>
+        <ellipse cx="0" cy="-15" rx="4.6" ry="10.5" transform="rotate(180)"/><ellipse cx="0" cy="-15" rx="4.6" ry="10.5" transform="rotate(225)"/><ellipse cx="0" cy="-15" rx="4.6" ry="10.5" transform="rotate(270)"/><ellipse cx="0" cy="-15" rx="4.6" ry="10.5" transform="rotate(315)"/>
+      </g>
+      <circle r="3.4" fill="#2350D8"/>
+    </symbol>
+    <symbol id="pns-dots" viewBox="0 0 34 34">
+      <g fill="#2350D8"><circle cx="9" cy="6" r="2"/><circle cx="17" cy="6" r="2"/><circle cx="25" cy="6" r="2"/><circle cx="5" cy="13" r="2"/><circle cx="13" cy="13" r="2"/><circle cx="21" cy="13" r="2"/><circle cx="29" cy="13" r="2"/><circle cx="9" cy="20" r="2"/><circle cx="17" cy="20" r="2"/><circle cx="25" cy="20" r="2"/><circle cx="13" cy="27" r="2"/><circle cx="21" cy="27" r="2"/></g>
+    </symbol>
+    <symbol id="pns-squares" viewBox="0 0 46 46">
+      <g fill="#E8604A"><rect x="3" y="4" width="14" height="14" rx="2"/><rect x="21" y="2" width="14" height="14" rx="2"/><rect x="8" y="23" width="14" height="14" rx="2"/><rect x="27" y="22" width="14" height="14" rx="2"/></g>
+      <g stroke="#F9C3B4" stroke-width="1.3" stroke-linecap="round"><path d="M7 8v6M10 8v6M13 8v6M25 6v6M28 6v6M31 6v6M12 27v6M15 27v6M18 27v6M31 26v6M34 26v6M37 26v6"/></g>
+    </symbol>
+    <symbol id="pns-sun" viewBox="-24 -24 48 48">
+      <circle r="9.5" fill="none" stroke="#4FA8E8" stroke-width="6"/>
+      <path d="M-13.2 4.8L-19.7 7.2M-11.1 8.5L-16.7 12.8M-8.0 11.5L-12.0 17.2M-4.2 13.4L-6.3 20.0M0 14L0 21M4.2 13.4L6.3 20.0M8.0 11.5L12.0 17.2M11.1 8.5L16.7 12.8M13.2 4.8L19.7 7.2" stroke="#2F6FD8" stroke-width="2.2" stroke-linecap="round"/>
+    </symbol>
+  </defs>
+</svg>
+<script>
+(function(){
+  if (window.__pnSeams) { return; }
+  window.__pnSeams = 1;
+  function run(){
+    var seams = document.querySelectorAll('.pn-seam');
+    if (!seams.length) { return; }
+    var still = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (still || !('IntersectionObserver' in window)) { return; }
+    var io = new IntersectionObserver(function(es){
+      es.forEach(function(en){ if (en.isIntersecting) { en.target.classList.add('is-in'); io.unobserve(en.target); } });
+    }, { threshold: 0.3 });
+    Array.prototype.forEach.call(seams, function(s){
+      var uses = s.querySelectorAll('svg > g');
+      Array.prototype.forEach.call(uses, function(u, i){ u.style.transitionDelay = (i * 0.05) + 's'; });
+      s.classList.add('is-armed'); io.observe(s);
+    });
+  }
+  if (document.readyState === 'loading') { document.addEventListener('DOMContentLoaded', run); } else { run(); }
+})();
+</script>
+<!-- /GENERATED:SEAMS -->
 <style>
 #pn-ds{
-  --g:var(--pn-brand-gold,#E3C258); --gs:#F0D68F; --gd:#7E5A0C;
-  --iv:#F5F1E8; --tm:rgba(245,241,232,.82); --td:rgba(245,241,232,.62); --hair:rgba(245,241,232,.16);
-  --ink:#1A140C; --im:rgba(26,20,12,.78); --idm:rgba(26,20,12,.58); --ihair:rgba(26,20,12,.14);
+  --er:#0B3D45; --lg:#0F4C5C; --dp:#082A30; --iv:#F4ECD8;
+  --tx:#F5F1E8; --tm:rgba(245,241,232,.84); --td:rgba(245,241,232,.62); --hair:rgba(245,241,232,.16);
+  --ink:#1A140C; --im:rgba(26,20,12,.78); --idm:rgba(26,20,12,.58); --ihair:rgba(26,20,12,.13);
+  --g:#E3C258; --gs:#F0D68F; --gd:#7E5A0C; --terra:#8A3A22;
   --hd:var(--pn-font-heading,"Barlow Condensed","Arial Narrow",Arial,sans-serif);
   --bd:var(--pn-font-body,"Barlow Semi Condensed",Arial,sans-serif);
+  --gut:clamp(18px,4vw,48px);
   position:relative; width:100vw; margin-left:calc(50% - 50vw); box-sizing:border-box;
-  overflow-x:hidden; overflow-x:clip; color:var(--iv); font-family:var(--bd); line-height:1.6;
+  overflow-x:hidden; overflow-x:clip; color:var(--tx); background:var(--dp);
+  font-family:var(--bd); line-height:1.5; text-align:left;
 }
 #pn-ds *,#pn-ds *::before,#pn-ds *::after{ box-sizing:border-box; }
+#pn-ds [hidden]{ display:none !important; }
+#pn-ds [id]{ scroll-margin-top:var(--pn-head-off,84px); }
 .elementor-widget-html:has(#pn-ds),.elementor-widget:has(#pn-ds),.elementor-widget-wrap:has(#pn-ds),
 .elementor-container:has(#pn-ds),.elementor-column:has(#pn-ds),.elementor-section:has(#pn-ds),
 .e-con-inner:has(#pn-ds),.e-con:has(#pn-ds),#content:has(#pn-ds),.site-content:has(#pn-ds),.ast-container:has(#pn-ds){
   padding-top:0 !important; padding-bottom:0 !important; margin-top:0 !important; margin-bottom:0 !important;
   --widgets-spacing:0px !important; row-gap:0 !important;
 }
-#pn-ds .ds-band{ position:relative; isolation:isolate; padding:clamp(72px,11vh,130px) clamp(24px,5vw,72px); }
-#pn-ds .ds-band::before{ content:""; position:absolute; inset:0; z-index:-1; pointer-events:none; opacity:.07; background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .6 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); }
-#pn-ds .ds-in{ max-width:1320px; margin:0 auto; }
-#pn-ds .ds-eb{ display:flex; align-items:center; gap:10px; margin:0 0 14px; font-family:var(--hd); font-size:.68rem; font-weight:700; letter-spacing:.3em; text-transform:uppercase; color:var(--tm); }
-#pn-ds .ds-eb::before{ content:""; width:24px; height:2px; background:currentColor; }
-#pn-ds h2.ds-h2{ margin:0; max-width:20ch; font-family:var(--hd); font-weight:600; font-size:clamp(2.3rem,4.6vw,4.4rem); line-height:.94; letter-spacing:-.025em; color:inherit !important; text-transform:none; }
-#pn-ds .ds-lead{ margin:18px 0 0; max-width:52ch; font-size:clamp(1.02rem,1.2vw,1.16rem); line-height:1.6; color:var(--tm); }
-#pn-ds .ds-head{ display:flex; flex-wrap:wrap; align-items:flex-end; justify-content:space-between; gap:18px 40px; }
+
+/* ---------- shared ---------- */
+#pn-ds .ds-band{ position:relative; isolation:isolate; padding:clamp(22px,3.6vh,40px) 0 clamp(20px,3.4vh,36px); }
+#pn-ds .ds-band::before{ content:""; position:absolute; inset:0; z-index:-1; pointer-events:none; opacity:.05; background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .6 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); }
+#pn-ds .ds-in{ position:relative; width:100%; max-width:1180px; margin:0 auto; padding:0 var(--gut); }
+#pn-ds .ds-eb{ display:flex; align-items:center; gap:10px; margin:0 0 10px; font-family:var(--hd); font-size:.72rem; font-weight:700; line-height:1; letter-spacing:.3em; text-transform:uppercase; color:var(--gs); }
+#pn-ds .ds-eb::before{ content:""; width:24px; height:2px; flex:none; background:currentColor; }
+#pn-ds h1,#pn-ds h2,#pn-ds h3{ text-shadow:none !important; text-transform:none !important; }
+#pn-ds .ds-h2{ margin:0; max-width:16ch; font-family:var(--hd); font-weight:600; font-size:clamp(2.3rem,5vw,4.6rem); line-height:.92; letter-spacing:-.025em; color:inherit !important; text-wrap:balance; }
+#pn-ds .ds-h2 em{ font-style:normal; color:var(--terra); }
+#pn-ds .ds-lead{ margin:0; max-width:46ch; font-size:clamp(1rem,1.25vw,1.14rem); line-height:1.5; color:var(--tm); text-wrap:pretty; }
+#pn-ds .ds-head{ display:grid; gap:10px clamp(24px,4vw,64px); grid-template-columns:minmax(0,1fr); align-items:end; }
+@media (min-width:900px){ #pn-ds .ds-head{ grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr); } }
+
+#pn-ds .ds-ctas{ display:flex; flex-wrap:wrap; gap:10px 12px; margin-top:clamp(16px,2.4vh,24px); }
 #pn-ds .ds-btn{
-  display:inline-flex; align-items:center; gap:14px; padding:15px 30px 13px; border-radius:999px; text-decoration:none; cursor:pointer;
-  border:1px solid var(--g); background:var(--g); color:#1A140C;
-  font-family:var(--hd); font-size:.76rem; font-weight:700; letter-spacing:.19em; text-transform:uppercase;
-  box-shadow:0 12px 30px rgba(227,194,88,.26); transition:transform .22s ease, background .22s ease;
+  display:inline-flex; align-items:center; justify-content:center; gap:12px; min-height:46px; padding:13px 24px 11px;
+  border-radius:999px; border:1px solid var(--g); background:var(--g); color:#1A140C !important; text-decoration:none !important; cursor:pointer;
+  font-family:var(--hd); font-size:.74rem; font-weight:700; line-height:1; letter-spacing:.19em; text-transform:uppercase; white-space:nowrap;
+  box-shadow:0 10px 26px rgba(227,194,88,.22); transition:transform .2s ease, background .2s ease;
 }
 #pn-ds .ds-btn::after{ content:"\2192"; font-family:Arial,sans-serif; font-size:1rem; letter-spacing:0; transition:transform .3s cubic-bezier(.22,1,.36,1); }
 #pn-ds .ds-btn:hover{ background:var(--gs); transform:translateY(-2px); }
-#pn-ds .ds-btn:hover::after{ transform:translateX(6px); }
-#pn-ds .ds-btn--line{ background:transparent; color:var(--g); box-shadow:none; }
+#pn-ds .ds-btn:hover::after{ transform:translateX(5px); }
+#pn-ds .ds-btn--line{ background:transparent; color:var(--g) !important; box-shadow:none; }
 #pn-ds .ds-btn--line:hover{ background:rgba(227,194,88,.12); }
-#pn-ds .ds-btn--sm{ padding:12px 22px 10px; font-size:.68rem; }
-#pn-ds .ds-btn--ink{ background:var(--gd); border-color:var(--gd); color:#FBF6EA; box-shadow:0 12px 30px rgba(126,90,12,.26); }
+#pn-ds .ds-btn--down::after{ content:"\2193"; }
+#pn-ds .ds-btn--down:hover::after{ transform:translateY(3px); }
+#pn-ds .ds-btn--ink{ background:var(--gd); border-color:var(--gd); color:#FBF6EA !important; box-shadow:0 10px 24px rgba(126,90,12,.2); }
 #pn-ds .ds-btn--ink:hover{ background:#946B12; }
-#pn-ds a:focus-visible,#pn-ds button:focus-visible,#pn-ds input:focus-visible{ outline:2px solid var(--gs); outline-offset:3px; }
+#pn-ds a:focus-visible,#pn-ds button:focus-visible,#pn-ds select:focus-visible{ outline:2px solid var(--gs); outline-offset:3px; }
+#pn-ds .ds-mand a:focus-visible,#pn-ds .ds-mand button:focus-visible{ outline-color:var(--gd); }
 
-/* ================= 1 hero: the drafting table, basalt ================= */
+/* ---------- 1 hero: Earthrise ---------- */
 #pn-ds .ds-hero{
-  overflow:hidden; padding-top:clamp(80px,12vh,130px); padding-bottom:clamp(64px,10vh,110px);
-  min-height:max(640px, calc(100svh - 72px)); display:flex; align-items:center;
+  padding:clamp(28px,5vh,60px) 0 clamp(24px,4.2vh,50px);
   background:
-    radial-gradient(50% 60% at 78% 45%, rgba(91,139,219,.16) 0%, transparent 70%),
-    radial-gradient(40% 50% at 10% 100%, rgba(255,140,60,.14) 0%, transparent 70%),
-    linear-gradient(180deg,#342C27 0%,#1E1916 60%,#161210 100%);
+    radial-gradient(55% 75% at 82% 38%, rgba(18,88,106,.85) 0%, transparent 70%),
+    radial-gradient(45% 60% at 0% 100%, rgba(227,194,88,.10) 0%, transparent 70%),
+    linear-gradient(180deg,#0B3D45 0%,#0A3640 60%,#082A30 100%);
 }
-#pn-ds .ds-hero::after{ content:""; position:absolute; inset:0; z-index:-1; pointer-events:none;
-  background-image:linear-gradient(rgba(245,241,232,.045) 1px, transparent 1px), linear-gradient(90deg, rgba(245,241,232,.045) 1px, transparent 1px);
-  background-size:48px 48px; }
-#pn-ds .ds-hero__grid{ position:relative; z-index:1; width:100%; display:grid; gap:clamp(36px,4vw,64px); grid-template-columns:minmax(0,1fr); align-items:center; }
-@media (min-width:1080px){ #pn-ds .ds-hero__grid{ grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr); } }
-@media (max-width:1079px){ #pn-ds .ds-sheet{ order:-1; } #pn-ds .ds-hero{ padding-top:clamp(32px,6vh,64px); } }
-#pn-ds .ds-hero .ds-eb{ color:var(--gs); }
-#pn-ds h1.ds-h1{ margin:0; max-width:11ch; font-family:var(--hd); font-weight:600; font-size:clamp(3.2rem,6.6vw,7rem); line-height:.86; letter-spacing:-.035em; color:var(--iv) !important; text-transform:none; }
-#pn-ds .ds-verbs{ display:flex; flex-wrap:wrap; gap:6px; margin:clamp(22px,3vh,32px) 0 0; padding:0; list-style:none; }
-#pn-ds .ds-verbs li{ display:flex; align-items:center; gap:8px; padding:9px 14px 7px; border-radius:999px; font-family:var(--hd); font-size:.74rem; font-weight:700; letter-spacing:.2em; text-transform:uppercase; color:var(--td); border:1px solid var(--hair); transition:color .4s ease, background .4s ease, border-color .4s ease; }
-#pn-ds .ds-verbs li b{ font-size:.62rem; letter-spacing:.1em; opacity:.7; }
-#pn-ds .ds-verbs li.is-on{ color:#161210; background:var(--c); border-color:var(--c); }
-#pn-ds .ds-verbs li.is-done{ color:var(--iv); border-color:var(--c); }
-#pn-ds .ds-fmt{ display:flex; flex-wrap:wrap; gap:8px 26px; margin:clamp(18px,2.6vh,24px) 0 0; font-family:var(--hd); font-size:.68rem; font-weight:700; letter-spacing:.2em; text-transform:uppercase; color:var(--tm); }
-#pn-ds .ds-fmt b{ color:var(--iv); }
-#pn-ds .ds-ctas{ display:flex; gap:14px; flex-wrap:wrap; margin-top:clamp(24px,3.6vh,36px); }
-#pn-ds .ds-hero .ds-ctas{ justify-content:flex-start; }
+#pn-ds .ds-hero__grid{ display:grid; gap:clamp(20px,3vw,52px); grid-template-columns:minmax(0,1fr); align-items:center; }
+@media (min-width:1000px){ #pn-ds .ds-hero__grid{ grid-template-columns:minmax(0,.96fr) minmax(0,1.04fr); } }
+#pn-ds .ds-h1{ margin:0; max-width:11ch; font-family:var(--hd); font-weight:600; font-size:clamp(2.5rem,5.4vw,5.4rem); line-height:.92; letter-spacing:-.025em; color:var(--tx) !important; text-wrap:balance; }
+#pn-ds .ds-mission{ margin:14px 0 0; max-width:44ch; font-size:clamp(1.05rem,1.4vw,1.26rem); line-height:1.45; color:var(--tm); text-wrap:pretty; }
+#pn-ds .ds-mission b{ font-weight:600; color:var(--tx); }
+#pn-ds .ds-fmt{ display:flex; flex-wrap:wrap; gap:6px 18px; margin:clamp(14px,2vh,20px) 0 0; padding:0; list-style:none; }
+#pn-ds .ds-fmt a{ display:inline-flex; align-items:baseline; gap:8px; padding:4px 0; text-decoration:none !important; color:var(--td) !important; font-family:var(--hd); font-size:.68rem; font-weight:700; letter-spacing:.18em; text-transform:uppercase; border-bottom:1px solid transparent; }
+#pn-ds .ds-fmt a b{ color:var(--tx); letter-spacing:.12em; }
+#pn-ds .ds-fmt a:hover{ border-bottom-color:var(--g); }
 
-/* the sheet */
-#pn-ds .ds-sheet{ position:relative; margin:0; padding:clamp(12px,1.4vw,18px); border-radius:20px; background:rgba(14,37,77,.55); border:1px solid rgba(245,241,232,.18); box-shadow:0 30px 80px rgba(0,0,0,.45), inset 0 0 0 6px rgba(245,241,232,.03); }
+/* the drafting table */
+#pn-ds .ds-sheet{ margin:0; }
+#pn-ds .ds-sheet__art{ position:relative; padding:clamp(8px,1vw,14px); border-radius:18px; background:linear-gradient(160deg,rgba(15,76,92,.72) 0%,rgba(8,42,48,.92) 100%); border:1px solid rgba(245,241,232,.16); box-shadow:0 28px 70px rgba(0,0,0,.38), inset 0 0 0 5px rgba(245,241,232,.03); }
 #pn-ds .ds-sheet svg{ display:block; width:100%; height:auto; overflow:visible; font-family:var(--hd); }
-#pn-ds .ds-sheet text{ font-family:var(--hd); }
-#pn-ds .ds-sheet .tk{ fill:rgba(245,241,232,.55); font-size:9px; font-weight:700; letter-spacing:.18em; }
-#pn-ds .ds-sheet .lb{ fill:#F5F1E8; font-size:11px; font-weight:700; letter-spacing:.12em; }
-#pn-ds .ds-sheet .hd{ fill:#F5F1E8; font-size:12px; font-weight:700; letter-spacing:.24em; }
-#pn-ds .ds-sheet .grid line{ stroke:rgba(245,241,232,.07); stroke-width:1; }
-#pn-ds .ds-sheet .land{ fill:rgba(245,241,232,.035); stroke:#F5F1E8; stroke-width:1.6; stroke-dasharray:1; stroke-dashoffset:1; transition:stroke-dashoffset 1.6s cubic-bezier(.6,0,.2,1), fill .8s ease; }
-#pn-ds .ds-sheet .contour{ fill:none; stroke:rgba(245,241,232,.14); stroke-width:1; stroke-dasharray:1; stroke-dashoffset:1; transition:stroke-dashoffset 1.8s ease .3s; }
-#pn-ds .ds-sheet.on0 .land,#pn-ds .ds-sheet.on0 .contour{ stroke-dashoffset:0; }
-#pn-ds .ds-sheet .land{ transition:stroke-dashoffset 1.6s cubic-bezier(.6,0,.2,1), fill .8s ease, stroke .8s ease, filter .8s ease; }
-#pn-ds .ds-sheet.is-met .land{ stroke:#E3C258; stroke-width:2.4; fill:rgba(227,194,88,.12); filter:drop-shadow(0 0 10px rgba(227,194,88,.85)); }
-#pn-ds .ds-sheet .met{ fill:#E3C258; font-size:22px; font-weight:700; letter-spacing:.32em; opacity:0; transform:translateY(8px); transform-box:fill-box; transition:opacity .6s ease .25s, transform .7s cubic-bezier(.22,1,.36,1) .25s; }
-#pn-ds .ds-sheet.is-met .met{ opacity:1; transform:none; }
-#pn-ds .ds-sheet .L{ opacity:0; transition:opacity .5s ease, transform .6s cubic-bezier(.22,1,.36,1); transform-box:fill-box; }
+#pn-ds .ds-sheet text{ font-family:var(--hd); font-weight:700; }
+#pn-ds .ds-sheet .hd{ fill:#F0D68F; font-size:13px; letter-spacing:.22em; }
+#pn-ds .ds-sheet .lb{ fill:#F5F1E8; font-size:11.5px; letter-spacing:.12em; }
+#pn-ds .ds-sheet .tk{ fill:rgba(245,241,232,.7); font-size:9.5px; letter-spacing:.14em; }
+#pn-ds .ds-sheet .tg{ fill:#F5F1E8; font-size:10px; letter-spacing:.12em; }
+#pn-ds .ds-sheet .land{ fill:rgba(245,241,232,.03); stroke:#F5F1E8; stroke-width:1.6; stroke-dasharray:1; stroke-dashoffset:1; transition:stroke-dashoffset 1.4s cubic-bezier(.6,0,.2,1), fill .8s ease, stroke .8s ease, filter .8s ease; }
+#pn-ds .ds-sheet .contour{ fill:none; stroke:rgba(245,241,232,.14); stroke-width:1; stroke-dasharray:1; stroke-dashoffset:1; transition:stroke-dashoffset 1.6s ease .2s; }
+#pn-ds .ds-sheet__art.on0 .land,#pn-ds .ds-sheet__art.on0 .contour{ stroke-dashoffset:0; }
+#pn-ds .ds-sheet__art.is-met .land{ stroke:#E3C258; stroke-width:2.4; fill:rgba(227,194,88,.12); filter:drop-shadow(0 0 10px rgba(227,194,88,.8)); }
+#pn-ds .ds-sheet .met{ fill:#E3C258; font-size:24px; letter-spacing:.3em; opacity:0; transform:translateY(8px); transform-box:fill-box; transition:opacity .6s ease .2s, transform .7s cubic-bezier(.22,1,.36,1) .2s; }
+#pn-ds .ds-sheet__art.is-met .met{ opacity:1; transform:none; }
+#pn-ds .ds-sheet__art.is-met .pin,#pn-ds .ds-sheet__art.is-met .wire{ opacity:.35; }
+#pn-ds .ds-sheet .L{ opacity:0; transform-box:fill-box; transition:opacity .5s ease, transform .6s cubic-bezier(.22,1,.36,1); }
 #pn-ds .ds-sheet .pin{ transform:translateY(-10px); transform-origin:50% 100%; }
-#pn-ds .ds-sheet .pin circle.r{ fill:none; stroke:#C2603A; stroke-width:1.2; }
-#pn-ds .ds-sheet .pin circle.d{ fill:#C2603A; }
-#pn-ds .ds-sheet.on1 .L1{ opacity:1; transform:none; }
-#pn-ds .ds-sheet .bar{ transform:scaleY(0); transform-origin:50% 100%; transition:transform .7s cubic-bezier(.22,1,.36,1); }
-#pn-ds .ds-sheet.on2 .L2{ opacity:1; transform:none; }
-#pn-ds .ds-sheet.on2 .bar{ transform:scaleY(1); }
-#pn-ds .ds-sheet .wire{ fill:none; stroke:#5B8BDB; stroke-width:1.3; stroke-dasharray:1; stroke-dashoffset:1; transition:stroke-dashoffset 1.1s cubic-bezier(.6,0,.2,1); }
-#pn-ds .ds-sheet.on3 .wire{ stroke-dashoffset:0; }
-#pn-ds .ds-sheet.on3 .L3{ opacity:1; transform:none; }
+#pn-ds .ds-sheet .pin .r{ fill:none; stroke:#E3C258; stroke-width:1.3; }
+#pn-ds .ds-sheet .pin .d{ fill:#E3C258; }
+#pn-ds .ds-sheet__art.on1 .L1,#pn-ds .ds-sheet__art.on2 .L2,#pn-ds .ds-sheet__art.on3 .L3,#pn-ds .ds-sheet__art.on4 .L4,#pn-ds .ds-sheet__art.on5 .L5{ opacity:1; transform:none; }
+#pn-ds .ds-sheet .bar{ transform:scaleY(0); transform-origin:50% 100%; transform-box:fill-box; transition:transform .7s cubic-bezier(.22,1,.36,1); }
+#pn-ds .ds-sheet__art.on2 .bar{ transform:scaleY(1); }
+#pn-ds .ds-sheet .wire{ fill:none; stroke:rgba(245,241,232,.55); stroke-width:1.3; stroke-dasharray:1; stroke-dashoffset:1; transition:stroke-dashoffset 1.1s cubic-bezier(.6,0,.2,1); }
+#pn-ds .ds-sheet__art.on3 .wire{ stroke-dashoffset:0; }
 #pn-ds .ds-sheet .tag{ transform:translateX(18px); }
-#pn-ds .ds-sheet.on4 .L4{ opacity:1; transform:none; }
-#pn-ds .ds-sheet .gauge{ transform:scaleX(0); transform-origin:0 50%; transition:transform 1.4s cubic-bezier(.22,1,.36,1); }
-#pn-ds .ds-sheet.on5 .L5{ opacity:1; transform:none; }
-#pn-ds .ds-sheet.on5 .gauge{ transform:scaleX(1); }
+#pn-ds .ds-sheet .gauge{ transform:scaleX(0); transform-origin:0 50%; transform-box:fill-box; transition:transform 1.3s cubic-bezier(.22,1,.36,1); }
+#pn-ds .ds-sheet__art.on5 .gauge{ transform:scaleX(1); }
 #pn-ds .ds-sheet .xh{ stroke:rgba(227,194,88,.5); stroke-width:1; stroke-dasharray:3 4; opacity:0; transition:opacity .3s ease; }
-#pn-ds .ds-sheet.is-hover .xh{ opacity:1; }
-#pn-ds .ds-sheet .xy{ fill:var(--g); font-size:9px; font-weight:700; letter-spacing:.14em; opacity:0; transition:opacity .3s ease; }
-#pn-ds .ds-sheet.is-hover .xy{ opacity:1; }
-#pn-ds .ds-cap{ display:flex; justify-content:space-between; gap:12px; margin-top:10px; padding:0 4px; font-family:var(--hd); font-size:.58rem; font-weight:700; letter-spacing:.2em; text-transform:uppercase; color:var(--td); }
+#pn-ds .ds-sheet .xy{ fill:#E3C258; font-size:9px; letter-spacing:.14em; opacity:0; transition:opacity .3s ease; }
+#pn-ds .ds-sheet__art.is-hover .xh,#pn-ds .ds-sheet__art.is-hover .xy{ opacity:1; }
 
-/* ================= 2 the five moves: savanna ================= */
-#pn-ds .ds-moves{ color:var(--ink); background:radial-gradient(60% 50% at 80% 0%, rgba(255,250,232,.95) 0%, transparent 70%), linear-gradient(180deg,#EFE2C2 0%,#D9C293 100%); }
-#pn-ds .ds-moves .ds-eb{ color:var(--im); }
-#pn-ds .ds-acc{ display:flex; gap:clamp(8px,.9vw,12px); margin:clamp(32px,5vh,52px) 0 0; padding:0; list-style:none; height:clamp(380px,52vh,470px); }
-#pn-ds .ds-acc li{ position:relative; flex:1 1 0; min-width:0; transition:flex-grow .7s cubic-bezier(.22,1,.36,1); }
-#pn-ds .ds-acc li.is-on{ flex-grow:3.4; }
-#pn-ds .ds-mv{
-  position:relative; display:flex; flex-direction:column; justify-content:flex-end; width:100%; height:100%; overflow:hidden;
-  padding:clamp(18px,2vw,28px); border:0; border-radius:26px; text-align:left; cursor:pointer; font:inherit; color:var(--iv);
-  background:radial-gradient(90% 60% at 50% 0%, color-mix(in srgb, var(--hi) 55%, transparent) 0%, transparent 70%), var(--c);
-  box-shadow:0 24px 56px rgba(60,40,10,.3);
+/* the chapter bar: the five moves, tappable */
+#pn-ds .ds-ch{ display:grid; grid-template-columns:repeat(5,minmax(0,1fr)); gap:6px; margin:10px 0 0; padding:0; list-style:none; }
+#pn-ds .ds-ch li{ margin:0; padding:0; min-width:0; }
+#pn-ds .ds-ch button{
+  position:relative; display:flex; flex-direction:column; align-items:flex-start; gap:3px; width:100%; min-height:46px; margin:0; padding:11px 2px 4px;
+  border:0; border-radius:0; background:none; box-shadow:none; cursor:pointer; text-align:left;
+  font-family:var(--hd); font-size:.68rem; font-weight:700; line-height:1.15; letter-spacing:.14em; text-transform:uppercase; color:var(--td);
+  transition:color .3s ease;
 }
-#pn-ds .ds-mv__n{ position:absolute; top:clamp(14px,1.6vw,22px); left:clamp(18px,2vw,28px); font-family:var(--hd); font-weight:700; font-size:clamp(4rem,7vw,7.5rem); line-height:.8; letter-spacing:-.04em; color:transparent; -webkit-text-stroke:1.5px rgba(245,241,232,.45); }
-#pn-ds .ds-mv__v{ display:block; font-family:var(--hd); font-weight:600; font-size:clamp(1.6rem,2.4vw,2.6rem); line-height:1; letter-spacing:-.015em; }
-#pn-ds .ds-mv__q{ display:block; margin-top:8px; font-size:.95rem; line-height:1.35; color:var(--tm); }
-#pn-ds .ds-mv__more{ display:grid; grid-template-rows:0fr; opacity:0; transition:grid-template-rows .6s cubic-bezier(.22,1,.36,1), opacity .4s ease; }
-#pn-ds .ds-mv__more > div{ overflow:hidden; }
-#pn-ds .ds-acc li.is-on .ds-mv__more{ grid-template-rows:1fr; opacity:1; transition-delay:.15s; }
-#pn-ds .ds-mv__out{ display:block; margin-top:18px; padding-top:14px; border-top:1px solid var(--hair); font-family:var(--hd); font-size:.62rem; font-weight:700; letter-spacing:.2em; text-transform:uppercase; color:var(--td); }
-#pn-ds .ds-mv__out b{ display:block; margin-top:6px; font-size:1.25rem; letter-spacing:0; text-transform:none; font-weight:600; color:var(--iv); }
-#pn-ds .ds-mv__link{ position:absolute; right:clamp(18px,2vw,28px); bottom:clamp(18px,2vw,28px); z-index:2; display:none; align-items:center; gap:10px; padding:10px 16px 8px; border-radius:999px; border:1px solid rgba(227,194,88,.7); color:var(--g); text-decoration:none; font-family:var(--hd); font-size:.62rem; font-weight:700; letter-spacing:.16em; text-transform:uppercase; }
-#pn-ds .ds-mv__link::after{ content:"\2192"; font-family:Arial,sans-serif; }
-#pn-ds .ds-mv__link:hover{ background:var(--g); color:#1A140C; }
-#pn-ds .ds-acc li.is-on .ds-mv__link{ display:inline-flex; }
-#pn-ds .ds-acc li:not(.is-on) .ds-mv__q{ display:none; }
+#pn-ds .ds-ch button::before,#pn-ds .ds-ch button::after{ content:""; position:absolute; left:0; top:0; height:3px; border-radius:2px; }
+#pn-ds .ds-ch button::before{ right:0; background:rgba(245,241,232,.16); }
+#pn-ds .ds-ch button::after{ width:0; background:var(--g); }
+#pn-ds .ds-ch button.is-on::after,#pn-ds .ds-ch button.is-done::after{ width:100%; }
+#pn-ds .ds-ch button.is-on.is-run::after{ animation:pnds-run var(--dur,2s) linear both; }
+@keyframes pnds-run{ from{ width:0; } to{ width:100%; } }
+#pn-ds .ds-ch button b{ font-size:.62rem; letter-spacing:.1em; color:var(--g); }
+#pn-ds .ds-ch button.is-on,#pn-ds .ds-ch button.is-done,#pn-ds .ds-ch button:hover{ color:var(--tx); }
+#pn-ds .ds-say{ margin:6px 0 0; min-height:2.9em; font-size:clamp(.95rem,1.1vw,1.04rem); line-height:1.45; color:var(--tm); }
+#pn-ds .ds-say b{ margin-right:8px; font-family:var(--hd); font-weight:700; font-size:.8em; letter-spacing:.16em; text-transform:uppercase; color:var(--g); }
 
-/* ================= 3 the mandates: canopy ================= */
-#pn-ds .ds-mand{ background:radial-gradient(60% 45% at 20% 0%, rgba(150,205,140,.2) 0%, transparent 70%), linear-gradient(180deg,#164A37 0%,#0A251C 100%); }
-#pn-ds .ds-who{ display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:clamp(28px,4vh,40px) 0 0; }
-#pn-ds .ds-who > span{ margin-right:6px; font-family:var(--hd); font-size:.62rem; font-weight:700; letter-spacing:.22em; text-transform:uppercase; color:var(--td); }
-#pn-ds .ds-chip{ padding:9px 15px 7px; border-radius:999px; border:1px solid var(--hair); background:rgba(245,241,232,.05); color:var(--tm); font:700 .64rem/1 var(--hd); letter-spacing:.14em; text-transform:uppercase; cursor:pointer; transition:background .2s ease,color .2s ease,border-color .2s ease; }
-#pn-ds .ds-chip[aria-pressed="true"]{ background:var(--iv); border-color:var(--iv); color:#0A251C; }
-#pn-ds .ds-cards{ display:grid; gap:clamp(12px,1.3vw,18px); margin:clamp(22px,3vh,30px) 0 0; padding:0; list-style:none; grid-template-columns:minmax(0,1fr); }
-@media (min-width:760px){ #pn-ds .ds-cards{ grid-template-columns:repeat(2,minmax(0,1fr)); } #pn-ds .ds-card--flag,#pn-ds .ds-card:last-child{ grid-column:1 / -1; } }
-@media (min-width:1180px){
-  #pn-ds .ds-cards{ grid-template-columns:repeat(5,minmax(0,1fr)); }
-  #pn-ds .ds-card:last-child{ grid-column:auto; }
-  #pn-ds .ds-card h3{ font-size:1.5rem; }
-  #pn-ds .ds-card__q{ font-size:1.06rem; }
-  #pn-ds .ds-cards .ds-card--flag h3{ font-size:2rem; }
-  #pn-ds .ds-cards .ds-card--flag{ display:grid; grid-template-columns:minmax(0,1.15fr) minmax(0,1fr); column-gap:56px; align-items:end; }
-  #pn-ds .ds-card--flag .ds-card__b{ padding-bottom:4px; }
+/* ---------- 2 the three mandates: ivory ---------- */
+#pn-ds .ds-mand{
+  color:var(--ink);
+  background:
+    radial-gradient(55% 80% at 100% 0%, rgba(227,194,88,.22) 0%, transparent 62%),
+    radial-gradient(40% 70% at 0% 100%, rgba(138,58,34,.08) 0%, transparent 64%),
+    linear-gradient(180deg,#F7F0DE 0%,#EEE3C8 100%);
 }
-#pn-ds .ds-card{ position:relative; display:flex; flex-direction:column; padding:clamp(22px,2.2vw,28px); border-radius:22px; background:#F5F1E8; color:var(--ink); box-shadow:0 22px 50px rgba(2,14,9,.42); transition:opacity .35s ease, transform .35s cubic-bezier(.22,1,.36,1); }
-#pn-ds .ds-cards.is-filtered .ds-card:not(.is-match){ opacity:.28; transform:scale(.98); }
-#pn-ds .ds-card--flag{ background:linear-gradient(160deg,#FFF9EA 0%,#F2E6C6 100%); box-shadow:0 26px 60px rgba(2,14,9,.5), inset 0 0 0 2px var(--g); }
-#pn-ds .ds-bar{ display:grid; grid-template-columns:repeat(5,minmax(0,1fr)); gap:4px; }
-#pn-ds .ds-bar i{ height:6px; border-radius:3px; background:rgba(26,20,12,.1); }
-#pn-ds .ds-bar i.is-on{ background:var(--c); }
-#pn-ds .ds-card__top{ display:flex; align-items:baseline; justify-content:space-between; gap:12px; margin-top:16px; }
-#pn-ds .ds-card__n{ white-space:nowrap; font-family:var(--hd); font-size:.7rem; font-weight:700; letter-spacing:.2em; color:var(--idm); }
-#pn-ds .ds-card__t{ font-family:var(--hd); font-size:.6rem; font-weight:700; letter-spacing:.16em; text-transform:uppercase; color:var(--idm); text-align:right; }
-#pn-ds .ds-card h3{ margin:6px 0 0; font-family:var(--hd); font-weight:600; font-size:clamp(1.6rem,2vw,2rem); line-height:1; letter-spacing:-.01em; color:var(--ink); }
-#pn-ds .ds-card__q{ margin:14px 0 0; font-family:var(--hd); font-weight:500; font-size:clamp(1.12rem,1.35vw,1.3rem); line-height:1.25; color:#0F3A2A; }
-#pn-ds .ds-card--flag .ds-card__q{ font-size:clamp(1.4rem,2vw,1.9rem); }
-#pn-ds .ds-card ul{ margin:16px 0 0; padding:14px 0 0; list-style:none; display:grid; gap:7px; border-top:1px solid var(--ihair); }
-#pn-ds .ds-card li{ position:relative; padding-left:18px; font-size:.9rem; line-height:1.4; color:var(--im); }
-#pn-ds .ds-card li::before{ content:""; position:absolute; left:0; top:.6em; width:8px; height:2px; background:#17644F; }
-#pn-ds .ds-card__k{ display:block; margin:0 0 2px; font-family:var(--hd); font-size:.58rem; font-weight:700; letter-spacing:.2em; text-transform:uppercase; color:var(--idm); }
-#pn-ds .ds-card__b{ display:flex; flex-direction:column; flex:1; }
-#pn-ds .ds-card__go{ margin-top:auto; padding-top:20px; }
-#pn-ds .ds-card__go a{ display:inline-flex; align-items:center; gap:10px; color:var(--gd); text-decoration:none; font-family:var(--hd); font-size:.68rem; font-weight:700; letter-spacing:.16em; text-transform:uppercase; border-bottom:1px solid currentColor; padding-bottom:2px; }
-#pn-ds .ds-card__go a::after{ content:"\2192"; font-family:Arial,sans-serif; }
-#pn-ds .ds-card--flag .ds-card__go a{ padding:13px 24px 11px; border:0; border-radius:999px; background:var(--gd); color:#FBF6EA; }
-#pn-ds .ds-key{ display:flex; flex-wrap:wrap; gap:8px 18px; margin:18px 0 0; padding:0; list-style:none; font-family:var(--hd); font-size:.62rem; font-weight:700; letter-spacing:.18em; text-transform:uppercase; color:var(--td); }
-#pn-ds .ds-key li{ display:flex; align-items:center; gap:8px; }
-#pn-ds .ds-key i{ width:16px; height:6px; border-radius:3px; background:var(--c); }
-
-/* ================= 4 how to begin: ochre staircase ================= */
-#pn-ds .ds-begin{ background:radial-gradient(60% 50% at 80% 0%, rgba(255,214,140,.24) 0%, transparent 70%), linear-gradient(180deg,#6E4A14 0%,#3E2A0B 100%); }
-#pn-ds .ds-steps{ display:grid; gap:clamp(12px,1.3vw,18px); margin:clamp(32px,5vh,52px) 0 0; padding:0; list-style:none; grid-template-columns:minmax(0,1fr); align-items:end; }
+#pn-ds .ds-mand .ds-eb{ color:var(--terra); }
+#pn-ds .ds-mand .ds-lead{ color:var(--im); }
+#pn-ds .ds-tabs{ display:none; }
+#pn-ds .ds-tiers{ display:grid; gap:clamp(12px,1.3vw,18px); margin:clamp(16px,2.6vh,26px) 0 0; padding:0; list-style:none; grid-template-columns:minmax(0,1fr); }
+#pn-ds .ds-tier{ position:relative; display:flex; flex-direction:column; margin:0; padding:clamp(18px,1.8vw,24px); border-radius:20px; background:#FBF6EA; border:1px solid var(--ihair); box-shadow:0 18px 40px rgba(60,40,10,.13); color:var(--ink); }
+#pn-ds .ds-tier__top{ display:flex; align-items:baseline; justify-content:space-between; gap:12px; }
+#pn-ds .ds-tier__k{ font-family:var(--hd); font-size:.64rem; font-weight:700; letter-spacing:.22em; text-transform:uppercase; color:var(--terra); }
+#pn-ds .ds-tier__t{ font-family:var(--hd); font-weight:700; font-size:clamp(1.25rem,1.7vw,1.6rem); line-height:1; letter-spacing:-.01em; white-space:nowrap; }
+#pn-ds .ds-tier h3{ margin:8px 0 0; font-family:var(--hd); font-weight:600; font-size:clamp(1.7rem,2.3vw,2.25rem); line-height:1; letter-spacing:-.01em; color:inherit !important; }
+#pn-ds .ds-tier__p{ margin:6px 0 0; font-size:.98rem; line-height:1.4; color:var(--im); }
+#pn-ds .ds-depth{ display:grid; gap:9px; margin:14px 0 0; padding:12px 0 0; list-style:none; border-top:1px solid var(--ihair); }
+#pn-ds .ds-depth li{ display:grid; grid-template-columns:minmax(0,1fr) auto; align-items:center; gap:2px 10px; margin:0; padding:0; }
+#pn-ds .ds-depth__m{ font-family:var(--hd); font-size:.68rem; font-weight:700; line-height:1.2; letter-spacing:.16em; text-transform:uppercase; }
+#pn-ds .ds-depth__m b{ margin-right:6px; color:var(--terra); }
+#pn-ds .ds-dots{ display:inline-flex; gap:3px; }
+#pn-ds .ds-dots i{ display:block; width:14px; height:5px; border-radius:3px; background:rgba(26,20,12,.12); }
+#pn-ds .ds-dots i.on{ background:#0F4C5C; }
+#pn-ds .ds-depth__t{ grid-column:1 / -1; font-size:.9rem; line-height:1.35; color:var(--im); }
+#pn-ds .ds-tier__leave{ margin:14px 0 0; padding-top:12px; border-top:1px solid var(--ihair); font-family:var(--hd); font-weight:600; font-size:1.12rem; line-height:1.15; }
+#pn-ds .ds-tier__leave span{ display:block; margin-bottom:4px; font-size:.6rem; font-weight:700; letter-spacing:.2em; text-transform:uppercase; color:var(--idm); }
+#pn-ds .ds-tier .ds-btn{ margin-top:14px; width:100%; }
+#pn-ds .ds-tier--top{ background:linear-gradient(165deg,#0F4C5C 0%,#0B3D45 55%,#082A30 100%); color:var(--tx); border-color:transparent; box-shadow:0 24px 54px rgba(8,42,48,.36), inset 0 0 0 2px var(--g); }
+#pn-ds .ds-tier--top .ds-tier__k,#pn-ds .ds-tier--top .ds-depth__m b{ color:var(--gs); }
+#pn-ds .ds-tier--top .ds-tier__p,#pn-ds .ds-tier--top .ds-depth__t{ color:var(--tm); }
+#pn-ds .ds-tier--top .ds-depth,#pn-ds .ds-tier--top .ds-tier__leave{ border-top-color:var(--hair); }
+#pn-ds .ds-tier--top .ds-tier__leave span{ color:var(--td); }
+#pn-ds .ds-tier--top .ds-dots i{ background:rgba(245,241,232,.18); }
+#pn-ds .ds-tier--top .ds-dots i.on{ background:var(--g); }
+#pn-ds .ds-terms{ margin:14px 0 0; max-width:86ch; font-size:.86rem; line-height:1.45; color:var(--idm); }
 @media (min-width:900px){
-  #pn-ds .ds-steps{ grid-template-columns:repeat(3,minmax(0,1fr)); }
-  #pn-ds .ds-steps li:nth-child(1){ margin-top:120px; }
-  #pn-ds .ds-steps li:nth-child(2){ margin-top:60px; }
+  #pn-ds .ds-tiers{ grid-template-columns:repeat(3,minmax(0,1fr)); }
 }
-#pn-ds .ds-step{ position:relative; display:flex; flex-direction:column; min-height:280px; padding:clamp(22px,2.2vw,30px); border-radius:24px; background:rgba(245,241,232,.08); border:1px solid rgba(245,241,232,.2); box-shadow:0 22px 50px rgba(20,12,2,.35); }
-#pn-ds .ds-step--top{ background:#F5F1E8; color:var(--ink); border-color:transparent; box-shadow:0 26px 60px rgba(20,12,2,.45), inset 0 0 0 2px var(--g); }
-#pn-ds .ds-step__k{ font-family:var(--hd); font-size:.62rem; font-weight:700; letter-spacing:.22em; text-transform:uppercase; color:var(--td); }
-#pn-ds .ds-step--top .ds-step__k{ color:var(--gd); }
-#pn-ds .ds-step h3{ margin:10px 0 0; font-family:var(--hd); font-weight:600; font-size:clamp(1.8rem,2.4vw,2.4rem); line-height:1; color:inherit; }
-#pn-ds .ds-step__time{ display:block; margin-top:8px; font-family:var(--hd); font-weight:700; font-size:clamp(2.6rem,4vw,3.6rem); line-height:.9; letter-spacing:-.02em; color:var(--iv); }
-#pn-ds .ds-step--top .ds-step__time{ color:#3E2A0B; }
-#pn-ds .ds-step p{ margin:14px 0 0; font-size:.95rem; line-height:1.5; color:var(--tm); }
-#pn-ds .ds-step--top p{ color:var(--im); }
-#pn-ds .ds-step__leave{ margin-top:auto; padding-top:16px; font-family:var(--hd); font-weight:600; font-size:1.05rem; line-height:1.2; }
-#pn-ds .ds-step__leave span{ display:block; font-size:.58rem; font-weight:700; letter-spacing:.2em; text-transform:uppercase; color:var(--td); margin-bottom:4px; }
-#pn-ds .ds-step--top .ds-step__leave span{ color:var(--idm); }
-#pn-ds .ds-step__book{ margin-top:18px; }
-#pn-ds .ds-mc{ display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:16px 30px; margin-top:clamp(18px,2.4vh,26px); padding:clamp(18px,2vw,26px) clamp(20px,2.2vw,30px); border-radius:22px; background:rgba(22,14,4,.35); border:1px solid rgba(245,241,232,.14); }
-#pn-ds .ds-mc b{ display:block; font-family:var(--hd); font-size:.62rem; font-weight:700; letter-spacing:.22em; text-transform:uppercase; color:var(--td); }
-#pn-ds .ds-mc strong{ display:block; margin-top:6px; font-family:var(--hd); font-weight:600; font-size:clamp(1.3rem,1.8vw,1.7rem); line-height:1.1; }
-#pn-ds .ds-mc p{ margin:6px 0 0; font-size:.9rem; color:var(--tm); max-width:62ch; }
-#pn-ds .ds-terms{ margin:18px 0 0; font-size:.82rem; color:var(--td); }
+@supports (grid-template-rows:subgrid){
+  @media (min-width:900px){
+    #pn-ds .ds-tiers{ grid-template-rows:repeat(6,auto); row-gap:0; }
+    #pn-ds .ds-tier{ display:grid; grid-row:span 6; grid-template-rows:subgrid; align-content:start; }
+  }
+}
+/* phones and small tablets: one mandate at a time */
+#pn-ds .ds-mand.is-tabbed .ds-tabs{ display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:4px; margin:16px 0 0; padding:4px; border-radius:16px; background:rgba(26,20,12,.07); }
+#pn-ds .ds-tabs button{
+  display:flex; flex-direction:column; align-items:center; justify-content:center; gap:4px; min-height:54px; margin:0; padding:8px 4px 6px;
+  border:0; border-radius:12px; background:transparent; box-shadow:none; cursor:pointer; text-align:center;
+  font-family:var(--hd); font-size:.66rem; font-weight:700; line-height:1.1; letter-spacing:.1em; text-transform:uppercase; color:var(--im);
+  transition:background .25s ease, color .25s ease;
+}
+#pn-ds .ds-tabs button small{ font-size:.6rem; letter-spacing:.08em; color:var(--idm); }
+#pn-ds .ds-tabs button[aria-selected="true"]{ background:#0B3D45; color:var(--tx); box-shadow:0 6px 16px rgba(8,42,48,.28); }
+#pn-ds .ds-tabs button[aria-selected="true"] small{ color:var(--gs); }
+#pn-ds .ds-mand.is-tabbed .ds-tiers{ margin-top:10px; }
+#pn-ds .ds-mand.is-tabbed .ds-tier:not(.is-sel){ display:none; }
 
-/* ================= 5 the Co-designers: lake ================= */
-#pn-ds .ds-co{ background:radial-gradient(55% 50% at 50% 0%, rgba(140,185,255,.26) 0%, transparent 70%), linear-gradient(180deg,#2452A0 0%,#1B3F7A 55%,#0B1E40 100%); }
-#pn-ds .ds-co__ways{ display:grid; gap:clamp(12px,1.3vw,18px); margin:clamp(32px,5vh,48px) 0 0; padding:0; list-style:none; grid-template-columns:minmax(0,1fr); }
-@media (min-width:700px){ #pn-ds .ds-co__ways{ grid-template-columns:repeat(2,minmax(0,1fr)); } }
-@media (min-width:1120px){ #pn-ds .ds-co__ways{ grid-template-columns:repeat(4,minmax(0,1fr)); } }
-#pn-ds .ds-way{ display:flex; flex-direction:column; padding:clamp(22px,2.2vw,28px); border-radius:22px; background:#F5F1E8; color:var(--ink); box-shadow:0 22px 50px rgba(4,12,30,.45); }
-#pn-ds .ds-way__n{ font-family:var(--hd); font-size:.66rem; font-weight:700; letter-spacing:.22em; text-transform:uppercase; color:#1F4A8C; }
-#pn-ds .ds-way h3{ margin:8px 0 0; font-family:var(--hd); font-weight:600; font-size:clamp(1.8rem,2.4vw,2.3rem); line-height:1; color:var(--ink); }
-#pn-ds .ds-way__r{ display:block; margin-top:4px; font-family:var(--hd); font-size:.7rem; font-weight:700; letter-spacing:.16em; text-transform:uppercase; color:var(--idm); }
-#pn-ds .ds-way p{ margin:14px 0 0; font-size:.95rem; line-height:1.5; color:var(--im); }
-#pn-ds .ds-co__nat{ display:flex; flex-wrap:wrap; align-items:center; gap:10px 14px; margin-top:clamp(24px,3.4vh,34px); padding:clamp(18px,2vw,24px) clamp(20px,2.2vw,28px); border-radius:22px; background:rgba(245,241,232,.07); border:1px solid rgba(245,241,232,.2); }
-#pn-ds .ds-co__nat > span{ margin-right:6px; font-family:var(--hd); font-size:.66rem; font-weight:700; letter-spacing:.22em; text-transform:uppercase; color:var(--td); }
-#pn-ds .ds-co__nat a.ds-nat{ display:inline-flex; align-items:center; gap:8px; padding:10px 16px 8px; border-radius:999px; background:var(--iv); color:#0B1E40; font-family:var(--hd); font-size:.74rem; font-weight:700; letter-spacing:.14em; text-transform:uppercase; text-decoration:none; }
-#pn-ds .ds-co__nat a.ds-nat::before{ content:""; width:8px; height:8px; border-radius:50%; background:#3FA77F; }
-#pn-ds .ds-co__nat a.ds-nat:hover{ background:#FFFFFF; }
-#pn-ds .ds-co__nat p{ flex:1 1 260px; margin:0; font-size:.9rem; line-height:1.45; color:var(--tm); }
-#pn-ds .ds-co .ds-ctas{ margin-top:clamp(24px,3.4vh,34px); }
+/* ---------- 3 the Co-designers: Lagoon ---------- */
+#pn-ds .ds-co{ background:radial-gradient(60% 80% at 0% 0%, rgba(227,194,88,.10) 0%, transparent 60%), linear-gradient(180deg,#0F4C5C 0%,#0B3D45 100%); }
+#pn-ds .ds-ways{ display:grid; gap:10px; margin:clamp(16px,2.6vh,24px) 0 0; padding:0; list-style:none; grid-template-columns:repeat(2,minmax(0,1fr)); }
+@media (min-width:900px){ #pn-ds .ds-ways{ grid-template-columns:repeat(4,minmax(0,1fr)); gap:12px; } }
+#pn-ds .ds-way{ display:flex; flex-direction:column; margin:0; padding:clamp(14px,1.5vw,20px); border-radius:18px; background:rgba(245,241,232,.06); border:1px solid var(--hair); }
+#pn-ds .ds-way svg{ display:block; width:26px; height:26px; fill:none; stroke:#E3C258; stroke-width:1.6; stroke-linecap:round; stroke-linejoin:round; }
+#pn-ds .ds-way h3{ margin:10px 0 0; font-family:var(--hd); font-weight:600; font-size:clamp(1.35rem,1.8vw,1.7rem); line-height:1; color:var(--tx) !important; }
+#pn-ds .ds-way__r{ display:block; margin-top:4px; font-family:var(--hd); font-size:.6rem; font-weight:700; line-height:1.2; letter-spacing:.18em; text-transform:uppercase; color:var(--td); }
+#pn-ds .ds-way p{ margin:8px 0 0; font-size:.92rem; line-height:1.4; color:var(--tm); }
+#pn-ds .ds-join{ display:grid; gap:12px 24px; margin-top:12px; padding:clamp(14px,1.6vw,20px); border-radius:18px; background:rgba(8,42,48,.55); border:1px solid var(--hair); grid-template-columns:minmax(0,1fr); align-items:end; }
+@media (min-width:900px){ #pn-ds .ds-join{ grid-template-columns:minmax(0,1fr) auto; } }
+#pn-ds .ds-find{ display:flex; flex-wrap:wrap; align-items:center; gap:10px; margin:0; }
+#pn-ds .ds-find label{ flex:1 1 100%; font-family:var(--hd); font-size:.66rem; font-weight:700; line-height:1.2; letter-spacing:.2em; text-transform:uppercase; color:var(--td); }
+#pn-ds .ds-find label b{ color:var(--tx); }
+#pn-ds .ds-find select{
+  flex:1 1 220px; min-width:0; height:46px; margin:0; padding:0 42px 0 18px; border-radius:999px; border:1px solid rgba(245,241,232,.32);
+  background:#082A30 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5l5 5 5-5' fill='none' stroke='%23E3C258' stroke-width='1.6'/%3E%3C/svg%3E") no-repeat right 18px center / 12px 8px;
+  color:var(--tx); font-family:var(--bd); font-size:1rem; font-weight:600; line-height:1; -webkit-appearance:none; appearance:none; cursor:pointer;
+}
+#pn-ds .ds-find select option{ color:#1A140C; background:#F5F1E8; }
+#pn-ds .ds-join__ctas{ display:flex; flex-wrap:wrap; gap:10px; }
+#pn-ds .ds-join__ctas .ds-btn{ flex:1 1 auto; }
 
-/* ================= 6 close: laterite ================= */
-#pn-ds .ds-close{ text-align:center; background:radial-gradient(60% 50% at 50% 0%, rgba(255,190,120,.28) 0%, transparent 70%), linear-gradient(180deg,#8A3A22 0%,#4C1D12 100%); }
-#pn-ds .ds-close h2.ds-h2{ margin:0 auto; max-width:20ch; }
-#pn-ds .ds-close .ds-lead{ margin-left:auto; margin-right:auto; }
+/* ---------- 4 the close: Earthrise Depth ---------- */
+#pn-ds .ds-close{ text-align:center; padding:clamp(24px,4.2vh,46px) 0 clamp(26px,4.4vh,48px); background:radial-gradient(50% 75% at 50% 0%, rgba(227,194,88,.14) 0%, transparent 65%), linear-gradient(180deg,#0B3D45 0%,#082A30 100%); }
+#pn-ds .ds-cup{ display:block; width:clamp(66px,5.2vw,94px); height:auto; aspect-ratio:2 / 1; margin:0 auto 10px; color:#E3C258; }
 #pn-ds .ds-close .ds-eb{ justify-content:center; }
-#pn-ds .ds-close .ds-eb::after{ content:""; width:24px; height:2px; background:currentColor; }
-#pn-ds .ds-close__laurel{ display:block; width:120px; aspect-ratio:2/1; margin:0 auto 10px; color:var(--g); }
+#pn-ds .ds-close .ds-eb::after{ content:""; width:24px; height:2px; flex:none; background:currentColor; }
+#pn-ds .ds-close .ds-h2{ margin:0 auto; max-width:18ch; }
+#pn-ds .ds-close .ds-lead{ margin:10px auto 0; }
+#pn-ds .ds-close .ds-ctas{ justify-content:center; }
 
-@media (max-width:899px){
-  #pn-ds .ds-acc{ flex-direction:column; height:auto; }
-  #pn-ds .ds-acc li,#pn-ds .ds-acc li.is-on{ flex:none; }
-  #pn-ds .ds-mv{ min-height:290px; cursor:default; }
-  #pn-ds .ds-mv__n{ font-size:3.4rem; }
-  #pn-ds .ds-acc li .ds-mv__more{ grid-template-rows:1fr; opacity:1; }
-  #pn-ds .ds-acc li .ds-mv__q{ display:block !important; }
-  #pn-ds .ds-acc li .ds-mv__link{ display:inline-flex; top:clamp(18px,2vw,28px); bottom:auto; }
-}
+/* ---------- phones ---------- */
 @media (max-width:640px){
-  #pn-ds .ds-verbs li{ padding:7px 11px 5px; font-size:.64rem; letter-spacing:.16em; }
-  #pn-ds .ds-ctas{ flex-direction:column; align-items:stretch; max-width:340px; margin-left:auto; margin-right:auto; }
-  #pn-ds .ds-ctas .ds-btn{ justify-content:center; }
-  #pn-ds .ds-hero .ds-ctas{ margin-left:0; }
-  #pn-ds .ds-verbs li{ padding:7px 11px 5px; }
+  #pn-ds .ds-h1{ max-width:none; font-size:clamp(2.3rem,11.2vw,3rem); }
+  #pn-ds .ds-h2{ font-size:clamp(2.2rem,10.4vw,2.9rem); }
+  #pn-ds .ds-ctas .ds-btn,#pn-ds .ds-find .ds-btn,#pn-ds .ds-join__ctas .ds-btn{ width:100%; }
+  #pn-ds .ds-find select{ flex-basis:100%; }
+  #pn-ds .ds-fmt{ gap:2px 14px; }
+  #pn-ds .ds-sheet text:not(.met),#pn-ds .ds-sheet .lgd{ display:none; }
+  #pn-ds .ds-sheet .met{ font-size:34px; }
+  #pn-ds .ds-ch{ gap:4px; }
+  #pn-ds .ds-ch button{ font-size:.58rem; letter-spacing:.07em; padding-top:10px; }
+  #pn-ds .ds-ch button b{ font-size:.56rem; }
+  #pn-ds .ds-way{ padding:13px 12px; border-radius:16px; }
+  #pn-ds .ds-way p{ font-size:.86rem; }
+  #pn-ds .ds-cup{ width:64px; }
 }
 @media (prefers-reduced-motion:reduce){
-  #pn-ds *{ transition:none !important; }
+  #pn-ds *,#pn-ds *::before,#pn-ds *::after{ transition:none !important; animation:none !important; }
 }
 </style>
 
-<svg width="0" height="0" style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true" focusable="false">
-  <defs>
-    <g id="pnds-laurel-branch">
-      <path d="M56 30 Q30 34 4 27" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round"/>
-      <ellipse cx="49" cy="28.4" rx="4.4" ry="1.7" fill="currentColor" transform="rotate(-24 49 28.4)"/>
-      <ellipse cx="43" cy="34.6" rx="4.4" ry="1.7" fill="currentColor" transform="rotate(26 43 34.6)"/>
-      <ellipse cx="36" cy="28.9" rx="4.3" ry="1.7" fill="currentColor" transform="rotate(-20 36 28.9)"/>
-      <ellipse cx="29" cy="34.8" rx="4.2" ry="1.6" fill="currentColor" transform="rotate(30 29 34.8)"/>
-      <ellipse cx="22" cy="28.2" rx="4" ry="1.6" fill="currentColor" transform="rotate(-14 22 28.2)"/>
-      <ellipse cx="15" cy="33.2" rx="3.8" ry="1.5" fill="currentColor" transform="rotate(34 15 33.2)"/>
-      <ellipse cx="7.4" cy="25.6" rx="3.6" ry="1.5" fill="currentColor" transform="rotate(-6 7.4 25.6)"/>
-    </g>
-    <symbol id="pnds-laurel" viewBox="0 0 120 60">
-      <use href="#pnds-laurel-branch"/>
-      <use href="#pnds-laurel-branch" transform="matrix(-1 0 0 1 120 0)"/>
-      <polygon fill="currentColor" points="60,25 61.18,28.38 64.76,28.45 61.9,30.62 62.94,34.05 60,32 57.06,34.05 58.1,30.62 55.24,28.45 58.82,28.38"/>
-    </symbol>
-  </defs>
-</svg>
-<div id="pn-ds">
-
+  <!-- 1 hero -->
   <section class="ds-band ds-hero" aria-labelledby="ds-h1">
     <div class="ds-in ds-hero__grid">
       <div class="ds-hero__copy">
         <p class="ds-eb">The ReDesign Studio</p>
         <h1 class="ds-h1" id="ds-h1">Where a nation is re&#8209;designed</h1>
-        <ul class="ds-verbs" aria-label="Five moves, one room"><li style="--c:#C2603A;"><b>01</b>Survey</li><li style="--c:#C79A3A;"><b>02</b>Price</li><li style="--c:#5B8BDB;"><b>03</b>Design</li><li style="--c:#3FA77F;"><b>04</b>Fund</li><li style="--c:#4FA7D2;"><b>05</b>Verify</li></ul>
-        <p class="ds-fmt"><span><b>The Session</b> &middot; three hours</span><span><b>The Engagement</b> &middot; three days</span><span><b>The Mandate</b> &middot; end to end</span></p>
+        <p class="ds-mission">Here, <b>super intelligence (SI)</b> and <b>innovative financing for development</b> co&#8209;design, with each nation, seven basic standards of living for every citizen.</p>
         <div class="ds-ctas">
-          <a class="ds-btn" href="https://perfectnations.org/contact/?about=studio">Book a session</a>
-          <a class="ds-btn ds-btn--line" href="#ds-mandates">See the mandates</a>
-          <a class="ds-btn ds-btn--line" href="#ds-codesigners">Join the Co-designers</a>
+          <a class="ds-btn" href="https://perfectnations.org/contact/?about=studio">Request a Nation Briefing</a>
+          <a class="ds-btn ds-btn--line ds-btn--down" href="#ds-mandates">Compare the mandates</a>
         </div>
+        <ul class="ds-fmt" aria-label="The three mandates">
+          <li><a href="#ds-briefing" data-tier="0"><b>The Nation Briefing</b>3 hours</a></li>
+          <li><a href="#ds-lab" data-tier="1"><b>The Blueprint Lab</b>3 days</a></li>
+          <li><a href="#ds-sovereign" data-tier="2"><b>The Sovereign Mandate</b>End to end</a></li>
+        </ul>
       </div>
-      <figure class="ds-sheet on0 on1 on2 on3 on4 on5">
-        <svg viewBox="0 0 760 520" role="img" aria-label="A nation designed in five moves: survey its assets, measure Perfect Capita, draw the structure, fund it with instruments, verify the result">
-          <g class="grid"><line x1="20" y1="20" x2="20" y2="500"/><line x1="60" y1="20" x2="60" y2="500"/><line x1="100" y1="20" x2="100" y2="500"/><line x1="140" y1="20" x2="140" y2="500"/><line x1="180" y1="20" x2="180" y2="500"/><line x1="220" y1="20" x2="220" y2="500"/><line x1="260" y1="20" x2="260" y2="500"/><line x1="300" y1="20" x2="300" y2="500"/><line x1="340" y1="20" x2="340" y2="500"/><line x1="380" y1="20" x2="380" y2="500"/><line x1="420" y1="20" x2="420" y2="500"/><line x1="460" y1="20" x2="460" y2="500"/><line x1="500" y1="20" x2="500" y2="500"/><line x1="540" y1="20" x2="540" y2="500"/><line x1="580" y1="20" x2="580" y2="500"/><line x1="620" y1="20" x2="620" y2="500"/><line x1="660" y1="20" x2="660" y2="500"/><line x1="700" y1="20" x2="700" y2="500"/><line x1="740" y1="20" x2="740" y2="500"/><line x1="20" y1="20" x2="740" y2="20"/><line x1="20" y1="60" x2="740" y2="60"/><line x1="20" y1="100" x2="740" y2="100"/><line x1="20" y1="140" x2="740" y2="140"/><line x1="20" y1="180" x2="740" y2="180"/><line x1="20" y1="220" x2="740" y2="220"/><line x1="20" y1="260" x2="740" y2="260"/><line x1="20" y1="300" x2="740" y2="300"/><line x1="20" y1="340" x2="740" y2="340"/><line x1="20" y1="380" x2="740" y2="380"/><line x1="20" y1="420" x2="740" y2="420"/><line x1="20" y1="460" x2="740" y2="460"/><line x1="20" y1="500" x2="740" y2="500"/></g>
+
+      <figure class="ds-sheet">
+        <div class="ds-sheet__art on0 on1 on2 on3 on4 on5 is-met">
+        <svg viewBox="0 0 760 520" role="img" aria-labelledby="ds-sheet-t" focusable="false">
+          <title id="ds-sheet-t">Illustration: a nation re-designed in five moves. Its assets are surveyed, Perfect Capita is costed across the seven standards, the blueprint is co-designed, the instruments are chosen, and the structure is taken to market.</title>
+          <defs><pattern id="pnds-grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0H0V40" fill="none" stroke="rgba(245,241,232,.07)" stroke-width="1"/></pattern></defs>
+          <rect x="20" y="20" width="720" height="480" fill="url(#pnds-grid)"/>
           <path class="contour" pathLength="1" d="M130,150 C180,118 250,126 300,146 C350,166 400,160 420,210 C440,262 420,320 380,350 C330,388 260,372 210,360 C160,348 120,320 112,270 C104,220 100,172 130,150 Z"/>
           <path class="contour" pathLength="1" d="M190,200 C230,180 290,190 330,214 C370,238 360,290 320,308 C280,326 230,318 200,296 C170,274 160,220 190,200 Z"/>
           <path class="land" pathLength="1" d="M70,120 C120,70 210,62 270,88 C320,110 360,84 410,110 C462,138 486,196 474,250 C462,300 494,342 462,392 C430,442 350,452 292,432 C236,414 198,446 148,416 C102,388 108,340 84,300 C58,258 42,206 54,166 C60,146 58,134 70,120 Z"/>
-          <g class="L L1"><text class="hd" x="40" y="48" style="fill:#C2603A">01 &#183; WHAT THE NATION OWNS</text></g><path class="wire" pathLength="1" d="M150,170 C341,170 341,127 522,127"/><path class="wire" pathLength="1" d="M368,150 C450,150 450,127 522,127"/><path class="wire" pathLength="1" d="M444,312 C488,312 488,127 522,127"/><path class="wire" pathLength="1" d="M214,300 C373,300 373,322 526,322"/><path class="wire" pathLength="1" d="M312,388 C422,388 422,322 526,322"/><path class="wire" pathLength="1" d="M276,236 C404,236 404,322 526,322"/><g class="L L3"><text class="hd" x="40" y="486" style="fill:#5B8BDB">03 &#183; THE STRUCTURE</text></g><g class="L L1 pin" style="transition-delay:0.00s"><circle class="r" cx="150" cy="170" r="11"/><circle class="d" cx="150" cy="170" r="4.5"/><text class="lb" x="166" y="174">LAND</text></g><g class="L L1 pin" style="transition-delay:0.12s"><circle class="r" cx="368" cy="150" r="11"/><circle class="d" cx="368" cy="150" r="4.5"/><text class="lb" x="384" y="154">MINERALS</text></g><g class="L L1 pin" style="transition-delay:0.24s"><circle class="r" cx="444" cy="312" r="11"/><circle class="d" cx="444" cy="312" r="4.5"/><text class="lb" x="460" y="316">COAST</text></g><g class="L L1 pin" style="transition-delay:0.36s"><circle class="r" cx="214" cy="300" r="11"/><circle class="d" cx="214" cy="300" r="4.5"/><text class="lb" x="230" y="304">WATER</text></g><g class="L L1 pin" style="transition-delay:0.48s"><circle class="r" cx="312" cy="388" r="11"/><circle class="d" cx="312" cy="388" r="4.5"/><text class="lb" x="328" y="392">PEOPLE</text></g><g class="L L1 pin" style="transition-delay:0.60s"><circle class="r" cx="276" cy="236" r="11"/><circle class="d" cx="276" cy="236" r="4.5"/><text class="lb" x="292" y="240">INSTITUTIONS</text></g><g class="L L2"><rect x="522" y="26" width="220" height="184" rx="10" fill="rgba(199,154,58,.08)" stroke="rgba(199,154,58,.5)"/><text class="hd" x="532" y="44" style="fill:#C79A3A">02 &#183; PERFECT CAPITA</text></g><rect class="bar" x="539.5" y="91.8" width="20" height="90.2" rx="3" fill="#C79A3A" style="transition-delay:0.00s"/><rect class="bar" x="567.0" y="111.6" width="20" height="70.4" rx="3" fill="#C79A3A" style="transition-delay:0.08s"/><rect class="bar" x="594.5" y="103.9" width="20" height="78.1" rx="3" fill="#C79A3A" style="transition-delay:0.16s"/><rect class="bar" x="622.0" y="85.2" width="20" height="96.8" rx="3" fill="#C79A3A" style="transition-delay:0.24s"/><rect class="bar" x="649.5" y="98.4" width="20" height="83.6" rx="3" fill="#C79A3A" style="transition-delay:0.32s"/><rect class="bar" x="677.0" y="132.5" width="20" height="49.5" rx="3" fill="#F5F1E8" style="transition-delay:0.40s"/><rect class="bar" x="704.5" y="106.1" width="20" height="75.9" rx="3" fill="#C79A3A" style="transition-delay:0.48s"/><g class="L L2" style="transition-delay:.7s"><line x1="532" y1="132.5" x2="732" y2="132.5" stroke="#F5F1E8" stroke-width="1.2" stroke-dasharray="4 4"/><text class="tk" x="532" y="196" style="fill:#F5F1E8;font-size:8px;letter-spacing:.12em">THE WEAKEST SETS THE SCORE</text></g><g class="L L4"><text class="hd" x="532" y="250" style="fill:#3FA77F">04 &#183; THE INSTRUMENTS</text></g><g class="L L4 tag" style="transition-delay:0.00s"><rect x="532" y="262" width="200" height="24" rx="12" fill="#3FA77F" fill-opacity="0.9"/><text x="546" y="278" style="fill:#161210;font-size:9.5px;font-weight:700;letter-spacing:.14em">OUTCOME BOND</text></g><g class="L L4 tag" style="transition-delay:0.12s"><rect x="532" y="292" width="200" height="24" rx="12" fill="#3FA77F" fill-opacity="0.9"/><text x="546" y="308" style="fill:#161210;font-size:9.5px;font-weight:700;letter-spacing:.14em">IMPACT BOND</text></g><g class="L L4 tag" style="transition-delay:0.24s"><rect x="532" y="322" width="200" height="24" rx="12" fill="#3FA77F" fill-opacity="0.9"/><text x="546" y="338" style="fill:#161210;font-size:9.5px;font-weight:700;letter-spacing:.14em">SOCIAL BOND</text></g><g class="L L4 tag" style="transition-delay:0.36s"><rect x="532" y="352" width="200" height="24" rx="12" fill="#3FA77F" fill-opacity="0.9"/><text x="546" y="368" style="fill:#161210;font-size:9.5px;font-weight:700;letter-spacing:.14em">SUSTAINABILITY-LINKED</text></g><g class="L L4 tag" style="transition-delay:0.48s"><rect x="532" y="382" width="200" height="24" rx="12" fill="#E3C258" fill-opacity="1"/><text x="546" y="398" style="fill:#161210;font-size:9.5px;font-weight:700;letter-spacing:.14em">STANDARD TOKEN</text></g><g class="L L5"><text class="hd" x="532" y="444" style="fill:#4FA7D2">05 &#183; VERIFIED</text><rect x="532" y="454" width="200" height="12" rx="6" fill="rgba(245,241,232,.12)"/></g><rect class="gauge" x="532" y="454" width="200" height="12" rx="6" fill="#4FA7D2"/><g class="L L5" style="transition-delay:1.2s"><text class="tk" x="532" y="484">THE MEASURE MOVED</text><text class="lb" x="732" y="484" text-anchor="end" style="fill:#4FA7D2">&#10003;</text></g>
-          <text class="met" x="264" y="342" text-anchor="middle">PERFECT CAPITA</text>
+          <g class="L L1"><text class="hd" x="40" y="48">01 &#183; WHAT THE NATION OWNS</text></g>
+          <path class="wire" pathLength="1" d="M150,170 C341,170 341,127 522,127"/>
+          <path class="wire" pathLength="1" d="M368,150 C450,150 450,127 522,127"/>
+          <path class="wire" pathLength="1" d="M444,312 C488,312 488,127 522,127"/>
+          <path class="wire" pathLength="1" d="M214,300 C373,300 373,322 526,322"/>
+          <path class="wire" pathLength="1" d="M312,388 C422,388 422,322 526,322"/>
+          <path class="wire" pathLength="1" d="M276,236 C404,236 404,322 526,322"/>
+          <g class="L L3"><text class="hd" x="40" y="486">03 &#183; CO-DESIGNED WITH THE NATION AND SI</text></g>
+          <g class="L L1 pin" style="transition-delay:0s"><circle class="r" cx="150" cy="170" r="11"/><circle class="d" cx="150" cy="170" r="4.5"/><text class="lb" x="166" y="174">LAND</text></g>
+          <g class="L L1 pin" style="transition-delay:.12s"><circle class="r" cx="368" cy="150" r="11"/><circle class="d" cx="368" cy="150" r="4.5"/><text class="lb" x="384" y="154">MINERALS</text></g>
+          <g class="L L1 pin" style="transition-delay:.24s"><circle class="r" cx="444" cy="312" r="11"/><circle class="d" cx="444" cy="312" r="4.5"/><text class="lb" x="460" y="316">COAST</text></g>
+          <g class="L L1 pin" style="transition-delay:.36s"><circle class="r" cx="214" cy="300" r="11"/><circle class="d" cx="214" cy="300" r="4.5"/><text class="lb" x="230" y="304">WATER</text></g>
+          <g class="L L1 pin" style="transition-delay:.48s"><circle class="r" cx="312" cy="388" r="11"/><circle class="d" cx="312" cy="388" r="4.5"/><text class="lb" x="328" y="392">PEOPLE</text></g>
+          <g class="L L1 pin" style="transition-delay:.6s"><circle class="r" cx="276" cy="236" r="11"/><circle class="d" cx="276" cy="236" r="4.5"/><text class="lb" x="292" y="240">INSTITUTIONS</text></g>
+          <g class="L L2"><rect x="522" y="26" width="220" height="184" rx="10" fill="rgba(227,194,88,.07)" stroke="rgba(227,194,88,.45)"/><text class="hd" x="534" y="46">02 &#183; PERFECT CAPITA</text></g>
+          <rect class="bar" x="539.5" y="92" width="20" height="90" rx="3" fill="#E3C258" style="transition-delay:0s"/>
+          <rect class="bar" x="567" y="118" width="20" height="64" rx="3" fill="#F5F1E8" style="transition-delay:.08s"/>
+          <rect class="bar" x="594.5" y="104" width="20" height="78" rx="3" fill="#E3C258" style="transition-delay:.16s"/>
+          <rect class="bar" x="622" y="85" width="20" height="97" rx="3" fill="#E3C258" style="transition-delay:.24s"/>
+          <rect class="bar" x="649.5" y="98" width="20" height="84" rx="3" fill="#E3C258" style="transition-delay:.32s"/>
+          <rect class="bar" x="677" y="130" width="20" height="52" rx="3" fill="#F5F1E8" style="transition-delay:.4s"/>
+          <rect class="bar" x="704.5" y="106" width="20" height="76" rx="3" fill="#E3C258" style="transition-delay:.48s"/>
+          <g class="L L2" style="transition-delay:.7s"><line x1="532" y1="110" x2="732" y2="110" stroke="#F5F1E8" stroke-width="1.2" stroke-dasharray="4 4"/><line class="lgd" x1="534" y1="63" x2="554" y2="63" stroke="#F5F1E8" stroke-width="1.2" stroke-dasharray="4 4"/><text class="tk" x="560" y="66" style="font-size:8.5px">THE LIVING LINE</text><text class="tk" x="534" y="200">SEVEN STANDARDS, COSTED PER CITIZEN</text></g>
+          <g class="L L4"><text class="hd" x="532" y="250">04 &#183; CAPITAL</text></g>
+          <g class="L L4 tag" style="transition-delay:0s"><rect x="532" y="262" width="200" height="24" rx="12" fill="rgba(227,194,88,.14)" stroke="rgba(227,194,88,.6)"/><text class="tg" x="546" y="278">SOCIAL BOND</text></g>
+          <g class="L L4 tag" style="transition-delay:.12s"><rect x="532" y="292" width="200" height="24" rx="12" fill="rgba(227,194,88,.14)" stroke="rgba(227,194,88,.6)"/><text class="tg" x="546" y="308">SUSTAINABILITY-LINKED BOND</text></g>
+          <g class="L L4 tag" style="transition-delay:.24s"><rect x="532" y="322" width="200" height="24" rx="12" fill="rgba(227,194,88,.14)" stroke="rgba(227,194,88,.6)"/><text class="tg" x="546" y="338">DEBT-FOR-NATURE SWAP</text></g>
+          <g class="L L4 tag" style="transition-delay:.36s"><rect x="532" y="352" width="200" height="24" rx="12" fill="rgba(227,194,88,.14)" stroke="rgba(227,194,88,.6)"/><text class="tg" x="546" y="368">BLENDED FINANCE</text></g>
+          <g class="L L4 tag" style="transition-delay:.48s"><rect x="532" y="382" width="200" height="24" rx="12" fill="#E3C258"/><text class="tg" x="546" y="398" style="fill:#0B3D45">PARTIAL CREDIT GUARANTEE</text></g>
+          <g class="L L5"><text class="hd" x="532" y="444">05 &#183; LAUNCH</text><rect x="532" y="454" width="200" height="12" rx="6" fill="rgba(245,241,232,.12)"/></g>
+          <rect class="gauge" x="532" y="454" width="200" height="12" rx="6" fill="#E3C258"/>
+          <g class="L L5" style="transition-delay:1.1s"><text class="tk" x="532" y="484">TAKEN TO MARKET</text><text class="lb" x="732" y="484" text-anchor="end" style="fill:#E3C258">&#10003;</text></g>
+          <text class="met" x="264" y="272" text-anchor="middle">RE-DESIGNED</text>
           <line class="xh xh-v" x1="0" y1="20" x2="0" y2="500"/>
           <line class="xh xh-h" x1="20" y1="0" x2="740" y2="0"/>
-          <text class="xy" x="0" y="0">0.00 / 0.00</text>
+          <text class="xy" x="0" y="0">N 0.00  E 0.00</text>
         </svg>
-        <figcaption class="ds-cap"><span>Sheet 01 &middot; A nation, designed</span><span>Illustration</span></figcaption>
+        </div>
+        <ol class="ds-ch" aria-label="The five moves">
+          <li><button type="button" class="is-done" aria-pressed="false" data-say="What the nation owns: land, water, coast, minerals, people and institutions."><b>01</b><span>Assets</span></button></li>
+          <li><button type="button" class="is-done" aria-pressed="false" data-say="What every citizen is owed: seven basic standards of living, costed per person."><b>02</b><span>Perfect Capita</span></button></li>
+          <li><button type="button" class="is-done" aria-pressed="false" data-say="The blueprint, drawn with the nation and super intelligence."><b>03</b><span>Co-Design</span></button></li>
+          <li><button type="button" class="is-done" aria-pressed="false" data-say="The innovative financing instruments that pay for every standard."><b>04</b><span>Capital</span></button></li>
+          <li><button type="button" class="is-done" aria-pressed="true" data-say="Built, financed and measured: the structure taken to market."><b>05</b><span>Launch</span></button></li>
+        </ol>
+        <p class="ds-say"><b>05 Launch</b>Built, financed and measured: the structure taken to market.</p>
       </figure>
     </div>
   </section>
 
-  <section class="ds-band ds-moves" aria-labelledby="ds-moves-h">
-    <div class="ds-in">
-      <p class="ds-eb">The method</p>
-      <h2 class="ds-h2" id="ds-moves-h">Five moves, one room</h2>
-      <ol class="ds-acc">
-      <li class="is-on">
-        <div class="ds-mv" role="button" tabindex="0" aria-expanded="true" style="--c:#8A3A22; --hi:#C2603A;">
-          <span class="ds-mv__n" aria-hidden="true">01</span>
-          <span class="ds-mv__v">Survey</span>
-          <span class="ds-mv__q">What the nation owns</span>
-          <div class="ds-mv__more"><div><span class="ds-mv__out">You leave with<b>The sovereign asset ledger</b></span></div></div>
-        </div>
-        <a class="ds-mv__link" href="https://perfectnations.org/sovereign-assets/">Sovereign assets</a>
-      </li>
-      <li>
-        <div class="ds-mv" role="button" tabindex="0" aria-expanded="false" style="--c:#6E4A14; --hi:#C79A3A;">
-          <span class="ds-mv__n" aria-hidden="true">02</span>
-          <span class="ds-mv__v">Price</span>
-          <span class="ds-mv__q">What its people are owed</span>
-          <div class="ds-mv__more"><div><span class="ds-mv__out">You leave with<b>Perfect Capita, standard by standard</b></span></div></div>
-        </div>
-        <a class="ds-mv__link" href="https://perfectnations.org/perfect-capita/">Perfect Capita</a>
-      </li>
-      <li>
-        <div class="ds-mv" role="button" tabindex="0" aria-expanded="false" style="--c:#1F4A8C; --hi:#5B8BDB;">
-          <span class="ds-mv__n" aria-hidden="true">03</span>
-          <span class="ds-mv__v">Design</span>
-          <span class="ds-mv__q">The structure between</span>
-          <div class="ds-mv__more"><div><span class="ds-mv__out">You leave with<b>The national blueprint</b></span></div></div>
-        </div>
-        <a class="ds-mv__link" href="https://perfectnations.org/blueprints/">The blueprints</a>
-      </li>
-      <li>
-        <div class="ds-mv" role="button" tabindex="0" aria-expanded="false" style="--c:#164A37; --hi:#3FA77F;">
-          <span class="ds-mv__n" aria-hidden="true">04</span>
-          <span class="ds-mv__v">Fund</span>
-          <span class="ds-mv__q">The instruments that carry it</span>
-          <div class="ds-mv__more"><div><span class="ds-mv__out">You leave with<b>Term sheets and the investor map</b></span></div></div>
-        </div>
-        <a class="ds-mv__link" href="https://perfectnations.org/capital-architecture/">Capital architecture</a>
-      </li>
-      <li>
-        <div class="ds-mv" role="button" tabindex="0" aria-expanded="false" style="--c:#0E4563; --hi:#4FA7D2;">
-          <span class="ds-mv__n" aria-hidden="true">05</span>
-          <span class="ds-mv__v">Verify</span>
-          <span class="ds-mv__q">That the measure moved</span>
-          <div class="ds-mv__more"><div><span class="ds-mv__out">You leave with<b>Independent verification, published</b></span></div></div>
-        </div>
-        
-      </li>
-      </ol>
-    </div>
-  </section>
-
+  <!-- 2 the three mandates -->
   <section class="ds-band ds-mand" id="ds-mandates" aria-labelledby="ds-mand-h">
     <div class="ds-in">
       <div class="ds-head">
         <div>
-          <p class="ds-eb">The mandates</p>
-          <h2 class="ds-h2" id="ds-mand-h">Six mandates. One question each.</h2>
+          <p class="ds-eb">Work with the ReDesign Studio</p>
+          <h2 class="ds-h2" id="ds-mand-h">One mission. <em>Three depths.</em></h2>
         </div>
-        <ul class="ds-key" aria-label="The five moves"><li><i style="--c:#C2603A;"></i>Survey</li><li><i style="--c:#C79A3A;"></i>Price</li><li><i style="--c:#5B8BDB;"></i>Design</li><li><i style="--c:#3FA77F;"></i>Fund</li><li><i style="--c:#4FA7D2;"></i>Verify</li></ul>
+        <p class="ds-lead">Every mandate makes the same five moves for a nation. What changes is how deep the work goes, and how far it travels toward market.</p>
       </div>
-      <div class="ds-who" role="group" aria-label="Who is asking"><span>Who is asking</span><button class="ds-chip" type="button" data-who="gov" aria-pressed="false">Governments</button><button class="ds-chip" type="button" data-who="dfi" aria-pressed="false">Development banks</button><button class="ds-chip" type="button" data-who="swf" aria-pressed="false">Sovereign funds &amp; central banks</button><button class="ds-chip" type="button" data-who="fdn" aria-pressed="false">Foundations</button><button class="ds-chip" type="button" data-who="inv" aria-pressed="false">Investors &amp; diaspora</button></div>
-      <ul class="ds-cards">
-      <li class="ds-card ds-card--flag" data-who="gov dfi fdn inv">
-        <div class="ds-card__a"><div class="ds-bar" role="img" aria-label="Covers: Survey, Price, Design, Fund, Verify"><i class="is-on" style="--c:#8A3A22;"></i><i class="is-on" style="--c:#6E4A14;"></i><i class="is-on" style="--c:#1F4A8C;"></i><i class="is-on" style="--c:#164A37;"></i><i class="is-on" style="--c:#0E4563;"></i></div>
-        <div class="ds-card__top"><span class="ds-card__n">Mandate 01</span><span class="ds-card__t">12&ndash;16 weeks</span></div>
-        <h3>National Blueprint</h3>
-        <p class="ds-card__q">What will it take for the nation to reach Perfect Capita, and who pays for which part?</p></div>
-        <div class="ds-card__b"><ul aria-label="You receive"><li>The sovereign asset ledger</li><li>Perfect Capita, costed standard by standard</li><li>The financing architecture, in sequence</li><li>A published, citable blueprint</li></ul>
-        <div class="ds-card__go"><a href="https://perfectnations.org/contact/?about=mandate-01">Commission a blueprint</a></div></div>
-      </li>
-      <li class="ds-card" data-who="gov swf">
-        <div class="ds-card__a"><div class="ds-bar" role="img" aria-label="Covers: Survey, Price"><i class="is-on" style="--c:#8A3A22;"></i><i class="is-on" style="--c:#6E4A14;"></i><i class="" style="--c:#1F4A8C;"></i><i class="" style="--c:#164A37;"></i><i class="" style="--c:#0E4563;"></i></div>
-        <div class="ds-card__top"><span class="ds-card__n">Mandate 02</span><span class="ds-card__t">8&ndash;10 weeks</span></div>
-        <h3>Sovereign Balance Sheet</h3>
-        <p class="ds-card__q">What does the nation own that has never been valued, and what can it carry?</p></div>
-        <div class="ds-card__b"><ul aria-label="You receive"><li>An asset ledger across six capitals</li><li>Collateral and revenue options</li><li>The ratings narrative</li></ul>
-        <div class="ds-card__go"><a href="https://perfectnations.org/contact/?about=mandate-02">Discuss this mandate</a></div></div>
-      </li>
-      <li class="ds-card" data-who="gov dfi inv">
-        <div class="ds-card__a"><div class="ds-bar" role="img" aria-label="Covers: Design, Fund"><i class="" style="--c:#8A3A22;"></i><i class="" style="--c:#6E4A14;"></i><i class="is-on" style="--c:#1F4A8C;"></i><i class="is-on" style="--c:#164A37;"></i><i class="" style="--c:#0E4563;"></i></div>
-        <div class="ds-card__top"><span class="ds-card__n">Mandate 03</span><span class="ds-card__t">10&ndash;14 weeks</span></div>
-        <h3>Instrument Design</h3>
-        <p class="ds-card__q">Which instrument closes this gap, at what cost, and from whom?</p></div>
-        <div class="ds-card__b"><ul aria-label="You receive"><li>The instrument, chosen and structured</li><li>A term sheet</li><li>The investor and guarantor map</li></ul>
-        <div class="ds-card__go"><a href="https://perfectnations.org/contact/?about=mandate-03">Discuss this mandate</a></div></div>
-      </li>
-      <li class="ds-card" data-who="gov fdn dfi">
-        <div class="ds-card__a"><div class="ds-bar" role="img" aria-label="Covers: Price, Design, Fund, Verify"><i class="" style="--c:#8A3A22;"></i><i class="is-on" style="--c:#6E4A14;"></i><i class="is-on" style="--c:#1F4A8C;"></i><i class="is-on" style="--c:#164A37;"></i><i class="is-on" style="--c:#0E4563;"></i></div>
-        <div class="ds-card__top"><span class="ds-card__n">Mandate 04</span><span class="ds-card__t">12 weeks</span></div>
-        <h3>One Standard for All</h3>
-        <p class="ds-card__q">How does every citizen reach one standard, water, power or school, by a date we can name?</p></div>
-        <div class="ds-card__b"><ul aria-label="You receive"><li>A costed delivery plan</li><li>Outcome contracts</li><li>The verification design</li></ul>
-        <div class="ds-card__go"><a href="https://perfectnations.org/contact/?about=mandate-04">Discuss this mandate</a></div></div>
-      </li>
-      <li class="ds-card" data-who="fdn dfi inv">
-        <div class="ds-card__a"><div class="ds-bar" role="img" aria-label="Covers: Price, Verify"><i class="" style="--c:#8A3A22;"></i><i class="is-on" style="--c:#6E4A14;"></i><i class="" style="--c:#1F4A8C;"></i><i class="" style="--c:#164A37;"></i><i class="is-on" style="--c:#0E4563;"></i></div>
-        <div class="ds-card__top"><span class="ds-card__n">Mandate 05</span><span class="ds-card__t">6&ndash;8 weeks</span></div>
-        <h3>Outcome Verification</h3>
-        <p class="ds-card__q">Did the money move the measure?</p></div>
-        <div class="ds-card__b"><ul aria-label="You receive"><li>Targets and indicators</li><li>Independent verification</li><li>A public dashboard</li></ul>
-        <div class="ds-card__go"><a href="https://perfectnations.org/contact/?about=mandate-05">Discuss this mandate</a></div></div>
-      </li>
-      <li class="ds-card" data-who="swf inv gov">
-        <div class="ds-card__a"><div class="ds-bar" role="img" aria-label="Covers: Design, Fund"><i class="" style="--c:#8A3A22;"></i><i class="" style="--c:#6E4A14;"></i><i class="is-on" style="--c:#1F4A8C;"></i><i class="is-on" style="--c:#164A37;"></i><i class="" style="--c:#0E4563;"></i></div>
-        <div class="ds-card__top"><span class="ds-card__n">Mandate 06</span><span class="ds-card__t">10&ndash;12 weeks</span></div>
-        <h3>Citizen Capital</h3>
-        <p class="ds-card__q">How can every citizen own a share of the nation&#8217;s progress?</p></div>
-        <div class="ds-card__b"><ul aria-label="You receive"><li>Standard Token design</li><li>The regulatory pathway</li><li>A pilot plan, pending compliance</li></ul>
-        <div class="ds-card__go"><a href="https://perfectnations.org/contact/?about=mandate-06">Discuss this mandate</a></div></div>
-      </li>
-      </ul>
-    </div>
-  </section>
 
-  <section class="ds-band ds-begin" aria-labelledby="ds-begin-h">
-    <div class="ds-in">
-      <p class="ds-eb">How to begin</p>
-      <h2 class="ds-h2" id="ds-begin-h">Start in a room. Finish in the market.</h2>
-      <ol class="ds-steps">
-        <li class="ds-step">
-          <span class="ds-step__k">Step 01</span>
-          <h3>The Session</h3>
-          <b class="ds-step__time">3 hours</b>
-          <p>One nation, the five moves on the wall, the people who decide in the room.</p>
-          <div class="ds-step__leave"><span>You leave with</span>The gap, named and sized</div>
-          <div class="ds-step__book"><a class="ds-btn ds-btn--line ds-btn--sm" href="https://perfectnations.org/contact/?about=session">Book a session</a></div>
+      <div class="ds-tabs" role="tablist" aria-label="Choose a mandate">
+        <button type="button" role="tab" id="ds-tab-0" aria-controls="ds-briefing" aria-selected="true">Nation Briefing<small>3 hours</small></button>
+        <button type="button" role="tab" id="ds-tab-1" aria-controls="ds-lab" aria-selected="false" tabindex="-1">Blueprint Lab<small>3 days</small></button>
+        <button type="button" role="tab" id="ds-tab-2" aria-controls="ds-sovereign" aria-selected="false" tabindex="-1">Sovereign Mandate<small>End to end</small></button>
+      </div>
+
+      <ol class="ds-tiers">
+        <li class="ds-tier is-sel" id="ds-briefing">
+          <div class="ds-tier__top"><span class="ds-tier__k">Mandate I</span><span class="ds-tier__t">3 hours</span></div>
+          <h3>The Nation Briefing</h3>
+          <p class="ds-tier__p">A private session for the people who decide.</p>
+          <ol class="ds-depth" aria-label="The five moves, at depth 1 of 3">
+            <li><span class="ds-depth__m"><b>01</b>Assets</span><span class="ds-dots" aria-hidden="true"><i class="on"></i><i></i><i></i></span><span class="ds-depth__t">The nation&#8217;s sovereign assets, walked through.</span></li>
+            <li><span class="ds-depth__m"><b>02</b>Perfect Capita</span><span class="ds-dots" aria-hidden="true"><i class="on"></i><i></i><i></i></span><span class="ds-depth__t">Perfect Capita, Coverage and the Gap, explained.</span></li>
+            <li><span class="ds-depth__m"><b>03</b>Co-Design</span><span class="ds-dots" aria-hidden="true"><i class="on"></i><i></i><i></i></span><span class="ds-depth__t">The priorities, set with the people in the room.</span></li>
+            <li><span class="ds-depth__m"><b>04</b>Capital</span><span class="ds-dots" aria-hidden="true"><i class="on"></i><i></i><i></i></span><span class="ds-depth__t">The instruments that could close the Gap, shortlisted.</span></li>
+            <li><span class="ds-depth__m"><b>05</b>Launch</span><span class="ds-dots" aria-hidden="true"><i class="on"></i><i></i><i></i></span><span class="ds-depth__t">The path to market, outlined.</span></li>
+          </ol>
+          <div class="ds-tier__leave"><span>You leave with</span>The Gap, named and sized</div>
+          <a class="ds-btn ds-btn--ink" href="https://perfectnations.org/contact/?about=studio">Request a Nation Briefing</a>
         </li>
-        <li class="ds-step">
-          <span class="ds-step__k">Step 02</span>
-          <h3>The Engagement</h3>
-          <b class="ds-step__time">3 days</b>
-          <p>Your team and ours, working the ledger, Perfect Capita and the instruments together.</p>
-          <div class="ds-step__leave"><span>You leave with</span>The structure, drawn</div>
-          <div class="ds-step__book"><a class="ds-btn ds-btn--line ds-btn--sm" href="https://perfectnations.org/contact/?about=engagement">Book an engagement</a></div>
+        <li class="ds-tier" id="ds-lab">
+          <div class="ds-tier__top"><span class="ds-tier__k">Mandate II</span><span class="ds-tier__t">3 days</span></div>
+          <h3>The Blueprint Lab</h3>
+          <p class="ds-tier__p">Your team and ours, working the blueprint together.</p>
+          <ol class="ds-depth" aria-label="The five moves, at depth 2 of 3">
+            <li><span class="ds-depth__m"><b>01</b>Assets</span><span class="ds-dots" aria-hidden="true"><i class="on"></i><i class="on"></i><i></i></span><span class="ds-depth__t">The ledger tested against the ministries&#8217; own data.</span></li>
+            <li><span class="ds-depth__m"><b>02</b>Perfect Capita</span><span class="ds-dots" aria-hidden="true"><i class="on"></i><i class="on"></i><i></i></span><span class="ds-depth__t">Each of the seven standards costed in national prices.</span></li>
+            <li><span class="ds-depth__m"><b>03</b>Co-Design</span><span class="ds-dots" aria-hidden="true"><i class="on"></i><i class="on"></i><i></i></span><span class="ds-depth__t">The blueprint drawn with your team and SI.</span></li>
+            <li><span class="ds-depth__m"><b>04</b>Capital</span><span class="ds-dots" aria-hidden="true"><i class="on"></i><i class="on"></i><i></i></span><span class="ds-depth__t">One financing structure, with its term sheet.</span></li>
+            <li><span class="ds-depth__m"><b>05</b>Launch</span><span class="ds-dots" aria-hidden="true"><i class="on"></i><i class="on"></i><i></i></span><span class="ds-depth__t">The partners to approach, in order.</span></li>
+          </ol>
+          <div class="ds-tier__leave"><span>You leave with</span>The structure, drawn</div>
+          <a class="ds-btn ds-btn--ink" href="https://perfectnations.org/contact/?about=studio">Plan a Blueprint Lab</a>
         </li>
-        <li class="ds-step ds-step--top">
-          <span class="ds-step__k">Step 03</span>
-          <h3>The Mandate</h3>
-          <b class="ds-step__time">End to end</b>
-          <p>One of the six mandates, scoped in writing and delivered personally.</p>
-          <div class="ds-step__leave"><span>You leave with</span>A structure ready for market</div>
-          <div class="ds-step__book"><a class="ds-btn ds-btn--ink ds-btn--sm" href="https://perfectnations.org/contact/?about=mandate">Book a mandate</a></div>
+        <li class="ds-tier ds-tier--top" id="ds-sovereign">
+          <div class="ds-tier__top"><span class="ds-tier__k">Mandate III</span><span class="ds-tier__t">End to end</span></div>
+          <h3>The Sovereign Mandate</h3>
+          <p class="ds-tier__p">Led personally by the President and CEO.</p>
+          <ol class="ds-depth" aria-label="The five moves, at depth 3 of 3">
+            <li><span class="ds-depth__m"><b>01</b>Assets</span><span class="ds-dots" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i></span><span class="ds-depth__t">A full sovereign asset ledger, valued and verified.</span></li>
+            <li><span class="ds-depth__m"><b>02</b>Perfect Capita</span><span class="ds-dots" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i></span><span class="ds-depth__t">Perfect Capita set and agreed with government, with a monitoring plan.</span></li>
+            <li><span class="ds-depth__m"><b>03</b>Co-Design</span><span class="ds-dots" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i></span><span class="ds-depth__t">The national blueprint, co-designed and published.</span></li>
+            <li><span class="ds-depth__m"><b>04</b>Capital</span><span class="ds-dots" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i></span><span class="ds-depth__t">The full structure: legal form, credit enhancement, guarantees and pricing.</span></li>
+            <li><span class="ds-depth__m"><b>05</b>Launch</span><span class="ds-dots" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i></span><span class="ds-depth__t">Taken to investors and development partners, through to close.</span></li>
+          </ol>
+          <div class="ds-tier__leave"><span>You leave with</span>A structure ready for market</div>
+          <a class="ds-btn" href="https://perfectnations.org/contact/?about=commission">Discuss a Sovereign Mandate</a>
         </li>
       </ol>
-      <div class="ds-mc">
-        <div>
-          <b>Also from the Studio</b>
-          <strong>The Masterclass: Innovative Financing for Development</strong>
-          <p>A live cohort for ministry teams, development bank analysts and family offices, taught by the Steward-General.</p>
-        </div>
-        <a class="ds-btn ds-btn--line ds-btn--sm" href="https://perfectnations.org/contact/?about=masterclass">Register interest</a>
-      </div>
-      <p class="ds-terms">Fees are scoped and agreed in writing. The Studio takes on a small number of nations at a time.</p>
+      <p class="ds-terms">For governments, development banks, sovereign funds, foundations and investors. Scope and fees are agreed in writing before any work begins, and the Studio takes on a small number of nations at a time.</p>
     </div>
   </section>
 
+  <!-- 3 the Co-designers -->
   <section class="ds-band ds-co" id="ds-codesigners" aria-labelledby="ds-co-h">
     <div class="ds-in">
       <div class="ds-head">
         <div>
           <p class="ds-eb">The Perfect Nations ReDesign Studio</p>
-          <h2 class="ds-h2" id="ds-co-h">A community of Co&#8209;designers.</h2>
+          <h2 class="ds-h2" id="ds-co-h">A community of Co&#8209;designers</h2>
         </div>
-        <p class="ds-lead" style="max-width:46ch;">Every nation with a blueprint has its own ReDesign Studio, where citizens and friends design the nation they want to live in. Together they form the Perfect Nations ReDesign Studio: selfless people, at home and abroad, building nations where every citizen has food, water, shelter, energy, education, health and a livelihood.</p>
+        <p class="ds-lead">Every nation with a blueprint has its own ReDesign Studio, where citizens and friends design the nation they want to live in. Everyone who shares a vision, a voice or an enterprise becomes a Co&#8209;designer.</p>
       </div>
-      <ol class="ds-co__ways">
+      <ol class="ds-ways">
         <li class="ds-way">
-          <span class="ds-way__n">01</span>
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 20l4.2-1L19.4 7.8l-3.2-3.2L5 15.8z"/><path d="M14.2 6.6l3.2 3.2"/><path d="M13 20h7"/></svg>
           <h3>Write</h3><span class="ds-way__r">Writings</span>
-          <p>Your vision of the perfect nation, and the economic solutions to achieve it, in up to 1,500 words. Published with your name.</p>
+          <p>Your vision for the nation, and the economic solutions to reach it, published with your name.</p>
         </li>
         <li class="ds-way">
-          <span class="ds-way__n">02</span>
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5.5 11a6.5 6.5 0 0 0 13 0"/><path d="M12 17.5V21M8.5 21h7"/></svg>
           <h3>Speak</h3><span class="ds-way__r">Voices, the podcast</span>
-          <p>One question for every guest: what does the nation already own, and how could it pay for a decent life for every citizen?</p>
+          <p>Local leaders on what the nation owns, and how it could pay for a decent life for every citizen.</p>
         </li>
         <li class="ds-way">
-          <span class="ds-way__n">03</span>
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 21v-8"/><path d="M12 13c0-4.2 3-7 8-7 0 5-3 7-8 7z"/><path d="M12 15.5c0-3.2-2.6-5.6-7-5.6 0 3.8 2.6 5.6 7 5.6z"/><path d="M6 21h12"/></svg>
           <h3>Build</h3><span class="ds-way__r">Enterprises</span>
-          <p>An enterprise or a technology already delivering one of the seven standards, ready to be counted and copied.</p>
+          <p>An enterprise or technology already delivering one of the seven standards, ready to be counted and copied.</p>
         </li>
         <li class="ds-way">
-          <span class="ds-way__n">04</span>
+          <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="10" cy="8" r="3.5"/><path d="M3.5 20c.8-3.8 3.4-6 6.5-6s5.7 2.2 6.5 6"/><path d="M19 7v6M16 10h6"/></svg>
           <h3>Nominate</h3><span class="ds-way__r">Anyone, anywhere</span>
           <p>A person whose selfless work deserves a seat in their nation&#8217;s ReDesign Studio.</p>
         </li>
       </ol>
-      <div class="ds-co__nat">
-        <span>Nation ReDesign Studios open now</span>
-        <a class="ds-nat" href="https://perfectnations.org/blueprints/barbados/#bp-studio">Barbados</a>
-        <a class="ds-nat" href="https://perfectnations.org/blueprints/kenya/#bp-studio">Kenya</a>
-        <p>More nations open as each blueprint is developed. Everyone who shares a vision, a voice or an enterprise becomes a Co-designer.</p>
-      </div>
-      <div class="ds-ctas">
-        <a class="ds-btn" href="mailto:contact@perfectnations.org?subject=Becoming%20a%20Co-designer&amp;body=Your%20name%3A%0D%0AWhere%20you%20live%3A%0D%0AYour%20nation%3A%0D%0AHow%20you%20would%20like%20to%20contribute%20%28writing%2C%20a%20voice%20for%20the%20podcast%2C%20an%20enterprise%2C%20a%20nomination%29%3A%0D%0A">Become a Co-designer</a>
-        <a class="ds-btn ds-btn--line" href="https://perfectnations.org/contact/?topic=nominate">Nominate someone</a>
-        <a class="ds-btn ds-btn--line" href="https://perfectnations.org/blueprints/">Find your nation</a>
+      <div class="ds-join">
+        <form class="ds-find" action="https://perfectnations.org/blueprints/" method="get">
+<!-- GENERATED:NATIONS (from pages/manifest.json; do not edit here) -->
+          <label for="ds-nation">Find your nation&#8217;s Studio &middot; <b>44 open</b></label>
+          <select id="ds-nation" name="nation" required>
+            <option value="">Choose your nation</option>
+            <option value="https://perfectnations.org/blueprints/afghanistan/">Afghanistan</option>
+            <option value="https://perfectnations.org/blueprints/angola/">Angola</option>
+            <option value="https://perfectnations.org/blueprints/bangladesh/">Bangladesh</option>
+            <option value="https://perfectnations.org/blueprints/barbados/">Barbados</option>
+            <option value="https://perfectnations.org/blueprints/botswana/">Botswana</option>
+            <option value="https://perfectnations.org/blueprints/brazil/">Brazil</option>
+            <option value="https://perfectnations.org/blueprints/burundi/">Burundi</option>
+            <option value="https://perfectnations.org/blueprints/colombia/">Colombia</option>
+            <option value="https://perfectnations.org/blueprints/cote-d-ivoire/">C&#244;te d&#8217;Ivoire</option>
+            <option value="https://perfectnations.org/blueprints/dr-congo/">DR Congo</option>
+            <option value="https://perfectnations.org/blueprints/ecuador/">Ecuador</option>
+            <option value="https://perfectnations.org/blueprints/egypt/">Egypt</option>
+            <option value="https://perfectnations.org/blueprints/eswatini/">Eswatini</option>
+            <option value="https://perfectnations.org/blueprints/ethiopia/">Ethiopia</option>
+            <option value="https://perfectnations.org/blueprints/fiji/">Fiji</option>
+            <option value="https://perfectnations.org/blueprints/ghana/">Ghana</option>
+            <option value="https://perfectnations.org/blueprints/india/">India</option>
+            <option value="https://perfectnations.org/blueprints/indonesia/">Indonesia</option>
+            <option value="https://perfectnations.org/blueprints/jamaica/">Jamaica</option>
+            <option value="https://perfectnations.org/blueprints/jordan/">Jordan</option>
+            <option value="https://perfectnations.org/blueprints/kenya/">Kenya</option>
+            <option value="https://perfectnations.org/blueprints/lesotho/">Lesotho</option>
+            <option value="https://perfectnations.org/blueprints/madagascar/">Madagascar</option>
+            <option value="https://perfectnations.org/blueprints/malawi/">Malawi</option>
+            <option value="https://perfectnations.org/blueprints/mexico/">Mexico</option>
+            <option value="https://perfectnations.org/blueprints/morocco/">Morocco</option>
+            <option value="https://perfectnations.org/blueprints/mozambique/">Mozambique</option>
+            <option value="https://perfectnations.org/blueprints/namibia/">Namibia</option>
+            <option value="https://perfectnations.org/blueprints/nigeria/">Nigeria</option>
+            <option value="https://perfectnations.org/blueprints/pakistan/">Pakistan</option>
+            <option value="https://perfectnations.org/blueprints/philippines/">Philippines</option>
+            <option value="https://perfectnations.org/blueprints/republic-of-congo/">Republic of the Congo</option>
+            <option value="https://perfectnations.org/blueprints/rwanda/">Rwanda</option>
+            <option value="https://perfectnations.org/blueprints/senegal/">Senegal</option>
+            <option value="https://perfectnations.org/blueprints/somalia/">Somalia</option>
+            <option value="https://perfectnations.org/blueprints/south-africa/">South Africa</option>
+            <option value="https://perfectnations.org/blueprints/south-sudan/">South Sudan</option>
+            <option value="https://perfectnations.org/blueprints/sri-lanka/">Sri Lanka</option>
+            <option value="https://perfectnations.org/blueprints/tanzania/">Tanzania</option>
+            <option value="https://perfectnations.org/blueprints/uganda/">Uganda</option>
+            <option value="https://perfectnations.org/blueprints/ukraine/">Ukraine</option>
+            <option value="https://perfectnations.org/blueprints/vietnam/">Vietnam</option>
+            <option value="https://perfectnations.org/blueprints/zambia/">Zambia</option>
+            <option value="https://perfectnations.org/blueprints/zimbabwe/">Zimbabwe</option>
+          </select>
+<!-- /GENERATED:NATIONS -->
+          <button class="ds-btn ds-btn--line" type="submit">Open its Studio</button>
+        </form>
+        <div class="ds-join__ctas">
+          <a class="ds-btn" href="mailto:contact@perfectnations.org?subject=Becoming%20a%20Co-designer&amp;body=Your%20name%3A%0D%0AWhere%20you%20live%3A%0D%0AYour%20nation%3A%0D%0AHow%20you%20would%20like%20to%20contribute%20%28writing%2C%20a%20voice%20for%20the%20podcast%2C%20an%20enterprise%2C%20a%20nomination%29%3A%0D%0A">Become a Co&#8209;designer</a>
+          <a class="ds-btn ds-btn--line" href="https://perfectnations.org/contact/?topic=nominate">Nominate someone</a>
+        </div>
       </div>
     </div>
   </section>
 
+<!-- GENERATED:SEAM (variant c, from tools/build_home.py; do not edit here) -->
+<div class="pn-seam pn-seam--c" aria-hidden="true"><svg viewBox="0 0 1600 60" preserveAspectRatio="xMidYMid slice" focusable="false"><g transform="translate(40.0 4.3)"><use href="#pns-pods" width="50.5" height="50.5"/></g><g transform="translate(113.9 19.4)"><use href="#pns-dashes" width="24.8" height="19.8"/></g><g transform="translate(159.6 9.9)"><use href="#pns-leaf" width="53.8" height="43.1"/></g><g transform="translate(252.0 21.2)"><use href="#pns-flower" width="21.2" height="21.2"/></g><g transform="translate(271.1 35.2)"><use href="#pns-flower" width="14.8" height="14.8"/></g><g transform="translate(408.3 13.9) scale(-1 1)"><use href="#pns-feather" x="0.0" y="0" width="106.8" height="33.6"/></g><g transform="translate(429.9 12.2)"><use href="#pns-sun" width="36.8" height="36.8"/></g><g transform="translate(504.8 17.1)"><use href="#pns-loops" width="65.7" height="22.8"/></g><g transform="translate(595.5 0.9)"><use href="#pns-fern" width="183.3" height="55.0"/></g><g transform="translate(811.7 19.2)"><use href="#pns-flower" width="18.5" height="18.5"/></g><g transform="translate(828.3 33.2)"><use href="#pns-flower" width="13.0" height="13.0"/></g><g transform="translate(851.4 16.3)"><use href="#pns-squares" width="28.1" height="28.1"/></g><g transform="translate(907.4 12.2)"><use href="#pns-rosette" width="37.2" height="37.2"/></g><g transform="translate(978.6 10.9)"><use href="#pns-bowl" width="43.4" height="43.4"/></g><g transform="translate(1053.7 19.3)"><use href="#pns-flower" width="19.8" height="19.8"/></g><g transform="translate(1071.5 33.3)"><use href="#pns-flower" width="13.9" height="13.9"/></g><g transform="translate(1113.0 19.5)"><use href="#pns-dots" width="24.8" height="24.8"/></g><g transform="translate(1164.7 11.5)"><use href="#pns-leaf" width="53.0" height="42.4"/></g><g transform="translate(1402.7 8.3) scale(-1 1)"><use href="#pns-fern" x="0.0" y="0" width="160.5" height="48.1"/></g><g transform="translate(1431.7 3.5)"><use href="#pns-pods" width="48.2" height="48.2"/></g><g transform="translate(1517.4 19.0)"><use href="#pns-dashes" width="26.3" height="21.0"/></g><g transform="translate(1567.4 7.4)"><use href="#pns-leaf" width="54.2" height="43.4"/></g></svg></div>
+<!-- /GENERATED:SEAM -->
+
+  <!-- 4 the close -->
   <section class="ds-band ds-close" aria-labelledby="ds-close-h">
     <div class="ds-in">
-      <svg class="ds-close__laurel" aria-hidden="true" focusable="false"><use href="#pnds-laurel"></use></svg>
+      <svg class="ds-cup" data-pn-cup="1" viewBox="0 0 120 60" aria-hidden="true" focusable="false"><g fill="currentColor"><path fill-rule="evenodd" d="M51.7 55C51.6 55 51.6 54.8 51.6 53.3L51.6 51.9L51.8 51.7C51.9 51.6 52.2 51.4 52.4 51.2C52.6 51 52.8 50.9 52.8 50.9C52.8 50.8 54.4 50 54.5 50C54.6 50 54.8 49.9 54.9 49.8C55.1 49.7 55.4 49.6 55.7 49.6C55.9 49.5 56.2 49.4 56.3 49.4L56.5 49.3L56.5 49.1C56.5 48.5 56.6 48.3 57.3 48.3C57.6 48.3 57.8 48.3 57.8 48.3C57.8 48.3 57.8 46.6 57.8 44.6L57.8 41L58 40.8C58.8 39.8 58.9 38.5 58.5 37.3C58.4 37.1 58.3 36.9 58.3 36.8C58.3 36.7 58.1 36.5 57.6 36.2C56.4 35.4 55.1 33.7 54 31.6C53.7 31.1 53.8 31.1 53.7 31.1C53.6 31.1 53.6 31.2 53.5 31.3C53 32.3 51.7 32.4 50.8 31.6C50.2 31.1 50.8 30.4 51.4 30.7C52.2 31.1 52.4 31.1 52.6 30.6C52.8 29.7 51.8 28.5 47.6 24.2C43.2 19.8 41.6 17.8 40.8 15.7C40.7 15.5 40.7 15.3 40.6 15.2C39.7 12.9 40.1 10.6 41.8 8.9C42.9 7.7 44.1 7.3 45.4 7.6C46.3 7.7 47.6 8.4 49 9.6C51.1 11.2 52 11.5 52.6 11C52.8 10.8 52.8 10.8 52.6 10.5C52.3 10.2 52.3 10.1 52.4 9.9C52.8 9.1 53.9 9.8 53.9 10.9C53.9 11.1 53.9 11.2 53.9 11.2C54 11.2 55 10.7 55.4 10.5C55.8 10.2 56 9.7 55.9 9.1C55.9 8.5 55.7 8.4 54.2 7.6C52.8 6.9 52.7 6.8 52.6 6.6C52.5 6.2 52.4 5.3 52.6 5.1L52.7 5L53.4 5L54.1 5L54.1 5.8C54.2 6.8 54.1 6.7 55.6 7.7C55.7 7.7 55.8 7.8 55.8 7.8C55.9 7.8 55.9 7.9 56 7.9C56.7 8.4 57 9.1 56.7 9.8C56.6 10.3 56.5 10.3 55.3 11.1C53.7 12 53.3 12.2 53 12.5C51.8 13.2 51.4 14.3 51.7 16C52.8 23.1 53.9 27.6 55.2 30.9C55.4 31.3 55.5 31.7 55.6 31.8C56 33.1 57.3 35 58.1 35.7C58.4 35.9 58.6 35.9 58.4 35.6C57.8 34.8 57 31.9 56.4 29.1C56.2 27.8 55.9 25.9 55.8 25.2C55.8 25 55.7 24.7 55.7 24.6C55.6 23.9 55.1 19.7 55 18.8C55 18.7 55 18.3 54.9 17.9C54.7 16.2 54.7 14.5 54.9 13.9C55.1 13.1 55.2 12.9 56.7 11.4C57.8 10.2 57.9 10.1 57.9 9.4C57.9 8.6 57.8 8.4 57 7.5C56.4 6.9 56.3 6.7 56.3 6.2C56.2 5.9 56.2 5.2 56.3 5.1L56.4 5L61.8 5L67.3 5L67.4 5.1C67.5 5.2 67.5 5.2 67.5 5.8C67.5 6.7 67.5 6.7 66 7.5C64.2 8.4 64.1 8.6 64.1 9.4C64.1 10 64.3 10.3 65.5 10.9C66.2 11.2 66.1 11.2 66.1 10.8C66.1 9.8 67.2 9.1 67.6 9.9C67.7 10.1 67.7 10.2 67.3 10.7C67.1 11 67.9 11.3 68.5 11.1C69.2 10.9 69.6 10.6 71.2 9.4C74.1 7.1 76 6.9 78 8.6C80.4 10.8 80.5 14 78.2 17.6C76.9 19.5 75.9 20.7 72.3 24.3C67.9 28.7 67.2 29.7 67.5 30.7C67.6 31.1 67.8 31.1 68.5 30.8C68.9 30.5 69 30.5 69.3 30.8C69.6 31 69.5 31.4 69.2 31.7C68.1 32.4 66.9 32.3 66.5 31.3C66.4 31 66.3 31 66.2 31.2C66.1 31.5 65.3 33 64.9 33.5C64.1 34.8 63.3 35.6 62.4 36.2C61.7 36.7 61.7 36.7 61.5 37.4C61.2 38.4 61.2 39.4 61.6 40.1C61.7 40.4 62 40.9 62.1 41C62.2 41.1 62.2 41.4 62.2 44.5C62.2 46.4 62.2 48 62.2 48.1L62.2 48.3L62.6 48.3C63.4 48.3 63.6 48.5 63.6 49.1C63.6 49.3 63.6 49.3 64.3 49.6C64.7 49.7 65.1 49.8 65.6 50.1C66 50.3 66.5 50.5 66.8 50.6C67 50.8 67.2 50.9 67.2 50.9C67.2 50.9 67.3 51 67.5 51.1C67.7 51.3 68 51.5 68.1 51.6L68.5 51.9L68.4 53.4C68.4 54.2 68.4 54.9 68.4 54.9C68.4 55 67.3 55 61.8 55C57.7 55 56.8 55 56.7 55C56.6 54.9 56.6 52.4 56.7 52C56.8 51.3 57.8 50 58.7 49.3C58.9 49.2 58.6 49.2 58.2 49.3C57.2 49.5 55 51.2 54.8 51.9C54.7 52.2 54.6 52.9 54.6 53.9C54.6 54.5 54.6 54.9 54.6 54.9C54.6 55 51.9 55 51.7 55ZM52.2 27.1C52.2 27.1 52.1 26.8 52 26.6C51.5 25.1 50.6 21.8 50 19C49.2 15.4 49.2 14.9 49.6 14C49.9 13.4 50.3 13 51 12.6C51.5 12.3 51.5 12.3 51.1 12.2C50.5 12 49.5 11.4 48.5 10.6C45.4 8.2 44.2 8.1 42.6 9.7C40.5 11.9 40.9 14.6 43.8 18.4C44.8 19.7 45.8 20.8 48.3 23.3C50.8 25.8 51.3 26.3 51.7 26.9C52.1 27.3 52.2 27.3 52.2 27.1ZM68.2 26.9C68.5 26.6 69.1 26 70.9 24.1C72.7 22.3 73.5 21.4 74.2 20.7C79 15.5 79.9 12.2 77.3 9.6C76.5 8.8 75.8 8.5 74.7 8.7C74.1 8.8 73.1 9.4 71.8 10.4C70.3 11.5 69.5 12.1 68.8 12.2C68.7 12.3 68.6 12.3 68.6 12.3C68.6 12.4 68.7 12.4 68.8 12.5C70.5 13.4 70.9 14.5 70.5 16.4C69.8 20.3 68.9 23.9 68.1 26.4C67.7 27.4 67.7 27.5 68.2 26.9Z"/><rect x="6.13" y="16.60" width="30.0" height="1.8"/><rect x="83.87" y="16.60" width="30.0" height="1.8"/><rect x="6.13" y="41.60" width="30.0" height="1.8"/><rect x="83.87" y="41.60" width="30.0" height="1.8"/></g></svg>
       <p class="ds-eb">The Studio is open</p>
       <h2 class="ds-h2" id="ds-close-h">What could your nation become?</h2>
       <p class="ds-lead">Name the country and the constraint. The Studio will say plainly whether this work can help.</p>
@@ -524,77 +629,152 @@ Mandate horizons are opening positions; edit them in the cards.
     </div>
   </section>
 
-</div>
 <script>
 (function(){
   var root = document.getElementById('pn-ds');
-  if (!root || root.getAttribute('data-ds') === '1') { return; }
-  root.setAttribute('data-ds', '1');
-  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!root || root.getAttribute('data-ds') === '6') { return; }
+  root.setAttribute('data-ds', '6');
+  var still = !!(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
 
-  /* hero: the sheet draws the five moves in turn, in step with the pills */
-  var sheet = root.querySelector('.ds-sheet'), verbs = root.querySelectorAll('.ds-verbs li');
-  function stage(n){
-    if (n < 5) { sheet.classList.remove('is-met'); }
-    for (var k = 0; k <= 5; k++){ sheet.classList.toggle('on' + k, k <= n); }
-    for (var v = 0; v < verbs.length; v++){ verbs[v].classList.toggle('is-on', v === n - 1); verbs[v].classList.toggle('is-done', v < n - 1); }
+  /* 1 the drafting table draws the five moves in turn; a visitor can tap any move */
+  var art = root.querySelector('.ds-sheet__art');
+  var chs = root.querySelectorAll('.ds-ch button');
+  var say = root.querySelector('.ds-say');
+  var SEQ = [-1, 0, 1, 2, 3, 4, 5, 6];
+  var WAIT = [450, 1500, 2300, 2300, 2300, 2300, 2400, 3200];
+  var pos = -1, timer = 0, hold = 0, playing = false, seen = false, inView = false;
+
+  function caption(n){
+    var b = chs[Math.min(Math.max(n, 1), 5) - 1];
+    if (!say || !b) { return; }
+    var h = document.createElement('b');
+    h.textContent = b.querySelector('b').textContent + ' ' + b.querySelector('span').textContent;
+    say.innerHTML = '';
+    say.appendChild(h);
+    say.appendChild(document.createTextNode(b.getAttribute('data-say')));
   }
-  if (sheet && !reduce){
-    var st = -1, timer = 0;
-    function tick(){
-      st = st >= 6 ? -1 : st + 1;
-      if (st === -1) { stage(-1); timer = setTimeout(tick, 700); return; }
-      if (st === 6) { sheet.classList.add('is-met'); timer = setTimeout(tick, 3000); return; }
-      stage(st); timer = setTimeout(tick, st === 0 ? 1500 : 2000);
+  function show(n, ms){
+    if (!art) { return; }
+    art.classList.toggle('is-met', n >= 6);
+    for (var k = 0; k <= 5; k++) { art.classList.toggle('on' + k, k <= n); }
+    for (var i = 0; i < chs.length; i++) {
+      var b = chs[i], m = i + 1;
+      b.classList.remove('is-on', 'is-run', 'is-done');
+      b.setAttribute('aria-pressed', (m === n || (n >= 6 && m === 5)) ? 'true' : 'false');
+      if (m < n || n >= 6) { b.classList.add('is-done'); }
+      else if (m === n) {
+        b.classList.add('is-on');
+        if (ms) { b.style.setProperty('--dur', ms + 'ms'); void b.offsetWidth; b.classList.add('is-run'); }
+      }
     }
-    if ('IntersectionObserver' in window){
-      var seen = false;
-      new IntersectionObserver(function(es){ es.forEach(function(e){ if (e.isIntersecting && !seen){ seen = true; stage(-1); setTimeout(tick, 400); } }); }, { threshold: .25 }).observe(sheet);
-    } else { stage(-1); tick(); }
-    /* crosshair with coordinates, like a drafting table */
-    var svg = sheet.querySelector('svg'), xv = svg.querySelector('.xh-v'), xh = svg.querySelector('.xh-h'), xy = svg.querySelector('.xy');
+    if (n >= 1) { caption(n); }
+  }
+  function step(){
+    clearTimeout(timer);
+    if (!playing) { return; }
+    pos = (pos + 1) % SEQ.length;
+    show(SEQ[pos], WAIT[pos]);
+    timer = setTimeout(step, WAIT[pos]);
+  }
+  function play(){ if (playing || still) { return; } playing = true; step(); }
+  function pause(){ playing = false; clearTimeout(timer); }
+
+  for (var c = 0; c < chs.length; c++) {
+    (function(i){
+      chs[i].addEventListener('click', function(){
+        pause();
+        clearTimeout(hold);
+        pos = SEQ.indexOf(i + 1);
+        show(i + 1, 0);
+        if (!still) { hold = setTimeout(function(){ if (inView) { play(); } }, 9000); }
+      });
+    })(c);
+  }
+  if (art && !still && 'IntersectionObserver' in window) {
+    new IntersectionObserver(function(es){
+      es.forEach(function(e){
+        inView = e.isIntersecting;
+        if (inView) {
+          if (!seen) { seen = true; pos = -1; }
+          clearTimeout(hold);
+          play();
+        } else { pause(); }
+      });
+    }, { threshold: 0.3 }).observe(art);
+    document.addEventListener('visibilitychange', function(){ if (document.hidden) { pause(); } else if (inView) { play(); } });
+  }
+  /* a crosshair with coordinates, like a drafting table (mouse and trackpad only) */
+  if (art && window.matchMedia && window.matchMedia('(pointer: fine)').matches) {
+    var svg = art.querySelector('svg'), xv = svg.querySelector('.xh-v'), xh = svg.querySelector('.xh-h'), xy = svg.querySelector('.xy');
     svg.addEventListener('pointermove', function(e){
       var r = svg.getBoundingClientRect(), x = (e.clientX - r.left) / r.width * 760, y = (e.clientY - r.top) / r.height * 520;
       xv.setAttribute('x1', x); xv.setAttribute('x2', x); xh.setAttribute('y1', y); xh.setAttribute('y2', y);
-      xy.setAttribute('x', Math.min(x + 8, 690)); xy.setAttribute('y', Math.max(y - 8, 30));
+      xy.setAttribute('x', Math.min(x + 8, 660)); xy.setAttribute('y', Math.max(y - 8, 30));
       xy.textContent = 'N ' + (90 - y / 520 * 180).toFixed(2) + '  E ' + (x / 760 * 360 - 180).toFixed(2);
-      sheet.classList.add('is-hover');
+      art.classList.add('is-hover');
     });
-    svg.addEventListener('pointerleave', function(){ sheet.classList.remove('is-hover'); });
-  } else if (verbs.length) { verbs[0].classList.add('is-on'); }
+    svg.addEventListener('pointerleave', function(){ art.classList.remove('is-hover'); });
+  }
 
-  /* the five moves: open one at a time */
-  var items = root.querySelectorAll('.ds-acc li');
-  function openMove(li){
-    for (var i = 0; i < items.length; i++){
-      var on = items[i] === li;
-      items[i].classList.toggle('is-on', on);
-      items[i].querySelector('.ds-mv').setAttribute('aria-expanded', on ? 'true' : 'false');
+  /* 2 the three mandates: side by side on laptops, one at a time on phones */
+  var mand = root.querySelector('.ds-mand');
+  var tabs = root.querySelectorAll('.ds-tabs [role="tab"]');
+  var tiers = root.querySelectorAll('.ds-tier');
+  var mq = window.matchMedia ? window.matchMedia('(max-width: 899px)') : null;
+  var sel = 0;
+  function pick(i, focus){
+    sel = i;
+    for (var t = 0; t < tabs.length; t++) {
+      var on = t === i;
+      tabs[t].setAttribute('aria-selected', on ? 'true' : 'false');
+      tabs[t].setAttribute('tabindex', on ? '0' : '-1');
+      if (tiers[t]) { tiers[t].classList.toggle('is-sel', on); }
+    }
+    if (focus && tabs[i]) { tabs[i].focus(); }
+  }
+  function mode(){
+    var on = !!(mq && mq.matches);
+    if (!mand) { return; }
+    mand.classList.toggle('is-tabbed', on);
+    for (var t = 0; t < tiers.length; t++) {
+      if (on) { tiers[t].setAttribute('role', 'tabpanel'); tiers[t].setAttribute('aria-labelledby', 'ds-tab-' + t); }
+      else { tiers[t].removeAttribute('role'); tiers[t].removeAttribute('aria-labelledby'); }
     }
   }
-  for (var a = 0; a < items.length; a++){
-    (function(li){
-      var mv = li.querySelector('.ds-mv');
-      mv.addEventListener('mouseenter', function(){ if (window.innerWidth > 899) { openMove(li); } });
-      mv.addEventListener('click', function(){ openMove(li); });
-      mv.addEventListener('focus', function(){ openMove(li); });
-      mv.addEventListener('keydown', function(e){ if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openMove(li); } });
-    })(items[a]);
+  for (var a = 0; a < tabs.length; a++) {
+    (function(i){
+      tabs[i].addEventListener('click', function(){ pick(i, false); });
+      tabs[i].addEventListener('keydown', function(e){
+        var k = e.key, n = -1;
+        if (k === 'ArrowRight') { n = (i + 1) % tabs.length; }
+        else if (k === 'ArrowLeft') { n = (i + tabs.length - 1) % tabs.length; }
+        else if (k === 'Home') { n = 0; }
+        else if (k === 'End') { n = tabs.length - 1; }
+        if (n > -1) { e.preventDefault(); pick(n, true); }
+      });
+    })(a);
   }
+  /* the hero links and any #ds-briefing, #ds-lab or #ds-sovereign address open that mandate */
+  var ids = ['ds-briefing', 'ds-lab', 'ds-sovereign'];
+  var fmt = root.querySelectorAll('.ds-fmt a[data-tier]');
+  for (var f = 0; f < fmt.length; f++) {
+    fmt[f].addEventListener('click', function(){ pick(parseInt(this.getAttribute('data-tier'), 10) || 0, false); });
+  }
+  var h = (window.location.hash || '').replace('#', '');
+  if (ids.indexOf(h) > -1) { pick(ids.indexOf(h), false); }
+  mode();
+  if (mq) { if (mq.addEventListener) { mq.addEventListener('change', mode); } else if (mq.addListener) { mq.addListener(mode); } }
 
-  /* mandates: who is asking */
-  var list = root.querySelector('.ds-cards'), chips = root.querySelectorAll('.ds-chip'), cards = root.querySelectorAll('.ds-card');
-  for (var c = 0; c < chips.length; c++){
-    chips[c].addEventListener('click', function(){
-      var on = this.getAttribute('aria-pressed') !== 'true', w = this.getAttribute('data-who');
-      for (var k = 0; k < chips.length; k++){ chips[k].setAttribute('aria-pressed', 'false'); }
-      for (var m = 0; m < cards.length; m++){
-        cards[m].classList.toggle('is-match', on && (' ' + cards[m].getAttribute('data-who') + ' ').indexOf(' ' + w + ' ') > -1);
-      }
-      list.classList.toggle('is-filtered', on);
-      if (on) { this.setAttribute('aria-pressed', 'true'); }
+  /* 3 find a nation's ReDesign Studio */
+  var form = root.querySelector('.ds-find'), list = form && form.querySelector('select');
+  if (form && list) {
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      if (!list.value) { list.focus(); return; }
+      var u = list.value + '#bp-studio', w = window.open(u, '_blank');
+      if (w) { w.opener = null; } else { window.location.href = u; }
     });
   }
-
 })();
 </script>
+</div>

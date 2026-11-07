@@ -1,0 +1,44 @@
+# Perfect Nations - tell the site that page code changed (Live Pages plugin 1.2 and later).
+# After a change to pages/ reaches main, the site is asked to bring its stored copies up to date; it
+# reads main's commit from github.com itself and clears the page cache only if a file really changed.
+# Then the main pages are opened once, on a phone and a laptop, so the first visitor gets a cached page.
+name: site-refresh
+on:
+  push:
+    branches: [main]
+    paths: ['pages/**']
+  workflow_dispatch:
+concurrency:
+  group: site-refresh
+  cancel-in-progress: false
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Ask the site to refresh
+        id: ping
+        run: |
+          set +e
+          sleep 10
+          out=""
+          for i in 1 2 3; do
+            out=$(curl -s -m 180 -X POST -H 'Content-Type: application/json' -d '{}' -w ' HTTP%{http_code}' https://perfectnations.org/wp-json/pn-live/v1/refresh)
+            echo "$out"
+            case "$out" in *HTTP200*) break;; *HTTP429*) sleep 65;; *) sleep 20;; esac
+          done
+          case "$out" in *'"status":"updated"'*) echo "warm=yes" >> "$GITHUB_OUTPUT";; esac
+      - name: Open the main pages once (phone and laptop)
+        if: steps.ping.outputs.warm == 'yes' || github.event_name == 'workflow_dispatch'
+        run: |
+          set +e
+          PHONE="Mozilla/5.0 (Linux; Android 13; Pixel 7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Mobile Safari/537.36"
+          LAPTOP="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36"
+          ACC="text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8"
+          for path in / /blueprints/ /about/ /state-of-nations/ /perfect-nations-gallery/ /design-studio/ /perfect-capita/ /sovereign-assets/ /contact/ \
+                      /blueprints/barbados/ /blueprints/kenya/ /blueprints/india/ /blueprints/brazil/ /blueprints/rwanda/ /blueprints/afghanistan/; do
+            for ua in "$PHONE" "$LAPTOP"; do
+              curl -s -o /dev/null --compressed -A "$ua" -H "Accept: $ACC" -w "%{http_code} %{time_starttransfer}s ${path}\n" "https://perfectnations.org${path}"
+              sleep 0.5
+            done
+          done

@@ -1,0 +1,1018 @@
+{
+  "page": "capital-architecture",
+  "page_version": "5.0",
+  "updated": "2026-11-07",
+  "steward": "The Capital Architecture Steward",
+  "hero": {
+    "eyebrow": "Capital Architecture",
+    "title": "How a nation pays for what its people are owed",
+    "lead": "Thirty-one instruments that can pay for food, water, shelter, energy, education, health and livelihood. Each is set out in one line, with the deal that proved it."
+  },
+  "five": {
+    "label": "The five we lead with",
+    "note": "Illustrations are AI-generated; they are not photographs of the financed projects.",
+    "items": [
+      {
+        "id": "outcome-bond",
+        "tag": "Results-based finance",
+        "name": "Outcome Bonds",
+        "headline": "Investors earn more as verified results arrive.",
+        "where": "Brazil",
+        "year": "2024",
+        "figure": "$225M",
+        "label": "Amazon reforestation, paid in carbon removed",
+        "source": "World Bank, August 2024",
+        "url": "https://www.worldbank.org/en/news/press-release/2024/08/13/investors-support-amazon-reforestation-through-record-breaking-usd-225-million-world-bank-outcome-bond",
+        "nation": "brazil",
+        "image": "https://perfectnations.org/wp-content/uploads/2026/10/pn-ca-brazil-amazon-reforestation-768x480.jpg",
+        "alt": "Replanted rainforest in the Amazon"
+      },
+      {
+        "id": "development-impact-bond",
+        "tag": "Development finance",
+        "name": "Development Impact Bonds",
+        "headline": "Investors fund the work; outcome payers repay them for results.",
+        "where": "India",
+        "year": "2018",
+        "figure": "160%",
+        "label": "of the learning target, met in Rajasthan",
+        "source": "Educate Girls, 2018",
+        "url": "https://www.educategirls.ngo/dib/",
+        "nation": "india",
+        "image": "https://perfectnations.org/wp-content/uploads/2026/10/pn-ca-india-girls-classroom-768x480.jpg",
+        "alt": "Girls learning in a classroom in Rajasthan"
+      },
+      {
+        "id": "social-bond",
+        "tag": "Inclusive capital markets",
+        "name": "Social Bonds",
+        "headline": "Bond money ring-fenced for homes, schools and clinics.",
+        "where": "Ecuador",
+        "year": "2020",
+        "figure": "$400M",
+        "label": "for affordable homes for 24,000+ families",
+        "source": "Inter-American Development Bank, 2020",
+        "url": "https://www.iadb.org/en/news/ecuador-issues-worlds-first-sovereign-social-bond-support-idb-guarantee",
+        "nation": "ecuador",
+        "image": "https://perfectnations.org/wp-content/uploads/2026/10/pn-ca-ecuador-family-homes-768x480.jpg",
+        "alt": "New family homes in Ecuador"
+      },
+      {
+        "id": "sustainability-linked-bond",
+        "tag": "Performance-linked",
+        "name": "Sustainability-Linked Bonds",
+        "headline": "Miss the national climate target and the coupon rises.",
+        "where": "Chile",
+        "year": "2022",
+        "figure": "$2B",
+        "label": "the first sovereign bond of its kind",
+        "source": "Ministry of Finance of Chile, 2022",
+        "url": "https://biblio.hacienda.cl/chile-s-sustainability-linked-bond-report/2-2022-slb-bond-issuance-and-slb-framework",
+        "nation": "",
+        "image": "https://perfectnations.org/wp-content/uploads/2026/10/pn-ca-chile-atacama-solar-768x480.jpg",
+        "alt": "Solar fields in the Atacama Desert"
+      },
+      {
+        "id": "standard-tokens",
+        "tag": "Designed by Perfect Nations",
+        "name": "Standard Tokens",
+        "headline": "A citizen-scale share in one basic living standard.",
+        "where": "Precedent: Kenya",
+        "year": "2017",
+        "figure": "KES 3,000",
+        "label": "to own a Kenyan government bond, by phone",
+        "source": "FSD Kenya, 2017",
+        "url": "https://www.fsdkenya.org/blogs-publications/blog/the-story-of-m-akiba-selling-kenyan-treasury-bonds-via-mobile/",
+        "nation": "kenya",
+        "own": true,
+        "more": "https://perfectnations.org/tokenization/",
+        "image": "https://perfectnations.org/wp-content/uploads/2026/10/pn-ca-kenya-mobile-bond-768x480.jpg",
+        "alt": "A citizen buying a government bond on a mobile phone"
+      }
+    ]
+  },
+  "index": {
+    "eyebrow": "The toolkit",
+    "title": "Thirty-one instruments, one line each",
+    "lead": "Thirty are already in use, each shown with a real, dated, sourced deal. The thirty-first, Standard Tokens, is designed by Perfect Nations. Open any line for how it works.",
+    "families": [
+      {
+        "id": "results",
+        "name": "Pay for results",
+        "short": "Pay for results",
+        "line": "Money moves only when results are verified.",
+        "items": [
+          {
+            "id": "outcome-bond",
+            "name": "Outcome Bond",
+            "headline": "Investors earn more as verified results arrive.",
+            "how": "The principal is protected; the return rises with the result, here the carbon a replanted forest removes.",
+            "where": "Brazil",
+            "year": "2024",
+            "figure": "$225M",
+            "label": "Amazon reforestation",
+            "source": "World Bank, August 2024",
+            "url": "https://www.worldbank.org/en/news/press-release/2024/08/13/investors-support-amazon-reforestation-through-record-breaking-usd-225-million-world-bank-outcome-bond",
+            "nation": "brazil"
+          },
+          {
+            "id": "development-impact-bond",
+            "name": "Development Impact Bond",
+            "headline": "Investors fund the work; outcome payers repay them for results.",
+            "how": "Investors pay for delivery up front. A donor or foundation repays them, with a return, only once an independent evaluator verifies the results.",
+            "where": "India",
+            "year": "2018",
+            "figure": "160%",
+            "label": "of the learning target",
+            "source": "Educate Girls, 2018",
+            "url": "https://www.educategirls.ngo/dib/",
+            "nation": "india"
+          },
+          {
+            "id": "social-impact-bond",
+            "name": "Social Impact Bond",
+            "headline": "The same deal at home, with the government paying for results.",
+            "how": "Investors fund a programme; the government repays them only for the outcomes it wanted, here formal jobs found and kept.",
+            "where": "Colombia",
+            "year": "2017",
+            "figure": "",
+            "label": "paid for jobs found, not for training given",
+            "source": "Inter-American Development Bank",
+            "url": "https://www.iadb.org/en/story/colombias-innovative-strategy-employ-its-youth",
+            "nation": "colombia"
+          },
+          {
+            "id": "program-for-results",
+            "name": "Program-for-Results",
+            "headline": "A loan disbursed only as agreed results are verified.",
+            "how": "Each tranche is tied to a disbursement-linked indicator, such as pupils reaching a learning level, and is released when that result is verified.",
+            "where": "Tanzania",
+            "year": "2021",
+            "figure": "$588M",
+            "label": "for primary school learning",
+            "source": "World Bank, project P169380",
+            "url": "https://projects.worldbank.org/en/projects-operations/project-detail/P169380",
+            "nation": "tanzania"
+          },
+          {
+            "id": "results-based-payments",
+            "name": "Results-Based Payments",
+            "headline": "A set price for each verified unit of result.",
+            "how": "A buyer pays a fixed price per verified unit: a tonne of emissions avoided, a child vaccinated, a home connected.",
+            "where": "Republic of the Congo",
+            "year": "2021",
+            "figure": "Up to $41.8M",
+            "label": "for 8.4 million tonnes of emissions cut",
+            "source": "World Bank, May 2021",
+            "url": "https://www.worldbank.org/en/news/press-release/2021/05/03/world-bank-and-republic-of-congo-sign-agreement-to-reduce-carbon-emissions-and-preserve-forests",
+            "nation": "republic-of-congo"
+          }
+        ]
+      },
+      {
+        "id": "bonds",
+        "name": "Labelled sovereign bonds",
+        "short": "Labelled bonds",
+        "line": "Public debt with its purpose written into the bond.",
+        "items": [
+          {
+            "id": "social-bond",
+            "name": "Social Bond",
+            "headline": "Bond money ring-fenced for homes, schools and clinics.",
+            "how": "The proceeds can be spent only on eligible social projects, reported to investors each year.",
+            "where": "Ecuador",
+            "year": "2020",
+            "figure": "$400M",
+            "label": "for affordable homes",
+            "source": "Inter-American Development Bank, 2020",
+            "url": "https://www.iadb.org/en/news/ecuador-issues-worlds-first-sovereign-social-bond-support-idb-guarantee",
+            "nation": "ecuador"
+          },
+          {
+            "id": "sustainability-linked-bond",
+            "name": "Sustainability-Linked Bond",
+            "headline": "Miss the national climate target and the coupon rises.",
+            "how": "The money is general budget money, but the interest rate steps up if the nation misses targets it set in advance.",
+            "where": "Chile",
+            "year": "2022",
+            "figure": "$2B",
+            "label": "the first of its kind",
+            "source": "Ministry of Finance of Chile, 2022",
+            "url": "https://biblio.hacienda.cl/chile-s-sustainability-linked-bond-report/2-2022-slb-bond-issuance-and-slb-framework",
+            "nation": ""
+          },
+          {
+            "id": "green-bond",
+            "name": "Sovereign Green Bond",
+            "headline": "Bond money ring-fenced for clean energy and climate.",
+            "how": "The proceeds finance eligible green projects under a published framework, with allocation reports to investors.",
+            "where": "India",
+            "year": "2023",
+            "figure": "INR 16,000 cr",
+            "label": "in the first issuance",
+            "source": "Reserve Bank of India, 2023",
+            "url": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=55004",
+            "nation": "india"
+          },
+          {
+            "id": "blue-bond",
+            "name": "Sovereign Blue Bond",
+            "headline": "Bond money ring-fenced for oceans and fisheries.",
+            "how": "A green bond for the sea: the proceeds fund marine protection and sustainable fisheries, here with a World Bank guarantee behind it.",
+            "where": "Seychelles",
+            "year": "2018",
+            "figure": "$15M",
+            "label": "the world’s first",
+            "source": "World Bank, October 2018",
+            "url": "https://www.worldbank.org/en/news/press-release/2018/10/29/seychelles-launches-worlds-first-sovereign-blue-bond",
+            "nation": ""
+          },
+          {
+            "id": "green-sukuk",
+            "name": "Sovereign Green Sukuk",
+            "headline": "Green bond finance that complies with Islamic law.",
+            "how": "A sukuk is backed by assets rather than interest; the green sukuk spends every dollar on eligible climate projects.",
+            "where": "Indonesia",
+            "year": "2018",
+            "figure": "$1.25B",
+            "label": "the world’s first",
+            "source": "UNDP Indonesia, April 2018",
+            "url": "https://www.undp.org/indonesia/press-releases/indonesia-tackles-climate-change-through-issuance-green-sukuk-islamic-bond-issuance",
+            "nation": "indonesia"
+          },
+          {
+            "id": "sustainable-bond",
+            "name": "Sustainable Bond",
+            "headline": "One bond for social and environmental spending together.",
+            "how": "The proceeds are tied to both social and environmental spending under the nation’s sustainable bond framework.",
+            "where": "Brazil",
+            "year": "2025",
+            "figure": "$1.5B",
+            "label": "orders three times the size",
+            "source": "National Treasury of Brazil, November 2025",
+            "url": "https://www.gov.br/tesouronacional/en/news/brazil-announces-results-of-its-third-sustainable-u-s-dollar-bond-issuance",
+            "nation": "brazil"
+          }
+        ]
+      },
+      {
+        "id": "swaps",
+        "name": "Debt conversions",
+        "short": "Debt swaps",
+        "line": "Costly debt refinanced; the savings go to people and nature.",
+        "items": [
+          {
+            "id": "debt-for-nature",
+            "name": "Debt-for-Nature Swap",
+            "headline": "Cheaper debt in exchange for protecting nature.",
+            "how": "Guarantors let the nation refinance costly debt; in return it commits the savings and new protected areas to conservation.",
+            "where": "Barbados",
+            "year": "2022",
+            "figure": "$150M",
+            "label": "about 30% of its ocean to be protected",
+            "source": "The Nature Conservancy, September 2022",
+            "url": "https://www.nature.org/en-us/newsroom/tnc-announces-barbados-blue-bonds-debt-conversion/",
+            "nation": "barbados"
+          },
+          {
+            "id": "debt-for-climate",
+            "name": "Debt-for-Climate-Resilience Swap",
+            "headline": "Savings from cheaper debt build climate defences.",
+            "how": "Multilateral guarantees replace costly debt with cheaper debt, and the savings are spent on resilience: here water and sewerage.",
+            "where": "Barbados",
+            "year": "2024",
+            "figure": "$300M",
+            "label": "the world’s first for resilience",
+            "source": "Inter-American Development Bank, 2024",
+            "url": "https://www.iadb.org/en/news/barbados-launched-worlds-first-debt-climate-resilience-operation",
+            "nation": "barbados"
+          },
+          {
+            "id": "debt-for-education",
+            "name": "Debt-for-Education Swap",
+            "headline": "Savings from cheaper debt build schools.",
+            "how": "A guaranteed commercial loan prepays costlier loans; most of the savings build secondary schools.",
+            "where": "Angola",
+            "year": "2026",
+            "figure": "$400M",
+            "label": "30 more secondary schools",
+            "source": "World Bank, March 2026",
+            "url": "https://www.worldbank.org/en/news/press-release/2026/03/06/new-world-bank-group-financing-supports-angola-s-economic-reforms-to-promote-inclusive-growth-and-job-creation",
+            "nation": "angola"
+          },
+          {
+            "id": "debt-for-development",
+            "name": "Debt-for-Development Swap",
+            "headline": "Costly commercial debt bought back; the savings fund education.",
+            "how": "A World Bank guarantee stands behind a cheaper, longer loan that buys back the most expensive commercial debt.",
+            "where": "Côte d’Ivoire",
+            "year": "2024",
+            "figure": "EUR 500M",
+            "label": "about EUR 330M freed for schools",
+            "source": "World Bank, December 2024",
+            "url": "https://www.worldbank.org/en/news/press-release/2024/12/05/c-te-d-ivoire-s-debt-for-development-swap-enabled-by-the-world-bank-group-will-free-up-funds-for-education",
+            "nation": "cote-divoire"
+          }
+        ]
+      },
+      {
+        "id": "guarantees",
+        "name": "Guarantees and risk cover",
+        "short": "Guarantees",
+        "line": "A stronger balance sheet stands behind the deal.",
+        "items": [
+          {
+            "id": "partial-credit-guarantee",
+            "name": "Partial Credit Guarantee",
+            "headline": "A guarantor covers part of the debt, so banks lend more.",
+            "how": "A development bank guarantees part of the repayments, which lowers the lenders’ risk and the borrower’s cost.",
+            "where": "Tanzania",
+            "year": "2026",
+            "figure": "Up to $800M",
+            "label": "behind a $1.2B railway loan",
+            "source": "African Development Bank, November 2026",
+            "url": "https://www.afdb.org/en/news-and-events/press-releases/tanzania-african-development-bank-tanzania-close-98246",
+            "nation": "tanzania"
+          },
+          {
+            "id": "payment-guarantee",
+            "name": "Payment Guarantee",
+            "headline": "A guarantee on a state buyer’s promise to pay.",
+            "how": "Suppliers sell on longer terms because a development bank stands behind the state company’s payments.",
+            "where": "Bangladesh",
+            "year": "2026",
+            "figure": "$350M",
+            "label": "behind LNG import payments",
+            "source": "World Bank, May 2026",
+            "url": "https://www.worldbank.org/en/news/factsheet/2026/05/18/world-bank-support-to-help-navigate-fuel-market-volatility-in-bangladesh",
+            "nation": "bangladesh"
+          },
+          {
+            "id": "infrastructure-guarantee",
+            "name": "Infrastructure Guarantee",
+            "headline": "A guarantee that draws private lenders into infrastructure.",
+            "how": "The guarantee lets private lenders finance public infrastructure on longer, cheaper terms than they would alone.",
+            "where": "Mexico",
+            "year": "2025",
+            "figure": "$500M",
+            "label": "for infrastructure and private investment",
+            "source": "World Bank, December 2025",
+            "url": "https://www.worldbank.org/en/news/press-release/2025/12/18/banco-mundial-aprueba-garantia-por-us-500-millones-para-impulsar-infraestructura-y-atraer-inversion-privada-en-m-xico",
+            "nation": "mexico"
+          },
+          {
+            "id": "political-risk-insurance",
+            "name": "Political Risk Insurance",
+            "headline": "Cover against expropriation, inconvertibility and unrest.",
+            "how": "An insurer pays investors if a named political risk stops the project, so they invest where they otherwise would not.",
+            "where": "Angola",
+            "year": "2024",
+            "figure": "$150M",
+            "label": "for new water treatment plants",
+            "source": "U.S. International Development Finance Corporation, December 2024",
+            "url": "https://www.dfc.gov/media/press-releases/dfc-announces-investments-supporting-development-along-lobito-corridor",
+            "nation": "angola"
+          },
+          {
+            "id": "sme-credit-guarantee",
+            "name": "Small-Business Credit Guarantee",
+            "headline": "Guarantees on small-business loans, so banks lend to them.",
+            "how": "The facility guarantees up to 80 percent of each loan, capped at $1 million, through local banks.",
+            "where": "Barbados",
+            "year": "2025",
+            "figure": "$50M",
+            "label": "up to 80% of each loan",
+            "source": "Inter-American Development Bank, July 2025",
+            "url": "https://www.iadb.org/en/news/barbados-expands-msmes-access-financing-us50-million-idb-loan",
+            "nation": "barbados"
+          },
+          {
+            "id": "local-currency-guarantee",
+            "name": "Local-Currency Guarantee",
+            "headline": "Lets a borrower raise money in the currency it earns.",
+            "how": "A guarantor backs a bond in local currency, so the borrower carries no exchange-rate risk.",
+            "where": "Kenya",
+            "year": "2019",
+            "figure": "KSh 4.3B",
+            "label": "Kenya’s first green bond, repaid in full",
+            "source": "PIDG, 2024",
+            "url": "https://pidg.org/guarantco-celebrates-the-redemption-of-the-first-green-bond-issued-in-east-africa/",
+            "nation": "kenya"
+          }
+        ]
+      },
+      {
+        "id": "disaster",
+        "name": "Disaster risk finance",
+        "short": "Disaster risk",
+        "line": "Money agreed before the storm, paid within weeks of it.",
+        "items": [
+          {
+            "id": "catastrophe-bond",
+            "name": "Catastrophe Bond",
+            "headline": "Investors pay the nation when a disaster crosses a trigger.",
+            "how": "Investors earn a premium; if a storm or earthquake crosses an agreed threshold, their principal goes to the nation.",
+            "where": "Jamaica",
+            "year": "2024",
+            "figure": "$150M",
+            "label": "paid in full after Hurricane Melissa",
+            "source": "World Bank, November 2025",
+            "url": "https://www.worldbank.org/en/news/press-release/2025/11/07/hurricane-melissa-triggers-100-payout-of-150-million-world-bank-catastrophe-bond-for-jamaica",
+            "nation": "jamaica"
+          },
+          {
+            "id": "risk-pool",
+            "name": "Parametric Risk Pool",
+            "headline": "Nations pool disaster risk and pay less for cover.",
+            "how": "Member governments buy cover together; payouts follow measured wind, rain or quake readings, with no claims process.",
+            "where": "Caribbean",
+            "year": "since 2007",
+            "figure": "$483M",
+            "label": "paid out across 82 events",
+            "source": "CCRIF SPC",
+            "url": "https://www.ccrif.org/about-us?language_content_entity=en",
+            "nation": "barbados"
+          },
+          {
+            "id": "cat-ddo",
+            "name": "Catastrophe Deferred Drawdown Option",
+            "headline": "A credit line that opens the day disaster strikes.",
+            "how": "The loan is agreed in calm times and drawn the moment a disaster is declared.",
+            "where": "Colombia",
+            "year": "2026",
+            "figure": "$200M",
+            "label": "after the August earthquake",
+            "source": "World Bank, September 2026",
+            "url": "https://www.worldbank.org/en/news/press-release/2026/09/24/world-bank-group-provides-additional-financing-to-support-colombia-earthquake",
+            "nation": "colombia"
+          },
+          {
+            "id": "climate-resilient-debt-clause",
+            "name": "Climate-Resilient Debt Clause",
+            "headline": "Debt payments pause for two years after a disaster.",
+            "how": "A clause in the bond defers payments after a severe hurricane, flood or epidemic, so the budget can go to recovery.",
+            "where": "Barbados",
+            "year": "2025",
+            "figure": "$500M",
+            "label": "a benchmark-size global bond",
+            "source": "Artemis, June 2025",
+            "url": "https://www.artemis.bm/news/barbados-embeds-parametric-nat-cat-clause-in-sovereign-bond-issue/",
+            "nation": "barbados"
+          }
+        ]
+      },
+      {
+        "id": "platforms",
+        "name": "Blended finance and platforms",
+        "short": "Blended finance",
+        "line": "Public money placed so private money follows.",
+        "items": [
+          {
+            "id": "blended-finance",
+            "name": "Blended Finance Platform",
+            "headline": "Public capital and currency cover that bring private investors in.",
+            "how": "The state takes the risks private investors will not, such as currency swings, so they invest in the nation’s priorities.",
+            "where": "Brazil",
+            "year": "2024",
+            "figure": "R$75B",
+            "label": "mobilised in the first year",
+            "source": "COP30 Brazil",
+            "url": "https://cop30.br/en/news-about-cop30/eco-invest-brasil-national-program-to-attract-investments-for-ecological-transformation",
+            "nation": "brazil"
+          },
+          {
+            "id": "green-bank",
+            "name": "Green Bank",
+            "headline": "A national bank that keeps green credit flowing locally.",
+            "how": "Public and climate-fund equity capitalise a bank that lends to households and firms for energy, water and resilience.",
+            "where": "Barbados",
+            "year": "2023",
+            "figure": "$15.5M",
+            "label": "Green Climate Fund equity",
+            "source": "Green Climate Fund, FP213",
+            "url": "https://www.greenclimate.fund/project/fp213",
+            "nation": "barbados"
+          },
+          {
+            "id": "rsf",
+            "name": "Resilience and Sustainability Facility",
+            "headline": "Long-term IMF money for climate reform.",
+            "how": "Affordable, long-maturity IMF financing that sits beside a core programme and rewards climate reforms.",
+            "where": "DR Congo",
+            "year": "2025",
+            "figure": "$1.038B",
+            "label": "beside its core programme",
+            "source": "International Monetary Fund, January 2025",
+            "url": "https://www.imf.org/en/News/Articles/2025/01/15/pr-25003-democratic-republic-of-congo-imf-apv-38-mth-1729-mill-ecf-arr-and-1038-mill-rsf-arr",
+            "nation": "dr-congo"
+          },
+          {
+            "id": "diaspora-bond",
+            "name": "Diaspora Bond",
+            "headline": "A bond sold to citizens living abroad.",
+            "how": "The nation borrows from its own people overseas, who often accept a lower return to invest at home.",
+            "where": "Nigeria",
+            "year": "2017",
+            "figure": "$300M",
+            "label": "Nigeria’s first diaspora bond",
+            "source": "Debt Management Office, Nigeria",
+            "url": "https://dmo.gov.ng/news-and-events/circulars-releases/2456-nigeria-shines-at-the-emea-awards-wins-3-awards/file",
+            "nation": "nigeria"
+          },
+          {
+            "id": "retail-mobile-bond",
+            "name": "Retail Mobile Bond",
+            "headline": "Any citizen can buy a government bond by phone.",
+            "how": "A government bond sold in small amounts through mobile money, so ordinary savers can own a share of public finance.",
+            "where": "Kenya",
+            "year": "2017",
+            "figure": "KES 3,000",
+            "label": "to buy in",
+            "source": "FSD Kenya, 2017",
+            "url": "https://www.fsdkenya.org/blogs-publications/blog/the-story-of-m-akiba-selling-kenyan-treasury-bonds-via-mobile/",
+            "nation": "kenya"
+          },
+          {
+            "id": "standard-tokens",
+            "name": "Standard Tokens",
+            "headline": "A citizen-scale share in one basic living standard.",
+            "how": "Designed by Perfect Nations: small units of finance, priced by region, each tied to one of the seven basic living standards. Pending compliance review.",
+            "where": "Designed by Perfect Nations",
+            "year": "",
+            "figure": "",
+            "label": "pending compliance",
+            "source": "How Standard Tokens work",
+            "url": "https://perfectnations.org/tokenization/",
+            "nation": "",
+            "own": true
+          }
+        ]
+      }
+    ]
+  },
+  "record": {
+    "eyebrow": "On record",
+    "count": 328,
+    "nations": 44,
+    "by": [
+      {
+        "cat": "multi",
+        "label": "Multilateral",
+        "sub": "World Bank, IMF and peers",
+        "n": 270
+      },
+      {
+        "cat": "govt",
+        "label": "Issued by the nation",
+        "sub": "Its own bonds and programmes",
+        "n": 29
+      },
+      {
+        "cat": "regional",
+        "label": "Regional",
+        "sub": "Regional banks and funds",
+        "n": 10
+      },
+      {
+        "cat": "private",
+        "label": "Private",
+        "sub": "Investors, banks and funds",
+        "n": 8
+      },
+      {
+        "cat": "bilat",
+        "label": "Bilateral",
+        "sub": "Partner governments",
+        "n": 5
+      },
+      {
+        "cat": "impact",
+        "label": "Impact",
+        "sub": "Impact investors, green banks",
+        "n": 5
+      },
+      {
+        "cat": "humanitarian",
+        "label": "Humanitarian",
+        "sub": "Appeals and relief funds",
+        "n": 1
+      }
+    ],
+    "list": [
+      {
+        "slug": "barbados",
+        "name": "Barbados",
+        "n": 28,
+        "url": "https://perfectnations.org/blueprints/barbados/",
+        "top": "Global Bond with Climate Resilient Debt Clauses",
+        "amount": "$500M",
+        "money": true
+      },
+      {
+        "slug": "brazil",
+        "name": "Brazil",
+        "n": 23,
+        "url": "https://perfectnations.org/blueprints/brazil/",
+        "top": "Euro bonds 2030, 2033 and 2036",
+        "amount": "EUR 5B",
+        "money": true
+      },
+      {
+        "slug": "angola",
+        "name": "Angola",
+        "n": 20,
+        "url": "https://perfectnations.org/blueprints/angola/",
+        "top": "Eurobond, dual tranche",
+        "amount": "$1.5B",
+        "money": true
+      },
+      {
+        "slug": "kenya",
+        "name": "Kenya",
+        "n": 20,
+        "url": "https://perfectnations.org/blueprints/kenya/",
+        "top": "Dual-tranche Eurobond",
+        "amount": "$2.25B",
+        "money": true
+      },
+      {
+        "slug": "afghanistan",
+        "name": "Afghanistan",
+        "n": 16,
+        "url": "https://perfectnations.org/blueprints/afghanistan/",
+        "top": "Humanitarian Needs and Response Plan 2026",
+        "amount": "$1.71B",
+        "money": true
+      },
+      {
+        "slug": "dr-congo",
+        "name": "DR Congo",
+        "n": 14,
+        "url": "https://perfectnations.org/blueprints/dr-congo/",
+        "top": "Debut Eurobond, dual tranche",
+        "amount": "$1.25B",
+        "money": true
+      },
+      {
+        "slug": "india",
+        "name": "India",
+        "n": 13,
+        "url": "https://perfectnations.org/blueprints/india/",
+        "top": "7.50% GOI Sovereign Green Bond 2056",
+        "amount": "INR 3,000 cr",
+        "money": true
+      },
+      {
+        "slug": "rwanda",
+        "name": "Rwanda",
+        "n": 12,
+        "url": "https://perfectnations.org/blueprints/rwanda/",
+        "top": "Extended Credit Facility",
+        "amount": "$250M",
+        "money": true
+      },
+      {
+        "slug": "bangladesh",
+        "name": "Bangladesh",
+        "n": 10,
+        "url": "https://perfectnations.org/blueprints/bangladesh/",
+        "top": "Emergency support for food security and livelihoods",
+        "amount": "$1.1B",
+        "money": true
+      },
+      {
+        "slug": "botswana",
+        "name": "Botswana",
+        "n": 10,
+        "url": "https://perfectnations.org/blueprints/botswana/",
+        "top": "Debswana sales agreement with De Beers",
+        "amount": "30% to 40%",
+        "money": false
+      },
+      {
+        "slug": "burundi",
+        "name": "Burundi",
+        "n": 8,
+        "url": "https://perfectnations.org/blueprints/burundi/",
+        "top": "Jiji and Mulembwe Hydropower",
+        "amount": "$253.6M",
+        "money": true
+      },
+      {
+        "slug": "lesotho",
+        "name": "Lesotho",
+        "n": 8,
+        "url": "https://perfectnations.org/blueprints/lesotho/",
+        "top": "Lesotho Highlands Water Project royalties",
+        "amount": "About $220M a year",
+        "money": true
+      },
+      {
+        "slug": "mozambique",
+        "name": "Mozambique",
+        "n": 8,
+        "url": "https://perfectnations.org/blueprints/mozambique/",
+        "top": "Safer Roads for Socio-Economic Integration Program",
+        "amount": "$400M",
+        "money": true
+      },
+      {
+        "slug": "republic-of-congo",
+        "name": "Republic of the Congo",
+        "n": 8,
+        "url": "https://perfectnations.org/blueprints/republic-of-congo/",
+        "top": "Emission Reductions Payment Agreement, Sangha and Likouala",
+        "amount": "Up to $41.8M",
+        "money": true
+      },
+      {
+        "slug": "somalia",
+        "name": "Somalia",
+        "n": 8,
+        "url": "https://perfectnations.org/blueprints/somalia/",
+        "top": "Debt relief under the Heavily Indebted Poor Countries Initiative",
+        "amount": "$5.3B to $0.6B",
+        "money": true
+      },
+      {
+        "slug": "tanzania",
+        "name": "Tanzania",
+        "n": 8,
+        "url": "https://perfectnations.org/blueprints/tanzania/",
+        "top": "Second Inclusive and Resilient Growth Development Policy Financing",
+        "amount": "$750M",
+        "money": true
+      },
+      {
+        "slug": "uganda",
+        "name": "Uganda",
+        "n": 8,
+        "url": "https://perfectnations.org/blueprints/uganda/",
+        "top": "Karuma Hydropower Plant",
+        "amount": "600 MW",
+        "money": true
+      },
+      {
+        "slug": "zambia",
+        "name": "Zambia",
+        "n": 8,
+        "url": "https://perfectnations.org/blueprints/zambia/",
+        "top": "Eurobond restructuring",
+        "amount": "$3B",
+        "money": true
+      },
+      {
+        "slug": "madagascar",
+        "name": "Madagascar",
+        "n": 7,
+        "url": "https://perfectnations.org/blueprints/madagascar/",
+        "top": "Digital and Energy Connectivity for Inclusion in Madagascar",
+        "amount": "$400M",
+        "money": true
+      },
+      {
+        "slug": "malawi",
+        "name": "Malawi",
+        "n": 7,
+        "url": "https://perfectnations.org/blueprints/malawi/",
+        "top": "Shire Valley Transformation Program, Phase 1",
+        "amount": "$210M",
+        "money": true
+      },
+      {
+        "slug": "south-sudan",
+        "name": "South Sudan",
+        "n": 7,
+        "url": "https://perfectnations.org/blueprints/south-sudan/",
+        "top": "COVID-19 Emergency Response and Health Systems Preparedness, Additional Financing",
+        "amount": "$200M",
+        "money": true
+      },
+      {
+        "slug": "senegal",
+        "name": "Senegal",
+        "n": 5,
+        "url": "https://perfectnations.org/blueprints/senegal/",
+        "top": "Extended Credit Facility (staff-level agreement)",
+        "amount": "$2.2B",
+        "money": true
+      },
+      {
+        "slug": "sri-lanka",
+        "name": "Sri Lanka",
+        "n": 5,
+        "url": "https://perfectnations.org/blueprints/sri-lanka/",
+        "top": "Extended Fund Facility",
+        "amount": "$3B",
+        "money": true
+      },
+      {
+        "slug": "vietnam",
+        "name": "Vietnam",
+        "n": 5,
+        "url": "https://perfectnations.org/blueprints/vietnam/",
+        "top": "Hai Phong City Resilience Development",
+        "amount": "$260.1M",
+        "money": true
+      },
+      {
+        "slug": "cote-divoire",
+        "name": "Côte d’Ivoire",
+        "n": 4,
+        "url": "https://perfectnations.org/blueprints/cote-d-ivoire/",
+        "top": "Debt-for-development swap",
+        "amount": "EUR 500M",
+        "money": true
+      },
+      {
+        "slug": "eswatini",
+        "name": "Eswatini",
+        "n": 4,
+        "url": "https://perfectnations.org/blueprints/eswatini/",
+        "top": "Water Supply and Sanitation Access Project",
+        "amount": "$45M",
+        "money": true
+      },
+      {
+        "slug": "ethiopia",
+        "name": "Ethiopia",
+        "n": 4,
+        "url": "https://perfectnations.org/blueprints/ethiopia/",
+        "top": "Extended Credit Facility",
+        "amount": "$3.4B",
+        "money": true
+      },
+      {
+        "slug": "ghana",
+        "name": "Ghana",
+        "n": 4,
+        "url": "https://perfectnations.org/blueprints/ghana/",
+        "top": "Extended Credit Facility, final review",
+        "amount": "$3B",
+        "money": true
+      },
+      {
+        "slug": "morocco",
+        "name": "Morocco",
+        "n": 4,
+        "url": "https://perfectnations.org/blueprints/morocco/",
+        "top": "Flexible Credit Line",
+        "amount": "$4.5B",
+        "money": true
+      },
+      {
+        "slug": "nigeria",
+        "name": "Nigeria",
+        "n": 4,
+        "url": "https://perfectnations.org/blueprints/nigeria/",
+        "top": "Eurobonds, 10-year and 20-year",
+        "amount": "$2.35B",
+        "money": true
+      },
+      {
+        "slug": "pakistan",
+        "name": "Pakistan",
+        "n": 4,
+        "url": "https://perfectnations.org/blueprints/pakistan/",
+        "top": "Extended Fund Facility and Resilience and Sustainability Facility",
+        "amount": "$4.8B",
+        "money": true
+      },
+      {
+        "slug": "south-africa",
+        "name": "South Africa",
+        "n": 4,
+        "url": "https://perfectnations.org/blueprints/south-africa/",
+        "top": "Sustainable and Low-Carbon Energy Transition Development Policy Loan",
+        "amount": "$1B",
+        "money": true
+      },
+      {
+        "slug": "ecuador",
+        "name": "Ecuador",
+        "n": 3,
+        "url": "https://perfectnations.org/blueprints/ecuador/",
+        "top": "Extended Fund Facility",
+        "amount": "$5B",
+        "money": true
+      },
+      {
+        "slug": "egypt",
+        "name": "Egypt",
+        "n": 3,
+        "url": "https://perfectnations.org/blueprints/egypt/",
+        "top": "Extended Fund Facility and Resilience and Sustainability Facility",
+        "amount": "$7.3B",
+        "money": true
+      },
+      {
+        "slug": "indonesia",
+        "name": "Indonesia",
+        "n": 3,
+        "url": "https://perfectnations.org/blueprints/indonesia/",
+        "top": "Productive and Sustainable Investment DPL",
+        "amount": "$1.5B",
+        "money": true
+      },
+      {
+        "slug": "namibia",
+        "name": "Namibia",
+        "n": 3,
+        "url": "https://perfectnations.org/blueprints/namibia/",
+        "top": "Hyphen Hydrogen Energy green hydrogen project",
+        "amount": "$10B",
+        "money": true
+      },
+      {
+        "slug": "philippines",
+        "name": "Philippines",
+        "n": 3,
+        "url": "https://perfectnations.org/blueprints/philippines/",
+        "top": "Second Energy Transition and Climate Resilience DPL",
+        "amount": "$1.02B",
+        "money": true
+      },
+      {
+        "slug": "ukraine",
+        "name": "Ukraine",
+        "n": 3,
+        "url": "https://perfectnations.org/blueprints/ukraine/",
+        "top": "Extended Fund Facility",
+        "amount": "$8.1B",
+        "money": true
+      },
+      {
+        "slug": "colombia",
+        "name": "Colombia",
+        "n": 2,
+        "url": "https://perfectnations.org/blueprints/colombia/",
+        "top": "Bogota Metro Line 1",
+        "amount": "$530M",
+        "money": true
+      },
+      {
+        "slug": "fiji",
+        "name": "Fiji",
+        "n": 2,
+        "url": "https://perfectnations.org/blueprints/fiji/",
+        "top": "Sovereign blue bond",
+        "amount": "FJD 20M",
+        "money": true
+      },
+      {
+        "slug": "jamaica",
+        "name": "Jamaica",
+        "n": 2,
+        "url": "https://perfectnations.org/blueprints/jamaica/",
+        "top": "Catastrophe bond, 2026",
+        "amount": "$200M",
+        "money": true
+      },
+      {
+        "slug": "jordan",
+        "name": "Jordan",
+        "n": 2,
+        "url": "https://perfectnations.org/blueprints/jordan/",
+        "top": "Extended Fund Facility and Resilience and Sustainability Facility",
+        "amount": "$2B",
+        "money": true
+      },
+      {
+        "slug": "mexico",
+        "name": "Mexico",
+        "n": 2,
+        "url": "https://perfectnations.org/blueprints/mexico/",
+        "top": "Resilience to disasters and climate change",
+        "amount": "$500M",
+        "money": true
+      },
+      {
+        "slug": "zimbabwe",
+        "name": "Zimbabwe",
+        "n": 2,
+        "url": "https://perfectnations.org/blueprints/zimbabwe/",
+        "top": "COVID-19 Response and Essential Health Services, Additional Financing",
+        "amount": "$15M",
+        "money": true
+      }
+    ],
+    "note": "Counts, never sums: the amounts are in many currencies. Every line is dated and sourced on its blueprint.",
+    "as_of": "2026-11-07T02:59Z"
+  },
+  "close": {
+    "eyebrow": "The ReDesign Studio",
+    "title": "Which of these could your nation use?",
+    "lead": "Each blueprint answers instrument by instrument, in sequence, with the terms attached.",
+    "buttons": [
+      {
+        "label": "Start a conversation",
+        "url": "https://perfectnations.org/contact/?about=studio"
+      },
+      {
+        "label": "Explore the blueprints",
+        "url": "https://perfectnations.org/blueprints/",
+        "line": true
+      }
+    ]
+  }
+}
