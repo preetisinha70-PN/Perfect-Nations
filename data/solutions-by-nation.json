@@ -1,0 +1,3458 @@
+{
+ "page": "solutions-by-nation",
+ "updated": "2026-11-07",
+ "about": "Built by tools/build_state_of_nations.py from data/<nation>.json (coverage, guarantees, capital.register) and data/capital-architecture.json. Read by perfectnations.org/state-of-nations/ on every visit. Adds no fact: change a figure in its nation file, then rebuild.",
+ "standards": [
+  {
+   "head": "Pay before the harvest fails.",
+   "name": "Sovereign drought insurance",
+   "ffd": "Parametric cover pays on measured rainfall, so food reaches families within weeks of a failed season, without waiting for an appeal.",
+   "proof": {
+    "where": "Malawi",
+    "year": "2024",
+    "figure": "$11.2M",
+    "label": "paid out after the El Niño drought, for food aid to about 235,000 households",
+    "source": "African Development Bank, August 2024",
+    "url": "https://www.afdb.org/en/news-and-events/press-releases/african-development-bank-group-and-african-risk-capacity-group-issue-112-million-insurance-payout-government-malawi-73593"
+   },
+   "si": "SI reads rainfall, harvests and food prices district by district, sets the trigger and prices the cover before the season begins.",
+   "first": "sovereign drought insurance",
+   "standard": "Food"
+  },
+  {
+   "head": "Turn cheaper debt into safe water.",
+   "name": "Debt-for-climate-resilience swap",
+   "ffd": "Guarantees replace costly debt with cheaper debt, and the savings are committed to water and sewerage.",
+   "si": "SI maps every household without safe water at home, prices each connection, and follows the savings into every main and treatment plant.",
+   "first": "a debt-for-resilience swap bound to water",
+   "proof": {
+    "where": "Barbados",
+    "year": "2024",
+    "figure": "$300M",
+    "label": "the world’s first for resilience",
+    "source": "Inter-American Development Bank, 2024",
+    "url": "https://www.iadb.org/en/news/barbados-launched-worlds-first-debt-climate-resilience-operation"
+   },
+   "standard": "Water"
+  },
+  {
+   "head": "Ring-fence bond money for homes and sanitation.",
+   "name": "Social bond",
+   "ffd": "The proceeds can be spent only on eligible homes, toilets and sewers, reported to investors every year.",
+   "si": "SI finds the homes without a safe toilet, groups them into programmes investors can finance, and reports each unit delivered.",
+   "first": "a social bond for homes and sanitation",
+   "proof": {
+    "where": "Ecuador",
+    "year": "2020",
+    "figure": "$400M",
+    "label": "for affordable homes",
+    "source": "Inter-American Development Bank, 2020",
+    "url": "https://www.iadb.org/en/news/ecuador-issues-worlds-first-sovereign-social-bond-support-idb-guarantee"
+   },
+   "standard": "Shelter"
+  },
+  {
+   "head": "Finance clean power and clean cooking at national scale.",
+   "name": "Sovereign green bond",
+   "ffd": "Bond money ring-fenced for clean energy under a published framework, with every allocation reported to investors.",
+   "si": "SI counts the households still cooking with wood, charcoal or kerosene, prices the switch per home, and tracks every project the bond pays for.",
+   "first": "a sovereign green bond for clean power and cooking",
+   "proof": {
+    "where": "India",
+    "year": "2023",
+    "figure": "INR 16,000 cr",
+    "label": "in the first issuance",
+    "source": "Reserve Bank of India, 2023",
+    "url": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=55004"
+   },
+   "standard": "Energy"
+  },
+  {
+   "head": "Pay for learning, not only for classrooms.",
+   "name": "Program-for-Results",
+   "ffd": "Each tranche of the loan is released only when pupils reach an agreed learning level, verified independently.",
+   "si": "SI tracks reading levels school by school, sets the targets that release each tranche, and flags the schools falling behind.",
+   "first": "a Program-for-Results paid on learning",
+   "proof": {
+    "where": "Tanzania",
+    "year": "2021",
+    "figure": "$588M",
+    "label": "for primary school learning",
+    "source": "World Bank, project P169380",
+    "url": "https://projects.worldbank.org/en/projects-operations/project-detail/P169380"
+   },
+   "standard": "Education"
+  },
+  {
+   "head": "Let lower debt costs pay for care.",
+   "name": "Debt-for-health guarantee",
+   "ffd": "A development bank guarantee cuts the cost of existing debt, and the savings are bound to the health system before they can be spent elsewhere.",
+   "proof": {
+    "where": "Barbados",
+    "year": "2026",
+    "figure": "$175M",
+    "label": "IDB guarantee, 20 years; about US$160 million of the savings for health care",
+    "source": "Inter-American Development Bank, project BA-U0003",
+    "url": "https://www.iadb.org/en/project/BA-U0003"
+   },
+   "si": "SI prices the essential services each citizen lacks, finds the costly debt to refinance, and follows every saving into clinics and care.",
+   "first": "a debt-for-health guarantee",
+   "standard": "Health"
+  },
+  {
+   "head": "Let local banks lend to the enterprises that hire.",
+   "name": "Small-business credit guarantee",
+   "ffd": "A facility guarantees most of each small-business loan, so local banks lend to firms they would otherwise turn away.",
+   "si": "SI matches enterprises to lenders, prices the risk the guarantee must carry, and counts the jobs each loan creates.",
+   "first": "a small-business credit guarantee",
+   "proof": {
+    "where": "Barbados",
+    "year": "2025",
+    "figure": "$50M",
+    "label": "up to 80% of each loan",
+    "source": "Inter-American Development Bank, July 2025",
+    "url": "https://www.iadb.org/en/news/barbados-expands-msmes-access-financing-us50-million-idb-loan"
+   },
+   "standard": "Livelihood"
+  }
+ ],
+ "nations": [
+  {
+   "slug": "afghanistan",
+   "name": "Afghanistan",
+   "url": "https://perfectnations.org/blueprints/afghanistan/",
+   "standard": "Education",
+   "gap": "9 in 10",
+   "gap_text": "Ten-year-olds in Afghanistan who cannot read a simple text. Education is the standard furthest from reach.",
+   "source": {
+    "label": "UNICEF/UNESCO, 2025",
+    "url": "https://www.unicef.org/afghanistan/press-releases/afghanistans-education-system-facing-deepening-crisis-both-girls-and-boys-warn"
+   },
+   "seven": [
+    [
+     "Food",
+     "62%",
+     62.0,
+     "Not in food crisis, winter 2026–27",
+     "IPC via WFP, 2026",
+     "https://www.wfp.org/news/food-insecurity-and-child-malnutrition-worsen-afghanistan-despite-strong-agricultural-season"
+    ],
+    [
+     "Water",
+     "31%",
+     31.0,
+     "Safely managed drinking water",
+     "WHO/UNICEF, 2024",
+     "https://www.sdg6data.org/country-or-area/Afghanistan"
+    ],
+    [
+     "Shelter",
+     "Not measured",
+     null,
+     "No national measure of housing quality",
+     "UN-Habitat, 2022",
+     "https://data.worldbank.org/indicator/EN.POP.SLUM.UR.ZS?locations=AF"
+    ],
+    [
+     "Energy",
+     "14",
+     14.0,
+     "About 142 kWh a person a year, against 1,000",
+     "UN Statistics, 2022",
+     "https://unstats.un.org/unsd/energystats/pubs/eprofiles/2022/pab.pdf"
+    ],
+    [
+     "Education",
+     "Barred",
+     null,
+     "Girls after grade six; women at university. Over 90% of ten-year-olds cannot read.",
+     "UNICEF/UNESCO, 2025",
+     "https://www.unicef.org/afghanistan/press-releases/afghanistans-education-system-facing-deepening-crisis-both-girls-and-boys-warn"
+    ],
+    [
+     "Health",
+     "42",
+     42.0,
+     "Women barred from medical training since December 2024",
+     "WHO, 2023",
+     "https://ourworldindata.org/grapher/universal-health-coverage-index?country=~AFG"
+    ],
+    [
+     "Livelihood",
+     "51.7%",
+     51.7,
+     "Above the national poverty line, April–June 2023",
+     "World Bank, 2023",
+     "https://openknowledge.worldbank.org/entities/publication/2aeffc3b-4e58-4603-996a-36f6fb652b8a/full"
+    ]
+   ],
+   "at_work": {
+    "name": "Education Emergency Response, Additional Financing",
+    "amount": "$70M",
+    "money": true,
+    "status": "Active",
+    "url": "https://projects.worldbank.org/en/projects-operations/project-detail/P181643"
+   },
+   "solutions": []
+  },
+  {
+   "slug": "angola",
+   "name": "Angola",
+   "url": "https://perfectnations.org/blueprints/angola/",
+   "standard": "Food",
+   "gap": "~29m",
+   "gap_text": "Angolans below the Living Line for food: three in four are moderately or severely food insecure.",
+   "source": {
+    "label": "FAO, 2024",
+    "url": "https://data.worldbank.org/indicator/SN.ITK.MSFI.ZS?locations=AO"
+   },
+   "seven": [
+    [
+     "Food",
+     "25%",
+     25.0,
+     "Not food insecure; 75% are moderately or severely food insecure",
+     "FAO, 2024",
+     "https://data.worldbank.org/indicator/SN.ITK.MSFI.ZS?locations=AO"
+    ],
+    [
+     "Water",
+     "68%",
+     68.0,
+     "Basic water; safely managed water is not measured",
+     "WHO/UNICEF, 2024",
+     "https://data.worldbank.org/indicator/SH.H2O.BASW.ZS?locations=AO"
+    ],
+    [
+     "Shelter",
+     "55%",
+     55.0,
+     "Outside urban slums; 63% of city dwellers live in slums; safe sanitation is not measured",
+     "UN-Habitat, 2022",
+     "https://data.worldbank.org/indicator/EN.POP.SLUM.UR.ZS?locations=AO"
+    ],
+    [
+     "Energy",
+     "53",
+     53.0,
+     "About 530 kWh a person a year, against 1,000; 56% cook cleanly",
+     "IRENA and World Bank, 2022",
+     "https://data.worldbank.org/indicator/EG.CFT.ACCS.ZS?locations=AO"
+    ],
+    [
+     "Education",
+     "42",
+     42.0,
+     "42% complete lower secondary school; reading by age ten is not measured",
+     "UNESCO, 2023",
+     "https://data.worldbank.org/indicator/SE.SEC.CMPT.LO.ZS?locations=AO"
+    ],
+    [
+     "Health",
+     "44",
+     44.0,
+     "WHO service coverage index",
+     "WHO, 2023",
+     "https://ourworldindata.org/grapher/universal-health-coverage-index?country=~AGO"
+    ],
+    [
+     "Livelihood",
+     "46%",
+     46.0,
+     "Above US$4.20 a day; 54% live below it; dated",
+     "World Bank, 2018",
+     "https://data.worldbank.org/indicator/SI.POV.LMIC?locations=AO"
+    ]
+   ],
+   "at_work": {
+    "name": "Smallholder Agricultural Transformation Project",
+    "amount": "$300M",
+    "money": true,
+    "status": "Active",
+    "url": "https://projects.worldbank.org/en/projects-operations/project-detail/P177305"
+   },
+   "solutions": []
+  },
+  {
+   "slug": "bangladesh",
+   "name": "Bangladesh",
+   "url": "https://perfectnations.org/blueprints/bangladesh/",
+   "standard": "Energy",
+   "gap": "~125m",
+   "gap_text": "Bangladeshis who cook without clean fuel or technology: 71 in every hundred.",
+   "source": {
+    "label": "World Bank, 2024",
+    "url": "https://data.worldbank.org/indicator/EG.CFT.ACCS.ZS?locations=BD"
+   },
+   "seven": [
+    [
+     "Food",
+     "73.8%",
+     73.8,
+     "Not food insecure; 26.2% are moderately or severely food insecure",
+     "FAO, 2024",
+     "https://data.worldbank.org/indicator/SN.ITK.MSFI.ZS?locations=BD"
+    ],
+    [
+     "Water",
+     "59.1%",
+     59.1,
+     "Safely managed drinking water",
+     "WHO/UNICEF, 2024",
+     "https://data.worldbank.org/indicator/SH.H2O.SMDW.ZS?locations=BD"
+    ],
+    [
+     "Shelter",
+     "37.3%",
+     37.3,
+     "Safely managed sanitation",
+     "WHO/UNICEF, 2024",
+     "https://data.worldbank.org/indicator/SH.STA.SMSS.ZS?locations=BD"
+    ],
+    [
+     "Energy",
+     "29",
+     29.0,
+     "29% cook with clean fuels and technology",
+     "World Bank, 2024",
+     "https://data.worldbank.org/indicator/EG.CFT.ACCS.ZS?locations=BD"
+    ],
+    [
+     "Education",
+     "48.8",
+     48.8,
+     "48.8% of children read a simple text by the end of primary school; 2022",
+     "World Bank, 2022",
+     "https://data.worldbank.org/indicator/SE.LPV.PRIM?locations=BD"
+    ],
+    [
+     "Health",
+     "54",
+     54.0,
+     "WHO service coverage index",
+     "WHO, 2023",
+     "https://ourworldindata.org/grapher/universal-health-coverage-index?country=~BGD"
+    ],
+    [
+     "Livelihood",
+     "79.5%",
+     79.5,
+     "Above US$4.20 a day; 20.5% live below it",
+     "World Bank, 2022",
+     "https://data.worldbank.org/indicator/SI.POV.LMIC?locations=BD"
+    ]
+   ],
+   "at_work": {
+    "name": "Sustainable Energy Development and Community Empowerment in the Chattogram Hill Tracts",
+    "amount": "$175M",
+    "money": true,
+    "status": "Approved",
+    "url": "https://www.adb.org/news/adb-approves-175-million-loan-modernize-power-networks-boost-jobs-services-bangladesh-chattogram-hill-tracts"
+   },
+   "solutions": []
+  },
+  {
+   "slug": "barbados",
+   "name": "Barbados",
+   "url": "https://perfectnations.org/blueprints/barbados/",
+   "standard": "Food",
+   "gap": "~88,000",
+   "gap_text": "Barbadians below the Living Line for food: about three in ten are moderately or severely food insecure.",
+   "source": {
+    "label": "FAO, 2022",
+    "url": "https://data.worldbank.org/indicator/SN.ITK.MSFI.ZS?locations=BB"
+   },
+   "seven": [
+    [
+     "Food",
+     "69%",
+     69,
+     "Not food insecure; 31% are moderately or severely food insecure",
+     "FAO, 2022",
+     "https://data.worldbank.org/indicator/SN.ITK.MSFI.ZS?locations=BB"
+    ],
+    [
+     "Water",
+     "99%",
+     99,
+     "Basic water; safely managed water is not measured",
+     "WHO/UNICEF, 2024",
+     "https://data.worldbank.org/indicator/SH.H2O.BASW.ZS?locations=BB"
+    ],
+    [
+     "Shelter",
+     "99.7%",
+     99.7,
+     "Durable dwellings; safe-sanitation data not published",
+     "Census, 2021",
+     "https://stats.gov.bb/"
+    ],
+    [
+     "Energy",
+     "100",
+     100,
+     "About 4,200 kWh a person a year; all cook cleanly",
+     "IRENA and World Bank, 2023",
+     "https://data.worldbank.org/indicator/EG.CFT.ACCS.ZS?locations=BB"
+    ],
+    [
+     "Education",
+     "97",
+     97,
+     "Lower-secondary completion; reading data not published",
+     "UNESCO, 2024",
+     "https://data.worldbank.org/indicator/SE.SEC.CMPT.LO.ZS?locations=BB"
+    ],
+    [
+     "Health",
+     "82",
+     82,
+     "WHO service coverage index",
+     "WHO and UHC2030, 2023",
+     "https://dashboard.uhc2030.org/pdf/BRB.pdf"
+    ],
+    [
+     "Livelihood",
+     "82.5%",
+     82.5,
+     "Above the national poverty line; the survey is dated",
+     "IDB and BSS, 2016",
+     "https://data.iadb.org/file/download/338e39ac-3988-4de8-ba03-5bfe36a2459d"
+    ]
+   ],
+   "at_work": null,
+   "solutions": [
+    10,
+    2
+   ]
+  },
+  {
+   "slug": "botswana",
+   "name": "Botswana",
+   "url": "https://perfectnations.org/blueprints/botswana/",
+   "standard": "Livelihood",
+   "gap": "~1.6m",
+   "gap_text": "Batswana living below US$8.30 a day, on the 2015 survey.",
+   "source": {
+    "label": "World Bank, 2015",
+    "url": "https://data.worldbank.org/indicator/SI.POV.UMIC?locations=BW"
+   },
+   "seven": [
+    [
+     "Food",
+     "48%",
+     48.0,
+     "Not food insecure; 52% are moderately or severely food insecure",
+     "FAO, 2024",
+     "https://data.worldbank.org/indicator/SN.ITK.MSFI.ZS?locations=BW"
+    ],
+    [
+     "Water",
+     "63.3%",
+     63.3,
+     "Safely managed drinking water",
+     "WHO/UNICEF, 2024",
+     "https://data.worldbank.org/indicator/SH.H2O.SMDW.ZS?locations=BW"
+    ],
+    [
+     "Shelter",
+     "73.1%",
+     73.1,
+     "Outside urban slums; 39.6% of city dwellers live in slums; safe sanitation not measured",
+     "UN-Habitat, 2022",
+     "https://data.worldbank.org/indicator/EN.POP.SLUM.UR.ZS?locations=BW"
+    ],
+    [
+     "Energy",
+     "71",
+     71.0,
+     "71% cook with clean fuels and technology",
+     "World Bank, 2024",
+     "https://data.worldbank.org/indicator/EG.CFT.ACCS.ZS?locations=BW"
+    ],
+    [
+     "Education",
+     "49.2",
+     49.2,
+     "49.2% of children read a simple text by the end of primary school; 2011, dated",
+     "World Bank, 2011",
+     "https://data.worldbank.org/indicator/SE.LPV.PRIM?locations=BW"
+    ],
+    [
+     "Health",
+     "60",
+     60.0,
+     "WHO service coverage index",
+     "WHO, 2023",
+     "https://ourworldindata.org/grapher/universal-health-coverage-index?country=~BWA"
+    ],
+    [
+     "Livelihood",
+     "36.8%",
+     36.8,
+     "Above US$8.30 a day; 63.2% live below it, dated",
+     "World Bank, 2015",
+     "https://data.worldbank.org/indicator/SI.POV.UMIC?locations=BW"
+    ]
+   ],
+   "at_work": {
+    "name": "Economic Resilience and Green Recovery Development Policy Loan II",
+    "amount": "$150M",
+    "money": true,
+    "status": "Approved",
+    "url": "https://www.worldbank.org/en/news/press-release/2023/06/16/world-bank-to-support-inclusive-resilient-and-low-carbon-growth-in-afe-botswana"
+   },
+   "solutions": []
+  },
+  {
+   "slug": "brazil",
+   "name": "Brazil",
+   "url": "https://perfectnations.org/blueprints/brazil/",
+   "standard": "Shelter",
+   "gap": "~109m",
+   "gap_text": "Brazilians without a safely managed toilet at home: about one in two.",
+   "source": {
+    "label": "WHO/UNICEF, 2020",
+    "url": "https://sdg6data.org/country-or-area/Brazil"
+   },
+   "seven": [
+    [
+     "Food",
+     "90%+",
+     90.0,
+     "Fewer than one in ten moderately or severely food insecure, 2024",
+     "FAO, via IFZ, 2025",
+     "https://ifz.org.br/brazil-off-the-hunger-map-again-what-this-teaches-us/"
+    ],
+    [
+     "Water",
+     "86%",
+     86.0,
+     "Safely managed drinking water; 2020, dated",
+     "WHO/UNICEF, 2020",
+     "https://sdg6data.org/country-or-area/Brazil"
+    ],
+    [
+     "Shelter",
+     "49%",
+     49.0,
+     "Safely managed sanitation; 2020, dated",
+     "WHO/UNICEF, 2020",
+     "https://sdg6data.org/country-or-area/Brazil"
+    ],
+    [
+     "Energy",
+     "97",
+     97.0,
+     "Clean cooking for 97%; electricity use well above 1,000 kWh a person",
+     "IEA, 2024",
+     "https://www.iea.org/commentaries/the-last-mile-push-to-reach-universal-clean-cooking-access-in-latin-america-and-the-caribbean"
+    ],
+    [
+     "Education",
+     "52",
+     52.0,
+     "48% of children could not read a simple text by the end of primary school; 2013 data, dated",
+     "World Bank, 2019",
+     "https://thedocs.worldbank.org/en/doc/112671571223359786-0090022019/original/LACLCC5CBRALPBRIEF.pdf"
+    ],
+    [
+     "Health",
+     "84",
+     84.0,
+     "WHO service coverage index",
+     "WHO, 2023",
+     "https://ourworldindata.org/grapher/universal-health-coverage-index?country=~BRA"
+    ],
+    [
+     "Livelihood",
+     "79.4%",
+     79.4,
+     "Above US$8.30 a day; 20.6% live below it",
+     "World Bank, 2024",
+     "https://data.worldbank.org/indicator/SI.POV.UMIC?locations=BR"
+    ]
+   ],
+   "at_work": {
+    "name": "Paraíba Access to Resilient Water and Sanitation Services",
+    "amount": "$50M",
+    "money": true,
+    "status": "Approved",
+    "url": "https://www.worldbank.org/en/news/press-release/2026/09/22/world-bank-group-backs-water-security-sanitation-paraiba-brazil"
+   },
+   "solutions": []
+  },
+  {
+   "slug": "burundi",
+   "name": "Burundi",
+   "url": "https://perfectnations.org/blueprints/burundi/",
+   "standard": "Energy",
+   "gap": "14.4m",
+   "gap_text": "Burundians who cook without clean fuel or technology: almost everyone.",
+   "source": {
+    "label": "World Bank, 2024",
+    "url": "https://data.worldbank.org/indicator/EG.CFT.ACCS.ZS?locations=BI"
+   },
+   "seven": [
+    [
+     "Food",
+     "29.2%",
+     29.2,
+     "Not food insecure; 70.8% are moderately or severely food insecure",
+     "FAO, 2024",
+     "https://data.worldbank.org/indicator/SN.ITK.MSFI.ZS?locations=BI"
+    ],
+    [
+     "Water",
+     "65.9%",
+     65.9,
+     "Basic water; safely managed water is not measured",
+     "WHO/UNICEF, 2024",
+     "https://data.worldbank.org/indicator/SH.H2O.BASW.ZS?locations=BI"
+    ],
+    [
+     "Shelter",
+     "90.6%",
+     90.6,
+     "Outside urban slums; 36.8% of city dwellers live in slums; safe sanitation not measured",
+     "UN-Habitat, 2022",
+     "https://data.worldbank.org/indicator/EN.POP.SLUM.UR.ZS?locations=BI"
+    ],
+    [
+     "Energy",
+     "0",
+     0.0,
+     "0% cook with clean fuels and technology",
+     "World Bank, 2024",
+     "https://data.worldbank.org/indicator/EG.CFT.ACCS.ZS?locations=BI"
+    ],
+    [
+     "Education",
+     "4.2",
+     4.2,
+     "4.2% of children read a simple text by the end of primary school; 2019, dated",
+     "World Bank, 2019",
+     "https://data.worldbank.org/indicator/SE.LPV.PRIM?locations=BI"
+    ],
+    [
+     "Health",
+     "48",
+     48.0,
+     "WHO service coverage index",
+     "WHO, 2023",
+     "https://ourworldindata.org/grapher/universal-health-coverage-index?country=~BDI"
+    ],
+    [
+     "Livelihood",
+     "25.8%",
+     25.8,
+     "Above US$3.00 a day; 74.2% live below it, dated",
+     "World Bank, 2020",
+     "https://data.worldbank.org/indicator/SI.POV.DDAY?locations=BI"
+    ]
+   ],
+   "at_work": {
+    "name": "Accelerating Sustainable and Clean Energy Access Transformation (ASCENT Burundi)",
+    "amount": "$100M",
+    "money": true,
+    "status": "Active",
+    "url": "https://projects.worldbank.org/en/projects-operations/project-detail/P181494"
+   },
+   "solutions": []
+  },
+  {
+   "slug": "colombia",
+   "name": "Colombia",
+   "url": "https://perfectnations.org/blueprints/colombia/",
+   "standard": "Shelter",
+   "gap": "~43m",
+   "gap_text": "Colombians without a safely managed toilet at home: 81 in every hundred.",
+   "source": {
+    "label": "WHO/UNICEF, 2024",
+    "url": "https://data.worldbank.org/indicator/SH.STA.SMSS.ZS?locations=CO"
+   },
+   "seven": [
+    [
+     "Food",
+     "72%",
+     72.0,
+     "Not food insecure; 28% are moderately or severely food insecure",
+     "FAO, 2024",
+     "https://data.worldbank.org/indicator/SN.ITK.MSFI.ZS?locations=CO"
+    ],
+    [
+     "Water",
+     "74.3%",
+     74.3,
+     "Safely managed drinking water",
+     "WHO/UNICEF, 2024",
+     "https://data.worldbank.org/indicator/SH.H2O.SMDW.ZS?locations=CO"
+    ],
+    [
+     "Shelter",
+     "18.7%",
+     18.7,
+     "Safely managed sanitation",
+     "WHO/UNICEF, 2024",
+     "https://data.worldbank.org/indicator/SH.STA.SMSS.ZS?locations=CO"
+    ],
+    [
+     "Energy",
+     "93",
+     93.0,
+     "93% cook with clean fuels and technology",
+     "World Bank, 2024",
+     "https://data.worldbank.org/indicator/EG.CFT.ACCS.ZS?locations=CO"
+    ],
+    [
+     "Education",
+     "48.6",
+     48.6,
+     "48.6% of children read a simple text by the end of primary school; 2019, dated",
+     "World Bank, 2019",
+     "https://data.worldbank.org/indicator/SE.LPV.PRIM?locations=CO"
+    ],
+    [
+     "Health",
+     "82",
+     82.0,
+     "WHO service coverage index",
+     "WHO, 2023",
+     "https://ourworldindata.org/grapher/universal-health-coverage-index?country=~COL"
+    ],
+    [
+     "Livelihood",
+     "63%",
+     63.0,
+     "Above US$8.30 a day; 37% live below it",
+     "World Bank, 2024",
+     "https://data.worldbank.org/indicator/SI.POV.UMIC?locations=CO"
+    ]
+   ],
+   "at_work": null,
+   "solutions": []
+  },
+  {
+   "slug": "cote-divoire",
+   "name": "Côte d’Ivoire",
+   "url": "https://perfectnations.org/blueprints/cote-d-ivoire/",
+   "standard": "Education",
+   "gap": "80%",
+   "gap_text": "Of Ivorian children could not read a simple text by the end of primary school in 2019.",
+   "source": {
+    "label": "World Bank, 2019",
+    "url": "https://data.worldbank.org/indicator/SE.LPV.PRIM?locations=CI"
+   },
+   "seven": [
+    [
+     "Food",
+     "62.1%",
+     62.1,
+     "Not food insecure; 37.9% are moderately or severely food insecure",
+     "FAO, 2024",
+     "https://data.worldbank.org/indicator/SN.ITK.MSFI.ZS?locations=CI"
+    ],
+    [
+     "Water",
+     "36.4%",
+     36.4,
+     "Safely managed drinking water",
+     "WHO/UNICEF, 2024",
+     "https://data.worldbank.org/indicator/SH.H2O.SMDW.ZS?locations=CI"
+    ],
+    [
+     "Shelter",
+     "27.1%",
+     27.1,
+     "Safely managed sanitation",
+     "WHO/UNICEF, 2024",
+     "https://data.worldbank.org/indicator/SH.STA.SMSS.ZS?locations=CI"
+    ],
+    [
+     "Energy",
+     "48",
+     48.0,
+     "48% cook with clean fuels and technology",
+     "World Bank, 2024",
+     "https://data.worldbank.org/indicator/EG.CFT.ACCS.ZS?locations=CI"
+    ],
+    [
+     "Education",
+     "20.1",
+     20.1,
+     "20.1% of children read a simple text by the end of primary school; 2019, dated",
+     "World Bank, 2019",
+     "https://data.worldbank.org/indicator/SE.LPV.PRIM?locations=CI"
+    ],
+    [
+     "Health",
+     "46",
+     46.0,
+     "WHO service coverage index",
+     "WHO, 2023",
+     "https://ourworldindata.org/grapher/universal-health-coverage-index?country=~CIV"
+    ],
+    [
+     "Livelihood",
+     "58.4%",
+     58.4,
+     "Above US$4.20 a day; 41.6% live below it",
+     "World Bank, 2021",
+     "https://data.worldbank.org/indicator/SI.POV.LMIC?locations=CI"
+    ]
+   ],
+   "at_work": {
+    "name": "Debt-for-development swap",
+    "amount": "EUR 500M",
+    "money": true,
+    "status": "Signed",
+    "url": "https://www.worldbank.org/en/news/press-release/2024/12/05/c-te-d-ivoire-s-debt-for-development-swap-enabled-by-the-world-bank-group-will-free-up-funds-for-education"
+   },
+   "solutions": []
+  },
+  {
+   "slug": "dr-congo",
+   "name": "DR Congo",
+   "url": "https://perfectnations.org/blueprints/dr-congo/",
+   "standard": "Education",
+   "gap": "97%",
+   "gap_text": "Of Congolese children could not read a simple text by the end of primary school in 2019. Education is the standard furthest from reach.",
+   "source": {
+    "label": "World Bank, 2019",
+    "url": "https://data.worldbank.org/indicator/SE.LPV.PRIM?locations=CD"
+   },
+   "seven": [
+    [
+     "Food",
+     "18%",
+     18.0,
+     "Not food insecure; 82% are moderately or severely food insecure",
+     "FAO, 2024",
+     "https://data.worldbank.org/indicator/SN.ITK.MSFI.ZS?locations=CD"
+    ],
+    [
+     "Water",
+     "12%",
+     12.0,
+     "Safely managed drinking water; 36% have at least basic water",
+     "WHO/UNICEF, 2024",
+     "https://data.worldbank.org/indicator/SH.H2O.SMDW.ZS?locations=CD"
+    ],
+    [
+     "Shelter",
+     "13%",
+     13.0,
+     "Safely managed sanitation; 78% of city dwellers live in slums",
+     "WHO/UNICEF, 2024",
+     "https://data.worldbank.org/indicator/SH.STA.SMSS.ZS?locations=CD"
+    ],
+    [
+     "Energy",
+     "5",
+     5.0,
+     "5% cook cleanly; 22.5% have electricity, about 124 kWh a person a year",
+     "World Bank and ARE, 2024",
+     "https://data.worldbank.org/indicator/EG.CFT.ACCS.ZS?locations=CD"
+    ],
+    [
+     "Education",
+     "3",
+     3.0,
+     "3% of children read a simple text by the end of primary school; dated",
+     "World Bank, 2019",
+     "https://data.worldbank.org/indicator/SE.LPV.PRIM?locations=CD"
+    ],
+    [
+     "Health",
+     "41",
+     41.0,
+     "WHO service coverage index",
+     "WHO, 2023",
+     "https://ourworldindata.org/grapher/universal-health-coverage-index?country=~COD"
+    ],
+    [
+     "Livelihood",
+     "15%",
+     15.0,
+     "Above US$3.00 a day; 85% live below it; dated",
+     "World Bank, 2020",
+     "https://data.worldbank.org/indicator/SI.POV.DDAY?locations=CD"
+    ]
+   ],
+   "at_work": {
+    "name": "Girls Learning and Empowerment Project",
+    "amount": "$400M",
+    "money": true,
+    "status": "Active",
+    "url": "https://projects.worldbank.org/en/projects-operations/project-detail/P178684"
+   },
+   "solutions": []
+  },
+  {
+   "slug": "ecuador",
+   "name": "Ecuador",
+   "url": "https://perfectnations.org/blueprints/ecuador/",
+   "standard": "Education",
+   "gap": "66%",
+   "gap_text": "Of Ecuadorian children could not read a simple text by the end of primary school in 2019.",
+   "source": {
+    "label": "World Bank, 2019",
+    "url": "https://data.worldbank.org/indicator/SE.LPV.PRIM?locations=EC"
+   },
+   "seven": [
+    [
+     "Food",
+     "68.9%",
+     68.9,
+     "Not food insecure; 31.1% are moderately or severely food insecure",
+     "FAO, 2024",
+     "https://data.worldbank.org/indicator/SN.ITK.MSFI.ZS?locations=EC"
+    ],
+    [
+     "Water",
+     "69.9%",
+     69.9,
+     "Safely managed drinking water",
+     "WHO/UNICEF, 2024",
+     "https://data.worldbank.org/indicator/SH.H2O.SMDW.ZS?locations=EC"
+    ],
+    [
+     "Shelter",
+     "49.3%",
+     49.3,
+     "Safely managed sanitation",
+     "WHO/UNICEF, 2024",
+     "https://data.worldbank.org/indicator/SH.STA.SMSS.ZS?locations=EC"
+    ],
+    [
+     "Energy",
+     "95",
+     95.0,
+     "95% cook with clean fuels and technology",
+     "World Bank, 2024",
+     "https://data.worldbank.org/indicator/EG.CFT.ACCS.ZS?locations=EC"
+    ],
+    [
+     "Education",
+     "34.1",
+     34.1,
+     "34.1% of children read a simple text by the end of primary school; 2019, dated",
+     "World Bank, 2019",
+     "https://data.worldbank.org/indicator/SE.LPV.PRIM?locations=EC"
+    ],
+    [
+     "Health",
+     "78",
+     78.0,
+     "WHO service coverage index",
+     "WHO, 2023",
+     "https://ourworldindata.org/grapher/universal-health-coverage-index?country=~ECU"
+    ],
+    [
+     "Livelihood",
+     "69.9%",
+     69.9,
+     "Above US$8.30 a day; 30.1% live below it",
+     "World Bank, 2025",
+     "https://data.worldbank.org/indicator/SI.POV.UMIC?locations=EC"
+    ]
+   ],
+   "at_work": null,
+   "solutions": []
+  },
+  {
+   "slug": "egypt",
+   "name": "Egypt",
+   "url": "https://perfectnations.org/blueprints/egypt/",
+   "standard": "Education",
+   "gap": "56%",
+   "gap_text": "Of Egyptian children could not read a simple text by the end of primary school in 2021.",
+   "source": {
+    "label": "World Bank, 2021",
+    "url": "https://data.worldbank.org/indicator/SE.LPV.PRIM?locations=EG"
+   },
+   "seven": [
+    [
+     "Food",
+     "70.1%",
+     70.1,
+     "Not food insecure; 29.9% are moderately or severely food insecure",
+     "FAO, 2024",
+     "https://data.worldbank.org/indicator/SN.ITK.MSFI.ZS?locations=EG"
+    ],
+    [
+     "Water",
+     "78.9%",
+     78.9,
+     "Safely managed drinking water",
+     "WHO/UNICEF, 2024",
+     "https://data.worldbank.org/indicator/SH.H2O.SMDW.ZS?locations=EG"
+    ],
+    [
+     "Shelter",
+     "57.3%",
+     57.3,
+     "Safely managed sanitation",
+     "WHO/UNICEF, 2024",
+     "https://data.worldbank.org/indicator/SH.STA.SMSS.ZS?locations=EG"
+    ],
+    [
+     "Energy",
+     "100",
+     100.0,
+     "100% cook with clean fuels and technology",
+     "World Bank, 2024",
+     "https://data.worldbank.org/indicator/EG.CFT.ACCS.ZS?locations=EG"
+    ],
+    [
+     "Education",
+     "43.9",
+     43.9,
+     "43.9% of children read a simple text by the end of primary school; 2021",
+     "World Bank, 2021",
+     "https://data.worldbank.org/indicator/SE.LPV.PRIM?locations=EG"
+    ],
+    [
+     "Health",
+     "71",
+     71.0,
+     "WHO service coverage index",
+     "WHO, 2023",
+     "https://ourworldindata.org/grapher/universal-health-coverage-index?country=~EGY"
+    ],
+    [
+     "Livelihood",
+     "66.5%",
+     66.5,
+     "Above the national poverty line; 33.5% live below it",
+     "National statistics, 2021",
+     "https://data.worldbank.org/indicator/SI.POV.NAHC?locations=EG"
+    ]
+   ],
+   "at_work": null,
+   "solutions": []
+  },
+  {
+   "slug": "eswatini",
+   "name": "Eswatini",
+   "url": "https://perfectnations.org/blueprints/eswatini/",
+   "standard": "Water",
+   "gap": "~776,000",
+   "gap_text": "Emaswati without safely managed drinking water at home.",
+   "source": {
+    "label": "WHO/UNICEF, 2024",
+    "url": "https://data.worldbank.org/indicator/SH.H2O.SMDW.ZS?locations=SZ"
+   },
+   "seven": [
+    [
+     "Food",
+     "38.3%",
+     38.3,
+     "Not food insecure; 61.7% are moderately or severely food insecure",
+     "FAO, 2024",
+     "https://data.worldbank.org/indicator/SN.ITK.MSFI.ZS?locations=SZ"
+    ],
+    [
+     "Water",
+     "38.2%",
+     38.2,
+     "Safely managed drinking water",
+     "WHO/UNICEF, 2024",
+     "https://data.worldbank.org/indicator/SH.H2O.SMDW.ZS?locations=SZ"
+    ],
+    [
+     "Shelter",
+     "60.8%",
+     60.8,
+     "Safely managed sanitation",
+     "WHO/UNICEF, 2024",
+     "https://data.worldbank.org/indicator/SH.STA.SMSS.ZS?locations=SZ"
+    ],
+    [
+     "Energy",
+     "56",
+     56.0,
+     "56% cook with clean fuels and technology",
+     "World Bank, 2024",
+     "https://data.worldbank.org/indicator/EG.CFT.ACCS.ZS?locations=SZ"
+    ],
+    [
+     "Education",
+     "67.6",
+     67.6,
+     "Lower-secondary completion; reading data not published",
+     "UNESCO, 2023",
+     "https://data.worldbank.org/indicator/SE.SEC.CMPT.LO.ZS?locations=SZ"
+    ],
+    [
+     "Health",
+     "72",
+     72.0,
+     "WHO service coverage index",
+     "WHO, 2023",
+     "https://ourworldindata.org/grapher/universal-health-coverage-index?country=~SWZ"
+    ],
+    [
+     "Livelihood",
+     "41.7%",
+     41.7,
+     "Above US$4.20 a day; 58.3% live below it, dated",
+     "World Bank, 2016",
+     "https://data.worldbank.org/indicator/SI.POV.LMIC?locations=SZ"
+    ]
+   ],
+   "at_work": {
+    "name": "Water Supply and Sanitation Access Project",
+    "amount": "$45M",
+    "money": true,
+    "status": "Active",
+    "url": "https://projects.worldbank.org/en/projects-operations/project-detail/P166697"
+   },
+   "solutions": []
+  },
+  {
+   "slug": "ethiopia",
+   "name": "Ethiopia",
+   "url": "https://perfectnations.org/blueprints/ethiopia/",
+   "standard": "Energy",
+   "gap": "~126m",
+   "gap_text": "Ethiopians who cook without clean fuel or technology: 93 in every hundred.",
+   "source": {
+    "label": "World Bank, 2024",
+    "url": "https://data.worldbank.org/indicator/EG.CFT.ACCS.ZS?locations=ET"
+   },
+   "seven": [
+    [
+     "Food",
+     "39.9%",
+     39.9,
+     "Not food insecure; 60.1% are moderately or severely food insecure",
+     "FAO, 2024",
+     "https://data.worldbank.org/indicator/SN.ITK.MSFI.ZS?locations=ET"
+    ],
+    [
+     "Water",
+     "13.5%",
+     13.5,
+     "Safely managed drinking water",
+     "WHO/UNICEF, 2024",
+     "https://data.worldbank.org/indicator/SH.H2O.SMDW.ZS?locations=ET"
+    ],
+    [
+     "Shelter",
+     "8.1%",
+     8.1,
+     "Safely managed sanitation",
+     "WHO/UNICEF, 2024",
+     "https://data.worldbank.org/indicator/SH.STA.SMSS.ZS?locations=ET"
+    ],
+    [
+     "Energy",
+     "7",
+     7.0,
+     "7% cook with clean fuels and technology",
+     "World Bank, 2024",
+     "https://data.worldbank.org/indicator/EG.CFT.ACCS.ZS?locations=ET"
+    ],
+    [
+     "Education",
+     "9.6",
+     9.6,
+     "9.6% of children read a simple text by the end of primary school; 2015, dated",
+     "World Bank, 2015",
+     "https://data.worldbank.org/indicator/SE.LPV.PRIM?locations=ET"
+    ],
+    [
+     "Health",
+     "33",
+     33.0,
+     "WHO service coverage index",
+     "WHO, 2023",
+     "https://ourworldindata.org/grapher/universal-health-coverage-index?country=~ETH"
+    ],
+    [
+     "Livelihood",
+     "61.4%",
+     61.4,
+     "Above US$3.00 a day; 38.6% live below it",
+     "World Bank, 2021",
+     "https://data.worldbank.org/indicator/SI.POV.DDAY?locations=ET"
+    ]
+   ],
+   "at_work": {
+    "name": "Clean energy access (ASCENT Ethiopia)",
+    "amount": "$424M",
+    "money": true,
+    "status": "Active",
+    "url": "https://www.worldbank.org/en/news/press-release/2025/08/04/new-world-bank-program-to-expand-electricity-access-to-six-million-people-across-ethiopia"
+   },
+   "solutions": [
+    6
+   ]
+  },
+  {
+   "slug": "fiji",
+   "name": "Fiji",
+   "url": "https://perfectnations.org/blueprints/fiji/",
+   "standard": "Livelihood",
+   "gap": "~572,000",
+   "gap_text": "Fijians living below US$8.30 a day, on the 2019 survey: 61 in every hundred.",
+   "source": {
+    "label": "World Bank, 2019",
+    "url": "https://data.worldbank.org/indicator/SI.POV.UMIC?locations=FJ"
+   },
+   "seven": [
+    [
+     "Food",
+     "70.8%",
+     70.8,
+     "Not food insecure; 29.2% are moderately or severely food insecure",
+     "FAO, 2022",
+     "https://data.worldbank.org/indicator/SN.ITK.MSFI.ZS?locations=FJ"
+    ],
+    [
+     "Water",
+     "42.1%",
+     42.1,
+     "Safely managed drinking water",
+     "WHO/UNICEF, 2024",
+     "https://data.worldbank.org/indicator/SH.H2O.SMDW.ZS?locations=FJ"
+    ],
+    [
+     "Shelter",
+     "48.5%",
+     48.5,
+     "Safely managed sanitation",
+     "WHO/UNICEF, 2024",
+     "https://data.worldbank.org/indicator/SH.STA.SMSS.ZS?locations=FJ"
+    ],
+    [
+     "Energy",
+     "61",
+     61.0,
+     "61% cook with clean fuels and technology",
+     "World Bank, 2024",
+     "https://data.worldbank.org/indicator/EG.CFT.ACCS.ZS?locations=FJ"
+    ],
+    [
+     "Education",
+     "97.3",
+     97.3,
+     "Lower-secondary completion; reading data not published",
+     "UNESCO, 2024",
+     "https://data.worldbank.org/indicator/SE.SEC.CMPT.LO.ZS?locations=FJ"
+    ],
+    [
+     "Health",
+     "69",
+     69.0,
+     "WHO service coverage index",
+     "WHO, 2023",
+     "https://ourworldindata.org/grapher/universal-health-coverage-index?country=~FJI"
+    ],
+    [
+     "Livelihood",
+     "38.7%",
+     38.7,
+     "Above US$8.30 a day; 61.3% live below it, dated",
+     "World Bank, 2019",
+     "https://data.worldbank.org/indicator/SI.POV.UMIC?locations=FJ"
+    ]
+   ],
+   "at_work": null,
+   "solutions": []
+  },
+  {
+   "slug": "ghana",
+   "name": "Ghana",
+   "url": "https://perfectnations.org/blueprints/ghana/",
+   "standard": "Shelter",
+   "gap": "~28m",
+   "gap_text": "Ghanaians without a safely managed toilet at home: 81 in every hundred.",
+   "source": {
+    "label": "WHO/UNICEF, 2024",
+    "url": "https://data.worldbank.org/indicator/SH.STA.SMSS.ZS?locations=GH"
+   },
+   "seven": [
+    [
+     "Food",
+     "56.5%",
+     56.5,
+     "Not food insecure; 43.5% are moderately or severely food insecure",
+     "FAO, 2024",
+     "https://data.worldbank.org/indicator/SN.ITK.MSFI.ZS?locations=GH"
+    ],
+    [
+     "Water",
+     "42.9%",
+     42.9,
+     "Safely managed drinking water",
+     "WHO/UNICEF, 2024",
+     "https://data.worldbank.org/indicator/SH.H2O.SMDW.ZS?locations=GH"
+    ],
+    [
+     "Shelter",
+     "18.8%",
+     18.8,
+     "Safely managed sanitation",
+     "WHO/UNICEF, 2024",
+     "https://data.worldbank.org/indicator/SH.STA.SMSS.ZS?locations=GH"
+    ],
+    [
+     "Energy",
+     "35",
+     35.0,
+     "35% cook with clean fuels and technology",
+     "World Bank, 2024",
+     "https://data.worldbank.org/indicator/EG.CFT.ACCS.ZS?locations=GH"
+    ],
+    [
+     "Education",
+     "85.1",
+     85.1,
+     "Lower-secondary completion; reading data not published",
+     "UNESCO, 2024",
+     "https://data.worldbank.org/indicator/SE.SEC.CMPT.LO.ZS?locations=GH"
+    ],
+    [
+     "Health",
+     "56",
+     56.0,
+     "WHO service coverage index",
+     "WHO, 2023",
+     "https://ourworldindata.org/grapher/universal-health-coverage-index?country=~GHA"
+    ],
+    [
+     "Livelihood",
+     "43.7%",
+     43.7,
+     "Above US$4.20 a day; 56.3% live below it, dated",
+     "World Bank, 2016",
+     "https://data.worldbank.org/indicator/SI.POV.LMIC?locations=GH"
+    ]
+   ],
+   "at_work": null,
+   "solutions": [
+    7
+   ]
+  },
+  {
+   "slug": "india",
+   "name": "India",
+   "url": "https://perfectnations.org/blueprints/india/",
+   "standard": "Education",
+   "gap": "56%",
+   "gap_text": "Of Indian children could not read a simple text by the end of primary school in 2017. Education is the standard furthest from reach.",
+   "source": {
+    "label": "World Bank, 2017",
+    "url": "https://data.worldbank.org/indicator/SE.LPV.PRIM?locations=IN"
+   },
+   "seven": [
+    [
+     "Food",
+     "88%",
+     88.0,
+     "Lenient measure: 12% are undernourished; food insecurity experience is not published",
+     "FAO, 2023",
+     "https://data.worldbank.org/indicator/SN.ITK.DEFC.ZS?locations=IN"
+    ],
+    [
+     "Water",
+     "76%",
+     76.0,
+     "Safely managed drinking water",
+     "WHO/UNICEF, 2024",
+     "https://data.worldbank.org/indicator/SH.H2O.SMDW.ZS?locations=IN"
+    ],
+    [
+     "Shelter",
+     "63%",
+     63.0,
+     "Safely managed sanitation",
+     "WHO/UNICEF, 2024",
+     "https://data.worldbank.org/indicator/SH.STA.SMSS.ZS?locations=IN"
+    ],
+    [
+     "Energy",
+     "81",
+     81.0,
+     "81% cook cleanly; about 1,400 kWh a person a year",
+     "World Bank and CEA, 2024",
+     "https://data.worldbank.org/indicator/EG.CFT.ACCS.ZS?locations=IN"
+    ],
+    [
+     "Education",
+     "44",
+     44.0,
+     "44% of children read a simple text by the end of primary school; dated",
+     "World Bank, 2017",
+     "https://data.worldbank.org/indicator/SE.LPV.PRIM?locations=IN"
+    ],
+    [
+     "Health",
+     "69",
+     69.0,
+     "WHO service coverage index",
+     "WHO, 2023",
+     "https://ourworldindata.org/grapher/universal-health-coverage-index?country=~IND"
+    ],
+    [
+     "Livelihood",
+     "84%",
+     84.0,
+     "Above US$4.20 a day; 16% live below it",
+     "World Bank, 2023",
+     "https://data.worldbank.org/indicator/SI.POV.LMIC?locations=IN"
+    ]
+   ],
+   "at_work": null,
+   "solutions": []
+  },
+  {
+   "slug": "indonesia",
+   "name": "Indonesia",
+   "url": "https://perfectnations.org/blueprints/indonesia/",
+   "standard": "Water",
+   "gap": "~199m",
+   "gap_text": "Indonesians without safely managed drinking water at home: 70 in every hundred.",
+   "source": {
+    "label": "WHO/UNICEF, 2024",
+    "url": "https://data.worldbank.org/indicator/SH.H2O.SMDW.ZS?locations=ID"
+   },
+   "seven": [
+    [
+     "Food",
+     "95.8%",
+     95.8,
+     "Not food insecure; 4.2% are moderately or severely food insecure",
+     "FAO, 2024",
+     "https://data.worldbank.org/indicator/SN.ITK.MSFI.ZS?locations=ID"
+    ],
+    [
+     "Water",
+     "30.5%",
+     30.5,
+     "Safely managed drinking water",
+     "WHO/UNICEF, 2024",
+     "https://data.worldbank.org/indicator/SH.H2O.SMDW.ZS?locations=ID"
+    ],
+    [
+     "Shelter",
+     "88.5%",
+     88.5,
+     "Outside urban slums; 19.4% of city dwellers live in slums; safe sanitation not measured",
+     "UN-Habitat, 2022",
+     "https://data.worldbank.org/indicator/EN.POP.SLUM.UR.ZS?locations=ID"
+    ],
+    [
+     "Energy",
+     "90",
+     90.0,
+     "90% cook with clean fuels and technology",
+     "World Bank, 2024",
+     "https://data.worldbank.org/indicator/EG.CFT.ACCS.ZS?locations=ID"
+    ],
+    [
+     "Education",
+     "47.2",
+     47.2,
+     "47.2% of children read a simple text by the end of primary school; 2015, dated",
+     "World Bank, 2015",
+     "https://data.worldbank.org/indicator/SE.LPV.PRIM?locations=ID"
+    ],
+    [
+     "Health",
+     "67",
+     67.0,
+     "WHO service coverage index",
+     "WHO, 2023",
+     "https://ourworldindata.org/grapher/universal-health-coverage-index?country=~IDN"
+    ],
+    [
+     "Livelihood",
+     "35.9%",
+     35.9,
+     "Above US$8.30 a day; 64.1% live below it",
+     "World Bank, 2025",
+     "https://data.worldbank.org/indicator/SI.POV.UMIC?locations=ID"
+    ]
+   ],
+   "at_work": null,
+   "solutions": []
+  },
+  {
+   "slug": "jamaica",
+   "name": "Jamaica",
+   "url": "https://perfectnations.org/blueprints/jamaica/",
+   "standard": "Food",
+   "gap": "~1.6m",
+   "gap_text": "Jamaicans who cannot always count on enough good food: 56 in every hundred.",
+   "source": {
+    "label": "FAO, 2024",
+    "url": "https://data.worldbank.org/indicator/SN.ITK.MSFI.ZS?locations=JM"
+   },
+   "seven": [
+    [
+     "Food",
+     "44.2%",
+     44.2,
+     "Not food insecure; 55.8% are moderately or severely food insecure",
+     "FAO, 2024",
+     "https://data.worldbank.org/indicator/SN.ITK.MSFI.ZS?locations=JM"
+    ],
+    [
+     "Water",
+     "87.6%",
+     87.6,
+     "Basic water; safely managed water is not measured",
+     "WHO/UNICEF, 2024",
+     "https://data.worldbank.org/indicator/SH.H2O.BASW.ZS?locations=JM"
+    ],
+    [
+     "Shelter",
+     "73.6%",
+     73.6,
+     "Safely managed sanitation",
+     "WHO/UNICEF, 2024",
+     "https://data.worldbank.org/indicator/SH.STA.SMSS.ZS?locations=JM"
+    ],
+    [
+     "Energy",
+     "93",
+     93.0,
+     "93% cook with clean fuels and technology",
+     "World Bank, 2024",
+     "https://data.worldbank.org/indicator/EG.CFT.ACCS.ZS?locations=JM"
+    ],
+    [
+     "Education",
+     "85.6",
+     85.6,
+     "Lower-secondary completion; reading data not published",
+     "UNESCO, 2024",
+     "https://data.worldbank.org/indicator/SE.SEC.CMPT.LO.ZS?locations=JM"
+    ],
+    [
+     "Health",
+     "74",
+     74.0,
+     "WHO service coverage index",
+     "WHO, 2023",
+     "https://ourworldindata.org/grapher/universal-health-coverage-index?country=~JAM"
+    ],
+    [
+     "Livelihood",
+     "77.1%",
+     77.1,
+     "Above US$8.30 a day; 22.9% live below it",
+     "World Bank, 2021",
+     "https://data.worldbank.org/indicator/SI.POV.UMIC?locations=JM"
+    ]
+   ],
+   "at_work": null,
+   "solutions": []
+  },
+  {
+   "slug": "jordan",
+   "name": "Jordan",
+   "url": "https://perfectnations.org/blueprints/jordan/",
+   "standard": "Education",
+   "gap": "62%",
+   "gap_text": "Of Jordanian children could not read a simple text by the end of primary school in 2021.",
+   "source": {
+    "label": "World Bank, 2021",
+    "url": "https://data.worldbank.org/indicator/SE.LPV.PRIM?locations=JO"
+   },
+   "seven": [
+    [
+     "Food",
+     "87.8%",
+     87.8,
+     "Lenient measure: 12.2% are undernourished; food insecurity experience is not published",
+     "FAO, 2024",
+     "https://data.worldbank.org/indicator/SN.ITK.DEFC.ZS?locations=JO"
+    ],
+    [
+     "Water",
+     "89%",
+     89.0,
+     "Safely managed drinking water",
+     "WHO/UNICEF, 2024",
+     "https://data.worldbank.org/indicator/SH.H2O.SMDW.ZS?locations=JO"
+    ],
+    [
+     "Shelter",
+     "80.1%",
+     80.1,
+     "Safely managed sanitation",
+     "WHO/UNICEF, 2024",
+     "https://data.worldbank.org/indicator/SH.STA.SMSS.ZS?locations=JO"
+    ],
+    [
+     "Energy",
+     "100",
+     100.0,
+     "100% cook with clean fuels and technology",
+     "World Bank, 2024",
+     "https://data.worldbank.org/indicator/EG.CFT.ACCS.ZS?locations=JO"
+    ],
+    [
+     "Education",
+     "37.8",
+     37.8,
+     "37.8% of children read a simple text by the end of primary school; 2021",
+     "World Bank, 2021",
+     "https://data.worldbank.org/indicator/SE.LPV.PRIM?locations=JO"
+    ],
+    [
+     "Health",
+     "74",
+     74.0,
+     "WHO service coverage index",
+     "WHO, 2023",
+     "https://ourworldindata.org/grapher/universal-health-coverage-index?country=~JOR"
+    ],
+    [
+     "Livelihood",
+     "84.3%",
+     84.3,
+     "Above the national poverty line; 15.7% live below it, dated",
+     "National statistics, 2018",
+     "https://data.worldbank.org/indicator/SI.POV.NAHC?locations=JO"
+    ]
+   ],
+   "at_work": null,
+   "solutions": []
+  },
+  {
+   "slug": "kenya",
+   "name": "Kenya",
+   "url": "https://perfectnations.org/blueprints/kenya/",
+   "standard": "Education",
+   "gap": "4 in 5",
+   "gap_text": "Kenyan children reach the end of primary school unable to read a simple text. Education is the standard furthest from reach.",
+   "source": {
+    "label": "World Bank, 2023",
+    "url": "https://data.worldbank.org/indicator/SE.LPV.PRIM?locations=KE"
+   },
+   "seven": [
+    [
+     "Food",
+     "28%",
+     28.0,
+     "Not food insecure; 72% are moderately or severely food insecure",
+     "FAO, 2024",
+     "https://data.worldbank.org/indicator/SN.ITK.MSFI.ZS?locations=KE"
+    ],
+    [
+     "Water",
+     "66%",
+     66.0,
+     "Basic water; safely managed water is not measured",
+     "WHO/UNICEF, 2024",
+     "https://data.worldbank.org/indicator/SH.H2O.BASW.ZS?locations=KE"
+    ],
+    [
+     "Shelter",
+     "36%",
+     36.0,
+     "Safely managed sanitation",
+     "WHO/UNICEF, 2024",
+     "https://data.worldbank.org/indicator/SH.STA.SMSS.ZS?locations=KE"
+    ],
+    [
+     "Energy",
+     "25",
+     25.0,
+     "About 252 kWh a person a year, against 1,000; 32% cook cleanly",
+     "EPRA and World Bank, 2024",
+     "https://data.worldbank.org/indicator/EG.CFT.ACCS.ZS?locations=KE"
+    ],
+    [
+     "Education",
+     "21",
+     21.0,
+     "21% of children read a simple text by the end of primary school",
+     "World Bank, 2023",
+     "https://data.worldbank.org/indicator/SE.LPV.PRIM?locations=KE"
+    ],
+    [
+     "Health",
+     "57",
+     57.0,
+     "WHO service coverage index",
+     "WHO, 2023",
+     "https://ourworldindata.org/grapher/universal-health-coverage-index?country=~KEN"
+    ],
+    [
+     "Livelihood",
+     "35%",
+     35.0,
+     "Above US$4.20 a day; 65% live below it",
+     "World Bank, 2022",
+     "https://data.worldbank.org/indicator/SI.POV.LMIC?locations=KE"
+    ]
+   ],
+   "at_work": {
+    "name": "Secondary Education Equity and Quality Improvement Program",
+    "amount": "$540M",
+    "money": true,
+    "status": "Active",
+    "url": "https://projects.worldbank.org/en/projects-operations/project-detail/P501648"
+   },
+   "solutions": [
+    3
+   ]
+  },
+  {
+   "slug": "lesotho",
+   "name": "Lesotho",
+   "url": "https://perfectnations.org/blueprints/lesotho/",
+   "standard": "Education",
+   "gap": "97%",
+   "gap_text": "Of Basotho children could not read a simple text by the end of primary school, on 2016 data.",
+   "source": {
+    "label": "World Bank, 2016",
+    "url": "https://data.worldbank.org/indicator/SE.LPV.PRIM?locations=LS"
+   },
+   "seven": [
+    [
+     "Food",
+     "38.4%",
+     38.4,
+     "Not food insecure; 61.6% are moderately or severely food insecure",
+     "FAO, 2024",
+     "https://data.worldbank.org/indicator/SN.ITK.MSFI.ZS?locations=LS"
+    ],
+    [
+     "Water",
+     "31.3%",
+     31.3,
+     "Safely managed drinking water",
+     "WHO/UNICEF, 2024",
+     "https://data.worldbank.org/indicator/SH.H2O.SMDW.ZS?locations=LS"
+    ],
+    [
+     "Shelter",
+     "43.8%",
+     43.8,
+     "Safely managed sanitation",
+     "WHO/UNICEF, 2024",
+     "https://data.worldbank.org/indicator/SH.STA.SMSS.ZS?locations=LS"
+    ],
+    [
+     "Energy",
+     "58",
+     58.0,
+     "58% cook with clean fuels and technology",
+     "World Bank, 2024",
+     "https://data.worldbank.org/indicator/EG.CFT.ACCS.ZS?locations=LS"
+    ],
+    [
+     "Education",
+     "3.1",
+     3.1,
+     "3.1% of children read a simple text by the end of primary school; 2016, dated",
+     "World Bank, 2016",
+     "https://data.worldbank.org/indicator/SE.LPV.PRIM?locations=LS"
+    ],
+    [
+     "Health",
+     "55",
+     55.0,
+     "WHO service coverage index",
+     "WHO, 2023",
+     "https://ourworldindata.org/grapher/universal-health-coverage-index?country=~LSO"
+    ],
+    [
+     "Livelihood",
+     "43.2%",
+     43.2,
+     "Above US$4.20 a day; 56.8% live below it, dated",
+     "World Bank, 2017",
+     "https://data.worldbank.org/indicator/SI.POV.LMIC?locations=LS"
+    ]
+   ],
+   "at_work": {
+    "name": "Lesotho Education Improvement Project",
+    "amount": "$20M",
+    "money": true,
+    "status": "Active",
+    "url": "https://projects.worldbank.org/en/projects-operations/project-detail/P500587"
+   },
+   "solutions": []
+  },
+  {
+   "slug": "madagascar",
+   "name": "Madagascar",
+   "url": "https://perfectnations.org/blueprints/madagascar/",
+   "standard": "Energy",
+   "gap": "~32m",
+   "gap_text": "Malagasy who cook without clean fuel or technology: almost everyone.",
+   "source": {
+    "label": "World Bank, 2024",
+    "url": "https://data.worldbank.org/indicator/EG.CFT.ACCS.ZS?locations=MG"
+   },
+   "seven": [
+    [
+     "Food",
+     "38.9%",
+     38.9,
+     "Not food insecure; 61.1% are moderately or severely food insecure",
+     "FAO, 2024",
+     "https://data.worldbank.org/indicator/SN.ITK.MSFI.ZS?locations=MG"
+    ],
+    [
+     "Water",
+     "22.1%",
+     22.1,
+     "Safely managed drinking water",
+     "WHO/UNICEF, 2024",
+     "https://data.worldbank.org/indicator/SH.H2O.SMDW.ZS?locations=MG"
+    ],
+    [
+     "Shelter",
+     "12.8%",
+     12.8,
+     "Safely managed sanitation",
+     "WHO/UNICEF, 2024",
+     "https://data.worldbank.org/indicator/SH.STA.SMSS.ZS?locations=MG"
+    ],
+    [
+     "Energy",
+     "2",
+     2.0,
+     "2% cook with clean fuels and technology",
+     "World Bank, 2024",
+     "https://data.worldbank.org/indicator/EG.CFT.ACCS.ZS?locations=MG"
+    ],
+    [
+     "Education",
+     "4.8",
+     4.8,
+     "4.8% of children read a simple text by the end of primary school; 2019, dated",
+     "World Bank, 2019",
+     "https://data.worldbank.org/indicator/SE.LPV.PRIM?locations=MG"
+    ],
+    [
+     "Health",
+     "33",
+     33.0,
+     "WHO service coverage index",
+     "WHO, 2023",
+     "https://ourworldindata.org/grapher/universal-health-coverage-index?country=~MDG"
+    ],
+    [
+     "Livelihood",
+     "30.8%",
+     30.8,
+     "Above US$3.00 a day; 69.2% live below it",
+     "World Bank, 2021",
+     "https://data.worldbank.org/indicator/SI.POV.DDAY?locations=MG"
+    ]
+   ],
+   "at_work": {
+    "name": "Digital and Energy Connectivity for Inclusion in Madagascar",
+    "amount": "$400M",
+    "money": true,
+    "status": "Active",
+    "url": "https://projects.worldbank.org/en/projects-operations/project-detail/P178701"
+   },
+   "solutions": []
+  },
+  {
+   "slug": "malawi",
+   "name": "Malawi",
+   "url": "https://perfectnations.org/blueprints/malawi/",
+   "standard": "Energy",
+   "gap": "~22m",
+   "gap_text": "Malawians who cook without clean fuel or technology: almost everyone.",
+   "source": {
+    "label": "World Bank, 2024",
+    "url": "https://data.worldbank.org/indicator/EG.CFT.ACCS.ZS?locations=MW"
+   },
+   "seven": [
+    [
+     "Food",
+     "18.4%",
+     18.4,
+     "Not food insecure; 81.6% are moderately or severely food insecure",
+     "FAO, 2024",
+     "https://data.worldbank.org/indicator/SN.ITK.MSFI.ZS?locations=MW"
+    ],
+    [
+     "Water",
+     "18.2%",
+     18.2,
+     "Safely managed drinking water",
+     "WHO/UNICEF, 2024",
+     "https://data.worldbank.org/indicator/SH.H2O.SMDW.ZS?locations=MW"
+    ],
+    [
+     "Shelter",
+     "46.2%",
+     46.2,
+     "Safely managed sanitation",
+     "WHO/UNICEF, 2024",
+     "https://data.worldbank.org/indicator/SH.STA.SMSS.ZS?locations=MW"
+    ],
+    [
+     "Energy",
+     "2",
+     2.0,
+     "2% cook with clean fuels and technology",
+     "World Bank, 2024",
+     "https://data.worldbank.org/indicator/EG.CFT.ACCS.ZS?locations=MW"
+    ],
+    [
+     "Education",
+     "24.4",
+     24.4,
+     "Lower-secondary completion; reading data not published",
+     "UNESCO, 2024",
+     "https://data.worldbank.org/indicator/SE.SEC.CMPT.LO.ZS?locations=MW"
+    ],
+    [
+     "Health",
+     "52",
+     52.0,
+     "WHO service coverage index",
+     "WHO, 2023",
+     "https://ourworldindata.org/grapher/universal-health-coverage-index?country=~MWI"
+    ],
+    [
+     "Livelihood",
+     "24.6%",
+     24.6,
+     "Above US$3.00 a day; 75.4% live below it, dated",
+     "World Bank, 2019",
+     "https://data.worldbank.org/indicator/SI.POV.DDAY?locations=MW"
+    ]
+   ],
+   "at_work": {
+    "name": "Malawi Electricity Access Project",
+    "amount": "$150M",
+    "money": true,
+    "status": "Active",
+    "url": "https://projects.worldbank.org/en/projects-operations/project-detail/P164331"
+   },
+   "solutions": []
+  },
+  {
+   "slug": "mexico",
+   "name": "Mexico",
+   "url": "https://perfectnations.org/blueprints/mexico/",
+   "standard": "Water",
+   "gap": "~75m",
+   "gap_text": "Mexicans without safely managed drinking water at home: 57 in every hundred.",
+   "source": {
+    "label": "WHO/UNICEF, 2024",
+    "url": "https://data.worldbank.org/indicator/SH.H2O.SMDW.ZS?locations=MX"
+   },
+   "seven": [
+    [
+     "Food",
+     "83.5%",
+     83.5,
+     "Not food insecure; 16.5% are moderately or severely food insecure",
+     "FAO, 2024",
+     "https://data.worldbank.org/indicator/SN.ITK.MSFI.ZS?locations=MX"
+    ],
+    [
+     "Water",
+     "43%",
+     43.0,
+     "Safely managed drinking water",
+     "WHO/UNICEF, 2024",
+     "https://data.worldbank.org/indicator/SH.H2O.SMDW.ZS?locations=MX"
+    ],
+    [
+     "Shelter",
+     "62.7%",
+     62.7,
+     "Safely managed sanitation",
+     "WHO/UNICEF, 2024",
+     "https://data.worldbank.org/indicator/SH.STA.SMSS.ZS?locations=MX"
+    ],
+    [
+     "Energy",
+     "88",
+     88.0,
+     "88% cook with clean fuels and technology",
+     "World Bank, 2024",
+     "https://data.worldbank.org/indicator/EG.CFT.ACCS.ZS?locations=MX"
+    ],
+    [
+     "Education",
+     "52.4",
+     52.4,
+     "52.4% of children read a simple text by the end of primary school; 2019, dated",
+     "World Bank, 2019",
+     "https://data.worldbank.org/indicator/SE.LPV.PRIM?locations=MX"
+    ],
+    [
+     "Health",
+     "79",
+     79.0,
+     "WHO service coverage index",
+     "WHO, 2023",
+     "https://ourworldindata.org/grapher/universal-health-coverage-index?country=~MEX"
+    ],
+    [
+     "Livelihood",
+     "70.4%",
+     70.4,
+     "Above the national poverty line; 29.6% live below it",
+     "National statistics, 2024",
+     "https://data.worldbank.org/indicator/SI.POV.NAHC?locations=MX"
+    ]
+   ],
+   "at_work": null,
+   "solutions": []
+  },
+  {
+   "slug": "morocco",
+   "name": "Morocco",
+   "url": "https://perfectnations.org/blueprints/morocco/",
+   "standard": "Shelter",
+   "gap": "~35m",
+   "gap_text": "Moroccans without a safely managed toilet at home: 92 in every hundred.",
+   "source": {
+    "label": "WHO/UNICEF, 2024",
+    "url": "https://data.worldbank.org/indicator/SH.STA.SMSS.ZS?locations=MA"
+   },
+   "seven": [
+    [
+     "Food",
+     "93.5%",
+     93.5,
+     "Lenient measure: 6.5% are undernourished; food insecurity experience is not published",
+     "FAO, 2024",
+     "https://data.worldbank.org/indicator/SN.ITK.DEFC.ZS?locations=MA"
+    ],
+    [
+     "Water",
+     "80%",
+     80.0,
+     "Safely managed drinking water",
+     "WHO/UNICEF, 2024",
+     "https://data.worldbank.org/indicator/SH.H2O.SMDW.ZS?locations=MA"
+    ],
+    [
+     "Shelter",
+     "8.4%",
+     8.4,
+     "Safely managed sanitation",
+     "WHO/UNICEF, 2024",
+     "https://data.worldbank.org/indicator/SH.STA.SMSS.ZS?locations=MA"
+    ],
+    [
+     "Energy",
+     "97",
+     97.0,
+     "97% cook with clean fuels and technology",
+     "World Bank, 2024",
+     "https://data.worldbank.org/indicator/EG.CFT.ACCS.ZS?locations=MA"
+    ],
+    [
+     "Education",
+     "40.2",
+     40.2,
+     "40.2% of children read a simple text by the end of primary school; 2021",
+     "World Bank, 2021",
+     "https://data.worldbank.org/indicator/SE.LPV.PRIM?locations=MA"
+    ],
+    [
+     "Health",
+     "65",
+     65.0,
+     "WHO service coverage index",
+     "WHO, 2023",
+     "https://ourworldindata.org/grapher/universal-health-coverage-index?country=~MAR"
+    ],
+    [
+     "Livelihood",
+     "88.4%",
+     88.4,
+     "Above US$4.20 a day; 11.6% live below it, dated",
+     "World Bank, 2013",
+     "https://data.worldbank.org/indicator/SI.POV.LMIC?locations=MA"
+    ]
+   ],
+   "at_work": null,
+   "solutions": []
+  },
+  {
+   "slug": "mozambique",
+   "name": "Mozambique",
+   "url": "https://perfectnations.org/blueprints/mozambique/",
+   "standard": "Energy",
+   "gap": "~33m",
+   "gap_text": "Mozambicans who cook without clean fuel or technology: more than nine in ten.",
+   "source": {
+    "label": "World Bank, 2024",
+    "url": "https://data.worldbank.org/indicator/EG.CFT.ACCS.ZS?locations=MZ"
+   },
+   "seven": [
+    [
+     "Food",
+     "77.7%",
+     77.7,
+     "Lenient measure: 22.3% are undernourished; food insecurity experience is not published",
+     "FAO, 2024",
+     "https://data.worldbank.org/indicator/SN.ITK.DEFC.ZS?locations=MZ"
+    ],
+    [
+     "Water",
+     "27.5%",
+     27.5,
+     "Safely managed drinking water",
+     "WHO/UNICEF, 2024",
+     "https://data.worldbank.org/indicator/SH.H2O.SMDW.ZS?locations=MZ"
+    ],
+    [
+     "Shelter",
+     "33.9%",
+     33.9,
+     "Safely managed sanitation",
+     "WHO/UNICEF, 2024",
+     "https://data.worldbank.org/indicator/SH.STA.SMSS.ZS?locations=MZ"
+    ],
+    [
+     "Energy",
+     "8",
+     8.0,
+     "8% cook with clean fuels and technology",
+     "World Bank, 2024",
+     "https://data.worldbank.org/indicator/EG.CFT.ACCS.ZS?locations=MZ"
+    ],
+    [
+     "Education",
+     "26.1",
+     26.1,
+     "Lower-secondary completion; reading data not published, dated",
+     "UNESCO, 2019",
+     "https://data.worldbank.org/indicator/SE.SEC.CMPT.LO.ZS?locations=MZ"
+    ],
+    [
+     "Health",
+     "50",
+     50.0,
+     "WHO service coverage index",
+     "WHO, 2023",
+     "https://ourworldindata.org/grapher/universal-health-coverage-index?country=~MOZ"
+    ],
+    [
+     "Livelihood",
+     "18.6%",
+     18.6,
+     "Above US$3.00 a day; 81.4% live below it",
+     "World Bank, 2022",
+     "https://data.worldbank.org/indicator/SI.POV.DDAY?locations=MZ"
+    ]
+   ],
+   "at_work": {
+    "name": "Sustainable Energy and Broadband Access in Rural Mozambique",
+    "amount": "$343M",
+    "money": true,
+    "status": "Active",
+    "url": "https://projects.worldbank.org/en/projects-operations/project-detail/P175295"
+   },
+   "solutions": []
+  },
+  {
+   "slug": "namibia",
+   "name": "Namibia",
+   "url": "https://perfectnations.org/blueprints/namibia/",
+   "standard": "Livelihood",
+   "gap": "~1.9m",
+   "gap_text": "Namibians living below US$8.30 a day, on the 2015 survey.",
+   "source": {
+    "label": "World Bank, 2015",
+    "url": "https://data.worldbank.org/indicator/SI.POV.UMIC?locations=NA"
+   },
+   "seven": [
+    [
+     "Food",
+     "46%",
+     46.0,
+     "Not food insecure; 54% are moderately or severely food insecure",
+     "FAO, 2024",
+     "https://data.worldbank.org/indicator/SN.ITK.MSFI.ZS?locations=NA"
+    ],
+    [
+     "Water",
+     "86.5%",
+     86.5,
+     "Basic water; safely managed water is not measured",
+     "WHO/UNICEF, 2024",
+     "https://data.worldbank.org/indicator/SH.H2O.BASW.ZS?locations=NA"
+    ],
+    [
+     "Shelter",
+     "78.9%",
+     78.9,
+     "Outside urban slums; 41.4% of city dwellers live in slums; safe sanitation not measured",
+     "UN-Habitat, 2022",
+     "https://data.worldbank.org/indicator/EN.POP.SLUM.UR.ZS?locations=NA"
+    ],
+    [
+     "Energy",
+     "46",
+     46.0,
+     "46% cook with clean fuels and technology",
+     "World Bank, 2024",
+     "https://data.worldbank.org/indicator/EG.CFT.ACCS.ZS?locations=NA"
+    ],
+    [
+     "Education",
+     "71.9",
+     71.9,
+     "Lower-secondary completion; reading data not published",
+     "UNESCO, 2024",
+     "https://data.worldbank.org/indicator/SE.SEC.CMPT.LO.ZS?locations=NA"
+    ],
+    [
+     "Health",
+     "66",
+     66.0,
+     "WHO service coverage index",
+     "WHO, 2023",
+     "https://ourworldindata.org/grapher/universal-health-coverage-index?country=~NAM"
+    ],
+    [
+     "Livelihood",
+     "38.9%",
+     38.9,
+     "Above US$8.30 a day; 61.1% live below it, dated",
+     "World Bank, 2015",
+     "https://data.worldbank.org/indicator/SI.POV.UMIC?locations=NA"
+    ]
+   ],
+   "at_work": null,
+   "solutions": []
+  },
+  {
+   "slug": "nigeria",
+   "name": "Nigeria",
+   "url": "https://perfectnations.org/blueprints/nigeria/",
+   "standard": "Food",
+   "gap": "~182m",
+   "gap_text": "Nigerians who cannot always count on enough good food: 76 in every hundred.",
+   "source": {
+    "label": "FAO, 2024",
+    "url": "https://data.worldbank.org/indicator/SN.ITK.MSFI.ZS?locations=NG"
+   },
+   "seven": [
+    [
+     "Food",
+     "23.5%",
+     23.5,
+     "Not food insecure; 76.5% are moderately or severely food insecure",
+     "FAO, 2024",
+     "https://data.worldbank.org/indicator/SN.ITK.MSFI.ZS?locations=NG"
+    ],
+    [
+     "Water",
+     "29.9%",
+     29.9,
+     "Safely managed drinking water",
+     "WHO/UNICEF, 2024",
+     "https://data.worldbank.org/indicator/SH.H2O.SMDW.ZS?locations=NG"
+    ],
+    [
+     "Shelter",
+     "32.2%",
+     32.2,
+     "Safely managed sanitation",
+     "WHO/UNICEF, 2024",
+     "https://data.worldbank.org/indicator/SH.STA.SMSS.ZS?locations=NG"
+    ],
+    [
+     "Energy",
+     "28",
+     28.0,
+     "28% cook with clean fuels and technology",
+     "World Bank, 2024",
+     "https://data.worldbank.org/indicator/EG.CFT.ACCS.ZS?locations=NG"
+    ],
+    [
+     "Education",
+     "Not measured",
+     null,
+     "Neither reading nor completion is published",
+     "UNESCO",
+     "https://data.worldbank.org/indicator/SE.SEC.CMPT.LO.ZS?locations=NG"
+    ],
+    [
+     "Health",
+     "47",
+     47.0,
+     "WHO service coverage index",
+     "WHO, 2023",
+     "https://ourworldindata.org/grapher/universal-health-coverage-index?country=~NGA"
+    ],
+    [
+     "Livelihood",
+     "36%",
+     36.0,
+     "Above US$4.20 a day; 64% live below it",
+     "World Bank, 2022",
+     "https://data.worldbank.org/indicator/SI.POV.LMIC?locations=NG"
+    ]
+   ],
+   "at_work": {
+    "name": "Sustainable Agricultural Value-Chains for Growth (AGROW)",
+    "amount": "$500M",
+    "money": true,
+    "status": "Active",
+    "url": "https://www.worldbank.org/en/news/press-release/2026/03/31/nigeria-world-bank-approves-project-to-expand-agricultural-value-chains-and-jobs"
+   },
+   "solutions": []
+  },
+  {
+   "slug": "pakistan",
+   "name": "Pakistan",
+   "url": "https://perfectnations.org/blueprints/pakistan/",
+   "standard": "Education",
+   "gap": "80%",
+   "gap_text": "Of Pakistani children could not read a simple text by the end of primary school in 2019.",
+   "source": {
+    "label": "World Bank, 2019",
+    "url": "https://data.worldbank.org/indicator/SE.LPV.PRIM?locations=PK"
+   },
+   "seven": [
+    [
+     "Food",
+     "77.1%",
+     77.1,
+     "Not food insecure; 22.9% are moderately or severely food insecure",
+     "FAO, 2024",
+     "https://data.worldbank.org/indicator/SN.ITK.MSFI.ZS?locations=PK"
+    ],
+    [
+     "Water",
+     "45%",
+     45.0,
+     "Safely managed drinking water",
+     "WHO/UNICEF, 2024",
+     "https://data.worldbank.org/indicator/SH.H2O.SMDW.ZS?locations=PK"
+    ],
+    [
+     "Shelter",
+     "77.9%",
+     77.9,
+     "Outside urban slums; 56% of city dwellers live in slums; safe sanitation not measured",
+     "UN-Habitat, 2022",
+     "https://data.worldbank.org/indicator/EN.POP.SLUM.UR.ZS?locations=PK"
+    ],
+    [
+     "Energy",
+     "51",
+     51.0,
+     "51% cook with clean fuels and technology",
+     "World Bank, 2024",
+     "https://data.worldbank.org/indicator/EG.CFT.ACCS.ZS?locations=PK"
+    ],
+    [
+     "Education",
+     "20.5",
+     20.5,
+     "20.5% of children read a simple text by the end of primary school; 2019, dated",
+     "World Bank, 2019",
+     "https://data.worldbank.org/indicator/SE.LPV.PRIM?locations=PK"
+    ],
+    [
+     "Health",
+     "56",
+     56.0,
+     "WHO service coverage index",
+     "WHO, 2023",
+     "https://ourworldindata.org/grapher/universal-health-coverage-index?country=~PAK"
+    ],
+    [
+     "Livelihood",
+     "52.1%",
+     52.1,
+     "Above US$4.20 a day; 47.9% live below it",
+     "World Bank, 2024",
+     "https://data.worldbank.org/indicator/SI.POV.LMIC?locations=PK"
+    ]
+   ],
+   "at_work": {
+    "name": "Education and water in Balochistan",
+    "amount": "$194M",
+    "money": true,
+    "status": "Active",
+    "url": "https://www.worldbank.org/en/news/press-release/2025/05/27/pakistan-world-bank-approves-194m-to-support-education-and-access-to-water-in-balochistan"
+   },
+   "solutions": []
+  },
+  {
+   "slug": "philippines",
+   "name": "Philippines",
+   "url": "https://perfectnations.org/blueprints/philippines/",
+   "standard": "Education",
+   "gap": "91%",
+   "gap_text": "Of Filipino children could not read a simple text by the end of primary school in 2019.",
+   "source": {
+    "label": "World Bank, 2019",
+    "url": "https://data.worldbank.org/indicator/SE.LPV.PRIM?locations=PH"
+   },
+   "seven": [
+    [
+     "Food",
+     "67.3%",
+     67.3,
+     "Not food insecure; 32.7% are moderately or severely food insecure",
+     "FAO, 2024",
+     "https://data.worldbank.org/indicator/SN.ITK.MSFI.ZS?locations=PH"
+    ],
+    [
+     "Water",
+     "48.5%",
+     48.5,
+     "Safely managed drinking water",
+     "WHO/UNICEF, 2024",
+     "https://data.worldbank.org/indicator/SH.H2O.SMDW.ZS?locations=PH"
+    ],
+    [
+     "Shelter",
+     "62.2%",
+     62.2,
+     "Safely managed sanitation",
+     "WHO/UNICEF, 2024",
+     "https://data.worldbank.org/indicator/SH.STA.SMSS.ZS?locations=PH"
+    ],
+    [
+     "Energy",
+     "64",
+     64.0,
+     "64% cook with clean fuels and technology",
+     "World Bank, 2024",
+     "https://data.worldbank.org/indicator/EG.CFT.ACCS.ZS?locations=PH"
+    ],
+    [
+     "Education",
+     "9.1",
+     9.1,
+     "9.1% of children read a simple text by the end of primary school; 2019, dated",
+     "World Bank, 2019",
+     "https://data.worldbank.org/indicator/SE.LPV.PRIM?locations=PH"
+    ],
+    [
+     "Health",
+     "69",
+     69.0,
+     "WHO service coverage index",
+     "WHO, 2023",
+     "https://ourworldindata.org/grapher/universal-health-coverage-index?country=~PHL"
+    ],
+    [
+     "Livelihood",
+     "41.3%",
+     41.3,
+     "Above US$8.30 a day; 58.7% live below it",
+     "World Bank, 2023",
+     "https://data.worldbank.org/indicator/SI.POV.UMIC?locations=PH"
+    ]
+   ],
+   "at_work": {
+    "name": "Learning Upgrade Support and Decentralization (PLUS-D)",
+    "amount": "$600M",
+    "money": true,
+    "status": "Active",
+    "url": "https://www.worldbank.org/en/news/press-release/2026/04/03/world-bank-backs-better-learning-for-21-million-filipino-students"
+   },
+   "solutions": []
+  },
+  {
+   "slug": "republic-of-congo",
+   "name": "Republic of the Congo",
+   "url": "https://perfectnations.org/blueprints/republic-of-congo/",
+   "standard": "Education",
+   "gap": "70%",
+   "gap_text": "Of Congolese children could not read a simple text by the end of primary school in 2019.",
+   "source": {
+    "label": "World Bank, 2019",
+    "url": "https://data.worldbank.org/indicator/SE.LPV.PRIM?locations=CG"
+   },
+   "seven": [
+    [
+     "Food",
+     "75%",
+     75.0,
+     "Lenient measure: 25% are undernourished; food insecurity experience is not published",
+     "FAO, 2024",
+     "https://data.worldbank.org/indicator/SN.ITK.DEFC.ZS?locations=CG"
+    ],
+    [
+     "Water",
+     "45.9%",
+     45.9,
+     "Safely managed drinking water",
+     "WHO/UNICEF, 2021",
+     "https://data.worldbank.org/indicator/SH.H2O.SMDW.ZS?locations=CG"
+    ],
+    [
+     "Shelter",
+     "51.7%",
+     51.7,
+     "Outside urban slums; 75.3% of city dwellers live in slums; safe sanitation not measured",
+     "UN-Habitat, 2022",
+     "https://data.worldbank.org/indicator/EN.POP.SLUM.UR.ZS?locations=CG"
+    ],
+    [
+     "Energy",
+     "40",
+     40.0,
+     "40% cook with clean fuels and technology",
+     "World Bank, 2024",
+     "https://data.worldbank.org/indicator/EG.CFT.ACCS.ZS?locations=CG"
+    ],
+    [
+     "Education",
+     "30",
+     30.0,
+     "30% of children read a simple text by the end of primary school; 2019, dated",
+     "World Bank, 2019",
+     "https://data.worldbank.org/indicator/SE.LPV.PRIM?locations=CG"
+    ],
+    [
+     "Health",
+     "45",
+     45.0,
+     "WHO service coverage index",
+     "WHO, 2023",
+     "https://ourworldindata.org/grapher/universal-health-coverage-index?country=~COG"
+    ],
+    [
+     "Livelihood",
+     "45%",
+     45.0,
+     "Above US$4.20 a day; 55% live below it, dated",
+     "World Bank, 2011",
+     "https://data.worldbank.org/indicator/SI.POV.LMIC?locations=CG"
+    ]
+   ],
+   "at_work": {
+    "name": "Transforming the Education Sector for Better Outcomes and Results (TRESOR)",
+    "amount": "$80M",
+    "money": true,
+    "status": "Active",
+    "url": "https://projects.worldbank.org/en/projects-operations/project-detail/P179410"
+   },
+   "solutions": []
+  },
+  {
+   "slug": "rwanda",
+   "name": "Rwanda",
+   "url": "https://perfectnations.org/blueprints/rwanda/",
+   "standard": "Energy",
+   "gap": "~13m",
+   "gap_text": "Rwandans who cook without clean fuel or technology: nine in ten.",
+   "source": {
+    "label": "World Bank, 2024",
+    "url": "https://data.worldbank.org/indicator/EG.CFT.ACCS.ZS?locations=RW"
+   },
+   "seven": [
+    [
+     "Food",
+     "77.4%",
+     77.4,
+     "Lenient measure: 22.6% are undernourished; food insecurity experience is not published",
+     "FAO, 2024",
+     "https://data.worldbank.org/indicator/SN.ITK.DEFC.ZS?locations=RW"
+    ],
+    [
+     "Water",
+     "61.4%",
+     61.4,
+     "Basic water; safely managed water is not measured",
+     "WHO/UNICEF, 2024",
+     "https://data.worldbank.org/indicator/SH.H2O.BASW.ZS?locations=RW"
+    ],
+    [
+     "Shelter",
+     "88.1%",
+     88.1,
+     "Outside urban slums; 38.4% of city dwellers live in slums; safe sanitation not measured",
+     "UN-Habitat, 2022",
+     "https://data.worldbank.org/indicator/EN.POP.SLUM.UR.ZS?locations=RW"
+    ],
+    [
+     "Energy",
+     "9",
+     9.0,
+     "9% cook with clean fuels and technology",
+     "World Bank, 2024",
+     "https://data.worldbank.org/indicator/EG.CFT.ACCS.ZS?locations=RW"
+    ],
+    [
+     "Education",
+     "47.6",
+     47.6,
+     "Lower-secondary completion; reading data not published",
+     "UNESCO, 2024",
+     "https://data.worldbank.org/indicator/SE.SEC.CMPT.LO.ZS?locations=RW"
+    ],
+    [
+     "Health",
+     "59",
+     59.0,
+     "WHO service coverage index",
+     "WHO, 2023",
+     "https://ourworldindata.org/grapher/universal-health-coverage-index?country=~RWA"
+    ],
+    [
+     "Livelihood",
+     "61.4%",
+     61.4,
+     "Above US$3.00 a day; 38.6% live below it",
+     "World Bank, 2023",
+     "https://data.worldbank.org/indicator/SI.POV.DDAY?locations=RW"
+    ]
+   ],
+   "at_work": {
+    "name": "Accelerating Sustainable and Clean Energy Access Transformation",
+    "amount": "$300M",
+    "money": true,
+    "status": "Active",
+    "url": "https://projects.worldbank.org/en/projects-operations/project-detail/P180575"
+   },
+   "solutions": []
+  },
+  {
+   "slug": "senegal",
+   "name": "Senegal",
+   "url": "https://perfectnations.org/blueprints/senegal/",
+   "standard": "Water",
+   "gap": "~14m",
+   "gap_text": "Senegalese without safely managed drinking water at home: 73 in every hundred.",
+   "source": {
+    "label": "WHO/UNICEF, 2024",
+    "url": "https://data.worldbank.org/indicator/SH.H2O.SMDW.ZS?locations=SN"
+   },
+   "seven": [
+    [
+     "Food",
+     "72.3%",
+     72.3,
+     "Not food insecure; 27.7% are moderately or severely food insecure",
+     "FAO, 2024",
+     "https://data.worldbank.org/indicator/SN.ITK.MSFI.ZS?locations=SN"
+    ],
+    [
+     "Water",
+     "27.2%",
+     27.2,
+     "Safely managed drinking water",
+     "WHO/UNICEF, 2024",
+     "https://data.worldbank.org/indicator/SH.H2O.SMDW.ZS?locations=SN"
+    ],
+    [
+     "Shelter",
+     "30.1%",
+     30.1,
+     "Safely managed sanitation",
+     "WHO/UNICEF, 2024",
+     "https://data.worldbank.org/indicator/SH.STA.SMSS.ZS?locations=SN"
+    ],
+    [
+     "Energy",
+     "39",
+     39.0,
+     "39% cook with clean fuels and technology",
+     "World Bank, 2024",
+     "https://data.worldbank.org/indicator/EG.CFT.ACCS.ZS?locations=SN"
+    ],
+    [
+     "Education",
+     "31.4",
+     31.4,
+     "31.4% of children read a simple text by the end of primary school; 2019, dated",
+     "World Bank, 2019",
+     "https://data.worldbank.org/indicator/SE.LPV.PRIM?locations=SN"
+    ],
+    [
+     "Health",
+     "48",
+     48.0,
+     "WHO service coverage index",
+     "WHO, 2023",
+     "https://ourworldindata.org/grapher/universal-health-coverage-index?country=~SEN"
+    ],
+    [
+     "Livelihood",
+     "62.5%",
+     62.5,
+     "Above the national poverty line; 37.5% live below it",
+     "National statistics, 2021",
+     "https://data.worldbank.org/indicator/SI.POV.NAHC?locations=SN"
+    ]
+   ],
+   "at_work": null,
+   "solutions": []
+  },
+  {
+   "slug": "somalia",
+   "name": "Somalia",
+   "url": "https://perfectnations.org/blueprints/somalia/",
+   "standard": "Energy",
+   "gap": "~19m",
+   "gap_text": "Somalis who cook without clean fuel or technology: almost everyone.",
+   "source": {
+    "label": "World Bank, 2024",
+    "url": "https://data.worldbank.org/indicator/EG.CFT.ACCS.ZS?locations=SO"
+   },
+   "seven": [
+    [
+     "Food",
+     "43.5%",
+     43.5,
+     "Lenient measure: 56.5% are undernourished; food insecurity experience is not published",
+     "FAO, 2024",
+     "https://data.worldbank.org/indicator/SN.ITK.DEFC.ZS?locations=SO"
+    ],
+    [
+     "Water",
+     "75.3%",
+     75.3,
+     "Basic water; safely managed water is not measured",
+     "WHO/UNICEF, 2024",
+     "https://data.worldbank.org/indicator/SH.H2O.BASW.ZS?locations=SO"
+    ],
+    [
+     "Shelter",
+     "16.4%",
+     16.4,
+     "Safely managed sanitation",
+     "WHO/UNICEF, 2024",
+     "https://data.worldbank.org/indicator/SH.STA.SMSS.ZS?locations=SO"
+    ],
+    [
+     "Energy",
+     "5",
+     5.0,
+     "5% cook with clean fuels and technology",
+     "World Bank, 2024",
+     "https://data.worldbank.org/indicator/EG.CFT.ACCS.ZS?locations=SO"
+    ],
+    [
+     "Education",
+     "Not measured",
+     null,
+     "Neither reading nor completion is published",
+     "UNESCO",
+     "https://data.worldbank.org/indicator/SE.SEC.CMPT.LO.ZS?locations=SO"
+    ],
+    [
+     "Health",
+     "30",
+     30.0,
+     "WHO service coverage index",
+     "WHO, 2023",
+     "https://ourworldindata.org/grapher/universal-health-coverage-index?country=~SOM"
+    ],
+    [
+     "Livelihood",
+     "Not measured",
+     null,
+     "No poverty survey has been published",
+     "World Bank",
+     "https://data.worldbank.org/indicator/SI.POV.DDAY?locations=SO"
+    ]
+   ],
+   "at_work": {
+    "name": "Somali Electricity Sector Recovery Project",
+    "amount": "$150M",
+    "money": true,
+    "status": "Active",
+    "url": "https://projects.worldbank.org/en/projects-operations/project-detail/P173088"
+   },
+   "solutions": []
+  },
+  {
+   "slug": "south-africa",
+   "name": "South Africa",
+   "url": "https://perfectnations.org/blueprints/south-africa/",
+   "standard": "Education",
+   "gap": "82%",
+   "gap_text": "Of South African children could not read for meaning by the end of primary school in 2021.",
+   "source": {
+    "label": "World Bank, 2021",
+    "url": "https://data.worldbank.org/indicator/SE.LPV.PRIM?locations=ZA"
+   },
+   "seven": [
+    [
+     "Food",
+     "79.1%",
+     79.1,
+     "Not food insecure; 20.9% are moderately or severely food insecure",
+     "FAO, 2024",
+     "https://data.worldbank.org/indicator/SN.ITK.MSFI.ZS?locations=ZA"
+    ],
+    [
+     "Water",
+     "68%",
+     68.0,
+     "Safely managed drinking water",
+     "WHO/UNICEF, 2024",
+     "https://data.worldbank.org/indicator/SH.H2O.SMDW.ZS?locations=ZA"
+    ],
+    [
+     "Shelter",
+     "73.8%",
+     73.8,
+     "Safely managed sanitation",
+     "WHO/UNICEF, 2024",
+     "https://data.worldbank.org/indicator/SH.STA.SMSS.ZS?locations=ZA"
+    ],
+    [
+     "Energy",
+     "90",
+     90.0,
+     "90% cook with clean fuels and technology",
+     "World Bank, 2024",
+     "https://data.worldbank.org/indicator/EG.CFT.ACCS.ZS?locations=ZA"
+    ],
+    [
+     "Education",
+     "18",
+     18.0,
+     "18% of children read a simple text by the end of primary school; 2021",
+     "World Bank, 2021",
+     "https://data.worldbank.org/indicator/SE.LPV.PRIM?locations=ZA"
+    ],
+    [
+     "Health",
+     "74",
+     74.0,
+     "WHO service coverage index",
+     "WHO, 2023",
+     "https://ourworldindata.org/grapher/universal-health-coverage-index?country=~ZAF"
+    ],
+    [
+     "Livelihood",
+     "40.4%",
+     40.4,
+     "Above US$8.30 a day; 59.6% live below it",
+     "World Bank, 2022",
+     "https://data.worldbank.org/indicator/SI.POV.UMIC?locations=ZA"
+    ]
+   ],
+   "at_work": null,
+   "solutions": []
+  },
+  {
+   "slug": "south-sudan",
+   "name": "South Sudan",
+   "url": "https://perfectnations.org/blueprints/south-sudan/",
+   "standard": "Energy",
+   "gap": "12.2m",
+   "gap_text": "South Sudanese who cook without clean fuel or technology: almost everyone.",
+   "source": {
+    "label": "World Bank, 2024",
+    "url": "https://data.worldbank.org/indicator/EG.CFT.ACCS.ZS?locations=SS"
+   },
+   "seven": [
+    [
+     "Food",
+     "11.2%",
+     11.2,
+     "Not food insecure; 88.8% are moderately or severely food insecure",
+     "FAO, 2024",
+     "https://data.worldbank.org/indicator/SN.ITK.MSFI.ZS?locations=SS"
+    ],
+    [
+     "Water",
+     "39.7%",
+     39.7,
+     "Basic water; safely managed water is not measured",
+     "WHO/UNICEF, 2024",
+     "https://data.worldbank.org/indicator/SH.H2O.BASW.ZS?locations=SS"
+    ],
+    [
+     "Shelter",
+     "79.6%",
+     79.6,
+     "Outside urban slums; 94.2% of city dwellers live in slums; safe sanitation not measured",
+     "UN-Habitat, 2022",
+     "https://data.worldbank.org/indicator/EN.POP.SLUM.UR.ZS?locations=SS"
+    ],
+    [
+     "Energy",
+     "0",
+     0.0,
+     "0% cook with clean fuels and technology",
+     "World Bank, 2024",
+     "https://data.worldbank.org/indicator/EG.CFT.ACCS.ZS?locations=SS"
+    ],
+    [
+     "Education",
+     "Not measured",
+     null,
+     "Neither reading nor completion is published",
+     "UNESCO",
+     "https://data.worldbank.org/indicator/SE.SEC.CMPT.LO.ZS?locations=SS"
+    ],
+    [
+     "Health",
+     "41",
+     41.0,
+     "WHO service coverage index",
+     "WHO, 2023",
+     "https://ourworldindata.org/grapher/universal-health-coverage-index?country=~SSD"
+    ],
+    [
+     "Livelihood",
+     "23.5%",
+     23.5,
+     "Above US$3.00 a day; 76.5% live below it, dated",
+     "World Bank, 2016",
+     "https://data.worldbank.org/indicator/SI.POV.DDAY?locations=SS"
+    ]
+   ],
+   "at_work": {
+    "name": "Energy Sector Access and Institutional Strengthening Project",
+    "amount": "$50M",
+    "money": true,
+    "status": "Active",
+    "url": "https://projects.worldbank.org/en/projects-operations/project-detail/P178891"
+   },
+   "solutions": []
+  },
+  {
+   "slug": "sri-lanka",
+   "name": "Sri Lanka",
+   "url": "https://perfectnations.org/blueprints/sri-lanka/",
+   "standard": "Energy",
+   "gap": "~15m",
+   "gap_text": "Sri Lankans who cook without clean fuel or technology: 69 in every hundred.",
+   "source": {
+    "label": "World Bank, 2024",
+    "url": "https://data.worldbank.org/indicator/EG.CFT.ACCS.ZS?locations=LK"
+   },
+   "seven": [
+    [
+     "Food",
+     "89.9%",
+     89.9,
+     "Not food insecure; 10.1% are moderately or severely food insecure",
+     "FAO, 2024",
+     "https://data.worldbank.org/indicator/SN.ITK.MSFI.ZS?locations=LK"
+    ],
+    [
+     "Water",
+     "46.9%",
+     46.9,
+     "Safely managed drinking water",
+     "WHO/UNICEF, 2024",
+     "https://data.worldbank.org/indicator/SH.H2O.SMDW.ZS?locations=LK"
+    ],
+    [
+     "Shelter",
+     "90.8%",
+     90.8,
+     "Outside urban slums; 44.7% of city dwellers live in slums; safe sanitation not measured",
+     "UN-Habitat, 2022",
+     "https://data.worldbank.org/indicator/EN.POP.SLUM.UR.ZS?locations=LK"
+    ],
+    [
+     "Energy",
+     "31",
+     31.0,
+     "31% cook with clean fuels and technology",
+     "World Bank, 2024",
+     "https://data.worldbank.org/indicator/EG.CFT.ACCS.ZS?locations=LK"
+    ],
+    [
+     "Education",
+     "85.2",
+     85.2,
+     "85.2% of children read a simple text by the end of primary school; 2015, dated",
+     "World Bank, 2015",
+     "https://data.worldbank.org/indicator/SE.LPV.PRIM?locations=LK"
+    ],
+    [
+     "Health",
+     "72",
+     72.0,
+     "WHO service coverage index",
+     "WHO, 2023",
+     "https://ourworldindata.org/grapher/universal-health-coverage-index?country=~LKA"
+    ],
+    [
+     "Livelihood",
+     "46.7%",
+     46.7,
+     "Above US$8.30 a day; 53.3% live below it, dated",
+     "World Bank, 2019",
+     "https://data.worldbank.org/indicator/SI.POV.UMIC?locations=LK"
+    ]
+   ],
+   "at_work": {
+    "name": "Clean energy transition",
+    "amount": "$150M",
+    "money": true,
+    "status": "Active",
+    "url": "https://www.worldbank.org/en/news/press-release/2025/06/20/world-bank-group-to-support-sri-lanka-s-clean-energy-transition-with-150-million-program"
+   },
+   "solutions": []
+  },
+  {
+   "slug": "tanzania",
+   "name": "Tanzania",
+   "url": "https://perfectnations.org/blueprints/tanzania/",
+   "standard": "Energy",
+   "gap": "~63m",
+   "gap_text": "Tanzanians who cook without clean fuel or technology: almost nine in ten.",
+   "source": {
+    "label": "World Bank, 2024",
+    "url": "https://data.worldbank.org/indicator/EG.CFT.ACCS.ZS?locations=TZ"
+   },
+   "seven": [
+    [
+     "Food",
+     "43%",
+     43.0,
+     "Not food insecure; 57% are moderately or severely food insecure",
+     "FAO, 2024",
+     "https://data.worldbank.org/indicator/SN.ITK.MSFI.ZS?locations=TZ"
+    ],
+    [
+     "Water",
+     "31.3%",
+     31.3,
+     "Safely managed drinking water",
+     "WHO/UNICEF, 2024",
+     "https://data.worldbank.org/indicator/SH.H2O.SMDW.ZS?locations=TZ"
+    ],
+    [
+     "Shelter",
+     "28.5%",
+     28.5,
+     "Safely managed sanitation",
+     "WHO/UNICEF, 2024",
+     "https://data.worldbank.org/indicator/SH.STA.SMSS.ZS?locations=TZ"
+    ],
+    [
+     "Energy",
+     "11",
+     11.0,
+     "11% cook with clean fuels and technology",
+     "World Bank, 2024",
+     "https://data.worldbank.org/indicator/EG.CFT.ACCS.ZS?locations=TZ"
+    ],
+    [
+     "Education",
+     "34.2",
+     34.2,
+     "Lower-secondary completion; reading data not published",
+     "UNESCO, 2024",
+     "https://data.worldbank.org/indicator/SE.SEC.CMPT.LO.ZS?locations=TZ"
+    ],
+    [
+     "Health",
+     "49",
+     49.0,
+     "WHO service coverage index",
+     "WHO, 2023",
+     "https://ourworldindata.org/grapher/universal-health-coverage-index?country=~TZA"
+    ],
+    [
+     "Livelihood",
+     "30%",
+     30.0,
+     "Above US$4.20 a day; 70% live below it, dated",
+     "World Bank, 2018",
+     "https://data.worldbank.org/indicator/SI.POV.LMIC?locations=TZ"
+    ]
+   ],
+   "at_work": {
+    "name": "Tanzania-Zambia Transmission Interconnector",
+    "amount": "$595M",
+    "money": true,
+    "status": "Active",
+    "url": "https://projects.worldbank.org/en/projects-operations/project-detail/P163752"
+   },
+   "solutions": [
+    11
+   ]
+  },
+  {
+   "slug": "uganda",
+   "name": "Uganda",
+   "url": "https://perfectnations.org/blueprints/uganda/",
+   "standard": "Energy",
+   "gap": "~50m",
+   "gap_text": "Ugandans who cook without clean fuel or technology: almost everyone.",
+   "source": {
+    "label": "World Bank, 2024",
+    "url": "https://data.worldbank.org/indicator/EG.CFT.ACCS.ZS?locations=UG"
+   },
+   "seven": [
+    [
+     "Food",
+     "48.4%",
+     48.4,
+     "Not food insecure; 51.6% are moderately or severely food insecure",
+     "FAO, 2024",
+     "https://data.worldbank.org/indicator/SN.ITK.MSFI.ZS?locations=UG"
+    ],
+    [
+     "Water",
+     "18.1%",
+     18.1,
+     "Safely managed drinking water",
+     "WHO/UNICEF, 2024",
+     "https://data.worldbank.org/indicator/SH.H2O.SMDW.ZS?locations=UG"
+    ],
+    [
+     "Shelter",
+     "20.4%",
+     20.4,
+     "Safely managed sanitation",
+     "WHO/UNICEF, 2024",
+     "https://data.worldbank.org/indicator/SH.STA.SMSS.ZS?locations=UG"
+    ],
+    [
+     "Energy",
+     "2",
+     2.0,
+     "2% cook with clean fuels and technology",
+     "World Bank, 2024",
+     "https://data.worldbank.org/indicator/EG.CFT.ACCS.ZS?locations=UG"
+    ],
+    [
+     "Education",
+     "18.1",
+     18.1,
+     "18.1% of children read a simple text by the end of primary school; 2014, dated",
+     "World Bank, 2014",
+     "https://data.worldbank.org/indicator/SE.LPV.PRIM?locations=UG"
+    ],
+    [
+     "Health",
+     "54",
+     54.0,
+     "WHO service coverage index",
+     "WHO, 2023",
+     "https://ourworldindata.org/grapher/universal-health-coverage-index?country=~UGA"
+    ],
+    [
+     "Livelihood",
+     "45.6%",
+     45.6,
+     "Above US$3.00 a day; 54.4% live below it",
+     "World Bank, 2023",
+     "https://data.worldbank.org/indicator/SI.POV.DDAY?locations=UG"
+    ]
+   ],
+   "at_work": {
+    "name": "Electricity Access Scale-up Project (EASP)",
+    "amount": "$608M",
+    "money": true,
+    "status": "Active",
+    "url": "https://projects.worldbank.org/en/projects-operations/project-detail/P166685"
+   },
+   "solutions": []
+  },
+  {
+   "slug": "ukraine",
+   "name": "Ukraine",
+   "url": "https://perfectnations.org/blueprints/ukraine/",
+   "standard": "Food",
+   "gap": "~12m",
+   "gap_text": "Ukrainians who cannot always count on enough good food: 32 in every hundred.",
+   "source": {
+    "label": "FAO, 2024",
+    "url": "https://data.worldbank.org/indicator/SN.ITK.MSFI.ZS?locations=UA"
+   },
+   "seven": [
+    [
+     "Food",
+     "68%",
+     68.0,
+     "Not food insecure; 32% are moderately or severely food insecure",
+     "FAO, 2024",
+     "https://data.worldbank.org/indicator/SN.ITK.MSFI.ZS?locations=UA"
+    ],
+    [
+     "Water",
+     "87.9%",
+     87.9,
+     "Safely managed drinking water",
+     "WHO/UNICEF, 2024",
+     "https://data.worldbank.org/indicator/SH.H2O.SMDW.ZS?locations=UA"
+    ],
+    [
+     "Shelter",
+     "92.4%",
+     92.4,
+     "Safely managed sanitation",
+     "WHO/UNICEF, 2024",
+     "https://data.worldbank.org/indicator/SH.STA.SMSS.ZS?locations=UA"
+    ],
+    [
+     "Energy",
+     "97",
+     97.0,
+     "97% cook with clean fuels and technology",
+     "World Bank, 2024",
+     "https://data.worldbank.org/indicator/EG.CFT.ACCS.ZS?locations=UA"
+    ],
+    [
+     "Education",
+     "89.8",
+     89.8,
+     "Lower-secondary completion; reading data not published",
+     "UNESCO, 2024",
+     "https://data.worldbank.org/indicator/SE.SEC.CMPT.LO.ZS?locations=UA"
+    ],
+    [
+     "Health",
+     "80",
+     80.0,
+     "WHO service coverage index",
+     "WHO, 2023",
+     "https://ourworldindata.org/grapher/universal-health-coverage-index?country=~UKR"
+    ],
+    [
+     "Livelihood",
+     "76.8%",
+     76.8,
+     "Above the national poverty line; 23.2% live below it, dated",
+     "National statistics, 2020",
+     "https://data.worldbank.org/indicator/SI.POV.NAHC?locations=UA"
+    ]
+   ],
+   "at_work": null,
+   "solutions": []
+  },
+  {
+   "slug": "vietnam",
+   "name": "Vietnam",
+   "url": "https://perfectnations.org/blueprints/vietnam/",
+   "standard": "Shelter",
+   "gap": "~55m",
+   "gap_text": "Vietnamese without a safely managed toilet at home: 55 in every hundred.",
+   "source": {
+    "label": "WHO/UNICEF, 2024",
+    "url": "https://data.worldbank.org/indicator/SH.STA.SMSS.ZS?locations=VN"
+   },
+   "seven": [
+    [
+     "Food",
+     "90.6%",
+     90.6,
+     "Not food insecure; 9.4% are moderately or severely food insecure",
+     "FAO, 2024",
+     "https://data.worldbank.org/indicator/SN.ITK.MSFI.ZS?locations=VN"
+    ],
+    [
+     "Water",
+     "58.6%",
+     58.6,
+     "Safely managed drinking water",
+     "WHO/UNICEF, 2024",
+     "https://data.worldbank.org/indicator/SH.H2O.SMDW.ZS?locations=VN"
+    ],
+    [
+     "Shelter",
+     "45.4%",
+     45.4,
+     "Safely managed sanitation",
+     "WHO/UNICEF, 2024",
+     "https://data.worldbank.org/indicator/SH.STA.SMSS.ZS?locations=VN"
+    ],
+    [
+     "Energy",
+     "91",
+     91.0,
+     "91% cook with clean fuels and technology",
+     "World Bank, 2024",
+     "https://data.worldbank.org/indicator/EG.CFT.ACCS.ZS?locations=VN"
+    ],
+    [
+     "Education",
+     "81.9",
+     81.9,
+     "81.9% of children read a simple text by the end of primary school; 2019, dated",
+     "World Bank, 2019",
+     "https://data.worldbank.org/indicator/SE.LPV.PRIM?locations=VN"
+    ],
+    [
+     "Health",
+     "71",
+     71.0,
+     "WHO service coverage index",
+     "WHO, 2023",
+     "https://ourworldindata.org/grapher/universal-health-coverage-index?country=~VNM"
+    ],
+    [
+     "Livelihood",
+     "78.5%",
+     78.5,
+     "Above US$8.30 a day; 21.5% live below it",
+     "World Bank, 2022",
+     "https://data.worldbank.org/indicator/SI.POV.UMIC?locations=VN"
+    ]
+   ],
+   "at_work": null,
+   "solutions": []
+  },
+  {
+   "slug": "zambia",
+   "name": "Zambia",
+   "url": "https://perfectnations.org/blueprints/zambia/",
+   "standard": "Education",
+   "gap": "98%",
+   "gap_text": "Of Zambian children could not read a simple text by the end of primary school in 2019.",
+   "source": {
+    "label": "World Bank, 2019",
+    "url": "https://data.worldbank.org/indicator/SE.LPV.PRIM?locations=ZM"
+   },
+   "seven": [
+    [
+     "Food",
+     "54.2%",
+     54.2,
+     "Not food insecure; 45.8% are moderately or severely food insecure",
+     "FAO, 2024",
+     "https://data.worldbank.org/indicator/SN.ITK.MSFI.ZS?locations=ZM"
+    ],
+    [
+     "Water",
+     "73.4%",
+     73.4,
+     "Basic water; safely managed water is not measured",
+     "WHO/UNICEF, 2024",
+     "https://data.worldbank.org/indicator/SH.H2O.BASW.ZS?locations=ZM"
+    ],
+    [
+     "Shelter",
+     "77.8%",
+     77.8,
+     "Outside urban slums; 48.3% of city dwellers live in slums; safe sanitation not measured",
+     "UN-Habitat, 2022",
+     "https://data.worldbank.org/indicator/EN.POP.SLUM.UR.ZS?locations=ZM"
+    ],
+    [
+     "Energy",
+     "10",
+     10.0,
+     "10% cook with clean fuels and technology",
+     "World Bank, 2024",
+     "https://data.worldbank.org/indicator/EG.CFT.ACCS.ZS?locations=ZM"
+    ],
+    [
+     "Education",
+     "1.5",
+     1.5,
+     "1.5% of children read a simple text by the end of primary school; 2019, dated",
+     "World Bank, 2019",
+     "https://data.worldbank.org/indicator/SE.LPV.PRIM?locations=ZM"
+    ],
+    [
+     "Health",
+     "62",
+     62.0,
+     "WHO service coverage index",
+     "WHO, 2023",
+     "https://ourworldindata.org/grapher/universal-health-coverage-index?country=~ZMB"
+    ],
+    [
+     "Livelihood",
+     "18.6%",
+     18.6,
+     "Above US$4.20 a day; 81.4% live below it",
+     "World Bank, 2022",
+     "https://data.worldbank.org/indicator/SI.POV.LMIC?locations=ZM"
+    ]
+   ],
+   "at_work": {
+    "name": "Girls’ Education and Women’s Empowerment and Livelihoods for Human Capital",
+    "amount": "$157M",
+    "money": true,
+    "status": "Active",
+    "url": "https://projects.worldbank.org/en/projects-operations/project-detail/P181391"
+   },
+   "solutions": [
+    9
+   ]
+  },
+  {
+   "slug": "zimbabwe",
+   "name": "Zimbabwe",
+   "url": "https://perfectnations.org/blueprints/zimbabwe/",
+   "standard": "Shelter",
+   "gap": "~13m",
+   "gap_text": "Zimbabweans without safely managed sanitation at home: three in four.",
+   "source": {
+    "label": "WHO/UNICEF, 2024",
+    "url": "https://data.worldbank.org/indicator/SH.STA.SMSS.ZS?locations=ZW"
+   },
+   "seven": [
+    [
+     "Food",
+     "29.9%",
+     29.9,
+     "Not food insecure; 70.1% are moderately or severely food insecure",
+     "FAO, 2024",
+     "https://data.worldbank.org/indicator/SN.ITK.MSFI.ZS?locations=ZW"
+    ],
+    [
+     "Water",
+     "25.5%",
+     25.5,
+     "Safely managed drinking water",
+     "WHO/UNICEF, 2024",
+     "https://data.worldbank.org/indicator/SH.H2O.SMDW.ZS?locations=ZW"
+    ],
+    [
+     "Shelter",
+     "23.6%",
+     23.6,
+     "Safely managed sanitation",
+     "WHO/UNICEF, 2024",
+     "https://data.worldbank.org/indicator/SH.STA.SMSS.ZS?locations=ZW"
+    ],
+    [
+     "Energy",
+     "37",
+     37.0,
+     "37% cook with clean fuels and technology",
+     "World Bank, 2024",
+     "https://data.worldbank.org/indicator/EG.CFT.ACCS.ZS?locations=ZW"
+    ],
+    [
+     "Education",
+     "65.6",
+     65.6,
+     "Lower-secondary completion; reading data not published",
+     "UNESCO, 2024",
+     "https://data.worldbank.org/indicator/SE.SEC.CMPT.LO.ZS?locations=ZW"
+    ],
+    [
+     "Health",
+     "59",
+     59.0,
+     "WHO service coverage index",
+     "WHO, 2023",
+     "https://ourworldindata.org/grapher/universal-health-coverage-index?country=~ZWE"
+    ],
+    [
+     "Livelihood",
+     "35.4%",
+     35.4,
+     "Above US$4.20 a day; 64.6% live below it, dated",
+     "World Bank, 2019",
+     "https://data.worldbank.org/indicator/SI.POV.LMIC?locations=ZW"
+    ]
+   ],
+   "at_work": null,
+   "solutions": []
+  }
+ ]
+}
