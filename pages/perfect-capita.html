@@ -1,32 +1,165 @@
 <!-- ===========================================================================
-PERFECT NATIONS - PERFECT CAPITA PAGE - v8.0 THE STRICT MEASURES - 2026-11-01
-/perfect-capita/ . One Elementor Custom HTML widget, Full Width, padding 0, Hide Title.
-Served live from GitHub (pages/perfect-capita.html) by the Perfect Nations Live Pages plugin;
-the root id stays pn-pcap so the plugin finds the pasted widget.
-Words (Steward-General, 1 November 2026):
-  - The seven basic living standards; in running text, the seven standards.
-  - Perfect Capita: the yearly cost, per person, of lifting everyone above the Living Line in all
-    seven basic living standards. The price of Perfect [Nation]: Perfect Capita times population,
-    the national bill, and the denominator of the Perfect Nations Ratio.
-  - The Living Line names the threshold only, and stays out of headlines.
-  - "Guarantee" is a verb only, in the mission line.
-v8: rebuilt and compact. A WebGL hero (seven threads lifted above the Living Line); the four numbers;
-the strict measures defined for each standard (the Living Line, the strict measure and its custodian,
-the gentler measure Perfect Nations does not use, and what happens when data is missing); the seven
-rules; the world today; five nations; where it fits; Barbados priced. One image ribbon of all eight
-illustrations. Method: claude/perfect-capita-strict-method-proposal.md (19 October 2026).
-EDITORIAL: the Food source links to the UN partners' release of the SOFI report; swap in the FAO
-SOFI page once its address is confirmed.
+PERFECT NATIONS - PERFECT CAPITA PAGE - v9.0 EARTHRISE - 2026-11-07
+/perfect-capita/ (page 9937). One Elementor Custom HTML widget, Full Width, padding 0, Hide Title.
+Served live from GitHub (pages/perfect-capita.html) by the Perfect Nations Live Pages plugin; the
+root id stays pn-pcap so the plugin finds the pasted widget. Nothing needs pasting.
+Kept by the Perfect Capita Steward (skill steward-perfect-capita):
+  - Page code: edit src/perfect-capita.html, run python3 tools/build_perfect_capita.py (it adds the
+    painted seams and checks the page), and open a pull request "For approval: Perfect Capita vX.Y".
+  - Figures: figures/perfect-capita.json. The page reads it on every visit and fills every element
+    marked data-pc from it, so the world figures, the five nations and Barbados change without a
+    pull request. A missing or malformed file leaves the figures written here.
+Words (Steward-General, 1 November 2026): the seven basic living standards; Perfect Capita, the
+yearly cost per person of lifting everyone above the Living Line in all seven; the price of Perfect
+[Nation], Perfect Capita times population; Coverage and the Gap. The Living Line names the threshold
+only. "Guarantee" is a verb only, in the mission line.
+v9.0 (6 November 2026, the Steward-General: Earthrise first, fewer words, a more compact phone page):
+  - One palette, as on the homepage: Earthrise, Lagoon and Depth grounds alternate with ivory reading
+    bands; gold only for money and actions; two painted seams carry the colour. The hero is Earthrise.
+  - "Where Perfect Capita fits" removed. The strict-measures table folded into the wheel card (the
+    Living Line, the strict measure and its custodian, the gentler measure not used, what it is priced
+    from). The seven rules cut to one line each. The close shortened. About half the words of v8.
+  - World figures refreshed: food SOFI 2026 (2025 data), energy Tracking SDG 7 2026 (2.0 billion
+    without clean cooking, 655 million without electricity), livelihood World Bank September 2026
+    (824 million below $3.00 a day in 2024).
+  - Speed: no flag images from flagcdn (each nation card carries its standard icon); the ribbon uses
+    the 768 px copies (about 50 KB each, not 120 KB).
+  - Phones: two-column grids, a 290 px wheel, tighter type and spacing, nothing scrolls sideways.
+EDITORIAL: the Rwanda card cites The New Times (a secondary source quoting RSSB); replace it with an
+RSSB or Ministry of Health release when one is found.
+=========================================================================== -->
+<!-- ===========================================================================
+PERFECT NATIONS - HOMEPAGE - THE PAINTED SEAMS - v1.0 - 2026-11-06
+The seams between the homepage sections: a slim ivory strip of canvas carrying motifs from
+Preeti Sinha's garden painting (a fern frond, dotted leaves, coral flowers, striped seed pods, a red
+feather, a yellow bowl, a petal rosette, blue dots, loops, dashes and a rayed sun). The sections
+themselves keep one palette (Earthrise and ivory, with gold for what a visitor can act on); the
+painting brings the colour, in the seams only.
+This part holds the drawings once (the symbols) and the strip style. The homepage build
+(tools/build_home.py) places a seam between sections with <div class="pn-seam pn-seam--a">...;
+the arrangement of each seam is written by the build, so every seam differs.
+The ids here start "pns-", so the Live Pages plugin never mistakes them for a page.
 =========================================================================== -->
 <style>
+.pn-seam{
+  position:relative; display:block; width:100vw; margin-left:calc(50% - 50vw); box-sizing:border-box;
+  height:clamp(40px,3.8vw,58px); overflow:hidden; line-height:0;
+  background:
+    linear-gradient(180deg, rgba(255,255,255,.35), rgba(255,255,255,0) 40%, rgba(120,90,40,.06)),
+    #F4ECD8;
+  border-top:1px solid rgba(227,194,88,.75); border-bottom:1px solid rgba(227,194,88,.75);
+}
+.pn-seam::before{
+  content:""; position:absolute; inset:0; pointer-events:none; opacity:.09;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.1' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .3 0 0 0 0 .22 0 0 0 0 .1 0 0 0 .7 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+.pn-seam svg{ position:relative; display:block; width:100%; height:100%; }
+@media (prefers-reduced-motion:no-preference){
+  .pn-seam.is-armed svg > g{ opacity:0; transition:opacity .8s ease; }
+  .pn-seam.is-armed.is-in svg > g{ opacity:1; }
+}
+</style>
+<svg class="pn-seam-sprite" width="0" height="0" style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true" focusable="false">
+  <defs>
+    <symbol id="pns-fern" viewBox="0 0 200 60">
+      <g fill="none" stroke="#2FB58C" stroke-linecap="round" stroke-width="3">
+        <path d="M6 36C60 31 120 27 194 30"/>
+        <path stroke-width="2.4" d="M22.0 35.5q4.0 -11.4 15.5 -16.3M26.0 35.5q4.0 9.8 15.5 14.7M37.0 35.0q4.0 -11.0 15.0 -15.7M41.0 35.0q4.0 9.4 15.0 14.2M52.0 34.5q4.0 -10.6 14.4 -15.1M56.0 34.5q4.0 9.1 14.4 13.6M67.0 34.1q4.0 -10.2 13.8 -14.5M71.0 34.1q4.0 8.7 13.8 13.1M82.0 33.6q4.0 -9.7 13.2 -13.9M86.0 33.6q4.0 8.3 13.2 12.5M97.0 33.1q4.0 -9.3 12.6 -13.3M101.0 33.1q4.0 8.0 12.6 12.0M112.0 32.6q4.0 -8.9 12.1 -12.7M116.0 32.6q4.0 7.6 12.1 11.4M127.0 32.1q4.0 -8.5 11.5 -12.1M131.0 32.1q4.0 7.2 11.5 10.9M142.0 31.7q4.0 -8.0 10.9 -11.5M146.0 31.7q4.0 6.9 10.9 10.3M157.0 31.2q4.0 -7.6 10.3 -10.9M161.0 31.2q4.0 6.5 10.3 9.8M172.0 30.7q4.0 -7.2 9.7 -10.2M176.0 30.7q4.0 6.1 9.7 9.2"/>
+      </g>
+    </symbol>
+    <symbol id="pns-flower" viewBox="-14 -14 28 28">
+      <g fill="#F2836B" stroke="#FFF6EC" stroke-width="1">
+        <ellipse cx="0" cy="-6.2" rx="4" ry="6"/>
+        <ellipse cx="0" cy="-6.2" rx="4" ry="6" transform="rotate(72)"/>
+        <ellipse cx="0" cy="-6.2" rx="4" ry="6" transform="rotate(144)"/>
+        <ellipse cx="0" cy="-6.2" rx="4" ry="6" transform="rotate(216)"/>
+        <ellipse cx="0" cy="-6.2" rx="4" ry="6" transform="rotate(288)"/>
+      </g>
+      <circle r="2.3" fill="#FFF6EC"/>
+    </symbol>
+    <symbol id="pns-leaf" viewBox="0 0 70 56">
+      <path d="M8 30C4 18 16 8 26 14C30 4 44 4 46 14C58 10 66 22 58 30C66 38 58 50 46 44C42 54 28 54 26 44C14 50 4 42 8 30Z" fill="#2E6B4A" stroke="#7CC8F0" stroke-width="2.4" stroke-linejoin="round"/>
+      <g fill="#6FC3F2"><circle cx="20" cy="26" r="1.9"/><circle cx="28" cy="20" r="1.9"/><circle cx="36" cy="16" r="1.9"/><circle cx="44" cy="22" r="1.9"/><circle cx="52" cy="28" r="1.9"/><circle cx="30" cy="32" r="1.9"/><circle cx="40" cy="30" r="1.9"/><circle cx="24" cy="38" r="1.9"/><circle cx="34" cy="42" r="1.9"/><circle cx="46" cy="38" r="1.9"/><circle cx="16" cy="32" r="1.9"/><circle cx="54" cy="36" r="1.9"/></g>
+    </symbol>
+    <symbol id="pns-loops" viewBox="0 0 92 32">
+      <path d="M3 22c7 0 12-7 7-10c-6-3-10 8-2 11c6 2 11-1 14-4c5-6 12-6 9 1c-3 6-11 4-5-3c4-5 12-5 15 1c2 4 7 5 11 1c5-6 12-6 9 1c-3 6-11 4-5-3c4-5 12-5 15 1c2 4 7 5 12 3" fill="none" stroke="#5DB5E8" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+    <symbol id="pns-dashes" viewBox="0 0 40 32">
+      <g fill="#8EA6BC"><rect x="2" y="3" width="3.2" height="8" rx="1.2"/><rect x="11" y="3" width="3.2" height="8" rx="1.2"/><rect x="20" y="3" width="3.2" height="8" rx="1.2"/><rect x="29" y="3" width="3.2" height="8" rx="1.2"/><rect x="6" y="13" width="3.2" height="8" rx="1.2"/><rect x="15" y="13" width="3.2" height="8" rx="1.2"/><rect x="24" y="13" width="3.2" height="8" rx="1.2"/><rect x="33" y="13" width="3.2" height="8" rx="1.2"/><rect x="2" y="23" width="3.2" height="8" rx="1.2"/><rect x="11" y="23" width="3.2" height="8" rx="1.2"/><rect x="20" y="23" width="3.2" height="8" rx="1.2"/></g>
+    </symbol>
+    <symbol id="pns-pods" viewBox="0 0 64 64">
+      <g fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"><path d="M32 62L16 26"/><path d="M32 62L32 22"/><path d="M32 62L48 26"/></g>
+      <g stroke="#2350D8" stroke-width="2.4" fill="#F7EEDB">
+        <ellipse cx="0" cy="0" rx="7" ry="12" transform="translate(14 18) rotate(-28)"/>
+        <ellipse cx="0" cy="0" rx="7" ry="12" transform="translate(32 13)"/>
+        <ellipse cx="0" cy="0" rx="7" ry="12" transform="translate(50 18) rotate(28)"/>
+      </g>
+      <g stroke="#3D8FE0" stroke-width="1.6" stroke-linecap="round" fill="none">
+        <path d="M0 -8V8M-3 -6V6M3 -6V6" transform="translate(14 18) rotate(-28)"/>
+        <path d="M0 -8V8M-3 -6V6M3 -6V6" transform="translate(32 13)"/>
+        <path d="M0 -8V8M-3 -6V6M3 -6V6" transform="translate(50 18) rotate(28)"/>
+      </g>
+    </symbol>
+    <symbol id="pns-feather" viewBox="0 0 140 44">
+      <path d="M14.8 24.8l7 19M25.7 22.1l7 19M36.6 19.4l7 19M47.4 16.6l7 19M58.3 13.9l7 19M69.2 11.2l7 19M80.1 8.5l7 19M91.0 5.8l7 19M101.8 3.0l7 19M112.7 0.3l7 19" fill="none" stroke="#E0352B" stroke-width="4.4" stroke-linecap="round" transform="translate(0 -6)"/>
+      <path d="M6 38L134 6" fill="none" stroke="#2FB58C" stroke-width="2.6" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="pns-bowl" viewBox="0 0 56 56">
+      <g stroke="#FFFFFF" stroke-width="1.8" fill="none" stroke-linecap="round"><path d="M18 26L12 9"/><path d="M28 26L28 6"/><path d="M38 26L44 9"/></g>
+      <g fill="#B08A2E"><circle cx="12" cy="8" r="3.2"/><circle cx="28" cy="5" r="3.2"/><circle cx="44" cy="8" r="3.2"/></g>
+      <path d="M8 26H48C48 41 40 51 28 51C16 51 8 41 8 26Z" fill="#F2C230" stroke="#B8862A" stroke-width="1.4"/>
+      <g fill="none" stroke="#B8862A" stroke-width="1.2"><path d="M13 26C13 37 20 45 28 45C36 45 43 37 43 26"/><path d="M18 26C18 34 23 40 28 40C33 40 38 34 38 26"/><path d="M23 26C23 31 25 35 28 35C31 35 33 31 33 26"/></g>
+    </symbol>
+    <symbol id="pns-rosette" viewBox="-32 -32 64 64">
+      <g fill="#A9C8F5" stroke="#8C6E3C" stroke-width="1.2">
+        <ellipse cx="0" cy="-15" rx="4.6" ry="10.5"/><ellipse cx="0" cy="-15" rx="4.6" ry="10.5" transform="rotate(45)"/><ellipse cx="0" cy="-15" rx="4.6" ry="10.5" transform="rotate(90)"/><ellipse cx="0" cy="-15" rx="4.6" ry="10.5" transform="rotate(135)"/>
+        <ellipse cx="0" cy="-15" rx="4.6" ry="10.5" transform="rotate(180)"/><ellipse cx="0" cy="-15" rx="4.6" ry="10.5" transform="rotate(225)"/><ellipse cx="0" cy="-15" rx="4.6" ry="10.5" transform="rotate(270)"/><ellipse cx="0" cy="-15" rx="4.6" ry="10.5" transform="rotate(315)"/>
+      </g>
+      <circle r="3.4" fill="#2350D8"/>
+    </symbol>
+    <symbol id="pns-dots" viewBox="0 0 34 34">
+      <g fill="#2350D8"><circle cx="9" cy="6" r="2"/><circle cx="17" cy="6" r="2"/><circle cx="25" cy="6" r="2"/><circle cx="5" cy="13" r="2"/><circle cx="13" cy="13" r="2"/><circle cx="21" cy="13" r="2"/><circle cx="29" cy="13" r="2"/><circle cx="9" cy="20" r="2"/><circle cx="17" cy="20" r="2"/><circle cx="25" cy="20" r="2"/><circle cx="13" cy="27" r="2"/><circle cx="21" cy="27" r="2"/></g>
+    </symbol>
+    <symbol id="pns-squares" viewBox="0 0 46 46">
+      <g fill="#E8604A"><rect x="3" y="4" width="14" height="14" rx="2"/><rect x="21" y="2" width="14" height="14" rx="2"/><rect x="8" y="23" width="14" height="14" rx="2"/><rect x="27" y="22" width="14" height="14" rx="2"/></g>
+      <g stroke="#F9C3B4" stroke-width="1.3" stroke-linecap="round"><path d="M7 8v6M10 8v6M13 8v6M25 6v6M28 6v6M31 6v6M12 27v6M15 27v6M18 27v6M31 26v6M34 26v6M37 26v6"/></g>
+    </symbol>
+    <symbol id="pns-sun" viewBox="-24 -24 48 48">
+      <circle r="9.5" fill="none" stroke="#4FA8E8" stroke-width="6"/>
+      <path d="M-13.2 4.8L-19.7 7.2M-11.1 8.5L-16.7 12.8M-8.0 11.5L-12.0 17.2M-4.2 13.4L-6.3 20.0M0 14L0 21M4.2 13.4L6.3 20.0M8.0 11.5L12.0 17.2M11.1 8.5L16.7 12.8M13.2 4.8L19.7 7.2" stroke="#2F6FD8" stroke-width="2.2" stroke-linecap="round"/>
+    </symbol>
+  </defs>
+</svg>
+<script>
+(function(){
+  if (window.__pnSeams) { return; }
+  window.__pnSeams = 1;
+  function run(){
+    var seams = document.querySelectorAll('.pn-seam');
+    if (!seams.length) { return; }
+    var still = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (still || !('IntersectionObserver' in window)) { return; }
+    var io = new IntersectionObserver(function(es){
+      es.forEach(function(en){ if (en.isIntersecting) { en.target.classList.add('is-in'); io.unobserve(en.target); } });
+    }, { threshold: 0.3 });
+    Array.prototype.forEach.call(seams, function(s){
+      var uses = s.querySelectorAll('svg > g');
+      Array.prototype.forEach.call(uses, function(u, i){ u.style.transitionDelay = (i * 0.05) + 's'; });
+      s.classList.add('is-armed'); io.observe(s);
+    });
+  }
+  if (document.readyState === 'loading') { document.addEventListener('DOMContentLoaded', run); } else { run(); }
+})();
+</script>
+<style>
 #pn-pcap{
-  --sand:#EFE2C2; --sand2:#E2CFA4; --ink:#1A140C; --mut:rgba(26,20,12,.80); --dim:rgba(26,20,12,.62); --hair:rgba(26,20,12,.14);
-  --acc:#7E5A0C; --accs:#946B12; --gold:#E3C258; --gs:#F0D68F; --deep:#123A2C; --deep2:#0B2219; --iv:#F5F1E8;
-  --tm:rgba(245,241,232,.84); --td:rgba(245,241,232,.64); --lh:rgba(245,241,232,.16);
+  --er:#0B3D45; --lg:#0F4C5C; --dp:#082A30; --iv:#F4ECD8; --iv2:#FBF6EA; --ink:#14262A;
+  --mut:rgba(20,38,42,.80); --dim:rgba(20,38,42,.62); --hair:rgba(20,38,42,.14); --tc:#8A3A22;
+  --gold:#E3C258; --gs:#F0D68F; --tm:rgba(244,236,216,.86); --td:rgba(244,236,216,.64); --lh:rgba(244,236,216,.16);
   --hd:var(--pn-font-heading,"Barlow Condensed","Arial Narrow",Arial,sans-serif);
   --bd:var(--pn-font-body,"Barlow Semi Condensed",Arial,sans-serif);
   position:relative; width:100vw; margin-left:calc(50% - 50vw); overflow-x:hidden; overflow-x:clip;
-  color:var(--ink); font-family:var(--bd); line-height:1.55; box-sizing:border-box; background:var(--sand);
+  color:var(--ink); font-family:var(--bd); line-height:1.5; box-sizing:border-box; background:var(--iv);
 }
 #pn-pcap *,#pn-pcap *::before,#pn-pcap *::after{ box-sizing:border-box; }
 .elementor-widget-html:has(#pn-pcap),.elementor-widget:has(#pn-pcap),.elementor-widget-wrap:has(#pn-pcap),
@@ -35,166 +168,201 @@ SOFI page once its address is confirmed.
   padding-top:0 !important; padding-bottom:0 !important; margin-top:0 !important; margin-bottom:0 !important;
   --widgets-spacing:0px !important; row-gap:0 !important;
 }
-#pn-pcap .pq-band{ position:relative; isolation:isolate; padding:clamp(40px,6vh,76px) 0; }
-#pn-pcap .pq-in{ width:100%; max-width:1440px; margin:0 auto; padding:0 clamp(18px,4.4vw,64px); }
-#pn-pcap .pq-eb{ display:flex; align-items:center; gap:10px; margin:0 0 10px; font-family:var(--hd); font-size:.68rem; font-weight:700; letter-spacing:.28em; text-transform:uppercase; color:var(--mut); }
-#pn-pcap .pq-eb::before{ content:""; width:24px; height:2px; background:currentColor; }
-#pn-pcap h1.pq-h1, #pn-pcap h2.pq-h2{ margin:0; font-family:var(--hd); font-weight:600; letter-spacing:-.025em; text-transform:none; color:inherit !important; text-wrap:balance; }
-#pn-pcap h1.pq-h1{ max-width:14ch; font-size:clamp(2.9rem,6.4vw,6.4rem); line-height:.88; }
-#pn-pcap h2.pq-h2{ max-width:22ch; font-size:clamp(2rem,3.6vw,3.5rem); line-height:.95; }
-#pn-pcap .pq-h1 em, #pn-pcap .pq-h2 em{ font-style:normal; color:var(--acc); }
-#pn-pcap .pq-lead{ margin:12px 0 0; max-width:60ch; font-size:clamp(1rem,1.15vw,1.12rem); line-height:1.55; color:var(--mut); }
-#pn-pcap .pq-head{ display:flex; flex-wrap:wrap; align-items:flex-end; justify-content:space-between; gap:12px 48px; }
-#pn-pcap .pq-head .pq-lead{ max-width:52ch; }
-#pn-pcap .pq-btns{ display:flex; flex-wrap:wrap; gap:10px; margin-top:22px; }
-#pn-pcap .pq-btn{ display:inline-flex; align-items:center; gap:12px; padding:14px 26px 12px; border-radius:999px; text-decoration:none; font-family:var(--hd); font-size:.74rem; font-weight:700; letter-spacing:.18em; text-transform:uppercase; background:var(--gold); color:#1A140C; border:1px solid var(--gold); box-shadow:0 12px 30px rgba(227,194,88,.26); transition:transform .22s ease, background .22s ease; }
+
+/* grounds: Earthrise, Lagoon and Depth for the dramatic bands, ivory for reading */
+#pn-pcap .pq-band{ position:relative; isolation:isolate; padding:clamp(26px,4.4vh,48px) 0 clamp(24px,4vh,44px); }
+#pn-pcap .pq-er{ color:var(--iv); background:radial-gradient(50% 60% at 88% 0%, rgba(227,194,88,.10) 0%, transparent 62%), linear-gradient(180deg,#0B3D45 0%,#093239 100%); }
+#pn-pcap .pq-lg{ color:var(--iv); background:radial-gradient(55% 60% at 10% 100%, rgba(120,200,205,.14) 0%, transparent 64%), linear-gradient(180deg,#0F4C5C 0%,#0B3D45 100%); }
+#pn-pcap .pq-dp{ color:var(--iv); background:radial-gradient(50% 55% at 92% 0%, rgba(227,194,88,.09) 0%, transparent 62%), linear-gradient(180deg,#082A30 0%,#061F24 100%); }
+#pn-pcap .pq-ivb{ color:var(--ink); background:linear-gradient(180deg,#F4ECD8 0%,#EFE5CC 100%); }
+#pn-pcap .pq-in{ width:100%; max-width:1180px; margin:0 auto; padding:0 clamp(18px,4vw,48px); }
+
+/* type */
+#pn-pcap .pq-eb{ display:flex; align-items:center; gap:10px; margin:0 0 10px; font-family:var(--hd); font-size:.72rem; font-weight:700; letter-spacing:.3em; text-transform:uppercase; color:var(--tc); }
+#pn-pcap .pq-eb::before{ content:""; width:24px; height:1px; background:currentColor; }
+#pn-pcap .pq-er .pq-eb, #pn-pcap .pq-lg .pq-eb, #pn-pcap .pq-dp .pq-eb{ color:var(--gs); }
+#pn-pcap h1.pq-h1, #pn-pcap h2.pq-h2, #pn-pcap h3{ margin:0; font-family:var(--hd); font-weight:600; letter-spacing:-.025em; text-transform:none; color:inherit !important; text-shadow:none !important; text-wrap:balance; }
+#pn-pcap h1.pq-h1{ max-width:13ch; font-size:clamp(2.5rem,6.2vw,6rem); line-height:.92; }
+#pn-pcap h2.pq-h2{ max-width:20ch; font-size:clamp(2.1rem,4.4vw,4rem); line-height:.94; }
+#pn-pcap .pq-h1 em, #pn-pcap .pq-h2 em{ font-style:normal; color:var(--tc); }
+#pn-pcap .pq-er .pq-h1 em, #pn-pcap .pq-er .pq-h2 em, #pn-pcap .pq-lg .pq-h2 em, #pn-pcap .pq-dp .pq-h2 em{ color:var(--gs); }
+#pn-pcap .pq-lead{ margin:12px 0 0; max-width:58ch; font-size:clamp(1rem,1.25vw,1.14rem); line-height:1.5; color:var(--mut); }
+#pn-pcap .pq-er .pq-lead, #pn-pcap .pq-lg .pq-lead, #pn-pcap .pq-dp .pq-lead{ color:var(--tm); }
+#pn-pcap .pq-head{ display:flex; flex-wrap:wrap; align-items:flex-end; justify-content:space-between; gap:10px 48px; }
+#pn-pcap .pq-head .pq-lead{ max-width:44ch; }
+
+/* buttons: gold for what a visitor can act on */
+#pn-pcap .pq-btns{ display:flex; flex-wrap:wrap; gap:10px; margin-top:20px; }
+#pn-pcap .pq-btn{ display:inline-flex; align-items:center; justify-content:center; gap:12px; min-height:46px; padding:13px 24px 11px; border-radius:999px; text-decoration:none; font-family:var(--hd); font-size:.74rem; font-weight:700; letter-spacing:.19em; text-transform:uppercase; background:var(--gold); color:#14262A; border:1px solid var(--gold); box-shadow:0 12px 30px rgba(227,194,88,.22); transition:transform .22s ease, background .22s ease; }
 #pn-pcap .pq-btn::after{ content:"\2192"; font-family:Arial,sans-serif; font-size:1rem; letter-spacing:0; transition:transform .3s cubic-bezier(.22,1,.36,1); }
-#pn-pcap .pq-btn:hover{ transform:translateY(-2px); background:var(--gs); color:#1A140C; }
+#pn-pcap .pq-btn:hover{ transform:translateY(-2px); background:var(--gs); color:#14262A; }
 #pn-pcap .pq-btn:hover::after{ transform:translateX(5px); }
 #pn-pcap .pq-btn--line{ background:transparent; color:var(--gold); border-color:rgba(227,194,88,.6); box-shadow:none; }
 #pn-pcap .pq-btn--line:hover{ background:rgba(227,194,88,.12); color:var(--gold); }
-#pn-pcap .pq-btn--ink{ background:var(--ink); border-color:var(--ink); color:var(--iv); box-shadow:none; }
-#pn-pcap .pq-btn--ink:hover{ background:#3A2D1A; color:var(--iv); }
-#pn-pcap a:focus-visible, #pn-pcap button:focus-visible{ outline:2px solid var(--gs); outline-offset:3px; }
+#pn-pcap .pq-ivb .pq-btn--line{ color:var(--er); border-color:rgba(11,61,69,.5); }
+#pn-pcap .pq-ivb .pq-btn--line:hover{ background:rgba(11,61,69,.08); color:var(--er); }
+#pn-pcap a:focus-visible, #pn-pcap button:focus-visible, #pn-pcap [tabindex]:focus-visible{ outline:2px solid var(--gs); outline-offset:3px; }
 
-/* the hero: seven threads and the Living Line, drawn in WebGL */
-#pn-pcap .pq-hero{ overflow:hidden; color:var(--iv); padding:clamp(48px,8vh,96px) 0 clamp(44px,7vh,84px); min-height:clamp(560px,84vh,860px); display:flex; align-items:center;
-  background:radial-gradient(60% 70% at 78% 30%, rgba(227,194,88,.16) 0%, transparent 60%), radial-gradient(70% 60% at 10% 100%, rgba(22,122,95,.32) 0%, transparent 64%), linear-gradient(180deg,#0B2219 0%,#123A2C 60%,#0E2E22 100%); }
+/* 1. the hero: seven threads and the Living Line, drawn in WebGL on Earthrise */
+#pn-pcap .pq-hero{ overflow:hidden; color:var(--iv); padding:clamp(40px,7vh,84px) 0 clamp(36px,6vh,72px); min-height:clamp(520px,78vh,800px); display:flex; align-items:center;
+  background:radial-gradient(60% 70% at 78% 30%, rgba(227,194,88,.14) 0%, transparent 60%), radial-gradient(70% 60% at 10% 100%, rgba(120,200,205,.16) 0%, transparent 64%), linear-gradient(180deg,#082A30 0%,#0B3D45 60%,#0A363D 100%); }
 #pn-pcap .pq-gl{ position:absolute; inset:0; z-index:-1; width:100%; height:100%; display:block; opacity:0; transition:opacity 1.2s ease; }
 #pn-pcap .pq-gl.is-on{ opacity:1; }
-#pn-pcap .pq-hero::after{ content:""; position:absolute; inset:0; z-index:-1; pointer-events:none; background:linear-gradient(90deg, rgba(11,34,25,.86) 0%, rgba(11,34,25,.55) 42%, rgba(11,34,25,0) 70%); }
+#pn-pcap .pq-hero::after{ content:""; position:absolute; inset:0; z-index:-1; pointer-events:none; background:linear-gradient(90deg, rgba(8,42,48,.84) 0%, rgba(8,42,48,.5) 42%, rgba(8,42,48,0) 72%); }
 #pn-pcap .pq-hero .pq-in{ position:relative; }
-#pn-pcap .pq-hero__grid{ display:grid; gap:clamp(26px,4vw,72px); grid-template-columns:minmax(0,1fr); align-items:center; }
+#pn-pcap .pq-hero__grid{ display:grid; gap:clamp(22px,4vw,64px); grid-template-columns:minmax(0,1fr); align-items:center; }
 @media (min-width:1020px){ #pn-pcap .pq-hero__grid{ grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr); } }
-#pn-pcap .pq-hero .pq-eb{ color:var(--gs); }
-#pn-pcap .pq-hero .pq-h1 em{ color:var(--gold); }
-#pn-pcap .pq-hero .pq-lead{ color:var(--tm); max-width:46ch; font-size:clamp(1.04rem,1.3vw,1.24rem); }
-#pn-pcap .pq-ll{ display:flex; align-items:center; gap:12px; margin:22px 0 0; font-size:.86rem; line-height:1.4; color:var(--td); }
+#pn-pcap .pq-hero .pq-lead{ max-width:42ch; font-size:clamp(1.04rem,1.3vw,1.22rem); }
+#pn-pcap .pq-ll{ display:flex; align-items:center; gap:12px; margin:18px 0 0; font-size:.84rem; line-height:1.4; color:var(--td); }
 #pn-pcap .pq-ll::before{ content:""; flex:none; width:34px; height:2px; border-radius:2px; background:var(--gold); box-shadow:0 0 12px rgba(227,194,88,.9); }
-#pn-pcap .pq-ll b{ font-family:var(--hd); font-weight:700; letter-spacing:.16em; text-transform:uppercase; font-size:.68rem; color:var(--gold); margin-right:4px; }
-#pn-pcap .pq-def{ position:relative; padding:clamp(20px,2.4vw,32px); border-radius:24px; background:rgba(245,241,232,.96); color:var(--ink); box-shadow:0 34px 80px rgba(0,0,0,.42); }
-#pn-pcap .pq-def small{ display:block; font-family:var(--hd); font-size:.64rem; font-weight:700; letter-spacing:.24em; color:var(--acc); }
-#pn-pcap .pq-def p.pq-def__m{ margin:8px 0 0; font-family:var(--hd); font-weight:600; font-size:clamp(1.4rem,2vw,1.9rem); line-height:1.1; letter-spacing:-.01em; }
-#pn-pcap .pq-def p.pq-def__m em{ font-style:normal; color:var(--acc); }
-#pn-pcap .pq-def__ll{ margin:14px 0 0; padding:12px 14px; border-radius:14px; background:var(--deep); color:var(--tm); font-size:.94rem; line-height:1.45; }
-#pn-pcap .pq-def__ll b{ display:block; font-family:var(--hd); font-size:1.12rem; font-weight:600; line-height:1.15; color:var(--iv); }
-#pn-pcap .pq-def__ll b span{ color:var(--gold); }
-#pn-pcap .pq-eq{ display:grid; grid-template-columns:minmax(0,1fr) auto minmax(0,1fr) auto minmax(0,1.15fr); gap:8px; align-items:center; margin:14px 0 0; padding:0; list-style:none; }
-#pn-pcap .pq-eq li{ padding:10px 12px; border-radius:12px; background:rgba(26,20,12,.05); border:1px solid var(--hair); font-family:var(--hd); font-size:.98rem; font-weight:600; line-height:1.1; }
-#pn-pcap .pq-eq li small{ margin-top:3px; font-family:var(--bd); font-size:.74rem; font-weight:400; letter-spacing:0; color:var(--dim); }
-#pn-pcap .pq-eq li.pq-eq__op{ padding:0; border:0; background:none; font-family:Arial,sans-serif; font-size:1rem; color:var(--acc); }
-#pn-pcap .pq-eq li.pq-eq__r{ background:var(--ink); border-color:var(--ink); color:var(--iv); }
+#pn-pcap .pq-def{ position:relative; padding:clamp(18px,2.2vw,30px); border-radius:22px; background:rgba(244,236,216,.97); color:var(--ink); box-shadow:0 34px 80px rgba(0,0,0,.42); }
+#pn-pcap .pq-def small{ display:block; font-family:var(--hd); font-size:.66rem; font-weight:700; letter-spacing:.26em; color:var(--tc); }
+#pn-pcap .pq-def__m{ margin:8px 0 0; font-family:var(--hd); font-weight:600; font-size:clamp(1.4rem,2vw,1.85rem); line-height:1.1; letter-spacing:-.01em; }
+#pn-pcap .pq-def__m em{ font-style:normal; color:var(--tc); }
+#pn-pcap .pq-def__ll{ margin:12px 0 0; padding:11px 14px; border-radius:14px; background:var(--er); color:var(--tm); font-family:var(--hd); font-size:1.06rem; font-weight:600; line-height:1.2; }
+#pn-pcap .pq-def__ll span{ color:var(--gs); }
+#pn-pcap .pq-eq{ display:grid; grid-template-columns:minmax(0,1fr) auto minmax(0,1fr) auto minmax(0,1.15fr); gap:8px; align-items:center; margin:12px 0 0; padding:0; list-style:none; }
+#pn-pcap .pq-eq li{ padding:9px 11px; border-radius:12px; background:rgba(20,38,42,.05); border:1px solid var(--hair); font-family:var(--hd); font-size:.98rem; font-weight:600; line-height:1.1; }
+#pn-pcap .pq-eq li small{ margin-top:3px; font-family:var(--bd); font-size:.72rem; font-weight:400; letter-spacing:0; color:var(--dim); }
+#pn-pcap .pq-eq li.pq-eq__op{ padding:0; border:0; background:none; font-family:Arial,sans-serif; font-size:1rem; color:var(--tc); }
+#pn-pcap .pq-eq li.pq-eq__r{ background:var(--er); border-color:var(--er); color:var(--iv); }
 #pn-pcap .pq-eq li.pq-eq__r small{ color:var(--td); }
-#pn-pcap .pq-def__note{ margin:10px 0 0; font-size:.82rem; line-height:1.45; color:var(--dim); }
 
-/* the ribbon of eight illustrations */
-#pn-pcap .pq-rib{ position:relative; overflow:hidden; background:#0B2219; padding:10px 0; }
+/* 2. the ribbon of eight illustrations */
+#pn-pcap .pq-rib{ position:relative; overflow:hidden; background:var(--dp); padding:10px 0 8px; }
 #pn-pcap .pq-rib__t{ display:flex; gap:10px; width:max-content; padding:0 10px; }
 @media (prefers-reduced-motion:no-preference){ #pn-pcap .pq-rib.is-run .pq-rib__t{ animation:pqRib 70s linear infinite; } #pn-pcap .pq-rib.is-run:hover .pq-rib__t{ animation-play-state:paused; } }
 @keyframes pqRib{ to{ transform:translateX(-50%); } }
-#pn-pcap .pq-rib figure{ position:relative; flex:none; width:clamp(220px,22vw,340px); aspect-ratio:5/3; margin:0; border-radius:16px; overflow:hidden; background:linear-gradient(150deg,#1F6B54 0%,#123A2C 100%); }
+#pn-pcap .pq-rib figure{ position:relative; flex:none; width:clamp(200px,21vw,320px); aspect-ratio:5/3; margin:0; border-radius:14px; overflow:hidden; background:linear-gradient(150deg,#0F4C5C 0%,#082A30 100%); }
 #pn-pcap .pq-rib img{ position:absolute; inset:0; display:block; width:100%; height:100%; max-width:none; object-fit:cover; opacity:0; transition:opacity .6s ease; }
 #pn-pcap .pq-rib figure.is-loaded img{ opacity:1; }
 #pn-pcap .pq-rib img:not([src]){ display:none; }
-#pn-pcap .pq-rib figcaption{ position:absolute; left:10px; bottom:10px; padding:6px 10px 5px; border-radius:999px; background:var(--c); color:#F5F1E8; font-family:var(--hd); font-size:.64rem; font-weight:700; letter-spacing:.16em; text-transform:uppercase; }
-#pn-pcap .pq-rib__note{ margin:8px 0 0; text-align:center; font-size:11.5px; color:var(--td); }
+#pn-pcap .pq-rib figcaption{ position:absolute; left:10px; bottom:10px; padding:6px 10px 5px; border-radius:999px; background:var(--c); color:#F4ECD8; font-family:var(--hd); font-size:.64rem; font-weight:700; letter-spacing:.16em; text-transform:uppercase; }
+#pn-pcap .pq-rib__note{ margin:7px 0 0; text-align:center; font-size:11.5px; color:var(--td); }
 
-/* the four numbers */
-#pn-pcap .pq-four-band{ background:linear-gradient(180deg,var(--sand) 0%,#E9DAB4 100%); }
-#pn-pcap .pq-four{ display:grid; gap:12px; margin:clamp(20px,3vh,32px) 0 0; padding:0; list-style:none; grid-template-columns:minmax(0,1fr); }
-@media (min-width:700px){ #pn-pcap .pq-four{ grid-template-columns:repeat(2,minmax(0,1fr)); } }
-@media (min-width:1120px){ #pn-pcap .pq-four{ grid-template-columns:repeat(4,minmax(0,1fr)); } }
-#pn-pcap .pq-four li{ position:relative; display:flex; flex-direction:column; padding:clamp(18px,2vw,26px); border-radius:22px; background:rgba(255,252,242,.78); border:1px solid var(--hair); overflow:hidden; }
-#pn-pcap .pq-four li:first-child{ background:var(--deep); border-color:var(--deep); color:var(--iv); box-shadow:0 26px 60px rgba(18,58,44,.32); }
-#pn-pcap .pq-four li:nth-child(2){ background:var(--ink); border-color:var(--ink); color:var(--iv); }
-#pn-pcap .pq-four small{ font-family:var(--hd); font-size:.62rem; font-weight:700; letter-spacing:.24em; text-transform:uppercase; color:var(--acc); }
-#pn-pcap .pq-four li:first-child small, #pn-pcap .pq-four li:nth-child(2) small{ color:var(--gold); }
-#pn-pcap .pq-four h3{ margin:8px 0 0; font-family:var(--hd); font-weight:600; font-size:clamp(1.5rem,2vw,1.9rem); line-height:1; letter-spacing:-.01em; color:inherit !important; text-transform:none; }
-#pn-pcap .pq-four p{ margin:10px 0 0; font-size:.94rem; line-height:1.5; color:var(--mut); }
+/* 3. the four numbers (ivory) */
+#pn-pcap .pq-four{ display:grid; gap:10px; margin:clamp(16px,2.6vh,26px) 0 0; padding:0; list-style:none; grid-template-columns:repeat(2,minmax(0,1fr)); }
+@media (min-width:1080px){ #pn-pcap .pq-four{ grid-template-columns:repeat(4,minmax(0,1fr)); gap:12px; } }
+#pn-pcap .pq-four li{ display:flex; flex-direction:column; min-width:0; padding:clamp(16px,1.8vw,24px); border-radius:20px; background:var(--iv2); border:1px solid var(--hair); }
+#pn-pcap .pq-four li:first-child{ background:var(--er); border-color:var(--er); color:var(--iv); box-shadow:0 22px 50px rgba(11,61,69,.28); }
+#pn-pcap .pq-four li:nth-child(2){ background:var(--dp); border-color:var(--dp); color:var(--iv); }
+#pn-pcap .pq-four small{ font-family:var(--hd); font-size:.62rem; font-weight:700; letter-spacing:.24em; text-transform:uppercase; color:var(--tc); }
+#pn-pcap .pq-four li:first-child small, #pn-pcap .pq-four li:nth-child(2) small{ color:var(--gs); }
+#pn-pcap .pq-four h3{ margin-top:6px; font-size:clamp(1.35rem,1.9vw,1.8rem); line-height:1; letter-spacing:-.01em; }
+#pn-pcap .pq-four p{ margin:8px 0 12px; font-size:.92rem; line-height:1.45; color:var(--mut); }
 #pn-pcap .pq-four li:first-child p, #pn-pcap .pq-four li:nth-child(2) p{ color:var(--tm); }
-#pn-pcap .pq-four .pq-ex{ display:flex; align-items:baseline; gap:10px; margin-top:auto; padding-top:14px; border-top:1px solid var(--hair); }
+#pn-pcap .pq-ex{ display:flex; align-items:baseline; flex-wrap:wrap; gap:4px 10px; margin-top:auto; padding-top:12px; border-top:1px solid var(--hair); }
 #pn-pcap .pq-four li:first-child .pq-ex, #pn-pcap .pq-four li:nth-child(2) .pq-ex{ border-top-color:var(--lh); }
-#pn-pcap .pq-four .pq-ex b{ flex:none; font-family:var(--hd); font-weight:700; font-size:clamp(1.9rem,2.6vw,2.5rem); line-height:.9; letter-spacing:-.02em; font-variant-numeric:tabular-nums; }
+#pn-pcap .pq-ex b{ flex:none; font-family:var(--hd); font-weight:700; font-size:clamp(1.8rem,2.5vw,2.4rem); line-height:.9; letter-spacing:-.02em; font-variant-numeric:tabular-nums; color:var(--er); }
 #pn-pcap .pq-four li:first-child .pq-ex b, #pn-pcap .pq-four li:nth-child(2) .pq-ex b{ color:var(--gold); }
-#pn-pcap .pq-four .pq-ex span{ font-size:.8rem; line-height:1.35; color:var(--dim); }
+#pn-pcap .pq-ex span{ font-size:.8rem; line-height:1.3; color:var(--dim); }
 #pn-pcap .pq-four li:first-child .pq-ex span, #pn-pcap .pq-four li:nth-child(2) .pq-ex span{ color:var(--td); }
-#pn-pcap .pq-four li > p{ margin-bottom:14px; }
 
-/* the seven standards: the wheel and its card */
-#pn-pcap .pq-wband{ background:radial-gradient(55% 55% at 26% 55%, rgba(255,250,232,.9) 0%, transparent 64%), linear-gradient(180deg,#E9DAB4 0%,var(--sand2) 100%); }
-#pn-pcap .pq-stage{ display:grid; gap:clamp(22px,3.4vw,56px); grid-template-columns:minmax(0,1fr); align-items:center; margin-top:clamp(18px,3vh,30px); }
-@media (min-width:980px){ #pn-pcap .pq-stage{ grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr); } }
-#pn-pcap .pq-wheel{ display:block; width:100%; max-width:520px; height:auto; margin:0 auto; overflow:visible; }
-#pn-pcap .pq-ring{ fill:none; stroke:rgba(126,90,12,.35); stroke-width:1.2; }
-#pn-pcap .pq-ticks line{ stroke:var(--acc); stroke-width:2; }
+/* 4. the seven standards: the wheel and its card (Earthrise) */
+#pn-pcap .pq-stage{ display:grid; gap:clamp(18px,3.2vw,52px); grid-template-columns:minmax(0,1fr); align-items:center; margin-top:clamp(14px,2.6vh,26px); }
+@media (min-width:980px){ #pn-pcap .pq-stage{ grid-template-columns:minmax(0,.86fr) minmax(0,1.14fr); } }
+#pn-pcap .pq-wheel{ display:block; width:100%; max-width:470px; height:auto; margin:0 auto; overflow:visible; }
+#pn-pcap .pq-ring{ fill:none; stroke:rgba(227,194,88,.38); stroke-width:1.2; }
+#pn-pcap .pq-ticks line{ stroke:rgba(227,194,88,.7); stroke-width:2; }
 #pn-pcap .pq-seg{ cursor:pointer; outline:none; transform-box:view-box; transform-origin:300px 300px; transition:transform .45s cubic-bezier(.22,1,.36,1), opacity .35s ease; }
+#pn-pcap .pq-seg path:first-child{ stroke:#0A3038; stroke-width:2; }
 #pn-pcap .pq-ic{ fill:none; stroke:#FFF4D6; stroke-width:1.5; stroke-linecap:round; stroke-linejoin:round; pointer-events:none; }
 #pn-pcap .pq-lab{ font-family:var(--hd); font-size:15px; font-weight:700; letter-spacing:.12em; fill:rgba(255,244,214,.94); pointer-events:none; }
-#pn-pcap .pq-wheel.has-on .pq-seg{ opacity:.7; }
+#pn-pcap .pq-wheel.has-on .pq-seg{ opacity:.62; }
 #pn-pcap .pq-wheel.has-on .pq-seg.is-on{ opacity:1; transform:translate(var(--dx),var(--dy)); }
-#pn-pcap .pq-seg.is-on path:first-child{ filter:drop-shadow(0 10px 18px rgba(60,40,10,.35)); }
-#pn-pcap .pq-seg:focus-visible path:first-child{ stroke:var(--ink); stroke-width:3; }
-#pn-pcap .pq-core{ fill:var(--deep); }
+#pn-pcap .pq-seg.is-on path:first-child{ stroke:var(--gold); stroke-width:2.5; }
+#pn-pcap .pq-seg:focus-visible path:first-child{ stroke:#FFF4D6; stroke-width:3; }
+#pn-pcap .pq-core{ fill:var(--dp); }
 #pn-pcap .pq-core-line{ fill:none; stroke:rgba(227,194,88,.55); stroke-width:1; stroke-dasharray:2 5; }
 #pn-pcap .pq-c1{ font-family:var(--hd); font-size:15px; font-weight:700; letter-spacing:.26em; fill:var(--gold); }
 #pn-pcap .pq-c2{ font-family:var(--hd); font-size:92px; font-weight:600; fill:var(--iv); }
-#pn-pcap .pq-c3{ font-family:var(--hd); font-size:12.5px; font-weight:700; letter-spacing:.22em; fill:rgba(245,241,232,.78); }
-#pn-pcap .pq-card{ position:relative; padding:clamp(20px,2.6vw,34px); border-radius:24px; background:var(--deep); color:var(--iv); box-shadow:0 30px 60px rgba(60,40,10,.25); overflow:hidden; }
+#pn-pcap .pq-c3{ font-family:var(--hd); font-size:12.5px; font-weight:700; letter-spacing:.22em; fill:rgba(244,236,216,.78); }
+#pn-pcap .pq-card{ position:relative; padding:clamp(18px,2.4vw,30px) clamp(18px,2.4vw,30px) clamp(16px,2vw,24px) clamp(22px,2.8vw,36px); border-radius:22px; background:var(--iv); color:var(--ink); box-shadow:0 30px 70px rgba(0,0,0,.34); overflow:hidden; }
 #pn-pcap .pq-card::before{ content:""; position:absolute; left:0; top:0; bottom:0; width:6px; background:var(--c,#8A5A12); transition:background .4s ease; }
-#pn-pcap .pq-num{ margin:0; font-family:var(--hd); font-size:.7rem; font-weight:700; letter-spacing:.24em; color:var(--gold); }
-#pn-pcap .pq-name{ margin:6px 0 0; font-family:var(--hd); font-weight:600; font-size:clamp(2.2rem,3.4vw,3.2rem); line-height:.95; letter-spacing:-.02em; color:var(--iv) !important; text-transform:none; }
-#pn-pcap .pq-promise{ margin:10px 0 0; font-size:clamp(1.04rem,1.3vw,1.2rem); line-height:1.4; max-width:40ch; color:var(--tm); }
-#pn-pcap .pq-rows{ display:grid; gap:10px; margin:16px 0 0; grid-template-columns:minmax(0,1fr); }
+#pn-pcap .pq-num{ margin:0; font-family:var(--hd); font-size:.68rem; font-weight:700; letter-spacing:.24em; color:var(--tc); }
+#pn-pcap .pq-name{ margin-top:4px !important; font-size:clamp(2rem,3vw,2.8rem); line-height:.95; }
+#pn-pcap .pq-promise{ margin:8px 0 0; font-size:clamp(1rem,1.2vw,1.12rem); line-height:1.4; max-width:44ch; color:var(--mut); }
+#pn-pcap .pq-rows{ display:grid; gap:10px 18px; margin:14px 0 0; grid-template-columns:minmax(0,1fr); }
 @media (min-width:640px){ #pn-pcap .pq-rows{ grid-template-columns:repeat(2,minmax(0,1fr)); } }
-#pn-pcap .pq-rows div{ padding-top:10px; border-top:1px solid var(--lh); }
-#pn-pcap .pq-rows div:first-child{ grid-column:1 / -1; }
-#pn-pcap .pq-rows dt{ font-family:var(--hd); font-size:.62rem; font-weight:700; letter-spacing:.2em; text-transform:uppercase; color:var(--gold); }
-#pn-pcap .pq-rows dd{ margin:4px 0 0; font-size:.92rem; line-height:1.45; color:rgba(245,241,232,.9); }
-#pn-pcap .pq-rows div:first-child dd{ font-family:var(--hd); font-size:1.2rem; font-weight:600; line-height:1.2; color:var(--iv); }
-#pn-pcap .pq-dots{ display:flex; gap:8px; margin-top:18px; }
-#pn-pcap .pq-dots button{ width:28px; height:5px; padding:0; border:0; border-radius:3px; background:rgba(245,241,232,.25); cursor:pointer; }
-#pn-pcap .pq-dots button[aria-pressed="true"]{ background:var(--gold); }
+#pn-pcap .pq-rows div{ padding-top:9px; border-top:1px solid var(--hair); }
+#pn-pcap .pq-rows div.pq-rows__m{ grid-column:1 / -1; }
+#pn-pcap .pq-rows dt{ font-family:var(--hd); font-size:.62rem; font-weight:700; letter-spacing:.2em; text-transform:uppercase; color:var(--tc); }
+#pn-pcap .pq-rows dd{ margin:3px 0 0; font-size:.92rem; line-height:1.42; color:var(--mut); }
+#pn-pcap .pq-rows dd.pq-big{ font-family:var(--hd); font-size:1.18rem; font-weight:600; line-height:1.15; color:var(--ink); }
+#pn-pcap .pq-rows dd small{ display:block; margin-top:3px; font-size:.76rem; color:var(--dim); }
+#pn-pcap .pq-dots{ display:flex; gap:6px; margin-top:16px; }
+#pn-pcap .pq-dots button{ width:28px; height:28px; padding:0; border:0; background:none; cursor:pointer; position:relative; }
+#pn-pcap .pq-dots button::before{ content:""; position:absolute; left:2px; right:2px; top:12px; height:5px; border-radius:3px; background:rgba(20,38,42,.18); }
+#pn-pcap .pq-dots button[aria-pressed="true"]::before{ background:var(--er); }
 #pn-pcap .pq-fade{ animation:pqFade .5s ease both; }
 @keyframes pqFade{ from{ opacity:0; transform:translateY(8px); } to{ opacity:1; transform:none; } }
 
-/* the strict measures, defined */
-#pn-pcap .pq-mband{ background:linear-gradient(180deg,var(--sand2) 0%,#F1E6CB 22%,#F4EAD0 100%); }
-#pn-pcap .pq-ledger{ margin:clamp(20px,3vh,32px) 0 0; padding:0; list-style:none; border-top:2px solid var(--ink); }
-#pn-pcap .pq-ledger > li{ display:grid; gap:10px 22px; grid-template-columns:minmax(0,1fr); padding:16px 0; border-bottom:1px solid var(--hair); }
-@media (min-width:1000px){ #pn-pcap .pq-ledger > li{ grid-template-columns:150px minmax(0,1fr) minmax(0,1.5fr) minmax(0,1fr) minmax(0,.9fr); align-items:start; } }
-#pn-pcap .pq-ledger > li.pq-ledger__h{ display:none; }
-@media (min-width:1000px){ #pn-pcap .pq-ledger > li.pq-ledger__h{ display:grid; padding:10px 0; } }
-#pn-pcap .pq-ledger__h span{ font-family:var(--hd); font-size:.6rem; font-weight:700; letter-spacing:.22em; text-transform:uppercase; color:var(--acc); }
-#pn-pcap .pq-st{ display:flex; align-items:center; gap:10px; font-family:var(--hd); font-weight:600; font-size:1.3rem; line-height:1; color:var(--ink); }
-#pn-pcap .pq-st svg{ width:30px; height:30px; flex:none; padding:5px; border-radius:50%; background:var(--c); color:#F5F1E8; }
-#pn-pcap .pq-cell{ font-size:.9rem; line-height:1.45; color:var(--mut); }
-#pn-pcap .pq-cell::before{ content:attr(data-l); display:block; margin-bottom:2px; font-family:var(--hd); font-size:.58rem; font-weight:700; letter-spacing:.2em; text-transform:uppercase; color:var(--acc); }
-@media (min-width:1000px){ #pn-pcap .pq-cell::before{ display:none; } }
-#pn-pcap .pq-cell--ll{ font-family:var(--hd); font-size:1.06rem; font-weight:600; line-height:1.2; color:var(--ink); }
-#pn-pcap .pq-cell--m b{ color:var(--ink); font-weight:600; }
-#pn-pcap .pq-cell--m small{ display:block; margin-top:4px; font-size:.78rem; color:var(--dim); }
-#pn-pcap .pq-cell--no{ color:var(--dim); }
-#pn-pcap .pq-cell--no s{ text-decoration-color:rgba(122,52,32,.6); }
-#pn-pcap .pq-tag{ display:inline-block; padding:3px 8px 2px; border-radius:999px; font-family:var(--hd); font-size:.6rem; font-weight:700; letter-spacing:.12em; text-transform:uppercase; background:rgba(26,20,12,.08); color:var(--ink); }
-#pn-pcap .pq-tag--n{ background:#7A3420; color:#F5F1E8; }
-#pn-pcap .pq-mnote{ margin:12px 0 0; max-width:100ch; font-size:.82rem; line-height:1.5; color:var(--dim); }
-
-/* the seven rules */
-#pn-pcap .pq-rband{ background:linear-gradient(180deg,#F4EAD0 0%,var(--sand) 100%); padding-top:0; }
-#pn-pcap .pq-rgrid{ display:grid; gap:clamp(18px,3vw,48px); grid-template-columns:minmax(0,1fr); align-items:start; }
-@media (min-width:1080px){ #pn-pcap .pq-rgrid{ grid-template-columns:minmax(0,1.35fr) minmax(0,1fr); } }
-#pn-pcap .pq-rules{ display:grid; gap:8px; margin:clamp(16px,2.6vh,26px) 0 0; padding:0; list-style:none; counter-reset:r; grid-template-columns:minmax(0,1fr); }
-@media (min-width:700px){ #pn-pcap .pq-rules{ grid-template-columns:repeat(2,minmax(0,1fr)); } }
-#pn-pcap .pq-rules li{ position:relative; padding:14px 16px 14px 54px; border-radius:16px; background:rgba(255,252,242,.8); border:1px solid var(--hair); font-size:.9rem; line-height:1.45; color:var(--mut); counter-increment:r; }
-#pn-pcap .pq-rules li::before{ content:counter(r); position:absolute; left:14px; top:14px; display:grid; place-items:center; width:28px; height:28px; border-radius:50%; background:var(--ink); color:var(--gold); font-family:var(--hd); font-size:.8rem; font-weight:700; }
-#pn-pcap .pq-rules li:last-child{ background:var(--deep); border-color:var(--deep); color:var(--tm); }
+/* 5. the seven rules and the weakest link (ivory) */
+#pn-pcap .pq-rgrid{ display:grid; gap:clamp(16px,3vw,44px); grid-template-columns:minmax(0,1fr); align-items:start; }
+@media (min-width:1020px){ #pn-pcap .pq-rgrid{ grid-template-columns:minmax(0,1.3fr) minmax(0,1fr); align-items:center; } }
+#pn-pcap .pq-rules{ display:grid; gap:8px; margin:clamp(14px,2.4vh,22px) 0 0; padding:0; list-style:none; counter-reset:r; grid-template-columns:repeat(2,minmax(0,1fr)); }
+#pn-pcap .pq-rules li{ position:relative; padding:12px 14px 12px 48px; border-radius:14px; background:var(--iv2); border:1px solid var(--hair); font-size:.88rem; line-height:1.4; color:var(--mut); counter-increment:r; }
+#pn-pcap .pq-rules li::before{ content:counter(r); position:absolute; left:12px; top:12px; display:grid; place-items:center; width:26px; height:26px; border-radius:50%; background:var(--er); color:var(--iv); font-family:var(--hd); font-size:.8rem; font-weight:700; }
+#pn-pcap .pq-rules li:last-child{ grid-column:1 / -1; background:var(--er); border-color:var(--er); color:var(--tm); }
 #pn-pcap .pq-rules li:last-child::before{ background:var(--gold); color:var(--ink); }
-#pn-pcap .pq-rules b{ display:block; font-family:var(--hd); font-size:1.08rem; font-weight:600; line-height:1.15; color:var(--ink); }
+#pn-pcap .pq-rules b{ display:block; font-family:var(--hd); font-size:1.06rem; font-weight:600; line-height:1.15; color:var(--ink); }
 #pn-pcap .pq-rules li:last-child b{ color:var(--iv); }
-#pn-pcap .pq-chart{ margin:clamp(16px,2.6vh,26px) 0 0; padding:clamp(16px,2vw,24px); border-radius:22px; background:rgba(255,252,242,.8); border:1px solid var(--hair); }
+#pn-pcap .pq-chart{ margin:0; padding:clamp(14px,1.8vw,22px); border-radius:20px; background:var(--iv2); border:1px solid var(--hair); }
+#pn-pcap .pq-chart h3{ margin-bottom:8px; font-size:1.35rem; line-height:1.05; }
 #pn-pcap .pq-chart svg{ display:block; width:100%; height:auto; }
-#pn-pcap .pq-chart figcaption{ margin-top:8px; font-size:.8rem; line-height:1.45; color:var(--dim); }
-#pn-pcap .pq-chart h3{ margin:0 0 10px; font-family:var(--hd); font-weight:600; font-size:1.4rem; line-height:1.05; color:var(--ink) !important; text-transform:none; }
+#pn-pcap .pq-chart figcaption{ margin-top:6px; font-size:.78rem; line-height:1.4; color:var(--dim); }
+
+/* 6. the world today (Depth) */
+#pn-pcap .pq-gap{ display:grid; gap:10px; margin:clamp(16px,2.6vh,26px) 0 0; padding:0; list-style:none; grid-template-columns:repeat(2,minmax(0,1fr)); }
+@media (min-width:760px){ #pn-pcap .pq-gap{ grid-template-columns:repeat(4,minmax(0,1fr)); gap:12px; } }
+@media (min-width:1180px){ #pn-pcap .pq-gap{ grid-template-columns:repeat(7,minmax(0,1fr)); } }
+#pn-pcap .pq-gap li{ position:relative; display:flex; flex-direction:column; min-width:0; padding:15px 13px 12px; border-radius:16px; background:var(--iv); color:var(--ink); overflow:hidden; box-shadow:0 18px 40px rgba(0,0,0,.32); }
+#pn-pcap .pq-gap li::before{ content:""; position:absolute; left:0; right:0; top:0; height:5px; background:var(--c); }
+#pn-pcap .pq-gap__top{ display:flex; align-items:center; gap:7px; margin-top:3px; font-family:var(--hd); font-size:.7rem; font-weight:700; letter-spacing:.16em; text-transform:uppercase; color:var(--c); }
+#pn-pcap .pq-gap__ic{ width:20px; height:20px; flex:none; color:var(--c); }
+#pn-pcap .pq-gap b{ display:block; margin-top:8px; font-family:var(--hd); font-weight:700; font-size:clamp(2.1rem,2.8vw,2.8rem); line-height:.88; letter-spacing:-.03em; color:var(--er); font-variant-numeric:tabular-nums; white-space:nowrap; }
+#pn-pcap .pq-gap b small{ margin-left:2px; font-size:.5em; letter-spacing:0; }
+#pn-pcap .pq-gap p{ margin:7px 0 0; font-size:.86rem; line-height:1.35; color:var(--mut); }
+#pn-pcap .pq-gap a, #pn-pcap .pc-src{ display:inline-block; margin-top:auto; padding-top:9px; align-self:flex-start; font-size:11.5px; line-height:1.35; color:var(--tc); text-decoration:none; border-bottom:1px solid rgba(138,58,34,.45); }
+#pn-pcap .pq-gap a:hover, #pn-pcap .pc-src:hover{ color:var(--ink); border-bottom-color:var(--ink); }
+#pn-pcap .pq-now__note{ margin:clamp(12px,2vh,18px) 0 0; padding-top:10px; border-top:1px solid var(--lh); font-size:.88rem; line-height:1.45; color:var(--td); max-width:96ch; }
+@media (prefers-reduced-motion:no-preference){
+  #pn-pcap .pq-now.is-anim .pq-gap li{ opacity:0; transform:translateY(14px); }
+  #pn-pcap .pq-now.is-anim.is-in .pq-gap li{ opacity:1; transform:none; transition:opacity .6s ease, transform .7s cubic-bezier(.22,1,.36,1); transition-delay:calc(var(--i) * 70ms); }
+}
+
+/* 7. five nations (Lagoon) */
+#pn-pcap .pc-cards{ display:grid; gap:10px; margin:clamp(16px,2.6vh,26px) 0 0; padding:0; list-style:none; grid-template-columns:repeat(2,minmax(0,1fr)); }
+@media (min-width:1080px){ #pn-pcap .pc-cards{ grid-template-columns:repeat(5,minmax(0,1fr)); gap:12px; } }
+#pn-pcap .pc-cards li{ display:flex; flex-direction:column; min-width:0; padding:15px 15px 13px; border-radius:18px; background:var(--iv); color:var(--ink); box-shadow:0 18px 42px rgba(0,0,0,.3); transition:transform .35s cubic-bezier(.22,1,.36,1); }
+#pn-pcap .pc-cards li:hover{ transform:translateY(-5px); }
+#pn-pcap .pc-top{ display:flex; align-items:center; gap:9px; }
+#pn-pcap .pc-ic{ flex:none; width:32px; height:32px; padding:7px; border-radius:50%; background:var(--c); color:#F4ECD8; }
+#pn-pcap .pc-cards h3{ font-size:1.35rem; line-height:1; }
+#pn-pcap .pc-cards h3 small{ display:block; margin-top:3px; font-family:var(--hd); font-size:.6rem; font-weight:700; letter-spacing:.16em; text-transform:uppercase; color:var(--c); }
+#pn-pcap .pc-fig{ display:block; margin-top:12px; font-family:var(--hd); font-weight:700; font-size:clamp(2.1rem,2.8vw,2.7rem); line-height:.9; letter-spacing:-.02em; color:var(--er); font-variant-numeric:tabular-nums; }
+#pn-pcap .pc-what{ display:block; margin-top:5px; font-size:.88rem; line-height:1.3; color:var(--mut); }
+#pn-pcap .pc-cards .pc-go{ display:inline-flex; margin-top:8px; align-self:flex-start; color:var(--er); font-family:var(--hd); font-size:.66rem; font-weight:700; letter-spacing:.16em; text-transform:uppercase; text-decoration:none; border-bottom:1px solid currentColor; }
+
+/* 8. the first nation priced (Earthrise) */
+#pn-pcap .pq-first__grid{ display:grid; gap:clamp(18px,3.2vw,52px); grid-template-columns:minmax(0,1fr); align-items:center; }
+@media (min-width:980px){ #pn-pcap .pq-first__grid{ grid-template-columns:minmax(0,1.1fr) minmax(0,1fr); } }
+#pn-pcap .pq-stat{ display:grid; gap:8px; grid-template-columns:repeat(3,minmax(0,1fr)); margin:0; padding:0; list-style:none; }
+#pn-pcap .pq-stat li{ padding:14px; border-radius:16px; background:rgba(244,236,216,.07); border:1px solid rgba(244,236,216,.18); }
+#pn-pcap .pq-stat b{ display:block; font-family:var(--hd); font-weight:600; font-size:clamp(1.5rem,2.2vw,2.2rem); line-height:1; color:var(--iv); white-space:nowrap; }
+#pn-pcap .pq-stat b.pq-money{ color:var(--gold); }
+#pn-pcap .pq-stat span{ display:block; margin-top:6px; font-size:.8rem; line-height:1.3; color:var(--tm); }
+#pn-pcap .pq-stat span span{ display:inline; margin:0; font-size:inherit; }
+#pn-pcap .pq-note{ margin:10px 0 0; font-size:.76rem; line-height:1.45; color:var(--td); }
+#pn-pcap .pq-note a{ color:var(--tm); text-decoration:underline; text-underline-offset:2px; }
+
+/* 9. the close (ivory) */
+#pn-pcap .pc-close{ text-align:center; }
+#pn-pcap .pc-close .pq-eb{ justify-content:center; }
+#pn-pcap .pc-close .pq-eb::after{ content:""; width:24px; height:1px; background:currentColor; }
+#pn-pcap .pc-close .pq-h2{ margin:0 auto; max-width:24ch; }
+#pn-pcap .pc-close .pq-btns{ justify-content:center; }
+
 @media (prefers-reduced-motion:no-preference){
   #pn-pcap .pq-chart.is-in .pq-bar{ transform-box:fill-box; transform-origin:50% 100%; animation:pqRise 1.2s cubic-bezier(.22,1,.36,1) backwards; animation-delay:var(--d); }
   #pn-pcap .pq-wheel.is-in .pq-seg{ animation:pqIn .8s cubic-bezier(.22,1,.36,1) backwards; animation-delay:var(--d); }
@@ -204,165 +372,72 @@ SOFI page once its address is confirmed.
 @keyframes pqIn{ from{ opacity:0; transform:scale(.86); } to{ opacity:1; transform:none; } }
 @keyframes pqSpin{ to{ transform:rotate(360deg); } }
 
-/* the world today */
-#pn-pcap .pq-now{ color:var(--iv); background:radial-gradient(55% 60% at 85% 10%, rgba(227,194,88,.12) 0%, transparent 62%), radial-gradient(50% 55% at 8% 95%, rgba(154,62,34,.30) 0%, transparent 64%), linear-gradient(180deg,#2A1E10 0%,#1A140C 100%); }
-#pn-pcap .pq-now .pq-eb{ color:var(--tm); }
-#pn-pcap .pq-now .pq-lead{ color:var(--tm); }
-#pn-pcap .pq-now .pq-h2 em{ color:#F3D9B5; }
-#pn-pcap .pq-gap{ display:grid; gap:10px; margin:clamp(20px,3vh,32px) 0 0; padding:0; list-style:none; grid-template-columns:repeat(2,minmax(0,1fr)); }
-@media (min-width:760px){ #pn-pcap .pq-gap{ grid-template-columns:repeat(4,minmax(0,1fr)); gap:12px; } }
-@media (min-width:1180px){ #pn-pcap .pq-gap{ grid-template-columns:repeat(7,minmax(0,1fr)); } }
-#pn-pcap .pq-gap li{ position:relative; display:flex; flex-direction:column; min-width:0; padding:16px 14px 13px; border-radius:18px; background:var(--iv); color:var(--ink); overflow:hidden; box-shadow:0 18px 40px rgba(0,0,0,.35); }
-#pn-pcap .pq-gap li::before{ content:""; position:absolute; left:0; right:0; top:0; height:6px; background:var(--c); }
-#pn-pcap .pq-gap__top{ display:flex; align-items:center; gap:8px; margin-top:4px; font-family:var(--hd); font-size:.72rem; font-weight:700; letter-spacing:.16em; text-transform:uppercase; color:var(--c); }
-#pn-pcap .pq-gap__ic{ width:22px; height:22px; flex:none; color:var(--c); }
-#pn-pcap .pq-gap b{ display:block; margin-top:10px; font-family:var(--hd); font-weight:700; font-size:clamp(2.3rem,3vw,3rem); line-height:.88; letter-spacing:-.03em; color:var(--ink); font-variant-numeric:tabular-nums; white-space:nowrap; }
-#pn-pcap .pq-gap b small{ margin-left:2px; font-size:.5em; letter-spacing:0; }
-#pn-pcap .pq-gap p{ margin:8px 0 0; font-size:.88rem; line-height:1.36; color:rgba(26,20,12,.82); }
-#pn-pcap .pq-gap .pq-money{ padding:0 4px; border-radius:4px; background:#1A140C; color:var(--gold); font-weight:600; }
-#pn-pcap .pq-gap a{ display:inline-block; margin-top:auto; padding-top:10px; align-self:flex-start; font-size:11.5px; line-height:1.35; color:#5A430E; text-decoration:none; border-bottom:1px solid rgba(90,67,14,.45); }
-#pn-pcap .pq-gap a:hover, #pn-pcap .pq-gap a:focus-visible{ color:var(--ink); border-bottom-color:var(--ink); outline:none; }
-#pn-pcap .pq-now__note{ display:grid; gap:10px; grid-template-columns:minmax(0,1fr); margin:clamp(16px,2.4vh,24px) 0 0; }
-@media (min-width:880px){ #pn-pcap .pq-now__note{ grid-template-columns:repeat(2,minmax(0,1fr)); gap:24px; } }
-#pn-pcap .pq-now__note p{ margin:0; padding-top:10px; border-top:1px solid var(--lh); font-size:.9rem; line-height:1.5; color:rgba(245,241,232,.78); }
-#pn-pcap .pq-now__note b{ display:block; margin-bottom:2px; font-family:var(--hd); font-size:.64rem; font-weight:700; letter-spacing:.22em; text-transform:uppercase; color:#F3D9B5; }
-@media (prefers-reduced-motion:no-preference){
-  #pn-pcap .pq-now.is-anim .pq-gap li{ opacity:0; transform:translateY(16px); }
-  #pn-pcap .pq-now.is-anim.is-in .pq-gap li{ opacity:1; transform:none; transition:opacity .6s ease, transform .7s cubic-bezier(.22,1,.36,1); transition-delay:calc(var(--i) * 70ms); }
-}
-
-/* five nations */
-#pn-pcap .pc-five{ color:var(--iv); background:radial-gradient(60% 45% at 80% 0%, rgba(130,170,240,.24) 0%, transparent 70%), linear-gradient(180deg,#1F4A8C 0%,#0E254D 100%); }
-#pn-pcap .pc-five .pq-eb, #pn-pcap .pc-five .pq-lead{ color:var(--tm); }
-#pn-pcap .pc-five .pq-h2 em{ color:var(--gold); }
-#pn-pcap .pc-cards{ display:grid; gap:12px; margin:clamp(20px,3vh,32px) 0 0; padding:0; list-style:none; grid-template-columns:minmax(0,1fr); }
-@media (min-width:720px){ #pn-pcap .pc-cards{ grid-template-columns:repeat(2,minmax(0,1fr)); } }
-@media (min-width:1180px){ #pn-pcap .pc-cards{ grid-template-columns:repeat(5,minmax(0,1fr)); } }
-#pn-pcap .pc-cards li{ display:flex; flex-direction:column; min-width:0; padding:18px 18px 16px; border-radius:20px; background:#F5F1E8; color:#14254A; box-shadow:0 20px 46px rgba(4,12,34,.4); transition:transform .35s cubic-bezier(.22,1,.36,1); }
-#pn-pcap .pc-cards li:hover{ transform:translateY(-6px); }
-#pn-pcap .pc-top{ display:flex; align-items:center; gap:10px; margin-top:12px; }
-#pn-pcap .pc-cards img{ width:36px; height:36px; border-radius:50%; object-fit:cover; box-shadow:0 0 0 2px #F5F1E8, 0 0 0 3px rgba(20,37,74,.25); }
-#pn-pcap .pc-cards h3{ margin:0; font-family:var(--hd); font-weight:600; font-size:1.45rem; line-height:1; color:#14254A !important; text-transform:none; }
-#pn-pcap .pc-std{ align-self:flex-start; padding:5px 10px 4px; border-radius:999px; background:var(--c); color:#F5F1E8; font-family:var(--hd); font-size:.58rem; font-weight:700; letter-spacing:.16em; text-transform:uppercase; }
-#pn-pcap .pc-fig{ display:block; margin-top:16px; font-family:var(--hd); font-weight:700; font-size:clamp(2.3rem,3vw,2.9rem); line-height:.9; letter-spacing:-.02em; color:#7E5A0C; font-variant-numeric:tabular-nums; }
-#pn-pcap .pc-what{ display:block; margin-top:6px; font-family:var(--hd); font-weight:600; font-size:1rem; line-height:1.15; }
-#pn-pcap .pc-cards p{ margin:10px 0 0; font-size:.86rem; line-height:1.45; color:rgba(20,37,74,.78); }
-#pn-pcap .pc-cards small{ display:block; margin-top:auto; padding-top:12px; }
-#pn-pcap .pc-source{ font-size:12px; line-height:1.5; color:#5A430E; text-decoration:none; border-bottom:1px solid currentColor; }
-#pn-pcap .pc-cards small + a{ display:inline-flex; margin-top:8px; align-self:flex-start; color:#7E5A0C; font-family:var(--hd); font-size:.66rem; font-weight:700; letter-spacing:.16em; text-transform:uppercase; text-decoration:none; border-bottom:1px solid currentColor; }
-
-/* where it fits, and how it is set */
-#pn-pcap .pq-vs-band{ background:linear-gradient(180deg,var(--sand) 0%,var(--sand2) 100%); }
-#pn-pcap .pq-fit{ display:grid; gap:clamp(18px,3vw,44px); grid-template-columns:minmax(0,1fr); margin-top:clamp(20px,3vh,32px); align-items:start; }
-@media (min-width:1080px){ #pn-pcap .pq-fit{ grid-template-columns:minmax(0,1.4fr) minmax(0,1fr); } }
-#pn-pcap .pq-vs{ display:grid; gap:8px; margin:0; padding:0; list-style:none; }
-#pn-pcap .pq-vs li{ display:grid; grid-template-columns:minmax(0,1fr); gap:8px; }
-@media (min-width:760px){ #pn-pcap .pq-vs li{ grid-template-columns:minmax(0,1fr) 30px minmax(0,1fr); align-items:stretch; } }
-#pn-pcap .pq-vs div{ padding:14px 18px; border-radius:16px; background:rgba(255,252,242,.72); border:1px solid var(--hair); }
-#pn-pcap .pq-vs div + i + div{ background:var(--deep); border-color:var(--deep); color:var(--iv); }
-#pn-pcap .pq-vs small{ display:block; font-family:var(--hd); font-size:.6rem; font-weight:700; letter-spacing:.22em; text-transform:uppercase; color:var(--dim); }
-#pn-pcap .pq-vs div + i + div small{ color:var(--gold); }
-#pn-pcap .pq-vs b{ display:block; margin-top:4px; font-family:var(--hd); font-weight:600; font-size:clamp(1.05rem,1.3vw,1.22rem); line-height:1.15; }
-#pn-pcap .pq-vs i{ display:none; }
-@media (min-width:760px){ #pn-pcap .pq-vs i{ display:grid; place-items:center; font-style:normal; font-family:Arial,sans-serif; color:var(--acc); font-size:1.2rem; } }
-#pn-pcap .pq-two{ display:grid; gap:8px; margin:0; }
-#pn-pcap .pq-two div{ padding:16px 18px; border-radius:16px; background:rgba(255,252,242,.82); border:1px solid var(--hair); }
-#pn-pcap .pq-two small{ font-family:var(--hd); font-size:.6rem; font-weight:700; letter-spacing:.22em; color:var(--acc); }
-#pn-pcap .pq-two b{ display:block; margin-top:4px; font-family:var(--hd); font-weight:600; font-size:1.3rem; line-height:1.05; }
-#pn-pcap .pq-two p{ margin:6px 0 0; font-size:.9rem; line-height:1.5; color:var(--mut); }
-#pn-pcap .pq-two div:last-child{ background:var(--ink); border-color:var(--ink); color:var(--iv); }
-#pn-pcap .pq-two div:last-child small{ color:var(--gold); }
-#pn-pcap .pq-two div:last-child p{ color:var(--tm); }
-
-/* the first nation priced */
-#pn-pcap .pq-first{ background:radial-gradient(60% 70% at 85% 30%, rgba(30,120,168,.35) 0%, transparent 60%), linear-gradient(180deg,#0D3B57 0%,#082436 100%); color:var(--iv); }
-#pn-pcap .pq-first .pq-eb, #pn-pcap .pq-first .pq-lead{ color:var(--tm); }
-#pn-pcap .pq-first .pq-h2 em{ color:var(--gold); }
-#pn-pcap .pq-first__grid{ display:grid; gap:clamp(20px,3.4vw,56px); grid-template-columns:minmax(0,1fr); align-items:center; }
-@media (min-width:980px){ #pn-pcap .pq-first__grid{ grid-template-columns:minmax(0,1.15fr) minmax(0,1fr); } }
-#pn-pcap .pq-stat{ display:grid; gap:8px; grid-template-columns:repeat(3,minmax(0,1fr)); margin:0; padding:0; list-style:none; }
-#pn-pcap .pq-stat li{ padding:14px; border-radius:16px; background:rgba(245,241,232,.08); border:1px solid rgba(245,241,232,.18); }
-#pn-pcap .pq-stat b{ display:block; font-family:var(--hd); font-weight:600; font-size:clamp(1.5rem,2.2vw,2.2rem); line-height:1; color:var(--gold); white-space:nowrap; }
-#pn-pcap .pq-stat span{ display:block; margin-top:6px; font-size:.82rem; line-height:1.35; color:rgba(245,241,232,.82); }
-#pn-pcap .pq-note{ margin:12px 0 0; font-size:.78rem; line-height:1.5; color:var(--td); }
-#pn-pcap .pq-note a{ color:rgba(245,241,232,.9); text-decoration:underline; text-underline-offset:2px; }
-
-/* the close */
-#pn-pcap .pc-close{ text-align:center; color:var(--iv); background:radial-gradient(60% 50% at 50% 0%, rgba(255,190,120,.28) 0%, transparent 70%), linear-gradient(180deg,#8A3A22 0%,#4C1D12 100%); }
-#pn-pcap .pc-close .pq-eb{ justify-content:center; color:var(--tm); }
-#pn-pcap .pc-close .pq-eb::after{ content:""; width:24px; height:2px; background:currentColor; }
-#pn-pcap .pc-close .pq-h2{ margin:0 auto; max-width:24ch; }
-#pn-pcap .pc-close .pq-h2 em{ color:var(--gs); }
-#pn-pcap .pc-close .pq-lead{ margin-left:auto; margin-right:auto; color:var(--tm); }
-#pn-pcap .pc-close .pq-btns{ justify-content:center; }
-
-/* phones: compact type and spacing */
+/* phones: their own compact layout; two columns, nothing scrolls sideways */
 @media (max-width:640px){
-  #pn-pcap .pq-band{ padding:34px 0; }
+  #pn-pcap .pq-band{ padding:22px 0 20px; }
   #pn-pcap .pq-in{ padding:0 16px; }
-  #pn-pcap .pq-eb{ font-size:.6rem; letter-spacing:.22em; margin-bottom:8px; }
-  #pn-pcap h1.pq-h1{ font-size:2.75rem; line-height:.9; }
-  #pn-pcap h2.pq-h2{ font-size:1.85rem; line-height:1; }
-  #pn-pcap .pq-lead{ font-size:.95rem; line-height:1.5; margin-top:10px; }
-  #pn-pcap .pq-hero{ min-height:0; padding:40px 0 30px; }
-  #pn-pcap .pq-hero::after{ background:linear-gradient(180deg, rgba(11,34,25,.82) 0%, rgba(11,34,25,.45) 55%, rgba(11,34,25,.2) 100%); }
+  #pn-pcap .pq-eb{ font-size:.62rem; letter-spacing:.22em; margin-bottom:7px; }
+  #pn-pcap h1.pq-h1{ font-size:clamp(2.3rem,11.2vw,3rem); }
+  #pn-pcap h2.pq-h2{ font-size:clamp(1.85rem,8.6vw,2.3rem); line-height:.96; }
+  #pn-pcap .pq-lead{ font-size:.95rem; line-height:1.45; margin-top:8px; }
+  #pn-pcap .pq-head{ gap:4px; }
+  #pn-pcap .pq-hero{ min-height:0; padding:28px 0 22px; }
+  #pn-pcap .pq-hero::after{ background:linear-gradient(180deg, rgba(8,42,48,.8) 0%, rgba(8,42,48,.45) 55%, rgba(8,42,48,.2) 100%); }
   #pn-pcap .pq-hero .pq-lead{ font-size:1rem; }
-  #pn-pcap .pq-ll{ margin-top:16px; font-size:.8rem; }
-  #pn-pcap .pq-def{ padding:16px; border-radius:18px; }
-  #pn-pcap .pq-def p.pq-def__m{ font-size:1.3rem; }
-  #pn-pcap .pq-def__ll{ font-size:.86rem; padding:10px 12px; }
-  #pn-pcap .pq-def__ll b{ font-size:1rem; }
-  #pn-pcap .pq-eq{ grid-template-columns:minmax(0,1fr) auto minmax(0,1fr); }
+  #pn-pcap .pq-ll{ margin-top:12px; font-size:.78rem; }
+  #pn-pcap .pq-def{ padding:15px; border-radius:18px; }
+  #pn-pcap .pq-def__m{ font-size:1.24rem; }
+  #pn-pcap .pq-def__ll{ font-size:.94rem; padding:9px 11px; }
+  #pn-pcap .pq-eq{ grid-template-columns:minmax(0,1fr) auto minmax(0,1fr); gap:6px; }
   #pn-pcap .pq-eq li.pq-eq__op:nth-of-type(4){ display:none; }
   #pn-pcap .pq-eq li.pq-eq__r{ grid-column:1 / -1; }
-  #pn-pcap .pq-eq li{ font-size:.9rem; padding:9px 10px; }
-  #pn-pcap .pq-btns{ flex-direction:column; margin-top:18px; }
-  #pn-pcap .pq-btn{ justify-content:center; padding:12px 20px 10px; font-size:.68rem; }
-  #pn-pcap .pq-rib figure{ width:200px; border-radius:12px; }
-  #pn-pcap .pq-four li{ padding:16px; border-radius:18px; }
-  #pn-pcap .pq-four h3{ font-size:1.4rem; }
-  #pn-pcap .pq-four p{ font-size:.88rem; }
-  #pn-pcap .pq-four .pq-ex b{ font-size:1.9rem; }
-  #pn-pcap .pq-wheel{ max-width:330px; }
-  #pn-pcap .pq-card{ padding:18px 16px; border-radius:18px; }
-  #pn-pcap .pq-name{ font-size:2rem; }
-  #pn-pcap .pq-promise{ font-size:.98rem; }
-  #pn-pcap .pq-rows dd{ font-size:.86rem; }
-  #pn-pcap .pq-rows div:first-child dd{ font-size:1.05rem; }
-  #pn-pcap .pq-ledger > li{ gap:8px; padding:14px 0; }
-  #pn-pcap .pq-st{ font-size:1.2rem; }
-  #pn-pcap .pq-cell{ font-size:.86rem; }
-  #pn-pcap .pq-cell--ll{ font-size:1rem; }
-  #pn-pcap .pq-rules li{ padding:12px 14px 12px 50px; font-size:.86rem; }
-  #pn-pcap .pq-rules b{ font-size:1rem; }
-  #pn-pcap .pq-gap li{ padding:14px 12px 12px; }
-  #pn-pcap .pq-gap li:last-child{ grid-column:span 2; }
-  #pn-pcap .pq-gap b{ font-size:2.2rem; }
-  #pn-pcap .pq-gap p{ font-size:.84rem; }
-  #pn-pcap .pq-vs div, #pn-pcap .pq-two div{ padding:12px 14px; }
-  #pn-pcap .pq-stat li{ padding:10px; }
-  #pn-pcap .pq-stat b{ font-size:1.35rem; }
-  #pn-pcap .pq-stat span{ font-size:.74rem; }
+  #pn-pcap .pq-eq li{ font-size:.88rem; padding:8px 9px; }
+  #pn-pcap .pq-btns{ margin-top:14px; gap:8px; }
+  #pn-pcap .pq-btns .pq-btn{ flex:1 1 0; min-width:0; min-height:44px; gap:6px; padding:10px 10px 8px; font-size:.64rem; letter-spacing:.11em; line-height:1.2; text-align:center; }
+  #pn-pcap .pq-btns .pq-btn::after{ font-size:.85rem; }
+  #pn-pcap .pq-rib figure{ width:168px; border-radius:10px; }
+  #pn-pcap .pq-rib figcaption{ font-size:.56rem; padding:5px 8px 4px; left:7px; bottom:7px; }
+  #pn-pcap .pq-four, #pn-pcap .pq-gap, #pn-pcap .pc-cards, #pn-pcap .pq-rules{ gap:8px; }
+  #pn-pcap .pq-four li{ padding:13px 12px 12px; border-radius:16px; }
+  #pn-pcap .pq-four h3{ font-size:1.16rem; }
+  #pn-pcap .pq-four p{ font-size:.8rem; line-height:1.38; margin:6px 0 10px; }
+  #pn-pcap .pq-ex{ padding-top:9px; }
+  #pn-pcap .pq-ex b{ font-size:1.6rem; }
+  #pn-pcap .pq-ex span{ font-size:.72rem; }
+  #pn-pcap .pq-stage{ gap:14px; }
+  #pn-pcap .pq-wheel{ max-width:290px; }
+  #pn-pcap .pq-card{ padding:15px 14px 12px 20px; border-radius:16px; }
+  #pn-pcap .pq-name{ font-size:1.9rem; }
+  #pn-pcap .pq-promise{ font-size:.94rem; }
+  #pn-pcap .pq-rows{ grid-template-columns:repeat(2,minmax(0,1fr)); gap:8px 12px; margin-top:10px; }
+  #pn-pcap .pq-rows div{ padding-top:7px; }
+  #pn-pcap .pq-rows dd{ font-size:.82rem; line-height:1.36; }
+  #pn-pcap .pq-rows dd.pq-big{ font-size:1rem; }
+  #pn-pcap .pq-dots{ margin-top:10px; gap:2px; }
+  #pn-pcap .pq-rules li{ padding:10px 10px 10px 40px; font-size:.78rem; line-height:1.35; border-radius:12px; }
+  #pn-pcap .pq-rules li::before{ left:9px; top:10px; width:23px; height:23px; font-size:.72rem; }
+  #pn-pcap .pq-rules b{ font-size:.94rem; }
+  #pn-pcap .pq-chart h3{ font-size:1.15rem; }
+  #pn-pcap .pq-gap li{ padding:13px 11px 11px; border-radius:14px; }
+  #pn-pcap .pq-gap li:last-child{ grid-column:1 / -1; }
+  #pn-pcap .pq-gap b{ font-size:2rem; }
+  #pn-pcap .pq-gap p{ font-size:.8rem; }
+  #pn-pcap .pq-now__note{ font-size:.8rem; }
+  #pn-pcap .pc-cards li{ padding:12px 12px 11px; border-radius:14px; }
+  #pn-pcap .pc-cards li:last-child{ grid-column:1 / -1; }
+  #pn-pcap .pc-cards h3{ font-size:1.15rem; }
+  #pn-pcap .pc-ic{ width:28px; height:28px; padding:6px; }
+  #pn-pcap .pc-fig{ font-size:1.9rem; margin-top:9px; }
+  #pn-pcap .pc-what{ font-size:.8rem; }
+  #pn-pcap .pq-stat li{ padding:10px 9px; border-radius:12px; }
+  #pn-pcap .pq-stat b{ font-size:1.3rem; }
+  #pn-pcap .pq-stat span{ font-size:.7rem; }
+  #pn-pcap .pq-note{ font-size:.7rem; }
 }
 @media (prefers-reduced-motion:reduce){ #pn-pcap *{ animation:none !important; transition:none !important; } }
 </style>
 <svg width="0" height="0" style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true" focusable="false">
   <defs>
-    <g id="pnpc-laurel-branch">
-      <path d="M56 30 Q30 34 4 27" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round"/>
-      <ellipse cx="49" cy="28.4" rx="4.4" ry="1.7" fill="currentColor" transform="rotate(-24 49 28.4)"/>
-      <ellipse cx="43" cy="34.6" rx="4.4" ry="1.7" fill="currentColor" transform="rotate(26 43 34.6)"/>
-      <ellipse cx="36" cy="28.9" rx="4.3" ry="1.7" fill="currentColor" transform="rotate(-20 36 28.9)"/>
-      <ellipse cx="29" cy="34.8" rx="4.2" ry="1.6" fill="currentColor" transform="rotate(30 29 34.8)"/>
-      <ellipse cx="22" cy="28.2" rx="4" ry="1.6" fill="currentColor" transform="rotate(-14 22 28.2)"/>
-      <ellipse cx="15" cy="33.2" rx="3.8" ry="1.5" fill="currentColor" transform="rotate(34 15 33.2)"/>
-      <ellipse cx="7.4" cy="25.6" rx="3.6" ry="1.5" fill="currentColor" transform="rotate(-6 7.4 25.6)"/>
-    </g>
-    <symbol id="pnpc-laurel" viewBox="0 0 120 60">
-      <use href="#pnpc-laurel-branch"/>
-      <use href="#pnpc-laurel-branch" transform="matrix(-1 0 0 1 120 0)"/>
-      <polygon fill="currentColor" points="60,25 61.18,28.38 64.76,28.45 61.9,30.62 62.94,34.05 60,32 57.06,34.05 58.1,30.62 55.24,28.45 58.82,28.38"/>
-    </symbol>
     <symbol id="pq-i-food" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11h18a9 9 0 0 1-18 0z"/><path d="M8 3c-1 1.5 1 2.5 0 4M12 3c-1 1.5 1 2.5 0 4M16 3c-1 1.5 1 2.5 0 4"/></g></symbol>
     <symbol id="pq-i-water" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3s-6 7-6 11a6 6 0 0 0 12 0c0-4-6-11-6-11z"/><path d="M9.5 15a2.5 2.5 0 0 0 2.5 2.5"/></g></symbol>
     <symbol id="pq-i-shelter" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-7 9 7"/><path d="M5 9.5V20h14V9.5"/><path d="M10 20v-6h4v6"/></g></symbol>
@@ -374,20 +449,20 @@ SOFI page once its address is confirmed.
 </svg>
 <div id="pn-pcap">
 
-  <section class="pq-band pq-hero" aria-labelledby="pq-h1">
+  <section class="pq-band pq-er pq-hero" aria-labelledby="pq-h1">
     <canvas class="pq-gl" aria-hidden="true"></canvas>
     <div class="pq-in pq-hero__grid">
       <div>
         <p class="pq-eb">Perfect Capita &middot; The new GDP</p>
-        <h1 class="pq-h1" id="pq-h1">A prosperous nation is one that <em>reaches every person.</em></h1>
-        <p class="pq-lead">GDP tells a nation how much it produces. It cannot tell a nation whether that prosperity reaches everyone. Perfect Capita can, and it puts a price on reaching them.</p>
-        <div class="pq-btns"><a class="pq-btn" href="#pq-measures">The strict measures</a><a class="pq-btn pq-btn--line" href="#pq-four">Four numbers for every nation</a></div>
-        <p class="pq-ll"><span><b>The gold line</b>is the Living Line. Each thread is one of the seven standards: above the line it shines, below it dims.</span></p>
+        <h1 class="pq-h1" id="pq-h1">A prosperous nation <em>reaches every person.</em></h1>
+        <p class="pq-lead">GDP counts what a nation produces. Perfect Capita puts a price on making that prosperity reach every citizen.</p>
+        <div class="pq-btns"><a class="pq-btn" href="#pq-seven">The seven standards</a><a class="pq-btn pq-btn--line" href="#pq-first">Barbados, priced</a></div>
+        <p class="pq-ll">The gold line is the Living Line. Each thread is one standard: above the line it shines.</p>
       </div>
       <div class="pq-def">
         <small>PERFECT CAPITA, DEFINED</small>
         <p class="pq-def__m">The yearly cost, per person, of lifting everyone above the Living Line in <em>all seven basic living standards.</em></p>
-        <div class="pq-def__ll"><b>The poverty line measures income. <span>The Living Line measures a life:</span></b>food, water, shelter, energy, education, health and livelihood.</div>
+        <p class="pq-def__ll">The poverty line measures income. <span>The Living Line measures a life.</span></p>
         <ul class="pq-eq" aria-label="Perfect Capita times population is the price of Perfect, for any nation">
           <li>Perfect Capita<small>per person, a year</small></li>
           <li class="pq-eq__op" aria-hidden="true">&times;</li>
@@ -395,42 +470,36 @@ SOFI page once its address is confirmed.
           <li class="pq-eq__op" aria-hidden="true">=</li>
           <li class="pq-eq__r">The price of Perfect [Nation]<small>the national bill, a year</small></li>
         </ul>
-        <p class="pq-def__note">For Barbados, the first nation priced: $6,204 a person, and $1.75 billion a year for Perfect Barbados.</p>
       </div>
     </div>
   </section>
 
   <section class="pq-rib" aria-label="The world Perfect Capita describes">
-    <div class="pq-rib__t"><figure style="--c:#8A5A12"><img data-pc-image="FAMILY_TABLE" alt="A family sharing a meal at home" loading="eager" decoding="async" width="1619" height="971"><figcaption>Food</figcaption></figure><figure style="--c:#0E5A80"><img data-pc-image="WATER_TAP" alt="Children drinking clean water from a tap" loading="eager" decoding="async" width="1619" height="971"><figcaption>Water</figcaption></figure><figure style="--c:#9A3E22"><img data-pc-image="CELEBRATION" alt="A multigenerational family celebrating together at home" loading="eager" decoding="async" width="1619" height="971"><figcaption>Shelter</figcaption></figure><figure style="--c:#1F4C96"><img data-pc-image="CLASSROOM" alt="Children learning in a bright classroom" loading="lazy" decoding="async" width="1619" height="971"><figcaption>Education</figcaption></figure><figure style="--c:#167A5F"><img data-pc-image="CLINIC" alt="A nurse caring for a mother and child" loading="lazy" decoding="async" width="1619" height="971"><figcaption>Health</figcaption></figure><figure style="--c:#2F5A2A"><img data-pc-image="MARKET" alt="A busy market full of fresh produce" loading="lazy" decoding="async" width="1619" height="971"><figcaption>Livelihood</figcaption></figure><figure style="--c:#1B3F7A"><img data-pc-image="SCHOOLYARD" alt="Students from many backgrounds in a schoolyard" loading="lazy" decoding="async" width="1619" height="971"><figcaption>Education</figcaption></figure><figure style="--c:#123A2C"><img data-pc-image="HARVEST" alt="Farmers bringing in a harvest" loading="lazy" decoding="async" width="1619" height="971"><figcaption>Food and water</figcaption></figure></div>
+    <div class="pq-rib__t"><figure style="--c:#8A5A12"><img data-pc-image="family-table" alt="A family sharing a meal at home" loading="eager" decoding="async" width="768" height="461"><figcaption>Food</figcaption></figure><figure style="--c:#0E5A80"><img data-pc-image="water-tap" alt="Children drinking clean water from a tap" loading="eager" decoding="async" width="768" height="461"><figcaption>Water</figcaption></figure><figure style="--c:#9A3E22"><img data-pc-image="celebration" alt="A multigenerational family celebrating together at home" loading="eager" decoding="async" width="768" height="461"><figcaption>Shelter</figcaption></figure><figure style="--c:#1F4C96"><img data-pc-image="classroom" alt="Children learning in a bright classroom" loading="lazy" decoding="async" width="768" height="461"><figcaption>Education</figcaption></figure><figure style="--c:#167A5F"><img data-pc-image="clinic" alt="A nurse caring for a mother and child" loading="lazy" decoding="async" width="768" height="461"><figcaption>Health</figcaption></figure><figure style="--c:#2F5A2A"><img data-pc-image="market" alt="A busy market full of fresh produce" loading="lazy" decoding="async" width="768" height="461"><figcaption>Livelihood</figcaption></figure><figure style="--c:#1B3F7A"><img data-pc-image="schoolyard" alt="Students from many backgrounds in a schoolyard" loading="lazy" decoding="async" width="768" height="461"><figcaption>Education</figcaption></figure><figure style="--c:#0B3D45"><img data-pc-image="harvest" alt="Farmers bringing in a harvest" loading="lazy" decoding="async" width="768" height="461"><figcaption>Food and water</figcaption></figure></div>
     <p class="pq-rib__note">AI-generated illustrations of the world Perfect Capita seeks to enable.</p>
   </section>
 
-  <section class="pq-band pq-four-band" id="pq-four" aria-labelledby="pq-four-h">
+  <section class="pq-band pq-ivb" id="pq-four" aria-labelledby="pq-four-h">
     <div class="pq-in">
-      <div class="pq-head">
-        <div>
-          <p class="pq-eb">Four numbers for every nation</p>
-          <h2 class="pq-h2" id="pq-four-h">One measure, one bill, <em>two companions.</em></h2>
-        </div>
-        <p class="pq-lead">Perfect Capita is the yearly cost, per person, of lifting everyone above the Living Line in all seven basic living standards. Coverage shows how close a nation is, the Gap counts who is still below, and the price of Perfect [Nation] is the national bill.</p>
-      </div>
+      <p class="pq-eb">Four numbers for every nation</p>
+      <h2 class="pq-h2" id="pq-four-h">One measure, one bill, <em>two companions.</em></h2>
       <ul class="pq-four">
-        <li><small>The measure</small><h3>Perfect Capita</h3><p>The yearly cost, per person, of lifting everyone above the Living Line in all seven standards, set with each nation in its own prices.</p><div class="pq-ex"><b>$6,204</b><span>Barbados, a person a year</span></div></li>
-        <li><small>The national bill</small><h3>The price of Perfect [Nation]</h3><p>Perfect Capita times population: what Perfect costs the whole nation each year. It is also the denominator of the Perfect Nations Ratio, what a nation owns and can finance against what Perfect costs.</p><div class="pq-ex"><b>$1.75bn</b><span>Perfect Barbados, a year</span></div></li>
-        <li><small>How close</small><h3>Coverage</h3><p>How close a nation is, out of 100. Each standard is scored strictly, and the nation is held at its weakest.</p><div class="pq-ex"><b>69</b><span>Barbados, held by food</span></div></li>
-        <li><small>Who is below</small><h3>The Gap</h3><p>The people still below the Living Line, and the yearly cost of lifting them above it: the brief for Capital Architecture.</p><div class="pq-ex"><b>~88,000</b><span>Barbadians below the line for food</span></div></li>
+        <li><small>The measure</small><h3>Perfect Capita</h3><p>The yearly cost per person, set with each nation in its own prices.</p><div class="pq-ex"><b data-pc="first.perfect_capita">$6,204</b><span>Barbados, a person a year</span></div></li>
+        <li><small>The national bill</small><h3>The price of Perfect [Nation]</h3><p>Perfect Capita times population, and the denominator of the Perfect Nations Ratio.</p><div class="pq-ex"><b data-pc="first.price">$1.75bn</b><span>Perfect Barbados, a year</span></div></li>
+        <li><small>How close</small><h3>Coverage</h3><p>Out of 100. A nation is held at its weakest standard.</p><div class="pq-ex"><b data-pc="first.coverage">69</b><span>Barbados, held by <span data-pc="first.set_by">food</span></span></div></li>
+        <li><small>Who is below</small><h3>The Gap</h3><p>The people below the Living Line, and the cost of lifting them: the brief for Capital Architecture.</p><div class="pq-ex"><b data-pc="first.gap">~88,000</b><span>Barbadians below the line for <span data-pc="first.set_by">food</span></span></div></li>
       </ul>
     </div>
   </section>
 
-  <section class="pq-band pq-wband" id="pq-seven" aria-labelledby="pq-seven-h">
+  <section class="pq-band pq-er" id="pq-seven" aria-labelledby="pq-seven-h">
     <div class="pq-in">
       <div class="pq-head">
         <div>
           <p class="pq-eb">The seven basic living standards</p>
           <h2 class="pq-h2" id="pq-seven-h">Seven conditions of a <em>dignified life.</em></h2>
         </div>
-        <p class="pq-lead">Choose a standard to read its promise, where the Living Line sits, how it is measured and how each nation costs it.</p>
+        <p class="pq-lead">Each is held to the hardest test published worldwide. Choose a standard.</p>
       </div>
       <div class="pq-stage">
         <div><svg class="pq-wheel" viewBox="0 0 600 600" aria-labelledby="pq-w-t" role="group" focusable="false"><title id="pq-w-t">The seven basic living standards</title><circle cx="300" cy="300" r="290" class="pq-ring"/><g class="pq-ticks"><line x1="300.0" y1="16.0" x2="300.0" y2="4.0"/><line x1="522.0" y1="122.9" x2="531.4" y2="115.4"/><line x1="576.9" y1="363.2" x2="588.6" y2="365.9"/><line x1="423.2" y1="555.9" x2="428.4" y2="566.7"/><line x1="176.8" y1="555.9" x2="171.6" y2="566.7"/><line x1="23.1" y1="363.2" x2="11.4" y2="365.9"/><line x1="78.0" y1="122.9" x2="68.6" y2="115.4"/></g><g class="pq-seg" data-i="0" role="button" tabindex="0" aria-label="Food" style="--dx:6.1px;--dy:-12.6px;--d:0.00s"><path d="M303.8 28.0A272 272 0 0 1 510.3 127.5L414.4 206.1A148 148 0 0 0 302.1 152.0Z" fill="#8A5A12"/><g transform="translate(392.0 93.0) scale(1.6) translate(-12 -12)" class="pq-ic"><path d="M3 11h18a9 9 0 0 1-18 0z"/><path d="M8 3c-1 1.5 1 2.5 0 4M12 3c-1 1.5 1 2.5 0 4M16 3c-1 1.5 1 2.5 0 4"/></g><text x="392.0" y="129.0" text-anchor="middle" class="pq-lab">FOOD</text></g><g class="pq-seg" data-i="1" role="button" tabindex="0" aria-label="Water" style="--dx:13.6px;--dy:-3.1px;--d:0.09s"><path d="M515.0 133.4A272 272 0 0 1 566.0 356.8L444.7 330.9A148 148 0 0 0 417.0 209.3Z" fill="#0E5A80"/><g transform="translate(506.7 236.8) scale(1.6) translate(-12 -12)" class="pq-ic"><path d="M12 3s-6 7-6 11a6 6 0 0 0 12 0c0-4-6-11-6-11z"/><path d="M9.5 15a2.5 2.5 0 0 0 2.5 2.5"/></g><text x="506.7" y="272.8" text-anchor="middle" class="pq-lab">WATER</text></g><g class="pq-seg" data-i="2" role="button" tabindex="0" aria-label="Shelter" style="--dx:10.9px;--dy:8.7px;--d:0.18s"><path d="M564.3 364.2A272 272 0 0 1 421.4 543.4L366.1 432.4A148 148 0 0 0 443.8 334.9Z" fill="#9A3E22"/><g transform="translate(465.7 416.2) scale(1.6) translate(-12 -12)" class="pq-ic"><path d="M3 11l9-7 9 7"/><path d="M5 9.5V20h14V9.5"/><path d="M10 20v-6h4v6"/></g><text x="465.7" y="452.2" text-anchor="middle" class="pq-lab">SHELTER</text></g><g class="pq-seg" data-i="3" role="button" tabindex="0" aria-label="Energy" style="--dx:0.0px;--dy:14.0px;--d:0.27s"><path d="M414.6 546.7A272 272 0 0 1 185.4 546.7L237.7 434.2A148 148 0 0 0 362.3 434.2Z" fill="#C08A12"/><g transform="translate(300.0 496.0) scale(1.6) translate(-12 -12)" class="pq-ic"><path d="M13 2L4 14h7l-1 8 9-12h-7z"/></g><text x="300.0" y="532.0" text-anchor="middle" class="pq-lab">ENERGY</text></g><g class="pq-seg" data-i="4" role="button" tabindex="0" aria-label="Education" style="--dx:-10.9px;--dy:8.7px;--d:0.36s"><path d="M178.6 543.4A272 272 0 0 1 35.7 364.2L156.2 334.9A148 148 0 0 0 233.9 432.4Z" fill="#1F4C96"/><g transform="translate(134.3 416.2) scale(1.6) translate(-12 -12)" class="pq-ic"><path d="M2 5c3-1 7-1 10 1 3-2 7-2 10-1v14c-3-1-7-1-10 1-3-2-7-2-10-1z"/><path d="M12 6v14"/></g><text x="134.3" y="452.2" text-anchor="middle" class="pq-lab">EDUCATION</text></g><g class="pq-seg" data-i="5" role="button" tabindex="0" aria-label="Health" style="--dx:-13.6px;--dy:-3.1px;--d:0.45s"><path d="M34.0 356.8A272 272 0 0 1 85.0 133.4L183.0 209.3A148 148 0 0 0 155.3 330.9Z" fill="#167A5F"/><g transform="translate(93.3 236.8) scale(1.6) translate(-12 -12)" class="pq-ic"><path d="M12 21s-8-5-8-11a4.5 4.5 0 0 1 8-3 4.5 4.5 0 0 1 8 3c0 6-8 11-8 11z"/><path d="M7 12h3l1-2 2 4 1-2h3"/></g><text x="93.3" y="272.8" text-anchor="middle" class="pq-lab">HEALTH</text></g><g class="pq-seg" data-i="6" role="button" tabindex="0" aria-label="Livelihood" style="--dx:-6.1px;--dy:-12.6px;--d:0.54s"><path d="M89.7 127.5A272 272 0 0 1 296.2 28.0L297.9 152.0A148 148 0 0 0 185.6 206.1Z" fill="#2F5A2A"/><g transform="translate(208.0 93.0) scale(1.6) translate(-12 -12)" class="pq-ic"><path d="M12 21v-9"/><path d="M12 12C12 8 9 6 5 6c0 4 3 6 7 6z"/><path d="M12 10c0-3 2-5 6-5 0 3-2 5-6 5z"/><path d="M7 21h10"/></g><text x="208.0" y="129.0" text-anchor="middle" class="pq-lab">LIVELIHOOD</text></g><circle cx="300" cy="300" r="136" class="pq-core"/><circle cx="300" cy="300" r="122" class="pq-core-line"/><text x="300" y="262" text-anchor="middle" class="pq-c1">BASIC LIVING</text><text x="300" y="338" text-anchor="middle" class="pq-c2">7</text><text x="300" y="368" text-anchor="middle" class="pq-c3">STANDARDS</text></svg></div>
@@ -438,11 +507,12 @@ SOFI page once its address is confirmed.
           <div id="pqBody">
             <p class="pq-num" id="pqNum">STANDARD 01 OF 07</p>
             <h3 class="pq-name" id="pqName">Food</h3>
-            <p class="pq-promise" id="pqPromise">Every person can eat nutritious food, every day, throughout life.</p>
+            <p class="pq-promise" id="pqPromise">Every person can eat nutritious food, every day.</p>
             <dl class="pq-rows">
-              <div><dt>The Living Line</dt><dd id="pqL">Food secure all year.</dd></div>
-              <div><dt>Measured strictly as</dt><dd id="pqM">The share of people who are not moderately or severely food insecure, on the FAO Food Insecurity Experience Scale.</dd></div>
-              <div><dt>Costed, nation by nation, from</dt><dd id="pqK">The local cost of a nutritious food basket.</dd></div>
+              <div><dt>The Living Line</dt><dd class="pq-big" id="pqL">Food secure all year.</dd></div>
+              <div><dt>Priced from</dt><dd id="pqK">A local, nutritious food basket.</dd></div>
+              <div class="pq-rows__m"><dt>Measured strictly as</dt><dd id="pqM">100 minus the share of people moderately or severely food insecure (SDG 2.1.2); in crises, the share in IPC Phase 3 or worse, in the worst season.<small id="pqS">FAO; IPC and Cadre Harmonis&#233;</small></dd></div>
+              <div class="pq-rows__m"><dt>Not used: too gentle</dt><dd id="pqN">Undernourishment (SDG 2.1.1), which counts only a chronic shortage of calories.</dd></div>
             </dl>
           </div>
           <div class="pq-dots" id="pqDots" aria-label="Choose a standard"></div>
@@ -451,206 +521,93 @@ SOFI page once its address is confirmed.
     </div>
   </section>
 
-  <section class="pq-band pq-mband" id="pq-measures" aria-labelledby="pq-measures-h">
-    <div class="pq-in">
-      <div class="pq-head">
-        <div>
-          <p class="pq-eb">The strict measures, defined</p>
-          <h2 class="pq-h2" id="pq-measures-h">The hardest test each standard can be given, <em>in every nation.</em></h2>
-        </div>
-        <p class="pq-lead">For each of the seven, Perfect Nations uses the most demanding indicator published worldwide, from the agency that keeps it, and refuses the gentler one that makes a nation look better than its citizens live.</p>
-      </div>
-      <ul class="pq-ledger">
-        <li class="pq-ledger__h" aria-hidden="true"><span>Standard</span><span>The Living Line</span><span>The strict measure</span><span>Not used, because it is too gentle</span><span>When data is missing</span></li>
-        <li style="--c:#8A5A12"><span class="pq-st"><svg aria-hidden="true" focusable="false"><use href="#pq-i-food"></use></svg>Food</span><span class="pq-cell pq-cell--ll" data-l="The Living Line">Food secure all year.</span><span class="pq-cell pq-cell--m" data-l="The strict measure"><b>100 minus the share of people moderately or severely food insecure</b> on the Food Insecurity Experience Scale (SDG 2.1.2). In nations in crisis, 100 minus the share in Phase 3 or worse of the IPC or Cadre Harmonis&#233;, in the worst season.<small>FAO; IPC and Cadre Harmonis&#233;</small></span><span class="pq-cell pq-cell--no" data-l="Not used, because it is too gentle">Undernourishment (SDG 2.1.1), which counts only a chronic shortage of calories.</span><span class="pq-cell" data-l="When data is missing">Undernourishment, labelled <span class="pq-tag">Lenient</span></span></li>
-        <li style="--c:#0E5A80"><span class="pq-st"><svg aria-hidden="true" focusable="false"><use href="#pq-i-water"></use></svg>Water</span><span class="pq-cell pq-cell--ll" data-l="The Living Line">Safe water at home.</span><span class="pq-cell pq-cell--m" data-l="The strict measure"><b>Safely managed drinking water</b>: a source on the premises, available when needed and free from contamination (SDG 6.1.1).<small>WHO and UNICEF Joint Monitoring Programme</small></span><span class="pq-cell pq-cell--no" data-l="Not used, because it is too gentle">Basic water: an improved source within a 30-minute round trip.</span><span class="pq-cell" data-l="When data is missing">Basic water, labelled as such</span></li>
-        <li style="--c:#9A3E22"><span class="pq-st"><svg aria-hidden="true" focusable="false"><use href="#pq-i-shelter"></use></svg>Shelter</span><span class="pq-cell pq-cell--ll" data-l="The Living Line">A durable home with a safe toilet.</span><span class="pq-cell pq-cell--m" data-l="The strict measure"><b>The lower of</b> safely managed sanitation (SDG 6.2.1a) and the share of people outside urban slums and informal housing (SDG 11.1.1, applied to the urban population).<small>WHO and UNICEF Joint Monitoring Programme; UN-Habitat</small></span><span class="pq-cell pq-cell--no" data-l="Not used, because it is too gentle">Urban slums alone, which leaves every rural home out of the count.</span><span class="pq-cell" data-l="When data is missing">Either part alone, labelled; with neither, <span class="pq-tag pq-tag--n">Not measured</span></span></li>
-        <li style="--c:#C08A12"><span class="pq-st"><svg aria-hidden="true" focusable="false"><use href="#pq-i-energy"></use></svg>Energy</span><span class="pq-cell pq-cell--ll" data-l="The Living Line">1,000 kWh a person a year, and clean cooking.</span><span class="pq-cell pq-cell--m" data-l="The strict measure"><b>The lower of</b> electricity used per person against 1,000 kWh a year, and the share of people cooking with clean fuels and technology (SDG 7.1.2).<small>UN Statistics Division; Tracking SDG 7 (IEA, IRENA, UN, World Bank and WHO)</small></span><span class="pq-cell pq-cell--no" data-l="Not used, because it is too gentle">An electricity connection alone (SDG 7.1.1), which counts a single light bulb as access.</span><span class="pq-cell" data-l="When data is missing">Access, labelled <span class="pq-tag">Lenient</span></span></li>
-        <li style="--c:#1F4C96"><span class="pq-st"><svg aria-hidden="true" focusable="false"><use href="#pq-i-education"></use></svg>Education</span><span class="pq-cell pq-cell--ll" data-l="The Living Line">Reading by age ten, and finishing lower secondary school.</span><span class="pq-cell pq-cell--m" data-l="The strict measure"><b>The lower of</b> 100 minus learning poverty (children unable to read and understand a simple text by age ten) and lower-secondary completion (SDG 4.1.2).<small>World Bank and UNESCO Institute for Statistics</small></span><span class="pq-cell pq-cell--no" data-l="Not used, because it is too gentle">Enrolment, or teachers per pupil, which count seats rather than learning.</span><span class="pq-cell" data-l="When data is missing">Either part alone, labelled; teachers per pupil only as a last resort, <span class="pq-tag">Lenient</span></span></li>
-        <li style="--c:#167A5F"><span class="pq-st"><svg aria-hidden="true" focusable="false"><use href="#pq-i-health"></use></svg>Health</span><span class="pq-cell pq-cell--ll" data-l="The Living Line">Essential care, without financial ruin.</span><span class="pq-cell pq-cell--m" data-l="The strict measure"><b>The WHO index of essential health service coverage</b>, out of 100 (SDG 3.8.1), built from tracer services in maternal and child health, infectious disease, chronic disease and service capacity.<small>WHO and World Bank</small></span><span class="pq-cell pq-cell--no" data-l="Not used, because it is too gentle">Hospital beds or health spending per person, which count inputs rather than care received.</span><span class="pq-cell" data-l="When data is missing"><span class="pq-tag pq-tag--n">Not measured</span></span></li>
-        <li style="--c:#2F5A2A"><span class="pq-st"><svg aria-hidden="true" focusable="false"><use href="#pq-i-livelihoods"></use></svg>Livelihood</span><span class="pq-cell pq-cell--ll" data-l="The Living Line">Income above a living line.</span><span class="pq-cell pq-cell--m" data-l="The strict measure"><b>The share of people above the stricter</b> of the national poverty line and the World Bank line for the nation&#8217;s income group: $3.00, $4.20 or $8.30 a day, at 2021 purchasing power.<small>World Bank Poverty and Inequality Platform; national statistics offices</small></span><span class="pq-cell pq-cell--no" data-l="Not used, because it is too gentle">The extreme poverty line of $3.00 a day, applied to every nation whatever its income.</span><span class="pq-cell" data-l="When data is missing"><span class="pq-tag pq-tag--n">Not measured</span></span></li>
-      </ul>
-      <p class="pq-mnote">SDG numbers refer to the United Nations Sustainable Development Goal indicator behind each measure. Where electricity consumption per person is not published, generation per person is used and marked as an upper bound. Method adopted on 19 October 2026 and applied to every blueprint since.</p>
-    </div>
-  </section>
-
-  <section class="pq-band pq-rband" aria-labelledby="pq-rules-h">
+  <section class="pq-band pq-ivb" aria-labelledby="pq-rules-h">
     <div class="pq-in pq-rgrid">
       <div>
-        <p class="pq-eb">Seven rules keep the measure strict</p>
+        <p class="pq-eb">Seven rules keep it strict</p>
         <h2 class="pq-h2" id="pq-rules-h">No averages. No estimates. <em>No one left out.</em></h2>
         <ol class="pq-rules">
-          <li><b>Strict first</b>The strict measure is used wherever it exists. A gentler fallback is labelled as such on the tile.</li>
-          <li><b>The five-year rule</b>Data older than five years is shown with its year and marked &#8220;dated&#8221;.</li>
-          <li><b>No data, no number</b>A missing measure reads &#8220;Not measured&#8221;, never an estimate.</li>
-          <li><b>The legal bar</b>Where a law bars a whole group of citizens from a standard, the tile reads &#8220;Barred&#8221; and no Coverage score is published: no nation reaches Perfect while any citizen is barred by law.</li>
-          <li><b>Every citizen</b>Where data is split by sex, or by rural and urban, the lower group sets the figure, as data allows.</li>
-          <li><b>Strict figures only</b>Each tile shows the strict figure and its source. Gentler figures are not shown beside it.</li>
-          <li><b>The weakest link</b>A nation is held at its lowest standard. No nation can make up for failing in health by excelling in education.</li>
+          <li><b>Strict first</b>The strict measure wherever it exists; any fallback is labelled.</li>
+          <li><b>Five years</b>Older data shows its year, marked &#8220;dated&#8221;.</li>
+          <li><b>No data, no number</b>&#8220;Not measured&#8221;, never an estimate.</li>
+          <li><b>The legal bar</b>Where a law bars citizens from a standard, no score.</li>
+          <li><b>Every citizen</b>Where data splits by sex or place, the lower group counts.</li>
+          <li><b>Strict figures only</b>No gentler figure beside it.</li>
+          <li><b>The weakest link</b>A nation is held at its lowest standard: no strength makes up for a failure.</li>
         </ol>
       </div>
-      <figure class="pq-chart"><h3>A nation is only as strong as the standard it provides least.</h3><svg viewBox="0 0 450 178" role="img" aria-label="Illustration: seven standards against full coverage; Health has the widest gap and sets Coverage" focusable="false"><line x1="6" y1="150.5" x2="370" y2="150.5" stroke="rgba(26,20,12,.25)"/><rect class="pq-bar" x="14" y="50" width="34" height="100" rx="6" fill="#8A5A12" style="--d:0.00s"/><text x="31" y="170" text-anchor="middle" font-size="9.5" fill="rgba(26,20,12,.7)" font-family="Arial,sans-serif">Food</text><rect class="pq-bar" x="66" y="72" width="34" height="78" rx="6" fill="#0E5A80" style="--d:0.08s"/><text x="83" y="170" text-anchor="middle" font-size="9.5" fill="rgba(26,20,12,.7)" font-family="Arial,sans-serif">Water</text><rect class="pq-bar" x="118" y="63" width="34" height="87" rx="6" fill="#9A3E22" style="--d:0.16s"/><text x="135" y="170" text-anchor="middle" font-size="9.5" fill="rgba(26,20,12,.7)" font-family="Arial,sans-serif">Shelter</text><rect class="pq-bar" x="170" y="43" width="34" height="107" rx="6" fill="#C08A12" style="--d:0.24s"/><text x="187" y="170" text-anchor="middle" font-size="9.5" fill="rgba(26,20,12,.7)" font-family="Arial,sans-serif">Energy</text><rect class="pq-bar" x="222" y="57" width="34" height="93" rx="6" fill="#1F4C96" style="--d:0.32s"/><text x="239" y="170" text-anchor="middle" font-size="9.5" fill="rgba(26,20,12,.7)" font-family="Arial,sans-serif">Education</text><rect x="274" y="28" width="34" height="78" rx="6" fill="rgba(227,194,88,.18)" stroke="#7E5A0C" stroke-width="1.5" stroke-dasharray="4 3"/><text x="291" y="67" text-anchor="middle" font-size="9" font-weight="700" fill="#7E5A0C" font-family="Arial,sans-serif">GAP</text><rect class="pq-bar" x="274" y="100" width="34" height="50" rx="6" fill="#167A5F" style="--d:0.40s"/><text x="291" y="170" text-anchor="middle" font-size="9.5" fill="rgba(26,20,12,.7)" font-family="Arial,sans-serif">Health</text><rect class="pq-bar" x="326" y="66" width="34" height="84" rx="6" fill="#2F5A2A" style="--d:0.48s"/><text x="343" y="170" text-anchor="middle" font-size="9.5" fill="rgba(26,20,12,.7)" font-family="Arial,sans-serif">Livelihood</text><line x1="6" y1="28" x2="370" y2="28" stroke="#7E5A0C" stroke-width="2.5"/><text x="378" y="30" font-size="10" font-weight="700" fill="#7E5A0C" font-family="Arial,sans-serif" letter-spacing="1"><tspan x="378" dy="0">EVERY</tspan><tspan x="378" dy="12">PERSON</tspan></text><text x="378" y="58" font-size="9" fill="rgba(26,20,12,.6)" font-family="Arial,sans-serif"><tspan x="378" dy="0">100 of 100</tspan></text></svg><figcaption>Illustration. Health has the widest gap to full coverage, so health sets the nation&#8217;s Coverage.</figcaption></figure>
+      <figure class="pq-chart"><h3>A nation is only as strong as its weakest standard.</h3><svg viewBox="0 0 450 178" role="img" aria-label="Illustration: seven standards against full coverage; Health has the widest gap and sets Coverage" focusable="false"><line x1="6" y1="150.5" x2="370" y2="150.5" stroke="rgba(20,38,42,.25)"/><rect class="pq-bar" x="14" y="50" width="34" height="100" rx="6" fill="#8A5A12" style="--d:0.00s"/><text x="31" y="170" text-anchor="middle" font-size="9.5" fill="rgba(20,38,42,.7)" font-family="Arial,sans-serif">Food</text><rect class="pq-bar" x="66" y="72" width="34" height="78" rx="6" fill="#0E5A80" style="--d:0.08s"/><text x="83" y="170" text-anchor="middle" font-size="9.5" fill="rgba(20,38,42,.7)" font-family="Arial,sans-serif">Water</text><rect class="pq-bar" x="118" y="63" width="34" height="87" rx="6" fill="#9A3E22" style="--d:0.16s"/><text x="135" y="170" text-anchor="middle" font-size="9.5" fill="rgba(20,38,42,.7)" font-family="Arial,sans-serif">Shelter</text><rect class="pq-bar" x="170" y="43" width="34" height="107" rx="6" fill="#C08A12" style="--d:0.24s"/><text x="187" y="170" text-anchor="middle" font-size="9.5" fill="rgba(20,38,42,.7)" font-family="Arial,sans-serif">Energy</text><rect class="pq-bar" x="222" y="57" width="34" height="93" rx="6" fill="#1F4C96" style="--d:0.32s"/><text x="239" y="170" text-anchor="middle" font-size="9.5" fill="rgba(20,38,42,.7)" font-family="Arial,sans-serif">Education</text><rect x="274" y="28" width="34" height="78" rx="6" fill="rgba(138,58,34,.10)" stroke="#8A3A22" stroke-width="1.5" stroke-dasharray="4 3"/><text x="291" y="67" text-anchor="middle" font-size="9" font-weight="700" fill="#8A3A22" font-family="Arial,sans-serif">GAP</text><rect class="pq-bar" x="274" y="100" width="34" height="50" rx="6" fill="#167A5F" style="--d:0.40s"/><text x="291" y="170" text-anchor="middle" font-size="9.5" fill="rgba(20,38,42,.7)" font-family="Arial,sans-serif">Health</text><rect class="pq-bar" x="326" y="66" width="34" height="84" rx="6" fill="#2F5A2A" style="--d:0.48s"/><text x="343" y="170" text-anchor="middle" font-size="9.5" fill="rgba(20,38,42,.7)" font-family="Arial,sans-serif">Livelihood</text><line x1="6" y1="28" x2="370" y2="28" stroke="#0B3D45" stroke-width="2.5"/><text x="378" y="30" font-size="10" font-weight="700" fill="#0B3D45" font-family="Arial,sans-serif" letter-spacing="1"><tspan x="378" dy="0">EVERY</tspan><tspan x="378" dy="12">PERSON</tspan></text><text x="378" y="58" font-size="9" fill="rgba(20,38,42,.6)" font-family="Arial,sans-serif"><tspan x="378" dy="0">100 of 100</tspan></text></svg><figcaption>Illustration. Health has the widest gap, so health sets Coverage.</figcaption></figure>
     </div>
   </section>
 
-  <section class="pq-band pq-now" id="pq-now" aria-labelledby="pq-now-h">
+  <section class="pq-band pq-dp pq-now" id="pq-now" aria-labelledby="pq-now-h">
     <div class="pq-in">
       <div class="pq-head">
         <div>
           <p class="pq-eb">The world today</p>
           <h2 class="pq-h2" id="pq-now-h">Billions still fall short of <em>the seven standards.</em></h2>
         </div>
-        <p class="pq-lead">The latest international data, measured strictly. Each figure counts the people below the Living Line on one standard, with its source and year.</p>
+        <p class="pq-lead">The latest international data, measured strictly, each with its source and year.</p>
       </div>
       <ul class="pq-gap">
-        <li style="--c:#8A5A12;--i:0">
-          <div class="pq-gap__top"><svg class="pq-gap__ic" aria-hidden="true" focusable="false"><use href="#pq-i-food"></use></svg>Food</div>
-          <b>2.1<small>bn</small></b>
-          <p>people moderately or severely food insecure, one in four on Earth.</p>
-          <a href="https://www.unicef.ca/en/press-release/un-report-global-hunger-levels-ease-third-consecutive-year-regional-disparities" target="_blank" rel="noopener noreferrer">UN hunger report (SOFI), 2025 data</a>
-        </li>
-        <li style="--c:#0E5A80;--i:1">
-          <div class="pq-gap__top"><svg class="pq-gap__ic" aria-hidden="true" focusable="false"><use href="#pq-i-water"></use></svg>Water</div>
-          <b>2.1<small>bn</small></b>
-          <p>people without safely managed drinking water at home.</p>
-          <a href="https://www.who.int/news/item/26-08-2025-1-in-4-people-globally-still-lack-access-to-safe-drinking-water---who--unicef" target="_blank" rel="noopener noreferrer">WHO and UNICEF, 2025</a>
-        </li>
-        <li style="--c:#9A3E22;--i:2">
-          <div class="pq-gap__top"><svg class="pq-gap__ic" aria-hidden="true" focusable="false"><use href="#pq-i-shelter"></use></svg>Shelter</div>
-          <b>3.4<small>bn</small></b>
-          <p>people without safely managed sanitation, the first test of a decent home.</p>
-          <a href="https://www.who.int/news/item/26-08-2025-1-in-4-people-globally-still-lack-access-to-safe-drinking-water---who--unicef" target="_blank" rel="noopener noreferrer">WHO and UNICEF, 2025</a>
-        </li>
-        <li style="--c:#C08A12;--i:3">
-          <div class="pq-gap__top"><svg class="pq-gap__ic" aria-hidden="true" focusable="false"><use href="#pq-i-energy"></use></svg>Energy</div>
-          <b>2.1<small>bn</small></b>
-          <p>people still cooking with polluting fuels; 666 million have no electricity at all.</p>
-          <a href="https://www.irena.org/Publications/2025/Jun/Tracking-SDG-7-The-Energy-Progress-Report-2025" target="_blank" rel="noopener noreferrer">Tracking SDG 7, 2025</a>
-        </li>
-        <li style="--c:#1F4C96;--i:4">
-          <div class="pq-gap__top"><svg class="pq-gap__ic" aria-hidden="true" focusable="false"><use href="#pq-i-education"></use></svg>Education</div>
-          <b>7<small> in 10</small></b>
-          <p>ten-year-olds in low- and middle-income nations cannot read a simple text.</p>
-          <a href="https://www.unicef.org/press-releases/70-cent-10-year-olds-learning-poverty-unable-read-and-understand-simple-text" target="_blank" rel="noopener noreferrer">World Bank, UNESCO and UNICEF, 2022</a>
-        </li>
-        <li style="--c:#167A5F;--i:5">
-          <div class="pq-gap__top"><svg class="pq-gap__ic" aria-hidden="true" focusable="false"><use href="#pq-i-health"></use></svg>Health</div>
-          <b>4.6<small>bn</small></b>
-          <p>people without full access to essential health services.</p>
-          <a href="https://www.who.int/news/item/06-12-2025-most-countries-make-progress-towards-universal-health-coverage-but-major-challenges-remain-who-world-bank-report-finds" target="_blank" rel="noopener noreferrer">WHO and World Bank, 2025</a>
-        </li>
-        <li style="--c:#2F5A2A;--i:6">
-          <div class="pq-gap__top"><svg class="pq-gap__ic" aria-hidden="true" focusable="false"><use href="#pq-i-livelihoods"></use></svg>Livelihood</div>
-          <b>838<small>m</small></b>
-          <p>people living on less than <span class="pq-money">$3.00</span> a day, the extreme poverty line alone.</p>
-          <a href="https://blogs.worldbank.org/en/opendata/june-2025-global-poverty-update-from-the-world-bank--2021-ppps-a" target="_blank" rel="noopener noreferrer">World Bank, 2022 data</a>
-        </li>
+        <li style="--c:#8A5A12;--i:0"><div class="pq-gap__top"><svg class="pq-gap__ic" aria-hidden="true" focusable="false"><use href="#pq-i-food"></use></svg>Food</div><b><span data-pc="world.0.value">2.1</span><small data-pc="world.0.unit">bn</small></b><p data-pc="world.0.text">people moderately or severely food insecure, one in four on Earth.</p><a data-pc="world.0.source" data-pc-href="world.0.url" href="https://doi.org/10.4060/cd8306en" target="_blank" rel="noopener noreferrer">FAO and UN partners, SOFI 2026 (2025 data)</a></li>
+        <li style="--c:#0E5A80;--i:1"><div class="pq-gap__top"><svg class="pq-gap__ic" aria-hidden="true" focusable="false"><use href="#pq-i-water"></use></svg>Water</div><b><span data-pc="world.1.value">2.1</span><small data-pc="world.1.unit">bn</small></b><p data-pc="world.1.text">people without safely managed drinking water at home.</p><a data-pc="world.1.source" data-pc-href="world.1.url" href="https://www.who.int/news/item/26-08-2025-1-in-4-people-globally-still-lack-access-to-safe-drinking-water---who--unicef" target="_blank" rel="noopener noreferrer">WHO and UNICEF, 2025 (2024 data)</a></li>
+        <li style="--c:#9A3E22;--i:2"><div class="pq-gap__top"><svg class="pq-gap__ic" aria-hidden="true" focusable="false"><use href="#pq-i-shelter"></use></svg>Shelter</div><b><span data-pc="world.2.value">3.4</span><small data-pc="world.2.unit">bn</small></b><p data-pc="world.2.text">people without safely managed sanitation, the first test of a decent home.</p><a data-pc="world.2.source" data-pc-href="world.2.url" href="https://www.who.int/news/item/26-08-2025-1-in-4-people-globally-still-lack-access-to-safe-drinking-water---who--unicef" target="_blank" rel="noopener noreferrer">WHO and UNICEF, 2025 (2024 data)</a></li>
+        <li style="--c:#B07A10;--i:3"><div class="pq-gap__top"><svg class="pq-gap__ic" aria-hidden="true" focusable="false"><use href="#pq-i-energy"></use></svg>Energy</div><b><span data-pc="world.3.value">2.0</span><small data-pc="world.3.unit">bn</small></b><p data-pc="world.3.text">people still cooking with polluting fuels; 655 million have no electricity.</p><a data-pc="world.3.source" data-pc-href="world.3.url" href="https://trackingsdg7.esmap.org/" target="_blank" rel="noopener noreferrer">Tracking SDG 7, 2026 (2024 data)</a></li>
+        <li style="--c:#1F4C96;--i:4"><div class="pq-gap__top"><svg class="pq-gap__ic" aria-hidden="true" focusable="false"><use href="#pq-i-education"></use></svg>Education</div><b><span data-pc="world.4.value">7</span><small data-pc="world.4.unit"> in 10</small></b><p data-pc="world.4.text">ten-year-olds in low- and middle-income nations cannot read a simple text.</p><a data-pc="world.4.source" data-pc-href="world.4.url" href="https://www.unicef.org/press-releases/70-cent-10-year-olds-learning-poverty-unable-read-and-understand-simple-text" target="_blank" rel="noopener noreferrer">World Bank, UNESCO and UNICEF, 2022</a></li>
+        <li style="--c:#167A5F;--i:5"><div class="pq-gap__top"><svg class="pq-gap__ic" aria-hidden="true" focusable="false"><use href="#pq-i-health"></use></svg>Health</div><b><span data-pc="world.5.value">4.6</span><small data-pc="world.5.unit">bn</small></b><p data-pc="world.5.text">people without full access to essential health services.</p><a data-pc="world.5.source" data-pc-href="world.5.url" href="https://www.who.int/news/item/06-12-2025-most-countries-make-progress-towards-universal-health-coverage-but-major-challenges-remain-who-world-bank-report-finds" target="_blank" rel="noopener noreferrer">WHO and World Bank, 2025</a></li>
+        <li style="--c:#2F5A2A;--i:6"><div class="pq-gap__top"><svg class="pq-gap__ic" aria-hidden="true" focusable="false"><use href="#pq-i-livelihoods"></use></svg>Livelihood</div><b><span data-pc="world.6.value">824</span><small data-pc="world.6.unit">m</small></b><p data-pc="world.6.text">people living on less than $3.00 a day, the extreme poverty line alone.</p><a data-pc="world.6.source" data-pc-href="world.6.url" href="https://blogs.worldbank.org/en/opendata/september-2026-global-poverty-update-from-the-world-bank--one-in" target="_blank" rel="noopener noreferrer">World Bank, September 2026 (2024 data)</a></li>
       </ul>
-      <div class="pq-now__note">
-        <p><b>Never added together</b>The same people are often below the line on several standards at once, so the seven figures overlap. Each one stands alone.</p>
-        <p><b>No global price</b>A single price for the world would be wrong in every nation. Perfect Capita is set with each nation, in its own prices, in its blueprint.</p>
-      </div>
+      <p class="pq-now__note">The seven figures overlap, so they are never added together. Perfect Capita has no single global price: it is set with each nation, in its own prices, in its blueprint.</p>
     </div>
   </section>
 
-  <section class="pq-band pc-five" aria-labelledby="pc-five-h">
-    <div class="pq-in">
-      <p class="pq-eb">It has been done</p>
-      <h2 class="pq-h2" id="pc-five-h">Five nations. <em>Real progress.</em></h2>
-      <p class="pq-lead">Every standard has already been met at national scale somewhere in the world. Perfect Capita asks for all seven, in every nation.</p>
-      <ul class="pc-cards">
-        <li>
-          <span class="pc-std" style="--c:#167A5F;">Health</span>
-          <div class="pc-top"><img src="https://flagcdn.com/w80/th.png" alt="" width="80" height="60" loading="lazy" decoding="async"><h3>Thailand</h3></div>
-          <b class="pc-fig">99.5%</b>
-          <span class="pc-what">of the population with health protection</span>
-          <p>Universal health coverage achieved in 2002. The coverage figure is reported by the World Bank in 2012.</p>
-          <small><a class="pc-source" href="https://www.worldbank.org/en/news/feature/2012/08/20/thailand-sustaining-health-protection-for-all" target="_blank" rel="noopener noreferrer">World Bank, 2012</a></small>
-        </li>
-        <li>
-          <span class="pc-std" style="--c:#C08A12;">Energy</span>
-          <div class="pc-top"><img src="https://flagcdn.com/w80/vn.png" alt="" width="80" height="60" loading="lazy" decoding="async"><h3>Vietnam</h3></div>
-          <b class="pc-fig">99%+</b>
-          <span class="pc-what">with electricity, from 14 per cent in 1993</span>
-          <p>Electricity access expanded from 14 per cent in 1993 to over 99 per cent, as reported in 2018.</p>
-          <small><a class="pc-source" href="https://www.worldbank.org/en/news/speech/2018/11/27/sustainable-energy-future-in-vietnam" target="_blank" rel="noopener noreferrer">World Bank, 2018</a></small>
-        </li>
-        <li>
-          <span class="pc-std" style="--c:#9A3E22;">Shelter</span>
-          <div class="pc-top"><img src="https://flagcdn.com/w80/sg.png" alt="" width="80" height="60" loading="lazy" decoding="async"><h3>Singapore</h3></div>
-          <b class="pc-fig">91.2%</b>
-          <span class="pc-what">of resident households own their home</span>
-          <p>77.2 per cent of households live in public housing built by the state.</p>
-          <small><a class="pc-source" href="https://www.singstat.gov.sg/find-data/explore-data-themes/households/resident-households/latest-news-data" target="_blank" rel="noopener noreferrer">Singapore Department of Statistics, 2025</a></small>
-        </li>
-        <li>
-          <span class="pc-std" style="--c:#8A5A12;">Food</span>
-          <div class="pc-top"><img src="https://flagcdn.com/w80/br.png" alt="" width="80" height="60" loading="lazy" decoding="async"><h3>Brazil</h3></div>
-          <b class="pc-fig">&lt;2.5%</b>
-          <span class="pc-what">undernourished: off the FAO Hunger Map</span>
-          <p>Brazil returned below the FAO Hunger Map threshold in the 2025 reporting edition.</p>
-          <small><a class="pc-source" href="https://www.fao.org/interactive/hunger-map/en/" target="_blank" rel="noopener noreferrer">FAO, SOFI 2025</a></small>
-        </li>
-        <li>
-          <span class="pc-std" style="--c:#167A5F;">Health</span>
-          <div class="pc-top"><img src="https://flagcdn.com/w80/rw.png" alt="" width="80" height="60" loading="lazy" decoding="async"><h3>Rwanda</h3></div>
-          <b class="pc-fig">88%+</b>
-          <span class="pc-what">covered by community health insurance</span>
-          <p>More than 88 per cent coverage in 2025, according to the RSSB chief executive as reported by The New Times.</p>
-          <small><a class="pc-source" href="https://www.newtimes.co.rw/article/33593/news/featured/a-lifeline-at-25-how-mutuelle-saved-lives-and-family-assets/amp" target="_blank" rel="noopener noreferrer">The New Times, 2025</a></small><a href="https://perfectnations.org/blueprints/rwanda/">Read the blueprint</a>
-        </li>
-      </ul>
-    </div>
-  </section>
+<div class="pn-seam pn-seam--c" aria-hidden="true"><svg viewBox="0 0 1600 60" preserveAspectRatio="xMidYMid slice" focusable="false"><g transform="translate(40.0 4.3)"><use href="#pns-pods" width="50.5" height="50.5"/></g><g transform="translate(113.9 19.4)"><use href="#pns-dashes" width="24.8" height="19.8"/></g><g transform="translate(159.6 9.9)"><use href="#pns-leaf" width="53.8" height="43.1"/></g><g transform="translate(252.0 21.2)"><use href="#pns-flower" width="21.2" height="21.2"/></g><g transform="translate(271.1 35.2)"><use href="#pns-flower" width="14.8" height="14.8"/></g><g transform="translate(408.3 13.9) scale(-1 1)"><use href="#pns-feather" x="0.0" y="0" width="106.8" height="33.6"/></g><g transform="translate(429.9 12.2)"><use href="#pns-sun" width="36.8" height="36.8"/></g><g transform="translate(504.8 17.1)"><use href="#pns-loops" width="65.7" height="22.8"/></g><g transform="translate(595.5 0.9)"><use href="#pns-fern" width="183.3" height="55.0"/></g><g transform="translate(811.7 19.2)"><use href="#pns-flower" width="18.5" height="18.5"/></g><g transform="translate(828.3 33.2)"><use href="#pns-flower" width="13.0" height="13.0"/></g><g transform="translate(851.4 16.3)"><use href="#pns-squares" width="28.1" height="28.1"/></g><g transform="translate(907.4 12.2)"><use href="#pns-rosette" width="37.2" height="37.2"/></g><g transform="translate(978.6 10.9)"><use href="#pns-bowl" width="43.4" height="43.4"/></g><g transform="translate(1053.7 19.3)"><use href="#pns-flower" width="19.8" height="19.8"/></g><g transform="translate(1071.5 33.3)"><use href="#pns-flower" width="13.9" height="13.9"/></g><g transform="translate(1113.0 19.5)"><use href="#pns-dots" width="24.8" height="24.8"/></g><g transform="translate(1164.7 11.5)"><use href="#pns-leaf" width="53.0" height="42.4"/></g><g transform="translate(1402.7 8.3) scale(-1 1)"><use href="#pns-fern" x="0.0" y="0" width="160.5" height="48.1"/></g><g transform="translate(1431.7 3.5)"><use href="#pns-pods" width="48.2" height="48.2"/></g><g transform="translate(1517.4 19.0)"><use href="#pns-dashes" width="26.3" height="21.0"/></g><g transform="translate(1567.4 7.4)"><use href="#pns-leaf" width="54.2" height="43.4"/></g></svg></div>
 
-  <section class="pq-band pq-vs-band" aria-labelledby="pq-vs-h">
+  <section class="pq-band pq-lg" aria-labelledby="pc-five-h">
     <div class="pq-in">
       <div class="pq-head">
         <div>
-          <p class="pq-eb">Where Perfect Capita fits</p>
-          <h2 class="pq-h2" id="pq-vs-h">Built to stand beside the frameworks <em>nations already use.</em></h2>
+          <p class="pq-eb">It has been done</p>
+          <h2 class="pq-h2" id="pc-five-h">Five nations. <em>Real progress.</em></h2>
         </div>
-        <p class="pq-lead">A proposed contribution to the development agenda beyond 2030. It complements the Sustainable Development Goals and GDP, and goes one step further: it costs the seven standards and finances them.</p>
+        <p class="pq-lead">Each standard has been met at national scale. Perfect Capita asks for all seven, in every nation.</p>
       </div>
-      <div class="pq-fit">
-        <ul class="pq-vs">
-          <li><div><small>The SDGs</small><b>What the world seeks to achieve: 17 goals and 169 targets.</b></div><i aria-hidden="true">&rarr;</i><div><small>The seven standards</small><b>What every person should stand above, measured person by person.</b></div></li>
-          <li><div><small>GDP per capita</small><b>How much an economy produces.</b></div><i aria-hidden="true">&rarr;</i><div><small>Perfect Capita</small><b>Whether that prosperity reaches everyone, and what it costs to make sure it does.</b></div></li>
-          <li><div><small>Multidimensional poverty</small><b>Which deprivations people experience.</b></div><i aria-hidden="true">&rarr;</i><div><small>The Gap</small><b>What it will take, in people and in money, to end those shortfalls.</b></div></li>
-          <li><div><small>Development finance</small><b>How money is mobilised.</b></div><i aria-hidden="true">&rarr;</i><div><small>Capital Architecture</small><b>How the price of Perfect is financed, from a nation&#8217;s own assets.</b></div></li>
-        </ul>
-        <div class="pq-two">
-          <div><small>PERFECT NATIONS SETS</small><b>The framework</b><p>What each standard means, where the Living Line sits and how it is measured: the same seven, measured strictly and the same way, in every nation.</p></div>
-          <div><small>EACH NATION SETS, WITH US</small><b>The price</b><p>What the seven cost in that nation, in its own prices, from credible data and open assumptions. No single dollar figure is imposed on Afghanistan, Barbados or Rwanda.</p></div>
-        </div>
-      </div>
+      <ul class="pc-cards">
+        <li style="--c:#167A5F"><div class="pc-top"><svg class="pc-ic" aria-hidden="true" focusable="false"><use href="#pq-i-health"></use></svg><h3>Thailand<small>Health</small></h3></div><b class="pc-fig" data-pc="nations.0.figure">99.5%</b><span class="pc-what" data-pc="nations.0.what">with health protection, universal since 2002</span><a class="pc-src" data-pc="nations.0.source" data-pc-href="nations.0.url" href="https://www.worldbank.org/en/news/feature/2012/08/20/thailand-sustaining-health-protection-for-all" target="_blank" rel="noopener noreferrer">World Bank, 2012</a></li>
+        <li style="--c:#B07A10"><div class="pc-top"><svg class="pc-ic" aria-hidden="true" focusable="false"><use href="#pq-i-energy"></use></svg><h3>Vietnam<small>Energy</small></h3></div><b class="pc-fig" data-pc="nations.1.figure">99%+</b><span class="pc-what" data-pc="nations.1.what">with electricity, from 14 per cent in 1993</span><a class="pc-src" data-pc="nations.1.source" data-pc-href="nations.1.url" href="https://www.worldbank.org/en/news/speech/2018/11/27/sustainable-energy-future-in-vietnam" target="_blank" rel="noopener noreferrer">World Bank, 2018</a></li>
+        <li style="--c:#9A3E22"><div class="pc-top"><svg class="pc-ic" aria-hidden="true" focusable="false"><use href="#pq-i-shelter"></use></svg><h3>Singapore<small>Shelter</small></h3></div><b class="pc-fig" data-pc="nations.2.figure">91.2%</b><span class="pc-what" data-pc="nations.2.what">of resident households own their home</span><a class="pc-src" data-pc="nations.2.source" data-pc-href="nations.2.url" href="https://www.singstat.gov.sg/find-data/explore-data-themes/households/resident-households/latest-news-data" target="_blank" rel="noopener noreferrer">Singapore Department of Statistics, 2025</a></li>
+        <li style="--c:#8A5A12"><div class="pc-top"><svg class="pc-ic" aria-hidden="true" focusable="false"><use href="#pq-i-food"></use></svg><h3>Brazil<small>Food</small></h3></div><b class="pc-fig" data-pc="nations.3.figure">&lt;2.5%</b><span class="pc-what" data-pc="nations.3.what">undernourished: off the FAO Hunger Map</span><a class="pc-src" data-pc="nations.3.source" data-pc-href="nations.3.url" href="https://www.fao.org/interactive/hunger-map/en/" target="_blank" rel="noopener noreferrer">FAO, SOFI 2025</a></li>
+        <li style="--c:#167A5F"><div class="pc-top"><svg class="pc-ic" aria-hidden="true" focusable="false"><use href="#pq-i-health"></use></svg><h3>Rwanda<small>Health</small></h3></div><b class="pc-fig" data-pc="nations.4.figure">88%+</b><span class="pc-what" data-pc="nations.4.what">covered by community health insurance</span><a class="pc-src" data-pc="nations.4.source" data-pc-href="nations.4.url" href="https://www.newtimes.co.rw/article/33593/news/featured/a-lifeline-at-25-how-mutuelle-saved-lives-and-family-assets/amp" target="_blank" rel="noopener noreferrer">The New Times, 2025</a><a class="pc-go" href="https://perfectnations.org/blueprints/rwanda/">Read the blueprint</a></li>
+      </ul>
     </div>
   </section>
 
-  <section class="pq-band pq-first" id="pq-first" aria-labelledby="pq-first-h">
+<div class="pn-seam pn-seam--e" aria-hidden="true"><svg viewBox="0 0 1600 60" preserveAspectRatio="xMidYMid slice" focusable="false"><g transform="translate(40.0 9.0)"><use href="#pns-leaf" width="52.4" height="41.9"/></g><g transform="translate(117.3 18.0)"><use href="#pns-flower" width="19.4" height="19.4"/></g><g transform="translate(134.8 32.0)"><use href="#pns-flower" width="13.6" height="13.6"/></g><g transform="translate(281.9 12.2) scale(-1 1)"><use href="#pns-feather" x="0.0" y="0" width="111.7" height="35.1"/></g><g transform="translate(310.9 14.8)"><use href="#pns-dots" width="25.3" height="25.3"/></g><g transform="translate(372.0 7.4)"><use href="#pns-pods" width="48.6" height="48.6"/></g><g transform="translate(455.9 16.9)"><use href="#pns-loops" width="67.2" height="23.4"/></g><g transform="translate(560.4 7.8)"><use href="#pns-rosette" width="40.1" height="40.1"/></g><g transform="translate(633.7 22.4)"><use href="#pns-flower" width="18.0" height="18.0"/></g><g transform="translate(649.9 10.4)"><use href="#pns-flower" width="12.6" height="12.6"/></g><g transform="translate(674.6 7.7)"><use href="#pns-fern" width="168.7" height="50.6"/></g><g transform="translate(875.9 11.6)"><use href="#pns-sun" width="41.0" height="41.0"/></g><g transform="translate(943.6 9.3)"><use href="#pns-bowl" width="45.2" height="45.2"/></g><g transform="translate(1018.3 17.5)"><use href="#pns-squares" width="25.9" height="25.9"/></g><g transform="translate(1085.3 18.4)"><use href="#pns-flower" width="18.6" height="18.6"/></g><g transform="translate(1132.0 19.4)"><use href="#pns-dashes" width="26.8" height="21.5"/></g><g transform="translate(1185.5 14.0)"><use href="#pns-feather" width="104.9" height="33.0"/></g><g transform="translate(1329.0 12.5)"><use href="#pns-leaf" width="47.8" height="38.3"/></g><g transform="translate(1414.5 11.6)"><use href="#pns-leaf" width="47.3" height="37.9"/></g><g transform="translate(1486.3 17.7)"><use href="#pns-flower" width="19.8" height="19.8"/></g><g transform="translate(1626.7 11.7) scale(-1 1)"><use href="#pns-feather" x="0.0" y="0" width="99.2" height="31.2"/></g></svg></div>
+
+  <section class="pq-band pq-er" id="pq-first" aria-labelledby="pq-first-h">
     <div class="pq-in pq-first__grid">
       <div>
         <p class="pq-eb">The first nation priced</p>
-        <h2 class="pq-h2" id="pq-first-h">Barbados: <em>$6,204</em> a person a year.</h2>
-        <p class="pq-lead">The price of Perfect Barbados is $1.75 billion a year: about a fifth of the $28,365 Barbados produces per person, for each of 282,623 people. Water, shelter and energy reach almost everyone. Food holds Coverage at 69 of 100, and lifting everyone below the Living Line would cost up to $338 million a year, 4.2 per cent of GDP.</p>
-        <div class="pq-btns"><a class="pq-btn" href="https://perfectnations.org/blueprints/barbados/#bp-pc">Open the Barbados wheel</a><a class="pq-btn pq-btn--line" href="https://perfectnations.org/contact/?about=studio">Price your nation</a></div>
+        <h2 class="pq-h2" id="pq-first-h">Barbados: <em data-pc="first.perfect_capita">$6,204</em> a person a year.</h2>
+        <p class="pq-lead" data-pc="first.lead">The price of Perfect Barbados is $1.75 billion a year, about a fifth of its GDP. Water, shelter and energy reach almost everyone; food holds Coverage at 69 of 100.</p>
+        <div class="pq-btns"><a class="pq-btn" href="https://perfectnations.org/blueprints/barbados/#bp-pc">Open the Barbados blueprint</a><a class="pq-btn pq-btn--line" href="https://perfectnations.org/contact/?about=studio">Price your nation</a></div>
       </div>
       <div>
         <ul class="pq-stat">
-          <li><b>$6,204</b><span>Perfect Capita, a person a year</span></li>
-          <li><b>$1.75bn</b><span>The price of Perfect Barbados, a year</span></li>
-          <li><b>69</b><span>Coverage, out of 100, set by food</span></li>
+          <li><b class="pq-money" data-pc="first.perfect_capita">$6,204</b><span>Perfect Capita, a person a year</span></li>
+          <li><b class="pq-money" data-pc="first.price">$1.75bn</b><span>The price of Perfect Barbados, a year</span></li>
+          <li><b data-pc="first.coverage">69</b><span>Coverage, out of 100, set by <span data-pc="first.set_by">food</span></span></li>
         </ul>
-        <p class="pq-note">Perfect Nations estimate in 2025 US dollars, to be confirmed with Barbados. Built from the national poverty lines (<a href="https://data.iadb.org/files/download/a592f739-3619-4c65-996f-6ba20327cd38" target="_blank" rel="noopener noreferrer">Survey of Living Conditions 2016</a>, carried to 2025 prices by the consumer price index), water and electricity tariffs, and public spending per person on education and health (World Bank, WHO), so nothing is counted twice. GDP and population: World Bank, 2025. Coverage: food, FAO 2022.</p>
+        <p class="pq-note">Perfect Nations estimate in 2025 US dollars, to be confirmed with Barbados: national poverty lines (<a href="https://data.iadb.org/files/download/a592f739-3619-4c65-996f-6ba20327cd38" target="_blank" rel="noopener noreferrer">Survey of Living Conditions 2016</a>, carried to 2025 prices), water and electricity tariffs, and public spending per person on education and health (World Bank, WHO). GDP and population: World Bank, 2025. Food: FAO, 2022.</p>
       </div>
     </div>
   </section>
 
-  <section class="pq-band pc-close" aria-labelledby="pc-close-h">
+  <section class="pq-band pq-ivb pc-close" aria-labelledby="pc-close-h">
     <div class="pq-in">
       <p class="pq-eb">Nation by nation</p>
       <h2 class="pq-h2" id="pc-close-h">Every nation can guarantee seven basic living standards <em>to every citizen.</em></h2>
-      <p class="pq-lead">Explore what each standard costs in your nation, what the nation already holds, and the capital structure that closes the Gap.</p>
       <div class="pq-btns"><a class="pq-btn" href="https://perfectnations.org/blueprints/">Explore the blueprints</a><a class="pq-btn pq-btn--line" href="https://perfectnations.org/capital-architecture/">Capital Architecture</a></div>
     </div>
   </section>
@@ -661,30 +618,28 @@ SOFI page once its address is confirmed.
   var root=document.getElementById('pn-pcap');
   if(!root||root.getAttribute('data-ready')==='true')return; root.setAttribute('data-ready','true');
   var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  /* the ribbon of illustrations: images load from the Media Library; until each is uploaded, its frame shows a colour field */
-  var imageURLs={
-    FAMILY_TABLE:'https://perfectnations.org/wp-content/uploads/2026/10/pn-world-family-table.jpg',
-    WATER_TAP:'https://perfectnations.org/wp-content/uploads/2026/10/pn-world-water-tap.jpg',
-    CELEBRATION:'https://perfectnations.org/wp-content/uploads/2026/10/pn-world-celebration.jpg',
-    CLASSROOM:'https://perfectnations.org/wp-content/uploads/2026/10/pn-world-classroom.jpg',
-    CLINIC:'https://perfectnations.org/wp-content/uploads/2026/10/pn-world-clinic.jpg',
-    MARKET:'https://perfectnations.org/wp-content/uploads/2026/10/pn-world-market.jpg',
-    SCHOOLYARD:'https://perfectnations.org/wp-content/uploads/2026/10/pn-world-schoolyard.jpg',
-    HARVEST:'https://perfectnations.org/wp-content/uploads/2026/10/pn-world-harvest.jpg'
-  };
+
+  /* the ribbon: the 768 px copies already in the Media Library; until a picture loads its frame shows a colour field */
+  var IMG='https://perfectnations.org/wp-content/uploads/2026/10/pn-world-';
   var rib=root.querySelector('.pq-rib'), track=root.querySelector('.pq-rib__t');
-  if(track&&!reduce){ var copy=track.innerHTML; track.insertAdjacentHTML('beforeend',copy); var dup=track.querySelectorAll('figure'); for(var di=dup.length/2;di<dup.length;di++){ dup[di].setAttribute('aria-hidden','true'); var im=dup[di].querySelector('img'); if(im)im.setAttribute('alt',''); } rib.classList.add('is-run'); }
+  if(track&&!reduce){ track.insertAdjacentHTML('beforeend',track.innerHTML); var dup=track.querySelectorAll('figure'); for(var di=dup.length/2;di<dup.length;di++){ dup[di].setAttribute('aria-hidden','true'); var im=dup[di].querySelector('img'); if(im)im.setAttribute('alt',''); } rib.classList.add('is-run'); }
   var imgs=root.querySelectorAll('[data-pc-image]');
-  for(var q=0;q<imgs.length;q++){ (function(img){
-    var url=imageURLs[img.getAttribute('data-pc-image')]; if(!url)return;
-    img.onload=function(){ img.parentNode.classList.add('is-loaded'); };
-    img.src=url;
-  })(imgs[q]); }
-  /* the seven standards: promise, the Living Line, the strict measure, and how each nation costs it */
-  var G=[{"n": "Food", "c": "#8A5A12", "p": "Every person can eat nutritious food, every day, throughout life.", "l": "Food secure all year.", "m": "The share of people who are not moderately or severely food insecure, on the FAO Food Insecurity Experience Scale.", "k": "A local, nutritious food basket."}, {"n": "Water", "c": "#0E5A80", "p": "Every home has safe, reliable drinking water.", "l": "Safe water at home.", "m": "The share of people with safely managed drinking water at home.", "k": "Connection, treatment and running costs."}, {"n": "Shelter", "c": "#9A3E22", "p": "Every person has a safe, secure, affordable place to call home, with a safe toilet.", "l": "A durable home with a safe toilet.", "m": "The lower of two shares: people with safely managed sanitation, and people outside slums and informal housing.", "k": "Housing, sanitation and the infrastructure around them."}, {"n": "Energy", "c": "#C08A12", "p": "Every household has dependable, affordable, clean energy.", "l": "1,000 kWh a person a year, and clean cooking.", "m": "The lower of two measures: electricity used per person against 1,000 kWh a year, and access to clean cooking.", "k": "The cost of household and productive energy services."}, {"n": "Education", "c": "#1F4C96", "p": "Every person has quality learning and the chance to reach their potential.", "l": "Reading by age ten, and finishing lower secondary school.", "m": "The lower of two shares: children reading by age ten, and young people completing lower secondary school.", "k": "The cost per learner."}, {"n": "Health", "c": "#167A5F", "p": "Every person can reach essential healthcare without financial hardship.", "l": "Essential care, without financial ruin.", "m": "The WHO index of essential health service coverage, out of 100.", "k": "Health services and financial protection."}, {"n": "Livelihood", "c": "#2F5A2A", "p": "Every person has the means for a decent life, through dignified work or income security.", "l": "Income above a living line.", "m": "The share of people above the stricter of the national poverty line and the World Bank line for the nation\u2019s income group.", "k": "A living-income benchmark and the social protection gap."}];
+  for(var q=0;q<imgs.length;q++){ (function(img){ img.onload=function(){ img.parentNode.classList.add('is-loaded'); }; img.src=IMG+img.getAttribute('data-pc-image')+'-768x461.jpg'; })(imgs[q]); }
+
+  /* the seven standards: promise, the Living Line, the strict measure and its custodian, the gentler measure not used, and what each nation prices */
+  var G=[
+    {n:'Food',c:'#8A5A12',p:'Every person can eat nutritious food, every day.',l:'Food secure all year.',k:'A local, nutritious food basket.',m:'100 minus the share of people moderately or severely food insecure (SDG 2.1.2); in crises, the share in IPC Phase 3 or worse, in the worst season.',s:'FAO; IPC and Cadre Harmonis\u00e9',x:'Undernourishment (SDG 2.1.1), which counts only a chronic shortage of calories.'},
+    {n:'Water',c:'#0E5A80',p:'Every home has safe, reliable drinking water.',l:'Safe water at home.',k:'Connection, treatment and running costs.',m:'Safely managed drinking water: on the premises, available when needed and free from contamination (SDG 6.1.1).',s:'WHO and UNICEF Joint Monitoring Programme',x:'Basic water: an improved source within a 30-minute round trip.'},
+    {n:'Shelter',c:'#9A3E22',p:'Every person has a safe, secure home with a safe toilet.',l:'A durable home with a safe toilet.',k:'Housing, sanitation and the infrastructure around them.',m:'The lower of safely managed sanitation (SDG 6.2.1a) and the share of people outside slums and informal housing (SDG 11.1.1).',s:'WHO and UNICEF Joint Monitoring Programme; UN-Habitat',x:'Urban slums alone, which leaves every rural home out of the count.'},
+    {n:'Energy',c:'#C08A12',p:'Every household has dependable, affordable, clean energy.',l:'1,000 kWh a person a year, and clean cooking.',k:'Household and productive energy services.',m:'The lower of electricity used per person against 1,000 kWh a year, and the share cooking with clean fuels and technology (SDG 7.1.2).',s:'UN Statistics Division; Tracking SDG 7',x:'A connection alone (SDG 7.1.1), which counts a single light bulb as access.'},
+    {n:'Education',c:'#1F4C96',p:'Every person learns, and has the chance to reach their potential.',l:'Reading by age ten, and finishing lower secondary school.',k:'The cost per learner.',m:'The lower of 100 minus learning poverty (children unable to read a simple text by age ten) and lower-secondary completion (SDG 4.1.2).',s:'World Bank and UNESCO Institute for Statistics',x:'Enrolment or teachers per pupil, which count seats rather than learning.'},
+    {n:'Health',c:'#167A5F',p:'Every person can reach essential care without financial hardship.',l:'Essential care, without financial ruin.',k:'Health services and financial protection.',m:'The WHO index of essential health service coverage, out of 100 (SDG 3.8.1).',s:'WHO and World Bank',x:'Hospital beds or health spending per person, which count inputs rather than care.'},
+    {n:'Livelihood',c:'#2F5A2A',p:'Every person has the means for a decent life, through dignified work or income security.',l:'Income above a living line.',k:'A living-income benchmark and the social protection gap.',m:'The share of people above the stricter of the national poverty line and the World Bank line for the nation\u2019s income group: $3.00, $4.20 or $8.30 a day (2021 prices).',s:'World Bank Poverty and Inequality Platform',x:'The $3.00 extreme poverty line, applied to every nation whatever its income.'}
+  ];
   var wheel=root.querySelector('.pq-wheel'), segs=root.querySelectorAll('.pq-seg'), card=document.getElementById('pqCard'), body=document.getElementById('pqBody'), dots=document.getElementById('pqDots');
   var cur=0, timer=null, userSet=false, seen=false;
   function pad(n){ return (n<10?'0':'')+n; }
+  function set(id,t){ var el=document.getElementById(id); if(el)el.firstChild?(el.firstChild.nodeValue=t):(el.textContent=t); }
   for(var i=0;i<G.length;i++){ var b=document.createElement('button'); b.type='button'; b.setAttribute('aria-label',G[i].n); b.setAttribute('aria-pressed',i===0?'true':'false'); (function(k){ b.addEventListener('click',function(){ pick(k,true); }); })(i); dots.appendChild(b); }
   function pick(i,byUser){
     cur=i; if(byUser){ userSet=true; stop(); }
@@ -692,12 +647,7 @@ SOFI page once its address is confirmed.
     for(var s=0;s<segs.length;s++){ segs[s].classList.toggle('is-on',s===i); segs[s].setAttribute('aria-pressed',s===i?'true':'false'); }
     var ds=dots.children; for(var d=0;d<ds.length;d++){ ds[d].setAttribute('aria-pressed',d===i?'true':'false'); }
     card.style.setProperty('--c',g.c);
-    document.getElementById('pqNum').textContent='STANDARD '+pad(i+1)+' OF 07';
-    document.getElementById('pqName').textContent=g.n;
-    document.getElementById('pqPromise').textContent=g.p;
-    document.getElementById('pqL').textContent=g.l;
-    document.getElementById('pqM').textContent=g.m;
-    document.getElementById('pqK').textContent=g.k;
+    set('pqNum','STANDARD '+pad(i+1)+' OF 07'); set('pqName',g.n); set('pqPromise',g.p); set('pqL',g.l); set('pqK',g.k); set('pqM',g.m); set('pqS',g.s); set('pqN',g.x);
     body.classList.remove('pq-fade'); void body.offsetWidth; body.classList.add('pq-fade');
   }
   for(var s=0;s<segs.length;s++){ (function(el){
@@ -719,20 +669,46 @@ SOFI page once its address is confirmed.
     var co=new IntersectionObserver(function(en){ if(en[0].isIntersecting){ chart.classList.add('is-in'); co.disconnect(); } },{threshold:.3}); co.observe(chart);
     if(!reduce){
       now.classList.add('is-anim');
-      var nowShown=false, showNow=function(){ if(nowShown)return; nowShown=true; now.classList.add('is-in'); };
-      var no=new IntersectionObserver(function(en){ if(en[0].isIntersecting){ showNow(); no.disconnect(); } },{threshold:.15}); no.observe(now.querySelector('.pq-gap'));
-      window.setTimeout(showNow,3000);
+      var shown=false, show=function(){ if(shown)return; shown=true; now.classList.add('is-in'); };
+      var no=new IntersectionObserver(function(en){ if(en[0].isIntersecting){ show(); no.disconnect(); } },{threshold:.15}); no.observe(now.querySelector('.pq-gap'));
+      window.setTimeout(show,3000);
     }
   } else { wheel.classList.add('is-in'); chart.classList.add('is-in'); start(); }
+
+  /* live figures: figures/perfect-capita.json, kept by the Perfect Capita Steward. Every element marked
+     data-pc="path" takes its text from the file, and data-pc-href its link (https only). A file for another
+     page, with the seven standards out of order, or unreadable, is ignored and the figures above stay. */
+  var URLS=['https://raw.githubusercontent.com/preetisinha70-PN/perfect-nations/main/figures/perfect-capita.json','https://cdn.jsdelivr.net/gh/preetisinha70-PN/perfect-nations@main/figures/perfect-capita.json'];
+  var ORDER=['Food','Water','Shelter','Energy','Education','Health','Livelihood'];
+  var NATIONS=['Thailand','Vietnam','Singapore','Brazil','Rwanda'];
+  function get(o,path){ var p=path.split('.'); for(var i=0;i<p.length;i++){ if(o==null)return null; o=o[p[i]]; } return o; }
+  function ok(d){
+    if(!d||d.page!=='perfect-capita'||!d.world||d.world.length!==7||!d.first)return false;
+    for(var i=0;i<7;i++){ if(!d.world[i]||d.world[i].standard!==ORDER[i])return false; }
+    if(d.nations){ if(d.nations.length!==5)return false; for(var j=0;j<5;j++){ if(!d.nations[j]||d.nations[j].nation!==NATIONS[j])return false; } }
+    return true;
+  }
+  function apply(d){
+    var els=root.querySelectorAll('[data-pc]');
+    for(var i=0;i<els.length;i++){ var v=get(d,els[i].getAttribute('data-pc')); if(typeof v==='number')v=String(v); if(typeof v==='string'&&v.length&&v.length<400)els[i].textContent=v; }
+    var ls=root.querySelectorAll('[data-pc-href]');
+    for(var j=0;j<ls.length;j++){ var u=get(d,ls[j].getAttribute('data-pc-href')); if(typeof u==='string'&&/^https:\/\/[^\s"'<>()]+$/.test(u))ls[j].setAttribute('href',u); }
+    root.setAttribute('data-figures',d.updated||'live');
+  }
+  function load(i){
+    if(i>=URLS.length||!window.fetch)return;
+    fetch(URLS[i],{cache:'no-cache'}).then(function(r){ if(!r.ok)throw 0; return r.json(); }).then(function(d){ if(ok(d))apply(d); }).catch(function(){ load(i+1); });
+  }
+  load(0);
 })();
 </script>
 <script>
 (function () {
   /* The hero: seven threads, one for each standard, drift and are lifted above the Living Line (the gold
      line at 36 per cent of the height). Below it a thread dims to ember; the pointer lifts the threads
-     near it. One WebGL shader, no library. It draws only while the hero is on screen and the tab is
-     visible, at a capped resolution, and stays still for reduced motion. Without WebGL the green
-     gradient beneath it is the hero. */
+     near it. One WebGL shader on an Earthrise ground, no library. It draws only while the hero is on
+     screen and the tab is visible, at a capped resolution, and stays still for reduced motion. Without
+     WebGL the Earthrise gradient beneath it is the hero. */
   var root = document.getElementById('pn-pcap');
   var hero = root && root.querySelector('.pq-hero'), cv = root && root.querySelector('.pq-gl');
   if (!hero || !cv || cv.getAttribute('data-ready') === '1') { return; }
@@ -748,18 +724,18 @@ SOFI page once its address is confirmed.
     'float n(vec2 p){vec2 i=floor(p),f=fract(p);vec2 u=f*f*(3.0-2.0*f);',
     ' return mix(mix(h(i),h(i+vec2(1.0,0.0)),u.x),mix(h(i+vec2(0.0,1.0)),h(i+vec2(1.0,1.0)),u.x),u.y);}',
     'vec3 sc(float i){',
-    ' if(i<0.5)return vec3(0.86,0.62,0.24);if(i<1.5)return vec3(0.30,0.66,0.86);if(i<2.5)return vec3(0.86,0.44,0.30);',
-    ' if(i<3.5)return vec3(0.95,0.76,0.30);if(i<4.5)return vec3(0.42,0.58,0.92);if(i<5.5)return vec3(0.30,0.76,0.60);return vec3(0.52,0.74,0.40);}',
+    ' if(i<0.5)return vec3(0.90,0.66,0.28);if(i<1.5)return vec3(0.36,0.72,0.92);if(i<2.5)return vec3(0.92,0.50,0.36);',
+    ' if(i<3.5)return vec3(0.96,0.80,0.34);if(i<4.5)return vec3(0.50,0.64,0.96);if(i<5.5)return vec3(0.34,0.82,0.66);return vec3(0.58,0.80,0.46);}',
     'void main(){',
     ' vec2 s=gl_FragCoord.xy/r;float ar=r.x/r.y;float px=1.0/r.y;',
     ' float L=0.36;',
-    ' vec3 c=mix(vec3(0.035,0.115,0.085),vec3(0.071,0.212,0.165),smoothstep(0.0,1.0,s.y));',
+    ' vec3 c=mix(vec3(0.026,0.135,0.155),vec3(0.047,0.245,0.278),smoothstep(0.0,1.0,s.y));',
     ' float gx=(s.x-m.x)*ar;float lift=a*0.16*exp(-gx*gx*5.0);',
     ' vec2 g=vec2(s.x*ar*26.0,s.y*26.0);vec2 gi=floor(g);vec2 gf=fract(g);float hr=h(gi);',
     ' vec2 dp=vec2(0.5+0.32*sin(t*0.6+hr*6.28),fract(hr*7.3+t*0.05*(0.4+hr)));',
     ' float dd=length(gf-dp);float dot1=(1.0-smoothstep(0.03,0.09,dd))*step(0.72,hr);',
     ' float above=smoothstep(L-0.01,L+0.03,s.y);',
-    ' c+=dot1*mix(vec3(0.42,0.20,0.12)*0.55,vec3(0.95,0.85,0.55)*0.55,above)*(0.35+0.65*smoothstep(0.0,0.5,s.y));',
+    ' c+=dot1*mix(vec3(0.42,0.20,0.12)*0.55,vec3(0.95,0.88,0.62)*0.55,above)*(0.35+0.65*smoothstep(0.0,0.5,s.y));',
     ' for(int k=0;k<7;k++){',
     '  float fk=float(k);',
     '  float base=0.20+fk*0.085;',
@@ -769,15 +745,15 @@ SOFI page once its address is confirmed.
     '  float core=1.0-smoothstep(px*0.6,px*2.2,d);',
     '  float glow=exp(-d*d/(px*px*90.0));',
     '  float up=smoothstep(L-0.025,L+0.02,y);',
-    '  vec3 col=mix(vec3(0.55,0.24,0.14),sc(fk),up);',
+    '  vec3 col=mix(vec3(0.55,0.26,0.16),sc(fk),up);',
     '  float alp=mix(0.32,1.0,up);',
     '  c+=col*(core*0.85+glow*0.22)*alp;',
     ' }',
     ' float dl=abs(s.y-L);',
     ' float sh=0.6+0.4*sin(s.x*ar*9.0-t*1.4);',
     ' c+=vec3(0.95,0.78,0.36)*((1.0-smoothstep(px*0.5,px*1.8,dl))*0.95+exp(-dl*dl/(px*px*260.0))*0.35*sh);',
-    ' c*=0.55+0.45*smoothstep(-0.2,0.6,s.y);',
-    ' c*=0.78+0.22*smoothstep(1.3,0.2,length((s-vec2(0.62,0.5))*vec2(1.0,1.4)));',
+    ' c*=0.6+0.4*smoothstep(-0.2,0.6,s.y);',
+    ' c*=0.8+0.2*smoothstep(1.3,0.2,length((s-vec2(0.62,0.5))*vec2(1.0,1.4)));',
     ' gl_FragColor=vec4(c,1.0);',
     '}'
   ].join('\n');
