@@ -5,6 +5,9 @@ Pages plugin serves this file in place of the code pasted in the page's one Cust
 BUILT, never edited by hand: edit src/state-of-nations.html, then run
 python3 tools/build_state_of_nations.py. Kept by the State of Nations Steward (the page) and the
 Correspondent (the data: data/state-of-nations.json, data/solutions-by-nation.json).
+v7.1 (8 Nov 2026): FfD before SI (the Steward-General, 8 Nov 2026). The page names innovative
+  financing for development (FfD) first and super intelligence (SI) second, in the hero, the
+  steps of a Solution (02 FfD, 03 SI), the nations band and the close, and writes the abbreviation FfD.
 v7.0 (7 Nov 2026): the page is about Solutions. Dispatches become Solutions: each names the
   challenge to the seven standards, the finance (FFD) that solves it and what super intelligence (SI)
   adds. New band, Solutions for every nation: the 44 open blueprints by the standard furthest from
@@ -408,7 +411,7 @@ html.pn-son-lock,html.pn-son-lock body{ overflow:hidden; }
           <svg class="sn-cup" aria-hidden="true" focusable="false"><use href="#pnso-cup"></use></svg>
           <h1 class="sn-h1" id="sn-h1">The State of Nations</h1>
           <p class="sn-caps">Economic solutions for <span class="sn-rot" aria-hidden="true">all</span><span class="sn-sr">food, water, shelter, energy, education, health and livelihood</span></p>
-          <p class="sn-lead">Super intelligence (SI) and innovative financing for development (FFD), co-designing with every nation the solutions that secure seven basic standards of living for all.</p>
+          <p class="sn-lead">Innovative financing for development (FfD) and super intelligence (SI), co-designing with every nation the solutions that secure seven basic standards of living for all.</p>
           <div class="sn-ctas">
             <a class="sn-btn" href="#sn-solutions">Read the Solutions</a>
             <a class="sn-btn sn-btn--line" href="#sn-nations">Find your nation</a>
@@ -417,8 +420,8 @@ html.pn-son-lock,html.pn-son-lock body{ overflow:hidden; }
         <div>
           <ol class="sn-how" aria-label="How a Solution is built">
             <li><b>01</b><strong>The challenge</strong><span>The standard furthest from reach, measured and sourced.</span></li>
-            <li><b>02</b><strong>SI</strong><span>Maps the gap, prices it and matches the instrument.</span></li>
-            <li><b>03</b><strong>FFD</strong><span>The bond, swap or guarantee that pays for it.</span></li>
+            <li><b>02</b><strong>FfD</strong><span>The bond, swap or guarantee that pays for it.</span></li>
+            <li><b>03</b><strong>SI</strong><span>Maps the gap, prices it and matches the instrument.</span></li>
           </ol>
           <nav class="sn-stats" aria-label="On this page">
             <a href="#sn-solutions"><b data-count-s><!--pn:n-sol--></b><span>Solutions</span></a>
@@ -450,7 +453,7 @@ html.pn-son-lock,html.pn-son-lock body{ overflow:hidden; }
         <div>
           <p class="sn-eb">Solutions</p>
           <h2 class="sn-h2" id="sn-sol-h">How nations close the gap</h2>
-          <p class="sn-lead">Each Solution: the challenge to the seven standards, the finance (FFD) that solves it, and what SI adds. <span class="sn-swipe">Swipe for all <span data-count-s2><!--pn:n-sol--></span> &#8594;</span></p>
+          <p class="sn-lead">Each Solution: the challenge to the seven standards, the finance (FfD) that solves it, and what SI adds. <span class="sn-swipe">Swipe for all <span data-count-s2><!--pn:n-sol--></span> &#8594;</span></p>
         </div>
       </div>
       <div class="sn-chips sn-scroll" id="snSFil" role="group" aria-label="Filter the Solutions by standard" hidden></div>
@@ -467,7 +470,7 @@ html.pn-son-lock,html.pn-son-lock body{ overflow:hidden; }
         <div>
           <p class="sn-eb">Nation by nation</p>
           <h2 class="sn-h2" id="sn-find-h">Solutions for every nation</h2>
-          <p class="sn-lead">Pick a standard or a nation: the gap, sourced, and how SI and FFD close it, with the instrument already at work.</p>
+          <p class="sn-lead">Pick a standard or a nation: the gap, sourced, and how FfD and SI close it, with the instrument already at work.</p>
         </div>
         <div class="sn-search">
           <svg aria-hidden="true" focusable="false"><use href="#pnso-q"></use></svg>
@@ -512,7 +515,7 @@ html.pn-son-lock,html.pn-son-lock body{ overflow:hidden; }
         <div>
           <svg class="sn-cup" aria-hidden="true" focusable="false"><use href="#pnso-cup"></use></svg>
           <h2 class="sn-h2">Bring your nation&#8217;s challenge</h2>
-          <p class="sn-lead">Perfect Nations co-designs the Solution with the nation: SI to map and price the gap, FFD to pay for it.</p>
+          <p class="sn-lead">Perfect Nations co-designs the Solution with the nation: FfD to pay for the gap, SI to map and price it.</p>
         </div>
         <div class="sn-ctas">
           <a class="sn-btn" href="https://perfectnations.org/contact/?about=studio">Request a Nation Briefing</a>
@@ -606,7 +609,7 @@ html.pn-son-lock,html.pn-son-lock body{ overflow:hidden; }
     if (ul.children.length) { li.appendChild(ul); }
     if (s.challenge || s.ffd || s.si) {
       var dl = el('dl', 'sn-c__x');
-      [['The challenge', s.challenge], ['FFD', s.ffd], ['SI', s.si]].forEach(function (r) {
+      [['The challenge', s.challenge], ['FfD', s.ffd], ['SI', s.si]].forEach(function (r) {
         if (!r[1]) { return; } var d = el('div'); d.appendChild(el('dt', '', r[0])); d.appendChild(el('dd', '', r[1])); dl.appendChild(d);
       });
       li.appendChild(dl);
@@ -679,7 +682,7 @@ html.pn-son-lock,html.pn-son-lock body{ overflow:hidden; }
     q('#snRdH').textContent = d.title; q('.rd-s').textContent = d.standfirst || '';
     var dl = q('.rd-brief dl'); dl.textContent = '';
     var stds = (d.standards || []).length ? d.standards.join(', ') : 'All seven, through the budget';
-    [['The challenge', d.challenge], ['How FFD solves it', d.ffd], ['How SI solves it', d.si], ['Standards moved', d.challenge ? stds : '']].forEach(function (x) {
+    [['The challenge', d.challenge], ['How FfD solves it', d.ffd], ['How SI solves it', d.si], ['Standards moved', d.challenge ? stds : '']].forEach(function (x) {
       if (!x[1]) { return; } var w = el('div'); w.appendChild(el('dt', '', x[0])); w.appendChild(el('dd', '', x[1])); dl.appendChild(w);
     });
     q('.rd-brief').hidden = !dl.children.length;
