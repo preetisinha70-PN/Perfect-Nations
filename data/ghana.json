@@ -1,7 +1,7 @@
 {
   "nation": "Ghana",
   "page_version": "9.0",
-  "updated": "2026-11-05",
+  "updated": "2026-11-08",
   "steward": {
     "name": "Kofi Mensah",
     "role": "Nation Steward of Ghana"
@@ -11,8 +11,8 @@
     "lead": "A nation of 35.1 million that completed its IMF programme in July 2026 after growth of 6 percent in 2025, and with a new $500 million road plan for its farms.",
     "stats": [
       {
-        "value": "6.4%",
-        "label": "Growth, first quarter of 2026"
+        "value": "6.0%",
+        "label": "Growth, second quarter of 2026"
       },
       {
         "value": "$3B",
@@ -37,23 +37,30 @@
       {
         "value": "$500M",
         "money": true,
-        "text": "Rural roads and market access: Feeder roads to farms and markets",
+        "text": "Ghana Market Access and Connectivity Project: more than 1,000 km of rural feeder roads",
         "source": "World Bank, 2026",
         "url": "https://www.worldbank.org/en/news/press-release/2026/05/28/world-bank-approves-500-million-to-improve-rural-roads-and-market-access-in-ghana"
       },
       {
         "value": "$300M",
         "money": true,
-        "text": "Secondary education and skills: Secondary schools and skills",
+        "text": "Secondary Education Transformation for Access, Relevance, and Results for Jobs: about 2.2 million students",
         "source": "World Bank, 2026",
         "url": "https://www.worldbank.org/en/news/press-release/2026/06/16/world-bank-approves-us-300-million-to-help-ghana-strengthen-secondary-education-and-skills-development"
       },
       {
         "value": "$360M",
         "money": true,
-        "text": "Macroeconomic stability and resilient growth: Budget support for reforms",
+        "text": "Second Resilient Recovery Development Policy Financing: budget support for reforms",
         "source": "World Bank, 2025",
         "url": "https://www.worldbank.org/en/news/press-release/2025/06/27/world-bank-provides-ghana-360-million-to-strengthen-macroeconomic-stability-and-lay-the-foundations-for-resilient-growth"
+      },
+      {
+        "value": "GH¢733.9B",
+        "money": true,
+        "text": "Total public debt, July 2026: 45.9% of GDP, against 43.9% in July 2025",
+        "source": "Bank of Ghana, 2026",
+        "url": "https://www.bog.gov.gh/wp-content/uploads/2026/09/Summary-of-Economic-and-Financial-Data-September-2026.pdf"
       }
     ],
     "register": [
@@ -74,14 +81,29 @@
       },
       {
         "cat": "multi",
-        "status": "Active",
+        "status": "Approved",
         "tone": "active",
-        "name": "Rural roads and market access",
-        "detail": "Approved May 2026 · Investment project financing",
+        "name": "Secondary Education Transformation for Access, Relevance, and Results for Jobs (STARR-J)",
+        "detail": "Approved 16 June 2026 · IDA · Project P514793",
+        "amount": "$300M",
+        "money": true,
+        "note": "About 2.2 million students in almost 1,000 public secondary schools",
+        "text": "Rehabilitates, upgrades and builds secondary classrooms across the country, and strengthens core subjects, digital skills and technical and vocational training. It responds to the double-track system, whose long breaks in attendance have disrupted learning. It serves the education standard.",
+        "by": [
+          "World Bank"
+        ],
+        "url": "https://www.worldbank.org/en/news/press-release/2026/06/16/world-bank-approves-us-300-million-to-help-ghana-strengthen-secondary-education-and-skills-development"
+      },
+      {
+        "cat": "multi",
+        "status": "Approved",
+        "tone": "active",
+        "name": "Ghana Market Access and Connectivity Project",
+        "detail": "Approved 28 May 2026 · IDA · Project P513708",
         "amount": "$500M",
         "money": true,
-        "note": "Feeder roads to farms and markets",
-        "text": "Connects farming communities to the markets that pay for their harvests.",
+        "note": "More than 1,000 km of rural feeder roads in nine regions",
+        "text": "Rehabilitates and maintains more than 1,000 km of rural feeder roads in nine regions, from Upper West to Western. It is to benefit more than 550,000 people, about 350,000 of them farmers, and create some 25,000 short-term jobs. It links food and livelihood to markets.",
         "by": [
           "World Bank"
         ],
@@ -91,31 +113,224 @@
         "cat": "multi",
         "status": "Active",
         "tone": "active",
-        "name": "Secondary education and skills",
-        "detail": "Approved June 2026 · Investment project financing",
-        "amount": "$300M",
+        "name": "Climate-resilient landscapes for sustainable livelihoods in northern Ghana (FP265)",
+        "detail": "Approved 3 July 2025 · Grant · $10.1M disbursed by 30 April 2026 · Completion 2032",
+        "amount": "$63.2M",
         "money": true,
-        "note": "Secondary schools and skills",
-        "text": "Strengthens secondary education and the skills that lead to work.",
+        "note": "Grant; total value $70.2 million with co-financing",
+        "text": "A Green Climate Fund grant, through UNEP, for smallholder farmers in northern Ghana: climate information, climate-resilient farming, restored landscapes and better access to finance. About 3.6 million people are expected to gain resilience. It protects food and livelihood against drought and flood.",
         "by": [
-          "World Bank"
+          "Green Climate Fund",
+          "UNEP"
         ],
-        "url": "https://www.worldbank.org/en/news/press-release/2026/06/16/world-bank-approves-us-300-million-to-help-ghana-strengthen-secondary-education-and-skills-development"
+        "url": "https://www.greenclimate.fund/project/fp265"
       },
       {
         "cat": "multi",
-        "status": "Completed",
+        "status": "Disbursed",
         "tone": "completed",
-        "name": "Macroeconomic stability and resilient growth",
-        "detail": "Approved June 2025 · Development policy financing",
+        "name": "Second Resilient Recovery Development Policy Financing",
+        "detail": "Approved 27 June 2025 · Disbursed September 2025 · IDA · Second of a series",
         "amount": "$360M",
         "money": true,
         "note": "Budget support for reforms",
-        "text": "Supports the reforms that steadied the economy and laid the ground for growth.",
+        "text": "World Bank budget support for the reforms that restored fiscal sustainability, steadied the financial sector and put the energy sector on a sounder financial footing. It is the second operation in the Resilient Recovery series.",
         "by": [
           "World Bank"
         ],
         "url": "https://www.worldbank.org/en/news/press-release/2025/06/27/world-bank-provides-ghana-360-million-to-strengthen-macroeconomic-stability-and-lay-the-foundations-for-resilient-growth"
+      },
+      {
+        "cat": "multi",
+        "status": "Approved",
+        "tone": "active",
+        "name": "West Africa Food System Resilience Program, second phase, additional financing",
+        "detail": "Approved 29 April 2025 · IDA credit and a Food Systems 2030 trust fund grant",
+        "amount": "$125.94M",
+        "money": true,
+        "note": "Replenishes support diverted to farmers hit by floods and drought",
+        "text": "Additional financing for Ghana’s part of the regional food system resilience programme. It replenishes resources diverted to farmers hit by floods and drought, and funds digital advisory services, climate-resilient farming, tomato production and regional food trade. It serves the food standard.",
+        "by": [
+          "World Bank"
+        ],
+        "url": "https://www.worldbank.org/en/news/press-release/2025/04/29/ghana-building-resilience-from-crisis"
+      },
+      {
+        "cat": "multi",
+        "status": "Disbursed",
+        "tone": "completed",
+        "name": "First Resilient Recovery Development Policy Financing",
+        "detail": "Approved 23 January 2024 · Disbursed March 2024 · IDA · First of a planned series of three",
+        "amount": "$300M",
+        "money": true,
+        "note": "Budget support after the agreement with official creditors",
+        "text": "The first World Bank budget-support operation of Ghana’s recovery, approved after the agreement with official creditors. It supports revenue mobilisation, spending control, financial-sector stability, energy-sector finances and social protection.",
+        "by": [
+          "World Bank"
+        ],
+        "url": "https://www.worldbank.org/en/news/press-release/2024/01/23/world-bank-to-provide-300-million-to-ghana-to-strengthen-macroeconomic-stability-and-support-resilient-economic-growth"
+      },
+      {
+        "cat": "multi",
+        "status": "Approved",
+        "tone": "active",
+        "name": "Ghana Shea Landscape Emission Reductions Project (FP114)",
+        "detail": "Approved 20 August 2020 · Grant · Total value $54.5M with Government and private co-financing",
+        "amount": "$30.1M",
+        "money": true,
+        "note": "Grant to restore savanna forest and shea parklands",
+        "text": "A Green Climate Fund grant, with UNDP and the Forestry Commission, to restore 200,000 hectares of savanna forest and 300,000 hectares of shea parklands in northern Ghana. It is to reach more than 500,000 people and open new income for women in the shea trade.",
+        "by": [
+          "Green Climate Fund",
+          "UNDP"
+        ],
+        "url": "https://www.undp.org/ghana/press-releases/green-climate-fund-approves-545m-project-reduce-deforestation-and-carbon-emissions-ghana%E2%80%99s-shea-landscape"
+      },
+      {
+        "cat": "regional",
+        "status": "Approved",
+        "tone": "active",
+        "name": "Regional West Africa Resilient Rice Value Chains (REWARD) Project",
+        "detail": "Board approval announced 3 August 2026 · Grant · Northern Savannah Ecological Zone",
+        "amount": "$18.8M",
+        "money": true,
+        "note": "Grant for rice production, irrigation and processing",
+        "text": "An African Development Bank grant for climate-resilient rice: inputs and mechanisation, irrigation and land development, modern processing and market links in the Northern Savannah Ecological Zone. It aims to reduce Ghana’s dependence on rice imports, for the food standard.",
+        "by": [
+          "African Development Bank"
+        ],
+        "url": "https://allafrica.com/stories/202608040579.html"
+      },
+      {
+        "cat": "regional",
+        "status": "Approved",
+        "tone": "active",
+        "name": "Strengthening Institutions for Enhanced Financial and Economic Governance (SIEFEG)",
+        "detail": "Announced 8 April 2026 · African Development Fund grant · Extends a project approved in 2019",
+        "amount": "$10.41M",
+        "money": true,
+        "note": "Revenue mobilisation and oversight of public spending",
+        "text": "An African Development Fund grant to strengthen domestic revenue mobilisation and the oversight of public spending, and to prepare Ghana’s next national development plan. It builds capacity in the Ministry of Finance, the National Development Planning Commission, the Audit Service, Parliament and the Public Procurement Authority.",
+        "by": [
+          "African Development Bank"
+        ],
+        "url": "https://allafrica.com/stories/202604090351.html"
+      },
+      {
+        "cat": "private",
+        "status": "Announced",
+        "tone": "active",
+        "name": "Cocoa risk participation facility with Absa Bank Ghana",
+        "detail": "Announced 16 September 2026 · Unfunded risk participation · With the GAFSP Private Sector Window",
+        "amount": "$50M",
+        "money": true,
+        "note": "Up to $50 million; traceable cocoa from more than 139,000 smallholders",
+        "text": "IFC and the Global Agriculture and Food Security Program share the risk on Absa Bank Ghana’s lending to licensed buying companies that buy traceable cocoa from farmers in the buying season. It is expected to support more than 139,000 smallholder farmers, for livelihood.",
+        "by": [
+          "IFC",
+          "GAFSP",
+          "Absa Bank Ghana"
+        ],
+        "url": "https://www.ifc.org/en/pressroom/2026/ifc-partners-with-absa-bank-ghana-and-complete-farmer-to-expand-agricultural-finan"
+      },
+      {
+        "cat": "private",
+        "status": "Announced",
+        "tone": "active",
+        "name": "Convertible loan to Complete Farmer",
+        "detail": "Announced 16 September 2026 · With $480,000 of advisory support · GAFSP Business Investment Financing Track",
+        "amount": "$2.4M",
+        "money": true,
+        "note": "Input finance and agronomy for farmers",
+        "text": "An IFC convertible loan, backed by GAFSP, to scale Complete Farmer’s input financing and agronomy services. The Ghanaian agtech company serves more than 72,000 farmers across eight regions and expects to support 240,000 by 2030. It serves food and livelihood.",
+        "by": [
+          "IFC",
+          "GAFSP"
+        ],
+        "url": "https://www.ifc.org/en/pressroom/2026/ifc-partners-with-absa-bank-ghana-and-complete-farmer-to-expand-agricultural-finan"
+      },
+      {
+        "cat": "private",
+        "status": "Signed",
+        "tone": "active",
+        "name": "Guarantee for Standard Chartered Bank Ghana",
+        "detail": "Signed 24 February 2026 · Three years · Covers reserves held at the Bank of Ghana",
+        "amount": "$70M",
+        "money": true,
+        "note": "Frees capital for up to $307.6 million of new lending",
+        "text": "A MIGA guarantee against the expropriation of reserves that Standard Chartered’s Ghana subsidiary holds at the Bank of Ghana. Lower risk-weights free capital for up to $307.6 million of new loans, mainly trade and corporate finance, for livelihood.",
+        "by": [
+          "MIGA",
+          "Standard Chartered"
+        ],
+        "url": "https://www.miga.org/press-release/miga-boosts-bank-lending-ghana-and-zambia"
+      },
+      {
+        "cat": "private",
+        "status": "Announced",
+        "tone": "active",
+        "name": "Cocoa risk-sharing facility with Access Bank Ghana",
+        "detail": "Announced 23 January 2026 · Unfunded risk participation · With the GAFSP Private Sector Window",
+        "amount": "$67M",
+        "money": true,
+        "note": "Up to $134 million of lending to cocoa buying companies",
+        "text": "IFC and GAFSP cover up to $67 million of the risk on Access Bank Ghana’s working-capital loans to licensed buying companies, which can then extend up to $134 million. It funds the purchase of traceable cocoa from smallholders and more timely payments to farmers.",
+        "by": [
+          "IFC",
+          "GAFSP",
+          "Access Bank Ghana"
+        ],
+        "url": "https://www.ifc.org/en/pressroom/2026/ifc-and-access-bank-partner-to-support-jobs-growth-traceability-in-ghana-s-cocoa-s"
+      },
+      {
+        "cat": "private",
+        "status": "Announced",
+        "tone": "active",
+        "name": "Cocoa risk-sharing facility with Société Générale Ghana",
+        "detail": "Announced 20 June 2025 · Local-currency loan through an unfunded risk-sharing facility",
+        "amount": "$40M",
+        "money": true,
+        "note": "Up to $80 million for cocoa buying companies",
+        "text": "An IFC local-currency facility of up to $40 million equivalent that supports up to $80 million of Société Générale Ghana’s financing for licensed buying companies, and up to $320 million of cocoa trade over four years. About 75,000 smallholder farmers are expected to benefit.",
+        "by": [
+          "IFC",
+          "Société Générale Ghana"
+        ],
+        "url": "https://www.ifc.org/en/pressroom/2025/ifc-and-soci-t-g-n-rale-ghana-partner-to-support-ghana-s-cocoa-sector"
+      },
+      {
+        "cat": "private",
+        "status": "Announced",
+        "tone": "active",
+        "name": "Solar for Industries, LMI Holdings",
+        "detail": "Announced 12 February 2025 · First tranche of a $100M loan facility · 150 MW of solar for the Tema and Dawa industrial zones",
+        "amount": "$21M",
+        "money": true,
+        "note": "First 100 MW planned by October 2026",
+        "text": "IFC finance for a 150 MW solar plant serving more than 100 businesses in the Tema and Dawa industrial zones, from food processing to steel and textiles. It is expected to avoid about 120,000 tonnes of carbon a year and lower power costs, for energy and livelihood.",
+        "by": [
+          "IFC",
+          "LMI Holdings"
+        ],
+        "url": "https://www.ifc.org/en/pressroom/2025/ifc-deepens-partnership-with-lmi-holdings-to-expand-clean-energy-to-industrial-zon"
+      },
+      {
+        "cat": "impact",
+        "status": "Issued",
+        "tone": "active",
+        "name": "Clean Cooking Outcome Bond",
+        "detail": "Priced 5 December 2025 · $200M IBRD bond, matures 31 March 2032 · Variable coupon from carbon credits",
+        "amount": "$30.5M",
+        "money": true,
+        "note": "About $30.5 million of private capital for clean cookstoves in Ghana",
+        "text": "A World Bank outcome bond whose investors forgo part of their coupon to finance UpEnergy’s clean cookstove projects in Ghana, which aim to bring cleaner cooking to 1.3 million people. The emission reductions are sold to Switzerland’s KliK Foundation under Article 6 of the Paris Agreement. It serves the energy standard, which is measured by clean cooking.",
+        "by": [
+          "World Bank (IBRD)",
+          "Standard Chartered",
+          "KliK Foundation",
+          "UpEnergy"
+        ],
+        "url": "https://www.worldbank.org/en/news/press-release/2025/12/05/world-bank-s-new-outcome-bond-supports-clean-cooking-initiative-in-ghana"
       }
     ]
   },
@@ -203,11 +418,39 @@
     "heading": "Already working in Ghana.",
     "items": [
       {
-        "standard": "In preparation",
-        "name": "The enterprises building Perfect Ghana",
-        "text": "The Stewards are verifying the companies and social enterprises already delivering the seven basic living standards in Ghana. Suggest one to include.",
-        "source": "Suggest an enterprise",
-        "url": "mailto:contact@perfectnations.org?subject=An%20enterprise%20for%20Perfect%20Ghana"
+        "standard": "Food",
+        "name": "Complete Farmer",
+        "text": "A Ghanaian agtech platform linking more than 72,000 farmers in eight regions with buyers, finance, inputs and agronomy, through eight fulfilment centres. IFC lent it $2.4 million in September 2026.",
+        "source": "IFC, 2026",
+        "url": "https://www.ifc.org/en/pressroom/2026/ifc-partners-with-absa-bank-ghana-and-complete-farmer-to-expand-agricultural-finan"
+      },
+      {
+        "standard": "Water",
+        "name": "Safe Water Network Ghana",
+        "text": "Runs 112 water stations in more than 150 communities, reaching about 510,000 people, nearly 15,000 of them through connections at home.",
+        "source": "GhanaWeb, 2025",
+        "url": "https://www.ghanaweb.com/GhanaHomePage/NewsArchive/Safe-Water-Network-commissions-over-800-000-Asikuma-Home-Water-Station-1997111"
+      },
+      {
+        "standard": "Energy",
+        "name": "Solar for Industries, LMI Holdings",
+        "text": "Built a 16.82 MW rooftop solar plant in the Tema Free Zone and is building 150 MW of solar for the Tema and Dawa industrial zones, with IFC finance.",
+        "source": "IFC, 2025",
+        "url": "https://www.ifc.org/en/pressroom/2025/ifc-deepens-partnership-with-lmi-holdings-to-expand-clean-energy-to-industrial-zon"
+      },
+      {
+        "standard": "Education",
+        "name": "Ashesi University",
+        "text": "A university in Berekuso with 1,830 students in 2026, 53 in every hundred of them on scholarships, and 3,384 alumni.",
+        "source": "Ashesi University, 2026",
+        "url": "https://ashesi.edu.gh/factbook/"
+      },
+      {
+        "standard": "Health",
+        "name": "Nyaho Medical Centre",
+        "text": "A Ghanaian healthcare provider with its main hospital in Accra. IFC lent it $5.2 million in 2020 to open primary and urgent care in Tema, Takoradi and Kumasi.",
+        "source": "IFC, 2020",
+        "url": "https://www.ifc.org/en/pressroom/2020/ifc-provides-funding-to-nyaho-medical-to-expand-access-to-quality-healthcare-in-ghana"
       }
     ]
   },
@@ -343,5 +586,6 @@
     }
   ],
   "dispatches": [],
-  "checked": "2026-11-05T20:21Z"
+  "checked": "2026-11-05T20:21Z",
+  "reviewed": "2026-11-08T06:58Z"
 }
