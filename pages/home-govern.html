@@ -1,0 +1,164 @@
+<!-- ===========================================================================
+PERFECT NATIONS - HOMEPAGE - SECTION 02a - 01 GOVERN: THE CUP - v1.0 - 2026-11-08
+Part of the one-file homepage (pages/home.html, built by tools/build_home.py). Root id pn-govern.
+v1.0: the Steward-General's decision of 8 Nov 2026: "the whole logo also links to recognizing the best
+governance, which is the first step, even before finance, to enable basic standards of living for all."
+Step 01 of How it works (Govern): the cup of the logo. The gold mark 01 leads back to the map (#pn-steps).
+  - The cup is drawn from the logo kit (pages/home-logo-kit.html), lit; the laurels and stars stay dim.
+  - The six dimensions are the World Bank's Worldwide Governance Indicators (2025 revision), named as
+    the World Bank names them: Voice and Accountability, Political Stability, Government Effectiveness,
+    Regulatory Quality, Rule of Law, Control of Corruption (World Bank Data Catalog, dataset 0038026).
+EDITORIAL (for the Steward-General): the wording "sets out to recognize" and "criteria in preparation"
+  is deliberate: no Cup has been awarded and its criteria are not yet published. Confirm, or name the
+  first year of the Cup, before this goes live.
+Laptops: the cup on the left, the words on the right. Phones: a smaller cup above the words.
+=========================================================================== -->
+<style>
+#pn-govern{
+  --er:#0B3D45; --er2:#0F4C5C; --er3:#082A30;
+  --iv:#F5F1E8; --tm:rgba(245,241,232,.84); --td:rgba(245,241,232,.62); --hair:rgba(245,241,232,.16);
+  --g:#E3C258; --gs:#F0D68F; --onacc:#1A140C;
+  --hd:var(--pn-font-heading,"Barlow Condensed","Arial Narrow",Arial,sans-serif);
+  --bd:var(--pn-font-body,"Barlow Semi Condensed",Arial,sans-serif);
+  position:relative; isolation:isolate;
+  width:100vw; margin-left:calc(50% - 50vw);
+  overflow-x:hidden; overflow-x:clip;
+  padding:clamp(30px,5vh,56px) 0 clamp(28px,4.6vh,52px);
+  box-sizing:border-box; color:var(--iv); font-family:var(--bd); line-height:1.5;
+  background:
+    radial-gradient(36% 70% at 20% 55%, rgba(227,194,88,.16) 0%, transparent 66%),
+    radial-gradient(50% 60% at 100% 0%, rgba(110,200,196,.10) 0%, transparent 70%),
+    linear-gradient(180deg,var(--er3) 0%,var(--er) 46%,var(--er2) 100%);
+}
+#pn-govern *,#pn-govern *::before,#pn-govern *::after{ box-sizing:border-box; }
+.elementor-widget-html:has(#pn-govern),
+.elementor-widget:has(#pn-govern),
+.e-con-inner:has(#pn-govern),
+.e-con:has(#pn-govern){
+  padding-top:0 !important; padding-bottom:0 !important;
+  --widgets-spacing:0px !important; row-gap:0 !important;
+}
+#pn-govern h2,#pn-govern h3,#pn-govern p{ text-shadow:none !important; }
+#pn-govern .pngv-in{
+  width:100%; max-width:1240px; margin:0 auto; padding:0 clamp(18px,4vw,48px);
+  display:grid; grid-template-columns:minmax(0,.78fr) minmax(0,1.22fr); gap:18px clamp(28px,5vw,80px); align-items:center;
+}
+#pn-govern .pngv-art{ position:relative; margin:0; display:flex; flex-direction:column; align-items:center; }
+#pn-govern .pngv-art::before{
+  content:""; position:absolute; left:50%; top:54%; width:86%; aspect-ratio:1; transform:translate(-50%,-50%); border-radius:50%;
+  background:radial-gradient(circle, rgba(227,194,88,.22) 0%, rgba(227,194,88,.06) 46%, transparent 70%);
+}
+#pn-govern svg.pngv-logo{ position:relative; display:block; width:min(100%,380px); height:auto; overflow:visible; fill:url(#pnk-gold); }
+#pn-govern .pngv-logo .dim{ opacity:.16; }
+#pn-govern .pngv-logo .lit{ filter:drop-shadow(0 0 18px rgba(227,194,88,.38)); }
+#pn-govern .pngv-cap{
+  position:relative; margin-top:10px; white-space:nowrap;
+  font-family:var(--hd); font-size:.66rem; font-weight:700; letter-spacing:.28em; text-transform:uppercase; color:var(--g);
+}
+
+#pn-govern .pngv-eb{
+  display:flex; align-items:center; gap:12px; margin:0;
+  font-family:var(--hd); font-size:.72rem; font-weight:700; letter-spacing:.3em; text-transform:uppercase; color:var(--tm);
+}
+#pn-govern .pngv-ch{
+  display:inline-flex; align-items:center; justify-content:center; flex:none; width:32px; height:32px; border-radius:50%;
+  border:1.5px solid var(--g); color:var(--g) !important; text-decoration:none !important;
+  font-family:var(--hd); font-size:.76rem; font-weight:700; letter-spacing:.02em; line-height:1;
+  transition:background .2s ease, color .2s ease;
+}
+#pn-govern .pngv-ch:hover{ background:var(--g); color:var(--onacc) !important; }
+#pn-govern .pngv-ch:focus-visible{ outline:2px solid var(--gs); outline-offset:3px; }
+#pn-govern .pngv-eb b{ font-weight:700; color:var(--g); }
+#pn-govern h2.pngv-h2{
+  margin:12px 0 0; max-width:none; font-family:var(--hd); font-weight:600; text-transform:none;
+  font-size:clamp(2.3rem,4.4vw,4.1rem); line-height:.93; letter-spacing:-.025em; color:var(--iv) !important; text-wrap:balance;
+}
+#pn-govern h2.pngv-h2 em{ font-style:normal; color:var(--gs); }
+#pn-govern .pngv-lead{ margin:12px 0 0; max-width:58ch; font-size:clamp(1rem,1.25vw,1.14rem); line-height:1.55; color:var(--tm); text-wrap:pretty; }
+#pn-govern .pngv-lead b{ font-weight:600; color:var(--iv); }
+#pn-govern ol.pngv-six{ list-style:none; margin:16px 0 0; padding:0; display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:8px; }
+#pn-govern .pngv-six li{
+  display:flex; align-items:center; gap:10px; margin:0; min-height:52px; padding:9px 12px; border-radius:12px;
+  background:rgba(8,42,48,.5); border:1px solid var(--hair);
+  font-family:var(--hd); font-size:1.02rem; font-weight:600; line-height:1.08; letter-spacing:-.005em; color:var(--iv);
+}
+#pn-govern .pngv-six span{ flex:none; font-size:.66rem; font-weight:700; letter-spacing:.1em; color:var(--g); }
+#pn-govern .pngv-src{ margin:10px 0 0; font-size:.8rem; line-height:1.45; color:var(--td); }
+#pn-govern .pngv-src a{ color:var(--g) !important; text-decoration:none !important; border-bottom:1px solid rgba(227,194,88,.45); }
+#pn-govern .pngv-src a:focus-visible{ outline:2px solid var(--gs); outline-offset:2px; }
+#pn-govern .pngv-cup{
+  display:flex; align-items:center; gap:12px; margin:16px 0 0; padding:12px 16px; border-radius:14px;
+  background:linear-gradient(100deg,rgba(227,194,88,.16),rgba(227,194,88,.04)); border:1px solid rgba(227,194,88,.34);
+  font-size:clamp(.96rem,1.1vw,1.04rem); line-height:1.42; color:var(--tm);
+}
+#pn-govern .pngv-cup svg{ flex:none; width:34px; height:34px; fill:url(#pnk-gold); }
+#pn-govern .pngv-cup b{ font-family:var(--hd); font-size:1.12em; font-weight:600; color:var(--gs); }
+
+@media (prefers-reduced-motion:no-preference){
+  #pn-govern.is-armed .pngv-logo .lit{ opacity:0; transform:translateY(14px); }
+  #pn-govern.is-armed .pngv-six li{ opacity:0; transform:translateY(10px); }
+  #pn-govern.is-in .pngv-logo .lit{ opacity:1; transform:none; transition:opacity 1.2s ease .2s, transform 1.4s cubic-bezier(.22,1,.36,1) .2s; }
+  #pn-govern.is-in .pngv-six li{ opacity:1; transform:none; transition:opacity .6s ease, transform .7s cubic-bezier(.22,1,.36,1); transition-delay:calc(.4s + var(--i) * .08s); }
+}
+@media (max-width:899px){
+  #pn-govern .pngv-in{ grid-template-columns:minmax(0,1fr); }
+  #pn-govern svg.pngv-logo{ width:min(62%,260px); }
+  #pn-govern ol.pngv-six{ grid-template-columns:repeat(2,minmax(0,1fr)); }
+}
+@media (max-width:760px){
+  #pn-govern{ padding:26px 0 26px; }
+  #pn-govern .pngv-in{ padding:0 16px; gap:14px; }
+  #pn-govern .pngv-eb{ font-size:.64rem; letter-spacing:.22em; gap:10px; }
+  #pn-govern .pngv-ch{ width:28px; height:28px; font-size:.68rem; }
+  #pn-govern h2.pngv-h2{ margin-top:10px; font-size:clamp(2.1rem,9.8vw,2.7rem); }
+  #pn-govern .pngv-lead{ font-size:.96rem; line-height:1.5; }
+  #pn-govern ol.pngv-six{ gap:6px; margin-top:12px; }
+  #pn-govern .pngv-six li{ min-height:46px; padding:8px 10px; font-size:.9rem; gap:8px; }
+  #pn-govern .pngv-src{ font-size:.74rem; }
+  #pn-govern .pngv-cup{ padding:10px 12px; font-size:.9rem; }
+  #pn-govern .pngv-cup svg{ width:28px; height:28px; }
+}
+@media (prefers-reduced-motion:reduce){
+  #pn-govern *{ transition:none !important; animation:none !important; }
+}
+</style>
+
+<section id="pn-govern" aria-labelledby="pngv-h">
+  <div class="pngv-in">
+    <figure class="pngv-art">
+      <svg class="pngv-logo" viewBox="12 8 488 496" aria-hidden="true" focusable="false"><g class="dim"><use href="#pnk-cl"/><use href="#pnk-s0"/><use href="#pnk-s1"/><use href="#pnk-s2"/><use href="#pnk-s3"/><use href="#pnk-s4"/><use href="#pnk-s5"/><use href="#pnk-s6"/></g><g class="lit"><use href="#pnk-cl" clip-path="url(#pnk-cc)"/></g></svg>
+      <figcaption class="pngv-cap">The cup &middot; good governance</figcaption>
+    </figure>
+    <div>
+      <p class="pngv-eb"><a class="pngv-ch" href="#pn-steps" aria-label="Step 01 of 04, Govern. Back to How it works">01</a><span><b>Govern</b> &middot; The cup</span></p>
+      <h2 class="pngv-h2" id="pngv-h">Good governance comes first. <em>Before any finance.</em></h2>
+      <p class="pngv-lead">A nation can secure basic standards of living for all only through institutions that serve its people. The cup in the logo stands for this: <b>Perfect Nations sets out to recognize the nations that govern best</b>, judged on the six dimensions of governance the World Bank tracks.</p>
+      <ol class="pngv-six" aria-label="The six dimensions of governance">
+        <li style="--i:0"><span>01</span>Voice and Accountability</li>
+        <li style="--i:1"><span>02</span>Political Stability</li>
+        <li style="--i:2"><span>03</span>Government Effectiveness</li>
+        <li style="--i:3"><span>04</span>Regulatory Quality</li>
+        <li style="--i:4"><span>05</span>Rule of Law</li>
+        <li style="--i:5"><span>06</span>Control of Corruption</li>
+      </ol>
+      <p class="pngv-src">The six dimensions: <a href="https://www.worldbank.org/en/publication/worldwide-governance-indicators" target="_blank" rel="noopener noreferrer">World Bank, Worldwide Governance Indicators, 2025 revision</a>.</p>
+      <p class="pngv-cup"><svg viewBox="110 140 292 370" aria-hidden="true" focusable="false"><use href="#pnk-cl" clip-path="url(#pnk-cc)"/></svg><span><b>The Perfect Nations Cup.</b> A recognition for the best governance of basic standards of living. Criteria in preparation.</span></p>
+    </div>
+  </div>
+</section>
+
+<script>
+(function(){
+  var root = document.getElementById('pn-govern');
+  if (!root || root.getAttribute('data-pngv-on')) { return; }
+  root.setAttribute('data-pngv-on', '1');
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduce || !('IntersectionObserver' in window)) { return; }
+  root.classList.add('is-armed');
+  var io = new IntersectionObserver(function(list){
+    list.forEach(function(e){ if (e.isIntersecting) { root.classList.add('is-in'); io.disconnect(); } });
+  }, { threshold: 0.15 });
+  io.observe(root);
+  setTimeout(function(){ root.classList.add('is-in'); }, 9000);
+})();
+</script>

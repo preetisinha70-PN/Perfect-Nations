@@ -17,7 +17,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 PAGES = ROOT / 'pages'
-VERSION = '8.2'
+VERSION = '9.0'
 
 # The page, top to bottom. 'rule' places the gold line (pages/home-rule.html) between two sections;
 # 'seam' (a painted seam from pages/home-seams.html) is no longer used on the homepage.
@@ -25,18 +25,24 @@ VERSION = '8.2'
 # section (the Vision and the Mission) in place of the race; Count. Price. Finance. as the map of
 # the page; Sovereign Assets, Perfect Capita and Capital Architecture back as one short section
 # each; the gold line in place of the painted seams.
+# v9.0 (8 Nov 2026), the Steward-General's decisions: the whole logo is explained, part by part, and
+# governance comes first: Govern. Count. Price. Finance. (the cup, the gold, the seven stars, the
+# laurels), with a new Govern section; innovative financing for development (FfD) before super
+# intelligence (SI); the five greatest asset classes of a nation; the logo kit drawn once, at the top.
 ORDER = [
     'nations-menu.html',          # the moving list of 195 nations (also on other pages)
     'home-hero.html',             # 01 Civilization Re-Defined / Designing the Prosperity of Nations
     'rule',
     'home-cup.html',              # 01a The Cup: the Vision and the Mission
     'home-capital-wire.html',     # 01b the Capital Wire (kept by the Correspondent)
-    'home-steps.html',            # 02 How it works: Count. Price. Finance. (the map; ivory)
-    'home-assets.html',           # 03 Step 01 Count: Sovereign Assets
+    'home-steps.html',            # 02 How it works: Govern. Count. Price. Finance. (the logo, part by part; ivory)
+    'home-govern.html',           # 02a Step 01 Govern: the cup, recognizing the best governance
     'rule',
-    'home-perfect-capita.html',   # 04 Step 02 Price: Perfect Capita
+    'home-assets.html',           # 03 Step 02 Count: the gold, Sovereign Assets
     'rule',
-    'home-capital.html',          # 05 Step 03 Finance: Capital Architecture
+    'home-perfect-capita.html',   # 04 Step 03 Price: the seven stars, Perfect Capita
+    'rule',
+    'home-capital.html',          # 05 Step 04 Finance: the laurels, Capital Architecture
     'rule',
     'home-blueprints.html',       # 06 Blueprints of Nations
     'rule',
@@ -111,7 +117,7 @@ Palette: Earthrise and ivory grounds, gold only for what a visitor can act on; a
 =========================================================================== -->
 <div id="pn-home" hidden></div>
 ''' % (VERSION, today)
-    shared = []
+    shared = [(PAGES / 'home-logo-kit.html').read_text(encoding='utf-8').strip()]
     if 'seam' in ORDER:
         shared.append((PAGES / 'home-seams.html').read_text(encoding='utf-8').strip())
     if 'rule' in ORDER:

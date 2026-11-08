@@ -1,35 +1,32 @@
 <!-- ===========================================================================
-PERFECT NATIONS - HOMEPAGE - SECTION 02 - HOW IT WORKS: COUNT. PRICE. FINANCE. - v3.0 - 2026-11-08
-v3.0 (homepage v8.2, the designer's layout): one short band, no tiles and no card. The three steps are
-  three gold-ringed chips that open their sections; the work-ahead figure now sits in the hero ribbon.
+PERFECT NATIONS - HOMEPAGE - SECTION 02 - HOW IT WORKS: GOVERN. COUNT. PRICE. FINANCE. - v4.0 - 2026-11-08
 Part of the one-file homepage (pages/home.html, built by tools/build_home.py). Root id pn-steps.
-v2.0: the Steward-General's choices of 8 Nov 2026 (homepage v8.1):
-  - "Pay" becomes "Finance": Count. Price. Finance.
-  - Sovereign Assets, Perfect Capita and Capital Architecture come back as sections of their own,
-    so this section becomes their map: three tiles, each opening its section further down
-    (#pn-assets, #pn-capita, #pn-capital). The Barbados examples move to those sections.
-  - "The work ahead" stays: the people below the World Bank line of extreme poverty, read live from
-    figures/perfect-capita.json (the Perfect Capita Steward); a malformed value keeps the figure here.
-The drawings are gold line art (an island, the wheel of seven standards, an arch of seven stones
-with a gold keystone). They draw themselves once, on scroll; reduced motion shows them still.
+v4.0: the Steward-General's decisions of 8 Nov 2026: the whole logo is explained, part by part, and
+recognizing the best governance comes first, before any finance. Four steps, four parts of the logo:
+  01 Govern  = the cup (recognizing the best governance)      -> #pn-govern
+  02 Count   = the gold (what a nation owns: Sovereign Assets) -> #pn-assets
+  03 Price   = the seven stars, Food the crown (Perfect Capita) -> #pn-capita
+  04 Finance = the laurels (Capital Architecture)               -> #pn-capital
+  and the whole logo, lit, is a Perfect Nation.
+Each tile draws the logo from the logo kit (pages/home-logo-kit.html) with its own part lit; the
+gold rises through the logo on the Count tile. Innovative financing for development (FfD) is named
+before super intelligence (SI).
+Laptops: four tiles in a row. Phones: two by two; nothing scrolls sideways.
 An empty anchor keeps the old address perfectnations.org/#pn-studio landing here.
-Laptops: three tiles side by side, joined by gold arrows. Phones: three compact rows, the drawing on
-the left; nothing scrolls sideways.
-v1.0 (8 Nov 2026): the three steps with Barbados worked through.
+v3.0 (homepage v8.2): one band with three chips: Count. Price. Finance.
 =========================================================================== -->
 <style>
 #pn-steps{
   --er:#0B3D45; --er2:#0F4C5C; --er3:#082A30;
   --ivt:#F5F1E8; --ink:#16252A; --ink2:#3E4C50; --tc:#8A3A22;
   --g:#E3C258; --gs:#F0D68F; --onacc:#1A140C;
-  --tm:rgba(245,241,232,.84); --td:rgba(245,241,232,.64);
+  --tm:rgba(245,241,232,.84);
   --hd:var(--pn-font-heading,"Barlow Condensed","Arial Narrow",Arial,sans-serif);
   --bd:var(--pn-font-body,"Barlow Semi Condensed",Arial,sans-serif);
-  --gap:clamp(18px,2vw,30px);
   position:relative; isolation:isolate;
   width:100vw; margin-left:calc(50% - 50vw);
   overflow-x:hidden; overflow-x:clip;
-  padding:clamp(28px,4.6vh,52px) 0 clamp(28px,4.4vh,48px);
+  padding:clamp(28px,4.4vh,48px) 0 clamp(26px,4vh,44px);
   box-sizing:border-box; color:var(--ink); font-family:var(--bd); line-height:1.5;
   background:
     radial-gradient(48% 70% at 92% 0%, rgba(227,194,88,.20) 0%, rgba(227,194,88,0) 70%),
@@ -48,180 +45,119 @@ v1.0 (8 Nov 2026): the three steps with Barbados worked through.
 #pn-steps h2,#pn-steps p{ text-shadow:none !important; }
 #pn-steps .pnsp-in{ position:relative; width:100%; max-width:1240px; margin:0 auto; padding:0 clamp(18px,4vw,48px); }
 
-/* the head: the method on the left, the work ahead on the right */
-#pn-steps .pnsp-head{ display:grid; grid-template-columns:minmax(0,1.55fr) minmax(0,1fr); gap:22px clamp(28px,4vw,64px); align-items:end; }
+#pn-steps .pnsp-head{ display:grid; grid-template-columns:minmax(0,1.5fr) minmax(0,1fr); gap:12px clamp(24px,4vw,64px); align-items:end; }
 #pn-steps .pnsp-eb{
   display:inline-flex; align-items:center; gap:12px; margin:0;
   font-family:var(--hd); font-size:.72rem; font-weight:700; letter-spacing:.3em; text-transform:uppercase; color:var(--tc);
 }
 #pn-steps .pnsp-eb::before{ content:""; width:26px; height:1px; background:rgba(138,58,34,.55); }
 #pn-steps h2.pnsp-h2{
-  margin:12px 0 0; max-width:none; font-family:var(--hd); font-weight:600; text-transform:none;
-  font-size:clamp(2.6rem,6.2vw,5.8rem); line-height:.9; letter-spacing:-.03em; color:var(--er) !important;
+  margin:10px 0 0; max-width:none; font-family:var(--hd); font-weight:600; text-transform:none;
+  font-size:clamp(2.4rem,5.2vw,4.9rem); line-height:.9; letter-spacing:-.03em; color:var(--er) !important;
 }
 #pn-steps .pnsp-h2 span{ display:inline-block; }
-#pn-steps .pnsp-h2 .pnsp-w3{ color:var(--tc); }
-#pn-steps .pnsp-k{
-  margin:12px 0 0; max-width:30ch; font-family:var(--hd); font-weight:500;
-  font-size:clamp(1.2rem,2vw,1.8rem); line-height:1.12; letter-spacing:-.005em; color:var(--tc); text-wrap:balance;
-}
-#pn-steps .pnsp-lead{ margin:12px 0 0; max-width:56ch; font-size:clamp(1rem,1.25vw,1.14rem); line-height:1.55; color:var(--ink2); text-wrap:pretty; }
+#pn-steps .pnsp-h2 span:last-child{ color:var(--tc); }
+#pn-steps .pnsp-lead{ margin:0; max-width:48ch; font-size:clamp(1rem,1.2vw,1.12rem); line-height:1.5; color:var(--ink2); text-wrap:pretty; }
 #pn-steps .pnsp-lead b{ font-weight:600; color:var(--ink); }
-#pn-steps .pnsp-now{
-  position:relative; overflow:hidden;
-  padding:clamp(18px,1.8vw,24px) clamp(18px,1.8vw,26px) clamp(16px,1.6vw,22px);
-  border-radius:16px; color:var(--ivt);
-  background:
-    radial-gradient(90% 80% at 100% 0%, rgba(227,194,88,.16) 0%, rgba(227,194,88,0) 60%),
-    linear-gradient(160deg,var(--er2) 0%,var(--er) 45%,var(--er3) 100%);
-  border:1px solid rgba(227,194,88,.28); box-shadow:0 18px 44px rgba(8,42,48,.20);
-}
-#pn-steps .pnsp-now__eb{ margin:0; font-family:var(--hd); font-size:.68rem; font-weight:700; letter-spacing:.28em; text-transform:uppercase; color:var(--g); }
-#pn-steps .pnsp-now__n{ display:block; margin:6px 0 0; font-family:var(--hd); font-weight:600; font-size:clamp(3.2rem,5.4vw,5.2rem); line-height:.9; letter-spacing:-.03em; color:var(--ivt); }
-#pn-steps .pnsp-now__t{ margin:8px 0 0; font-size:clamp(.98rem,1.15vw,1.08rem); line-height:1.45; color:var(--tm); }
-#pn-steps .pnsp-src{
-  display:inline-block; margin-top:10px; padding:4px 0 3px;
-  font-family:var(--hd); font-size:.66rem; font-weight:700; letter-spacing:.16em; text-transform:uppercase;
-  color:var(--g) !important; text-decoration:none !important; border-bottom:1px solid rgba(227,194,88,.5);
-}
-#pn-steps .pnsp-src:focus-visible{ outline:2px solid var(--gs); outline-offset:3px; }
 
-/* the map: three tiles, each opening its section */
-#pn-steps ol.pnsp-map{ list-style:none; margin:clamp(22px,3.4vh,34px) 0 0; padding:0; display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:var(--gap); }
-#pn-steps .pnsp-map > li{ position:relative; margin:0; }
-#pn-steps .pnsp-map > li:not(:last-child)::after{
-  content:"\2192"; position:absolute; z-index:3; top:clamp(52px,5vw,70px); right:calc(-0.5 * var(--gap) - 16px);
-  display:flex; align-items:center; justify-content:center; width:32px; height:32px; border-radius:50%;
-  background:var(--g); color:var(--onacc); box-shadow:0 6px 16px rgba(8,42,48,.28);
-  font-family:Arial,sans-serif; font-size:.95rem; font-weight:700; line-height:1;
-}
-#pn-steps a.pnsp-tile{
+/* the four parts of the logo */
+#pn-steps ol.pnsp-map{ list-style:none; margin:clamp(18px,3vh,28px) 0 0; padding:0; display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:clamp(10px,1.4vw,18px); }
+#pn-steps .pnsp-map > li{ margin:0; }
+#pn-steps a.pnsp-t{
   position:relative; display:flex; flex-direction:column; height:100%;
-  padding:clamp(16px,1.6vw,22px) clamp(18px,1.7vw,24px) clamp(14px,1.4vw,18px);
+  padding:clamp(14px,1.4vw,18px) clamp(14px,1.5vw,20px) clamp(14px,1.4vw,18px);
   border-radius:18px; color:var(--ivt) !important; text-decoration:none !important;
   background:
-    radial-gradient(120% 60% at 50% 0%, rgba(227,194,88,.10) 0%, rgba(227,194,88,0) 62%),
-    linear-gradient(170deg,#12586A 0%,var(--er) 44%,var(--er3) 100%);
-  border:1px solid rgba(227,194,88,.24); box-shadow:0 20px 44px rgba(8,42,48,.18);
+    radial-gradient(90% 60% at 50% 0%, rgba(227,194,88,.14) 0%, rgba(227,194,88,0) 64%),
+    linear-gradient(170deg,#12586A 0%,var(--er) 46%,var(--er3) 100%);
+  border:1px solid rgba(227,194,88,.26); box-shadow:0 18px 40px rgba(8,42,48,.18);
   transition:transform .3s cubic-bezier(.22,1,.36,1), box-shadow .3s ease, border-color .3s ease;
 }
-#pn-steps a.pnsp-tile:hover{ transform:translateY(-4px); border-color:rgba(227,194,88,.6); box-shadow:0 26px 52px rgba(8,42,48,.26); }
-#pn-steps a.pnsp-tile:focus-visible{ outline:2px solid var(--er); outline-offset:3px; }
-#pn-steps svg.pnsp-art{ display:block; width:100%; height:clamp(84px,7.6vw,108px); margin:0 0 clamp(8px,1.2vh,12px); color:var(--g); overflow:visible; }
-#pn-steps .pnsp-art .d{ fill:none; stroke:currentColor; stroke-width:1.5; stroke-linecap:round; stroke-linejoin:round; }
-#pn-steps .pnsp-art .s{ fill:rgba(227,194,88,.08); stroke:currentColor; stroke-width:1.5; stroke-linejoin:round; }
-#pn-steps .pnsp-art .f{ fill:currentColor; stroke:none; }
-#pn-steps .pnsp-art .faint{ opacity:.5; }
-#pn-steps .pnsp-top{ display:flex; align-items:center; gap:12px; }
+#pn-steps a.pnsp-t:hover{ transform:translateY(-4px); border-color:rgba(227,194,88,.66); box-shadow:0 26px 52px rgba(8,42,48,.26); }
+#pn-steps a.pnsp-t:focus-visible{ outline:2px solid var(--er); outline-offset:3px; }
+#pn-steps svg.pnsp-art{ display:block; width:auto; height:clamp(116px,11vw,150px); margin:0 auto 10px; overflow:visible; fill:url(#pnk-gold); }
+#pn-steps .pnsp-art .dim{ opacity:.17; }
+#pn-steps .pnsp-art .lit{ filter:drop-shadow(0 0 10px rgba(227,194,88,.35)); }
+#pn-steps .pnsp-art .lvl{ stroke:var(--gs); stroke-width:3; stroke-dasharray:6 8; opacity:0; }
+#pn-steps .pnsp-top{ display:flex; align-items:center; gap:10px; }
 #pn-steps .pnsp-n{
-  display:inline-flex; align-items:center; justify-content:center; flex:none; width:34px; height:34px; border-radius:50%;
-  border:1.5px solid var(--g); color:var(--g); font-family:var(--hd); font-size:.78rem; font-weight:700; line-height:1;
+  display:inline-flex; align-items:center; justify-content:center; flex:none; width:30px; height:30px; border-radius:50%;
+  border:1.5px solid var(--g); color:var(--g); font-family:var(--hd); font-size:.72rem; font-weight:700; line-height:1;
 }
-#pn-steps .pnsp-verb{ font-family:var(--hd); font-size:.78rem; font-weight:700; letter-spacing:.3em; text-transform:uppercase; color:var(--g); }
-#pn-steps .pnsp-name{ display:block; margin:10px 0 0; font-family:var(--hd); font-weight:600; font-size:clamp(1.6rem,2.3vw,2.2rem); line-height:1; letter-spacing:-.015em; color:var(--ivt); }
-#pn-steps .pnsp-q{ display:block; margin:6px 0 0; font-size:clamp(.98rem,1.1vw,1.06rem); line-height:1.4; color:var(--tm); }
-#pn-steps .pnsp-down{
-  display:inline-flex; align-items:center; gap:8px; margin-top:auto; padding-top:12px;
-  font-family:var(--hd); font-size:.72rem; font-weight:700; letter-spacing:.2em; text-transform:uppercase; color:var(--g);
+#pn-steps .pnsp-verb{ font-family:var(--hd); font-size:.76rem; font-weight:700; letter-spacing:.28em; text-transform:uppercase; color:var(--g); }
+#pn-steps .pnsp-part{ display:block; margin:8px 0 0; font-family:var(--hd); font-weight:600; font-size:clamp(1.45rem,2vw,1.95rem); line-height:1; letter-spacing:-.015em; color:var(--ivt); }
+#pn-steps .pnsp-q{ display:block; margin:6px 0 0; font-size:clamp(.94rem,1.05vw,1.02rem); line-height:1.38; color:var(--tm); }
+#pn-steps a.pnsp-t::after{
+  content:"\2193"; position:absolute; right:14px; top:14px; width:28px; height:28px; border-radius:50%;
+  display:flex; align-items:center; justify-content:center; background:rgba(227,194,88,.14); color:var(--g);
+  font-family:Arial,sans-serif; font-size:.9rem; line-height:1; transition:transform .3s cubic-bezier(.22,1,.36,1), background .3s ease;
 }
-#pn-steps .pnsp-down::after{ content:"\2193"; font-family:Arial,sans-serif; font-size:1rem; letter-spacing:0; transition:transform .3s cubic-bezier(.22,1,.36,1); }
-#pn-steps a.pnsp-tile:hover .pnsp-down::after{ transform:translateY(4px); }
+#pn-steps a.pnsp-t:hover::after{ transform:translateY(3px); background:var(--g); color:var(--onacc); }
 
-/* motion: once, on scroll */
+/* the whole logo */
+#pn-steps .pnsp-all{ display:flex; align-items:center; gap:14px; margin:clamp(14px,2.4vh,22px) 0 0; font-size:clamp(1rem,1.2vw,1.12rem); line-height:1.4; color:var(--ink2); }
+#pn-steps .pnsp-all svg{ flex:none; width:46px; height:46px; fill:url(#pnk-gold); filter:drop-shadow(0 2px 4px rgba(8,42,48,.25)); }
+#pn-steps .pnsp-all b{ font-family:var(--hd); font-weight:600; font-size:1.2em; letter-spacing:-.005em; color:var(--er); }
+
 @media (prefers-reduced-motion:no-preference){
   #pn-steps.is-armed .pnsp-h2 span{ opacity:0; transform:translateY(.25em); }
-  #pn-steps.is-armed .pnsp-map > li{ opacity:0; transform:translateY(20px); }
-  #pn-steps.is-armed .pnsp-now{ opacity:0; transform:translateY(14px); }
-  #pn-steps.is-armed .pnsp-art .d,#pn-steps.is-armed .pnsp-art .s{ stroke-dasharray:1; stroke-dashoffset:1; }
-  #pn-steps.is-armed .pnsp-art .f{ opacity:0; }
+  #pn-steps.is-armed .pnsp-map > li{ opacity:0; transform:translateY(18px); }
+  #pn-steps.is-armed .pnsp-art .lit{ opacity:0; }
+  #pn-steps.is-armed .pnsp-art--gold .lit{ opacity:1; }
   #pn-steps.is-in .pnsp-h2 span{ opacity:1; transform:none; transition:opacity .6s ease, transform .7s cubic-bezier(.22,1,.36,1); }
-  #pn-steps.is-in .pnsp-h2 span:nth-child(2){ transition-delay:.14s; }
-  #pn-steps.is-in .pnsp-h2 span:nth-child(3){ transition-delay:.28s; }
-  #pn-steps.is-in .pnsp-now{ opacity:1; transform:none; transition:opacity .7s ease .2s, transform .8s cubic-bezier(.22,1,.36,1) .2s; }
-  #pn-steps.is-in .pnsp-map > li{ opacity:1; transform:none; transition:opacity .7s ease, transform .8s cubic-bezier(.22,1,.36,1); transition-delay:calc(.25s + var(--i) * .16s); }
-  #pn-steps.is-in .pnsp-art .d,#pn-steps.is-in .pnsp-art .s{ stroke-dashoffset:0; transition:stroke-dashoffset 1.3s cubic-bezier(.45,0,.2,1); transition-delay:calc(.45s + var(--i) * .16s); }
-  #pn-steps.is-in .pnsp-art .f{ opacity:1; transition:opacity .6s ease; transition-delay:calc(1.45s + var(--i) * .16s); }
-  #pn-steps.is-in .pnsp-key{ animation:pnspKey 3.6s ease-in-out 2.4s infinite alternate; }
+  #pn-steps.is-in .pnsp-h2 span:nth-child(2){ transition-delay:.1s; }
+  #pn-steps.is-in .pnsp-h2 span:nth-child(3){ transition-delay:.2s; }
+  #pn-steps.is-in .pnsp-h2 span:nth-child(4){ transition-delay:.3s; }
+  #pn-steps.is-in .pnsp-map > li{ opacity:1; transform:none; transition:opacity .7s ease, transform .8s cubic-bezier(.22,1,.36,1); transition-delay:calc(.2s + var(--i) * .14s); }
+  #pn-steps.is-in .pnsp-art .lit{ opacity:1; transition:opacity 1s ease; transition-delay:calc(.7s + var(--i) * .22s); }
+  #pn-steps.is-in .pnsp-art .lvl{ animation:pnspLvl 2.4s ease .6s both; }
 }
-@keyframes pnspKey{ from{ opacity:1; } to{ opacity:.55; } }
+@keyframes pnspLvl{ 0%{ opacity:0; transform:translateY(362px); } 15%{ opacity:.9; } 85%{ opacity:.9; } 100%{ opacity:0; transform:none; } }
 
 @media (max-width:899px){
-  #pn-steps ol.pnsp-map{ grid-template-columns:minmax(0,1fr); gap:10px; }
-  #pn-steps .pnsp-map > li:not(:last-child)::after{ display:none; }
-  #pn-steps a.pnsp-tile{
-    display:grid; grid-template-columns:96px minmax(0,1fr) auto; grid-template-areas:"art top down" "art name down" "art q down";
-    column-gap:14px; align-items:center; padding:12px 16px 12px 12px;
-  }
-  #pn-steps svg.pnsp-art{ grid-area:art; width:96px; height:64px; margin:0; }
-  #pn-steps .pnsp-top{ grid-area:top; }
-  #pn-steps .pnsp-n{ width:26px; height:26px; font-size:.66rem; }
-  #pn-steps .pnsp-verb{ font-size:.68rem; letter-spacing:.24em; }
-  #pn-steps .pnsp-name{ grid-area:name; margin-top:4px; font-size:clamp(1.3rem,5.6vw,1.6rem); }
-  #pn-steps .pnsp-q{ grid-area:q; margin-top:2px; font-size:.92rem; }
-  #pn-steps .pnsp-down{ grid-area:down; margin:0; padding:0; font-size:0; letter-spacing:0; }
-  #pn-steps .pnsp-down::after{ font-size:1.1rem; }
-}
-@media (max-width:760px){
-  #pn-steps{ padding:24px 0 24px; }
-  #pn-steps .pnsp-in{ padding:0 18px; }
-  #pn-steps .pnsp-head{ grid-template-columns:minmax(0,1fr); gap:16px; }
-  #pn-steps .pnsp-eb{ font-size:.66rem; letter-spacing:.24em; }
-  #pn-steps h2.pnsp-h2{ margin-top:8px; font-size:clamp(2.3rem,11vw,3rem); }
-  #pn-steps .pnsp-k{ margin-top:8px; font-size:clamp(1.1rem,4.9vw,1.3rem); }
-  #pn-steps .pnsp-lead{ margin-top:8px; font-size:.98rem; line-height:1.5; }
-  #pn-steps .pnsp-now{ padding:14px 18px 12px; }
-  #pn-steps .pnsp-now__n{ font-size:clamp(2.8rem,14vw,3.6rem); }
-  #pn-steps ol.pnsp-map{ margin-top:16px; }
-  #pn-steps a.pnsp-tile{ grid-template-columns:76px minmax(0,1fr) auto; column-gap:12px; }
-  #pn-steps svg.pnsp-art{ width:76px; height:52px; }
-}
-@media (prefers-reduced-motion:reduce){
-  #pn-steps *{ transition:none !important; animation:none !important; }
-}
-
-/* v3.0: one band, no tiles */
-#pn-steps{ padding:clamp(26px,4vh,44px) 0 clamp(24px,3.8vh,40px); }
-#pn-steps .pnsp-band{ display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1.15fr); gap:18px clamp(28px,4vw,72px); align-items:center; }
-#pn-steps .pnsp-k{ margin-top:0; max-width:none; }
-#pn-steps .pnsp-lead{ margin-top:8px; }
-#pn-steps ol.pnsp-strip{ list-style:none; display:flex; flex-wrap:wrap; gap:8px 10px; margin:14px 0 0; padding:0; }
-#pn-steps .pnsp-strip a{
-  display:inline-flex; align-items:baseline; gap:8px; min-height:44px; padding:10px 16px 9px; border-radius:999px;
-  background:var(--er); color:var(--ivt) !important; text-decoration:none !important; border:1px solid rgba(227,194,88,.3);
-  font-family:var(--hd); font-size:1rem; font-weight:600; letter-spacing:-.005em; transition:transform .25s cubic-bezier(.22,1,.36,1), border-color .25s ease;
-}
-#pn-steps .pnsp-strip a:hover{ transform:translateY(-2px); border-color:var(--g); }
-#pn-steps .pnsp-strip a:focus-visible{ outline:2px solid var(--er); outline-offset:3px; }
-#pn-steps .pnsp-strip span{ font-size:.66rem; font-weight:700; letter-spacing:.14em; color:var(--g); }
-#pn-steps .pnsp-strip small{ font-size:.74rem; font-weight:500; letter-spacing:.02em; color:var(--tm); }
-@media (max-width:899px){
-  #pn-steps .pnsp-band{ grid-template-columns:minmax(0,1fr); gap:12px; }
-  #pn-steps .pnsp-strip{ flex-direction:column; }
-  #pn-steps .pnsp-strip a{ justify-content:flex-start; }
+  #pn-steps .pnsp-head{ grid-template-columns:minmax(0,1fr); }
+  #pn-steps ol.pnsp-map{ grid-template-columns:repeat(2,minmax(0,1fr)); }
 }
 @media (max-width:760px){
   #pn-steps{ padding:24px 0 22px; }
-  #pn-steps h2.pnsp-h2{ font-size:clamp(2.3rem,11vw,3rem); }
+  #pn-steps .pnsp-in{ padding:0 14px; }
+  #pn-steps .pnsp-eb{ font-size:.64rem; letter-spacing:.22em; }
+  #pn-steps h2.pnsp-h2{ margin-top:8px; font-size:clamp(2.05rem,10.4vw,2.7rem); }
   #pn-steps .pnsp-lead{ font-size:.96rem; }
+  #pn-steps ol.pnsp-map{ gap:8px; margin-top:14px; }
+  #pn-steps a.pnsp-t{ padding:10px 11px 12px; border-radius:14px; }
+  #pn-steps a.pnsp-t::after{ display:none; }
+  #pn-steps svg.pnsp-art{ height:88px; margin-bottom:6px; }
+  #pn-steps .pnsp-n{ width:24px; height:24px; font-size:.62rem; }
+  #pn-steps .pnsp-top{ gap:7px; }
+  #pn-steps .pnsp-verb{ font-size:.64rem; letter-spacing:.2em; }
+  #pn-steps .pnsp-part{ margin-top:6px; font-size:1.22rem; }
+  #pn-steps .pnsp-q{ font-size:.84rem; line-height:1.34; }
+  #pn-steps .pnsp-all{ gap:10px; font-size:.94rem; }
+  #pn-steps .pnsp-all svg{ width:38px; height:38px; }
+}
+@media (prefers-reduced-motion:reduce){
+  #pn-steps *{ transition:none !important; animation:none !important; }
 }
 </style>
 
 <section id="pn-steps" aria-labelledby="pnsp-h">
   <span class="pnsp-alias" id="pn-studio" aria-hidden="true"></span>
-  <div class="pnsp-in pnsp-band">
-    <div>
-      <p class="pnsp-eb">How it works</p>
-      <h2 class="pnsp-h2" id="pnsp-h"><span>Count.</span> <span>Price.</span> <span class="pnsp-w3">Finance.</span></h2>
+  <div class="pnsp-in">
+    <div class="pnsp-head">
+      <div>
+        <p class="pnsp-eb">How it works &middot; the logo, part by part</p>
+        <h2 class="pnsp-h2" id="pnsp-h"><span>Govern.</span> <span>Count.</span> <span>Price.</span> <span>Finance.</span></h2>
+      </div>
+      <p class="pnsp-lead">Four steps, from good governance to seven basic standards of living for every citizen. <b>Innovative financing for development (FfD)</b> and <b>super intelligence (SI)</b> carry each one, with the nation itself.</p>
     </div>
-    <div>
-      <p class="pnsp-k">Three steps from what a nation owns to what every citizen needs.</p>
-      <p class="pnsp-lead"><b>Super intelligence</b> counts and prices. <b>Innovative finance</b> closes the gap. Every design is drawn with the nation itself.</p>
-      <ol class="pnsp-strip" aria-label="The three steps">
-        <li><a href="#pn-assets"><span>01</span>Count<small>Sovereign Assets</small></a></li>
-        <li><a href="#pn-capita"><span>02</span>Price<small>Perfect Capita</small></a></li>
-        <li><a href="#pn-capital"><span>03</span>Finance<small>Capital Architecture</small></a></li>
-      </ol>
-    </div>
+    <ol class="pnsp-map" aria-label="The four steps, one for each part of the logo">
+      <li style="--i:0"><a class="pnsp-t" href="#pn-govern" aria-label="Step 01, Govern: The cup. Recognizing the best governance: the first step, before any finance."><svg class="pnsp-art pnsp-art--cup" viewBox="12 8 488 496" aria-hidden="true" focusable="false"><g class="dim"><use href="#pnk-cl"/><use href="#pnk-s0"/><use href="#pnk-s1"/><use href="#pnk-s2"/><use href="#pnk-s3"/><use href="#pnk-s4"/><use href="#pnk-s5"/><use href="#pnk-s6"/></g><g class="lit"><use href="#pnk-cl" clip-path="url(#pnk-cc)"/></g></svg><span class="pnsp-top"><span class="pnsp-n">01</span><span class="pnsp-verb">Govern</span></span><span class="pnsp-part">The cup</span><span class="pnsp-q">Recognizing the best governance: the first step, before any finance.</span></a></li>
+      <li style="--i:1"><a class="pnsp-t" href="#pn-assets" aria-label="Step 02, Count: The gold. What a nation owns: its sovereign assets, counted."><svg class="pnsp-art pnsp-art--gold" viewBox="12 8 488 496" aria-hidden="true" focusable="false"><g class="dim"><use href="#pnk-cl"/><use href="#pnk-s0"/><use href="#pnk-s1"/><use href="#pnk-s2"/><use href="#pnk-s3"/><use href="#pnk-s4"/><use href="#pnk-s5"/><use href="#pnk-s6"/></g><clipPath id="pnsp-rise"><rect class="rise" x="0" y="150" width="512" height="400"><animate id="pnsp-riseA" attributeName="y" from="512" to="150" dur="2.4s" begin="indefinite" fill="freeze" calcMode="spline" keyTimes="0;1" keySplines=".45 0 .2 1"/></rect></clipPath><g class="lit" clip-path="url(#pnsp-rise)"><use href="#pnk-cl"/><use href="#pnk-s0"/><use href="#pnk-s1"/><use href="#pnk-s2"/><use href="#pnk-s3"/><use href="#pnk-s4"/><use href="#pnk-s5"/><use href="#pnk-s6"/></g><line class="lvl" x1="96" x2="416" y1="150" y2="150"/></svg><span class="pnsp-top"><span class="pnsp-n">02</span><span class="pnsp-verb">Count</span></span><span class="pnsp-part">The gold</span><span class="pnsp-q">What a nation owns: its sovereign assets, counted.</span></a></li>
+      <li style="--i:2"><a class="pnsp-t" href="#pn-capita" aria-label="Step 03, Price: The seven stars. What every citizen needs: seven standards, Food the crown."><svg class="pnsp-art pnsp-art--stars" viewBox="12 8 488 496" aria-hidden="true" focusable="false"><g class="dim"><use href="#pnk-cl"/><use href="#pnk-s0"/><use href="#pnk-s1"/><use href="#pnk-s2"/><use href="#pnk-s3"/><use href="#pnk-s4"/><use href="#pnk-s5"/><use href="#pnk-s6"/></g><g class="lit"><use href="#pnk-s0"/><use href="#pnk-s1"/><use href="#pnk-s2"/><use href="#pnk-s3"/><use href="#pnk-s4"/><use href="#pnk-s5"/><use href="#pnk-s6"/></g></svg><span class="pnsp-top"><span class="pnsp-n">03</span><span class="pnsp-verb">Price</span></span><span class="pnsp-part">The seven stars</span><span class="pnsp-q">What every citizen needs: seven standards, Food the crown.</span></a></li>
+      <li style="--i:3"><a class="pnsp-t" href="#pn-capital" aria-label="Step 04, Finance: The laurels. Capital from every source, lifting the cup."><svg class="pnsp-art pnsp-art--laurels" viewBox="12 8 488 496" aria-hidden="true" focusable="false"><g class="dim"><use href="#pnk-cl"/><use href="#pnk-s0"/><use href="#pnk-s1"/><use href="#pnk-s2"/><use href="#pnk-s3"/><use href="#pnk-s4"/><use href="#pnk-s5"/><use href="#pnk-s6"/></g><g class="lit"><use href="#pnk-cl" clip-path="url(#pnk-lc)"/></g></svg><span class="pnsp-top"><span class="pnsp-n">04</span><span class="pnsp-verb">Finance</span></span><span class="pnsp-part">The laurels</span><span class="pnsp-q">Capital from every source, lifting the cup.</span></a></li>
+    </ol>
+    <p class="pnsp-all"><svg viewBox="12 8 488 496" aria-hidden="true" focusable="false"><use href="#pnk-cl"/><use href="#pnk-s0"/><use href="#pnk-s1"/><use href="#pnk-s2"/><use href="#pnk-s3"/><use href="#pnk-s4"/><use href="#pnk-s5"/><use href="#pnk-s6"/></svg><span><b>The whole logo, lit:</b> a Perfect Nation, where every citizen has all seven basic standards of living.</span></p>
   </div>
 </section>
 
@@ -231,21 +167,23 @@ v1.0 (8 Nov 2026): the three steps with Barbados worked through.
   if (!root || root.getAttribute('data-pnsp-on')) { return; }
   root.setAttribute('data-pnsp-on', '1');
   var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var RAW = 'https://raw.githubusercontent.com/preetisinha70-PN/perfect-nations/main/';
-  var MIRROR = 'https://cdn.jsdelivr.net/gh/preetisinha70-PN/perfect-nations@main/';
-
-  /* the reveal: once, when the section first comes into view */
+  var rise = document.getElementById('pnsp-riseA');
+  function go(){
+    root.classList.add('is-in');
+    if (rise && !reduce && rise.beginElement) { try { rise.beginElement(); } catch (e) {} }
+  }
   if (!reduce && 'IntersectionObserver' in window) {
     root.classList.add('is-armed');
+    var r0 = root.querySelector('rect.rise');
+    if (r0 && rise && rise.beginElement) { r0.setAttribute('y', '512'); }
     var seen = new IntersectionObserver(function(list){
-      list.forEach(function(e){ if (e.isIntersecting) { root.classList.add('is-in'); seen.disconnect(); } });
-    }, { threshold: 0.12 });
+      list.forEach(function(e){ if (e.isIntersecting) { go(); seen.disconnect(); } });
+    }, { threshold: 0.15 });
     seen.observe(root);
-    setTimeout(function(){ root.classList.add('is-in'); }, 9000);
+    setTimeout(function(){ if (!root.classList.contains('is-in')) { go(); } }, 9000);
   }
-
   /* a tile opens its section smoothly (the address still works without script) */
-  Array.prototype.forEach.call(root.querySelectorAll('a.pnsp-tile'), function(a){
+  Array.prototype.forEach.call(root.querySelectorAll('a.pnsp-t'), function(a){
     a.addEventListener('click', function(e){
       var t = document.querySelector(a.getAttribute('href'));
       if (!t) { return; }
@@ -253,6 +191,5 @@ v1.0 (8 Nov 2026): the three steps with Barbados worked through.
       t.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' });
     });
   });
-
 })();
 </script>
