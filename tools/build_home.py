@@ -17,25 +17,32 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 PAGES = ROOT / 'pages'
-VERSION = '7.5'
+VERSION = '8.2'
 
-# The page, top to bottom. 'seam' places a painted seam (variant a, b, c, ...).
+# The page, top to bottom. 'rule' places the gold line (pages/home-rule.html) between two sections;
+# 'seam' (a painted seam from pages/home-seams.html) is no longer used on the homepage.
+# v8.1 (8 Nov 2026), the Steward-General's choices: the two headlines back on the hero; the Cup
+# section (the Vision and the Mission) in place of the race; Count. Price. Finance. as the map of
+# the page; Sovereign Assets, Perfect Capita and Capital Architecture back as one short section
+# each; the gold line in place of the painted seams.
 ORDER = [
     'nations-menu.html',          # the moving list of 195 nations (also on other pages)
-    'home-hero.html',             # 01 Civilization Re-Defined + 01a The Story of Perfect Nations
+    'home-hero.html',             # 01 Civilization Re-Defined / Designing the Prosperity of Nations
+    'rule',
+    'home-cup.html',              # 01a The Cup: the Vision and the Mission
     'home-capital-wire.html',     # 01b the Capital Wire (kept by the Correspondent)
-    'home-studio.html',           # The ReDesign Studio: the five moves
-    'home-assets.html',           # move 01 Sovereign Assets
-    'seam',
-    'home-perfect-capita.html',   # move 02 Perfect Capita
-    'seam',
-    'home-blueprints.html',       # move 03 National Blueprints
-    'seam',
-    'home-capital.html',          # move 04 Capital Architecture
-    'seam',
-    'home-vision.html',           # Mission and Vision
-    'seam',
-    'home-pledge.html',           # The Pledge
+    'home-steps.html',            # 02 How it works: Count. Price. Finance. (the map; ivory)
+    'home-assets.html',           # 03 Step 01 Count: Sovereign Assets
+    'rule',
+    'home-perfect-capita.html',   # 04 Step 02 Price: Perfect Capita
+    'rule',
+    'home-capital.html',          # 05 Step 03 Finance: Capital Architecture
+    'rule',
+    'home-blueprints.html',       # 06 Blueprints of Nations
+    'rule',
+    'home-vision.html',           # 07 The Founder's Vision
+    'rule',
+    'home-pledge.html',           # 08 The close: What could your nation become? The ReDesign Studio
 ]
 
 # Motifs from the painting: symbol id, aspect (width / height), height in a 60-high strip.
@@ -86,6 +93,9 @@ def main():
         if item == 'seam':
             parts.append(seam(next(letters)))
             continue
+        if item == 'rule':
+            parts.append('<div class="pn-rule" aria-hidden="true"></div>')
+            continue
         code = (PAGES / item).read_text(encoding='utf-8').strip()
         parts.append('<!-- ======== part: pages/%s ======== -->\n%s' % (item, code))
     head = '''<!-- ===========================================================================
@@ -96,13 +106,17 @@ Nations Live Pages plugin serves pages/home.html from GitHub in place of the pas
 the first id on the page), so the homepage changes only through GitHub. Do not edit the paste.
 Built by tools/build_home.py from the parts named below, in this order. Edit a part, run the build,
 and open a pull request; never edit this file by hand.
-Palette: Earthrise and ivory grounds, gold only for what a visitor can act on; the colour comes
-from the painted seams (Preeti Sinha's garden painting) between the Earthrise sections.
+Palette: Earthrise and ivory grounds, gold only for what a visitor can act on; a fine gold line
+(pages/home-rule.html) marks each section break.
 =========================================================================== -->
 <div id="pn-home" hidden></div>
 ''' % (VERSION, today)
-    seams = (PAGES / 'home-seams.html').read_text(encoding='utf-8').strip()
-    html = head + seams + '\n' + '\n'.join(parts) + '\n'
+    shared = []
+    if 'seam' in ORDER:
+        shared.append((PAGES / 'home-seams.html').read_text(encoding='utf-8').strip())
+    if 'rule' in ORDER:
+        shared.append((PAGES / 'home-rule.html').read_text(encoding='utf-8').strip())
+    html = head + '\n'.join(shared) + '\n' + '\n'.join(parts) + '\n'
     first = re.search(r'\bid\s*=\s*["\'](pn-[a-z0-9-]+)["\']', html, re.I)
     if not first or first.group(1) != 'pn-home':
         sys.exit('the first pn- id must be pn-home, found %s' % (first.group(1) if first else None))

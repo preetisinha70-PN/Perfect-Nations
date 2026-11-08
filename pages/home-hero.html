@@ -1,7 +1,33 @@
 <!-- ===========================================================================
-PERFECT NATIONS - HOMEPAGE - SECTION 01 - CIVILIZATION RE-DEFINED - v6.4 THE CLEAR SEA - 2026-11-06
+PERFECT NATIONS - HOMEPAGE - SECTION 01 - EVERY NATION IS RICHER - v7.0 THE STORY FIRST - 2026-11-08
 Served live from GitHub (pages/home-hero.html) by the Perfect Nations Live Pages plugin;
 the root id stays pn-hero, so the widget already on the homepage is the one replaced.
+v7.2 (homepage v8.2, the designer's layout, 8 Nov 2026): the scale ribbon at the foot of the first
+  screen: 195 nations, blueprints open (live from pages/manifest.json), 7 basic living standards and
+  the people still in extreme poverty (live from figures/perfect-capita.json). On laptops it runs
+  under both the words and the planet, between two gold hairlines.
+v7.1: the Steward-General's choices of 8 Nov 2026 (homepage v8.1):
+  - the two headlines return: "Civilization Re-Defined" (the headline) and, directly under it,
+    "Designing the Prosperity of Nations"; the line ends "design how to finance it";
+  - nothing revolves while the planet is drawn: the seven stars and the "Drawing the world" label are
+    gone; the still planet shows until the moving planet takes its place;
+  - the sea is lapis lazuli (#1F45A3 lit, #0A1D5C in shadow; was #0B2A72 and #041238), the stone
+    gold has been set in for thousands of years; a new loading still matches
+    (assets/home/pn-home-globe-gold-poster-v6.webp, served by jsDelivr from this repository);
+  - section 01a, The Story of Perfect Nations (the race), leaves this part: the Cup section
+    (home-cup.html) now holds the Vision and the Mission under the logo.
+v7.0: the story first (homepage v8.0, the site made simple, approved in principle by the Steward-General
+  on 8 Nov 2026). The first screen now says the human mission in plain words:
+  - eyebrow "Ending extreme poverty, nation by nation";
+  - headline "Every nation is richer than its balance sheet." (was "Civilization Re-Defined");
+  - one line: super intelligence (SI) and innovative finance count what a nation owns, price what its
+    people need and design how to pay for it (the three steps, set out in the next section);
+  - buttons "Find your nation" and "How it works" (to the three steps, #pn-steps).
+  "Designing the Prosperity of Nations" leaves the first screen; it stays as the footer line.
+  Laptops (1024 px and wider): the words on the left, the golden planet on the right, so the whole
+  message and a larger planet (about 600 px at 1440 x 900, was 540) share the first screen.
+  Phones and tablets keep the centred order: cup, eyebrow, headline, planet, line, buttons.
+  The waiting card no longer points to "the maps below" (they left the homepage); it opens /blueprints/.
 v6.4: room to breathe on laptops. The band no longer tucks under the title; it starts just below it,
   so the top of the planet sits clear of "Civilization Re-Defined" (about 50 px at 1440 x 900). The
   planet stays larger than before v6.2 (about 540 px across at 1440 x 900, against 472 px).
@@ -54,12 +80,12 @@ v5.1 (natural Earth) was not published; v5.0: "Civilization Re-Defined" above, "
 Prosperity of Nations" below.
 Declares PNHG_WORLD and PNHG_CFG, which the continent maps read, so it must stay ABOVE them.
 Country outlines: Natural Earth 1:50m (world-atlas 2.0), simplified to a tenth of a degree.
-EDITORIAL: the still picture shown while the planet loads is
-https://perfectnations.org/wp-content/uploads/2026/11/pn-home-globe-gold-poster-v5.webp
+EDITORIAL: the still picture shown while the planet loads (v7.1: lapis, from this repository) is
+https://cdn.jsdelivr.net/gh/preetisinha70-PN/perfect-nations@main/assets/home/pn-home-globe-gold-poster-v6.webp
 If the address differs, change it in the two places it appears (search for pn-home-globe-gold).
 =========================================================================== -->
 <link rel="preconnect" href="https://cdn.jsdelivr.net">
-<link rel="preload" as="image" href="https://perfectnations.org/wp-content/uploads/2026/11/pn-home-globe-gold-poster-v5.webp" fetchpriority="high">
+<link rel="preload" as="image" href="https://cdn.jsdelivr.net/gh/preetisinha70-PN/perfect-nations@main/assets/home/pn-home-globe-gold-poster-v6.webp" fetchpriority="high">
 <link rel="preload" as="script" href="https://cdn.jsdelivr.net/npm/three@0.159.0/build/three.min.js">
 <link rel="preload" as="script" href="https://cdn.jsdelivr.net/npm/globe.gl@2.31.0/dist/globe.gl.min.js">
 <style>
@@ -284,8 +310,9 @@ If the address differs, change it in the two places it appears (search for pn-ho
   background:rgba(8,42,48,.72); border:1px solid rgba(227,194,88,.45);
   font-family:var(--hd); font-size:.72rem; font-weight:700; letter-spacing:.26em; text-transform:uppercase; color:var(--g);
 }
+/* v7.1: no revolving stars and no label while the planet is drawn; the still planet only */
 #pn-hero .pnhg-fallback.is-waiting .pnhg-orbit,
-#pn-hero .pnhg-fallback.is-waiting .pnhg-wait{ display:block; }
+#pn-hero .pnhg-fallback.is-waiting .pnhg-wait{ display:none; }
 @media (prefers-reduced-motion:no-preference){
   #pn-hero .pnhg-fallback.is-waiting .pnhg-orbit svg{ animation:pnhgOrbit 6s linear infinite; }
   #pn-hero .pnhg-orbit use{ animation:pnhgGlint 1.8s ease-in-out infinite; }
@@ -323,106 +350,66 @@ If the address differs, change it in the two places it appears (search for pn-ho
   #pn-hero *{ transition:none !important; animation:none !important; }
 }
 
-/* =========================== SECTION 01a - THE ONLY RACE WORTH WINNING =========================== */
-#pn-race{
-  --g:var(--pn-brand-gold,#E3C258);
-  --er:#0B3D45; --er3:#082A30; --tc:#8A3A22; --ink:#16252A; --ink2:#3E4C50;
-  --hd:var(--pn-font-heading,"Barlow Condensed","Arial Narrow",Arial,sans-serif);
-  --bd:var(--pn-font-body,"Barlow Semi Condensed",Arial,sans-serif);
-  position:relative; width:100vw; margin-left:calc(50% - 50vw); box-sizing:border-box;
-  background:#F4ECD8; color:var(--ink); font-family:var(--bd); line-height:1.55; text-align:center;
-  border-top:1px solid rgba(227,194,88,.6);
-}
-#pn-race *,#pn-race *::before,#pn-race *::after{ box-sizing:border-box; }
-.elementor-widget-html:has(#pn-race),.elementor-widget:has(#pn-race){ margin-bottom:0 !important; }
-#pn-race .pnr-in{ width:100%; max-width:1180px; margin:0 auto; padding:0 clamp(18px,4vw,48px); }
-#pn-race .pnr-top{ padding:clamp(22px,3.6vh,40px) 0 clamp(14px,2.2vh,22px); }
-#pn-race .pnr-eb{
-  display:inline-flex; align-items:center; gap:12px; margin:0;
-  font-family:var(--hd); font-size:.72rem; font-weight:700; letter-spacing:.3em; text-transform:uppercase; color:var(--tc);
-}
-#pn-race .pnr-eb::before,#pn-race .pnr-eb::after{ content:""; width:26px; height:1px; background:rgba(138,58,34,.55); }
-#pn-race h2.pnr-h2{ margin:10px auto 0; max-width:none; font-family:var(--hd); text-transform:none; color:var(--er) !important; text-shadow:none !important; }
-#pn-race .pnr-h2a{
-  display:block; font-weight:600; font-size:clamp(2.3rem,5.6vw,5.2rem); line-height:.92; letter-spacing:-.025em; text-wrap:balance;
-}
-#pn-race .pnr-h2b{
-  display:block; margin-top:.3em; font-weight:500; font-size:clamp(1.25rem,2.6vw,2.3rem); line-height:1.1; letter-spacing:-.005em;
-  color:var(--tc); text-wrap:balance;
-}
-#pn-race .pnr-lead{
-  margin:14px auto 0; max-width:64ch; text-wrap:pretty; font-size:clamp(1rem,1.25vw,1.14rem); line-height:1.55; color:var(--ink2);
-}
-#pn-race .pnr-lead b{ color:var(--ink); font-weight:600; }
-
-/* v6.2: a much slimmer band. On laptops the drawing keeps its proportions at the band's height,
-   centred, and the finish tape runs on to both edges. */
-#pn-race .pnr-band{ position:relative; width:100%; height:clamp(170px,15vw,232px); overflow:hidden; background:#0B3D45; }
-#pn-race .pnr-band svg.pnr-art{
-  position:absolute; top:0; left:50%; display:block; height:100%; width:auto; aspect-ratio:1600/420; max-width:none;
-  transform:translateX(-50%); overflow:visible;
-}
-#pn-race .pnr-head,#pn-race .pnr-snap,#pn-race .pnr-tapeL,#pn-race .pnr-tapeR,#pn-race .pnr-joy use,#pn-race .pnr-joy circle{ transform-box:fill-box; }
-#pn-race .pnr-head,#pn-race .pnr-snap{ transform-origin:50% 50%; }
-#pn-race .pnr-tapeL{ transform-origin:100% 50%; }
-#pn-race .pnr-tapeR{ transform-origin:0 50%; }
-@media (prefers-reduced-motion:no-preference){
-  #pn-race.is-armed .pnr-halo,#pn-race.is-armed .pnr-head,#pn-race.is-armed .pnr-snap,#pn-race.is-armed .pnr-speed,#pn-race.is-armed .pnr-joy{ opacity:0; }
-  #pn-race.is-armed .pnr-tapeL{ transform:translateX(30px); }
-  #pn-race.is-armed .pnr-tapeR{ transform:translateX(-30px) scaleX(.9); }
-  #pn-race.is-in .pnr-head{ animation:pnrPop .55s cubic-bezier(.34,1.56,.64,1) 1.25s both; }
-  #pn-race.is-in .pnr-halo{ animation:pnrFade .8s ease 1.7s both, pnrPulse 3.2s ease-in-out 2.5s infinite alternate; }
-  #pn-race.is-in .pnr-tapeL,#pn-race.is-in .pnr-tapeR{ transition:transform .8s cubic-bezier(.22,1.4,.36,1) 1.2s; transform:none; }
-  #pn-race.is-in .pnr-snap{ animation:pnrSnap 1s ease-out 1.3s both; }
-  #pn-race.is-in .pnr-speed{ animation:pnrFade .6s ease 1.6s both; }
-  #pn-race.is-in .pnr-joy{ animation:pnrFade .4s ease 1.6s both; }
-  #pn-race.is-in .pnr-joy use,#pn-race.is-in .pnr-joy circle{ animation:pnrBurst .9s cubic-bezier(.34,1.56,.64,1) 1.6s both, pnrTw 2.6s ease-in-out 2.6s infinite; }
-  #pn-race .pnr-joy g:nth-child(2n) use,#pn-race .pnr-joy circle:nth-child(2n){ animation-delay:1.7s, 3.1s; }
-  #pn-race .pnr-joy g:nth-child(3n) use,#pn-race .pnr-joy circle:nth-child(3n){ animation-delay:1.8s, 3.6s; }
-  #pn-race .pnr-flecks circle{ animation:pnrTw 3.6s ease-in-out infinite; }
-  #pn-race .pnr-flecks circle:nth-child(2n){ animation-delay:-1.2s; }
-}
-@keyframes pnrPop{ from{ opacity:0; transform:scale(0); } to{ opacity:1; transform:none; } }
-@keyframes pnrFade{ from{ opacity:0; } to{ opacity:1; } }
-@keyframes pnrPulse{ from{ opacity:1; } to{ opacity:.45; } }
-@keyframes pnrTw{ 0%,100%{ opacity:.45; } 50%{ opacity:1; } }
-@keyframes pnrBurst{ from{ opacity:0; transform:scale(0) rotate(-90deg); } to{ opacity:1; transform:none; } }
-@keyframes pnrSnap{ 0%{ opacity:0; transform:scale(.4); } 35%{ opacity:1; transform:scale(1.2); } 100%{ opacity:.9; transform:none; } }
-
-#pn-race .pnr-seven{
-  display:flex; flex-wrap:wrap; justify-content:center; gap:4px 18px; margin:0; padding:12px clamp(12px,4vw,24px) 13px; list-style:none;
-  background:var(--er3); color:#F4ECD8; border-top:1px solid rgba(227,194,88,.3);
-  font-family:var(--hd); font-size:.76rem; font-weight:700; letter-spacing:.18em; text-transform:uppercase;
-}
-#pn-race .pnr-seven li{ display:inline-flex; align-items:center; gap:7px; margin:0; }
-#pn-race .pnr-seven li::before{ content:"\2605"; font-family:Arial,sans-serif; font-size:.7rem; color:var(--g); }
-
-#pn-race .pnr-close{
-  margin:clamp(14px,2.2vh,22px) auto 0; padding:0 0 clamp(18px,3vh,30px); max-width:40ch;
-  font-family:var(--hd); font-weight:500; font-size:clamp(1.2rem,1.9vw,1.7rem); line-height:1.15; letter-spacing:-.005em; color:var(--er);
-  text-wrap:balance;
-}
-#pn-race .pnr-close a{
-  display:inline-flex; align-items:center; gap:10px; margin-top:10px;
-  font-family:var(--hd); font-size:.76rem; font-weight:700; letter-spacing:.18em; text-transform:uppercase;
-  color:var(--tc); text-decoration:none; border-bottom:1px solid rgba(138,58,34,.5); padding-bottom:3px;
-}
-#pn-race .pnr-close a::after{ content:"\2192"; font-family:Arial,sans-serif; letter-spacing:0; }
-#pn-race .pnr-close a:hover{ color:var(--er); border-bottom-color:var(--er); }
-#pn-race .pnr-close span{ display:block; }
-
+/* =========================== v7.1 - THE TWO HEADLINES, BESIDE THE PLANET =========================== */
+#pn-hero h1.pnhg-h1{ margin-top:clamp(8px,1.2vh,14px); }
+#pn-hero .pnhg-sub{ margin-top:clamp(10px,1.4vh,16px); }
 @media (max-width:760px){
-  #pn-race .pnr-band{ height:auto; aspect-ratio:2/1; }
-  #pn-race .pnr-band svg.pnr-art{ left:0; width:100%; aspect-ratio:auto; transform:none; overflow:hidden; }
-  #pn-race .pnr-in{ padding:0 24px; }
-  #pn-race .pnr-top{ padding:22px 0 14px; }
-  #pn-race .pnr-seven{ gap:2px 12px; font-size:.7rem; letter-spacing:.14em; }
-  #pn-race .pnr-h2a{ font-size:clamp(2.2rem,10.4vw,2.9rem); }
-  #pn-race .pnr-h2b{ font-size:clamp(1.05rem,4.7vw,1.28rem); }
-  #pn-race .pnr-close{ margin-top:14px; padding-bottom:20px; font-size:clamp(1.05rem,4.6vw,1.2rem); line-height:1.2; }
+  #pn-hero .pnhg-sub{ margin-top:10px; }
 }
-@media (prefers-reduced-motion:reduce){
-  #pn-race *{ animation:none !important; }
+/* laptops: the words on the left, the planet on the right; the words sit level with the planet's middle */
+@media (min-width:1024px){
+  #pn-hero{
+    display:grid;
+    grid-template-columns:minmax(0,.94fr) minmax(0,1.06fr);
+    grid-template-rows:1fr auto auto auto auto auto 1.15fr;
+    column-gap:clamp(8px,1.6vw,32px);
+    padding-left:clamp(48px,6vw,120px); padding-right:clamp(8px,1.4vw,28px);
+    text-align:left;
+  }
+  #pn-hero .pnhg-crown{ grid-column:1; grid-row:2; justify-content:flex-start; }
+  #pn-hero h1.pnhg-h1{
+    grid-column:1; grid-row:3; margin:clamp(12px,1.8vh,20px) 0 0; max-width:none;
+    font-size:clamp(3.4rem,6vw,7rem); line-height:.9;
+  }
+  #pn-hero .pnhg-h1a,#pn-hero .pnhg-h1b{ display:block; }
+  #pn-hero .pnhg-sub{
+    grid-column:1; grid-row:4; justify-content:flex-start; margin:clamp(16px,2.2vh,24px) 0 0;
+    font-size:clamp(1.02rem,1.4vw,1.42rem); letter-spacing:.2em;
+  }
+  #pn-hero .pnhg-sub::before{ flex-basis:clamp(28px,3vw,48px); }
+  #pn-hero .pnhg-sub::after{ display:none; }
+  #pn-hero .pnhg-obj{
+    grid-column:1; grid-row:5; margin:clamp(14px,2vh,22px) 0 0; max-width:46ch;
+    font-size:clamp(1.06rem,1.3vw,1.24rem); line-height:1.5; text-wrap:pretty;
+  }
+  #pn-hero .pnhg-ctas{ grid-column:1; grid-row:6; justify-content:flex-start; margin-top:clamp(20px,2.8vh,30px); }
+  #pn-hero .pnhg-globe{
+    grid-column:2; grid-row:1 / -1; align-self:center;
+    width:auto; max-width:none; margin:0;
+    height:clamp(540px, calc(100svh - 150px), 880px);
+  }
+  #pn-hero .pnhg-ctl{ right:clamp(6px,1vw,16px); }
+}
+
+/* v7.2: the scale ribbon */
+#pn-hero .pnhg-scale{
+  position:relative; z-index:3; list-style:none; margin:clamp(22px,3.4vh,36px) auto 0; padding:14px 0 0;
+  display:flex; justify-content:center; flex-wrap:wrap; gap:10px clamp(28px,4vw,64px);
+  border-top:1px solid rgba(227,194,88,.35);
+}
+#pn-hero .pnhg-scale li{ display:flex; flex-direction:column; align-items:center; margin:0; text-align:center; }
+#pn-hero .pnhg-scale b{ font-family:var(--hd); font-weight:600; font-size:clamp(1.7rem,2.6vw,2.5rem); line-height:1; letter-spacing:-.02em; color:var(--iv); }
+#pn-hero .pnhg-scale span{ margin-top:4px; font-family:var(--hd); font-size:.64rem; font-weight:700; letter-spacing:.2em; text-transform:uppercase; color:var(--g); }
+@media (min-width:1024px){
+  #pn-hero{ grid-template-rows:1fr auto auto auto auto auto 1fr auto; }
+  #pn-hero .pnhg-globe{ grid-row:1 / 8; }
+  #pn-hero .pnhg-scale{ grid-column:1 / -1; grid-row:8; justify-content:space-between; margin:0 clamp(40px,5vw,96px) 0 0; padding-top:16px; width:auto; }
+  #pn-hero .pnhg-scale li{ align-items:flex-start; text-align:left; }
+}
+@media (max-width:760px){
+  #pn-hero .pnhg-scale{ display:grid; grid-template-columns:1fr 1fr; gap:14px 10px; margin-top:22px; }
+  #pn-hero .pnhg-scale b{ font-size:1.6rem; }
+  #pn-hero .pnhg-scale span{ font-size:.58rem; letter-spacing:.14em; }
 }
 /* v5.4: the pin the Capital Wire sets on the planet */
 #pn-hero .pnhg-pin{ position:relative; width:0; height:0; pointer-events:none; }
@@ -443,7 +430,9 @@ If the address differs, change it in the two places it appears (search for pn-ho
     <svg class="pnhg-cup" data-pn-cup="1" viewBox="0 0 120 60" aria-hidden="true" focusable="false"><g fill="currentColor"><path fill-rule="evenodd" d="M51.7 55C51.6 55 51.6 54.8 51.6 53.3L51.6 51.9L51.8 51.7C51.9 51.6 52.2 51.4 52.4 51.2C52.6 51 52.8 50.9 52.8 50.9C52.8 50.8 54.4 50 54.5 50C54.6 50 54.8 49.9 54.9 49.8C55.1 49.7 55.4 49.6 55.7 49.6C55.9 49.5 56.2 49.4 56.3 49.4L56.5 49.3L56.5 49.1C56.5 48.5 56.6 48.3 57.3 48.3C57.6 48.3 57.8 48.3 57.8 48.3C57.8 48.3 57.8 46.6 57.8 44.6L57.8 41L58 40.8C58.8 39.8 58.9 38.5 58.5 37.3C58.4 37.1 58.3 36.9 58.3 36.8C58.3 36.7 58.1 36.5 57.6 36.2C56.4 35.4 55.1 33.7 54 31.6C53.7 31.1 53.8 31.1 53.7 31.1C53.6 31.1 53.6 31.2 53.5 31.3C53 32.3 51.7 32.4 50.8 31.6C50.2 31.1 50.8 30.4 51.4 30.7C52.2 31.1 52.4 31.1 52.6 30.6C52.8 29.7 51.8 28.5 47.6 24.2C43.2 19.8 41.6 17.8 40.8 15.7C40.7 15.5 40.7 15.3 40.6 15.2C39.7 12.9 40.1 10.6 41.8 8.9C42.9 7.7 44.1 7.3 45.4 7.6C46.3 7.7 47.6 8.4 49 9.6C51.1 11.2 52 11.5 52.6 11C52.8 10.8 52.8 10.8 52.6 10.5C52.3 10.2 52.3 10.1 52.4 9.9C52.8 9.1 53.9 9.8 53.9 10.9C53.9 11.1 53.9 11.2 53.9 11.2C54 11.2 55 10.7 55.4 10.5C55.8 10.2 56 9.7 55.9 9.1C55.9 8.5 55.7 8.4 54.2 7.6C52.8 6.9 52.7 6.8 52.6 6.6C52.5 6.2 52.4 5.3 52.6 5.1L52.7 5L53.4 5L54.1 5L54.1 5.8C54.2 6.8 54.1 6.7 55.6 7.7C55.7 7.7 55.8 7.8 55.8 7.8C55.9 7.8 55.9 7.9 56 7.9C56.7 8.4 57 9.1 56.7 9.8C56.6 10.3 56.5 10.3 55.3 11.1C53.7 12 53.3 12.2 53 12.5C51.8 13.2 51.4 14.3 51.7 16C52.8 23.1 53.9 27.6 55.2 30.9C55.4 31.3 55.5 31.7 55.6 31.8C56 33.1 57.3 35 58.1 35.7C58.4 35.9 58.6 35.9 58.4 35.6C57.8 34.8 57 31.9 56.4 29.1C56.2 27.8 55.9 25.9 55.8 25.2C55.8 25 55.7 24.7 55.7 24.6C55.6 23.9 55.1 19.7 55 18.8C55 18.7 55 18.3 54.9 17.9C54.7 16.2 54.7 14.5 54.9 13.9C55.1 13.1 55.2 12.9 56.7 11.4C57.8 10.2 57.9 10.1 57.9 9.4C57.9 8.6 57.8 8.4 57 7.5C56.4 6.9 56.3 6.7 56.3 6.2C56.2 5.9 56.2 5.2 56.3 5.1L56.4 5L61.8 5L67.3 5L67.4 5.1C67.5 5.2 67.5 5.2 67.5 5.8C67.5 6.7 67.5 6.7 66 7.5C64.2 8.4 64.1 8.6 64.1 9.4C64.1 10 64.3 10.3 65.5 10.9C66.2 11.2 66.1 11.2 66.1 10.8C66.1 9.8 67.2 9.1 67.6 9.9C67.7 10.1 67.7 10.2 67.3 10.7C67.1 11 67.9 11.3 68.5 11.1C69.2 10.9 69.6 10.6 71.2 9.4C74.1 7.1 76 6.9 78 8.6C80.4 10.8 80.5 14 78.2 17.6C76.9 19.5 75.9 20.7 72.3 24.3C67.9 28.7 67.2 29.7 67.5 30.7C67.6 31.1 67.8 31.1 68.5 30.8C68.9 30.5 69 30.5 69.3 30.8C69.6 31 69.5 31.4 69.2 31.7C68.1 32.4 66.9 32.3 66.5 31.3C66.4 31 66.3 31 66.2 31.2C66.1 31.5 65.3 33 64.9 33.5C64.1 34.8 63.3 35.6 62.4 36.2C61.7 36.7 61.7 36.7 61.5 37.4C61.2 38.4 61.2 39.4 61.6 40.1C61.7 40.4 62 40.9 62.1 41C62.2 41.1 62.2 41.4 62.2 44.5C62.2 46.4 62.2 48 62.2 48.1L62.2 48.3L62.6 48.3C63.4 48.3 63.6 48.5 63.6 49.1C63.6 49.3 63.6 49.3 64.3 49.6C64.7 49.7 65.1 49.8 65.6 50.1C66 50.3 66.5 50.5 66.8 50.6C67 50.8 67.2 50.9 67.2 50.9C67.2 50.9 67.3 51 67.5 51.1C67.7 51.3 68 51.5 68.1 51.6L68.5 51.9L68.4 53.4C68.4 54.2 68.4 54.9 68.4 54.9C68.4 55 67.3 55 61.8 55C57.7 55 56.8 55 56.7 55C56.6 54.9 56.6 52.4 56.7 52C56.8 51.3 57.8 50 58.7 49.3C58.9 49.2 58.6 49.2 58.2 49.3C57.2 49.5 55 51.2 54.8 51.9C54.7 52.2 54.6 52.9 54.6 53.9C54.6 54.5 54.6 54.9 54.6 54.9C54.6 55 51.9 55 51.7 55ZM52.2 27.1C52.2 27.1 52.1 26.8 52 26.6C51.5 25.1 50.6 21.8 50 19C49.2 15.4 49.2 14.9 49.6 14C49.9 13.4 50.3 13 51 12.6C51.5 12.3 51.5 12.3 51.1 12.2C50.5 12 49.5 11.4 48.5 10.6C45.4 8.2 44.2 8.1 42.6 9.7C40.5 11.9 40.9 14.6 43.8 18.4C44.8 19.7 45.8 20.8 48.3 23.3C50.8 25.8 51.3 26.3 51.7 26.9C52.1 27.3 52.2 27.3 52.2 27.1ZM68.2 26.9C68.5 26.6 69.1 26 70.9 24.1C72.7 22.3 73.5 21.4 74.2 20.7C79 15.5 79.9 12.2 77.3 9.6C76.5 8.8 75.8 8.5 74.7 8.7C74.1 8.8 73.1 9.4 71.8 10.4C70.3 11.5 69.5 12.1 68.8 12.2C68.7 12.3 68.6 12.3 68.6 12.3C68.6 12.4 68.7 12.4 68.8 12.5C70.5 13.4 70.9 14.5 70.5 16.4C69.8 20.3 68.9 23.9 68.1 26.4C67.7 27.4 67.7 27.5 68.2 26.9Z"/><rect x="6.13" y="16.60" width="30.0" height="1.8"/><rect x="83.87" y="16.60" width="30.0" height="1.8"/><rect x="6.13" y="41.60" width="30.0" height="1.8"/><rect x="83.87" y="41.60" width="30.0" height="1.8"/></g></svg>
   </div>
 
-  <h1 class="pnhg-h1" id="pnhg-h">Civilization Re-Defined</h1>
+  <h1 class="pnhg-h1" id="pnhg-h"><span class="pnhg-h1a">Civilization</span> <span class="pnhg-h1b">Re-Defined</span></h1>
+
+  <p class="pnhg-sub"><span class="pnhg-sub__t"><span>Designing the</span> <span>Prosperity of Nations</span></span></p>
 
   <div class="pnhg-globe" id="pnhgGlobe">
     <div class="pnhg-well" aria-hidden="true"></div>
@@ -460,103 +449,26 @@ If the address differs, change it in the two places it appears (search for pn-ho
     <div class="pnhg-plate" id="pnhgPlate" aria-live="polite"></div>
 
     <div class="pnhg-fallback is-waiting" id="pnhgFallback">
-      <img class="pnhg-poster" id="pnhgPoster" src="https://perfectnations.org/wp-content/uploads/2026/11/pn-home-globe-gold-poster-v5.webp" alt="" width="820" height="820" decoding="async" fetchpriority="high">
-      <span class="pnhg-orbit" aria-hidden="true"><svg viewBox="-100 -100 200 200" focusable="false"><defs><path id="pnhg-st" fill="#E3C258" d="M0 -6 1.41 -1.94 5.71 -1.85 2.28 .74 3.53 4.85 0 2.4 -3.53 4.85 -2.28 .74 -5.71 -1.85 -1.41 -1.94Z"/></defs><circle r="92" fill="none" stroke="#E3C258" stroke-opacity=".28" stroke-width=".6"/><use href="#pnhg-st" transform="rotate(0) translate(0 -92) scale(1.15)"/><use href="#pnhg-st" transform="rotate(51) translate(0 -92) scale(1)"/><use href="#pnhg-st" transform="rotate(103) translate(0 -92) scale(1)"/><use href="#pnhg-st" transform="rotate(154) translate(0 -92) scale(1)"/><use href="#pnhg-st" transform="rotate(206) translate(0 -92) scale(1)"/><use href="#pnhg-st" transform="rotate(257) translate(0 -92) scale(1)"/><use href="#pnhg-st" transform="rotate(309) translate(0 -92) scale(1)"/></svg></span>
-      <span class="pnhg-wait" role="status">Drawing the world</span>
-      <p>Every nation is on the maps below.</p>
-      <a href="#pn-atlas">Go to the maps</a>
+      <img class="pnhg-poster" id="pnhgPoster" src="https://cdn.jsdelivr.net/gh/preetisinha70-PN/perfect-nations@main/assets/home/pn-home-globe-gold-poster-v6.webp" alt="" width="820" height="820" decoding="async" fetchpriority="high">
+      <p>Every nation is on the Blueprints map.</p>
+      <a href="https://perfectnations.org/blueprints/">Open the map</a>
     </div>
   </div>
 
-  <p class="pnhg-sub"><span class="pnhg-sub__t"><span>Designing the</span> <span>Prosperity of Nations</span></span></p>
-  <p class="pnhg-obj">Perfect Nations unites <b>super intelligence (SI)</b> and <b>innovative financing for development</b> to co-design, with every nation, seven basic standards of living for all.</p>
+  <p class="pnhg-obj">Perfect Nations uses <b>super intelligence (SI)</b> and <b>innovative finance</b> to count what a nation owns, price what its people need and design how to finance it.</p>
 
   <div class="pnhg-ctas">
-    <a class="pnhg-btn pnhg-btn--gold" href="https://perfectnations.org/blueprints/">Explore the blueprints</a>
-    <a class="pnhg-btn pnhg-btn--line" href="#pn-studio">How it works</a>
+    <a class="pnhg-btn pnhg-btn--gold" href="https://perfectnations.org/blueprints/">Find your nation</a>
+    <a class="pnhg-btn pnhg-btn--line" href="#pn-steps">How it works</a>
   </div>
 
-</section>
-
-<section id="pn-race" aria-labelledby="pnr-h">
-  <div class="pnr-in pnr-top">
-    <p class="pnr-eb">The Story of Perfect Nations</p>
-    <h2 class="pnr-h2" id="pnr-h"><span class="pnr-h2a">The Only Race Worth Winning</span><span class="pnr-h2b">is Enabling Basic Standards of Living for All</span></h2>
-  </div>
-  <div class="pnr-band">
-<svg class="pnr-art" viewBox="0 30 1600 420" preserveAspectRatio="xMidYMid slice" role="img" aria-labelledby="pnr-art-t" focusable="false">
-  <title id="pnr-art-t">A runner drawn in one gold line leaps through the gold finish tape, arms flung up in victory.</title>
-  <defs>
-    <radialGradient id="pnr-glow" cx="800" cy="240" r="420" gradientUnits="userSpaceOnUse">
-      <stop offset="0" stop-color="#14606A" stop-opacity="1"/><stop offset=".55" stop-color="#0D4A52" stop-opacity=".6"/><stop offset="1" stop-color="#0B3D45" stop-opacity="0"/>
-    </radialGradient>
-    <linearGradient id="pnr-gold" x1="700" y1="70" x2="920" y2="400" gradientUnits="userSpaceOnUse">
-      <stop offset="0" stop-color="#FFF0B3"/><stop offset=".45" stop-color="#F0D272"/><stop offset="1" stop-color="#D4AF37"/>
-    </linearGradient>
-    <linearGradient id="pnr-tapeg" x1="0" y1="0" x2="1600" y2="0" gradientUnits="userSpaceOnUse">
-      <stop offset="0" stop-color="#D4AF37" stop-opacity=".2"/><stop offset=".35" stop-color="#E3C258"/><stop offset=".5" stop-color="#FBE391"/>
-      <stop offset=".65" stop-color="#E3C258"/><stop offset="1" stop-color="#D4AF37" stop-opacity=".2"/>
-    </linearGradient>
-    <filter id="pnr-blur" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="10"/></filter>
-    <path id="pnr-star" d="M0 -10 2.35 -3.24 9.51 -3.09 3.8 1.24 5.88 8.09 0 4 -5.88 8.09 -3.8 1.24 -9.51 -3.09 -2.35 -3.24Z"/>
-  </defs>
-
-  <rect y="0" width="1600" height="480" fill="#0B3D45"/>
-  <rect width="1600" height="480" fill="url(#pnr-glow)"/>
-
-  <g class="pnr-rings" fill="none" stroke="#E3C258">
-    <circle cx="800" cy="240" r="206" stroke-opacity=".55" stroke-width="1.6"/>
-    <circle cx="800" cy="240" r="194" stroke-opacity=".22" stroke-width="1"/>
-  </g>
-
-  <g class="pnr-tape" fill="none" stroke="url(#pnr-tapeg)" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.4">
-    <path class="pnr-tapeL" d="M-3200 236H560C640 236 700 237 742 240C762 242 770 250 762 262C752 276 740 282 746 296C752 308 766 306 768 296"/>
-    <path class="pnr-tapeR" d="M4800 236H1040C960 236 902 237 870 240C896 238 922 228 936 212C948 198 962 196 968 206C974 218 962 226 954 218"/>
-  </g>
-
-  <g class="pnr-speed" fill="none" stroke="#E3C258" stroke-width="3" stroke-linecap="round" stroke-opacity=".6">
-    <path d="M626 300C650 296 672 296 694 300"/><path d="M604 332C634 328 662 328 690 332"/><path d="M636 364C656 360 676 360 696 364"/>
-  </g>
-
-  <g class="pnr-runner" fill="none" stroke-linecap="round" stroke-linejoin="round">
-    <g class="pnr-halo" stroke="#F0D272" stroke-opacity=".5" stroke-width="18" filter="url(#pnr-blur)">
-      <path d="M902 396C888 394 878 388 872 378C864 362 858 344 852 326C846 306 830 292 810 286C794 300 778 318 762 330C746 340 728 336 714 320C706 310 698 306 690 312"/>
-      <path d="M810 286C818 262 826 238 832 214C850 182 868 146 886 114C892 102 900 90 910 84C920 78 930 84 924 94"/>
-      <path d="M828 214C812 182 794 148 780 116C774 102 768 92 758 86C748 80 740 86 746 96"/>
-    </g>
-    <g stroke="url(#pnr-gold)" stroke-width="9">
-      <path class="pnr-line" d="M902 396C888 394 878 388 872 378C864 362 858 344 852 326C846 306 830 292 810 286C794 300 778 318 762 330C746 340 728 336 714 320C706 310 698 306 690 312"/>
-      <path class="pnr-line" d="M810 286C818 262 826 238 832 214C850 182 868 146 886 114C892 102 900 90 910 84C920 78 930 84 924 94"/>
-      <path class="pnr-line" d="M828 214C812 182 794 148 780 116C774 102 768 92 758 86C748 80 740 86 746 96"/>
-    </g>
-    <circle class="pnr-head" cx="826" cy="166" r="16.5" fill="url(#pnr-gold)"/>
-  </g>
-
-  <g class="pnr-snap" stroke="#FBE391" stroke-width="2.6" stroke-linecap="round">
-    <path d="M858 224 870 210"/><path d="M864 236 882 234"/><path d="M856 250 868 262"/>
-  </g>
-
-  <g class="pnr-joy" fill="#F0D272">
-    <g transform="translate(722 110) scale(.9)"><use href="#pnr-star"/></g><g transform="translate(966 128) scale(1.1)"><use href="#pnr-star"/></g>
-    <g transform="translate(676 186) scale(.6)"><use href="#pnr-star"/></g><g transform="translate(1004 300) scale(.7)"><use href="#pnr-star"/></g>
-    <g transform="translate(940 70) scale(.55)"><use href="#pnr-star"/></g><g transform="translate(800 62) scale(.75)"><use href="#pnr-star"/></g>
-    <g transform="translate(620 392) scale(.5)"><use href="#pnr-star"/></g>
-    <circle cx="760" cy="58" r="3"/><circle cx="1010" cy="200" r="2.6"/><circle cx="690" cy="140" r="2.4"/><circle cx="905" cy="40" r="2.2"/>
-  </g>
-
-  <g class="pnr-flecks" fill="#E3C258">
-    <circle cx="232" cy="96" r="2.4" fill-opacity=".7"/><circle cx="388" cy="372" r="1.8" fill-opacity=".5"/>
-    <circle cx="520" cy="150" r="2" fill-opacity=".6"/><circle cx="1090" cy="118" r="2.2" fill-opacity=".7"/>
-    <circle cx="1236" cy="360" r="1.8" fill-opacity=".5"/><circle cx="1388" cy="132" r="2.4" fill-opacity=".6"/>
-  </g>
-</svg>
-  </div>
-  <ul class="pnr-seven" aria-label="The seven basic living standards">
-    <li>Food</li><li>Water</li><li>Shelter</li><li>Energy</li><li>Education</li><li>Health</li><li>Livelihood</li>
+  <ul class="pnhg-scale" aria-label="Perfect Nations at a glance">
+    <li><b>195</b><span>Nations</span></li>
+    <li><b data-pnhg="open">44</b><span>Blueprints open</span></li>
+    <li><b>7</b><span>Basic living standards</span></li>
+    <li><b data-pnhg="pov">824m</b><span>People still in extreme poverty</span></li>
   </ul>
-  <div class="pnr-in">
-    <p class="pnr-close"><span>In this race, every winner makes the world richer, and no nation has to lose.</span><a href="https://perfectnations.org/about/#ab-mark">The story of the logo</a></p>
-  </div>
+
 </section>
 
 <script>
@@ -716,7 +628,7 @@ window.PNHG_CFG={"base":"https://perfectnations.org/blueprints/","paths":{"cote-
   }
 
   /* ---- THE GOLDEN EARTH ---- */
-  var OCEAN = '#0B2A72', OCEAN_DEEP = '#041238', OCEAN_SPEC = '#4F6FA6';
+  var OCEAN = '#1F45A3', OCEAN_DEEP = '#0A1D5C', OCEAN_SPEC = '#6F8FD0';   /* v7.1: lapis lazuli */
   var GOLD = {
     live: { c:'#FFD45C', e:'#A57A14', ei:0.72, s:'#FFF6D2', sh:34 },
     soon: { c:'#D2B266', e:'#5E4916', ei:0.50, s:'#EAD8A4', sh:20 },
@@ -916,12 +828,12 @@ window.PNHG_CFG={"base":"https://perfectnations.org/blueprints/","paths":{"cote-
     } catch (e) {}
     window.setTimeout(clearPlaceholder, 4000);
 
-    /* deep sapphire seas */
+    /* lapis lazuli seas (v7.1) */
     try {
       var mat = globe.globeMaterial();
       mat.color = new THREE.Color(OCEAN);
       mat.emissive = new THREE.Color(OCEAN_DEEP);
-      mat.emissiveIntensity = 0.55;
+      mat.emissiveIntensity = 0.50;
       mat.specular = new THREE.Color(OCEAN_SPEC);
       mat.shininess = 18;
       mat.needsUpdate = true;
@@ -1221,5 +1133,28 @@ window.PNHG_CFG={"base":"https://perfectnations.org/blueprints/","paths":{"cote-
     }).catch(function(err){ fail('could not load the globe libraries - ' + err.message); });
   }
   boot();
+})();
+</script>
+<script>
+(function(){
+  var root = document.getElementById('pn-hero');
+  if (!root || root.getAttribute('data-pnhg-scale')) { return; }
+  root.setAttribute('data-pnhg-scale', '1');
+  var RAW = 'https://raw.githubusercontent.com/preetisinha70-PN/perfect-nations/main/';
+  function getJSON(path){ return fetch(RAW + path, { cache: 'no-cache' }).then(function(r){ if (!r.ok) { throw new Error(r.status); } return r.json(); }); }
+  function put(key, v){ var el = root.querySelector('[data-pnhg="' + key + '"]'); if (el && v) { el.textContent = v; } }
+  function go(){
+    getJSON('pages/manifest.json').then(function(m){
+      var n = Object.keys((m && m.pages) || {}).filter(function(k){ return /^pn-bp-[a-z0-9-]+$/.test(k); }).length;
+      if (n >= 10 && n <= 195) { put('open', String(n)); }
+    }).catch(function(){});
+    getJSON('figures/perfect-capita.json').then(function(d){
+      var w = ((d && d.world) || []).filter(function(x){ return x && x.standard === 'Livelihood'; })[0];
+      if (!w) { return; }
+      var f = (String(w.value || '') + String(w.unit || '')).trim();
+      if (/^[0-9][0-9.,]*(bn|m)$/.test(f)) { put('pov', f); }
+    }).catch(function(){});
+  }
+  if ('requestIdleCallback' in window) { requestIdleCallback(go, { timeout: 4000 }); } else { setTimeout(go, 2500); }
 })();
 </script>

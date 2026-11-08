@@ -1,41 +1,34 @@
 <!-- ===========================================================================
-PERFECT NATIONS - HOMEPAGE - SECTION 03 - SOVEREIGN ASSETS - v5.2 MOVE 01 - 2026-11-06
-v5.2: fewer words: each asset has one short line instead of two sentences.
-v5.1: Earthrise ground (was malachite), as the whole homepage keeps one palette.
-One Elementor Custom HTML widget, Full Width, padding 0. Served live from GitHub
-(pages/home-assets.html) by the Perfect Nations Live Pages plugin, in place of the pasted v4
-(root id pn-assets).
-v5.0: the first of the five moves. The eyebrow carries the gold chapter mark 01, which leads back
-to the five moves in The ReDesign Studio. The section is compact: padding as the design system,
-a shorter photograph on laptops. Phones have their own layout and never scroll sideways: the
-Congo Basin across the full width with its story, then the other four assets in two columns
-(photograph, name, one line, flags). The slide rail, dots and arrows stay on laptops and tablets.
-Ground: malachite. Photographs at full colour, no veil; text sits on solid plates.
+PERFECT NATIONS - HOMEPAGE - SECTION 03 - 01 COUNT: SOVEREIGN ASSETS - v6.0 - 2026-11-08
+Part of the one-file homepage (pages/home.html, built by tools/build_home.py). Root id pn-assets.
+v6.0: the Steward-General's choices of 8 Nov 2026 (homepage v8.1): Sovereign Assets returns, simpler.
+  - Step 01 of How it works (Count): the gold mark 01 leads back to the map (#pn-steps).
+  - Headline: "Every nation is richer than its balance sheet." One short lead, one button.
+  - The five world assets as one calm grid (no slider, no dots, no flags): the Congo Basin large on
+    the left, four beside it; each card a photograph, its name, one line and where it is.
+  - Images: the 768 px and 300 px copies the Media Library already holds (was the 2,560 px full
+    uploads, about 0.5 MB each), chosen by the browser for the screen; full colour, no veil.
+Laptops: the large card on the left, four in two rows of two. Phones: the large card across the full
+width, then two columns of two; nothing scrolls sideways.
+v5.2 (6 Nov 2026): the slide rail of five assets, move 01 of the five moves.
 =========================================================================== -->
 <style>
 #pn-assets{
-  --bg:#17644F; --bg2:#09392E; --plate:#0C4537; --plate2:#072E24;
-  --fg:#F5F1E8; --mut:rgba(245,241,232,.82); --dim:rgba(245,241,232,.64); --hair:rgba(245,241,232,.16);
-  --acc:#E3C258; --accs:#F0D68F; --accrgb:227,194,88; --onacc:#1A140C;
-  --iv:#F5F1E8; --g:#E3C258;
+  --er:#0B3D45; --er2:#0F4C5C; --er3:#082A30;
+  --iv:#F5F1E8; --tm:rgba(245,241,232,.84); --td:rgba(245,241,232,.62); --hair:rgba(245,241,232,.16);
+  --g:#E3C258; --gs:#F0D68F; --onacc:#1A140C;
   --hd:var(--pn-font-heading,"Barlow Condensed","Arial Narrow",Arial,sans-serif);
   --bd:var(--pn-font-body,"Barlow Semi Condensed",Arial,sans-serif);
   position:relative; isolation:isolate;
   width:100vw; margin-left:calc(50% - 50vw);
   overflow-x:hidden; overflow-x:clip;
-  padding:clamp(26px,4.2vh,48px) 0 clamp(24px,3.8vh,42px);
-  color:var(--fg); font-family:var(--bd); line-height:1.6; box-sizing:border-box;
+  padding:clamp(30px,5vh,56px) 0 clamp(28px,4.6vh,52px);
+  box-sizing:border-box; color:var(--iv); font-family:var(--bd); line-height:1.5;
   background:
-    radial-gradient(70% 55% at 82% 0%, rgba(110,225,180,.22) 0%, transparent 64%),
-    linear-gradient(180deg, var(--bg) 0%, var(--bg2) 100%);
-}
-#pn-assets::before{
-  content:""; position:absolute; inset:0; z-index:-1; pointer-events:none; opacity:.07;
-  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .6 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    radial-gradient(50% 60% at 100% 0%, rgba(110,200,196,.12) 0%, transparent 70%),
+    linear-gradient(180deg,var(--er2) 0%,var(--er) 40%,var(--er3) 100%);
 }
 #pn-assets *,#pn-assets *::before,#pn-assets *::after{ box-sizing:border-box; }
-#pn-assets img{ display:block; max-width:100%; }
-#pn-assets [hidden]{ display:none !important; }
 .elementor-widget-html:has(#pn-assets),
 .elementor-widget:has(#pn-assets),
 .e-con-inner:has(#pn-assets),
@@ -43,317 +36,179 @@ Ground: malachite. Photographs at full colour, no veil; text sits on solid plate
   padding-top:0 !important; padding-bottom:0 !important;
   --widgets-spacing:0px !important; row-gap:0 !important;
 }
-#pn-assets .pna-in{ position:relative; width:100%; max-width:1480px; margin:0 auto; padding:0 clamp(24px,5vw,72px); }
+#pn-assets h2,#pn-assets h3,#pn-assets p{ text-shadow:none !important; }
+#pn-assets .pna-in{ width:100%; max-width:1240px; margin:0 auto; padding:0 clamp(18px,4vw,48px); }
+
+/* the head */
+#pn-assets .pna-head{ display:grid; grid-template-columns:minmax(0,1.3fr) minmax(0,1fr); gap:14px clamp(28px,4vw,64px); align-items:end; }
 #pn-assets .pna-eb{
-  display:flex; align-items:center; gap:10px; margin:0 0 14px;
-  font-family:var(--hd); font-size:.68rem; font-weight:700;
-  letter-spacing:.3em; text-transform:uppercase; color:var(--mut);
+  display:flex; align-items:center; gap:12px; margin:0;
+  font-family:var(--hd); font-size:.72rem; font-weight:700; letter-spacing:.3em; text-transform:uppercase; color:var(--tm);
 }
-#pn-assets .pna-eb::before{ content:""; width:24px; height:2px; flex:none; background:var(--mut); }
-#pn-assets h2.pna-h2{
-  margin:0; max-width:17ch;
-  font-family:var(--hd); font-weight:600;
-  font-size:clamp(2.3rem,4.6vw,4.6rem); line-height:.94; letter-spacing:-.025em;
-  color:var(--fg) !important; text-transform:none;
-}
-#pn-assets .pna-lead{
-  margin:clamp(14px,2vh,22px) 0 0; max-width:52ch;
-  font-size:clamp(1rem,1.2vw,1.14rem); line-height:1.58; color:var(--mut);
-}
-#pn-assets .pna-btn{
-  display:inline-flex; align-items:center; justify-content:center; gap:14px; flex:none;
-  padding:15px 30px 13px; border-radius:999px; text-decoration:none; cursor:pointer;
-  font-family:var(--hd); font-size:.74rem; font-weight:700;
-  letter-spacing:.19em; text-transform:uppercase;
-  border:1px solid var(--acc); background:var(--acc); color:var(--onacc);
-  box-shadow:0 12px 32px rgba(var(--accrgb),.26);
-  transition:transform .22s ease, background .22s ease, color .22s ease, border-color .22s ease;
-}
-#pn-assets .pna-btn::after{
-  content:"\2192"; font-family:Arial,sans-serif; font-size:1rem; letter-spacing:0;
-  transition:transform .3s cubic-bezier(.22,1,.36,1);
-}
-#pn-assets .pna-btn:hover{ transform:translateY(-2px); background:var(--accs); border-color:var(--accs); }
-#pn-assets .pna-btn:hover::after{ transform:translateX(6px); }
-#pn-assets .pna-btn:focus-visible{ outline:2px solid var(--accs); outline-offset:3px; }
-#pn-assets .pna-btn--line{ background:transparent; color:var(--acc); border-color:rgba(var(--accrgb),.6); box-shadow:none; }
-#pn-assets .pna-btn--line:hover{ background:rgba(var(--accrgb),.12); color:var(--acc); }
-@media (prefers-reduced-motion:reduce){
-  #pn-assets *{ transition:none !important; animation:none !important; }
-}
-
-#pn-assets .pna-stage{ position:relative; margin-top:clamp(30px,4.6vh,56px); }
-#pn-assets .pna-track{
-  display:flex; gap:clamp(16px,2vw,28px);
-  overflow-x:auto; overscroll-behavior-x:contain; scroll-snap-type:x mandatory;
-  -webkit-overflow-scrolling:touch; scrollbar-width:none;
-  padding:6px clamp(24px,5vw,72px) 70px; margin-bottom:-56px; scroll-padding-left:clamp(24px,5vw,72px);
-}
-#pn-assets .pna-track::-webkit-scrollbar{ display:none; }
-#pn-assets .pna-track:focus-visible{ outline:2px solid var(--accs); outline-offset:4px; }
-
-/* the slide: a vivid photograph and a solid plate that overlaps its edge */
-#pn-assets .pna-w{
-  position:relative; flex:0 0 auto; scroll-snap-align:start;
-  width:min(90vw,1180px);
-  display:grid; grid-template-columns:minmax(0,1.5fr) minmax(0,1fr); align-items:center;
-}
-#pn-assets .pna-w__ph{
-  position:relative; height:clamp(380px,62vh,620px); border-radius:24px; overflow:hidden;
-  background:var(--plate2); box-shadow:0 24px 60px rgba(2,24,18,.38);
-}
-#pn-assets .pna-w__img{
-  position:absolute; inset:0;
-  background-image:var(--pna-img,none); background-size:cover; background-position:var(--pna-pos,50% 50%);
-  filter:saturate(1.22) contrast(1.06) brightness(1.05);
-}
-#pn-assets .pna-num{
-  position:absolute; left:20px; top:18px; z-index:2;
-  font-family:var(--hd); font-weight:700; font-size:clamp(3rem,6vw,5.4rem); line-height:.8;
-  color:#FFFFFF; letter-spacing:-.04em;
-  -webkit-text-stroke:0; text-shadow:0 2px 18px rgba(0,0,0,.25);
-}
-#pn-assets .pna-w__b{
-  position:relative; z-index:2; margin-left:-14%;
-  padding:clamp(26px,3vw,44px);
-  border-radius:22px; background:var(--plate);
-  border-top:3px solid var(--iv);
-  box-shadow:0 26px 60px rgba(2,24,18,.45);
-}
-#pn-assets .pna-k{ margin:0; font-family:var(--hd); font-size:.64rem; font-weight:700; letter-spacing:.22em; text-transform:uppercase; color:var(--dim); }
-#pn-assets .pna-h{ margin:12px 0 0; font-family:var(--hd); font-weight:600; font-size:clamp(2rem,3.2vw,3rem); line-height:.96; letter-spacing:-.02em; color:var(--fg); }
-#pn-assets .pna-s{
-  display:inline-block; margin:14px 0 0; padding:6px 12px 5px; border-radius:999px;
-  border:1px solid rgba(245,241,232,.4);
-  font-family:var(--hd); font-size:.62rem; font-weight:700; letter-spacing:.2em; text-transform:uppercase; color:var(--fg);
-}
-#pn-assets .pna-p{ margin:16px 0 0; font-size:clamp(.98rem,1.08vw,1.06rem); line-height:1.6; color:var(--mut); }
-#pn-assets .pna-who{
-  display:flex; align-items:center; gap:12px; flex-wrap:wrap; margin:18px 0 0; padding-top:16px;
-  border-top:1px solid var(--hair);
-  font-size:.74rem; letter-spacing:.14em; text-transform:uppercase; color:var(--dim);
-}
-#pn-assets .pna-flags{ display:flex; gap:6px; }
-#pn-assets .pna-flag{
-  width:30px; height:30px; border-radius:50%; object-fit:cover;
-  box-shadow:0 0 0 2px rgba(245,241,232,.85);
-}
-
-#pn-assets .pna-nav{ display:flex; align-items:center; justify-content:space-between; gap:20px; flex-wrap:wrap; margin-top:clamp(22px,3vh,34px); }
-#pn-assets .pna-dots{ display:flex; gap:10px; }
-#pn-assets .pna-dot{
-  width:34px; height:4px; padding:0; border:0; border-radius:4px; cursor:pointer;
-  background:rgba(245,241,232,.28); transition:background .25s ease, width .25s ease;
-}
-#pn-assets .pna-dot.is-on{ width:58px; background:var(--iv); }
-#pn-assets .pna-dot:focus-visible{ outline:2px solid var(--accs); outline-offset:4px; }
-#pn-assets .pna-arrows{ display:flex; gap:10px; }
-#pn-assets .pna-arrow{
-  display:flex; align-items:center; justify-content:center; padding:0;
-  width:50px; height:50px; border-radius:50%; cursor:pointer;
-  border:1px solid var(--acc); background:var(--acc); color:var(--onacc);
-  font-family:var(--hd); font-size:1.4rem; line-height:1;
-  transition:background .2s ease, opacity .2s ease;
-}
-#pn-assets .pna-arrow:hover{ background:var(--accs); }
-#pn-assets .pna-arrow:disabled{ opacity:.3; cursor:default; }
-#pn-assets .pna-arrow:focus-visible{ outline:2px solid var(--accs); outline-offset:3px; }
-
-@media (max-width:860px){
-  #pn-assets .pna-w{ width:88vw; grid-template-columns:minmax(0,1fr); }
-  #pn-assets .pna-w__ph{ height:clamp(240px,40vh,360px); }
-  #pn-assets .pna-w__b{ margin:-48px 14px 0; }
-}
-/* chapter mark: the move this section opens, linked back to the five moves */
-#pn-assets .pn-ch{
-  display:inline-flex; align-items:center; justify-content:center; flex:none; width:30px; height:30px; border-radius:50%;
-  border:1.5px solid var(--acc,#E3C258); color:var(--acc,#E3C258); text-decoration:none;
-  font-family:var(--hd); font-size:.74rem; font-weight:700; letter-spacing:.02em; line-height:1;
+#pn-assets .pna-ch{
+  display:inline-flex; align-items:center; justify-content:center; flex:none; width:32px; height:32px; border-radius:50%;
+  border:1.5px solid var(--g); color:var(--g) !important; text-decoration:none !important;
+  font-family:var(--hd); font-size:.76rem; font-weight:700; letter-spacing:.02em; line-height:1;
   transition:background .2s ease, color .2s ease;
 }
-#pn-assets .pn-ch:hover{ background:var(--acc,#E3C258); color:#1A140C; }
-#pn-assets .pn-ch:focus-visible{ outline:2px solid #F0D68F; outline-offset:3px; }
-#pn-assets .pna-eb::before{ display:none !important; }
-
-/* v5.0 compact on laptops */
-#pn-assets h2.pna-h2{ font-size:clamp(2.3rem,5vw,4.6rem); max-width:18ch; text-shadow:none !important; text-transform:none !important; }
-#pn-assets .pna-stage{ margin-top:clamp(16px,2.6vh,28px); }
-#pn-assets .pna-w__ph{ height:clamp(300px,54vh,540px); }
-#pn-assets .pna-w__b{ padding:clamp(22px,2.6vw,38px); }
-#pn-assets .pna-nav{ margin-top:clamp(14px,2.2vh,24px); }
-#pn-assets .pna-in > p:last-child{ margin-top:clamp(16px,2.4vh,26px) !important; }
-#pn-assets h3,#pn-assets .pna-h{ text-shadow:none !important; text-transform:none !important; }
-/* v5.0 phones: a layout of their own; two columns, the first asset across the full width */
-@media (max-width:640px){
-  #pn-assets{ padding:22px 0 24px !important; }
-  #pn-assets .pna-in{ padding:0 18px !important; }
-  #pn-assets .pna-eb{ font-size:.66rem; letter-spacing:.24em; margin-bottom:8px; }
-  #pn-assets h2.pna-h2{ font-size:clamp(2.1rem,9.6vw,2.7rem) !important; line-height:.94; }
-  #pn-assets .pna-stage{ margin-top:14px; }
-  #pn-assets .pna-track{
-    display:grid !important; grid-template-columns:repeat(2,minmax(0,1fr)); gap:8px;
-    overflow:visible !important; scroll-snap-type:none !important; padding:0 18px !important; margin:0 !important;
-  }
-  #pn-assets .pna-w{
-    width:auto !important; display:flex !important; flex-direction:column; align-items:stretch !important; min-width:0;
-    border-radius:14px; overflow:hidden; background:var(--plate); box-shadow:0 12px 26px rgba(2,24,18,.36);
-  }
-  #pn-assets .pna-w__ph{ flex:none; width:100%; height:calc((100vw - 44px) * .375) !important; max-height:240px; border-radius:0 !important; box-shadow:none !important; }
-  #pn-assets .pna-num{ left:10px; top:9px; font-size:1.7rem; }
-  #pn-assets .pna-w__b{
-    display:flex; flex-direction:column; flex:1 1 auto; margin:0 !important; padding:10px 11px 11px !important;
-    border-radius:0 !important; border-top:2px solid var(--acc); box-shadow:none !important;
-  }
-  #pn-assets .pna-h{ order:1; margin:0; font-size:1.14rem; line-height:1.02; }
-  #pn-assets .pna-k{ order:2; margin:4px 0 0; font-family:var(--bd); font-size:.76rem; font-weight:500; letter-spacing:0; text-transform:none; line-height:1.3; color:var(--mut); }
-  #pn-assets .pna-s{ order:3; display:none; }
-  #pn-assets .pna-p{ order:4; display:none; }
-  #pn-assets .pna-who{ order:5; margin:auto 0 0; padding-top:8px; border-top:0; gap:6px; font-size:.54rem; letter-spacing:.1em; line-height:1.3; }
-  #pn-assets .pna-flag{ width:20px; height:20px; }
-  #pn-assets .pna-w:first-child{ grid-column:1 / -1; }
-  #pn-assets .pna-w:first-child .pna-w__ph{ height:calc((100vw - 36px) * .5) !important; max-height:340px; }
-  #pn-assets .pna-w:first-child .pna-w__b{ padding:12px 14px 14px !important; }
-  #pn-assets .pna-w:first-child .pna-h{ font-size:1.55rem; }
-  #pn-assets .pna-w:first-child .pna-k{ font-size:.84rem; }
-  #pn-assets .pna-w:first-child .pna-s{ display:inline-block; align-self:flex-start; margin-top:8px; padding:4px 10px 3px; font-size:.56rem; }
-  #pn-assets .pna-w:first-child .pna-p{ display:block; margin-top:8px; font-size:.9rem; line-height:1.45; }
-  #pn-assets .pna-w:first-child .pna-who{ margin-top:10px; padding-top:10px; border-top:1px solid var(--hair); font-size:.6rem; }
-  #pn-assets .pna-w:first-child .pna-flag{ width:24px; height:24px; }
-  #pn-assets .pna-nav{ display:none !important; }
-  #pn-assets .pna-in > p:last-child{ margin-top:14px !important; }
-  #pn-assets .pna-in > p:last-child .pna-btn{ display:flex; width:100%; }
+#pn-assets .pna-ch:hover{ background:var(--g); color:var(--onacc) !important; }
+#pn-assets .pna-ch:focus-visible{ outline:2px solid var(--gs); outline-offset:3px; }
+#pn-assets .pna-eb b{ font-weight:700; color:var(--g); }
+#pn-assets h2.pna-h2{
+  margin:14px 0 0; max-width:none; font-family:var(--hd); font-weight:600; text-transform:none;
+  font-size:clamp(2.3rem,4.2vw,4rem); line-height:.93; letter-spacing:-.025em; color:var(--iv) !important; text-wrap:balance;
 }
-/* v7: one palette - Earthrise and ivory, gold for what a visitor can act on; the painted seams carry the colour */
-#pn-assets{
-  --bg:#0F4C5C; --bg2:#082A30; --plate:#0A3840; --plate2:#072A30;
-  background:
-    radial-gradient(70% 55% at 82% 0%, rgba(120,200,205,.14) 0%, transparent 64%),
-    radial-gradient(50% 45% at 8% 100%, rgba(227,194,88,.07) 0%, transparent 62%),
-    linear-gradient(180deg, var(--bg) 0%, var(--bg2) 100%);
+#pn-assets .pna-lead{ margin:0; max-width:46ch; font-size:clamp(1rem,1.25vw,1.14rem); line-height:1.55; color:var(--tm); }
+#pn-assets .pna-lead b{ font-weight:600; color:var(--iv); }
+
+/* the five assets */
+#pn-assets .pna-grid{
+  display:grid; grid-template-columns:minmax(0,1.45fr) minmax(0,1fr) minmax(0,1fr); grid-template-rows:auto auto;
+  gap:clamp(12px,1.4vw,18px); margin:clamp(20px,3vh,30px) 0 0; padding:0; list-style:none;
+}
+#pn-assets .pna-c{
+  position:relative; display:flex; flex-direction:column; margin:0; overflow:hidden;
+  border-radius:16px; background:var(--er3); border:1px solid var(--hair);
+  box-shadow:0 18px 40px rgba(0,0,0,.24);
+}
+#pn-assets .pna-c:first-child{ grid-row:1 / 3; }
+#pn-assets .pna-ph{ position:relative; display:block; aspect-ratio:16/8; overflow:hidden; background:var(--tint,linear-gradient(160deg,#2E6E5A,#0B3D45)); }
+#pn-assets .pna-c:first-child .pna-ph{ aspect-ratio:auto; flex:1 1 auto; min-height:260px; }
+#pn-assets .pna-ph img{
+  position:absolute; inset:0; display:block; width:100% !important; height:100% !important; max-width:none !important;
+  object-fit:cover; transition:transform 1.2s cubic-bezier(.22,1,.36,1);
+}
+#pn-assets .pna-c:hover .pna-ph img{ transform:scale(1.045); }
+#pn-assets .pna-n{
+  position:absolute; left:12px; top:12px; z-index:2; display:inline-flex; align-items:center; justify-content:center;
+  min-width:30px; height:24px; padding:0 8px; border-radius:999px; background:rgba(8,42,48,.86); border:1px solid rgba(227,194,88,.6);
+  font-family:var(--hd); font-size:.68rem; font-weight:700; letter-spacing:.08em; color:var(--g);
+}
+#pn-assets .pna-b{ padding:12px 16px 14px; }
+#pn-assets .pna-c:first-child .pna-b{ padding:16px 20px 18px; }
+#pn-assets h3.pna-h3{ margin:0; font-family:var(--hd); font-weight:600; font-size:clamp(1.25rem,1.6vw,1.5rem); line-height:1.05; letter-spacing:-.01em; color:var(--iv) !important; text-transform:none; }
+#pn-assets .pna-c:first-child h3.pna-h3{ font-size:clamp(1.6rem,2.4vw,2.2rem); }
+#pn-assets .pna-p{ margin:5px 0 0; font-size:.94rem; line-height:1.42; color:var(--tm); }
+#pn-assets .pna-c:first-child .pna-p{ font-size:clamp(1rem,1.2vw,1.1rem); }
+#pn-assets .pna-w{ display:block; margin-top:8px; font-family:var(--hd); font-size:.64rem; font-weight:700; letter-spacing:.2em; text-transform:uppercase; color:var(--td); }
+
+#pn-assets .pna-foot{ margin:clamp(18px,2.8vh,26px) 0 0; }
+#pn-assets .pna-btn{
+  display:inline-flex; align-items:center; justify-content:center; gap:14px; min-height:44px;
+  padding:13px 26px 11px; border-radius:999px; text-decoration:none !important;
+  font-family:var(--hd); font-size:.74rem; font-weight:700; letter-spacing:.19em; text-transform:uppercase;
+  background:var(--g); color:var(--onacc) !important; border:1px solid var(--g); box-shadow:0 12px 30px rgba(227,194,88,.26);
+  transition:transform .22s ease, background .22s ease;
+}
+#pn-assets .pna-btn::after{ content:"\2192"; font-family:Arial,sans-serif; font-size:1rem; letter-spacing:0; transition:transform .3s cubic-bezier(.22,1,.36,1); }
+#pn-assets .pna-btn:hover{ transform:translateY(-2px); background:var(--gs); }
+#pn-assets .pna-btn:hover::after{ transform:translateX(6px); }
+#pn-assets .pna-btn:focus-visible{ outline:2px solid var(--gs); outline-offset:3px; }
+
+@media (prefers-reduced-motion:no-preference){
+  #pn-assets.is-armed .pna-c{ opacity:0; transform:translateY(18px); }
+  #pn-assets.is-in .pna-c{ opacity:1; transform:none; transition:opacity .7s ease, transform .8s cubic-bezier(.22,1,.36,1); transition-delay:calc(var(--i) * .1s); }
+}
+
+@media (max-width:899px){
+  #pn-assets .pna-head{ grid-template-columns:minmax(0,1fr); }
+  #pn-assets .pna-grid{ grid-template-columns:repeat(2,minmax(0,1fr)); grid-template-rows:none; }
+  #pn-assets .pna-c:first-child{ grid-row:auto; grid-column:1 / -1; }
+  #pn-assets .pna-c:first-child .pna-ph{ aspect-ratio:16/9; flex:none; min-height:0; }
+}
+@media (max-width:760px){
+  #pn-assets{ padding:26px 0 26px; }
+  #pn-assets .pna-in{ padding:0 18px; }
+  #pn-assets .pna-eb{ font-size:.64rem; letter-spacing:.22em; gap:10px; }
+  #pn-assets .pna-ch{ width:28px; height:28px; font-size:.68rem; }
+  #pn-assets h2.pna-h2{ margin-top:10px; font-size:clamp(2.1rem,9.8vw,2.7rem); }
+  #pn-assets .pna-lead{ font-size:.98rem; line-height:1.5; }
+  #pn-assets .pna-grid{ gap:10px; margin-top:16px; }
+  #pn-assets .pna-b{ padding:9px 11px 11px; }
+  #pn-assets .pna-c:first-child .pna-b{ padding:12px 14px 14px; }
+  #pn-assets h3.pna-h3{ font-size:1.08rem; }
+  #pn-assets .pna-c:first-child h3.pna-h3{ font-size:1.5rem; }
+  #pn-assets .pna-p{ font-size:.84rem; line-height:1.36; }
+  #pn-assets .pna-c:first-child .pna-p{ font-size:.96rem; }
+  #pn-assets .pna-w{ margin-top:6px; font-size:.56rem; letter-spacing:.14em; }
+  #pn-assets .pna-n{ left:8px; top:8px; height:22px; min-width:26px; font-size:.62rem; }
+  #pn-assets .pna-foot{ margin-top:16px; }
+  #pn-assets .pna-btn{ width:100%; }
+}
+@media (prefers-reduced-motion:reduce){
+  #pn-assets *{ transition:none !important; animation:none !important; }
 }
 </style>
 
 <section id="pn-assets" aria-labelledby="pna-h">
   <div class="pna-in">
-    <p class="pna-eb"><a class="pn-ch" href="#pn-studio" aria-label="Move 01 of 05, Assets. Back to the five moves">01</a><span>Assets &middot; What Nations Own</span></p>
-    <h2 class="pna-h2" id="pna-h">Sovereign assets no balance sheet has counted</h2>
-  </div>
-
-  <div class="pna-stage">
-    <div class="pna-track" id="pnaTrack" tabindex="0" role="group" aria-label="Five world assets">
-        <article class="pna-w" style="--pna-img:url('https://perfectnations.org/wp-content/uploads/2026/09/perfectnations_Aerial_view_of_the_Congo_River_Basin_at_dawn-scaled.png');">
-          <div class="pna-w__ph"><span class="pna-w__img" aria-hidden="true"></span><span class="pna-num" aria-hidden="true">01</span></div>
-          <div class="pna-w__b">
-            <p class="pna-k">Second-largest rainforest on Earth</p>
-            <h3 class="pna-h">The Congo Basin</h3>
-            <span class="pna-s">Forest &amp; Wild</span>
-            <p class="pna-p">Still absorbing more carbon than it emits, yet almost absent from national accounts.</p>
-            <p class="pna-who"><span class="pna-flags"><img class="pna-flag" src="https://flagcdn.com/w80/cg.png" alt="" width="80" height="60" loading="lazy" decoding="async"></span><span>Republic of the Congo &middot; and five neighbours</span></p>
-          </div>
-        </article>
-        <article class="pna-w" style="--pna-img:url('https://perfectnations.org/wp-content/uploads/2026/09/perfectnations_Aerial_view_of_Mosi-oa-Tunya_at_sunrise-scaled.png');">
-          <div class="pna-w__ph"><span class="pna-w__img" aria-hidden="true"></span><span class="pna-num" aria-hidden="true">02</span></div>
-          <div class="pna-w__b">
-            <p class="pna-k">One waterfall, two economies</p>
-            <h3 class="pna-h">Mosi-oa-Tunya</h3>
-            <span class="pna-s">Water &amp; Rivers</span>
-            <p class="pna-p">The largest sheet of falling water on Earth, shared by two nations.</p>
-            <p class="pna-who"><span class="pna-flags"><img class="pna-flag" src="https://flagcdn.com/w80/zm.png" alt="" width="80" height="60" loading="lazy" decoding="async"><img class="pna-flag" src="https://flagcdn.com/w80/zw.png" alt="" width="80" height="60" loading="lazy" decoding="async"></span><span>Zambia and Zimbabwe</span></p>
-          </div>
-        </article>
-        <article class="pna-w" style="--pna-img:url('https://perfectnations.org/wp-content/uploads/2026/09/perfectnations_Low_aerial_view_of_the_Okavango_Delta-scaled.png');">
-          <div class="pna-w__ph"><span class="pna-w__img" aria-hidden="true"></span><span class="pna-num" aria-hidden="true">03</span></div>
-          <div class="pna-w__b">
-            <p class="pna-k">A river that ends in the desert</p>
-            <h3 class="pna-h">The Okavango Delta</h3>
-            <span class="pna-s">Water &amp; Rivers</span>
-            <p class="pna-p">A river that never reaches the sea, earning more from fewer visitors.</p>
-            <p class="pna-who"><span class="pna-flags"><img class="pna-flag" src="https://flagcdn.com/w80/bw.png" alt="" width="80" height="60" loading="lazy" decoding="async"></span><span>Botswana</span></p>
-          </div>
-        </article>
-        <article class="pna-w" style="--pna-img:url('https://perfectnations.org/wp-content/uploads/2026/09/perfectnations_Aerial_view_of_the_Namib_desert_at_dawn-scaled.png');">
-          <div class="pna-w__ph"><span class="pna-w__img" aria-hidden="true"></span><span class="pna-num" aria-hidden="true">04</span></div>
-          <div class="pna-w__b">
-            <p class="pna-k">Light never invoiced</p>
-            <h3 class="pna-h">The Namib and the Sperrgebiet</h3>
-            <span class="pna-s">Sun, Wind &amp; Power</span>
-            <p class="pna-p">Among the best sun and wind on Earth, ready to become green ammonia exports.</p>
-            <p class="pna-who"><span class="pna-flags"><img class="pna-flag" src="https://flagcdn.com/w80/na.png" alt="" width="80" height="60" loading="lazy" decoding="async"></span><span>Namibia</span></p>
-          </div>
-        </article>
-        <article class="pna-w" style="--pna-img:url('https://perfectnations.org/wp-content/uploads/2026/09/perfectnations_Aerial_view_of_the_great_migration_at_dusk-scaled.png');">
-          <div class="pna-w__ph"><span class="pna-w__img" aria-hidden="true"></span><span class="pna-num" aria-hidden="true">05</span></div>
-          <div class="pna-w__b">
-            <p class="pna-k">The largest overland migration</p>
-            <h3 class="pna-h">The Great Migration</h3>
-            <span class="pna-s">Forest &amp; Wild</span>
-            <p class="pna-p">Close to two million animals a year, anchoring two tourism economies.</p>
-            <p class="pna-who"><span class="pna-flags"><img class="pna-flag" src="https://flagcdn.com/w80/tz.png" alt="" width="80" height="60" loading="lazy" decoding="async"><img class="pna-flag" src="https://flagcdn.com/w80/ke.png" alt="" width="80" height="60" loading="lazy" decoding="async"></span><span>Tanzania and Kenya</span></p>
-          </div>
-        </article>
-    </div>
-  </div>
-
-  <div class="pna-in">
-    <div class="pna-nav">
-      <div class="pna-dots" id="pnaDots" aria-label="Choose an asset"></div>
-      <div class="pna-arrows">
-        <button class="pna-arrow" type="button" id="pnaPrev" aria-label="Previous asset">&#8249;</button>
-        <button class="pna-arrow" type="button" id="pnaNext" aria-label="Next asset">&#8250;</button>
+    <div class="pna-head">
+      <div>
+        <p class="pna-eb"><a class="pna-ch" href="#pn-steps" aria-label="Step 01 of 03, Count. Back to How it works">01</a><span><b>Count</b> &middot; Sovereign Assets</span></p>
+        <h2 class="pna-h2" id="pna-h">Every nation is richer than its balance sheet.</h2>
       </div>
+      <p class="pna-lead">Water, land, coast, forest, sun, minerals and people: wealth no national account records. <b>Super intelligence</b> counts it, nation by nation.</p>
     </div>
-    <p style="margin:clamp(28px,4vh,44px) 0 0;"><a class="pna-btn" href="https://perfectnations.org/sovereign-assets/">Sovereign assets ledger</a></p>
+
+    <ul class="pna-grid">
+      <li class="pna-c" style="--i:0;--tint:linear-gradient(160deg,#2E6E3A,#0B3D2A)">
+        <span class="pna-ph"><img src="https://perfectnations.org/wp-content/uploads/2026/09/perfectnations_Aerial_view_of_the_Congo_River_Basin_at_dawn-768x430.png" srcset="https://perfectnations.org/wp-content/uploads/2026/09/perfectnations_Aerial_view_of_the_Congo_River_Basin_at_dawn-768x430.png 768w, https://perfectnations.org/wp-content/uploads/2026/09/perfectnations_Aerial_view_of_the_Congo_River_Basin_at_dawn-1024x574.png 1024w" sizes="(min-width:900px) 46vw, 100vw" alt="A winding river through dense green forest in the Congo Basin" width="768" height="430" loading="lazy" decoding="async" onerror="this.remove()"><span class="pna-n" aria-hidden="true">01</span></span>
+        <div class="pna-b">
+          <h3 class="pna-h3">The Congo Basin</h3>
+          <p class="pna-p">The second-largest rainforest on Earth, almost absent from national accounts.</p>
+          <span class="pna-w">Republic of the Congo and five neighbours</span>
+        </div>
+      </li>
+      <li class="pna-c" style="--i:1;--tint:linear-gradient(160deg,#3A7C8A,#0E3B4A)">
+        <span class="pna-ph"><img src="https://perfectnations.org/wp-content/uploads/2026/09/perfectnations_Aerial_view_of_Mosi-oa-Tunya_at_sunrise-768x430.png" srcset="https://perfectnations.org/wp-content/uploads/2026/09/perfectnations_Aerial_view_of_Mosi-oa-Tunya_at_sunrise-300x168.png 300w, https://perfectnations.org/wp-content/uploads/2026/09/perfectnations_Aerial_view_of_Mosi-oa-Tunya_at_sunrise-768x430.png 768w" sizes="(min-width:900px) 26vw, 46vw" alt="Mosi-oa-Tunya, the Victoria Falls, with a rainbow" width="768" height="430" loading="lazy" decoding="async" onerror="this.remove()"><span class="pna-n" aria-hidden="true">02</span></span>
+        <div class="pna-b">
+          <h3 class="pna-h3">Mosi-oa-Tunya</h3>
+          <p class="pna-p">The largest sheet of falling water on Earth.</p>
+          <span class="pna-w">Zambia and Zimbabwe</span>
+        </div>
+      </li>
+      <li class="pna-c" style="--i:2;--tint:linear-gradient(160deg,#4E8A5A,#173F2A)">
+        <span class="pna-ph"><img src="https://perfectnations.org/wp-content/uploads/2026/09/perfectnations_Low_aerial_view_of_the_Okavango_Delta-768x430.png" srcset="https://perfectnations.org/wp-content/uploads/2026/09/perfectnations_Low_aerial_view_of_the_Okavango_Delta-300x168.png 300w, https://perfectnations.org/wp-content/uploads/2026/09/perfectnations_Low_aerial_view_of_the_Okavango_Delta-768x430.png 768w" sizes="(min-width:900px) 26vw, 46vw" alt="The channels of the Okavango Delta from the air" width="768" height="430" loading="lazy" decoding="async" onerror="this.remove()"><span class="pna-n" aria-hidden="true">03</span></span>
+        <div class="pna-b">
+          <h3 class="pna-h3">The Okavango Delta</h3>
+          <p class="pna-p">A river that ends in the desert, not the sea.</p>
+          <span class="pna-w">Botswana</span>
+        </div>
+      </li>
+      <li class="pna-c" style="--i:3;--tint:linear-gradient(160deg,#C9783A,#5A2A12)">
+        <span class="pna-ph"><img src="https://perfectnations.org/wp-content/uploads/2026/09/perfectnations_Aerial_view_of_the_Namib_desert_at_dawn-768x430.png" srcset="https://perfectnations.org/wp-content/uploads/2026/09/perfectnations_Aerial_view_of_the_Namib_desert_at_dawn-300x168.png 300w, https://perfectnations.org/wp-content/uploads/2026/09/perfectnations_Aerial_view_of_the_Namib_desert_at_dawn-768x430.png 768w" sizes="(min-width:900px) 26vw, 46vw" alt="Orange dunes of the Namib Desert at dawn" width="768" height="430" loading="lazy" decoding="async" onerror="this.remove()"><span class="pna-n" aria-hidden="true">04</span></span>
+        <div class="pna-b">
+          <h3 class="pna-h3">The Namib and the Sperrgebiet</h3>
+          <p class="pna-p">Some of the best sun and wind on Earth.</p>
+          <span class="pna-w">Namibia</span>
+        </div>
+      </li>
+      <li class="pna-c" style="--i:4;--tint:linear-gradient(160deg,#B8863A,#4A3012)">
+        <span class="pna-ph"><img src="https://perfectnations.org/wp-content/uploads/2026/09/perfectnations_Aerial_view_of_the_great_migration_at_dusk-768x430.png" srcset="https://perfectnations.org/wp-content/uploads/2026/09/perfectnations_Aerial_view_of_the_great_migration_at_dusk-300x168.png 300w, https://perfectnations.org/wp-content/uploads/2026/09/perfectnations_Aerial_view_of_the_great_migration_at_dusk-768x430.png 768w" sizes="(min-width:900px) 26vw, 46vw" alt="Zebras on the plains of the Great Migration at dusk" width="768" height="430" loading="lazy" decoding="async" onerror="this.remove()"><span class="pna-n" aria-hidden="true">05</span></span>
+        <div class="pna-b">
+          <h3 class="pna-h3">The Great Migration</h3>
+          <p class="pna-p">Close to two million animals a year.</p>
+          <span class="pna-w">Tanzania and Kenya</span>
+        </div>
+      </li>
+    </ul>
+
+    <p class="pna-foot"><a class="pna-btn" href="https://perfectnations.org/sovereign-assets/">The Sovereign Assets ledger</a></p>
   </div>
 </section>
 
 <script>
 (function(){
   var root = document.getElementById('pn-assets');
-  if (!root || root.getAttribute('data-pna') === '1') { return; }
-  root.setAttribute('data-pna', '1');
-  var track = document.getElementById('pnaTrack');
-  var dots = document.getElementById('pnaDots');
-  var prev = document.getElementById('pnaPrev');
-  var next = document.getElementById('pnaNext');
-  if (!track) { return; }
-  var soft = !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var slides = Array.prototype.slice.call(track.querySelectorAll('.pna-w'));
-  var at = -1;
-  slides.forEach(function(sl, i){
-    var b = document.createElement('button');
-    b.type = 'button'; b.className = 'pna-dot';
-    var h = sl.querySelector('.pna-h');
-    b.setAttribute('aria-label', h ? h.textContent : 'Asset ' + (i + 1));
-    b.addEventListener('click', function(){ go(i); });
-    if (dots) { dots.appendChild(b); }
-  });
-  function go(i){
-    i = Math.max(0, Math.min(slides.length - 1, i));
-    track.scrollTo({ left: slides[i].offsetLeft - slides[0].offsetLeft, behavior: soft ? 'smooth' : 'auto' });
-  }
-  function mark(){
-    var best = 0, gap = 1e9;
-    slides.forEach(function(sl, i){
-      var d = Math.abs((sl.offsetLeft - slides[0].offsetLeft) - track.scrollLeft);
-      if (d < gap){ gap = d; best = i; }
-    });
-    if (best === at) { return; }
-    at = best;
-    if (dots){ for (var k = 0; k < dots.children.length; k++){ dots.children[k].classList.toggle('is-on', k === at); } }
-    if (prev) { prev.disabled = at === 0; }
-    if (next) { next.disabled = at === slides.length - 1; }
-  }
-  var tick = null;
-  track.addEventListener('scroll', function(){
-    if (tick) { return; }
-    tick = window.requestAnimationFrame(function(){ tick = null; mark(); });
-  });
-  if (prev) { prev.addEventListener('click', function(){ go(at - 1); }); }
-  if (next) { next.addEventListener('click', function(){ go(at + 1); }); }
-  track.addEventListener('keydown', function(e){
-    if (e.key === 'ArrowRight'){ e.preventDefault(); go(at + 1); }
-    if (e.key === 'ArrowLeft'){ e.preventDefault(); go(at - 1); }
-  });
-  mark();
+  if (!root || root.getAttribute('data-pna-on')) { return; }
+  root.setAttribute('data-pna-on', '1');
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduce || !('IntersectionObserver' in window)) { return; }
+  root.classList.add('is-armed');
+  var io = new IntersectionObserver(function(list){
+    list.forEach(function(e){ if (e.isIntersecting) { root.classList.add('is-in'); io.disconnect(); } });
+  }, { threshold: 0.12 });
+  io.observe(root);
+  setTimeout(function(){ root.classList.add('is-in'); }, 9000);
 })();
 </script>
