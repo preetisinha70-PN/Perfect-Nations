@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """Build the State of Nations page (perfectnations.org/state-of-nations/) and its nation data.
 
-The page is about Solutions: how super intelligence (SI) and innovative financing for development
-(FFD) close the gap to the seven basic standards of living, nation by nation.
+The page is about Solutions: how innovative financing for development (FfD) and super intelligence
+(SI) close the gap to the seven basic standards of living, nation by nation.
 
     python3 tools/build_state_of_nations.py           build pages/state-of-nations.html and the data
     python3 tools/build_state_of_nations.py --data    rebuild data/solutions-by-nation.json only
@@ -40,7 +40,7 @@ OUT = PAGES / 'state-of-nations.html'
 NATION_DATA = DATA / 'solutions-by-nation.json'
 sys.path.insert(0, str(ROOT / 'tools'))
 
-VERSION = '7.0'
+VERSION = '7.1'
 ORDER = ['Food', 'Water', 'Shelter', 'Energy', 'Education', 'Health', 'Livelihood']
 MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September',
           'October', 'November', 'December']
@@ -48,7 +48,7 @@ WIRE_STATIC = 12     # wire items written into the page (the live file replaces 
 SITE = 'https://perfectnations.org'
 
 # ---------------------------------------------------------------------------------------------
-# THE PLAYBOOK: for each standard, the FFD instrument that closes the gap, the deal that proved it,
+# THE PLAYBOOK: for each standard, the FfD instrument that closes the gap, the deal that proved it,
 # and what SI does. "lib" names an instrument in data/capital-architecture.json, whose figure, place,
 # year and source are used unchanged. Food and Health carry their own primary source.
 # Changing a line here is a page change: raise VERSION and open a pull request.
@@ -276,7 +276,7 @@ def solution_card(s):
         std_chips(s.get('standards', [])),
         '<dl class="sn-c__x">',
         '<div><dt>The challenge</dt><dd>%s</dd></div>' % a(s.get('challenge', '')),
-        '<div><dt>FFD</dt><dd>%s</dd></div>' % a(s.get('ffd', '')),
+        '<div><dt>FfD</dt><dd>%s</dd></div>' % a(s.get('ffd', '')),
         '<div><dt>SI</dt><dd>%s</dd></div>' % a(s.get('si', '')),
         '</dl>',
     ]
@@ -346,7 +346,7 @@ def finder(nat):
             '<div class="sn-p" id="sn-p-%s" role="tabpanel" aria-labelledby="sn-t-%s" data-std="%s"%s>' % (k, k, a(s), '' if on else ' hidden'),
             '<div class="sn-pb">',
             '<div class="sn-pb__h"><p class="sn-k">%s</p><h3>%s</h3></div>' % (a(s), a(p['head'])),
-            '<div class="sn-pb__c sn-pb__ffd"><p class="sn-tag">FFD &middot; %s</p><p>%s</p>%s</div>' % (a(p['name']), a(p['ffd']), proof),
+            '<div class="sn-pb__c sn-pb__ffd"><p class="sn-tag">FfD &middot; %s</p><p>%s</p>%s</div>' % (a(p['name']), a(p['ffd']), proof),
             '<div class="sn-pb__c sn-pb__si"><p class="sn-tag">SI</p><p>%s</p></div>' % a(p['si']),
             '</div>', lead, body,
             '<button type="button" class="sn-more" hidden>Show all</button>',

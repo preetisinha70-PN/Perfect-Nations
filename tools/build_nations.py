@@ -1,7 +1,9 @@
 #!/usr/bin/env python3
 """Build every national blueprint page (pages/blueprint-<slug>.html) from one template.
 
-Blueprint v10.0 (7 November 2026). One design for every nation, so a change is made once and reaches all.
+Blueprint v10.1 (8 November 2026). One design for every nation, so a change is made once and reaches all.
+v10.1: FfD before SI (the Steward-General, 8 Nov 2026): innovative financing for development (FfD) is named
+first and super intelligence (SI) second, and the abbreviation is written FfD.
 
 Each page is built from:
   tools/nation/style.css    the design (scoped to the page root #pn-bp-<slug>; written with #R)
@@ -40,7 +42,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 PAGES, DATA, HERE = ROOT / 'pages', ROOT / 'data', ROOT / 'tools' / 'nation'
-VERSION = '10.0'
+VERSION = '10.1'
 EARTH = {'lg': 'https://perfectnations.org/wp-content/uploads/2026/10/pn-globe-earth-day-1536x768.jpg',
          'sm': 'https://perfectnations.org/wp-content/uploads/2026/10/pn-globe-earth-day-1024x512.jpg'}
 ORDER = ['Food', 'Water', 'Shelter', 'Energy', 'Education', 'Health', 'Livelihoods']
@@ -303,7 +305,7 @@ def solution_card(x, sig_name, sig_role):
     if x.get('challenge') and x.get('ffd') and x.get('si'):
         body = '<ul class="bpx-sol__how">%s</ul>' % ''.join(
             '<li><b>%s</b><strong>%s</strong><span>%s</span></li>' % (n, t, ent(w))
-            for n, t, w in (('01', 'The challenge', x['challenge']), ('02', 'How FFD solves it', x['ffd']), ('03', 'How SI solves it', x['si'])))
+            for n, t, w in (('01', 'The challenge', x['challenge']), ('02', 'How FfD solves it', x['ffd']), ('03', 'How SI solves it', x['si'])))
     elif x.get('standfirst') or x.get('summary'):
         body = '<p>%s</p>' % ent(x.get('standfirst') or x.get('summary'))
     fig = ''
@@ -339,7 +341,7 @@ def solution_brief(name, sbn, slug):
         ffd += ent(' Proved in %s, %s: %s %s.' % (pr['where'], pr['year'], pr['figure'], pr['label']))
         ffd += ' <a href="%s" target="_blank" rel="noopener noreferrer">%s</a>' % (ent(https(pr['url'])), ent(pr.get('source') or 'Source'))
     rows = ''.join('<li><b>%s</b><strong>%s</strong><span>%s</span></li>' % r for r in (
-        ('01', 'The challenge', ch), ('02', 'How FFD solves it', ffd), ('03', 'How SI solves it', ent(play['si']))))
+        ('01', 'The challenge', ch), ('02', 'How FfD solves it', ffd), ('03', 'How SI solves it', ent(play['si']))))
     return (
         '<li class="bpx-sol bpx-sol--brief"><p class="bpx-sol__k"><b>The Solution for %s</b><span>%s</span></p>'
         '<h3>%s</h3><ul class="bpx-sol__how">%s</ul>'
@@ -400,7 +402,7 @@ def letter(d, p, sbn, son):
         '<a class="bpx-btn" href="%s" target="_blank" rel="noopener noreferrer">Read the full letter</a></div></article></div>'
         '<div class="bpx-solx" id="bp-solutions"><span id="bp-dispatches"></span>'
         '<div class="bpx-sols-top"><div><p class="bpx-eb">Solutions</p><h2 class="bpx-h2" id="bp-sol-h">Solutions for Perfect %s</h2>'
-        '<p class="bpx-lead">How super intelligence (SI) and innovative financing for development (FFD) close the gap to the seven basic standards of living, for every citizen of %s.</p></div>'
+        '<p class="bpx-lead">How innovative financing for development (FfD) and super intelligence (SI) close the gap to the seven basic standards of living, for every citizen of %s.</p></div>'
         '<a class="bpx-link" href="https://perfectnations.org/state-of-nations/#sn-solutions" target="_blank" rel="noopener noreferrer">All Solutions</a></div>'
         '<p class="bpx-swipe" aria-hidden="true">Swipe for every Solution</p><ul class="bpx-sols bpx-rail" id="bp-sols">%s</ul>%s</div>'
         '<div class="bpx-wx" id="bp-writings"><div><p class="bpx-eb">ReDesign Studio &#183; Writings</p><h3>Write Perfect %s <em>into being.</em></h3></div>'
@@ -619,6 +621,9 @@ def build(slug, sbn, son, seam, today):
     script = (HERE / 'script.js').read_text(encoding='utf-8').replace('/*pn:cfg*/', 'var CFG = %s;' % js_str(cfg))
     head = (
         '<!-- PERFECT NATIONS . NATIONAL BLUEPRINT . %s . v%s . %s . Built by tools/build_nations.py: never edit by hand. -->\n'
+        '<!-- v10.1 (8 November 2026): FfD before SI (the Steward-General, 8 Nov 2026). The Solutions lead names\n'
+        '     innovative financing for development (FfD) first and super intelligence (SI) second, and the\n'
+        '     Solution rows read "How FfD solves it". -->\n'
         '<!-- v10.0 (7 November 2026): one design for all 44 blueprints, in the site palette. Earthrise first, then the\n'
         '     ReDesign Studio and its three mandates straight under the hero (no waiting for it to appear), the Letter and\n'
         '     Solutions (Lagoon), the Sovereign Assets (Earthrise), Perfect Capita (ivory), Capital Architecture and the\n'
