@@ -1,5 +1,5 @@
 <!-- ===========================================================================
-PERFECT NATIONS - HOMEPAGE - THE WHOLE PAGE IN ONE FILE - v8.1 - 2026-11-08
+PERFECT NATIONS - HOMEPAGE - THE WHOLE PAGE IN ONE FILE - v8.2 - 2026-11-08
 Paste this file ONCE into ONE Elementor Custom HTML widget on the homepage (page 13465), in a Full
 Width container with padding 0, and delete every other widget on the page. From then on the Perfect
 Nations Live Pages plugin serves pages/home.html from GitHub in place of the paste (root id pn-home,
@@ -1468,6 +1468,10 @@ oc Australia and Oceania.
 PERFECT NATIONS - HOMEPAGE - SECTION 01 - EVERY NATION IS RICHER - v7.0 THE STORY FIRST - 2026-11-08
 Served live from GitHub (pages/home-hero.html) by the Perfect Nations Live Pages plugin;
 the root id stays pn-hero, so the widget already on the homepage is the one replaced.
+v7.2 (homepage v8.2, the designer's layout, 8 Nov 2026): the scale ribbon at the foot of the first
+  screen: 195 nations, blueprints open (live from pages/manifest.json), 7 basic living standards and
+  the people still in extreme poverty (live from figures/perfect-capita.json). On laptops it runs
+  under both the words and the planet, between two gold hairlines.
 v7.1: the Steward-General's choices of 8 Nov 2026 (homepage v8.1):
   - the two headlines return: "Civilization Re-Defined" (the headline) and, directly under it,
     "Designing the Prosperity of Nations"; the line ends "design how to finance it";
@@ -1853,6 +1857,26 @@ If the address differs, change it in the two places it appears (search for pn-ho
   #pn-hero .pnhg-ctl{ right:clamp(6px,1vw,16px); }
 }
 
+/* v7.2: the scale ribbon */
+#pn-hero .pnhg-scale{
+  position:relative; z-index:3; list-style:none; margin:clamp(22px,3.4vh,36px) auto 0; padding:14px 0 0;
+  display:flex; justify-content:center; flex-wrap:wrap; gap:10px clamp(28px,4vw,64px);
+  border-top:1px solid rgba(227,194,88,.35);
+}
+#pn-hero .pnhg-scale li{ display:flex; flex-direction:column; align-items:center; margin:0; text-align:center; }
+#pn-hero .pnhg-scale b{ font-family:var(--hd); font-weight:600; font-size:clamp(1.7rem,2.6vw,2.5rem); line-height:1; letter-spacing:-.02em; color:var(--iv); }
+#pn-hero .pnhg-scale span{ margin-top:4px; font-family:var(--hd); font-size:.64rem; font-weight:700; letter-spacing:.2em; text-transform:uppercase; color:var(--g); }
+@media (min-width:1024px){
+  #pn-hero{ grid-template-rows:1fr auto auto auto auto auto 1fr auto; }
+  #pn-hero .pnhg-globe{ grid-row:1 / 8; }
+  #pn-hero .pnhg-scale{ grid-column:1 / -1; grid-row:8; justify-content:space-between; margin:0 clamp(40px,5vw,96px) 0 0; padding-top:16px; width:auto; }
+  #pn-hero .pnhg-scale li{ align-items:flex-start; text-align:left; }
+}
+@media (max-width:760px){
+  #pn-hero .pnhg-scale{ display:grid; grid-template-columns:1fr 1fr; gap:14px 10px; margin-top:22px; }
+  #pn-hero .pnhg-scale b{ font-size:1.6rem; }
+  #pn-hero .pnhg-scale span{ font-size:.58rem; letter-spacing:.14em; }
+}
 /* v5.4: the pin the Capital Wire sets on the planet */
 #pn-hero .pnhg-pin{ position:relative; width:0; height:0; pointer-events:none; }
 #pn-hero .pnhg-pin i{ position:absolute; left:-32px; top:-32px; width:64px; height:64px; border-radius:50%; border:2px solid #F0D68F; opacity:0; animation:pnhgPin 2.2s ease-out infinite; }
@@ -1903,6 +1927,13 @@ If the address differs, change it in the two places it appears (search for pn-ho
     <a class="pnhg-btn pnhg-btn--gold" href="https://perfectnations.org/blueprints/">Find your nation</a>
     <a class="pnhg-btn pnhg-btn--line" href="#pn-steps">How it works</a>
   </div>
+
+  <ul class="pnhg-scale" aria-label="Perfect Nations at a glance">
+    <li><b>195</b><span>Nations</span></li>
+    <li><b data-pnhg="open">44</b><span>Blueprints open</span></li>
+    <li><b>7</b><span>Basic living standards</span></li>
+    <li><b data-pnhg="pov">824m</b><span>People still in extreme poverty</span></li>
+  </ul>
 
 </section>
 
@@ -2570,6 +2601,29 @@ window.PNHG_CFG={"base":"https://perfectnations.org/blueprints/","paths":{"cote-
   boot();
 })();
 </script>
+<script>
+(function(){
+  var root = document.getElementById('pn-hero');
+  if (!root || root.getAttribute('data-pnhg-scale')) { return; }
+  root.setAttribute('data-pnhg-scale', '1');
+  var RAW = 'https://raw.githubusercontent.com/preetisinha70-PN/perfect-nations/main/';
+  function getJSON(path){ return fetch(RAW + path, { cache: 'no-cache' }).then(function(r){ if (!r.ok) { throw new Error(r.status); } return r.json(); }); }
+  function put(key, v){ var el = root.querySelector('[data-pnhg="' + key + '"]'); if (el && v) { el.textContent = v; } }
+  function go(){
+    getJSON('pages/manifest.json').then(function(m){
+      var n = Object.keys((m && m.pages) || {}).filter(function(k){ return /^pn-bp-[a-z0-9-]+$/.test(k); }).length;
+      if (n >= 10 && n <= 195) { put('open', String(n)); }
+    }).catch(function(){});
+    getJSON('figures/perfect-capita.json').then(function(d){
+      var w = ((d && d.world) || []).filter(function(x){ return x && x.standard === 'Livelihood'; })[0];
+      if (!w) { return; }
+      var f = (String(w.value || '') + String(w.unit || '')).trim();
+      if (/^[0-9][0-9.,]*(bn|m)$/.test(f)) { put('pov', f); }
+    }).catch(function(){});
+  }
+  if ('requestIdleCallback' in window) { requestIdleCallback(go, { timeout: 4000 }); } else { setTimeout(go, 2500); }
+})();
+</script>
 <div class="pn-rule" aria-hidden="true"></div>
 <!-- ======== part: pages/home-cup.html ======== -->
 <!-- ===========================================================================
@@ -2697,7 +2751,6 @@ Laptops: the seal on the left, the words on the right. Phones: a smaller seal ab
     <div>
       <p class="pncp-eb">The Cup</p>
       <h2 class="pncp-h2" id="pncp-h"><span class="pncp-h2a">The Only Race Worth Winning</span><span class="pncp-h2b">is Enabling Basic Standards of Living for All</span></h2>
-      <p class="pncp-lead">In this race, every winner makes the world richer, and no nation has to lose.</p>
       <dl class="pncp-vm">
         <div><dt>The Vision</dt><dd>Every nation able to ensure seven basic standards of living for each of its people: food, water, shelter, energy, education, health and livelihood.</dd></div>
         <div><dt>The Mission</dt><dd>Perfect Nations unites super intelligence (SI) and innovative financing for development to co-design, with every nation, seven basic standards of living for all.</dd></div>
@@ -3100,7 +3153,9 @@ earlier Section 01 the button still scrolls up to the planet.
 </script>
 <!-- ======== part: pages/home-steps.html ======== -->
 <!-- ===========================================================================
-PERFECT NATIONS - HOMEPAGE - SECTION 02 - HOW IT WORKS: COUNT. PRICE. FINANCE. - v2.0 - 2026-11-08
+PERFECT NATIONS - HOMEPAGE - SECTION 02 - HOW IT WORKS: COUNT. PRICE. FINANCE. - v3.0 - 2026-11-08
+v3.0 (homepage v8.2, the designer's layout): one short band, no tiles and no card. The three steps are
+  three gold-ringed chips that open their sections; the work-ahead figure now sits in the hero ribbon.
 Part of the one-file homepage (pages/home.html, built by tools/build_home.py). Root id pn-steps.
 v2.0: the Steward-General's choices of 8 Nov 2026 (homepage v8.1):
   - "Pay" becomes "Finance": Count. Price. Finance.
@@ -3277,82 +3332,50 @@ v1.0 (8 Nov 2026): the three steps with Barbados worked through.
 @media (prefers-reduced-motion:reduce){
   #pn-steps *{ transition:none !important; animation:none !important; }
 }
+
+/* v3.0: one band, no tiles */
+#pn-steps{ padding:clamp(26px,4vh,44px) 0 clamp(24px,3.8vh,40px); }
+#pn-steps .pnsp-band{ display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1.15fr); gap:18px clamp(28px,4vw,72px); align-items:center; }
+#pn-steps .pnsp-k{ margin-top:0; max-width:none; }
+#pn-steps .pnsp-lead{ margin-top:8px; }
+#pn-steps ol.pnsp-strip{ list-style:none; display:flex; flex-wrap:wrap; gap:8px 10px; margin:14px 0 0; padding:0; }
+#pn-steps .pnsp-strip a{
+  display:inline-flex; align-items:baseline; gap:8px; min-height:44px; padding:10px 16px 9px; border-radius:999px;
+  background:var(--er); color:var(--ivt) !important; text-decoration:none !important; border:1px solid rgba(227,194,88,.3);
+  font-family:var(--hd); font-size:1rem; font-weight:600; letter-spacing:-.005em; transition:transform .25s cubic-bezier(.22,1,.36,1), border-color .25s ease;
+}
+#pn-steps .pnsp-strip a:hover{ transform:translateY(-2px); border-color:var(--g); }
+#pn-steps .pnsp-strip a:focus-visible{ outline:2px solid var(--er); outline-offset:3px; }
+#pn-steps .pnsp-strip span{ font-size:.66rem; font-weight:700; letter-spacing:.14em; color:var(--g); }
+#pn-steps .pnsp-strip small{ font-size:.74rem; font-weight:500; letter-spacing:.02em; color:var(--tm); }
+@media (max-width:899px){
+  #pn-steps .pnsp-band{ grid-template-columns:minmax(0,1fr); gap:12px; }
+  #pn-steps .pnsp-strip{ flex-direction:column; }
+  #pn-steps .pnsp-strip a{ justify-content:flex-start; }
+}
+@media (max-width:760px){
+  #pn-steps{ padding:24px 0 22px; }
+  #pn-steps h2.pnsp-h2{ font-size:clamp(2.3rem,11vw,3rem); }
+  #pn-steps .pnsp-lead{ font-size:.96rem; }
+}
 </style>
 
 <section id="pn-steps" aria-labelledby="pnsp-h">
   <span class="pnsp-alias" id="pn-studio" aria-hidden="true"></span>
-  <div class="pnsp-in">
-
-    <div class="pnsp-head">
-      <div>
-        <p class="pnsp-eb">How it works</p>
-        <h2 class="pnsp-h2" id="pnsp-h"><span>Count.</span> <span>Price.</span> <span class="pnsp-w3">Finance.</span></h2>
-        <p class="pnsp-k">Three steps from what a nation owns to what every citizen needs.</p>
-        <p class="pnsp-lead"><b>Super intelligence</b> counts and prices. <b>Innovative finance</b> closes the gap. Every design is drawn with the nation itself.</p>
-      </div>
-      <aside class="pnsp-now" aria-label="The work ahead">
-        <p class="pnsp-now__eb">The work ahead</p>
-        <b class="pnsp-now__n" data-pnsp="pov">824m</b>
-        <p class="pnsp-now__t">people live on less than <span data-pnsp="pov-line">$3.00 a day</span>, the World Bank&#8217;s line of extreme poverty.</p>
-        <a class="pnsp-src" data-pnsp="pov-src" href="https://blogs.worldbank.org/en/opendata/september-2026-global-poverty-update-from-the-world-bank--one-in" target="_blank" rel="noopener">World Bank, September 2026 (2024 data)</a>
-      </aside>
+  <div class="pnsp-in pnsp-band">
+    <div>
+      <p class="pnsp-eb">How it works</p>
+      <h2 class="pnsp-h2" id="pnsp-h"><span>Count.</span> <span>Price.</span> <span class="pnsp-w3">Finance.</span></h2>
     </div>
-
-    <ol class="pnsp-map" aria-label="The three steps">
-      <li style="--i:0"><a class="pnsp-tile" href="#pn-assets">
-        <svg class="pnsp-art" viewBox="0 0 160 100" preserveAspectRatio="xMidYMid meet" aria-hidden="true" focusable="false">
-          <circle class="d" pathLength="1" cx="120" cy="28" r="9.5"/>
-          <path class="d" pathLength="1" d="M134 28L138.5 28M129.9 37.9L133.1 41.1M120 42L120 46.5M110.1 37.9L106.9 41.1M106 28L101.5 28M110.1 18.1L106.9 14.9M120 14L120 9.5M129.9 18.1L133.1 14.9"/>
-          <path class="d" pathLength="1" d="M28 70C40 54 60 48 78 58C88 63 100 67 118 70"/>
-          <path class="d" pathLength="1" d="M64 54C65 46 66 38 69 30"/>
-          <path class="d" pathLength="1" d="M69 30C62 26 55 27 50 32M69 30C75 24 83 24 88 29M69 30C66 23 60 20 54 20M69 30C73 22 80 19 86 20"/>
-          <path class="d" pathLength="1" d="M14 78q7-5 14 0t14 0t14 0t14 0t14 0t14 0t14 0t14 0t14 0"/>
-          <path class="d" pathLength="1" d="M24 87q7-5 14 0t14 0t14 0t14 0t14 0t14 0t14 0t14 0"/>
-          <path class="d faint" pathLength="1" d="M40 95q7-4 14 0t14 0t14 0t14 0t14 0"/>
-          <circle class="f" cx="120" cy="28" r="2.6"/>
-        </svg>
-        <span class="pnsp-top"><span class="pnsp-n" aria-hidden="true">01</span><span class="pnsp-verb">Count</span></span>
-        <b class="pnsp-name">Sovereign Assets</b>
-        <span class="pnsp-q">What a nation owns</span>
-        <span class="pnsp-down">See it</span>
-      </a></li>
-      <li style="--i:1"><a class="pnsp-tile" href="#pn-capita">
-        <svg class="pnsp-art" viewBox="0 0 160 100" preserveAspectRatio="xMidYMid meet" aria-hidden="true" focusable="false">
-          <path class="s" pathLength="1" d="M81.1 10A40 40 0 0 1 110.6 24.2L94.5 37.7A19 19 0 0 0 80.5 31Z"/>
-          <path class="s" pathLength="1" d="M112 25.9A40 40 0 0 1 119.2 57.8L98.6 53.7A19 19 0 0 0 95.2 38.6Z"/>
-          <path class="s" pathLength="1" d="M118.7 60A40 40 0 0 1 98.4 85.5L88.7 66.9A19 19 0 0 0 98.4 54.7Z"/>
-          <path class="s" pathLength="1" d="M96.3 86.5A40 40 0 0 1 63.7 86.5L72.2 67.3A19 19 0 0 0 87.8 67.3Z"/>
-          <path class="s" pathLength="1" d="M61.6 85.5A40 40 0 0 1 41.3 60L61.6 54.7A19 19 0 0 0 71.3 66.9Z"/>
-          <path class="s" pathLength="1" d="M40.8 57.8A40 40 0 0 1 48 25.9L64.8 38.6A19 19 0 0 0 61.4 53.7Z"/>
-          <path class="s" pathLength="1" d="M49.4 24.2A40 40 0 0 1 78.9 10L79.5 31A19 19 0 0 0 65.5 37.7Z"/>
-          <circle class="d faint" pathLength="1" cx="80" cy="50" r="46"/>
-          <path class="f" d="M80 41.5L81.7 46.5L86.6 44.7L83.8 49.1L88.3 51.9L83 52.4L83.7 57.7L80 53.9L76.3 57.7L77 52.4L71.7 51.9L76.2 49.1L73.4 44.7L78.3 46.5Z"/>
-        </svg>
-        <span class="pnsp-top"><span class="pnsp-n" aria-hidden="true">02</span><span class="pnsp-verb">Price</span></span>
-        <b class="pnsp-name">Perfect Capita</b>
-        <span class="pnsp-q">What every citizen needs</span>
-        <span class="pnsp-down">See it</span>
-      </a></li>
-      <li style="--i:2"><a class="pnsp-tile" href="#pn-capital">
-        <svg class="pnsp-art" viewBox="0 0 160 100" preserveAspectRatio="xMidYMid meet" aria-hidden="true" focusable="false">
-          <path class="s" pathLength="1" d="M38 73.2A42 42 0 0 1 41.8 56.5L55.5 62.8A27 27 0 0 0 53 73.5Z"/>
-          <path class="s" pathLength="1" d="M42.5 55.1A42 42 0 0 1 53.2 41.7L62.8 53.2A27 27 0 0 0 55.9 61.8Z"/>
-          <path class="s" pathLength="1" d="M54.4 40.7A42 42 0 0 1 69.9 33.2L73.5 47.8A27 27 0 0 0 63.6 52.6Z"/>
-          <path class="f pnsp-key" d="M71.4 32.9A42 42 0 0 1 88.6 32.9L85.5 47.6A27 27 0 0 0 74.5 47.6Z"/>
-          <path class="s" pathLength="1" d="M90.1 33.2A42 42 0 0 1 105.6 40.7L96.4 52.6A27 27 0 0 0 86.5 47.8Z"/>
-          <path class="s" pathLength="1" d="M106.8 41.7A42 42 0 0 1 117.5 55.1L104.1 61.8A27 27 0 0 0 97.2 53.2Z"/>
-          <path class="s" pathLength="1" d="M118.2 56.5A42 42 0 0 1 122 73.2L107 73.5A27 27 0 0 0 104.5 62.8Z"/>
-          <path class="s" pathLength="1" d="M38 76H53V94H38ZM107 76H122V94H107Z"/>
-          <path class="d" pathLength="1" d="M18 96H142"/>
-          <path class="d faint" pathLength="1" d="M80 22V12M70 24L65 16M90 24L95 16"/>
-        </svg>
-        <span class="pnsp-top"><span class="pnsp-n" aria-hidden="true">03</span><span class="pnsp-verb">Finance</span></span>
-        <b class="pnsp-name">Capital Architecture</b>
-        <span class="pnsp-q">How to finance it</span>
-        <span class="pnsp-down">See it</span>
-      </a></li>
-    </ol>
-
+    <div>
+      <p class="pnsp-k">Three steps from what a nation owns to what every citizen needs.</p>
+      <p class="pnsp-lead"><b>Super intelligence</b> counts and prices. <b>Innovative finance</b> closes the gap. Every design is drawn with the nation itself.</p>
+      <ol class="pnsp-strip" aria-label="The three steps">
+        <li><a href="#pn-assets"><span>01</span>Count<small>Sovereign Assets</small></a></li>
+        <li><a href="#pn-capita"><span>02</span>Price<small>Perfect Capita</small></a></li>
+        <li><a href="#pn-capital"><span>03</span>Finance<small>Capital Architecture</small></a></li>
+      </ol>
+    </div>
   </div>
 </section>
 
@@ -3385,44 +3408,6 @@ v1.0 (8 Nov 2026): the three steps with Barbados worked through.
     });
   });
 
-  /* the live figure: the Perfect Capita Steward keeps it; anything missing keeps the figure here */
-  function getJSON(path){
-    return fetch(RAW + path, { cache: 'no-cache' }).then(function(r){
-      if (!r.ok) { throw new Error(r.status); }
-      return r.json();
-    }).catch(function(){
-      return fetch(MIRROR + path).then(function(r){ if (!r.ok) { throw new Error(r.status); } return r.json(); });
-    });
-  }
-  function put(key, value, test){
-    var el = root.querySelector('[data-pnsp="' + key + '"]');
-    if (!el || typeof value !== 'string') { return; }
-    value = value.trim();
-    if (!value || value.length > 40 || (test && !test.test(value))) { return; }
-    el.textContent = value;
-  }
-  function loadFigures(){
-    getJSON('figures/perfect-capita.json').then(function(d){
-      var w = (d && d.world || []).filter(function(x){ return x && x.standard === 'Livelihood'; })[0];
-      if (!w) { return; }
-      put('pov', String(w.value || '') + String(w.unit || ''), /^[0-9][0-9.,]*\s?(bn|m|k)?$/);
-      var line = /\$[0-9][0-9.,]* a day/.exec(String(w.text || ''));
-      if (line) { put('pov-line', line[0]); }
-      var src = root.querySelector('[data-pnsp="pov-src"]');
-      if (src && typeof w.source === 'string' && w.source.length < 80 && /^https:\/\//.test(String(w.url || ''))) {
-        src.textContent = w.source;
-        src.href = w.url;
-      }
-    }).catch(function(){});
-  }
-  if ('IntersectionObserver' in window) {
-    var near = new IntersectionObserver(function(list){
-      list.forEach(function(e){ if (e.isIntersecting) { near.disconnect(); loadFigures(); } });
-    }, { rootMargin: '600px 0px' });
-    near.observe(root);
-  } else {
-    setTimeout(loadFigures, 2500);
-  }
 })();
 </script>
 <!-- ======== part: pages/home-assets.html ======== -->
@@ -4669,7 +4654,8 @@ Ground: laterite (red earth). Photographs at full colour, no veil; text sits on 
 <div class="pn-rule" aria-hidden="true"></div>
 <!-- ======== part: pages/home-vision.html ======== -->
 <!-- ===========================================================================
-PERFECT NATIONS - HOMEPAGE - SECTION 07 - THE VISION OF THE FOUNDER - v6.1 - 2026-11-06
+PERFECT NATIONS - HOMEPAGE - SECTION 07 - THE VISION OF THE FOUNDER - v6.2 - 2026-11-08
+v6.2: a shorter photograph band (homepage v8.2), the plate unchanged.
 Served live from GitHub (pages/home-vision.html); part of the one-file homepage (pages/home.html).
 v6.1: the eyebrow reads The Founder&#8217;s Vision. The mission line is removed (the hero states it), and the logo
 replaces the cup.
@@ -4751,7 +4737,7 @@ Ground: Earthrise plate over a full-colour photograph. Photographs at full colou
 }
 
 #pn-vision .pnfv-ph{
-  position:relative; height:clamp(280px,44vh,430px); overflow:hidden; background:var(--plate2);
+  position:relative; height:clamp(200px,30vh,300px); overflow:hidden; background:var(--plate2);
 }
 #pn-vision .pnfv-img{
   position:absolute; inset:-4%;
@@ -4788,7 +4774,7 @@ Ground: Earthrise plate over a full-colour photograph. Photographs at full colou
 #pn-vision a.pnfv-sig:hover b{ color:var(--accs); }
 #pn-vision a.pnfv-sig:focus-visible{ outline:2px solid var(--accs); outline-offset:4px; border-radius:12px; }
 @media (max-width:640px){
-  #pn-vision .pnfv-ph{ height:clamp(220px,34svh,300px); }
+  #pn-vision .pnfv-ph{ height:clamp(170px,26svh,230px); }
   #pn-vision .pnfv-in{ margin-top:-64px; padding-left:16px; padding-right:16px; padding-bottom:26px; }
   #pn-vision .pnfv-plate{ padding:16px 18px 18px; border-radius:16px; }
   #pn-vision img.pnfv-logo{ width:58px !important; height:58px !important; margin-bottom:8px; }

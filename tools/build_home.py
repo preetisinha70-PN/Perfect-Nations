@@ -17,7 +17,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 PAGES = ROOT / 'pages'
-VERSION = '8.1'
+VERSION = '8.2'
 
 # The page, top to bottom. 'rule' places the gold line (pages/home-rule.html) between two sections;
 # 'seam' (a painted seam from pages/home-seams.html) is no longer used on the homepage.

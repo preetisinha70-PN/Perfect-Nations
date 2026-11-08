@@ -2,6 +2,10 @@
 PERFECT NATIONS - HOMEPAGE - SECTION 01 - EVERY NATION IS RICHER - v7.0 THE STORY FIRST - 2026-11-08
 Served live from GitHub (pages/home-hero.html) by the Perfect Nations Live Pages plugin;
 the root id stays pn-hero, so the widget already on the homepage is the one replaced.
+v7.2 (homepage v8.2, the designer's layout, 8 Nov 2026): the scale ribbon at the foot of the first
+  screen: 195 nations, blueprints open (live from pages/manifest.json), 7 basic living standards and
+  the people still in extreme poverty (live from figures/perfect-capita.json). On laptops it runs
+  under both the words and the planet, between two gold hairlines.
 v7.1: the Steward-General's choices of 8 Nov 2026 (homepage v8.1):
   - the two headlines return: "Civilization Re-Defined" (the headline) and, directly under it,
     "Designing the Prosperity of Nations"; the line ends "design how to finance it";
@@ -387,6 +391,26 @@ If the address differs, change it in the two places it appears (search for pn-ho
   #pn-hero .pnhg-ctl{ right:clamp(6px,1vw,16px); }
 }
 
+/* v7.2: the scale ribbon */
+#pn-hero .pnhg-scale{
+  position:relative; z-index:3; list-style:none; margin:clamp(22px,3.4vh,36px) auto 0; padding:14px 0 0;
+  display:flex; justify-content:center; flex-wrap:wrap; gap:10px clamp(28px,4vw,64px);
+  border-top:1px solid rgba(227,194,88,.35);
+}
+#pn-hero .pnhg-scale li{ display:flex; flex-direction:column; align-items:center; margin:0; text-align:center; }
+#pn-hero .pnhg-scale b{ font-family:var(--hd); font-weight:600; font-size:clamp(1.7rem,2.6vw,2.5rem); line-height:1; letter-spacing:-.02em; color:var(--iv); }
+#pn-hero .pnhg-scale span{ margin-top:4px; font-family:var(--hd); font-size:.64rem; font-weight:700; letter-spacing:.2em; text-transform:uppercase; color:var(--g); }
+@media (min-width:1024px){
+  #pn-hero{ grid-template-rows:1fr auto auto auto auto auto 1fr auto; }
+  #pn-hero .pnhg-globe{ grid-row:1 / 8; }
+  #pn-hero .pnhg-scale{ grid-column:1 / -1; grid-row:8; justify-content:space-between; margin:0 clamp(40px,5vw,96px) 0 0; padding-top:16px; width:auto; }
+  #pn-hero .pnhg-scale li{ align-items:flex-start; text-align:left; }
+}
+@media (max-width:760px){
+  #pn-hero .pnhg-scale{ display:grid; grid-template-columns:1fr 1fr; gap:14px 10px; margin-top:22px; }
+  #pn-hero .pnhg-scale b{ font-size:1.6rem; }
+  #pn-hero .pnhg-scale span{ font-size:.58rem; letter-spacing:.14em; }
+}
 /* v5.4: the pin the Capital Wire sets on the planet */
 #pn-hero .pnhg-pin{ position:relative; width:0; height:0; pointer-events:none; }
 #pn-hero .pnhg-pin i{ position:absolute; left:-32px; top:-32px; width:64px; height:64px; border-radius:50%; border:2px solid #F0D68F; opacity:0; animation:pnhgPin 2.2s ease-out infinite; }
@@ -437,6 +461,13 @@ If the address differs, change it in the two places it appears (search for pn-ho
     <a class="pnhg-btn pnhg-btn--gold" href="https://perfectnations.org/blueprints/">Find your nation</a>
     <a class="pnhg-btn pnhg-btn--line" href="#pn-steps">How it works</a>
   </div>
+
+  <ul class="pnhg-scale" aria-label="Perfect Nations at a glance">
+    <li><b>195</b><span>Nations</span></li>
+    <li><b data-pnhg="open">44</b><span>Blueprints open</span></li>
+    <li><b>7</b><span>Basic living standards</span></li>
+    <li><b data-pnhg="pov">824m</b><span>People still in extreme poverty</span></li>
+  </ul>
 
 </section>
 
@@ -1102,5 +1133,28 @@ window.PNHG_CFG={"base":"https://perfectnations.org/blueprints/","paths":{"cote-
     }).catch(function(err){ fail('could not load the globe libraries - ' + err.message); });
   }
   boot();
+})();
+</script>
+<script>
+(function(){
+  var root = document.getElementById('pn-hero');
+  if (!root || root.getAttribute('data-pnhg-scale')) { return; }
+  root.setAttribute('data-pnhg-scale', '1');
+  var RAW = 'https://raw.githubusercontent.com/preetisinha70-PN/perfect-nations/main/';
+  function getJSON(path){ return fetch(RAW + path, { cache: 'no-cache' }).then(function(r){ if (!r.ok) { throw new Error(r.status); } return r.json(); }); }
+  function put(key, v){ var el = root.querySelector('[data-pnhg="' + key + '"]'); if (el && v) { el.textContent = v; } }
+  function go(){
+    getJSON('pages/manifest.json').then(function(m){
+      var n = Object.keys((m && m.pages) || {}).filter(function(k){ return /^pn-bp-[a-z0-9-]+$/.test(k); }).length;
+      if (n >= 10 && n <= 195) { put('open', String(n)); }
+    }).catch(function(){});
+    getJSON('figures/perfect-capita.json').then(function(d){
+      var w = ((d && d.world) || []).filter(function(x){ return x && x.standard === 'Livelihood'; })[0];
+      if (!w) { return; }
+      var f = (String(w.value || '') + String(w.unit || '')).trim();
+      if (/^[0-9][0-9.,]*(bn|m)$/.test(f)) { put('pov', f); }
+    }).catch(function(){});
+  }
+  if ('requestIdleCallback' in window) { requestIdleCallback(go, { timeout: 4000 }); } else { setTimeout(go, 2500); }
 })();
 </script>
