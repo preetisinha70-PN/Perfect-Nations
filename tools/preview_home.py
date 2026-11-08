@@ -86,7 +86,8 @@ def main():
         if m:
             p = ROOT / m.group(1)
             if p.exists():
-                return r.fulfill(status=200, body=p.read_bytes(), content_type='application/json')
+                kind = {'.webp': 'image/webp', '.png': 'image/png', '.jpg': 'image/jpeg', '.jpeg': 'image/jpeg'}.get(p.suffix.lower(), 'application/json')
+                return r.fulfill(status=200, body=p.read_bytes(), content_type=kind)
             return r.fulfill(status=404, body='')
         if libs and 'cdn.jsdelivr.net/npm/' in url:
             m = re.search(r'/npm/(three|globe\.gl)@[^/]+/(.+)$', url)

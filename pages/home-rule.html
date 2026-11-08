@@ -1,0 +1,33 @@
+<!-- ===========================================================================
+PERFECT NATIONS - HOMEPAGE - THE GOLD LINE - v1.0 - 2026-11-08
+The section break of the homepage (homepage v8.1), chosen by the Steward-General on 8 Nov 2026 in
+place of the painted seams with botanical motifs: one fine gold line across the page, brightest at
+its centre, where a small gold diamond sits inside an outlined one. It takes no space of its own
+(1 px), so the sections meet edge to edge and the line marks where one ends and the next begins.
+This part holds the style once; tools/build_home.py places <div class="pn-rule"> between sections.
+The class starts "pn-rule", not an id, so the Live Pages plugin never mistakes it for a page.
+=========================================================================== -->
+<style>
+.pn-rule{
+  position:relative; z-index:6; display:block; box-sizing:border-box;
+  width:100vw; height:1px; margin:0 0 0 calc(50% - 50vw); padding:0; pointer-events:none; overflow:visible;
+  background:linear-gradient(90deg, rgba(227,194,88,0) 0%, rgba(227,194,88,.45) 16%, #E3C258 40%, #FBE7A6 50%, #E3C258 60%, rgba(227,194,88,.45) 84%, rgba(227,194,88,0) 100%);
+  box-shadow:0 0 10px rgba(227,194,88,.35);
+}
+.pn-rule::before,.pn-rule::after{
+  content:""; position:absolute; left:50%; top:50%; box-sizing:border-box; transform:translate(-50%,-50%) rotate(45deg);
+}
+.pn-rule::before{
+  width:8px; height:8px; z-index:2;
+  background:linear-gradient(135deg,#FFF1C2 0%,#E3C258 55%,#B48A2C 100%);
+  box-shadow:0 0 10px rgba(227,194,88,.7);
+}
+.pn-rule::after{
+  width:20px; height:20px; z-index:1;
+  border:1px solid rgba(227,194,88,.85); background:#0B3D45;
+}
+@media (max-width:760px){
+  .pn-rule::before{ width:7px; height:7px; }
+  .pn-rule::after{ width:17px; height:17px; }
+}
+</style>
