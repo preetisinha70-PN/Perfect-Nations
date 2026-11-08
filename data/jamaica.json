@@ -1,7 +1,7 @@
 {
   "nation": "Jamaica",
   "page_version": "9.0",
-  "updated": "2026-11-06",
+  "updated": "2026-11-08",
   "steward": {
     "name": "Marcus Campbell",
     "role": "Nation Steward of Jamaica"
@@ -30,48 +30,260 @@
       {
         "value": "$200M",
         "money": true,
-        "text": "Catastrophe bond, 2026: Protection against severe hurricanes",
-        "source": "World Bank, 2030",
+        "text": "Catastrophe bond, 2026: hurricane cover to May 2030, replacing the cover Melissa triggered",
+        "source": "World Bank, 2026",
         "url": "https://www.worldbank.org/en/news/press-release/2026/05/18/world-bank-prices-catastrophe-bond-for-disaster-protection-for-jamaica"
       },
       {
         "value": "$150M",
         "money": true,
-        "text": "Catastrophe bond, 2024: 100 percent payout",
-        "source": "World Bank, 2026",
+        "text": "Catastrophe bond, 2024: 100 percent payout after Hurricane Melissa",
+        "source": "World Bank, 2025",
         "url": "https://www.worldbank.org/en/news/press-release/2025/11/07/hurricane-melissa-triggers-100-payout-of-150-million-world-bank-catastrophe-bond-for-jamaica"
+      },
+      {
+        "value": "$6.7B",
+        "money": true,
+        "text": "International support over three years, announced 1 December 2025: up to $3.6 billion of new public financing, $662 million for the early response and about $2.4 billion of private investment (initial estimate)",
+        "source": "World Bank, 2025",
+        "url": "https://www.worldbank.org/en/news/press-release/2025/12/01/jamaica-secures-a-package-of-us-6-7-billion-over-three-years-in-international-support-for-recovery-and-reconstruction-af"
+      },
+      {
+        "value": "$1B",
+        "money": true,
+        "text": "International bond due 2037, September 2026: coupon 6.25%",
+        "source": "Ministry of Finance, 2026",
+        "url": "https://www.mof.gov.jm/government-of-jamaica-issues-us1-0-billion-in-international-capital-markets-35131/"
+      },
+      {
+        "value": "62.4%",
+        "money": false,
+        "text": "Public debt, fiscal year 2024/25, Fiscal Responsibility Law definition (IMF Country Report 26/8, January 2026)",
+        "source": "IMF, 2026",
+        "url": "https://www.imf.org/-/media/files/publications/cr/2026/english/1jamea2026001-source-pdf.pdf"
       }
     ],
     "register": [
+      {
+        "cat": "govt",
+        "status": "Issued",
+        "tone": "active",
+        "name": "International bond due 2037",
+        "detail": "Priced 10 September 2026 · Closed 17 September 2026 · Coupon 6.25% · Repaid in three instalments",
+        "amount": "$1B",
+        "money": true,
+        "note": "Orders of about two and a half times the amount on offer",
+        "text": "A US$1 billion bond sold in the international capital markets less than a year after Hurricane Melissa. Part of the proceeds bought back older notes due 2028, 2036 and 2039. Cheaper, longer debt leaves more of the budget for the seven standards.",
+        "by": [
+          "Government of Jamaica"
+        ],
+        "url": "https://www.mof.gov.jm/government-of-jamaica-issues-us1-0-billion-in-international-capital-markets-35131/"
+      },
+      {
+        "cat": "humanitarian",
+        "status": "Granted",
+        "tone": "granted",
+        "name": "UN Central Emergency Response Fund, Hurricane Melissa",
+        "detail": "Additional allocation confirmed 26 November 2025 · UNICEF, IOM, PAHO/WHO and WFP",
+        "amount": "$4M",
+        "money": true,
+        "note": "Water for more than 220,000 people; health care for 600,000",
+        "text": "An additional US$4 million from the UN Central Emergency Response Fund for the hardest-hit parishes. It pays for emergency shelter for 8,800 people, cash for food for 10,756, safe water and sanitation for more than 220,000, and essential health care for 600,000. It reaches food, water, shelter and health at once.",
+        "by": [
+          "UN Central Emergency Response Fund",
+          "UNICEF",
+          "IOM",
+          "PAHO/WHO",
+          "WFP"
+        ],
+        "url": "https://caribbean.un.org/en/node/306366"
+      },
+      {
+        "cat": "humanitarian",
+        "status": "Granted",
+        "tone": "granted",
+        "name": "CAF emergency grant, Hurricane Melissa",
+        "detail": "Approved 2 November 2025 · Grant",
+        "amount": "$670K",
+        "money": true,
+        "note": "Humanitarian relief and recovery",
+        "text": "An emergency grant from CAF, the Development Bank of Latin America and the Caribbean, approved five days after the storm. It supports the Government’s relief work alongside other partners.",
+        "by": [
+          "CAF"
+        ],
+        "url": "https://www.caf.com/en/currently/news/caf-approves-usd-670-000-for-humanitarian-relief-efforts-in-jamaica-following-hurricane-melissa"
+      },
+      {
+        "cat": "humanitarian",
+        "status": "Appeal",
+        "tone": "appeal",
+        "name": "IFRC emergency appeal, Hurricane Melissa",
+        "detail": "Launched 30 October 2025 · 24 months · CHF 19 million (about $23 million)",
+        "amount": "CHF 19M",
+        "money": true,
+        "note": "180,000 people, relief and recovery over two years",
+        "text": "The International Federation of Red Cross and Red Crescent Societies appeal for 180,000 people in ten of the most affected parishes. It pays for shelter repair and reconstruction, safe drinking water, hygiene, medical care and the recovery of livelihoods.",
+        "by": [
+          "IFRC"
+        ],
+        "url": "https://www.ifrc.org/press-release/jamaica-ifrc-launches-emergency-appeal-response-hurricane-melissa-aid-distribution"
+      },
       {
         "cat": "multi",
         "status": "Active",
         "tone": "active",
         "name": "Catastrophe bond, 2026",
-        "detail": "Priced 18 May 2026 · Matures May 2030",
+        "detail": "Priced 18 May 2026 · Settled 26 May 2026 · Matures 23 May 2030 · Risk margin 6.75% a year",
         "amount": "$200M",
         "money": true,
-        "note": "Protection against severe hurricanes",
-        "text": "Replaces the cover Hurricane Melissa triggered, issued by the World Bank for Jamaica.",
+        "note": "Pays out when a severe hurricane meets the trigger",
+        "text": "A World Bank catastrophe bond that gives Jamaica $200 million of parametric cover against named storms until May 2030, replacing the $150 million of cover Hurricane Melissa triggered. Investors in Europe, North America and Bermuda oversubscribed it, so the target was raised. Money that arrives within weeks of a storm protects food, shelter and livelihoods while the country rebuilds.",
         "by": [
           "World Bank"
         ],
         "url": "https://www.worldbank.org/en/news/press-release/2026/05/18/world-bank-prices-catastrophe-bond-for-disaster-protection-for-jamaica"
+      },
+      {
+        "cat": "multi",
+        "status": "Approved",
+        "tone": "active",
+        "name": "ADAPT Jamaica (FP299)",
+        "detail": "Approved at the 44th meeting of the GCF Board · Funded Activity Agreement signed 28 March 2026 · Grant through FAO",
+        "amount": "$50M",
+        "money": true,
+        "note": "More than 700,000 people in six central parishes",
+        "text": "A Green Climate Fund project, with the Food and Agriculture Organization, that helps smallholders in central Jamaica withstand climate shocks. It pays for farmer field schools, solar-powered irrigation, cold storage, water harvesting and hurricane-resilient protected agriculture. It serves the food and livelihood standards.",
+        "by": [
+          "Green Climate Fund",
+          "FAO"
+        ],
+        "url": "https://www.fao.org/members-gateway/news/detail/en/c/1758158/"
+      },
+      {
+        "cat": "multi",
+        "status": "Disbursed",
+        "tone": "active",
+        "name": "Rapid Financing Instrument, large natural disaster window",
+        "detail": "Approved 16 January 2026 · SDR 306.32 million · 80 percent of quota",
+        "amount": "$415M",
+        "money": true,
+        "note": "Urgent balance-of-payments needs after Hurricane Melissa",
+        "text": "An IMF disbursement of about US$415 million to meet the urgent balance-of-payments needs caused by Hurricane Melissa. It complements Jamaica’s layered disaster risk financing, which the IMF found insufficient on its own for a storm of this size.",
+        "by": [
+          "International Monetary Fund"
+        ],
+        "url": "https://www.imf.org/en/news/articles/2026/01/16/pr-26008-jamaica-imf-approves-a-usd-415-million-disburse-to-address-hurricane-melissa"
       },
       {
         "cat": "multi",
         "status": "Completed",
         "tone": "completed",
         "name": "Catastrophe bond, 2024",
-        "detail": "Triggered by Hurricane Melissa · Paid out in full",
+        "detail": "Renewed May 2024 · Triggered by Hurricane Melissa, October 2025 · Paid out in full",
         "amount": "$150M",
         "money": true,
         "note": "100 percent payout",
-        "text": "Investors paid Jamaica in full within weeks of the storm.",
+        "text": "The $150 million World Bank catastrophe bond renewed in May 2024 was fully triggered by Hurricane Melissa, which struck on 28 October 2025. Investors paid Jamaica the whole principal within weeks of the storm.",
         "by": [
           "World Bank"
         ],
         "url": "https://www.worldbank.org/en/news/press-release/2025/11/07/hurricane-melissa-triggers-100-payout-of-150-million-world-bank-catastrophe-bond-for-jamaica"
+      },
+      {
+        "cat": "multi",
+        "status": "Paid",
+        "tone": "completed",
+        "name": "CCRIF parametric insurance payouts, Hurricane Melissa",
+        "detail": "Tropical cyclone $70.8 million, 31 October 2025 · Excess rainfall $21.1 million, 6 November 2025",
+        "amount": "$91.9M",
+        "money": true,
+        "note": "The largest single payout CCRIF has made",
+        "text": "Two payouts from the Caribbean Catastrophe Risk Insurance Facility, both made within 14 days of the storm: J$14.8 billion in all. The tropical cyclone payout is the largest in CCRIF’s history.",
+        "by": [
+          "CCRIF SPC"
+        ],
+        "url": "https://www.ccrif.org/ccrif-provides-us919-million-payouts-jamaica-following-hurricane-melissa-strengthening-recovery-and"
+      },
+      {
+        "cat": "multi",
+        "status": "Approved",
+        "tone": "active",
+        "name": "Sustainable and Resilient Recovery Development Policy Financing",
+        "detail": "Approved 3 March 2025 · IBRD · $150 million budget support and a $42 million Cat DDO",
+        "amount": "$192M",
+        "money": true,
+        "note": "Budget support and a contingent credit line for disasters",
+        "text": "World Bank budget support for reforms in trade, digital services and the financial sector, with a Catastrophe Deferred Drawdown Option that Jamaica can draw quickly after a disaster. The reforms set up a National Natural Disaster Reserve Fund, raise building codes for hospitals and shelters, and encourage household solar panels.",
+        "by": [
+          "World Bank"
+        ],
+        "url": "https://www.worldbank.org/en/news/press-release/2025/03/03/world-bank-supports-jamaica-s-efforts-to-promote-private-sector-development-and-improve-disaster-preparedness"
+      },
+      {
+        "cat": "regional",
+        "status": "Approved",
+        "tone": "active",
+        "name": "Contingent Loan for Natural Disaster Emergencies, Hurricane Melissa (JA-L1099)",
+        "detail": "Approved 1 July 2026 · Sovereign-guaranteed investment loan · In implementation",
+        "amount": "$260M",
+        "money": true,
+        "note": "Fast contingent finance for emergency public spending",
+        "text": "An Inter-American Development Bank loan that finances the Government’s response to Hurricane Melissa from contingent resources, so that emergency spending does not strain the budget. In November 2025 the IDB had expanded Jamaica’s contingent credit line to up to US$300 million.",
+        "by": [
+          "Inter-American Development Bank"
+        ],
+        "url": "https://www.iadb.org/en/project/JA-L1099"
+      },
+      {
+        "cat": "regional",
+        "status": "Approved",
+        "tone": "active",
+        "name": "Southern Plains Agricultural Development Project, additional financing",
+        "detail": "Announced 9 April 2026 · Concessional loan, Special Development Fund · Completion by 2028",
+        "amount": "$12M",
+        "money": true,
+        "note": "Irrigation and packhouses at Amity Hall and Parnassus",
+        "text": "Caribbean Development Bank financing to finish a UK Caribbean Infrastructure Fund project that replaces flood irrigation with climate-resilient water systems in the southern plains. It pays for irrigation at Amity Hall, packhouses in St Catherine and Clarendon, and support for farmers. It serves the food and livelihood standards.",
+        "by": [
+          "Caribbean Development Bank",
+          "UK Caribbean Infrastructure Fund"
+        ],
+        "url": "https://www.caribank.org/node/11930"
+      },
+      {
+        "cat": "regional",
+        "status": "Signed",
+        "tone": "active",
+        "name": "Continued Public Sector Transformation Programme",
+        "detail": "Approved November 2025 · Signed 13 February 2026 · 23.5 years, 7 years’ grace · Programme $78.5 million",
+        "amount": "$70M",
+        "money": true,
+        "note": "Shared services, payroll and procurement across government",
+        "text": "An IDB loan, with $8.5 million from the Government, that brings shared corporate services, digital human resources and payroll, and simpler procurement to the public service over about six years. Savings are to be moved to priority areas.",
+        "by": [
+          "Inter-American Development Bank",
+          "Government of Jamaica"
+        ],
+        "url": "https://www.iadb.org/en/news/jamaica-strengthen-public-sector-efficiency-idb-support"
+      },
+      {
+        "cat": "private",
+        "status": "Under construction",
+        "tone": "active",
+        "name": "Rio Cobre Water Treatment Plant",
+        "detail": "Signed 13 December 2024 · Up to 20 years · 15 million imperial gallons a day · Completion due May 2027",
+        "amount": "$79M",
+        "money": true,
+        "note": "Water for more than 600,000 people in Kingston and St Catherine",
+        "text": "A public-private partnership between the National Water Commission and Rio Cobre Water Limited, financed by a $30 million IDB Invest loan and $49 million from Proparco, Sagicor Bank Jamaica and the Development Bank of Jamaica. The plant will treat 15 million imperial gallons a day for Kingston, Portmore and Spanish Town. It serves the water standard.",
+        "by": [
+          "IDB Invest",
+          "Proparco",
+          "Sagicor Bank Jamaica",
+          "Development Bank of Jamaica",
+          "Rio Cobre Water Limited"
+        ],
+        "url": "https://idbinvest.org/en/news-media/idb-invest-proparco-sagicor-and-development-bank-jamaica-finance-rio-cobre-water-treatment"
       }
     ]
   },
@@ -159,11 +371,18 @@
     "heading": "Already working in Jamaica.",
     "items": [
       {
-        "standard": "In preparation",
-        "name": "The enterprises building Perfect Jamaica",
-        "text": "The Stewards are verifying the companies and social enterprises already delivering the seven basic living standards in Jamaica. Suggest one to include.",
-        "source": "Suggest an enterprise",
-        "url": "mailto:contact@perfectnations.org?subject=An%20enterprise%20for%20Perfect%20Jamaica"
+        "standard": "Energy",
+        "name": "Jamaica Public Service Company (JPS)",
+        "text": "The island’s electricity utility, which spent more than US$300 million restoring generation, transmission and distribution after Hurricane Melissa. IDB Invest is considering up to US$80 million for its recovery and grid hardening.",
+        "source": "IDB Invest, 2026",
+        "url": "https://idbinvest.org/en/projects/jps-hurricane-melissa-recovery-program"
+      },
+      {
+        "standard": "Livelihood",
+        "name": "JMMB Bank",
+        "text": "A Jamaican bank lending to small and medium enterprises and to low- and middle-income home buyers. IDB Invest lent it up to US$35 million, with technical help for women-led businesses.",
+        "source": "IDB Invest, 2020",
+        "url": "https://idbinvest.org/en/projects/jmmb-bank-partnership"
       }
     ]
   },
@@ -299,5 +518,6 @@
     }
   ],
   "dispatches": [],
-  "checked": "2026-11-06T04:19Z"
+  "checked": "2026-11-06T04:19Z",
+  "reviewed": "2026-11-08T19:00Z"
 }

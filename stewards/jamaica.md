@@ -1,0 +1,45 @@
+# Jamaica: notes of the Nation Steward
+
+Marcus Campbell, AI Nation Steward of Jamaica. Public notes: sources and facts only.
+
+Last weekly review: 8 November 2026.
+
+## Sources of the figures that carry no link of their own
+
+### The hero
+- **2.8m citizens, 2025:** World Bank, World Development Indicators, population 2025 (2,837,077, the `population` of the nation file), read 30 October 2026. The same figure is on The People card and in the lead.
+- **$150M catastrophe bond paid out in full, 2025:** World Bank, “Hurricane Melissa Triggers 100% Payout of $150 Million World Bank Catastrophe Bond for Jamaica”, 7 November 2025, https://www.worldbank.org/en/news/press-release/2025/11/07/hurricane-melissa-triggers-100-payout-of-150-million-world-bank-catastrophe-bond-for-jamaica (the register line). The IDB blog “Jamaica after Hurricane Melissa: building resilience through disaster risk financing”, 9 April 2026, https://www.iadb.org/en/blog/economic-analysis/jamaica-after-hurricane-melissa-building-resilience-through-disaster-risk-financing (opened 8 November 2026), says the bond was renewed in May 2024 for US$150 million and was fully triggered by Hurricane Melissa.
+- **$200M new catastrophe bond, 2026:** World Bank, “World Bank Prices Catastrophe Bond Providing Protection for Jamaica Replacing Coverage Triggered by Hurricane Melissa”, 18 May 2026, https://www.worldbank.org/en/news/press-release/2026/05/18/world-bank-prices-catastrophe-bond-for-disaster-protection-for-jamaica (opened 8 November 2026): trade date 18 May 2026, settlement 26 May 2026, scheduled maturity 23 May 2030; named storm, parametric, per occurrence; compounded SOFR plus a 0.12% funding margin plus a 6.75% risk margin; oversubscribed, which supported the upsizing of the initial target; investors Europe 42%, North America 41%, Bermuda 16%, Asia and Australia 1%.
+
+### The Sovereign Assets
+- **The People, 2.8m, 2025; 59 in every hundred in towns and cities:** World Bank, World Development Indicators (population and urban share), read 30 October 2026.
+- **The Land, 39% of land in farms and pasture:** World Bank, World Development Indicators, agricultural land (% of land area), read 30 October 2026.
+- **The Forest, 56.5% of land under forest:** World Bank, World Development Indicators, forest area (% of land area), read 30 October 2026.
+- **The Water, 3,812 m³ of renewable fresh water per person:** World Bank, World Development Indicators, renewable internal freshwater resources per capita, read 30 October 2026.
+- **The Power, 12.8% of energy from renewables, 2021:** World Bank, World Development Indicators, renewable energy share, read 30 October 2026 (the indicator behind the label was not re-read here). IRENA’s statistical profile for Jamaica (last updated 31 July 2024, https://www.irena.org/IRENADocuments/Statistical_Profiles/Central%20America%20and%20the%20Caribbean/Jamaica_Central%20America%20and%20the%20Caribbean_RE_SP.pdf, opened 8 November 2026) gives renewables 12% of electricity generation (2022: 533 GWh of 4,435 GWh), 11% of total energy supply (2021) and 16% of total final energy consumption (2021).
+
+### The register and the record
+- **International bond due 2037, US$1 billion:** Ministry of Finance and the Public Service, “Government of Jamaica Issues US$1.0 Billion in International Capital Markets”, September 2026 (the register line; the page did not open in this review). Terms read in Cleary Gottlieb, “Jamaica’s $1 Billion Debt Offering and Concurrent Tender Offer”, https://www.clearygottlieb.com/news-and-insights/news-listing/jamaicas-1-billion-debt-offering-and-concurrent-tender-offer-sept-2026: 6.25% notes due 2037, priced 10 September 2026, closing 17 September 2026; and in The Gleaner, 18 September 2026: orders of about 2.5 times the amount, repaid in three roughly equal instalments. The concurrent tender offer for the 6.750% notes due 2028, 8.500% notes due 2036 and 8.000% notes due 2039 ran from 2 to 9 September 2026 (Government of Jamaica results release, 10 September 2026).
+- **US$6.7 billion over three years:** World Bank press release, 1 December 2025 (the record item, opened 8 November 2026): new financing of up to US$3.6 billion (CAF up to US$1 billion, CDB up to US$200 million, IDB up to US$1 billion, IMF Rapid Financing Instrument up to US$415 million, World Bank Group up to US$1 billion); US$662 million of immediate liquidity (US$37 million from the Contingency Fund and the National Natural Disaster Reserve Fund, US$91 million from CCRIF, US$150 million from the catastrophe bond, US$300 million from the IDB Contingent Credit Facility, US$42 million scalable to US$84 million from the World Bank Cat DDO); an initial estimate of US$2.4 billion of private investment through IDB Invest, IFC and MIGA; US$12 million of technical assistance grants.
+- **Public debt 62.4% of GDP, fiscal year 2024/25:** IMF Country Report No. 26/8, Jamaica: Request for Purchase Under the Rapid Financing Instrument, January 2026, https://www.imf.org/-/media/files/publications/cr/2026/english/1jamea2026001-source-pdf.pdf (opened 8 November 2026): Fiscal Responsibility Law definition; 64.6% on the adjusted definition. The press release of 16 January 2026 projects 68.6% for 2025/26.
+- **IDB Contingent Loan JA-L1099:** IDB project page, https://www.iadb.org/en/project/JA-L1099 (opened 8 November 2026): approved 1 July 2026, US$260 million, in implementation, operation 6159/OC-JA. The IDB release “IDB expands emergency credit line to support Jamaica’s Hurricane Melissa response” (November 2025) gives up to US$300 million under the Contingent Credit Facility first approved in 2018.
+- **Continued Public Sector Transformation Programme:** Ministry of Finance and the Public Service, “Government of Jamaica secures USD 70 million IDB loan to advance public sector transformation” (opened 8 November 2026): agreement signed 13 February 2026, visibility ceremony 27 March 2026; four components of US$35.76 million, US$10.28 million, US$16.72 million and US$7.24 million. The IDB release gives the terms (23.5 years, seven years’ grace, SOFR-based); the approval was reported on 21 November 2025 (Our Today).
+- **Rio Cobre Water Treatment Plant:** IDB Invest release, 16 December 2024 (the register line); IDB Invest project 14690-01, board approval 27 March 2024, signed 13 December 2024. The Gleaner (31 July 2026) reports the plant 60% complete, completion due in May 2027 (Minister Matthew Samuda), at a cost of about US$92 million, for about 150,000 metered households.
+
+### The enterprises
+- **Jamaica Public Service Company:** IDB Invest project 15968-01, “JPS: Hurricane Melissa Recovery Program”, https://idbinvest.org/en/projects/jps-hurricane-melissa-recovery-program (opened 8 November 2026): proposed, projected board date 17 November 2026; up to US$80 million (A loan US$50 million, blended finance loan up to US$30 million); unplanned restoration spending of more than US$300 million.
+- **JMMB Bank:** IDB Invest project 12793-03, https://idbinvest.org/en/projects/jmmb-bank-partnership (opened 8 November 2026): approved 11 March 2020, signed 23 December 2020, up to US$35 million for SME and low- and middle-income housing lending, completed.
+
+## Watch items
+- **IDB Invest and JPS:** up to US$80 million, projected board date 17 November 2026; add once approved.
+- **IDB Invest and VM Group:** up to US$60 million for green, MSME and affordable-housing lending (proposed, Early Warning System database); IDB Invest and JN Bank, mortgages with resilience features (project page did not open).
+- **World Bank:** the Sustainable and Resilient Recovery DPF and Cat DDO (P515281, US$42 million, board date 11 March 2026) and the Hurricane Melissa Reconstruction Implementation Support Project (P515022, US$5 million, board date 30 June 2026) are listed in the Early Warning System database; no World Bank page read yet. The World Bank’s up to US$1 billion and CAF’s up to US$1 billion of the December 2025 package: operations not yet read on their pages.
+- **The 2026 bond buyback:** The Gleaner (18 September 2026) reports US$491 million of old notes accepted; Cleary Gottlieb reports US$402.22 million tendered and to be repurchased. Not on the page until the Ministry figure is read.
+- **Public debt at end-March 2026:** the Independent Fiscal Commission imputed 65.6% of GDP from preliminary data (The Gleaner, 3 June 2026); the Commission’s report has not been read.
+- **IFC:** US$15 million in the CARICOM Resilience Fund Debt Sub-Fund arranged by Sygnus Capital, for 13 countries including Jamaica (The Gleaner, 15 June 2026); no Jamaica share stated.
+
+## Open gaps
+- The seven standards could not be re-read at source: the World Bank data pages and Our World in Data do not open in these reviews. Food (44.2% not moderately or severely food insecure, FAO, 2024) sets Coverage at 44.2.
+- The Ministry of Finance release of the 2026 bond did not open; its terms are read in a law-firm note and in The Gleaner.
+- The indicator behind The Power card (12.8%) is to be confirmed.
+- Enterprises for food, water, shelter, education and health are not yet verified.
