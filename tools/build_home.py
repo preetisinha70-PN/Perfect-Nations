@@ -17,25 +17,23 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 PAGES = ROOT / 'pages'
-VERSION = '7.5'
+VERSION = '8.0'
 
 # The page, top to bottom. 'seam' places a painted seam (variant a, b, c, ...).
+# v8.0 (8 Nov 2026), the site made simple: one story in three steps. The ReDesign Studio's five moves
+# and the Sovereign Assets, Perfect Capita and Capital Architecture bands (home-studio, home-assets,
+# home-perfect-capita, home-capital) leave the page; their files stay in pages/ for their own pages
+# and for the record. How it works (home-steps) tells all three in one section.
 ORDER = [
     'nations-menu.html',          # the moving list of 195 nations (also on other pages)
-    'home-hero.html',             # 01 Civilization Re-Defined + 01a The Story of Perfect Nations
+    'home-hero.html',             # 01 Every nation is richer than its balance sheet + 01a The Story
     'home-capital-wire.html',     # 01b the Capital Wire (kept by the Correspondent)
-    'home-studio.html',           # The ReDesign Studio: the five moves
-    'home-assets.html',           # move 01 Sovereign Assets
+    'home-steps.html',            # 02 How it works: Count. Price. Pay. (ivory, so no seam after it)
+    'home-blueprints.html',       # 03 Nation by nation: the blueprints
     'seam',
-    'home-perfect-capita.html',   # move 02 Perfect Capita
+    'home-vision.html',           # 04 The Founder's Vision
     'seam',
-    'home-blueprints.html',       # move 03 National Blueprints
-    'seam',
-    'home-capital.html',          # move 04 Capital Architecture
-    'seam',
-    'home-vision.html',           # Mission and Vision
-    'seam',
-    'home-pledge.html',           # The Pledge
+    'home-pledge.html',           # 05 The close: What could your nation become? The ReDesign Studio
 ]
 
 # Motifs from the painting: symbol id, aspect (width / height), height in a 60-high strip.
