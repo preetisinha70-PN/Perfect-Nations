@@ -1,7 +1,7 @@
 {
   "nation": "Eswatini",
   "page_version": "9.0",
-  "updated": "2026-11-05",
+  "updated": "2026-11-08",
   "steward": {
     "name": "Lindiwe Simelane",
     "role": "Nation Steward of Eswatini"
@@ -25,12 +25,12 @@
     ]
   },
   "capital": {
-    "heading": "4 instruments. Water, power, schools and clinics. None aimed at income.",
+    "heading": "13 instruments. Water, power, roads, schools and clinics, broadband, and budget support for private-sector growth.",
     "record": [
       {
-        "value": "$45M",
+        "value": "$53M",
         "money": true,
-        "text": "Water Supply and Sanitation Access Project: Rural water and sanitation",
+        "text": "Water Supply and Sanitation Access Project: Rural water and sanitation, with $8m additional financing, June 2025",
         "source": "World Bank",
         "url": "https://projects.worldbank.org/en/projects-operations/project-detail/P166697"
       },
@@ -54,38 +54,95 @@
         "text": "Health System Strengthening for Human Capital Development: Health system",
         "source": "World Bank",
         "url": "https://projects.worldbank.org/en/projects-operations/project-detail/P168564"
+      },
+      {
+        "value": "44.7%",
+        "money": false,
+        "text": "Public debt, share of GDP, end of fiscal year 2025/26, up from 40% a year earlier",
+        "source": "IMF, August 2026",
+        "url": "https://www.imf.org/en/news/articles/2026/08/05/pr26273-eswatini-imf-staff-completes-2026-aiv-mission"
       }
     ],
     "register": [
       {
         "cat": "multi",
-        "status": "Active",
+        "status": "Approved",
         "tone": "active",
-        "name": "Water Supply and Sanitation Access Project",
-        "detail": "Approved 10 October 2019 · Investment project financing",
-        "amount": "$45M",
+        "name": "Digital Eswatini Project",
+        "detail": "Approved 15 June 2026 · Three World Bank commitments of $19.3M, $26M and $19.7M",
+        "amount": "$65M",
         "money": true,
-        "note": "Rural water and sanitation",
-        "text": "Extends safe water and sanitation to underserved communities.",
+        "note": "Broadband and digital public services",
+        "text": "A World Bank project to widen access to affordable broadband and to help the government deliver public services online. Digital access supports livelihood and the reach of education and health services.",
         "by": [
           "World Bank"
         ],
-        "url": "https://projects.worldbank.org/en/projects-operations/project-detail/P166697"
+        "url": "https://financesone.worldbank.org/countries/Eswatini"
       },
       {
         "cat": "multi",
-        "status": "Active",
+        "status": "Signed",
         "tone": "active",
-        "name": "Network Reinforcement and Access Project",
-        "detail": "Approved 27 June 2019 · Investment project financing",
-        "amount": "$40M",
+        "name": "Fiscal Management and Competitiveness Development Policy Financing, OPEC Fund co-financing",
+        "detail": "Approved 29 July 2025 · Signed 16 January 2026 · Policy-based loan · Total programme $200M with the IBRD and the AfDB",
+        "amount": "$50M",
         "money": true,
-        "note": "Grid and new connections",
-        "text": "Strengthens the grid and connects new households.",
+        "note": "Co-finances the World Bank reform loan",
+        "text": "The OPEC Fund’s policy-based loan to the reform programme of the same name, co-financed with the IBRD and the African Development Bank and executed by the Ministry of Finance. The World Bank’s part of the programme is the $100 million development policy loan in this register.",
+        "by": [
+          "OPEC Fund for International Development",
+          "World Bank",
+          "African Development Bank"
+        ],
+        "url": "https://opecfund.org/where-we-work/list/fiscal-management-and-competitiveness-development-policy-financing"
+      },
+      {
+        "cat": "multi",
+        "status": "Approved",
+        "tone": "active",
+        "name": "Fiscal Management and Competitiveness Development Policy Loan",
+        "detail": "Board approval announced 30 April 2025 · Development policy loan · First of a programmatic series of two",
+        "amount": "$100M",
+        "money": true,
+        "note": "Public debt, private sector and energy reforms",
+        "text": "Budget support for reforms to public debt management and spending arrears, the business climate and digital payments, and the opening of the electricity market to private renewable power. It builds on the 2021 to 2022 series and aims to mobilise private capital and expand energy access.",
         "by": [
           "World Bank"
         ],
-        "url": "https://projects.worldbank.org/en/projects-operations/project-detail/P166170"
+        "url": "https://www.worldbank.org/en/news/press-release/2025/04/30/eswatini-afe-world-bank-supports-fiscal-and-private-sector-reforms-for-resilient-growth"
+      },
+      {
+        "cat": "multi",
+        "status": "Approved",
+        "tone": "active",
+        "name": "Accelerating Sustainable and Clean Energy Access Transformation (ASCENT) Eswatini",
+        "detail": "Announced 13 February 2025 · $39M IDA, $51M IBRD, $10M Livable Planet Fund grant",
+        "amount": "$100M",
+        "money": true,
+        "note": "Electricity for 200,000 people",
+        "text": "Grid and off-grid electricity for 200,000 people, with 50,000 new household connections over five years, building on the Network Reinforcement and Access Project. It aims at the remaining 12% of citizens without electricity, the energy standard.",
+        "by": [
+          "World Bank"
+        ],
+        "url": "https://www.worldbank.org/en/news/press-release/2025/02/13/world-bank-expands-support-to-electrify-rural-afe-eswatini-reaching-200-000-people"
+      },
+      {
+        "cat": "multi",
+        "status": "Signed",
+        "tone": "active",
+        "name": "Mkhondvo-Ngwavuma Water Augmentation Program, Phase 2",
+        "detail": "Approved 21 June 2023 · Signed 23 December 2024 · Project loan · Total cost $213.5M",
+        "amount": "$20M",
+        "money": true,
+        "note": "Dams and irrigation in the south",
+        "text": "The OPEC Fund’s loan to the second phase of the water augmentation programme, executed by ESWADE, with the Government, BADEA, the DBSA and the African Development Bank. Stored water for irrigated farming supports the food and livelihood standards.",
+        "by": [
+          "OPEC Fund for International Development",
+          "BADEA",
+          "DBSA",
+          "African Development Bank"
+        ],
+        "url": "https://opecfund.org/where-we-work/list/mkhondvo-ngwavuma-water-augmentation-program-phase-2-mnwap-phase-2"
       },
       {
         "cat": "multi",
@@ -116,6 +173,100 @@
           "World Bank"
         ],
         "url": "https://projects.worldbank.org/en/projects-operations/project-detail/P168564"
+      },
+      {
+        "cat": "multi",
+        "status": "Active",
+        "tone": "active",
+        "name": "Water Supply and Sanitation Access Project",
+        "detail": "Approved 10 October 2019 · Additional financing of $8M, 12 June 2025 · Investment project financing",
+        "amount": "$53M",
+        "money": true,
+        "note": "Rural water and sanitation",
+        "text": "Extends safe water and sanitation to underserved communities. The World Bank raised its financing from $45 million to $53 million in June 2025: the water standard sets Coverage in Eswatini.",
+        "by": [
+          "World Bank"
+        ],
+        "url": "https://projects.worldbank.org/en/projects-operations/project-detail/P166697"
+      },
+      {
+        "cat": "multi",
+        "status": "Active",
+        "tone": "active",
+        "name": "Network Reinforcement and Access Project",
+        "detail": "Approved 27 June 2019 · Investment project financing",
+        "amount": "$40M",
+        "money": true,
+        "note": "Grid and new connections",
+        "text": "Strengthens the grid and connects new households.",
+        "by": [
+          "World Bank"
+        ],
+        "url": "https://projects.worldbank.org/en/projects-operations/project-detail/P166170"
+      },
+      {
+        "cat": "regional",
+        "status": "Approved",
+        "tone": "active",
+        "name": "Enhancing Economic Resilience and Competitiveness Program, Phase I",
+        "detail": "Announced July 2025 · Loan · First phase of a two-year programme",
+        "amount": "$47.5M",
+        "money": true,
+        "note": "Public finance and private-sector growth",
+        "text": "African Development Bank budget support for fiscal and public financial management reforms and for private-sector-led, inclusive and green growth. It aims to reduce domestic arrears, raise private-sector growth and increase the renewable share of energy, alongside World Bank financing.",
+        "by": [
+          "African Development Bank"
+        ],
+        "url": "https://allafrica.com/stories/202507210700.html"
+      },
+      {
+        "cat": "regional",
+        "status": "Approved",
+        "tone": "active",
+        "name": "Road links in Lubombo and Shiselweni, first stage",
+        "detail": "Announced 9 December 2024 · Loan · 105.9 km of paved roads on the MR14 and MR21",
+        "amount": "$140.6M",
+        "money": true,
+        "note": "Climate-resilient roads in the east and south",
+        "text": "Upgrades 105.9 km of paved road on the MR14 (Siphofaneni to Nsoko) and the MR21 (Maloma to Siphambanweni), with bridges and an axle-load weighing station. It includes vocational training and apprenticeships for at least 200 young people in the Lubombo and Shiselweni regions.",
+        "by": [
+          "African Development Bank"
+        ],
+        "url": "https://allafrica.com/stories/202412100702.html"
+      },
+      {
+        "cat": "regional",
+        "status": "Granted",
+        "tone": "granted",
+        "name": "New Eco-Green City Masterplan, Shiselweni",
+        "detail": "Approved 8 June 2023 · Grant from the Urban and Municipal Development Fund",
+        "amount": "$400K",
+        "money": true,
+        "note": "Planning a new town for an agro-processing zone",
+        "text": "An African Development Bank grant to ESWADE for the vision, master plan and pre-feasibility studies of a new urban area in Shiselweni, linked to the Mkhondvo-Ngwavuma water programme and a planned agro-processing zone. It plans for housing, health and education services for the workers and families the zone would bring.",
+        "by": [
+          "African Development Bank",
+          "ESWADE"
+        ],
+        "url": "https://allafrica.com/stories/202306200681.html"
+      },
+      {
+        "cat": "private",
+        "status": "Financial close",
+        "tone": "active",
+        "name": "Lower Maguduza Hydropower Project, 13.5 MW",
+        "detail": "Financial close announced 3 February 2025 · Standard Bank mandated lead arranger",
+        "amount": "R567M",
+        "money": true,
+        "note": "Private hydropower for the national grid",
+        "text": "Debt financing for a 13.5 MW hydropower plant developed by African Clean Energy Developments, whose shareholders are the IDEAS Fund managed by AIIM and the Eswatini Public Service Pensions Fund. It adds a private renewable source of power, the energy standard.",
+        "by": [
+          "Standard Bank",
+          "African Clean Energy Developments",
+          "IDEAS Fund (AIIM)",
+          "Public Service Pensions Fund"
+        ],
+        "url": "https://corporateandinvestment.standardbank.com/cib/global/deals/standard-bank-supports-eswatinis-green-energy-hydropower-project"
       }
     ]
   },
@@ -203,11 +354,18 @@
     "heading": "Already working in Eswatini.",
     "items": [
       {
-        "standard": "In preparation",
-        "name": "The enterprises building Perfect Eswatini",
-        "text": "The Stewards are verifying the companies and social enterprises already delivering the seven basic living standards in Eswatini. Suggest one to include.",
-        "source": "Suggest an enterprise",
-        "url": "mailto:contact@perfectnations.org?subject=An%20enterprise%20for%20Perfect%20Eswatini"
+        "standard": "Health",
+        "name": "The Luke Commission",
+        "text": "Mobile and pop-up clinics that take care to rural communities, where three in four citizens live; its Matsapha Mobile Clinic for factory workers sees an average of 300 people a day.",
+        "source": "The Luke Commission",
+        "url": "https://www.lukecommission.org/what-we-do/"
+      },
+      {
+        "standard": "Livelihood",
+        "name": "Gone Rural",
+        "text": "A social enterprise whose model lets rural women earn an income by weaving from their homes, using Eswatini’s ancestral weaving techniques.",
+        "source": "VOA, 2024",
+        "url": "https://www.voazimbabwe.com/a/7764216.html"
       }
     ]
   },
@@ -335,5 +493,6 @@
     }
   ],
   "dispatches": [],
-  "checked": "2026-11-05T11:21Z"
+  "checked": "2026-11-05T11:21Z",
+  "reviewed": "2026-11-08T00:01Z"
 }
