@@ -13,6 +13,9 @@ The page is pasted once in WordPress (page 15125, /sovereign-assets/) with root 
 Nations Live Pages plugin serves pages/sovereign-assets.html in its place. Never edit that file by
 hand: edit pages/sovereign-assets-src.html (design) or the "featured" list in
 data/sovereign-assets.json (the five assets), then run this script.
+
+Fewer words (the Steward-General, 9 Nov 2026): each of the five assets shows its figure, line, name and
+source; its paragraph ("text") sits one click away under Read more (a details disclosure, class sa-rm).
 """
 import base64
 import html
@@ -181,7 +184,7 @@ def render_featured(items):
               <p class="sa-sc__line">%(line)s</p>
               <h3 class="sa-sc__h" id="sa-sc-%(i)d-h"><a href="%(link)s">%(name)s</a></h3>
               <p class="sa-sc__who"><span class="sa-flags">%(flags)s</span><span>%(nation)s</span></p>
-              <p class="sa-sc__p">%(text)s</p>
+              <details class="sa-rm sa-sc__more"><summary>Read more</summary><p class="sa-sc__p">%(text)s</p></details>
               <p class="sa-sc__act"><a class="sa-go" href="%(link)s">See the blueprint</a></p>
               <small class="sa-sc__src">Source: <a href="%(url)s" target="_blank" rel="noopener noreferrer">%(source)s</a></small>
             </div>

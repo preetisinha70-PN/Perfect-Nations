@@ -38,6 +38,23 @@
   font-size:clamp(2rem,3.6vw,3.4rem); line-height:.95; letter-spacing:-.02em; text-wrap:balance;
 }
 #pn-arch .pca-lead{ margin:10px 0 0; max-width:60ch; font-size:clamp(.98rem,1.15vw,1.08rem); line-height:1.5; color:var(--mut); }
+/* the detail one click away: Read more, a small action under a section's one line */
+#pn-arch .pca-rm{ margin:6px 0 0; max-width:60ch; }
+#pn-arch .pca-rm > summary{
+  display:inline-flex; align-items:center; gap:8px; min-height:32px; padding:4px 0 2px; list-style:none; cursor:pointer;
+  font-family:var(--hd); font-size:.68rem; font-weight:700; letter-spacing:.2em; text-transform:uppercase; color:var(--g);
+}
+#pn-arch .pca-rm > summary::-webkit-details-marker{ display:none; }
+#pn-arch .pca-rm > summary::marker{ content:""; }
+#pn-arch .pca-rm > summary::before{ content:"+"; display:inline-grid; place-items:center; width:18px; height:18px; border-radius:50%; border:1px solid rgba(var(--grgb),.6); font-family:Arial,sans-serif; font-size:.8rem; letter-spacing:0; line-height:1; }
+#pn-arch .pca-rm[open] > summary::before{ content:"\2212"; }
+#pn-arch .pca-rm > summary:hover{ color:var(--gs); }
+#pn-arch .pca-rm__b{ padding:2px 0 0 26px; }
+#pn-arch .pca-rm__b p{ margin:0 0 4px; font-size:.9rem; line-height:1.5; color:var(--mut); }
+#pn-arch .pca-idx .pca-rm > summary{ color:var(--gd); }
+#pn-arch .pca-idx .pca-rm > summary::before{ border-color:rgba(126,90,12,.45); }
+#pn-arch .pca-idx .pca-rm > summary:hover{ color:var(--tc); }
+#pn-arch .pca-idx .pca-rm__b p{ color:var(--inkm); }
 #pn-arch .pca-btn{
   display:inline-flex; align-items:center; justify-content:center; gap:12px; min-height:46px;
   padding:13px 26px 11px; border-radius:999px; text-decoration:none; cursor:pointer;
@@ -170,8 +187,7 @@
 #pn-arch .pca-nat__t span{ min-width:0; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
 #pn-arch .pca-nat__t em{ flex:none; font-style:normal; font-family:var(--hd); font-weight:700; font-size:.86rem; color:var(--g); }
 #pn-arch .pca-nats.is-short > li:nth-child(n+13){ display:none; }
-#pn-arch .pca-rec__foot{ display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:10px 20px; margin-top:12px; }
-#pn-arch .pca-rec__foot p{ margin:0; font-size:.74rem; color:var(--dim); }
+#pn-arch .pca-rec__foot{ display:flex; flex-wrap:wrap; align-items:center; justify-content:flex-end; gap:10px 20px; margin-top:12px; }
 #pn-arch .pca-more-n::after{ content:none; }
 
 /* ---------- 4 close: Earthrise Depth ---------- */
