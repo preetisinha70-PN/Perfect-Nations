@@ -1,7 +1,9 @@
 #!/usr/bin/env python3
 """Build every national blueprint page (pages/blueprint-<slug>.html) from one template.
 
-Blueprint v10.1 (8 November 2026). One design for every nation, so a change is made once and reaches all.
+Blueprint v10.2 (8 November 2026). One design for every nation, so a change is made once and reaches all.
+v10.2: the second Nation Portrait, the flag edition, closes the page beside "Design Perfect <Nation> with us"
+(40 nations; see FLAG_EDITION). It shows once pn-portrait-flag-<slug>.png is in the Media Library.
 v10.1: FfD before SI (the Steward-General, 8 Nov 2026): innovative financing for development (FfD) is named
 first and super intelligence (SI) second, and the abbreviation is written FfD.
 
@@ -42,7 +44,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 PAGES, DATA, HERE = ROOT / 'pages', ROOT / 'data', ROOT / 'tools' / 'nation'
-VERSION = '10.1'
+VERSION = '10.2'
 EARTH = {'lg': 'https://perfectnations.org/wp-content/uploads/2026/10/pn-globe-earth-day-1536x768.jpg',
          'sm': 'https://perfectnations.org/wp-content/uploads/2026/10/pn-globe-earth-day-1024x512.jpg'}
 ORDER = ['Food', 'Water', 'Shelter', 'Energy', 'Education', 'Health', 'Livelihoods']
@@ -568,20 +570,45 @@ def enterprises_voices(d, p):
            ent(p['voices']['local']), nation_q, nation_q))
 
 
+# The second Nation Portrait, the flag edition (painted 31 October 2026; the Steward-General, 8 Nov 2026: "a
+# second set of the 40 nations portraits with the flag imagery ... for other parts in the blueprints").
+# It closes the page, beside "Design Perfect <Nation> with us". The file is uploaded to the Media Library in
+# November 2026 as pn-portrait-flag-<slug>.png (1264 px square, from its Canva link in the Project doc
+# claude/nation-portraits-v4-canva.md); until it is there, the figure removes itself and the close keeps
+# one column. Afghanistan, Barbados, Kenya and Rwanda keep their own portraits and have no flag edition.
+FLAG_EDITION = ('angola', 'bangladesh', 'botswana', 'brazil', 'burundi', 'colombia', 'cote-divoire', 'dr-congo', 'ecuador', 'egypt', 'eswatini', 'ethiopia', 'fiji', 'ghana', 'india', 'indonesia', 'jamaica', 'jordan', 'lesotho', 'madagascar', 'malawi', 'mexico', 'morocco', 'mozambique', 'namibia', 'nigeria', 'pakistan', 'philippines', 'republic-of-congo', 'senegal', 'somalia', 'south-africa', 'south-sudan', 'sri-lanka', 'tanzania', 'uganda', 'ukraine', 'vietnam', 'zambia', 'zimbabwe')
+FLAG_DIR = 'https://perfectnations.org/wp-content/uploads/2026/11/'
+
+
+def flag_fig(name, slug, title):
+    if slug not in FLAG_EDITION:
+        return ''
+    u = FLAG_DIR + 'pn-portrait-flag-' + slug
+    return (
+        '<figure class="bpx-port bpx-port--flag"><span class="bpx-frame">'
+        '<img src="%s-768x768.png" srcset="%s-300x300.png 300w, %s-768x768.png 768w" sizes="(min-width:960px) 300px, 200px" '
+        'alt="%s, flag edition: the nation portrait of %s painted with its flag" width="768" height="768" loading="lazy" decoding="async" '
+        'onerror="var f=this.closest(\'figure\');if(f){f.remove();}"></span>'
+        '<figcaption class="bpx-frame__cap">%s<small>Nation Portrait, flag edition &#183; '
+        '<a href="https://perfectnations.org/art-of-nations/" target="_blank" rel="noopener noreferrer">Art of Nations</a></small></figcaption></figure>'
+        % (u, u, u, ent(title), ent(name), ent(title)))
+
+
 def close(d, p):
     name, slug = d['nation'], p['slug']
     srcs = ''.join('<li>%s</li>' % raw(s) for s in p['sources'])
     return (
-        '<section class="bpx-band bpx-dp bpx-close" aria-labelledby="bp-close-h"><div class="bpx-in">'
+        '<section class="bpx-band bpx-dp bpx-close" aria-labelledby="bp-close-h"><div class="bpx-in bpx-close__grid"><div class="bpx-close__words">'
         '<p class="bpx-eb">The %s ReDesign Studio is open</p><h2 class="bpx-h2" id="bp-close-h">Design Perfect %s with us.</h2>'
         '<p class="bpx-lead">%s</p><div class="bpx-btns">'
         '<a class="bpx-btn" href="https://perfectnations.org/design-studio/" target="_blank" rel="noopener noreferrer">Enter the Perfect Nations ReDesign Studio</a>'
         '<a class="bpx-btn bpx-btn--line" href="https://perfectnations.org/contact/?nation=%s" target="_blank" rel="noopener noreferrer">Write to us</a>'
         '<a class="bpx-btn bpx-btn--line" href="https://perfectnations.org/blueprints/" target="_blank" rel="noopener noreferrer">All 195 nations</a></div>'
-        '<details class="bpx-sources"><summary>Sources</summary><ol>%s</ol></details></div></section>'
+        '<details class="bpx-sources"><summary>Sources</summary><ol>%s</ol></details></div>%s</div></section>'
         '<div class="bpx-toast" id="bp-toast" role="status" aria-live="polite" hidden><span>Opening your email app. If nothing opens, write to <b>contact@perfectnations.org</b></span>'
         '<button type="button" id="bp-toast-copy">Copy address</button><button type="button" class="bpx-x" id="bp-toast-x" aria-label="Close">&#215;</button></div>'
-        % (ent(name), ent(name), ent(p['close_lead']), urllib.parse.quote(slug), srcs))
+        % (ent(name), ent(name), ent(p['close_lead']), urllib.parse.quote(slug), srcs,
+           flag_fig(name, slug, p['portrait'].get('title') or ('%s in Bloom' % name))))
 
 
 # ---------------------------------------------------------------- the page
@@ -621,6 +648,8 @@ def build(slug, sbn, son, seam, today):
     script = (HERE / 'script.js').read_text(encoding='utf-8').replace('/*pn:cfg*/', 'var CFG = %s;' % js_str(cfg))
     head = (
         '<!-- PERFECT NATIONS . NATIONAL BLUEPRINT . %s . v%s . %s . Built by tools/build_nations.py: never edit by hand. -->\n'
+        '<!-- v10.2 (8 November 2026): the second Nation Portrait, the flag edition, closes the page beside "Design\n'
+        '     Perfect <Nation> with us" (40 nations). It shows once pn-portrait-flag-<slug>.png is in the Media Library. -->\n'
         '<!-- v10.1 (8 November 2026): FfD before SI (the Steward-General, 8 Nov 2026). The Solutions lead names\n'
         '     innovative financing for development (FfD) first and super intelligence (SI) second, and the\n'
         '     Solution rows read "How FfD solves it". -->\n'
