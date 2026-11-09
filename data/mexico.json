@@ -1,7 +1,7 @@
 {
   "nation": "Mexico",
   "page_version": "9.0",
-  "updated": "2026-11-07",
+  "updated": "2026-11-09",
   "steward": {
     "name": "Ximena Robles",
     "role": "Nation Steward of Mexico"
@@ -28,16 +28,37 @@
     "heading": "Mexico draws private capital at scale. Next, safe water in every home.",
     "record": [
       {
+        "value": "$24B",
+        "money": true,
+        "text": "IMF Flexible Credit Line: SDR 17.8254 billion for two years from 13 November 2025, treated as precautionary",
+        "source": "IMF, 2025",
+        "url": "https://www.imf.org/en/news/articles/2025/11/14/pr-25374-mexico-imf-approves-new-2-year-us-24-billion-flexible-credit-line-arrangement"
+      },
+      {
+        "value": "58.3%",
+        "money": false,
+        "text": "Gross public sector debt, percent of GDP, 2024 (IMF Article IV consultation, October 2025)",
+        "source": "IMF, 2025",
+        "url": "https://www.imf.org/en/news/articles/2025/10/27/pr-25350-mexico-imf-executive-board-concludes-2025-article-iv-consultation"
+      },
+      {
+        "value": "$12B",
+        "money": true,
+        "text": "Private capital World Bank Group operations helped attract in Mexico, fiscal years 2022 to 2026: nearly $12 billion",
+        "source": "World Bank, 2026",
+        "url": "https://www.worldbank.org/en/news/feature/2026/10/13/the-job-catalysts-how-mexico-mobilized-us-12-billion-in-private-capital"
+      },
+      {
         "value": "$500M",
         "money": true,
-        "text": "Resilience to disasters and climate change: Disaster and climate resilience",
+        "text": "Disaster and climate resilience: Mexico’s first Catastrophe Deferred Drawdown Option, October 2026",
         "source": "World Bank, 2026",
         "url": "https://www.worldbank.org/en/news/press-release/2026/10/21/world-bank-approves-us-500-million-to-strengthen-mexico-resilience-to-disasters"
       },
       {
         "value": "$500M",
         "money": true,
-        "text": "Guarantee for infrastructure and private investment: Draws private investment into infrastructure",
+        "text": "Credit enhancement for sustainable and resilient transport, December 2025: about $1 billion of private capital expected",
         "source": "World Bank, 2025",
         "url": "https://www.worldbank.org/en/news/press-release/2025/12/18/banco-mundial-aprueba-garantia-por-us-500-millones-para-impulsar-infraestructura-y-atraer-inversion-privada-en-m-xico"
       }
@@ -45,14 +66,14 @@
     "register": [
       {
         "cat": "multi",
-        "status": "Active",
+        "status": "Approved",
         "tone": "active",
-        "name": "Resilience to disasters and climate change",
-        "detail": "Approved October 2026",
+        "name": "Disaster and climate resilience, Catastrophe Deferred Drawdown Option",
+        "detail": "Approved 21 October 2026 · Cat DDO · Three years, with the possibility of extension",
         "amount": "$500M",
         "money": true,
-        "note": "Disaster and climate resilience",
-        "text": "Strengthens Mexico\u2019s financial and physical resilience to disasters.",
+        "note": "Mexico’s first Cat DDO",
+        "text": "Contingent financing Mexico can draw on after a natural disaster, a climate shock or a public health emergency, with resilience work in areas such as infrastructure, housing, energy and health. Money that arrives fast after a disaster keeps homes, water systems and clinics running.",
         "by": [
           "World Bank"
         ],
@@ -60,18 +81,437 @@
       },
       {
         "cat": "multi",
-        "status": "Active",
+        "status": "Approved",
         "tone": "active",
-        "name": "Guarantee for infrastructure and private investment",
-        "detail": "Approved December 2025 \u00b7 Guarantee",
-        "amount": "$500M",
+        "name": "Building Sustainable Value Chains Project",
+        "detail": "Approved 10 July 2026 · IBRD",
+        "amount": "$200M",
         "money": true,
-        "note": "Draws private investment into infrastructure",
-        "text": "A guarantee that lets private lenders finance Mexican infrastructure on better terms.",
+        "note": "Sustainable value chains for Mexican firms",
+        "text": "An IBRD loan approved by the World Bank Board in July 2026 for more sustainable value chains among Mexican firms. Its project documents have not yet been read in these reviews.",
         "by": [
           "World Bank"
         ],
+        "url": "https://financesone.worldbank.org/countries/mexico"
+      },
+      {
+        "cat": "multi",
+        "status": "Approved",
+        "tone": "active",
+        "name": "Credit Enhancement Platform for Sustainable and Resilient Transport",
+        "detail": "Approved 18 December 2025 · Credit enhancement of up to $500 million · Local Currency Mobilization Facility",
+        "amount": "$500M",
+        "money": true,
+        "note": "About $1 billion of private capital expected for transport",
+        "text": "Banobras, as trustee of the National Infrastructure Fund (FONADIN), uses the instrument to strengthen the guarantees the fund already gives, so that private lenders finance sustainable and resilient transport infrastructure, in local currency. Roads and transport connect citizens to jobs, schools and clinics.",
+        "by": [
+          "World Bank",
+          "Banobras",
+          "FONADIN"
+        ],
         "url": "https://www.worldbank.org/en/news/press-release/2025/12/18/banco-mundial-aprueba-garantia-por-us-500-millones-para-impulsar-infraestructura-y-atraer-inversion-privada-en-m-xico"
+      },
+      {
+        "cat": "multi",
+        "status": "Active",
+        "tone": "active",
+        "name": "Flexible Credit Line",
+        "detail": "Approved 13 November 2025 · Two years · SDR 17.8254 billion · 200 percent of quota · Precautionary",
+        "amount": "$24B",
+        "money": true,
+        "note": "Succeeds the 2023 line of about $35 billion",
+        "text": "A two-year IMF arrangement that Mexico treats as precautionary: a line it can draw on if needed. The new line of about $24 billion is smaller than the SDR 26.7381 billion (about $35 billion) arrangement of November 2023 it succeeds.",
+        "by": [
+          "International Monetary Fund"
+        ],
+        "url": "https://www.imf.org/en/news/articles/2025/11/14/pr-25374-mexico-imf-approves-new-2-year-us-24-billion-flexible-credit-line-arrangement"
+      },
+      {
+        "cat": "multi",
+        "status": "Active",
+        "tone": "active",
+        "name": "Sustainable Communities for Climate Action in the Yucatán Peninsula (ACCIÓN, SAP049)",
+        "detail": "Approved 20 February 2025 · Grant · Under implementation · Total value $32.7 million",
+        "amount": "$25M",
+        "money": true,
+        "note": "About 2.3 million people with increased resilience",
+        "text": "A Green Climate Fund grant through the Mexican Fund for the Conservation of Nature (FMCN) for climate action by communities of the Yucatán Peninsula. It protects the water, land and livelihoods of rural and coastal families.",
+        "by": [
+          "Green Climate Fund",
+          "Fondo Mexicano para la Conservación de la Naturaleza"
+        ],
+        "url": "https://www.greenclimate.fund/project/sap049"
+      },
+      {
+        "cat": "multi",
+        "status": "Active",
+        "tone": "active",
+        "name": "Basin Approach for Livelihood Sustainability through Adaptation Strategies (BALSAS, FP236)",
+        "detail": "Approved 18 July 2024 · Under implementation to 2031 · Total value $91 million",
+        "amount": "$39.5M",
+        "money": true,
+        "note": "About 3.3 million people with increased resilience",
+        "text": "Green Climate Fund financing, through IFAD, for climate adaptation by farming communities in river basins, with women, youth and indigenous peoples among its priorities. It protects the food and livelihoods of smallholders.",
+        "by": [
+          "Green Climate Fund",
+          "IFAD"
+        ],
+        "url": "https://www.greenclimate.fund/project/fp236"
+      },
+      {
+        "cat": "multi",
+        "status": "Approved",
+        "tone": "active",
+        "name": "Sustainable and Inclusive Finance Development Policy Loan",
+        "detail": "Approved 3 June 2024 · IBRD · Development policy loan",
+        "amount": "$1B",
+        "money": true,
+        "note": "Budget support for sustainable and inclusive finance",
+        "text": "IBRD budget support for reforms in sustainable and inclusive finance. Access to finance is how small firms and households invest in their livelihoods.",
+        "by": [
+          "World Bank"
+        ],
+        "url": "https://financesone.worldbank.org/countries/mexico"
+      },
+      {
+        "cat": "multi",
+        "status": "Active",
+        "tone": "active",
+        "name": "Catastrophe bond, Pacific hurricanes",
+        "detail": "Issued 15 May 2024 · Four years",
+        "amount": "$175M",
+        "money": true,
+        "note": "Takes Mexico’s 2024 cat bond cover to $595 million",
+        "text": "A catastrophe bond issued by the World Bank (IBRD) that pays Mexico if a named storm on its Pacific side meets set criteria. Parametric cover pays quickly, so reconstruction of homes and services can begin at once.",
+        "by": [
+          "World Bank"
+        ],
+        "url": "https://www.worldbank.org/en/news/press-release/2024/05/15/world-bank-issues-175-million-in-catastrophe-bond-for-mexico-s-pacific-hurricane-risk"
+      },
+      {
+        "cat": "multi",
+        "status": "Active",
+        "tone": "active",
+        "name": "Catastrophe bonds, earthquakes and Atlantic hurricanes",
+        "detail": "Settled 17 April 2024 · Matures 24 April 2028 · Class A $225 million and Class B $70 million, earthquake · Class C $125 million, Atlantic named storms",
+        "amount": "$420M",
+        "money": true,
+        "note": "Parametric cover for four years",
+        "text": "Three classes of catastrophe bonds issued by the World Bank (IBRD) that insure the Government of Mexico against earthquakes and Atlantic named storms, replacing earlier bonds for these perils and adding $60 million of cover. Payouts are triggered when an event meets set location and severity criteria.",
+        "by": [
+          "World Bank"
+        ],
+        "url": "https://www.worldbank.org/en/news/press-release/2024/04/17/world-bank-issues-420-million-in-catastrophe-bonds-for-renewed-disaster-risk-protection-for-mexico"
+      },
+      {
+        "cat": "regional",
+        "status": "Announced",
+        "tone": "active",
+        "name": "Credit line for conventional power generation",
+        "detail": "Announced 22 June 2026 · Credit line of up to $500 million · Guaranteed by CFE",
+        "amount": "$500M",
+        "money": true,
+        "note": "For the Federal Electricity Commission’s generation projects",
+        "text": "A credit line from the Central American Bank for Economic Integration to the trust for conventional generation projects, guaranteed by the Federal Electricity Commission (CFE). It finances power generation for the national electricity system.",
+        "by": [
+          "Central American Bank for Economic Integration",
+          "CFE"
+        ],
+        "url": "https://www.prnewswire.com/mx/comunicados-de-prensa/bcie-impulsa-el-fortalecimiento-del-sistema-electrico-de-mexico-con-una-inversion-de-hasta-us500-millones-302806883.html"
+      },
+      {
+        "cat": "regional",
+        "status": "Under construction",
+        "tone": "active",
+        "name": "Environmental infrastructure in the State of Sonora",
+        "detail": "Certified 13 February 2026 · Loan of up to MXN 650 million · 27 wells in 15 municipalities",
+        "amount": "MXN 650M",
+        "money": true,
+        "note": "1.5 million people benefit",
+        "text": "A NADBank loan to Sonora to rehabilitate, relocate and equip 27 water wells, replace worn water lines in nine localities and improve wastewater collection and treatment. It reaches the water and sanitation standards directly.",
+        "by": [
+          "North American Development Bank",
+          "State of Sonora"
+        ],
+        "url": "https://nadbank.org/our-projects/financed-projects/proyect/financing-for-environmental-infrastructure-in-the-state-of-sonora?hsLang=en"
+      },
+      {
+        "cat": "regional",
+        "status": "Approved",
+        "tone": "active",
+        "name": "Investment grant for nature-based farm loans, through FIRA",
+        "detail": "Approved by the IDB Board · Investment grant from Germany’s International Climate Initiative · Nine states",
+        "amount": "$8M",
+        "money": true,
+        "note": "About 3,000 small farmers; about $30 million of loans",
+        "text": "An IDB grant that funds partial credit guarantees through FIRA, so lenders finance small farmers’ investments that protect soils, water and ecosystems, mainly in regions with high poverty. It reaches food and rural livelihoods.",
+        "by": [
+          "Inter-American Development Bank",
+          "FIRA"
+        ],
+        "url": "https://www.iadb.org/en/news/idb-strengthens-resilience-among-small-rural-producers-mexico-8-million-investment-grant"
+      },
+      {
+        "cat": "bilat",
+        "status": "Signed",
+        "tone": "active",
+        "name": "Green buildings credit line with Nacional Financiera",
+        "detail": "Signed late 2024 · Announced 26 March 2025 · AFD $75 million · Green Climate Fund $25 million (PEEB Cool)",
+        "amount": "$100M",
+        "money": true,
+        "note": "Energy-efficient, low-carbon construction",
+        "text": "A credit line from AFD and the Green Climate Fund to Nacional Financiera (NAFIN) for sustainable construction that saves energy, cuts emissions and uses water responsibly. Cooler, efficient buildings lower household and business energy bills.",
+        "by": [
+          "AFD",
+          "Green Climate Fund",
+          "Nacional Financiera"
+        ],
+        "url": "https://www.afd.fr/es/actualites/communique-de-presse/nacional-financiera-nafin-y-la-agencia-francesa-de-desarrollo-afd-unen-esfuerzos-para-impulsar-infraestructura-verde-en-mexico"
+      },
+      {
+        "cat": "private",
+        "status": "Announced",
+        "tone": "active",
+        "name": "200-megawatt solar photovoltaic plant, EDP",
+        "detail": "Announced 19 October 2026 · IFC loan",
+        "amount": "$222M",
+        "money": true,
+        "note": "200 MW of solar power",
+        "text": "An IFC loan for a 200-megawatt solar photovoltaic power plant in Mexico developed by EDP. With a second EDP investment announced at the same time, IFC expects better electricity supply for about 200,000 people and more than 4,400 jobs.",
+        "by": [
+          "IFC",
+          "EDP"
+        ],
+        "url": "https://www.ifc.org/en/pressroom/2026/edp-and-ifc-deepen-partnership-to-expand-energy-access-support"
+      },
+      {
+        "cat": "private",
+        "status": "Approved",
+        "tone": "active",
+        "name": "Banca Mifel green bond",
+        "detail": "Approved 21 July 2026 · Not yet signed · IDB Invest up to $75 million of an issue of up to $160 million",
+        "amount": "$75M",
+        "money": true,
+        "note": "Green lending by Banca Mifel",
+        "text": "IDB Invest would buy up to $75 million, about 47 percent, of a thematic bond by Banca Mifel, whose proceeds expand the bank’s green sub-loans. It channels finance to clean energy and efficient buildings.",
+        "by": [
+          "IDB Invest",
+          "Banca Mifel"
+        ],
+        "url": "https://idbinvest.org/es/proyectos/emision-sostenible-de-banca-mifel-mexico"
+      },
+      {
+        "cat": "private",
+        "status": "Announced",
+        "tone": "active",
+        "name": "Fibra Nova industrial parks",
+        "detail": "Announced 15 July 2026 · IDB Invest long-term loan up to $100 million · DEG up to $50 million",
+        "amount": "$150M",
+        "money": true,
+        "note": "Industrial parks, mainly in Chihuahua",
+        "text": "Long-term finance for the construction and operation of industrial parks, mainly in the state of Chihuahua. Industrial parks house the manufacturers that create formal jobs.",
+        "by": [
+          "IDB Invest",
+          "DEG",
+          "Fibra Nova"
+        ],
+        "url": "https://idbinvest.org/en/news-media/idb-invest-and-deg-finance-fibra-nova-development-industrial-parks-mexico"
+      },
+      {
+        "cat": "private",
+        "status": "Invested",
+        "tone": "active",
+        "name": "Lottus Education, equity",
+        "detail": "Announced 4 June 2026 · Direct equity in a round led by Kans Capital",
+        "amount": "MXN 200M",
+        "money": true,
+        "note": "More than 90,000 students",
+        "text": "IDB Invest equity for Lottus Education to invest in infrastructure, equipment and its technology platform. Lottus teaches upper-secondary, undergraduate and graduate programmes, online and in person, to more than 90,000 students, more than 35,000 of them online.",
+        "by": [
+          "IDB Invest",
+          "Lottus Education"
+        ],
+        "url": "https://idbinvest.org/en/news-media/idb-invest-expands-access-higher-education-mexico-lottus-education"
+      },
+      {
+        "cat": "private",
+        "status": "Signed",
+        "tone": "active",
+        "name": "Engen Capital, equipment finance along the border",
+        "detail": "Signed 13 April 2026 · Loan of MXN 400 million (about $23.2 million)",
+        "amount": "MXN 400M",
+        "money": true,
+        "note": "Energy-efficient equipment and wastewater treatment",
+        "text": "A NADBank loan to Engen Capital to finance energy-efficient industrial equipment, cleaner freight and passenger transport and expanded wastewater treatment for communities along the border with the United States.",
+        "by": [
+          "North American Development Bank",
+          "Engen Capital"
+        ],
+        "url": "https://nadbank.org/news/press-release/nadbank-provides-mx400-million-loan-to-engen-capital-to-boost-acquisition-of-energy-efficient-industrial-and-transportation-equipment-along-the-u.s.-mexico-border"
+      },
+      {
+        "cat": "private",
+        "status": "Issued",
+        "tone": "active",
+        "name": "Banco Inmobiliario Mexicano sustainable bond",
+        "detail": "Announced 20 March 2026 · Sustainable bond subscribed by IDB Invest · About $46 million",
+        "amount": "MXN 800M",
+        "money": true,
+        "note": "Housing in vulnerable areas",
+        "text": "A sustainable bond by Banco Inmobiliario Mexicano (BIM) that expands its lending to small and medium builders of housing in vulnerable areas. It reaches shelter, in a nation where IDB Invest cites 15 million households living in inadequate conditions.",
+        "by": [
+          "IDB Invest",
+          "Banco Inmobiliario Mexicano"
+        ],
+        "url": "https://idbinvest.org/en/news-media/idb-invest-promotes-sustainable-housing-mexico-banco-inmobiliario-mexicano"
+      },
+      {
+        "cat": "private",
+        "status": "Announced",
+        "tone": "active",
+        "name": "Carbonwave, sargassum processing",
+        "detail": "Announced 3 March 2026 · Convertible loan · Four years",
+        "amount": "$3M",
+        "money": true,
+        "note": "Plant in Puerto Morelos",
+        "text": "IFC finance for Carbonwave, which processes the sargassum seaweed that reaches the coast at its plant in Puerto Morelos, to scale up its operations and research. It protects coastal livelihoods in tourism and fishing.",
+        "by": [
+          "IFC",
+          "Carbonwave"
+        ],
+        "url": "https://www.ifc.org/en/pressroom/2026/ifc-and-carbonwave-turn-a-growing-climate-threat-into-sustainable-economic-opportu"
+      },
+      {
+        "cat": "private",
+        "status": "Announced",
+        "tone": "active",
+        "name": "IENTC broadband network",
+        "detail": "Announced 5 February 2026 · Revolving credit line · $8 million committed · $12 million uncommitted",
+        "amount": "$20M",
+        "money": true,
+        "note": "More than 3 million people, over half of them in poverty",
+        "text": "IDB Invest finance for IENTC to extend its fibre-optic network in regions with low broadband, including the south and south-east. Connectivity opens education, health services and work online.",
+        "by": [
+          "IDB Invest",
+          "IENTC"
+        ],
+        "url": "https://idbinvest.org/en/news-media/idb-invest-finances-ientc-expand-connectivity-mexico"
+      },
+      {
+        "cat": "private",
+        "status": "Announced",
+        "tone": "active",
+        "name": "Scotiabank Mexico, housing finance for women",
+        "detail": "Announced 18 December 2025 · IFC investment of up to $250 million",
+        "amount": "$250M",
+        "money": true,
+        "note": "4.5% of women have a mortgage, against 7.2% of men",
+        "text": "IFC finance for Scotiabank Mexico to expand mortgages for women, in a nation with a housing shortage of 9 million units. It reaches shelter directly.",
+        "by": [
+          "IFC",
+          "Scotiabank Mexico"
+        ],
+        "url": "https://www.ifc.org/en/pressroom/2025/ifc-invierte-en-scotiabank-m-xico-para-ampliar-el-acceso-a-financiamiento-de-vivie"
+      },
+      {
+        "cat": "private",
+        "status": "Announced",
+        "tone": "active",
+        "name": "Grupo Naturasol, food processing",
+        "detail": "Announced 24 September 2025 · Senior secured loan",
+        "amount": "$30M",
+        "money": true,
+        "note": "More than 3,700 employees",
+        "text": "An IFC loan for new production lines and infrastructure in Grupo Naturasol’s potato and corn processing, which sources mainly from Mexican farmers. It reaches food and farm livelihoods.",
+        "by": [
+          "IFC",
+          "Grupo Naturasol"
+        ],
+        "url": "https://www.ifc.org/en/pressroom/2025/ifc-grants-us-30-million-loan-to-grupo-naturasol-to-boost-sustainable-food-process"
+      },
+      {
+        "cat": "private",
+        "status": "Issued",
+        "tone": "active",
+        "name": "CFE Fibra E, inaugural bond",
+        "detail": "Announced 11 September 2025 · IFC $75 million anchor investment in a $725 million issue · Over $6 billion of demand",
+        "amount": "$75M",
+        "money": true,
+        "note": "IFC’s first project with CFE",
+        "text": "IFC anchored the first bond of CFE Fibra E, which finances the strengthening and expansion of Mexico’s electricity transmission network. Transmission carries power to homes, schools and clinics.",
+        "by": [
+          "IFC",
+          "CFE Fibra E"
+        ],
+        "url": "https://www.ifc.org/en/pressroom/2025/ifc-invests-us-75-million-in-cfe-fibra-e-bond-as-anchor-investor-to-strengthen-mex"
+      },
+      {
+        "cat": "private",
+        "status": "Announced",
+        "tone": "active",
+        "name": "CADU, green housing",
+        "detail": "Announced 13 August 2025 · Five-year revolving credit line of up to MXN 700 million (about $35 million)",
+        "amount": "MXN 700M",
+        "money": true,
+        "note": "More than 17,000 social and middle-income homes, 2025 to 2030",
+        "text": "IDB Invest working capital for green housing by CADU, a Mexican developer working mainly in Quintana Roo. It reaches shelter directly.",
+        "by": [
+          "IDB Invest",
+          "CADU"
+        ],
+        "url": "https://idbinvest.org/es/medios-y-prensa/bid-invest-y-cadu-impulsan-el-acceso-la-vivienda-en-mexico"
+      },
+      {
+        "cat": "private",
+        "status": "Announced",
+        "tone": "active",
+        "name": "BEEL Sustainable Credit II fund",
+        "detail": "Announced 7 May 2025 · IFC up to $30 million · Fund target up to MXN 8 billion (about $400 million)",
+        "amount": "$30M",
+        "money": true,
+        "note": "Includes water and sanitation projects",
+        "text": "An infrastructure credit fund managed by BEEL Infrastructure Partners in Mexico City that lends to digital, energy, transport, logistics, and water and sanitation projects.",
+        "by": [
+          "IFC",
+          "BEEL Infrastructure Partners"
+        ],
+        "url": "https://www.ifc.org/en/pressroom/2025/ifc-announces-us-30-million-investment-in-fund-managed-by-beel-infrastructure-part"
+      },
+      {
+        "cat": "private",
+        "status": "Issued",
+        "tone": "active",
+        "name": "Sustainable asset-backed securities of four non-bank lenders",
+        "detail": "Announced 22 October 2024 · Issue of up to MXN 339 million (about $17.3 million) · Programme of up to MXN 1.5 billion",
+        "amount": "MXN 203.4M",
+        "money": true,
+        "note": "Loans to small agribusinesses",
+        "text": "IDB Invest bought most of the first public joint issue in Mexico by four non-bank lenders (CRESCA, Proaktiva, Sefia and SFI), backed by their loans to micro, small and medium enterprises in agribusiness. NADBank and other investors took the rest. It reaches food and rural livelihoods.",
+        "by": [
+          "IDB Invest",
+          "NADBank",
+          "CRESCA",
+          "Proaktiva",
+          "Sefia",
+          "SFI"
+        ],
+        "url": "https://idbinvest.org/en/news-media/idb-invest-participates-lead-investor-mexicos-first-public-market-joint-issuance"
+      },
+      {
+        "cat": "impact",
+        "status": "Approved",
+        "tone": "active",
+        "name": "Regenera Ventures I",
+        "detail": "Announced 18 April 2024 · Investment of up to $4 million",
+        "amount": "$4M",
+        "money": true,
+        "note": "A women-led fund for regenerative enterprises",
+        "text": "A DFC investment in a fund backing Mexican companies in farming, forestry, eco-tourism and aquaculture that restore land, marine and coastal ecosystems, with USAID support in Chiapas, Oaxaca and the Yucatán Peninsula.",
+        "by": [
+          "U.S. International Development Finance Corporation",
+          "Regenera Ventures"
+        ],
+        "url": "https://www.dfc.gov/media/press-releases/dfc-boosts-mexicos-ecosystem-regeneration-4m-investment"
       }
     ]
   },
@@ -125,7 +565,7 @@
       },
       {
         "name": "The Water",
-        "figure": "3,180 m\u00b3",
+        "figure": "3,180 m³",
         "money": false,
         "label": "Renewable fresh water per person",
         "text": "Enough to supply every home, once it is stored, treated and piped.",
@@ -159,11 +599,46 @@
     "heading": "Already working in Mexico.",
     "items": [
       {
-        "standard": "In preparation",
-        "name": "The enterprises building Perfect Mexico",
-        "text": "The Stewards are verifying the companies and social enterprises already delivering the seven basic living standards in Mexico. Suggest one to include.",
-        "source": "Suggest an enterprise",
-        "url": "mailto:contact@perfectnations.org?subject=An%20enterprise%20for%20Perfect%20Mexico"
+        "standard": "Food",
+        "name": "Grupo Naturasol",
+        "text": "A Mexican processor of potatoes and corn that employs more than 3,700 people and sources mainly from Mexican farmers. IFC lent it US$30 million in September 2025 for new production lines.",
+        "source": "IFC, 2025",
+        "url": "https://www.ifc.org/en/pressroom/2025/ifc-grants-us-30-million-loan-to-grupo-naturasol-to-boost-sustainable-food-process"
+      },
+      {
+        "standard": "Shelter",
+        "name": "CADU",
+        "text": "A Mexican housing developer working mainly in Quintana Roo, with homes sold in six states. IDB Invest opened a credit line of up to MXN 700 million in August 2025 for green housing, towards more than 17,000 social and middle-income homes from 2025 to 2030.",
+        "source": "IDB Invest, 2025",
+        "url": "https://idbinvest.org/es/medios-y-prensa/bid-invest-y-cadu-impulsan-el-acceso-la-vivienda-en-mexico"
+      },
+      {
+        "standard": "Energy",
+        "name": "EDP",
+        "text": "An energy group with renewable power operations in Mexico, where IFC lent US$222 million in October 2026 for a 200-megawatt solar photovoltaic plant.",
+        "source": "IFC, 2026",
+        "url": "https://www.ifc.org/en/pressroom/2026/edp-and-ifc-deepen-partnership-to-expand-energy-access-support"
+      },
+      {
+        "standard": "Education",
+        "name": "Lottus Education",
+        "text": "A technology-driven higher education platform founded in 2015, teaching more than 90,000 students across Mexico, more than 35,000 of them online, in upper-secondary, undergraduate and graduate programmes. IDB Invest took an equity stake of 200 million pesos in June 2026.",
+        "source": "IDB Invest, 2026",
+        "url": "https://idbinvest.org/en/news-media/idb-invest-expands-access-higher-education-mexico-lottus-education"
+      },
+      {
+        "standard": "Health",
+        "name": "Salud Digna",
+        "text": "A clinical laboratory and diagnostic network of about 240 clinics across Mexico, serving nearly three million people a month and focused on the most common conditions, such as diabetes and hypertension. It reinvests what it earns in its own growth.",
+        "source": "Expansión, 2025",
+        "url": "https://expansion.mx/empresas/2025/09/17/salud-digna-precios-accesibles-sin-perder-calidad"
+      },
+      {
+        "standard": "Livelihood",
+        "name": "Banco Compartamos",
+        "text": "A microfinance bank lending to micro and small enterprises, with a focus on women. IDB Invest and the IDB lent it up to the equivalent of US$50 million in pesos, signed in April 2022.",
+        "source": "IDB Invest, 2022",
+        "url": "https://idbinvest.org/en/projects/banco-compartamos-financial-inclusion-partnership"
       }
     ]
   },
@@ -244,10 +719,10 @@
     {
       "date": "2026-10-19",
       "label": "19 Oct 2026",
-      "title": "Hacienda refinancia deuda p\u00fablica por 238,000 millones de pesos",
+      "title": "Hacienda refinancia deuda pública por 238,000 millones de pesos",
       "highlight": "238,000 millones de pesos",
       "url": "https://expansion.mx/economia/2026/10/19/hacienda-refinancia-deuda-publica-238000-millones-de-pesos",
-      "source": "Expansi\u00f3n"
+      "source": "Expansión"
     },
     {
       "date": "2026-10-13",
@@ -291,5 +766,6 @@
     }
   ],
   "dispatches": [],
-  "checked": "2026-11-06T11:22Z"
+  "checked": "2026-11-06T11:22Z",
+  "reviewed": "2026-11-09T07:17Z"
 }
