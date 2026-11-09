@@ -25,24 +25,23 @@ VERSION = '9.0'
 # section (the Vision and the Mission) in place of the race; Count. Price. Finance. as the map of
 # the page; Sovereign Assets, Perfect Capita and Capital Architecture back as one short section
 # each; the gold line in place of the painted seams.
-# v9.0 (8 Nov 2026), the Steward-General's decisions: the whole logo is explained, part by part, and
-# governance comes first: Govern. Count. Price. Finance. (the cup, the gold, the seven stars, the
-# laurels), with a new Govern section; innovative financing for development (FfD) before super
-# intelligence (SI); the five greatest asset classes of a nation; the logo kit drawn once, at the top.
+# v9.0 (8 Nov 2026), the Steward-General's decisions: Perfect Nations as a development bank whose clients
+# are nations: Assets. Capital. Solutions. (the gold, the laurels, the seven stars; the cup that holds
+# them is good governance, referenced, not a section); Perfect Capita (Solutions) last; innovative
+# financing for development (FfD) before super intelligence (SI); the five greatest asset classes of a
+# nation, without images; the logo kit drawn once, at the top.
 ORDER = [
     'nations-menu.html',          # the moving list of 195 nations (also on other pages)
     'home-hero.html',             # 01 Civilization Re-Defined / Designing the Prosperity of Nations
     'rule',
     'home-cup.html',              # 01a The Cup: the Vision and the Mission
     'home-capital-wire.html',     # 01b the Capital Wire (kept by the Correspondent)
-    'home-steps.html',            # 02 How it works: Govern. Count. Price. Finance. (the logo, part by part; ivory)
-    'home-govern.html',           # 02a Step 01 Govern: the cup, recognizing the best governance
+    'home-steps.html',            # 02 What we do: Assets. Capital. Solutions. (the logo, part by part; ivory)
+    'home-assets.html',           # 03 Step 01 Assets: the gold, Sovereign Assets
     'rule',
-    'home-assets.html',           # 03 Step 02 Count: the gold, Sovereign Assets
+    'home-capital.html',          # 04 Step 02 Capital: the laurels, Capital Architecture
     'rule',
-    'home-perfect-capita.html',   # 04 Step 03 Price: the seven stars, Perfect Capita
-    'rule',
-    'home-capital.html',          # 05 Step 04 Finance: the laurels, Capital Architecture
+    'home-perfect-capita.html',   # 05 Step 03 Solutions: the seven stars, Perfect Capita (last)
     'rule',
     'home-blueprints.html',       # 06 Blueprints of Nations
     'rule',

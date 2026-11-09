@@ -1,18 +1,16 @@
 <!-- ===========================================================================
-PERFECT NATIONS - HOMEPAGE - SECTION 02 - HOW IT WORKS: GOVERN. COUNT. PRICE. FINANCE. - v4.0 - 2026-11-08
+PERFECT NATIONS - HOMEPAGE - SECTION 02 - WHAT WE DO: ASSETS. CAPITAL. SOLUTIONS. - v5.0 - 2026-11-08
 Part of the one-file homepage (pages/home.html, built by tools/build_home.py). Root id pn-steps.
-v4.0: the Steward-General's decisions of 8 Nov 2026: the whole logo is explained, part by part, and
-recognizing the best governance comes first, before any finance. Four steps, four parts of the logo:
-  01 Govern  = the cup (recognizing the best governance)      -> #pn-govern
-  02 Count   = the gold (what a nation owns: Sovereign Assets) -> #pn-assets
-  03 Price   = the seven stars, Food the crown (Perfect Capita) -> #pn-capita
-  04 Finance = the laurels (Capital Architecture)               -> #pn-capital
-  and the whole logo, lit, is a Perfect Nation.
-Each tile draws the logo from the logo kit (pages/home-logo-kit.html) with its own part lit; the
-gold rises through the logo on the Count tile. Innovative financing for development (FfD) is named
-before super intelligence (SI).
-Laptops: four tiles in a row. Phones: two by two; nothing scrolls sideways.
-An empty anchor keeps the old address perfectnations.org/#pn-studio landing here.
+v5.0: the Steward-General's decisions of 8 Nov 2026 (evening): Perfect Nations as a development bank for
+the era of super intelligence, with nations as its clients and three businesses, in this order:
+  01 Assets    = the gold of the logo (Sovereign Assets: valuing what a nation owns)  -> #pn-assets
+  02 Capital   = the laurels (Capital Architecture: innovative FfD instruments)         -> #pn-capital
+  03 Solutions = the seven stars, Food the crown (Perfect Capita), last                -> #pn-capita
+Governance is referenced, not a section: the cup holds it all (good governance, the foundation of every
+step), and the whole logo, lit, is a Perfect Nation. Each tile draws the logo from the logo kit
+(pages/home-logo-kit.html) with its own part lit; the gold rises through the logo on the Assets tile.
+Laptops: three tiles in a row. Phones: one tile per row, the logo on the left. An empty anchor keeps #pn-studio landing here.
+v4.0 (same day, not published): Govern. Count. Price. Finance., with a Govern section.
 v3.0 (homepage v8.2): one band with three chips: Count. Price. Finance.
 =========================================================================== -->
 <style>
@@ -61,7 +59,7 @@ v3.0 (homepage v8.2): one band with three chips: Count. Price. Finance.
 #pn-steps .pnsp-lead b{ font-weight:600; color:var(--ink); }
 
 /* the four parts of the logo */
-#pn-steps ol.pnsp-map{ list-style:none; margin:clamp(18px,3vh,28px) 0 0; padding:0; display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:clamp(10px,1.4vw,18px); }
+#pn-steps ol.pnsp-map{ list-style:none; margin:clamp(18px,3vh,28px) 0 0; padding:0; display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:clamp(10px,1.4vw,18px); }
 #pn-steps .pnsp-map > li{ margin:0; }
 #pn-steps a.pnsp-t{
   position:relative; display:flex; flex-direction:column; height:100%;
@@ -98,6 +96,7 @@ v3.0 (homepage v8.2): one band with three chips: Count. Price. Finance.
 #pn-steps .pnsp-all{ display:flex; align-items:center; gap:14px; margin:clamp(14px,2.4vh,22px) 0 0; font-size:clamp(1rem,1.2vw,1.12rem); line-height:1.4; color:var(--ink2); }
 #pn-steps .pnsp-all svg{ flex:none; width:46px; height:46px; fill:url(#pnk-gold); filter:drop-shadow(0 2px 4px rgba(8,42,48,.25)); }
 #pn-steps .pnsp-all b{ font-family:var(--hd); font-weight:600; font-size:1.2em; letter-spacing:-.005em; color:var(--er); }
+#pn-steps .pnsp-all b + b,#pn-steps .pnsp-all span b:nth-of-type(2){ margin-left:4px; }
 
 @media (prefers-reduced-motion:no-preference){
   #pn-steps.is-armed .pnsp-h2 span{ opacity:0; transform:translateY(.25em); }
@@ -107,8 +106,7 @@ v3.0 (homepage v8.2): one band with three chips: Count. Price. Finance.
   #pn-steps.is-in .pnsp-h2 span{ opacity:1; transform:none; transition:opacity .6s ease, transform .7s cubic-bezier(.22,1,.36,1); }
   #pn-steps.is-in .pnsp-h2 span:nth-child(2){ transition-delay:.1s; }
   #pn-steps.is-in .pnsp-h2 span:nth-child(3){ transition-delay:.2s; }
-  #pn-steps.is-in .pnsp-h2 span:nth-child(4){ transition-delay:.3s; }
-  #pn-steps.is-in .pnsp-map > li{ opacity:1; transform:none; transition:opacity .7s ease, transform .8s cubic-bezier(.22,1,.36,1); transition-delay:calc(.2s + var(--i) * .14s); }
+    #pn-steps.is-in .pnsp-map > li{ opacity:1; transform:none; transition:opacity .7s ease, transform .8s cubic-bezier(.22,1,.36,1); transition-delay:calc(.2s + var(--i) * .14s); }
   #pn-steps.is-in .pnsp-art .lit{ opacity:1; transition:opacity 1s ease; transition-delay:calc(.7s + var(--i) * .22s); }
   #pn-steps.is-in .pnsp-art .lvl{ animation:pnspLvl 2.4s ease .6s both; }
 }
@@ -116,7 +114,7 @@ v3.0 (homepage v8.2): one band with three chips: Count. Price. Finance.
 
 @media (max-width:899px){
   #pn-steps .pnsp-head{ grid-template-columns:minmax(0,1fr); }
-  #pn-steps ol.pnsp-map{ grid-template-columns:repeat(2,minmax(0,1fr)); }
+  #pn-steps ol.pnsp-map{ grid-template-columns:repeat(3,minmax(0,1fr)); }
 }
 @media (max-width:760px){
   #pn-steps{ padding:24px 0 22px; }
@@ -124,10 +122,16 @@ v3.0 (homepage v8.2): one band with three chips: Count. Price. Finance.
   #pn-steps .pnsp-eb{ font-size:.64rem; letter-spacing:.22em; }
   #pn-steps h2.pnsp-h2{ margin-top:8px; font-size:clamp(2.05rem,10.4vw,2.7rem); }
   #pn-steps .pnsp-lead{ font-size:.96rem; }
-  #pn-steps ol.pnsp-map{ gap:8px; margin-top:14px; }
-  #pn-steps a.pnsp-t{ padding:10px 11px 12px; border-radius:14px; }
+  #pn-steps ol.pnsp-map{ grid-template-columns:minmax(0,1fr); gap:8px; margin-top:14px; }
+  #pn-steps a.pnsp-t{
+    display:grid; grid-template-columns:76px minmax(0,1fr); grid-template-areas:"art top" "art part" "art q";
+    column-gap:12px; align-content:center; padding:10px 12px 11px; border-radius:14px;
+  }
   #pn-steps a.pnsp-t::after{ display:none; }
-  #pn-steps svg.pnsp-art{ height:88px; margin-bottom:6px; }
+  #pn-steps svg.pnsp-art{ grid-area:art; align-self:center; height:76px; margin:0; }
+  #pn-steps .pnsp-top{ grid-area:top; }
+  #pn-steps .pnsp-part{ grid-area:part; }
+  #pn-steps .pnsp-q{ grid-area:q; }
   #pn-steps .pnsp-n{ width:24px; height:24px; font-size:.62rem; }
   #pn-steps .pnsp-top{ gap:7px; }
   #pn-steps .pnsp-verb{ font-size:.64rem; letter-spacing:.2em; }
@@ -146,18 +150,17 @@ v3.0 (homepage v8.2): one band with three chips: Count. Price. Finance.
   <div class="pnsp-in">
     <div class="pnsp-head">
       <div>
-        <p class="pnsp-eb">How it works &middot; the logo, part by part</p>
-        <h2 class="pnsp-h2" id="pnsp-h"><span>Govern.</span> <span>Count.</span> <span>Price.</span> <span>Finance.</span></h2>
+        <p class="pnsp-eb">What we do &middot; the logo, part by part</p>
+        <h2 class="pnsp-h2" id="pnsp-h"><span>Assets.</span> <span>Capital.</span> <span>Solutions.</span></h2>
       </div>
-      <p class="pnsp-lead">Four steps, from good governance to seven basic standards of living for every citizen. <b>Innovative financing for development (FfD)</b> and <b>super intelligence (SI)</b> carry each one, with the nation itself.</p>
+      <p class="pnsp-lead">Three steps, from what a nation owns to seven basic standards of living for every citizen. <b>Innovative financing for development (FfD)</b> and <b>super intelligence (SI)</b> carry each one, with the nation itself.</p>
     </div>
-    <ol class="pnsp-map" aria-label="The four steps, one for each part of the logo">
-      <li style="--i:0"><a class="pnsp-t" href="#pn-govern" aria-label="Step 01, Govern: The cup. Recognizing the best governance: the first step, before any finance."><svg class="pnsp-art pnsp-art--cup" viewBox="12 8 488 496" aria-hidden="true" focusable="false"><g class="dim"><use href="#pnk-cl"/><use href="#pnk-s0"/><use href="#pnk-s1"/><use href="#pnk-s2"/><use href="#pnk-s3"/><use href="#pnk-s4"/><use href="#pnk-s5"/><use href="#pnk-s6"/></g><g class="lit"><use href="#pnk-cl" clip-path="url(#pnk-cc)"/></g></svg><span class="pnsp-top"><span class="pnsp-n">01</span><span class="pnsp-verb">Govern</span></span><span class="pnsp-part">The cup</span><span class="pnsp-q">Recognizing the best governance: the first step, before any finance.</span></a></li>
-      <li style="--i:1"><a class="pnsp-t" href="#pn-assets" aria-label="Step 02, Count: The gold. What a nation owns: its sovereign assets, counted."><svg class="pnsp-art pnsp-art--gold" viewBox="12 8 488 496" aria-hidden="true" focusable="false"><g class="dim"><use href="#pnk-cl"/><use href="#pnk-s0"/><use href="#pnk-s1"/><use href="#pnk-s2"/><use href="#pnk-s3"/><use href="#pnk-s4"/><use href="#pnk-s5"/><use href="#pnk-s6"/></g><clipPath id="pnsp-rise"><rect class="rise" x="0" y="150" width="512" height="400"><animate id="pnsp-riseA" attributeName="y" from="512" to="150" dur="2.4s" begin="indefinite" fill="freeze" calcMode="spline" keyTimes="0;1" keySplines=".45 0 .2 1"/></rect></clipPath><g class="lit" clip-path="url(#pnsp-rise)"><use href="#pnk-cl"/><use href="#pnk-s0"/><use href="#pnk-s1"/><use href="#pnk-s2"/><use href="#pnk-s3"/><use href="#pnk-s4"/><use href="#pnk-s5"/><use href="#pnk-s6"/></g><line class="lvl" x1="96" x2="416" y1="150" y2="150"/></svg><span class="pnsp-top"><span class="pnsp-n">02</span><span class="pnsp-verb">Count</span></span><span class="pnsp-part">The gold</span><span class="pnsp-q">What a nation owns: its sovereign assets, counted.</span></a></li>
-      <li style="--i:2"><a class="pnsp-t" href="#pn-capita" aria-label="Step 03, Price: The seven stars. What every citizen needs: seven standards, Food the crown."><svg class="pnsp-art pnsp-art--stars" viewBox="12 8 488 496" aria-hidden="true" focusable="false"><g class="dim"><use href="#pnk-cl"/><use href="#pnk-s0"/><use href="#pnk-s1"/><use href="#pnk-s2"/><use href="#pnk-s3"/><use href="#pnk-s4"/><use href="#pnk-s5"/><use href="#pnk-s6"/></g><g class="lit"><use href="#pnk-s0"/><use href="#pnk-s1"/><use href="#pnk-s2"/><use href="#pnk-s3"/><use href="#pnk-s4"/><use href="#pnk-s5"/><use href="#pnk-s6"/></g></svg><span class="pnsp-top"><span class="pnsp-n">03</span><span class="pnsp-verb">Price</span></span><span class="pnsp-part">The seven stars</span><span class="pnsp-q">What every citizen needs: seven standards, Food the crown.</span></a></li>
-      <li style="--i:3"><a class="pnsp-t" href="#pn-capital" aria-label="Step 04, Finance: The laurels. Capital from every source, lifting the cup."><svg class="pnsp-art pnsp-art--laurels" viewBox="12 8 488 496" aria-hidden="true" focusable="false"><g class="dim"><use href="#pnk-cl"/><use href="#pnk-s0"/><use href="#pnk-s1"/><use href="#pnk-s2"/><use href="#pnk-s3"/><use href="#pnk-s4"/><use href="#pnk-s5"/><use href="#pnk-s6"/></g><g class="lit"><use href="#pnk-cl" clip-path="url(#pnk-lc)"/></g></svg><span class="pnsp-top"><span class="pnsp-n">04</span><span class="pnsp-verb">Finance</span></span><span class="pnsp-part">The laurels</span><span class="pnsp-q">Capital from every source, lifting the cup.</span></a></li>
+    <ol class="pnsp-map" aria-label="The three steps, one for each part of the logo">
+      <li style="--i:0"><a class="pnsp-t" href="#pn-assets" aria-label="Step 01, Assets: The gold. We value what a nation owns: its sovereign assets, from its people to its coast."><svg class="pnsp-art pnsp-art--gold" viewBox="12 8 488 496" aria-hidden="true" focusable="false"><g class="dim"><use href="#pnk-cl"/><use href="#pnk-s0"/><use href="#pnk-s1"/><use href="#pnk-s2"/><use href="#pnk-s3"/><use href="#pnk-s4"/><use href="#pnk-s5"/><use href="#pnk-s6"/></g><clipPath id="pnsp-rise"><rect class="rise" x="0" y="150" width="512" height="400"><animate id="pnsp-riseA" attributeName="y" from="512" to="150" dur="2.4s" begin="indefinite" fill="freeze" calcMode="spline" keyTimes="0;1" keySplines=".45 0 .2 1"/></rect></clipPath><g class="lit" clip-path="url(#pnsp-rise)"><use href="#pnk-cl"/><use href="#pnk-s0"/><use href="#pnk-s1"/><use href="#pnk-s2"/><use href="#pnk-s3"/><use href="#pnk-s4"/><use href="#pnk-s5"/><use href="#pnk-s6"/></g><line class="lvl" x1="96" x2="416" y1="150" y2="150"/></svg><span class="pnsp-top"><span class="pnsp-n">01</span><span class="pnsp-verb">Assets</span></span><span class="pnsp-part">The gold</span><span class="pnsp-q">We value what a nation owns: its sovereign assets, from its people to its coast.</span></a></li>
+      <li style="--i:1"><a class="pnsp-t" href="#pn-capital" aria-label="Step 02, Capital: The laurels. We design the instruments that raise capital against those assets, from every source."><svg class="pnsp-art pnsp-art--laurels" viewBox="12 8 488 496" aria-hidden="true" focusable="false"><g class="dim"><use href="#pnk-cl"/><use href="#pnk-s0"/><use href="#pnk-s1"/><use href="#pnk-s2"/><use href="#pnk-s3"/><use href="#pnk-s4"/><use href="#pnk-s5"/><use href="#pnk-s6"/></g><g class="lit"><use href="#pnk-cl" clip-path="url(#pnk-lc)"/></g></svg><span class="pnsp-top"><span class="pnsp-n">02</span><span class="pnsp-verb">Capital</span></span><span class="pnsp-part">The laurels</span><span class="pnsp-q">We design the instruments that raise capital against those assets, from every source.</span></a></li>
+      <li style="--i:2"><a class="pnsp-t" href="#pn-capita" aria-label="Step 03, Solutions: The seven stars. Perfect Capita: seven basic standards of living for every citizen, Food the crown."><svg class="pnsp-art pnsp-art--stars" viewBox="12 8 488 496" aria-hidden="true" focusable="false"><g class="dim"><use href="#pnk-cl"/><use href="#pnk-s0"/><use href="#pnk-s1"/><use href="#pnk-s2"/><use href="#pnk-s3"/><use href="#pnk-s4"/><use href="#pnk-s5"/><use href="#pnk-s6"/></g><g class="lit"><use href="#pnk-s0"/><use href="#pnk-s1"/><use href="#pnk-s2"/><use href="#pnk-s3"/><use href="#pnk-s4"/><use href="#pnk-s5"/><use href="#pnk-s6"/></g></svg><span class="pnsp-top"><span class="pnsp-n">03</span><span class="pnsp-verb">Solutions</span></span><span class="pnsp-part">The seven stars</span><span class="pnsp-q">Perfect Capita: seven basic standards of living for every citizen, Food the crown.</span></a></li>
     </ol>
-    <p class="pnsp-all"><svg viewBox="12 8 488 496" aria-hidden="true" focusable="false"><use href="#pnk-cl"/><use href="#pnk-s0"/><use href="#pnk-s1"/><use href="#pnk-s2"/><use href="#pnk-s3"/><use href="#pnk-s4"/><use href="#pnk-s5"/><use href="#pnk-s6"/></svg><span><b>The whole logo, lit:</b> a Perfect Nation, where every citizen has all seven basic standards of living.</span></p>
+    <p class="pnsp-all"><svg viewBox="12 8 488 496" aria-hidden="true" focusable="false"><use href="#pnk-cl"/><use href="#pnk-s0"/><use href="#pnk-s1"/><use href="#pnk-s2"/><use href="#pnk-s3"/><use href="#pnk-s4"/><use href="#pnk-s5"/><use href="#pnk-s6"/></svg><span><b>The cup holds it all:</b> good governance, the foundation of every step. <b>The whole logo, lit:</b> a Perfect Nation, where every citizen has all seven basic standards of living.</span></p>
   </div>
 </section>
 
