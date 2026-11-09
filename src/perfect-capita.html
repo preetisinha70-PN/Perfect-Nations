@@ -1,11 +1,11 @@
 <!-- ===========================================================================
-PERFECT NATIONS - PERFECT CAPITA PAGE - v9.0 EARTHRISE - 2026-11-07
+PERFECT NATIONS - PERFECT CAPITA PAGE - v9.1 EARTHRISE - 2026-11-09
 /perfect-capita/ (page 9937). One Elementor Custom HTML widget, Full Width, padding 0, Hide Title.
 Served live from GitHub (pages/perfect-capita.html) by the Perfect Nations Live Pages plugin; the
 root id stays pn-pcap so the plugin finds the pasted widget. Nothing needs pasting.
 Kept by the Perfect Capita Steward (skill steward-perfect-capita):
   - Page code: edit src/perfect-capita.html, run python3 tools/build_perfect_capita.py (it adds the
-    painted seams and checks the page), and open a pull request "For approval: Perfect Capita vX.Y".
+    gold line's style and checks the page), and open a pull request "For approval: Perfect Capita vX.Y".
   - Figures: figures/perfect-capita.json. The page reads it on every visit and fills every element
     marked data-pc from it, so the world figures, the five nations and Barbados change without a
     pull request. A missing or malformed file leaves the figures written here.
@@ -13,6 +13,7 @@ Words (Steward-General, 1 November 2026): the seven basic living standards; Perf
 yearly cost per person of lifting everyone above the Living Line in all seven; the price of Perfect
 [Nation], Perfect Capita times population; Coverage and the Gap. The Living Line names the threshold
 only. "Guarantee" is a verb only, in the mission line.
+v9.1: Gold line in place of the painted botanical seams (the Steward-General, 9 Nov 2026).
 v9.0 (6 November 2026, the Steward-General: Earthrise first, fewer words, a more compact phone page):
   - One palette, as on the homepage: Earthrise, Lagoon and Depth grounds alternate with ivory reading
     bands; gold only for money and actions; two painted seams carry the colour. The hero is Earthrise.
@@ -28,7 +29,7 @@ v9.0 (6 November 2026, the Steward-General: Earthrise first, fewer words, a more
 EDITORIAL: the Rwanda card cites The New Times (a secondary source quoting RSSB); replace it with an
 RSSB or Ministry of Health release when one is found.
 =========================================================================== -->
-<!--@SEAMS-LIBRARY-->
+<!--@RULE-STYLE-->
 <style>
 #pn-pcap{
   --er:#0B3D45; --lg:#0F4C5C; --dp:#082A30; --iv:#F4ECD8; --iv2:#FBF6EA; --ink:#14262A;
@@ -440,7 +441,7 @@ RSSB or Ministry of Health release when one is found.
     </div>
   </section>
 
-<!--@SEAM:c-->
+<div class="pn-rule" aria-hidden="true"></div>
 
   <section class="pq-band pq-lg" aria-labelledby="pc-five-h">
     <div class="pq-in">
@@ -461,7 +462,7 @@ RSSB or Ministry of Health release when one is found.
     </div>
   </section>
 
-<!--@SEAM:e-->
+<div class="pn-rule" aria-hidden="true"></div>
 
   <section class="pq-band pq-er" id="pq-first" aria-labelledby="pq-first-h">
     <div class="pq-in pq-first__grid">

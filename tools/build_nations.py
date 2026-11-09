@@ -1,7 +1,16 @@
 #!/usr/bin/env python3
 """Build every national blueprint page (pages/blueprint-<slug>.html) from one template.
 
-Blueprint v11.0 (8 November 2026). One design for every nation, so a change is made once and reaches all.
+Blueprint v11.2 (9 November 2026). One design for every nation, so a change is made once and reaches all.
+v11.2 (the Steward-General, 9 Nov 2026): in What we do, the cup is the symbol for Assets; under the three tiles the
+whole logo is a seal as large as the tile symbols, with "The whole logo: a Perfect Nation, where every citizen has
+all seven basic standards of living, led by good governance."; in Work with us, Co-design it with us sits on an
+ivory panel so the section does not look all alike.
+v11.1: What Perfect Nations advises, in place of how FfD and SI solve it (the Steward-General, 9 Nov 2026). Each
+Solution card reads 01 The challenge, 02 What Perfect Nations advises (the field "advises" of the Solution in
+data/state-of-nations.json); the Solution for <Nation> reads 01 The challenge, 02 The deal (the instrument at work
+in the nation, or the deal that proved it, with its source), 03 What Perfect Nations advises (the "advises" of the
+standard in data/solutions-by-nation.json). The Solutions lead and the empty card say the same.
 v11.0: the blueprint follows the new homepage (the Steward-General, 7-8 Nov 2026): Perfect Nations as a
 development bank for the era of super intelligence, whose clients are nations, doing three things in the
 order of the logo: 01 Assets (the gold), 02 Capital (the laurels), 03 Solutions (the seven stars, Perfect
@@ -58,7 +67,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 PAGES, DATA, HERE = ROOT / 'pages', ROOT / 'data', ROOT / 'tools' / 'nation'
-VERSION = '11.0'
+VERSION = '11.2'
 EARTH = {'lg': 'https://perfectnations.org/wp-content/uploads/2026/10/pn-globe-earth-day-1536x768.jpg',
          'sm': 'https://perfectnations.org/wp-content/uploads/2026/10/pn-globe-earth-day-1024x512.jpg'}
 ORDER = ['Food', 'Water', 'Shelter', 'Energy', 'Education', 'Health', 'Livelihoods']
@@ -197,9 +206,8 @@ def _stars(cls=''):
 
 DIM = '<g class="dim"><use href="#pnk-cl"/>%s</g>' % _stars()
 ART = {
-    'gold': '<svg class="bpx-art bpx-art--gold" viewBox="12 8 488 496" aria-hidden="true" focusable="false"><g class="lit">'
-            '<circle cx="256" cy="258" r="218"/><circle class="ring" cx="256" cy="258" r="196"/>'
-            '<path class="sheen" d="M118 150 A 185 185 0 0 1 340 98"/></g></svg>',
+    'cup': '<svg class="bpx-art bpx-art--cup" viewBox="12 8 488 496" aria-hidden="true" focusable="false">%s'
+           '<g class="lit"><use href="#pnk-cl" clip-path="url(#pnk-cc)"/></g></svg>' % DIM,
     'wreath': '<svg class="bpx-art bpx-art--wreath" viewBox="12 8 488 496" aria-hidden="true" focusable="false">%s'
               '<g class="lit"><use href="#pnk-cl" clip-path="url(#pnk-lc)"/></g></svg>' % DIM,
     'stars': '<svg class="bpx-art bpx-art--stars" viewBox="12 8 488 496" aria-hidden="true" focusable="false">%s'
@@ -358,7 +366,7 @@ def what_we_do(d):
         q2 = 'The instruments that raise capital against those assets, from every source.'
     q3 = 'Perfect Capita: seven basic standards of living for every citizen, star by star.%s' % (
         (' %s is furthest from reach today.' % lab(bind)) if bind else '')
-    tiles = [('01', 'Assets', 'The gold', '#bp-assets', ART['gold'], q1),
+    tiles = [('01', 'Assets', 'The cup', '#bp-assets', ART['cup'], q1),
              ('02', 'Capital', 'The laurels', '#bp-capital', ART['wreath'], q2),
              ('03', 'Solutions', 'The seven stars', '#bp-pc', ART['stars'], q3)]
     lis = ''.join(
@@ -372,9 +380,9 @@ def what_we_do(d):
         '<p class="bpx-lead">Perfect Nations is a development bank for the era of super intelligence, and its clients are nations. '
         'For %s, three steps, one for each part of the logo.</p></div>'
         '<ol class="bpx-map" aria-label="The three steps for %s, one for each part of the logo">%s</ol>'
-        '<p class="bpx-all">%s<span><b>The cup holds it all:</b> good governance, the foundation of every step. '
-        '<b>The whole logo, lit:</b> Perfect %s, where every citizen has all seven basic standards of living.</span></p>'
-        '</div></section>' % (ent(name), ent(name), ent(name), lis, SEAL, ent(name)))
+        '<div class="bpx-all">%s<p><b>The whole logo:</b> a Perfect Nation, where every citizen has all seven basic standards '
+        'of living, led by good governance.</p></div>'
+        '</div></section>' % (ent(name), ent(name), ent(name), lis, SEAL))
 
 
 def assets(d):
@@ -399,7 +407,7 @@ def assets(d):
         '<ul class="bpx-acards" data-n="%d">%s</ul>'
         '<div class="bpx-foot"><p>Every figure is listed with its source in the <a href="#bp-sources">Sources</a> at the foot of the page.</p>'
         '<a class="bpx-link" href="https://perfectnations.org/sovereign-assets/" target="_blank" rel="noopener noreferrer">The Sovereign Assets ledger</a></div>'
-        '</div></section>' % (step_eb('01', 'Assets', 'The gold', 'Sovereign Assets'),
+        '</div></section>' % (step_eb('01', 'Assets', 'The cup', 'Sovereign Assets'),
                               ent(a.get('heading') or 'Five assets no balance sheet counts.'), ent(name), len(cards), ''.join(cards)))
 
 
@@ -501,10 +509,10 @@ def solution_card(x, sig_name, sig_role):
     no = int(x.get('no') or 0)
     href = x['url'] if re.match(r'^https://', plain(x.get('url'))) else 'https://perfectnations.org/state-of-nations/#solution-%02d' % no
     body = ''
-    if x.get('challenge') and x.get('ffd') and x.get('si'):
+    if x.get('challenge') and x.get('advises'):
         body = '<ul class="bpx-sol__how">%s</ul>' % ''.join(
             '<li><b>%s</b><strong>%s</strong><span>%s</span></li>' % (n, t, ent(w))
-            for n, t, w in (('01', 'The challenge', x['challenge']), ('02', 'How FfD solves it', x['ffd']), ('03', 'How SI solves it', x['si'])))
+            for n, t, w in (('01', 'The challenge', x['challenge']), ('02', 'What Perfect Nations advises', x['advises'])))
     elif x.get('standfirst') or x.get('summary'):
         body = '<p>%s</p>' % ent(x.get('standfirst') or x.get('summary'))
     fig = ''
@@ -524,23 +532,25 @@ def solution_brief(name, sbn, slug):
     if not me:
         return ''
     play = next((s for s in sbn.get('standards', []) if s.get('standard') == me.get('standard')), None)
-    if not play:
+    if not play or not play.get('advises'):
         return ''
     src = me.get('source') or {}
     ch = ent(((me.get('gap') + ' ') if me.get('gap') else '') + plain(me.get('gap_text')))
     if src.get('url'):
         ch += ' <a href="%s" target="_blank" rel="noopener noreferrer">%s</a>' % (ent(https(src['url'])), ent(src.get('label') or 'Source'))
-    ffd = ent('%s: %s' % (play['name'], play['ffd']))
+    # 02 The deal: the instrument already at work in the nation, or else the deal that proved the playbook
+    deal = ''
     aw = me.get('at_work')
     if aw and aw.get('name') and aw.get('url'):
-        ffd += ent(' At work in %s: %s%s.' % (name, aw['name'], (', ' + aw['amount']) if aw.get('amount') else ''))
-        ffd += ' <a href="%s" target="_blank" rel="noopener noreferrer">Source</a>' % ent(https(aw['url']))
+        deal = ent('At work in %s: %s%s.' % (name, aw['name'], (', ' + aw['amount']) if aw.get('amount') else ''))
+        deal += ' <a href="%s" target="_blank" rel="noopener noreferrer">Source</a>' % ent(https(aw['url']))
     elif play.get('proof') and play['proof'].get('url'):
         pr = play['proof']
-        ffd += ent(' Proved in %s, %s: %s %s.' % (pr['where'], pr['year'], pr['figure'], pr['label']))
-        ffd += ' <a href="%s" target="_blank" rel="noopener noreferrer">%s</a>' % (ent(https(pr['url'])), ent(pr.get('source') or 'Source'))
-    rows = ''.join('<li><b>%s</b><strong>%s</strong><span>%s</span></li>' % r for r in (
-        ('01', 'The challenge', ch), ('02', 'How FfD solves it', ffd), ('03', 'How SI solves it', ent(play['si']))))
+        deal = ent('%s, proved in %s, %s: %s %s.' % (play['name'], pr['where'], pr['year'], pr['figure'], pr['label']))
+        deal += ' <a href="%s" target="_blank" rel="noopener noreferrer">%s</a>' % (ent(https(pr['url'])), ent(pr.get('source') or 'Source'))
+    steps = [('01', 'The challenge', ch)] + ([('02', 'The deal', deal)] if deal else [])
+    steps.append(('%02d' % (len(steps) + 1), 'What Perfect Nations advises', ent(play['advises'])))
+    rows = ''.join('<li><b>%s</b><strong>%s</strong><span>%s</span></li>' % r for r in steps)
     return (
         '<li class="bpx-sol bpx-sol--brief"><p class="bpx-sol__k"><b>The Solution for %s</b><span>%s</span></p>'
         '<h3>%s</h3><ul class="bpx-sol__how">%s</ul>'
@@ -579,8 +589,7 @@ def solution_cards(d, p, sbn, son):
     more = ('<button type="button" class="bpx-showall bpx-solmore" aria-expanded="false">Show all %d Solutions</button>' % len(cards)) if len(cards) > 3 else ''
     if not cards:
         cards = ['<li class="bpx-sol"><p class="bpx-sol__k"><b>Solutions</b></p><h3>The first Solution for %s is in preparation.</h3>'
-                 '<p>Every Solution answers three things: the challenge to the seven standards, how innovative financing for development (FfD) '
-                 'solves it, and how super intelligence (SI) solves it.</p></li>' % ent(name)]
+                 '<p>Every Solution names the challenge to the seven standards, the deal that meets it and what Perfect Nations advises.</p></li>' % ent(name)]
     return ''.join(cards), more
 
 
@@ -634,7 +643,7 @@ def solutions(d, p, sbn, son):
         '</div></div>'
         '<div class="bpx-solx" id="bp-solutions"><span id="bp-dispatches"></span>'
         '<div class="bpx-sols-top"><div><h3 class="bpx-h3" id="bp-sol-h">Solutions for Perfect %s</h3>'
-        '<p>How innovative financing for development (FfD) and super intelligence (SI) close the gap, standard by standard.</p></div>'
+        '<p>Standard by standard: the challenge, the deal and what Perfect Nations advises.</p></div>'
         '<div class="bpx-sols-go">%s<a class="bpx-link" href="https://perfectnations.org/state-of-nations/#sn-solutions" target="_blank" rel="noopener noreferrer">All Solutions</a></div></div>'
         '<p class="bpx-swipe" aria-hidden="true">Swipe for every Solution</p><ul class="bpx-sols bpx-rail" id="bp-sols">%s</ul></div>'
         '</div></section>'
@@ -796,6 +805,9 @@ def build(slug, sbn, son, today):
     script = (HERE / 'script.js').read_text(encoding='utf-8').replace('/*pn:cfg*/', 'var CFG = %s;' % js_str(cfg))
     head = (
         '<!-- PERFECT NATIONS . NATIONAL BLUEPRINT . %s . v%s . %s . Built by tools/build_nations.py: never edit by hand. -->\n'
+        '<!-- v11.2 (9 November 2026): the cup for Assets; the whole logo as a large seal, led by good governance; Co-design on ivory. -->\n'
+        '<!-- v11.1 (9 November 2026): What Perfect Nations advises, in place of how FfD and SI solve it (the Steward-General, 9 Nov 2026)\n'
+        '     Each Solution reads The challenge, then What Perfect Nations advises. -->\n'
         '<!-- v11.0 (8 November 2026): the blueprint follows the new homepage. Perfect Nations as a development bank for\n'
         '     the era of super intelligence, whose clients are nations: the hero says what it does for this nation\n'
         '     (FfD before SI) with the nation at a glance in sourced figures; What we do for the nation (Assets. Capital.\n'

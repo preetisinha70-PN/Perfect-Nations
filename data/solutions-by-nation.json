@@ -1,6 +1,6 @@
 {
  "page": "solutions-by-nation",
- "updated": "2026-11-07",
+ "updated": "2026-11-09",
  "about": "Built by tools/build_state_of_nations.py from data/<nation>.json (coverage, guarantees, capital.register) and data/capital-architecture.json. Read by perfectnations.org/state-of-nations/ on every visit. Adds no fact: change a figure in its nation file, then rebuild.",
  "standards": [
   {
@@ -16,6 +16,7 @@
     "url": "https://www.afdb.org/en/news-and-events/press-releases/african-development-bank-group-and-african-risk-capacity-group-issue-112-million-insurance-payout-government-malawi-73593"
    },
    "si": "SI reads rainfall, harvests and food prices district by district, sets the trigger and prices the cover before the season begins.",
+   "advises": "Nations where food is furthest from reach should buy drought insurance that pays on measured rainfall, so that food reaches families within weeks of a failed season, with the trigger and the price of the cover set district by district before the season begins.",
    "first": "sovereign drought insurance",
    "standard": "Food"
   },
@@ -24,6 +25,7 @@
    "name": "Debt-for-climate-resilience swap",
    "ffd": "Guarantees replace costly debt with cheaper debt, and the savings are committed to water and sewerage.",
    "si": "SI maps every household without safe water at home, prices each connection, and follows the savings into every main and treatment plant.",
+   "advises": "Nations where water is furthest from reach should swap costly debt for cheaper, guaranteed debt and commit the savings to water and sewerage, then follow the savings into every household connection, main and treatment plant.",
    "first": "a debt-for-resilience swap bound to water",
    "proof": {
     "where": "Barbados",
@@ -40,6 +42,7 @@
    "name": "Social bond",
    "ffd": "The proceeds can be spent only on eligible homes, toilets and sewers, reported to investors every year.",
    "si": "SI finds the homes without a safe toilet, groups them into programmes investors can finance, and reports each unit delivered.",
+   "advises": "Nations where shelter is furthest from reach should issue a social bond whose proceeds can be spent only on eligible homes, toilets and sewers, and report each unit delivered to investors every year.",
    "first": "a social bond for homes and sanitation",
    "proof": {
     "where": "Ecuador",
@@ -56,6 +59,7 @@
    "name": "Sovereign green bond",
    "ffd": "Bond money ring-fenced for clean energy under a published framework, with every allocation reported to investors.",
    "si": "SI counts the households still cooking with wood, charcoal or kerosene, prices the switch per home, and tracks every project the bond pays for.",
+   "advises": "Nations where energy is furthest from reach should issue a sovereign green bond ring-fenced for clean power and clean cooking, price the switch for every household still cooking with wood, charcoal or kerosene, and report every project the bond pays for.",
    "first": "a sovereign green bond for clean power and cooking",
    "proof": {
     "where": "India",
@@ -72,6 +76,7 @@
    "name": "Program-for-Results",
    "ffd": "Each tranche of the loan is released only when pupils reach an agreed learning level, verified independently.",
    "si": "SI tracks reading levels school by school, sets the targets that release each tranche, and flags the schools falling behind.",
+   "advises": "Nations where education is furthest from reach should borrow on a Program-for-Results basis, releasing each tranche only when pupils reach an agreed learning level, verified independently, and track reading levels school by school.",
    "first": "a Program-for-Results paid on learning",
    "proof": {
     "where": "Tanzania",
@@ -96,6 +101,7 @@
     "url": "https://www.iadb.org/en/project/BA-U0003"
    },
    "si": "SI prices the essential services each citizen lacks, finds the costly debt to refinance, and follows every saving into clinics and care.",
+   "advises": "Nations where health is furthest from reach should refinance costly debt behind a development bank guarantee and bind the savings to the health system before they can be spent elsewhere, then follow every saving into clinics and care.",
    "first": "a debt-for-health guarantee",
    "standard": "Health"
   },
@@ -104,6 +110,7 @@
    "name": "Small-business credit guarantee",
    "ffd": "A facility guarantees most of each small-business loan, so local banks lend to firms they would otherwise turn away.",
    "si": "SI matches enterprises to lenders, prices the risk the guarantee must carry, and counts the jobs each loan creates.",
+   "advises": "Nations where livelihoods are furthest from reach should set up a facility that guarantees most of each small-business loan, so that local banks lend to the firms they would otherwise turn away, and count the jobs each loan creates.",
    "first": "a small-business credit guarantee",
    "proof": {
     "where": "Barbados",
@@ -652,11 +659,11 @@
     ]
    ],
    "at_work": {
-    "name": "Accelerating Sustainable and Clean Energy Access Transformation (ASCENT Burundi)",
-    "amount": "$100M",
+    "name": "MIGA guarantee for Weza Power",
+    "amount": "$10.9M",
     "money": true,
     "status": "Active",
-    "url": "https://projects.worldbank.org/en/projects-operations/project-detail/P181494"
+    "url": "https://www.miga.org/press-release/miga-guarantee-support-rural-electrification-burundi"
    },
    "solutions": []
   },
@@ -729,7 +736,13 @@
      "https://data.worldbank.org/indicator/SI.POV.UMIC?locations=CO"
     ]
    ],
-   "at_work": null,
+   "at_work": {
+    "name": "Habi structured line of credit",
+    "amount": "$50M",
+    "money": true,
+    "status": "Announced",
+    "url": "https://idbinvest.org/en/news-media/idb-invest-and-habi-drive-housing-access-colombia"
+   },
    "solutions": []
   },
   {
@@ -1029,7 +1042,13 @@
      "https://data.worldbank.org/indicator/SI.POV.NAHC?locations=EG"
     ]
    ],
-   "at_work": null,
+   "at_work": {
+    "name": "Social Eurobond, 8 years",
+    "amount": "$1B",
+    "money": true,
+    "status": "Priced",
+    "url": "https://www.imf.org/-/media/files/publications/cr/2026/english/1egyea2026002.pdf"
+   },
    "solutions": []
   },
   {
@@ -1103,7 +1122,7 @@
    ],
    "at_work": {
     "name": "Water Supply and Sanitation Access Project",
-    "amount": "$45M",
+    "amount": "$53M",
     "money": true,
     "status": "Active",
     "url": "https://projects.worldbank.org/en/projects-operations/project-detail/P166697"
@@ -1180,11 +1199,11 @@
     ]
    ],
    "at_work": {
-    "name": "Clean energy access (ASCENT Ethiopia)",
-    "amount": "$424M",
+    "name": "Aysha Wind Power Project, 300 MW",
+    "amount": "$110M",
     "money": true,
-    "status": "Active",
-    "url": "https://www.worldbank.org/en/news/press-release/2025/08/04/new-world-bank-program-to-expand-electricity-access-to-six-million-people-across-ethiopia"
+    "status": "Approved",
+    "url": "https://allafrica.com/stories/202607170471.html"
    },
    "solutions": [
     6
@@ -1259,7 +1278,13 @@
      "https://data.worldbank.org/indicator/SI.POV.UMIC?locations=FJ"
     ]
    ],
-   "at_work": null,
+   "at_work": {
+    "name": "BRED Bank Fiji, risk-sharing facility for small businesses",
+    "amount": "FJD 13.5M",
+    "money": true,
+    "status": "Signed",
+    "url": "https://www.ifc.org/en/pressroom/2026/ifc-and-bred-bank-fiji-partner-to-support-sme-growth-and-jobs-in-fiji"
+   },
    "solutions": []
   },
   {
@@ -1405,7 +1430,13 @@
      "https://data.worldbank.org/indicator/SI.POV.LMIC?locations=IN"
     ]
    ],
-   "at_work": null,
+   "at_work": {
+    "name": "Assam: School Education and Adolescent Wellbeing Project",
+    "amount": "$250M",
+    "money": true,
+    "status": "Approved",
+    "url": "https://www.worldbank.org/en/news/press-release/2026/01/13/india-world-bank-approves-three-projects-assam-state-to-increase-access-to-markets-jobs-and-services"
+   },
    "solutions": []
   },
   {
@@ -1549,7 +1580,13 @@
      "https://data.worldbank.org/indicator/SI.POV.UMIC?locations=JM"
     ]
    ],
-   "at_work": null,
+   "at_work": {
+    "name": "Southern Plains Agricultural Development Project, additional financing",
+    "amount": "$12M",
+    "money": true,
+    "status": "Approved",
+    "url": "https://www.caribank.org/node/11930"
+   },
    "solutions": []
   },
   {
@@ -1694,11 +1731,11 @@
     ]
    ],
    "at_work": {
-    "name": "Secondary Education Equity and Quality Improvement Program",
-    "amount": "$540M",
+    "name": "Support to Higher Education, Science and Technology Project, Phase II (HEST II)",
+    "amount": "$73.31M",
     "money": true,
-    "status": "Active",
-    "url": "https://projects.worldbank.org/en/projects-operations/project-detail/P501648"
+    "status": "Approved",
+    "url": "https://allafrica.com/stories/202510240473.html"
    },
    "solutions": [
     3
@@ -1778,7 +1815,7 @@
     "amount": "$20M",
     "money": true,
     "status": "Active",
-    "url": "https://projects.worldbank.org/en/projects-operations/project-detail/P500587"
+    "url": "https://www.worldbank.org/en/news/press-release/2024/07/01/world-bank-boosts-its-support-to-the-afe-education-sector-in-lesotho"
    },
    "solutions": []
   },
@@ -1852,11 +1889,11 @@
     ]
    ],
    "at_work": {
-    "name": "Digital and Energy Connectivity for Inclusion in Madagascar",
-    "amount": "$400M",
+    "name": "Accelerating Sustainable and Clean Energy Access Transformation (ASCENT Madagascar)",
+    "amount": "$250M",
     "money": true,
-    "status": "Active",
-    "url": "https://projects.worldbank.org/en/projects-operations/project-detail/P178701"
+    "status": "Approved",
+    "url": "https://www.worldbank.org/en/news/press-release/2026/05/06/madagascar-new-world-bank-program-set-to-provide-reliable-and-affordable-energy-to-over-2-5-million-people-by-2030"
    },
    "solutions": []
   },
@@ -2007,7 +2044,13 @@
      "https://data.worldbank.org/indicator/SI.POV.NAHC?locations=MX"
     ]
    ],
-   "at_work": null,
+   "at_work": {
+    "name": "BEEL Sustainable Credit II fund",
+    "amount": "$30M",
+    "money": true,
+    "status": "Announced",
+    "url": "https://www.ifc.org/en/pressroom/2025/ifc-announces-us-30-million-investment-in-fund-managed-by-beel-infrastructure-part"
+   },
    "solutions": []
   },
   {
@@ -2079,7 +2122,13 @@
      "https://data.worldbank.org/indicator/SI.POV.LMIC?locations=MA"
     ]
    ],
-   "at_work": null,
+   "at_work": {
+    "name": "Support to Strengthening of Social Safety Nets for Human Development",
+    "amount": "$250M",
+    "money": true,
+    "status": "Approved",
+    "url": "https://www.worldbank.org/en/news/press-release/2025/06/19/world-bank-supports-morocco-s-commitment-to-advancing-social-safety-nets-for-human-development"
+   },
    "solutions": []
   },
   {
@@ -2152,11 +2201,11 @@
     ]
    ],
    "at_work": {
-    "name": "Sustainable Energy and Broadband Access in Rural Mozambique",
-    "amount": "$343M",
+    "name": "Accelerating Sustainable and Clean Energy Access Transformation (ASCENT)",
+    "amount": "$100M",
     "money": true,
-    "status": "Active",
-    "url": "https://projects.worldbank.org/en/projects-operations/project-detail/P175295"
+    "status": "Approved",
+    "url": "https://www.worldbank.org/en/news/press-release/2025/03/21/mozambique-afe-new-energy-project-to-bring-electricity-access-to-nearly-one-million-people"
    },
    "solutions": []
   },

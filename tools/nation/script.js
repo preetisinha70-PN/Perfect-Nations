@@ -1,5 +1,8 @@
 (function () {
-  /* Blueprint v11.0: the page follows its Nation Steward and the State of Nations.
+  /* Blueprint v11.1: the page follows its Nation Steward and the State of Nations.
+     v11.1: What Perfect Nations advises, in place of how FfD and SI solve it (the Steward-General, 9 Nov 2026):
+       a Solution reads 01 The challenge, 02 What Perfect Nations advises; the Solution for the nation reads
+       01 The challenge, 02 The deal, 03 What Perfect Nations advises (as tools/build_nations.py writes them).
      - On load it reads data/<nation>.json (raw.githubusercontent.com, then jsDelivr) for the nation line and
        the figures at a glance, the seven stars, the register, the record, the assets, the enterprises and
        the Newswire.
@@ -330,9 +333,9 @@
     var tm = el('time', '', x.label || shortDate(x.date) || ''); tm.setAttribute('datetime', x.date || ''); k.appendChild(tm); li.appendChild(k);
     var h = el('h3'), href = okUrl(x.url) ? x.url : 'https://perfectnations.org/state-of-nations/#solution-' + pad(x.no || 0);
     h.appendChild(link(el('a', '', x.title), href)); li.appendChild(h);
-    if (T(x.challenge) && T(x.ffd) && T(x.si)) {
+    if (T(x.challenge) && T(x.advises)) {
       var how = el('ul', 'bpx-sol__how');
-      [['01', 'The challenge', x.challenge], ['02', 'How FfD solves it', x.ffd], ['03', 'How SI solves it', x.si]].forEach(function (r) {
+      [['01', 'The challenge', x.challenge], ['02', 'What Perfect Nations advises', x.advises]].forEach(function (r) {
         var it = el('li'); it.appendChild(el('b', '', r[0])); it.appendChild(el('strong', '', r[1])); it.appendChild(el('span', '', r[2])); how.appendChild(it);
       });
       li.appendChild(how);
@@ -347,7 +350,7 @@
     var me = null; (sbn.nations || []).forEach(function (n) { if (n && n.slug === CFG.slug) me = n; });
     if (!me) return null;
     var play = null; (sbn.standards || []).forEach(function (s) { if (s && s.standard === me.standard) play = s; });
-    if (!play || !T(play.ffd) || !T(play.si)) return null;
+    if (!play || !T(play.advises)) return null;
     var li = el('li', 'bpx-sol bpx-sol--brief');
     var k = el('p', 'bpx-sol__k'); k.appendChild(el('b', '', 'The Solution for ' + CFG.name)); k.appendChild(el('span', '', me.standard)); li.appendChild(k);
     li.appendChild(el('h3', '', play.head || ('Close the gap in ' + me.standard.toLowerCase() + '.')));
@@ -355,11 +358,12 @@
     function rowx(no, t, words, a) { var it = el('li'); it.appendChild(el('b', '', no)); it.appendChild(el('strong', '', t)); var sp = el('span', '', words); if (a) { sp.appendChild(document.createTextNode(' ')); sp.appendChild(a); } it.appendChild(sp); how.appendChild(it); }
     var src = me.source && okUrl(me.source.url) ? link(el('a', '', me.source.label || 'Source'), me.source.url) : null;
     rowx('01', 'The challenge', (me.gap ? me.gap + ' ' : '') + T(me.gap_text), src);
-    var w = T(play.name) + ': ' + play.ffd, wa = null;
-    if (me.at_work && T(me.at_work.name) && okUrl(me.at_work.url)) { w += ' At work in ' + CFG.name + ': ' + me.at_work.name + (me.at_work.amount ? ', ' + me.at_work.amount : '') + '.'; wa = link(el('a', '', 'Source'), me.at_work.url); }
-    else if (play.proof && okUrl(play.proof.url)) { w += ' Proved in ' + play.proof.where + ', ' + play.proof.year + ': ' + play.proof.figure + ' ' + play.proof.label + '.'; wa = link(el('a', '', play.proof.source || 'Source'), play.proof.url); }
-    rowx('02', 'How FfD solves it', w, wa);
-    rowx('03', 'How SI solves it', play.si, null);
+    /* 02 The deal: the instrument already at work in the nation, or else the deal that proved the playbook */
+    var w = '', wa = null;
+    if (me.at_work && T(me.at_work.name) && okUrl(me.at_work.url)) { w = 'At work in ' + CFG.name + ': ' + me.at_work.name + (me.at_work.amount ? ', ' + me.at_work.amount : '') + '.'; wa = link(el('a', '', 'Source'), me.at_work.url); }
+    else if (play.proof && okUrl(play.proof.url)) { w = T(play.name) + ', proved in ' + play.proof.where + ', ' + play.proof.year + ': ' + play.proof.figure + ' ' + play.proof.label + '.'; wa = link(el('a', '', play.proof.source || 'Source'), play.proof.url); }
+    if (w) rowx('02', 'The deal', w, wa);
+    rowx(w ? '03' : '02', 'What Perfect Nations advises', play.advises, null);
     li.appendChild(how);
     var foot = el('div', 'bpx-sol__foot'), sig = el('span', 'bpx-sig', 'Co-design it in');
     sig.appendChild(el('b', '', 'The ReDesign Studio')); foot.appendChild(sig);

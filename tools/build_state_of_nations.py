@@ -3,6 +3,10 @@
 
 The page is about Solutions: how innovative financing for development (FfD) and super intelligence
 (SI) close the gap to the seven basic standards of living, nation by nation.
+v7.2: What Perfect Nations advises, in place of how FfD and SI solve it (the Steward-General, 9 Nov 2026).
+  Each Solution reads as a bank's advice to a client: the challenge, then what Perfect Nations advises
+  (the field "advises" in data/state-of-nations.json and in each standard of the playbook below). The
+  steps of a Solution are 01 The challenge, 02 The deal, 03 What Perfect Nations advises.
 
     python3 tools/build_state_of_nations.py           build pages/state-of-nations.html and the data
     python3 tools/build_state_of_nations.py --data    rebuild data/solutions-by-nation.json only
@@ -14,7 +18,8 @@ Sources (never edited here):
                                    kept by the Nation Stewards
   data/blueprints.json             the index of open blueprints (names, urls)
   data/capital-architecture.json   the instrument library whose deals prove the playbook
-  pages/home-seams.html            the painted seams, shared with the homepage
+  pages/home-rule.html             the gold line between sections, shared with the homepage (in place
+                                   of the painted botanical seams since v7.2, 9 Nov 2026)
 
 Writes:
   data/solutions-by-nation.json    the page reads it on every visit; it mirrors the nation files and
@@ -40,7 +45,7 @@ OUT = PAGES / 'state-of-nations.html'
 NATION_DATA = DATA / 'solutions-by-nation.json'
 sys.path.insert(0, str(ROOT / 'tools'))
 
-VERSION = '7.1'
+VERSION = '7.2'
 ORDER = ['Food', 'Water', 'Shelter', 'Energy', 'Education', 'Health', 'Livelihood']
 MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September',
           'October', 'November', 'December']
@@ -48,9 +53,12 @@ WIRE_STATIC = 12     # wire items written into the page (the live file replaces 
 SITE = 'https://perfectnations.org'
 
 # ---------------------------------------------------------------------------------------------
-# THE PLAYBOOK: for each standard, the FfD instrument that closes the gap, the deal that proved it,
-# and what SI does. "lib" names an instrument in data/capital-architecture.json, whose figure, place,
-# year and source are used unchanged. Food and Health carry their own primary source.
+# THE PLAYBOOK: for each standard, the instrument that closes the gap, the deal that proved it, and
+# what Perfect Nations advises ("advises", written from "ffd" and "si" and adding no fact; it opens with
+# the nations it addresses, as the label above it already names Perfect Nations; the page and the
+# blueprints show "advises", and keep "ffd" and "si" in the data only). "lib" names an instrument in
+# data/capital-architecture.json, whose figure, place, year and source are used unchanged. Food and
+# Health carry their own primary source.
 # Changing a line here is a page change: raise VERSION and open a pull request.
 # ---------------------------------------------------------------------------------------------
 PLAYBOOK = {
@@ -63,6 +71,7 @@ PLAYBOOK = {
                   'source': 'African Development Bank, August 2024',
                   'url': 'https://www.afdb.org/en/news-and-events/press-releases/african-development-bank-group-and-african-risk-capacity-group-issue-112-million-insurance-payout-government-malawi-73593'},
         'si': 'SI reads rainfall, harvests and food prices district by district, sets the trigger and prices the cover before the season begins.',
+        'advises': 'Nations where food is furthest from reach should buy drought insurance that pays on measured rainfall, so that food reaches families within weeks of a failed season, with the trigger and the price of the cover set district by district before the season begins.',
         'first': 'sovereign drought insurance',
     },
     'Water': {
@@ -71,6 +80,7 @@ PLAYBOOK = {
         'ffd': 'Guarantees replace costly debt with cheaper debt, and the savings are committed to water and sewerage.',
         'lib': 'debt-for-climate',
         'si': 'SI maps every household without safe water at home, prices each connection, and follows the savings into every main and treatment plant.',
+        'advises': 'Nations where water is furthest from reach should swap costly debt for cheaper, guaranteed debt and commit the savings to water and sewerage, then follow the savings into every household connection, main and treatment plant.',
         'first': 'a debt-for-resilience swap bound to water',
     },
     'Shelter': {
@@ -79,6 +89,7 @@ PLAYBOOK = {
         'ffd': 'The proceeds can be spent only on eligible homes, toilets and sewers, reported to investors every year.',
         'lib': 'social-bond',
         'si': 'SI finds the homes without a safe toilet, groups them into programmes investors can finance, and reports each unit delivered.',
+        'advises': 'Nations where shelter is furthest from reach should issue a social bond whose proceeds can be spent only on eligible homes, toilets and sewers, and report each unit delivered to investors every year.',
         'first': 'a social bond for homes and sanitation',
     },
     'Energy': {
@@ -87,6 +98,7 @@ PLAYBOOK = {
         'ffd': 'Bond money ring-fenced for clean energy under a published framework, with every allocation reported to investors.',
         'lib': 'green-bond',
         'si': 'SI counts the households still cooking with wood, charcoal or kerosene, prices the switch per home, and tracks every project the bond pays for.',
+        'advises': 'Nations where energy is furthest from reach should issue a sovereign green bond ring-fenced for clean power and clean cooking, price the switch for every household still cooking with wood, charcoal or kerosene, and report every project the bond pays for.',
         'first': 'a sovereign green bond for clean power and cooking',
     },
     'Education': {
@@ -95,6 +107,7 @@ PLAYBOOK = {
         'ffd': 'Each tranche of the loan is released only when pupils reach an agreed learning level, verified independently.',
         'lib': 'program-for-results',
         'si': 'SI tracks reading levels school by school, sets the targets that release each tranche, and flags the schools falling behind.',
+        'advises': 'Nations where education is furthest from reach should borrow on a Program-for-Results basis, releasing each tranche only when pupils reach an agreed learning level, verified independently, and track reading levels school by school.',
         'first': 'a Program-for-Results paid on learning',
     },
     'Health': {
@@ -106,6 +119,7 @@ PLAYBOOK = {
                   'source': 'Inter-American Development Bank, project BA-U0003',
                   'url': 'https://www.iadb.org/en/project/BA-U0003'},
         'si': 'SI prices the essential services each citizen lacks, finds the costly debt to refinance, and follows every saving into clinics and care.',
+        'advises': 'Nations where health is furthest from reach should refinance costly debt behind a development bank guarantee and bind the savings to the health system before they can be spent elsewhere, then follow every saving into clinics and care.',
         'first': 'a debt-for-health guarantee',
     },
     'Livelihood': {
@@ -114,6 +128,7 @@ PLAYBOOK = {
         'ffd': 'A facility guarantees most of each small-business loan, so local banks lend to firms they would otherwise turn away.',
         'lib': 'sme-credit-guarantee',
         'si': 'SI matches enterprises to lenders, prices the risk the guarantee must carry, and counts the jobs each loan creates.',
+        'advises': 'Nations where livelihoods are furthest from reach should set up a facility that guarantees most of each small-business loan, so that local banks lend to the firms they would otherwise turn away, and count the jobs each loan creates.',
         'first': 'a small-business credit guarantee',
     },
 }
@@ -274,12 +289,12 @@ def solution_card(s):
             no, a(s.get('nation', '')), a(s['date']), a(short_date(s['date']))),
         '<h3>%s</h3>' % title,
         std_chips(s.get('standards', [])),
-        '<dl class="sn-c__x">',
-        '<div><dt>The challenge</dt><dd>%s</dd></div>' % a(s.get('challenge', '')),
-        '<div><dt>FfD</dt><dd>%s</dd></div>' % a(s.get('ffd', '')),
-        '<div><dt>SI</dt><dd>%s</dd></div>' % a(s.get('si', '')),
-        '</dl>',
     ]
+    rows = [(t, s.get(k)) for t, k in (('The challenge', 'challenge'), ('What Perfect Nations advises', 'advises')) if s.get(k)]
+    if rows:
+        parts.append('<dl class="sn-c__x">%s</dl>' % ''.join('<div><dt>%s</dt><dd>%s</dd></div>' % (t, a(w)) for t, w in rows))
+    elif s.get('standfirst'):
+        parts.append('<p class="sn-c__x">%s</p>' % a(s['standfirst']))
     if s.get('figure'):
         parts.append('<p class="sn-c__f"><b>%s</b><span>%s</span></p>' % (a(s['figure']), a(s.get('caption', ''))))
     parts.append('<span class="sn-c__go">%s</span></li>' % ('Read the solution' if readable else 'In press'))
@@ -346,8 +361,8 @@ def finder(nat):
             '<div class="sn-p" id="sn-p-%s" role="tabpanel" aria-labelledby="sn-t-%s" data-std="%s"%s>' % (k, k, a(s), '' if on else ' hidden'),
             '<div class="sn-pb">',
             '<div class="sn-pb__h"><p class="sn-k">%s</p><h3>%s</h3></div>' % (a(s), a(p['head'])),
-            '<div class="sn-pb__c sn-pb__ffd"><p class="sn-tag">FfD &middot; %s</p><p>%s</p>%s</div>' % (a(p['name']), a(p['ffd']), proof),
-            '<div class="sn-pb__c sn-pb__si"><p class="sn-tag">SI</p><p>%s</p></div>' % a(p['si']),
+            '<div class="sn-pb__c sn-pb__adv"><p class="sn-tag">What Perfect Nations advises</p><p>%s</p></div>' % a(p['advises']),
+            '<div class="sn-pb__c sn-pb__deal"><p class="sn-tag">The deal &middot; %s</p>%s</div>' % (a(p['name']), proof),
             '</div>', lead, body,
             '<button type="button" class="sn-more" hidden>Show all</button>',
             '</div>']))
@@ -397,8 +412,8 @@ def ticker(son):
     return ''.join(items) + '<span class="sn-tick__dup" aria-hidden="true">%s</span>' % dup
 
 
-def seams_block():
-    code = (PAGES / 'home-seams.html').read_text(encoding='utf-8').strip()
+def rule_block():
+    code = (PAGES / 'home-rule.html').read_text(encoding='utf-8').strip()
     return re.sub(r'^\s*<!--.*?-->\s*', '', code, count=1, flags=re.S)
 
 
@@ -410,15 +425,13 @@ def put(page, slot, body):
 
 
 def build_page(nat, son):
-    from build_home import seam  # the homepage build draws the seams
     page = SRC.read_text(encoding='utf-8')
     cards, n_sol = solution_cards(son)
     wl, n_wire, n_wnat = wire(son)
     tabs, panels, first = finder(nat)
     today = date.today().isoformat()
     page = page.replace('/*pn:version*/', VERSION).replace('/*pn:built*/', today)
-    page = put(page, 'seams', seams_block())
-    page = put(page, 'seam', seam('d'))
+    page = put(page, 'rule', rule_block())
     page = put(page, 'solutions', cards)
     page = put(page, 'tabs', tabs)
     page = put(page, 'panels', panels)
