@@ -12,6 +12,7 @@ v7.2 (9 Nov 2026): What Perfect Nations advises, in place of how FfD and SI solv
   02 The deal, 03 What Perfect Nations advises. The advice may run to six lines on a card.
   Phones and tablets: the hero column is held to the screen (minmax(0,1fr)), so the three steps of a
   Solution no longer widen it past the edge.
+  Also in v7.2: gold line in place of the painted botanical seams (the Steward-General, 9 Nov 2026).
 v7.1 (8 Nov 2026): FfD before SI (the Steward-General, 8 Nov 2026). The page names innovative
   financing for development (FfD) first and super intelligence (SI) second, in the hero, the
   steps of a Solution (02 FfD, 03 SI), the nations band and the close, and writes the abbreviation FfD.
@@ -401,116 +402,29 @@ html.pn-son-lock,html.pn-son-lock body{ overflow:hidden; }
 @media (prefers-reduced-motion:reduce){ #pn-son-rd .rd-sheet{ animation:none; } }
 </style>
 <style>
-.pn-seam{
-  position:relative; display:block; width:100vw; margin-left:calc(50% - 50vw); box-sizing:border-box;
-  height:clamp(40px,3.8vw,58px); overflow:hidden; line-height:0;
-  background:
-    linear-gradient(180deg, rgba(255,255,255,.35), rgba(255,255,255,0) 40%, rgba(120,90,40,.06)),
-    #F4ECD8;
-  border-top:1px solid rgba(227,194,88,.75); border-bottom:1px solid rgba(227,194,88,.75);
+.pn-rule{
+  position:relative; z-index:6; display:block; box-sizing:border-box;
+  width:100vw; height:1px; margin:0 0 -1px calc(50% - 50vw); padding:0; pointer-events:none; overflow:visible;
+  background:linear-gradient(90deg, rgba(227,194,88,0) 0%, rgba(227,194,88,.45) 16%, #E3C258 40%, #FBE7A6 50%, #E3C258 60%, rgba(227,194,88,.45) 84%, rgba(227,194,88,0) 100%);
+  box-shadow:0 0 10px rgba(227,194,88,.35);
 }
-.pn-seam::before{
-  content:""; position:absolute; inset:0; pointer-events:none; opacity:.09;
-  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.1' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .3 0 0 0 0 .22 0 0 0 0 .1 0 0 0 .7 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+.pn-rule::before,.pn-rule::after{
+  content:""; position:absolute; left:50%; top:50%; box-sizing:border-box; transform:translate(-50%,-50%) rotate(45deg);
 }
-.pn-seam svg{ position:relative; display:block; width:100%; height:100%; }
-@media (prefers-reduced-motion:no-preference){
-  .pn-seam.is-armed svg > g{ opacity:0; transition:opacity .8s ease; }
-  .pn-seam.is-armed.is-in svg > g{ opacity:1; }
+.pn-rule::before{
+  width:8px; height:8px; z-index:2;
+  background:linear-gradient(135deg,#FFF1C2 0%,#E3C258 55%,#B48A2C 100%);
+  box-shadow:0 0 10px rgba(227,194,88,.7);
+}
+.pn-rule::after{
+  width:20px; height:20px; z-index:1;
+  border:1px solid rgba(227,194,88,.85); background:#0B3D45;
+}
+@media (max-width:760px){
+  .pn-rule::before{ width:7px; height:7px; }
+  .pn-rule::after{ width:17px; height:17px; }
 }
 </style>
-<svg class="pn-seam-sprite" width="0" height="0" style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true" focusable="false">
-  <defs>
-    <symbol id="pns-fern" viewBox="0 0 200 60">
-      <g fill="none" stroke="#2FB58C" stroke-linecap="round" stroke-width="3">
-        <path d="M6 36C60 31 120 27 194 30"/>
-        <path stroke-width="2.4" d="M22.0 35.5q4.0 -11.4 15.5 -16.3M26.0 35.5q4.0 9.8 15.5 14.7M37.0 35.0q4.0 -11.0 15.0 -15.7M41.0 35.0q4.0 9.4 15.0 14.2M52.0 34.5q4.0 -10.6 14.4 -15.1M56.0 34.5q4.0 9.1 14.4 13.6M67.0 34.1q4.0 -10.2 13.8 -14.5M71.0 34.1q4.0 8.7 13.8 13.1M82.0 33.6q4.0 -9.7 13.2 -13.9M86.0 33.6q4.0 8.3 13.2 12.5M97.0 33.1q4.0 -9.3 12.6 -13.3M101.0 33.1q4.0 8.0 12.6 12.0M112.0 32.6q4.0 -8.9 12.1 -12.7M116.0 32.6q4.0 7.6 12.1 11.4M127.0 32.1q4.0 -8.5 11.5 -12.1M131.0 32.1q4.0 7.2 11.5 10.9M142.0 31.7q4.0 -8.0 10.9 -11.5M146.0 31.7q4.0 6.9 10.9 10.3M157.0 31.2q4.0 -7.6 10.3 -10.9M161.0 31.2q4.0 6.5 10.3 9.8M172.0 30.7q4.0 -7.2 9.7 -10.2M176.0 30.7q4.0 6.1 9.7 9.2"/>
-      </g>
-    </symbol>
-    <symbol id="pns-flower" viewBox="-14 -14 28 28">
-      <g fill="#F2836B" stroke="#FFF6EC" stroke-width="1">
-        <ellipse cx="0" cy="-6.2" rx="4" ry="6"/>
-        <ellipse cx="0" cy="-6.2" rx="4" ry="6" transform="rotate(72)"/>
-        <ellipse cx="0" cy="-6.2" rx="4" ry="6" transform="rotate(144)"/>
-        <ellipse cx="0" cy="-6.2" rx="4" ry="6" transform="rotate(216)"/>
-        <ellipse cx="0" cy="-6.2" rx="4" ry="6" transform="rotate(288)"/>
-      </g>
-      <circle r="2.3" fill="#FFF6EC"/>
-    </symbol>
-    <symbol id="pns-leaf" viewBox="0 0 70 56">
-      <path d="M8 30C4 18 16 8 26 14C30 4 44 4 46 14C58 10 66 22 58 30C66 38 58 50 46 44C42 54 28 54 26 44C14 50 4 42 8 30Z" fill="#2E6B4A" stroke="#7CC8F0" stroke-width="2.4" stroke-linejoin="round"/>
-      <g fill="#6FC3F2"><circle cx="20" cy="26" r="1.9"/><circle cx="28" cy="20" r="1.9"/><circle cx="36" cy="16" r="1.9"/><circle cx="44" cy="22" r="1.9"/><circle cx="52" cy="28" r="1.9"/><circle cx="30" cy="32" r="1.9"/><circle cx="40" cy="30" r="1.9"/><circle cx="24" cy="38" r="1.9"/><circle cx="34" cy="42" r="1.9"/><circle cx="46" cy="38" r="1.9"/><circle cx="16" cy="32" r="1.9"/><circle cx="54" cy="36" r="1.9"/></g>
-    </symbol>
-    <symbol id="pns-loops" viewBox="0 0 92 32">
-      <path d="M3 22c7 0 12-7 7-10c-6-3-10 8-2 11c6 2 11-1 14-4c5-6 12-6 9 1c-3 6-11 4-5-3c4-5 12-5 15 1c2 4 7 5 11 1c5-6 12-6 9 1c-3 6-11 4-5-3c4-5 12-5 15 1c2 4 7 5 12 3" fill="none" stroke="#5DB5E8" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
-    </symbol>
-    <symbol id="pns-dashes" viewBox="0 0 40 32">
-      <g fill="#8EA6BC"><rect x="2" y="3" width="3.2" height="8" rx="1.2"/><rect x="11" y="3" width="3.2" height="8" rx="1.2"/><rect x="20" y="3" width="3.2" height="8" rx="1.2"/><rect x="29" y="3" width="3.2" height="8" rx="1.2"/><rect x="6" y="13" width="3.2" height="8" rx="1.2"/><rect x="15" y="13" width="3.2" height="8" rx="1.2"/><rect x="24" y="13" width="3.2" height="8" rx="1.2"/><rect x="33" y="13" width="3.2" height="8" rx="1.2"/><rect x="2" y="23" width="3.2" height="8" rx="1.2"/><rect x="11" y="23" width="3.2" height="8" rx="1.2"/><rect x="20" y="23" width="3.2" height="8" rx="1.2"/></g>
-    </symbol>
-    <symbol id="pns-pods" viewBox="0 0 64 64">
-      <g fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"><path d="M32 62L16 26"/><path d="M32 62L32 22"/><path d="M32 62L48 26"/></g>
-      <g stroke="#2350D8" stroke-width="2.4" fill="#F7EEDB">
-        <ellipse cx="0" cy="0" rx="7" ry="12" transform="translate(14 18) rotate(-28)"/>
-        <ellipse cx="0" cy="0" rx="7" ry="12" transform="translate(32 13)"/>
-        <ellipse cx="0" cy="0" rx="7" ry="12" transform="translate(50 18) rotate(28)"/>
-      </g>
-      <g stroke="#3D8FE0" stroke-width="1.6" stroke-linecap="round" fill="none">
-        <path d="M0 -8V8M-3 -6V6M3 -6V6" transform="translate(14 18) rotate(-28)"/>
-        <path d="M0 -8V8M-3 -6V6M3 -6V6" transform="translate(32 13)"/>
-        <path d="M0 -8V8M-3 -6V6M3 -6V6" transform="translate(50 18) rotate(28)"/>
-      </g>
-    </symbol>
-    <symbol id="pns-feather" viewBox="0 0 140 44">
-      <path d="M14.8 24.8l7 19M25.7 22.1l7 19M36.6 19.4l7 19M47.4 16.6l7 19M58.3 13.9l7 19M69.2 11.2l7 19M80.1 8.5l7 19M91.0 5.8l7 19M101.8 3.0l7 19M112.7 0.3l7 19" fill="none" stroke="#E0352B" stroke-width="4.4" stroke-linecap="round" transform="translate(0 -6)"/>
-      <path d="M6 38L134 6" fill="none" stroke="#2FB58C" stroke-width="2.6" stroke-linecap="round"/>
-    </symbol>
-    <symbol id="pns-bowl" viewBox="0 0 56 56">
-      <g stroke="#FFFFFF" stroke-width="1.8" fill="none" stroke-linecap="round"><path d="M18 26L12 9"/><path d="M28 26L28 6"/><path d="M38 26L44 9"/></g>
-      <g fill="#B08A2E"><circle cx="12" cy="8" r="3.2"/><circle cx="28" cy="5" r="3.2"/><circle cx="44" cy="8" r="3.2"/></g>
-      <path d="M8 26H48C48 41 40 51 28 51C16 51 8 41 8 26Z" fill="#F2C230" stroke="#B8862A" stroke-width="1.4"/>
-      <g fill="none" stroke="#B8862A" stroke-width="1.2"><path d="M13 26C13 37 20 45 28 45C36 45 43 37 43 26"/><path d="M18 26C18 34 23 40 28 40C33 40 38 34 38 26"/><path d="M23 26C23 31 25 35 28 35C31 35 33 31 33 26"/></g>
-    </symbol>
-    <symbol id="pns-rosette" viewBox="-32 -32 64 64">
-      <g fill="#A9C8F5" stroke="#8C6E3C" stroke-width="1.2">
-        <ellipse cx="0" cy="-15" rx="4.6" ry="10.5"/><ellipse cx="0" cy="-15" rx="4.6" ry="10.5" transform="rotate(45)"/><ellipse cx="0" cy="-15" rx="4.6" ry="10.5" transform="rotate(90)"/><ellipse cx="0" cy="-15" rx="4.6" ry="10.5" transform="rotate(135)"/>
-        <ellipse cx="0" cy="-15" rx="4.6" ry="10.5" transform="rotate(180)"/><ellipse cx="0" cy="-15" rx="4.6" ry="10.5" transform="rotate(225)"/><ellipse cx="0" cy="-15" rx="4.6" ry="10.5" transform="rotate(270)"/><ellipse cx="0" cy="-15" rx="4.6" ry="10.5" transform="rotate(315)"/>
-      </g>
-      <circle r="3.4" fill="#2350D8"/>
-    </symbol>
-    <symbol id="pns-dots" viewBox="0 0 34 34">
-      <g fill="#2350D8"><circle cx="9" cy="6" r="2"/><circle cx="17" cy="6" r="2"/><circle cx="25" cy="6" r="2"/><circle cx="5" cy="13" r="2"/><circle cx="13" cy="13" r="2"/><circle cx="21" cy="13" r="2"/><circle cx="29" cy="13" r="2"/><circle cx="9" cy="20" r="2"/><circle cx="17" cy="20" r="2"/><circle cx="25" cy="20" r="2"/><circle cx="13" cy="27" r="2"/><circle cx="21" cy="27" r="2"/></g>
-    </symbol>
-    <symbol id="pns-squares" viewBox="0 0 46 46">
-      <g fill="#E8604A"><rect x="3" y="4" width="14" height="14" rx="2"/><rect x="21" y="2" width="14" height="14" rx="2"/><rect x="8" y="23" width="14" height="14" rx="2"/><rect x="27" y="22" width="14" height="14" rx="2"/></g>
-      <g stroke="#F9C3B4" stroke-width="1.3" stroke-linecap="round"><path d="M7 8v6M10 8v6M13 8v6M25 6v6M28 6v6M31 6v6M12 27v6M15 27v6M18 27v6M31 26v6M34 26v6M37 26v6"/></g>
-    </symbol>
-    <symbol id="pns-sun" viewBox="-24 -24 48 48">
-      <circle r="9.5" fill="none" stroke="#4FA8E8" stroke-width="6"/>
-      <path d="M-13.2 4.8L-19.7 7.2M-11.1 8.5L-16.7 12.8M-8.0 11.5L-12.0 17.2M-4.2 13.4L-6.3 20.0M0 14L0 21M4.2 13.4L6.3 20.0M8.0 11.5L12.0 17.2M11.1 8.5L16.7 12.8M13.2 4.8L19.7 7.2" stroke="#2F6FD8" stroke-width="2.2" stroke-linecap="round"/>
-    </symbol>
-  </defs>
-</svg>
-<script>
-(function(){
-  if (window.__pnSeams) { return; }
-  window.__pnSeams = 1;
-  function run(){
-    var seams = document.querySelectorAll('.pn-seam');
-    if (!seams.length) { return; }
-    var still = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if (still || !('IntersectionObserver' in window)) { return; }
-    var io = new IntersectionObserver(function(es){
-      es.forEach(function(en){ if (en.isIntersecting) { en.target.classList.add('is-in'); io.unobserve(en.target); } });
-    }, { threshold: 0.3 });
-    Array.prototype.forEach.call(seams, function(s){
-      var uses = s.querySelectorAll('svg > g');
-      Array.prototype.forEach.call(uses, function(u, i){ u.style.transitionDelay = (i * 0.05) + 's'; });
-      s.classList.add('is-armed'); io.observe(s);
-    });
-  }
-  if (document.readyState === 'loading') { document.addEventListener('DOMContentLoaded', run); } else { run(); }
-})();
-</script>
 <svg width="0" height="0" style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true" focusable="false">
   <defs>
     <symbol id="pnso-cup" viewBox="0 0 120 60"><g fill="currentColor"><path fill-rule="evenodd" d="M51.7 55C51.6 55 51.6 54.8 51.6 53.3L51.6 51.9L51.8 51.7C51.9 51.6 52.2 51.4 52.4 51.2C52.6 51 52.8 50.9 52.8 50.9C52.8 50.8 54.4 50 54.5 50C54.6 50 54.8 49.9 54.9 49.8C55.1 49.7 55.4 49.6 55.7 49.6C55.9 49.5 56.2 49.4 56.3 49.4L56.5 49.3L56.5 49.1C56.5 48.5 56.6 48.3 57.3 48.3C57.6 48.3 57.8 48.3 57.8 48.3C57.8 48.3 57.8 46.6 57.8 44.6L57.8 41L58 40.8C58.8 39.8 58.9 38.5 58.5 37.3C58.4 37.1 58.3 36.9 58.3 36.8C58.3 36.7 58.1 36.5 57.6 36.2C56.4 35.4 55.1 33.7 54 31.6C53.7 31.1 53.8 31.1 53.7 31.1C53.6 31.1 53.6 31.2 53.5 31.3C53 32.3 51.7 32.4 50.8 31.6C50.2 31.1 50.8 30.4 51.4 30.7C52.2 31.1 52.4 31.1 52.6 30.6C52.8 29.7 51.8 28.5 47.6 24.2C43.2 19.8 41.6 17.8 40.8 15.7C40.7 15.5 40.7 15.3 40.6 15.2C39.7 12.9 40.1 10.6 41.8 8.9C42.9 7.7 44.1 7.3 45.4 7.6C46.3 7.7 47.6 8.4 49 9.6C51.1 11.2 52 11.5 52.6 11C52.8 10.8 52.8 10.8 52.6 10.5C52.3 10.2 52.3 10.1 52.4 9.9C52.8 9.1 53.9 9.8 53.9 10.9C53.9 11.1 53.9 11.2 53.9 11.2C54 11.2 55 10.7 55.4 10.5C55.8 10.2 56 9.7 55.9 9.1C55.9 8.5 55.7 8.4 54.2 7.6C52.8 6.9 52.7 6.8 52.6 6.6C52.5 6.2 52.4 5.3 52.6 5.1L52.7 5L53.4 5L54.1 5L54.1 5.8C54.2 6.8 54.1 6.7 55.6 7.7C55.7 7.7 55.8 7.8 55.8 7.8C55.9 7.8 55.9 7.9 56 7.9C56.7 8.4 57 9.1 56.7 9.8C56.6 10.3 56.5 10.3 55.3 11.1C53.7 12 53.3 12.2 53 12.5C51.8 13.2 51.4 14.3 51.7 16C52.8 23.1 53.9 27.6 55.2 30.9C55.4 31.3 55.5 31.7 55.6 31.8C56 33.1 57.3 35 58.1 35.7C58.4 35.9 58.6 35.9 58.4 35.6C57.8 34.8 57 31.9 56.4 29.1C56.2 27.8 55.9 25.9 55.8 25.2C55.8 25 55.7 24.7 55.7 24.6C55.6 23.9 55.1 19.7 55 18.8C55 18.7 55 18.3 54.9 17.9C54.7 16.2 54.7 14.5 54.9 13.9C55.1 13.1 55.2 12.9 56.7 11.4C57.8 10.2 57.9 10.1 57.9 9.4C57.9 8.6 57.8 8.4 57 7.5C56.4 6.9 56.3 6.7 56.3 6.2C56.2 5.9 56.2 5.2 56.3 5.1L56.4 5L61.8 5L67.3 5L67.4 5.1C67.5 5.2 67.5 5.2 67.5 5.8C67.5 6.7 67.5 6.7 66 7.5C64.2 8.4 64.1 8.6 64.1 9.4C64.1 10 64.3 10.3 65.5 10.9C66.2 11.2 66.1 11.2 66.1 10.8C66.1 9.8 67.2 9.1 67.6 9.9C67.7 10.1 67.7 10.2 67.3 10.7C67.1 11 67.9 11.3 68.5 11.1C69.2 10.9 69.6 10.6 71.2 9.4C74.1 7.1 76 6.9 78 8.6C80.4 10.8 80.5 14 78.2 17.6C76.9 19.5 75.9 20.7 72.3 24.3C67.9 28.7 67.2 29.7 67.5 30.7C67.6 31.1 67.8 31.1 68.5 30.8C68.9 30.5 69 30.5 69.3 30.8C69.6 31 69.5 31.4 69.2 31.7C68.1 32.4 66.9 32.3 66.5 31.3C66.4 31 66.3 31 66.2 31.2C66.1 31.5 65.3 33 64.9 33.5C64.1 34.8 63.3 35.6 62.4 36.2C61.7 36.7 61.7 36.7 61.5 37.4C61.2 38.4 61.2 39.4 61.6 40.1C61.7 40.4 62 40.9 62.1 41C62.2 41.1 62.2 41.4 62.2 44.5C62.2 46.4 62.2 48 62.2 48.1L62.2 48.3L62.6 48.3C63.4 48.3 63.6 48.5 63.6 49.1C63.6 49.3 63.6 49.3 64.3 49.6C64.7 49.7 65.1 49.8 65.6 50.1C66 50.3 66.5 50.5 66.8 50.6C67 50.8 67.2 50.9 67.2 50.9C67.2 50.9 67.3 51 67.5 51.1C67.7 51.3 68 51.5 68.1 51.6L68.5 51.9L68.4 53.4C68.4 54.2 68.4 54.9 68.4 54.9C68.4 55 67.3 55 61.8 55C57.7 55 56.8 55 56.7 55C56.6 54.9 56.6 52.4 56.7 52C56.8 51.3 57.8 50 58.7 49.3C58.9 49.2 58.6 49.2 58.2 49.3C57.2 49.5 55 51.2 54.8 51.9C54.7 52.2 54.6 52.9 54.6 53.9C54.6 54.5 54.6 54.9 54.6 54.9C54.6 55 51.9 55 51.7 55ZM52.2 27.1C52.2 27.1 52.1 26.8 52 26.6C51.5 25.1 50.6 21.8 50 19C49.2 15.4 49.2 14.9 49.6 14C49.9 13.4 50.3 13 51 12.6C51.5 12.3 51.5 12.3 51.1 12.2C50.5 12 49.5 11.4 48.5 10.6C45.4 8.2 44.2 8.1 42.6 9.7C40.5 11.9 40.9 14.6 43.8 18.4C44.8 19.7 45.8 20.8 48.3 23.3C50.8 25.8 51.3 26.3 51.7 26.9C52.1 27.3 52.2 27.3 52.2 27.1ZM68.2 26.9C68.5 26.6 69.1 26 70.9 24.1C72.7 22.3 73.5 21.4 74.2 20.7C79 15.5 79.9 12.2 77.3 9.6C76.5 8.8 75.8 8.5 74.7 8.7C74.1 8.8 73.1 9.4 71.8 10.4C70.3 11.5 69.5 12.1 68.8 12.2C68.7 12.3 68.6 12.3 68.6 12.3C68.6 12.4 68.7 12.4 68.8 12.5C70.5 13.4 70.9 14.5 70.5 16.4C69.8 20.3 68.9 23.9 68.1 26.4C67.7 27.4 67.7 27.5 68.2 26.9Z"/><rect x="6.13" y="16.60" width="30.0" height="1.8"/><rect x="83.87" y="16.60" width="30.0" height="1.8"/><rect x="6.13" y="41.60" width="30.0" height="1.8"/><rect x="83.87" y="41.60" width="30.0" height="1.8"/></g></symbol>
@@ -625,7 +539,7 @@ html.pn-son-lock,html.pn-son-lock body{ overflow:hidden; }
     </div>
   </section>
 
-<div class="pn-seam pn-seam--d" aria-hidden="true"><svg viewBox="0 0 1600 60" preserveAspectRatio="xMidYMid slice" focusable="false"><g transform="translate(40.0 8.1)"><use href="#pns-rosette" width="38.0" height="38.0"/></g><g transform="translate(117.0 18.5)"><use href="#pns-loops" width="59.0" height="20.5"/></g><g transform="translate(370.0 7.1) scale(-1 1)"><use href="#pns-fern" x="0.0" y="0" width="167.0" height="50.1"/></g><g transform="translate(401.8 22.2)"><use href="#pns-flower" width="18.7" height="18.7"/></g><g transform="translate(418.6 10.2)"><use href="#pns-flower" width="13.1" height="13.1"/></g><g transform="translate(457.0 5.8)"><use href="#pns-bowl" width="46.0" height="46.0"/></g><g transform="translate(535.5 21.6)"><use href="#pns-dots" width="22.5" height="22.5"/></g><g transform="translate(578.4 8.7)"><use href="#pns-leaf" width="46.6" height="37.3"/></g><g transform="translate(648.5 14.8)"><use href="#pns-feather" width="99.8" height="31.4"/></g><g transform="translate(773.7 23.4)"><use href="#pns-flower" width="18.7" height="18.7"/></g><g transform="translate(820.6 10.1)"><use href="#pns-sun" width="34.9" height="34.9"/></g><g transform="translate(890.6 16.2)"><use href="#pns-squares" width="25.7" height="25.7"/></g><g transform="translate(957.6 11.0)"><use href="#pns-pods" width="43.5" height="43.5"/></g><g transform="translate(1034.7 15.2)"><use href="#pns-dashes" width="30.1" height="24.1"/></g><g transform="translate(1099.5 21.5)"><use href="#pns-flower" width="18.1" height="18.1"/></g><g transform="translate(1156.0 5.2)"><use href="#pns-fern" width="162.2" height="48.7"/></g><g transform="translate(1359.9 8.0)"><use href="#pns-leaf" width="48.0" height="38.4"/></g><g transform="translate(1434.5 12.0)"><use href="#pns-rosette" width="38.6" height="38.6"/></g><g transform="translate(1500.8 19.9)"><use href="#pns-loops" width="69.1" height="24.0"/></g></svg></div>
+<div class="pn-rule" aria-hidden="true"></div>
 
   <section class="sn-band sn-wire" id="sn-wire" aria-labelledby="sn-wire-h">
     <div class="sn-in">

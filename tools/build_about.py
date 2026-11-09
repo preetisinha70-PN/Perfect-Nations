@@ -2,15 +2,15 @@
 """Refresh the generated blocks of the About page, pages/about.html.
 
 The page is edited by hand, except the blocks that this script writes in place:
-  GENERATED:SEAMS     the painted-seam drawings and style, copied from pages/home-seams.html
-  GENERATED:SEAM-A    one seam strip (variant a), drawn by tools/build_home.py
-  GENERATED:SEAM-C    one seam strip (variant c), drawn by tools/build_home.py
   GENERATED:NCOUNT    the number of Nation Stewards (one per open blueprint); NCOUNT2 the same,
                       on the Show all button
   GENERATED:TCOUNT    the number of SI Researchers (six research Stewards plus the Nation Stewards)
   GENERATED:NSTEWARDS the Nation Stewards: one linked card per open blueprint in
                       data/blueprints.json, with the Steward's name from data/<slug>.json and the
                       portrait the nation's own blueprint uses (pages/blueprint-<slug>.html)
+v11.1 (9 Nov 2026): the gold line (pages/home-rule.html, styled in GENERATED:LOGO-KIT) in place of
+the painted botanical seams, the Steward-General's decision; the page places <div class="pn-rule">
+between sections by hand, and this script no longer writes any seam.
 v11.0 (8 Nov 2026): the structure of the firm moves from the homepage to this page, so the page
 reuses the homepage parts rather than copies of their code. Each block below is the part file as
 it stands (its banner dropped), with a one-line note naming the file and its version:
@@ -41,7 +41,7 @@ ROOT = Path(__file__).resolve().parent.parent
 PAGES = ROOT / 'pages'
 DATA = ROOT / 'data'
 PAGE = PAGES / 'about.html'
-VERSION = '11.0'
+VERSION = '11.1'
 RESEARCH_STEWARDS = 6
 # The homepage parts this page shows, by block name (see the docstring).
 PARTS = [
@@ -51,8 +51,6 @@ PARTS = [
     ('CAPITA', 'home-perfect-capita.html'),
     ('VISION', 'home-vision.html'),
 ]
-sys.path.insert(0, str(ROOT / 'tools'))
-from build_home import seam  # noqa: E402  (the homepage build draws the seams)
 
 
 def ascii_html(text):
@@ -112,11 +110,6 @@ def stewards_block(rows):
     return '\n'.join(out)
 
 
-def seams_block():
-    code = (PAGES / 'home-seams.html').read_text(encoding='utf-8').strip()
-    return re.sub(r'^\s*<!--.*?-->\s*', '', code, count=1, flags=re.S)  # drop the part banner
-
-
 def part_block(name):
     """A homepage part as this page shows it: the banner dropped, a note naming the file and version."""
     code = (PAGES / name).read_text(encoding='utf-8').strip()
@@ -142,9 +135,6 @@ def put(page, name, body, inline=False):
 def main():
     page = PAGE.read_text(encoding='utf-8')
     rows = stewards()
-    page = put(page, 'SEAMS', seams_block())
-    page = put(page, 'SEAM-A', seam('a'))
-    page = put(page, 'SEAM-C', seam('c'))
     page = put(page, 'NCOUNT', str(len(rows)), inline=True)
     page = put(page, 'NCOUNT2', str(len(rows)), inline=True)
     page = put(page, 'TCOUNT', str(len(rows) + RESEARCH_STEWARDS), inline=True)
@@ -163,6 +153,8 @@ def main():
     twice = sorted({i for i in ids if ids.count(i) > 1})
     if twice:
         sys.exit('ids used more than once: %s' % ', '.join(twice))
+    if re.search(r'pn-seam|#pns-', page):
+        sys.exit('a painted seam is left on the page (the gold line, <div class="pn-rule">, replaced them)')
     if re.search(r'(?:class|id)="[^"]*laurel', page, re.I):
         sys.exit('a class or id contains "laurel" (the header replaces such drawings with the cup mark)')
     PAGE.write_text(page, encoding='utf-8')
