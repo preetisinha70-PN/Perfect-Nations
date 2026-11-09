@@ -1,10 +1,12 @@
 <!-- ===========================================================================
-PERFECT NATIONS - STATE OF NATIONS - v8.0 - built 2026-11-09 - ONE FILE, LIVE DATA
+PERFECT NATIONS - STATE OF NATIONS - v8.1 - built 2026-11-09 - ONE FILE, LIVE DATA
 perfectnations.org/state-of-nations/. Root id pn-son (manifest key pn-son): the Perfect Nations Live
 Pages plugin serves this file in place of the code pasted in the page's one Custom HTML widget.
 BUILT, never edited by hand: edit src/state-of-nations.html, then run
 python3 tools/build_state_of_nations.py. Kept by the State of Nations Steward (the page) and the
 Correspondent (the data: data/state-of-nations.json, data/solutions-by-nation.json).
+v8.1 (9 Nov 2026): the reader's close button is drawn as a fine cross (two hairlines) in place of the
+  multiplication sign; it turns Earthrise with a gold cross and a quarter turn on hover (the Steward-General).
 v8.0 (9 Nov 2026): Perfect Nations Solutions, designed by Perfect Nations (the Steward-General, 9 Nov 2026).
   Each of the 44 open blueprint nations has one Solution that Perfect Nations designs to end extreme
   poverty and secure the seven standards: the idea, The challenge (sourced), What Perfect Nations
@@ -379,7 +381,11 @@ html.pn-son-lock,html.pn-son-lock body{ overflow:hidden; }
 #pn-son-rd .rd-bg{ position:fixed; inset:0; background:rgba(4,22,26,.84); }
 #pn-son-rd .rd-sheet{ position:relative; width:100%; max-width:780px; margin:0 auto; padding:clamp(22px,4.4vw,52px); border-radius:8px; background:#F4ECD8; color:#1A140C; box-shadow:0 40px 90px rgba(0,0,0,.5); outline:none; animation:rd-in .45s cubic-bezier(.22,1,.36,1); }
 @keyframes rd-in{ from{ opacity:0; transform:translateY(20px); } to{ opacity:1; transform:none; } }
-#pn-son-rd .rd-x{ position:absolute; top:12px; right:12px; width:46px; height:46px; border-radius:50%; border:1px solid #7E5A0C; background:#FFFBF1; color:#1A140C; font-size:1.5rem; line-height:1; cursor:pointer; }
+#pn-son-rd .rd-x{ position:absolute; top:12px; right:12px; width:44px; height:44px; padding:0; border-radius:50%; border:1px solid rgba(126,90,12,.45); background:#FFFBF1; color:#1A140C; font-size:0; line-height:0; cursor:pointer; box-shadow:0 1px 2px rgba(26,20,12,.06); transition:background .25s ease, border-color .25s ease, color .25s ease, transform .35s ease; }
+#pn-son-rd .rd-x::before,#pn-son-rd .rd-x::after{ content:""; position:absolute; top:50%; left:50%; width:16px; height:1.5px; margin:-.75px 0 0 -8px; border-radius:1px; background:currentColor; transform:rotate(45deg); }
+#pn-son-rd .rd-x::after{ transform:rotate(-45deg); }
+#pn-son-rd .rd-x:hover,#pn-son-rd .rd-x:focus-visible{ background:#0B3D45; border-color:#0B3D45; color:#E3C258; transform:rotate(90deg); outline:none; }
+@media (prefers-reduced-motion: reduce){ #pn-son-rd .rd-x{ transition:none; } #pn-son-rd .rd-x:hover,#pn-son-rd .rd-x:focus-visible{ transform:none; } }
 #pn-son-rd .rd-k{ display:flex; flex-wrap:wrap; gap:4px 12px; padding:0 52px 10px 0; border-bottom:2px solid #1A140C; font-family:var(--pn-font-heading,"Barlow Condensed","Arial Narrow",Arial,sans-serif); font-size:.66rem; font-weight:700; letter-spacing:.22em; text-transform:uppercase; color:rgba(26,20,12,.6); }
 #pn-son-rd .rd-k b{ color:#8A3A22; }
 #pn-son-rd h2{ margin:16px 0 0; font-family:var(--pn-font-heading,"Barlow Condensed","Arial Narrow",Arial,sans-serif); font-weight:700; font-size:clamp(1.9rem,4vw,2.9rem); line-height:.98; letter-spacing:-.02em; color:#1A140C !important; text-shadow:none !important; }
@@ -637,7 +643,7 @@ html.pn-son-lock,html.pn-son-lock body{ overflow:hidden; }
   var ORDER = ['Food', 'Water', 'Shelter', 'Energy', 'Education', 'Health', 'Livelihood'];
   var MONTHS = ['January','February','March','April','May','June','July','August','September','October','November','December'];
   var REGIONS = ['Africa', 'Americas', 'Asia-Pacific', 'Europe', 'Middle East'];
-  var DOT = String.fromCharCode(183), TIMES = String.fromCharCode(215), RSQ = String.fromCharCode(8217);
+  var DOT = String.fromCharCode(183), RSQ = String.fromCharCode(8217);
   var MARKS = new RegExp('[' + String.fromCharCode(768) + '-' + String.fromCharCode(879) + ']', 'g');
   var mq = function (q) { return !!(window.matchMedia && window.matchMedia(q).matches); };
   var phone = mq('(max-width: 640px)'), still = mq('(prefers-reduced-motion: reduce)');
@@ -810,7 +816,6 @@ html.pn-son-lock,html.pn-son-lock body{ overflow:hidden; }
     rd = el('div'); rd.id = 'pn-son-rd'; rd.hidden = true;
     rd.setAttribute('role', 'dialog'); rd.setAttribute('aria-modal', 'true'); rd.setAttribute('aria-labelledby', 'snRdH');
     rd.innerHTML = '<div class="rd-bg"></div><article class="rd-sheet" tabindex="-1"><button type="button" class="rd-x" aria-label="Close"></button><div class="rd-k"></div><h2 id="snRdH"></h2><p class="rd-s"></p><div class="rd-brief"><p>The Solution</p><dl></dl></div><div class="rd-more"></div><p class="rd-src"></p><div class="rd-end"><a class="rd-cta" href="' + SITE + '/contact/?about=briefing">Request a Nation Briefing</a><a class="rd-bp" href="' + SITE + '/blueprints/">Open the blueprint</a><button type="button" class="rd-back">Back to State of Nations</button></div></article>';
-    rd.querySelector('.rd-x').textContent = TIMES;
     document.body.appendChild(rd);
     rd.addEventListener('click', function (e) { var c = e.target.classList; if (c.contains('rd-bg') || c.contains('rd-x') || c.contains('rd-back')) { shut(); } });
     document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && rd && !rd.hidden) { shut(); } });
