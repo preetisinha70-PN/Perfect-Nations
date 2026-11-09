@@ -1,7 +1,15 @@
 #!/usr/bin/env python3
 """Build every national blueprint page (pages/blueprint-<slug>.html) from one template.
 
-Blueprint v11.4 (9 November 2026). One design for every nation, so a change is made once and reaches all.
+Blueprint v11.5 (9 November 2026). One design for every nation, so a change is made once and reaches all.
+v11.5: three changes for clarity (the Steward-General, 9 Nov 2026). 1. "The register" is "Capital already committed"
+wherever a visitor reads it (the label, the hero tile link, the empty state and the Sources); the anchor bp-register
+and the data key capital.register are unchanged. 2. "Already working in <Nation>" is its own band directly after
+02 Capital (the record, Capital already committed and the Newswire) and before 03 Solutions, no longer inside Work
+with us, with one line under its heading: "Independent firms and social enterprises already at work in <Nation>,
+highlighted by Perfect Nations. None is a partner of Perfect Nations." Its cards, sources and links are kept.
+3. Perfect Nations is "a new-age sovereign advisory firm, and its clients are nations", never a bank; the names of
+real banks and their instruments are kept as they are.
 v11.4: the Solution Perfect Nations designs for the nation leads its Solutions (the Steward-General, 9 Nov 2026:
 "compose solutions that Perfect Nations designs"): its idea, The challenge and What Perfect Nations advises, linked to
 State of Nations (#solution-NN). The market deals about the nation follow as Deal Notes (#deal-NN, or their own page),
@@ -26,16 +34,17 @@ data/state-of-nations.json); the Solution for <Nation> reads 01 The challenge, 0
 in the nation, or the deal that proved it, with its source), 03 What Perfect Nations advises (the "advises" of the
 standard in data/solutions-by-nation.json). The Solutions lead and the empty card say the same.
 v11.0: the blueprint follows the new homepage (the Steward-General, 7-8 Nov 2026): Perfect Nations as a
-development bank for the era of super intelligence, whose clients are nations, doing three things in the
+new-age sovereign advisory firm, whose clients are nations, doing three things in the
 order of the logo: 01 Assets (the gold), 02 Capital (the laurels), 03 Solutions (the seven stars, Perfect
 Capita, last); the cup (good governance) is referenced in one line, and the whole logo, lit, is a Perfect
-Nation. The page reads like a development bank's country page, in one scroll:
+Nation. The page reads like the country page of a new-age sovereign advisory firm, in one scroll (as of v11.5):
   the hero (the globe, the nation, what Perfect Nations does for it, and the nation at a glance in sourced
   figures) -> What we do for <Nation> (three tiles drawn from the logo kit, and the seal) -> 01 Assets (five
-  typographic cards, no photographs) -> 02 Capital (the record, the register and the Newswire) -> 03 Solutions
+  typographic cards, no photographs) -> 02 Capital (the record, Capital already committed and the Newswire)
+  -> Already working in <Nation> (independent firms and social enterprises, none a partner) -> 03 Solutions
   (the seven stars of the logo in place of the wheel, each with the nation's own figure and source; the
   price of Perfect <Nation> where the data has it; the Solutions) -> the Letter -> Work with us (the
-  ReDesign Studio and its three mandates, with Writings, Voices, the Co-designers and the Enterprises) ->
+  ReDesign Studio and its three mandates, with Writings, Voices and the Co-designers) ->
   the close (the flag edition) and the Sources. Gold hairlines in place of the painted seams. No composite
   coverage score is shown: each standard keeps its own sourced figure.
 v10.2: the second Nation Portrait, the flag edition, closes the page beside "Design Perfect <Nation> with us"
@@ -81,7 +90,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 PAGES, DATA, HERE = ROOT / 'pages', ROOT / 'data', ROOT / 'tools' / 'nation'
-VERSION = '11.4'
+VERSION = '11.5'
 EARTH = {'lg': 'https://perfectnations.org/wp-content/uploads/2026/10/pn-globe-earth-day-1536x768.jpg',
          'sm': 'https://perfectnations.org/wp-content/uploads/2026/10/pn-globe-earth-day-1024x512.jpg'}
 ORDER = ['Food', 'Water', 'Shelter', 'Energy', 'Education', 'Health', 'Livelihoods']
@@ -354,7 +363,7 @@ def hero(d, p):
                      '<a href="#bp-pc">Perfect Nations estimate</a></li>' % (ent(cov['price']), ent(name)))
     nreg = len([x for x in (d.get('capital') or {}).get('register') or [] if x.get('name') and x.get('cat') and x.get('url')])
     if nreg:
-        cells.append('<li data-k="reg"><b>%d</b><span>Instruments and investments on record</span><a href="#bp-register">The register</a></li>' % nreg)
+        cells.append('<li data-k="reg"><b>%d</b><span>Instruments and investments on record</span><a href="#bp-register">Capital already committed</a></li>' % nreg)
     long_name = ' is-long' if len(name) > 11 else ''
     return (
         '<section class="bpx-band bpx-er bpx-hero" aria-labelledby="bp-h1"><div class="bpx-in bpx-hero__grid">'
@@ -398,7 +407,7 @@ def what_we_do(d):
         '<section class="bpx-band bpx-iv bpx-do" id="bp-do" aria-labelledby="bp-do-h"><div class="bpx-in">'
         '<div class="bpx-do__head"><div><p class="bpx-eb">What we do for %s</p>'
         '<h2 class="bpx-h2 bpx-do__h" id="bp-do-h"><span>Assets.</span> <span>Capital.</span> <span>Solutions.</span></h2></div>'
-        '<p class="bpx-lead">Perfect Nations is a development bank for the era of super intelligence, and its clients are nations.</p></div>'
+        '<p class="bpx-lead">Perfect Nations is a new-age sovereign advisory firm, and its clients are nations.</p></div>'
         '<ol class="bpx-map" aria-label="The three steps for %s, one for each part of the logo">%s</ol>'
         '<div class="bpx-all">%s<p><b>The whole logo:</b> a Perfect Nation, where every citizen has all seven basic standards '
         'of living, led by good governance.</p></div>'
@@ -456,7 +465,7 @@ def capital(d, p):
                '<p class="bpx-ir__note">%s</p>' % ent(x['note']) if x.get('note') else '', '<p>%s</p>' % ent(x['text']) if x.get('text') else '',
                '<p class="bpx-ir__by">%s</p>' % by if by else '', ent(https(x['url']))))
     if not irs:
-        irs = ['<li class="bpx-ir bpx-ir--none"><p>The register of %s is being built: every instrument and investment on record, with its source.</p></li>' % ent(name)]
+        irs = ['<li class="bpx-ir bpx-ir--none"><p>The capital already committed to %s is being gathered: every instrument and investment on record, with its source.</p></li>' % ent(name)]
     keys = ['all'] + [k for k in CAT if count.get(k)]
     filters = ''.join('<button type="button" class="bpx-fb%s" data-filter="%s" aria-pressed="%s">%s <span>%d</span></button>'
                       % (' is-on' if k == 'all' else '', k, 'true' if k == 'all' else 'false', 'All' if k == 'all' else CAT[k],
@@ -481,7 +490,7 @@ def capital(d, p):
         '<div><p class="bpx-lead">Bonds, guarantees, swaps and loans that raise capital against what %s owns, every line sourced.</p>'
         '<a class="bpx-link" href="https://perfectnations.org/capital-architecture/" target="_blank" rel="noopener noreferrer">Capital Architecture</a></div></div>'
         '%s'
-        '<div class="bpx-cap__grid"><div id="bp-register"><p class="bpx-k">The register</p>'
+        '<div class="bpx-cap__grid"><div id="bp-register"><p class="bpx-k">Capital already committed</p>'
         '<div class="bpx-filters" role="group" aria-label="Show lines by who provides them">%s</div>'
         '<ul class="bpx-irs" id="bp-irs">%s</ul><button type="button" class="bpx-showall" id="bp-showall"%s>Show all %d lines</button></div>'
         '<div class="bpx-nw" id="bp-newswire"><div class="bpx-nw__h"><h3>The %s Newswire</h3>'
@@ -755,13 +764,6 @@ def work(d, p):
     wx_mail = mailto('Writing for Perfect %s' % name,
                      'Your name, or a pen name:\r\nWhere you live:\r\nTitle:\r\n\r\nYour vision of Perfect %s, and the economic solutions to achieve it (up to 1,500 words):\r\n\r\n\r\n'
                      'I confirm that this is my own original writing, and I give Perfect Nations permission to publish it with credit to me.\r\n' % name)
-    e = d.get('enterprises') or {}
-    ents = ''.join('<li><span class="bpx-ent__s">%s</span><h4>%s</h4>%s<a href="%s" target="_blank" rel="noopener noreferrer">%s</a></li>'
-                   % (ent(x.get('standard', '')), ent(x['name']), '<p>%s</p>' % ent(x['text']) if x.get('text') else '',
-                      ent(https(x['url'], allow_mail=True)), ent(x.get('source') or 'Source'))
-                   for x in e.get('items') or [] if x.get('name') and x.get('url'))
-    if not ents:
-        ents = '<li class="bpx-ents__none"><h4>The first enterprises of %s are being gathered.</h4><p>Name one that already works: it may join this page, with its source.</p></li>' % ent(name)
     nation_q = urllib.parse.quote(slug)
     return (
         '<section class="bpx-band bpx-er bpx-work" id="bp-studio" aria-labelledby="bp-entry-h"><div class="bpx-in">'
@@ -782,14 +784,37 @@ def work(d, p):
         '<a class="bpx-btn bpx-btn--line" href="https://perfectnations.org/contact/?nation=%s&amp;topic=guest" target="_blank" rel="noopener noreferrer">Suggest a guest</a></div></li>'
         '<li><p class="bpx-co3__k">Co-designers</p><h4>Join the community.</h4><p>%s</p>'
         '<a class="bpx-btn bpx-btn--line" href="%s">Become a Co-designer</a></li></ul></div>'
-        '<div class="bpx-ent" id="bp-enterprises"><div class="bpx-ent__h"><h3 id="bp-ent-h">%s</h3>'
-        '<a class="bpx-link" href="%s">Suggest an enterprise</a></div>'
-        '<p class="bpx-swipe" aria-hidden="true">Swipe for every enterprise</p><ul class="bpx-ents bpx-rail">%s</ul></div>'
         '</div></section>'
         % (ent(name), ent(name), more('<p class="bpx-terms">%s</p>' % ent(p['mandates']['terms']), 'who the mandates are for, and how scope and fees are agreed'),
            moves, ''.join(tiers), ent(p['people']),
-           ent(name), ent(name), ent(wx_mail), ent(name), ent(name), nation_q, nation_q, raw(codesigner(p['codesigner'])), ent(co),
-           ent(e.get('heading') or 'Already working in %s.' % name), ent(mailto('An enterprise for Perfect %s' % name)), ents))
+           ent(name), ent(name), ent(wx_mail), ent(name), ent(name), nation_q, nation_q, raw(codesigner(p['codesigner'])), ent(co)))
+
+
+def firms(d):
+    """Already working in <Nation> (v11.5): independent firms and social enterprises at work in the nation, in their
+    own band directly after 02 Capital and before 03 Solutions (the Steward-General, 9 Nov 2026). They have nothing
+    to do with Perfect Nations beyond being identified and highlighted by it, so the one line under the heading says
+    so, and nothing in the band suggests they work with, for or through Perfect Nations. The anchor bp-enterprises,
+    the heading id bp-ent-h (script.js writes the live heading into it) and the data key enterprises are unchanged."""
+    name = d['nation']
+    e = d.get('enterprises') or {}
+    ents = ''.join('<li><span class="bpx-ent__s">%s</span><h3>%s</h3>%s<a href="%s" target="_blank" rel="noopener noreferrer">%s</a></li>'
+                   % (ent(x.get('standard', '')), ent(x['name']), '<p>%s</p>' % ent(x['text']) if x.get('text') else '',
+                      ent(https(x['url'], allow_mail=True)), ent(x.get('source') or 'Source'))
+                   for x in e.get('items') or [] if x.get('name') and x.get('url'))
+    if not ents:
+        ents = ('<li class="bpx-ents__none"><h3>The first firms and social enterprises at work in %s are being gathered.</h3>'
+                '<p>Name one already at work there: it may be highlighted here, with its source.</p></li>' % ent(name))
+    return (
+        '<section class="bpx-band bpx-er bpx-firms" id="bp-enterprises" aria-labelledby="bp-ent-h"><div class="bpx-in">'
+        '<div class="bpx-ent__h"><div><h2 class="bpx-ent__t" id="bp-ent-h">%s</h2>'
+        '<p class="bpx-ent__l">Independent firms and social enterprises already at work in %s, highlighted by Perfect Nations. '
+        'None is a partner of Perfect Nations.</p></div>'
+        '<a class="bpx-link" href="%s">Suggest an enterprise</a></div>'
+        '<p class="bpx-swipe" aria-hidden="true">Swipe for every enterprise</p><ul class="bpx-ents bpx-rail">%s</ul>'
+        '</div></section>'
+        % (ent(e.get('heading') or 'Already working in %s.' % name), ent(name),
+           ent(mailto('An enterprise already at work in %s' % name)), ents))
 
 
 # The second Nation Portrait, the flag edition (painted 31 October 2026; the Steward-General, 8 Nov 2026: "a
@@ -816,9 +841,15 @@ def flag_fig(name, slug, title):
         % (u, u, u, ent(title), ent(name), ent(title)))
 
 
+def committed(s):
+    """v11.5: the Sources name the list as visitors see it: "each register line" (or entry) becomes "each line of
+    Capital already committed". Only the name of the list changes; every source, date and figure is kept."""
+    return re.sub(r'\beach register (line|entry)\b', r'each \1 of Capital already committed', plain(s))
+
+
 def close(d, p):
     name, slug = d['nation'], p['slug']
-    srcs = ''.join('<li>%s</li>' % raw(s) for s in p['sources'])
+    srcs = ''.join('<li>%s</li>' % raw(committed(s)) for s in p['sources'])
     return (
         '<section class="bpx-band bpx-dp bpx-close" aria-labelledby="bp-close-h"><div class="bpx-in bpx-close__grid"><div class="bpx-close__words">'
         '<p class="bpx-eb">The %s ReDesign Studio is open</p><h2 class="bpx-h2" id="bp-close-h">Design Perfect %s with us.</h2>'
@@ -864,13 +895,17 @@ def build(slug, sbn, son, today):
     script = (HERE / 'script.js').read_text(encoding='utf-8').replace('/*pn:cfg*/', 'var CFG = %s;' % js_str(cfg))
     head = (
         '<!-- PERFECT NATIONS . NATIONAL BLUEPRINT . %s . v%s . %s . Built by tools/build_nations.py: never edit by hand. -->\n'
+        '<!-- v11.5 (9 November 2026): three changes for clarity (the Steward-General, 9 Nov 2026). The register reads\n'
+        '     Capital already committed; Already working in the nation is its own band after 02 Capital, its firms and\n'
+        '     social enterprises independent and none a partner; Perfect Nations is a new-age sovereign advisory firm. -->\n'
+        '<!-- v11.4 (9 November 2026): the Solution Perfect Nations designs for the nation leads its Solutions. -->\n'
         '<!-- v11.3 (9 November 2026): fewer words (the Steward-General, 9 Nov 2026). One headline and one line a section,\n'
         '     the detail one click away behind Read more; every figure and source kept. -->\n'
         '<!-- v11.2 (9 November 2026): the cup for Assets; the whole logo as a large seal, led by good governance; Co-design on ivory. -->\n'
         '<!-- v11.1 (9 November 2026): What Perfect Nations advises, in place of how FfD and SI solve it (the Steward-General, 9 Nov 2026)\n'
         '     Each Solution reads The challenge, then What Perfect Nations advises. -->\n'
-        '<!-- v11.0 (8 November 2026): the blueprint follows the new homepage. Perfect Nations as a development bank for\n'
-        '     the era of super intelligence, whose clients are nations: the hero says what it does for this nation\n'
+        '<!-- v11.0 (8 November 2026): the blueprint follows the new homepage. Perfect Nations as a new-age sovereign\n'
+        '     advisory firm, whose clients are nations: the hero says what it does for this nation\n'
         '     (FfD before SI) with the nation at a glance in sourced figures; What we do for the nation (Assets. Capital.\n'
         '     Solutions., drawn from the logo kit, with the cup of good governance in one line and the whole logo as a\n'
         '     seal); 01 Assets as typographic cards (no photographs); 02 Capital (the record, the register and the\n'
@@ -897,6 +932,8 @@ def build(slug, sbn, son, today):
         assets(d),
         RULE,
         capital(d, p),
+        RULE,
+        firms(d),
         RULE,
         solutions(d, p, sbn, son),
         letter(d, p),

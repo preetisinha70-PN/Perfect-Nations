@@ -206,7 +206,7 @@
   #R .bpx-assets.is-in .bpx-acard{ opacity:1; transform:none; transition:opacity .7s ease, transform .8s var(--ease); transition-delay:calc(var(--i,0) * .08s); }
 }
 
-/* ---------- 02 Capital (Lagoon): the record, the register, the Newswire ---------- */
+/* ---------- 02 Capital (Lagoon): the record, Capital already committed (#bp-register), the Newswire ---------- */
 #R .bpx-cap__head{ grid-template-columns:auto minmax(0,1.2fr) minmax(0,1fr); }
 #R .bpx-cap__head .bpx-link{ margin-top:4px; }
 #R svg.bpx-mark{ width:auto; height:clamp(84px,8vw,118px); align-self:center; }
@@ -418,7 +418,7 @@
   #R .bpx-frame{ width:100%; }
 }
 
-/* ---------- Work with us (Earthrise): the mandates, co-design, the enterprises ---------- */
+/* ---------- Work with us (Earthrise): the mandates and co-design ---------- */
 #R .bpx-mhead{ margin:0; max-width:52ch; font-size:clamp(.98rem,1.15vw,1.08rem); line-height:1.5; color:var(--mut); }
 #R .bpx-work .bpx-head .bpx-more{ margin-top:2px; }
 #R .bpx-work .bpx-moves{ margin-top:0; }
@@ -459,13 +459,16 @@
 #R .bpx-air i{ width:7px; height:7px; border-radius:50%; background:#F2836B; }
 @media (prefers-reduced-motion:no-preference){ #R .bpx-air i{ animation:bpxAir 1.8s ease-in-out infinite; } }
 @keyframes bpxAir{ 50%{ opacity:.35; } }
-#R .bpx-ent{ margin-top:clamp(18px,2.8vh,26px); }
-#R .bpx-ent__h{ display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:0 18px; margin-bottom:8px; }
-#R .bpx-ent__h h3{ margin:0; font-family:var(--hd); font-weight:600; font-size:clamp(1.4rem,2.2vw,1.9rem); line-height:1; color:var(--fg); }
+/* ---------- Already working in the nation (v11.5): its own band after 02 Capital; independent, none a partner ---------- */
+#R .bpx-ent__h{ display:flex; flex-wrap:wrap; align-items:flex-end; justify-content:space-between; gap:4px 24px; margin-bottom:12px; }
+#R .bpx-ent__h > div{ min-width:0; flex:1 1 420px; }
+#R h2.bpx-ent__t{ margin:0; font-family:var(--hd); font-weight:600; font-size:clamp(1.7rem,2.8vw,2.5rem); line-height:1; letter-spacing:-.015em; color:var(--fg) !important; text-wrap:balance; }
+#R .bpx-ent__l{ margin:8px 0 0; max-width:64ch; font-size:clamp(.9rem,1.05vw,1rem); line-height:1.45; color:var(--mut); text-wrap:pretty; }
+#R .bpx-ent__h .bpx-link{ flex:none; }
 #R .bpx-ents{ display:grid; grid-template-columns:repeat(auto-fill,minmax(150px,1fr)); gap:8px; margin:0; padding:0; list-style:none; }
 #R .bpx-ents li{ display:flex; flex-direction:column; gap:3px; min-width:0; padding:10px 12px; border-radius:12px; background:rgba(245,241,232,.06); border:1px solid var(--hair); }
 #R .bpx-ent__s{ font-family:var(--hd); font-size:.58rem; font-weight:700; letter-spacing:.2em; text-transform:uppercase; color:var(--gs); }
-#R .bpx-ents h4{ margin:0; font-family:var(--hd); font-weight:600; font-size:1.06rem; line-height:1.1; color:var(--fg); }
+#R .bpx-ents h3{ margin:0; font-family:var(--hd); font-weight:600; font-size:1.06rem; line-height:1.1; letter-spacing:0; color:var(--fg); }
 #R .bpx-ents p{ margin:0; font-size:.78rem; line-height:1.38; color:var(--mut); }
 #R .bpx-ents a{ margin-top:auto; padding-top:3px; font-size:.7rem; color:var(--gs); }
 
@@ -622,7 +625,11 @@
   #R .bpx-co3__l > li{ padding:12px 13px 13px; }
   #R .bpx-co3__l h4{ font-size:1.15rem; }
   #R .bpx-co3__l p{ font-size:.82rem; }
-  #R .bpx-ents h4{ font-size:1rem; }
+  #R .bpx-ent__h{ gap:2px; margin-bottom:8px; }
+  #R .bpx-ent__h > div{ flex-basis:100%; }
+  #R h2.bpx-ent__t{ font-size:clamp(1.55rem,7vw,1.9rem); }
+  #R .bpx-ent__l{ margin-top:6px; font-size:.86rem; line-height:1.42; }
+  #R .bpx-ents h3{ font-size:1rem; }
   #R .bpx-ents p{ font-size:.74rem; }
   /* the close */
   #R .bpx-close__grid{ grid-template-columns:minmax(0,1fr); }
