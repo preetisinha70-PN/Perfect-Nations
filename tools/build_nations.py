@@ -1,7 +1,14 @@
 #!/usr/bin/env python3
 """Build every national blueprint page (pages/blueprint-<slug>.html) from one template.
 
-Blueprint v11.2 (9 November 2026). One design for every nation, so a change is made once and reaches all.
+Blueprint v11.3 (9 November 2026). One design for every nation, so a change is made once and reaches all.
+v11.3: fewer words (the Steward-General, 9 Nov 2026: "Fewer words everywhere: one headline and one line per
+section across the site, with the detail one click away"). Each section shows an eyebrow, one headline, one line
+and then its tiles, cards, figures or stars; further paragraphs and method notes sit behind a native
+<details class="bpx-more"><summary>Read more</summary> in the section. The hero and What we do keep one line each;
+the register shows four lines (its dates and terms open with the line); the Newswire shows three headlines, then
+All news; a Solution shows The challenge, and The deal and What Perfect Nations advises open on a click (their
+labels and texts unchanged); the terms of the mandates sit behind Read more. Figures and sources are all kept.
 v11.2 (the Steward-General, 9 Nov 2026): in What we do, the cup is the symbol for Assets; under the three tiles the
 whole logo is a seal as large as the tile symbols, with "The whole logo: a Perfect Nation, where every citizen has
 all seven basic standards of living, led by good governance."; in Work with us, Co-design it with us sits on an
@@ -67,7 +74,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 PAGES, DATA, HERE = ROOT / 'pages', ROOT / 'data', ROOT / 'tools' / 'nation'
-VERSION = '11.2'
+VERSION = '11.3'
 EARTH = {'lg': 'https://perfectnations.org/wp-content/uploads/2026/10/pn-globe-earth-day-1536x768.jpg',
          'sm': 'https://perfectnations.org/wp-content/uploads/2026/10/pn-globe-earth-day-1024x512.jpg'}
 ORDER = ['Food', 'Water', 'Shelter', 'Energy', 'Education', 'Health', 'Livelihoods']
@@ -218,6 +225,19 @@ SEAL = ('<svg class="bpx-seal" viewBox="0 0 512 512" aria-hidden="true" focusabl
         '<use href="#pnk-cl"/>%s</g></svg>' % _stars())
 
 
+def more(inner, about, cls=''):
+    """One click away (v11.3): a native disclosure. The summary reads Read more; its accessible name says what opens."""
+    return ('<details class="bpx-more%s"><summary aria-label="Read more: %s">Read more</summary><div class="bpx-more__b">%s</div></details>'
+            % ((' ' + cls) if cls else '', ent(about), inner))
+
+
+def first_sentence(s):
+    """The first sentence of a text, and the rest (or ''), split only where a full stop is followed by a capital."""
+    t = plain(s).strip()
+    m = re.search('(?<=[.!?])\\s+(?=[A-Z\u201c\u2026"])', t)
+    return (t[:m.start()], t[m.end():]) if m else (t, '')
+
+
 def chip(n, label):
     return ('<a class="bpx-ch" href="#bp-do" aria-label="Step %s of 03, %s. Back to What we do">%s</a>' % (n, label, n))
 
@@ -332,9 +352,8 @@ def hero(d, p):
         '<section class="bpx-band bpx-er bpx-hero" aria-labelledby="bp-h1"><div class="bpx-in bpx-hero__grid">'
         '<div class="bpx-hero__head"><div class="bpx-kick"><span class="bpx-cup">%s</span><p class="bpx-eb">%s</p></div>'
         '<h1 class="bpx-h1%s" id="bp-h1">%s</h1><p class="bpx-hero__nation">%s</p>'
-        '<p class="bpx-lead">Perfect Nations values what %s owns, raises capital against it through <b>innovative financing for development (FfD)</b> '
-        'and <b>super intelligence (SI)</b>, and lifts every citizen above <b>the Living Line</b>: the basic standard of living in food, water, '
-        'shelter, energy, education, health and livelihood.</p></div>'
+        '<p class="bpx-lead">Perfect Nations values what %s owns and raises capital against it, through <b>innovative financing for development (FfD)</b> '
+        'and <b>super intelligence (SI)</b>.</p></div>'
         '<div class="bpx-globe-cell"><div class="bpx-globe" id="%s-globe" role="img" aria-label="%s, in gold on the globe">'
         '<span class="bpx-globe__sky"></span><canvas class="bpx-globe__still"></canvas><canvas class="bpx-globe__gl"></canvas></div></div>'
         '<div class="bpx-glance"><p class="bpx-k">%s at a glance</p><ul class="bpx-stats" data-n="%d">%s</ul></div>'
@@ -351,21 +370,15 @@ def what_we_do(d):
     items = [x for x in (d.get('assets') or {}).get('items') or [] if x.get('name')]
     names = [x['name'] for x in items]
     if len(names) > 1:
-        q1 = '%s and %s: %s sovereign assets, valued.' % (', '.join(names[:-1]), names[-1], ['no', 'one', 'two', 'three', 'four', 'five', 'six', 'seven'][len(names)] if len(names) < 8 else len(names))
+        # v11.3: the names are on the cards below, so the tile names the first and the last
+        q1 = '%s sovereign assets, valued, from %s to %s.' % ((['No', 'One', 'Two', 'Three', 'Four', 'Five', 'Six', 'Seven'][len(names)] if len(names) < 8 else str(len(names))), names[0], names[-1])
     else:
         q1 = 'We value what %s owns: its sovereign assets, from its people to its land.' % name
     lines = [x for x in (d.get('capital') or {}).get('register') or [] if x.get('name') and x.get('cat') and x.get('url')]
-    cats = []
-    for k in CAT:
-        if any(re.sub(r'[^a-z]', '', x['cat']) == k for x in lines):
-            cats.append(CAT[k].lower())
-    if lines:
-        q2 = '%d instruments and investments on record, from %s sources.' % (
-            len(lines), (', '.join(cats[:-1]) + ' and ' + cats[-1]) if len(cats) > 1 else (cats[0] if cats else 'every'))
-    else:
-        q2 = 'The instruments that raise capital against those assets, from every source.'
-    q3 = 'Perfect Capita: seven basic standards of living for every citizen, star by star.%s' % (
-        (' %s is furthest from reach today.' % lab(bind)) if bind else '')
+    # v11.3: one short line a tile; the kinds of source are the filters of the register, so they are not repeated here
+    q2 = ('%d instruments and investments on record, every one sourced.' % len(lines) if lines
+          else 'The instruments that raise capital against those assets, from every source.')
+    q3 = 'Seven basic standards of living, star by star.%s' % ((' %s is furthest from reach today.' % lab(bind)) if bind else '')
     tiles = [('01', 'Assets', 'The cup', '#bp-assets', ART['cup'], q1),
              ('02', 'Capital', 'The laurels', '#bp-capital', ART['wreath'], q2),
              ('03', 'Solutions', 'The seven stars', '#bp-pc', ART['stars'], q3)]
@@ -377,12 +390,11 @@ def what_we_do(d):
         '<section class="bpx-band bpx-iv bpx-do" id="bp-do" aria-labelledby="bp-do-h"><div class="bpx-in">'
         '<div class="bpx-do__head"><div><p class="bpx-eb">What we do for %s</p>'
         '<h2 class="bpx-h2 bpx-do__h" id="bp-do-h"><span>Assets.</span> <span>Capital.</span> <span>Solutions.</span></h2></div>'
-        '<p class="bpx-lead">Perfect Nations is a development bank for the era of super intelligence, and its clients are nations. '
-        'For %s, three steps, one for each part of the logo.</p></div>'
+        '<p class="bpx-lead">Perfect Nations is a development bank for the era of super intelligence, and its clients are nations.</p></div>'
         '<ol class="bpx-map" aria-label="The three steps for %s, one for each part of the logo">%s</ol>'
         '<div class="bpx-all">%s<p><b>The whole logo:</b> a Perfect Nation, where every citizen has all seven basic standards '
         'of living, led by good governance.</p></div>'
-        '</div></section>' % (ent(name), ent(name), ent(name), lis, SEAL))
+        '</div></section>' % (ent(name), ent(name), lis, SEAL))
 
 
 def assets(d):
@@ -405,7 +417,7 @@ def assets(d):
         '<div class="bpx-head"><div>%s<h2 class="bpx-h2" id="bp-assets-h">%s</h2></div>'
         '<p class="bpx-lead">Each is owned today, earns today, and can carry %s toward seven basic standards of living for every citizen.</p></div>'
         '<ul class="bpx-acards" data-n="%d">%s</ul>'
-        '<div class="bpx-foot"><p>Every figure is listed with its source in the <a href="#bp-sources">Sources</a> at the foot of the page.</p>'
+        '<div class="bpx-foot"><a class="bpx-link" href="#bp-sources">Every figure, with its source</a>'
         '<a class="bpx-link" href="https://perfectnations.org/sovereign-assets/" target="_blank" rel="noopener noreferrer">The Sovereign Assets ledger</a></div>'
         '</div></section>' % (step_eb('01', 'Assets', 'The cup', 'Sovereign Assets'),
                               ent(a.get('heading') or 'Five assets no balance sheet counts.'), ent(name), len(cards), ''.join(cards)))
@@ -425,12 +437,14 @@ def capital(d, p):
         tone = re.sub(r'[^a-z]', '', plain(x.get('tone'))) or 'active'
         count[cat] = count.get(cat, 0) + 1
         by = ''.join('<span>%s</span>' % ent(s) for s in x.get('by') or [] if s)
+        # v11.3: a line shows its kind, its status, its name and its amount; the dates and terms open with it
         irs.append(
             '<li class="bpx-ir%s" data-cat="%s"><details><summary><span class="bpx-tags"><span class="bpx-cat">%s</span><span class="bpx-stat bpx-stat--%s">%s</span></span>'
-            '<span class="bpx-ir__n">%s%s</span><span class="bpx-ir__a">%s</span></summary><div class="bpx-ir__b">%s%s%s'
+            '<span class="bpx-ir__n">%s</span><span class="bpx-ir__a">%s</span></summary><div class="bpx-ir__b">%s%s%s%s'
             '<a class="bpx-ir__src" href="%s" target="_blank" rel="noopener noreferrer">Source</a></div></details></li>'
-            % (' bpx-ir--more' if i >= 6 else '', cat, CAT.get(cat, cat), tone, ent(x.get('status') or 'Active'), ent(x['name']),
-               '<small>%s</small>' % ent(x['detail']) if x.get('detail') else '', money(x['amount'], x.get('money')) if x.get('amount') else '',
+            % (' bpx-ir--more' if i >= 4 else '', cat, CAT.get(cat, cat), tone, ent(x.get('status') or 'Active'), ent(x['name']),
+               money(x['amount'], x.get('money')) if x.get('amount') else '',
+               '<p class="bpx-ir__d">%s</p>' % ent(x['detail']) if x.get('detail') else '',
                '<p class="bpx-ir__note">%s</p>' % ent(x['note']) if x.get('note') else '', '<p>%s</p>' % ent(x['text']) if x.get('text') else '',
                '<p class="bpx-ir__by">%s</p>' % by if by else '', ent(https(x['url']))))
     if not irs:
@@ -456,23 +470,22 @@ def capital(d, p):
     return (
         '<section class="bpx-band bpx-lg bpx-cap" id="bp-capital" aria-labelledby="bp-cap-h"><div class="bpx-in">'
         '<div class="bpx-head bpx-cap__head">%s<div>%s<h2 class="bpx-h2" id="bp-cap-h">%s</h2></div>'
-        '<div><p class="bpx-lead">Bonds, guarantees, swaps and loans that raise capital against what %s owns, from every source. Every line is sourced.</p>'
-        '<a class="bpx-link" href="https://perfectnations.org/capital-architecture/" target="_blank" rel="noopener noreferrer">Capital Architecture: the instruments we design</a></div></div>'
+        '<div><p class="bpx-lead">Bonds, guarantees, swaps and loans that raise capital against what %s owns, every line sourced.</p>'
+        '<a class="bpx-link" href="https://perfectnations.org/capital-architecture/" target="_blank" rel="noopener noreferrer">Capital Architecture</a></div></div>'
         '%s'
-        '<div class="bpx-cap__grid"><div id="bp-register"><p class="bpx-k">The register &#183; <span data-bpx="count">%d</span> instruments and investments on record</p>'
+        '<div class="bpx-cap__grid"><div id="bp-register"><p class="bpx-k">The register</p>'
         '<div class="bpx-filters" role="group" aria-label="Show lines by who provides them">%s</div>'
-        '<ul class="bpx-irs" id="bp-irs">%s</ul><button type="button" class="bpx-showall%s" id="bp-showall"%s>Show all %d lines</button></div>'
+        '<ul class="bpx-irs" id="bp-irs">%s</ul><button type="button" class="bpx-showall" id="bp-showall"%s>Show all %d lines</button></div>'
         '<div class="bpx-nw" id="bp-newswire"><div class="bpx-nw__h"><h3>The %s Newswire</h3>'
         '<a class="bpx-link" href="https://perfectnations.org/state-of-nations/#sn-wire" target="_blank" rel="noopener noreferrer">The Solutions Wire</a></div>'
         '<div class="bpx-stew"><img src="%s"%s alt="%s, %s" width="44" height="44" loading="lazy" decoding="async" onerror="this.style.display=\'none\'">'
-        '<p><b>%s</b><span>%s &#183; SI Researcher</span>Every change is sourced and reviewed before it is published. <time datetime="%s">Last updated %s</time></p></div>'
+        '<p><b>%s</b><span>%s &#183; SI Researcher</span><time datetime="%s">Last updated %s</time></p></div>'
         '<ul class="bpx-wire">%s</ul><button type="button" class="bpx-showall bpx-allnews" hidden>All news</button></div></div>'
         '</div></section>'
         % (ART['wreath'].replace('bpx-art bpx-art--wreath', 'bpx-art bpx-art--wreath bpx-mark'),
            step_eb('02', 'Capital', 'The laurels', 'Capital Architecture'), ent(c.get('heading') or 'Capital tied to human outcomes.'), ent(name),
            ('<p class="bpx-k">The record in figures</p><ul class="bpx-recs bpx-rail">%s</ul>' % recs) if recs else '',
-           len(lines), filters, ''.join(irs), ' is-phone' if 4 < len(lines) <= 6 else '',
-           '' if len(lines) > 4 else ' hidden', len(lines),
+           filters, ''.join(irs), '' if len(lines) > 4 else ' hidden', len(lines),
            ent(name), ent(https(p['steward_photo'])), img_attrs(p['steward_photo'], (100, 150), '44px'), ent(steward.get('name', '')), ent(steward.get('role', '')),
            ent(steward.get('name', '')), ent(steward.get('role', '')), ent(d.get('updated', '')), ent(long_date(d.get('updated'))),
            ''.join(wire)))
@@ -505,16 +518,27 @@ def stars_svg(name, g, bind):
     return ''.join(parts)
 
 
+def how(rows):
+    """The rows of a Solution (v11.3): 01 The challenge shows; each later row opens on a click, with its label as the
+    summary, so the labels stay in view and the texts stay as the data has them. Each text is HTML already."""
+    out = []
+    for i, (n, t, w) in enumerate(rows):
+        if i == 0:
+            out.append('<li><b>%s</b><strong>%s</strong><span>%s</span></li>' % (n, t, w))
+        else:
+            out.append('<li class="bpx-sol__x"><details><summary><b>%s</b><strong>%s</strong></summary><span>%s</span></details></li>' % (n, t, w))
+    return '<ul class="bpx-sol__how">%s</ul>' % ''.join(out)
+
+
 def solution_card(x, sig_name, sig_role):
     no = int(x.get('no') or 0)
     href = x['url'] if re.match(r'^https://', plain(x.get('url'))) else 'https://perfectnations.org/state-of-nations/#solution-%02d' % no
     body = ''
     if x.get('challenge') and x.get('advises'):
-        body = '<ul class="bpx-sol__how">%s</ul>' % ''.join(
-            '<li><b>%s</b><strong>%s</strong><span>%s</span></li>' % (n, t, ent(w))
-            for n, t, w in (('01', 'The challenge', x['challenge']), ('02', 'What Perfect Nations advises', x['advises'])))
+        body = how([('01', 'The challenge', ent(x['challenge'])), ('02', 'What Perfect Nations advises', ent(x['advises']))])
     elif x.get('standfirst') or x.get('summary'):
-        body = '<p>%s</p>' % ent(x.get('standfirst') or x.get('summary'))
+        one, rest = first_sentence(x.get('standfirst') or x.get('summary'))
+        body = '<p>%s</p>%s' % (ent(one), more('<p>%s</p>' % ent(rest), x['title']) if rest else '')
     fig = ''
     if x.get('figure'):
         fig = '<p class="bpx-sol__fig"><b>%s</b>%s</p>' % (ent(x['figure']), '<span>%s</span>' % ent(x['caption']) if x.get('caption') else '')
@@ -550,13 +574,12 @@ def solution_brief(name, sbn, slug):
         deal += ' <a href="%s" target="_blank" rel="noopener noreferrer">%s</a>' % (ent(https(pr['url'])), ent(pr.get('source') or 'Source'))
     steps = [('01', 'The challenge', ch)] + ([('02', 'The deal', deal)] if deal else [])
     steps.append(('%02d' % (len(steps) + 1), 'What Perfect Nations advises', ent(play['advises'])))
-    rows = ''.join('<li><b>%s</b><strong>%s</strong><span>%s</span></li>' % r for r in steps)
     return (
         '<li class="bpx-sol bpx-sol--brief"><p class="bpx-sol__k"><b>The Solution for %s</b><span>%s</span></p>'
-        '<h3>%s</h3><ul class="bpx-sol__how">%s</ul>'
+        '<h3>%s</h3>%s'
         '<div class="bpx-sol__foot"><span class="bpx-sig">Co-design it in<b>The ReDesign Studio</b></span>'
         '<a class="bpx-btn" href="#bp-mandates">The three mandates</a></div></li>'
-        % (ent(name), ent(me['standard']), ent(play.get('head') or ''), rows))
+        % (ent(name), ent(me['standard']), ent(play.get('head') or ''), how(steps)))
 
 
 def solution_cards(d, p, sbn, son):
@@ -635,15 +658,13 @@ def solutions(d, p, sbn, son):
         '<div class="bpx-pc__grid"><div class="bpx-pc__head">%s<h2 class="bpx-h2" id="bp-pcx-h">Perfect %s, <em>star by star.</em></h2>'
         '<p class="bpx-pc__def"><b>Perfect Capita</b> %s</p>'
         '<a class="bpx-link" href="https://perfectnations.org/perfect-capita/" target="_blank" rel="noopener noreferrer">How Perfect Capita works</a></div>'
-        '<div class="bpx-pc__sky">%s%s<p class="bpx-pc__cap">One star for each standard, Food the crown. Tap a star for its figure and source; '
-        'the dashed ring marks the standard furthest from reach.</p></div>'
+        '<div class="bpx-pc__sky">%s%s<p class="bpx-pc__cap">Tap a star for its figure and source.</p></div>'
         '<div class="bpx-pc__rest">%s'
-        '<details class="bpx-how"><summary>The seven figures, their sources and how they are measured</summary>'
-        '<ul class="bpx-std" aria-label="%s: each standard, with its source">%s</ul><p>%s <a href="https://perfectnations.org/perfect-capita/#pq-measures" target="_blank" rel="noopener noreferrer">The strict measures</a></p><p>%s</p></details>'
+        '<details class="bpx-more bpx-how"><summary aria-label="Read more: the seven figures, their sources and how they are measured">Read more</summary>'
+        '<div class="bpx-more__b"><ul class="bpx-std" aria-label="%s: each standard, with its source">%s</ul><p>%s <a href="https://perfectnations.org/perfect-capita/#pq-measures" target="_blank" rel="noopener noreferrer">The strict measures</a></p><p>%s</p></div></details>'
         '</div></div>'
         '<div class="bpx-solx" id="bp-solutions"><span id="bp-dispatches"></span>'
-        '<div class="bpx-sols-top"><div><h3 class="bpx-h3" id="bp-sol-h">Solutions for Perfect %s</h3>'
-        '<p>Standard by standard: the challenge, the deal and what Perfect Nations advises.</p></div>'
+        '<div class="bpx-sols-top"><div><h3 class="bpx-h3" id="bp-sol-h">Solutions for Perfect %s</h3></div>'
         '<div class="bpx-sols-go">%s<a class="bpx-link" href="https://perfectnations.org/state-of-nations/#sn-solutions" target="_blank" rel="noopener noreferrer">All Solutions</a></div></div>'
         '<p class="bpx-swipe" aria-hidden="true">Swipe for every Solution</p><ul class="bpx-sols bpx-rail" id="bp-sols">%s</ul></div>'
         '</div></section>'
@@ -660,6 +681,12 @@ def letter(d, p):
     w, h = (int(m.group(1)), int(m.group(2))) if m else (768, 768)
     note = ('%s &#183; ' % ent(pt_['note'])) if pt_.get('note') else ''
     paras = ''.join('<p class="bpx-sheet__p">%s</p>' % raw(x) for x in p['letter']['paras'])
+    # v11.3: a longer Letter shows its opening line; the rest, word for word, is one click away (the quotation stays)
+    words = sum(len(plain(x).split()) for x in p['letter']['paras'])
+    one, rest = first_sentence(p['letter']['paras'][0])
+    if words > 40 and rest and '<' not in ''.join(p['letter']['paras']):
+        tail = ''.join('<p class="bpx-sheet__p">%s</p>' % raw(x) for x in [rest] + p['letter']['paras'][1:])
+        paras = '<p class="bpx-sheet__p">%s</p>%s' % (raw(one), more(tail, 'the Letter to %s' % name))
     return (
         '<section class="bpx-band bpx-iv bpx-letter" id="bp-letter" aria-labelledby="bp-letter-h"><div class="bpx-in">'
         '<div class="bpx-letter__grid"><figure class="bpx-port"><span class="bpx-frame">'
@@ -672,6 +699,18 @@ def letter(d, p):
         '</div></section>'
         % (ent(https(img)), img_attrs(img, (300, 600, 768), '(min-width:960px) 240px, 150px'), ent(pt_['alt']), w, h, ent(pt_['title']), note,
            ent(name), ent(name), paras, raw(p['letter']['quote']), ent(https(p['letter']['url']))))
+
+
+def codesigner(s):
+    """The Co-designers card in one line (v11.3): who becomes a Co-designer, and any note of the nation's own (a pen
+    name, for example); the clause on the community is left out."""
+    return re.sub(r'</b>: one of a community of selfless people, at home and abroad, building a nation where every citizen has a decent life\.',
+                  '</b>.', plain(s))
+
+
+def one_line(s):
+    """Two short sentences of a lead joined as one: "A. Every message ..." becomes "A: every message ..."."""
+    return re.sub(r'\. Every message', ': every message', plain(s), count=1)
 
 
 def work(d, p):
@@ -689,9 +728,9 @@ def work(d, p):
         tiers.append(
             '<li class="bpx-tier%s"><p class="bpx-tier__k"><span>%s</span><span>%s</span></p><h3>%s</h3><p>%s</p>'
             '<p class="bpx-tier__leave"><span>You leave with</span>%s</p>'
-            '<details><summary>The four moves at this depth</summary><ol class="bpx-mv">%s</ol></details>'
+            '<details class="bpx-more"><summary aria-label="Read more: the four moves of %s">Read more</summary><ol class="bpx-mv">%s</ol></details>'
             '<a class="bpx-btn%s" href="%s" target="_blank" rel="noopener noreferrer">%s</a></li>'
-            % (' bpx-tier--top' if t == 2 else '', k, dur, title, line, leave, mv, '' if t == 2 else ' bpx-btn--line',
+            % (' bpx-tier--top' if t == 2 else '', k, dur, title, line, leave, title, mv, '' if t == 2 else ' bpx-btn--line',
                ent(https('https://perfectnations.org/contact/?about=%s&country=%s' % ('commission' if t == 2 else 'studio', urllib.parse.quote(name, safe='')))), cta))
     wx_mail = mailto('Writing for Perfect %s' % name,
                      'Your name, or a pen name:\r\nWhere you live:\r\nTitle:\r\n\r\nYour vision of Perfect %s, and the economic solutions to achieve it (up to 1,500 words):\r\n\r\n\r\n'
@@ -708,14 +747,13 @@ def work(d, p):
         '<section class="bpx-band bpx-er bpx-work" id="bp-studio" aria-labelledby="bp-entry-h"><div class="bpx-in">'
         '<div class="bpx-head"><div><p class="bpx-eb">Work with us &#183; The ReDesign Studio</p>'
         '<h2 class="bpx-h2" id="bp-entry-h">The Perfect %s <em>ReDesign Studio</em></h2></div>'
-        '<p class="bpx-mhead"><b>One mission. Three depths.</b> '
-        'Every mandate makes the same four moves for %s. What changes is how deep we go, and how far the work travels toward market.</p></div>'
+        '<div><p class="bpx-mhead">One mission, three depths: the same four moves for %s, taken as far toward market as you choose.</p>%s</div></div>'
         '<div id="bp-mandates">'
         '<ol class="bpx-moves" aria-label="The four moves of every mandate">%s</ol>'
-        '<p class="bpx-swipe" aria-hidden="true">Swipe for the three mandates</p><ol class="bpx-tiers bpx-rail">%s</ol><p class="bpx-terms">%s</p></div>'
+        '<p class="bpx-swipe" aria-hidden="true">Swipe for the three mandates</p><ol class="bpx-tiers bpx-rail">%s</ol></div>'
         '<div class="bpx-co3"><div class="bpx-co3__top"><h3 class="bpx-co3__h">Co-design it with us</h3><p>%s</p></div><p class="bpx-swipe" aria-hidden="true">Swipe for three ways in</p><ul class="bpx-co3__l bpx-rail">'
         '<li id="bp-writings"><p class="bpx-co3__k">Writings</p><h4>Write Perfect %s into being.</h4>'
-        '<p>An essay, an article or a true story of up to 1,500 words: your vision of Perfect %s and the economic solutions to achieve it, published with your name and your permission.</p>'
+        '<p>Up to 1,500 words on your vision of Perfect %s, published with your name.</p>'
         '<a class="bpx-btn bpx-btn--line" href="%s">Submit your writing</a></li>'
         '<li id="bp-voices"><p class="bpx-co3__k">Voices of %s <span class="bpx-air"><i aria-hidden="true"></i>Launching soon</span></p>'
         '<h4 id="bp-voices-h">The people already building it.</h4>'
@@ -728,8 +766,9 @@ def work(d, p):
         '<a class="bpx-link" href="%s">Suggest an enterprise</a></div>'
         '<p class="bpx-swipe" aria-hidden="true">Swipe for every enterprise</p><ul class="bpx-ents bpx-rail">%s</ul></div>'
         '</div></section>'
-        % (ent(name), ent(name), moves, ''.join(tiers), ent(p['mandates']['terms']), ent(p['people']),
-           ent(name), ent(name), ent(wx_mail), ent(name), ent(name), nation_q, nation_q, raw(p['codesigner']), ent(co),
+        % (ent(name), ent(name), more('<p class="bpx-terms">%s</p>' % ent(p['mandates']['terms']), 'who the mandates are for, and how scope and fees are agreed'),
+           moves, ''.join(tiers), ent(p['people']),
+           ent(name), ent(name), ent(wx_mail), ent(name), ent(name), nation_q, nation_q, raw(codesigner(p['codesigner'])), ent(co),
            ent(e.get('heading') or 'Already working in %s.' % name), ent(mailto('An enterprise for Perfect %s' % name)), ents))
 
 
@@ -770,7 +809,7 @@ def close(d, p):
         '<details class="bpx-sources" id="bp-sources"><summary>Sources</summary><ol>%s</ol></details></div>%s</div></section>'
         '<div class="bpx-toast" id="bp-toast" role="status" aria-live="polite" hidden><span>Opening your email app. If nothing opens, write to <b>contact@perfectnations.org</b></span>'
         '<button type="button" id="bp-toast-copy">Copy address</button><button type="button" class="bpx-x" id="bp-toast-x" aria-label="Close">&#215;</button></div>'
-        % (ent(name), ent(name), ent(p['close_lead']), urllib.parse.quote(slug), srcs,
+        % (ent(name), ent(name), ent(one_line(p['close_lead'])), urllib.parse.quote(slug), srcs,
            flag_fig(name, slug, p['portrait'].get('title') or ('%s in Bloom' % name))))
 
 
@@ -805,6 +844,8 @@ def build(slug, sbn, son, today):
     script = (HERE / 'script.js').read_text(encoding='utf-8').replace('/*pn:cfg*/', 'var CFG = %s;' % js_str(cfg))
     head = (
         '<!-- PERFECT NATIONS . NATIONAL BLUEPRINT . %s . v%s . %s . Built by tools/build_nations.py: never edit by hand. -->\n'
+        '<!-- v11.3 (9 November 2026): fewer words (the Steward-General, 9 Nov 2026). One headline and one line a section,\n'
+        '     the detail one click away behind Read more; every figure and source kept. -->\n'
         '<!-- v11.2 (9 November 2026): the cup for Assets; the whole logo as a large seal, led by good governance; Co-design on ivory. -->\n'
         '<!-- v11.1 (9 November 2026): What Perfect Nations advises, in place of how FfD and SI solve it (the Steward-General, 9 Nov 2026)\n'
         '     Each Solution reads The challenge, then What Perfect Nations advises. -->\n'
