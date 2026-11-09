@@ -459,3 +459,13 @@
 @media (min-width:641px){ #R .bpx-swipe{ display:none; } #R .bpx-showall.is-phone{ display:none; } #R .bpx-sols:not(.is-all) .bpx-sol--more{ display:none; } }
 @media (max-width:640px){ #R .bpx-solmore{ display:none !important; } }
 @media (prefers-reduced-motion:reduce){ #R *{ transition:none !important; } }
+/* v10.2: the close carries the second Nation Portrait, the flag edition, on the right */
+#R .bpx-close__grid{ display:grid; grid-template-columns:minmax(0,1fr) auto; gap:24px clamp(28px,5vw,72px); align-items:center; }
+#R .bpx-port--flag{ width:300px; max-width:100%; }
+#R .bpx-port--flag .bpx-frame{ width:100%; }
+#R .bpx-port--flag .bpx-frame img{ display:block; width:100%; height:auto; aspect-ratio:1; }
+@media (max-width:760px){
+  #R .bpx-close__grid{ grid-template-columns:minmax(0,1fr); }
+  #R .bpx-port--flag{ order:-1; }
+  #R .bpx-port--flag{ width:min(62vw,220px); margin:0 auto; }
+}
