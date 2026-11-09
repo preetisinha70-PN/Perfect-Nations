@@ -352,11 +352,13 @@
     return m ? [t.slice(0, m.index + 1), t.slice(m.index + m[0].length)] : [t, ''];
   }
   function solCard(x, sigName, sigRole) {
-    var li = el('li', 'bpx-sol');
-    var k = el('p', 'bpx-sol__k'); k.appendChild(el('b', '', 'Solution No. ' + pad(x.no || 0)));
+    var li = el('li', 'bpx-sol'), design = x.kind === 'design', deal = x.kind === 'deal';
+    /* v11.4: a Solution Perfect Nations designs, or a Deal Note (a market deal read by Perfect Nations) */
+    var k = el('p', 'bpx-sol__k'); k.appendChild(el('b', '', (deal ? 'Deal Note No. ' : 'Solution No. ') + pad(x.no || 0)));
     var tm = el('time', '', x.label || shortDate(x.date) || ''); tm.setAttribute('datetime', x.date || ''); k.appendChild(tm); li.appendChild(k);
-    var h = el('h3'), href = okUrl(x.url) ? x.url : 'https://perfectnations.org/state-of-nations/#solution-' + pad(x.no || 0);
+    var h = el('h3'), href = okUrl(x.url) ? x.url : 'https://perfectnations.org/state-of-nations/#' + (deal ? 'deal-' : 'solution-') + pad(x.no || 0);
     h.appendChild(link(el('a', '', x.title), href)); li.appendChild(h);
+    if (design && T(x.standfirst)) li.appendChild(el('p', '', x.standfirst));
     if (T(x.challenge) && T(x.advises)) li.appendChild(howList([['01', 'The challenge', x.challenge], ['02', 'What Perfect Nations advises', x.advises]]));
     else if (T(x.standfirst) || T(x.summary)) {
       var fs = firstSentence(x.standfirst || x.summary);
@@ -366,7 +368,7 @@
     if (T(x.figure)) { var f = el('p', 'bpx-sol__fig'); f.appendChild(el('b', '', x.figure)); if (T(x.caption)) f.appendChild(el('span', '', x.caption)); li.appendChild(f); }
     var foot = el('div', 'bpx-sol__foot'), sig = el('span', 'bpx-sig', 'From');
     sig.appendChild(el('b', '', sigName)); sig.appendChild(el('small', '', sigRole)); foot.appendChild(sig);
-    foot.appendChild(link(el('a', 'bpx-btn', 'Read the Solution'), href)); li.appendChild(foot);
+    foot.appendChild(link(el('a', 'bpx-btn', deal ? 'Read the Deal Note' : 'Read the Solution'), href)); li.appendChild(foot);
     return li;
   }
   function brief(sbn) {
@@ -392,22 +394,31 @@
     var go = el('a', 'bpx-btn', 'The three mandates'); go.href = '#bp-mandates'; foot.appendChild(go); li.appendChild(foot);
     return li;
   }
+  /* a market deal, from State of Nations or the nation's own file, reads as a Deal Note (v11.4) */
+  function asDeal(x) { if (x.kind) return x; var y = { kind: 'deal' }; for (var k in x) { if (Object.prototype.hasOwnProperty.call(x, k)) y[k] = x[k]; } return y; }
   function solutions(sbn, son) {
     var ul = q('#bp-sols'); if (!ul) return;
     var cards = [], seen = {}, nos = [];
     if (sbn && sbn.nations) sbn.nations.forEach(function (n) { if (n && n.slug === CFG.slug && n.solutions) nos = n.solutions; });
-    var lead = sbn ? brief(sbn) : null;
-    if (!lead) { var kept = ul.querySelector('.bpx-sol--brief'); if (kept) lead = kept.cloneNode(true); }
+    /* v11.4: the Solution Perfect Nations designs for the nation leads; the playbook brief only where there is none */
+    var designed = false;
+    if (son && son.dispatches) son.dispatches.forEach(function (x) { if (x && x.kind === 'design' && x.nation === CFG.name && x.title) designed = true; });
+    var lead = designed ? null : (sbn ? brief(sbn) : null);
+    if (!lead && !designed) { var kept = ul.querySelector('.bpx-sol--brief'); if (kept) lead = kept.cloneNode(true); }
     var pool = [];
     if (son && son.dispatches) son.dispatches.forEach(function (x) {
       if (!x || !x.title || !x.no) return;
-      var mine = nos.indexOf(x.no) >= 0 || x.nation === CFG.name || (x.nations && x.nations.indexOf && x.nations.indexOf(CFG.name) >= 0);
+      var mine = (x.kind === 'design' ? false : nos.indexOf(x.no) >= 0) || x.nation === CFG.name || (x.nations && x.nations.indexOf && x.nations.indexOf(CFG.name) >= 0);
       if (mine) pool.push({ x: x, who: 'preeti' });
     });
-    if (nationFile && nationFile.dispatches) nationFile.dispatches.forEach(function (x) { if (x && x.title && x.no) pool.push({ x: x, who: x.author === 'steward' || x.author === 'nia' ? 'steward' : 'preeti' }); });
-    pool.sort(function (a, b) { return String(b.x.date || '').localeCompare(String(a.x.date || '')) || (b.x.no - a.x.no); });
+    if (son && son.deals) son.deals.forEach(function (x) {
+      if (x && x.title && x.no && x.nation === CFG.name) pool.push({ x: asDeal(x), who: 'preeti' });
+    });
+    if (nationFile && nationFile.dispatches) nationFile.dispatches.forEach(function (x) { if (x && x.title && x.no) pool.push({ x: asDeal(x), who: x.author === 'steward' || x.author === 'nia' ? 'steward' : 'preeti' }); });
+    pool.sort(function (a, b) { return ((b.x.kind === 'design') - (a.x.kind === 'design')) || String(b.x.date || '').localeCompare(String(a.x.date || '')) || (b.x.no - a.x.no); });
     pool.forEach(function (p) {
-      if (seen[p.x.no]) return; seen[p.x.no] = 1;
+      var key = (p.x.kind === 'design' ? 's' : 'd') + p.x.no;
+      if (seen[key]) return; seen[key] = 1;
       var st = p.who === 'steward';
       cards.push(solCard(p.x, st ? CFG.steward : 'Preeti Sinha', st ? CFG.stewardRole + ' \u00b7 SI Researcher' : 'President and CEO, Perfect Nations'));
     });

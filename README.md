@@ -105,16 +105,17 @@ perfectnations.org/contact/ (page 12711) is one file, `pages/contact.html` (root
 - **Checks and previews:** `python3 tools/check_page.py pages/contact.html`, then `python3 tools/preview_page.py pages/contact.html --out <folder> --fonts <folder holding node_modules/@fontsource>`.
 - **Every change** goes through a pull request "For approval: Contact vX.Y, ...", with `pn-contact` raised in the manifest.
 
-## The State of Nations page (from 7 November 2026)
+## The State of Nations page (from 7 November 2026; v8.0 from 9 November 2026)
 
 perfectnations.org/state-of-nations/ (page 15051) is one file, `pages/state-of-nations.html` (root `pn-son`), kept by the State of Nations Steward. The page's one Elementor Custom HTML widget already contains `pn-son`, so the plugin serves the file in its place.
 
-The page is about Solutions: how super intelligence (SI) and innovative financing for development (FFD) close the gap to the seven basic standards of living, nation by nation. Bands: the hero (Earthrise); the Solutions (ivory); Solutions for every nation (Lagoon); the gold line; the Solutions Wire and the close (Earthrise Depth).
+The page is about the Solutions Perfect Nations designs: one for each open blueprint nation, to end extreme poverty and secure the seven basic standards of living, with innovative finance first and super intelligence second. Bands: the hero (Earthrise); the Solutions (ivory), with a search by nation and filters by standard; the gold line; the Deal Notes, the wire and the close (Earthrise Depth).
 
 - **Built, never edited by hand.** Edit `src/state-of-nations.html` (style, markup, script), then run `python3 tools/build_state_of_nations.py`. It fills the slots from `data/state-of-nations.json`, `data/solutions-by-nation.json` and the gold line in `pages/home-rule.html`, and refuses any non-ASCII character. Check with `python3 tools/check_page.py pages/state-of-nations.html`; previews with `python3 tools/preview_page.py pages/state-of-nations.html`.
-- **The playbook** (for each of the seven standards: the FFD instrument, the deal that proved it, the SI move and the first move for a nation with nothing at work) lives in `PLAYBOOK` in the build script. Five proofs are read from `data/capital-architecture.json` by instrument id, so the figure and source stay those of the Capital Architecture page; Food and Health carry their own primary source. Changing it is a page change.
-- **`data/solutions-by-nation.json`** mirrors the nation files and adds no fact: for each open blueprint, the standard furthest from reach (`coverage.set_by`), the gap and its sentence (`coverage.gap`, `gap_text`) with the source of that standard (`guarantees`), the seven standards as published on the blueprint, the instrument already at work on that standard (the best match in `capital.register`, or none), and the Solutions about that nation. Rebuild it with `python3 tools/build_state_of_nations.py --data`; it is data, so it may go straight to main. The Correspondent rebuilds it after every watch.
-- **It updates itself.** On every visit the page reads both files; a Solution or wire item merged into `data/state-of-nations.json`, or a nation file changed and rebuilt into the nation data, shows at once. If a file cannot be read, the copy built into the page shows.
+- **A Solution opens on the page** (link `/state-of-nations/#solution-NN`): the idea, The challenge with its source, What Perfect Nations advises, How it works (01 Assets, 02 Capital, 03 Solutions), the deal that proves it, the first move, where the nation stands on the seven standards (from `data/solutions-by-nation.json`) and the instrument already at work. A Deal Note opens at `#deal-NN`; old `#dispatch-NN` links open the Deal Note of that number.
+- **The playbook** (for each of the seven standards: the instrument, the deal that proved it and what Perfect Nations advises) lives in `PLAYBOOK` in the build script and is published in `data/solutions-by-nation.json`; a blueprint shows it only for a nation without a designed Solution. Five proofs are read from `data/capital-architecture.json` by instrument id; Food and Health carry their own primary source. Changing it is a page change.
+- **`data/solutions-by-nation.json`** mirrors the nation files and adds no fact: for each open blueprint, the standard furthest from reach (`coverage.set_by`), the gap and its sentence with the source of that standard, the seven standards as published on the blueprint, the instrument already at work on that standard, the nation's designed Solution (`solutions`, `design`: no, title, idea, advice, url). Rebuild it with `python3 tools/build_state_of_nations.py --data`; it is data, so it may go straight to main. The Correspondent rebuilds it after every watch.
+- **It updates itself.** On every visit the page reads both files; a Solution, Deal Note or wire item merged into `data/state-of-nations.json` shows at once. If a file cannot be read, the copy built into the page shows.
 - **Page changes** go through a pull request "For approval: State of Nations vX.Y, ...", with `pn-son` raised in the manifest.
 
 ## Nations
@@ -127,7 +128,7 @@ Each live blueprint reads its own file: `data/<nation>.json` (barbados, kenya, .
 - `stewards/<nation>.md`: each Nation Steward's notes, public like the rest of this repository: the primary source of every figure on the page that has no link of its own (the hero and asset figures), the watch items and the open gaps.
 - No limit on the number of Newswire items or dispatches (Steward-General, 6 November 2026). A Newswire item names an instrument, approval, debt operation or investment, with an issuer and terms, verified on the article page, one item per announcement. A dispatch is written only for a landmark: an instrument approved, priced, signed or closed, or a watched item resolved.
 - The Correspondent (8 am and 8 pm) also adds every instrument it verifies for a nation to that nation's `newswire`, and sets that file's `updated`. It never edits `barbados.json` and changes nothing else in a nation file.
-- Dispatches share one numbered series across every file in `data/` and `archive/` and every open pull request.
+- Deal Notes (the `dispatches` in a nation file and `deals` in `data/state-of-nations.json`) share one numbered series across every file in `data/` and `archive/` and every open pull request. The Solutions Perfect Nations designs (`dispatches` in `data/state-of-nations.json`, kind "design") have their own series.
 
 ## The whole blueprint page (from 6 November 2026)
 
@@ -218,7 +219,8 @@ Outline (the comments are notes, not part of the file):
  "page": "state-of-nations",          // must be exactly this
  "updated": "YYYY-MM-DD",
  "wire": [ ... ],                     // newest first
- "dispatches": [ ... ]                // newest first
+ "dispatches": [ ... ],               // the Solutions Perfect Nations designs, highest number first
+ "deals": [ ... ]                     // the Deal Notes, newest first
 }
 ```
 
@@ -237,25 +239,27 @@ Outline (the comments are notes, not part of the file):
 | `nations` | list of nations counted on the page; empty for a regional item |
 | `region` | one of: Africa, Americas, Asia-Pacific, Europe, Middle East |
 
-**Solution entry** (the `dispatches` list keeps its name, so older readers of the file keep working; on the site each entry is a Solution)
+**Solution entry** (`dispatches`; the list keeps its name so the homepage and the blueprints keep reading it). From 9 November 2026 each entry is a Solution that Perfect Nations designs, `kind` "design", one for each open blueprint nation.
 
 | field | rule |
 |---|---|
-| `no` | Solution number, unique; the next is the highest number plus one |
-| `slug`, `title`, `kicker`, `date`, `standfirst` | as on the card ("Liability management · Addis Ababa") |
-| `nation` | the nation the Solution is about, exactly as its blueprint names it ("Côte d’Ivoire"), or a group ("Five nations") |
-| `standards` | the standards it moves, in the order Food, Water, Shelter, Energy, Education, Health, Livelihood; an empty list when it moves them only through the budget |
-| `challenge` | one sentence: the challenge to the seven standards, in the words of the sources |
-| `ffd` | one sentence: the instrument and how it solves the challenge, with its sourced figure |
-| `si` | one sentence: what SI does next (what it tracks, prices or screens, and the nation it screens first) |
-| `figure`, `caption` | the lead figure on the card and its caption |
-| `url` | the WordPress post, when the dispatch is published as a post |
-| `body` | the full text as a list of paragraphs; a line starting "## " is a section heading. With a body and no url, the Solution opens in a reader on the page (link: /state-of-nations/#solution-NN; #dispatch-NN still works) |
-| `figures` | up to four [value, caption] pairs for the reader |
-| `kick` | the closing line |
-| `sources` | list of {"label", "url"}, every url https |
+| `no` | Solution number, unique among the Solutions; the next is the highest number plus one |
+| `kind` | "design" |
+| `slug`, `nation`, `blueprint` | the nation exactly as its blueprint names it ("Côte d’Ivoire") and the blueprint url |
+| `title`, `kicker`, `date` | the name of the Solution (at most 60 characters), "Perfect Nations Solution", the date it was designed |
+| `standfirst` | the idea in one line (at most 160 characters) |
+| `standards` | the standards it moves, in the order Food, Water, Shelter, Energy, Education, Health, Livelihood; it always includes the nation's standard furthest from reach |
+| `challenge` | the challenge in one or two sentences (at most 360 characters), with the nation's own sourced figure |
+| `advises` | What Perfect Nations advises, two sentences (at most 520 characters): the finance move first; the second begins "With super intelligence," and says what it makes possible. No new figures, no results claimed, and the word "Finance" in place of "pay" |
+| `how` | three lines: 01 Assets (what the nation owns that carries it), 02 Capital (the instrument), 03 Solutions (what changes for citizens) |
+| `proof` | the deal that proves it: name, where, year, figure, label, source, url, from `data/capital-architecture.json` or the nation's own record; `own` true for an instrument Perfect Nations designed (Standard Tokens, pending compliance review) |
+| `first` | the first move, one sentence |
+| `figure`, `caption`, `gap_seen` | the card figure (at most 18 characters, with a digit), its caption (at most 120), and the nation's gap when the Solution was written (a changed gap means the challenge needs a fresh look) |
+| `sources` | list of {"label", "url"}, every url https: the source of the challenge, then the proof |
 
-A Solution with neither `url` nor `body` shows "In press". Wire items are committed straight to main. A new Solution is proposed only as a pull request titled "For approval: Solution No. NN" and goes live when Preeti Sinha, President and CEO, merges it.
+**Deal Note entry** (`deals`): a landmark market deal read by Perfect Nations (these were the Solutions before 9 November 2026, and keep their numbers). Fields as before: `no`, `kind` "deal", `slug`, `title`, `kicker`, `date`, `nation`, `standards`, `standfirst`, `challenge`, `advises`, `figure`, `caption`, `url` (the WordPress post) or `body` (paragraphs; a line starting "## " is a heading), `figures`, `kick`, `sources`. A Deal Note opens at `/state-of-nations/#deal-NN`. A new Deal Note takes the next number in `deals`, never a number in `dispatches`.
+
+Wire items are committed straight to main. A new Solution or Deal Note is proposed only as a pull request titled "For approval: Solution No. NN" or "For approval: Deal Note No. NN" and goes live when Preeti Sinha, President and CEO, merges it.
 
 ## The Perfect Capita page
 

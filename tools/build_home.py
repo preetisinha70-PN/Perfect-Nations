@@ -24,7 +24,7 @@ ROOT = Path(__file__).resolve().parent.parent
 PAGES = ROOT / 'pages'
 DATA = ROOT / 'data'
 SITE = 'https://perfectnations.org'
-VERSION = '11.2'
+VERSION = '11.3'
 SOLUTIONS_SHOWN = 6
 MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September',
           'October', 'November', 'December']
@@ -81,10 +81,11 @@ def source_name(label):
 
 
 def solutions():
-    """The published Solutions, newest first (as the live script in home-solutions.html sorts them)."""
+    """The Solutions Perfect Nations designs (kind "design"), newest first, as the live script in
+    home-solutions.html sorts them (v11.3: the market deals are Deal Notes on State of Nations)."""
     son = json.loads((DATA / 'state-of-nations.json').read_text(encoding='utf-8'))
     ds = [s for s in son.get('dispatches', [])
-          if isinstance(s.get('no'), int) and s.get('title') and re.match(r'^\d{4}-\d{2}-\d{2}$', str(s.get('date', '')))]
+          if s.get('kind') == 'design' and isinstance(s.get('no'), int) and s.get('title') and re.match(r'^\d{4}-\d{2}-\d{2}$', str(s.get('date', '')))]
     ds.sort(key=lambda s: (s['date'], s['no']), reverse=True)
     return ds
 
@@ -104,6 +105,8 @@ def solution_card(s, i):
         out.append('<p class="pnso-f%s"><b>%s</b>%s</p>' % (
             ' is-money' if is_money(fig) else '', ascii_html(fig),
             '<span>%s</span>' % ascii_html(s['caption']) if s.get('caption') else ''))
+    if lead and s.get('kind') == 'design' and s.get('standfirst'):
+        out.append('<p class="pnso-i">%s</p>' % ascii_html(s['standfirst']))
     if lead:
         stds = [x for x in s.get('standards') or [] if x]
         if stds:
@@ -172,6 +175,7 @@ Built by tools/build_home.py from the parts named below, in this order. Edit a p
 and open a pull request; never edit this file by hand.
 Palette: Earthrise and ivory grounds, gold only for what a visitor can act on; a fine gold line
 (pages/home-rule.html) marks each section break.
+v11.3: the Solutions section shows the Solutions Perfect Nations designs, one for every blueprint nation (9 Nov 2026).
 v10.1: Gold line in place of the painted botanical seams (the Steward-General, 9 Nov 2026), on every page.
 =========================================================================== -->
 <div id="pn-home" hidden></div>

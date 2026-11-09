@@ -5,6 +5,14 @@ Pages plugin serves this file in place of the code pasted in the page's one Cust
 BUILT, never edited by hand: edit src/state-of-nations.html, then run
 python3 tools/build_state_of_nations.py. Kept by the State of Nations Steward (the page) and the
 Correspondent (the data: data/state-of-nations.json, data/solutions-by-nation.json).
+v8.0 (9 Nov 2026): Perfect Nations Solutions, designed by Perfect Nations (the Steward-General, 9 Nov 2026).
+  Each of the 44 open blueprint nations has one Solution that Perfect Nations designs to end extreme
+  poverty and secure the seven standards: the idea, The challenge (sourced), What Perfect Nations
+  advises (finance first, then super intelligence), how it works (Assets, Capital, Solutions), the deal
+  that proves it, the first move and where the nation stands on the seven. Search by nation and filter
+  by standard; laptops show the lead and six more, phones swipe. The market deals move to the wire as
+  Deal Notes (the field "deals"), with the wire below them. The nation finder band is retired: each
+  nation is found by name in the Solutions, and its seven standards open in its Solution.
 v7.3 (9 Nov 2026): fewer words, and richer advice that weaves in super intelligence (the Steward-General, 9 Nov 2026).
   Each band: an eyebrow, one headline, one line, then its cards, nations or wire; the rest sits in a
   native Read more disclosure (.sn-rm) or in the dispatch. How a Solution is built moves from the hero
@@ -31,8 +39,9 @@ v7.0 (7 Nov 2026): the page is about Solutions. Dispatches become Solutions: eac
   close. Compact: laptops show the newest four Solutions, four nations a standard and six wire items;
   phones swipe through the Solutions and show two nations and three wire items; the rest is one tap
   away, and the filters scroll in one line.
-On every visit the page reads data/state-of-nations.json (Solutions and wire) and
-data/solutions-by-nation.json (nations) from GitHub; if either cannot be read, the copy below shows.
+On every visit the page reads data/state-of-nations.json (Solutions, Deal Notes and wire) and
+data/solutions-by-nation.json (the seven standards of each nation) from GitHub; if either cannot be read,
+the copy below shows.
 =========================================================================== -->
 <style>
 #pn-son{
@@ -198,68 +207,6 @@ html.pn-son-lock,html.pn-son-lock body{ overflow:hidden; }
 #pn-son .sn-cfoot a{ font-family:var(--hd); font-size:.7rem; font-weight:700; letter-spacing:.18em; text-transform:uppercase; color:var(--gd); text-decoration:none; }
 #pn-son .sn-swipe{ display:none; }
 
-/* 3 SOLUTIONS FOR EVERY NATION: Lagoon */
-#pn-son .sn-find{ background:var(--lg); }
-#pn-son .sn-tabs{ display:grid; grid-template-columns:repeat(7,minmax(0,1fr)); gap:6px; margin:0 0 14px; }
-#pn-son .sn-tab{ display:flex; align-items:center; justify-content:space-between; gap:8px; min-height:46px; padding:9px 12px 8px; border-radius:12px; border:1px solid var(--hair); background:rgba(8,42,48,.35); color:var(--tm); cursor:pointer; font-family:var(--hd); font-size:.74rem; font-weight:700; letter-spacing:.14em; text-transform:uppercase; text-align:left; transition:background .2s ease, border-color .2s ease, color .2s ease; }
-#pn-son .sn-tab span{ min-width:26px; padding:2px 7px 1px; border-radius:999px; background:rgba(244,236,216,.12); font-size:.72rem; letter-spacing:0; text-align:center; }
-#pn-son .sn-tab:hover{ border-color:var(--g); color:var(--iv); }
-#pn-son .sn-tab.is-on{ background:var(--g); border-color:var(--g); color:#1A140C; }
-#pn-son .sn-tab.is-on span{ background:rgba(26,20,12,.14); }
-#pn-son .sn-tab.is-none{ opacity:.5; }
-#pn-son .sn-p[hidden]{ display:none; }
-#pn-son .sn-pb{ display:grid; grid-template-columns:minmax(0,.8fr) minmax(0,1.25fr) minmax(0,1fr); gap:0; border:1px solid var(--hair); border-radius:16px; background:rgba(8,42,48,.45); overflow:hidden; }
-#pn-son .sn-pb > div{ padding:16px 18px; }
-#pn-son .sn-pb > div + div{ border-left:1px solid var(--hair); }
-#pn-son .sn-k{ margin:0 0 6px; font-family:var(--hd); font-size:.66rem; font-weight:700; letter-spacing:.26em; text-transform:uppercase; color:var(--td); }
-#pn-son .sn-pb h3{ margin:0; font-family:var(--hd); font-weight:600; font-size:clamp(1.4rem,2vw,1.85rem); line-height:1.02; color:var(--iv) !important; }
-#pn-son .sn-tag{ margin:0 0 6px; font-family:var(--hd); font-size:.68rem; font-weight:700; letter-spacing:.2em; text-transform:uppercase; color:var(--iv); }
-#pn-son .sn-pb__c p{ margin:0; font-size:.92rem; line-height:1.45; color:var(--tm); }
-#pn-son .sn-pb__c p.sn-tag{ color:var(--iv); }
-#pn-son .sn-pb__c p.sn-proof{ margin-top:0; font-size:.88rem; line-height:1.45; color:var(--tm); }
-#pn-son .sn-proof span{ margin-right:6px; font-family:var(--hd); font-size:.6rem; font-weight:700; letter-spacing:.2em; text-transform:uppercase; color:var(--tm); }
-#pn-son .sn-proof b{ font-family:var(--hd); font-size:1.02rem; color:var(--g); }
-#pn-son .sn-proof a,#pn-son .sn-src{ color:var(--tm); text-decoration:underline; text-decoration-color:rgba(244,236,216,.35); text-underline-offset:2px; }
-#pn-son .sn-pcount{ margin:14px 0 10px; font-size:.9rem; color:var(--tm); }
-#pn-son .sn-pcount b{ font-family:var(--hd); font-size:1.1rem; color:var(--iv); }
-#pn-son .sn-pcount a{ color:var(--g); }
-#pn-son .sn-rows{ display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:10px; margin:0; padding:0; list-style:none; }
-#pn-son .sn-r{ padding:12px 14px 10px; border:1px solid var(--hair); border-radius:12px; background:rgba(8,42,48,.28); }
-#pn-son .sn-r[hidden]{ display:none; }
-#pn-son .sn-r.is-hit{ border-color:var(--g); }
-#pn-son .sn-r__h{ display:flex; align-items:baseline; justify-content:space-between; gap:12px; }
-#pn-son .sn-r__n{ font-family:var(--hd); font-weight:700; font-size:1.2rem; line-height:1.1; color:var(--iv); text-decoration:none; }
-#pn-son .sn-r__n::after{ content:" \2197"; font-family:Arial,sans-serif; font-size:.8rem; color:var(--g); }
-#pn-son .sn-r__n:hover{ color:var(--gs); }
-#pn-son .sn-r__g{ font-family:var(--hd); font-weight:700; font-size:1.3rem; line-height:1; color:var(--iv); white-space:nowrap; font-variant-numeric:tabular-nums; }
-#pn-son .sn-r__t{ margin:4px 0 0; font-size:.86rem; line-height:1.4; color:var(--tm); }
-#pn-son .sn-r__t .sn-src{ font-size:.76rem; }
-#pn-son .sn-r__w{ display:flex; flex-wrap:wrap; align-items:baseline; gap:3px 8px; margin:8px 0 0; padding-top:7px; border-top:1px solid var(--hair); font-size:.84rem; line-height:1.35; color:var(--tm); }
-#pn-son .sn-r__w a{ color:var(--iv); text-decoration:underline; text-decoration-color:rgba(244,236,216,.3); text-underline-offset:2px; }
-#pn-son .sn-r__l{ font-family:var(--hd); font-size:.6rem; font-weight:700; letter-spacing:.2em; text-transform:uppercase; color:var(--td); }
-#pn-son .sn-r__w .sn-m{ font-family:var(--hd); font-size:.98rem; color:var(--g); }
-#pn-son .sn-r__w .sn-q{ font-family:var(--hd); font-size:.98rem; color:var(--iv); }
-#pn-son .sn-r__w.is-open{ color:var(--iv); }
-#pn-son .sn-r__w.is-open .sn-r__l{ color:var(--g); }
-#pn-son .sn-r__s{ display:inline-block; margin:7px 10px 0 0; font-family:var(--hd); font-size:.64rem; font-weight:700; letter-spacing:.18em; text-transform:uppercase; color:var(--g); text-decoration:none; }
-#pn-son .sn-r__s::after{ content:" \2192"; font-family:Arial,sans-serif; }
-#pn-son .sn-r__h{ position:relative; }
-#pn-son .sn-r__x{ flex:0 0 auto; display:inline-flex; align-items:center; justify-content:center; gap:6px; height:30px; margin:0 0 0 2px; padding:0 10px 0 11px; border:1px solid rgba(227,194,88,.55); border-radius:999px; background:transparent; color:var(--g); cursor:pointer; font-family:var(--hd); font-size:.6rem; font-weight:700; letter-spacing:.16em; text-transform:uppercase; align-self:center; }
-#pn-son .sn-r__x::after{ content:"+"; font-family:Arial,sans-serif; font-size:.95rem; letter-spacing:0; }
-#pn-son .sn-r__x[aria-expanded="true"]{ background:var(--g); color:#1A140C; }
-#pn-son .sn-r__x[aria-expanded="true"]::after{ content:"\2212"; }
-#pn-son .sn-r__g{ margin-left:auto; }
-#pn-son .sn-7{ display:grid; gap:4px; margin:6px 0 2px; padding:8px 10px; border-radius:10px; background:rgba(8,42,48,.5); }
-#pn-son .sn-7[hidden]{ display:none; }
-#pn-son .sn-7 div{ display:grid; grid-template-columns:8.6em minmax(0,1fr) 5.6em; align-items:center; gap:8px; font-size:.78rem; color:var(--td); }
-#pn-son .sn-7 i{ position:relative; display:block; height:6px; border-radius:3px; background:rgba(244,236,216,.12); overflow:hidden; }
-#pn-son .sn-7 i::before{ content:""; position:absolute; left:0; top:0; bottom:0; width:var(--v,0%); border-radius:3px; background:rgba(244,236,216,.55); }
-#pn-son .sn-7 div.is-far{ color:var(--iv); font-weight:600; }
-#pn-son .sn-7 div.is-far i::before{ background:var(--iv); }
-#pn-son .sn-7 a{ text-align:right; color:inherit; font-family:var(--hd); font-weight:700; text-decoration:underline; text-decoration-color:rgba(244,236,216,.3); text-underline-offset:2px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
-#pn-son .sn-find .sn-more{ color:var(--iv); }
-#pn-son .sn-find .sn-empty{ margin:12px 0 0; color:var(--tm); }
-
 /* 4 THE WIRE AND THE CLOSE: Earthrise Depth */
 #pn-son .sn-wire{ background:var(--dp); }
 #pn-son .sn-ctrl{ display:flex; flex-wrap:wrap; align-items:center; gap:8px 14px; margin:0 0 10px; }
@@ -292,20 +239,73 @@ html.pn-son-lock,html.pn-son-lock body{ overflow:hidden; }
 #pn-son.is-rv .sn-rv{ opacity:0; transform:translateY(16px); transition:opacity .7s ease, transform .9s cubic-bezier(.22,1,.36,1); }
 #pn-son.is-rv .sn-rv.is-in{ opacity:1; transform:none; }
 
-/* tablets */
-@media (max-width:1080px){
-  #pn-son .sn-tabs{ display:flex; overflow-x:auto; scrollbar-width:none; margin-left:calc(-1 * var(--px)); margin-right:calc(-1 * var(--px)); padding:0 var(--px); }
-  #pn-son .sn-tabs::-webkit-scrollbar{ display:none; }
-  #pn-son .sn-tab{ flex:0 0 auto; }
+/* v8.0: the designed Solutions. The card: nation and number, the name, the idea in one line, The challenge,
+   What Perfect Nations advises, then the standards and Read the Solution. */
+#pn-son .sn-sol .sn-search input{ background:#FFFBF1; border-color:var(--ihair); color:var(--ink); }
+#pn-son .sn-sol .sn-search input::placeholder{ color:var(--idm); }
+#pn-son .sn-sol .sn-search svg{ color:var(--ink); }
+#pn-son .sn-sol .sn-empty{ margin:12px 0 0; color:var(--im); }
+#pn-son .sn-sol .sn-empty a{ color:var(--gd); }
+#pn-son .sn-c__k b{ color:var(--ink); }
+#pn-son .sn-c__k span{ color:var(--tc); }
+#pn-son .sn-c h3{ margin:10px 0 4px; }
+#pn-son .sn-c__i{ margin:0 0 10px; font-size:.95rem; line-height:1.4; color:var(--ink); }
+#pn-son .sn-c__ft{ display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:8px 12px; margin-top:auto; padding-top:12px; }
+#pn-son .sn-c__x + .sn-c__ft{ margin-top:12px; border-top:1px solid var(--ihair); }
+#pn-son .sn-c__ft .sn-std{ margin:0; }
+#pn-son .sn-c__ft .sn-c__go{ margin:0; }
+#pn-son .sn-c--lead .sn-c__i{ font-size:1.08rem; max-width:44ch; }
+#pn-son .sn-c--lead .sn-c__ft{ border-top:0; padding-top:4px; }
+#pn-son .sn-c.is-hit{ border-color:var(--gd); }
+
+/* the Deal Notes: the landmark deals, read by Perfect Nations, in one line that scrolls */
+#pn-son .sn-dn{ margin:0 0 18px; }
+#pn-son .sn-dn__h{ margin:0 0 8px; font-family:var(--hd); font-size:.68rem; font-weight:700; letter-spacing:.24em; text-transform:uppercase; color:var(--tm); }
+#pn-son .sn-dn__h span{ margin-left:6px; color:var(--g); }
+#pn-son .sn-dl{ display:grid; grid-auto-flow:column; grid-auto-columns:minmax(240px,calc((100% - 30px) / 4)); gap:10px; margin:0; padding:2px 0 8px; list-style:none; overflow-x:auto; scroll-snap-type:x proximity; scrollbar-width:thin; scrollbar-color:rgba(227,194,88,.4) transparent; }
+#pn-son .sn-d{ position:relative; display:flex; flex-direction:column; gap:6px; padding:12px 14px 11px; border:1px solid var(--hair); border-radius:12px; background:rgba(244,236,216,.04); scroll-snap-align:start; transition:border-color .2s ease, background .2s ease; }
+#pn-son .sn-d:hover{ border-color:rgba(227,194,88,.55); background:rgba(244,236,216,.07); }
+#pn-son .sn-d[hidden]{ display:none; }
+#pn-son .sn-d__k{ display:flex; flex-wrap:wrap; gap:2px 8px; margin:0; font-family:var(--hd); font-size:.6rem; font-weight:700; letter-spacing:.18em; text-transform:uppercase; color:var(--td); }
+#pn-son .sn-d__k b{ color:var(--g); font-weight:700; }
+#pn-son .sn-d h3{ margin:0; font-family:var(--hd); font-weight:600; font-size:1.02rem; line-height:1.18; color:var(--iv) !important; }
+#pn-son .sn-d h3 a{ text-decoration:none; }
+#pn-son .sn-d h3 a::after{ content:""; position:absolute; inset:0; border-radius:12px; }
+#pn-son .sn-d__f{ display:flex; align-items:baseline; gap:8px; margin:auto 0 0; padding-top:6px; border-top:1px solid var(--hair); font-size:.72rem; line-height:1.3; color:var(--td); }
+#pn-son .sn-d__f b{ font-family:var(--hd); font-weight:700; font-size:1.2rem; line-height:1; color:var(--iv); white-space:nowrap; }
+#pn-son .sn-d__f b.is-money{ color:var(--g); }
+
+/* the reader of a designed Solution */
+#pn-son-rd .rd-sec{ margin:18px 0 0; }
+#pn-son-rd .rd-sec > h3{ margin:0 0 8px; padding-top:12px; border-top:1px solid rgba(26,20,12,.14); font-family:var(--pn-font-heading,"Barlow Condensed","Arial Narrow",Arial,sans-serif); font-size:.72rem; font-weight:700; letter-spacing:.22em; text-transform:uppercase; color:#8A3A22; text-shadow:none !important; }
+#pn-son-rd .rd-sec p{ margin:0; font-size:1rem; line-height:1.5; color:#2A2116; }
+#pn-son-rd .rd-sec a{ color:#7E5A0C; }
+#pn-son-rd .rd-how{ display:grid; gap:8px; margin:0; padding:0; list-style:none; }
+#pn-son-rd .rd-how li{ display:grid; grid-template-columns:34px 6.4em minmax(0,1fr); gap:10px; align-items:baseline; font-size:1rem; line-height:1.45; color:#2A2116; }
+#pn-son-rd .rd-how b{ font-family:var(--pn-font-heading,"Barlow Condensed","Arial Narrow",Arial,sans-serif); font-size:1.3rem; line-height:1; color:#7E5A0C; }
+#pn-son-rd .rd-how strong{ font-family:var(--pn-font-heading,"Barlow Condensed","Arial Narrow",Arial,sans-serif); font-size:.72rem; font-weight:700; letter-spacing:.18em; text-transform:uppercase; color:#1A140C; }
+#pn-son-rd .rd-proof b{ font-family:var(--pn-font-heading,"Barlow Condensed","Arial Narrow",Arial,sans-serif); font-size:1.3rem; color:#7E5A0C; }
+#pn-son-rd .rd-own{ display:inline-block; margin-left:6px; padding:2px 8px 1px; border-radius:999px; background:rgba(126,90,12,.12); font-family:var(--pn-font-heading,"Barlow Condensed","Arial Narrow",Arial,sans-serif); font-size:.6rem; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:#7E5A0C; }
+#pn-son-rd .rd-7{ display:grid; gap:5px; margin:0; }
+#pn-son-rd .rd-7 div{ display:grid; grid-template-columns:7.8em minmax(0,1fr) 6.4em; align-items:center; gap:10px; font-size:.86rem; color:rgba(26,20,12,.7); }
+#pn-son-rd .rd-7 i{ position:relative; display:block; height:7px; border-radius:4px; background:rgba(26,20,12,.1); overflow:hidden; }
+#pn-son-rd .rd-7 i::before{ content:""; position:absolute; left:0; top:0; bottom:0; width:var(--v,0%); border-radius:4px; background:#0F4C5C; }
+#pn-son-rd .rd-7 div.is-far{ color:#1A140C; font-weight:600; }
+#pn-son-rd .rd-7 div.is-far i::before{ background:#8A3A22; }
+#pn-son-rd .rd-7 a,#pn-son-rd .rd-7 em{ text-align:right; font-style:normal; font-family:var(--pn-font-heading,"Barlow Condensed","Arial Narrow",Arial,sans-serif); font-weight:700; color:inherit; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+#pn-son-rd .rd-std{ display:flex; flex-wrap:wrap; gap:5px; margin:12px 0 0; padding:0; list-style:none; }
+#pn-son-rd .rd-std li{ padding:3px 9px 2px; border-radius:999px; background:rgba(15,76,92,.1); color:#0F4C5C; font-family:var(--pn-font-heading,"Barlow Condensed","Arial Narrow",Arial,sans-serif); font-size:.64rem; font-weight:700; letter-spacing:.14em; text-transform:uppercase; }
+@media (max-width:640px){
+  #pn-son-rd .rd-how li{ grid-template-columns:28px minmax(0,1fr); }
+  #pn-son-rd .rd-how li span{ grid-column:2; }
+  #pn-son-rd .rd-7 div{ grid-template-columns:6.6em minmax(0,1fr) 5.2em; gap:6px; font-size:.8rem; }
 }
+
+/* tablets */
 @media (max-width:899px){
   #pn-son .sn-hgrid{ grid-template-columns:minmax(0,1fr); gap:16px; align-items:start; }
   #pn-son .sn-clist{ grid-template-columns:repeat(2,minmax(0,1fr)); }
   #pn-son .sn-c--lead{ display:flex; }
-  #pn-son .sn-pb{ grid-template-columns:1fr 1fr; }
-  #pn-son .sn-pb__h{ grid-column:1 / -1; }
-  #pn-son .sn-pb > div + div{ border-left:0; border-top:1px solid var(--hair); }
-  #pn-son .sn-pb > div.sn-pb__deal{ border-left:1px solid var(--hair); }
   #pn-son .sn-wl{ grid-template-columns:1fr; }
   #pn-son .sn-close{ grid-template-columns:1fr; }
   #pn-son .sn-close .sn-ctas{ justify-content:flex-start; }
@@ -351,25 +351,16 @@ html.pn-son-lock,html.pn-son-lock body{ overflow:hidden; }
   #pn-son .sn-c:hover{ transform:none; }
   #pn-son .sn-swipe{ display:inline; }
   #pn-son .sn-sol .sn-more{ display:none; }
-  #pn-son .sn-pb{ grid-template-columns:1fr; }
-  #pn-son .sn-pb > div{ padding:11px 14px; }
-  #pn-son .sn-pb .sn-k{ display:none; }
-  #pn-son .sn-pb h3{ font-size:1.32rem; }
-  #pn-son .sn-pb__c p.sn-proof{ margin-top:0; }
-  #pn-son .sn-pcount{ margin:10px 0 8px; font-size:.84rem; }
-  #pn-son .sn-r{ padding:10px 12px 8px; }
-  #pn-son .sn-r__w{ margin-top:6px; padding-top:6px; }
   #pn-son .sn-ctrl{ flex-wrap:nowrap; overflow-x:auto; scrollbar-width:none; margin:0 calc(-1 * var(--px)) 8px; padding:0 var(--px); }
   #pn-son .sn-ctrl::-webkit-scrollbar{ display:none; }
   #pn-son .sn-ctrl .sn-chips.sn-scroll{ margin:0; padding:0; overflow:visible; }
   #pn-son .sn-ctrl .sn-sel{ flex:0 0 auto; order:-1; }
   #pn-son .sn-close .sn-cup{ display:none; }
-  #pn-son .sn-7 div{ grid-template-columns:8em minmax(0,1fr) 4.6em; gap:6px; }
   #pn-son .sn-close{ margin-top:18px; padding-top:16px; }
+  #pn-son .sn-dl{ grid-auto-columns:78%; margin:0 calc(-1 * var(--px)); padding:2px var(--px) 8px; scroll-padding-left:var(--px); scrollbar-width:none; }
+  #pn-son .sn-dl::-webkit-scrollbar{ display:none; }
+  #pn-son .sn-c__i{ font-size:.92rem; }
   #pn-son .sn-close .sn-ctas .sn-btn:nth-child(3){ display:none; }
-  #pn-son .sn-pb > div.sn-pb__deal{ border-left:0; }
-  #pn-son .sn-pb__c p{ font-size:.88rem; }
-  #pn-son .sn-rows{ grid-template-columns:1fr; gap:8px; }
   #pn-son .sn-w{ grid-template-columns:38px minmax(0,1fr); gap:10px; padding:9px 0 8px; }
   #pn-son .sn-w time b{ font-size:1.3rem; }
   #pn-son .sn-w h3{ font-size:.98rem; }
@@ -411,8 +402,10 @@ html.pn-son-lock,html.pn-son-lock body{ overflow:hidden; }
 #pn-son-rd .rd-src{ margin:14px 0 0; font-size:.78rem; line-height:1.6; color:rgba(26,20,12,.62); }
 #pn-son-rd .rd-src a{ color:rgba(26,20,12,.8); }
 #pn-son-rd .rd-end{ display:flex; flex-wrap:wrap; gap:10px; margin-top:20px; }
-#pn-son-rd .rd-end a,#pn-son-rd .rd-end button{ display:inline-flex; align-items:center; min-height:44px; padding:10px 20px; border-radius:999px; border:1px solid #7E5A0C; background:transparent; color:#7E5A0C; cursor:pointer; font-family:var(--pn-font-heading,"Barlow Condensed","Arial Narrow",Arial,sans-serif); font-size:.72rem; font-weight:700; letter-spacing:.18em; text-transform:uppercase; text-decoration:none; }
+#pn-son-rd .rd-end a,#pn-son-rd .rd-end button{ display:inline-flex; align-items:center; min-height:44px; line-height:1.2; padding:10px 20px; border-radius:999px; border:1px solid #7E5A0C; background:transparent; color:#7E5A0C; cursor:pointer; font-family:var(--pn-font-heading,"Barlow Condensed","Arial Narrow",Arial,sans-serif); font-size:.72rem; font-weight:700; letter-spacing:.18em; text-transform:uppercase; text-decoration:none; }
 #pn-son-rd .rd-end a{ background:#E3C258; border-color:#E3C258; color:#1A140C; }
+#pn-son-rd .rd-end a.rd-bp{ background:transparent; border-color:#7E5A0C; color:#7E5A0C; }
+#pn-son-rd .rd-end a[hidden]{ display:none; }
 @media (max-width:640px){ #pn-son-rd .rd-figs{ grid-template-columns:1fr 1fr; } #pn-son-rd .rd-brief dl div{ grid-template-columns:1fr; gap:2px; } }
 @media (prefers-reduced-motion:reduce){ #pn-son-rd .rd-sheet{ animation:none; } }
 </style>
@@ -436,27 +429,27 @@ html.pn-son-lock,html.pn-son-lock body{ overflow:hidden; }
           <svg class="sn-cup" aria-hidden="true" focusable="false"><use href="#pnso-cup"></use></svg>
           <h1 class="sn-h1" id="sn-h1">The State of Nations</h1>
           <p class="sn-caps">Economic solutions for <span class="sn-rot" aria-hidden="true">all</span><span class="sn-sr">food, water, shelter, energy, education, health and livelihood</span></p>
-          <p class="sn-lead">Innovative financing for development (FfD) and super intelligence (SI) can secure seven basic standards of living for every citizen.</p>
+          <p class="sn-lead">A Perfect Nations Solution for every nation, to end extreme poverty and secure seven basic standards of living for all.</p>
           <div class="sn-ctas">
             <a class="sn-btn" href="#sn-solutions">Read the Solutions</a>
-            <a class="sn-btn sn-btn--line" href="#sn-nations">Find your nation</a>
+            <a class="sn-btn sn-btn--line" href="#sn-nations" data-find="1">Find your nation</a>
           </div>
         </div>
         <div>
           <nav class="sn-stats" aria-label="On this page">
             <a href="#sn-solutions"><b data-count-s><!--pn:n-sol--></b><span>Solutions</span></a>
-            <a href="#sn-nations"><b data-count-n><!--pn:n-nat--></b><span>Nations</span></a>
-            <a href="#sn-wire"><b data-count-w><!--pn:n-wire--></b><span>On the wire</span></a>
+            <a href="#sn-solutions"><b>7</b><span>Standards</span></a>
+            <a href="#sn-wire"><b data-count-w><!--pn:n-wire--></b><span>Deals on the wire</span></a>
           </nav>
           <nav class="sn-seven" aria-label="The seven standards">
             <span>The seven</span>
-            <a class="sn-chip" href="#sn-nations" data-go="Food">Food</a>
-            <a class="sn-chip" href="#sn-nations" data-go="Water">Water</a>
-            <a class="sn-chip" href="#sn-nations" data-go="Shelter">Shelter</a>
-            <a class="sn-chip" href="#sn-nations" data-go="Energy">Energy</a>
-            <a class="sn-chip" href="#sn-nations" data-go="Education">Education</a>
-            <a class="sn-chip" href="#sn-nations" data-go="Health">Health</a>
-            <a class="sn-chip" href="#sn-nations" data-go="Livelihood">Livelihood</a>
+            <a class="sn-chip" href="#sn-solutions" data-go="Food">Food</a>
+            <a class="sn-chip" href="#sn-solutions" data-go="Water">Water</a>
+            <a class="sn-chip" href="#sn-solutions" data-go="Shelter">Shelter</a>
+            <a class="sn-chip" href="#sn-solutions" data-go="Energy">Energy</a>
+            <a class="sn-chip" href="#sn-solutions" data-go="Education">Education</a>
+            <a class="sn-chip" href="#sn-solutions" data-go="Health">Health</a>
+            <a class="sn-chip" href="#sn-solutions" data-go="Livelihood">Livelihood</a>
           </nav>
         </div>
       </div>
@@ -471,48 +464,32 @@ html.pn-son-lock,html.pn-son-lock body{ overflow:hidden; }
     <div class="sn-in">
       <div class="sn-head">
         <div>
-          <p class="sn-eb">Solutions</p>
-          <h2 class="sn-h2" id="sn-sol-h">How nations close the gap</h2>
-          <p class="sn-lead">Each Solution pairs a nation&#8217;s challenge with what Perfect Nations advises. <span class="sn-swipe">Swipe for all <span data-count-s2><!--pn:n-sol--></span> &#8594;</span></p>
+          <p class="sn-eb">Perfect Nations Solutions</p>
+          <h2 class="sn-h2" id="sn-sol-h">A Solution for every nation</h2>
+          <p class="sn-lead">Each names a nation&#8217;s challenge and what Perfect Nations advises: innovative finance first, then what super intelligence makes possible. <span class="sn-swipe">Swipe for all <span data-count-s2><!--pn:n-sol--></span> &#8594;</span></p>
           <details class="sn-rm">
             <summary>Read more<span class="sn-sr"> on how a Solution is built</span></summary>
             <div class="sn-rm__b">
               <ol class="sn-how" aria-label="How a Solution is built">
-                <li><b>01</b><strong>The challenge</strong><span>The standard furthest from reach, measured and sourced.</span></li>
-                <li><b>02</b><strong>The deal</strong><span>The bond, swap or guarantee that pays for it.</span></li>
-                <li><b>03</b><strong>What Perfect Nations advises</strong><span>Where the deal fits next, and what super intelligence makes possible.</span></li>
+                <li><b>01</b><strong>Assets</strong><span>What the nation already owns that can carry the Solution.</span></li>
+                <li><b>02</b><strong>Capital</strong><span>The instrument that finances it, and the deal that proves it works.</span></li>
+                <li><b>03</b><strong>Solutions</strong><span>What changes for every citizen, measured and verified.</span></li>
               </ol>
-              <p>Newest first. Every figure is sourced in its dispatch.</p>
+              <p>Every figure is sourced. Each Solution is a design to co-design with the nation in the ReDesign Studio, and grows with every new blueprint.</p>
             </div>
           </details>
+        </div>
+        <div class="sn-search" id="sn-nations">
+          <svg aria-hidden="true" focusable="false"><use href="#pnso-q"></use></svg>
+          <input id="snQ" type="search" placeholder="Find your nation" autocomplete="off" aria-label="Find your nation&#8217;s Solution">
         </div>
       </div>
       <div class="sn-chips sn-scroll" id="snSFil" role="group" aria-label="Filter the Solutions by standard" hidden></div>
       <ol class="sn-clist" id="snCList" aria-live="polite">
 <!--pn:solutions-->
       </ol>
-      <div class="sn-cfoot"><button type="button" class="sn-more" id="snSMore" hidden>Show all Solutions</button><a href="https://perfectnations.org/category/dispatches/">The archive</a></div>
-    </div>
-  </section>
-
-  <section class="sn-band sn-find" id="sn-nations" aria-labelledby="sn-find-h">
-    <div class="sn-in">
-      <div class="sn-head">
-        <div>
-          <p class="sn-eb">Nation by nation</p>
-          <h2 class="sn-h2" id="sn-find-h">Solutions for every nation</h2>
-          <p class="sn-lead">Pick a standard or a nation to see the gap and what Perfect Nations advises.</p>
-        </div>
-        <div class="sn-search">
-          <svg aria-hidden="true" focusable="false"><use href="#pnso-q"></use></svg>
-          <input id="snNQ" type="search" placeholder="Find a nation" autocomplete="off" aria-label="Find a nation">
-        </div>
-      </div>
-      <div class="sn-tabs" role="tablist" aria-label="The seven standards" data-first="<!--pn:first-std-->">
-<!--pn:tabs-->
-      </div>
-<!--pn:panels-->
-      <p class="sn-empty" id="snNEmpty" hidden>No open blueprint matches that name yet. <a href="https://perfectnations.org/blueprints/">See every nation</a></p>
+      <p class="sn-empty" id="snSEmpty" hidden>No Solution matches that yet. <a href="https://perfectnations.org/blueprints/">See every nation</a></p>
+      <div class="sn-cfoot"><span id="snSNote">Every figure is sourced in its Solution.</span><button type="button" class="sn-more" id="snSMore" hidden>Show all Solutions</button><a href="#sn-wire">The deals that prove it</a></div>
     </div>
   </section>
 
@@ -522,12 +499,12 @@ html.pn-son-lock,html.pn-son-lock body{ overflow:hidden; }
     <div class="sn-in">
       <div class="sn-head">
         <div>
-          <p class="sn-eb">The Solutions Wire</p>
-          <h2 class="sn-h2" id="sn-wire-h">Solutions, as they are financed</h2>
-          <p class="sn-lead">Each new bond, swap, guarantee and fund links straight to its source.</p>
+          <p class="sn-eb">In the market</p>
+          <h2 class="sn-h2" id="sn-wire-h">The deals that prove it</h2>
+          <p class="sn-lead">Every new bond, swap, guarantee and fund, linked to its source.</p>
           <details class="sn-rm">
             <summary>Read more<span class="sn-sr"> about the wire</span></summary>
-            <div class="sn-rm__b"><p>Each headline opens the original at its publisher, and credit belongs to the writer. The wire covers all 195 nations.</p></div>
+            <div class="sn-rm__b"><p>The Deal Notes read the landmark deals behind the Solutions. Each headline on the wire opens the original at its publisher, and credit belongs to the writer. The wire covers all 195 nations.</p></div>
           </details>
         </div>
         <div class="sn-search">
@@ -535,11 +512,17 @@ html.pn-son-lock,html.pn-son-lock body{ overflow:hidden; }
           <input id="snWQ" type="search" placeholder="A nation, an instrument, a writer" autocomplete="off" aria-label="Search the wire">
         </div>
       </div>
+      <div class="sn-dn">
+        <p class="sn-dn__h">Deal Notes <span data-count-d><!--pn:n-deal--></span></p>
+        <ol class="sn-dl" id="snDList">
+<!--pn:deals-->
+        </ol>
+      </div>
       <div class="sn-ctrl">
         <div class="sn-chips sn-scroll" id="snReg" role="group" aria-label="Filter the wire by region" hidden></div>
         <label class="sn-sel" hidden id="snTypeBox"><span class="sn-sr">Filter the wire by instrument</span><select id="snType"></select></label>
       </div>
-      <p class="sn-count" id="snWCount" aria-live="polite"><!--pn:n-wire--> instruments on the wire &middot; <!--pn:n-wnat--> nations</p>
+      <p class="sn-count" id="snWCount" aria-live="polite"><!--pn:n-wire--> deals on the wire &middot; <!--pn:n-wnat--> nations</p>
       <ol class="sn-wl" id="snWList">
 <!--pn:wire-->
       </ol>
@@ -549,10 +532,10 @@ html.pn-son-lock,html.pn-son-lock body{ overflow:hidden; }
         <div>
           <svg class="sn-cup" aria-hidden="true" focusable="false"><use href="#pnso-cup"></use></svg>
           <h2 class="sn-h2">Bring your nation&#8217;s challenge</h2>
-          <p class="sn-lead">Perfect Nations co-designs the Solution with the nation and advises it from the challenge to the deal.</p>
+          <p class="sn-lead">Perfect Nations co-designs each Solution with the nation, from its assets to the deal.</p>
         </div>
         <div class="sn-ctas">
-          <a class="sn-btn" href="https://perfectnations.org/contact/?about=studio">Request a Nation Briefing</a>
+          <a class="sn-btn" href="https://perfectnations.org/contact/?about=briefing">Request a Nation Briefing</a>
           <a class="sn-btn sn-btn--line" href="https://perfectnations.org/blueprints/">Explore the blueprints</a>
           <a class="sn-btn sn-btn--line" href="https://perfectnations.org/design-studio/">Enter the ReDesign Studio</a>
         </div>
@@ -568,21 +551,25 @@ html.pn-son-lock,html.pn-son-lock body{ overflow:hidden; }
   var ORDER = ['Food', 'Water', 'Shelter', 'Energy', 'Education', 'Health', 'Livelihood'];
   var MONTHS = ['January','February','March','April','May','June','July','August','September','October','November','December'];
   var REGIONS = ['Africa', 'Americas', 'Asia-Pacific', 'Europe', 'Middle East'];
-  var DOT = String.fromCharCode(183), ARR = String.fromCharCode(8594), TIMES = String.fromCharCode(215), NE = String.fromCharCode(8599);
+  var DOT = String.fromCharCode(183), TIMES = String.fromCharCode(215), RSQ = String.fromCharCode(8217);
   var MARKS = new RegExp('[' + String.fromCharCode(768) + '-' + String.fromCharCode(879) + ']', 'g');
   var mq = function (q) { return !!(window.matchMedia && window.matchMedia(q).matches); };
   var phone = mq('(max-width: 640px)'), still = mq('(prefers-reduced-motion: reduce)');
-  var SOL_LIMIT = 4, ROW_LIMIT = phone ? 2 : 4, WIRE_LIMIT = phone ? 3 : 6;
+  var SOL_LIMIT = 7, WIRE_LIMIT = phone ? 3 : 6;
+  var SITE = 'https://perfectnations.org';
   function el(tag, cls, text) { var e = document.createElement(tag); if (cls) { e.className = cls; } if (text != null) { e.textContent = text; } return e; }
   function pad(n) { n = +n; return n < 10 ? '0' + n : String(n); }
-  function safe(u) { return /^https:\/\//.test(String(u || '')); }
+  function safe(u) { return /^https:\/\/[^\s"<>]+$/.test(String(u || '')); }
   function isDate(d) { return /^\d{4}-\d{2}-\d{2}$/.test(String(d || '')) && !!MONTHS[(+String(d).slice(5, 7)) - 1]; }
   function shortDate(iso) { var p = iso.split('-'); return (+p[2]) + ' ' + MONTHS[(+p[1]) - 1].slice(0, 3) + ' ' + p[0]; }
   function longDate(iso) { var p = iso.split('-'); return (+p[2]) + ' ' + MONTHS[(+p[1]) - 1] + ' ' + p[0]; }
   function nrm(s) { return String(s || '').toLowerCase().normalize('NFD').replace(MARKS, '').replace(/[^a-z0-9]+/g, ' ').trim(); }
   function txt(h) { try { return (new DOMParser().parseFromString(String(h || ''), 'text/html').body.textContent || '').replace(/\s+/g, ' ').trim(); } catch (e) { return ''; } }
   function ext(a) { a.target = '_blank'; a.rel = 'noopener noreferrer'; return a; }
+  function link(text, url, cls) { var a = ext(el('a', cls || '', text)); a.href = url; return a; }
   function std(s) { return /^Livelihood/.test(String(s)) ? 'Livelihood' : String(s); }
+  function money(f) { return /^(?:~|Up to |About )?(?:[A-Z]{1,3}\s?)?[$]|^(?:EUR|GHS|KSh|KES|INR|FJD|R\$|M)\s?[0-9]/.test(String(f || '')); }
+  function isDesign(x) { return !!(x && (x.kind === 'design' || (x.advises && x.how))); }
 
   /* 0 THE PAGE FITS THE SCREEN: measured against the screen, so a theme container off centre can
      never push the bands sideways, on any phone. */
@@ -601,18 +588,18 @@ html.pn-son-lock,html.pn-son-lock body{ overflow:hidden; }
   var ed = root.querySelector('.sn-ed');
   if (ed) { var now = new Date(); ed.textContent = 'Edition of ' + now.getDate() + ' ' + MONTHS[now.getMonth()] + ' ' + now.getFullYear(); }
 
-  /* the turning word: economic solutions for food, water, shelter... */
+  /* the turning word: economic solutions for food, water, shelter... and all */
   (function () {
     var rot = root.querySelector('.sn-rot'); if (!rot || still) { return; }
-    var i = -1, vis = true, t = 0;
+    var i = -1, vis = true;
     function step() {
-      if (!vis || document.hidden) { t = setTimeout(step, 1200); return; }
+      if (!vis || document.hidden) { setTimeout(step, 1200); return; }
       rot.classList.add('is-out');
       setTimeout(function () { i = (i + 1) % (ORDER.length + 1); rot.textContent = i === ORDER.length ? 'all' : ORDER[i].toLowerCase(); rot.classList.remove('is-out'); }, 360);
-      t = setTimeout(step, i === ORDER.length - 1 ? 3600 : 2100);
+      setTimeout(step, i === ORDER.length - 1 ? 3600 : 2100);
     }
     if ('IntersectionObserver' in window) { new IntersectionObserver(function (es) { vis = es[0].isIntersecting; }).observe(rot); }
-    t = setTimeout(step, 2400);
+    setTimeout(step, 2400);
   })();
 
   /* a soft rise, once, as each block scrolls in */
@@ -623,33 +610,27 @@ html.pn-son-lock,html.pn-son-lock body{ overflow:hidden; }
   }
   function rise(nodes) { if (!io) { return; } Array.prototype.forEach.call(nodes, function (n) { if (!n.classList.contains('sn-rv')) { n.classList.add('sn-rv'); io.observe(n); } }); }
 
-  /* ===== 2 THE SOLUTIONS ===== */
+  /* ===== 2 THE SOLUTIONS: one Perfect Nations Solution for every nation ===== */
   var cl = document.getElementById('snCList'), sFil = document.getElementById('snSFil'), sMore = document.getElementById('snSMore');
-  var cards = [], solState = { std: 'all', all: false }, SOLS = [];
+  var sq = document.getElementById('snQ'), sEmpty = document.getElementById('snSEmpty');
+  var cards = [], solState = { std: 'all', q: '', all: false }, NAT = null;
   function cardStd(c) { return (c.getAttribute('data-std') || '').split(';').filter(Boolean); }
   function solCard(s) {
-    var li = el('li', 'sn-c'), k = el('div', 'sn-c__k'), no = +s.no;
+    var li = el('li', 'sn-c'), no = +s.no;
     li._d = s; li.setAttribute('data-no', String(no)); li.setAttribute('data-std', (s.standards || []).join(';'));
-    k.appendChild(el('b', '', 'Solution No. ' + pad(no))); k.appendChild(el('span', '', s.nation || ''));
-    if (isDate(s.date)) { var tm = el('time', '', shortDate(s.date)); tm.setAttribute('datetime', s.date); k.appendChild(tm); }
-    li.appendChild(k);
-    var h = el('h3'), readable = safe(s.url) || (s.body && s.body.length);
-    if (readable) { var a = el('a', '', s.title); a.href = safe(s.url) ? s.url : '#solution-' + pad(no); h.appendChild(a); }
-    else { h.textContent = s.title; li.classList.add('is-press'); }
-    li.appendChild(h);
-    var ul = el('ul', 'sn-std');
-    if ((s.standards || []).length) { s.standards.forEach(function (x) { ul.appendChild(el('li', '', x)); }); }
-    else if (s.challenge) { ul.appendChild(el('li', 'is-all', 'All seven, through the budget')); }
-    if (ul.children.length) { li.appendChild(ul); }
-    if (s.challenge || s.advises) {
-      var dl = el('dl', 'sn-c__x');
-      [['The challenge', s.challenge], ['What Perfect Nations advises', s.advises]].forEach(function (r) {
-        if (!r[1]) { return; } var d = el('div'); d.appendChild(el('dt', '', r[0])); d.appendChild(el('dd', '', r[1])); dl.appendChild(d);
-      });
-      li.appendChild(dl);
-    } else if (s.standfirst) { li.appendChild(el('p', 'sn-c__x', s.standfirst)); }
-    if (s.figure) { var f = el('p', 'sn-c__f'); f.appendChild(el('b', '', s.figure)); if (s.caption) { f.appendChild(el('span', '', s.caption)); } li.appendChild(f); }
-    li.appendChild(el('span', 'sn-c__go', readable ? 'Read the solution' : 'In press'));
+    if (safe(s.blueprint)) { li.setAttribute('data-bp', s.blueprint); }
+    li.setAttribute('data-q', nrm((s.nation || '') + ' ' + (s.title || '')));
+    var k = el('div', 'sn-c__k'); k.appendChild(el('b', '', s.nation || '')); k.appendChild(el('span', '', 'Solution No. ' + pad(no))); li.appendChild(k);
+    var h = el('h3'), a = el('a', '', s.title); a.href = '#solution-' + pad(no); h.appendChild(a); li.appendChild(h);
+    if (s.standfirst) { li.appendChild(el('p', 'sn-c__i', s.standfirst)); }
+    var dl = el('dl', 'sn-c__x');
+    [['The challenge', s.challenge], ['What Perfect Nations advises', s.advises]].forEach(function (r) {
+      if (!r[1]) { return; } var d = el('div'); d.appendChild(el('dt', '', r[0])); d.appendChild(el('dd', '', r[1])); dl.appendChild(d);
+    });
+    if (dl.children.length) { li.appendChild(dl); }
+    var ft = el('div', 'sn-c__ft'), ul = el('ul', 'sn-std');
+    (s.standards || []).forEach(function (x) { ul.appendChild(el('li', '', x)); });
+    ft.appendChild(ul); ft.appendChild(el('span', 'sn-c__go', 'Read the Solution')); li.appendChild(ft);
     return li;
   }
   function solFilters() {
@@ -661,162 +642,98 @@ html.pn-son-lock,html.pn-son-lock body{ overflow:hidden; }
       var b = el('button', 'sn-chip' + (e[0] === solState.std ? ' is-on' : '')); b.type = 'button';
       b.setAttribute('aria-pressed', e[0] === solState.std ? 'true' : 'false');
       b.appendChild(document.createTextNode(e[1] + ' ')); b.appendChild(el('span', '', e[2]));
-      b.addEventListener('click', function () { solState.std = e[0]; solState.all = solState.all || e[0] !== 'all'; solFilters(); solApply(); });
+      b.addEventListener('click', function () { setStd(e[0]); });
       sFil.appendChild(b);
     });
   }
+  function setStd(s) { solState.std = ORDER.indexOf(s) > -1 ? s : 'all'; solFilters(); solApply(); }
   function solApply() {
-    var n = 0, cut = 0;
+    var n = 0, cut = 0, first = null, open = phone || solState.all || solState.std !== 'all' || !!solState.q;
     cards.forEach(function (c) {
-      var ok = solState.std === 'all' || cardStd(c).indexOf(solState.std) > -1;
+      var ok = (solState.std === 'all' || cardStd(c).indexOf(solState.std) > -1) && (!solState.q || (c.getAttribute('data-q') || '').indexOf(solState.q) > -1);
       if (ok) { n++; }
-      var show = ok && (phone || solState.all || n <= SOL_LIMIT);
+      var show = ok && (open || n <= SOL_LIMIT);
       if (ok && !show) { cut++; }
-      c.hidden = !show;
+      c.hidden = !show; c.classList.toggle('is-hit', !!solState.q && ok);
+      c.classList.remove('sn-c--lead');
+      if (show && !first) { first = c; }
     });
+    if (first && !solState.q && n > 2) { first.classList.add('sn-c--lead'); }
     if (sMore) { sMore.hidden = cut === 0; sMore.textContent = 'Show all ' + n + ' Solutions'; }
+    if (sEmpty) { sEmpty.hidden = n !== 0; }
+    if (cl && phone) { cl.scrollLeft = 0; }
+    return n;
   }
   function solArrange() {
     if (!cl) { return; }
     cards = Array.prototype.slice.call(cl.querySelectorAll('.sn-c'));
-    cards.forEach(function (c, i) { c._i = i; });
-    function when(c) { var t = c.querySelector('time'); return t ? (t.getAttribute('datetime') || '') : ''; }
-    cards.sort(function (a, b) {
-      var da = when(a), db = when(b);
-      return da < db ? 1 : (da > db ? -1 : (+b.getAttribute('data-no') - +a.getAttribute('data-no')));
-    });
-    var lead = null;
-    cards.forEach(function (c) { c.classList.remove('sn-c--lead'); if (!lead && !c.classList.contains('is-press')) { lead = c; } cl.appendChild(c); });
-    if (lead) { lead.classList.add('sn-c--lead'); cl.insertBefore(lead, cl.firstChild); cards.splice(cards.indexOf(lead), 1); cards.unshift(lead); }
-    cl.scrollLeft = 0;
-    var cs = root.querySelectorAll('[data-count-s],[data-count-s2]'); Array.prototype.forEach.call(cs, function (x) { x.textContent = String(cards.length); });
+    cards.sort(function (a, b) { return +b.getAttribute('data-no') - +a.getAttribute('data-no'); });
+    cards.forEach(function (c) { cl.appendChild(c); });
+    Array.prototype.forEach.call(root.querySelectorAll('[data-count-s],[data-count-s2]'), function (x) { x.textContent = String(cards.length); });
     solFilters(); solApply(); rise(cards);
   }
   if (sMore) { sMore.addEventListener('click', function () { solState.all = true; solApply(); }); }
+  if (sq) {
+    var qt = 0;
+    sq.addEventListener('input', function () { clearTimeout(qt); qt = setTimeout(function () { solState.q = nrm(sq.value); solApply(); }, 110); });
+    sq.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') { sq.value = ''; solState.q = ''; solApply(); }
+      if (e.key === 'Enter') {
+        e.preventDefault(); solState.q = nrm(sq.value); solApply();
+        var hits = cards.filter(function (c) { return !c.hidden; });
+        if (hits.length === 1) { openFor(hits[0], sq); }
+      }
+    });
+  }
+  Array.prototype.forEach.call(root.querySelectorAll('[data-go]'), function (a) {
+    a.addEventListener('click', function () { if (sq) { sq.value = ''; solState.q = ''; } setStd(a.getAttribute('data-go')); });
+  });
+  Array.prototype.forEach.call(root.querySelectorAll('[data-find]'), function (a) {
+    a.addEventListener('click', function () { setTimeout(function () { if (sq) { try { sq.focus({ preventScroll: true }); } catch (e) { sq.focus(); } } }, still ? 0 : 450); });
+  });
   solArrange();
 
-  /* THE READER: a Solution kept in the data file opens on the page */
+  /* ===== THE DEAL NOTES ===== */
+  var dlist = document.getElementById('snDList'), dnotes = [];
+  function dealCard(d) {
+    var li = el('li', 'sn-d'), no = +d.no;
+    li._d = d; li.setAttribute('data-no', String(no));
+    var k = el('p', 'sn-d__k'); k.appendChild(el('b', '', 'Deal Note No. ' + pad(no)));
+    if (d.nation) { k.appendChild(el('span', '', d.nation)); }
+    if (isDate(d.date)) { var t = el('time', '', shortDate(d.date)); t.setAttribute('datetime', d.date); k.appendChild(t); }
+    li.appendChild(k);
+    var h = el('h3'), a = el('a', '', d.title);
+    a.href = safe(d.url) ? d.url : '#deal-' + pad(no); h.appendChild(a); li.appendChild(h);
+    if (d.figure) { var f = el('p', 'sn-d__f'); f.appendChild(el('b', money(d.figure) ? 'is-money' : '', d.figure)); if (d.caption) { f.appendChild(el('span', '', d.caption)); } li.appendChild(f); }
+    return li;
+  }
+  function dealArrange() {
+    if (!dlist) { return; }
+    dnotes = Array.prototype.slice.call(dlist.querySelectorAll('.sn-d'));
+    function when(c) { var t = c.querySelector('time'); return t ? t.getAttribute('datetime') || '' : ''; }
+    dnotes.sort(function (a, b) { var x = when(a), y = when(b); return x < y ? 1 : (x > y ? -1 : +b.getAttribute('data-no') - +a.getAttribute('data-no')); });
+    dnotes.forEach(function (c) { dlist.appendChild(c); });
+    var cd = root.querySelector('[data-count-d]'); if (cd) { cd.textContent = String(dnotes.length); }
+  }
+  dealArrange();
+
+  /* ===== THE READER: a Solution or a Deal Note opens on the page, as a sheet of paper ===== */
   var rd = null, rdLast = null;
   function reader() {
     if (rd) { return rd; }
     rd = el('div'); rd.id = 'pn-son-rd'; rd.hidden = true;
     rd.setAttribute('role', 'dialog'); rd.setAttribute('aria-modal', 'true'); rd.setAttribute('aria-labelledby', 'snRdH');
-    rd.innerHTML = '<div class="rd-bg"></div><article class="rd-sheet" tabindex="-1"><button type="button" class="rd-x" aria-label="Close the Solution"></button><div class="rd-k"></div><h2 id="snRdH"></h2><p class="rd-s"></p><div class="rd-brief"><p>The Solution</p><dl></dl></div><ul class="rd-figs"></ul><div class="rd-body"></div><p class="rd-kick"></p><p class="rd-src"></p><div class="rd-end"><a href="https://perfectnations.org/contact/?about=studio">Request a Nation Briefing</a><button type="button" class="rd-back">Back to State of Nations</button></div></article>';
+    rd.innerHTML = '<div class="rd-bg"></div><article class="rd-sheet" tabindex="-1"><button type="button" class="rd-x" aria-label="Close"></button><div class="rd-k"></div><h2 id="snRdH"></h2><p class="rd-s"></p><div class="rd-brief"><p>The Solution</p><dl></dl></div><div class="rd-more"></div><p class="rd-src"></p><div class="rd-end"><a class="rd-cta" href="' + SITE + '/contact/?about=briefing">Request a Nation Briefing</a><a class="rd-bp" href="' + SITE + '/blueprints/">Open the blueprint</a><button type="button" class="rd-back">Back to State of Nations</button></div></article>';
     rd.querySelector('.rd-x').textContent = TIMES;
     document.body.appendChild(rd);
     rd.addEventListener('click', function (e) { var c = e.target.classList; if (c.contains('rd-bg') || c.contains('rd-x') || c.contains('rd-back')) { shut(); } });
     document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && rd && !rd.hidden) { shut(); } });
     return rd;
   }
-  function open(d, from) {
-    var r = reader(), q = function (s) { return r.querySelector(s); };
-    var k = q('.rd-k'); k.textContent = '';
-    k.appendChild(el('b', '', 'Solution No. ' + pad(d.no))); if (d.nation) { k.appendChild(el('span', '', d.nation)); }
-    if (d.kicker) { k.appendChild(el('span', '', d.kicker)); } if (isDate(d.date)) { k.appendChild(el('span', '', longDate(d.date))); }
-    q('#snRdH').textContent = d.title; q('.rd-s').textContent = d.standfirst || '';
-    var dl = q('.rd-brief dl'); dl.textContent = '';
-    var stds = (d.standards || []).length ? d.standards.join(', ') : 'All seven, through the budget';
-    [['The challenge', d.challenge], ['What Perfect Nations advises', d.advises], ['Standards moved', d.challenge ? stds : '']].forEach(function (x) {
-      if (!x[1]) { return; } var w = el('div'); w.appendChild(el('dt', '', x[0])); w.appendChild(el('dd', '', x[1])); dl.appendChild(w);
-    });
-    q('.rd-brief').hidden = !dl.children.length;
-    var figs = q('.rd-figs'); figs.textContent = '';
-    (d.figures || []).forEach(function (f) { var li = el('li'); li.appendChild(el('b', '', f[0])); li.appendChild(el('span', '', f[1])); figs.appendChild(li); });
-    figs.hidden = !figs.children.length;
-    var body = q('.rd-body'); body.textContent = '';
-    (d.body || []).forEach(function (p) { p = String(p); body.appendChild(/^##\s/.test(p) ? el('h4', '', p.replace(/^##\s+/, '')) : el('p', '', p)); });
-    q('.rd-kick').textContent = d.kick || ''; q('.rd-kick').hidden = !d.kick;
-    var src = q('.rd-src'); src.textContent = '';
-    var ss = (d.sources || []).filter(function (s) { return s && safe(s.url); });
-    if (ss.length) {
-      src.appendChild(document.createTextNode('Sources: '));
-      ss.forEach(function (s, i) { if (i) { src.appendChild(document.createTextNode(' ' + DOT + ' ')); } var a = ext(el('a', '', s.label || s.url)); a.href = s.url; src.appendChild(a); });
-    }
-    src.hidden = !ss.length;
-    rdLast = from || null;
-    r.hidden = false; document.documentElement.classList.add('pn-son-lock');
-    try { q('.rd-sheet').focus({ preventScroll: true }); } catch (e) { q('.rd-sheet').focus(); }
-    r.scrollTop = 0;
-    try { history.replaceState(null, '', '#solution-' + pad(d.no)); } catch (e) {}
-  }
-  function shut() {
-    if (!rd) { return; }
-    rd.hidden = true; document.documentElement.classList.remove('pn-son-lock');
-    try { history.replaceState(null, '', window.location.pathname + window.location.search); } catch (e) {}
-    if (rdLast && rdLast.focus) { rdLast.focus(); }
-  }
-  function inPage(c) { return !!(c && c._d && c._d.body && c._d.body.length); }
-  function goSolution(no, from) {
-    var hit = null; cards.forEach(function (c) { if (+c.getAttribute('data-no') === +no) { hit = c; } });
-    if (!hit) { return false; }
-    if (inPage(hit)) { open(hit._d, from || hit.querySelector('h3 a')); return true; }
-    var a = hit.querySelector('h3 a'); if (a && safe(a.getAttribute('href'))) { window.location.href = a.getAttribute('href'); return true; }
-    hit.hidden = false; hit.scrollIntoView({ behavior: still ? 'auto' : 'smooth', block: 'center' }); return true;
-  }
-  root.addEventListener('click', function (e) {
-    var a = e.target.closest ? e.target.closest('a[href^="#solution-"],a[href^="#dispatch-"]') : null; if (!a) { return; }
-    var m = /-(\d+)$/.exec(a.getAttribute('href')); if (!m) { return; }
-    var hit = null; cards.forEach(function (c) { if (+c.getAttribute('data-no') === +m[1]) { hit = c; } });
-    if (hit && inPage(hit)) { e.preventDefault(); open(hit._d, a); }
-    else if (hit) { e.preventDefault(); goSolution(m[1], a); }
-  });
-  function deepLink() { var m = /^#(?:solution|dispatch)-(\d+)$/.exec(window.location.hash || ''); if (m) { goSolution(m[1]); } }
-
-  /* ===== 3 SOLUTIONS FOR EVERY NATION ===== */
-  var tabs = Array.prototype.slice.call(root.querySelectorAll('.sn-tab'));
-  var nq = document.getElementById('snNQ'), nEmpty = document.getElementById('snNEmpty');
-  var NAT = null, curStd = (root.querySelector('.sn-tabs') || { getAttribute: function () { return 'Education'; } }).getAttribute('data-first') || 'Education';
-  var openAll = {};
-  function panel(s) { return document.getElementById('sn-p-' + s.toLowerCase()); }
-  function pick(s, focus) {
-    curStd = s;
-    tabs.forEach(function (t) { var on = t.getAttribute('data-std') === s; t.classList.toggle('is-on', on); t.setAttribute('aria-selected', on ? 'true' : 'false'); t.tabIndex = on ? 0 : -1; if (on && t.parentNode.scrollWidth > t.parentNode.clientWidth + 2) { try { var bx = t.parentNode; bx.scrollTo({ left: Math.max(0, t.offsetLeft - bx.offsetLeft - (bx.clientWidth - t.offsetWidth) / 2), behavior: still ? 'auto' : 'smooth' }); } catch (e) {} } });
-    ORDER.forEach(function (x) { var p = panel(x); if (p) { p.hidden = x !== s; } });
-    rowsApply(); if (focus) { var t = document.getElementById('sn-t-' + s.toLowerCase()); if (t) { t.focus(); } }
-  }
-  tabs.forEach(function (t, i) {
-    t.addEventListener('click', function () { pick(t.getAttribute('data-std')); });
-    t.addEventListener('keydown', function (e) {
-      var d = e.key === 'ArrowRight' ? 1 : (e.key === 'ArrowLeft' ? -1 : 0); if (!d) { return; }
-      e.preventDefault(); pick(tabs[(i + d + tabs.length) % tabs.length].getAttribute('data-std'), true);
-    });
-  });
-  function rowsApply() {
-    var q = nq ? nrm(nq.value) : '', any = 0, firstHit = null;
-    ORDER.forEach(function (s) {
-      var p = panel(s); if (!p) { return; }
-      var rows = Array.prototype.slice.call(p.querySelectorAll('.sn-r')), n = 0, cut = 0, hits = 0;
-      rows.forEach(function (r) {
-        var ok = !q || nrm(r.querySelector('.sn-r__n').textContent).indexOf(q) > -1;
-        if (ok) { n++; hits++; }
-        var show = ok && (q || openAll[s] || n <= ROW_LIMIT);
-        if (ok && !show) { cut++; }
-        r.hidden = !show; r.classList.toggle('is-hit', !!q && ok);
-      });
-      if (q && hits && !firstHit) { firstHit = s; }
-      any += hits;
-      var t = document.getElementById('sn-t-' + s.toLowerCase());
-      if (t) { var c = t.querySelector('span'); if (c) { c.textContent = String(q ? hits : rows.length); } t.classList.toggle('is-none', !!q && !hits); }
-      var m = p.querySelector('.sn-more'); if (m) { m.hidden = cut === 0; m.textContent = 'Show all ' + rows.length + ' nations'; }
-    });
-    if (nEmpty) { nEmpty.hidden = !q || any > 0; }
-    return firstHit;
-  }
-  Array.prototype.forEach.call(root.querySelectorAll('.sn-p .sn-more'), function (b) {
-    b.addEventListener('click', function () { openAll[b.closest('.sn-p').getAttribute('data-std')] = true; rowsApply(); });
-  });
-  if (nq) {
-    var nt = 0;
-    nq.addEventListener('input', function () { clearTimeout(nt); nt = setTimeout(function () { var s = rowsApply(); if (s && s !== curStd) { pick(s); } }, 120); });
-    nq.addEventListener('keydown', function (e) { if (e.key === 'Escape') { nq.value = ''; rowsApply(); } });
-  }
-  Array.prototype.forEach.call(root.querySelectorAll('[data-go]'), function (a) {
-    a.addEventListener('click', function () { pick(a.getAttribute('data-go')); });
-  });
-
-  function sevenOf(slug) { var n = null; (NAT && NAT.nations || []).forEach(function (x) { if (x.slug === slug) { n = x; } }); return n; }
+  function sec(title, body) { var s = el('section', 'rd-sec'); s.appendChild(el('h3', '', title)); if (body) { s.appendChild(body); } return s; }
+  function natOf(name) { var n = null; ((NAT && NAT.nations) || []).forEach(function (x) { if (x && x.name === name) { n = x; } }); return n; }
   function sevenBox(n) {
-    var box = el('div', 'sn-7');
+    var box = el('div', 'rd-7');
     (n.seven || []).forEach(function (s) {
       var row = el('div', s[0] === n.standard ? 'is-far' : '');
       row.appendChild(el('span', '', s[0] + (s[0] === n.standard ? ' ' + DOT + ' furthest' : '')));
@@ -824,65 +741,135 @@ html.pn-son-lock,html.pn-son-lock body{ overflow:hidden; }
       if (typeof s[2] === 'number') { bar.style.setProperty('--v', Math.max(2, Math.min(100, s[2])) + '%'); }
       row.appendChild(bar);
       var v = s[1] || 'Not measured';
-      if (safe(s[5])) { var a = ext(el('a', '', v)); a.href = s[5]; a.title = (s[3] ? s[3] + '. ' : '') + (s[4] || ''); row.appendChild(a); }
-      else { row.appendChild(el('span', '', v)); }
+      if (safe(s[5])) { var a = link(v, s[5]); a.title = (s[3] ? s[3] + '. ' : '') + (s[4] || ''); row.appendChild(a); }
+      else { row.appendChild(el('em', '', v)); }
       box.appendChild(row);
     });
     return box;
   }
-  function addSeven(r) {
-    var n = sevenOf(r.getAttribute('data-slug')); if (!n || !(n.seven || []).length || r.querySelector('.sn-r__x')) { return; }
-    var b = el('button', 'sn-r__x'); b.type = 'button'; b.setAttribute('aria-expanded', 'false');
-    var box = sevenBox(n); box.hidden = true; box.id = 'sn-7-' + n.slug; b.setAttribute('aria-controls', box.id);
-    b.addEventListener('click', function () { var o = b.getAttribute('aria-expanded') !== 'true'; b.setAttribute('aria-expanded', o ? 'true' : 'false'); box.hidden = !o; });
-    var hd = r.querySelector('.sn-r__h'), line = r.querySelector('.sn-r__w');
-    b.textContent = 'Seven'; b.setAttribute('aria-label', 'The seven standards in ' + n.name); b.title = 'The seven standards';
-    if (hd) { hd.appendChild(b); } else { r.appendChild(b); }
-    if (line) { line.parentNode.insertBefore(box, line.nextSibling); } else { r.appendChild(box); }
+  function show(d, from, hash) {
+    var r = reader(), q = function (s) { return r.querySelector(s); };
+    rdLast = from || null;
+    r.hidden = false; document.documentElement.classList.add('pn-son-lock');
+    try { q('.rd-sheet').focus({ preventScroll: true }); } catch (e) { q('.rd-sheet').focus(); }
+    r.scrollTop = 0;
+    try { history.replaceState(null, '', hash); } catch (e) {}
   }
-  function natRow(n, first) {
-    var li = el('li', 'sn-r'); li.setAttribute('data-slug', n.slug);
-    var h = el('div', 'sn-r__h'), a = ext(el('a', 'sn-r__n', n.name)); a.href = n.url; h.appendChild(a); h.appendChild(el('b', 'sn-r__g', n.gap || '')); li.appendChild(h);
-    var t = el('p', 'sn-r__t', (n.gap_text || '') + ' ');
-    if (n.source && safe(n.source.url)) { var s = ext(el('a', 'sn-src', n.source.label || 'Source')); s.href = n.source.url; t.appendChild(s); }
-    li.appendChild(t);
-    var w = n.at_work, p;
-    if (w && safe(w.url)) {
-      p = el('p', 'sn-r__w'); p.appendChild(el('span', 'sn-r__l', 'At work'));
-      var wa = ext(el('a', '', w.name)); wa.href = w.url; p.appendChild(wa);
-      if (w.amount) { p.appendChild(el('b', w.money ? 'sn-m' : 'sn-q', w.amount)); }
-    } else {
-      p = el('p', 'sn-r__w is-open'); p.appendChild(el('span', 'sn-r__l', 'First move'));
-      var f = first || ''; p.appendChild(document.createTextNode(f.charAt(0).toUpperCase() + f.slice(1)));
+  function sources(r, list) {
+    var src = r.querySelector('.rd-src'); src.textContent = '';
+    var ss = (list || []).filter(function (s) { return s && safe(s.url); });
+    if (ss.length) {
+      src.appendChild(document.createTextNode('Sources: '));
+      ss.forEach(function (s, i) { if (i) { src.appendChild(document.createTextNode(' ' + DOT + ' ')); } src.appendChild(link(s.label || s.url, s.url)); });
     }
-    li.appendChild(p);
-    (n.solutions || []).forEach(function (no) { var x = el('a', 'sn-r__s', 'Solution No. ' + pad(no)); x.href = '#solution-' + pad(no); li.appendChild(x); });
-    return li;
+    src.hidden = !ss.length;
   }
-  function useNations(d) {
-    if (!d || d.page !== 'solutions-by-nation' || !d.nations || !d.nations.length) { return; }
-    NAT = d;
-    var firsts = {}, groups = {};
-    (d.standards || []).forEach(function (s) { firsts[s.standard] = s.first; });
-    d.nations.forEach(function (n) { var s = std(n.standard); if (ORDER.indexOf(s) < 0 || !safe(n.url)) { return; } (groups[s] = groups[s] || []).push(n); });
-    ORDER.forEach(function (s) {
-      var p = panel(s), list = p && p.querySelector('.sn-rows'); if (!list) { return; }
-      var ns = groups[s] || [], frag = document.createDocumentFragment();
-      ns.forEach(function (n) { var r = natRow(n, firsts[s]); frag.appendChild(r); });
-      list.textContent = ''; list.appendChild(frag);
-      var pc = p.querySelector('.sn-pcount');
-      if (pc && ns.length) { pc.textContent = ''; pc.appendChild(el('b', '', String(ns.length))); pc.appendChild(document.createTextNode(' ' + (ns.length === 1 ? 'nation' : 'nations') + ' where ' + s.toLowerCase() + ' is furthest from reach')); }
+  function openDesign(d, from) {
+    var r = reader(), q = function (s) { return r.querySelector(s); };
+    var k = q('.rd-k'); k.textContent = '';
+    k.appendChild(el('b', '', 'Perfect Nations Solution No. ' + pad(d.no))); k.appendChild(el('span', '', d.nation || ''));
+    if (isDate(d.date)) { k.appendChild(el('span', '', longDate(d.date))); }
+    q('#snRdH').textContent = d.title; q('.rd-s').textContent = d.standfirst || '';
+    var brief = q('.rd-brief'), dl = q('.rd-brief dl'); dl.textContent = ''; brief.hidden = false;
+    brief.querySelector('p').textContent = 'The Solution';
+    var src0 = (d.sources || [])[0];
+    [['The challenge', d.challenge, src0], ['What Perfect Nations advises', d.advises, null]].forEach(function (x) {
+      if (!x[1]) { return; } var w = el('div'), dd = el('dd', '', x[1] + ' ');
+      if (x[2] && safe(x[2].url)) { var sa = link(x[2].label || 'Source', x[2].url); sa.style.color = '#E3C258'; dd.appendChild(sa); }
+      w.appendChild(el('dt', '', x[0])); w.appendChild(dd); dl.appendChild(w);
     });
-    var cn = root.querySelector('[data-count-n]'); if (cn) { cn.textContent = String(d.nations.length); }
-    Array.prototype.forEach.call(root.querySelectorAll('.sn-r'), addSeven);
-    rowsApply();
+    var more = q('.rd-more'); more.textContent = '';
+    if ((d.standards || []).length) { var su = el('ul', 'rd-std'); d.standards.forEach(function (s) { su.appendChild(el('li', '', s)); }); more.appendChild(su); }
+    if ((d.how || []).length === 3) {
+      var ol = el('ol', 'rd-how');
+      ['Assets', 'Capital', 'Solutions'].forEach(function (t, i) { var li = el('li'); li.appendChild(el('b', '', pad(i + 1))); li.appendChild(el('strong', '', t)); li.appendChild(el('span', '', d.how[i])); ol.appendChild(li); });
+      more.appendChild(sec('How it works', ol));
+    }
+    var pr = d.proof;
+    if (pr && pr.name) {
+      var p = el('p', 'rd-proof');
+      if (pr.own) { p.appendChild(document.createTextNode(pr.name)); p.appendChild(el('span', 'rd-own', 'Designed by Perfect Nations')); p.appendChild(document.createTextNode(' ' + (pr.label ? pr.label.charAt(0).toUpperCase() + pr.label.slice(1) + '. ' : ''))); }
+      else {
+        p.appendChild(document.createTextNode(pr.name + (pr.where ? ', ' + pr.where : '') + (pr.year ? ', ' + pr.year : '') + ': '));
+        if (pr.figure) { p.appendChild(el('b', '', pr.figure)); p.appendChild(document.createTextNode(' ')); }
+        p.appendChild(document.createTextNode((pr.label || '') + '. '));
+      }
+      if (safe(pr.url)) { p.appendChild(link(pr.source || 'Source', pr.url)); }
+      more.appendChild(sec(pr.own ? 'The instrument' : 'The deal that proves it', p));
+    }
+    if (d.first) { more.appendChild(sec('The first move', el('p', '', d.first))); }
+    var n = natOf(d.nation);
+    if (n && (n.seven || []).length) { more.appendChild(sec('Where ' + d.nation + ' stands on the seven standards', sevenBox(n))); }
+    if (n && n.at_work && safe(n.at_work.url)) {
+      var w = el('p'); w.appendChild(document.createTextNode(n.at_work.name + (n.at_work.amount ? ', ' + n.at_work.amount : '') + (n.at_work.status ? ' (' + n.at_work.status.toLowerCase() + ')' : '') + '. '));
+      w.appendChild(link('Source', n.at_work.url)); more.appendChild(sec('Already at work in ' + d.nation, w));
+    }
+    sources(r, d.sources);
+    var bp = q('.rd-bp'); bp.hidden = !safe(d.blueprint); if (safe(d.blueprint)) { bp.href = d.blueprint; bp.textContent = 'Open the ' + d.nation + ' blueprint'; }
+    show(d, from, '#solution-' + pad(d.no));
   }
-  pick(curStd);
+  function openDeal(d, from) {
+    var r = reader(), q = function (s) { return r.querySelector(s); };
+    var k = q('.rd-k'); k.textContent = '';
+    k.appendChild(el('b', '', 'Deal Note No. ' + pad(d.no))); if (d.nation) { k.appendChild(el('span', '', d.nation)); }
+    if (d.kicker) { k.appendChild(el('span', '', d.kicker)); } if (isDate(d.date)) { k.appendChild(el('span', '', longDate(d.date))); }
+    q('#snRdH').textContent = d.title; q('.rd-s').textContent = d.standfirst || '';
+    var brief = q('.rd-brief'), dl = q('.rd-brief dl'); dl.textContent = '';
+    brief.querySelector('p').textContent = 'The deal';
+    [['The challenge', d.challenge], ['What Perfect Nations advises', d.advises]].forEach(function (x) {
+      if (!x[1]) { return; } var w = el('div'); w.appendChild(el('dt', '', x[0])); w.appendChild(el('dd', '', x[1])); dl.appendChild(w);
+    });
+    brief.hidden = !dl.children.length;
+    var more = q('.rd-more'); more.textContent = '';
+    var figs = (d.figures || []).filter(function (f) { return f && f[0]; });
+    if (figs.length) { var ul = el('ul', 'rd-figs'); figs.forEach(function (f) { var li = el('li'); li.appendChild(el('b', '', f[0])); li.appendChild(el('span', '', f[1] || '')); ul.appendChild(li); }); more.appendChild(ul); }
+    if ((d.body || []).length) {
+      var body = el('div', 'rd-body');
+      d.body.forEach(function (p) { p = String(p); body.appendChild(/^##\s/.test(p) ? el('h4', '', p.replace(/^##\s+/, '')) : el('p', '', p)); });
+      more.appendChild(body);
+    }
+    if (d.kick) { more.appendChild(el('p', 'rd-kick', d.kick)); }
+    sources(r, d.sources);
+    q('.rd-bp').hidden = true;
+    show(d, from, '#deal-' + pad(d.no));
+  }
+  function shut() {
+    if (!rd) { return; }
+    rd.hidden = true; document.documentElement.classList.remove('pn-son-lock');
+    try { history.replaceState(null, '', window.location.pathname + window.location.search); } catch (e) {}
+    if (rdLast && rdLast.focus) { rdLast.focus(); }
+  }
+  /* a card written into the page (before the live file is read) opens from its own words */
+  function fromCard(c) {
+    var g = function (s) { var x = c.querySelector(s); return x ? x.textContent : ''; }, dd = c.querySelectorAll('.sn-c__x dd');
+    return { no: +c.getAttribute('data-no'), nation: g('.sn-c__k b'), title: g('h3'), standfirst: g('.sn-c__i'),
+      challenge: dd[0] ? dd[0].textContent : '', advises: dd[1] ? dd[1].textContent : '', standards: cardStd(c), blueprint: c.getAttribute('data-bp') || '' };
+  }
+  function openFor(c, from) { if (c) { openDesign(c._d || fromCard(c), from || c.querySelector('h3 a')); } }
+  function findCard(list, no) { var hit = null; list.forEach(function (c) { if (+c.getAttribute('data-no') === +no) { hit = c; } }); return hit; }
+  function goDeal(no, from) {
+    var c = findCard(dnotes, no); if (!c || !c._d) { return false; }
+    if ((c._d.body && c._d.body.length) || !safe(c._d.url)) { openDeal(c._d, from); return true; }
+    if (safe(c._d.url)) { window.location.href = c._d.url; return true; }
+    return false;
+  }
+  root.addEventListener('click', function (e) {
+    var a = e.target.closest ? e.target.closest('a[href^="#solution-"],a[href^="#deal-"],a[href^="#dispatch-"]') : null; if (!a) { return; }
+    var m = /^#(solution|deal|dispatch)-(\d+)$/.exec(a.getAttribute('href')); if (!m) { return; }
+    if (m[1] === 'solution') { var c = findCard(cards, m[2]); if (c) { e.preventDefault(); openFor(c, a); } }
+    else if (goDeal(m[2], a)) { e.preventDefault(); }
+  });
+  function deepLink() {
+    var m = /^#(solution|deal|dispatch)-(\d+)$/.exec(window.location.hash || ''); if (!m) { return; }
+    if (m[1] === 'solution') { var c = findCard(cards, m[2]); if (c) { openFor(c); } } else { goDeal(m[2]); }
+  }
 
-  /* ===== 4 THE WIRE ===== */
+  /* ===== 4 THE WIRE: the deals that prove it ===== */
   var wl = document.getElementById('snWList'), wq = document.getElementById('snWQ'), wCount = document.getElementById('snWCount'),
       wEmpty = document.getElementById('snWEmpty'), wMore = document.getElementById('snWMore'), reg = document.getElementById('snReg'),
       typeSel = document.getElementById('snType'), typeBox = document.getElementById('snTypeBox');
+  /* the counts written into the page (the whole wire), kept until the live file is read */
+  var W0 = +((root.querySelector('[data-count-w]') || {}).textContent || 0) || 0, N0 = +((/(\d+) nations/.exec(wCount ? wCount.textContent : '') || [])[1] || 0);
   var wires = [], WTOTAL = 0, WNATS = 0, wState = { q: '', region: 'all', type: 'all', all: false }, WIRE = null;
   function wireLi(w) {
     var li = el('li', 'sn-w'), d = w.date.split('-');
@@ -891,7 +878,7 @@ html.pn-son-lock,html.pn-son-lock body{ overflow:hidden; }
     var b = el('div'), m = el('p', 'sn-w__m');
     m.appendChild(el('span', 'sn-w__src', 'Via ' + (w.source || ''))); if (w.type) { m.appendChild(el('span', '', w.type)); } if (w.where) { m.appendChild(el('span', '', w.where)); }
     b.appendChild(m);
-    var h = el('h3'), a = ext(el('a', '', w.title)); a.href = w.url; h.appendChild(a); b.appendChild(h);
+    var h = el('h3'); h.appendChild(link(w.title, w.url)); b.appendChild(h);
     var by = el('p', 'sn-w__by'), names = (w.by && w.by.length) ? w.by : ['Press release'];
     names.forEach(function (n, i) { if (i) { by.appendChild(document.createTextNode(' and ')); } by.appendChild(el('b', '', n)); });
     if (w.agency) { by.appendChild(document.createTextNode(', ' + w.agency)); }
@@ -907,9 +894,10 @@ html.pn-son-lock,html.pn-son-lock body{ overflow:hidden; }
       if (ok && !show) { cut++; }
       c.hidden = !show;
     });
+    dnotes.forEach(function (c) { c.hidden = !!wState.q && nrm(c.textContent).indexOf(wState.q) < 0; });
     if (wEmpty) { wEmpty.hidden = n !== 0; }
-    if (wMore) { wMore.hidden = cut === 0; wMore.textContent = 'Show all ' + n + ' instruments'; }
-    if (wCount) { wCount.textContent = (n === WTOTAL ? WTOTAL + ' instruments on the wire' : n + ' of ' + WTOTAL + ' instruments') + (n === WTOTAL && WNATS ? ' ' + DOT + ' ' + WNATS + ' nations' : ''); }
+    if (wMore) { wMore.hidden = cut === 0; wMore.textContent = 'Show all ' + n + ' deals'; }
+    if (wCount) { wCount.textContent = (n === WTOTAL ? WTOTAL + ' deals on the wire' : n + ' of ' + WTOTAL + ' deals') + (n === WTOTAL && WNATS ? ' ' + DOT + ' ' + WNATS + ' nations' : ''); }
   }
   function wSetup() {
     if (!wl) { return; }
@@ -923,9 +911,9 @@ html.pn-son-lock,html.pn-son-lock body{ overflow:hidden; }
       String(nat || '').split(';').forEach(function (x) { x = x.trim().toLowerCase(); if (x) { seen[x] = 1; } });
       w._h = nrm(w.textContent + ' ' + (nat || '') + ' ' + (r || ''));
     });
-    WTOTAL = WIRE ? WIRE.length : wires.length;
+    WTOTAL = WIRE ? WIRE.length : (W0 || wires.length);
     if (WIRE) { WIRE.forEach(function (w) { (w.nations || []).forEach(function (x) { x = String(x).trim().toLowerCase(); if (x) { seen[x] = 1; } }); }); }
-    WNATS = Object.keys(seen).length;
+    WNATS = WIRE ? Object.keys(seen).length : (N0 || Object.keys(seen).length);
     var cw = root.querySelector('[data-count-w]'); if (cw) { cw.textContent = String(WTOTAL); }
     if (reg) {
       reg.textContent = ''; var keys = REGIONS.filter(function (x) { return rt[x]; });
@@ -956,18 +944,18 @@ html.pn-son-lock,html.pn-son-lock body{ overflow:hidden; }
   }
   wSetup();
 
-  /* THE TICKER: three Solutions and five instruments, read from the page */
+  /* THE TICKER: three Solutions and five deals, read from the page */
   function ticker() {
     var track = root.querySelector('.sn-tick__track'); if (!track) { return; }
     var items = [];
     cards.slice(0, 3).forEach(function (c) {
-      var a = c.querySelector('h3 a'); if (!a) { return; }
+      var d = c._d || {}, a = c.querySelector('h3 a'); if (!a) { return; }
       var x = el('a', '', 'Solution No. ' + pad(c.getAttribute('data-no')) + ': ' + a.textContent); x.href = a.getAttribute('href');
-      x.appendChild(el('span', '', (c._d && c._d.nation) || ((c.querySelector('.sn-c__k span') || {}).textContent || ''))); items.push(x);
+      x.appendChild(el('span', '', d.nation || ((c.querySelector('.sn-c__k b') || {}).textContent || ''))); items.push(x);
     });
     wires.slice(0, 5).forEach(function (w) {
       var a = w.querySelector('h3 a'), s = w.querySelector('.sn-w__src'); if (!a) { return; }
-      var x = ext(el('a', '', a.textContent)); x.href = a.href; x.appendChild(el('span', '', s ? s.textContent.replace(/^Via\s+/, '') : '')); items.push(x);
+      var x = link(a.textContent, a.href); x.appendChild(el('span', '', s ? s.textContent.replace(/^Via\s+/, '') : '')); items.push(x);
     });
     if (!items.length) { return; }
     track.textContent = '';
@@ -978,8 +966,9 @@ html.pn-son-lock,html.pn-son-lock body{ overflow:hidden; }
   }
 
   /* ===== THE LIVE RECORD =====
-     On every visit the page reads data/state-of-nations.json and data/solutions-by-nation.json from
-     the Perfect Nations GitHub repository; if a file cannot be read, the copy above stays. */
+     On every visit the page reads data/state-of-nations.json (the Solutions, the Deal Notes and the wire)
+     and data/solutions-by-nation.json (the seven standards of each nation) from the Perfect Nations GitHub
+     repository; if a file cannot be read, the copy above stays. */
   function feedsOf(attr) { return (root.getAttribute(attr) || '').split(/\s+/).filter(safe); }
   function getJSON(list, i) {
     if (i >= list.length || !window.fetch) { return Promise.reject(new Error('no feed')); }
@@ -993,39 +982,46 @@ html.pn-son-lock,html.pn-son-lock body{ overflow:hidden; }
       ws.sort(function (a, b) { return a.date < b.date ? 1 : (a.date > b.date ? -1 : 0); });
       WIRE = ws;
       var frag = document.createDocumentFragment(); ws.forEach(function (w) { frag.appendChild(wireLi(w)); });
-      wl.textContent = ''; wl.appendChild(frag); wSetup();
+      wl.textContent = ''; wl.appendChild(frag);
     }
-    var ss = (d.solutions || d.dispatches || []).filter(function (x) { return x && +x.no > 0 && x.title && isDate(x.date); });
-    if (ss.length && cl) {
-      SOLS = ss;
-      var f2 = document.createDocumentFragment(); ss.forEach(function (x) { f2.appendChild(solCard(x)); });
+    var all = (d.dispatches || []).filter(function (x) { return x && +x.no > 0 && x.title && isDate(x.date); });
+    var ds = all.filter(isDesign);
+    if (ds.length >= 3 && cl) {
+      var f2 = document.createDocumentFragment(); ds.forEach(function (x) { f2.appendChild(solCard(x)); });
       cl.textContent = ''; cl.appendChild(f2); solArrange();
     }
+    var deals = (d.deals || []).concat(all.filter(function (x) { return !isDesign(x); })).filter(function (x) { return x && +x.no > 0 && x.title && isDate(x.date); });
+    if (deals.length && dlist) {
+      var seen = {}, f3 = document.createDocumentFragment();
+      deals.forEach(function (x) { if (seen[x.no]) { return; } seen[x.no] = 1; f3.appendChild(dealCard(x)); });
+      dlist.textContent = ''; dlist.appendChild(f3); dealArrange();
+    }
+    wSetup();
   }
   function mergePosts(posts) {
-    if (!posts || typeof posts.length !== 'number' || !cl) { return; }
+    if (!posts || typeof posts.length !== 'number' || !dlist) { return; }
     var have = {}, top = 0;
-    cards.forEach(function (c) { if (c._d && c._d.slug) { have[String(c._d.slug).toLowerCase().replace(/_/g, '-')] = 1; } top = Math.max(top, +c.getAttribute('data-no') || 0); });
+    dnotes.forEach(function (c) { var d = c._d || {}; if (d.slug) { have[String(d.slug).toLowerCase().replace(/_/g, '-')] = 1; } if (d.url) { have[String(d.url).replace(/\/+$/, '').split('/').pop().replace(/_/g, '-')] = 1; } top = Math.max(top, +c.getAttribute('data-no') || 0); });
     var added = 0;
     posts.forEach(function (p) {
       var s = String(p.slug || '').toLowerCase().replace(/_/g, '-');
       if (!s || have[s] || !safe(p.link)) { return; }
       top++; added++;
-      cl.appendChild(solCard({ no: top, slug: p.slug, nation: '', title: txt(p.title && p.title.rendered), date: String(p.date || '').slice(0, 10), url: p.link, standfirst: txt(p.excerpt && p.excerpt.rendered) }));
+      dlist.appendChild(dealCard({ no: top, slug: p.slug, nation: '', title: txt(p.title && p.title.rendered), date: String(p.date || '').slice(0, 10), url: p.link }));
     });
-    if (added) { solArrange(); }
+    if (added) { dealArrange(); }
   }
   var api = root.getAttribute('data-api') || '/wp-json/wp/v2/', cat = root.getAttribute('data-cat') || 'dispatches';
   function getPosts() {
     if (!window.fetch) { return Promise.reject(new Error('no fetch')); }
     return fetch(api + 'categories?slug=' + encodeURIComponent(cat) + '&_fields=id', { credentials: 'same-origin' })
       .then(function (r) { if (!r.ok) { throw new Error('categories ' + r.status); } return r.json(); })
-      .then(function (c) { if (!c || !c.length) { throw new Error('no category'); } return fetch(api + 'posts?categories=' + c[0].id + '&per_page=100&_fields=date,link,slug,title,excerpt', { credentials: 'same-origin' }); })
+      .then(function (c) { if (!c || !c.length) { throw new Error('no category'); } return fetch(api + 'posts?categories=' + c[0].id + '&per_page=100&_fields=date,link,slug,title', { credentials: 'same-origin' }); })
       .then(function (r) { if (!r.ok) { throw new Error('posts ' + r.status); } return r.json(); });
   }
   function warn(m, e) { if (window.console) { console.warn('[pn-son] ' + m, e && e.message); } }
   var postsP = getPosts().catch(function (e) { warn('archive posts not read:', e); return null; });
-  getJSON(feedsOf('data-nations'), 0).then(function (d) { try { useNations(d); } catch (e) { warn('nation record not used:', e); } }).catch(function (e) { warn('nation record not read; the page shows its own copy:', e); });
+  getJSON(feedsOf('data-nations'), 0).then(function (d) { if (d && d.page === 'solutions-by-nation') { NAT = d; } }).catch(function (e) { warn('nation record not read; the Solutions show without the seven standards:', e); });
   getJSON(feedsOf('data-feed'), 0)
     .then(function (d) { try { useFeed(d); } catch (e) { warn('live record not used:', e); } })
     .catch(function (e) { warn('live record not read; the page shows its own copy:', e); })
