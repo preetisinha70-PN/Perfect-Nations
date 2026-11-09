@@ -1,5 +1,5 @@
 <!-- ===========================================================================
-PERFECT NATIONS - PERFECT CAPITA PAGE - v9.1 EARTHRISE - 2026-11-09
+PERFECT NATIONS - PERFECT CAPITA PAGE - v9.2 EARTHRISE - 2026-11-09
 /perfect-capita/ (page 9937). One Elementor Custom HTML widget, Full Width, padding 0, Hide Title.
 Served live from GitHub (pages/perfect-capita.html) by the Perfect Nations Live Pages plugin; the
 root id stays pn-pcap so the plugin finds the pasted widget. Nothing needs pasting.
@@ -13,6 +13,12 @@ Words (Steward-General, 1 November 2026): the seven basic living standards; Perf
 yearly cost per person of lifting everyone above the Living Line in all seven; the price of Perfect
 [Nation], Perfect Capita times population; Coverage and the Gap. The Living Line names the threshold
 only. "Guarantee" is a verb only, in the mission line.
+v9.2: Fewer words (the Steward-General, 9 Nov 2026): one headline and one line per section, the
+  detail one click away under Read more (a details disclosure, class pq-rm). The hero, the seven
+  standards and the five nations each say their line in one sentence. The strict measure and the
+  gentler measure not used move into the wheel card's Read more (the wheel stops turning while it is
+  open); the seven rules, the note under the world figures, the second sentence of the Barbados lead
+  (first.lead, split by the script) and its pricing note with its sources move under Read more.
 v9.1: Gold line in place of the painted botanical seams (the Steward-General, 9 Nov 2026).
 v9.0 (6 November 2026, the Steward-General: Earthrise first, fewer words, a more compact phone page):
   - One palette, as on the homepage: Earthrise, Lagoon and Depth grounds alternate with ivory reading
@@ -103,7 +109,27 @@ RSSB or Ministry of Health release when one is found.
 #pn-pcap .pq-btn--line:hover{ background:rgba(227,194,88,.12); color:var(--gold); }
 #pn-pcap .pq-ivb .pq-btn--line{ color:var(--er); border-color:rgba(11,61,69,.5); }
 #pn-pcap .pq-ivb .pq-btn--line:hover{ background:rgba(11,61,69,.08); color:var(--er); }
-#pn-pcap a:focus-visible, #pn-pcap button:focus-visible, #pn-pcap [tabindex]:focus-visible{ outline:2px solid var(--gs); outline-offset:3px; }
+#pn-pcap a:focus-visible, #pn-pcap button:focus-visible, #pn-pcap [tabindex]:focus-visible, #pn-pcap summary:focus-visible{ outline:2px solid var(--gs); outline-offset:3px; }
+/* the detail one click away: Read more, a small action under a section's one line */
+#pn-pcap .pq-rm{ margin:8px 0 0; }
+#pn-pcap .pq-rm > summary{
+  display:inline-flex; align-items:center; gap:8px; min-height:32px; padding:4px 0 2px; list-style:none; cursor:pointer;
+  font-family:var(--hd); font-size:.68rem; font-weight:700; letter-spacing:.2em; text-transform:uppercase; color:var(--gold);
+}
+#pn-pcap .pq-rm > summary::-webkit-details-marker{ display:none; }
+#pn-pcap .pq-rm > summary::marker{ content:""; }
+#pn-pcap .pq-rm > summary::before{ content:"+"; display:inline-grid; place-items:center; width:18px; height:18px; border-radius:50%; border:1px solid rgba(227,194,88,.6); font-family:Arial,sans-serif; font-size:.8rem; letter-spacing:0; line-height:1; }
+#pn-pcap .pq-rm[open] > summary::before{ content:"\2212"; }
+#pn-pcap .pq-rm > summary:hover{ color:var(--gs); }
+#pn-pcap .pq-ivb .pq-rm > summary, #pn-pcap .pq-card .pq-rm > summary{ color:var(--er); }
+#pn-pcap .pq-ivb .pq-rm > summary::before, #pn-pcap .pq-card .pq-rm > summary::before{ border-color:rgba(11,61,69,.45); }
+#pn-pcap .pq-ivb .pq-rm > summary:hover, #pn-pcap .pq-card .pq-rm > summary:hover{ color:var(--tc); }
+#pn-pcap .pq-rm__p{ margin:2px 0 0; font-size:.9rem; line-height:1.45; color:var(--tm); }
+#pn-pcap .pq-card .pq-rm{ margin-top:10px; }
+#pn-pcap .pq-rm .pq-rows{ margin-top:4px; }
+#pn-pcap .pq-rm .pq-rules{ margin-top:6px; }
+#pn-pcap .pq-rm .pq-now__note{ margin-top:2px; padding-top:0; border-top:0; }
+#pn-pcap .pq-now__rm{ margin-top:clamp(10px,1.6vh,14px); }
 
 /* 1. the hero: seven threads and the Living Line, drawn in WebGL on Earthrise */
 #pn-pcap .pq-hero{ overflow:hidden; color:var(--iv); padding:clamp(40px,7vh,84px) 0 clamp(36px,6vh,72px); min-height:clamp(520px,78vh,800px); display:flex; align-items:center;
@@ -357,9 +383,9 @@ RSSB or Ministry of Health release when one is found.
       <div>
         <p class="pq-eb">Perfect Capita &middot; The new GDP</p>
         <h1 class="pq-h1" id="pq-h1">A prosperous nation <em>reaches every person.</em></h1>
-        <p class="pq-lead">GDP counts what a nation produces. Perfect Capita puts a price on making that prosperity reach every citizen.</p>
+        <p class="pq-lead">GDP counts what a nation produces; Perfect Capita puts a price on making that prosperity reach every citizen.</p>
         <div class="pq-btns"><a class="pq-btn" href="#pq-seven">The seven standards</a><a class="pq-btn pq-btn--line" href="#pq-first">Barbados, priced</a></div>
-        <p class="pq-ll">The gold line is the Living Line. Each thread is one standard: above the line it shines.</p>
+        <p class="pq-ll">The gold line is the Living Line; each thread is one standard, shining above it.</p>
       </div>
       <div class="pq-def">
         <small>PERFECT CAPITA, DEFINED</small>
@@ -401,7 +427,7 @@ RSSB or Ministry of Health release when one is found.
           <p class="pq-eb">The seven basic living standards</p>
           <h2 class="pq-h2" id="pq-seven-h">Seven conditions of a <em>dignified life.</em></h2>
         </div>
-        <p class="pq-lead">Each is held to the hardest test published worldwide. Choose a standard.</p>
+        <p class="pq-lead">Choose a standard: each is held to the hardest test published worldwide.</p>
       </div>
       <div class="pq-stage">
         <div><svg class="pq-wheel" viewBox="0 0 600 600" aria-labelledby="pq-w-t" role="group" focusable="false"><title id="pq-w-t">The seven basic living standards</title><circle cx="300" cy="300" r="290" class="pq-ring"/><g class="pq-ticks"><line x1="300.0" y1="16.0" x2="300.0" y2="4.0"/><line x1="522.0" y1="122.9" x2="531.4" y2="115.4"/><line x1="576.9" y1="363.2" x2="588.6" y2="365.9"/><line x1="423.2" y1="555.9" x2="428.4" y2="566.7"/><line x1="176.8" y1="555.9" x2="171.6" y2="566.7"/><line x1="23.1" y1="363.2" x2="11.4" y2="365.9"/><line x1="78.0" y1="122.9" x2="68.6" y2="115.4"/></g><g class="pq-seg" data-i="0" role="button" tabindex="0" aria-label="Food" style="--dx:6.1px;--dy:-12.6px;--d:0.00s"><path d="M303.8 28.0A272 272 0 0 1 510.3 127.5L414.4 206.1A148 148 0 0 0 302.1 152.0Z" fill="#8A5A12"/><g transform="translate(392.0 93.0) scale(1.6) translate(-12 -12)" class="pq-ic"><path d="M3 11h18a9 9 0 0 1-18 0z"/><path d="M8 3c-1 1.5 1 2.5 0 4M12 3c-1 1.5 1 2.5 0 4M16 3c-1 1.5 1 2.5 0 4"/></g><text x="392.0" y="129.0" text-anchor="middle" class="pq-lab">FOOD</text></g><g class="pq-seg" data-i="1" role="button" tabindex="0" aria-label="Water" style="--dx:13.6px;--dy:-3.1px;--d:0.09s"><path d="M515.0 133.4A272 272 0 0 1 566.0 356.8L444.7 330.9A148 148 0 0 0 417.0 209.3Z" fill="#0E5A80"/><g transform="translate(506.7 236.8) scale(1.6) translate(-12 -12)" class="pq-ic"><path d="M12 3s-6 7-6 11a6 6 0 0 0 12 0c0-4-6-11-6-11z"/><path d="M9.5 15a2.5 2.5 0 0 0 2.5 2.5"/></g><text x="506.7" y="272.8" text-anchor="middle" class="pq-lab">WATER</text></g><g class="pq-seg" data-i="2" role="button" tabindex="0" aria-label="Shelter" style="--dx:10.9px;--dy:8.7px;--d:0.18s"><path d="M564.3 364.2A272 272 0 0 1 421.4 543.4L366.1 432.4A148 148 0 0 0 443.8 334.9Z" fill="#9A3E22"/><g transform="translate(465.7 416.2) scale(1.6) translate(-12 -12)" class="pq-ic"><path d="M3 11l9-7 9 7"/><path d="M5 9.5V20h14V9.5"/><path d="M10 20v-6h4v6"/></g><text x="465.7" y="452.2" text-anchor="middle" class="pq-lab">SHELTER</text></g><g class="pq-seg" data-i="3" role="button" tabindex="0" aria-label="Energy" style="--dx:0.0px;--dy:14.0px;--d:0.27s"><path d="M414.6 546.7A272 272 0 0 1 185.4 546.7L237.7 434.2A148 148 0 0 0 362.3 434.2Z" fill="#C08A12"/><g transform="translate(300.0 496.0) scale(1.6) translate(-12 -12)" class="pq-ic"><path d="M13 2L4 14h7l-1 8 9-12h-7z"/></g><text x="300.0" y="532.0" text-anchor="middle" class="pq-lab">ENERGY</text></g><g class="pq-seg" data-i="4" role="button" tabindex="0" aria-label="Education" style="--dx:-10.9px;--dy:8.7px;--d:0.36s"><path d="M178.6 543.4A272 272 0 0 1 35.7 364.2L156.2 334.9A148 148 0 0 0 233.9 432.4Z" fill="#1F4C96"/><g transform="translate(134.3 416.2) scale(1.6) translate(-12 -12)" class="pq-ic"><path d="M2 5c3-1 7-1 10 1 3-2 7-2 10-1v14c-3-1-7-1-10 1-3-2-7-2-10-1z"/><path d="M12 6v14"/></g><text x="134.3" y="452.2" text-anchor="middle" class="pq-lab">EDUCATION</text></g><g class="pq-seg" data-i="5" role="button" tabindex="0" aria-label="Health" style="--dx:-13.6px;--dy:-3.1px;--d:0.45s"><path d="M34.0 356.8A272 272 0 0 1 85.0 133.4L183.0 209.3A148 148 0 0 0 155.3 330.9Z" fill="#167A5F"/><g transform="translate(93.3 236.8) scale(1.6) translate(-12 -12)" class="pq-ic"><path d="M12 21s-8-5-8-11a4.5 4.5 0 0 1 8-3 4.5 4.5 0 0 1 8 3c0 6-8 11-8 11z"/><path d="M7 12h3l1-2 2 4 1-2h3"/></g><text x="93.3" y="272.8" text-anchor="middle" class="pq-lab">HEALTH</text></g><g class="pq-seg" data-i="6" role="button" tabindex="0" aria-label="Livelihood" style="--dx:-6.1px;--dy:-12.6px;--d:0.54s"><path d="M89.7 127.5A272 272 0 0 1 296.2 28.0L297.9 152.0A148 148 0 0 0 185.6 206.1Z" fill="#2F5A2A"/><g transform="translate(208.0 93.0) scale(1.6) translate(-12 -12)" class="pq-ic"><path d="M12 21v-9"/><path d="M12 12C12 8 9 6 5 6c0 4 3 6 7 6z"/><path d="M12 10c0-3 2-5 6-5 0 3-2 5-6 5z"/><path d="M7 21h10"/></g><text x="208.0" y="129.0" text-anchor="middle" class="pq-lab">LIVELIHOOD</text></g><circle cx="300" cy="300" r="136" class="pq-core"/><circle cx="300" cy="300" r="122" class="pq-core-line"/><text x="300" y="262" text-anchor="middle" class="pq-c1">BASIC LIVING</text><text x="300" y="338" text-anchor="middle" class="pq-c2">7</text><text x="300" y="368" text-anchor="middle" class="pq-c3">STANDARDS</text></svg></div>
@@ -413,9 +439,13 @@ RSSB or Ministry of Health release when one is found.
             <dl class="pq-rows">
               <div><dt>The Living Line</dt><dd class="pq-big" id="pqL">Food secure all year.</dd></div>
               <div><dt>Priced from</dt><dd id="pqK">A local, nutritious food basket.</dd></div>
-              <div class="pq-rows__m"><dt>Measured strictly as</dt><dd id="pqM">100 minus the share of people moderately or severely food insecure (SDG 2.1.2); in crises, the share in IPC Phase 3 or worse, in the worst season.<small id="pqS">FAO; IPC and Cadre Harmonis&#233;</small></dd></div>
-              <div class="pq-rows__m"><dt>Not used: too gentle</dt><dd id="pqN">Undernourishment (SDG 2.1.1), which counts only a chronic shortage of calories.</dd></div>
             </dl>
+            <details class="pq-rm" id="pqMore"><summary>Read more</summary>
+              <dl class="pq-rows">
+                <div class="pq-rows__m"><dt>Measured strictly as</dt><dd id="pqM">100 minus the share of people moderately or severely food insecure (SDG 2.1.2); in crises, the share in IPC Phase 3 or worse, in the worst season.<small id="pqS">FAO; IPC and Cadre Harmonis&#233;</small></dd></div>
+                <div class="pq-rows__m"><dt>Not used: too gentle</dt><dd id="pqN">Undernourishment (SDG 2.1.1), which counts only a chronic shortage of calories.</dd></div>
+              </dl>
+            </details>
           </div>
           <div class="pq-dots" id="pqDots" aria-label="Choose a standard"></div>
         </div>
@@ -428,6 +458,8 @@ RSSB or Ministry of Health release when one is found.
       <div>
         <p class="pq-eb">Seven rules keep it strict</p>
         <h2 class="pq-h2" id="pq-rules-h">No averages. No estimates. <em>No one left out.</em></h2>
+        <p class="pq-lead">Every figure uses the strictest published measure, shows its year and is never estimated.</p>
+        <details class="pq-rm"><summary>Read more</summary>
         <ol class="pq-rules">
           <li><b>Strict first</b>The strict measure wherever it exists; any fallback is labelled.</li>
           <li><b>Five years</b>Older data shows its year, marked &#8220;dated&#8221;.</li>
@@ -437,6 +469,7 @@ RSSB or Ministry of Health release when one is found.
           <li><b>Strict figures only</b>No gentler figure beside it.</li>
           <li><b>The weakest link</b>A nation is held at its lowest standard: no strength makes up for a failure.</li>
         </ol>
+        </details>
       </div>
       <figure class="pq-chart"><h3>A nation is only as strong as its weakest standard.</h3><svg viewBox="0 0 450 178" role="img" aria-label="Illustration: seven standards against full coverage; Health has the widest gap and sets Coverage" focusable="false"><line x1="6" y1="150.5" x2="370" y2="150.5" stroke="rgba(20,38,42,.25)"/><rect class="pq-bar" x="14" y="50" width="34" height="100" rx="6" fill="#8A5A12" style="--d:0.00s"/><text x="31" y="170" text-anchor="middle" font-size="9.5" fill="rgba(20,38,42,.7)" font-family="Arial,sans-serif">Food</text><rect class="pq-bar" x="66" y="72" width="34" height="78" rx="6" fill="#0E5A80" style="--d:0.08s"/><text x="83" y="170" text-anchor="middle" font-size="9.5" fill="rgba(20,38,42,.7)" font-family="Arial,sans-serif">Water</text><rect class="pq-bar" x="118" y="63" width="34" height="87" rx="6" fill="#9A3E22" style="--d:0.16s"/><text x="135" y="170" text-anchor="middle" font-size="9.5" fill="rgba(20,38,42,.7)" font-family="Arial,sans-serif">Shelter</text><rect class="pq-bar" x="170" y="43" width="34" height="107" rx="6" fill="#C08A12" style="--d:0.24s"/><text x="187" y="170" text-anchor="middle" font-size="9.5" fill="rgba(20,38,42,.7)" font-family="Arial,sans-serif">Energy</text><rect class="pq-bar" x="222" y="57" width="34" height="93" rx="6" fill="#1F4C96" style="--d:0.32s"/><text x="239" y="170" text-anchor="middle" font-size="9.5" fill="rgba(20,38,42,.7)" font-family="Arial,sans-serif">Education</text><rect x="274" y="28" width="34" height="78" rx="6" fill="rgba(138,58,34,.10)" stroke="#8A3A22" stroke-width="1.5" stroke-dasharray="4 3"/><text x="291" y="67" text-anchor="middle" font-size="9" font-weight="700" fill="#8A3A22" font-family="Arial,sans-serif">GAP</text><rect class="pq-bar" x="274" y="100" width="34" height="50" rx="6" fill="#167A5F" style="--d:0.40s"/><text x="291" y="170" text-anchor="middle" font-size="9.5" fill="rgba(20,38,42,.7)" font-family="Arial,sans-serif">Health</text><rect class="pq-bar" x="326" y="66" width="34" height="84" rx="6" fill="#2F5A2A" style="--d:0.48s"/><text x="343" y="170" text-anchor="middle" font-size="9.5" fill="rgba(20,38,42,.7)" font-family="Arial,sans-serif">Livelihood</text><line x1="6" y1="28" x2="370" y2="28" stroke="#0B3D45" stroke-width="2.5"/><text x="378" y="30" font-size="10" font-weight="700" fill="#0B3D45" font-family="Arial,sans-serif" letter-spacing="1"><tspan x="378" dy="0">EVERY</tspan><tspan x="378" dy="12">PERSON</tspan></text><text x="378" y="58" font-size="9" fill="rgba(20,38,42,.6)" font-family="Arial,sans-serif"><tspan x="378" dy="0">100 of 100</tspan></text></svg><figcaption>Illustration. Health has the widest gap, so health sets Coverage.</figcaption></figure>
     </div>
@@ -460,7 +493,7 @@ RSSB or Ministry of Health release when one is found.
         <li style="--c:#167A5F;--i:5"><div class="pq-gap__top"><svg class="pq-gap__ic" aria-hidden="true" focusable="false"><use href="#pq-i-health"></use></svg>Health</div><b><span data-pc="world.5.value">4.6</span><small data-pc="world.5.unit">bn</small></b><p data-pc="world.5.text">people without full access to essential health services.</p><a data-pc="world.5.source" data-pc-href="world.5.url" href="https://www.who.int/news/item/06-12-2025-most-countries-make-progress-towards-universal-health-coverage-but-major-challenges-remain-who-world-bank-report-finds" target="_blank" rel="noopener noreferrer">WHO and World Bank, 2025</a></li>
         <li style="--c:#2F5A2A;--i:6"><div class="pq-gap__top"><svg class="pq-gap__ic" aria-hidden="true" focusable="false"><use href="#pq-i-livelihoods"></use></svg>Livelihood</div><b><span data-pc="world.6.value">824</span><small data-pc="world.6.unit">m</small></b><p data-pc="world.6.text">people living on less than $3.00 a day, the extreme poverty line alone.</p><a data-pc="world.6.source" data-pc-href="world.6.url" href="https://blogs.worldbank.org/en/opendata/september-2026-global-poverty-update-from-the-world-bank--one-in" target="_blank" rel="noopener noreferrer">World Bank, September 2026 (2024 data)</a></li>
       </ul>
-      <p class="pq-now__note">The seven figures overlap, so they are never added together. Perfect Capita has no single global price: it is set with each nation, in its own prices, in its blueprint.</p>
+      <details class="pq-rm pq-now__rm"><summary>Read more</summary><p class="pq-now__note">The seven figures overlap, so they are never added together. Perfect Capita has no single global price: it is set with each nation, in its own prices, in its blueprint.</p></details>
     </div>
   </section>
 
@@ -473,7 +506,7 @@ RSSB or Ministry of Health release when one is found.
           <p class="pq-eb">It has been done</p>
           <h2 class="pq-h2" id="pc-five-h">Five nations. <em>Real progress.</em></h2>
         </div>
-        <p class="pq-lead">Each standard has been met at national scale. Perfect Capita asks for all seven, in every nation.</p>
+        <p class="pq-lead">Each standard has been met at national scale; Perfect Capita asks for all seven, in every nation.</p>
       </div>
       <ul class="pc-cards">
         <li style="--c:#167A5F"><div class="pc-top"><svg class="pc-ic" aria-hidden="true" focusable="false"><use href="#pq-i-health"></use></svg><h3>Thailand<small>Health</small></h3></div><b class="pc-fig" data-pc="nations.0.figure">99.5%</b><span class="pc-what" data-pc="nations.0.what">with health protection, universal since 2002</span><a class="pc-src" data-pc="nations.0.source" data-pc-href="nations.0.url" href="https://www.worldbank.org/en/news/feature/2012/08/20/thailand-sustaining-health-protection-for-all" target="_blank" rel="noopener noreferrer">World Bank, 2012</a></li>
@@ -492,7 +525,7 @@ RSSB or Ministry of Health release when one is found.
       <div>
         <p class="pq-eb">The first nation priced</p>
         <h2 class="pq-h2" id="pq-first-h">Barbados: <em data-pc="first.perfect_capita">$6,204</em> a person a year.</h2>
-        <p class="pq-lead" data-pc="first.lead">The price of Perfect Barbados is $1.75 billion a year, about a fifth of its GDP. Water, shelter and energy reach almost everyone; food holds Coverage at 69 of 100.</p>
+        <p class="pq-lead" data-pc="first.lead" data-pc-part="1">The price of Perfect Barbados is $1.75 billion a year, about a fifth of its GDP.</p>
         <div class="pq-btns"><a class="pq-btn" href="https://perfectnations.org/blueprints/barbados/#bp-pc">Open the Barbados blueprint</a><a class="pq-btn pq-btn--line" href="https://perfectnations.org/contact/?about=studio">Price your nation</a></div>
       </div>
       <div>
@@ -501,7 +534,10 @@ RSSB or Ministry of Health release when one is found.
           <li><b class="pq-money" data-pc="first.price">$1.75bn</b><span>The price of Perfect Barbados, a year</span></li>
           <li><b data-pc="first.coverage">69</b><span>Coverage, out of 100, set by <span data-pc="first.set_by">food</span></span></li>
         </ul>
+        <details class="pq-rm"><summary>Read more</summary>
+        <p class="pq-rm__p" data-pc="first.lead" data-pc-part="2">Water, shelter and energy reach almost everyone; food holds Coverage at 69 of 100.</p>
         <p class="pq-note">Perfect Nations estimate in 2025 US dollars, to be confirmed with Barbados: national poverty lines (<a href="https://data.iadb.org/files/download/a592f739-3619-4c65-996f-6ba20327cd38" target="_blank" rel="noopener noreferrer">Survey of Living Conditions 2016</a>, carried to 2025 prices), water and electricity tariffs, and public spending per person on education and health (World Bank, WHO). GDP and population: World Bank, 2025. Food: FAO, 2022.</p>
+        </details>
       </div>
     </div>
   </section>
@@ -565,6 +601,8 @@ RSSB or Ministry of Health release when one is found.
   function start(){ if(reduce||userSet||timer)return; timer=setInterval(function(){ pick((cur+1)%7,false); },4200); }
   function stop(){ if(timer){ clearInterval(timer); timer=null; } }
   pick(0,false);
+  var pqMore=document.getElementById('pqMore');
+  if(pqMore){ pqMore.addEventListener('toggle',function(){ if(pqMore.open){ userSet=true; stop(); } }); }
   var chart=root.querySelector('.pq-chart'), now=root.querySelector('.pq-now');
   if('IntersectionObserver' in window){
     new IntersectionObserver(function(en){ if(en[0].isIntersecting){ if(!seen){ seen=true; wheel.classList.add('is-in'); } start(); } else { stop(); } },{threshold:.25}).observe(wheel);
@@ -592,7 +630,12 @@ RSSB or Ministry of Health release when one is found.
   }
   function apply(d){
     var els=root.querySelectorAll('[data-pc]');
-    for(var i=0;i<els.length;i++){ var v=get(d,els[i].getAttribute('data-pc')); if(typeof v==='number')v=String(v); if(typeof v==='string'&&v.length&&v.length<400)els[i].textContent=v; }
+    for(var i=0;i<els.length;i++){
+      var v=get(d,els[i].getAttribute('data-pc')), part=els[i].getAttribute('data-pc-part'); if(typeof v==='number')v=String(v);
+      /* data-pc-part: 1 is the first sentence (the one line), 2 the rest (under Read more) */
+      if(part&&typeof v==='string'){ var sp=v.match(/^(.+?[.!?])\s+(?=[A-Z\u2018\u201c])([\s\S]+)$/); v=sp?sp[part==='2'?2:1]:(part==='2'?'':v); if(part==='2'&&!v){ els[i].textContent=''; continue; } }
+      if(typeof v==='string'&&v.length&&v.length<400)els[i].textContent=v;
+    }
     var ls=root.querySelectorAll('[data-pc-href]');
     for(var j=0;j<ls.length;j++){ var u=get(d,ls[j].getAttribute('data-pc-href')); if(typeof u==='string'&&/^https:\/\/[^\s"'<>()]+$/.test(u))ls[j].setAttribute('href',u); }
     root.setAttribute('data-figures',d.updated||'live');

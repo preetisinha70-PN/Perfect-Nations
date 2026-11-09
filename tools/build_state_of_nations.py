@@ -3,6 +3,10 @@
 
 The page is about Solutions: how innovative financing for development (FfD) and super intelligence
 (SI) close the gap to the seven basic standards of living, nation by nation.
+v7.3: fewer words, and richer advice that weaves in super intelligence (the Steward-General, 9 Nov 2026).
+  One headline and one line per band, the detail one click away in a Read more disclosure or the
+  dispatch; the ticker carries three Solutions and five deals; the count above each standard's nations
+  is shorter. The PLAYBOOK advice is unchanged here.
 v7.2: What Perfect Nations advises, in place of how FfD and SI solve it (the Steward-General, 9 Nov 2026).
   Each Solution reads as a bank's advice to a client: the challenge, then what Perfect Nations advises
   (the field "advises" in data/state-of-nations.json and in each standard of the playbook below). The
@@ -45,11 +49,12 @@ OUT = PAGES / 'state-of-nations.html'
 NATION_DATA = DATA / 'solutions-by-nation.json'
 sys.path.insert(0, str(ROOT / 'tools'))
 
-VERSION = '7.2'
+VERSION = '7.3'
 ORDER = ['Food', 'Water', 'Shelter', 'Energy', 'Education', 'Health', 'Livelihood']
 MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September',
           'October', 'November', 'December']
 WIRE_STATIC = 12     # wire items written into the page (the live file replaces them)
+TICK_WIRE = 5        # deals in the moving list, after the three newest Solutions
 SITE = 'https://perfectnations.org'
 
 # ---------------------------------------------------------------------------------------------
@@ -71,7 +76,7 @@ PLAYBOOK = {
                   'source': 'African Development Bank, August 2024',
                   'url': 'https://www.afdb.org/en/news-and-events/press-releases/african-development-bank-group-and-african-risk-capacity-group-issue-112-million-insurance-payout-government-malawi-73593'},
         'si': 'SI reads rainfall, harvests and food prices district by district, sets the trigger and prices the cover before the season begins.',
-        'advises': 'Nations where food is furthest from reach should buy drought insurance that pays on measured rainfall, so that food reaches families within weeks of a failed season, with the trigger and the price of the cover set district by district before the season begins.',
+        'advises': 'Nations where food is furthest from reach should buy drought insurance that pays on measured rainfall, with the trigger and the price of the cover set district by district before the season begins. With super intelligence, rainfall and harvests can be read field by field, so that payouts reach families within weeks of a failed season, before hunger does.',
         'first': 'sovereign drought insurance',
     },
     'Water': {
@@ -80,7 +85,7 @@ PLAYBOOK = {
         'ffd': 'Guarantees replace costly debt with cheaper debt, and the savings are committed to water and sewerage.',
         'lib': 'debt-for-climate',
         'si': 'SI maps every household without safe water at home, prices each connection, and follows the savings into every main and treatment plant.',
-        'advises': 'Nations where water is furthest from reach should swap costly debt for cheaper, guaranteed debt and commit the savings to water and sewerage, then follow the savings into every household connection, main and treatment plant.',
+        'advises': 'Nations where water is furthest from reach should swap costly debt for cheaper, guaranteed debt and commit the savings to water and sewerage. With super intelligence, every saving can be followed into each household connection, main and treatment plant, and the next connection planned where the need is greatest.',
         'first': 'a debt-for-resilience swap bound to water',
     },
     'Shelter': {
@@ -89,7 +94,7 @@ PLAYBOOK = {
         'ffd': 'The proceeds can be spent only on eligible homes, toilets and sewers, reported to investors every year.',
         'lib': 'social-bond',
         'si': 'SI finds the homes without a safe toilet, groups them into programmes investors can finance, and reports each unit delivered.',
-        'advises': 'Nations where shelter is furthest from reach should issue a social bond whose proceeds can be spent only on eligible homes, toilets and sewers, and report each unit delivered to investors every year.',
+        'advises': 'Nations where shelter is furthest from reach should issue a social bond whose proceeds can be spent only on eligible homes, toilets and sewers. With super intelligence, each unit can be planned, priced and verified, and reported to investors every year, until every family has a safe home.',
         'first': 'a social bond for homes and sanitation',
     },
     'Energy': {
@@ -98,7 +103,7 @@ PLAYBOOK = {
         'ffd': 'Bond money ring-fenced for clean energy under a published framework, with every allocation reported to investors.',
         'lib': 'green-bond',
         'si': 'SI counts the households still cooking with wood, charcoal or kerosene, prices the switch per home, and tracks every project the bond pays for.',
-        'advises': 'Nations where energy is furthest from reach should issue a sovereign green bond ring-fenced for clean power and clean cooking, price the switch for every household still cooking with wood, charcoal or kerosene, and report every project the bond pays for.',
+        'advises': 'Nations where energy is furthest from reach should issue a sovereign green bond ring-fenced for clean power and clean cooking. With super intelligence, the switch can be priced for every household still cooking with wood, charcoal or kerosene, and every project the bond pays for reported to investors.',
         'first': 'a sovereign green bond for clean power and cooking',
     },
     'Education': {
@@ -107,7 +112,7 @@ PLAYBOOK = {
         'ffd': 'Each tranche of the loan is released only when pupils reach an agreed learning level, verified independently.',
         'lib': 'program-for-results',
         'si': 'SI tracks reading levels school by school, sets the targets that release each tranche, and flags the schools falling behind.',
-        'advises': 'Nations where education is furthest from reach should borrow on a Program-for-Results basis, releasing each tranche only when pupils reach an agreed learning level, verified independently, and track reading levels school by school.',
+        'advises': 'Nations where education is furthest from reach should borrow on a Program-for-Results basis, releasing each tranche only when pupils reach an agreed learning level, verified independently. With super intelligence, reading levels can be tracked school by school, so that every child who falls behind is reached in time.',
         'first': 'a Program-for-Results paid on learning',
     },
     'Health': {
@@ -119,7 +124,7 @@ PLAYBOOK = {
                   'source': 'Inter-American Development Bank, project BA-U0003',
                   'url': 'https://www.iadb.org/en/project/BA-U0003'},
         'si': 'SI prices the essential services each citizen lacks, finds the costly debt to refinance, and follows every saving into clinics and care.',
-        'advises': 'Nations where health is furthest from reach should refinance costly debt behind a development bank guarantee and bind the savings to the health system before they can be spent elsewhere, then follow every saving into clinics and care.',
+        'advises': 'Nations where health is furthest from reach should refinance costly debt behind a development bank guarantee and bind the savings to the health system before they can be spent elsewhere. With super intelligence, every saving can be followed into clinics and care, and services planned where citizens are furthest from them.',
         'first': 'a debt-for-health guarantee',
     },
     'Livelihood': {
@@ -128,7 +133,7 @@ PLAYBOOK = {
         'ffd': 'A facility guarantees most of each small-business loan, so local banks lend to firms they would otherwise turn away.',
         'lib': 'sme-credit-guarantee',
         'si': 'SI matches enterprises to lenders, prices the risk the guarantee must carry, and counts the jobs each loan creates.',
-        'advises': 'Nations where livelihoods are furthest from reach should set up a facility that guarantees most of each small-business loan, so that local banks lend to the firms they would otherwise turn away, and count the jobs each loan creates.',
+        'advises': 'Nations where livelihoods are furthest from reach should set up a facility that guarantees most of each small-business loan, so that local banks lend to the firms they would otherwise turn away. With super intelligence, lenders can assess firms that have no credit history, and every job each loan creates can be counted.',
         'first': 'a small-business credit guarantee',
     },
 }
@@ -350,11 +355,11 @@ def finder(nat):
                  % (a(pr['where']), a(pr['year']), a(pr['figure']), a(pr['label']), a(pr['url']), a(pr['source'])))
         rows = [n for n in nat['nations'] if n['standard'] == s]
         if rows:
-            lead = '<p class="sn-pcount"><b>%d</b> %s where %s is the standard furthest from reach</p>' % (
+            lead = '<p class="sn-pcount"><b>%d</b> %s where %s is furthest from reach</p>' % (
                 len(rows), 'nation' if len(rows) == 1 else 'nations', a(s.lower()))
             body = '<ol class="sn-rows">%s</ol>' % ''.join(nation_row(n, pb) for n in rows)
         else:
-            lead = ('<p class="sn-pcount">In no open blueprint is %s the standard furthest from reach. '
+            lead = ('<p class="sn-pcount">No open blueprint has %s furthest from reach; '
                     '<a href="#solution-10">Solution No. 10</a> shows how Barbados pays for it.</p>' % a(s.lower()))
             body = '<ol class="sn-rows"></ol>'
         panels.append(''.join([
@@ -405,7 +410,7 @@ def ticker(son):
     for s in ds:
         href = s['url'] if str(s.get('url', '')).startswith('https://') else '#solution-%02d' % s['no']
         items.append('<a href="%s">Solution No. %02d: %s<span>%s</span></a>' % (a(href), s['no'], a(s['title']), a(s.get('nation', ''))))
-    ws = sorted(son.get('wire', []), key=lambda w: w.get('date', ''), reverse=True)[:8]
+    ws = sorted(son.get('wire', []), key=lambda w: w.get('date', ''), reverse=True)[:TICK_WIRE]
     for w in ws:
         items.append('<a href="%s" target="_blank" rel="noopener noreferrer">%s<span>%s</span></a>' % (a(w['url']), a(w['title']), a(w.get('source', ''))))
     dup = ''.join(re.sub(r'^<a ', '<a tabindex="-1" ', x) for x in items)

@@ -1,5 +1,9 @@
 (function () {
-  /* Blueprint v11.1: the page follows its Nation Steward and the State of Nations.
+  /* Blueprint v11.3: the page follows its Nation Steward and the State of Nations.
+     v11.3: fewer words (the Steward-General, 9 Nov 2026): the register shows four lines, each opening on its dates
+       and terms; the Newswire shows three headlines, then All news; a Solution shows The challenge, and The deal and
+       What Perfect Nations advises open on a click (labels and texts unchanged); a longer summary shows its first
+       sentence, then Read more. The tiles of What we do keep one short line each.
      v11.1: What Perfect Nations advises, in place of how FfD and SI solve it (the Steward-General, 9 Nov 2026):
        a Solution reads 01 The challenge, 02 What Perfect Nations advises; the Solution for the nation reads
        01 The challenge, 02 The deal, 03 What Perfect Nations advises (as tools/build_nations.py writes them).
@@ -70,7 +74,7 @@
     if (more) {
       var c = more.cloneNode(true); more.parentNode.replaceChild(c, more); more = c;
       var nl = list.querySelectorAll('.bpx-ir[data-cat]').length;
-      more.hidden = nl <= 4; more.classList.toggle('is-phone', nl <= 6);
+      more.hidden = nl <= 4; more.classList.remove('is-phone');
       more.addEventListener('click', function () { list.classList.add('is-all'); more.hidden = true; });
     }
     Array.prototype.forEach.call(buttons, function (btn) {
@@ -174,7 +178,7 @@
     var on = sky && sky.querySelector('.bpx-star.is-on');
     pick(on ? +on.getAttribute('data-i') : ORDER.indexOf(bind));
     var t3 = q('.bpx-t[href="#bp-pc"] .bpx-t__q');
-    if (t3 && bind) t3.textContent = 'Perfect Capita: seven basic standards of living for every citizen, star by star. ' + lab(bind) + ' is furthest from reach today.';
+    if (t3 && bind) t3.textContent = 'Seven basic standards of living, star by star. ' + lab(bind) + ' is furthest from reach today.';
     return bind;
   }
 
@@ -219,12 +223,13 @@
     lines.forEach(function (x, i) {
       var cat = x.cat.replace(/[^a-z]/g, ''), tone = T(x.tone).replace(/[^a-z]/g, '') || 'active';
       count[cat] = (count[cat] || 0) + 1;
-      var li = el('li', 'bpx-ir' + (i >= 6 ? ' bpx-ir--more' : '')); li.setAttribute('data-cat', cat);
+      var li = el('li', 'bpx-ir' + (i >= 4 ? ' bpx-ir--more' : '')); li.setAttribute('data-cat', cat);
       var det = el('details'), sm = el('summary'), tags = el('span', 'bpx-tags');
       tags.appendChild(el('span', 'bpx-cat', CAT[cat] || cat)); tags.appendChild(el('span', 'bpx-stat bpx-stat--' + tone, T(x.status) || 'Active')); sm.appendChild(tags);
-      var n = el('span', 'bpx-ir__n', x.name); if (T(x.detail)) n.appendChild(el('small', '', x.detail)); sm.appendChild(n);
+      sm.appendChild(el('span', 'bpx-ir__n', x.name));
       var a = el('span', 'bpx-ir__a'); if (T(x.amount)) money(a, x.amount, x.money); sm.appendChild(a); det.appendChild(sm);
       var b = el('div', 'bpx-ir__b');
+      if (T(x.detail)) b.appendChild(el('p', 'bpx-ir__d', x.detail));
       if (T(x.note)) b.appendChild(el('p', 'bpx-ir__note', x.note));
       if (T(x.text)) b.appendChild(el('p', '', x.text));
       if (x.by && x.by.length) { var by = el('p', 'bpx-ir__by'); x.by.forEach(function (s) { if (T(s)) by.appendChild(el('span', '', s)); }); if (by.children.length) b.appendChild(by); }
@@ -243,13 +248,8 @@
     }
     wireRegister();
     var rg = q('.bpx-stats [data-k="reg"] b'); if (rg) rg.textContent = String(lines.length);
-    var rc = q('[data-bpx="count"]'); if (rc) rc.textContent = String(lines.length);
     var t2 = q('.bpx-t[href="#bp-capital"] .bpx-t__q');
-    if (t2) {
-      var names = CATS.filter(function (k) { return count[k]; }).map(function (k) { return CAT[k].toLowerCase(); });
-      var from = names.length > 1 ? names.slice(0, -1).join(', ') + ' and ' + names[names.length - 1] : (names[0] || 'every');
-      t2.textContent = lines.length + ' instruments and investments on record, from ' + from + ' sources.';
-    }
+    if (t2) t2.textContent = lines.length + ' instruments and investments on record, every one sourced.';
   }
   function assets(list) {
     var ul = q('.bpx-acards'); if (!ul || !list || !list.length) return;
@@ -266,9 +266,9 @@
     });
     var t1 = q('.bpx-t[href="#bp-assets"] .bpx-t__q');
     if (t1 && items.length > 1) {
-      var words = ['no', 'one', 'two', 'three', 'four', 'five', 'six', 'seven'];
+      var words = ['No', 'One', 'Two', 'Three', 'Four', 'Five', 'Six', 'Seven'];
       var nm = items.map(function (x) { return x.name; });
-      t1.textContent = nm.slice(0, -1).join(', ') + ' and ' + nm[nm.length - 1] + ': ' + (words[nm.length] || nm.length) + ' sovereign assets, valued.';
+      t1.textContent = (words[nm.length] || String(nm.length)) + ' sovereign assets, valued, from ' + nm[0] + ' to ' + nm[nm.length - 1] + '.';
     }
   }
   function enterprises(list) {
@@ -283,8 +283,8 @@
   }
   function head(id, s) { var h = q('#' + id); if (h && T(s)) h.textContent = s; }
 
-  /* ---------- the Newswire: five lines (four on phones), then All news ---------- */
-  var SHOW = 5;
+  /* ---------- the Newswire: five lines in the page, three in view (v11.3), then All news ---------- */
+  var SHOW = 5, VIEW = 3;
   function wireLi(w) {
     if (!w || !w.title || !okUrl(w.url)) return null;
     var li = el('li'), tm = el('time', '', w.label || shortDate(w.date) || w.date); tm.setAttribute('datetime', w.date || ''); li.appendChild(tm);
@@ -313,9 +313,9 @@
       if (done) return; done = true;
       var more = el('ul', 'bpx-wire'); more.id = 'bp-wire-more'; more.hidden = true;
       extra.forEach(function (w) { var li = wireLi(w); if (li) more.appendChild(li); });
-      /* phones show four lines; the button opens the rest, and on laptops the lines beyond five */
-      if (!more.children.length && wire.children.length <= 4) return;
-      if (more.children.length) wire.parentNode.insertBefore(more, btn); else btn.classList.add('is-phone');
+      /* three lines show; the button opens the rest */
+      if (!more.children.length && wire.children.length <= VIEW) return;
+      if (more.children.length) wire.parentNode.insertBefore(more, btn);
       var label = 'All news (' + (wire.children.length + more.children.length) + ')';
       btn.textContent = label; btn.setAttribute('aria-expanded', 'false'); btn.hidden = false;
       if (more.children.length) btn.setAttribute('aria-controls', 'bp-wire-more');
@@ -327,19 +327,42 @@
 
   /* ---------- Solutions (from State of Nations) ---------- */
   var nationFile = null, solDone = false;
+  /* v11.3: The challenge and What Perfect Nations advises show; The deal opens on a click, its label as the summary */
+  function howList(rows) {
+    var how = el('ul', 'bpx-sol__how');
+    rows.forEach(function (r, i) {
+      var it = el('li'), sp = el('span', '', r[2]);
+      if (r[3]) { sp.appendChild(document.createTextNode(' ')); sp.appendChild(r[3]); }
+      if (r[1] !== 'The deal') { it.appendChild(el('b', '', r[0])); it.appendChild(el('strong', '', r[1])); it.appendChild(sp); }
+      else {
+        it.className = 'bpx-sol__x';
+        var dt = el('details'), su = el('summary');
+        su.appendChild(el('b', '', r[0])); su.appendChild(el('strong', '', r[1])); dt.appendChild(su); dt.appendChild(sp); it.appendChild(dt);
+      }
+      how.appendChild(it);
+    });
+    return how;
+  }
+  function moreBox(inner, about) {
+    var dt = el('details', 'bpx-more'), su = el('summary', '', 'Read more'), b = el('div', 'bpx-more__b');
+    su.setAttribute('aria-label', 'Read more: ' + about); dt.appendChild(su); b.appendChild(inner); dt.appendChild(b); return dt;
+  }
+  function firstSentence(s) {
+    var t = String(s || '').trim(), m = /[.!?]\s+(?=[A-Z\u201c\u2026"])/.exec(t);
+    return m ? [t.slice(0, m.index + 1), t.slice(m.index + m[0].length)] : [t, ''];
+  }
   function solCard(x, sigName, sigRole) {
     var li = el('li', 'bpx-sol');
     var k = el('p', 'bpx-sol__k'); k.appendChild(el('b', '', 'Solution No. ' + pad(x.no || 0)));
     var tm = el('time', '', x.label || shortDate(x.date) || ''); tm.setAttribute('datetime', x.date || ''); k.appendChild(tm); li.appendChild(k);
     var h = el('h3'), href = okUrl(x.url) ? x.url : 'https://perfectnations.org/state-of-nations/#solution-' + pad(x.no || 0);
     h.appendChild(link(el('a', '', x.title), href)); li.appendChild(h);
-    if (T(x.challenge) && T(x.advises)) {
-      var how = el('ul', 'bpx-sol__how');
-      [['01', 'The challenge', x.challenge], ['02', 'What Perfect Nations advises', x.advises]].forEach(function (r) {
-        var it = el('li'); it.appendChild(el('b', '', r[0])); it.appendChild(el('strong', '', r[1])); it.appendChild(el('span', '', r[2])); how.appendChild(it);
-      });
-      li.appendChild(how);
-    } else if (T(x.standfirst) || T(x.summary)) li.appendChild(el('p', '', x.standfirst || x.summary));
+    if (T(x.challenge) && T(x.advises)) li.appendChild(howList([['01', 'The challenge', x.challenge], ['02', 'What Perfect Nations advises', x.advises]]));
+    else if (T(x.standfirst) || T(x.summary)) {
+      var fs = firstSentence(x.standfirst || x.summary);
+      li.appendChild(el('p', '', fs[0]));
+      if (fs[1]) li.appendChild(moreBox(el('p', '', fs[1]), x.title));
+    }
     if (T(x.figure)) { var f = el('p', 'bpx-sol__fig'); f.appendChild(el('b', '', x.figure)); if (T(x.caption)) f.appendChild(el('span', '', x.caption)); li.appendChild(f); }
     var foot = el('div', 'bpx-sol__foot'), sig = el('span', 'bpx-sig', 'From');
     sig.appendChild(el('b', '', sigName)); sig.appendChild(el('small', '', sigRole)); foot.appendChild(sig);
@@ -354,17 +377,16 @@
     var li = el('li', 'bpx-sol bpx-sol--brief');
     var k = el('p', 'bpx-sol__k'); k.appendChild(el('b', '', 'The Solution for ' + CFG.name)); k.appendChild(el('span', '', me.standard)); li.appendChild(k);
     li.appendChild(el('h3', '', play.head || ('Close the gap in ' + me.standard.toLowerCase() + '.')));
-    var how = el('ul', 'bpx-sol__how');
-    function rowx(no, t, words, a) { var it = el('li'); it.appendChild(el('b', '', no)); it.appendChild(el('strong', '', t)); var sp = el('span', '', words); if (a) { sp.appendChild(document.createTextNode(' ')); sp.appendChild(a); } it.appendChild(sp); how.appendChild(it); }
+    var rows = [];
     var src = me.source && okUrl(me.source.url) ? link(el('a', '', me.source.label || 'Source'), me.source.url) : null;
-    rowx('01', 'The challenge', (me.gap ? me.gap + ' ' : '') + T(me.gap_text), src);
+    rows.push(['01', 'The challenge', (me.gap ? me.gap + ' ' : '') + T(me.gap_text), src]);
     /* 02 The deal: the instrument already at work in the nation, or else the deal that proved the playbook */
     var w = '', wa = null;
     if (me.at_work && T(me.at_work.name) && okUrl(me.at_work.url)) { w = 'At work in ' + CFG.name + ': ' + me.at_work.name + (me.at_work.amount ? ', ' + me.at_work.amount : '') + '.'; wa = link(el('a', '', 'Source'), me.at_work.url); }
     else if (play.proof && okUrl(play.proof.url)) { w = T(play.name) + ', proved in ' + play.proof.where + ', ' + play.proof.year + ': ' + play.proof.figure + ' ' + play.proof.label + '.'; wa = link(el('a', '', play.proof.source || 'Source'), play.proof.url); }
-    if (w) rowx('02', 'The deal', w, wa);
-    rowx(w ? '03' : '02', 'What Perfect Nations advises', play.advises, null);
-    li.appendChild(how);
+    if (w) rows.push(['02', 'The deal', w, wa]);
+    rows.push([w ? '03' : '02', 'What Perfect Nations advises', play.advises, null]);
+    li.appendChild(howList(rows));
     var foot = el('div', 'bpx-sol__foot'), sig = el('span', 'bpx-sig', 'Co-design it in');
     sig.appendChild(el('b', '', 'The ReDesign Studio')); foot.appendChild(sig);
     var go = el('a', 'bpx-btn', 'The three mandates'); go.href = '#bp-mandates'; foot.appendChild(go); li.appendChild(foot);

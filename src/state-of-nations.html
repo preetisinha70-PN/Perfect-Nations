@@ -5,6 +5,12 @@ Pages plugin serves this file in place of the code pasted in the page's one Cust
 BUILT, never edited by hand: edit src/state-of-nations.html, then run
 python3 tools/build_state_of_nations.py. Kept by the State of Nations Steward (the page) and the
 Correspondent (the data: data/state-of-nations.json, data/solutions-by-nation.json).
+v7.3 (9 Nov 2026): fewer words, and richer advice that weaves in super intelligence (the Steward-General, 9 Nov 2026).
+  Each band: an eyebrow, one headline, one line, then its cards, nations or wire; the rest sits in a
+  native Read more disclosure (.sn-rm) or in the dispatch. How a Solution is built moves from the hero
+  into the Solutions Read more; the wire's credit note into the wire's. The masthead drops its contents
+  line, the ticker carries three Solutions and five deals, the leads show on phones too. Cards show the
+  challenge and the advice in full (no line clamp) and Read the solution on every card.
 v7.2 (9 Nov 2026): What Perfect Nations advises, in place of how FfD and SI solve it (the Steward-General, 9 Nov 2026).
   Each Solution reads as a bank's advice to a client: The challenge, then What Perfect Nations advises
   (the field "advises"), on the cards, in the reader and in the playbook of each standard (What Perfect
@@ -58,7 +64,7 @@ html:has(#pn-son),body:has(#pn-son){ overflow-x:clip; }
 html.pn-son-lock,html.pn-son-lock body{ overflow:hidden; }
 #pn-son h1,#pn-son h2,#pn-son h3,#pn-son h4{ text-shadow:none !important; text-transform:none; }
 #pn-son a{ color:inherit; }
-#pn-son a:focus-visible,#pn-son button:focus-visible,#pn-son input:focus-visible,#pn-son select:focus-visible{ outline:2px solid var(--gs); outline-offset:3px; }
+#pn-son a:focus-visible,#pn-son button:focus-visible,#pn-son input:focus-visible,#pn-son select:focus-visible,#pn-son summary:focus-visible{ outline:2px solid var(--gs); outline-offset:3px; }
 #pn-son .sn-sr{ position:absolute !important; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; }
 #pn-son .sn-band{ position:relative; isolation:isolate; padding:clamp(22px,3.6vh,40px) var(--px) clamp(20px,3.4vh,36px); }
 #pn-son .sn-in{ position:relative; max-width:1180px; margin:0 auto; }
@@ -68,6 +74,17 @@ html.pn-son-lock,html.pn-son-lock body{ overflow:hidden; }
 #pn-son .sn-lead{ margin:10px 0 0; max-width:60ch; font-size:clamp(1rem,1.25vw,1.12rem); line-height:1.5; color:var(--tm); }
 #pn-son .sn-head{ display:flex; flex-wrap:wrap; align-items:flex-end; justify-content:space-between; gap:14px 40px; margin:0 0 18px; }
 #pn-son .sn-head > div:first-child{ flex:1 1 520px; }
+/* Read more: the detail of a band, one click away (a native disclosure, so it works by keyboard) */
+#pn-son .sn-rm{ margin:4px 0 -6px; max-width:64ch; }
+#pn-son .sn-rm > summary{ display:inline-flex; align-items:center; gap:9px; min-height:44px; padding:0; cursor:pointer; list-style:none; font-family:var(--hd); font-size:.68rem; font-weight:700; letter-spacing:.2em; text-transform:uppercase; color:var(--g); -webkit-user-select:none; user-select:none; }
+#pn-son .sn-rm > summary::-webkit-details-marker{ display:none; }
+#pn-son .sn-rm > summary::marker{ content:""; }
+#pn-son .sn-rm > summary::after{ content:"+"; display:inline-flex; align-items:center; justify-content:center; width:22px; height:22px; border:1px solid currentColor; border-radius:50%; font-family:Arial,sans-serif; font-size:.95rem; font-weight:400; letter-spacing:0; line-height:1; transition:background .2s ease; }
+#pn-son .sn-rm > summary:hover::after{ background:rgba(227,194,88,.16); }
+#pn-son .sn-rm[open] > summary::after{ content:"\2212"; }
+#pn-son .sn-rm__b{ padding:0 0 12px; font-size:.9rem; line-height:1.45; color:var(--tm); }
+#pn-son .sn-rm__b p{ margin:0; }
+#pn-son .sn-rm__b p + p{ margin-top:6px; }
 #pn-son .sn-btn{ display:inline-flex; align-items:center; justify-content:center; gap:12px; min-height:46px; padding:12px 24px 10px; border-radius:999px; text-decoration:none; cursor:pointer; border:1px solid var(--g); background:var(--g); color:#1A140C; font-family:var(--hd); font-size:.74rem; font-weight:700; letter-spacing:.19em; text-transform:uppercase; transition:transform .22s ease, background .22s ease; }
 #pn-son .sn-btn::after{ content:"\2192"; font-family:Arial,sans-serif; font-size:1rem; letter-spacing:0; transition:transform .3s cubic-bezier(.22,1,.36,1); }
 #pn-son .sn-btn:hover{ background:var(--gs); transform:translateY(-2px); }
@@ -100,13 +117,7 @@ html.pn-son-lock,html.pn-son-lock body{ overflow:hidden; }
 #pn-son .sn-rot.is-out{ opacity:0; transform:translateY(-.25em); }
 #pn-son .sn-hero .sn-lead{ max-width:56ch; }
 #pn-son .sn-ctas{ display:flex; flex-wrap:wrap; gap:10px 12px; margin:18px 0 0; }
-#pn-son .sn-how{ margin:0; padding:16px 18px 14px; list-style:none; border:1px solid var(--hair); border-radius:16px; background:rgba(8,42,48,.55); counter-reset:none; }
-#pn-son .sn-how li{ display:grid; grid-template-columns:34px minmax(0,1fr); gap:0 10px; padding:10px 0; border-top:1px solid var(--hair); }
-#pn-son .sn-how li:first-child{ border-top:0; padding-top:2px; }
-#pn-son .sn-how b{ grid-row:span 2; font-family:var(--hd); font-weight:700; font-size:1.35rem; line-height:1; color:var(--g); }
-#pn-son .sn-how strong{ font-family:var(--hd); font-weight:700; font-size:.78rem; letter-spacing:.2em; text-transform:uppercase; color:var(--iv); }
-#pn-son .sn-how span{ font-size:.92rem; line-height:1.4; color:var(--tm); }
-#pn-son .sn-stats{ display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); margin:12px 0 0; border-top:1px solid var(--hair); }
+#pn-son .sn-stats{ display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); margin:0; border-top:1px solid var(--hair); }
 #pn-son .sn-stats a{ display:block; padding:10px 0 0; text-decoration:none; }
 #pn-son .sn-stats b{ display:block; font-family:var(--hd); font-weight:600; font-size:clamp(1.7rem,2.6vw,2.4rem); line-height:1; color:var(--iv); font-variant-numeric:tabular-nums; }
 #pn-son .sn-stats span{ display:block; margin-top:3px; font-family:var(--hd); font-size:.62rem; font-weight:700; letter-spacing:.22em; text-transform:uppercase; color:var(--td); }
@@ -133,6 +144,17 @@ html.pn-son-lock,html.pn-son-lock body{ overflow:hidden; }
 #pn-son .sn-sol .sn-chip:hover{ border-color:var(--gd); color:var(--ink); }
 #pn-son .sn-sol .sn-chip.is-on{ background:var(--ink); border-color:var(--ink); color:var(--iv); }
 #pn-son .sn-sol .sn-more{ color:var(--ink); }
+#pn-son .sn-sol .sn-rm{ max-width:900px; }
+#pn-son .sn-sol .sn-rm > summary{ color:var(--gd); }
+#pn-son .sn-sol .sn-rm > summary:hover::after{ background:rgba(126,90,12,.1); }
+#pn-son .sn-sol .sn-rm__b{ color:var(--im); }
+#pn-son .sn-how{ display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); margin:0 0 8px; padding:10px 0; list-style:none; border-top:1px solid var(--ihair); border-bottom:1px solid var(--ihair); }
+#pn-son .sn-how li{ display:grid; grid-template-columns:28px minmax(0,1fr); gap:0 8px; padding:0 14px; }
+#pn-son .sn-how li:first-child{ padding-left:0; }
+#pn-son .sn-how li + li{ border-left:1px solid var(--ihair); }
+#pn-son .sn-how b{ grid-row:span 2; font-family:var(--hd); font-weight:700; font-size:1.25rem; line-height:1; color:var(--gd); }
+#pn-son .sn-how strong{ font-family:var(--hd); font-weight:700; font-size:.72rem; letter-spacing:.18em; text-transform:uppercase; color:var(--ink); }
+#pn-son .sn-how span{ font-size:.86rem; line-height:1.35; color:var(--im); }
 #pn-son .sn-clist{ display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:14px; margin:14px 0 0; padding:0; list-style:none; }
 #pn-son .sn-c{ position:relative; display:flex; flex-direction:column; padding:16px 18px 14px; border-radius:14px; border:1px solid var(--ihair); background:#FFFBF1; box-shadow:0 1px 0 rgba(26,20,12,.04); transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease; }
 #pn-son .sn-c:hover{ transform:translateY(-3px); border-color:rgba(126,90,12,.4); box-shadow:0 16px 34px rgba(26,20,12,.12); }
@@ -150,15 +172,13 @@ html.pn-son-lock,html.pn-son-lock body{ overflow:hidden; }
 #pn-son .sn-c__x div{ display:block; font-size:.88rem; line-height:1.4; color:var(--im); }
 #pn-son .sn-c__x dt{ display:inline; margin-right:6px; font-family:var(--hd); font-size:.62rem; font-weight:700; letter-spacing:.16em; text-transform:uppercase; color:var(--tc); }
 #pn-son .sn-c__x dd{ display:inline; margin:0; }
-#pn-son .sn-c:not(.sn-c--lead) .sn-c__x div{ display:-webkit-box; -webkit-box-orient:vertical; -webkit-line-clamp:4; overflow:hidden; }
-#pn-son .sn-c:not(.sn-c--lead) .sn-c__x div + div{ -webkit-line-clamp:6; }
 #pn-son p.sn-c__x{ margin:0; font-size:.88rem; line-height:1.45; color:var(--im); }
 #pn-son .sn-c__f{ display:flex; align-items:baseline; gap:10px; margin:auto 0 0; padding-top:10px; }
 #pn-son .sn-c__x + .sn-c__f{ margin-top:12px; }
 #pn-son .sn-c__f{ padding-top:10px; border-top:1px solid var(--ihair); }
 #pn-son .sn-c__f b{ font-family:var(--hd); font-weight:700; font-size:1.6rem; line-height:1; color:var(--gd); font-variant-numeric:tabular-nums; white-space:nowrap; }
 #pn-son .sn-c__f span{ font-size:.74rem; line-height:1.3; color:var(--idm); }
-#pn-son .sn-c__go{ display:none; margin-top:8px; font-family:var(--hd); font-size:.66rem; font-weight:700; letter-spacing:.2em; text-transform:uppercase; color:var(--gd); }
+#pn-son .sn-c__go{ display:block; margin-top:8px; font-family:var(--hd); font-size:.66rem; font-weight:700; letter-spacing:.2em; text-transform:uppercase; color:var(--gd); }
 #pn-son .sn-c__go::after{ content:" \2192"; font-family:Arial,sans-serif; }
 #pn-son .sn-c.is-press .sn-c__go{ color:var(--idm); }
 #pn-son .sn-c.is-press .sn-c__go::after{ content:""; }
@@ -171,7 +191,6 @@ html.pn-son-lock,html.pn-son-lock body{ overflow:hidden; }
   #pn-son .sn-c--lead .sn-c__x div{ display:grid; grid-template-columns:6.2em minmax(0,1fr); gap:10px; font-size:.95rem; }
   #pn-son .sn-c--lead .sn-c__x dt{ display:block; padding-top:3px; }
 }
-#pn-son .sn-c--lead .sn-c__go,#pn-son .sn-c.is-press .sn-c__go{ display:block; }
 #pn-son .sn-c--lead .sn-c__f b{ font-size:2.3rem; }
 #pn-son .sn-cfoot{ display:grid; grid-template-columns:1fr auto 1fr; align-items:center; gap:10px; margin-top:14px; font-size:.82rem; color:var(--idm); }
 #pn-son .sn-cfoot .sn-more{ margin:0; grid-column:2; }
@@ -263,7 +282,6 @@ html.pn-son-lock,html.pn-son-lock body{ overflow:hidden; }
 #pn-son .sn-w__by{ margin:3px 0 0; font-size:.76rem; color:var(--td); }
 #pn-son .sn-w__by b{ font-weight:600; color:var(--tm); }
 #pn-son .sn-wire .sn-more{ color:var(--iv); }
-#pn-son .sn-fine{ margin:12px 0 0; font-size:.76rem; color:var(--td); }
 #pn-son .sn-close{ display:grid; grid-template-columns:minmax(0,1fr) auto; align-items:center; gap:16px 40px; margin-top:clamp(20px,3.4vh,34px); padding-top:clamp(18px,3vh,28px); border-top:1px solid var(--hair); }
 #pn-son .sn-close .sn-cup{ width:64px; margin-bottom:8px; }
 #pn-son .sn-close .sn-h2{ font-size:clamp(1.7rem,2.6vw,2.4rem); }
@@ -299,7 +317,6 @@ html.pn-son-lock,html.pn-son-lock body{ overflow:hidden; }
   #pn-son .sn-head{ margin-bottom:12px; }
   #pn-son .sn-head > div:first-child{ flex-basis:100%; }
   #pn-son .sn-search{ flex:1 1 100%; min-width:0; }
-  #pn-son .sn-mast span:nth-child(2){ display:none; }
   #pn-son h1.sn-h1{ font-size:clamp(2.3rem,11.2vw,3rem); }
   #pn-son .sn-caps{ font-size:clamp(.92rem,4.4vw,1.15rem); letter-spacing:.12em; }
   #pn-son .sn-rot{ display:block; width:max-content; min-width:0; margin-top:2px; }
@@ -310,16 +327,15 @@ html.pn-son-lock,html.pn-son-lock body{ overflow:hidden; }
   #pn-son .sn-stats{ display:none; }
   #pn-son .sn-hero .sn-ctas{ display:none; }
   #pn-son .sn-seven{ padding-top:12px; }
-  #pn-son .sn-find .sn-head .sn-lead,#pn-son .sn-wire .sn-head .sn-lead,#pn-son .sn-close .sn-lead{ display:none; }
-  #pn-son .sn-c:not(.sn-c--lead) .sn-c__x div,#pn-son .sn-c--lead .sn-c__x div{ display:-webkit-box; -webkit-box-orient:vertical; -webkit-line-clamp:3; overflow:hidden; }
-  #pn-son .sn-c:not(.sn-c--lead) .sn-c__x div + div,#pn-son .sn-c--lead .sn-c__x div + div{ -webkit-line-clamp:6; }
+  #pn-son .sn-lead{ margin-top:8px; font-size:.98rem; line-height:1.45; }
   #pn-son .sn-cfoot{ display:flex; justify-content:flex-end; margin-top:6px; }
-  #pn-son .sn-how{ display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:8px; padding:12px; }
-  #pn-son .sn-how li{ display:block; padding:0; border-top:0; }
-  #pn-son .sn-how li + li{ padding-left:8px; border-left:1px solid var(--hair); }
+  #pn-son .sn-how{ gap:8px; }
+  #pn-son .sn-how li{ display:block; padding:0; }
+  #pn-son .sn-how li + li{ padding-left:8px; }
   #pn-son .sn-how b{ display:block; font-size:1.05rem; }
-  #pn-son .sn-how strong{ display:block; margin:2px 0 3px; font-size:.68rem; letter-spacing:.14em; }
-  #pn-son .sn-how span{ display:block; font-size:.76rem; line-height:1.3; }
+  #pn-son .sn-how strong{ display:block; margin:2px 0 3px; font-size:.64rem; letter-spacing:.12em; }
+  #pn-son .sn-how span{ display:block; font-size:.78rem; line-height:1.3; }
+  #pn-son .sn-rm__b{ font-size:.86rem; }
   #pn-son .sn-seven{ flex-wrap:nowrap; overflow-x:auto; scrollbar-width:none; margin:0 calc(-1 * var(--px)); padding-left:var(--px); padding-right:var(--px); }
   #pn-son .sn-seven::-webkit-scrollbar{ display:none; }
   #pn-son .sn-seven a{ flex:0 0 auto; }
@@ -348,7 +364,6 @@ html.pn-son-lock,html.pn-son-lock body{ overflow:hidden; }
   #pn-son .sn-ctrl .sn-chips.sn-scroll{ margin:0; padding:0; overflow:visible; }
   #pn-son .sn-ctrl .sn-sel{ flex:0 0 auto; order:-1; }
   #pn-son .sn-close .sn-cup{ display:none; }
-  #pn-son .sn-cfoot > span{ display:none; }
   #pn-son .sn-7 div{ grid-template-columns:8em minmax(0,1fr) 4.6em; gap:6px; }
   #pn-son .sn-close{ margin-top:18px; padding-top:16px; }
   #pn-son .sn-close .sn-ctas .sn-btn:nth-child(3){ display:none; }
@@ -415,24 +430,19 @@ html.pn-son-lock,html.pn-son-lock body{ overflow:hidden; }
   <section class="sn-band sn-hero" aria-labelledby="sn-h1">
     <canvas class="sn-gl" aria-hidden="true"></canvas>
     <div class="sn-in">
-      <div class="sn-mast"><span><b>Perfect Nations</b></span><span>Solutions &middot; Nations &middot; The Wire</span><span class="sn-ed">Edition of <!--pn:edition--></span></div>
+      <div class="sn-mast"><span><b>Perfect Nations</b></span><span class="sn-ed">Edition of <!--pn:edition--></span></div>
       <div class="sn-hgrid">
         <div>
           <svg class="sn-cup" aria-hidden="true" focusable="false"><use href="#pnso-cup"></use></svg>
           <h1 class="sn-h1" id="sn-h1">The State of Nations</h1>
           <p class="sn-caps">Economic solutions for <span class="sn-rot" aria-hidden="true">all</span><span class="sn-sr">food, water, shelter, energy, education, health and livelihood</span></p>
-          <p class="sn-lead">Innovative financing for development (FfD) and super intelligence (SI), co-designing with every nation the solutions that secure seven basic standards of living for all.</p>
+          <p class="sn-lead">Innovative financing for development (FfD) and super intelligence (SI) can secure seven basic standards of living for every citizen.</p>
           <div class="sn-ctas">
             <a class="sn-btn" href="#sn-solutions">Read the Solutions</a>
             <a class="sn-btn sn-btn--line" href="#sn-nations">Find your nation</a>
           </div>
         </div>
         <div>
-          <ol class="sn-how" aria-label="How a Solution is built">
-            <li><b>01</b><strong>The challenge</strong><span>The standard furthest from reach, measured and sourced.</span></li>
-            <li><b>02</b><strong>The deal</strong><span>The bond, swap or guarantee that pays for it.</span></li>
-            <li><b>03</b><strong>What Perfect Nations advises</strong><span>Where the deal fits next, and what to measure.</span></li>
-          </ol>
           <nav class="sn-stats" aria-label="On this page">
             <a href="#sn-solutions"><b data-count-s><!--pn:n-sol--></b><span>Solutions</span></a>
             <a href="#sn-nations"><b data-count-n><!--pn:n-nat--></b><span>Nations</span></a>
@@ -463,14 +473,25 @@ html.pn-son-lock,html.pn-son-lock body{ overflow:hidden; }
         <div>
           <p class="sn-eb">Solutions</p>
           <h2 class="sn-h2" id="sn-sol-h">How nations close the gap</h2>
-          <p class="sn-lead">Each Solution: the deal, the challenge to the seven standards it meets, and what Perfect Nations advises. <span class="sn-swipe">Swipe for all <span data-count-s2><!--pn:n-sol--></span> &#8594;</span></p>
+          <p class="sn-lead">Each Solution pairs a nation&#8217;s challenge with what Perfect Nations advises. <span class="sn-swipe">Swipe for all <span data-count-s2><!--pn:n-sol--></span> &#8594;</span></p>
+          <details class="sn-rm">
+            <summary>Read more<span class="sn-sr"> on how a Solution is built</span></summary>
+            <div class="sn-rm__b">
+              <ol class="sn-how" aria-label="How a Solution is built">
+                <li><b>01</b><strong>The challenge</strong><span>The standard furthest from reach, measured and sourced.</span></li>
+                <li><b>02</b><strong>The deal</strong><span>The bond, swap or guarantee that pays for it.</span></li>
+                <li><b>03</b><strong>What Perfect Nations advises</strong><span>Where the deal fits next, and what super intelligence makes possible.</span></li>
+              </ol>
+              <p>Newest first. Every figure is sourced in its dispatch.</p>
+            </div>
+          </details>
         </div>
       </div>
       <div class="sn-chips sn-scroll" id="snSFil" role="group" aria-label="Filter the Solutions by standard" hidden></div>
       <ol class="sn-clist" id="snCList" aria-live="polite">
 <!--pn:solutions-->
       </ol>
-      <div class="sn-cfoot"><span id="snSNote">Newest first; every figure is sourced in its Solution.</span><button type="button" class="sn-more" id="snSMore" hidden>Show all Solutions</button><a href="https://perfectnations.org/category/dispatches/">The archive</a></div>
+      <div class="sn-cfoot"><button type="button" class="sn-more" id="snSMore" hidden>Show all Solutions</button><a href="https://perfectnations.org/category/dispatches/">The archive</a></div>
     </div>
   </section>
 
@@ -480,7 +501,7 @@ html.pn-son-lock,html.pn-son-lock body{ overflow:hidden; }
         <div>
           <p class="sn-eb">Nation by nation</p>
           <h2 class="sn-h2" id="sn-find-h">Solutions for every nation</h2>
-          <p class="sn-lead">Pick a standard or a nation: the gap, sourced, what Perfect Nations advises, and the instrument already at work.</p>
+          <p class="sn-lead">Pick a standard or a nation to see the gap and what Perfect Nations advises.</p>
         </div>
         <div class="sn-search">
           <svg aria-hidden="true" focusable="false"><use href="#pnso-q"></use></svg>
@@ -503,7 +524,11 @@ html.pn-son-lock,html.pn-son-lock body{ overflow:hidden; }
         <div>
           <p class="sn-eb">The Solutions Wire</p>
           <h2 class="sn-h2" id="sn-wire-h">Solutions, as they are financed</h2>
-          <p class="sn-lead">Every new bond, swap, guarantee and fund, from every nation, linked to its source.</p>
+          <p class="sn-lead">Each new bond, swap, guarantee and fund links straight to its source.</p>
+          <details class="sn-rm">
+            <summary>Read more<span class="sn-sr"> about the wire</span></summary>
+            <div class="sn-rm__b"><p>Each headline opens the original at its publisher, and credit belongs to the writer. The wire covers all 195 nations.</p></div>
+          </details>
         </div>
         <div class="sn-search">
           <svg aria-hidden="true" focusable="false"><use href="#pnso-q"></use></svg>
@@ -520,7 +545,6 @@ html.pn-son-lock,html.pn-son-lock body{ overflow:hidden; }
       </ol>
       <p class="sn-empty" id="snWEmpty" hidden>Nothing on the wire matches that.</p>
       <button type="button" class="sn-more" id="snWMore" hidden>Show the whole wire</button>
-      <p class="sn-fine">Each headline opens the original at its publisher; credit belongs to the writer. Covering all 195 nations.</p>
       <div class="sn-close">
         <div>
           <svg class="sn-cup" aria-hidden="true" focusable="false"><use href="#pnso-cup"></use></svg>
@@ -847,7 +871,7 @@ html.pn-son-lock,html.pn-son-lock body{ overflow:hidden; }
       ns.forEach(function (n) { var r = natRow(n, firsts[s]); frag.appendChild(r); });
       list.textContent = ''; list.appendChild(frag);
       var pc = p.querySelector('.sn-pcount');
-      if (pc && ns.length) { pc.textContent = ''; pc.appendChild(el('b', '', String(ns.length))); pc.appendChild(document.createTextNode(' ' + (ns.length === 1 ? 'nation' : 'nations') + ' where ' + s.toLowerCase() + ' is the standard furthest from reach')); }
+      if (pc && ns.length) { pc.textContent = ''; pc.appendChild(el('b', '', String(ns.length))); pc.appendChild(document.createTextNode(' ' + (ns.length === 1 ? 'nation' : 'nations') + ' where ' + s.toLowerCase() + ' is furthest from reach')); }
     });
     var cn = root.querySelector('[data-count-n]'); if (cn) { cn.textContent = String(d.nations.length); }
     Array.prototype.forEach.call(root.querySelectorAll('.sn-r'), addSeven);
@@ -932,7 +956,7 @@ html.pn-son-lock,html.pn-son-lock body{ overflow:hidden; }
   }
   wSetup();
 
-  /* THE TICKER: three Solutions and eight instruments, read from the page */
+  /* THE TICKER: three Solutions and five instruments, read from the page */
   function ticker() {
     var track = root.querySelector('.sn-tick__track'); if (!track) { return; }
     var items = [];
@@ -941,7 +965,7 @@ html.pn-son-lock,html.pn-son-lock body{ overflow:hidden; }
       var x = el('a', '', 'Solution No. ' + pad(c.getAttribute('data-no')) + ': ' + a.textContent); x.href = a.getAttribute('href');
       x.appendChild(el('span', '', (c._d && c._d.nation) || ((c.querySelector('.sn-c__k span') || {}).textContent || ''))); items.push(x);
     });
-    wires.slice(0, 8).forEach(function (w) {
+    wires.slice(0, 5).forEach(function (w) {
       var a = w.querySelector('h3 a'), s = w.querySelector('.sn-w__src'); if (!a) { return; }
       var x = ext(el('a', '', a.textContent)); x.href = a.href; x.appendChild(el('span', '', s ? s.textContent.replace(/^Via\s+/, '') : '')); items.push(x);
     });

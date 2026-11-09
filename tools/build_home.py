@@ -24,7 +24,7 @@ ROOT = Path(__file__).resolve().parent.parent
 PAGES = ROOT / 'pages'
 DATA = ROOT / 'data'
 SITE = 'https://perfectnations.org'
-VERSION = '10.1'
+VERSION = '11.1'
 SOLUTIONS_SHOWN = 6
 MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September',
           'October', 'November', 'December']
@@ -32,6 +32,11 @@ MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'Augus
 # The page, top to bottom. 'rule' places the gold line (pages/home-rule.html) between two sections.
 # 9 Nov 2026, the Steward-General: the gold line replaces the painted botanical seams everywhere, so
 # the seams (pages/home-seams.html and the seam drawing that was here) are retired from the site.
+# v11.1 (9 Nov 2026): every element of the logo in one gold, #E3C258, with no dimmed parts (the Steward-General).
+# v11.0 (9 Nov 2026), the Steward-General: "Make the site lively, exciting and easy to understand."
+# After the hero and the Capital Wire, the story "Imagine a Perfect Nation" (home-imagine.html, new):
+# the world today, then a nation with all seven standards, then how it is reached; the dots build
+# the logo. Every section keeps one headline and one line, with the detail one click away.
 # v10.1 (9 Nov 2026): What Perfect Nations advises, in place of how FfD and SI solve it (the Steward-General, 9 Nov 2026).
 # Each Solution card reads The challenge, then What Perfect Nations advises (the field "advises").
 # v10.0 (8 Nov 2026), the Steward-General's decision, after Goldman Sachs, J.P. Morgan and the World Bank:
@@ -47,6 +52,7 @@ ORDER = [
     'nations-menu.html',          # the moving list of 195 nations (also on other pages)
     'home-hero.html',             # 01 Civilization Re-Defined / Designing the Prosperity of Nations
     'home-capital-wire.html',     # 01b the Capital Wire, the deal tape (kept by the Correspondent)
+    'home-imagine.html',          # 01c Imagine a Perfect Nation: the story in three acts (new, v11.0)
     'home-blueprints.html',       # 02 Blueprints of Nations
     'rule',
     'home-solutions.html',        # 03 Solutions for Nations: the latest Solutions from State of Nations

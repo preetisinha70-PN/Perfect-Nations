@@ -1,5 +1,8 @@
 <!-- ===========================================================================
-PERFECT NATIONS - HOMEPAGE - SECTION 05 - 03 SOLUTIONS: PERFECT CAPITA, THE SEVEN STARS - v6.1 - 2026-11-08
+PERFECT NATIONS - HOMEPAGE - SECTION 05 - 03 SOLUTIONS: PERFECT CAPITA, THE SEVEN STARS - v6.3 - 2026-11-09
+v6.3 (the Steward-General, 9 Nov 2026): every element of the logo in one gold, #E3C258; no part of the logo is drawn dimmed. Choosing a star no longer dims the others.
+v6.2: fewer words, the Steward-General, 9 Nov 2026: the caption under the stars is one short line; the method notes
+(the groups overlap; Barbados in 2025 US dollars, to be confirmed) move into a Read more; the sum is marked an estimate.
 v6.1: the steps are Assets, Capital, Solutions (the Steward-General, 8 Nov 2026, evening): Perfect Capita
 is the Solutions, step 03, and comes last, after Capital.
 v6.0: the Steward-General's choices of 8 Nov 2026: the wheel (too close to the SDGs) becomes the seven
@@ -210,7 +213,6 @@ SOFI page once its address is confirmed.
 #pn-capita .pc4-sky .pc4-val{ font-size:24px; fill:#FFF4D6; }
 #pn-capita .pc4-sky .pc4-seg--crown .pc4-lab{ font-size:14px; fill:var(--gs); }
 #pn-capita .pc4-sky .pc4-seg--crown .pc4-val{ font-size:32px; }
-#pn-capita .pc4-sky.has-on .pc4-seg .pc4-star{ opacity:.78; }
 #pn-capita .pc4-sky.has-on .pc4-seg.is-on .pc4-star{ opacity:1; filter:drop-shadow(0 0 12px rgba(240,214,143,.75)); }
 #pn-capita .pc4-sky .pc4-seg.is-on .pc4-halo{ opacity:.42; }
 #pn-capita .pc4-sky .pc4-seg.is-on .pc4-lab{ fill:var(--gs); }
@@ -223,6 +225,26 @@ SOFI page once its address is confirmed.
 @keyframes pc4Ray{ from{ opacity:0; } to{ opacity:1; } }
 @media (max-width:760px){
   #pn-capita .pc4-sky{ max-width:360px; }
+}
+
+/* v6.2: Read more, the detail one click away */
+#pn-capita details.pc4-rm{ margin:10px 0 0; }
+#pn-capita .pc4-rm summary{
+  display:inline-flex; align-items:center; gap:9px; min-height:40px; cursor:pointer; list-style:none;
+  font-family:var(--hd); font-size:.68rem; font-weight:700; letter-spacing:.2em; text-transform:uppercase; color:var(--g);
+}
+#pn-capita .pc4-rm summary::-webkit-details-marker{ display:none; }
+#pn-capita .pc4-rm summary::before{
+  content:"+"; display:inline-flex; align-items:center; justify-content:center; width:20px; height:20px; border-radius:50%;
+  border:1px solid rgba(227,194,88,.6); font-family:Arial,sans-serif; font-size:.9rem; font-weight:400; letter-spacing:0; line-height:1;
+}
+#pn-capita .pc4-rm[open] summary::before{ content:"\2212"; }
+#pn-capita .pc4-rm summary:hover{ color:var(--gs); }
+#pn-capita .pc4-rm summary:focus-visible{ outline:2px solid var(--gs); outline-offset:3px; border-radius:4px; }
+#pn-capita .pc4-rm > p{ margin:2px 0 0; max-width:60ch; font-size:.86rem; line-height:1.5; color:var(--tm); }
+@media (max-width:640px){
+  #pn-capita details.pc4-rm{ margin-top:6px; }
+  #pn-capita .pc4-rm > p{ font-size:.8rem; }
 }
 
 </style>
@@ -240,11 +262,11 @@ SOFI page once its address is confirmed.
         <b id="pc4-f">2.1bn</b>
         <div class="pc4-call__t" id="pc4-body"><small id="pc4-n">Food</small><span id="pc4-l">people moderately or severely food insecure, one in four on Earth</span><br><a id="pc4-s" href="https://doi.org/10.4060/cd8306en" target="_blank" rel="noopener noreferrer">FAO and UN partners, SOFI 2026 (2025 data)</a></div>
       </div>
-      <p class="pc4-cap">Seven stars, one for each standard; Food is the crown. People below each today; the groups overlap.</p>
+      <p class="pc4-cap">People below each standard today.</p>
     </div>
     <div class="pc4-rest">
       <div class="pc4-sum">
-        <p class="pc4-sum__k">Barbados, the first nation priced</p>
+        <p class="pc4-sum__k">Barbados, the first nation priced: an estimate</p>
         <div class="pc4-row" role="group" aria-label="6,204 dollars a person, times 282,623 people, is 1.75 billion dollars a year: the price of Perfect Barbados">
           <div class="pc4-t"><b class="pc4-money" data-count="6204" data-pre="$">$6,204</b><span>Perfect Capita, per person</span></div>
           <i aria-hidden="true">&times;</i>
@@ -257,7 +279,11 @@ SOFI page once its address is confirmed.
         <a class="pc4-btn pc4-btn--gold" href="https://perfectnations.org/perfect-capita/">How Perfect Capita works</a>
         <a class="pc4-btn pc4-btn--line" href="https://perfectnations.org/blueprints/barbados/#bp-pc">Barbados, priced</a>
       </div>
-      <p class="pc4-note">Barbados: Perfect Nations estimate in 2025 US dollars, to be confirmed with Barbados.</p>
+      <details class="pc4-rm">
+        <summary>Read more</summary>
+        <p>Each star shows the people below that standard today; the groups overlap.</p>
+        <p>Barbados: Perfect Nations estimate in 2025 US dollars, to be confirmed with Barbados.</p>
+      </details>
     </div>
   </div>
 </section>

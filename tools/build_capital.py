@@ -12,7 +12,12 @@ Writes two files:
                                    follow the Nation Stewards without a new page version.
 
 The design lives in tools/capital/style.css and tools/capital/script.js; the words and figures live
-in data/capital-architecture.json. The gold line between the record and the close comes from the
+in data/capital-architecture.json.
+
+Fewer words (the Steward-General, 9 Nov 2026): each section shows one headline and one line, then its
+cards. The build shows the first sentence of a section's lead; the rest of the toolkit lead, and the
+method note under the record, sit one click away in a Read more disclosure (class pca-rm). The hero
+shows the first sentence of hero.lead only. The gold line between the record and the close comes from the
 homepage (pages/home-rule.html), so every page shares one section break.
 
 What counts as on record: every line of capital.register in data/<slug>.json, for every open
@@ -37,7 +42,7 @@ ROOT = Path(__file__).resolve().parent.parent
 PAGES = ROOT / 'pages'
 DATA = ROOT / 'data'
 HERE = Path(__file__).resolve().parent / 'capital'
-VERSION = '5.1'
+VERSION = '5.2'
 NOT_NATIONS = {'state-of-nations', 'ticker', 'blueprints', 'capital-architecture'}
 
 # Who carries each line on record (the register's cat field), in the words a visitor reads.
@@ -120,6 +125,22 @@ def cup():
     return re.sub(r'class="[^"]*"', 'class="pca-cup__svg"', m.group(0), count=1)
 
 
+def one_line(text):
+    """A section's one line: its first sentence, and the rest (if any) for the Read more beneath it."""
+    t = plain(text).strip()
+    m = re.match(r'^(.+?[.!?])\s+(?=[A-Z\u2018\u201c])(.+)$', t, re.S)
+    return (m.group(1), m.group(2)) if m else (t, '')
+
+
+def read_more(paras):
+    """The detail one click away: a native disclosure under a section's one line (paragraphs already escaped)."""
+    paras = [p for p in paras if p]
+    if not paras:
+        return ''
+    return ('<details class="pca-rm"><summary>Read more</summary><div class="pca-rm__b">%s</div></details>'
+            % ''.join('<p>%s</p>' % p for p in paras))
+
+
 def fig_html(item, cls):
     return '<span class="%s">%s</span>' % (cls, ent(item['figure'])) if item.get('figure') else ''
 
@@ -159,12 +180,13 @@ def hero(doc, n_inst, n_fam):
         '<div class="pca-five-h"><h2>%s</h2><a href="#pca-index">All %d instruments</a></div>'
         '<ul class="pca-five">%s</ul><p class="pca-note">%s</p>'
         '</div></section>'
-        % (cup(), ent(h['eyebrow']), ent(h['title']), ent(h['lead']), li, ent(five['label']), n_inst,
+        % (cup(), ent(h['eyebrow']), ent(h['title']), ent(one_line(h['lead'])[0]), li, ent(five['label']), n_inst,
            ''.join(tiles), ent(five['note'])))
 
 
 def index(doc, bps):
     ix = doc['index']
+    lead, rest = one_line(ix['lead'])
     jump, fams = [], []
     n_all = sum(len(f['items']) for f in ix['families'])
     for n, f in enumerate(ix['families'], 1):
@@ -199,10 +221,10 @@ def index(doc, bps):
     cols = ''.join('<div class="pca-col">%s</div>' % ''.join(fams[i:i + 2]) for i in range(0, len(fams), 2))
     return (
         '<section class="pca-band pca-idx" id="pca-index" aria-labelledby="pca-ih"><div class="pca-in">'
-        '<p class="pca-eb">%s</p><h2 class="pca-h2" id="pca-ih">%s</h2><p class="pca-lead">%s</p>'
+        '<p class="pca-eb">%s</p><h2 class="pca-h2" id="pca-ih">%s</h2><p class="pca-lead">%s</p>%s'
         '<ul class="pca-jump" aria-label="The six families">%s</ul>'
         '<div class="pca-fams">%s</div></div></section>'
-        % (ent(ix['eyebrow']), ent(ix['title']), ent(ix['lead']), ''.join(jump), cols))
+        % (ent(ix['eyebrow']), ent(ix['title']), ent(lead), read_more([ent(rest)]), ''.join(jump), cols))
 
 
 def record(doc):
@@ -226,14 +248,14 @@ def record(doc):
         '<div class="pca-rec__top"><div><p class="pca-eb">%s</p>'
         '<h2 class="pca-h2" id="pca-rh"><span data-pca-n="count">%s</span> deals on record across '
         '<span data-pca-n="nations">%d</span> nations</h2>'
-        '<p class="pca-rec__ins"><b data-pca-n="multi">%s</b> come from multilateral institutions. Private and impact '
-        'investors carry <b data-pca-n="pi">%d</b>. Capital Architecture is designed to close that gap: '
-        'to bring private capital to the seven basic living standards.</p></div>'
+        '<p class="pca-rec__ins"><b data-pca-n="multi">%s</b> come from multilateral institutions, <b data-pca-n="pi">%d</b> '
+        'from private and impact investors: Capital Architecture is designed to close that gap.</p>%s</div>'
         '<ul class="pca-bars" aria-label="Who finances the deals on record">%s</ul></div>'
         '<ul class="pca-nats">%s</ul>'
-        '<div class="pca-rec__foot"><p>%s</p><button class="pca-btn pca-btn--line pca-more-n" type="button" '
+        '<div class="pca-rec__foot"><button class="pca-btn pca-btn--line pca-more-n" type="button" '
         'aria-expanded="false" hidden>Show all nations</button></div></div></section>'
-        % (ent(r['eyebrow']), '{:,}'.format(r['count']), r['nations'], '{:,}'.format(multi), pi, bars, nats, ent(r['note'])))
+        % (ent(r['eyebrow']), '{:,}'.format(r['count']), r['nations'], '{:,}'.format(multi), pi,
+           read_more(['Closing it brings private capital to the seven basic living standards.', ent(r['note'])]), bars, nats))
 
 
 def close(doc):
@@ -276,6 +298,8 @@ bands: 01 Earthrise (the five we lead with), 02 ivory (the toolkit, six families
 deals on record, recounted from every blueprint and read live), a painted seam, 04 Earthrise Depth
 (the close). Phones have their own layout and never scroll sideways.
 v5.1: Gold line in place of the painted botanical seams (the Steward-General, 9 Nov 2026).
+v5.2: Fewer words (the Steward-General, 9 Nov 2026): one headline and one line per section. The hero
+keeps one sentence; the rest of the toolkit lead and the record's method note sit under Read more.
 =========================================================================== -->
 ''' % (VERSION, today)
     body = '\n'.join([
