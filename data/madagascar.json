@@ -1,7 +1,7 @@
 {
   "nation": "Madagascar",
   "page_version": "9.0",
-  "updated": "2026-11-06",
+  "updated": "2026-11-09",
   "steward": {
     "name": "Fanja Rasoanaivo",
     "role": "Nation Steward of Madagascar"
@@ -25,45 +25,153 @@
     ]
   },
   "capital": {
-    "heading": "7 instruments. Connectivity, water, safety nets and care.",
+    "heading": "17 instruments. Power, clean cooking, cities, transport, nutrition and safety nets, with IMF support through the transition.",
     "record": [
+      {
+        "value": "$658M",
+        "money": true,
+        "text": "IMF Extended Credit Facility and Resilience and Sustainability Facility, approved June 2024; about $155 million released 30 September 2026",
+        "source": "IMF, 2026",
+        "url": "https://www.imf.org/en/news/articles/2026/09/30/pr26312-republic-of-madagascar"
+      },
+      {
+        "value": "47.7%",
+        "money": false,
+        "text": "Public debt, percent of GDP, 2025, down from 52.1% in 2023",
+        "source": "IMF, 2026",
+        "url": "https://www.imf.org/en/news/articles/2026/09/30/pr26312-republic-of-madagascar"
+      },
+      {
+        "value": "$250M",
+        "money": true,
+        "text": "ASCENT Madagascar: electricity for more than 2.5 million people and 1.5 million clean cooking appliances, 2026",
+        "source": "World Bank, 2026",
+        "url": "https://www.worldbank.org/en/news/press-release/2026/05/06/madagascar-new-world-bank-program-set-to-provide-reliable-and-affordable-energy-to-over-2-5-million-people-by-2030"
+      },
+      {
+        "value": "$225M",
+        "money": true,
+        "text": "PRODUIRE2: flood protection and resilient homes in Antananarivo and Toamasina, 2026",
+        "source": "World Bank, 2026",
+        "url": "https://www.worldbank.org/en/news/press-release/2026/07/06/madagascar-to-boost-urban-resilience-and-jobs-in-antananarivo-and-toamasina"
+      },
       {
         "value": "$400M",
         "money": true,
         "text": "Digital and Energy Connectivity for Inclusion in Madagascar: Power and broadband together",
         "source": "World Bank",
         "url": "https://projects.worldbank.org/en/projects-operations/project-detail/P178701"
-      },
-      {
-        "value": "$400M",
-        "money": true,
-        "text": "Connecting Madagascar for Inclusive Growth: Roads and links",
-        "source": "World Bank",
-        "url": "https://projects.worldbank.org/en/projects-operations/project-detail/P173711"
-      },
-      {
-        "value": "$250M",
-        "money": true,
-        "text": "Madagascar Safety Nets and Resilience Project: Cash transfers",
-        "source": "World Bank",
-        "url": "https://projects.worldbank.org/en/projects-operations/project-detail/P179466"
-      },
-      {
-        "value": "$225M",
-        "money": true,
-        "text": "Rural Livelihoods Productivity and Resilience Project: Farm incomes",
-        "source": "World Bank",
-        "url": "https://projects.worldbank.org/en/projects-operations/project-detail/P175269"
-      },
-      {
-        "value": "$220M",
-        "money": true,
-        "text": "Madagascar National Water Project: Drinking water",
-        "source": "World Bank",
-        "url": "https://projects.worldbank.org/en/projects-operations/project-detail/P174477"
       }
     ],
     "register": [
+      {
+        "cat": "multi",
+        "status": "Approved",
+        "tone": "active",
+        "name": "Integrated Urban Development and Resilience Project for Jobs (PRODUIRE2)",
+        "detail": "Announced 6 July 2026 · IDA · Results by 2032",
+        "amount": "$225M",
+        "money": true,
+        "note": "Climate-resilient infrastructure for about 1.5 million people",
+        "text": "Flood protection, drainage, solid waste and land titles in Greater Antananarivo, and 20,000 homes rebuilt to resilient standards in Greater Toamasina, with schools and health facilities. About 17,000 jobs and land documents for 50,000 parcels are expected, at least 40% of them naming women.",
+        "by": [
+          "World Bank"
+        ],
+        "url": "https://www.worldbank.org/en/news/press-release/2026/07/06/madagascar-to-boost-urban-resilience-and-jobs-in-antananarivo-and-toamasina"
+      },
+      {
+        "cat": "multi",
+        "status": "Approved",
+        "tone": "active",
+        "name": "Improving Nutrition Outcomes Program, additional financing",
+        "detail": "Announced 8 June 2026 · $80 million IDA · $10 million Global Financing Facility grant",
+        "amount": "$90M",
+        "money": true,
+        "note": "Health and nutrition services for more than 5 million people",
+        "text": "Scales up maternal, newborn, child and adolescent health and nutrition services in the most vulnerable regions, with facility upgrades and more health workers. The programme aims to reach 600,000 children by 2028 and to cut child stunting by 30 percent.",
+        "by": [
+          "World Bank",
+          "Global Financing Facility"
+        ],
+        "url": "https://www.globalfinancingfacility.org/news/press-release/madagascar-receives-additional-support-expand-health-and-nutrition-services-over"
+      },
+      {
+        "cat": "multi",
+        "status": "Approved",
+        "tone": "active",
+        "name": "Accelerating Sustainable and Clean Energy Access Transformation (ASCENT Madagascar)",
+        "detail": "Announced 6 May 2026 · Program-for-Results, the first in Madagascar",
+        "amount": "$250M",
+        "money": true,
+        "note": "Electricity for more than 2.5 million people by 2030",
+        "text": "200,000 new JIRAMA household connections, solar and batteries for 30 isolated power centres, 312,500 off-grid connections and 1.5 million clean or improved cooking appliances. Clean cooking is the standard that holds Madagascar’s Coverage at 2; each tranche is paid on verified results.",
+        "by": [
+          "World Bank"
+        ],
+        "url": "https://www.worldbank.org/en/news/press-release/2026/05/06/madagascar-new-world-bank-program-set-to-provide-reliable-and-affordable-energy-to-over-2-5-million-people-by-2030"
+      },
+      {
+        "cat": "multi",
+        "status": "Approved",
+        "tone": "active",
+        "name": "Madagascar Multimodal Transport and Logistics Project",
+        "detail": "Announced 28 April 2026 · AIIB co-financing expected",
+        "amount": "$200M",
+        "money": true,
+        "note": "Rail, ports, the Pangalanes Canal and airports, for about 3.8 million people",
+        "text": "Rehabilitates key sections of the 371 km railway from Antananarivo to the port of Toamasina, the ports of Majunga and Tulear, about 200 km of the Pangalanes Canal and three regional airports. Coastal traders, fishers and tourism businesses gain year-round, cyclone-resilient access to markets.",
+        "by": [
+          "World Bank"
+        ],
+        "url": "https://www.worldbank.org/en/news/press-release/2026/04/28/madagascar-s-transport-infrastructure-gets-a-major-boost-with-world-bank-group-support"
+      },
+      {
+        "cat": "multi",
+        "status": "Paid",
+        "tone": "completed",
+        "name": "Cyclone payouts after Fytia and Gezani",
+        "detail": "Reported 2 April 2026 · REPAIR $19.9 million · ARC insurance about $5.6 million · Replica cover $3.79 million",
+        "amount": "More than $29M",
+        "money": true,
+        "note": "Rapid funds after the cyclones of February 2026",
+        "text": "Pre-arranged finance paid out after the cyclones of February 2026: reserves of the World Bank’s REPAIR programme, supported by the Global Shield Financing Facility, and African Risk Capacity parametric insurance, with replica cover for humanitarian partners. The REPAIR reserves were drawn first, for the early response.",
+        "by": [
+          "World Bank",
+          "African Risk Capacity",
+          "Global Shield Financing Facility"
+        ],
+        "url": "https://www.financialprotectionforum.org/news/over-29-million-payout-madagascar-after-cyclones-fytia-and-gezani"
+      },
+      {
+        "cat": "multi",
+        "status": "Approved",
+        "tone": "active",
+        "name": "Second Equitable and Resilient Growth Development Policy Operation",
+        "detail": "Announced 18 June 2025 · IDA · The second of a series of three",
+        "amount": "$100M",
+        "money": true,
+        "note": "Budget support for reforms in telecoms, energy, mining and public finance",
+        "text": "Supports the opening of the telecoms market, a stronger JIRAMA with fewer power cuts, a new Mining Code and the removal of some tax incentives in the 2025 budget. Internet prices have fallen since new operators entered the market.",
+        "by": [
+          "World Bank"
+        ],
+        "url": "https://www.worldbank.org/en/news/press-release/2025/06/18/madagascar-leveling-the-playing-field-for-equitable-and-resilient-growth-across-key-sectors"
+      },
+      {
+        "cat": "multi",
+        "status": "Active",
+        "tone": "active",
+        "name": "Extended Credit Facility and Resilience and Sustainability Facility",
+        "detail": "Approved 21 June 2024 · 36 months · ECF SDR 256.62 million · RSF SDR 244.4 million · Third and fourth reviews completed 30 September 2026",
+        "amount": "$658M",
+        "money": true,
+        "note": "About $155 million made available on 30 September 2026",
+        "text": "The ECF (about $337 million) supports fiscal sustainability, governance and human capital; the RSF (about $321 million) finances climate adaptation, disaster resilience and ecosystem protection. The combined reviews of September 2026 released SDR 114.052 million, about $155 million, during the political transition.",
+        "by": [
+          "International Monetary Fund"
+        ],
+        "url": "https://www.imf.org/en/news/articles/2026/09/30/pr26312-republic-of-madagascar"
+      },
       {
         "cat": "multi",
         "status": "Active",
@@ -78,36 +186,6 @@
           "World Bank"
         ],
         "url": "https://projects.worldbank.org/en/projects-operations/project-detail/P178701"
-      },
-      {
-        "cat": "multi",
-        "status": "Active",
-        "tone": "active",
-        "name": "Connecting Madagascar for Inclusive Growth",
-        "detail": "Approved 25 March 2022 · Investment project financing",
-        "amount": "$400M",
-        "money": true,
-        "note": "Roads and links",
-        "text": "Connects regions and markets.",
-        "by": [
-          "World Bank"
-        ],
-        "url": "https://projects.worldbank.org/en/projects-operations/project-detail/P173711"
-      },
-      {
-        "cat": "multi",
-        "status": "Active",
-        "tone": "active",
-        "name": "Madagascar Safety Nets and Resilience Project",
-        "detail": "Approved 21 December 2022 · Investment project financing",
-        "amount": "$250M",
-        "money": true,
-        "note": "Cash transfers",
-        "text": "Supports the poorest households and their resilience to shocks.",
-        "by": [
-          "World Bank"
-        ],
-        "url": "https://projects.worldbank.org/en/projects-operations/project-detail/P179466"
       },
       {
         "cat": "multi",
@@ -128,6 +206,21 @@
         "cat": "multi",
         "status": "Active",
         "tone": "active",
+        "name": "Madagascar Safety Nets and Resilience Project",
+        "detail": "Approved 21 December 2022 · Investment project financing",
+        "amount": "$250M",
+        "money": true,
+        "note": "Cash transfers",
+        "text": "Supports the poorest households and their resilience to shocks.",
+        "by": [
+          "World Bank"
+        ],
+        "url": "https://projects.worldbank.org/en/projects-operations/project-detail/P179466"
+      },
+      {
+        "cat": "multi",
+        "status": "Active",
+        "tone": "active",
         "name": "Madagascar National Water Project",
         "detail": "Approved 25 May 2022 · Investment project financing",
         "amount": "$220M",
@@ -138,6 +231,36 @@
           "World Bank"
         ],
         "url": "https://projects.worldbank.org/en/projects-operations/project-detail/P174477"
+      },
+      {
+        "cat": "multi",
+        "status": "Active",
+        "tone": "active",
+        "name": "Pandemic Preparedness and Basic Health Services Delivery Project",
+        "detail": "Approved 29 March 2022 · Investment project financing",
+        "amount": "$134.9M",
+        "money": true,
+        "note": "Basic health services; coverage 33 on the WHO index",
+        "text": "Strengthens basic health services, where coverage stands at 33 on the WHO index.",
+        "by": [
+          "World Bank"
+        ],
+        "url": "https://projects.worldbank.org/en/projects-operations/project-detail/P174903"
+      },
+      {
+        "cat": "multi",
+        "status": "Active",
+        "tone": "active",
+        "name": "Connecting Madagascar for Inclusive Growth",
+        "detail": "Approved 25 March 2022 · Investment project financing",
+        "amount": "$400M",
+        "money": true,
+        "note": "Roads and links",
+        "text": "Connects regions and markets.",
+        "by": [
+          "World Bank"
+        ],
+        "url": "https://projects.worldbank.org/en/projects-operations/project-detail/P173711"
       },
       {
         "cat": "multi",
@@ -155,19 +278,50 @@
         "url": "https://projects.worldbank.org/en/projects-operations/project-detail/P163870"
       },
       {
-        "cat": "multi",
-        "status": "Active",
+        "cat": "regional",
+        "status": "Approved",
         "tone": "active",
-        "name": "Pandemic Preparedness and Basic Health Services Delivery Project",
-        "detail": "Approved 29 March 2022 · Investment project financing",
-        "amount": "$134.9M",
+        "name": "Financial Management and Economic Resilience Support Programme, Phase II",
+        "detail": "Announced 26 May 2026 · ADF loan $27.2 million · Transition Support Facility loan $40.8 million",
+        "amount": "$68M",
         "money": true,
-        "note": "The guarantee furthest from reach",
-        "text": "Strengthens basic health services, where coverage stands at 33 on the WHO index.",
+        "note": "Second phase of a $136 million programme",
+        "text": "Supports public financial management and private sector competitiveness, an independent electricity regulator, a National Fund for Sustainable Energy for off-grid and rural power, and a modern public-private partnership law. Tax revenue is projected to rise from 10.5% to 12% of GDP by the end of 2026.",
         "by": [
-          "World Bank"
+          "African Development Bank"
         ],
-        "url": "https://projects.worldbank.org/en/projects-operations/project-detail/P174903"
+        "url": "https://allafrica.com/stories/202605270532.html"
+      },
+      {
+        "cat": "private",
+        "status": "Signed",
+        "tone": "active",
+        "name": "IFC loan to Groupe Talys",
+        "detail": "Announced 24 April 2026 · Long-term loan · Sanifer and Kibo",
+        "amount": "€9M",
+        "money": true,
+        "note": "Construction materials and grocery retail",
+        "text": "Finances Sanifer, the largest importer and distributor of construction materials in Madagascar, and the Kibo cash-and-carry stores. Madagascar is short of about two million homes, a deficit that grows by more than 100,000 a year; up to 14,000 indirect jobs are expected.",
+        "by": [
+          "IFC"
+        ],
+        "url": "https://www.ifc.org/en/pressroom/2026/ifc-partners-with-groupe-talys-to-expand-retail-bridge-housing-gap-and-empower-wom"
+      },
+      {
+        "cat": "private",
+        "status": "Signed",
+        "tone": "active",
+        "name": "IFC local-currency loan to BNI Madagascar",
+        "detail": "Announced 9 January 2025 · In ariary · IDA Private Sector Window first-loss guarantee",
+        "amount": "$30M",
+        "money": true,
+        "note": "At least 30% for women-led businesses",
+        "text": "Lends in ariary to micro, small and medium enterprises, including informal entrepreneurs, through one of the largest banks in Madagascar. The formal finance gap for small firms is 24% of GDP, against 19% across sub-Saharan Africa.",
+        "by": [
+          "IFC",
+          "IDA Private Sector Window"
+        ],
+        "url": "https://ifc.org/en/pressroom/2025/ifc-and-bni-madagascar-partner-to-expand-access-to-finance-for-smaller-businesses-in-madagascar"
       }
     ]
   },
@@ -255,11 +409,18 @@
     "heading": "Already working in Madagascar.",
     "items": [
       {
-        "standard": "In preparation",
-        "name": "The enterprises building Perfect Madagascar",
-        "text": "The Stewards are verifying the companies and social enterprises already delivering the seven basic living standards in Madagascar. Suggest one to include.",
-        "source": "Suggest an enterprise",
-        "url": "mailto:contact@perfectnations.org?subject=An%20enterprise%20for%20Perfect%20Madagascar"
+        "standard": "Shelter",
+        "name": "Groupe Talys (Sanifer)",
+        "text": "Sanifer is the largest importer and distributor of construction materials and home-improvement products in Madagascar, a family-owned group based in Antananarivo. IFC lent the group €9 million in 2026.",
+        "source": "IFC, 2026",
+        "url": "https://www.ifc.org/en/pressroom/2026/ifc-partners-with-groupe-talys-to-expand-retail-bridge-housing-gap-and-empower-wom"
+      },
+      {
+        "standard": "Livelihood",
+        "name": "BNI Madagascar",
+        "text": "One of the largest banks in Madagascar, lending in ariary to micro, small and medium enterprises, with at least 30% of an IFC loan of $30 million set aside for women-led businesses.",
+        "source": "IFC, 2025",
+        "url": "https://ifc.org/en/pressroom/2025/ifc-and-bni-madagascar-partner-to-expand-access-to-finance-for-smaller-businesses-in-madagascar"
       }
     ]
   },
@@ -395,5 +556,6 @@
     }
   ],
   "dispatches": [],
-  "checked": "2026-11-06T04:22Z"
+  "checked": "2026-11-06T04:22Z",
+  "reviewed": "2026-11-09T00:14Z"
 }
