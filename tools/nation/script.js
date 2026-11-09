@@ -1,5 +1,8 @@
 (function () {
-  /* Blueprint v11.3: the page follows its Nation Steward and the State of Nations.
+  /* Blueprint v11.5: the page follows its Nation Steward and the State of Nations.
+     v11.5: the register reads "Capital already committed" (the anchor #bp-register and the key capital.register are
+       unchanged); "Already working in" the nation is its own band after 02 Capital, its cards built as h3 under
+       its h2 (#bp-ent-h, the heading from the live file).
      v11.3: fewer words (the Steward-General, 9 Nov 2026): the register shows four lines, each opening on its dates
        and terms; the Newswire shows three headlines, then All news; a Solution shows The challenge, and The deal and
        What Perfect Nations advises open on a click (labels and texts unchanged); a longer summary shows its first
@@ -276,7 +279,7 @@
     var items = list.filter(function (x) { return x && T(x.name) && (okUrl(x.url) || /^mailto:[^\s'"<>]+$/.test(x.url || '')); }); if (!items.length) return;
     ul.textContent = '';
     items.forEach(function (x) {
-      var li = el('li'); li.appendChild(el('span', 'bpx-ent__s', T(x.standard))); li.appendChild(el('h4', '', x.name));
+      var li = el('li'); li.appendChild(el('span', 'bpx-ent__s', T(x.standard))); li.appendChild(el('h3', '', x.name));
       if (T(x.text)) li.appendChild(el('p', '', x.text));
       li.appendChild(link(el('a', '', T(x.source) || 'Source'), x.url)); ul.appendChild(li);
     });
