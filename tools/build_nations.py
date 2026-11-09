@@ -655,7 +655,7 @@ def letter(d, p):
         '<section class="bpx-band bpx-iv bpx-letter" id="bp-letter" aria-labelledby="bp-letter-h"><div class="bpx-in">'
         '<div class="bpx-letter__grid"><figure class="bpx-port"><span class="bpx-frame">'
         '<img src="%s"%s alt="%s" width="%d" height="%d" loading="lazy" decoding="async"></span>'
-        '<figcaption class="bpx-frame__cap">%s<small>Nation Portrait &#183; %s<a href="https://perfectnations.org/perfect-nations-gallery/" target="_blank" rel="noopener noreferrer">The Gallery</a></small></figcaption></figure>'
+        '<figcaption class="bpx-frame__cap">%s<small>Nation Portrait &#183; %s<a href="https://perfectnations.org/art-of-nations/" target="_blank" rel="noopener noreferrer">Art of Nations</a></small></figcaption></figure>'
         '<article class="bpx-sheet"><div class="bpx-sheet__lh"><span>Perfect Nations&#8482; &#183; Letters to the Nations</span><span>%s</span></div>'
         '<h2 class="bpx-sheet__dear" id="bp-letter-h">Dear %s,</h2>%s<p class="bpx-sheet__q">%s</p>'
         '<div class="bpx-sheet__foot"><span class="bpx-sig">Yours in design,<b>Preeti Sinha</b><small>President and CEO, Perfect Nations</small></span>'
