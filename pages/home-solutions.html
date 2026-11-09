@@ -1,0 +1,450 @@
+<!-- ===========================================================================
+PERFECT NATIONS - HOMEPAGE - SECTION 03 - SOLUTIONS FOR NATIONS (STATE OF NATIONS) - v1.0 - 2026-11-08
+v1.0 (homepage v10.0, the Steward-General, 8 Nov 2026): the homepage leads with outcomes, as the sites
+of the great banks do. This section shows the latest Solutions from State of Nations, newest first: the
+newest as a lead card across two columns, then five more (laptops: three columns; tablets: the lead and
+four; phones: a swipe rail with dots). Each card: the nation, the Solution number and date, the title,
+the headline figure (gold when it is money) with its caption, and the three lines The challenge, How
+FfD solves it and How SI solves it (FfD before SI), or the standfirst; the source of the Solution; the
+whole card opens the Solution on State of Nations (#solution-NN), or its own page where it has one.
+Part of the one-file homepage (pages/home.html, built by tools/build_home.py). Root id pn-solutions.
+Data: data/state-of-nations.json ("dispatches"), kept by the Correspondent. The cards between the
+GENERATED:SOLUTIONS markers are written by tools/build_home.py from that file at build time (the static
+fallback); once the section nears the screen the script reads the same file live (raw.githubusercontent
+with cache 'no-cache', jsDelivr as fallback) and redraws the cards. A file that cannot be read, or holds
+fewer than three valid Solutions, keeps the cards written here.
+=========================================================================== -->
+<style>
+#pn-solutions{
+  --er:#0B3D45; --er2:#0F4C5C; --er3:#082A30;
+  --iv:#F5F1E8; --tm:rgba(245,241,232,.84); --td:rgba(245,241,232,.62); --hair:rgba(245,241,232,.14);
+  --g:#E3C258; --gs:#F0D68F; --onacc:#1A140C; --live:#5DCAA5;
+  --hd:var(--pn-font-heading,"Barlow Condensed","Arial Narrow",Arial,sans-serif);
+  --bd:var(--pn-font-body,"Barlow Semi Condensed",Arial,sans-serif);
+  position:relative; isolation:isolate;
+  width:100vw; margin-left:calc(50% - 50vw);
+  overflow-x:hidden; overflow-x:clip;
+  padding:clamp(30px,4.8vh,54px) 0 clamp(28px,4.4vh,48px);
+  box-sizing:border-box; color:var(--iv); font-family:var(--bd); line-height:1.5;
+  scroll-margin-top:var(--pn-head-off,72px);
+  background:
+    radial-gradient(46% 60% at 88% 0%, rgba(227,194,88,.14) 0%, rgba(227,194,88,0) 70%),
+    radial-gradient(40% 50% at 0% 100%, rgba(110,200,196,.10) 0%, rgba(110,200,196,0) 70%),
+    linear-gradient(180deg,var(--er3) 0%,#0A333B 46%,var(--er3) 100%);
+}
+#pn-solutions *,#pn-solutions *::before,#pn-solutions *::after{ box-sizing:border-box; }
+.elementor-widget-html:has(#pn-solutions),
+.elementor-widget:has(#pn-solutions),
+.e-con-inner:has(#pn-solutions),
+.e-con:has(#pn-solutions){
+  padding-top:0 !important; padding-bottom:0 !important;
+  --widgets-spacing:0px !important; row-gap:0 !important;
+}
+#pn-solutions h2,#pn-solutions h3,#pn-solutions p,#pn-solutions dd{ text-shadow:none !important; }
+#pn-solutions .pnso-in{ position:relative; width:100%; max-width:1480px; margin:0 auto; padding:0 clamp(18px,5vw,72px); }
+
+/* the head */
+#pn-solutions .pnso-head{ display:grid; grid-template-columns:minmax(0,1.1fr) minmax(0,1fr); gap:12px clamp(24px,4vw,64px); align-items:end; }
+#pn-solutions .pnso-eb{
+  display:flex; align-items:center; gap:12px; margin:0;
+  font-family:var(--hd); font-size:.72rem; font-weight:700; letter-spacing:.3em; text-transform:uppercase; color:var(--g);
+}
+#pn-solutions .pnso-eb::before{ content:""; width:26px; height:1px; background:rgba(227,194,88,.7); }
+#pn-solutions h2.pnso-h2{
+  margin:10px 0 0; max-width:none; font-family:var(--hd); font-weight:600; text-transform:none;
+  font-size:clamp(2.4rem,5.2vw,4.9rem); line-height:.9; letter-spacing:-.03em; color:var(--iv) !important;
+}
+#pn-solutions .pnso-h2 span{ display:inline-block; }
+#pn-solutions .pnso-lead{ margin:0; max-width:52ch; font-size:clamp(1rem,1.2vw,1.12rem); line-height:1.5; color:var(--tm); text-wrap:pretty; }
+#pn-solutions .pnso-lead b{ font-weight:600; color:var(--iv); }
+#pn-solutions .pnso-stat{
+  display:flex; align-items:center; flex-wrap:wrap; gap:6px 10px; margin:10px 0 0;
+  font-family:var(--hd); font-size:.74rem; font-weight:700; letter-spacing:.2em; text-transform:uppercase; color:var(--td);
+}
+#pn-solutions .pnso-stat b{ font-size:1.5em; letter-spacing:0; color:var(--iv); }
+#pn-solutions .pnso-pulse{ position:relative; width:8px; height:8px; border-radius:50%; background:var(--live); }
+#pn-solutions .pnso-pulse::after{ content:""; position:absolute; inset:-4px; border-radius:50%; border:1px solid var(--live); opacity:0; }
+
+/* the cards */
+#pn-solutions ol.pnso-grid{
+  list-style:none; margin:clamp(18px,3vh,28px) 0 0; padding:0;
+  display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:clamp(12px,1.3vw,18px);
+}
+#pn-solutions .pnso-c{
+  position:relative; isolation:isolate; overflow:hidden; display:flex; flex-direction:column; min-width:0; margin:0;
+  padding:clamp(16px,1.5vw,22px) clamp(16px,1.5vw,22px) clamp(14px,1.3vw,18px);
+  border-radius:18px; border:1px solid var(--hair);
+  background:
+    radial-gradient(90% 55% at 100% 0%, rgba(227,194,88,.08) 0%, rgba(227,194,88,0) 70%),
+    linear-gradient(165deg,#10505F 0%,var(--er) 48%,#09313A 100%);
+  box-shadow:inset 0 1px 0 rgba(240,214,143,.22), 0 20px 44px rgba(0,0,0,.24);
+  transition:transform .35s cubic-bezier(.22,1,.36,1), border-color .3s ease, box-shadow .35s ease;
+}
+#pn-solutions .pnso-c:hover{ transform:translateY(-4px); border-color:rgba(227,194,88,.55); box-shadow:inset 0 1px 0 rgba(240,214,143,.4), 0 28px 56px rgba(0,0,0,.32); }
+#pn-solutions .pnso-c:focus-within{ border-color:rgba(227,194,88,.7); }
+#pn-solutions .pnso-wm{
+  position:absolute; right:-.04em; top:-.2em; z-index:-1; pointer-events:none;
+  font-family:var(--hd); font-weight:700; font-size:clamp(5.6rem,7vw,7.4rem); line-height:1; letter-spacing:-.04em;
+  color:transparent; -webkit-text-stroke:1px rgba(227,194,88,.16);
+}
+#pn-solutions .pnso-l{ display:flex; flex-direction:column; min-width:0; }
+#pn-solutions .pnso-k{
+  display:flex; align-items:baseline; flex-wrap:wrap; gap:4px 12px; margin:0;
+  font-family:var(--hd); font-size:.7rem; font-weight:700; letter-spacing:.2em; text-transform:uppercase; color:var(--td);
+}
+#pn-solutions .pnso-k .pnso-n{ font-size:1.12em; letter-spacing:.22em; color:var(--iv); }
+#pn-solutions .pnso-k time{ letter-spacing:.14em; }
+#pn-solutions .pnso-k span::before,#pn-solutions .pnso-k time::before{ content:""; display:inline-block; width:3px; height:3px; margin:0 10px 2px 0; border-radius:50%; background:rgba(245,241,232,.4); vertical-align:middle; }
+#pn-solutions .pnso-k span::before{ display:none; }
+#pn-solutions h3.pnso-t{
+  margin:8px 0 0; padding-right:clamp(0px,3vw,48px); font-family:var(--hd); font-weight:600; text-transform:none;
+  font-size:clamp(1.28rem,1.5vw,1.46rem); line-height:1.06; letter-spacing:-.012em; color:var(--iv) !important; text-wrap:balance;
+}
+#pn-solutions .pnso-t a{ color:inherit !important; text-decoration:none !important; }
+#pn-solutions .pnso-t a::after{ content:""; position:absolute; inset:0; z-index:1; border-radius:inherit; }
+#pn-solutions .pnso-t a:focus-visible{ outline:none; }
+#pn-solutions .pnso-t a:focus-visible::after{ outline:2px solid var(--gs); outline-offset:-3px; }
+#pn-solutions .pnso-f{ display:flex; align-items:baseline; flex-wrap:wrap; gap:2px 10px; margin:8px 0 0; }
+#pn-solutions .pnso-f b{
+  font-family:var(--hd); font-weight:600; font-size:clamp(2rem,2.4vw,2.4rem); line-height:.95; letter-spacing:-.02em;
+  color:var(--iv); font-variant-numeric:tabular-nums; white-space:nowrap;
+}
+#pn-solutions .pnso-f.is-money b{ color:var(--g); text-shadow:0 0 22px rgba(227,194,88,.22); }
+#pn-solutions .pnso-f span{ flex:1 1 14ch; min-width:0; font-size:.84rem; line-height:1.3; color:var(--tm); }
+
+/* the three lines: the challenge, then FfD, then SI */
+#pn-solutions dl.pnso-x{ margin:10px 0 0; padding:0; border-top:1px solid var(--hair); }
+#pn-solutions .pnso-x > div{ padding:6px 0; border-bottom:1px solid var(--hair); }
+#pn-solutions .pnso-x dt{
+  display:inline; margin:0 6px 0 0;
+  font-family:var(--hd); font-size:.92rem; font-weight:700; letter-spacing:.01em; text-transform:none; color:var(--iv);
+}
+#pn-solutions .pnso-x dt::before{ content:""; display:inline-block; width:6px; height:6px; margin:0 7px 1px 0; border-radius:50%; border:1px solid rgba(245,241,232,.7); vertical-align:middle; }
+#pn-solutions .pnso-x > div:nth-child(2) dt::before{ background:rgba(245,241,232,.7); }
+#pn-solutions .pnso-x > div:nth-child(3) dt::before{ background:#6EC8C4; border-color:#6EC8C4; }
+#pn-solutions .pnso-x dd{ display:inline; margin:0; font-size:.88rem; line-height:1.4; color:var(--tm); }
+#pn-solutions .pnso-sf{ margin:12px 0 0; font-size:.92rem; line-height:1.45; color:var(--tm); }
+
+/* the foot of a card: the source, and the way in */
+#pn-solutions .pnso-ft{
+  display:flex; align-items:center; justify-content:space-between; gap:10px; margin:auto 0 0; padding-top:10px;
+  font-family:var(--hd); font-size:.7rem; font-weight:700; letter-spacing:.16em; text-transform:uppercase;
+}
+#pn-solutions a.pnso-src{
+  position:relative; z-index:2; min-width:0; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;
+  color:var(--td) !important; text-decoration:none !important; border-bottom:1px solid rgba(245,241,232,.22); letter-spacing:.08em; text-transform:none; font-weight:600; font-size:.82rem;
+}
+#pn-solutions a.pnso-src:hover{ color:var(--iv) !important; border-color:var(--iv); }
+#pn-solutions .pnso-go{ display:inline-flex; align-items:center; gap:8px; flex:none; margin-left:auto; color:var(--g); }
+#pn-solutions .pnso-go::after{ content:"\2192"; font-family:Arial,sans-serif; font-size:.95rem; letter-spacing:0; transition:transform .3s cubic-bezier(.22,1,.36,1); }
+#pn-solutions .pnso-c:hover .pnso-go::after{ transform:translateX(5px); }
+
+/* the lead card: the newest Solution across two columns */
+#pn-solutions .pnso-c--lead{
+  grid-column:span 2; display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); grid-template-areas:"l x" "ft ft"; grid-template-rows:1fr auto; column-gap:clamp(20px,2.4vw,36px);
+  border-color:rgba(227,194,88,.38);
+  background:
+    radial-gradient(70% 90% at 0% 0%, rgba(227,194,88,.16) 0%, rgba(227,194,88,0) 62%),
+    radial-gradient(60% 60% at 100% 100%, rgba(110,200,196,.12) 0%, rgba(110,200,196,0) 70%),
+    linear-gradient(160deg,#125A6B 0%,var(--er) 52%,#08303A 100%);
+}
+#pn-solutions .pnso-c--lead .pnso-l{ grid-area:l; }
+#pn-solutions .pnso-c--lead dl.pnso-x,#pn-solutions .pnso-c--lead .pnso-sf{ grid-area:x; align-self:start; margin-top:0; }
+#pn-solutions .pnso-c--lead .pnso-ft{ grid-area:ft; }
+#pn-solutions .pnso-c--lead .pnso-wm{ font-size:clamp(8rem,11vw,11.5rem); right:auto; left:40%; top:-.2em; -webkit-text-stroke-color:rgba(227,194,88,.14); }
+#pn-solutions .pnso-c--lead h3.pnso-t{ font-size:clamp(1.7rem,2.3vw,2.3rem); line-height:1.02; }
+#pn-solutions .pnso-c--lead .pnso-f b{ font-size:clamp(3rem,4.4vw,4.4rem); }
+#pn-solutions .pnso-c--lead .pnso-f span{ font-size:.92rem; }
+#pn-solutions .pnso-c--lead .pnso-x > div{ padding:9px 0; }
+#pn-solutions .pnso-c--lead .pnso-x dt{ display:block; margin:0 0 2px; font-size:1.02rem; }
+#pn-solutions .pnso-c--lead .pnso-x dd{ display:block; font-size:.96rem; line-height:1.44; }
+#pn-solutions ul.pnso-std{ display:flex; flex-wrap:wrap; gap:6px; margin:12px 0 0; padding:0; list-style:none; }
+#pn-solutions .pnso-std li{
+  margin:0; padding:4px 10px 3px; border-radius:999px; border:1px solid rgba(245,241,232,.3);
+  font-family:var(--hd); font-size:.66rem; font-weight:700; letter-spacing:.18em; text-transform:uppercase; color:var(--iv);
+}
+#pn-solutions ul.pnso-figs{
+  display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:0; margin:auto 0 0; padding:14px 0 0; list-style:none;
+}
+#pn-solutions .pnso-figs li{ margin:0; padding:10px 12px 0 0; border-top:1px solid var(--hair); }
+#pn-solutions .pnso-figs li + li{ padding-left:12px; border-left:1px solid var(--hair); }
+#pn-solutions .pnso-figs b{ display:block; font-family:var(--hd); font-weight:600; font-size:clamp(1.4rem,1.7vw,1.7rem); line-height:1; color:var(--iv); font-variant-numeric:tabular-nums; white-space:nowrap; }
+#pn-solutions .pnso-figs li.is-money b{ color:var(--g); }
+#pn-solutions .pnso-figs span{ display:block; margin-top:4px; font-size:.76rem; line-height:1.3; color:var(--td); }
+
+/* the foot of the section */
+#pn-solutions .pnso-dots{ display:none; }
+#pn-solutions .pnso-foot{ display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px 24px; margin:clamp(16px,2.6vh,24px) 0 0; }
+#pn-solutions .pnso-note{ margin:0; max-width:60ch; font-size:.92rem; line-height:1.45; color:var(--td); }
+#pn-solutions .pnso-ctas{ display:flex; flex-wrap:wrap; gap:10px; }
+#pn-solutions .pnso-btn{
+  display:inline-flex; align-items:center; justify-content:center; gap:12px; min-height:46px; padding:13px 26px 11px;
+  border-radius:999px; border:1px solid var(--g); background:var(--g); color:var(--onacc) !important; text-decoration:none !important;
+  font-family:var(--hd); font-size:.74rem; font-weight:700; letter-spacing:.19em; text-transform:uppercase;
+  box-shadow:0 12px 30px rgba(227,194,88,.22); transition:transform .22s ease, background .22s ease;
+}
+#pn-solutions .pnso-btn::after{ content:"\2192"; font-family:Arial,sans-serif; font-size:1rem; letter-spacing:0; transition:transform .3s cubic-bezier(.22,1,.36,1); }
+#pn-solutions .pnso-btn:hover{ transform:translateY(-2px); background:var(--gs); }
+#pn-solutions .pnso-btn:hover::after{ transform:translateX(5px); }
+#pn-solutions .pnso-btn:focus-visible{ outline:2px solid var(--gs); outline-offset:3px; }
+#pn-solutions .pnso-btn--line{ background:transparent; color:var(--g) !important; border-color:rgba(227,194,88,.6); box-shadow:none; }
+#pn-solutions .pnso-btn--line:hover{ background:rgba(227,194,88,.12); }
+
+/* motion */
+@media (prefers-reduced-motion:no-preference){
+  #pn-solutions .pnso-pulse::after{ animation:pnsoPulse 2.4s ease-out infinite; }
+  #pn-solutions.is-armed .pnso-h2 span{ opacity:0; transform:translateY(.25em); }
+  #pn-solutions.is-armed .pnso-c{ opacity:0; transform:translateY(22px); }
+  #pn-solutions.is-in .pnso-h2 span{ opacity:1; transform:none; transition:opacity .6s ease, transform .7s cubic-bezier(.22,1,.36,1); }
+  #pn-solutions.is-in .pnso-h2 span + span{ transition-delay:.1s; }
+  #pn-solutions.is-in .pnso-c{ opacity:1; transform:none; transition:opacity .7s ease, transform .8s cubic-bezier(.22,1,.36,1), border-color .3s ease, box-shadow .35s ease; transition-delay:calc(.15s + var(--i,0) * .09s), calc(.15s + var(--i,0) * .09s), 0s, 0s; }
+  #pn-solutions.is-in .pnso-c:hover{ transform:translateY(-4px); transition-delay:0s; }
+}
+@keyframes pnsoPulse{ 0%{ transform:scale(.6); opacity:.9; } 100%{ transform:scale(1.9); opacity:0; } }
+
+/* laptops and tablets: the lead and four (the sixth waits on the phone rail and in State of Nations) */
+@media (min-width:761px){
+  #pn-solutions ol.pnso-grid > li:nth-child(n+6){ display:none; }
+}
+@media (max-width:1099px){
+  #pn-solutions ol.pnso-grid{ grid-template-columns:repeat(2,minmax(0,1fr)); }
+  #pn-solutions .pnso-head{ grid-template-columns:minmax(0,1fr); }
+}
+/* phones: a swipe rail */
+@media (max-width:760px){
+  #pn-solutions{ padding:26px 0 24px; }
+  #pn-solutions .pnso-in{ padding:0 14px; }
+  #pn-solutions .pnso-eb{ font-size:.64rem; letter-spacing:.22em; }
+  #pn-solutions h2.pnso-h2{ margin-top:8px; font-size:clamp(2.2rem,10.6vw,2.8rem); }
+  #pn-solutions .pnso-lead{ font-size:.96rem; }
+  #pn-solutions .pnso-stat{ font-size:.66rem; letter-spacing:.16em; }
+  #pn-solutions ol.pnso-grid{
+    display:flex; gap:10px; margin:16px -14px -14px; padding:2px 14px 22px;
+    overflow-x:auto; overflow-y:hidden; overscroll-behavior-x:contain; scroll-snap-type:x mandatory; scroll-padding:0 14px;
+    scrollbar-width:none; -webkit-overflow-scrolling:touch;
+  }
+  #pn-solutions ol.pnso-grid::-webkit-scrollbar{ display:none; }
+  #pn-solutions ol.pnso-grid > li:nth-child(n+6){ display:flex; }
+  #pn-solutions .pnso-c,#pn-solutions .pnso-c--lead{
+    flex:0 0 86%; display:flex; flex-direction:column; scroll-snap-align:start;
+    padding:15px 15px 13px; border-radius:16px; box-shadow:inset 0 1px 0 rgba(240,214,143,.22), 0 10px 18px rgba(0,0,0,.22);
+  }
+  #pn-solutions .pnso-c:hover,#pn-solutions.is-in .pnso-c:hover{ transform:none; }
+  #pn-solutions .pnso-wm,#pn-solutions .pnso-c--lead .pnso-wm{ font-size:6.4rem; left:auto; right:-.04em; top:-.2em; }
+  #pn-solutions .pnso-c--lead h3.pnso-t,#pn-solutions h3.pnso-t{ font-size:1.32rem; line-height:1.06; }
+  #pn-solutions .pnso-c--lead .pnso-f b,#pn-solutions .pnso-f b{ font-size:2.3rem; }
+  #pn-solutions .pnso-f span,#pn-solutions .pnso-c--lead .pnso-f span{ font-size:.8rem; }
+  #pn-solutions .pnso-c--lead dl.pnso-x{ margin-top:12px; }
+  #pn-solutions .pnso-c--lead .pnso-x > div{ padding:7px 0; }
+  #pn-solutions .pnso-c--lead .pnso-x dt{ display:inline; margin:0 6px 0 0; font-size:.9rem; }
+  #pn-solutions .pnso-x dt{ font-size:.9rem; }
+  #pn-solutions h3.pnso-t{ padding-right:0; }
+  #pn-solutions .pnso-x dd,#pn-solutions .pnso-c--lead .pnso-x dd{ display:inline; font-size:.86rem; line-height:1.4; }
+  #pn-solutions ul.pnso-figs,#pn-solutions ul.pnso-std{ display:none; }
+  #pn-solutions .pnso-ft{ font-size:.64rem; }
+  #pn-solutions a.pnso-src{ font-size:.76rem; }
+  #pn-solutions .pnso-dots{ display:flex; justify-content:center; gap:7px; margin:10px 0 0; }
+  #pn-solutions .pnso-dots i{ display:block; width:7px; height:7px; border-radius:50%; background:rgba(245,241,232,.28); transition:width .3s ease, background .3s ease; }
+  #pn-solutions .pnso-dots i.is-on{ width:22px; border-radius:4px; background:var(--g); }
+  #pn-solutions .pnso-foot{ flex-direction:column; align-items:stretch; margin-top:14px; }
+  #pn-solutions .pnso-note{ font-size:.84rem; }
+  #pn-solutions .pnso-ctas{ flex-direction:column; }
+  #pn-solutions .pnso-btn{ width:100%; }
+}
+@media (prefers-reduced-motion:reduce){
+  #pn-solutions *{ transition:none !important; animation:none !important; }
+}
+</style>
+
+<section id="pn-solutions" aria-labelledby="pnso-h">
+  <div class="pnso-in">
+    <div class="pnso-head">
+      <div>
+        <p class="pnso-eb">State of Nations</p>
+        <h2 class="pnso-h2" id="pnso-h"><span>Solutions</span> <span>for Nations</span></h2>
+      </div>
+      <div>
+        <p class="pnso-lead">Each Solution starts from a deal a nation has made or could make: the challenge it answers, how <b>innovative financing for development (FfD)</b> solves it, and how <b>super intelligence (SI)</b> carries it further. Every figure is sourced.</p>
+        <p class="pnso-stat"><span class="pnso-pulse" aria-hidden="true"></span><span><b data-k="count"><!-- GENERATED:SOLUTIONS-COUNT -->10<!-- /GENERATED:SOLUTIONS-COUNT --></b> Solutions published</span><span>Latest <!-- GENERATED:SOLUTIONS-LATEST --><time data-k="latest" datetime="2026-11-06">6 November 2026</time><!-- /GENERATED:SOLUTIONS-LATEST --></span></p>
+      </div>
+    </div>
+
+    <ol class="pnso-grid" aria-label="The latest Solutions, newest first">
+<!-- GENERATED:SOLUTIONS (from data/state-of-nations.json by tools/build_home.py; do not edit here) -->
+<li class="pnso-c pnso-c--lead" data-no="11" style="--i:0"><span class="pnso-wm" aria-hidden="true">11</span><div class="pnso-l"><p class="pnso-k"><b class="pnso-n">Tanzania</b><span>Solution No. 11</span><time datetime="2026-11-06">6 Nov 2026</time></p><h3 class="pnso-t"><a href="https://perfectnations.org/state-of-nations/#solution-11">Tanzania brings nine banks to its railway with one guarantee</a></h3><p class="pnso-f is-money"><b>$1.2bn</b><span>commercial facility for the Tabora&#8211;Kigoma railway</span></p><ul class="pnso-std" aria-label="The basic standards of living it serves"><li>Livelihood</li><li>Food</li></ul><ul class="pnso-figs" aria-label="The deal in figures"><li class="is-money"><b>$800m</b><span>AfDB partial credit guarantee, its largest to date</span></li><li class="is-money"><b>$405.5m</b><span>guarantee exposure placed with insurers</span></li><li><b>411 km</b><span>electrified line, Tabora to Kigoma</span></li></ul></div><dl class="pnso-x"><div><dt>The challenge</dt><dd>Farms, mines and traders in western Tanzania sit far from the port of Dar es Salaam, and the long haul costs them their income.</dd></div><div><dt>How FfD solves it</dt><dd>An African Development Bank guarantee of up to US$800 million, shared with insurers, brought nine banks to a US$1.2 billion railway loan.</dd></div><div><dt>How SI solves it</dt><dd>SI screens the next corridors for the same blend, Uganda first, and tracks the freight, jobs and farm-gate prices each new line moves.</dd></div></dl><p class="pnso-ft"><a class="pnso-src" href="https://www.afdb.org/en/news-and-events/press-releases/tanzania-african-development-bank-tanzania-close-98246" target="_blank" rel="noopener noreferrer">Source: African Development Bank</a><span class="pnso-go" aria-hidden="true">Read the Solution</span></p></li>
+<li class="pnso-c" data-no="10" style="--i:1"><span class="pnso-wm" aria-hidden="true">10</span><div class="pnso-l"><p class="pnso-k"><b class="pnso-n">Barbados</b><span>Solution No. 10</span><time datetime="2026-11-04">4 Nov 2026</time></p><h3 class="pnso-t"><a href="https://perfectnations.org/state-of-nations/#solution-10">Barbados turns cheaper debt into health care</a></h3><p class="pnso-f is-money"><b>$175m</b><span>IDB guarantee for Barbados, 20-year term</span></p></div><dl class="pnso-x"><div><dt>The challenge</dt><dd>Barbados carries costly debt while chronic disease and mental health strain its health system.</dd></div><div><dt>How FfD solves it</dt><dd>A 20-year IDB guarantee of US$175 million lowers the cost of existing debt; about US$160 million of the savings is bound to health care.</dd></div><div><dt>How SI solves it</dt><dd>SI follows every dollar of the savings into the named sites and services, and screens fellow Caribbean borrowers, Saint Lucia first, for the same swap.</dd></div></dl><p class="pnso-ft"><a class="pnso-src" href="https://www.devdiscourse.com/article/business/3999333-barbados-turns-debt-savings-into-health-investment-with-idbs-175-million-guarantee" target="_blank" rel="noopener noreferrer">Source: IDB announcement</a><span class="pnso-go" aria-hidden="true">Read the Solution</span></p></li>
+<li class="pnso-c" data-no="9" style="--i:2"><span class="pnso-wm" aria-hidden="true">09</span><div class="pnso-l"><p class="pnso-k"><b class="pnso-n">Zambia</b><span>Solution No. 09</span><time datetime="2026-11-02">2 Nov 2026</time></p><h3 class="pnso-t"><a href="https://perfectnations.org/state-of-nations/#solution-09">Zambia turns a bond discount into power lines</a></h3><p class="pnso-f is-money"><b>$275m</b><span>earmarked for Zambia&#8217;s energy sector over 15 years</span></p></div><dl class="pnso-x"><div><dt>The challenge</dt><dd>Unreliable supply and grid losses hold back the homes, clinics, schools and mines that run on electricity.</dd></div><div><dt>How FfD solves it</dt><dd>A US$600 million African Development Bank Group loan, with the government&#8217;s own funds, bought back a US$1.36 billion Eurobond; US$275 million of the savings is earmarked for electricity over 15 years.</dd></div><div><dt>How SI solves it</dt><dd>SI follows the earmark connection by connection, and screens every bond trading below face value, Mozambique first, for the next buyback.</dd></div></dl><p class="pnso-ft"><a class="pnso-src" href="https://allafrica.com/stories/202606300558.html" target="_blank" rel="noopener noreferrer">Source: African Development Bank Group</a><span class="pnso-go" aria-hidden="true">Read the Solution</span></p></li>
+<li class="pnso-c" data-no="7" style="--i:3"><span class="pnso-wm" aria-hidden="true">07</span><div class="pnso-l"><p class="pnso-k"><b class="pnso-n">Ghana</b><span>Solution No. 07</span><time datetime="2026-10-19">19 Oct 2026</time></p><h3 class="pnso-t"><a href="https://perfectnations.org/state-of-nations/#solution-07">Ghana turns its pensions into venture capital</a></h3><p class="pnso-f is-money"><b>GHS 383m</b><span>first close of the Ci Gaba Fund of Funds, March 2026</span></p></div><dl class="pnso-x"><div><dt>The challenge</dt><dd>Small and medium enterprises cannot raise long-term capital, while the nation&#8217;s pension savings sit mostly in government paper.</dd></div><div><dt>How FfD solves it</dt><dd>The Ci Gaba Fund of Funds, a cedi fund, reached a GHS 383 million first close, more than two-thirds of it from Ghanaian pension funds.</dd></div><div><dt>How SI solves it</dt><dd>SI maps pension savings held in sovereign debt, Kenya first, matches them to the enterprises a local-currency fund could back, and counts the jobs that follow.</dd></div></dl><p class="pnso-ft"><a class="pnso-src" href="https://smallfoundation.ie/ci-gaba-reaches-first-close/" target="_blank" rel="noopener noreferrer">Source: Small Foundation</a><span class="pnso-go" aria-hidden="true">Read the Solution</span></p></li>
+<li class="pnso-c" data-no="6" style="--i:4"><span class="pnso-wm" aria-hidden="true">06</span><div class="pnso-l"><p class="pnso-k"><b class="pnso-n">Ethiopia</b><span>Solution No. 06</span><time datetime="2026-10-19">19 Oct 2026</time></p><h3 class="pnso-t"><a href="https://perfectnations.org/state-of-nations/#solution-06">Ethiopia trades a haircut for a seat at its next bond</a></h3><p class="pnso-f is-money"><b>$880m</b><span>new bond offered for the US$1 billion 6.625% Notes due 2024</span></p></div><dl class="pnso-x"><div><dt>The challenge</dt><dd>A defaulted US$1 billion Eurobond keeps Ethiopia out of the market its budgets depend on.</dd></div><div><dt>How FfD solves it</dt><dd>Bondholders are offered a 12% haircut and a new US$880 million bond, plus a tradable warrant to buy Ethiopia&#8217;s next international bond.</dd></div><div><dt>How SI solves it</dt><dd>SI models what each restructuring term costs the budget for the seven standards, and screens nations in debt distress, Mozambique first, for the same design.</dd></div></dl><p class="pnso-ft"><a class="pnso-src" href="https://www.mofed.gov.et/blog/ethiopia-reaches-agreement-in-principle-with-ad-hoc-committee-of-bondholders-on-principal-financial-terms-of-restructuring-of-2024-notes/" target="_blank" rel="noopener noreferrer">Source: Ministry of Finance of Ethiopia</a><span class="pnso-go" aria-hidden="true">Read the Solution</span></p></li>
+<li class="pnso-c" data-no="5" style="--i:5"><span class="pnso-wm" aria-hidden="true">05</span><div class="pnso-l"><p class="pnso-k"><b class="pnso-n">Suriname</b><span>Solution No. 05</span><time datetime="2026-10-14">14 Oct 2026</time></p><h3 class="pnso-t"><a href="https://perfectnations.org/suriname-now-owes-in-the-currency-it-earns/">Suriname now owes in the currency it earns</a></h3><p class="pnso-f is-money"><b>$150m</b><span>IDB loan converted into fixed-rate Surinamese dollars</span></p></div><dl class="pnso-x"><div><dt>The challenge</dt><dd>Debt owed in foreign currency grows with every devaluation, before any of the seven standards is funded.</dd></div><div><dt>How FfD solves it</dt><dd>Suriname converted a US$150 million IDB loan into fixed-rate Surinamese dollars, with an 18-year swap from TCX behind it.</dd></div><div><dt>How SI solves it</dt><dd>SI reads loan agreements for conversion options already written in, the Honduras water loan first, and measures the currency risk each would remove.</dd></div></dl><p class="pnso-ft"><span class="pnso-go" aria-hidden="true">Read the Solution</span></p></li>
+<!-- /GENERATED:SOLUTIONS -->
+    </ol>
+    <div class="pnso-dots" aria-hidden="true"></div>
+
+    <div class="pnso-foot">
+      <p class="pnso-note">New Solutions follow the deals nations close. The State of Nations wire tracks those deals as they happen, nation by nation.</p>
+      <div class="pnso-ctas">
+        <a class="pnso-btn" href="https://perfectnations.org/state-of-nations/">All Solutions in State of Nations</a>
+        <a class="pnso-btn pnso-btn--line" href="https://perfectnations.org/state-of-nations/#sn-nations">Find the Solution for your nation</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+(function(){
+  var root = document.getElementById('pn-solutions');
+  if (!root || root.getAttribute('data-pnso-on')) { return; }
+  root.setAttribute('data-pnso-on', '1');
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var list = root.querySelector('ol.pnso-grid');
+  var dots = root.querySelector('.pnso-dots');
+  var SHOW = 6;
+  var SITE = 'https://perfectnations.org';
+  var MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+
+  /* the cards rise once as the section comes into view */
+  if (!reduce && 'IntersectionObserver' in window) {
+    root.classList.add('is-armed');
+    var seen = new IntersectionObserver(function(es){
+      es.forEach(function(e){ if (e.isIntersecting) { root.classList.add('is-in'); seen.disconnect(); } });
+    }, { threshold: 0.08 });
+    seen.observe(root);
+    setTimeout(function(){ root.classList.add('is-in'); }, 9000);
+  }
+
+  /* phones: one dot per card, the dot of the card in view drawn long */
+  function cards(){ return Array.prototype.slice.call(list.children); }
+  function paintDots(){
+    if (!dots) { return; }
+    dots.textContent = '';
+    cards().forEach(function(){ dots.appendChild(document.createElement('i')); });
+    syncDots();
+  }
+  function syncDots(){
+    if (!dots || !dots.children.length) { return; }
+    var cs = cards(), at = 0, best = Infinity, left = list.getBoundingClientRect().left;
+    cs.forEach(function(c, i){ var d = Math.abs(c.getBoundingClientRect().left - left - 14); if (d < best) { best = d; at = i; } });
+    Array.prototype.forEach.call(dots.children, function(d, i){ d.className = i === at ? 'is-on' : ''; });
+  }
+  var tick = 0;
+  list.addEventListener('scroll', function(){
+    if (tick) { return; }
+    tick = window.requestAnimationFrame(function(){ tick = 0; syncDots(); });
+  }, { passive: true });
+  paintDots();
+
+  /* the live Solutions: the Correspondent keeps data/state-of-nations.json; anything malformed keeps the cards here */
+  var RAW = 'https://raw.githubusercontent.com/preetisinha70-PN/perfect-nations/main/';
+  var MIRROR = 'https://cdn.jsdelivr.net/gh/preetisinha70-PN/perfect-nations@main/';
+  function getJSON(path){
+    return fetch(RAW + path, { cache: 'no-cache' }).then(function(r){ if (!r.ok) { throw new Error(r.status); } return r.json(); })
+      .catch(function(){ return fetch(MIRROR + path).then(function(r){ if (!r.ok) { throw new Error(r.status); } return r.json(); }); });
+  }
+  function txt(v, max){
+    if (typeof v !== 'string') { return ''; }
+    v = v.replace(/'/g, '\u2019').replace(/\s+/g, ' ').trim();
+    return v.length && v.length <= max ? v : '';
+  }
+  function https(u){ return typeof u === 'string' && /^https:\/\/[^\s"<>]+$/.test(u) ? u : ''; }
+  function money(f){ return /^(?:[A-Z]{1,3}\s?)?[$\u00A3\u20AC\u20A6]|^[A-Z]{2,3}\s?[0-9]/.test(f); }
+  function pad(n){ return (n < 10 ? '0' : '') + n; }
+  function day(iso, long){
+    var p = iso.split('-');
+    return (+p[2]) + ' ' + (long ? MONTHS[+p[1] - 1] : MONTHS[+p[1] - 1].slice(0, 3)) + ' ' + p[0];
+  }
+  function el(tag, cls, text){
+    var e = document.createElement(tag);
+    if (cls) { e.className = cls; }
+    if (text) { e.textContent = text; }
+    return e;
+  }
+  function short(label){ return txt(String(label || '').split(/,|:| \(| \u201C/)[0], 48); }
+  function valid(s){
+    return s && typeof s.no === 'number' && s.no > 0 && s.no < 1000 && txt(s.title, 160) &&
+      /^\d{4}-\d{2}-\d{2}$/.test(String(s.date || ''));
+  }
+  function card(s, i){
+    var lead = i === 0, no = s.no;
+    var href = https(s.url) || (SITE + '/state-of-nations/#solution-' + pad(no));
+    var li = el('li', 'pnso-c' + (lead ? ' pnso-c--lead' : ''));
+    li.setAttribute('data-no', String(no));
+    li.style.setProperty('--i', String(i));
+    var wm = el('span', 'pnso-wm', pad(no)); wm.setAttribute('aria-hidden', 'true'); li.appendChild(wm);
+    var l = el('div', 'pnso-l');
+    var k = el('p', 'pnso-k');
+    if (txt(s.nation, 40)) { k.appendChild(el('b', 'pnso-n', txt(s.nation, 40))); }
+    k.appendChild(el('span', '', 'Solution No. ' + pad(no)));
+    var t = el('time', '', day(s.date)); t.setAttribute('datetime', s.date); k.appendChild(t);
+    l.appendChild(k);
+    var h = el('h3', 'pnso-t'), a = el('a', '', txt(s.title, 160)); a.href = href; h.appendChild(a); l.appendChild(h);
+    var fig = txt(s.figure, 18);
+    if (fig && /[0-9]/.test(fig)) {
+      var f = el('p', 'pnso-f' + (money(fig) ? ' is-money' : ''));
+      f.appendChild(el('b', '', fig));
+      if (txt(s.caption, 120)) { f.appendChild(el('span', '', txt(s.caption, 120))); }
+      l.appendChild(f);
+    }
+    if (lead) {
+      var stds = (s.standards || []).map(function(x){ return txt(x, 20); }).filter(Boolean);
+      if (stds.length) {
+        var su = el('ul', 'pnso-std'); su.setAttribute('aria-label', 'The basic standards of living it serves');
+        stds.forEach(function(x){ su.appendChild(el('li', '', x)); });
+        l.appendChild(su);
+      }
+      var figs = (s.figures || []).slice(1, 4).filter(function(x){ return x && txt(x[0], 18) && /[0-9]/.test(x[0]) && txt(x[1], 80); });
+      if (figs.length === 3) {
+        var fu = el('ul', 'pnso-figs'); fu.setAttribute('aria-label', 'The deal in figures');
+        figs.forEach(function(x){
+          var fl = el('li', money(x[0]) ? 'is-money' : '');
+          fl.appendChild(el('b', '', txt(x[0], 18))); fl.appendChild(el('span', '', txt(x[1], 80)));
+          fu.appendChild(fl);
+        });
+        l.appendChild(fu);
+      }
+    }
+    li.appendChild(l);
+    var c = txt(s.challenge, 320), ffd = txt(s.ffd, 320), si = txt(s.si, 320);
+    if (c && ffd && si) {
+      var dl = el('dl', 'pnso-x');
+      [['The challenge', c], ['How FfD solves it', ffd], ['How SI solves it', si]].forEach(function(r){
+        var d = el('div'); d.appendChild(el('dt', '', r[0])); d.appendChild(el('dd', '', r[1])); dl.appendChild(d);
+      });
+      li.appendChild(dl);
+    } else if (txt(s.standfirst, 400)) {
+      li.appendChild(el('p', 'pnso-sf', txt(s.standfirst, 400)));
+    }
+    var ft = el('p', 'pnso-ft');
+    var src = (s.sources || []).filter(function(x){ return x && https(x.url) && short(x.label); })[0];
+    if (src) {
+      var sa = el('a', 'pnso-src', 'Source: ' + short(src.label));
+      sa.href = src.url; sa.target = '_blank'; sa.rel = 'noopener noreferrer';
+      ft.appendChild(sa);
+    }
+    var go = el('span', 'pnso-go', 'Read the Solution'); go.setAttribute('aria-hidden', 'true'); ft.appendChild(go);
+    li.appendChild(ft);
+    return li;
+  }
+  function render(d){
+    var ds = ((d && d.dispatches) || []).filter(valid);
+    if (ds.length < 3) { return; }
+    ds.sort(function(x, y){ return x.date === y.date ? y.no - x.no : (x.date < y.date ? 1 : -1); });
+    var frag = document.createDocumentFragment();
+    ds.slice(0, SHOW).forEach(function(s, i){ frag.appendChild(card(s, i)); });
+    list.textContent = '';
+    list.appendChild(frag);
+    var n = root.querySelector('[data-k="count"]'), at = root.querySelector('[data-k="latest"]');
+    if (n) { n.textContent = String(ds.length); }
+    if (at) { at.textContent = day(ds[0].date, true); at.setAttribute('datetime', ds[0].date); }
+    root.setAttribute('data-live', '1');
+    paintDots();
+  }
+  function load(){ getJSON('data/state-of-nations.json').then(render).catch(function(){}); }
+  if ('IntersectionObserver' in window) {
+    var near = new IntersectionObserver(function(es){
+      es.forEach(function(e){ if (e.isIntersecting) { near.disconnect(); load(); } });
+    }, { rootMargin: '700px 0px' });
+    near.observe(root);
+  } else { setTimeout(load, 2500); }
+})();
+</script>
