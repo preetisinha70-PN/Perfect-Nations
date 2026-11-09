@@ -17,7 +17,7 @@ v7.3: fewer words, and richer advice that weaves in super intelligence (the Stew
   dispatch; the ticker carries three Solutions and five deals; the count above each standard's nations
   is shorter. The PLAYBOOK advice is unchanged here.
 v7.2: What Perfect Nations advises, in place of how FfD and SI solve it (the Steward-General, 9 Nov 2026).
-  Each Solution reads as a bank's advice to a client: the challenge, then what Perfect Nations advises
+  Each Solution reads as an advisory firm's advice to a client: the challenge, then what Perfect Nations advises
   (the field "advises" in data/state-of-nations.json and in each standard of the playbook below). The
   steps of a Solution are 01 The challenge, 02 The deal, 03 What Perfect Nations advises.
 

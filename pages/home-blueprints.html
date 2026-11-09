@@ -1,5 +1,7 @@
 <!-- ===========================================================================
-PERFECT NATIONS - HOMEPAGE - SECTION 06 - BLUEPRINTS OF NATIONS - v6.1 NATION BY NATION - 2026-11-08
+PERFECT NATIONS - HOMEPAGE - SECTION 06 - BLUEPRINTS OF NATIONS - v6.2 NATION BY NATION - 2026-11-09
+v6.2 (homepage v11.4): on laptops the portrait cards are about a fifth smaller (262 px wide, square portraits, a
+softer shadow), so the paintings sit more quietly in the band. Phones are unchanged.
 v6.1: homepage v8.1. Each featured nation is shown by its own nation portrait from Art of Nations
 (The Trident in Bloom, Mount Kenya in Bloom, The Hindu Kush in Bloom, DR Congo in Bloom, India in
 Bloom, Angola in Bloom; the 768 px copies the blueprints already use), in place of six unrelated
@@ -132,6 +134,11 @@ Ground: laterite (red earth). Photographs at full colour, no veil; text sits on 
   transition:transform .45s cubic-bezier(.22,1,.36,1), box-shadow .45s ease;
 }
 #pn-featured .pnfb-card:hover{ transform:translateY(-8px); box-shadow:0 34px 70px rgba(30,8,4,.5); }
+/* v6.2: on laptops the portraits are slightly smaller (the Steward-General, 9 Nov 2026: "too prominent and colorful") */
+@media (min-width:861px){
+  #pn-featured .pnfb-card{ width:262px; border-radius:16px; box-shadow:0 14px 34px rgba(30,8,4,.3); }
+  #pn-featured .pnfb-card__ph{ aspect-ratio:1 / 1; }
+}
 #pn-featured .pnfb-card:focus-visible{ outline:2px solid var(--accs); outline-offset:4px; }
 #pn-featured .pnfb-card__ph{ position:relative; display:block; aspect-ratio:4/4.4; overflow:hidden; background:var(--plate2); }
 #pn-featured .pnfb-card__img{

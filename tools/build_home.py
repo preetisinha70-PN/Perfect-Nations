@@ -24,7 +24,7 @@ ROOT = Path(__file__).resolve().parent.parent
 PAGES = ROOT / 'pages'
 DATA = ROOT / 'data'
 SITE = 'https://perfectnations.org'
-VERSION = '11.3'
+VERSION = '11.4'
 SOLUTIONS_SHOWN = 6
 MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September',
           'October', 'November', 'December']
@@ -32,6 +32,8 @@ MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'Augus
 # The page, top to bottom. 'rule' places the gold line (pages/home-rule.html) between two sections.
 # 9 Nov 2026, the Steward-General: the gold line replaces the painted botanical seams everywhere, so
 # the seams (pages/home-seams.html and the seam drawing that was here) are retired from the site.
+# v11.4 (9 Nov 2026), the Steward-General: the hero loses the line under the globe and the figures row; Imagine a
+# Perfect Nation plays by itself in a rapid, unending loop (v2.0); the Blueprints portraits are smaller on laptops.
 # v11.2 (9 Nov 2026): faster changes between the three acts of Imagine a Perfect Nation (the Steward-General).
 # v11.1 (9 Nov 2026): every element of the logo in one gold, #E3C258, with no dimmed parts (the Steward-General).
 # v11.0 (9 Nov 2026), the Steward-General: "Make the site lively, exciting and easy to understand."
