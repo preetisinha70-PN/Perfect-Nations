@@ -1,7 +1,8 @@
 <!-- ===========================================================================
 PERFECT NATIONS - HOMEPAGE - SECTION 03 - SOLUTIONS FOR NATIONS (STATE OF NATIONS) - v1.2 - 2026-11-09
 v1.2 (homepage v11.0): fewer words, one line under the headline; the advice on each card is richer, naming
-the finance move and then what super intelligence now makes possible (the Steward-General, 9 Nov 2026).
+the finance move and then what super intelligence now makes possible (the Steward-General, 9 Nov 2026);
+the note under the cards is removed (the lead says it); the live cards accept advice of up to 520 characters (was 320, which sent the longer advice back to the standfirst).
 v1.1 (homepage v10.1): What Perfect Nations advises, in place of how FfD and SI solve it (the Steward-General, 9 Nov 2026).
 Each card reads The challenge, then What Perfect Nations advises (the field "advises"), in the static cards
 and in the live script alike; the lead says the same.
@@ -178,7 +179,7 @@ fewer than three valid Solutions, keeps the cards written here.
 
 /* the foot of the section */
 #pn-solutions .pnso-dots{ display:none; }
-#pn-solutions .pnso-foot{ display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px 24px; margin:clamp(16px,2.6vh,24px) 0 0; }
+#pn-solutions .pnso-foot{ display:flex; align-items:center; justify-content:flex-end; flex-wrap:wrap; gap:12px 24px; margin:clamp(16px,2.6vh,24px) 0 0; }
 #pn-solutions .pnso-note{ margin:0; max-width:60ch; font-size:.92rem; line-height:1.45; color:var(--td); }
 #pn-solutions .pnso-ctas{ display:flex; flex-wrap:wrap; gap:10px; }
 #pn-solutions .pnso-btn{
@@ -286,7 +287,6 @@ fewer than three valid Solutions, keeps the cards written here.
     <div class="pnso-dots" aria-hidden="true"></div>
 
     <div class="pnso-foot">
-      <p class="pnso-note">New Solutions follow the deals nations close. The State of Nations wire tracks those deals as they happen, nation by nation.</p>
       <div class="pnso-ctas">
         <a class="pnso-btn" href="https://perfectnations.org/state-of-nations/">All Solutions in State of Nations</a>
         <a class="pnso-btn pnso-btn--line" href="https://perfectnations.org/state-of-nations/#sn-nations">Find the Solution for your nation</a>
@@ -408,7 +408,7 @@ fewer than three valid Solutions, keeps the cards written here.
       }
     }
     li.appendChild(l);
-    var c = txt(s.challenge, 320), adv = txt(s.advises, 320);
+    var c = txt(s.challenge, 360), adv = txt(s.advises, 520);
     if (c && adv) {
       var dl = el('dl', 'pnso-x');
       [['The challenge', c], ['What Perfect Nations advises', adv]].forEach(function(r){
