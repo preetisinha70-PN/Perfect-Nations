@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-08",
+  "updated": "2026-11-09",
   "about": "Pages served live on perfectnations.org by the Perfect Nations Live Pages plugin. Each key is the id of the page's root element; the plugin serves the file in place of any pasted Custom HTML widget that contains that id. A key written as root@post-slug applies on that one post only, and is used before the plain root (plugin 1.1 or later). 'redirects' lists same-site paths answered with a 301 (plugin 1.1 or later). A change merged into main appears on the site within about ten minutes.",
   "pages": {
     "pn-hd": {
@@ -16,13 +16,13 @@
     },
     "pn-son": {
       "file": "pages/state-of-nations.html",
-      "version": "7.1",
+      "version": "7.2",
       "title": "State of Nations (kept by the State of Nations Steward; Solutions and wire from data/state-of-nations.json, nations from data/solutions-by-nation.json)",
       "url": "https://perfectnations.org/state-of-nations/"
     },
     "pn-pcap": {
       "file": "pages/perfect-capita.html",
-      "version": "9.0",
+      "version": "9.1",
       "title": "Perfect Capita (kept by the Perfect Capita Steward; figures from figures/perfect-capita.json)",
       "url": "https://perfectnations.org/perfect-capita/"
     },
@@ -40,7 +40,7 @@
     },
     "pn-about": {
       "file": "pages/about.html",
-      "version": "11.0",
+      "version": "11.1",
       "title": "About (the structure of the firm: the logo, Vision and Mission, What we do, Assets, Capital, Solutions, the Founder’s Vision, the President and CEO, the record and the Stewards; the homepage parts are written in by tools/build_about.py)",
       "url": "https://perfectnations.org/about/"
     },
@@ -646,31 +646,31 @@
     },
     "pn-home": {
       "file": "pages/home.html",
-      "version": "10.0",
+      "version": "10.1",
       "title": "Homepage, the whole page in one file (paste once into one Custom HTML widget; built by tools/build_home.py): the hero, the Capital Wire, the Blueprints of Nations, the Solutions from State of Nations, What we do and the close",
       "url": "https://perfectnations.org/"
     },
     "pn-ds": {
       "file": "pages/design-studio.html",
-      "version": "6.1",
+      "version": "6.2",
       "title": "ReDesign Studio",
       "url": "https://perfectnations.org/design-studio/"
     },
     "pn-blueprints": {
       "file": "pages/blueprints.html",
-      "version": "6.1",
+      "version": "6.2",
       "title": "Blueprints page, the whole page in one file (built by tools/build_blueprints.py; kept by the Blueprints Steward)",
       "url": "https://perfectnations.org/blueprints/"
     },
     "pn-sov": {
       "file": "pages/sovereign-assets.html",
-      "version": "6.2",
+      "version": "6.3",
       "title": "Sovereign Assets, the whole page in one file (built by tools/build_sovereign_assets.py; kept by the Sovereign Assets Steward)",
       "url": "https://perfectnations.org/sovereign-assets/"
     },
     "pn-arch": {
       "file": "pages/capital-architecture.html",
-      "version": "5.0",
+      "version": "5.1",
       "title": "Capital Architecture page, the whole page in one file (root pn-arch, page 8549; built by tools/build_capital.py; kept by the Capital Architecture Steward)",
       "url": "https://perfectnations.org/capital-architecture/"
     },
@@ -682,7 +682,7 @@
     },
     "pn-contact": {
       "file": "pages/contact.html",
-      "version": "6.0",
+      "version": "6.1",
       "title": "Contact page, the whole page in one file (root pn-contact, page 12711; generated blocks by tools/build_contact.py; kept by the Contact Steward)",
       "url": "https://perfectnations.org/contact/"
     }

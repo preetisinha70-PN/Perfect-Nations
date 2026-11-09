@@ -1,5 +1,5 @@
 <!-- ===========================================================================
-PERFECT NATIONS - SOVEREIGN ASSETS PAGE - SOURCE - v6.2 - 2026-11-08
+PERFECT NATIONS - SOVEREIGN ASSETS PAGE - SOURCE - v6.3 - 2026-11-09
 This is the SOURCE of the Sovereign Assets page. Never paste it. The page that is served is
 pages/sovereign-assets.html, built from this file by tools/build_sovereign_assets.py, which fills
 the tokens below from data/sovereign-assets.json and data/<nation>.json:
@@ -8,8 +8,8 @@ the tokens below from data/sovereign-assets.json and data/<nation>.json:
   @@NATIONLIST@@  one link per nation with an open blueprint
   @@SEED@@        the ledger as JSON, for the planet before the live file arrives
   @@LAND@@        the land of the golden planet, from assets/home/pn-globe-water-1024.jpg
-  @@SEAMS@@       the painted seams part, pages/home-seams.html
-  @@SEAM:b@@ etc. one painted seam (variant a to e), drawn as on the homepage
+  @@RULE@@        the style of the gold line, pages/home-rule.html (the line itself is
+                  <div class="pn-rule">, placed here between sections)
 Kept by the Sovereign Assets Steward (skill steward-sovereign-assets). Every change to the design
 goes through a pull request "For approval: Sovereign Assets vX.Y, [what changed]".
 v6.0 (6 Nov 2026): one file, kept in GitHub; the homepage design system (Earthrise and ivory
@@ -21,8 +21,9 @@ fit its tallest panel, so no figure is cut on shorter laptop windows (seen at 13
 phones each class label keeps to one line, so the figures in a row line up.
 v6.2 (8 Nov 2026): FfD before SI (the Steward-General, 8 Nov 2026). The lead puts the finance first
 and super intelligence (SI) second.
+v6.3: Gold line in place of the painted botanical seams (the Steward-General, 9 Nov 2026).
 =========================================================================== -->
-<div id="pn-sov" class="pnsa" data-v="6.2">
+<div id="pn-sov" class="pnsa" data-v="6.3">
 <style>
 #pn-sov{
   --er:#0B3D45; --lg:#0F4C5C; --dp:#082A30; --plate:#0A3840;
@@ -407,7 +408,7 @@ and super intelligence (SI) second.
   #pn-sov.is-js .sa-sc__img{ transform:none !important; }
 }
 </style>
-@@SEAMS@@
+@@RULE@@
 
   <section class="sa-band sa-hero" aria-labelledby="sa-h1">
     <div class="sa-in sa-hero__grid">
@@ -498,7 +499,7 @@ and super intelligence (SI) second.
       </div>
     </div>
   </section>
-@@SEAM:b@@
+<div class="pn-rule" aria-hidden="true"></div>
   <section class="sa-band sa-path" id="sa-path" aria-labelledby="sa-path-h">
     <div class="sa-in">
       <p class="sa-eb sa-rv">From asset to capital</p>
@@ -520,7 +521,7 @@ and super intelligence (SI) second.
       </nav>
     </div>
   </section>
-@@SEAM:e@@
+<div class="pn-rule" aria-hidden="true"></div>
   <section class="sa-band sa-ledger" aria-labelledby="sa-ledger-h">
     <div class="sa-in">
       <p class="sa-eb sa-rv">The full ledger</p>

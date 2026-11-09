@@ -14,7 +14,8 @@ Sources (never edited here):
                                    kept by the Nation Stewards
   data/blueprints.json             the index of open blueprints (names, urls)
   data/capital-architecture.json   the instrument library whose deals prove the playbook
-  pages/home-seams.html            the painted seams, shared with the homepage
+  pages/home-rule.html             the gold line between sections, shared with the homepage (in place
+                                   of the painted botanical seams since v7.2, 9 Nov 2026)
 
 Writes:
   data/solutions-by-nation.json    the page reads it on every visit; it mirrors the nation files and
@@ -40,7 +41,7 @@ OUT = PAGES / 'state-of-nations.html'
 NATION_DATA = DATA / 'solutions-by-nation.json'
 sys.path.insert(0, str(ROOT / 'tools'))
 
-VERSION = '7.1'
+VERSION = '7.2'
 ORDER = ['Food', 'Water', 'Shelter', 'Energy', 'Education', 'Health', 'Livelihood']
 MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September',
           'October', 'November', 'December']
@@ -397,8 +398,8 @@ def ticker(son):
     return ''.join(items) + '<span class="sn-tick__dup" aria-hidden="true">%s</span>' % dup
 
 
-def seams_block():
-    code = (PAGES / 'home-seams.html').read_text(encoding='utf-8').strip()
+def rule_block():
+    code = (PAGES / 'home-rule.html').read_text(encoding='utf-8').strip()
     return re.sub(r'^\s*<!--.*?-->\s*', '', code, count=1, flags=re.S)
 
 
@@ -410,15 +411,13 @@ def put(page, slot, body):
 
 
 def build_page(nat, son):
-    from build_home import seam  # the homepage build draws the seams
     page = SRC.read_text(encoding='utf-8')
     cards, n_sol = solution_cards(son)
     wl, n_wire, n_wnat = wire(son)
     tabs, panels, first = finder(nat)
     today = date.today().isoformat()
     page = page.replace('/*pn:version*/', VERSION).replace('/*pn:built*/', today)
-    page = put(page, 'seams', seams_block())
-    page = put(page, 'seam', seam('d'))
+    page = put(page, 'rule', rule_block())
     page = put(page, 'solutions', cards)
     page = put(page, 'tabs', tabs)
     page = put(page, 'panels', panels)

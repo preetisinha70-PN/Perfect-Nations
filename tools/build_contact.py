@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
 """Refresh the generated blocks of the Contact page, pages/contact.html.
 
-The page is edited by hand, except three blocks that this script writes in place:
-  GENERATED:SEAMS  the painted-seam drawings and style, copied from pages/home-seams.html
-  GENERATED:SEAM   the seam strip under the letterhead (variant c), drawn by tools/build_home.py
+The page is edited by hand, except two blocks that this script writes in place:
+  GENERATED:RULE   the style of the gold line, copied from pages/home-rule.html (the line itself,
+                   <div class="pn-rule">, sits under the letterhead; since v6.1, 9 Nov 2026, it
+                   replaces the painted botanical seam, the Steward-General's decision)
   GENERATED:DATA   a JSON block the page reads: the open blueprints (from pages/manifest.json),
                    so that "Write to us" from a published nation opens "Share a vision or story"
                    and "Ask for this blueprint" from any other nation opens "Ask for a blueprint";
@@ -23,8 +24,6 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 PAGES = ROOT / 'pages'
 PAGE = PAGES / 'contact.html'
-sys.path.insert(0, str(ROOT / 'tools'))
-from build_home import seam  # noqa: E402  (the homepage build draws the seams)
 
 
 def open_blueprints():
@@ -62,8 +61,8 @@ def data_block():
     return '<script type="application/json" id="ct-data">%s</script>' % text, len(opened), len(paintings), len(books)
 
 
-def seams_block():
-    code = (PAGES / 'home-seams.html').read_text(encoding='utf-8').strip()
+def rule_block():
+    code = (PAGES / 'home-rule.html').read_text(encoding='utf-8').strip()
     return re.sub(r'^\s*<!--.*?-->\s*', '', code, count=1, flags=re.S)  # drop the part banner
 
 
@@ -78,8 +77,7 @@ def main():
     page = PAGE.read_text(encoding='utf-8')
     block, n_open, n_paint, n_book = data_block()
     page = put(page, 'DATA', block)
-    page = put(page, 'SEAMS', seams_block())
-    page = put(page, 'SEAM', seam('c'))
+    page = put(page, 'RULE', rule_block())
     first = re.search(r'\bid\s*=\s*["\'](pn-[a-z0-9-]+)["\']', page, re.I)
     if not first or first.group(1) != 'pn-contact':
         sys.exit('the first pn- id must be pn-contact, found %s' % (first.group(1) if first else None))

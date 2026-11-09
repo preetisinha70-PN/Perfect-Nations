@@ -4,8 +4,10 @@
 The page is pasted once into ONE Elementor Custom HTML widget on /perfect-capita/ (page 9937). Its
 root id is pn-pcap, so the Perfect Nations Live Pages plugin serves pages/perfect-capita.html in place
 of the paste. Edit src/perfect-capita.html, never the built file. This script:
-  - puts the painted seams library (pages/home-seams.html, shared with the homepage) where the source
-    says <!--@SEAMS-LIBRARY-->, and a painted seam where it says <!--@SEAM:x--> (x is a to e);
+  - puts the style of the gold line (pages/home-rule.html, shared with the homepage, its banner
+    dropped) where the source says <!--@RULE-STYLE-->; the source places the line itself,
+    <div class="pn-rule">, between sections (since v9.1, 9 Nov 2026, in place of the painted
+    botanical seams, the Steward-General's decision);
   - refuses non-ASCII characters, a missing root id and images from any host but the Media Library;
   - runs the validation suite (tools/check_page.py) on the result.
 
@@ -20,8 +22,6 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 sys.dont_write_bytecode = True
-sys.path.insert(0, str(ROOT / 'tools'))
-from build_home import seam  # noqa: E402  (the same painted seams as the homepage)
 
 SRC = ROOT / 'src' / 'perfect-capita.html'
 OUT = ROOT / 'pages' / 'perfect-capita.html'
@@ -30,11 +30,12 @@ ROOT_ID = 'pn-pcap'
 
 def main():
     html = SRC.read_text(encoding='utf-8')
-    library = (ROOT / 'pages' / 'home-seams.html').read_text(encoding='utf-8').strip()
-    if '<!--@SEAMS-LIBRARY-->' not in html:
-        sys.exit('the source has no <!--@SEAMS-LIBRARY--> marker')
-    html = html.replace('<!--@SEAMS-LIBRARY-->', library, 1)
-    html, n = re.subn(r'<!--@SEAM:([a-e])-->', lambda m: seam(m.group(1)), html)
+    rule = (ROOT / 'pages' / 'home-rule.html').read_text(encoding='utf-8').strip()
+    rule = re.sub(r'^\s*<!--.*?-->\s*', '', rule, count=1, flags=re.S)  # drop the part banner
+    if '<!--@RULE-STYLE-->' not in html:
+        sys.exit('the source has no <!--@RULE-STYLE--> marker')
+    html = html.replace('<!--@RULE-STYLE-->', rule, 1)
+    n = html.count('<div class="pn-rule"')
     if 'id="%s"' % ROOT_ID not in html:
         sys.exit('the root id %s is missing' % ROOT_ID)
     bad = [(i, c) for i, c in enumerate(html) if ord(c) > 126]
@@ -46,7 +47,7 @@ def main():
     if foreign:
         sys.exit('images from another host (the speed standard allows the Media Library only): %r' % foreign[:5])
     OUT.write_text(html, encoding='utf-8')
-    print('pages/perfect-capita.html', len(html), 'characters,', n, 'seams')
+    print('pages/perfect-capita.html', len(html), 'characters,', n, 'gold lines')
     r = subprocess.run([sys.executable, str(ROOT / 'tools' / 'check_page.py'), str(OUT)])
     sys.exit(r.returncode)
 

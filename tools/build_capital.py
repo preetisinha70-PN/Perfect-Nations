@@ -12,8 +12,8 @@ Writes two files:
                                    follow the Nation Stewards without a new page version.
 
 The design lives in tools/capital/style.css and tools/capital/script.js; the words and figures live
-in data/capital-architecture.json. The painted seam comes from the homepage (pages/home-seams.html and
-tools/build_home.py), so every page shares one set of drawings.
+in data/capital-architecture.json. The gold line between the record and the close comes from the
+homepage (pages/home-rule.html), so every page shares one section break.
 
 What counts as on record: every line of capital.register in data/<slug>.json, for every open
 blueprint (a pn-bp-<slug> key in pages/manifest.json). Counts, never sums: the amounts are in many
@@ -37,7 +37,7 @@ ROOT = Path(__file__).resolve().parent.parent
 PAGES = ROOT / 'pages'
 DATA = ROOT / 'data'
 HERE = Path(__file__).resolve().parent / 'capital'
-VERSION = '5.0'
+VERSION = '5.1'
 NOT_NATIONS = {'state-of-nations', 'ticker', 'blueprints', 'capital-architecture'}
 
 # Who carries each line on record (the register's cat field), in the words a visitor reads.
@@ -258,11 +258,10 @@ def main():
 
     fams = doc['index']['families']
     n_inst = sum(len(f['items']) for f in fams)
-    sys.path.insert(0, str(ROOT / 'tools'))
-    from build_home import seam  # the painted seams of the homepage, one arrangement per letter
     css = (HERE / 'style.css').read_text(encoding='utf-8').strip()
     js = (HERE / 'script.js').read_text(encoding='utf-8').strip()
-    seams = (PAGES / 'home-seams.html').read_text(encoding='utf-8').strip()
+    rule = (PAGES / 'home-rule.html').read_text(encoding='utf-8').strip()
+    rule = re.sub(r'^\s*<!--.*?-->\s*', '', rule, count=1, flags=re.S)  # the gold line's style, its banner dropped
     today = datetime.now(timezone.utc).strftime('%Y-%m-%d')
     head = '''<!-- ===========================================================================
 PERFECT NATIONS - CAPITAL ARCHITECTURE - THE WHOLE PAGE IN ONE FILE - v%s - %s
@@ -276,16 +275,17 @@ deal that proved it, with the figure in gold; open a line for how it works and t
 bands: 01 Earthrise (the five we lead with), 02 ivory (the toolkit, six families), 03 Lagoon (the
 deals on record, recounted from every blueprint and read live), a painted seam, 04 Earthrise Depth
 (the close). Phones have their own layout and never scroll sideways.
+v5.1: Gold line in place of the painted botanical seams (the Steward-General, 9 Nov 2026).
 =========================================================================== -->
 ''' % (VERSION, today)
     body = '\n'.join([
         '<style>\n%s\n</style>' % css,
         '<div id="pn-arch" data-version="%s">' % VERSION,
-        seams,
+        rule,
         hero(doc, n_inst, len(fams)),
         index(doc, open_blueprints()),
         record(doc),
-        seam('c'),
+        '<div class="pn-rule" aria-hidden="true"></div>',
         close(doc),
         '</div>',
         '<script>\n%s\n</script>' % js,

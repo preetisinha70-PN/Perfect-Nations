@@ -4,7 +4,7 @@
 The homepage is pasted once into ONE Elementor Custom HTML widget on page 13465 (slug home-2).
 Its first root id is pn-home, so the Perfect Nations Live Pages plugin serves this file in place
 of the paste. The parts below stay separate files so each can be edited and checked on its own;
-this script joins them, in order, with a painted seam between the Earthrise sections.
+this script joins them, in order, with the gold line (pages/home-rule.html) at the section break.
 
 Before joining, it writes the static Solutions cards into pages/home-solutions.html (the blocks
 GENERATED:SOLUTIONS, SOLUTIONS-COUNT and SOLUTIONS-LATEST) from data/state-of-nations.json, so the
@@ -15,7 +15,6 @@ Then bump "pn-home" in pages/manifest.json and open a pull request "For approval
 """
 import html
 import json
-import random
 import re
 import sys
 from datetime import date
@@ -25,13 +24,14 @@ ROOT = Path(__file__).resolve().parent.parent
 PAGES = ROOT / 'pages'
 DATA = ROOT / 'data'
 SITE = 'https://perfectnations.org'
-VERSION = '10.0'
+VERSION = '10.1'
 SOLUTIONS_SHOWN = 6
 MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September',
           'October', 'November', 'December']
 
-# The page, top to bottom. 'rule' places the gold line (pages/home-rule.html) between two sections;
-# 'seam' (a painted seam from pages/home-seams.html) is no longer used on the homepage.
+# The page, top to bottom. 'rule' places the gold line (pages/home-rule.html) between two sections.
+# 9 Nov 2026, the Steward-General: the gold line replaces the painted botanical seams everywhere, so
+# the seams (pages/home-seams.html and the seam drawing that was here) are retired from the site.
 # v10.0 (8 Nov 2026), the Steward-General's decision, after Goldman Sachs, J.P. Morgan and the World Bank:
 # the homepage leads with outcomes, research and original work, and says only a little about the
 # structure of the firm. The hero, the Capital Wire, the Blueprints of Nations, then the Solutions from
@@ -51,47 +51,6 @@ ORDER = [
     'home-steps.html',            # 04 What we do: Assets. Capital. Solutions. (ivory; tiles open the About page)
     'home-pledge.html',           # 05 The close: What could your nation become? The ReDesign Studio
 ]
-
-# Motifs from the painting: symbol id, aspect (width / height), height in a 60-high strip.
-MOTIFS = {
-    'fern': (200 / 60, 50), 'flower': (1, 20), 'leaf': (70 / 56, 40), 'loops': (92 / 32, 22),
-    'dashes': (40 / 32, 22), 'pods': (1, 46), 'feather': (140 / 44, 34), 'bowl': (1, 42),
-    'rosette': (1, 40), 'dots': (1, 24), 'squares': (1, 28), 'sun': (1, 38),
-}
-SEQUENCES = {
-    'a': ['fern', 'flower', 'dots', 'leaf', 'loops', 'pods', 'flower', 'feather', 'squares', 'bowl', 'rosette', 'dashes', 'sun', 'flower', 'fern~', 'leaf', 'dots'],
-    'b': ['feather', 'flower', 'rosette', 'loops', 'squares', 'fern', 'flower', 'bowl', 'dots', 'leaf', 'sun', 'pods', 'dashes', 'flower', 'feather~', 'rosette'],
-    'c': ['pods', 'dashes', 'leaf', 'flower', 'feather~', 'sun', 'loops', 'fern', 'flower', 'squares', 'rosette', 'bowl', 'flower', 'dots', 'leaf', 'fern~'],
-    'd': ['rosette', 'loops', 'fern~', 'flower', 'bowl', 'dots', 'leaf', 'feather', 'flower', 'sun', 'squares', 'pods', 'dashes', 'flower', 'fern', 'leaf'],
-    'e': ['leaf', 'flower', 'feather~', 'dots', 'pods', 'loops', 'rosette', 'flower', 'fern', 'sun', 'bowl', 'squares', 'flower', 'dashes', 'feather', 'leaf'],
-}
-
-
-def seam(variant):
-    rnd = random.Random('pn-seam-' + variant)
-    seq = SEQUENCES[variant]
-    out, x, k = [], 40.0, 0
-    while x < 1580:
-        name = seq[k % len(seq)]
-        k += 1
-        flip = name.endswith('~')
-        name = name.rstrip('~')
-        aspect, h = MOTIFS[name]
-        h *= 0.9 + rnd.random() * 0.2
-        w = h * aspect
-        y = 30 - h / 2 + (rnd.random() - 0.5) * 6
-        if flip:
-            g = '<g transform="translate(%.1f %.1f) scale(-1 1)"><use href="#pns-%s" x="%.1f" y="0" width="%.1f" height="%.1f"/></g>' % (x + w, y, name, 0, w, h)
-        else:
-            g = '<g transform="translate(%.1f %.1f)"><use href="#pns-%s" width="%.1f" height="%.1f"/></g>' % (x, y, name, w, h)
-        out.append(g)
-        if name == 'flower' and rnd.random() < 0.7:
-            h2 = h * 0.7
-            out.append('<g transform="translate(%.1f %.1f)"><use href="#pns-flower" width="%.1f" height="%.1f"/></g>' % (x + w * 0.9, y + (14 if y < 22 else -12), h2, h2))
-        x += w + 20 + rnd.random() * 22
-    return ('<div class="pn-seam pn-seam--%s" aria-hidden="true"><svg viewBox="0 0 1600 60" preserveAspectRatio="xMidYMid slice" focusable="false">%s</svg></div>'
-            % (variant, ''.join(out)))
-
 
 def ascii_html(text):
     """Escape for HTML, curl straight apostrophes, and turn every non-ASCII character into an entity."""
@@ -187,11 +146,8 @@ def main():
     if 'home-solutions.html' in ORDER:
         n = write_solutions()
         print('pages/home-solutions.html: %d of %d Solutions written in' % (min(n, SOLUTIONS_SHOWN), n))
-    parts, letters = [], iter('abcdefgh')
+    parts = []
     for item in ORDER:
-        if item == 'seam':
-            parts.append(seam(next(letters)))
-            continue
         if item == 'rule':
             parts.append('<div class="pn-rule" aria-hidden="true"></div>')
             continue
@@ -207,14 +163,13 @@ Built by tools/build_home.py from the parts named below, in this order. Edit a p
 and open a pull request; never edit this file by hand.
 Palette: Earthrise and ivory grounds, gold only for what a visitor can act on; a fine gold line
 (pages/home-rule.html) marks each section break.
+v10.1: Gold line in place of the painted botanical seams (the Steward-General, 9 Nov 2026), on every page.
 =========================================================================== -->
 <div id="pn-home" hidden></div>
 ''' % (VERSION, today)
     shared = []
     if any('#pnk-' in x for x in parts):   # the logo kit, only when a part draws the logo
         shared.append((PAGES / 'home-logo-kit.html').read_text(encoding='utf-8').strip())
-    if 'seam' in ORDER:
-        shared.append((PAGES / 'home-seams.html').read_text(encoding='utf-8').strip())
     if 'rule' in ORDER:
         shared.append((PAGES / 'home-rule.html').read_text(encoding='utf-8').strip())
     page = head + '\n'.join(shared) + '\n' + '\n'.join(parts) + '\n'

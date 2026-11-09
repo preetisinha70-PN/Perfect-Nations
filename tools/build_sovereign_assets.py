@@ -203,15 +203,14 @@ def js_json(obj):
 
 
 def build(d):
-    sys.path.insert(0, str(ROOT / 'tools'))
-    from build_home import seam  # the same painted seams as the homepage
     src = SRC.read_text(encoding='utf-8')
     version = re.search(r'data-v="([0-9.]+)"', src).group(1)
     src = src.split('-->', 1)[1].lstrip('\n')   # the source banner is not served
-    seams = (PAGES / 'home-seams.html').read_text(encoding='utf-8').strip()
+    rule = (PAGES / 'home-rule.html').read_text(encoding='utf-8').strip()
+    rule = re.sub(r'^\s*<!--.*?-->\s*', '', rule, count=1, flags=re.S)  # the gold line's style, its banner dropped
     ledger = d['ledger']
     seed = {'nations': [{k: n[k] for k in ('name', 'url', 'assets', 'lat', 'lon', 'top')} for n in d['nations']]}
-    page = (src.replace('@@SEAMS@@', seams)
+    page = (src.replace('@@RULE@@', rule)
                .replace('@@FEATURED@@', render_featured(d['featured']))
                .replace('@@NATIONLIST@@', render_nations(d['nations']))
                .replace('@@SEED@@', js_json(seed))
@@ -220,7 +219,6 @@ def build(d):
                .replace('@@NATIONS@@', str(ledger['nations']))
                .replace('@@CLASSES@@', str(ledger['classes']))
                .replace('@@UPDATED@@', long_date(d['updated'])))
-    page = re.sub(r'@@SEAM:([a-e])@@', lambda m: seam(m.group(1)), page)
     left = re.findall(r'@@[A-Z:a-z]+@@', page)
     if left:
         sys.exit('tokens left unfilled: %s' % left)
@@ -231,8 +229,8 @@ plugin, in place of the code pasted in its one Elementor Custom HTML widget (roo
 BUILT by tools/build_sovereign_assets.py from pages/sovereign-assets-src.html (the design) and
 data/sovereign-assets.json (the five assets and the ledger, which the page also reads live).
 Never edit this file by hand; kept by the Sovereign Assets Steward (skill steward-sovereign-assets).
-Palette: Earthrise and ivory grounds, gold only for what a visitor can act on; the colour comes
-from the painted seams (Preeti Sinha&#8217;s garden painting) between the Earthrise sections.
+Palette: Earthrise and ivory grounds, gold only for what a visitor can act on; a fine gold line
+(pages/home-rule.html) marks each section break, in place of the painted botanical seams (v6.3).
 =========================================================================== -->
 ''' % (version, date.today().isoformat())
     page = banner + page

@@ -20,7 +20,7 @@ The map is drawn here, at build time, on the Equal Earth projection (every natio
 so the page paints its map with no script and no geodata request.
 
 The page itself is pages/blueprints-atlas.html (style, markup, script; edit that file), with slots
-the build fills:  <!--pn:map-->  <!--pn:tabs-->  <!--pn:tiles-->  <!--pn:regions-->  <!--pn:seam-->
+the build fills:  <!--pn:map-->  <!--pn:tabs-->  <!--pn:tiles-->  <!--pn:regions-->
 <!--pn:n-live-->  <!--pn:n-regions-->  <!--pn:n-total-->  <!--pn:n-soon-->  /*pn:cfg*/null
 
 Run from the repository root:
@@ -40,11 +40,11 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 PAGES = ROOT / 'pages'
 DATA = ROOT / 'data'
-VERSION = '6.1'
+VERSION = '6.2'
 
 ORDER = [
     'nations-menu.html',      # the moving list of 195 nations (also on the homepage)
-    'home-seams.html',        # the painted-seam drawings and strip style (shared with the homepage)
+    'home-rule.html',         # the gold line between sections (shared with the homepage; v6.2 replaces the painted seams)
     'blueprints-atlas.html',  # 01 the golden map, 02 the open blueprints, 03 every nation
 ]
 
@@ -408,12 +408,8 @@ def main():
         'built': datetime.now(timezone.utc).strftime('%Y-%m-%d'),
     }
 
-    sys.path.insert(0, str(ROOT / 'tools'))
-    from build_home import seam  # the painted seams of the homepage, one arrangement per letter
-
     part = (PAGES / 'blueprints-atlas.html').read_text(encoding='utf-8')
     fills = {
-        '<!--pn:seam-->': seam('a'),
         '<!--pn:map-->': svg,
         '<!--pn:tabs-->': ''.join(tabs),
         '<!--pn:tiles-->': tiles,
@@ -443,6 +439,7 @@ Open blueprints at this build: %d of %d. New blueprints need no new build: the p
 pages/manifest.json and data/blueprints.json on every visit.
 v6.1 (8 Nov 2026): FfD before SI (the Steward-General, 8 Nov 2026). The lead names innovative financing for
 development (FfD) first and super intelligence (SI) second.
+v6.2: Gold line in place of the painted botanical seams (the Steward-General, 9 Nov 2026).
 =========================================================================== -->
 <div id="pn-blueprints" hidden></div>
 ''' % (VERSION, today, n_live, len(nat))
