@@ -1,7 +1,7 @@
 {
   "nation": "Morocco",
   "page_version": "9.0",
-  "updated": "2026-11-06",
+  "updated": "2026-11-09",
   "steward": {
     "name": "Salma Benali",
     "role": "Nation Steward of Morocco"
@@ -30,43 +30,173 @@
       {
         "value": "$4.5B",
         "money": true,
-        "text": "Flexible Credit Line: Precautionary; available on demand",
+        "text": "IMF Flexible Credit Line: SDR 3.45 billion, precautionary, from 2 April 2025; access maintained at the review of 20 March 2026",
         "source": "IMF, 2025",
         "url": "https://www.imf.org/en/news/articles/2025/04/02/pr25085-morocco-imf-executive-board-approves-new-two-year-flexible-credit-line-arrangement"
       },
       {
+        "value": "66.6%",
+        "money": false,
+        "text": "Treasury debt, percent of GDP, end 2025: 1,145.0 billion dirhams, from 67.0% at end 2024",
+        "source": "Ministry of Economy and Finance, 2026",
+        "url": "https://www.finances.gov.ma/Publication/db/2027/Rapport-Dette-publique_Fr.pdf"
+      },
+      {
+        "value": "EUR 2.25B",
+        "money": true,
+        "text": "International bond in two euro tranches, priced 19 May 2026, with an order book of €5.2 billion",
+        "source": "Ministry of Economy and Finance, 2026",
+        "url": "https://www.finances.gov.ma/fr/pages/detail-actualite.aspx?fiche=7700"
+      },
+      {
         "value": "$500M",
         "money": true,
-        "text": "Jobs and green growth: Jobs and the green economy",
+        "text": "First Jobs and Green Growth Development Policy Loan, April 2026: over 330,000 job seekers reached by 2029",
         "source": "World Bank, 2026",
         "url": "https://www.worldbank.org/en/news/press-release/2026/04/10/world-bank-approves-500-million-to-power-morocco-s-jobs-and-green-growth-agenda"
       },
       {
-        "value": "$400M",
+        "value": "$265M",
         "money": true,
-        "text": "Climate and Risk Finance Program: Insurance against climate, disaster and cyber risk",
+        "text": "Ifahsa Pumped Hydropower Storage Project, July 2026: 300 MW that lets the grid take in at least 1 GW more solar and wind",
         "source": "World Bank, 2026",
-        "url": "https://www.worldbank.org/en/news/press-release/2026/06/12/two-new-programs-to-advance-morocco-s-digital-transformation-and-climate-resilience"
-      },
-      {
-        "value": "$250M",
-        "money": true,
-        "text": "Digital Transformation Acceleration Program: Digital public services and skills",
-        "source": "World Bank, 2026",
-        "url": "https://www.worldbank.org/en/news/press-release/2026/06/12/two-new-programs-to-advance-morocco-s-digital-transformation-and-climate-resilience"
+        "url": "https://www.worldbank.org/en/news/press-release/2026/07/01/world-bank-group-and-morocco-partner-to-unlock-the-power-of-next-generation-hydropower"
       }
     ],
     "register": [
+      {
+        "cat": "govt",
+        "status": "Priced",
+        "tone": "active",
+        "name": "International bond, two euro tranches",
+        "detail": "Priced 19 May 2026 · €1.25 billion, 8 years, coupon 4.750% · €1 billion, 12 years, coupon 5.125% · Order book €5.2 billion",
+        "amount": "EUR 2.25B",
+        "money": true,
+        "note": "Yields 4.842% and 5.289%",
+        "text": "The Moroccan Treasury raised €2.25 billion on the international market in two euro tranches, with an order book of €5.2 billion, more than twice the amount. Treasury borrowing funds the budget behind schools, clinics and water systems.",
+        "by": [
+          "Ministry of Economy and Finance of Morocco"
+        ],
+        "url": "https://www.finances.gov.ma/fr/pages/detail-actualite.aspx?fiche=7700"
+      },
+      {
+        "cat": "govt",
+        "status": "Issued",
+        "tone": "active",
+        "name": "International bond, two euro tranches",
+        "detail": "Issued 26 March 2025 · €900 million, 4 years, coupon 3.875% · €1.1 billion, 10 years, coupon 4.750% · Order book above €7 billion",
+        "amount": "EUR 2B",
+        "money": true,
+        "note": "Order book more than three times the issue",
+        "text": "A two-tranche euro bond of the Moroccan Treasury, with an order book above €7 billion.",
+        "by": [
+          "Ministry of Economy and Finance of Morocco"
+        ],
+        "url": "https://www.finances.gov.ma/en/Pages/detail-actualite.aspx?fiche=7221"
+      },
+      {
+        "cat": "multi",
+        "status": "Approved",
+        "tone": "active",
+        "name": "Ifahsa Pumped Hydropower Storage Project",
+        "detail": "Approved 1 July 2026 · IBRD, Clean Technology Fund, Livable Planet Fund and ESMAP · Co-financed by the AfDB",
+        "amount": "$265M",
+        "money": true,
+        "note": "300 MW near Chefchaouen; about 820 direct jobs a year in construction",
+        "text": "A 300-megawatt pumped storage plant, implemented by ONEE, that stores power so the grid can take in at least 1 gigawatt of additional solar and wind energy. Stored clean power keeps electricity steady for homes, clinics and water pumping.",
+        "by": [
+          "World Bank",
+          "African Development Bank",
+          "ONEE"
+        ],
+        "url": "https://www.worldbank.org/en/news/press-release/2026/07/01/world-bank-group-and-morocco-partner-to-unlock-the-power-of-next-generation-hydropower"
+      },
+      {
+        "cat": "multi",
+        "status": "Approved",
+        "tone": "active",
+        "name": "Climate and Risk Finance Program",
+        "detail": "Approved 12 June 2026 · Over five years",
+        "amount": "$400M",
+        "money": true,
+        "note": "Up to $400 million private capital; $1 billion of pre-arranged disaster financing",
+        "text": "Builds insurance and pre-arranged financing for disasters, extends cyber risk cover to at least 20 financial entities and draws up to $400 million of private capital into climate investment. Money in place before a disaster lets homes and services be rebuilt quickly.",
+        "by": [
+          "World Bank"
+        ],
+        "url": "https://www.worldbank.org/en/news/press-release/2026/06/12/two-new-programs-to-advance-morocco-s-digital-transformation-and-climate-resilience"
+      },
+      {
+        "cat": "multi",
+        "status": "Approved",
+        "tone": "active",
+        "name": "Digital Transformation Acceleration Program",
+        "detail": "Approved 12 June 2026 · Results by 2031",
+        "amount": "$250M",
+        "money": true,
+        "note": "Close to $200 million private capital for start-ups and small firms",
+        "text": "Supports digital public services and skills and, through government risk-sharing, draws close to $200 million of private capital into start-up finance and the digitisation of small firms. Digital services bring education, health and work within reach.",
+        "by": [
+          "World Bank"
+        ],
+        "url": "https://www.worldbank.org/en/news/press-release/2026/06/12/two-new-programs-to-advance-morocco-s-digital-transformation-and-climate-resilience"
+      },
+      {
+        "cat": "multi",
+        "status": "Approved",
+        "tone": "active",
+        "name": "First Jobs and Green Growth Development Policy Loan",
+        "detail": "Approved 10 April 2026 · First of a series of three",
+        "amount": "$500M",
+        "money": true,
+        "note": "Over 330,000 job seekers reached by 2029",
+        "text": "Backs reforms for private investment, clean energy, energy efficiency and exports, with targets that include more than 40,000 new childcare places and 1,200 direct jobs for women in childcare. Jobs are the livelihood standard.",
+        "by": [
+          "World Bank"
+        ],
+        "url": "https://www.worldbank.org/en/news/press-release/2026/04/10/world-bank-approves-500-million-to-power-morocco-s-jobs-and-green-growth-agenda"
+      },
+      {
+        "cat": "multi",
+        "status": "Approved",
+        "tone": "active",
+        "name": "Livable Planet Fund grant, Transforming Agri-food Systems Program",
+        "detail": "Announced 18 December 2025 · Grant",
+        "amount": "$4M",
+        "money": true,
+        "note": "About 1,200 farmers on 20,000 hectares",
+        "text": "A grant that adds to the World Bank’s agri-food programme for climate-resilient farming. It reaches food and rural livelihoods.",
+        "by": [
+          "World Bank",
+          "Livable Planet Fund"
+        ],
+        "url": "https://www.worldbank.org/en/news/press-release/2025/12/18/world-bank-approves-new-grant-to-boost-climate-resilient-farming-and-food-security-in-morocco"
+      },
+      {
+        "cat": "multi",
+        "status": "Approved",
+        "tone": "active",
+        "name": "Support to Strengthening of Social Safety Nets for Human Development",
+        "detail": "Approved 19 June 2025",
+        "amount": "$250M",
+        "money": true,
+        "note": "Direct Social Benefit programme: over 3.9 million households",
+        "text": "Supports the Direct Social Benefit programme, which reached over 3.9 million households by March 2025. Cash support for families protects food, schooling and health.",
+        "by": [
+          "World Bank"
+        ],
+        "url": "https://www.worldbank.org/en/news/press-release/2025/06/19/world-bank-supports-morocco-s-commitment-to-advancing-social-safety-nets-for-human-development"
+      },
       {
         "cat": "multi",
         "status": "Active",
         "tone": "active",
         "name": "Flexible Credit Line",
-        "detail": "Approved 2 April 2025 · Two years",
+        "detail": "Approved 2 April 2025 · Two years · SDR 3.45 billion · Mid-term review completed 20 March 2026",
         "amount": "$4.5B",
         "money": true,
-        "note": "Precautionary; available on demand",
-        "text": "Reserved for members with very strong fundamentals and policy records.",
+        "note": "Precautionary; current access maintained at the 2026 review",
+        "text": "A precautionary IMF arrangement of SDR 3.45 billion, about $4.5 billion when approved, that Morocco can draw on if external shocks strike. It succeeded the arrangement of 2023.",
         "by": [
           "International Monetary Fund"
         ],
@@ -74,48 +204,543 @@
       },
       {
         "cat": "multi",
-        "status": "Active",
+        "status": "Approved",
         "tone": "active",
-        "name": "Jobs and green growth",
-        "detail": "Approved April 2026 · Development policy financing",
-        "amount": "$500M",
+        "name": "Strengthening Human Capital for a Resilient Morocco, third operation",
+        "detail": "Approved 19 March 2025 · Last in a series of three",
+        "amount": "$600M",
         "money": true,
-        "note": "Jobs and the green economy",
-        "text": "Backs reforms for private investment, jobs and clean growth.",
+        "note": "Health, early childhood, older people and climate risk",
+        "text": "Supports resilience to health risks, human capital in early childhood, lower poverty among older people and better management of climate risk. It reaches the health and livelihood standards.",
         "by": [
           "World Bank"
         ],
-        "url": "https://www.worldbank.org/en/news/press-release/2026/04/10/world-bank-approves-500-million-to-power-morocco-s-jobs-and-green-growth-agenda"
+        "url": "https://www.worldbank.org/en/news/press-release/2025/03/19/world-bank-enhances-commitment-to-human-capital-development-in-morocco"
       },
       {
         "cat": "multi",
-        "status": "Active",
-        "tone": "active",
-        "name": "Climate and Risk Finance Program",
-        "detail": "Approved June 2026 · Program-for-Results",
-        "amount": "$400M",
+        "status": "Completed",
+        "tone": "completed",
+        "name": "Resilience and Sustainability Facility",
+        "detail": "Approved September 2023 · Third and final review completed 17 March 2025 · SDR 937.5 million disbursed",
+        "amount": "$1.24B",
         "money": true,
-        "note": "Insurance against climate, disaster and cyber risk",
-        "text": "Builds new insurance instruments and draws private investment into climate infrastructure.",
+        "note": "6 of 7 reform measures implemented",
+        "text": "IMF financing for climate reforms. Morocco implemented six of the seven scheduled measures; the gradual introduction of a carbon tax was not implemented.",
         "by": [
-          "World Bank"
+          "International Monetary Fund"
         ],
-        "url": "https://www.worldbank.org/en/news/press-release/2026/06/12/two-new-programs-to-advance-morocco-s-digital-transformation-and-climate-resilience"
+        "url": "https://www.imf.org/en/News/Articles/2025/04/08/pr25094-morocco-imf-concludes-2025-article-iv-consultation-third-review-under-the-rsf"
       },
       {
         "cat": "multi",
-        "status": "Active",
+        "status": "Approved",
         "tone": "active",
-        "name": "Digital Transformation Acceleration Program",
-        "detail": "Approved June 2026 · Program-for-Results",
+        "name": "Transforming Agri-food Systems Program",
+        "detail": "Approved 19 December 2024 · With a $5 million Livable Planet Fund grant",
         "amount": "$250M",
         "money": true,
-        "note": "Digital public services and skills",
-        "text": "Supports Digital Morocco 2030: cloud government, start-ups and digital skills.",
+        "note": "1.36 million people, including almost 120,000 farmers",
+        "text": "Builds the climate resilience of agriculture and the quality of food production, reaching farmers and more than one million consumers. It is the food standard.",
+        "by": [
+          "World Bank",
+          "Livable Planet Fund"
+        ],
+        "url": "https://www.worldbank.org/en/news/press-release/2024/12/19/new-program-will-boost-climate-resilience-of-agriculture-and-quality-of-food-production-in-morocco"
+      },
+      {
+        "cat": "multi",
+        "status": "Approved",
+        "tone": "active",
+        "name": "Second Identity and Targeting for Social Protection Project",
+        "detail": "Approved 4 December 2024",
+        "amount": "$70M",
+        "money": true,
+        "note": "Population and social registries",
+        "text": "Extends the National Population Registry, launches the National Register Agency and strengthens the Social Registry, so that vulnerable households, including in rural and remote areas, reach social programmes.",
         "by": [
           "World Bank"
         ],
-        "url": "https://www.worldbank.org/en/news/press-release/2026/06/12/two-new-programs-to-advance-morocco-s-digital-transformation-and-climate-resilience"
+        "url": "https://www.worldbank.org/en/news/press-release/2024/12/04/world-bank-greenlights-70m-boost-for-morocco-s-innovative-social-protection-delivery-systems"
+      },
+      {
+        "cat": "multi",
+        "status": "Approved",
+        "tone": "active",
+        "name": "Municipal Solid Waste Management Support Program",
+        "detail": "Approved 26 November 2024",
+        "amount": "$250M",
+        "money": true,
+        "note": "Cities home to more than 60% of Moroccans",
+        "text": "Upgrades controlled landfills, extends waste recovery and closes and rehabilitates abandoned uncontrolled landfills. Clean cities protect water and health.",
+        "by": [
+          "World Bank"
+        ],
+        "url": "https://www.worldbank.org/en/news/press-release/2024/11/26/world-bank-approves-new-us-250-million-program-to-strengthen-morocco-s-municipal-solid-waste-management"
+      },
+      {
+        "cat": "multi",
+        "status": "Approved",
+        "tone": "active",
+        "name": "State-owned enterprise reform and public sector performance (ENNAJAA)",
+        "detail": "Approved 24 June 2024 · SOE reform $350 million · ENNAJAA additional financing $250 million",
+        "amount": "$600M",
+        "money": true,
+        "note": "Governance of state-owned enterprises and public services",
+        "text": "Supports the governance, restructuring and performance of state-owned enterprises, and a more digital, transparent public administration. The state companies run much of the water, power and transport behind the seven standards.",
+        "by": [
+          "World Bank"
+        ],
+        "url": "https://www.worldbank.org/en/news/press-release/2024/06/24/world-bank-supports-public-performance-improvement-in-morocco"
+      },
+      {
+        "cat": "regional",
+        "status": "Approved",
+        "tone": "active",
+        "name": "Economic Governance and Climate Resilience Programme, phase III (PGRCC III)",
+        "detail": "Approved in Abidjan, reported 22 October 2026",
+        "amount": "$487M",
+        "money": true,
+        "note": "State companies, partnerships, water and electricity governance",
+        "text": "Supports the restructuring of the state-owned company portfolio, a modern framework for public-private partnerships and a better business climate, and modernises the governance of the water and electricity sectors for a low-carbon transition.",
+        "by": [
+          "African Development Bank"
+        ],
+        "url": "https://maroc.ma/en/news/afdb-approves-487-mln-loan-boost-moroccos-structural-reforms-economic-resilience"
+      },
+      {
+        "cat": "regional",
+        "status": "Signed",
+        "tone": "active",
+        "name": "Airport Infrastructure Expansion and Modernization Programme (PEMIA)",
+        "detail": "Signed 29 September 2026 · Loan to the National Airports Office (ONDA)",
+        "amount": "EUR 270M",
+        "money": true,
+        "note": "Marrakech, Agadir, Tangier and Fez airports",
+        "text": "Expands and modernises four airports. Tourism and trade through these airports carry jobs across the regions they serve.",
+        "by": [
+          "African Development Bank",
+          "ONDA"
+        ],
+        "url": "https://www.finances.gov.ma/en/Pages/detail-actualite.aspx?fiche=7817"
+      },
+      {
+        "cat": "regional",
+        "status": "Signed",
+        "tone": "active",
+        "name": "ONEE water production programme",
+        "detail": "Announced 28 July 2026 · €120 million committed · €130 million uncommitted · €5 million grant · Guaranteed by Tamwilcom",
+        "amount": "EUR 250M",
+        "money": true,
+        "note": "The first EBRD loan in Morocco with a Tamwilcom guarantee",
+        "text": "Finances ONEE’s nationwide programme to make water production more efficient and resilient: fewer losses, rehabilitated and expanded infrastructure and digital network management. In a nation below the water scarcity line of 1,000 cubic metres a person, it is the water standard.",
+        "by": [
+          "EBRD",
+          "ONEE",
+          "Tamwilcom"
+        ],
+        "url": "https://www.ebrd.com/home/news-and-events/news/2026/ebrd-and-onee-strengthen-water-security-in-morocco.html"
+      },
+      {
+        "cat": "regional",
+        "status": "Signed",
+        "tone": "active",
+        "name": "Fonds d’Équipement Communal, second loan",
+        "detail": "Signed 22 July 2026 in Rabat",
+        "amount": "EUR 150M",
+        "money": true,
+        "note": "Rural roads, drinking water, urban renewal and schools",
+        "text": "A loan to the public bank that finances local authorities, for rural access roads, drinking water networks, urban renewal and educational and socio-cultural facilities.",
+        "by": [
+          "African Development Bank",
+          "Fonds d’Équipement Communal"
+        ],
+        "url": "https://fr.allafrica.com/stories/202607230580.html"
+      },
+      {
+        "cat": "regional",
+        "status": "Approved",
+        "tone": "active",
+        "name": "Rail Infrastructure Development Support Project (PADIF)",
+        "detail": "Approved 8 July 2026 in Abidjan",
+        "amount": "EUR 205M",
+        "money": true,
+        "note": "Kenitra to Marrakech corridor",
+        "text": "Extends the high-speed line and upgrades existing rail on the Kenitra to Marrakech corridor, with new rails, switches and project support.",
+        "by": [
+          "African Development Bank"
+        ],
+        "url": "https://fr.allafrica.com/stories/202607130844.html"
+      },
+      {
+        "cat": "regional",
+        "status": "Signed",
+        "tone": "active",
+        "name": "Rail rehabilitation and motorway resilience",
+        "detail": "Signed 30 June 2026 · ONCF €50 million and an EU grant of €15 million · ADM €300 million",
+        "amount": "EUR 350M",
+        "money": true,
+        "note": "Railways and motorways",
+        "text": "Two EIB loans, to the national railway (ONCF) for rehabilitation and to the motorway company (ADM) for resilience. Reliable transport links citizens to jobs, schools and hospitals.",
+        "by": [
+          "European Investment Bank",
+          "European Union",
+          "ONCF",
+          "ADM"
+        ],
+        "url": "https://www.finances.gov.ma/En/Pages/detail-actualite.aspx?fiche=7758"
+      },
+      {
+        "cat": "regional",
+        "status": "Approved",
+        "tone": "active",
+        "name": "Cap Compétences 2030",
+        "detail": "Announced 21 May 2026 · Results-based financing",
+        "amount": "EUR 200M",
+        "money": true,
+        "note": "Vocational training for young people and women",
+        "text": "Finances a more relevant, varied and digital vocational training system linked to the job market. It reaches education and livelihood.",
+        "by": [
+          "African Development Bank"
+        ],
+        "url": "https://allafrica.com/stories/202605210725.html"
+      },
+      {
+        "cat": "regional",
+        "status": "Signed",
+        "tone": "active",
+        "name": "EIB financing signed in 2025",
+        "detail": "Signed in 2025 · ONEE water €70 million · ONEE electricity €170 million · Post-earthquake reconstruction €500 million, second tranche of €1 billion",
+        "amount": "EUR 740M",
+        "money": true,
+        "note": "The largest EIB total for Morocco since 2012",
+        "text": "Upgrades drinking water production and transmission, strengthens the power grid and rebuilds roads, schools and health facilities in the regions hit by the earthquake of 8 September 2023.",
+        "by": [
+          "European Investment Bank",
+          "ONEE"
+        ],
+        "url": "https://www.eib.org/en/press/all/2026-062-maroc-bei-monde-signe-des-financements-records-en-2025-pour-soutenir-la-resilience-et-la-transition-durable"
+      },
+      {
+        "cat": "regional",
+        "status": "Signed",
+        "tone": "active",
+        "name": "Conservation of Water Resources in the Saïss Plain (SAISS III)",
+        "detail": "Signed 12 December 2025 in Rabat · Grants of €11.5 million",
+        "amount": "EUR 150M",
+        "money": true,
+        "note": "Over 20,000 hectares and 7,300 farms",
+        "text": "Replaces overused groundwater with surface water from the M’Dez dam to protect the Saïss aquifer, with support for young people, women and small farmers. It is the final phase of the SAISS programme.",
+        "by": [
+          "EBRD"
+        ],
+        "url": "https://www.finances.gov.ma/en/Pages/detail-actualite.aspx?fiche=7505"
+      },
+      {
+        "cat": "regional",
+        "status": "Approved",
+        "tone": "active",
+        "name": "Partial credit guarantee for OCP Group",
+        "detail": "Approved December 2025 · Non-sovereign guarantee of up to €450 million",
+        "amount": "EUR 450M",
+        "money": true,
+        "note": "Up to €530 million of long-term funding for green investment",
+        "text": "Lets OCP raise long-term funding for its 2023 to 2030 Green Investment Programme: clean energy, water and energy efficiency, soil health and sustainable farming. The AfDB expects it to avoid more than 43 million tonnes of CO2 between 2026 and 2038.",
+        "by": [
+          "African Development Bank",
+          "OCP Group"
+        ],
+        "url": "https://allafrica.com/stories/202512040506.html"
+      },
+      {
+        "cat": "regional",
+        "status": "Approved",
+        "tone": "active",
+        "name": "Climate Operation, support to the Nationally Determined Contribution",
+        "detail": "Approved 19 November 2025 · Sovereign · Co-finances a World Bank Program-for-Results",
+        "amount": "$200M",
+        "money": true,
+        "note": "Weather radars, oases, date palms and argan",
+        "text": "Finances weather radars and climate information, agricultural cooperatives in oasis areas, date palm processing, climate-resilient planting and the rehabilitation of traditional water systems.",
+        "by": [
+          "Asian Infrastructure Investment Bank",
+          "World Bank"
+        ],
+        "url": "https://www.aiib.org/en/projects/details/2025/approved/morocco-climate-operation-support-to-the-nationally-determined-contribution.html"
+      },
+      {
+        "cat": "regional",
+        "status": "Approved",
+        "tone": "active",
+        "name": "Inclusive solidarity-based agriculture programme",
+        "detail": "Announced 21 July 2025 · Loan",
+        "amount": "EUR 100M",
+        "money": true,
+        "note": "Women and young people in farming",
+        "text": "Supports small farms facing climate change, food security, rural entrepreneurship and new farm infrastructure, in line with the National Solidarity Agriculture Program.",
+        "by": [
+          "African Development Bank"
+        ],
+        "url": "https://allafrica.com/stories/202507220102.html"
+      },
+      {
+        "cat": "regional",
+        "status": "Approved",
+        "tone": "active",
+        "name": "PGRCC II and PAFE-Emplois",
+        "detail": "Announced 30 June 2025 · PGRCC II €181.8 million · PAFE-Emplois €119 million",
+        "amount": "EUR 301M",
+        "money": true,
+        "note": "Climate resilience and jobs through small enterprises",
+        "text": "Two operations: economic and climate resilience with upgrades to the water and power sectors, and job creation through entrepreneurship and very small and medium-sized enterprises.",
+        "by": [
+          "African Development Bank"
+        ],
+        "url": "https://allafrica.com/stories/202507010602.html"
+      },
+      {
+        "cat": "regional",
+        "status": "Signed",
+        "tone": "active",
+        "name": "ONEE electricity, sustainability-linked loan",
+        "detail": "Signed 20 June 2025 · The first sustainability-linked loan in the energy sector of the Middle East, North Africa and Africa",
+        "amount": "EUR 300M",
+        "money": true,
+        "note": "Targets: lower carbon intensity, more renewable power",
+        "text": "Strengthens ONEE’s finances, with targets to cut the carbon intensity of electricity and raise the renewable share of output, towards the national goal of 52 per cent of installed capacity from renewables by 2030.",
+        "by": [
+          "EBRD",
+          "ONEE"
+        ],
+        "url": "https://www.ebrd.com/home/news-and-events/news/2025/ebrd-provides--300-million-first-sustainability-linked-loan-to-o.html"
+      },
+      {
+        "cat": "bilat",
+        "status": "Approved",
+        "tone": "active",
+        "name": "Green and resilient ports programme",
+        "detail": "Authorised by the AFD Board 21 May 2026 · Concessional loan · EU grant €13.2 million · Blue Mediterranean Partnership grant €2 million",
+        "amount": "EUR 100M",
+        "money": true,
+        "note": "Rehabilitation and greening of ports, 13 named",
+        "text": "A concessional loan to the National Ports Agency (ANP) to rehabilitate and green its ports. Fishing and trade ports carry coastal livelihoods.",
+        "by": [
+          "AFD",
+          "European Union",
+          "Agence Nationale des Ports"
+        ],
+        "url": "https://www.afd.fr/sites/default/files/2026-05/autorisations-octrois-cma1365-01-maroc.pdf"
+      },
+      {
+        "cat": "bilat",
+        "status": "Signed",
+        "tone": "active",
+        "name": "KfW financing agreements",
+        "detail": "Signed 16 December 2025 · Climate policies II €100 million · Social protection II €150 million · ONCF Casablanca-Settat rail €200 million",
+        "amount": "EUR 450M",
+        "money": true,
+        "note": "Climate, social protection and regional rail",
+        "text": "Three agreements: climate adaptation and a low-carbon economy, the Direct Social Assistance programme and jobs for young people, and rail in the Casablanca-Settat region.",
+        "by": [
+          "KfW",
+          "ONCF"
+        ],
+        "url": "https://www.finances.gov.ma/En/Pages/detail-actualite.aspx?fiche=7507"
+      },
+      {
+        "cat": "bilat",
+        "status": "Signed",
+        "tone": "active",
+        "name": "Agricultural Water Development in the Southeast Gharb Plain",
+        "detail": "Signed 20 November 2025 · 2.2% a year · 30 years with 10 years of grace",
+        "amount": "JPY 64.6B",
+        "money": true,
+        "note": "Maximum JPY 64,577 million",
+        "text": "A JICA loan for main canals, a pump station, a reservoir and equipment to irrigate the Sidi Kacem and Sidi Slimane provinces. Irrigation secures food and farm livelihoods.",
+        "by": [
+          "JICA"
+        ],
+        "url": "https://www.jica.go.jp/english/information/press/2025/20251120_11.html"
+      },
+      {
+        "cat": "bilat",
+        "status": "Signed",
+        "tone": "active",
+        "name": "New generation fishing port at Souiria K’dima",
+        "detail": "Signed 6 February 2025 · Grant",
+        "amount": "JPY 2B",
+        "money": true,
+        "note": "JPY 2,003 million",
+        "text": "A JICA grant for a new breakwater, seawall, landing wharf and fish handling area, and an ice-making machine. It supports the livelihoods of fishing families.",
+        "by": [
+          "JICA"
+        ],
+        "url": "https://www.jica.go.jp/english/information/press/2024/20250124_41.html"
+      },
+      {
+        "cat": "bilat",
+        "status": "Signed",
+        "tone": "active",
+        "name": "Development Policy Loan for Universal Health Coverage",
+        "detail": "Signed 20 September 2024 · Co-financed with the World Bank ($500 million), the AfDB (€87 million) and AFD (€150 million)",
+        "amount": "JPY 27.8B",
+        "money": true,
+        "note": "Maximum JPY 27,760 million",
+        "text": "A JICA policy loan towards universal health coverage, improving maternal and child health and nutrition services and financial protection in health. It is the health standard.",
+        "by": [
+          "JICA",
+          "World Bank",
+          "African Development Bank",
+          "AFD"
+        ],
+        "url": "https://www.jica.go.jp/english/information/press/2024/20240924_41.html"
+      },
+      {
+        "cat": "private",
+        "status": "Announced",
+        "tone": "active",
+        "name": "Pickalbatros hotels",
+        "detail": "Announced 15 October 2026 · IFC $165 million · Attijariwafa bank $85 million",
+        "amount": "$250M",
+        "money": true,
+        "note": "More than 1,350 direct jobs expected by 2032",
+        "text": "Finances Pickalbatros’s Moroccan subsidiaries to buy three hotels in Casablanca and renovate properties, with about 6,200 indirect jobs also expected. Tourism jobs are livelihoods.",
+        "by": [
+          "IFC",
+          "Attijariwafa bank"
+        ],
+        "url": "https://www.ifc.org/en/pressroom/2026/world-bank-group-s-ifc-and-attijariwafa-bank-partner-with-pickalbatros-to-help-cre"
+      },
+      {
+        "cat": "private",
+        "status": "Announced",
+        "tone": "active",
+        "name": "Tamwilcom, risk-sharing facility",
+        "detail": "Announced 17 April 2026 · Unfunded risk-sharing facility · About $300 million",
+        "amount": "MAD 2.74B",
+        "money": true,
+        "note": "Covers SME guarantees already issued by Tamwilcom",
+        "text": "IFC shares the risk on a portfolio of guarantees issued by Tamwilcom, the national credit guarantee institution, so that it can guarantee more loans, with women-owned businesses, farm enterprises and supply-chain firms as priorities.",
+        "by": [
+          "IFC",
+          "Tamwilcom"
+        ],
+        "url": "https://www.ifc.org/en/pressroom/2026/ifc-partners-with-tamwilcom-to-expand-access-to-finance-for-smes-in-morocco-throug"
+      },
+      {
+        "cat": "private",
+        "status": "Announced",
+        "tone": "active",
+        "name": "Yakeey, Series A",
+        "detail": "Announced 27 January 2026 · IFC equity in a $15 million round",
+        "amount": "$15M",
+        "money": true,
+        "note": "IFC’s first venture investment in Moroccan real estate",
+        "text": "IFC invested in Yakeey, a Casablanca platform that joins property search, valuation, brokerage and financing, with a network of more than 800 independent agents, nearly half of them women.",
+        "by": [
+          "IFC",
+          "Yakeey"
+        ],
+        "url": "https://www.ifc.org/en/pressroom/2026/yakeey-and-ifc-partner-to-expand-digital-real-estate-infrastructure-in-morocco"
+      },
+      {
+        "cat": "private",
+        "status": "Announced",
+        "tone": "active",
+        "name": "Saham Bank, unfunded risk participation",
+        "detail": "Announced 3 November 2025 · Covers half of a $500 million-equivalent portfolio of corporate loans",
+        "amount": "$250M",
+        "money": true,
+        "note": "Finance for Moroccan businesses",
+        "text": "IFC takes on up to half of the credit risk on Saham Bank corporate loans, freeing the bank to lend more to businesses that create jobs.",
+        "by": [
+          "IFC",
+          "Saham Bank"
+        ],
+        "url": "https://www.ifc.org/en/pressroom/2025/ifc-and-saham-bank-partner-on-250-million-equivalent-unfunded-risk-participation-t"
+      },
+      {
+        "cat": "private",
+        "status": "Under construction",
+        "tone": "active",
+        "name": "Casablanca desalination plant",
+        "detail": "Financing signed 8 May 2025 · 80% debt, 20% equity · Completion scheduled for 2028 · About €613 million",
+        "amount": "MAD 6.5B",
+        "money": true,
+        "note": "300 million cubic metres a year for 7.5 million people",
+        "text": "The Al Baidaa Desalination Company (ACCIONA 50%, Green of Africa 45%, AfriquiaGaz 5%) is building the plant, scheduled for completion in 2028, with debt from lenders including FIEM, COFIDES, Attijariwafa Bank, Banque Centrale Populaire and Bank of Africa. It will supply drinking water to 7.5 million people.",
+        "by": [
+          "ACCIONA",
+          "Green of Africa",
+          "AfriquiaGaz"
+        ],
+        "url": "https://www.acciona.com/updates/news/acciona-signs-financing-casablanca-desalination-plant"
+      },
+      {
+        "cat": "private",
+        "status": "Announced",
+        "tone": "active",
+        "name": "Kazyon, discount food retail",
+        "detail": "Announced 11 March 2025 · Loan",
+        "amount": "$30M",
+        "money": true,
+        "note": "More than 3,000 direct jobs expected",
+        "text": "An IFC loan to expand Kazyon, a discount grocer with more than 150 stores in Morocco. Low-price food stores reach the food standard.",
+        "by": [
+          "IFC",
+          "Kazyon"
+        ],
+        "url": "https://www.ifc.org/en/pressroom/2025/ifc-and-kazyon-strengthen-partnership-to-boost-morocco-s-food-retail-sector-create"
+      },
+      {
+        "cat": "private",
+        "status": "Announced",
+        "tone": "active",
+        "name": "Al Amana Microfinance, Youth in Business",
+        "detail": "Announced 24 January 2025 · Loan of up to €20 million",
+        "amount": "EUR 20M",
+        "money": true,
+        "note": "Small businesses led by people under 35",
+        "text": "An EBRD loan for Al Amana to lend on to small businesses owned or led by young people, with a focus on the areas hit by the 2023 earthquake. It is the livelihood standard.",
+        "by": [
+          "EBRD",
+          "Al Amana Microfinance"
+        ],
+        "url": "https://www.ebrd.com/home/news-and-events/news/2025/EBRD-and-EU-promote-youth-entrepreneurship-in-Morocco.html"
+      },
+      {
+        "cat": "private",
+        "status": "Announced",
+        "tone": "active",
+        "name": "Tanger Med truck and passenger terminal",
+        "detail": "Announced 4 November 2024 · IFC up to €197 million · Banks led by JP Morgan up to €203 million · MIGA guarantee up to 15 years",
+        "amount": "EUR 400M",
+        "money": true,
+        "note": "Truck capacity above 1 million units",
+        "text": "Expands the truck and passenger terminal of the Tanger Med port complex, which handled 477,000 trucks in 2023. IFC called its loan the first sustainability-linked loan in Morocco.",
+        "by": [
+          "IFC",
+          "MIGA",
+          "Tanger Med"
+        ],
+        "url": "https://miga.org/press-release/ifc-miga-and-international-banks-partner-moroccos-tanger-med-port-complex-expand"
+      },
+      {
+        "cat": "private",
+        "status": "Issued",
+        "tone": "active",
+        "name": "Mohammed VI Polytechnic University, Rabat campus",
+        "detail": "Announced 25 September 2024 · MIGA guarantee of €243.2 million (about $270 million) on loans to OCP Group",
+        "amount": "EUR 243.2M",
+        "money": true,
+        "note": "5,684 students, including 721 PhD students",
+        "text": "MIGA guarantees loans from Crédit Agricole CIB and Société Générale to OCP Group to expand the UM6P campus in Rabat with academic, sports and residential buildings and a 1,500-seat conference centre. It is the education standard.",
+        "by": [
+          "MIGA",
+          "OCP Group",
+          "UM6P"
+        ],
+        "url": "https://miga.org/press-release/miga-guarantee-expand-moroccos-um6p-campus"
       }
     ]
   },
@@ -203,11 +828,39 @@
     "heading": "Already working in Morocco.",
     "items": [
       {
-        "standard": "In preparation",
-        "name": "The enterprises building Perfect Morocco",
-        "text": "The Stewards are verifying the companies and social enterprises already delivering the seven basic living standards in Morocco. Suggest one to include.",
-        "source": "Suggest an enterprise",
-        "url": "mailto:contact@perfectnations.org?subject=An%20enterprise%20for%20Perfect%20Morocco"
+        "standard": "Food",
+        "name": "Kazyon",
+        "text": "A discount grocer with more than 150 stores in Morocco, part of the largest discount retailer in the Arab world and Africa. IFC lent it US$30 million in March 2025, with more than 3,000 direct jobs expected.",
+        "source": "IFC, 2025",
+        "url": "https://www.ifc.org/en/pressroom/2025/ifc-and-kazyon-strengthen-partnership-to-boost-morocco-s-food-retail-sector-create"
+      },
+      {
+        "standard": "Shelter",
+        "name": "Yakeey",
+        "text": "A Casablanca platform that joins property search, valuation, brokerage and home financing, with more than 800 independent agents, nearly half of them women. IFC invested in its US$15 million Series A in January 2026.",
+        "source": "IFC, 2026",
+        "url": "https://www.ifc.org/en/pressroom/2026/yakeey-and-ifc-partner-to-expand-digital-real-estate-infrastructure-in-morocco"
+      },
+      {
+        "standard": "Energy",
+        "name": "ACWA Power",
+        "text": "A power developer with seven projects in Morocco and 765 MW of installed capacity, representing nearly US$3.2 billion of investment. In August 2025 it signed 30-year contracts for Noor Midelt II and III, 800 MW of solar power with battery storage.",
+        "source": "Enerdata, 2025",
+        "url": "https://www.enerdata.net/publications/daily-energy-news/acwa-power-secures-noor-midelt-ii-iii-solarbess-projects-morocco.html"
+      },
+      {
+        "standard": "Education",
+        "name": "Mohammed VI Polytechnic University (UM6P)",
+        "text": "A university with 5,684 students, including 721 doctoral students. A MIGA guarantee of €243.2 million in September 2024 backs the expansion of its Rabat campus.",
+        "source": "MIGA, 2024",
+        "url": "https://miga.org/press-release/miga-guarantee-expand-moroccos-um6p-campus"
+      },
+      {
+        "standard": "Livelihood",
+        "name": "Al Amana Microfinance",
+        "text": "A microfinance institution with 2,400 employees and 647 branches, from the largest cities to the most isolated areas. The EBRD lent it up to €20 million in January 2025 for small businesses led by people under 35.",
+        "source": "EBRD, 2025",
+        "url": "https://www.ebrd.com/home/news-and-events/news/2025/EBRD-and-EU-promote-youth-entrepreneurship-in-Morocco.html"
       }
     ]
   },
@@ -343,5 +996,6 @@
     }
   ],
   "dispatches": [],
-  "checked": "2026-11-06T11:22Z"
+  "checked": "2026-11-06T11:22Z",
+  "reviewed": "2026-11-09T07:23Z"
 }
