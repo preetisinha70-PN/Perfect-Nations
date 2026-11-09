@@ -1,0 +1,571 @@
+<!-- ===========================================================================
+PERFECT NATIONS - HOMEPAGE - IMAGINE A PERFECT NATION - v1.0 - 2026-11-09
+Served live from GitHub (pages/home-imagine.html); part of the one-file homepage (pages/home.html),
+placed after the hero and the Capital Wire. The Steward-General, 9 Nov 2026: "Make the site lively,
+exciting and easy to understand", with the story of a Perfect Nation as the opening.
+A scrolling story in three acts, one headline and one line each:
+  01 The world today   the people still in extreme poverty, one dot for every million (read live
+                       from figures/perfect-capita.json, Livelihood: World Bank, September 2026,
+                       2024 data); 2.3 billion in 1990 (World Bank, Poverty overview, 2026)
+  02 Imagine           the dots gather into the seven stars of the logo, one standard lit at a time,
+                       Food first; Vietnam's electricity, 14% in 1993 to over 99% (World Bank, 2018)
+  03 How               the dots build the whole logo: the cup (01 Assets), the laurels (02 Capital),
+                       the seven stars (03 Solutions), each lit as its step appears
+The dots are drawn on one canvas from the shapes of the logo kit (pnk-cl, pnk-cc, pnk-s0..6). The
+stage pins while the story scrolls (sticky; if a parent stops sticky from working, the script pins it
+itself). Without the script, with reduced motion, or in the Elementor editor, the three acts simply
+stack, with the whole logo drawn once. Gold marks the logo and the actions only.
+No class or id here contains the word for the logo's wreath (the header's sitewide rule).
+=========================================================================== -->
+<style>
+#pn-imagine{
+  --bg:#0B3D45; --bg2:#082A30; --bg3:#061F24;
+  --fg:#F5F1E8; --mut:rgba(245,241,232,.84); --dim:rgba(245,241,232,.6); --hair:rgba(245,241,232,.16);
+  --acc:#E3C258; --accs:#F0D68F; --accrgb:227,194,88; --onacc:#1A140C;
+  --hd:var(--pn-font-heading,"Barlow Condensed","Arial Narrow",Arial,sans-serif);
+  --bd:var(--pn-font-body,"Barlow Semi Condensed",Arial,sans-serif);
+  --pnim-top:0px;
+  position:relative; isolation:isolate;
+  width:100vw; margin-left:calc(50% - 50vw);
+  color:var(--fg); font-family:var(--bd); line-height:1.45; box-sizing:border-box;
+  background:
+    radial-gradient(60% 70% at 78% 40%, rgba(15,76,92,.95) 0%, transparent 70%),
+    radial-gradient(45% 60% at 8% 100%, rgba(227,194,88,.07) 0%, transparent 70%),
+    linear-gradient(180deg, var(--bg2) 0%, var(--bg3) 100%);
+}
+#pn-imagine *,#pn-imagine *::before,#pn-imagine *::after{ box-sizing:border-box; }
+.elementor-widget-html:has(#pn-imagine),
+.elementor-widget:has(#pn-imagine),
+.e-con-inner:has(#pn-imagine),
+.e-con:has(#pn-imagine){
+  padding-top:0 !important; padding-bottom:0 !important;
+  --widgets-spacing:0px !important; row-gap:0 !important;
+}
+#pn-imagine h2,#pn-imagine h3,#pn-imagine p{ text-shadow:none !important; }
+
+/* ---------- the stacked layout (no script, reduced motion, the editor) ---------- */
+#pn-imagine .pnim-stage{ position:relative; width:100%; max-width:1240px; margin:0 auto; padding:clamp(30px,5vh,56px) clamp(20px,4vw,48px); }
+#pn-imagine .pnim-in{ display:grid; grid-template-columns:minmax(0,1fr) minmax(0,.9fr); gap:20px clamp(28px,5vw,72px); align-items:center; }
+#pn-imagine .pnim-head{ grid-column:1 / -1; }
+#pn-imagine canvas.pnim-cv{ display:none; }
+#pn-imagine .pnim-kick{
+  display:flex; align-items:center; gap:12px; margin:0 0 14px;
+  font-family:var(--hd); font-size:.74rem; font-weight:700; letter-spacing:.3em; text-transform:uppercase; color:var(--acc);
+}
+#pn-imagine .pnim-kick::before{ content:""; width:26px; height:1px; background:rgba(var(--accrgb),.7); }
+#pn-imagine .pnim-rail{ display:none; }
+#pn-imagine .pnim-acts{ display:grid; gap:34px; }
+#pn-imagine .pnim-act{ position:relative; }
+#pn-imagine .pnim-no{
+  margin:0 0 6px; font-family:var(--hd); font-size:.7rem; font-weight:700; letter-spacing:.26em; text-transform:uppercase; color:var(--dim);
+}
+#pn-imagine .pnim-big{
+  display:block; margin:0; font-family:var(--hd); font-weight:700; font-size:clamp(4.6rem,9.4vw,8.6rem); line-height:.86; letter-spacing:-.04em;
+  color:var(--fg); font-variant-numeric:tabular-nums;
+}
+#pn-imagine h3.pnim-h{
+  margin:6px 0 0; font-family:var(--hd); font-weight:600; font-size:clamp(1.9rem,3.4vw,3.2rem); line-height:.98; letter-spacing:-.02em;
+  color:var(--fg) !important; text-transform:none; text-wrap:balance; max-width:18ch;
+}
+#pn-imagine .pnim-line{
+  margin:12px 0 0; max-width:42ch; font-family:var(--hd); font-weight:500; font-size:clamp(1.1rem,1.6vw,1.42rem); line-height:1.2; color:var(--mut); text-wrap:pretty;
+}
+#pn-imagine .pnim-src{ margin:10px 0 0; font-size:.74rem; line-height:1.35; color:var(--dim); max-width:56ch; }
+#pn-imagine .pnim-src a{ color:var(--dim) !important; text-decoration:underline; text-decoration-color:rgba(245,241,232,.3); text-underline-offset:2px; }
+
+#pn-imagine ul.pnim-std{
+  list-style:none; margin:14px 0 0; padding:0; display:flex; flex-wrap:wrap; gap:8px 8px; max-width:34rem;
+}
+#pn-imagine .pnim-std li{
+  display:inline-flex; align-items:center; gap:7px; margin:0; padding:7px 13px 6px 10px; border-radius:999px;
+  border:1px solid var(--hair); font-family:var(--hd); font-weight:600; font-size:clamp(.95rem,1.15vw,1.08rem); letter-spacing:.02em; color:var(--fg);
+  transition:border-color .45s ease, background .45s ease, color .45s ease, transform .45s cubic-bezier(.22,1,.36,1);
+}
+#pn-imagine .pnim-std li::before{
+  content:"\2605"; font-family:Arial,sans-serif; font-size:.82rem; line-height:1; color:var(--acc);
+  transition:opacity .45s ease, transform .45s cubic-bezier(.22,1,.36,1);
+}
+#pn-imagine ol.pnim-steps{ list-style:none; margin:14px 0 0; padding:0; border-top:1px solid var(--hair); max-width:34rem; }
+#pn-imagine .pnim-steps li{
+  display:grid; grid-template-columns:44px minmax(0,1fr); gap:2px 12px; align-items:baseline;
+  margin:0; padding:11px 2px 10px; border-bottom:1px solid var(--hair);
+  transition:opacity .5s ease, transform .5s cubic-bezier(.22,1,.36,1);
+}
+#pn-imagine .pnim-steps small{ grid-row:span 2; font-family:var(--hd); font-weight:700; font-size:1.5rem; line-height:1; color:var(--acc); letter-spacing:-.01em; }
+#pn-imagine .pnim-steps b{ font-family:var(--hd); font-weight:600; font-size:clamp(1.25rem,1.7vw,1.55rem); line-height:1.02; color:var(--fg); }
+#pn-imagine .pnim-steps b i{ font-style:normal; font-weight:500; color:var(--dim); font-size:.72em; letter-spacing:.06em; text-transform:uppercase; margin-left:6px; }
+#pn-imagine .pnim-steps span{ font-size:clamp(.98rem,1.1vw,1.06rem); line-height:1.35; color:var(--mut); }
+
+#pn-imagine .pnim-ctas{ display:flex; flex-wrap:wrap; gap:10px; margin-top:18px; }
+#pn-imagine .pnim-btn{
+  display:inline-flex; align-items:center; justify-content:center; gap:12px;
+  min-height:44px; padding:13px 24px 11px; border-radius:999px; text-decoration:none !important; cursor:pointer;
+  font-family:var(--hd); font-size:.74rem; font-weight:700; letter-spacing:.19em; text-transform:uppercase;
+  border:1px solid var(--acc); background:var(--acc); color:var(--onacc) !important;
+  box-shadow:0 10px 28px rgba(var(--accrgb),.22);
+  transition:transform .22s ease, background .22s ease, border-color .22s ease;
+}
+#pn-imagine .pnim-btn::after{ content:"\2192"; font-family:Arial,sans-serif; font-size:1rem; letter-spacing:0; transition:transform .3s cubic-bezier(.22,1,.36,1); }
+#pn-imagine .pnim-btn:hover{ transform:translateY(-2px); background:var(--accs); border-color:var(--accs); }
+#pn-imagine .pnim-btn:hover::after{ transform:translateX(6px); }
+#pn-imagine .pnim-btn:focus-visible,#pn-imagine .pnim-rail button:focus-visible{ outline:2px solid var(--accs); outline-offset:3px; }
+#pn-imagine .pnim-btn--line{ background:transparent; color:var(--acc) !important; border-color:rgba(var(--accrgb),.6); box-shadow:none; }
+#pn-imagine .pnim-btn--line:hover{ background:rgba(var(--accrgb),.12); }
+
+#pn-imagine .pnim-art{ position:relative; width:100%; aspect-ratio:1/1; max-width:520px; justify-self:center; }
+#pn-imagine svg.pnim-logo{ display:block; width:100%; height:100%; }
+#pn-imagine .pnim-cap{
+  position:absolute; left:0; right:0; bottom:-4px; margin:0; text-align:center;
+  font-family:var(--hd); font-size:.72rem; font-weight:700; letter-spacing:.26em; text-transform:uppercase; color:var(--dim);
+}
+
+/* ---------- the live story (the script adds pnim--live) ---------- */
+#pn-imagine.pnim--live .pnim-track{ position:relative; height:330vh; height:330svh; }
+#pn-imagine.pnim--live .pnim-stage{
+  position:sticky; top:var(--pnim-top); max-width:none; margin:0;
+  height:calc(100vh - var(--pnim-top)); height:calc(100svh - var(--pnim-top)); min-height:520px;
+  padding:0; display:block; overflow:hidden;
+}
+#pn-imagine.pnim--live.pnim--jspin .pnim-stage{ position:relative; top:0; will-change:transform; }
+#pn-imagine.pnim--live canvas.pnim-cv{ display:block; position:absolute; inset:0; width:100%; height:100%; z-index:0; pointer-events:none; }
+#pn-imagine.pnim--live .pnim-stage::before{
+  content:""; position:absolute; inset:0; z-index:1; pointer-events:none;
+  background:linear-gradient(90deg, rgba(6,31,36,.78) 0%, rgba(6,31,36,.42) 38%, transparent 58%);
+}
+#pn-imagine.pnim--live .pnim-in{
+  position:relative; z-index:2; height:100%; width:100%; max-width:1240px; margin:0 auto;
+  padding:clamp(22px,4.4vh,44px) clamp(20px,4vw,48px) clamp(22px,4vh,40px);
+  display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); grid-template-rows:auto minmax(0,1fr); gap:0 clamp(28px,5vw,72px);
+}
+#pn-imagine.pnim--live .pnim-head{ grid-column:1 / -1; display:flex; align-items:center; justify-content:space-between; gap:18px; flex-wrap:wrap; }
+#pn-imagine.pnim--live .pnim-kick{ margin:0; }
+#pn-imagine.pnim--live .pnim-rail{ display:flex; gap:6px; margin:0; padding:0; list-style:none; }
+#pn-imagine .pnim-rail li{ margin:0; }
+#pn-imagine .pnim-rail button{
+  position:relative; display:flex; flex-direction:column; align-items:flex-start; gap:6px; min-width:96px; min-height:44px; padding:8px 4px 6px;
+  background:none; border:0; cursor:pointer; color:var(--dim);
+  font-family:var(--hd); font-size:.68rem; font-weight:700; letter-spacing:.22em; text-transform:uppercase; text-align:left;
+  transition:color .3s ease;
+}
+#pn-imagine .pnim-rail button i{ display:block; width:100%; height:2px; background:var(--hair); border-radius:2px; overflow:hidden; }
+#pn-imagine .pnim-rail button i::after{ content:""; display:block; height:100%; width:calc(var(--f,0) * 100%); background:var(--acc); }
+#pn-imagine .pnim-rail button.is-on{ color:var(--fg); }
+#pn-imagine.pnim--live .pnim-acts{ position:relative; display:block; grid-column:1; align-self:stretch; }
+#pn-imagine.pnim--live .pnim-act{
+  position:absolute; left:0; right:0; top:50%; transform:translateY(-50%);
+  opacity:0; visibility:hidden; will-change:opacity, transform;
+}
+#pn-imagine.pnim--live .pnim-art{ grid-column:2; align-self:center; max-width:none; aspect-ratio:auto; height:100%; }
+#pn-imagine.pnim--live .pnim-art svg.pnim-logo{ display:none; }
+#pn-imagine.pnim--live .pnim-cap{ bottom:2%; opacity:var(--capo,0); transition:opacity .5s ease; }
+#pn-imagine.pnim--live .pnim-std li{ border-color:var(--hair); color:var(--dim); }
+#pn-imagine.pnim--live .pnim-std li::before{ opacity:.25; transform:scale(.7); }
+#pn-imagine.pnim--live .pnim-std li.is-lit{ border-color:rgba(var(--accrgb),.65); background:rgba(var(--accrgb),.1); color:var(--fg); transform:translateY(-2px); }
+#pn-imagine.pnim--live .pnim-std li.is-lit::before{ opacity:1; transform:scale(1.15); }
+#pn-imagine.pnim--live .pnim-steps li{ opacity:.28; transform:translateX(-6px); }
+#pn-imagine.pnim--live .pnim-steps li.is-lit{ opacity:1; transform:none; }
+
+@media (max-width:860px){
+  #pn-imagine .pnim-in{ grid-template-columns:minmax(0,1fr); }
+  #pn-imagine .pnim-art{ max-width:340px; }
+  #pn-imagine.pnim--live .pnim-stage::before{ background:linear-gradient(180deg, transparent 0%, transparent 34%, rgba(6,31,36,.72) 52%, rgba(6,31,36,.86) 100%); }
+  #pn-imagine.pnim--live .pnim-in{
+    grid-template-columns:minmax(0,1fr); grid-template-rows:auto minmax(0,40%) minmax(0,1fr);
+    padding:14px 18px 18px; gap:0;
+  }
+  #pn-imagine.pnim--live .pnim-head{ gap:8px; }
+  #pn-imagine.pnim--live .pnim-art{ grid-column:1; grid-row:2; height:100%; }
+  #pn-imagine.pnim--live .pnim-acts{ grid-column:1; grid-row:3; }
+  #pn-imagine.pnim--live .pnim-act{ top:0; transform:none; }
+  #pn-imagine.pnim--live .pnim-cap{ display:none; }
+  #pn-imagine .pnim-rail button{ min-width:0; flex:1 1 0; font-size:.6rem; letter-spacing:.16em; padding:6px 2px 4px; }
+  #pn-imagine.pnim--live .pnim-rail{ width:100%; }
+}
+@media (max-width:760px){
+  #pn-imagine .pnim-stage{ padding:26px 18px 28px; }
+  #pn-imagine .pnim-kick{ font-size:.66rem; letter-spacing:.24em; }
+  #pn-imagine .pnim-big{ font-size:clamp(4rem,21vw,5.6rem); }
+  #pn-imagine h3.pnim-h{ font-size:clamp(1.6rem,7.6vw,2.15rem); max-width:none; }
+  #pn-imagine .pnim-line{ margin-top:8px; font-size:clamp(1.02rem,4.4vw,1.16rem); }
+  #pn-imagine .pnim-src{ font-size:.7rem; margin-top:8px; }
+  #pn-imagine ul.pnim-std{ gap:6px; margin-top:10px; }
+  #pn-imagine .pnim-std li{ padding:6px 10px 5px 8px; font-size:.92rem; }
+  #pn-imagine ol.pnim-steps{ margin-top:8px; }
+  #pn-imagine .pnim-steps li{ grid-template-columns:34px minmax(0,1fr); padding:8px 2px 7px; }
+  #pn-imagine .pnim-steps small{ font-size:1.2rem; }
+  #pn-imagine .pnim-steps b{ font-size:1.14rem; }
+  #pn-imagine .pnim-steps span{ font-size:.95rem; line-height:1.3; }
+  #pn-imagine .pnim-ctas{ flex-direction:column; gap:8px; margin-top:12px; }
+  #pn-imagine .pnim-btn{ width:100%; padding:12px 20px 10px; }
+}
+@media (max-width:760px) and (max-height:700px){
+  #pn-imagine.pnim--live .pnim-in{ grid-template-rows:auto minmax(0,32%) minmax(0,1fr); }
+  #pn-imagine .pnim-big{ font-size:clamp(3.4rem,17vw,4.6rem); }
+  #pn-imagine .pnim-steps span{ display:none; }
+}
+@media (prefers-reduced-motion:reduce){
+  #pn-imagine *{ transition:none !important; animation:none !important; }
+}
+</style>
+
+<section id="pn-imagine" aria-labelledby="pnim-k">
+  <div class="pnim-track">
+    <div class="pnim-stage">
+      <canvas class="pnim-cv" aria-hidden="true"></canvas>
+      <div class="pnim-in">
+        <div class="pnim-head">
+          <h2 class="pnim-kick" id="pnim-k">Imagine a Perfect Nation</h2>
+          <ol class="pnim-rail" aria-label="The story in three parts">
+            <li><button type="button" data-go="0">01 Today<i></i></button></li>
+            <li><button type="button" data-go="1">02 Imagine<i></i></button></li>
+            <li><button type="button" data-go="2">03 How<i></i></button></li>
+          </ol>
+        </div>
+        <div class="pnim-acts">
+          <div class="pnim-act" data-act="0">
+            <p class="pnim-no">01 &#183; The world today</p>
+            <b class="pnim-big" data-pnim="pov">824m</b>
+            <h3 class="pnim-h">people still live on less than $3 a day.</h3>
+            <p class="pnim-line">Down from 2.3 billion in 1990. Each dot here is one million of them.</p>
+            <p class="pnim-src">Sources: <a href="https://blogs.worldbank.org/en/opendata/september-2026-global-poverty-update-from-the-world-bank--one-in" data-pnim="povsrc">World Bank, September 2026 (2024 data)</a>; 1990: <a href="https://www.worldbank.org/en/topic/poverty/overview">World Bank, Poverty overview, 2026</a>.</p>
+          </div>
+          <div class="pnim-act" data-act="1">
+            <p class="pnim-no">02 &#183; Imagine</p>
+            <h3 class="pnim-h">Now imagine a nation where every citizen has all seven.</h3>
+            <ul class="pnim-std" aria-label="The seven basic standards of living">
+              <li data-star="3">Food</li><li data-star="2">Water</li><li data-star="4">Shelter</li><li data-star="1">Energy</li><li data-star="5">Education</li><li data-star="0">Health</li><li data-star="6">Livelihood</li>
+            </ul>
+            <p class="pnim-line">It can be done: Vietnam took electricity from 14% of its people in 1993 to over 99%.</p>
+            <p class="pnim-src">Source: <a href="https://www.worldbank.org/en/news/speech/2018/11/27/sustainable-energy-future-in-vietnam">World Bank, 2018</a>.</p>
+          </div>
+          <div class="pnim-act" data-act="2">
+            <p class="pnim-no">03 &#183; How a nation gets there</p>
+            <h3 class="pnim-h">Assets. Capital. Solutions.</h3>
+            <ol class="pnim-steps">
+              <li data-step="0"><small>01</small><b>Assets<i>The cup</i></b><span>Value all that the nation owns.</span></li>
+              <li data-step="1"><small>02</small><b>Capital<i>The laurels</i></b><span>Raise capital against it through innovative financing for development.</span></li>
+              <li data-step="2"><small>03</small><b>Solutions<i>The stars</i></b><span>Design, price and track each Solution with super intelligence.</span></li>
+            </ol>
+            <div class="pnim-ctas">
+              <a class="pnim-btn" href="https://perfectnations.org/blueprints/">Find your nation</a>
+              <a class="pnim-btn pnim-btn--line" href="#pn-solutions">See the Solutions</a>
+            </div>
+          </div>
+        </div>
+        <div class="pnim-art">
+          <svg class="pnim-logo" viewBox="12 12 488 488" role="img" aria-label="The logo of Perfect Nations: the cup, the laurels and the seven stars"><use href="#pnk-cl" fill="url(#pnk-gold)"/><use href="#pnk-s0" fill="url(#pnk-gold)"/><use href="#pnk-s1" fill="url(#pnk-gold)"/><use href="#pnk-s2" fill="url(#pnk-gold)"/><use href="#pnk-s3" fill="url(#pnk-gold)"/><use href="#pnk-s4" fill="url(#pnk-gold)"/><use href="#pnk-s5" fill="url(#pnk-gold)"/><use href="#pnk-s6" fill="url(#pnk-gold)"/></svg>
+          <p class="pnim-cap">The whole logo: a Perfect Nation</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+(function(){
+  var root = document.getElementById('pn-imagine');
+  if (!root || root.getAttribute('data-pnim-on')) { return; }
+  root.setAttribute('data-pnim-on', '1');
+
+  var RAW = 'https://raw.githubusercontent.com/preetisinha70-PN/perfect-nations/main/';
+  var CDN = 'https://cdn.jsdelivr.net/gh/preetisinha70-PN/perfect-nations@main/';
+  var numEl = root.querySelector('[data-pnim="pov"]');
+  var N = 824;
+
+  function getJSON(path){
+    return fetch(RAW + path, { cache: 'no-cache' }).then(function(r){ if (!r.ok) { throw new Error(r.status); } return r.json(); })
+      .catch(function(){ return fetch(CDN + path, { cache: 'no-cache' }).then(function(r){ if (!r.ok) { throw new Error(r.status); } return r.json(); }); });
+  }
+  function inEditor(){
+    return document.body.classList.contains('elementor-editor-active') ||
+      !!(window.elementorFrontend && window.elementorFrontend.isEditMode && window.elementorFrontend.isEditMode());
+  }
+  var reduce = !!(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
+  var cv = root.querySelector('canvas.pnim-cv');
+  var live = !reduce && cv && cv.getContext && typeof Path2D !== 'undefined' && !inEditor();
+
+  /* ---------- the live figure: one dot for every million ---------- */
+  var counted = false;
+  function showNum(v){ if (numEl) { numEl.textContent = Math.round(v) + 'm'; } }
+  getJSON('figures/perfect-capita.json').then(function(d){
+    var w = ((d && d.world) || []).filter(function(x){ return x && x.standard === 'Livelihood'; })[0];
+    if (!w) { return; }
+    var v = parseFloat(String(w.value || '').replace(/,/g, '')), u = String(w.unit || '').trim();
+    if (u === 'bn') { v = v * 1000; }
+    if (!(v >= 50 && v <= 3000) || !/^(m|bn)$/.test(u)) { return; }
+    N = Math.round(v);
+    if (!counted && !live) { showNum(N); }
+    var a = root.querySelector('[data-pnim="povsrc"]');
+    if (a && w.source) { a.textContent = w.source; }
+    if (a && w.url && /^https:\/\//.test(w.url)) { a.href = w.url; }
+    if (built) { build(); }
+  }).catch(function(){});
+
+  if (!live) { return; }
+  root.classList.add('pnim--live');
+
+  var track = root.querySelector('.pnim-track');
+  var stage = root.querySelector('.pnim-stage');
+  var artBox = root.querySelector('.pnim-art');
+  var acts = [].slice.call(root.querySelectorAll('.pnim-act'));
+  var stds = [].slice.call(root.querySelectorAll('.pnim-std li'));
+  var steps = [].slice.call(root.querySelectorAll('.pnim-steps li'));
+  var rail = [].slice.call(root.querySelectorAll('.pnim-rail button'));
+  var ctx = cv.getContext('2d');
+  var dpr = 1, W = 0, H = 0, art = { x: 0, y: 0, w: 1, h: 1 }, phone = false;
+  var dots = [], shapes = null, built = false, jsPin = false, running = false, visible = false;
+
+  /* timing of the story, as shares of the scroll through it */
+  var A0 = 0.20, A1 = 0.42, B0 = 0.60, B1 = 0.78;
+  var LIGHT = [3, 2, 4, 1, 5, 0, 6];          /* Food, the centre star, first; then outward */
+  var STEP = [0.74, 0.82, 0.90];              /* the cup, the laurels, the stars */
+  function starLit(k){ return 0.40 + LIGHT.indexOf(k) * 0.03; }
+
+  function clamp(v, a, b){ return v < a ? a : (v > b ? b : v); }
+  function ease(t){ return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2; }
+  function smooth(t){ t = clamp(t, 0, 1); return t * t * (3 - 2 * t); }
+  function rnd(seed){ var s = seed % 2147483647; if (s <= 0) { s += 2147483646; } return function(){ s = s * 16807 % 2147483647; return (s - 1) / 2147483646; }; }
+
+  /* ---------- the shapes of the logo, from the logo kit ---------- */
+  function polyPath(pts){
+    var n = String(pts).trim().split(/[\s,]+/).map(Number), p = new Path2D();
+    for (var i = 0; i + 1 < n.length; i += 2) { if (i === 0) { p.moveTo(n[i], n[i + 1]); } else { p.lineTo(n[i], n[i + 1]); } }
+    p.closePath(); return p;
+  }
+  function readKit(){
+    var cl = document.getElementById('pnk-cl'), st = [], i;
+    for (i = 0; i < 7; i++) { st.push(document.getElementById('pnk-s' + i)); }
+    if (!cl || !cl.getAttribute('d')) { return null; }
+    for (i = 0; i < 7; i++) { if (!st[i] || !st[i].getAttribute('d')) { return null; } }
+    var poly = document.querySelector('#pnk-cc polygon');
+    try {
+      return {
+        cl: new Path2D(cl.getAttribute('d')),
+        rule: cl.getAttribute('fill-rule') === 'evenodd' ? 'evenodd' : 'nonzero',
+        stars: st.map(function(s){ return new Path2D(s.getAttribute('d')); }),
+        cup: poly ? polyPath(poly.getAttribute('points')) : null
+      };
+    } catch (e) { return null; }
+  }
+  /* seven plain stars in an arc, if the logo kit is not on the page */
+  function plainStars(){
+    var out = [], i, j;
+    for (i = 0; i < 7; i++) {
+      var ang = Math.PI * (1.12 + 0.76 * i / 6), cx = 256 + 175 * Math.cos(ang), cy = 250 + 175 * Math.sin(ang);
+      var R = i === 3 ? 34 : 22, p = new Path2D();
+      for (j = 0; j < 10; j++) {
+        var r = j % 2 ? R * 0.42 : R, a = -Math.PI / 2 + j * Math.PI / 5;
+        if (j === 0) { p.moveTo(cx + r * Math.cos(a), cy + r * Math.sin(a)); } else { p.lineTo(cx + r * Math.cos(a), cy + r * Math.sin(a)); }
+      }
+      p.closePath(); out.push(p);
+    }
+    return { cl: null, rule: 'nonzero', stars: out, cup: null };
+  }
+  /* the filled points of a shape, in the logo's own units (viewBox 12 12 488 488) */
+  function pixels(draw, res){
+    var S = Math.round(488 * res), c = document.createElement('canvas'); c.width = S; c.height = S;
+    var g = c.getContext('2d'); g.setTransform(res, 0, 0, res, -12 * res, -12 * res); g.fillStyle = '#000'; draw(g);
+    var data = g.getImageData(0, 0, S, S).data, out = [], i;
+    for (i = 3; i < data.length; i += 4) { if (data[i] > 150) { var q = (i - 3) / 4; out.push(12 + ((q % S) + 0.5) / res, 12 + (Math.floor(q / S) + 0.5) / res); } }
+    return out;
+  }
+  function bbox(list){
+    var b = { x0: 1e9, y0: 1e9, x1: -1e9, y1: -1e9 };
+    list.forEach(function(px){ for (var i = 0; i < px.length; i += 2) { b.x0 = Math.min(b.x0, px[i]); b.x1 = Math.max(b.x1, px[i]); b.y0 = Math.min(b.y0, px[i + 1]); b.y1 = Math.max(b.y1, px[i + 1]); } });
+    return b;
+  }
+  function pick(px, r){ if (!px || px.length < 2) { return [256, 256]; } var k = Math.floor(r() * (px.length / 2)) * 2; return [px[k] + (r() - 0.5) * 0.8, px[k + 1] + (r() - 0.5) * 0.8]; }
+
+  var SH = null;
+  function sampleShapes(){
+    shapes = readKit() || plainStars();
+    var res = 1, starPx = [], k;
+    for (k = 0; k < 7; k++) { (function(p){ starPx.push(pixels(function(g){ g.fill(p); }, res)); })(shapes.stars[k]); }
+    var cupPx = [], wreathPx = [];
+    if (shapes.cl) {
+      cupPx = pixels(function(g){ if (shapes.cup) { g.save(); g.clip(shapes.cup); } g.fill(shapes.cl, shapes.rule); if (shapes.cup) { g.restore(); } }, 1);
+      wreathPx = shapes.cup ? pixels(function(g){
+        var outer = new Path2D(); outer.rect(-60, -60, 640, 640); outer.addPath(shapes.cup);
+        g.save(); g.clip(outer, 'evenodd'); g.fill(shapes.cl, shapes.rule); g.restore();
+      }, 1) : [];
+      if (!shapes.cup) { wreathPx = cupPx; }
+    }
+    var all = starPx.concat([cupPx, wreathPx]).filter(function(p){ return p.length; });
+    SH = { starPx: starPx, cupPx: cupPx, wreathPx: wreathPx, starBox: bbox(starPx), logoBox: bbox(all) };
+  }
+
+  /* ---------- the dots ---------- */
+  function build(){
+    if (!SH) { return; }
+    var r = rnd(20261109), i, k;
+    var areas = SH.starPx.map(function(p){ return Math.max(1, p.length); }), tot = areas.reduce(function(a, b){ return a + b; }, 0);
+    var hasLogo = SH.cupPx.length > 0;
+    var nStar2 = hasLogo ? Math.round(N * 0.24) : N, nCup = hasLogo ? Math.round(N * 0.30) : 0;
+    var order = []; for (i = 0; i < N; i++) { order.push(i); }
+    for (i = N - 1; i > 0; i--) { var j = Math.floor(r() * (i + 1)), t = order[i]; order[i] = order[j]; order[j] = t; }
+    dots = [];
+    for (i = 0; i < N; i++) {
+      var u = r() * tot, s = 0; for (k = 0; k < 7; k++) { u -= areas[k]; if (u <= 0) { s = k; break; } s = k; }
+      var f1 = pick(SH.starPx[s], r), rank = order[i], g, f2;
+      if (rank < nStar2) { g = 2; f2 = pick(SH.starPx[s], r); }
+      else if (rank < nStar2 + nCup) { g = 0; f2 = pick(SH.cupPx, r); }
+      else { g = 1; f2 = pick(SH.wreathPx.length ? SH.wreathPx : SH.cupPx, r); }
+      dots.push({ u: r(), v: r(), ph: r() * 6.283, sp: 0.5 + r(), d: r(), d2: r(), sw: (r() - 0.5) * 2, star: s, g: g, f1: f1, f2: f2, tw: r() * 6.283 });
+    }
+    built = true;
+    draw(performance.now());
+  }
+
+  /* ---------- sizes and the pin ---------- */
+  function headerBottom(){
+    var bar = document.querySelector('.pn-hd');
+    if (!bar) { return 0; }
+    var cs = window.getComputedStyle(bar), rc = bar.getBoundingClientRect();
+    if ((cs.position === 'fixed' || cs.position === 'sticky') && rc.height > 20 && rc.height < 200 && rc.top <= 1) { return Math.max(0, Math.round(rc.bottom)); }
+    return 0;
+  }
+  function measure(){
+    root.style.setProperty('--pnim-top', headerBottom() + 'px');
+    phone = window.innerWidth <= 860;
+    var sr = stage.getBoundingClientRect(), ar = artBox.getBoundingClientRect();
+    dpr = Math.min(window.devicePixelRatio || 1, 2);
+    W = Math.max(1, Math.round(sr.width)); H = Math.max(1, Math.round(sr.height));
+    cv.width = Math.round(W * dpr); cv.height = Math.round(H * dpr);
+    art = { x: ar.left - sr.left, y: ar.top - sr.top, w: Math.max(1, ar.width), h: Math.max(1, ar.height) };
+  }
+  function fit(box, pad){
+    var bw = box.x1 - box.x0, bh = box.y1 - box.y0, sc = Math.min(art.w * (1 - pad) / bw, art.h * (1 - pad) / bh);
+    return { s: sc, x: art.x + (art.w - bw * sc) / 2 - box.x0 * sc, y: art.y + (art.h - bh * sc) / 2 - box.y0 * sc };
+  }
+  function progress(){
+    var tr = track.getBoundingClientRect(), span = tr.height - stage.offsetHeight;
+    return { p: span > 0 ? clamp(-tr.top / span, 0, 1) : 0, top: tr.top, span: span };
+  }
+  function pin(pr){
+    if (!jsPin) {
+      if (pr.top < -40 && pr.top > -pr.span + 40) {
+        var st = stage.getBoundingClientRect().top, want = parseFloat(getComputedStyle(root).getPropertyValue('--pnim-top')) || 0;
+        if (Math.abs(st - want) > 4) { jsPin = true; root.classList.add('pnim--jspin'); }
+      }
+    }
+    if (jsPin) { stage.style.transform = 'translate3d(0,' + clamp(-pr.top, 0, Math.max(0, pr.span)) + 'px,0)'; }
+  }
+
+  /* ---------- one frame ---------- */
+  var glow = null;
+  function sprite(){
+    var s = 32, c = document.createElement('canvas'); c.width = s; c.height = s;
+    var g = c.getContext('2d'), gr = g.createRadialGradient(s / 2, s / 2, 0, s / 2, s / 2, s / 2);
+    gr.addColorStop(0, 'rgba(255,226,140,0.95)'); gr.addColorStop(0.25, 'rgba(240,200,95,0.55)'); gr.addColorStop(1, 'rgba(227,194,88,0)');
+    g.fillStyle = gr; g.fillRect(0, 0, s, s); return c;
+  }
+  function setActs(p){
+    var o = [1 - smooth((p - 0.26) / 0.06), smooth((p - 0.30) / 0.06) * (1 - smooth((p - 0.58) / 0.06)), smooth((p - 0.62) / 0.06)];
+    acts.forEach(function(a, i){
+      var v = o[i];
+      a.style.opacity = v.toFixed(3);
+      a.style.visibility = v < 0.02 ? 'hidden' : 'visible';
+      a.style.pointerEvents = v < 0.5 ? 'none' : 'auto';
+      var y = (1 - v) * 18 * (i === 0 ? -1 : 1);
+      a.style.transform = phone ? 'translateY(' + y.toFixed(1) + 'px)' : 'translateY(calc(-50% + ' + y.toFixed(1) + 'px))';
+    });
+    stds.forEach(function(li){ li.classList.toggle('is-lit', p >= starLit(+li.getAttribute('data-star'))); });
+    steps.forEach(function(li, i){ li.classList.toggle('is-lit', p >= STEP[i]); });
+    var seg = [[0, 0.30], [0.30, 0.62], [0.62, 0.96]];
+    rail.forEach(function(b, i){
+      b.style.setProperty('--f', clamp((p - seg[i][0]) / (seg[i][1] - seg[i][0]), 0, 1).toFixed(3));
+      b.classList.toggle('is-on', p >= seg[i][0] && (i === 2 || p < seg[i][1]));
+    });
+    root.style.setProperty('--capo', smooth((p - 0.92) / 0.05).toFixed(3));
+  }
+  function countUp(){
+    counted = true;
+    var t0 = performance.now(), dur = 1500;
+    (function step(now){ var t = clamp((now - t0) / dur, 0, 1); showNum(N * (1 - Math.pow(1 - t, 3))); if (t < 1) { requestAnimationFrame(step); } })(t0);
+  }
+  function draw(now){
+    if (!built || !W) { return; }
+    var pr = progress(), p = pr.p, time = now / 1000, i;
+    pin(pr); setActs(p);
+    if (!counted && p < 0.3 && pr.top < window.innerHeight * 0.55) { countUp(); }
+    var F1 = fit(SH.starBox, phone ? 0.08 : 0.12), F2 = fit(SH.logoBox, phone ? 0.04 : 0.06);
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0); ctx.clearRect(0, 0, W, H);
+    ghost(p, F1, F2);
+    var rad = phone ? 1.35 : 1.7, gs = (phone ? 9 : 12);
+    var ivory = [], gold = [];
+    for (i = 0; i < dots.length; i++) {
+      var d = dots[i];
+      var x0 = d.u * W + Math.sin(time * 0.22 * d.sp + d.ph) * 14, y0 = d.v * H + Math.cos(time * 0.18 * d.sp + d.ph * 1.3) * 11;
+      var x1 = F1.x + d.f1[0] * F1.s, y1 = F1.y + d.f1[1] * F1.s;
+      var x2 = F2.x + d.f2[0] * F2.s, y2 = F2.y + d.f2[1] * F2.s;
+      var w1 = (A1 - A0) * 0.45, t1 = ease(clamp((p - A0 - d.d * w1) / (A1 - A0 - w1), 0, 1));
+      var w2 = (B1 - B0) * 0.45, t2 = ease(clamp((p - B0 - d.d2 * w2) / (B1 - B0 - w2), 0, 1));
+      var x, y, sx, sy, k;
+      if (t2 > 0) { x = x1 + (x2 - x1) * t2; y = y1 + (y2 - y1) * t2; k = Math.sin(Math.PI * t2) * 60 * d.sw; sx = -(y2 - y1); sy = x2 - x1; }
+      else { x = x0 + (x1 - x0) * t1; y = y0 + (y1 - y0) * t1; k = Math.sin(Math.PI * t1) * 90 * d.sw; sx = -(y1 - y0); sy = x1 - x0; }
+      var L = Math.sqrt(sx * sx + sy * sy) || 1; x += sx / L * k; y += sy / L * k;
+      var shimmer = 0.55 + 0.45 * Math.sin(time * 1.6 + d.tw);
+      var a, lit;
+      if (t2 > 0.98) { lit = p >= STEP[d.g]; a = lit ? 0.75 + 0.25 * shimmer : 0.28 + 0.1 * shimmer; gold.push(x, y, a); }
+      else if (t1 > 0.98 && p >= starLit(d.star)) { gold.push(x, y, 0.75 + 0.25 * shimmer); }
+      else { ivory.push(x, y, (t1 > 0 ? 0.5 : 0.3) + 0.25 * shimmer); }
+    }
+    ctx.fillStyle = 'rgb(245,241,232)';
+    for (i = 0; i < ivory.length; i += 3) { ctx.globalAlpha = ivory[i + 2]; ctx.beginPath(); ctx.arc(ivory[i], ivory[i + 1], rad, 0, 6.2832); ctx.fill(); }
+    ctx.globalCompositeOperation = 'lighter';
+    for (i = 0; i < gold.length; i += 3) { ctx.globalAlpha = gold[i + 2] * 0.55; ctx.drawImage(glow, gold[i] - gs / 2, gold[i + 1] - gs / 2, gs, gs); }
+    ctx.globalCompositeOperation = 'source-over';
+    ctx.fillStyle = 'rgb(240,214,143)';
+    for (i = 0; i < gold.length; i += 3) { ctx.globalAlpha = gold[i + 2]; ctx.beginPath(); ctx.arc(gold[i], gold[i + 1], rad * 1.05, 0, 6.2832); ctx.fill(); }
+    ctx.globalAlpha = 1;
+  }
+  /* the logo itself, faint, under the dots: each part appears as its dots arrive and its step is lit */
+  function fillIn(F, a, fn){
+    if (a < 0.004) { return; }
+    ctx.save(); ctx.setTransform(dpr * F.s, 0, 0, dpr * F.s, dpr * F.x, dpr * F.y);
+    ctx.globalAlpha = a; ctx.fillStyle = '#E3C258'; fn(); ctx.restore();
+  }
+  function ghost(p, F1, F2){
+    var out = 1 - smooth((p - B0) / 0.05), k;
+    for (k = 0; k < 7; k++) { (function(s, a){ fillIn(F1, a, function(){ ctx.fill(s); }); })(shapes.stars[k], 0.2 * smooth((p - starLit(k)) / 0.03) * out); }
+    var aCup = 0.2 * smooth((p - STEP[0]) / 0.04), aWr = 0.2 * smooth((p - STEP[1]) / 0.04), aSt = 0.24 * smooth((p - STEP[2]) / 0.04);
+    if (shapes.cl) {
+      fillIn(F2, aCup, function(){ if (shapes.cup) { ctx.clip(shapes.cup); } ctx.fill(shapes.cl, shapes.rule); });
+      if (shapes.cup) { fillIn(F2, aWr, function(){ var o = new Path2D(); o.rect(-60, -60, 640, 640); o.addPath(shapes.cup); ctx.clip(o, 'evenodd'); ctx.fill(shapes.cl, shapes.rule); }); }
+    }
+    for (k = 0; k < 7; k++) { (function(s){ fillIn(F2, aSt, function(){ ctx.fill(s); }); })(shapes.stars[k]); }
+  }
+  function loop(now){ if (!running) { return; } draw(now); requestAnimationFrame(loop); }
+  function start(){ if (!running) { running = true; requestAnimationFrame(loop); } }
+  function stop(){ running = false; }
+
+  rail.forEach(function(b){
+    b.addEventListener('click', function(){
+      var at = [0.1, 0.5, 0.97][+b.getAttribute('data-go')] || 0, pr = progress();
+      var y = window.pageYOffset + track.getBoundingClientRect().top + at * Math.max(0, pr.span) + 2;
+      window.scrollTo({ top: y, behavior: 'smooth' });
+    });
+  });
+
+  /* the shapes are read and the dots placed only when the story comes near the screen */
+  function prepare(){
+    if (SH) { return true; }
+    try { sampleShapes(); } catch (e) { SH = null; }
+    if (!SH) { root.classList.remove('pnim--live'); stop(); showNum(N); return false; }
+    build(); return true;
+  }
+  function init(){
+    glow = sprite();
+    showNum(0);
+    measure();
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver(function(es){ es.forEach(function(e){ visible = e.isIntersecting; if (visible && prepare()) { start(); } else { stop(); } }); }, { rootMargin: '600px 0px' }).observe(track);
+    } else { visible = true; if (prepare()) { start(); } }
+    var mt = null;
+    window.addEventListener('resize', function(){ if (mt) { clearTimeout(mt); } mt = setTimeout(function(){ measure(); draw(performance.now()); }, 150); });
+    window.addEventListener('pn:layout', function(){ requestAnimationFrame(function(){ measure(); draw(performance.now()); }); });
+    window.addEventListener('load', function(){ measure(); draw(performance.now()); });
+  }
+  if (document.readyState === 'loading') { document.addEventListener('DOMContentLoaded', init); } else { init(); }
+})();
+</script>
