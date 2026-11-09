@@ -71,7 +71,7 @@ PLAYBOOK = {
                   'source': 'African Development Bank, August 2024',
                   'url': 'https://www.afdb.org/en/news-and-events/press-releases/african-development-bank-group-and-african-risk-capacity-group-issue-112-million-insurance-payout-government-malawi-73593'},
         'si': 'SI reads rainfall, harvests and food prices district by district, sets the trigger and prices the cover before the season begins.',
-        'advises': 'Nations where food is furthest from reach should buy drought insurance that pays on measured rainfall, so that food reaches families within weeks of a failed season, with the trigger and the price of the cover set district by district before the season begins.',
+        'advises': 'Nations where food is furthest from reach should buy drought insurance that pays on measured rainfall, with the trigger and the price of the cover set district by district before the season begins. With super intelligence, rainfall and harvests can be read field by field, so that payouts reach families within weeks of a failed season, before hunger does.',
         'first': 'sovereign drought insurance',
     },
     'Water': {
@@ -80,7 +80,7 @@ PLAYBOOK = {
         'ffd': 'Guarantees replace costly debt with cheaper debt, and the savings are committed to water and sewerage.',
         'lib': 'debt-for-climate',
         'si': 'SI maps every household without safe water at home, prices each connection, and follows the savings into every main and treatment plant.',
-        'advises': 'Nations where water is furthest from reach should swap costly debt for cheaper, guaranteed debt and commit the savings to water and sewerage, then follow the savings into every household connection, main and treatment plant.',
+        'advises': 'Nations where water is furthest from reach should swap costly debt for cheaper, guaranteed debt and commit the savings to water and sewerage. With super intelligence, every saving can be followed into each household connection, main and treatment plant, and the next connection planned where the need is greatest.',
         'first': 'a debt-for-resilience swap bound to water',
     },
     'Shelter': {
@@ -89,7 +89,7 @@ PLAYBOOK = {
         'ffd': 'The proceeds can be spent only on eligible homes, toilets and sewers, reported to investors every year.',
         'lib': 'social-bond',
         'si': 'SI finds the homes without a safe toilet, groups them into programmes investors can finance, and reports each unit delivered.',
-        'advises': 'Nations where shelter is furthest from reach should issue a social bond whose proceeds can be spent only on eligible homes, toilets and sewers, and report each unit delivered to investors every year.',
+        'advises': 'Nations where shelter is furthest from reach should issue a social bond whose proceeds can be spent only on eligible homes, toilets and sewers. With super intelligence, each unit can be planned, priced and verified, and reported to investors every year, until every family has a safe home.',
         'first': 'a social bond for homes and sanitation',
     },
     'Energy': {
@@ -98,7 +98,7 @@ PLAYBOOK = {
         'ffd': 'Bond money ring-fenced for clean energy under a published framework, with every allocation reported to investors.',
         'lib': 'green-bond',
         'si': 'SI counts the households still cooking with wood, charcoal or kerosene, prices the switch per home, and tracks every project the bond pays for.',
-        'advises': 'Nations where energy is furthest from reach should issue a sovereign green bond ring-fenced for clean power and clean cooking, price the switch for every household still cooking with wood, charcoal or kerosene, and report every project the bond pays for.',
+        'advises': 'Nations where energy is furthest from reach should issue a sovereign green bond ring-fenced for clean power and clean cooking. With super intelligence, the switch can be priced for every household still cooking with wood, charcoal or kerosene, and every project the bond pays for reported to investors.',
         'first': 'a sovereign green bond for clean power and cooking',
     },
     'Education': {
@@ -107,7 +107,7 @@ PLAYBOOK = {
         'ffd': 'Each tranche of the loan is released only when pupils reach an agreed learning level, verified independently.',
         'lib': 'program-for-results',
         'si': 'SI tracks reading levels school by school, sets the targets that release each tranche, and flags the schools falling behind.',
-        'advises': 'Nations where education is furthest from reach should borrow on a Program-for-Results basis, releasing each tranche only when pupils reach an agreed learning level, verified independently, and track reading levels school by school.',
+        'advises': 'Nations where education is furthest from reach should borrow on a Program-for-Results basis, releasing each tranche only when pupils reach an agreed learning level, verified independently. With super intelligence, reading levels can be tracked school by school, so that every child who falls behind is reached in time.',
         'first': 'a Program-for-Results paid on learning',
     },
     'Health': {
@@ -119,7 +119,7 @@ PLAYBOOK = {
                   'source': 'Inter-American Development Bank, project BA-U0003',
                   'url': 'https://www.iadb.org/en/project/BA-U0003'},
         'si': 'SI prices the essential services each citizen lacks, finds the costly debt to refinance, and follows every saving into clinics and care.',
-        'advises': 'Nations where health is furthest from reach should refinance costly debt behind a development bank guarantee and bind the savings to the health system before they can be spent elsewhere, then follow every saving into clinics and care.',
+        'advises': 'Nations where health is furthest from reach should refinance costly debt behind a development bank guarantee and bind the savings to the health system before they can be spent elsewhere. With super intelligence, every saving can be followed into clinics and care, and services planned where citizens are furthest from them.',
         'first': 'a debt-for-health guarantee',
     },
     'Livelihood': {
@@ -128,7 +128,7 @@ PLAYBOOK = {
         'ffd': 'A facility guarantees most of each small-business loan, so local banks lend to firms they would otherwise turn away.',
         'lib': 'sme-credit-guarantee',
         'si': 'SI matches enterprises to lenders, prices the risk the guarantee must carry, and counts the jobs each loan creates.',
-        'advises': 'Nations where livelihoods are furthest from reach should set up a facility that guarantees most of each small-business loan, so that local banks lend to the firms they would otherwise turn away, and count the jobs each loan creates.',
+        'advises': 'Nations where livelihoods are furthest from reach should set up a facility that guarantees most of each small-business loan, so that local banks lend to the firms they would otherwise turn away. With super intelligence, lenders can assess firms that have no credit history, and every job each loan creates can be counted.',
         'first': 'a small-business credit guarantee',
     },
 }
