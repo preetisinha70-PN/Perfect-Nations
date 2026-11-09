@@ -1,5 +1,7 @@
 <!-- ===========================================================================
-PERFECT NATIONS - ABOUT - 01 ASSETS: SOVEREIGN ASSETS, THE CUP - v8.2 - 2026-11-09
+PERFECT NATIONS - ABOUT - 01 ASSETS: SOVEREIGN ASSETS, THE CUP - v8.3 - 2026-11-09
+v8.3: fewer words, the Steward-General, 9 Nov 2026: one headline, one line; the World Bank total (US$1,152 trillion,
+146 nations, 2018) and the sources move into a Read more under the five cards (the 64% stays on the People card).
 v8.2: the eyebrow reads Assets - The cup - Sovereign Assets: the cup is the symbol for Assets (the Steward-General,
 9 Nov 2026).
 v8.1 (About v11.0, homepage v10.0): the section moves from the homepage to the About page (written in by
@@ -198,6 +200,27 @@ Great Migration) as one calm grid.
   #pn-assets .pna-c:first-child .pna-fig b{ font-size:3.6rem; }
   #pn-assets .pna-n{ height:22px; min-width:26px; font-size:.62rem; }
 }
+/* v8.3: Read more, the detail one click away */
+#pn-assets details.pna-rm{ margin:12px 0 0; }
+#pn-assets .pna-rm summary{
+  display:inline-flex; align-items:center; gap:9px; min-height:40px; cursor:pointer; list-style:none;
+  font-family:var(--hd); font-size:.68rem; font-weight:700; letter-spacing:.2em; text-transform:uppercase; color:var(--g);
+}
+#pn-assets .pna-rm summary::-webkit-details-marker{ display:none; }
+#pn-assets .pna-rm summary::before{
+  content:"+"; display:inline-flex; align-items:center; justify-content:center; width:20px; height:20px; border-radius:50%;
+  border:1px solid rgba(227,194,88,.6); font-family:Arial,sans-serif; font-size:.9rem; font-weight:400; letter-spacing:0; line-height:1;
+}
+#pn-assets .pna-rm[open] summary::before{ content:"\2212"; }
+#pn-assets .pna-rm summary:hover{ color:var(--gs); }
+#pn-assets .pna-rm summary:focus-visible{ outline:2px solid var(--gs); outline-offset:3px; border-radius:4px; }
+#pn-assets .pna-rm > p{ margin:2px 0 0; max-width:72ch; font-size:.9rem; line-height:1.5; color:var(--tm); }
+#pn-assets .pna-rm > p b{ font-weight:600; color:var(--iv); }
+#pn-assets .pna-rm .pna-srcs{ margin-top:6px; }
+#pn-assets details.pna-rm + .pna-foot{ margin-top:10px; }
+@media (max-width:760px){
+  #pn-assets .pna-rm > p{ font-size:.84rem; }
+}
 </style>
 
 <section id="pn-assets" aria-labelledby="pna-h">
@@ -207,7 +230,7 @@ Great Migration) as one calm grid.
         <p class="pna-eb"><a class="pna-ch" href="#pn-steps" aria-label="Step 01 of 03, Assets. Back to What we do">01</a><span><b>Assets</b> &middot; The cup &middot; Sovereign Assets</span></p>
         <h2 class="pna-h2" id="pna-h">Every nation is richer than its balance sheet.</h2>
       </div>
-      <p class="pna-lead">The World Bank valued the wealth of 146 nations at <b>US$1,152 trillion</b> in 2018, and people alone are 64% of it. Perfect Nations values the five greatest assets of each nation, so that what it owns can finance what its people need.</p>
+      <p class="pna-lead">Perfect Nations values each nation&rsquo;s five greatest assets, so that what it owns can finance what its people need.</p>
     </div>
 
     <ul class="pna-grid">
@@ -254,7 +277,11 @@ Great Migration) as one calm grid.
       </li>
     </ul>
 
-    <p class="pna-srcs">Sources: World Bank, <a href="https://www.worldbank.org/en/news/press-release/2021/10/27/global-wealth-has-grown-but-at-the-expense-of-future-prosperity-world-bank" target="_blank" rel="noopener noreferrer">The Changing Wealth of Nations 2021</a> (2018 data) and <a href="https://www.worldbank.org/en/news/press-release/2018/01/30/world-bank-report-finds-rise-in-global-wealth-but-inequality-persists" target="_blank" rel="noopener noreferrer">2018</a> (2014 data).</p>
+    <details class="pna-rm">
+      <summary>Read more</summary>
+      <p>The World Bank valued the wealth of 146 nations at <b>US$1,152 trillion</b> in 2018, and people alone are 64% of it.</p>
+      <p class="pna-srcs">Sources: World Bank, <a href="https://www.worldbank.org/en/news/press-release/2021/10/27/global-wealth-has-grown-but-at-the-expense-of-future-prosperity-world-bank" target="_blank" rel="noopener noreferrer">The Changing Wealth of Nations 2021</a> (2018 data) and <a href="https://www.worldbank.org/en/news/press-release/2018/01/30/world-bank-report-finds-rise-in-global-wealth-but-inequality-persists" target="_blank" rel="noopener noreferrer">2018</a> (2014 data).</p>
+    </details>
     <p class="pna-foot"><a class="pna-btn" href="https://perfectnations.org/sovereign-assets/">The Sovereign Assets ledger</a></p>
   </div>
 </section>
