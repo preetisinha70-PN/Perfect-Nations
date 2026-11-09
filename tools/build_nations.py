@@ -1,7 +1,11 @@
 #!/usr/bin/env python3
 """Build every national blueprint page (pages/blueprint-<slug>.html) from one template.
 
-Blueprint v11.1 (9 November 2026). One design for every nation, so a change is made once and reaches all.
+Blueprint v11.2 (9 November 2026). One design for every nation, so a change is made once and reaches all.
+v11.2 (the Steward-General, 9 Nov 2026): in What we do, the cup is the symbol for Assets; under the three tiles the
+whole logo is a seal as large as the tile symbols, with "The whole logo: a Perfect Nation, where every citizen has
+all seven basic standards of living, led by good governance."; in Work with us, Co-design it with us sits on an
+ivory panel so the section does not look all alike.
 v11.1: What Perfect Nations advises, in place of how FfD and SI solve it (the Steward-General, 9 Nov 2026). Each
 Solution card reads 01 The challenge, 02 What Perfect Nations advises (the field "advises" of the Solution in
 data/state-of-nations.json); the Solution for <Nation> reads 01 The challenge, 02 The deal (the instrument at work
@@ -63,7 +67,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 PAGES, DATA, HERE = ROOT / 'pages', ROOT / 'data', ROOT / 'tools' / 'nation'
-VERSION = '11.1'
+VERSION = '11.2'
 EARTH = {'lg': 'https://perfectnations.org/wp-content/uploads/2026/10/pn-globe-earth-day-1536x768.jpg',
          'sm': 'https://perfectnations.org/wp-content/uploads/2026/10/pn-globe-earth-day-1024x512.jpg'}
 ORDER = ['Food', 'Water', 'Shelter', 'Energy', 'Education', 'Health', 'Livelihoods']
@@ -202,9 +206,8 @@ def _stars(cls=''):
 
 DIM = '<g class="dim"><use href="#pnk-cl"/>%s</g>' % _stars()
 ART = {
-    'gold': '<svg class="bpx-art bpx-art--gold" viewBox="12 8 488 496" aria-hidden="true" focusable="false"><g class="lit">'
-            '<circle cx="256" cy="258" r="218"/><circle class="ring" cx="256" cy="258" r="196"/>'
-            '<path class="sheen" d="M118 150 A 185 185 0 0 1 340 98"/></g></svg>',
+    'cup': '<svg class="bpx-art bpx-art--cup" viewBox="12 8 488 496" aria-hidden="true" focusable="false">%s'
+           '<g class="lit"><use href="#pnk-cl" clip-path="url(#pnk-cc)"/></g></svg>' % DIM,
     'wreath': '<svg class="bpx-art bpx-art--wreath" viewBox="12 8 488 496" aria-hidden="true" focusable="false">%s'
               '<g class="lit"><use href="#pnk-cl" clip-path="url(#pnk-lc)"/></g></svg>' % DIM,
     'stars': '<svg class="bpx-art bpx-art--stars" viewBox="12 8 488 496" aria-hidden="true" focusable="false">%s'
@@ -363,7 +366,7 @@ def what_we_do(d):
         q2 = 'The instruments that raise capital against those assets, from every source.'
     q3 = 'Perfect Capita: seven basic standards of living for every citizen, star by star.%s' % (
         (' %s is furthest from reach today.' % lab(bind)) if bind else '')
-    tiles = [('01', 'Assets', 'The gold', '#bp-assets', ART['gold'], q1),
+    tiles = [('01', 'Assets', 'The cup', '#bp-assets', ART['cup'], q1),
              ('02', 'Capital', 'The laurels', '#bp-capital', ART['wreath'], q2),
              ('03', 'Solutions', 'The seven stars', '#bp-pc', ART['stars'], q3)]
     lis = ''.join(
@@ -377,9 +380,9 @@ def what_we_do(d):
         '<p class="bpx-lead">Perfect Nations is a development bank for the era of super intelligence, and its clients are nations. '
         'For %s, three steps, one for each part of the logo.</p></div>'
         '<ol class="bpx-map" aria-label="The three steps for %s, one for each part of the logo">%s</ol>'
-        '<p class="bpx-all">%s<span><b>The cup holds it all:</b> good governance, the foundation of every step. '
-        '<b>The whole logo, lit:</b> Perfect %s, where every citizen has all seven basic standards of living.</span></p>'
-        '</div></section>' % (ent(name), ent(name), ent(name), lis, SEAL, ent(name)))
+        '<div class="bpx-all">%s<p><b>The whole logo:</b> a Perfect Nation, where every citizen has all seven basic standards '
+        'of living, led by good governance.</p></div>'
+        '</div></section>' % (ent(name), ent(name), ent(name), lis, SEAL))
 
 
 def assets(d):
@@ -404,7 +407,7 @@ def assets(d):
         '<ul class="bpx-acards" data-n="%d">%s</ul>'
         '<div class="bpx-foot"><p>Every figure is listed with its source in the <a href="#bp-sources">Sources</a> at the foot of the page.</p>'
         '<a class="bpx-link" href="https://perfectnations.org/sovereign-assets/" target="_blank" rel="noopener noreferrer">The Sovereign Assets ledger</a></div>'
-        '</div></section>' % (step_eb('01', 'Assets', 'The gold', 'Sovereign Assets'),
+        '</div></section>' % (step_eb('01', 'Assets', 'The cup', 'Sovereign Assets'),
                               ent(a.get('heading') or 'Five assets no balance sheet counts.'), ent(name), len(cards), ''.join(cards)))
 
 
@@ -802,6 +805,7 @@ def build(slug, sbn, son, today):
     script = (HERE / 'script.js').read_text(encoding='utf-8').replace('/*pn:cfg*/', 'var CFG = %s;' % js_str(cfg))
     head = (
         '<!-- PERFECT NATIONS . NATIONAL BLUEPRINT . %s . v%s . %s . Built by tools/build_nations.py: never edit by hand. -->\n'
+        '<!-- v11.2 (9 November 2026): the cup for Assets; the whole logo as a large seal, led by good governance; Co-design on ivory. -->\n'
         '<!-- v11.1 (9 November 2026): What Perfect Nations advises, in place of how FfD and SI solve it (the Steward-General, 9 Nov 2026)\n'
         '     Each Solution reads The challenge, then What Perfect Nations advises. -->\n'
         '<!-- v11.0 (8 November 2026): the blueprint follows the new homepage. Perfect Nations as a development bank for\n'
