@@ -1,7 +1,7 @@
 {
   "nation": "Namibia",
   "page_version": "9.0",
-  "updated": "2026-11-06",
+  "updated": "2026-11-09",
   "steward": {
     "name": "Ndapewa Shikongo",
     "role": "Nation Steward of Namibia"
@@ -25,76 +25,212 @@
     ]
   },
   "capital": {
-    "heading": "3 instruments. A hydrogen agreement, and the grid it will need.",
+    "heading": "10 instruments. A hydrogen project, the grid it will need, a railway and a fund for community conservation.",
     "record": [
+      {
+        "value": "65.4%",
+        "money": false,
+        "text": "Debt-to-GDP ratio, FY2025/26, down from 67.3%; total public debt is projected at N$201.7 billion, 68.7% of GDP, for FY2026/27 (Mid-Year Budget Review, 22 October 2026)",
+        "source": "Ministry of Finance, 2026",
+        "url": "https://www.pwc.com/na/en/assets/pdf/2026-minister-of-finance-mid-year-budget-statement.pdf"
+      },
       {
         "value": "$10B",
         "money": true,
-        "text": "Hyphen Hydrogen Energy green hydrogen project: Two million tonnes of green ammonia a year at full scale",
-        "source": "Government of Namibia",
-        "url": "https://mercomindia.com/namibia-greenlights-green-hydrogen-project"
+        "text": "Hyphen green hydrogen project: Feasibility and Implementation Agreement signed 26 May 2023, for 2 million tonnes of green ammonia a year at full scale",
+        "source": "Government of Namibia and Hyphen, 2023",
+        "url": "https://hyphenafrica.com/the-government-of-the-republic-of-namibia-and-hyphen-hydrogen-energy-sign-us10-billion-green-hydrogen-project-agreement-at-official-ceremony/"
       },
       {
-        "value": "$100M",
+        "value": "$138.5M",
         "money": true,
-        "text": "Transmission Expansion and Energy Storage Project: Grid and storage",
-        "source": "World Bank",
-        "url": "https://projects.worldbank.org/en/projects-operations/project-detail/P177328"
+        "text": "Transmission Expansion and Energy Storage Project, approved 6 May 2024: a $100 million IBRD loan with grants and a Green Climate Fund loan",
+        "source": "World Bank, 2024",
+        "url": "https://www.worldbank.org/en/news/press-release/2024/05/06/world-bank-loan-to-afe-namibia-supports-renewable-energy-integration"
       },
       {
-        "value": "$4.4M",
+        "value": "$63M",
         "money": true,
-        "text": "Namibia Renewable Energy Scale Up Support Project: Technical support",
-        "source": "World Bank",
-        "url": "https://projects.worldbank.org/en/projects-operations/project-detail/P179377"
+        "text": "Namibia for Life, launched May 2026: Africa’s first Project Finance for Permanence, for community conservation on more than 20% of the land",
+        "source": "WWF, 2026",
+        "url": "https://www.worldwildlife.org/news/press-releases/namibia-for-life-secures-historic-financing-win-for-community-led-conservation/"
+      },
+      {
+        "value": "$750M",
+        "money": true,
+        "text": "Eurobond redeemed in October 2025",
+        "source": "IMF, 2026",
+        "url": "https://www.imf.org/en/news/articles/2026/03/27/pr-26092-namibia-imf-staff-completes-2026-article-iv-mission-to-namibia"
       }
     ],
     "register": [
       {
         "cat": "govt",
-        "status": "Pipeline",
-        "tone": "annual",
-        "name": "Hyphen Hydrogen Energy green hydrogen project",
-        "detail": "Agreement May 2023 \u00b7 Feasibility and implementation agreement",
-        "amount": "$10B",
+        "status": "Completed",
+        "tone": "completed",
+        "name": "Eurobond, redeemed",
+        "detail": "Redeemed October 2025",
+        "amount": "$750M",
         "money": true,
-        "note": "Two million tonnes of green ammonia a year at full scale",
-        "text": "A private green hydrogen and ammonia project on land provided by the government. The agreement sets the terms for feasibility and development.",
+        "note": "Redeemed in full",
+        "text": "Namibia redeemed its $750 million Eurobond in October 2025, as the IMF recorded in March 2026. The Ministry of Finance counts the redemption among the foreign debt repayments of 2025/26.",
         "by": [
-          "Government of Namibia",
-          "Hyphen Hydrogen Energy"
+          "Government of Namibia"
         ],
-        "url": "https://mercomindia.com/namibia-greenlights-green-hydrogen-project"
+        "url": "https://www.imf.org/en/news/articles/2026/03/27/pr-26092-namibia-imf-staff-completes-2026-article-iv-mission-to-namibia"
       },
       {
         "cat": "multi",
-        "status": "Active",
+        "status": "Approved",
         "tone": "active",
         "name": "Transmission Expansion and Energy Storage Project",
-        "detail": "Approved 6 May 2024 \u00b7 Investment project financing",
-        "amount": "$100M",
+        "detail": "Approved 6 May 2024 · IBRD loan of $100 million · $138.5 million project with an IBRD Global Public Goods grant and a Green Climate Fund loan and grant",
+        "amount": "$138.5M",
         "money": true,
-        "note": "Grid and storage",
-        "text": "Expands transmission and adds battery storage, so more renewable power can reach more homes.",
+        "note": "A second Auas–Kokerboom line and utility-scale battery storage",
+        "text": "Namibia’s first World Bank financed energy project, carried out by NamPower: a second Auas–Kokerboom transmission line, a utility-scale battery storage facility and support to prepare bankable renewable projects. It lets more clean power reach the grid in a nation where 59.3% of citizens have electricity (2024).",
         "by": [
-          "World Bank"
+          "World Bank",
+          "Green Climate Fund",
+          "NamPower"
         ],
-        "url": "https://projects.worldbank.org/en/projects-operations/project-detail/P177328"
+        "url": "https://www.worldbank.org/en/news/press-release/2024/05/06/world-bank-loan-to-afe-namibia-supports-renewable-energy-integration"
       },
       {
         "cat": "multi",
         "status": "Active",
         "tone": "active",
         "name": "Namibia Renewable Energy Scale Up Support Project",
-        "detail": "Investment project financing",
+        "detail": "Grant from the Energy Sector Management Assistance Program · Recipient NamPower · Advance of $300,000 disbursed 14 November 2023",
         "amount": "$4.4M",
         "money": true,
-        "note": "Technical support",
-        "text": "Prepares the scale-up of renewable generation.",
+        "note": "Studies and procurement advice for renewable power",
+        "text": "A World Bank administered grant for preparatory studies and for advice on procuring variable renewable energy projects. It prepares the clean generation that energy for every citizen will need.",
         "by": [
-          "World Bank"
+          "World Bank",
+          "Energy Sector Management Assistance Program",
+          "NamPower"
         ],
-        "url": "https://projects.worldbank.org/en/projects-operations/project-detail/P179377"
+        "url": "https://documents1.worldbank.org/curated/en/099141002072335332/pdf/P179377091d3540d30b5a90c259052040dc.pdf"
+      },
+      {
+        "cat": "regional",
+        "status": "Approved",
+        "tone": "active",
+        "name": "Transport Infrastructure Improvement Project, phase two (railway)",
+        "detail": "Approved 31 October 2023 · Loan · 51.8% of the project cost; the Government of Namibia provides 48.2%",
+        "amount": "$196.4M",
+        "money": true,
+        "note": "207 km of new rail track",
+        "text": "An African Development Bank loan for the second phase of the national railway upgrade, including 207 km of new track. Cheaper freight lowers the cost of goods and supports trade and jobs, and so livelihoods.",
+        "by": [
+          "African Development Bank",
+          "Government of Namibia"
+        ],
+        "url": "https://allafrica.com/stories/202311020652.html"
+      },
+      {
+        "cat": "private",
+        "status": "Approved",
+        "tone": "active",
+        "name": "Hyphen Hydrogen Energy, front-end engineering design loan",
+        "detail": "Approval announced 9 December 2025 · Loan from the Sustainable Energy Fund for Africa",
+        "amount": "$10M",
+        "money": true,
+        "note": "Phase one: 3.75 GW of renewables and 1.5 GW of electrolysers",
+        "text": "An African Development Bank loan to Hyphen Hydrogen Energy for front-end engineering design of solar and wind generation, battery storage, electrolysers and desalination. It moves a green ammonia project valued at more than $10 billion towards construction.",
+        "by": [
+          "African Development Bank",
+          "Sustainable Energy Fund for Africa",
+          "Hyphen Hydrogen Energy"
+        ],
+        "url": "https://allafrica.com/stories/202512090610.html"
+      },
+      {
+        "cat": "private",
+        "status": "Signed",
+        "tone": "pipeline",
+        "name": "Hyphen Hydrogen Energy green hydrogen project",
+        "detail": "Signed 26 May 2023 · Feasibility and Implementation Agreement · Approved by Cabinet 23 May 2023 · Government stake of 24% completed 18 December 2024",
+        "amount": "$10B",
+        "money": true,
+        "note": "2 million tonnes of green ammonia a year at full scale",
+        "text": "A privately developed green hydrogen and ammonia project, in which the Government of Namibia completed the purchase of a 24% stake in December 2024. The African Development Bank valued it at more than $10 billion in December 2025, when it lent $10 million for front-end engineering design. Its first phase includes 3.75 GW of renewable generation and 1.5 GW of electrolysers.",
+        "by": [
+          "Government of Namibia",
+          "Hyphen Hydrogen Energy"
+        ],
+        "url": "https://hyphenafrica.com/the-government-of-the-republic-of-namibia-and-hyphen-hydrogen-energy-sign-us10-billion-green-hydrogen-project-agreement-at-official-ceremony/"
+      },
+      {
+        "cat": "impact",
+        "status": "Launched",
+        "tone": "active",
+        "name": "Namibia for Life",
+        "detail": "Launched May 2026 · Africa’s first Project Finance for Permanence · Up to 100 communal conservancies · May grow to more than $75 million",
+        "amount": "$63M",
+        "money": true,
+        "note": "More than 283,000 conservancy members, more than 20% of the land",
+        "text": "A long-term financing initiative for community-led conservation across up to 100 communal conservancies covering more than 20% of Namibia, backed by the Government, philanthropies, the Green Climate Fund, the Global Environment Facility and Germany. The Community Conservation Fund of Namibia counts it as N$1 billion of long-term conservation financing. It reaches more than 283,000 conservancy members, for whom conservation is a livelihood.",
+        "by": [
+          "Ministry of Environment, Forestry and Tourism",
+          "Community Conservation Fund of Namibia",
+          "WWF",
+          "Enduring Earth"
+        ],
+        "url": "https://www.worldwildlife.org/news/press-releases/namibia-for-life-secures-historic-financing-win-for-community-led-conservation/"
+      },
+      {
+        "cat": "impact",
+        "status": "Signed",
+        "tone": "active",
+        "name": "SDG Namibia One Fund, Zhero Molecules Walvis Bay development funding",
+        "detail": "Signed 19 December 2025 · Development funding agreement · Final investment decision targeted for 2027 · Operation expected 2030",
+        "amount": "$5.15M",
+        "money": true,
+        "note": "500,000 tonnes of green ammonia a year, near Walvis Bay",
+        "text": "Namibia’s green hydrogen fund commits up to $5.15 million to develop a green ammonia project near Walvis Bay in the Erongo Region. The fund is managed by Climate Fund Managers with Invest International and the Environmental Investment Fund of Namibia, and holds €65 million of early-stage development funding.",
+        "by": [
+          "SDG Namibia One Fund",
+          "Climate Fund Managers",
+          "Zhero Europe"
+        ],
+        "url": "https://climatefundmanagers.com/2025/12/19/sdg-namibia-one-fund-and-zhero-europe-sign-development-funding-agreement-for-industrial-scale-green-ammonia-project-in-namibia/"
+      },
+      {
+        "cat": "impact",
+        "status": "Committed",
+        "tone": "active",
+        "name": "European Union investment in the SDG Namibia One Fund",
+        "detail": "Announced 4 September 2024 · After Invest International and USAID · Fund target $1 billion of blended finance",
+        "amount": "€25M",
+        "money": true,
+        "note": "Development capital for green hydrogen",
+        "text": "The European Union invests €25 million in SDG Namibia One, the blended finance fund for green hydrogen whose manager is co-owned by the Environmental Investment Fund of Namibia. The fund aims to raise $1 billion for the sector.",
+        "by": [
+          "European Union",
+          "SDG Namibia One Fund",
+          "Environmental Investment Fund of Namibia"
+        ],
+        "url": "https://climatefundmanagers.com/2024/09/04/nam-h2-fund-managers-secures-eur-25-million-investment-from-the-european-union-to-propel-namibias-green-hydrogen-sector/"
+      },
+      {
+        "cat": "impact",
+        "status": "Acquired",
+        "tone": "active",
+        "name": "SDG Namibia One Fund, 24% stake in the Hyphen project",
+        "detail": "Agreed 22 December 2023 · Acquisition completed 18 December 2024 · Initial development funding",
+        "amount": "€23M",
+        "money": true,
+        "note": "The Government of Namibia’s 24% stake",
+        "text": "SDG Namibia One took a 24% stake in the Hyphen green hydrogen project, backed by initial development funding of €23 million, giving the Government of Namibia direct ownership. The project is planned to produce 2 million tonnes of green ammonia a year from about 7 GW of mostly wind and solar power.",
+        "by": [
+          "SDG Namibia One Fund",
+          "Environmental Investment Fund of Namibia",
+          "Climate Fund Managers",
+          "Hyphen Hydrogen Energy"
+        ],
+        "url": "https://climatefundmanagers.com/2023/12/22/hyphen-hydrogen-energy-and-sdg-namibia-one-fund-agree-on-equity-stake-in-countrys-first-gigawatt-scale-green-hydrogen-project/"
       }
     ]
   },
@@ -182,11 +318,39 @@
     "heading": "Already working in Namibia.",
     "items": [
       {
-        "standard": "In preparation",
-        "name": "The enterprises building Perfect Namibia",
-        "text": "The Stewards are verifying the companies and social enterprises already delivering the seven basic living standards in Namibia. Suggest one to include.",
-        "source": "Suggest an enterprise",
-        "url": "mailto:contact@perfectnations.org?subject=An%20enterprise%20for%20Perfect%20Namibia"
+        "standard": "Water",
+        "name": "NamWater",
+        "text": "The state-owned company in charge of bulk water supply to Namibia, with 195 water supply schemes, 37 treatment plants and 6,996 km of pipelines. It recorded revenue of N$2.2 billion in the year to 31 March 2025.",
+        "source": "NamWater, 2025",
+        "url": "https://namwater.com.na/images/docs/NW_IAR_2024_2025.pdf"
+      },
+      {
+        "standard": "Shelter",
+        "name": "Shack Dwellers Federation of Namibia",
+        "text": "A federation through which low-income Namibians build their own homes, supported by FNB Namibia, the Pupkewitz Foundation and Ohorongo Cement with N$1 million a year each. It has delivered more than 530 houses valued at over N$23 million over the past decade (2026).",
+        "source": "The Brief, 2026",
+        "url": "https://thebrief.com.na/2026/04/shack-dwellers-builds-536-homes-worth-n23-6m-through-private-partnerships/"
+      },
+      {
+        "standard": "Energy",
+        "name": "Solarcentury Africa, Gerus solar plant",
+        "text": "A 19.3 MWp solar plant in commercial operation, wholly owned by Solarcentury Africa, whose power is sold into the Southern African Power Pool by Solarcentury Trading. It is expected to produce about 50.8 GWh of clean electricity a year, enough for more than 14,000 Namibian homes.",
+        "source": "Solarcentury Africa",
+        "url": "https://solarcenturyafrica.com/en/articles/gerus-solar-cimmercial-operation"
+      },
+      {
+        "standard": "Health",
+        "name": "Mediclinic Windhoek",
+        "text": "A private hospital in Windhoek, part of Mediclinic Southern Africa, offering a comprehensive range of medical and surgical services. It has served the Namibian community for more than 35 years.",
+        "source": "Mediclinic, 2026",
+        "url": "https://www.mediclinic.co.za/en/windhoek/about-us.html"
+      },
+      {
+        "standard": "Livelihood",
+        "name": "Letshego Namibia",
+        "text": "A lender that opened in 2002 as Edu Loan Namibia and is 79% owned by Letshego Holdings. IFC provided a $50 million facility in 2021 so that it could extend affordable housing finance to more than 4,000 Namibians.",
+        "source": "IFC, 2021",
+        "url": "https://www.ifc.org/en/pressroom/2021/ifc-partners-with-letshego-africa-to-increase-access-to-affordable-housing-in-namibia"
       }
     ]
   },
@@ -306,5 +470,6 @@
     }
   ],
   "dispatches": [],
-  "checked": "2026-11-06T11:23Z"
+  "checked": "2026-11-06T11:23Z",
+  "reviewed": "2026-11-09T19:10Z"
 }
