@@ -17,7 +17,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 PAGES = ROOT / 'pages'
-VERSION = '9.0'
+VERSION = '9.0.1'
 
 # The page, top to bottom. 'rule' places the gold line (pages/home-rule.html) between two sections;
 # 'seam' (a painted seam from pages/home-seams.html) is no longer used on the homepage.
@@ -25,6 +25,8 @@ VERSION = '9.0'
 # section (the Vision and the Mission) in place of the race; Count. Price. Finance. as the map of
 # the page; Sovereign Assets, Perfect Capita and Capital Architecture back as one short section
 # each; the gold line in place of the painted seams.
+# v9.0.1 (8 Nov 2026): the Capital laurels show again (no class name may contain "laurel": header v19.1
+# replaces any such drawing with the cup mark).
 # v9.0 (8 Nov 2026), the Steward-General's decisions: Perfect Nations as a development bank whose clients
 # are nations: Assets. Capital. Solutions. (the gold, the laurels, the seven stars; the cup that holds
 # them is good governance, referenced, not a section); Perfect Capita (Solutions) last; innovative
