@@ -3,6 +3,10 @@
 
 The page is about Solutions: how innovative financing for development (FfD) and super intelligence
 (SI) close the gap to the seven basic standards of living, nation by nation.
+v7.3: fewer words, and richer advice that weaves in super intelligence (the Steward-General, 9 Nov 2026).
+  One headline and one line per band, the detail one click away in a Read more disclosure or the
+  dispatch; the ticker carries three Solutions and five deals; the count above each standard's nations
+  is shorter. The PLAYBOOK advice is unchanged here.
 v7.2: What Perfect Nations advises, in place of how FfD and SI solve it (the Steward-General, 9 Nov 2026).
   Each Solution reads as a bank's advice to a client: the challenge, then what Perfect Nations advises
   (the field "advises" in data/state-of-nations.json and in each standard of the playbook below). The
@@ -45,11 +49,12 @@ OUT = PAGES / 'state-of-nations.html'
 NATION_DATA = DATA / 'solutions-by-nation.json'
 sys.path.insert(0, str(ROOT / 'tools'))
 
-VERSION = '7.2'
+VERSION = '7.3'
 ORDER = ['Food', 'Water', 'Shelter', 'Energy', 'Education', 'Health', 'Livelihood']
 MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September',
           'October', 'November', 'December']
 WIRE_STATIC = 12     # wire items written into the page (the live file replaces them)
+TICK_WIRE = 5        # deals in the moving list, after the three newest Solutions
 SITE = 'https://perfectnations.org'
 
 # ---------------------------------------------------------------------------------------------
@@ -350,11 +355,11 @@ def finder(nat):
                  % (a(pr['where']), a(pr['year']), a(pr['figure']), a(pr['label']), a(pr['url']), a(pr['source'])))
         rows = [n for n in nat['nations'] if n['standard'] == s]
         if rows:
-            lead = '<p class="sn-pcount"><b>%d</b> %s where %s is the standard furthest from reach</p>' % (
+            lead = '<p class="sn-pcount"><b>%d</b> %s where %s is furthest from reach</p>' % (
                 len(rows), 'nation' if len(rows) == 1 else 'nations', a(s.lower()))
             body = '<ol class="sn-rows">%s</ol>' % ''.join(nation_row(n, pb) for n in rows)
         else:
-            lead = ('<p class="sn-pcount">In no open blueprint is %s the standard furthest from reach. '
+            lead = ('<p class="sn-pcount">No open blueprint has %s furthest from reach; '
                     '<a href="#solution-10">Solution No. 10</a> shows how Barbados pays for it.</p>' % a(s.lower()))
             body = '<ol class="sn-rows"></ol>'
         panels.append(''.join([
@@ -405,7 +410,7 @@ def ticker(son):
     for s in ds:
         href = s['url'] if str(s.get('url', '')).startswith('https://') else '#solution-%02d' % s['no']
         items.append('<a href="%s">Solution No. %02d: %s<span>%s</span></a>' % (a(href), s['no'], a(s['title']), a(s.get('nation', ''))))
-    ws = sorted(son.get('wire', []), key=lambda w: w.get('date', ''), reverse=True)[:8]
+    ws = sorted(son.get('wire', []), key=lambda w: w.get('date', ''), reverse=True)[:TICK_WIRE]
     for w in ws:
         items.append('<a href="%s" target="_blank" rel="noopener noreferrer">%s<span>%s</span></a>' % (a(w['url']), a(w['title']), a(w.get('source', ''))))
     dup = ''.join(re.sub(r'^<a ', '<a tabindex="-1" ', x) for x in items)
