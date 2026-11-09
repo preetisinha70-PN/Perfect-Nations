@@ -2,13 +2,15 @@
 """Build every national blueprint page (pages/blueprint-<slug>.html) from one template.
 
 Blueprint v11.3 (9 November 2026). One design for every nation, so a change is made once and reaches all.
-v11.3: fewer words (the Steward-General, 9 Nov 2026: "Fewer words everywhere: one headline and one line per
+v11.3: the logo in one gold, #E3C258, with nothing dimmed: each What we do tile draws its own part alone, and
+the faint cup under the seven stars of Solutions is gone (the Steward-General, 9 Nov 2026).
+Also v11.3: fewer words (the Steward-General, 9 Nov 2026: "Fewer words everywhere: one headline and one line per
 section across the site, with the detail one click away"). Each section shows an eyebrow, one headline, one line
 and then its tiles, cards, figures or stars; further paragraphs and method notes sit behind a native
 <details class="bpx-more"><summary>Read more</summary> in the section. The hero and What we do keep one line each;
 the register shows four lines (its dates and terms open with the line); the Newswire shows three headlines, then
-All news; a Solution shows The challenge, and The deal and What Perfect Nations advises open on a click (their
-labels and texts unchanged); the terms of the mandates sit behind Read more. Figures and sources are all kept.
+All news; a Solution shows The challenge and What Perfect Nations advises, and The deal opens on a click (its
+label and text unchanged); the terms of the mandates sit behind Read more. Figures and sources are all kept.
 v11.2 (the Steward-General, 9 Nov 2026): in What we do, the cup is the symbol for Assets; under the three tiles the
 whole logo is a seal as large as the tile symbols, with "The whole logo: a Perfect Nation, where every citizen has
 all seven basic standards of living, led by good governance."; in Work with us, Co-design it with us sits on an
@@ -211,14 +213,15 @@ def _stars(cls=''):
     return ''.join('<use%s href="#pnk-s%d"/>' % (cls, i) for i in range(7))
 
 
-DIM = '<g class="dim"><use href="#pnk-cl"/>%s</g>' % _stars()
+# v11.3: the logo in one gold (#E3C258, pnk-gold in the logo kit) and nothing dimmed: each tile draws its own part
+# alone, framed to fit (the cup, the laurels, the seven stars), as What we do does on the homepage and About.
 ART = {
-    'cup': '<svg class="bpx-art bpx-art--cup" viewBox="12 8 488 496" aria-hidden="true" focusable="false">%s'
-           '<g class="lit"><use href="#pnk-cl" clip-path="url(#pnk-cc)"/></g></svg>' % DIM,
-    'wreath': '<svg class="bpx-art bpx-art--wreath" viewBox="12 8 488 496" aria-hidden="true" focusable="false">%s'
-              '<g class="lit"><use href="#pnk-cl" clip-path="url(#pnk-lc)"/></g></svg>' % DIM,
-    'stars': '<svg class="bpx-art bpx-art--stars" viewBox="12 8 488 496" aria-hidden="true" focusable="false">%s'
-             '<g class="lit">%s</g></svg>' % (DIM, _stars()),
+    'cup': '<svg class="bpx-art bpx-art--cup" viewBox="82.5 153 346 346" aria-hidden="true" focusable="false">'
+           '<g class="lit"><use href="#pnk-cl" clip-path="url(#pnk-cc)"/></g></svg>',
+    'wreath': '<svg class="bpx-art bpx-art--wreath" viewBox="10 63.75 491 491" aria-hidden="true" focusable="false">'
+              '<g class="lit"><use href="#pnk-cl" clip-path="url(#pnk-lc)"/></g></svg>',
+    'stars': '<svg class="bpx-art bpx-art--stars" viewBox="96 -45 320 220" aria-hidden="true" focusable="false">'
+             '<g class="lit">%s</g></svg>' % _stars(),
 }
 SEAL = ('<svg class="bpx-seal" viewBox="0 0 512 512" aria-hidden="true" focusable="false"><circle class="disc" cx="256" cy="256" r="252"/>'
         '<circle class="rim" cx="256" cy="256" r="236"/><g transform="translate(256 262) scale(.7) translate(-256 -256)">'
@@ -519,11 +522,12 @@ def stars_svg(name, g, bind):
 
 
 def how(rows):
-    """The rows of a Solution (v11.3): 01 The challenge shows; each later row opens on a click, with its label as the
-    summary, so the labels stay in view and the texts stay as the data has them. Each text is HTML already."""
+    """The rows of a Solution (v11.3): The challenge and What Perfect Nations advises show (the Steward-General's two
+    lines); The deal opens on a click, with its label as the summary. The texts stay as the data has them. Each text
+    is HTML already."""
     out = []
     for i, (n, t, w) in enumerate(rows):
-        if i == 0:
+        if t != 'The deal':
             out.append('<li><b>%s</b><strong>%s</strong><span>%s</span></li>' % (n, t, w))
         else:
             out.append('<li class="bpx-sol__x"><details><summary><b>%s</b><strong>%s</strong></summary><span>%s</span></details></li>' % (n, t, w))

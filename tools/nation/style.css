@@ -100,7 +100,6 @@
 
 /* ---------- the logo, part by part (drawn from the logo kit) ---------- */
 #R svg.bpx-art{ display:block; overflow:visible; fill:url(#pnk-gold); }
-#R .bpx-art .dim{ opacity:.17; }
 #R .bpx-art .lit{ filter:drop-shadow(0 0 10px rgba(227,194,88,.35)); }
 #R svg.bpx-seal{ flex:none; width:clamp(96px,8.6vw,122px); height:clamp(96px,8.6vw,122px); fill:url(#pnk-gold); filter:drop-shadow(0 10px 22px rgba(8,42,48,.30)); }
 #R .bpx-seal .disc{ fill:#0B3D45; }
@@ -277,7 +276,7 @@
 #R .bpx-sols-go{ display:flex; flex-wrap:wrap; align-items:center; gap:4px 18px; }
 #R .bpx-sols-go .bpx-showall{ margin:0; }
 #R svg.bpx-stars{ display:block; width:100%; max-width:530px; height:auto; overflow:visible; }
-#R .bpx-stars__cup{ fill:url(#pnk-gold); opacity:.18; }
+#R .bpx-stars__cup{ display:none; } /* v11.3: no dimmed part of the logo */
 #R .bpx-stars__rays line{ stroke:rgba(227,194,88,.3); stroke-width:1.2; stroke-dasharray:2 6; }
 #R .bpx-star{ cursor:pointer; outline:none; transform-origin:center; transform-box:fill-box; }
 #R .bpx-star__s{ fill:url(#pnk-gold); transition:filter .35s ease, opacity .35s ease; }
@@ -289,7 +288,6 @@
 #R .bpx-star--crown .bpx-star__l{ font-size:15px; fill:var(--gs); }
 #R .bpx-star--crown .bpx-star__v{ font-size:34px; }
 #R .bpx-star.is-bind .bpx-star__v{ fill:#F7B798; }
-#R .bpx-stars.has-on .bpx-star .bpx-star__s{ opacity:.8; }
 #R .bpx-stars.has-on .bpx-star.is-on .bpx-star__s{ opacity:1; filter:drop-shadow(0 0 12px rgba(240,214,143,.75)); }
 #R .bpx-star.is-on .bpx-star__halo{ opacity:.42; }
 #R .bpx-star.is-on .bpx-star__l{ fill:var(--gs); }
@@ -537,7 +535,7 @@
   #R ol.bpx-map{ grid-template-columns:minmax(0,1fr); gap:8px; margin-top:14px; }
   #R a.bpx-t{ display:grid; grid-template-columns:72px minmax(0,1fr); grid-template-areas:"art top" "art part" "art q"; column-gap:12px; align-content:center; padding:10px 12px 11px; border-radius:14px; }
   #R a.bpx-t::after{ display:none; }
-  #R .bpx-t svg.bpx-art{ grid-area:art; align-self:center; height:72px; margin:0; }
+  #R .bpx-t svg.bpx-art{ grid-area:art; align-self:center; width:72px; height:72px; margin:0; }
   #R .bpx-t__top{ grid-area:top; gap:7px; }
   #R .bpx-t__p{ grid-area:part; margin-top:5px; font-size:1.2rem; }
   #R .bpx-t__q{ grid-area:q; font-size:.82rem; line-height:1.34; }

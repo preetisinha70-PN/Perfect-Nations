@@ -327,13 +327,13 @@
 
   /* ---------- Solutions (from State of Nations) ---------- */
   var nationFile = null, solDone = false;
-  /* v11.3: 01 The challenge shows; each later row opens on a click, its label as the summary */
+  /* v11.3: The challenge and What Perfect Nations advises show; The deal opens on a click, its label as the summary */
   function howList(rows) {
     var how = el('ul', 'bpx-sol__how');
     rows.forEach(function (r, i) {
       var it = el('li'), sp = el('span', '', r[2]);
       if (r[3]) { sp.appendChild(document.createTextNode(' ')); sp.appendChild(r[3]); }
-      if (i === 0) { it.appendChild(el('b', '', r[0])); it.appendChild(el('strong', '', r[1])); it.appendChild(sp); }
+      if (r[1] !== 'The deal') { it.appendChild(el('b', '', r[0])); it.appendChild(el('strong', '', r[1])); it.appendChild(sp); }
       else {
         it.className = 'bpx-sol__x';
         var dt = el('details'), su = el('summary');
