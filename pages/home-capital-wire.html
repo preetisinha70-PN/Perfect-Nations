@@ -1,5 +1,6 @@
 <!-- ===========================================================================
-PERFECT NATIONS - HOMEPAGE - SECTION 01b - THE CAPITAL WIRE - v2.0 - 2026-11-06
+PERFECT NATIONS - HOMEPAGE - SECTION 01b - THE CAPITAL WIRE - v2.1 - 2026-11-09
+v2.1: the close button of every pop-up is one design: a gold X drawn as two strokes, centred in a circle (the Steward-General, 9 Nov 2026).
 Replaces the Dispatch Ticker (v1.2). Same place: its own Elementor HTML widget directly
 UNDER Section 01 (the golden planet). Same root id, pn-tick, so the Perfect Nations Live
 Pages plugin serves this file in place of the widget already on the homepage.
@@ -138,6 +139,18 @@ earlier Section 01 the button still scrolls up to the planet.
   #pn-tick .cw-pause{ display:none; }
   #pn-tick .cw-dot{ animation:none; }
 }
+/* the close button, one design sitewide (the Steward-General, 9 Nov 2026): a gold X drawn as two strokes,
+   centred in a circle, so no font or theme style can push it off centre */
+#pn-tick .cw-x{ display:grid !important; place-items:center; box-sizing:border-box !important; width:44px !important; height:44px !important;
+  min-width:44px !important; min-height:44px !important; max-width:none !important; padding:0 !important; border-radius:50% !important;
+  border:1.5px solid rgba(227,194,88,.85) !important; background:rgba(8,42,48,.55) !important; color:#E3C258 !important; font-size:0 !important; line-height:0 !important; letter-spacing:0 !important; text-transform:none !important;
+  text-indent:0 !important; box-shadow:0 2px 10px rgba(0,0,0,.18); -webkit-appearance:none; appearance:none; cursor:pointer;
+  transition:background-color .2s ease, border-color .2s ease, color .2s ease, transform .35s cubic-bezier(.22,1,.36,1); }
+#pn-tick .cw-x::before, #pn-tick .cw-x::after{ content:none !important; display:none !important; }
+#pn-tick .cw-x svg{ display:block; width:18px; height:18px; margin:0; pointer-events:none; }
+#pn-tick .cw-x:hover, #pn-tick .cw-x:focus-visible{ background:#E3C258 !important; border-color:#E3C258 !important; color:#1A140C !important; transform:rotate(90deg); }
+#pn-tick .cw-x:focus-visible{ outline:2px solid #F0D68F !important; outline-offset:3px; }
+@media (prefers-reduced-motion:reduce){ #pn-tick .cw-x{ transition:none; } #pn-tick .cw-x:hover, #pn-tick .cw-x:focus-visible{ transform:none; } }
 </style>
 
 <div id="pn-tick" data-src="https://raw.githubusercontent.com/preetisinha70-PN/perfect-nations/main/data/ticker.json" data-mirror="https://cdn.jsdelivr.net/gh/preetisinha70-PN/perfect-nations@main/data/ticker.json">
@@ -174,7 +187,7 @@ earlier Section 01 the button still scrolls up to the planet.
         <a class="cw-btn cw-go" href="https://perfectnations.org/state-of-nations/" target="_blank" rel="noopener noreferrer">Read the source <span aria-hidden="true">&#8599;</span></a>
         <button class="cw-btn cw-find" type="button">Find on the planet</button>
       </div>
-      <button class="cw-x" type="button" aria-label="Close the deal card">&#215;</button>
+      <button class="cw-x" type="button" aria-label="Close the deal card"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6.5 6.5l11 11M17.5 6.5l-11 11" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
     </div>
   </div>
 </div>

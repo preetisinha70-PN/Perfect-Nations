@@ -1,5 +1,6 @@
 <!-- ===========================================================================
-PERFECT NATIONS - THE NATIONS MENU - v3.0 - 2026-11-06
+PERFECT NATIONS - THE NATIONS MENU - v3.1 - 2026-11-09
+v3.1: the close button of every pop-up is one design: a gold X drawn as two strokes, centred in a circle (the Steward-General, 9 Nov 2026); the search close too.
 One Elementor Custom HTML widget, directly under the header (homepage, and any page).
 The bar is Earthrise, so the header flows through it into the homepage section below.
 v3.0: the moving list works everywhere, and blueprints open at once.
@@ -463,6 +464,30 @@ oc Australia and Oceania.
   #pn-nations .pnn-pause{ display:none !important; }
   #pn-nations *{ transition:none !important; }
 }
+/* the close button, one design sitewide (the Steward-General, 9 Nov 2026): a gold X drawn as two strokes,
+   centred in a circle, so no font or theme style can push it off centre */
+#pn-nations .pnn-x{ display:grid !important; place-items:center; box-sizing:border-box !important; width:48px !important; height:48px !important;
+  min-width:48px !important; min-height:48px !important; max-width:none !important; padding:0 !important; border-radius:50% !important;
+  border:1.5px solid rgba(227,194,88,.85) !important; background:rgba(8,42,48,.55) !important; color:#E3C258 !important; font-size:0 !important; line-height:0 !important; letter-spacing:0 !important; text-transform:none !important;
+  text-indent:0 !important; box-shadow:0 2px 10px rgba(0,0,0,.18); -webkit-appearance:none; appearance:none; cursor:pointer;
+  transition:background-color .2s ease, border-color .2s ease, color .2s ease, transform .35s cubic-bezier(.22,1,.36,1); }
+#pn-nations .pnn-x::before, #pn-nations .pnn-x::after{ content:none !important; display:none !important; }
+#pn-nations .pnn-x svg{ display:block; width:18px; height:18px; margin:0; pointer-events:none; }
+#pn-nations .pnn-x:hover, #pn-nations .pnn-x:focus-visible{ background:#E3C258 !important; border-color:#E3C258 !important; color:#1A140C !important; transform:rotate(90deg); }
+#pn-nations .pnn-x:focus-visible{ outline:2px solid #F0D68F !important; outline-offset:3px; }
+@media (prefers-reduced-motion:reduce){ #pn-nations .pnn-x{ transition:none; } #pn-nations .pnn-x:hover, #pn-nations .pnn-x:focus-visible{ transform:none; } }
+/* the close button, one design sitewide (the Steward-General, 9 Nov 2026): a gold X drawn as two strokes,
+   centred in a circle, so no font or theme style can push it off centre */
+#pn-nations .pnn-fclose{ align-items:center; justify-content:center; box-sizing:border-box !important; width:32px !important; height:32px !important;
+  min-width:32px !important; min-height:32px !important; max-width:none !important; padding:0 !important; border-radius:50% !important;
+  border:1.5px solid rgba(227,194,88,.85) !important; background:rgba(8,42,48,.55) !important; color:#E3C258 !important; font-size:0 !important; line-height:0 !important; letter-spacing:0 !important; text-transform:none !important;
+  text-indent:0 !important; box-shadow:0 2px 10px rgba(0,0,0,.18); -webkit-appearance:none; appearance:none; cursor:pointer;
+  transition:background-color .2s ease, border-color .2s ease, color .2s ease, transform .35s cubic-bezier(.22,1,.36,1); }
+#pn-nations .pnn-fclose::before, #pn-nations .pnn-fclose::after{ content:none !important; display:none !important; }
+#pn-nations .pnn-fclose svg{ display:block; width:12px; height:12px; margin:0; pointer-events:none; }
+#pn-nations .pnn-fclose:hover, #pn-nations .pnn-fclose:focus-visible{ background:#E3C258 !important; border-color:#E3C258 !important; color:#1A140C !important; transform:rotate(90deg); }
+#pn-nations .pnn-fclose:focus-visible{ outline:2px solid #F0D68F !important; outline-offset:3px; }
+@media (prefers-reduced-motion:reduce){ #pn-nations .pnn-fclose{ transition:none; } #pn-nations .pnn-fclose:hover, #pn-nations .pnn-fclose:focus-visible{ transform:none; } }
 </style>
 
 <div id="pn-nations">

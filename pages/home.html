@@ -1,5 +1,5 @@
 <!-- ===========================================================================
-PERFECT NATIONS - HOMEPAGE - THE WHOLE PAGE IN ONE FILE - v11.4 - 2026-11-09
+PERFECT NATIONS - HOMEPAGE - THE WHOLE PAGE IN ONE FILE - v11.5 - 2026-11-09
 Paste this file ONCE into ONE Elementor Custom HTML widget on the homepage (page 13465), in a Full
 Width container with padding 0, and delete every other widget on the page. From then on the Perfect
 Nations Live Pages plugin serves pages/home.html from GitHub in place of the paste (root id pn-home,
@@ -69,7 +69,8 @@ ends show that section's own ground, never the page or theme background behind i
 </style>
 <!-- ======== part: pages/nations-menu.html ======== -->
 <!-- ===========================================================================
-PERFECT NATIONS - THE NATIONS MENU - v3.0 - 2026-11-06
+PERFECT NATIONS - THE NATIONS MENU - v3.1 - 2026-11-09
+v3.1: the close button of every pop-up is one design: a gold X drawn as two strokes, centred in a circle (the Steward-General, 9 Nov 2026); the search close too.
 One Elementor Custom HTML widget, directly under the header (homepage, and any page).
 The bar is Earthrise, so the header flows through it into the homepage section below.
 v3.0: the moving list works everywhere, and blueprints open at once.
@@ -533,6 +534,30 @@ oc Australia and Oceania.
   #pn-nations .pnn-pause{ display:none !important; }
   #pn-nations *{ transition:none !important; }
 }
+/* the close button, one design sitewide (the Steward-General, 9 Nov 2026): a gold X drawn as two strokes,
+   centred in a circle, so no font or theme style can push it off centre */
+#pn-nations .pnn-x{ display:grid !important; place-items:center; box-sizing:border-box !important; width:48px !important; height:48px !important;
+  min-width:48px !important; min-height:48px !important; max-width:none !important; padding:0 !important; border-radius:50% !important;
+  border:1.5px solid rgba(227,194,88,.85) !important; background:rgba(8,42,48,.55) !important; color:#E3C258 !important; font-size:0 !important; line-height:0 !important; letter-spacing:0 !important; text-transform:none !important;
+  text-indent:0 !important; box-shadow:0 2px 10px rgba(0,0,0,.18); -webkit-appearance:none; appearance:none; cursor:pointer;
+  transition:background-color .2s ease, border-color .2s ease, color .2s ease, transform .35s cubic-bezier(.22,1,.36,1); }
+#pn-nations .pnn-x::before, #pn-nations .pnn-x::after{ content:none !important; display:none !important; }
+#pn-nations .pnn-x svg{ display:block; width:18px; height:18px; margin:0; pointer-events:none; }
+#pn-nations .pnn-x:hover, #pn-nations .pnn-x:focus-visible{ background:#E3C258 !important; border-color:#E3C258 !important; color:#1A140C !important; transform:rotate(90deg); }
+#pn-nations .pnn-x:focus-visible{ outline:2px solid #F0D68F !important; outline-offset:3px; }
+@media (prefers-reduced-motion:reduce){ #pn-nations .pnn-x{ transition:none; } #pn-nations .pnn-x:hover, #pn-nations .pnn-x:focus-visible{ transform:none; } }
+/* the close button, one design sitewide (the Steward-General, 9 Nov 2026): a gold X drawn as two strokes,
+   centred in a circle, so no font or theme style can push it off centre */
+#pn-nations .pnn-fclose{ align-items:center; justify-content:center; box-sizing:border-box !important; width:32px !important; height:32px !important;
+  min-width:32px !important; min-height:32px !important; max-width:none !important; padding:0 !important; border-radius:50% !important;
+  border:1.5px solid rgba(227,194,88,.85) !important; background:rgba(8,42,48,.55) !important; color:#E3C258 !important; font-size:0 !important; line-height:0 !important; letter-spacing:0 !important; text-transform:none !important;
+  text-indent:0 !important; box-shadow:0 2px 10px rgba(0,0,0,.18); -webkit-appearance:none; appearance:none; cursor:pointer;
+  transition:background-color .2s ease, border-color .2s ease, color .2s ease, transform .35s cubic-bezier(.22,1,.36,1); }
+#pn-nations .pnn-fclose::before, #pn-nations .pnn-fclose::after{ content:none !important; display:none !important; }
+#pn-nations .pnn-fclose svg{ display:block; width:12px; height:12px; margin:0; pointer-events:none; }
+#pn-nations .pnn-fclose:hover, #pn-nations .pnn-fclose:focus-visible{ background:#E3C258 !important; border-color:#E3C258 !important; color:#1A140C !important; transform:rotate(90deg); }
+#pn-nations .pnn-fclose:focus-visible{ outline:2px solid #F0D68F !important; outline-offset:3px; }
+@media (prefers-reduced-motion:reduce){ #pn-nations .pnn-fclose{ transition:none; } #pn-nations .pnn-fclose:hover, #pn-nations .pnn-fclose:focus-visible{ transform:none; } }
 </style>
 
 <div id="pn-nations">
@@ -2614,7 +2639,8 @@ window.PNHG_CFG={"base":"https://perfectnations.org/blueprints/","paths":{"cote-
 </script>
 <!-- ======== part: pages/home-capital-wire.html ======== -->
 <!-- ===========================================================================
-PERFECT NATIONS - HOMEPAGE - SECTION 01b - THE CAPITAL WIRE - v2.0 - 2026-11-06
+PERFECT NATIONS - HOMEPAGE - SECTION 01b - THE CAPITAL WIRE - v2.1 - 2026-11-09
+v2.1: the close button of every pop-up is one design: a gold X drawn as two strokes, centred in a circle (the Steward-General, 9 Nov 2026).
 Replaces the Dispatch Ticker (v1.2). Same place: its own Elementor HTML widget directly
 UNDER Section 01 (the golden planet). Same root id, pn-tick, so the Perfect Nations Live
 Pages plugin serves this file in place of the widget already on the homepage.
@@ -2753,6 +2779,18 @@ earlier Section 01 the button still scrolls up to the planet.
   #pn-tick .cw-pause{ display:none; }
   #pn-tick .cw-dot{ animation:none; }
 }
+/* the close button, one design sitewide (the Steward-General, 9 Nov 2026): a gold X drawn as two strokes,
+   centred in a circle, so no font or theme style can push it off centre */
+#pn-tick .cw-x{ display:grid !important; place-items:center; box-sizing:border-box !important; width:44px !important; height:44px !important;
+  min-width:44px !important; min-height:44px !important; max-width:none !important; padding:0 !important; border-radius:50% !important;
+  border:1.5px solid rgba(227,194,88,.85) !important; background:rgba(8,42,48,.55) !important; color:#E3C258 !important; font-size:0 !important; line-height:0 !important; letter-spacing:0 !important; text-transform:none !important;
+  text-indent:0 !important; box-shadow:0 2px 10px rgba(0,0,0,.18); -webkit-appearance:none; appearance:none; cursor:pointer;
+  transition:background-color .2s ease, border-color .2s ease, color .2s ease, transform .35s cubic-bezier(.22,1,.36,1); }
+#pn-tick .cw-x::before, #pn-tick .cw-x::after{ content:none !important; display:none !important; }
+#pn-tick .cw-x svg{ display:block; width:18px; height:18px; margin:0; pointer-events:none; }
+#pn-tick .cw-x:hover, #pn-tick .cw-x:focus-visible{ background:#E3C258 !important; border-color:#E3C258 !important; color:#1A140C !important; transform:rotate(90deg); }
+#pn-tick .cw-x:focus-visible{ outline:2px solid #F0D68F !important; outline-offset:3px; }
+@media (prefers-reduced-motion:reduce){ #pn-tick .cw-x{ transition:none; } #pn-tick .cw-x:hover, #pn-tick .cw-x:focus-visible{ transform:none; } }
 </style>
 
 <div id="pn-tick" data-src="https://raw.githubusercontent.com/preetisinha70-PN/perfect-nations/main/data/ticker.json" data-mirror="https://cdn.jsdelivr.net/gh/preetisinha70-PN/perfect-nations@main/data/ticker.json">
@@ -2789,7 +2827,7 @@ earlier Section 01 the button still scrolls up to the planet.
         <a class="cw-btn cw-go" href="https://perfectnations.org/state-of-nations/" target="_blank" rel="noopener noreferrer">Read the source <span aria-hidden="true">&#8599;</span></a>
         <button class="cw-btn cw-find" type="button">Find on the planet</button>
       </div>
-      <button class="cw-x" type="button" aria-label="Close the deal card">&#215;</button>
+      <button class="cw-x" type="button" aria-label="Close the deal card"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6.5 6.5l11 11M17.5 6.5l-11 11" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
     </div>
   </div>
 </div>
@@ -3650,7 +3688,8 @@ No class or id here contains the word for the logo's wreath (the header's sitewi
 </script>
 <!-- ======== part: pages/home-blueprints.html ======== -->
 <!-- ===========================================================================
-PERFECT NATIONS - HOMEPAGE - SECTION 06 - BLUEPRINTS OF NATIONS - v6.2 NATION BY NATION - 2026-11-09
+PERFECT NATIONS - HOMEPAGE - SECTION 06 - BLUEPRINTS OF NATIONS - v6.3 NATION BY NATION - 2026-11-09
+v6.3: the close button of every pop-up is one design: a gold X drawn as two strokes, centred in a circle (the Steward-General, 9 Nov 2026).
 v6.2 (homepage v11.4): on laptops the portrait cards are about a fifth smaller (262 px wide, square portraits, a
 softer shadow), so the paintings sit more quietly in the band. Phones are unchanged.
 v6.1: homepage v8.1. Each featured nation is shown by its own nation portrait from Art of Nations
@@ -3917,6 +3956,18 @@ Ground: laterite (red earth). Photographs at full colour, no veil; text sits on 
 }
 #pn-featured .pnfb-modal{ background:rgba(4,22,26,.78); }
 #pn-featured .pnfb-card,#pn-featured .pnfb-card:hover{ box-shadow:0 22px 50px rgba(2,16,20,.45); }
+/* the close button, one design sitewide (the Steward-General, 9 Nov 2026): a gold X drawn as two strokes,
+   centred in a circle, so no font or theme style can push it off centre */
+#pn-featured .pnfb-modal__close{ display:grid !important; place-items:center; box-sizing:border-box !important; width:44px !important; height:44px !important;
+  min-width:44px !important; min-height:44px !important; max-width:none !important; padding:0 !important; border-radius:50% !important;
+  border:1.5px solid rgba(126,90,12,.45) !important; background:#FFFBF1 !important; color:#1A140C !important; font-size:0 !important; line-height:0 !important; letter-spacing:0 !important; text-transform:none !important;
+  text-indent:0 !important; box-shadow:0 2px 10px rgba(0,0,0,.18); -webkit-appearance:none; appearance:none; cursor:pointer;
+  transition:background-color .2s ease, border-color .2s ease, color .2s ease, transform .35s cubic-bezier(.22,1,.36,1); }
+#pn-featured .pnfb-modal__close::before, #pn-featured .pnfb-modal__close::after{ content:none !important; display:none !important; }
+#pn-featured .pnfb-modal__close svg{ display:block; width:18px; height:18px; margin:0; pointer-events:none; }
+#pn-featured .pnfb-modal__close:hover, #pn-featured .pnfb-modal__close:focus-visible{ background:#0B3D45 !important; border-color:#0B3D45 !important; color:#E3C258 !important; transform:rotate(90deg); }
+#pn-featured .pnfb-modal__close:focus-visible{ outline:2px solid #F0D68F !important; outline-offset:3px; }
+@media (prefers-reduced-motion:reduce){ #pn-featured .pnfb-modal__close{ transition:none; } #pn-featured .pnfb-modal__close:hover, #pn-featured .pnfb-modal__close:focus-visible{ transform:none; } }
 </style>
 
 <section id="pn-featured" aria-labelledby="pnfb-h">
@@ -4007,7 +4058,7 @@ Ground: laterite (red earth). Photographs at full colour, no veil; text sits on 
 
   <div class="pnfb-modal" id="pnfbModal" role="dialog" aria-modal="true" aria-labelledby="pnfbModalName" hidden>
     <div class="pnfb-modal__card">
-      <button class="pnfb-modal__close" type="button" id="pnfbClose" aria-label="Close">&times;</button>
+      <button class="pnfb-modal__close" type="button" id="pnfbClose" aria-label="Close"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6.5 6.5l11 11M17.5 6.5l-11 11" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
       <div class="pnfb-modal__ph" id="pnfbModalPh" aria-hidden="true"></div>
       <div class="pnfb-modal__b">
         <span class="pnfb-modal__flag" id="pnfbModalFlag" aria-hidden="true"></span>
