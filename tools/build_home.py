@@ -25,13 +25,15 @@ ROOT = Path(__file__).resolve().parent.parent
 PAGES = ROOT / 'pages'
 DATA = ROOT / 'data'
 SITE = 'https://perfectnations.org'
-VERSION = '10.0'
+VERSION = '10.1'
 SOLUTIONS_SHOWN = 6
 MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September',
           'October', 'November', 'December']
 
 # The page, top to bottom. 'rule' places the gold line (pages/home-rule.html) between two sections;
 # 'seam' (a painted seam from pages/home-seams.html) is no longer used on the homepage.
+# v10.1 (9 Nov 2026): What Perfect Nations advises, in place of how FfD and SI solve it (the Steward-General, 9 Nov 2026).
+# Each Solution card reads The challenge, then What Perfect Nations advises (the field "advises").
 # v10.0 (8 Nov 2026), the Steward-General's decision, after Goldman Sachs, J.P. Morgan and the World Bank:
 # the homepage leads with outcomes, research and original work, and says only a little about the
 # structure of the firm. The hero, the Capital Wire, the Blueprints of Nations, then the Solutions from
@@ -147,10 +149,10 @@ def solution_card(s, i):
                 '<li%s><b>%s</b><span>%s</span></li>' % (' class="is-money"' if is_money(str(x[0])) else '',
                                                          ascii_html(x[0]), ascii_html(x[1])) for x in figs))
     out.append('</div>')
-    if s.get('challenge') and s.get('ffd') and s.get('si'):
+    if s.get('challenge') and s.get('advises'):
         out.append('<dl class="pnso-x">%s</dl>' % ''.join(
             '<div><dt>%s</dt><dd>%s</dd></div>' % (t, ascii_html(s[k]))
-            for t, k in (('The challenge', 'challenge'), ('How FfD solves it', 'ffd'), ('How SI solves it', 'si'))))
+            for t, k in (('The challenge', 'challenge'), ('What Perfect Nations advises', 'advises'))))
     elif s.get('standfirst'):
         out.append('<p class="pnso-sf">%s</p>' % ascii_html(s['standfirst']))
     src = next((x for x in s.get('sources') or [] if x and str(x.get('url', '')).startswith('https://') and source_name(x.get('label'))), None)
