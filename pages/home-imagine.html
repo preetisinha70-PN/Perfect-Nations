@@ -1,5 +1,7 @@
 <!-- ===========================================================================
-PERFECT NATIONS - HOMEPAGE - IMAGINE A PERFECT NATION - v1.0 - 2026-11-09
+PERFECT NATIONS - HOMEPAGE - IMAGINE A PERFECT NATION - v1.1 - 2026-11-09
+v1.1: the logo in one gold, #E3C258 (the Steward-General, 9 Nov 2026). As each part of the logo lights, it
+turns solid gold and its dots settle into it; the finished logo is one clean gold.
 Served live from GitHub (pages/home-imagine.html); part of the one-file homepage (pages/home.html),
 placed after the hero and the Capital Wire. The Steward-General, 9 Nov 2026: "Make the site lively,
 exciting and easy to understand", with the story of a Perfect Nation as the opening.
@@ -456,7 +458,7 @@ No class or id here contains the word for the logo's wreath (the header's sitewi
   function sprite(){
     var s = 32, c = document.createElement('canvas'); c.width = s; c.height = s;
     var g = c.getContext('2d'), gr = g.createRadialGradient(s / 2, s / 2, 0, s / 2, s / 2, s / 2);
-    gr.addColorStop(0, 'rgba(255,226,140,0.95)'); gr.addColorStop(0.25, 'rgba(240,200,95,0.55)'); gr.addColorStop(1, 'rgba(227,194,88,0)');
+    gr.addColorStop(0, 'rgba(227,194,88,0.9)'); gr.addColorStop(0.3, 'rgba(227,194,88,0.45)'); gr.addColorStop(1, 'rgba(227,194,88,0)');
     g.fillStyle = gr; g.fillRect(0, 0, s, s); return c;
   }
   function setActs(p){
@@ -505,9 +507,9 @@ No class or id here contains the word for the logo's wreath (the header's sitewi
       else { x = x0 + (x1 - x0) * t1; y = y0 + (y1 - y0) * t1; k = Math.sin(Math.PI * t1) * 90 * d.sw; sx = -(y1 - y0); sy = x1 - x0; }
       var L = Math.sqrt(sx * sx + sy * sy) || 1; x += sx / L * k; y += sy / L * k;
       var shimmer = 0.55 + 0.45 * Math.sin(time * 1.6 + d.tw);
-      var a, lit;
-      if (t2 > 0.98) { lit = p >= STEP[d.g]; a = lit ? 0.75 + 0.25 * shimmer : 0.28 + 0.1 * shimmer; gold.push(x, y, a); }
-      else if (t1 > 0.98 && p >= starLit(d.star)) { gold.push(x, y, 0.75 + 0.25 * shimmer); }
+      if (t2 > 0.98) { var s2 = solid2(p, d.g); gold.push(x, y, (0.75 + 0.25 * shimmer) * (1 - 0.9 * s2)); }
+      else if (t1 > 0.98 && t2 === 0 && p >= starLit(d.star)) { gold.push(x, y, (0.75 + 0.25 * shimmer) * (1 - 0.9 * solid1(p, d.star))); }
+      else if (t2 > 0) { gold.push(x, y, 0.7 + 0.3 * shimmer); }
       else { ivory.push(x, y, (t1 > 0 ? 0.5 : 0.3) + 0.25 * shimmer); }
     }
     ctx.fillStyle = 'rgb(245,241,232)';
@@ -515,20 +517,23 @@ No class or id here contains the word for the logo's wreath (the header's sitewi
     ctx.globalCompositeOperation = 'lighter';
     for (i = 0; i < gold.length; i += 3) { ctx.globalAlpha = gold[i + 2] * 0.55; ctx.drawImage(glow, gold[i] - gs / 2, gold[i + 1] - gs / 2, gs, gs); }
     ctx.globalCompositeOperation = 'source-over';
-    ctx.fillStyle = 'rgb(240,214,143)';
+    ctx.fillStyle = '#E3C258';
     for (i = 0; i < gold.length; i += 3) { ctx.globalAlpha = gold[i + 2]; ctx.beginPath(); ctx.arc(gold[i], gold[i + 1], rad * 1.05, 0, 6.2832); ctx.fill(); }
     ctx.globalAlpha = 1;
   }
-  /* the logo itself, faint, under the dots: each part appears as its dots arrive and its step is lit */
+  /* how solid each part of the logo is: 0 while its dots gather, 1 (one gold) once it is lit */
+  function solid1(p, k){ return smooth((p - starLit(k)) / 0.035); }
+  function solid2(p, g){ return smooth((p - STEP[g]) / 0.04); }
+  /* the logo itself, under the dots: each part appears as its dots arrive and its step is lit */
   function fillIn(F, a, fn){
     if (a < 0.004) { return; }
     ctx.save(); ctx.setTransform(dpr * F.s, 0, 0, dpr * F.s, dpr * F.x, dpr * F.y);
     ctx.globalAlpha = a; ctx.fillStyle = '#E3C258'; fn(); ctx.restore();
   }
   function ghost(p, F1, F2){
-    var out = 1 - smooth((p - B0) / 0.05), k;
-    for (k = 0; k < 7; k++) { (function(s, a){ fillIn(F1, a, function(){ ctx.fill(s); }); })(shapes.stars[k], 0.2 * smooth((p - starLit(k)) / 0.03) * out); }
-    var aCup = 0.2 * smooth((p - STEP[0]) / 0.04), aWr = 0.2 * smooth((p - STEP[1]) / 0.04), aSt = 0.24 * smooth((p - STEP[2]) / 0.04);
+    var out = 1 - smooth((p - B0) / 0.04), k;
+    for (k = 0; k < 7; k++) { (function(s, a){ fillIn(F1, a, function(){ ctx.fill(s); }); })(shapes.stars[k], solid1(p, k) * out); }
+    var aCup = solid2(p, 0), aWr = solid2(p, 1), aSt = solid2(p, 2);
     if (shapes.cl) {
       fillIn(F2, aCup, function(){ if (shapes.cup) { ctx.clip(shapes.cup); } ctx.fill(shapes.cl, shapes.rule); });
       if (shapes.cup) { fillIn(F2, aWr, function(){ var o = new Path2D(); o.rect(-60, -60, 640, 640); o.addPath(shapes.cup); ctx.clip(o, 'evenodd'); ctx.fill(shapes.cl, shapes.rule); }); }
