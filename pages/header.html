@@ -1,5 +1,12 @@
 <!-- ==========================================================================
-PERFECT NATIONS - CUSTOM HEADER - v19.3 EARTHRISE - 2026-11-07
+PERFECT NATIONS - CUSTOM HEADER - v20.0 EARTHRISE - 2026-11-08
+v20.0: the menu of a bank (the Steward-General, 8 Nov 2026: Perfect Nations as a development bank for
+the era of super intelligence, its clients nations). The open menu is grouped as Goldman Sachs, J.P.
+Morgan and the World Bank group theirs: What we do (01 Assets: Sovereign Assets; 02 Capital: Capital
+Architecture; 03 Solutions: Perfect Capita), Where we work (Blueprints of Nations), Insights (State of
+Nations), Who we are (About, Art of Nations) and Work with us (ReDesign Studio, Contact). Each item
+has one line saying what it is. Laptops: three columns; phones: one. The bar, the search, the call to
+action and the script are unchanged.
 v19.3: the menu and the search read Art of Nations (/art-of-nations/), which replaces Perfect Nations
 Gallery (/perfect-nations-gallery/ now leads to it). No other change.
 v19.2: the search gives only results that match the word. Typing in the open menu's search box
@@ -250,6 +257,53 @@ html:has(.pn-hd__toggle:checked){ overflow:hidden; }
 .pn-hd__subtoggle:checked ~ .pn-hd__msub{ max-height:340px; }
 .pn-hd__subtoggle:checked ~ .pn-hd__mrow .pn-hd__mcaret svg{ transform:rotate(180deg); }
 
+/* ---------- v20.0: the menu of a bank (What we do, Where we work, Insights, Who we are, Work with us) ---------- */
+.pn-hd__groups{
+  display:grid; grid-template-columns:minmax(0,1fr); gap:22px;
+}
+.pn-hd__gh{
+  margin:0 0 6px; padding-bottom:8px; border-bottom:1px solid var(--pn-hair);
+  font-family:var(--pn-head); font-size:12px; font-weight:700; letter-spacing:.26em; text-transform:uppercase; color:var(--pn-gold);
+}
+.pn-hd__gl{ list-style:none; margin:0; padding:0; }
+.pn-hd__gl a{
+  display:flex; align-items:flex-start; gap:12px; padding:9px 2px; color:var(--pn-ink);
+  font-family:var(--pn-head); transition:color .18s ease;
+}
+.pn-hd__gt{ display:block; font-size:clamp(21px,2.2vw,27px); font-weight:600; line-height:1.08; letter-spacing:.01em; }
+.pn-hd__gt small{
+  display:block; margin-top:3px; font-family:var(--pn-body,"Barlow Semi Condensed",Arial,sans-serif);
+  font-size:13.5px; font-weight:400; letter-spacing:0; line-height:1.35; color:var(--pn-ink-dim);
+}
+.pn-hd__gn{
+  flex:none; display:inline-flex; align-items:center; justify-content:center; width:28px; height:28px; margin-top:1px; border-radius:50%;
+  border:1.5px solid var(--pn-gold); color:var(--pn-gold); font-size:11px; font-weight:700; letter-spacing:.02em; line-height:1;
+}
+.pn-hd__gl a:hover{ color:#F0D68F; }
+.pn-hd__gl a:hover .pn-hd__gn{ background:var(--pn-gold); color:#1A140C; }
+.pn-hd__gl a:focus-visible{ outline:2px solid #F0D68F; outline-offset:2px; border-radius:6px; }
+/* the open menu scrolls on phones: the bar stays solid above it, so nothing runs under the name */
+.pn-hd__toggle:checked ~ .pn-hd__in{ background:#0F4C5C; box-shadow:0 1px 0 var(--pn-hair); }
+@media (min-width:900px){
+  .pn-hd__groups{
+    grid-template-columns:minmax(0,1.2fr) minmax(0,1fr) minmax(0,1fr);
+    grid-template-areas:"do where who" "do insights work"; gap:28px clamp(22px,3vw,44px); align-content:center;
+  }
+  .pn-hd__grp--do{ grid-area:do; }
+  .pn-hd__grp--where{ grid-area:where; }
+  .pn-hd__grp--insights{ grid-area:insights; }
+  .pn-hd__grp--who{ grid-area:who; }
+  .pn-hd__grp--work{ grid-area:work; }
+  .pn-hd__grp--do .pn-hd__gt{ font-size:clamp(26px,2.8vw,34px); }
+  .pn-hd__grp--do .pn-hd__gl a{ padding:12px 2px; }
+}
+@media (max-width:560px){
+  .pn-hd__groups{ gap:18px; }
+  .pn-hd__gl a{ padding:8px 2px; }
+  .pn-hd__gt{ font-size:21px; }
+  .pn-hd__gt small{ font-size:13px; }
+}
+
 /* ---------- the panel side column ---------- */
 .pn-hd__side{ display:flex; flex-direction:column; gap:16px; }
 .pn-hd svg.pn-hd__laurel{ display:block; width:120px; height:60px; color:var(--pn-gold); }
@@ -417,18 +471,41 @@ html:has(#pn-hd), html:has(#pn-hd) body{ overflow-x:clip; }
   <div class="pn-hd__panel" id="pn-hd-panel">
     <div class="pn-hd__panelin">
 
-      <nav aria-label="Primary">
-        <ul class="pn-hd__mmenu">
-          <li><a href="https://perfectnations.org/blueprints/" style="--e:#8A3A22;">Blueprints</a></li>
-          <li><a href="https://perfectnations.org/sovereign-assets/" style="--e:#17644F;">Sovereign Assets</a></li>
-          <li><a href="https://perfectnations.org/perfect-capita/" style="--e:#E6D3A8;">Perfect Capita</a></li>
-          <li><a href="https://perfectnations.org/capital-architecture/" style="--e:#1F4A8C;">Capital Architecture</a></li>
-          <li><a href="https://perfectnations.org/design-studio/" style="--e:#342C27;">ReDesign Studio</a></li>
-          <li><a href="https://perfectnations.org/art-of-nations/" style="--e:#F4ECD8;">Art of Nations</a></li>
-          <li><a href="https://perfectnations.org/state-of-nations/" style="--e:#4FA7D2;">State of Nations</a></li>
-          <li><a href="https://perfectnations.org/about/" style="--e:#164A37;">About</a></li>
-          <li><a href="https://perfectnations.org/contact/" style="--e:#8A3A22;">Contact</a></li>
-        </ul>
+      <nav class="pn-hd__groups" aria-label="Primary">
+        <div class="pn-hd__grp pn-hd__grp--do">
+          <p class="pn-hd__gh" id="pn-hd-g1">What we do</p>
+          <ul class="pn-hd__gl" aria-labelledby="pn-hd-g1">
+            <li><a href="https://perfectnations.org/sovereign-assets/"><span class="pn-hd__gn">01</span><span class="pn-hd__gt">Assets<small>Sovereign Assets: what a nation owns, valued</small></span></a></li>
+            <li><a href="https://perfectnations.org/capital-architecture/"><span class="pn-hd__gn">02</span><span class="pn-hd__gt">Capital<small>Capital Architecture: the instruments of innovative FfD</small></span></a></li>
+            <li><a href="https://perfectnations.org/perfect-capita/"><span class="pn-hd__gn">03</span><span class="pn-hd__gt">Solutions<small>Perfect Capita: seven basic standards of living for all</small></span></a></li>
+          </ul>
+        </div>
+        <div class="pn-hd__grp pn-hd__grp--where">
+          <p class="pn-hd__gh" id="pn-hd-g2">Where we work</p>
+          <ul class="pn-hd__gl" aria-labelledby="pn-hd-g2">
+            <li><a href="https://perfectnations.org/blueprints/"><span class="pn-hd__gt">Blueprints of Nations<small>One blueprint for each client nation</small></span></a></li>
+          </ul>
+        </div>
+        <div class="pn-hd__grp pn-hd__grp--insights">
+          <p class="pn-hd__gh" id="pn-hd-g3">Insights</p>
+          <ul class="pn-hd__gl" aria-labelledby="pn-hd-g3">
+            <li><a href="https://perfectnations.org/state-of-nations/"><span class="pn-hd__gt">State of Nations<small>The deals, the dispatches and the wire</small></span></a></li>
+          </ul>
+        </div>
+        <div class="pn-hd__grp pn-hd__grp--who">
+          <p class="pn-hd__gh" id="pn-hd-g4">Who we are</p>
+          <ul class="pn-hd__gl" aria-labelledby="pn-hd-g4">
+            <li><a href="https://perfectnations.org/about/"><span class="pn-hd__gt">About<small>The Vision, the Mission and the Stewards</small></span></a></li>
+            <li><a href="https://perfectnations.org/art-of-nations/"><span class="pn-hd__gt">Art of Nations<small>The nation portraits</small></span></a></li>
+          </ul>
+        </div>
+        <div class="pn-hd__grp pn-hd__grp--work">
+          <p class="pn-hd__gh" id="pn-hd-g5">Work with us</p>
+          <ul class="pn-hd__gl" aria-labelledby="pn-hd-g5">
+            <li><a href="https://perfectnations.org/design-studio/"><span class="pn-hd__gt">ReDesign Studio<small>Co-design your nation</small></span></a></li>
+            <li><a href="https://perfectnations.org/contact/"><span class="pn-hd__gt">Contact<small>Start a conversation</small></span></a></li>
+          </ul>
+        </div>
       </nav>
 
       <div class="pn-hd__side">
