@@ -1,10 +1,18 @@
 <!-- ===========================================================================
-PERFECT NATIONS - STATE OF NATIONS - v7.3 - built 2026-11-09 - ONE FILE, LIVE DATA
+PERFECT NATIONS - STATE OF NATIONS - v8.0 - built 2026-11-09 - ONE FILE, LIVE DATA
 perfectnations.org/state-of-nations/. Root id pn-son (manifest key pn-son): the Perfect Nations Live
 Pages plugin serves this file in place of the code pasted in the page's one Custom HTML widget.
 BUILT, never edited by hand: edit src/state-of-nations.html, then run
 python3 tools/build_state_of_nations.py. Kept by the State of Nations Steward (the page) and the
 Correspondent (the data: data/state-of-nations.json, data/solutions-by-nation.json).
+v8.0 (9 Nov 2026): Perfect Nations Solutions, designed by Perfect Nations (the Steward-General, 9 Nov 2026).
+  Each of the 44 open blueprint nations has one Solution that Perfect Nations designs to end extreme
+  poverty and secure the seven standards: the idea, The challenge (sourced), What Perfect Nations
+  advises (finance first, then super intelligence), how it works (Assets, Capital, Solutions), the deal
+  that proves it, the first move and where the nation stands on the seven. Search by nation and filter
+  by standard; laptops show the lead and six more, phones swipe. The market deals move to the wire as
+  Deal Notes (the field "deals"), with the wire below them. The nation finder band is retired: each
+  nation is found by name in the Solutions, and its seven standards open in its Solution.
 v7.3 (9 Nov 2026): fewer words, and richer advice that weaves in super intelligence (the Steward-General, 9 Nov 2026).
   Each band: an eyebrow, one headline, one line, then its cards, nations or wire; the rest sits in a
   native Read more disclosure (.sn-rm) or in the dispatch. How a Solution is built moves from the hero
@@ -31,8 +39,9 @@ v7.0 (7 Nov 2026): the page is about Solutions. Dispatches become Solutions: eac
   close. Compact: laptops show the newest four Solutions, four nations a standard and six wire items;
   phones swipe through the Solutions and show two nations and three wire items; the rest is one tap
   away, and the filters scroll in one line.
-On every visit the page reads data/state-of-nations.json (Solutions and wire) and
-data/solutions-by-nation.json (nations) from GitHub; if either cannot be read, the copy below shows.
+On every visit the page reads data/state-of-nations.json (Solutions, Deal Notes and wire) and
+data/solutions-by-nation.json (the seven standards of each nation) from GitHub; if either cannot be read,
+the copy below shows.
 =========================================================================== -->
 <style>
 #pn-son{
@@ -198,68 +207,6 @@ html.pn-son-lock,html.pn-son-lock body{ overflow:hidden; }
 #pn-son .sn-cfoot a{ font-family:var(--hd); font-size:.7rem; font-weight:700; letter-spacing:.18em; text-transform:uppercase; color:var(--gd); text-decoration:none; }
 #pn-son .sn-swipe{ display:none; }
 
-/* 3 SOLUTIONS FOR EVERY NATION: Lagoon */
-#pn-son .sn-find{ background:var(--lg); }
-#pn-son .sn-tabs{ display:grid; grid-template-columns:repeat(7,minmax(0,1fr)); gap:6px; margin:0 0 14px; }
-#pn-son .sn-tab{ display:flex; align-items:center; justify-content:space-between; gap:8px; min-height:46px; padding:9px 12px 8px; border-radius:12px; border:1px solid var(--hair); background:rgba(8,42,48,.35); color:var(--tm); cursor:pointer; font-family:var(--hd); font-size:.74rem; font-weight:700; letter-spacing:.14em; text-transform:uppercase; text-align:left; transition:background .2s ease, border-color .2s ease, color .2s ease; }
-#pn-son .sn-tab span{ min-width:26px; padding:2px 7px 1px; border-radius:999px; background:rgba(244,236,216,.12); font-size:.72rem; letter-spacing:0; text-align:center; }
-#pn-son .sn-tab:hover{ border-color:var(--g); color:var(--iv); }
-#pn-son .sn-tab.is-on{ background:var(--g); border-color:var(--g); color:#1A140C; }
-#pn-son .sn-tab.is-on span{ background:rgba(26,20,12,.14); }
-#pn-son .sn-tab.is-none{ opacity:.5; }
-#pn-son .sn-p[hidden]{ display:none; }
-#pn-son .sn-pb{ display:grid; grid-template-columns:minmax(0,.8fr) minmax(0,1.25fr) minmax(0,1fr); gap:0; border:1px solid var(--hair); border-radius:16px; background:rgba(8,42,48,.45); overflow:hidden; }
-#pn-son .sn-pb > div{ padding:16px 18px; }
-#pn-son .sn-pb > div + div{ border-left:1px solid var(--hair); }
-#pn-son .sn-k{ margin:0 0 6px; font-family:var(--hd); font-size:.66rem; font-weight:700; letter-spacing:.26em; text-transform:uppercase; color:var(--td); }
-#pn-son .sn-pb h3{ margin:0; font-family:var(--hd); font-weight:600; font-size:clamp(1.4rem,2vw,1.85rem); line-height:1.02; color:var(--iv) !important; }
-#pn-son .sn-tag{ margin:0 0 6px; font-family:var(--hd); font-size:.68rem; font-weight:700; letter-spacing:.2em; text-transform:uppercase; color:var(--iv); }
-#pn-son .sn-pb__c p{ margin:0; font-size:.92rem; line-height:1.45; color:var(--tm); }
-#pn-son .sn-pb__c p.sn-tag{ color:var(--iv); }
-#pn-son .sn-pb__c p.sn-proof{ margin-top:0; font-size:.88rem; line-height:1.45; color:var(--tm); }
-#pn-son .sn-proof span{ margin-right:6px; font-family:var(--hd); font-size:.6rem; font-weight:700; letter-spacing:.2em; text-transform:uppercase; color:var(--tm); }
-#pn-son .sn-proof b{ font-family:var(--hd); font-size:1.02rem; color:var(--g); }
-#pn-son .sn-proof a,#pn-son .sn-src{ color:var(--tm); text-decoration:underline; text-decoration-color:rgba(244,236,216,.35); text-underline-offset:2px; }
-#pn-son .sn-pcount{ margin:14px 0 10px; font-size:.9rem; color:var(--tm); }
-#pn-son .sn-pcount b{ font-family:var(--hd); font-size:1.1rem; color:var(--iv); }
-#pn-son .sn-pcount a{ color:var(--g); }
-#pn-son .sn-rows{ display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:10px; margin:0; padding:0; list-style:none; }
-#pn-son .sn-r{ padding:12px 14px 10px; border:1px solid var(--hair); border-radius:12px; background:rgba(8,42,48,.28); }
-#pn-son .sn-r[hidden]{ display:none; }
-#pn-son .sn-r.is-hit{ border-color:var(--g); }
-#pn-son .sn-r__h{ display:flex; align-items:baseline; justify-content:space-between; gap:12px; }
-#pn-son .sn-r__n{ font-family:var(--hd); font-weight:700; font-size:1.2rem; line-height:1.1; color:var(--iv); text-decoration:none; }
-#pn-son .sn-r__n::after{ content:" \2197"; font-family:Arial,sans-serif; font-size:.8rem; color:var(--g); }
-#pn-son .sn-r__n:hover{ color:var(--gs); }
-#pn-son .sn-r__g{ font-family:var(--hd); font-weight:700; font-size:1.3rem; line-height:1; color:var(--iv); white-space:nowrap; font-variant-numeric:tabular-nums; }
-#pn-son .sn-r__t{ margin:4px 0 0; font-size:.86rem; line-height:1.4; color:var(--tm); }
-#pn-son .sn-r__t .sn-src{ font-size:.76rem; }
-#pn-son .sn-r__w{ display:flex; flex-wrap:wrap; align-items:baseline; gap:3px 8px; margin:8px 0 0; padding-top:7px; border-top:1px solid var(--hair); font-size:.84rem; line-height:1.35; color:var(--tm); }
-#pn-son .sn-r__w a{ color:var(--iv); text-decoration:underline; text-decoration-color:rgba(244,236,216,.3); text-underline-offset:2px; }
-#pn-son .sn-r__l{ font-family:var(--hd); font-size:.6rem; font-weight:700; letter-spacing:.2em; text-transform:uppercase; color:var(--td); }
-#pn-son .sn-r__w .sn-m{ font-family:var(--hd); font-size:.98rem; color:var(--g); }
-#pn-son .sn-r__w .sn-q{ font-family:var(--hd); font-size:.98rem; color:var(--iv); }
-#pn-son .sn-r__w.is-open{ color:var(--iv); }
-#pn-son .sn-r__w.is-open .sn-r__l{ color:var(--g); }
-#pn-son .sn-r__s{ display:inline-block; margin:7px 10px 0 0; font-family:var(--hd); font-size:.64rem; font-weight:700; letter-spacing:.18em; text-transform:uppercase; color:var(--g); text-decoration:none; }
-#pn-son .sn-r__s::after{ content:" \2192"; font-family:Arial,sans-serif; }
-#pn-son .sn-r__h{ position:relative; }
-#pn-son .sn-r__x{ flex:0 0 auto; display:inline-flex; align-items:center; justify-content:center; gap:6px; height:30px; margin:0 0 0 2px; padding:0 10px 0 11px; border:1px solid rgba(227,194,88,.55); border-radius:999px; background:transparent; color:var(--g); cursor:pointer; font-family:var(--hd); font-size:.6rem; font-weight:700; letter-spacing:.16em; text-transform:uppercase; align-self:center; }
-#pn-son .sn-r__x::after{ content:"+"; font-family:Arial,sans-serif; font-size:.95rem; letter-spacing:0; }
-#pn-son .sn-r__x[aria-expanded="true"]{ background:var(--g); color:#1A140C; }
-#pn-son .sn-r__x[aria-expanded="true"]::after{ content:"\2212"; }
-#pn-son .sn-r__g{ margin-left:auto; }
-#pn-son .sn-7{ display:grid; gap:4px; margin:6px 0 2px; padding:8px 10px; border-radius:10px; background:rgba(8,42,48,.5); }
-#pn-son .sn-7[hidden]{ display:none; }
-#pn-son .sn-7 div{ display:grid; grid-template-columns:8.6em minmax(0,1fr) 5.6em; align-items:center; gap:8px; font-size:.78rem; color:var(--td); }
-#pn-son .sn-7 i{ position:relative; display:block; height:6px; border-radius:3px; background:rgba(244,236,216,.12); overflow:hidden; }
-#pn-son .sn-7 i::before{ content:""; position:absolute; left:0; top:0; bottom:0; width:var(--v,0%); border-radius:3px; background:rgba(244,236,216,.55); }
-#pn-son .sn-7 div.is-far{ color:var(--iv); font-weight:600; }
-#pn-son .sn-7 div.is-far i::before{ background:var(--iv); }
-#pn-son .sn-7 a{ text-align:right; color:inherit; font-family:var(--hd); font-weight:700; text-decoration:underline; text-decoration-color:rgba(244,236,216,.3); text-underline-offset:2px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
-#pn-son .sn-find .sn-more{ color:var(--iv); }
-#pn-son .sn-find .sn-empty{ margin:12px 0 0; color:var(--tm); }
-
 /* 4 THE WIRE AND THE CLOSE: Earthrise Depth */
 #pn-son .sn-wire{ background:var(--dp); }
 #pn-son .sn-ctrl{ display:flex; flex-wrap:wrap; align-items:center; gap:8px 14px; margin:0 0 10px; }
@@ -292,20 +239,73 @@ html.pn-son-lock,html.pn-son-lock body{ overflow:hidden; }
 #pn-son.is-rv .sn-rv{ opacity:0; transform:translateY(16px); transition:opacity .7s ease, transform .9s cubic-bezier(.22,1,.36,1); }
 #pn-son.is-rv .sn-rv.is-in{ opacity:1; transform:none; }
 
-/* tablets */
-@media (max-width:1080px){
-  #pn-son .sn-tabs{ display:flex; overflow-x:auto; scrollbar-width:none; margin-left:calc(-1 * var(--px)); margin-right:calc(-1 * var(--px)); padding:0 var(--px); }
-  #pn-son .sn-tabs::-webkit-scrollbar{ display:none; }
-  #pn-son .sn-tab{ flex:0 0 auto; }
+/* v8.0: the designed Solutions. The card: nation and number, the name, the idea in one line, The challenge,
+   What Perfect Nations advises, then the standards and Read the Solution. */
+#pn-son .sn-sol .sn-search input{ background:#FFFBF1; border-color:var(--ihair); color:var(--ink); }
+#pn-son .sn-sol .sn-search input::placeholder{ color:var(--idm); }
+#pn-son .sn-sol .sn-search svg{ color:var(--ink); }
+#pn-son .sn-sol .sn-empty{ margin:12px 0 0; color:var(--im); }
+#pn-son .sn-sol .sn-empty a{ color:var(--gd); }
+#pn-son .sn-c__k b{ color:var(--ink); }
+#pn-son .sn-c__k span{ color:var(--tc); }
+#pn-son .sn-c h3{ margin:10px 0 4px; }
+#pn-son .sn-c__i{ margin:0 0 10px; font-size:.95rem; line-height:1.4; color:var(--ink); }
+#pn-son .sn-c__ft{ display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:8px 12px; margin-top:auto; padding-top:12px; }
+#pn-son .sn-c__x + .sn-c__ft{ margin-top:12px; border-top:1px solid var(--ihair); }
+#pn-son .sn-c__ft .sn-std{ margin:0; }
+#pn-son .sn-c__ft .sn-c__go{ margin:0; }
+#pn-son .sn-c--lead .sn-c__i{ font-size:1.08rem; max-width:44ch; }
+#pn-son .sn-c--lead .sn-c__ft{ border-top:0; padding-top:4px; }
+#pn-son .sn-c.is-hit{ border-color:var(--gd); }
+
+/* the Deal Notes: the landmark deals, read by Perfect Nations, in one line that scrolls */
+#pn-son .sn-dn{ margin:0 0 18px; }
+#pn-son .sn-dn__h{ margin:0 0 8px; font-family:var(--hd); font-size:.68rem; font-weight:700; letter-spacing:.24em; text-transform:uppercase; color:var(--tm); }
+#pn-son .sn-dn__h span{ margin-left:6px; color:var(--g); }
+#pn-son .sn-dl{ display:grid; grid-auto-flow:column; grid-auto-columns:minmax(240px,calc((100% - 30px) / 4)); gap:10px; margin:0; padding:2px 0 8px; list-style:none; overflow-x:auto; scroll-snap-type:x proximity; scrollbar-width:thin; scrollbar-color:rgba(227,194,88,.4) transparent; }
+#pn-son .sn-d{ position:relative; display:flex; flex-direction:column; gap:6px; padding:12px 14px 11px; border:1px solid var(--hair); border-radius:12px; background:rgba(244,236,216,.04); scroll-snap-align:start; transition:border-color .2s ease, background .2s ease; }
+#pn-son .sn-d:hover{ border-color:rgba(227,194,88,.55); background:rgba(244,236,216,.07); }
+#pn-son .sn-d[hidden]{ display:none; }
+#pn-son .sn-d__k{ display:flex; flex-wrap:wrap; gap:2px 8px; margin:0; font-family:var(--hd); font-size:.6rem; font-weight:700; letter-spacing:.18em; text-transform:uppercase; color:var(--td); }
+#pn-son .sn-d__k b{ color:var(--g); font-weight:700; }
+#pn-son .sn-d h3{ margin:0; font-family:var(--hd); font-weight:600; font-size:1.02rem; line-height:1.18; color:var(--iv) !important; }
+#pn-son .sn-d h3 a{ text-decoration:none; }
+#pn-son .sn-d h3 a::after{ content:""; position:absolute; inset:0; border-radius:12px; }
+#pn-son .sn-d__f{ display:flex; align-items:baseline; gap:8px; margin:auto 0 0; padding-top:6px; border-top:1px solid var(--hair); font-size:.72rem; line-height:1.3; color:var(--td); }
+#pn-son .sn-d__f b{ font-family:var(--hd); font-weight:700; font-size:1.2rem; line-height:1; color:var(--iv); white-space:nowrap; }
+#pn-son .sn-d__f b.is-money{ color:var(--g); }
+
+/* the reader of a designed Solution */
+#pn-son-rd .rd-sec{ margin:18px 0 0; }
+#pn-son-rd .rd-sec > h3{ margin:0 0 8px; padding-top:12px; border-top:1px solid rgba(26,20,12,.14); font-family:var(--pn-font-heading,"Barlow Condensed","Arial Narrow",Arial,sans-serif); font-size:.72rem; font-weight:700; letter-spacing:.22em; text-transform:uppercase; color:#8A3A22; text-shadow:none !important; }
+#pn-son-rd .rd-sec p{ margin:0; font-size:1rem; line-height:1.5; color:#2A2116; }
+#pn-son-rd .rd-sec a{ color:#7E5A0C; }
+#pn-son-rd .rd-how{ display:grid; gap:8px; margin:0; padding:0; list-style:none; }
+#pn-son-rd .rd-how li{ display:grid; grid-template-columns:34px 6.4em minmax(0,1fr); gap:10px; align-items:baseline; font-size:1rem; line-height:1.45; color:#2A2116; }
+#pn-son-rd .rd-how b{ font-family:var(--pn-font-heading,"Barlow Condensed","Arial Narrow",Arial,sans-serif); font-size:1.3rem; line-height:1; color:#7E5A0C; }
+#pn-son-rd .rd-how strong{ font-family:var(--pn-font-heading,"Barlow Condensed","Arial Narrow",Arial,sans-serif); font-size:.72rem; font-weight:700; letter-spacing:.18em; text-transform:uppercase; color:#1A140C; }
+#pn-son-rd .rd-proof b{ font-family:var(--pn-font-heading,"Barlow Condensed","Arial Narrow",Arial,sans-serif); font-size:1.3rem; color:#7E5A0C; }
+#pn-son-rd .rd-own{ display:inline-block; margin-left:6px; padding:2px 8px 1px; border-radius:999px; background:rgba(126,90,12,.12); font-family:var(--pn-font-heading,"Barlow Condensed","Arial Narrow",Arial,sans-serif); font-size:.6rem; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:#7E5A0C; }
+#pn-son-rd .rd-7{ display:grid; gap:5px; margin:0; }
+#pn-son-rd .rd-7 div{ display:grid; grid-template-columns:7.8em minmax(0,1fr) 6.4em; align-items:center; gap:10px; font-size:.86rem; color:rgba(26,20,12,.7); }
+#pn-son-rd .rd-7 i{ position:relative; display:block; height:7px; border-radius:4px; background:rgba(26,20,12,.1); overflow:hidden; }
+#pn-son-rd .rd-7 i::before{ content:""; position:absolute; left:0; top:0; bottom:0; width:var(--v,0%); border-radius:4px; background:#0F4C5C; }
+#pn-son-rd .rd-7 div.is-far{ color:#1A140C; font-weight:600; }
+#pn-son-rd .rd-7 div.is-far i::before{ background:#8A3A22; }
+#pn-son-rd .rd-7 a,#pn-son-rd .rd-7 em{ text-align:right; font-style:normal; font-family:var(--pn-font-heading,"Barlow Condensed","Arial Narrow",Arial,sans-serif); font-weight:700; color:inherit; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+#pn-son-rd .rd-std{ display:flex; flex-wrap:wrap; gap:5px; margin:12px 0 0; padding:0; list-style:none; }
+#pn-son-rd .rd-std li{ padding:3px 9px 2px; border-radius:999px; background:rgba(15,76,92,.1); color:#0F4C5C; font-family:var(--pn-font-heading,"Barlow Condensed","Arial Narrow",Arial,sans-serif); font-size:.64rem; font-weight:700; letter-spacing:.14em; text-transform:uppercase; }
+@media (max-width:640px){
+  #pn-son-rd .rd-how li{ grid-template-columns:28px minmax(0,1fr); }
+  #pn-son-rd .rd-how li span{ grid-column:2; }
+  #pn-son-rd .rd-7 div{ grid-template-columns:6.6em minmax(0,1fr) 5.2em; gap:6px; font-size:.8rem; }
 }
+
+/* tablets */
 @media (max-width:899px){
   #pn-son .sn-hgrid{ grid-template-columns:minmax(0,1fr); gap:16px; align-items:start; }
   #pn-son .sn-clist{ grid-template-columns:repeat(2,minmax(0,1fr)); }
   #pn-son .sn-c--lead{ display:flex; }
-  #pn-son .sn-pb{ grid-template-columns:1fr 1fr; }
-  #pn-son .sn-pb__h{ grid-column:1 / -1; }
-  #pn-son .sn-pb > div + div{ border-left:0; border-top:1px solid var(--hair); }
-  #pn-son .sn-pb > div.sn-pb__deal{ border-left:1px solid var(--hair); }
   #pn-son .sn-wl{ grid-template-columns:1fr; }
   #pn-son .sn-close{ grid-template-columns:1fr; }
   #pn-son .sn-close .sn-ctas{ justify-content:flex-start; }
@@ -351,25 +351,16 @@ html.pn-son-lock,html.pn-son-lock body{ overflow:hidden; }
   #pn-son .sn-c:hover{ transform:none; }
   #pn-son .sn-swipe{ display:inline; }
   #pn-son .sn-sol .sn-more{ display:none; }
-  #pn-son .sn-pb{ grid-template-columns:1fr; }
-  #pn-son .sn-pb > div{ padding:11px 14px; }
-  #pn-son .sn-pb .sn-k{ display:none; }
-  #pn-son .sn-pb h3{ font-size:1.32rem; }
-  #pn-son .sn-pb__c p.sn-proof{ margin-top:0; }
-  #pn-son .sn-pcount{ margin:10px 0 8px; font-size:.84rem; }
-  #pn-son .sn-r{ padding:10px 12px 8px; }
-  #pn-son .sn-r__w{ margin-top:6px; padding-top:6px; }
   #pn-son .sn-ctrl{ flex-wrap:nowrap; overflow-x:auto; scrollbar-width:none; margin:0 calc(-1 * var(--px)) 8px; padding:0 var(--px); }
   #pn-son .sn-ctrl::-webkit-scrollbar{ display:none; }
   #pn-son .sn-ctrl .sn-chips.sn-scroll{ margin:0; padding:0; overflow:visible; }
   #pn-son .sn-ctrl .sn-sel{ flex:0 0 auto; order:-1; }
   #pn-son .sn-close .sn-cup{ display:none; }
-  #pn-son .sn-7 div{ grid-template-columns:8em minmax(0,1fr) 4.6em; gap:6px; }
   #pn-son .sn-close{ margin-top:18px; padding-top:16px; }
+  #pn-son .sn-dl{ grid-auto-columns:78%; margin:0 calc(-1 * var(--px)); padding:2px var(--px) 8px; scroll-padding-left:var(--px); scrollbar-width:none; }
+  #pn-son .sn-dl::-webkit-scrollbar{ display:none; }
+  #pn-son .sn-c__i{ font-size:.92rem; }
   #pn-son .sn-close .sn-ctas .sn-btn:nth-child(3){ display:none; }
-  #pn-son .sn-pb > div.sn-pb__deal{ border-left:0; }
-  #pn-son .sn-pb__c p{ font-size:.88rem; }
-  #pn-son .sn-rows{ grid-template-columns:1fr; gap:8px; }
   #pn-son .sn-w{ grid-template-columns:38px minmax(0,1fr); gap:10px; padding:9px 0 8px; }
   #pn-son .sn-w time b{ font-size:1.3rem; }
   #pn-son .sn-w h3{ font-size:.98rem; }
@@ -411,8 +402,10 @@ html.pn-son-lock,html.pn-son-lock body{ overflow:hidden; }
 #pn-son-rd .rd-src{ margin:14px 0 0; font-size:.78rem; line-height:1.6; color:rgba(26,20,12,.62); }
 #pn-son-rd .rd-src a{ color:rgba(26,20,12,.8); }
 #pn-son-rd .rd-end{ display:flex; flex-wrap:wrap; gap:10px; margin-top:20px; }
-#pn-son-rd .rd-end a,#pn-son-rd .rd-end button{ display:inline-flex; align-items:center; min-height:44px; padding:10px 20px; border-radius:999px; border:1px solid #7E5A0C; background:transparent; color:#7E5A0C; cursor:pointer; font-family:var(--pn-font-heading,"Barlow Condensed","Arial Narrow",Arial,sans-serif); font-size:.72rem; font-weight:700; letter-spacing:.18em; text-transform:uppercase; text-decoration:none; }
+#pn-son-rd .rd-end a,#pn-son-rd .rd-end button{ display:inline-flex; align-items:center; min-height:44px; line-height:1.2; padding:10px 20px; border-radius:999px; border:1px solid #7E5A0C; background:transparent; color:#7E5A0C; cursor:pointer; font-family:var(--pn-font-heading,"Barlow Condensed","Arial Narrow",Arial,sans-serif); font-size:.72rem; font-weight:700; letter-spacing:.18em; text-transform:uppercase; text-decoration:none; }
 #pn-son-rd .rd-end a{ background:#E3C258; border-color:#E3C258; color:#1A140C; }
+#pn-son-rd .rd-end a.rd-bp{ background:transparent; border-color:#7E5A0C; color:#7E5A0C; }
+#pn-son-rd .rd-end a[hidden]{ display:none; }
 @media (max-width:640px){ #pn-son-rd .rd-figs{ grid-template-columns:1fr 1fr; } #pn-son-rd .rd-brief dl div{ grid-template-columns:1fr; gap:2px; } }
 @media (prefers-reduced-motion:reduce){ #pn-son-rd .rd-sheet{ animation:none; } }
 </style>
@@ -453,40 +446,40 @@ html.pn-son-lock,html.pn-son-lock body{ overflow:hidden; }
   <section class="sn-band sn-hero" aria-labelledby="sn-h1">
     <canvas class="sn-gl" aria-hidden="true"></canvas>
     <div class="sn-in">
-      <div class="sn-mast"><span><b>Perfect Nations</b></span><span class="sn-ed">Edition of 8 November 2026</span></div>
+      <div class="sn-mast"><span><b>Perfect Nations</b></span><span class="sn-ed">Edition of 9 November 2026</span></div>
       <div class="sn-hgrid">
         <div>
           <svg class="sn-cup" aria-hidden="true" focusable="false"><use href="#pnso-cup"></use></svg>
           <h1 class="sn-h1" id="sn-h1">The State of Nations</h1>
           <p class="sn-caps">Economic solutions for <span class="sn-rot" aria-hidden="true">all</span><span class="sn-sr">food, water, shelter, energy, education, health and livelihood</span></p>
-          <p class="sn-lead">Innovative financing for development (FfD) and super intelligence (SI) can secure seven basic standards of living for every citizen.</p>
+          <p class="sn-lead">A Perfect Nations Solution for every nation, to end extreme poverty and secure seven basic standards of living for all.</p>
           <div class="sn-ctas">
             <a class="sn-btn" href="#sn-solutions">Read the Solutions</a>
-            <a class="sn-btn sn-btn--line" href="#sn-nations">Find your nation</a>
+            <a class="sn-btn sn-btn--line" href="#sn-nations" data-find="1">Find your nation</a>
           </div>
         </div>
         <div>
           <nav class="sn-stats" aria-label="On this page">
-            <a href="#sn-solutions"><b data-count-s>10</b><span>Solutions</span></a>
-            <a href="#sn-nations"><b data-count-n>44</b><span>Nations</span></a>
-            <a href="#sn-wire"><b data-count-w>80</b><span>On the wire</span></a>
+            <a href="#sn-solutions"><b data-count-s>44</b><span>Solutions</span></a>
+            <a href="#sn-solutions"><b>7</b><span>Standards</span></a>
+            <a href="#sn-wire"><b data-count-w>81</b><span>Deals on the wire</span></a>
           </nav>
           <nav class="sn-seven" aria-label="The seven standards">
             <span>The seven</span>
-            <a class="sn-chip" href="#sn-nations" data-go="Food">Food</a>
-            <a class="sn-chip" href="#sn-nations" data-go="Water">Water</a>
-            <a class="sn-chip" href="#sn-nations" data-go="Shelter">Shelter</a>
-            <a class="sn-chip" href="#sn-nations" data-go="Energy">Energy</a>
-            <a class="sn-chip" href="#sn-nations" data-go="Education">Education</a>
-            <a class="sn-chip" href="#sn-nations" data-go="Health">Health</a>
-            <a class="sn-chip" href="#sn-nations" data-go="Livelihood">Livelihood</a>
+            <a class="sn-chip" href="#sn-solutions" data-go="Food">Food</a>
+            <a class="sn-chip" href="#sn-solutions" data-go="Water">Water</a>
+            <a class="sn-chip" href="#sn-solutions" data-go="Shelter">Shelter</a>
+            <a class="sn-chip" href="#sn-solutions" data-go="Energy">Energy</a>
+            <a class="sn-chip" href="#sn-solutions" data-go="Education">Education</a>
+            <a class="sn-chip" href="#sn-solutions" data-go="Health">Health</a>
+            <a class="sn-chip" href="#sn-solutions" data-go="Livelihood">Livelihood</a>
           </nav>
         </div>
       </div>
     </div>
     <div class="sn-tick" aria-label="Latest from State of Nations">
       <span class="sn-tick__k"><i aria-hidden="true"></i>Latest</span>
-      <div class="sn-tick__track"><a href="#solution-11">Solution No. 11: Tanzania brings nine banks to its railway with one guarantee<span>Tanzania</span></a><a href="#solution-10">Solution No. 10: Barbados turns cheaper debt into health care<span>Barbados</span></a><a href="#solution-09">Solution No. 09: Zambia turns a bond discount into power lines<span>Zambia</span></a><a href="https://www.tbsnews.net/bangladesh/education/world-bank-approves-300m-improve-learning-26-crore-bangladeshi-children-1595296" target="_blank" rel="noopener noreferrer">World Bank approves $300m to improve learning for 2.6 crore Bangladeshi children<span>The Business Standard</span></a><a href="https://www.africa-newsroom.com/press/nigeria-boosts-support-for-climate-resilience-and-sustainable-landscapes" target="_blank" rel="noopener noreferrer">Nigeria Boosts Support for Climate Resilience and Sustainable Landscapes<span>World Bank (APO Group)</span></a><a href="https://www.onlanka.com/news/sri-lanka-signs-us200-million-adb-loans-for-skills-and-water-reforms.html" target="_blank" rel="noopener noreferrer">Sri Lanka signs US$200 Million ADB loans for skills and water reforms<span>Onlanka</span></a><a href="https://www.larepublica.co/economia/grupo-banco-mundial-dara-garantia-de-2-8-billones-el-credito-de-la-linea-1-del-metro-4518643" target="_blank" rel="noopener noreferrer">Grupo Banco Mundial dar&#225; garant&#237;a de $2,8 billones el cr&#233;dito de la L&#237;nea 1 del Metro<span>La Rep&#250;blica</span></a><a href="https://www.koreaherald.com/article/10926998" target="_blank" rel="noopener noreferrer">Korea Eximbank commits $170m to Tanzania&#8217;s first EDCF AI project<span>The Korea Herald</span></a><span class="sn-tick__dup" aria-hidden="true"><a tabindex="-1" href="#solution-11">Solution No. 11: Tanzania brings nine banks to its railway with one guarantee<span>Tanzania</span></a><a tabindex="-1" href="#solution-10">Solution No. 10: Barbados turns cheaper debt into health care<span>Barbados</span></a><a tabindex="-1" href="#solution-09">Solution No. 09: Zambia turns a bond discount into power lines<span>Zambia</span></a><a tabindex="-1" href="https://www.tbsnews.net/bangladesh/education/world-bank-approves-300m-improve-learning-26-crore-bangladeshi-children-1595296" target="_blank" rel="noopener noreferrer">World Bank approves $300m to improve learning for 2.6 crore Bangladeshi children<span>The Business Standard</span></a><a tabindex="-1" href="https://www.africa-newsroom.com/press/nigeria-boosts-support-for-climate-resilience-and-sustainable-landscapes" target="_blank" rel="noopener noreferrer">Nigeria Boosts Support for Climate Resilience and Sustainable Landscapes<span>World Bank (APO Group)</span></a><a tabindex="-1" href="https://www.onlanka.com/news/sri-lanka-signs-us200-million-adb-loans-for-skills-and-water-reforms.html" target="_blank" rel="noopener noreferrer">Sri Lanka signs US$200 Million ADB loans for skills and water reforms<span>Onlanka</span></a><a tabindex="-1" href="https://www.larepublica.co/economia/grupo-banco-mundial-dara-garantia-de-2-8-billones-el-credito-de-la-linea-1-del-metro-4518643" target="_blank" rel="noopener noreferrer">Grupo Banco Mundial dar&#225; garant&#237;a de $2,8 billones el cr&#233;dito de la L&#237;nea 1 del Metro<span>La Rep&#250;blica</span></a><a tabindex="-1" href="https://www.koreaherald.com/article/10926998" target="_blank" rel="noopener noreferrer">Korea Eximbank commits $170m to Tanzania&#8217;s first EDCF AI project<span>The Korea Herald</span></a></span></div>
+      <div class="sn-tick__track"><a href="#solution-44">Solution No. 44: The Blue Food Swap<span>Barbados</span></a><a href="#solution-43">Solution No. 43: The Rift Reading Bond<span>Kenya</span></a><a href="#solution-42">Solution No. 42: Solar Schools, Reading Children<span>India</span></a><a href="https://www.tbsnews.net/bangladesh/education/world-bank-approves-300m-improve-learning-26-crore-bangladeshi-children-1595296" target="_blank" rel="noopener noreferrer">World Bank approves $300m to improve learning for 2.6 crore Bangladeshi children<span>The Business Standard</span></a><a href="https://www.africa-newsroom.com/press/nigeria-boosts-support-for-climate-resilience-and-sustainable-landscapes" target="_blank" rel="noopener noreferrer">Nigeria Boosts Support for Climate Resilience and Sustainable Landscapes<span>World Bank (APO Group)</span></a><a href="https://www.onlanka.com/news/sri-lanka-signs-us200-million-adb-loans-for-skills-and-water-reforms.html" target="_blank" rel="noopener noreferrer">Sri Lanka signs US$200 Million ADB loans for skills and water reforms<span>Onlanka</span></a><a href="https://www.larepublica.co/economia/grupo-banco-mundial-dara-garantia-de-2-8-billones-el-credito-de-la-linea-1-del-metro-4518643" target="_blank" rel="noopener noreferrer">Grupo Banco Mundial dar&#225; garant&#237;a de $2,8 billones el cr&#233;dito de la L&#237;nea 1 del Metro<span>La Rep&#250;blica</span></a><a href="https://www.koreaherald.com/article/10926998" target="_blank" rel="noopener noreferrer">Korea Eximbank commits $170m to Tanzania&#8217;s first EDCF AI project<span>The Korea Herald</span></a><span class="sn-tick__dup" aria-hidden="true"><a tabindex="-1" href="#solution-44">Solution No. 44: The Blue Food Swap<span>Barbados</span></a><a tabindex="-1" href="#solution-43">Solution No. 43: The Rift Reading Bond<span>Kenya</span></a><a tabindex="-1" href="#solution-42">Solution No. 42: Solar Schools, Reading Children<span>India</span></a><a tabindex="-1" href="https://www.tbsnews.net/bangladesh/education/world-bank-approves-300m-improve-learning-26-crore-bangladeshi-children-1595296" target="_blank" rel="noopener noreferrer">World Bank approves $300m to improve learning for 2.6 crore Bangladeshi children<span>The Business Standard</span></a><a tabindex="-1" href="https://www.africa-newsroom.com/press/nigeria-boosts-support-for-climate-resilience-and-sustainable-landscapes" target="_blank" rel="noopener noreferrer">Nigeria Boosts Support for Climate Resilience and Sustainable Landscapes<span>World Bank (APO Group)</span></a><a tabindex="-1" href="https://www.onlanka.com/news/sri-lanka-signs-us200-million-adb-loans-for-skills-and-water-reforms.html" target="_blank" rel="noopener noreferrer">Sri Lanka signs US$200 Million ADB loans for skills and water reforms<span>Onlanka</span></a><a tabindex="-1" href="https://www.larepublica.co/economia/grupo-banco-mundial-dara-garantia-de-2-8-billones-el-credito-de-la-linea-1-del-metro-4518643" target="_blank" rel="noopener noreferrer">Grupo Banco Mundial dar&#225; garant&#237;a de $2,8 billones el cr&#233;dito de la L&#237;nea 1 del Metro<span>La Rep&#250;blica</span></a><a tabindex="-1" href="https://www.koreaherald.com/article/10926998" target="_blank" rel="noopener noreferrer">Korea Eximbank commits $170m to Tanzania&#8217;s first EDCF AI project<span>The Korea Herald</span></a></span></div>
     </div>
   </section>
 
@@ -494,69 +487,75 @@ html.pn-son-lock,html.pn-son-lock body{ overflow:hidden; }
     <div class="sn-in">
       <div class="sn-head">
         <div>
-          <p class="sn-eb">Solutions</p>
-          <h2 class="sn-h2" id="sn-sol-h">How nations close the gap</h2>
-          <p class="sn-lead">Each Solution pairs a nation&#8217;s challenge with what Perfect Nations advises. <span class="sn-swipe">Swipe for all <span data-count-s2>10</span> &#8594;</span></p>
+          <p class="sn-eb">Perfect Nations Solutions</p>
+          <h2 class="sn-h2" id="sn-sol-h">A Solution for every nation</h2>
+          <p class="sn-lead">Each names a nation&#8217;s challenge and what Perfect Nations advises: innovative finance first, then what super intelligence makes possible. <span class="sn-swipe">Swipe for all <span data-count-s2>44</span> &#8594;</span></p>
           <details class="sn-rm">
             <summary>Read more<span class="sn-sr"> on how a Solution is built</span></summary>
             <div class="sn-rm__b">
               <ol class="sn-how" aria-label="How a Solution is built">
-                <li><b>01</b><strong>The challenge</strong><span>The standard furthest from reach, measured and sourced.</span></li>
-                <li><b>02</b><strong>The deal</strong><span>The bond, swap or guarantee that pays for it.</span></li>
-                <li><b>03</b><strong>What Perfect Nations advises</strong><span>Where the deal fits next, and what super intelligence makes possible.</span></li>
+                <li><b>01</b><strong>Assets</strong><span>What the nation already owns that can carry the Solution.</span></li>
+                <li><b>02</b><strong>Capital</strong><span>The instrument that finances it, and the deal that proves it works.</span></li>
+                <li><b>03</b><strong>Solutions</strong><span>What changes for every citizen, measured and verified.</span></li>
               </ol>
-              <p>Newest first. Every figure is sourced in its dispatch.</p>
+              <p>Every figure is sourced. Each Solution is a design to co-design with the nation in the ReDesign Studio, and grows with every new blueprint.</p>
             </div>
           </details>
+        </div>
+        <div class="sn-search" id="sn-nations">
+          <svg aria-hidden="true" focusable="false"><use href="#pnso-q"></use></svg>
+          <input id="snQ" type="search" placeholder="Find your nation" autocomplete="off" aria-label="Find your nation&#8217;s Solution">
         </div>
       </div>
       <div class="sn-chips sn-scroll" id="snSFil" role="group" aria-label="Filter the Solutions by standard" hidden></div>
       <ol class="sn-clist" id="snCList" aria-live="polite">
-<li class="sn-c" data-no="11" data-std="Livelihood;Food"><div class="sn-c__k"><b>Solution No. 11</b><span>Tanzania</span><time datetime="2026-11-06">6 Nov 2026</time></div><h3><a href="#solution-11">Tanzania brings nine banks to its railway with one guarantee</a></h3><ul class="sn-std"><li>Livelihood</li><li>Food</li></ul><dl class="sn-c__x"><div><dt>The challenge</dt><dd>Farms, mines and traders in western Tanzania sit far from the port of Dar es Salaam, and the long haul costs them their income.</dd></div><div><dt>What Perfect Nations advises</dt><dd>Nations with long freight corridors should pair a development bank guarantee with insurers, so that commercial banks will finance the next line, Uganda first. With super intelligence, every corridor can be mapped for the farms and mines it would reach, and the freight, jobs and farm-gate prices each line moves tracked, so leaders can see who it lifts out of poverty.</dd></div></dl><p class="sn-c__f"><b>$1.2bn</b><span>commercial facility for the Tabora&#8211;Kigoma railway</span></p><span class="sn-c__go">Read the solution</span></li>
-<li class="sn-c" data-no="10" data-std="Health"><div class="sn-c__k"><b>Solution No. 10</b><span>Barbados</span><time datetime="2026-11-04">4 Nov 2026</time></div><h3><a href="#solution-10">Barbados turns cheaper debt into health care</a></h3><ul class="sn-std"><li>Health</li></ul><dl class="sn-c__x"><div><dt>The challenge</dt><dd>Barbados carries costly debt while chronic disease and mental health strain its health system.</dd></div><div><dt>What Perfect Nations advises</dt><dd>Caribbean nations with costly debt should refinance it behind a development bank guarantee and bind the savings to health care, Saint Lucia first. With super intelligence, every dollar saved can be followed into named clinics and services as it is spent, and the same swap screened across the region, until care reaches every citizen.</dd></div></dl><p class="sn-c__f"><b>$175m</b><span>IDB guarantee for Barbados, 20-year term</span></p><span class="sn-c__go">Read the solution</span></li>
-<li class="sn-c" data-no="9" data-std="Energy;Livelihood"><div class="sn-c__k"><b>Solution No. 09</b><span>Zambia</span><time datetime="2026-11-02">2 Nov 2026</time></div><h3><a href="#solution-09">Zambia turns a bond discount into power lines</a></h3><ul class="sn-std"><li>Energy</li><li>Livelihood</li></ul><dl class="sn-c__x"><div><dt>The challenge</dt><dd>Unreliable supply and grid losses hold back the homes, clinics, schools and mines that run on electricity.</dd></div><div><dt>What Perfect Nations advises</dt><dd>Nations should buy back bonds trading below face value with a development bank loan, Mozambique first, and earmark the savings for electricity. With super intelligence, every bond can be screened each day for the next buyback, and the earmark followed connection by connection until every home, clinic and school has power.</dd></div></dl><p class="sn-c__f"><b>$275m</b><span>earmarked for Zambia&#8217;s energy sector over 15 years</span></p><span class="sn-c__go">Read the solution</span></li>
-<li class="sn-c" data-no="7" data-std="Livelihood"><div class="sn-c__k"><b>Solution No. 07</b><span>Ghana</span><time datetime="2026-10-19">19 Oct 2026</time></div><h3><a href="#solution-07">Ghana turns its pensions into venture capital</a></h3><ul class="sn-std"><li>Livelihood</li></ul><dl class="sn-c__x"><div><dt>The challenge</dt><dd>Small and medium enterprises cannot raise long-term capital, while the nation&#8217;s pension savings sit mostly in government paper.</dd></div><div><dt>What Perfect Nations advises</dt><dd>Nations whose pension savings sit mostly in government paper should open them to small and medium enterprises through a local-currency fund of funds, Kenya first. With super intelligence, those savings can be matched to the firms a fund could back and the jobs that follow counted, so that a nation&#8217;s own savings build its livelihoods.</dd></div></dl><p class="sn-c__f"><b>GHS 383m</b><span>first close of the Ci Gaba Fund of Funds, March 2026</span></p><span class="sn-c__go">Read the solution</span></li>
-<li class="sn-c" data-no="6" data-std=""><div class="sn-c__k"><b>Solution No. 06</b><span>Ethiopia</span><time datetime="2026-10-19">19 Oct 2026</time></div><h3><a href="#solution-06">Ethiopia trades a haircut for a seat at its next bond</a></h3><ul class="sn-std"><li class="is-all">All seven, through the budget</li></ul><dl class="sn-c__x"><div><dt>The challenge</dt><dd>A defaulted US$1 billion Eurobond keeps Ethiopia out of the market its budgets depend on.</dd></div><div><dt>What Perfect Nations advises</dt><dd>Nations in debt distress should pair the haircut they ask of bondholders with a tradable warrant to buy their next international bond, Mozambique first. With super intelligence, each term can be modelled before it is signed for what it leaves in the budget for food, water, health and the other standards.</dd></div></dl><p class="sn-c__f"><b>$880m</b><span>new bond offered for the US$1 billion 6.625% Notes due 2024</span></p><span class="sn-c__go">Read the solution</span></li>
-<li class="sn-c" data-no="5" data-std=""><div class="sn-c__k"><b>Solution No. 05</b><span>Suriname</span><time datetime="2026-10-14">14 Oct 2026</time></div><h3><a href="https://perfectnations.org/suriname-now-owes-in-the-currency-it-earns/">Suriname now owes in the currency it earns</a></h3><ul class="sn-std"><li class="is-all">All seven, through the budget</li></ul><dl class="sn-c__x"><div><dt>The challenge</dt><dd>Debt owed in foreign currency grows with every devaluation, before any of the seven standards is funded.</dd></div><div><dt>What Perfect Nations advises</dt><dd>Nations that owe in foreign currency should use the conversion options already written into their loan agreements, so that they owe in the currency they earn, starting with the Honduras water loan. With super intelligence, every loan agreement can be read for these options, and the currency risk each conversion removes measured against the seven standards it protects.</dd></div></dl><p class="sn-c__f"><b>$150m</b><span>IDB loan converted into fixed-rate Surinamese dollars</span></p><span class="sn-c__go">Read the solution</span></li>
-<li class="sn-c" data-no="4" data-std="Education;Shelter;Energy"><div class="sn-c__k"><b>Solution No. 04</b><span>Five nations</span><time datetime="2026-10-12">12 Oct 2026</time></div><h3><a href="https://perfectnations.org/how-to-finance-a-nations-future/">How to finance a nation&#8217;s future: five instruments, five countries</a></h3><ul class="sn-std"><li>Education</li><li>Shelter</li><li>Energy</li></ul><dl class="sn-c__x"><div><dt>The challenge</dt><dd>Every public need is a different financing problem: who supplies the capital, who carries the risk, and what proves delivery.</dd></div><div><dt>What Perfect Nations advises</dt><dd>Nations should finance each public need with the structure that fits it: an outcome, impact, social, sustainability-linked or mobile retail bond. With super intelligence, each need can be matched to its structure and delivery measured in classrooms, homes and power connections, so that every bond is judged by what citizens receive.</dd></div></dl><p class="sn-c__f"><b>$2bn</b><span>Chile&#8217;s 20-year sustainability-linked bond, the first by a sovereign, 2022</span></p><span class="sn-c__go">Read the solution</span></li>
-<li class="sn-c" data-no="3" data-std="Health;Water;Energy"><div class="sn-c__k"><b>Solution No. 03</b><span>Kenya</span><time datetime="2026-10-12">12 Oct 2026</time></div><h3><a href="https://perfectnations.org/kenya-has-bought-time/">Kenya has bought time. Now it should buy down the price.</a></h3><ul class="sn-std"><li>Health</li><li>Water</li><li>Energy</li></ul><dl class="sn-c__x"><div><dt>The challenge</dt><dd>Kenya pays 9.5% on the US$1.5 billion bond it sold in February 2025, money that does not reach a health system scoring 57 out of 100 on the WHO coverage index.</dd></div><div><dt>What Perfect Nations advises</dt><dd>Kenya should refinance its dollar debt behind a guarantee that lowers the coupon itself, with health, water and electricity targets written into the terms. With super intelligence, the saving can be priced before the deal and the targets tracked each year, so that the interest saved reaches clinics, taps and homes.</dd></div></dl><p class="sn-c__f"><b>9.5%</b><span>coupon on the US$1.5 billion bond sold in February 2025</span></p><span class="sn-c__go">Read the solution</span></li>
-<li class="sn-c" data-no="2" data-std="Water;Energy"><div class="sn-c__k"><b>Solution No. 02</b><span>Barbados</span><time datetime="2026-10-12">12 Oct 2026</time></div><h3><a href="https://perfectnations.org/barbados-has-priced-its-future/">The Caribbean&#8217;s first pooled sustainability bond needs a pipeline</a></h3><ul class="sn-std"><li>Water</li><li>Energy</li></ul><dl class="sn-c__x"><div><dt>The challenge</dt><dd>Caribbean projects are too small, one by one, for institutional investors, and Barbados needs US$11.6 billion by 2035.</dd></div><div><dt>What Perfect Nations advises</dt><dd>Caribbean states should prepare their projects to one standard, each costed and tied to water connections and megawatts, so that together they can fill the Caribbean Sustainability Bond. With super intelligence, small states can prepare and cost projects faster, and show investors what each dollar delivers in water and power.</dd></div></dl><p class="sn-c__f"><b>$250m</b><span>the most the Caribbean Sustainability Bond seeks to raise</span></p><span class="sn-c__go">Read the solution</span></li>
-<li class="sn-c" data-no="1" data-std="Water"><div class="sn-c__k"><b>Solution No. 01</b><span>Developing nations</span><time datetime="2026-10-11">11 Oct 2026</time></div><h3><a href="https://perfectnations.org/five_instruments_bangkok_should_put_on_the_table/">Five instruments Bangkok should put on the table</a></h3><ul class="sn-std"><li>Water</li></ul><dl class="sn-c__x"><div><dt>The challenge</dt><dd>Developing nations paid their creditors US$741 billion more than they received in new financing, 2022 to 2024.</dd></div><div><dt>What Perfect Nations advises</dt><dd>Developing nations and their creditors should put the five instruments already in use on the table: swaps, catastrophe bonds, pooled bonds, payment for results and sustainability-linked bonds. With super intelligence, each nation can see which fits and price what it would free for the seven standards, turning debt service into basic standards of living.</dd></div></dl><p class="sn-c__f"><b>$741bn</b><span>more paid on external debt than received in new financing, 2022 to 2024</span></p><span class="sn-c__go">Read the solution</span></li>
+<li class="sn-c sn-c--lead" data-no="44" data-std="Food;Livelihood" data-bp="https://perfectnations.org/blueprints/barbados/" data-q="barbados the blue food swap"><div class="sn-c__k"><b>Barbados</b><span>Solution No. 44</span></div><h3><a href="#solution-44">The Blue Food Swap</a></h3><p class="sn-c__i">The next debt conversion is bound to local farms, fisheries and sea farming.</p><dl class="sn-c__x"><div><dt>The challenge</dt><dd>About 88,000 Barbadians, three in ten, are moderately or severely food insecure.</dd></div><div><dt>What Perfect Nations advises</dt><dd>Barbados should make its next debt conversion a blue food swap, refinancing costly debt with guaranteed debt and binding the savings to local farms, fisheries and sea farming, so the island grows more of what it eats. With super intelligence, food prices, harvests and fish stocks can be read week by week, so support reaches the households that cannot count on enough good food before prices rise.</dd></div></dl><div class="sn-c__ft"><ul class="sn-std"><li>Food</li><li>Livelihood</li></ul><span class="sn-c__go">Read the Solution</span></div></li>
+<li class="sn-c" data-no="43" data-std="Education" data-bp="https://perfectnations.org/blueprints/kenya/" data-q="kenya the rift reading bond"><div class="sn-c__k"><b>Kenya</b><span>Solution No. 43</span></div><h3><a href="#solution-43">The Rift Reading Bond</a></h3><p class="sn-c__i">Kenyans buy a reading bond by phone, backed by the heat of the Rift.</p><dl class="sn-c__x"><div><dt>The challenge</dt><dd>Four in five Kenyan children reach the end of primary school unable to read a simple text.</dd></div><div><dt>What Perfect Nations advises</dt><dd>Kenya should sell a reading bond to its own citizens by phone, as it did with M-Akiba, back it with part of the revenue from its geothermal power, and release funds to schools as children learn to read. With super intelligence, reading can be assessed in English and Kiswahili on a phone in every school, and every bondholder can see how many children their savings helped to read.</dd></div></dl><div class="sn-c__ft"><ul class="sn-std"><li>Education</li></ul><span class="sn-c__go">Read the Solution</span></div></li>
+<li class="sn-c" data-no="42" data-std="Education;Energy" data-bp="https://perfectnations.org/blueprints/india/" data-q="india solar schools reading children"><div class="sn-c__k"><b>India</b><span>Solution No. 42</span></div><h3><a href="#solution-42">Solar Schools, Reading Children</a></h3><p class="sn-c__i">Solar on every government school, and the power savings finance children learning to read.</p><dl class="sn-c__x"><div><dt>The challenge</dt><dd>56% of Indian children could not read a simple text by the end of primary school in 2017.</dd></div><div><dt>What Perfect Nations advises</dt><dd>India should put solar on the roof of every government school through its sovereign green bonds, and commit the electricity savings to reading programmes rewarded on results, as the Educate Girls impact bond first did in Rajasthan. With super intelligence, every child can have a reading tutor in their own language on a shared device, and every school&#8217;s progress and power savings can be seen side by side.</dd></div></dl><div class="sn-c__ft"><ul class="sn-std"><li>Education</li><li>Energy</li></ul><span class="sn-c__go">Read the Solution</span></div></li>
+<li class="sn-c" data-no="41" data-std="Shelter;Water;Health" data-bp="https://perfectnations.org/blueprints/brazil/" data-q="brazil every street connected"><div class="sn-c__k"><b>Brazil</b><span>Solution No. 41</span></div><h3><a href="#solution-41">Every Street Connected</a></h3><p class="sn-c__i">A sanitation bond whose return rises with every home connected to a safe toilet and sewer.</p><dl class="sn-c__x"><div><dt>The challenge</dt><dd>About 109 million Brazilians, about one in two, have no safely managed toilet at home.</dd></div><div><dt>What Perfect Nations advises</dt><dd>Brazil should issue a sanitation outcome bond under its sustainable bond framework, with the return rising as each verified household is connected to a safe toilet and sewer, and pair it with the currency hedging that Eco Invest Brasil already offers foreign investors. With super intelligence, every street without sewerage can be mapped from satellite and census data, so concessions are priced street by street and no community is left until last.</dd></div></dl><div class="sn-c__ft"><ul class="sn-std"><li>Shelter</li><li>Water</li><li>Health</li></ul><span class="sn-c__go">Read the Solution</span></div></li>
+<li class="sn-c" data-no="40" data-std="Energy;Health" data-bp="https://perfectnations.org/blueprints/rwanda/" data-q="rwanda standard tokens for clean kitchens"><div class="sn-c__k"><b>Rwanda</b><span>Solution No. 40</span></div><h3><a href="#solution-40">Standard Tokens for Clean Kitchens</a></h3><p class="sn-c__i">The first pilot of Standard Tokens, designed by Perfect Nations: one token, one clean kitchen.</p><dl class="sn-c__x"><div><dt>The challenge</dt><dd>About 13 million Rwandans, nine in ten, cook without clean fuel or technology.</dd></div><div><dt>What Perfect Nations advises</dt><dd>Rwanda should be the first nation to pilot Standard Tokens, designed by Perfect Nations: small units of finance that citizens, investors and visitors can buy, each tied to one household&#8217;s switch to clean cooking, subject to compliance review. With super intelligence, each token can be linked to a verified kitchen, so every buyer sees the family it reached and Rwanda sees its progress home by home.</dd></div></dl><div class="sn-c__ft"><ul class="sn-std"><li>Energy</li><li>Health</li></ul><span class="sn-c__go">Read the Solution</span></div></li>
+<li class="sn-c" data-no="39" data-std="Education" data-bp="https://perfectnations.org/blueprints/afghanistan/" data-q="afghanistan every child learns"><div class="sn-c__k"><b>Afghanistan</b><span>Solution No. 39</span></div><h3><a href="#solution-39">Every Child Learns</a></h3><p class="sn-c__i">Partners finance learning through community schools, released only when children can read.</p><dl class="sn-c__x"><div><dt>The challenge</dt><dd>Nine in ten ten-year-olds in Afghanistan cannot read a simple text.</dd></div><div><dt>What Perfect Nations advises</dt><dd>Afghanistan&#8217;s partners should finance a learning outcomes fund, delivered through UN agencies and community schools, that releases money only when independent tests show children reading, and that reaches every child it can, girls included. With super intelligence, lessons in Dari and Pashto can reach any child with a phone or a radio, and learning can be verified without a classroom.</dd></div></dl><div class="sn-c__ft"><ul class="sn-std"><li>Education</li></ul><span class="sn-c__go">Read the Solution</span></div></li>
+<li class="sn-c" data-no="38" data-std="Shelter;Health" data-bp="https://perfectnations.org/blueprints/zimbabwe/" data-q="zimbabwe lithium for living"><div class="sn-c__k"><b>Zimbabwe</b><span>Solution No. 38</span></div><h3><a href="#solution-38">Lithium for Living</a></h3><p class="sn-c__i">A share of rising lithium revenue backs a social bond for toilets, sewers and safe homes.</p><dl class="sn-c__x"><div><dt>The challenge</dt><dd>About 13 million Zimbabweans, three in four, have no safely managed sanitation at home.</dd></div><div><dt>What Perfect Nations advises</dt><dd>Zimbabwe should commit a share of its rising lithium revenue to a sanitation fund that backs a social bond for toilets, sewers and safe homes, in the towns first and then the rural districts. With super intelligence, every household without safe sanitation can be mapped and each upgrade verified, so lithium buyers and citizens alike can see the revenue at work.</dd></div></dl><div class="sn-c__ft"><ul class="sn-std"><li>Shelter</li><li>Health</li></ul><span class="sn-c__go">Read the Solution</span></div></li>
+<li class="sn-c" hidden data-no="37" data-std="Education" data-bp="https://perfectnations.org/blueprints/zambia/" data-q="zambia the copper windfall for learning"><div class="sn-c__k"><b>Zambia</b><span>Solution No. 37</span></div><h3><a href="#solution-37">The Copper Windfall for Learning</a></h3><p class="sn-c__i">Every kwacha earned above the budgeted copper price goes to children learning to read.</p><dl class="sn-c__x"><div><dt>The challenge</dt><dd>98% of Zambian children could not read a simple text by the end of primary school in 2019.</dd></div><div><dt>What Perfect Nations advises</dt><dd>Zambia should write a copper windfall clause into its budget, sending every kwacha earned above the budgeted copper price to a learning fund that rewards schools as children read. With super intelligence, copper revenue and reading can be tracked side by side and published monthly, so every windfall is seen to reach a classroom.</dd></div></dl><div class="sn-c__ft"><ul class="sn-std"><li>Education</li></ul><span class="sn-c__go">Read the Solution</span></div></li>
+<li class="sn-c" hidden data-no="36" data-std="Shelter;Water" data-bp="https://perfectnations.org/blueprints/vietnam/" data-q="vietnam the sanitation exchange"><div class="sn-c__k"><b>Vietnam</b><span>Solution No. 36</span></div><h3><a href="#solution-36">The Sanitation Exchange</a></h3><p class="sn-c__i">Citizens and investors own the sewers and treatment plants its cities need, on its own stock market.</p><dl class="sn-c__x"><div><dt>The challenge</dt><dd>About 55 million Vietnamese, 55 in every hundred, have no safely managed toilet at home.</dd></div><div><dt>What Perfect Nations advises</dt><dd>Vietnam should list a sanitation infrastructure fund on its newly upgraded stock market, so domestic and foreign investors can own the sewers and treatment plants its cities need, with returns tied to homes connected. With super intelligence, every city&#8217;s network can be planned and its performance reported to shareholders in real time.</dd></div></dl><div class="sn-c__ft"><ul class="sn-std"><li>Shelter</li><li>Water</li></ul><span class="sn-c__go">Read the Solution</span></div></li>
+<li class="sn-c" hidden data-no="35" data-std="Food;Livelihood" data-bp="https://perfectnations.org/blueprints/ukraine/" data-q="ukraine the breadbasket guarantee"><div class="sn-c__k"><b>Ukraine</b><span>Solution No. 35</span></div><h3><a href="#solution-35">The Breadbasket Guarantee</a></h3><p class="sn-c__i">War-risk cover and credit guarantees let farmers plant, so families can count on food at home.</p><dl class="sn-c__x"><div><dt>The challenge</dt><dd>About 12 million Ukrainians, 32 in every hundred, cannot always count on enough good food.</dd></div><div><dt>What Perfect Nations advises</dt><dd>Ukraine should combine war-risk insurance for its farms with credit guarantees, so farmers can borrow to plant and families can count on affordable food at home while the nation rebuilds. With super intelligence, fields, stores and damage can be assessed from satellite, so cover is priced and claims settled within days rather than seasons.</dd></div></dl><div class="sn-c__ft"><ul class="sn-std"><li>Food</li><li>Livelihood</li></ul><span class="sn-c__go">Read the Solution</span></div></li>
+<li class="sn-c" hidden data-no="34" data-std="Energy;Health" data-bp="https://perfectnations.org/blueprints/uganda/" data-q="uganda cook as you go"><div class="sn-c__k"><b>Uganda</b><span>Solution No. 34</span></div><h3><a href="#solution-34">Cook-as-You-Go</a></h3><p class="sn-c__i">Clean power from the Nile comes with a clean kitchen, financed by carbon credits.</p><dl class="sn-c__x"><div><dt>The challenge</dt><dd>About 50 million Ugandans, almost everyone, cook without clean fuel or technology.</dd></div><div><dt>What Perfect Nations advises</dt><dd>Uganda should let households cook with its clean hydropower on cook-as-you-go plans, financed by carbon credits and the Electricity Access Scale-up Project, so every new connection comes with a clean kitchen. With super intelligence, smart meters can verify each meal cooked with electricity, turning every verified switch into a carbon credit that finances the next home.</dd></div></dl><div class="sn-c__ft"><ul class="sn-std"><li>Energy</li><li>Health</li></ul><span class="sn-c__go">Read the Solution</span></div></li>
+<li class="sn-c" hidden data-no="33" data-std="Energy;Health" data-bp="https://perfectnations.org/blueprints/tanzania/" data-q="tanzania nyerere power every kitchen"><div class="sn-c__k"><b>Tanzania</b><span>Solution No. 33</span></div><h3><a href="#solution-33">Nyerere Power, Every Kitchen</a></h3><p class="sn-c__i">The guarantee that brought nine banks to the railway now brings power and clean cooking home.</p><dl class="sn-c__x"><div><dt>The challenge</dt><dd>About 63 million Tanzanians, almost nine in ten, cook without clean fuel or technology.</dd></div><div><dt>What Perfect Nations advises</dt><dd>Tanzania should turn the power of the Julius Nyerere station into clean kitchens, with a guaranteed facility like the one that brought nine banks to its railway, financing last-mile connections and electric cookers recovered through electricity bills. With super intelligence, every connection can be planned from satellite maps of homes and lines, so the new power reaches the families still waiting.</dd></div></dl><div class="sn-c__ft"><ul class="sn-std"><li>Energy</li><li>Health</li></ul><span class="sn-c__go">Read the Solution</span></div></li>
+<li class="sn-c" hidden data-no="32" data-std="Energy" data-bp="https://perfectnations.org/blueprints/sri-lanka/" data-q="sri lanka rooftop kitchens"><div class="sn-c__k"><b>Sri Lanka</b><span>Solution No. 32</span></div><h3><a href="#solution-32">Rooftop Kitchens</a></h3><p class="sn-c__i">Rooftop solar and electric cooking are financed together, by Sri Lankans at home and abroad.</p><dl class="sn-c__x"><div><dt>The challenge</dt><dd>About 15 million Sri Lankans, 69 in every hundred, cook without clean fuel or technology.</dd></div><div><dt>What Perfect Nations advises</dt><dd>Sri Lanka should finance rooftop solar and electric cooking together, through green bonds sold to Sri Lankans at home and abroad and serviced from the power each roof saves. With super intelligence, every roof can be assessed for sunlight and every kitchen&#8217;s switch verified, so families spend less on energy and the island imports less fuel.</dd></div></dl><div class="sn-c__ft"><ul class="sn-std"><li>Energy</li></ul><span class="sn-c__go">Read the Solution</span></div></li>
+<li class="sn-c" hidden data-no="31" data-std="Energy" data-bp="https://perfectnations.org/blueprints/south-sudan/" data-q="south sudan oil to sunlight"><div class="sn-c__k"><b>South Sudan</b><span>Solution No. 31</span></div><h3><a href="#solution-31">Oil to Sunlight</a></h3><p class="sn-c__i">A published share of oil revenue becomes solar power and clean kitchens, state by state.</p><dl class="sn-c__x"><div><dt>The challenge</dt><dd>Almost every South Sudanese, 12.2 million people, cooks without clean fuel or technology.</dd></div><div><dt>What Perfect Nations advises</dt><dd>South Sudan should place a fixed share of oil revenue in an account published in full, financing solar power and clean cooking in every state capital first, with development partners matching each verified connection. With super intelligence, every oil receipt and every connection can be published and checked by any citizen, so revenue turns into light and trust together.</dd></div></dl><div class="sn-c__ft"><ul class="sn-std"><li>Energy</li></ul><span class="sn-c__go">Read the Solution</span></div></li>
+<li class="sn-c" hidden data-no="30" data-std="Education" data-bp="https://perfectnations.org/blueprints/south-africa/" data-q="south africa a wildlife bond for reading"><div class="sn-c__k"><b>South Africa</b><span>Solution No. 30</span></div><h3><a href="#solution-30">A Wildlife Bond for Reading</a></h3><p class="sn-c__i">The design of the world&#8217;s first wildlife conservation bond, applied to children reading.</p><dl class="sn-c__x"><div><dt>The challenge</dt><dd>82% of South African children could not read for meaning by the end of primary school in 2021.</dd></div><div><dt>What Perfect Nations advises</dt><dd>South Africa should apply the design of its Wildlife Conservation Bond to reading: a bond with its principal protected and a return that rises as children learn to read for meaning, with an outcome funder behind it. With super intelligence, reading for meaning can be assessed in every home language, so the result behind the bond is measured fairly in every school.</dd></div></dl><div class="sn-c__ft"><ul class="sn-std"><li>Education</li></ul><span class="sn-c__go">Read the Solution</span></div></li>
+<li class="sn-c" hidden data-no="29" data-std="Energy;Livelihood" data-bp="https://perfectnations.org/blueprints/somalia/" data-q="somalia the clean ledger kitchen"><div class="sn-c__k"><b>Somalia</b><span>Solution No. 29</span></div><h3><a href="#solution-29">The Clean Ledger Kitchen</a></h3><p class="sn-c__i">Debt relief opens room to finance solar and clean cooking, delivered through the phone.</p><dl class="sn-c__x"><div><dt>The challenge</dt><dd>Almost every Somali, about 19 million people, cooks without clean fuel or technology.</dd></div><div><dt>What Perfect Nations advises</dt><dd>Somalia should use the borrowing room its debt relief has created for a solar power and clean cooking programme, financed by concessional loans and results-based grants for each verified household and delivered through mobile money. With super intelligence, every settlement can be mapped and every household reached through its phone, so support flows even where roads and offices do not.</dd></div></dl><div class="sn-c__ft"><ul class="sn-std"><li>Energy</li><li>Livelihood</li></ul><span class="sn-c__go">Read the Solution</span></div></li>
+<li class="sn-c" hidden data-no="28" data-std="Water;Health" data-bp="https://perfectnations.org/blueprints/senegal/" data-q="senegal water by results"><div class="sn-c__k"><b>Senegal</b><span>Solution No. 28</span></div><h3><a href="#solution-28">Water by Results</a></h3><p class="sn-c__i">Operators are rewarded for safe water delivered to homes, not for pipes laid.</p><dl class="sn-c__x"><div><dt>The challenge</dt><dd>About 14 million Senegalese, 73 in every hundred, have no safely managed drinking water at home.</dd></div><div><dt>What Perfect Nations advises</dt><dd>Senegal should finance safe water at home with an outcome bond whose return rises with households connected and water tested safe, so the money follows safe water delivered rather than pipes laid. With super intelligence, every network can be monitored for leaks and quality, so operators are rewarded for each safe tap and each litre saved.</dd></div></dl><div class="sn-c__ft"><ul class="sn-std"><li>Water</li><li>Health</li></ul><span class="sn-c__go">Read the Solution</span></div></li>
+<li class="sn-c" hidden data-no="27" data-std="Education;Livelihood" data-bp="https://perfectnations.org/blueprints/republic-of-congo/" data-q="republic of the congo carbon for classrooms"><div class="sn-c__k"><b>Republic of the Congo</b><span>Solution No. 27</span></div><h3><a href="#solution-27">Carbon for Classrooms</a></h3><p class="sn-c__i">The forest that earns carbon revenue also educates the children who live beside it.</p><dl class="sn-c__x"><div><dt>The challenge</dt><dd>70% of Congolese children could not read a simple text by the end of primary school in 2019.</dd></div><div><dt>What Perfect Nations advises</dt><dd>The Republic of the Congo should direct a share of its forest carbon revenue to the schools of the communities that keep the forest standing, rewarding each school as its children learn to read. With super intelligence, forest cover and reading levels can both be verified from afar, so carbon buyers see standing trees and children learning in the same report.</dd></div></dl><div class="sn-c__ft"><ul class="sn-std"><li>Education</li><li>Livelihood</li></ul><span class="sn-c__go">Read the Solution</span></div></li>
+<li class="sn-c" hidden data-no="26" data-std="Education" data-bp="https://perfectnations.org/blueprints/philippines/" data-q="philippines the archipelago reading bond"><div class="sn-c__k"><b>Philippines</b><span>Solution No. 26</span></div><h3><a href="#solution-26">The Archipelago Reading Bond</a></h3><p class="sn-c__i">Filipinos at home and abroad buy a reading bond by phone, in small amounts.</p><dl class="sn-c__x"><div><dt>The challenge</dt><dd>91% of Filipino children could not read a simple text by the end of primary school in 2019.</dd></div><div><dt>What Perfect Nations advises</dt><dd>The Philippines should sell a reading bond to Filipinos at home and abroad through mobile wallets, in small amounts, to finance tutors and books for the children furthest behind. With super intelligence, every pupil can have a reading tutor on a phone in Filipino, English or the language spoken at home, and every school&#8217;s progress can be seen in real time.</dd></div></dl><div class="sn-c__ft"><ul class="sn-std"><li>Education</li></ul><span class="sn-c__go">Read the Solution</span></div></li>
+<li class="sn-c" hidden data-no="25" data-std="Education" data-bp="https://perfectnations.org/blueprints/pakistan/" data-q="pakistan the education sukuk"><div class="sn-c__k"><b>Pakistan</b><span>Solution No. 25</span></div><h3><a href="#solution-25">The Education Sukuk</a></h3><p class="sn-c__i">A sukuk opens schools where most children are out of school, released as children read.</p><dl class="sn-c__x"><div><dt>The challenge</dt><dd>80% of Pakistani children could not read a simple text by the end of primary school in 2019.</dd></div><div><dt>What Perfect Nations advises</dt><dd>Pakistan should issue an education sukuk whose proceeds open schools and train teachers where most children are out of school, with each tranche released as independent tests show children reading. With super intelligence, out-of-school children can be found village by village and taught to read in their own language on a phone, so no girl or boy is missed.</dd></div></dl><div class="sn-c__ft"><ul class="sn-std"><li>Education</li></ul><span class="sn-c__go">Read the Solution</span></div></li>
+<li class="sn-c" hidden data-no="24" data-std="Food;Livelihood" data-bp="https://perfectnations.org/blueprints/nigeria/" data-q="nigeria the diaspora harvest bond"><div class="sn-c__k"><b>Nigeria</b><span>Solution No. 24</span></div><h3><a href="#solution-24">The Diaspora Harvest Bond</a></h3><p class="sn-c__i">Nigerians abroad finance storage and warehouse receipts, so farmers sell when prices are fair.</p><dl class="sn-c__x"><div><dt>The challenge</dt><dd>About 182 million Nigerians, 76 in every hundred, cannot always count on enough good food.</dd></div><div><dt>What Perfect Nations advises</dt><dd>Nigeria should issue a second diaspora bond to finance storage, irrigation and warehouse receipts, so farmers can borrow against their stored grain instead of selling at harvest-time prices. With super intelligence, crops and stores can be watched by satellite and sensor, so every receipt is backed by real grain and lenders can reach farmers they never saw before.</dd></div></dl><div class="sn-c__ft"><ul class="sn-std"><li>Food</li><li>Livelihood</li></ul><span class="sn-c__go">Read the Solution</span></div></li>
+<li class="sn-c" hidden data-no="23" data-std="Livelihood;Energy" data-bp="https://perfectnations.org/blueprints/namibia/" data-q="namibia the hydrogen skills bond"><div class="sn-c__k"><b>Namibia</b><span>Solution No. 23</span></div><h3><a href="#solution-23">The Hydrogen Skills Bond</a></h3><p class="sn-c__i">Investors finance training for the hydrogen, solar and wind economy, and are rewarded for every Namibian hired.</p><dl class="sn-c__x"><div><dt>The challenge</dt><dd>About 1.9 million Namibians live below US$8.30 a day, on the 2015 survey.</dd></div><div><dt>What Perfect Nations advises</dt><dd>Namibia should finance a skills impact bond in which investors fund training for hydrogen, solar and wind work, and the projects and the state reward them for every Namibian placed in a lasting job. With super intelligence, every course can be matched to the jobs the projects will create, so training follows demand and each placement is verified.</dd></div></dl><div class="sn-c__ft"><ul class="sn-std"><li>Livelihood</li><li>Energy</li></ul><span class="sn-c__go">Read the Solution</span></div></li>
+<li class="sn-c" hidden data-no="22" data-std="Energy;Health" data-bp="https://perfectnations.org/blueprints/mozambique/" data-q="mozambique gas to kitchens"><div class="sn-c__k"><b>Mozambique</b><span>Solution No. 22</span></div><h3><a href="#solution-22">Gas to Kitchens</a></h3><p class="sn-c__i">Future gas revenue finances clean cooking now, rather than after first gas.</p><dl class="sn-c__x"><div><dt>The challenge</dt><dd>About 33 million Mozambicans, more than nine in ten, cook without clean fuel or technology.</dd></div><div><dt>What Perfect Nations advises</dt><dd>Mozambique should commit a share of future gas revenue to clean cooking at home, and finance the switch now against that revenue with development bank backing, rather than wait for first gas. With super intelligence, every household&#8217;s fuel use can be followed through mobile purchases, so support reaches the families still cooking with charcoal and the forests are spared.</dd></div></dl><div class="sn-c__ft"><ul class="sn-std"><li>Energy</li><li>Health</li></ul><span class="sn-c__go">Read the Solution</span></div></li>
+<li class="sn-c" hidden data-no="21" data-std="Shelter;Water" data-bp="https://perfectnations.org/blueprints/morocco/" data-q="morocco sun to sanitation"><div class="sn-c__k"><b>Morocco</b><span>Solution No. 21</span></div><h3><a href="#solution-21">Sun to Sanitation</a></h3><p class="sn-c__i">Clean energy powers the treatment of every town&#8217;s wastewater, and the treated water is sold to farms.</p><dl class="sn-c__x"><div><dt>The challenge</dt><dd>About 35 million Moroccans, 92 in every hundred, have no safely managed toilet at home.</dd></div><div><dt>What Perfect Nations advises</dt><dd>Morocco should issue a social bond for safe toilets and wastewater treatment powered by its own clean energy, with the treated water sold to farms to help service the debt. With super intelligence, every town&#8217;s sewers and treatment plants can be planned together and watched in real time, so investors see each home connected and each cubic metre reused.</dd></div></dl><div class="sn-c__ft"><ul class="sn-std"><li>Shelter</li><li>Water</li></ul><span class="sn-c__go">Read the Solution</span></div></li>
+<li class="sn-c" hidden data-no="20" data-std="Water;Health" data-bp="https://perfectnations.org/blueprints/mexico/" data-q="mexico the water guarantee"><div class="sn-c__k"><b>Mexico</b><span>Solution No. 20</span></div><h3><a href="#solution-20">The Water Guarantee</a></h3><p class="sn-c__i">A guarantee that draws private capital into infrastructure is turned toward safe water at home.</p><dl class="sn-c__x"><div><dt>The challenge</dt><dd>About 75 million Mexicans, 57 in every hundred, have no safely managed drinking water at home.</dd></div><div><dt>What Perfect Nations advises</dt><dd>Mexico should direct the World Bank credit enhancement already drawing private capital into its infrastructure toward municipal water utilities, so domestic pension savings finance safe drinking water in every state. With super intelligence, leaks and water quality can be watched across each network, so utilities show investors the water saved and the homes served.</dd></div></dl><div class="sn-c__ft"><ul class="sn-std"><li>Water</li><li>Health</li></ul><span class="sn-c__go">Read the Solution</span></div></li>
+<li class="sn-c" hidden data-no="19" data-std="Energy;Livelihood" data-bp="https://perfectnations.org/blueprints/malawi/" data-q="malawi kwacha solar"><div class="sn-c__k"><b>Malawi</b><span>Solution No. 19</span></div><h3><a href="#solution-19">Kwacha Solar</a></h3><p class="sn-c__i">Solar and clean cooking firms borrow in kwacha, so families can light and cook on instalments.</p><dl class="sn-c__x"><div><dt>The challenge</dt><dd>Almost every Malawian, about 22 million people, cooks without clean fuel or technology.</dd></div><div><dt>What Perfect Nations advises</dt><dd>Malawi should back the companies that sell solar power and clean cooking on instalments with a local-currency guarantee, so they borrow in kwacha, and connect the homes along the lines the Mpatamanga hydropower project will feed. With super intelligence, instalment and meter data can show which homes are ready for credit, so families build a credit history as they light and cook cleanly.</dd></div></dl><div class="sn-c__ft"><ul class="sn-std"><li>Energy</li><li>Livelihood</li></ul><span class="sn-c__go">Read the Solution</span></div></li>
+<li class="sn-c" hidden data-no="18" data-std="Energy;Livelihood" data-bp="https://perfectnations.org/blueprints/madagascar/" data-q="madagascar the vanilla energy fund"><div class="sn-c__k"><b>Madagascar</b><span>Solution No. 18</span></div><h3><a href="#solution-18">The Vanilla Energy Fund</a></h3><p class="sn-c__i">Vanilla buyers and forest carbon finance clean cooking in the regions that grow the world&#8217;s vanilla.</p><dl class="sn-c__x"><div><dt>The challenge</dt><dd>Almost every Malagasy, about 32 million people, cooks without clean fuel or technology.</dd></div><div><dt>What Perfect Nations advises</dt><dd>Madagascar should create a clean energy fund for its vanilla regions, co-financed by the buyers of its vanilla and by carbon credits from the forests that solar power and clean stoves spare from charcoal. With super intelligence, charcoal use and forest loss can be tracked from satellite, so every credit is verified and every village is reached in turn.</dd></div></dl><div class="sn-c__ft"><ul class="sn-std"><li>Energy</li><li>Livelihood</li></ul><span class="sn-c__go">Read the Solution</span></div></li>
+<li class="sn-c" hidden data-no="17" data-std="Education" data-bp="https://perfectnations.org/blueprints/lesotho/" data-q="lesotho water for learning"><div class="sn-c__k"><b>Lesotho</b><span>Solution No. 17</span></div><h3><a href="#solution-17">Water for Learning</a></h3><p class="sn-c__i">The water Lesotho sells to its neighbour returns as literacy in its mountain schools.</p><dl class="sn-c__x"><div><dt>The challenge</dt><dd>97% of Basotho children could not read a simple text by the end of primary school, on 2016 data.</dd></div><div><dt>What Perfect Nations advises</dt><dd>Lesotho should pledge a fixed share of its Highlands Water royalties to a learning trust that rewards schools as children learn to read, and let Basotho abroad add their savings through a diaspora bond. With super intelligence, reading can be measured in Sesotho and English in every mountain school, so the water that flows to its neighbour returns as literacy at home.</dd></div></dl><div class="sn-c__ft"><ul class="sn-std"><li>Education</li></ul><span class="sn-c__go">Read the Solution</span></div></li>
+<li class="sn-c" hidden data-no="16" data-std="Education" data-bp="https://perfectnations.org/blueprints/jordan/" data-q="jordan the reading compact"><div class="sn-c__k"><b>Jordan</b><span>Solution No. 16</span></div><h3><a href="#solution-16">The Reading Compact</a></h3><p class="sn-c__i">Partners and Jordanians abroad invest together in one fund that rewards schools as children read.</p><dl class="sn-c__x"><div><dt>The challenge</dt><dd>62% of Jordanian children could not read a simple text by the end of primary school in 2021.</dd></div><div><dt>What Perfect Nations advises</dt><dd>Jordan should launch a learning outcomes fund in which its development partners and Jordanians abroad invest together, releasing money to schools only as children reach agreed reading levels, so every partner finances results rather than inputs. With super intelligence, Arabic reading can be assessed and tutored on a phone, child by child, so every school sees which pupils need help this term.</dd></div></dl><div class="sn-c__ft"><ul class="sn-std"><li>Education</li></ul><span class="sn-c__go">Read the Solution</span></div></li>
+<li class="sn-c" hidden data-no="15" data-std="Food;Livelihood" data-bp="https://perfectnations.org/blueprints/jamaica/" data-q="jamaica hurricane proof harvests"><div class="sn-c__k"><b>Jamaica</b><span>Solution No. 15</span></div><h3><a href="#solution-15">Hurricane-Proof Harvests</a></h3><p class="sn-c__i">The protection of the catastrophe bond reaches every farmer and fisher, within days of a storm.</p><dl class="sn-c__x"><div><dt>The challenge</dt><dd>About 1.6 million Jamaicans, 56 in every hundred, cannot always count on enough good food.</dd></div><div><dt>What Perfect Nations advises</dt><dd>Jamaica should extend the protection of its catastrophe bond to the farm, with parametric cover for every registered farmer and fisher delivered to mobile wallets within days of a hurricane, and credit ready to replant. With super intelligence, wind, rain and crop damage can be read from satellite parcel by parcel, so cover is priced fairly and reaches each farmer before the next planting.</dd></div></dl><div class="sn-c__ft"><ul class="sn-std"><li>Food</li><li>Livelihood</li></ul><span class="sn-c__go">Read the Solution</span></div></li>
+<li class="sn-c" hidden data-no="14" data-std="Water;Health" data-bp="https://perfectnations.org/blueprints/indonesia/" data-q="indonesia the water sukuk"><div class="sn-c__k"><b>Indonesia</b><span>Solution No. 14</span></div><h3><a href="#solution-14">The Water Sukuk</a></h3><p class="sn-c__i">The nation that issued the world&#8217;s first green sukuk issues one for safe water on every island.</p><dl class="sn-c__x"><div><dt>The challenge</dt><dd>About 199 million Indonesians, 70 in every hundred, have no safely managed drinking water at home.</dd></div><div><dt>What Perfect Nations advises</dt><dd>Indonesia should issue a water sukuk, ring-fenced for safe drinking water at home on every island, from piped networks to small desalination plants, building on the investor base of its green sukuk. With super intelligence, water quality can be monitored at every tap and the island networks planned together, so sukuk holders see each connection their finance delivers.</dd></div></dl><div class="sn-c__ft"><ul class="sn-std"><li>Water</li><li>Health</li></ul><span class="sn-c__go">Read the Solution</span></div></li>
+<li class="sn-c" hidden data-no="13" data-std="Shelter;Health" data-bp="https://perfectnations.org/blueprints/ghana/" data-q="ghana pensions for sanitation"><div class="sn-c__k"><b>Ghana</b><span>Solution No. 13</span></div><h3><a href="#solution-13">Pensions for Sanitation</a></h3><p class="sn-c__i">Ghana&#8217;s own pension savings finance a cedi bond for safe toilets in every home.</p><dl class="sn-c__x"><div><dt>The challenge</dt><dd>About 28 million Ghanaians, 81 in every hundred, have no safely managed toilet at home.</dd></div><div><dt>What Perfect Nations advises</dt><dd>Ghana should invite its pension funds, which already anchor the Ci Gaba Fund of Funds, into a cedi sanitation bond that finances household toilets and safe waste services, with mobile-money instalments for families and results-based support for the poorest homes. With super intelligence, every home without a safe toilet can be found and every connection verified, so pensioners earn their return from a cleaner, healthier Ghana.</dd></div></dl><div class="sn-c__ft"><ul class="sn-std"><li>Shelter</li><li>Health</li></ul><span class="sn-c__go">Read the Solution</span></div></li>
+<li class="sn-c" hidden data-no="12" data-std="Livelihood;Food" data-bp="https://perfectnations.org/blueprints/fiji/" data-q="fiji the blue livelihood bond"><div class="sn-c__k"><b>Fiji</b><span>Solution No. 12</span></div><h3><a href="#solution-12">The Blue Livelihood Bond</a></h3><p class="sn-c__i">A second blue bond finances fishing, seaweed and coastal enterprise, with cyclone cover built in.</p><dl class="sn-c__x"><div><dt>The challenge</dt><dd>About 572,000 Fijians, 61 in every hundred, lived below US$8.30 a day on the 2019 survey.</dd></div><div><dt>What Perfect Nations advises</dt><dd>Fiji should follow its first sovereign blue bond with one that finances the livelihoods of the sea, from fisheries and seaweed farming to coastal tourism enterprises, with cyclone cover built in so one storm cannot erase a season&#8217;s income. With super intelligence, fish stocks, reefs and weather can be watched in real time, so loans are timed to the seasons and cover is triggered the day a cyclone strikes.</dd></div></dl><div class="sn-c__ft"><ul class="sn-std"><li>Livelihood</li><li>Food</li></ul><span class="sn-c__go">Read the Solution</span></div></li>
+<li class="sn-c" hidden data-no="11" data-std="Energy;Health" data-bp="https://perfectnations.org/blueprints/ethiopia/" data-q="ethiopia the highland electric kitchen"><div class="sn-c__k"><b>Ethiopia</b><span>Solution No. 11</span></div><h3><a href="#solution-11">The Highland Electric Kitchen</a></h3><p class="sn-c__i">Almost wholly renewable power becomes clean cooking, financed through the electricity bill.</p><dl class="sn-c__x"><div><dt>The challenge</dt><dd>About 126 million Ethiopians, 93 in every hundred, cook without clean fuel or technology.</dd></div><div><dt>What Perfect Nations advises</dt><dd>Ethiopia should turn its almost wholly renewable power into clean kitchens, financing electric cookers through monthly electricity bills and carbon credits, delivered first to households in the Productive Safety Net. With super intelligence, every meter can show when a family cooks with electricity, so each verified switch earns its carbon credit and the grid is planned around the kitchens it serves.</dd></div></dl><div class="sn-c__ft"><ul class="sn-std"><li>Energy</li><li>Health</li></ul><span class="sn-c__go">Read the Solution</span></div></li>
+<li class="sn-c" hidden data-no="10" data-std="Water;Health" data-bp="https://perfectnations.org/blueprints/eswatini/" data-q="eswatini safe water proven home by home"><div class="sn-c__k"><b>Eswatini</b><span>Solution No. 10</span></div><h3><a href="#solution-10">Safe Water, Proven Home by Home</a></h3><p class="sn-c__i">The nation that met its HIV targets early brings the same discipline to safe water at home.</p><dl class="sn-c__x"><div><dt>The challenge</dt><dd>About 776,000 Emaswati have no safely managed drinking water at home.</dd></div><div><dt>What Perfect Nations advises</dt><dd>Eswatini should finance safe water at home the way it reached its HIV targets early: a results-based programme that releases funds for each verified household connection, built on the Mkhondvo-Ngwavuma water augmentation now under way. With super intelligence, every homestead can be mapped and its water tested by phone, so connections follow need and every tap is proven safe.</dd></div></dl><div class="sn-c__ft"><ul class="sn-std"><li>Water</li><li>Health</li></ul><span class="sn-c__go">Read the Solution</span></div></li>
+<li class="sn-c" hidden data-no="9" data-std="Education" data-bp="https://perfectnations.org/blueprints/egypt/" data-q="egypt the nile reading bond"><div class="sn-c__k"><b>Egypt</b><span>Solution No. 09</span></div><h3><a href="#solution-09">The Nile Reading Bond</a></h3><p class="sn-c__i">A bond whose cost falls when Egypt&#8217;s children read, so investors share the gain.</p><dl class="sn-c__x"><div><dt>The challenge</dt><dd>56% of Egyptian children could not read a simple text by the end of primary school in 2021.</dd></div><div><dt>What Perfect Nations advises</dt><dd>Egypt should follow its social Eurobond with a learning-linked bond whose coupon falls if national reading scores reach an agreed target, so investors share the gain when every child reads. With super intelligence, reading can be tested on a tablet in every classroom and the target verified independently, so the measure behind the bond is beyond dispute.</dd></div></dl><div class="sn-c__ft"><ul class="sn-std"><li>Education</li></ul><span class="sn-c__go">Read the Solution</span></div></li>
+<li class="sn-c" hidden data-no="8" data-std="Education" data-bp="https://perfectnations.org/blueprints/ecuador/" data-q="ecuador the learning conversion"><div class="sn-c__k"><b>Ecuador</b><span>Solution No. 08</span></div><h3><a href="#solution-08">The Learning Conversion</a></h3><p class="sn-c__i">The debt conversions that protect the Galapagos and the Amazon now finance reading.</p><dl class="sn-c__x"><div><dt>The challenge</dt><dd>66% of Ecuadorian children could not read a simple text by the end of primary school in 2019.</dd></div><div><dt>What Perfect Nations advises</dt><dd>Ecuador should apply the design of its Galapagos and Amazon debt conversions to learning: buy back costly bonds with cheaper, guaranteed debt and bind the savings, over many years, to teachers and reading programmes in every province. With super intelligence, reading can be measured in every school, in Spanish and Kichwa, so each year&#8217;s savings reach the children furthest behind first.</dd></div></dl><div class="sn-c__ft"><ul class="sn-std"><li>Education</li></ul><span class="sn-c__go">Read the Solution</span></div></li>
+<li class="sn-c" hidden data-no="7" data-std="Education;Livelihood" data-bp="https://perfectnations.org/blueprints/dr-congo/" data-q="dr congo cobalt for classrooms"><div class="sn-c__k"><b>DR Congo</b><span>Solution No. 07</span></div><h3><a href="#solution-07">Cobalt for Classrooms</a></h3><p class="sn-c__i">A share of cobalt royalties is pledged to a learning trust, released as children read.</p><dl class="sn-c__x"><div><dt>The challenge</dt><dd>97% of Congolese children could not read a simple text by the end of primary school in 2019.</dd></div><div><dt>What Perfect Nations advises</dt><dd>DR Congo should pledge a share of future cobalt royalties to a learning trust that finances teachers, books and school meals, releasing each tranche as independent tests show children reading, and invite the battery makers who buy its cobalt to join as outcome funders. With super intelligence, cobalt can be traced from mine to battery and learning measured school by school, so every royalty dollar can be followed into a classroom.</dd></div></dl><div class="sn-c__ft"><ul class="sn-std"><li>Education</li><li>Livelihood</li></ul><span class="sn-c__go">Read the Solution</span></div></li>
+<li class="sn-c" hidden data-no="6" data-std="Education;Livelihood" data-bp="https://perfectnations.org/blueprints/cote-d-ivoire/" data-q="cote d ivoire the cocoa classroom fund"><div class="sn-c__k"><b>C&#244;te d&#8217;Ivoire</b><span>Solution No. 06</span></div><h3><a href="#solution-06">The Cocoa Classroom Fund</a></h3><p class="sn-c__i">The buyers of Ivorian cocoa help finance schools that are rewarded as children learn to read.</p><dl class="sn-c__x"><div><dt>The challenge</dt><dd>80% of Ivorian children could not read a simple text by the end of primary school in 2019.</dd></div><div><dt>What Perfect Nations advises</dt><dd>C&#244;te d&#8217;Ivoire should build on its debt-for-development swap with a learning fund co-financed by the companies that buy its cocoa, releasing money to schools in the cocoa regions only as children learn to read. With super intelligence, reading can be assessed child by child on a phone, in French and in local languages, so every cocoa village knows which children need help this term.</dd></div></dl><div class="sn-c__ft"><ul class="sn-std"><li>Education</li><li>Livelihood</li></ul><span class="sn-c__go">Read the Solution</span></div></li>
+<li class="sn-c" hidden data-no="5" data-std="Shelter;Water" data-bp="https://perfectnations.org/blueprints/colombia/" data-q="colombia the barrio bonds"><div class="sn-c__k"><b>Colombia</b><span>Solution No. 05</span></div><h3><a href="#solution-05">The Barrio Bonds</a></h3><p class="sn-c__i">Cities issue bonds for toilets, sewers and safer homes, and new transit lines help finance them.</p><dl class="sn-c__x"><div><dt>The challenge</dt><dd>About 43 million Colombians, 81 in every hundred, have no safely managed toilet at home.</dd></div><div><dt>What Perfect Nations advises</dt><dd>Colombia should let its cities issue social bonds for toilets, sewers and home upgrades in informal neighbourhoods, as Bogota did with its international green bond, and finance part of each with the land value that new transit lines create, starting with Bogota&#8217;s first metro line. With super intelligence, every informal home can be mapped and its upgrade priced, so each bond is sized to real streets and its results reported to investors house by house.</dd></div></dl><div class="sn-c__ft"><ul class="sn-std"><li>Shelter</li><li>Water</li></ul><span class="sn-c__go">Read the Solution</span></div></li>
+<li class="sn-c" hidden data-no="4" data-std="Energy;Livelihood" data-bp="https://perfectnations.org/blueprints/burundi/" data-q="burundi light for every hill"><div class="sn-c__k"><b>Burundi</b><span>Solution No. 04</span></div><h3><a href="#solution-04">Light for Every Hill</a></h3><p class="sn-c__i">Solar mini-grids and electric cooking reach the hill villages, financed connection by connection.</p><dl class="sn-c__x"><div><dt>The challenge</dt><dd>Almost every Burundian, 14.4 million people, cooks without clean fuel or technology.</dd></div><div><dt>What Perfect Nations advises</dt><dd>Burundi should finance solar mini-grids and electric cooking in its hill villages with results-based grants for each verified connection, behind the kind of political-risk cover MIGA already gives Weza Power, so private developers can build at scale. With super intelligence, every village can be sited and sized from satellite maps of homes and sunlight, so investors see a pipeline of bankable mini-grids rather than a single plant.</dd></div></dl><div class="sn-c__ft"><ul class="sn-std"><li>Energy</li><li>Livelihood</li></ul><span class="sn-c__go">Read the Solution</span></div></li>
+<li class="sn-c" hidden data-no="3" data-std="Livelihood" data-bp="https://perfectnations.org/blueprints/botswana/" data-q="botswana the diamond enterprise dividend"><div class="sn-c__k"><b>Botswana</b><span>Solution No. 03</span></div><h3><a href="#solution-03">The Diamond Enterprise Dividend</a></h3><p class="sn-c__i">A larger share of every diamond becomes equity and credit for Batswana firms that will outlast the mines.</p><dl class="sn-c__x"><div><dt>The challenge</dt><dd>About 1.6 million Batswana live below US$8.30 a day, on the 2015 survey.</dd></div><div><dt>What Perfect Nations advises</dt><dd>Botswana should commit part of its larger share of diamond sales to a sovereign fund of funds that guarantees loans to, and invests in, Batswana firms in solar power, tourism and food, so diamonds build the jobs that will outlast the mines. With super intelligence, every enterprise can be matched to the lender and the market it needs, and every job it creates counted, so the dividend reaches the citizens furthest from a decent income first.</dd></div></dl><div class="sn-c__ft"><ul class="sn-std"><li>Livelihood</li></ul><span class="sn-c__go">Read the Solution</span></div></li>
+<li class="sn-c" hidden data-no="2" data-std="Energy;Health" data-bp="https://perfectnations.org/blueprints/bangladesh/" data-q="bangladesh the clean kitchen fund"><div class="sn-c__k"><b>Bangladesh</b><span>Solution No. 02</span></div><h3><a href="#solution-02">The Clean Kitchen Fund</a></h3><p class="sn-c__i">Every family that leaves wood and dung behind earns a carbon credit that finances the next kitchen.</p><dl class="sn-c__x"><div><dt>The challenge</dt><dd>About 125 million Bangladeshis, 71 in every hundred, cook without clean fuel or technology.</dd></div><div><dt>What Perfect Nations advises</dt><dd>Bangladesh should create a clean kitchen fund that lends stoves and cylinders through mobile money and sells a verified carbon credit for every household that stops cooking with wood and dung, so each switch finances the next. With super intelligence, every switch can be verified from the kitchen to the carbon registry, so credits sell at full value and the fund grows with every family it reaches.</dd></div></dl><div class="sn-c__ft"><ul class="sn-std"><li>Energy</li><li>Health</li></ul><span class="sn-c__go">Read the Solution</span></div></li>
+<li class="sn-c" hidden data-no="1" data-std="Food;Livelihood" data-bp="https://perfectnations.org/blueprints/angola/" data-q="angola the lobito food corridor"><div class="sn-c__k"><b>Angola</b><span>Solution No. 01</span></div><h3><a href="#solution-01">The Lobito Food Corridor</a></h3><p class="sn-c__i">Oil revenue stands behind the loans that turn the Lobito railway into a corridor of farms, mills and markets.</p><dl class="sn-c__x"><div><dt>The challenge</dt><dd>About 29 million Angolans, three in four, are moderately or severely food insecure.</dd></div><div><dt>What Perfect Nations advises</dt><dd>Angola should set aside a share of oil revenue as first-loss capital in a corridor fund that guarantees loans to farms, mills and food traders along the Lobito railway, so local banks lend to the growers the line now reaches. With super intelligence, every farm along the corridor can be mapped, its harvest forecast and its loan priced, so finance reaches the families who grow food and not only the largest estates.</dd></div></dl><div class="sn-c__ft"><ul class="sn-std"><li>Food</li><li>Livelihood</li></ul><span class="sn-c__go">Read the Solution</span></div></li>
       </ol>
-      <div class="sn-cfoot"><button type="button" class="sn-more" id="snSMore" hidden>Show all Solutions</button><a href="https://perfectnations.org/category/dispatches/">The archive</a></div>
-    </div>
-  </section>
-
-  <section class="sn-band sn-find" id="sn-nations" aria-labelledby="sn-find-h">
-    <div class="sn-in">
-      <div class="sn-head">
-        <div>
-          <p class="sn-eb">Nation by nation</p>
-          <h2 class="sn-h2" id="sn-find-h">Solutions for every nation</h2>
-          <p class="sn-lead">Pick a standard or a nation to see the gap and what Perfect Nations advises.</p>
-        </div>
-        <div class="sn-search">
-          <svg aria-hidden="true" focusable="false"><use href="#pnso-q"></use></svg>
-          <input id="snNQ" type="search" placeholder="Find a nation" autocomplete="off" aria-label="Find a nation">
-        </div>
-      </div>
-      <div class="sn-tabs" role="tablist" aria-label="The seven standards" data-first="Education">
-<button type="button" role="tab" class="sn-tab" id="sn-t-food" aria-controls="sn-p-food" aria-selected="false" data-std="Food">Food<span>5</span></button>
-<button type="button" role="tab" class="sn-tab" id="sn-t-water" aria-controls="sn-p-water" aria-selected="false" data-std="Water">Water<span>4</span></button>
-<button type="button" role="tab" class="sn-tab" id="sn-t-shelter" aria-controls="sn-p-shelter" aria-selected="false" data-std="Shelter">Shelter<span>6</span></button>
-<button type="button" role="tab" class="sn-tab" id="sn-t-energy" aria-controls="sn-p-energy" aria-selected="false" data-std="Energy">Energy<span>12</span></button>
-<button type="button" role="tab" class="sn-tab is-on" id="sn-t-education" aria-controls="sn-p-education" aria-selected="true" data-std="Education">Education<span>14</span></button>
-<button type="button" role="tab" class="sn-tab" id="sn-t-health" aria-controls="sn-p-health" aria-selected="false" data-std="Health">Health<span>0</span></button>
-<button type="button" role="tab" class="sn-tab" id="sn-t-livelihood" aria-controls="sn-p-livelihood" aria-selected="false" data-std="Livelihood">Livelihood<span>3</span></button>
-      </div>
-<div class="sn-p" id="sn-p-food" role="tabpanel" aria-labelledby="sn-t-food" data-std="Food" hidden><div class="sn-pb"><div class="sn-pb__h"><p class="sn-k">Food</p><h3>Pay before the harvest fails.</h3></div><div class="sn-pb__c sn-pb__adv"><p class="sn-tag">What Perfect Nations advises</p><p>Nations where food is furthest from reach should buy drought insurance that pays on measured rainfall, with the trigger and the price of the cover set district by district before the season begins. With super intelligence, rainfall and harvests can be read field by field, so that payouts reach families within weeks of a failed season, before hunger does.</p></div><div class="sn-pb__c sn-pb__deal"><p class="sn-tag">The deal &middot; Sovereign drought insurance</p><p class="sn-proof"><span>Proven</span>Malawi, 2024 <b>$11.2M</b> paid out after the El Ni&#241;o drought, for food aid to about 235,000 households <a href="https://www.afdb.org/en/news-and-events/press-releases/african-development-bank-group-and-african-risk-capacity-group-issue-112-million-insurance-payout-government-malawi-73593" target="_blank" rel="noopener noreferrer">African Development Bank, August 2024</a></p></div></div><p class="sn-pcount"><b>5</b> nations where food is furthest from reach</p><ol class="sn-rows"><li class="sn-r" data-slug="angola"><div class="sn-r__h"><a class="sn-r__n" href="https://perfectnations.org/blueprints/angola/" target="_blank" rel="noopener noreferrer">Angola</a><b class="sn-r__g">~29m</b></div><p class="sn-r__t">Angolans below the Living Line for food: three in four are moderately or severely food insecure. <a class="sn-src" href="https://data.worldbank.org/indicator/SN.ITK.MSFI.ZS?locations=AO" target="_blank" rel="noopener noreferrer">FAO, 2024</a></p><p class="sn-r__w"><span class="sn-r__l">At work</span><a href="https://projects.worldbank.org/en/projects-operations/project-detail/P177305" target="_blank" rel="noopener noreferrer">Smallholder Agricultural Transformation Project</a><b class="sn-m">$300M</b></p></li><li class="sn-r" data-slug="barbados"><div class="sn-r__h"><a class="sn-r__n" href="https://perfectnations.org/blueprints/barbados/" target="_blank" rel="noopener noreferrer">Barbados</a><b class="sn-r__g">~88,000</b></div><p class="sn-r__t">Barbadians below the Living Line for food: about three in ten are moderately or severely food insecure. <a class="sn-src" href="https://data.worldbank.org/indicator/SN.ITK.MSFI.ZS?locations=BB" target="_blank" rel="noopener noreferrer">FAO, 2022</a></p><p class="sn-r__w is-open"><span class="sn-r__l">First move</span>Sovereign drought insurance</p><a class="sn-r__s" href="#solution-10">Solution No. 10</a><a class="sn-r__s" href="#solution-02">Solution No. 02</a></li><li class="sn-r" data-slug="jamaica"><div class="sn-r__h"><a class="sn-r__n" href="https://perfectnations.org/blueprints/jamaica/" target="_blank" rel="noopener noreferrer">Jamaica</a><b class="sn-r__g">~1.6m</b></div><p class="sn-r__t">Jamaicans who cannot always count on enough good food: 56 in every hundred. <a class="sn-src" href="https://data.worldbank.org/indicator/SN.ITK.MSFI.ZS?locations=JM" target="_blank" rel="noopener noreferrer">FAO, 2024</a></p><p class="sn-r__w"><span class="sn-r__l">At work</span><a href="https://www.caribank.org/node/11930" target="_blank" rel="noopener noreferrer">Southern Plains Agricultural Development Project, additional financing</a><b class="sn-m">$12M</b></p></li><li class="sn-r" data-slug="nigeria"><div class="sn-r__h"><a class="sn-r__n" href="https://perfectnations.org/blueprints/nigeria/" target="_blank" rel="noopener noreferrer">Nigeria</a><b class="sn-r__g">~182m</b></div><p class="sn-r__t">Nigerians who cannot always count on enough good food: 76 in every hundred. <a class="sn-src" href="https://data.worldbank.org/indicator/SN.ITK.MSFI.ZS?locations=NG" target="_blank" rel="noopener noreferrer">FAO, 2024</a></p><p class="sn-r__w"><span class="sn-r__l">At work</span><a href="https://www.worldbank.org/en/news/press-release/2026/03/31/nigeria-world-bank-approves-project-to-expand-agricultural-value-chains-and-jobs" target="_blank" rel="noopener noreferrer">Sustainable Agricultural Value-Chains for Growth (AGROW)</a><b class="sn-m">$500M</b></p></li><li class="sn-r" data-slug="ukraine"><div class="sn-r__h"><a class="sn-r__n" href="https://perfectnations.org/blueprints/ukraine/" target="_blank" rel="noopener noreferrer">Ukraine</a><b class="sn-r__g">~12m</b></div><p class="sn-r__t">Ukrainians who cannot always count on enough good food: 32 in every hundred. <a class="sn-src" href="https://data.worldbank.org/indicator/SN.ITK.MSFI.ZS?locations=UA" target="_blank" rel="noopener noreferrer">FAO, 2024</a></p><p class="sn-r__w is-open"><span class="sn-r__l">First move</span>Sovereign drought insurance</p></li></ol><button type="button" class="sn-more" hidden>Show all</button></div>
-<div class="sn-p" id="sn-p-water" role="tabpanel" aria-labelledby="sn-t-water" data-std="Water" hidden><div class="sn-pb"><div class="sn-pb__h"><p class="sn-k">Water</p><h3>Turn cheaper debt into safe water.</h3></div><div class="sn-pb__c sn-pb__adv"><p class="sn-tag">What Perfect Nations advises</p><p>Nations where water is furthest from reach should swap costly debt for cheaper, guaranteed debt and commit the savings to water and sewerage. With super intelligence, every saving can be followed into each household connection, main and treatment plant, and the next connection planned where the need is greatest.</p></div><div class="sn-pb__c sn-pb__deal"><p class="sn-tag">The deal &middot; Debt-for-climate-resilience swap</p><p class="sn-proof"><span>Proven</span>Barbados, 2024 <b>$300M</b> the world&#8217;s first for resilience <a href="https://www.iadb.org/en/news/barbados-launched-worlds-first-debt-climate-resilience-operation" target="_blank" rel="noopener noreferrer">Inter-American Development Bank, 2024</a></p></div></div><p class="sn-pcount"><b>4</b> nations where water is furthest from reach</p><ol class="sn-rows"><li class="sn-r" data-slug="eswatini"><div class="sn-r__h"><a class="sn-r__n" href="https://perfectnations.org/blueprints/eswatini/" target="_blank" rel="noopener noreferrer">Eswatini</a><b class="sn-r__g">~776,000</b></div><p class="sn-r__t">Emaswati without safely managed drinking water at home. <a class="sn-src" href="https://data.worldbank.org/indicator/SH.H2O.SMDW.ZS?locations=SZ" target="_blank" rel="noopener noreferrer">WHO/UNICEF, 2024</a></p><p class="sn-r__w"><span class="sn-r__l">At work</span><a href="https://projects.worldbank.org/en/projects-operations/project-detail/P166697" target="_blank" rel="noopener noreferrer">Water Supply and Sanitation Access Project</a><b class="sn-m">$53M</b></p></li><li class="sn-r" data-slug="indonesia"><div class="sn-r__h"><a class="sn-r__n" href="https://perfectnations.org/blueprints/indonesia/" target="_blank" rel="noopener noreferrer">Indonesia</a><b class="sn-r__g">~199m</b></div><p class="sn-r__t">Indonesians without safely managed drinking water at home: 70 in every hundred. <a class="sn-src" href="https://data.worldbank.org/indicator/SH.H2O.SMDW.ZS?locations=ID" target="_blank" rel="noopener noreferrer">WHO/UNICEF, 2024</a></p><p class="sn-r__w is-open"><span class="sn-r__l">First move</span>A debt-for-resilience swap bound to water</p></li><li class="sn-r" data-slug="mexico"><div class="sn-r__h"><a class="sn-r__n" href="https://perfectnations.org/blueprints/mexico/" target="_blank" rel="noopener noreferrer">Mexico</a><b class="sn-r__g">~75m</b></div><p class="sn-r__t">Mexicans without safely managed drinking water at home: 57 in every hundred. <a class="sn-src" href="https://data.worldbank.org/indicator/SH.H2O.SMDW.ZS?locations=MX" target="_blank" rel="noopener noreferrer">WHO/UNICEF, 2024</a></p><p class="sn-r__w"><span class="sn-r__l">At work</span><a href="https://www.ifc.org/en/pressroom/2025/ifc-announces-us-30-million-investment-in-fund-managed-by-beel-infrastructure-part" target="_blank" rel="noopener noreferrer">BEEL Sustainable Credit II fund</a><b class="sn-m">$30M</b></p></li><li class="sn-r" data-slug="senegal"><div class="sn-r__h"><a class="sn-r__n" href="https://perfectnations.org/blueprints/senegal/" target="_blank" rel="noopener noreferrer">Senegal</a><b class="sn-r__g">~14m</b></div><p class="sn-r__t">Senegalese without safely managed drinking water at home: 73 in every hundred. <a class="sn-src" href="https://data.worldbank.org/indicator/SH.H2O.SMDW.ZS?locations=SN" target="_blank" rel="noopener noreferrer">WHO/UNICEF, 2024</a></p><p class="sn-r__w is-open"><span class="sn-r__l">First move</span>A debt-for-resilience swap bound to water</p></li></ol><button type="button" class="sn-more" hidden>Show all</button></div>
-<div class="sn-p" id="sn-p-shelter" role="tabpanel" aria-labelledby="sn-t-shelter" data-std="Shelter" hidden><div class="sn-pb"><div class="sn-pb__h"><p class="sn-k">Shelter</p><h3>Ring-fence bond money for homes and sanitation.</h3></div><div class="sn-pb__c sn-pb__adv"><p class="sn-tag">What Perfect Nations advises</p><p>Nations where shelter is furthest from reach should issue a social bond whose proceeds can be spent only on eligible homes, toilets and sewers. With super intelligence, each unit can be planned, priced and verified, and reported to investors every year, until every family has a safe home.</p></div><div class="sn-pb__c sn-pb__deal"><p class="sn-tag">The deal &middot; Social bond</p><p class="sn-proof"><span>Proven</span>Ecuador, 2020 <b>$400M</b> for affordable homes <a href="https://www.iadb.org/en/news/ecuador-issues-worlds-first-sovereign-social-bond-support-idb-guarantee" target="_blank" rel="noopener noreferrer">Inter-American Development Bank, 2020</a></p></div></div><p class="sn-pcount"><b>6</b> nations where shelter is furthest from reach</p><ol class="sn-rows"><li class="sn-r" data-slug="brazil"><div class="sn-r__h"><a class="sn-r__n" href="https://perfectnations.org/blueprints/brazil/" target="_blank" rel="noopener noreferrer">Brazil</a><b class="sn-r__g">~109m</b></div><p class="sn-r__t">Brazilians without a safely managed toilet at home: about one in two. <a class="sn-src" href="https://sdg6data.org/country-or-area/Brazil" target="_blank" rel="noopener noreferrer">WHO/UNICEF, 2020</a></p><p class="sn-r__w"><span class="sn-r__l">At work</span><a href="https://www.worldbank.org/en/news/press-release/2026/09/22/world-bank-group-backs-water-security-sanitation-paraiba-brazil" target="_blank" rel="noopener noreferrer">Para&#237;ba Access to Resilient Water and Sanitation Services</a><b class="sn-m">$50M</b></p></li><li class="sn-r" data-slug="colombia"><div class="sn-r__h"><a class="sn-r__n" href="https://perfectnations.org/blueprints/colombia/" target="_blank" rel="noopener noreferrer">Colombia</a><b class="sn-r__g">~43m</b></div><p class="sn-r__t">Colombians without a safely managed toilet at home: 81 in every hundred. <a class="sn-src" href="https://data.worldbank.org/indicator/SH.STA.SMSS.ZS?locations=CO" target="_blank" rel="noopener noreferrer">WHO/UNICEF, 2024</a></p><p class="sn-r__w"><span class="sn-r__l">At work</span><a href="https://idbinvest.org/en/news-media/idb-invest-and-habi-drive-housing-access-colombia" target="_blank" rel="noopener noreferrer">Habi structured line of credit</a><b class="sn-m">$50M</b></p></li><li class="sn-r" data-slug="ghana"><div class="sn-r__h"><a class="sn-r__n" href="https://perfectnations.org/blueprints/ghana/" target="_blank" rel="noopener noreferrer">Ghana</a><b class="sn-r__g">~28m</b></div><p class="sn-r__t">Ghanaians without a safely managed toilet at home: 81 in every hundred. <a class="sn-src" href="https://data.worldbank.org/indicator/SH.STA.SMSS.ZS?locations=GH" target="_blank" rel="noopener noreferrer">WHO/UNICEF, 2024</a></p><p class="sn-r__w is-open"><span class="sn-r__l">First move</span>A social bond for homes and sanitation</p><a class="sn-r__s" href="#solution-07">Solution No. 07</a></li><li class="sn-r" data-slug="morocco"><div class="sn-r__h"><a class="sn-r__n" href="https://perfectnations.org/blueprints/morocco/" target="_blank" rel="noopener noreferrer">Morocco</a><b class="sn-r__g">~35m</b></div><p class="sn-r__t">Moroccans without a safely managed toilet at home: 92 in every hundred. <a class="sn-src" href="https://data.worldbank.org/indicator/SH.STA.SMSS.ZS?locations=MA" target="_blank" rel="noopener noreferrer">WHO/UNICEF, 2024</a></p><p class="sn-r__w"><span class="sn-r__l">At work</span><a href="https://www.worldbank.org/en/news/press-release/2025/06/19/world-bank-supports-morocco-s-commitment-to-advancing-social-safety-nets-for-human-development" target="_blank" rel="noopener noreferrer">Support to Strengthening of Social Safety Nets for Human Development</a><b class="sn-m">$250M</b></p></li><li class="sn-r" data-slug="vietnam"><div class="sn-r__h"><a class="sn-r__n" href="https://perfectnations.org/blueprints/vietnam/" target="_blank" rel="noopener noreferrer">Vietnam</a><b class="sn-r__g">~55m</b></div><p class="sn-r__t">Vietnamese without a safely managed toilet at home: 55 in every hundred. <a class="sn-src" href="https://data.worldbank.org/indicator/SH.STA.SMSS.ZS?locations=VN" target="_blank" rel="noopener noreferrer">WHO/UNICEF, 2024</a></p><p class="sn-r__w is-open"><span class="sn-r__l">First move</span>A social bond for homes and sanitation</p></li><li class="sn-r" data-slug="zimbabwe"><div class="sn-r__h"><a class="sn-r__n" href="https://perfectnations.org/blueprints/zimbabwe/" target="_blank" rel="noopener noreferrer">Zimbabwe</a><b class="sn-r__g">~13m</b></div><p class="sn-r__t">Zimbabweans without safely managed sanitation at home: three in four. <a class="sn-src" href="https://data.worldbank.org/indicator/SH.STA.SMSS.ZS?locations=ZW" target="_blank" rel="noopener noreferrer">WHO/UNICEF, 2024</a></p><p class="sn-r__w is-open"><span class="sn-r__l">First move</span>A social bond for homes and sanitation</p></li></ol><button type="button" class="sn-more" hidden>Show all</button></div>
-<div class="sn-p" id="sn-p-energy" role="tabpanel" aria-labelledby="sn-t-energy" data-std="Energy" hidden><div class="sn-pb"><div class="sn-pb__h"><p class="sn-k">Energy</p><h3>Finance clean power and clean cooking at national scale.</h3></div><div class="sn-pb__c sn-pb__adv"><p class="sn-tag">What Perfect Nations advises</p><p>Nations where energy is furthest from reach should issue a sovereign green bond ring-fenced for clean power and clean cooking. With super intelligence, the switch can be priced for every household still cooking with wood, charcoal or kerosene, and every project the bond pays for reported to investors.</p></div><div class="sn-pb__c sn-pb__deal"><p class="sn-tag">The deal &middot; Sovereign green bond</p><p class="sn-proof"><span>Proven</span>India, 2023 <b>INR 16,000 cr</b> in the first issuance <a href="https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=55004" target="_blank" rel="noopener noreferrer">Reserve Bank of India, 2023</a></p></div></div><p class="sn-pcount"><b>12</b> nations where energy is furthest from reach</p><ol class="sn-rows"><li class="sn-r" data-slug="bangladesh"><div class="sn-r__h"><a class="sn-r__n" href="https://perfectnations.org/blueprints/bangladesh/" target="_blank" rel="noopener noreferrer">Bangladesh</a><b class="sn-r__g">~125m</b></div><p class="sn-r__t">Bangladeshis who cook without clean fuel or technology: 71 in every hundred. <a class="sn-src" href="https://data.worldbank.org/indicator/EG.CFT.ACCS.ZS?locations=BD" target="_blank" rel="noopener noreferrer">World Bank, 2024</a></p><p class="sn-r__w"><span class="sn-r__l">At work</span><a href="https://www.adb.org/news/adb-approves-175-million-loan-modernize-power-networks-boost-jobs-services-bangladesh-chattogram-hill-tracts" target="_blank" rel="noopener noreferrer">Sustainable Energy Development and Community Empowerment in the Chattogram Hill Tracts</a><b class="sn-m">$175M</b></p></li><li class="sn-r" data-slug="burundi"><div class="sn-r__h"><a class="sn-r__n" href="https://perfectnations.org/blueprints/burundi/" target="_blank" rel="noopener noreferrer">Burundi</a><b class="sn-r__g">14.4m</b></div><p class="sn-r__t">Burundians who cook without clean fuel or technology: almost everyone. <a class="sn-src" href="https://data.worldbank.org/indicator/EG.CFT.ACCS.ZS?locations=BI" target="_blank" rel="noopener noreferrer">World Bank, 2024</a></p><p class="sn-r__w"><span class="sn-r__l">At work</span><a href="https://www.miga.org/press-release/miga-guarantee-support-rural-electrification-burundi" target="_blank" rel="noopener noreferrer">MIGA guarantee for Weza Power</a><b class="sn-m">$10.9M</b></p></li><li class="sn-r" data-slug="ethiopia"><div class="sn-r__h"><a class="sn-r__n" href="https://perfectnations.org/blueprints/ethiopia/" target="_blank" rel="noopener noreferrer">Ethiopia</a><b class="sn-r__g">~126m</b></div><p class="sn-r__t">Ethiopians who cook without clean fuel or technology: 93 in every hundred. <a class="sn-src" href="https://data.worldbank.org/indicator/EG.CFT.ACCS.ZS?locations=ET" target="_blank" rel="noopener noreferrer">World Bank, 2024</a></p><p class="sn-r__w"><span class="sn-r__l">At work</span><a href="https://allafrica.com/stories/202607170471.html" target="_blank" rel="noopener noreferrer">Aysha Wind Power Project, 300 MW</a><b class="sn-m">$110M</b></p><a class="sn-r__s" href="#solution-06">Solution No. 06</a></li><li class="sn-r" data-slug="madagascar"><div class="sn-r__h"><a class="sn-r__n" href="https://perfectnations.org/blueprints/madagascar/" target="_blank" rel="noopener noreferrer">Madagascar</a><b class="sn-r__g">~32m</b></div><p class="sn-r__t">Malagasy who cook without clean fuel or technology: almost everyone. <a class="sn-src" href="https://data.worldbank.org/indicator/EG.CFT.ACCS.ZS?locations=MG" target="_blank" rel="noopener noreferrer">World Bank, 2024</a></p><p class="sn-r__w"><span class="sn-r__l">At work</span><a href="https://www.worldbank.org/en/news/press-release/2026/05/06/madagascar-new-world-bank-program-set-to-provide-reliable-and-affordable-energy-to-over-2-5-million-people-by-2030" target="_blank" rel="noopener noreferrer">Accelerating Sustainable and Clean Energy Access Transformation (ASCENT Madagascar)</a><b class="sn-m">$250M</b></p></li><li class="sn-r" data-slug="malawi"><div class="sn-r__h"><a class="sn-r__n" href="https://perfectnations.org/blueprints/malawi/" target="_blank" rel="noopener noreferrer">Malawi</a><b class="sn-r__g">~22m</b></div><p class="sn-r__t">Malawians who cook without clean fuel or technology: almost everyone. <a class="sn-src" href="https://data.worldbank.org/indicator/EG.CFT.ACCS.ZS?locations=MW" target="_blank" rel="noopener noreferrer">World Bank, 2024</a></p><p class="sn-r__w"><span class="sn-r__l">At work</span><a href="https://projects.worldbank.org/en/projects-operations/project-detail/P164331" target="_blank" rel="noopener noreferrer">Malawi Electricity Access Project</a><b class="sn-m">$150M</b></p></li><li class="sn-r" data-slug="mozambique"><div class="sn-r__h"><a class="sn-r__n" href="https://perfectnations.org/blueprints/mozambique/" target="_blank" rel="noopener noreferrer">Mozambique</a><b class="sn-r__g">~33m</b></div><p class="sn-r__t">Mozambicans who cook without clean fuel or technology: more than nine in ten. <a class="sn-src" href="https://data.worldbank.org/indicator/EG.CFT.ACCS.ZS?locations=MZ" target="_blank" rel="noopener noreferrer">World Bank, 2024</a></p><p class="sn-r__w"><span class="sn-r__l">At work</span><a href="https://www.worldbank.org/en/news/press-release/2025/03/21/mozambique-afe-new-energy-project-to-bring-electricity-access-to-nearly-one-million-people" target="_blank" rel="noopener noreferrer">Accelerating Sustainable and Clean Energy Access Transformation (ASCENT)</a><b class="sn-m">$100M</b></p></li><li class="sn-r" data-slug="rwanda"><div class="sn-r__h"><a class="sn-r__n" href="https://perfectnations.org/blueprints/rwanda/" target="_blank" rel="noopener noreferrer">Rwanda</a><b class="sn-r__g">~13m</b></div><p class="sn-r__t">Rwandans who cook without clean fuel or technology: nine in ten. <a class="sn-src" href="https://data.worldbank.org/indicator/EG.CFT.ACCS.ZS?locations=RW" target="_blank" rel="noopener noreferrer">World Bank, 2024</a></p><p class="sn-r__w"><span class="sn-r__l">At work</span><a href="https://projects.worldbank.org/en/projects-operations/project-detail/P180575" target="_blank" rel="noopener noreferrer">Accelerating Sustainable and Clean Energy Access Transformation</a><b class="sn-m">$300M</b></p></li><li class="sn-r" data-slug="somalia"><div class="sn-r__h"><a class="sn-r__n" href="https://perfectnations.org/blueprints/somalia/" target="_blank" rel="noopener noreferrer">Somalia</a><b class="sn-r__g">~19m</b></div><p class="sn-r__t">Somalis who cook without clean fuel or technology: almost everyone. <a class="sn-src" href="https://data.worldbank.org/indicator/EG.CFT.ACCS.ZS?locations=SO" target="_blank" rel="noopener noreferrer">World Bank, 2024</a></p><p class="sn-r__w"><span class="sn-r__l">At work</span><a href="https://projects.worldbank.org/en/projects-operations/project-detail/P173088" target="_blank" rel="noopener noreferrer">Somali Electricity Sector Recovery Project</a><b class="sn-m">$150M</b></p></li><li class="sn-r" data-slug="south-sudan"><div class="sn-r__h"><a class="sn-r__n" href="https://perfectnations.org/blueprints/south-sudan/" target="_blank" rel="noopener noreferrer">South Sudan</a><b class="sn-r__g">12.2m</b></div><p class="sn-r__t">South Sudanese who cook without clean fuel or technology: almost everyone. <a class="sn-src" href="https://data.worldbank.org/indicator/EG.CFT.ACCS.ZS?locations=SS" target="_blank" rel="noopener noreferrer">World Bank, 2024</a></p><p class="sn-r__w"><span class="sn-r__l">At work</span><a href="https://projects.worldbank.org/en/projects-operations/project-detail/P178891" target="_blank" rel="noopener noreferrer">Energy Sector Access and Institutional Strengthening Project</a><b class="sn-m">$50M</b></p></li><li class="sn-r" data-slug="sri-lanka"><div class="sn-r__h"><a class="sn-r__n" href="https://perfectnations.org/blueprints/sri-lanka/" target="_blank" rel="noopener noreferrer">Sri Lanka</a><b class="sn-r__g">~15m</b></div><p class="sn-r__t">Sri Lankans who cook without clean fuel or technology: 69 in every hundred. <a class="sn-src" href="https://data.worldbank.org/indicator/EG.CFT.ACCS.ZS?locations=LK" target="_blank" rel="noopener noreferrer">World Bank, 2024</a></p><p class="sn-r__w"><span class="sn-r__l">At work</span><a href="https://www.worldbank.org/en/news/press-release/2025/06/20/world-bank-group-to-support-sri-lanka-s-clean-energy-transition-with-150-million-program" target="_blank" rel="noopener noreferrer">Clean energy transition</a><b class="sn-m">$150M</b></p></li><li class="sn-r" data-slug="tanzania"><div class="sn-r__h"><a class="sn-r__n" href="https://perfectnations.org/blueprints/tanzania/" target="_blank" rel="noopener noreferrer">Tanzania</a><b class="sn-r__g">~63m</b></div><p class="sn-r__t">Tanzanians who cook without clean fuel or technology: almost nine in ten. <a class="sn-src" href="https://data.worldbank.org/indicator/EG.CFT.ACCS.ZS?locations=TZ" target="_blank" rel="noopener noreferrer">World Bank, 2024</a></p><p class="sn-r__w"><span class="sn-r__l">At work</span><a href="https://projects.worldbank.org/en/projects-operations/project-detail/P163752" target="_blank" rel="noopener noreferrer">Tanzania-Zambia Transmission Interconnector</a><b class="sn-m">$595M</b></p><a class="sn-r__s" href="#solution-11">Solution No. 11</a></li><li class="sn-r" data-slug="uganda"><div class="sn-r__h"><a class="sn-r__n" href="https://perfectnations.org/blueprints/uganda/" target="_blank" rel="noopener noreferrer">Uganda</a><b class="sn-r__g">~50m</b></div><p class="sn-r__t">Ugandans who cook without clean fuel or technology: almost everyone. <a class="sn-src" href="https://data.worldbank.org/indicator/EG.CFT.ACCS.ZS?locations=UG" target="_blank" rel="noopener noreferrer">World Bank, 2024</a></p><p class="sn-r__w"><span class="sn-r__l">At work</span><a href="https://projects.worldbank.org/en/projects-operations/project-detail/P166685" target="_blank" rel="noopener noreferrer">Electricity Access Scale-up Project (EASP)</a><b class="sn-m">$608M</b></p></li></ol><button type="button" class="sn-more" hidden>Show all</button></div>
-<div class="sn-p" id="sn-p-education" role="tabpanel" aria-labelledby="sn-t-education" data-std="Education"><div class="sn-pb"><div class="sn-pb__h"><p class="sn-k">Education</p><h3>Pay for learning, not only for classrooms.</h3></div><div class="sn-pb__c sn-pb__adv"><p class="sn-tag">What Perfect Nations advises</p><p>Nations where education is furthest from reach should borrow on a Program-for-Results basis, releasing each tranche only when pupils reach an agreed learning level, verified independently. With super intelligence, reading levels can be tracked school by school, so that every child who falls behind is reached in time.</p></div><div class="sn-pb__c sn-pb__deal"><p class="sn-tag">The deal &middot; Program-for-Results</p><p class="sn-proof"><span>Proven</span>Tanzania, 2021 <b>$588M</b> for primary school learning <a href="https://projects.worldbank.org/en/projects-operations/project-detail/P169380" target="_blank" rel="noopener noreferrer">World Bank, project P169380</a></p></div></div><p class="sn-pcount"><b>14</b> nations where education is furthest from reach</p><ol class="sn-rows"><li class="sn-r" data-slug="afghanistan"><div class="sn-r__h"><a class="sn-r__n" href="https://perfectnations.org/blueprints/afghanistan/" target="_blank" rel="noopener noreferrer">Afghanistan</a><b class="sn-r__g">9 in 10</b></div><p class="sn-r__t">Ten-year-olds in Afghanistan who cannot read a simple text. Education is the standard furthest from reach. <a class="sn-src" href="https://www.unicef.org/afghanistan/press-releases/afghanistans-education-system-facing-deepening-crisis-both-girls-and-boys-warn" target="_blank" rel="noopener noreferrer">UNICEF/UNESCO, 2025</a></p><p class="sn-r__w"><span class="sn-r__l">At work</span><a href="https://projects.worldbank.org/en/projects-operations/project-detail/P181643" target="_blank" rel="noopener noreferrer">Education Emergency Response, Additional Financing</a><b class="sn-m">$70M</b></p></li><li class="sn-r" data-slug="cote-divoire"><div class="sn-r__h"><a class="sn-r__n" href="https://perfectnations.org/blueprints/cote-d-ivoire/" target="_blank" rel="noopener noreferrer">C&#244;te d&#8217;Ivoire</a><b class="sn-r__g">80%</b></div><p class="sn-r__t">Of Ivorian children could not read a simple text by the end of primary school in 2019. <a class="sn-src" href="https://data.worldbank.org/indicator/SE.LPV.PRIM?locations=CI" target="_blank" rel="noopener noreferrer">World Bank, 2019</a></p><p class="sn-r__w"><span class="sn-r__l">At work</span><a href="https://www.worldbank.org/en/news/press-release/2024/12/05/c-te-d-ivoire-s-debt-for-development-swap-enabled-by-the-world-bank-group-will-free-up-funds-for-education" target="_blank" rel="noopener noreferrer">Debt-for-development swap</a><b class="sn-m">EUR 500M</b></p></li><li class="sn-r" data-slug="dr-congo"><div class="sn-r__h"><a class="sn-r__n" href="https://perfectnations.org/blueprints/dr-congo/" target="_blank" rel="noopener noreferrer">DR Congo</a><b class="sn-r__g">97%</b></div><p class="sn-r__t">Of Congolese children could not read a simple text by the end of primary school in 2019. Education is the standard furthest from reach. <a class="sn-src" href="https://data.worldbank.org/indicator/SE.LPV.PRIM?locations=CD" target="_blank" rel="noopener noreferrer">World Bank, 2019</a></p><p class="sn-r__w"><span class="sn-r__l">At work</span><a href="https://projects.worldbank.org/en/projects-operations/project-detail/P178684" target="_blank" rel="noopener noreferrer">Girls Learning and Empowerment Project</a><b class="sn-m">$400M</b></p></li><li class="sn-r" data-slug="ecuador"><div class="sn-r__h"><a class="sn-r__n" href="https://perfectnations.org/blueprints/ecuador/" target="_blank" rel="noopener noreferrer">Ecuador</a><b class="sn-r__g">66%</b></div><p class="sn-r__t">Of Ecuadorian children could not read a simple text by the end of primary school in 2019. <a class="sn-src" href="https://data.worldbank.org/indicator/SE.LPV.PRIM?locations=EC" target="_blank" rel="noopener noreferrer">World Bank, 2019</a></p><p class="sn-r__w is-open"><span class="sn-r__l">First move</span>A Program-for-Results paid on learning</p></li><li class="sn-r" data-slug="egypt"><div class="sn-r__h"><a class="sn-r__n" href="https://perfectnations.org/blueprints/egypt/" target="_blank" rel="noopener noreferrer">Egypt</a><b class="sn-r__g">56%</b></div><p class="sn-r__t">Of Egyptian children could not read a simple text by the end of primary school in 2021. <a class="sn-src" href="https://data.worldbank.org/indicator/SE.LPV.PRIM?locations=EG" target="_blank" rel="noopener noreferrer">World Bank, 2021</a></p><p class="sn-r__w"><span class="sn-r__l">At work</span><a href="https://www.imf.org/-/media/files/publications/cr/2026/english/1egyea2026002.pdf" target="_blank" rel="noopener noreferrer">Social Eurobond, 8 years</a><b class="sn-m">$1B</b></p></li><li class="sn-r" data-slug="india"><div class="sn-r__h"><a class="sn-r__n" href="https://perfectnations.org/blueprints/india/" target="_blank" rel="noopener noreferrer">India</a><b class="sn-r__g">56%</b></div><p class="sn-r__t">Of Indian children could not read a simple text by the end of primary school in 2017. Education is the standard furthest from reach. <a class="sn-src" href="https://data.worldbank.org/indicator/SE.LPV.PRIM?locations=IN" target="_blank" rel="noopener noreferrer">World Bank, 2017</a></p><p class="sn-r__w"><span class="sn-r__l">At work</span><a href="https://www.worldbank.org/en/news/press-release/2026/01/13/india-world-bank-approves-three-projects-assam-state-to-increase-access-to-markets-jobs-and-services" target="_blank" rel="noopener noreferrer">Assam: School Education and Adolescent Wellbeing Project</a><b class="sn-m">$250M</b></p></li><li class="sn-r" data-slug="jordan"><div class="sn-r__h"><a class="sn-r__n" href="https://perfectnations.org/blueprints/jordan/" target="_blank" rel="noopener noreferrer">Jordan</a><b class="sn-r__g">62%</b></div><p class="sn-r__t">Of Jordanian children could not read a simple text by the end of primary school in 2021. <a class="sn-src" href="https://data.worldbank.org/indicator/SE.LPV.PRIM?locations=JO" target="_blank" rel="noopener noreferrer">World Bank, 2021</a></p><p class="sn-r__w is-open"><span class="sn-r__l">First move</span>A Program-for-Results paid on learning</p></li><li class="sn-r" data-slug="kenya"><div class="sn-r__h"><a class="sn-r__n" href="https://perfectnations.org/blueprints/kenya/" target="_blank" rel="noopener noreferrer">Kenya</a><b class="sn-r__g">4 in 5</b></div><p class="sn-r__t">Kenyan children reach the end of primary school unable to read a simple text. Education is the standard furthest from reach. <a class="sn-src" href="https://data.worldbank.org/indicator/SE.LPV.PRIM?locations=KE" target="_blank" rel="noopener noreferrer">World Bank, 2023</a></p><p class="sn-r__w"><span class="sn-r__l">At work</span><a href="https://allafrica.com/stories/202510240473.html" target="_blank" rel="noopener noreferrer">Support to Higher Education, Science and Technology Project, Phase II (HEST II)</a><b class="sn-m">$73.31M</b></p><a class="sn-r__s" href="#solution-03">Solution No. 03</a></li><li class="sn-r" data-slug="lesotho"><div class="sn-r__h"><a class="sn-r__n" href="https://perfectnations.org/blueprints/lesotho/" target="_blank" rel="noopener noreferrer">Lesotho</a><b class="sn-r__g">97%</b></div><p class="sn-r__t">Of Basotho children could not read a simple text by the end of primary school, on 2016 data. <a class="sn-src" href="https://data.worldbank.org/indicator/SE.LPV.PRIM?locations=LS" target="_blank" rel="noopener noreferrer">World Bank, 2016</a></p><p class="sn-r__w"><span class="sn-r__l">At work</span><a href="https://www.worldbank.org/en/news/press-release/2024/07/01/world-bank-boosts-its-support-to-the-afe-education-sector-in-lesotho" target="_blank" rel="noopener noreferrer">Lesotho Education Improvement Project</a><b class="sn-m">$20M</b></p></li><li class="sn-r" data-slug="pakistan"><div class="sn-r__h"><a class="sn-r__n" href="https://perfectnations.org/blueprints/pakistan/" target="_blank" rel="noopener noreferrer">Pakistan</a><b class="sn-r__g">80%</b></div><p class="sn-r__t">Of Pakistani children could not read a simple text by the end of primary school in 2019. <a class="sn-src" href="https://data.worldbank.org/indicator/SE.LPV.PRIM?locations=PK" target="_blank" rel="noopener noreferrer">World Bank, 2019</a></p><p class="sn-r__w"><span class="sn-r__l">At work</span><a href="https://www.worldbank.org/en/news/press-release/2025/05/27/pakistan-world-bank-approves-194m-to-support-education-and-access-to-water-in-balochistan" target="_blank" rel="noopener noreferrer">Education and water in Balochistan</a><b class="sn-m">$194M</b></p></li><li class="sn-r" data-slug="philippines"><div class="sn-r__h"><a class="sn-r__n" href="https://perfectnations.org/blueprints/philippines/" target="_blank" rel="noopener noreferrer">Philippines</a><b class="sn-r__g">91%</b></div><p class="sn-r__t">Of Filipino children could not read a simple text by the end of primary school in 2019. <a class="sn-src" href="https://data.worldbank.org/indicator/SE.LPV.PRIM?locations=PH" target="_blank" rel="noopener noreferrer">World Bank, 2019</a></p><p class="sn-r__w"><span class="sn-r__l">At work</span><a href="https://www.worldbank.org/en/news/press-release/2026/04/03/world-bank-backs-better-learning-for-21-million-filipino-students" target="_blank" rel="noopener noreferrer">Learning Upgrade Support and Decentralization (PLUS-D)</a><b class="sn-m">$600M</b></p></li><li class="sn-r" data-slug="republic-of-congo"><div class="sn-r__h"><a class="sn-r__n" href="https://perfectnations.org/blueprints/republic-of-congo/" target="_blank" rel="noopener noreferrer">Republic of the Congo</a><b class="sn-r__g">70%</b></div><p class="sn-r__t">Of Congolese children could not read a simple text by the end of primary school in 2019. <a class="sn-src" href="https://data.worldbank.org/indicator/SE.LPV.PRIM?locations=CG" target="_blank" rel="noopener noreferrer">World Bank, 2019</a></p><p class="sn-r__w"><span class="sn-r__l">At work</span><a href="https://projects.worldbank.org/en/projects-operations/project-detail/P179410" target="_blank" rel="noopener noreferrer">Transforming the Education Sector for Better Outcomes and Results (TRESOR)</a><b class="sn-m">$80M</b></p></li><li class="sn-r" data-slug="south-africa"><div class="sn-r__h"><a class="sn-r__n" href="https://perfectnations.org/blueprints/south-africa/" target="_blank" rel="noopener noreferrer">South Africa</a><b class="sn-r__g">82%</b></div><p class="sn-r__t">Of South African children could not read for meaning by the end of primary school in 2021. <a class="sn-src" href="https://data.worldbank.org/indicator/SE.LPV.PRIM?locations=ZA" target="_blank" rel="noopener noreferrer">World Bank, 2021</a></p><p class="sn-r__w is-open"><span class="sn-r__l">First move</span>A Program-for-Results paid on learning</p></li><li class="sn-r" data-slug="zambia"><div class="sn-r__h"><a class="sn-r__n" href="https://perfectnations.org/blueprints/zambia/" target="_blank" rel="noopener noreferrer">Zambia</a><b class="sn-r__g">98%</b></div><p class="sn-r__t">Of Zambian children could not read a simple text by the end of primary school in 2019. <a class="sn-src" href="https://data.worldbank.org/indicator/SE.LPV.PRIM?locations=ZM" target="_blank" rel="noopener noreferrer">World Bank, 2019</a></p><p class="sn-r__w"><span class="sn-r__l">At work</span><a href="https://projects.worldbank.org/en/projects-operations/project-detail/P181391" target="_blank" rel="noopener noreferrer">Girls&#8217; Education and Women&#8217;s Empowerment and Livelihoods for Human Capital</a><b class="sn-m">$157M</b></p><a class="sn-r__s" href="#solution-09">Solution No. 09</a></li></ol><button type="button" class="sn-more" hidden>Show all</button></div>
-<div class="sn-p" id="sn-p-health" role="tabpanel" aria-labelledby="sn-t-health" data-std="Health" hidden><div class="sn-pb"><div class="sn-pb__h"><p class="sn-k">Health</p><h3>Let lower debt costs pay for care.</h3></div><div class="sn-pb__c sn-pb__adv"><p class="sn-tag">What Perfect Nations advises</p><p>Nations where health is furthest from reach should refinance costly debt behind a development bank guarantee and bind the savings to the health system before they can be spent elsewhere. With super intelligence, every saving can be followed into clinics and care, and services planned where citizens are furthest from them.</p></div><div class="sn-pb__c sn-pb__deal"><p class="sn-tag">The deal &middot; Debt-for-health guarantee</p><p class="sn-proof"><span>Proven</span>Barbados, 2026 <b>$175M</b> IDB guarantee, 20 years; about US$160 million of the savings for health care <a href="https://www.iadb.org/en/project/BA-U0003" target="_blank" rel="noopener noreferrer">Inter-American Development Bank, project BA-U0003</a></p></div></div><p class="sn-pcount">No open blueprint has health furthest from reach; <a href="#solution-10">Solution No. 10</a> shows how Barbados pays for it.</p><ol class="sn-rows"></ol><button type="button" class="sn-more" hidden>Show all</button></div>
-<div class="sn-p" id="sn-p-livelihood" role="tabpanel" aria-labelledby="sn-t-livelihood" data-std="Livelihood" hidden><div class="sn-pb"><div class="sn-pb__h"><p class="sn-k">Livelihood</p><h3>Let local banks lend to the enterprises that hire.</h3></div><div class="sn-pb__c sn-pb__adv"><p class="sn-tag">What Perfect Nations advises</p><p>Nations where livelihoods are furthest from reach should set up a facility that guarantees most of each small-business loan, so that local banks lend to the firms they would otherwise turn away. With super intelligence, lenders can assess firms that have no credit history, and every job each loan creates can be counted.</p></div><div class="sn-pb__c sn-pb__deal"><p class="sn-tag">The deal &middot; Small-business credit guarantee</p><p class="sn-proof"><span>Proven</span>Barbados, 2025 <b>$50M</b> up to 80% of each loan <a href="https://www.iadb.org/en/news/barbados-expands-msmes-access-financing-us50-million-idb-loan" target="_blank" rel="noopener noreferrer">Inter-American Development Bank, July 2025</a></p></div></div><p class="sn-pcount"><b>3</b> nations where livelihood is furthest from reach</p><ol class="sn-rows"><li class="sn-r" data-slug="botswana"><div class="sn-r__h"><a class="sn-r__n" href="https://perfectnations.org/blueprints/botswana/" target="_blank" rel="noopener noreferrer">Botswana</a><b class="sn-r__g">~1.6m</b></div><p class="sn-r__t">Batswana living below US$8.30 a day, on the 2015 survey. <a class="sn-src" href="https://data.worldbank.org/indicator/SI.POV.UMIC?locations=BW" target="_blank" rel="noopener noreferrer">World Bank, 2015</a></p><p class="sn-r__w"><span class="sn-r__l">At work</span><a href="https://www.worldbank.org/en/news/press-release/2023/06/16/world-bank-to-support-inclusive-resilient-and-low-carbon-growth-in-afe-botswana" target="_blank" rel="noopener noreferrer">Economic Resilience and Green Recovery Development Policy Loan II</a><b class="sn-m">$150M</b></p></li><li class="sn-r" data-slug="fiji"><div class="sn-r__h"><a class="sn-r__n" href="https://perfectnations.org/blueprints/fiji/" target="_blank" rel="noopener noreferrer">Fiji</a><b class="sn-r__g">~572,000</b></div><p class="sn-r__t">Fijians living below US$8.30 a day, on the 2019 survey: 61 in every hundred. <a class="sn-src" href="https://data.worldbank.org/indicator/SI.POV.UMIC?locations=FJ" target="_blank" rel="noopener noreferrer">World Bank, 2019</a></p><p class="sn-r__w"><span class="sn-r__l">At work</span><a href="https://www.ifc.org/en/pressroom/2026/ifc-and-bred-bank-fiji-partner-to-support-sme-growth-and-jobs-in-fiji" target="_blank" rel="noopener noreferrer">BRED Bank Fiji, risk-sharing facility for small businesses</a><b class="sn-m">FJD 13.5M</b></p></li><li class="sn-r" data-slug="namibia"><div class="sn-r__h"><a class="sn-r__n" href="https://perfectnations.org/blueprints/namibia/" target="_blank" rel="noopener noreferrer">Namibia</a><b class="sn-r__g">~1.9m</b></div><p class="sn-r__t">Namibians living below US$8.30 a day, on the 2015 survey. <a class="sn-src" href="https://data.worldbank.org/indicator/SI.POV.UMIC?locations=NA" target="_blank" rel="noopener noreferrer">World Bank, 2015</a></p><p class="sn-r__w is-open"><span class="sn-r__l">First move</span>A small-business credit guarantee</p></li></ol><button type="button" class="sn-more" hidden>Show all</button></div>
-      <p class="sn-empty" id="snNEmpty" hidden>No open blueprint matches that name yet. <a href="https://perfectnations.org/blueprints/">See every nation</a></p>
+      <p class="sn-empty" id="snSEmpty" hidden>No Solution matches that yet. <a href="https://perfectnations.org/blueprints/">See every nation</a></p>
+      <div class="sn-cfoot"><span id="snSNote">Every figure is sourced in its Solution.</span><button type="button" class="sn-more" id="snSMore" hidden>Show all Solutions</button><a href="#sn-wire">The deals that prove it</a></div>
     </div>
   </section>
 
@@ -566,12 +565,12 @@ html.pn-son-lock,html.pn-son-lock body{ overflow:hidden; }
     <div class="sn-in">
       <div class="sn-head">
         <div>
-          <p class="sn-eb">The Solutions Wire</p>
-          <h2 class="sn-h2" id="sn-wire-h">Solutions, as they are financed</h2>
-          <p class="sn-lead">Each new bond, swap, guarantee and fund links straight to its source.</p>
+          <p class="sn-eb">In the market</p>
+          <h2 class="sn-h2" id="sn-wire-h">The deals that prove it</h2>
+          <p class="sn-lead">Every new bond, swap, guarantee and fund, linked to its source.</p>
           <details class="sn-rm">
             <summary>Read more<span class="sn-sr"> about the wire</span></summary>
-            <div class="sn-rm__b"><p>Each headline opens the original at its publisher, and credit belongs to the writer. The wire covers all 195 nations.</p></div>
+            <div class="sn-rm__b"><p>The Deal Notes read the landmark deals behind the Solutions. Each headline on the wire opens the original at its publisher, and credit belongs to the writer. The wire covers all 195 nations.</p></div>
           </details>
         </div>
         <div class="sn-search">
@@ -579,11 +578,26 @@ html.pn-son-lock,html.pn-son-lock body{ overflow:hidden; }
           <input id="snWQ" type="search" placeholder="A nation, an instrument, a writer" autocomplete="off" aria-label="Search the wire">
         </div>
       </div>
+      <div class="sn-dn">
+        <p class="sn-dn__h">Deal Notes <span data-count-d>10</span></p>
+        <ol class="sn-dl" id="snDList">
+<li class="sn-d" data-no="11"><p class="sn-d__k"><b>Deal Note No. 11</b><span>Tanzania</span><time datetime="2026-11-06">6 Nov 2026</time></p><h3><a href="#deal-11">Tanzania brings nine banks to its railway with one guarantee</a></h3><p class="sn-d__f"><b class="is-money">$1.2bn</b><span>commercial facility for the Tabora&#8211;Kigoma railway</span></p></li>
+<li class="sn-d" data-no="10"><p class="sn-d__k"><b>Deal Note No. 10</b><span>Barbados</span><time datetime="2026-11-04">4 Nov 2026</time></p><h3><a href="#deal-10">Barbados turns cheaper debt into health care</a></h3><p class="sn-d__f"><b class="is-money">$175m</b><span>IDB guarantee for Barbados, 20-year term</span></p></li>
+<li class="sn-d" data-no="9"><p class="sn-d__k"><b>Deal Note No. 09</b><span>Zambia</span><time datetime="2026-11-02">2 Nov 2026</time></p><h3><a href="#deal-09">Zambia turns a bond discount into power lines</a></h3><p class="sn-d__f"><b class="is-money">$275m</b><span>earmarked for Zambia&#8217;s energy sector over 15 years</span></p></li>
+<li class="sn-d" data-no="7"><p class="sn-d__k"><b>Deal Note No. 07</b><span>Ghana</span><time datetime="2026-10-19">19 Oct 2026</time></p><h3><a href="#deal-07">Ghana turns its pensions into venture capital</a></h3><p class="sn-d__f"><b class="is-money">GHS 383m</b><span>first close of the Ci Gaba Fund of Funds, March 2026</span></p></li>
+<li class="sn-d" data-no="6"><p class="sn-d__k"><b>Deal Note No. 06</b><span>Ethiopia</span><time datetime="2026-10-19">19 Oct 2026</time></p><h3><a href="#deal-06">Ethiopia trades a haircut for a seat at its next bond</a></h3><p class="sn-d__f"><b class="is-money">$880m</b><span>new bond offered for the US$1 billion 6.625% Notes due 2024</span></p></li>
+<li class="sn-d" data-no="5"><p class="sn-d__k"><b>Deal Note No. 05</b><span>Suriname</span><time datetime="2026-10-14">14 Oct 2026</time></p><h3><a href="https://perfectnations.org/suriname-now-owes-in-the-currency-it-earns/">Suriname now owes in the currency it earns</a></h3><p class="sn-d__f"><b class="is-money">$150m</b><span>IDB loan converted into fixed-rate Surinamese dollars</span></p></li>
+<li class="sn-d" data-no="4"><p class="sn-d__k"><b>Deal Note No. 04</b><span>Five nations</span><time datetime="2026-10-12">12 Oct 2026</time></p><h3><a href="https://perfectnations.org/how-to-finance-a-nations-future/">How to finance a nation&#8217;s future: five instruments, five countries</a></h3><p class="sn-d__f"><b class="is-money">$2bn</b><span>Chile&#8217;s 20-year sustainability-linked bond, the first by a sovereign, 2022</span></p></li>
+<li class="sn-d" data-no="3"><p class="sn-d__k"><b>Deal Note No. 03</b><span>Kenya</span><time datetime="2026-10-12">12 Oct 2026</time></p><h3><a href="https://perfectnations.org/kenya-has-bought-time/">Kenya has bought time. Now it should buy down the price.</a></h3><p class="sn-d__f"><b>9.5%</b><span>coupon on the US$1.5 billion bond sold in February 2025</span></p></li>
+<li class="sn-d" data-no="2"><p class="sn-d__k"><b>Deal Note No. 02</b><span>Barbados</span><time datetime="2026-10-12">12 Oct 2026</time></p><h3><a href="https://perfectnations.org/barbados-has-priced-its-future/">The Caribbean&#8217;s first pooled sustainability bond needs a pipeline</a></h3><p class="sn-d__f"><b class="is-money">$250m</b><span>the most the Caribbean Sustainability Bond seeks to raise</span></p></li>
+<li class="sn-d" data-no="1"><p class="sn-d__k"><b>Deal Note No. 01</b><span>Developing nations</span><time datetime="2026-10-11">11 Oct 2026</time></p><h3><a href="https://perfectnations.org/five_instruments_bangkok_should_put_on_the_table/">Five instruments Bangkok should put on the table</a></h3><p class="sn-d__f"><b class="is-money">$741bn</b><span>more paid on external debt than received in new financing, 2022 to 2024</span></p></li>
+        </ol>
+      </div>
       <div class="sn-ctrl">
         <div class="sn-chips sn-scroll" id="snReg" role="group" aria-label="Filter the wire by region" hidden></div>
         <label class="sn-sel" hidden id="snTypeBox"><span class="sn-sr">Filter the wire by instrument</span><select id="snType"></select></label>
       </div>
-      <p class="sn-count" id="snWCount" aria-live="polite">80 instruments on the wire &middot; 52 nations</p>
+      <p class="sn-count" id="snWCount" aria-live="polite">81 deals on the wire &middot; 52 nations</p>
       <ol class="sn-wl" id="snWList">
 <li class="sn-w" data-type="Development bank loan" data-region="Asia-Pacific" data-nation="Bangladesh"><time datetime="2026-11-07"><b>7</b>Nov 2026</time><div><p class="sn-w__m"><span class="sn-w__src">Via The Business Standard</span><span>Development bank loan</span><span>Bangladesh</span></p><h3><a href="https://www.tbsnews.net/bangladesh/education/world-bank-approves-300m-improve-learning-26-crore-bangladeshi-children-1595296" target="_blank" rel="noopener noreferrer">World Bank approves $300m to improve learning for 2.6 crore Bangladeshi children</a></h3><p class="sn-w__by"><b>Press release</b></p></div></li>
 <li class="sn-w" data-type="Development bank loan" data-region="Africa" data-nation="Nigeria"><time datetime="2026-11-06"><b>6</b>Nov 2026</time><div><p class="sn-w__m"><span class="sn-w__src">Via World Bank (APO Group)</span><span>Development bank loan</span><span>Nigeria</span></p><h3><a href="https://www.africa-newsroom.com/press/nigeria-boosts-support-for-climate-resilience-and-sustainable-landscapes" target="_blank" rel="noopener noreferrer">Nigeria Boosts Support for Climate Resilience and Sustainable Landscapes</a></h3><p class="sn-w__by"><b>Press release</b></p></div></li>
@@ -595,8 +609,8 @@ html.pn-son-lock,html.pn-son-lock body{ overflow:hidden; }
 <li class="sn-w" data-type="Sukuk" data-region="Middle East" data-nation="Oman"><time datetime="2026-11-05"><b>5</b>Nov 2026</time><div><p class="sn-w__m"><span class="sn-w__src">Via Oman Observer</span><span>Sukuk</span><span>Oman</span></p><h3><a href="https://www.omanobserver.om/ampArticle/1199169" target="_blank" rel="noopener noreferrer">Energy Oman opens RO 50m Sukuk offer</a></h3><p class="sn-w__by"><b>Press release</b></p></div></li>
 <li class="sn-w" data-type="Liability management" data-region="Asia-Pacific" data-nation="Pakistan"><time datetime="2026-11-05"><b>5</b>Nov 2026</time><div><p class="sn-w__m"><span class="sn-w__src">Via The Nation</span><span>Liability management</span><span>Pakistan</span></p><h3><a href="https://www.nation.com.pk/05-Nov-2026/saudi-arabia-rolls-pakistan-s-additional-dollar-3b-deposit-aurangzeb" target="_blank" rel="noopener noreferrer">Saudi Arabia rolls over Pakistan&#8217;s additional $3b deposit: Aurangzeb</a></h3><p class="sn-w__by"><b>Imran Ali Kundi</b></p></div></li>
 <li class="sn-w" data-type="EU loan" data-region="Europe" data-nation="Ukraine"><time datetime="2026-11-05"><b>5</b>Nov 2026</time><div><p class="sn-w__m"><span class="sn-w__src">Via European Pravda</span><span>EU loan</span><span>Ukraine</span></p><h3><a href="https://www.eurointegration.com.ua/eng/news/2026/11/5/7249343/" target="_blank" rel="noopener noreferrer">EU has disbursed &#8364;4.36 billion to Ukraine for budgetary and defence needs</a></h3><p class="sn-w__by"><b>Tetyana Vysotska</b></p></div></li>
+<li class="sn-w" data-type="Local-currency bond" data-region="Africa" data-nation="Kenya"><time datetime="2026-11-04"><b>4</b>Nov 2026</time><div><p class="sn-w__m"><span class="sn-w__src">Via Business Today</span><span>Local-currency bond</span><span>Kenya</span></p><h3><a href="https://businesstoday.co.ke/cbk-accepts-ksh-70-9-bn-at-treasury-bonds-sale/" target="_blank" rel="noopener noreferrer">CBK Accepts KSh 70.9 Bn At latest November Treasury Bonds Auction</a></h3><p class="sn-w__by"><b>Jackson Okoth</b></p></div></li>
 <li class="sn-w" data-type="Development bank loan" data-region="Africa" data-nation="Tanzania"><time datetime="2026-11-04"><b>4</b>Nov 2026</time><div><p class="sn-w__m"><span class="sn-w__src">Via AfDB (allAfrica)</span><span>Development bank loan</span><span>Tanzania</span></p><h3><a href="https://allafrica.com/stories/202611050699.html" target="_blank" rel="noopener noreferrer">African Development Bank Group Commits $60 Million to Boost Agricultural Financing and Create 8,000 Jobs in Tanzania</a></h3><p class="sn-w__by"><b>Press release</b></p></div></li>
-<li class="sn-w" data-type="Contingent credit" data-region="Asia-Pacific" data-nation="Marshall Islands"><time datetime="2026-11-04"><b>4</b>Nov 2026</time><div><p class="sn-w__m"><span class="sn-w__src">Via PINA</span><span>Contingent credit</span><span>Marshall Islands</span></p><h3><a href="https://pina.com.fj/2026/11/04/world-bank-group-supports-marshall-islands-to-respond-to-el-nino-and-dengue-outbreak/" target="_blank" rel="noopener noreferrer">World Bank Group supports Marshall Islands to respond to El Ni&#241;o and dengue outbreak</a></h3><p class="sn-w__by"><b>Press release</b></p></div></li>
       </ol>
       <p class="sn-empty" id="snWEmpty" hidden>Nothing on the wire matches that.</p>
       <button type="button" class="sn-more" id="snWMore" hidden>Show the whole wire</button>
@@ -604,10 +618,10 @@ html.pn-son-lock,html.pn-son-lock body{ overflow:hidden; }
         <div>
           <svg class="sn-cup" aria-hidden="true" focusable="false"><use href="#pnso-cup"></use></svg>
           <h2 class="sn-h2">Bring your nation&#8217;s challenge</h2>
-          <p class="sn-lead">Perfect Nations co-designs the Solution with the nation and advises it from the challenge to the deal.</p>
+          <p class="sn-lead">Perfect Nations co-designs each Solution with the nation, from its assets to the deal.</p>
         </div>
         <div class="sn-ctas">
-          <a class="sn-btn" href="https://perfectnations.org/contact/?about=studio">Request a Nation Briefing</a>
+          <a class="sn-btn" href="https://perfectnations.org/contact/?about=briefing">Request a Nation Briefing</a>
           <a class="sn-btn sn-btn--line" href="https://perfectnations.org/blueprints/">Explore the blueprints</a>
           <a class="sn-btn sn-btn--line" href="https://perfectnations.org/design-studio/">Enter the ReDesign Studio</a>
         </div>
@@ -623,21 +637,25 @@ html.pn-son-lock,html.pn-son-lock body{ overflow:hidden; }
   var ORDER = ['Food', 'Water', 'Shelter', 'Energy', 'Education', 'Health', 'Livelihood'];
   var MONTHS = ['January','February','March','April','May','June','July','August','September','October','November','December'];
   var REGIONS = ['Africa', 'Americas', 'Asia-Pacific', 'Europe', 'Middle East'];
-  var DOT = String.fromCharCode(183), ARR = String.fromCharCode(8594), TIMES = String.fromCharCode(215), NE = String.fromCharCode(8599);
+  var DOT = String.fromCharCode(183), TIMES = String.fromCharCode(215), RSQ = String.fromCharCode(8217);
   var MARKS = new RegExp('[' + String.fromCharCode(768) + '-' + String.fromCharCode(879) + ']', 'g');
   var mq = function (q) { return !!(window.matchMedia && window.matchMedia(q).matches); };
   var phone = mq('(max-width: 640px)'), still = mq('(prefers-reduced-motion: reduce)');
-  var SOL_LIMIT = 4, ROW_LIMIT = phone ? 2 : 4, WIRE_LIMIT = phone ? 3 : 6;
+  var SOL_LIMIT = 7, WIRE_LIMIT = phone ? 3 : 6;
+  var SITE = 'https://perfectnations.org';
   function el(tag, cls, text) { var e = document.createElement(tag); if (cls) { e.className = cls; } if (text != null) { e.textContent = text; } return e; }
   function pad(n) { n = +n; return n < 10 ? '0' + n : String(n); }
-  function safe(u) { return /^https:\/\//.test(String(u || '')); }
+  function safe(u) { return /^https:\/\/[^\s"<>]+$/.test(String(u || '')); }
   function isDate(d) { return /^\d{4}-\d{2}-\d{2}$/.test(String(d || '')) && !!MONTHS[(+String(d).slice(5, 7)) - 1]; }
   function shortDate(iso) { var p = iso.split('-'); return (+p[2]) + ' ' + MONTHS[(+p[1]) - 1].slice(0, 3) + ' ' + p[0]; }
   function longDate(iso) { var p = iso.split('-'); return (+p[2]) + ' ' + MONTHS[(+p[1]) - 1] + ' ' + p[0]; }
   function nrm(s) { return String(s || '').toLowerCase().normalize('NFD').replace(MARKS, '').replace(/[^a-z0-9]+/g, ' ').trim(); }
   function txt(h) { try { return (new DOMParser().parseFromString(String(h || ''), 'text/html').body.textContent || '').replace(/\s+/g, ' ').trim(); } catch (e) { return ''; } }
   function ext(a) { a.target = '_blank'; a.rel = 'noopener noreferrer'; return a; }
+  function link(text, url, cls) { var a = ext(el('a', cls || '', text)); a.href = url; return a; }
   function std(s) { return /^Livelihood/.test(String(s)) ? 'Livelihood' : String(s); }
+  function money(f) { return /^(?:~|Up to |About )?(?:[A-Z]{1,3}\s?)?[$]|^(?:EUR|GHS|KSh|KES|INR|FJD|R\$|M)\s?[0-9]/.test(String(f || '')); }
+  function isDesign(x) { return !!(x && (x.kind === 'design' || (x.advises && x.how))); }
 
   /* 0 THE PAGE FITS THE SCREEN: measured against the screen, so a theme container off centre can
      never push the bands sideways, on any phone. */
@@ -656,18 +674,18 @@ html.pn-son-lock,html.pn-son-lock body{ overflow:hidden; }
   var ed = root.querySelector('.sn-ed');
   if (ed) { var now = new Date(); ed.textContent = 'Edition of ' + now.getDate() + ' ' + MONTHS[now.getMonth()] + ' ' + now.getFullYear(); }
 
-  /* the turning word: economic solutions for food, water, shelter... */
+  /* the turning word: economic solutions for food, water, shelter... and all */
   (function () {
     var rot = root.querySelector('.sn-rot'); if (!rot || still) { return; }
-    var i = -1, vis = true, t = 0;
+    var i = -1, vis = true;
     function step() {
-      if (!vis || document.hidden) { t = setTimeout(step, 1200); return; }
+      if (!vis || document.hidden) { setTimeout(step, 1200); return; }
       rot.classList.add('is-out');
       setTimeout(function () { i = (i + 1) % (ORDER.length + 1); rot.textContent = i === ORDER.length ? 'all' : ORDER[i].toLowerCase(); rot.classList.remove('is-out'); }, 360);
-      t = setTimeout(step, i === ORDER.length - 1 ? 3600 : 2100);
+      setTimeout(step, i === ORDER.length - 1 ? 3600 : 2100);
     }
     if ('IntersectionObserver' in window) { new IntersectionObserver(function (es) { vis = es[0].isIntersecting; }).observe(rot); }
-    t = setTimeout(step, 2400);
+    setTimeout(step, 2400);
   })();
 
   /* a soft rise, once, as each block scrolls in */
@@ -678,33 +696,27 @@ html.pn-son-lock,html.pn-son-lock body{ overflow:hidden; }
   }
   function rise(nodes) { if (!io) { return; } Array.prototype.forEach.call(nodes, function (n) { if (!n.classList.contains('sn-rv')) { n.classList.add('sn-rv'); io.observe(n); } }); }
 
-  /* ===== 2 THE SOLUTIONS ===== */
+  /* ===== 2 THE SOLUTIONS: one Perfect Nations Solution for every nation ===== */
   var cl = document.getElementById('snCList'), sFil = document.getElementById('snSFil'), sMore = document.getElementById('snSMore');
-  var cards = [], solState = { std: 'all', all: false }, SOLS = [];
+  var sq = document.getElementById('snQ'), sEmpty = document.getElementById('snSEmpty');
+  var cards = [], solState = { std: 'all', q: '', all: false }, NAT = null;
   function cardStd(c) { return (c.getAttribute('data-std') || '').split(';').filter(Boolean); }
   function solCard(s) {
-    var li = el('li', 'sn-c'), k = el('div', 'sn-c__k'), no = +s.no;
+    var li = el('li', 'sn-c'), no = +s.no;
     li._d = s; li.setAttribute('data-no', String(no)); li.setAttribute('data-std', (s.standards || []).join(';'));
-    k.appendChild(el('b', '', 'Solution No. ' + pad(no))); k.appendChild(el('span', '', s.nation || ''));
-    if (isDate(s.date)) { var tm = el('time', '', shortDate(s.date)); tm.setAttribute('datetime', s.date); k.appendChild(tm); }
-    li.appendChild(k);
-    var h = el('h3'), readable = safe(s.url) || (s.body && s.body.length);
-    if (readable) { var a = el('a', '', s.title); a.href = safe(s.url) ? s.url : '#solution-' + pad(no); h.appendChild(a); }
-    else { h.textContent = s.title; li.classList.add('is-press'); }
-    li.appendChild(h);
-    var ul = el('ul', 'sn-std');
-    if ((s.standards || []).length) { s.standards.forEach(function (x) { ul.appendChild(el('li', '', x)); }); }
-    else if (s.challenge) { ul.appendChild(el('li', 'is-all', 'All seven, through the budget')); }
-    if (ul.children.length) { li.appendChild(ul); }
-    if (s.challenge || s.advises) {
-      var dl = el('dl', 'sn-c__x');
-      [['The challenge', s.challenge], ['What Perfect Nations advises', s.advises]].forEach(function (r) {
-        if (!r[1]) { return; } var d = el('div'); d.appendChild(el('dt', '', r[0])); d.appendChild(el('dd', '', r[1])); dl.appendChild(d);
-      });
-      li.appendChild(dl);
-    } else if (s.standfirst) { li.appendChild(el('p', 'sn-c__x', s.standfirst)); }
-    if (s.figure) { var f = el('p', 'sn-c__f'); f.appendChild(el('b', '', s.figure)); if (s.caption) { f.appendChild(el('span', '', s.caption)); } li.appendChild(f); }
-    li.appendChild(el('span', 'sn-c__go', readable ? 'Read the solution' : 'In press'));
+    if (safe(s.blueprint)) { li.setAttribute('data-bp', s.blueprint); }
+    li.setAttribute('data-q', nrm((s.nation || '') + ' ' + (s.title || '')));
+    var k = el('div', 'sn-c__k'); k.appendChild(el('b', '', s.nation || '')); k.appendChild(el('span', '', 'Solution No. ' + pad(no))); li.appendChild(k);
+    var h = el('h3'), a = el('a', '', s.title); a.href = '#solution-' + pad(no); h.appendChild(a); li.appendChild(h);
+    if (s.standfirst) { li.appendChild(el('p', 'sn-c__i', s.standfirst)); }
+    var dl = el('dl', 'sn-c__x');
+    [['The challenge', s.challenge], ['What Perfect Nations advises', s.advises]].forEach(function (r) {
+      if (!r[1]) { return; } var d = el('div'); d.appendChild(el('dt', '', r[0])); d.appendChild(el('dd', '', r[1])); dl.appendChild(d);
+    });
+    if (dl.children.length) { li.appendChild(dl); }
+    var ft = el('div', 'sn-c__ft'), ul = el('ul', 'sn-std');
+    (s.standards || []).forEach(function (x) { ul.appendChild(el('li', '', x)); });
+    ft.appendChild(ul); ft.appendChild(el('span', 'sn-c__go', 'Read the Solution')); li.appendChild(ft);
     return li;
   }
   function solFilters() {
@@ -716,162 +728,98 @@ html.pn-son-lock,html.pn-son-lock body{ overflow:hidden; }
       var b = el('button', 'sn-chip' + (e[0] === solState.std ? ' is-on' : '')); b.type = 'button';
       b.setAttribute('aria-pressed', e[0] === solState.std ? 'true' : 'false');
       b.appendChild(document.createTextNode(e[1] + ' ')); b.appendChild(el('span', '', e[2]));
-      b.addEventListener('click', function () { solState.std = e[0]; solState.all = solState.all || e[0] !== 'all'; solFilters(); solApply(); });
+      b.addEventListener('click', function () { setStd(e[0]); });
       sFil.appendChild(b);
     });
   }
+  function setStd(s) { solState.std = ORDER.indexOf(s) > -1 ? s : 'all'; solFilters(); solApply(); }
   function solApply() {
-    var n = 0, cut = 0;
+    var n = 0, cut = 0, first = null, open = phone || solState.all || solState.std !== 'all' || !!solState.q;
     cards.forEach(function (c) {
-      var ok = solState.std === 'all' || cardStd(c).indexOf(solState.std) > -1;
+      var ok = (solState.std === 'all' || cardStd(c).indexOf(solState.std) > -1) && (!solState.q || (c.getAttribute('data-q') || '').indexOf(solState.q) > -1);
       if (ok) { n++; }
-      var show = ok && (phone || solState.all || n <= SOL_LIMIT);
+      var show = ok && (open || n <= SOL_LIMIT);
       if (ok && !show) { cut++; }
-      c.hidden = !show;
+      c.hidden = !show; c.classList.toggle('is-hit', !!solState.q && ok);
+      c.classList.remove('sn-c--lead');
+      if (show && !first) { first = c; }
     });
+    if (first && !solState.q && n > 2) { first.classList.add('sn-c--lead'); }
     if (sMore) { sMore.hidden = cut === 0; sMore.textContent = 'Show all ' + n + ' Solutions'; }
+    if (sEmpty) { sEmpty.hidden = n !== 0; }
+    if (cl && phone) { cl.scrollLeft = 0; }
+    return n;
   }
   function solArrange() {
     if (!cl) { return; }
     cards = Array.prototype.slice.call(cl.querySelectorAll('.sn-c'));
-    cards.forEach(function (c, i) { c._i = i; });
-    function when(c) { var t = c.querySelector('time'); return t ? (t.getAttribute('datetime') || '') : ''; }
-    cards.sort(function (a, b) {
-      var da = when(a), db = when(b);
-      return da < db ? 1 : (da > db ? -1 : (+b.getAttribute('data-no') - +a.getAttribute('data-no')));
-    });
-    var lead = null;
-    cards.forEach(function (c) { c.classList.remove('sn-c--lead'); if (!lead && !c.classList.contains('is-press')) { lead = c; } cl.appendChild(c); });
-    if (lead) { lead.classList.add('sn-c--lead'); cl.insertBefore(lead, cl.firstChild); cards.splice(cards.indexOf(lead), 1); cards.unshift(lead); }
-    cl.scrollLeft = 0;
-    var cs = root.querySelectorAll('[data-count-s],[data-count-s2]'); Array.prototype.forEach.call(cs, function (x) { x.textContent = String(cards.length); });
+    cards.sort(function (a, b) { return +b.getAttribute('data-no') - +a.getAttribute('data-no'); });
+    cards.forEach(function (c) { cl.appendChild(c); });
+    Array.prototype.forEach.call(root.querySelectorAll('[data-count-s],[data-count-s2]'), function (x) { x.textContent = String(cards.length); });
     solFilters(); solApply(); rise(cards);
   }
   if (sMore) { sMore.addEventListener('click', function () { solState.all = true; solApply(); }); }
+  if (sq) {
+    var qt = 0;
+    sq.addEventListener('input', function () { clearTimeout(qt); qt = setTimeout(function () { solState.q = nrm(sq.value); solApply(); }, 110); });
+    sq.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') { sq.value = ''; solState.q = ''; solApply(); }
+      if (e.key === 'Enter') {
+        e.preventDefault(); solState.q = nrm(sq.value); solApply();
+        var hits = cards.filter(function (c) { return !c.hidden; });
+        if (hits.length === 1) { openFor(hits[0], sq); }
+      }
+    });
+  }
+  Array.prototype.forEach.call(root.querySelectorAll('[data-go]'), function (a) {
+    a.addEventListener('click', function () { if (sq) { sq.value = ''; solState.q = ''; } setStd(a.getAttribute('data-go')); });
+  });
+  Array.prototype.forEach.call(root.querySelectorAll('[data-find]'), function (a) {
+    a.addEventListener('click', function () { setTimeout(function () { if (sq) { try { sq.focus({ preventScroll: true }); } catch (e) { sq.focus(); } } }, still ? 0 : 450); });
+  });
   solArrange();
 
-  /* THE READER: a Solution kept in the data file opens on the page */
+  /* ===== THE DEAL NOTES ===== */
+  var dlist = document.getElementById('snDList'), dnotes = [];
+  function dealCard(d) {
+    var li = el('li', 'sn-d'), no = +d.no;
+    li._d = d; li.setAttribute('data-no', String(no));
+    var k = el('p', 'sn-d__k'); k.appendChild(el('b', '', 'Deal Note No. ' + pad(no)));
+    if (d.nation) { k.appendChild(el('span', '', d.nation)); }
+    if (isDate(d.date)) { var t = el('time', '', shortDate(d.date)); t.setAttribute('datetime', d.date); k.appendChild(t); }
+    li.appendChild(k);
+    var h = el('h3'), a = el('a', '', d.title);
+    a.href = safe(d.url) ? d.url : '#deal-' + pad(no); h.appendChild(a); li.appendChild(h);
+    if (d.figure) { var f = el('p', 'sn-d__f'); f.appendChild(el('b', money(d.figure) ? 'is-money' : '', d.figure)); if (d.caption) { f.appendChild(el('span', '', d.caption)); } li.appendChild(f); }
+    return li;
+  }
+  function dealArrange() {
+    if (!dlist) { return; }
+    dnotes = Array.prototype.slice.call(dlist.querySelectorAll('.sn-d'));
+    function when(c) { var t = c.querySelector('time'); return t ? t.getAttribute('datetime') || '' : ''; }
+    dnotes.sort(function (a, b) { var x = when(a), y = when(b); return x < y ? 1 : (x > y ? -1 : +b.getAttribute('data-no') - +a.getAttribute('data-no')); });
+    dnotes.forEach(function (c) { dlist.appendChild(c); });
+    var cd = root.querySelector('[data-count-d]'); if (cd) { cd.textContent = String(dnotes.length); }
+  }
+  dealArrange();
+
+  /* ===== THE READER: a Solution or a Deal Note opens on the page, as a sheet of paper ===== */
   var rd = null, rdLast = null;
   function reader() {
     if (rd) { return rd; }
     rd = el('div'); rd.id = 'pn-son-rd'; rd.hidden = true;
     rd.setAttribute('role', 'dialog'); rd.setAttribute('aria-modal', 'true'); rd.setAttribute('aria-labelledby', 'snRdH');
-    rd.innerHTML = '<div class="rd-bg"></div><article class="rd-sheet" tabindex="-1"><button type="button" class="rd-x" aria-label="Close the Solution"></button><div class="rd-k"></div><h2 id="snRdH"></h2><p class="rd-s"></p><div class="rd-brief"><p>The Solution</p><dl></dl></div><ul class="rd-figs"></ul><div class="rd-body"></div><p class="rd-kick"></p><p class="rd-src"></p><div class="rd-end"><a href="https://perfectnations.org/contact/?about=studio">Request a Nation Briefing</a><button type="button" class="rd-back">Back to State of Nations</button></div></article>';
+    rd.innerHTML = '<div class="rd-bg"></div><article class="rd-sheet" tabindex="-1"><button type="button" class="rd-x" aria-label="Close"></button><div class="rd-k"></div><h2 id="snRdH"></h2><p class="rd-s"></p><div class="rd-brief"><p>The Solution</p><dl></dl></div><div class="rd-more"></div><p class="rd-src"></p><div class="rd-end"><a class="rd-cta" href="' + SITE + '/contact/?about=briefing">Request a Nation Briefing</a><a class="rd-bp" href="' + SITE + '/blueprints/">Open the blueprint</a><button type="button" class="rd-back">Back to State of Nations</button></div></article>';
     rd.querySelector('.rd-x').textContent = TIMES;
     document.body.appendChild(rd);
     rd.addEventListener('click', function (e) { var c = e.target.classList; if (c.contains('rd-bg') || c.contains('rd-x') || c.contains('rd-back')) { shut(); } });
     document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && rd && !rd.hidden) { shut(); } });
     return rd;
   }
-  function open(d, from) {
-    var r = reader(), q = function (s) { return r.querySelector(s); };
-    var k = q('.rd-k'); k.textContent = '';
-    k.appendChild(el('b', '', 'Solution No. ' + pad(d.no))); if (d.nation) { k.appendChild(el('span', '', d.nation)); }
-    if (d.kicker) { k.appendChild(el('span', '', d.kicker)); } if (isDate(d.date)) { k.appendChild(el('span', '', longDate(d.date))); }
-    q('#snRdH').textContent = d.title; q('.rd-s').textContent = d.standfirst || '';
-    var dl = q('.rd-brief dl'); dl.textContent = '';
-    var stds = (d.standards || []).length ? d.standards.join(', ') : 'All seven, through the budget';
-    [['The challenge', d.challenge], ['What Perfect Nations advises', d.advises], ['Standards moved', d.challenge ? stds : '']].forEach(function (x) {
-      if (!x[1]) { return; } var w = el('div'); w.appendChild(el('dt', '', x[0])); w.appendChild(el('dd', '', x[1])); dl.appendChild(w);
-    });
-    q('.rd-brief').hidden = !dl.children.length;
-    var figs = q('.rd-figs'); figs.textContent = '';
-    (d.figures || []).forEach(function (f) { var li = el('li'); li.appendChild(el('b', '', f[0])); li.appendChild(el('span', '', f[1])); figs.appendChild(li); });
-    figs.hidden = !figs.children.length;
-    var body = q('.rd-body'); body.textContent = '';
-    (d.body || []).forEach(function (p) { p = String(p); body.appendChild(/^##\s/.test(p) ? el('h4', '', p.replace(/^##\s+/, '')) : el('p', '', p)); });
-    q('.rd-kick').textContent = d.kick || ''; q('.rd-kick').hidden = !d.kick;
-    var src = q('.rd-src'); src.textContent = '';
-    var ss = (d.sources || []).filter(function (s) { return s && safe(s.url); });
-    if (ss.length) {
-      src.appendChild(document.createTextNode('Sources: '));
-      ss.forEach(function (s, i) { if (i) { src.appendChild(document.createTextNode(' ' + DOT + ' ')); } var a = ext(el('a', '', s.label || s.url)); a.href = s.url; src.appendChild(a); });
-    }
-    src.hidden = !ss.length;
-    rdLast = from || null;
-    r.hidden = false; document.documentElement.classList.add('pn-son-lock');
-    try { q('.rd-sheet').focus({ preventScroll: true }); } catch (e) { q('.rd-sheet').focus(); }
-    r.scrollTop = 0;
-    try { history.replaceState(null, '', '#solution-' + pad(d.no)); } catch (e) {}
-  }
-  function shut() {
-    if (!rd) { return; }
-    rd.hidden = true; document.documentElement.classList.remove('pn-son-lock');
-    try { history.replaceState(null, '', window.location.pathname + window.location.search); } catch (e) {}
-    if (rdLast && rdLast.focus) { rdLast.focus(); }
-  }
-  function inPage(c) { return !!(c && c._d && c._d.body && c._d.body.length); }
-  function goSolution(no, from) {
-    var hit = null; cards.forEach(function (c) { if (+c.getAttribute('data-no') === +no) { hit = c; } });
-    if (!hit) { return false; }
-    if (inPage(hit)) { open(hit._d, from || hit.querySelector('h3 a')); return true; }
-    var a = hit.querySelector('h3 a'); if (a && safe(a.getAttribute('href'))) { window.location.href = a.getAttribute('href'); return true; }
-    hit.hidden = false; hit.scrollIntoView({ behavior: still ? 'auto' : 'smooth', block: 'center' }); return true;
-  }
-  root.addEventListener('click', function (e) {
-    var a = e.target.closest ? e.target.closest('a[href^="#solution-"],a[href^="#dispatch-"]') : null; if (!a) { return; }
-    var m = /-(\d+)$/.exec(a.getAttribute('href')); if (!m) { return; }
-    var hit = null; cards.forEach(function (c) { if (+c.getAttribute('data-no') === +m[1]) { hit = c; } });
-    if (hit && inPage(hit)) { e.preventDefault(); open(hit._d, a); }
-    else if (hit) { e.preventDefault(); goSolution(m[1], a); }
-  });
-  function deepLink() { var m = /^#(?:solution|dispatch)-(\d+)$/.exec(window.location.hash || ''); if (m) { goSolution(m[1]); } }
-
-  /* ===== 3 SOLUTIONS FOR EVERY NATION ===== */
-  var tabs = Array.prototype.slice.call(root.querySelectorAll('.sn-tab'));
-  var nq = document.getElementById('snNQ'), nEmpty = document.getElementById('snNEmpty');
-  var NAT = null, curStd = (root.querySelector('.sn-tabs') || { getAttribute: function () { return 'Education'; } }).getAttribute('data-first') || 'Education';
-  var openAll = {};
-  function panel(s) { return document.getElementById('sn-p-' + s.toLowerCase()); }
-  function pick(s, focus) {
-    curStd = s;
-    tabs.forEach(function (t) { var on = t.getAttribute('data-std') === s; t.classList.toggle('is-on', on); t.setAttribute('aria-selected', on ? 'true' : 'false'); t.tabIndex = on ? 0 : -1; if (on && t.parentNode.scrollWidth > t.parentNode.clientWidth + 2) { try { var bx = t.parentNode; bx.scrollTo({ left: Math.max(0, t.offsetLeft - bx.offsetLeft - (bx.clientWidth - t.offsetWidth) / 2), behavior: still ? 'auto' : 'smooth' }); } catch (e) {} } });
-    ORDER.forEach(function (x) { var p = panel(x); if (p) { p.hidden = x !== s; } });
-    rowsApply(); if (focus) { var t = document.getElementById('sn-t-' + s.toLowerCase()); if (t) { t.focus(); } }
-  }
-  tabs.forEach(function (t, i) {
-    t.addEventListener('click', function () { pick(t.getAttribute('data-std')); });
-    t.addEventListener('keydown', function (e) {
-      var d = e.key === 'ArrowRight' ? 1 : (e.key === 'ArrowLeft' ? -1 : 0); if (!d) { return; }
-      e.preventDefault(); pick(tabs[(i + d + tabs.length) % tabs.length].getAttribute('data-std'), true);
-    });
-  });
-  function rowsApply() {
-    var q = nq ? nrm(nq.value) : '', any = 0, firstHit = null;
-    ORDER.forEach(function (s) {
-      var p = panel(s); if (!p) { return; }
-      var rows = Array.prototype.slice.call(p.querySelectorAll('.sn-r')), n = 0, cut = 0, hits = 0;
-      rows.forEach(function (r) {
-        var ok = !q || nrm(r.querySelector('.sn-r__n').textContent).indexOf(q) > -1;
-        if (ok) { n++; hits++; }
-        var show = ok && (q || openAll[s] || n <= ROW_LIMIT);
-        if (ok && !show) { cut++; }
-        r.hidden = !show; r.classList.toggle('is-hit', !!q && ok);
-      });
-      if (q && hits && !firstHit) { firstHit = s; }
-      any += hits;
-      var t = document.getElementById('sn-t-' + s.toLowerCase());
-      if (t) { var c = t.querySelector('span'); if (c) { c.textContent = String(q ? hits : rows.length); } t.classList.toggle('is-none', !!q && !hits); }
-      var m = p.querySelector('.sn-more'); if (m) { m.hidden = cut === 0; m.textContent = 'Show all ' + rows.length + ' nations'; }
-    });
-    if (nEmpty) { nEmpty.hidden = !q || any > 0; }
-    return firstHit;
-  }
-  Array.prototype.forEach.call(root.querySelectorAll('.sn-p .sn-more'), function (b) {
-    b.addEventListener('click', function () { openAll[b.closest('.sn-p').getAttribute('data-std')] = true; rowsApply(); });
-  });
-  if (nq) {
-    var nt = 0;
-    nq.addEventListener('input', function () { clearTimeout(nt); nt = setTimeout(function () { var s = rowsApply(); if (s && s !== curStd) { pick(s); } }, 120); });
-    nq.addEventListener('keydown', function (e) { if (e.key === 'Escape') { nq.value = ''; rowsApply(); } });
-  }
-  Array.prototype.forEach.call(root.querySelectorAll('[data-go]'), function (a) {
-    a.addEventListener('click', function () { pick(a.getAttribute('data-go')); });
-  });
-
-  function sevenOf(slug) { var n = null; (NAT && NAT.nations || []).forEach(function (x) { if (x.slug === slug) { n = x; } }); return n; }
+  function sec(title, body) { var s = el('section', 'rd-sec'); s.appendChild(el('h3', '', title)); if (body) { s.appendChild(body); } return s; }
+  function natOf(name) { var n = null; ((NAT && NAT.nations) || []).forEach(function (x) { if (x && x.name === name) { n = x; } }); return n; }
   function sevenBox(n) {
-    var box = el('div', 'sn-7');
+    var box = el('div', 'rd-7');
     (n.seven || []).forEach(function (s) {
       var row = el('div', s[0] === n.standard ? 'is-far' : '');
       row.appendChild(el('span', '', s[0] + (s[0] === n.standard ? ' ' + DOT + ' furthest' : '')));
@@ -879,65 +827,135 @@ html.pn-son-lock,html.pn-son-lock body{ overflow:hidden; }
       if (typeof s[2] === 'number') { bar.style.setProperty('--v', Math.max(2, Math.min(100, s[2])) + '%'); }
       row.appendChild(bar);
       var v = s[1] || 'Not measured';
-      if (safe(s[5])) { var a = ext(el('a', '', v)); a.href = s[5]; a.title = (s[3] ? s[3] + '. ' : '') + (s[4] || ''); row.appendChild(a); }
-      else { row.appendChild(el('span', '', v)); }
+      if (safe(s[5])) { var a = link(v, s[5]); a.title = (s[3] ? s[3] + '. ' : '') + (s[4] || ''); row.appendChild(a); }
+      else { row.appendChild(el('em', '', v)); }
       box.appendChild(row);
     });
     return box;
   }
-  function addSeven(r) {
-    var n = sevenOf(r.getAttribute('data-slug')); if (!n || !(n.seven || []).length || r.querySelector('.sn-r__x')) { return; }
-    var b = el('button', 'sn-r__x'); b.type = 'button'; b.setAttribute('aria-expanded', 'false');
-    var box = sevenBox(n); box.hidden = true; box.id = 'sn-7-' + n.slug; b.setAttribute('aria-controls', box.id);
-    b.addEventListener('click', function () { var o = b.getAttribute('aria-expanded') !== 'true'; b.setAttribute('aria-expanded', o ? 'true' : 'false'); box.hidden = !o; });
-    var hd = r.querySelector('.sn-r__h'), line = r.querySelector('.sn-r__w');
-    b.textContent = 'Seven'; b.setAttribute('aria-label', 'The seven standards in ' + n.name); b.title = 'The seven standards';
-    if (hd) { hd.appendChild(b); } else { r.appendChild(b); }
-    if (line) { line.parentNode.insertBefore(box, line.nextSibling); } else { r.appendChild(box); }
+  function show(d, from, hash) {
+    var r = reader(), q = function (s) { return r.querySelector(s); };
+    rdLast = from || null;
+    r.hidden = false; document.documentElement.classList.add('pn-son-lock');
+    try { q('.rd-sheet').focus({ preventScroll: true }); } catch (e) { q('.rd-sheet').focus(); }
+    r.scrollTop = 0;
+    try { history.replaceState(null, '', hash); } catch (e) {}
   }
-  function natRow(n, first) {
-    var li = el('li', 'sn-r'); li.setAttribute('data-slug', n.slug);
-    var h = el('div', 'sn-r__h'), a = ext(el('a', 'sn-r__n', n.name)); a.href = n.url; h.appendChild(a); h.appendChild(el('b', 'sn-r__g', n.gap || '')); li.appendChild(h);
-    var t = el('p', 'sn-r__t', (n.gap_text || '') + ' ');
-    if (n.source && safe(n.source.url)) { var s = ext(el('a', 'sn-src', n.source.label || 'Source')); s.href = n.source.url; t.appendChild(s); }
-    li.appendChild(t);
-    var w = n.at_work, p;
-    if (w && safe(w.url)) {
-      p = el('p', 'sn-r__w'); p.appendChild(el('span', 'sn-r__l', 'At work'));
-      var wa = ext(el('a', '', w.name)); wa.href = w.url; p.appendChild(wa);
-      if (w.amount) { p.appendChild(el('b', w.money ? 'sn-m' : 'sn-q', w.amount)); }
-    } else {
-      p = el('p', 'sn-r__w is-open'); p.appendChild(el('span', 'sn-r__l', 'First move'));
-      var f = first || ''; p.appendChild(document.createTextNode(f.charAt(0).toUpperCase() + f.slice(1)));
+  function sources(r, list) {
+    var src = r.querySelector('.rd-src'); src.textContent = '';
+    var ss = (list || []).filter(function (s) { return s && safe(s.url); });
+    if (ss.length) {
+      src.appendChild(document.createTextNode('Sources: '));
+      ss.forEach(function (s, i) { if (i) { src.appendChild(document.createTextNode(' ' + DOT + ' ')); } src.appendChild(link(s.label || s.url, s.url)); });
     }
-    li.appendChild(p);
-    (n.solutions || []).forEach(function (no) { var x = el('a', 'sn-r__s', 'Solution No. ' + pad(no)); x.href = '#solution-' + pad(no); li.appendChild(x); });
-    return li;
+    src.hidden = !ss.length;
   }
-  function useNations(d) {
-    if (!d || d.page !== 'solutions-by-nation' || !d.nations || !d.nations.length) { return; }
-    NAT = d;
-    var firsts = {}, groups = {};
-    (d.standards || []).forEach(function (s) { firsts[s.standard] = s.first; });
-    d.nations.forEach(function (n) { var s = std(n.standard); if (ORDER.indexOf(s) < 0 || !safe(n.url)) { return; } (groups[s] = groups[s] || []).push(n); });
-    ORDER.forEach(function (s) {
-      var p = panel(s), list = p && p.querySelector('.sn-rows'); if (!list) { return; }
-      var ns = groups[s] || [], frag = document.createDocumentFragment();
-      ns.forEach(function (n) { var r = natRow(n, firsts[s]); frag.appendChild(r); });
-      list.textContent = ''; list.appendChild(frag);
-      var pc = p.querySelector('.sn-pcount');
-      if (pc && ns.length) { pc.textContent = ''; pc.appendChild(el('b', '', String(ns.length))); pc.appendChild(document.createTextNode(' ' + (ns.length === 1 ? 'nation' : 'nations') + ' where ' + s.toLowerCase() + ' is furthest from reach')); }
+  function openDesign(d, from) {
+    var r = reader(), q = function (s) { return r.querySelector(s); };
+    var k = q('.rd-k'); k.textContent = '';
+    k.appendChild(el('b', '', 'Perfect Nations Solution No. ' + pad(d.no))); k.appendChild(el('span', '', d.nation || ''));
+    if (isDate(d.date)) { k.appendChild(el('span', '', longDate(d.date))); }
+    q('#snRdH').textContent = d.title; q('.rd-s').textContent = d.standfirst || '';
+    var brief = q('.rd-brief'), dl = q('.rd-brief dl'); dl.textContent = ''; brief.hidden = false;
+    brief.querySelector('p').textContent = 'The Solution';
+    var src0 = (d.sources || [])[0];
+    [['The challenge', d.challenge, src0], ['What Perfect Nations advises', d.advises, null]].forEach(function (x) {
+      if (!x[1]) { return; } var w = el('div'), dd = el('dd', '', x[1] + ' ');
+      if (x[2] && safe(x[2].url)) { var sa = link(x[2].label || 'Source', x[2].url); sa.style.color = '#E3C258'; dd.appendChild(sa); }
+      w.appendChild(el('dt', '', x[0])); w.appendChild(dd); dl.appendChild(w);
     });
-    var cn = root.querySelector('[data-count-n]'); if (cn) { cn.textContent = String(d.nations.length); }
-    Array.prototype.forEach.call(root.querySelectorAll('.sn-r'), addSeven);
-    rowsApply();
+    var more = q('.rd-more'); more.textContent = '';
+    if ((d.standards || []).length) { var su = el('ul', 'rd-std'); d.standards.forEach(function (s) { su.appendChild(el('li', '', s)); }); more.appendChild(su); }
+    if ((d.how || []).length === 3) {
+      var ol = el('ol', 'rd-how');
+      ['Assets', 'Capital', 'Solutions'].forEach(function (t, i) { var li = el('li'); li.appendChild(el('b', '', pad(i + 1))); li.appendChild(el('strong', '', t)); li.appendChild(el('span', '', d.how[i])); ol.appendChild(li); });
+      more.appendChild(sec('How it works', ol));
+    }
+    var pr = d.proof;
+    if (pr && pr.name) {
+      var p = el('p', 'rd-proof');
+      if (pr.own) { p.appendChild(document.createTextNode(pr.name)); p.appendChild(el('span', 'rd-own', 'Designed by Perfect Nations')); p.appendChild(document.createTextNode(' ' + (pr.label ? pr.label.charAt(0).toUpperCase() + pr.label.slice(1) + '. ' : ''))); }
+      else {
+        p.appendChild(document.createTextNode(pr.name + (pr.where ? ', ' + pr.where : '') + (pr.year ? ', ' + pr.year : '') + ': '));
+        if (pr.figure) { p.appendChild(el('b', '', pr.figure)); p.appendChild(document.createTextNode(' ')); }
+        p.appendChild(document.createTextNode((pr.label || '') + '. '));
+      }
+      if (safe(pr.url)) { p.appendChild(link(pr.source || 'Source', pr.url)); }
+      more.appendChild(sec(pr.own ? 'The instrument' : 'The deal that proves it', p));
+    }
+    if (d.first) { more.appendChild(sec('The first move', el('p', '', d.first))); }
+    var n = natOf(d.nation);
+    if (n && (n.seven || []).length) { more.appendChild(sec('Where ' + d.nation + ' stands on the seven standards', sevenBox(n))); }
+    if (n && n.at_work && safe(n.at_work.url)) {
+      var w = el('p'); w.appendChild(document.createTextNode(n.at_work.name + (n.at_work.amount ? ', ' + n.at_work.amount : '') + (n.at_work.status ? ' (' + n.at_work.status.toLowerCase() + ')' : '') + '. '));
+      w.appendChild(link('Source', n.at_work.url)); more.appendChild(sec('Already at work in ' + d.nation, w));
+    }
+    sources(r, d.sources);
+    var bp = q('.rd-bp'); bp.hidden = !safe(d.blueprint); if (safe(d.blueprint)) { bp.href = d.blueprint; bp.textContent = 'Open the ' + d.nation + ' blueprint'; }
+    show(d, from, '#solution-' + pad(d.no));
   }
-  pick(curStd);
+  function openDeal(d, from) {
+    var r = reader(), q = function (s) { return r.querySelector(s); };
+    var k = q('.rd-k'); k.textContent = '';
+    k.appendChild(el('b', '', 'Deal Note No. ' + pad(d.no))); if (d.nation) { k.appendChild(el('span', '', d.nation)); }
+    if (d.kicker) { k.appendChild(el('span', '', d.kicker)); } if (isDate(d.date)) { k.appendChild(el('span', '', longDate(d.date))); }
+    q('#snRdH').textContent = d.title; q('.rd-s').textContent = d.standfirst || '';
+    var brief = q('.rd-brief'), dl = q('.rd-brief dl'); dl.textContent = '';
+    brief.querySelector('p').textContent = 'The deal';
+    [['The challenge', d.challenge], ['What Perfect Nations advises', d.advises]].forEach(function (x) {
+      if (!x[1]) { return; } var w = el('div'); w.appendChild(el('dt', '', x[0])); w.appendChild(el('dd', '', x[1])); dl.appendChild(w);
+    });
+    brief.hidden = !dl.children.length;
+    var more = q('.rd-more'); more.textContent = '';
+    var figs = (d.figures || []).filter(function (f) { return f && f[0]; });
+    if (figs.length) { var ul = el('ul', 'rd-figs'); figs.forEach(function (f) { var li = el('li'); li.appendChild(el('b', '', f[0])); li.appendChild(el('span', '', f[1] || '')); ul.appendChild(li); }); more.appendChild(ul); }
+    if ((d.body || []).length) {
+      var body = el('div', 'rd-body');
+      d.body.forEach(function (p) { p = String(p); body.appendChild(/^##\s/.test(p) ? el('h4', '', p.replace(/^##\s+/, '')) : el('p', '', p)); });
+      more.appendChild(body);
+    }
+    if (d.kick) { more.appendChild(el('p', 'rd-kick', d.kick)); }
+    sources(r, d.sources);
+    q('.rd-bp').hidden = true;
+    show(d, from, '#deal-' + pad(d.no));
+  }
+  function shut() {
+    if (!rd) { return; }
+    rd.hidden = true; document.documentElement.classList.remove('pn-son-lock');
+    try { history.replaceState(null, '', window.location.pathname + window.location.search); } catch (e) {}
+    if (rdLast && rdLast.focus) { rdLast.focus(); }
+  }
+  /* a card written into the page (before the live file is read) opens from its own words */
+  function fromCard(c) {
+    var g = function (s) { var x = c.querySelector(s); return x ? x.textContent : ''; }, dd = c.querySelectorAll('.sn-c__x dd');
+    return { no: +c.getAttribute('data-no'), nation: g('.sn-c__k b'), title: g('h3'), standfirst: g('.sn-c__i'),
+      challenge: dd[0] ? dd[0].textContent : '', advises: dd[1] ? dd[1].textContent : '', standards: cardStd(c), blueprint: c.getAttribute('data-bp') || '' };
+  }
+  function openFor(c, from) { if (c) { openDesign(c._d || fromCard(c), from || c.querySelector('h3 a')); } }
+  function findCard(list, no) { var hit = null; list.forEach(function (c) { if (+c.getAttribute('data-no') === +no) { hit = c; } }); return hit; }
+  function goDeal(no, from) {
+    var c = findCard(dnotes, no); if (!c || !c._d) { return false; }
+    if ((c._d.body && c._d.body.length) || !safe(c._d.url)) { openDeal(c._d, from); return true; }
+    if (safe(c._d.url)) { window.location.href = c._d.url; return true; }
+    return false;
+  }
+  root.addEventListener('click', function (e) {
+    var a = e.target.closest ? e.target.closest('a[href^="#solution-"],a[href^="#deal-"],a[href^="#dispatch-"]') : null; if (!a) { return; }
+    var m = /^#(solution|deal|dispatch)-(\d+)$/.exec(a.getAttribute('href')); if (!m) { return; }
+    if (m[1] === 'solution') { var c = findCard(cards, m[2]); if (c) { e.preventDefault(); openFor(c, a); } }
+    else if (goDeal(m[2], a)) { e.preventDefault(); }
+  });
+  function deepLink() {
+    var m = /^#(solution|deal|dispatch)-(\d+)$/.exec(window.location.hash || ''); if (!m) { return; }
+    if (m[1] === 'solution') { var c = findCard(cards, m[2]); if (c) { openFor(c); } } else { goDeal(m[2]); }
+  }
 
-  /* ===== 4 THE WIRE ===== */
+  /* ===== 4 THE WIRE: the deals that prove it ===== */
   var wl = document.getElementById('snWList'), wq = document.getElementById('snWQ'), wCount = document.getElementById('snWCount'),
       wEmpty = document.getElementById('snWEmpty'), wMore = document.getElementById('snWMore'), reg = document.getElementById('snReg'),
       typeSel = document.getElementById('snType'), typeBox = document.getElementById('snTypeBox');
+  /* the counts written into the page (the whole wire), kept until the live file is read */
+  var W0 = +((root.querySelector('[data-count-w]') || {}).textContent || 0) || 0, N0 = +((/(\d+) nations/.exec(wCount ? wCount.textContent : '') || [])[1] || 0);
   var wires = [], WTOTAL = 0, WNATS = 0, wState = { q: '', region: 'all', type: 'all', all: false }, WIRE = null;
   function wireLi(w) {
     var li = el('li', 'sn-w'), d = w.date.split('-');
@@ -946,7 +964,7 @@ html.pn-son-lock,html.pn-son-lock body{ overflow:hidden; }
     var b = el('div'), m = el('p', 'sn-w__m');
     m.appendChild(el('span', 'sn-w__src', 'Via ' + (w.source || ''))); if (w.type) { m.appendChild(el('span', '', w.type)); } if (w.where) { m.appendChild(el('span', '', w.where)); }
     b.appendChild(m);
-    var h = el('h3'), a = ext(el('a', '', w.title)); a.href = w.url; h.appendChild(a); b.appendChild(h);
+    var h = el('h3'); h.appendChild(link(w.title, w.url)); b.appendChild(h);
     var by = el('p', 'sn-w__by'), names = (w.by && w.by.length) ? w.by : ['Press release'];
     names.forEach(function (n, i) { if (i) { by.appendChild(document.createTextNode(' and ')); } by.appendChild(el('b', '', n)); });
     if (w.agency) { by.appendChild(document.createTextNode(', ' + w.agency)); }
@@ -962,9 +980,10 @@ html.pn-son-lock,html.pn-son-lock body{ overflow:hidden; }
       if (ok && !show) { cut++; }
       c.hidden = !show;
     });
+    dnotes.forEach(function (c) { c.hidden = !!wState.q && nrm(c.textContent).indexOf(wState.q) < 0; });
     if (wEmpty) { wEmpty.hidden = n !== 0; }
-    if (wMore) { wMore.hidden = cut === 0; wMore.textContent = 'Show all ' + n + ' instruments'; }
-    if (wCount) { wCount.textContent = (n === WTOTAL ? WTOTAL + ' instruments on the wire' : n + ' of ' + WTOTAL + ' instruments') + (n === WTOTAL && WNATS ? ' ' + DOT + ' ' + WNATS + ' nations' : ''); }
+    if (wMore) { wMore.hidden = cut === 0; wMore.textContent = 'Show all ' + n + ' deals'; }
+    if (wCount) { wCount.textContent = (n === WTOTAL ? WTOTAL + ' deals on the wire' : n + ' of ' + WTOTAL + ' deals') + (n === WTOTAL && WNATS ? ' ' + DOT + ' ' + WNATS + ' nations' : ''); }
   }
   function wSetup() {
     if (!wl) { return; }
@@ -978,9 +997,9 @@ html.pn-son-lock,html.pn-son-lock body{ overflow:hidden; }
       String(nat || '').split(';').forEach(function (x) { x = x.trim().toLowerCase(); if (x) { seen[x] = 1; } });
       w._h = nrm(w.textContent + ' ' + (nat || '') + ' ' + (r || ''));
     });
-    WTOTAL = WIRE ? WIRE.length : wires.length;
+    WTOTAL = WIRE ? WIRE.length : (W0 || wires.length);
     if (WIRE) { WIRE.forEach(function (w) { (w.nations || []).forEach(function (x) { x = String(x).trim().toLowerCase(); if (x) { seen[x] = 1; } }); }); }
-    WNATS = Object.keys(seen).length;
+    WNATS = WIRE ? Object.keys(seen).length : (N0 || Object.keys(seen).length);
     var cw = root.querySelector('[data-count-w]'); if (cw) { cw.textContent = String(WTOTAL); }
     if (reg) {
       reg.textContent = ''; var keys = REGIONS.filter(function (x) { return rt[x]; });
@@ -1011,18 +1030,18 @@ html.pn-son-lock,html.pn-son-lock body{ overflow:hidden; }
   }
   wSetup();
 
-  /* THE TICKER: three Solutions and five instruments, read from the page */
+  /* THE TICKER: three Solutions and five deals, read from the page */
   function ticker() {
     var track = root.querySelector('.sn-tick__track'); if (!track) { return; }
     var items = [];
     cards.slice(0, 3).forEach(function (c) {
-      var a = c.querySelector('h3 a'); if (!a) { return; }
+      var d = c._d || {}, a = c.querySelector('h3 a'); if (!a) { return; }
       var x = el('a', '', 'Solution No. ' + pad(c.getAttribute('data-no')) + ': ' + a.textContent); x.href = a.getAttribute('href');
-      x.appendChild(el('span', '', (c._d && c._d.nation) || ((c.querySelector('.sn-c__k span') || {}).textContent || ''))); items.push(x);
+      x.appendChild(el('span', '', d.nation || ((c.querySelector('.sn-c__k b') || {}).textContent || ''))); items.push(x);
     });
     wires.slice(0, 5).forEach(function (w) {
       var a = w.querySelector('h3 a'), s = w.querySelector('.sn-w__src'); if (!a) { return; }
-      var x = ext(el('a', '', a.textContent)); x.href = a.href; x.appendChild(el('span', '', s ? s.textContent.replace(/^Via\s+/, '') : '')); items.push(x);
+      var x = link(a.textContent, a.href); x.appendChild(el('span', '', s ? s.textContent.replace(/^Via\s+/, '') : '')); items.push(x);
     });
     if (!items.length) { return; }
     track.textContent = '';
@@ -1033,8 +1052,9 @@ html.pn-son-lock,html.pn-son-lock body{ overflow:hidden; }
   }
 
   /* ===== THE LIVE RECORD =====
-     On every visit the page reads data/state-of-nations.json and data/solutions-by-nation.json from
-     the Perfect Nations GitHub repository; if a file cannot be read, the copy above stays. */
+     On every visit the page reads data/state-of-nations.json (the Solutions, the Deal Notes and the wire)
+     and data/solutions-by-nation.json (the seven standards of each nation) from the Perfect Nations GitHub
+     repository; if a file cannot be read, the copy above stays. */
   function feedsOf(attr) { return (root.getAttribute(attr) || '').split(/\s+/).filter(safe); }
   function getJSON(list, i) {
     if (i >= list.length || !window.fetch) { return Promise.reject(new Error('no feed')); }
@@ -1048,39 +1068,46 @@ html.pn-son-lock,html.pn-son-lock body{ overflow:hidden; }
       ws.sort(function (a, b) { return a.date < b.date ? 1 : (a.date > b.date ? -1 : 0); });
       WIRE = ws;
       var frag = document.createDocumentFragment(); ws.forEach(function (w) { frag.appendChild(wireLi(w)); });
-      wl.textContent = ''; wl.appendChild(frag); wSetup();
+      wl.textContent = ''; wl.appendChild(frag);
     }
-    var ss = (d.solutions || d.dispatches || []).filter(function (x) { return x && +x.no > 0 && x.title && isDate(x.date); });
-    if (ss.length && cl) {
-      SOLS = ss;
-      var f2 = document.createDocumentFragment(); ss.forEach(function (x) { f2.appendChild(solCard(x)); });
+    var all = (d.dispatches || []).filter(function (x) { return x && +x.no > 0 && x.title && isDate(x.date); });
+    var ds = all.filter(isDesign);
+    if (ds.length >= 3 && cl) {
+      var f2 = document.createDocumentFragment(); ds.forEach(function (x) { f2.appendChild(solCard(x)); });
       cl.textContent = ''; cl.appendChild(f2); solArrange();
     }
+    var deals = (d.deals || []).concat(all.filter(function (x) { return !isDesign(x); })).filter(function (x) { return x && +x.no > 0 && x.title && isDate(x.date); });
+    if (deals.length && dlist) {
+      var seen = {}, f3 = document.createDocumentFragment();
+      deals.forEach(function (x) { if (seen[x.no]) { return; } seen[x.no] = 1; f3.appendChild(dealCard(x)); });
+      dlist.textContent = ''; dlist.appendChild(f3); dealArrange();
+    }
+    wSetup();
   }
   function mergePosts(posts) {
-    if (!posts || typeof posts.length !== 'number' || !cl) { return; }
+    if (!posts || typeof posts.length !== 'number' || !dlist) { return; }
     var have = {}, top = 0;
-    cards.forEach(function (c) { if (c._d && c._d.slug) { have[String(c._d.slug).toLowerCase().replace(/_/g, '-')] = 1; } top = Math.max(top, +c.getAttribute('data-no') || 0); });
+    dnotes.forEach(function (c) { var d = c._d || {}; if (d.slug) { have[String(d.slug).toLowerCase().replace(/_/g, '-')] = 1; } if (d.url) { have[String(d.url).replace(/\/+$/, '').split('/').pop().replace(/_/g, '-')] = 1; } top = Math.max(top, +c.getAttribute('data-no') || 0); });
     var added = 0;
     posts.forEach(function (p) {
       var s = String(p.slug || '').toLowerCase().replace(/_/g, '-');
       if (!s || have[s] || !safe(p.link)) { return; }
       top++; added++;
-      cl.appendChild(solCard({ no: top, slug: p.slug, nation: '', title: txt(p.title && p.title.rendered), date: String(p.date || '').slice(0, 10), url: p.link, standfirst: txt(p.excerpt && p.excerpt.rendered) }));
+      dlist.appendChild(dealCard({ no: top, slug: p.slug, nation: '', title: txt(p.title && p.title.rendered), date: String(p.date || '').slice(0, 10), url: p.link }));
     });
-    if (added) { solArrange(); }
+    if (added) { dealArrange(); }
   }
   var api = root.getAttribute('data-api') || '/wp-json/wp/v2/', cat = root.getAttribute('data-cat') || 'dispatches';
   function getPosts() {
     if (!window.fetch) { return Promise.reject(new Error('no fetch')); }
     return fetch(api + 'categories?slug=' + encodeURIComponent(cat) + '&_fields=id', { credentials: 'same-origin' })
       .then(function (r) { if (!r.ok) { throw new Error('categories ' + r.status); } return r.json(); })
-      .then(function (c) { if (!c || !c.length) { throw new Error('no category'); } return fetch(api + 'posts?categories=' + c[0].id + '&per_page=100&_fields=date,link,slug,title,excerpt', { credentials: 'same-origin' }); })
+      .then(function (c) { if (!c || !c.length) { throw new Error('no category'); } return fetch(api + 'posts?categories=' + c[0].id + '&per_page=100&_fields=date,link,slug,title', { credentials: 'same-origin' }); })
       .then(function (r) { if (!r.ok) { throw new Error('posts ' + r.status); } return r.json(); });
   }
   function warn(m, e) { if (window.console) { console.warn('[pn-son] ' + m, e && e.message); } }
   var postsP = getPosts().catch(function (e) { warn('archive posts not read:', e); return null; });
-  getJSON(feedsOf('data-nations'), 0).then(function (d) { try { useNations(d); } catch (e) { warn('nation record not used:', e); } }).catch(function (e) { warn('nation record not read; the page shows its own copy:', e); });
+  getJSON(feedsOf('data-nations'), 0).then(function (d) { if (d && d.page === 'solutions-by-nation') { NAT = d; } }).catch(function (e) { warn('nation record not read; the Solutions show without the seven standards:', e); });
   getJSON(feedsOf('data-feed'), 0)
     .then(function (d) { try { useFeed(d); } catch (e) { warn('live record not used:', e); } })
     .catch(function (e) { warn('live record not read; the page shows its own copy:', e); })

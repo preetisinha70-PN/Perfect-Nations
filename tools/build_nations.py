@@ -1,7 +1,12 @@
 #!/usr/bin/env python3
 """Build every national blueprint page (pages/blueprint-<slug>.html) from one template.
 
-Blueprint v11.3 (9 November 2026). One design for every nation, so a change is made once and reaches all.
+Blueprint v11.4 (9 November 2026). One design for every nation, so a change is made once and reaches all.
+v11.4: the Solution Perfect Nations designs for the nation leads its Solutions (the Steward-General, 9 Nov 2026:
+"compose solutions that Perfect Nations designs"): its idea, The challenge and What Perfect Nations advises, linked to
+State of Nations (#solution-NN). The market deals about the nation follow as Deal Notes (#deal-NN, or their own page),
+from "deals" in data/state-of-nations.json and the nation's own file. The playbook brief shows only for a nation
+without a designed Solution.
 v11.3: the logo in one gold, #E3C258, with nothing dimmed: each What we do tile draws its own part alone, and
 the faint cup under the seven stars of Solutions is gone (the Steward-General, 9 Nov 2026).
 Also v11.3: fewer words (the Steward-General, 9 Nov 2026: "Fewer words everywhere: one headline and one line per
@@ -76,7 +81,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 PAGES, DATA, HERE = ROOT / 'pages', ROOT / 'data', ROOT / 'tools' / 'nation'
-VERSION = '11.3'
+VERSION = '11.4'
 EARTH = {'lg': 'https://perfectnations.org/wp-content/uploads/2026/10/pn-globe-earth-day-1536x768.jpg',
          'sm': 'https://perfectnations.org/wp-content/uploads/2026/10/pn-globe-earth-day-1024x512.jpg'}
 ORDER = ['Food', 'Water', 'Shelter', 'Energy', 'Education', 'Health', 'Livelihoods']
@@ -535,11 +540,16 @@ def how(rows):
 
 
 def solution_card(x, sig_name, sig_role):
+    """v11.4: a Solution Perfect Nations designs (kind "design"), or a Deal Note (kind "deal": a market deal read by
+    Perfect Nations, from State of Nations or the nation's own file)."""
     no = int(x.get('no') or 0)
-    href = x['url'] if re.match(r'^https://', plain(x.get('url'))) else 'https://perfectnations.org/state-of-nations/#solution-%02d' % no
+    deal = x.get('kind') == 'deal'
+    href = x['url'] if re.match(r'^https://', plain(x.get('url'))) else 'https://perfectnations.org/state-of-nations/#%s-%02d' % ('deal' if deal else 'solution', no)
     body = ''
+    if x.get('kind') == 'design' and x.get('standfirst'):
+        body = '<p>%s</p>' % ent(x['standfirst'])
     if x.get('challenge') and x.get('advises'):
-        body = how([('01', 'The challenge', ent(x['challenge'])), ('02', 'What Perfect Nations advises', ent(x['advises']))])
+        body += how([('01', 'The challenge', ent(x['challenge'])), ('02', 'What Perfect Nations advises', ent(x['advises']))])
     elif x.get('standfirst') or x.get('summary'):
         one, rest = first_sentence(x.get('standfirst') or x.get('summary'))
         body = '<p>%s</p>%s' % (ent(one), more('<p>%s</p>' % ent(rest), x['title']) if rest else '')
@@ -547,12 +557,12 @@ def solution_card(x, sig_name, sig_role):
     if x.get('figure'):
         fig = '<p class="bpx-sol__fig"><b>%s</b>%s</p>' % (ent(x['figure']), '<span>%s</span>' % ent(x['caption']) if x.get('caption') else '')
     return (
-        '<li class="bpx-sol"><p class="bpx-sol__k"><b>Solution No. %02d</b><time datetime="%s">%s</time></p>'
+        '<li class="bpx-sol"><p class="bpx-sol__k"><b>%s No. %02d</b><time datetime="%s">%s</time></p>'
         '<h3><a href="%s" target="_blank" rel="noopener noreferrer">%s</a></h3>%s%s'
         '<div class="bpx-sol__foot"><span class="bpx-sig">From<b>%s</b><small>%s</small></span>'
-        '<a class="bpx-btn" href="%s" target="_blank" rel="noopener noreferrer">Read the Solution</a></div></li>'
-        % (no, ent(x.get('date', '')), ent(x.get('label') or short_date(x.get('date'))), ent(https(href)), ent(x['title']), body, fig,
-           ent(sig_name), ent(sig_role), ent(https(href))))
+        '<a class="bpx-btn" href="%s" target="_blank" rel="noopener noreferrer">Read the %s</a></div></li>'
+        % ('Deal Note' if deal else 'Solution', no, ent(x.get('date', '')), ent(x.get('label') or short_date(x.get('date'))), ent(https(href)), ent(x['title']), body, fig,
+           ent(sig_name), ent(sig_role), ent(https(href)), 'Deal Note' if deal else 'Solution'))
 
 
 def solution_brief(name, sbn, slug):
@@ -595,22 +605,28 @@ def solution_cards(d, p, sbn, son):
         me = next((n for n in sbn.get('nations', []) if n.get('slug') == slug), None)
         nos = (me or {}).get('solutions') or []
     pool = []
+    as_deal = lambda x: x if x.get('kind') else dict(x, kind='deal')
     for x in (son or {}).get('dispatches', []):
-        if x.get('no') and x.get('title') and (x['no'] in nos or x.get('nation') == name):
+        if x.get('no') and x.get('title') and ((x['no'] in nos and x.get('kind') != 'design') or x.get('nation') == name):
             pool.append((x, 'preeti'))
+    for x in (son or {}).get('deals', []):
+        if x.get('no') and x.get('title') and x.get('nation') == name:
+            pool.append((as_deal(x), 'preeti'))
     for x in d.get('dispatches') or []:
         if x.get('no') and x.get('title'):
-            pool.append((x, 'steward' if x.get('author') in ('steward', 'nia') else 'preeti'))
-    pool.sort(key=lambda t: (plain(t[0].get('date')), t[0]['no']), reverse=True)
+            pool.append((as_deal(x), 'steward' if x.get('author') in ('steward', 'nia') else 'preeti'))
+    designed = any(x.get('kind') == 'design' for x, _ in pool)
+    pool.sort(key=lambda t: (t[0].get('kind') == 'design', plain(t[0].get('date')), t[0]['no']), reverse=True)
     for x, who in pool:
-        if x['no'] in seen:
+        key = ('s' if x.get('kind') == 'design' else 'd', x['no'])
+        if key in seen:
             continue
-        seen.add(x['no'])
+        seen.add(key)
         if who == 'steward':
             cards.append(solution_card(x, steward.get('name', ''), '%s &#183; SI Researcher' % steward.get('role', '')))
         else:
             cards.append(solution_card(x, 'Preeti Sinha', 'President and CEO, Perfect Nations'))
-    lead = solution_brief(name, sbn, slug) if sbn else ''
+    lead = solution_brief(name, sbn, slug) if sbn and not designed else ''
     cards = ([lead] if lead else []) + cards[:5 if lead else 6]
     cards = [c if i < 3 else c.replace('<li class="bpx-sol"', '<li class="bpx-sol bpx-sol--more"', 1) for i, c in enumerate(cards)]
     more = ('<button type="button" class="bpx-showall bpx-solmore" aria-expanded="false">Show all %d Solutions</button>' % len(cards)) if len(cards) > 3 else ''

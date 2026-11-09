@@ -1,8 +1,17 @@
 #!/usr/bin/env python3
 """Build the State of Nations page (perfectnations.org/state-of-nations/) and its nation data.
 
-The page is about Solutions: how innovative financing for development (FfD) and super intelligence
-(SI) close the gap to the seven basic standards of living, nation by nation.
+The page is about Solutions: one Solution that Perfect Nations designs for every open blueprint nation,
+to end extreme poverty and secure the seven basic standards of living, with innovative finance first and
+super intelligence second.
+v8.0: Perfect Nations Solutions, designed by Perfect Nations (the Steward-General, 9 Nov 2026).
+  "dispatches" in data/state-of-nations.json now holds the designed Solutions (kind "design"): no, slug,
+  nation, blueprint, title, standfirst (the idea), challenge (sourced), advises (finance first, then a
+  sentence that begins "With super intelligence,"), how (Assets, Capital, Solutions), proof (the deal that
+  proves it, from data/capital-architecture.json or a nation's record), first (the first move), standards,
+  figure, caption, gap_seen and sources. The market deals that were Solutions move to "deals" and show as
+  Deal Notes above the wire. The nation finder band is retired: the page links each Solution to the
+  nation's seven standards in data/solutions-by-nation.json, which now names the nation's design.
 v7.3: fewer words, and richer advice that weaves in super intelligence (the Steward-General, 9 Nov 2026).
   One headline and one line per band, the detail one click away in a Read more disclosure or the
   dispatch; the ticker carries three Solutions and five deals; the count above each standard's nations
@@ -38,6 +47,7 @@ import html
 import json
 import re
 import sys
+import unicodedata
 from datetime import date
 from pathlib import Path
 
@@ -49,11 +59,12 @@ OUT = PAGES / 'state-of-nations.html'
 NATION_DATA = DATA / 'solutions-by-nation.json'
 sys.path.insert(0, str(ROOT / 'tools'))
 
-VERSION = '7.3'
+VERSION = '8.0'
 ORDER = ['Food', 'Water', 'Shelter', 'Energy', 'Education', 'Health', 'Livelihood']
 MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September',
           'October', 'November', 'December']
 WIRE_STATIC = 12     # wire items written into the page (the live file replaces them)
+SOL_SHOWN = 7        # Solutions shown on a laptop before Show all (the lead and six)
 TICK_WIRE = 5        # deals in the moving list, after the three newest Solutions
 SITE = 'https://perfectnations.org'
 
@@ -68,15 +79,15 @@ SITE = 'https://perfectnations.org'
 # ---------------------------------------------------------------------------------------------
 PLAYBOOK = {
     'Food': {
-        'head': 'Pay before the harvest fails.',
+        'head': 'Protect the harvest before it fails.',
         'name': 'Sovereign drought insurance',
-        'ffd': 'Parametric cover pays on measured rainfall, so food reaches families within weeks of a failed season, without waiting for an appeal.',
+        'ffd': 'Parametric cover releases funds on measured rainfall, so food reaches families within weeks of a failed season, without waiting for an appeal.',
         'proof': {'where': 'Malawi', 'year': '2024', 'figure': '$11.2M',
-                  'label': 'paid out after the El Niño drought, for food aid to about 235,000 households',
+                  'label': 'released after the El Niño drought, for food aid to about 235,000 households',
                   'source': 'African Development Bank, August 2024',
                   'url': 'https://www.afdb.org/en/news-and-events/press-releases/african-development-bank-group-and-african-risk-capacity-group-issue-112-million-insurance-payout-government-malawi-73593'},
         'si': 'SI reads rainfall, harvests and food prices district by district, sets the trigger and prices the cover before the season begins.',
-        'advises': 'Nations where food is furthest from reach should buy drought insurance that pays on measured rainfall, with the trigger and the price of the cover set district by district before the season begins. With super intelligence, rainfall and harvests can be read field by field, so that payouts reach families within weeks of a failed season, before hunger does.',
+        'advises': 'Nations where food is furthest from reach should buy drought insurance that releases funds on measured rainfall, with the trigger and the price of the cover set district by district before the season begins. With super intelligence, rainfall and harvests can be read field by field, so that funds reach families within weeks of a failed season, before hunger does.',
         'first': 'sovereign drought insurance',
     },
     'Water': {
@@ -102,21 +113,21 @@ PLAYBOOK = {
         'name': 'Sovereign green bond',
         'ffd': 'Bond money ring-fenced for clean energy under a published framework, with every allocation reported to investors.',
         'lib': 'green-bond',
-        'si': 'SI counts the households still cooking with wood, charcoal or kerosene, prices the switch per home, and tracks every project the bond pays for.',
-        'advises': 'Nations where energy is furthest from reach should issue a sovereign green bond ring-fenced for clean power and clean cooking. With super intelligence, the switch can be priced for every household still cooking with wood, charcoal or kerosene, and every project the bond pays for reported to investors.',
+        'si': 'SI counts the households still cooking with wood, charcoal or kerosene, prices the switch per home, and tracks every project the bond finances.',
+        'advises': 'Nations where energy is furthest from reach should issue a sovereign green bond ring-fenced for clean power and clean cooking. With super intelligence, the switch can be priced for every household still cooking with wood, charcoal or kerosene, and every project the bond finances reported to investors.',
         'first': 'a sovereign green bond for clean power and cooking',
     },
     'Education': {
-        'head': 'Pay for learning, not only for classrooms.',
+        'head': 'Finance learning, not only classrooms.',
         'name': 'Program-for-Results',
         'ffd': 'Each tranche of the loan is released only when pupils reach an agreed learning level, verified independently.',
         'lib': 'program-for-results',
         'si': 'SI tracks reading levels school by school, sets the targets that release each tranche, and flags the schools falling behind.',
         'advises': 'Nations where education is furthest from reach should borrow on a Program-for-Results basis, releasing each tranche only when pupils reach an agreed learning level, verified independently. With super intelligence, reading levels can be tracked school by school, so that every child who falls behind is reached in time.',
-        'first': 'a Program-for-Results paid on learning',
+        'first': 'a Program-for-Results that rewards learning',
     },
     'Health': {
-        'head': 'Let lower debt costs pay for care.',
+        'head': 'Let lower debt costs finance care.',
         'name': 'Debt-for-health guarantee',
         'ffd': 'A development bank guarantee cuts the cost of existing debt, and the savings are bound to the health system before they can be spent elsewhere.',
         'proof': {'where': 'Barbados', 'year': '2026', 'figure': '$175M',
@@ -157,10 +168,6 @@ def a(text):
 
 def std_name(s):
     return 'Livelihood' if str(s).startswith('Livelihood') else str(s)
-
-
-def slug_std(s):
-    return std_name(s).lower()
 
 
 def load(p):
@@ -221,6 +228,21 @@ def at_work(d, far):
             'status': best.get('status', ''), 'url': best.get('url', '')}
 
 
+def is_design(s):
+    """A Solution that Perfect Nations designed (v8.0), as opposed to a deal read as a Solution before it."""
+    return s.get('kind') == 'design' or bool(s.get('advises') and s.get('how'))
+
+
+def design_of(solutions, name):
+    """The nation's designed Solution, in brief, for the blueprints and the page: no, title, idea, advice."""
+    ds = sorted([s for s in solutions if s.get('nation') == name and is_design(s)], key=lambda s: s['no'], reverse=True)
+    if not ds:
+        return None
+    d = ds[0]
+    return {'no': d['no'], 'title': d['title'], 'idea': d.get('standfirst', ''), 'advises': d.get('advises', ''),
+            'url': '%s/state-of-nations/#solution-%02d' % (SITE, d['no'])}
+
+
 def nations(solutions):
     index = load(DATA / 'blueprints.json')
     rows = []
@@ -252,10 +274,18 @@ def nations(solutions):
             'slug': slug, 'name': name, 'url': e.get('url') or '%s/blueprints/%s/' % (SITE, slug),
             'standard': far, 'gap': cv.get('gap', ''), 'gap_text': cv.get('gap_text', ''),
             'source': src, 'seven': seven, 'at_work': work,
-            'solutions': sorted([s['no'] for s in solutions if s.get('nation') == name], reverse=True),
+            'solutions': sorted([s['no'] for s in solutions if s.get('nation') == name and is_design(s)], reverse=True),
+            'design': design_of(solutions, name),
         })
     rows.sort(key=lambda r: r['name'].replace('ô', 'o').lower())
     return rows
+
+
+def std_counts(nat):
+    c = {s: 0 for s in ORDER}
+    for n in nat['nations']:
+        c[n['standard']] += 1
+    return c
 
 
 def build_data():
@@ -276,102 +306,80 @@ def build_data():
 # ---------------------------------------------------------------------------------------------
 # THE PAGE PARTS (the page script draws the same markup from the live files)
 # ---------------------------------------------------------------------------------------------
+MARKS = re.compile('[\u0300-\u036f]')
+MONEY = re.compile(r'^(?:~|Up to |About )?(?:[A-Z]{1,3}\s?)?[$]|^(?:EUR|GHS|KSh|KES|INR|FJD|R\$|M)\s?[0-9]')
+
+
+def nrm(t):
+    """As the page script's nrm(): lower case, no accents, words only (for the nation search)."""
+    t = MARKS.sub('', unicodedata.normalize('NFD', str(t or '').lower()))
+    return re.sub(r'[^a-z0-9]+', ' ', t).strip()
+
+
 def std_chips(stds):
-    if not stds:
-        return '<ul class="sn-std"><li class="is-all">All seven, through the budget</li></ul>'
     return '<ul class="sn-std">%s</ul>' % ''.join('<li>%s</li>' % a(s) for s in stds)
 
 
 def solution_card(s):
+    """A Perfect Nations Solution: nation and number, the name, the idea, The challenge, What Perfect Nations
+    advises, the standards it moves and Read the Solution (the reader opens on the page)."""
     no = int(s['no'])
-    url = s.get('url', '')
-    href = url if url.startswith('https://') else '#solution-%02d' % no
-    readable = url.startswith('https://') or bool(s.get('body'))
-    title = '<a href="%s">%s</a>' % (a(href), a(s['title'])) if readable else a(s['title'])
-    parts = [
-        '<li class="sn-c" data-no="%d" data-std="%s">' % (no, a(';'.join(s.get('standards', [])))),
-        '<div class="sn-c__k"><b>Solution No. %02d</b><span>%s</span><time datetime="%s">%s</time></div>' % (
-            no, a(s.get('nation', '')), a(s['date']), a(short_date(s['date']))),
-        '<h3>%s</h3>' % title,
-        std_chips(s.get('standards', [])),
-    ]
+    stds = s.get('standards', [])
+    bp = ' data-bp="%s"' % a(s['blueprint']) if str(s.get('blueprint', '')).startswith('https://') else ''
     rows = [(t, s.get(k)) for t, k in (('The challenge', 'challenge'), ('What Perfect Nations advises', 'advises')) if s.get(k)]
-    if rows:
-        parts.append('<dl class="sn-c__x">%s</dl>' % ''.join('<div><dt>%s</dt><dd>%s</dd></div>' % (t, a(w)) for t, w in rows))
-    elif s.get('standfirst'):
-        parts.append('<p class="sn-c__x">%s</p>' % a(s['standfirst']))
-    if s.get('figure'):
-        parts.append('<p class="sn-c__f"><b>%s</b><span>%s</span></p>' % (a(s['figure']), a(s.get('caption', ''))))
-    parts.append('<span class="sn-c__go">%s</span></li>' % ('Read the solution' if readable else 'In press'))
-    return ''.join(parts)
+    return ''.join([
+        '<li class="sn-c" data-no="%d" data-std="%s"%s data-q="%s">' % (no, a(';'.join(stds)), bp, a(nrm('%s %s' % (s.get('nation', ''), s['title'])))),
+        '<div class="sn-c__k"><b>%s</b><span>Solution No. %02d</span></div>' % (a(s.get('nation', '')), no),
+        '<h3><a href="#solution-%02d">%s</a></h3>' % (no, a(s['title'])),
+        '<p class="sn-c__i">%s</p>' % a(s['standfirst']) if s.get('standfirst') else '',
+        '<dl class="sn-c__x">%s</dl>' % ''.join('<div><dt>%s</dt><dd>%s</dd></div>' % (t, a(w)) for t, w in rows) if rows else '',
+        '<div class="sn-c__ft">%s<span class="sn-c__go">Read the Solution</span></div></li>' % std_chips(stds)])
+
+
+def designs(son):
+    return sorted([s for s in son.get('dispatches', []) if is_design(s)], key=lambda s: s['no'], reverse=True)
 
 
 def solution_cards(son):
-    ds = sorted(son.get('dispatches', []), key=lambda s: (s['date'], s['no']), reverse=True)
-    return '\n'.join(solution_card(s) for s in ds), len(ds)
+    ds = designs(son)
+    out = []
+    for i, s in enumerate(ds):
+        c = solution_card(s)
+        if i == 0:
+            c = c.replace('<li class="sn-c"', '<li class="sn-c sn-c--lead"', 1)
+        elif i >= SOL_SHOWN:
+            c = c.replace('<li class="sn-c"', '<li class="sn-c" hidden', 1)
+        out.append(c)
+    return '\n'.join(out), len(ds)
 
 
-def std_counts(nat):
-    c = {s: 0 for s in ORDER}
-    for n in nat['nations']:
-        c[n['standard']] += 1
-    return c
+def deal_card(d):
+    """A Deal Note: a landmark deal read by Perfect Nations (a Solution before v8.0)."""
+    no = int(d['no'])
+    href = d['url'] if str(d.get('url', '')).startswith('https://') else '#deal-%02d' % no
+    k = '<b>Deal Note No. %02d</b>' % no
+    if d.get('nation'):
+        k += '<span>%s</span>' % a(d['nation'])
+    if re.match(r'^\d{4}-\d{2}-\d{2}$', str(d.get('date', ''))):
+        k += '<time datetime="%s">%s</time>' % (a(d['date']), a(short_date(d['date'])))
+    fig = ''
+    if d.get('figure'):
+        fig = '<p class="sn-d__f"><b%s>%s</b>%s</p>' % (' class="is-money"' if MONEY.match(d['figure']) else '', a(d['figure']),
+                                                         '<span>%s</span>' % a(d['caption']) if d.get('caption') else '')
+    return '<li class="sn-d" data-no="%d"><p class="sn-d__k">%s</p><h3><a href="%s">%s</a></h3>%s</li>' % (no, k, a(href), a(d['title']), fig)
 
 
-def nation_row(n, pb):
-    w = n.get('at_work')
-    if w:
-        amt = '<b class="%s">%s</b>' % ('sn-m' if w.get('money') else 'sn-q', a(w['amount'])) if w.get('amount') else ''
-        work = ('<p class="sn-r__w"><span class="sn-r__l">At work</span><a href="%s" target="_blank" rel="noopener noreferrer">%s</a>%s</p>'
-                % (a(w['url']), a(w['name']), amt))
-    else:
-        work = ('<p class="sn-r__w is-open"><span class="sn-r__l">First move</span>%s</p>'
-                % a(pb[n['standard']]['first'][0].upper() + pb[n['standard']]['first'][1:]))
-    src = n.get('source') or {}
-    cite = ('<a class="sn-src" href="%s" target="_blank" rel="noopener noreferrer">%s</a>' % (a(src['url']), a(src['label']))
-            if str(src.get('url', '')).startswith('https://') else '')
-    sols = ''.join('<a class="sn-r__s" href="#solution-%02d">Solution No. %02d</a>' % (x, x) for x in n.get('solutions', []))
-    return ''.join([
-        '<li class="sn-r" data-slug="%s">' % a(n['slug']),
-        '<div class="sn-r__h"><a class="sn-r__n" href="%s" target="_blank" rel="noopener noreferrer">%s</a><b class="sn-r__g">%s</b></div>' % (
-            a(n['url']), a(n['name']), a(n['gap'])),
-        '<p class="sn-r__t">%s %s</p>' % (a(n['gap_text']), cite),
-        work, sols, '</li>'])
-
-
-def finder(nat):
-    pb = {p['standard']: p for p in nat['standards']}
-    counts = std_counts(nat)
-    first = max(ORDER, key=lambda s: (counts[s], -ORDER.index(s)))
-    tabs, panels = [], []
-    for s in ORDER:
-        k = slug_std(s)
-        on = s == first
-        tabs.append('<button type="button" role="tab" class="sn-tab%s" id="sn-t-%s" aria-controls="sn-p-%s" aria-selected="%s" data-std="%s">%s<span>%d</span></button>'
-                    % (' is-on' if on else '', k, k, 'true' if on else 'false', a(s), a(s), counts[s]))
-        p = pb[s]
-        pr = p['proof']
-        proof = ('<p class="sn-proof"><span>Proven</span>%s, %s <b>%s</b> %s <a href="%s" target="_blank" rel="noopener noreferrer">%s</a></p>'
-                 % (a(pr['where']), a(pr['year']), a(pr['figure']), a(pr['label']), a(pr['url']), a(pr['source'])))
-        rows = [n for n in nat['nations'] if n['standard'] == s]
-        if rows:
-            lead = '<p class="sn-pcount"><b>%d</b> %s where %s is furthest from reach</p>' % (
-                len(rows), 'nation' if len(rows) == 1 else 'nations', a(s.lower()))
-            body = '<ol class="sn-rows">%s</ol>' % ''.join(nation_row(n, pb) for n in rows)
-        else:
-            lead = ('<p class="sn-pcount">No open blueprint has %s furthest from reach; '
-                    '<a href="#solution-10">Solution No. 10</a> shows how Barbados pays for it.</p>' % a(s.lower()))
-            body = '<ol class="sn-rows"></ol>'
-        panels.append(''.join([
-            '<div class="sn-p" id="sn-p-%s" role="tabpanel" aria-labelledby="sn-t-%s" data-std="%s"%s>' % (k, k, a(s), '' if on else ' hidden'),
-            '<div class="sn-pb">',
-            '<div class="sn-pb__h"><p class="sn-k">%s</p><h3>%s</h3></div>' % (a(s), a(p['head'])),
-            '<div class="sn-pb__c sn-pb__adv"><p class="sn-tag">What Perfect Nations advises</p><p>%s</p></div>' % a(p['advises']),
-            '<div class="sn-pb__c sn-pb__deal"><p class="sn-tag">The deal &middot; %s</p>%s</div>' % (a(p['name']), proof),
-            '</div>', lead, body,
-            '<button type="button" class="sn-more" hidden>Show all</button>',
-            '</div>']))
-    return '\n'.join(tabs), '\n'.join(panels), first
+def deals(son):
+    """The Deal Notes, newest first: "deals", and any Solution in "dispatches" that is not a design."""
+    seen, out = set(), []
+    pool = list(son.get('deals', [])) + [s for s in son.get('dispatches', []) if not is_design(s)]
+    pool.sort(key=lambda d: (str(d.get('date', '')), d.get('no', 0)), reverse=True)
+    for d in pool:
+        if not d.get('no') or not d.get('title') or d['no'] in seen:
+            continue
+        seen.add(d['no'])
+        out.append(deal_card(d))
+    return '\n'.join(out), len(out)
 
 
 def wire_item(w):
@@ -406,10 +414,8 @@ def wire(son):
 
 def ticker(son):
     items = []
-    ds = sorted(son.get('dispatches', []), key=lambda s: (s['date'], s['no']), reverse=True)[:3]
-    for s in ds:
-        href = s['url'] if str(s.get('url', '')).startswith('https://') else '#solution-%02d' % s['no']
-        items.append('<a href="%s">Solution No. %02d: %s<span>%s</span></a>' % (a(href), s['no'], a(s['title']), a(s.get('nation', ''))))
+    for s in designs(son)[:3]:
+        items.append('<a href="#solution-%02d">Solution No. %02d: %s<span>%s</span></a>' % (s['no'], s['no'], a(s['title']), a(s.get('nation', ''))))
     ws = sorted(son.get('wire', []), key=lambda w: w.get('date', ''), reverse=True)[:TICK_WIRE]
     for w in ws:
         items.append('<a href="%s" target="_blank" rel="noopener noreferrer">%s<span>%s</span></a>' % (a(w['url']), a(w['title']), a(w.get('source', ''))))
@@ -432,22 +438,20 @@ def put(page, slot, body):
 def build_page(nat, son):
     page = SRC.read_text(encoding='utf-8')
     cards, n_sol = solution_cards(son)
+    dl, n_deal = deals(son)
     wl, n_wire, n_wnat = wire(son)
-    tabs, panels, first = finder(nat)
     today = date.today().isoformat()
     page = page.replace('/*pn:version*/', VERSION).replace('/*pn:built*/', today)
     page = put(page, 'rule', rule_block())
     page = put(page, 'solutions', cards)
-    page = put(page, 'tabs', tabs)
-    page = put(page, 'panels', panels)
+    page = put(page, 'deals', dl)
     page = put(page, 'wire', wl)
     page = put(page, 'tick', ticker(son))
-    page = put(page, 'n-sol', str(n_sol))
-    page = put(page, 'n-nat', str(len(nat['nations'])))
-    page = put(page, 'n-wire', str(n_wire))
+    page = page.replace('<!--pn:n-sol-->', str(n_sol))
+    page = put(page, 'n-deal', str(n_deal))
+    page = page.replace('<!--pn:n-wire-->', str(n_wire))
     page = put(page, 'n-wnat', str(n_wnat))
     page = put(page, 'edition', long_date(son.get('updated') or today))
-    page = put(page, 'first-std', first)
     try:
         page.encode('ascii')
     except UnicodeEncodeError as e:
@@ -460,7 +464,7 @@ def build_page(nat, son):
     if left:
         sys.exit('unfilled slots: %s' % ', '.join(left))
     OUT.write_text(page, encoding='utf-8')
-    return {'solutions': n_sol, 'nations': len(nat['nations']), 'wire': n_wire, 'bytes': len(page.encode('ascii'))}
+    return {'solutions': n_sol, 'deals': n_deal, 'wire': n_wire, 'bytes': len(page.encode('ascii'))}
 
 
 def main():
@@ -471,8 +475,8 @@ def main():
     if '--data' in sys.argv:
         return
     info = build_page(nat, son)
-    print('pages/state-of-nations.html v%s: %d Solutions, %d nations, %d on the wire, %d bytes' % (
-        VERSION, info['solutions'], info['nations'], info['wire'], info['bytes']))
+    print('pages/state-of-nations.html v%s: %d Solutions, %d Deal Notes, %d on the wire, %d bytes' % (
+        VERSION, info['solutions'], info['deals'], info['wire'], info['bytes']))
 
 
 if __name__ == '__main__':
