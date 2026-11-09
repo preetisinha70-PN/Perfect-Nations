@@ -1,11 +1,13 @@
 (function () {
-  /* Blueprint v10.0: the page follows its Nation Steward and the State of Nations.
-     - On load it reads data/<nation>.json (raw.githubusercontent.com, then jsDelivr) for the hero, the
-       seven standards, the register, the record, the assets, the enterprises and the Newswire.
+  /* Blueprint v11.0: the page follows its Nation Steward and the State of Nations.
+     - On load it reads data/<nation>.json (raw.githubusercontent.com, then jsDelivr) for the nation line and
+       the figures at a glance, the seven stars, the register, the record, the assets, the enterprises and
+       the Newswire.
      - Near the Solutions it reads data/solutions-by-nation.json and data/state-of-nations.json for the
        Solution for this nation and every State of Nations Solution about it.
      - Every file is revalidated (cache:'no-cache'): an unchanged file costs a 304, not a download.
-     The page code stays wherever a file cannot be read. */
+     The page code stays wherever a file cannot be read. No composite score is computed: each of the seven
+     standards keeps its own figure and source, and the one furthest from reach is marked. */
   /*pn:cfg*/
   var root = document.getElementById(CFG.root);
   if (!root || root.getAttribute('data-live') === '1') return;
@@ -14,8 +16,10 @@
                'https://cdn.jsdelivr.net/gh/preetisinha70-PN/perfect-nations@main/'];
   var MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
   var ORDER = ['Food', 'Water', 'Shelter', 'Energy', 'Education', 'Health', 'Livelihoods'];
-  var MONEY = /^(?:[A-Z]{0,3}\$|\u20ac|\u00a3|\u20b9|\u20a6|~?\$|(?:USD|EUR|KSh|Sh|GHS|ZAR|FCFA|CFA|MAD|EGP|ETB|NGN|PKR|BDT|INR|IDR|PHP|VND|LKR|MXN|COP|JOD|FJD|UAH|BBD|BWP|AOA|MZN|TZS|UGX|RWF|ZMW|MWK|NAD|SZL|LSL|SOS|SSP|CDF|BIF|MGA|XAF|XOF|JMD|BRL|R)\s?\d)/;
+  var COLOURS = CFG.colours || [];
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   function q(s) { return root.querySelector(s); }
+  function qa(s) { return root.querySelectorAll(s); }
   function el(tag, cls, txt) { var e = document.createElement(tag); if (cls) e.className = cls; if (txt != null) e.textContent = txt; return e; }
   function T(v) { return typeof v === 'string' ? v : ''; }
   function okUrl(u) { return typeof u === 'string' && /^https:\/\/[^\s'"()<>\\]+$/.test(u); }
@@ -24,6 +28,8 @@
   function fmt(v) { return String(Math.round(v * 10) / 10); }
   function lab(n) { return n === 'Livelihoods' ? 'Livelihood' : n; }
   function pad(n) { return (n < 10 ? '0' : '') + n; }
+  function commas(n) { return String(n).replace(/\B(?=(\d{3})+(?!\d))/g, ','); }
+  function popFmt(n) { if (!(n > 0)) return ''; if (n < 1e6) return commas(Math.round(n)); if (n < 1e9) return (n / 1e6).toFixed(1) + 'm'; return (n / 1e9).toFixed(2) + 'bn'; }
   function longDate(iso) { var p = String(iso || '').split('-'); if (p.length !== 3) return ''; return (+p[2]) + ' ' + MONTHS[(+p[1]) - 1] + ' ' + p[0]; }
   function shortDate(iso) { var p = String(iso || '').split('-'); if (p.length !== 3) return ''; return (+p[2]) + ' ' + MONTHS[(+p[1]) - 1].slice(0, 3) + ' ' + p[0]; }
   function money(parent, v, m) { if (m) parent.appendChild(el('span', 'bpx-money', v)); else parent.appendChild(document.createTextNode(v)); }
@@ -35,16 +41,33 @@
         .then(done).catch(next);
     })();
   }
+  function near(target, fn, margin) {
+    if (!target) return;
+    if (!('IntersectionObserver' in window)) { fn(); return; }
+    var io = new IntersectionObserver(function (en) { if (en[0].isIntersecting) { io.disconnect(); fn(); } }, { rootMargin: margin || '0px' });
+    io.observe(target);
+  }
+
+  /* ---------- the sections rise as they arrive (always shown after a few seconds) ---------- */
+  (function reveal() {
+    var parts = qa('.bpx-do, .bpx-assets, .bpx-pc');
+    if (reduce || !('IntersectionObserver' in window)) { Array.prototype.forEach.call(parts, function (p) { p.classList.add('is-in'); }); return; }
+    Array.prototype.forEach.call(parts, function (p) {
+      p.classList.add('is-armed');
+      near(p, function () { p.classList.add('is-in'); }, '0px 0px -12% 0px');
+      setTimeout(function () { p.classList.add('is-in'); }, 9000);
+    });
+  })();
 
   /* ---------- interactions that also serve the page code ---------- */
   function wireRegister() {
     var list = q('#bp-irs'), more = q('#bp-showall');
     if (!list) return;
-    var buttons = root.querySelectorAll('.bpx-filters .bpx-fb');
+    var buttons = qa('.bpx-filters .bpx-fb');
     if (more) {
       var c = more.cloneNode(true); more.parentNode.replaceChild(c, more); more = c;
-      var nl = list.querySelectorAll('.bpx-ir').length;
-      more.hidden = nl <= 5; more.classList.toggle('is-phone', nl <= 8);
+      var nl = list.querySelectorAll('.bpx-ir[data-cat]').length;
+      more.hidden = nl <= 4; more.classList.toggle('is-phone', nl <= 6);
       more.addEventListener('click', function () { list.classList.add('is-all'); more.hidden = true; });
     }
     Array.prototype.forEach.call(buttons, function (btn) {
@@ -74,13 +97,11 @@
       else c.textContent = addr;
     });
   })();
-  function near(target, fn, margin) {
-    if (!target) return;
-    if (!('IntersectionObserver' in window)) { fn(); return; }
-    var io = new IntersectionObserver(function (en) { if (en[0].isIntersecting) { io.disconnect(); fn(); } }, { rootMargin: margin || '0px' });
-    io.observe(target);
-  }
-  near(q('.bw-wheel'), function () { var w = q('.bw-wheel'); if (w) w.classList.add('is-in'); }, '-10% 0px');
+  /* a link to the Sources opens them */
+  root.addEventListener('click', function (e) {
+    var a = e.target.closest ? e.target.closest('a[href="#bp-sources"]') : null, d = q('#bp-sources');
+    if (a && d) d.open = true;
+  });
   /* the handwriting of the Letter loads only when the Letter is near, so it never holds up the first screen */
   near(q('#bp-letter'), function () {
     if (document.querySelector('link[data-pn-caveat]')) return;
@@ -88,72 +109,99 @@
     l.href = 'https://fonts.googleapis.com/css2?family=Caveat:wght@600&display=swap'; document.head.appendChild(l);
   }, '600px 0px');
 
-  /* ---------- the seven standards ---------- */
-  function pt(r, a) { a = (a - 90) * Math.PI / 180; return (300 + r * Math.cos(a)).toFixed(1) + ' ' + (300 + r * Math.sin(a)).toFixed(1); }
-  function arc(ra, rb, a0, a1) { return 'M' + pt(rb, a0) + 'A' + rb + ' ' + rb + ' 0 0 1 ' + pt(rb, a1) + 'L' + pt(ra, a1) + 'A' + ra + ' ' + ra + ' 0 0 0 ' + pt(ra, a0) + 'Z'; }
+  /* ---------- the seven stars: a star opens its figure and source in the card beneath ---------- */
+  var sky = q('.bpx-stars'), stars = sky ? sky.querySelectorAll('.bpx-star') : [];
+  function starAt(pos) { for (var s = 0; s < stars.length; s++) if (+stars[s].getAttribute('data-pos') === pos) return stars[s]; return null; }
+  function pick(i) {
+    var li = q('.bpx-std li[data-i="' + i + '"]'), call = q('#bp-call');
+    if (!li || !call) return;
+    Array.prototype.forEach.call(stars, function (s) { var on = +s.getAttribute('data-i') === i; s.classList.toggle('is-on', on); s.setAttribute('aria-pressed', on ? 'true' : 'false'); });
+    call.style.setProperty('--c', li.getAttribute('data-c') || COLOURS[i] || '#8A5A12');
+    var v = q('#bp-call-v'), n = q('#bp-call-n'), f = q('#bp-call-f'), l = q('#bp-call-l'), a = q('#bp-call-s');
+    var b = li.querySelector('b'), sp = li.querySelector('span'), sm = li.querySelector('small'), src = li.querySelector('a');
+    if (v && b) v.textContent = b.textContent;
+    if (n && sp) n.textContent = sp.textContent;
+    if (f) f.hidden = !li.classList.contains('is-bind');
+    if (l) l.textContent = sm ? sm.textContent : '';
+    if (a) { if (src) { a.hidden = false; a.textContent = src.textContent; a.href = src.href; } else a.hidden = true; }
+    var t = call.querySelector('.bpx-call__t');
+    if (t && !reduce) { t.classList.remove('is-fade'); void t.offsetWidth; t.classList.add('is-fade'); }
+  }
+  Array.prototype.forEach.call(stars, function (s) {
+    var k = +s.getAttribute('data-i'), pos = +s.getAttribute('data-pos');
+    s.addEventListener('click', function () { pick(k); });
+    s.addEventListener('keydown', function (e) {
+      var to = null;
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); pick(k); return; }
+      if (e.key === 'ArrowRight' || e.key === 'ArrowDown') to = starAt((pos + 1) % 7);
+      if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') to = starAt((pos + 6) % 7);
+      if (to) { e.preventDefault(); pick(+to.getAttribute('data-i')); to.focus(); }
+    });
+  });
+  if (sky) near(sky, function () { sky.classList.add('is-in'); }, '-8% 0px');
+
   function standards(d) {
     if (!d.guarantees || d.guarantees.length !== 7) return;
     var g = {}, ok = true;
     d.guarantees.forEach(function (x) { if (!x || ORDER.indexOf(x.name) < 0 || !(x.value === null || num(x.value))) ok = false; else g[x.name] = x; });
     if (!ok || Object.keys(g).length !== 7) return;
     var scored = ORDER.filter(function (n) { return num(g[n].value); });
-    if (!scored.length) return;
-    var set = d.coverage && ORDER.indexOf(d.coverage.set_by) >= 0 ? d.coverage.set_by : (d.coverage && d.coverage.set_by === 'Livelihood' ? 'Livelihoods' : null);
-    var low = scored.reduce(function (a, b) { return g[b].value < g[a].value ? b : a; }, scored[0]);
-    var hasScore = d.coverage && num(d.coverage.score);
-    var bind = hasScore ? (set && num(g[set].value) && g[set].value === d.coverage.score ? set : low) : (set || low);
-    var score = hasScore ? d.coverage.score : null;
-    var segs = root.querySelectorAll('.bw-seg');
-    for (var s = 0; s < segs.length; s++) {
-      var seg = segs[s], k = +seg.getAttribute('data-i'), name = ORDER[k], v = g[name].value;
-      var a0 = k * 360 / 7 + 0.8, a1 = (k + 1) * 360 / 7 - 0.8;
-      var f = seg.querySelector('.bw-fill'); if (f) f.setAttribute('d', num(v) ? arc(148, 148 + 124 * v / 100, a0, a1) : '');
-      var vl = seg.querySelector('.bw-val'); if (vl) vl.textContent = num(v) ? fmt(v) : '\u2013';
-      seg.setAttribute('aria-label', lab(name) + (num(v) ? ', coverage ' + fmt(v) + ' of 100' : ', not scored'));
-      seg.classList.toggle('is-bind', name === bind);
-      var b = seg.querySelector('.bw-bind'); if (b) b.style.display = name === bind ? '' : 'none';
-    }
-    var c2 = q('.bw-c2'); if (c2) c2.textContent = score === null ? '' : fmt(score);
-    var c3 = q('.bw-c3'); if (c3) c3.textContent = score === null ? (CFG.unscored && CFG.unscored.center || 'NOT SCORED') : 'OF 100 \u00b7 SET BY ' + lab(bind).toUpperCase();
-    var h = q('#bp-pcx-h');
-    if (h) h.textContent = score === null ? (CFG.unscored && CFG.unscored.heading || h.textContent) : 'The ' + CFG.name + ' wheel: held at ' + fmt(score) + ' by ' + lab(bind).toLowerCase();
-    function row(k, v, t) { var r = q('.bpx-four li[data-k="' + k + '"]'); if (!r) return; if (v) r.querySelector('b').textContent = v; if (t) r.querySelector('span').textContent = t; }
-    var cv = d.coverage || {};
-    if (score !== null) row('cov', fmt(score), 'Out of 100, set by ' + lab(bind).toLowerCase() + ', the standard ' + CFG.name + ' provides least.');
-    if (cv.gap) row('gap', cv.gap, cv.gap_text || '');
-    if (cv.perfect_capita) row('pc', cv.perfect_capita, '');
-    if (cv.price) row('price', cv.price, '');
-    var def = q('#bw-def');
-    if (def && score !== null) {
-      var next = scored.filter(function (n) { return n !== bind; }).sort(function (a, b) { return g[a].value - g[b].value; }).slice(0, 2);
-      var tail = next.length === 2 ? ', with ' + lab(next[0]).toLowerCase() + ' at ' + fmt(g[next[0]].value) + ' and ' + lab(next[1]).toLowerCase() + ' at ' + fmt(g[next[1]].value) + ' next.' : '.';
-      def.textContent = 'The poverty line measures income. The Living Line measures a life: food, water, shelter, energy, education, health and livelihood. Perfect Capita is the yearly cost, per person, of lifting everyone above the Living Line in all seven basic living standards. Coverage scores each standard strictly out of 100, and a nation is held at its weakest: ' + CFG.name + ' at ' + fmt(score) + ', by ' + lab(bind).toLowerCase() + tail;
-    }
+    var set = d.coverage && d.coverage.set_by === 'Livelihood' ? 'Livelihoods' : (d.coverage && d.coverage.set_by);
+    var bind = ORDER.indexOf(set) >= 0 ? set : (scored.length ? scored.reduce(function (a, b) { return g[b].value < g[a].value ? b : a; }, scored[0]) : null);
+    function shown(x) { return T(x.display) || (num(x.value) ? fmt(x.value) : '\u2013'); }
+    Array.prototype.forEach.call(stars, function (s) {
+      var k = +s.getAttribute('data-i'), name = ORDER[k], x = g[name];
+      var vl = s.querySelector('.bpx-star__v'); if (vl) vl.textContent = shown(x).length <= 7 ? shown(x) : '\u2013';
+      s.setAttribute('aria-label', lab(name) + ': ' + shown(x) + (name === bind ? ', the standard furthest from reach' : ''));
+      s.classList.toggle('is-bind', name === bind);
+    });
     var ul = q('.bpx-std');
     if (ul) {
       ul.textContent = '';
-      ORDER.forEach(function (n) {
+      ORDER.forEach(function (n, k) {
         var x = g[n], item = el('li', n === bind ? 'is-bind' : '');
+        item.setAttribute('data-i', String(k)); item.setAttribute('data-c', COLOURS[k] || '');
         item.appendChild(el('span', '', lab(n)));
-        item.appendChild(el('b', '', x.display || (num(x.value) ? fmt(x.value) : '\u2013')));
-        if (x.note) item.appendChild(el('small', '', x.note));
-        if (okUrl(x.url)) item.appendChild(link(el('a', '', x.source || 'Source'), x.url));
+        item.appendChild(el('b', '', shown(x)));
+        if (T(x.note)) item.appendChild(el('small', '', x.note));
+        if (okUrl(x.url)) item.appendChild(link(el('a', '', T(x.source) || 'Source'), x.url));
         ul.appendChild(item);
       });
     }
+    var on = sky && sky.querySelector('.bpx-star.is-on');
+    pick(on ? +on.getAttribute('data-i') : ORDER.indexOf(bind));
+    var t3 = q('.bpx-t[href="#bp-pc"] .bpx-t__q');
+    if (t3 && bind) t3.textContent = 'Perfect Capita: seven basic standards of living for every citizen, star by star. ' + lab(bind) + ' is furthest from reach today.';
+    return bind;
   }
 
-  /* ---------- the hero, the register, the record, the assets, the enterprises ---------- */
+  /* ---------- the nation line, the figures at a glance and the price ---------- */
+  function glance(d, bind) {
+    var h = d.hero || {}, cv = d.coverage || {};
+    var nl = q('.bpx-hero__nation'); if (nl && T(h.lead)) nl.textContent = h.lead;
+    var pop = +d.population;
+    var pc = q('.bpx-stats [data-k="pop"] b'); if (pc && pop > 0) pc.textContent = popFmt(pop);
+    var gp = q('.bpx-stats [data-k="gap"]');
+    if (gp && T(cv.gap)) {
+      gp.querySelector('b').textContent = cv.gap;
+      var t = T(cv.gap_text).trim(); t = t.indexOf(':') >= 0 ? t.split(':')[0] : t.split(/\.\s/)[0]; t = t.replace(/\.$/, '');
+      if (/^Of /.test(t) && /(%|in \d+)$/.test(cv.gap)) t = 'of ' + t.slice(3);
+      if (t) gp.querySelector('span').textContent = t;
+      var bi = gp.querySelector('em i'); if (bi && bind) bi.textContent = lab(bind);
+    }
+    var okPrice = /^\$[0-9][0-9.,]*(bn|m|B|M)?$/.test(T(cv.price)) && /^\$[0-9][0-9,]*$/.test(T(cv.perfect_capita));
+    if (okPrice) {
+      var pr = q('.bpx-stats [data-k="price"] b'); if (pr) pr.textContent = cv.price;
+      var s1 = q('.bpx-sum [data-k="pc"] b'), s2 = q('.bpx-sum [data-k="pop"] b'), s3 = q('.bpx-sum [data-k="price"] b');
+      if (s1) s1.textContent = cv.perfect_capita;
+      if (s2 && pop > 0) s2.textContent = commas(Math.round(pop));
+      if (s3) s3.textContent = cv.price;
+    }
+  }
+
+  /* ---------- the register, the record, the assets, the enterprises ---------- */
   var CAT = { govt: 'Government', humanitarian: 'Humanitarian', multi: 'Multilateral', regional: 'Regional', bilat: 'Bilateral', 'private': 'Private', impact: 'Impact' };
   var CATS = ['govt', 'humanitarian', 'multi', 'regional', 'bilat', 'private', 'impact'];
-  function hero(h) {
-    if (!h) return;
-    var ld = q('.bpx-hero .bpx-lead'); if (ld && T(h.lead)) ld.textContent = h.lead;
-    var ul = q('.bpx-stats'); if (!ul || !h.stats || !h.stats.length) return;
-    var items = h.stats.filter(function (x) { return x && T(x.value) && T(x.label); }); if (!items.length) return;
-    ul.textContent = '';
-    items.forEach(function (x) { var li = el('li'), b = el('b'); money(b, x.value, MONEY.test(x.value)); li.appendChild(b); li.appendChild(el('span', '', x.label)); ul.appendChild(li); });
-  }
   function record(list) {
     var ul = q('.bpx-recs'); if (!ul || !list || !list.length) return;
     var items = list.filter(function (x) { return x && T(x.value) && T(x.text) && okUrl(x.url); }); if (!items.length) return;
@@ -168,7 +216,7 @@
     lines.forEach(function (x, i) {
       var cat = x.cat.replace(/[^a-z]/g, ''), tone = T(x.tone).replace(/[^a-z]/g, '') || 'active';
       count[cat] = (count[cat] || 0) + 1;
-      var li = el('li', 'bpx-ir' + (i >= 8 ? ' bpx-ir--more' : '')); li.setAttribute('data-cat', cat);
+      var li = el('li', 'bpx-ir' + (i >= 6 ? ' bpx-ir--more' : '')); li.setAttribute('data-cat', cat);
       var det = el('details'), sm = el('summary'), tags = el('span', 'bpx-tags');
       tags.appendChild(el('span', 'bpx-cat', CAT[cat] || cat)); tags.appendChild(el('span', 'bpx-stat bpx-stat--' + tone, T(x.status) || 'Active')); sm.appendChild(tags);
       var n = el('span', 'bpx-ir__n', x.name); if (T(x.detail)) n.appendChild(el('small', '', x.detail)); sm.appendChild(n);
@@ -191,46 +239,49 @@
       });
     }
     wireRegister();
-    Array.prototype.forEach.call(root.querySelectorAll('.bpx-stats li'), function (li) {
-      var s = li.querySelector('span'), b = li.querySelector('b'); if (s && b && s.textContent === 'Instruments and investments on record') b.textContent = String(lines.length);
-    });
+    var rg = q('.bpx-stats [data-k="reg"] b'); if (rg) rg.textContent = String(lines.length);
     var rc = q('[data-bpx="count"]'); if (rc) rc.textContent = String(lines.length);
+    var t2 = q('.bpx-t[href="#bp-capital"] .bpx-t__q');
+    if (t2) {
+      var names = CATS.filter(function (k) { return count[k]; }).map(function (k) { return CAT[k].toLowerCase(); });
+      var from = names.length > 1 ? names.slice(0, -1).join(', ') + ' and ' + names[names.length - 1] : (names[0] || 'every');
+      t2.textContent = lines.length + ' instruments and investments on record, from ' + from + ' sources.';
+    }
   }
   function assets(list) {
     var ul = q('.bpx-acards'); if (!ul || !list || !list.length) return;
     var items = list.filter(function (x) { return x && T(x.name) && T(x.figure); }); if (!items.length) return;
-    ul.textContent = '';
+    ul.textContent = ''; ul.setAttribute('data-n', String(items.length));
     items.forEach(function (x, i) {
-      var li = el('li', 'bpx-acard'), plate = el('span', 'bpx-plate');
-      var t = (x.tint && x.tint.length === 2 && /^#[0-9a-fA-F]{6}$/.test(x.tint[0]) && /^#[0-9a-fA-F]{6}$/.test(x.tint[1])) ? x.tint : ['#3A5A40', '#1E2E22'];
-      plate.style.backgroundImage = 'linear-gradient(160deg,' + t[0] + ' 0%,' + t[1] + ' 100%)';
-      var imgs = (x.images || []).filter(okUrl);
-      if (imgs.length) {
-        var im = el('img'); im.alt = T(x.alt) || x.name; im.loading = 'lazy'; im.decoding = 'async'; im.width = 768; im.height = 560;
-        var k = 0; im.onerror = function () { im.removeAttribute('srcset'); k++; if (k < imgs.length) im.src = imgs[k]; else im.remove(); };
-        if (CFG.img && CFG.img[imgs[0]]) { im.srcset = CFG.img[imgs[0]]; im.sizes = CFG.sizes; }
-        im.src = imgs[0]; plate.appendChild(im);
-      }
-      plate.appendChild(el('span', 'bpx-plate__n', pad(i + 1))); li.appendChild(plate);
-      var b = el('div', 'bpx-acard__b'); b.appendChild(el('h3', '', x.name));
-      var fig = el('span', 'bpx-acard__fig'); money(fig, x.figure, x.money); if (T(x.label)) fig.appendChild(el('small', '', x.label)); b.appendChild(fig);
-      if (T(x.text)) b.appendChild(el('p', '', x.text));
-      li.appendChild(b); ul.appendChild(li);
+      var li = el('li', 'bpx-acard'); li.style.setProperty('--i', String(i));
+      var n = el('span', 'bpx-acard__n', pad(i + 1)); n.setAttribute('aria-hidden', 'true'); li.appendChild(n);
+      var fig = el('p', 'bpx-acard__fig'), b = el('b', '', x.figure); fig.appendChild(b);
+      if (T(x.label)) fig.appendChild(el('span', '', x.label)); li.appendChild(fig);
+      li.appendChild(el('h3', '', x.name));
+      if (T(x.text)) li.appendChild(el('p', '', x.text));
+      ul.appendChild(li);
     });
+    var t1 = q('.bpx-t[href="#bp-assets"] .bpx-t__q');
+    if (t1 && items.length > 1) {
+      var words = ['no', 'one', 'two', 'three', 'four', 'five', 'six', 'seven'];
+      var nm = items.map(function (x) { return x.name; });
+      t1.textContent = nm.slice(0, -1).join(', ') + ' and ' + nm[nm.length - 1] + ': ' + (words[nm.length] || nm.length) + ' sovereign assets, valued.';
+    }
   }
   function enterprises(list) {
     var ul = q('.bpx-ents'); if (!ul || !list || !list.length) return;
     var items = list.filter(function (x) { return x && T(x.name) && (okUrl(x.url) || /^mailto:[^\s'"<>]+$/.test(x.url || '')); }); if (!items.length) return;
     ul.textContent = '';
     items.forEach(function (x) {
-      var li = el('li'); li.appendChild(el('span', 'bpx-ent__s', T(x.standard))); li.appendChild(el('h3', '', x.name));
+      var li = el('li'); li.appendChild(el('span', 'bpx-ent__s', T(x.standard))); li.appendChild(el('h4', '', x.name));
       if (T(x.text)) li.appendChild(el('p', '', x.text));
       li.appendChild(link(el('a', '', T(x.source) || 'Source'), x.url)); ul.appendChild(li);
     });
   }
   function head(id, s) { var h = q('#' + id); if (h && T(s)) h.textContent = s; }
 
-  /* ---------- the Newswire ---------- */
+  /* ---------- the Newswire: five lines (four on phones), then All news ---------- */
+  var SHOW = 5;
   function wireLi(w) {
     if (!w || !w.title || !okUrl(w.url)) return null;
     var li = el('li'), tm = el('time', '', w.label || shortDate(w.date) || w.date); tm.setAttribute('datetime', w.date || ''); li.appendChild(tm);
@@ -242,33 +293,38 @@
     var wire = q('#bp-newswire .bpx-wire');
     if (wire && d.newswire && d.newswire.length) {
       wire.textContent = '';
-      d.newswire.slice(0, 8).forEach(function (w) { var li = wireLi(w); if (li) wire.appendChild(li); });
-      if (d.newswire.length >= 8) allNews(wire, d.newswire);
+      d.newswire.slice(0, SHOW).forEach(function (w) { var li = wireLi(w); if (li) wire.appendChild(li); });
+      if (!wire.children.length) { var none = el('li', 'bpx-wire__none'); none.appendChild(el('b', '', 'The first sourced news for ' + CFG.name + ' is in review.')); wire.appendChild(none); }
+      allNews(wire, d.newswire);
     }
     var sd = q('.bpx-stew time'); if (sd && d.updated) { var L = longDate(d.updated); if (L) { sd.setAttribute('datetime', d.updated); sd.textContent = 'Last updated ' + L; } }
   }
   function allNews(wire, shown) {
-    var btn = q('#bp-newswire .bpx-allnews'); if (!btn) return;
+    var btn = q('#bp-newswire .bpx-allnews'), nw = q('#bp-newswire'); if (!btn || !nw) return;
+    nw.classList.add('is-js');
     var seen = {}, extra = [], done = false;
     function add(w) { if (w && w.title && okUrl(w.url) && !seen[w.url]) { seen[w.url] = 1; extra.push(w); } }
-    shown.slice(0, 8).forEach(function (w) { if (w && w.url) seen[w.url] = 1; });
-    shown.slice(8).forEach(add);
+    shown.slice(0, SHOW).forEach(function (w) { if (w && w.url) seen[w.url] = 1; });
+    shown.slice(SHOW).forEach(add);
     function show() {
       if (done) return; done = true;
       var more = el('ul', 'bpx-wire'); more.id = 'bp-wire-more'; more.hidden = true;
       extra.forEach(function (w) { var li = wireLi(w); if (li) more.appendChild(li); });
-      if (!more.children.length) return;
-      wire.parentNode.insertBefore(more, btn);
+      /* phones show four lines; the button opens the rest, and on laptops the lines beyond five */
+      if (!more.children.length && wire.children.length <= 4) return;
+      if (more.children.length) wire.parentNode.insertBefore(more, btn); else btn.classList.add('is-phone');
       var label = 'All news (' + (wire.children.length + more.children.length) + ')';
-      btn.textContent = label; btn.setAttribute('aria-controls', 'bp-wire-more'); btn.setAttribute('aria-expanded', 'false'); btn.hidden = false;
-      btn.addEventListener('click', function () { var open = more.hidden; more.hidden = !open; btn.setAttribute('aria-expanded', open ? 'true' : 'false'); btn.textContent = open ? 'Show fewer' : label; });
+      btn.textContent = label; btn.setAttribute('aria-expanded', 'false'); btn.hidden = false;
+      if (more.children.length) btn.setAttribute('aria-controls', 'bp-wire-more');
+      btn.addEventListener('click', function () { var open = !nw.classList.contains('is-open'); nw.classList.toggle('is-open', open); more.hidden = !open; btn.setAttribute('aria-expanded', open ? 'true' : 'false'); btn.textContent = open ? 'Show fewer' : label; });
     }
+    if (shown.length < 8) { show(); return; }
     get('archive/newswire/' + CFG.slug + '.json', function (list) { if (list && typeof list.length === 'number') for (var k = 0; k < list.length; k++) add(list[k]); show(); }, show);
   }
 
   /* ---------- Solutions (from State of Nations) ---------- */
   var nationFile = null, solDone = false;
-  function solCard(x, sigName, sigRole, n) {
+  function solCard(x, sigName, sigRole) {
     var li = el('li', 'bpx-sol');
     var k = el('p', 'bpx-sol__k'); k.appendChild(el('b', '', 'Solution No. ' + pad(x.no || 0)));
     var tm = el('time', '', x.label || shortDate(x.date) || ''); tm.setAttribute('datetime', x.date || ''); k.appendChild(tm); li.appendChild(k);
@@ -355,8 +411,9 @@
   function apply(d) {
     if (!d || d.nation !== CFG.name) return;
     nationFile = d;
-    try { hero(d.hero); } catch (e) {}
-    try { standards(d); } catch (e) {}
+    var bind = null;
+    try { bind = standards(d); } catch (e) {}
+    try { glance(d, bind); } catch (e) {}
     var c = d.capital, a = d.assets, e2 = d.enterprises;
     if (c) { head('bp-cap-h', c.heading); try { record(c.record); } catch (e) {} try { register(c.register); } catch (e) {} }
     if (a) { head('bp-assets-h', a.heading); try { assets(a.items); } catch (e) {} }
