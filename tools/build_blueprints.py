@@ -40,7 +40,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 PAGES = ROOT / 'pages'
 DATA = ROOT / 'data'
-VERSION = '6.0'
+VERSION = '6.1'
 
 ORDER = [
     'nations-menu.html',      # the moving list of 195 nations (also on the homepage)
@@ -441,6 +441,8 @@ Built by tools/build_blueprints.py from the parts named below; edit a part, run 
 pull request. Kept by the Blueprints Steward.
 Open blueprints at this build: %d of %d. New blueprints need no new build: the page reads
 pages/manifest.json and data/blueprints.json on every visit.
+v6.1 (8 Nov 2026): FfD before SI (the Steward-General, 8 Nov 2026). The lead names innovative financing for
+development (FfD) first and super intelligence (SI) second.
 =========================================================================== -->
 <div id="pn-blueprints" hidden></div>
 ''' % (VERSION, today, n_live, len(nat))

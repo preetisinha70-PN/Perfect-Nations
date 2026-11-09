@@ -1,16 +1,27 @@
 <!-- ===========================================================================
-PERFECT NATIONS - HOMEPAGE - SECTION 03 - 01 COUNT: SOVEREIGN ASSETS - v6.0 - 2026-11-08
+PERFECT NATIONS - HOMEPAGE - SECTION 03 - 01 ASSETS: SOVEREIGN ASSETS, THE GOLD - v8.0 - 2026-11-08
+v8.0: the Steward-General's decisions of 8 Nov 2026 (evening): the steps are Assets, Capital, Solutions,
+so this is step 01, Assets; and no images for the assets (the only images on Perfect Nations are the
+nation portraits). The five cards are typographic: number, gold figure, name, one line; People carries a
+bar filled to 64 per cent. "Counts" becomes "values".
 Part of the one-file homepage (pages/home.html, built by tools/build_home.py). Root id pn-assets.
-v6.0: the Steward-General's choices of 8 Nov 2026 (homepage v8.1): Sovereign Assets returns, simpler.
-  - Step 01 of How it works (Count): the gold mark 01 leads back to the map (#pn-steps).
-  - Headline: "Every nation is richer than its balance sheet." One short lead, one button.
-  - The five world assets as one calm grid (no slider, no dots, no flags): the Congo Basin large on
-    the left, four beside it; each card a photograph, its name, one line and where it is.
-  - Images: the 768 px and 300 px copies the Media Library already holds (was the 2,560 px full
-    uploads, about 0.5 MB each), chosen by the browser for the screen; full colour, no veil.
-Laptops: the large card on the left, four in two rows of two. Phones: the large card across the full
-width, then two columns of two; nothing scrolls sideways.
-v5.2 (6 Nov 2026): the slide rail of five assets, move 01 of the five moves.
+v7.0: the Steward-General's request of 8 Nov 2026: "make the top 5 assets more like what are generally
+the most valuable assets of a nation". The five famous places become the five greatest asset classes,
+in the World Bank's own wealth accounts, each with one sourced figure in gold:
+  01 People: 64% of the wealth of nations, 2018 (human capital; CWON 2021, press release 27 Oct 2021)
+  02 Infrastructure: a quarter of global wealth, 2014 (produced capital; CWON 2018, press release 31 Jan 2018,
+     "produced capital accounts for a quarter of wealth")
+  03 Land, farms and forests: 23% of the wealth of low-income nations, 2018 (renewable natural capital;
+     CWON 2021 press release)
+  04 Minerals and energy: people are only 34% of the wealth of nations heavily dependent on fossil fuels
+     (CWON 2021 press release)
+  05 Ocean and coast: mangroves' value for coastal flood protection, over US$547 billion in 2018
+     (CWON 2021 press release)
+  Lead: US$1,152 trillion, the wealth of 146 nations in 2018 (CWON 2021, chapter 3, main messages).
+(v7.0, the same day, was step 02 Count, after a Govern step that was then dropped.)
+Laptops: People large on the left, four beside it. Phones: People across the full width, then two by two.
+v6.0 (8 Nov 2026): five world assets (the Congo Basin, Mosi-oa-Tunya, the Okavango, the Namib, the
+Great Migration) as one calm grid.
 =========================================================================== -->
 <style>
 #pn-assets{
@@ -138,61 +149,107 @@ v5.2 (6 Nov 2026): the slide rail of five assets, move 01 of the five moves.
 @media (prefers-reduced-motion:reduce){
   #pn-assets *{ transition:none !important; animation:none !important; }
 }
+/* v7.0: the figure on each card, and the sources */
+#pn-assets .pna-fig{ margin:0 0 4px; display:flex; align-items:baseline; flex-wrap:wrap; gap:2px 8px; }
+#pn-assets .pna-fig b{ font-family:var(--hd); font-weight:600; font-size:clamp(1.6rem,2.2vw,2.1rem); line-height:1; letter-spacing:-.02em; color:var(--g); }
+#pn-assets .pna-c:first-child .pna-fig b{ font-size:clamp(2.6rem,4.4vw,4rem); }
+#pn-assets .pna-fig span{ font-family:var(--hd); font-size:.7rem; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--td); }
+#pn-assets .pna-srcs{ margin:12px 0 0; font-size:.78rem; line-height:1.45; color:var(--td); }
+#pn-assets .pna-srcs a{ color:var(--tm) !important; text-decoration:none !important; border-bottom:1px solid var(--hair); }
+#pn-assets .pna-srcs a:hover{ color:var(--g) !important; border-color:var(--g); }
+#pn-assets .pna-srcs a:focus-visible{ outline:2px solid var(--gs); outline-offset:2px; }
+@media (max-width:760px){
+  #pn-assets .pna-fig b{ font-size:1.4rem; }
+  #pn-assets .pna-c:first-child .pna-fig b{ font-size:2.6rem; }
+  #pn-assets .pna-fig span{ font-size:.56rem; letter-spacing:.1em; }
+  #pn-assets .pna-srcs{ font-size:.7rem; }
+}
+/* v8.0: no images. The five assets are typographic cards: number, figure, name, line */
+#pn-assets .pna-c{
+  background:
+    radial-gradient(120% 80% at 100% 0%, rgba(227,194,88,.10) 0%, rgba(227,194,88,0) 60%),
+    linear-gradient(165deg,rgba(18,88,106,.55) 0%,var(--er3) 70%);
+  border-color:rgba(227,194,88,.22);
+}
+#pn-assets .pna-c::before{ content:""; position:absolute; left:0; right:0; top:0; height:2px; background:linear-gradient(90deg,var(--g),rgba(227,194,88,0) 80%); }
+#pn-assets .pna-b{ position:relative; display:flex; flex-direction:column; flex:1 1 auto; padding:16px 18px 18px; }
+#pn-assets .pna-c:first-child .pna-b{ justify-content:flex-end; padding:22px 26px 26px; }
+#pn-assets .pna-n{ position:static; align-self:flex-start; margin:0 0 auto; }
+#pn-assets .pna-fig{ margin-top:22px; }
+#pn-assets .pna-c:first-child .pna-fig b{ font-size:clamp(4.6rem,9vw,8.4rem); letter-spacing:-.04em; }
+#pn-assets .pna-bar{ display:block; height:8px; margin:12px 0 2px; border-radius:99px; background:rgba(245,241,232,.12); overflow:hidden; }
+#pn-assets .pna-bar i{ display:block; height:100%; border-radius:99px; background:linear-gradient(90deg,#D4AF37,#FBE391); }
+@media (prefers-reduced-motion:no-preference){
+  #pn-assets.is-armed .pna-bar i{ transform:scaleX(0); transform-origin:left center; }
+  #pn-assets.is-in .pna-bar i{ transform:none; transition:transform 1.6s cubic-bezier(.22,1,.36,1) .5s; }
+}
+@media (max-width:899px){
+  #pn-assets .pna-c:first-child .pna-fig b{ font-size:clamp(3.6rem,16vw,5rem); }
+}
+@media (max-width:760px){
+  #pn-assets .pna-b{ padding:11px 12px 13px; }
+  #pn-assets .pna-c:first-child .pna-b{ padding:14px 16px 16px; }
+  #pn-assets .pna-fig{ margin-top:12px; }
+  #pn-assets .pna-c:first-child .pna-fig b{ font-size:3.6rem; }
+  #pn-assets .pna-n{ height:22px; min-width:26px; font-size:.62rem; }
+}
 </style>
 
 <section id="pn-assets" aria-labelledby="pna-h">
   <div class="pna-in">
     <div class="pna-head">
       <div>
-        <p class="pna-eb"><a class="pna-ch" href="#pn-steps" aria-label="Step 01 of 03, Count. Back to How it works">01</a><span><b>Count</b> &middot; Sovereign Assets</span></p>
+        <p class="pna-eb"><a class="pna-ch" href="#pn-steps" aria-label="Step 01 of 03, Assets. Back to How it works">01</a><span><b>Assets</b> &middot; The gold &middot; Sovereign Assets</span></p>
         <h2 class="pna-h2" id="pna-h">Every nation is richer than its balance sheet.</h2>
       </div>
-      <p class="pna-lead">Water, land, coast, forest, sun, minerals and people: wealth no national account records. <b>Super intelligence</b> counts it, nation by nation.</p>
+      <p class="pna-lead">The World Bank valued the wealth of 146 nations at <b>US$1,152 trillion</b> in 2018, and people alone are 64% of it. Perfect Nations values the five greatest assets of each nation, so that what it owns can finance what its people need.</p>
     </div>
 
     <ul class="pna-grid">
-      <li class="pna-c" style="--i:0;--tint:linear-gradient(160deg,#2E6E3A,#0B3D2A)">
-        <span class="pna-ph"><img src="https://perfectnations.org/wp-content/uploads/2026/09/perfectnations_Aerial_view_of_the_Congo_River_Basin_at_dawn-768x430.png" srcset="https://perfectnations.org/wp-content/uploads/2026/09/perfectnations_Aerial_view_of_the_Congo_River_Basin_at_dawn-768x430.png 768w, https://perfectnations.org/wp-content/uploads/2026/09/perfectnations_Aerial_view_of_the_Congo_River_Basin_at_dawn-1024x574.png 1024w" sizes="(min-width:900px) 46vw, 100vw" alt="A winding river through dense green forest in the Congo Basin" width="768" height="430" loading="lazy" decoding="async" onerror="this.remove()"><span class="pna-n" aria-hidden="true">01</span></span>
+      <li class="pna-c" style="--i:0">
         <div class="pna-b">
-          <h3 class="pna-h3">The Congo Basin</h3>
-          <p class="pna-p">The second-largest rainforest on Earth, almost absent from national accounts.</p>
-          <span class="pna-w">Republic of the Congo and five neighbours</span>
+          <span class="pna-n" aria-hidden="true">01</span>
+          <p class="pna-fig"><b>64%</b> <span>of the wealth of nations, 2018</span></p>
+          <h3 class="pna-h3">People</h3>
+          <span class="pna-bar" role="img" aria-label="People: 64 per cent of the wealth of nations"><i style="width:64%"></i></span>
+          <p class="pna-p">Human capital, the lifetime earnings of a nation&rsquo;s people: the largest asset in every income group.</p>
         </div>
       </li>
-      <li class="pna-c" style="--i:1;--tint:linear-gradient(160deg,#3A7C8A,#0E3B4A)">
-        <span class="pna-ph"><img src="https://perfectnations.org/wp-content/uploads/2026/09/perfectnations_Aerial_view_of_Mosi-oa-Tunya_at_sunrise-768x430.png" srcset="https://perfectnations.org/wp-content/uploads/2026/09/perfectnations_Aerial_view_of_Mosi-oa-Tunya_at_sunrise-300x168.png 300w, https://perfectnations.org/wp-content/uploads/2026/09/perfectnations_Aerial_view_of_Mosi-oa-Tunya_at_sunrise-768x430.png 768w" sizes="(min-width:900px) 26vw, 46vw" alt="Mosi-oa-Tunya, the Victoria Falls, with a rainbow" width="768" height="430" loading="lazy" decoding="async" onerror="this.remove()"><span class="pna-n" aria-hidden="true">02</span></span>
+      <li class="pna-c" style="--i:1">
         <div class="pna-b">
-          <h3 class="pna-h3">Mosi-oa-Tunya</h3>
-          <p class="pna-p">The largest sheet of falling water on Earth.</p>
-          <span class="pna-w">Zambia and Zimbabwe</span>
+          <span class="pna-n" aria-hidden="true">02</span>
+          <p class="pna-fig"><b>1 in 4</b> <span>dollars of the world&rsquo;s wealth, 2014</span></p>
+          <h3 class="pna-h3">Infrastructure</h3>
+          <p class="pna-p">Roads, rail, ports, power and buildings: produced capital.</p>
         </div>
       </li>
-      <li class="pna-c" style="--i:2;--tint:linear-gradient(160deg,#4E8A5A,#173F2A)">
-        <span class="pna-ph"><img src="https://perfectnations.org/wp-content/uploads/2026/09/perfectnations_Low_aerial_view_of_the_Okavango_Delta-768x430.png" srcset="https://perfectnations.org/wp-content/uploads/2026/09/perfectnations_Low_aerial_view_of_the_Okavango_Delta-300x168.png 300w, https://perfectnations.org/wp-content/uploads/2026/09/perfectnations_Low_aerial_view_of_the_Okavango_Delta-768x430.png 768w" sizes="(min-width:900px) 26vw, 46vw" alt="The channels of the Okavango Delta from the air" width="768" height="430" loading="lazy" decoding="async" onerror="this.remove()"><span class="pna-n" aria-hidden="true">03</span></span>
+      <li class="pna-c" style="--i:2">
         <div class="pna-b">
-          <h3 class="pna-h3">The Okavango Delta</h3>
-          <p class="pna-p">A river that ends in the desert, not the sea.</p>
-          <span class="pna-w">Botswana</span>
+          <span class="pna-n" aria-hidden="true">03</span>
+          <p class="pna-fig"><b>23%</b> <span>of the wealth of low-income nations, 2018</span></p>
+          <h3 class="pna-h3">Land, farms and forests</h3>
+          <p class="pna-p">Farmland, pasture, forests and fisheries: renewable natural capital.</p>
         </div>
       </li>
-      <li class="pna-c" style="--i:3;--tint:linear-gradient(160deg,#C9783A,#5A2A12)">
-        <span class="pna-ph"><img src="https://perfectnations.org/wp-content/uploads/2026/09/perfectnations_Aerial_view_of_the_Namib_desert_at_dawn-768x430.png" srcset="https://perfectnations.org/wp-content/uploads/2026/09/perfectnations_Aerial_view_of_the_Namib_desert_at_dawn-300x168.png 300w, https://perfectnations.org/wp-content/uploads/2026/09/perfectnations_Aerial_view_of_the_Namib_desert_at_dawn-768x430.png 768w" sizes="(min-width:900px) 26vw, 46vw" alt="Orange dunes of the Namib Desert at dawn" width="768" height="430" loading="lazy" decoding="async" onerror="this.remove()"><span class="pna-n" aria-hidden="true">04</span></span>
+      <li class="pna-c" style="--i:3">
         <div class="pna-b">
-          <h3 class="pna-h3">The Namib and the Sperrgebiet</h3>
-          <p class="pna-p">Some of the best sun and wind on Earth.</p>
-          <span class="pna-w">Namibia</span>
+          <span class="pna-n" aria-hidden="true">04</span>
+          <p class="pna-fig"><b>34%</b> <span>people&rsquo;s share of the wealth of fossil-fuel nations</span></p>
+          <h3 class="pna-h3">Minerals and energy</h3>
+          <p class="pna-p">Oil, gas, coal and metals: wealth below ground, to be turned into people.</p>
         </div>
       </li>
-      <li class="pna-c" style="--i:4;--tint:linear-gradient(160deg,#B8863A,#4A3012)">
-        <span class="pna-ph"><img src="https://perfectnations.org/wp-content/uploads/2026/09/perfectnations_Aerial_view_of_the_great_migration_at_dusk-768x430.png" srcset="https://perfectnations.org/wp-content/uploads/2026/09/perfectnations_Aerial_view_of_the_great_migration_at_dusk-300x168.png 300w, https://perfectnations.org/wp-content/uploads/2026/09/perfectnations_Aerial_view_of_the_great_migration_at_dusk-768x430.png 768w" sizes="(min-width:900px) 26vw, 46vw" alt="Zebras on the plains of the Great Migration at dusk" width="768" height="430" loading="lazy" decoding="async" onerror="this.remove()"><span class="pna-n" aria-hidden="true">05</span></span>
+      <li class="pna-c" style="--i:4">
         <div class="pna-b">
-          <h3 class="pna-h3">The Great Migration</h3>
-          <p class="pna-p">Close to two million animals a year.</p>
-          <span class="pna-w">Tanzania and Kenya</span>
+          <span class="pna-n" aria-hidden="true">05</span>
+          <p class="pna-fig"><b>$547bn</b> <span>the value of mangroves as flood defence, 2018</span></p>
+          <h3 class="pna-h3">Ocean and coast</h3>
+          <p class="pna-p">Fisheries, reefs and mangroves: the blue wealth of a nation.</p>
         </div>
       </li>
     </ul>
 
+    <p class="pna-srcs">Sources: World Bank, <a href="https://www.worldbank.org/en/news/press-release/2021/10/27/global-wealth-has-grown-but-at-the-expense-of-future-prosperity-world-bank" target="_blank" rel="noopener noreferrer">The Changing Wealth of Nations 2021</a> (2018 data) and <a href="https://www.worldbank.org/en/news/press-release/2018/01/30/world-bank-report-finds-rise-in-global-wealth-but-inequality-persists" target="_blank" rel="noopener noreferrer">2018</a> (2014 data).</p>
     <p class="pna-foot"><a class="pna-btn" href="https://perfectnations.org/sovereign-assets/">The Sovereign Assets ledger</a></p>
   </div>
 </section>

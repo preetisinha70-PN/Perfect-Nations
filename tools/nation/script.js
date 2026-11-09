@@ -276,7 +276,7 @@
     h.appendChild(link(el('a', '', x.title), href)); li.appendChild(h);
     if (T(x.challenge) && T(x.ffd) && T(x.si)) {
       var how = el('ul', 'bpx-sol__how');
-      [['01', 'The challenge', x.challenge], ['02', 'How FFD solves it', x.ffd], ['03', 'How SI solves it', x.si]].forEach(function (r) {
+      [['01', 'The challenge', x.challenge], ['02', 'How FfD solves it', x.ffd], ['03', 'How SI solves it', x.si]].forEach(function (r) {
         var it = el('li'); it.appendChild(el('b', '', r[0])); it.appendChild(el('strong', '', r[1])); it.appendChild(el('span', '', r[2])); how.appendChild(it);
       });
       li.appendChild(how);
@@ -302,7 +302,7 @@
     var w = T(play.name) + ': ' + play.ffd, wa = null;
     if (me.at_work && T(me.at_work.name) && okUrl(me.at_work.url)) { w += ' At work in ' + CFG.name + ': ' + me.at_work.name + (me.at_work.amount ? ', ' + me.at_work.amount : '') + '.'; wa = link(el('a', '', 'Source'), me.at_work.url); }
     else if (play.proof && okUrl(play.proof.url)) { w += ' Proved in ' + play.proof.where + ', ' + play.proof.year + ': ' + play.proof.figure + ' ' + play.proof.label + '.'; wa = link(el('a', '', play.proof.source || 'Source'), play.proof.url); }
-    rowx('02', 'How FFD solves it', w, wa);
+    rowx('02', 'How FfD solves it', w, wa);
     rowx('03', 'How SI solves it', play.si, null);
     li.appendChild(how);
     var foot = el('div', 'bpx-sol__foot'), sig = el('span', 'bpx-sig', 'Co-design it in');
