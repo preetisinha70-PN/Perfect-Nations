@@ -1,5 +1,5 @@
 <!-- ===========================================================================
-PERFECT NATIONS - HOMEPAGE - THE WHOLE PAGE IN ONE FILE - v11.8 - 2026-11-10
+PERFECT NATIONS - HOMEPAGE - THE WHOLE PAGE IN ONE FILE - v11.9 - 2026-11-10
 Paste this file ONCE into ONE Elementor Custom HTML widget on the homepage (page 13465), in a Full
 Width container with padding 0, and delete every other widget on the page. From then on the Perfect
 Nations Live Pages plugin serves pages/home.html from GitHub in place of the paste (root id pn-home,
@@ -3042,6 +3042,155 @@ earlier Section 01 the button still scrolls up to the planet.
   if (document.readyState === 'complete') { later(); } else { window.addEventListener('load', later); }
 })();
 </script>
+<!-- ======== part: pages/home-governance.html ======== -->
+<!-- ===========================================================================
+PERFECT NATIONS - HOMEPAGE - GOVERNANCE FIRST AND THE PERFECT NATIONS CUP - v1.0 - 2026-11-10
+v1.0 (homepage v11.9; the Steward-General, 10 Nov 2026: "bring governance back as a statement, given how
+important good governance is, even before finance and super intelligence ... the cup would actually be awarded
+to the financial instruments which are led by good governance and the use of super intelligence to track the
+impact on the beneficiaries. Very slim section on the home page").
+One slim band, light (paper), directly under the Capital Wire and before Imagine a Perfect Nation:
+  left:  Governance first. The order of the work: 01 Good governance, 02 innovative financing for development,
+         03 super intelligence. One sourced figure: the IMF estimate of the yearly cost of bribery.
+  right: the cup of the logo, on an Earthrise panel: The Perfect Nations Cup, awarded only to financing
+         instruments that pass two tests (led by good governance; impact tracked to every beneficiary by
+         super intelligence).
+Source of the figure: IMF Staff Discussion Note SDN/16/05, "Corruption: Costs and Mitigating Strategies",
+May 2016: "the annual cost of bribery alone is estimated at about $1.5 to $2 trillion (roughly 2 percent of
+global GDP)". https://www.imf.org/external/pubs/ft/sdn/2016/sdn1605.pdf (accessed 10 Nov 2026).
+The cup is drawn from the logo kit (pages/home-logo-kit.html: #pnk-cl clipped by #pnk-cc), in one gold.
+Part of the one-file homepage (pages/home.html, built by tools/build_home.py). Root id pn-governance.
+=========================================================================== -->
+<style>
+#pn-governance{
+  --er:#0B3D45; --er2:#0F4C5C; --er3:#082A30;
+  --ink:#34464A; --mut:#5C696C; --hair:rgba(16,38,43,.13); --tc:#8A3A22;
+  --iv:#F5F1E8; --ivm:rgba(245,241,232,.84); --ivd:rgba(245,241,232,.62);
+  --g:#E3C258; --gd:#8C6A12;
+  --hd:var(--pn-font-heading,"Barlow Condensed","Arial Narrow",Arial,sans-serif);
+  --bd:var(--pn-font-body,"Barlow Semi Condensed",Arial,sans-serif);
+  position:relative; isolation:isolate;
+  width:100vw; margin-left:calc(50% - 50vw);
+  overflow-x:hidden; overflow-x:clip;
+  padding:clamp(24px,3.6vh,40px) 0;
+  box-sizing:border-box; color:var(--ink); font-family:var(--bd); line-height:1.45;
+  scroll-margin-top:var(--pn-head-off,72px);
+  background:linear-gradient(180deg,#FBF8F1 0%,#F6EFE0 100%);
+}
+#pn-governance *,#pn-governance *::before,#pn-governance *::after{ box-sizing:border-box; }
+.elementor-widget-html:has(#pn-governance),
+.elementor-widget:has(#pn-governance),
+.e-con-inner:has(#pn-governance),
+.e-con:has(#pn-governance){
+  padding-top:0 !important; padding-bottom:0 !important;
+  --widgets-spacing:0px !important; row-gap:0 !important;
+}
+#pn-governance h2,#pn-governance p,#pn-governance li{ text-shadow:none !important; }
+#pn-governance .pngv-in{
+  width:100%; max-width:1480px; margin:0 auto; padding:0 clamp(18px,5vw,72px);
+  display:grid; grid-template-columns:minmax(0,1.15fr) minmax(0,1fr); gap:18px clamp(24px,4vw,64px); align-items:center;
+}
+
+/* the statement */
+#pn-governance .pngv-eb{
+  display:flex; align-items:center; gap:12px; margin:0;
+  font-family:var(--hd); font-size:.72rem; font-weight:700; letter-spacing:.3em; text-transform:uppercase; color:var(--tc);
+}
+#pn-governance .pngv-eb::before{ content:""; width:26px; height:1px; background:rgba(138,58,34,.6); }
+#pn-governance h2.pngv-h2{
+  margin:8px 0 0; font-family:var(--hd); font-weight:600; text-transform:none;
+  font-size:clamp(2rem,3.6vw,3.3rem); line-height:.95; letter-spacing:-.025em; color:var(--er) !important;
+}
+#pn-governance .pngv-lead{ margin:10px 0 0; max-width:54ch; font-size:clamp(.98rem,1.15vw,1.08rem); line-height:1.5; color:var(--ink); text-wrap:pretty; }
+
+/* the order of the work */
+#pn-governance .pngv-seq{ display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:14px 0 0; padding:0; list-style:none; }
+#pn-governance .pngv-seq li{
+  display:inline-flex; align-items:center; gap:8px; margin:0; padding:7px 13px 6px; border-radius:999px;
+  border:1px solid rgba(11,61,69,.28); color:var(--er);
+  font-family:var(--hd); font-size:.8rem; font-weight:600; letter-spacing:.08em; text-transform:uppercase; line-height:1.1;
+}
+#pn-governance .pngv-seq li span{ font-size:.66rem; letter-spacing:.14em; color:var(--tc); }
+#pn-governance .pngv-seq li:first-child{ background:var(--er); border-color:var(--er); color:var(--iv); }
+#pn-governance .pngv-seq li:first-child span{ color:var(--ivd); }
+
+/* the figure */
+#pn-governance .pngv-fig{ margin:14px 0 0; padding-top:12px; border-top:1px solid var(--hair); font-size:.94rem; line-height:1.45; color:var(--ink); }
+#pn-governance .pngv-fig b{ font-family:var(--hd); font-weight:700; font-size:1.3rem; letter-spacing:-.01em; color:var(--gd); white-space:nowrap; }
+#pn-governance .pngv-src{ display:block; margin-top:3px; font-size:.74rem; color:var(--mut); }
+#pn-governance .pngv-src a{ color:var(--mut); text-decoration:underline; text-decoration-color:rgba(92,105,108,.45); text-underline-offset:2px; }
+#pn-governance .pngv-src a:hover{ color:var(--er); }
+
+/* the cup, on Earthrise */
+#pn-governance .pngv-cup{
+  display:grid; grid-template-columns:clamp(96px,9vw,132px) minmax(0,1fr); gap:clamp(16px,2vw,26px); align-items:center;
+  margin:0; padding:clamp(18px,2vw,26px); border-radius:18px; color:var(--iv);
+  background:
+    radial-gradient(60% 80% at 12% 20%, rgba(227,194,88,.16) 0%, rgba(227,194,88,0) 70%),
+    linear-gradient(160deg,var(--er2) 0%,var(--er) 52%,var(--er3) 100%);
+  box-shadow:0 18px 40px rgba(8,42,48,.18);
+}
+#pn-governance svg.pngv-art{ display:block; width:100%; height:auto; fill:var(--g); overflow:visible; }
+#pn-governance .pngv-k{ margin:0; font-family:var(--hd); font-size:.68rem; font-weight:700; letter-spacing:.26em; text-transform:uppercase; color:var(--ivd); }
+#pn-governance .pngv-t{ margin:4px 0 0; font-family:var(--hd); font-weight:600; font-size:clamp(1.4rem,2vw,1.9rem); line-height:1; letter-spacing:-.01em; color:var(--iv); }
+#pn-governance .pngv-d{ margin:8px 0 0; font-size:.95rem; line-height:1.45; color:var(--ivm); }
+#pn-governance .pngv-tests{ margin:10px 0 0; padding:0; list-style:none; display:grid; gap:7px; }
+#pn-governance .pngv-tests li{ display:grid; grid-template-columns:20px minmax(0,1fr); gap:10px; align-items:baseline; margin:0; font-size:.95rem; line-height:1.4; color:var(--ivm); }
+#pn-governance .pngv-tests li span{ font-family:var(--hd); font-size:.7rem; font-weight:700; letter-spacing:.14em; color:var(--ivd); }
+#pn-governance .pngv-tests p{ margin:0; }
+#pn-governance .pngv-tests b{ font-weight:600; color:var(--iv); }
+
+/* phones */
+@media (max-width:760px){
+  #pn-governance{ padding:20px 0 20px; }
+  #pn-governance .pngv-in{ grid-template-columns:minmax(0,1fr); padding:0 16px; gap:14px; }
+  #pn-governance .pngv-eb{ font-size:.64rem; letter-spacing:.24em; }
+  #pn-governance h2.pngv-h2{ margin-top:6px; font-size:1.85rem; }
+  #pn-governance .pngv-lead{ margin-top:8px; font-size:.94rem; line-height:1.45; }
+  #pn-governance .pngv-seq{ display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); align-items:stretch; gap:6px; margin-top:10px; }
+  #pn-governance .pngv-seq li{ flex-direction:column; align-items:flex-start; justify-content:flex-start; gap:3px; padding:7px 8px; border-radius:10px; font-size:.66rem; letter-spacing:.04em; line-height:1.15; }
+  #pn-governance .pngv-seq li span{ font-size:.6rem; }
+  #pn-governance .pngv-fig{ margin-top:10px; padding-top:9px; font-size:.86rem; line-height:1.4; }
+  #pn-governance .pngv-fig b{ font-size:1.1rem; }
+  #pn-governance .pngv-src{ font-size:.68rem; }
+  #pn-governance .pngv-cup{ grid-template-columns:56px minmax(0,1fr); gap:12px; padding:14px 14px 15px; border-radius:14px; align-items:start; }
+  #pn-governance .pngv-k{ font-size:.6rem; letter-spacing:.2em; }
+  #pn-governance .pngv-t{ font-size:1.25rem; }
+  #pn-governance .pngv-d{ margin-top:6px; }
+  #pn-governance .pngv-d,#pn-governance .pngv-tests li{ font-size:.84rem; line-height:1.38; }
+  #pn-governance .pngv-tests{ margin-top:7px; gap:5px; }
+}
+@media (prefers-reduced-motion:reduce){ #pn-governance *{ transition:none !important; animation:none !important; } }
+</style>
+
+<section id="pn-governance" aria-labelledby="pngv-h">
+  <div class="pngv-in">
+    <div class="pngv-say">
+      <p class="pngv-eb">Governance first</p>
+      <h2 class="pngv-h2" id="pngv-h">Good governance comes first.</h2>
+      <p class="pngv-lead">Before finance and before super intelligence. Where no money is lost to corruption, every dollar can reach a citizen.</p>
+      <ol class="pngv-seq" aria-label="The order of the work">
+        <li><span>01</span>Good governance</li>
+        <li><span>02</span>Innovative financing for development</li>
+        <li><span>03</span>Super intelligence</li>
+      </ol>
+      <p class="pngv-fig">The IMF estimates that bribery alone costs <b>$1.5 to $2 trillion</b> a year, about 2&#37; of world output.
+        <span class="pngv-src">Source: <a href="https://www.imf.org/external/pubs/ft/sdn/2016/sdn1605.pdf" title="IMF, Corruption: Costs and Mitigating Strategies, Staff Discussion Note 16/05, May 2016">IMF Staff Discussion Note 16/05, May 2016</a></span></p>
+    </div>
+    <div class="pngv-cup">
+      <svg class="pngv-art" viewBox="82.5 153 346 346" role="img" aria-label="The cup of the Perfect Nations logo" focusable="false"><use href="#pnk-cl" clip-path="url(#pnk-cc)"/></svg>
+      <div>
+        <p class="pngv-k">The cup of the logo</p>
+        <p class="pngv-t">The Perfect Nations Cup</p>
+        <p class="pngv-d">Awarded only to financing instruments that pass two tests:</p>
+        <ul class="pngv-tests">
+          <li><span>01</span><p><b>Led by good governance,</b> with no room for corruption.</p></li>
+          <li><span>02</span><p><b>Tracked by super intelligence,</b> which follows the impact to every beneficiary.</p></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
 <!-- ======== part: pages/home-imagine.html ======== -->
 <!-- ===========================================================================
 PERFECT NATIONS - HOMEPAGE - IMAGINE A PERFECT NATION - v2.0 - 2026-11-09
