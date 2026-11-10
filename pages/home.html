@@ -1,5 +1,5 @@
 <!-- ===========================================================================
-PERFECT NATIONS - HOMEPAGE - THE WHOLE PAGE IN ONE FILE - v11.7 - 2026-11-10
+PERFECT NATIONS - HOMEPAGE - THE WHOLE PAGE IN ONE FILE - v11.8 - 2026-11-10
 Paste this file ONCE into ONE Elementor Custom HTML widget on the homepage (page 13465), in a Full
 Width container with padding 0, and delete every other widget on the page. From then on the Perfect
 Nations Live Pages plugin serves pages/home.html from GitHub in place of the paste (root id pn-home,
@@ -3688,7 +3688,9 @@ No class or id here contains the word for the logo's wreath (the header's sitewi
 </script>
 <!-- ======== part: pages/home-blueprints.html ======== -->
 <!-- ===========================================================================
-PERFECT NATIONS - HOMEPAGE - SECTION 06 - BLUEPRINTS OF NATIONS - v7.0 LIGHT - 2026-11-10
+PERFECT NATIONS - HOMEPAGE - SECTION 06 - BLUEPRINTS OF NATIONS - v7.1 LIGHT - 2026-11-10
+v7.1 (homepage v11.8): the nation summary pop-up keeps ivory type on its Earthrise panel; the light section had
+turned the nation's name dark (the Steward-General, 10 Nov 2026: "here the nation name is dark").
 v7.0 (homepage v11.6): light. An ivory ground with ink type; the portrait cards stay Earthrise plates, the accent of
 the band; Earthrise headline, terracotta eyebrow; gold only for the buttons, the arrows and the count (the
 Steward-General, 10 Nov 2026: the site was too dark and heavy to read).
@@ -3990,6 +3992,12 @@ Ground: laterite (red earth). Photographs at full colour, no veil; text sits on 
   --fg:#F5F1E8; --mut:rgba(245,241,232,.82); --dim:rgba(245,241,232,.64); --hair:rgba(245,241,232,.16);
   --plate:#0B3D45; --plate2:#082A30;
 }
+/* v7.1: the pop-up is Earthrise, so its type is ivory (it had inherited the section's ink) */
+#pn-featured .pnfb-modal__card{ color:#F5F1E8; }
+#pn-featured .pnfb-modal__name{ color:#F5F1E8; }
+#pn-featured .pnfb-modal__region{ color:rgba(245,241,232,.7); }
+#pn-featured .pnfb-modal__k{ color:rgba(245,241,232,.78); }
+#pn-featured .pnfb-modal__t{ color:rgba(245,241,232,.88); }
 #pn-featured .pnfb-card, #pn-featured .pnfb-card:hover{ box-shadow:0 14px 30px rgba(11,61,69,.22) !important; }
 #pn-featured .pnfb-btn--line{ color:#0B3D45; border-color:rgba(11,61,69,.45); }
 #pn-featured .pnfb-btn--line:hover{ background:rgba(11,61,69,.07); color:#0B3D45; }
