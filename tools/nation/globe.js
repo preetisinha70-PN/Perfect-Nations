@@ -29,8 +29,9 @@
   var calm = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var D2R = Math.PI / 180;
   var natLat = CFG.lat * D2R, natLng = CFG.lng * D2R;
-  /* v12.1: CFG.tex.sm and CFG.tex.lg are lists (jsDelivr, GitHub, the Media Library). Both repository hosts allow the
-     picture to be painted on the globe; the Media Library copy, on 10 Nov 2026, did not (on a laptop and a phone). */
+  /* v12.1: CFG.tex.sm and CFG.tex.lg are lists (jsDelivr, GitHub, the Media Library); all three allow the picture to be
+     painted on the globe (checked live, 10 Nov 2026). v12.2: on pages made in the WordPress editor this script used to
+     be broken by the WordPress formatter before it could run; the build now writes it so the formatter skips it. */
   function list(v) { return Object.prototype.toString.call(v) === '[object Array]' ? v : (v ? [v] : []); }
   var tries = [];
   list(phone ? CFG.tex.sm : CFG.tex.lg).concat(list(phone ? CFG.tex.lg : CFG.tex.sm)).forEach(function (u) { if (u && tries.indexOf(u) < 0) tries.push(u); });
