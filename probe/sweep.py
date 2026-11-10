@@ -3,7 +3,9 @@ whether any inline script was rewritten by WordPress (&#038; inside a script), a
 import asyncio, json, time
 from playwright.async_api import async_playwright
 m = json.load(open('pages/manifest.json'))['pages']
-URLS = sorted({v.get('url') for v in m.values() if v.get('url')})
+SLUGS = ['colombia','ecuador','egypt','ethiopia','fiji','ghana','indonesia','jamaica','jordan','mexico','morocco','pakistan',
+         'philippines','senegal','sri-lanka','ukraine','vietnam','kenya','barbados']
+URLS = ['https://perfectnations.org/blueprints/%s/' % s for s in SLUGS]
 READ = """() => {
   const g = document.querySelector('.bpx-globe');
   const amp = [...document.scripts].filter(s => !s.src && s.textContent.indexOf('&#038;') >= 0).length;

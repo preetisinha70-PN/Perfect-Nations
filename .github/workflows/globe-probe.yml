@@ -26,6 +26,7 @@ jobs:
             echo "== $u"; curl -sS -o /dev/null -D - -H 'Origin: https://perfectnations.org' "$u" | grep -iE '^(HTTP|access-control|content-type|content-length|server|x-cache|age|location)'
           done > probe-out/hosts.txt 2>&1
           cat probe-out/hosts.txt
+      - run: xvfb-run -a python probe/globe_probe.py /blueprints/mexico/
       - run: xvfb-run -a python probe/sweep.py
       - run: |
           git config user.name "globe-probe"; git config user.email "noreply@github.com"
