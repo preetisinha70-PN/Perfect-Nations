@@ -1,5 +1,6 @@
 <!-- ===========================================================================
-PERFECT NATIONS - HOMEPAGE - SECTION 04 - 02 CAPITAL: CAPITAL ARCHITECTURE, THE LAURELS - v8.4 - 2026-11-09
+PERFECT NATIONS - HOMEPAGE - SECTION 04 - 02 CAPITAL: CAPITAL ARCHITECTURE, THE LAURELS - v9.0 LIGHT - 2026-11-10
+v9.0: light reading sections, Earthrise accents (the Steward-General, 10 Nov 2026).
 v8.4 (the Steward-General, 9 Nov 2026): every element of the logo in one gold, #E3C258; no part of the logo is drawn dimmed. The laurels are drawn alone.
 v8.3: fewer words, the Steward-General, 9 Nov 2026: the lead is one line (bonds, guarantees and swaps in full are one
 click away, under All the instruments); the caption under the laurels is one short line.
@@ -166,6 +167,46 @@ v6.3 (6 Nov 2026): move 04 of the five moves, with pioneers and photograph cards
   #pn-capital .pncx-lfig{ gap:12px; margin-top:12px; }
   #pn-capital .pncx-lfig figcaption{ font-size:.92rem; }
 }
+
+/* ---------- v9.0 LIGHT (the Steward-General, 10 Nov 2026: "the site is a little dark and heavy to read ...
+   make sections the lighter colour with the Earthrise for the accents"). An ivory ground with ink type;
+   Earthrise for the headline, the numbers and the outline button; terracotta for the eyebrow; the laurels of
+   the logo sit on an Earthrise disc with a gold rim (the logo is never drawn in gold straight onto ivory);
+   gold only for the button and money (a deep gold on light). */
+#pn-capital{
+  --iv:#0B3D45; --tm:#34464A; --td:#5C696C; --hair:rgba(16,38,43,.13);
+  color:#10262B;
+  background:
+    radial-gradient(50% 60% at 96% 0%, rgba(227,194,88,.16) 0%, rgba(227,194,88,0) 70%),
+    radial-gradient(40% 60% at 0% 100%, rgba(138,58,34,.06) 0%, rgba(138,58,34,0) 70%),
+    linear-gradient(180deg,#F7F0DF 0%,#F4ECD8 60%,#F1E7D0 100%);
+}
+#pn-capital .pncx-eb,#pn-capital .pncx-eb b{ color:#8A3A22; }
+#pn-capital .pncx-ch{ border-color:rgba(11,61,69,.6); color:#0B3D45 !important; }
+#pn-capital .pncx-ch:hover{ background:#0B3D45; color:#F5F1E8 !important; }
+#pn-capital .pncx-ch:focus-visible{ outline-color:#0B3D45; }
+#pn-capital svg.pncx-wreath{
+  padding:clamp(12px,1.3vw,18px); border-radius:50%;
+  background:radial-gradient(circle at 32% 28%, #0E4C56 0%, #0B3D45 52%, #082A30 100%);
+  box-shadow:inset 0 0 0 3px #082A30, inset 0 0 0 4px rgba(227,194,88,.85), 0 14px 32px rgba(11,61,69,.24);
+}
+#pn-capital .pncx-n{ color:#0B3D45; }
+#pn-capital .pncx-own{ border-color:rgba(11,61,69,.45); color:#0B3D45; }
+#pn-capital .pncx-f{ color:#0B3D45; }
+#pn-capital .pncx-f.is-money{ color:#8C6A12; }
+#pn-capital .pncx-w a{ border-bottom-color:rgba(16,38,43,.3); }
+#pn-capital .pncx-w a:hover{ border-bottom-color:#0B3D45; }
+#pn-capital .pncx-s{ color:#0B3D45 !important; border-bottom-color:rgba(11,61,69,.4); }
+#pn-capital .pncx-s:hover{ border-bottom-color:#0B3D45; }
+#pn-capital .pncx-s:focus-visible,#pn-capital .pncx-w a:focus-visible{ outline-color:#0B3D45; }
+#pn-capital .pncx-btn{ background:#E3C258; border-color:#E3C258; color:#1A140C !important; box-shadow:0 10px 24px rgba(140,106,18,.22); }
+#pn-capital .pncx-btn:hover{ background:#F0D68F; border-color:#F0D68F; }
+#pn-capital .pncx-btn--line{ background:transparent; color:#0B3D45 !important; border-color:rgba(11,61,69,.45); box-shadow:none; }
+#pn-capital .pncx-btn--line:hover{ background:rgba(11,61,69,.07); border-color:rgba(11,61,69,.45); }
+#pn-capital .pncx-btn:focus-visible{ outline-color:#0B3D45; }
+@media (max-width:760px){
+  #pn-capital svg.pncx-art.pncx-wreath{ padding:9px; }
+}
 </style>
 
 <section id="pn-capital" aria-labelledby="pncx-h">
@@ -181,7 +222,7 @@ v6.3 (6 Nov 2026): move 04 of the five moves, with pioneers and photograph cards
       <li class="pncx-r" data-id="outcome-bond" style="--i:0">
         <span class="pncx-n" aria-hidden="true">01</span>
         <div class="pncx-what"><h3 class="pncx-h3">Outcome Bonds</h3><p class="pncx-p" data-k="headline">Investors earn more as verified results arrive.</p></div>
-        <div class="pncx-fig"><b class="pncx-f" data-k="figure">$225M</b><span class="pncx-l" data-k="label">Amazon reforestation, paid in carbon removed</span></div>
+        <div class="pncx-fig"><b class="pncx-f is-money" data-k="figure">$225M</b><span class="pncx-l" data-k="label">Amazon reforestation, paid in carbon removed</span></div>
         <div class="pncx-src"><span class="pncx-w"><a href="https://perfectnations.org/blueprints/brazil/">Brazil, 2024</a></span><a class="pncx-s" data-k="source" href="https://www.worldbank.org/en/news/press-release/2024/08/13/investors-support-amazon-reforestation-through-record-breaking-usd-225-million-world-bank-outcome-bond" target="_blank" rel="noopener">World Bank, August 2024</a></div>
       </li>
       <li class="pncx-r" data-id="development-impact-bond" style="--i:1">
@@ -193,19 +234,19 @@ v6.3 (6 Nov 2026): move 04 of the five moves, with pioneers and photograph cards
       <li class="pncx-r" data-id="social-bond" style="--i:2">
         <span class="pncx-n" aria-hidden="true">03</span>
         <div class="pncx-what"><h3 class="pncx-h3">Social Bonds</h3><p class="pncx-p" data-k="headline">Bond money ring-fenced for homes, schools and clinics.</p></div>
-        <div class="pncx-fig"><b class="pncx-f" data-k="figure">$400M</b><span class="pncx-l" data-k="label">for affordable homes for 24,000+ families</span></div>
+        <div class="pncx-fig"><b class="pncx-f is-money" data-k="figure">$400M</b><span class="pncx-l" data-k="label">for affordable homes for 24,000+ families</span></div>
         <div class="pncx-src"><span class="pncx-w"><a href="https://perfectnations.org/blueprints/ecuador/">Ecuador, 2020</a></span><a class="pncx-s" data-k="source" href="https://www.iadb.org/en/news/ecuador-issues-worlds-first-sovereign-social-bond-support-idb-guarantee" target="_blank" rel="noopener">Inter-American Development Bank, 2020</a></div>
       </li>
       <li class="pncx-r" data-id="sustainability-linked-bond" style="--i:3">
         <span class="pncx-n" aria-hidden="true">04</span>
         <div class="pncx-what"><h3 class="pncx-h3">Sustainability-Linked Bonds</h3><p class="pncx-p" data-k="headline">Miss the national climate target and the coupon rises.</p></div>
-        <div class="pncx-fig"><b class="pncx-f" data-k="figure">$2B</b><span class="pncx-l" data-k="label">the first sovereign bond of its kind</span></div>
+        <div class="pncx-fig"><b class="pncx-f is-money" data-k="figure">$2B</b><span class="pncx-l" data-k="label">the first sovereign bond of its kind</span></div>
         <div class="pncx-src"><span class="pncx-w">Chile, 2022</span><a class="pncx-s" data-k="source" href="https://biblio.hacienda.cl/chile-s-sustainability-linked-bond-report/2-2022-slb-bond-issuance-and-slb-framework" target="_blank" rel="noopener">Ministry of Finance of Chile, 2022</a></div>
       </li>
       <li class="pncx-r" data-id="standard-tokens" style="--i:4">
         <span class="pncx-n" aria-hidden="true">05</span>
         <div class="pncx-what"><h3 class="pncx-h3">Standard Tokens</h3><span class="pncx-own">Designed by Perfect Nations</span><p class="pncx-p" data-k="headline">A citizen-scale share in one basic living standard.</p></div>
-        <div class="pncx-fig"><b class="pncx-f" data-k="figure">KES 3,000</b><span class="pncx-l" data-k="label">to own a Kenyan government bond, by phone</span></div>
+        <div class="pncx-fig"><b class="pncx-f is-money" data-k="figure">KES 3,000</b><span class="pncx-l" data-k="label">to own a Kenyan government bond, by phone</span></div>
         <div class="pncx-src"><span class="pncx-w"><a href="https://perfectnations.org/blueprints/kenya/">Precedent: Kenya, 2017</a></span><a class="pncx-s" data-k="source" href="https://www.fsdkenya.org/blogs-publications/blog/the-story-of-m-akiba-selling-kenyan-treasury-bonds-via-mobile/" target="_blank" rel="noopener">FSD Kenya, 2017</a></div>
       </li>
       </ol>

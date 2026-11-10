@@ -1,5 +1,6 @@
 <!-- ===========================================================================
-PERFECT NATIONS - HOMEPAGE - SECTION 05 - 03 SOLUTIONS: PERFECT CAPITA, THE SEVEN STARS - v6.3 - 2026-11-09
+PERFECT NATIONS - HOMEPAGE - SECTION 05 - 03 SOLUTIONS: PERFECT CAPITA, THE SEVEN STARS - v7.0 LIGHT - 2026-11-10
+v7.0: light reading sections, Earthrise accents (the Steward-General, 10 Nov 2026).
 v6.3 (the Steward-General, 9 Nov 2026): every element of the logo in one gold, #E3C258; no part of the logo is drawn dimmed. Choosing a star no longer dims the others.
 v6.2: fewer words, the Steward-General, 9 Nov 2026: the caption under the stars is one short line; the method notes
 (the groups overlap; Barbados in 2025 US dollars, to be confirmed) move into a Read more; the sum is marked an estimate.
@@ -245,6 +246,60 @@ SOFI page once its address is confirmed.
 @media (max-width:640px){
   #pn-capita details.pc4-rm{ margin-top:6px; }
   #pn-capita .pc4-rm > p{ font-size:.8rem; }
+}
+
+/* ---------- v7.0 LIGHT (the Steward-General, 10 Nov 2026: "the site is a little dark and heavy to read ...
+   make sections the lighter colour with the Earthrise for the accents"). A paper ground with ink type;
+   the seven stars rise from the cup on an Earthrise panel (the logo is never drawn in gold straight onto
+   ivory), and the price of Perfect Barbados is an Earthrise tile in a white card; Earthrise for the headline,
+   the numbers and the outline button; terracotta for the eyebrow and Perfect Capita; gold only for the
+   button and money (a deep gold on light). */
+#pn-capita{
+  --tm:#34464A; --td:#5C696C; --hair:rgba(16,38,43,.13); --em:#8A3A22;
+  color:#10262B;
+  background:
+    radial-gradient(48% 60% at 96% 0%, rgba(227,194,88,.16) 0%, rgba(227,194,88,0) 70%),
+    radial-gradient(40% 60% at 0% 100%, rgba(11,61,69,.06) 0%, rgba(11,61,69,0) 70%),
+    linear-gradient(180deg,#FBF8F1 0%,#F6EFE0 100%);
+}
+#pn-capita .pc4-eb,#pn-capita .pc4-eb .pc4-step{ color:#8A3A22; }
+#pn-capita .pn-ch{ border-color:rgba(11,61,69,.6); color:#0B3D45; }
+#pn-capita .pn-ch:hover{ background:#0B3D45; color:#F5F1E8; }
+#pn-capita .pn-ch:focus-visible{ outline-color:#0B3D45; }
+#pn-capita h2.pc4-h2{ color:#0B3D45 !important; }
+#pn-capita .pc4-def{ color:#34464A; }
+/* the seven stars and the cup: an Earthrise panel, the accent of the section */
+#pn-capita .pc4-wheelcol{
+  --tm:rgba(245,241,232,.84); --td:rgba(245,241,232,.66); --hair:rgba(245,241,232,.16); --em:#F0D68F;
+  color:#F5F1E8; padding:clamp(14px,2vw,24px) clamp(12px,1.6vw,22px) clamp(14px,1.8vw,20px);
+  border-radius:22px; border:1px solid rgba(227,194,88,.3);
+  background:
+    radial-gradient(48% 52% at 50% 34%, rgba(227,194,88,.14) 0%, rgba(227,194,88,0) 66%),
+    radial-gradient(50% 55% at 96% 100%, rgba(120,200,205,.14) 0%, rgba(120,200,205,0) 64%),
+    linear-gradient(165deg,#10505F 0%,#0B3D45 46%,#082A30 100%);
+  box-shadow:0 18px 44px rgba(11,61,69,.28);
+}
+/* the sum: a white card, its total an Earthrise tile */
+#pn-capita .pc4-sum{
+  background:#FFFDF8; border-color:rgba(16,38,43,.12);
+  box-shadow:0 1px 0 rgba(255,255,255,.9) inset, 0 10px 26px rgba(16,38,43,.08);
+}
+#pn-capita .pc4-t{ background:rgba(11,61,69,.055); }
+#pn-capita .pc4-t b{ color:#0B3D45; }
+#pn-capita .pc4-t b.pc4-money{ color:#8C6A12; }
+#pn-capita .pc4-t--total{ background:linear-gradient(165deg,#10505F 0%,#0B3D45 52%,#09313A 100%); box-shadow:0 10px 24px rgba(11,61,69,.22); }
+#pn-capita .pc4-t--total b.pc4-money{ color:#E3C258; }
+#pn-capita .pc4-t--total span{ color:rgba(245,241,232,.86); }
+#pn-capita .pc4-btn--gold{ box-shadow:0 10px 24px rgba(140,106,18,.22); }
+#pn-capita .pc4-btn--line{ background:transparent; color:#0B3D45; border-color:rgba(11,61,69,.45); }
+#pn-capita .pc4-btn--line:hover{ background:rgba(11,61,69,.07); color:#0B3D45; }
+#pn-capita .pc4-btn:focus-visible,#pn-capita .pc4-rest a:focus-visible,#pn-capita .pc4-head a:focus-visible{ outline-color:#0B3D45; }
+#pn-capita .pc4-rm summary{ color:#0B3D45; }
+#pn-capita .pc4-rm summary::before{ border-color:rgba(11,61,69,.5); }
+#pn-capita .pc4-rm summary:hover{ color:#8A3A22; }
+#pn-capita .pc4-rm summary:focus-visible{ outline-color:#0B3D45; }
+@media (max-width:640px){
+  #pn-capita .pc4-wheelcol{ padding:12px 10px 12px; border-radius:18px; }
 }
 
 </style>

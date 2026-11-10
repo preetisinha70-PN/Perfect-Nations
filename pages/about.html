@@ -1,5 +1,6 @@
 <!-- ==========================================================================
-PERFECT NATIONS - ABOUT - v11.4 - 2026-11-10
+PERFECT NATIONS - ABOUT - v11.5 - 2026-11-10
+v11.5: light reading sections, Earthrise accents (the Steward-General, 10 Nov 2026).
 v11.4 (10 Nov 2026), the homepage and blueprint updates of 9 Nov brought in: the hero says what the
 firm is, in the blueprints' words ("Perfect Nations is a new-age sovereign advisory firm, and its clients
 are nations"); the close is the homepage close itself (GENERATED:PLEDGE, pages/home-pledge.html): the
@@ -262,6 +263,87 @@ TO CHANGE THE PORTRAIT: replace the address inside src="..." of the img in #ab-p
 @keyframes abTwinkle{ 0%,82%,100%{ transform:scale(1); } 90%{ transform:scale(1.22); } }
 @keyframes abRise{ from{ opacity:0; transform:translateY(16px); } to{ opacity:1; transform:none; } }
 @media (prefers-reduced-motion:reduce){ #pn-about *{ transition:none !important; animation:none !important; } }
+
+/* ---------- v11.5 LIGHT (the Steward-General, 10 Nov 2026: "the site is a little dark and heavy to read ...
+   make sections the lighter colour with the Earthrise for the accents"). The page's own sections read on light
+   grounds that alternate with their neighbours: the logo with the Vision and the Mission on paper (the logo
+   stays on its Earthrise disc with the gold rim), the President and CEO on ivory, the record on paper, the
+   Stewards on ivory. Earthrise headlines, terracotta eyebrows, ink type; Earthrise for the numbers, the dots
+   of the record and the outline buttons; the research Stewards are Earthrise cards, the Nation Stewards white
+   cards; gold only for the buttons, the logo and money (a deep gold on light). The homepage parts carry their
+   own LIGHT blocks: What we do (ivory), Assets (paper), Capital (ivory), Perfect Capita (paper, the stars on
+   an Earthrise panel), the Founder's Vision (the photograph, then paper, the plate Earthrise) and the close. */
+#pn-about .ab-hero,#pn-about .ab-ceo,#pn-about .ab-rec,#pn-about .ab-council{
+  --iv:#0B3D45; --tm:#34464A; --td:#5C696C; --hair:rgba(16,38,43,.13);
+  --ink:#10262B; --im:#34464A; --idm:#5C696C; --ihair:rgba(16,38,43,.13); --gd:#8C6A12;
+  color:#10262B;
+}
+#pn-about .ab-band h2.ab-h2{ color:#0B3D45 !important; }
+#pn-about .ab-band .ab-eb{ color:#8A3A22; }
+#pn-about .ab-band .ab-eb::before{ background:rgba(138,58,34,.55); }
+#pn-about .ab-band a:focus-visible,#pn-about .ab-band button:focus-visible,#pn-about .ab-band summary:focus-visible{ outline-color:#0B3D45; }
+/* 1 the logo, the Vision and the Mission: paper */
+#pn-about .ab-hero{
+  background:
+    radial-gradient(42% 70% at 20% 46%, rgba(227,194,88,.18) 0%, rgba(227,194,88,0) 64%),
+    radial-gradient(48% 60% at 96% 0%, rgba(227,194,88,.12) 0%, rgba(227,194,88,0) 70%),
+    radial-gradient(40% 60% at 100% 100%, rgba(11,61,69,.06) 0%, rgba(11,61,69,0) 70%),
+    linear-gradient(180deg,#FBF8F1 0%,#F6EFE0 100%);
+}
+#pn-about .ab-mk__ring{ color:rgba(11,61,69,.22); }
+#pn-about .ab-mk__disc{ box-shadow:inset 0 0 0 5px #082A30, inset 0 0 0 6.5px rgba(227,194,88,.9), 0 26px 60px rgba(11,61,69,.32); }
+#pn-about .ab-vm dd{ color:#10262B; }
+#pn-about .ab-btn{ box-shadow:0 10px 24px rgba(140,106,18,.22); }
+#pn-about .ab-btn--line{ background:transparent; color:#0B3D45 !important; border-color:rgba(11,61,69,.45); box-shadow:none; }
+#pn-about .ab-btn--line:hover{ background:rgba(11,61,69,.07); }
+/* 2 the President and CEO: ivory */
+#pn-about .ab-ceo{
+  background:
+    radial-gradient(50% 60% at 92% 0%, rgba(227,194,88,.16) 0%, rgba(227,194,88,0) 70%),
+    radial-gradient(40% 60% at 0% 100%, rgba(138,58,34,.06) 0%, rgba(138,58,34,0) 70%),
+    linear-gradient(180deg,#F7F0DF 0%,#F4ECD8 60%,#F1E7D0 100%);
+}
+#pn-about .ab-photo{ box-shadow:0 22px 48px rgba(11,61,69,.22), 0 0 0 1px rgba(11,61,69,.3); }
+#pn-about .ab-figs b{ color:#0B3D45; }
+#pn-about .ab-figs li.is-money b{ color:#8C6A12; }
+#pn-about .ab-figs span{ color:#3E4E52; }
+/* 3 the record: paper */
+#pn-about .ab-rec{
+  background:
+    radial-gradient(48% 60% at 96% 0%, rgba(227,194,88,.14) 0%, rgba(227,194,88,0) 70%),
+    radial-gradient(40% 60% at 0% 100%, rgba(11,61,69,.06) 0%, rgba(11,61,69,0) 70%),
+    linear-gradient(180deg,#FBF8F1 0%,#F6EFE0 100%);
+}
+#pn-about .ab-tl::before{ background:linear-gradient(180deg,#0B3D45,rgba(11,61,69,.12)); }
+#pn-about .ab-tl li::before{ background:#FBF8F1; border-color:#0B3D45; }
+#pn-about .ab-tl li:first-child::before{ background:#0B3D45; box-shadow:0 0 0 5px rgba(11,61,69,.14); }
+#pn-about .ab-src{ border-bottom-color:rgba(16,38,43,.25); }
+#pn-about .ab-src:hover{ color:#0B3D45 !important; border-color:#0B3D45; }
+#pn-about .ab-edu li{ background:#FFFDF8; border-color:rgba(16,38,43,.12); box-shadow:0 1px 0 rgba(255,255,255,.9) inset, 0 8px 20px rgba(16,38,43,.06); }
+/* 4 the Council of Stewards: ivory; the research Stewards are Earthrise cards, the Nation Stewards white cards */
+#pn-about .ab-council{
+  background:
+    radial-gradient(50% 60% at 92% 0%, rgba(227,194,88,.16) 0%, rgba(227,194,88,0) 70%),
+    radial-gradient(40% 60% at 0% 100%, rgba(138,58,34,.06) 0%, rgba(138,58,34,0) 70%),
+    linear-gradient(180deg,#F7F0DF 0%,#F4ECD8 60%,#F1E7D0 100%);
+}
+#pn-about .ab-rm summary{ color:#0B3D45; }
+#pn-about .ab-rm summary::before{ border-color:rgba(11,61,69,.5); }
+#pn-about .ab-rm summary:hover{ color:#8A3A22; }
+#pn-about .ab-rs{
+  --iv:#F5F1E8; --tm:rgba(245,241,232,.86); --td:rgba(245,241,232,.7); --hair:rgba(245,241,232,.16);
+  color:#F5F1E8; border-color:rgba(227,194,88,.3);
+  background:
+    radial-gradient(80% 120% at 0% 0%, rgba(227,194,88,.12) 0%, rgba(227,194,88,0) 60%),
+    linear-gradient(165deg,#10505F 0%,#0B3D45 52%,#09313A 100%);
+  box-shadow:0 10px 24px rgba(11,61,69,.2);
+}
+#pn-about .ab-ns{ background:#FFFDF8; border-color:rgba(16,38,43,.12); color:#0B3D45 !important; box-shadow:0 4px 12px rgba(16,38,43,.05); }
+#pn-about .ab-ns:hover{ background:#FFFFFF; border-color:rgba(11,61,69,.45); }
+#pn-about .ab-ns__av::before{ color:rgba(245,241,232,.86); }
+#pn-about .ab-ns__t span{ color:#8A3A22; }
+#pn-about .ab-more{ border-color:rgba(11,61,69,.45); color:#0B3D45; }
+#pn-about .ab-more:hover{ background:rgba(11,61,69,.06); }
 </style>
 <!-- GENERATED:LOGO-KIT (from pages/home-logo-kit.html and pages/home-rule.html by tools/build_about.py; do not edit here) -->
 <!-- part: pages/home-logo-kit.html v1.1 -->
@@ -518,7 +600,7 @@ TO CHANGE THE PORTRAIT: replace the address inside src="..." of the img in #ab-p
 </script>
 <!-- /GENERATED:STEPS -->
 <!-- GENERATED:ASSETS (from pages/home-assets.html by tools/build_about.py; do not edit here) -->
-<!-- part: pages/home-assets.html v8.3 -->
+<!-- part: pages/home-assets.html v9.0 -->
 <style>
 #pn-assets{
   --er:#0B3D45; --er2:#0F4C5C; --er3:#082A30;
@@ -710,6 +792,53 @@ TO CHANGE THE PORTRAIT: replace the address inside src="..." of the img in #ab-p
 @media (max-width:760px){
   #pn-assets .pna-rm > p{ font-size:.84rem; }
 }
+
+/* ---------- v9.0 LIGHT (the Steward-General, 10 Nov 2026: "the site is a little dark and heavy to read ...
+   make sections the lighter colour with the Earthrise for the accents"). A paper ground and white cards with
+   ink type; Earthrise for the headline, the numbers and the People card, which stays an Earthrise card, the
+   key figure of the band; terracotta for the eyebrow; gold only for the button and money (a deep gold on light). */
+#pn-assets{
+  --iv:#0B3D45; --tm:#34464A; --td:#5C696C; --hair:rgba(16,38,43,.13);
+  color:#10262B;
+  background:
+    radial-gradient(48% 60% at 96% 0%, rgba(227,194,88,.16) 0%, rgba(227,194,88,0) 70%),
+    radial-gradient(40% 60% at 0% 100%, rgba(11,61,69,.06) 0%, rgba(11,61,69,0) 70%),
+    linear-gradient(180deg,#FBF8F1 0%,#F6EFE0 100%);
+}
+#pn-assets .pna-eb,#pn-assets .pna-eb b{ color:#8A3A22; }
+#pn-assets .pna-ch{ border-color:rgba(11,61,69,.6); color:#0B3D45 !important; }
+#pn-assets .pna-ch:hover{ background:#0B3D45; color:#F5F1E8 !important; }
+#pn-assets .pna-ch:focus-visible{ outline-color:#0B3D45; }
+#pn-assets .pna-c{
+  background:#FFFDF8; border-color:rgba(16,38,43,.12);
+  box-shadow:0 1px 0 rgba(255,255,255,.9) inset, 0 10px 26px rgba(16,38,43,.08);
+}
+#pn-assets .pna-c::before{ background:linear-gradient(90deg,#0B3D45,rgba(11,61,69,0) 80%); }
+#pn-assets .pna-n{ background:transparent; border-color:rgba(11,61,69,.45); color:#0B3D45; }
+#pn-assets .pna-fig b{ color:#0B3D45; }
+#pn-assets .pna-fig.is-money b{ color:#8C6A12; }
+/* the People card: an Earthrise card, the accent of the band */
+#pn-assets .pna-c:first-child{
+  --iv:#F5F1E8; --tm:rgba(245,241,232,.86); --td:rgba(245,241,232,.66); --hair:rgba(245,241,232,.16);
+  color:#F5F1E8; border-color:rgba(227,194,88,.38);
+  background:
+    radial-gradient(70% 90% at 0% 0%, rgba(227,194,88,.16) 0%, rgba(227,194,88,0) 62%),
+    linear-gradient(165deg,#10505F 0%,#0B3D45 48%,#09313A 100%);
+  box-shadow:0 18px 44px rgba(11,61,69,.28);
+}
+#pn-assets .pna-c:first-child::before{ background:linear-gradient(90deg,#E3C258,rgba(227,194,88,0) 80%); }
+#pn-assets .pna-c:first-child .pna-n{ background:rgba(8,42,48,.86); border-color:rgba(227,194,88,.6); color:#E3C258; }
+#pn-assets .pna-c:first-child .pna-fig b{ color:#F5F1E8; }
+#pn-assets .pna-rm summary{ color:#0B3D45; }
+#pn-assets .pna-rm summary::before{ border-color:rgba(11,61,69,.5); }
+#pn-assets .pna-rm summary:hover{ color:#8A3A22; }
+#pn-assets .pna-rm summary:focus-visible{ outline-color:#0B3D45; }
+#pn-assets .pna-srcs a{ border-bottom-color:rgba(16,38,43,.25); }
+#pn-assets .pna-srcs a:hover{ color:#0B3D45 !important; border-color:#0B3D45; }
+#pn-assets .pna-srcs a:focus-visible{ outline-color:#0B3D45; }
+#pn-assets .pna-btn{ background:#E3C258; border-color:#E3C258; color:#1A140C !important; box-shadow:0 10px 24px rgba(140,106,18,.22); }
+#pn-assets .pna-btn:hover{ background:#F0D68F; border-color:#F0D68F; }
+#pn-assets .pna-btn:focus-visible{ outline-color:#0B3D45; }
 </style>
 
 <section id="pn-assets" aria-labelledby="pna-h">
@@ -759,7 +888,7 @@ TO CHANGE THE PORTRAIT: replace the address inside src="..." of the img in #ab-p
       <li class="pna-c" style="--i:4">
         <div class="pna-b">
           <span class="pna-n" aria-hidden="true">05</span>
-          <p class="pna-fig"><b>$547bn</b> <span>the value of mangroves as flood defence, 2018</span></p>
+          <p class="pna-fig is-money"><b>$547bn</b> <span>the value of mangroves as flood defence, 2018</span></p>
           <h3 class="pna-h3">Ocean and coast</h3>
           <p class="pna-p">Fisheries, reefs and mangroves: the blue wealth of a nation.</p>
         </div>
@@ -793,7 +922,7 @@ TO CHANGE THE PORTRAIT: replace the address inside src="..." of the img in #ab-p
 <!-- /GENERATED:ASSETS -->
 <div class="pn-rule" aria-hidden="true"></div>
 <!-- GENERATED:CAPITAL (from pages/home-capital.html by tools/build_about.py; do not edit here) -->
-<!-- part: pages/home-capital.html v8.4 -->
+<!-- part: pages/home-capital.html v9.0 -->
 <style>
 #pn-capital{
   --er:#0B3D45; --er2:#0F4C5C; --er3:#082A30;
@@ -935,6 +1064,46 @@ TO CHANGE THE PORTRAIT: replace the address inside src="..." of the img in #ab-p
   #pn-capital .pncx-lfig{ gap:12px; margin-top:12px; }
   #pn-capital .pncx-lfig figcaption{ font-size:.92rem; }
 }
+
+/* ---------- v9.0 LIGHT (the Steward-General, 10 Nov 2026: "the site is a little dark and heavy to read ...
+   make sections the lighter colour with the Earthrise for the accents"). An ivory ground with ink type;
+   Earthrise for the headline, the numbers and the outline button; terracotta for the eyebrow; the laurels of
+   the logo sit on an Earthrise disc with a gold rim (the logo is never drawn in gold straight onto ivory);
+   gold only for the button and money (a deep gold on light). */
+#pn-capital{
+  --iv:#0B3D45; --tm:#34464A; --td:#5C696C; --hair:rgba(16,38,43,.13);
+  color:#10262B;
+  background:
+    radial-gradient(50% 60% at 96% 0%, rgba(227,194,88,.16) 0%, rgba(227,194,88,0) 70%),
+    radial-gradient(40% 60% at 0% 100%, rgba(138,58,34,.06) 0%, rgba(138,58,34,0) 70%),
+    linear-gradient(180deg,#F7F0DF 0%,#F4ECD8 60%,#F1E7D0 100%);
+}
+#pn-capital .pncx-eb,#pn-capital .pncx-eb b{ color:#8A3A22; }
+#pn-capital .pncx-ch{ border-color:rgba(11,61,69,.6); color:#0B3D45 !important; }
+#pn-capital .pncx-ch:hover{ background:#0B3D45; color:#F5F1E8 !important; }
+#pn-capital .pncx-ch:focus-visible{ outline-color:#0B3D45; }
+#pn-capital svg.pncx-wreath{
+  padding:clamp(12px,1.3vw,18px); border-radius:50%;
+  background:radial-gradient(circle at 32% 28%, #0E4C56 0%, #0B3D45 52%, #082A30 100%);
+  box-shadow:inset 0 0 0 3px #082A30, inset 0 0 0 4px rgba(227,194,88,.85), 0 14px 32px rgba(11,61,69,.24);
+}
+#pn-capital .pncx-n{ color:#0B3D45; }
+#pn-capital .pncx-own{ border-color:rgba(11,61,69,.45); color:#0B3D45; }
+#pn-capital .pncx-f{ color:#0B3D45; }
+#pn-capital .pncx-f.is-money{ color:#8C6A12; }
+#pn-capital .pncx-w a{ border-bottom-color:rgba(16,38,43,.3); }
+#pn-capital .pncx-w a:hover{ border-bottom-color:#0B3D45; }
+#pn-capital .pncx-s{ color:#0B3D45 !important; border-bottom-color:rgba(11,61,69,.4); }
+#pn-capital .pncx-s:hover{ border-bottom-color:#0B3D45; }
+#pn-capital .pncx-s:focus-visible,#pn-capital .pncx-w a:focus-visible{ outline-color:#0B3D45; }
+#pn-capital .pncx-btn{ background:#E3C258; border-color:#E3C258; color:#1A140C !important; box-shadow:0 10px 24px rgba(140,106,18,.22); }
+#pn-capital .pncx-btn:hover{ background:#F0D68F; border-color:#F0D68F; }
+#pn-capital .pncx-btn--line{ background:transparent; color:#0B3D45 !important; border-color:rgba(11,61,69,.45); box-shadow:none; }
+#pn-capital .pncx-btn--line:hover{ background:rgba(11,61,69,.07); border-color:rgba(11,61,69,.45); }
+#pn-capital .pncx-btn:focus-visible{ outline-color:#0B3D45; }
+@media (max-width:760px){
+  #pn-capital svg.pncx-art.pncx-wreath{ padding:9px; }
+}
 </style>
 
 <section id="pn-capital" aria-labelledby="pncx-h">
@@ -950,7 +1119,7 @@ TO CHANGE THE PORTRAIT: replace the address inside src="..." of the img in #ab-p
       <li class="pncx-r" data-id="outcome-bond" style="--i:0">
         <span class="pncx-n" aria-hidden="true">01</span>
         <div class="pncx-what"><h3 class="pncx-h3">Outcome Bonds</h3><p class="pncx-p" data-k="headline">Investors earn more as verified results arrive.</p></div>
-        <div class="pncx-fig"><b class="pncx-f" data-k="figure">$225M</b><span class="pncx-l" data-k="label">Amazon reforestation, paid in carbon removed</span></div>
+        <div class="pncx-fig"><b class="pncx-f is-money" data-k="figure">$225M</b><span class="pncx-l" data-k="label">Amazon reforestation, paid in carbon removed</span></div>
         <div class="pncx-src"><span class="pncx-w"><a href="https://perfectnations.org/blueprints/brazil/">Brazil, 2024</a></span><a class="pncx-s" data-k="source" href="https://www.worldbank.org/en/news/press-release/2024/08/13/investors-support-amazon-reforestation-through-record-breaking-usd-225-million-world-bank-outcome-bond" target="_blank" rel="noopener">World Bank, August 2024</a></div>
       </li>
       <li class="pncx-r" data-id="development-impact-bond" style="--i:1">
@@ -962,19 +1131,19 @@ TO CHANGE THE PORTRAIT: replace the address inside src="..." of the img in #ab-p
       <li class="pncx-r" data-id="social-bond" style="--i:2">
         <span class="pncx-n" aria-hidden="true">03</span>
         <div class="pncx-what"><h3 class="pncx-h3">Social Bonds</h3><p class="pncx-p" data-k="headline">Bond money ring-fenced for homes, schools and clinics.</p></div>
-        <div class="pncx-fig"><b class="pncx-f" data-k="figure">$400M</b><span class="pncx-l" data-k="label">for affordable homes for 24,000+ families</span></div>
+        <div class="pncx-fig"><b class="pncx-f is-money" data-k="figure">$400M</b><span class="pncx-l" data-k="label">for affordable homes for 24,000+ families</span></div>
         <div class="pncx-src"><span class="pncx-w"><a href="https://perfectnations.org/blueprints/ecuador/">Ecuador, 2020</a></span><a class="pncx-s" data-k="source" href="https://www.iadb.org/en/news/ecuador-issues-worlds-first-sovereign-social-bond-support-idb-guarantee" target="_blank" rel="noopener">Inter-American Development Bank, 2020</a></div>
       </li>
       <li class="pncx-r" data-id="sustainability-linked-bond" style="--i:3">
         <span class="pncx-n" aria-hidden="true">04</span>
         <div class="pncx-what"><h3 class="pncx-h3">Sustainability-Linked Bonds</h3><p class="pncx-p" data-k="headline">Miss the national climate target and the coupon rises.</p></div>
-        <div class="pncx-fig"><b class="pncx-f" data-k="figure">$2B</b><span class="pncx-l" data-k="label">the first sovereign bond of its kind</span></div>
+        <div class="pncx-fig"><b class="pncx-f is-money" data-k="figure">$2B</b><span class="pncx-l" data-k="label">the first sovereign bond of its kind</span></div>
         <div class="pncx-src"><span class="pncx-w">Chile, 2022</span><a class="pncx-s" data-k="source" href="https://biblio.hacienda.cl/chile-s-sustainability-linked-bond-report/2-2022-slb-bond-issuance-and-slb-framework" target="_blank" rel="noopener">Ministry of Finance of Chile, 2022</a></div>
       </li>
       <li class="pncx-r" data-id="standard-tokens" style="--i:4">
         <span class="pncx-n" aria-hidden="true">05</span>
         <div class="pncx-what"><h3 class="pncx-h3">Standard Tokens</h3><span class="pncx-own">Designed by Perfect Nations</span><p class="pncx-p" data-k="headline">A citizen-scale share in one basic living standard.</p></div>
-        <div class="pncx-fig"><b class="pncx-f" data-k="figure">KES 3,000</b><span class="pncx-l" data-k="label">to own a Kenyan government bond, by phone</span></div>
+        <div class="pncx-fig"><b class="pncx-f is-money" data-k="figure">KES 3,000</b><span class="pncx-l" data-k="label">to own a Kenyan government bond, by phone</span></div>
         <div class="pncx-src"><span class="pncx-w"><a href="https://perfectnations.org/blueprints/kenya/">Precedent: Kenya, 2017</a></span><a class="pncx-s" data-k="source" href="https://www.fsdkenya.org/blogs-publications/blog/the-story-of-m-akiba-selling-kenyan-treasury-bonds-via-mobile/" target="_blank" rel="noopener">FSD Kenya, 2017</a></div>
       </li>
       </ol>
@@ -1035,7 +1204,7 @@ TO CHANGE THE PORTRAIT: replace the address inside src="..." of the img in #ab-p
 <!-- /GENERATED:CAPITAL -->
 <div class="pn-rule" aria-hidden="true"></div>
 <!-- GENERATED:CAPITA (from pages/home-perfect-capita.html by tools/build_about.py; do not edit here) -->
-<!-- part: pages/home-perfect-capita.html v6.3 -->
+<!-- part: pages/home-perfect-capita.html v7.0 -->
 <style>
 #pn-capita{
   --g:var(--pn-brand-gold,#E3C258); --gs:#F0D68F; --iv:#F5F1E8; --ink:#1A140C;
@@ -1245,6 +1414,60 @@ TO CHANGE THE PORTRAIT: replace the address inside src="..." of the img in #ab-p
   #pn-capita .pc4-rm > p{ font-size:.8rem; }
 }
 
+/* ---------- v7.0 LIGHT (the Steward-General, 10 Nov 2026: "the site is a little dark and heavy to read ...
+   make sections the lighter colour with the Earthrise for the accents"). A paper ground with ink type;
+   the seven stars rise from the cup on an Earthrise panel (the logo is never drawn in gold straight onto
+   ivory), and the price of Perfect Barbados is an Earthrise tile in a white card; Earthrise for the headline,
+   the numbers and the outline button; terracotta for the eyebrow and Perfect Capita; gold only for the
+   button and money (a deep gold on light). */
+#pn-capita{
+  --tm:#34464A; --td:#5C696C; --hair:rgba(16,38,43,.13); --em:#8A3A22;
+  color:#10262B;
+  background:
+    radial-gradient(48% 60% at 96% 0%, rgba(227,194,88,.16) 0%, rgba(227,194,88,0) 70%),
+    radial-gradient(40% 60% at 0% 100%, rgba(11,61,69,.06) 0%, rgba(11,61,69,0) 70%),
+    linear-gradient(180deg,#FBF8F1 0%,#F6EFE0 100%);
+}
+#pn-capita .pc4-eb,#pn-capita .pc4-eb .pc4-step{ color:#8A3A22; }
+#pn-capita .pn-ch{ border-color:rgba(11,61,69,.6); color:#0B3D45; }
+#pn-capita .pn-ch:hover{ background:#0B3D45; color:#F5F1E8; }
+#pn-capita .pn-ch:focus-visible{ outline-color:#0B3D45; }
+#pn-capita h2.pc4-h2{ color:#0B3D45 !important; }
+#pn-capita .pc4-def{ color:#34464A; }
+/* the seven stars and the cup: an Earthrise panel, the accent of the section */
+#pn-capita .pc4-wheelcol{
+  --tm:rgba(245,241,232,.84); --td:rgba(245,241,232,.66); --hair:rgba(245,241,232,.16); --em:#F0D68F;
+  color:#F5F1E8; padding:clamp(14px,2vw,24px) clamp(12px,1.6vw,22px) clamp(14px,1.8vw,20px);
+  border-radius:22px; border:1px solid rgba(227,194,88,.3);
+  background:
+    radial-gradient(48% 52% at 50% 34%, rgba(227,194,88,.14) 0%, rgba(227,194,88,0) 66%),
+    radial-gradient(50% 55% at 96% 100%, rgba(120,200,205,.14) 0%, rgba(120,200,205,0) 64%),
+    linear-gradient(165deg,#10505F 0%,#0B3D45 46%,#082A30 100%);
+  box-shadow:0 18px 44px rgba(11,61,69,.28);
+}
+/* the sum: a white card, its total an Earthrise tile */
+#pn-capita .pc4-sum{
+  background:#FFFDF8; border-color:rgba(16,38,43,.12);
+  box-shadow:0 1px 0 rgba(255,255,255,.9) inset, 0 10px 26px rgba(16,38,43,.08);
+}
+#pn-capita .pc4-t{ background:rgba(11,61,69,.055); }
+#pn-capita .pc4-t b{ color:#0B3D45; }
+#pn-capita .pc4-t b.pc4-money{ color:#8C6A12; }
+#pn-capita .pc4-t--total{ background:linear-gradient(165deg,#10505F 0%,#0B3D45 52%,#09313A 100%); box-shadow:0 10px 24px rgba(11,61,69,.22); }
+#pn-capita .pc4-t--total b.pc4-money{ color:#E3C258; }
+#pn-capita .pc4-t--total span{ color:rgba(245,241,232,.86); }
+#pn-capita .pc4-btn--gold{ box-shadow:0 10px 24px rgba(140,106,18,.22); }
+#pn-capita .pc4-btn--line{ background:transparent; color:#0B3D45; border-color:rgba(11,61,69,.45); }
+#pn-capita .pc4-btn--line:hover{ background:rgba(11,61,69,.07); color:#0B3D45; }
+#pn-capita .pc4-btn:focus-visible,#pn-capita .pc4-rest a:focus-visible,#pn-capita .pc4-head a:focus-visible{ outline-color:#0B3D45; }
+#pn-capita .pc4-rm summary{ color:#0B3D45; }
+#pn-capita .pc4-rm summary::before{ border-color:rgba(11,61,69,.5); }
+#pn-capita .pc4-rm summary:hover{ color:#8A3A22; }
+#pn-capita .pc4-rm summary:focus-visible{ outline-color:#0B3D45; }
+@media (max-width:640px){
+  #pn-capita .pc4-wheelcol{ padding:12px 10px 12px; border-radius:18px; }
+}
+
 </style>
 <section id="pn-capita" aria-labelledby="pc4-h">
   <span id="pn-hpc" hidden></span>
@@ -1381,7 +1604,7 @@ TO CHANGE THE PORTRAIT: replace the address inside src="..." of the img in #ab-p
 <!-- /GENERATED:CAPITA -->
 <div class="pn-rule" aria-hidden="true"></div>
 <!-- GENERATED:VISION (from pages/home-vision.html by tools/build_about.py; do not edit here) -->
-<!-- part: pages/home-vision.html v6.4 -->
+<!-- part: pages/home-vision.html v7.0 -->
 <style>
 #pn-vision{
   --bg:#0E4563; --bg2:#0A3550; --plate:#0A3550; --plate2:#072638;
@@ -1500,6 +1723,24 @@ TO CHANGE THE PORTRAIT: replace the address inside src="..." of the img in #ab-p
 /* v6.0 */
 #pn-vision{ --bg:#0B3D45; --bg2:#082A30; --plate:#0A3840; --plate2:#072A30; }
 #pn-vision p,#pn-vision b{ text-shadow:none !important; }
+
+/* ---------- v7.0 LIGHT (the Steward-General, 10 Nov 2026: "the site is a little dark and heavy to read ...
+   make sections the lighter colour with the Earthrise for the accents"). The photograph stays at full colour;
+   below it the ground is paper, and the quote plate, which carries the logo and the portrait, stays an
+   Earthrise card with its ivory type and gold details, rising over the photograph's edge. */
+#pn-vision{
+  background:
+    radial-gradient(48% 60% at 96% 0%, rgba(227,194,88,.16) 0%, rgba(227,194,88,0) 70%),
+    radial-gradient(40% 60% at 0% 100%, rgba(11,61,69,.06) 0%, rgba(11,61,69,0) 70%),
+    linear-gradient(180deg,#FBF8F1 0%,#F6EFE0 100%);
+}
+#pn-vision::before{ opacity:.04; }
+#pn-vision .pnfv-plate{
+  background:
+    radial-gradient(70% 90% at 0% 0%, rgba(227,194,88,.14) 0%, rgba(227,194,88,0) 62%),
+    linear-gradient(165deg,#10505F 0%,#0B3D45 48%,#09313A 100%);
+  box-shadow:0 22px 50px rgba(11,61,69,.32);
+}
 </style>
 
 <section id="pn-vision" aria-labelledby="pnfv-h" style="--pnfv-img:url('https://perfectnations.org/wp-content/uploads/2026/04/20260315_135326-1-e1775330836566.jpg');">
@@ -1670,7 +1911,7 @@ TO CHANGE THE PORTRAIT: replace the address inside src="..." of the img in #ab-p
 <div class="pn-rule" aria-hidden="true"></div>
 
 <!-- GENERATED:PLEDGE (from pages/home-pledge.html by tools/build_about.py; do not edit here) -->
-<!-- part: pages/home-pledge.html v7.0 -->
+<!-- part: pages/home-pledge.html v8.0 -->
 <style>
 #pn-pledge{
   --bg:#0F4C5C; --bg2:#082A30;
@@ -1776,6 +2017,29 @@ TO CHANGE THE PORTRAIT: replace the address inside src="..." of the img in #ab-p
 @media (prefers-reduced-motion:reduce){
   #pn-pledge *{ transition:none !important; animation:none !important; }
 }
+
+/* ---------- v7.0 LIGHT (the Steward-General, 10 Nov 2026: lighter sections, Earthrise for the accents).
+   A paper ground with ink type; Earthrise for the headline, the numbers and the arrows; terracotta eyebrow;
+   gold only for the buttons. The footer below stays deep, so the page ends on light reading, then the rule. */
+#pn-pledge{
+  --fg:#10262B; --mut:#34464A; --dim:#5C696C; --hair:rgba(16,38,43,.14);
+  color:#10262B;
+  background:
+    radial-gradient(55% 110% at 88% 0%, rgba(227,194,88,.16) 0%, rgba(227,194,88,0) 64%),
+    radial-gradient(40% 90% at 0% 100%, rgba(11,61,69,.06) 0%, rgba(11,61,69,0) 70%),
+    linear-gradient(180deg,#FBF8F1 0%,#F6EFE0 100%) !important;
+}
+#pn-pledge .pnpl-eb{ color:#8A3A22; }
+#pn-pledge .pnpl-eb::before{ background:rgba(138,58,34,.55); }
+#pn-pledge h2.pnpl-h{ color:#0B3D45 !important; }
+#pn-pledge .pnpl-ways small{ border-color:rgba(11,61,69,.55); color:#0B3D45; }
+#pn-pledge .pnpl-ways a::after{ color:#0B3D45; }
+#pn-pledge .pnpl-ways a:hover{ background:rgba(11,61,69,.06); }
+#pn-pledge .pnpl-ways a:hover::after{ color:#8A3A22; }
+#pn-pledge .pnpl-btn{ background:#E3C258; border-color:#E3C258; color:#1A140C !important; box-shadow:0 10px 24px rgba(140,106,18,.22); }
+#pn-pledge .pnpl-btn:hover{ background:#F0D68F; border-color:#F0D68F; }
+#pn-pledge .pnpl-btn--line{ background:transparent; color:#0B3D45 !important; border-color:rgba(11,61,69,.45); box-shadow:none; }
+#pn-pledge .pnpl-btn--line:hover{ background:rgba(11,61,69,.07); }
 </style>
 
 <section id="pn-pledge" aria-labelledby="pnpl-h">
