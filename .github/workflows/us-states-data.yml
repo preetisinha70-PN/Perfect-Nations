@@ -1,4 +1,4 @@
-# Temporary: pulls the official figures for the 50 States page into data/us/raw/ on this branch only.
+# Temporary (run 2): pulls the official figures for the 50 States page into data/us/raw/ on this branch only.
 # Census Bureau (ACS 1-year, Population Estimates) and BEA (GDP by state). Removed before the page goes for approval.
 name: us-states-data
 on:
@@ -19,14 +19,17 @@ jobs:
           mkdir -p data/us/raw
           cd data/us/raw
           get(){ for i in 1 2 3; do curl -sSL -m 120 -A "Mozilla/5.0 PerfectNations-data" -o "$1" -w "$1 %{http_code} %{size_download}\n" "$2" && [ -s "$1" ] && head -c 1 "$1" | grep -q . && return 0; sleep 5; done; return 1; }
+          rm -f acs1-*.json errors.txt
           for Y in 2025 2024; do
-            get acs1-profile-$Y-states.json "https://api.census.gov/data/$Y/acs/acs1/profile?get=NAME,DP05_0001E,DP03_0128PE,DP03_0062E,DP03_0099PE&for=state:*"
-            get acs1-profile-$Y-us.json "https://api.census.gov/data/$Y/acs/acs1/profile?get=NAME,DP05_0001E,DP03_0128PE,DP03_0062E,DP03_0099PE&for=us:1"
-            get acs1-subject-$Y-states.json "https://api.census.gov/data/$Y/acs/acs1/subject?get=NAME,S1701_C01_001E,S1701_C02_001E,S1701_C03_001E&for=state:*"
-            get acs1-subject-$Y-us.json "https://api.census.gov/data/$Y/acs/acs1/subject?get=NAME,S1701_C01_001E,S1701_C02_001E,S1701_C03_001E&for=us:1"
-            for V in DP05_0001E DP03_0128PE DP03_0062E DP03_0099PE; do get var-$Y-$V.json "https://api.census.gov/data/$Y/acs/acs1/profile/variables/$V.json"; done
-            for V in S1701_C01_001E S1701_C02_001E S1701_C03_001E; do get var-$Y-$V.json "https://api.census.gov/data/$Y/acs/acs1/subject/variables/$V.json"; done
+            get acsdt1y$Y-b17001-all.dat "https://www2.census.gov/programs-surveys/acs/summary_file/$Y/table-based-SF/data/1YRData/acsdt1y$Y-b17001.dat"
+            if [ -s acsdt1y$Y-b17001-all.dat ]; then
+              head -1 acsdt1y$Y-b17001-all.dat | cut -c1-400 > acsdt1y$Y-b17001-header.txt
+              awk -F'|' 'NR==1 || $1 ~ /^0100000US$/ || $1 ~ /^0400000US/ {print $1"|"$2"|"$3}' acsdt1y$Y-b17001-all.dat > acsdt1y$Y-b17001-states.dat
+              rm -f acsdt1y$Y-b17001-all.dat
+            fi
           done
+          get est24all.xls "https://www2.census.gov/programs-surveys/saipe/datasets/2024/2024-state-and-county/est24all.xls"
+          get est24-us.txt "https://www2.census.gov/programs-surveys/saipe/datasets/2024/2024-state-and-county/est24-us.txt"
           get NST-EST2025-ALLDATA.csv "https://www2.census.gov/programs-surveys/popest/datasets/2020-2025/state/totals/NST-EST2025-ALLDATA.csv"
           get NST-EST2024-ALLDATA.csv "https://www2.census.gov/programs-surveys/popest/datasets/2020-2024/state/totals/NST-EST2024-ALLDATA.csv"
           get SAGDP.zip "https://apps.bea.gov/regional/zip/SAGDP.zip"
@@ -34,7 +37,7 @@ jobs:
           for f in *; do echo "$f $(wc -c < "$f")"; done > manifest.txt
           date -u +%Y-%m-%dT%H:%MZ > pulled-at.txt
           # keep only files that are not error pages
-          for f in *.json; do head -c 1 "$f" | grep -q '\[' || { echo "bad $f: $(head -c 200 "$f")" >> errors.txt; }; done
+          for f in var-*.json; do head -c 1 "$f" | grep -q '\[' || { echo "bad $f: $(head -c 200 "$f")" >> errors.txt; }; done
       - name: Commit
         run: |
           git config user.name "Perfect Nations data"
