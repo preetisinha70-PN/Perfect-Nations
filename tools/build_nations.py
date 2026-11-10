@@ -90,7 +90,8 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 PAGES, DATA, HERE = ROOT / 'pages', ROOT / 'data', ROOT / 'tools' / 'nation'
-VERSION = '11.7'  # Discuss this Solution on every designed Solution; Plan a Blueprint Lab opens The Blueprint Lab, ?about=lab (the Steward-General, 10 Nov 2026)
+VERSION = '11.8'  # Discuss this Solution on every designed Solution; Plan a Blueprint Lab opens The Blueprint Lab, ?about=lab (the Steward-General, 10 Nov 2026)
+# v11.7: the letterhead carries the registered mark, Perfect Nations&#174; (10 Nov 2026)
 # v11.6: the close button of every pop-up is one design: a gold X drawn as two strokes, centred in a circle (the Steward-General, 9 Nov 2026)
 EARTH = {'lg': 'https://perfectnations.org/wp-content/uploads/2026/10/pn-globe-earth-day-1536x768.jpg',
          'sm': 'https://perfectnations.org/wp-content/uploads/2026/10/pn-globe-earth-day-1024x512.jpg'}
@@ -566,7 +567,7 @@ def solution_card(x, sig_name, sig_role):
     fig = ''
     if x.get('figure'):
         fig = '<p class="bpx-sol__fig"><b>%s</b>%s</p>' % (ent(x['figure']), '<span>%s</span>' % ent(x['caption']) if x.get('caption') else '')
-    # v11.7: a Solution Perfect Nations designs also offers "Discuss this Solution", which opens the Contact page
+    # v11.8: a Solution Perfect Nations designs also offers "Discuss this Solution", which opens the Contact page
     # on Discuss a Solution with this Solution and its nation chosen (?about=solution-NN&country=Nation)
     talk = ''
     if x.get('kind') == 'design' and no:
@@ -728,7 +729,7 @@ def letter(d, p):
         '<div class="bpx-letter__grid"><figure class="bpx-port"><span class="bpx-frame">'
         '<img src="%s"%s alt="%s" width="%d" height="%d" loading="lazy" decoding="async"></span>'
         '<figcaption class="bpx-frame__cap">%s<small>Nation Portrait &#183; %s<a href="https://perfectnations.org/art-of-nations/" target="_blank" rel="noopener noreferrer">Art of Nations</a></small></figcaption></figure>'
-        '<article class="bpx-sheet"><div class="bpx-sheet__lh"><span>Perfect Nations&#8482; &#183; Letters to the Nations</span><span>%s</span></div>'
+        '<article class="bpx-sheet"><div class="bpx-sheet__lh"><span>Perfect Nations&#174; &#183; Letters to the Nations</span><span>%s</span></div>'
         '<h2 class="bpx-sheet__dear" id="bp-letter-h">Dear %s,</h2>%s<p class="bpx-sheet__q">%s</p>'
         '<div class="bpx-sheet__foot"><span class="bpx-sig">Yours in design,<b>Preeti Sinha</b><small>President and CEO, Perfect Nations</small></span>'
         '<a class="bpx-btn" href="%s" target="_blank" rel="noopener noreferrer">Read the full letter</a></div></article></div>'

@@ -1,5 +1,5 @@
 (function () {
-  /* Blueprint v11.7: a designed Solution offers Discuss this Solution; Plan a Blueprint Lab opens The Blueprint Lab.
+  /* Blueprint v11.8: a designed Solution offers Discuss this Solution; Plan a Blueprint Lab opens The Blueprint Lab.
      v11.5: the page follows its Nation Steward and the State of Nations.
      v11.5: the register reads "Capital already committed" (the anchor #bp-register and the key capital.register are
        unchanged); "Already working in" the nation is its own band after 02 Capital, its cards built as h3 under
@@ -374,7 +374,7 @@
     sig.appendChild(el('b', '', sigName)); sig.appendChild(el('small', '', sigRole)); foot.appendChild(sig);
     var acts = el('span', 'bpx-sol__acts');
     acts.appendChild(link(el('a', 'bpx-btn', deal ? 'Read the Deal Note' : 'Read the Solution'), href));
-    /* v11.7: a designed Solution also offers Discuss this Solution (the Contact page, that Solution chosen) */
+    /* v11.8: a designed Solution also offers Discuss this Solution (the Contact page, that Solution chosen) */
     if (design && x.no) {
       acts.appendChild(link(el('a', 'bpx-btn bpx-btn--line', 'Discuss this Solution'),
         'https://perfectnations.org/contact/?about=solution-' + (+x.no) + '&country=' + encodeURIComponent(x.nation || CFG.name)));
