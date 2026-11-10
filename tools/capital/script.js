@@ -22,40 +22,79 @@
     }, 4000);
   }
 
-  /* the toolkit on phones: one family at a time, chosen from the chips (All shows every line) */
+  /* the toolkit: one family at a time from the chips, on every screen (All shows every line), and a search
+     across all of them. Without script every family shows. */
   var idx = root.querySelector('.pca-idx');
   var chips = idx ? idx.querySelectorAll('.pca-jump a[data-f]') : [];
   var fams = idx ? idx.querySelectorAll('.pca-fam') : [];
-  var phone = window.matchMedia ? window.matchMedia('(max-width:640px)') : null;
+  var find = idx ? idx.querySelector('.pca-find input') : null;
+  var found = idx ? idx.querySelector('.pca-found') : null;
   var current = fams.length ? fams[0].id : 'all';
+  function each(list, fn){ Array.prototype.forEach.call(list, fn); }
   function pick(id){
     current = id;
-    Array.prototype.forEach.call(fams, function(f){ f.classList.toggle('is-on', id === 'all' || f.id === id); });
-    Array.prototype.forEach.call(chips, function(c){
+    each(fams, function(f){ f.classList.toggle('is-on', id === 'all' || f.id === id); });
+    each(chips, function(c){
       var on = c.getAttribute('data-f') === id;
       c.classList.toggle('is-on', on);
       if (on) { c.setAttribute('aria-current', 'true'); } else { c.removeAttribute('aria-current'); }
     });
   }
-  function mode(){
+  function clearFind(){
     if (!idx) { return; }
-    var tabs = !!(phone && phone.matches);
-    idx.classList.toggle('is-tabs', tabs);
-    if (tabs) { pick(current); }
+    idx.classList.remove('is-search');
+    each(idx.querySelectorAll('.pca-rows > li'), function(li){ li.hidden = false; });
+    each(fams, function(f){ f.classList.remove('is-empty'); });
+    if (found) { found.hidden = true; found.textContent = ''; }
   }
-  Array.prototype.forEach.call(chips, function(c){
-    c.addEventListener('click', function(e){
-      if (!(phone && phone.matches)) { return; }
-      e.preventDefault();
-      pick(c.getAttribute('data-f'));
-      var top = c.getBoundingClientRect().top;
-      if (top < 0) { window.scrollBy({ top: top - 80, behavior: still ? 'auto' : 'smooth' }); }
+  function search(){
+    var q = (find.value || '').toLowerCase().replace(/\s+/g, ' ').trim();
+    if (!q) { clearFind(); pick(current); return; }
+    idx.classList.add('is-search');
+    var total = 0;
+    each(fams, function(f){
+      var hits = 0;
+      each(f.querySelectorAll('.pca-rows > li'), function(li){
+        var hay = li.getAttribute('data-q');
+        if (hay === null) { hay = (f.querySelector('h3') ? f.querySelector('h3').textContent + ' ' : '') + li.textContent; hay = hay.toLowerCase().replace(/\s+/g, ' '); li.setAttribute('data-q', hay); }
+        var ok = hay.indexOf(q) !== -1;
+        li.hidden = !ok;
+        if (ok) { hits++; }
+      });
+      f.classList.toggle('is-empty', !hits);
+      total += hits;
     });
-  });
-  if (phone){
-    if (phone.addEventListener) { phone.addEventListener('change', mode); } else if (phone.addListener) { phone.addListener(mode); }
+    each(chips, function(c){ c.classList.remove('is-on'); c.removeAttribute('aria-current'); });
+    if (found) { found.hidden = false; found.textContent = total ? total + (total === 1 ? ' instrument found' : ' instruments found') : 'No instrument found. Try another word.'; }
   }
-  mode();
+  if (idx && fams.length){
+    idx.classList.add('is-tabs');
+    pick(current);
+    each(chips, function(c){
+      c.addEventListener('click', function(e){
+        e.preventDefault();
+        if (find) { find.value = ''; }
+        clearFind();
+        pick(c.getAttribute('data-f'));
+        var top = idx.querySelector('.pca-jump').getBoundingClientRect().top;
+        if (top < 0) { window.scrollBy({ top: top - 90, behavior: still ? 'auto' : 'smooth' }); }
+      });
+    });
+    if (find){
+      var t = null;
+      find.addEventListener('input', function(){ window.clearTimeout(t); t = window.setTimeout(search, 120); });
+      find.addEventListener('keydown', function(e){ if (e.key === 'Escape') { find.value = ''; clearFind(); pick(current); } });
+      find.addEventListener('search', function(){ if (!find.value) { clearFind(); pick(current); } });
+    }
+    /* a link to one line (#pca-i-...) opens its family and the line */
+    var h = (window.location.hash || '').slice(1);
+    var target = h && /^pca-i-[a-z0-9-]+$/.test(h) ? document.getElementById(h) : null;
+    if (target){
+      var fam = target.closest ? target.closest('.pca-fam') : null;
+      if (fam) { pick(fam.id); }
+      target.open = true;
+    }
+  }
 
   /* the nations on record: the first few, then all */
   var list = root.querySelector('.pca-nats');
