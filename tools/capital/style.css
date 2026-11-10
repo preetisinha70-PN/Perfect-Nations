@@ -70,18 +70,17 @@
 
 /* ---------- 1 hero: Earthrise ---------- */
 #pn-arch .pca-hero{ background:radial-gradient(70% 60% at 85% 0%, rgba(47,181,140,.16) 0%, transparent 62%), linear-gradient(180deg,#0B3D45 0%,#0A353C 100%); }
-#pn-arch .pca-top{ display:grid; gap:18px 48px; grid-template-columns:minmax(0,1fr); align-items:end; }
-@media (min-width:1000px){ #pn-arch .pca-top{ grid-template-columns:minmax(0,1.35fr) minmax(0,.65fr); } }
-#pn-arch .pca-cup{ display:block; width:clamp(66px,5.2vw,94px); aspect-ratio:2/1; margin:0 0 6px; color:var(--g); }
-#pn-arch .pca-cup svg{ display:block; width:100%; height:100%; }
+#pn-arch .pca-top{ display:grid; gap:14px 48px; grid-template-columns:minmax(0,1fr); align-items:center; }
+@media (min-width:1000px){ #pn-arch .pca-top{ grid-template-columns:minmax(0,1.5fr) minmax(0,.5fr); } }
+/* the mark: the laurels of the logo, alone, in its one gold (02 Capital on the homepage) */
+#pn-arch .pca-defs{ position:absolute; width:0; height:0; overflow:hidden; }
+#pn-arch .pca-mark{ display:flex; flex-direction:column; align-items:center; gap:8px; margin:0; text-align:center; }
+#pn-arch .pca-wreath{ display:block; width:clamp(140px,13vw,196px); aspect-ratio:1; fill:#E3C258; overflow:visible; filter:drop-shadow(0 10px 28px rgba(227,194,88,.22)); }
+#pn-arch .pca-mark figcaption{ max-width:22ch; font-family:var(--hd); font-size:.68rem; font-weight:700; letter-spacing:.16em; line-height:1.45; text-transform:uppercase; color:var(--dim); }
 #pn-arch h1.pca-h1{
   margin:0; max-width:19ch; font-family:var(--hd); font-weight:600; color:var(--fg) !important;
   font-size:clamp(2.4rem,4.9vw,4.7rem); line-height:.92; letter-spacing:-.025em; text-wrap:balance;
 }
-#pn-arch .pca-stats{ display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:8px; margin:0; padding:0; list-style:none; }
-#pn-arch .pca-stats li{ padding:12px 14px 10px; border-radius:14px; background:rgba(244,236,216,.07); border:1px solid var(--hair); }
-#pn-arch .pca-stats b{ display:block; font-family:var(--hd); font-weight:700; font-size:clamp(1.8rem,2.6vw,2.4rem); line-height:1; color:var(--fg); font-variant-numeric:tabular-nums; }
-#pn-arch .pca-stats span{ display:block; margin-top:4px; font-family:var(--hd); font-size:.64rem; font-weight:700; letter-spacing:.18em; text-transform:uppercase; color:var(--dim); }
 #pn-arch .pca-five-h{ display:flex; flex-wrap:wrap; align-items:baseline; justify-content:space-between; gap:6px 20px; margin:clamp(20px,3vh,30px) 0 12px; }
 #pn-arch .pca-five-h h2{ margin:0; font-family:var(--hd); font-size:.74rem; font-weight:700; letter-spacing:.26em; text-transform:uppercase !important; color:var(--g) !important; }
 #pn-arch .pca-five-h a{ font-family:var(--hd); font-size:.7rem; font-weight:700; letter-spacing:.18em; text-transform:uppercase; color:var(--g); text-decoration:none; }
@@ -167,6 +166,7 @@
 #pn-arch .pca-rec{ background:linear-gradient(180deg,#0F4C5C 0%,#0C4250 100%); }
 #pn-arch .pca-rec__top{ display:grid; gap:18px 48px; grid-template-columns:minmax(0,1fr); align-items:start; }
 @media (min-width:1000px){ #pn-arch .pca-rec__top{ grid-template-columns:minmax(0,1fr) minmax(0,1fr); } }
+#pn-arch .pca-rec h2.pca-h2{ max-width:none; }
 #pn-arch .pca-rec__ins{ margin:12px 0 0; max-width:52ch; font-size:clamp(.98rem,1.15vw,1.08rem); line-height:1.5; color:var(--mut); }
 #pn-arch .pca-rec__ins b{ color:var(--fg); font-weight:600; }
 #pn-arch .pca-bars{ margin:0; padding:0; list-style:none; display:grid; gap:7px; }
@@ -225,11 +225,9 @@
   #pn-arch h1.pca-h1{ font-size:clamp(2.15rem,9.8vw,2.7rem); }
   #pn-arch h2.pca-h2{ font-size:clamp(1.8rem,8vw,2.3rem); }
   #pn-arch .pca-lead,#pn-arch .pca-rec__ins{ font-size:.96rem; }
-  #pn-arch .pca-cup{ width:64px; }
-  #pn-arch .pca-stats{ grid-template-columns:repeat(4,minmax(0,1fr)); gap:6px; }
-  #pn-arch .pca-stats li{ padding:9px 8px 7px; border-radius:12px; }
-  #pn-arch .pca-stats b{ font-size:1.5rem; }
-  #pn-arch .pca-stats span{ font-size:.54rem; letter-spacing:.1em; }
+  #pn-arch .pca-mark{ order:-1; flex-direction:row; justify-content:flex-start; gap:12px; text-align:left; }
+  #pn-arch .pca-wreath{ width:60px; filter:none; }
+  #pn-arch .pca-mark figcaption{ max-width:none; font-size:.6rem; letter-spacing:.12em; }
   #pn-arch .pca-five{ grid-template-columns:repeat(2,minmax(0,1fr)) !important; gap:8px; }
   #pn-arch .pca-five > li{ grid-column:auto !important; }
   #pn-arch .pca-five > li:first-child{ grid-column:1 / -1 !important; }
@@ -265,5 +263,5 @@
   #pn-arch .pca-nat__t{ font-size:.72rem; }
   #pn-arch .pca-rec__foot .pca-btn,#pn-arch .pca-btns .pca-btn{ width:100%; }
 }
-#pn-arch .pca-links a[target]::after,#pn-arch .pca-t__src a[target]::after{ content:" \2197"; font-family:Arial,sans-serif; letter-spacing:0; }
+#pn-arch .pca-links a[target]::after,#pn-arch .pca-t__src a[target]::after{ content:"\00a0\2197"; font-family:Arial,sans-serif; letter-spacing:0; }
 #pn-arch .pca-links a.pca-bp::after{ content:" \2192"; font-family:Arial,sans-serif; letter-spacing:0; }

@@ -42,7 +42,7 @@ ROOT = Path(__file__).resolve().parent.parent
 PAGES = ROOT / 'pages'
 DATA = ROOT / 'data'
 HERE = Path(__file__).resolve().parent / 'capital'
-VERSION = '5.2'
+VERSION = '5.3'
 NOT_NATIONS = {'state-of-nations', 'ticker', 'blueprints', 'capital-architecture'}
 
 # Who carries each line on record (the register's cat field), in the words a visitor reads.
@@ -116,13 +116,21 @@ def count_record(doc):
     return doc
 
 
-def cup():
-    """The cup of the logo, as drawn in the site header (pages/header.html), so every page shares one."""
-    src = (PAGES / 'header.html').read_text(encoding='utf-8')
-    m = re.search(r'<svg[^>]*data-pn-cup="1"[^>]*>.*?</svg>', src, re.S)
-    if not m:
-        sys.exit('the cup icon was not found in pages/header.html')
-    return re.sub(r'class="[^"]*"', 'class="pca-cup__svg"', m.group(0), count=1)
+def wreath():
+    """The laurels of the logo, drawn alone in one gold: the mark of Capital Architecture (the Steward-General,
+    8 Nov 2026: the laurels stand for capital from every source, lifting the cup). The shape and its clip come
+    from the logo kit (pages/home-logo-kit.html), renamed so they never meet the kit's own ids. Never put the
+    word "laurel" in a class name on this site: the header replaces any drawing so named with the cup."""
+    src = (PAGES / 'home-logo-kit.html').read_text(encoding='utf-8')
+    shape = re.search(r'<path id="pnk-cl"[^>]*/>', src, re.S)
+    clip = re.search(r'<clipPath id="pnk-lc".*?</clipPath>', src, re.S)
+    if not shape or not clip:
+        sys.exit('the laurels (pnk-cl, pnk-lc) were not found in pages/home-logo-kit.html')
+    defs = ('<svg class="pca-defs" width="0" height="0" aria-hidden="true" focusable="false"><defs>%s%s</defs></svg>'
+            % (shape.group(0).replace('id="pnk-cl"', 'id="pca-k-cl"'), clip.group(0).replace('id="pnk-lc"', 'id="pca-k-lc"')))
+    art = ('<svg class="pca-wreath" viewBox="10 63.75 491 491" aria-hidden="true" focusable="false">'
+           '<use href="#pca-k-cl" clip-path="url(#pca-k-lc)"/></svg>')
+    return defs, art
 
 
 def one_line(text):
@@ -146,13 +154,7 @@ def fig_html(item, cls):
 
 
 def hero(doc, n_inst, n_fam):
-    h, rec = doc['hero'], doc['record']
-    stats = [
-        (str(n_inst), 'Instruments', ''), (str(n_fam), 'Families', ''),
-        ('{:,}'.format(rec['count']), 'On record', 'count'), (str(rec['nations']), 'Nations', 'nations'),
-    ]
-    li = ''.join('<li><b%s>%s</b><span>%s</span></li>' % (' data-pca-n="%s"' % k if k else '', ent(v), ent(l))
-                 for v, l, k in stats)
+    h = doc['hero']
     five = doc['five']
     tiles = []
     for i, t in enumerate(five['items']):
@@ -172,16 +174,17 @@ def hero(doc, n_inst, n_fam):
             % (i, ' pca-t--own' if t.get('own') else '', ent(https(t['image'])), ent(t['alt']),
                'eager' if i < 2 else 'lazy', i + 1, ent(t['tag']), ent(t['name']), ent(t['headline']),
                ent(t['figure']), ent(t['label']), src))
+    defs, art = wreath()
     return (
-        '<section class="pca-band pca-hero" aria-labelledby="pca-h1"><div class="pca-in">'
-        '<div class="pca-top"><div><span class="pca-cup">%s</span><p class="pca-eb">%s</p>'
+        '<section class="pca-band pca-hero" aria-labelledby="pca-h1">%s<div class="pca-in">'
+        '<div class="pca-top"><div class="pca-top__t"><p class="pca-eb">%s</p>'
         '<h1 class="pca-h1" id="pca-h1">%s</h1><p class="pca-lead">%s</p></div>'
-        '<ul class="pca-stats" aria-label="The toolkit in figures">%s</ul></div>'
+        '<figure class="pca-mark">%s<figcaption>%s</figcaption></figure></div>'
         '<div class="pca-five-h"><h2>%s</h2><a href="#pca-index">All %d instruments</a></div>'
         '<ul class="pca-five">%s</ul><p class="pca-note">%s</p>'
         '</div></section>'
-        % (cup(), ent(h['eyebrow']), ent(h['title']), ent(one_line(h['lead'])[0]), li, ent(five['label']), n_inst,
-           ''.join(tiles), ent(five['note'])))
+        % (defs, ent(h['eyebrow']), ent(h['title']), ent(one_line(h['lead'])[0]), art, ent(h.get('mark', '')),
+           ent(five['label']), n_inst, ''.join(tiles), ent(five['note'])))
 
 
 def index(doc, bps):
@@ -240,17 +243,17 @@ def record(doc):
     nats = ''.join(
         '<li><a class="pca-nat" href="%s"><span class="pca-nat__h"><b>%s</b><span>%d on record</span></span>'
         '<span class="pca-nat__t"><span>%s</span>%s</span></a></li>'
-        % (ent(https(x['url'])), ent(x['name']), x['n'], ent(x['top']),
+        % (ent(https(x['url']) + '#bp-register'), ent(x['name']), x['n'], ent(x['top']),
            ('<em>%s</em>' if x['money'] else '<span>%s</span>') % ent(x['amount']) if x['amount'] else '')
         for x in r['list'])
     return (
         '<section class="pca-band pca-rec" id="pca-record" aria-labelledby="pca-rh"><div class="pca-in">'
         '<div class="pca-rec__top"><div><p class="pca-eb">%s</p>'
-        '<h2 class="pca-h2" id="pca-rh"><span data-pca-n="count">%s</span> deals on record across '
+        '<h2 class="pca-h2" id="pca-rh"><span data-pca-n="count">%s</span> instruments and investments across '
         '<span data-pca-n="nations">%d</span> nations</h2>'
         '<p class="pca-rec__ins"><b data-pca-n="multi">%s</b> come from multilateral institutions, <b data-pca-n="pi">%d</b> '
         'from private and impact investors: Capital Architecture is designed to close that gap.</p>%s</div>'
-        '<ul class="pca-bars" aria-label="Who finances the deals on record">%s</ul></div>'
+        '<ul class="pca-bars" aria-label="Who finances the capital already committed">%s</ul></div>'
         '<ul class="pca-nats">%s</ul>'
         '<div class="pca-rec__foot"><button class="pca-btn pca-btn--line pca-more-n" type="button" '
         'aria-expanded="false" hidden>Show all nations</button></div></div></section>'
@@ -300,6 +303,11 @@ deals on record, recounted from every blueprint and read live), a painted seam, 
 v5.1: Gold line in place of the painted botanical seams (the Steward-General, 9 Nov 2026).
 v5.2: Fewer words (the Steward-General, 9 Nov 2026): one headline and one line per section. The hero
 keeps one sentence; the rest of the toolkit lead and the record's method note sit under Read more.
+v5.3: in step with the homepage and the blueprints (the Steward-General, 10 Nov 2026). The laurels of the
+logo, in one gold, are the page's mark (02 Capital on the homepage); the cup and the figures row leave
+the hero, as on the homepage. The record takes the blueprints' name, Capital already committed, and each
+nation opens at that band of its blueprint. Debt-for-Nature Swap: Ecuador 2023, from its register. The
+close leads on to Solutions, step 03.
 =========================================================================== -->
 ''' % (VERSION, today)
     body = '\n'.join([

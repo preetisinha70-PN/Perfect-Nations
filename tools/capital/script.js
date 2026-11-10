@@ -125,7 +125,7 @@
         if (!url || n === null || !txt(x.name)) { return; }
         var li = el('li');
         var a = el('a', 'pca-nat');
-        a.href = url;
+        a.href = url + '#bp-register';
         var h = el('span', 'pca-nat__h');
         h.appendChild(el('b', '', txt(x.name)));
         h.appendChild(el('span', '', n + ' on record'));
