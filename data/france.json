@@ -1,0 +1,197 @@
+{
+ "nation": "France",
+ "page_version": "1.0",
+ "updated": "2026-11-10",
+ "steward": {
+  "name": "Camille Laurent",
+  "role": "Nation Steward of France"
+ },
+ "population": 68720337,
+ "hero": {
+  "lead": "A nation of 68.7 million with farmland across half its land, whose Treasury plans €310 billion of medium and long-term debt in 2026, net of buybacks.",
+  "stats": [
+   {
+    "value": "€310bn",
+    "label": "State financing programme, 2026"
+   },
+   {
+    "value": "115.5%",
+    "label": "Public debt, share of GDP, 2025"
+   },
+   {
+    "value": "0.4%",
+    "label": "Growth projected for 2026, IMF"
+   }
+  ]
+ },
+ "capital": {
+  "heading": "A Treasury the world lends to, and a living income for all.",
+  "record": [
+   {
+    "value": "€310bn",
+    "money": true,
+    "text": "Medium and long-term debt planned for 2026, net of buybacks",
+    "source": "Agence France Trésor, 2025",
+    "url": "https://www.aft.gouv.fr/en/node/13632"
+   },
+   {
+    "value": "53.8%",
+    "money": false,
+    "text": "Share of OATs held by non-residents, fourth quarter of 2025",
+    "source": "Agence France Trésor, 2026",
+    "url": "https://www.aft.gouv.fr/files/medias-aft/7_Publications/7.2_BM/432_Bulletin%20mensuel%20mai%202026.pdf"
+   },
+   {
+    "value": "115.5%",
+    "money": false,
+    "text": "General government gross debt, share of GDP, 2025",
+    "source": "IMF, WEO Oct 2026",
+    "url": "https://www.imf.org/external/datamapper/GGXWDG_NGDP@WEO/FRA"
+   },
+   {
+    "value": "0.4%",
+    "money": false,
+    "text": "Real GDP growth projected for 2026",
+    "source": "IMF, WEO Oct 2026",
+    "url": "https://www.imf.org/external/datamapper/NGDP_RPCH@WEO/FRA"
+   }
+  ],
+  "register": [
+   {
+    "cat": "govt",
+    "status": "Plan",
+    "tone": "active",
+    "name": "State financing programme, 2026",
+    "detail": "Agence France Trésor · 30 December 2025",
+    "amount": "€310bn",
+    "money": true,
+    "text": "OATs and index-linked OATs, net of buybacks; by mid-May 2026 the Treasury had completed 50.81% of the programme.",
+    "by": [
+     "French Republic"
+    ],
+    "url": "https://www.aft.gouv.fr/en/node/13632"
+   }
+  ]
+ },
+ "assets": {
+  "heading": "Five assets no balance sheet counts.",
+  "items": [
+   {
+    "name": "The Farmland",
+    "figure": "52.5%",
+    "money": false,
+    "label": "Of the land in agriculture, 2023",
+    "text": "Land that can feed the nation and earn abroad, valued and financed against its harvest."
+   },
+   {
+    "name": "The Forest",
+    "figure": "32.9%",
+    "money": false,
+    "label": "Of the land under forest, 2024",
+    "text": "Standing forest that stores carbon and water, and can earn as it stands."
+   },
+   {
+    "name": "The People",
+    "figure": "68.7m",
+    "money": false,
+    "label": "Citizens, 2025",
+    "text": "16.2% are under fifteen: the workforce and the market of the next generation."
+   },
+   {
+    "name": "The Fresh Water",
+    "figure": "2,933 m³",
+    "money": false,
+    "label": "Renewable fresh water a person, 2022",
+    "text": "Rain and rivers renewed every year: power, irrigation and drinking water."
+   },
+   {
+    "name": "The Clean Grid",
+    "figure": "22.8%",
+    "money": false,
+    "label": "Of electricity from renewable sources, 2021",
+    "text": "Power from water, wind and sun already flows; every new connection can be clean."
+   }
+  ]
+ },
+ "enterprises": {
+  "heading": "Already working in France.",
+  "items": []
+ },
+ "coverage": {
+  "set_by": "Livelihood",
+  "gap": "15.6%",
+  "gap_text": "Of people in France live below the national poverty line.",
+  "perfect_capita": "To set"
+ },
+ "guarantees": [
+  {
+   "name": "Food",
+   "value": 91.6,
+   "display": "91.6%",
+   "note": "Not food insecure; 8.4% are moderately or severely food insecure",
+   "source": "FAO, 2023",
+   "url": "https://data.worldbank.org/indicator/SN.ITK.MSFI.ZS?locations=FR"
+  },
+  {
+   "name": "Water",
+   "value": 99.7,
+   "display": "99.7%",
+   "note": "Safely managed drinking water",
+   "source": "WHO/UNICEF, 2024",
+   "url": "https://data.worldbank.org/indicator/SH.H2O.SMDW.ZS?locations=FR"
+  },
+  {
+   "name": "Shelter",
+   "value": 90.0,
+   "display": "90%",
+   "note": "Safely managed sanitation; 0% of city dwellers live in slums",
+   "source": "WHO/UNICEF, 2024",
+   "url": "https://data.worldbank.org/indicator/SH.STA.SMSS.ZS?locations=FR"
+  },
+  {
+   "name": "Energy",
+   "value": 100.0,
+   "display": "100%",
+   "note": "100% cook with clean fuels and technology; 100% have electricity",
+   "source": "World Bank, 2024",
+   "url": "https://data.worldbank.org/indicator/EG.CFT.ACCS.ZS?locations=FR"
+  },
+  {
+   "name": "Education",
+   "value": 93.4,
+   "display": "93.4",
+   "note": "93.4% of children read a simple text by the end of primary school",
+   "source": "World Bank, 2021",
+   "url": "https://data.worldbank.org/indicator/SE.LPV.PRIM?locations=FR"
+  },
+  {
+   "name": "Health",
+   "value": 82.0,
+   "display": "82",
+   "note": "WHO service coverage index",
+   "source": "WHO, 2023",
+   "url": "https://ourworldindata.org/grapher/universal-health-coverage-index?country=~FRA"
+  },
+  {
+   "name": "Livelihoods",
+   "value": 84.4,
+   "display": "84.4%",
+   "note": "Above the national poverty line; 15.6% live below it",
+   "source": "World Bank, 2021",
+   "url": "https://data.worldbank.org/indicator/SI.POV.NAHC?locations=FR"
+  }
+ ],
+ "newswire": [
+  {
+   "date": "2025-12-30",
+   "title": "Indicative State financing programme for 2026",
+   "highlight": "",
+   "url": "https://www.aft.gouv.fr/en/node/13632",
+   "source": "Agence France Trésor",
+   "label": "30 Dec 2025"
+  }
+ ],
+ "dispatches": [],
+ "checked": "2026-11-10T23:00Z",
+ "reviewed": "2026-11-10T23:00Z"
+}

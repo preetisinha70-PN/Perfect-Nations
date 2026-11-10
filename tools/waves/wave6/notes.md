@@ -1,0 +1,22 @@
+# Wave 6 research notes (Western Europe, 25 nations), 11 Nov 2026
+
+## Council of the EU, recovery and resilience plans (timeline page, primary) https://www.consilium.europa.eu/en/policies/eu-recovery-plan/timeline/
+Belgium €5.28bn (11 Mar 2025); Cyprus €1.2bn (20 Jun 2025); Denmark €1.8bn grants (10 Dec 2024); Germany €30.3bn grants (16 Jul 2024); Greece €36.6bn (21 Jan 2025); Ireland €1.16bn (11 Mar 2025); Italy €194.4bn (20 Jun 2025); Luxembourg €241.1m grants (23 Sep 2024); Malta €336m (20 Jun 2025); Netherlands €5.4bn (13 May 2025); Portugal €22bn (13 May 2025; €22.215bn = €16.325bn grants + €5.890bn loans, 8 Oct 2024); Spain €163bn (13 May 2025); Sweden €3.5bn grants (10 Dec 2024). Austria, Finland, France: no value on the page.
+- RRF: all final payment requests submitted by 30 Sep 2026; payments by 31 Dec 2026 (EC via lovguiden/ieu-monitoring). Denmark received 100% of €1.63bn by 31 Jul 2026 (EC via ieu-monitoring) - differs from Council €1.8bn.
+## Debt offices
+- UK DMO: remit revision 28 Oct 2026: NFR £258.6bn; gross gilt sales £250.6bn; green gilts £12.0bn https://www.dmo.gov.uk/media/kqpmscb0/sa281026.pdf ; remit 3 Mar 2026 (gilt sales £252.1bn) https://www.dmo.gov.uk/media/gnffn5rz/sa030326.pdf ; April revision 23 Apr 2026 £246.2bn https://www.dmo.gov.uk/media/ajmifgdv/pr230426_2.pdf
+- Germany Finanzagentur, press release no. 10, 18 Dec 2025: Gesamtvolumen ~€512.0bn in 2026; capital market auctions ~€318bn; money market €176bn; green €16-19bn https://www.deutsche-finanzagentur.de/fileadmin/user_upload/Pressemitteilung/dt/2025/2025_12_18_pm_10_Emissionsplanung_Bund_2026_dt.pdf ; Q4 update 24 Sep 2026; BMF Monatsbericht Mar 2026: special fund €500bn (federal investment €300bn, Länder and municipalities €100bn, Climate and Transformation Fund €100bn) https://www.bundesfinanzministerium.de/Monatsberichte/Ausgabe/2026/03/Inhalte/Kapitel-2-Analysen/2-1-kreditaufnahme-neue-rahmenbedingungen.html?nn=237786 ; Boersen-Zeitung: 2026 total €525.5bn (secondary)
+- France AFT: 2026 programme €310bn net of buybacks (30 Dec 2025) https://www.aft.gouv.fr/en/node/13632 ; AFT monthly bulletin May 2026 https://www.aft.gouv.fr/files/medias-aft/7_Publications/7.2_BM/432_Bulletin%20mensuel%20mai%202026.pdf ; 2027 programme €340bn (29 Sep 2026, France Epargne, secondary)
+- Austria OeBFA, annual review 2025 (Apr 2026): 2026 federal bonds €43-47bn (2025: €45bn) https://www.oebfa.at/dam/jcr:e0ff7391-d3f1-4e20-ac17-cc18bc024568/OeBFA_Jahresr%C3%BCckblick_2025_DE.pdf ; BMF Apr 2026: Bundesschatz above €10bn, 170,000 accounts https://www.bmf.gv.at/presse/pressemeldungen/2026/april-2026/2-jahre-bundesschatz.html
+- Finland State Treasury Q2 2026: second supplementary budget (3 Jun) net borrowing €13.351bn, gross €44.493bn https://www.treasuryfinland.fi/publications/quarterly-review-q2-2026/ ; central government debt end-2025 €187.7bn (66.7% of GDP) https://www.treasuryfinland.fi/news/debt-management-annual-review-2025-published/
+- Switzerland FFA/SNB 18 Nov 2025: bonds CHF 4.5bn in 2026; funding requirement just under CHF 7.5bn https://www.snb.ch/en/publications/communication/press-releases/2025/pre_20251118
+- Norway NBIM: GPFG NOK 22,683bn end-H1 2026; 9.4% return; press release 12 Aug 2026 https://www.nbim.no/en/news-and-insights/the-press/press-releases/2026/record-high-krone-return-in-the-first-half-of-the-year/ ; NOK 22,014bn end-Q3 2026 https://www.nbim.no/en/news-and-insights/1q-3q/key-figures-q3-2026/
+## IMF
+- Andorra 2025 Article IV, 11 Apr 2025 https://www.imf.org/en/publications/cr/issues/2025/04/10/principality-of-andorra-2025-article-iv-consultation-press-release-and-staff-report-566031
+- San Marino 2025 Article IV, 25 Nov 2025 https://www.imf.org/en/publications/cr/issues/2025/11/24/republic-of-san-marino-2025-article-iv-consultation-press-release-staff-report-and-572046
+- Liechtenstein: member 21 Oct 2024 (191st); Article IV report 27 Mar 2025 https://www.imf.org/external/pubs/cat/longres.aspx?sk=565608.0
+- Iceland 2025 Article IV, 24 Jun 2025 https://www.imf.org/en/publications/cr/issues/2025/06/23/iceland-2025-article-iv-consultation-press-release-staff-report-and-statement-by-the-567916
+- Monaco and the Holy See are not IMF members.
+## Data decisions
+- Germany: World Bank lower-secondary completion 71.4% (2024) left out (skip) - an artefact of how ISCED 2 completion is counted in a tracked system; reading (2021) used. Decision for the Steward-General.
+- Monaco: every measured standard at 100%; coverage override (no Gap).
