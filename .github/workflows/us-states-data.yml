@@ -1,19 +1,41 @@
-# Temporary (check 1): is perfectnations.org/50-states/ live and served from GitHub? Reads the page only.
+# Temporary (run 4): official figures for the New York State blueprint (Census Bureau file server). Branch only.
 name: us-states-data
 on:
   push:
     branches: [us-states-data-2026-11-10]
     paths: ['.github/workflows/us-states-data.yml']
+permissions:
+  contents: write
 jobs:
-  check:
+  pull:
     runs-on: ubuntu-latest
-    timeout-minutes: 5
+    timeout-minutes: 20
     steps:
-      - name: Check
+      - uses: actions/checkout@v4
+      - name: Download
         run: |
-          for u in "https://perfectnations.org/50-states/" "https://perfectnations.org/50-states/?pnv=$(date +%s)" "https://perfectnations.org/"; do
-            code=$(curl -sSL -m 60 -A "Mozilla/5.0 (PerfectNations check)" -o page.html -w '%{http_code}' "$u")
-            echo "== $u -> HTTP $code, $(wc -c < page.html) bytes"
-            echo "pn-us root: $(grep -c 'id="pn-us"' page.html)  page v1.0 (hero): $(grep -c 'pnus-hero' page.html)  map states: $(grep -o 'class="pnus-st"' page.html | wc -l)  fallback: $(grep -c 'blueprints of the American states are opening' page.html)"
-            echo "menu link: $(grep -c 'perfectnations.org/50-states/' page.html)  title: $(grep -o '<title>[^<]*' page.html | head -1)"
-          done
+          set +e
+          mkdir -p data/us/raw/new-york && cd data/us/raw/new-york
+          get(){ for i in 1 2 3; do curl -sSL -m 180 -A "Mozilla/5.0 PerfectNations-data" -o "$1" -w "$1 %{http_code} %{size_download}\n" "$2" && [ -s "$1" ] && return 0; sleep 5; done; return 1; }
+          B=https://www2.census.gov/programs-surveys/acs/summary_file
+          get b17001-5y2024.dat "$B/2024/table-based-SF/data/5YRData/acsdt5y2024-b17001.dat"
+          awk -F'|' 'NR==1 || $1 ~ /^0400000US36$/ || $1 ~ /^0500000US36/ {print $1"|"$2"|"$3"|"$4"|"$5}' b17001-5y2024.dat > acsdt5y2024-b17001-ny-counties.dat; rm -f b17001-5y2024.dat
+          get b27001-1y2025.dat "$B/2025/table-based-SF/data/1YRData/acsdt1y2025-b27001.dat"
+          awk -F'|' 'NR==1 || $1 ~ /^0100000US$/ || $1 ~ /^0400000US36$/ {print}' b27001-1y2025.dat > acsdt1y2025-b27001-ny-us.dat; rm -f b27001-1y2025.dat
+          get b25003-1y2025.dat "$B/2025/table-based-SF/data/1YRData/acsdt1y2025-b25003.dat"
+          awk -F'|' 'NR==1 || $1 ~ /^0100000US$/ || $1 ~ /^0400000US36$/ {print}' b25003-1y2025.dat > acsdt1y2025-b25003-ny-us.dat; rm -f b25003-1y2025.dat
+          get shells25.txt "$B/2025/table-based-SF/documentation/ACS20251YR_Table_Shells.txt"
+          grep -E 'B27001|B25003' shells25.txt > shells-2025-B27001-B25003.txt; rm -f shells25.txt
+          get shells24.txt "$B/2024/table-based-SF/documentation/ACS20245YR_Table_Shells.txt"
+          grep -E 'B17001_00[12]' shells24.txt > shells-2024-5y-B17001.txt; rm -f shells24.txt
+          get geos24.txt "$B/2024/table-based-SF/documentation/Geos20245YR.txt"
+          [ -s geos24.txt ] && { head -1 geos24.txt > geos-2024-5y-ny-counties.txt; grep -E '0500000US36' geos24.txt >> geos-2024-5y-ny-counties.txt; rm -f geos24.txt; }
+          for f in *; do echo "$f $(wc -c < "$f") $(wc -l < "$f")"; done > manifest.txt
+          date -u +%Y-%m-%dT%H:%MZ > pulled-at.txt
+      - name: Commit
+        run: |
+          git config user.name "Perfect Nations data"
+          git config user.email "actions@users.noreply.github.com"
+          git add data/us/raw/new-york
+          git commit -m "Data: official figures for the New York State blueprint (Census Bureau)" || echo nothing
+          git push
