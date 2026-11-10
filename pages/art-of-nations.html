@@ -1,5 +1,5 @@
 <!-- ===========================================================================
-PERFECT NATIONS - ART OF NATIONS - v4.5 - 2026-11-10
+PERFECT NATIONS - ART OF NATIONS - v4.6 - 2026-11-10
 The whole Art of Nations page in one file: perfectnations.org/art-of-nations/ (page 16839; the old
 address /perfect-nations-gallery/ leads here).
 Root id pn-art. The page's Elementor Custom HTML widget already contains pn-art, so the Perfect
@@ -23,8 +23,9 @@ Botanical Origins: acrylic on canvas, 12 x 16 in, 2026, not for sale (no Enquire
 v4.4 (9 Nov 2026): one clean gold close button on the viewer; links to other pages open in a new tab.
 v4.5 (10 Nov 2026): the first line reads Perfect Nations (not Gallery); the gold line of the homepage marks where the hero, the wall and the books meet;
 each painting opens onto its nation's blueprint (Read the blueprint); Botanical Origins is 12 x 16 in.
+v4.6 (10 Nov 2026): light reading sections, Earthrise accents (the Steward-General, 10 Nov 2026).
 =========================================================================== -->
-<div id="pn-art" class="aon" data-version="4.5">
+<div id="pn-art" class="aon" data-version="4.6">
 <style>
 #pn-art{
   --er:#0B3D45; --lag:#0F4C5C; --dep:#082A30; --iv:#F4ECD8; --ivt:rgba(244,236,216,.84); --ivd:rgba(244,236,216,.62);
@@ -339,6 +340,67 @@ each painting opens onto its nation's blueprint (Read the blueprint); Botanical 
 #pn-art .aon-rule::before{ width:8px; height:8px; z-index:2; background:linear-gradient(135deg,#FFF1C2 0%,#E3C258 55%,#B48A2C 100%); box-shadow:0 0 10px rgba(227,194,88,.7); }
 #pn-art .aon-rule::after{ width:20px; height:20px; z-index:1; border:1px solid rgba(227,194,88,.85); background:#0B3D45; }
 @media (max-width:760px){ #pn-art .aon-rule::before{ width:7px; height:7px; } #pn-art .aon-rule::after{ width:17px; height:17px; } }
+
+/* ---------- v4.6 LIGHT (the Steward-General, 10 Nov 2026: "the site is a little dark and heavy to read ...
+   make sections the lighter colour with the Earthrise for the accents").
+   - The hero stays Earthrise: it is the one place a painting truly needs a deep ground. The featured portrait
+     hangs in its gilded frame under a moving light, and the frame, the sheen and the gold tally only glow on
+     the dark wall, as in a lit gallery. It stays short, and the gold line marks where the page turns light.
+   - The gallery wall stays light, now on the ivory of the site: the paintings carry the colour, the mats and
+     gilded frames hold them, and the words around them read in ink, with Earthrise headlines.
+   - The books turn to paper: the covers are objects that sit well on light, like a catalogue page. The first
+     book, the lead of the shelf, stays an Earthrise card, the accent of the band; the others are white cards.
+   - The viewer stays dark. Gold only for the frames, the buttons and money (a deep gold on light). */
+#pn-art .aon-wall{
+  --inkm:#3E4E52; --inkd:#5C696C;
+  color:#10262B;
+  background:
+    radial-gradient(50% 60% at 92% 0%, rgba(227,194,88,.16) 0%, rgba(227,194,88,0) 70%),
+    radial-gradient(40% 60% at 0% 100%, rgba(138,58,34,.06) 0%, rgba(138,58,34,0) 70%),
+    linear-gradient(180deg,#F7F0DF 0%,#F4ECD8 60%,#F1E7D0 100%);
+}
+#pn-art .aon-wall .aon-eb::before{ background:rgba(138,58,34,.55); }
+#pn-art .aon-wall .aon-h2,#pn-art .aon-origin .aon-h2,#pn-art .aon-card .aon-h3{ color:#0B3D45; }
+#pn-art .aon-origin{ border-bottom-color:rgba(16,38,43,.13); }
+#pn-art .aon-wall .aon-btn,#pn-art .aon-books .aon-btn{ box-shadow:0 10px 24px rgba(140,106,18,.22) !important; }
+#pn-art .aon-wall .aon-btn--line,#pn-art .aon-books .aon-btn--line{ color:#0B3D45 !important; border-color:rgba(11,61,69,.45) !important; box-shadow:none !important; }
+#pn-art .aon-wall .aon-btn--line:hover,#pn-art .aon-books .aon-btn--line:hover{ background:rgba(11,61,69,.07) !important; }
+#pn-art .aon-wall a:focus-visible,#pn-art .aon-wall button:focus-visible,
+#pn-art .aon-books a:focus-visible,#pn-art .aon-books button:focus-visible{ outline-color:#0B3D45; }
+#pn-art .aon-price{ color:#8C6A12; }
+#pn-art .aon-books{
+  --iv:#0B3D45; --ivt:#34464A; --ivd:#5C696C;
+  color:#0B3D45;
+  background:
+    radial-gradient(48% 60% at 96% 0%, rgba(227,194,88,.16) 0%, rgba(227,194,88,0) 70%),
+    radial-gradient(40% 60% at 0% 100%, rgba(11,61,69,.06) 0%, rgba(11,61,69,0) 70%),
+    linear-gradient(180deg,#FBF8F1 0%,#F6EFE0 100%);
+}
+#pn-art .aon-books .aon-eb{ color:#8A3A22; }
+#pn-art .aon-books .aon-eb::before{ background:rgba(138,58,34,.55); }
+#pn-art .aon-books .aon-bk{
+  border-color:rgba(16,38,43,.12); background:#FFFDF8;
+  box-shadow:0 1px 0 rgba(255,255,255,.9) inset, 0 10px 26px rgba(16,38,43,.08);
+}
+#pn-art .aon-books .aon-bk__book{ box-shadow:5px 3px 0 -1px #EFE6D2, 7px 5px 0 -1px #CDBF9F, 9px 7px 0 -1px #EFE6D2, 18px 20px 32px rgba(16,38,43,.28); }
+#pn-art .aon-books .aon-tag{ color:#8A3A22; }
+#pn-art .aon-books .aon-price{ color:#8C6A12 !important; }
+#pn-art .aon-close{ border-top-color:rgba(16,38,43,.13); }
+/* the lead book: an Earthrise card, the accent of the shelf */
+#pn-art .aon-books .aon-bk:first-child{
+  --iv:#F4ECD8; --ivt:rgba(244,236,216,.84); --ivd:rgba(244,236,216,.64);
+  color:#F4ECD8; border-color:rgba(227,194,88,.38);
+  background:
+    radial-gradient(70% 90% at 0% 0%, rgba(227,194,88,.16) 0%, rgba(227,194,88,0) 62%),
+    linear-gradient(165deg,#10505F 0%,#0B3D45 48%,#09313A 100%);
+  box-shadow:0 18px 44px rgba(11,61,69,.28);
+}
+#pn-art .aon-books .aon-bk:first-child .aon-bk__book{ box-shadow:5px 3px 0 -1px #EFE6D2, 7px 5px 0 -1px #CDBF9F, 9px 7px 0 -1px #EFE6D2, 22px 24px 38px rgba(0,0,0,.5); }
+#pn-art .aon-books .aon-bk:first-child .aon-tag{ color:#F0D68F; }
+#pn-art .aon-books .aon-bk:first-child .aon-price{ color:#E3C258 !important; }
+#pn-art .aon-books .aon-bk:first-child .aon-btn--line{ color:#E3C258 !important; border-color:rgba(227,194,88,.7) !important; }
+#pn-art .aon-books .aon-bk:first-child .aon-btn--line:hover{ background:rgba(227,194,88,.12) !important; }
+#pn-art .aon-books .aon-bk:first-child a:focus-visible,#pn-art .aon-books .aon-bk:first-child button:focus-visible{ outline-color:#F0D68F; }
 </style>
 
 <section class="aon-band aon-hero" aria-labelledby="aon-h1">
