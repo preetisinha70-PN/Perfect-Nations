@@ -75,6 +75,16 @@ perfectnations.org/50-states/ is one file, `pages/us-states.html` (root `pn-us`)
 - **Checks and previews:** `python3 tools/check_page.py pages/us-states.html`, then `python3 tools/preview_page.py pages/us-states.html --out <folder> --fonts <folder holding node_modules/@fontsource>`.
 - **Every change** goes through a pull request "For approval: The 50 States vX.Y, ...", with `pn-us` raised in the manifest. A yearly refresh of the figures (new Census and BEA releases) is a page change: download, `--data`, build, pull request.
 
+## State blueprints (from 10 November 2026; first: New York)
+
+Each state blueprint is one file, `pages/us-<slug>.html` (root `pn-us-<slug>`), at perfectnations.org/50-states/<slug>/. The first is New York (`pages/us-new-york.html`).
+
+- **Built, never edited by hand:** `python3 tools/build_us_state.py <slug>` from `data/us/states/<slug>.json` (words, the figures found on official pages with their source ids, the sources), `data/us-states.json` (population, GDP, poverty), the official downloads in `data/us/raw/<slug>/` (ACS health insurance B27001, ACS county poverty B17001 with county names, NAEP 2024 reading, USDA ERR-358 table 4), and the design in `tools/us/state/` (style.css and script.js, scoped to `#ROOT`, which becomes the page root). The state and its counties are drawn at build time from `tools/us/counties-albers-10m.json` (us-atlas 3, ISC).
+- **Figures written `computed:<name>`** in the blueprint file are filled from those official files (for example `computed:reading` from the NAEP Data Service). Nothing is estimated; a standard with no primary state figure is shown as "Not yet measured".
+- **Bands:** the gold state (Earthrise); 01 Assets (ivory); 02 the seven standards and the county poverty map (paper); 03 Solutions in order: the challenge and what Perfect Nations advises (ivory); 04 Capital already committed (paper); the gold line; Work with us and Sources (ivory).
+- **Going live:** the manifest key `pn-us-<slug>` with its `url` turns the state bright gold on /50-states/ and in the header search, with "Open the blueprint". Its WordPress page (a child of /50-states/, page 17760) holds one Custom HTML block with `<div id="pn-us-<slug>">` and a fallback line, and must be published when the pull request is merged.
+- **A new state:** download its files into `data/us/raw/<slug>/`, write `data/us/states/<slug>.json`, build, check, preview, pull request.
+
 ## The Capital Architecture page (from 7 November 2026)
 
 perfectnations.org/capital-architecture/ is one file, `pages/capital-architecture.html` (root `pn-arch`, page 8549), kept by the Capital Architecture Steward.

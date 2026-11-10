@@ -45,7 +45,7 @@ PAGES = ROOT / 'pages'
 DATA = ROOT / 'data'
 RAW = DATA / 'us' / 'raw'
 HERE = Path(__file__).resolve().parent / 'us'
-VERSION = '1.0'
+VERSION = '1.1'
 
 # Postal codes by FIPS (the Census Bureau's state codes). DC (11) is not a state and is not listed.
 ABBR = {
@@ -431,15 +431,18 @@ perfectnations.org/50-states/ holds ONE Elementor Custom HTML widget (or Custom 
 pn-us. The Perfect Nations Live Pages plugin serves this file from GitHub in its place. Never edit this file
 by hand: edit tools/us/ (design and words) or rebuild data/us-states.json, run
 python3 tools/build_us_states.py, and open a pull request.
+v1.1: the page script sits inside an HTML comment marker, so the WordPress formatter cannot turn its double
+ampersands into entities on the block-editor page (10 Nov 2026).
 v1.0: the section for the 50 states of the United States, where state blueprints will open (the
 Steward-General, 10 Nov 2026). Bands: 01 the golden map of the 50 states (Earthrise, the hero stays deep for
 the map), with region tabs and a card for each state; 02 every state in one line (ivory): GDP, people and
 the share below the poverty line, sortable, searchable; 03 how a state blueprint works (paper); the gold
 line; 04 the close (ivory). Figures: Census Bureau (population, Vintage 2025; poverty, ACS 2025) and BEA
-(GDP 2025). A state turns bright gold when a pn-us-<slug> key is merged into pages/manifest.json.
+(GDP 2025). A state turns bright gold when a pn-us-[slug] key is merged into pages/manifest.json.
 =========================================================================== -->
 ''' % (VERSION, today)
-    page = head + '<style>\n%s\n</style>\n' % css + body + '\n<script>\n%s\n</script>\n' % js
+    # v1.1: the script sits inside an HTML comment, so the WordPress formatter cannot turn its && into &#038;&#038;
+    page = head + '<style>\n%s\n</style>\n' % css + body + '\n<script><!--\n%s\n//--></script>\n' % js
     first = re.search(r'\bid\s*=\s*["\'](pn-[a-z0-9-]+)["\']', page, re.I)
     if not first or first.group(1) != 'pn-us':
         sys.exit('the first pn- id must be pn-us, found %s' % (first.group(1) if first else None))
