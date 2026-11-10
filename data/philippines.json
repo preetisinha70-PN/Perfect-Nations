@@ -1,7 +1,7 @@
 {
   "nation": "Philippines",
   "page_version": "9.0",
-  "updated": "2026-11-06",
+  "updated": "2026-11-10",
   "steward": {
     "name": "Isabel Santos",
     "role": "Nation Steward of Philippines"
@@ -28,53 +28,128 @@
     "heading": "The Philippines borrows on its reforms, and the world lends. Next, every child reading by ten.",
     "record": [
       {
+        "value": "P19.07T",
+        "money": true,
+        "text": "Total outstanding national government debt at end-June 2026: domestic debt P12.84 trillion (67.33%), external debt P6.23 trillion (32.67%)",
+        "source": "Bureau of the Treasury, 2026",
+        "url": "https://www.treasury.gov.ph/wp-content/uploads/2026/07/NG-Debt-Press-Release-June-2026.pdf"
+      },
+      {
+        "value": "$1.5B",
+        "money": true,
+        "text": "ADB crisis financing through the Countercyclical Support Facility, approved 24 September 2026, to protect families from rising prices",
+        "source": "ADB, 2026",
+        "url": "https://www.adb.org/news/adb-boosts-philippines-crisis-response-1-5-billion"
+      },
+      {
         "value": "$1.02B",
         "money": true,
-        "text": "Second Energy Transition and Climate Resilience DPL: $1 billion IBRD loan and a $20 million grant",
+        "text": "Second Energy Transition and Climate Resilience Development Policy Loan: $1 billion IBRD loan and a $20 million grant, approved June 2026",
         "source": "World Bank, 2026",
         "url": "https://www.worldbank.org/en/news/press-release/2026/06/25/world-bank-group-backs-philippines-push-for-energy-and-water-security"
+      },
+      {
+        "value": "$1B",
+        "money": true,
+        "text": "Sustainable Agricultural Transformation, a results-based programme for at least five million farmers, approved March 2026",
+        "source": "World Bank, 2026",
+        "url": "https://www.worldbank.org/en/news/press-release/2026/03/28/better-yields-better-jobs-new-initiative-to-benefit-5-million-filipino-farmers"
       },
       {
         "value": "$600M",
         "money": true,
-        "text": "Learning Upgrade Support and Decentralization (PLUS-D): Reading and mathematics for 21 million students",
+        "text": "Learning Upgrade Support and Decentralization (PLUS-D): reading and mathematics for 21 million learners, approved April 2026",
         "source": "World Bank, 2026",
         "url": "https://www.worldbank.org/en/news/press-release/2026/04/03/world-bank-backs-better-learning-for-21-million-filipino-students"
-      },
-      {
-        "value": "$268.6M",
-        "money": true,
-        "text": "Accelerated Water and Sanitation Project: Of which $250.9 million from the World Bank",
-        "source": "World Bank, 2026",
-        "url": "https://www.worldbank.org/en/news/press-release/2026/07/31/wbg-support-to-help-philippines-expand-resilient-water-and-sanitation-services"
       }
     ],
     "register": [
       {
-        "cat": "multi",
-        "status": "Active",
+        "cat": "govt",
+        "status": "Priced",
         "tone": "active",
-        "name": "Second Energy Transition and Climate Resilience DPL",
-        "detail": "Approved June 2026 · Development policy loan",
+        "name": "Retail Treasury Bonds, Tranche 32 (RTB-32)",
+        "detail": "Rate-setting auction 29 September 2026 · 6.875% a year · 2½ years · Offer 29 September to 7 October 2026 · Issue date 12 October 2026",
+        "amount": "P84.87B",
+        "money": true,
+        "note": "Awarded at the rate-setting auction; the final total is not yet on a Treasury page",
+        "text": "Peso bonds sold by the Bureau of the Treasury to Filipino savers and institutions, at 6.875% a year for two and a half years. The rate-setting auction awarded PHP 84.87 billion before the offer opened to retail investors.",
+        "by": [
+          "Bureau of the Treasury"
+        ],
+        "url": "https://www.treasury.gov.ph/wp-content/uploads/2026/09/Press-Release-RTB-32-Launch-1.pdf"
+      },
+      {
+        "cat": "govt",
+        "status": "Priced",
+        "tone": "active",
+        "name": "US dollar global bonds, 5.5-year, 10-year and tap of 2051",
+        "detail": "Priced 17 June 2026 · $550 million 5.5-year at 4.699% · $1.65 billion 10-year at 5.355% · $300 million tap of the 2051 bonds at 5.850% · Settlement 24 June 2026",
+        "amount": "$2.5B",
+        "money": true,
+        "note": "Upsized from $2.0 billion; 4.4 times oversubscribed",
+        "text": "A three-tranche dollar bond, upsized from $2.0 billion to $2.5 billion after the order book reached 4.4 times the amount. The Republic is using the proceeds for general budget financing.",
+        "by": [
+          "Republic of the Philippines"
+        ],
+        "url": "https://www.dof.gov.ph/wp-content/uploads/2026/06/Republic-of-the-Philippines-Prices-a-5.5-Year-10-Year-and-Tap-of-2051-US-Dollar-Global-Bonds.pdf"
+      },
+      {
+        "cat": "govt",
+        "status": "Priced",
+        "tone": "active",
+        "name": "US dollar global bonds, 5.5-year, 10-year and 25-year",
+        "detail": "Priced 21 January 2026 · 5.5-year at Treasuries plus 50 basis points · 10-year at Treasuries plus 80 basis points · 25-year at 5.750% · Settlement 27 January 2026",
+        "amount": "$2.75B",
+        "money": true,
+        "note": "Equivalent to $2.75 billion; tranche sizes not stated in the release",
+        "text": "A three-tranche dollar bond equivalent to $2.75 billion. The proceeds are for the general purposes of the Republic, including budgetary support.",
+        "by": [
+          "Republic of the Philippines"
+        ],
+        "url": "https://www.dof.gov.ph/wp-content/uploads/2026/01/Republic-of-the-Philippines-Prices-5.5-Year-10-Year-and-25-Year-US-Dollar-Global-Bonds.pdf"
+      },
+      {
+        "cat": "multi",
+        "status": "Approved",
+        "tone": "active",
+        "name": "Philippines Accelerated Water and Sanitation Project in Selected Areas (AWSPSA)",
+        "detail": "Approved 31 July 2026 · Total project cost $268.62 million · World Bank $250.87 million",
+        "amount": "$268.6M",
+        "money": true,
+        "note": "Of which $250.87 million from the World Bank; the rest from the Government and private-sector equity",
+        "text": "A World Bank Group project to expand resilient water and sanitation services on Bohol, Siargao and Jolo, areas the release calls vulnerable. It serves the water and shelter standards.",
+        "by": [
+          "World Bank"
+        ],
+        "url": "https://www.worldbank.org/en/news/press-release/2026/07/31/wbg-support-to-help-philippines-expand-resilient-water-and-sanitation-services"
+      },
+      {
+        "cat": "multi",
+        "status": "Approved",
+        "tone": "active",
+        "name": "Second Energy Transition and Climate Resilience Development Policy Loan",
+        "detail": "Approved 25 June 2026 · $1 billion IBRD loan · $20 million performance-based grant from the Livable Planet Fund",
         "amount": "$1.02B",
         "money": true,
         "note": "$1 billion IBRD loan and a $20 million grant",
-        "text": "Backs reforms for energy security, water security and resilience.",
+        "text": "Budget support for reforms that make the renewable energy market fully operational, plan electric vehicle charging and launch a first offshore wind auction, and for cost-recovery water tariffs and bulk water pricing rules. It continues the $800 million operation of March 2025 and serves the energy and water standards.",
         "by": [
-          "World Bank"
+          "World Bank",
+          "Livable Planet Fund"
         ],
         "url": "https://www.worldbank.org/en/news/press-release/2026/06/25/world-bank-group-backs-philippines-push-for-energy-and-water-security"
       },
       {
         "cat": "multi",
-        "status": "Active",
+        "status": "Approved",
         "tone": "active",
-        "name": "Learning Upgrade Support and Decentralization (PLUS-D)",
-        "detail": "Approved April 2026 · Investment project financing",
+        "name": "Project for Learning Upgrade Support and Decentralization (PLUS-D)",
+        "detail": "Approved 3 April 2026 · Kindergarten to Grade 10 and the Alternative Learning System",
         "amount": "$600M",
         "money": true,
-        "note": "Reading and mathematics for 21 million students",
-        "text": "Raises foundational literacy and numeracy in public primary and lower-secondary schools.",
+        "note": "Reading and mathematics for 21 million learners",
+        "text": "Raises reading and mathematics in public schools from kindergarten to Grade 10 and in the Alternative Learning System, for 21 million learners. It is aimed at the education standard, which sets Coverage for the Philippines.",
         "by": [
           "World Bank"
         ],
@@ -82,18 +157,246 @@
       },
       {
         "cat": "multi",
-        "status": "Active",
+        "status": "Approved",
         "tone": "active",
-        "name": "Accelerated Water and Sanitation Project",
-        "detail": "Approved 31 July 2026 · Investment project financing",
-        "amount": "$268.6M",
+        "name": "Philippines Sustainable Agricultural Transformation Project (PSAT)",
+        "detail": "Approved 27 March 2026 · Program-for-Results",
+        "amount": "$1B",
         "money": true,
-        "note": "Of which $250.9 million from the World Bank",
-        "text": "Builds resilient water and sanitation on Bohol, Siargao and Jolo.",
+        "note": "At least five million farmers",
+        "text": "A results-based programme for the agriculture sector, with funds released as agreed results are achieved. At least five million farmers are expected to benefit, which serves the food and livelihood standards.",
         "by": [
           "World Bank"
         ],
-        "url": "https://www.worldbank.org/en/news/press-release/2026/07/31/wbg-support-to-help-philippines-expand-resilient-water-and-sanitation-services"
+        "url": "https://www.worldbank.org/en/news/press-release/2026/03/28/better-yields-better-jobs-new-initiative-to-benefit-5-million-filipino-farmers"
+      },
+      {
+        "cat": "multi",
+        "status": "Approved",
+        "tone": "active",
+        "name": "Philippines Growth and Jobs Development Policy Loan",
+        "detail": "Approved 12 March 2026 · Development policy loan",
+        "amount": "$800M",
+        "money": true,
+        "note": "Fiscal, investment and skills reforms",
+        "text": "Budget support for revenue and spending reforms, private investment and innovation, and reforms in skills, education and innovation. Skills and a stronger fiscal base serve the education and livelihood standards.",
+        "by": [
+          "World Bank"
+        ],
+        "url": "https://www.worldbank.org/en/news/press-release/2026/03/12/PH-set-to-boost-private-investment-employment-skills-and-fiscal-resilience-with-world-bank-support"
+      },
+      {
+        "cat": "multi",
+        "status": "Approved",
+        "tone": "active",
+        "name": "First Energy Transition and Climate Resilience Development Policy Loan",
+        "detail": "Approved 31 March 2025 · Development policy loan",
+        "amount": "$800M",
+        "money": true,
+        "note": "Clean energy, electricity markets and water management",
+        "text": "Budget support for reforms that scale up clean energy technologies, make electricity markets more secure, flexible and competitive, and improve water management. The $1 billion loan of June 2026 continues the series.",
+        "by": [
+          "World Bank"
+        ],
+        "url": "https://www.worldbank.org/en/news/press-release/2025/03/31/wb-approves-support-for-energy-transition-and-resilience-in-ph"
+      },
+      {
+        "cat": "regional",
+        "status": "Approved",
+        "tone": "active",
+        "name": "Assistance for Greater Resilience and Alleviation of Poverty program",
+        "detail": "Approved 24 September 2026 · Countercyclical Support Facility · Finances the Unified Package for Livelihoods, Industry, Food, and Transport",
+        "amount": "$1.5B",
+        "money": true,
+        "note": "Crisis financing to protect families from rising prices",
+        "text": "ADB crisis financing to help the Philippines protect families from rising prices. It supports fuel supplies, affordable power and health services, food and medicine costs, income support, and the return of affected overseas Filipino workers, so that the food, energy, health and livelihood standards hold through a price shock.",
+        "by": [
+          "Asian Development Bank"
+        ],
+        "url": "https://www.adb.org/news/adb-boosts-philippines-crisis-response-1-5-billion"
+      },
+      {
+        "cat": "regional",
+        "status": "Approved",
+        "tone": "active",
+        "name": "Marine Ecosystems for Blue Economy Development Program, subprogram 1",
+        "detail": "Approved 11 December 2025 · Policy-based loan · AFD and KfW to cofinance up to €200 million each",
+        "amount": "$500M",
+        "money": true,
+        "note": "Ocean and coastal reforms",
+        "text": "Supports reforms for the sustainable management of the Philippines’ ocean ecosystems and a climate-resilient, low-carbon blue economy. Healthy coasts and fisheries serve the food and livelihood standards for coastal families.",
+        "by": [
+          "Asian Development Bank"
+        ],
+        "url": "https://www.adb.org/news/500-million-adb-loan-help-advance-philippines-blue-economy-development"
+      },
+      {
+        "cat": "regional",
+        "status": "Approved",
+        "tone": "active",
+        "name": "Business Environment Strengthening with Technology Program (BEST), subprogram 1",
+        "detail": "Approved 10 December 2025 · Policy-based loan",
+        "amount": "$400M",
+        "money": true,
+        "note": "Faster permits and digital services for business",
+        "text": "Supports reforms that streamline regulatory requirements for businesses, speed up permits and licences, and deliver government services to businesses online, with a database of business regulations. A simpler business climate serves the livelihood standard through private jobs.",
+        "by": [
+          "Asian Development Bank"
+        ],
+        "url": "https://www.adb.org/news/400-million-adb-loan-improve-ease-doing-business-philippines"
+      },
+      {
+        "cat": "regional",
+        "status": "Approved",
+        "tone": "active",
+        "name": "Reducing Food Insecurity and Undernutrition with Electronic Vouchers Project",
+        "detail": "Approved 13 August 2025 · Supports the Walang Gutom (Zero Hunger) Food Stamp Program · Cofinanced by AFD (€200 million) and the OPEC Fund ($150 million)",
+        "amount": "$400M",
+        "money": true,
+        "note": "Electronic food vouchers for 750,000 food-insecure households",
+        "text": "Expands the Walang Gutom (Zero Hunger) Food Stamp Program, which gives electronic food vouchers to food-insecure households across the country. It finances the food standard directly.",
+        "by": [
+          "Asian Development Bank",
+          "Agence Française de Développement",
+          "OPEC Fund"
+        ],
+        "url": "https://www.adb.org/news/400-million-adb-loan-expand-philippines-flagship-social-protection-program"
+      },
+      {
+        "cat": "regional",
+        "status": "Approved",
+        "tone": "active",
+        "name": "Malolos–Clark Railway Project, tranche 2",
+        "detail": "Approved 16 April 2025 · Second and final tranche of a multitranche financing facility · Tranche 1, $1.3 billion, 2019",
+        "amount": "$1.45B",
+        "money": true,
+        "note": "53.1 km of the 163-km North–South Commuter Railway",
+        "text": "Finances the 53.1-kilometre Malolos–Clark segment of the 163-kilometre North–South Commuter Railway, with JICA supplying the rolling stock and railway systems. Commuter rail widens access to work and services, which serves the livelihood standard.",
+        "by": [
+          "Asian Development Bank",
+          "JICA"
+        ],
+        "url": "https://www.adb.org/news/adb-approves-1-45-billion-final-tranche-philippines-malolos-clark-railway-project"
+      },
+      {
+        "cat": "bilat",
+        "status": "Signed",
+        "tone": "active",
+        "name": "Metro Manila Subway Project (Phase 1) (IV)",
+        "detail": "Signed 27 March 2026, Manila · 0.8% a year · 40 years, including 10 years’ grace",
+        "amount": "JPY 220B",
+        "money": true,
+        "note": "Yen loan for civil works, systems and 240 train cars",
+        "text": "A Japanese loan for civil works, the depot and the Philippines Railway Institute, the railway system and 240 train cars for the Metro Manila Subway. Mass transit widens access to work, schools and hospitals.",
+        "by": [
+          "JICA"
+        ],
+        "url": "https://www.jica.go.jp/english/information/press/2025/20260326_11.html"
+      },
+      {
+        "cat": "bilat",
+        "status": "Signed",
+        "tone": "active",
+        "name": "Metro Rail Transit Line 3 Rehabilitation Project (III)",
+        "detail": "Signed 3 March 2026, Manila · 0.80% a year · 40 years, including 10 years’ grace",
+        "amount": "JPY 21.63B",
+        "money": true,
+        "note": "Loan of 21,634.83 million yen",
+        "text": "A Japanese loan for the rehabilitation and maintenance of MRT Line 3 in Metro Manila: rolling stock, track, signalling, power systems and stations, with spare parts and maintenance services. Reliable commuter rail serves the livelihood standard.",
+        "by": [
+          "JICA"
+        ],
+        "url": "https://www.jica.go.jp/english/information/press/2025/20260302_11.html"
+      },
+      {
+        "cat": "bilat",
+        "status": "Signed",
+        "tone": "active",
+        "name": "Laguna Lakeshore Road Network, Phase 1 Stage 1",
+        "detail": "Loan agreement exchanged 17 January 2025 · Civil works by the Department of Public Works and Highways · Completion anticipated by 2029",
+        "amount": "$905.26M",
+        "money": true,
+        "note": "Korea’s loan for the first stage of the road network",
+        "text": "A loan from the Export-Import Bank of Korea for the first stage of the Laguna Lakeshore Road Network. The Department of Public Works and Highways slated construction to start in 2025, with completion anticipated by 2029.",
+        "by": [
+          "Export-Import Bank of Korea"
+        ],
+        "url": "https://dpwh.gov.ph/DPWH/news/36658"
+      },
+      {
+        "cat": "private",
+        "status": "Signed",
+        "tone": "active",
+        "name": "ICTSI container terminals loan",
+        "detail": "Signed, announced 20 May 2026 · Senior unsecured corporate loan · AIIB’s first non-sovereign-backed transaction in the Philippines",
+        "amount": "$300M",
+        "money": true,
+        "note": "Manila, Batangas and Mindanao container terminals",
+        "text": "AIIB lending to International Container Terminal Services Inc. for port connectivity and a green transition at the Manila International Container Terminal, the South Luzon Container Terminal in Batangas and the Mindanao Container Terminal. Port capacity carries the food and goods trade on which the livelihood standard depends.",
+        "by": [
+          "Asian Infrastructure Investment Bank"
+        ],
+        "url": "https://www.aiib.org/en/news-events/news/2026/aiib-lend-ictsi-usd300-million-to-expand-port-connectivity-drive-green-transition-philippines.html"
+      },
+      {
+        "cat": "private",
+        "status": "Invested",
+        "tone": "active",
+        "name": "OnePuhunan, senior loan",
+        "detail": "Approved 25 February 2026 · Signed 12 March 2026 · Invested 20 April 2026 · Three years · Up to $40 million more to be mobilized",
+        "amount": "$20M",
+        "money": true,
+        "note": "On-lending to women microentrepreneurs in rural areas",
+        "text": "An IFC loan to a microfinance institution for on-lending to women-owned or women-led microenterprises in rural Philippines, within a facility of up to $60 million. It finances the livelihood standard directly.",
+        "by": [
+          "IFC"
+        ],
+        "url": "https://disclosures.ifc.org/project-detail/SII/51693/onepuhunan-loan"
+      },
+      {
+        "cat": "private",
+        "status": "Signed",
+        "tone": "active",
+        "name": "Fuse Financing (GCash), small business loan",
+        "detail": "Signed 6 February 2026 · Lending arm of the GCash e-wallet · 60% for women-owned businesses",
+        "amount": "$30M",
+        "money": true,
+        "note": "Digital credit for micro, small and medium enterprises",
+        "text": "An ADB loan to Fuse Financing Inc., the lending arm of GCash, the Philippines’ largest e-wallet provider, to widen credit for micro, small and medium-sized enterprises. Fuse will allocate 60% of the proceeds to women-owned businesses, which serves the livelihood standard.",
+        "by": [
+          "Asian Development Bank"
+        ],
+        "url": "https://www.adb.org/news/adb-commits-30-million-loan-support-msmes-philippines"
+      },
+      {
+        "cat": "private",
+        "status": "Invested",
+        "tone": "active",
+        "name": "Maynilad Water Services, IPO cornerstone investment",
+        "detail": "7 November 2025 · In peso equivalent · $100 million from ADB’s ordinary capital and $45 million from LEAP 2 · One of two lead cornerstone investors",
+        "amount": "$145M",
+        "money": true,
+        "note": "Metro Manila’s West Zone and parts of Cavite, about 10.5 million people",
+        "text": "ADB’s equity investment in Maynilad’s initial public offering on the Philippine Stock Exchange, to expand and modernise water and wastewater infrastructure: treatment capacity, lower water losses, pipelines and sewer lines. It serves the water and shelter standards.",
+        "by": [
+          "Asian Development Bank"
+        ],
+        "url": "https://www.adb.org/news/adb-invests-145-million-improve-water-infrastructure-philippines"
+      },
+      {
+        "cat": "private",
+        "status": "Invested",
+        "tone": "active",
+        "name": "Maynilad Water Services, IPO cornerstone investment",
+        "detail": "7 November 2025 · Cornerstone investor in the initial public offering",
+        "amount": "$100M",
+        "money": true,
+        "note": "The largest water concession in the Philippines and Southeast Asia",
+        "text": "IFC’s equity investment in Maynilad’s initial public offering. The proceeds fund Maynilad’s capital expenditure, including wider wastewater coverage, which serves the water and shelter standards.",
+        "by": [
+          "IFC"
+        ],
+        "url": "https://www.ifc.org/en/pressroom/2025/ifc-and-maynilad-partner-to-expand-clean-water-and-wastewater-services-in-metro-ma"
       }
     ]
   },
@@ -181,11 +484,46 @@
     "heading": "Already working in Philippines.",
     "items": [
       {
-        "standard": "In preparation",
-        "name": "The enterprises building Perfect Philippines",
-        "text": "The Stewards are verifying the companies and social enterprises already delivering the seven basic living standards in Philippines. Suggest one to include.",
-        "source": "Suggest an enterprise",
-        "url": "mailto:contact@perfectnations.org?subject=An%20enterprise%20for%20Perfect%20Philippines"
+        "standard": "Water",
+        "name": "Maynilad Water Services",
+        "text": "The operator of the largest water concession in the Philippines and Southeast Asia, serving Metro Manila’s West Zone and parts of Cavite, an estimated 10.5 million people. ADB ($145 million) and IFC ($100 million) were cornerstone investors in its initial public offering in November 2025.",
+        "source": "ADB, 2025",
+        "url": "https://www.adb.org/news/adb-invests-145-million-improve-water-infrastructure-philippines"
+      },
+      {
+        "standard": "Shelter",
+        "name": "Lhoopa",
+        "text": "Acquires, renovates, builds and sells affordable homes, mainly to middle-income workers such as drivers and teachers, at an average price of Php 850,000 (about $15,000). ADB signed a loan of up to $20 million in March 2024 to help it deliver more affordable housing.",
+        "source": "ADB, 2024",
+        "url": "https://www.adb.org/news/adb-lhoopa-sign-deal-expand-green-affordable-housing-philippines"
+      },
+      {
+        "standard": "Energy",
+        "name": "ACEN Corporation",
+        "text": "An energy company of the Ayala group. In December 2023 ADB and ACEN signed a sustainability-linked loan of up to Php5.5 billion (about $100 million) for solar generation of at least 450 gigawatt-hours a year, replacing power from divested coal plants.",
+        "source": "ADB, 2023",
+        "url": "https://www.adb.org/news/adb-acen-sign-php55-billion-sustainability-linked-loan-support-solar-energy-generation"
+      },
+      {
+        "standard": "Education",
+        "name": "PHINMA Education",
+        "text": "Owns and operates seven schools across the Philippines for underserved youth. In February 2020 Kaizenvest, FMO and ADB joined a ₱1.875 billion partnership to fund the acquisition and operation of more schools.",
+        "source": "PHINMA, 2020",
+        "url": "https://www.phinma.com.ph/key-international-investors-join-phinma-education-in-its-mission-of-uplifting-the-lives-of-underserved-youth-across-southeast-asia/"
+      },
+      {
+        "standard": "Health",
+        "name": "AC Health",
+        "text": "Runs Generika drugstores, Healthway clinics and QualiMed hospitals. In November 2021 IFC invested $100 million in a 10-year social bond of the Ayala group that refinanced a new cancer hospital and the expansion of AC Health’s clinics.",
+        "source": "IFC, 2021",
+        "url": "https://www.ifc.org/en/pressroom/2021/ayala-group-to-issue-the-philippines-first-healthcare-focused-so"
+      },
+      {
+        "standard": "Livelihood",
+        "name": "OnePuhunan",
+        "text": "A microfinance institution lending to women microentrepreneurs in rural areas. IFC invested a three-year loan of $20 million in April 2026, within a facility of up to $60 million.",
+        "source": "IFC, 2026",
+        "url": "https://disclosures.ifc.org/project-detail/SII/51693/onepuhunan-loan"
       }
     ]
   },
@@ -313,5 +651,6 @@
     }
   ],
   "dispatches": [],
-  "checked": "2026-11-06T20:23Z"
+  "checked": "2026-11-06T20:23Z",
+  "reviewed": "2026-11-10T00:27Z"
 }
