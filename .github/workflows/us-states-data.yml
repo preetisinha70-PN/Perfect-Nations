@@ -1,4 +1,4 @@
-# Temporary (run 2): pulls the official figures for the 50 States page into data/us/raw/ on this branch only.
+# Temporary (run 3): pulls the official figures for the 50 States page into data/us/raw/ on this branch only.
 # Census Bureau (ACS 1-year, Population Estimates) and BEA (GDP by state). Removed before the page goes for approval.
 name: us-states-data
 on:
@@ -24,12 +24,16 @@ jobs:
             get acsdt1y$Y-b17001-all.dat "https://www2.census.gov/programs-surveys/acs/summary_file/$Y/table-based-SF/data/1YRData/acsdt1y$Y-b17001.dat"
             if [ -s acsdt1y$Y-b17001-all.dat ]; then
               head -1 acsdt1y$Y-b17001-all.dat | cut -c1-400 > acsdt1y$Y-b17001-header.txt
-              awk -F'|' 'NR==1 || $1 ~ /^0100000US$/ || $1 ~ /^0400000US/ {print $1"|"$2"|"$3}' acsdt1y$Y-b17001-all.dat > acsdt1y$Y-b17001-states.dat
+              awk -F'|' 'NR==1 || $1 ~ /^0100000US$/ || $1 ~ /^0400000US/ {print $1"|"$2"|"$3"|"$4"|"$5}' acsdt1y$Y-b17001-all.dat > acsdt1y$Y-b17001-states.dat
               rm -f acsdt1y$Y-b17001-all.dat
             fi
           done
-          get est24all.xls "https://www2.census.gov/programs-surveys/saipe/datasets/2024/2024-state-and-county/est24all.xls"
-          get est24-us.txt "https://www2.census.gov/programs-surveys/saipe/datasets/2024/2024-state-and-county/est24-us.txt"
+          for Y in 2025; do
+            for D in ACS${Y}1YR_Table_Shells.txt ACS${Y}1YR_Table_Shells.xlsx; do get shells-$D "https://www2.census.gov/programs-surveys/acs/summary_file/$Y/table-based-SF/documentation/$D"; done
+            curl -sSL -m 60 "https://www2.census.gov/programs-surveys/acs/summary_file/$Y/table-based-SF/documentation/" | grep -o 'href="[^"]*"' | head -40 > docs-listing-$Y.txt
+          done
+          [ -s shells-ACS20251YR_Table_Shells.txt ] && grep -i 'B17001' shells-ACS20251YR_Table_Shells.txt | head -8 > shells-B17001.txt
+          rm -f shells-ACS20251YR_Table_Shells.txt
           get NST-EST2025-ALLDATA.csv "https://www2.census.gov/programs-surveys/popest/datasets/2020-2025/state/totals/NST-EST2025-ALLDATA.csv"
           get NST-EST2024-ALLDATA.csv "https://www2.census.gov/programs-surveys/popest/datasets/2020-2024/state/totals/NST-EST2024-ALLDATA.csv"
           get SAGDP.zip "https://apps.bea.gov/regional/zip/SAGDP.zip"
