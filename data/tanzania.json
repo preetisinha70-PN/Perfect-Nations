@@ -1,14 +1,14 @@
 {
   "nation": "Tanzania",
   "page_version": "9.0",
-  "updated": "2026-11-07",
+  "updated": "2026-11-10",
   "steward": {
     "name": "Neema Mwakyusa",
     "role": "Nation Steward of Tanzania"
   },
   "population": 70545865,
   "hero": {
-    "lead": "A nation of 70.5 million that has just switched on a 2,115 megawatt hydropower station, and where half of citizens are still waiting for electricity.",
+    "lead": "A nation of 70.5 million that inaugurated the 2,115 megawatt Julius Nyerere hydropower station in August 2026, and where almost half of citizens are still without electricity.",
     "stats": [
       {
         "value": "2,115 MW",
@@ -25,164 +25,374 @@
     ]
   },
   "capital": {
-    "heading": "8 instruments. A deep World Bank programme aimed at power, schools and water.",
+    "heading": "21 instruments. Nine banks for the railway, and a deep World Bank programme for power, schools and water.",
     "record": [
       {
-        "value": "$750M",
+        "value": "$1.2B",
         "money": true,
-        "text": "Second Inclusive and Resilient Growth Development Policy Financing: Budget support for reforms",
-        "source": "World Bank",
-        "url": "https://projects.worldbank.org/en/projects-operations/project-detail/P180504"
+        "text": "Commercial facility signed for the Tabora–Kigoma line of the Standard Gauge Railway: nine banks, behind an AfDB partial credit guarantee of up to $800 million, the Bank’s largest to date",
+        "source": "AfDB, 2026",
+        "url": "https://allafrica.com/stories/202611050695.html"
       },
       {
-        "value": "$616.9M",
+        "value": "$443.9M",
         "money": true,
-        "text": "Productive Social Safety Net Project II: Cash transfers and public works",
-        "source": "World Bank",
-        "url": "https://projects.worldbank.org/en/projects-operations/project-detail/P169165"
+        "text": "Immediate disbursement allowed on 10 July 2026, as the IMF completed the final reviews of the Extended Credit Facility and the Resilience and Sustainability Facility",
+        "source": "IMF, 2026",
+        "url": "https://www.imf.org/en/news/articles/2026/07/10/pr26244-tanzania-imf-exec-board-completes-6th-7th-rev-ecf-arr-3rd-4th-rev-rsf-arr"
       },
       {
-        "value": "$595M",
+        "value": "$550M",
         "money": true,
-        "text": "Tanzania-Zambia Transmission Interconnector: Regional grid",
-        "source": "World Bank",
-        "url": "https://projects.worldbank.org/en/projects-operations/project-detail/P163752"
+        "text": "World Bank financing approved in March 2026 for skills, jobs and social protection: $300 million for skills and $250 million for the Productive Social Safety Net III",
+        "source": "World Bank, 2026",
+        "url": "https://www.worldbank.org/en/news/press-release/2026/03/31/world-bank-approves-programs-to-support-skills-jobs-and-social-protection-for-three-million-tanzanians"
       },
       {
-        "value": "$588M",
+        "value": "$50.8B",
         "money": true,
-        "text": "Boost Primary Student Learning: About 51 pupils per teacher",
-        "source": "World Bank",
-        "url": "https://projects.worldbank.org/en/projects-operations/project-detail/P169380"
+        "text": "National debt stock at the end of July 2026: external debt of $35.9 billion, 83.7% of it public, and government domestic debt of TZS 39,472.2 billion",
+        "source": "Bank of Tanzania, 2026",
+        "url": "https://www.bot.go.tz/Publications/Regular/Monthly%20Economic%20Review/en/2026090513135262.pdf"
       },
       {
-        "value": "$419.9M",
-        "money": true,
-        "text": "Sustainable Rural Water Supply and Sanitation Program: Plus $304.9m additional financing, December 2022",
-        "source": "World Bank",
-        "url": "https://projects.worldbank.org/en/projects-operations/project-detail/P163732"
+        "value": "49.1%",
+        "money": false,
+        "text": "Gross nominal debt as a share of GDP in 2025/26 (IMF estimate), down from 50.3% in 2024/25",
+        "source": "IMF, 2026",
+        "url": "https://www.imf.org/en/news/articles/2026/07/10/pr26244-tanzania-imf-exec-board-completes-6th-7th-rev-ecf-arr-3rd-4th-rev-rsf-arr"
       }
     ],
     "register": [
       {
+        "cat": "govt",
+        "status": "Signed",
+        "tone": "active",
+        "name": "Standard Gauge Railway, Lot 6: commercial financing facility",
+        "detail": "Signed, announced 4 November 2026 · Tabora–Kigoma, 411 km, electrified · $720 million guaranteed lending and $480 million on clean sovereign risk · AfDB partial credit guarantee of up to $800 million",
+        "amount": "$1.2B",
+        "money": true,
+        "note": "Part of a $2.3 billion financing package for the section",
+        "text": "A commercial facility from nine banks, co-arranged by Deutsche Bank and Société Générale, for the 411-kilometre electrified Tabora–Kigoma section of the Standard Gauge Railway. At its centre is an African Development Bank partial credit guarantee of up to $800 million, the Bank’s largest to date, with $405.5 million of the exposure placed with international insurers. The AfDB calls Lot 6 a strategic link in Tanzania’s railway network; it serves the livelihood and food standards.",
+        "by": [
+          "Deutsche Bank",
+          "Société Générale",
+          "HSBC",
+          "Commerzbank",
+          "Nedbank",
+          "Stanbic Bank Tanzania",
+          "First Abu Dhabi Bank",
+          "FirstBank UK",
+          "Bank of Africa United Kingdom",
+          "African Development Bank"
+        ],
+        "url": "https://allafrica.com/stories/202611050695.html"
+      },
+      {
         "cat": "multi",
-        "status": "Active",
+        "status": "Approved",
+        "tone": "active",
+        "name": "Second Education and Skills for Productive Jobs Program (ESPJ-II)",
+        "detail": "Approved, announced 31 March 2026 · IDA · Program-for-Results",
+        "amount": "$300M",
+        "money": true,
+        "note": "About one million Tanzanians, at least 45% of them women",
+        "text": "Results-based financing to raise the number of graduates with job-relevant skills in priority sectors and to widen access to technical and vocational education. About one million Tanzanians are to benefit, which serves the education and livelihood standards.",
+        "by": [
+          "World Bank"
+        ],
+        "url": "https://www.worldbank.org/en/news/press-release/2026/03/31/world-bank-approves-programs-to-support-skills-jobs-and-social-protection-for-three-million-tanzanians"
+      },
+      {
+        "cat": "multi",
+        "status": "Approved",
+        "tone": "active",
+        "name": "Tanzania Productive Social Safety Net III (PSSN III)",
+        "detail": "Approved, announced 31 March 2026 · IDA",
+        "amount": "$250M",
+        "money": true,
+        "note": "About 2.2 million people",
+        "text": "Strengthens income-generating opportunities and human capital for poor households, and the national social protection system, through productive cash transfers and climate-smart public works for about 2.2 million people. It serves the food and livelihood standards.",
+        "by": [
+          "World Bank"
+        ],
+        "url": "https://www.worldbank.org/en/news/press-release/2026/03/31/world-bank-approves-programs-to-support-skills-jobs-and-social-protection-for-three-million-tanzanians"
+      },
+      {
+        "cat": "multi",
+        "status": "Announced",
+        "tone": "active",
+        "name": "Development Policy Financing with a Catastrophe Deferred Drawdown Option",
+        "detail": "Announced 5 June 2025 · IDA credit · $100 million budget support and $200 million Cat-DDO",
+        "amount": "$300M",
+        "money": true,
+        "note": "An estimated 1.9 million Tanzanians to benefit",
+        "text": "Budget support for reforms in emergency response, flood early warning, the Contingency Fund, risk-informed urban planning and Zanzibar’s water and energy sectors, with $200 million of contingent financing to help the Government respond to emergencies. It protects the shelter and livelihood standards.",
+        "by": [
+          "World Bank"
+        ],
+        "url": "https://www.worldbank.org/en/news/press-release/2025/06/09/tanzania-afe-new-financing-to-benefit-1-9-million-citizens-with-enhanced-disaster-preparedness-and-response"
+      },
+      {
+        "cat": "multi",
+        "status": "Signed",
+        "tone": "active",
+        "name": "Accelerating Sustainable and Clean Energy Access Transformation (ASCENT Tanzania)",
+        "detail": "IDA credit 7456-TZ · Financing Agreement signed 12 September 2024 · Program-for-Results · Closing 29 December 2028",
+        "amount": "$300M",
+        "money": true,
+        "note": "Target: 2,397,606 grid connections, from 1,585,000",
+        "text": "Results-based financing to accelerate access to sustainable, reliable and clean energy, paid mainly on new grid connections. It serves the energy standard, which sets Tanzania’s Coverage.",
+        "by": [
+          "World Bank"
+        ],
+        "url": "https://documents1.worldbank.org/curated/en/099091624083514394/pdf/P17963119345670721b8311997df147f2f2.pdf"
+      },
+      {
+        "cat": "multi",
+        "status": "Completed",
+        "tone": "completed",
+        "name": "Resilience and Sustainability Facility",
+        "detail": "Approved June 2024 for 150 percent of quota · 23 months, extended by 3 months in May 2026 · Final third and fourth reviews completed 10 July 2026",
+        "amount": "$636.5M",
+        "money": true,
+        "note": "Total access about $636.5 million after the final reviews",
+        "text": "IMF support for reforms to reduce prospective balance of payments risks and enhance economic resilience to climate change. The final reviews, completed on 10 July 2026, allowed a disbursement of about $289.7 million; three reform measures related to the energy sector were not completed.",
+        "by": [
+          "International Monetary Fund"
+        ],
+        "url": "https://www.imf.org/en/news/articles/2026/07/10/pr26244-tanzania-imf-exec-board-completes-6th-7th-rev-ecf-arr-3rd-4th-rev-rsf-arr"
+      },
+      {
+        "cat": "multi",
+        "status": "Approved",
         "tone": "active",
         "name": "Second Inclusive and Resilient Growth Development Policy Financing",
-        "detail": "Approved 20 December 2023 \u00b7 Development policy lending",
+        "detail": "Approved 20 December 2023 · IDA financing · Development Policy Financing",
         "amount": "$750M",
         "money": true,
         "note": "Budget support for reforms",
-        "text": "Supports reforms for inclusive and resilient growth.",
+        "text": "Supports reforms to improve the business climate, strengthen the management of state-owned enterprises, improve transparency and foster economic resilience, building on the first operation, approved in December 2022.",
         "by": [
           "World Bank"
         ],
-        "url": "https://projects.worldbank.org/en/projects-operations/project-detail/P180504"
+        "url": "https://www.worldbank.org/en/news/press-release/2023/12/20/tanzania-afe-new-financing-to-support-private-sector-led-inclusive-growth-and-climate-resilient-development"
       },
       {
         "cat": "multi",
-        "status": "Active",
-        "tone": "active",
-        "name": "Productive Social Safety Net Project II",
-        "detail": "Approved 12 September 2019 \u00b7 Investment project financing",
-        "amount": "$616.9M",
-        "money": true,
-        "note": "Cash transfers and public works",
-        "text": "Supports poor households with transfers and work.",
-        "by": [
-          "World Bank"
-        ],
-        "url": "https://projects.worldbank.org/en/projects-operations/project-detail/P169165"
-      },
-      {
-        "cat": "multi",
-        "status": "Active",
-        "tone": "active",
-        "name": "Tanzania-Zambia Transmission Interconnector",
-        "detail": "Approved 18 June 2018 \u00b7 Investment project financing",
-        "amount": "$595M",
-        "money": true,
-        "note": "Regional grid",
-        "text": "Links the Tanzanian and Zambian grids, and the southern and eastern African power pools.",
-        "by": [
-          "World Bank"
-        ],
-        "url": "https://projects.worldbank.org/en/projects-operations/project-detail/P163752"
-      },
-      {
-        "cat": "multi",
-        "status": "Active",
-        "tone": "active",
-        "name": "Boost Primary Student Learning",
-        "detail": "Approved 17 December 2021 \u00b7 Program-for-Results",
-        "amount": "$588M",
-        "money": true,
-        "note": "About 51 pupils per teacher",
-        "text": "Improves primary schooling, paid on verified results.",
-        "by": [
-          "World Bank"
-        ],
-        "url": "https://projects.worldbank.org/en/projects-operations/project-detail/P169380"
-      },
-      {
-        "cat": "multi",
-        "status": "Active",
-        "tone": "active",
-        "name": "Sustainable Rural Water Supply and Sanitation Program",
-        "detail": "Approved 26 June 2018 \u00b7 Program-for-Results",
-        "amount": "$419.9M",
-        "money": true,
-        "note": "Plus $304.9m additional financing, December 2022",
-        "text": "Rural water and sanitation, paid on verified results.",
-        "by": [
-          "World Bank"
-        ],
-        "url": "https://projects.worldbank.org/en/projects-operations/project-detail/P163732"
-      },
-      {
-        "cat": "multi",
-        "status": "Active",
-        "tone": "active",
-        "name": "Rural Electrification Expansion Program, Additional Financing",
-        "detail": "Approved 26 September 2022 \u00b7 Program-for-Results",
-        "amount": "$341M",
-        "money": true,
-        "note": "The last mile",
-        "text": "Extends the grid to rural households, paid on verified results.",
-        "by": [
-          "World Bank"
-        ],
-        "url": "https://projects.worldbank.org/en/projects-operations/project-detail/P177140"
-      },
-      {
-        "cat": "multi",
-        "status": "Active",
-        "tone": "active",
-        "name": "Accelerating Sustainable and Clean Energy Access Transformation (ASCENT)",
-        "detail": "Approved 28 November 2023 \u00b7 Program-for-Results",
-        "amount": "$300M",
-        "money": true,
-        "note": "Clean energy access",
-        "text": "Part of the regional programme to connect households to clean power.",
-        "by": [
-          "World Bank"
-        ],
-        "url": "https://projects.worldbank.org/en/projects-operations/project-detail/P179631"
-      },
-      {
-        "cat": "multi",
-        "status": "Active",
+        "status": "Approved",
         "tone": "active",
         "name": "Tanzania Food Systems Resilience Program",
-        "detail": "Approved 31 May 2023 \u00b7 Program-for-Results",
+        "detail": "Approved, announced 31 May 2023 · IDA · Program-for-Results",
         "amount": "$300M",
         "money": true,
-        "note": "Food",
-        "text": "Strengthens food systems against shocks.",
+        "note": "At least 300,000 farmers, nearly half of them women",
+        "text": "Results-based financing for research, extension and seeds, resilient rural infrastructure and fiscal performance under the Agriculture Sector Development Program II. At least 300,000 farmers are to adopt resilience-enhancing technologies, which serves the food standard.",
         "by": [
           "World Bank"
         ],
-        "url": "https://projects.worldbank.org/en/projects-operations/project-detail/P179818"
+        "url": "https://www.worldbank.org/en/news/press-release/2023/05/31/new-world-bank-financing-for-tanzania-afe-will-enhance-agricultural-productivity-and-improve-resilience-climate-change"
+      },
+      {
+        "cat": "multi",
+        "status": "Approved",
+        "tone": "active",
+        "name": "Tanzania Rural Electrification Expansion Program, Additional Financing",
+        "detail": "Approved, announced 26 September 2022 · IDA credit · Program-for-Results",
+        "amount": "$335M",
+        "money": true,
+        "note": "Plus a $6 million ESMAP grant",
+        "text": "Additional financing for an additional 1,000,000 last-mile grid connections, including 8,500 education facilities and 2,500 healthcare facilities. It serves the energy standard.",
+        "by": [
+          "World Bank"
+        ],
+        "url": "https://www.worldbank.org/en/news/press-release/2022/09/26/new-ida-financing-to-add-one-million-connections-to-the-electricity-grid-in-tanzania"
+      },
+      {
+        "cat": "multi",
+        "status": "Completed",
+        "tone": "completed",
+        "name": "Extended Credit Facility",
+        "detail": "Approved July 2022 for SDR 795.58 million, about $1,046 million at approval · 40 months, extended by 6 months in June 2024 and by 3 months in May 2026 · Final sixth and seventh reviews completed 10 July 2026",
+        "amount": "$1.06B",
+        "money": true,
+        "note": "Total access about $1,063 million after the final reviews",
+        "text": "IMF lending to support economic recovery, preserve macro-financial stability and promote sustainable and inclusive growth. The final reviews, completed on 10 July 2026, allowed a disbursement of about $154.1 million.",
+        "by": [
+          "International Monetary Fund"
+        ],
+        "url": "https://www.imf.org/en/news/articles/2026/07/10/pr26244-tanzania-imf-exec-board-completes-6th-7th-rev-ecf-arr-3rd-4th-rev-rsf-arr"
+      },
+      {
+        "cat": "multi",
+        "status": "Approved",
+        "tone": "active",
+        "name": "Boost Primary Student Learning",
+        "detail": "Approved 17 December 2021 · Program-for-Results",
+        "amount": "$500M",
+        "money": true,
+        "note": "More than 12 million children",
+        "text": "Results-based financing for safer, child-friendly schools, including at least 12,000 classrooms, for teacher skills through at least 800 primary hub schools, and for education financing. It serves the education standard.",
+        "by": [
+          "World Bank"
+        ],
+        "url": "https://www.worldbank.org/en/news/press-release/2021/12/17/tanzania-more-than-12-million-children-to-benefit-from-improved-preprimary-and-primary-education"
+      },
+      {
+        "cat": "multi",
+        "status": "Under implementation",
+        "tone": "active",
+        "name": "Tanzania Agriculture Climate Adaptation Technology Deployment Programme (FP179)",
+        "detail": "Approved by the GCF Board 7 October 2021 · Loans $70 million, grants $20 million, guarantees $10 million · Accredited entity: CRDB Bank Plc · Estimated completion 20 September 2027",
+        "amount": "$100M",
+        "money": true,
+        "note": "Total value $200 million, with $100 million of co-financing",
+        "text": "A Green Climate Fund programme, run through CRDB Bank, that combines loans, grants and guarantees for climate adaptation technologies in farming. The GCF reports 65% of its financing disbursed. It serves the food and livelihood standards.",
+        "by": [
+          "Green Climate Fund",
+          "CRDB Bank"
+        ],
+        "url": "https://www.greenclimate.fund/project/fp179"
+      },
+      {
+        "cat": "multi",
+        "status": "Approved",
+        "tone": "active",
+        "name": "Productive Social Safety Net Project II",
+        "detail": "Approved 12 September 2019 · IDA credit",
+        "amount": "$450M",
+        "money": true,
+        "note": "Over five million Tanzanians, more than half of them women",
+        "text": "Supports poor households to improve food consumption and livelihoods, and children’s school attendance and access to health care. It serves the food, livelihood, education and health standards.",
+        "by": [
+          "World Bank"
+        ],
+        "url": "https://www.worldbank.org/en/news/press-release/2019/09/12/five-million-tanzanians-to-benefit-from-improved-safety-nets"
+      },
+      {
+        "cat": "multi",
+        "status": "Approved",
+        "tone": "active",
+        "name": "Sustainable Rural Water Supply and Sanitation Program",
+        "detail": "Original credit approved June 2018 · Additional financing approved 14 December 2022",
+        "amount": "$350M",
+        "money": true,
+        "note": "Plus a $300 million IDA credit and a $4.9 million ESMAP grant, December 2022",
+        "text": "Rural water supply and sanitation, financed on results. With the additional financing of 2022, up to 10 million Tanzanians are to gain improved water supply and nine million better sanitation, which serves the water and shelter standards.",
+        "by": [
+          "World Bank"
+        ],
+        "url": "https://www.worldbank.org/en/news/press-release/2022/12/14/tanzania-set-to-expand-access-to-water-supply-sanitation-and-hygiene-services-to-10-million-citizens"
+      },
+      {
+        "cat": "multi",
+        "status": "Approved",
+        "tone": "active",
+        "name": "Tanzania-Zambia Transmission Interconnector",
+        "detail": "Approved 18 June 2018 · IDA credit",
+        "amount": "$455M",
+        "money": true,
+        "note": "Plus a $10 million IDA grant",
+        "text": "Raises power transmission capacity to the southern regions of Tanzania and strengthens the institutions of Tanzania and the Eastern Africa Power Pool for regional power trade. It serves the energy standard.",
+        "by": [
+          "World Bank"
+        ],
+        "url": "https://www.worldbank.org/en/news/loans-credits/2018/06/18/tanzania-zambia-transmission-interconnector-project"
+      },
+      {
+        "cat": "regional",
+        "status": "Approved",
+        "tone": "active",
+        "name": "Tanzania Agricultural Development Bank Equity Enhancement Project",
+        "detail": "Approved 21 October 2026 · Loan to the Government, invested as equity in TADB · Part of a $120 million initiative, with $60 million from the Government",
+        "amount": "$60M",
+        "money": true,
+        "note": "The AfDB expects 8,000 jobs",
+        "text": "An African Development Bank loan, channelled through the Ministry of Finance and the Office of the Treasury Registrar, that strengthens the capital of the Tanzania Agricultural Development Bank so that it can lend more, and for longer, to farmers and agricultural entrepreneurs. It serves the food and livelihood standards.",
+        "by": [
+          "African Development Bank",
+          "Tanzania Agricultural Development Bank"
+        ],
+        "url": "https://allafrica.com/stories/202611050699.html"
+      },
+      {
+        "cat": "regional",
+        "status": "Signed",
+        "tone": "active",
+        "name": "Tanzania Strategic Agriculture Value Chains, TADB",
+        "detail": "Signed 24 July 2026 · Intermediated loan to the Tanzania Agricultural Development Bank",
+        "amount": "€60M",
+        "money": true,
+        "note": "Coffee, cashew nut and rice value chains",
+        "text": "A European Investment Bank loan to the Tanzania Agricultural Development Bank, which lends on mainly to small and medium-sized enterprises in the coffee, cashew nut and rice value chains, with a focus on women’s economic empowerment. It serves the food and livelihood standards.",
+        "by": [
+          "European Investment Bank",
+          "Tanzania Agricultural Development Bank"
+        ],
+        "url": "https://www.eib.org/en/projects/all/20230758"
+      },
+      {
+        "cat": "regional",
+        "status": "Approved",
+        "tone": "active",
+        "name": "Submarine power cables to Unguja, Pemba and Mafia",
+        "detail": "Approved, announced 18 July 2025 · Five years · High and medium voltage submarine cables",
+        "amount": "$282.07M",
+        "money": true,
+        "note": "Last-mile connections for 465,000 people",
+        "text": "African Development Bank financing for submarine power cables to Zanzibar (Unguja and Pemba) and Mafia Island, with last-mile electricity connections for 465,000 people and electric cooking appliances for 335,300 Tanzanians. It reaches the energy standard, which sets Tanzania’s Coverage.",
+        "by": [
+          "African Development Bank"
+        ],
+        "url": "https://allafrica.com/stories/202507210691.html"
+      },
+      {
+        "cat": "bilat",
+        "status": "Approved",
+        "tone": "active",
+        "name": "AI and digital technology education institute",
+        "detail": "Approved 23 August 2026 by the 159th EDCF Operating Committee · Tied EDCF loan",
+        "amount": "$170M",
+        "money": true,
+        "note": "The first AI project of the EDCF, according to Korea’s Ministry of Economy and Finance",
+        "text": "A Korean Economic Development Cooperation Fund loan to build and equip an education institute with four departments, in AI, robotics, data analysis and the Internet of Things, with a network system and curricula. It serves the education and livelihood standards.",
+        "by": [
+          "Economic Development Cooperation Fund (EDCF), Korea",
+          "Ministry of Economy and Finance, Korea"
+        ],
+        "url": "https://eiec.kdi.re.kr/policy/materialView.do?num=285667"
+      },
+      {
+        "cat": "bilat",
+        "status": "Signed",
+        "tone": "active",
+        "name": "Agricultural and Rural Development Two Step Loan Project",
+        "detail": "Signed 14 January 2025 · Japanese ODA loan · 0.20% a year, 40 years, 10 years’ grace · Executing agency: Tanzania Agricultural Development Bank",
+        "amount": "JPY 22.7B",
+        "money": true,
+        "note": "JPY 22,742 million",
+        "text": "A JICA loan, lent on by the Tanzania Agricultural Development Bank as medium- and long-term sub-loans to small-sized farms, farming household groups and agriculture-related companies, with funds for women and young people growing horticultural crops. It serves the food and livelihood standards.",
+        "by": [
+          "JICA",
+          "Tanzania Agricultural Development Bank"
+        ],
+        "url": "https://www.jica.go.jp/english/information/press/2024/20250110_21.html"
+      },
+      {
+        "cat": "private",
+        "status": "Issued",
+        "tone": "active",
+        "name": "IFC Tanzanian shilling bond and loan to NMB Bank",
+        "detail": "Bond issued 25 June 2026 · TZS 262.5 billion, 5 years, 7.60% coupon, maturing 15 June 2031 · Listed on the London Stock Exchange",
+        "amount": "$100M",
+        "money": true,
+        "note": "20% for women-owned micro, small and medium-sized enterprises",
+        "text": "IFC issued a Tanzanian shilling bond, listed on the London Stock Exchange, to support a $100 million equivalent shilling loan to NMB Bank for micro, small and medium-sized enterprises across Tanzania. Long-term funding in the local currency serves the livelihood standard.",
+        "by": [
+          "IFC",
+          "NMB Bank"
+        ],
+        "url": "https://www.worldbank.org/en/news/press-release/2026/07/24/ifc-celebrates-first-tanzanian-shilling-bond-issuance-at-london-stock-exchange"
       }
     ]
   },
@@ -193,8 +403,8 @@
         "name": "The Rufiji",
         "figure": "2,115 MW",
         "money": false,
-        "label": "Julius Nyerere Hydropower Station, 2025",
-        "text": "All nine turbines running by April 2025.",
+        "label": "Julius Nyerere Hydropower Station, 2026",
+        "text": "Inaugurated on 22 August 2026. Regions never on the national grid are now joining it.",
         "alt": "The Julius Nyerere dam on the Rufiji River",
         "images": [
           "https://perfectnations.org/wp-content/uploads/2026/10/The-Rufiji-Tanzania-768x560.png"
@@ -270,11 +480,53 @@
     "heading": "Already working in Tanzania.",
     "items": [
       {
-        "standard": "In preparation",
-        "name": "The enterprises building Perfect Tanzania",
-        "text": "The Stewards are verifying the companies and social enterprises already delivering the seven basic living standards in Tanzania. Suggest one to include.",
-        "source": "Suggest an enterprise",
-        "url": "mailto:contact@perfectnations.org?subject=An%20enterprise%20for%20Perfect%20Tanzania"
+        "standard": "Food",
+        "name": "One Acre Fund",
+        "text": "Works with farmers in Iringa, Njombe, Songwe and Mbeya, with pilots in Morogoro, Dodoma and Singida, through retail shops, agroforestry, market access and extension. It counts 100,000 farmers served in Tanzania.",
+        "source": "One Acre Fund",
+        "url": "https://oneacrefund.org/what-we-do/countries-we-serve/tanzania"
+      },
+      {
+        "standard": "Water",
+        "name": "Water Mission Tanzania",
+        "text": "Has served nearly 1.2 million Tanzanians since 2013, including through solar-powered water systems in the Nyarugusu and Nduta refugee camps and community-managed systems for host communities.",
+        "source": "Water Mission",
+        "url": "https://watermission.org/about/where-we-work/tanzania"
+      },
+      {
+        "standard": "Shelter",
+        "name": "First Housing Finance (Tanzania)",
+        "text": "A mortgage finance institution that began operations in October 2017. In June 2024 IFC approved a seven-year, shilling-linked loan of $2 million for its housing finance lending, with a currency hedge on a further $10 million from parallel lenders.",
+        "source": "IFC, 2024",
+        "url": "https://disclosures.ifc.org/project-detail/SII/47741/fhf-tzs-loan"
+      },
+      {
+        "standard": "Energy",
+        "name": "d.light",
+        "text": "Sells solar home systems and mobile phones in Tanzania through its pay-go business. In August 2023 TDB Group said it was extending $30 million under a securitisation set to mobilise $125 million in funding for d.light, to reach more low-income households in Tanzania.",
+        "source": "TDB Group, 2023",
+        "url": "https://tdbgroup.org/?p=9949"
+      },
+      {
+        "standard": "Education",
+        "name": "Ubongo",
+        "text": "A non-profit social enterprise based in Dar es Salaam that makes educational cartoons, among them Ubongo Kids, launched in Tanzania in 2014, and Akili and Me, carried on TV, radio and mobile phones.",
+        "source": "Ubongo",
+        "url": "https://www.ubongo.org/on-the-ground-in-tanzania/"
+      },
+      {
+        "standard": "Health",
+        "name": "Aga Khan Health Service, Tanzania",
+        "text": "Opened an Aga Khan Polyclinic in the Old Dispensary in Stone Town, Zanzibar, in April 2023. Its work has included a Tsh 192 billion (€75 million) expansion of the Aga Khan Hospital in Dar es Salaam, funded by the Government of France through a loan from the Agence Française de Développement, and by the Aga Khan Development Network.",
+        "source": "AKDN, 2023",
+        "url": "https://the.akdn/en/resources-media/whats-new/news-release/government-of-france-and-aga-khan-health-service-tanzania-partner-to-launch-ultra"
+      },
+      {
+        "standard": "Livelihood",
+        "name": "NMB Bank",
+        "text": "Originally established as the National Microfinance Bank, it is lending a $100 million equivalent shilling loan from IFC to micro, small and medium-sized enterprises, with 20% dedicated to women-owned enterprises.",
+        "source": "IFC, 2026",
+        "url": "https://www.worldbank.org/en/news/press-release/2026/07/24/ifc-celebrates-first-tanzanian-shilling-bond-issuance-at-london-stock-exchange"
       }
     ]
   },
@@ -347,7 +599,7 @@
     {
       "date": "2026-11-05",
       "label": "5 Nov 2026",
-      "title": "Korea Eximbank backs Tanzania\u2019s AI ambitions with $170 mil. development loan",
+      "title": "Korea Eximbank backs Tanzania’s AI ambitions with $170 mil. development loan",
       "highlight": "$170 mil.",
       "url": "https://www.koreatimes.co.kr/business/banking-finance/20261105/korea-eximbank-backs-tanzanias-ai-ambitions-with-170-million-development-loan",
       "source": "The Korea Times"
@@ -410,5 +662,6 @@
     }
   ],
   "dispatches": [],
-  "checked": "2026-11-07T20:20Z"
+  "checked": "2026-11-07T20:20Z",
+  "reviewed": "2026-11-10T19:51Z"
 }
