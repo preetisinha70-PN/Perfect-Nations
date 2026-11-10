@@ -8,6 +8,9 @@ The page is edited by hand, except the blocks that this script writes in place:
   GENERATED:NSTEWARDS the Nation Stewards: one linked card per open blueprint in
                       data/blueprints.json, with the Steward's name from data/<slug>.json and the
                       portrait the nation's own blueprint uses (pages/blueprint-<slug>.html)
+v11.6 (10 Nov 2026): light reading sections, Earthrise accents (the Steward-General). The parts carry their own
+LIGHT blocks; this script is unchanged but for its version.
+v11.5 (10 Nov 2026): the homepage close opens The Blueprint Lab on ?about=lab (Lab and Solution links).
 v11.4 (10 Nov 2026): the homepage close (pages/home-pledge.html) is the close of this page too.
 v11.3 (9 Nov 2026): every element of the logo in one gold, #E3C258, with no dimmed parts (the Steward-General).
 v11.2 (9 Nov 2026): fewer words, one headline and one line per section, the detail behind Read more
@@ -47,7 +50,7 @@ ROOT = Path(__file__).resolve().parent.parent
 PAGES = ROOT / 'pages'
 DATA = ROOT / 'data'
 PAGE = PAGES / 'about.html'
-VERSION = '11.5'
+VERSION = '11.6'
 RESEARCH_STEWARDS = 6
 # The homepage parts this page shows, by block name (see the docstring).
 PARTS = [

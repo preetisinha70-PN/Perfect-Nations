@@ -1,9 +1,10 @@
 <!-- ===========================================================================
 PERFECT NATIONS - THE BLUEPRINTS PAGE - 01 THE GOLDEN MAP, 02 THE OPEN BLUEPRINTS, 03 EVERY NATION
-part v6.3 - 2026-11-09 - kept by the Blueprints Steward
+part v6.5 - 2026-11-10 - kept by the Blueprints Steward
 This part is the body of pages/blueprints.html. Edit this file, then run tools/build_blueprints.py,
 which fills the slots (the map, the tabs, the tiles, the region lists, the counts and the settings)
 and joins it with the Nations Menu and the gold line. Never edit pages/blueprints.html by hand.
+v6.5: light reading sections, Earthrise accents (the Steward-General, 10 Nov 2026).
 v6.3: Fewer words (the Steward-General, 9 Nov 2026): one headline and one line per section. The hero
   lead is one sentence (FfD still before SI); the close asks its question once, beside its button.
 v6.2: Gold line in place of the painted botanical seams (the Steward-General, 9 Nov 2026).
@@ -309,6 +310,71 @@ sourced money figures. Copy: no contractions, curly apostrophes.
   #pn-bpa .pnbpa-ask .pnbpa-btn{ width:100%; }
 }
 @media (prefers-reduced-motion:reduce){ #pn-bpa *{ transition:none !important; animation:none !important; } }
+
+/* ---------- v6.5 LIGHT (the Steward-General, 10 Nov 2026: "the site is a little dark and heavy to read ...
+   make sections the lighter colour with the Earthrise for the accents"). 01 the golden map stays Earthrise:
+   the map needs its deep ground, and the hero stays short. After the gold line, 02 the open blueprints turns
+   to paper with white tiles and ink type, and 03 every nation to ivory, so the two reading bands alternate.
+   Earthrise for the headlines, the silhouettes, the numbers and the arrows; terracotta eyebrows; gold only
+   for the buttons and money (a deep gold on light). The ask stays an Earthrise card, the accent of 03. */
+#pn-bpa .pnbpa-open,#pn-bpa .pnbpa-every{
+  --tx:#10262B; --tm:#34464A; --td:#5C696C; --hair:rgba(16,38,43,.13);
+  color:#10262B;
+}
+#pn-bpa .pnbpa-open{
+  background:
+    radial-gradient(48% 60% at 96% 0%, rgba(227,194,88,.16) 0%, rgba(227,194,88,0) 70%),
+    radial-gradient(40% 60% at 0% 100%, rgba(11,61,69,.06) 0%, rgba(11,61,69,0) 70%),
+    linear-gradient(180deg,#FBF8F1 0%,#F6EFE0 100%);
+}
+#pn-bpa .pnbpa-every{
+  background:
+    radial-gradient(50% 60% at 92% 0%, rgba(227,194,88,.16) 0%, rgba(227,194,88,0) 70%),
+    radial-gradient(40% 60% at 0% 100%, rgba(138,58,34,.06) 0%, rgba(138,58,34,0) 70%),
+    linear-gradient(180deg,#F7F0DF 0%,#F4ECD8 60%,#F1E7D0 100%);
+  box-shadow:inset 0 1px 0 rgba(16,38,43,.08);
+}
+#pn-bpa .pnbpa-open :focus-visible,#pn-bpa .pnbpa-every :focus-visible{ outline-color:#0B3D45; }
+#pn-bpa .pnbpa-open .pnbpa-eyebrow,#pn-bpa .pnbpa-every .pnbpa-eyebrow{ color:#8A3A22; }
+#pn-bpa .pnbpa-open .pnbpa-eyebrow::after,#pn-bpa .pnbpa-every .pnbpa-eyebrow::after{ background:rgba(138,58,34,.55); opacity:1; }
+#pn-bpa .pnbpa-open .pnbpa-h2,#pn-bpa .pnbpa-every .pnbpa-h2{ color:#0B3D45 !important; }
+#pn-bpa .pnbpa-open .pnbpa-lead,#pn-bpa .pnbpa-every .pnbpa-lead{ color:#34464A; }
+/* 02: the search, the status and the tiles */
+#pn-bpa .pnbpa-field{ border-color:rgba(16,38,43,.22); background:#FFFDF8; box-shadow:0 6px 18px rgba(16,38,43,.06); }
+#pn-bpa .pnbpa-field:focus-within{ border-color:#0B3D45; box-shadow:0 0 0 3px rgba(11,61,69,.16); }
+#pn-bpa .pnbpa-field svg{ color:#0B3D45; }
+#pn-bpa .pnbpa-field input,#pn-bpa .pnbpa-field input:focus,#pn-bpa .pnbpa-field input:hover{ color:#10262B !important; -webkit-text-fill-color:#10262B !important; caret-color:#0B3D45; }
+#pn-bpa .pnbpa-field input::placeholder{ color:#5C696C !important; -webkit-text-fill-color:#5C696C !important; }
+#pn-bpa .pnbpa-clear{ border-color:rgba(11,61,69,.45) !important; color:#0B3D45 !important; }
+#pn-bpa .pnbpa-reset{ color:#0B3D45 !important; }
+#pn-bpa .pnbpa-t a{
+  color:#10262B; background:#FFFDF8; border-color:rgba(16,38,43,.12);
+  box-shadow:0 1px 0 rgba(255,255,255,.9) inset, 0 8px 22px rgba(16,38,43,.07);
+}
+#pn-bpa .pnbpa-t a:hover,#pn-bpa .pnbpa-t.is-hot a{ border-color:rgba(11,61,69,.45); background:#FFFFFF; box-shadow:0 16px 34px rgba(16,38,43,.13); }
+#pn-bpa .pnbpa-t__sil{ fill:#0B3D45; }
+#pn-bpa .pnbpa-t__n{ color:#0B3D45; }
+#pn-bpa .pnbpa-t__v{ color:#0B3D45; }
+#pn-bpa .pnbpa-t__v.is-money{ color:#8C6A12; }
+#pn-bpa .pnbpa-t__go{ background:#0B3D45; }
+#pn-bpa .pnbpa-t__go::before{ color:#F5F1E8; }
+#pn-bpa .pnbpa-t a:hover .pnbpa-t__go{ background:#E3C258; }
+#pn-bpa .pnbpa-t a:hover .pnbpa-t__go::before{ color:#1A140C; }
+#pn-bpa .pnbpa-open .pnbpa-btn{ box-shadow:0 10px 24px rgba(140,106,18,.22); }
+/* 03: the regions; open nations carry an Earthrise arrow, the open region an Earthrise chevron */
+#pn-bpa .pnbpa-reg__m{ color:#5C696C; }
+#pn-bpa .pnbpa-n{ color:#3E4E52; }
+#pn-bpa .pnbpa-n.is-open::after{ background:#0B3D45; color:#F5F1E8; }
+#pn-bpa .pnbpa-n.is-open:hover{ color:#8A3A22; }
+#pn-bpa .pnbpa-reg[open] .pnbpa-reg__chev{ background:#0B3D45; border-color:#0B3D45; }
+#pn-bpa .pnbpa-reg[open] .pnbpa-reg__chev::before{ border-color:#F5F1E8; }
+#pn-bpa .pnbpa-reg summary:hover .pnbpa-reg__chev{ border-color:#0B3D45; }
+#pn-bpa .pnbpa-ask{
+  border:1px solid rgba(227,194,88,.38);
+  background:radial-gradient(70% 140% at 0% 0%, rgba(227,194,88,.14) 0%, rgba(227,194,88,0) 62%),linear-gradient(165deg,#10505F 0%,#0B3D45 48%,#09313A 100%);
+  box-shadow:0 14px 34px rgba(11,61,69,.22);
+}
+#pn-bpa .pnbpa-ask :focus-visible{ outline-color:#F0D68F; }
 </style>
 
 <div id="pn-bpa">
