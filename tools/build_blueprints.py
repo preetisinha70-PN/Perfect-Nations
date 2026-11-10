@@ -40,7 +40,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 PAGES = ROOT / 'pages'
 DATA = ROOT / 'data'
-VERSION = '6.3'
+VERSION = '6.4'  # the close button of every pop-up is one design: a gold X drawn as two strokes, centred in a circle (the Steward-General, 9 Nov 2026)
 
 ORDER = [
     'nations-menu.html',      # the moving list of 195 nations (also on the homepage)

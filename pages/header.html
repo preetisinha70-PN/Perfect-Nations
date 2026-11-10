@@ -1,5 +1,7 @@
 <!-- ==========================================================================
-PERFECT NATIONS - CUSTOM HEADER - v20.1 EARTHRISE - 2026-11-09
+PERFECT NATIONS - CUSTOM HEADER - v20.2 EARTHRISE - 2026-11-09
+v20.2: every link to another page opens in a new tab (the script at the end; the footer carries the same script,
+and it runs once per page). The Steward-General, 9 Nov 2026.
 v20.1: the logo image in one gold, #E3C258 (pn-logo-7-stars-e3c258.png, Media Library id 17756, drawn from the vector logo kit; it replaces the metallic pn-logo-gold-7-stars.png, id 17700). The Steward-General, 9 Nov 2026.
 v20.0: the menu of an advisory firm (the Steward-General, 8 Nov 2026: Perfect Nations as a new-age sovereign advisory firm for
 the era of super intelligence, its clients nations). The open menu is grouped as Goldman Sachs, J.P.
@@ -732,5 +734,32 @@ html:has(#pn-hd), html:has(#pn-hd) body{ overflow-x:clip; }
       'added_to_cart removed_from_cart updated_cart_totals wc_fragments_refreshed wc_fragments_loaded',
       function(){ updateCart(true); });
   }
+})();
+</script>
+<script>
+/* Every link to another page opens in a new tab (the Steward-General, 9 Nov 2026: "open everything in a new tab").
+   Jumps within the page, email and phone links, downloads, links that already name a target and the WordPress
+   admin bar keep their own behaviour. Set once per page: the header and the footer both carry this script. */
+(function(){
+  if (window.__pnNewTab) { return; }
+  window.__pnNewTab = 1;
+  function trim(p){ return String(p || '').replace(/\/+$/, ''); }
+  document.addEventListener('click', function(e){
+    if (e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) { return; }
+    if (document.body && document.body.classList.contains('elementor-editor-active')) { return; }
+    var a = e.target && e.target.closest ? e.target.closest('a[href]') : null;
+    if (!a || a.getAttribute('target') || a.hasAttribute('download') || a.hasAttribute('data-pn-same-tab') || a.closest('#wpadminbar')) { return; }
+    var h = a.getAttribute('href') || '';
+    if (!h || h.charAt(0) === '#' || /^(mailto|tel|sms|javascript):/i.test(h)) { return; }
+    var u;
+    try { u = new URL(h, window.location.href); } catch (x) { return; }
+    if (!/^https?:$/.test(u.protocol)) { return; }
+    var here = window.location;
+    if (u.hash && u.origin === here.origin && trim(u.pathname) === trim(here.pathname) && u.search === here.search) { return; }
+    a.setAttribute('target', '_blank');
+    var rel = (a.getAttribute('rel') || '').split(/\s+/).filter(Boolean);
+    if (rel.indexOf('noopener') < 0) { rel.push('noopener'); }
+    a.setAttribute('rel', rel.join(' '));
+  }, true);
 })();
 </script>

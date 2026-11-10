@@ -414,6 +414,18 @@ html.pn-son-lock,html.pn-son-lock body{ overflow:hidden; }
 #pn-son-rd .rd-end a[hidden]{ display:none; }
 @media (max-width:640px){ #pn-son-rd .rd-figs{ grid-template-columns:1fr 1fr; } #pn-son-rd .rd-brief dl div{ grid-template-columns:1fr; gap:2px; } }
 @media (prefers-reduced-motion:reduce){ #pn-son-rd .rd-sheet{ animation:none; } }
+/* the close button, one design sitewide (the Steward-General, 9 Nov 2026): a gold X drawn as two strokes,
+   centred in a circle, so no font or theme style can push it off centre */
+#pn-son-rd .rd-x{ display:grid !important; place-items:center; box-sizing:border-box !important; width:44px !important; height:44px !important;
+  min-width:44px !important; min-height:44px !important; max-width:none !important; padding:0 !important; border-radius:50% !important;
+  border:1.5px solid rgba(126,90,12,.45) !important; background:#FFFBF1 !important; color:#1A140C !important; font-size:0 !important; line-height:0 !important; letter-spacing:0 !important; text-transform:none !important;
+  text-indent:0 !important; box-shadow:0 2px 10px rgba(0,0,0,.18); -webkit-appearance:none; appearance:none; cursor:pointer;
+  transition:background-color .2s ease, border-color .2s ease, color .2s ease, transform .35s cubic-bezier(.22,1,.36,1); }
+#pn-son-rd .rd-x::before, #pn-son-rd .rd-x::after{ content:none !important; display:none !important; }
+#pn-son-rd .rd-x svg{ display:block; width:18px; height:18px; margin:0; pointer-events:none; }
+#pn-son-rd .rd-x:hover, #pn-son-rd .rd-x:focus-visible{ background:#0B3D45 !important; border-color:#0B3D45 !important; color:#E3C258 !important; transform:rotate(90deg); }
+#pn-son-rd .rd-x:focus-visible{ outline:2px solid #F0D68F !important; outline-offset:3px; }
+@media (prefers-reduced-motion:reduce){ #pn-son-rd .rd-x{ transition:none; } #pn-son-rd .rd-x:hover, #pn-son-rd .rd-x:focus-visible{ transform:none; } }
 </style>
 <!--pn:rule-->
 <svg width="0" height="0" style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true" focusable="false">
@@ -729,7 +741,7 @@ html.pn-son-lock,html.pn-son-lock body{ overflow:hidden; }
     if (rd) { return rd; }
     rd = el('div'); rd.id = 'pn-son-rd'; rd.hidden = true;
     rd.setAttribute('role', 'dialog'); rd.setAttribute('aria-modal', 'true'); rd.setAttribute('aria-labelledby', 'snRdH');
-    rd.innerHTML = '<div class="rd-bg"></div><article class="rd-sheet" tabindex="-1"><button type="button" class="rd-x" aria-label="Close"></button><div class="rd-k"></div><h2 id="snRdH"></h2><p class="rd-s"></p><div class="rd-brief"><p>The Solution</p><dl></dl></div><div class="rd-more"></div><p class="rd-src"></p><div class="rd-end"><a class="rd-cta" href="' + SITE + '/contact/?about=briefing">Request a Nation Briefing</a><a class="rd-bp" href="' + SITE + '/blueprints/">Open the blueprint</a><button type="button" class="rd-back">Back to State of Nations</button></div></article>';
+    rd.innerHTML = '<div class="rd-bg"></div><article class="rd-sheet" tabindex="-1"><button type="button" class="rd-x" aria-label="Close"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6.5 6.5l11 11M17.5 6.5l-11 11" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button><div class="rd-k"></div><h2 id="snRdH"></h2><p class="rd-s"></p><div class="rd-brief"><p>The Solution</p><dl></dl></div><div class="rd-more"></div><p class="rd-src"></p><div class="rd-end"><a class="rd-cta" href="' + SITE + '/contact/?about=briefing">Request a Nation Briefing</a><a class="rd-bp" href="' + SITE + '/blueprints/">Open the blueprint</a><button type="button" class="rd-back">Back to State of Nations</button></div></article>';
     document.body.appendChild(rd);
     rd.addEventListener('click', function (e) { var c = e.target.classList; if (c.contains('rd-bg') || c.contains('rd-x') || c.contains('rd-back')) { shut(); } });
     document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && rd && !rd.hidden) { shut(); } });

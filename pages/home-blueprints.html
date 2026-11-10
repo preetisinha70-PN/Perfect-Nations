@@ -1,5 +1,6 @@
 <!-- ===========================================================================
-PERFECT NATIONS - HOMEPAGE - SECTION 06 - BLUEPRINTS OF NATIONS - v6.2 NATION BY NATION - 2026-11-09
+PERFECT NATIONS - HOMEPAGE - SECTION 06 - BLUEPRINTS OF NATIONS - v6.3 NATION BY NATION - 2026-11-09
+v6.3: the close button of every pop-up is one design: a gold X drawn as two strokes, centred in a circle (the Steward-General, 9 Nov 2026).
 v6.2 (homepage v11.4): on laptops the portrait cards are about a fifth smaller (262 px wide, square portraits, a
 softer shadow), so the paintings sit more quietly in the band. Phones are unchanged.
 v6.1: homepage v8.1. Each featured nation is shown by its own nation portrait from Art of Nations
@@ -266,6 +267,18 @@ Ground: laterite (red earth). Photographs at full colour, no veil; text sits on 
 }
 #pn-featured .pnfb-modal{ background:rgba(4,22,26,.78); }
 #pn-featured .pnfb-card,#pn-featured .pnfb-card:hover{ box-shadow:0 22px 50px rgba(2,16,20,.45); }
+/* the close button, one design sitewide (the Steward-General, 9 Nov 2026): a gold X drawn as two strokes,
+   centred in a circle, so no font or theme style can push it off centre */
+#pn-featured .pnfb-modal__close{ display:grid !important; place-items:center; box-sizing:border-box !important; width:44px !important; height:44px !important;
+  min-width:44px !important; min-height:44px !important; max-width:none !important; padding:0 !important; border-radius:50% !important;
+  border:1.5px solid rgba(126,90,12,.45) !important; background:#FFFBF1 !important; color:#1A140C !important; font-size:0 !important; line-height:0 !important; letter-spacing:0 !important; text-transform:none !important;
+  text-indent:0 !important; box-shadow:0 2px 10px rgba(0,0,0,.18); -webkit-appearance:none; appearance:none; cursor:pointer;
+  transition:background-color .2s ease, border-color .2s ease, color .2s ease, transform .35s cubic-bezier(.22,1,.36,1); }
+#pn-featured .pnfb-modal__close::before, #pn-featured .pnfb-modal__close::after{ content:none !important; display:none !important; }
+#pn-featured .pnfb-modal__close svg{ display:block; width:18px; height:18px; margin:0; pointer-events:none; }
+#pn-featured .pnfb-modal__close:hover, #pn-featured .pnfb-modal__close:focus-visible{ background:#0B3D45 !important; border-color:#0B3D45 !important; color:#E3C258 !important; transform:rotate(90deg); }
+#pn-featured .pnfb-modal__close:focus-visible{ outline:2px solid #F0D68F !important; outline-offset:3px; }
+@media (prefers-reduced-motion:reduce){ #pn-featured .pnfb-modal__close{ transition:none; } #pn-featured .pnfb-modal__close:hover, #pn-featured .pnfb-modal__close:focus-visible{ transform:none; } }
 </style>
 
 <section id="pn-featured" aria-labelledby="pnfb-h">
@@ -356,7 +369,7 @@ Ground: laterite (red earth). Photographs at full colour, no veil; text sits on 
 
   <div class="pnfb-modal" id="pnfbModal" role="dialog" aria-modal="true" aria-labelledby="pnfbModalName" hidden>
     <div class="pnfb-modal__card">
-      <button class="pnfb-modal__close" type="button" id="pnfbClose" aria-label="Close">&times;</button>
+      <button class="pnfb-modal__close" type="button" id="pnfbClose" aria-label="Close"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6.5 6.5l11 11M17.5 6.5l-11 11" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
       <div class="pnfb-modal__ph" id="pnfbModalPh" aria-hidden="true"></div>
       <div class="pnfb-modal__b">
         <span class="pnfb-modal__flag" id="pnfbModalFlag" aria-hidden="true"></span>

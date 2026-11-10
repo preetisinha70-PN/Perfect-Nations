@@ -1,5 +1,5 @@
 <!-- ===========================================================================
-PERFECT NATIONS - ART OF NATIONS - v4.3 - 2026-11-09
+PERFECT NATIONS - ART OF NATIONS - v4.4 - 2026-11-09
 The whole Art of Nations page in one file: perfectnations.org/art-of-nations/ (page 16839; the old
 address /perfect-nations-gallery/ leads here).
 Root id pn-art. The page's Elementor Custom HTML widget already contains pn-art, so the Perfect
@@ -21,7 +21,7 @@ v4.2 (7 Nov 2026): the page is Art of Nations everywhere (menu, footer, address 
 Botanical Origins: acrylic on canvas, 12 x 18 in, 2026, not for sale (no Enquire). A work marked
 "Not for sale" or "Sold" shows its status and no Enquire.
 =========================================================================== -->
-<div id="pn-art" class="aon" data-version="4.3">
+<div id="pn-art" class="aon" data-version="4.4">
 <style>
 #pn-art{
   --er:#0B3D45; --lag:#0F4C5C; --dep:#082A30; --iv:#F4ECD8; --ivt:rgba(244,236,216,.84); --ivd:rgba(244,236,216,.62);
@@ -317,6 +317,18 @@ Botanical Origins: acrylic on canvas, 12 x 18 in, 2026, not for sale (no Enquire
   #pn-art *{ transition:none !important; animation:none !important; }
   #pn-art .aon-tilt{ transform:none !important; }
 }
+/* the close button, one design sitewide (the Steward-General, 9 Nov 2026): a gold X drawn as two strokes,
+   centred in a circle, so no font or theme style can push it off centre */
+#pn-art .aon-x{ display:grid !important; place-items:center; box-sizing:border-box !important; width:44px !important; height:44px !important;
+  min-width:44px !important; min-height:44px !important; max-width:none !important; padding:0 !important; border-radius:50% !important;
+  border:1.5px solid rgba(227,194,88,.85) !important; background:rgba(8,42,48,.55) !important; color:#E3C258 !important; font-size:0 !important; line-height:0 !important; letter-spacing:0 !important; text-transform:none !important;
+  text-indent:0 !important; box-shadow:0 2px 10px rgba(0,0,0,.18); -webkit-appearance:none; appearance:none; cursor:pointer;
+  transition:background-color .2s ease, border-color .2s ease, color .2s ease, transform .35s cubic-bezier(.22,1,.36,1); }
+#pn-art .aon-x::before, #pn-art .aon-x::after{ content:none !important; display:none !important; }
+#pn-art .aon-x svg{ display:block; width:18px; height:18px; margin:0; pointer-events:none; }
+#pn-art .aon-x:hover, #pn-art .aon-x:focus-visible{ background:#E3C258 !important; border-color:#E3C258 !important; color:#1A140C !important; transform:rotate(90deg); }
+#pn-art .aon-x:focus-visible{ outline:2px solid #F0D68F !important; outline-offset:3px; }
+@media (prefers-reduced-motion:reduce){ #pn-art .aon-x{ transition:none; } #pn-art .aon-x:hover, #pn-art .aon-x:focus-visible{ transform:none; } }
 </style>
 
 <section class="aon-band aon-hero" aria-labelledby="aon-h1">
@@ -453,7 +465,7 @@ Botanical Origins: acrylic on canvas, 12 x 18 in, 2026, not for sale (no Enquire
   <div class="aon-view__top">
     <p class="aon-view__t" id="aon-view-t">Art of Nations</p>
     <span class="aon-view__n" aria-live="polite"></span>
-    <button class="aon-x" type="button" aria-label="Close"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 6l12 12M18 6L6 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
+    <button class="aon-x" type="button" aria-label="Close"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6.5 6.5l11 11M17.5 6.5l-11 11" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
   </div>
   <div class="aon-view__stage">
     <button class="aon-round aon-prev" type="button" aria-label="Previous"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M19 12H5M11 6l-6 6 6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>

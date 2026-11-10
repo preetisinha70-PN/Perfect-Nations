@@ -663,3 +663,15 @@
 @media (max-width:640px){ #R .bpx-co3{ padding:14px 12px; border-radius:16px; } }
 #R .bpx-sheet .bpx-more{ margin-top:2px; }
 #R .bpx-sheet .bpx-more__b > p{ max-width:none; }
+/* the close button, one design sitewide (the Steward-General, 9 Nov 2026): a gold X drawn as two strokes,
+   centred in a circle, so no font or theme style can push it off centre */
+#R .bpx-toast button.bpx-x{ display:grid !important; place-items:center; box-sizing:border-box !important; width:44px !important; height:44px !important;
+  min-width:44px !important; min-height:44px !important; max-width:none !important; padding:0 !important; border-radius:50% !important;
+  border:1.5px solid rgba(227,194,88,.85) !important; background:rgba(8,42,48,.55) !important; color:#E3C258 !important; font-size:0 !important; line-height:0 !important; letter-spacing:0 !important; text-transform:none !important;
+  text-indent:0 !important; box-shadow:0 2px 10px rgba(0,0,0,.18); -webkit-appearance:none; appearance:none; cursor:pointer;
+  transition:background-color .2s ease, border-color .2s ease, color .2s ease, transform .35s cubic-bezier(.22,1,.36,1); }
+#R .bpx-toast button.bpx-x::before, #R .bpx-toast button.bpx-x::after{ content:none !important; display:none !important; }
+#R .bpx-toast button.bpx-x svg{ display:block; width:16px; height:16px; margin:0; pointer-events:none; }
+#R .bpx-toast button.bpx-x:hover, #R .bpx-toast button.bpx-x:focus-visible{ background:#E3C258 !important; border-color:#E3C258 !important; color:#1A140C !important; transform:rotate(90deg); }
+#R .bpx-toast button.bpx-x:focus-visible{ outline:2px solid #F0D68F !important; outline-offset:3px; }
+@media (prefers-reduced-motion:reduce){ #R .bpx-toast button.bpx-x{ transition:none; } #R .bpx-toast button.bpx-x:hover, #R .bpx-toast button.bpx-x:focus-visible{ transform:none; } }
