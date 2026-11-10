@@ -1,4 +1,4 @@
-# Temporary (run 4): official figures for the New York State blueprint (Census Bureau file server). Branch only.
+# Temporary (run 5): USDA food security (ERR-358), NAEP 2024 reading (NAEP Data Service), EIA electricity prices. Branch only.
 name: us-states-data
 on:
   push:
@@ -15,27 +15,41 @@ jobs:
       - name: Download
         run: |
           set +e
+          sudo apt-get -qq install -y poppler-utils >/dev/null 2>&1
           mkdir -p data/us/raw/new-york && cd data/us/raw/new-york
           get(){ for i in 1 2 3; do curl -sSL -m 180 -A "Mozilla/5.0 PerfectNations-data" -o "$1" -w "$1 %{http_code} %{size_download}\n" "$2" && [ -s "$1" ] && return 0; sleep 5; done; return 1; }
-          B=https://www2.census.gov/programs-surveys/acs/summary_file
-          get b17001-5y2024.dat "$B/2024/table-based-SF/data/5YRData/acsdt5y2024-b17001.dat"
-          awk -F'|' 'NR==1 || $1 ~ /^0400000US36$/ || $1 ~ /^0500000US36/ {print $1"|"$2"|"$3"|"$4"|"$5}' b17001-5y2024.dat > acsdt5y2024-b17001-ny-counties.dat; rm -f b17001-5y2024.dat
-          get b27001-1y2025.dat "$B/2025/table-based-SF/data/1YRData/acsdt1y2025-b27001.dat"
-          awk -F'|' 'NR==1 || $1 ~ /^0100000US$/ || $1 ~ /^0400000US36$/ {print}' b27001-1y2025.dat > acsdt1y2025-b27001-ny-us.dat; rm -f b27001-1y2025.dat
-          get b25003-1y2025.dat "$B/2025/table-based-SF/data/1YRData/acsdt1y2025-b25003.dat"
-          awk -F'|' 'NR==1 || $1 ~ /^0100000US$/ || $1 ~ /^0400000US36$/ {print}' b25003-1y2025.dat > acsdt1y2025-b25003-ny-us.dat; rm -f b25003-1y2025.dat
-          get shells25.txt "$B/2025/table-based-SF/documentation/ACS20251YR_Table_Shells.txt"
-          grep -E 'B27001|B25003' shells25.txt > shells-2025-B27001-B25003.txt; rm -f shells25.txt
-          get shells24.txt "$B/2024/table-based-SF/documentation/ACS20245YR_Table_Shells.txt"
-          grep -E 'B17001_00[12]' shells24.txt > shells-2024-5y-B17001.txt; rm -f shells24.txt
-          get geos24.txt "$B/2024/table-based-SF/documentation/Geos20245YR.txt"
-          [ -s geos24.txt ] && { head -1 geos24.txt > geos-2024-5y-ny-counties.txt; grep -E '0500000US36' geos24.txt >> geos-2024-5y-ny-counties.txt; rm -f geos24.txt; }
-          for f in *; do echo "$f $(wc -c < "$f") $(wc -l < "$f")"; done > manifest.txt
-          date -u +%Y-%m-%dT%H:%MZ > pulled-at.txt
+          get err358.pdf "https://ers.usda.gov/sites/default/files/_laserfiche/publications/113623/ERR-358.pdf"
+          if [ -s err358.pdf ]; then pdftotext -layout err358.pdf err358.txt; grep -n -B2 -A2 -E '^ *(New York|U\.S\. total|U\.S\.|United States)' err358.txt | head -40 > usda-err358-new-york-lines.txt; grep -n -i -E 'Prevalence of household-level food insecurity and very low food security by State' err358.txt | head > usda-err358-table-title.txt; rm -f err358.pdf err358.txt; fi
+          for G in 4 8; do
+            get naep-reading-g$G-2024-ny.json "https://www.nationsreportcard.gov/DataService/GetAdhocData.aspx?type=data&subject=reading&grade=$G&subscale=RRPCM&variable=TOTAL&jurisdiction=NY&stattype=ALC:AP&Year=2024"
+            get naep-reading-g$G-2024-nt.json "https://www.nationsreportcard.gov/DataService/GetAdhocData.aspx?type=data&subject=reading&grade=$G&subscale=RRPCM&variable=TOTAL&jurisdiction=NP&stattype=ALC:AP&Year=2024"
+          done
+          get avgprice_annual.xlsx "https://www.eia.gov/electricity/data/state/avgprice_annual.xlsx"
+          python3 - <<'PY'
+          import zipfile, re, os
+          f='avgprice_annual.xlsx'
+          if os.path.exists(f) and os.path.getsize(f) > 1000:
+              try:
+                  import openpyxl
+              except ImportError:
+                  os.system('pip install -q openpyxl')
+                  import openpyxl
+              wb = openpyxl.load_workbook(f, read_only=True)
+              out = open('eia-avgprice-ny-us.txt','w')
+              for ws in wb.worksheets:
+                  for i, row in enumerate(ws.iter_rows(values_only=True)):
+                      cells = ['' if c is None else str(c) for c in row]
+                      if i < 3 or (len(cells) > 2 and cells[1] in ('NY','US') and cells[0] in ('2023','2024','2025')):
+                          out.write(ws.title + '|' + '|'.join(cells) + '\n')
+              out.close()
+          PY
+          rm -f avgprice_annual.xlsx
+          for f in *; do echo "$f $(wc -c < "$f")"; done > manifest.txt
+          date -u +%Y-%m-%dT%H:%MZ > pulled-at-run5.txt
       - name: Commit
         run: |
           git config user.name "Perfect Nations data"
           git config user.email "actions@users.noreply.github.com"
           git add data/us/raw/new-york
-          git commit -m "Data: official figures for the New York State blueprint (Census Bureau)" || echo nothing
+          git commit -m "Data: USDA, NAEP and EIA figures for the New York State blueprint" || echo nothing
           git push
