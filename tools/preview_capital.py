@@ -131,12 +131,24 @@ def run():
             for sel, tag in (('.pca-hero', 'hero'), ('.pca-idx', 'toolkit'), ('.pca-rec', 'record'), ('.pca-close', 'close')):
                 pg.query_selector('#pn-arch ' + sel).screenshot(path=str(OUT / ('ca-%s-%s.png' % (name, tag))))
             # open one line of the toolkit (on phones, choose its family from the chips first)
-            if name == 'phone':
-                pg.click('#pn-arch .pca-jump a[data-f="pca-f-disaster"]')
-                pg.wait_for_timeout(300)
+            pg.click('#pn-arch .pca-jump a[data-f="pca-f-disaster"]')
+            pg.wait_for_timeout(300)
             pg.evaluate("document.getElementById('pca-i-catastrophe-bond').open = true")
             pg.wait_for_timeout(300)
             pg.query_selector('#pca-f-disaster').screenshot(path=str(OUT / ('ca-%s-open-line.png' % name)))
+            # the search: every line that mentions a word, across the families
+            pg.fill('#pn-arch .pca-find input', 'guarantee')
+            pg.wait_for_timeout(400)
+            pg.query_selector('#pn-arch .pca-idx').screenshot(path=str(OUT / ('ca-%s-search.png' % name)))
+            print(name, 'search:', pg.inner_text('#pn-arch .pca-found'))
+            pg.fill('#pn-arch .pca-find input', '')
+            pg.wait_for_timeout(300)
+            # All
+            pg.click('#pn-arch .pca-jump a[data-f="all"]')
+            pg.wait_for_timeout(300)
+            print(name, 'all:', pg.evaluate("Math.round(document.querySelector('#pn-arch .pca-idx').getBoundingClientRect().height)"))
+            pg.click('#pn-arch .pca-jump a[data-f="pca-f-sovereign"]')
+            pg.wait_for_timeout(300)
             # all nations
             pg.click('#pn-arch .pca-more-n')
             pg.wait_for_timeout(300)
