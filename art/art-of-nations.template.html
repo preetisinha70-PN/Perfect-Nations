@@ -18,8 +18,11 @@ shown whole in a landscape frame; it is not counted among the 195 nation portrai
 v4.3 (9 Nov 2026): Botanical Origins: its motifs "run through the nation portraits in Perfect Nations" (the painted
 seams that carried them on the pages are retired; the Steward-General, 9 Nov 2026).
 v4.2 (7 Nov 2026): the page is Art of Nations everywhere (menu, footer, address /art-of-nations/).
-Botanical Origins: acrylic on canvas, 12 x 18 in, 2026, not for sale (no Enquire). A work marked
+Botanical Origins: acrylic on canvas, 12 x 16 in, 2026, not for sale (no Enquire). A work marked
 "Not for sale" or "Sold" shows its status and no Enquire.
+v4.4 (9 Nov 2026): one clean gold close button on the viewer; links to other pages open in a new tab.
+v4.5 (10 Nov 2026): the first line reads Perfect Nations (not Gallery); the gold line of the homepage marks where the hero, the wall and the books meet;
+each painting opens onto its nation's blueprint (Read the blueprint); Botanical Origins is 12 x 16 in.
 =========================================================================== -->
 <div id="pn-art" class="aon" data-version="[[VERSION]]">
 <style>
@@ -329,12 +332,19 @@ Botanical Origins: acrylic on canvas, 12 x 18 in, 2026, not for sale (no Enquire
 #pn-art .aon-x:hover, #pn-art .aon-x:focus-visible{ background:#E3C258 !important; border-color:#E3C258 !important; color:#1A140C !important; transform:rotate(90deg); }
 #pn-art .aon-x:focus-visible{ outline:2px solid #F0D68F !important; outline-offset:3px; }
 @media (prefers-reduced-motion:reduce){ #pn-art .aon-x{ transition:none; } #pn-art .aon-x:hover, #pn-art .aon-x:focus-visible{ transform:none; } }
+/* the gold line (homepage v8.1, the Steward-General, 9 Nov 2026) */
+#pn-art .aon-rule{ position:relative; z-index:6; display:block; box-sizing:border-box; width:100%; height:1px; margin:0 0 -1px; padding:0; pointer-events:none; overflow:visible;
+  background:linear-gradient(90deg,rgba(227,194,88,0) 0%,rgba(227,194,88,.45) 16%,#E3C258 40%,#FBE7A6 50%,#E3C258 60%,rgba(227,194,88,.45) 84%,rgba(227,194,88,0) 100%); box-shadow:0 0 10px rgba(227,194,88,.35); }
+#pn-art .aon-rule::before,#pn-art .aon-rule::after{ content:""; position:absolute; left:50%; top:50%; box-sizing:border-box; transform:translate(-50%,-50%) rotate(45deg); }
+#pn-art .aon-rule::before{ width:8px; height:8px; z-index:2; background:linear-gradient(135deg,#FFF1C2 0%,#E3C258 55%,#B48A2C 100%); box-shadow:0 0 10px rgba(227,194,88,.7); }
+#pn-art .aon-rule::after{ width:20px; height:20px; z-index:1; border:1px solid rgba(227,194,88,.85); background:#0B3D45; }
+@media (max-width:760px){ #pn-art .aon-rule::before{ width:7px; height:7px; } #pn-art .aon-rule::after{ width:17px; height:17px; } }
 </style>
 
 <section class="aon-band aon-hero" aria-labelledby="aon-h1">
   <div class="aon-in aon-hero__grid">
     <div class="aon-hero__head">
-      <p class="aon-eb">Perfect Nations Gallery</p>
+      <p class="aon-eb">Perfect Nations</p>
       <h1 class="aon-h1" id="aon-h1">Art of Nations</h1>
     </div>
     <figure class="aon-stage" aria-label="Featured paintings">
@@ -367,6 +377,7 @@ Botanical Origins: acrylic on canvas, 12 x 18 in, 2026, not for sale (no Enquire
   </div>
 </section>
 
+<div class="aon-rule" aria-hidden="true"></div>
 <section class="aon-band aon-wall" id="aon-works" aria-labelledby="aon-works-h">
   <div class="aon-in">
 [[ORIGINS]]
@@ -380,6 +391,7 @@ Botanical Origins: acrylic on canvas, 12 x 18 in, 2026, not for sale (no Enquire
   </div>
 </section>
 
+<div class="aon-rule" aria-hidden="true"></div>
 <section class="aon-band aon-books" id="aon-books" aria-labelledby="aon-books-h">
   <div class="aon-in">
     <div class="aon-head">
@@ -438,7 +450,7 @@ Botanical Origins: acrylic on canvas, 12 x 18 in, 2026, not for sale (no Enquire
     var d=c.dataset;
     return { n:n, hero:c.classList.contains('aon-card'), nation:d.nation||'', title:d.title, artist:d.artist||'',
       statement:d.statement||'', spec:d.spec||'', alt:d.alt||'', zoom:d.zoom, src:d.src, srcset:d.srcset||'',
-      sw:d.sw||'', enquire:d.enquire||'', buy:d.buy||'', price:d.price||'', status:d.status||'' };
+      sw:d.sw||'', enquire:d.enquire||'', buy:d.buy||'', price:d.price||'', status:d.status||'', blueprint:d.blueprint||'' };
   });
   var works=items.filter(function(w){ return w.hero; });
 
@@ -562,6 +574,7 @@ Botanical Origins: acrylic on canvas, 12 x 18 in, 2026, not for sale (no Enquire
         var acts=[];
         if(w.buy){ acts.push(['Buy',w.buy,false]); }
         if(w.enquire){ acts.push(['Enquire about this painting',w.enquire,!!w.buy]); }
+        if(w.blueprint){ acts.push(['Read the blueprint of '+w.nation,w.blueprint,true]); }
         var k=[w.artist,w.price,w.spec,w.status].filter(Boolean).join(' \u00b7 ');
         return { src:w.zoom, alt:w.alt, h:(w.nation?w.nation+' \u00b7 ':'')+w.title, s:w.statement, k:k, acts:acts };
       });

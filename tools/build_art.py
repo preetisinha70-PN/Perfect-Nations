@@ -131,6 +131,7 @@ def card(i, p, cat, n):
         'src': media(where, pick(p['images'], 768)), 'srcset': srcset(where, p['images']), 'sw': esc(sw[5:]),
         'enquire': enquire, 'buy': buy, 'price': price,
         'status': copy(where, status) if status != DEFAULT_STATUS else '',
+        'blueprint': link(where, p['blueprint']) if p.get('blueprint') else '',
     }
     attrs = ' '.join('data-%s="%s"' % (k, v) for k, v in data.items() if v != '')
     return '''      <article class="aon-card aon-rv" id="aon-%(slug)s" data-work %(attrs)s>
