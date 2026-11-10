@@ -1,5 +1,5 @@
 <!-- ===========================================================================
-PERFECT NATIONS - PERFECT CAPITA PAGE - v10.0 THE SEVEN STARS - 2026-11-10
+PERFECT NATIONS - PERFECT CAPITA PAGE - v10.1 LIGHT - 2026-11-10
 /perfect-capita/ (page 9937). One Elementor Custom HTML widget, Full Width, padding 0, Hide Title.
 Served live from GitHub (pages/perfect-capita.html) by the Perfect Nations Live Pages plugin; the
 root id stays pn-pcap so the plugin finds the pasted widget. Nothing needs pasting.
@@ -13,6 +13,7 @@ Words (Steward-General, 1 November 2026): the seven basic living standards; Perf
 yearly cost per person of lifting everyone above the Living Line in all seven; the price of Perfect
 [Nation], Perfect Capita times population; Coverage and the Gap. The Living Line names the threshold
 only. "Guarantee" is a verb only, in the mission line.
+v10.1: light reading sections, Earthrise accents (the Steward-General, 10 Nov 2026).
 v10.0: The homepage and the blueprints of 9 and 10 November, carried here (the Steward-General, 10 Nov 2026):
   - The seven standards are the seven stars of the logo, in one gold, Food the crown, as on the homepage
     (What we do: 03 Solutions, the seven stars) and the blueprints. The colour wheel is retired; the stars
@@ -377,6 +378,88 @@ only in news reports; when RSSB publishes it, the Rwanda card can move to that n
   #pn-pcap .pq-note{ font-size:.7rem; }
 }
 @media (prefers-reduced-motion:reduce){ #pn-pcap *{ animation:none !important; transition:none !important; } }
+/* ---------- v10.1 LIGHT (the Steward-General, 10 Nov 2026: "the site is a little dark and heavy to read ... make
+   sections the lighter colour with the Earthrise for the accents"). The hero keeps its Earthrise ground, for its
+   WebGL threads need it; everything below it where people read goes light, paper and ivory in turn: the ribbon on
+   paper, the four numbers on ivory, the seven stars on paper, the seven rules on ivory, the world today on paper,
+   the five nations on ivory, Barbados on paper, the close on ivory. Earthrise is the accent: the first two of the
+   four numbers, the panel that carries the seven stars (the logo's gold is never drawn straight onto ivory), the
+   seventh rule and the three Barbados figure panels. Headlines Earthrise, eyebrows terracotta, body ink; gold only
+   for the buttons and money (a deep gold on light). */
+#pn-pcap{ --mut:#34464A; --dim:#5C696C; --hair:rgba(16,38,43,.13); }
+#pn-pcap .pq-ivb,#pn-pcap #pq-seven,#pn-pcap #pq-now,#pn-pcap .pq-lg,#pn-pcap #pq-first{ color:#10262B; }
+#pn-pcap .pq-ivb,#pn-pcap .pq-lg{
+  background:
+    radial-gradient(50% 60% at 92% 0%, rgba(227,194,88,.16) 0%, rgba(227,194,88,0) 70%),
+    radial-gradient(40% 60% at 0% 100%, rgba(138,58,34,.06) 0%, rgba(138,58,34,0) 70%),
+    linear-gradient(180deg,#F7F0DF 0%,#F4ECD8 60%,#F1E7D0 100%);
+}
+#pn-pcap .pq-rib,#pn-pcap #pq-seven,#pn-pcap #pq-now,#pn-pcap #pq-first{
+  background:
+    radial-gradient(48% 60% at 96% 0%, rgba(227,194,88,.16) 0%, rgba(227,194,88,0) 70%),
+    radial-gradient(40% 60% at 0% 100%, rgba(11,61,69,.06) 0%, rgba(11,61,69,0) 70%),
+    linear-gradient(180deg,#FBF8F1 0%,#F6EFE0 100%);
+}
+#pn-pcap .pq-ivb .pq-eb,#pn-pcap #pq-seven .pq-eb,#pn-pcap #pq-now .pq-eb,#pn-pcap .pq-lg .pq-eb,#pn-pcap #pq-first .pq-eb{ color:#8A3A22; }
+#pn-pcap .pq-ivb .pq-eb::before,#pn-pcap .pq-ivb .pq-eb::after,#pn-pcap #pq-seven .pq-eb::before,#pn-pcap #pq-now .pq-eb::before,#pn-pcap .pq-lg .pq-eb::before,#pn-pcap #pq-first .pq-eb::before{ background:rgba(138,58,34,.55); }
+#pn-pcap .pq-ivb h2.pq-h2,#pn-pcap #pq-seven h2.pq-h2,#pn-pcap #pq-now h2.pq-h2,#pn-pcap .pq-lg h2.pq-h2,#pn-pcap #pq-first h2.pq-h2{ color:#0B3D45 !important; }
+#pn-pcap #pq-seven .pq-h2 em,#pn-pcap #pq-now .pq-h2 em,#pn-pcap .pq-lg .pq-h2 em{ color:#8A3A22; }
+#pn-pcap #pq-first .pq-h2 em{ color:#8C6A12; }
+#pn-pcap .pq-ivb .pq-lead,#pn-pcap #pq-seven .pq-lead,#pn-pcap #pq-now .pq-lead,#pn-pcap .pq-lg .pq-lead,#pn-pcap #pq-first .pq-lead{ color:#34464A; }
+#pn-pcap .pq-ivb a:focus-visible,#pn-pcap .pq-ivb summary:focus-visible,#pn-pcap #pq-seven [tabindex]:focus-visible,#pn-pcap #pq-seven button:focus-visible,#pn-pcap #pq-seven summary:focus-visible,
+#pn-pcap #pq-now a:focus-visible,#pn-pcap #pq-now summary:focus-visible,#pn-pcap .pq-lg a:focus-visible,#pn-pcap #pq-first a:focus-visible,#pn-pcap #pq-first summary:focus-visible{ outline-color:#0B3D45; }
+/* actions on light: Read more and outline buttons in Earthrise; gold fills with ink type */
+#pn-pcap #pq-now .pq-rm > summary,#pn-pcap #pq-first .pq-rm > summary{ color:#0B3D45; }
+#pn-pcap #pq-now .pq-rm > summary::before,#pn-pcap #pq-first .pq-rm > summary::before{ border-color:rgba(11,61,69,.45); }
+#pn-pcap #pq-now .pq-rm > summary:hover,#pn-pcap #pq-first .pq-rm > summary:hover{ color:#8A3A22; }
+#pn-pcap .pq-ivb .pq-btn,#pn-pcap #pq-first .pq-btn{ color:#1A140C; box-shadow:0 10px 24px rgba(140,106,18,.22); }
+#pn-pcap .pq-ivb .pq-btn--line,#pn-pcap #pq-first .pq-btn--line{ background:transparent; color:#0B3D45; border-color:rgba(11,61,69,.45); box-shadow:none; }
+#pn-pcap .pq-ivb .pq-btn--line:hover,#pn-pcap #pq-first .pq-btn--line:hover{ background:rgba(11,61,69,.07); color:#0B3D45; }
+
+/* the ribbon on paper */
+#pn-pcap .pq-rib__note{ color:#5C696C; }
+
+/* the four numbers on ivory: white cards, the measure and the bill stay Earthrise */
+#pn-pcap .pq-four li{ background:#FFFDF8; border-color:rgba(16,38,43,.12); box-shadow:0 10px 26px rgba(16,38,43,.07); }
+#pn-pcap .pq-four li:first-child{ background:linear-gradient(165deg,#10505F 0%,#0B3D45 55%,#09313A 100%); border-color:rgba(227,194,88,.3); box-shadow:0 18px 40px rgba(11,61,69,.24); }
+#pn-pcap .pq-four li:nth-child(2){ background:linear-gradient(165deg,#0B3D45 0%,#082A30 100%); border-color:rgba(227,194,88,.22); box-shadow:0 14px 32px rgba(11,61,69,.2); }
+#pn-pcap .pq-four li:nth-child(n+3) h3{ color:#0B3D45 !important; }
+
+/* the seven stars on paper: the stars on an Earthrise panel, their card white */
+#pn-pcap #pq-seven .pq-stage > div:first-child{
+  padding:clamp(12px,2vw,24px) clamp(10px,1.6vw,20px) clamp(10px,1.4vw,16px); border-radius:22px;
+  border:1px solid rgba(227,194,88,.28);
+  background:
+    radial-gradient(60% 70% at 50% 18%, rgba(227,194,88,.16) 0%, rgba(227,194,88,0) 62%),
+    linear-gradient(170deg,#12586A 0%,#0B3D45 48%,#082A30 100%);
+  box-shadow:0 22px 50px rgba(11,61,69,.26);
+}
+#pn-pcap #pq-seven .pq-stars__cap{ color:rgba(244,236,216,.7); }
+#pn-pcap #pq-seven .pq-card{ background:#FFFDF8; border:1px solid rgba(16,38,43,.1); box-shadow:0 18px 40px rgba(16,38,43,.12); }
+#pn-pcap #pq-seven .pq-name{ color:#0B3D45 !important; }
+
+/* the seven rules on ivory: white rules, the weakest link Earthrise; a white chart card */
+#pn-pcap .pq-rules li{ background:#FFFDF8; border-color:rgba(16,38,43,.12); }
+#pn-pcap .pq-rules b{ color:#0B3D45; }
+#pn-pcap .pq-rules li:last-child{ background:linear-gradient(165deg,#10505F 0%,#0B3D45 55%,#09313A 100%); border-color:rgba(227,194,88,.3); }
+#pn-pcap .pq-rules li:last-child b{ color:#F4ECD8; }
+#pn-pcap .pq-chart{ background:#FFFDF8; border-color:rgba(16,38,43,.12); box-shadow:0 12px 30px rgba(16,38,43,.08); }
+#pn-pcap .pq-chart h3{ color:#0B3D45 !important; }
+
+/* the world today on paper, the five nations on ivory: white cards */
+#pn-pcap .pq-gap li,#pn-pcap .pc-cards li{ background:#FFFDF8; border:1px solid rgba(16,38,43,.1); box-shadow:0 12px 28px rgba(16,38,43,.09); }
+#pn-pcap .pc-cards h3{ color:#0B3D45 !important; }
+#pn-pcap .pq-now__note{ color:#5C696C; border-top-color:rgba(16,38,43,.13); }
+
+/* Barbados on paper: three Earthrise figure panels */
+#pn-pcap .pq-stat li{
+  border-color:rgba(227,194,88,.3);
+  background:radial-gradient(80% 90% at 0% 0%, rgba(227,194,88,.14) 0%, rgba(227,194,88,0) 62%), linear-gradient(165deg,#10505F 0%,#0B3D45 55%,#09313A 100%);
+  box-shadow:0 14px 30px rgba(11,61,69,.2);
+}
+#pn-pcap #pq-first .pq-rm__p{ color:#34464A; }
+#pn-pcap #pq-first .pq-note{ color:#5C696C; }
+#pn-pcap #pq-first .pq-note a{ color:#0B3D45; }
 </style>
 <svg width="0" height="0" style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true" focusable="false">
   <defs>
