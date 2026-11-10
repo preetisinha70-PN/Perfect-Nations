@@ -367,6 +367,9 @@
 #R .bpx-sig b{ display:block; margin-top:1px; font-family:var(--hd); font-weight:600; font-size:1.05rem; line-height:1.05; color:var(--ink); }
 #R .bpx-sig small{ display:block; margin-top:2px; font-size:.72rem; letter-spacing:.03em; color:var(--inkd); }
 #R .bpx-sol .bpx-btn{ min-height:44px; padding:11px 16px 9px; background:var(--er); border-color:var(--er); color:var(--iv2); box-shadow:none; font-size:.66rem; }
+#R .bpx-sol__acts{ display:flex; flex-wrap:wrap; gap:8px; }
+#R .bpx-sol .bpx-btn--line{ background:transparent; color:var(--er); border-color:var(--er); }
+#R .bpx-sol .bpx-btn--line:hover{ background:rgba(11,61,69,.08); }
 #R .bpx-sol .bpx-btn:hover{ background:var(--lg); }
 #R .bpx-sol--brief{ background:linear-gradient(170deg,#12586A 0%,var(--er) 55%,var(--dp) 100%); color:var(--fg); border:1px solid rgba(var(--grgb),.5); }
 #R .bpx-sol--brief .bpx-sol__k{ border-color:var(--g); color:var(--dim); }

@@ -5,6 +5,9 @@ Pages plugin serves this file in place of the code pasted in the page's one Cust
 BUILT, never edited by hand: edit src/state-of-nations.html, then run
 python3 tools/build_state_of_nations.py. Kept by the State of Nations Steward (the page) and the
 Correspondent (the data: data/state-of-nations.json, data/solutions-by-nation.json).
+v8.3 (10 Nov 2026): the reader of a Solution ends with Discuss this Solution, which opens the Contact page on
+Discuss a Solution with that Solution and its nation chosen (?about=solution-NN&country=Nation); a Deal Note
+keeps Request a Nation Briefing (the Steward-General, 10 Nov 2026).
 v8.1 (9 Nov 2026): the reader's close button is drawn as a fine cross (two hairlines) in place of the
   multiplication sign; it turns Earthrise with a gold cross and a quarter turn on hover (the Steward-General).
 v8.0 (9 Nov 2026): Perfect Nations Solutions, designed by Perfect Nations (the Steward-General, 9 Nov 2026).
@@ -823,6 +826,7 @@ html.pn-son-lock,html.pn-son-lock body{ overflow:hidden; }
     }
     sources(r, d.sources);
     var bp = q('.rd-bp'); bp.hidden = !safe(d.blueprint); if (safe(d.blueprint)) { bp.href = d.blueprint; bp.textContent = 'Open the ' + d.nation + ' blueprint'; }
+    var cta = q('.rd-cta'); cta.href = SITE + '/contact/?about=solution-' + (+d.no) + (d.nation ? '&country=' + encodeURIComponent(d.nation) : ''); cta.textContent = 'Discuss this Solution';
     show(d, from, '#solution-' + pad(d.no));
   }
   function openDeal(d, from) {
@@ -848,6 +852,7 @@ html.pn-son-lock,html.pn-son-lock body{ overflow:hidden; }
     if (d.kick) { more.appendChild(el('p', 'rd-kick', d.kick)); }
     sources(r, d.sources);
     q('.rd-bp').hidden = true;
+    var cta = q('.rd-cta'); cta.href = SITE + '/contact/?about=briefing'; cta.textContent = 'Request a Nation Briefing';
     show(d, from, '#deal-' + pad(d.no));
   }
   function shut() {

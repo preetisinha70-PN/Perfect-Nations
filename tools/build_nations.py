@@ -90,7 +90,8 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 PAGES, DATA, HERE = ROOT / 'pages', ROOT / 'data', ROOT / 'tools' / 'nation'
-VERSION = '11.6'  # the close button of every pop-up is one design: a gold X drawn as two strokes, centred in a circle (the Steward-General, 9 Nov 2026)
+VERSION = '11.7'  # Discuss this Solution on every designed Solution; Plan a Blueprint Lab opens The Blueprint Lab, ?about=lab (the Steward-General, 10 Nov 2026)
+# v11.6: the close button of every pop-up is one design: a gold X drawn as two strokes, centred in a circle (the Steward-General, 9 Nov 2026)
 EARTH = {'lg': 'https://perfectnations.org/wp-content/uploads/2026/10/pn-globe-earth-day-1536x768.jpg',
          'sm': 'https://perfectnations.org/wp-content/uploads/2026/10/pn-globe-earth-day-1024x512.jpg'}
 ORDER = ['Food', 'Water', 'Shelter', 'Energy', 'Education', 'Health', 'Livelihoods']
@@ -565,13 +566,19 @@ def solution_card(x, sig_name, sig_role):
     fig = ''
     if x.get('figure'):
         fig = '<p class="bpx-sol__fig"><b>%s</b>%s</p>' % (ent(x['figure']), '<span>%s</span>' % ent(x['caption']) if x.get('caption') else '')
+    # v11.7: a Solution Perfect Nations designs also offers "Discuss this Solution", which opens the Contact page
+    # on Discuss a Solution with this Solution and its nation chosen (?about=solution-NN&country=Nation)
+    talk = ''
+    if x.get('kind') == 'design' and no:
+        talk = ('<a class="bpx-btn bpx-btn--line" href="%s" target="_blank" rel="noopener noreferrer">Discuss this Solution</a>'
+                % ent(https('https://perfectnations.org/contact/?about=solution-%d&country=%s' % (no, urllib.parse.quote(plain(x.get('nation')), safe='')))))
     return (
         '<li class="bpx-sol"><p class="bpx-sol__k"><b>%s No. %02d</b><time datetime="%s">%s</time></p>'
         '<h3><a href="%s" target="_blank" rel="noopener noreferrer">%s</a></h3>%s%s'
         '<div class="bpx-sol__foot"><span class="bpx-sig">From<b>%s</b><small>%s</small></span>'
-        '<a class="bpx-btn" href="%s" target="_blank" rel="noopener noreferrer">Read the %s</a></div></li>'
+        '<span class="bpx-sol__acts"><a class="bpx-btn" href="%s" target="_blank" rel="noopener noreferrer">Read the %s</a>%s</span></div></li>'
         % ('Deal Note' if deal else 'Solution', no, ent(x.get('date', '')), ent(x.get('label') or short_date(x.get('date'))), ent(https(href)), ent(x['title']), body, fig,
-           ent(sig_name), ent(sig_role), ent(https(href)), 'Deal Note' if deal else 'Solution'))
+           ent(sig_name), ent(sig_role), ent(https(href)), 'Deal Note' if deal else 'Solution', talk))
 
 
 def solution_brief(name, sbn, slug):
@@ -760,7 +767,7 @@ def work(d, p):
             '<details class="bpx-more"><summary aria-label="Read more: the four moves of %s">Read more</summary><ol class="bpx-mv">%s</ol></details>'
             '<a class="bpx-btn%s" href="%s" target="_blank" rel="noopener noreferrer">%s</a></li>'
             % (' bpx-tier--top' if t == 2 else '', k, dur, title, line, leave, title, mv, '' if t == 2 else ' bpx-btn--line',
-               ent(https('https://perfectnations.org/contact/?about=%s&country=%s' % ('commission' if t == 2 else 'studio', urllib.parse.quote(name, safe='')))), cta))
+               ent(https('https://perfectnations.org/contact/?about=%s&country=%s' % (('briefing', 'lab', 'commission')[t], urllib.parse.quote(name, safe='')))), cta))
     wx_mail = mailto('Writing for Perfect %s' % name,
                      'Your name, or a pen name:\r\nWhere you live:\r\nTitle:\r\n\r\nYour vision of Perfect %s, and the economic solutions to achieve it (up to 1,500 words):\r\n\r\n\r\n'
                      'I confirm that this is my own original writing, and I give Perfect Nations permission to publish it with credit to me.\r\n' % name)

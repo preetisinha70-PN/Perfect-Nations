@@ -1,5 +1,6 @@
 (function () {
-  /* Blueprint v11.5: the page follows its Nation Steward and the State of Nations.
+  /* Blueprint v11.7: a designed Solution offers Discuss this Solution; Plan a Blueprint Lab opens The Blueprint Lab.
+     v11.5: the page follows its Nation Steward and the State of Nations.
      v11.5: the register reads "Capital already committed" (the anchor #bp-register and the key capital.register are
        unchanged); "Already working in" the nation is its own band after 02 Capital, its cards built as h3 under
        its h2 (#bp-ent-h, the heading from the live file).
@@ -371,7 +372,14 @@
     if (T(x.figure)) { var f = el('p', 'bpx-sol__fig'); f.appendChild(el('b', '', x.figure)); if (T(x.caption)) f.appendChild(el('span', '', x.caption)); li.appendChild(f); }
     var foot = el('div', 'bpx-sol__foot'), sig = el('span', 'bpx-sig', 'From');
     sig.appendChild(el('b', '', sigName)); sig.appendChild(el('small', '', sigRole)); foot.appendChild(sig);
-    foot.appendChild(link(el('a', 'bpx-btn', deal ? 'Read the Deal Note' : 'Read the Solution'), href)); li.appendChild(foot);
+    var acts = el('span', 'bpx-sol__acts');
+    acts.appendChild(link(el('a', 'bpx-btn', deal ? 'Read the Deal Note' : 'Read the Solution'), href));
+    /* v11.7: a designed Solution also offers Discuss this Solution (the Contact page, that Solution chosen) */
+    if (design && x.no) {
+      acts.appendChild(link(el('a', 'bpx-btn bpx-btn--line', 'Discuss this Solution'),
+        'https://perfectnations.org/contact/?about=solution-' + (+x.no) + '&country=' + encodeURIComponent(x.nation || CFG.name)));
+    }
+    foot.appendChild(acts); li.appendChild(foot);
     return li;
   }
   function brief(sbn) {
