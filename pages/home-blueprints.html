@@ -1,5 +1,8 @@
 <!-- ===========================================================================
-PERFECT NATIONS - HOMEPAGE - SECTION 06 - BLUEPRINTS OF NATIONS - v6.3 NATION BY NATION - 2026-11-09
+PERFECT NATIONS - HOMEPAGE - SECTION 06 - BLUEPRINTS OF NATIONS - v7.0 LIGHT - 2026-11-10
+v7.0 (homepage v11.6): light. An ivory ground with ink type; the portrait cards stay Earthrise plates, the accent of
+the band; Earthrise headline, terracotta eyebrow; gold only for the buttons, the arrows and the count (the
+Steward-General, 10 Nov 2026: the site was too dark and heavy to read).
 v6.3: the close button of every pop-up is one design: a gold X drawn as two strokes, centred in a circle (the Steward-General, 9 Nov 2026).
 v6.2 (homepage v11.4): on laptops the portrait cards are about a fifth smaller (262 px wide, square portraits, a
 softer shadow), so the paintings sit more quietly in the band. Phones are unchanged.
@@ -279,6 +282,32 @@ Ground: laterite (red earth). Photographs at full colour, no veil; text sits on 
 #pn-featured .pnfb-modal__close:hover, #pn-featured .pnfb-modal__close:focus-visible{ background:#0B3D45 !important; border-color:#0B3D45 !important; color:#E3C258 !important; transform:rotate(90deg); }
 #pn-featured .pnfb-modal__close:focus-visible{ outline:2px solid #F0D68F !important; outline-offset:3px; }
 @media (prefers-reduced-motion:reduce){ #pn-featured .pnfb-modal__close{ transition:none; } #pn-featured .pnfb-modal__close:hover, #pn-featured .pnfb-modal__close:focus-visible{ transform:none; } }
+
+/* ---------- v7.0 LIGHT (the Steward-General, 10 Nov 2026: lighter sections, Earthrise for the accents).
+   An ivory ground with ink type; the portrait cards stay Earthrise plates, the accent of the band; the headline
+   is Earthrise, the eyebrow terracotta; gold only for the buttons, the arrows and the count. */
+#pn-featured{
+  --fg:#10262B; --mut:#3E4E52; --dim:#5C696C; --hair:rgba(16,38,43,.13);
+  color:#10262B;
+  background:
+    radial-gradient(50% 60% at 92% 0%, rgba(227,194,88,.16) 0%, rgba(227,194,88,0) 70%),
+    radial-gradient(40% 60% at 0% 100%, rgba(138,58,34,.06) 0%, rgba(138,58,34,0) 70%),
+    linear-gradient(180deg,#F7F0DF 0%,#F4ECD8 60%,#F1E7D0 100%) !important;
+}
+#pn-featured .pnfb-eb{ color:#8A3A22; }
+#pn-featured .pnfb-eb::before{ background:rgba(138,58,34,.55); }
+#pn-featured h2.pnfb-h2{ color:#0B3D45 !important; }
+#pn-featured .pnfb-card, #pn-featured .pnfb-modal__card{
+  --fg:#F5F1E8; --mut:rgba(245,241,232,.82); --dim:rgba(245,241,232,.64); --hair:rgba(245,241,232,.16);
+  --plate:#0B3D45; --plate2:#082A30;
+}
+#pn-featured .pnfb-card, #pn-featured .pnfb-card:hover{ box-shadow:0 14px 30px rgba(11,61,69,.22) !important; }
+#pn-featured .pnfb-btn--line{ color:#0B3D45; border-color:rgba(11,61,69,.45); }
+#pn-featured .pnfb-btn--line:hover{ background:rgba(11,61,69,.07); color:#0B3D45; }
+#pn-featured .pnfb-arrow{ box-shadow:0 8px 20px rgba(140,106,18,.24); }
+#pn-featured .pnfb-count b{ color:#8C6A12; }
+#pn-featured .pn-ch{ border-color:rgba(11,61,69,.5); color:#0B3D45; }
+#pn-featured .pn-ch:hover{ background:#0B3D45; color:#F5F1E8; }
 </style>
 
 <section id="pn-featured" aria-labelledby="pnfb-h">
