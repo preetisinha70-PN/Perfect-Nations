@@ -36,6 +36,7 @@ PAINT = {  # stand-in colours for each Media Library photograph, top to bottom
     'jwaneng-mine': ['#D2B183', '#B48A5C', '#8A6E4E', '#3A2E24'],
     'lobito-corridor': ['#F2B36B', '#D9763A', '#9A3E1F', '#5A2213', '#2A120B'],
     'india-varanasi-ghats': ['#F7B34A', '#D9732B', '#8E3A1E', '#3A1A14', '#160B09'],
+    'Sun-India': ['#FCE7A2', '#F0B54A', '#C9782A', '#9C4F12', '#4A260C'],
 }
 
 
@@ -45,7 +46,7 @@ def stand_in(name):
         return f.read_bytes()
     key = next((k for k in PAINT if k in name), None)
     cols = [tuple(int(c[i:i + 2], 16) for i in (1, 3, 5)) for c in (PAINT[key] if key else ['#1F6A78', '#0A3840'])]
-    w, h = (1536, 960) if '1536' in name else (768, 480)
+    w, h = (1536, 960) if '1536' in name else (1024, 747) if '1024' in name else (768, 480)
     im = Image.new('RGB', (w, h))
     d = ImageDraw.Draw(im)
     for y in range(h):
@@ -54,7 +55,7 @@ def stand_in(name):
         f2 = t - k
         d.line([(0, y), (w, y)], fill=tuple(int(cols[k][i] + (cols[k + 1][i] - cols[k][i]) * f2) for i in range(3)))
     d.text((12, h - 22), 'STAND-IN PHOTOGRAPH', fill=(255, 255, 255))
-    im.save(f, quality=85)
+    im.convert('RGB').save(f, format='JPEG', quality=85)
     return f.read_bytes()
 
 
@@ -93,7 +94,7 @@ def route(r, live):
         return r.fulfill(body=f.read_bytes(), content_type='image/svg+xml') if f.exists() else r.fulfill(status=404, body='')
     if '/wp-content/uploads/' in u:
         name = u.rsplit('/', 1)[1]
-        if name.startswith('pn-asset-'):
+        if name.startswith('pn-asset-') or any(k in name for k in PAINT):
             return r.fulfill(body=stand_in(name), content_type='image/jpeg')
         return r.fulfill(body=PNG1, content_type='image/png')
     if 'sovereign-assets.json' in u:

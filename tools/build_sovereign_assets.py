@@ -114,9 +114,12 @@ def count_ledger():
 def refresh_data():
     d = json.loads(LEDGER.read_text(encoding='utf-8'))
     ledger, nations = count_ledger()
-    before = json.dumps([d.get('ledger'), d.get('nations'), d.get('classes')], sort_keys=True)
+    # "updated" is the day the ledger or the five assets last changed (stamp is what the last build saw)
+    stamp = json.dumps([ledger, nations, list(CLASSES), d.get('featured')], sort_keys=True)
+    before = d.get('stamp')
     d['ledger'], d['nations'], d['classes'] = ledger, nations, list(CLASSES)
-    if json.dumps([ledger, nations, list(CLASSES)], sort_keys=True) != before:
+    d['stamp'] = __import__('hashlib').sha1(stamp.encode('utf-8')).hexdigest()[:12]
+    if d['stamp'] != before:
         d['updated'] = date.today().isoformat()
     check_featured(d.get('featured'))
     LEDGER.write_text(json.dumps(d, indent=2, ensure_ascii=True) + '\n', encoding='utf-8')
@@ -170,6 +173,14 @@ def land_mask(step=2.5):
     return {'lat0': lat0, 'step': step, 'rows': rows, 'bits': base64.b64encode(bytes(raw)).decode('ascii')}
 
 
+def image_w(f):
+    """The width of the larger picture (the 1536 px copy, or a smaller copy where none exists)."""
+    w = f.get('image_w', 1536)
+    if not isinstance(w, int) or not 769 <= w <= 2048:
+        sys.exit('featured %r: image_w must be the width in pixels of the larger picture' % f.get('key'))
+    return w
+
+
 def render_featured(items):
     out = []
     for i, f in enumerate(items, 1):
@@ -177,7 +188,7 @@ def render_featured(items):
         flags = ''.join('<img src="%s%s.svg" alt="" width="24" height="24" loading="lazy" decoding="async">' % (FLAGS, c) for c in f['flags'])
         unit = '<small>%s</small>' % ent(f['unit']) if f.get('unit') else ''
         out.append('''          <article class="sa-sc" id="sa-sc-%(i)d" style="--c:%(c)s;" aria-labelledby="sa-sc-%(i)d-h">
-            <div class="sa-sc__ph"><img class="sa-sc__img" src="%(small)s" srcset="%(small)s 768w, %(big)s 1536w" sizes="%(sizes)s" width="1536" height="960" alt="%(alt)s" loading="lazy" decoding="async"><span class="sa-sc__n" aria-hidden="true">%(n)s</span></div>
+            <div class="sa-sc__ph"><img class="sa-sc__img" src="%(small)s" srcset="%(small)s 768w, %(big)s %(bw)dw" sizes="%(sizes)s" width="1536" height="960" alt="%(alt)s" loading="lazy" decoding="async"><span class="sa-sc__n" aria-hidden="true">%(n)s</span></div>
             <div class="sa-sc__plate">
               <span class="sa-sc__cls">%(cls)s</span>
               <p class="sa-sc__fig"><b>%(fig)s</b>%(unit)s</p>
@@ -185,11 +196,11 @@ def render_featured(items):
               <h3 class="sa-sc__h" id="sa-sc-%(i)d-h"><a href="%(link)s">%(name)s</a></h3>
               <p class="sa-sc__who"><span class="sa-flags">%(flags)s</span><span>%(nation)s</span></p>
               <details class="sa-rm sa-sc__more"><summary>Read more</summary><p class="sa-sc__p">%(text)s</p></details>
-              <p class="sa-sc__act"><a class="sa-go" href="%(link)s">See the blueprint</a></p>
+              <p class="sa-sc__act"><a class="sa-go" href="%(link)s">See its five assets</a></p>
               <small class="sa-sc__src">Source: <a href="%(url)s" target="_blank" rel="noopener noreferrer">%(source)s</a></small>
             </div>
           </article>''' % {
-            'i': i, 'n': '%02d' % i, 'c': CLASSES[f['cls']], 'small': ent(f['image_small']), 'big': ent(f['image']),
+            'i': i, 'n': '%02d' % i, 'c': CLASSES[f['cls']], 'small': ent(f['image_small']), 'big': ent(f['image']), 'bw': image_w(f),
             'sizes': sizes, 'alt': ent(f['alt']), 'cls': ent(f['cls']), 'fig': ent(f['figure']), 'unit': unit,
             'line': ent(f['line']), 'link': ent(f['link']), 'name': ent(f['name']), 'flags': flags,
             'nation': ent(f['nation']), 'text': ent(f['text']), 'url': ent(f['url']), 'source': ent(f['source'])})
@@ -197,7 +208,7 @@ def render_featured(items):
 
 
 def render_nations(nations):
-    return '\n'.join('        <li><a href="%s"><span>%s</span></a></li>' % (ent(n['url']), ent(n['name'])) for n in nations)
+    return '\n'.join('        <li><a href="%s#bp-assets"><span>%s</span></a></li>' % (ent(n['url']), ent(n['name'])) for n in nations)
 
 
 def js_json(obj):
@@ -210,10 +221,12 @@ def build(d):
     version = re.search(r'data-v="([0-9.]+)"', src).group(1)
     src = src.split('-->', 1)[1].lstrip('\n')   # the source banner is not served
     rule = (PAGES / 'home-rule.html').read_text(encoding='utf-8').strip()
+    kit = (PAGES / 'home-logo-kit.html').read_text(encoding='utf-8').strip()
+    kit = re.sub(r'^\s*<!--.*?-->\s*', '', kit, count=1, flags=re.S)  # the logo in its parts, its banner dropped
     rule = re.sub(r'^\s*<!--.*?-->\s*', '', rule, count=1, flags=re.S)  # the gold line's style, its banner dropped
     ledger = d['ledger']
     seed = {'nations': [{k: n[k] for k in ('name', 'url', 'assets', 'lat', 'lon', 'top')} for n in d['nations']]}
-    page = (src.replace('@@RULE@@', rule)
+    page = (src.replace('@@RULE@@', rule).replace('@@LOGOKIT@@', kit)
                .replace('@@FEATURED@@', render_featured(d['featured']))
                .replace('@@NATIONLIST@@', render_nations(d['nations']))
                .replace('@@SEED@@', js_json(seed))
