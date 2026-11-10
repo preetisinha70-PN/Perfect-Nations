@@ -135,8 +135,9 @@
 #R .bpx-stats li.is-gap{ background:rgba(138,58,34,.32); border-top-color:#D9774F; }
 #R .bpx-globe{ position:relative; width:min(72vw,300px); aspect-ratio:1/1; }
 #R .bpx-globe > *{ position:absolute; inset:0; width:100%; height:100%; }
-#R .bpx-globe__sky{ border-radius:50%; inset:4.5%; width:91%; height:91%; background:radial-gradient(62% 62% at 36% 30%, #3E8FB0 0%, #145E7A 42%, #0B3D45 78%, #072A30 100%); box-shadow:0 0 0 1px rgba(191,227,255,.22), 0 0 60px rgba(93,181,232,.22); transition:opacity .5s ease; }
-#R .bpx-globe__sky::after{ content:""; position:absolute; left:58%; top:44%; width:7%; height:7%; border-radius:50%; background:var(--g); box-shadow:0 0 0 6px rgba(var(--grgb),.25), 0 0 26px rgba(var(--grgb),.7); }
+/* v11.8: the globe with the nation in gold is drawn into the page (SVG, by the build), so the map is there before
+   any script or picture; the moving Earth fades in over it, and it stays if the Earth cannot be shown. */
+#R .bpx-globe__sky{ overflow:visible; transition:opacity .5s ease; }
 #R .bpx-globe canvas{ display:block; opacity:0; transition:opacity .6s ease; }
 #R .bpx-globe.is-still .bpx-globe__still{ opacity:1; }
 #R .bpx-globe.is-on .bpx-globe__gl{ opacity:1; }
