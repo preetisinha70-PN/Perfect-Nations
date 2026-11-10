@@ -1,0 +1,44 @@
+# Temporary: pulls the official figures for the 50 States page into data/us/raw/ on this branch only.
+# Census Bureau (ACS 1-year, Population Estimates) and BEA (GDP by state). Removed before the page goes for approval.
+name: us-states-data
+on:
+  push:
+    branches: [us-states-data-2026-11-10]
+    paths: ['.github/workflows/us-states-data.yml']
+permissions:
+  contents: write
+jobs:
+  pull:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download
+        run: |
+          set +e
+          mkdir -p data/us/raw
+          cd data/us/raw
+          get(){ for i in 1 2 3; do curl -sSL -m 120 -A "Mozilla/5.0 PerfectNations-data" -o "$1" -w "$1 %{http_code} %{size_download}\n" "$2" && [ -s "$1" ] && head -c 1 "$1" | grep -q . && return 0; sleep 5; done; return 1; }
+          for Y in 2025 2024; do
+            get acs1-profile-$Y-states.json "https://api.census.gov/data/$Y/acs/acs1/profile?get=NAME,DP05_0001E,DP03_0128PE,DP03_0062E,DP03_0099PE&for=state:*"
+            get acs1-profile-$Y-us.json "https://api.census.gov/data/$Y/acs/acs1/profile?get=NAME,DP05_0001E,DP03_0128PE,DP03_0062E,DP03_0099PE&for=us:1"
+            get acs1-subject-$Y-states.json "https://api.census.gov/data/$Y/acs/acs1/subject?get=NAME,S1701_C01_001E,S1701_C02_001E,S1701_C03_001E&for=state:*"
+            get acs1-subject-$Y-us.json "https://api.census.gov/data/$Y/acs/acs1/subject?get=NAME,S1701_C01_001E,S1701_C02_001E,S1701_C03_001E&for=us:1"
+            for V in DP05_0001E DP03_0128PE DP03_0062E DP03_0099PE; do get var-$Y-$V.json "https://api.census.gov/data/$Y/acs/acs1/profile/variables/$V.json"; done
+            for V in S1701_C01_001E S1701_C02_001E S1701_C03_001E; do get var-$Y-$V.json "https://api.census.gov/data/$Y/acs/acs1/subject/variables/$V.json"; done
+          done
+          get NST-EST2025-ALLDATA.csv "https://www2.census.gov/programs-surveys/popest/datasets/2020-2025/state/totals/NST-EST2025-ALLDATA.csv"
+          get NST-EST2024-ALLDATA.csv "https://www2.census.gov/programs-surveys/popest/datasets/2020-2024/state/totals/NST-EST2024-ALLDATA.csv"
+          get SAGDP.zip "https://apps.bea.gov/regional/zip/SAGDP.zip"
+          if [ -s SAGDP.zip ]; then unzip -l SAGDP.zip > SAGDP-contents.txt; unzip -o -j SAGDP.zip 'SAGDP1__ALL_AREAS_*' 'SAGDP1_definition*' 2>/dev/null; rm -f SAGDP.zip; fi
+          for f in *; do echo "$f $(wc -c < "$f")"; done > manifest.txt
+          date -u +%Y-%m-%dT%H:%MZ > pulled-at.txt
+          # keep only files that are not error pages
+          for f in *.json; do head -c 1 "$f" | grep -q '\[' || { echo "bad $f: $(head -c 200 "$f")" >> errors.txt; }; done
+      - name: Commit
+        run: |
+          git config user.name "Perfect Nations data"
+          git config user.email "actions@users.noreply.github.com"
+          git add data/us/raw
+          git commit -m "Data: official figures for the 50 States page (Census Bureau, BEA), raw downloads" || echo nothing
+          git push
