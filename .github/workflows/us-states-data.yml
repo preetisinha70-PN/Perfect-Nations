@@ -1,4 +1,4 @@
-# Temporary (run 5): USDA food security (ERR-358), NAEP 2024 reading (NAEP Data Service), EIA electricity prices. Branch only.
+# Temporary (run 6): USDA food security (ERR-358), NAEP 2024 reading (NAEP Data Service), EIA electricity prices. Branch only.
 name: us-states-data
 on:
   push:
@@ -19,33 +19,10 @@ jobs:
           mkdir -p data/us/raw/new-york && cd data/us/raw/new-york
           get(){ for i in 1 2 3; do curl -sSL -m 180 -A "Mozilla/5.0 PerfectNations-data" -o "$1" -w "$1 %{http_code} %{size_download}\n" "$2" && [ -s "$1" ] && return 0; sleep 5; done; return 1; }
           get err358.pdf "https://ers.usda.gov/sites/default/files/_laserfiche/publications/113623/ERR-358.pdf"
-          if [ -s err358.pdf ]; then pdftotext -layout err358.pdf err358.txt; grep -n -B2 -A2 -E '^ *(New York|U\.S\. total|U\.S\.|United States)' err358.txt | head -40 > usda-err358-new-york-lines.txt; grep -n -i -E 'Prevalence of household-level food insecurity and very low food security by State' err358.txt | head > usda-err358-table-title.txt; rm -f err358.pdf err358.txt; fi
-          for G in 4 8; do
-            get naep-reading-g$G-2024-ny.json "https://www.nationsreportcard.gov/DataService/GetAdhocData.aspx?type=data&subject=reading&grade=$G&subscale=RRPCM&variable=TOTAL&jurisdiction=NY&stattype=ALC:AP&Year=2024"
-            get naep-reading-g$G-2024-nt.json "https://www.nationsreportcard.gov/DataService/GetAdhocData.aspx?type=data&subject=reading&grade=$G&subscale=RRPCM&variable=TOTAL&jurisdiction=NP&stattype=ALC:AP&Year=2024"
-          done
-          get avgprice_annual.xlsx "https://www.eia.gov/electricity/data/state/avgprice_annual.xlsx"
-          python3 - <<'PY'
-          import zipfile, re, os
-          f='avgprice_annual.xlsx'
-          if os.path.exists(f) and os.path.getsize(f) > 1000:
-              try:
-                  import openpyxl
-              except ImportError:
-                  os.system('pip install -q openpyxl')
-                  import openpyxl
-              wb = openpyxl.load_workbook(f, read_only=True)
-              out = open('eia-avgprice-ny-us.txt','w')
-              for ws in wb.worksheets:
-                  for i, row in enumerate(ws.iter_rows(values_only=True)):
-                      cells = ['' if c is None else str(c) for c in row]
-                      if i < 3 or (len(cells) > 2 and cells[1] in ('NY','US') and cells[0] in ('2023','2024','2025')):
-                          out.write(ws.title + '|' + '|'.join(cells) + '\n')
-              out.close()
-          PY
-          rm -f avgprice_annual.xlsx
+          [ -s err358.pdf ] && { pdftotext -layout err358.pdf usda-err358.txt; rm -f err358.pdf; }
+          get eia-avgprice_annual.xlsx "https://www.eia.gov/electricity/data/state/avgprice_annual.xlsx"
           for f in *; do echo "$f $(wc -c < "$f")"; done > manifest.txt
-          date -u +%Y-%m-%dT%H:%MZ > pulled-at-run5.txt
+          date -u +%Y-%m-%dT%H:%MZ > pulled-at-run6.txt
       - name: Commit
         run: |
           git config user.name "Perfect Nations data"
