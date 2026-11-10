@@ -91,7 +91,7 @@ perfectnations.org/art-of-nations/ (page 16839; the old address /perfect-nations
 perfectnations.org/about/ is one file, `pages/about.html` (root `pn-about`), kept by the About Steward.
 
 - **Edited by hand, except the GENERATED blocks.** `python3 tools/build_about.py` refreshes them: the homepage parts with the gold line's style (`pages/home-rule.html`), the counts of Stewards, and the Nation Stewards roll, one card per open blueprint in `data/blueprints.json`, with the Steward's name from `data/<slug>.json` and the 150 px portrait the nation's own blueprint shows. Run it whenever a blueprint is added; the roll and the counts follow.
-- **The bands, in order (v10.0):** the logo, the Vision and the Mission (Earthrise); the President and CEO and the three moves (ivory); the record (Lagoon); the gold line; the Council of Stewards (Earthrise); the gold line; the close (Earthrise Depth).
+- **The bands, in order (v11.4):** the logo, "Perfect Nations is a new-age sovereign advisory firm, and its clients are nations", the Vision and the Mission (Earthrise); What we do; 01 Assets; 02 Capital; 03 Solutions; the Founder's Vision (all homepage parts); the President and CEO (ivory); the record (Lagoon); the gold line; the Council of Stewards (Earthrise); the gold line; the close, the homepage's own (`pages/home-pledge.html`): the ReDesign Studio and its three ways to begin. A change to a homepage part reaches About when `tools/build_about.py` is run.
 - **Checks and previews:** `python3 tools/check_page.py pages/about.html`, then `python3 tools/preview_page.py pages/about.html --out <folder> --fonts <node_modules/@fontsource>`.
 - **Every change** goes through a pull request "For approval: About vX.Y, ...", with `pn-about` raised in the manifest.
 
