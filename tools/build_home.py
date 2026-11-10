@@ -24,7 +24,8 @@ ROOT = Path(__file__).resolve().parent.parent
 PAGES = ROOT / 'pages'
 DATA = ROOT / 'data'
 SITE = 'https://perfectnations.org'
-VERSION = '12.0'  # Governance first moves after Solutions, before What we do; the Perfect Nations Cup is the whole logo on its seal, and the cup alone stays the symbol of Assets; What we do ends with its three tiles on the homepage (the closing seal row is left out) (the Steward-General, 10 Nov 2026)
+VERSION = '12.1'  # What we do ends with its three tiles on the homepage: the closing seal row is left out, as Governance first just above carries the seal (the Steward-General, 10 Nov 2026)
+# v12.0: Governance first moves after Solutions, before What we do; the Perfect Nations Cup is the whole logo on its seal, and the cup alone stays the symbol of Assets (the Steward-General, 10 Nov 2026)
 # v11.9: Governance first: a slim band under the Capital Wire, with the Perfect Nations Cup (the Steward-General, 10 Nov 2026)
 # v11.8: the nation summary pop-up of Blueprints of Nations keeps ivory type on Earthrise (the Steward-General, 10 Nov 2026)
 # v11.7: The Blueprint Lab opens the Contact page on The Blueprint Lab, ?about=lab (the Steward-General, 10 Nov 2026)
@@ -174,7 +175,7 @@ def main():
             continue
         code = (PAGES / item).read_text(encoding='utf-8').strip()
         if item == 'home-steps.html' and 'home-governance.html' in ORDER:
-            # v12.0: on the homepage, Governance first (just above) shows the whole logo on its seal, so What we do
+            # v12.1: on the homepage, Governance first (just above) shows the whole logo on its seal, so What we do
             # ends with its three tiles: the closing row with the same seal is left out here (the About page keeps it).
             lines = code.split('\n')
             kept = [ln for ln in lines if '<div class="pnsp-all">' not in ln]
