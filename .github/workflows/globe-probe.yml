@@ -1,0 +1,32 @@
+# Temporary (10 Nov 2026): look at the live Mexico globe in a real Chrome window. Runs only on this branch.
+name: globe-probe
+on:
+  push:
+    branches: [globe-probe-2026-11-10]
+permissions:
+  contents: write
+jobs:
+  probe:
+    if: ${{ !contains(github.event.head_commit.message, 'probe results') && !contains(github.event.head_commit.message, 'remove the probe') }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install -q playwright==1.48.0 && sudo apt-get install -y -qq xvfb > /dev/null
+      - name: Earth picture hosts, as seen from here
+        run: |
+          mkdir -p probe-out
+          for u in https://cdn.jsdelivr.net/gh/preetisinha70-PN/perfect-nations@main/assets/globe/earth-1536.jpg \
+                   https://cdn.jsdelivr.net/gh/preetisinha70-PN/perfect-nations@main/assets/globe/earth-1024.jpg \
+                   https://raw.githubusercontent.com/preetisinha70-PN/perfect-nations/main/assets/globe/earth-1536.jpg \
+                   https://perfectnations.org/wp-content/uploads/2026/10/pn-globe-earth-day-1536x768.jpg; do
+            echo "== $u"; curl -sS -o /dev/null -D - -H 'Origin: https://perfectnations.org' "$u" | grep -iE '^(HTTP|access-control|content-type|content-length|server|x-cache|age|location)'
+          done > probe-out/hosts.txt 2>&1
+          cat probe-out/hosts.txt
+      - run: xvfb-run -a python probe/globe_probe.py /blueprints/mexico/ /blueprints/kenya/
+      - run: |
+          git config user.name "globe-probe"; git config user.email "noreply@github.com"
+          git add -A probe-out && git commit -q -m "probe results" && git push -q
