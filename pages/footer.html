@@ -1,5 +1,13 @@
 <!-- ===========================================================================
-PERFECT NATIONS - FOOTER - v9.4 DEEP OCEAN - 2026-11-09
+PERFECT NATIONS - FOOTER - v10.0 SLIM - 2026-11-10
+v10.0 (the Steward-General, 10 Nov 2026: "the footer looks too elaborate, especially on the mobile ... make
+the footer more slim, lined, and replace the multicoloured section divider with the gold section divider on
+top of the footer"). The gold line with its diamond (as pages/home-rule.html) now runs along the top; the band
+of seven colours is gone. One slim row: the logo and name, then the links in one line, divided by fine rules
+(Assets, Capital, Solutions, Blueprints, State of Nations, Letters, About, Art of Nations, ReDesign Studio,
+Contact), then the email. The legal text is one small line under a hairline. The tagline and the button are
+gone (Contact and the email remain). Phones: the name, the links in fine-ruled lines, the email, the legal
+line: about a third of the former height. The new-tab script at the end is unchanged.
 v9.4: every link to another page opens in a new tab (the script at the end; the header carries the same script,
 and it runs once per page). The Steward-General, 9 Nov 2026.
 v9.3: the logo image in one gold, #E3C258 (pn-logo-7-stars-e3c258.png, Media Library id 17756, drawn from the vector logo kit; it replaces the metallic pn-logo-gold-7-stars.png, id 17700). The Steward-General, 9 Nov 2026.
@@ -31,65 +39,69 @@ Gold is used only for the call to action and the email address.
 <style>
 #pn-ft{
   --g:var(--pn-brand-gold,#E3C258); --grgb:var(--pn-brand-gold-rgb,227,194,88);
-  --iv:#F5F1E8; --mut:rgba(245,241,232,.78); --dim:rgba(245,241,232,.58); --hair:rgba(245,241,232,.12);
+  --iv:#F5F1E8; --mut:rgba(245,241,232,.82); --dim:rgba(245,241,232,.56); --hair:rgba(245,241,232,.14);
   --hd:var(--pn-font-heading,'Barlow Condensed','Arial Narrow',Arial,sans-serif);
   --bd:var(--pn-font-body,'Barlow Semi Condensed','Arial Narrow',Arial,sans-serif);
-  position:relative; overflow:hidden; isolation:isolate;
+  position:relative; isolation:isolate;
   background:linear-gradient(180deg,#0A3550 0%,#072638 100%);
-  color:var(--iv); font-family:var(--bd); line-height:1.5;
+  color:var(--iv); font-family:var(--bd); line-height:1.4;
 }
 #pn-ft *,#pn-ft *::before,#pn-ft *::after{ box-sizing:border-box; }
 .elementor-location-footer .e-con, .elementor-location-footer .e-con-inner, .elementor-location-footer .elementor-container,
 .elementor-location-footer .elementor-widget-wrap, .elementor-location-footer .elementor-widget-html, .elementor-location-footer .elementor-element{
   padding-top:0 !important; padding-bottom:0 !important; margin-top:0 !important; margin-bottom:0 !important;
 }
-/* the seven earths */
-#pn-ft .pnft-strata{ display:flex; height:3px; margin:0; padding:0; list-style:none; }
-#pn-ft .pnft-strata li{ flex:1; background:var(--c); }
-#pn-ft .pnft-in{ width:100%; max-width:1480px; margin:0 auto; padding:22px clamp(20px,5vw,72px) 16px; }
-/* v9.0: the brand on the left, three labelled groups on the right */
-#pn-ft .pnft-top{ display:grid; grid-template-columns:minmax(0,1fr) minmax(0,2.1fr); gap:24px clamp(32px,5vw,88px); align-items:start; padding:6px 0 20px; border-bottom:1px solid var(--hair); }
-#pn-ft .pnft-me{ display:flex; flex-direction:column; align-items:flex-start; gap:12px; }
-#pn-ft .pnft-brand{ display:inline-flex; align-items:center; gap:12px; text-decoration:none; color:var(--iv); }
-#pn-ft .pnft-logo{ width:40px; height:40px; object-fit:contain; display:block; }
-#pn-ft .pnft-word{ font-family:var(--hd); font-weight:700; font-size:1.2rem; letter-spacing:.12em; text-transform:uppercase; line-height:1; }
-#pn-ft .pnft-word sup{ font-size:.5em; letter-spacing:0; margin-left:1px; }
-#pn-ft .pnft-tag{ margin:0; font-family:var(--hd); font-size:.74rem; font-weight:600; letter-spacing:.2em; text-transform:uppercase; color:var(--mut); }
-#pn-ft .pnft-btn{ display:inline-flex; align-items:center; gap:10px; margin-top:4px; padding:11px 20px 9px; border-radius:999px; text-decoration:none; background:var(--g); color:#1A140C; font-family:var(--hd); font-size:.7rem; font-weight:700; letter-spacing:.18em; text-transform:uppercase; transition:background .22s ease; }
-#pn-ft .pnft-btn::after{ content:"\2192"; font-family:Arial,sans-serif; font-size:.9rem; letter-spacing:0; }
-#pn-ft .pnft-btn:hover{ background:#F0D68F; }
-#pn-ft .pnft-cols{ display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:18px clamp(20px,3vw,44px); }
-#pn-ft .pnft-h{ margin:0 0 10px; padding-bottom:8px; border-bottom:1px solid var(--hair); font-family:var(--hd); font-size:.64rem; font-weight:700; letter-spacing:.26em; text-transform:uppercase; color:var(--dim); }
-#pn-ft .pnft-cols ul{ display:grid; gap:7px; margin:0; padding:0; list-style:none; }
-#pn-ft .pnft-cols a{ color:var(--iv); text-decoration:none; font-family:var(--hd); font-size:.98rem; font-weight:500; letter-spacing:.02em; line-height:1.25; transition:color .2s ease; }
-#pn-ft .pnft-cols a:hover{ color:#F0D68F; }
-#pn-ft .pnft-cols a.pnft-mail{ color:var(--g); font-family:var(--bd); font-size:.9rem; border-bottom:1px solid rgba(var(--grgb),.35); padding-bottom:1px; word-break:break-all; }
-#pn-ft .pnft-cols a.pnft-mail:hover{ border-color:var(--g); }
-#pn-ft :focus-visible{ outline:2px solid #F0D68F; outline-offset:3px; border-radius:4px; }
-/* one line of legal text */
-#pn-ft .pnft-legal{ display:flex; justify-content:space-between; align-items:baseline; gap:6px 32px; flex-wrap:wrap; padding-top:12px; font-size:.68rem; line-height:1.5; color:var(--dim); }
-#pn-ft .pnft-legal p{ margin:0; max-width:120ch; }
-#pn-ft .pnft-copy{ white-space:nowrap; letter-spacing:.06em; }
-@media (max-width:900px){
-  #pn-ft .pnft-top{ grid-template-columns:minmax(0,1fr); gap:20px; }
+/* v10.0: the gold section divider along the top (as pages/home-rule.html) */
+#pn-ft .pnft-rule{
+  position:absolute; left:0; right:0; top:0; z-index:6; height:1px; pointer-events:none;
+  background:linear-gradient(90deg, rgba(227,194,88,0) 0%, rgba(227,194,88,.45) 16%, #E3C258 40%, #FBE7A6 50%, #E3C258 60%, rgba(227,194,88,.45) 84%, rgba(227,194,88,0) 100%);
+  box-shadow:0 0 10px rgba(227,194,88,.35);
 }
-@media (max-width:560px){
-  #pn-ft .pnft-in{ padding:20px 18px 14px; }
-  #pn-ft .pnft-me{ align-items:stretch; }
-  #pn-ft .pnft-btn{ justify-content:center; }
-  #pn-ft .pnft-cols{ grid-template-columns:repeat(2,minmax(0,1fr)); gap:18px 16px; }
-  #pn-ft .pnft-cols > div:last-child{ grid-column:1 / -1; }
-  #pn-ft .pnft-cols > div:last-child ul{ grid-template-columns:repeat(2,max-content); gap:7px 22px; }
-  #pn-ft .pnft-cols > div:last-child li:last-child{ grid-column:1 / -1; }
-  #pn-ft .pnft-legal{ text-align:left; }
+#pn-ft .pnft-rule::before,#pn-ft .pnft-rule::after{ content:""; position:absolute; left:50%; top:50%; transform:translate(-50%,-50%) rotate(45deg); }
+#pn-ft .pnft-rule::before{ width:8px; height:8px; z-index:2; background:linear-gradient(135deg,#FFF1C2 0%,#E3C258 55%,#B48A2C 100%); box-shadow:0 0 10px rgba(227,194,88,.7); }
+#pn-ft .pnft-rule::after{ width:20px; height:20px; z-index:1; border:1px solid rgba(227,194,88,.85); background:#0A3550; }
+#pn-ft .pnft-in{ width:100%; max-width:1480px; margin:0 auto; padding:20px clamp(20px,4vw,64px) 12px; }
+/* one slim row: the name, the links in one line divided by fine rules, the email */
+#pn-ft .pnft-row{ display:flex; align-items:center; justify-content:space-between; gap:10px 28px; flex-wrap:wrap; padding:2px 0 12px; border-bottom:1px solid var(--hair); }
+#pn-ft .pnft-brand{ display:inline-flex; align-items:center; gap:10px; flex:none; text-decoration:none; color:var(--iv); }
+#pn-ft .pnft-logo{ width:28px; height:28px; object-fit:contain; display:block; }
+#pn-ft .pnft-word{ font-family:var(--hd); font-weight:700; font-size:1rem; letter-spacing:.14em; text-transform:uppercase; line-height:1; white-space:nowrap; }
+#pn-ft .pnft-word sup{ font-size:.5em; letter-spacing:0; margin-left:1px; }
+#pn-ft .pnft-nav{ flex:1 1 auto; display:flex; justify-content:center; min-width:0; }
+#pn-ft .pnft-nav ul{ display:flex; flex-wrap:wrap; justify-content:center; align-items:center; gap:4px 0; margin:0; padding:0; list-style:none; }
+#pn-ft .pnft-nav li{ display:flex; align-items:center; margin:0; }
+#pn-ft .pnft-nav li + li::before{ content:""; width:1px; height:12px; margin:0 13px; background:rgba(245,241,232,.22); }
+#pn-ft .pnft-nav a{ display:inline-block; padding:6px 0; color:var(--mut); text-decoration:none; font-family:var(--hd); font-size:.74rem; font-weight:600; letter-spacing:.14em; text-transform:uppercase; line-height:1; white-space:nowrap; transition:color .2s ease; }
+#pn-ft .pnft-nav a:hover{ color:#F0D68F; }
+#pn-ft .pnft-mail{ flex:none; color:var(--g); text-decoration:none; font-family:var(--bd); font-size:.86rem; border-bottom:1px solid rgba(var(--grgb),.35); padding-bottom:1px; white-space:nowrap; transition:border-color .2s ease; }
+#pn-ft .pnft-mail:hover{ border-color:var(--g); }
+#pn-ft :focus-visible{ outline:2px solid #F0D68F; outline-offset:3px; border-radius:4px; }
+/* one small line of legal text */
+#pn-ft .pnft-legal{ margin:0; padding-top:9px; font-size:.66rem; line-height:1.5; color:var(--dim); text-align:center; }
+#pn-ft .pnft-legal b{ font-weight:600; color:var(--mut); letter-spacing:.04em; }
+/* below 1400 px the links take a line of their own under the name and the email */
+@media (max-width:1400px){
+  #pn-ft .pnft-row{ justify-content:space-between; }
+  #pn-ft .pnft-brand{ order:1; }
+  #pn-ft .pnft-mail{ order:2; }
+  #pn-ft .pnft-nav{ order:3; flex-basis:100%; }
+}
+/* phones: the name, the links in fine-ruled lines, the email, the legal line */
+@media (max-width:760px){
+  #pn-ft .pnft-in{ padding:18px 16px 12px; }
+  #pn-ft .pnft-row{ justify-content:center; gap:10px 18px; padding-bottom:10px; }
+  #pn-ft .pnft-mail{ font-size:.8rem; }
+  #pn-ft .pnft-nav ul{ display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:0 18px; width:100%; border-top:1px solid var(--hair); }
+  #pn-ft .pnft-nav li{ border-bottom:1px solid var(--hair); }
+  #pn-ft .pnft-nav li + li::before{ content:none; }
+  #pn-ft .pnft-nav a{ display:block; width:100%; padding:10px 0 9px; font-size:.7rem; letter-spacing:.12em; }
+  #pn-ft .pnft-legal{ font-size:.6rem; padding-top:8px; }
 }
 @media (prefers-reduced-motion:reduce){ #pn-ft *{ transition:none !important; } }
 
 /* ---- FULL WIDTH, EDGE TO EDGE ----
-   The black strips at the sides were the template's boxed container and its
-   side padding showing the page background. These release both, and the
-   bar itself is drawn to the full width of the screen. overflow-x:clip on the
-   page stops the full-width bar adding a sideways scroll on Windows. */
+   The template's boxed container and its side padding are released, and the footer is drawn to the full
+   width of the screen. overflow-x:clip on the page stops the full-width footer adding a sideways scroll. */
 html:has(#pn-ft), html:has(#pn-ft) body{ overflow-x:clip; }
 .elementor-location-footer, .elementor-location-footer .e-con, .elementor-location-footer .e-con-inner,
 .elementor-location-footer .elementor-section, .elementor-location-footer .elementor-container,
@@ -104,53 +116,31 @@ html:has(#pn-ft), html:has(#pn-ft) body{ overflow-x:clip; }
 #pn-ft{ width:100vw; max-width:100vw; margin-left:calc(50% - 50vw); }
 </style>
 <footer id="pn-ft">
-  <ul class="pnft-strata" aria-hidden="true">
-    <li style="--c:#D9C293;"></li><li style="--c:#0C3A52;"></li><li style="--c:#7A3420;"></li><li style="--c:#5E5048;"></li><li style="--c:#1B3F7A;"></li><li style="--c:#145C4B;"></li><li style="--c:#123A2C;"></li>
-  </ul>
+  <div class="pnft-rule" aria-hidden="true"></div>
   <div class="pnft-in">
-    <div class="pnft-top">
-      <div class="pnft-me">
-        <a class="pnft-brand" href="https://perfectnations.org/" aria-label="Perfect Nations - home">
-          <img class="pnft-logo" src="https://perfectnations.org/wp-content/uploads/2026/11/pn-logo-7-stars-e3c258.png" alt="" width="40" height="40" loading="lazy" decoding="async"
-               onerror="this.onerror=function(){this.onerror=null;this.style.display='none'};this.src='https://perfectnations.org/wp-content/uploads/2026/08/pnlogoe3c258.png'">
-          <span class="pnft-word">Perfect Nations<sup>&trade;</sup></span>
-        </a>
-        <p class="pnft-tag">Designing the Prosperity of Nations</p>
-        <a class="pnft-btn" href="https://perfectnations.org/contact/">Start a conversation</a>
-      </div>
-      <nav class="pnft-cols" aria-label="Footer navigation">
-        <div>
-          <p class="pnft-h">What we do</p>
-          <ul>
-            <li><a href="https://perfectnations.org/sovereign-assets/">Assets: Sovereign Assets</a></li>
-            <li><a href="https://perfectnations.org/capital-architecture/">Capital: Capital Architecture</a></li>
-            <li><a href="https://perfectnations.org/perfect-capita/">Solutions: Perfect Capita</a></li>
-          </ul>
-        </div>
-        <div>
-          <p class="pnft-h">Where we work</p>
-          <ul>
-            <li><a href="https://perfectnations.org/blueprints/">Blueprints of Nations</a></li>
-            <li><a href="https://perfectnations.org/state-of-nations/">State of Nations</a></li>
-            <li><a href="https://perfectnations.org/category/letters-to-the-nations/">Letters to the Nations</a></li>
-          </ul>
-        </div>
-        <div>
-          <p class="pnft-h">Who we are</p>
-          <ul>
-            <li><a href="https://perfectnations.org/about/">About</a></li>
-            <li><a href="https://perfectnations.org/art-of-nations/">Art of Nations</a></li>
-            <li><a href="https://perfectnations.org/design-studio/">ReDesign Studio</a></li>
-            <li><a href="https://perfectnations.org/contact/">Contact</a></li>
-            <li><a class="pnft-mail" href="mailto:contact@perfectnations.org">contact@perfectnations.org</a></li>
-          </ul>
-        </div>
+    <div class="pnft-row">
+      <a class="pnft-brand" href="https://perfectnations.org/" aria-label="Perfect Nations - home">
+        <img class="pnft-logo" src="https://perfectnations.org/wp-content/uploads/2026/11/pn-logo-7-stars-e3c258.png" alt="" width="28" height="28" loading="lazy" decoding="async"
+             onerror="this.onerror=function(){this.onerror=null;this.style.display='none'};this.src='https://perfectnations.org/wp-content/uploads/2026/08/pnlogoe3c258.png'">
+        <span class="pnft-word">Perfect Nations<sup>&trade;</sup></span>
+      </a>
+      <nav class="pnft-nav" aria-label="Footer navigation">
+        <ul>
+          <li><a href="https://perfectnations.org/sovereign-assets/">Assets</a></li>
+          <li><a href="https://perfectnations.org/capital-architecture/">Capital</a></li>
+          <li><a href="https://perfectnations.org/perfect-capita/">Solutions</a></li>
+          <li><a href="https://perfectnations.org/blueprints/">Blueprints</a></li>
+          <li><a href="https://perfectnations.org/state-of-nations/">State of Nations</a></li>
+          <li><a href="https://perfectnations.org/category/letters-to-the-nations/">Letters</a></li>
+          <li><a href="https://perfectnations.org/about/">About</a></li>
+          <li><a href="https://perfectnations.org/art-of-nations/">Art of Nations</a></li>
+          <li><a href="https://perfectnations.org/design-studio/">ReDesign Studio</a></li>
+          <li><a href="https://perfectnations.org/contact/">Contact</a></li>
+        </ul>
       </nav>
+      <a class="pnft-mail" href="mailto:contact@perfectnations.org">contact@perfectnations.org</a>
     </div>
-    <div class="pnft-legal">
-      <p>Perfect Nations&trade; is a trademark of Perfect Nations LLC, New York. Publications and products are for research, strategy, education and creative purposes, and are not investment advice, legal advice, securities offerings or official government documents.</p>
-      <p class="pnft-copy">&copy; 2026 Perfect Nations LLC</p>
-    </div>
+    <p class="pnft-legal"><b>&copy; 2026 Perfect Nations LLC.</b> Perfect Nations&trade; is a trademark of Perfect Nations LLC, New York. Publications and products are for research, strategy, education and creative purposes, and are not investment advice, legal advice, securities offerings or official government documents.</p>
   </div>
 </footer>
 <script>
