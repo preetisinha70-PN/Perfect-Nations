@@ -1,5 +1,10 @@
 <!-- ===========================================================================
-PERFECT NATIONS - FOOTER - v10.0 SLIM - 2026-11-10
+PERFECT NATIONS - FOOTER - v10.2 SLIM - 2026-11-10
+v10.2: the ground is Earthrise (#0B3D45 falling to #082A30), the colour of the header and of the accents on the
+light pages, in place of the deep ocean blue, which sat out of place under the ivory sections (the Steward-General,
+10 Nov 2026: "the color of the footer is a bit out of place").
+v10.1: Perfect Nations is a registered trademark: the name carries the registered mark (&reg;), and the legal line reads
+"Perfect Nations&reg; is a registered trademark of Perfect Nations LLC, New York." (the Steward-General, 10 Nov 2026).
 v10.0 (the Steward-General, 10 Nov 2026: "the footer looks too elaborate, especially on the mobile ... make
 the footer more slim, lined, and replace the multicoloured section divider with the gold section divider on
 top of the footer"). The gold line with its diamond (as pages/home-rule.html) now runs along the top; the band
@@ -43,7 +48,7 @@ Gold is used only for the call to action and the email address.
   --hd:var(--pn-font-heading,'Barlow Condensed','Arial Narrow',Arial,sans-serif);
   --bd:var(--pn-font-body,'Barlow Semi Condensed','Arial Narrow',Arial,sans-serif);
   position:relative; isolation:isolate;
-  background:linear-gradient(180deg,#0A3550 0%,#072638 100%);
+  background:linear-gradient(180deg,#0B3D45 0%,#082A30 100%);
   color:var(--iv); font-family:var(--bd); line-height:1.4;
 }
 #pn-ft *,#pn-ft *::before,#pn-ft *::after{ box-sizing:border-box; }
@@ -59,7 +64,7 @@ Gold is used only for the call to action and the email address.
 }
 #pn-ft .pnft-rule::before,#pn-ft .pnft-rule::after{ content:""; position:absolute; left:50%; top:50%; transform:translate(-50%,-50%) rotate(45deg); }
 #pn-ft .pnft-rule::before{ width:8px; height:8px; z-index:2; background:linear-gradient(135deg,#FFF1C2 0%,#E3C258 55%,#B48A2C 100%); box-shadow:0 0 10px rgba(227,194,88,.7); }
-#pn-ft .pnft-rule::after{ width:20px; height:20px; z-index:1; border:1px solid rgba(227,194,88,.85); background:#0A3550; }
+#pn-ft .pnft-rule::after{ width:20px; height:20px; z-index:1; border:1px solid rgba(227,194,88,.85); background:#0B3D45; }
 #pn-ft .pnft-in{ width:100%; max-width:1480px; margin:0 auto; padding:20px clamp(20px,4vw,64px) 12px; }
 /* one slim row: the name, the links in one line divided by fine rules, the email */
 #pn-ft .pnft-row{ display:flex; align-items:center; justify-content:space-between; gap:10px 28px; flex-wrap:wrap; padding:2px 0 12px; border-bottom:1px solid var(--hair); }
@@ -122,7 +127,7 @@ html:has(#pn-ft), html:has(#pn-ft) body{ overflow-x:clip; }
       <a class="pnft-brand" href="https://perfectnations.org/" aria-label="Perfect Nations - home">
         <img class="pnft-logo" src="https://perfectnations.org/wp-content/uploads/2026/11/pn-logo-7-stars-e3c258.png" alt="" width="28" height="28" loading="lazy" decoding="async"
              onerror="this.onerror=function(){this.onerror=null;this.style.display='none'};this.src='https://perfectnations.org/wp-content/uploads/2026/08/pnlogoe3c258.png'">
-        <span class="pnft-word">Perfect Nations<sup>&trade;</sup></span>
+        <span class="pnft-word">Perfect Nations<sup>&reg;</sup></span>
       </a>
       <nav class="pnft-nav" aria-label="Footer navigation">
         <ul>
@@ -140,7 +145,7 @@ html:has(#pn-ft), html:has(#pn-ft) body{ overflow-x:clip; }
       </nav>
       <a class="pnft-mail" href="mailto:contact@perfectnations.org">contact@perfectnations.org</a>
     </div>
-    <p class="pnft-legal"><b>&copy; 2026 Perfect Nations LLC.</b> Perfect Nations&trade; is a trademark of Perfect Nations LLC, New York. Publications and products are for research, strategy, education and creative purposes, and are not investment advice, legal advice, securities offerings or official government documents.</p>
+    <p class="pnft-legal"><b>&copy; 2026 Perfect Nations LLC.</b> Perfect Nations&reg; is a registered trademark of Perfect Nations LLC, New York. Publications and products are for research, strategy, education and creative purposes, and are not investment advice, legal advice, securities offerings or official government documents.</p>
   </div>
 </footer>
 <script>

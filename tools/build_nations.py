@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """Build every national blueprint page (pages/blueprint-<slug>.html) from one template.
 
-Blueprint v11.7 (10 November 2026). One design for every nation, so a change is made once and reaches all.
-v11.7: light reading sections, Earthrise accents (the Steward-General, 10 Nov 2026: "the site is a little dark and
+Blueprint v12.0 (10 November 2026). One design for every nation, so a change is made once and reaches all.
+v12.0: light reading sections, Earthrise accents (the Steward-General, 10 Nov 2026: "the site is a little dark and
 heavy to read; make as many sections as possible the lighter colour, with the Earthrise for the accents"). Colour
 only, in the LIGHT block at the end of tools/nation/style.css: the hero (the globe and the nation at a glance) stays
 Earthrise; What we do, 01 Assets, 02 Capital, Already working in <Nation>, 03 Solutions, the Letter, Work with us and
@@ -98,7 +98,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 PAGES, DATA, HERE = ROOT / 'pages', ROOT / 'data', ROOT / 'tools' / 'nation'
-VERSION = '11.7'  # light reading sections, Earthrise accents (the Steward-General, 10 Nov 2026)
+VERSION = '12.0'  # light reading sections, Earthrise accents (the Steward-General, 10 Nov 2026); the letterhead carries the registered mark, Perfect Nations&#174; (10 Nov 2026); the close button of every pop-up is one design (9 Nov 2026)
 EARTH = {'lg': 'https://perfectnations.org/wp-content/uploads/2026/10/pn-globe-earth-day-1536x768.jpg',
          'sm': 'https://perfectnations.org/wp-content/uploads/2026/10/pn-globe-earth-day-1024x512.jpg'}
 ORDER = ['Food', 'Water', 'Shelter', 'Energy', 'Education', 'Health', 'Livelihoods']
@@ -729,7 +729,7 @@ def letter(d, p):
         '<div class="bpx-letter__grid"><figure class="bpx-port"><span class="bpx-frame">'
         '<img src="%s"%s alt="%s" width="%d" height="%d" loading="lazy" decoding="async"></span>'
         '<figcaption class="bpx-frame__cap">%s<small>Nation Portrait &#183; %s<a href="https://perfectnations.org/art-of-nations/" target="_blank" rel="noopener noreferrer">Art of Nations</a></small></figcaption></figure>'
-        '<article class="bpx-sheet"><div class="bpx-sheet__lh"><span>Perfect Nations&#8482; &#183; Letters to the Nations</span><span>%s</span></div>'
+        '<article class="bpx-sheet"><div class="bpx-sheet__lh"><span>Perfect Nations&#174; &#183; Letters to the Nations</span><span>%s</span></div>'
         '<h2 class="bpx-sheet__dear" id="bp-letter-h">Dear %s,</h2>%s<p class="bpx-sheet__q">%s</p>'
         '<div class="bpx-sheet__foot"><span class="bpx-sig">Yours in design,<b>Preeti Sinha</b><small>President and CEO, Perfect Nations</small></span>'
         '<a class="bpx-btn" href="%s" target="_blank" rel="noopener noreferrer">Read the full letter</a></div></article></div>'
@@ -903,7 +903,8 @@ def build(slug, sbn, son, today):
     script = (HERE / 'script.js').read_text(encoding='utf-8').replace('/*pn:cfg*/', 'var CFG = %s;' % js_str(cfg))
     head = (
         '<!-- PERFECT NATIONS . NATIONAL BLUEPRINT . %s . v%s . %s . Built by tools/build_nations.py: never edit by hand. -->\n'
-        '<!-- v11.7 (10 November 2026): light reading sections, Earthrise accents (the Steward-General, 10 Nov 2026). -->\n'
+        '<!-- v12.0 (10 November 2026): light reading sections, Earthrise accents (the Steward-General, 10 Nov 2026). -->\n'
+        '<!-- v11.7 (10 November 2026): the letterhead carries the registered mark, Perfect Nations&#174;. -->\n'
         '<!-- v11.5 (9 November 2026): three changes for clarity (the Steward-General, 9 Nov 2026). The register reads\n'
         '     Capital already committed; Already working in the nation is its own band after 02 Capital, its firms and\n'
         '     social enterprises independent and none a partner; Perfect Nations is a new-age sovereign advisory firm. -->\n'
