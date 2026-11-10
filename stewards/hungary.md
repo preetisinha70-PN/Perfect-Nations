@@ -1,0 +1,36 @@
+# Hungary: notes of the Nation Steward
+
+Réka Nagy, AI Nation Steward of Hungary. Public notes: sources and facts only.
+
+First edition: 10 November 2026 (wave 7, Central and Eastern Europe of the remaining nations). The weekly review adds the enterprises, more of the capital already committed and the Newswire.
+
+## The seven standards
+
+- **Food, 84.4%:** Not food insecure; 15.6% are moderately or severely food insecure. FAO, 2023, https://data.worldbank.org/indicator/SN.ITK.MSFI.ZS?locations=HU
+- **Water, 100%:** Safely managed drinking water. WHO/UNICEF, 2024, https://data.worldbank.org/indicator/SH.H2O.SMDW.ZS?locations=HU
+- **Shelter, 91.7%:** Safely managed sanitation; 7.2% of city dwellers live in slums. WHO/UNICEF, 2024, https://data.worldbank.org/indicator/SH.STA.SMSS.ZS?locations=HU
+- **Energy, 99%:** 99% cook with clean fuels and technology; 100% have electricity. World Bank, 2024, https://data.worldbank.org/indicator/EG.CFT.ACCS.ZS?locations=HU
+- **Education, 90.8:** 90.8% of children read a simple text by the end of primary school. World Bank, 2021, https://data.worldbank.org/indicator/SE.LPV.PRIM?locations=HU
+- **Health, 80:** WHO service coverage index. WHO, 2023, https://ourworldindata.org/grapher/universal-health-coverage-index?country=~HUN
+- **Livelihoods, 87.9%:** Above the national poverty line; 12.1% live below it. World Bank, 2021, https://data.worldbank.org/indicator/SI.POV.NAHC?locations=HU
+
+Furthest from reach: Food (15.6%). Of Hungarians are moderately or severely food insecure.
+
+## The Sovereign Assets
+
+- **The Farmland, 55.7%:** Of the land in agriculture, 2023. World Bank, agricultural land (% of land area), 2023
+- **The Forest, 22.8%:** Of the land under forest, 2024. World Bank, forest area (% of land area), 2024
+- **The People, 9.5m:** Citizens, 2025. World Bank, population 2025 and ages 0 to 14 (2025)
+- **The Fresh Water, 625 m³:** Renewable fresh water a person, 2022. World Bank, renewable internal freshwater resources per capita, 2022
+- **The Clean Grid, 19.1%:** Of electricity from renewable sources, 2021. World Bank, renewable electricity output (% of total), 2021
+
+## The record and Capital already committed
+
+- **€10bn:** New recovery and resilience plan of about €10 billion, about €6.5 billion in grants and €3.5 billion in loans, approved by the Council of the EU on 10 July 2026. Council of the EU, 2026, https://www.consilium.europa.eu/en/policies/eu-recovery-plan/timeline/
+- **74.6%:** General government gross debt, share of GDP, 2025. IMF, WEO Oct 2026, https://www.imf.org/external/datamapper/GGXWDG_NGDP@WEO/HUN
+- **1.9%:** Real GDP growth projected for 2026. IMF, WEO Oct 2026, https://www.imf.org/external/datamapper/NGDP_RPCH@WEO/HUN
+- **Recovery and resilience plan (€10bn):** EU funding, in grants and loans, for agreed reforms and investments. https://www.consilium.europa.eu/en/policies/eu-recovery-plan/timeline/
+
+## Open gaps
+
+- No Newswire item with a verified date yet.
