@@ -1,7 +1,7 @@
 {
   "nation": "Rwanda",
   "page_version": "9.0",
-  "updated": "2026-11-07",
+  "updated": "2026-11-10",
   "steward": {
     "name": "Jean-Paul Mugisha",
     "role": "Nation Steward of Rwanda"
@@ -28,6 +28,13 @@
     "heading": "Rwanda borrows on reforms it can show. Next, a clean stove in every home.",
     "record": [
       {
+        "value": "73.6%",
+        "money": false,
+        "text": "Overall public debt as a share of GDP in 2025, which the IMF expects to be the peak; risk of debt distress moderate",
+        "source": "IMF, 2026",
+        "url": "https://www.imf.org/-/media/files/publications/cr/2026/english/1rwaea2026001.pdf"
+      },
+      {
         "value": "$250M",
         "money": true,
         "text": "IMF Extended Credit Facility, approved June 2026, 38 months",
@@ -35,35 +42,64 @@
         "url": "https://www.imf.org/en/news/articles/2026/06/08/pr26191-imf-executive-board-approves-rwandas-request-ecf-arrangement"
       },
       {
-        "value": "$321.7M",
+        "value": "$450M",
         "money": true,
-        "text": "IMF Resilience and Sustainability Facility, completed December 2024",
-        "source": "IMF, 2024",
-        "url": "https://www.imf.org/en/News/Articles/2024/12/13/pr-24469-rwanda-imf-concludes-4th-rev-under-pci-and-rsf-and-2nd-rev-under-stand-by-cred-facility"
+        "text": "Commercial financing the World Bank Group guarantee of March 2026 can mobilize: €213 million closed in April and EUR 82 million and JPY 15 billion on 26 August 2026",
+        "source": "World Bank, 2026",
+        "url": "https://www.worldbank.org/en/news/press-release/2026/03/23/world-bank-group-approves-innovative-financing-package-to-advance-job-creation-in-rwanda"
       },
       {
         "value": "$300M",
         "money": true,
-        "text": "World Bank support to clean energy access (ASCENT)",
+        "text": "Energy Sector Results Based Financing Phase II, $200 million from the AfDB and $100 million from AIIB: 200,000 households to the grid and clean cooking for 100,000",
+        "source": "AfDB, 2026",
+        "url": "https://allafrica.com/stories/202605180729.html"
+      },
+      {
+        "value": "$300M",
+        "money": true,
+        "text": "World Bank support to electricity and clean cooking access (ASCENT), approved November 2023",
         "source": "World Bank, 2023",
-        "url": "https://projects.worldbank.org/en/projects-operations/project-detail/P180575"
-      },
-      {
-        "value": "$275M",
-        "money": true,
-        "text": "Priority skills and youth employment, paid on results",
-        "source": "World Bank, 2024",
-        "url": "https://projects.worldbank.org/en/projects-operations/project-detail/P181050"
-      },
-      {
-        "value": "$150M",
-        "money": true,
-        "text": "World Bank finance for affordable housing",
-        "source": "World Bank, 2018",
-        "url": "https://projects.worldbank.org/en/projects-operations/project-detail/P165649"
+        "url": "https://documents1.worldbank.org/curated/en/099121625121026227/pdf/P180575-1f47ebec-a119-4417-8b26-7b1de7d6a6a0.pdf"
       }
     ],
     "register": [
+      {
+        "cat": "govt",
+        "status": "Closed",
+        "tone": "active",
+        "name": "Dual-currency commercial loan, euro and yen",
+        "detail": "Closed 26 August 2026 · EUR 82 million and JPY 15 billion · 15 years, 6 years’ grace · IDA policy-based guarantee as first loss, MIGA cover as second loss",
+        "amount": "€82M + JPY 15B",
+        "money": true,
+        "note": "Under the World Bank Group Guarantee Platform, housed at MIGA",
+        "text": "A two-tranche commercial loan from Société Générale and Standard Chartered Bank for general budgetary purposes, in line with the World Bank’s Inclusive and Resilient Job Creation operation. World Bank Group cover lets Rwanda borrow for 15 years, which leaves more room in the budget for the seven standards.",
+        "by": [
+          "Société Générale",
+          "Standard Chartered",
+          "IDA",
+          "MIGA"
+        ],
+        "url": "https://minecofin.gov.rw/news-detail/rwanda-closes-dual-currency-eur-jpy-commercial-loan-facility"
+      },
+      {
+        "cat": "govt",
+        "status": "Closed",
+        "tone": "active",
+        "name": "Commercial loan under World Bank Group guarantees",
+        "detail": "Closed April 2026 · 15 years, six years’ grace · IDA policy-based guarantee and MIGA second-loss guarantee cover 95% of debt service",
+        "amount": "€213M",
+        "money": true,
+        "note": "About $243 million (Ministry of Finance)",
+        "text": "A commercial loan from Société Générale and Standard Chartered whose debt service is 95% covered by an IDA policy-based guarantee and a MIGA second-loss guarantee. It draws on the World Bank Group guarantee approved in March 2026.",
+        "by": [
+          "Société Générale",
+          "Standard Chartered",
+          "IDA",
+          "MIGA"
+        ],
+        "url": "https://minecofin.gov.rw/news-detail/reinventing-development-finance"
+      },
       {
         "cat": "multi",
         "status": "Active",
@@ -81,14 +117,197 @@
       },
       {
         "cat": "multi",
+        "status": "Approved",
+        "tone": "active",
+        "name": "Access to Finance for Recovery and Resilience, second additional financing",
+        "detail": "Approved 21 May 2026 · IDA credit · Implemented by the Development Bank of Rwanda",
+        "amount": "$80M",
+        "money": true,
+        "note": "Credit lines, sustainability-linked bonds and partial credit guarantees",
+        "text": "Additional IDA financing for working capital and investment credit lines, a sustainability-linked bond programme and partial credit guarantees, channelled through the Development Bank of Rwanda. By December 2025, 9,597 firms had benefited from the project’s credit facilities, which serves the livelihood standard.",
+        "by": [
+          "World Bank",
+          "Development Bank of Rwanda"
+        ],
+        "url": "https://documents1.worldbank.org/curated/en/099050426165640509/pdf/BOSIB-3b2b566b-231b-4521-a6fd-5bf8fe8b19b0.pdf"
+      },
+      {
+        "cat": "multi",
+        "status": "Approved",
+        "tone": "active",
+        "name": "Commercialization and De-Risking for Agricultural Transformation, second additional financing",
+        "detail": "Approved 27 March 2026 · IDA · Closing 28 February 2029",
+        "amount": "$80M",
+        "money": true,
+        "note": "Extends farm finance to 2029",
+        "text": "A second top-up to the agricultural transformation project of 2022, which draws private finance into farming and agribusiness. It serves the food and livelihood standards.",
+        "by": [
+          "World Bank"
+        ],
+        "url": "https://documents1.worldbank.org/curated/en/099072326053513795/pdf/P171462-7a38af7b-2740-4ab3-b5b7-0b21e20beeeb.pdf"
+      },
+      {
+        "cat": "multi",
+        "status": "Approved",
+        "tone": "active",
+        "name": "First Inclusive and Resilient Job Creation Development Policy Financing",
+        "detail": "Approved 23 March 2026 · IDA credit of JPY 15.4 billion · Policy-based guarantee of $240 million · First of a series of three",
+        "amount": "$100M",
+        "money": true,
+        "note": "With a $240 million guarantee for up to $450 million of commercial loans",
+        "text": "Budget support for reforms in revenue, public-private partnerships and state-owned enterprises, shared broadband infrastructure, Ejo Heza savings, skills and job matching, and farming and aquaculture. Its guarantee helps Rwanda raise up to $450 million of commercial financing on favourable terms.",
+        "by": [
+          "World Bank",
+          "MIGA"
+        ],
+        "url": "https://www.worldbank.org/en/news/press-release/2026/03/23/world-bank-group-approves-innovative-financing-package-to-advance-job-creation-in-rwanda"
+      },
+      {
+        "cat": "multi",
+        "status": "Approved",
+        "tone": "active",
+        "name": "Revenue Improvement and Spending Efficiency Program-for-Results",
+        "detail": "Approved 21 November 2025 · IDA",
+        "amount": "$100M",
+        "money": true,
+        "note": "National ministries, state-owned companies and all 30 districts",
+        "text": "Results-based financing to raise domestic revenue and make public spending more efficient, with national ministries, state-owned companies and all 30 districts as direct beneficiaries. Revenue of its own widens what Rwanda can spend on the seven standards.",
+        "by": [
+          "World Bank"
+        ],
+        "url": "https://www.worldbank.org/en/news/press-release/2025/11/21/rwanda-steps-up-efforts-to-improve-domestic-revenue-collection-and-accelerate-job-creation"
+      },
+      {
+        "cat": "multi",
+        "status": "Approved",
+        "tone": "active",
+        "name": "Disaster Risk Management Development Policy Financing with a Catastrophe Deferred Drawdown Option",
+        "detail": "Approved 30 September 2025 · Funds that can be drawn after a disaster",
+        "amount": "$141M",
+        "money": true,
+        "note": "About 40% of the population lives in high-risk highland areas",
+        "text": "Supports reforms in disaster risk information and coordination, the resilience of the built environment and the management of natural resources, with funds Rwanda can draw quickly after a disaster. The floods and landslides of May 2023 left over 18,000 people homeless; the operation protects the shelter and livelihood standards.",
+        "by": [
+          "World Bank"
+        ],
+        "url": "https://www.worldbank.org/en/news/press-release/2025/09/30/world-bank-steps-up-support-to-increase-rwanda-s-resilience-to-natural-disasters"
+      },
+      {
+        "cat": "multi",
+        "status": "Completed",
+        "tone": "completed",
+        "name": "Boosting Green Finance, Investment and Trade",
+        "detail": "Approved 20 December 2024 · Three IDA credits, fully disbursed · Closed 20 December 2025",
+        "amount": "$255M",
+        "money": true,
+        "note": "Policy reforms for green finance",
+        "text": "Supports reforms that open Rwanda to green investment and trade.",
+        "by": [
+          "World Bank"
+        ],
+        "url": "https://documents1.worldbank.org/curated/en/099083125044032319/pdf/P505244-d7a980dd-0d93-4aa4-801d-1ac3488ae43e.pdf"
+      },
+      {
+        "cat": "multi",
+        "status": "Approved",
+        "tone": "active",
+        "name": "Priority Skills for Growth and Youth Empowerment",
+        "detail": "Approved 9 September 2024 · IDA",
+        "amount": "$200M",
+        "money": true,
+        "note": "Skills and jobs for more than 200,000 youths",
+        "text": "Pays on verified results in technical training and youth employment, for more than 200,000 young people.",
+        "by": [
+          "World Bank"
+        ],
+        "url": "https://www.worldbank.org/en/news/press-release/2024/09/09/rwanda-afe-200-000-youths-to-benefit-from-skills-development-program"
+      },
+      {
+        "cat": "multi",
         "status": "Active",
         "tone": "active",
-        "name": "Policy Coordination Instrument",
-        "detail": "Approved 12 December 2022 · Sixth review December 2025",
-        "amount": "No lending",
+        "name": "Health Emergency Preparedness, Response and Resilience",
+        "detail": "Approved 24 May 2024 · Multiphase programmatic approach · Closing 31 March 2030",
+        "amount": "$120M",
         "money": true,
+        "note": "Health security",
+        "text": "Strengthens the health system against outbreaks.",
+        "by": [
+          "World Bank"
+        ],
+        "url": "https://documents1.worldbank.org/curated/en/099021725104513012/pdf/P504764-fc5872ea-7794-4247-8247-4f1a3de7a1ed.pdf"
+      },
+      {
+        "cat": "multi",
+        "status": "Completed",
+        "tone": "completed",
+        "name": "Standby Credit Facility",
+        "detail": "Approved 14 December 2023 · 14 months",
+        "amount": "$268.1M",
+        "money": true,
+        "note": "Balance-of-payments support",
+        "text": "Short-term support approved alongside the PCI and RSF reviews, completed December 2024.",
+        "by": [
+          "International Monetary Fund"
+        ],
+        "url": "https://www.imf.org/en/News/Articles/2023/12/14/pr23450-rwanda-imf-exec-board-2023-arti-iv-consult-2nd-rvw-pci-rsf-approve-standby-credit-facility"
+      },
+      {
+        "cat": "multi",
+        "status": "Active",
+        "tone": "active",
+        "name": "Accelerating Sustainable and Clean Energy Access Transformation",
+        "detail": "Approved 28 November 2023 · Two IDA credits · Closing 31 December 2029",
+        "amount": "$300M",
+        "money": true,
+        "note": "Electricity and clean cooking access",
+        "text": "Extends electricity and clean cooking to households. It is aimed at the energy standard, where 9% of Rwandans cook with clean fuels and technology, which sets Rwanda’s Coverage. By 1 December 2025 it had brought electricity to 70,500 people, against a target of 1,880,000 by December 2029.",
+        "by": [
+          "World Bank"
+        ],
+        "url": "https://documents1.worldbank.org/curated/en/099121625121026227/pdf/P180575-1f47ebec-a119-4417-8b26-7b1de7d6a6a0.pdf"
+      },
+      {
+        "cat": "multi",
+        "status": "Under implementation",
+        "tone": "active",
+        "name": "Congo Nile Divide forest and landscape restoration (FP217)",
+        "detail": "Approved 25 October 2023 · Grant · Accredited entity: Ministry of Environment · Effective 20 February 2024",
+        "amount": "$39.1M",
+        "money": true,
+        "note": "250,000 hectares of land",
+        "text": "A Green Climate Fund grant to build the resilience of vulnerable communities on the Congo Nile Divide through forest and landscape restoration across 250,000 hectares, with agroforestry on 2,000 hectares. It protects the soil and water behind the food and water standards.",
+        "by": [
+          "Green Climate Fund",
+          "Ministry of Environment"
+        ],
+        "url": "https://www.greenclimate.fund/project/fp217"
+      },
+      {
+        "cat": "multi",
+        "status": "Approved",
+        "tone": "active",
+        "name": "Stunting Prevention and Reduction, Additional Financing",
+        "detail": "Additional financing, 2023 · IDA credit of $70 million and grants of $9 million",
+        "amount": "$79M",
+        "money": true,
+        "note": "Child nutrition",
+        "text": "Works to reduce stunting among young children.",
+        "by": [
+          "World Bank"
+        ],
+        "url": "https://documents1.worldbank.org/curated/en/099171502132329656/pdf/P1794990154bdc000bca1067f090503014.pdf"
+      },
+      {
+        "cat": "multi",
+        "status": "Completed",
+        "tone": "completed",
+        "name": "Policy Coordination Instrument",
+        "detail": "Approved 12 December 2022 · Sixth and final review 4 December 2025",
+        "amount": "No lending",
+        "money": false,
         "note": "A non-financing programme that signals policy to investors",
-        "text": "Rwanda runs its reforms under an IMF instrument that lends nothing and certifies a great deal.",
+        "text": "A non-financing IMF instrument that signals the strength of policies to investors and partners. It was completed with its sixth and final review in December 2025.",
         "by": [
           "International Monetary Fund"
         ],
@@ -111,115 +330,10 @@
       },
       {
         "cat": "multi",
-        "status": "Completed",
-        "tone": "completed",
-        "name": "Standby Credit Facility",
-        "detail": "Approved 14 December 2023 · 14 months",
-        "amount": "$268.1M",
-        "money": true,
-        "note": "Balance-of-payments support",
-        "text": "Short-term support approved alongside the PCI and RSF reviews, completed December 2024.",
-        "by": [
-          "International Monetary Fund"
-        ],
-        "url": "https://www.imf.org/en/News/Articles/2023/12/14/pr23450-rwanda-imf-exec-board-2023-arti-iv-consult-2nd-rvw-pci-rsf-approve-standby-credit-facility"
-      },
-      {
-        "cat": "multi",
-        "status": "Active",
-        "tone": "active",
-        "name": "Accelerating Sustainable and Clean Energy Access Transformation",
-        "detail": "Approved 28 November 2023 · Investment project financing",
-        "amount": "$300M",
-        "money": true,
-        "note": "Electricity and clean cooking access",
-        "text": "Extends electricity and clean cooking to households: the instrument closest to the guarantee that holds Rwanda lowest.",
-        "by": [
-          "World Bank"
-        ],
-        "url": "https://projects.worldbank.org/en/projects-operations/project-detail/P180575"
-      },
-      {
-        "cat": "multi",
-        "status": "Active",
-        "tone": "active",
-        "name": "Commercialization and De-Risking for Agricultural Transformation",
-        "detail": "Approved 15 April 2022 · Investment project financing",
-        "amount": "$300M",
-        "money": true,
-        "note": "Finance for farms and agribusiness",
-        "text": "Draws private finance into farming and the businesses around it.",
-        "by": [
-          "World Bank"
-        ],
-        "url": "https://projects.worldbank.org/en/projects-operations/project-detail/P171462"
-      },
-      {
-        "cat": "multi",
-        "status": "Active",
-        "tone": "active",
-        "name": "Priority Skills for Growth and Youth Empowerment",
-        "detail": "Approved 9 September 2024 · Program-for-Results",
-        "amount": "$275M",
-        "money": true,
-        "note": "Skills and jobs for young people",
-        "text": "Pays on verified results in technical training and youth employment.",
-        "by": [
-          "World Bank"
-        ],
-        "url": "https://projects.worldbank.org/en/projects-operations/project-detail/P181050"
-      },
-      {
-        "cat": "multi",
-        "status": "Active",
-        "tone": "active",
-        "name": "Boosting Green Finance, Investment and Trade",
-        "detail": "Approved 20 December 2024 · Development policy lending",
-        "amount": "$200M",
-        "money": true,
-        "note": "Policy reforms for green finance",
-        "text": "Supports reforms that open Rwanda to green investment and trade.",
-        "by": [
-          "World Bank"
-        ],
-        "url": "https://projects.worldbank.org/en/projects-operations/project-detail/P505244"
-      },
-      {
-        "cat": "multi",
-        "status": "Active",
-        "tone": "active",
-        "name": "Housing Finance Project",
-        "detail": "Approved 29 November 2018 · Investment project financing",
-        "amount": "$150M",
-        "money": true,
-        "note": "Affordable housing finance",
-        "text": "Builds the market for long-term, affordable home loans.",
-        "by": [
-          "World Bank"
-        ],
-        "url": "https://projects.worldbank.org/en/projects-operations/project-detail/P165649"
-      },
-      {
-        "cat": "multi",
-        "status": "Active",
-        "tone": "active",
-        "name": "Health Emergency Preparedness, Response and Resilience",
-        "detail": "Approved 24 May 2024 · Multiphase programmatic approach",
-        "amount": "$120M",
-        "money": true,
-        "note": "Health security",
-        "text": "Strengthens the health system against outbreaks.",
-        "by": [
-          "World Bank"
-        ],
-        "url": "https://projects.worldbank.org/en/projects-operations/project-detail/P504764"
-      },
-      {
-        "cat": "multi",
         "status": "Active",
         "tone": "active",
         "name": "Social Protection Transformation Project",
-        "detail": "Approved 22 September 2022 · Investment project financing",
+        "detail": "Approved 22 September 2022 · IDA · Closing 31 December 2026",
         "amount": "$100M",
         "money": true,
         "note": "Safety nets",
@@ -227,22 +341,190 @@
         "by": [
           "World Bank"
         ],
-        "url": "https://projects.worldbank.org/en/projects-operations/project-detail/P177492"
+        "url": "https://documents1.worldbank.org/curated/en/099111124082015582/pdf/P1774921a8478a0e71b2741b74c0ebdc3e2.pdf"
       },
       {
         "cat": "multi",
-        "status": "Active",
+        "status": "Approved",
         "tone": "active",
-        "name": "Stunting Prevention and Reduction, Additional Financing",
-        "detail": "Approved 30 March 2023 · Investment project financing",
-        "amount": "$79M",
+        "name": "Commercialization and De-Risking for Agricultural Transformation",
+        "detail": "Approved 15 April 2022 · IDA · Amounts revised since approval; second additional financing of $80 million in March 2026",
+        "amount": "$300M",
         "money": true,
-        "note": "Child nutrition",
-        "text": "Works to reduce stunting among young children.",
+        "note": "Finance for farms and agribusiness",
+        "text": "Draws private finance into farming and the businesses around it.",
         "by": [
           "World Bank"
         ],
-        "url": "https://projects.worldbank.org/en/projects-operations/project-detail/P179499"
+        "url": "https://documents1.worldbank.org/curated/en/099072326053513795/pdf/P171462-7a38af7b-2740-4ab3-b5b7-0b21e20beeeb.pdf"
+      },
+      {
+        "cat": "multi",
+        "status": "Completed",
+        "tone": "completed",
+        "name": "Housing Finance Project",
+        "detail": "Approved 29 November 2018 · IDA credit of EUR 129.6 million · Closed 31 October 2025",
+        "amount": "$150M",
+        "money": true,
+        "note": "17,845 housing loans against a target of 6,000",
+        "text": "Built the market for long-term, affordable home loans. It financed 17,845 housing loans against a target of 6,000 and closed in October 2025 with an outcome rated Satisfactory.",
+        "by": [
+          "World Bank"
+        ],
+        "url": "https://documents1.worldbank.org/curated/en/099051826091033435/pdf/BOSIB-45cd20e3-6213-47ee-9945-6f334929b5d1.pdf"
+      },
+      {
+        "cat": "regional",
+        "status": "Signed",
+        "tone": "active",
+        "name": "Volcanoes Community Resilience Project",
+        "detail": "Financing agreement signed, announced 5 August 2026 · Eight districts",
+        "amount": "€65M",
+        "money": true,
+        "note": "More than 2.3 million people in areas exposed to floods and landslides",
+        "text": "European Investment Bank finance for flood risk reduction, watershed restoration, landscape rehabilitation, biodiversity and livelihoods in Gakenke, Burera, Musanze, Nyabihu, Rubavu, Rutsiro, Ngororero and Muhanga. It protects the shelter, water and livelihood standards for more than 2.3 million people.",
+        "by": [
+          "European Investment Bank"
+        ],
+        "url": "https://www.eib.org/en/press/news/rwanda-and-eib-sign-eur65m-deal-for-volcanoes-community-resilience"
+      },
+      {
+        "cat": "regional",
+        "status": "Launched",
+        "tone": "active",
+        "name": "Energy Sector Results Based Financing Phase II (RBF II)",
+        "detail": "Launched 15 May 2026 · Implemented through the Rwanda Energy Group · $300 million programme with $100 million from AIIB",
+        "amount": "$200M",
+        "money": true,
+        "note": "200,000 households to the grid and clean cooking for 100,000",
+        "text": "An African Development Bank loan that pays on results for 200,000 new household grid connections, 50,000 off-grid connections and clean cooking devices for 100,000 households and 310 public institutions. It is aimed at the energy standard, which sets Rwanda’s Coverage.",
+        "by": [
+          "African Development Bank"
+        ],
+        "url": "https://allafrica.com/stories/202605180729.html"
+      },
+      {
+        "cat": "regional",
+        "status": "Approved",
+        "tone": "active",
+        "name": "Muvumba Multipurpose Water Resources Development Program, additional financing",
+        "detail": "Announced 16 April 2026 · €17.66 million African Development Fund loan and €27.74 million African Development Bank loan · Programme value €176 million",
+        "amount": "€45.4M",
+        "money": true,
+        "note": "Bank Group contribution now €166.9 million",
+        "text": "Additional finance for the Muvumba dam programme, including a climate-resilient irrigation system for 3,073 hectares of farmland. The dam develops water for several uses, including power, farming and water for people, serving the water, food and energy standards.",
+        "by": [
+          "African Development Bank",
+          "African Development Fund"
+        ],
+        "url": "https://allafrica.com/stories/202604210358.html"
+      },
+      {
+        "cat": "regional",
+        "status": "Approved",
+        "tone": "active",
+        "name": "Rwanda Energy Results-Based Financing Program",
+        "detail": "Approved 30 October 2025 · Sovereign · Co-financed with the African Development Bank, the lead co-financier",
+        "amount": "$100M",
+        "money": true,
+        "note": "AIIB’s share of the $300 million programme",
+        "text": "An AIIB loan that co-finances the African Development Bank’s results-based programme for grid and off-grid connections and clean cooking. It is aimed at the energy standard, which sets Rwanda’s Coverage.",
+        "by": [
+          "Asian Infrastructure Investment Bank"
+        ],
+        "url": "https://www.aiib.org/en/projects/details/2025/approved/rwanda-energy-results-based-financing-program.html"
+      },
+      {
+        "cat": "regional",
+        "status": "Signed",
+        "tone": "active",
+        "name": "Karenge water project and SME credit line",
+        "detail": "Signed 8 October 2025 · $20 million loan for the Karenge Water Project · $25 million line of credit to the Development Bank of Rwanda",
+        "amount": "$45M",
+        "money": true,
+        "note": "Two agreements with the Arab Bank for Economic Development in Africa",
+        "text": "One loan expands the transmission and distribution systems of the Karenge Water Project, supporting the goal of universal clean water and sanitation by 2029; the other lends to small and medium enterprises through the Development Bank of Rwanda. They serve the water and livelihood standards.",
+        "by": [
+          "BADEA",
+          "Development Bank of Rwanda"
+        ],
+        "url": "https://www.minecofin.gov.rw/news-detail/government-of-rwanda-secures-45-million-in-financing-from-badea-for-water-security-and-private-sector-growth"
+      },
+      {
+        "cat": "bilat",
+        "status": "Signed",
+        "tone": "active",
+        "name": "HANGARIBIHE: climate-smart and inclusive agriculture",
+        "detail": "Signed 4 August 2026 · EUR 36 million budget support and EUR 4 million technical assistance · Five years",
+        "amount": "€40M",
+        "money": true,
+        "note": "Smallholders, cooperatives, women, youth and SMEs",
+        "text": "A European Union financing agreement, mostly budget support, for climate-smart and inclusive agriculture. It serves the food and livelihood standards for smallholders, cooperatives, women, youth and small businesses.",
+        "by": [
+          "European Union"
+        ],
+        "url": "https://minecofin.gov.rw/news-detail/rwanda-and-european-union-sign-eur-40-million-agreement-to-support-climate-smart-agriculture-transformation"
+      },
+      {
+        "cat": "bilat",
+        "status": "Signed",
+        "tone": "active",
+        "name": "Inclusive social protection grant",
+        "detail": "Signed 6 October 2025 · Grant · Implemented by the Local Administrative Entities Development Agency",
+        "amount": "€18M",
+        "money": true,
+        "note": "Supports the Vision Umurenge Program",
+        "text": "A German grant through KfW to strengthen Rwanda’s inclusive social protection system and its flagship Vision Umurenge Program. It serves the livelihood standard for the poorest households.",
+        "by": [
+          "KfW",
+          "Federal Republic of Germany"
+        ],
+        "url": "https://www.minecofin.gov.rw/news-detail/rwanda-and-germany-sign-eur-18-million-grant-to-strengthen-inclusive-social-protection"
+      },
+      {
+        "cat": "bilat",
+        "status": "Signed",
+        "tone": "active",
+        "name": "Development Policy Loan for the Education Sector",
+        "detail": "Signed 5 March 2024, Kigali · 0.20% a year · 40 years, including 10 years’ grace",
+        "amount": "JPY 14B",
+        "money": true,
+        "note": "Up to 14,000 million yen",
+        "text": "A Japanese loan to improve children’s learning, with stronger teacher training colleges, more classrooms, pre-primary education, school lunches and digital education. It serves the education standard.",
+        "by": [
+          "JICA"
+        ],
+        "url": "https://www.jica.go.jp/english/information/press/2023/20240306_21.html"
+      },
+      {
+        "cat": "private",
+        "status": "Invested",
+        "tone": "active",
+        "name": "BPR Bank Rwanda, local-currency loan",
+        "detail": "Approved 28 June 2024 · Signed 9 August 2024 · Invested 30 December 2024 · Seven years, in Rwandan francs · Up to $60 million with $20 million mobilized",
+        "amount": "$40M",
+        "money": true,
+        "note": "At least 25% for women-owned SMEs",
+        "text": "An IFC loan to Rwanda’s third-largest bank by assets for lending to small and medium enterprises, backed by the IDA20 Private Sector Window local currency facility. It serves the livelihood standard.",
+        "by": [
+          "IFC"
+        ],
+        "url": "https://disclosures.ifc.org/project-detail/SII/48695/bpr-rwanda-"
+      },
+      {
+        "cat": "private",
+        "status": "Signed",
+        "tone": "active",
+        "name": "Bank of Kigali, green agriculture value chain loan",
+        "detail": "Signed 14 March 2024 · On-lending to small and medium enterprises",
+        "amount": "€50M",
+        "money": true,
+        "note": "Agriculture value chains",
+        "text": "A European Investment Bank loan to Bank of Kigali for on-lending to small and medium enterprises in agricultural value chains. It serves the food and livelihood standards.",
+        "by": [
+          "European Investment Bank"
+        ],
+        "url": "https://eib.org/en/projects/all/20230482"
       }
     ]
   },
@@ -330,11 +612,46 @@
     "heading": "Already working in Rwanda.",
     "items": [
       {
-        "standard": "In preparation",
-        "name": "The enterprises building Perfect Rwanda",
-        "text": "The Stewards are verifying the companies and social enterprises already delivering the seven basic living standards in Rwanda. Suggest one to include.",
-        "source": "Suggest an enterprise",
-        "url": "mailto:contact@perfectnations.org?subject=An%20enterprise%20for%20Perfect%20Rwanda"
+        "standard": "Food",
+        "name": "One Acre Fund (Tubura)",
+        "text": "Has operated in Rwanda since 2007 under the local brand Tubura and serves 2.7 million farmers. It distributed 25.6 million tree seedlings in 2024.",
+        "source": "One Acre Fund",
+        "url": "https://oneacrefund.org/what-we-do/countries-we-serve/rwanda"
+      },
+      {
+        "standard": "Water",
+        "name": "Kigali Bulk Water (Metito)",
+        "text": "Metito designed, built and operates the $61 million Kigali bulk water plant, which supplies the national utility with 40,000 cubic metres of potable water a day and raised the city’s supply by 40 percent.",
+        "source": "IFC, 2022",
+        "url": "https://www.ifc.org/en/stories/2022/benefits-flow-from-public-private-water-partnerships"
+      },
+      {
+        "standard": "Energy",
+        "name": "DelAgua",
+        "text": "Has run a clean cookstove programme in Rwanda since 2012, funded by the sale of carbon credits, with over 1.9 million stoves distributed. In November 2025 TotalEnergies agreed to fund 200,000 more within one year.",
+        "source": "DelAgua; TotalEnergies, 2025",
+        "url": "https://www.delagua.org/project-rwanda/"
+      },
+      {
+        "standard": "Education",
+        "name": "Kepler",
+        "text": "Offers bachelor’s degrees with Southern New Hampshire University in Kigali and at the Kiziba refugee camp. By October 2023, 957 students had earned degrees, including 237 refugees.",
+        "source": "Kepler, 2023",
+        "url": "https://kepler.org/kepler-celebrates-graduation-of-163/"
+      },
+      {
+        "standard": "Health",
+        "name": "Zipline",
+        "text": "Delivers blood to hospitals by drone: 28,754 units in Rwanda in 2023. A 2023 study by researchers at the Wharton School, with the Ministry of Health, found that it reduced nationwide in-hospital deaths from postpartum haemorrhage by 51%.",
+        "source": "Zipline",
+        "url": "https://www.zipline.com/newsroom/preventing-maternal-deaths-through-faster-blood-delivery"
+      },
+      {
+        "standard": "Livelihood",
+        "name": "BPR Bank Rwanda",
+        "text": "Rwanda’s third-largest bank by assets, on-lending a seven-year IFC package of up to $60 million in Rwandan francs to small and medium enterprises, with at least 25 percent for women-owned firms.",
+        "source": "IFC, 2024",
+        "url": "https://www.ifc.org/en/pressroom/2024/ifc-partners-with-bpr-bank-rwanda-to-increase-access-to-finance-for-small-businesses"
       }
     ]
   },
@@ -470,5 +787,6 @@
     }
   ],
   "dispatches": [],
-  "checked": "2026-11-07T04:25Z"
+  "checked": "2026-11-07T04:25Z",
+  "reviewed": "2026-11-10T00:37Z"
 }
