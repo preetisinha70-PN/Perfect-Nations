@@ -90,6 +90,7 @@ run the build, add pn-bp-<slug> to the manifest.
 import argparse
 import html
 import json
+import math
 import re
 import sys
 import urllib.parse
@@ -98,7 +99,11 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 PAGES, DATA, HERE = ROOT / 'pages', ROOT / 'data', ROOT / 'tools' / 'nation'
-VERSION = '12.0'  # light reading sections, Earthrise accents (the Steward-General, 10 Nov 2026); the letterhead carries the registered mark, Perfect Nations&#174; (10 Nov 2026); the close button of every pop-up is one design (9 Nov 2026)
+VERSION = '12.0'  # light reading sections, Earthrise accents (the Steward-General, 10 Nov 2026)
+# v11.9: Discuss this Solution on every designed Solution; Plan a Blueprint Lab opens The Blueprint Lab, ?about=lab (the Steward-General, 10 Nov 2026)
+# v11.8: the globe with the nation in gold is drawn into the page, so the map shows on every phone even when the Earth picture or WebGL cannot (10 Nov 2026)
+# v11.7: the letterhead carries the registered mark, Perfect Nations&#174; (10 Nov 2026)
+# v11.6: the close button of every pop-up is one design: a gold X drawn as two strokes, centred in a circle (the Steward-General, 9 Nov 2026)
 EARTH = {'lg': 'https://perfectnations.org/wp-content/uploads/2026/10/pn-globe-earth-day-1536x768.jpg',
          'sm': 'https://perfectnations.org/wp-content/uploads/2026/10/pn-globe-earth-day-1024x512.jpg'}
 ORDER = ['Food', 'Water', 'Shelter', 'Energy', 'Education', 'Health', 'Livelihoods']
@@ -351,6 +356,94 @@ def price_ok(cov):
 
 # ---------------------------------------------------------------- the sections
 
+
+# ---------------------------------------------------------------- the globe drawn into the page (v11.8)
+GLOBE_DIST, GLOBE_RAD = 2.25, 0.47   # the camera of tools/nation/globe.js: 2.25 radii out, the sphere 0.47 of the box
+
+
+def globe_svg(slug, gl):
+    """The nation in gold on the globe, drawn at build time as SVG with the camera of globe.js at its first frame
+    (centred on the nation, tilted to 0.82 of its latitude). It is in the page before any script or picture, so
+    the map is always there: on a slow phone, when the Earth picture cannot load, or without WebGL. The moving
+    Earth fades in over it when it is ready. A small nation (or one with no outline) also gets the gold marker."""
+    D2R = math.pi / 180
+    lat0, lng0 = float(gl['lat']), float(gl['lng'])
+    lon, lat = lng0 * D2R, lat0 * D2R * 0.82
+    cp, sp, cl, sl = math.cos(lon), math.sin(lon), math.cos(lat), math.sin(lat)
+    m = [cp, -sp * sl, sp * cl, 0, cl, sl, -sp, -cp * sl, cp * cl]
+    R = 1000 * GLOBE_RAD
+    F = R * math.sqrt(GLOBE_DIST * GLOBE_DIST - 1)
+
+    def proj(lo, la):
+        a, b = la * D2R, lo * D2R
+        w = (math.cos(a) * math.sin(b), math.sin(a), math.cos(a) * math.cos(b))
+        nx = m[0] * w[0] + m[3] * w[1] + m[6] * w[2]
+        ny = m[1] * w[0] + m[4] * w[1] + m[7] * w[2]
+        nz = m[2] * w[0] + m[5] * w[1] + m[8] * w[2]
+        if nz > 1 / GLOBE_DIST:
+            x, y = F * nx / (GLOBE_DIST - nz), F * ny / (GLOBE_DIST - nz)
+            return 500 + x, 500 - y, True
+        h = math.hypot(nx, ny) or 1.0
+        return 500 + R * nx / h, 500 - R * ny / h, False
+
+    def fmt(v):
+        return ('%.1f' % v).rstrip('0').rstrip('.')
+
+    # the nation, and the box the WebGL mask uses (the same test decides the marker)
+    land, n, x0, x1, y0, y1 = [], 0, 1e9, -1e9, 1e9, -1e9
+    for g in gl.get('outline') or []:
+        polys = g['coordinates'] if g.get('type') == 'MultiPolygon' else [g['coordinates']]
+        for rings in polys:
+            for ring in rings:
+                pts = [proj(pt[0], pt[1]) for pt in ring]
+                for pt in ring:
+                    x = (pt[0] - lng0 + 540) % 360 - 180
+                    n += 1
+                    x0, x1, y0, y1 = min(x0, x), max(x1, x), min(y0, pt[1]), max(y1, pt[1])
+                if len(pts) < 3 or not any(v for _, _, v in pts):
+                    continue
+                land.append('M' + 'L'.join('%s %s' % (fmt(a), fmt(b)) for a, b, _ in pts) + 'Z')
+    small = True
+    if n:
+        mx, my = max(0.8, (x1 - x0) * 0.08), max(0.8, (y1 - y0) * 0.08)
+        small = (x1 - x0 + 2 * mx) * (y1 - y0 + 2 * my) < 40
+
+    # a faint graticule, every 30 degrees, drawn only on the near side
+    grat = []
+    lines = [[(lo, la) for la in range(-80, 81, 4)] for lo in range(-180, 180, 30)]
+    lines += [[(lo, la) for lo in range(-180, 181, 4)] for la in (-60, -30, 0, 30, 60)]
+    for line in lines:
+        seg = []
+        for lo, la in line:
+            x, y, vis = proj(lo, la)
+            if vis:
+                seg.append('%s %s' % (fmt(x), fmt(y)))
+            elif seg:
+                if len(seg) > 1:
+                    grat.append('M' + 'L'.join(seg))
+                seg = []
+        if len(seg) > 1:
+            grat.append('M' + 'L'.join(seg))
+
+    mark = ''
+    if small:
+        x, y, _ = proj(lng0, lat0)
+        mark = ('<circle cx="%s" cy="%s" r="30" fill="#E3C258" fill-opacity=".25"/>'
+                '<circle cx="%s" cy="%s" r="15" fill="#E3C258" stroke="#FFF2B2" stroke-width="3"/>') % (fmt(x), fmt(y), fmt(x), fmt(y))
+    k = 'bpg-' + slug
+    return (
+        '<svg class="bpx-globe__sky" viewBox="0 0 1000 1000" aria-hidden="true" focusable="false">'
+        '<defs><radialGradient id="%(k)s-sea" cx="36%%" cy="30%%" r="70%%"><stop offset="0" stop-color="#3E8FB0"/>'
+        '<stop offset=".42" stop-color="#145E7A"/><stop offset=".78" stop-color="#0B3D45"/><stop offset="1" stop-color="#072A30"/></radialGradient>'
+        '<radialGradient id="%(k)s-halo"><stop offset=".86" stop-color="#5DB5E8" stop-opacity=".24"/><stop offset="1" stop-color="#5DB5E8" stop-opacity="0"/></radialGradient></defs>'
+        '<circle cx="500" cy="500" r="545" fill="url(#%(k)s-halo)"/>'
+        '<circle cx="500" cy="500" r="%(r)s" fill="url(#%(k)s-sea)" stroke="#BFE3FF" stroke-opacity=".22" stroke-width="2"/>'
+        '<path d="%(grat)s" fill="none" stroke="#E3C258" stroke-opacity=".16" stroke-width="1.5"/>'
+        '%(land)s%(mark)s</svg>'
+    ) % {'k': k, 'r': fmt(R), 'grat': ''.join(grat),
+         'land': ('<path d="%s" fill="#EBBE4E" fill-rule="evenodd" stroke="#FFF2B2" stroke-width="2.5" stroke-linejoin="round"/>' % ''.join(land)) if land else '',
+         'mark': mark}
+
 def hero(d, p):
     h = d.get('hero') or {}
     name = d['nation']
@@ -380,13 +473,13 @@ def hero(d, p):
         '<p class="bpx-lead">Perfect Nations values what %s owns and raises capital against it, through <b>innovative financing for development (FfD)</b> '
         'and <b>super intelligence (SI)</b>.</p></div>'
         '<div class="bpx-globe-cell"><div class="bpx-globe" id="%s-globe" role="img" aria-label="%s, in gold on the globe">'
-        '<span class="bpx-globe__sky"></span><canvas class="bpx-globe__still"></canvas><canvas class="bpx-globe__gl"></canvas></div></div>'
+        '%s<canvas class="bpx-globe__still"></canvas><canvas class="bpx-globe__gl"></canvas></div></div>'
         '<div class="bpx-glance"><p class="bpx-k">%s at a glance</p><ul class="bpx-stats" data-n="%d">%s</ul></div>'
         '<div class="bpx-btns bpx-hero__ctas"><a class="bpx-btn" href="#bp-studio">Work with us</a>'
         '<a class="bpx-btn bpx-btn--line" href="#bp-letter">Read the Letter to %s</a></div>'
         '</div></section>'
         % (cup(), ent(p['eyebrow']), long_name, ent(name), ent(h.get('lead', '')), ent(name), p['slug'], ent(name),
-           ent(name), len(cells), ''.join(cells), ent(name)))
+           globe_svg(p['slug'], p['globe']), ent(name), len(cells), ''.join(cells), ent(name)))
 
 
 def what_we_do(d):
@@ -573,13 +666,19 @@ def solution_card(x, sig_name, sig_role):
     fig = ''
     if x.get('figure'):
         fig = '<p class="bpx-sol__fig"><b>%s</b>%s</p>' % (ent(x['figure']), '<span>%s</span>' % ent(x['caption']) if x.get('caption') else '')
+    # v11.9: a Solution Perfect Nations designs also offers "Discuss this Solution", which opens the Contact page
+    # on Discuss a Solution with this Solution and its nation chosen (?about=solution-NN&country=Nation)
+    talk = ''
+    if x.get('kind') == 'design' and no:
+        talk = ('<a class="bpx-btn bpx-btn--line" href="%s" target="_blank" rel="noopener noreferrer">Discuss this Solution</a>'
+                % ent(https('https://perfectnations.org/contact/?about=solution-%d&country=%s' % (no, urllib.parse.quote(plain(x.get('nation')), safe='')))))
     return (
         '<li class="bpx-sol"><p class="bpx-sol__k"><b>%s No. %02d</b><time datetime="%s">%s</time></p>'
         '<h3><a href="%s" target="_blank" rel="noopener noreferrer">%s</a></h3>%s%s'
         '<div class="bpx-sol__foot"><span class="bpx-sig">From<b>%s</b><small>%s</small></span>'
-        '<a class="bpx-btn" href="%s" target="_blank" rel="noopener noreferrer">Read the %s</a></div></li>'
+        '<span class="bpx-sol__acts"><a class="bpx-btn" href="%s" target="_blank" rel="noopener noreferrer">Read the %s</a>%s</span></div></li>'
         % ('Deal Note' if deal else 'Solution', no, ent(x.get('date', '')), ent(x.get('label') or short_date(x.get('date'))), ent(https(href)), ent(x['title']), body, fig,
-           ent(sig_name), ent(sig_role), ent(https(href)), 'Deal Note' if deal else 'Solution'))
+           ent(sig_name), ent(sig_role), ent(https(href)), 'Deal Note' if deal else 'Solution', talk))
 
 
 def solution_brief(name, sbn, slug):
@@ -768,7 +867,7 @@ def work(d, p):
             '<details class="bpx-more"><summary aria-label="Read more: the four moves of %s">Read more</summary><ol class="bpx-mv">%s</ol></details>'
             '<a class="bpx-btn%s" href="%s" target="_blank" rel="noopener noreferrer">%s</a></li>'
             % (' bpx-tier--top' if t == 2 else '', k, dur, title, line, leave, title, mv, '' if t == 2 else ' bpx-btn--line',
-               ent(https('https://perfectnations.org/contact/?about=%s&country=%s' % ('commission' if t == 2 else 'studio', urllib.parse.quote(name, safe='')))), cta))
+               ent(https('https://perfectnations.org/contact/?about=%s&country=%s' % (('briefing', 'lab', 'commission')[t], urllib.parse.quote(name, safe='')))), cta))
     wx_mail = mailto('Writing for Perfect %s' % name,
                      'Your name, or a pen name:\r\nWhere you live:\r\nTitle:\r\n\r\nYour vision of Perfect %s, and the economic solutions to achieve it (up to 1,500 words):\r\n\r\n\r\n'
                      'I confirm that this is my own original writing, and I give Perfect Nations permission to publish it with credit to me.\r\n' % name)

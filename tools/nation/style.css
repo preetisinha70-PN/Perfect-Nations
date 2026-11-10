@@ -135,8 +135,9 @@
 #R .bpx-stats li.is-gap{ background:rgba(138,58,34,.32); border-top-color:#D9774F; }
 #R .bpx-globe{ position:relative; width:min(72vw,300px); aspect-ratio:1/1; }
 #R .bpx-globe > *{ position:absolute; inset:0; width:100%; height:100%; }
-#R .bpx-globe__sky{ border-radius:50%; inset:4.5%; width:91%; height:91%; background:radial-gradient(62% 62% at 36% 30%, #3E8FB0 0%, #145E7A 42%, #0B3D45 78%, #072A30 100%); box-shadow:0 0 0 1px rgba(191,227,255,.22), 0 0 60px rgba(93,181,232,.22); transition:opacity .5s ease; }
-#R .bpx-globe__sky::after{ content:""; position:absolute; left:58%; top:44%; width:7%; height:7%; border-radius:50%; background:var(--g); box-shadow:0 0 0 6px rgba(var(--grgb),.25), 0 0 26px rgba(var(--grgb),.7); }
+/* v11.8: the globe with the nation in gold is drawn into the page (SVG, by the build), so the map is there before
+   any script or picture; the moving Earth fades in over it, and it stays if the Earth cannot be shown. */
+#R .bpx-globe__sky{ overflow:visible; transition:opacity .5s ease; }
 #R .bpx-globe canvas{ display:block; opacity:0; transition:opacity .6s ease; }
 #R .bpx-globe.is-still .bpx-globe__still{ opacity:1; }
 #R .bpx-globe.is-on .bpx-globe__gl{ opacity:1; }
@@ -367,6 +368,9 @@
 #R .bpx-sig b{ display:block; margin-top:1px; font-family:var(--hd); font-weight:600; font-size:1.05rem; line-height:1.05; color:var(--ink); }
 #R .bpx-sig small{ display:block; margin-top:2px; font-size:.72rem; letter-spacing:.03em; color:var(--inkd); }
 #R .bpx-sol .bpx-btn{ min-height:44px; padding:11px 16px 9px; background:var(--er); border-color:var(--er); color:var(--iv2); box-shadow:none; font-size:.66rem; }
+#R .bpx-sol__acts{ display:flex; flex-wrap:wrap; gap:8px; }
+#R .bpx-sol .bpx-btn--line{ background:transparent; color:var(--er); border-color:var(--er); }
+#R .bpx-sol .bpx-btn--line:hover{ background:rgba(11,61,69,.08); }
 #R .bpx-sol .bpx-btn:hover{ background:var(--lg); }
 #R .bpx-sol--brief{ background:linear-gradient(170deg,#12586A 0%,var(--er) 55%,var(--dp) 100%); color:var(--fg); border:1px solid rgba(var(--grgb),.5); }
 #R .bpx-sol--brief .bpx-sol__k{ border-color:var(--g); color:var(--dim); }
