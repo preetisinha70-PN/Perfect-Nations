@@ -1,15 +1,17 @@
 <!-- ===========================================================================
-PERFECT NATIONS - THE 50 STATES - THE WHOLE PAGE IN ONE FILE - v1.0 - 2026-11-10
+PERFECT NATIONS - THE 50 STATES - THE WHOLE PAGE IN ONE FILE - v1.1 - 2026-11-10
 perfectnations.org/50-states/ holds ONE Elementor Custom HTML widget (or Custom HTML block) whose root is
 pn-us. The Perfect Nations Live Pages plugin serves this file from GitHub in its place. Never edit this file
 by hand: edit tools/us/ (design and words) or rebuild data/us-states.json, run
 python3 tools/build_us_states.py, and open a pull request.
+v1.1: the page script sits inside an HTML comment marker, so the WordPress formatter cannot turn its double
+ampersands into entities on the block-editor page (10 Nov 2026).
 v1.0: the section for the 50 states of the United States, where state blueprints will open (the
 Steward-General, 10 Nov 2026). Bands: 01 the golden map of the 50 states (Earthrise, the hero stays deep for
 the map), with region tabs and a card for each state; 02 every state in one line (ivory): GDP, people and
 the share below the poverty line, sortable, searchable; 03 how a state blueprint works (paper); the gold
 line; 04 the close (ivory). Figures: Census Bureau (population, Vintage 2025; poverty, ACS 2025) and BEA
-(GDP 2025). A state turns bright gold when a pn-us-<slug> key is merged into pages/manifest.json.
+(GDP 2025). A state turns bright gold when a pn-us-[slug] key is merged into pages/manifest.json.
 =========================================================================== -->
 <style>
 /* PERFECT NATIONS - THE 50 STATES - style. Scoped to #pn-us; classes pnus-. Earthrise hero (it holds the map),
@@ -321,7 +323,7 @@ line; 04 the close (ivory). Figures: Census Bureau (population, Vintage 2025; po
   #pn-us *,#pn-us *::before,#pn-us *::after{ animation:none !important; transition:none !important; }
 }
 </style>
-<div id="pn-us" data-version="1.0">
+<div id="pn-us" data-version="1.1">
 <style>
 .pn-rule{
   position:relative; z-index:6; display:block; box-sizing:border-box;
@@ -470,7 +472,7 @@ line; 04 the close (ivory). Figures: Census Bureau (population, Vintage 2025; po
 
 <script type="application/json" id="pnus-data">{"alabama":["Alabama","AL","south","$339bn","5.2m","741k","14.7"],"alaska":["Alaska","AK","west","$73.6bn","737k","79k","11.0"],"arizona":["Arizona","AZ","west","$592bn","7.6m","880k","11.8"],"arkansas":["Arkansas","AR","south","$196bn","3.1m","455k","15.0"],"california":["California","CA","west","$4.30tn","39.4m","4.4m","11.4"],"colorado":["Colorado","CO","west","$575bn","6.0m","541k","9.2"],"connecticut":["Connecticut","CT","northeast","$383bn","3.7m","326k","9.1"],"delaware":["Delaware","DE","south","$122bn","1.1m","98k","9.5"],"florida":["Florida","FL","south","$1.81tn","23.5m","2.6m","11.2"],"georgia":["Georgia","GA","south","$936bn","11.3m","1.4m","12.3"],"hawaii":["Hawaii","HI","west","$123bn","1.4m","131k","9.3"],"idaho":["Idaho","ID","west","$137bn","2.0m","192k","9.7"],"illinois":["Illinois","IL","midwest","$1.24tn","12.7m","1.4m","11.5"],"indiana":["Indiana","IN","midwest","$542bn","7.0m","807k","11.9"],"iowa":["Iowa","IA","midwest","$272bn","3.2m","346k","11.0"],"kansas":["Kansas","KS","midwest","$232bn","3.0m","295k","10.2"],"kentucky":["Kentucky","KY","south","$314bn","4.6m","714k","15.9"],"louisiana":["Louisiana","LA","south","$342bn","4.6m","813k","18.1"],"maine":["Maine","ME","northeast","$102bn","1.4m","136k","9.9"],"maryland":["Maryland","MD","south","$567bn","6.3m","591k","9.6"],"massachusetts":["Massachusetts","MA","northeast","$814bn","7.2m","680k","9.8"],"michigan":["Michigan","MI","midwest","$734bn","10.1m","1.3m","12.6"],"minnesota":["Minnesota","MN","midwest","$515bn","5.8m","515k","9.0"],"mississippi":["Mississippi","MS","south","$163bn","3.0m","517k","18.0"],"missouri":["Missouri","MO","midwest","$475bn","6.3m","704k","11.5"],"montana":["Montana","MT","west","$80.9bn","1.1m","124k","11.1"],"nebraska":["Nebraska","NE","midwest","$207bn","2.0m","200k","10.2"],"nevada":["Nevada","NV","west","$281bn","3.3m","371k","11.4"],"new-hampshire":["New Hampshire","NH","northeast","$128bn","1.4m","85k","6.2"],"new-jersey":["New Jersey","NJ","northeast","$888bn","9.5m","817k","8.7"],"new-mexico":["New Mexico","NM","west","$152bn","2.1m","324k","15.5"],"new-york":["New York","NY","northeast","$2.47tn","20.0m","2.7m","13.8"],"north-carolina":["North Carolina","NC","south","$896bn","11.2m","1.3m","12.1"],"north-dakota":["North Dakota","ND","midwest","$82.3bn","799k","69k","9.0"],"ohio":["Ohio","OH","midwest","$977bn","11.9m","1.4m","12.4"],"oklahoma":["Oklahoma","OK","south","$274bn","4.1m","578k","14.4"],"oregon":["Oregon","OR","west","$343bn","4.3m","490k","11.7"],"pennsylvania":["Pennsylvania","PA","northeast","$1.06tn","13.1m","1.4m","11.2"],"rhode-island":["Rhode Island","RI","northeast","$88.2bn","1.1m","102k","9.5"],"south-carolina":["South Carolina","SC","south","$378bn","5.6m","720k","13.3"],"south-dakota":["South Dakota","SD","midwest","$82.0bn","935k","107k","11.8"],"tennessee":["Tennessee","TN","south","$586bn","7.3m","901k","12.6"],"texas":["Texas","TX","south","$2.93tn","31.7m","3.9m","12.7"],"utah":["Utah","UT","west","$319bn","3.5m","300k","8.6"],"vermont":["Vermont","VT","northeast","$49.7bn","645k","57k","9.2"],"virginia":["Virginia","VA","south","$808bn","8.9m","813k","9.4"],"washington":["Washington","WA","west","$892bn","8.0m","811k","10.3"],"west-virginia":["West Virginia","WV","south","$111bn","1.8m","274k","16.0"],"wisconsin":["Wisconsin","WI","midwest","$479bn","6.0m","599k","10.3"],"wyoming":["Wyoming","WY","west","$52.5bn","589k","58k","10.1"]}</script>
 </div>
-<script>
+<script><!--
 /* PERFECT NATIONS - THE 50 STATES - script. The map, the card of a state, the regions, the list (find, sort,
    Show all) and the live blueprints: a pn-us-<slug> key in pages/manifest.json turns that state bright gold. */
 (function(){
@@ -686,4 +688,4 @@ line; 04 the close (ivory). Figures: Census Bureau (population, Vintage 2025; po
   if (!want && window.location.hash) { want = window.location.hash.slice(1).toLowerCase().replace(/^state-/, ''); }
   if (want && DATA[want]) { setTimeout(function(){ pin(want); }, 60); }
 })();
-</script>
+//--></script>

@@ -1,0 +1,307 @@
+{
+  "slug": "new-york",
+  "name": "New York",
+  "abbr": "NY",
+  "fips": "36",
+  "version": "1.0",
+  "updated": "2026-11-10",
+  "about": "The blueprint of New York State (perfectnations.org/50-states/new-york/). Words and the figures found on official pages are written here, each with its source id; the Census, NAEP and USDA figures marked \"computed\" are read by tools/build_us_state.py from the official files in data/us/raw/new-york/ and data/us-states.json. No figure is estimated.",
+  "hero": {
+    "eyebrow": "Perfect New York · A blueprint of the 50 States",
+    "line": "A computed:gdp_words economy where 145,560 people had no home on a single night.",
+    "sub": "Perfect Nations counts what New York owns, prices the seven basic standards of living for every resident, and designs the capital that closes the gap.",
+    "figures": [
+      {
+        "value": "computed:gdp",
+        "label": "GDP, 2025",
+        "money": true,
+        "src": "gdp"
+      },
+      {
+        "value": "$309.7bn",
+        "label": "The State’s pension fund, 30 June 2026",
+        "money": true,
+        "src": "crf"
+      },
+      {
+        "value": "145,560",
+        "label": "People without a home on one night, January 2025",
+        "money": false,
+        "src": "hud"
+      }
+    ]
+  },
+  "assets": {
+    "title": "Five assets that can carry Perfect New York.",
+    "line": "Each is owned by New Yorkers today, earns or saves every year, and can carry a standard of living.",
+    "items": [
+      {
+        "figure": "$309.7bn",
+        "money": true,
+        "name": "The pension fund",
+        "line": "The New York State Common Retirement Fund, invested for the State’s public workers and retirees (estimated value, 30 June 2026).",
+        "src": "crf",
+        "lead": true
+      },
+      {
+        "figure": "6 million acres",
+        "money": false,
+        "name": "The Adirondack Park",
+        "line": "Nearly half belongs to all the people of New York State, protected “forever wild” by the State Constitution.",
+        "src": "apa"
+      },
+      {
+        "figure": "1 billion gallons a day",
+        "money": false,
+        "name": "The water",
+        "line": "New York City’s upstate reservoirs supply its 8.5 million residents and one million more people in four counties.",
+        "src": "dep"
+      },
+      {
+        "figure": "Up to 1 in 4",
+        "money": false,
+        "name": "The power",
+        "line": "The State’s own Power Authority supplies up to a quarter of the electricity New York consumes, from 17 generating facilities.",
+        "src": "nypa"
+      },
+      {
+        "figure": "computed:people",
+        "money": false,
+        "name": "The people",
+        "line": "New Yorkers on 1 July 2025: the asset every other asset serves.",
+        "src": "pop"
+      }
+    ]
+  },
+  "standards": {
+    "title": "Perfect New York, star by star.",
+    "line": "One measure for each of the seven basic standards of living. Where no official measure is published yet, the gap is shown, not filled.",
+    "items": [
+      {
+        "key": "food",
+        "name": "Food",
+        "figure": "computed:food",
+        "label": "of households food insecure, 2022–2024 (United States computed:food_us)",
+        "status": "risk",
+        "src": "usda"
+      },
+      {
+        "key": "water",
+        "name": "Water",
+        "figure": "",
+        "label": "Lead service lines still in use: the State’s figure under the 2025 federal update is being confirmed.",
+        "status": "gap",
+        "src": ""
+      },
+      {
+        "key": "shelter",
+        "name": "Shelter",
+        "figure": "145,560",
+        "label": "people without a home on one night, January 2025",
+        "status": "binding",
+        "src": "hud"
+      },
+      {
+        "key": "energy",
+        "name": "Energy",
+        "figure": "",
+        "label": "Households behind on energy bills: awaiting a primary published count.",
+        "status": "gap",
+        "src": ""
+      },
+      {
+        "key": "education",
+        "name": "Education",
+        "figure": "computed:reading",
+        "label": "of fourth graders read at the NAEP Proficient level, 2024 (United States computed:reading_us)",
+        "status": "risk",
+        "src": "naep"
+      },
+      {
+        "key": "health",
+        "name": "Health",
+        "figure": "computed:uninsured",
+        "label": "without health insurance, 2025 (United States computed:uninsured_us)",
+        "status": "hold",
+        "src": "acs_hi"
+      },
+      {
+        "key": "livelihood",
+        "name": "Livelihood",
+        "figure": "computed:poverty",
+        "label": "below the poverty line, 2025 (United States computed:poverty_us)",
+        "status": "risk",
+        "src": "acs_pov"
+      }
+    ],
+    "status_names": {
+      "binding": "Binding",
+      "risk": "At risk",
+      "hold": "Holding",
+      "gap": "Not yet measured"
+    },
+    "map_title": "Where the poverty line falls hardest",
+    "map_line": "Share of people below the poverty line in each of New York’s 62 counties, 2020–2024.",
+    "map_src": "acs_cty"
+  },
+  "solutions": {
+    "title": "Solutions for Perfect New York, in order.",
+    "line": "Shelter first, because every other standard is harder to reach without a home.",
+    "items": [
+      {
+        "phase": "Phase 1",
+        "standard": "Shelter",
+        "status": "binding",
+        "challenge": "145,560 New Yorkers had no home on one night in January 2025.",
+        "advises": "Issue a State housing bond whose investors are repaid in part on outcomes: each household moved from shelter into a permanent home, building on New York’s own Pay for Success record. With super intelligence, New York can match every family in shelter to a vacant or buildable home and report each outcome as it happens.",
+        "src": "hud"
+      },
+      {
+        "phase": "Phase 2",
+        "standard": "Food and livelihood",
+        "status": "risk",
+        "challenge": "computed:food of households were food insecure in 2022–2024, and computed:poverty of New Yorkers lived below the poverty line in 2025.",
+        "advises": "Back a statewide social bond for food and income programs, priced off the State’s credit and paid against measured falls in hunger, county by county, starting with the Bronx. With super intelligence, the State can see where families are falling behind and reach them before they do.",
+        "src": "usda"
+      },
+      {
+        "phase": "Phase 2",
+        "standard": "Education",
+        "status": "risk",
+        "challenge": "computed:reading of fourth graders read at the NAEP Proficient level in 2024.",
+        "advises": "Fund early reading through an outcome contract that pays only for measured gains, as the State first did for jobs in 2013. With super intelligence, every child can have a reading tutor that adapts to them, in their own language.",
+        "src": "naep"
+      }
+    ],
+    "hold": "Phase 3, hold the line: health coverage (computed:uninsured uninsured), with water and energy measured next."
+  },
+  "capital": {
+    "title": "New York already finances at scale.",
+    "line": "Four instruments on record that a Perfect New York can build on.",
+    "items": [
+      {
+        "figure": "$21.0bn",
+        "prefix": "",
+        "money": true,
+        "name": "MTA green bonds",
+        "line": "Climate Bonds Certified green bonds issued by the Metropolitan Transportation Authority since 2016.",
+        "year": "2016–2025",
+        "src": "mta"
+      },
+      {
+        "figure": "$4.2bn",
+        "prefix": "",
+        "money": true,
+        "name": "The Environmental Bond Act",
+        "line": "Bonds for clean water, clean air and green jobs, approved by New York voters on 8 November 2022.",
+        "year": "2022",
+        "src": "bond"
+      },
+      {
+        "figure": "$2.7bn",
+        "prefix": "nearly",
+        "money": true,
+        "name": "NY Green Bank",
+        "line": "Committed to clean energy since 2013 by the State’s own green investment fund, supporting up to $10.4bn of projects.",
+        "year": "December 2025",
+        "src": "nygb"
+      },
+      {
+        "figure": "$13.5m",
+        "prefix": "",
+        "money": true,
+        "name": "Pay for Success",
+        "line": "The nation’s first state-led Pay for Success project: private investors paid upfront for job training for formerly incarcerated New Yorkers; the State repays on results.",
+        "year": "2013",
+        "src": "pfs"
+      }
+    ]
+  },
+  "close": {
+    "title": "Design Perfect New York with us.",
+    "line": "State leaders, treasurers and investors: start with a briefing."
+  },
+  "sources": {
+    "gdp": {
+      "label": "U.S. Bureau of Economic Analysis, GDP by state, 2025, current dollars (updated 30 September 2026)",
+      "url": "https://www.bea.gov/data/gdp/gdp-state",
+      "short": "BEA, 2025"
+    },
+    "pop": {
+      "label": "U.S. Census Bureau, Vintage 2025 population estimates, 1 July 2025",
+      "url": "https://www.census.gov/data/tables/time-series/demo/popest/2020s-state-total.html",
+      "short": "Census Bureau, 2025"
+    },
+    "acs_pov": {
+      "label": "U.S. Census Bureau, American Community Survey 2025 1-year, table B17001",
+      "url": "https://data.census.gov/table/ACSDT1Y2025.B17001",
+      "short": "Census Bureau, ACS 2025"
+    },
+    "acs_cty": {
+      "label": "U.S. Census Bureau, American Community Survey 2020–2024 5-year, table B17001, New York counties",
+      "url": "https://data.census.gov/table/ACSDT5Y2024.B17001",
+      "short": "Census Bureau, ACS 2020–2024"
+    },
+    "acs_hi": {
+      "label": "U.S. Census Bureau, American Community Survey 2025 1-year, table B27001 (civilian noninstitutionalized population)",
+      "url": "https://data.census.gov/table/ACSDT1Y2025.B27001",
+      "short": "Census Bureau, ACS 2025"
+    },
+    "crf": {
+      "label": "Office of the New York State Comptroller, State Pension Fund Valued at $309.7 Billion at End of First Quarter, 17 August 2026",
+      "url": "https://www.osc.ny.gov/press/releases/2026/08/dinapoli-state-pension-fund-valued-3097-billion-end-first-quarter",
+      "short": "State Comptroller, 2026"
+    },
+    "apa": {
+      "label": "Adirondack Park Agency, The Adirondack Park",
+      "url": "https://apa.ny.gov/about/park.html",
+      "short": "Adirondack Park Agency"
+    },
+    "dep": {
+      "label": "New York City Department of Environmental Protection, Water Supply",
+      "url": "https://www.nyc.gov/site/dep/water/water-supply.page",
+      "short": "NYC Environmental Protection"
+    },
+    "nypa": {
+      "label": "New York Power Authority, Major Authority Units 2024, section 12",
+      "url": "https://www.nypa.gov/-/media/nypa/documents/document-library/governance/2024-nypa-major-authority-units.pdf",
+      "short": "Power Authority, 2024"
+    },
+    "hud": {
+      "label": "U.S. Department of Housing and Urban Development, 2025 Point-in-Time count, in Office of the New York State Comptroller, Homelessness Falls Statewide, But Rises in Many New York Regions",
+      "url": "https://www.osc.ny.gov/reports/homelessness-falls-statewide-rises-many-new-york-regions",
+      "short": "HUD, 2025"
+    },
+    "usda": {
+      "label": "U.S. Department of Agriculture, Economic Research Service, Household Food Security in the United States in 2024 (ERR-358), table 4, average 2022–2024",
+      "url": "https://ers.usda.gov/sites/default/files/_laserfiche/publications/113623/ERR-358.pdf",
+      "short": "USDA, 2025"
+    },
+    "naep": {
+      "label": "National Center for Education Statistics, NAEP 2024 Reading, grade 4, at or above NAEP Proficient, public schools (NAEP Data Service)",
+      "url": "https://www.nationsreportcard.gov/reports/reading/2024/g4_8/",
+      "short": "NAEP, 2024"
+    },
+    "mta": {
+      "label": "Metropolitan Transportation Authority, Climate Bond Certification compliance disclosure, MTA green bond issuances (total $20,969,568,671)",
+      "url": "https://www.mta.info/document/138546",
+      "short": "MTA, 2025"
+    },
+    "bond": {
+      "label": "New York State Department of Environmental Conservation, Clean Water, Clean Air and Green Jobs Environmental Bond Act of 2022",
+      "url": "https://dec.ny.gov/about/clean-water-clean-air-and-green-jobs-environmental-bond-act",
+      "short": "State Environmental Conservation"
+    },
+    "nygb": {
+      "label": "NY Green Bank, Metrics, Reporting and Evaluation, Quarterly Report No. 46 (through 31 December 2025)",
+      "url": "https://greenbank.ny.gov/-/media/Project/Greenbank/Files/NYGB_Quarterly_Report_PSC_Dec_2025_260226.pdf",
+      "short": "NY Green Bank, 2026"
+    },
+    "pfs": {
+      "label": "New York State Division of the Budget, Pay for Success Contingency Reserve (first state-led project); Harvard Kennedy School Government Performance Lab, New York State Pay for Success Project ($13.5 million raised)",
+      "url": "https://www.budget.ny.gov/pubs/archive/fy20/exec/agencies/appropData/PayForSuccessContingencyReserve.html",
+      "url2": "https://govlab.hks.harvard.edu/files/govlabs/files/new_york_state_pfs_reincarceration.pdf",
+      "short": "State Budget; Harvard GPL"
+    }
+  }
+}
