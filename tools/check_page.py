@@ -5,8 +5,10 @@
 
 Checks, for each file: plain ASCII; every <style> parses (tinycss2) and holds nothing that looks like a
 tag (WordPress rejects </?word in CSS); every <script> passes `node --check`; tags balance; ids are
-unique; no backdrop-filter; no static <script src>; and, in the copy a visitor reads (text, title,
-alt, placeholder, aria-label), no straight apostrophes and no contractions.
+unique; no backdrop-filter; no static <script src>; every script survives the WordPress formatter
+(wptexturize, which rewrites & as &#038; inside anything it takes for a tag; added 10 Nov 2026 after it broke the
+Mexico blueprint scripts); and, in the copy a visitor reads (text, title, alt, placeholder, aria-label), no
+straight apostrophes and no contractions.
 Exit status 1 if anything fails. Needs: pip install tinycss2, and node.
 """
 import re
@@ -20,6 +22,21 @@ import tinycss2
 VOID = {'area', 'base', 'br', 'col', 'embed', 'hr', 'img', 'input', 'link', 'meta', 'source', 'track', 'wbr'}
 COPY_ATTRS = ('title', 'alt', 'placeholder', 'aria-label')
 CONTRACTION = re.compile(r"\b\w+(n['’]t|['’](re|ve|ll|d|m))\b|\b(it|that|there|here|what|who|let)['’]s\b", re.I)
+
+
+# WordPress's wptexturize (wp-includes/formatting.php), the part that breaks scripts: the content is split at
+# anything from < to the next > (get_html_split_regex), and in every piece that is not an HTML comment each & that
+# does not start an entity becomes &#038;. Pages placed in the WordPress editor go through it; Elementor pages do not.
+_WP_COMMENT = r'!(?:-(?!->)[^\-]*+)*+(?:-->)?'
+_WP_CDATA = r'!\[CDATA\[[^\]]*+(?:](?!]>)[^\]]*+)*+(?:]]>)?'
+_WP_SPLIT = re.compile(r'(<(?:(?=!--)' + _WP_COMMENT + r'|(?=!\[CDATA\[)' + _WP_CDATA + r'|[^>]*>?))')
+_WP_AMP = re.compile(r'&(?!#(?:\d+|x[a-f0-9]+);|[a-z1-4]{1,8};)', re.I)
+_SCRIPT = re.compile(r'<script(?![^>]*type="application/(?:ld\+)?json")[^>]*>(.*?)</script>', re.S | re.I)
+
+
+def wp_texturize_amps(html):
+    return ''.join(_WP_AMP.sub('&#038;', p) if p.startswith('<') and not p.startswith('<!--') else p
+                   for p in _WP_SPLIT.split(html))
 
 
 class Walk(HTMLParser):
@@ -103,6 +120,14 @@ def check(path):
         r = subprocess.run(['node', '--check', f.name], capture_output=True, text=True)
         if r.returncode:
             bad.append('script %d (line %d) fails node --check: %s' % (n + 1, src.count('\n', 0, m.start()) + 1, r.stderr.strip()[:300]))
+    before = [m.group(1) for m in _SCRIPT.finditer(src)]
+    after = [m.group(1) for m in _SCRIPT.finditer(wp_texturize_amps(src))]
+    for n, (a, b) in enumerate(zip(before, after)):
+        if a != b:
+            bad.append('script %d would be broken by the WordPress formatter (& becomes &#038; between a < and a >); '
+                       'wrap it as <script><!-- ... //--></script>' % (n + 1))
+    if len(before) != len(after):
+        bad.append('the WordPress formatter would change the number of scripts')
     w = Walk()
     w.feed(src)
     w.close()

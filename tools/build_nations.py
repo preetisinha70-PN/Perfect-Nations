@@ -99,7 +99,8 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 PAGES, DATA, HERE = ROOT / 'pages', ROOT / 'data', ROOT / 'tools' / 'nation'
-VERSION = '12.1'  # the Earth picture of the globe comes from the repository (jsDelivr, then GitHub), which lets a browser paint it on the moving globe (10 Nov 2026)
+VERSION = '12.2'  # the page scripts are written so the WordPress formatter leaves them alone: the moving globe starts on every blueprint, Mexico included (10 Nov 2026)
+# v12.1: the Earth picture of the globe comes from the repository (jsDelivr, then GitHub), then the Media Library (10 Nov 2026)
 # v12.0: light reading sections, Earthrise accents (the Steward-General, 10 Nov 2026)
 # v11.9: Discuss this Solution on every designed Solution; Plan a Blueprint Lab opens The Blueprint Lab, ?about=lab (the Steward-General, 10 Nov 2026)
 # v11.8: the globe with the nation in gold is drawn into the page, so the map shows on every phone even when the Earth picture or WebGL cannot (10 Nov 2026)
@@ -107,8 +108,9 @@ VERSION = '12.1'  # the Earth picture of the globe comes from the repository (js
 # v11.6: the close button of every pop-up is one design: a gold X drawn as two strokes, centred in a circle (the Steward-General, 9 Nov 2026)
 # The Earth picture of the globe (NASA Blue Marble), in this order: jsDelivr and GitHub, which both answer with
 # Access-Control-Allow-Origin *, so a browser may paint the picture on the moving globe; then the Media Library copy.
-# On 10 Nov 2026 the Media Library copy could be shown on a page but not painted on the globe, on a laptop and a
-# phone alike (only the drawn gold map showed): the site's image delivery does not allow it.
+# Checked live on 10 Nov 2026 in a real Chrome window: all three answer with Access-Control-Allow-Origin * and can be
+# painted on the globe. (The v12.1 belief that the Media Library copy could not was wrong: the gold map alone came
+# from the WordPress formatter breaking the page scripts, fixed in v12.2 by wp_script().)
 # The files are assets/globe/earth-1536.jpg and earth-1024.jpg in this repository.
 _GH = 'preetisinha70-PN/perfect-nations'
 EARTH = {'lg': ['https://cdn.jsdelivr.net/gh/%s@main/assets/globe/earth-1536.jpg' % _GH,
@@ -171,6 +173,22 @@ def js_str(o):
     """JSON for a script block, ASCII only and safe inside <script>."""
     s = json.dumps(o, ensure_ascii=True, separators=(',', ':'))
     return s.replace('</', '<\\/')
+
+
+def wp_script(js):
+    """v12.2: an inline script the WordPress formatter leaves alone.
+    A blueprint placed in a WordPress (block editor) page goes through wptexturize, which reads anything from a
+    < to the next > as a tag and rewrites each & in it as &#038;. Inside a script that turns `m.x<1.&&m.y>0.`
+    into `m.x<1.&#038;&#038;m.y>0.`: a syntax error, so on Mexico (10 Nov 2026) neither script ran and the globe
+    stayed on the drawn gold map. Elementor pages (Kenya) skip the formatter, which is why only some nations broke.
+    wptexturize skips HTML comments, so the script is written as one: <!-- opens a one-line comment in a
+    classic script, and //--> closes it. The script must not hold -->, <!-- or <script, which would end the
+    comment early or change how the browser reads the closing tag."""
+    low = js.lower()
+    for bad in ('-->', '<!--', '<script', '</script'):
+        if bad in low:
+            sys.exit('a blueprint script holds %r, which the WordPress-safe wrapper cannot carry' % bad)
+    return '<script>\n<!--\n%s\n//-->\n</script>' % js
 
 
 def mailto(subject, body=None):
@@ -1061,8 +1079,8 @@ def build(slug, sbn, son, today):
         RULE,
         close(d, p),
         '</div>',
-        '<script>\n%s\n</script>' % globe,
-        '<script>\n%s\n</script>' % script,
+        wp_script(globe),
+        wp_script(script),
     ])
     page = head + body + '\n'
     first = re.search(r'\bid\s*=\s*["\'](pn-[a-z0-9-]+)["\']', page)
