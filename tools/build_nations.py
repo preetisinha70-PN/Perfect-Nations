@@ -99,7 +99,8 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 PAGES, DATA, HERE = ROOT / 'pages', ROOT / 'data', ROOT / 'tools' / 'nation'
-VERSION = '12.2'  # the page scripts are written so the WordPress formatter leaves them alone: the moving globe starts on every blueprint, Mexico included (10 Nov 2026)
+VERSION = '12.3'  # the first edition of a new blueprint: the Letter stands alone until its portrait is painted, the Steward's initials until the photo; new nations join the manifest (10 Nov 2026)
+# v12.2: the page scripts are written so the WordPress formatter leaves them alone: the moving globe starts on every blueprint, Mexico included (10 Nov 2026)
 # v12.1: the Earth picture of the globe comes from the repository (jsDelivr, then GitHub), then the Media Library (10 Nov 2026)
 # v12.0: light reading sections, Earthrise accents (the Steward-General, 10 Nov 2026)
 # v11.9: Discuss this Solution on every designed Solution; Plan a Blueprint Lab opens The Blueprint Lab, ?about=lab (the Steward-General, 10 Nov 2026)
@@ -493,7 +494,8 @@ def hero(d, p):
                      '<a href="#bp-pc">Perfect Nations estimate</a></li>' % (ent(cov['price']), ent(name)))
     nreg = len([x for x in (d.get('capital') or {}).get('register') or [] if x.get('name') and x.get('cat') and x.get('url')])
     if nreg:
-        cells.append('<li data-k="reg"><b>%d</b><span>Instruments and investments on record</span><a href="#bp-register">Capital already committed</a></li>' % nreg)
+        cells.append('<li data-k="reg"><b>%d</b><span>%s on record</span><a href="#bp-register">Capital already committed</a></li>'
+                     % (nreg, 'Instrument or investment' if nreg == 1 else 'Instruments and investments'))
     long_name = ' is-long' if len(name) > 11 else ''
     return (
         '<section class="bpx-band bpx-er bpx-hero" aria-labelledby="bp-h1"><div class="bpx-in bpx-hero__grid">'
@@ -523,7 +525,7 @@ def what_we_do(d):
         q1 = 'We value what %s owns: its sovereign assets, from its people to its land.' % name
     lines = [x for x in (d.get('capital') or {}).get('register') or [] if x.get('name') and x.get('cat') and x.get('url')]
     # v11.3: one short line a tile; the kinds of source are the filters of the register, so they are not repeated here
-    q2 = ('%d instruments and investments on record, every one sourced.' % len(lines) if lines
+    q2 = (('One instrument on record, sourced.' if len(lines) == 1 else '%d instruments and investments on record, every one sourced.' % len(lines)) if lines
           else 'The instruments that raise capital against those assets, from every source.')
     q3 = 'Seven basic standards of living, star by star.%s' % ((' %s is furthest from reach today.' % lab(bind)) if bind else '')
     tiles = [('01', 'Assets', 'The cup', '#bp-assets', ART['cup'], q1),
@@ -568,6 +570,15 @@ def assets(d):
         '<a class="bpx-link" href="https://perfectnations.org/sovereign-assets/" target="_blank" rel="noopener noreferrer">The Sovereign Assets ledger</a></div>'
         '</div></section>' % (step_eb('01', 'Assets', 'The cup', 'Sovereign Assets'),
                               ent(a.get('heading') or 'Five assets no balance sheet counts.'), ent(name), len(cards), ''.join(cards)))
+
+
+def stew_face(photo, steward):
+    """The Nation Steward's photo; v12.3: a new blueprint without one shows the Steward's initials in a gold ring."""
+    if ok_https(photo):
+        return ('<img src="%s"%s alt="%s, %s" width="44" height="44" loading="lazy" decoding="async" onerror="this.style.display=\'none\'">'
+                % (ent(https(photo)), img_attrs(photo, (100, 150), '44px'), ent(steward.get('name', '')), ent(steward.get('role', ''))))
+    ini = ''.join(w[0] for w in plain(steward.get('name')).split()[:2] if w)
+    return '<i class="bpx-stew__ini" aria-hidden="true">%s</i>' % ent(ini or 'PN')
 
 
 def capital(d, p):
@@ -625,7 +636,7 @@ def capital(d, p):
         '<ul class="bpx-irs" id="bp-irs">%s</ul><button type="button" class="bpx-showall" id="bp-showall"%s>Show all %d lines</button></div>'
         '<div class="bpx-nw" id="bp-newswire"><div class="bpx-nw__h"><h3>The %s Newswire</h3>'
         '<a class="bpx-link" href="https://perfectnations.org/state-of-nations/#sn-wire" target="_blank" rel="noopener noreferrer">The Solutions Wire</a></div>'
-        '<div class="bpx-stew"><img src="%s"%s alt="%s, %s" width="44" height="44" loading="lazy" decoding="async" onerror="this.style.display=\'none\'">'
+        '<div class="bpx-stew">%s'
         '<p><b>%s</b><span>%s &#183; SI Researcher</span><time datetime="%s">Last updated %s</time></p></div>'
         '<ul class="bpx-wire">%s</ul><button type="button" class="bpx-showall bpx-allnews" hidden>All news</button></div></div>'
         '</div></section>'
@@ -633,7 +644,7 @@ def capital(d, p):
            step_eb('02', 'Capital', 'The laurels', 'Capital Architecture'), ent(c.get('heading') or 'Capital tied to human outcomes.'), ent(name),
            ('<p class="bpx-k">The record in figures</p><ul class="bpx-recs bpx-rail">%s</ul>' % recs) if recs else '',
            filters, ''.join(irs), '' if len(lines) > 4 else ' hidden', len(lines),
-           ent(name), ent(https(p['steward_photo'])), img_attrs(p['steward_photo'], (100, 150), '44px'), ent(steward.get('name', '')), ent(steward.get('role', '')),
+           ent(name), stew_face(p.get('steward_photo'), steward),
            ent(steward.get('name', '')), ent(steward.get('role', '')), ent(d.get('updated', '')), ent(long_date(d.get('updated'))),
            ''.join(wire)))
 
@@ -840,11 +851,20 @@ def solutions(d, p, sbn, son):
 
 def letter(d, p):
     name = d['nation']
-    pt_ = p['portrait']
-    img = pt_['image']
+    pt_ = p.get('portrait') or {}
+    img = pt_.get('image') or ''
     m = re.search(r'-(\d+)x(\d+)\.(?:png|jpe?g|webp)$', img)
     w, h = (int(m.group(1)), int(m.group(2))) if m else (768, 768)
     note = ('%s &#183; ' % ent(pt_['note'])) if pt_.get('note') else ''
+    # v12.3 (10 Nov 2026), the first edition of a new blueprint: until its Nation Portrait is painted, the Letter
+    # stands alone (no empty frame), and without a Letter page of its own the button is left out
+    fig = ('<figure class="bpx-port"><span class="bpx-frame">'
+           '<img src="%s"%s alt="%s" width="%d" height="%d" loading="lazy" decoding="async"></span>'
+           '<figcaption class="bpx-frame__cap">%s<small>Nation Portrait &#183; %s<a href="https://perfectnations.org/art-of-nations/" target="_blank" rel="noopener noreferrer">Art of Nations</a></small></figcaption></figure>'
+           % (ent(https(img)), img_attrs(img, (300, 600, 768), '(min-width:960px) 240px, 150px'), ent(pt_.get('alt') or ''), w, h, ent(pt_.get('title') or ''), note)
+           if ok_https(img) else '')
+    full = ('<a class="bpx-btn" href="%s" target="_blank" rel="noopener noreferrer">Read the full letter</a>' % ent(https(p['letter']['url']))
+            if ok_https(p['letter'].get('url')) else '')
     paras = ''.join('<p class="bpx-sheet__p">%s</p>' % raw(x) for x in p['letter']['paras'])
     # v11.3: a longer Letter shows its opening line; the rest, word for word, is one click away (the quotation stays)
     words = sum(len(plain(x).split()) for x in p['letter']['paras'])
@@ -854,16 +874,14 @@ def letter(d, p):
         paras = '<p class="bpx-sheet__p">%s</p>%s' % (raw(one), more(tail, 'the Letter to %s' % name))
     return (
         '<section class="bpx-band bpx-iv bpx-letter" id="bp-letter" aria-labelledby="bp-letter-h"><div class="bpx-in">'
-        '<div class="bpx-letter__grid"><figure class="bpx-port"><span class="bpx-frame">'
-        '<img src="%s"%s alt="%s" width="%d" height="%d" loading="lazy" decoding="async"></span>'
-        '<figcaption class="bpx-frame__cap">%s<small>Nation Portrait &#183; %s<a href="https://perfectnations.org/art-of-nations/" target="_blank" rel="noopener noreferrer">Art of Nations</a></small></figcaption></figure>'
+        '<div class="bpx-letter__grid%s">%s'
         '<article class="bpx-sheet"><div class="bpx-sheet__lh"><span>Perfect Nations&#174; &#183; Letters to the Nations</span><span>%s</span></div>'
         '<h2 class="bpx-sheet__dear" id="bp-letter-h">Dear %s,</h2>%s<p class="bpx-sheet__q">%s</p>'
         '<div class="bpx-sheet__foot"><span class="bpx-sig">Yours in design,<b>Preeti Sinha</b><small>President and CEO, Perfect Nations</small></span>'
-        '<a class="bpx-btn" href="%s" target="_blank" rel="noopener noreferrer">Read the full letter</a></div></article></div>'
+        '%s</div></article></div>'
         '</div></section>'
-        % (ent(https(img)), img_attrs(img, (300, 600, 768), '(min-width:960px) 240px, 150px'), ent(pt_['alt']), w, h, ent(pt_['title']), note,
-           ent(name), ent(name), paras, raw(p['letter']['quote']), ent(https(p['letter']['url']))))
+        % ('' if fig else ' bpx-letter__grid--solo', fig,
+           ent(name), ent(name), paras, raw(p['letter']['quote']), full))
 
 
 def codesigner(s):
@@ -997,7 +1015,7 @@ def close(d, p):
         '<div class="bpx-toast" id="bp-toast" role="status" aria-live="polite" hidden><span>Opening your email app. If nothing opens, write to <b>contact@perfectnations.org</b></span>'
         '<button type="button" id="bp-toast-copy">Copy address</button><button type="button" class="bpx-x" id="bp-toast-x" aria-label="Close"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6.5 6.5l11 11M17.5 6.5l-11 11" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button></div>'
         % (ent(name), ent(name), ent(one_line(p['close_lead'])), urllib.parse.quote(slug), srcs,
-           flag_fig(name, slug, p['portrait'].get('title') or ('%s in Bloom' % name))))
+           flag_fig(name, slug, (p.get('portrait') or {}).get('title') or ('%s in Bloom' % name))))
 
 
 RULE = '<div class="bpx-rule" aria-hidden="true"></div>'
@@ -1122,9 +1140,16 @@ def main():
         path = PAGES / 'manifest.json'
         man = json.loads(path.read_text(encoding='utf-8'))
         for s in slugs:
+            hit = False
             for key, v in man['pages'].items():
                 if v.get('file') == 'pages/blueprint-%s.html' % s:
                     v['version'] = VERSION
+                    hit = True
+            if not hit:
+                # v12.3: a new blueprint joins the manifest (its pn-bp-<slug> key turns it gold across the site)
+                nm = json.loads((DATA / ('%s.json' % s)).read_text(encoding='utf-8'))['nation']
+                man['pages']['pn-bp-' + s] = {'file': 'pages/blueprint-%s.html' % s, 'version': VERSION,
+                                             'title': '%s blueprint' % nm, 'url': 'https://perfectnations.org/blueprints/%s/' % s}
         man['updated'] = today
         path.write_text(json.dumps(man, indent=2, ensure_ascii=False) + '\n', encoding='utf-8')
         print('pages/manifest.json: %d blueprints at v%s' % (len(slugs), VERSION))

@@ -251,6 +251,7 @@
 #R .bpx-nw__h h3{ margin:0; font-family:var(--hd); font-weight:600; font-size:clamp(1.3rem,1.9vw,1.6rem); line-height:1; color:var(--fg); }
 #R .bpx-stew{ display:flex; align-items:center; gap:10px; margin:6px 0 4px; }
 #R .bpx-stew img{ flex:none; width:44px; height:44px; border-radius:50%; object-fit:cover; border:2px solid var(--g); }
+#R .bpx-stew__ini{ flex:none; display:grid; place-items:center; width:44px; height:44px; border-radius:50%; border:2px solid var(--g); font-family:var(--hd); font-style:normal; font-weight:700; font-size:.86rem; letter-spacing:.04em; color:var(--g); }
 #R .bpx-stew p{ margin:0; font-size:.76rem; line-height:1.35; color:var(--mut); }
 #R .bpx-stew b{ font-family:var(--hd); font-size:.95rem; color:var(--fg); }
 #R .bpx-stew span{ display:block; font-family:var(--hd); font-size:.58rem; font-weight:700; letter-spacing:.16em; text-transform:uppercase; color:var(--gs); }
@@ -419,6 +420,7 @@
 #R .bpx-sheet .bpx-btn:hover{ background:var(--lg); }
 @media (min-width:960px){
   #R .bpx-letter__grid{ grid-template-columns:240px minmax(0,1fr); }
+  #R .bpx-letter__grid--solo{ grid-template-columns:minmax(0,820px); justify-content:center; }
   #R .bpx-frame{ width:100%; }
 }
 
@@ -781,6 +783,7 @@
 #R .bpx-band:not(.bpx-hero) .bpx-nw{ background:#FFFDF8; border-color:rgba(16,38,43,.12); box-shadow:0 10px 26px rgba(16,38,43,.08); }
 #R .bpx-band:not(.bpx-hero) .bpx-nw__h h3{ color:#0B3D45; }
 #R .bpx-band:not(.bpx-hero) .bpx-stew img{ border-color:#0B3D45; }
+#R .bpx-band:not(.bpx-hero) .bpx-stew__ini{ border-color:#0B3D45; color:#0B3D45; }
 #R .bpx-band:not(.bpx-hero) .bpx-stew span{ color:#8A3A22; }
 
 /* Already working in the nation: white cards */
