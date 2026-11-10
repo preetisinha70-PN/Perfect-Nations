@@ -1,5 +1,5 @@
 <!-- ===========================================================================
-PERFECT NATIONS - THE CONTACT PAGE - v6.2 EARTHRISE - 2026-11-10
+PERFECT NATIONS - THE CONTACT PAGE - v6.3 LIGHT - 2026-11-10
 /contact/ (page 12711). Every "Start a conversation", Enquire, Nominate, "Suggest a guest",
 "Write to us", "Ask for this blueprint" and Solution button on the site lands here, carrying its intent
 in the address (?about=, ?topic=, ?nation=, ?country=; the full list is in the steward-contact
@@ -20,6 +20,7 @@ what a visitor can act on and for the logo, drawn in one gold on the letterhead)
     Gmail, Outlook and Copy as fallbacks. Nothing is stored on the site.
   3 What happens next (Earthrise Depth): three steps, the address for own email, Find your nation
     and See the Solutions.
+v6.3 (10 Nov 2026): light reading sections, Earthrise accents (the Steward-General, 10 Nov 2026).
 v6.2 (10 Nov 2026, the Steward-General: the updates from the homepage and the blueprints): the
 lead names the firm as on the homepage and blueprints ("a new-age sovereign advisory firm, and its
 clients are nations"); a new topic, Discuss a Solution, lists every published Solution from State of
@@ -277,6 +278,75 @@ article:has(#pn-contact) .entry-header{ display:none !important; }
 @media (prefers-reduced-motion:reduce){
   #pn-contact *{ transition:none !important; animation:none !important; }
 }
+
+/* ---------- v6.3 LIGHT (the Steward-General, 10 Nov 2026: "the site is a little dark and heavy to read ...
+   make sections the lighter colour with the Earthrise for the accents"). The hero stays Earthrise and
+   short: it carries the portrait of the President and CEO, and the letter rises out of its deep ground on
+   laptops. Then the page is light: the letter band on ivory, What happens next on paper, so the two stay
+   distinct. Ink type, Earthrise headlines, icons, numerals, links and outline buttons; terracotta
+   eyebrows; the chosen route and topic stay Earthrise, the accents; gold only for button fills, with ink
+   type, and for the logo on the Earthrise letterhead. */
+#pn-contact .ct-write,#pn-contact .ct-close{
+  --ink:#10262B; --im:#34464A; --idm:#5C696C; --ihair:rgba(16,38,43,.13);
+  color:#10262B;
+}
+#pn-contact .ct-write{
+  background:
+    radial-gradient(50% 60% at 0% 0%, rgba(227,194,88,.16) 0%, rgba(227,194,88,0) 70%),
+    radial-gradient(40% 60% at 100% 100%, rgba(138,58,34,.06) 0%, rgba(138,58,34,0) 70%),
+    linear-gradient(180deg,#F7F0DF 0%,#F4ECD8 60%,#F1E7D0 100%);
+}
+#pn-contact .ct-write .ct-eb::before,#pn-contact .ct-close .ct-eb::before{ background:rgba(138,58,34,.55); }
+#pn-contact .ct-write a:focus-visible,#pn-contact .ct-write button:focus-visible,#pn-contact .ct-write select:focus-visible,
+#pn-contact .ct-write input:focus-visible,#pn-contact .ct-write textarea:focus-visible,#pn-contact .ct-close a:focus-visible{ outline-color:#0B3D45; }
+/* the buttons: gold with ink type; the second is an Earthrise outline */
+#pn-contact .ct-write .ct-btn,#pn-contact .ct-close .ct-btn{ background:#E3C258; border-color:#E3C258; color:#1A140C !important; box-shadow:0 10px 24px rgba(140,106,18,.22); }
+#pn-contact .ct-write .ct-btn:hover,#pn-contact .ct-close .ct-btn:hover{ background:#F0D68F; border-color:#F0D68F; }
+#pn-contact .ct-write .ct-btn--line,#pn-contact .ct-close .ct-btn--gl{ background:transparent; border-color:rgba(11,61,69,.45); color:#0B3D45 !important; box-shadow:none; }
+#pn-contact .ct-write .ct-btn--line:hover,#pn-contact .ct-close .ct-btn--gl:hover{ background:rgba(11,61,69,.07); border-color:rgba(11,61,69,.45); }
+/* the routes and topics */
+#pn-contact .ct-route{ background:#FFFDF8; border-color:rgba(16,38,43,.12); box-shadow:0 6px 16px rgba(16,38,43,.06); }
+#pn-contact .ct-route:hover{ border-color:rgba(11,61,69,.45); }
+#pn-contact .ct-route b{ color:#0B3D45; }
+#pn-contact .ct-route svg{ stroke:#0B3D45; }
+#pn-contact .ct-route[aria-pressed="true"]{ border-color:rgba(227,194,88,.38); box-shadow:0 12px 26px rgba(11,61,69,.26), inset 0 0 0 1.5px var(--g); }
+#pn-contact .ct-route[aria-pressed="true"] b{ color:var(--tx); }
+#pn-contact .ct-route[aria-pressed="true"] svg{ stroke:var(--g); }
+#pn-contact .ct-chip{ background:#FFFDF8; }
+#pn-contact .ct-chip:hover{ border-color:#0B3D45; color:#0B3D45; }
+#pn-contact .ct-chip[aria-pressed="true"]{ background:#0B3D45; border-color:#0B3D45; color:#F5F1E8; }
+#pn-contact .ct-compare{ color:#0B3D45 !important; border-bottom-color:rgba(11,61,69,.45); }
+/* the fields */
+#pn-contact .ct-form input[type=text],#pn-contact .ct-form input[type=email],#pn-contact .ct-form select{ background-color:#FFFDF8 !important; caret-color:#0B3D45; }
+#pn-contact .ct-form select{ background:#FFFDF8 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5l5 5 5-5' fill='none' stroke='%230B3D45' stroke-width='1.6'/%3E%3C/svg%3E") no-repeat right 16px center / 12px 8px !important; }
+#pn-contact .ct-form input::placeholder,#pn-contact .ct-form textarea::placeholder{ color:#6B777A !important; -webkit-text-fill-color:#6B777A !important; }
+#pn-contact .ct-form input:focus,#pn-contact .ct-form select:focus{ border-color:#0B3D45 !important; box-shadow:0 0 0 3px rgba(11,61,69,.14) !important; }
+#pn-contact .ct-check input{ accent-color:#0B3D45; }
+/* the letter: stationery on the ivory band, with its Earthrise letterhead */
+#pn-contact .ct-letter{ background:#FFFDF8; box-shadow:0 30px 70px rgba(8,42,48,.26), 0 0 0 1px rgba(16,38,43,.07); }
+@media (min-width:1000px){
+  #pn-contact .ct-letter:hover,#pn-contact .ct-letter:focus-within{ box-shadow:0 34px 80px rgba(8,42,48,.32), 0 0 0 1px rgba(11,61,69,.22); }
+}
+#pn-contact .ct-l-dear{ color:#0B3D45; }
+#pn-contact .ct-letter textarea{ caret-color:#0B3D45; background:transparent repeating-linear-gradient(180deg, transparent 0, transparent 23px, rgba(16,38,43,.11) 23px, rgba(16,38,43,.11) 24px) !important; background-attachment:local !important; }
+#pn-contact .ct-letter textarea.is-bad{ background-color:rgba(168,50,30,.05) !important; }
+#pn-contact .ct-result{ background:#F6EFE0; border-color:rgba(11,61,69,.22); }
+/* 3 what happens next: paper, white cards, Earthrise numerals and link */
+#pn-contact .ct-close{
+  border-top-color:rgba(16,38,43,.13);
+  background:
+    radial-gradient(48% 60% at 96% 0%, rgba(227,194,88,.16) 0%, rgba(227,194,88,0) 70%),
+    radial-gradient(40% 60% at 0% 100%, rgba(11,61,69,.06) 0%, rgba(11,61,69,0) 70%),
+    linear-gradient(180deg,#FBF8F1 0%,#F6EFE0 100%);
+}
+#pn-contact .ct-close .ct-eb{ color:#8A3A22; }
+#pn-contact .ct-close .ct-h2{ color:#0B3D45 !important; }
+#pn-contact .ct-steps li{ background:#FFFDF8; border-color:rgba(16,38,43,.12); box-shadow:0 1px 0 rgba(255,255,255,.9) inset, 0 8px 22px rgba(16,38,43,.07); }
+#pn-contact .ct-steps li::before{ -webkit-text-stroke:1.2px rgba(11,61,69,.7); }
+#pn-contact .ct-steps b{ color:#0B3D45; }
+#pn-contact .ct-steps span,#pn-contact .ct-direct{ color:#34464A; }
+#pn-contact .ct-direct a{ color:#0B3D45 !important; border-bottom-color:rgba(11,61,69,.45); }
+#pn-contact .ct-direct a:hover{ color:#8A3A22 !important; }
 </style>
 
   <section class="ct-band ct-hero" aria-labelledby="ct-h1">

@@ -40,7 +40,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 PAGES = ROOT / 'pages'
 DATA = ROOT / 'data'
-VERSION = '6.4'  # the close button of every pop-up is one design: a gold X drawn as two strokes, centred in a circle (the Steward-General, 9 Nov 2026)
+VERSION = '6.5'  # light reading sections, Earthrise accents (the Steward-General, 10 Nov 2026)
 
 ORDER = [
     'nations-menu.html',      # the moving list of 195 nations (also on the homepage)
@@ -441,6 +441,7 @@ v6.1 (8 Nov 2026): FfD before SI (the Steward-General, 8 Nov 2026). The lead nam
 development (FfD) first and super intelligence (SI) second.
 v6.2: Gold line in place of the painted botanical seams (the Steward-General, 9 Nov 2026).
 v6.3: Fewer words (the Steward-General, 9 Nov 2026): one headline and one line per section.
+v6.5: light reading sections, Earthrise accents (the Steward-General, 10 Nov 2026).
 =========================================================================== -->
 <div id="pn-blueprints" hidden></div>
 ''' % (VERSION, today, n_live, len(nat))

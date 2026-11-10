@@ -1,5 +1,5 @@
 <!-- ===========================================================================
-PERFECT NATIONS - THE REDESIGN STUDIO PAGE - v7.0 EARTHRISE - 2026-11-10
+PERFECT NATIONS - THE REDESIGN STUDIO PAGE - v7.1 LIGHT - 2026-11-10
 /design-studio/ (page 14106; the header, footer, homepage and every blueprint link here).
 Served live from GitHub (pages/design-studio.html, root pn-ds) by the Perfect Nations Live Pages
 plugin; the code pasted in the page's Elementor widget (c20519d) is only the fallback.
@@ -36,6 +36,7 @@ v7.0 (10 November 2026, the Steward-General: the new updates from the homepage a
   - Links: the Blueprint Lab opens contact/?about=lab (it opened the Nation Briefing); the four ways
     in to the Co-designers are links to their own contact topics; Voices is marked Launching soon, as
     on the blueprints; the close offers Find your nation, as the homepage hero does.
+v7.1 (10 November 2026): light reading sections, Earthrise accents (the Steward-General, 10 Nov 2026).
 =========================================================================== -->
 <div id="pn-ds">
 <!-- GENERATED:RULE (the gold line, from pages/home-rule.html; do not edit here) -->
@@ -306,6 +307,78 @@ v7.0 (10 November 2026, the Steward-General: the new updates from the homepage a
 @media (prefers-reduced-motion:reduce){
   #pn-ds *,#pn-ds *::before,#pn-ds *::after{ transition:none !important; animation:none !important; }
 }
+
+/* ---------- v7.1 LIGHT (the Steward-General, 10 Nov 2026: "the site is a little dark and heavy to read ...
+   make sections the lighter colour with the Earthrise for the accents"). The hero stays Earthrise and
+   short: the drafting table draws in ivory and gold lines that need the deep ground. Then the page turns
+   light at a clean edge: the mandates on ivory, the Co-designers on paper, the close on ivory after the
+   gold line, so each band stays distinct. Ink type, Earthrise headlines, numerals, arrows, active dots and
+   outline buttons; terracotta eyebrows. The Sovereign Mandate and the finder stay Earthrise cards, the
+   accents of their bands; the cup sits on an Earthrise disc. Gold only for button fills, with ink type. */
+#pn-ds .ds-mand,#pn-ds .ds-co,#pn-ds .ds-close{
+  --im:#34464A; --idm:#5C696C; --ihair:rgba(16,38,43,.13);
+  color:#10262B;
+}
+#pn-ds .ds-mand,#pn-ds .ds-close{
+  background:
+    radial-gradient(50% 60% at 92% 0%, rgba(227,194,88,.16) 0%, rgba(227,194,88,0) 70%),
+    radial-gradient(40% 60% at 0% 100%, rgba(138,58,34,.06) 0%, rgba(138,58,34,0) 70%),
+    linear-gradient(180deg,#F7F0DF 0%,#F4ECD8 60%,#F1E7D0 100%);
+}
+#pn-ds .ds-co{
+  background:
+    radial-gradient(48% 60% at 96% 0%, rgba(227,194,88,.16) 0%, rgba(227,194,88,0) 70%),
+    radial-gradient(40% 60% at 0% 100%, rgba(11,61,69,.06) 0%, rgba(11,61,69,0) 70%),
+    linear-gradient(180deg,#FBF8F1 0%,#F6EFE0 100%);
+}
+#pn-ds .ds-mand .ds-eb,#pn-ds .ds-co .ds-eb,#pn-ds .ds-close .ds-eb{ color:#8A3A22; }
+#pn-ds .ds-mand .ds-eb::before,#pn-ds .ds-co .ds-eb::before,#pn-ds .ds-close .ds-eb::before,#pn-ds .ds-close .ds-eb::after{ background:rgba(138,58,34,.55); }
+#pn-ds .ds-mand .ds-h2,#pn-ds .ds-co .ds-h2,#pn-ds .ds-close .ds-h2{ color:#0B3D45 !important; }
+#pn-ds .ds-mand .ds-lead,#pn-ds .ds-co .ds-lead,#pn-ds .ds-close .ds-lead{ color:#34464A; }
+#pn-ds .ds-mand a:focus-visible,#pn-ds .ds-mand button:focus-visible,
+#pn-ds .ds-co a:focus-visible,#pn-ds .ds-close a:focus-visible{ outline-color:#0B3D45; }
+#pn-ds .ds-mand .ds-btn,#pn-ds .ds-co .ds-btn,#pn-ds .ds-close .ds-btn{ box-shadow:0 10px 24px rgba(140,106,18,.22); }
+#pn-ds .ds-mand .ds-btn--line,#pn-ds .ds-co .ds-btn--line,#pn-ds .ds-close .ds-btn--line{ color:#0B3D45 !important; border-color:rgba(11,61,69,.45); box-shadow:none; }
+#pn-ds .ds-mand .ds-btn--line:hover,#pn-ds .ds-co .ds-btn--line:hover,#pn-ds .ds-close .ds-btn--line:hover{ background:rgba(11,61,69,.07); }
+/* 2 the mandates: white cards; the Sovereign Mandate (.ds-tier--top) keeps its Earthrise card as it is */
+#pn-ds .ds-tier:not(.ds-tier--top){ background:#FFFDF8; border-color:rgba(16,38,43,.12); box-shadow:0 1px 0 rgba(255,255,255,.9) inset, 0 10px 26px rgba(16,38,43,.08); color:#10262B; }
+#pn-ds .ds-tier:not(.ds-tier--top) h3{ color:#0B3D45 !important; }
+#pn-ds .ds-tier:not(.ds-tier--top) .ds-tier__t,#pn-ds .ds-tier:not(.ds-tier--top) .ds-tier__leave{ color:#0B3D45; }
+#pn-ds .ds-tier:not(.ds-tier--top) .ds-depth__m{ color:#34464A; }
+#pn-ds .ds-tier:not(.ds-tier--top) .ds-depth__m b{ color:#0B3D45; }
+#pn-ds .ds-tier:not(.ds-tier--top) .ds-dots i{ background:rgba(16,38,43,.14); }
+#pn-ds .ds-tier:not(.ds-tier--top) .ds-dots i.on{ background:#0B3D45; }
+#pn-ds .ds-btn--ink{ background:#E3C258; border-color:#E3C258; color:#1A140C !important; }
+#pn-ds .ds-btn--ink:hover{ background:#F0D68F; border-color:#F0D68F; }
+#pn-ds .ds-tier--top a:focus-visible{ outline-color:var(--gs); }
+#pn-ds .ds-mand.is-tabbed .ds-tabs{ background:rgba(16,38,43,.07); }
+#pn-ds .ds-tabs button:not([aria-selected="true"]) small{ color:#3E4E52; }
+/* 3 the Co-designers: white cards with Earthrise marks; the finder stays an Earthrise card */
+#pn-ds .ds-co{ --tx:#0B3D45; --tm:#34464A; --td:#5C696C; --hair:rgba(16,38,43,.13); }
+#pn-ds .ds-way{ background:#FFFDF8; border-color:rgba(16,38,43,.12); box-shadow:0 1px 0 rgba(255,255,255,.9) inset, 0 8px 22px rgba(16,38,43,.07); }
+#pn-ds a.ds-way:hover{ background:#FFFFFF; border-color:rgba(11,61,69,.45); box-shadow:0 16px 34px rgba(16,38,43,.13); }
+#pn-ds .ds-way svg{ stroke:#0B3D45; }
+#pn-ds .ds-way__go{ color:#0B3D45; }
+#pn-ds a.ds-way:hover .ds-way__go{ color:#8A3A22; }
+#pn-ds .ds-air{ border-color:rgba(16,38,43,.3); color:#34464A; }
+#pn-ds .ds-join{
+  --tx:#F5F1E8; --tm:rgba(245,241,232,.84); --td:rgba(245,241,232,.66); --hair:rgba(245,241,232,.16);
+  border-color:rgba(227,194,88,.38);
+  background:
+    radial-gradient(70% 140% at 0% 0%, rgba(227,194,88,.14) 0%, rgba(227,194,88,0) 62%),
+    linear-gradient(165deg,#10505F 0%,#0B3D45 48%,#09313A 100%);
+  box-shadow:0 18px 44px rgba(11,61,69,.24);
+}
+#pn-ds .ds-join .ds-btn--line{ color:var(--g) !important; border-color:var(--g); }
+#pn-ds .ds-join .ds-btn--line:hover{ background:rgba(227,194,88,.12); }
+#pn-ds .ds-join a:focus-visible,#pn-ds .ds-join button:focus-visible,#pn-ds .ds-join select:focus-visible{ outline-color:var(--gs); }
+/* 4 the close: the cup on an Earthrise disc with a gold rim, never gold straight onto ivory */
+#pn-ds .ds-close .ds-cup{
+  width:clamp(74px,5.6vw,96px); height:auto; aspect-ratio:1 / 1; padding:clamp(10px,.75vw,13px); border-radius:50%;
+  background:radial-gradient(70% 70% at 30% 25%, #10505F 0%, #0B3D45 55%, #082A30 100%);
+  box-shadow:inset 0 0 0 2px rgba(227,194,88,.75), 0 10px 22px rgba(8,42,48,.25);
+}
+@media (max-width:640px){ #pn-ds .ds-close .ds-cup{ width:70px; padding:9px; } }
 </style>
 
   <!-- 1 hero -->
