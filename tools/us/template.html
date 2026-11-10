@@ -1,0 +1,126 @@
+<div id="pn-us" data-version="<!--pn:version-->">
+<!--pn:rule-->
+<!--pn:logo-->
+
+<section class="pnus-band pnus-hero" aria-labelledby="pnus-h1">
+  <div class="pnus-in pnus-top">
+    <div class="pnus-intro">
+      <p class="pnus-eb">Perfect Nations&reg; &middot; The United States</p>
+      <h1 class="pnus-h1" id="pnus-h1">The 50 States</h1>
+      <p class="pnus-lead">Fifty economies, many the size of nations. One blueprint for each, so that every resident has all seven basic standards of living.</p>
+    </div>
+    <div class="pnus-facts">
+      <ul class="pnus-figs">
+        <li><b class="pnus-money"><!--pn:us_gdp--></b><span>GDP, 2025</span></li>
+        <li><b><!--pn:us_people--></b><span>People, 2025</span></li>
+        <li><b><!--pn:us_poor--></b><span>Below the poverty line (<!--pn:us_share-->%)</span></li>
+      </ul>
+      <p class="pnus-src">Sources: <a href="<!--pn:url_gdp-->" title="<!--pn:src_gdp-->" rel="noopener"><!--pn:short_gdp--></a> &middot; <a href="<!--pn:url_pop-->" title="<!--pn:src_pop-->" rel="noopener"><!--pn:short_pop--></a> &middot; <a href="<!--pn:url_pov-->" title="<!--pn:src_pov-->" rel="noopener"><!--pn:short_pov--></a></p>
+      <div class="pnus-ctas">
+        <a class="pnus-btn" href="#pnus-list" data-pn-same-tab="1">Find a state</a>
+        <a class="pnus-btn pnus-btn--line" href="https://perfectnations.org/contact/?about=blueprint&amp;country=United%20States">Ask for a blueprint</a>
+      </div>
+    </div>
+
+    <div class="pnus-mapcol">
+      <div class="pnus-tabs" role="group" aria-label="Show a region">
+        <button type="button" class="pnus-tab" data-reg="" aria-pressed="true">All<small>50</small></button>
+        <button type="button" class="pnus-tab" data-reg="northeast" aria-pressed="false">Northeast<small><!--pn:n_northeast--></small></button>
+        <button type="button" class="pnus-tab" data-reg="midwest" aria-pressed="false">Midwest<small><!--pn:n_midwest--></small></button>
+        <button type="button" class="pnus-tab" data-reg="south" aria-pressed="false">South<small><!--pn:n_south--></small></button>
+        <button type="button" class="pnus-tab" data-reg="west" aria-pressed="false">West<small><!--pn:n_west--></small></button>
+      </div>
+      <div class="pnus-map" id="pnus-map">
+        <!--pn:map-->
+        <div class="pnus-card" id="pnus-card" role="dialog" aria-live="polite" aria-label="State" hidden>
+          <button type="button" class="pnus-card__x" aria-label="Close">&times;</button>
+          <p class="pnus-card__k"><span class="pnus-card__ab"></span><span class="pnus-card__rg"></span></p>
+          <h3 class="pnus-card__h"></h3>
+          <dl class="pnus-card__f">
+            <div><dt>GDP, 2025</dt><dd class="pnus-money pnus-card__gdp"></dd></div>
+            <div><dt>People</dt><dd class="pnus-card__pop"></dd></div>
+            <div><dt>Below the poverty line</dt><dd class="pnus-card__pov"></dd></div>
+          </dl>
+          <a class="pnus-card__go" href="https://perfectnations.org/contact/?about=blueprint"><span class="pnus-card__st">Blueprint in preparation</span><span class="pnus-card__ac">Ask for it</span></a>
+        </div>
+      </div>
+      <ul class="pnus-key" aria-label="Key">
+        <li><i class="pnus-key__live"></i>Blueprint open</li>
+        <li><i class="pnus-key__soon"></i>In preparation</li>
+        <li class="pnus-key__hint">Tap a state</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="pnus-band pnus-list" id="pnus-list" aria-labelledby="pnus-h2a">
+  <div class="pnus-in">
+    <p class="pnus-eb">01 &middot; Every state</p>
+    <h2 class="pnus-h2" id="pnus-h2a">One blueprint for each of the 50 states.</h2>
+    <p class="pnus-lead">Each blueprint counts what the state owns, prices the seven basic standards of living for every resident, and designs the capital that closes the gap.</p>
+    <div class="pnus-tools">
+      <label class="pnus-find"><span class="pnus-vh">Find a state</span>
+        <input type="search" id="pnus-q" placeholder="Find a state&hellip;" autocomplete="off" spellcheck="false" enterkeyhint="search">
+      </label>
+      <div class="pnus-chips" role="group" aria-label="Region">
+        <button type="button" class="pnus-chip" data-reg="" aria-pressed="true">All</button>
+        <button type="button" class="pnus-chip" data-reg="northeast" aria-pressed="false">Northeast</button>
+        <button type="button" class="pnus-chip" data-reg="midwest" aria-pressed="false">Midwest</button>
+        <button type="button" class="pnus-chip" data-reg="south" aria-pressed="false">South</button>
+        <button type="button" class="pnus-chip" data-reg="west" aria-pressed="false">West</button>
+      </div>
+      <div class="pnus-sort" role="group" aria-label="Sort by">
+        <span>Sort</span>
+        <button type="button" class="pnus-so" data-sort="n" aria-pressed="true">A&ndash;Z</button>
+        <button type="button" class="pnus-so" data-sort="g" aria-pressed="false">GDP</button>
+        <button type="button" class="pnus-so" data-sort="p" aria-pressed="false">People</button>
+        <button type="button" class="pnus-so" data-sort="v" aria-pressed="false">Poverty</button>
+      </div>
+    </div>
+    <ol class="pnus-rows" id="pnus-rows"><!--pn:rows--></ol>
+    <p class="pnus-none" id="pnus-none" hidden>No state matches. Try another name.</p>
+    <button type="button" class="pnus-more" id="pnus-more" hidden>Show all 50 states</button>
+    <p class="pnus-src pnus-src--list">GDP: <a href="<!--pn:url_gdp-->" rel="noopener"><!--pn:src_gdp--></a>. People: <a href="<!--pn:url_pop-->" rel="noopener"><!--pn:src_pop--></a>. Below the poverty line: share of people for whom poverty status is determined, <a href="<!--pn:url_pov-->" rel="noopener"><!--pn:src_pov--></a>.</p>
+  </div>
+</section>
+
+<section class="pnus-band pnus-how" aria-labelledby="pnus-h2b">
+  <div class="pnus-in">
+    <p class="pnus-eb">02 &middot; How a state blueprint works</p>
+    <h2 class="pnus-h2" id="pnus-h2b">Assets, Capital, Solutions.</h2>
+    <p class="pnus-lead">The method of every Perfect Nations blueprint, applied to a state.</p>
+    <ol class="pnus-steps">
+      <li class="pnus-step">
+        <span class="pnus-step__disc" aria-hidden="true"><svg viewBox="82.5 153 346 346" focusable="false"><use href="#pnus-k-cl" clip-path="url(#pnus-k-cc)"/></svg></span>
+        <div><p class="pnus-step__n">01 Assets</p><h3>What the state owns, counted and valued.</h3><p>Land, water, energy, universities, state funds and, above all, its people.</p></div>
+      </li>
+      <li class="pnus-step">
+        <span class="pnus-step__disc" aria-hidden="true"><svg viewBox="10 63.75 491 491" focusable="false"><use href="#pnus-k-cl" clip-path="url(#pnus-k-lc)"/></svg></span>
+        <div><p class="pnus-step__n">02 Capital</p><h3>The instruments that finance it.</h3><p>Municipal and green bonds, outcome contracts, guarantees and the state&rsquo;s own funds.</p></div>
+      </li>
+      <li class="pnus-step">
+        <span class="pnus-step__disc" aria-hidden="true"><svg viewBox="96 -45 320 220" focusable="false"><use href="#pnus-k-s0"/><use href="#pnus-k-s1"/><use href="#pnus-k-s2"/><use href="#pnus-k-s3"/><use href="#pnus-k-s4"/><use href="#pnus-k-s5"/><use href="#pnus-k-s6"/></svg></span>
+        <div><p class="pnus-step__n">03 Solutions</p><h3>Seven basic standards of living for every resident.</h3><p>Food, water, shelter, energy, education, health and livelihood.</p></div>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<div class="pn-rule" aria-hidden="true"></div>
+
+<section class="pnus-band pnus-close" aria-labelledby="pnus-h2c">
+  <div class="pnus-in pnus-close__in">
+    <div>
+      <p class="pnus-eb">03 &middot; Work with us</p>
+      <h2 class="pnus-h2" id="pnus-h2c">Your state, its blueprint.</h2>
+      <p class="pnus-lead">State leaders, treasurers and investors: tell us which state to open first.</p>
+    </div>
+    <div class="pnus-ctas">
+      <a class="pnus-btn" href="https://perfectnations.org/contact/?about=blueprint&amp;country=United%20States" id="pnus-ask">Ask for a state blueprint</a>
+      <a class="pnus-btn pnus-btn--line" href="https://perfectnations.org/blueprints/">Blueprints of Nations</a>
+    </div>
+  </div>
+</section>
+
+<script type="application/json" id="pnus-data"><!--pn:states_json--></script>
+</div>

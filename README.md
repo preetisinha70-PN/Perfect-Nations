@@ -64,6 +64,17 @@ perfectnations.org/blueprints/ is one file, `pages/blueprints.html` (root `pn-bl
 - **`data/blueprints.json`** is the live index of open blueprints: for each, `slug`, `name`, `region`, `url`, `steward` (from `steward.name`) and `figure` (the first sourced monetary figure of the hero, else its first figure: `value`, `label`, `money`). It mirrors the nation files and adds no fact of its own. Rebuild it with `python3 tools/build_blueprints.py --index`; it is data, so it may go straight to main.
 - **Page changes** (design, words, a rebuilt fallback) go through a pull request "For approval: Blueprints page vX.Y, ...", with the `pn-blueprints` version raised in the manifest.
 
+## The 50 States page (from 10 November 2026)
+
+perfectnations.org/50-states/ is one file, `pages/us-states.html` (root `pn-us`): the section for the 50 states of the United States, where state blueprints will open. It is in the header (Where we work, after Blueprints of Nations), in the footer and in the header search (each state by name).
+
+- **Built, never edited by hand.** `python3 tools/build_us_states.py` builds the page from `data/us-states.json` (the figures), `tools/us/template.html`, `tools/us/style.css` and `tools/us/script.js` (the design and words), the gold line in `pages/home-rule.html` and the cup, laurels and stars of the logo kit. The map is drawn at build time from `tools/us/states-albers-10m.json` (us-atlas 3, ISC licence: Census Bureau cartographic boundaries, Albers USA with Alaska and Hawaii inset), so the page loads no map file and no library.
+- **`data/us-states.json`**: for each state `slug`, `name`, `abbr`, `fips`, `region` (Census region), `population` (Census Bureau, Vintage 2025, 1 July 2025), `gdp_musd` (BEA, current-dollar GDP 2025, millions) and `poverty` (ACS 2025 1-year, table B17001: `below`, `moe`, `universe`, `share`); the United States totals; the three sources. Rebuilt with `python3 tools/build_us_states.py --data` from the official downloads in `data/us/raw/` (see its README); it adds no figure of its own.
+- **A state blueprint needs no new build of this page.** On every visit the page reads `pages/manifest.json`: a key `pn-us-<slug>` (for example `pn-us-texas`) with a perfectnations.org `url` turns that state bright gold on the map and in the list, and its card and row link to that url. The header search does the same.
+- **Addresses:** `/50-states/?state=<slug>` (or `#<slug>`) opens the page with that state's card on the map. "Ask for it" goes to `/contact/?about=blueprint&country=<State>`.
+- **Checks and previews:** `python3 tools/check_page.py pages/us-states.html`, then `python3 tools/preview_page.py pages/us-states.html --out <folder> --fonts <folder holding node_modules/@fontsource>`.
+- **Every change** goes through a pull request "For approval: The 50 States vX.Y, ...", with `pn-us` raised in the manifest. A yearly refresh of the figures (new Census and BEA releases) is a page change: download, `--data`, build, pull request.
+
 ## The Capital Architecture page (from 7 November 2026)
 
 perfectnations.org/capital-architecture/ is one file, `pages/capital-architecture.html` (root `pn-arch`, page 8549), kept by the Capital Architecture Steward.

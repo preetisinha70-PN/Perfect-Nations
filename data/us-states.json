@@ -1,0 +1,802 @@
+{
+  "page": "us-states",
+  "updated": "2026-11-10",
+  "about": "The 50 States page (perfectnations.org/50-states/). Built by python3 tools/build_us_states.py --data from the official files in data/us/raw/; adds no figure of its own. poverty.share = below / universe, one decimal. gdp_musd: millions of current US dollars.",
+  "sources": {
+    "population": {
+      "label": "U.S. Census Bureau, Vintage 2025 population estimates, 1 July 2025",
+      "short": "Census Bureau, 2025",
+      "url": "https://www.census.gov/data/tables/time-series/demo/popest/2020s-state-total.html"
+    },
+    "gdp": {
+      "label": "U.S. Bureau of Economic Analysis, GDP by state, 2025, current dollars (updated 30 September 2026)",
+      "short": "BEA, 2025",
+      "url": "https://www.bea.gov/data/gdp/gdp-state"
+    },
+    "poverty": {
+      "label": "U.S. Census Bureau, American Community Survey 2025 1-year estimates, table B17001",
+      "short": "Census Bureau, ACS 2025",
+      "url": "https://data.census.gov/table/ACSDT1Y2025.B17001"
+    }
+  },
+  "regions": [
+    {
+      "slug": "northeast",
+      "name": "Northeast"
+    },
+    {
+      "slug": "midwest",
+      "name": "Midwest"
+    },
+    {
+      "slug": "south",
+      "name": "South"
+    },
+    {
+      "slug": "west",
+      "name": "West"
+    }
+  ],
+  "us": {
+    "population": 341784857,
+    "gdp_musd": 30861292.0,
+    "poverty": {
+      "below": 39264183,
+      "moe": 277365,
+      "universe": 333843162,
+      "share": 11.8
+    }
+  },
+  "states": [
+    {
+      "slug": "alabama",
+      "name": "Alabama",
+      "abbr": "AL",
+      "fips": "01",
+      "region": "south",
+      "population": 5193088,
+      "gdp_musd": 339035.1,
+      "poverty": {
+        "below": 741146,
+        "moe": 30199,
+        "universe": 5049163,
+        "share": 14.7
+      }
+    },
+    {
+      "slug": "alaska",
+      "name": "Alaska",
+      "abbr": "AK",
+      "fips": "02",
+      "region": "west",
+      "population": 737270,
+      "gdp_musd": 73634.8,
+      "poverty": {
+        "below": 78839,
+        "moe": 8342,
+        "universe": 718873,
+        "share": 11.0
+      }
+    },
+    {
+      "slug": "arizona",
+      "name": "Arizona",
+      "abbr": "AZ",
+      "fips": "04",
+      "region": "west",
+      "population": 7623818,
+      "gdp_musd": 592103.0,
+      "poverty": {
+        "below": 880096,
+        "moe": 35622,
+        "universe": 7463258,
+        "share": 11.8
+      }
+    },
+    {
+      "slug": "arkansas",
+      "name": "Arkansas",
+      "abbr": "AR",
+      "fips": "05",
+      "region": "south",
+      "population": 3114791,
+      "gdp_musd": 195988.2,
+      "poverty": {
+        "below": 454985,
+        "moe": 20484,
+        "universe": 3027177,
+        "share": 15.0
+      }
+    },
+    {
+      "slug": "california",
+      "name": "California",
+      "abbr": "CA",
+      "fips": "06",
+      "region": "west",
+      "population": 39355309,
+      "gdp_musd": 4297449.8,
+      "poverty": {
+        "below": 4397101,
+        "moe": 64515,
+        "universe": 38634955,
+        "share": 11.4
+      }
+    },
+    {
+      "slug": "colorado",
+      "name": "Colorado",
+      "abbr": "CO",
+      "fips": "08",
+      "region": "west",
+      "population": 6012561,
+      "gdp_musd": 574863.9,
+      "poverty": {
+        "below": 540905,
+        "moe": 22893,
+        "universe": 5892420,
+        "share": 9.2
+      }
+    },
+    {
+      "slug": "connecticut",
+      "name": "Connecticut",
+      "abbr": "CT",
+      "fips": "09",
+      "region": "northeast",
+      "population": 3688496,
+      "gdp_musd": 382595.5,
+      "poverty": {
+        "below": 326434,
+        "moe": 21610,
+        "universe": 3585734,
+        "share": 9.1
+      }
+    },
+    {
+      "slug": "delaware",
+      "name": "Delaware",
+      "abbr": "DE",
+      "fips": "10",
+      "region": "south",
+      "population": 1059952,
+      "gdp_musd": 121940.0,
+      "poverty": {
+        "below": 98483,
+        "moe": 11350,
+        "universe": 1035838,
+        "share": 9.5
+      }
+    },
+    {
+      "slug": "florida",
+      "name": "Florida",
+      "abbr": "FL",
+      "fips": "12",
+      "region": "south",
+      "population": 23462518,
+      "gdp_musd": 1805620.2,
+      "poverty": {
+        "below": 2563194,
+        "moe": 66139,
+        "universe": 22986513,
+        "share": 11.2
+      }
+    },
+    {
+      "slug": "georgia",
+      "name": "Georgia",
+      "abbr": "GA",
+      "fips": "13",
+      "region": "south",
+      "population": 11302748,
+      "gdp_musd": 936086.7,
+      "poverty": {
+        "below": 1355056,
+        "moe": 45891,
+        "universe": 11022299,
+        "share": 12.3
+      }
+    },
+    {
+      "slug": "hawaii",
+      "name": "Hawaii",
+      "abbr": "HI",
+      "fips": "15",
+      "region": "west",
+      "population": 1432820,
+      "gdp_musd": 123163.8,
+      "poverty": {
+        "below": 130762,
+        "moe": 10345,
+        "universe": 1399781,
+        "share": 9.3
+      }
+    },
+    {
+      "slug": "idaho",
+      "name": "Idaho",
+      "abbr": "ID",
+      "fips": "16",
+      "region": "west",
+      "population": 2029733,
+      "gdp_musd": 137401.9,
+      "poverty": {
+        "below": 192162,
+        "moe": 13823,
+        "universe": 1979471,
+        "share": 9.7
+      }
+    },
+    {
+      "slug": "illinois",
+      "name": "Illinois",
+      "abbr": "IL",
+      "fips": "17",
+      "region": "midwest",
+      "population": 12719141,
+      "gdp_musd": 1240982.7,
+      "poverty": {
+        "below": 1424283,
+        "moe": 38758,
+        "universe": 12424868,
+        "share": 11.5
+      }
+    },
+    {
+      "slug": "indiana",
+      "name": "Indiana",
+      "abbr": "IN",
+      "fips": "18",
+      "region": "midwest",
+      "population": 6973333,
+      "gdp_musd": 542457.6,
+      "poverty": {
+        "below": 807140,
+        "moe": 25834,
+        "universe": 6780884,
+        "share": 11.9
+      }
+    },
+    {
+      "slug": "iowa",
+      "name": "Iowa",
+      "abbr": "IA",
+      "fips": "19",
+      "region": "midwest",
+      "population": 3238387,
+      "gdp_musd": 271937.2,
+      "poverty": {
+        "below": 346480,
+        "moe": 15391,
+        "universe": 3136839,
+        "share": 11.0
+      }
+    },
+    {
+      "slug": "kansas",
+      "name": "Kansas",
+      "abbr": "KS",
+      "fips": "20",
+      "region": "midwest",
+      "population": 2977220,
+      "gdp_musd": 232106.7,
+      "poverty": {
+        "below": 294734,
+        "moe": 15221,
+        "universe": 2891277,
+        "share": 10.2
+      }
+    },
+    {
+      "slug": "kentucky",
+      "name": "Kentucky",
+      "abbr": "KY",
+      "fips": "21",
+      "region": "south",
+      "population": 4606864,
+      "gdp_musd": 313566.3,
+      "poverty": {
+        "below": 714123,
+        "moe": 20537,
+        "universe": 4483306,
+        "share": 15.9
+      }
+    },
+    {
+      "slug": "louisiana",
+      "name": "Louisiana",
+      "abbr": "LA",
+      "fips": "22",
+      "region": "south",
+      "population": 4618189,
+      "gdp_musd": 342321.2,
+      "poverty": {
+        "below": 812681,
+        "moe": 37572,
+        "universe": 4495160,
+        "share": 18.1
+      }
+    },
+    {
+      "slug": "maine",
+      "name": "Maine",
+      "abbr": "ME",
+      "fips": "23",
+      "region": "northeast",
+      "population": 1414874,
+      "gdp_musd": 101726.2,
+      "poverty": {
+        "below": 135814,
+        "moe": 8045,
+        "universe": 1370517,
+        "share": 9.9
+      }
+    },
+    {
+      "slug": "maryland",
+      "name": "Maryland",
+      "abbr": "MD",
+      "fips": "24",
+      "region": "south",
+      "population": 6265347,
+      "gdp_musd": 567018.5,
+      "poverty": {
+        "below": 590631,
+        "moe": 24525,
+        "universe": 6137038,
+        "share": 9.6
+      }
+    },
+    {
+      "slug": "massachusetts",
+      "name": "Massachusetts",
+      "abbr": "MA",
+      "fips": "25",
+      "region": "northeast",
+      "population": 7154084,
+      "gdp_musd": 813590.5,
+      "poverty": {
+        "below": 679870,
+        "moe": 27341,
+        "universe": 6916681,
+        "share": 9.8
+      }
+    },
+    {
+      "slug": "michigan",
+      "name": "Michigan",
+      "abbr": "MI",
+      "fips": "26",
+      "region": "midwest",
+      "population": 10127884,
+      "gdp_musd": 733887.1,
+      "poverty": {
+        "below": 1252598,
+        "moe": 37975,
+        "universe": 9914208,
+        "share": 12.6
+      }
+    },
+    {
+      "slug": "minnesota",
+      "name": "Minnesota",
+      "abbr": "MN",
+      "fips": "27",
+      "region": "midwest",
+      "population": 5830405,
+      "gdp_musd": 515116.4,
+      "poverty": {
+        "below": 515019,
+        "moe": 20412,
+        "universe": 5711052,
+        "share": 9.0
+      }
+    },
+    {
+      "slug": "mississippi",
+      "name": "Mississippi",
+      "abbr": "MS",
+      "fips": "28",
+      "region": "south",
+      "population": 2954160,
+      "gdp_musd": 162824.8,
+      "poverty": {
+        "below": 516582,
+        "moe": 21287,
+        "universe": 2862370,
+        "share": 18.0
+      }
+    },
+    {
+      "slug": "missouri",
+      "name": "Missouri",
+      "abbr": "MO",
+      "fips": "29",
+      "region": "midwest",
+      "population": 6270541,
+      "gdp_musd": 475377.3,
+      "poverty": {
+        "below": 703944,
+        "moe": 21917,
+        "universe": 6100547,
+        "share": 11.5
+      }
+    },
+    {
+      "slug": "montana",
+      "name": "Montana",
+      "abbr": "MT",
+      "fips": "30",
+      "region": "west",
+      "population": 1144694,
+      "gdp_musd": 80945.2,
+      "poverty": {
+        "below": 123916,
+        "moe": 8626,
+        "universe": 1119906,
+        "share": 11.1
+      }
+    },
+    {
+      "slug": "nebraska",
+      "name": "Nebraska",
+      "abbr": "NE",
+      "fips": "31",
+      "region": "midwest",
+      "population": 2018006,
+      "gdp_musd": 206616.2,
+      "poverty": {
+        "below": 200232,
+        "moe": 13515,
+        "universe": 1968016,
+        "share": 10.2
+      }
+    },
+    {
+      "slug": "nevada",
+      "name": "Nevada",
+      "abbr": "NV",
+      "fips": "32",
+      "region": "west",
+      "population": 3282188,
+      "gdp_musd": 281376.7,
+      "poverty": {
+        "below": 370875,
+        "moe": 19910,
+        "universe": 3241544,
+        "share": 11.4
+      }
+    },
+    {
+      "slug": "new-hampshire",
+      "name": "New Hampshire",
+      "abbr": "NH",
+      "fips": "33",
+      "region": "northeast",
+      "population": 1415342,
+      "gdp_musd": 128278.6,
+      "poverty": {
+        "below": 84687,
+        "moe": 7755,
+        "universe": 1375021,
+        "share": 6.2
+      }
+    },
+    {
+      "slug": "new-jersey",
+      "name": "New Jersey",
+      "abbr": "NJ",
+      "fips": "34",
+      "region": "northeast",
+      "population": 9548215,
+      "gdp_musd": 887793.1,
+      "poverty": {
+        "below": 817486,
+        "moe": 37816,
+        "universe": 9382564,
+        "share": 8.7
+      }
+    },
+    {
+      "slug": "new-mexico",
+      "name": "New Mexico",
+      "abbr": "NM",
+      "fips": "35",
+      "region": "west",
+      "population": 2125498,
+      "gdp_musd": 152120.0,
+      "poverty": {
+        "below": 324248,
+        "moe": 16166,
+        "universe": 2086495,
+        "share": 15.5
+      }
+    },
+    {
+      "slug": "new-york",
+      "name": "New York",
+      "abbr": "NY",
+      "fips": "36",
+      "region": "northeast",
+      "population": 20002427,
+      "gdp_musd": 2465749.3,
+      "poverty": {
+        "below": 2686029,
+        "moe": 58223,
+        "universe": 19494314,
+        "share": 13.8
+      }
+    },
+    {
+      "slug": "north-carolina",
+      "name": "North Carolina",
+      "abbr": "NC",
+      "fips": "37",
+      "region": "south",
+      "population": 11197968,
+      "gdp_musd": 895919.2,
+      "poverty": {
+        "below": 1316451,
+        "moe": 38555,
+        "universe": 10908384,
+        "share": 12.1
+      }
+    },
+    {
+      "slug": "north-dakota",
+      "name": "North Dakota",
+      "abbr": "ND",
+      "fips": "38",
+      "region": "midwest",
+      "population": 799358,
+      "gdp_musd": 82349.8,
+      "poverty": {
+        "below": 69137,
+        "moe": 7056,
+        "universe": 769513,
+        "share": 9.0
+      }
+    },
+    {
+      "slug": "ohio",
+      "name": "Ohio",
+      "abbr": "OH",
+      "fips": "39",
+      "region": "midwest",
+      "population": 11900510,
+      "gdp_musd": 976871.7,
+      "poverty": {
+        "below": 1437642,
+        "moe": 34404,
+        "universe": 11598494,
+        "share": 12.4
+      }
+    },
+    {
+      "slug": "oklahoma",
+      "name": "Oklahoma",
+      "abbr": "OK",
+      "fips": "40",
+      "region": "south",
+      "population": 4123288,
+      "gdp_musd": 274292.2,
+      "poverty": {
+        "below": 577984,
+        "moe": 19191,
+        "universe": 4003087,
+        "share": 14.4
+      }
+    },
+    {
+      "slug": "oregon",
+      "name": "Oregon",
+      "abbr": "OR",
+      "fips": "41",
+      "region": "west",
+      "population": 4273586,
+      "gdp_musd": 343240.2,
+      "poverty": {
+        "below": 490120,
+        "moe": 24105,
+        "universe": 4188083,
+        "share": 11.7
+      }
+    },
+    {
+      "slug": "pennsylvania",
+      "name": "Pennsylvania",
+      "abbr": "PA",
+      "fips": "42",
+      "region": "northeast",
+      "population": 13059432,
+      "gdp_musd": 1056488.2,
+      "poverty": {
+        "below": 1419062,
+        "moe": 39726,
+        "universe": 12640589,
+        "share": 11.2
+      }
+    },
+    {
+      "slug": "rhode-island",
+      "name": "Rhode Island",
+      "abbr": "RI",
+      "fips": "44",
+      "region": "northeast",
+      "population": 1114521,
+      "gdp_musd": 88240.6,
+      "poverty": {
+        "below": 102428,
+        "moe": 11265,
+        "universe": 1074962,
+        "share": 9.5
+      }
+    },
+    {
+      "slug": "south-carolina",
+      "name": "South Carolina",
+      "abbr": "SC",
+      "fips": "45",
+      "region": "south",
+      "population": 5570274,
+      "gdp_musd": 378383.0,
+      "poverty": {
+        "below": 720328,
+        "moe": 26240,
+        "universe": 5430173,
+        "share": 13.3
+      }
+    },
+    {
+      "slug": "south-dakota",
+      "name": "South Dakota",
+      "abbr": "SD",
+      "fips": "46",
+      "region": "midwest",
+      "population": 935094,
+      "gdp_musd": 82001.9,
+      "poverty": {
+        "below": 106660,
+        "moe": 7996,
+        "universe": 904677,
+        "share": 11.8
+      }
+    },
+    {
+      "slug": "tennessee",
+      "name": "Tennessee",
+      "abbr": "TN",
+      "fips": "47",
+      "region": "south",
+      "population": 7315076,
+      "gdp_musd": 586210.1,
+      "poverty": {
+        "below": 901438,
+        "moe": 29561,
+        "universe": 7153813,
+        "share": 12.6
+      }
+    },
+    {
+      "slug": "texas",
+      "name": "Texas",
+      "abbr": "TX",
+      "fips": "48",
+      "region": "south",
+      "population": 31709821,
+      "gdp_musd": 2932343.6,
+      "poverty": {
+        "below": 3944498,
+        "moe": 84245,
+        "universe": 31076147,
+        "share": 12.7
+      }
+    },
+    {
+      "slug": "utah",
+      "name": "Utah",
+      "abbr": "UT",
+      "fips": "49",
+      "region": "west",
+      "population": 3538904,
+      "gdp_musd": 319178.6,
+      "poverty": {
+        "below": 300470,
+        "moe": 19307,
+        "universe": 3483411,
+        "share": 8.6
+      }
+    },
+    {
+      "slug": "vermont",
+      "name": "Vermont",
+      "abbr": "VT",
+      "fips": "50",
+      "region": "northeast",
+      "population": 644663,
+      "gdp_musd": 49657.5,
+      "poverty": {
+        "below": 57320,
+        "moe": 5264,
+        "universe": 621778,
+        "share": 9.2
+      }
+    },
+    {
+      "slug": "virginia",
+      "name": "Virginia",
+      "abbr": "VA",
+      "fips": "51",
+      "region": "south",
+      "population": 8880107,
+      "gdp_musd": 807925.0,
+      "poverty": {
+        "below": 812739,
+        "moe": 30902,
+        "universe": 8641926,
+        "share": 9.4
+      }
+    },
+    {
+      "slug": "washington",
+      "name": "Washington",
+      "abbr": "WA",
+      "fips": "53",
+      "region": "west",
+      "population": 8001020,
+      "gdp_musd": 892254.8,
+      "poverty": {
+        "below": 810880,
+        "moe": 29348,
+        "universe": 7869942,
+        "share": 10.3
+      }
+    },
+    {
+      "slug": "west-virginia",
+      "name": "West Virginia",
+      "abbr": "WV",
+      "fips": "54",
+      "region": "south",
+      "population": 1766147,
+      "gdp_musd": 111302.3,
+      "poverty": {
+        "below": 274202,
+        "moe": 14288,
+        "universe": 1712050,
+        "share": 16.0
+      }
+    },
+    {
+      "slug": "wisconsin",
+      "name": "Wisconsin",
+      "abbr": "WI",
+      "fips": "55",
+      "region": "midwest",
+      "population": 5972787,
+      "gdp_musd": 478781.2,
+      "poverty": {
+        "below": 598881,
+        "moe": 21321,
+        "universe": 5839005,
+        "share": 10.3
+      }
+    },
+    {
+      "slug": "wyoming",
+      "name": "Wyoming",
+      "abbr": "WY",
+      "fips": "56",
+      "region": "west",
+      "population": 588753,
+      "gdp_musd": 52491.2,
+      "poverty": {
+        "below": 57927,
+        "moe": 6961,
+        "universe": 574957,
+        "share": 10.1
+      }
+    }
+  ]
+}

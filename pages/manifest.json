@@ -4,13 +4,13 @@
   "pages": {
     "pn-hd": {
       "file": "pages/header.html",
-      "version": "20.2",
+      "version": "20.3",
       "title": "Header (every page)",
       "url": "https://perfectnations.org/"
     },
     "pn-ft": {
       "file": "pages/footer.html",
-      "version": "10.2",
+      "version": "10.3",
       "title": "Footer (every page)",
       "url": "https://perfectnations.org/"
     },
@@ -667,6 +667,12 @@
       "version": "6.5",
       "title": "Blueprints page, the whole page in one file (built by tools/build_blueprints.py; kept by the Blueprints Steward)",
       "url": "https://perfectnations.org/blueprints/"
+    },
+    "pn-us": {
+      "file": "pages/us-states.html",
+      "version": "1.0",
+      "title": "The 50 States (the section for the 50 states of the United States: the golden map, every state in one line, how a state blueprint works; built by tools/build_us_states.py from data/us-states.json; a state blueprint is a pn-us-<slug> key)",
+      "url": "https://perfectnations.org/50-states/"
     },
     "pn-sov": {
       "file": "pages/sovereign-assets.html",
