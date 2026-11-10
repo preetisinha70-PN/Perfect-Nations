@@ -8,10 +8,12 @@ The page is edited by hand, except two blocks that this script writes in place:
   GENERATED:DATA   a JSON block the page reads: the open blueprints (from pages/manifest.json),
                    so that "Write to us" from a published nation opens "Share a vision or story"
                    and "Ask for this blueprint" from any other nation opens "Ask for a blueprint";
-                   and the paintings and books a visitor can enquire about (from art/catalogue.json)
+                   the paintings and books a visitor can enquire about (from art/catalogue.json);
+                   and, since v6.2 (10 Nov 2026), every published Solution (the "design" entries of
+                   data/state-of-nations.json: number, title, nation), for "Discuss a Solution"
 
 Run from the repository root:  python3 tools/build_contact.py
-Run it whenever a blueprint is published or a painting or book is added. Then run
+Run it whenever a blueprint or a Solution is published, or a painting or book is added. Then run
 tools/check_page.py on the page, raise "pn-contact" in pages/manifest.json and open a pull
 request "For approval: Contact vX.Y, [what changed]". The Contact Steward (skill
 steward-contact) runs this.
@@ -53,12 +55,23 @@ def works():
     return paintings, books
 
 
+def solutions():
+    son = json.loads((ROOT / 'data' / 'state-of-nations.json').read_text(encoding='utf-8'))
+    out = []
+    for d in son.get('dispatches', []):
+        if d.get('kind') == 'design' and d.get('no') and d.get('title') and d.get('nation'):
+            out.append({'id': 'solution-%d' % int(d['no']), 'no': int(d['no']), 'title': d['title'], 'nation': d['nation']})
+    return sorted(out, key=lambda x: (x['nation'], -x['no']))
+
+
 def data_block():
     paintings, books = works()
     opened = open_blueprints()
-    payload = {'open': opened, 'paintings': paintings, 'books': books}
+    sols = solutions()
+    payload = {'open': opened, 'paintings': paintings, 'books': books, 'solutions': sols}
     text = json.dumps(payload, ensure_ascii=True, separators=(',', ':')).replace('</', '<\\/')
-    return '<script type="application/json" id="ct-data">%s</script>' % text, len(opened), len(paintings), len(books)
+    return ('<script type="application/json" id="ct-data">%s</script>' % text,
+            len(opened), len(paintings), len(books), len(sols))
 
 
 def rule_block():
@@ -75,7 +88,7 @@ def put(page, name, body):
 
 def main():
     page = PAGE.read_text(encoding='utf-8')
-    block, n_open, n_paint, n_book = data_block()
+    block, n_open, n_paint, n_book, n_sol = data_block()
     page = put(page, 'DATA', block)
     page = put(page, 'RULE', rule_block())
     first = re.search(r'\bid\s*=\s*["\'](pn-[a-z0-9-]+)["\']', page, re.I)
@@ -85,8 +98,8 @@ def main():
     if bad:
         sys.exit('non-ASCII characters in the page: %r' % bad[:5])
     PAGE.write_text(page, encoding='utf-8')
-    print('pages/contact.html %d characters: %d open blueprints, %d paintings, %d books'
-          % (len(page), n_open, n_paint, n_book))
+    print('pages/contact.html %d characters: %d open blueprints, %d paintings, %d books, %d Solutions'
+          % (len(page), n_open, n_paint, n_book, n_sol))
 
 
 if __name__ == '__main__':
