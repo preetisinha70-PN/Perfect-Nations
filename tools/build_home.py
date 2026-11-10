@@ -24,7 +24,8 @@ ROOT = Path(__file__).resolve().parent.parent
 PAGES = ROOT / 'pages'
 DATA = ROOT / 'data'
 SITE = 'https://perfectnations.org'
-VERSION = '11.9'  # Governance first: a slim band under the Capital Wire, with the Perfect Nations Cup (the Steward-General, 10 Nov 2026)
+VERSION = '12.0'  # Governance first moves after Solutions, before What we do; the Perfect Nations Cup is the whole logo on its seal, and the cup alone stays the symbol of Assets (the Steward-General, 10 Nov 2026)
+# v11.9: Governance first: a slim band under the Capital Wire, with the Perfect Nations Cup (the Steward-General, 10 Nov 2026)
 # v11.8: the nation summary pop-up of Blueprints of Nations keeps ivory type on Earthrise (the Steward-General, 10 Nov 2026)
 # v11.7: The Blueprint Lab opens the Contact page on The Blueprint Lab, ?about=lab (the Steward-General, 10 Nov 2026)
 # v11.6: light: Blueprints, Solutions and the close on ivory and paper, Earthrise for the accents (10 Nov 2026)
@@ -59,11 +60,12 @@ ORDER = [
     'nations-menu.html',          # the moving list of 195 nations (also on other pages)
     'home-hero.html',             # 01 Civilization Re-Defined / Designing the Prosperity of Nations
     'home-capital-wire.html',     # 01b the Capital Wire, the deal tape (kept by the Correspondent)
-    'home-governance.html',       # 01c Governance first, and the Perfect Nations Cup (new, v11.9)
-    'home-imagine.html',          # 01d Imagine a Perfect Nation: the story in three acts (new, v11.0)
+    'home-imagine.html',          # 01c Imagine a Perfect Nation: the story in three acts (new, v11.0)
     'home-blueprints.html',       # 02 Blueprints of Nations
     'rule',
     'home-solutions.html',        # 03 Solutions for Nations: the latest Solutions from State of Nations
+    'rule',
+    'home-governance.html',       # 03b Governance first, and the Perfect Nations Cup, the whole logo on its seal (v11.9; here from v12.0)
     'home-steps.html',            # 04 What we do: Assets. Capital. Solutions. (ivory; tiles open the About page)
     'home-pledge.html',           # 05 The close: What could your nation become? The ReDesign Studio
 ]
