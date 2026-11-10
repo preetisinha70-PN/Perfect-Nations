@@ -183,18 +183,47 @@ def hero(doc, n_inst, n_fam):
         '<div class="pca-five-h"><h2>%s</h2><a href="#pca-index">All %d instruments</a></div>'
         '<ul class="pca-five">%s</ul><p class="pca-note">%s</p>'
         '</div></section>'
-        % (defs, ent(h['eyebrow']), ent(h['title']), ent(one_line(h['lead'])[0]), art, ent(h.get('mark', '')),
+        % (defs, ent(h['eyebrow']), ent(h['title']), ent(one_line(fill(h['lead'], doc))[0]), art, ent(h.get('mark', '')),
            ent(five['label']), n_inst, ''.join(tiles), ent(five['note'])))
 
 
+def counts(doc):
+    """How many instruments, and how many are already in use (every line but Perfect Nations' own)."""
+    items = [it for f in doc['index']['families'] for it in f['items']]
+    return len(items), sum(1 for it in items if not it.get('own'))
+
+
+def fill(text, doc):
+    """Words in the data file may carry {n} (all instruments) and {n_used} (those already in use)."""
+    n, used = counts(doc)
+    return plain(text).replace('{n_used}', str(used)).replace('{n}', str(n))
+
+
+def nation_names():
+    """slug -> the nation's name as its own file writes it, for the link to its blueprint."""
+    out = {}
+    for p in DATA.glob('*.json'):
+        try:
+            d = json.loads(p.read_text(encoding='utf-8'))
+        except ValueError:
+            continue
+        if isinstance(d, dict) and d.get('nation'):
+            out[p.stem] = plain(d['nation'])
+    return out
+
+
 def index(doc, bps):
+    """The toolkit: one family at a time, chosen from chips (with All), and a search across every line.
+    Without script every family shows, so the page still reads in full."""
     ix = doc['index']
-    lead, rest = one_line(ix['lead'])
+    names = nation_names()
+    lead, rest = one_line(fill(ix['lead'], doc))
+    n_all, n_used = counts(doc)
     jump, fams = [], []
-    n_all = sum(len(f['items']) for f in ix['families'])
     for n, f in enumerate(ix['families'], 1):
         fid = 'pca-f-' + f['id']
-        jump.append('<li><a href="#%s" data-f="%s"><b>%02d</b>%s</a></li>' % (fid, fid, n, ent(f['short'])))
+        jump.append('<li><a href="#%s" data-f="%s"><b>%02d</b>%s<i>%d</i></a></li>'
+                    % (fid, fid, n, ent(f['short']), len(f['items'])))
         rows = []
         for it in f['items']:
             lm = ['<i>%s</i>' % ent(it['where'])]
@@ -206,7 +235,8 @@ def index(doc, bps):
             if it.get('nation'):
                 if it['nation'] not in bps:
                     sys.exit('%s links to the %s blueprint, which is not open' % (it['id'], it['nation']))
-                links.append('<a class="pca-bp" href="%s">%s blueprint</a>' % (ent(bps[it['nation']]), ent(it['where'])))
+                links.append('<a class="pca-bp" href="%s">%s blueprint</a>'
+                             % (ent(bps[it['nation']] + '#bp-register'), ent(names.get(it['nation'], it['where']))))
             rows.append(
                 '<li><details class="pca-row%s" id="pca-i-%s"><summary>'
                 '<span class="pca-r1"><span class="pca-nm">%s</span>%s</span>'
@@ -217,17 +247,19 @@ def index(doc, bps):
                    ent(it['headline']), ' &#183; '.join(lm), ent(it['how']), ''.join(links)))
         fams.append(
             '<section class="pca-fam" id="%s" aria-labelledby="%s-h"><div class="pca-fam__h"><span class="pca-fam__n">%02d</span>'
-            '<div><h3 id="%s-h">%s</h3><p>%s</p></div></div><ul class="pca-rows">%s</ul></section>'
-            % (fid, fid, n, fid, ent(f['name']), ent(f['line']), ''.join(rows)))
-    jump.append('<li class="pca-jump__all"><a href="#pca-index" data-f="all"><b>%d</b>All</a></li>' % n_all)
-    # Laptops read three columns, two families each, so a short family leaves no hole beside a long one.
-    cols = ''.join('<div class="pca-col">%s</div>' % ''.join(fams[i:i + 2]) for i in range(0, len(fams), 2))
+            '<div><h3 id="%s-h">%s</h3><p>%s</p></div><span class="pca-fam__c">%d</span></div><ul class="pca-rows">%s</ul></section>'
+            % (fid, fid, n, fid, ent(f['name']), ent(f['line']), len(f['items']), ''.join(rows)))
+    jump.append('<li class="pca-jump__all"><a href="#pca-index" data-f="all"><b>All</b>instruments<i>%d</i></a></li>' % n_all)
     return (
         '<section class="pca-band pca-idx" id="pca-index" aria-labelledby="pca-ih"><div class="pca-in">'
-        '<p class="pca-eb">%s</p><h2 class="pca-h2" id="pca-ih">%s</h2><p class="pca-lead">%s</p>%s'
-        '<ul class="pca-jump" aria-label="The six families">%s</ul>'
-        '<div class="pca-fams">%s</div></div></section>'
-        % (ent(ix['eyebrow']), ent(ix['title']), ent(lead), read_more([ent(rest)]), ''.join(jump), cols))
+        '<div class="pca-idx__h"><div><p class="pca-eb">%s</p><h2 class="pca-h2" id="pca-ih">%s</h2><p class="pca-lead">%s</p>%s</div>'
+        '<label class="pca-find"><span>Find an instrument</span><input type="search" placeholder="Search %d instruments" '
+        'autocomplete="off" spellcheck="false" aria-controls="pca-fams"></label></div>'
+        '<ul class="pca-jump" aria-label="Families of instruments">%s</ul>'
+        '<p class="pca-found" aria-live="polite" hidden></p>'
+        '<div class="pca-fams" id="pca-fams">%s</div></div></section>'
+        % (ent(ix['eyebrow']), ent(fill(ix['title'], doc)), ent(lead), read_more([ent(rest)]), n_all,
+           ''.join(jump), ''.join(fams)))
 
 
 def record(doc):
@@ -308,6 +340,12 @@ logo, in one gold, are the page's mark (02 Capital on the homepage); the cup and
 the hero, as on the homepage. The record takes the blueprints' name, Capital already committed, and each
 nation opens at that band of its blueprint. Debt-for-Nature Swap: Ecuador 2023, from its register. The
 close leads on to Solutions, step 03.
+v6.0: the toolkit grows from 31 to 80 instruments in 13 families, as a capital markets desk would
+group them: sovereign bonds, labelled bonds, capital markets, equity and funds, project finance, impact
+investment, pay for results, guarantees and insurance, development loans and the IMF, debt conversions,
+disaster risk finance, trade and commodity finance, grants and climate funds (the Steward-General,
+10 Nov 2026). Each deal comes from a blueprint's own record where one exists. Chips with counts choose
+one family at a time on every screen, All shows every line, and a search finds any instrument.
 v5.4: light reading sections, Earthrise accents (the Steward-General, 10 Nov 2026).
 =========================================================================== -->
 ''' % (VERSION, today)
@@ -321,7 +359,8 @@ v5.4: light reading sections, Earthrise accents (the Steward-General, 10 Nov 202
         '<div class="pn-rule" aria-hidden="true"></div>',
         close(doc),
         '</div>',
-        '<script>\n%s\n</script>' % js,
+        # wrapped as a comment so the WordPress formatter never turns && into &#038;&#038; (tools/check_page.py)
+        '<script><!--\n%s\n//--></script>' % js,
     ])
     page = head + body + '\n'
     first = re.search(r'\bid\s*=\s*["\'](pn-[a-z0-9-]+)["\']', page, re.I)
