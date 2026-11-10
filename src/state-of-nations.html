@@ -5,6 +5,7 @@ Pages plugin serves this file in place of the code pasted in the page's one Cust
 BUILT, never edited by hand: edit src/state-of-nations.html, then run
 python3 tools/build_state_of_nations.py. Kept by the State of Nations Steward (the page) and the
 Correspondent (the data: data/state-of-nations.json, data/solutions-by-nation.json).
+v8.3 (10 Nov 2026): light reading sections, Earthrise accents (the Steward-General, 10 Nov 2026).
 v8.1 (9 Nov 2026): the reader's close button is drawn as a fine cross (two hairlines) in place of the
   multiplication sign; it turns Earthrise with a gold cross and a quarter turn on hover (the Steward-General).
 v8.0 (9 Nov 2026): Perfect Nations Solutions, designed by Perfect Nations (the Steward-General, 9 Nov 2026).
@@ -147,7 +148,7 @@ html.pn-son-lock,html.pn-son-lock body{ overflow:hidden; }
 @keyframes sn-tick{ from{ transform:translateX(0); } to{ transform:translateX(-50%); } }
 @keyframes sn-pulse{ 0%,100%{ opacity:1; } 50%{ opacity:.25; } }
 
-/* 2 THE SOLUTIONS: ivory, the band read closely */
+/* 2 THE SOLUTIONS: ivory, the band read closely (its v8.3 colours: see LIGHT at the end) */
 #pn-son .sn-sol{ background:var(--iv); color:var(--ink); }
 #pn-son .sn-sol .sn-eb{ color:var(--tc); }
 #pn-son .sn-sol .sn-lead{ color:var(--im); }
@@ -209,7 +210,7 @@ html.pn-son-lock,html.pn-son-lock body{ overflow:hidden; }
 #pn-son .sn-cfoot a{ font-family:var(--hd); font-size:.7rem; font-weight:700; letter-spacing:.18em; text-transform:uppercase; color:var(--gd); text-decoration:none; }
 #pn-son .sn-swipe{ display:none; }
 
-/* 4 THE WIRE AND THE CLOSE: Earthrise Depth */
+/* 4 THE WIRE AND THE CLOSE: Earthrise Depth (paper since v8.3: see LIGHT at the end) */
 #pn-son .sn-wire{ background:var(--dp); }
 #pn-son .sn-ctrl{ display:flex; flex-wrap:wrap; align-items:center; gap:8px 14px; margin:0 0 10px; }
 #pn-son .sn-sel{ position:relative; }
@@ -426,6 +427,130 @@ html.pn-son-lock,html.pn-son-lock body{ overflow:hidden; }
 #pn-son-rd .rd-x:hover, #pn-son-rd .rd-x:focus-visible{ background:#0B3D45 !important; border-color:#0B3D45 !important; color:#E3C258 !important; transform:rotate(90deg); }
 #pn-son-rd .rd-x:focus-visible{ outline:2px solid #F0D68F !important; outline-offset:3px; }
 @media (prefers-reduced-motion:reduce){ #pn-son-rd .rd-x{ transition:none; } #pn-son-rd .rd-x:hover, #pn-son-rd .rd-x:focus-visible{ transform:none; } }
+
+/* ---------- v8.3 LIGHT (the Steward-General, 10 Nov 2026: "the site is a little dark and heavy to read ...
+   make as many sections as possible the lighter colour, with the Earthrise for the accents").
+   The hero stays Earthrise, short, with its ticker: its contour field is a WebGL canvas that needs a dark ground.
+   The page turns light at the hero's clean lower edge. The Solutions sit on ivory; the wire and the close on
+   paper, with the gold line between them. Ink type; Earthrise for the headlines, numbers, arrows, outline
+   buttons and active chips; terracotta eyebrows. The accents stay Earthrise cards with ivory type and gold
+   details: the lead Solution, the Deal Notes (key figure panels) and the tile that carries the cup. Gold only
+   for button fills, the cup and money. The Solution reader keeps its own look (rules above, untouched). */
+
+/* the Solutions: ivory */
+#pn-son .sn-sol{
+  --ink:#10262B; --im:#34464A; --idm:#5C696C; --ihair:rgba(16,38,43,.13); --gs:#0B3D45;
+  color:#10262B;
+  background:
+    radial-gradient(760px 460px at 96% 0%, rgba(227,194,88,.16) 0%, rgba(227,194,88,0) 70%),
+    radial-gradient(640px 420px at 0% 100%, rgba(11,61,69,.06) 0%, rgba(11,61,69,0) 70%),
+    linear-gradient(180deg,#F7F0DF 0%,#F4ECD8 60%,#F1E7D0 100%);
+}
+#pn-son .sn-sol .sn-eb{ color:#8A3A22; }
+#pn-son .sn-sol .sn-eb::before{ background:rgba(138,58,34,.55); }
+#pn-son .sn-sol h2.sn-h2{ color:#0B3D45 !important; }
+#pn-son .sn-sol .sn-rm > summary{ color:#0B3D45; }
+#pn-son .sn-sol .sn-rm > summary:hover::after{ background:rgba(11,61,69,.08); }
+#pn-son .sn-how b{ color:#0B3D45; }
+#pn-son .sn-sol .sn-chip span{ opacity:1; color:#5C696C; }
+#pn-son .sn-sol .sn-chip:hover{ border-color:rgba(11,61,69,.5); color:#0B3D45; }
+#pn-son .sn-sol .sn-chip.is-on{ background:#0B3D45; border-color:#0B3D45; color:#F5F1E8; }
+#pn-son .sn-sol .sn-chip.is-on span{ color:rgba(245,241,232,.8); }
+#pn-son .sn-sol .sn-more{ color:#0B3D45; border-color:rgba(11,61,69,.45); }
+#pn-son .sn-sol .sn-more:hover{ background:rgba(11,61,69,.07); }
+#pn-son .sn-sol .sn-search input{ background:#FFFDF8; border-color:rgba(16,38,43,.16); color:#10262B; }
+#pn-son .sn-sol .sn-search input::placeholder{ color:#5C696C; }
+#pn-son .sn-sol .sn-search svg{ color:#0B3D45; }
+#pn-son .sn-sol .sn-empty a,#pn-son .sn-cfoot a{ color:#0B3D45; }
+#pn-son .sn-cfoot a:hover{ color:#8A3A22; }
+/* the cards: white on ivory, Earthrise names and arrows */
+#pn-son .sn-c{
+  background:#FFFDF8; border-color:rgba(16,38,43,.12);
+  box-shadow:0 1px 0 rgba(255,255,255,.9) inset, 0 10px 26px rgba(16,38,43,.08);
+}
+#pn-son .sn-c:hover{ border-color:rgba(11,61,69,.4); box-shadow:0 18px 40px rgba(16,38,43,.14); }
+#pn-son .sn-c.is-hit{ border-color:#0B3D45; }
+#pn-son .sn-c__k b{ color:#0B3D45; }
+#pn-son .sn-c__k span{ color:#8A3A22; }
+#pn-son .sn-c h3{ color:#0B3D45 !important; }
+#pn-son .sn-std li{ background:rgba(11,61,69,.08); color:#0B3D45; }
+#pn-son .sn-c__go{ color:#0B3D45; }
+#pn-son .sn-c:hover .sn-c__go{ color:#8A3A22; }
+#pn-son .sn-c__f b{ color:#8C6A12; }
+/* the lead Solution: an Earthrise card, the accent of the band */
+#pn-son .sn-c.sn-c--lead{
+  --ink:#F5F1E8; --im:rgba(245,241,232,.86); --idm:rgba(245,241,232,.74); --ihair:rgba(245,241,232,.16); --gs:#F0D68F;
+  color:#F5F1E8; border-color:rgba(227,194,88,.38);
+  background:
+    radial-gradient(70% 90% at 0% 0%, rgba(227,194,88,.16) 0%, rgba(227,194,88,0) 62%),
+    linear-gradient(165deg,#10505F 0%,#0B3D45 48%,#09313A 100%);
+  box-shadow:0 18px 44px rgba(11,61,69,.28);
+}
+#pn-son .sn-c.sn-c--lead:hover{ border-color:rgba(227,194,88,.6); box-shadow:0 24px 52px rgba(11,61,69,.34); }
+#pn-son .sn-c.sn-c--lead .sn-c__k b{ color:#F5F1E8; }
+#pn-son .sn-c.sn-c--lead .sn-c__k span{ color:#E3C258; }
+#pn-son .sn-c.sn-c--lead h3{ color:#F5F1E8 !important; }
+#pn-son .sn-c.sn-c--lead .sn-c__x{ background:rgba(245,241,232,.06); box-shadow:inset 0 0 0 1px rgba(245,241,232,.1); }
+#pn-son .sn-c.sn-c--lead .sn-c__x dt{ color:#E3C258; }
+#pn-son .sn-c.sn-c--lead .sn-std li{ background:rgba(245,241,232,.12); color:#F5F1E8; }
+#pn-son .sn-c.sn-c--lead .sn-c__go{ color:#E3C258; }
+#pn-son .sn-c.sn-c--lead:hover .sn-c__go{ color:#F0D68F; }
+#pn-son .sn-c.sn-c--lead .sn-c__f b{ color:#E3C258; }
+@media (max-width:640px){
+  #pn-son .sn-c.sn-c--lead .sn-c__x{ background:none; box-shadow:none; }
+}
+
+/* the wire and the close: paper */
+#pn-son .sn-wire{
+  --iv:#10262B; --tm:#34464A; --td:#5C696C; --hair:rgba(16,38,43,.13); --g:#0B3D45; --gs:#0B3D45;
+  color:#10262B;
+  background:
+    radial-gradient(760px 460px at 94% 0%, rgba(227,194,88,.14) 0%, rgba(227,194,88,0) 70%),
+    radial-gradient(640px 420px at 0% 100%, rgba(138,58,34,.06) 0%, rgba(138,58,34,0) 70%),
+    linear-gradient(180deg,#FBF8F1 0%,#F6EFE0 100%);
+}
+#pn-son .sn-wire .sn-eb{ color:#8A3A22; }
+#pn-son .sn-wire .sn-eb::before{ background:rgba(138,58,34,.55); }
+#pn-son .sn-wire h2.sn-h2{ color:#0B3D45 !important; }
+#pn-son .sn-wire .sn-rm > summary:hover::after{ background:rgba(11,61,69,.08); }
+#pn-son .sn-wire .sn-search input,#pn-son .sn-wire .sn-sel select{ background:#FFFDF8; border-color:rgba(16,38,43,.16); color:#10262B; }
+#pn-son .sn-wire .sn-search input::placeholder{ color:#5C696C; }
+#pn-son .sn-wire .sn-search svg{ color:#0B3D45; }
+#pn-son .sn-wire .sn-chip span{ opacity:1; color:#5C696C; }
+#pn-son .sn-wire .sn-chip.is-on{ background:#0B3D45; border-color:#0B3D45; color:#F5F1E8; }
+#pn-son .sn-wire .sn-chip.is-on span{ color:rgba(245,241,232,.8); }
+#pn-son .sn-wire .sn-more{ color:#0B3D45; border-color:rgba(11,61,69,.45); }
+#pn-son .sn-wire .sn-more:hover{ background:rgba(11,61,69,.07); }
+#pn-son .sn-w time b{ color:#0B3D45; }
+#pn-son .sn-w__m .sn-w__src{ color:#8A3A22; }
+#pn-son .sn-w h3{ color:#0B3D45 !important; }
+#pn-son .sn-w h3 a:hover{ color:#8A3A22; }
+#pn-son .sn-dl{ scrollbar-color:rgba(11,61,69,.35) transparent; }
+/* the Deal Notes: Earthrise key figure panels, ivory type, gold numbers and money */
+#pn-son .sn-wire .sn-d{
+  --iv:#F5F1E8; --tm:rgba(245,241,232,.86); --td:rgba(245,241,232,.74); --hair:rgba(245,241,232,.16); --g:#E3C258; --gs:#F0D68F;
+  color:#F5F1E8; border-color:rgba(227,194,88,.28);
+  background:
+    radial-gradient(90% 80% at 0% 0%, rgba(227,194,88,.12) 0%, rgba(227,194,88,0) 60%),
+    linear-gradient(165deg,#10505F 0%,#0B3D45 52%,#09313A 100%);
+  box-shadow:0 3px 8px rgba(11,61,69,.16);
+}
+#pn-son .sn-wire .sn-d:hover{
+  border-color:rgba(227,194,88,.6);
+  background:
+    radial-gradient(90% 80% at 0% 0%, rgba(227,194,88,.18) 0%, rgba(227,194,88,0) 60%),
+    linear-gradient(165deg,#10505F 0%,#0B3D45 52%,#09313A 100%);
+}
+/* the close: gold buttons with ink type, Earthrise outlines; the cup on an Earthrise tile with a gold rim */
+#pn-son .sn-wire .sn-btn{ background:#E3C258; border-color:#E3C258; color:#1A140C; box-shadow:0 10px 24px rgba(140,106,18,.22); }
+#pn-son .sn-wire .sn-btn:hover{ background:#F0D68F; border-color:#F0D68F; }
+#pn-son .sn-wire .sn-btn--line{ background:transparent; color:#0B3D45; border-color:rgba(11,61,69,.45); box-shadow:none; }
+#pn-son .sn-wire .sn-btn--line:hover{ background:rgba(11,61,69,.07); }
+#pn-son .sn-close .sn-cup{
+  box-sizing:content-box; width:56px; padding:7px 12px; border-radius:999px; color:#E3C258;
+  background:linear-gradient(165deg,#10505F 0%,#0B3D45 55%,#09313A 100%);
+  box-shadow:inset 0 0 0 1px rgba(227,194,88,.45), 0 8px 18px rgba(11,61,69,.2);
+}
 </style>
 <!--pn:rule-->
 <svg width="0" height="0" style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true" focusable="false">
