@@ -1,51 +1,19 @@
-# Temporary (run 3): pulls the official figures for the 50 States page into data/us/raw/ on this branch only.
-# Census Bureau (ACS 1-year, Population Estimates) and BEA (GDP by state). Removed before the page goes for approval.
+# Temporary (check 1): is perfectnations.org/50-states/ live and served from GitHub? Reads the page only.
 name: us-states-data
 on:
   push:
     branches: [us-states-data-2026-11-10]
     paths: ['.github/workflows/us-states-data.yml']
-permissions:
-  contents: write
 jobs:
-  pull:
+  check:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 5
     steps:
-      - uses: actions/checkout@v4
-      - name: Download
+      - name: Check
         run: |
-          set +e
-          mkdir -p data/us/raw
-          cd data/us/raw
-          get(){ for i in 1 2 3; do curl -sSL -m 120 -A "Mozilla/5.0 PerfectNations-data" -o "$1" -w "$1 %{http_code} %{size_download}\n" "$2" && [ -s "$1" ] && head -c 1 "$1" | grep -q . && return 0; sleep 5; done; return 1; }
-          rm -f acs1-*.json errors.txt
-          for Y in 2025 2024; do
-            get acsdt1y$Y-b17001-all.dat "https://www2.census.gov/programs-surveys/acs/summary_file/$Y/table-based-SF/data/1YRData/acsdt1y$Y-b17001.dat"
-            if [ -s acsdt1y$Y-b17001-all.dat ]; then
-              head -1 acsdt1y$Y-b17001-all.dat | cut -c1-400 > acsdt1y$Y-b17001-header.txt
-              awk -F'|' 'NR==1 || $1 ~ /^0100000US$/ || $1 ~ /^0400000US/ {print $1"|"$2"|"$3"|"$4"|"$5}' acsdt1y$Y-b17001-all.dat > acsdt1y$Y-b17001-states.dat
-              rm -f acsdt1y$Y-b17001-all.dat
-            fi
+          for u in "https://perfectnations.org/50-states/" "https://perfectnations.org/50-states/?pnv=$(date +%s)" "https://perfectnations.org/"; do
+            code=$(curl -sSL -m 60 -A "Mozilla/5.0 (PerfectNations check)" -o page.html -w '%{http_code}' "$u")
+            echo "== $u -> HTTP $code, $(wc -c < page.html) bytes"
+            echo "pn-us root: $(grep -c 'id="pn-us"' page.html)  page v1.0 (hero): $(grep -c 'pnus-hero' page.html)  map states: $(grep -o 'class="pnus-st"' page.html | wc -l)  fallback: $(grep -c 'blueprints of the American states are opening' page.html)"
+            echo "menu link: $(grep -c 'perfectnations.org/50-states/' page.html)  title: $(grep -o '<title>[^<]*' page.html | head -1)"
           done
-          for Y in 2025; do
-            for D in ACS${Y}1YR_Table_Shells.txt ACS${Y}1YR_Table_Shells.xlsx; do get shells-$D "https://www2.census.gov/programs-surveys/acs/summary_file/$Y/table-based-SF/documentation/$D"; done
-            curl -sSL -m 60 "https://www2.census.gov/programs-surveys/acs/summary_file/$Y/table-based-SF/documentation/" | grep -o 'href="[^"]*"' | head -40 > docs-listing-$Y.txt
-          done
-          [ -s shells-ACS20251YR_Table_Shells.txt ] && grep -i 'B17001' shells-ACS20251YR_Table_Shells.txt | head -8 > shells-B17001.txt
-          rm -f shells-ACS20251YR_Table_Shells.txt
-          get NST-EST2025-ALLDATA.csv "https://www2.census.gov/programs-surveys/popest/datasets/2020-2025/state/totals/NST-EST2025-ALLDATA.csv"
-          get NST-EST2024-ALLDATA.csv "https://www2.census.gov/programs-surveys/popest/datasets/2020-2024/state/totals/NST-EST2024-ALLDATA.csv"
-          get SAGDP.zip "https://apps.bea.gov/regional/zip/SAGDP.zip"
-          if [ -s SAGDP.zip ]; then unzip -l SAGDP.zip > SAGDP-contents.txt; unzip -o -j SAGDP.zip 'SAGDP1__ALL_AREAS_*' 'SAGDP1_definition*' 2>/dev/null; rm -f SAGDP.zip; fi
-          for f in *; do echo "$f $(wc -c < "$f")"; done > manifest.txt
-          date -u +%Y-%m-%dT%H:%MZ > pulled-at.txt
-          # keep only files that are not error pages
-          for f in var-*.json; do head -c 1 "$f" | grep -q '\[' || { echo "bad $f: $(head -c 200 "$f")" >> errors.txt; }; done
-      - name: Commit
-        run: |
-          git config user.name "Perfect Nations data"
-          git config user.email "actions@users.noreply.github.com"
-          git add data/us/raw
-          git commit -m "Data: official figures for the 50 States page (Census Bureau, BEA), raw downloads" || echo nothing
-          git push
