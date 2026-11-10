@@ -8,6 +8,9 @@ of the paste. Edit src/perfect-capita.html, never the built file. This script:
     dropped) where the source says <!--@RULE-STYLE-->; the source places the line itself,
     <div class="pn-rule">, between sections (since v9.1, 9 Nov 2026, in place of the painted
     botanical seams, the Steward-General's decision);
+  - puts the seven stars of the logo and its one gold (pnk-s0..pnk-s6 and pnk-gold, from the logo kit
+    pages/home-logo-kit.html, shared with the homepage and the blueprints) where the source says
+    <!--@STARS-KIT-->, inside the page's own symbol sprite (since v10.0, 10 Nov 2026);
   - refuses non-ASCII characters, a missing root id and images from any host but the Media Library;
   - runs the validation suite (tools/check_page.py) on the result.
 
@@ -35,6 +38,14 @@ def main():
     if '<!--@RULE-STYLE-->' not in html:
         sys.exit('the source has no <!--@RULE-STYLE--> marker')
     html = html.replace('<!--@RULE-STYLE-->', rule, 1)
+    kit = (ROOT / 'pages' / 'home-logo-kit.html').read_text(encoding='utf-8')
+    gold = re.search(r'<linearGradient id="pnk-gold".*?</linearGradient>', kit, re.S)
+    stars = re.findall(r'<path id="pnk-s[0-6]"[^>]*/>', kit)
+    if not gold or len(stars) != 7:
+        sys.exit('the seven stars or pnk-gold were not found in pages/home-logo-kit.html')
+    if '<!--@STARS-KIT-->' not in html:
+        sys.exit('the source has no <!--@STARS-KIT--> marker')
+    html = html.replace('<!--@STARS-KIT-->', '    ' + gold.group(0) + ''.join(stars), 1)
     n = html.count('<div class="pn-rule"')
     if 'id="%s"' % ROOT_ID not in html:
         sys.exit('the root id %s is missing' % ROOT_ID)

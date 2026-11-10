@@ -1,5 +1,5 @@
 <!-- ===========================================================================
-PERFECT NATIONS - PERFECT CAPITA PAGE - v9.2 EARTHRISE - 2026-11-09
+PERFECT NATIONS - PERFECT CAPITA PAGE - v10.0 THE SEVEN STARS - 2026-11-10
 /perfect-capita/ (page 9937). One Elementor Custom HTML widget, Full Width, padding 0, Hide Title.
 Served live from GitHub (pages/perfect-capita.html) by the Perfect Nations Live Pages plugin; the
 root id stays pn-pcap so the plugin finds the pasted widget. Nothing needs pasting.
@@ -13,6 +13,17 @@ Words (Steward-General, 1 November 2026): the seven basic living standards; Perf
 yearly cost per person of lifting everyone above the Living Line in all seven; the price of Perfect
 [Nation], Perfect Capita times population; Coverage and the Gap. The Living Line names the threshold
 only. "Guarantee" is a verb only, in the mission line.
+v10.0: The homepage and the blueprints of 9 and 10 November, carried here (the Steward-General, 10 Nov 2026):
+  - The seven standards are the seven stars of the logo, in one gold, Food the crown, as on the homepage
+    (What we do: 03 Solutions, the seven stars) and the blueprints. The colour wheel is retired; the stars
+    come from the logo kit (pages/home-logo-kit.html), placed by the build. Choosing a star lights its halo
+    and never dims the others.
+  - The hero carries the step chip of What we do: 03 Solutions.
+  - The close carries the homepage mission line (innovative financing for development before super
+    intelligence) and the homepage buttons: Find your nation, See the Solutions.
+  - Every link to another page opens in a new tab, as the header and footer now do sitewide.
+  - Food links to FAO's own SOFI 2026 release; the Rwanda card stands on a primary source (Rwanda
+    Biomedical Centre, 83.5%, 2025) in place of a news report.
 v9.2: Fewer words (the Steward-General, 9 Nov 2026): one headline and one line per section, the
   detail one click away under Read more (a details disclosure, class pq-rm). The hero, the seven
   standards and the five nations each say their line in one sentence. The strict measure and the
@@ -32,8 +43,8 @@ v9.0 (6 November 2026, the Steward-General: Earthrise first, fewer words, a more
   - Speed: no flag images from flagcdn (each nation card carries its standard icon); the ribbon uses
     the 768 px copies (about 50 KB each, not 120 KB).
   - Phones: two-column grids, a 290 px wheel, tighter type and spacing, nothing scrolls sideways.
-EDITORIAL: the Rwanda card cites The New Times (a secondary source quoting RSSB); replace it with an
-RSSB or Ministry of Health release when one is found.
+EDITORIAL: RSSB reported 88.3% Mutuelle coverage for 2024/25 at its September 2025 media briefing, found
+only in news reports; when RSSB publishes it, the Rwanda card can move to that newer primary figure.
 =========================================================================== -->
 <style>
 .pn-rule{
@@ -89,6 +100,10 @@ RSSB or Ministry of Health release when one is found.
 #pn-pcap .pq-eb{ display:flex; align-items:center; gap:10px; margin:0 0 10px; font-family:var(--hd); font-size:.72rem; font-weight:700; letter-spacing:.3em; text-transform:uppercase; color:var(--tc); }
 #pn-pcap .pq-eb::before{ content:""; width:24px; height:1px; background:currentColor; }
 #pn-pcap .pq-er .pq-eb, #pn-pcap .pq-lg .pq-eb, #pn-pcap .pq-dp .pq-eb{ color:var(--gs); }
+#pn-pcap .pq-eb--step::before{ display:none; }
+#pn-pcap .pq-eb--step b{ font-weight:700; color:var(--gold); }
+#pn-pcap .pq-ch{ display:inline-grid; place-items:center; flex:none; width:30px; height:30px; border-radius:50%; border:1px solid rgba(227,194,88,.7); color:var(--gold); font-family:var(--hd); font-size:.7rem; font-weight:700; letter-spacing:0; text-decoration:none; transition:background .25s ease, color .25s ease; }
+#pn-pcap .pq-ch:hover{ background:var(--gold); color:#14262A; }
 #pn-pcap h1.pq-h1, #pn-pcap h2.pq-h2, #pn-pcap h3{ margin:0; font-family:var(--hd); font-weight:600; letter-spacing:-.025em; text-transform:none; color:inherit !important; text-shadow:none !important; text-wrap:balance; }
 #pn-pcap h1.pq-h1{ max-width:13ch; font-size:clamp(2.5rem,6.2vw,6rem); line-height:.92; }
 #pn-pcap h2.pq-h2{ max-width:20ch; font-size:clamp(2.1rem,4.4vw,4rem); line-height:.94; }
@@ -186,25 +201,22 @@ RSSB or Ministry of Health release when one is found.
 #pn-pcap .pq-ex span{ font-size:.8rem; line-height:1.3; color:var(--dim); }
 #pn-pcap .pq-four li:first-child .pq-ex span, #pn-pcap .pq-four li:nth-child(2) .pq-ex span{ color:var(--td); }
 
-/* 4. the seven standards: the wheel and its card (Earthrise) */
-#pn-pcap .pq-stage{ display:grid; gap:clamp(18px,3.2vw,52px); grid-template-columns:minmax(0,1fr); align-items:center; margin-top:clamp(14px,2.6vh,26px); }
-@media (min-width:980px){ #pn-pcap .pq-stage{ grid-template-columns:minmax(0,.86fr) minmax(0,1.14fr); } }
-#pn-pcap .pq-wheel{ display:block; width:100%; max-width:470px; height:auto; margin:0 auto; overflow:visible; }
-#pn-pcap .pq-ring{ fill:none; stroke:rgba(227,194,88,.38); stroke-width:1.2; }
-#pn-pcap .pq-ticks line{ stroke:rgba(227,194,88,.7); stroke-width:2; }
-#pn-pcap .pq-seg{ cursor:pointer; outline:none; transform-box:view-box; transform-origin:300px 300px; transition:transform .45s cubic-bezier(.22,1,.36,1), opacity .35s ease; }
-#pn-pcap .pq-seg path:first-child{ stroke:#0A3038; stroke-width:2; }
-#pn-pcap .pq-ic{ fill:none; stroke:#FFF4D6; stroke-width:1.5; stroke-linecap:round; stroke-linejoin:round; pointer-events:none; }
-#pn-pcap .pq-lab{ font-family:var(--hd); font-size:15px; font-weight:700; letter-spacing:.12em; fill:rgba(255,244,214,.94); pointer-events:none; }
-#pn-pcap .pq-wheel.has-on .pq-seg{ opacity:.62; }
-#pn-pcap .pq-wheel.has-on .pq-seg.is-on{ opacity:1; transform:translate(var(--dx),var(--dy)); }
-#pn-pcap .pq-seg.is-on path:first-child{ stroke:var(--gold); stroke-width:2.5; }
-#pn-pcap .pq-seg:focus-visible path:first-child{ stroke:#FFF4D6; stroke-width:3; }
-#pn-pcap .pq-core{ fill:var(--dp); }
-#pn-pcap .pq-core-line{ fill:none; stroke:rgba(227,194,88,.55); stroke-width:1; stroke-dasharray:2 5; }
-#pn-pcap .pq-c1{ font-family:var(--hd); font-size:15px; font-weight:700; letter-spacing:.26em; fill:var(--gold); }
-#pn-pcap .pq-c2{ font-family:var(--hd); font-size:92px; font-weight:600; fill:var(--iv); }
-#pn-pcap .pq-c3{ font-family:var(--hd); font-size:12.5px; font-weight:700; letter-spacing:.22em; fill:rgba(244,236,216,.78); }
+/* 4. the seven standards: the seven stars of the logo and their card (Earthrise) */
+#pn-pcap .pq-stage{ display:grid; gap:clamp(16px,3vw,48px); grid-template-columns:minmax(0,1fr); align-items:center; margin-top:clamp(14px,2.6vh,26px); }
+@media (min-width:980px){ #pn-pcap .pq-stage{ grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr); } }
+#pn-pcap svg.pq-stars{ display:block; width:100%; max-width:600px; height:auto; margin:0 auto; overflow:visible; }
+#pn-pcap .pq-stars__rays line{ stroke:rgba(227,194,88,.3); stroke-width:1.2; stroke-dasharray:2 6; }
+#pn-pcap .pq-star{ cursor:pointer; outline:none; transform-box:fill-box; transform-origin:center; }
+#pn-pcap .pq-star__s{ fill:url(#pnk-gold); transition:filter .35s ease; }
+#pn-pcap .pq-star__halo{ fill:var(--c); opacity:0; transition:opacity .35s ease; }
+#pn-pcap .pq-star__l{ font-family:var(--hd); font-size:17px; font-weight:700; letter-spacing:.14em; fill:rgba(244,236,216,.82); pointer-events:none; transition:fill .3s ease; }
+#pn-pcap .pq-star--crown .pq-star__l{ font-size:21px; fill:var(--gs); }
+#pn-pcap .pq-star:hover .pq-star__halo{ opacity:.22; }
+#pn-pcap .pq-star.is-on .pq-star__s{ filter:drop-shadow(0 0 12px rgba(240,214,143,.75)); }
+#pn-pcap .pq-star.is-on .pq-star__halo{ opacity:.42; }
+#pn-pcap .pq-star.is-on .pq-star__l{ fill:var(--gs); }
+#pn-pcap .pq-star:focus-visible .pq-star__halo{ opacity:.5; stroke:var(--gs); stroke-width:2; }
+#pn-pcap .pq-stars__cap{ margin:6px 0 0; text-align:center; font-size:.8rem; color:var(--td); }
 #pn-pcap .pq-card{ position:relative; padding:clamp(18px,2.4vw,30px) clamp(18px,2.4vw,30px) clamp(16px,2vw,24px) clamp(22px,2.8vw,36px); border-radius:22px; background:var(--iv); color:var(--ink); box-shadow:0 30px 70px rgba(0,0,0,.34); overflow:hidden; }
 #pn-pcap .pq-card::before{ content:""; position:absolute; left:0; top:0; bottom:0; width:6px; background:var(--c,#8A5A12); transition:background .4s ease; }
 #pn-pcap .pq-num{ margin:0; font-family:var(--hd); font-size:.68rem; font-weight:700; letter-spacing:.24em; color:var(--tc); }
@@ -290,15 +302,14 @@ RSSB or Ministry of Health release when one is found.
 #pn-pcap .pc-close .pq-eb::after{ content:""; width:24px; height:1px; background:currentColor; }
 #pn-pcap .pc-close .pq-h2{ margin:0 auto; max-width:24ch; }
 #pn-pcap .pc-close .pq-btns{ justify-content:center; }
+#pn-pcap .pc-close__l{ margin-left:auto; margin-right:auto; max-width:52ch; }
 
 @media (prefers-reduced-motion:no-preference){
   #pn-pcap .pq-chart.is-in .pq-bar{ transform-box:fill-box; transform-origin:50% 100%; animation:pqRise 1.2s cubic-bezier(.22,1,.36,1) backwards; animation-delay:var(--d); }
-  #pn-pcap .pq-wheel.is-in .pq-seg{ animation:pqIn .8s cubic-bezier(.22,1,.36,1) backwards; animation-delay:var(--d); }
-  #pn-pcap .pq-core-line{ animation:pqSpin 60s linear infinite; transform-origin:300px 300px; }
+  #pn-pcap .pq-stars.is-in .pq-star{ animation:pqStar 1s cubic-bezier(.22,1,.36,1) backwards; animation-delay:calc(.12s + var(--d)); }
 }
 @keyframes pqRise{ from{ transform:scaleY(0); } to{ transform:scaleY(1); } }
-@keyframes pqIn{ from{ opacity:0; transform:scale(.86); } to{ opacity:1; transform:none; } }
-@keyframes pqSpin{ to{ transform:rotate(360deg); } }
+@keyframes pqStar{ from{ opacity:0; transform:translateY(40px) scale(.6); } to{ opacity:1; transform:none; } }
 
 /* phones: their own compact layout; two columns, nothing scrolls sideways */
 @media (max-width:640px){
@@ -333,7 +344,10 @@ RSSB or Ministry of Health release when one is found.
   #pn-pcap .pq-ex b{ font-size:1.6rem; }
   #pn-pcap .pq-ex span{ font-size:.72rem; }
   #pn-pcap .pq-stage{ gap:14px; }
-  #pn-pcap .pq-wheel{ max-width:290px; }
+  #pn-pcap svg.pq-stars{ max-width:none; margin:0 -6px; width:calc(100% + 12px); }
+  #pn-pcap .pq-star__l{ font-size:20px; letter-spacing:.05em; }
+  #pn-pcap .pq-star--crown .pq-star__l{ font-size:24px; }
+  #pn-pcap .pq-ch{ width:26px; height:26px; font-size:.62rem; }
   #pn-pcap .pq-card{ padding:15px 14px 12px 20px; border-radius:16px; }
   #pn-pcap .pq-name{ font-size:1.9rem; }
   #pn-pcap .pq-promise{ font-size:.94rem; }
@@ -373,6 +387,7 @@ RSSB or Ministry of Health release when one is found.
     <symbol id="pq-i-education" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 5c3-1 7-1 10 1 3-2 7-2 10-1v14c-3-1-7-1-10 1-3-2-7-2-10-1z"/><path d="M12 6v14"/></g></symbol>
     <symbol id="pq-i-health" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-8-5-8-11a4.5 4.5 0 0 1 8-3 4.5 4.5 0 0 1 8 3c0 6-8 11-8 11z"/><path d="M7 12h3l1-2 2 4 1-2h3"/></g></symbol>
     <symbol id="pq-i-livelihoods" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21v-9"/><path d="M12 12C12 8 9 6 5 6c0 4 3 6 7 6z"/><path d="M12 10c0-3 2-5 6-5 0 3-2 5-6 5z"/><path d="M7 21h10"/></g></symbol>
+    <linearGradient id="pnk-gold" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="512" y2="0"><stop offset="0" stop-color="#E3C258"/><stop offset="1" stop-color="#E3C258"/></linearGradient><path id="pnk-s0" d="M111.2 109.2C111.1 109 111.2 108.4 111.4 107.8C111.6 106.9 112 105.4 113 100.4C113.2 99.7 112.7 99.2 107.2 94.1C106.5 93.4 105.9 92.7 106 92.6C106 92.4 107 92.2 108.2 92.1C110 92 112.5 91.7 115.1 91.2C115.8 91.2 116 90.9 116.4 90C116.7 89.3 117.5 87.7 118 86.5C118.7 85.2 119.2 84 119.2 83.8C119.2 83.3 119.9 82.4 120.3 82.4C120.5 82.4 120.8 82.7 120.9 83.1C121.1 83.5 121.4 84.2 121.7 84.8C121.9 85.4 122.2 85.9 122.2 86C122.2 86.5 124.5 91 124.9 91.2C125.2 91.3 125.8 91.4 126.2 91.4C126.7 91.4 127.7 91.5 128.3 91.7C129 91.8 130.6 92 131.9 92.1C133.7 92.2 134.3 92.4 134.3 92.7C134.4 92.9 132.9 94.4 130.9 96.2C127 99.8 127.1 99.7 127.8 102.3C128.4 105 129.2 108.4 129.2 108.9C129.2 109.6 128.4 109.5 127.2 108.7C126.7 108.4 125.8 107.8 125.1 107.4C124.5 107.1 123.2 106.3 122.3 105.8C121.4 105.3 120.4 104.9 120.1 104.9C119.8 104.9 118.8 105.3 118 105.9C117.2 106.4 115.9 107.2 115.2 107.6C114.4 108 113.3 108.6 112.8 109C111.6 109.8 111.4 109.8 111.2 109.2Z"/><path id="pnk-s1" d="M148.5 78.5C148.4 78.3 148.5 77.6 148.7 77C148.9 76.2 149.3 74.7 150.4 69.6C150.5 69 150 68.5 144.5 63.3C143.8 62.6 143.2 62 143.3 61.8C143.3 61.6 144.3 61.5 145.5 61.4C147.3 61.2 149.8 60.9 152.4 60.5C153.1 60.4 153.3 60.2 153.7 59.2C154 58.5 154.8 57 155.4 55.7C156 54.4 156.5 53.2 156.5 53.1C156.5 52.6 157.2 51.6 157.6 51.6C157.8 51.6 158.1 52 158.2 52.3C158.4 52.7 158.7 53.5 159 54C159.2 54.6 159.5 55.1 159.5 55.2C159.5 55.7 161.8 60.2 162.2 60.4C162.5 60.5 163.1 60.6 163.6 60.6C164 60.6 165 60.8 165.6 60.9C166.3 61 167.9 61.2 169.2 61.3C171 61.5 171.6 61.6 171.7 61.9C171.7 62.1 170.2 63.6 168.2 65.5C164.3 69 164.4 68.9 165.1 71.6C165.7 74.2 166.5 77.6 166.5 78.1C166.5 78.8 165.8 78.8 164.6 78C164 77.6 163.1 77 162.4 76.7C161.8 76.3 160.5 75.6 159.6 75.1C158.7 74.6 157.7 74.2 157.4 74.2C157.1 74.2 156.1 74.6 155.3 75.1C154.5 75.7 153.2 76.4 152.5 76.8C151.7 77.2 150.6 77.8 150.1 78.2C148.9 79 148.8 79 148.5 78.5Z"/><path id="pnk-s2" d="M192.5 58.4C192.4 58.2 192.5 57.6 192.7 57C192.9 56.1 193.2 54.6 194.3 49.6C194.5 48.9 194 48.4 188.5 43.3C187.8 42.6 187.2 41.9 187.3 41.8C187.3 41.6 188.3 41.4 189.5 41.3C191.3 41.1 193.8 40.9 196.4 40.5C197.1 40.4 197.3 40.1 197.7 39.1C198 38.5 198.8 36.9 199.3 35.6C200 34.4 200.4 33.2 200.4 33C200.4 32.5 201.2 31.6 201.6 31.6C201.8 31.6 202.1 31.9 202.2 32.3C202.4 32.7 202.7 33.4 203 34C203.2 34.6 203.4 35.1 203.4 35.2C203.4 35.7 205.8 40.2 206.2 40.4C206.5 40.5 207.1 40.6 207.6 40.6C208 40.6 209 40.7 209.6 40.9C210.3 41 211.9 41.2 213.2 41.3C215 41.4 215.6 41.6 215.6 41.9C215.7 42.1 214.2 43.6 212.2 45.4C208.3 49 208.4 48.9 209.1 51.5C209.7 54.2 210.4 57.6 210.4 58.1C210.4 58.8 209.7 58.8 208.6 57.9C208 57.6 207.1 57 206.4 56.6C205.8 56.3 204.5 55.5 203.6 55C202.7 54.5 201.7 54.1 201.4 54.1C201.1 54.1 200.1 54.5 199.3 55.1C198.5 55.6 197.2 56.4 196.4 56.8C195.7 57.2 194.6 57.8 194.1 58.2C192.9 59 192.7 59 192.5 58.4Z"/><path id="pnk-s3" d="M239.4 69C239.3 68.8 239.3 68.6 239.4 68.5C239.4 68.4 239.9 66.2 240.5 63.7C241 61.2 241.6 58.1 241.9 56.9C242.8 52.6 243 51.6 242.9 51.2C242.8 51 242.3 50.4 241.6 49.9C240.2 48.7 232.2 41.4 230.2 39.4C229.3 38.6 229.6 38.3 231.5 38.1C232.3 38.1 233.8 38 234.8 37.9C235.7 37.8 237.7 37.5 239.2 37.4C243.5 36.9 247.4 36.4 247.9 36.1C248.1 36 248.3 35.8 248.3 35.6C248.3 35.5 248.6 34.8 248.9 34.2C249.2 33.5 250.1 31.5 250.9 29.6C251.7 27.8 252.5 26.2 252.6 26C252.7 25.8 252.9 25.4 253.1 25C253.2 24.7 253.5 24.1 253.6 23.7C254.9 20.9 255.4 19.8 255.7 19.8C255.8 19.8 256.1 20.3 256.4 20.9C256.6 21.6 257.1 22.6 257.4 23.2C257.8 23.8 258 24.5 258 24.6C258 24.7 258.5 25.7 259 26.9C259.5 28 260.1 29.3 260.3 29.6C260.4 30.1 260.9 30.9 261.2 31.7C261.5 32.4 262 33.6 262.3 34.3C262.6 35 263.1 35.8 263.3 36C263.9 36.5 268.7 37.2 277.4 37.9C280.5 38.1 281.5 38.4 281.5 38.8C281.5 39 280.8 39.8 279.6 40.8C278.6 41.7 274.3 45.6 271.1 48.5C269.7 49.8 268.5 51 268.4 51.2C268.2 51.6 268.3 52.4 269.6 58.1C269.9 59.7 270.3 61.7 270.5 62.5C270.9 64.3 271.7 68.2 271.8 68.7C272 69.4 271.1 69.2 269.5 68.2C267.5 67 266.2 66.2 265.3 65.7C264.9 65.5 264.2 65.1 263.7 64.8C263.2 64.6 261.7 63.7 260.4 62.9C259 62.1 257.5 61.2 256.9 60.9C256.4 60.5 255.8 60.2 255.7 60.2C255.5 60.2 254.7 60.6 252.4 62C251.9 62.3 251 62.8 250.3 63.1C249.7 63.5 248.4 64.2 247.6 64.7C245.2 66.2 244.9 66.4 243.8 67C243.2 67.3 242.2 68 241.5 68.4C240.2 69.2 239.7 69.4 239.4 69Z"/><path id="pnk-s4" d="M300.8 58.4C300.7 58.2 300.8 57.6 301 57C301.2 56.1 301.6 54.6 302.6 49.6C302.8 48.9 302.3 48.4 296.8 43.3C296.1 42.6 295.5 41.9 295.6 41.8C295.6 41.6 296.6 41.4 297.8 41.3C299.6 41.1 302.1 40.9 304.7 40.5C305.4 40.4 305.6 40.1 306 39.1C306.3 38.5 307.1 36.9 307.6 35.6C308.3 34.4 308.8 33.2 308.8 33C308.8 32.5 309.5 31.6 309.9 31.6C310.1 31.6 310.4 31.9 310.5 32.3C310.7 32.7 311 33.4 311.3 34C311.5 34.6 311.8 35.1 311.8 35.2C311.8 35.7 314.1 40.2 314.5 40.4C314.8 40.5 315.4 40.6 315.9 40.6C316.3 40.6 317.3 40.7 317.9 40.9C318.6 41 320.2 41.2 321.5 41.3C323.3 41.4 323.9 41.6 323.9 41.9C324 42.1 322.5 43.6 320.5 45.4C316.6 49 316.7 48.9 317.4 51.5C318 54.2 318.8 57.6 318.8 58.1C318.8 58.8 318 58.8 316.9 57.9C316.3 57.6 315.4 57 314.7 56.6C314.1 56.3 312.8 55.5 311.9 55C311 54.5 310 54.1 309.7 54.1C309.4 54.1 308.4 54.5 307.6 55.1C306.8 55.6 305.5 56.4 304.8 56.8C304 57.2 302.9 57.8 302.4 58.2C301.2 59 301 59 300.8 58.4Z"/><path id="pnk-s5" d="M344.8 78.5C344.7 78.3 344.8 77.6 344.9 77C345.2 76.2 345.5 74.7 346.6 69.6C346.8 69 346.3 68.5 340.8 63.3C340.1 62.6 339.5 62 339.6 61.8C339.6 61.6 340.6 61.5 341.8 61.4C343.6 61.2 346.1 60.9 348.7 60.5C349.4 60.4 349.6 60.2 350 59.2C350.3 58.5 351 57 351.6 55.7C352.2 54.4 352.7 53.2 352.7 53.1C352.7 52.6 353.5 51.6 353.9 51.6C354.1 51.6 354.4 52 354.5 52.3C354.7 52.7 355 53.5 355.3 54C355.5 54.6 355.7 55.1 355.7 55.2C355.7 55.7 358.1 60.2 358.5 60.4C358.8 60.5 359.4 60.6 359.8 60.6C360.3 60.6 361.3 60.8 361.9 60.9C362.6 61 364.2 61.2 365.5 61.3C367.3 61.5 367.9 61.6 367.9 61.9C368 62.1 366.5 63.6 364.5 65.5C360.6 69 360.7 68.9 361.4 71.6C362 74.2 362.7 77.6 362.7 78.1C362.7 78.8 362 78.8 360.8 78C360.3 77.6 359.3 77 358.7 76.7C358.1 76.3 356.8 75.6 355.9 75.1C355 74.6 354 74.2 353.7 74.2C353.4 74.2 352.4 74.6 351.6 75.1C350.8 75.7 349.5 76.4 348.7 76.8C348 77.2 346.9 77.8 346.4 78.2C345.2 79 345 79 344.8 78.5Z"/><path id="pnk-s6" d="M382.1 109.2C382 109 382.1 108.4 382.3 107.8C382.5 106.9 382.9 105.4 383.9 100.4C384.1 99.7 383.6 99.2 378.1 94.1C377.4 93.4 376.8 92.7 376.9 92.6C376.9 92.4 377.9 92.2 379.1 92.1C380.9 92 383.4 91.7 386 91.2C386.7 91.2 386.9 90.9 387.3 90C387.6 89.3 388.4 87.7 388.9 86.5C389.6 85.2 390.1 84 390.1 83.8C390.1 83.3 390.8 82.4 391.2 82.4C391.4 82.4 391.7 82.7 391.8 83.1C392 83.5 392.3 84.2 392.6 84.8C392.8 85.4 393.1 85.9 393.1 86C393.1 86.5 395.4 91 395.8 91.2C396.1 91.3 396.7 91.4 397.1 91.4C397.6 91.4 398.6 91.5 399.2 91.7C399.9 91.8 401.5 92 402.8 92.1C404.6 92.2 405.2 92.4 405.2 92.7C405.3 92.9 403.8 94.4 401.8 96.2C397.9 99.8 398 99.7 398.7 102.3C399.3 105 400.1 108.4 400.1 108.9C400.1 109.6 399.3 109.5 398.1 108.7C397.6 108.4 396.6 107.8 396 107.4C395.4 107.1 394.1 106.3 393.2 105.8C392.3 105.3 391.3 104.9 391 104.9C390.7 104.9 389.7 105.3 388.9 105.9C388.1 106.4 386.8 107.2 386.1 107.6C385.3 108 384.2 108.6 383.7 109C382.5 109.8 382.3 109.8 382.1 109.2Z"/>
   </defs>
 </svg>
 <div id="pn-pcap">
@@ -381,10 +396,10 @@ RSSB or Ministry of Health release when one is found.
     <canvas class="pq-gl" aria-hidden="true"></canvas>
     <div class="pq-in pq-hero__grid">
       <div>
-        <p class="pq-eb">Perfect Capita &middot; The new GDP</p>
+        <p class="pq-eb pq-eb--step"><a class="pq-ch" href="https://perfectnations.org/#pn-steps" target="_blank" rel="noopener noreferrer" aria-label="Step 03 of 03, Solutions. What we do, on the homepage">03</a><span><b>Solutions</b> &middot; Perfect Capita, the new GDP</span></p>
         <h1 class="pq-h1" id="pq-h1">A prosperous nation <em>reaches every person.</em></h1>
         <p class="pq-lead">GDP counts what a nation produces; Perfect Capita puts a price on making that prosperity reach every citizen.</p>
-        <div class="pq-btns"><a class="pq-btn" href="#pq-seven">The seven standards</a><a class="pq-btn pq-btn--line" href="#pq-first">Barbados, priced</a></div>
+        <div class="pq-btns"><a class="pq-btn" href="#pq-seven">The seven stars</a><a class="pq-btn pq-btn--line" href="#pq-first">Barbados, priced</a></div>
         <p class="pq-ll">The gold line is the Living Line; each thread is one standard, shining above it.</p>
       </div>
       <div class="pq-def">
@@ -424,13 +439,13 @@ RSSB or Ministry of Health release when one is found.
     <div class="pq-in">
       <div class="pq-head">
         <div>
-          <p class="pq-eb">The seven basic living standards</p>
-          <h2 class="pq-h2" id="pq-seven-h">Seven conditions of a <em>dignified life.</em></h2>
+          <p class="pq-eb">The seven stars</p>
+          <h2 class="pq-h2" id="pq-seven-h">Seven standards. <em>Food the crown.</em></h2>
         </div>
-        <p class="pq-lead">Choose a standard: each is held to the hardest test published worldwide.</p>
+        <p class="pq-lead">Each star of the logo is one basic standard of living, held to the hardest test published worldwide.</p>
       </div>
       <div class="pq-stage">
-        <div><svg class="pq-wheel" viewBox="0 0 600 600" aria-labelledby="pq-w-t" role="group" focusable="false"><title id="pq-w-t">The seven basic living standards</title><circle cx="300" cy="300" r="290" class="pq-ring"/><g class="pq-ticks"><line x1="300.0" y1="16.0" x2="300.0" y2="4.0"/><line x1="522.0" y1="122.9" x2="531.4" y2="115.4"/><line x1="576.9" y1="363.2" x2="588.6" y2="365.9"/><line x1="423.2" y1="555.9" x2="428.4" y2="566.7"/><line x1="176.8" y1="555.9" x2="171.6" y2="566.7"/><line x1="23.1" y1="363.2" x2="11.4" y2="365.9"/><line x1="78.0" y1="122.9" x2="68.6" y2="115.4"/></g><g class="pq-seg" data-i="0" role="button" tabindex="0" aria-label="Food" style="--dx:6.1px;--dy:-12.6px;--d:0.00s"><path d="M303.8 28.0A272 272 0 0 1 510.3 127.5L414.4 206.1A148 148 0 0 0 302.1 152.0Z" fill="#8A5A12"/><g transform="translate(392.0 93.0) scale(1.6) translate(-12 -12)" class="pq-ic"><path d="M3 11h18a9 9 0 0 1-18 0z"/><path d="M8 3c-1 1.5 1 2.5 0 4M12 3c-1 1.5 1 2.5 0 4M16 3c-1 1.5 1 2.5 0 4"/></g><text x="392.0" y="129.0" text-anchor="middle" class="pq-lab">FOOD</text></g><g class="pq-seg" data-i="1" role="button" tabindex="0" aria-label="Water" style="--dx:13.6px;--dy:-3.1px;--d:0.09s"><path d="M515.0 133.4A272 272 0 0 1 566.0 356.8L444.7 330.9A148 148 0 0 0 417.0 209.3Z" fill="#0E5A80"/><g transform="translate(506.7 236.8) scale(1.6) translate(-12 -12)" class="pq-ic"><path d="M12 3s-6 7-6 11a6 6 0 0 0 12 0c0-4-6-11-6-11z"/><path d="M9.5 15a2.5 2.5 0 0 0 2.5 2.5"/></g><text x="506.7" y="272.8" text-anchor="middle" class="pq-lab">WATER</text></g><g class="pq-seg" data-i="2" role="button" tabindex="0" aria-label="Shelter" style="--dx:10.9px;--dy:8.7px;--d:0.18s"><path d="M564.3 364.2A272 272 0 0 1 421.4 543.4L366.1 432.4A148 148 0 0 0 443.8 334.9Z" fill="#9A3E22"/><g transform="translate(465.7 416.2) scale(1.6) translate(-12 -12)" class="pq-ic"><path d="M3 11l9-7 9 7"/><path d="M5 9.5V20h14V9.5"/><path d="M10 20v-6h4v6"/></g><text x="465.7" y="452.2" text-anchor="middle" class="pq-lab">SHELTER</text></g><g class="pq-seg" data-i="3" role="button" tabindex="0" aria-label="Energy" style="--dx:0.0px;--dy:14.0px;--d:0.27s"><path d="M414.6 546.7A272 272 0 0 1 185.4 546.7L237.7 434.2A148 148 0 0 0 362.3 434.2Z" fill="#C08A12"/><g transform="translate(300.0 496.0) scale(1.6) translate(-12 -12)" class="pq-ic"><path d="M13 2L4 14h7l-1 8 9-12h-7z"/></g><text x="300.0" y="532.0" text-anchor="middle" class="pq-lab">ENERGY</text></g><g class="pq-seg" data-i="4" role="button" tabindex="0" aria-label="Education" style="--dx:-10.9px;--dy:8.7px;--d:0.36s"><path d="M178.6 543.4A272 272 0 0 1 35.7 364.2L156.2 334.9A148 148 0 0 0 233.9 432.4Z" fill="#1F4C96"/><g transform="translate(134.3 416.2) scale(1.6) translate(-12 -12)" class="pq-ic"><path d="M2 5c3-1 7-1 10 1 3-2 7-2 10-1v14c-3-1-7-1-10 1-3-2-7-2-10-1z"/><path d="M12 6v14"/></g><text x="134.3" y="452.2" text-anchor="middle" class="pq-lab">EDUCATION</text></g><g class="pq-seg" data-i="5" role="button" tabindex="0" aria-label="Health" style="--dx:-13.6px;--dy:-3.1px;--d:0.45s"><path d="M34.0 356.8A272 272 0 0 1 85.0 133.4L183.0 209.3A148 148 0 0 0 155.3 330.9Z" fill="#167A5F"/><g transform="translate(93.3 236.8) scale(1.6) translate(-12 -12)" class="pq-ic"><path d="M12 21s-8-5-8-11a4.5 4.5 0 0 1 8-3 4.5 4.5 0 0 1 8 3c0 6-8 11-8 11z"/><path d="M7 12h3l1-2 2 4 1-2h3"/></g><text x="93.3" y="272.8" text-anchor="middle" class="pq-lab">HEALTH</text></g><g class="pq-seg" data-i="6" role="button" tabindex="0" aria-label="Livelihood" style="--dx:-6.1px;--dy:-12.6px;--d:0.54s"><path d="M89.7 127.5A272 272 0 0 1 296.2 28.0L297.9 152.0A148 148 0 0 0 185.6 206.1Z" fill="#2F5A2A"/><g transform="translate(208.0 93.0) scale(1.6) translate(-12 -12)" class="pq-ic"><path d="M12 21v-9"/><path d="M12 12C12 8 9 6 5 6c0 4 3 6 7 6z"/><path d="M12 10c0-3 2-5 6-5 0 3-2 5-6 5z"/><path d="M7 21h10"/></g><text x="208.0" y="129.0" text-anchor="middle" class="pq-lab">LIVELIHOOD</text></g><circle cx="300" cy="300" r="136" class="pq-core"/><circle cx="300" cy="300" r="122" class="pq-core-line"/><text x="300" y="262" text-anchor="middle" class="pq-c1">BASIC LIVING</text><text x="300" y="338" text-anchor="middle" class="pq-c2">7</text><text x="300" y="368" text-anchor="middle" class="pq-c3">STANDARDS</text></svg></div>
+        <div><svg class="pq-stars" viewBox="0 6 640 236" role="group" aria-labelledby="pq-stars-t" focusable="false"><title id="pq-stars-t">The seven stars of the logo, one for each basic standard of living; Food is the crown, the larger centre star. Choose a star to read its standard.</title><g class="pq-stars__rays"><line x1="320.0" y1="232.4" x2="69.5" y2="194.9"/><line x1="320.0" y1="232.4" x2="138.3" y2="137.9"/><line x1="320.0" y1="232.4" x2="219.7" y2="100.9"/><line x1="320.0" y1="232.4" x2="319.6" y2="119.3"/><line x1="320.0" y1="232.4" x2="420.2" y2="100.9"/><line x1="320.0" y1="232.4" x2="501.6" y2="137.9"/><line x1="320.0" y1="232.4" x2="570.6" y2="194.9"/></g><g class="pq-star" data-i="1" role="button" tabindex="0" aria-pressed="false" aria-label="Water" style="--c:#0E5A80;--d:0.36s"><circle class="pq-star__halo" cx="69.5" cy="171.2" r="34.8"/><use class="pq-star__s" href="#pnk-s0" transform="translate(43.0 30.0) scale(1.85) translate(-105.9 -19.8)"/><text x="69.5" y="214.5" text-anchor="middle" class="pq-star__l">WATER</text></g><g class="pq-star" data-i="2" role="button" tabindex="0" aria-pressed="false" aria-label="Shelter" style="--c:#9A3E22;--d:0.24s"><circle class="pq-star__halo" cx="138.3" cy="114.2" r="34.8"/><use class="pq-star__s" href="#pnk-s1" transform="translate(43.0 30.0) scale(1.85) translate(-105.9 -19.8)"/><text x="138.3" y="157.5" text-anchor="middle" class="pq-star__l">SHELTER</text></g><g class="pq-star" data-i="3" role="button" tabindex="0" aria-pressed="false" aria-label="Energy" style="--c:#C08A12;--d:0.12s"><circle class="pq-star__halo" cx="219.7" cy="77.2" r="34.8"/><use class="pq-star__s" href="#pnk-s2" transform="translate(43.0 30.0) scale(1.85) translate(-105.9 -19.8)"/><text x="219.7" y="120.5" text-anchor="middle" class="pq-star__l">ENERGY</text></g><g class="pq-star pq-star--crown is-on" data-i="0" role="button" tabindex="0" aria-pressed="true" aria-label="Food, the crown" style="--c:#8A5A12;--d:0.00s"><circle class="pq-star__halo" cx="319.6" cy="75.9" r="63.7"/><use class="pq-star__s" href="#pnk-s3" transform="translate(43.0 30.0) scale(1.85) translate(-105.9 -19.8)"/><text x="319.6" y="144.2" text-anchor="middle" class="pq-star__l">FOOD</text></g><g class="pq-star" data-i="4" role="button" tabindex="0" aria-pressed="false" aria-label="Education" style="--c:#1F4C96;--d:0.12s"><circle class="pq-star__halo" cx="420.2" cy="77.2" r="34.8"/><use class="pq-star__s" href="#pnk-s4" transform="translate(43.0 30.0) scale(1.85) translate(-105.9 -19.8)"/><text x="420.2" y="120.5" text-anchor="middle" class="pq-star__l">EDUCATION</text></g><g class="pq-star" data-i="5" role="button" tabindex="0" aria-pressed="false" aria-label="Health" style="--c:#167A5F;--d:0.24s"><circle class="pq-star__halo" cx="501.6" cy="114.2" r="34.8"/><use class="pq-star__s" href="#pnk-s5" transform="translate(43.0 30.0) scale(1.85) translate(-105.9 -19.8)"/><text x="501.6" y="157.5" text-anchor="middle" class="pq-star__l">HEALTH</text></g><g class="pq-star" data-i="6" role="button" tabindex="0" aria-pressed="false" aria-label="Livelihood" style="--c:#2F5A2A;--d:0.36s"><circle class="pq-star__halo" cx="570.6" cy="171.2" r="34.8"/><use class="pq-star__s" href="#pnk-s6" transform="translate(43.0 30.0) scale(1.85) translate(-105.9 -19.8)"/><text x="570.6" y="214.5" text-anchor="middle" class="pq-star__l">LIVELIHOOD</text></g></svg><p class="pq-stars__cap">Choose a star.</p></div>
         <div class="pq-card" id="pqCard" style="--c:#8A5A12" aria-live="polite">
           <div id="pqBody">
             <p class="pq-num" id="pqNum">STANDARD 01 OF 07</p>
@@ -447,7 +462,7 @@ RSSB or Ministry of Health release when one is found.
               </dl>
             </details>
           </div>
-          <div class="pq-dots" id="pqDots" aria-label="Choose a standard"></div>
+          <div class="pq-dots" id="pqDots" aria-label="Choose a star"></div>
         </div>
       </div>
     </div>
@@ -485,7 +500,7 @@ RSSB or Ministry of Health release when one is found.
         <p class="pq-lead">The latest international data, measured strictly, each with its source and year.</p>
       </div>
       <ul class="pq-gap">
-        <li style="--c:#8A5A12;--i:0"><div class="pq-gap__top"><svg class="pq-gap__ic" aria-hidden="true" focusable="false"><use href="#pq-i-food"></use></svg>Food</div><b><span data-pc="world.0.value">2.1</span><small data-pc="world.0.unit">bn</small></b><p data-pc="world.0.text">people moderately or severely food insecure, one in four on Earth.</p><a data-pc="world.0.source" data-pc-href="world.0.url" href="https://doi.org/10.4060/cd8306en" target="_blank" rel="noopener noreferrer">FAO and UN partners, SOFI 2026 (2025 data)</a></li>
+        <li style="--c:#8A5A12;--i:0"><div class="pq-gap__top"><svg class="pq-gap__ic" aria-hidden="true" focusable="false"><use href="#pq-i-food"></use></svg>Food</div><b><span data-pc="world.0.value">2.1</span><small data-pc="world.0.unit">bn</small></b><p data-pc="world.0.text">people moderately or severely food insecure, one in four on Earth.</p><a data-pc="world.0.source" data-pc-href="world.0.url" href="https://www.fao.org/newsroom/detail/un-report--global-hunger-levels-ease-for-third-consecutive-year-as-regional-disparities-persist/en" target="_blank" rel="noopener noreferrer">FAO and UN partners, SOFI 2026 (2025 data)</a></li>
         <li style="--c:#0E5A80;--i:1"><div class="pq-gap__top"><svg class="pq-gap__ic" aria-hidden="true" focusable="false"><use href="#pq-i-water"></use></svg>Water</div><b><span data-pc="world.1.value">2.1</span><small data-pc="world.1.unit">bn</small></b><p data-pc="world.1.text">people without safely managed drinking water at home.</p><a data-pc="world.1.source" data-pc-href="world.1.url" href="https://www.who.int/news/item/26-08-2025-1-in-4-people-globally-still-lack-access-to-safe-drinking-water---who--unicef" target="_blank" rel="noopener noreferrer">WHO and UNICEF, 2025 (2024 data)</a></li>
         <li style="--c:#9A3E22;--i:2"><div class="pq-gap__top"><svg class="pq-gap__ic" aria-hidden="true" focusable="false"><use href="#pq-i-shelter"></use></svg>Shelter</div><b><span data-pc="world.2.value">3.4</span><small data-pc="world.2.unit">bn</small></b><p data-pc="world.2.text">people without safely managed sanitation, the first test of a decent home.</p><a data-pc="world.2.source" data-pc-href="world.2.url" href="https://www.who.int/news/item/26-08-2025-1-in-4-people-globally-still-lack-access-to-safe-drinking-water---who--unicef" target="_blank" rel="noopener noreferrer">WHO and UNICEF, 2025 (2024 data)</a></li>
         <li style="--c:#B07A10;--i:3"><div class="pq-gap__top"><svg class="pq-gap__ic" aria-hidden="true" focusable="false"><use href="#pq-i-energy"></use></svg>Energy</div><b><span data-pc="world.3.value">2.0</span><small data-pc="world.3.unit">bn</small></b><p data-pc="world.3.text">people still cooking with polluting fuels; 655 million have no electricity.</p><a data-pc="world.3.source" data-pc-href="world.3.url" href="https://trackingsdg7.esmap.org/" target="_blank" rel="noopener noreferrer">Tracking SDG 7, 2026 (2024 data)</a></li>
@@ -513,7 +528,7 @@ RSSB or Ministry of Health release when one is found.
         <li style="--c:#B07A10"><div class="pc-top"><svg class="pc-ic" aria-hidden="true" focusable="false"><use href="#pq-i-energy"></use></svg><h3>Vietnam<small>Energy</small></h3></div><b class="pc-fig" data-pc="nations.1.figure">99%+</b><span class="pc-what" data-pc="nations.1.what">with electricity, from 14 per cent in 1993</span><a class="pc-src" data-pc="nations.1.source" data-pc-href="nations.1.url" href="https://www.worldbank.org/en/news/speech/2018/11/27/sustainable-energy-future-in-vietnam" target="_blank" rel="noopener noreferrer">World Bank, 2018</a></li>
         <li style="--c:#9A3E22"><div class="pc-top"><svg class="pc-ic" aria-hidden="true" focusable="false"><use href="#pq-i-shelter"></use></svg><h3>Singapore<small>Shelter</small></h3></div><b class="pc-fig" data-pc="nations.2.figure">91.2%</b><span class="pc-what" data-pc="nations.2.what">of resident households own their home</span><a class="pc-src" data-pc="nations.2.source" data-pc-href="nations.2.url" href="https://www.singstat.gov.sg/find-data/explore-data-themes/households/resident-households/latest-news-data" target="_blank" rel="noopener noreferrer">Singapore Department of Statistics, 2025</a></li>
         <li style="--c:#8A5A12"><div class="pc-top"><svg class="pc-ic" aria-hidden="true" focusable="false"><use href="#pq-i-food"></use></svg><h3>Brazil<small>Food</small></h3></div><b class="pc-fig" data-pc="nations.3.figure">&lt;2.5%</b><span class="pc-what" data-pc="nations.3.what">undernourished: off the FAO Hunger Map</span><a class="pc-src" data-pc="nations.3.source" data-pc-href="nations.3.url" href="https://www.fao.org/interactive/hunger-map/en/" target="_blank" rel="noopener noreferrer">FAO, SOFI 2025</a></li>
-        <li style="--c:#167A5F"><div class="pc-top"><svg class="pc-ic" aria-hidden="true" focusable="false"><use href="#pq-i-health"></use></svg><h3>Rwanda<small>Health</small></h3></div><b class="pc-fig" data-pc="nations.4.figure">88%+</b><span class="pc-what" data-pc="nations.4.what">covered by community health insurance</span><a class="pc-src" data-pc="nations.4.source" data-pc-href="nations.4.url" href="https://www.newtimes.co.rw/article/33593/news/featured/a-lifeline-at-25-how-mutuelle-saved-lives-and-family-assets/amp" target="_blank" rel="noopener noreferrer">The New Times, 2025</a><a class="pc-go" href="https://perfectnations.org/blueprints/rwanda/">Read the blueprint</a></li>
+        <li style="--c:#167A5F"><div class="pc-top"><svg class="pc-ic" aria-hidden="true" focusable="false"><use href="#pq-i-health"></use></svg><h3>Rwanda<small>Health</small></h3></div><b class="pc-fig" data-pc="nations.4.figure">83.5%</b><span class="pc-what" data-pc="nations.4.what">covered by community health insurance (Mutuelle de Sant&#233;)</span><a class="pc-src" data-pc="nations.4.source" data-pc-href="nations.4.url" href="https://rbc.gov.rw/wp/?p=9169" target="_blank" rel="noopener noreferrer">Rwanda Biomedical Centre, 2025</a><a class="pc-go" href="https://perfectnations.org/blueprints/rwanda/" target="_blank" rel="noopener noreferrer">Read the blueprint</a></li>
       </ul>
     </div>
   </section>
@@ -526,7 +541,7 @@ RSSB or Ministry of Health release when one is found.
         <p class="pq-eb">The first nation priced</p>
         <h2 class="pq-h2" id="pq-first-h">Barbados: <em data-pc="first.perfect_capita">$6,204</em> a person a year.</h2>
         <p class="pq-lead" data-pc="first.lead" data-pc-part="1">The price of Perfect Barbados is $1.75 billion a year, about a fifth of its GDP.</p>
-        <div class="pq-btns"><a class="pq-btn" href="https://perfectnations.org/blueprints/barbados/#bp-pc">Open the Barbados blueprint</a><a class="pq-btn pq-btn--line" href="https://perfectnations.org/contact/?about=studio">Price your nation</a></div>
+        <div class="pq-btns"><a class="pq-btn" href="https://perfectnations.org/blueprints/barbados/#bp-pc" target="_blank" rel="noopener noreferrer">Open the Barbados blueprint</a><a class="pq-btn pq-btn--line" href="https://perfectnations.org/contact/?about=studio" target="_blank" rel="noopener noreferrer">Price your nation</a></div>
       </div>
       <div>
         <ul class="pq-stat">
@@ -546,7 +561,8 @@ RSSB or Ministry of Health release when one is found.
     <div class="pq-in">
       <p class="pq-eb">Nation by nation</p>
       <h2 class="pq-h2" id="pc-close-h">Every nation can guarantee seven basic living standards <em>to every citizen.</em></h2>
-      <div class="pq-btns"><a class="pq-btn" href="https://perfectnations.org/blueprints/">Explore the blueprints</a><a class="pq-btn pq-btn--line" href="https://perfectnations.org/capital-architecture/">Capital Architecture</a></div>
+      <p class="pq-lead pc-close__l">Perfect Nations unites innovative financing for development (FfD) and super intelligence (SI) to deliver seven basic standards of living for every citizen.</p>
+      <div class="pq-btns"><a class="pq-btn" href="https://perfectnations.org/blueprints/" target="_blank" rel="noopener noreferrer">Find your nation</a><a class="pq-btn pq-btn--line" href="https://perfectnations.org/state-of-nations/" target="_blank" rel="noopener noreferrer">See the Solutions</a></div>
     </div>
   </section>
 </div>
@@ -574,15 +590,16 @@ RSSB or Ministry of Health release when one is found.
     {n:'Health',c:'#167A5F',p:'Every person can reach essential care without financial hardship.',l:'Essential care, without financial ruin.',k:'Health services and financial protection.',m:'The WHO index of essential health service coverage, out of 100 (SDG 3.8.1).',s:'WHO and World Bank',x:'Hospital beds or health spending per person, which count inputs rather than care.'},
     {n:'Livelihood',c:'#2F5A2A',p:'Every person has the means for a decent life, through dignified work or income security.',l:'Income above a living line.',k:'A living-income benchmark and the social protection gap.',m:'The share of people above the stricter of the national poverty line and the World Bank line for the nation\u2019s income group: $3.00, $4.20 or $8.30 a day (2021 prices).',s:'World Bank Poverty and Inequality Platform',x:'The $3.00 extreme poverty line, applied to every nation whatever its income.'}
   ];
-  var wheel=root.querySelector('.pq-wheel'), segs=root.querySelectorAll('.pq-seg'), card=document.getElementById('pqCard'), body=document.getElementById('pqBody'), dots=document.getElementById('pqDots');
+  var wheel=root.querySelector('.pq-stars'), segs=root.querySelectorAll('.pq-star'), card=document.getElementById('pqCard'), body=document.getElementById('pqBody'), dots=document.getElementById('pqDots');
   var cur=0, timer=null, userSet=false, seen=false;
   function pad(n){ return (n<10?'0':'')+n; }
+  function byI(k){ return root.querySelector('.pq-star[data-i="'+k+'"]'); }
   function set(id,t){ var el=document.getElementById(id); if(el)el.firstChild?(el.firstChild.nodeValue=t):(el.textContent=t); }
   for(var i=0;i<G.length;i++){ var b=document.createElement('button'); b.type='button'; b.setAttribute('aria-label',G[i].n); b.setAttribute('aria-pressed',i===0?'true':'false'); (function(k){ b.addEventListener('click',function(){ pick(k,true); }); })(i); dots.appendChild(b); }
   function pick(i,byUser){
     cur=i; if(byUser){ userSet=true; stop(); }
-    var g=G[i]; wheel.classList.add('has-on');
-    for(var s=0;s<segs.length;s++){ segs[s].classList.toggle('is-on',s===i); segs[s].setAttribute('aria-pressed',s===i?'true':'false'); }
+    var g=G[i];
+    for(var s=0;s<segs.length;s++){ var on=+segs[s].getAttribute('data-i')===i; segs[s].classList.toggle('is-on',on); segs[s].setAttribute('aria-pressed',on?'true':'false'); }
     var ds=dots.children; for(var d=0;d<ds.length;d++){ ds[d].setAttribute('aria-pressed',d===i?'true':'false'); }
     card.style.setProperty('--c',g.c);
     set('pqNum','STANDARD '+pad(i+1)+' OF 07'); set('pqName',g.n); set('pqPromise',g.p); set('pqL',g.l); set('pqK',g.k); set('pqM',g.m); set('pqS',g.s); set('pqN',g.x);
@@ -593,8 +610,8 @@ RSSB or Ministry of Health release when one is found.
     el.addEventListener('click',function(){ pick(k,true); });
     el.addEventListener('keydown',function(e){
       if(e.key==='Enter'||e.key===' '){ e.preventDefault(); pick(k,true); }
-      if(e.key==='ArrowRight'||e.key==='ArrowDown'){ e.preventDefault(); var n=(k+1)%7; pick(n,true); segs[n].focus(); }
-      if(e.key==='ArrowLeft'||e.key==='ArrowUp'){ e.preventDefault(); var p=(k+6)%7; pick(p,true); segs[p].focus(); }
+      if(e.key==='ArrowRight'||e.key==='ArrowDown'){ e.preventDefault(); var n=(k+1)%7; pick(n,true); byI(n).focus(); }
+      if(e.key==='ArrowLeft'||e.key==='ArrowUp'){ e.preventDefault(); var p=(k+6)%7; pick(p,true); byI(p).focus(); }
     });
     el.addEventListener('mouseenter',function(){ if(window.matchMedia('(hover:hover)').matches) pick(k,true); });
   })(segs[s]); }
