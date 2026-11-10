@@ -1,7 +1,7 @@
 {
   "nation": "Somalia",
   "page_version": "9.0",
-  "updated": "2026-11-07",
+  "updated": "2026-11-10",
   "steward": {
     "name": "Hodan Warsame",
     "role": "Nation Steward of Somalia"
@@ -25,55 +25,132 @@
     ]
   },
   "capital": {
-    "heading": "8 instruments. Debt relief completed, and a programme for food, power and care.",
+    "heading": "18 instruments. Debt relief completed, then budget support, safety nets, power, water and care.",
     "record": [
       {
         "value": "$5.3B to $0.6B",
         "money": true,
-        "text": "Debt relief under the Heavily Indebted Poor Countries Initiative: External public debt, end-2018 to end-2023",
-        "source": "International Monetary Fund",
+        "text": "Debt relief under the Heavily Indebted Poor Countries Initiative: external public debt, end-2018 to end-2023",
+        "source": "IMF",
         "url": "https://www.imf.org/en/Countries/SOM/key-questions-on-somalia"
+      },
+      {
+        "value": "$140M",
+        "money": true,
+        "text": "IMF Extended Credit Facility after the augmentation of December 2025, with about US$100 million disbursed",
+        "source": "IMF, 2025",
+        "url": "https://www.imf.org/en/news/articles/2025/12/08/pr-25412-somalia-imf-concludes-4th-rev-of-ecf-arrangeme-and-approves-req-for-augmentation"
+      },
+      {
+        "value": "$852M",
+        "money": true,
+        "text": "Humanitarian Needs and Response Plan 2026, for 2.4 million people",
+        "source": "United Nations, 2026",
+        "url": "https://somalia.un.org/en/308876-humanitarian-partners-seek-us852-million-assist-24-million-people-2026"
+      },
+      {
+        "value": "$112M",
+        "money": true,
+        "text": "BOOST-You: cash transfers and youth employment for about 738,000 people",
+        "source": "World Bank, 2025",
+        "url": "https://www.worldbank.org/en/news/press-release/2025/10/28/over-738000-somalis-to-benefit-from-world-bank-supported-initiative-for-jobs-social-protection-and-climate-resilience"
       },
       {
         "value": "$150M",
         "money": true,
-        "text": "Somali Electricity Sector Recovery Project: Power",
-        "source": "World Bank",
-        "url": "https://projects.worldbank.org/en/projects-operations/project-detail/P173088"
-      },
-      {
-        "value": "$133.5M",
-        "money": true,
-        "text": "Somalia Urban Resilience Project II: Cities",
-        "source": "World Bank",
-        "url": "https://projects.worldbank.org/en/projects-operations/project-detail/P170922"
-      },
-      {
-        "value": "$100M",
-        "money": true,
-        "text": "Shock Responsive Safety Net for Human Capital Project, Third Additional Financing: Cash transfers for food security",
-        "source": "World Bank",
-        "url": "https://projects.worldbank.org/en/projects-operations/project-detail/P181469"
-      },
-      {
-        "value": "$100M",
-        "money": true,
-        "text": "Improving Healthcare Services in Somalia (Damal Caafimaad): The guarantee furthest from reach",
-        "source": "World Bank",
-        "url": "https://projects.worldbank.org/en/projects-operations/project-detail/P172031"
+        "text": "Somali Electricity Sector Recovery Project, for about 7 million people",
+        "source": "World Bank, 2021",
+        "url": "https://www.worldbank.org/en/news/press-release/2021/12/09/a-150-million-electricity-recovery-project-aims-to-help-light-up-somalia"
       }
     ],
     "register": [
+      {
+        "cat": "humanitarian",
+        "status": "Appeal",
+        "tone": "appeal",
+        "name": "Humanitarian Needs and Response Plan 2026",
+        "detail": "Launched 26 January 2026 · 2.4 million people targeted, 1.6 million prioritised in 21 high-risk districts",
+        "amount": "$852M",
+        "money": true,
+        "note": "4.8 million people in need",
+        "text": "The appeal of the United Nations and humanitarian partners for lifesaving aid, essential services and protection in 2026. With limited resources, partners will put 1.6 million people in the most severe conditions first.",
+        "by": [
+          "United Nations and humanitarian partners"
+        ],
+        "url": "https://somalia.un.org/en/308876-humanitarian-partners-seek-us852-million-assist-24-million-people-2026"
+      },
+      {
+        "cat": "multi",
+        "status": "Active",
+        "tone": "active",
+        "name": "Extended Credit Facility",
+        "detail": "Approved 19 December 2023 · fourth review completed and augmentation approved 8 December 2025 · total access SDR 105 million",
+        "amount": "$140M",
+        "money": true,
+        "note": "About US$100 million disbursed after the fourth review",
+        "text": "IMF budget support for the reforms that followed debt relief. The December 2025 augmentation added SDR 30 million (about US$40 million), and the fourth review released SDR 22.5 million (about US$30 million).",
+        "by": [
+          "International Monetary Fund"
+        ],
+        "url": "https://www.imf.org/en/news/articles/2025/12/08/pr-25412-somalia-imf-concludes-4th-rev-of-ecf-arrangeme-and-approves-req-for-augmentation"
+      },
+      {
+        "cat": "multi",
+        "status": "Approved",
+        "tone": "active",
+        "name": "Building Opportunities and Outcomes in Social Protection and Youth Employment (BOOST-You)",
+        "detail": "Approved, announced 28 October 2025 · $100 million IDA, $10 million Somalia Multi-Partner Fund, $2 million Global Shield Financing Facility",
+        "amount": "$112M",
+        "money": true,
+        "note": "About 123,000 households, or 738,000 people",
+        "text": "Regular and emergency cash transfers, cash transfers linked to health and education, and support for 28,000 jobs for young people by 2029, including 16,800 for women. It builds on the Baxnaano safety net and funds a national socio-economic survey.",
+        "by": [
+          "World Bank (IDA)",
+          "Somalia Multi-Partner Fund",
+          "Global Shield Financing Facility"
+        ],
+        "url": "https://www.worldbank.org/en/news/press-release/2025/10/28/over-738000-somalis-to-benefit-from-world-bank-supported-initiative-for-jobs-social-protection-and-climate-resilience"
+      },
+      {
+        "cat": "multi",
+        "status": "Approved",
+        "tone": "active",
+        "name": "Economic Resilience Development Policy Financing, second operation",
+        "detail": "Approved, announced 7 August 2025 · IDA grant · the last of a series of two",
+        "amount": "$125M",
+        "money": true,
+        "note": "Revenue, spending, renewable power, microfinance and fisheries",
+        "text": "Budget support for reforms to raise domestic revenue, account for public spending, expand renewable power towards 50 MW of capacity by December 2026, develop microfinance and drought insurance, and grow seafood exports.",
+        "by": [
+          "World Bank (IDA)"
+        ],
+        "url": "https://www.worldbank.org/en/news/press-release/2025/08/08/world-bank-renews-support-for-reforms-to-boost-economic-resilience-in-the-federal-republic-of-somalia"
+      },
+      {
+        "cat": "multi",
+        "status": "Approved",
+        "tone": "active",
+        "name": "First Somalia Economic Resilience Development Policy Financing",
+        "detail": "Approved, announced 30 July 2024 · IDA grant · the first of a series of two",
+        "amount": "$125M",
+        "money": true,
+        "note": "Revenue, debt management and greener power",
+        "text": "Budget support for stronger revenue collection, debt management and spending accountability, microfinance for lower-income groups including pastoralists, and greener, more affordable electricity.",
+        "by": [
+          "World Bank (IDA)"
+        ],
+        "url": "https://www.worldbank.org/en/news/press-release/2024/07/31/somalia-afe-taps-world-bank-support-to-promote-economic-resilience"
+      },
       {
         "cat": "multi",
         "status": "Completed",
         "tone": "completed",
         "name": "Debt relief under the Heavily Indebted Poor Countries Initiative",
-        "detail": "Completion point approved 13 December 2023 · Debt relief",
+        "detail": "Completion point approved 13 December 2023 by the IMF and IDA Boards",
         "amount": "$5.3B to $0.6B",
         "money": true,
         "note": "External public debt, end-2018 to end-2023",
-        "text": "External debt fell from 64% of GDP to less than 6% of GDP.",
+        "text": "External public debt fell from US$5.3 billion, 64% of GDP, at end-2018 to US$0.6 billion, less than 6% of GDP, at end-2023. Debt relief reopened the door to concessional finance for the seven standards.",
         "by": [
           "International Monetary Fund",
           "World Bank (IDA)"
@@ -82,108 +159,188 @@
       },
       {
         "cat": "multi",
-        "status": "Active",
+        "status": "Approved",
         "tone": "active",
-        "name": "Somali Electricity Sector Recovery Project",
-        "detail": "Approved 8 December 2021 · Investment project financing",
-        "amount": "$150M",
-        "money": true,
-        "note": "Power",
-        "text": "Rebuilds the electricity sector and expands access to cleaner power.",
-        "by": [
-          "World Bank"
-        ],
-        "url": "https://projects.worldbank.org/en/projects-operations/project-detail/P173088"
-      },
-      {
-        "cat": "multi",
-        "status": "Active",
-        "tone": "active",
-        "name": "Somalia Urban Resilience Project II",
-        "detail": "Approved 9 December 2019 · Investment project financing",
-        "amount": "$133.5M",
-        "money": true,
-        "note": "Cities",
-        "text": "Strengthens urban infrastructure and resilience.",
-        "by": [
-          "World Bank"
-        ],
-        "url": "https://projects.worldbank.org/en/projects-operations/project-detail/P170922"
-      },
-      {
-        "cat": "multi",
-        "status": "Active",
-        "tone": "active",
-        "name": "Shock Responsive Safety Net for Human Capital Project, Third Additional Financing",
-        "detail": "Approved 15 December 2023 · Investment project financing",
+        "name": "Shock Responsive Safety Net for Human Capital Project, third additional financing",
+        "detail": "Approved, announced 15 December 2023 · IDA",
         "amount": "$100M",
         "money": true,
         "note": "Cash transfers for food security",
-        "text": "Extends the national safety net to households facing drought and hunger.",
+        "text": "Emergency cash transfers for households hit by floods and drought, and cash transfers linked to nutrition, for more than 250,000 Somali households.",
         "by": [
-          "World Bank"
+          "World Bank (IDA)"
         ],
-        "url": "https://projects.worldbank.org/en/projects-operations/project-detail/P181469"
+        "url": "https://www.worldbank.org/en/news/press-release/2023/12/15/over-250-000-afe-somali-households-to-benefit-from-cash-transfers-to-cope-with-flooding-and-food-insecurity"
       },
       {
         "cat": "multi",
-        "status": "Active",
-        "tone": "active",
-        "name": "Improving Healthcare Services in Somalia (Damal Caafimaad)",
-        "detail": "Approved 28 June 2021 · Investment project financing",
-        "amount": "$100M",
-        "money": true,
-        "note": "The guarantee furthest from reach",
-        "text": "Expands essential health services, where coverage stands at 30 on the WHO index.",
-        "by": [
-          "World Bank"
-        ],
-        "url": "https://projects.worldbank.org/en/projects-operations/project-detail/P172031"
-      },
-      {
-        "cat": "multi",
-        "status": "Active",
+        "status": "Approved",
         "tone": "active",
         "name": "Accelerating Sustainable and Clean Energy Access Transformation (ASCENT Somalia)",
-        "detail": "Approved 28 November 2023 · Investment project financing",
+        "detail": "Regional programme launched 28 November 2023, with Somalia among the first four countries · total project cost $100 million",
         "amount": "$100M",
         "money": true,
-        "note": "Clean energy access",
-        "text": "Connects households and services to clean power.",
+        "note": "Includes US$18.5 million from the Green Climate Fund",
+        "text": "Increases access to sustainable and clean energy through private sector participation. Energy, measured by clean cooking, is the standard that sets Somalia’s Coverage.",
         "by": [
-          "World Bank"
+          "World Bank (IDA)",
+          "Green Climate Fund"
         ],
-        "url": "https://projects.worldbank.org/en/projects-operations/project-detail/P181341"
+        "url": "https://documents1.worldbank.org/curated/en/099103123142521155/pdf/P1813410fffb5e0f70a5720995747daeca1.pdf"
       },
       {
         "cat": "multi",
-        "status": "Active",
+        "status": "Approved",
         "tone": "active",
-        "name": "Second Inclusive Growth Development Policy Operation",
-        "detail": "Approved 28 July 2023 · Development policy lending",
+        "name": "Development Policy Financing on the path to debt relief, second operation",
+        "detail": "Approved, announced 31 July 2023 · grant · the second of a series of two",
         "amount": "$75M",
         "money": true,
-        "note": "Budget support for reforms",
-        "text": "Supports reforms in public finance and growth.",
+        "note": "Laws for fisheries, electricity, investment and data",
+        "text": "Budget support for new laws on fisheries, electricity, investor protection, digital identification and data protection, for harmonised customs and a stronger external audit.",
         "by": [
-          "World Bank"
+          "World Bank (IDA)"
         ],
-        "url": "https://projects.worldbank.org/en/projects-operations/project-detail/P179307"
+        "url": "https://www.worldbank.org/en/news/press-release/2023/07/31/somalia-afe-institutions-get-a-boost-to-help-bring-the-country-closer-to-debt-relief"
       },
       {
         "cat": "multi",
-        "status": "Active",
+        "status": "Approved",
         "tone": "active",
         "name": "Barwaaqo: Somalia Water for Rural Resilience Project",
-        "detail": "Approved 9 December 2022 · Investment project financing",
+        "detail": "Approved 15 December 2022 · IDA grant",
         "amount": "$70M",
         "money": true,
-        "note": "Rural water",
-        "text": "Builds water infrastructure for rural communities.",
+        "note": "Water for about 500,000 rural people",
+        "text": "Brings water to about 500,000 people in the drylands, roughly 15% of the rural population, who rely on unimproved or surface water. It builds on the Biyoole project, in Somaliland and five federal member states.",
         "by": [
-          "World Bank"
+          "World Bank (IDA)"
         ],
-        "url": "https://projects.worldbank.org/en/projects-operations/project-detail/P177627"
+        "url": "https://www.worldbank.org/en/news/press-release/2022/12/15/world-bank-grants-70-million-for-delivery-of-water-agriculture-livestock-and-environmental-services-in-somalia"
+      },
+      {
+        "cat": "multi",
+        "status": "Approved",
+        "tone": "active",
+        "name": "Somali Electricity Sector Recovery Project",
+        "detail": "Approved, announced 9 December 2021 · IDA",
+        "amount": "$150M",
+        "money": true,
+        "note": "About 7 million people in 1.1 million households",
+        "text": "Rebuilds the electricity sector to reach about 7 million people, 3.5 million of them women, and to power 205 health facilities and 380 schools at lower cost.",
+        "by": [
+          "World Bank (IDA)"
+        ],
+        "url": "https://www.worldbank.org/en/news/press-release/2021/12/09/a-150-million-electricity-recovery-project-aims-to-help-light-up-somalia"
+      },
+      {
+        "cat": "multi",
+        "status": "Approved",
+        "tone": "active",
+        "name": "Improving Healthcare Services in Somalia (Damal Caafimaad)",
+        "detail": "Announced 22 July 2021 · $75 million IDA grant and $25 million GFF grant",
+        "amount": "$100M",
+        "money": true,
+        "note": "Essential health services for about one in ten Somalis",
+        "text": "Expands essential health and nutrition services in Nugaal, Bakool, Bay, Hiraan and Middle Shebelle, including for displaced and nomadic people. Health coverage stands at 30 on the WHO index.",
+        "by": [
+          "World Bank (IDA)",
+          "Global Financing Facility"
+        ],
+        "url": "https://www.worldbank.org/en/news/press-release/2021/07/19/somalia-s-women-and-children-are-among-the-1-84-million-to-benefit-from-improved-healthcare-services"
+      },
+      {
+        "cat": "multi",
+        "status": "Approved",
+        "tone": "active",
+        "name": "Somalia Urban Resilience Project II",
+        "detail": "Approved 9 December 2019 · grant",
+        "amount": "$112M",
+        "money": true,
+        "note": "IDA $50 million and Somalia Multi-Partner Fund $62 million",
+        "text": "Strengthens local government capacity and builds urban infrastructure in Somali cities.",
+        "by": [
+          "World Bank (IDA)",
+          "Somalia Multi-Partner Fund"
+        ],
+        "url": "https://www.worldbank.org/en/news/press-release/2019/12/09/world-bank-approves-112-million-to-strengthen-local-government-capacity-and-provide-urban-infrastructure-for-somalis"
+      },
+      {
+        "cat": "regional",
+        "status": "Approved",
+        "tone": "active",
+        "name": "Urban Water Supply and Sanitation Project in Dollow, Qardho and South Galkayo",
+        "detail": "Approved 28 January 2026 · African Development Fund grant",
+        "amount": "$24.45M",
+        "money": true,
+        "note": "More than half a million people",
+        "text": "Safe water and sanitation for three fast-growing towns that have taken in many displaced people.",
+        "by": [
+          "African Development Fund"
+        ],
+        "url": "https://allafrica.com/stories/202602100187.html"
+      },
+      {
+        "cat": "regional",
+        "status": "Approved",
+        "tone": "active",
+        "name": "Rehabilitation and Expansion of Bosaso Power Grid",
+        "detail": "Release of 16 December 2025 · grants: $9.618 million African Development Fund, $13.74 million Transition Support Facility",
+        "amount": "$23.36M",
+        "money": true,
+        "note": "New solar generation and battery storage",
+        "text": "Rebuilds and extends the Bosaso grid with solar power and battery storage, and gives solar home systems to families without electricity, including displaced people. It also trains energy sector institutions.",
+        "by": [
+          "African Development Fund",
+          "Transition Support Facility"
+        ],
+        "url": "https://allafrica.com/stories/202512160672.html"
+      },
+      {
+        "cat": "regional",
+        "status": "Approved",
+        "tone": "active",
+        "name": "Activating Climate-Resilient Agricultural Livelihoods in Somalia",
+        "detail": "Approved 2 December 2025 · African Development Fund grant",
+        "amount": "$9.63M",
+        "money": true,
+        "note": "Hirshabelle and Puntland",
+        "text": "Climate-resilient farming and food security for 180,000 people directly and 300,000 more indirectly, including women, young people and pastoral households.",
+        "by": [
+          "African Development Fund"
+        ],
+        "url": "https://allafrica.com/stories/202512100633.html"
+      },
+      {
+        "cat": "regional",
+        "status": "Approved",
+        "tone": "active",
+        "name": "Strengthening Urban Resilience of Displaced and Host Communities in Doolow",
+        "detail": "Release of 3 December 2025 · African Development Fund grant through the Transition Support Facility",
+        "amount": "$19.7M",
+        "money": true,
+        "note": "1,750 climate-resilient homes",
+        "text": "Supports the local integration of more than 128,000 displaced people in Doolow, with secure land tenure for 10,500 and 1,750 climate-resilient homes. It also backs more than 150 village savings and loans associations.",
+        "by": [
+          "African Development Fund"
+        ],
+        "url": "https://allafrica.com/stories/202512040508.html"
+      },
+      {
+        "cat": "private",
+        "status": "Signed",
+        "tone": "active",
+        "name": "IFC and KIMS Microfinance",
+        "detail": "Approved 13 May 2026 · signed 2 July 2026 · three-year Sharia-compliant senior loan",
+        "amount": "$1M",
+        "money": true,
+        "note": "Up to US$1 million, pending disbursement",
+        "text": "A loan that KIMS Microfinance will on-lend to micro and very small enterprises in Somalia. It is backed by a pooled first-loss guarantee from IDA’s Private Sector Window.",
+        "by": [
+          "IFC",
+          "KIMS Microfinance"
+        ],
+        "url": "https://disclosures.ifc.org/project-detail/SII/50776/mfp-bop-kims"
       }
     ]
   },
@@ -271,11 +428,18 @@
     "heading": "Already working in Somalia.",
     "items": [
       {
-        "standard": "In preparation",
-        "name": "The enterprises building Perfect Somalia",
-        "text": "The Stewards are verifying the companies and social enterprises already delivering the seven basic living standards in Somalia. Suggest one to include.",
-        "source": "Suggest an enterprise",
-        "url": "mailto:contact@perfectnations.org?subject=An%20enterprise%20for%20Perfect%20Somalia"
+        "standard": "Energy",
+        "name": "BECO",
+        "text": "Supplies electricity in Mogadishu and nearby towns, and is one of Somalia’s largest investors in solar power. Its tariff fell from $1.00 a kilowatt-hour in 2014 to $0.41 in 2023.",
+        "source": "The Star, 2025",
+        "url": "https://www.the-star.co.ke/news/africa/2025-09-30-somalia-powers-ahead-with-affordable-renewable-energy"
+      },
+      {
+        "standard": "Livelihood",
+        "name": "KIMS Microfinance",
+        "text": "A Somali microfinance institution that lends to micro and very small enterprises. IFC has advised it since 2018 and signed a Sharia-compliant loan of up to US$1 million with it in July 2026.",
+        "source": "IFC, 2026",
+        "url": "https://disclosures.ifc.org/project-detail/SII/50776/mfp-bop-kims"
       }
     ]
   },
@@ -395,5 +559,6 @@
     }
   ],
   "dispatches": [],
-  "checked": "2026-11-07T11:24Z"
+  "checked": "2026-11-07T11:24Z",
+  "reviewed": "2026-11-10T07:30Z"
 }
