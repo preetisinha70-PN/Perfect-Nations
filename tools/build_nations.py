@@ -99,13 +99,24 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 PAGES, DATA, HERE = ROOT / 'pages', ROOT / 'data', ROOT / 'tools' / 'nation'
-VERSION = '12.0'  # light reading sections, Earthrise accents (the Steward-General, 10 Nov 2026)
+VERSION = '12.1'  # the Earth picture of the globe comes from the repository (jsDelivr, then GitHub), which lets a browser paint it on the moving globe (10 Nov 2026)
+# v12.0: light reading sections, Earthrise accents (the Steward-General, 10 Nov 2026)
 # v11.9: Discuss this Solution on every designed Solution; Plan a Blueprint Lab opens The Blueprint Lab, ?about=lab (the Steward-General, 10 Nov 2026)
 # v11.8: the globe with the nation in gold is drawn into the page, so the map shows on every phone even when the Earth picture or WebGL cannot (10 Nov 2026)
 # v11.7: the letterhead carries the registered mark, Perfect Nations&#174; (10 Nov 2026)
 # v11.6: the close button of every pop-up is one design: a gold X drawn as two strokes, centred in a circle (the Steward-General, 9 Nov 2026)
-EARTH = {'lg': 'https://perfectnations.org/wp-content/uploads/2026/10/pn-globe-earth-day-1536x768.jpg',
-         'sm': 'https://perfectnations.org/wp-content/uploads/2026/10/pn-globe-earth-day-1024x512.jpg'}
+# The Earth picture of the globe (NASA Blue Marble), in this order: jsDelivr and GitHub, which both answer with
+# Access-Control-Allow-Origin *, so a browser may paint the picture on the moving globe; then the Media Library copy.
+# On 10 Nov 2026 the Media Library copy could be shown on a page but not painted on the globe, on a laptop and a
+# phone alike (only the drawn gold map showed): the site's image delivery does not allow it.
+# The files are assets/globe/earth-1536.jpg and earth-1024.jpg in this repository.
+_GH = 'preetisinha70-PN/perfect-nations'
+EARTH = {'lg': ['https://cdn.jsdelivr.net/gh/%s@main/assets/globe/earth-1536.jpg' % _GH,
+                'https://raw.githubusercontent.com/%s/main/assets/globe/earth-1536.jpg' % _GH,
+                'https://perfectnations.org/wp-content/uploads/2026/10/pn-globe-earth-day-1536x768.jpg'],
+         'sm': ['https://cdn.jsdelivr.net/gh/%s@main/assets/globe/earth-1024.jpg' % _GH,
+                'https://raw.githubusercontent.com/%s/main/assets/globe/earth-1024.jpg' % _GH,
+                'https://perfectnations.org/wp-content/uploads/2026/10/pn-globe-earth-day-1024x512.jpg']}
 ORDER = ['Food', 'Water', 'Shelter', 'Energy', 'Education', 'Health', 'Livelihoods']
 COLOURS = ['#8A5A12', '#0E5A80', '#9A3E22', '#C08A12', '#1F4C96', '#167A5F', '#2F5A2A']
 CAT = {'govt': 'Government', 'humanitarian': 'Humanitarian', 'multi': 'Multilateral', 'regional': 'Regional',
@@ -1031,7 +1042,7 @@ def build(slug, sbn, son, today):
         '<link rel="preconnect" href="https://raw.githubusercontent.com" crossorigin>\n'
         '<link rel="preload" as="image" href="%s" media="(min-width:768px)" crossorigin>\n'
         '<link rel="preload" as="image" href="%s" media="(max-width:767px)" crossorigin>\n'
-        % (d['nation'].upper().encode('ascii', 'xmlcharrefreplace').decode('ascii'), VERSION, today, rid, EARTH['lg'], EARTH['sm']))
+        % (d['nation'].upper().encode('ascii', 'xmlcharrefreplace').decode('ascii'), VERSION, today, rid, EARTH['lg'][0], EARTH['sm'][0]))
     body = '\n'.join([
         '<style>\n%s\n</style>' % css,
         '<div id="%s" class="bpx" data-version="%s">' % (rid, VERSION),

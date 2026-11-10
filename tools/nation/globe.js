@@ -14,8 +14,7 @@
      - The globe with the nation in gold is now drawn into the page by the build (SVG), so the map shows at once and
        stays whenever the Earth cannot be shown.
      - If this script runs before the globe is on the page (a cache or optimiser that moves scripts), it waits for it.
-     - The Earth picture is asked for at the page's own address first (an optimiser or CDN that rewrites the address
-       to another host makes the picture unusable for drawing), then as written, then in the other size.
+     - The Earth picture is asked for from each address in turn, then in the other size (v12.1: the repository first).
      - data-globe on the globe says how it ended: gl, still, or map (the drawn map alone). */
   /*pn:globe-cfg*/
   var root = document.getElementById(CFG.root);
@@ -30,9 +29,11 @@
   var calm = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var D2R = Math.PI / 180;
   var natLat = CFG.lat * D2R, natLng = CFG.lng * D2R;
-  function own(u) { try { var a = new URL(u, location.href); return location.origin + a.pathname; } catch (e) { return u; } }
-  var first = phone ? CFG.tex.sm : CFG.tex.lg, other = phone ? CFG.tex.lg : CFG.tex.sm, tries = [];
-  [own(first), first, own(other)].forEach(function (u) { if (u && tries.indexOf(u) < 0) tries.push(u); });
+  /* v12.1: CFG.tex.sm and CFG.tex.lg are lists (jsDelivr, GitHub, the Media Library). Both repository hosts allow the
+     picture to be painted on the globe; the Media Library copy, on 10 Nov 2026, did not (on a laptop and a phone). */
+  function list(v) { return Object.prototype.toString.call(v) === '[object Array]' ? v : (v ? [v] : []); }
+  var tries = [];
+  list(phone ? CFG.tex.sm : CFG.tex.lg).concat(list(phone ? CFG.tex.lg : CFG.tex.sm)).forEach(function (u) { if (u && tries.indexOf(u) < 0) tries.push(u); });
   var img = null;
   function fetchEarth(i) {
     if (i >= tries.length) { wrap.classList.add('is-failed'); wrap.setAttribute('data-globe', 'map'); return; }
