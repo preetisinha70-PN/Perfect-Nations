@@ -1,5 +1,16 @@
 <!-- ===========================================================================
-PERFECT NATIONS - SOVEREIGN ASSETS PAGE - SOURCE - v6.5 - 2026-11-09
+PERFECT NATIONS - SOVEREIGN ASSETS PAGE - SOURCE - v7.0 - 2026-11-10
+v7.0 (the Steward-General, 10 Nov 2026: the updates of the homepage and the blueprints):
+  - What we do: the five moves are gone from the homepage, so the page now shows its three steps,
+    Assets. Capital. Solutions., in the homepage words, each drawn by its part of the logo (the cup,
+    the laurels, the seven stars, from pages/home-logo-kit.html, in one gold); 01 Assets is here.
+  - The hero: the cup of the logo (the symbol of Assets) in place of the old cup icon; the lead says
+    what About and the blueprints say: each nation's five greatest assets; the planet's sea is the
+    homepage's lapis lazuli (#1F45A3 lit, #0A1D5C in shadow).
+  - The five assets follow the blueprints: Botswana shows The Diamonds (80% of exports, IMF) and India
+    The Sun (171 GW, MNRE), as their Nation Stewards record them; Inga is Water & Rivers.
+  - Every link to a nation, from the planet, the five assets and the full ledger, opens its five
+    assets on its blueprint (#bp-assets). The ledger names its SI Nation Stewards.
 v6.5: the close button of every pop-up is one design: a gold X drawn as two strokes, centred in a circle (the Steward-General, 9 Nov 2026).
 This is the SOURCE of the Sovereign Assets page. Never paste it. The page that is served is
 pages/sovereign-assets.html, built from this file by tools/build_sovereign_assets.py, which fills
@@ -9,6 +20,7 @@ the tokens below from data/sovereign-assets.json and data/<nation>.json:
   @@NATIONLIST@@  one link per nation with an open blueprint
   @@SEED@@        the ledger as JSON, for the planet before the live file arrives
   @@LAND@@        the land of the golden planet, from assets/home/pn-globe-water-1024.jpg
+  @@LOGOKIT@@     the logo in its parts, pages/home-logo-kit.html (pnk-cl, pnk-cc, pnk-lc, pnk-s0..6)
   @@RULE@@        the style of the gold line, pages/home-rule.html (the line itself is
                   <div class="pn-rule">, placed here between sections)
 Kept by the Sovereign Assets Steward (skill steward-sovereign-assets). Every change to the design
@@ -28,7 +40,7 @@ lead is one sentence (the eight classes are on the balance sheet below); each of
 its figure, line, name and source, and its paragraph moves under Read more (a details disclosure,
 class sa-rm); the steps and the ledger drop the sentences that repeated each other.
 =========================================================================== -->
-<div id="pn-sov" class="pnsa" data-v="6.4">
+<div id="pn-sov" class="pnsa" data-v="7.0">
 <style>
 #pn-sov{
   --er:#0B3D45; --lg:#0F4C5C; --dp:#082A30; --plate:#0A3840;
@@ -129,8 +141,7 @@ class sa-rm); the steps and the ledger drop the sentences that repeated each oth
 }
 #pn-sov .sa-copy{ grid-area:copy; align-self:end; }
 #pn-sov .sa-facts{ grid-area:facts; align-self:start; }
-#pn-sov svg.sa-cup{ display:block; width:clamp(66px,5.2vw,94px); height:auto; aspect-ratio:2/1; margin:0 0 6px -6px; color:var(--g); overflow:visible; }
-#pn-sov svg.sa-cup path,#pn-sov svg.sa-cup rect{ fill:currentColor; }
+#pn-sov svg.sa-cup{ display:block; width:auto; height:clamp(56px,5vw,82px); aspect-ratio:1/1; margin:0 0 6px -8px; overflow:visible; fill:url(#pnk-gold); filter:drop-shadow(0 0 12px rgba(227,194,88,.28)); }
 #pn-sov h1.sa-h1{
   margin:0; max-width:15ch; font-family:var(--hd); font-weight:600;
   font-size:clamp(2.5rem,4.9vw,5.4rem); line-height:.92; letter-spacing:-.025em; color:var(--fg) !important; text-wrap:balance;
@@ -148,7 +159,7 @@ class sa-rm); the steps and the ledger drop the sentences that repeated each oth
 #pn-sov .sa-planet__box{ position:relative; width:100%; aspect-ratio:1/1; }
 #pn-sov .sa-planet__disc{
   position:absolute; inset:5%; border-radius:50%;
-  background:radial-gradient(circle at 34% 30%,#2A5FD0 0%,#1440A0 46%,#081D52 100%);
+  background:radial-gradient(circle at 34% 30%,#3A5FBF 0%,#1F45A3 46%,#0A1D5C 100%);
   box-shadow:0 0 0 1.5px rgba(227,194,88,.9), 0 0 0 9px rgba(227,194,88,.08), 0 0 60px rgba(227,194,88,.18);
 }
 #pn-sov .sa-planet canvas{ position:absolute; inset:0; width:100%; height:100%; touch-action:pan-y; cursor:grab; }
@@ -309,31 +320,24 @@ class sa-rm); the steps and the ledger drop the sentences that repeated each oth
     radial-gradient(50% 45% at 4% 100%, rgba(227,194,88,.06) 0%, transparent 62%),
     linear-gradient(180deg,#0B3D45 0%,#0A3840 100%);
 }
-#pn-sov .sa-steps{ display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:12px; margin:clamp(14px,2.4vh,24px) 0 0; padding:0; list-style:none; }
-#pn-sov .sa-steps li{ position:relative; display:flex; flex-direction:column; padding:clamp(16px,1.8vw,24px); border-radius:18px; background:rgba(244,236,216,.06); border:1px solid var(--hair); }
-#pn-sov .sa-steps li:not(:last-child)::after{
-  content:"\2192"; position:absolute; right:-17px; top:50%; transform:translateY(-50%); z-index:2; width:22px; height:22px; border-radius:50%;
-  display:flex; align-items:center; justify-content:center; background:var(--g); color:var(--onacc); font-family:Arial,sans-serif; font-size:.8rem;
+#pn-sov .sa-wd{ display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:12px; margin:clamp(14px,2.4vh,24px) 0 0; padding:0; list-style:none; }
+#pn-sov .sa-wd li{ display:flex; min-width:0; }
+#pn-sov .sa-wd__t{
+  position:relative; display:flex; flex-direction:column; align-items:center; width:100%; padding:clamp(16px,1.8vw,24px) clamp(14px,1.6vw,22px) clamp(14px,1.6vw,20px);
+  border-radius:18px; border:1px solid var(--hair); background:rgba(244,236,216,.05); color:var(--fg); text-align:center; text-decoration:none;
+  transition:background .25s ease, border-color .25s ease, transform .25s ease;
 }
-#pn-sov .sa-steps b{ font-family:var(--hd); font-weight:700; font-size:clamp(2.2rem,3.4vw,3rem); line-height:.8; color:transparent; -webkit-text-stroke:1.4px rgba(244,236,216,.6); }
-#pn-sov .sa-steps strong{ margin-top:10px; font-family:var(--hd); font-weight:600; font-size:clamp(1.45rem,2vw,1.8rem); line-height:1; }
-#pn-sov .sa-steps p{ margin:6px 0 0; font-size:.98rem; line-height:1.48; color:var(--mut); }
-#pn-sov .sa-steps li:last-child{ background:var(--iv); color:var(--ink); border-color:var(--iv); }
-#pn-sov .sa-steps li:last-child b{ -webkit-text-stroke-color:rgba(11,61,69,.5); }
-#pn-sov .sa-steps li:last-child p{ color:var(--ink2); }
-#pn-sov .sa-steps li:last-child .sa-go{ align-self:flex-start; margin-top:auto; padding-top:10px; color:var(--gd); }
-#pn-sov .sa-moves{ margin-top:clamp(16px,2.6vh,26px); }
-#pn-sov .sa-moves__k{ margin:0 0 10px; font-family:var(--hd); font-size:.68rem; font-weight:700; letter-spacing:.26em; text-transform:uppercase; color:var(--dim); }
-#pn-sov .sa-moves ol{ position:relative; display:grid; grid-template-columns:repeat(5,minmax(0,1fr)); gap:8px; margin:0; padding:0; list-style:none; }
-#pn-sov .sa-moves ol::before{ content:""; position:absolute; left:4%; right:4%; top:22px; height:1px; background:linear-gradient(90deg,var(--g),rgba(var(--grgb),.25)); }
-#pn-sov .sa-mv{ position:relative; display:flex; flex-direction:column; align-items:flex-start; gap:3px; height:100%; padding:8px 4px 6px 0; text-decoration:none; color:var(--fg); }
-#pn-sov .sa-mv i{ display:inline-flex; align-items:center; justify-content:center; width:30px; height:30px; margin-bottom:5px; border-radius:50%; background:var(--er); border:1.5px solid var(--g); color:var(--g); font-style:normal; font-family:var(--hd); font-size:.74rem; font-weight:700; }
-#pn-sov .sa-mv b{ font-family:var(--hd); font-weight:600; font-size:1.12rem; line-height:1; }
-#pn-sov .sa-mv small{ font-size:.82rem; line-height:1.3; color:var(--dim); }
-#pn-sov a.sa-mv:hover b{ color:var(--gs); }
-#pn-sov a.sa-mv:hover i{ background:var(--g); color:var(--onacc); }
-#pn-sov .sa-mv.is-here i{ background:var(--g); color:var(--onacc); }
-#pn-sov .sa-mv.is-here small{ color:var(--g); font-family:var(--hd); font-size:.62rem; font-weight:700; letter-spacing:.18em; text-transform:uppercase; }
+#pn-sov a.sa-wd__t:hover{ background:rgba(244,236,216,.1); border-color:rgba(var(--grgb),.6); transform:translateY(-2px); }
+#pn-sov .sa-wd li.is-here .sa-wd__t{ border-color:rgba(var(--grgb),.75); background:rgba(227,194,88,.08); }
+#pn-sov svg.sa-wd__art{ display:block; width:auto; height:clamp(84px,8vw,118px); margin:0 0 8px; overflow:visible; fill:url(#pnk-gold); filter:drop-shadow(0 0 10px rgba(227,194,88,.3)); }
+#pn-sov .sa-wd__top{ display:flex; align-items:baseline; justify-content:center; gap:10px; }
+#pn-sov .sa-wd__n{ font-family:var(--hd); font-weight:700; font-size:.9rem; letter-spacing:.08em; color:var(--g); }
+#pn-sov .sa-wd__v{ font-family:var(--hd); font-weight:600; font-size:clamp(1.6rem,2.3vw,2.1rem); line-height:1; letter-spacing:-.01em; }
+#pn-sov .sa-wd__part{ margin-top:4px; font-family:var(--hd); font-size:.62rem; font-weight:700; letter-spacing:.24em; text-transform:uppercase; color:var(--dim); }
+#pn-sov .sa-wd__q{ margin:8px 0 0; max-width:34ch; font-size:.98rem; line-height:1.45; color:var(--mut); }
+#pn-sov .sa-wd__go{ margin-top:auto; padding-top:10px; }
+#pn-sov .sa-wd__here{ display:inline-flex; align-items:center; gap:7px; margin-top:auto; padding-top:12px; font-family:var(--hd); font-size:.62rem; font-weight:700; letter-spacing:.2em; text-transform:uppercase; color:var(--g); }
+#pn-sov .sa-wd__here::before{ content:""; width:8px; height:8px; border-radius:50%; background:var(--g); box-shadow:0 0 0 4px rgba(227,194,88,.18); }
 
 /* ---------- 5 the full ledger: Earthrise Depth ---------- */
 #pn-sov .sa-ledger{
@@ -357,7 +361,7 @@ class sa-rm); the steps and the ledger drop the sentences that repeated each oth
 @media (max-width:760px){
   #pn-sov .sa-hero__grid{ grid-template-columns:minmax(0,1fr); grid-template-areas:"copy" "planet" "facts"; text-align:center; }
   #pn-sov .sa-copy,#pn-sov .sa-facts{ align-self:auto; }
-  #pn-sov svg.sa-cup{ width:64px; margin:0 auto 4px; }
+  #pn-sov svg.sa-cup{ height:56px; margin:0 auto 4px; }
   #pn-sov .sa-hero .sa-eb{ justify-content:center; }
   #pn-sov h1.sa-h1{ margin:0 auto; font-size:clamp(2.3rem,11.2vw,3rem); }
   #pn-sov .sa-hero .sa-lead{ margin-left:auto; margin-right:auto; }
@@ -399,20 +403,14 @@ class sa-rm); the steps and the ledger drop the sentences that repeated each oth
   #pn-sov .sa-sc:first-child .sa-sc__fig b{ font-size:2.9rem; }
   #pn-sov .sa-sc:first-child .sa-sc__h{ font-size:1.5rem; }
   #pn-sov .sa-sc:first-child .sa-sc__p{ font-size:.9rem; line-height:1.45; }
-  #pn-sov .sa-steps{ grid-template-columns:minmax(0,1fr); gap:8px; }
-  #pn-sov .sa-steps li{ display:grid; grid-template-columns:52px minmax(0,1fr); column-gap:10px; padding:12px 14px; border-radius:14px; }
-  #pn-sov .sa-steps li::after{ display:none !important; }
-  #pn-sov .sa-steps b{ grid-row:1 / span 3; font-size:2.2rem; }
-  #pn-sov .sa-steps strong{ margin-top:0; font-size:1.35rem; }
-  #pn-sov .sa-steps p{ margin-top:3px; font-size:.92rem; }
-  #pn-sov .sa-steps li:last-child .sa-go{ grid-column:2; justify-self:start; }
-  #pn-sov .sa-moves ol{ grid-template-columns:repeat(2,minmax(0,1fr)); gap:4px 12px; }
-  #pn-sov .sa-moves ol::before{ display:none; }
-  #pn-sov .sa-moves li:last-child{ grid-column:1 / -1; }
-  #pn-sov .sa-mv{ flex-direction:row; flex-wrap:wrap; align-items:center; column-gap:8px; padding:6px 0; border-bottom:1px solid var(--hair); }
-  #pn-sov .sa-mv i{ width:26px; height:26px; margin:0; font-size:.68rem; }
-  #pn-sov .sa-mv b{ font-size:1.02rem; }
-  #pn-sov .sa-mv small{ flex-basis:100%; padding-left:34px; font-size:.76rem; }
+  #pn-sov .sa-wd{ grid-template-columns:minmax(0,1fr); gap:8px; }
+  #pn-sov .sa-wd__t{ display:grid; grid-template-columns:64px minmax(0,1fr); grid-template-areas:"art top" "art part" "art q" "art go"; column-gap:12px; align-items:start; padding:12px 14px; border-radius:14px; text-align:left; }
+  #pn-sov svg.sa-wd__art{ grid-area:art; align-self:center; width:64px; height:64px; margin:0; }
+  #pn-sov .sa-wd__top{ grid-area:top; justify-content:flex-start; }
+  #pn-sov .sa-wd__v{ font-size:1.4rem; }
+  #pn-sov .sa-wd__part{ grid-area:part; margin-top:2px; font-size:.56rem; }
+  #pn-sov .sa-wd__q{ grid-area:q; margin-top:4px; font-size:.9rem; }
+  #pn-sov .sa-wd__go,#pn-sov .sa-wd__here{ grid-area:go; justify-self:start; margin-top:0; padding-top:6px; }
   #pn-sov .sa-nl{ gap:6px; }
   #pn-sov .sa-nl a{ min-height:38px; padding:7px 12px; font-size:.92rem; }
   #pn-sov.is-js .sa-nl:not(.is-all) li:nth-child(n+13){ display:none; }
@@ -437,14 +435,15 @@ class sa-rm); the steps and the ledger drop the sentences that repeated each oth
 @media (prefers-reduced-motion:reduce){ #pn-sov .sa-pin__x{ transition:none; } #pn-sov .sa-pin__x:hover, #pn-sov .sa-pin__x:focus-visible{ transform:none; } }
 </style>
 @@RULE@@
+@@LOGOKIT@@
 
   <section class="sa-band sa-hero" aria-labelledby="sa-h1">
     <div class="sa-in sa-hero__grid">
       <div class="sa-copy">
-        <svg class="sa-cup" data-pn-cup="1" viewBox="0 0 120 60" aria-hidden="true" focusable="false"><g fill="currentColor"><path fill-rule="evenodd" d="M51.7 55C51.6 55 51.6 54.8 51.6 53.3L51.6 51.9L51.8 51.7C51.9 51.6 52.2 51.4 52.4 51.2C52.6 51 52.8 50.9 52.8 50.9C52.8 50.8 54.4 50 54.5 50C54.6 50 54.8 49.9 54.9 49.8C55.1 49.7 55.4 49.6 55.7 49.6C55.9 49.5 56.2 49.4 56.3 49.4L56.5 49.3L56.5 49.1C56.5 48.5 56.6 48.3 57.3 48.3C57.6 48.3 57.8 48.3 57.8 48.3C57.8 48.3 57.8 46.6 57.8 44.6L57.8 41L58 40.8C58.8 39.8 58.9 38.5 58.5 37.3C58.4 37.1 58.3 36.9 58.3 36.8C58.3 36.7 58.1 36.5 57.6 36.2C56.4 35.4 55.1 33.7 54 31.6C53.7 31.1 53.8 31.1 53.7 31.1C53.6 31.1 53.6 31.2 53.5 31.3C53 32.3 51.7 32.4 50.8 31.6C50.2 31.1 50.8 30.4 51.4 30.7C52.2 31.1 52.4 31.1 52.6 30.6C52.8 29.7 51.8 28.5 47.6 24.2C43.2 19.8 41.6 17.8 40.8 15.7C40.7 15.5 40.7 15.3 40.6 15.2C39.7 12.9 40.1 10.6 41.8 8.9C42.9 7.7 44.1 7.3 45.4 7.6C46.3 7.7 47.6 8.4 49 9.6C51.1 11.2 52 11.5 52.6 11C52.8 10.8 52.8 10.8 52.6 10.5C52.3 10.2 52.3 10.1 52.4 9.9C52.8 9.1 53.9 9.8 53.9 10.9C53.9 11.1 53.9 11.2 53.9 11.2C54 11.2 55 10.7 55.4 10.5C55.8 10.2 56 9.7 55.9 9.1C55.9 8.5 55.7 8.4 54.2 7.6C52.8 6.9 52.7 6.8 52.6 6.6C52.5 6.2 52.4 5.3 52.6 5.1L52.7 5L53.4 5L54.1 5L54.1 5.8C54.2 6.8 54.1 6.7 55.6 7.7C55.7 7.7 55.8 7.8 55.8 7.8C55.9 7.8 55.9 7.9 56 7.9C56.7 8.4 57 9.1 56.7 9.8C56.6 10.3 56.5 10.3 55.3 11.1C53.7 12 53.3 12.2 53 12.5C51.8 13.2 51.4 14.3 51.7 16C52.8 23.1 53.9 27.6 55.2 30.9C55.4 31.3 55.5 31.7 55.6 31.8C56 33.1 57.3 35 58.1 35.7C58.4 35.9 58.6 35.9 58.4 35.6C57.8 34.8 57 31.9 56.4 29.1C56.2 27.8 55.9 25.9 55.8 25.2C55.8 25 55.7 24.7 55.7 24.6C55.6 23.9 55.1 19.7 55 18.8C55 18.7 55 18.3 54.9 17.9C54.7 16.2 54.7 14.5 54.9 13.9C55.1 13.1 55.2 12.9 56.7 11.4C57.8 10.2 57.9 10.1 57.9 9.4C57.9 8.6 57.8 8.4 57 7.5C56.4 6.9 56.3 6.7 56.3 6.2C56.2 5.9 56.2 5.2 56.3 5.1L56.4 5L61.8 5L67.3 5L67.4 5.1C67.5 5.2 67.5 5.2 67.5 5.8C67.5 6.7 67.5 6.7 66 7.5C64.2 8.4 64.1 8.6 64.1 9.4C64.1 10 64.3 10.3 65.5 10.9C66.2 11.2 66.1 11.2 66.1 10.8C66.1 9.8 67.2 9.1 67.6 9.9C67.7 10.1 67.7 10.2 67.3 10.7C67.1 11 67.9 11.3 68.5 11.1C69.2 10.9 69.6 10.6 71.2 9.4C74.1 7.1 76 6.9 78 8.6C80.4 10.8 80.5 14 78.2 17.6C76.9 19.5 75.9 20.7 72.3 24.3C67.9 28.7 67.2 29.7 67.5 30.7C67.6 31.1 67.8 31.1 68.5 30.8C68.9 30.5 69 30.5 69.3 30.8C69.6 31 69.5 31.4 69.2 31.7C68.1 32.4 66.9 32.3 66.5 31.3C66.4 31 66.3 31 66.2 31.2C66.1 31.5 65.3 33 64.9 33.5C64.1 34.8 63.3 35.6 62.4 36.2C61.7 36.7 61.7 36.7 61.5 37.4C61.2 38.4 61.2 39.4 61.6 40.1C61.7 40.4 62 40.9 62.1 41C62.2 41.1 62.2 41.4 62.2 44.5C62.2 46.4 62.2 48 62.2 48.1L62.2 48.3L62.6 48.3C63.4 48.3 63.6 48.5 63.6 49.1C63.6 49.3 63.6 49.3 64.3 49.6C64.7 49.7 65.1 49.8 65.6 50.1C66 50.3 66.5 50.5 66.8 50.6C67 50.8 67.2 50.9 67.2 50.9C67.2 50.9 67.3 51 67.5 51.1C67.7 51.3 68 51.5 68.1 51.6L68.5 51.9L68.4 53.4C68.4 54.2 68.4 54.9 68.4 54.9C68.4 55 67.3 55 61.8 55C57.7 55 56.8 55 56.7 55C56.6 54.9 56.6 52.4 56.7 52C56.8 51.3 57.8 50 58.7 49.3C58.9 49.2 58.6 49.2 58.2 49.3C57.2 49.5 55 51.2 54.8 51.9C54.7 52.2 54.6 52.9 54.6 53.9C54.6 54.5 54.6 54.9 54.6 54.9C54.6 55 51.9 55 51.7 55ZM52.2 27.1C52.2 27.1 52.1 26.8 52 26.6C51.5 25.1 50.6 21.8 50 19C49.2 15.4 49.2 14.9 49.6 14C49.9 13.4 50.3 13 51 12.6C51.5 12.3 51.5 12.3 51.1 12.2C50.5 12 49.5 11.4 48.5 10.6C45.4 8.2 44.2 8.1 42.6 9.7C40.5 11.9 40.9 14.6 43.8 18.4C44.8 19.7 45.8 20.8 48.3 23.3C50.8 25.8 51.3 26.3 51.7 26.9C52.1 27.3 52.2 27.3 52.2 27.1ZM68.2 26.9C68.5 26.6 69.1 26 70.9 24.1C72.7 22.3 73.5 21.4 74.2 20.7C79 15.5 79.9 12.2 77.3 9.6C76.5 8.8 75.8 8.5 74.7 8.7C74.1 8.8 73.1 9.4 71.8 10.4C70.3 11.5 69.5 12.1 68.8 12.2C68.7 12.3 68.6 12.3 68.6 12.3C68.6 12.4 68.7 12.4 68.8 12.5C70.5 13.4 70.9 14.5 70.5 16.4C69.8 20.3 68.9 23.9 68.1 26.4C67.7 27.4 67.7 27.5 68.2 26.9Z"/><rect x="6.13" y="16.60" width="30.0" height="1.8"/><rect x="83.87" y="16.60" width="30.0" height="1.8"/><rect x="6.13" y="41.60" width="30.0" height="1.8"/><rect x="83.87" y="41.60" width="30.0" height="1.8"/></g></svg>
-        <p class="sa-eb sa-eb--ch"><a class="sa-ch" href="https://perfectnations.org/#pn-studio" aria-label="Move 01 of 05, Assets. See the five moves on the homepage">01</a><span>Sovereign Assets &middot; What Nations Own</span></p>
+        <svg class="sa-cup" viewBox="82.5 153 346 346" role="img" aria-label="The cup of the Perfect Nations logo: Assets" focusable="false"><use href="#pnk-cl" clip-path="url(#pnk-cc)"/></svg>
+        <p class="sa-eb sa-eb--ch"><a class="sa-ch" href="https://perfectnations.org/#pn-steps" aria-label="Step 01 of 03, Assets. See What we do on the homepage">01</a><span>Sovereign Assets &middot; What Nations Own</span></p>
         <h1 class="sa-h1" id="sa-h1"><span>Everyone measures what a nation owes.</span> <strong>We measure what it owns.</strong></h1>
-        <p class="sa-lead">What a nation owns can finance seven basic standards of living for all, with super intelligence (SI) keeping the count.</p>
+        <p class="sa-lead">We value each nation&#8217;s five greatest assets, so that what it owns can finance seven basic standards of living for every citizen.</p>
       </div>
       <figure class="sa-planet" aria-label="The golden planet of the ledger: one gold light for each recorded asset">
         <div class="sa-planet__box"><span class="sa-planet__disc" aria-hidden="true"></span><canvas id="saPlanet" aria-hidden="true"></canvas>
@@ -453,7 +452,7 @@ class sa-rm); the steps and the ledger drop the sentences that repeated each oth
             <p class="sa-pin__k"><span id="saPinN">5</span> recorded assets</p>
             <h3 class="sa-pin__h" id="saPinH">Nation</h3>
             <p class="sa-pin__a" id="saPinA"></p>
-            <a class="sa-go" id="saPinGo" href="https://perfectnations.org/blueprints/">Open the blueprint</a>
+            <a class="sa-go" id="saPinGo" href="https://perfectnations.org/blueprints/">See its five assets</a>
           </div>
         </div>
         <figcaption>Each gold light is one recorded asset: tap a nation to open it.</figcaption>
@@ -464,7 +463,7 @@ class sa-rm); the steps and the ledger drop the sentences that repeated each oth
           <li><b data-sa="nations" data-count="1">@@NATIONS@@</b><span>Nations</span></li>
           <li><b data-sa="classes" data-count="1">@@CLASSES@@</b><span>Asset classes</span></li>
         </ul>
-        <p class="sa-stamp">Ledger updated <span data-sa="updated">@@UPDATED@@</span>, from every open blueprint.</p>
+        <p class="sa-stamp">Updated <span data-sa="updated">@@UPDATED@@</span>, from every open blueprint.</p>
         <div class="sa-ctas">
           <a class="sa-btn" href="https://perfectnations.org/blueprints/">Explore the blueprints</a>
           <a class="sa-btn sa-btn--line" href="#sa-path">How it works</a>
@@ -518,7 +517,7 @@ class sa-rm); the steps and the ledger drop the sentences that repeated each oth
     <div class="sa-in">
       <p class="sa-eb sa-rv">Five assets</p>
       <h2 class="sa-h2 sa-rv" id="sa-five-h">Assets no national account has counted</h2>
-      <p class="sa-lead sa-rv">Power, sea, ground, route and people: five kinds of national wealth, each with an open blueprint.</p>
+      <p class="sa-lead sa-rv">River, sea, ground, route and sun: five kinds of national wealth, each from an open blueprint.</p>
       <div class="sa-stage" id="saStage">
         <div class="sa-scenes" id="saScenes">
 @@FEATURED@@
@@ -530,23 +529,14 @@ class sa-rm); the steps and the ledger drop the sentences that repeated each oth
 <div class="pn-rule" aria-hidden="true"></div>
   <section class="sa-band sa-path" id="sa-path" aria-labelledby="sa-path-h">
     <div class="sa-in">
-      <p class="sa-eb sa-rv">From asset to capital</p>
-      <h2 class="sa-h2 sa-rv" id="sa-path-h">Recorded, valued, financed</h2>
-      <ol class="sa-steps sa-rv">
-        <li><b>01</b><strong>Record</strong><p>What the nation owns, asset by asset, each with its source and date.</p></li>
-        <li><b>02</b><strong>Value</strong><p>What each asset can earn, and for whom, without being sold.</p></li>
-        <li><b>03</b><strong>Finance</strong><p>The instrument that lets capital flow against it, toward seven basic standards of living for all.</p><a class="sa-go" href="https://perfectnations.org/capital-architecture/">Capital Architecture</a></li>
+      <p class="sa-eb sa-rv">What we do</p>
+      <h2 class="sa-h2 sa-rv" id="sa-path-h">Assets. Capital. Solutions.</h2>
+      <p class="sa-lead sa-rv">Three steps, from what a nation owns to seven basic standards of living for every citizen.</p>
+      <ol class="sa-wd sa-rv">
+        <li class="is-here"><div class="sa-wd__t" aria-current="page"><svg class="sa-wd__art" viewBox="82.5 153 346 346" aria-hidden="true" focusable="false"><use href="#pnk-cl" clip-path="url(#pnk-cc)"/></svg><span class="sa-wd__top"><span class="sa-wd__n">01</span><span class="sa-wd__v">Assets</span></span><span class="sa-wd__part">The cup</span><p class="sa-wd__q">We value what a nation owns: its sovereign assets, from its people to its coast.</p><span class="sa-wd__here">You are here</span></div></li>
+        <li><a class="sa-wd__t" href="https://perfectnations.org/capital-architecture/"><svg class="sa-wd__art" viewBox="10 63.75 491 491" aria-hidden="true" focusable="false"><use href="#pnk-cl" clip-path="url(#pnk-lc)"/></svg><span class="sa-wd__top"><span class="sa-wd__n">02</span><span class="sa-wd__v">Capital</span></span><span class="sa-wd__part">The laurels</span><p class="sa-wd__q">We design the instruments that raise capital against those assets, from every source.</p><span class="sa-go sa-wd__go">Capital Architecture</span></a></li>
+        <li><a class="sa-wd__t" href="https://perfectnations.org/perfect-capita/"><svg class="sa-wd__art" viewBox="96 -45 320 220" aria-hidden="true" focusable="false"><use href="#pnk-s0"/><use href="#pnk-s1"/><use href="#pnk-s2"/><use href="#pnk-s3"/><use href="#pnk-s4"/><use href="#pnk-s5"/><use href="#pnk-s6"/></svg><span class="sa-wd__top"><span class="sa-wd__n">03</span><span class="sa-wd__v">Solutions</span></span><span class="sa-wd__part">The seven stars</span><p class="sa-wd__q">Perfect Capita: seven basic standards of living for every citizen, Food the crown.</p><span class="sa-go sa-wd__go">Perfect Capita</span></a></li>
       </ol>
-      <nav class="sa-moves sa-rv" aria-label="The five moves">
-        <p class="sa-moves__k">Sovereign Assets is the first of five moves</p>
-        <ol>
-          <li><span class="sa-mv is-here" aria-current="page"><i>01</i><b>Assets</b><small>You are here</small></span></li>
-          <li><a class="sa-mv" href="https://perfectnations.org/perfect-capita/"><i>02</i><b>Perfect Capita</b><small>What every citizen is owed</small></a></li>
-          <li><a class="sa-mv" href="https://perfectnations.org/blueprints/"><i>03</i><b>Co-Design</b><small>Drawn with the nation and SI</small></a></li>
-          <li><a class="sa-mv" href="https://perfectnations.org/capital-architecture/"><i>04</i><b>Capital</b><small>Innovative finance</small></a></li>
-          <li><a class="sa-mv" href="https://perfectnations.org/design-studio/"><i>05</i><b>Launch</b><small>Built, financed and measured</small></a></li>
-        </ol>
-      </nav>
     </div>
   </section>
 <div class="pn-rule" aria-hidden="true"></div>
@@ -554,14 +544,14 @@ class sa-rm); the steps and the ledger drop the sentences that repeated each oth
     <div class="sa-in">
       <p class="sa-eb sa-rv">The full ledger</p>
       <h2 class="sa-h2 sa-rv" id="sa-ledger-h">Every nation&#8217;s assets live on its blueprint</h2>
-      <p class="sa-lead sa-rv"><span data-sa="assets">@@ASSETS@@</span> assets across <span data-sa="nations">@@NATIONS@@</span> nations, each kept current by its Nation Steward.</p>
+      <p class="sa-lead sa-rv"><span data-sa="assets">@@ASSETS@@</span> assets across <span data-sa="nations">@@NATIONS@@</span> nations, each kept current by its SI Nation Steward.</p>
       <ul class="sa-nl" id="saNations" aria-label="Nations with an open blueprint">
 @@NATIONLIST@@
       </ul>
       <button class="sa-go sa-all" type="button" id="saAll" aria-controls="saNations" aria-expanded="false"><span>Show all <span data-sa="nations">@@NATIONS@@</span> nations</span></button>
       <div class="sa-ctas">
         <a class="sa-btn" href="https://perfectnations.org/blueprints/">Explore the blueprints</a>
-        <a class="sa-btn sa-btn--line" href="https://perfectnations.org/perfect-capita/">Next move: Perfect Capita</a>
+        <a class="sa-btn sa-btn--line" href="https://perfectnations.org/capital-architecture/">Next: Capital</a>
       </div>
     </div>
   </section>
@@ -716,7 +706,7 @@ class sa-rm); the steps and the ledger drop the sentences that repeated each oth
       halo.addColorStop(0, 'rgba(227,194,88,.22)'); halo.addColorStop(1, 'rgba(227,194,88,0)');
       ctx.fillStyle = halo; ctx.fillRect(0, 0, W, W);
       var sea = ctx.createRadialGradient(cx - R * 0.34, cy - R * 0.4, R * 0.08, cx, cy, R);
-      sea.addColorStop(0, '#2A5FD0'); sea.addColorStop(0.46, '#1440A0'); sea.addColorStop(1, '#081D52');
+      sea.addColorStop(0, '#3A5FBF'); sea.addColorStop(0.46, '#1F45A3'); sea.addColorStop(1, '#0A1D5C');   /* lapis lazuli, as the homepage planet */
       ctx.beginPath(); ctx.arc(cx, cy, R, 0, 2 * Math.PI); ctx.fillStyle = sea; ctx.fill();
       var buckets = [[], [], [], [], [], []], s0 = Math.max(1.1, R / 120);
       for (var i = 0; i < L.length; i++){
@@ -772,7 +762,7 @@ class sa-rm); the steps and the ledger drop the sentences that repeated each oth
         a.appendChild(fb); a.appendChild(mk('span', '', nt.top.name + (nt.top.label ? ' \u00b7 ' + nt.top.label : '')));
         a.hidden = false;
       } else { a.hidden = true; }
-      go2.href = nt.url; go2.setAttribute('aria-label', 'Open the blueprint of ' + nt.name);
+      go2.href = nt.url + '#bp-assets'; go2.setAttribute('aria-label', 'See the five assets of ' + nt.name + ' on its blueprint');
       pin.hidden = false;
       var bw = box.clientWidth, cw = pin.offsetWidth, ch = pin.offsetHeight;
       var left = Math.max(4, Math.min(bw - cw - 4, x - cw / 2));
@@ -912,7 +902,7 @@ class sa-rm); the steps and the ledger drop the sentences that repeated each oth
       if ((e = q('.sa-sc__src a', s))) { e.textContent = f.source || 'Source'; e.href = f.url; }
       var im = q('img.sa-sc__img', s);
       if (im && okUrl(f.image, 'https://perfectnations.org/wp-content/uploads/') && okUrl(f.image_small, 'https://perfectnations.org/wp-content/uploads/') && im.getAttribute('src') !== f.image_small){
-        im.src = f.image_small; im.srcset = f.image_small + ' 768w, ' + f.image + ' 1536w'; if (f.alt) { im.alt = f.alt; }
+        im.src = f.image_small; im.srcset = f.image_small + ' 768w, ' + f.image + ' ' + (int(f.image_w) && f.image_w > 768 ? f.image_w : 1536) + 'w'; if (f.alt) { im.alt = f.alt; }
       }
     });
     buildTabs(); show(at);
@@ -923,7 +913,7 @@ class sa-rm); the steps and the ledger drop the sentences that repeated each oth
     if (!ok) { return; }
     nl.textContent = '';
     list.forEach(function(nt){
-      var li = mk('li'), a = mk('a'); a.href = nt.url;
+      var li = mk('li'), a = mk('a'); a.href = nt.url + '#bp-assets';
       a.appendChild(mk('span', '', nt.name));
       li.appendChild(a); nl.appendChild(li);
     });
