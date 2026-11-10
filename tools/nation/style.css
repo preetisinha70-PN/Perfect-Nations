@@ -675,3 +675,164 @@
 #R .bpx-toast button.bpx-x:hover, #R .bpx-toast button.bpx-x:focus-visible{ background:#E3C258 !important; border-color:#E3C258 !important; color:#1A140C !important; transform:rotate(90deg); }
 #R .bpx-toast button.bpx-x:focus-visible{ outline:2px solid #F0D68F !important; outline-offset:3px; }
 @media (prefers-reduced-motion:reduce){ #R .bpx-toast button.bpx-x{ transition:none; } #R .bpx-toast button.bpx-x:hover, #R .bpx-toast button.bpx-x:focus-visible{ transform:none; } }
+
+/* ---------- v11.7 LIGHT (the Steward-General, 10 Nov 2026: "the site is a little dark and heavy to read; make as
+   many sections as possible the lighter colour, with the Earthrise for the accents"). Colour only: no word, figure,
+   source or layout changes. The hero (the globe and the nation at a glance) stays Earthrise, as do the toast and
+   every pop-up. Every band after it reads on light, ivory and paper alternating so neighbours stay distinct:
+     ivory: What we do, 02 Capital, 03 Solutions, Work with us; paper: 01 Assets, Already working, the Letter, the close.
+   Type on light: headlines Earthrise, body ink, muted #5C696C, terracotta eyebrows; numbers, arrows, small numerals,
+   outline buttons and active dots Earthrise; money a deep gold (#8C6A12). Gold stays for button fills, the logo
+   (always on Earthrise: the What we do tiles, the seal, the laurels on a disc, the seven stars on a panel) and the
+   money inside Earthrise cards. The Earthrise accent cards keep their light-on-dark variables (reset below). */
+#R .bpx-band:not(.bpx-hero){
+  --fg:#10262B; --mut:#34464A; --dim:#5C696C; --hair:rgba(16,38,43,.13);
+  color:#10262B;
+}
+#R .bpx-do,#R .bpx-cap,#R .bpx-pc,#R .bpx-work{
+  background:
+    radial-gradient(48% 60% at 96% 0%, rgba(227,194,88,.16) 0%, rgba(227,194,88,0) 70%),
+    radial-gradient(40% 60% at 0% 100%, rgba(11,61,69,.06) 0%, rgba(11,61,69,0) 70%),
+    linear-gradient(180deg,#F7F0DF 0%,#F4ECD8 60%,#F1E7D0 100%);
+}
+#R .bpx-assets,#R .bpx-firms,#R .bpx-letter,#R .bpx-close{
+  background:
+    radial-gradient(50% 60% at 92% 0%, rgba(227,194,88,.14) 0%, rgba(227,194,88,0) 70%),
+    radial-gradient(40% 60% at 0% 100%, rgba(138,58,34,.06) 0%, rgba(138,58,34,0) 70%),
+    linear-gradient(180deg,#FBF8F1 0%,#F6EFE0 100%);
+}
+/* the gold line lies on the first pixel of the band below it, as on the homepage, so no dark seam shows */
+#R .bpx-rule{ margin:0 0 -1px; }
+/* the Earthrise accent cards keep their light-on-dark variables */
+#R .bpx-band:not(.bpx-hero) a.bpx-t,#R .bpx-band:not(.bpx-hero) .bpx-acard:first-child,#R .bpx-band:not(.bpx-hero) .bpx-pc__sky,
+#R .bpx-band:not(.bpx-hero) .bpx-sum__t--total,#R .bpx-band:not(.bpx-hero) .bpx-sol--brief,#R .bpx-band:not(.bpx-hero) .bpx-tier--top,
+#R .bpx-band:not(.bpx-hero) .bpx-co3__l > li{
+  --fg:#F5F1E8; --mut:rgba(245,241,232,.84); --dim:rgba(245,241,232,.66); --hair:rgba(245,241,232,.16);
+  color:#F5F1E8;
+}
+#R .bpx-band:not(.bpx-hero) a:focus-visible,#R .bpx-band:not(.bpx-hero) button:focus-visible,#R .bpx-band:not(.bpx-hero) summary:focus-visible{ outline-color:#0B3D45; }
+#R .bpx-band:not(.bpx-hero) .bpx-sol--brief :focus-visible,#R .bpx-band:not(.bpx-hero) .bpx-tier--top :focus-visible,
+#R .bpx-band:not(.bpx-hero) .bpx-co3__l > li :focus-visible,#R .bpx-band:not(.bpx-hero) .bpx-pc__sky :focus-visible{ outline-color:#F0D68F; }
+
+/* the shared pieces on light */
+#R .bpx-band:not(.bpx-hero) .bpx-eb{ color:#8A3A22; }
+#R .bpx-band:not(.bpx-hero) .bpx-eb::before{ background:rgba(138,58,34,.55); opacity:1; }
+#R .bpx-band:not(.bpx-hero) .bpx-eb--step b{ color:#8A3A22; }
+#R .bpx-band:not(.bpx-hero) .bpx-eb--step span{ color:#5C696C; }
+#R .bpx-band:not(.bpx-hero) .bpx-ch{ border-color:rgba(11,61,69,.55); color:#0B3D45; }
+#R .bpx-band:not(.bpx-hero) .bpx-ch:hover{ background:#0B3D45; border-color:#0B3D45; color:#F5F1E8; }
+#R .bpx-band:not(.bpx-hero) h2.bpx-h2{ color:#0B3D45 !important; }
+#R .bpx-band:not(.bpx-hero) h2.bpx-h2 em{ color:#8A3A22; }
+#R .bpx-band:not(.bpx-hero) .bpx-lead{ color:#34464A; }
+#R .bpx-band:not(.bpx-hero) .bpx-lead b{ color:#0B3D45; }
+#R .bpx-band:not(.bpx-hero) .bpx-money{ color:#8C6A12; }
+#R .bpx-band:not(.bpx-hero) .bpx-link{ color:#0B3D45; }
+#R .bpx-band:not(.bpx-hero) .bpx-link:hover{ color:#8A3A22; }
+#R .bpx-band:not(.bpx-hero) .bpx-showall{ border-color:rgba(11,61,69,.45); color:#0B3D45; }
+#R .bpx-band:not(.bpx-hero) .bpx-showall:hover{ background:rgba(11,61,69,.07); }
+#R .bpx-band:not(.bpx-hero) .bpx-btn{ box-shadow:0 10px 24px rgba(140,106,18,.22); }
+#R .bpx-band:not(.bpx-hero) .bpx-btn--line{ background:transparent; color:#0B3D45; border-color:rgba(11,61,69,.45); box-shadow:none; }
+#R .bpx-band:not(.bpx-hero) .bpx-btn--line:hover{ background:rgba(11,61,69,.07); }
+#R .bpx-band:not(.bpx-hero) .bpx-more > summary{ color:#0B3D45; }
+#R .bpx-band:not(.bpx-hero) .bpx-more > summary:hover::after{ background:#0B3D45; border-color:#0B3D45; color:#F5F1E8; }
+#R .bpx-band:not(.bpx-hero) .bpx-more__b{ color:#34464A; }
+#R .bpx-band:not(.bpx-hero) .bpx-sol--brief .bpx-more > summary,#R .bpx-band:not(.bpx-hero) .bpx-tier--top .bpx-more > summary{ color:#F0D68F; }
+#R .bpx-band:not(.bpx-hero) .bpx-sol--brief .bpx-more > summary:hover::after,#R .bpx-band:not(.bpx-hero) .bpx-tier--top .bpx-more > summary:hover::after{ background:#E3C258; border-color:#E3C258; color:#1A140C; }
+#R .bpx-band:not(.bpx-hero) .bpx-sol--brief .bpx-more__b,#R .bpx-band:not(.bpx-hero) .bpx-tier--top .bpx-more__b{ color:rgba(245,241,232,.84); }
+
+/* 01 Assets: white cards, Earthrise figures and numerals; the lead card stays Earthrise with its gold figure */
+#R .bpx-band:not(.bpx-hero) .bpx-acard{ background:#FFFDF8; border-color:rgba(16,38,43,.12); box-shadow:0 1px 0 rgba(255,255,255,.9) inset, 0 10px 26px rgba(16,38,43,.08); }
+#R .bpx-band:not(.bpx-hero) .bpx-acard::before{ background:linear-gradient(90deg,#0B3D45,rgba(11,61,69,0) 80%); }
+#R .bpx-band:not(.bpx-hero) .bpx-acard__n{ background:transparent; border-color:rgba(11,61,69,.45); color:#0B3D45; }
+#R .bpx-band:not(.bpx-hero) .bpx-acard__fig b,#R .bpx-band:not(.bpx-hero) .bpx-acard h3{ color:#0B3D45; }
+#R .bpx-band:not(.bpx-hero) .bpx-acard:first-child{
+  border-color:rgba(227,194,88,.38); box-shadow:0 18px 44px rgba(11,61,69,.28);
+  background:radial-gradient(120% 80% at 100% 0%, rgba(227,194,88,.16) 0%, rgba(227,194,88,0) 60%), linear-gradient(165deg,#10505F 0%,#0B3D45 48%,#09313A 100%);
+}
+#R .bpx-band:not(.bpx-hero) .bpx-acard:first-child::before{ background:linear-gradient(90deg,#E3C258,rgba(227,194,88,0) 80%); }
+#R .bpx-band:not(.bpx-hero) .bpx-acard:first-child .bpx-acard__n{ background:rgba(8,42,48,.86); border-color:rgba(227,194,88,.6); color:#E3C258; }
+#R .bpx-band:not(.bpx-hero) .bpx-acard:first-child .bpx-acard__fig b{ color:#E3C258; }
+#R .bpx-band:not(.bpx-hero) .bpx-acard:first-child h3{ color:#F5F1E8; }
+
+/* 02 Capital: the laurels on an Earthrise disc; the record, the lines and the Newswire as white cards */
+#R .bpx-band:not(.bpx-hero) svg.bpx-mark{
+  width:clamp(84px,8vw,118px); height:clamp(84px,8vw,118px); padding:clamp(8px,.8vw,12px); border-radius:50%;
+  background:radial-gradient(70% 70% at 50% 30%, rgba(227,194,88,.14) 0%, rgba(227,194,88,0) 70%), linear-gradient(165deg,#10505F 0%,#0B3D45 52%,#082A30 100%);
+  box-shadow:0 0 0 1px rgba(227,194,88,.42), 0 12px 28px rgba(11,61,69,.28);
+}
+#R .bpx-band:not(.bpx-hero) .bpx-recs li{ background:#FFFDF8; border-color:rgba(16,38,43,.12); box-shadow:0 6px 16px rgba(16,38,43,.06); }
+#R .bpx-band:not(.bpx-hero) .bpx-recs li > b{ color:#0B3D45; }
+#R .bpx-band:not(.bpx-hero) .bpx-recs li > a,#R .bpx-band:not(.bpx-hero) .bpx-ir__src{ color:#0B3D45; }
+#R .bpx-band:not(.bpx-hero) .bpx-fb{ background:#FFFDF8; border-color:rgba(16,38,43,.2); color:#10262B; }
+#R .bpx-band:not(.bpx-hero) .bpx-fb.is-on{ background:#0B3D45; border-color:#0B3D45; color:#F5F1E8; }
+#R .bpx-band:not(.bpx-hero) .bpx-fb.is-on span{ color:rgba(245,241,232,.74); }
+#R .bpx-band:not(.bpx-hero) .bpx-ir details{ background:#FFFDF8; border-color:rgba(16,38,43,.12); }
+#R .bpx-band:not(.bpx-hero) .bpx-ir details[open]{ background:#FFFFFF; box-shadow:0 8px 20px rgba(16,38,43,.08); }
+#R .bpx-band:not(.bpx-hero) .bpx-ir summary::after{ border-color:rgba(11,61,69,.5); color:#0B3D45; }
+#R .bpx-band:not(.bpx-hero) .bpx-ir__n{ color:#0B3D45; }
+#R .bpx-band:not(.bpx-hero) .bpx-cat{ background:rgba(11,61,69,.08); color:#0B3D45; }
+#R .bpx-band:not(.bpx-hero) .bpx-stat{ border-color:rgba(16,38,43,.22); color:#3E4E52; }
+#R .bpx-band:not(.bpx-hero) .bpx-stat--active,#R .bpx-band:not(.bpx-hero) .bpx-stat--granted{ border-color:rgba(29,107,76,.45); color:#1D6B4C; }
+#R .bpx-band:not(.bpx-hero) .bpx-stat--pipeline,#R .bpx-band:not(.bpx-hero) .bpx-stat--appeal{ border-color:rgba(138,58,34,.45); color:#8A3A22; }
+#R .bpx-band:not(.bpx-hero) .bpx-nw{ background:#FFFDF8; border-color:rgba(16,38,43,.12); box-shadow:0 10px 26px rgba(16,38,43,.08); }
+#R .bpx-band:not(.bpx-hero) .bpx-nw__h h3{ color:#0B3D45; }
+#R .bpx-band:not(.bpx-hero) .bpx-stew img{ border-color:#0B3D45; }
+#R .bpx-band:not(.bpx-hero) .bpx-stew span{ color:#8A3A22; }
+
+/* Already working in the nation: white cards */
+#R .bpx-band:not(.bpx-hero) h2.bpx-ent__t{ color:#0B3D45 !important; }
+#R .bpx-band:not(.bpx-hero) .bpx-ents li{ background:#FFFDF8; border-color:rgba(16,38,43,.12); box-shadow:0 6px 16px rgba(16,38,43,.06); }
+#R .bpx-band:not(.bpx-hero) .bpx-ent__s{ color:#8A3A22; }
+#R .bpx-band:not(.bpx-hero) .bpx-ents h3{ color:#0B3D45; }
+#R .bpx-band:not(.bpx-hero) .bpx-ents a{ color:#0B3D45; }
+
+/* 03 Solutions: the seven stars of the logo on an Earthrise panel; the price, the figures and the Solutions on light */
+#R .bpx-band:not(.bpx-hero) .bpx-pc__def b{ color:#8A3A22; }
+#R .bpx-band:not(.bpx-hero) .bpx-pc__sky{
+  padding:clamp(14px,1.8vw,24px) clamp(12px,1.6vw,22px) clamp(12px,1.4vw,18px); border-radius:22px;
+  border:1px solid rgba(227,194,88,.32); box-shadow:0 22px 48px rgba(11,61,69,.26);
+  background:radial-gradient(70% 60% at 50% 28%, rgba(227,194,88,.14) 0%, rgba(227,194,88,0) 70%), radial-gradient(50% 55% at 96% 100%, rgba(120,200,205,.12) 0%, rgba(120,200,205,0) 64%), linear-gradient(170deg,#10505F 0%,#0B3D45 46%,#082A30 100%);
+}
+#R .bpx-band:not(.bpx-hero) .bpx-sum{ background:#FFFDF8; border-color:rgba(16,38,43,.12); box-shadow:0 10px 26px rgba(16,38,43,.08); }
+#R .bpx-band:not(.bpx-hero) .bpx-sum__t{ background:rgba(11,61,69,.06); }
+#R .bpx-band:not(.bpx-hero) .bpx-sum__t--total{ background:radial-gradient(90% 90% at 0% 0%, rgba(227,194,88,.16) 0%, rgba(227,194,88,0) 62%), linear-gradient(165deg,#10505F 0%,#0B3D45 50%,#09313A 100%); box-shadow:0 12px 28px rgba(11,61,69,.26); }
+#R .bpx-band:not(.bpx-hero) .bpx-sum__t--total span{ color:rgba(245,241,232,.84); }
+#R .bpx-band:not(.bpx-hero) .bpx-sum__t--total b.bpx-money{ color:#E3C258; }
+#R .bpx-band:not(.bpx-hero) .bpx-how a{ color:#0B3D45; }
+#R .bpx-band:not(.bpx-hero) .bpx-std li{ background:#FFFDF8; border-color:rgba(16,38,43,.12); }
+#R .bpx-band:not(.bpx-hero) .bpx-std li > b{ color:#0B3D45; }
+#R .bpx-band:not(.bpx-hero) .bpx-std li.is-bind{ border-color:rgba(138,58,34,.45); background:rgba(138,58,34,.07); }
+#R .bpx-band:not(.bpx-hero) h3.bpx-h3{ color:#0B3D45; }
+#R .bpx-band:not(.bpx-hero) .bpx-sol:not(.bpx-sol--brief){ background:#FFFDF8; border:1px solid rgba(16,38,43,.12); box-shadow:0 1px 0 rgba(255,255,255,.9) inset, 0 10px 26px rgba(16,38,43,.08); }
+#R .bpx-band:not(.bpx-hero) .bpx-sol--brief{ box-shadow:0 18px 44px rgba(11,61,69,.28); }
+
+/* the Letter, on paper */
+#R .bpx-band:not(.bpx-hero) .bpx-frame__cap{ color:#10262B; }
+#R .bpx-band:not(.bpx-hero) .bpx-frame__cap small{ color:#5C696C; }
+#R .bpx-band:not(.bpx-hero) .bpx-frame__cap a{ color:#0B3D45; }
+
+/* Work with us: white mandates, the Sovereign Mandate an Earthrise card; Co-design on a paper panel, its cards Earthrise */
+#R .bpx-band:not(.bpx-hero) .bpx-moves li{ background:#FFFDF8; border-color:rgba(16,38,43,.12); color:#0B3D45; }
+#R .bpx-band:not(.bpx-hero) .bpx-moves b{ border-color:rgba(11,61,69,.55); color:#0B3D45; }
+#R .bpx-band:not(.bpx-hero) .bpx-tier:not(.bpx-tier--top){ background:#FFFDF8; border-color:rgba(16,38,43,.12); box-shadow:0 10px 26px rgba(16,38,43,.08); }
+#R .bpx-band:not(.bpx-hero) .bpx-tier:not(.bpx-tier--top) .bpx-tier__k{ color:#8A3A22; }
+#R .bpx-band:not(.bpx-hero) .bpx-tier:not(.bpx-tier--top) h3{ color:#0B3D45; }
+#R .bpx-band:not(.bpx-hero) .bpx-tier:not(.bpx-tier--top) .bpx-pips span{ background:rgba(16,38,43,.14); }
+#R .bpx-band:not(.bpx-hero) .bpx-tier:not(.bpx-tier--top) .bpx-pips span.on{ background:#0B3D45; }
+#R .bpx-band:not(.bpx-hero) .bpx-tier--top{
+  border-color:rgba(227,194,88,.5); box-shadow:0 18px 44px rgba(11,61,69,.28);
+  background:radial-gradient(90% 70% at 100% 0%, rgba(227,194,88,.18) 0%, rgba(227,194,88,0) 62%), linear-gradient(170deg,#12586A 0%,#0B3D45 46%,#082A30 100%);
+}
+#R .bpx-band:not(.bpx-hero) .bpx-co3{
+  background:radial-gradient(60% 90% at 100% 0%, rgba(227,194,88,.14) 0%, rgba(227,194,88,0) 70%), linear-gradient(180deg,#FBF8F1 0%,#F6EFE0 100%);
+  border:1px solid rgba(16,38,43,.1); box-shadow:0 12px 30px rgba(16,38,43,.08);
+}
+#R .bpx-band:not(.bpx-hero) .bpx-co3__l .bpx-btn--line{ color:#E3C258; border-color:rgba(227,194,88,.6); }
+#R .bpx-band:not(.bpx-hero) .bpx-co3__l .bpx-btn--line:hover{ background:rgba(227,194,88,.12); }
+
+/* the close and the Sources, on paper */
+#R .bpx-band:not(.bpx-hero) .bpx-sources summary,#R .bpx-band:not(.bpx-hero) .bpx-sources a{ color:#0B3D45; }
+@media (max-width:640px){
+  #R .bpx-band:not(.bpx-hero) svg.bpx-mark{ width:68px; height:68px; padding:6px; }
+  #R .bpx-band:not(.bpx-hero) .bpx-pc__sky{ padding:12px 10px 10px; border-radius:18px; }
+}
