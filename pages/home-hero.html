@@ -2,6 +2,13 @@
 PERFECT NATIONS - HOMEPAGE - SECTION 01 - EVERY NATION IS RICHER - v7.0 THE STORY FIRST - 2026-11-08
 Served live from GitHub (pages/home-hero.html) by the Perfect Nations Live Pages plugin;
 the root id stays pn-hero, so the widget already on the homepage is the one replaced.
+v7.7 (homepage v12.2, 10 Nov 2026), the Steward-General: "the homepage globe is not showing the border lines for
+  the nations". The long straight borders (Algeria, Libya, Egypt, Sudan, Mali, Niger, Chad, Mauritania) were
+  drawn as single straight chords between far-apart points; a chord cuts under the curve of the planet, so the
+  gold of the nations hid it. With 20 more African blueprints now open in the same bright gold, those nations
+  read as one block. Every border is now cut into pieces of at most half a degree that follow the curve,
+  sits a little higher above the gold (0.0020 of the radius, was 0.0012), and the gold is set a touch behind it
+  in depth (polygon offset), so phones with less depth precision also draw every line.
 v7.6 (homepage v11.3, 9 Nov 2026), the Steward-General: on a laptop the line under the globe ("Every nation is
   on the Blueprints map. Open the map") ran over the globe's bottom; it is removed (Find your nation goes to the
   map). The figures row (195 nations, 44 blueprints open, 7 standards, 824m in extreme poverty) is removed too:
@@ -764,7 +771,9 @@ window.PNHG_CFG={"base":"https://perfectnations.org/blueprints/","paths":{"cote-
 
     function phong(g){
       return new THREE.MeshPhongMaterial({ color: new THREE.Color(g.c), emissive: new THREE.Color(g.e),
-        emissiveIntensity: g.ei, specular: new THREE.Color(g.s), shininess: g.sh, side: THREE.DoubleSide });
+        emissiveIntensity: g.ei, specular: new THREE.Color(g.s), shininess: g.sh, side: THREE.DoubleSide,
+        /* v7.7: the gold sits a touch behind in depth, so the borders above it always win on phone screens */
+        polygonOffset: true, polygonOffsetFactor: 2, polygonOffsetUnits: 2 });
     }
     var MAT = { live: phong(GOLD.live), soon: phong(GOLD.soon), none: phong(GOLD.none), hov: phong(GOLD.hov) };
 
@@ -848,7 +857,7 @@ window.PNHG_CFG={"base":"https://perfectnations.org/blueprints/","paths":{"cote-
     function borders(){
       var groups = {}, k;
       lands.forEach(function(Ld){
-        var alt = (ALT[Ld.state] || ALT.none) + Ld.up + 0.0012;
+        var alt = (ALT[Ld.state] || ALT.none) + Ld.up + 0.0020;
         k = alt.toFixed(4);
         (groups[k] = groups[k] || { alt: alt, polys: [] }).polys.push(Ld.geometry.coordinates);
       });
@@ -860,8 +869,18 @@ window.PNHG_CFG={"base":"https://perfectnations.org/blueprints/","paths":{"cote-
             var rgn = polys[i2][0];
             for (j2 = 0; j2 < rgn.length; j2++){
               k2 = (j2 + 1) % rgn.length;
-              a = globe.getCoords(rgn[j2][1], rgn[j2][0], G.alt); b = globe.getCoords(rgn[k2][1], rgn[k2][0], G.alt);
-              v.push(a.x, a.y, a.z, b.x, b.y, b.z);
+              /* v7.7: a long straight border (the Sahara, the Egypt and Sudan lines) is cut into pieces of at
+                 most half a degree, so the line follows the curve of the planet and is not hidden under the
+                 curved gold of the nations either side of it */
+              var x1 = rgn[j2][0], y1 = rgn[j2][1], x2 = rgn[k2][0], y2 = rgn[k2][1];
+              if (Math.abs(x2 - x1) > 180) { continue; }
+              var n = Math.max(1, Math.ceil(Math.max(Math.abs(x2 - x1), Math.abs(y2 - y1)) / 0.5)), q;
+              a = globe.getCoords(y1, x1, G.alt);
+              for (q = 1; q <= n; q++){
+                b = globe.getCoords(y1 + (y2 - y1) * q / n, x1 + (x2 - x1) * q / n, G.alt);
+                v.push(a.x, a.y, a.z, b.x, b.y, b.z);
+                a = b;
+              }
             }
           }
         });
