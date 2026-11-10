@@ -1,5 +1,5 @@
-(function () {
-  /* The nation globe (blueprint v10.0). A small WebGL picture of the Earth, drawn by this page alone:
+(function pnGlobe() {
+  /* The nation globe (blueprint v10.0; v11.8 below). A small WebGL picture of the Earth, drawn by this page alone:
      no globe.gl and no three.js (about 290 KB of script that every blueprint used to download).
      - The Earth is NASA Blue Marble (Media Library: pn-globe-earth-day, the 1536 px copy on laptops,
        the 1024 px copy on phones). The nation is painted in gold from its outline, built into the page.
@@ -9,9 +9,17 @@
        capped pixel ratio (1.25 phones, 1.5 laptops). It asks the laptop for its low-power graphics chip.
      - If the browser takes the drawing surface away (a graphics reset), the still Earth shows in its place
        and the moving globe returns by itself when the surface is restored.
-     - Without WebGL it draws one still Earth on a plain canvas. With reduced motion it draws one frame. */
+     - Without WebGL it draws one still Earth on a plain canvas. With reduced motion it draws one frame.
+     v11.8 (10 Nov 2026, some globes showed only the blue placeholder and a dot on phones):
+     - The globe with the nation in gold is now drawn into the page by the build (SVG), so the map shows at once and
+       stays whenever the Earth cannot be shown.
+     - If this script runs before the globe is on the page (a cache or optimiser that moves scripts), it waits for it.
+     - The Earth picture is asked for at the page's own address first (an optimiser or CDN that rewrites the address
+       to another host makes the picture unusable for drawing), then as written, then in the other size.
+     - data-globe on the globe says how it ended: gl, still, or map (the drawn map alone). */
   /*pn:globe-cfg*/
   var root = document.getElementById(CFG.root);
+  if (!root && document.readyState === 'loading') { document.addEventListener('DOMContentLoaded', pnGlobe); return; }
   var wrap = root && root.querySelector('.bpx-globe');
   if (!wrap || wrap.getAttribute('data-ready') === '1') return;
   wrap.setAttribute('data-ready', '1');
@@ -22,12 +30,21 @@
   var calm = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var D2R = Math.PI / 180;
   var natLat = CFG.lat * D2R, natLng = CFG.lng * D2R;
-  var img = new Image();
-  img.decoding = 'async';
-  img.crossOrigin = 'anonymous';
-  img.onload = function () { start(); };
-  img.onerror = function () { wrap.classList.add('is-failed'); };
-  img.src = phone ? CFG.tex.sm : CFG.tex.lg;
+  function own(u) { try { var a = new URL(u, location.href); return location.origin + a.pathname; } catch (e) { return u; } }
+  var first = phone ? CFG.tex.sm : CFG.tex.lg, other = phone ? CFG.tex.lg : CFG.tex.sm, tries = [];
+  [own(first), first, own(other)].forEach(function (u) { if (u && tries.indexOf(u) < 0) tries.push(u); });
+  var img = null;
+  function fetchEarth(i) {
+    if (i >= tries.length) { wrap.classList.add('is-failed'); wrap.setAttribute('data-globe', 'map'); return; }
+    img = new Image();
+    img.decoding = 'async';
+    img.crossOrigin = 'anonymous';
+    img.onload = function () { start(); };
+    img.onerror = function () { fetchEarth(i + 1); };
+    img.src = tries[i];
+  }
+  wrap.setAttribute('data-globe', 'map');
+  fetchEarth(0);
 
   /* The nation's outline, painted once into a small picture (red: the land; green: its edge). */
   function wrapLon(d) { d = (d + 540) % 360 - 180; return d; }
@@ -205,6 +222,7 @@
       }
       sx.putImageData(out, 0, 0);
       wrap.classList.add('is-still');
+      if (!live) wrap.setAttribute('data-globe', 'still');
     } catch (e) { wrap.classList.add('is-failed'); }
   }
 
@@ -215,7 +233,7 @@
       if (!gl) return false;
       setup();
       t0 = performance.now(); draw(t0);
-      live = true; wrap.classList.add('is-on');
+      live = true; wrap.classList.add('is-on'); wrap.setAttribute('data-globe', 'gl');
       return true;
     } catch (e) { gl = null; live = false; return false; }
   }
