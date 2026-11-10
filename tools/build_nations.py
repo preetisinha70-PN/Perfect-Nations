@@ -1,7 +1,15 @@
 #!/usr/bin/env python3
 """Build every national blueprint page (pages/blueprint-<slug>.html) from one template.
 
-Blueprint v11.5 (9 November 2026). One design for every nation, so a change is made once and reaches all.
+Blueprint v11.7 (10 November 2026). One design for every nation, so a change is made once and reaches all.
+v11.7: light reading sections, Earthrise accents (the Steward-General, 10 Nov 2026: "the site is a little dark and
+heavy to read; make as many sections as possible the lighter colour, with the Earthrise for the accents"). Colour
+only, in the LIGHT block at the end of tools/nation/style.css: the hero (the globe and the nation at a glance) stays
+Earthrise; What we do, 01 Assets, 02 Capital, Already working in <Nation>, 03 Solutions, the Letter, Work with us and
+the close read on ivory and paper, alternating. Earthrise stays for the accents: the What we do tiles and the seal,
+the lead Assets card, the laurels of Capital on an Earthrise disc, the seven stars on an Earthrise panel, the price
+of Perfect <Nation>, the Sovereign Mandate, the co-design cards and the playbook Solution. Gold only for button
+fills, the logo (always on Earthrise) and money (a deep gold, #8C6A12, on light).
 v11.5: three changes for clarity (the Steward-General, 9 Nov 2026). 1. "The register" is "Capital already committed"
 wherever a visitor reads it (the label, the hero tile link, the empty state and the Sources); the anchor bp-register
 and the data key capital.register are unchanged. 2. "Already working in <Nation>" is its own band directly after
@@ -90,7 +98,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 PAGES, DATA, HERE = ROOT / 'pages', ROOT / 'data', ROOT / 'tools' / 'nation'
-VERSION = '11.6'  # the close button of every pop-up is one design: a gold X drawn as two strokes, centred in a circle (the Steward-General, 9 Nov 2026)
+VERSION = '11.7'  # light reading sections, Earthrise accents (the Steward-General, 10 Nov 2026)
 EARTH = {'lg': 'https://perfectnations.org/wp-content/uploads/2026/10/pn-globe-earth-day-1536x768.jpg',
          'sm': 'https://perfectnations.org/wp-content/uploads/2026/10/pn-globe-earth-day-1024x512.jpg'}
 ORDER = ['Food', 'Water', 'Shelter', 'Energy', 'Education', 'Health', 'Livelihoods']
@@ -895,6 +903,7 @@ def build(slug, sbn, son, today):
     script = (HERE / 'script.js').read_text(encoding='utf-8').replace('/*pn:cfg*/', 'var CFG = %s;' % js_str(cfg))
     head = (
         '<!-- PERFECT NATIONS . NATIONAL BLUEPRINT . %s . v%s . %s . Built by tools/build_nations.py: never edit by hand. -->\n'
+        '<!-- v11.7 (10 November 2026): light reading sections, Earthrise accents (the Steward-General, 10 Nov 2026). -->\n'
         '<!-- v11.5 (9 November 2026): three changes for clarity (the Steward-General, 9 Nov 2026). The register reads\n'
         '     Capital already committed; Already working in the nation is its own band after 02 Capital, its firms and\n'
         '     social enterprises independent and none a partner; Perfect Nations is a new-age sovereign advisory firm. -->\n'
