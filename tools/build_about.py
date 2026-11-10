@@ -8,6 +8,7 @@ The page is edited by hand, except the blocks that this script writes in place:
   GENERATED:NSTEWARDS the Nation Stewards: one linked card per open blueprint in
                       data/blueprints.json, with the Steward's name from data/<slug>.json and the
                       portrait the nation's own blueprint uses (pages/blueprint-<slug>.html)
+v11.4 (10 Nov 2026): the homepage close (pages/home-pledge.html) is the close of this page too.
 v11.3 (9 Nov 2026): every element of the logo in one gold, #E3C258, with no dimmed parts (the Steward-General).
 v11.2 (9 Nov 2026): fewer words, one headline and one line per section, the detail behind Read more
 (the Steward-General). The parts carry the cuts; this script is unchanged but for its version.
@@ -24,6 +25,8 @@ it stands (its banner dropped), with a one-line note naming the file and its ver
   GENERATED:CAPITAL   02 Capital, the laurels: Capital Architecture (pages/home-capital.html, #pn-capital)
   GENERATED:CAPITA    03 Solutions, the seven stars: Perfect Capita (pages/home-perfect-capita.html, #pn-capita)
   GENERATED:VISION    The Founder's Vision (pages/home-vision.html, #pn-vision)
+  GENERATED:PLEDGE    the close: What could your nation become? The ReDesign Studio and its three ways
+                      to begin (pages/home-pledge.html, #pn-pledge); added in v11.4
 To change one of these sections, edit its part and run this script (and tools/build_home.py if the
 homepage shows it too). Each part scopes its style to its own root id, so the page's own style
 (scoped to #pn-about .ab-*) and the parts' styles do not meet. The script refuses a page whose ids
@@ -44,7 +47,7 @@ ROOT = Path(__file__).resolve().parent.parent
 PAGES = ROOT / 'pages'
 DATA = ROOT / 'data'
 PAGE = PAGES / 'about.html'
-VERSION = '11.3'
+VERSION = '11.4'
 RESEARCH_STEWARDS = 6
 # The homepage parts this page shows, by block name (see the docstring).
 PARTS = [
@@ -53,6 +56,7 @@ PARTS = [
     ('CAPITAL', 'home-capital.html'),
     ('CAPITA', 'home-perfect-capita.html'),
     ('VISION', 'home-vision.html'),
+    ('PLEDGE', 'home-pledge.html'),
 ]
 
 
