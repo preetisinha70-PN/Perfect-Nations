@@ -8,7 +8,7 @@
   },
   "population": 21756000,
   "hero": {
-    "lead": "An island of 21.8 million that restructured its debts, has drawn $2.4 billion from the IMF since 2023, and keeps nine in ten of its children in school.",
+    "lead": "An island of 21.8 million that restructured its debts, has drawn $2.4 billion under its IMF programme since 2023, and keeps nine in ten of its children in school.",
     "stats": [
       {
         "value": "21.8m",
@@ -16,7 +16,7 @@
       },
       {
         "value": "$2.4B",
-        "label": "Drawn from the IMF since 2023"
+        "label": "Drawn under the IMF programme since 2023"
       },
       {
         "value": "92%",
@@ -28,52 +28,112 @@
     "heading": "Sri Lanka has rebuilt its credit after default. Next, a clean stove in every home.",
     "record": [
       {
+        "value": "Rs 32.98T",
+        "money": true,
+        "text": "Total public debt (gross) at end-June 2026, provisional: LKR 32,977 billion (USD 97,952 million); total debt of the government LKR 31,999 billion",
+        "source": "Ministry of Finance, 2026",
+        "url": "https://treasury.gov.lk/api/file/0581bb0a-93a5-43fe-b293-ada236340ff6"
+      },
+      {
         "value": "$3B",
         "money": true,
-        "text": "Extended Fund Facility: About $2.4 billion disbursed; about $695 million released in May 2026",
+        "text": "Extended Fund Facility, approved 20 March 2023: about $2.4 billion drawn; about $695 million made available in May 2026",
         "source": "IMF, 2026",
         "url": "https://www.imf.org/en/news/articles/2026/05/27/pr26172-sri-lanka-imf-completes-combined-5th-and-6th-reviews-under-eff"
       },
       {
+        "value": "$12.55B",
+        "money": true,
+        "text": "International sovereign bonds, face amount at end-2023: 98% exchanged in the restructuring settled on 20 December 2024; upfront debt stock reduction of USD 3.0 billion",
+        "source": "Ministry of Finance, 2025",
+        "url": "https://www.treasury.gov.lk/api/file/bd447900-840d-4c28-bfcb-7c78fe79bbf2"
+      },
+      {
         "value": "$206M",
         "money": true,
-        "text": "Emergency financing: Emergency balance-of-payments support",
+        "text": "Rapid Financing Instrument, approved 19 December 2025: emergency support after Cyclone Ditwah",
         "source": "IMF, 2025",
         "url": "https://www.imf.org/en/news/articles/2025/12/19/pr-25436-sri-lanka-imf-approves-us-206-million-in-emergency-financial-support"
       },
       {
-        "value": "$150M",
+        "value": "$200M",
         "money": true,
-        "text": "Reform agenda for growth and resilience: Budget support for reforms",
-        "source": "World Bank, 2026",
-        "url": "https://www.worldbank.org/en/news/press-release/2026/07/01/world-bank-backs-sri-lanka-s-reform-agenda-with-us-150-million-to-drive-growth-and-resilience"
-      },
-      {
-        "value": "$110M",
-        "money": true,
-        "text": "Climate-resilient roads: Roads that withstand floods and landslides",
-        "source": "World Bank, 2026",
-        "url": "https://www.worldbank.org/en/news/press-release/2026/09/30/world-bank-approves-110-million-for-climate-resilient-roads-in-sri-lanka"
-      },
-      {
-        "value": "$150M",
-        "money": true,
-        "text": "Clean energy transition: Renewable power",
-        "source": "World Bank, 2025",
-        "url": "https://www.worldbank.org/en/news/press-release/2025/06/20/world-bank-group-to-support-sri-lanka-s-clean-energy-transition-with-150-million-program"
+        "text": "Post-Cyclone Ditwah Reconstruction and Livelihood Support Project: roads, irrigation, and the livelihoods and housing of cyclone-affected households; loan agreements signed 18 August 2026",
+        "source": "Ministry of Finance, 2026",
+        "url": "https://www.treasury.gov.lk/api/file/53e13e74-37db-44cc-9a93-cf7eb8a8440d"
       }
     ],
     "register": [
       {
+        "cat": "govt",
+        "status": "Completed",
+        "tone": "completed",
+        "name": "International sovereign bond exchange",
+        "detail": "Settlement concluded 20 December 2024 · 96% participation · 98% of the bonds exchanged",
+        "amount": "$12.55B",
+        "money": true,
+        "note": "Face amount of the international sovereign bonds at end-2023",
+        "text": "Sri Lanka exchanged its existing international sovereign bonds for new restructured bonds, on terms that introduced Macro-Linked Bonds. The Ministry of Finance puts the upfront reduction in debt stock at USD 3.0 billion, which can rise to USD 4.3 billion in an economic downturn, and the cut in debt service during the four-year IMF programme at USD 9.6 billion.",
+        "by": [
+          "Government of Sri Lanka"
+        ],
+        "url": "https://www.treasury.gov.lk/api/file/bd447900-840d-4c28-bfcb-7c78fe79bbf2"
+      },
+      {
         "cat": "multi",
-        "status": "Active",
+        "status": "Agreed at staff level",
+        "tone": "pipeline",
+        "name": "Extended Fund Facility, seventh review",
+        "detail": "Staff-level agreement 4 October 2026 · SDR 254 million · Subject to IMF Executive Board approval",
+        "amount": "$345M",
+        "money": true,
+        "note": "Board approval depends on the 2027 Budget and a financing assurances review",
+        "text": "On Board approval Sri Lanka would draw about US$345 million, bringing disbursements under the arrangement to about US$2.7 billion. Approval depends on the Minister of Finance presenting to Parliament a 2027 Budget in line with programme parameters, and on a financing assurances review of multilateral partners’ contributions. Staff also urged faster recovery and reconstruction after Cyclone Ditwah.",
+        "by": [
+          "International Monetary Fund"
+        ],
+        "url": "https://www.imf.org/en/news/articles/2026/10/04/pr26318-sri-lanka-imf-reaches-sla-on-7th-review-under-the-eff"
+      },
+      {
+        "cat": "multi",
+        "status": "Approved",
+        "tone": "active",
+        "name": "Inclusive Connectivity and Development Project, new financing",
+        "detail": "Approved 30 September 2026 · IDA Crisis Response Window · Extends the project by three years",
+        "amount": "$110M",
+        "money": true,
+        "note": "600 km of roads severely damaged by Cyclone Ditwah",
+        "text": "Repairs and rebuilds 600 kilometres of roads severely damaged by Cyclone Ditwah, with priority for roads that restore access to markets, schools and health facilities. The World Bank expects it to benefit more than 830,000 people directly and to reach close to two million across eight target districts, which serves the livelihood, education and health standards.",
+        "by": [
+          "World Bank"
+        ],
+        "url": "https://www.worldbank.org/en/news/press-release/2026/09/30/world-bank-approves-110-million-for-climate-resilient-roads-in-sri-lanka"
+      },
+      {
+        "cat": "multi",
+        "status": "Approved",
+        "tone": "active",
+        "name": "Reforms for Growth, Resilience and Openness Development Policy Operation (REGROW DPO)",
+        "detail": "Approved 29 June 2026 · Announced 1 July 2026 · Development policy operation · Budget support",
+        "amount": "$150M",
+        "money": true,
+        "note": "Trade, investment climate, financial sector, state enterprise and power sector reforms",
+        "text": "Budget support for reforms that reduce trade barriers, improve the investment climate and strengthen the financial sector, with measures to expand women’s employment, improve the governance of state-owned enterprises and make the power sector more competitive. Lower energy costs and more jobs serve the energy and livelihood standards.",
+        "by": [
+          "World Bank"
+        ],
+        "url": "https://www.worldbank.org/en/news/press-release/2026/07/01/world-bank-backs-sri-lanka-s-reform-agenda-with-us-150-million-to-drive-growth-and-resilience"
+      },
+      {
+        "cat": "multi",
+        "status": "Approved",
         "tone": "active",
         "name": "Extended Fund Facility",
-        "detail": "Approved 20 March 2023 · Fifth and sixth reviews 27 May 2026",
+        "detail": "Approved 20 March 2023 · SDR 2.286 billion, 395 percent of quota · Combined fifth and sixth reviews completed 27 May 2026",
         "amount": "$3B",
         "money": true,
-        "note": "About $2.4 billion disbursed; about $695 million released in May 2026",
-        "text": "Staff agreed the seventh review in October 2026.",
+        "note": "About $2.4 billion drawn; about $695 million made available in May 2026",
+        "text": "The IMF arrangement approved on 20 March 2023, worth SDR 2.286 billion (about US$3 billion). Completion of the combined fifth and sixth reviews gave immediate access to SDR 508 million (about US$695 million), bringing purchases under the arrangement to SDR 1.778 billion (about US$2.4 billion).",
         "by": [
           "International Monetary Fund"
         ],
@@ -81,14 +141,14 @@
       },
       {
         "cat": "multi",
-        "status": "Completed",
-        "tone": "completed",
-        "name": "Emergency financing",
-        "detail": "Approved December 2025 · Emergency support",
+        "status": "Approved",
+        "tone": "active",
+        "name": "Rapid Financing Instrument",
+        "detail": "Approved 19 December 2025 · SDR 150.5 million · 26 percent of quota",
         "amount": "$206M",
         "money": true,
-        "note": "Emergency balance-of-payments support",
-        "text": "Fast support after the disaster of late 2025.",
+        "note": "Urgent balance-of-payments and fiscal pressures after Cyclone Ditwah",
+        "text": "An IMF disbursement of about US$206 million to help address urgent balance-of-payments and fiscal pressures arising from Cyclone Ditwah. The fifth review of the Extended Fund Facility was deferred at the time.",
         "by": [
           "International Monetary Fund"
         ],
@@ -96,48 +156,216 @@
       },
       {
         "cat": "multi",
-        "status": "Active",
+        "status": "Approved",
         "tone": "active",
-        "name": "Reform agenda for growth and resilience",
-        "detail": "Approved July 2026 · Development policy financing",
-        "amount": "$150M",
+        "name": "Sri Lanka Digital Transformation Project",
+        "detail": "Approved 19 December 2025 · Online citizen service portal, data exchange and digital skills",
+        "amount": "$50M",
         "money": true,
-        "note": "Budget support for reforms",
-        "text": "Backs the reforms that move Sri Lanka from stabilisation to growth.",
+        "note": "Government services online and support for technology start-ups",
+        "text": "Builds an integrated online portal for government services, with cross-agency data exchange and a cloud platform, and trains citizens and public servants to use them. It also funds a digital start-up accelerator, including for women entrepreneurs, which serves the livelihood standard.",
         "by": [
           "World Bank"
         ],
-        "url": "https://www.worldbank.org/en/news/press-release/2026/07/01/world-bank-backs-sri-lanka-s-reform-agenda-with-us-150-million-to-drive-growth-and-resilience"
+        "url": "https://www.worldbank.org/en/news/press-release/2025/12/19/world-bank-group-and-sri-lanka-partner-to-improve-digital-services-and-grow-the-digital-economy"
       },
       {
         "cat": "multi",
-        "status": "Active",
+        "status": "Approved",
         "tone": "active",
-        "name": "Climate-resilient roads",
-        "detail": "Approved September 2026 · Investment project financing",
-        "amount": "$110M",
-        "money": true,
-        "note": "Roads that withstand floods and landslides",
-        "text": "Keeps communities connected through the monsoon.",
-        "by": [
-          "World Bank"
-        ],
-        "url": "https://www.worldbank.org/en/news/press-release/2026/09/30/world-bank-approves-110-million-for-climate-resilient-roads-in-sri-lanka"
-      },
-      {
-        "cat": "multi",
-        "status": "Active",
-        "tone": "active",
-        "name": "Clean energy transition",
-        "detail": "Approved June 2025 · Program",
+        "name": "Secure, Affordable, and Sustainable Energy for Sri Lanka",
+        "detail": "Approved 20 June 2025 · Includes $40 million in World Bank Group guarantees in the first phase",
         "amount": "$150M",
         "money": true,
-        "note": "Renewable power",
-        "text": "Supports the shift to clean, domestic power.",
+        "note": "1 gigawatt of new solar and wind; more than $800 million of private investment expected",
+        "text": "A World Bank Group programme to add 1 gigawatt of clean electricity to the grid through new solar and wind projects and to mobilise more than $800 million in private investment. It supports Sri Lanka’s goal of generating 70 percent of its electricity from renewable sources by 2030, and serves the energy standard.",
         "by": [
-          "World Bank"
+          "World Bank Group"
         ],
         "url": "https://www.worldbank.org/en/news/press-release/2025/06/20/world-bank-group-to-support-sri-lanka-s-clean-energy-transition-with-150-million-program"
+      },
+      {
+        "cat": "regional",
+        "status": "Approved",
+        "tone": "active",
+        "name": "Loan to advance digital transformation",
+        "detail": "Approval announced 10 November 2026",
+        "amount": "$98M",
+        "money": true,
+        "note": "To advance digital transformation in Sri Lanka",
+        "text": "An Asian Development Bank loan of $98 million to advance digital transformation in Sri Lanka, announced on 10 November 2026.",
+        "by": [
+          "Asian Development Bank"
+        ],
+        "url": "https://www.adb.org/news/adb-approves-98-million-loan-advance-digital-transformation-sri-lanka"
+      },
+      {
+        "cat": "regional",
+        "status": "Approved",
+        "tone": "active",
+        "name": "Financing to ensure safe and resilient water services",
+        "detail": "Approval announced 9 November 2026 · Two projects",
+        "amount": "$300M",
+        "money": true,
+        "note": "To expand and strengthen water supply and sanitation services across Sri Lanka",
+        "text": "The Asian Development Bank has approved two projects, together $300 million, to expand and strengthen water supply and sanitation services across Sri Lanka, announced on 9 November 2026. It serves the water standard.",
+        "by": [
+          "Asian Development Bank"
+        ],
+        "url": "https://www.adb.org/news/adb-approves-300-million-financing-ensure-safe-and-resilient-water-services-sri-lanka"
+      },
+      {
+        "cat": "regional",
+        "status": "Approved",
+        "tone": "active",
+        "name": "Promoting Resilience and Opportunity for Inclusive Recovery Sector Development Program",
+        "detail": "Approved 21 October 2026 · $50 million policy-based loan · $50 million project loan",
+        "amount": "$100M",
+        "money": true,
+        "note": "30,000 households from the Aswesuma social registry, in six districts",
+        "text": "Supports reforms and investments in social protection, economic inclusion and resilience for poor and elderly Sri Lankans, through the government’s National Empowerment Program. Households receive livelihood grants, employment and business support, skills development and financial literacy training, which serves the livelihood standard.",
+        "by": [
+          "Asian Development Bank"
+        ],
+        "url": "https://www.adb.org/news/adb-approves-100-million-program-strengthen-social-protection-and-expand-economic"
+      },
+      {
+        "cat": "regional",
+        "status": "Approved",
+        "tone": "active",
+        "name": "Skills Development System Transformation Program",
+        "detail": "Approved 29 September 2026 · Results-based loan · $50 million regular and $50 million concessional · $500,000 technical assistance grant",
+        "amount": "$100M",
+        "money": true,
+        "note": "More than 100,000 young people expected to benefit",
+        "text": "A results-based loan to improve the quality and relevance of technical and vocational training, link training providers with industry and widen job opportunities for young people, including nontraditional jobs for women in automotive technology and renewable energy. It serves the education and livelihood standards.",
+        "by": [
+          "Asian Development Bank"
+        ],
+        "url": "https://www.adb.org/news/adb-approves-100-million-loan-boost-skills-development-and-jobs-youth-sri-lanka"
+      },
+      {
+        "cat": "regional",
+        "status": "Signed",
+        "tone": "active",
+        "name": "Trade, Investment and Industry Development Program, Subprogram 1",
+        "detail": "Signed 18 August 2026 · Policy-based loan · Raised from $100 million to $200 million",
+        "amount": "$200M",
+        "money": true,
+        "note": "General budgetary assistance; Subprogram 2, an indicative $100 million, expected to be implemented in 2028",
+        "text": "A policy-based loan from the Asian Development Bank that gives general budgetary assistance, signed at the General Treasury in Colombo. The Ministry of Finance says it comes amid heightened economic uncertainty from the Middle East crisis and climate-related shocks, and that the loan was raised from USD 100 million to USD 200 million. Support for trade and investment serves the livelihood standard.",
+        "by": [
+          "Asian Development Bank"
+        ],
+        "url": "https://www.treasury.gov.lk/api/file/b6c63c4f-9525-4071-b185-6e15bd20b1da"
+      },
+      {
+        "cat": "regional",
+        "status": "Signed",
+        "tone": "active",
+        "name": "Post-Cyclone Ditwah Reconstruction and Livelihood Support Project",
+        "detail": "Loan agreements signed 18 August 2026 · Implementation 2026 to 2030",
+        "amount": "$200M",
+        "money": true,
+        "note": "Roads, irrigation, and the livelihoods and housing of cyclone-affected households",
+        "text": "Rehabilitates and rebuilds road infrastructure and irrigation systems damaged by Cyclone Ditwah, and restores the livelihoods and housing of cyclone-affected households. It serves the shelter, food and livelihood standards.",
+        "by": [
+          "Asian Development Bank"
+        ],
+        "url": "https://www.treasury.gov.lk/api/file/53e13e74-37db-44cc-9a93-cf7eb8a8440d"
+      },
+      {
+        "cat": "regional",
+        "status": "Approved",
+        "tone": "active",
+        "name": "Rooftop Solar Aggregation and Virtual Net Metering Project",
+        "detail": "Approved 26 June 2026 · $35 million concessional loan · $16.9 million EU grant · $5.5 million grant from the Japan Fund for the Joint Crediting Mechanism · Total cost $80.5 million",
+        "amount": "$57.4M",
+        "money": true,
+        "note": "About 25 megawatt-peak of rooftop solar",
+        "text": "About 25 megawatt-peak of rooftop solar, whose power the two electricity distribution utilities pool and share as credits with eligible small businesses and community organisations, including those unable to install rooftop solar because of financial or space constraints. It serves the energy standard.",
+        "by": [
+          "Asian Development Bank",
+          "European Union",
+          "Japan Fund for the Joint Crediting Mechanism"
+        ],
+        "url": "https://www.adb.org/news/adb-approves-financing-rooftop-solar-and-virtual-net-metering-boost-clean-energy-access-sri-lanka"
+      },
+      {
+        "cat": "regional",
+        "status": "Signed",
+        "tone": "active",
+        "name": "Kerawalapitiya–Port L Second Transmission Line Project",
+        "detail": "Signed 8 October 2025 · Sovereign-backed financing · Second underground 220 kV cable into Colombo",
+        "amount": "$52M",
+        "money": true,
+        "note": "Carries renewable power from the north and east to Colombo",
+        "text": "Adds a second underground 220 kV cable between Kerawalapitiya and the Colombo Port L substation, to keep power supply uninterrupted and the grid stable. It helps move renewable power from the north and east to Colombo, which serves the energy standard.",
+        "by": [
+          "Asian Infrastructure Investment Bank"
+        ],
+        "url": "https://www.aiib.org/en/news-events/news/2025/aiib-lends-usd52-million-strengthen-sri-lanka-power-transmission-support-renewable-energy-growth.html"
+      },
+      {
+        "cat": "bilat",
+        "status": "Signed",
+        "tone": "active",
+        "name": "Project for the Improvement of the Pump Station in Kelani River Basin",
+        "detail": "Grant agreement signed 28 October 2026 · Gampaha District, Western Province",
+        "amount": "JPY 2.18B",
+        "money": true,
+        "note": "A drainage pumping station to reduce flood damage, in Gampaha District",
+        "text": "A Japanese grant for a drainage pumping station and consulting services in the Kelani River Basin, to reduce flood damage by improving stormwater drainage capacity. Fewer floods protect homes, which serves the shelter standard.",
+        "by": [
+          "Japan International Cooperation Agency"
+        ],
+        "url": "https://www.jica.go.jp/english/information/press/2026/20261023_15.html"
+      },
+      {
+        "cat": "private",
+        "status": "Invested",
+        "tone": "active",
+        "name": "New Anthoney’s Farms, poultry expansion",
+        "detail": "Approved 10 October 2025 · Signed 2 June 2026 · Invested 29 October 2026 · C Loan from IFC and GAFSP, with an option to convert into equity",
+        "amount": "$10M",
+        "money": true,
+        "note": "IFC loan of $5 million; up to $5 million expected from the GAFSP Private Sector Window",
+        "text": "A loan from IFC and the Global Agriculture and Food Security Program to a Sri Lankan poultry business established in 1986, with a feed mill, breeder farms, a hatchery, broiler and out-grower farms, processing and its own retail shops. It part-funds a programme to expand capacity, improve efficiency and grow the retail network, which serves the food and livelihood standards.",
+        "by": [
+          "IFC",
+          "Global Agriculture and Food Security Program"
+        ],
+        "url": "https://disclosures.ifc.org/project-detail/SII/48881/naf-poultry"
+      },
+      {
+        "cat": "private",
+        "status": "Invested",
+        "tone": "active",
+        "name": "WindForce PLC, 100 MW solar plant",
+        "detail": "Approved 3 April 2026 · Signed 27 April 2026 · Invested 15 September 2026 · Loan in Sri Lankan rupees, up to $18 million equivalent",
+        "amount": "$18M",
+        "money": true,
+        "note": "A 100 MW ground-mounted solar plant in the Siyabalanduwa area, Uva Province",
+        "text": "An IFC local-currency loan to WindForce PLC, which IFC describes as Sri Lanka’s largest renewable energy company, for its equity in a 100 MW ground-mounted solar photovoltaic project. It is supported by the IDA21 Private Sector Window Local Currency Facility and serves the energy standard.",
+        "by": [
+          "IFC"
+        ],
+        "url": "https://disclosures.ifc.org/project-detail/SII/50775/WindForce%20SL%20RE"
+      },
+      {
+        "cat": "private",
+        "status": "Invested",
+        "tone": "active",
+        "name": "Nations Trust Bank, SME loan",
+        "detail": "Approved 11 December 2025 · Signed 19 December 2025 · Invested 16 January 2026 · Four-year senior unsecured loan · Package of up to $70 million with a $20 million trade facility",
+        "amount": "$50M",
+        "money": true,
+        "note": "On-lending to small and medium-sized enterprises, including women-owned SMEs",
+        "text": "An IFC loan to Nations Trust Bank, a publicly listed licensed commercial bank, for on-lending to small and medium-sized enterprises, including women-owned SMEs, which face significant financing gaps. It serves the livelihood standard.",
+        "by": [
+          "IFC"
+        ],
+        "url": "https://disclosures.ifc.org/project-detail/SII/51477/mfp-sme-ntb"
       }
     ]
   },
@@ -206,9 +434,9 @@
       },
       {
         "name": "The Power",
-        "figure": "49.2%",
+        "figure": "49%",
         "money": false,
-        "label": "Of energy from renewables, 2021",
+        "label": "Of electricity from renewables, 2023",
         "text": "Sun, wind, water and biomass already carry part of the load; the rest is the opportunity.",
         "alt": "Wind turbines on the coast of Mannar, Sri Lanka",
         "images": [
@@ -225,11 +453,32 @@
     "heading": "Already working in Sri Lanka.",
     "items": [
       {
-        "standard": "In preparation",
-        "name": "The enterprises building Perfect Sri Lanka",
-        "text": "The Stewards are verifying the companies and social enterprises already delivering the seven basic living standards in Sri Lanka. Suggest one to include.",
-        "source": "Suggest an enterprise",
-        "url": "mailto:contact@perfectnations.org?subject=An%20enterprise%20for%20Perfect%20Sri%20Lanka"
+        "standard": "Food",
+        "name": "New Anthony’s Farm Group (NAF)",
+        "text": "One of Sri Lanka’s leading fully integrated poultry producers, founded in 1986, working from breeding and feed to processing, distribution, exports and retail. In June 2026 IFC announced it will invest up to $10 million, including up to $5 million from the Global Agriculture and Food Security Program, to scale capacity; the project is expected to benefit at least 200 smallholder farmers.",
+        "source": "IFC, 2026",
+        "url": "https://www.ifc.org/en/pressroom/2026/ifc-backs-new-anthony-s-farm-group-to-create-jobs-support-smallholder-farmers-and-"
+      },
+      {
+        "standard": "Energy",
+        "name": "WindForce PLC",
+        "text": "Develops, owns and operates wind, solar and small hydropower assets; IFC describes it as Sri Lanka’s largest independent renewable energy producer. In April 2026 IFC announced it is investing up to $18 million through a local-currency loan for a utility-scale 100-megawatt solar power facility.",
+        "source": "IFC, 2026",
+        "url": "https://www.ifc.org/en/pressroom/2026/sri-lanka-and-world-bank-group-launch-new-partnership-to-create-jobs-attract-priva/ifc-and-windforce-plc-partner-on-sri-lanka-s-first-large-scale-solar-project-to-lo"
+      },
+      {
+        "standard": "Health",
+        "name": "Sunshine Healthcare Lanka",
+        "text": "A pharmaceutical and medical products business wholly owned by Sunshine Holdings PLC, with a pharmaceutical manufacturing facility, six regional distribution centres and access to over 3,000 pharmacies. IFC made an equity investment, approved in April 2024, for the expansion of pharmaceutical manufacturing, distribution and retail.",
+        "source": "IFC, 2024",
+        "url": "https://disclosures.ifc.org/project-detail/ESRS/48381/sunshine-healthcare"
+      },
+      {
+        "standard": "Livelihood",
+        "name": "Nations Trust Bank",
+        "text": "A publicly listed licensed commercial bank in Sri Lanka, established in 1999. IFC’s loan of up to $50 million, invested in January 2026, is for on-lending to small and medium-sized enterprises, including women-owned SMEs.",
+        "source": "IFC, 2026",
+        "url": "https://disclosures.ifc.org/project-detail/SII/51477/mfp-sme-ntb"
       }
     ]
   },
@@ -365,5 +614,6 @@
     }
   ],
   "dispatches": [],
-  "checked": "2026-11-10T11:32Z"
+  "checked": "2026-11-10T11:32Z",
+  "reviewed": "2026-11-10T19:50Z"
 }
