@@ -42,7 +42,7 @@ ROOT = Path(__file__).resolve().parent.parent
 PAGES = ROOT / 'pages'
 DATA = ROOT / 'data'
 HERE = Path(__file__).resolve().parent / 'capital'
-VERSION = '5.3'
+VERSION = '5.4'
 NOT_NATIONS = {'state-of-nations', 'ticker', 'blueprints', 'capital-architecture'}
 
 # Who carries each line on record (the register's cat field), in the words a visitor reads.
@@ -308,6 +308,7 @@ logo, in one gold, are the page's mark (02 Capital on the homepage); the cup and
 the hero, as on the homepage. The record takes the blueprints' name, Capital already committed, and each
 nation opens at that band of its blueprint. Debt-for-Nature Swap: Ecuador 2023, from its register. The
 close leads on to Solutions, step 03.
+v5.4: light reading sections, Earthrise accents (the Steward-General, 10 Nov 2026).
 =========================================================================== -->
 ''' % (VERSION, today)
     body = '\n'.join([

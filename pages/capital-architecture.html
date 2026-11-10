@@ -1,5 +1,5 @@
 <!-- ===========================================================================
-PERFECT NATIONS - CAPITAL ARCHITECTURE - THE WHOLE PAGE IN ONE FILE - v5.3 - 2026-11-10
+PERFECT NATIONS - CAPITAL ARCHITECTURE - THE WHOLE PAGE IN ONE FILE - v5.4 - 2026-11-10
 Page 8549 (/capital-architecture/) holds ONE Elementor Custom HTML widget whose root is pn-arch. The
 Perfect Nations Live Pages plugin serves this file from GitHub in its place, so the page changes only
 through GitHub. Kept by the Capital Architecture Steward. Never edit this file by hand: edit
@@ -18,6 +18,7 @@ logo, in one gold, are the page's mark (02 Capital on the homepage); the cup and
 the hero, as on the homepage. The record takes the blueprints' name, Capital already committed, and each
 nation opens at that band of its blueprint. Debt-for-Nature Swap: Ecuador 2023, from its register. The
 close leads on to Solutions, step 03.
+v5.4: light reading sections, Earthrise accents (the Steward-General, 10 Nov 2026).
 =========================================================================== -->
 <style>
 #pn-arch{
@@ -287,8 +288,107 @@ close leads on to Solutions, step 03.
 }
 #pn-arch .pca-links a[target]::after,#pn-arch .pca-t__src a[target]::after{ content:"\00a0\2197"; font-family:Arial,sans-serif; letter-spacing:0; }
 #pn-arch .pca-links a.pca-bp::after{ content:" \2192"; font-family:Arial,sans-serif; letter-spacing:0; }
+
+/* ---------- v5.4 LIGHT (the Steward-General, 10 Nov 2026: "the site is a little dark and heavy to read ... make
+   sections the lighter colour with the Earthrise for the accents"). Every band is a reading band, so every band goes
+   light, alternating paper and ivory: the hero on paper, the toolkit on ivory, the record on paper, the close on ivory.
+   Earthrise is the accent: the four photo tiles of the five, the six family headers and the disc behind the laurels
+   (the logo is never drawn in gold straight onto ivory). Headlines Earthrise, eyebrows terracotta, body ink; gold only
+   for the buttons and money (a deep gold on light). The header and footer stay deep. */
+#pn-arch{ background:#F4ECD8; color:#10262B; --gd:#8C6A12; }
+#pn-arch .pca-band::before{ opacity:.045; }
+#pn-arch .pca-hero,#pn-arch .pca-rec{
+  --fg:#0B3D45; --mut:#34464A; --dim:#5C696C; --hair:rgba(16,38,43,.13);
+  color:#10262B;
+}
+#pn-arch .pca-hero,#pn-arch .pca-rec{
+  background:
+    radial-gradient(48% 60% at 96% 0%, rgba(227,194,88,.16) 0%, rgba(227,194,88,0) 70%),
+    radial-gradient(40% 60% at 0% 100%, rgba(11,61,69,.06) 0%, rgba(11,61,69,0) 70%),
+    linear-gradient(180deg,#FBF8F1 0%,#F6EFE0 100%);
+}
+#pn-arch .pca-idx,#pn-arch .pca-close{
+  --fg:#0B3D45; --mut:#34464A; --dim:#5C696C; --hair:rgba(16,38,43,.13);
+  color:#10262B;
+  background:
+    radial-gradient(50% 60% at 92% 0%, rgba(227,194,88,.16) 0%, rgba(227,194,88,0) 70%),
+    radial-gradient(40% 60% at 0% 100%, rgba(138,58,34,.06) 0%, rgba(138,58,34,0) 70%),
+    linear-gradient(180deg,#F7F0DF 0%,#F4ECD8 60%,#F1E7D0 100%);
+}
+#pn-arch .pca-eb,#pn-arch .pca-close .pca-eb{ color:#8A3A22; }
+#pn-arch .pca-eb::before,#pn-arch .pca-close .pca-eb::after{ background:rgba(138,58,34,.55); }
+#pn-arch h1.pca-h1,#pn-arch h2.pca-h2,#pn-arch .pca-idx h2.pca-h2{ color:#0B3D45 !important; }
+#pn-arch .pca-lead,#pn-arch .pca-idx .pca-lead,#pn-arch .pca-rec__ins,#pn-arch .pca-rm__b p,#pn-arch .pca-idx .pca-rm__b p{ color:#34464A; }
+#pn-arch a:focus-visible,#pn-arch button:focus-visible,#pn-arch summary:focus-visible{ outline-color:#0B3D45; }
+/* Read more: an Earthrise action on light */
+#pn-arch .pca-rm > summary,#pn-arch .pca-idx .pca-rm > summary{ color:#0B3D45; }
+#pn-arch .pca-rm > summary::before,#pn-arch .pca-idx .pca-rm > summary::before{ border-color:rgba(11,61,69,.45); }
+#pn-arch .pca-rm > summary:hover,#pn-arch .pca-idx .pca-rm > summary:hover{ color:#8A3A22; }
+/* buttons: gold fills with ink type; the second an Earthrise outline */
+#pn-arch .pca-btn{ background:#E3C258; border-color:#E3C258; color:#1A140C; box-shadow:0 10px 24px rgba(140,106,18,.22); }
+#pn-arch .pca-btn:hover{ background:#F0D68F; border-color:#F0D68F; }
+#pn-arch .pca-btn--line{ background:transparent; color:#0B3D45; border-color:rgba(11,61,69,.45); box-shadow:none; }
+#pn-arch .pca-btn--line:hover{ background:rgba(11,61,69,.07); }
+
+/* 1 the hero on paper: the laurels on an Earthrise disc; the five stay Earthrise plates, Standard Tokens a white card */
+#pn-arch .pca-wreath{
+  padding:clamp(12px,1.1vw,16px); border-radius:50%; overflow:visible;
+  background:radial-gradient(70% 70% at 30% 22%, rgba(227,194,88,.18) 0%, rgba(227,194,88,0) 60%), linear-gradient(160deg,#12586A 0%,#0B3D45 52%,#082A30 100%);
+  box-shadow:0 0 0 1.5px rgba(227,194,88,.55), 0 16px 36px rgba(11,61,69,.26);
+  filter:none;
+}
+#pn-arch .pca-mark figcaption{ color:#5C696C; }
+@media (max-width:640px){ #pn-arch .pca-wreath{ width:68px; padding:7px; box-shadow:0 0 0 1px rgba(227,194,88,.55), 0 8px 18px rgba(11,61,69,.22); } }
+#pn-arch .pca-five-h h2{ color:#8A3A22 !important; }
+#pn-arch .pca-five-h a{ color:#0B3D45; }
+#pn-arch .pca-five-h a:hover{ color:#8A3A22; }
+#pn-arch .pca-t{
+  --fg:#F4ECD8; --mut:rgba(244,236,216,.82); --dim:rgba(244,236,216,.62); --hair:rgba(244,236,216,.16);
+  color:#F4ECD8; box-shadow:0 14px 30px rgba(11,61,69,.22);
+}
+#pn-arch .pca-t--own{ background:#FFFDF8; color:var(--ink); border:1px solid rgba(140,106,18,.38); box-shadow:0 10px 26px rgba(16,38,43,.1); }
+#pn-arch .pca-t--own .pca-t__n{ background:#FFFDF8; color:#0B3D45; }
+#pn-arch .pca-t--own h3{ color:#0B3D45 !important; }
+#pn-arch .pca-t--own .pca-t__hl,#pn-arch .pca-t--own .pca-t__fig span{ color:#34464A; }
+#pn-arch .pca-t--own .pca-t__src,#pn-arch .pca-t--own .pca-t__src a{ color:#5C696C; }
+#pn-arch .pca-t--own .pca-t__src a:hover{ color:#0B3D45; border-color:#0B3D45; }
+#pn-arch .pca-note{ color:#5C696C; }
+
+/* 2 the toolkit on ivory: white family cards under their Earthrise headers */
+#pn-arch .pca-jump a{ background:#FFFDF8; border-color:rgba(16,38,43,.14); color:#0B3D45; }
+#pn-arch .pca-jump a:hover{ border-color:#0B3D45; background:#fff; }
+@media (max-width:640px){
+  #pn-arch .pca-jump a.is-on{ background:#0B3D45; border-color:#0B3D45; color:#F4ECD8; }
+  #pn-arch .pca-jump a.is-on b{ color:#E3C258; }
+}
+#pn-arch .pca-fam{ background:#FFFDF8; border-color:rgba(16,38,43,.12); box-shadow:0 10px 26px rgba(16,38,43,.07); }
+#pn-arch .pca-fam__h{
+  --fg:#F4ECD8; --mut:rgba(244,236,216,.82);
+  color:#F4ECD8; background:linear-gradient(165deg,#10505F 0%,#0B3D45 60%,#09313A 100%);
+}
+#pn-arch .pca-row{ border-top-color:rgba(16,38,43,.12); }
+#pn-arch .pca-nm{ color:#0B3D45; }
+#pn-arch .pca-hl{ color:#34464A; }
+#pn-arch .pca-lm{ color:#5C696C; }
+#pn-arch .pca-pm{ border-color:rgba(11,61,69,.4); }
+#pn-arch .pca-pm::before,#pn-arch .pca-pm::after{ background:#0B3D45; }
+#pn-arch .pca-more p{ color:#34464A; }
+#pn-arch .pca-links a{ color:#0B3D45; border-bottom-color:rgba(11,61,69,.35); }
+#pn-arch .pca-links a:hover{ color:#8A3A22; border-bottom-color:#8A3A22; }
+#pn-arch .pca-row--own summary{ background:linear-gradient(90deg, rgba(227,194,88,.2), rgba(227,194,88,0) 70%); }
+
+/* 3 the record on paper: Earthrise bars and white nation cards */
+#pn-arch .pca-rec__ins b{ color:#0B3D45; }
+#pn-arch .pca-bar__t{ background:rgba(11,61,69,.1); }
+#pn-arch .pca-bar__t i{ background:linear-gradient(90deg,#0B3D45 0%,#12586A 100%); }
+#pn-arch .pca-nat{ background:#FFFDF8; border-color:rgba(16,38,43,.12); box-shadow:0 6px 18px rgba(16,38,43,.06); }
+#pn-arch .pca-nat:hover{ border-color:rgba(11,61,69,.45); box-shadow:0 12px 26px rgba(16,38,43,.12); }
+#pn-arch .pca-nat__t em{ color:#8C6A12; }
+
+/* 4 the close on ivory */
+#pn-arch .pca-close .pca-eb{ color:#8A3A22; }
 </style>
-<div id="pn-arch" data-version="5.3">
+<div id="pn-arch" data-version="5.4">
 <style>
 .pn-rule{
   position:relative; z-index:6; display:block; box-sizing:border-box;

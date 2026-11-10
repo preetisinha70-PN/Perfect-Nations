@@ -1,5 +1,5 @@
 <!-- ===========================================================================
-PERFECT NATIONS - SOVEREIGN ASSETS PAGE - THE WHOLE PAGE IN ONE FILE - v7.0 - built 2026-11-10
+PERFECT NATIONS - SOVEREIGN ASSETS PAGE - THE WHOLE PAGE IN ONE FILE - v7.1 - built 2026-11-10
 Served live on perfectnations.org/sovereign-assets/ (page 15125) by the Perfect Nations Live Pages
 plugin, in place of the code pasted in its one Elementor Custom HTML widget (root id pn-sov).
 BUILT by tools/build_sovereign_assets.py from pages/sovereign-assets-src.html (the design) and
@@ -8,7 +8,7 @@ Never edit this file by hand; kept by the Sovereign Assets Steward (skill stewar
 Palette: Earthrise and ivory grounds, gold only for what a visitor can act on; a fine gold line
 (pages/home-rule.html) marks each section break, in place of the painted botanical seams (v6.3).
 =========================================================================== -->
-<div id="pn-sov" class="pnsa" data-v="7.0">
+<div id="pn-sov" class="pnsa" data-v="7.1">
 <style>
 #pn-sov{
   --er:#0B3D45; --lg:#0F4C5C; --dp:#082A30; --plate:#0A3840;
@@ -401,6 +401,102 @@ Palette: Earthrise and ivory grounds, gold only for what a visitor can act on; a
 #pn-sov .sa-pin__x:hover, #pn-sov .sa-pin__x:focus-visible{ background:#E3C258 !important; border-color:#E3C258 !important; color:#1A140C !important; transform:rotate(90deg); }
 #pn-sov .sa-pin__x:focus-visible{ outline:2px solid #F0D68F !important; outline-offset:3px; }
 @media (prefers-reduced-motion:reduce){ #pn-sov .sa-pin__x{ transition:none; } #pn-sov .sa-pin__x:hover, #pn-sov .sa-pin__x:focus-visible{ transform:none; } }
+/* ---------- v7.1 LIGHT (the Steward-General, 10 Nov 2026: "the site is a little dark and heavy to read ... make
+   sections the lighter colour with the Earthrise for the accents"). The hero keeps its Earthrise ground, for the
+   golden planet needs it; every band below it is a reading band and goes light, ivory and paper in turn: the
+   rationale on ivory, the five assets on paper, What we do on ivory, the full ledger on paper. Earthrise is the
+   accent: the total row of the balance sheet, the stage and the plates of the five assets, the chosen tab, and the
+   three tiles of What we do, which carry the cup, the laurels and the stars in gold (the logo is never drawn in gold
+   straight onto ivory). Headlines Earthrise, eyebrows terracotta, body ink; gold only for the buttons. */
+#pn-sov{ background:#F4ECD8; }
+#pn-sov .sa-sheet,#pn-sov .sa-five,#pn-sov .sa-path,#pn-sov .sa-ledger{
+  --fg:#0B3D45; --mut:#34464A; --dim:#5C696C; --hair:rgba(16,38,43,.13); --ink:#10262B; --ink2:#34464A; --ink3:#5C696C; --ihair:rgba(16,38,43,.13);
+  color:#10262B;
+}
+#pn-sov .sa-sheet,#pn-sov .sa-path{
+  background:
+    radial-gradient(50% 60% at 92% 0%, rgba(227,194,88,.16) 0%, rgba(227,194,88,0) 70%),
+    radial-gradient(40% 60% at 0% 100%, rgba(138,58,34,.06) 0%, rgba(138,58,34,0) 70%),
+    linear-gradient(180deg,#F7F0DF 0%,#F4ECD8 60%,#F1E7D0 100%);
+}
+#pn-sov .sa-five,#pn-sov .sa-ledger{
+  background:
+    radial-gradient(48% 60% at 96% 0%, rgba(227,194,88,.16) 0%, rgba(227,194,88,0) 70%),
+    radial-gradient(40% 60% at 0% 100%, rgba(11,61,69,.06) 0%, rgba(11,61,69,0) 70%),
+    linear-gradient(180deg,#FBF8F1 0%,#F6EFE0 100%);
+}
+#pn-sov .sa-sheet::before,#pn-sov .sa-five::before,#pn-sov .sa-path::before,#pn-sov .sa-ledger::before{ opacity:.045; }
+#pn-sov .sa-sheet .sa-eb,#pn-sov .sa-five .sa-eb,#pn-sov .sa-path .sa-eb,#pn-sov .sa-ledger .sa-eb{ color:#8A3A22; }
+#pn-sov .sa-sheet .sa-eb::before,#pn-sov .sa-five .sa-eb::before,#pn-sov .sa-path .sa-eb::before,#pn-sov .sa-ledger .sa-eb::before{ background:rgba(138,58,34,.55); opacity:1; }
+#pn-sov .sa-sheet h2.sa-h2,#pn-sov .sa-five h2.sa-h2,#pn-sov .sa-path h2.sa-h2,#pn-sov .sa-ledger h2.sa-h2{ color:#0B3D45 !important; }
+#pn-sov .sa-sheet .sa-lead,#pn-sov .sa-five .sa-lead,#pn-sov .sa-path .sa-lead,#pn-sov .sa-ledger .sa-lead{ color:#34464A; }
+#pn-sov .sa-sheet a:focus-visible,#pn-sov .sa-five .sa-tab:focus-visible,#pn-sov .sa-path a:focus-visible,#pn-sov .sa-ledger a:focus-visible,#pn-sov .sa-ledger button:focus-visible{ outline-color:#0B3D45; }
+/* actions on light: Earthrise links and outline buttons; gold fills with ink type */
+#pn-sov .sa-sheet .sa-go,#pn-sov .sa-ledger .sa-go{ color:#0B3D45; }
+#pn-sov .sa-sheet .sa-go:hover,#pn-sov .sa-ledger .sa-go:hover{ color:#8A3A22; }
+#pn-sov .sa-ledger .sa-btn{ box-shadow:0 10px 24px rgba(140,106,18,.22); }
+#pn-sov .sa-ledger .sa-btn--line{ background:transparent; color:#0B3D45; border-color:rgba(11,61,69,.45); box-shadow:none; }
+#pn-sov .sa-ledger .sa-btn--line:hover{ background:rgba(11,61,69,.07); border-color:#0B3D45; }
+
+/* 2 the rationale on ivory: a white ledger book, its total row an Earthrise strip */
+#pn-sov .sa-book{ background:#FFFDF8; border:1px solid rgba(16,38,43,.1); box-shadow:0 18px 40px rgba(16,38,43,.1); }
+#pn-sov .sa-col--owe{ background:#F3EBD8; }
+#pn-sov .sa-col__k{ border-bottom-color:#0B3D45; }
+#pn-sov .sa-col__k b{ color:#0B3D45; }
+#pn-sov .sa-rows li{ color:#34464A; }
+#pn-sov .sa-col--own .sa-rows li::before{ box-shadow:0 0 0 2px #FFFDF8, 0 0 0 3px rgba(16,38,43,.22); }
+#pn-sov .sa-total{
+  --fg:#F4ECD8; --dim:rgba(244,236,216,.66); --hair:rgba(244,236,216,.16);
+  color:#F4ECD8; background:linear-gradient(165deg,#10505F 0%,#0B3D45 55%,#09313A 100%);
+}
+#pn-sov .sa-ratio{ color:#0B3D45; }
+
+/* 3 the five assets on paper: the stage and its plates stay Earthrise; the tabs are white, the chosen one Earthrise */
+#pn-sov .sa-sc,#pn-sov .sa-tab[aria-selected="true"]{
+  --fg:#F4ECD8; --mut:rgba(244,236,216,.84); --dim:rgba(244,236,216,.62); --hair:rgba(244,236,216,.16);
+  color:#F4ECD8;
+}
+#pn-sov .sa-sc{ box-shadow:0 14px 30px rgba(11,61,69,.22); }
+@media (min-width:900px){
+  #pn-sov.is-js .sa-scenes{ box-shadow:0 22px 50px rgba(11,61,69,.26); }
+  #pn-sov.is-js .sa-sc{ box-shadow:none; }
+  #pn-sov .sa-tab{ background:#FFFDF8; border-color:rgba(16,38,43,.12); color:#0B3D45; box-shadow:0 6px 18px rgba(16,38,43,.06); }
+  #pn-sov .sa-tab:hover{ background:#fff; border-color:rgba(11,61,69,.4); }
+  #pn-sov .sa-tab i{ color:#0B3D45; }
+  #pn-sov .sa-tab[aria-selected="true"]{
+    color:#F4ECD8; border-color:rgba(227,194,88,.6);
+    background:radial-gradient(80% 90% at 0% 0%, rgba(227,194,88,.14) 0%, rgba(227,194,88,0) 62%), linear-gradient(165deg,#10505F 0%,#0B3D45 50%,#09313A 100%);
+    box-shadow:0 14px 30px rgba(11,61,69,.24);
+  }
+  #pn-sov .sa-tab[aria-selected="true"] i{ color:#E3C258; }
+}
+
+/* 4 What we do on ivory: three Earthrise tiles carry the cup, the laurels and the stars */
+#pn-sov .sa-wd__t{
+  --fg:#F5F1E8; --mut:rgba(245,241,232,.84); --dim:rgba(245,241,232,.64); --hair:rgba(245,241,232,.16);
+  color:#F5F1E8; border-color:rgba(227,194,88,.26);
+  background:
+    radial-gradient(90% 60% at 50% 0%, rgba(227,194,88,.14) 0%, rgba(227,194,88,0) 64%),
+    linear-gradient(170deg,#12586A 0%,#0B3D45 46%,#082A30 100%);
+  box-shadow:0 18px 40px rgba(8,42,48,.18);
+}
+#pn-sov a.sa-wd__t:hover{ border-color:rgba(227,194,88,.66); box-shadow:0 26px 52px rgba(8,42,48,.26);
+  background:
+    radial-gradient(90% 60% at 50% 0%, rgba(227,194,88,.2) 0%, rgba(227,194,88,0) 64%),
+    linear-gradient(170deg,#12586A 0%,#0B3D45 46%,#082A30 100%);
+}
+#pn-sov .sa-wd li.is-here .sa-wd__t{
+  border-color:rgba(227,194,88,.8);
+  background:
+    radial-gradient(90% 60% at 50% 0%, rgba(227,194,88,.22) 0%, rgba(227,194,88,0) 64%),
+    linear-gradient(170deg,#12586A 0%,#0B3D45 46%,#082A30 100%);
+}
+
+/* 5 the full ledger on paper: white chips with Earthrise names and arrows */
+#pn-sov .sa-nl a{ background:#FFFDF8; border-color:rgba(11,61,69,.22); color:#0B3D45; box-shadow:0 4px 12px rgba(16,38,43,.05); }
+#pn-sov .sa-nl a::after{ color:#0B3D45; }
+#pn-sov .sa-nl a:hover{ background:#0B3D45; border-color:#0B3D45; color:#F5F1E8; }
+#pn-sov .sa-nl a:hover::after{ color:#E3C258; }
 </style>
 <style>
 .pn-rule{
