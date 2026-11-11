@@ -24,7 +24,8 @@ ROOT = Path(__file__).resolve().parent.parent
 PAGES = ROOT / 'pages'
 DATA = ROOT / 'data'
 SITE = 'https://perfectnations.org'
-VERSION = '12.2'  # the globe draws every border again: long straight borders follow the curve of the planet (hero v7.7; the Steward-General, 10 Nov 2026)
+VERSION = '12.3'  # the globe's borders are thin dark ribbons, clear on phones (hero v7.8; the Steward-General, 11 Nov 2026)
+# v12.2: the globe draws every border again: long straight borders follow the curve of the planet (hero v7.7; the Steward-General, 10 Nov 2026)
 # v12.1: What we do ends with its three tiles on the homepage: the closing seal row is left out, as Governance first just above carries the seal (the Steward-General, 10 Nov 2026)
 # v12.0: Governance first moves after Solutions, before What we do; the Perfect Nations Cup is the whole logo on its seal, and the cup alone stays the symbol of Assets (the Steward-General, 10 Nov 2026)
 # v11.9: Governance first: a slim band under the Capital Wire, with the Perfect Nations Cup (the Steward-General, 10 Nov 2026)
