@@ -71,7 +71,8 @@ LINES = {'LIC': ('SI.POV.DDAY', 'US$3.00'), 'LMIC': ('SI.POV.LMIC', 'US$4.20'), 
 
 def seven(n, w):
     iso, i2, name = n['iso3'], n['iso2'], n.get('in_name') or n['name']
-    x = w.get(iso, {})
+    # 'skip' leaves out an indicator for one nation (a known artefact of the series); the reason goes in the gaps
+    x = {k: v for k, v in w.get(iso, {}).items() if k not in n.get('skip', ())}
     g = []
     # Food
     if n.get('food'):
@@ -347,7 +348,8 @@ def page_words(n, cov, lat, lng, outline):
         'letter': {'paras': [n['letter']], 'quote': '“%s”' % n['quote'], 'url': ''},
         'mandates': {'moves': [
             ['The five sovereign assets on this page, walked through.',
-             '%s, the standard furthest from reach, and the Gap, explained.' % cov['set_by'],
+             ('%s, the standard furthest from reach, and the Gap, explained.' % cov['set_by']) if cov.get('gap') else
+             'The seven standards measured with your own data, and the Gap, found.',
              'The instruments that could close the Gap, shortlisted.', 'The path to market, outlined.'],
             ['The ledger tested against your ministries’ own data.', 'Each of the seven standards costed in local prices.',
              'One financing structure, drawn with your team.', 'A term sheet and the partners to approach.'],
@@ -374,9 +376,10 @@ def label_date(dt):
 def build(n, w, wave):
     iso = n['iso3']
     x = w.get(iso, {})
-    n['population'] = int(n.get('population') or x['SP.POP.TOTL'][1])
+    n['population'] = int(n.get('population') or x.get('SP.POP.TOTL', (0, 0))[1])
     g = seven(n, w)
     cov = coverage(n, g)
+    cov.update(n.get('coverage') or {})
     A = auto_assets(n, w)
     rec_auto, st_auto = auto_lines(n, w)
     items, notes_assets = [], []
@@ -401,7 +404,7 @@ def build(n, w, wave):
         'population': n['population'],
         'hero': {'lead': n['lead'], 'stats': stats[:3]},
         'capital': {'heading': n['cap_heading'], 'record': record, 'register': n['register']},
-        'assets': {'heading': 'Five assets no balance sheet counts.', 'items': items},
+        'assets': {'heading': '%s assets no balance sheet counts.' % ['No', 'One', 'Two', 'Three', 'Four', 'Five', 'Six'][min(len(items), 6)], 'items': items},
         'enterprises': {'heading': 'Already working in %s.' % (n.get('in_name') or n['name']), 'items': []},
         'coverage': cov, 'guarantees': g, 'newswire': wire, 'dispatches': [],
         'checked': STAMP, 'reviewed': STAMP,
