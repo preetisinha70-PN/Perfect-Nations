@@ -1,22 +1,22 @@
 {
   "nation": "Zimbabwe",
   "page_version": "9.0",
-  "updated": "2026-11-08",
+  "updated": "2026-11-11",
   "steward": {
     "name": "Tendai Moyo",
     "role": "Nation Steward of Zimbabwe"
   },
   "population": 16950795,
   "hero": {
-    "lead": "A nation of 17.0 million whose lithium exports more than tripled in a year, to $782 million in the first half of 2026, and where four in ten citizens are poor.",
+    "lead": "A nation of 17.0 million whose lithium exports more than tripled in a year, to $782 million in the first half of 2026, and where 38% lived in extreme poverty in 2019.",
     "stats": [
       {
         "value": "$782M",
         "label": "Lithium exports, first half of 2026"
       },
       {
-        "value": "87.5%",
-        "label": "Renewable share of electricity output"
+        "value": "50%",
+        "label": "Of electricity from renewables, 2022"
       },
       {
         "value": "62.0%",
@@ -25,53 +25,329 @@
     ]
   },
   "capital": {
-    "heading": "2 instruments. Small health grants, and a mining boom not yet on record.",
+    "heading": "18 instruments. Grants for farms, health and the arrears dialogue, and Afreximbank credit for power and trade.",
     "record": [
       {
-        "value": "$15M",
+        "value": "$21.7B",
         "money": true,
-        "text": "COVID-19 Response and Essential Health Services, Additional Financing: Essential health services",
-        "source": "World Bank",
-        "url": "https://projects.worldbank.org/en/projects-operations/project-detail/P180160"
+        "text": "Public and publicly guaranteed debt at the end of June 2026 (ZiG580.9 billion), from $21.8 billion at the end of December 2025; the IMF estimates $22.7 billion, 38% of GDP, at end-2025",
+        "source": "Ministry of Finance, 2026",
+        "url": "https://e-portal.parlzim.gov.zw/files/HAN-1785429915691.pdf"
       },
       {
-        "value": "$6.6M",
+        "value": "$2.7B",
         "money": true,
-        "text": "Zimbabwe COVID-19 Emergency Response Project: Emergency health response",
-        "source": "World Bank",
-        "url": "https://projects.worldbank.org/en/projects-operations/project-detail/P176141"
+        "text": "Arrears to international financial institutions at the end of December 2025, the debt the arrears clearance dialogue and the IMF Staff-Monitored Program work to resolve",
+        "source": "Ministry of Finance, 2026",
+        "url": "https://zimtreasury.co.zw/wp-content/uploads/2026/08/Q1-2026-Public-Debt-Report-ZPDMO.pdf"
+      },
+      {
+        "value": "$350M",
+        "money": true,
+        "text": "Projection: development partner support the Ministry of Finance expects in 2026, 30% less than the $500 million projected for 2025; about $144.4 million was received in the first half of 2026",
+        "source": "Ministry of Finance, 2026",
+        "url": "https://e-portal.parlzim.gov.zw/files/HAN-1785429915691.pdf"
+      },
+      {
+        "value": "$190M",
+        "money": true,
+        "text": "Afreximbank facilities for CBZ Bank, announced 31 July 2026: $150 million for trade finance, $20 million for small and medium enterprises and $20 million to help reduce power deficits",
+        "source": "Afreximbank, 2026",
+        "url": "https://afreximbank.africa-newsroom.com/press/afreximbank-concludes-package-of-loans-valued-at-us190-million-for-zimbabwes-commercial-bank-of-zimbabwe-cbz-bank?lang=en"
+      },
+      {
+        "value": "$25M",
+        "money": true,
+        "text": "African Development Bank grant approved in April 2026 for 92,500 smallholder farmers in drought-prone Masvingo and Matabeleland South",
+        "source": "AfDB, 2026",
+        "url": "https://allafrica.com/stories/202604230741.html"
       }
     ],
     "register": [
       {
-        "cat": "multi",
-        "status": "Active",
-        "tone": "active",
-        "name": "COVID-19 Response and Essential Health Services, Additional Financing",
-        "detail": "Investment project financing",
-        "amount": "$15M",
+        "cat": "humanitarian",
+        "status": "Ended April 2025",
+        "tone": "completed",
+        "name": "Zimbabwe Drought Flash Appeal",
+        "detail": "May 2024 to April 2025 · El Niño drought · 3.1 million people targeted of 7.6 million in need",
+        "amount": "$429.3M",
         "money": true,
-        "note": "Essential health services",
-        "text": "Protects essential health services.",
+        "note": "$104.3 million received against the 2024 requirement of $286.2 million",
+        "text": "The humanitarian partners’ appeal for the El Niño-induced drought, in support of the Government-led response. It sought $429.3 million to reach close to 3.1 million people. Drought strikes the food and water standards first.",
         "by": [
-          "World Bank"
+          "United Nations (OCHA)",
+          "Humanitarian partners"
         ],
-        "url": "https://projects.worldbank.org/en/projects-operations/project-detail/P180160"
+        "url": "https://humanitarianaction.info/document/global-humanitarian-overview-2025/article/zimbabwe"
       },
       {
         "cat": "multi",
-        "status": "Active",
+        "status": "Second review completed",
         "tone": "active",
+        "name": "Staff-Monitored Program",
+        "detail": "Approved by IMF Management 27 March 2026 · 10 months · first review completed 27 July 2026 · second review completed, announced 7 October 2026",
+        "amount": "No financing",
+        "money": false,
+        "note": "Third review tentatively January 2027, on end-September 2026 targets",
+        "text": "An informal, non-financing programme with IMF staff, without endorsement by the IMF Executive Board, to consolidate stabilisation gains, strengthen macroeconomic management and build a track record toward arrears clearance and debt resolution. All end-June 2026 quantitative targets were met; the indicative target on protected social and priority spending was missed. The IMF links the track record to eventual access to external concessional financing, which every one of the seven standards needs.",
+        "by": [
+          "International Monetary Fund"
+        ],
+        "url": "https://www.imf.org/en/news/articles/2026/10/07/pr26325-imf-approves-completion-of-the-second-review-zimbabwe-staff-monitored-prgm"
+      },
+      {
+        "cat": "multi",
+        "status": "Approved",
+        "tone": "active",
+        "name": "From Early Warning to Early Action: Building Zimbabwe’s Pandemic Prevention, Preparedness and Response Through One Health",
+        "detail": "Allocated by the Governing Board 12 February 2026, third call for proposals · Pandemic Fund grant · outcomes expected 2026 to 2028 · implementing entities: AfDB, FAO and UNICEF",
+        "amount": "$14.33M",
+        "money": true,
+        "note": "About $49 million of co-financing; Government co-investment of $91.8 million",
+        "text": "A Pandemic Fund grant to establish a resilient pandemic prevention, preparedness and response system in Zimbabwe by 2028. It serves the health standard.",
+        "by": [
+          "Pandemic Fund",
+          "African Development Bank",
+          "FAO",
+          "UNICEF"
+        ],
+        "url": "https://www.thepandemicfund.org/projects/ZIMBABWE-early-warning-early-action-building-zimbabwes-pandemic-prevention-preparedness"
+      },
+      {
+        "cat": "multi",
+        "status": "Under implementation",
+        "tone": "active",
+        "name": "AY4SF: Adolescents and Youth for a Sustainable Future (SAP057)",
+        "detail": "Approved by the GCF 30 October 2025 · Grant · Accredited entity: Save the Children Australia · Estimated completion 21 April 2032",
+        "amount": "$25M",
+        "money": true,
+        "note": "10% disbursed; $30 million with co-financing",
+        "text": "A Green Climate Fund grant for climate change adaptation and community resilience through green jobs for adolescents and young people in Zimbabwe. The GCF expects 3.2 million people to gain resilience; it serves the livelihood standard.",
+        "by": [
+          "Green Climate Fund",
+          "Save the Children Australia"
+        ],
+        "url": "https://www.greenclimate.fund/portfolio/projects/sap057"
+      },
+      {
+        "cat": "multi",
+        "status": "Completed",
+        "tone": "completed",
+        "name": "COVID-19 Response and Essential Health Services, Additional Financing",
+        "detail": "Processed 23 February 2024 · Global Financing Facility grant · Closed 15 November 2025",
+        "amount": "$15M",
+        "money": true,
+        "note": "With the original grants, $21.55 million disbursed (99.9%)",
+        "text": "Additional financing from the Global Financing Facility that widened the COVID-19 project to essential health services, particularly reproductive, maternal, newborn, child and adolescent health. The Independent Evaluation Group rates the outcome Moderately Satisfactory; it served the health standard.",
+        "by": [
+          "World Bank",
+          "Global Financing Facility"
+        ],
+        "url": "https://documents1.worldbank.org/curated/en/099081826110519240/pdf/P176141-bdd8fed2-f0f9-4077-a5d4-1b27577ab81c.pdf"
+      },
+      {
+        "cat": "multi",
+        "status": "Completed",
+        "tone": "completed",
         "name": "Zimbabwe COVID-19 Emergency Response Project",
-        "detail": "Investment project financing",
+        "detail": "Financing agreement signed 9 March 2022 · Grants from the Health Emergency Preparedness and Response Trust Fund and ESMAP · Closed 15 November 2025",
         "amount": "$6.6M",
         "money": true,
-        "note": "Emergency health response",
-        "text": "Supported the emergency response to the pandemic.",
+        "note": "7.5 million people received at least one vaccine dose",
+        "text": "World Bank-administered trust fund grants to deploy and manage COVID-19 vaccines and strengthen related health system capacity, implemented by Cordaid. By its close, 79% of primary health care facilities had functional solar cold chain systems; it served the health and energy standards.",
         "by": [
-          "World Bank"
+          "World Bank",
+          "Cordaid"
         ],
-        "url": "https://projects.worldbank.org/en/projects-operations/project-detail/P176141"
+        "url": "https://www.worldbank.org/en/news/press-release/2022/03/09/zimbabwe-new-grant-to-strengthen-covid-19-vaccine-deployment"
+      },
+      {
+        "cat": "multi",
+        "status": "Under implementation",
+        "tone": "active",
+        "name": "Building Climate Resilience of Vulnerable Agricultural Livelihoods in Southern Zimbabwe (FP127)",
+        "detail": "Approved by the GCF Board 12 March 2020 · Accredited entity: UNDP · Estimated completion 9 June 2027",
+        "amount": "$26.6M",
+        "money": true,
+        "note": "94% disbursed; $47.8 million with co-financing",
+        "text": "A Green Climate Fund programme, run with UNDP, for smallholder farmers in three semi-arid agroecological regions of southern Zimbabwe. The GCF expects 2.3 million people to gain resilience; it serves the food and livelihood standards.",
+        "by": [
+          "Green Climate Fund",
+          "UNDP"
+        ],
+        "url": "https://www.greenclimate.fund/project/fp127"
+      },
+      {
+        "cat": "multi",
+        "status": "Under implementation",
+        "tone": "active",
+        "name": "Integrated Climate Risk Management for Food Security and Livelihoods, Masvingo and Rushinga (SAP007)",
+        "detail": "Approved by the GCF 8 July 2019 · Accredited entity: World Food Programme · Estimated completion 2 August 2026",
+        "amount": "$8.86M",
+        "money": true,
+        "note": "100% disbursed; 50,000 people, 66% of them women",
+        "text": "A Green Climate Fund project, run with the World Food Programme, for climate risk management, food security and livelihoods in the Masvingo and Rushinga districts. It serves the food and livelihood standards.",
+        "by": [
+          "Green Climate Fund",
+          "World Food Programme"
+        ],
+        "url": "https://www.greenclimate.fund/project/sap007"
+      },
+      {
+        "cat": "regional",
+        "status": "Approved",
+        "tone": "active",
+        "name": "Zimbabwe Arrears Clearance Dialogue Enhancement Project (ZACDEP)",
+        "detail": "Approved, announced 18 May 2026 · African Development Fund grant, Transition Support Facility Pillar III · June 2026 to May 2029",
+        "amount": "$4M",
+        "money": true,
+        "note": "Builds on the SACAGE project, approved in 2022",
+        "text": "A grant to strengthen the dialogue and reforms needed for Zimbabwe’s arrears clearance process, including debt management systems, parliamentary oversight and anti-corruption. The AfDB calls clearing arrears “the gateway to unlocking the development financing the country urgently needs”, finance on which all seven standards depend.",
+        "by": [
+          "African Development Bank"
+        ],
+        "url": "https://allafrica.com/stories/202605180720.html"
+      },
+      {
+        "cat": "regional",
+        "status": "Approved",
+        "tone": "active",
+        "name": "Agricultural Climate Resilient and Vulnerability Reduction Project (ACRES)",
+        "detail": "Approved, announced 23 April 2026 · Grant, Transition Support Facility Pillar 1 · 2026 to 2030 · Gutu, Gwanda, Matobo, Mangwe and Bulilima districts",
+        "amount": "$25M",
+        "money": true,
+        "note": "92,500 smallholder farmers, at least half of them women",
+        "text": "A grant to build climate resilience, reduce vulnerability and improve food and nutrition security in drought-prone Masvingo and Matabeleland South, by revitalising smallholder agriculture and developing grazing areas and water resources. It is to create 320 full-time and 2,100 seasonal jobs, and serves the food, water and livelihood standards.",
+        "by": [
+          "African Development Bank"
+        ],
+        "url": "https://allafrica.com/stories/202604230741.html"
+      },
+      {
+        "cat": "regional",
+        "status": "Signed",
+        "tone": "active",
+        "name": "ZETDC facility",
+        "detail": "Signed September 2025 · Zimbabwe Electricity Transmission and Distribution Company · $135.4 million disbursed in the first quarter of 2026",
+        "amount": "$210M",
+        "money": true,
+        "note": "$135.4 million of the $140.3 million disbursed in the first quarter of 2026",
+        "text": "An Afreximbank facility for the state power utility, recorded by the Ministry of Finance among disbursements for State Owned Enterprises and on-lent loans. Afreximbank describes it as a syndicated facility, which CBZ Bank is now positioned to join; it serves the energy standard.",
+        "by": [
+          "Afreximbank",
+          "ZETDC"
+        ],
+        "url": "https://zimtreasury.co.zw/wp-content/uploads/2026/08/Q1-2026-Public-Debt-Report-ZPDMO.pdf"
+      },
+      {
+        "cat": "regional",
+        "status": "Approved",
+        "tone": "active",
+        "name": "Agricultural Value Chain and Livelihoods Enhancement Project (AVCLEP)",
+        "detail": "Approved, announced 21 May 2025 · African Development Fund grant · Matabeleland South, Masvingo and Bulawayo",
+        "amount": "$10.12M",
+        "money": true,
+        "note": "7,000 livestock-keeping farmers and 42,000 smallholder crop farmers",
+        "text": "A grant to boost sustainable agricultural production and strengthen rural resilience in drought-prone regions, through climate-smart farming, the rehabilitation of dip tanks and solar boreholes, and value chain development. About 90,000 community members are to benefit indirectly; it serves the food, water and livelihood standards.",
+        "by": [
+          "African Development Bank"
+        ],
+        "url": "https://allafrica.com/stories/202505220556.html"
+      },
+      {
+        "cat": "regional",
+        "status": "Awarded",
+        "tone": "active",
+        "name": "Skills Required for Employability and Productivity of Young People and Women",
+        "detail": "Announced 16 October 2024 · African Development Fund grant · Total cost $3.93 million",
+        "amount": "$3.57M",
+        "money": true,
+        "note": "5,000 participants to be trained",
+        "text": "A grant for vocational training, productivity, market links and entrepreneurship in selected agricultural value chains, for 1,000 young people, 200 women, 400 micro, small and medium-sized enterprises of women and young workers, and 10 cooperatives. It serves the education and livelihood standards.",
+        "by": [
+          "African Development Bank"
+        ],
+        "url": "https://allafrica.com/stories/202410230128.html"
+      },
+      {
+        "cat": "bilat",
+        "status": "Committed",
+        "tone": "active",
+        "name": "Support to Zimbabwe’s National Public Health Institute",
+        "detail": "Announced 21 July 2025 · Four years · Team Europe Initiative on National Public Health Institutes · with WHO",
+        "amount": "€4.2M",
+        "money": true,
+        "note": "Zimbabwe’s first National Public Health Institute",
+        "text": "European Union support for the establishment of Zimbabwe’s first National Public Health Institute, focused on science, evidence generation and data-driven policy advice. It serves the health standard.",
+        "by": [
+          "European Union",
+          "World Health Organization"
+        ],
+        "url": "https://www.eeas.europa.eu/delegations/zimbabwe/eu-invests-%E2%82%AC42m-support-zimbabwe%E2%80%99s-national-public-health-institute_en"
+      },
+      {
+        "cat": "bilat",
+        "status": "Signed",
+        "tone": "active",
+        "name": "Four financing agreements, Multi-annual Indicative Programme 2021–2024",
+        "detail": "Signed 30 October 2024 · Agri-value chains €26 million · biodiversity and resilience €26 million · transparency and accountability €16 million · gender equality €7 million",
+        "amount": "€75M",
+        "money": true,
+        "note": "Second phase of funding under the €148 million allocation for 2021–2024",
+        "text": "Four European Union agreements signed with the Ministry of Finance, Economic Development and Investment Promotion: horticulture and small grains value chains with renewable energy, biodiversity conservation with community resilience, citizen accountability and local services, and women’s economic empowerment. They serve the food, energy and livelihood standards.",
+        "by": [
+          "European Union",
+          "Ministry of Finance, Economic Development and Investment Promotion"
+        ],
+        "url": "https://www.eeas.europa.eu/delegations/zimbabwe/zimbabwe-and-european-union-sign-financing-agreements-worth-75-million-euros_en"
+      },
+      {
+        "cat": "private",
+        "status": "Signed",
+        "tone": "active",
+        "name": "CBZ Bank facilities",
+        "detail": "Signed in El Alamein, Egypt, announced 31 July 2026 · $150 million revolving trade finance · $20 million for SMEs · $20 million on-lending for power",
+        "amount": "$190M",
+        "money": true,
+        "note": "Positions CBZ to join a $210 million syndicated facility for ZETDC",
+        "text": "Three Afreximbank facilities for CBZ Bank: a revolving line for funding and letters of credit support to companies in Zimbabwe, a dual-tranche facility for small and medium enterprises in trade, and a dual-tranche on-lending facility to help reduce power deficits in Zimbabwe and the SADC region. They serve the livelihood and energy standards.",
+        "by": [
+          "Afreximbank",
+          "CBZ Bank"
+        ],
+        "url": "https://afreximbank.africa-newsroom.com/press/afreximbank-concludes-package-of-loans-valued-at-us190-million-for-zimbabwes-commercial-bank-of-zimbabwe-cbz-bank?lang=en"
+      },
+      {
+        "cat": "private",
+        "status": "Launched",
+        "tone": "active",
+        "name": "Credit line for SMEs and women entrepreneurs, Stanbic Bank Zimbabwe",
+        "detail": "Launched 4 March 2025 · €20 million (ZWG 525.9 million) · backed by the European Commission and EU member states through the ACP Trust Fund",
+        "amount": "€20M",
+        "money": true,
+        "note": "Longer-term loans, with a focus on businesses owned or run by women",
+        "text": "An EIB Global credit line, on-lent by Stanbic Bank Zimbabwe, for longer-term loans at favourable conditions to small and medium-sized businesses, with a focus on those owned or run by women. It serves the livelihood standard.",
+        "by": [
+          "EIB Global",
+          "Stanbic Bank Zimbabwe"
+        ],
+        "url": "https://www.eib.org/press/all/2025-114-stanbic-bank-and-eib-global-launch-eur20-million-credit-line-for-smes-and-women-entrepreneurs-in-zimbabwe"
+      },
+      {
+        "cat": "private",
+        "status": "Signed",
+        "tone": "active",
+        "name": "Trade Finance Transaction Guarantee Facility, NMB Bank",
+        "detail": "Signed 7 March 2024, announced 15 March 2024",
+        "amount": "$15M",
+        "money": true,
+        "note": "For SMEs in agri-business and trade distribution value chains",
+        "text": "An African Development Bank guarantee facility with NMB Bank Zimbabwe to unlock trade finance for Zimbabwean small and medium-sized enterprises, in agri-business and trade distribution value chains. It serves the livelihood and food standards.",
+        "by": [
+          "African Development Bank",
+          "NMB Bank Zimbabwe"
+        ],
+        "url": "https://allafrica.com/stories/202403180459.html"
       }
     ]
   },
@@ -81,8 +357,8 @@
       {
         "name": "The Lithium",
         "figure": "$782M",
-        "money": false,
-        "label": "Exports, first half of 2026, up from $237M",
+        "money": true,
+        "label": "Exports of lithium products, first half of 2026, up from $237M",
         "text": "A boom in a mineral the world needs for batteries, with more processing required at home.",
         "alt": "A lithium mine in Zimbabwe",
         "images": [
@@ -95,10 +371,10 @@
       },
       {
         "name": "Kariba and the Zambezi",
-        "figure": "87.5%",
+        "figure": "50%",
         "money": false,
-        "label": "Renewable share of electricity output, 2021",
-        "text": "Clean power shared with Zambia, reaching 62% of citizens.",
+        "label": "Of electricity from renewables, 2022",
+        "text": "Kariba Power Station generated 31.7% of the nation’s electricity in the first quarter of 2026, and Hwange Power Station 56.3%.",
         "alt": "Lake Kariba at sunset",
         "images": [
           "https://perfectnations.org/wp-content/uploads/2026/10/Kariba-and-the-Zambezi-Zimbabwe-768x560.png"
@@ -159,11 +435,39 @@
     "heading": "Already working in Zimbabwe.",
     "items": [
       {
-        "standard": "In preparation",
-        "name": "The enterprises building Perfect Zimbabwe",
-        "text": "The Stewards are verifying the companies and social enterprises already delivering the seven basic living standards in Zimbabwe. Suggest one to include.",
-        "source": "Suggest an enterprise",
-        "url": "mailto:contact@perfectnations.org?subject=An%20enterprise%20for%20Perfect%20Zimbabwe"
+        "standard": "Food",
+        "name": "Seed Co Limited",
+        "text": "Breeds, multiplies and distributes mainly hybrid seed varieties of maize, wheat, soya beans, sugar beans, cowpeas, sorghum and vegetables, with expert agronomists across Zimbabwe. It describes itself as the leading certified seed company authorised to market seed varieties in over fifteen African countries, with a strong market share among communal and commercial farmers.",
+        "source": "Seed Co",
+        "url": "https://www.seedcogroup.com/zw/fieldcrops/about-us/overview/"
+      },
+      {
+        "standard": "Energy",
+        "name": "Centragrid",
+        "text": "A locally owned and financed solar power producer at Nyabira, 35 km from Harare, with 25 MW of licensed capacity. After its first 2 MW plant, it completed the second phase of its solar project in September 2024.",
+        "source": "Centragrid",
+        "url": "https://centragrid.com/"
+      },
+      {
+        "standard": "Education",
+        "name": "CAMFED Zimbabwe",
+        "text": "Launched in 1993, it partners with 1,698 schools across 28 districts and has supported 456,865 students to go to primary and secondary school with donor funds. Its 95,250 CAMFED Association members and community initiatives have supported 2,325,709 students.",
+        "source": "CAMFED",
+        "url": "https://camfed.org/what-we-do/where-we-operate/zimbabwe/"
+      },
+      {
+        "standard": "Health",
+        "name": "Population Services Zimbabwe (MSI)",
+        "text": "Established in 1987, the MSI Reproductive Choices programme in Zimbabwe provides all modern methods of contraception, post-abortion care, maternal and child health services, cervical cancer screening, and STI and HIV testing and treatment. It works through clinics, outreach teams, public sector strengthening and social marketing across all ten provinces.",
+        "source": "MSI Reproductive Choices",
+        "url": "https://www.msichoices.org/where-we-work/zimbabwe/"
+      },
+      {
+        "standard": "Livelihood",
+        "name": "Stanbic Bank Zimbabwe",
+        "text": "Lends a €20 million (ZWG 525.9 million) EIB Global credit line as longer-term loans at favourable conditions to small and medium-sized businesses. Its focus is businesses owned or run by women, or that employ many women or offer services specifically to women.",
+        "source": "EIB, 2025",
+        "url": "https://www.eib.org/press/all/2025-114-stanbic-bank-and-eib-global-launch-eur20-million-credit-line-for-smes-and-women-entrepreneurs-in-zimbabwe"
       }
     ]
   },
@@ -283,5 +587,6 @@
     }
   ],
   "dispatches": [],
-  "checked": "2026-11-08T04:20Z"
+  "checked": "2026-11-08T04:20Z",
+  "reviewed": "2026-11-11T04:04Z"
 }
