@@ -40,7 +40,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 PAGES = ROOT / 'pages'
 DATA = ROOT / 'data'
-VERSION = '6.5'  # light reading sections, Earthrise accents (the Steward-General, 10 Nov 2026)
+VERSION = '6.5.1'  # rebuild for the open blueprints now on the manifest (Blueprints Steward, 11 Nov 2026)
 
 ORDER = [
     'nations-menu.html',      # the moving list of 195 nations (also on the homepage)
