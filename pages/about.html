@@ -1,5 +1,12 @@
 <!-- ==========================================================================
-PERFECT NATIONS - ABOUT - v11.5 - 2026-11-10
+PERFECT NATIONS - ABOUT - v12.0 - 2026-11-11
+v12.0 (the President and CEO, 11 Nov 2026: "update the About page with anything new from the home page, add
+a section on governance, make the page tighter and compact; the font for the mission and vision is a bit
+large"): Governance first (GENERATED:GOVERNANCE, the homepage part) straight after the hero, and What we do
+without its closing seal row, as on the homepage; the Vision and the Mission in the body type; one size
+for every section title and the page's own section spacing on the homepage parts; the record joins the
+President and CEO in one band; six research Stewards in one row on laptops; the Nation Stewards of all
+195 open blueprints, the first two rows shown, with a search.
 v11.5: light reading sections, Earthrise accents (the Steward-General, 10 Nov 2026).
 v11.4 (10 Nov 2026), the homepage and blueprint updates of 9 Nov brought in: the hero says what the
 firm is, in the blueprints' words ("Perfect Nations is a new-age sovereign advisory firm, and its clients
@@ -344,6 +351,72 @@ TO CHANGE THE PORTRAIT: replace the address inside src="..." of the img in #ab-p
 #pn-about .ab-ns__t span{ color:#8A3A22; }
 #pn-about .ab-more{ border-color:rgba(11,61,69,.45); color:#0B3D45; }
 #pn-about .ab-more:hover{ background:rgba(11,61,69,.06); }
+
+/* ===== v12.0 (11 Nov 2026): tighter and more compact; the Vision and the Mission in the body type ===== */
+#pn-about .ab-hero{ padding-top:clamp(20px,3.2vh,36px); padding-bottom:clamp(18px,3vh,32px); }
+@media (min-width:900px){ #pn-about .ab-hero__grid{ grid-template-columns:minmax(0,.56fr) minmax(0,1.44fr); gap:clamp(18px,3.4vw,52px); } }
+#pn-about .ab-seal{ width:min(100%,300px); }
+#pn-about h1.ab-h1{ font-size:clamp(2.4rem,4.2vw,3.9rem); text-wrap:balance; }
+#pn-about .ab-hero .ab-lead{ margin-top:8px; }
+#pn-about .ab-vm{ margin-top:clamp(12px,2vh,18px); }
+#pn-about .ab-vm > div{ padding:9px 0 10px; }
+#pn-about .ab-vm dt{ font-size:.68rem; letter-spacing:.24em; color:#8A3A22; }
+#pn-about .ab-vm dd{ margin-top:4px; font-family:var(--bd); font-size:clamp(.98rem,1.1vw,1.06rem); line-height:1.5; color:#10262B; }
+#pn-about .ab-hero .ab-ctas{ margin-top:clamp(12px,2vh,18px); }
+/* one size for every section title on the page, the homepage parts included */
+#pn-about h2.ab-h2,#pn-about #pn-governance h2.pngv-h2,
+#pn-about #pn-steps h2.pnsp-h2,#pn-about #pn-assets h2.pna-h2,#pn-about #pn-capital h2.pncx-h2,#pn-about #pn-pledge h2.pnpl-h{ font-size:clamp(2rem,3.3vw,3.1rem) !important; text-wrap:balance; }
+#pn-about #pn-capita h2.pc4-h2{ font-size:clamp(1.8rem,2.6vw,2.6rem) !important; }
+/* the homepage parts keep the page's own section spacing */
+#pn-about #pn-governance,#pn-about #pn-steps,#pn-about #pn-assets,#pn-about #pn-capital,#pn-about #pn-capita,#pn-about #pn-pledge{ padding-top:clamp(22px,3.4vh,36px) !important; padding-bottom:clamp(20px,3.2vh,32px) !important; }
+/* the record, inside the President and CEO's band */
+@media (min-width:900px){ #pn-about .ab-ceo__grid{ grid-template-columns:minmax(0,240px) minmax(0,1fr); } }
+#pn-about .ab-recb{ margin-top:clamp(18px,3vh,28px); padding-top:clamp(14px,2.4vh,22px); border-top:1px solid rgba(16,38,43,.13); }
+#pn-about .ab-recb__k{ margin-bottom:4px; color:#8A3A22; }
+#pn-about h3.ab-h3{ margin:0; font-family:var(--hd); font-weight:600; font-size:clamp(1.5rem,2.2vw,2.1rem); line-height:1; letter-spacing:-.015em; color:#0B3D45 !important; text-shadow:none !important; }
+#pn-about .ab-tl{ margin-top:clamp(10px,1.8vh,16px); }
+#pn-about .ab-tl li{ padding-bottom:10px; }
+#pn-about .ab-edu-w{ margin-top:clamp(8px,1.6vh,14px); }
+/* the Council: six research Stewards in one row on laptops */
+@media (min-width:1180px){
+  #pn-about .ab-rss{ grid-template-columns:repeat(6,minmax(0,1fr)); gap:8px; }
+  #pn-about .ab-rs{ gap:9px; padding:7px 9px 7px 7px; }
+  #pn-about .ab-av{ width:44px; }
+  #pn-about .ab-rs__t b{ font-size:1rem; }
+  #pn-about .ab-rs__t i{ font-size:.8rem; }
+  #pn-about .ab-rs__t span{ font-size:.74rem; }
+}
+#pn-about .ab-group{ margin-top:clamp(14px,2.2vh,20px); }
+/* the Nation Stewards: two rows, then Show all, or a search */
+#pn-about .ab-nsh{ display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:6px 16px; margin-bottom:8px; }
+#pn-about .ab-nsh .ab-sub{ margin:0; }
+#pn-about .ab-nsq{ position:relative; display:block; flex:0 1 300px; }
+#pn-about .ab-nsq input{ display:block; width:100%; min-height:44px; margin:0; padding:9px 14px 9px 38px; border:1px solid rgba(11,61,69,.3); border-radius:999px; background:#FFFDF8 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3E%3Ccircle cx='6.8' cy='6.8' r='5' fill='none' stroke='%230B3D45' stroke-width='1.6'/%3E%3Cpath d='M10.6 10.6 15 15' stroke='%230B3D45' stroke-width='1.6' stroke-linecap='round'/%3E%3C/svg%3E") no-repeat 14px 50%; color:#10262B; font-family:var(--bd); font-size:16px; line-height:1.2; box-shadow:none; -webkit-appearance:none; appearance:none; }
+#pn-about .ab-nsq input::placeholder{ color:#5C696C; opacity:1; }
+#pn-about .ab-nsq input:focus{ outline:2px solid #0B3D45; outline-offset:2px; border-color:#0B3D45; }
+#pn-about .ab-vh{ position:absolute; width:1px; height:1px; margin:-1px; padding:0; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; border:0; }
+#pn-about .ab-nss.is-short li:nth-child(n+13){ display:none; }
+#pn-about .ab-nss li[hidden]{ display:none !important; }
+#pn-about .ab-none{ margin:8px 0 0; font-size:.9rem; color:#34464A; }
+#pn-about .ab-none a{ color:#0B3D45; font-weight:600; }
+#pn-about .ab-ns__av{ background:#0B3D45; }
+@media (max-width:640px){
+  #pn-about h1.ab-h1{ font-size:clamp(2.1rem,10vw,2.6rem); }
+  #pn-about h2.ab-h2,#pn-about #pn-governance h2.pngv-h2,
+  #pn-about #pn-steps h2.pnsp-h2,#pn-about #pn-assets h2.pna-h2,#pn-about #pn-capital h2.pncx-h2,#pn-about #pn-pledge h2.pnpl-h{ font-size:clamp(1.8rem,8.4vw,2.3rem) !important; }
+  #pn-about #pn-capita h2.pc4-h2{ font-size:clamp(1.55rem,7vw,1.85rem) !important; }
+  #pn-about .ab-seal{ width:min(38vw,140px); }
+  #pn-about .ab-hero__grid{ gap:10px; }
+  #pn-about .ab-org{ letter-spacing:.06em; }
+  #pn-about .ab-vm dd{ font-size:.96rem; }
+  #pn-about h3.ab-h3{ font-size:1.45rem; }
+  #pn-about .ab-tl li{ padding-bottom:8px; }
+  #pn-about .ab-tl p{ font-size:.84rem; line-height:1.4; }
+  #pn-about .ab-nsq{ flex:1 1 100%; }
+  #pn-about .ab-nss.is-short li:nth-child(n+9){ display:none; }
+  #pn-about .ab-band,#pn-about #pn-governance,#pn-about #pn-steps,#pn-about #pn-assets,#pn-about #pn-capital,#pn-about #pn-capita,#pn-about #pn-pledge{ padding-top:20px !important; padding-bottom:18px !important; }
+  #pn-about .ab-hero{ padding-top:16px !important; }
+}
 </style>
 <!-- GENERATED:LOGO-KIT (from pages/home-logo-kit.html and pages/home-rule.html by tools/build_about.py; do not edit here) -->
 <!-- part: pages/home-logo-kit.html v1.1 -->
@@ -398,8 +471,146 @@ TO CHANGE THE PORTRAIT: replace the address inside src="..." of the img in #ab-p
     </div>
   </section>
 
+<div class="pn-rule" aria-hidden="true"></div>
+
+<!-- GENERATED:GOVERNANCE (from pages/home-governance.html by tools/build_about.py; do not edit here) -->
+<!-- part: pages/home-governance.html v1.1 -->
+<style>
+#pn-governance{
+  --er:#0B3D45; --er2:#0F4C5C; --er3:#082A30;
+  --ink:#34464A; --mut:#5C696C; --hair:rgba(16,38,43,.13); --tc:#8A3A22;
+  --iv:#F5F1E8; --ivm:rgba(245,241,232,.84); --ivd:rgba(245,241,232,.62);
+  --g:#E3C258; --gd:#8C6A12;
+  --hd:var(--pn-font-heading,"Barlow Condensed","Arial Narrow",Arial,sans-serif);
+  --bd:var(--pn-font-body,"Barlow Semi Condensed",Arial,sans-serif);
+  position:relative; isolation:isolate;
+  width:100vw; margin-left:calc(50% - 50vw);
+  overflow-x:hidden; overflow-x:clip;
+  padding:clamp(24px,3.6vh,40px) 0;
+  box-sizing:border-box; color:var(--ink); font-family:var(--bd); line-height:1.45;
+  scroll-margin-top:var(--pn-head-off,72px);
+  background:linear-gradient(180deg,#FBF8F1 0%,#F6EFE0 100%);
+}
+#pn-governance *,#pn-governance *::before,#pn-governance *::after{ box-sizing:border-box; }
+.elementor-widget-html:has(#pn-governance),
+.elementor-widget:has(#pn-governance),
+.e-con-inner:has(#pn-governance),
+.e-con:has(#pn-governance){
+  padding-top:0 !important; padding-bottom:0 !important;
+  --widgets-spacing:0px !important; row-gap:0 !important;
+}
+#pn-governance h2,#pn-governance p,#pn-governance li{ text-shadow:none !important; }
+#pn-governance .pngv-in{
+  width:100%; max-width:1480px; margin:0 auto; padding:0 clamp(18px,5vw,72px);
+  display:grid; grid-template-columns:minmax(0,1.15fr) minmax(0,1fr); gap:18px clamp(24px,4vw,64px); align-items:center;
+}
+
+/* the statement */
+#pn-governance .pngv-eb{
+  display:flex; align-items:center; gap:12px; margin:0;
+  font-family:var(--hd); font-size:.72rem; font-weight:700; letter-spacing:.3em; text-transform:uppercase; color:var(--tc);
+}
+#pn-governance .pngv-eb::before{ content:""; width:26px; height:1px; background:rgba(138,58,34,.6); }
+#pn-governance h2.pngv-h2{
+  margin:8px 0 0; font-family:var(--hd); font-weight:600; text-transform:none;
+  font-size:clamp(2rem,3.6vw,3.3rem); line-height:.95; letter-spacing:-.025em; color:var(--er) !important;
+}
+#pn-governance .pngv-lead{ margin:10px 0 0; max-width:54ch; font-size:clamp(.98rem,1.15vw,1.08rem); line-height:1.5; color:var(--ink); text-wrap:pretty; }
+
+/* the order of the work */
+#pn-governance .pngv-seq{ display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:14px 0 0; padding:0; list-style:none; }
+#pn-governance .pngv-seq li{
+  display:inline-flex; align-items:center; gap:8px; margin:0; padding:7px 13px 6px; border-radius:999px;
+  border:1px solid rgba(11,61,69,.28); color:var(--er);
+  font-family:var(--hd); font-size:.8rem; font-weight:600; letter-spacing:.08em; text-transform:uppercase; line-height:1.1;
+}
+#pn-governance .pngv-seq li span{ font-size:.66rem; letter-spacing:.14em; color:var(--tc); }
+#pn-governance .pngv-seq li:first-child{ background:var(--er); border-color:var(--er); color:var(--iv); }
+#pn-governance .pngv-seq li:first-child span{ color:var(--ivd); }
+
+/* the figure */
+#pn-governance .pngv-fig{ margin:14px 0 0; padding-top:12px; border-top:1px solid var(--hair); font-size:.94rem; line-height:1.45; color:var(--ink); }
+#pn-governance .pngv-fig b{ font-family:var(--hd); font-weight:700; font-size:1.3rem; letter-spacing:-.01em; color:var(--gd); white-space:nowrap; }
+#pn-governance .pngv-src{ display:block; margin-top:3px; font-size:.74rem; color:var(--mut); }
+#pn-governance .pngv-src a{ color:var(--mut); text-decoration:underline; text-decoration-color:rgba(92,105,108,.45); text-underline-offset:2px; }
+#pn-governance .pngv-src a:hover{ color:var(--er); }
+
+/* the cup, on Earthrise */
+#pn-governance .pngv-cup{
+  display:grid; grid-template-columns:clamp(108px,10.5vw,152px) minmax(0,1fr); gap:clamp(16px,2vw,26px); align-items:center;
+  margin:0; padding:clamp(18px,2vw,26px); border-radius:18px; color:var(--iv);
+  background:
+    radial-gradient(60% 80% at 12% 20%, rgba(227,194,88,.16) 0%, rgba(227,194,88,0) 70%),
+    linear-gradient(160deg,var(--er2) 0%,var(--er) 52%,var(--er3) 100%);
+  box-shadow:0 18px 40px rgba(8,42,48,.18);
+}
+#pn-governance svg.pngv-art{ display:block; width:100%; height:auto; fill:var(--g); overflow:visible; }
+#pn-governance .pngv-seal .disc{ fill:#082A30; }
+#pn-governance .pngv-seal .rim{ fill:none; stroke:var(--g); stroke-width:7; }
+#pn-governance .pngv-k{ margin:0; font-family:var(--hd); font-size:.68rem; font-weight:700; letter-spacing:.26em; text-transform:uppercase; color:var(--ivd); }
+#pn-governance .pngv-t{ margin:4px 0 0; font-family:var(--hd); font-weight:600; font-size:clamp(1.4rem,2vw,1.9rem); line-height:1; letter-spacing:-.01em; color:var(--iv); }
+#pn-governance .pngv-d{ margin:8px 0 0; font-size:.95rem; line-height:1.45; color:var(--ivm); }
+#pn-governance .pngv-tests{ margin:10px 0 0; padding:0; list-style:none; display:grid; gap:7px; }
+#pn-governance .pngv-tests li{ display:grid; grid-template-columns:20px minmax(0,1fr); gap:10px; align-items:baseline; margin:0; font-size:.95rem; line-height:1.4; color:var(--ivm); }
+#pn-governance .pngv-tests li span{ font-family:var(--hd); font-size:.7rem; font-weight:700; letter-spacing:.14em; color:var(--ivd); }
+#pn-governance .pngv-tests p{ margin:0; }
+#pn-governance .pngv-tests b{ font-weight:600; color:var(--iv); }
+
+/* phones */
+@media (max-width:760px){
+  #pn-governance{ padding:20px 0 20px; }
+  #pn-governance .pngv-in{ grid-template-columns:minmax(0,1fr); padding:0 16px; gap:14px; }
+  #pn-governance .pngv-eb{ font-size:.64rem; letter-spacing:.24em; }
+  #pn-governance h2.pngv-h2{ margin-top:6px; font-size:1.85rem; }
+  #pn-governance .pngv-lead{ margin-top:8px; font-size:.94rem; line-height:1.45; }
+  #pn-governance .pngv-seq{ display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); align-items:stretch; gap:6px; margin-top:10px; }
+  #pn-governance .pngv-seq li{ flex-direction:column; align-items:flex-start; justify-content:flex-start; gap:3px; padding:7px 8px; border-radius:10px; font-size:.66rem; letter-spacing:.04em; line-height:1.15; }
+  #pn-governance .pngv-seq li span{ font-size:.6rem; }
+  #pn-governance .pngv-fig{ margin-top:10px; padding-top:9px; font-size:.86rem; line-height:1.4; }
+  #pn-governance .pngv-fig b{ font-size:1.1rem; }
+  #pn-governance .pngv-src{ font-size:.68rem; }
+  #pn-governance .pngv-cup{ grid-template-columns:72px minmax(0,1fr); gap:12px; padding:14px 14px 15px; border-radius:14px; align-items:start; }
+  #pn-governance .pngv-k{ font-size:.6rem; letter-spacing:.2em; }
+  #pn-governance .pngv-t{ font-size:1.25rem; }
+  #pn-governance .pngv-d{ margin-top:6px; }
+  #pn-governance .pngv-d,#pn-governance .pngv-tests li{ font-size:.84rem; line-height:1.38; }
+  #pn-governance .pngv-tests{ margin-top:7px; gap:5px; }
+}
+@media (prefers-reduced-motion:reduce){ #pn-governance *{ transition:none !important; animation:none !important; } }
+</style>
+
+<section id="pn-governance" aria-labelledby="pngv-h">
+  <div class="pngv-in">
+    <div class="pngv-say">
+      <p class="pngv-eb">Governance first</p>
+      <h2 class="pngv-h2" id="pngv-h">Good governance comes first.</h2>
+      <p class="pngv-lead">Before finance and before super intelligence. Where no money is lost to corruption, every dollar can reach a citizen.</p>
+      <ol class="pngv-seq" aria-label="The order of the work">
+        <li><span>01</span>Good governance</li>
+        <li><span>02</span>Innovative financing for development</li>
+        <li><span>03</span>Super intelligence</li>
+      </ol>
+      <p class="pngv-fig">The IMF estimates that bribery alone costs <b>$1.5 to $2 trillion</b> a year, about 2&#37; of world output.
+        <span class="pngv-src">Source: <a href="https://www.imf.org/external/pubs/ft/sdn/2016/sdn1605.pdf" title="IMF, Corruption: Costs and Mitigating Strategies, Staff Discussion Note 16/05, May 2016">IMF Staff Discussion Note 16/05, May 2016</a></span></p>
+    </div>
+    <div class="pngv-cup">
+      <svg class="pngv-art pngv-seal" viewBox="0 0 512 512" role="img" aria-label="The whole Perfect Nations logo on its seal: the cup, the laurels and the seven stars" focusable="false"><circle class="disc" cx="256" cy="256" r="252"/><circle class="rim" cx="256" cy="256" r="236"/><g transform="translate(256 262) scale(.7) translate(-256 -256)"><use href="#pnk-cl"/><use href="#pnk-s0"/><use href="#pnk-s1"/><use href="#pnk-s2"/><use href="#pnk-s3"/><use href="#pnk-s4"/><use href="#pnk-s5"/><use href="#pnk-s6"/></g></svg>
+      <div>
+        <p class="pngv-k">The whole logo, for good governance</p>
+        <p class="pngv-t">The Perfect Nations Cup</p>
+        <p class="pngv-d">Awarded only to financing instruments that pass two tests:</p>
+        <ul class="pngv-tests">
+          <li><span>01</span><p><b>Led by good governance,</b> with no room for corruption.</p></li>
+          <li><span>02</span><p><b>Tracked by super intelligence,</b> which follows the impact to every beneficiary.</p></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- /GENERATED:GOVERNANCE -->
+
 <!-- GENERATED:STEPS (from pages/home-steps.html by tools/build_about.py; do not edit here) -->
-<!-- part: pages/home-steps.html v6.3 -->
+<!-- part: pages/home-steps.html v6.3, without its closing seal row -->
 <style>
 #pn-steps{
   --er:#0B3D45; --er2:#0F4C5C; --er3:#082A30;
@@ -552,11 +763,10 @@ TO CHANGE THE PORTRAIT: replace the address inside src="..." of the img in #ab-p
       <li style="--i:1"><a class="pnsp-t" href="https://perfectnations.org/about/#pn-capital" aria-label="Step 02, Capital: The laurels. We design the instruments that raise capital against those assets, from every source."><svg class="pnsp-art pnsp-art--wreath" viewBox="10 63.75 491 491" aria-hidden="true" focusable="false"><g class="lit"><use href="#pnk-cl" clip-path="url(#pnk-lc)"/></g></svg><span class="pnsp-top"><span class="pnsp-n">02</span><span class="pnsp-verb">Capital</span></span><span class="pnsp-part">The laurels</span><span class="pnsp-q">We design the instruments that raise capital against those assets, from every source.</span></a></li>
       <li style="--i:2"><a class="pnsp-t" href="https://perfectnations.org/about/#pn-capita" aria-label="Step 03, Solutions: The seven stars. Perfect Capita: seven basic standards of living for every citizen, Food the crown."><svg class="pnsp-art pnsp-art--stars" viewBox="96 -45 320 220" aria-hidden="true" focusable="false"><g class="lit"><use href="#pnk-s0"/><use href="#pnk-s1"/><use href="#pnk-s2"/><use href="#pnk-s3"/><use href="#pnk-s4"/><use href="#pnk-s5"/><use href="#pnk-s6"/></g></svg><span class="pnsp-top"><span class="pnsp-n">03</span><span class="pnsp-verb">Solutions</span></span><span class="pnsp-part">The seven stars</span><span class="pnsp-q">Perfect Capita: seven basic standards of living for every citizen, Food the crown.</span></a></li>
     </ol>
-    <div class="pnsp-all"><svg class="pnsp-seal" viewBox="0 0 512 512" aria-hidden="true" focusable="false"><circle class="disc" cx="256" cy="256" r="252"/><circle class="rim" cx="256" cy="256" r="236"/><g transform="translate(256 262) scale(.7) translate(-256 -256)"><use href="#pnk-cl"/><use href="#pnk-s0"/><use href="#pnk-s1"/><use href="#pnk-s2"/><use href="#pnk-s3"/><use href="#pnk-s4"/><use href="#pnk-s5"/><use href="#pnk-s6"/></g></svg><p><b>The whole logo:</b> a Perfect Nation, where every citizen has all seven basic standards of living, led by good governance.</p></div>
   </div>
 </section>
 
-<script>
+<script><!--
 (function(){
   var root = document.getElementById('pn-steps');
   if (!root || root.getAttribute('data-pnsp-on')) { return; }
@@ -597,7 +807,7 @@ TO CHANGE THE PORTRAIT: replace the address inside src="..." of the img in #ab-p
     });
   });
 })();
-</script>
+//--></script>
 <!-- /GENERATED:STEPS -->
 <!-- GENERATED:ASSETS (from pages/home-assets.html by tools/build_about.py; do not edit here) -->
 <!-- part: pages/home-assets.html v9.0 -->
@@ -1155,7 +1365,7 @@ TO CHANGE THE PORTRAIT: replace the address inside src="..." of the img in #ab-p
   </div>
 </section>
 
-<script>
+<script><!--
 (function(){
   var root = document.getElementById('pn-capital');
   if (!root || root.getAttribute('data-pncx-on')) { return; }
@@ -1200,7 +1410,7 @@ TO CHANGE THE PORTRAIT: replace the address inside src="..." of the img in #ab-p
     near.observe(root);
   } else { setTimeout(load, 2500); }
 })();
-</script>
+//--></script>
 <!-- /GENERATED:CAPITAL -->
 <div class="pn-rule" aria-hidden="true"></div>
 <!-- GENERATED:CAPITA (from pages/home-perfect-capita.html by tools/build_about.py; do not edit here) -->
@@ -1508,7 +1718,7 @@ TO CHANGE THE PORTRAIT: replace the address inside src="..." of the img in #ab-p
     </div>
   </div>
 </section>
-<script>
+<script><!--
 (function(){
   var root=document.getElementById('pn-capita');
   if(!root||root.getAttribute('data-ready')==='true')return; root.setAttribute('data-ready','true');
@@ -1600,7 +1810,7 @@ TO CHANGE THE PORTRAIT: replace the address inside src="..." of the img in #ab-p
     new IntersectionObserver(function(en){ if(en[0].isIntersecting){ if(!seen){ seen=true; wheel.classList.add('is-in'); } start(); } else { stop(); } },{threshold:.25}).observe(wheel);
   } else { wheel.classList.add('is-in'); root.classList.add('is-in'); start(); }
 })();
-</script>
+//--></script>
 <!-- /GENERATED:CAPITA -->
 <div class="pn-rule" aria-hidden="true"></div>
 <!-- GENERATED:VISION (from pages/home-vision.html by tools/build_about.py; do not edit here) -->
@@ -1781,13 +1991,9 @@ TO CHANGE THE PORTRAIT: replace the address inside src="..." of the img in #ab-p
           </ul>
         </div>
       </div>
-    </div>
-  </section>
-
-  <section class="ab-band ab-rec" id="ab-record" aria-labelledby="ab-rec-h">
-    <div class="ab-in">
-      <p class="ab-eb">The record</p>
-      <h2 class="ab-h2" id="ab-rec-h">Where capital meets development</h2>
+      <div class="ab-recb" id="ab-record">
+      <p class="ab-sub ab-recb__k">The record</p>
+      <h3 class="ab-h3" id="ab-rec-h">Where capital meets development</h3>
       <ol class="ab-tl ab-rv">
         <li>
           <div><h3>Executive Secretary</h3><span class="ab-org">UN Capital Development Fund &middot; New York</span></div>
@@ -1824,6 +2030,7 @@ TO CHANGE THE PORTRAIT: replace the address inside src="..." of the img in #ab-p
           <li><b>World Economic Forum</b><span>Master&#8217;s in Global Leadership</span></li>
         </ul>
       </div>
+      </div>
     </div>
   </section>
 
@@ -1834,10 +2041,10 @@ TO CHANGE THE PORTRAIT: replace the address inside src="..." of the img in #ab-p
       <p class="ab-eb">The Council of Stewards</p>
       <h2 class="ab-h2" id="ab-council-h">The team behind every blueprint</h2>
       <div class="ab-council__top">
-        <p class="ab-lead"><!-- GENERATED:TCOUNT -->50<!-- /GENERATED:TCOUNT --> SI Researchers: super intelligence agents, not people; the President and CEO approves all their work before it is published.</p>
+        <p class="ab-lead"><!-- GENERATED:TCOUNT -->201<!-- /GENERATED:TCOUNT --> SI Researchers: super intelligence agents, not people; the President and CEO approves all their work before it is published.</p>
         <details class="ab-rm">
           <summary>Read more</summary>
-          <p>Their names and portraits are representative. Six research Stewards each hold one mandate, and a Nation Steward keeps each of the <!-- GENERATED:NCOUNT -->44<!-- /GENERATED:NCOUNT --> open blueprints: they survey, price, draft and verify every figure, blueprint and Letter.</p>
+          <p>Their names and portraits are representative. Six research Stewards each hold one mandate, and a Nation Steward keeps each of the <!-- GENERATED:NCOUNT -->195<!-- /GENERATED:NCOUNT --> open blueprints: they survey, price, draft and verify every figure, blueprint and Letter.</p>
         </details>
       </div>
 
@@ -1854,56 +2061,211 @@ TO CHANGE THE PORTRAIT: replace the address inside src="..." of the img in #ab-p
       </div>
 
       <div class="ab-group ab-rv">
-        <p class="ab-sub">Nation Stewards &middot; one for each open blueprint</p>
+        <div class="ab-nsh">
+          <p class="ab-sub">Nation Stewards &middot; one for each open blueprint</p>
+          <label class="ab-nsq"><span class="ab-vh">Find a nation or a Steward</span><input type="search" id="ab-nsq" placeholder="Find a nation or a Steward" autocomplete="off" aria-controls="ab-nss"></label>
+        </div>
         <ul class="ab-nss" id="ab-nss" aria-label="The Nation Stewards">
 <!-- GENERATED:NSTEWARDS (from data/blueprints.json and each blueprint; do not edit here) -->
         <li><a class="ab-ns" href="https://perfectnations.org/blueprints/afghanistan/" target="_blank" rel="noopener" title="Farid Rahimi, Nation Steward of Afghanistan"><span class="ab-ns__av" data-i="FR"><img src="https://perfectnations.org/wp-content/uploads/2026/10/professional-man-mountains-150x150.png" alt="" width="150" height="150" loading="lazy" decoding="async"></span><span class="ab-ns__t"><b>Farid Rahimi</b><span>Afghanistan</span></span></a></li>
+        <li><a class="ab-ns" href="https://perfectnations.org/blueprints/albania/" target="_blank" rel="noopener" title="Elira Dervishi, Nation Steward of Albania"><span class="ab-ns__av" data-i="ED"></span><span class="ab-ns__t"><b>Elira Dervishi</b><span>Albania</span></span></a></li>
+        <li><a class="ab-ns" href="https://perfectnations.org/blueprints/algeria/" target="_blank" rel="noopener" title="Amina Benali, Nation Steward of Algeria"><span class="ab-ns__av" data-i="AB"></span><span class="ab-ns__t"><b>Amina Benali</b><span>Algeria</span></span></a></li>
+        <li><a class="ab-ns" href="https://perfectnations.org/blueprints/andorra/" target="_blank" rel="noopener" title="Montserrat Riba, Nation Steward of Andorra"><span class="ab-ns__av" data-i="MR"></span><span class="ab-ns__t"><b>Montserrat Riba</b><span>Andorra</span></span></a></li>
         <li><a class="ab-ns" href="https://perfectnations.org/blueprints/angola/" target="_blank" rel="noopener" title="Joana Kiala, Nation Steward of Angola"><span class="ab-ns__av" data-i="JK"><img src="https://perfectnations.org/wp-content/uploads/2026/10/joana-kiala-nation-steward-of-angola-150x150.png" alt="" width="150" height="150" loading="lazy" decoding="async"></span><span class="ab-ns__t"><b>Joana Kiala</b><span>Angola</span></span></a></li>
+        <li><a class="ab-ns" href="https://perfectnations.org/blueprints/antigua-and-barbuda/" target="_blank" rel="noopener" title="Shermaine Henry, Nation Steward of Antigua and Barbuda"><span class="ab-ns__av" data-i="SH"></span><span class="ab-ns__t"><b>Shermaine Henry</b><span>Antigua and Barbuda</span></span></a></li>
+        <li><a class="ab-ns" href="https://perfectnations.org/blueprints/argentina/" target="_blank" rel="noopener" title="Valentina Ferraro, Nation Steward of Argentina"><span class="ab-ns__av" data-i="VF"></span><span class="ab-ns__t"><b>Valentina Ferraro</b><span>Argentina</span></span></a></li>
+        <li><a class="ab-ns" href="https://perfectnations.org/blueprints/armenia/" target="_blank" rel="noopener" title="Ani Petrosyan, Nation Steward of Armenia"><span class="ab-ns__av" data-i="AP"></span><span class="ab-ns__t"><b>Ani Petrosyan</b><span>Armenia</span></span></a></li>
+        <li><a class="ab-ns" href="https://perfectnations.org/blueprints/australia/" target="_blank" rel="noopener" title="Charlotte Nguyen, Nation Steward of Australia"><span class="ab-ns__av" data-i="CN"></span><span class="ab-ns__t"><b>Charlotte Nguyen</b><span>Australia</span></span></a></li>
+        <li><a class="ab-ns" href="https://perfectnations.org/blueprints/austria/" target="_blank" rel="noopener" title="Katharina Huber, Nation Steward of Austria"><span class="ab-ns__av" data-i="KH"></span><span class="ab-ns__t"><b>Katharina Huber</b><span>Austria</span></span></a></li>
+        <li><a class="ab-ns" href="https://perfectnations.org/blueprints/azerbaijan/" target="_blank" rel="noopener" title="Leyla Mammadova, Nation Steward of Azerbaijan"><span class="ab-ns__av" data-i="LM"></span><span class="ab-ns__t"><b>Leyla Mammadova</b><span>Azerbaijan</span></span></a></li>
+        <li><a class="ab-ns" href="https://perfectnations.org/blueprints/bahamas/" target="_blank" rel="noopener" title="Danielle Rolle, Nation Steward of Bahamas"><span class="ab-ns__av" data-i="DR"></span><span class="ab-ns__t"><b>Danielle Rolle</b><span>Bahamas</span></span></a></li>
+        <li><a class="ab-ns" href="https://perfectnations.org/blueprints/bahrain/" target="_blank" rel="noopener" title="Noora Al Mahmood, Nation Steward of Bahrain"><span class="ab-ns__av" data-i="NM"></span><span class="ab-ns__t"><b>Noora Al Mahmood</b><span>Bahrain</span></span></a></li>
         <li><a class="ab-ns" href="https://perfectnations.org/blueprints/bangladesh/" target="_blank" rel="noopener" title="Nusrat Rahman, Nation Steward of Bangladesh"><span class="ab-ns__av" data-i="NR"><img src="https://perfectnations.org/wp-content/uploads/2026/10/nusrat-rahman-nation-steward-of-bangladesh-150x150.png" alt="" width="150" height="150" loading="lazy" decoding="async"></span><span class="ab-ns__t"><b>Nusrat Rahman</b><span>Bangladesh</span></span></a></li>
         <li><a class="ab-ns" href="https://perfectnations.org/blueprints/barbados/" target="_blank" rel="noopener" title="Nia Carrington, Nation Steward of Barbados"><span class="ab-ns__av" data-i="NC"><img src="https://perfectnations.org/wp-content/uploads/2026/10/nia-carrington-nation-steward-of-barbados-150x150.png" alt="" width="150" height="150" loading="lazy" decoding="async"></span><span class="ab-ns__t"><b>Nia Carrington</b><span>Barbados</span></span></a></li>
+        <li><a class="ab-ns" href="https://perfectnations.org/blueprints/belarus/" target="_blank" rel="noopener" title="Alesia Kavalenka, Nation Steward of Belarus"><span class="ab-ns__av" data-i="AK"></span><span class="ab-ns__t"><b>Alesia Kavalenka</b><span>Belarus</span></span></a></li>
+        <li><a class="ab-ns" href="https://perfectnations.org/blueprints/belgium/" target="_blank" rel="noopener" title="Elise Peeters, Nation Steward of Belgium"><span class="ab-ns__av" data-i="EP"></span><span class="ab-ns__t"><b>Elise Peeters</b><span>Belgium</span></span></a></li>
+        <li><a class="ab-ns" href="https://perfectnations.org/blueprints/belize/" target="_blank" rel="noopener" title="Marisol Chun, Nation Steward of Belize"><span class="ab-ns__av" data-i="MC"></span><span class="ab-ns__t"><b>Marisol Chun</b><span>Belize</span></span></a></li>
+        <li><a class="ab-ns" href="https://perfectnations.org/blueprints/benin/" target="_blank" rel="noopener" title="Rachida Dossou, Nation Steward of Benin"><span class="ab-ns__av" data-i="RD"></span><span class="ab-ns__t"><b>Rachida Dossou</b><span>Benin</span></span></a></li>
+        <li><a class="ab-ns" href="https://perfectnations.org/blueprints/bhutan/" target="_blank" rel="noopener" title="Pema Choden, Nation Steward of Bhutan"><span class="ab-ns__av" data-i="PC"></span><span class="ab-ns__t"><b>Pema Choden</b><span>Bhutan</span></span></a></li>
+        <li><a class="ab-ns" href="https://perfectnations.org/blueprints/bolivia/" target="_blank" rel="noopener" title="Ximena Quispe, Nation Steward of Bolivia"><span class="ab-ns__av" data-i="XQ"></span><span class="ab-ns__t"><b>Ximena Quispe</b><span>Bolivia</span></span></a></li>
+        <li><a class="ab-ns" href="https://perfectnations.org/blueprints/bosnia-and-herzegovina/" target="_blank" rel="noopener" title="Amra Had&#382;i&#263;, Nation Steward of Bosnia and Herzegovina"><span class="ab-ns__av" data-i="AH"></span><span class="ab-ns__t"><b>Amra Had&#382;i&#263;</b><span>Bosnia and Herzegovina</span></span></a></li>
         <li><a class="ab-ns" href="https://perfectnations.org/blueprints/botswana/" target="_blank" rel="noopener" title="Kagiso Molefe, Nation Steward of Botswana"><span class="ab-ns__av" data-i="KM"><img src="https://perfectnations.org/wp-content/uploads/2026/10/kagiso-molefe-nation-steward-of-botswana-150x150.png" alt="" width="150" height="150" loading="lazy" decoding="async"></span><span class="ab-ns__t"><b>Kagiso Molefe</b><span>Botswana</span></span></a></li>
         <li><a class="ab-ns" href="https://perfectnations.org/blueprints/brazil/" target="_blank" rel="noopener" title="Luana Ferraz, Nation Steward of Brazil"><span class="ab-ns__av" data-i="LF"><img src="https://perfectnations.org/wp-content/uploads/2026/10/luana-ferraz-nation-steward-of-brazil-150x150.png" alt="" width="150" height="150" loading="lazy" decoding="async"></span><span class="ab-ns__t"><b>Luana Ferraz</b><span>Brazil</span></span></a></li>
+        <li><a class="ab-ns" href="https://perfectnations.org/blueprints/brunei/" target="_blank" rel="noopener" title="Siti Nurhaliza Rahman, Nation Steward of Brunei"><span class="ab-ns__av" data-i="SR"></span><span class="ab-ns__t"><b>Siti Nurhaliza Rahman</b><span>Brunei</span></span></a></li>
+        <li><a class="ab-ns" href="https://perfectnations.org/blueprints/bulgaria/" target="_blank" rel="noopener" title="Desislava Petrova, Nation Steward of Bulgaria"><span class="ab-ns__av" data-i="DP"></span><span class="ab-ns__t"><b>Desislava Petrova</b><span>Bulgaria</span></span></a></li>
+        <li><a class="ab-ns" href="https://perfectnations.org/blueprints/burkina-faso/" target="_blank" rel="noopener" title="Aminata Ou&#233;draogo, Nation Steward of Burkina Faso"><span class="ab-ns__av" data-i="AO"></span><span class="ab-ns__t"><b>Aminata Ou&#233;draogo</b><span>Burkina Faso</span></span></a></li>
         <li><a class="ab-ns" href="https://perfectnations.org/blueprints/burundi/" target="_blank" rel="noopener" title="Aline Iradukunda, Nation Steward of Burundi"><span class="ab-ns__av" data-i="AI"><img src="https://perfectnations.org/wp-content/uploads/2026/10/aline-iradukunda-nation-steward-of-burundi-150x150.png" alt="" width="150" height="150" loading="lazy" decoding="async"></span><span class="ab-ns__t"><b>Aline Iradukunda</b><span>Burundi</span></span></a></li>
+        <li><a class="ab-ns" href="https://perfectnations.org/blueprints/cabo-verde/" target="_blank" rel="noopener" title="Djamila Tavares, Nation Steward of Cabo Verde"><span class="ab-ns__av" data-i="DT"></span><span class="ab-ns__t"><b>Djamila Tavares</b><span>Cabo Verde</span></span></a></li>
+        <li><a class="ab-ns" href="https://perfectnations.org/blueprints/cambodia/" target="_blank" rel="noopener" title="Sophea Chan, Nation Steward of Cambodia"><span class="ab-ns__av" data-i="SC"></span><span class="ab-ns__t"><b>Sophea Chan</b><span>Cambodia</span></span></a></li>
+        <li><a class="ab-ns" href="https://perfectnations.org/blueprints/cameroon/" target="_blank" rel="noopener" title="Esther Mbarga, Nation Steward of Cameroon"><span class="ab-ns__av" data-i="EM"></span><span class="ab-ns__t"><b>Esther Mbarga</b><span>Cameroon</span></span></a></li>
+        <li><a class="ab-ns" href="https://perfectnations.org/blueprints/canada/" target="_blank" rel="noopener" title="Claire Tremblay, Nation Steward of Canada"><span class="ab-ns__av" data-i="CT"></span><span class="ab-ns__t"><b>Claire Tremblay</b><span>Canada</span></span></a></li>
+        <li><a class="ab-ns" href="https://perfectnations.org/blueprints/central-african-republic/" target="_blank" rel="noopener" title="Gr&#226;ce Yakit&#233;, Nation Steward of Central African Republic"><span class="ab-ns__av" data-i="GY"></span><span class="ab-ns__t"><b>Gr&#226;ce Yakit&#233;</b><span>Central African Republic</span></span></a></li>
+        <li><a class="ab-ns" href="https://perfectnations.org/blueprints/chad/" target="_blank" rel="noopener" title="Achta Mahamat, Nation Steward of Chad"><span class="ab-ns__av" data-i="AM"></span><span class="ab-ns__t"><b>Achta Mahamat</b><span>Chad</span></span></a></li>
+        <li><a class="ab-ns" href="https://perfectnations.org/blueprints/chile/" target="_blank" rel="noopener" title="Catalina Rojas, Nation Steward of Chile"><span class="ab-ns__av" data-i="CR"></span><span class="ab-ns__t"><b>Catalina Rojas</b><span>Chile</span></span></a></li>
+        <li><a class="ab-ns" href="https://perfectnations.org/blueprints/china/" target="_blank" rel="noopener" title="Lin Xiaoyu, Nation Steward of China"><span class="ab-ns__av" data-i="LX"></span><span class="ab-ns__t"><b>Lin Xiaoyu</b><span>China</span></span></a></li>
         <li><a class="ab-ns" href="https://perfectnations.org/blueprints/colombia/" target="_blank" rel="noopener" title="Andres Mejia, Nation Steward of Colombia"><span class="ab-ns__av" data-i="AM"><img src="https://perfectnations.org/wp-content/uploads/2026/10/andres-mejia-nation-steward-of-colombia-150x150.png" alt="" width="150" height="150" loading="lazy" decoding="async"></span><span class="ab-ns__t"><b>Andres Mejia</b><span>Colombia</span></span></a></li>
+        <li><a class="ab-ns" href="https://perfectnations.org/blueprints/comoros/" target="_blank" rel="noopener" title="Faiza Said Ali, Nation Steward of Comoros"><span class="ab-ns__av" data-i="FA"></span><span class="ab-ns__t"><b>Faiza Said Ali</b><span>Comoros</span></span></a></li>
+        <li><a class="ab-ns" href="https://perfectnations.org/blueprints/costa-rica/" target="_blank" rel="noopener" title="Daniela Mora, Nation Steward of Costa Rica"><span class="ab-ns__av" data-i="DM"></span><span class="ab-ns__t"><b>Daniela Mora</b><span>Costa Rica</span></span></a></li>
         <li><a class="ab-ns" href="https://perfectnations.org/blueprints/cote-d-ivoire/" target="_blank" rel="noopener" title="Yao Kouassi, Nation Steward of C&#244;te d&#8217;Ivoire"><span class="ab-ns__av" data-i="YK"><img src="https://perfectnations.org/wp-content/uploads/2026/10/yao-kouassi-nation-steward-of-cote-divoire-150x150.png" alt="" width="150" height="150" loading="lazy" decoding="async"></span><span class="ab-ns__t"><b>Yao Kouassi</b><span>C&#244;te d&#8217;Ivoire</span></span></a></li>
+        <li><a class="ab-ns" href="https://perfectnations.org/blueprints/croatia/" target="_blank" rel="noopener" title="Ivana Horvat, Nation Steward of Croatia"><span class="ab-ns__av" data-i="IH"></span><span class="ab-ns__t"><b>Ivana Horvat</b><span>Croatia</span></span></a></li>
+        <li><a class="ab-ns" href="https://perfectnations.org/blueprints/cuba/" target="_blank" rel="noopener" title="Yanelis Ortega, Nation Steward of Cuba"><span class="ab-ns__av" data-i="YO"></span><span class="ab-ns__t"><b>Yanelis Ortega</b><span>Cuba</span></span></a></li>
+        <li><a class="ab-ns" href="https://perfectnations.org/blueprints/cyprus/" target="_blank" rel="noopener" title="Eleni Georgiou, Nation Steward of Cyprus"><span class="ab-ns__av" data-i="EG"></span><span class="ab-ns__t"><b>Eleni Georgiou</b><span>Cyprus</span></span></a></li>
+        <li><a class="ab-ns" href="https://perfectnations.org/blueprints/czechia/" target="_blank" rel="noopener" title="Tereza Novotn&#225;, Nation Steward of Czechia"><span class="ab-ns__av" data-i="TN"></span><span class="ab-ns__t"><b>Tereza Novotn&#225;</b><span>Czechia</span></span></a></li>
+        <li><a class="ab-ns" href="https://perfectnations.org/blueprints/denmark/" target="_blank" rel="noopener" title="Freja Nielsen, Nation Steward of Denmark"><span class="ab-ns__av" data-i="FN"></span><span class="ab-ns__t"><b>Freja Nielsen</b><span>Denmark</span></span></a></li>
+        <li><a class="ab-ns" href="https://perfectnations.org/blueprints/djibouti/" target="_blank" rel="noopener" title="Hodan Ahmed Robleh, Nation Steward of Djibouti"><span class="ab-ns__av" data-i="HR"></span><span class="ab-ns__t"><b>Hodan Ahmed Robleh</b><span>Djibouti</span></span></a></li>
+        <li><a class="ab-ns" href="https://perfectnations.org/blueprints/dominica/" target="_blank" rel="noopener" title="Joelle Lestrade, Nation Steward of Dominica"><span class="ab-ns__av" data-i="JL"></span><span class="ab-ns__t"><b>Joelle Lestrade</b><span>Dominica</span></span></a></li>
+        <li><a class="ab-ns" href="https://perfectnations.org/blueprints/dominican-republic/" target="_blank" rel="noopener" title="Rosanna Peralta, Nation Steward of Dominican Republic"><span class="ab-ns__av" data-i="RP"></span><span class="ab-ns__t"><b>Rosanna Peralta</b><span>Dominican Republic</span></span></a></li>
         <li><a class="ab-ns" href="https://perfectnations.org/blueprints/dr-congo/" target="_blank" rel="noopener" title="Patrick Mbuyi, Nation Steward of DR Congo"><span class="ab-ns__av" data-i="PM"><img src="https://perfectnations.org/wp-content/uploads/2026/10/patrick-mbuyi-nation-steward-of-dr-congo-150x150.png" alt="" width="150" height="150" loading="lazy" decoding="async"></span><span class="ab-ns__t"><b>Patrick Mbuyi</b><span>DR Congo</span></span></a></li>
         <li><a class="ab-ns" href="https://perfectnations.org/blueprints/ecuador/" target="_blank" rel="noopener" title="Paola Andrade, Nation Steward of Ecuador"><span class="ab-ns__av" data-i="PA"><img src="https://perfectnations.org/wp-content/uploads/2026/10/paola-andrade-nation-steward-of-ecuador-150x150.png" alt="" width="150" height="150" loading="lazy" decoding="async"></span><span class="ab-ns__t"><b>Paola Andrade</b><span>Ecuador</span></span></a></li>
         <li><a class="ab-ns" href="https://perfectnations.org/blueprints/egypt/" target="_blank" rel="noopener" title="Omar Farouk, Nation Steward of Egypt"><span class="ab-ns__av" data-i="OF"><img src="https://perfectnations.org/wp-content/uploads/2026/10/omar-farouk-nation-steward-of-egypt-150x150.png" alt="" width="150" height="150" loading="lazy" decoding="async"></span><span class="ab-ns__t"><b>Omar Farouk</b><span>Egypt</span></span></a></li>
+        <li><a class="ab-ns" href="https://perfectnations.org/blueprints/el-salvador/" target="_blank" rel="noopener" title="Gabriela Alvarado, Nation Steward of El Salvador"><span class="ab-ns__av" data-i="GA"></span><span class="ab-ns__t"><b>Gabriela Alvarado</b><span>El Salvador</span></span></a></li>
+        <li><a class="ab-ns" href="https://perfectnations.org/blueprints/equatorial-guinea/" target="_blank" rel="noopener" title="Mercedes Nchama Ondo, Nation Steward of Equatorial Guinea"><span class="ab-ns__av" data-i="MO"></span><span class="ab-ns__t"><b>Mercedes Nchama Ondo</b><span>Equatorial Guinea</span></span></a></li>
+        <li><a class="ab-ns" href="https://perfectnations.org/blueprints/eritrea/" target="_blank" rel="noopener" title="Senait Tesfay, Nation Steward of Eritrea"><span class="ab-ns__av" data-i="ST"></span><span class="ab-ns__t"><b>Senait Tesfay</b><span>Eritrea</span></span></a></li>
+        <li><a class="ab-ns" href="https://perfectnations.org/blueprints/estonia/" target="_blank" rel="noopener" title="Liis Tamm, Nation Steward of Estonia"><span class="ab-ns__av" data-i="LT"></span><span class="ab-ns__t"><b>Liis Tamm</b><span>Estonia</span></span></a></li>
         <li><a class="ab-ns" href="https://perfectnations.org/blueprints/eswatini/" target="_blank" rel="noopener" title="Lindiwe Simelane, Nation Steward of Eswatini"><span class="ab-ns__av" data-i="LS"><img src="https://perfectnations.org/wp-content/uploads/2026/10/lindiwe-simelane-nation-steward-of-eswatini-150x150.png" alt="" width="150" height="150" loading="lazy" decoding="async"></span><span class="ab-ns__t"><b>Lindiwe Simelane</b><span>Eswatini</span></span></a></li>
         <li><a class="ab-ns" href="https://perfectnations.org/blueprints/ethiopia/" target="_blank" rel="noopener" title="Selam Tesfaye, Nation Steward of Ethiopia"><span class="ab-ns__av" data-i="ST"><img src="https://perfectnations.org/wp-content/uploads/2026/10/selam-tesfaye-nation-steward-of-ethiopia-150x150.png" alt="" width="150" height="150" loading="lazy" decoding="async"></span><span class="ab-ns__t"><b>Selam Tesfaye</b><span>Ethiopia</span></span></a></li>
         <li><a class="ab-ns" href="https://perfectnations.org/blueprints/fiji/" target="_blank" rel="noopener" title="Litia Naivalu, Nation Steward of Fiji"><span class="ab-ns__av" data-i="LN"><img src="https://perfectnations.org/wp-content/uploads/2026/10/litia-naivalu-nation-steward-of-fiji-150x150.png" alt="" width="150" height="150" loading="lazy" decoding="async"></span><span class="ab-ns__t"><b>Litia Naivalu</b><span>Fiji</span></span></a></li>
+        <li><a class="ab-ns" href="https://perfectnations.org/blueprints/finland/" target="_blank" rel="noopener" title="Aino Virtanen, Nation Steward of Finland"><span class="ab-ns__av" data-i="AV"></span><span class="ab-ns__t"><b>Aino Virtanen</b><span>Finland</span></span></a></li>
+        <li><a class="ab-ns" href="https://perfectnations.org/blueprints/france/" target="_blank" rel="noopener" title="Camille Laurent, Nation Steward of France"><span class="ab-ns__av" data-i="CL"></span><span class="ab-ns__t"><b>Camille Laurent</b><span>France</span></span></a></li>
+        <li><a class="ab-ns" href="https://perfectnations.org/blueprints/gabon/" target="_blank" rel="noopener" title="Laure Ondo, Nation Steward of Gabon"><span class="ab-ns__av" data-i="LO"></span><span class="ab-ns__t"><b>Laure Ondo</b><span>Gabon</span></span></a></li>
+        <li><a class="ab-ns" href="https://perfectnations.org/blueprints/gambia/" target="_blank" rel="noopener" title="Fatou Ceesay, Nation Steward of Gambia"><span class="ab-ns__av" data-i="FC"></span><span class="ab-ns__t"><b>Fatou Ceesay</b><span>Gambia</span></span></a></li>
+        <li><a class="ab-ns" href="https://perfectnations.org/blueprints/georgia/" target="_blank" rel="noopener" title="Nino Beridze, Nation Steward of Georgia"><span class="ab-ns__av" data-i="NB"></span><span class="ab-ns__t"><b>Nino Beridze</b><span>Georgia</span></span></a></li>
+        <li><a class="ab-ns" href="https://perfectnations.org/blueprints/germany/" target="_blank" rel="noopener" title="Johanna Becker, Nation Steward of Germany"><span class="ab-ns__av" data-i="JB"></span><span class="ab-ns__t"><b>Johanna Becker</b><span>Germany</span></span></a></li>
         <li><a class="ab-ns" href="https://perfectnations.org/blueprints/ghana/" target="_blank" rel="noopener" title="Kofi Mensah, Nation Steward of Ghana"><span class="ab-ns__av" data-i="KM"><img src="https://perfectnations.org/wp-content/uploads/2026/10/kofi-mensah-nation-steward-of-ghana-150x150.png" alt="" width="150" height="150" loading="lazy" decoding="async"></span><span class="ab-ns__t"><b>Kofi Mensah</b><span>Ghana</span></span></a></li>
+        <li><a class="ab-ns" href="https://perfectnations.org/blueprints/greece/" target="_blank" rel="noopener" title="Sofia Papadaki, Nation Steward of Greece"><span class="ab-ns__av" data-i="SP"></span><span class="ab-ns__t"><b>Sofia Papadaki</b><span>Greece</span></span></a></li>
+        <li><a class="ab-ns" href="https://perfectnations.org/blueprints/grenada/" target="_blank" rel="noopener" title="Nadia Charles, Nation Steward of Grenada"><span class="ab-ns__av" data-i="NC"></span><span class="ab-ns__t"><b>Nadia Charles</b><span>Grenada</span></span></a></li>
+        <li><a class="ab-ns" href="https://perfectnations.org/blueprints/guatemala/" target="_blank" rel="noopener" title="Luc&#237;a Ixcoy, Nation Steward of Guatemala"><span class="ab-ns__av" data-i="LI"></span><span class="ab-ns__t"><b>Luc&#237;a Ixcoy</b><span>Guatemala</span></span></a></li>
+        <li><a class="ab-ns" href="https://perfectnations.org/blueprints/guinea/" target="_blank" rel="noopener" title="Kadiatou Diallo, Nation Steward of Guinea"><span class="ab-ns__av" data-i="KD"></span><span class="ab-ns__t"><b>Kadiatou Diallo</b><span>Guinea</span></span></a></li>
+        <li><a class="ab-ns" href="https://perfectnations.org/blueprints/guinea-bissau/" target="_blank" rel="noopener" title="Aissatu C&#243;, Nation Steward of Guinea-Bissau"><span class="ab-ns__av" data-i="AC"></span><span class="ab-ns__t"><b>Aissatu C&#243;</b><span>Guinea-Bissau</span></span></a></li>
+        <li><a class="ab-ns" href="https://perfectnations.org/blueprints/guyana/" target="_blank" rel="noopener" title="Anjali Persaud, Nation Steward of Guyana"><span class="ab-ns__av" data-i="AP"></span><span class="ab-ns__t"><b>Anjali Persaud</b><span>Guyana</span></span></a></li>
+        <li><a class="ab-ns" href="https://perfectnations.org/blueprints/haiti/" target="_blank" rel="noopener" title="Nad&#232;ge Pierre-Louis, Nation Steward of Haiti"><span class="ab-ns__av" data-i="NL"></span><span class="ab-ns__t"><b>Nad&#232;ge Pierre-Louis</b><span>Haiti</span></span></a></li>
+        <li><a class="ab-ns" href="https://perfectnations.org/blueprints/holy-see/" target="_blank" rel="noopener" title="Chiara Romano, Nation Steward of Holy See"><span class="ab-ns__av" data-i="CR"></span><span class="ab-ns__t"><b>Chiara Romano</b><span>Holy See</span></span></a></li>
+        <li><a class="ab-ns" href="https://perfectnations.org/blueprints/honduras/" target="_blank" rel="noopener" title="Karla Mej&#237;a, Nation Steward of Honduras"><span class="ab-ns__av" data-i="KM"></span><span class="ab-ns__t"><b>Karla Mej&#237;a</b><span>Honduras</span></span></a></li>
+        <li><a class="ab-ns" href="https://perfectnations.org/blueprints/hungary/" target="_blank" rel="noopener" title="R&#233;ka Nagy, Nation Steward of Hungary"><span class="ab-ns__av" data-i="RN"></span><span class="ab-ns__t"><b>R&#233;ka Nagy</b><span>Hungary</span></span></a></li>
+        <li><a class="ab-ns" href="https://perfectnations.org/blueprints/iceland/" target="_blank" rel="noopener" title="Sigr&#250;n J&#243;nsd&#243;ttir, Nation Steward of Iceland"><span class="ab-ns__av" data-i="SJ"></span><span class="ab-ns__t"><b>Sigr&#250;n J&#243;nsd&#243;ttir</b><span>Iceland</span></span></a></li>
         <li><a class="ab-ns" href="https://perfectnations.org/blueprints/india/" target="_blank" rel="noopener" title="Ananya Rao, Nation Steward of India"><span class="ab-ns__av" data-i="AR"><img src="https://perfectnations.org/wp-content/uploads/2026/10/ananya-rao-nation-steward-of-india-150x150.png" alt="" width="150" height="150" loading="lazy" decoding="async"></span><span class="ab-ns__t"><b>Ananya Rao</b><span>India</span></span></a></li>
         <li><a class="ab-ns" href="https://perfectnations.org/blueprints/indonesia/" target="_blank" rel="noopener" title="Ayu Pratiwi, Nation Steward of Indonesia"><span class="ab-ns__av" data-i="AP"><img src="https://perfectnations.org/wp-content/uploads/2026/10/ayu-pratiwi-nation-steward-of-indonesia-150x150.png" alt="" width="150" height="150" loading="lazy" decoding="async"></span><span class="ab-ns__t"><b>Ayu Pratiwi</b><span>Indonesia</span></span></a></li>
+        <li><a class="ab-ns" href="https://perfectnations.org/blueprints/iran/" target="_blank" rel="noopener" title="Shirin Farahani, Nation Steward of Iran"><span class="ab-ns__av" data-i="SF"></span><span class="ab-ns__t"><b>Shirin Farahani</b><span>Iran</span></span></a></li>
+        <li><a class="ab-ns" href="https://perfectnations.org/blueprints/iraq/" target="_blank" rel="noopener" title="Zainab Hassan Kareem, Nation Steward of Iraq"><span class="ab-ns__av" data-i="ZK"></span><span class="ab-ns__t"><b>Zainab Hassan Kareem</b><span>Iraq</span></span></a></li>
+        <li><a class="ab-ns" href="https://perfectnations.org/blueprints/ireland/" target="_blank" rel="noopener" title="Aoife Byrne, Nation Steward of Ireland"><span class="ab-ns__av" data-i="AB"></span><span class="ab-ns__t"><b>Aoife Byrne</b><span>Ireland</span></span></a></li>
+        <li><a class="ab-ns" href="https://perfectnations.org/blueprints/israel/" target="_blank" rel="noopener" title="Noa Ben-David, Nation Steward of Israel"><span class="ab-ns__av" data-i="ND"></span><span class="ab-ns__t"><b>Noa Ben-David</b><span>Israel</span></span></a></li>
+        <li><a class="ab-ns" href="https://perfectnations.org/blueprints/italy/" target="_blank" rel="noopener" title="Giulia Esposito, Nation Steward of Italy"><span class="ab-ns__av" data-i="GE"></span><span class="ab-ns__t"><b>Giulia Esposito</b><span>Italy</span></span></a></li>
         <li><a class="ab-ns" href="https://perfectnations.org/blueprints/jamaica/" target="_blank" rel="noopener" title="Marcus Campbell, Nation Steward of Jamaica"><span class="ab-ns__av" data-i="MC"><img src="https://perfectnations.org/wp-content/uploads/2026/10/marcus-campbell-nation-steward-of-jamaica-150x150.png" alt="" width="150" height="150" loading="lazy" decoding="async"></span><span class="ab-ns__t"><b>Marcus Campbell</b><span>Jamaica</span></span></a></li>
+        <li><a class="ab-ns" href="https://perfectnations.org/blueprints/japan/" target="_blank" rel="noopener" title="Aiko Tanaka, Nation Steward of Japan"><span class="ab-ns__av" data-i="AT"></span><span class="ab-ns__t"><b>Aiko Tanaka</b><span>Japan</span></span></a></li>
         <li><a class="ab-ns" href="https://perfectnations.org/blueprints/jordan/" target="_blank" rel="noopener" title="Layla Haddad, Nation Steward of Jordan"><span class="ab-ns__av" data-i="LH"><img src="https://perfectnations.org/wp-content/uploads/2026/10/layla-haddad-nation-steward-of-jordan-150x150.png" alt="" width="150" height="150" loading="lazy" decoding="async"></span><span class="ab-ns__t"><b>Layla Haddad</b><span>Jordan</span></span></a></li>
+        <li><a class="ab-ns" href="https://perfectnations.org/blueprints/kazakhstan/" target="_blank" rel="noopener" title="Aigerim Nurlanova, Nation Steward of Kazakhstan"><span class="ab-ns__av" data-i="AN"></span><span class="ab-ns__t"><b>Aigerim Nurlanova</b><span>Kazakhstan</span></span></a></li>
         <li><a class="ab-ns" href="https://perfectnations.org/blueprints/kenya/" target="_blank" rel="noopener" title="Wanjiru Mwangi, Nation Steward of Kenya"><span class="ab-ns__av" data-i="WM"><img src="https://perfectnations.org/wp-content/uploads/2026/10/wanjiru-mwangi-nation-steward-of-kenya-150x150.png" alt="" width="150" height="150" loading="lazy" decoding="async"></span><span class="ab-ns__t"><b>Wanjiru Mwangi</b><span>Kenya</span></span></a></li>
+        <li><a class="ab-ns" href="https://perfectnations.org/blueprints/kiribati/" target="_blank" rel="noopener" title="Teretia Tabwena, Nation Steward of Kiribati"><span class="ab-ns__av" data-i="TT"></span><span class="ab-ns__t"><b>Teretia Tabwena</b><span>Kiribati</span></span></a></li>
+        <li><a class="ab-ns" href="https://perfectnations.org/blueprints/kuwait/" target="_blank" rel="noopener" title="Dana Al-Mutawa, Nation Steward of Kuwait"><span class="ab-ns__av" data-i="DM"></span><span class="ab-ns__t"><b>Dana Al-Mutawa</b><span>Kuwait</span></span></a></li>
+        <li><a class="ab-ns" href="https://perfectnations.org/blueprints/kyrgyzstan/" target="_blank" rel="noopener" title="Aizada Toktogulova, Nation Steward of Kyrgyzstan"><span class="ab-ns__av" data-i="AT"></span><span class="ab-ns__t"><b>Aizada Toktogulova</b><span>Kyrgyzstan</span></span></a></li>
+        <li><a class="ab-ns" href="https://perfectnations.org/blueprints/laos/" target="_blank" rel="noopener" title="Souksavanh Phommachanh, Nation Steward of Laos"><span class="ab-ns__av" data-i="SP"></span><span class="ab-ns__t"><b>Souksavanh Phommachanh</b><span>Laos</span></span></a></li>
+        <li><a class="ab-ns" href="https://perfectnations.org/blueprints/latvia/" target="_blank" rel="noopener" title="Ilze B&#275;rzi&#326;a, Nation Steward of Latvia"><span class="ab-ns__av" data-i="IB"></span><span class="ab-ns__t"><b>Ilze B&#275;rzi&#326;a</b><span>Latvia</span></span></a></li>
+        <li><a class="ab-ns" href="https://perfectnations.org/blueprints/lebanon/" target="_blank" rel="noopener" title="Rania Haddad, Nation Steward of Lebanon"><span class="ab-ns__av" data-i="RH"></span><span class="ab-ns__t"><b>Rania Haddad</b><span>Lebanon</span></span></a></li>
         <li><a class="ab-ns" href="https://perfectnations.org/blueprints/lesotho/" target="_blank" rel="noopener" title="Thabo Mokoena, Nation Steward of Lesotho"><span class="ab-ns__av" data-i="TM"><img src="https://perfectnations.org/wp-content/uploads/2026/10/thabo-mokoena-nation-steward-of-lesotho-150x150.png" alt="" width="150" height="150" loading="lazy" decoding="async"></span><span class="ab-ns__t"><b>Thabo Mokoena</b><span>Lesotho</span></span></a></li>
+        <li><a class="ab-ns" href="https://perfectnations.org/blueprints/liberia/" target="_blank" rel="noopener" title="Comfort Kollie, Nation Steward of Liberia"><span class="ab-ns__av" data-i="CK"></span><span class="ab-ns__t"><b>Comfort Kollie</b><span>Liberia</span></span></a></li>
+        <li><a class="ab-ns" href="https://perfectnations.org/blueprints/libya/" target="_blank" rel="noopener" title="Salma Ben Omran, Nation Steward of Libya"><span class="ab-ns__av" data-i="SO"></span><span class="ab-ns__t"><b>Salma Ben Omran</b><span>Libya</span></span></a></li>
+        <li><a class="ab-ns" href="https://perfectnations.org/blueprints/liechtenstein/" target="_blank" rel="noopener" title="Sabine Frick, Nation Steward of Liechtenstein"><span class="ab-ns__av" data-i="SF"></span><span class="ab-ns__t"><b>Sabine Frick</b><span>Liechtenstein</span></span></a></li>
+        <li><a class="ab-ns" href="https://perfectnations.org/blueprints/lithuania/" target="_blank" rel="noopener" title="Egl&#279; Kazlauskien&#279;, Nation Steward of Lithuania"><span class="ab-ns__av" data-i="EK"></span><span class="ab-ns__t"><b>Egl&#279; Kazlauskien&#279;</b><span>Lithuania</span></span></a></li>
+        <li><a class="ab-ns" href="https://perfectnations.org/blueprints/luxembourg/" target="_blank" rel="noopener" title="Anne Schmit, Nation Steward of Luxembourg"><span class="ab-ns__av" data-i="AS"></span><span class="ab-ns__t"><b>Anne Schmit</b><span>Luxembourg</span></span></a></li>
         <li><a class="ab-ns" href="https://perfectnations.org/blueprints/madagascar/" target="_blank" rel="noopener" title="Fanja Rasoanaivo, Nation Steward of Madagascar"><span class="ab-ns__av" data-i="FR"><img src="https://perfectnations.org/wp-content/uploads/2026/10/fanja-rasoanaivo-nation-steward-of-madagascar-150x150.png" alt="" width="150" height="150" loading="lazy" decoding="async"></span><span class="ab-ns__t"><b>Fanja Rasoanaivo</b><span>Madagascar</span></span></a></li>
         <li><a class="ab-ns" href="https://perfectnations.org/blueprints/malawi/" target="_blank" rel="noopener" title="Chikondi Phiri, Nation Steward of Malawi"><span class="ab-ns__av" data-i="CP"><img src="https://perfectnations.org/wp-content/uploads/2026/10/chikondi-phiri-nation-steward-of-malawi-150x150.png" alt="" width="150" height="150" loading="lazy" decoding="async"></span><span class="ab-ns__t"><b>Chikondi Phiri</b><span>Malawi</span></span></a></li>
+        <li><a class="ab-ns" href="https://perfectnations.org/blueprints/malaysia/" target="_blank" rel="noopener" title="Nurul Aisyah Hamid, Nation Steward of Malaysia"><span class="ab-ns__av" data-i="NH"></span><span class="ab-ns__t"><b>Nurul Aisyah Hamid</b><span>Malaysia</span></span></a></li>
+        <li><a class="ab-ns" href="https://perfectnations.org/blueprints/maldives/" target="_blank" rel="noopener" title="Aishath Shifa, Nation Steward of Maldives"><span class="ab-ns__av" data-i="AS"></span><span class="ab-ns__t"><b>Aishath Shifa</b><span>Maldives</span></span></a></li>
+        <li><a class="ab-ns" href="https://perfectnations.org/blueprints/mali/" target="_blank" rel="noopener" title="Oumou Traor&#233;, Nation Steward of Mali"><span class="ab-ns__av" data-i="OT"></span><span class="ab-ns__t"><b>Oumou Traor&#233;</b><span>Mali</span></span></a></li>
+        <li><a class="ab-ns" href="https://perfectnations.org/blueprints/malta/" target="_blank" rel="noopener" title="Maria Borg, Nation Steward of Malta"><span class="ab-ns__av" data-i="MB"></span><span class="ab-ns__t"><b>Maria Borg</b><span>Malta</span></span></a></li>
+        <li><a class="ab-ns" href="https://perfectnations.org/blueprints/marshall-islands/" target="_blank" rel="noopener" title="Kathy Jetnil, Nation Steward of Marshall Islands"><span class="ab-ns__av" data-i="KJ"></span><span class="ab-ns__t"><b>Kathy Jetnil</b><span>Marshall Islands</span></span></a></li>
+        <li><a class="ab-ns" href="https://perfectnations.org/blueprints/mauritania/" target="_blank" rel="noopener" title="Mariem Mint Ahmed, Nation Steward of Mauritania"><span class="ab-ns__av" data-i="MA"></span><span class="ab-ns__t"><b>Mariem Mint Ahmed</b><span>Mauritania</span></span></a></li>
+        <li><a class="ab-ns" href="https://perfectnations.org/blueprints/mauritius/" target="_blank" rel="noopener" title="Priya Ramdin, Nation Steward of Mauritius"><span class="ab-ns__av" data-i="PR"></span><span class="ab-ns__t"><b>Priya Ramdin</b><span>Mauritius</span></span></a></li>
         <li><a class="ab-ns" href="https://perfectnations.org/blueprints/mexico/" target="_blank" rel="noopener" title="Ximena Robles, Nation Steward of Mexico"><span class="ab-ns__av" data-i="XR"><img src="https://perfectnations.org/wp-content/uploads/2026/10/ximena-robles-nation-steward-of-mexico-150x150.png" alt="" width="150" height="150" loading="lazy" decoding="async"></span><span class="ab-ns__t"><b>Ximena Robles</b><span>Mexico</span></span></a></li>
+        <li><a class="ab-ns" href="https://perfectnations.org/blueprints/micronesia/" target="_blank" rel="noopener" title="Maria Etscheit, Nation Steward of Micronesia"><span class="ab-ns__av" data-i="ME"></span><span class="ab-ns__t"><b>Maria Etscheit</b><span>Micronesia</span></span></a></li>
+        <li><a class="ab-ns" href="https://perfectnations.org/blueprints/moldova/" target="_blank" rel="noopener" title="Doina Rusu, Nation Steward of Moldova"><span class="ab-ns__av" data-i="DR"></span><span class="ab-ns__t"><b>Doina Rusu</b><span>Moldova</span></span></a></li>
+        <li><a class="ab-ns" href="https://perfectnations.org/blueprints/monaco/" target="_blank" rel="noopener" title="Isabelle Rinaldi, Nation Steward of Monaco"><span class="ab-ns__av" data-i="IR"></span><span class="ab-ns__t"><b>Isabelle Rinaldi</b><span>Monaco</span></span></a></li>
+        <li><a class="ab-ns" href="https://perfectnations.org/blueprints/mongolia/" target="_blank" rel="noopener" title="Oyunchimeg Batbayar, Nation Steward of Mongolia"><span class="ab-ns__av" data-i="OB"></span><span class="ab-ns__t"><b>Oyunchimeg Batbayar</b><span>Mongolia</span></span></a></li>
+        <li><a class="ab-ns" href="https://perfectnations.org/blueprints/montenegro/" target="_blank" rel="noopener" title="Jelena Vukovi&#263;, Nation Steward of Montenegro"><span class="ab-ns__av" data-i="JV"></span><span class="ab-ns__t"><b>Jelena Vukovi&#263;</b><span>Montenegro</span></span></a></li>
         <li><a class="ab-ns" href="https://perfectnations.org/blueprints/morocco/" target="_blank" rel="noopener" title="Salma Benali, Nation Steward of Morocco"><span class="ab-ns__av" data-i="SB"><img src="https://perfectnations.org/wp-content/uploads/2026/10/salma-benali-nation-steward-of-morocco-150x150.png" alt="" width="150" height="150" loading="lazy" decoding="async"></span><span class="ab-ns__t"><b>Salma Benali</b><span>Morocco</span></span></a></li>
         <li><a class="ab-ns" href="https://perfectnations.org/blueprints/mozambique/" target="_blank" rel="noopener" title="Tomas Macuacua, Nation Steward of Mozambique"><span class="ab-ns__av" data-i="TM"><img src="https://perfectnations.org/wp-content/uploads/2026/10/tomas-macuacua-nation-steward-of-mozambique-150x150.png" alt="" width="150" height="150" loading="lazy" decoding="async"></span><span class="ab-ns__t"><b>Tomas Macuacua</b><span>Mozambique</span></span></a></li>
+        <li><a class="ab-ns" href="https://perfectnations.org/blueprints/myanmar/" target="_blank" rel="noopener" title="Thandar Win, Nation Steward of Myanmar"><span class="ab-ns__av" data-i="TW"></span><span class="ab-ns__t"><b>Thandar Win</b><span>Myanmar</span></span></a></li>
         <li><a class="ab-ns" href="https://perfectnations.org/blueprints/namibia/" target="_blank" rel="noopener" title="Ndapewa Shikongo, Nation Steward of Namibia"><span class="ab-ns__av" data-i="NS"><img src="https://perfectnations.org/wp-content/uploads/2026/10/ndapewa-shikongo-nation-steward-of-namibia-150x150.png" alt="" width="150" height="150" loading="lazy" decoding="async"></span><span class="ab-ns__t"><b>Ndapewa Shikongo</b><span>Namibia</span></span></a></li>
+        <li><a class="ab-ns" href="https://perfectnations.org/blueprints/nauru/" target="_blank" rel="noopener" title="Ruby Dediya, Nation Steward of Nauru"><span class="ab-ns__av" data-i="RD"></span><span class="ab-ns__t"><b>Ruby Dediya</b><span>Nauru</span></span></a></li>
+        <li><a class="ab-ns" href="https://perfectnations.org/blueprints/nepal/" target="_blank" rel="noopener" title="Sita Gurung, Nation Steward of Nepal"><span class="ab-ns__av" data-i="SG"></span><span class="ab-ns__t"><b>Sita Gurung</b><span>Nepal</span></span></a></li>
+        <li><a class="ab-ns" href="https://perfectnations.org/blueprints/netherlands/" target="_blank" rel="noopener" title="Sanne de Vries, Nation Steward of Netherlands"><span class="ab-ns__av" data-i="SV"></span><span class="ab-ns__t"><b>Sanne de Vries</b><span>Netherlands</span></span></a></li>
+        <li><a class="ab-ns" href="https://perfectnations.org/blueprints/new-zealand/" target="_blank" rel="noopener" title="Aroha Williams, Nation Steward of New Zealand"><span class="ab-ns__av" data-i="AW"></span><span class="ab-ns__t"><b>Aroha Williams</b><span>New Zealand</span></span></a></li>
+        <li><a class="ab-ns" href="https://perfectnations.org/blueprints/nicaragua/" target="_blank" rel="noopener" title="Fernanda Castillo, Nation Steward of Nicaragua"><span class="ab-ns__av" data-i="FC"></span><span class="ab-ns__t"><b>Fernanda Castillo</b><span>Nicaragua</span></span></a></li>
+        <li><a class="ab-ns" href="https://perfectnations.org/blueprints/niger/" target="_blank" rel="noopener" title="Hadiza Moussa, Nation Steward of Niger"><span class="ab-ns__av" data-i="HM"></span><span class="ab-ns__t"><b>Hadiza Moussa</b><span>Niger</span></span></a></li>
         <li><a class="ab-ns" href="https://perfectnations.org/blueprints/nigeria/" target="_blank" rel="noopener" title="Adaeze Okafor, Nation Steward of Nigeria"><span class="ab-ns__av" data-i="AO"><img src="https://perfectnations.org/wp-content/uploads/2026/10/adaeze-okafor-nation-steward-of-nigeria-150x150.png" alt="" width="150" height="150" loading="lazy" decoding="async"></span><span class="ab-ns__t"><b>Adaeze Okafor</b><span>Nigeria</span></span></a></li>
+        <li><a class="ab-ns" href="https://perfectnations.org/blueprints/north-korea/" target="_blank" rel="noopener" title="Kim Soo-ah, Nation Steward of North Korea"><span class="ab-ns__av" data-i="KA"></span><span class="ab-ns__t"><b>Kim Soo-ah</b><span>North Korea</span></span></a></li>
+        <li><a class="ab-ns" href="https://perfectnations.org/blueprints/north-macedonia/" target="_blank" rel="noopener" title="Marija Stojanovska, Nation Steward of North Macedonia"><span class="ab-ns__av" data-i="MS"></span><span class="ab-ns__t"><b>Marija Stojanovska</b><span>North Macedonia</span></span></a></li>
+        <li><a class="ab-ns" href="https://perfectnations.org/blueprints/norway/" target="_blank" rel="noopener" title="Ingrid Hansen, Nation Steward of Norway"><span class="ab-ns__av" data-i="IH"></span><span class="ab-ns__t"><b>Ingrid Hansen</b><span>Norway</span></span></a></li>
+        <li><a class="ab-ns" href="https://perfectnations.org/blueprints/oman/" target="_blank" rel="noopener" title="Aisha Al-Balushi, Nation Steward of Oman"><span class="ab-ns__av" data-i="AB"></span><span class="ab-ns__t"><b>Aisha Al-Balushi</b><span>Oman</span></span></a></li>
         <li><a class="ab-ns" href="https://perfectnations.org/blueprints/pakistan/" target="_blank" rel="noopener" title="Hamza Qureshi, Nation Steward of Pakistan"><span class="ab-ns__av" data-i="HQ"><img src="https://perfectnations.org/wp-content/uploads/2026/10/hamza-qureshi-nation-steward-of-pakistan-150x150.png" alt="" width="150" height="150" loading="lazy" decoding="async"></span><span class="ab-ns__t"><b>Hamza Qureshi</b><span>Pakistan</span></span></a></li>
+        <li><a class="ab-ns" href="https://perfectnations.org/blueprints/palau/" target="_blank" rel="noopener" title="Ngirasol Remengesau, Nation Steward of Palau"><span class="ab-ns__av" data-i="NR"></span><span class="ab-ns__t"><b>Ngirasol Remengesau</b><span>Palau</span></span></a></li>
+        <li><a class="ab-ns" href="https://perfectnations.org/blueprints/palestine/" target="_blank" rel="noopener" title="Lina Khalidi, Nation Steward of Palestine"><span class="ab-ns__av" data-i="LK"></span><span class="ab-ns__t"><b>Lina Khalidi</b><span>Palestine</span></span></a></li>
+        <li><a class="ab-ns" href="https://perfectnations.org/blueprints/panama/" target="_blank" rel="noopener" title="Ana Luc&#237;a Pinz&#243;n, Nation Steward of Panama"><span class="ab-ns__av" data-i="AP"></span><span class="ab-ns__t"><b>Ana Luc&#237;a Pinz&#243;n</b><span>Panama</span></span></a></li>
+        <li><a class="ab-ns" href="https://perfectnations.org/blueprints/papua-new-guinea/" target="_blank" rel="noopener" title="Grace Kaupa, Nation Steward of Papua New Guinea"><span class="ab-ns__av" data-i="GK"></span><span class="ab-ns__t"><b>Grace Kaupa</b><span>Papua New Guinea</span></span></a></li>
+        <li><a class="ab-ns" href="https://perfectnations.org/blueprints/paraguay/" target="_blank" rel="noopener" title="Bel&#233;n Gim&#233;nez, Nation Steward of Paraguay"><span class="ab-ns__av" data-i="BG"></span><span class="ab-ns__t"><b>Bel&#233;n Gim&#233;nez</b><span>Paraguay</span></span></a></li>
+        <li><a class="ab-ns" href="https://perfectnations.org/blueprints/peru/" target="_blank" rel="noopener" title="Rosa Mamani, Nation Steward of Peru"><span class="ab-ns__av" data-i="RM"></span><span class="ab-ns__t"><b>Rosa Mamani</b><span>Peru</span></span></a></li>
         <li><a class="ab-ns" href="https://perfectnations.org/blueprints/philippines/" target="_blank" rel="noopener" title="Isabel Santos, Nation Steward of Philippines"><span class="ab-ns__av" data-i="IS"><img src="https://perfectnations.org/wp-content/uploads/2026/10/isabel-santos-nation-steward-of-the-philippines-150x150.png" alt="" width="150" height="150" loading="lazy" decoding="async"></span><span class="ab-ns__t"><b>Isabel Santos</b><span>Philippines</span></span></a></li>
+        <li><a class="ab-ns" href="https://perfectnations.org/blueprints/poland/" target="_blank" rel="noopener" title="Zofia Kowalska, Nation Steward of Poland"><span class="ab-ns__av" data-i="ZK"></span><span class="ab-ns__t"><b>Zofia Kowalska</b><span>Poland</span></span></a></li>
+        <li><a class="ab-ns" href="https://perfectnations.org/blueprints/portugal/" target="_blank" rel="noopener" title="In&#234;s Ferreira, Nation Steward of Portugal"><span class="ab-ns__av" data-i="IF"></span><span class="ab-ns__t"><b>In&#234;s Ferreira</b><span>Portugal</span></span></a></li>
+        <li><a class="ab-ns" href="https://perfectnations.org/blueprints/qatar/" target="_blank" rel="noopener" title="Maryam Al-Sulaiti, Nation Steward of Qatar"><span class="ab-ns__av" data-i="MS"></span><span class="ab-ns__t"><b>Maryam Al-Sulaiti</b><span>Qatar</span></span></a></li>
         <li><a class="ab-ns" href="https://perfectnations.org/blueprints/republic-of-congo/" target="_blank" rel="noopener" title="Merveille Okemba, Nation Steward of Republic of the Congo"><span class="ab-ns__av" data-i="MO"><img src="https://perfectnations.org/wp-content/uploads/2026/10/merveille-okemba-nation-steward-of-the-republic-of-the-congo-150x150.png" alt="" width="150" height="150" loading="lazy" decoding="async"></span><span class="ab-ns__t"><b>Merveille Okemba</b><span>Republic of the Congo</span></span></a></li>
+        <li><a class="ab-ns" href="https://perfectnations.org/blueprints/romania/" target="_blank" rel="noopener" title="Ioana Popescu, Nation Steward of Romania"><span class="ab-ns__av" data-i="IP"></span><span class="ab-ns__t"><b>Ioana Popescu</b><span>Romania</span></span></a></li>
+        <li><a class="ab-ns" href="https://perfectnations.org/blueprints/russia/" target="_blank" rel="noopener" title="Anna Smirnova, Nation Steward of Russia"><span class="ab-ns__av" data-i="AS"></span><span class="ab-ns__t"><b>Anna Smirnova</b><span>Russia</span></span></a></li>
         <li><a class="ab-ns" href="https://perfectnations.org/blueprints/rwanda/" target="_blank" rel="noopener" title="Jean-Paul Mugisha, Nation Steward of Rwanda"><span class="ab-ns__av" data-i="JM"><img src="https://perfectnations.org/wp-content/uploads/2026/10/jean-paul-mugisha-nation-steward-of-rwanda-150x150.png" alt="" width="150" height="150" loading="lazy" decoding="async"></span><span class="ab-ns__t"><b>Jean-Paul Mugisha</b><span>Rwanda</span></span></a></li>
+        <li><a class="ab-ns" href="https://perfectnations.org/blueprints/saint-kitts-and-nevis/" target="_blank" rel="noopener" title="Tamara Liburd, Nation Steward of Saint Kitts and Nevis"><span class="ab-ns__av" data-i="TL"></span><span class="ab-ns__t"><b>Tamara Liburd</b><span>Saint Kitts and Nevis</span></span></a></li>
+        <li><a class="ab-ns" href="https://perfectnations.org/blueprints/saint-lucia/" target="_blank" rel="noopener" title="Marcia Auguste, Nation Steward of Saint Lucia"><span class="ab-ns__av" data-i="MA"></span><span class="ab-ns__t"><b>Marcia Auguste</b><span>Saint Lucia</span></span></a></li>
+        <li><a class="ab-ns" href="https://perfectnations.org/blueprints/saint-vincent-and-the-grenadines/" target="_blank" rel="noopener" title="Kezia Browne, Nation Steward of Saint Vincent and the Grenadines"><span class="ab-ns__av" data-i="KB"></span><span class="ab-ns__t"><b>Kezia Browne</b><span>Saint Vincent and the Grenadines</span></span></a></li>
+        <li><a class="ab-ns" href="https://perfectnations.org/blueprints/samoa/" target="_blank" rel="noopener" title="Leilani Tuilagi, Nation Steward of Samoa"><span class="ab-ns__av" data-i="LT"></span><span class="ab-ns__t"><b>Leilani Tuilagi</b><span>Samoa</span></span></a></li>
+        <li><a class="ab-ns" href="https://perfectnations.org/blueprints/san-marino/" target="_blank" rel="noopener" title="Francesca Gasperoni, Nation Steward of San Marino"><span class="ab-ns__av" data-i="FG"></span><span class="ab-ns__t"><b>Francesca Gasperoni</b><span>San Marino</span></span></a></li>
+        <li><a class="ab-ns" href="https://perfectnations.org/blueprints/saudi-arabia/" target="_blank" rel="noopener" title="Reem Al-Otaibi, Nation Steward of Saudi Arabia"><span class="ab-ns__av" data-i="RO"></span><span class="ab-ns__t"><b>Reem Al-Otaibi</b><span>Saudi Arabia</span></span></a></li>
         <li><a class="ab-ns" href="https://perfectnations.org/blueprints/senegal/" target="_blank" rel="noopener" title="Awa Diop, Nation Steward of Senegal"><span class="ab-ns__av" data-i="AD"><img src="https://perfectnations.org/wp-content/uploads/2026/10/awa-diop-nation-steward-of-senegal-150x150.png" alt="" width="150" height="150" loading="lazy" decoding="async"></span><span class="ab-ns__t"><b>Awa Diop</b><span>Senegal</span></span></a></li>
+        <li><a class="ab-ns" href="https://perfectnations.org/blueprints/serbia/" target="_blank" rel="noopener" title="Milica Jovanovi&#263;, Nation Steward of Serbia"><span class="ab-ns__av" data-i="MJ"></span><span class="ab-ns__t"><b>Milica Jovanovi&#263;</b><span>Serbia</span></span></a></li>
+        <li><a class="ab-ns" href="https://perfectnations.org/blueprints/seychelles/" target="_blank" rel="noopener" title="Marie-Claire Hoareau, Nation Steward of Seychelles"><span class="ab-ns__av" data-i="MH"></span><span class="ab-ns__t"><b>Marie-Claire Hoareau</b><span>Seychelles</span></span></a></li>
+        <li><a class="ab-ns" href="https://perfectnations.org/blueprints/sierra-leone/" target="_blank" rel="noopener" title="Isata Kamara, Nation Steward of Sierra Leone"><span class="ab-ns__av" data-i="IK"></span><span class="ab-ns__t"><b>Isata Kamara</b><span>Sierra Leone</span></span></a></li>
+        <li><a class="ab-ns" href="https://perfectnations.org/blueprints/singapore/" target="_blank" rel="noopener" title="Tan Hui Min, Nation Steward of Singapore"><span class="ab-ns__av" data-i="TM"></span><span class="ab-ns__t"><b>Tan Hui Min</b><span>Singapore</span></span></a></li>
+        <li><a class="ab-ns" href="https://perfectnations.org/blueprints/slovakia/" target="_blank" rel="noopener" title="Zuzana Kov&#225;&#269;ov&#225;, Nation Steward of Slovakia"><span class="ab-ns__av" data-i="ZK"></span><span class="ab-ns__t"><b>Zuzana Kov&#225;&#269;ov&#225;</b><span>Slovakia</span></span></a></li>
+        <li><a class="ab-ns" href="https://perfectnations.org/blueprints/slovenia/" target="_blank" rel="noopener" title="Nina Kova&#269;, Nation Steward of Slovenia"><span class="ab-ns__av" data-i="NK"></span><span class="ab-ns__t"><b>Nina Kova&#269;</b><span>Slovenia</span></span></a></li>
+        <li><a class="ab-ns" href="https://perfectnations.org/blueprints/solomon-islands/" target="_blank" rel="noopener" title="Esther Maeniuta, Nation Steward of Solomon Islands"><span class="ab-ns__av" data-i="EM"></span><span class="ab-ns__t"><b>Esther Maeniuta</b><span>Solomon Islands</span></span></a></li>
         <li><a class="ab-ns" href="https://perfectnations.org/blueprints/somalia/" target="_blank" rel="noopener" title="Hodan Warsame, Nation Steward of Somalia"><span class="ab-ns__av" data-i="HW"><img src="https://perfectnations.org/wp-content/uploads/2026/10/woman-in-hijab-coastal-town-150x150.png" alt="" width="150" height="150" loading="lazy" decoding="async"></span><span class="ab-ns__t"><b>Hodan Warsame</b><span>Somalia</span></span></a></li>
         <li><a class="ab-ns" href="https://perfectnations.org/blueprints/south-africa/" target="_blank" rel="noopener" title="Sizwe Khumalo, Nation Steward of South Africa"><span class="ab-ns__av" data-i="SK"><img src="https://perfectnations.org/wp-content/uploads/2026/10/sizwe-khumalo-nation-steward-of-south-africa-150x150.png" alt="" width="150" height="150" loading="lazy" decoding="async"></span><span class="ab-ns__t"><b>Sizwe Khumalo</b><span>South Africa</span></span></a></li>
+        <li><a class="ab-ns" href="https://perfectnations.org/blueprints/south-korea/" target="_blank" rel="noopener" title="Park Ji-yeon, Nation Steward of South Korea"><span class="ab-ns__av" data-i="PY"></span><span class="ab-ns__t"><b>Park Ji-yeon</b><span>South Korea</span></span></a></li>
         <li><a class="ab-ns" href="https://perfectnations.org/blueprints/south-sudan/" target="_blank" rel="noopener" title="Achol Deng, Nation Steward of South Sudan"><span class="ab-ns__av" data-i="AD"><img src="https://perfectnations.org/wp-content/uploads/2026/10/achol-deng-nation-steward-of-south-sudan-150x150.png" alt="" width="150" height="150" loading="lazy" decoding="async"></span><span class="ab-ns__t"><b>Achol Deng</b><span>South Sudan</span></span></a></li>
+        <li><a class="ab-ns" href="https://perfectnations.org/blueprints/spain/" target="_blank" rel="noopener" title="Luc&#237;a Fern&#225;ndez, Nation Steward of Spain"><span class="ab-ns__av" data-i="LF"></span><span class="ab-ns__t"><b>Luc&#237;a Fern&#225;ndez</b><span>Spain</span></span></a></li>
         <li><a class="ab-ns" href="https://perfectnations.org/blueprints/sri-lanka/" target="_blank" rel="noopener" title="Kavinda Perera, Nation Steward of Sri Lanka"><span class="ab-ns__av" data-i="KP"><img src="https://perfectnations.org/wp-content/uploads/2026/10/kavinda-perera-nation-steward-of-sri-lanka-150x150.png" alt="" width="150" height="150" loading="lazy" decoding="async"></span><span class="ab-ns__t"><b>Kavinda Perera</b><span>Sri Lanka</span></span></a></li>
+        <li><a class="ab-ns" href="https://perfectnations.org/blueprints/sudan/" target="_blank" rel="noopener" title="Nour Abdelrahman, Nation Steward of Sudan"><span class="ab-ns__av" data-i="NA"></span><span class="ab-ns__t"><b>Nour Abdelrahman</b><span>Sudan</span></span></a></li>
+        <li><a class="ab-ns" href="https://perfectnations.org/blueprints/suriname/" target="_blank" rel="noopener" title="Sharda Ramdin, Nation Steward of Suriname"><span class="ab-ns__av" data-i="SR"></span><span class="ab-ns__t"><b>Sharda Ramdin</b><span>Suriname</span></span></a></li>
+        <li><a class="ab-ns" href="https://perfectnations.org/blueprints/sweden/" target="_blank" rel="noopener" title="Astrid Lindqvist, Nation Steward of Sweden"><span class="ab-ns__av" data-i="AL"></span><span class="ab-ns__t"><b>Astrid Lindqvist</b><span>Sweden</span></span></a></li>
+        <li><a class="ab-ns" href="https://perfectnations.org/blueprints/switzerland/" target="_blank" rel="noopener" title="Lea Meier, Nation Steward of Switzerland"><span class="ab-ns__av" data-i="LM"></span><span class="ab-ns__t"><b>Lea Meier</b><span>Switzerland</span></span></a></li>
+        <li><a class="ab-ns" href="https://perfectnations.org/blueprints/syria/" target="_blank" rel="noopener" title="Nour Kassab, Nation Steward of Syria"><span class="ab-ns__av" data-i="NK"></span><span class="ab-ns__t"><b>Nour Kassab</b><span>Syria</span></span></a></li>
+        <li><a class="ab-ns" href="https://perfectnations.org/blueprints/sao-tome-and-principe/" target="_blank" rel="noopener" title="Leonor Ceita, Nation Steward of S&#227;o Tom&#233; and Pr&#237;ncipe"><span class="ab-ns__av" data-i="LC"></span><span class="ab-ns__t"><b>Leonor Ceita</b><span>S&#227;o Tom&#233; and Pr&#237;ncipe</span></span></a></li>
+        <li><a class="ab-ns" href="https://perfectnations.org/blueprints/tajikistan/" target="_blank" rel="noopener" title="Zarina Rahimova, Nation Steward of Tajikistan"><span class="ab-ns__av" data-i="ZR"></span><span class="ab-ns__t"><b>Zarina Rahimova</b><span>Tajikistan</span></span></a></li>
         <li><a class="ab-ns" href="https://perfectnations.org/blueprints/tanzania/" target="_blank" rel="noopener" title="Neema Mwakyusa, Nation Steward of Tanzania"><span class="ab-ns__av" data-i="NM"><img src="https://perfectnations.org/wp-content/uploads/2026/10/neema-mwakyusa-nation-steward-of-tanzania-150x150.png" alt="" width="150" height="150" loading="lazy" decoding="async"></span><span class="ab-ns__t"><b>Neema Mwakyusa</b><span>Tanzania</span></span></a></li>
+        <li><a class="ab-ns" href="https://perfectnations.org/blueprints/thailand/" target="_blank" rel="noopener" title="Siriporn Chaiyaphum, Nation Steward of Thailand"><span class="ab-ns__av" data-i="SC"></span><span class="ab-ns__t"><b>Siriporn Chaiyaphum</b><span>Thailand</span></span></a></li>
+        <li><a class="ab-ns" href="https://perfectnations.org/blueprints/timor-leste/" target="_blank" rel="noopener" title="Ermelinda Soares, Nation Steward of Timor-Leste"><span class="ab-ns__av" data-i="ES"></span><span class="ab-ns__t"><b>Ermelinda Soares</b><span>Timor-Leste</span></span></a></li>
+        <li><a class="ab-ns" href="https://perfectnations.org/blueprints/togo/" target="_blank" rel="noopener" title="Akossiwa Mensah, Nation Steward of Togo"><span class="ab-ns__av" data-i="AM"></span><span class="ab-ns__t"><b>Akossiwa Mensah</b><span>Togo</span></span></a></li>
+        <li><a class="ab-ns" href="https://perfectnations.org/blueprints/tonga/" target="_blank" rel="noopener" title="Mele Fifita, Nation Steward of Tonga"><span class="ab-ns__av" data-i="MF"></span><span class="ab-ns__t"><b>Mele Fifita</b><span>Tonga</span></span></a></li>
+        <li><a class="ab-ns" href="https://perfectnations.org/blueprints/trinidad-and-tobago/" target="_blank" rel="noopener" title="Aaliyah Mohammed, Nation Steward of Trinidad and Tobago"><span class="ab-ns__av" data-i="AM"></span><span class="ab-ns__t"><b>Aaliyah Mohammed</b><span>Trinidad and Tobago</span></span></a></li>
+        <li><a class="ab-ns" href="https://perfectnations.org/blueprints/tunisia/" target="_blank" rel="noopener" title="Yasmine Gharbi, Nation Steward of Tunisia"><span class="ab-ns__av" data-i="YG"></span><span class="ab-ns__t"><b>Yasmine Gharbi</b><span>Tunisia</span></span></a></li>
+        <li><a class="ab-ns" href="https://perfectnations.org/blueprints/turkmenistan/" target="_blank" rel="noopener" title="Gulnara Atayeva, Nation Steward of Turkmenistan"><span class="ab-ns__av" data-i="GA"></span><span class="ab-ns__t"><b>Gulnara Atayeva</b><span>Turkmenistan</span></span></a></li>
+        <li><a class="ab-ns" href="https://perfectnations.org/blueprints/tuvalu/" target="_blank" rel="noopener" title="Seini Teafa, Nation Steward of Tuvalu"><span class="ab-ns__av" data-i="ST"></span><span class="ab-ns__t"><b>Seini Teafa</b><span>Tuvalu</span></span></a></li>
+        <li><a class="ab-ns" href="https://perfectnations.org/blueprints/turkiye/" target="_blank" rel="noopener" title="Elif Ayd&#305;n, Nation Steward of T&#252;rkiye"><span class="ab-ns__av" data-i="EA"></span><span class="ab-ns__t"><b>Elif Ayd&#305;n</b><span>T&#252;rkiye</span></span></a></li>
         <li><a class="ab-ns" href="https://perfectnations.org/blueprints/uganda/" target="_blank" rel="noopener" title="Daniel Okello, Nation Steward of Uganda"><span class="ab-ns__av" data-i="DO"><img src="https://perfectnations.org/wp-content/uploads/2026/10/daniel-okello-nation-steward-of-uganda-150x150.png" alt="" width="150" height="150" loading="lazy" decoding="async"></span><span class="ab-ns__t"><b>Daniel Okello</b><span>Uganda</span></span></a></li>
         <li><a class="ab-ns" href="https://perfectnations.org/blueprints/ukraine/" target="_blank" rel="noopener" title="Oksana Kovalenko, Nation Steward of Ukraine"><span class="ab-ns__av" data-i="OK"><img src="https://perfectnations.org/wp-content/uploads/2026/10/oksana-kovalenko-nation-steward-of-ukraine-150x150.png" alt="" width="150" height="150" loading="lazy" decoding="async"></span><span class="ab-ns__t"><b>Oksana Kovalenko</b><span>Ukraine</span></span></a></li>
+        <li><a class="ab-ns" href="https://perfectnations.org/blueprints/united-arab-emirates/" target="_blank" rel="noopener" title="Mariam Al-Suwaidi, Nation Steward of United Arab Emirates"><span class="ab-ns__av" data-i="MS"></span><span class="ab-ns__t"><b>Mariam Al-Suwaidi</b><span>United Arab Emirates</span></span></a></li>
+        <li><a class="ab-ns" href="https://perfectnations.org/blueprints/united-kingdom/" target="_blank" rel="noopener" title="Eleanor Hughes, Nation Steward of United Kingdom"><span class="ab-ns__av" data-i="EH"></span><span class="ab-ns__t"><b>Eleanor Hughes</b><span>United Kingdom</span></span></a></li>
+        <li><a class="ab-ns" href="https://perfectnations.org/blueprints/united-states/" target="_blank" rel="noopener" title="Rachel Morgan, Nation Steward of United States"><span class="ab-ns__av" data-i="RM"></span><span class="ab-ns__t"><b>Rachel Morgan</b><span>United States</span></span></a></li>
+        <li><a class="ab-ns" href="https://perfectnations.org/blueprints/uruguay/" target="_blank" rel="noopener" title="Florencia Pereira, Nation Steward of Uruguay"><span class="ab-ns__av" data-i="FP"></span><span class="ab-ns__t"><b>Florencia Pereira</b><span>Uruguay</span></span></a></li>
+        <li><a class="ab-ns" href="https://perfectnations.org/blueprints/uzbekistan/" target="_blank" rel="noopener" title="Dilnoza Karimova, Nation Steward of Uzbekistan"><span class="ab-ns__av" data-i="DK"></span><span class="ab-ns__t"><b>Dilnoza Karimova</b><span>Uzbekistan</span></span></a></li>
+        <li><a class="ab-ns" href="https://perfectnations.org/blueprints/vanuatu/" target="_blank" rel="noopener" title="Marie Tari, Nation Steward of Vanuatu"><span class="ab-ns__av" data-i="MT"></span><span class="ab-ns__t"><b>Marie Tari</b><span>Vanuatu</span></span></a></li>
+        <li><a class="ab-ns" href="https://perfectnations.org/blueprints/venezuela/" target="_blank" rel="noopener" title="Mariana Brice&#241;o, Nation Steward of Venezuela"><span class="ab-ns__av" data-i="MB"></span><span class="ab-ns__t"><b>Mariana Brice&#241;o</b><span>Venezuela</span></span></a></li>
         <li><a class="ab-ns" href="https://perfectnations.org/blueprints/vietnam/" target="_blank" rel="noopener" title="Linh Tran, Nation Steward of Vietnam"><span class="ab-ns__av" data-i="LT"><img src="https://perfectnations.org/wp-content/uploads/2026/10/linh-tran-nation-steward-of-vietnam-150x150.png" alt="" width="150" height="150" loading="lazy" decoding="async"></span><span class="ab-ns__t"><b>Linh Tran</b><span>Vietnam</span></span></a></li>
+        <li><a class="ab-ns" href="https://perfectnations.org/blueprints/yemen/" target="_blank" rel="noopener" title="Amal Al-Sharabi, Nation Steward of Yemen"><span class="ab-ns__av" data-i="AS"></span><span class="ab-ns__t"><b>Amal Al-Sharabi</b><span>Yemen</span></span></a></li>
         <li><a class="ab-ns" href="https://perfectnations.org/blueprints/zambia/" target="_blank" rel="noopener" title="Mutale Chanda, Nation Steward of Zambia"><span class="ab-ns__av" data-i="MC"><img src="https://perfectnations.org/wp-content/uploads/2026/10/mutale-chanda-nation-steward-of-zambia-150x150.png" alt="" width="150" height="150" loading="lazy" decoding="async"></span><span class="ab-ns__t"><b>Mutale Chanda</b><span>Zambia</span></span></a></li>
         <li><a class="ab-ns" href="https://perfectnations.org/blueprints/zimbabwe/" target="_blank" rel="noopener" title="Tendai Moyo, Nation Steward of Zimbabwe"><span class="ab-ns__av" data-i="TM"><img src="https://perfectnations.org/wp-content/uploads/2026/10/tendai-moyo-nation-steward-of-zimbabwe-150x150.png" alt="" width="150" height="150" loading="lazy" decoding="async"></span><span class="ab-ns__t"><b>Tendai Moyo</b><span>Zimbabwe</span></span></a></li>
 <!-- /GENERATED:NSTEWARDS -->
         </ul>
-        <button class="ab-more" type="button" id="ab-more" aria-controls="ab-nss" aria-expanded="false" hidden>Show all <!-- GENERATED:NCOUNT2 -->44<!-- /GENERATED:NCOUNT2 --> Nation Stewards</button>
+        <button class="ab-more" type="button" id="ab-more" aria-controls="ab-nss" aria-expanded="false" hidden>Show all <!-- GENERATED:NCOUNT2 -->195<!-- /GENERATED:NCOUNT2 --> Nation Stewards</button>
+        <p class="ab-none" id="ab-none" role="status" hidden>No open blueprint matches. Every nation&#8217;s blueprint is on the <a href="https://perfectnations.org/blueprints/">Blueprints</a> page.</p>
       </div>
     </div>
   </section>
@@ -2113,6 +2475,25 @@ TO CHANGE THE PORTRAIT: replace the address inside src="..." of the img in #ab-p
     list.classList.add('is-short');
     sync();
     window.addEventListener('resize', sync);
+
+    /* find a nation or a Steward: matches show in full; an empty box returns to the first rows */
+    var q = document.getElementById('ab-nsq');
+    var none = document.getElementById('ab-none');
+    var fold = function(t){ return (t || '').normalize ? t.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase() : (t || '').toLowerCase(); };
+    if (q) {
+      Array.prototype.forEach.call(list.children, function(li){ li.setAttribute('data-q', fold(li.textContent)); });
+      q.addEventListener('input', function(){
+        var v = fold(q.value.trim()), hits = 0;
+        Array.prototype.forEach.call(list.children, function(li){
+          var on = !v || li.getAttribute('data-q').indexOf(v) !== -1;
+          li.hidden = !on; if (on) { hits++; }
+        });
+        var open = more.getAttribute('aria-expanded') === 'true';
+        list.classList.toggle('is-short', !v && !open);
+        if (none) { none.hidden = !(v && hits === 0); }
+        if (v) { more.hidden = true; } else { more.hidden = false; sync(); }
+      });
+    }
   }
 
   /* reveal each block once as it comes into view */
