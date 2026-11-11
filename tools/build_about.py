@@ -11,6 +11,8 @@ The page is edited by hand, except the blocks that this script writes in place:
 v11.6 (10 Nov 2026): light reading sections, Earthrise accents (the Steward-General). The parts carry their own
 LIGHT blocks; this script is unchanged but for its version.
 v11.5 (10 Nov 2026): the homepage close opens The Blueprint Lab on ?about=lab (Lab and Solution links).
+v12.0 (11 Nov 2026): Governance first (pages/home-governance.html) after the hero; What we do without its
+closing seal row, as on the homepage.
 v11.4 (10 Nov 2026): the homepage close (pages/home-pledge.html) is the close of this page too.
 v11.3 (9 Nov 2026): every element of the logo in one gold, #E3C258, with no dimmed parts (the Steward-General).
 v11.2 (9 Nov 2026): fewer words, one headline and one line per section, the detail behind Read more
@@ -23,6 +25,8 @@ reuses the homepage parts rather than copies of their code. Each block below is 
 it stands (its banner dropped), with a one-line note naming the file and its version:
   GENERATED:LOGO-KIT  the logo in its parts (pages/home-logo-kit.html), once, for every part
                       that draws the logo; and the gold line (pages/home-rule.html)
+  GENERATED:GOVERNANCE Governance first and the Perfect Nations Cup, the whole logo on its seal
+                      (pages/home-governance.html, #pn-governance); added in v12.0, straight after the hero
   GENERATED:STEPS     What we do: Assets. Capital. Solutions. (pages/home-steps.html, #pn-steps)
   GENERATED:ASSETS    01 Assets, the gold: Sovereign Assets (pages/home-assets.html, #pn-assets)
   GENERATED:CAPITAL   02 Capital, the laurels: Capital Architecture (pages/home-capital.html, #pn-capital)
@@ -50,10 +54,11 @@ ROOT = Path(__file__).resolve().parent.parent
 PAGES = ROOT / 'pages'
 DATA = ROOT / 'data'
 PAGE = PAGES / 'about.html'
-VERSION = '11.6'
+VERSION = '12.0'
 RESEARCH_STEWARDS = 6
 # The homepage parts this page shows, by block name (see the docstring).
 PARTS = [
+    ('GOVERNANCE', 'home-governance.html'),
     ('STEPS', 'home-steps.html'),
     ('ASSETS', 'home-assets.html'),
     ('CAPITAL', 'home-capital.html'),
@@ -120,7 +125,24 @@ def stewards_block(rows):
     return '\n'.join(out)
 
 
+def guard_scripts(code):
+    """Wrap a part's script in <!-- ... //--> when the WordPress formatter could change it (an & after a <),
+    so the pasted fallback keeps working (v12.0). The browser runs the wrapped script unchanged."""
+    def wrap(m):
+        body = m.group(2)
+        if '<' not in body or '&' not in body or body.lstrip().startswith('<!--'):
+            return m.group(0)
+        return '%s<!--%s//-->%s' % (m.group(1), body, m.group(3))
+    return re.sub(r'(<script(?![^>]*type="application/(?:ld\+)?json")[^>]*>)(.*?)(</script>)', wrap, code, flags=re.S | re.I)
+
+
 def part_block(name):
+    return guard_scripts(_part_block(name))
+
+
+def _part_block(name):
+    if name == 'home-steps.html':
+        return steps_block()
     """A homepage part as this page shows it: the banner dropped, a note naming the file and version."""
     code = (PAGES / name).read_text(encoding='utf-8').strip()
     banner = re.match(r'\s*<!--(.*?)-->', code, re.S)
@@ -129,8 +151,23 @@ def part_block(name):
     return '<!-- part: pages/%s%s -->\n%s' % (name, ' v' + ver.group(1) if ver else '', body)
 
 
+def steps_block():
+    """What we do, without its closing row of the whole logo on a seal: Governance first, just above,
+    shows the whole logo on its seal (v12.0, as the homepage does since v12.1)."""
+    code = (PAGES / 'home-steps.html').read_text(encoding='utf-8').strip()
+    banner = re.match(r'\s*<!--(.*?)-->', code, re.S)
+    ver = re.search(r'\bv(\d+(?:\.\d+)+)\b', banner.group(1)) if banner else None
+    body = re.sub(r'^\s*<!--.*?-->\s*', '', code, count=1, flags=re.S)
+    lines = body.split('\n')
+    kept = [ln for ln in lines if '<div class="pnsp-all">' not in ln]
+    if len(lines) - len(kept) != 1:
+        sys.exit('home-steps.html: expected one closing seal row (<div class="pnsp-all">)')
+    return '<!-- part: pages/home-steps.html%s, without its closing seal row -->\n%s' % (
+        ' v' + ver.group(1) if ver else '', '\n'.join(kept))
+
+
 def logo_kit_block():
-    return '\n'.join([part_block('home-logo-kit.html'), part_block('home-rule.html')])
+    return '\n'.join([_part_block('home-logo-kit.html'), _part_block('home-rule.html')])
 
 
 def put(page, name, body, inline=False):
