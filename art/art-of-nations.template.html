@@ -21,6 +21,9 @@ v4.2 (7 Nov 2026): the page is Art of Nations everywhere (menu, footer, address 
 Botanical Origins: acrylic on canvas, 12 x 16 in, 2026, not for sale (no Enquire). A work marked
 "Not for sale" or "Sold" shows its status and no Enquire.
 v4.4 (9 Nov 2026): one clean gold close button on the viewer; links to other pages open in a new tab.
+v4.7 (11 Nov 2026): every nation with a portrait in the Media Library is shown ([[PCOUNT]] nation portraits in
+their own section, each opening onto its blueprint); the credit reads Perfect Nations, with the artist,
+Preeti Sinha, in small print (the Steward-General, 11 Nov 2026). Portraits are not sold: no Enquire.
 v4.5 (10 Nov 2026): the first line reads Perfect Nations (not Gallery); the gold line of the homepage marks where the hero, the wall and the books meet;
 each painting opens onto its nation's blueprint (Read the blueprint); Botanical Origins is 12 x 16 in.
 v4.6 (10 Nov 2026): light reading sections, Earthrise accents (the Steward-General, 10 Nov 2026).
@@ -401,6 +404,21 @@ v4.6 (10 Nov 2026): light reading sections, Earthrise accents (the Steward-Gener
 #pn-art .aon-books .aon-bk:first-child .aon-btn--line{ color:#E3C258 !important; border-color:rgba(227,194,88,.7) !important; }
 #pn-art .aon-books .aon-bk:first-child .aon-btn--line:hover{ background:rgba(227,194,88,.12) !important; }
 #pn-art .aon-books .aon-bk:first-child a:focus-visible,#pn-art .aon-books .aon-bk:first-child button:focus-visible{ outline-color:#F0D68F; }
+/* nation portraits: a plain thin gold edge, small tiles */
+#pn-art .aon-pts{ list-style:none; margin:clamp(14px,2vh,20px) 0 0; padding:0; display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:10px 8px; }
+@media (min-width:600px){ #pn-art .aon-pts{ grid-template-columns:repeat(5,minmax(0,1fr)); } }
+@media (min-width:1100px){ #pn-art .aon-pts{ grid-template-columns:repeat(8,minmax(0,1fr)); gap:20px 14px; } }
+#pn-art .aon-pt{ margin:0; padding:0; min-width:0; }
+#pn-art .aon-frame--pt{ padding:2px; background:linear-gradient(135deg,#B0903C,#F2E1A4 50%,#B0903C); box-shadow:0 8px 18px rgba(20,14,4,.2); transition:transform .35s cubic-bezier(.22,1,.36,1); }
+#pn-art .aon-frame--pt:hover{ transform:translateY(-4px); }
+#pn-art .aon-frame--pt .aon-mat{ padding:0; box-shadow:none; }
+#pn-art .aon-frame--pt img{ display:block; width:100%; height:100%; object-fit:cover; }
+#pn-art .aon-pt__n{ display:flex; align-items:center; min-height:44px; margin-top:2px; font-family:var(--hd); font-size:.8rem; font-weight:700; letter-spacing:.14em; text-transform:uppercase; line-height:1.15; color:#0B3D45; text-decoration:none; }
+@media (max-width:599px){ #pn-art .aon-pt__n{ font-size:.58rem; letter-spacing:.06em; min-height:34px; } }
+#pn-art .aon-pt__n:hover{ color:var(--gd); }
+#pn-art .aon-sub{ margin:clamp(26px,4vh,40px) 0 0; }
+#pn-art .aon-small{ margin:clamp(14px,2vh,20px) 0 0; font-family:var(--bd); font-size:.68rem; letter-spacing:.06em; color:var(--inkd); }
+#pn-art .aon-books .aon-small{ color:var(--ivd); }
 </style>
 
 <section class="aon-band aon-hero" aria-labelledby="aon-h1">
@@ -416,7 +434,7 @@ v4.6 (10 Nov 2026): light reading sections, Earthrise accents (the Steward-Gener
         </a>
       </div>
       <figcaption class="aon-cap">
-        <span aria-live="polite"><span class="aon-nation"><i class="aon-sw" style="[[FIRST_SW]]"></i><span data-cap-nation>[[FIRST_NATION]]</span></span><strong class="aon-cap__title" data-cap-title>[[FIRST_TITLE]]</strong><span class="aon-by" data-cap-by>by [[FIRST_ARTIST]]</span></span>
+        <span aria-live="polite"><span class="aon-nation"><i class="aon-sw" style="[[FIRST_SW]]"></i><span data-cap-nation>[[FIRST_NATION]]</span></span><strong class="aon-cap__title" data-cap-title>[[FIRST_TITLE]]</strong><span class="aon-by" data-cap-by></span></span>
         <span class="aon-cap__nav">
           <button class="aon-round" type="button" data-hero="-1" aria-label="Previous painting"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M19 12H5M11 6l-6 6 6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
           <span class="aon-count" data-cap-count>01 / [[COUNT2]]</span>
@@ -425,11 +443,11 @@ v4.6 (10 Nov 2026): light reading sections, Earthrise accents (the Steward-Gener
       </figcaption>
     </figure>
     <div class="aon-hero__foot">
-      <p class="aon-lead">Each nation, painted by Preeti Sinha as a living bloom: its mountains, coasts and colours redrawn in acrylic, one of one. A portrait for every one of the [[TOTAL]] nations.</p>
+      <p class="aon-lead">Each nation as a living bloom: its mountains, coasts and colours redrawn in acrylic, one of one. A portrait for every one of the [[TOTAL]] nations.</p>
       <p class="aon-pillars">Culture as capital<b>&#183;</b>Identity as asset<b>&#183;</b>Beauty as public value</p>
       <div class="aon-tally">
-        <p class="aon-tally__n"><strong>[[COUNT]]</strong> of [[TOTAL]] nations painted</p>
-        <span class="aon-dots" role="img" aria-label="[[COUNT]] of [[TOTAL]] nations painted">[[DOTS]]</span>
+        <p class="aon-tally__n"><strong>[[COUNT]]</strong> of [[TOTAL]] nations portrayed</p>
+        <span class="aon-dots" role="img" aria-label="[[COUNT]] of [[TOTAL]] nations portrayed">[[DOTS]]</span>
       </div>
       <div class="aon-ctas">
         <a class="aon-btn" href="#aon-works">The paintings</a>
@@ -445,11 +463,19 @@ v4.6 (10 Nov 2026): light reading sections, Earthrise accents (the Steward-Gener
 [[ORIGINS]]
     <div class="aon-head">
       <div><p class="aon-eb">Original paintings</p><h2 class="aon-h2" id="aon-works-h">The nation, as a living bloom</h2></div>
-      <p class="aon-note">Acrylic on canvas, 24 &#215; 24 in, one of one and signed. Every portrait is offered by private enquiry.</p>
+      <p class="aon-note">Acrylic on canvas, 24 &#215; 24 in, one of one and signed. Every original is offered by private enquiry.</p>
     </div>
     <div class="aon-grid">
 [[CARDS]]
     </div>
+    <div class="aon-head aon-sub">
+      <div><p class="aon-eb">Nation portraits</p><h2 class="aon-h2" id="aon-pts-h">[[PCOUNT]] more nations in bloom</h2></div>
+      <p class="aon-note">Each nation in its own colours. Choose a portrait to open it, or a name to read the blueprint.</p>
+    </div>
+    <ul class="aon-pts" aria-labelledby="aon-pts-h">
+[[PORTRAITS]]
+    </ul>
+    <p class="aon-small">Artist: Preeti Sinha. A Perfect Nations work.</p>
   </div>
 </section>
 
@@ -464,7 +490,7 @@ v4.6 (10 Nov 2026): light reading sections, Earthrise accents (the Steward-Gener
 [[BOOKS]]
     </div>
     <div class="aon-close">
-      <p>Nation portraits and books are offered by private enquiry.</p>
+      <p>Original paintings and books are offered by private enquiry.</p>
       <div class="aon-ctas">
         <a class="aon-btn" href="[[CONTACT]]?about=gallery">Write to the studio</a>
         <a class="aon-btn aon-btn--line" href="https://perfectnations.org/blueprints/">National blueprints</a>
@@ -492,7 +518,7 @@ v4.6 (10 Nov 2026): light reading sections, Earthrise accents (the Steward-Gener
   </div>
 </dialog>
 
-<script>
+<script><!--
 (function(){
   'use strict';
   var root=document.getElementById('pn-art');
@@ -538,7 +564,7 @@ v4.6 (10 Nov 2026): light reading sections, Earthrise accents (the Steward-Gener
     if(w.srcset){ next.srcset=w.srcset; }
     next.src=w.src;
     if(next.complete&&next.naturalWidth){ swap(); }
-    capN.textContent=w.nation; capT.textContent=w.title; if(capB){ capB.textContent=w.artist?'by '+w.artist:''; } capC.textContent=pad(i+1)+' / '+pad(works.length);
+    capN.textContent=w.nation; capT.textContent=w.title; if(capB){ capB.textContent=''; } capC.textContent=pad(i+1)+' / '+pad(works.length);
     if(w.sw){ capS.style.setProperty('--sw',w.sw); }
     heroLink.href=w.zoom; heroLink.setAttribute('data-open',String(w.n));
     heroLink.setAttribute('aria-label','Open '+w.title+' at full size');
@@ -636,8 +662,8 @@ v4.6 (10 Nov 2026): light reading sections, Earthrise accents (the Steward-Gener
         var acts=[];
         if(w.buy){ acts.push(['Buy',w.buy,false]); }
         if(w.enquire){ acts.push(['Enquire about this painting',w.enquire,!!w.buy]); }
-        if(w.blueprint){ acts.push(['Read the blueprint of '+w.nation,w.blueprint,true]); }
-        var k=[w.artist,w.price,w.spec,w.status].filter(Boolean).join(' \u00b7 ');
+        if(w.blueprint){ acts.push(['Read the blueprint of '+w.nation,w.blueprint,!!acts.length]); }
+        var k=[w.artist?'Artist '+w.artist:'',w.price,w.spec,w.status].filter(Boolean).join(' \u00b7 ');
         return { src:w.zoom, alt:w.alt, h:(w.nation?w.nation+' \u00b7 ':'')+w.title, s:w.statement, k:k, acts:acts };
       });
     };
@@ -685,5 +711,5 @@ v4.6 (10 Nov 2026): light reading sections, Earthrise accents (the Steward-Gener
     rv.forEach(function(n,i){ n.style.transitionDelay=((i%4)*90)+'ms'; io.observe(n); });
   }
 })();
-</script>
+//--></script>
 </div>
