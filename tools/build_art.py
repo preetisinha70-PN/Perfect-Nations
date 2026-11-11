@@ -135,10 +135,9 @@ def card(i, p, cat, n):
     }
     attrs = ' '.join('data-%s="%s"' % (k, v) for k, v in data.items() if v != '')
     return '''      <article class="aon-card aon-rv" id="aon-%(slug)s" data-work %(attrs)s>
-        <a class="aon-frame" href="%(zoom)s" data-open="%(i)d" aria-label="Open %(title)s by %(artist)s at full size"><span class="aon-mat"><span class="aon-pic"><img src="%(src)s" srcset="%(srcset)s" sizes="(min-width:1100px) 250px, (min-width:600px) 44vw, 44vw" alt="%(alt)s" width="600" height="600" loading="lazy" decoding="async"></span></span></a>
+        <a class="aon-frame" href="%(zoom)s" data-open="%(i)d" aria-label="Open %(title)s at full size"><span class="aon-mat"><span class="aon-pic"><img src="%(src)s" srcset="%(srcset)s" sizes="(min-width:1100px) 250px, (min-width:600px) 44vw, 44vw" alt="%(alt)s" width="600" height="600" loading="lazy" decoding="async"></span></span></a>
         <p class="aon-nation"><i class="aon-sw" style="%(sw)s"></i>%(nation)s</p>
         <h3 class="aon-h3">%(title)s</h3>
-        <p class="aon-by">by %(artist)s</p>
         <p class="aon-stmt">%(statement)s</p>%(extra)s
         <div class="aon-acts">%(acts)s</div>
       </article>''' % {
@@ -175,11 +174,10 @@ def origin(n, o, cat):
         acts.append('<a class="aon-btn aon-btn--sm" href="%s">Enquire</a>' % enquire)
     k = ' &#183; '.join(x for x in (copy(where, o.get('price', '')), data['spec'], data['status']) if x)
     return '''    <div class="aon-origin aon-rv" id="aon-%(slug)s" data-work %(attrs)s>
-      <a class="aon-frame" href="%(zoom)s" data-open="%(n)d" aria-label="Open %(title)s by %(artist)s at full size"><span class="aon-mat"><span class="aon-pic aon-pic--land" style="--ar:%(w)d/%(h)d"><img src="%(src)s" srcset="%(srcset)s" sizes="(min-width:900px) 600px, 92vw" alt="%(alt)s" width="%(w)d" height="%(h)d" loading="lazy" decoding="async"></span></span></a>
+      <a class="aon-frame" href="%(zoom)s" data-open="%(n)d" aria-label="Open %(title)s at full size"><span class="aon-mat"><span class="aon-pic aon-pic--land" style="--ar:%(w)d/%(h)d"><img src="%(src)s" srcset="%(srcset)s" sizes="(min-width:900px) 600px, 92vw" alt="%(alt)s" width="%(w)d" height="%(h)d" loading="lazy" decoding="async"></span></span></a>
       <div class="aon-origin__txt">
         <p class="aon-eb">%(kicker)s</p>
         <h2 class="aon-h2">%(title)s</h2>
-        <p class="aon-by">by %(artist)s</p>
         <p class="aon-stmt">%(statement)s</p>
         <p class="aon-k">%(k)s</p>
         <div class="aon-acts">%(acts)s</div>
@@ -229,6 +227,25 @@ def book(b, cat):
     }
 
 
+def portrait(j, p, cat, n):
+    """A nation portrait: the colours edition from the Media Library, opening onto the nation's blueprint."""
+    where = 'portrait %s' % p.get('slug', j)
+    need(p, where, 'slug', 'nation', 'alt', 'images', 'zoom', 'blueprint')
+    data = {
+        'nation': copy(where, p['nation']), 'title': 'Nation portrait', 'artist': copy(where, p.get('artist', 'Preeti Sinha')),
+        'statement': copy(where, 'The nation in its own colours, from its Perfect Nations blueprint.'),
+        'spec': 'Nation portrait \u00b7 Perfect Nations'.replace('\u00b7', '&#183;'), 'alt': copy(where, p['alt']),
+        'zoom': media(where, p['zoom']), 'src': media(where, pick(p['images'], 300)), 'srcset': srcset(where, p['images']),
+        'blueprint': link(where, p['blueprint']),
+    }
+    attrs = ' '.join('data-%s="%s"' % (k, v) for k, v in data.items() if v != '')
+    return '''      <li class="aon-pt aon-rv" data-work %(attrs)s>
+        <a class="aon-frame aon-frame--pt" href="%(zoom)s" data-open="%(i)d" aria-label="Open the portrait of %(nation)s at full size"><span class="aon-mat"><span class="aon-pic"><img src="%(src)s" srcset="%(srcset)s" sizes="(min-width:1100px) 190px, 30vw" alt="%(alt)s" width="300" height="300" loading="lazy" decoding="async"></span></span></a>
+        <a class="aon-pt__n" href="%(bp)s">%(nation)s</a>
+      </li>''' % {'attrs': attrs, 'zoom': data['zoom'], 'i': n, 'src': data['src'], 'srcset': data['srcset'], 'alt': data['alt'],
+                  'nation': data['nation'], 'bp': data['blueprint']}
+
+
 def main():
     cat = json.loads(CAT.read_text(encoding='utf-8'))
     tpl = TPL.read_text(encoding='utf-8')
@@ -243,13 +260,19 @@ def main():
     origins = cat.get('origins') or []
     found = '\n'.join(origin(j, o, cat) for j, o in enumerate(origins))
     cards = '\n'.join(card(i, p, cat, len(origins) + i) for i, p in enumerate(paintings))
+    portraits = cat.get('portraits') or []
+    pslugs = [p.get('slug') for p in portraits]
+    if len(set(pslugs + slugs)) != len(pslugs) + len(slugs):
+        PROBLEMS.append('a portrait repeats a painting or another portrait: %r' % pslugs)
+    pts = '\n'.join(portrait(j, p, cat, len(origins) + n + j) for j, p in enumerate(portraits))
     books = '\n'.join(book(b, cat) for b in cat.get('books') or [])
-    dots = ''.join('<i class="on is-new"></i>' if k == n - 1 else ('<i class="on"></i>' if k < n else '<i></i>') for k in range(total))
+    shown = n + len(portraits)
+    dots = ''.join('<i class="on is-new"></i>' if k == shown - 1 else ('<i class="on"></i>' if k < shown else '<i></i>') for k in range(total))
     first = paintings[0] if paintings else {}
     if PROBLEMS:
         sys.exit('The catalogue needs fixing before the page can be built:\n  - ' + '\n  - '.join(PROBLEMS))
     slots = {
-        'VERSION': esc(cat['version']), 'DATE': esc(cat['updated']), 'COUNT': str(n), 'COUNT2': '%02d' % n,
+        'VERSION': esc(cat['version']), 'DATE': esc(cat['updated']), 'COUNT': str(shown), 'COUNT2': '%02d' % n, 'PCOUNT': str(len(portraits)), 'PORTRAITS': pts,
         'TOTAL': str(total), 'DOTS': dots, 'CARDS': cards, 'BOOKS': books, 'CONTACT': esc(cat['contact']),
         'FIRST_ZOOM': esc(first['zoom']), 'FIRST_SRC': esc(pick(first['images'], 768)),
         'FIRST_SRCSET': srcset('hero', first['images']), 'FIRST_ALT': esc(first['alt']),
