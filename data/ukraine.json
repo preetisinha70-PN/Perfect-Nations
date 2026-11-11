@@ -1,7 +1,7 @@
 {
   "nation": "Ukraine",
   "page_version": "9.0",
-  "updated": "2026-11-10",
+  "updated": "2026-11-11",
   "steward": {
     "name": "Oksana Kovalenko",
     "role": "Nation Steward of Ukraine"
@@ -25,75 +25,424 @@
     ]
   },
   "capital": {
-    "heading": "Ukraine is rebuilding while it defends itself. Next, a full table in every home.",
+    "heading": "24 instruments. EU, IMF and World Bank budget support, and finance for power, homes, borders and business.",
     "record": [
+      {
+        "value": "UAH 9.54T",
+        "money": true,
+        "text": "State and state-guaranteed debt at the end of September 2026: UAH 9,538.35 billion (EUR 187.29 billion or USD 212.61 billion); state external debt 76.44%, state domestic debt 20.93%; weighted average cost 4.44%",
+        "source": "Ministry of Finance, 2026",
+        "url": "https://mof.gov.ua/en/news/state_and_state-guaranteed_debt_of_ukraine_in_september_the_share_of_state-guaranteed_debt_decreased_to_263-5988"
+      },
+      {
+        "value": "€90B",
+        "money": true,
+        "text": "Ukraine Support Loan for 2026 and 2027: €30 billion of macroeconomic support and €60 billion for defence industrial capacity; €4.36 billion disbursed on 5 November 2026",
+        "source": "Council of the EU, 2026",
+        "url": "https://www.consilium.europa.eu/en/press/press-releases/2026/04/23/council-finalises-90-billion-support-loan-to-ukraine/"
+      },
       {
         "value": "$8.1B",
         "money": true,
-        "text": "Extended Fund Facility: About $2.2 billion disbursed; about $690 million released in July 2026",
+        "text": "Extended Fund Facility, approved 26 February 2026: about $2.2 billion disbursed after the first review; about $690 million released in July 2026",
         "source": "IMF, 2026",
-        "url": "https://www.imf.org/en/news/articles/2026/02/26/pr-26066-ukraine-imf-executive-board-approves-usd-8point1-billion-under-an-eff-arrangement"
+        "url": "https://www.imf.org/-/media/files/publications/cr/2026/english/1ukrea2026002.pdf"
       },
       {
         "value": "$3.39B",
         "money": true,
-        "text": "First Jobs and Private Sector Growth DPO: Private investment, labour and market integration",
+        "text": "First Jobs and Private Sector Growth DPO, approved 22 June 2026: private investment, labour and market integration",
         "source": "World Bank, 2026",
         "url": "https://www.worldbank.org/en/news/press-release/2026/06/22/first-ukraine-jobs-and-private-sector-growth-development-policy-operation"
       },
       {
-        "value": "$880M",
+        "value": "$588B",
         "money": true,
-        "text": "Social Protection Project (SPIRIT): Social assistance, jobs and disability support",
+        "text": "Almost $588 billion: total cost of reconstruction and recovery over the next decade, as of 31 December 2025 (RDNA5); direct damage over $195 billion",
         "source": "World Bank, 2026",
-        "url": "https://www.worldbank.org/en/news/press-release/2026/05/28/new-world-bank-project-will-help-transform-ukraines-social-protection-system"
+        "url": "https://www.worldbank.org/en/news/press-release/2026/02/23/updated-ukraine-recovery-and-reconstruction-needs-assessment-released"
       }
     ],
     "register": [
       {
-        "cat": "multi",
-        "status": "Active",
-        "tone": "active",
-        "name": "Extended Fund Facility",
-        "detail": "Approved 26 February 2026 · 48 months",
-        "amount": "$8.1B",
+        "cat": "govt",
+        "status": "Completed",
+        "tone": "completed",
+        "name": "GDP-linked warrants restructuring",
+        "detail": "Completed and settled 24 December 2025 · 99.06% investor support · New C Notes due 2032",
+        "amount": "$3.5B",
         "money": true,
-        "note": "About $2.2 billion disbursed; about $690 million released in July 2026",
-        "text": "Public debt is projected at 111.8 percent of GDP in 2026.",
+        "note": "$2.64 billion of warrants exchanged for $3.50 billion of C Notes due 2032",
+        "text": "Ukraine exchanged US$2,635 million of its GDP-linked warrants for C Notes due 2032 totalling US$3,498 million, and B Notes due 2030 and 2034 of about US$16.9 million each, with 99.06% investor support. The Ministry of Finance says warrant payments between 2025 and 2041 could otherwise have reached USD 6 to 20 billion, depending on economic growth. The Ministry says the exchange removes a significant contingent liability and safeguards budget resources, which leaves room for the seven standards.",
         "by": [
-          "International Monetary Fund"
+          "Government of Ukraine"
         ],
-        "url": "https://www.imf.org/en/news/articles/2026/02/26/pr-26066-ukraine-imf-executive-board-approves-usd-8point1-billion-under-an-eff-arrangement"
+        "url": "https://mof.gov.ua/en/news/ukraine_completes_the_restructuring_of_gdp-linked_warrants-5507"
+      },
+      {
+        "cat": "govt",
+        "status": "Completed",
+        "tone": "completed",
+        "name": "Eurobond restructuring",
+        "detail": "Completion announced 4 September 2024 · Thirteen sovereign Eurobond series and one Ukravtodor guaranteed series · Eight new Eurobond series",
+        "amount": "$20.5B",
+        "money": true,
+        "note": "Upfront nominal haircut of 37%; debt cut by close to $9 billion",
+        "text": "Ukraine restructured about USD 20.5 billion of outstanding principal of sovereign and sovereign-guaranteed Eurobonds (around USD 24 billion with accrued interest) into eight new Eurobond series of USD 15.2 billion, endorsed by Ukraine’s Group of Creditors. The Government puts the savings at USD 11.4 billion over the following three years and USD 22.8 billion through 2033, which leaves more of the budget for the seven standards.",
+        "by": [
+          "Government of Ukraine"
+        ],
+        "url": "https://www.kmu.gov.ua/en/news/ukraina-zavershyla-restrukturyzatsiiu-derzhavnykh-oblihatsii-ta-harantovanykh-derzhavoiu-ievrooblihatsii-na-sumu-205-mlrd-dolariv-ssha"
+      },
+      {
+        "cat": "humanitarian",
+        "status": "Appeal",
+        "tone": "appeal",
+        "name": "Humanitarian Needs and Response Plan 2026",
+        "detail": "Launched 13 January 2026 · 4.1 million people to assist · 10.8 million in need",
+        "amount": "$2.3B",
+        "money": true,
+        "note": "US$2.31 billion required, of which US$2.05 billion is prioritised",
+        "text": "The UN and partners appeal for US$2.3 billion in 2026 to assist 4.1 million of the most vulnerable people in Ukraine, of an estimated 10.8 million who need humanitarian assistance this year. It is the humanitarian complement to the budget and recovery finance on this page, for needs that cannot wait.",
+        "by": [
+          "United Nations",
+          "Humanitarian partners"
+        ],
+        "url": "https://ukraine.un.org/en/node/308290"
       },
       {
         "cat": "multi",
-        "status": "Active",
+        "status": "Committed",
         "tone": "active",
-        "name": "First Jobs and Private Sector Growth DPO",
-        "detail": "Approved 22 June 2026 · Development policy operation",
+        "name": "Public Expenditures for Administrative Capacity Endurance (PEACE)",
+        "detail": "All sources of financing committed through the project, as of 30 September 2026",
+        "amount": "$54B",
+        "money": true,
+        "note": "Part of the $91 billion in financial support mobilised for Ukraine through the World Bank since February 2022",
+        "text": "The World Bank counts $54 billion of financing from all sources committed through PEACE as of 30 September 2026, within the $91 billion in financial support mobilised for Ukraine since February 2022, of which $79.8 billion has been disbursed. The operation channels partner money to Ukraine’s public expenditures.",
+        "by": [
+          "World Bank",
+          "Donor partners"
+        ],
+        "url": "https://www.worldbank.org/en/brief/2026/05/31/world-bank-emergency-financing-package-for-ukraine"
+      },
+      {
+        "cat": "multi",
+        "status": "Approved",
+        "tone": "active",
+        "name": "Extended Fund Facility",
+        "detail": "Approved 26 February 2026 · SDR 5.9353 billion, 295 percent of quota · 48 months · First review completed 20 July 2026",
+        "amount": "$8.1B",
+        "money": true,
+        "note": "About $2.2 billion disbursed; about $690 million released in July 2026",
+        "text": "The four-year IMF arrangement, part of a US$136.5 billion international support package for Ukraine. Completion of the first review on 20 July 2026 allowed an immediate disbursement of SDR 503 million (about US$690 million), bringing disbursements under the arrangement to about SDR 1.6 billion (about US$2.2 billion). IMF staff project public debt at 111.8 percent of GDP in 2026.",
+        "by": [
+          "International Monetary Fund"
+        ],
+        "url": "https://www.imf.org/-/media/files/publications/cr/2026/english/1ukrea2026002.pdf"
+      },
+      {
+        "cat": "multi",
+        "status": "Approved",
+        "tone": "active",
+        "name": "First Ukraine Jobs and Private Sector Growth Development Policy Operation",
+        "detail": "Approved 22 June 2026 · $1.04 billion World Bank loan · $2.35 billion F.O.R.T.I.S. grant · First of a programmatic series of two",
         "amount": "$3.39B",
         "money": true,
-        "note": "Private investment, labour and market integration",
-        "text": "Supports reforms for a recovery led by private investment.",
+        "note": "Private investment, skilled labour and integration with EU markets",
+        "text": "A development policy operation for reforms that enable private financing and investment, attract skilled workers to jobs, including through housing policy and veteran entrepreneurship, and integrate Ukraine’s markets with the EU, including in electricity. The $1.04 billion loan is backed by $540 million of credit enhancement from the ADVANCE Ukraine Trust Fund, supported by Japan, and $500 million of guarantees from the United Kingdom. It serves the livelihood, shelter and energy standards.",
         "by": [
-          "World Bank"
+          "World Bank",
+          "ADVANCE Ukraine Trust Fund",
+          "Government of the United Kingdom",
+          "F.O.R.T.I.S. Ukraine Financial Intermediary Fund"
         ],
         "url": "https://www.worldbank.org/en/news/press-release/2026/06/22/first-ukraine-jobs-and-private-sector-growth-development-policy-operation"
       },
       {
         "cat": "multi",
-        "status": "Active",
+        "status": "Approved",
         "tone": "active",
-        "name": "Social Protection Project (SPIRIT)",
-        "detail": "Approved 28 May 2026 · Investment project financing",
+        "name": "Social Protection Project for Inclusion, Resilience, Innovation, and Transformation (SPIRIT)",
+        "detail": "Approval announced 29 May 2026 · $860 million World Bank loan · $20 million URTF grant",
         "amount": "$880M",
         "money": true,
-        "note": "Social assistance, jobs and disability support",
-        "text": "Merges benefit programmes and links cash recipients to work and services.",
+        "note": "Social assistance for more than one million people",
+        "text": "Finances social assistance for low-income households and programmes for vulnerable families with children, persons with disabilities, older persons and caregivers, and strengthens social service providers. The $860 million loan is backed by $360 million of credit enhancement from ADVANCE Ukraine and a $500 million guarantee from the United Kingdom. It serves the livelihood standard for more than one million people.",
         "by": [
-          "World Bank"
+          "World Bank",
+          "ADVANCE Ukraine Trust Fund",
+          "Government of the United Kingdom",
+          "URTF"
         ],
         "url": "https://www.worldbank.org/en/news/press-release/2026/05/28/new-world-bank-project-will-help-transform-ukraines-social-protection-system"
+      },
+      {
+        "cat": "regional",
+        "status": "Signed",
+        "tone": "active",
+        "name": "Ukraine Western Border Infrastructure",
+        "detail": "Announced 21 October 2026 · Loan to the Government of Ukraine · EU guarantee under the Ukraine Investment Framework · €6 million EU grant expected",
+        "amount": "€60M",
+        "money": true,
+        "note": "Border crossings with the EU and Moldova on TEN-T roads",
+        "text": "An EIB loan to the Ukrainian government, carried out by the State Agency for Restoration and Infrastructure Development, to upgrade border-crossing terminals, waiting areas, sanitary facilities, shelters, access roads and customs equipment at the borders with the European Union and Moldova. Faster, cheaper trade serves the livelihood standard.",
+        "by": [
+          "European Investment Bank",
+          "European Union"
+        ],
+        "url": "https://www.eib.org/en/press/all/2026-349-with-eu-support-eib-group-provides-ukraine-with-financing-of-60-million-to-upgrade-western-border-infrastructure"
+      },
+      {
+        "cat": "regional",
+        "status": "Signed",
+        "tone": "active",
+        "name": "HOME: Compensation for Destroyed Residential Properties",
+        "detail": "Loan agreement signed 26 June 2026 · €10.7 million EU grant · €50 million contribution from Italy · CEB lending for the programme €300 million in all",
+        "amount": "€100M",
+        "money": true,
+        "note": "Compensation for homes destroyed in the war; two further loans of €80 million and €60 million approved",
+        "text": "A Council of Europe Development Bank loan for Ukraine’s programme of compensation for destroyed homes, under which three thousand families have already bought new housing with housing vouchers, according to the Deputy Prime Minister. Two further CEB loans, €80 million for internally displaced people and €60 million for veterans’ housing, have been approved. It serves the shelter standard.",
+        "by": [
+          "Council of Europe Development Bank",
+          "European Union",
+          "Government of Italy"
+        ],
+        "url": "https://coebank.org/en/news-and-publications/news/ceb-eu-and-italy-step-up-support-for-ukraines-housing-recovery/"
+      },
+      {
+        "cat": "regional",
+        "status": "Signed",
+        "tone": "active",
+        "name": "Ukrenergo substation reconstruction",
+        "detail": "Signed at the Ukraine Recovery Conference, Gdańsk, 25 to 26 June 2026 · With governance and anti-corruption support",
+        "amount": "€90M",
+        "money": true,
+        "note": "Part of new commitments that bring EBRD financing in wartime Ukraine to €10.5 billion",
+        "text": "An EBRD loan to Ukrenergo for substation reconstruction, with support for governance and anti-corruption. At the same conference the EBRD signed €50 million for a 189 MW wind plant of GNG Group (OKKO Group) and a common terms agreement for a €65 million loan for the 120 MW Notus Energy wind plant, bringing its financing in wartime Ukraine to €10.5 billion. It serves the energy standard.",
+        "by": [
+          "European Bank for Reconstruction and Development"
+        ],
+        "url": "https://www.ebrd.com/home/news-and-events/news/2026/ebrd-support-for-wartime-ukraine-surpasses--10-5-billion-as-bank.html"
+      },
+      {
+        "cat": "regional",
+        "status": "Announced",
+        "tone": "active",
+        "name": "EIB Group package at the Ukraine Recovery Conference 2026",
+        "detail": "Announced 25 June 2026, Gdańsk · Over €470 million · €96 million loan for roads, bridges and border infrastructure · €100 million loan to Ukreximbank · €50 million social housing loan with a €50 million EU grant · €80 million to be committed to the European Flagship Fund",
+        "amount": "€470M",
+        "money": true,
+        "note": "EU-backed guarantees for PrivatBank and Ukrgasbank aim to unlock up to €500 million for small businesses",
+        "text": "Over €470 million of new EIB Group financing for housing, connectivity and private-sector growth. It includes social housing for internally displaced people in Kremenchuk, Kropyvnytskyi, Lviv, Mykolaiv and Zhytomyr, a €25 million EU grant for the recovery and modernisation of the water sector, and lending for small and mid-sized firms. It serves the shelter, water and livelihood standards.",
+        "by": [
+          "European Investment Bank",
+          "European Union"
+        ],
+        "url": "https://www.eib.org/en/press/all/2026-226-eib-group-steps-up-support-for-ukraine-with-over-eur470-million-for-housing-connectivity-and-private-sector-growth"
+      },
+      {
+        "cat": "regional",
+        "status": "Signed",
+        "tone": "active",
+        "name": "Ukrhydroenergo emergency energy response project",
+        "detail": "Agreement signed 7 January 2026 · Senior loan of up to €75 million · EU guarantee under the Ukraine Investment Framework · Completion expected 2030",
+        "amount": "€75M",
+        "money": true,
+        "note": "Emergency repairs and equipment replacement at three Ukrhydroenergo hydropower facilities",
+        "text": "An EBRD loan to the state-owned hydropower company Ukrhydroenergo for emergency repair and recovery works and equipment replacement at three hydropower facilities, the Dnipro Hydropower Plant and the Kyiv HPP and PSP cascade, with up to €20 million of donor grants in a project of €120 million in all. It serves the energy standard.",
+        "by": [
+          "European Bank for Reconstruction and Development",
+          "European Union"
+        ],
+        "url": "https://mof.gov.ua/en/news/ebrd_to_provide_eur_75_million_loan_to_finance_ukrhydroenergo_emergency_energy_response_project-5536"
+      },
+      {
+        "cat": "bilat",
+        "status": "Disbursing",
+        "tone": "active",
+        "name": "Ukraine Support Loan",
+        "detail": "Regulation adopted 24 February 2026 · Financing strategy approved 23 April 2026 · 2026 and 2027 · €30 billion macroeconomic support, €60 billion defence",
+        "amount": "€90B",
+        "money": true,
+        "note": "€4.36 billion disbursed 5 November 2026: €3.7 billion of macro-financial assistance and €658 million for defence",
+        "text": "An EU loan for Ukraine’s budgetary and defence industrial needs in 2026 and 2027, financed through EU borrowing on the capital markets, backed by EU budget headroom and to be repaid by reparations due by Russia to Ukraine. For 2026 it makes €45 billion accessible: €8.35 billion of macro-financial assistance, €8.35 billion through the Ukraine Facility and €28.3 billion for defence industrial capacity. The Government says the budget funds go to priority spending.",
+        "by": [
+          "European Union"
+        ],
+        "url": "https://www.consilium.europa.eu/en/press/press-releases/2026/04/23/council-finalises-90-billion-support-loan-to-ukraine/"
+      },
+      {
+        "cat": "bilat",
+        "status": "Disbursing",
+        "tone": "active",
+        "name": "Ukraine Facility",
+        "detail": "2024 to 2027 · Eighth disbursement, €2.9 billion, 2 October 2026 · Includes €800 million from the Ukraine Support Loan",
+        "amount": "€50B",
+        "money": true,
+        "note": "Over €50 billion in grants and loans; €2.9 billion released on 2 October 2026",
+        "text": "The EU’s Ukraine Facility provides over €50 billion in grants and loans to support Ukraine over 2024 to 2027, paid as reform steps under the Ukraine Plan are met. The eighth disbursement, €2.9 billion on 2 October 2026, supports financial stability and reforms; with it, total EU support under the Ukraine Plan reaches over €32 billion.",
+        "by": [
+          "European Union"
+        ],
+        "url": "https://enlargement.ec.europa.eu/news/commission-disburses-eur29-billion-under-ukraine-facility-support-financial-stability-and-reforms-2026-10-02_en"
+      },
+      {
+        "cat": "bilat",
+        "status": "Signed",
+        "tone": "active",
+        "name": "Programme for Emergency Recovery (Phase 5)",
+        "detail": "Grant agreement signed 20 May 2026 · Grant aid of up to JPY 6,200 million",
+        "amount": "JPY 6.2B",
+        "money": true,
+        "note": "Equipment for health, agriculture, public infrastructure and public broadcasting",
+        "text": "A Japanese grant through JICA for equipment and machinery for Ukrainian government institutions in medical and health services, agriculture, public infrastructure and public broadcasting. It serves the health and food standards.",
+        "by": [
+          "Japan International Cooperation Agency"
+        ],
+        "url": "https://www.jica.go.jp/english/information/press/2026/20260511_11.html"
+      },
+      {
+        "cat": "bilat",
+        "status": "Operational",
+        "tone": "active",
+        "name": "U.S.-Ukraine Reconstruction Investment Fund",
+        "detail": "DFC seed equity announced 17 September 2025 · Fully operational 18 December 2025 · First investment announced 25 March 2026",
+        "amount": "$150M",
+        "money": true,
+        "note": "$75 million of DFC equity, matched by the Government of Ukraine",
+        "text": "A fund established in April 2025 that prioritises investment in critical minerals, energy, transport and logistics, information and communications technology and emerging technology. DFC committed $75 million of seed equity, matched by the Ukrainian Government for a combined $150 million; its first investment, of an undisclosed amount, is an equity stake in Sine Engineering. It serves the livelihood and energy standards.",
+        "by": [
+          "U.S. International Development Finance Corporation",
+          "Government of Ukraine"
+        ],
+        "url": "https://www.dfc.gov/media/press-releases/dfc-kickstarts-us-ukraine-reconstruction-investment-fund-75-million-seed"
+      },
+      {
+        "cat": "bilat",
+        "status": "Completed",
+        "tone": "completed",
+        "name": "Exceptional Macro-Financial Assistance (G7 ERA loans)",
+        "detail": "Ten tranches in 2025 · Tenth and final tranche of €4.1 billion 13 November 2025 · The EU’s full contribution to the G7 Extraordinary Revenue Acceleration initiative",
+        "amount": "€18.1B",
+        "money": true,
+        "note": "Other G7 countries disbursed a further €12.8 billion; ERA loans totalled €30.9 billion at 13 November 2025",
+        "text": "The European Commission’s exceptional Macro-Financial Assistance programme delivered €18.1 billion in loans to Ukraine in 2025, the EU’s full contribution to the G7-led Extraordinary Revenue Acceleration initiative. With the €12.8 billion disbursed by other G7 countries, ERA loan support totalled €30.9 billion at 13 November 2025.",
+        "by": [
+          "European Union"
+        ],
+        "url": "https://enlargement.ec.europa.eu/news/eu-steps-support-ukraine-almost-eu6-billion-cover-its-financial-needs-2025-11-13_en"
+      },
+      {
+        "cat": "bilat",
+        "status": "Disbursing",
+        "tone": "active",
+        "name": "Extraordinary Revenue Acceleration Loan for Ukraine",
+        "detail": "Loan agreement signed 5 June 2025 · Interest TORF+90bp · 30 years",
+        "amount": "JPY 471.9B",
+        "money": true,
+        "note": "Japan’s ERA loan, over USD 3 billion; the Ministry of Finance reported a first tranche of USD 544 million received through the World Bank’s PEACE programme (3 March 2026)",
+        "text": "A Japanese ODA loan to support policy implementation and institutional reform in Ukraine, repaid from extraordinary revenues stemming from the immobilisation of Russian sovereign assets held in EU jurisdictions. The Ministry of Finance puts it at over USD 3 billion.",
+        "by": [
+          "Japan International Cooperation Agency"
+        ],
+        "url": "https://www.jica.go.jp/english/information/press/2025/20250605_11.html"
+      },
+      {
+        "cat": "private",
+        "status": "Announced",
+        "tone": "active",
+        "name": "EIF guarantee to ProCredit Bank Ukraine",
+        "detail": "Announced 21 October 2026 · Third agreement under the Ukraine Facility Partial Portfolio Guarantee · Backed by the EU under the Ukraine Investment Framework",
+        "amount": "€143M",
+        "money": true,
+        "note": "Loans on advantageous terms to more than 700 small and medium-sized enterprises",
+        "text": "A European Investment Fund guarantee that enables ProCredit Bank Ukraine to offer up to €143 million of loans on advantageous terms to businesses affected by the war, veteran-led businesses and women and young entrepreneurs. Across participating banks, the programme is projected to make more than €1.1 billion available. It serves the livelihood standard.",
+        "by": [
+          "European Investment Fund",
+          "European Union"
+        ],
+        "url": "https://www.eib.org/en/press/all/2026-350-war-affected-ukrainian-businesses-to-get-143-million-financing-boost-with-eu-guarantee-to-procredit-bank-ukraine"
+      },
+      {
+        "cat": "private",
+        "status": "Invested",
+        "tone": "active",
+        "name": "Rebuild Ukraine Fund, equity",
+        "detail": "Approved 3 November 2025 · Signed 14 January 2026 · Invested 6 July 2026 · First-loss guarantee of up to $12.5 million expected",
+        "amount": "$25M",
+        "money": true,
+        "note": "Equity of up to US$25 million in the project description; the disclosure’s Board-approved figure is US$49.83 million, indicative",
+        "text": "An IFC equity investment of up to US$25 million in Rebuild Ukraine Fund, a private equity fund for small and medium enterprises and mid-market companies in Ukraine that targets majority stakes, with a particular focus on consumer goods and services, healthcare, pharmaceuticals and financial services. It serves the livelihood and health standards.",
+        "by": [
+          "IFC"
+        ],
+        "url": "https://disclosures.ifc.org/project-detail/SII/51307/dragon-rebuf"
+      },
+      {
+        "cat": "private",
+        "status": "Signed",
+        "tone": "active",
+        "name": "EBRD risk-sharing with eight Ukrainian banks",
+        "detail": "Signed at the Ukraine Recovery Conference, 25 to 26 June 2026 · PrivatBank €265 million, Oschadbank €150 million and Ukrgasbank €148 million facilities, among others",
+        "amount": "€303M",
+        "money": true,
+        "note": "€303 million of EBRD finance enabling €845 million of new credit",
+        "text": "EBRD portfolio risk-sharing facilities and loans with eight banks, PrivatBank, Oschadbank, Bank Lviv, Kredobank, UKRSIBBANK, Ukrgasbank, Ukreximbank and Raiffeisen Bank Ukraine, to enable €845 million of new lending. Credit for firms protects jobs and wages, which serves the livelihood standard.",
+        "by": [
+          "European Bank for Reconstruction and Development"
+        ],
+        "url": "https://www.ebrd.com/home/news-and-events/news/2026/ebrd-support-for-wartime-ukraine-surpasses--10-5-billion-as-bank.html"
+      },
+      {
+        "cat": "private",
+        "status": "Approved",
+        "tone": "pipeline",
+        "name": "Notus Wind, 120 MW onshore wind",
+        "detail": "Approved 12 June 2026 · Pending signing · Odesa region · Total cost about €231 million excluding VAT",
+        "amount": "$113.52M",
+        "money": true,
+        "note": "IFC investment as approved by the Board, indicative; IFC says it intends around €70 million of financing, including blended finance, with €37.5 million of co-investments expected",
+        "text": "IFC financing, approved and pending signing, for a 120 MW greenfield onshore wind power plant in the Odesa region, majority owned by Notus Energy GmbH. The Norwegian Agency for Development Cooperation, the Government of France and the European Commission under the Ukraine Investment Framework are expected to support its blended finance. It serves the energy standard.",
+        "by": [
+          "IFC",
+          "Norad",
+          "Government of France",
+          "European Commission"
+        ],
+        "url": "https://disclosures.ifc.org/project-detail/SII/51798/notus-wind"
+      },
+      {
+        "cat": "private",
+        "status": "Announced",
+        "tone": "active",
+        "name": "Horizon Capital Catalyst Fund, equity",
+        "detail": "Announced 20 January 2026 · EU and French guarantees cover about half of IFC’s equity · Fund target €300 million",
+        "amount": "€50M",
+        "money": true,
+        "note": "Minority stakes in energy, construction and digital infrastructure companies",
+        "text": "An IFC equity investment of up to €50 million in a fund that takes minority stakes in companies that restore electricity, expand construction capacity and upgrade digital networks. It serves the energy, shelter and livelihood standards.",
+        "by": [
+          "IFC",
+          "European Commission",
+          "Government of France"
+        ],
+        "url": "https://www.ifc.org/en/pressroom/2026/ifc-backed-by-the-eu-and-france-invests-in-horizon-capital-fund-to-help-rebuild-uk"
+      },
+      {
+        "cat": "private",
+        "status": "Invested",
+        "tone": "active",
+        "name": "InVivo Group and Soufflet Agro Ukraine",
+        "detail": "Approved 27 May 2025 · Signed 21 June 2025 · Invested 27 June 2025 · Loan of up to €50 million · Risk-sharing facilities of up to €40 million",
+        "amount": "€50M",
+        "money": true,
+        "note": "Capex and working capital for Ukrainian operations; guarantees on receivables from farmers and grain buyers",
+        "text": "An IFC loan of up to €50 million to InVivo Group for the operations of its subsidiaries in Ukraine, with risk-sharing facilities that partially guarantee up to €30 million of Soufflet Agro Ukraine’s receivables from Ukrainian farmers and up to €10 million from global buyers of Ukrainian grain. It serves the food and livelihood standards.",
+        "by": [
+          "IFC"
+        ],
+        "url": "https://disclosures.ifc.org/project-detail/ESRS/50643/ukraine-farmers"
       }
     ]
   },
@@ -162,9 +511,9 @@
       },
       {
         "name": "The Power",
-        "figure": "12%",
+        "figure": "18%",
         "money": false,
-        "label": "Of energy from renewables, 2021",
+        "label": "Of electricity from renewables, 2023",
         "text": "Sun, wind, water and biomass already carry part of the load; the rest is the opportunity.",
         "alt": "Wind turbines on the steppe of southern Ukraine",
         "images": [
@@ -181,11 +530,32 @@
     "heading": "Already working in Ukraine.",
     "items": [
       {
-        "standard": "In preparation",
-        "name": "The enterprises building Perfect Ukraine",
-        "text": "The Stewards are verifying the companies and social enterprises already delivering the seven basic living standards in Ukraine. Suggest one to include.",
-        "source": "Suggest an enterprise",
-        "url": "mailto:contact@perfectnations.org?subject=An%20enterprise%20for%20Perfect%20Ukraine"
+        "standard": "Food",
+        "name": "Soufflet Agro Ukraine (InVivo Group)",
+        "text": "The Ukrainian arm of the French agricultural group InVivo, founded in Ukraine in 2007, with grain warehouses and the Slavuta Malt House. In 2025 IFC lent up to €50 million to InVivo for its Ukrainian operations and backed risk-sharing facilities on receivables from Ukrainian farmers and grain buyers.",
+        "source": "IFC, 2025",
+        "url": "https://disclosures.ifc.org/project-detail/ESRS/50643/ukraine-farmers"
+      },
+      {
+        "standard": "Water",
+        "name": "Ecosoft",
+        "text": "In 2017 the EBRD described it as Ukraine’s leading producer of water purification equipment, including pitcher-type water filters. The EBRD lent it US$3 million to expand production and storage and to start making reverse osmosis membranes, for access to clean water at affordable rates.",
+        "source": "EBRD, 2017",
+        "url": "https://www.ebrd.com/news/2017/ebrd-and-eu-help-ecosoft-improve-quality-of-drinking-water-in-ukraine.html"
+      },
+      {
+        "standard": "Health",
+        "name": "Yuria-Pharm",
+        "text": "A leading Ukrainian pharmaceutical manufacturer that sells in Ukraine and exports to more than 40 countries. The EBRD lent it €15 million, backed by an EU guarantee under the Ukraine Investment Framework, to finance its investment plans in Ukraine and Uzbekistan.",
+        "source": "EBRD, 2025",
+        "url": "https://www.ebrd.com/news/2025/ebrd-supports-leading-ukrainian-pharma-company-yuriapharm.html"
+      },
+      {
+        "standard": "Livelihood",
+        "name": "ProCredit Bank Ukraine",
+        "text": "A Ukrainian bank that lends to small and medium-sized enterprises. In October 2026 a European Investment Fund guarantee was announced that will enable it to offer up to €143 million of loans on advantageous terms to more than 700 businesses, including war-affected and veteran-led firms and women and young entrepreneurs.",
+        "source": "EIB, 2026",
+        "url": "https://www.eib.org/en/press/all/2026-350-war-affected-ukrainian-businesses-to-get-143-million-financing-boost-with-eu-guarantee-to-procredit-bank-ukraine"
       }
     ]
   },
@@ -321,5 +691,6 @@
     }
   ],
   "dispatches": [],
-  "checked": "2026-11-10T20:21Z"
+  "checked": "2026-11-10T20:21Z",
+  "reviewed": "2026-11-11T01:32Z"
 }
