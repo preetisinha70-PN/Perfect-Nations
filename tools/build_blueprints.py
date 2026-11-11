@@ -40,7 +40,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 PAGES = ROOT / 'pages'
 DATA = ROOT / 'data'
-VERSION = '6.5.1'  # rebuild for the open blueprints now on the manifest (Blueprints Steward, 11 Nov 2026)
+VERSION = '6.6'  # the lapis map: the sea of the homepage planet (the Steward-General, 11 Nov 2026)
 
 ORDER = [
     'nations-menu.html',      # the moving list of 195 nations (also on the homepage)
@@ -442,6 +442,7 @@ development (FfD) first and super intelligence (SI) second.
 v6.2: Gold line in place of the painted botanical seams (the Steward-General, 9 Nov 2026).
 v6.3: Fewer words (the Steward-General, 9 Nov 2026): one headline and one line per section.
 v6.5: light reading sections, Earthrise accents (the Steward-General, 10 Nov 2026).
+v6.6: the lapis map: the sea is the lapis lazuli of the homepage planet (the Steward-General, 11 Nov 2026).
 =========================================================================== -->
 <div id="pn-blueprints" hidden></div>
 ''' % (VERSION, today, n_live, len(nat))

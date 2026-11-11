@@ -1,5 +1,5 @@
 <!-- ===========================================================================
-PERFECT NATIONS - THE BLUEPRINTS PAGE - THE WHOLE PAGE IN ONE FILE - v6.5.1 - 2026-11-11
+PERFECT NATIONS - THE BLUEPRINTS PAGE - THE WHOLE PAGE IN ONE FILE - v6.6 - 2026-11-11
 Page 14775 (/blueprints/) holds ONE Elementor container (Full Width, padding 0) with ONE Custom HTML
 widget whose root is pn-blueprints (a short fallback, or this whole file). The Perfect Nations Live
 Pages plugin serves pages/blueprints.html from GitHub in its place, because pn-blueprints is the first
@@ -13,6 +13,7 @@ development (FfD) first and super intelligence (SI) second.
 v6.2: Gold line in place of the painted botanical seams (the Steward-General, 9 Nov 2026).
 v6.3: Fewer words (the Steward-General, 9 Nov 2026): one headline and one line per section.
 v6.5: light reading sections, Earthrise accents (the Steward-General, 10 Nov 2026).
+v6.6: the lapis map: the sea is the lapis lazuli of the homepage planet (the Steward-General, 11 Nov 2026).
 =========================================================================== -->
 <div id="pn-blueprints" hidden></div>
 
@@ -1503,10 +1504,12 @@ ends show that section's own ground, never the page or theme background behind i
 <!-- ======== part: pages/blueprints-atlas.html ======== -->
 <!-- ===========================================================================
 PERFECT NATIONS - THE BLUEPRINTS PAGE - 01 THE GOLDEN MAP, 02 THE OPEN BLUEPRINTS, 03 EVERY NATION
-part v6.5 - 2026-11-10 - kept by the Blueprints Steward
+part v6.6 - 2026-11-11 - kept by the Blueprints Steward
 This part is the body of pages/blueprints.html. Edit this file, then run tools/build_blueprints.py,
 which fills the slots (the map, the tabs, the tiles, the region lists, the counts and the settings)
 and joins it with the Nations Menu and the gold line. Never edit pages/blueprints.html by hand.
+v6.6: the lapis map (the Steward-General, 11 Nov 2026). The sea of the golden map is now the lapis lazuli of
+  the homepage planet (hero v7.1: #1F45A3 lit, #0A1D5C in shadow; was #0B2A72 and #041238), so the two match.
 v6.5: light reading sections, Earthrise accents (the Steward-General, 10 Nov 2026).
 v6.3: Fewer words (the Steward-General, 9 Nov 2026): one headline and one line per section. The hero
   lead is one sentence (FfD still before SI); the close asks its question once, beside its button.
@@ -1517,7 +1520,7 @@ v6.0 (6 Nov 2026), the page in one file:
   - One palette: 01 Earthrise, then a painted seam, 02 Lagoon, 03 ivory (the reading band). The old
     terracotta hero, sand bar and six region colours are retired, as on the homepage.
   - The golden map: the colours of the homepage planet (open blueprints bright gold, every other
-    nation antique gold, the clear dark ultramarine sea of hero v6.2 with no flecks, a gold rim) on
+    nation antique gold, the sea of the homepage planet with no flecks, a gold rim) on
     the Equal Earth projection. The region
     tabs fly the map to a region; the six region maps of the old atlas are gone, and phones no
     longer drag a map sideways.
@@ -1615,14 +1618,14 @@ sourced money figures. Copy: no contractions, curly apostrophes.
   position:relative; width:100%; margin:0 auto; aspect-ratio:var(--asp,2.4);
   max-width:calc((100vh - 330px) * var(--asp,2.4)); max-width:calc((100svh - 330px) * var(--asp,2.4)); min-height:220px;
   border-radius:18px; overflow:hidden;
-  background:radial-gradient(64% 76% at 46% 42%, #123A8E 0%, #0B2A72 46%, #07205A 78%, #041238 100%);
+  background:radial-gradient(64% 76% at 46% 42%, #2B55B6 0%, #1F45A3 46%, #15317E 78%, #0A1D5C 100%);
   box-shadow:0 28px 70px rgba(2,14,22,.45), inset 0 0 0 1px rgba(227,194,88,.3);
 }
 #pn-bpa .pnbpa-svg{ position:relative; z-index:1; display:block; width:100%; height:100%; overflow:hidden; }
 #pn-bpa .pnbpa-svg a{ cursor:pointer; }
 #pn-bpa .pnbpa-svg a:focus-visible{ outline:none; }
 #pn-bpa .pnbpa-svg a:focus-visible .pnbpa-c,#pn-bpa .pnbpa-svg a:focus-visible .pnbpa-dot{ stroke:#FFFFFF; stroke-width:2.4; }
-#pn-bpa .pnbpa-rimfill{ fill:rgba(40,100,210,.14); }
+#pn-bpa .pnbpa-rimfill{ fill:rgba(111,143,208,.12); }
 #pn-bpa .pnbpa-grat{ fill:none; stroke:rgba(227,194,88,.17); stroke-width:.8; vector-effect:non-scaling-stroke; }
 #pn-bpa .pnbpa-rim{ fill:none; stroke:var(--g); stroke-width:2.6; vector-effect:non-scaling-stroke; }
 #pn-bpa .pnbpa-lands path{ fill:#8E7840; stroke:rgba(40,28,6,.45); stroke-width:.5; vector-effect:non-scaling-stroke; }
@@ -1632,7 +1635,7 @@ sourced money figures. Copy: no contractions, curly apostrophes.
 #pn-bpa .pnbpa-c--soon.is-hot{ fill:#D6BC7A; }
 #pn-bpa .pnbpa-c--live.is-hot{ fill:#FFE79A; }
 #pn-bpa .pnbpa-dot{ vector-effect:non-scaling-stroke; }
-#pn-bpa .pnbpa-dot--soon{ fill:#B4985A; stroke:rgba(8,29,82,.9); stroke-width:1; }
+#pn-bpa .pnbpa-dot--soon{ fill:#B4985A; stroke:rgba(10,29,92,.9); stroke-width:1; }
 #pn-bpa .pnbpa-dot--live{ fill:var(--gb); stroke:#FFF6D2; stroke-width:1.4; }
 #pn-bpa .pnbpa-dot.is-hot{ fill:#FFE79A; }
 #pn-bpa .pnbpa-map.is-wide .pnbpa-rim{ stroke-opacity:.5; }
