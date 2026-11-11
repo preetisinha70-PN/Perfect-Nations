@@ -1,22 +1,22 @@
 {
   "nation": "Uganda",
   "page_version": "9.0",
-  "updated": "2026-11-10",
+  "updated": "2026-11-11",
   "steward": {
     "name": "Daniel Okello",
     "role": "Nation Steward of Uganda"
   },
   "population": 51384894,
   "hero": {
-    "lead": "A nation of 51.4 million whose electricity is nine-tenths renewable, that commissioned the 600 megawatt Karuma dam in 2024, and where nearly half of citizens are not yet connected.",
+    "lead": "A nation of 51.4 million whose electricity is almost entirely renewable, that commissioned the 600 megawatt Karuma dam in 2024, and where nearly half of citizens are not yet connected.",
     "stats": [
       {
         "value": "600 MW",
         "label": "Karuma hydropower, 2024"
       },
       {
-        "value": "90.0%",
-        "label": "Renewable share of electricity output"
+        "value": "100%",
+        "label": "Of electricity from renewables, 2023"
       },
       {
         "value": "55.3%",
@@ -25,42 +25,42 @@
     ]
   },
   "capital": {
-    "heading": "8 instruments. A dam, an access programme and the city around Kampala.",
+    "heading": "25 instruments. A railway from Malaba to Kampala, power to the last mile, and health, schools, farms and cities.",
     "record": [
       {
-        "value": "600 MW",
+        "value": "$37.12B",
         "money": true,
-        "text": "Karuma Hydropower Plant: Financed 15% by the Government of Uganda and 85% by the Export-Import Bank of China",
-        "source": "Government of Uganda",
-        "url": "https://statehouse.go.ug/president-museveni-commissions-600mw-karuma-hydropower-plant-paving-the-way-for-ugandas-energy-and-economic-growth/"
+        "text": "Total public debt stock at the end of June 2026, up from $32.30 billion a year earlier: domestic debt $20.82 billion and external debt $16.30 billion, 54.3% of GDP in nominal terms",
+        "source": "Ministry of Finance, 2026",
+        "url": "https://finance.go.ug/sites/default/files/reports/Debt%20Statistical%20Bulletin%20June%202026.pdf"
       },
       {
-        "value": "$608M",
+        "value": "€650.75M",
         "money": true,
-        "text": "Electricity Access Scale-up Project (EASP): The last mile",
-        "source": "World Bank",
-        "url": "https://projects.worldbank.org/en/projects-operations/project-detail/P166685"
+        "text": "Islamic Development Bank financing approved in June 2026 for the Malaba–Kampala Standard Gauge Railway, the largest amount its Board has approved for a single project in Uganda",
+        "source": "Ministry of Finance, 2026",
+        "url": "https://finance.go.ug/node/870"
       },
       {
-        "value": "$566M",
+        "value": "$1.7B",
         "money": true,
-        "text": "Greater Kampala Metropolitan Area Urban Development Program: Paid on verified results",
-        "source": "World Bank",
-        "url": "https://projects.worldbank.org/en/projects-operations/project-detail/P175660"
+        "text": "United States health support of approximately $1.7 billion for 2026 to 2030, under a Strategic Objective Agreement signed in September 2026; the United States intends to channel it through government systems as budget support",
+        "source": "Ministry of Finance, 2026",
+        "url": "https://finance.go.ug/node/940"
       },
       {
-        "value": "$350M",
+        "value": "$4B",
         "money": true,
-        "text": "Uganda Climate Smart Agricultural Transformation Project: Farms",
-        "source": "World Bank",
-        "url": "https://projects.worldbank.org/en/projects-operations/project-detail/P173296"
+        "text": "Existing World Bank Group portfolio in Uganda, as the Group launched a ten-year strategy for 2026 to 2035 and anticipates an indicative lending programme of about $2 billion per IDA three-year cycle",
+        "source": "World Bank, 2026",
+        "url": "https://www.worldbank.org/en/news/press-release/2026/06/04/world-bank-group-launches-ten-year-strategy-to-drive-jobs-and-prosperity-in-uganda"
       },
       {
-        "value": "$305M",
+        "value": "$568M",
         "money": true,
-        "text": "Integrated Water Management and Development Project: Water",
-        "source": "World Bank",
-        "url": "https://projects.worldbank.org/en/projects-operations/project-detail/P163782"
+        "text": "Electricity Access Scale-up Project: IDA financing for the last mile, with 1,073,500 grid connections in the indicative investment plan",
+        "source": "World Bank, 2022",
+        "url": "https://documents1.worldbank.org/curated/en/300941649085309748/pdf/Uganda-Electricity-Access-Scale-up-Project.pdf"
       }
     ],
     "register": [
@@ -69,11 +69,11 @@
         "status": "Completed",
         "tone": "completed",
         "name": "Karuma Hydropower Plant",
-        "detail": "Commissioned 26 September 2024 · Bilateral loan",
+        "detail": "Commissioned 26 September 2024 · Built by Sinohydro",
         "amount": "600 MW",
-        "money": true,
+        "money": false,
         "note": "Financed 15% by the Government of Uganda and 85% by the Export-Import Bank of China",
-        "text": "A 600 MW run-of-river plant on the Nile, built by Sinohydro.",
+        "text": "A 600 MW hydropower plant in Kiryandongo District, built by Sinohydro, which the chair of the Karuma and Isimba Hydropower Project Steering Committee called “Africa’s largest underground hydropower plant” at its commissioning. It serves the energy standard.",
         "by": [
           "Government of Uganda",
           "Export-Import Bank of China"
@@ -82,108 +82,372 @@
       },
       {
         "cat": "multi",
-        "status": "Active",
+        "status": "Approved",
         "tone": "active",
-        "name": "Electricity Access Scale-up Project (EASP)",
-        "detail": "Approved 31 March 2022 · Investment project financing",
-        "amount": "$608M",
+        "name": "Uganda–Tanzania Interconnector Project (UTIP)",
+        "detail": "Approved, announced 18 June 2026 · IDA · First phase of the $1.6 billion RETRADE-EA programme · About 260 km of 400 kV double-circuit line",
+        "amount": "$250M",
         "money": true,
-        "note": "The last mile",
-        "text": "Connects households, businesses and public institutions to the grid.",
+        "note": "1,000 MW of transfer capacity between Uganda and Tanzania",
+        "text": "A new high-voltage line from Wobulenzi to Masaka and Mutukula, on the border with Tanzania, that links Uganda to the regional grid so that surplus hydropower can be sold. The World Bank expects at least 452 gigawatt-hours a year to be traded between Uganda and Tanzania by 2031 (a projection). It serves the energy and livelihood standards.",
         "by": [
           "World Bank"
         ],
-        "url": "https://projects.worldbank.org/en/projects-operations/project-detail/P166685"
+        "url": "https://www.worldbank.org/en/news/press-release/2026/06/18/eastern-africa-set-to-gain-more-reliable-affordable-power-with-world-bank-group-support"
       },
       {
         "cat": "multi",
-        "status": "Active",
+        "status": "Approved",
         "tone": "active",
-        "name": "Greater Kampala Metropolitan Area Urban Development Program",
-        "detail": "Approved 31 May 2022 · Program-for-Results",
-        "amount": "$566M",
+        "name": "Uganda Cities and Municipalities Infrastructure Development (UCMID)",
+        "detail": "Approved, announced 31 March 2026 · IDA · Program-for-Results · Six years",
+        "amount": "$540M",
         "money": true,
-        "note": "Paid on verified results",
-        "text": "Builds infrastructure and services for the capital region.",
+        "note": "5.6 million people, among them 600,000 refugees",
+        "text": "Results-based financing for climate-smart urban infrastructure in 10 cities, 26 municipalities and 13 refugee-hosting districts, succeeding the USMID programme that closed in 2024. At least 40,000 direct jobs are expected, 20,000 of them permanent. It serves the shelter and livelihood standards.",
         "by": [
           "World Bank"
         ],
-        "url": "https://projects.worldbank.org/en/projects-operations/project-detail/P175660"
+        "url": "https://www.worldbank.org/en/news/press-release/2026/03/31/world-bank-supports-uganda-s-cities-and-municipalities-to-build-climate-smart-infrastructure-and-create-jobs"
       },
       {
         "cat": "multi",
-        "status": "Active",
+        "status": "Approved",
+        "tone": "active",
+        "name": "Strengthening Public Investment and Asset Management for Growth and Resilience (PIM Plus)",
+        "detail": "Approved 3 September 2025 · IDA · Borrowing approved by Parliament 29 October 2025",
+        "amount": "$200M",
+        "money": true,
+        "note": "Public investment and asset management",
+        "text": "Strengthens government efficiency, accountability and the sustainability of public investment and asset management. It serves all seven standards through better public investment.",
+        "by": [
+          "World Bank"
+        ],
+        "url": "https://documents1.worldbank.org/curated/en/099617106092693627/pdf/SECBOS-efe47dfe-299a-410b-8431-8f55e6a22868.pdf"
+      },
+      {
+        "cat": "multi",
+        "status": "Approved",
+        "tone": "active",
+        "name": "Uganda Learning Acceleration Program (ULEARN)",
+        "detail": "Approved 4 June 2025 · IDA · Borrowing approved by Parliament 29 October 2025",
+        "amount": "$210M",
+        "money": true,
+        "note": "Learning environments in target schools",
+        "text": "Aims to improve learning environments in target schools. It serves the education standard, where 18.1% of children read a simple text by the end of primary school (World Bank, 2014).",
+        "by": [
+          "World Bank"
+        ],
+        "url": "https://documents1.worldbank.org/curated/en/099617106092693627/pdf/SECBOS-efe47dfe-299a-410b-8431-8f55e6a22868.pdf"
+      },
+      {
+        "cat": "multi",
+        "status": "Approved",
+        "tone": "active",
+        "name": "Development Response to Displacement Impacts Project, Phase II (DRDIP II)",
+        "detail": "Approved 4 June 2025 · IDA · Parliament approved borrowing of $180.5 million for it on 29 October 2025",
+        "amount": "$328M",
+        "money": true,
+        "note": "Refugees and host communities",
+        "text": "The second phase of the Development Response to Displacement Impacts Project, which seeks to expand economic opportunities for host communities and refugees. It serves the livelihood standard.",
+        "by": [
+          "World Bank"
+        ],
+        "url": "https://documents1.worldbank.org/curated/en/099617106092693627/pdf/SECBOS-efe47dfe-299a-410b-8431-8f55e6a22868.pdf"
+      },
+      {
+        "cat": "multi",
+        "status": "Approved",
+        "tone": "active",
+        "name": "Northern Uganda Social Action Fund IV (NUSAF IV)",
+        "detail": "Approved 1 April 2025 · IDA · Five years · Borrowing approved by Parliament 29 October 2025",
+        "amount": "$250M",
+        "money": true,
+        "note": "Over three million beneficiaries expected",
+        "text": "The fourth Northern Uganda Social Action Fund, which strengthens adaptive social protection systems in sub-regions that include West Nile, Acholi, Lango, Teso and Karamoja. It serves the food and livelihood standards.",
+        "by": [
+          "World Bank"
+        ],
+        "url": "https://documents1.worldbank.org/curated/en/099617106092693627/pdf/SECBOS-efe47dfe-299a-410b-8431-8f55e6a22868.pdf"
+      },
+      {
+        "cat": "multi",
+        "status": "Approved",
         "tone": "active",
         "name": "Uganda Climate Smart Agricultural Transformation Project",
-        "detail": "Approved 22 December 2022 · Investment project financing",
+        "detail": "Approved 22 December 2022 · IDA credit $325 million and IDA grant $25 million · Investment Project Financing · Expected closing 31 December 2028",
         "amount": "$350M",
         "money": true,
-        "note": "Farms",
-        "text": "Raises farm productivity and resilience.",
+        "note": "About 760,000 households, 3.9 million people, to benefit directly",
+        "text": "Climate-smart agriculture for smallholder farmers in 69 districts, seven of them refugee-hosting, run by the Ministry of Agriculture, Animal Industry and Fisheries over six years. It serves the food and livelihood standards.",
         "by": [
           "World Bank"
         ],
-        "url": "https://projects.worldbank.org/en/projects-operations/project-detail/P173296"
+        "url": "https://documents1.worldbank.org/curated/en/099050012052240654/pdf/BOSIB05e6fc47e0770aeec00ad5e11774f2.pdf"
       },
       {
         "cat": "multi",
-        "status": "Active",
+        "status": "Approved",
         "tone": "active",
-        "name": "Integrated Water Management and Development Project",
-        "detail": "Approved 14 June 2018 · Investment project financing",
-        "amount": "$305M",
-        "money": true,
-        "note": "Water",
-        "text": "Water supply, sanitation and water resource management.",
-        "by": [
-          "World Bank"
-        ],
-        "url": "https://projects.worldbank.org/en/projects-operations/project-detail/P163782"
-      },
-      {
-        "cat": "multi",
-        "status": "Active",
-        "tone": "active",
-        "name": "Generating Growth Opportunities and Productivity for Women Enterprises",
-        "detail": "Approved 17 June 2022 · Investment project financing",
+        "name": "Generating Growth Opportunities and Productivity for Women Enterprises (GROW)",
+        "detail": "Approved 17 June 2022 · IDA grant, SDR 161.5 million · Investment Project Financing · Expected closing 31 December 2027",
         "amount": "$217M",
         "money": true,
-        "note": "Women’s businesses",
-        "text": "Finance and support for women-owned enterprises.",
+        "note": "Women’s businesses, including refugees and women in host communities",
+        "text": "Finance and business support for women entrepreneurs, including refugees and women entrepreneurs from host communities. It serves the livelihood standard.",
         "by": [
           "World Bank"
         ],
-        "url": "https://projects.worldbank.org/en/projects-operations/project-detail/P176747"
+        "url": "https://documents1.worldbank.org/curated/en/527091655323259747/pdf/Uganda-Generating-Growth-Opportunities-and-Productivity-for-Women-Enterprises-Uganda-Project.pdf"
       },
       {
         "cat": "multi",
-        "status": "Active",
+        "status": "Approved",
         "tone": "active",
-        "name": "Irrigation for Climate Resilience Project",
-        "detail": "Approved 18 June 2020 · Investment project financing",
-        "amount": "$169.2M",
+        "name": "Greater Kampala Metropolitan Area Urban Development Program",
+        "detail": "Approved 31 May 2022 · IDA credit $518 million and IDA grant $48 million · Program-for-Results · Closing 31 December 2027 · Borrowing approved by Parliament 23 August 2023",
+        "amount": "$566M",
         "money": true,
-        "note": "Irrigation",
-        "text": "Brings irrigation to farming communities.",
+        "note": "With $571.31 million of counterpart funding, a $1.14 billion programme",
+        "text": "Results-based financing for roads, infrastructure and services in Kampala and eight surrounding local governments, through the Ministry for Kampala Capital City and Metropolitan Affairs. It serves the shelter and livelihood standards.",
         "by": [
           "World Bank"
         ],
-        "url": "https://projects.worldbank.org/en/projects-operations/project-detail/P163836"
+        "url": "https://documents1.worldbank.org/curated/en/217181652392646709/pdf/Uganda-Greater-Kampala-Metropolitan-Area-Urban-Development-Program-Program-for-Results.pdf"
       },
       {
         "cat": "multi",
-        "status": "Active",
+        "status": "Approved",
+        "tone": "active",
+        "name": "Electricity Access Scale-up Project (EASP)",
+        "detail": "Approved 31 March 2022 · IDA credit $331.5 million and IDA grant $236.5 million · Expected closing 30 June 2027",
+        "amount": "$568M",
+        "money": true,
+        "note": "Plus $30 million from the Clean Technology Fund and $10 million from ESMAP; total financing $638 million",
+        "text": "IDA financing for last-mile grid connections, with 1,073,500 connections in the indicative investment plan. It serves the energy standard.",
+        "by": [
+          "World Bank"
+        ],
+        "url": "https://documents1.worldbank.org/curated/en/300941649085309748/pdf/Uganda-Electricity-Access-Scale-up-Project.pdf"
+      },
+      {
+        "cat": "multi",
+        "status": "Expired",
+        "tone": "completed",
+        "name": "Extended Credit Facility",
+        "detail": "Approved 28 June 2021 · SDR 722 million, 200 percent of quota · Fifth review completed 6 March 2024 · “the expiration of the 2021–24 Extended Credit Facility arrangement” (IMF, July 2026)",
+        "amount": "$1B",
+        "money": true,
+        "note": "About $870 million (SDR 631.75 million) disbursed by March 2024",
+        "text": "IMF lending of about $1 billion under the 2021–24 arrangement, of which about $870 million was disbursed by March 2024. Since the arrangement expired, the IMF Executive Board has concluded a Post-Financing Assessment, on 12 January 2026, and the 2026 Article IV consultation, in July 2026.",
+        "by": [
+          "International Monetary Fund"
+        ],
+        "url": "https://www.imf.org/en/News/Articles/2024/03/06/pr-2472-uganda-imf-completes-fifth-review-under-the-extended-credit-facility-arrangement"
+      },
+      {
+        "cat": "multi",
+        "status": "Approved",
         "tone": "active",
         "name": "Uganda Secondary Education Expansion Project",
-        "detail": "Approved 23 July 2020 · Investment project financing",
+        "detail": "Approved 23 July 2020 · IDA credit $90 million and IDA grant $60 million",
         "amount": "$150M",
         "money": true,
-        "note": "Schools",
-        "text": "Expands access to secondary schooling.",
+        "note": "Lower secondary schooling for underserved areas",
+        "text": "Enhances access to lower secondary education, focusing on underserved populations in targeted areas. It serves the education standard.",
         "by": [
           "World Bank"
         ],
-        "url": "https://projects.worldbank.org/en/projects-operations/project-detail/P166570"
+        "url": "https://www.worldbank.org/en/news/loans-credits/2020/07/23/uganda-secondary-education-expansion-project"
+      },
+      {
+        "cat": "multi",
+        "status": "Approved",
+        "tone": "active",
+        "name": "Irrigation for Climate Resilience Project",
+        "detail": "Approved 18 June 2020 · IDA credit, SDR 122.9 million · Investment Project Financing · Expected closing at appraisal 30 April 2026",
+        "amount": "$169.2M",
+        "money": true,
+        "note": "63,200 farmers as primary beneficiaries",
+        "text": "Gives farmers in the project areas access to irrigation and other agricultural services. It serves the food and livelihood standards.",
+        "by": [
+          "World Bank"
+        ],
+        "url": "https://documents1.worldbank.org/curated/en/860371591125380263/pdf/Uganda-Irrigation-for-Climate-Resilience-Project.pdf"
+      },
+      {
+        "cat": "multi",
+        "status": "Approved",
+        "tone": "active",
+        "name": "Integrated Water Management and Development Project",
+        "detail": "Approved 14 June 2018 · IDA credit $251 million and IDA grant $29 million at approval · Revised closing date of 31 January 2026 proposed in a 2024 restructuring paper",
+        "amount": "$345M",
+        "money": true,
+        "note": "Total commitment in the World Bank Group’s 2026 portfolio snapshot; $280 million at approval, with $25 million of parallel KfW financing",
+        "text": "Water supply and sanitation services, integrated water resources management and the operational performance of service providers, including new coverage for refugees and host communities. It serves the water and shelter standards.",
+        "by": [
+          "World Bank"
+        ],
+        "url": "https://documents1.worldbank.org/curated/en/099617106092693627/pdf/SECBOS-efe47dfe-299a-410b-8431-8f55e6a22868.pdf"
+      },
+      {
+        "cat": "regional",
+        "status": "Approved",
+        "tone": "active",
+        "name": "Uganda Airports Development Programme, Phase 1: Arua Airport",
+        "detail": "Approved, announced 18 June 2026 · AfDB loan €141.15 million and ADF loan €14.84 million · Total cost €157.76 million",
+        "amount": "€155.99M",
+        "money": true,
+        "note": "A 3.5-kilometre runway able to take a Boeing 777",
+        "text": "African Development Bank Group financing to upgrade Arua Airport, with a 3.5-kilometre paved runway, a passenger terminal for 700,000 travellers a year and a cargo terminal for 25,000 tonnes a year. It serves the livelihood standard through regional trade and tourism.",
+        "by": [
+          "African Development Bank",
+          "African Development Fund"
+        ],
+        "url": "https://allafrica.com/stories/202606180620.html"
+      },
+      {
+        "cat": "regional",
+        "status": "Approved",
+        "tone": "active",
+        "name": "Standard Gauge Railway (Malaba–Kampala) Project",
+        "detail": "Approved June 2026 by the 367th meeting of the IsDB Board of Executive Directors, Baku · Release of 16 June 2026 · Financial close targeted by the Government for November 2026",
+        "amount": "€650.75M",
+        "money": true,
+        "note": "The largest amount the IsDB Board has approved for a single project in Uganda, according to the Ministry of Finance",
+        "text": "Islamic Development Bank financing to build the Malaba–Kampala standard gauge railway, including, according to the Ministry of Finance, the 553-metre Jinja Nile Bridge, the 2.12-kilometre Mbuya–Kampala tunnel, six stations and three workshops. The IsDB expects lower transport costs and travel times and about 3,000 jobs; it serves the livelihood and food standards.",
+        "by": [
+          "Islamic Development Bank"
+        ],
+        "url": "https://www.isdb.org/news/isdb-board-of-executive-directors-approves-us-28-billion-in-major-development-financing-at-2026-isdb-group-annual-meetings-in-baku"
+      },
+      {
+        "cat": "regional",
+        "status": "Approved",
+        "tone": "active",
+        "name": "Uganda Multipurpose Water for Climate Resilient Irrigation Development and Agro-Industrialization Programme",
+        "detail": "Approved, announced 12 June 2026 · African Development Fund loan · Total cost $207 million, with the OPEC Fund, the Government of Uganda and others",
+        "amount": "$140M",
+        "money": true,
+        "note": "More than 4,000 hectares at first, with potential to reach 13,000",
+        "text": "An African Development Fund loan for water-transfer infrastructure and irrigation networks, expected to create more than 13,000 direct jobs and reach more than 121,000 households directly, and about 21,000 schoolchildren through school feeding. It serves the food, water and livelihood standards.",
+        "by": [
+          "African Development Bank",
+          "African Development Fund",
+          "OPEC Fund for International Development"
+        ],
+        "url": "https://fr.allafrica.com/stories/202606150816.html"
+      },
+      {
+        "cat": "regional",
+        "status": "Approved",
+        "tone": "active",
+        "name": "Uganda Rural Electricity Access Project (UREAP), Phases I and II",
+        "detail": "Approved 7 April 2026 · €7.33 million additional financing for Phase I · Phase II AfDB loan €86.58 million, with a €12.93 million loan and a €1.72 million grant from the Climate Investment Funds · Phase II total cost €104.39 million",
+        "amount": "€93.91M",
+        "money": true,
+        "note": "259,723 new grid and mini-grid connections over six years in Phase II",
+        "text": "Phase II builds about 624 km of medium-voltage and 2,154 km of low-voltage lines to give first-time electricity to nearly 1.18 million people, including more than 250,000 households and 3,000 businesses; the Phase I top-up completes compensation and outstanding works. It serves the energy standard.",
+        "by": [
+          "African Development Bank",
+          "Climate Investment Funds"
+        ],
+        "url": "https://allafrica.com/stories/202604220738.html"
+      },
+      {
+        "cat": "regional",
+        "status": "Approved",
+        "tone": "active",
+        "name": "Busega–Mpigi Expressway, additional financing (Multinational Busega–Mpigi and Kagitumba–Kayonza–Rusumo Roads Project)",
+        "detail": "Approved, announced 6 November 2025 · ADB loan €188.18 million, ADF loan €28.31 million and a $1 million NEPAD-IPPF grant · Government of Uganda €30.98 million",
+        "amount": "€217.37M",
+        "money": true,
+        "note": "Uganda section now costed at €424.61 million, from €176.26 million",
+        "text": "Completes the 27.3-kilometre Busega–Mpigi expressway on the Northern Corridor from Kampala to Kigali, with interchanges, seven new bridges, toll plazas and 54 km of lined drainage. It serves the livelihood standard.",
+        "by": [
+          "African Development Bank",
+          "African Development Fund"
+        ],
+        "url": "https://allafrica.com/stories/202511070489.html"
+      },
+      {
+        "cat": "regional",
+        "status": "Approved",
+        "tone": "active",
+        "name": "Uganda Biogas and Electric Cooking Project",
+        "detail": "Approved, announced 7 May 2025 · Mainly from the African Development Fund’s Climate Action Window, 64% of the cost · Co-funded by the UK FCDO and the Government of Uganda",
+        "amount": "$8.79M",
+        "money": true,
+        "note": "About 77,000 electric cooking devices and 47 biogas plants",
+        "text": "Builds 47 biogas plants for schools, markets and farming communities and provides about 77,000 affordable electric cooking devices in major urban centres, with standards, repair services and distribution for the appliances. It reaches clean cooking, which sets Uganda’s Coverage: 2% of Ugandans cook with clean fuels and technology.",
+        "by": [
+          "African Development Bank",
+          "African Development Fund",
+          "UK Foreign, Commonwealth and Development Office"
+        ],
+        "url": "https://allafrica.com/stories/202505100067.html"
+      },
+      {
+        "cat": "regional",
+        "status": "Approved",
+        "tone": "active",
+        "name": "Uganda–South Sudan Electricity Interconnection Project",
+        "detail": "Approved 13 December 2024 by the ADF Board · ADF loan to Uganda · 299 km, 150 km of it in Uganda · Total cost $260 million",
+        "amount": "$119.21M",
+        "money": true,
+        "note": "Part of $153.66 million from the ADF, with a $32.5 million grant to South Sudan",
+        "text": "An electricity interconnection from Gumbo, near Juba, to Olwiyo, with new 400/132/33 kV substations at Gumbo and at Biba on the border, and upgrades at the Karuma and Olwiyo substations. It links the grids of Uganda and South Sudan and serves the energy and livelihood standards.",
+        "by": [
+          "African Development Fund"
+        ],
+        "url": "https://allafrica.com/stories/202502130660.html"
+      },
+      {
+        "cat": "bilat",
+        "status": "Signed",
+        "tone": "active",
+        "name": "United States–Uganda health cooperation: Strategic Objective Agreement",
+        "detail": "Signed, announced 8 September 2026 · Implements the bilateral health MOU of 10 December 2025 · 2026 to 2030 · The United States intends to channel the support through government systems as budget support",
+        "amount": "$1.7B",
+        "money": true,
+        "note": "About Shs 6.42 trillion; under the MOU, Uganda pledges to raise its own health spending by $577 million",
+        "text": "United States support of approximately $1.7 billion for the prevention, detection and response to emerging and existing infectious disease threats, in a shift from mostly off-budget assistance to government-to-government financing. The MOU’s priorities are outbreak response, reducing the burden of disease, strengthening frontline workers and data digitisation for accountability; it serves the health standard.",
+        "by": [
+          "United States Government",
+          "Government of Uganda"
+        ],
+        "url": "https://finance.go.ug/node/940"
+      },
+      {
+        "cat": "bilat",
+        "status": "Signed",
+        "tone": "active",
+        "name": "Project for the Reconstruction of Karuma Bridge",
+        "detail": "Grant agreement signed 25 March 2025, Kampala · Japanese grant aid · 60 months, including detailed design and bidding · Executing agency: Ministry of Works and Transport",
+        "amount": "JPY 4.94B",
+        "money": true,
+        "note": "JPY 4,939 million",
+        "text": "A JICA grant to rebuild the Karuma Bridge and its approach road on the main road between Kiryandongo and Nwoya districts, improving traffic flow and road safety on the northern corridor. It serves the livelihood standard.",
+        "by": [
+          "JICA"
+        ],
+        "url": "https://www.jica.go.jp/english/information/press/2024/20250327_12.html"
+      },
+      {
+        "cat": "private",
+        "status": "Signed",
+        "tone": "active",
+        "name": "Support Rural Livelihoods Uganda, loan for MSMEs (Stanbic Bank Uganda)",
+        "detail": "Approved 15 May 2025 · Signed 31 July 2025 in two tranches of €25 million and €75 million · Credit facility for on-lending",
+        "amount": "€100M",
+        "money": true,
+        "note": "€80 million for agricultural projects and €20 million for women borrowers",
+        "text": "A European Investment Bank credit facility to Stanbic Bank Uganda for on-lending to micro, small and medium-sized enterprises and mid-caps, focused on sustainable agriculture, food security and women’s economic empowerment, jointly with the Gates Foundation. It serves the food and livelihood standards.",
+        "by": [
+          "European Investment Bank",
+          "Stanbic Bank Uganda"
+        ],
+        "url": "https://www.eib.org/en/projects/all/20230768"
       }
     ]
   },
@@ -207,9 +471,9 @@
       },
       {
         "name": "The Clean Grid",
-        "figure": "90.0%",
+        "figure": "100%",
         "money": false,
-        "label": "Renewable share of electricity output, 2021",
+        "label": "Of electricity from renewables, 2023",
         "text": "Clean power, reaching 55.3% of citizens.",
         "alt": "Power lines across the Ugandan countryside",
         "images": [
@@ -271,11 +535,53 @@
     "heading": "Already working in Uganda.",
     "items": [
       {
-        "standard": "In preparation",
-        "name": "The enterprises building Perfect Uganda",
-        "text": "The Stewards are verifying the companies and social enterprises already delivering the seven basic living standards in Uganda. Suggest one to include.",
-        "source": "Suggest an enterprise",
-        "url": "mailto:contact@perfectnations.org?subject=An%20enterprise%20for%20Perfect%20Uganda"
+        "standard": "Food",
+        "name": "Pearl Dairy",
+        "text": "Established in Uganda in 2009, it makes UHT and powder milks, flavoured milks, yoghurts, butter and honey. In 2023 IFC approved up to $8.75 million, a concessional subordinated loan under the GAFSP Private Sector Window, alongside a loan package of up to $35 million from IFC and FMO, for capacity expansion that includes its powder milk plant in Uganda.",
+        "source": "IFC, 2023",
+        "url": "https://disclosures.ifc.org/project-detail/SII/47227/pearl-dairy-ivm"
+      },
+      {
+        "standard": "Water",
+        "name": "Water Mission Uganda",
+        "text": "Has worked in Uganda since 2007 and serves nearly 1.1 million people through community-based piped water systems, emergency water treatment, latrines, handwashing stations and school washrooms. It works with UNHCR in refugee settlements, in the West Nile (Yumbe, Terego, Madi Okolo) and in the East Nile (Luuka, Buyende).",
+        "source": "Water Mission",
+        "url": "https://watermission.org/about/offices/uganda"
+      },
+      {
+        "standard": "Shelter",
+        "name": "Housing Finance Bank",
+        "text": "A partner of AFD since 2011, it rolls out housing microfinance through its 19 branches across Uganda. In 2020 it signed a €10 million AFD line of credit to deploy its housing microfinance and affordable housing offer to low- and middle-income households who do not have access to an adequate financial offer.",
+        "source": "AFD, 2020",
+        "url": "https://www.afd.fr/en/actualites/communique-de-presse/hfb-and-afd-sign-eu105-million-agreement-towards-affordable-housing-uganda"
+      },
+      {
+        "standard": "Energy",
+        "name": "Fenix International, an ENGIE company",
+        "text": "Sells solar home systems in Uganda under pay-as-you-go contracts. In 2020 the EIB lent it $12.5 million to roll out 240,000 solar home systems, so that over a million people across Uganda could have electricity for the first time.",
+        "source": "EIB, 2020",
+        "url": "https://eib.org/press/all/2020-207-14-million-ugandans-to-access-reliable-and-affordable-energy-under-new-eib-engie-initiative"
+      },
+      {
+        "standard": "Education",
+        "name": "Educate!",
+        "text": "Launched its flagship in-school model, the Educate! Experience, in Uganda in 2009. It gives secondary students leadership, entrepreneurship and workforce readiness training, with mentorship, to start real businesses at school.",
+        "source": "Educate!",
+        "url": "https://www.experienceeducate.org/wherewework"
+      },
+      {
+        "standard": "Health",
+        "name": "Living Goods",
+        "text": "Began its community health programme in Uganda in 2007 and supports over 2,400 community health workers, known locally as Village Health Teams, reaching 1.4 million Ugandans with essential health care. The Ministry of Health chose it to lead the digital eCHIS rollout in six districts, completed in late 2023.",
+        "source": "Living Goods",
+        "url": "https://livinggoods.org/where-we-work/uganda/"
+      },
+      {
+        "standard": "Livelihood",
+        "name": "Centenary Bank",
+        "text": "Lends to micro-enterprises under a €50 million EIB Global credit line, part of a €100 million programme signed in 2024. In the first year more than 24,000 micro-enterprises received financing, over 60% of the beneficiaries were women and 75% of the projects were in rural areas.",
+        "source": "EIB, 2026",
+        "url": "https://www.eib.org/en/press/all/2026-270-over-24000-ugandan-micro-businesses-receive-financing-from-eib-global-in-partnership-with-centenary-bank"
       }
     ]
   },
@@ -411,5 +717,6 @@
     }
   ],
   "dispatches": [],
-  "checked": "2026-11-10T20:21Z"
+  "checked": "2026-11-10T20:21Z",
+  "reviewed": "2026-11-11T00:46Z"
 }
