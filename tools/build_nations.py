@@ -99,7 +99,8 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 PAGES, DATA, HERE = ROOT / 'pages', ROOT / 'data', ROOT / 'tools' / 'nation'
-VERSION = '12.3'  # the first edition of a new blueprint: the Letter stands alone until its portrait is painted, the Steward's initials until the photo; new nations join the manifest (10 Nov 2026)
+VERSION = '12.4'  # Voices of Perfect Nations: great local leaders, honest, dedicated and committed to basic standards of living for every citizen (the Steward-General, 11 Nov 2026)
+# v12.3: the first edition of a new blueprint: the Letter stands alone until its portrait is painted, the Steward's initials until the photo; new nations join the manifest (10 Nov 2026)
 # v12.2: the page scripts are written so the WordPress formatter leaves them alone: the moving globe starts on every blueprint, Mexico included (10 Nov 2026)
 # v12.1: the Earth picture of the globe comes from the repository (jsDelivr, then GitHub), then the Media Library (10 Nov 2026)
 # v12.0: light reading sections, Earthrise accents (the Steward-General, 10 Nov 2026)
@@ -931,9 +932,9 @@ def work(d, p):
         '<li id="bp-writings"><p class="bpx-co3__k">Writings</p><h4>Write Perfect %s into being.</h4>'
         '<p>Up to 1,500 words on your vision of Perfect %s, published with your name.</p>'
         '<a class="bpx-btn bpx-btn--line" href="%s">Submit your writing</a></li>'
-        '<li id="bp-voices"><p class="bpx-co3__k">Voices of %s <span class="bpx-air"><i aria-hidden="true"></i>Launching soon</span></p>'
-        '<h4 id="bp-voices-h">The people already building it.</h4>'
-        '<p>Every guest answers one question: &#8220;What does %s already own, and how could it pay for a decent life for every citizen?&#8221;</p>'
+        '<li id="bp-voices"><p class="bpx-co3__k">Voices of Perfect Nations <span class="bpx-air"><i aria-hidden="true"></i>Launching soon</span></p>'
+        '<h4 id="bp-voices-h">The local leaders already building Perfect %s.</h4>'
+        '<p>Great local leaders: honest, dedicated and committed to basic standards of living for all. Every guest answers one question: &#8220;What does %s already own, and how could it pay for a decent life for every citizen?&#8221;</p>'
         '<div class="bpx-btns"><a class="bpx-btn bpx-btn--line" href="https://perfectnations.org/contact/?nation=%s&amp;topic=nominate-self" target="_blank" rel="noopener noreferrer">Nominate yourself</a>'
         '<a class="bpx-btn bpx-btn--line" href="https://perfectnations.org/contact/?nation=%s&amp;topic=guest" target="_blank" rel="noopener noreferrer">Suggest a guest</a></div></li>'
         '<li><p class="bpx-co3__k">Co-designers</p><h4>Join the community.</h4><p>%s</p>'

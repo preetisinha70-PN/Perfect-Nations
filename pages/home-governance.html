@@ -1,5 +1,9 @@
 <!-- ===========================================================================
-PERFECT NATIONS - HOMEPAGE - GOVERNANCE FIRST AND THE PERFECT NATIONS CUP - v1.1 - 2026-11-10
+PERFECT NATIONS - HOMEPAGE - GOVERNANCE FIRST AND THE PERFECT NATIONS CUP - v1.2 - 2026-11-11
+v1.2 (homepage v12.4; the Steward-General, 11 Nov 2026: "bring in the aspect of great local leadership, which is
+honest, dedicated, and committed to improving the basic standards of living for all citizens ... in a short line
+after governance"): one line under the statement: great local leadership, honest, dedicated and committed to
+basic standards of living for every citizen.
 v1.1 (homepage v12.0; the Steward-General, 10 Nov 2026: "the cup is now used for governance and assets ... may we
 use the full logo for governance?"): the Perfect Nations Cup is the whole logo, on a seal (an Earthrise disc with
 a gold rim), and no longer the cup alone. The rule: each part of the logo stands for one step (the cup for
@@ -64,6 +68,10 @@ Part of the one-file homepage (pages/home.html, built by tools/build_home.py). R
 }
 #pn-governance .pngv-lead{ margin:10px 0 0; max-width:54ch; font-size:clamp(.98rem,1.15vw,1.08rem); line-height:1.5; color:var(--ink); text-wrap:pretty; }
 
+/* v1.2: great local leadership, the line after governance */
+#pn-governance .pngv-lead2{ margin:8px 0 0; padding-left:12px; max-width:56ch; border-left:2px solid var(--tc); font-size:clamp(.95rem,1.1vw,1.04rem); line-height:1.45; color:var(--ink); text-wrap:pretty; }
+#pn-governance .pngv-lead2 b{ font-weight:600; color:var(--er); }
+
 /* the order of the work */
 #pn-governance .pngv-seq{ display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin:14px 0 0; padding:0; list-style:none; }
 #pn-governance .pngv-seq li{
@@ -110,6 +118,7 @@ Part of the one-file homepage (pages/home.html, built by tools/build_home.py). R
   #pn-governance .pngv-eb{ font-size:.64rem; letter-spacing:.24em; }
   #pn-governance h2.pngv-h2{ margin-top:6px; font-size:1.85rem; }
   #pn-governance .pngv-lead{ margin-top:8px; font-size:.94rem; line-height:1.45; }
+  #pn-governance .pngv-lead2{ margin-top:7px; padding-left:10px; font-size:.9rem; line-height:1.42; }
   #pn-governance .pngv-seq{ display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); align-items:stretch; gap:6px; margin-top:10px; }
   #pn-governance .pngv-seq li{ flex-direction:column; align-items:flex-start; justify-content:flex-start; gap:3px; padding:7px 8px; border-radius:10px; font-size:.66rem; letter-spacing:.04em; line-height:1.15; }
   #pn-governance .pngv-seq li span{ font-size:.6rem; }
@@ -132,6 +141,7 @@ Part of the one-file homepage (pages/home.html, built by tools/build_home.py). R
       <p class="pngv-eb">Governance first</p>
       <h2 class="pngv-h2" id="pngv-h">Good governance comes first.</h2>
       <p class="pngv-lead">Before finance and before super intelligence. Where no money is lost to corruption, every dollar can reach a citizen.</p>
+      <p class="pngv-lead2"><b>With great local leadership:</b> honest, dedicated and committed to basic standards of living for every citizen.</p>
       <ol class="pngv-seq" aria-label="The order of the work">
         <li><span>01</span>Good governance</li>
         <li><span>02</span>Innovative financing for development</li>
