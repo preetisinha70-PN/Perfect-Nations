@@ -138,16 +138,17 @@ def card(i, p, cat, n):
         'blueprint': link(where, p['blueprint']) if p.get('blueprint') else '',
     }
     attrs = ' '.join('data-%s="%s"' % (k, v) for k, v in data.items() if v != '')
+    by = '' if p['artist'] == cat.get('house_artist') else '\n        <p class="aon-by">by %s</p>' % data['artist']
     return '''      <article class="aon-card aon-rv" id="aon-%(slug)s" data-work %(attrs)s>
         <a class="aon-frame" href="%(zoom)s" data-open="%(i)d" aria-label="Open %(title)s at full size"><span class="aon-mat"><span class="aon-pic"><img src="%(src)s" srcset="%(srcset)s" sizes="(min-width:1100px) 250px, (min-width:600px) 44vw, 44vw" alt="%(alt)s" width="600" height="600" loading="lazy" decoding="async"></span></span></a>
         <p class="aon-nation"><i class="aon-sw" style="%(sw)s"></i>%(nation)s</p>
-        <h3 class="aon-h3">%(title)s</h3>
+        <h3 class="aon-h3">%(title)s</h3>%(by)s
         <p class="aon-stmt">%(statement)s</p>%(extra)s
         <div class="aon-acts">%(acts)s</div>
       </article>''' % {
         'slug': esc(p['slug']), 'attrs': attrs, 'zoom': data['zoom'], 'i': n, 'title': data['title'], 'artist': data['artist'],
         'src': media(where, pick(p['images'], 600)), 'srcset': data['srcset'], 'alt': data['alt'], 'sw': esc(sw),
-        'nation': data['nation'], 'statement': data['statement'], 'extra': extra, 'acts': ''.join(acts),
+        'nation': data['nation'], 'statement': data['statement'], 'extra': extra, 'acts': ''.join(acts), 'by': by,
     }
 
 
@@ -236,7 +237,7 @@ def portrait(j, p, cat, n):
     where = 'portrait %s' % p.get('slug', j)
     need(p, where, 'slug', 'nation', 'alt', 'images', 'zoom', 'blueprint')
     data = {
-        'nation': copy(where, p['nation']), 'title': 'Nation portrait', 'artist': copy(where, p.get('artist', 'Preeti Sinha')),
+        'nation': copy(where, p['nation']), 'title': 'Nation portrait', 'artist': copy(where, p.get('artist') or cat.get('house_artist', 'Preeti Sinha')),
         'statement': copy(where, 'The nation in its own colours, from its Perfect Nations blueprint. Shipped worldwide.'),
         'spec': '24 &#215; 24 in &#183; Print or original', 'alt': copy(where, p['alt']),
         'zoom': media(where, p['zoom']), 'src': media(where, pick(p['images'], 300)), 'srcset': srcset(where, p['images']),
@@ -273,6 +274,12 @@ def main():
     pslugs = [p.get('slug') for p in portraits]
     if len(set(pslugs + slugs)) != len(pslugs) + len(slugs):
         PROBLEMS.append('a portrait repeats a painting or another portrait: %r' % pslugs)
+    names = []
+    for w in list(paintings) + list(portraits) + list(origins):
+        a = w.get('artist') or cat.get('house_artist', 'Preeti Sinha')
+        if a not in names:
+            names.append(a)
+    credit = ('Artist: %s. A Perfect Nations work.' % names[0]) if len(names) == 1 else ('Artists: %s.' % ', '.join(names))
     pts = '\n'.join(portrait(j, p, cat, len(origins) + n + j) for j, p in enumerate(portraits))
     books = '\n'.join(book(b, cat) for b in cat.get('books') or [])
     shown = n + len(portraits)
@@ -281,7 +288,7 @@ def main():
     if PROBLEMS:
         sys.exit('The catalogue needs fixing before the page can be built:\n  - ' + '\n  - '.join(PROBLEMS))
     slots = {
-        'VERSION': esc(cat['version']), 'DATE': esc(cat['updated']), 'COUNT': str(shown), 'COUNT2': '%02d' % n, 'PAPER': esc(cat['print_prices']['paper']), 'CANVAS': esc(cat['print_prices']['canvas']), 'PCOUNT': str(len(portraits)), 'PORTRAITS': pts,
+        'VERSION': esc(cat['version']), 'DATE': esc(cat['updated']), 'COUNT': str(shown), 'COUNT2': '%02d' % n, 'PAPER': esc(cat['print_prices']['paper']), 'CANVAS': esc(cat['print_prices']['canvas']), 'PCOUNT': str(len(portraits)), 'PORTRAITS': pts, 'CREDIT': copy('credit', credit),
         'TOTAL': str(total), 'DOTS': dots, 'CARDS': cards, 'BOOKS': books, 'CONTACT': esc(cat['contact']),
         'FIRST_ZOOM': esc(first['zoom']), 'FIRST_SRC': esc(pick(first['images'], 768)),
         'FIRST_SRCSET': srcset('hero', first['images']), 'FIRST_ALT': esc(first['alt']),
