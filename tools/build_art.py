@@ -119,6 +119,10 @@ def card(i, p, cat, n):
         acts.append('<a class="aon-btn aon-btn--sm aon-btn--line" href="%s">Enquire</a>' % enquire)
     else:
         acts.append('<a class="aon-btn aon-btn--sm" href="%s">Enquire</a>' % enquire)
+    printq = ''
+    if enquire:
+        printq = link(where, cat['contact'] + '?about=print-' + p['slug'])
+        acts.append('<a class="aon-btn aon-btn--sm aon-btn--line" href="%s">Print</a>' % printq)
     extra = ''
     if price:
         extra += '\n        <p class="aon-price">%s</p>' % price
@@ -129,7 +133,7 @@ def card(i, p, cat, n):
         'statement': copy(where, p['statement']),
         'spec': copy(where, p['spec']), 'alt': copy(where, p['alt']), 'zoom': media(where, p['zoom']),
         'src': media(where, pick(p['images'], 768)), 'srcset': srcset(where, p['images']), 'sw': esc(sw[5:]),
-        'enquire': enquire, 'buy': buy, 'price': price,
+        'enquire': enquire, 'buy': buy, 'price': price, 'printq': printq,
         'status': copy(where, status) if status != DEFAULT_STATUS else '',
         'blueprint': link(where, p['blueprint']) if p.get('blueprint') else '',
     }
@@ -233,14 +237,15 @@ def portrait(j, p, cat, n):
     need(p, where, 'slug', 'nation', 'alt', 'images', 'zoom', 'blueprint')
     data = {
         'nation': copy(where, p['nation']), 'title': 'Nation portrait', 'artist': copy(where, p.get('artist', 'Preeti Sinha')),
-        'statement': copy(where, 'The nation in its own colours, from its Perfect Nations blueprint. Sizes and prices on request.'),
-        'spec': 'Nation portrait \u00b7 Print \u00b7 Perfect Nations'.replace('\u00b7', '&#183;'), 'alt': copy(where, p['alt']),
+        'statement': copy(where, 'The nation in its own colours, from its Perfect Nations blueprint. Shipped worldwide.'),
+        'spec': '24 &#215; 24 in &#183; Print or original', 'alt': copy(where, p['alt']),
         'zoom': media(where, p['zoom']), 'src': media(where, pick(p['images'], 300)), 'srcset': srcset(where, p['images']),
         'blueprint': link(where, p['blueprint']), 'print': '1',
         'enquire': link(where, cat['contact'] + '?about=print-' + p['slug']),
         'buy': link(where, p['buy_url']) if p.get('buy_url') else '',
-        'price': copy(where, p.get('price', '')),
-        'status': 'Print by enquiry' if not p.get('buy_url') else '',
+        'price': copy(where, cat.get('print_prices_line', '').replace('\u00b7', '-')),
+        'original': link(where, cat['contact'] + '?about=original-' + p['slug']),
+        'status': '',
     }
     attrs = ' '.join('data-%s="%s"' % (k, v) for k, v in data.items() if v != '')
     return '''      <li class="aon-pt aon-rv" data-work %(attrs)s>
@@ -276,7 +281,7 @@ def main():
     if PROBLEMS:
         sys.exit('The catalogue needs fixing before the page can be built:\n  - ' + '\n  - '.join(PROBLEMS))
     slots = {
-        'VERSION': esc(cat['version']), 'DATE': esc(cat['updated']), 'COUNT': str(shown), 'COUNT2': '%02d' % n, 'PCOUNT': str(len(portraits)), 'PORTRAITS': pts,
+        'VERSION': esc(cat['version']), 'DATE': esc(cat['updated']), 'COUNT': str(shown), 'COUNT2': '%02d' % n, 'PAPER': esc(cat['print_prices']['paper']), 'CANVAS': esc(cat['print_prices']['canvas']), 'PCOUNT': str(len(portraits)), 'PORTRAITS': pts,
         'TOTAL': str(total), 'DOTS': dots, 'CARDS': cards, 'BOOKS': books, 'CONTACT': esc(cat['contact']),
         'FIRST_ZOOM': esc(first['zoom']), 'FIRST_SRC': esc(pick(first['images'], 768)),
         'FIRST_SRCSET': srcset('hero', first['images']), 'FIRST_ALT': esc(first['alt']),
