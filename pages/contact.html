@@ -1,5 +1,5 @@
 <!-- ===========================================================================
-PERFECT NATIONS - THE CONTACT PAGE - v6.4 LIGHT - 2026-11-11
+PERFECT NATIONS - THE CONTACT PAGE - v6.5 LIGHT - 2026-11-11
 /contact/ (page 12711). Every "Start a conversation", Enquire, Nominate, "Suggest a guest",
 "Write to us", "Ask for this blueprint" and Solution button on the site lands here, carrying its intent
 in the address (?about=, ?topic=, ?nation=, ?country=; the full list is in the steward-contact
@@ -21,6 +21,7 @@ what a visitor can act on and for the logo, drawn in one gold on the letterhead)
   3 What happens next (Earthrise Depth): three steps, the address for own email, Find your nation
     and See the Solutions.
 v6.3 (10 Nov 2026): light reading sections, Earthrise accents (the Steward-General, 10 Nov 2026).
+v6.5 (11 Nov 2026, the Steward-General): a print enquiry for Art of Nations: ?about=print opens "A print of a nation portrait", and ?about=print-<nation> names the nation in the message.
 v6.4 (11 Nov 2026, the Steward-General): Speak on Voices and Suggest a guest name the podcast Voices of Perfect
 Nations, and ask for great local leaders, honest, dedicated and committed to basic standards of living for every
 citizen.
@@ -506,6 +507,7 @@ article:has(#pn-contact) .entry-header{ display:none !important; }
     { id:'nominate',   fam:'join', label:'Nominate a Co-designer',  subject:'Co-designer nomination',  ask:'who you are nominating, how to reach them, and why they belong in the ReDesign Studio.' },
     { id:'enterprise', fam:'join', label:'Suggest an enterprise',   subject:'Enterprise suggestion',   ask:'the firm or social enterprise already at work, the nation, and the basic living standard it serves.' },
     { id:'original',   fam:'art',  label:'An original painting',    subject:'Original painting',       ask:'which painting, and where it would hang.' },
+    { id:'print',      fam:'art',  label:'A print of a nation portrait', subject:'Print enquiry',        ask:'which nation, the size you have in mind, and how many.' },
     { id:'book',       fam:'art',  label:'A Perfect Nations book',  subject:'Book reservation',        ask:'which book, and how many copies.' },
     { id:'portrait',   fam:'art',  label:'Commission a portrait',   subject:'Portrait commission',     ask:'the nation, the occasion, and when you would need it.' },
     { id:'speaking',   fam:'more', label:'Speaking or media',       subject:'Speaking and media',      ask:'the event or publication, the date, and the audience.' },
@@ -519,7 +521,7 @@ article:has(#pn-contact) .entry-header{ display:none !important; }
     codesigner:'codesigner', 'co-designer':'codesigner', join:'codesigner',
     writing:'writing', story:'writing', vision:'writing', stories:'writing',
     voices:'voices', 'nominate-self':'voices', guest:'guest', nominate:'nominate', enterprise:'enterprise',
-    gallery:'original', original:'original', painting:'original', book:'book', books:'book', portrait:'portrait',
+    gallery:'original', print:'print', prints:'print', original:'original', painting:'original', book:'book', books:'book', portrait:'portrait',
     speaking:'speaking', media:'speaking', press:'speaking', podcast:'speaking',
     masterclass:'other', dispatches:'other', other:'other'
   };
@@ -576,6 +578,7 @@ article:has(#pn-contact) .entry-header{ display:none !important; }
   var nslug = (param('nation') || '').toLowerCase(), country = param('country') || '';
   var want = '', wantWork = '';
   if (/^original-/.test(about)) { want = 'original'; wantWork = about; }
+  else if (/^print-/.test(about)) { want = 'print'; if (!nslug) { nslug = about.slice(6); } }
   else if (/-book$/.test(about)) { want = 'book'; wantWork = about; }
   else if (/^mandate-\d+$/.test(about)) { want = 'sovereign'; }
   else if (/^solution-\d+$/.test(about)) { want = 'solution'; wantWork = about; }
@@ -627,6 +630,7 @@ article:has(#pn-contact) .entry-header{ display:none !important; }
     var w = hasWork() ? workOf(el.work.value) : null;
     if (w && kind.id === 'solution') { return 'I would like to discuss Solution No. ' + w.no + ', ' + w.title + ', for ' + w.nation + '.'; }
     if (w && kind.id === 'original') { return 'I would like to enquire about ' + w.title + ', the original painting of ' + w.nation + '.'; }
+    if (kind.id === 'print' && el.country.value.trim()) { return 'I would like to ask about a print of the portrait of ' + el.country.value.trim() + '.'; }
     if (w && kind.id === 'book') { return 'I would like to reserve a copy of ' + w.title + '.'; }
     if (kind.id === 'blueprint' && el.country.value.trim()) { return 'I would like to ask for the National Blueprint of ' + el.country.value.trim() + '.'; }
     return '';

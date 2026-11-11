@@ -233,10 +233,14 @@ def portrait(j, p, cat, n):
     need(p, where, 'slug', 'nation', 'alt', 'images', 'zoom', 'blueprint')
     data = {
         'nation': copy(where, p['nation']), 'title': 'Nation portrait', 'artist': copy(where, p.get('artist', 'Preeti Sinha')),
-        'statement': copy(where, 'The nation in its own colours, from its Perfect Nations blueprint.'),
-        'spec': 'Nation portrait \u00b7 Perfect Nations'.replace('\u00b7', '&#183;'), 'alt': copy(where, p['alt']),
+        'statement': copy(where, 'The nation in its own colours, from its Perfect Nations blueprint. Sizes and prices on request.'),
+        'spec': 'Nation portrait \u00b7 Print \u00b7 Perfect Nations'.replace('\u00b7', '&#183;'), 'alt': copy(where, p['alt']),
         'zoom': media(where, p['zoom']), 'src': media(where, pick(p['images'], 300)), 'srcset': srcset(where, p['images']),
-        'blueprint': link(where, p['blueprint']),
+        'blueprint': link(where, p['blueprint']), 'print': '1',
+        'enquire': link(where, cat['contact'] + '?about=print-' + p['slug']),
+        'buy': link(where, p['buy_url']) if p.get('buy_url') else '',
+        'price': copy(where, p.get('price', '')),
+        'status': 'Print by enquiry' if not p.get('buy_url') else '',
     }
     attrs = ' '.join('data-%s="%s"' % (k, v) for k, v in data.items() if v != '')
     return '''      <li class="aon-pt aon-rv" data-work %(attrs)s>
