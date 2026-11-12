@@ -1,0 +1,27 @@
+# Temporary checks of the live site from GitHub's servers (12 Nov 2026). Runs only on the site-checks branch.
+name: site-checks
+on:
+  push:
+    branches: [site-checks]
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          set +e
+          echo "=== SSL"; for d in perfectnations.com www.perfectnations.com; do echo "$d: $(echo | timeout 15 openssl s_client -connect $d:443 -servername $d 2>/dev/null | openssl x509 -noout -subject -enddate 2>/dev/null | tr '\n' ' ')"; done
+          UA="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36"
+          cat > /tmp/sum.py <<'PY'
+          import re,sys
+          h=open(sys.argv[1],encoding='utf-8',errors='replace').read()
+          t=re.search(r'<title>(.*?)</title>',h,re.S); c=re.search(r'<link[^>]+rel=["\']canonical["\'][^>]+href=["\']([^"\']+)',h)
+          roots=re.findall(r'id=["\'](pn-[a-z0-9-]+)["\']',h)
+          print('title=%r canon=%s html=%dKB org=%d com=%d root=%s pncss=%s' % ((t.group(1).strip()[:50] if t else None), (c.group(1) if c else None), len(h)//1024, h.count('perfectnations.org'), h.count('perfectnations.com'), (roots[0] if roots else None), 'v1.0' if 'Perfect Nations - Additional CSS - v1.0' in h else 'no'))
+          PY
+          for p in / /blueprints/ /blueprints/kenya/ /blueprints/barbados/ /about/ /contact/ /state-of-nations/ /art-of-nations/ /capital-architecture/ /sovereign-assets/ /perfect-capita/ /design-studio/ /50-states/ /dear-mexico/ /wp-json/pn-live/v1 /wp-login.php; do
+            for d in perfectnations.org perfectnations.com; do
+              r=$(curl -s --compressed -A "$UA" -o /tmp/b.html -D /tmp/h -m 60 -w '%{http_code} %{time_total}s' "https://$d$p")
+              loc=$(grep -i '^location:' /tmp/h | tr -d '\r' | cut -c1-90); cache=$(grep -i '^x-litespeed-cache\|^x-hcdn-cache-status' /tmp/h | tr -d '\r' | tr '\n' ' ')
+              echo "$d$p | $r | $loc | $cache | $(python3 /tmp/sum.py /tmp/b.html 2>/dev/null)"
+            done
+          done
