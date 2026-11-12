@@ -1,4 +1,4 @@
-# Temporary checks of the live site from GitHub's servers (12 Nov 2026). Runs only on the site-checks branch.
+# Temporary checks of the live site from GitHub's servers (12 Nov 2026, run 3). Runs only on the site-checks branch.
 name: site-checks
 on:
   push:
@@ -18,7 +18,7 @@ jobs:
             r=$(curl -s -o /dev/null -A "$UA" -m 30 -w '%{http_code} -> %{redirect_url}' "$u"); echo "$u | $r"
           done
           echo "=== follow to the end"
-          for u in http://perfectnations.org/blueprints/kenya/ https://perfectnations.org/state-of-nations/ https://www.perfectnations.org/about/; do
+          for u in http://perfectnations.org/blueprints/kenya/ https://perfectnations.org/state-of-nations/ https://www.perfectnations.org/about/ https://perfectnations.org/ "https://perfectnations.org/blueprints/?n=kenya" https://perfectnations.org/dear-mexico/ https://perfectnations.org/50-states/new-york/ https://perfectnations.org/perfect-nations-gallery/ https://perfectnations.org/wp-content/uploads/2026/10/pn-world-0.webp https://perfectnations.org/feed/; do
             r=$(curl -sL -o /dev/null -A "$UA" -m 30 -w '%{http_code} %{num_redirects} hops -> %{url_effective}' "$u"); echo "$u | $r"
           done
           echo "=== .com pages"
