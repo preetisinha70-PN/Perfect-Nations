@@ -23,7 +23,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 PAGES = ROOT / 'pages'
 DATA = ROOT / 'data'
-SITE = 'https://perfectnations.org'
+SITE = 'https://perfectnations.com'
 VERSION = '12.5'  # the globe draws the borders of newly opened nations at their raised height (hero v7.9; the Steward-General, 11 Nov 2026)
 # v12.4: Governance first: one line on great local leadership, honest, dedicated and committed to basic standards of living for every citizen (the Steward-General, 11 Nov 2026)
 # v12.3: the globe's borders are thin dark ribbons, clear on phones (hero v7.8; the Steward-General, 11 Nov 2026)

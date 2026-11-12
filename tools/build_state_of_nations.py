@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build the State of Nations page (perfectnations.org/state-of-nations/) and its nation data.
+"""Build the State of Nations page (perfectnations.com/state-of-nations/) and its nation data.
 
 The page is about Solutions: one Solution that Perfect Nations designs for every open blueprint nation,
 to end extreme poverty and secure the seven basic standards of living, with innovative finance first and
@@ -69,7 +69,7 @@ MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'Augus
 WIRE_STATIC = 12     # wire items written into the page (the live file replaces them)
 SOL_SHOWN = 7        # Solutions shown on a laptop before Show all (the lead and six)
 TICK_WIRE = 5        # deals in the moving list, after the three newest Solutions
-SITE = 'https://perfectnations.org'
+SITE = 'https://perfectnations.com'
 
 # ---------------------------------------------------------------------------------------------
 # THE PLAYBOOK: for each standard, the instrument that closes the gap, the deal that proved it, and
@@ -297,7 +297,7 @@ def build_data():
         'page': 'solutions-by-nation',
         'updated': date.today().isoformat(),
         'about': ('Built by tools/build_state_of_nations.py from data/<nation>.json (coverage, guarantees, '
-                  'capital.register) and data/capital-architecture.json. Read by perfectnations.org/state-of-nations/ '
+                  'capital.register) and data/capital-architecture.json. Read by perfectnations.com/state-of-nations/ '
                   'on every visit. Adds no fact: change a figure in its nation file, then rebuild.'),
         'standards': playbook(),
         'nations': nations(son.get('dispatches', [])),

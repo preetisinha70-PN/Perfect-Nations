@@ -8,7 +8,7 @@
   var $$ = function(sel, el){ return Array.prototype.slice.call((el || root).querySelectorAll(sel)); };
   var DATA = {};
   try { DATA = JSON.parse(($('#pnus-data') || {}).textContent || '{}'); } catch (e) { DATA = {}; }
-  var SITE = 'https://perfectnations.org';
+  var SITE = 'https://perfectnations.com';
   var REGION = { northeast:'Northeast', midwest:'Midwest', south:'South', west:'West' };
   var live = {};            /* slug: url of an open state blueprint */
   var map = $('#pnus-map'), card = $('#pnus-card'), rows = $('#pnus-rows');
@@ -198,7 +198,7 @@
         var k, hit, p = (m && m.pages) || {};
         for (k in p) {
           hit = /^pn-us-([a-z0-9-]+)$/.exec(k);
-          if (hit && DATA[hit[1]] && p[k] && /^https:\/\/perfectnations\.org\//.test(p[k].url || '')) { live[hit[1]] = p[k].url; }
+          if (hit && DATA[hit[1]] && p[k] && /^https:\/\/perfectnations\.(?:org|com)\//.test(p[k].url || '')) { live[hit[1]] = p[k].url; }
         }
         markLive();
       }).catch(function(){ get(i + 1); });

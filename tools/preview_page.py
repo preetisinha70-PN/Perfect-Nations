@@ -7,7 +7,7 @@ Run from the repository root:
 - WebGL draws with SwiftShader, so the hero shader renders.
 - Requests for this repository's raw.githubusercontent.com and jsDelivr files are answered from the
   local checkout, so the page reads the local figures/*.json and data/*.json.
-- perfectnations.org images (which the build machine cannot reach) are answered with stand-in
+- perfectnations.com images (which the build machine cannot reach) are answered with stand-in
   pictures drawn here, so the layout is exact while the photographs are not.
 - --fonts: a folder holding the @fontsource packages barlow-condensed and barlow-semi-condensed
   (npm install @fontsource/barlow-condensed @fontsource/barlow-semi-condensed), so the previews use
@@ -84,7 +84,7 @@ def main():
             if p.exists():
                 return r.fulfill(status=200, body=p.read_bytes(), content_type='application/json')
             return r.fulfill(status=404, body='')
-        if 'perfectnations.org/wp-content/uploads/' in url and re.search(r'\.(jpe?g|png|webp)$', url):
+        if 'perfectnations.com/wp-content/uploads/' in url and re.search(r'\.(jpe?g|png|webp)$', url):
             counter['n'] += 1
             body = stand_in(768, 461, counter['n'])
             return r.fulfill(status=200, body=body, content_type='image/jpeg') if body else r.fulfill(status=404, body='')

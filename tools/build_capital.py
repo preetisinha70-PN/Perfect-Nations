@@ -80,7 +80,7 @@ def open_blueprints():
     for key, v in man['pages'].items():
         m = re.match(r'^pn-bp-([a-z-]+)$', key)
         f = re.match(r'^pages/blueprint-([a-z-]+)\.html$', v.get('file', ''))
-        if m and f and v.get('url', '').startswith('https://perfectnations.org/blueprints/'):
+        if m and f and v.get('url', '').startswith('https://perfectnations.com/blueprints/'):
             out[f.group(1)] = v['url']
     return out
 

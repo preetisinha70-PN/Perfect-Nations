@@ -166,7 +166,7 @@ def entry(s):
             seen.add(x['url'])
             uniq.append(x)
     out = {'no': s['no'], 'kind': 'design', 'slug': '%s-%s' % (slug, slugify(s['title'])), 'nation': s['nation'],
-           'blueprint': 'https://perfectnations.org/blueprints/%s/' % slug, 'title': s['title'],
+           'blueprint': 'https://perfectnations.com/blueprints/%s/' % slug, 'title': s['title'],
            'kicker': 'Perfect Nations Solution', 'date': DATE, 'standfirst': s['standfirst'], 'figure': s['figure'],
            'caption': s['caption'], 'gap_seen': s['figure'], 'standards': s['standards'], 'challenge': s['challenge'],
            'advises': s['advises'], 'how': s['how'], 'proof': proof, 'first': s['first'], 'sources': uniq}
