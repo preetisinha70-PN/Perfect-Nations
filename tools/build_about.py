@@ -5,12 +5,14 @@ The page is edited by hand, except the blocks that this script writes in place:
   GENERATED:NCOUNT    the number of Nation Stewards (one per open blueprint); NCOUNT2 the same,
                       on the Show all button
   GENERATED:TCOUNT    the number of SI Researchers (six research Stewards plus the Nation Stewards)
+  GENERATED:NREGIONS  the region chips over the Nation Stewards, each with its count (v12.1)
   GENERATED:NSTEWARDS the Nation Stewards: one linked card per open blueprint in
                       data/blueprints.json, with the Steward's name from data/<slug>.json and the
                       portrait the nation's own blueprint uses (pages/blueprint-<slug>.html)
 v11.6 (10 Nov 2026): light reading sections, Earthrise accents (the Steward-General). The parts carry their own
 LIGHT blocks; this script is unchanged but for its version.
 v11.5 (10 Nov 2026): the homepage close opens The Blueprint Lab on ?about=lab (Lab and Solution links).
+v12.1 (12 Nov 2026): the 195 Nation Stewards with their portraits, region chips, nations sorted without accents.
 v12.0 (11 Nov 2026): Governance first (pages/home-governance.html) after the hero; What we do without its
 closing seal row, as on the homepage.
 v11.4 (10 Nov 2026): the homepage close (pages/home-pledge.html) is the close of this page too.
@@ -48,13 +50,14 @@ import html
 import json
 import re
 import sys
+import unicodedata
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 PAGES = ROOT / 'pages'
 DATA = ROOT / 'data'
 PAGE = PAGES / 'about.html'
-VERSION = '12.0'
+VERSION = '12.1'
 RESEARCH_STEWARDS = 6
 # The homepage parts this page shows, by block name (see the docstring).
 PARTS = [
@@ -92,6 +95,26 @@ def portrait(slug, steward):
     return ''
 
 
+REGIONS = [('africa', 'Africa'), ('americas', 'Americas'), ('asia', 'Asia'), ('middle-east', 'Middle East'),
+           ('europe', 'Europe'), ('oceania', 'Oceania')]
+
+
+def fold(text):
+    """Lower case without accents, for sorting nations (Cote d'Ivoire with C, Turkiye with T)."""
+    return ''.join(c for c in unicodedata.normalize('NFD', text) if not unicodedata.combining(c)).lower()
+
+
+def regions_block(rows):
+    """The region chips over the Nation Stewards: All, then each region with its count (v12.1)."""
+    out = ['          <button type="button" class="ab-rg is-on" data-r="" aria-pressed="true">All <i>%d</i></button>' % len(rows)]
+    for key, label in REGIONS:
+        n = sum(1 for r in rows if r[4] == key)
+        if n:
+            out.append('          <button type="button" class="ab-rg" data-r="%s" aria-pressed="false">%s <i>%d</i></button>'
+                       % (key, label, n))
+    return '\n'.join(out)
+
+
 def stewards():
     data = json.loads((DATA / 'blueprints.json').read_text(encoding='utf-8'))
     rows = []
@@ -104,23 +127,23 @@ def stewards():
             name = (d.get('steward') or {}).get('name') or name
         if not name:
             continue
-        rows.append((nation, name, url, portrait(slug, name)))
-    rows.sort(key=lambda r: r[0].replace('ô', 'o').lower())
+        rows.append((nation, name, url, portrait(slug, name), n.get('region', '')))
+    rows.sort(key=lambda r: fold(r[0]))
     return rows
 
 
 def stewards_block(rows):
     out = []
-    for nation, name, url, src in rows:
+    for nation, name, url, src, region in rows:
         img = ''
         if src:
             img = ('<img src="%s" alt="" width="150" height="150" loading="lazy" decoding="async">'
                    % ascii_html(src))
         out.append(
-            '        <li><a class="ab-ns" href="%s" target="_blank" rel="noopener" '
+            '        <li data-r="%s"><a class="ab-ns" href="%s" target="_blank" rel="noopener" '
             'title="%s, Nation Steward of %s"><span class="ab-ns__av" data-i="%s">%s</span>'
             '<span class="ab-ns__t"><b>%s</b><span>%s</span></span></a></li>'
-            % (ascii_html(url), ascii_html(name), ascii_html(nation), initials(name), img,
+            % (ascii_html(region), ascii_html(url), ascii_html(name), ascii_html(nation), initials(name), img,
                ascii_html(name), ascii_html(nation)))
     return '\n'.join(out)
 
@@ -186,6 +209,7 @@ def main():
     page = put(page, 'NCOUNT2', str(len(rows)), inline=True)
     page = put(page, 'TCOUNT', str(len(rows) + RESEARCH_STEWARDS), inline=True)
     page = put(page, 'NSTEWARDS', stewards_block(rows))
+    page = put(page, 'NREGIONS', regions_block(rows))
     page = put(page, 'LOGO-KIT', logo_kit_block())
     for block, name in PARTS:
         page = put(page, block, part_block(name))
