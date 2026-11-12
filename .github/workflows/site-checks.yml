@@ -1,4 +1,4 @@
-# Temporary checks of the live site from GitHub's servers (12 Nov 2026, Google and ShortPixel). Runs only on the site-checks branch.
+# Temporary checks of the live site from GitHub's servers (12 Nov 2026, sitemap and robots). Runs only on the site-checks branch.
 name: site-checks
 on:
   push:
@@ -9,24 +9,8 @@ jobs:
     steps:
       - run: |
           set +e
-          UA="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36"
-          for p in / /blueprints/kenya/ /about/; do
-            curl -s --compressed -A "$UA" -o /tmp/p.html -m 60 "https://perfectnations.com$p"
-            echo "=== $p"
-            python3 - <<'PY'
-          import re
-          h=open('/tmp/p.html',encoding='utf-8',errors='replace').read()
-          print('gtag ids:', sorted(set(re.findall(r'(?:G|UA|GT|AW)-[A-Z0-9]{6,}', h)))[:6])
-          print('gtm:', sorted(set(re.findall(r'GTM-[A-Z0-9]+', h))))
-          print('verification metas:', re.findall(r'<meta[^>]+name=["\']([a-z-]*verification[a-z-]*)["\'][^>]*content=["\']([^"\']{0,12})', h))
-          print('site kit / rank math analytics:', 'googlesitekit' in h, 'rank-math' in h.lower(), 'rank_math' in h.lower())
-          sp=re.findall(r'https://spcdn\.shortpixel\.ai/[^"\'\s)]+', h)
-          print('spcdn urls:', len(sp))
-          hosts=sorted(set(re.findall(r'spcdn\.shortpixel\.ai/spio/[^/]+/(?:[^/]+/)*?(perfectnations\.(?:org|com))', h)))
-          print('spcdn origin hosts:', hosts)
-          open('/tmp/sp.txt','w').write('\n'.join(sp[:6]))
-          imgs=re.findall(r'https://perfectnations\.com/wp-content/uploads/[^"\'\s)]+', h)
-          print('direct .com uploads:', len(imgs))
-          PY
-            for u in $(cat /tmp/sp.txt | head -3); do echo "  $(curl -s -o /dev/null -m 30 -w '%{http_code} %{content_type} %{size_download}B' "$u") ${u:0:150}"; done
+          UA="Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)"
+          for u in https://perfectnations.com/robots.txt https://perfectnations.com/sitemap_index.xml https://perfectnations.com/sitemap.xml https://perfectnations.com/wp-sitemap.xml; do
+            echo "=== $u"; curl -s -A "$UA" -o /tmp/s -m 30 -w 'status %{http_code} -> %{redirect_url} %{content_type}\n' "$u"; head -c 900 /tmp/s | tr '\n' ' ' | sed 's/<sitemap>/\n  <sitemap>/g' | head -12; echo; echo "  .org mentions: $(grep -o 'perfectnations\.org' /tmp/s | wc -l)  .com mentions: $(grep -o 'perfectnations\.com' /tmp/s | wc -l)"
           done
+          echo "=== a child sitemap"; c=$(grep -o 'https://perfectnations\.com/[a-z_-]*sitemap[0-9]*\.xml' /tmp/s 2>/dev/null | head -1); curl -s -A "$UA" -o /tmp/c -m 30 -w "$c status %{http_code}\n" "${c:-https://perfectnations.com/page-sitemap.xml}"; echo "  urls: $(grep -c '<loc>' /tmp/c)  .org: $(grep -o 'perfectnations\.org' /tmp/c | wc -l)"
