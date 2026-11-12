@@ -1,5 +1,5 @@
 <!-- ===========================================================================
-PERFECT NATIONS - PERFECT CAPITA PAGE - v10.1 LIGHT - 2026-11-10
+PERFECT NATIONS - PERFECT CAPITA PAGE - v10.2 LIGHT - 2026-11-12
 /perfect-capita/ (page 9937). One Elementor Custom HTML widget, Full Width, padding 0, Hide Title.
 Served live from GitHub (pages/perfect-capita.html) by the Perfect Nations Live Pages plugin; the
 root id stays pn-pcap so the plugin finds the pasted widget. Nothing needs pasting.
@@ -13,6 +13,12 @@ Words (Steward-General, 1 November 2026): the seven basic living standards; Perf
 yearly cost per person of lifting everyone above the Living Line in all seven; the price of Perfect
 [Nation], Perfect Capita times population; Coverage and the Gap. The Living Line names the threshold
 only. "Guarantee" is a verb only, in the mission line.
+v10.2: Delivered, not connected (the Steward-General, 12 Nov 2026). Where a ministry, utility or UN agency
+  reports how much of a service actually reaches people, the lower figure counts. A rule of its own (Strict
+  figures only folds into Strict first, so the rules stay seven); the lead says it; Energy, Water and Health
+  name the check in their strict measure. The rules section carries id pq-measures, the anchor every
+  blueprint links to as "The strict measures".
+  Both scripts are wrapped in comment markers, so the WordPress formatter cannot break them.
 v10.1: light reading sections, Earthrise accents (the Steward-General, 10 Nov 2026).
 v10.0: The homepage and the blueprints of 9 and 10 November, carried here (the Steward-General, 10 Nov 2026):
   - The seven standards are the seven stars of the logo, in one gold, Food the crown, as on the homepage
@@ -528,20 +534,20 @@ only in news reports; when RSSB publishes it, the Rwanda card can move to that n
     </div>
   </section>
 
-  <section class="pq-band pq-ivb" aria-labelledby="pq-rules-h">
+  <section class="pq-band pq-ivb" id="pq-measures" aria-labelledby="pq-rules-h">
     <div class="pq-in pq-rgrid">
       <div>
         <p class="pq-eb">Seven rules keep it strict</p>
         <h2 class="pq-h2" id="pq-rules-h">No averages. No estimates. <em>No one left out.</em></h2>
-        <p class="pq-lead">Every figure uses the strictest published measure, shows its year and is never estimated.</p>
+        <p class="pq-lead">Every figure uses the strictest published measure, counts what actually reaches people, shows its year and is never estimated.</p>
         <details class="pq-rm"><summary>Read more</summary>
         <ol class="pq-rules">
-          <li><b>Strict first</b>The strict measure wherever it exists; any fallback is labelled.</li>
+          <li><b>Strict first</b>The strict measure wherever it exists, with no gentler figure beside it; any fallback is labelled.</li>
+          <li><b>Delivered, not connected</b>Where a ministry, utility or UN agency reports what actually reaches people, the lower figure counts.</li>
           <li><b>Five years</b>Older data shows its year, marked &#8220;dated&#8221;.</li>
           <li><b>No data, no number</b>&#8220;Not measured&#8221;, never an estimate.</li>
           <li><b>The legal bar</b>Where a law bars citizens from a standard, no score.</li>
           <li><b>Every citizen</b>Where data splits by sex or place, the lower group counts.</li>
-          <li><b>Strict figures only</b>No gentler figure beside it.</li>
           <li><b>The weakest link</b>A nation is held at its lowest standard: no strength makes up for a failure.</li>
         </ol>
         </details>
@@ -627,7 +633,7 @@ only in news reports; when RSSB publishes it, the Rwanda card can move to that n
   </section>
 </div>
 
-<script>
+<script><!--
 (function(){
   var root=document.getElementById('pn-pcap');
   if(!root||root.getAttribute('data-ready')==='true')return; root.setAttribute('data-ready','true');
@@ -643,11 +649,11 @@ only in news reports; when RSSB publishes it, the Rwanda card can move to that n
   /* the seven standards: promise, the Living Line, the strict measure and its custodian, the gentler measure not used, and what each nation prices */
   var G=[
     {n:'Food',c:'#8A5A12',p:'Every person can eat nutritious food, every day.',l:'Food secure all year.',k:'A local, nutritious food basket.',m:'100 minus the share of people moderately or severely food insecure (SDG 2.1.2); in crises, the share in IPC Phase 3 or worse, in the worst season.',s:'FAO; IPC and Cadre Harmonis\u00e9',x:'Undernourishment (SDG 2.1.1), which counts only a chronic shortage of calories.'},
-    {n:'Water',c:'#0E5A80',p:'Every home has safe, reliable drinking water.',l:'Safe water at home.',k:'Connection, treatment and running costs.',m:'Safely managed drinking water: on the premises, available when needed and free from contamination (SDG 6.1.1).',s:'WHO and UNICEF Joint Monitoring Programme',x:'Basic water: an improved source within a 30-minute round trip.'},
+    {n:'Water',c:'#0E5A80',p:'Every home has safe, reliable drinking water.',l:'Safe water at home.',k:'Connection, treatment and running costs.',m:'Safely managed drinking water: on the premises, available when needed and free from contamination (SDG 6.1.1); where the water authority reports fewer people reached, the lower figure.',s:'WHO and UNICEF Joint Monitoring Programme; national water authorities',x:'Basic water: an improved source within a 30-minute round trip.'},
     {n:'Shelter',c:'#9A3E22',p:'Every person has a safe, secure home with a safe toilet.',l:'A durable home with a safe toilet.',k:'Housing, sanitation and the infrastructure around them.',m:'The lower of safely managed sanitation (SDG 6.2.1a) and the share of people outside slums and informal housing (SDG 11.1.1).',s:'WHO and UNICEF Joint Monitoring Programme; UN-Habitat',x:'Urban slums alone, which leaves every rural home out of the count.'},
-    {n:'Energy',c:'#C08A12',p:'Every household has dependable, affordable, clean energy.',l:'1,000 kWh a person a year, and clean cooking.',k:'Household and productive energy services.',m:'The lower of electricity used per person against 1,000 kWh a year, and the share cooking with clean fuels and technology (SDG 7.1.2).',s:'UN Statistics Division; Tracking SDG 7',x:'A connection alone (SDG 7.1.1), which counts a single light bulb as access.'},
+    {n:'Energy',c:'#C08A12',p:'Every household has dependable, affordable, clean energy.',l:'1,000 kWh a person a year, and clean cooking.',k:'Household and productive energy services.',m:'The lower of electricity used per person against 1,000 kWh a year, and the share cooking with clean fuels and technology (SDG 7.1.2); where the grid meets only part of demand, the share it meets, if lower.',s:'Ember; Tracking SDG 7; national grid operators',x:'A connection alone (SDG 7.1.1), which counts a single light bulb, or a line with no power in it, as access.'},
     {n:'Education',c:'#1F4C96',p:'Every person learns, and has the chance to reach their potential.',l:'Reading by age ten, and finishing lower secondary school.',k:'The cost per learner.',m:'The lower of 100 minus learning poverty (children unable to read a simple text by age ten) and lower-secondary completion (SDG 4.1.2).',s:'World Bank and UNESCO Institute for Statistics',x:'Enrolment or teachers per pupil, which count seats rather than learning.'},
-    {n:'Health',c:'#167A5F',p:'Every person can reach essential care without financial hardship.',l:'Essential care, without financial ruin.',k:'Health services and financial protection.',m:'The WHO index of essential health service coverage, out of 100 (SDG 3.8.1).',s:'WHO and World Bank',x:'Hospital beds or health spending per person, which count inputs rather than care.'},
+    {n:'Health',c:'#167A5F',p:'Every person can reach essential care without financial hardship.',l:'Essential care, without financial ruin.',k:'Health services and financial protection.',m:'The WHO index of essential health service coverage, out of 100 (SDG 3.8.1); where the government reports essential medicines out of stock, the share available, if lower.',s:'WHO and World Bank; national health ministries',x:'Hospital beds or health spending per person, which count inputs rather than care.'},
     {n:'Livelihood',c:'#2F5A2A',p:'Every person has the means for a decent life, through dignified work or income security.',l:'Income above a living line.',k:'A living-income benchmark and the social protection gap.',m:'The share of people above the stricter of the national poverty line and the World Bank line for the nation\u2019s income group: $3.00, $4.20 or $8.30 a day (2021 prices).',s:'World Bank Poverty and Inequality Platform',x:'The $3.00 extreme poverty line, applied to every nation whatever its income.'}
   ];
   var wheel=root.querySelector('.pq-stars'), segs=root.querySelectorAll('.pq-star'), card=document.getElementById('pqCard'), body=document.getElementById('pqBody'), dots=document.getElementById('pqDots');
@@ -723,8 +729,8 @@ only in news reports; when RSSB publishes it, the Rwanda card can move to that n
   }
   load(0);
 })();
-</script>
-<script>
+//--></script>
+<script><!--
 (function () {
   /* The hero: seven threads, one for each standard, drift and are lifted above the Living Line (the gold
      line at 36 per cent of the height). Below it a thread dims to ember; the pointer lifts the threads
@@ -829,4 +835,4 @@ only in news reports; when RSSB publishes it, the Rwanda card can move to that n
   cv.addEventListener('webglcontextrestored', function () { if (init()) { lost = false; size(); draw(performance.now()); go(); } }, false);
   go();
 })();
-</script>
+//--></script>
