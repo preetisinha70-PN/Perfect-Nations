@@ -1,5 +1,5 @@
 <!-- ===========================================================================
-PERFECT NATIONS - HOMEPAGE - THE WHOLE PAGE IN ONE FILE - v12.4 - 2026-11-11
+PERFECT NATIONS - HOMEPAGE - THE WHOLE PAGE IN ONE FILE - v12.5 - 2026-11-11
 Paste this file ONCE into ONE Elementor Custom HTML widget on the homepage (page 13465), in a Full
 Width container with padding 0, and delete every other widget on the page. From then on the Perfect
 Nations Live Pages plugin serves pages/home.html from GitHub in place of the paste (root id pn-home,
@@ -1517,6 +1517,11 @@ oc Australia and Oceania.
 PERFECT NATIONS - HOMEPAGE - SECTION 01 - EVERY NATION IS RICHER - v7.0 THE STORY FIRST - 2026-11-08
 Served live from GitHub (pages/home-hero.html) by the Perfect Nations Live Pages plugin;
 the root id stays pn-hero, so the widget already on the homepage is the one replaced.
+v7.9 (homepage v12.5, 11 Nov 2026), the Steward-General: "borderlines for the Africa continent are still not
+  clear". The cause: the page raises every nation opened since it was built (pnhgPromote, from the live list of
+  open blueprints, now all 195) to the height of an open blueprint, but each border stayed at the height it was
+  drawn at, under the raised gold. The borders of Algeria, Mali, Niger, Chad, Libya, Mauritania and the other
+  nations opened this week were hidden. The borders are now drawn again whenever nations are raised.
 v7.8 (homepage v12.3, 11 Nov 2026), the Steward-General: "the borders of the countries on the Africa continent are
   not clear". A WebGL line is one pixel of the drawing buffer, which on a phone is about a third of a pixel on
   screen, too faint on the bright gold of Africa. On sharp screens every border is now also a thin dark ribbon
@@ -2477,7 +2482,18 @@ window.PNHG_CFG={"base":"https://perfectnations.org/blueprints/","paths":{"cote-
       }
       return made;
     }
-    try { borders(); } catch (e) {}
+    /* v7.9: the borders are kept so they can be drawn again when nations are raised (pnhgPromote) */
+    var borderObjs = [];
+    function redrawBorders(){
+      borderObjs.forEach(function(o){
+        globe.scene().remove(o);
+        try { o.geometry.dispose(); if (o.material !== borderMat) { o.material.dispose(); } } catch (e) {}
+      });
+      if (borderMat) { try { borderMat.dispose(); } catch (e) {} borderMat = null; }
+      borderObjs = [];
+      try { borderObjs = borders(); } catch (e) { borderObjs = []; }
+    }
+    redrawBorders();
     /* v7.8: the camera's near plane moves from 0.1 to 10 (the camera never comes closer than 35 units to the
        atmosphere, 55 to the land), which makes the depth buffer about a hundred times finer; phones, with a
        coarser depth buffer, had lost the borders under the gold of the nations */
@@ -2639,7 +2655,12 @@ window.PNHG_CFG={"base":"https://perfectnations.org/blueprints/","paths":{"cote-
         lands.forEach(function(Ld){ if (Ld.slug === s) { Ld.state = 'live'; } });
         islands.forEach(function(I){ if (I.slug === s) { I.state = 'live'; } });
       });
-      if (changed){ globe.polygonsData(lands.slice()); globe.pointsData(islands.slice()); }
+      if (changed){
+        globe.polygonsData(lands.slice()); globe.pointsData(islands.slice());
+        /* v7.9: a raised nation's border is drawn again at its new height; before, it stayed at the old height,
+           under the raised gold, so the borders of every nation opened since the page was built were hidden */
+        redrawBorders();
+      }
     };
 
     /* v5.4: the Capital Wire (Section 01b) asks the planet to find a nation: it turns to it,
