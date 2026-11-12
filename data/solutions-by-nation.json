@@ -1,6 +1,6 @@
 {
  "page": "solutions-by-nation",
- "updated": "2026-11-10",
+ "updated": "2026-11-12",
  "about": "Built by tools/build_state_of_nations.py from data/<nation>.json (coverage, guarantees, capital.register) and data/capital-architecture.json. Read by perfectnations.org/state-of-nations/ on every visit. Adds no fact: change a figure in its nation file, then rebuild.",
  "standards": [
   {
@@ -3253,29 +3253,29 @@
    "slug": "cuba",
    "name": "Cuba",
    "url": "https://perfectnations.org/blueprints/cuba/",
-   "standard": "Shelter",
-   "gap": "54.1%",
-   "gap_text": "Of Cubans lack safely managed sanitation.",
+   "standard": "Health",
+   "gap": "70%",
+   "gap_text": "Of the basic list of medicines is not available to Cubans.",
    "source": {
-    "label": "WHO/UNICEF, 2024",
-    "url": "https://data.worldbank.org/indicator/SH.STA.SMSS.ZS?locations=CU"
+    "label": "President of Cuba, 8 Aug 2026",
+    "url": "https://communistparty.ie/en/2026/08/it-is-not-enough-to-condemn-the-empire-we-must-build-popular-power-at-the-grassroots-level-win-the-streets/"
    },
    "seven": [
     [
      "Food",
      "Not measured",
      null,
-     "No FAO measure of food insecurity is published for Cuba",
-     "FAO",
-     "https://data.worldbank.org/indicator/SN.ITK.MSFI.ZS?locations=CU"
+     "No FAO food insecurity survey is published for Cuba. WFP reports that the state ration covered only 46% of recommended daily energy in 2023",
+     "WFP, May 2026",
+     "https://executiveboard.wfp.org/document_download/WFP-0000173486"
     ],
     [
      "Water",
-     "95.2%",
-     95.2,
-     "Basic drinking water; safely managed water is not measured (lenient)",
-     "WHO/UNICEF, 2024",
-     "https://data.worldbank.org/indicator/SH.H2O.BASW.ZS?locations=CU"
+     "71.6%",
+     71.6,
+     "On 3 November 2026, 2,681,770 Cubans, 28.4% of the population, had their piped water cut (INRH). 95.2% have basic water (WHO/UNICEF, 2024)",
+     "INRH, 3 Nov 2026",
+     "https://www.cubadebate.cu/noticias/2026/11/04/diaz-canel-sobre-el-abasto-de-agua-en-criterio-compartido-responder-al-pueblo-con-hechos-y-no-con-retorica/"
     ],
     [
      "Shelter",
@@ -3287,11 +3287,11 @@
     ],
     [
      "Energy",
-     "96%",
-     96.0,
-     "96% cook with clean fuels and technology; 100% have electricity",
-     "World Bank, 2024",
-     "https://data.worldbank.org/indicator/EG.CFT.ACCS.ZS?locations=CU"
+     "33.4%",
+     33.4,
+     "At the evening peak on 10 November 2026 the grid could serve 970 of 2,900 MW of demand; the day before, supply was cut for all 24 hours. 96% cook with clean fuels (2024)",
+     "Unión Eléctrica, 10 Nov 2026",
+     "https://www.granma.cu/cuba/2026-11-10/afectacion-10-11-2026-07-11-12"
     ],
     [
      "Education",
@@ -3303,19 +3303,19 @@
     ],
     [
      "Health",
-     "86",
-     86.0,
-     "WHO service coverage index",
-     "WHO, 2023",
-     "https://ourworldindata.org/grapher/universal-health-coverage-index?country=~CUB"
+     "30%",
+     30.0,
+     "Only 30% of the basic list of medicines is available (President of Cuba, August 2026). WHO service coverage index: 86 (2023)",
+     "President of Cuba, 8 Aug 2026",
+     "https://communistparty.ie/en/2026/08/it-is-not-enough-to-condemn-the-empire-we-must-build-popular-power-at-the-grassroots-level-win-the-streets/"
     ],
     [
      "Livelihood",
      "Not measured",
      null,
-     "No poverty survey for Cuba is published by the World Bank",
-     "World Bank",
-     "https://data.worldbank.org/indicator/SI.POV.UMIC?locations=CU"
+     "No poverty survey is published for Cuba. WFP reports that a household needed ten to eleven times the minimum monthly wage to buy the food it needs (2023)",
+     "WFP, May 2026",
+     "https://executiveboard.wfp.org/document_download/WFP-0000173486"
     ]
    ],
    "at_work": null,
@@ -6003,7 +6003,13 @@
      "https://data.worldbank.org/indicator/SI.POV.UMIC?locations=ID"
     ]
    ],
-   "at_work": null,
+   "at_work": {
+    "name": "Climate Adaptation and Green Resilience Program, Sub-Program 1",
+    "amount": "$500M",
+    "money": true,
+    "status": "Approved",
+    "url": "https://aiib.org/en/projects/details/2026/approved/indonesia-climate-adaptation-and-green-resilience-program-sub-program-1.html"
+   },
    "solutions": [
     14
    ],
@@ -13922,11 +13928,11 @@
     ]
    ],
    "at_work": {
-    "name": "Electricity Access Scale-up Project (EASP)",
-    "amount": "$608M",
+    "name": "Uganda Rural Electricity Access Project (UREAP), Phases I and II",
+    "amount": "€93.91M",
     "money": true,
-    "status": "Active",
-    "url": "https://projects.worldbank.org/en/projects-operations/project-detail/P166685"
+    "status": "Approved",
+    "url": "https://allafrica.com/stories/202604220738.html"
    },
    "solutions": [
     34
@@ -14008,7 +14014,13 @@
      "https://data.worldbank.org/indicator/SI.POV.NAHC?locations=UA"
     ]
    ],
-   "at_work": null,
+   "at_work": {
+    "name": "Programme for Emergency Recovery (Phase 5)",
+    "amount": "JPY 6.2B",
+    "money": true,
+    "status": "Signed",
+    "url": "https://www.jica.go.jp/english/information/press/2026/20260511_11.html"
+   },
    "solutions": [
     35
    ],
@@ -14600,7 +14612,13 @@
      "https://data.worldbank.org/indicator/SI.POV.UMIC?locations=VN"
     ]
    ],
-   "at_work": null,
+   "at_work": {
+    "name": "Hai Phong City Resilience Development Project",
+    "amount": "$260.1M",
+    "money": true,
+    "status": "Approved",
+    "url": "https://www.worldbank.org/en/news/press-release/2026/09/14/world-bank-group-supports-viet-nam-s-trade-connectivity-and-coastal-livelihoods"
+   },
    "solutions": [
     36
    ],
@@ -14761,11 +14779,11 @@
     ]
    ],
    "at_work": {
-    "name": "Girls’ Education and Women’s Empowerment and Livelihoods for Human Capital",
-    "amount": "$157M",
+    "name": "Zambia–EU Partnership for Education Reforms",
+    "amount": "€40M",
     "money": true,
-    "status": "Active",
-    "url": "https://projects.worldbank.org/en/projects-operations/project-detail/P181391"
+    "status": "Signed",
+    "url": "https://www.eeas.europa.eu/sites/default/files/2025/documents/EU-Zambia%20Lobito%20Corridor%20Business%20Forum%20-%20Signature%20Ceremony.pdf"
    },
    "solutions": [
     37
