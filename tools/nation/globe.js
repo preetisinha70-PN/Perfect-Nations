@@ -4,7 +4,8 @@
      - The Earth is NASA Blue Marble (Media Library: pn-globe-earth-day, the 1536 px copy on laptops,
        the 1024 px copy on phones). The nation is painted in gold from its outline, built into the page.
      - Order of appearance: an Earthrise sphere at once (CSS), then the Earth as soon as its picture loads.
-     - It turns gently back and forth around the nation, so the nation never leaves the view.
+     - It turns like the real Earth, west to east (continents drift left to right), one turn every 90 seconds;
+       the nation starts at the centre, turns away and comes back (v12.5, 12 Nov 2026, the Steward-General).
      - It draws only while on screen and while the tab is visible, at most 30 frames a second, and at a
        capped pixel ratio (1.25 phones, 1.5 laptops). It asks the laptop for its low-power graphics chip.
      - If the browser takes the drawing surface away (a graphics reset), the still Earth shows in its place
@@ -90,9 +91,11 @@
     return c;
   }
 
-  /* The view: centred on the nation, swaying 24 degrees either side over a minute. */
+  /* The view (v12.5): the Earth turns as it does in space, west to east, so the continents drift from left to right,
+     as on the homepage globe. One turn every 90 seconds, starting with the nation at the centre. */
+  var TURN = 90;
   function view(t) {
-    var lon = natLng + (calm ? 0 : Math.sin(t * 2 * Math.PI / 60) * 24 * D2R);
+    var lon = natLng - (calm ? 0 : (t % TURN) / TURN * 2 * Math.PI);
     var lat = natLat * 0.82;
     var cp = Math.cos(lon), sp = Math.sin(lon), cl = Math.cos(lat), sl = Math.sin(lat);
     return [cp, -sp * sl, sp * cl, 0, cl, sl, -sp, -cp * sl, cp * cl];
