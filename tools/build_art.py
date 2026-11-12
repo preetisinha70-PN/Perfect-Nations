@@ -239,7 +239,7 @@ def portrait(j, p, cat, n):
     data = {
         'nation': copy(where, p['nation']), 'title': 'Nation portrait', 'artist': copy(where, p.get('artist') or cat.get('house_artist', 'Preeti Sinha')),
         'statement': copy(where, 'The nation in its own colours, from its Perfect Nations blueprint. Shipped worldwide.'),
-        'spec': 'Print 12 &#215; 12 in &#183; Original 24 &#215; 24 in', 'alt': copy(where, p['alt']),
+        'spec': 'Original 24 &#215; 24 in', 'alt': copy(where, p['alt']),
         'zoom': media(where, p['zoom']), 'src': media(where, pick(p['images'], 300)), 'srcset': srcset(where, p['images']),
         'blueprint': link(where, p['blueprint']), 'print': '1',
         'enquire': link(where, cat['contact'] + '?about=print-' + p['slug']),
