@@ -5,6 +5,9 @@ Pages plugin serves this file in place of the code pasted in the page's one Cust
 BUILT, never edited by hand: edit src/state-of-nations.html, then run
 python3 tools/build_state_of_nations.py. Kept by the State of Nations Steward (the page) and the
 Correspondent (the data: data/state-of-nations.json, data/solutions-by-nation.json).
+v8.5 (12 Nov 2026): Solutions No. 45 to 50, for the six nations whose standard furthest from reach changed when
+Energy and Health were re-measured on what is actually delivered; both scripts wrapped in comment markers for
+the WordPress formatter (the Steward-General, 12 Nov 2026).
 v8.4 (10 Nov 2026): light reading sections, Earthrise accents (the Steward-General, 10 Nov 2026).
 v8.3 (10 Nov 2026): the reader of a Solution ends with Discuss this Solution, which opens the Contact page on
 Discuss a Solution with that Solution and its nation chosen (?about=solution-NN&country=Nation); a Deal Note
@@ -689,7 +692,7 @@ html.pn-son-lock,html.pn-son-lock body{ overflow:hidden; }
     </div>
   </section>
 </div>
-<script>
+<script><!--
 (function () {
   var root = document.getElementById('pn-son');
   if (!root || root.getAttribute('data-so') === '1') { return; }
@@ -1176,8 +1179,8 @@ html.pn-son-lock,html.pn-son-lock body{ overflow:hidden; }
     .then(function (posts) { if (posts) { mergePosts(posts); } ticker(); deepLink(); });
   ticker();
 })();
-</script>
-<script>
+//--></script>
+<script><!--
 (function () {
   /* The contour field behind the masthead: one WebGL shader, no library, in the Earthrise palette.
      It draws only while the hero is on screen and the tab is visible, at a capped resolution, and
@@ -1264,4 +1267,4 @@ html.pn-son-lock,html.pn-son-lock body{ overflow:hidden; }
   cv.addEventListener('webglcontextrestored', function () { if (init()) { lost = false; size(); draw(performance.now()); go(); } }, false);
   go();
 })();
-</script>
+//--></script>

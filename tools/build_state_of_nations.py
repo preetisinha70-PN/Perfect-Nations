@@ -59,7 +59,8 @@ OUT = PAGES / 'state-of-nations.html'
 NATION_DATA = DATA / 'solutions-by-nation.json'
 sys.path.insert(0, str(ROOT / 'tools'))
 
-VERSION = '8.4'  # light reading sections, Earthrise accents (the Steward-General, 10 Nov 2026)
+VERSION = '8.5'  # Solutions No. 45 to 50: Cameroon, Chad, Cuba, Iraq, Palestine and Nigeria, after Energy and Health were re-measured (the Steward-General, 12 Nov 2026)
+# v8.4: light reading sections, Earthrise accents (the Steward-General, 10 Nov 2026)
 # v8.3: Discuss this Solution in the reader of every Solution (the Steward-General, 10 Nov 2026)
 # v8.2: the close button of every pop-up is one design: a gold X drawn as two strokes, centred in a circle (the Steward-General, 9 Nov 2026)
 ORDER = ['Food', 'Water', 'Shelter', 'Energy', 'Education', 'Health', 'Livelihood']
