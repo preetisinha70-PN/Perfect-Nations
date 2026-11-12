@@ -24,7 +24,8 @@ ROOT = Path(__file__).resolve().parent.parent
 PAGES = ROOT / 'pages'
 DATA = ROOT / 'data'
 SITE = 'https://perfectnations.org'
-VERSION = '12.4'  # Governance first: one line on great local leadership, honest, dedicated and committed to basic standards of living for every citizen (the Steward-General, 11 Nov 2026)
+VERSION = '12.5'  # the globe draws the borders of newly opened nations at their raised height (hero v7.9; the Steward-General, 11 Nov 2026)
+# v12.4: Governance first: one line on great local leadership, honest, dedicated and committed to basic standards of living for every citizen (the Steward-General, 11 Nov 2026)
 # v12.3: the globe's borders are thin dark ribbons, clear on phones (hero v7.8; the Steward-General, 11 Nov 2026)
 # v12.2: the globe draws every border again: long straight borders follow the curve of the planet (hero v7.7; the Steward-General, 10 Nov 2026)
 # v12.1: What we do ends with its three tiles on the homepage: the closing seal row is left out, as Governance first just above carries the seal (the Steward-General, 10 Nov 2026)
