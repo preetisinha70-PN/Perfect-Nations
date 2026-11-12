@@ -9,12 +9,12 @@ First edition: 10 November 2026 (wave 2, Africa and the Middle East of the remai
 - **Food, Not measured:** No FAO measure of food insecurity is published for Iraq. FAO, https://data.worldbank.org/indicator/SN.ITK.MSFI.ZS?locations=IQ
 - **Water, 59.8%:** Safely managed drinking water. WHO/UNICEF, 2024, https://data.worldbank.org/indicator/SH.H2O.SMDW.ZS?locations=IQ
 - **Shelter, 50.7%:** City dwellers outside slums; 49.3% live in slums. UN-Habitat, 2022, https://data.worldbank.org/indicator/EN.POP.SLUM.UR.ZS?locations=IQ
-- **Energy, 99%:** 99% cook with clean fuels and technology; 100% have electricity. World Bank, 2024, https://data.worldbank.org/indicator/EG.CFT.ACCS.ZS?locations=IQ
+- **Energy, 44.7%:** The grid produced 24,600 MW in September 2026, against the 55,000 to 60,000 MW needed for power around the clock. 99% cook with clean fuels (2024). Ministry of Electricity, Sep 2026, https://www.iraqinews.com/iraq/iraqs-electricity-shortage-surpasses-35000-megawatts/
 - **Education, 44.9:** 44.9% of young people complete lower secondary school; 2007, dated. World Bank, 2007, https://data.worldbank.org/indicator/SE.SEC.CMPT.LO.ZS?locations=IQ
 - **Health, 64:** WHO service coverage index. WHO, 2023, https://ourworldindata.org/grapher/universal-health-coverage-index?country=~IRQ
 - **Livelihoods, 72%:** Above US$8.30 a day; 28% live below it. World Bank, 2023, https://data.worldbank.org/indicator/SI.POV.UMIC?locations=IQ
 
-Furthest from reach: Education (55.1%). Of young people in Iraq do not complete lower secondary school, on 2007 data.
+Furthest from reach: Energy (55.3%). Of the electricity Iraq needs is not supplied: 24,600 MW against at least 55,000 MW, September 2026.
 
 ## The Sovereign Assets
 
@@ -37,3 +37,4 @@ Furthest from reach: Education (55.1%). Of young people in Iraq do not complete 
 - Lower-secondary completion dates from 2007.
 - No FAO food insecurity measure.
 - IMF and bilateral financing: to read for the weekly review.
+- 12 November 2026, Energy re-measured (delivery test): Production 24,600 MW against 55,000 to 60,000 MW needed for 24-hour supply (Ahmed Turki Jiyad, spokesperson of the Ministry of Electricity, IraqiNews, 20 September 2026; the ministry released 24,700 MW for September on 14 September 2026). 24,600 / 55,000 = 44.7%, the lower demand figure, so the gap is not overstated. Peak-season reading.  Energy now sets Coverage.

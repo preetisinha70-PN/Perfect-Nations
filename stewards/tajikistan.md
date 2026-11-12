@@ -37,3 +37,4 @@ Furthest from reach: Water (34.9%). Of people in Tajikistan lack safely managed 
 ## Open gaps
 
 - The mineral line is World Bank mineral rents only; the metals mined are to source (Ministry of Industry).
+- 12 November 2026, delivery test for Energy: no official national figure for the share of demand served was found, so Energy is unchanged. Barki Tojik rations households in winter (4 to 5 hours a day in December 2025); no annual figure for demand served is published. The weekly review looks for one.

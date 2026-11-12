@@ -39,3 +39,4 @@ Furthest from reach: Education (77.7%). Of children in the Dominican Republic ca
 
 - The bond terms and date are read in Acento (11 February 2026); the Presidency release is cited.
 - Learning poverty rests on 2019 data; tourism receipts on 2018.
+- 12 November 2026, delivery test for Energy: no official national figure for the share of demand served was found, so Energy is unchanged. Two national blackouts (November 2025, 23 February 2026) and frequent local cuts; energy not served is a small share of daily demand (OC-SENI). The weekly review looks for one.

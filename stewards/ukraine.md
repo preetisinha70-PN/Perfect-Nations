@@ -47,3 +47,4 @@ Last weekly review: 11 November 2026.
 - The People, The Land, The Forest and The Water are not re-read at source.
 - No shelter, energy or education enterprise verified yet.
 - The Ministry of Finance’s own release on the Ukrenergo restructuring, and the IMF’s own release of 20 July 2026 (read inside Country Report No. 26/188 instead).
+- 12 November 2026, delivery test for Energy: no official national figure for the share of demand served was found, so Energy is unchanged. Ukrenergo applies hourly outage schedules after strikes on the grid (November 2026); no national figure for demand served is published. The weekly review looks for one.

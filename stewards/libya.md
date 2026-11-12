@@ -36,3 +36,4 @@ Furthest from reach: Shelter (78.3%). Of Libyans lack safely managed sanitation.
 - NOC figures are read in secondary reports; the NOC disclosures themselves are to be linked.
 - Public debt and reserves: no primary figure read yet.
 - Learning outcomes and lower-secondary completion not measured; Education shown as not measured.
+- 12 November 2026, delivery test for Energy: no official national figure for the share of demand served was found, so Energy is unchanged. GECOL reinstated load shedding in July 2026 (cuts of 10 hours a day and more) and reported a deficit of about 1,000 MW; no dated national figure for demand served was found. The weekly review looks for one.

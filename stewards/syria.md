@@ -9,7 +9,7 @@ First edition: 10 November 2026 (wave 2, Africa and the Middle East of the remai
 - **Food, Not measured:** No FAO measure of food insecurity is published for Syria. FAO, https://data.worldbank.org/indicator/SN.ITK.MSFI.ZS?locations=SY
 - **Water, 94.1%:** Basic drinking water; safely managed water is not measured (lenient). WHO/UNICEF, 2024, https://data.worldbank.org/indicator/SH.H2O.BASW.ZS?locations=SY
 - **Shelter, 58.9%:** City dwellers outside slums; 41.1% live in slums; safely managed sanitation is not measured. UN-Habitat, 2022, https://data.worldbank.org/indicator/EN.POP.SLUM.UR.ZS?locations=SY
-- **Energy, 96%:** 96% cook with clean fuels and technology; 89.3% have electricity. World Bank, 2024, https://data.worldbank.org/indicator/EG.CFT.ACCS.ZS?locations=SY
+- **Energy, 46.2%:** Generation passed 3,000 MW in January 2026, against demand of about 6,500 MW. 96% cook with clean fuels (2024). Petra and Syrian Ministry of Energy, 2026, https://petra.gov.jo/crm/index.php/en/news/jordan-syria-ink-energy-agreement
 - **Education, 42.7:** 42.7% of young people complete lower secondary school. World Bank, 2024, https://data.worldbank.org/indicator/SE.SEC.CMPT.LO.ZS?locations=SY
 - **Health, 70:** WHO service coverage index. WHO, 2023, https://ourworldindata.org/grapher/universal-health-coverage-index?country=~SYR
 - **Livelihoods, 64.8%:** Above the national poverty line; 35.2% live below it, dated. World Bank, 2006, https://data.worldbank.org/indicator/SI.POV.NAHC?locations=SY
@@ -37,3 +37,4 @@ Furthest from reach: Education (57.3%). Of young people in Syria do not complete
 - No IMF debt or growth figures are published for Syria.
 - Poverty data date from 2006.
 - No FAO food insecurity measure in the World Bank series; WFP data to read.
+- 12 November 2026, Energy re-measured (delivery test): Generation rose from 2,500 MW to over 3,000 MW after gas imports from Jordan began on 1 January 2026 (Jordan Minister of Energy, Petra, 26 January 2026); demand about 6,500 MW (Khaled Abu Di, Director-General of the Public Establishment for Electricity Transmission and Distribution, September 2025, https://www.zawya.com/en/projects/utilities/syria-suffers-from-sharp-power-gap-o7k783lk). ASSUMPTION: the 2025 demand figure holds for 2026. 3,000 / 6,500 = 46.2%.

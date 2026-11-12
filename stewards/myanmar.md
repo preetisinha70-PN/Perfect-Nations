@@ -9,7 +9,7 @@ First edition: 10 November 2026 (wave 3, Asia of the remaining nations). The wee
 - **Food, 67.3%:** Not food insecure; 32.7% are moderately or severely food insecure. FAO, 2023, https://data.worldbank.org/indicator/SN.ITK.MSFI.ZS?locations=MM
 - **Water, 59.7%:** Safely managed drinking water. WHO/UNICEF, 2024, https://data.worldbank.org/indicator/SH.H2O.SMDW.ZS?locations=MM
 - **Shelter, 41.7%:** City dwellers outside slums; 58.3% live in slums. UN-Habitat, 2022, https://data.worldbank.org/indicator/EN.POP.SLUM.UR.ZS?locations=MM
-- **Energy, 46%:** 46% cook with clean fuels and technology; 80.4% have electricity. World Bank, 2024, https://data.worldbank.org/indicator/EG.CFT.ACCS.ZS?locations=MM
+- **Energy, 40.2:** About 402 kWh of electricity a person a year, against the Living Line of 1,000; 46% cook with clean fuels (2024). Ember, 2024, https://ember-energy.org/data/yearly-electricity-data/
 - **Education, 10.5:** 10.5% of children read a simple text by the end of primary school; 2019, dated. World Bank, 2019, https://data.worldbank.org/indicator/SE.LPV.PRIM?locations=MM
 - **Health, 52:** WHO service coverage index. WHO, 2023, https://ourworldindata.org/grapher/universal-health-coverage-index?country=~MMR
 - **Livelihoods, 70.9%:** Above US$4.20 a day; 29.1% live below it, dated. World Bank, 2017, https://data.worldbank.org/indicator/SI.POV.LMIC?locations=MM
@@ -33,3 +33,4 @@ Furthest from reach: Education (89.5%). Of children in Myanmar cannot read a sim
 
 - No capital already committed and no Newswire item on record: no IMF consultation since 2019 and no World Bank approval in the period read; the weekly review reads the Asian Development Bank and UN agencies.
 - Learning outcomes date from 2019.
+- 12 November 2026, Energy re-measured (use test): Electricity demand per person 402 kWh, 2024 (Ember, Yearly Electricity Data, 2026 release, https://ember-energy.org/data/yearly-electricity-data/; read through the Our World in Data energy dataset, accessed 12 November 2026). 402 / 1,000 = 40.2%.

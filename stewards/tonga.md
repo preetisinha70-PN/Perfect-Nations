@@ -9,7 +9,7 @@ First edition: 10 November 2026 (wave 4, Oceania of the remaining nations). The 
 - **Food, 85.2%:** Not food insecure; 14.8% are moderately or severely food insecure. FAO, 2022, https://data.worldbank.org/indicator/SN.ITK.MSFI.ZS?locations=TO
 - **Water, 29.6%:** Safely managed drinking water. WHO/UNICEF, 2024, https://data.worldbank.org/indicator/SH.H2O.SMDW.ZS?locations=TO
 - **Shelter, 31.3%:** Safely managed sanitation; 0.3% of city dwellers live in slums. WHO/UNICEF, 2024, https://data.worldbank.org/indicator/SH.STA.SMSS.ZS?locations=TO
-- **Energy, 91%:** 91% cook with clean fuels and technology; 100% have electricity. World Bank, 2024, https://data.worldbank.org/indicator/EG.CFT.ACCS.ZS?locations=TO
+- **Energy, 67.2:** About 672 kWh of electricity a person a year, against the Living Line of 1,000; 91% cook with clean fuels (2024). Ember, 2024, https://ember-energy.org/data/yearly-electricity-data/
 - **Education, 99.4:** 99.4% of young people complete lower secondary school. World Bank, 2024, https://data.worldbank.org/indicator/SE.SEC.CMPT.LO.ZS?locations=TO
 - **Health, 71:** WHO service coverage index. WHO, 2023, https://ourworldindata.org/grapher/universal-health-coverage-index?country=~TON
 - **Livelihoods, 73.3%:** Above US$8.30 a day; 26.7% live below it. World Bank, 2021, https://data.worldbank.org/indicator/SI.POV.UMIC?locations=TO
@@ -37,3 +37,4 @@ Furthest from reach: Water (70.4%). Of Tongans lack safely managed drinking wate
 ## Open gaps
 
 - No 2025 or 2026 World Bank press release names Tonga; no Newswire item yet.
+- 12 November 2026, Energy re-measured (use test): Electricity demand per person 672 kWh, 2024 (Ember, Yearly Electricity Data, 2026 release, https://ember-energy.org/data/yearly-electricity-data/; read through the Our World in Data energy dataset, accessed 12 November 2026). 672 / 1,000 = 67.2%.

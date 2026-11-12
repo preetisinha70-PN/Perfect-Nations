@@ -9,12 +9,12 @@ First edition: 10 November 2026 (wave 2, Africa and the Middle East of the remai
 - **Food, 73%:** Not food insecure; 27% are moderately or severely food insecure. FAO, 2023, https://data.worldbank.org/indicator/SN.ITK.MSFI.ZS?locations=PS
 - **Water, 80.6%:** Safely managed drinking water. WHO/UNICEF, 2024, https://data.worldbank.org/indicator/SH.H2O.SMDW.ZS?locations=PS
 - **Shelter, 73.5%:** Safely managed sanitation; 19.5% of city dwellers live in slums. WHO/UNICEF, 2024, https://data.worldbank.org/indicator/SH.STA.SMSS.ZS?locations=PS
-- **Energy, 100%:** 100% have electricity; clean cooking is not measured (lenient). World Bank, 2024, https://data.worldbank.org/indicator/EG.ELC.ACCS.ZS?locations=PS
+- **Energy, 61.7%:** The Gaza grid has been down since October 2023 (OCHA), and 38.3% of Palestinians live in Gaza (PCBS, end of 2025). Before the war, 100% had electricity. OCHA and PCBS, 2026, https://www.ochaopt.org/content/humanitarian-situation-report-6-march-2026
 - **Education, 91.2:** 91.2% of young people complete lower secondary school. World Bank, 2023, https://data.worldbank.org/indicator/SE.SEC.CMPT.LO.ZS?locations=PS
 - **Health, 65:** WHO service coverage index. WHO, 2023, https://ourworldindata.org/grapher/universal-health-coverage-index?country=~PSE
 - **Livelihoods, 67.2%:** Above the national poverty line; 32.8% live below it. World Bank, 2023, https://data.worldbank.org/indicator/SI.POV.NAHC?locations=PS
 
-Furthest from reach: Livelihood (32.8%). Of Palestinians live below the national poverty line.
+Furthest from reach: Energy (38.3%). Of Palestinians live in Gaza, where the electricity grid has been down since October 2023.
 
 ## The Sovereign Assets
 
@@ -37,3 +37,4 @@ Furthest from reach: Livelihood (32.8%). Of Palestinians live below the national
 - No IMF debt or growth figures are published for the West Bank and Gaza in the WEO dataset read.
 - No FAO food insecurity figure beyond the World Bank series; humanitarian food data (IPC) to read for Gaza.
 - Reconstruction financing pledged since 2025: to read with primary sources in the weekly review.
+- 12 November 2026, Energy re-measured (delivery test): "Gaza, where the electricity grid has been down since October 2023" (OCHA, Humanitarian Situation Report, 6 March 2026). Population end of 2025: Palestine 5,557,096, Gaza Strip 2,127,034 (PCBS, https://pcbs.gov.ps/Downloads/book2736.pdf). 1 - 2,127,034 / 5,557,096 = 61.7%. ASSUMPTION: the West Bank grid serves its population.  Energy now sets Coverage.

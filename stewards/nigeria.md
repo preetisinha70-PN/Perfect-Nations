@@ -43,3 +43,4 @@ Last weekly review: 9 November 2026.
 ## Open gaps
 - The seven standards could not be re-read at source: the World Bank data pages and Our World in Data do not open in these reviews. Food (23.5% not moderately or severely food insecure, FAO, 2024) sets Coverage at 23.5. Education is not measured.
 - No water, shelter or education enterprise verified yet.
+- 12 November 2026, Energy re-measured (use test): Electricity demand per person 165 kWh, 2025 (Ember, Yearly Electricity Data, 2026 release, https://ember-energy.org/data/yearly-electricity-data/; read through the Our World in Data energy dataset, accessed 12 November 2026). 165 / 1,000 = 16.5%.  Energy now sets Coverage.

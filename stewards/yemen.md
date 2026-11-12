@@ -9,7 +9,7 @@ First edition: 10 November 2026 (wave 2, Africa and the Middle East of the remai
 - **Food, 27%:** Not food insecure; 73% are moderately or severely food insecure. FAO, 2023, https://data.worldbank.org/indicator/SN.ITK.MSFI.ZS?locations=YE
 - **Water, 75%:** Basic drinking water; safely managed water is not measured (lenient). WHO/UNICEF, 2024, https://data.worldbank.org/indicator/SH.H2O.BASW.ZS?locations=YE
 - **Shelter, 43.1%:** Safely managed sanitation; 44.2% of city dwellers live in slums. WHO/UNICEF, 2024, https://data.worldbank.org/indicator/SH.STA.SMSS.ZS?locations=YE
-- **Energy, 47%:** 47% cook with clean fuels and technology; 86.3% have electricity. World Bank, 2024, https://data.worldbank.org/indicator/EG.CFT.ACCS.ZS?locations=YE
+- **Energy, 12.9:** About 129 kWh of electricity a person a year, against the Living Line of 1,000; 47% cook with clean fuels (2024). Ember, 2024, https://ember-energy.org/data/yearly-electricity-data/
 - **Education, 5.3:** 5.3% of children read a simple text by the end of primary school; 2011, dated. World Bank, 2011, https://data.worldbank.org/indicator/SE.LPV.PRIM?locations=YE
 - **Health, 43:** WHO service coverage index. WHO, 2023, https://ourworldindata.org/grapher/universal-health-coverage-index?country=~YEM
 - **Livelihoods, 51.4%:** Above the national poverty line; 48.6% live below it, dated. World Bank, 2014, https://data.worldbank.org/indicator/SI.POV.NAHC?locations=YE
@@ -38,3 +38,4 @@ Furthest from reach: Education (94.7%). Of children in Yemen cannot read a simpl
 - Learning outcomes date from 2011 and poverty data from 2014.
 - No IMF debt figure is published for Yemen.
 - Remittances date from 2016.
+- 12 November 2026, Energy re-measured (use test): Electricity demand per person 129 kWh, 2024 (Ember, Yearly Electricity Data, 2026 release, https://ember-energy.org/data/yearly-electricity-data/; read through the Our World in Data energy dataset, accessed 12 November 2026). 129 / 1,000 = 12.9%.

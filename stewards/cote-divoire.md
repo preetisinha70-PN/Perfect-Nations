@@ -35,3 +35,4 @@ World Bank, World Development Indicators, read 30 October 2026 (not re-read on 7
 - The seven standards could not be re-read at source: the World Bank data pages and Our World in Data do not open in these reviews. Education (20.1% of children reading by the end of primary school, World Bank, 2019) sets Coverage at 20.1.
 - The Power card: whether 22.8% is the renewable share of electricity output or of final energy consumption is to be checked against the World Bank indicator.
 - Enterprises for food, shelter, education, health and livelihood are not yet verified.
+- 12 November 2026, Energy re-measured (use test): Electricity demand per person 315 kWh, 2024 (Ember, Yearly Electricity Data, 2026 release, https://ember-energy.org/data/yearly-electricity-data/; read through the Our World in Data energy dataset, accessed 12 November 2026). 315 / 1,000 = 31.5%.

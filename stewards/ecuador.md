@@ -42,3 +42,4 @@ Last weekly review: 7 November 2026.
 - The seven standards could not be re-read at source: the World Bank data pages and Our World in Data do not open in these reviews. Education (34.1% of children reading by the end of primary school, World Bank, 2019) sets Coverage at 34.1.
 - No total public debt in US dollars from the Ministry (the Ministry site, now economicoproductivo.gob.ec, did not open).
 - No verified enterprise for energy yet already in operation (Villonaco III is approved, not built).
+- 12 November 2026, delivery test for Energy: no official national figure for the share of demand served was found, so Energy is unchanged. Scheduled cuts in 2026 were limited to maintenance (up to four hours on two weekends) and to industry in October; household supply was not rationed nationally. The weekly review looks for one.

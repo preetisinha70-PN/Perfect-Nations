@@ -9,12 +9,12 @@ First edition: 10 November 2026 (wave 1 of the remaining 151 nations). The weekl
 - **Food, 39.1%:** Not food insecure; 60.9% are moderately or severely food insecure. FAO, 2024, https://data.worldbank.org/indicator/SN.ITK.MSFI.ZS?locations=CM
 - **Water, 71.4%:** Basic drinking water; safely managed water is not measured (lenient). WHO/UNICEF, 2024, https://data.worldbank.org/indicator/SH.H2O.BASW.ZS?locations=CM
 - **Shelter, 67.3%:** City dwellers outside slums; 32.7% live in slums; safely managed sanitation is not measured. UN-Habitat, 2022, https://data.worldbank.org/indicator/EN.POP.SLUM.UR.ZS?locations=CM
-- **Energy, 32%:** 32% cook with clean fuels and technology; 72% have electricity. World Bank, 2024, https://data.worldbank.org/indicator/EG.CFT.ACCS.ZS?locations=CM
+- **Energy, 25.1:** About 251 kWh of electricity a person a year, against the Living Line of 1,000; 32% cook with clean fuels (2024). Ember, 2024, https://ember-energy.org/data/yearly-electricity-data/
 - **Education, 28.1:** 28.1% of children read a simple text by the end of primary school; 2019, dated. World Bank, 2019, https://data.worldbank.org/indicator/SE.LPV.PRIM?locations=CM
 - **Health, 48:** WHO service coverage index. WHO, 2023, https://ourworldindata.org/grapher/universal-health-coverage-index?country=~CMR
 - **Livelihoods, 58.7%:** Above US$4.20 a day; 41.3% live below it. World Bank, 2021, https://data.worldbank.org/indicator/SI.POV.LMIC?locations=CM
 
-Furthest from reach: Education (71.9%). Of children in Cameroon cannot read a simple text by the end of primary school, on 2019 data.
+Furthest from reach: Energy (74.9%). Of the electricity a person needs is missing: about 251 kWh a person a year, against the Living Line of 1,000.
 
 ## The Sovereign Assets
 
@@ -37,3 +37,4 @@ Furthest from reach: Education (71.9%). Of children in Cameroon cannot read a si
 ## Open gaps
 
 - Public debt figures are read in Financial Afrik and Capmad, citing the CAA and the Ministry of Finance; the CAA report itself is to be linked.
+- 12 November 2026, Energy re-measured (use test): Electricity demand per person 251 kWh, 2024 (Ember, Yearly Electricity Data, 2026 release, https://ember-energy.org/data/yearly-electricity-data/; read through the Our World in Data energy dataset, accessed 12 November 2026). 251 / 1,000 = 25.1%.  Energy now sets Coverage.

@@ -9,7 +9,7 @@ First edition: 10 November 2026 (wave 2, Africa and the Middle East of the remai
 - **Food, 57.6%:** Not food insecure; 42.4% are moderately or severely food insecure. FAO, 2023, https://data.worldbank.org/indicator/SN.ITK.MSFI.ZS?locations=LB
 - **Water, 47.7%:** Safely managed drinking water. WHO/UNICEF, 2024, https://data.worldbank.org/indicator/SH.H2O.SMDW.ZS?locations=LB
 - **Shelter, 25.7%:** Safely managed sanitation; 4.5% of city dwellers live in slums. WHO/UNICEF, 2024, https://data.worldbank.org/indicator/SH.STA.SMSS.ZS?locations=LB
-- **Energy, 90%:** 90% cook with clean fuels and technology; 100% have electricity. World Bank, 2024, https://data.worldbank.org/indicator/EG.CFT.ACCS.ZS?locations=LB
+- **Energy, 33%:** The Minister of Energy: EDL supplies about one third of national demand, and existing plants give 8 to 10 hours a day at best. 90% cook with clean fuels (2024). Ministry of Energy and Water, Dec 2025, https://energyandwater.gov.lb/ar/details/101089/minister-joe-saddi-s-power-sector-reset-energy-minister-joe-saddi-lays-out-a-hard-line-reform-roadmap-to-rescue-lebanon-s-electricity-sector-from-debt-decay-and-dysfunction-1768810589
 - **Education, 52.9:** 52.9% of young people complete lower secondary school. World Bank, 2023, https://data.worldbank.org/indicator/SE.SEC.CMPT.LO.ZS?locations=LB
 - **Health, 67:** WHO service coverage index. WHO, 2023, https://ourworldindata.org/grapher/universal-health-coverage-index?country=~LBN
 - **Livelihoods, 72.6%:** Above the national poverty line; 27.4% live below it, dated. World Bank, 2012, https://data.worldbank.org/indicator/SI.POV.NAHC?locations=LB
@@ -39,3 +39,4 @@ Furthest from reach: Shelter (74.3%). Of Lebanese lack safely managed sanitation
 - IMF: Lebanon remains in default without a funded programme (IFR, secondary); the weekly review reads the IMF’s own statements.
 - Poverty data date from 2012.
 - The IMF does not publish growth projections for Lebanon.
+- 12 November 2026, Energy re-measured (delivery test): EDL supplies about one third of national demand; existing plants can give 8 to 10 hours of electricity a day at best (Minister of Energy and Water Joe Saddi, ministry website, dated 29 December 2025). 1/3 = 33.3%.
