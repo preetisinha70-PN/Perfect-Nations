@@ -4,7 +4,7 @@
 
 Wraps pages/capital-architecture.html in the header and footer, routes GitHub and jsDelivr reads to
 this repository, uses local Barlow fonts, paints stand-ins for the Media Library pictures (the shell
-cannot reach perfectnations.org), and blocks every other host. Screenshots go to /tmp/pn-preview/.
+cannot reach perfectnations.com), and blocks every other host. Screenshots go to /tmp/pn-preview/.
 Needs: pip install playwright pillow (Chromium), and the fonts once:
     cd /tmp/pn-fonts && npm init -y && npm install @fontsource/barlow-condensed @fontsource/barlow-semi-condensed
 """
@@ -95,7 +95,7 @@ def route(r):
             if f.exists():
                 return r.fulfill(path=str(f), content_type='application/json')
             return r.fulfill(status=404, body='')
-    if url.startswith('https://perfectnations.org/wp-content/') and url.split('?')[0].endswith(('.png', '.jpg', '.jpeg', '.webp')):
+    if url.startswith('https://perfectnations.com/wp-content/') and url.split('?')[0].endswith(('.png', '.jpg', '.jpeg', '.webp')):
         return r.fulfill(body=stand_in(url.rsplit('/', 1)[-1]), content_type='image/jpeg')
     return r.abort()
 

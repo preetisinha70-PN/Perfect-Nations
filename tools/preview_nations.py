@@ -10,7 +10,7 @@ Run from the repository root:
 - --libs: a folder with node_modules/globe.gl (npm install globe.gl@2.31.0), so a page that still loads
   globe.gl can be measured as it is today; node_modules/three-globe/example/img/earth-day.jpg stands in for
   the Media Library Earth texture. Without it, those requests fail and the page shows its fallback.
-- Other perfectnations.org images (which the build machine cannot reach) are answered with stand-in pictures
+- Other perfectnations.com images (which the build machine cannot reach) are answered with stand-in pictures
   of the same kind, so the layout is exact while the photographs are not.
 - --fonts: a folder holding the @fontsource packages barlow-condensed and barlow-semi-condensed.
 Writes <slug>-laptop.png (1440 x 900, full page), <slug>-laptop-first.png (the first screen),
@@ -120,7 +120,7 @@ def main():
 
                 def route(r):
                     url = r.request.url
-                    if url.startswith('https://perfectnations.org/blueprints/') and r.request.resource_type == 'document':
+                    if url.startswith('https://perfectnations.com/blueprints/') and r.request.resource_type == 'document':
                         return r.fulfill(status=200, body=doc, content_type='text/html; charset=utf-8')
                     if url.startswith('https://fonts.local/'):
                         fp = Path(url[len('https://fonts.local'):])
@@ -140,7 +140,7 @@ def main():
                         body = globe_js.read_bytes()
                         note(url, body, 'js')
                         return r.fulfill(status=200, body=body, content_type='application/javascript')
-                    if 'perfectnations.org/wp-content/uploads/' in url and re.search(r'\.(jpe?g|png|webp)(\?|$)', url):
+                    if 'perfectnations.com/wp-content/uploads/' in url and re.search(r'\.(jpe?g|png|webp)(\?|$)', url):
                         if re.search(r'pn-globe-earth|earth-night', url) and earth and earth.exists():
                             body = earth.read_bytes()
                             # the Media Library copy the page asks for is smaller than this stand-in: count by its size
@@ -170,7 +170,7 @@ def main():
                 pg.on('console', lambda m: errors.append(m.text[:200]) if m.type == 'error' else None)
                 pg.route('**/*', route)
                 # The page is opened at its own address, so its images are same-origin, as on the live site.
-                pg.goto('https://perfectnations.org/blueprints/%s/' % slug, wait_until='load')
+                pg.goto('https://perfectnations.com/blueprints/%s/' % slug, wait_until='load')
                 pg.wait_for_timeout(2500)
                 first = None
                 if not args.no_shots:

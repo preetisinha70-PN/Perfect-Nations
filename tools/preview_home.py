@@ -11,7 +11,7 @@ Run from the repository root:
   previews use the site's own type. If --fonts is not given, --libs is tried.
 - Requests for this repository's raw.githubusercontent.com and jsDelivr files are answered from the
   local checkout (manifest, ticker, nation files).
-- perfectnations.org images (which the build machine cannot reach) are answered with stand-in
+- perfectnations.com images (which the build machine cannot reach) are answered with stand-in
   pictures, so the layout is exact while the photographs are not.
 Writes home-laptop.png, home-laptop-first.png (1440 x 900), home-phone.png and home-phone-first.png
 (390 x 844), prints the section order, the height of each section, script errors and failed requests.
@@ -95,7 +95,7 @@ def main():
                 p = libs / 'node_modules' / m.group(1) / m.group(2)
                 if p.exists():
                     return r.fulfill(status=200, body=p.read_bytes(), content_type='application/javascript')
-        if 'perfectnations.org/wp-content/uploads/' in url and re.search(r'\.(jpe?g|png|webp)(\?|$)', url):
+        if 'perfectnations.com/wp-content/uploads/' in url and re.search(r'\.(jpe?g|png|webp)(\?|$)', url):
             counter['n'] += 1
             body = stand_in(768, 461, counter['n'])
             return r.fulfill(status=200, body=body, content_type='image/jpeg') if body else r.fulfill(status=404, body='')

@@ -48,7 +48,7 @@ ORDER = [
     'blueprints-atlas.html',  # 01 the golden map, 02 the open blueprints, 03 every nation
 ]
 
-BASE = 'https://perfectnations.org/blueprints/'
+BASE = 'https://perfectnations.com/blueprints/'
 # The frames the region tabs fly to: [west, east, south, north] in degrees. The world frame leaves
 # out Antarctica; Oceania stops at Samoa and Tonga rather than running on into an empty Pacific.
 VIEWS = {'world': [-180, 180, -58, 84], 'oceania': [110, 194, -48, 9]}
@@ -326,7 +326,7 @@ def tile_html(c, box):
 # ---------------------------------------------------------------- the build
 def write_index(cards):
     index = {
-        'about': 'The open blueprints on perfectnations.org/blueprints/, built by tools/build_blueprints.py from '
+        'about': 'The open blueprints on perfectnations.com/blueprints/, built by tools/build_blueprints.py from '
                  'pages/manifest.json and data/<nation>.json. Read by the Blueprints page on every visit.',
         'updated': datetime.now(timezone.utc).strftime('%Y-%m-%dT%H:%MZ'),
         'count': len(cards),

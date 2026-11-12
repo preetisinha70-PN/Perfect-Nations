@@ -360,7 +360,7 @@
     /* v11.4: a Solution Perfect Nations designs, or a Deal Note (a market deal read by Perfect Nations) */
     var k = el('p', 'bpx-sol__k'); k.appendChild(el('b', '', (deal ? 'Deal Note No. ' : 'Solution No. ') + pad(x.no || 0)));
     var tm = el('time', '', x.label || shortDate(x.date) || ''); tm.setAttribute('datetime', x.date || ''); k.appendChild(tm); li.appendChild(k);
-    var h = el('h3'), href = okUrl(x.url) ? x.url : 'https://perfectnations.org/state-of-nations/#' + (deal ? 'deal-' : 'solution-') + pad(x.no || 0);
+    var h = el('h3'), href = okUrl(x.url) ? x.url : 'https://perfectnations.com/state-of-nations/#' + (deal ? 'deal-' : 'solution-') + pad(x.no || 0);
     h.appendChild(link(el('a', '', x.title), href)); li.appendChild(h);
     if (design && T(x.standfirst)) li.appendChild(el('p', '', x.standfirst));
     if (T(x.challenge) && T(x.advises)) li.appendChild(howList([['01', 'The challenge', x.challenge], ['02', 'What Perfect Nations advises', x.advises]]));
@@ -377,7 +377,7 @@
     /* v11.9: a designed Solution also offers Discuss this Solution (the Contact page, that Solution chosen) */
     if (design && x.no) {
       acts.appendChild(link(el('a', 'bpx-btn bpx-btn--line', 'Discuss this Solution'),
-        'https://perfectnations.org/contact/?about=solution-' + (+x.no) + '&country=' + encodeURIComponent(x.nation || CFG.name)));
+        'https://perfectnations.com/contact/?about=solution-' + (+x.no) + '&country=' + encodeURIComponent(x.nation || CFG.name)));
     }
     foot.appendChild(acts); li.appendChild(foot);
     return li;

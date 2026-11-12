@@ -1,12 +1,12 @@
 # Perfect Nations: live data
 
-This repository holds the live data that the Perfect Nations blueprints on perfectnations.org read each time a visitor opens a page.
+This repository holds the live data that the Perfect Nations blueprints on perfectnations.com read each time a visitor opens a page.
 
 - `data/<nation>.json`: each nation blueprint (barbados, kenya, ...). Kept current by its Nation Steward in the Nations Newswire Stewards rotation; Barbados (Nia Carrington) at least once a day.
 - `data/state-of-nations.json`: the State of Nations page (the wire of instruments and the Solutions, called dispatches until 7 November 2026). Kept current at 8 am, 12 noon and 8 pm New York time by the Correspondent, Steward of the Wire.
 - `data/solutions-by-nation.json`: Solutions for every nation on the State of Nations page, built from the nation files by `tools/build_state_of_nations.py --data` (see The State of Nations page).
 - `archive/`: older Newswire items and dispatches, moved out of the nation files and never deleted (see The archive).
-- `figures/perfect-capita.json`: the live figures on the Perfect Capita page (perfectnations.org/perfect-capita/). Kept by the Perfect Capita Steward (see The Perfect Capita page). It is not a nation file, which is why it sits outside `data/`.
+- `figures/perfect-capita.json`: the live figures on the Perfect Capita page (perfectnations.com/perfect-capita/). Kept by the Perfect Capita Steward (see The Perfect Capita page). It is not a nation file, which is why it sits outside `data/`.
 
 Each page reads its file from
 `https://raw.githubusercontent.com/preetisinha70-PN/perfect-nations/main/data/<nation>.json`
@@ -57,7 +57,7 @@ Rules: every figure must have a primary source; no contractions; plain ASCII whe
 
 ## The Blueprints page (from 6 November 2026)
 
-perfectnations.org/blueprints/ is one file, `pages/blueprints.html` (root `pn-blueprints`), kept by the Blueprints Steward.
+perfectnations.com/blueprints/ is one file, `pages/blueprints.html` (root `pn-blueprints`), kept by the Blueprints Steward.
 
 - **Built, never edited by hand.** `python3 tools/build_blueprints.py` joins `pages/nations-menu.html`, `pages/home-rule.html` (the gold line) and `pages/blueprints-atlas.html` (the page itself: style, markup and script). It draws the golden map from the world outlines in `pages/home-hero.html`, so the homepage planet and the map share one source.
 - **A new blueprint needs no new build.** On every visit the page reads `pages/manifest.json`: a blueprint merged there (its `pn-bp-<slug>` key) turns gold on the map, joins the tiles, the counts, the region tabs and the atlas at once. If it is not yet in `data/blueprints.json`, the page reads `data/<slug>.json` for its tile.
@@ -66,18 +66,18 @@ perfectnations.org/blueprints/ is one file, `pages/blueprints.html` (root `pn-bl
 
 ## The 50 States page (from 10 November 2026)
 
-perfectnations.org/50-states/ is one file, `pages/us-states.html` (root `pn-us`): the section for the 50 states of the United States, where state blueprints will open. It is in the header (Where we work, after Blueprints of Nations), in the footer and in the header search (each state by name).
+perfectnations.com/50-states/ is one file, `pages/us-states.html` (root `pn-us`): the section for the 50 states of the United States, where state blueprints will open. It is in the header (Where we work, after Blueprints of Nations), in the footer and in the header search (each state by name).
 
 - **Built, never edited by hand.** `python3 tools/build_us_states.py` builds the page from `data/us-states.json` (the figures), `tools/us/template.html`, `tools/us/style.css` and `tools/us/script.js` (the design and words), the gold line in `pages/home-rule.html` and the cup, laurels and stars of the logo kit. The map is drawn at build time from `tools/us/states-albers-10m.json` (us-atlas 3, ISC licence: Census Bureau cartographic boundaries, Albers USA with Alaska and Hawaii inset), so the page loads no map file and no library.
 - **`data/us-states.json`**: for each state `slug`, `name`, `abbr`, `fips`, `region` (Census region), `population` (Census Bureau, Vintage 2025, 1 July 2025), `gdp_musd` (BEA, current-dollar GDP 2025, millions) and `poverty` (ACS 2025 1-year, table B17001: `below`, `moe`, `universe`, `share`); the United States totals; the three sources. Rebuilt with `python3 tools/build_us_states.py --data` from the official downloads in `data/us/raw/` (see its README); it adds no figure of its own.
-- **A state blueprint needs no new build of this page.** On every visit the page reads `pages/manifest.json`: a key `pn-us-<slug>` (for example `pn-us-texas`) with a perfectnations.org `url` turns that state bright gold on the map and in the list, and its card and row link to that url. The header search does the same.
+- **A state blueprint needs no new build of this page.** On every visit the page reads `pages/manifest.json`: a key `pn-us-<slug>` (for example `pn-us-texas`) with a perfectnations.com `url` turns that state bright gold on the map and in the list, and its card and row link to that url. The header search does the same.
 - **Addresses:** `/50-states/?state=<slug>` (or `#<slug>`) opens the page with that state's card on the map. "Ask for it" goes to `/contact/?about=blueprint&country=<State>`.
 - **Checks and previews:** `python3 tools/check_page.py pages/us-states.html`, then `python3 tools/preview_page.py pages/us-states.html --out <folder> --fonts <folder holding node_modules/@fontsource>`.
 - **Every change** goes through a pull request "For approval: The 50 States vX.Y, ...", with `pn-us` raised in the manifest. A yearly refresh of the figures (new Census and BEA releases) is a page change: download, `--data`, build, pull request.
 
 ## State blueprints (from 10 November 2026; first: New York)
 
-Each state blueprint is one file, `pages/us-<slug>.html` (root `pn-us-<slug>`), at perfectnations.org/50-states/<slug>/. The first is New York (`pages/us-new-york.html`).
+Each state blueprint is one file, `pages/us-<slug>.html` (root `pn-us-<slug>`), at perfectnations.com/50-states/<slug>/. The first is New York (`pages/us-new-york.html`).
 
 - **Built, never edited by hand:** `python3 tools/build_us_state.py <slug>` from `data/us/states/<slug>.json` (words, the figures found on official pages with their source ids, the sources), `data/us-states.json` (population, GDP, poverty), the official downloads in `data/us/raw/<slug>/` (ACS health insurance B27001, ACS county poverty B17001 with county names, NAEP 2024 reading, USDA ERR-358 table 4), and the design in `tools/us/state/` (style.css and script.js, scoped to `#ROOT`, which becomes the page root). The state and its counties are drawn at build time from `tools/us/counties-albers-10m.json` (us-atlas 3, ISC).
 - **Figures written `computed:<name>`** in the blueprint file are filled from those official files (for example `computed:reading` from the NAEP Data Service). Nothing is estimated; a standard with no primary state figure is shown as "Not yet measured".
@@ -87,7 +87,7 @@ Each state blueprint is one file, `pages/us-<slug>.html` (root `pn-us-<slug>`), 
 
 ## The Capital Architecture page (from 7 November 2026)
 
-perfectnations.org/capital-architecture/ is one file, `pages/capital-architecture.html` (root `pn-arch`, page 8549), kept by the Capital Architecture Steward.
+perfectnations.com/capital-architecture/ is one file, `pages/capital-architecture.html` (root `pn-arch`, page 8549), kept by the Capital Architecture Steward.
 
 - **Built, never edited by hand.** `python3 tools/build_capital.py` builds the page from `data/capital-architecture.json` (the words and figures), `tools/capital/style.css` and `tools/capital/script.js` (the design), the gold line in `pages/home-rule.html` and the laurels of the logo in `pages/home-logo-kit.html`. Previews: `python3 tools/preview_capital.py`.
 - **`data/capital-architecture.json`**: `hero` (words may carry `{n}`, all instruments, and `{n_used}`, those already in use); `five` (the five instruments we lead with, also read by the homepage and About: `name`, `headline`, `where`, `year`, `figure`, `label`, `source`, `url`, `nation`, `image`, `alt`); `index.families` (13 families since v6.0, from sovereign bonds to grants, each with `name`, `short`, `line` and `items`: `name`, `headline` (one line, at most about ten words), `how` (one sentence), `where`, `year`, `figure` (shown in gold, sourced money or a sourced result only), `label`, `source`, `url` (the primary source, https), `nation` (the slug of an open blueprint, or empty)); `record`; `close`.
@@ -96,7 +96,7 @@ perfectnations.org/capital-architecture/ is one file, `pages/capital-architectur
 
 ## The Art of Nations page (from 7 November 2026)
 
-perfectnations.org/art-of-nations/ (page 16839; the old address /perfect-nations-gallery/ leads to it) is one file, `pages/art-of-nations.html` (root `pn-art`), kept by the Art of Nations Steward. Its Elementor widget already contains `pn-art`, so the plugin serves the file in its place; nothing is pasted. The old two-part widget (v3.0, roots `pn-art` and `pn-gal`) is archived at `archive/elementor/gallery-16839-before-one-file-2026-11-07.json`.
+perfectnations.com/art-of-nations/ (page 16839; the old address /perfect-nations-gallery/ leads to it) is one file, `pages/art-of-nations.html` (root `pn-art`), kept by the Art of Nations Steward. Its Elementor widget already contains `pn-art`, so the plugin serves the file in its place; nothing is pasted. The old two-part widget (v3.0, roots `pn-art` and `pn-gal`) is archived at `archive/elementor/gallery-16839-before-one-file-2026-11-07.json`.
 
 - **Built, never edited by hand.** `python3 tools/build_art.py` reads `art/catalogue.json` (the paintings and books: words, nation colours, images, enquiry links) and `art/art-of-nations.template.html` (style, markup, script) and writes the page. The build refuses straight apostrophes, contractions, image URLs outside the Media Library, copies wider than 768 px in `images`, and any non-ASCII character.
 - **A new painting** is one new entry in `paintings` (newest last): the hero, the wall, the count ("5 of 195 nations painted"), the 195 dots and the viewer all follow.
@@ -109,7 +109,7 @@ perfectnations.org/art-of-nations/ (page 16839; the old address /perfect-nations
 
 ## The About page (from 7 November 2026)
 
-perfectnations.org/about/ is one file, `pages/about.html` (root `pn-about`), kept by the About Steward.
+perfectnations.com/about/ is one file, `pages/about.html` (root `pn-about`), kept by the About Steward.
 
 - **Edited by hand, except the GENERATED blocks.** `python3 tools/build_about.py` refreshes them: the homepage parts with the gold line's style (`pages/home-rule.html`), the counts of Stewards, and the Nation Stewards roll, one card per open blueprint in `data/blueprints.json`, with the Steward's name from `data/<slug>.json` and the 150 px portrait the nation's own blueprint shows. Run it whenever a blueprint is added; the roll and the counts follow.
 - **The bands, in order (v12.1):** the logo, "Perfect Nations is a new-age sovereign advisory firm, and its clients are nations", the Vision and the Mission (in the body type); the gold line; Governance first and the Perfect Nations Cup; What we do (without its closing seal row, as on the homepage); 01 Assets; 02 Capital; 03 Solutions; the Founder's Vision (all homepage parts, written in by `tools/build_about.py`, at the page's own title size and section spacing); the President and CEO with the record and Education in one band; the gold line; the Council of Stewards (six research Stewards in one row on laptops; the Nation Stewards of every open blueprint with the portrait from its blueprint, two rows then Show all, with region chips and a search); the gold line; the close (`pages/home-pledge.html`). The build wraps a part's script in `<!-- //-->` when the WordPress formatter could change it.
@@ -118,7 +118,7 @@ perfectnations.org/about/ is one file, `pages/about.html` (root `pn-about`), kep
 
 ## The Contact page (from 7 November 2026)
 
-perfectnations.org/contact/ (page 12711) is one file, `pages/contact.html` (root `pn-contact`), kept by the Contact Steward. Its Elementor Custom HTML widget (v5.1) already contains `pn-contact`, so the plugin serves the file in its place; the paste stays as the fallback.
+perfectnations.com/contact/ (page 12711) is one file, `pages/contact.html` (root `pn-contact`), kept by the Contact Steward. Its Elementor Custom HTML widget (v5.1) already contains `pn-contact`, so the plugin serves the file in its place; the paste stays as the fallback.
 
 - **Edited by hand**, except two blocks that `python3 tools/build_contact.py` writes: the gold line's style (from `pages/home-rule.html`; the line sits under the letterhead), and a JSON block with the open blueprints (from `pages/manifest.json`), the paintings and books (from `art/catalogue.json`) and, since v6.2 (10 Nov 2026), every published Solution (the "design" entries of `data/state-of-nations.json`) for "Discuss a Solution". Run the build whenever a blueprint or a Solution is published, or a painting or book is added.
 - **Every button on the site lands here with its intent**: `?about=studio` or `briefing` (The Nation Briefing), `lab` (The Blueprint Lab), `commission` or `sovereign` (The Sovereign Mandate), `original-<nation>` (a painting), `perfect-<nation>-book` (a book), `solution-<number>` or `?solution=<number>` (Discuss a Solution, that Solution), `gallery`, `speaking`; `?topic=nominate-self`, `guest`, `nominate`, `story`, `enterprise`, `codesigner`; `?nation=<slug>` (an open blueprint opens "Share a vision or story", any other nation "Ask for a blueprint"); `?country=<Name>`.
@@ -128,7 +128,7 @@ perfectnations.org/contact/ (page 12711) is one file, `pages/contact.html` (root
 
 ## The State of Nations page (from 7 November 2026; v8.0 from 9 November 2026)
 
-perfectnations.org/state-of-nations/ (page 15051) is one file, `pages/state-of-nations.html` (root `pn-son`), kept by the State of Nations Steward. The page's one Elementor Custom HTML widget already contains `pn-son`, so the plugin serves the file in its place.
+perfectnations.com/state-of-nations/ (page 15051) is one file, `pages/state-of-nations.html` (root `pn-son`), kept by the State of Nations Steward. The page's one Elementor Custom HTML widget already contains `pn-son`, so the plugin serves the file in its place.
 
 The page is about the Solutions Perfect Nations designs: one for each open blueprint nation, to end extreme poverty and secure the seven basic standards of living, with innovative finance first and super intelligence second. Bands: the hero (Earthrise); the Solutions (ivory), with a search by nation and filters by standard; the gold line; the Deal Notes, the wire and the close (Earthrise Depth).
 
@@ -167,7 +167,7 @@ Every nation file also drives the rest of its page. Each part is optional: when 
 
 ## The national blueprint pages (from 7 November 2026)
 
-Every blueprint (perfectnations.org/blueprints/<nation>/, root `pn-bp-<slug>`) is built from one design, so a change is made once and reaches all 44. Page v10.0.
+Every blueprint (perfectnations.com/blueprints/<nation>/, root `pn-bp-<slug>`) is built from one design, so a change is made once and reaches all 44. Page v10.0.
 
 - **Built, never edited by hand.** `python3 tools/build_nations.py` (all open blueprints, or name some) writes `pages/blueprint-<slug>.html` from `tools/nation/style.css`, `tools/nation/script.js`, `tools/nation/globe.js`, the nation's page words in `tools/nation/<slug>.json` (the Letter, the portrait, the people of the nation, the mandate moves, how Perfect Capita is measured, the sources, the Nation Steward photo, the outline), today's `data/<slug>.json`, and, when present, `data/solutions-by-nation.json` and `data/state-of-nations.json`. `tools/nation/media.json` lists the smaller copies that exist in the Media Library for each picture (used for srcset). Add `--manifest` to raise every built `pn-bp-<slug>` in the manifest.
 - **Bands:** the hero (Earthrise: the nation, three figures, the globe); the ReDesign Studio and its three mandates (ivory), straight under the hero; the Letter, Solutions and Writings (Lagoon); a gold line; the Sovereign Assets (Earthrise); Perfect Capita (ivory); Capital Architecture and the Newswire (Lagoon); a gold line; Enterprises and Voices (Earthrise); the close and the sources (Earthrise Depth). On phones the mandates, the Solutions and the assets are swipe rails; the page never scrolls sideways.
@@ -190,7 +190,7 @@ Entries keep the fields they had in the nation file. A URL already in a nation f
 
 ## The Sovereign Assets file (from 6 November 2026)
 
-`data/sovereign-assets.json` drives the Sovereign Assets page (perfectnations.org/sovereign-assets/, root id `pn-sov`, page v6.0 and later). Kept by the Sovereign Assets Steward (skill `steward-sovereign-assets`).
+`data/sovereign-assets.json` drives the Sovereign Assets page (perfectnations.com/sovereign-assets/, root id `pn-sov`, page v6.0 and later). Kept by the Sovereign Assets Steward (skill `steward-sovereign-assets`).
 
 | Field | What it drives on the page |
 |---|---|
@@ -232,7 +232,7 @@ The page itself is built, never edited by hand: `pages/sovereign-assets-src.html
 
 ## The State of Nations file
 
-Read on every visit by https://perfectnations.org/state-of-nations/ (page v6.1 and later). Kept by the Correspondent, Steward of the Wire. If the file is missing or malformed, the page shows the copy built into it.
+Read on every visit by https://perfectnations.com/state-of-nations/ (page v6.1 and later). Kept by the Correspondent, Steward of the Wire. If the file is missing or malformed, the page shows the copy built into it.
 
 Outline (the comments are notes, not part of the file):
 

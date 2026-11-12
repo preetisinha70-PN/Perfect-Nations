@@ -3,7 +3,7 @@
 
     python3 tools/build_art.py
 
-The page is perfectnations.org/art-of-nations/ (page 16839; /perfect-nations-gallery/ leads to it). Its Elementor Custom HTML widget
+The page is perfectnations.com/art-of-nations/ (page 16839; /perfect-nations-gallery/ leads to it). Its Elementor Custom HTML widget
 already contains the root id pn-art, so the Perfect Nations Live Pages plugin serves this file in its
 place. Nothing is pasted.
 
@@ -30,7 +30,7 @@ ROOT = Path(__file__).resolve().parent.parent
 CAT = ROOT / 'art' / 'catalogue.json'
 TPL = ROOT / 'art' / 'art-of-nations.template.html'
 OUT = ROOT / 'pages' / 'art-of-nations.html'
-MEDIA = 'https://perfectnations.org/wp-content/uploads/'
+MEDIA = 'https://perfectnations.com/wp-content/uploads/'
 DEFAULT_STATUS = 'Available by private enquiry'
 CONTRACTION = re.compile(r"\b\w+(n['’]t|['’](re|ve|ll|d|m))\b|\b(it|that|there|here|what|who|let)['’]s\b", re.I)
 PROBLEMS = []

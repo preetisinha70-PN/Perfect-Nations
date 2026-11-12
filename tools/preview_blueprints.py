@@ -88,7 +88,7 @@ def route(r):
             if f.exists():
                 return r.fulfill(path=str(f), content_type='application/json' if rel.endswith('.json') else 'text/plain')
             return r.fulfill(status=404, body='')
-    if url.startswith('https://perfectnations.org/wp-content/') and url.split('?')[0].endswith(('.png', '.jpg', '.webp')):
+    if url.startswith('https://perfectnations.com/wp-content/') and url.split('?')[0].endswith(('.png', '.jpg', '.webp')):
         return r.fulfill(body=STAND_IN, content_type='image/png')
     return r.abort()
 

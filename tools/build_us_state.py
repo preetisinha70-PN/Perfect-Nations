@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build a Perfect Nations STATE blueprint: perfectnations.org/50-states/<slug>/ (first: New York, 10 Nov 2026).
+"""Build a Perfect Nations STATE blueprint: perfectnations.com/50-states/<slug>/ (first: New York, 10 Nov 2026).
 
   python3 tools/build_us_state.py new-york      writes pages/us-<slug>.html (root pn-us-<slug>)
 
@@ -222,7 +222,7 @@ def build(slug):
 <section class="pnst-band pnst-hero" aria-labelledby="pnst-h1">
   <div class="pnst-in pnst-top">
     <div class="pnst-intro">
-      <p class="pnst-eb"><a href="https://perfectnations.org/50-states/" data-pn-same-tab="1">%s</a></p>
+      <p class="pnst-eb"><a href="https://perfectnations.com/50-states/" data-pn-same-tab="1">%s</a></p>
       <h1 class="pnst-h1" id="pnst-h1">%s</h1>
       <p class="pnst-line">%s</p>
       <p class="pnst-sub">%s</p>
@@ -232,7 +232,7 @@ def build(slug):
       <ul class="pnst-figs">%s</ul>
       <div class="pnst-ctas">
         <a class="pnst-btn" href="#pnst-solutions" data-pn-same-tab="1">The solutions</a>
-        <a class="pnst-btn pnst-btn--line" href="https://perfectnations.org/50-states/">All 50 states</a>
+        <a class="pnst-btn pnst-btn--line" href="https://perfectnations.com/50-states/">All 50 states</a>
       </div>
     </div>
   </div>
@@ -328,9 +328,9 @@ def build(slug):
     <div class="pnst-close__in">
       <div><p class="pnst-eb">Work with us</p><h2 class="pnst-h2" id="pnst-h2e">%s</h2><p class="pnst-lead">%s</p></div>
       <div class="pnst-ctas">
-        <a class="pnst-btn" href="https://perfectnations.org/contact/?about=briefing&amp;country=%s">Request a briefing</a>
-        <a class="pnst-btn pnst-btn--line" href="https://perfectnations.org/design-studio/">The ReDesign Studio</a>
-        <a class="pnst-btn pnst-btn--line" href="https://perfectnations.org/50-states/">All 50 states</a>
+        <a class="pnst-btn" href="https://perfectnations.com/contact/?about=briefing&amp;country=%s">Request a briefing</a>
+        <a class="pnst-btn pnst-btn--line" href="https://perfectnations.com/design-studio/">The ReDesign Studio</a>
+        <a class="pnst-btn pnst-btn--line" href="https://perfectnations.com/50-states/">All 50 states</a>
       </div>
     </div>
     <details class="pnst-srcs"><summary>Sources (%d)</summary><ol>%s</ol></details>
@@ -345,7 +345,7 @@ def build(slug):
     today = datetime.now(timezone.utc).strftime('%Y-%m-%d')
     head = '''<!-- ===========================================================================
 PERFECT NATIONS - THE BLUEPRINT OF %s (THE 50 STATES) - THE WHOLE PAGE IN ONE FILE - v%s - %s
-perfectnations.org/50-states/%s/ holds ONE Custom HTML block whose root is %s. The Perfect Nations Live Pages
+perfectnations.com/50-states/%s/ holds ONE Custom HTML block whose root is %s. The Perfect Nations Live Pages
 plugin serves this file from GitHub in its place. Never edit this file by hand: edit data/us/states/%s.json (words,
 figures, sources) or tools/us/state/ (design), run python3 tools/build_us_state.py %s, and open a pull request.
 v1.0: the first state blueprint (the Steward-General, 10 Nov 2026). Bands: the gold state (Earthrise); 01 Assets

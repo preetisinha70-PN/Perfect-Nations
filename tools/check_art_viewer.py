@@ -25,7 +25,7 @@ CACHE = {}
 orig_route = pa.route
 def route(r):
     url = r.request.url
-    if url.startswith('https://perfectnations.org/wp-content/uploads/'):
+    if url.startswith('https://perfectnations.com/wp-content/uploads/'):
         if url not in CACHE: CACHE[url] = sized(url)
         return r.fulfill(body=CACHE[url], content_type='image/jpeg')
     return orig_route(r)

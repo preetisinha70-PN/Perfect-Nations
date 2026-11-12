@@ -120,10 +120,10 @@ VERSION = '12.7'  # a nation may name its own statistics office as the populatio
 _GH = 'preetisinha70-PN/perfect-nations'
 EARTH = {'lg': ['https://cdn.jsdelivr.net/gh/%s@main/assets/globe/earth-1536.jpg' % _GH,
                 'https://raw.githubusercontent.com/%s/main/assets/globe/earth-1536.jpg' % _GH,
-                'https://perfectnations.org/wp-content/uploads/2026/10/pn-globe-earth-day-1536x768.jpg'],
+                'https://perfectnations.com/wp-content/uploads/2026/10/pn-globe-earth-day-1536x768.jpg'],
          'sm': ['https://cdn.jsdelivr.net/gh/%s@main/assets/globe/earth-1024.jpg' % _GH,
                 'https://raw.githubusercontent.com/%s/main/assets/globe/earth-1024.jpg' % _GH,
-                'https://perfectnations.org/wp-content/uploads/2026/10/pn-globe-earth-day-1024x512.jpg']}
+                'https://perfectnations.com/wp-content/uploads/2026/10/pn-globe-earth-day-1024x512.jpg']}
 ORDER = ['Food', 'Water', 'Shelter', 'Energy', 'Education', 'Health', 'Livelihoods']
 COLOURS = ['#8A5A12', '#0E5A80', '#9A3E22', '#C08A12', '#1F4C96', '#167A5F', '#2F5A2A']
 CAT = {'govt': 'Government', 'humanitarian': 'Humanitarian', 'multi': 'Multilateral', 'regional': 'Regional',
@@ -583,7 +583,7 @@ def assets(d):
         '<p class="bpx-lead">Each is owned today, earns today, and can carry %s toward seven basic standards of living for every citizen.</p></div>'
         '<ul class="bpx-acards" data-n="%d">%s</ul>'
         '<div class="bpx-foot"><a class="bpx-link" href="#bp-sources">Every figure, with its source</a>'
-        '<a class="bpx-link" href="https://perfectnations.org/sovereign-assets/" target="_blank" rel="noopener noreferrer">The Sovereign Assets ledger</a></div>'
+        '<a class="bpx-link" href="https://perfectnations.com/sovereign-assets/" target="_blank" rel="noopener noreferrer">The Sovereign Assets ledger</a></div>'
         '</div></section>' % (step_eb('01', 'Assets', 'The cup', 'Sovereign Assets'),
                               ent(a.get('heading') or 'Five assets no balance sheet counts.'), ent(name), len(cards), ''.join(cards)))
 
@@ -645,13 +645,13 @@ def capital(d, p):
         '<section class="bpx-band bpx-lg bpx-cap" id="bp-capital" aria-labelledby="bp-cap-h"><div class="bpx-in">'
         '<div class="bpx-head bpx-cap__head">%s<div>%s<h2 class="bpx-h2" id="bp-cap-h">%s</h2></div>'
         '<div><p class="bpx-lead">Bonds, guarantees, swaps and loans that raise capital against what %s owns, every line sourced.</p>'
-        '<a class="bpx-link" href="https://perfectnations.org/capital-architecture/" target="_blank" rel="noopener noreferrer">Capital Architecture</a></div></div>'
+        '<a class="bpx-link" href="https://perfectnations.com/capital-architecture/" target="_blank" rel="noopener noreferrer">Capital Architecture</a></div></div>'
         '%s'
         '<div class="bpx-cap__grid"><div id="bp-register"><p class="bpx-k">Capital already committed</p>'
         '<div class="bpx-filters" role="group" aria-label="Show lines by who provides them">%s</div>'
         '<ul class="bpx-irs" id="bp-irs">%s</ul><button type="button" class="bpx-showall" id="bp-showall"%s>Show all %d lines</button></div>'
         '<div class="bpx-nw" id="bp-newswire"><div class="bpx-nw__h"><h3>The %s Newswire</h3>'
-        '<a class="bpx-link" href="https://perfectnations.org/state-of-nations/#sn-wire" target="_blank" rel="noopener noreferrer">The Solutions Wire</a></div>'
+        '<a class="bpx-link" href="https://perfectnations.com/state-of-nations/#sn-wire" target="_blank" rel="noopener noreferrer">The Solutions Wire</a></div>'
         '<div class="bpx-stew">%s'
         '<p><b>%s</b><span>%s &#183; SI Researcher</span><time datetime="%s">Last updated %s</time></p></div>'
         '<ul class="bpx-wire">%s</ul><button type="button" class="bpx-showall bpx-allnews" hidden>All news</button></div></div>'
@@ -710,7 +710,7 @@ def solution_card(x, sig_name, sig_role):
     Perfect Nations, from State of Nations or the nation's own file)."""
     no = int(x.get('no') or 0)
     deal = x.get('kind') == 'deal'
-    href = x['url'] if re.match(r'^https://', plain(x.get('url'))) else 'https://perfectnations.org/state-of-nations/#%s-%02d' % ('deal' if deal else 'solution', no)
+    href = x['url'] if re.match(r'^https://', plain(x.get('url'))) else 'https://perfectnations.com/state-of-nations/#%s-%02d' % ('deal' if deal else 'solution', no)
     body = ''
     if x.get('kind') == 'design' and x.get('standfirst'):
         body = '<p>%s</p>' % ent(x['standfirst'])
@@ -727,7 +727,7 @@ def solution_card(x, sig_name, sig_role):
     talk = ''
     if x.get('kind') == 'design' and no:
         talk = ('<a class="bpx-btn bpx-btn--line" href="%s" target="_blank" rel="noopener noreferrer">Discuss this Solution</a>'
-                % ent(https('https://perfectnations.org/contact/?about=solution-%d&country=%s' % (no, urllib.parse.quote(plain(x.get('nation')), safe='')))))
+                % ent(https('https://perfectnations.com/contact/?about=solution-%d&country=%s' % (no, urllib.parse.quote(plain(x.get('nation')), safe='')))))
     return (
         '<li class="bpx-sol"><p class="bpx-sol__k"><b>%s No. %02d</b><time datetime="%s">%s</time></p>'
         '<h3><a href="%s" target="_blank" rel="noopener noreferrer">%s</a></h3>%s%s'
@@ -849,15 +849,15 @@ def solutions(d, p, sbn, son):
         '<section class="bpx-band bpx-dp bpx-pc" id="bp-pc" aria-labelledby="bp-pcx-h"><div class="bpx-in">'
         '<div class="bpx-pc__grid"><div class="bpx-pc__head">%s<h2 class="bpx-h2" id="bp-pcx-h">Perfect %s, <em>star by star.</em></h2>'
         '<p class="bpx-pc__def"><b>Perfect Capita</b> %s</p>'
-        '<a class="bpx-link" href="https://perfectnations.org/perfect-capita/" target="_blank" rel="noopener noreferrer">How Perfect Capita works</a></div>'
+        '<a class="bpx-link" href="https://perfectnations.com/perfect-capita/" target="_blank" rel="noopener noreferrer">How Perfect Capita works</a></div>'
         '<div class="bpx-pc__sky">%s%s<p class="bpx-pc__cap">Tap a star for its figure and source.</p></div>'
         '<div class="bpx-pc__rest">%s'
         '<details class="bpx-more bpx-how"><summary aria-label="Read more: the seven figures, their sources and how they are measured">Read more</summary>'
-        '<div class="bpx-more__b"><ul class="bpx-std" aria-label="%s: each standard, with its source">%s</ul><p>%s <a href="https://perfectnations.org/perfect-capita/#pq-measures" target="_blank" rel="noopener noreferrer">The strict measures</a></p><p>%s</p></div></details>'
+        '<div class="bpx-more__b"><ul class="bpx-std" aria-label="%s: each standard, with its source">%s</ul><p>%s <a href="https://perfectnations.com/perfect-capita/#pq-measures" target="_blank" rel="noopener noreferrer">The strict measures</a></p><p>%s</p></div></details>'
         '</div></div>'
         '<div class="bpx-solx" id="bp-solutions"><span id="bp-dispatches"></span>'
         '<div class="bpx-sols-top"><div><h3 class="bpx-h3" id="bp-sol-h">Solutions for Perfect %s</h3></div>'
-        '<div class="bpx-sols-go">%s<a class="bpx-link" href="https://perfectnations.org/state-of-nations/#sn-solutions" target="_blank" rel="noopener noreferrer">All Solutions</a></div></div>'
+        '<div class="bpx-sols-go">%s<a class="bpx-link" href="https://perfectnations.com/state-of-nations/#sn-solutions" target="_blank" rel="noopener noreferrer">All Solutions</a></div></div>'
         '<p class="bpx-swipe" aria-hidden="true">Swipe for every Solution</p><ul class="bpx-sols bpx-rail" id="bp-sols">%s</ul></div>'
         '</div></section>'
         % (step_eb('03', 'Solutions', 'The seven stars', 'Perfect Capita'), ent(name), ent(plain(p['capita'].get('pc_text')).replace('The yearly', 'is the yearly', 1)),
@@ -876,7 +876,7 @@ def letter(d, p):
     # stands alone (no empty frame), and without a Letter page of its own the button is left out
     fig = ('<figure class="bpx-port"><span class="bpx-frame">'
            '<img src="%s"%s alt="%s" width="%d" height="%d" loading="lazy" decoding="async"></span>'
-           '<figcaption class="bpx-frame__cap">%s<small>Nation Portrait &#183; %s<a href="https://perfectnations.org/art-of-nations/" target="_blank" rel="noopener noreferrer">Art of Nations</a></small></figcaption></figure>'
+           '<figcaption class="bpx-frame__cap">%s<small>Nation Portrait &#183; %s<a href="https://perfectnations.com/art-of-nations/" target="_blank" rel="noopener noreferrer">Art of Nations</a></small></figcaption></figure>'
            % (ent(https(img)), img_attrs(img, (300, 600, 768), '(min-width:960px) 240px, 150px'), ent(pt_.get('alt') or ''), w, h, ent(pt_.get('title') or ''), note)
            if ok_https(img) else '')
     full = ('<a class="bpx-btn" href="%s" target="_blank" rel="noopener noreferrer">Read the full letter</a>' % ent(https(p['letter']['url']))
@@ -930,7 +930,7 @@ def work(d, p):
             '<details class="bpx-more"><summary aria-label="Read more: the four moves of %s">Read more</summary><ol class="bpx-mv">%s</ol></details>'
             '<a class="bpx-btn%s" href="%s" target="_blank" rel="noopener noreferrer">%s</a></li>'
             % (' bpx-tier--top' if t == 2 else '', k, dur, title, line, leave, title, mv, '' if t == 2 else ' bpx-btn--line',
-               ent(https('https://perfectnations.org/contact/?about=%s&country=%s' % (('briefing', 'lab', 'commission')[t], urllib.parse.quote(name, safe='')))), cta))
+               ent(https('https://perfectnations.com/contact/?about=%s&country=%s' % (('briefing', 'lab', 'commission')[t], urllib.parse.quote(name, safe='')))), cta))
     wx_mail = mailto('Writing for Perfect %s' % name,
                      'Your name, or a pen name:\r\nWhere you live:\r\nTitle:\r\n\r\nYour vision of Perfect %s, and the economic solutions to achieve it (up to 1,500 words):\r\n\r\n\r\n'
                      'I confirm that this is my own original writing, and I give Perfect Nations permission to publish it with credit to me.\r\n' % name)
@@ -950,8 +950,8 @@ def work(d, p):
         '<li id="bp-voices"><p class="bpx-co3__k">Voices of Perfect Nations <span class="bpx-air"><i aria-hidden="true"></i>Launching soon</span></p>'
         '<h4 id="bp-voices-h">The local leaders already building Perfect %s.</h4>'
         '<p>Great local leaders: honest, dedicated and committed to basic standards of living for all. Every guest answers one question: &#8220;What does %s already own, and how could it pay for a decent life for every citizen?&#8221;</p>'
-        '<div class="bpx-btns"><a class="bpx-btn bpx-btn--line" href="https://perfectnations.org/contact/?nation=%s&amp;topic=nominate-self" target="_blank" rel="noopener noreferrer">Nominate yourself</a>'
-        '<a class="bpx-btn bpx-btn--line" href="https://perfectnations.org/contact/?nation=%s&amp;topic=guest" target="_blank" rel="noopener noreferrer">Suggest a guest</a></div></li>'
+        '<div class="bpx-btns"><a class="bpx-btn bpx-btn--line" href="https://perfectnations.com/contact/?nation=%s&amp;topic=nominate-self" target="_blank" rel="noopener noreferrer">Nominate yourself</a>'
+        '<a class="bpx-btn bpx-btn--line" href="https://perfectnations.com/contact/?nation=%s&amp;topic=guest" target="_blank" rel="noopener noreferrer">Suggest a guest</a></div></li>'
         '<li><p class="bpx-co3__k">Co-designers</p><h4>Join the community.</h4><p>%s</p>'
         '<a class="bpx-btn bpx-btn--line" href="%s">Become a Co-designer</a></li></ul></div>'
         '</div></section>'
@@ -994,7 +994,7 @@ def firms(d):
 # claude/nation-portraits-v4-canva.md); until it is there, the figure removes itself and the close keeps
 # one column. Afghanistan, Barbados, Kenya and Rwanda keep their own portraits and have no flag edition.
 FLAG_EDITION = ('angola', 'bangladesh', 'botswana', 'brazil', 'burundi', 'colombia', 'cote-divoire', 'dr-congo', 'ecuador', 'egypt', 'eswatini', 'ethiopia', 'fiji', 'ghana', 'india', 'indonesia', 'jamaica', 'jordan', 'lesotho', 'madagascar', 'malawi', 'mexico', 'morocco', 'mozambique', 'namibia', 'nigeria', 'pakistan', 'philippines', 'republic-of-congo', 'senegal', 'somalia', 'south-africa', 'south-sudan', 'sri-lanka', 'tanzania', 'uganda', 'ukraine', 'vietnam', 'zambia', 'zimbabwe')
-FLAG_DIR = 'https://perfectnations.org/wp-content/uploads/2026/11/'
+FLAG_DIR = 'https://perfectnations.com/wp-content/uploads/2026/11/'
 
 
 def flag_fig(name, slug, title):
@@ -1007,7 +1007,7 @@ def flag_fig(name, slug, title):
         'alt="%s, flag edition: the nation portrait of %s painted with its flag" width="768" height="768" loading="lazy" decoding="async" '
         'onerror="var f=this.closest(\'figure\');if(f){f.remove();}"></span>'
         '<figcaption class="bpx-frame__cap">%s<small>Nation Portrait, flag edition &#183; '
-        '<a href="https://perfectnations.org/art-of-nations/" target="_blank" rel="noopener noreferrer">Art of Nations</a></small></figcaption></figure>'
+        '<a href="https://perfectnations.com/art-of-nations/" target="_blank" rel="noopener noreferrer">Art of Nations</a></small></figcaption></figure>'
         % (u, u, u, ent(title), ent(name), ent(title)))
 
 
@@ -1024,9 +1024,9 @@ def close(d, p):
         '<section class="bpx-band bpx-dp bpx-close" aria-labelledby="bp-close-h"><div class="bpx-in bpx-close__grid"><div class="bpx-close__words">'
         '<p class="bpx-eb">The %s ReDesign Studio is open</p><h2 class="bpx-h2" id="bp-close-h">Design Perfect %s with us.</h2>'
         '<p class="bpx-lead">%s</p><div class="bpx-btns">'
-        '<a class="bpx-btn" href="https://perfectnations.org/design-studio/" target="_blank" rel="noopener noreferrer">Enter the ReDesign Studio</a>'
-        '<a class="bpx-btn bpx-btn--line" href="https://perfectnations.org/contact/?nation=%s" target="_blank" rel="noopener noreferrer">Write to us</a>'
-        '<a class="bpx-btn bpx-btn--line" href="https://perfectnations.org/blueprints/" target="_blank" rel="noopener noreferrer">All 195 nations</a></div>'
+        '<a class="bpx-btn" href="https://perfectnations.com/design-studio/" target="_blank" rel="noopener noreferrer">Enter the ReDesign Studio</a>'
+        '<a class="bpx-btn bpx-btn--line" href="https://perfectnations.com/contact/?nation=%s" target="_blank" rel="noopener noreferrer">Write to us</a>'
+        '<a class="bpx-btn bpx-btn--line" href="https://perfectnations.com/blueprints/" target="_blank" rel="noopener noreferrer">All 195 nations</a></div>'
         '<details class="bpx-sources" id="bp-sources"><summary>Sources</summary><ol>%s</ol></details></div>%s</div></section>'
         '<div class="bpx-toast" id="bp-toast" role="status" aria-live="polite" hidden><span>Opening your email app. If nothing opens, write to <b>contact@perfectnations.org</b></span>'
         '<button type="button" id="bp-toast-copy">Copy address</button><button type="button" class="bpx-x" id="bp-toast-x" aria-label="Close"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6.5 6.5l11 11M17.5 6.5l-11 11" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button></div>'
@@ -1165,7 +1165,7 @@ def main():
                 # v12.3: a new blueprint joins the manifest (its pn-bp-<slug> key turns it gold across the site)
                 nm = json.loads((DATA / ('%s.json' % s)).read_text(encoding='utf-8'))['nation']
                 man['pages']['pn-bp-' + s] = {'file': 'pages/blueprint-%s.html' % s, 'version': VERSION,
-                                             'title': '%s blueprint' % nm, 'url': 'https://perfectnations.org/blueprints/%s/' % s}
+                                             'title': '%s blueprint' % nm, 'url': 'https://perfectnations.com/blueprints/%s/' % s}
         man['updated'] = today
         path.write_text(json.dumps(man, indent=2, ensure_ascii=False) + '\n', encoding='utf-8')
         print('pages/manifest.json: %d blueprints at v%s' % (len(slugs), VERSION))

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build the Perfect Nations 50 States page (perfectnations.org/50-states/) and its data file.
+"""Build the Perfect Nations 50 States page (perfectnations.com/50-states/) and its data file.
 
 Writes two files:
   data/us-states.json     the 50 states: name, postal code, Census region, and three official figures each
@@ -157,7 +157,7 @@ def build_data():
     doc = {
         'page': 'us-states',
         'updated': datetime.now(timezone.utc).strftime('%Y-%m-%d'),
-        'about': 'The 50 States page (perfectnations.org/50-states/). Built by python3 tools/build_us_states.py --data '
+        'about': 'The 50 States page (perfectnations.com/50-states/). Built by python3 tools/build_us_states.py --data '
                  'from the official files in data/us/raw/; adds no figure of its own. poverty.share = below / universe, '
                  'one decimal. gdp_musd: millions of current US dollars.',
         'sources': SOURCES,
@@ -356,7 +356,7 @@ def state_rows(doc):
             '<span class="pnus-row__f pnus-row__f--g"><b>%s</b><small>GDP</small></span>'
             '<span class="pnus-row__f"><b>%s</b><small>People</small></span>'
             '<span class="pnus-row__f"><b>%s%%</b><small>Below the poverty line</small></span>'
-            '<a class="pnus-row__go" href="https://perfectnations.org/contact/?country=%s" data-ask="1">'
+            '<a class="pnus-row__go" href="https://perfectnations.com/contact/?country=%s" data-ask="1">'
             '<span class="pnus-row__st">In preparation</span><span class="pnus-row__ac">Ask for it</span></a>'
             '</li>' % (
                 s['slug'], s['slug'], s['region'], ent(s['name']), s['population'], s['gdp_musd'], p['share'],
@@ -427,7 +427,7 @@ def build_page(doc):
     today = datetime.now(timezone.utc).strftime('%Y-%m-%d')
     head = '''<!-- ===========================================================================
 PERFECT NATIONS - THE 50 STATES - THE WHOLE PAGE IN ONE FILE - v%s - %s
-perfectnations.org/50-states/ holds ONE Elementor Custom HTML widget (or Custom HTML block) whose root is
+perfectnations.com/50-states/ holds ONE Elementor Custom HTML widget (or Custom HTML block) whose root is
 pn-us. The Perfect Nations Live Pages plugin serves this file from GitHub in its place. Never edit this file
 by hand: edit tools/us/ (design and words) or rebuild data/us-states.json, run
 python3 tools/build_us_states.py, and open a pull request.

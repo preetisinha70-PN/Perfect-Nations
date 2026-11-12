@@ -38,7 +38,7 @@ LEDGER = DATA / 'sovereign-assets.json'
 MASK = ROOT / 'assets' / 'home' / 'pn-globe-water-1024.jpg'
 NOT_NATIONS = {'state-of-nations', 'ticker', 'sovereign-assets'}
 FLAGS = 'https://cdn.jsdelivr.net/npm/flag-icons@7.6.0/flags/1x1/'
-UPLOADS = 'https://perfectnations.org/wp-content/uploads/'
+UPLOADS = 'https://perfectnations.com/wp-content/uploads/'
 
 # The eight asset classes, each with its colour from the garden painting (art only, never text).
 CLASSES = {
@@ -139,8 +139,8 @@ def check_featured(items):
         for k in ('url', 'link', 'image', 'image_small'):
             if not re.match(r'^https://[^\s"\'<>()]+$', f[k]):
                 sys.exit('featured %r: %s must be an https link with no quotes, brackets or spaces' % (f.get('key'), k))
-        if not f['link'].startswith('https://perfectnations.org/'):
-            sys.exit('featured %r: link must lead to a perfectnations.org blueprint' % f.get('key'))
+        if not f['link'].startswith('https://perfectnations.com/'):
+            sys.exit('featured %r: link must lead to a perfectnations.com blueprint' % f.get('key'))
         if not (f['image'].startswith(UPLOADS) and f['image_small'].startswith(UPLOADS)):
             sys.exit('featured %r: pictures come only from the Perfect Nations Media Library' % f.get('key'))
         if not f.get('flags') or not all(re.match(r'^[a-z]{2}$', c) for c in f['flags']):
@@ -240,7 +240,7 @@ def build(d):
         sys.exit('tokens left unfilled: %s' % left)
     banner = '''<!-- ===========================================================================
 PERFECT NATIONS - SOVEREIGN ASSETS PAGE - THE WHOLE PAGE IN ONE FILE - v%s - built %s
-Served live on perfectnations.org/sovereign-assets/ (page 15125) by the Perfect Nations Live Pages
+Served live on perfectnations.com/sovereign-assets/ (page 15125) by the Perfect Nations Live Pages
 plugin, in place of the code pasted in its one Elementor Custom HTML widget (root id pn-sov).
 BUILT by tools/build_sovereign_assets.py from pages/sovereign-assets-src.html (the design) and
 data/sovereign-assets.json (the five assets and the ledger, which the page also reads live).

@@ -104,7 +104,7 @@ def route(r, live):
         if live == 'changed':
             d['ledger']['assets'] += 5
             d['ledger']['nations'] += 1
-            d['nations'].append({'file': 'test', 'name': 'Testland', 'url': 'https://perfectnations.org/blueprints/testland/',
+            d['nations'].append({'file': 'test', 'name': 'Testland', 'url': 'https://perfectnations.com/blueprints/testland/',
                                  'assets': 5, 'lat': 50, 'lon': 10})
             d['featured'][2]['figure'] = 'TEST'
         return r.fulfill(body=json.dumps(d), content_type='application/json', headers={'access-control-allow-origin': '*'})

@@ -3,7 +3,7 @@
     python3 tools/preview_art.py [--real-dir DIR]
 
 Wraps pages/art-of-nations.html in the header and footer, uses local Barlow fonts and blocks every
-other host. perfectnations.org cannot be reached from the build machine, so each Media Library image
+other host. perfectnations.com cannot be reached from the build machine, so each Media Library image
 is replaced by a painted stand-in in the nation's colours, marked STAND-IN (pass --real-dir with
 files named as on the Media Library to use real images). Screenshots go to /tmp/pn-preview/art-*.png.
 Checks: no script errors, nothing wider than the phone screen, the hero turns to the next painting,
@@ -126,7 +126,7 @@ def route(r):
             folder = 'barlow-semi-condensed' if name.startswith('barlow-semi') else 'barlow-condensed'
             return r.fulfill(path=str(FONTS / folder / 'files' / name), content_type='font/woff2')
         return r.fulfill(body=HTML, content_type='text/html')
-    if url.startswith('https://perfectnations.org/wp-content/uploads/'):
+    if url.startswith('https://perfectnations.com/wp-content/uploads/'):
         ASKED.add(url)
         if REAL and (REAL / url.rsplit('/', 1)[1]).exists():
             return r.fulfill(path=str(REAL / url.rsplit('/', 1)[1]))

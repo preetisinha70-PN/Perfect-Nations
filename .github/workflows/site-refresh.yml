@@ -23,7 +23,7 @@ jobs:
           sleep 10
           out=""
           for i in 1 2 3; do
-            out=$(curl -s -m 180 -X POST -H 'Content-Type: application/json' -d '{}' -w ' HTTP%{http_code}' https://perfectnations.org/wp-json/pn-live/v1/refresh)
+            out=$(curl -s -m 180 -X POST -H 'Content-Type: application/json' -d '{}' -w ' HTTP%{http_code}' https://perfectnations.com/wp-json/pn-live/v1/refresh)
             echo "$out"
             case "$out" in *HTTP200*) break;; *HTTP429*) sleep 65;; *) sleep 20;; esac
           done
@@ -38,7 +38,7 @@ jobs:
           for path in / /blueprints/ /about/ /state-of-nations/ /art-of-nations/ /design-studio/ /perfect-capita/ /sovereign-assets/ /contact/ \
                       /blueprints/barbados/ /blueprints/kenya/ /blueprints/india/ /blueprints/brazil/ /blueprints/rwanda/ /blueprints/afghanistan/; do
             for ua in "$PHONE" "$LAPTOP"; do
-              curl -s -o /dev/null --compressed -A "$ua" -H "Accept: $ACC" -w "%{http_code} %{time_starttransfer}s ${path}\n" "https://perfectnations.org${path}"
+              curl -s -o /dev/null --compressed -A "$ua" -H "Accept: $ACC" -w "%{http_code} %{time_starttransfer}s ${path}\n" "https://perfectnations.com${path}"
               sleep 0.5
             done
           done
