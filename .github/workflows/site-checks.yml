@@ -1,4 +1,4 @@
-# Temporary checks of the live site from GitHub's servers (12 Nov 2026, sitemap and robots, browser). Runs only on the site-checks branch.
+# Temporary checks of the live site from GitHub's servers (12 Nov 2026, Change of Address fetch). Runs only on the site-checks branch.
 name: site-checks
 on:
   push:
@@ -9,8 +9,18 @@ jobs:
     steps:
       - run: |
           set +e
-          UA="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36"
-          for u in https://perfectnations.com/robots.txt https://perfectnations.com/sitemap_index.xml https://perfectnations.com/sitemap.xml https://perfectnations.com/wp-sitemap.xml; do
-            echo "=== $u"; curl -s -A "$UA" -o /tmp/s -m 30 -w 'status %{http_code} -> %{redirect_url} %{content_type}\n' "$u"; head -c 900 /tmp/s | tr '\n' ' ' | sed 's/<sitemap>/\n  <sitemap>/g' | head -12; echo; echo "  .org mentions: $(grep -o 'perfectnations\.org' /tmp/s | wc -l)  .com mentions: $(grep -o 'perfectnations\.com' /tmp/s | wc -l)"
+          for d in perfectnations.org www.perfectnations.org perfectnations.com; do
+            echo "=== DNS $d"; echo "  A:    $(dig +short A $d | tr '\n' ' ')"; echo "  AAAA: $(dig +short AAAA $d | tr '\n' ' ')"; echo "  CNAME: $(dig +short CNAME $d | tr '\n' ' ')"
           done
-          echo "=== a child sitemap"; c=$(grep -o 'https://perfectnations\.com/[a-z_-]*sitemap[0-9]*\.xml' /tmp/s 2>/dev/null | head -1); curl -s -A "$UA" -o /tmp/c -m 30 -w "$c status %{http_code}\n" "${c:-https://perfectnations.com/page-sitemap.xml}"; echo "  urls: $(grep -c '<loc>' /tmp/c)  .org: $(grep -o 'perfectnations\.org' /tmp/c | wc -l)"
+          echo "  NS org: $(dig +short NS perfectnations.org | tr '\n' ' ')"
+          for ua in "Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)" "Mozilla/5.0 (compatible; Google-InspectionTool/1.0;)" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0 Safari/537.36" "curl/8"; do
+            echo; echo "##### UA: $ua"
+            for u in http://perfectnations.org/ https://perfectnations.org/ http://www.perfectnations.org/ https://www.perfectnations.org/; do
+              curl -s -A "$ua" -o /tmp/b -D /tmp/h -m 30 -w "$u -> %{http_code} %{redirect_url}  (time %{time_total}s)\n" "$u"
+              grep -i -E '^(server|location|x-hcdn|platform|cache|x-litespeed|content-length):' /tmp/h | sed 's/^/     /'
+              [ "$(head -c1 /tmp/b)" ] && head -c 200 /tmp/b | tr '\n' ' ' | sed 's/^/     body: /' && echo
+            done
+          done
+          echo; echo "##### full chain with Googlebot UA from http://perfectnations.org/"
+          curl -s -A "Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)" -L -o /dev/null -m 40 -w "final %{url_effective} %{http_code} hops %{num_redirects}\n" http://perfectnations.org/
+          curl -sv -A "Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)" -o /dev/null -m 20 http://perfectnations.org/ 2>&1 | grep -E '^(\*   Trying|\* Connected|< )' | head -20
