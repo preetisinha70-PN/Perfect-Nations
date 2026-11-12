@@ -99,7 +99,8 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 PAGES, DATA, HERE = ROOT / 'pages', ROOT / 'data', ROOT / 'tools' / 'nation'
-VERSION = '12.6'  # portraits for the 151 Nation Stewards who showed initials, generated in the Media Library in the house style (the Steward-General, 12 Nov 2026)
+VERSION = '12.7'  # a nation may name its own statistics office as the population source (pop_source in its page words); first, Cuba, re-measured on the delivery test (the Steward-General, 12 Nov 2026)
+# v12.6: portraits for the 151 Nation Stewards who showed initials, generated in the Media Library in the house style (the Steward-General, 12 Nov 2026)
 # v12.5: the globe turns like the real Earth, west to east (continents drift left to right), one turn every 90 seconds, as on the homepage (the Steward-General, 12 Nov 2026)
 # v12.4: Voices of Perfect Nations: great local leaders, honest, dedicated and committed to basic standards of living for every citizen (the Steward-General, 11 Nov 2026)
 # v12.3: the first edition of a new blueprint: the Letter stands alone until its portrait is painted, the Steward's initials until the photo; new nations join the manifest (10 Nov 2026)
@@ -388,6 +389,9 @@ def gap_label(text, gap):
 
 
 def pop_source(p):
+    # a nation whose own statistics office is the population of record names it in its page words (Cuba, 12 Nov 2026)
+    if plain(p.get('pop_source')):
+        return plain(p['pop_source'])
     m = re.search(r'population,? (\d{4})', plain((p.get('sources') or [''])[0]))
     return 'World Bank, %s' % m.group(1) if m else 'World Bank'
 

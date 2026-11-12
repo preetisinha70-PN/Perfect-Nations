@@ -1,18 +1,18 @@
 {
  "nation": "Cuba",
  "page_version": "1.0",
- "updated": "2026-11-10",
+ "updated": "2026-11-12",
  "steward": {
   "name": "Yanelis Ortega",
   "role": "Nation Steward of Cuba"
  },
- "population": 10937203,
+ "population": 9434593,
  "hero": {
-  "lead": "An island nation of 10.9 million in the Caribbean, with farmland across six tenths of its land, where Cuba is not a member of the IMF or the World Bank and no capital already committed is on record.",
+  "lead": "An island nation of 9.4 million in the Caribbean, with farmland across six tenths of its land, where Cuba is not a member of the IMF or the World Bank and no capital already committed is on record.",
   "stats": [
    {
-    "value": "10.9m",
-    "label": "People, 2025"
+    "value": "9.4m",
+    "label": "People, end of 2025"
    },
    {
     "value": "61.7%",
@@ -48,9 +48,9 @@
    },
    {
     "name": "The People",
-    "figure": "10.9m",
+    "figure": "9.4m",
     "money": false,
-    "label": "Citizens, 2025",
+    "label": "Citizens, end of 2025",
     "text": "15% are under fifteen: the workforce and the market of the next generation."
    },
    {
@@ -74,9 +74,9 @@
   "items": []
  },
  "coverage": {
-  "set_by": "Shelter",
-  "gap": "54.1%",
-  "gap_text": "Of Cubans lack safely managed sanitation.",
+  "set_by": "Health",
+  "gap": "70%",
+  "gap_text": "Of the basic list of medicines is not available to Cubans.",
   "perfect_capita": "To set"
  },
  "guarantees": [
@@ -84,17 +84,17 @@
    "name": "Food",
    "value": null,
    "display": "Not measured",
-   "note": "No FAO measure of food insecurity is published for Cuba",
-   "source": "FAO",
-   "url": "https://data.worldbank.org/indicator/SN.ITK.MSFI.ZS?locations=CU"
+   "note": "No FAO food insecurity survey is published for Cuba. WFP reports that the state ration covered only 46% of recommended daily energy in 2023",
+   "source": "WFP, May 2026",
+   "url": "https://executiveboard.wfp.org/document_download/WFP-0000173486"
   },
   {
    "name": "Water",
-   "value": 95.2,
-   "display": "95.2%",
-   "note": "Basic drinking water; safely managed water is not measured (lenient)",
-   "source": "WHO/UNICEF, 2024",
-   "url": "https://data.worldbank.org/indicator/SH.H2O.BASW.ZS?locations=CU"
+   "value": 71.6,
+   "display": "71.6%",
+   "note": "On 3 November 2026, 2,681,770 Cubans, 28.4% of the population, had their piped water cut (INRH). 95.2% have basic water (WHO/UNICEF, 2024)",
+   "source": "INRH, 3 Nov 2026",
+   "url": "https://www.cubadebate.cu/noticias/2026/11/04/diaz-canel-sobre-el-abasto-de-agua-en-criterio-compartido-responder-al-pueblo-con-hechos-y-no-con-retorica/"
   },
   {
    "name": "Shelter",
@@ -106,11 +106,11 @@
   },
   {
    "name": "Energy",
-   "value": 96.0,
-   "display": "96%",
-   "note": "96% cook with clean fuels and technology; 100% have electricity",
-   "source": "World Bank, 2024",
-   "url": "https://data.worldbank.org/indicator/EG.CFT.ACCS.ZS?locations=CU"
+   "value": 33.4,
+   "display": "33.4%",
+   "note": "At the evening peak on 10 November 2026 the grid could serve 970 of 2,900 MW of demand; the day before, supply was cut for all 24 hours. 96% cook with clean fuels (2024)",
+   "source": "Unión Eléctrica, 10 Nov 2026",
+   "url": "https://www.granma.cu/cuba/2026-11-10/afectacion-10-11-2026-07-11-12"
   },
   {
    "name": "Education",
@@ -122,23 +122,23 @@
   },
   {
    "name": "Health",
-   "value": 86.0,
-   "display": "86",
-   "note": "WHO service coverage index",
-   "source": "WHO, 2023",
-   "url": "https://ourworldindata.org/grapher/universal-health-coverage-index?country=~CUB"
+   "value": 30.0,
+   "display": "30%",
+   "note": "Only 30% of the basic list of medicines is available (President of Cuba, August 2026). WHO service coverage index: 86 (2023)",
+   "source": "President of Cuba, 8 Aug 2026",
+   "url": "https://communistparty.ie/en/2026/08/it-is-not-enough-to-condemn-the-empire-we-must-build-popular-power-at-the-grassroots-level-win-the-streets/"
   },
   {
    "name": "Livelihoods",
    "value": null,
    "display": "Not measured",
-   "note": "No poverty survey for Cuba is published by the World Bank",
-   "source": "World Bank",
-   "url": "https://data.worldbank.org/indicator/SI.POV.UMIC?locations=CU"
+   "note": "No poverty survey is published for Cuba. WFP reports that a household needed ten to eleven times the minimum monthly wage to buy the food it needs (2023)",
+   "source": "WFP, May 2026",
+   "url": "https://executiveboard.wfp.org/document_download/WFP-0000173486"
   }
  ],
  "newswire": [],
  "dispatches": [],
  "checked": "2026-11-10T23:00Z",
- "reviewed": "2026-11-10T23:00Z"
+ "reviewed": "2026-11-12T15:40Z"
 }
