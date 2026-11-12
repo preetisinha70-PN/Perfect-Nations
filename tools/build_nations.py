@@ -99,7 +99,8 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 PAGES, DATA, HERE = ROOT / 'pages', ROOT / 'data', ROOT / 'tools' / 'nation'
-VERSION = '12.4'  # Voices of Perfect Nations: great local leaders, honest, dedicated and committed to basic standards of living for every citizen (the Steward-General, 11 Nov 2026)
+VERSION = '12.5'  # the globe turns like the real Earth, west to east (continents drift left to right), one turn every 90 seconds, as on the homepage (the Steward-General, 12 Nov 2026)
+# v12.4: Voices of Perfect Nations: great local leaders, honest, dedicated and committed to basic standards of living for every citizen (the Steward-General, 11 Nov 2026)
 # v12.3: the first edition of a new blueprint: the Letter stands alone until its portrait is painted, the Steward's initials until the photo; new nations join the manifest (10 Nov 2026)
 # v12.2: the page scripts are written so the WordPress formatter leaves them alone: the moving globe starts on every blueprint, Mexico included (10 Nov 2026)
 # v12.1: the Earth picture of the globe comes from the repository (jsDelivr, then GitHub), then the Media Library (10 Nov 2026)
@@ -147,6 +148,15 @@ def plain(s):
 def ent(s):
     """Plain text to HTML: escaped, every non-ASCII character as an entity, so the page stays ASCII."""
     return html.escape(plain(s), quote=True).encode('ascii', 'xmlcharrefreplace').decode('ascii')
+
+
+def curl(s):
+    """A headline as its source wrote it, with curly quotation marks, as the site copy requires (v12.5)."""
+    s = plain(s)
+    s = re.sub(r"(?<=[\w.,!?;:)\]])'", '\u2019', s)
+    s = s.replace("'", '\u2018')
+    s = re.sub(r'(^|[\s(\[])"', '\\1\u201c', s)
+    return s.replace('"', '\u201d')
 
 
 def raw(s):
@@ -617,7 +627,7 @@ def capital(d, p):
     for w in (d.get('newswire') or [])[:5]:
         if not (w.get('title') and plain(w.get('url')).startswith('https://')):
             continue
-        t, hl = w['title'], w.get('highlight')
+        t, hl = curl(w['title']), curl(w.get('highlight')) if w.get('highlight') else None
         b = ent(t)
         if hl and hl in t:
             i = t.index(hl)
