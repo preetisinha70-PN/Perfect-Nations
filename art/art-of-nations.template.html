@@ -21,6 +21,9 @@ v4.2 (7 Nov 2026): the page is Art of Nations everywhere (menu, footer, address 
 Botanical Origins: acrylic on canvas, 12 x 16 in, 2026, not for sale (no Enquire). A work marked
 "Not for sale" or "Sold" shows its status and no Enquire.
 v4.4 (9 Nov 2026): one clean gold close button on the viewer; links to other pages open in a new tab.
+v5.3 (12 Nov 2026): the viewer is a grid of three rows; the picture is sized to its own row, so it never covers the
+top bar or the caption on any screen (the Steward-General, 12 Nov 2026); on a short screen the viewer scrolls.
+The small line reads Artist, Print 12 x 12 in with prices, Original 24 x 24 in, without repeats.
 v5.2 (12 Nov 2026): prints are 12 x 12 in, paper [[PAPER]] or canvas [[CANVAS]] (the portrait files print sharp to about
 12 in; the Steward-General, 12 Nov 2026). The 40 prints now exist in the Shopify store as drafts.
 v5.1 (11 Nov 2026): ready for guest artists: each work carries its own artist (a work by anyone but the house
@@ -287,7 +290,12 @@ v4.6 (10 Nov 2026): light reading sections, Earthrise accents (the Steward-Gener
   padding:0; border:0; color:var(--iv); overflow:hidden;
   background:radial-gradient(60% 50% at 50% 40%, rgba(15,76,92,.55) 0%, rgba(15,76,92,0) 70%), linear-gradient(180deg,#082A30 0%,#03161A 100%);
 }
-#pn-art .aon-view[open]{ display:flex; flex-direction:column; }
+/* v5.3: a grid of three rows (top bar, picture, caption). The picture row is never shorter than --aon-vmin and
+   the picture is sized to its row, so it can never cover the top bar or the caption; when the caption is long,
+   the viewer scrolls instead of overlapping */
+#pn-art .aon-view{ --aon-vmin:min(calc(100vw - 20px), 58vh); }
+@supports (height:1dvh){ #pn-art .aon-view{ --aon-vmin:min(calc(100vw - 20px), 58dvh); } }
+#pn-art .aon-view[open]{ display:grid; grid-template-rows:auto minmax(var(--aon-vmin),1fr) auto; grid-template-columns:minmax(0,1fr); overflow-x:hidden; overflow-y:auto; overscroll-behavior:contain; -webkit-overflow-scrolling:touch; }
 #pn-art .aon-view::backdrop{ background:rgba(3,20,24,.95); }
 #pn-art .aon-view__top{ display:flex; align-items:center; gap:14px; padding:12px clamp(12px,2.4vw,28px); }
 #pn-art .aon-view__t{ flex:1; min-width:0; margin:0; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; font-family:var(--hd); font-size:.72rem; font-weight:700; letter-spacing:.24em; text-transform:uppercase; color:var(--ivt); }
@@ -297,9 +305,9 @@ v4.6 (10 Nov 2026): light reading sections, Earthrise accents (the Steward-Gener
   border-radius:50% !important; border:1px solid var(--g) !important; background:rgba(8,42,48,.6) !important; color:var(--g) !important;
 }
 #pn-art .aon-x svg{ width:18px; height:18px; pointer-events:none; }
-#pn-art .aon-view__stage{ position:relative; flex:1 1 auto; min-height:0; display:flex; align-items:center; justify-content:center; padding:0 clamp(10px,7vw,90px); touch-action:pan-y; }
+#pn-art .aon-view__stage{ position:relative; min-height:0; min-width:0; display:flex; align-items:center; justify-content:center; padding:0 clamp(72px,7vw,90px); touch-action:pan-y; }
 #pn-art .aon-view__img{
-  max-width:100%; max-height:calc(100vh - 230px); max-height:calc(100dvh - 230px); width:auto; height:auto; object-fit:contain;
+  display:block; max-width:100%; max-height:100%; width:auto; height:auto; object-fit:contain;
   box-shadow:0 0 0 1px rgba(227,194,88,.55), 0 26px 70px rgba(0,0,0,.6); background:#F4ECD8; opacity:0; transition:opacity .35s ease;
 }
 #pn-art .aon-view__img.is-in{ opacity:1; }
@@ -315,10 +323,10 @@ v4.6 (10 Nov 2026): light reading sections, Earthrise accents (the Steward-Gener
 #pn-art .aon-view__acts{ display:flex; flex-wrap:wrap; justify-content:center; gap:10px; margin-top:12px; }
 #pn-art .aon-view__acts:empty{ display:none; }
 @media (max-width:599px){
+  #pn-art .aon-view[open]{ grid-template-rows:auto var(--aon-vmin) auto; align-content:start; }
   #pn-art .aon-view__stage{ padding:0 10px; }
   #pn-art .aon-view .aon-round{ top:auto; bottom:-58px; transform:none; width:44px !important; height:44px !important; }
   #pn-art .aon-view .aon-round:hover:not(:disabled){ transform:none; }
-  #pn-art .aon-view__img{ max-height:calc(100vh - 300px); max-height:calc(100dvh - 300px); }
   #pn-art .aon-view__cap{ padding-left:64px; padding-right:64px; }
   #pn-art .aon-view__s{ font-size:.9rem; }
 }
@@ -682,6 +690,7 @@ v4.6 (10 Nov 2026): light reading sections, Earthrise accents (the Steward-Gener
       list=items; wrap=loop; opener=from||null; vT.textContent=title;
       show(n||0);
       if(!view.open){ view.showModal(); }
+      view.scrollTop=0;
       try{ $('.aon-x',view).focus({preventScroll:true}); }catch(e){}
     };
     var paintingItems=function(){
