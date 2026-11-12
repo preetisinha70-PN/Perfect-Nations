@@ -1,4 +1,4 @@
-# Temporary checks of the live site from GitHub's servers (12 Nov 2026, sitemap and robots). Runs only on the site-checks branch.
+# Temporary checks of the live site from GitHub's servers (12 Nov 2026, sitemap and robots, browser). Runs only on the site-checks branch.
 name: site-checks
 on:
   push:
@@ -9,7 +9,7 @@ jobs:
     steps:
       - run: |
           set +e
-          UA="Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)"
+          UA="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36"
           for u in https://perfectnations.com/robots.txt https://perfectnations.com/sitemap_index.xml https://perfectnations.com/sitemap.xml https://perfectnations.com/wp-sitemap.xml; do
             echo "=== $u"; curl -s -A "$UA" -o /tmp/s -m 30 -w 'status %{http_code} -> %{redirect_url} %{content_type}\n' "$u"; head -c 900 /tmp/s | tr '\n' ' ' | sed 's/<sitemap>/\n  <sitemap>/g' | head -12; echo; echo "  .org mentions: $(grep -o 'perfectnations\.org' /tmp/s | wc -l)  .com mentions: $(grep -o 'perfectnations\.com' /tmp/s | wc -l)"
           done
