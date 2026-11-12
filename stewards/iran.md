@@ -35,3 +35,4 @@ Furthest from reach: Shelter (44.7%). Of city dwellers in Iran live in slums.
 - No capital already committed is on record: Iran has no current World Bank or IMF financing; the weekly review looks for bilateral and market lines with primary sources.
 - The World Bank Macro Poverty Outlook (April 2026) is cited in the record; its publication day is to confirm before it joins the Newswire.
 - Inflation figures (IMF) to read in the October 2026 WEO tables.
+- 12 November 2026, delivery test for Energy: no official national figure for the share of demand served was found, so Energy is unchanged. Tavanir rations households and industry in 2026 and reported about 4,200 MW lost to strikes (July 2026); official peak deficit figures conflict (Energy Minister, May 2026: no shortfall; Majlis Research Center: about 13,640 MW at peak). The weekly review looks for one.

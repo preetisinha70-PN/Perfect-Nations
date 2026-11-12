@@ -9,12 +9,12 @@ First edition: 10 November 2026 (wave 1 of the remaining 151 nations). The weekl
 - **Food, 35%:** Not food insecure; 65% are moderately or severely food insecure. FAO, 2024, https://data.worldbank.org/indicator/SN.ITK.MSFI.ZS?locations=TD
 - **Water, 6.3%:** Safely managed drinking water. WHO/UNICEF, 2024, https://data.worldbank.org/indicator/SH.H2O.SMDW.ZS?locations=TD
 - **Shelter, 11.1%:** Safely managed sanitation; 82% of city dwellers live in slums. WHO/UNICEF, 2024, https://data.worldbank.org/indicator/SH.STA.SMSS.ZS?locations=TD
-- **Energy, 11%:** 11% cook with clean fuels and technology; 13.4% have electricity. World Bank, 2024, https://data.worldbank.org/indicator/EG.CFT.ACCS.ZS?locations=TD
+- **Energy, 1.8:** About 18 kWh of electricity a person a year, against the Living Line of 1,000; 11% cook with clean fuels (2024). Ember, 2024, https://ember-energy.org/data/yearly-electricity-data/
 - **Education, 5.6:** 5.6% of children read a simple text by the end of primary school; 2019, dated. World Bank, 2019, https://data.worldbank.org/indicator/SE.LPV.PRIM?locations=TD
 - **Health, 26:** WHO service coverage index. WHO, 2023, https://ourworldindata.org/grapher/universal-health-coverage-index?country=~TCD
 - **Livelihoods, 55.2%:** Above the national poverty line; 44.8% live below it. World Bank, 2022, https://data.worldbank.org/indicator/SI.POV.NAHC?locations=TD
 
-Furthest from reach: Education (94.4%). Of children in Chad cannot read a simple text by the end of primary school, on 2019 data.
+Furthest from reach: Energy (98.2%). Of the electricity a person needs is missing: about 18 kWh a person a year, against the Living Line of 1,000.
 
 ## The Sovereign Assets
 
@@ -36,3 +36,4 @@ Furthest from reach: Education (94.4%). Of children in Chad cannot read a simple
 
 - Oil shares of revenue and exports are read in Rio Times, citing the World Bank; the World Bank Macro Poverty Outlook is to be linked.
 - Public debt in % of GDP: IMF table read; latest figure to confirm.
+- 12 November 2026, Energy re-measured (use test): Electricity demand per person 18 kWh, 2024 (Ember, Yearly Electricity Data, 2026 release, https://ember-energy.org/data/yearly-electricity-data/; read through the Our World in Data energy dataset, accessed 12 November 2026). 18 / 1,000 = 1.8%.  Energy now sets Coverage.

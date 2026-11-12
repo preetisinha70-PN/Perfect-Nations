@@ -9,12 +9,12 @@ First edition: 10 November 2026 (wave 4, Oceania of the remaining nations). The 
 - **Food, Not measured:** No FAO measure of food insecurity is published for Solomon Islands. FAO, https://data.worldbank.org/indicator/SN.ITK.MSFI.ZS?locations=SB
 - **Water, 71.6%:** Basic drinking water; safely managed water is not measured (lenient). WHO/UNICEF, 2024, https://data.worldbank.org/indicator/SH.H2O.BASW.ZS?locations=SB
 - **Shelter, 98.1%:** City dwellers outside slums; 2% live in slums; safely managed sanitation is not measured. UN-Habitat, 2022, https://data.worldbank.org/indicator/EN.POP.SLUM.UR.ZS?locations=SB
-- **Energy, 14%:** 14% cook with clean fuels and technology; 81.5% have electricity. World Bank, 2024, https://data.worldbank.org/indicator/EG.CFT.ACCS.ZS?locations=SB
+- **Energy, 13.4:** About 134 kWh of electricity a person a year, against the Living Line of 1,000; 14% cook with clean fuels (2024). Ember, 2024, https://ember-energy.org/data/yearly-electricity-data/
 - **Education, 57.8:** 57.8% of young people complete lower secondary school. World Bank, 2023, https://data.worldbank.org/indicator/SE.SEC.CMPT.LO.ZS?locations=SB
 - **Health, 47:** WHO service coverage index. WHO, 2023, https://ourworldindata.org/grapher/universal-health-coverage-index?country=~SLB
 - **Livelihoods, 37.1%:** Above US$4.20 a day; 62.9% live below it, dated. World Bank, 2012, https://data.worldbank.org/indicator/SI.POV.LMIC?locations=SB
 
-Furthest from reach: Energy (86%). Of Solomon Islanders still cook without clean fuels.
+Furthest from reach: Energy (86.6%). Of the electricity a person needs is missing: about 134 kWh a person a year, against the Living Line of 1,000.
 
 ## The Sovereign Assets
 
@@ -39,3 +39,4 @@ Furthest from reach: Energy (86%). Of Solomon Islanders still cook without clean
 
 - Fisheries licence revenue is to source (Forum Fisheries Agency, Ministry of Finance).
 - No FAO food insecurity measure.
+- 12 November 2026, Energy re-measured (use test): Electricity demand per person 134 kWh, 2024 (Ember, Yearly Electricity Data, 2026 release, https://ember-energy.org/data/yearly-electricity-data/; read through the Our World in Data energy dataset, accessed 12 November 2026). 134 / 1,000 = 13.4%.

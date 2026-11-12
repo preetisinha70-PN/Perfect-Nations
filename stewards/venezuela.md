@@ -34,3 +34,4 @@ Furthest from reach: Shelter (74%). Of Venezuelans lack safely managed sanitatio
 - No IMF debt figure for 2025 in the October 2026 extract.
 - No capital already committed and no Newswire item on record yet.
 - Poverty rests on 2015 data; no FAO food insecurity measure.
+- 12 November 2026, delivery test for Energy: no official national figure for the share of demand served was found, so Energy is unchanged. Rationing of 4 to 12 hours a day outside Caracas through 2026; Corpoelec has published no schedule and no figure for demand served (record demand 15,625 MW on 10 August 2026). The weekly review looks for one.

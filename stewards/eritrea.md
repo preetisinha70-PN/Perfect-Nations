@@ -9,12 +9,12 @@ First edition: 10 November 2026 (wave 2, Africa and the Middle East of the remai
 - **Food, Not measured:** No FAO measure of food insecurity is published for Eritrea. FAO, https://data.worldbank.org/indicator/SN.ITK.MSFI.ZS?locations=ER
 - **Water, 51.9%:** Basic drinking water; safely managed water is not measured (lenient), dated. WHO/UNICEF, 2016, https://data.worldbank.org/indicator/SH.H2O.BASW.ZS?locations=ER
 - **Shelter, 51.3%:** City dwellers outside slums; 48.7% live in slums; safely managed sanitation is not measured. UN-Habitat, 2022, https://data.worldbank.org/indicator/EN.POP.SLUM.UR.ZS?locations=ER
-- **Energy, 21%:** 21% cook with clean fuels and technology; 55.3% have electricity. World Bank, 2024, https://data.worldbank.org/indicator/EG.CFT.ACCS.ZS?locations=ER
+- **Energy, 12.7:** About 127 kWh of electricity a person a year, against the Living Line of 1,000; 21% cook with clean fuels (2024). Ember, 2024, https://ember-energy.org/data/yearly-electricity-data/
 - **Education, 53.4:** 53.4% of young people complete lower secondary school. World Bank, 2022, https://data.worldbank.org/indicator/SE.SEC.CMPT.LO.ZS?locations=ER
 - **Health, 40:** WHO service coverage index. WHO, 2023, https://ourworldindata.org/grapher/universal-health-coverage-index?country=~ERI
 - **Livelihoods, Not measured:** No poverty survey for Eritrea is published by the World Bank. World Bank, https://data.worldbank.org/indicator/SI.POV.DDAY?locations=ER
 
-Furthest from reach: Energy (79%). Of Eritreans still cook without clean fuels.
+Furthest from reach: Energy (87.3%). Of the electricity a person needs is missing: about 127 kWh a person a year, against the Living Line of 1,000.
 
 ## The Sovereign Assets
 
@@ -37,3 +37,4 @@ Furthest from reach: Energy (79%). Of Eritreans still cook without clean fuels.
 - No FAO food insecurity measure and no poverty survey.
 - Mineral rents date from 2011.
 - The WASH grant is read in secondary press; to confirm on afdb.org.
+- 12 November 2026, Energy re-measured (use test): Electricity demand per person 127 kWh, 2024 (Ember, Yearly Electricity Data, 2026 release, https://ember-energy.org/data/yearly-electricity-data/; read through the Our World in Data energy dataset, accessed 12 November 2026). 127 / 1,000 = 12.7%.

@@ -47,3 +47,4 @@ Last weekly review: 9 November 2026.
 - Livelihood and the hero poverty figure rest on surveys of 2017.
 - The status of the World Bank projects of 2019 to 2024 could not be read on their project pages.
 - No energy, water, food, shelter, education or health enterprise verified yet.
+- 12 November 2026, Energy re-measured (use test): Electricity demand per person 248 kWh, 2024 (Ember, Yearly Electricity Data, 2026 release, https://ember-energy.org/data/yearly-electricity-data/; read through the Our World in Data energy dataset, accessed 12 November 2026). 248 / 1,000 = 24.8%.

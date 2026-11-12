@@ -40,3 +40,4 @@ Last weekly review: 10 November 2026.
 - No Ministry of Finance figure for total public debt read (the FY2024 Annual Debt Management Report did not open).
 - No food, water, shelter, education or health enterprise verified yet.
 - Bilateral finance (Türkiye, the United Arab Emirates, Qatar, the European Union, the United Kingdom) and the Green Climate Fund not yet reviewed.
+- 12 November 2026, Energy re-measured (use test): Electricity demand per person 23 kWh, 2024 (Ember, Yearly Electricity Data, 2026 release, https://ember-energy.org/data/yearly-electricity-data/; read through the Our World in Data energy dataset, accessed 12 November 2026). 23 / 1,000 = 2.3%.

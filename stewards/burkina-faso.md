@@ -9,7 +9,7 @@ First edition: 10 November 2026 (wave 1 of the remaining 151 nations). The weekl
 - **Food, 58.8%:** Not food insecure; 41.2% are moderately or severely food insecure. FAO, 2024, https://data.worldbank.org/indicator/SN.ITK.MSFI.ZS?locations=BF
 - **Water, 50%:** Basic drinking water; safely managed water is not measured (lenient). WHO/UNICEF, 2024, https://data.worldbank.org/indicator/SH.H2O.BASW.ZS?locations=BF
 - **Shelter, 12.1%:** City dwellers outside slums; 87.9% live in slums. UN-Habitat, 2022, https://data.worldbank.org/indicator/EN.POP.SLUM.UR.ZS?locations=BF
-- **Energy, 18%:** 18% cook with clean fuels and technology; 34% have electricity. World Bank, 2024, https://data.worldbank.org/indicator/EG.CFT.ACCS.ZS?locations=BF
+- **Energy, 13.5:** About 135 kWh of electricity a person a year, against the Living Line of 1,000; 18% cook with clean fuels (2024). Ember, 2024, https://ember-energy.org/data/yearly-electricity-data/
 - **Education, 26.1:** 26.1% of children read a simple text by the end of primary school; 2019, dated. World Bank, 2019, https://data.worldbank.org/indicator/SE.LPV.PRIM?locations=BF
 - **Health, 47:** WHO service coverage index. WHO, 2023, https://ourworldindata.org/grapher/universal-health-coverage-index?country=~BFA
 - **Livelihoods, 56.8%:** Above the national poverty line; 43.2% live below it. World Bank, 2021, https://data.worldbank.org/indicator/SI.POV.NAHC?locations=BF
@@ -37,3 +37,4 @@ Furthest from reach: Shelter (87.9%). Of city dwellers in Burkina Faso live in s
 ## Open gaps
 
 - The gold export rise is read in Ecofin Agency, citing the IMF; the IMF staff report figure is to be confirmed.
+- 12 November 2026, Energy re-measured (use test): Electricity demand per person 135 kWh, 2024 (Ember, Yearly Electricity Data, 2026 release, https://ember-energy.org/data/yearly-electricity-data/; read through the Our World in Data energy dataset, accessed 12 November 2026). 135 / 1,000 = 13.5%.

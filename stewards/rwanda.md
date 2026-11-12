@@ -47,3 +47,4 @@ Last weekly review: 10 November 2026.
 - The approval date of the Stunting Prevention additional financing is not on the documents read (the information document gives an estimated Board date of 20 March 2023).
 - The CDAT credits have been revised since approval (IDA-70840 from 150.00 to 32.08); the register shows the amount approved in 2022.
 - No shelter enterprise verified yet.
+- 12 November 2026, Energy re-measured (use test): Electricity demand per person 86 kWh, 2024 (Ember, Yearly Electricity Data, 2026 release, https://ember-energy.org/data/yearly-electricity-data/; read through the Our World in Data energy dataset, accessed 12 November 2026). 86 / 1,000 = 8.6%.

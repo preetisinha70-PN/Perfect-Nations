@@ -9,7 +9,7 @@ First edition: 10 November 2026 (wave 3, Asia of the remaining nations). The wee
 - **Food, 63.4%:** Not food insecure; 36.6% are moderately or severely food insecure. FAO, 2023, https://data.worldbank.org/indicator/SN.ITK.MSFI.ZS?locations=NP
 - **Water, 16.5%:** Safely managed drinking water. WHO/UNICEF, 2024, https://data.worldbank.org/indicator/SH.H2O.SMDW.ZS?locations=NP
 - **Shelter, 53.4%:** Safely managed sanitation; 40.1% of city dwellers live in slums. WHO/UNICEF, 2024, https://data.worldbank.org/indicator/SH.STA.SMSS.ZS?locations=NP
-- **Energy, 45%:** 45% cook with clean fuels and technology; 97.9% have electricity. World Bank, 2024, https://data.worldbank.org/indicator/EG.CFT.ACCS.ZS?locations=NP
+- **Energy, 37.2:** About 372 kWh of electricity a person a year, against the Living Line of 1,000; 45% cook with clean fuels (2024). Ember, 2024, https://ember-energy.org/data/yearly-electricity-data/
 - **Education, 98.2:** 98.2% of young people complete lower secondary school. World Bank, 2025, https://data.worldbank.org/indicator/SE.SEC.CMPT.LO.ZS?locations=NP
 - **Health, 58:** WHO service coverage index. WHO, 2023, https://ourworldindata.org/grapher/universal-health-coverage-index?country=~NPL
 - **Livelihoods, 79.7%:** Above the national poverty line; 20.3% live below it. World Bank, 2022, https://data.worldbank.org/indicator/SI.POV.NAHC?locations=NP
@@ -40,3 +40,4 @@ Furthest from reach: Water (83.5%). Of Nepalis lack safely managed drinking wate
 ## Open gaps
 
 - Amount of the March 2026 clean air project ($52 million in the body) to confirm.
+- 12 November 2026, Energy re-measured (use test): Electricity demand per person 372 kWh, 2024 (Ember, Yearly Electricity Data, 2026 release, https://ember-energy.org/data/yearly-electricity-data/; read through the Our World in Data energy dataset, accessed 12 November 2026). 372 / 1,000 = 37.2%.

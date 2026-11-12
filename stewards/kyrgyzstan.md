@@ -39,3 +39,4 @@ Furthest from reach: Education (64.5%). Of children in Kyrgyzstan cannot read a 
 ## Open gaps
 
 - Learning outcomes date from 2014.
+- 12 November 2026, delivery test for Energy: no official national figure for the share of demand served was found, so Energy is unchanged. Peak-hour limit of 3 kW for households, October 2025 to March 2026, and imports to cover the winter deficit; no figure for demand served is published. The weekly review looks for one.

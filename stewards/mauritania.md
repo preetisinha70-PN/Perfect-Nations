@@ -9,7 +9,7 @@ First edition: 10 November 2026 (wave 1 of the remaining 151 nations). The weekl
 - **Food, 34.9%:** Not food insecure; 65.1% are moderately or severely food insecure. FAO, 2024, https://data.worldbank.org/indicator/SN.ITK.MSFI.ZS?locations=MR
 - **Water, 77.3%:** Basic drinking water; safely managed water is not measured (lenient). WHO/UNICEF, 2024, https://data.worldbank.org/indicator/SH.H2O.BASW.ZS?locations=MR
 - **Shelter, 41.4%:** City dwellers outside slums; 58.6% live in slums; safely managed sanitation is not measured. UN-Habitat, 2022, https://data.worldbank.org/indicator/EN.POP.SLUM.UR.ZS?locations=MR
-- **Energy, 56%:** 56% cook with clean fuels and technology; 52.2% have electricity. World Bank, 2024, https://data.worldbank.org/indicator/EG.CFT.ACCS.ZS?locations=MR
+- **Energy, 45.8:** About 458 kWh of electricity a person a year, against the Living Line of 1,000; 56% cook with clean fuels (2024). Ember, 2024, https://ember-energy.org/data/yearly-electricity-data/
 - **Education, 5.2:** 5.2% of children read a simple text by the end of primary school; 2004, dated. World Bank, 2004, https://data.worldbank.org/indicator/SE.LPV.PRIM?locations=MR
 - **Health, 40:** WHO service coverage index. WHO, 2023, https://ourworldindata.org/grapher/universal-health-coverage-index?country=~MRT
 - **Livelihoods, 68.2%:** Above the national poverty line; 31.8% live below it, dated. World Bank, 2019, https://data.worldbank.org/indicator/SI.POV.NAHC?locations=MR
@@ -37,3 +37,4 @@ Furthest from reach: Education (94.8%). Of children in Mauritania cannot read a 
 
 - Gas output of the Greater Tortue Ahmeyim field: no primary page read yet.
 - Learning outcomes date from 2004; lower-secondary completion 2020 used where lower.
+- 12 November 2026, Energy re-measured (use test): Electricity demand per person 458 kWh, 2024 (Ember, Yearly Electricity Data, 2026 release, https://ember-energy.org/data/yearly-electricity-data/; read through the Our World in Data energy dataset, accessed 12 November 2026). 458 / 1,000 = 45.8%.

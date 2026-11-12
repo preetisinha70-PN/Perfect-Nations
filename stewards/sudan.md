@@ -9,7 +9,7 @@ First edition: 10 November 2026 (wave 1 of the remaining 151 nations). The weekl
 - **Food, 60%:** Not in IPC Phase 3 or above; nearly 19.5 million, two in five, face acute food insecurity. IPC via WFP, 2026, https://www.wfp.org/news/joint-news-release-wfpfaounicef-risk-famine-persists-nearly-195-million-people-face-acute-food
 - **Water, 64.9%:** Basic drinking water; safely managed water is not measured (lenient). WHO/UNICEF, 2024, https://data.worldbank.org/indicator/SH.H2O.BASW.ZS?locations=SD
 - **Shelter, 26.3%:** City dwellers outside slums; 73.7% live in slums; safely managed sanitation is not measured. UN-Habitat, 2022, https://data.worldbank.org/indicator/EN.POP.SLUM.UR.ZS?locations=SD
-- **Energy, 47%:** 47% cook with clean fuels and technology; 66% have electricity. World Bank, 2024, https://data.worldbank.org/indicator/EG.CFT.ACCS.ZS?locations=SD
+- **Energy, 30.9:** About 309 kWh of electricity a person a year, against the Living Line of 1,000; 47% cook with clean fuels (2024). Ember, 2024, https://ember-energy.org/data/yearly-electricity-data/
 - **Education, 47.5:** 47.5% of young people complete lower secondary school; 2019, dated. World Bank, 2019, https://data.worldbank.org/indicator/SE.SEC.CMPT.LO.ZS?locations=SD
 - **Health, 48:** WHO service coverage index. WHO, 2023, https://ourworldindata.org/grapher/universal-health-coverage-index?country=~SDN
 - **Livelihoods, 53.5%:** Above the national poverty line; 46.5% live below it, dated. World Bank, 2009, https://data.worldbank.org/indicator/SI.POV.NAHC?locations=SD
@@ -37,3 +37,4 @@ Furthest from reach: Shelter (73.7%). Of city dwellers in Sudan live in slums.
 - Public debt: no primary figure read (IMF WEO projection reported in secondary sources).
 - Poverty data date from 2009 and 2014, before the war: marked dated.
 - Learning outcomes not measured; lower-secondary completion 2019 used.
+- 12 November 2026, Energy re-measured (use test): Electricity demand per person 309 kWh, 2024 (Ember, Yearly Electricity Data, 2026 release, https://ember-energy.org/data/yearly-electricity-data/; read through the Our World in Data energy dataset, accessed 12 November 2026). 309 / 1,000 = 30.9%.
