@@ -21,6 +21,8 @@ jobs:
               [ "$(head -c1 /tmp/b)" ] && head -c 200 /tmp/b | tr '\n' ' ' | sed 's/^/     body: /' && echo
             done
           done
+          echo; echo "##### robots.txt"
+          for u in http://perfectnations.org/robots.txt https://perfectnations.org/robots.txt https://perfectnations.com/robots.txt; do curl -s -L -A "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/130.0 Safari/537.36" -o /tmp/r -m 30 -w "$u -> final %{url_effective} %{http_code} hops %{num_redirects}\n" "$u"; head -c 400 /tmp/r | sed 's/^/     /'; echo; done
           echo; echo "##### full chain with Googlebot UA from http://perfectnations.org/"
           curl -s -A "Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)" -L -o /dev/null -m 40 -w "final %{url_effective} %{http_code} hops %{num_redirects}\n" http://perfectnations.org/
           curl -sv -A "Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)" -o /dev/null -m 20 http://perfectnations.org/ 2>&1 | grep -E '^(\*   Trying|\* Connected|< )' | head -20
