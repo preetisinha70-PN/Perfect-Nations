@@ -21,6 +21,12 @@ v4.2 (7 Nov 2026): the page is Art of Nations everywhere (menu, footer, address 
 Botanical Origins: acrylic on canvas, 12 x 16 in, 2026, not for sale (no Enquire). A work marked
 "Not for sale" or "Sold" shows its status and no Enquire.
 v4.4 (9 Nov 2026): one clean gold close button on the viewer; links to other pages open in a new tab.
+v6.0 (12 Nov 2026): every sale is made in the Art of Nations Gallery, gallery.perfectnations.com (the Steward-General,
+12 Nov 2026). The four painted originals are there at [[ORIG_PRICE]] each, one of one; every nation portrait is there as a print
+or as an original painted to order. Buy opens the work's gallery page; Enquire and Reserve remain only for the books.
+A new section, The idea, sets out why a nation is painted: culture as capital, identity as asset, beauty as public value.
+v5.4 (12 Nov 2026): the shop is open at gallery.perfectnations.com. Every portrait opens with "Buy a print of" its nation,
+which goes to its product page; the Prints section opens the shop. Shipping: free in the US, $25 elsewhere.
 v5.3 (12 Nov 2026): the viewer is a grid of three rows; the picture is sized to its own row, so it never covers the
 top bar or the caption on any screen (the Steward-General, 12 Nov 2026); on a short screen the viewer scrolls.
 The small line reads Artist, Print 12 x 12 in with prices, Original 24 x 24 in, without repeats.
@@ -144,8 +150,6 @@ v4.6 (10 Nov 2026): light reading sections, Earthrise accents (the Steward-Gener
 #pn-art .aon-hero__foot{ grid-area:foot; }
 #pn-art .aon-hero .aon-eb{ color:var(--gs); }
 #pn-art .aon-lead{ margin:0; max-width:46ch; font-size:clamp(1rem,1.25vw,1.14rem); line-height:1.5; color:var(--ivt); }
-#pn-art .aon-pillars{ margin:10px 0 0; font-family:var(--hd); font-size:.68rem; font-weight:700; letter-spacing:.2em; text-transform:uppercase; color:var(--ivd); }
-#pn-art .aon-pillars b{ color:var(--g); font-weight:700; padding:0 .35em; }
 #pn-art .aon-tally{ display:flex; align-items:center; gap:14px 18px; flex-wrap:wrap; margin:16px 0 18px; }
 #pn-art .aon-tally__n{ margin:0; font-family:var(--hd); font-size:.74rem; font-weight:700; letter-spacing:.18em; text-transform:uppercase; color:var(--ivt); white-space:nowrap; }
 #pn-art .aon-tally__n strong{ font-size:2rem; font-weight:600; letter-spacing:-.01em; color:var(--iv); margin-right:4px; vertical-align:-3px; }
@@ -282,6 +286,7 @@ v4.6 (10 Nov 2026): light reading sections, Earthrise accents (the Steward-Gener
   #pn-art .aon-bk .aon-stmt{ font-size:.9rem; display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; overflow:hidden; }
   #pn-art .aon-tag{ font-size:.58rem; letter-spacing:.12em; }
   #pn-art .aon-close .aon-ctas{ display:grid; grid-template-columns:1fr; width:100%; }
+  #pn-art .aon-sub2{ display:grid; grid-template-columns:1fr; }
 }
 
 /* the viewer: paintings at full size, and the pages of the books */
@@ -437,6 +442,16 @@ v4.6 (10 Nov 2026): light reading sections, Earthrise accents (the Steward-Gener
 @media (max-width:599px){ #pn-art .aon-pt__n{ font-size:.58rem; letter-spacing:.06em; min-height:34px; } }
 #pn-art .aon-pt__n:hover{ color:var(--gd); }
 #pn-art .aon-sub{ margin:clamp(26px,4vh,40px) 0 0; }
+/* v6.0 the idea: three tenets on the ivory wall, Earthrise words, terracotta numerals */
+#pn-art .aon-tenets{ list-style:none; margin:clamp(16px,2.4vh,24px) 0 0; padding:0; display:grid; grid-template-columns:minmax(0,1fr); gap:0; }
+#pn-art .aon-tenet{ margin:0; padding:14px 0 12px; border-top:1px solid rgba(11,61,69,.22); display:grid; grid-template-columns:2.2em minmax(0,1fr); column-gap:10px; align-items:baseline; }
+#pn-art .aon-tenet__n{ font-family:var(--hd); font-size:.8rem; font-weight:700; letter-spacing:.16em; color:var(--tc); }
+#pn-art .aon-tenet .aon-h3{ margin:0; color:#0B3D45; }
+#pn-art .aon-tenet p{ grid-column:2; margin:6px 0 0; max-width:44ch; font-size:clamp(.95rem,1.1vw,1.05rem); line-height:1.5; color:var(--inkm); }
+@media (min-width:900px){
+  #pn-art .aon-tenets{ grid-template-columns:repeat(3,minmax(0,1fr)); column-gap:clamp(22px,3vw,40px); }
+  #pn-art .aon-tenet{ padding:18px 0 4px; border-top:2px solid rgba(11,61,69,.85); }
+}
 #pn-art .aon-sub2{ margin-top:clamp(16px,2.4vh,22px); }
 #pn-art .aon-small{ margin:clamp(14px,2vh,20px) 0 0; font-family:var(--bd); font-size:.68rem; letter-spacing:.06em; color:var(--inkd); }
 #pn-art .aon-books .aon-small{ color:var(--ivd); }
@@ -464,18 +479,31 @@ v4.6 (10 Nov 2026): light reading sections, Earthrise accents (the Steward-Gener
       </figcaption>
     </figure>
     <div class="aon-hero__foot">
-      <p class="aon-lead">Each nation as a living bloom: its mountains, coasts and colours redrawn in acrylic, one of one. A portrait for every one of the [[TOTAL]] nations.</p>
-      <p class="aon-pillars">Culture as capital<b>&#183;</b>Identity as asset<b>&#183;</b>Beauty as public value</p>
+      <p class="aon-lead">A nation is more than its accounts. It is a mountain its people carry in memory, a coast, a colour raised on a flag. Art of Nations paints each of the [[TOTAL]] nations as a living bloom, so that what a people loves is seen, valued and kept.</p>
       <div class="aon-tally">
         <p class="aon-tally__n"><strong>[[COUNT]]</strong> of [[TOTAL]] nations portrayed</p>
         <span class="aon-dots" role="img" aria-label="[[COUNT]] of [[TOTAL]] nations portrayed">[[DOTS]]</span>
       </div>
       <div class="aon-ctas">
-        <a class="aon-btn" href="#aon-works">The originals</a>
-        <a class="aon-btn aon-btn--line" href="#aon-prints">The prints</a>
-        <a class="aon-btn aon-btn--line" href="#aon-books">The books</a>
+        <a class="aon-btn" href="[[SHOP]]">Visit the gallery</a>
+        <a class="aon-btn aon-btn--line" href="#aon-works">The originals</a>
       </div>
     </div>
+  </div>
+</section>
+
+<div class="aon-rule" aria-hidden="true"></div>
+<section class="aon-band aon-wall aon-idea" id="aon-idea" aria-labelledby="aon-idea-h">
+  <div class="aon-in">
+    <div class="aon-head">
+      <div><p class="aon-eb">The idea</p><h2 class="aon-h2" id="aon-idea-h">The other half of the ledger</h2></div>
+      <p class="aon-note">Perfect Nations designs how every citizen can have food, water, shelter, energy, education, health and livelihood. Art of Nations keeps the account a balance sheet leaves out: what a nation is for.</p>
+    </div>
+    <ol class="aon-tenets">
+      <li class="aon-tenet aon-rv"><span class="aon-tenet__n">01</span><h3 class="aon-h3">Culture as capital</h3><p>A nation&#8217;s songs, crafts and gardens are wealth no balance sheet records. Each portrait enters that wealth in the ledger.</p></li>
+      <li class="aon-tenet aon-rv"><span class="aon-tenet__n">02</span><h3 class="aon-h3">Identity as asset</h3><p>A people that sees itself clearly invests in itself. Each bloom grows from the nation&#8217;s own landscape and its own colours.</p></li>
+      <li class="aon-tenet aon-rv"><span class="aon-tenet__n">03</span><h3 class="aon-h3">Beauty as public value</h3><p>Beauty belongs to every citizen, as clean water does. Every work bought in the gallery carries Perfect Nations forward.</p></li>
+    </ol>
   </div>
 </section>
 
@@ -485,13 +513,13 @@ v4.6 (10 Nov 2026): light reading sections, Earthrise accents (the Steward-Gener
 [[ORIGINS]]
     <div class="aon-head">
       <div><p class="aon-eb">Originals &#183; one of one</p><h2 class="aon-h2" id="aon-works-h">The nation, as a living bloom</h2></div>
-      <p class="aon-note">Every nation portrait is also available as an original: acrylic on canvas, 24 &#215; 24 in, one of one and signed. Price on enquiry.</p>
+      <p class="aon-note">Acrylic on canvas, 24 &#215; 24 in, one of one and signed: [[ORIG_PRICE]] each. [[PAINTED_WORD]] are in the gallery now; any nation below can be painted as an original, to order.</p>
     </div>
     <div class="aon-grid">
 [[CARDS]]
     </div>
     <div class="aon-ctas aon-sub2">
-      <a class="aon-btn" href="[[CONTACT]]?about=original">Enquire about an original</a>
+      <a class="aon-btn" href="[[SHOP]]/collections/original-paintings">See the originals in the gallery</a>
     </div>
   </div>
 </section>
@@ -501,13 +529,13 @@ v4.6 (10 Nov 2026): light reading sections, Earthrise accents (the Steward-Gener
   <div class="aon-in">
     <div class="aon-head">
       <div><p class="aon-eb">Prints</p><h2 class="aon-h2" id="aon-pts-h">Take a nation home</h2></div>
-      <p class="aon-note">Every nation portrait, 12 &#215; 12 in: on archival paper, [[PAPER]], or on stretched canvas, [[CANVAS]]. Shipped worldwide. Choose a nation to reserve yours.</p>
+      <p class="aon-note">Every nation portrait, 12 &#215; 12 in, on archival paper, [[PAPER]], or stretched canvas, [[CANVAS]], or painted as a 24 &#215; 24 in original, [[ORIG_PRICE]]. [[PRINT_SHIP]] Choose a nation to see it in the gallery.</p>
     </div>
     <ul class="aon-pts" aria-labelledby="aon-pts-h">
 [[PORTRAITS]]
     </ul>
     <div class="aon-ctas aon-sub2">
-      <a class="aon-btn" href="[[CONTACT]]?about=print">Reserve a print</a>
+      <a class="aon-btn" href="[[SHOP]]/collections/nation-portraits">Shop all [[PCOUNT]] nations in the gallery</a>
       <a class="aon-btn aon-btn--line" href="[[CONTACT]]?about=artist">Artists: submit your work</a>
     </div>
     <p class="aon-small">[[CREDIT]]</p>
@@ -525,9 +553,9 @@ v4.6 (10 Nov 2026): light reading sections, Earthrise accents (the Steward-Gener
 [[BOOKS]]
     </div>
     <div class="aon-close">
-      <p>Originals, prints and books are offered by enquiry and shipped worldwide.</p>
+      <p>Every original and every print is offered in the Art of Nations Gallery and shipped worldwide.</p>
       <div class="aon-ctas">
-        <a class="aon-btn" href="[[CONTACT]]?about=gallery">Write to the studio</a>
+        <a class="aon-btn" href="[[SHOP]]">Visit the gallery</a>
         <a class="aon-btn aon-btn--line" href="https://perfectnations.com/blueprints/">National blueprints</a>
       </div>
     </div>
@@ -573,7 +601,7 @@ v4.6 (10 Nov 2026): light reading sections, Earthrise accents (the Steward-Gener
     var d=c.dataset;
     return { n:n, hero:c.classList.contains('aon-card'), nation:d.nation||'', title:d.title, artist:d.artist||'',
       statement:d.statement||'', spec:d.spec||'', alt:d.alt||'', zoom:d.zoom, src:d.src, srcset:d.srcset||'',
-      sw:d.sw||'', enquire:d.enquire||'', buy:d.buy||'', price:d.price||'', status:d.status||'', blueprint:d.blueprint||'', print:d.print||'', original:d.original||'', printq:d.printq||'' };
+      sw:d.sw||'', enquire:d.enquire||'', buy:d.buy||'', price:d.price||'', status:d.status||'', blueprint:d.blueprint||'', print:d.print||'' };
   });
   var works=items.filter(function(w){ return w.hero; });
 
@@ -696,10 +724,9 @@ v4.6 (10 Nov 2026): light reading sections, Earthrise accents (the Steward-Gener
     var paintingItems=function(){
       return items.map(function(w){
         var acts=[];
-        if(w.buy){ acts.push(['Buy',w.buy,false]); }
-        if(w.enquire){ acts.push([w.print?'Reserve a print of '+w.nation:'Enquire about this painting',w.enquire,!!w.buy]); }
-        if(w.original){ acts.push(['Enquire about the original',w.original,true]); }
-        if(w.printq){ acts.push(['Reserve a print of '+w.nation,w.printq,true]); }
+        /* every sale is made in the gallery: Buy opens the work's own gallery page */
+        if(w.buy){ acts.push([w.print?'Buy a print or the original':'Buy the original',w.buy,false]); }
+        else if(w.enquire){ acts.push([w.print?'Reserve a print of '+w.nation:'Enquire about this painting',w.enquire,false]); }
         if(w.blueprint){ acts.push(['Read the blueprint of '+w.nation,w.blueprint,!!acts.length]); }
         var k=[w.artist?'Artist '+w.artist:'',w.price,w.spec,w.status].filter(Boolean).join(' \u00b7 ');
         return { src:w.zoom, alt:w.alt, h:(w.nation?w.nation+' \u00b7 ':'')+w.title, s:w.statement, k:k, acts:acts };
