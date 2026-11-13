@@ -1,5 +1,9 @@
 <!-- ===========================================================================
-PERFECT NATIONS - THE CONTACT PAGE - v6.8 LIGHT - 2026-11-12
+PERFECT NATIONS - THE CONTACT PAGE - v6.9 LIGHT - 2026-11-13
+v6.9 (13 Nov 2026, the Steward-General): letters on the Art of Nations route (an original, a print, a book, an
+artist submission, a portrait commission) go to gallery@perfectnations.com, the address of the Art of Nations
+Gallery; every other letter still goes to contact@perfectnations.com. The letterhead shows the address the letter
+will go to. A print enquiry names the 12 x 12 in size.
 v6.8 (12 Nov 2026, the Steward-General): every message is addressed to contact@perfectnations.com, in place of the
 .org address: the form, the direct link and the note shown without scripts.
 /contact/ (page 12711). Every "Start a conversation", Enquire, Nominate, "Suggest a guest",
@@ -428,7 +432,7 @@ article:has(#pn-contact) .entry-header{ display:none !important; }
           <div class="ct-letter__head">
             <img class="ct-letter__logo" src="https://perfectnations.com/wp-content/uploads/2026/11/pn-logo-7-stars-e3c258.png" alt="" width="256" height="256" decoding="async">
             <span class="ct-letter__brand">Perfect Nations</span>
-            <span class="ct-letter__to">To contact@<br>perfectnations.com</span>
+            <span class="ct-letter__to" id="ct-l-to">To contact@<br>perfectnations.com</span>
           </div>
           <div class="pn-rule" aria-hidden="true"></div>
           <div class="ct-paper">
@@ -493,6 +497,7 @@ article:has(#pn-contact) .entry-header{ display:none !important; }
   root.setAttribute('data-ct', '1');
 
   var TO = 'contact@perfectnations.com';
+  var TO_MAIN = 'contact@perfectnations.com', TO_ART = 'gallery@perfectnations.com';
   var DATA = { open:[], paintings:[], books:[] };
   try { var dn = document.getElementById('ct-data'); if (dn) { DATA = JSON.parse(dn.textContent) || DATA; } } catch (e) {}
   var COUNTRIES = ["Afghanistan", "Albania", "Algeria", "Andorra", "Angola", "Antigua and Barbuda", "Argentina", "Armenia", "Australia", "Austria", "Azerbaijan", "Bahamas", "Bahrain", "Bangladesh", "Barbados", "Belarus", "Belgium", "Belize", "Benin", "Bhutan", "Bolivia", "Bosnia and Herzegovina", "Botswana", "Brazil", "Brunei", "Bulgaria", "Burkina Faso", "Burundi", "Cabo Verde", "Cambodia", "Cameroon", "Canada", "Central African Republic", "Chad", "Chile", "China", "Colombia", "Comoros", "Costa Rica", "Croatia", "Cuba", "Cyprus", "Czechia", "C\u00f4te d\u2019Ivoire", "DR Congo", "Denmark", "Djibouti", "Dominica", "Dominican Republic", "Ecuador", "Egypt", "El Salvador", "Equatorial Guinea", "Eritrea", "Estonia", "Eswatini", "Ethiopia", "Fiji", "Finland", "France", "Gabon", "Gambia", "Georgia", "Germany", "Ghana", "Greece", "Grenada", "Guatemala", "Guinea", "Guinea-Bissau", "Guyana", "Haiti", "Holy See", "Honduras", "Hungary", "Iceland", "India", "Indonesia", "Iran", "Iraq", "Ireland", "Israel", "Italy", "Jamaica", "Japan", "Jordan", "Kazakhstan", "Kenya", "Kiribati", "Kuwait", "Kyrgyzstan", "Laos", "Latvia", "Lebanon", "Lesotho", "Liberia", "Libya", "Liechtenstein", "Lithuania", "Luxembourg", "Madagascar", "Malawi", "Malaysia", "Maldives", "Mali", "Malta", "Marshall Islands", "Mauritania", "Mauritius", "Mexico", "Micronesia", "Moldova", "Monaco", "Mongolia", "Montenegro", "Morocco", "Mozambique", "Myanmar", "Namibia", "Nauru", "Nepal", "Netherlands", "New Zealand", "Nicaragua", "Niger", "Nigeria", "North Korea", "North Macedonia", "Norway", "Oman", "Pakistan", "Palau", "Palestine", "Panama", "Papua New Guinea", "Paraguay", "Peru", "Philippines", "Poland", "Portugal", "Qatar", "Republic of the Congo", "Romania", "Russia", "Rwanda", "Saint Kitts and Nevis", "Saint Lucia", "Saint Vincent and the Grenadines", "Samoa", "San Marino", "Saudi Arabia", "Senegal", "Serbia", "Seychelles", "Sierra Leone", "Singapore", "Slovakia", "Slovenia", "Solomon Islands", "Somalia", "South Africa", "South Korea", "South Sudan", "Spain", "Sri Lanka", "Sudan", "Suriname", "Sweden", "Switzerland", "Syria", "S\u00e3o Tom\u00e9 and Pr\u00edncipe", "Tajikistan", "Tanzania", "Thailand", "Timor-Leste", "Togo", "Tonga", "Trinidad and Tobago", "Tunisia", "Turkmenistan", "Tuvalu", "T\u00fcrkiye", "Uganda", "Ukraine", "United Arab Emirates", "United Kingdom", "United States", "Uruguay", "Uzbekistan", "Vanuatu", "Venezuela", "Vietnam", "Yemen", "Zambia", "Zimbabwe"];
@@ -636,7 +641,7 @@ article:has(#pn-contact) .entry-header{ display:none !important; }
     if (w && kind.id === 'solution') { return 'I would like to discuss Solution No. ' + w.no + ', ' + w.title + ', for ' + w.nation + '.'; }
     if (!w && kind.id === 'original' && el.country.value.trim()) { return 'I would like to enquire about the original painting of ' + el.country.value.trim() + ', 24 x 24 in, acrylic on canvas.'; }
     if (w && kind.id === 'original') { return 'I would like to enquire about ' + w.title + ', the original painting of ' + w.nation + '.'; }
-    if (kind.id === 'print' && el.country.value.trim()) { return 'I would like to ask about a 24 x 24 in print of the portrait of ' + el.country.value.trim() + ', on paper or on canvas.'; }
+    if (kind.id === 'print' && el.country.value.trim()) { return 'I would like to ask about a 12 x 12 in print of the portrait of ' + el.country.value.trim() + ', on paper or on canvas.'; }
     if (w && kind.id === 'book') { return 'I would like to reserve a copy of ' + w.title + '.'; }
     if (kind.id === 'blueprint' && el.country.value.trim()) { return 'I would like to ask for the National Blueprint of ' + el.country.value.trim() + '.'; }
     return '';
@@ -652,6 +657,9 @@ article:has(#pn-contact) .entry-header{ display:none !important; }
   }
   function pick(id){
     kind = kindOf(id);
+    TO = kind && kind.fam === 'art' ? TO_ART : TO_MAIN;
+    var lto = document.getElementById('ct-l-to');
+    if (lto) { lto.innerHTML = 'To ' + TO.split('@')[0] + '@<br>' + TO.split('@')[1]; }
     Array.prototype.forEach.call(routes, function(r){ press(r, r.getAttribute('data-fam') === kind.fam); });
     renderKinds();
     el.compare.hidden = kind.fam !== 'adv' || kind.id === 'blueprint';
