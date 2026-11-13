@@ -1,5 +1,5 @@
 <!-- ===========================================================================
-PERFECT NATIONS - ART OF NATIONS - v6.0 - 2026-11-12
+PERFECT NATIONS - ART OF NATIONS - v6.1 - 2026-11-12
 The whole Art of Nations page in one file: perfectnations.com/art-of-nations/ (page 16839; the old
 address /perfect-nations-gallery/ leads here).
 Root id pn-art. The page's Elementor Custom HTML widget already contains pn-art, so the Perfect
@@ -21,6 +21,9 @@ v4.2 (7 Nov 2026): the page is Art of Nations everywhere (menu, footer, address 
 Botanical Origins: acrylic on canvas, 12 x 16 in, 2026, not for sale (no Enquire). A work marked
 "Not for sale" or "Sold" shows its status and no Enquire.
 v4.4 (9 Nov 2026): one clean gold close button on the viewer; links to other pages open in a new tab.
+v6.1 (12 Nov 2026): the books, compact (the Steward-General, 12 Nov 2026: "Make it more compact"). One short band at the
+foot of the page, "Coming soon": small covers with the words beside them, the statement hidden on phones; the books keep
+Look inside and Reserve a copy until a book has a price.
 v6.0 (12 Nov 2026): every sale is made in the Art of Nations Gallery, gallery.perfectnations.com (the Steward-General,
 12 Nov 2026). The four painted originals are there at $2,500 each, one of one; every nation portrait is there as a print
 or as an original painted to order. Buy opens the work's gallery page; Enquire and Reserve remain only for the books.
@@ -49,7 +52,7 @@ v4.5 (10 Nov 2026): the first line reads Perfect Nations (not Gallery); the gold
 each painting opens onto its nation's blueprint (Read the blueprint); Botanical Origins is 12 x 16 in.
 v4.6 (10 Nov 2026): light reading sections, Earthrise accents (the Steward-General, 10 Nov 2026).
 =========================================================================== -->
-<div id="pn-art" class="aon" data-version="6.0">
+<div id="pn-art" class="aon" data-version="6.1">
 <style>
 #pn-art{
   --er:#0B3D45; --lag:#0F4C5C; --dep:#082A30; --iv:#F4ECD8; --ivt:rgba(244,236,216,.84); --ivd:rgba(244,236,216,.62);
@@ -455,6 +458,26 @@ v4.6 (10 Nov 2026): light reading sections, Earthrise accents (the Steward-Gener
 #pn-art .aon-sub2{ margin-top:clamp(16px,2.4vh,22px); }
 #pn-art .aon-small{ margin:clamp(14px,2vh,20px) 0 0; font-family:var(--bd); font-size:.68rem; letter-spacing:.06em; color:var(--inkd); }
 #pn-art .aon-books .aon-small{ color:var(--ivd); }
+/* v6.1 the books, compact (the Steward-General, 12 Nov 2026): one short band at the foot of the page, small covers,
+   the words beside them; Look inside and Reserve a copy until a book has a price */
+#pn-art .aon-books{ padding:clamp(18px,3vh,28px) 0 clamp(16px,2.6vh,24px); }
+#pn-art .aon-books .aon-h2{ font-size:clamp(1.9rem,3.4vw,2.7rem); }
+#pn-art .aon-books .aon-shelf{ gap:12px; margin-top:clamp(12px,2vh,18px); }
+#pn-art .aon-books .aon-bk{ grid-template-columns:clamp(84px,8.5vw,112px) minmax(0,1fr); grid-template-areas:"obj txt" "obj acts"; align-items:start; gap:10px 18px; padding:14px 16px; }
+#pn-art .aon-books .aon-bk__obj{ padding:2px 8px 0 0; }
+#pn-art .aon-books .aon-bk__book{ transform:rotateY(-14deg) rotateX(2deg); }
+#pn-art .aon-books .aon-bk .aon-h3{ font-size:clamp(1.25rem,1.7vw,1.55rem); }
+#pn-art .aon-books .aon-tag{ margin-bottom:4px; }
+#pn-art .aon-books .aon-bk .aon-stmt{ margin-top:4px; font-size:.92rem; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden; }
+#pn-art .aon-books .aon-spec{ margin-top:4px; }
+#pn-art .aon-books .aon-bk .aon-acts{ display:flex; flex-wrap:wrap; gap:8px; }
+#pn-art .aon-books .aon-close{ margin-top:clamp(14px,2.4vh,20px); padding-top:clamp(12px,2vh,16px); }
+@media (max-width:599px){
+  #pn-art .aon-books .aon-bk{ grid-template-columns:76px minmax(0,1fr); grid-template-areas:"obj txt" "acts acts"; gap:10px 14px; padding:12px; }
+  #pn-art .aon-books .aon-bk .aon-stmt{ display:none; }
+  #pn-art .aon-books .aon-bk .aon-acts{ display:grid; grid-template-columns:1fr 1fr; }
+  #pn-art .aon-books .aon-close p{ font-size:1.05rem; }
+}
 </style>
 
 <section class="aon-band aon-hero" aria-labelledby="aon-h1">
@@ -541,7 +564,7 @@ v4.6 (10 Nov 2026): light reading sections, Earthrise accents (the Steward-Gener
         <p class="aon-price">$2,500</p>
         <div class="aon-acts"><a class="aon-btn aon-btn--sm" href="https://gallery.perfectnations.com/products/barbados-the-trident-in-bloom-original">Buy</a></div>
       </article>
-      <article class="aon-card aon-rv" id="aon-kenya" data-work data-nation="Kenya" data-title="Mount Kenya in Bloom" data-artist="Preeti Sinha" data-statement="The mountain that names the nation flowers in black, red, green and white." data-spec="One of one &#183; Acrylic on canvas &#183; 24 &#215; 24 in &#183; signed" data-alt="Mount Kenya in Bloom: the snow peak of Mount Kenya redrawn as a radiant flowering summit in black, red, green and white" data-zoom="https://perfectnations.com/wp-content/uploads/2026/10/vibrant-floral-artwork-mountain.png" data-src="https://perfectnations.com/wp-content/uploads/2026/10/vibrant-floral-artwork-mountain-768x960.png" data-srcset="https://perfectnations.com/wp-content/uploads/2026/10/vibrant-floral-artwork-mountain-300x300.png 300w, https://perfectnations.com/wp-content/uploads/2026/10/vibrant-floral-artwork-mountain-600x750.png 600w, https://perfectnations.com/wp-content/uploads/2026/10/vibrant-floral-artwork-mountain-768x960.png 768w" data-sw="linear-gradient(90deg,#000000 0.00% 25.00%,#BB0000 25.00% 50.00%,#006600 50.00% 75.00%,#FFFFFF 75.00% 100.00%)" data-buy="https://gallery.perfectnations.com/products/kenya-mount-kenya-in-bloom-original" data-price="$2,500" data-blueprint="https://perfectnations.com/blueprints/kenya/">
+      <article class="aon-card aon-rv" id="aon-kenya" data-work data-nation="Kenya" data-title="Mount Kenya in Bloom" data-artist="Preeti Sinha" data-statement="The mountain that names the nation flowers in black, red, green and white." data-spec="One of one &#183; Acrylic on canvas &#183; signed" data-alt="Mount Kenya in Bloom: the snow peak of Mount Kenya redrawn as a radiant flowering summit in black, red, green and white" data-zoom="https://perfectnations.com/wp-content/uploads/2026/10/vibrant-floral-artwork-mountain.png" data-src="https://perfectnations.com/wp-content/uploads/2026/10/vibrant-floral-artwork-mountain-768x960.png" data-srcset="https://perfectnations.com/wp-content/uploads/2026/10/vibrant-floral-artwork-mountain-300x300.png 300w, https://perfectnations.com/wp-content/uploads/2026/10/vibrant-floral-artwork-mountain-600x750.png 600w, https://perfectnations.com/wp-content/uploads/2026/10/vibrant-floral-artwork-mountain-768x960.png 768w" data-sw="linear-gradient(90deg,#000000 0.00% 25.00%,#BB0000 25.00% 50.00%,#006600 50.00% 75.00%,#FFFFFF 75.00% 100.00%)" data-buy="https://gallery.perfectnations.com/products/kenya-mount-kenya-in-bloom-original" data-price="$2,500" data-blueprint="https://perfectnations.com/blueprints/kenya/">
         <a class="aon-frame" href="https://perfectnations.com/wp-content/uploads/2026/10/vibrant-floral-artwork-mountain.png" data-open="3" aria-label="Open Mount Kenya in Bloom at full size"><span class="aon-mat"><span class="aon-pic"><img src="https://perfectnations.com/wp-content/uploads/2026/10/vibrant-floral-artwork-mountain-600x750.png" srcset="https://perfectnations.com/wp-content/uploads/2026/10/vibrant-floral-artwork-mountain-300x300.png 300w, https://perfectnations.com/wp-content/uploads/2026/10/vibrant-floral-artwork-mountain-600x750.png 600w, https://perfectnations.com/wp-content/uploads/2026/10/vibrant-floral-artwork-mountain-768x960.png 768w" sizes="(min-width:1100px) 250px, (min-width:600px) 44vw, 44vw" alt="Mount Kenya in Bloom: the snow peak of Mount Kenya redrawn as a radiant flowering summit in black, red, green and white" width="600" height="600" loading="lazy" decoding="async"></span></span></a>
         <p class="aon-nation"><i class="aon-sw" style="--sw:linear-gradient(90deg,#000000 0.00% 25.00%,#BB0000 25.00% 50.00%,#006600 50.00% 75.00%,#FFFFFF 75.00% 100.00%)"></i>Kenya</p>
         <h3 class="aon-h3">Mount Kenya in Bloom</h3>
@@ -549,7 +572,7 @@ v4.6 (10 Nov 2026): light reading sections, Earthrise accents (the Steward-Gener
         <p class="aon-price">$2,500</p>
         <div class="aon-acts"><a class="aon-btn aon-btn--sm" href="https://gallery.perfectnations.com/products/kenya-mount-kenya-in-bloom-original">Buy</a></div>
       </article>
-      <article class="aon-card aon-rv" id="aon-rwanda" data-work data-nation="Rwanda" data-title="The Thousand Hills in Bloom" data-artist="Preeti Sinha" data-statement="A thousand hills unfold as a flowering wave in blue, yellow and green." data-spec="One of one &#183; Acrylic on canvas &#183; 24 &#215; 24 in &#183; signed" data-alt="The Thousand Hills in Bloom: the rolling hills of Rwanda redrawn as a radiant flowering wave in blue, yellow and green" data-zoom="https://perfectnations.com/wp-content/uploads/2026/08/Thousand-Hills-in-Bloom-Rwanda-1-1157x1536.png" data-src="https://perfectnations.com/wp-content/uploads/2026/08/Thousand-Hills-in-Bloom-Rwanda-1-768x1020.png" data-srcset="https://perfectnations.com/wp-content/uploads/2026/08/Thousand-Hills-in-Bloom-Rwanda-1-300x300.png 300w, https://perfectnations.com/wp-content/uploads/2026/08/Thousand-Hills-in-Bloom-Rwanda-1-600x797.png 600w, https://perfectnations.com/wp-content/uploads/2026/08/Thousand-Hills-in-Bloom-Rwanda-1-768x1020.png 768w" data-sw="linear-gradient(90deg,#00A1DE 0.00% 33.33%,#FAD201 33.33% 66.67%,#20603D 66.67% 100.00%)" data-buy="https://gallery.perfectnations.com/products/rwanda-the-thousand-hills-in-bloom-original" data-price="$2,500" data-blueprint="https://perfectnations.com/blueprints/rwanda/">
+      <article class="aon-card aon-rv" id="aon-rwanda" data-work data-nation="Rwanda" data-title="The Thousand Hills in Bloom" data-artist="Preeti Sinha" data-statement="A thousand hills unfold as a flowering wave in blue, yellow and green." data-spec="One of one &#183; Acrylic on canvas &#183; signed" data-alt="The Thousand Hills in Bloom: the rolling hills of Rwanda redrawn as a radiant flowering wave in blue, yellow and green" data-zoom="https://perfectnations.com/wp-content/uploads/2026/08/Thousand-Hills-in-Bloom-Rwanda-1-1157x1536.png" data-src="https://perfectnations.com/wp-content/uploads/2026/08/Thousand-Hills-in-Bloom-Rwanda-1-768x1020.png" data-srcset="https://perfectnations.com/wp-content/uploads/2026/08/Thousand-Hills-in-Bloom-Rwanda-1-300x300.png 300w, https://perfectnations.com/wp-content/uploads/2026/08/Thousand-Hills-in-Bloom-Rwanda-1-600x797.png 600w, https://perfectnations.com/wp-content/uploads/2026/08/Thousand-Hills-in-Bloom-Rwanda-1-768x1020.png 768w" data-sw="linear-gradient(90deg,#00A1DE 0.00% 33.33%,#FAD201 33.33% 66.67%,#20603D 66.67% 100.00%)" data-buy="https://gallery.perfectnations.com/products/rwanda-the-thousand-hills-in-bloom-original" data-price="$2,500" data-blueprint="https://perfectnations.com/blueprints/rwanda/">
         <a class="aon-frame" href="https://perfectnations.com/wp-content/uploads/2026/08/Thousand-Hills-in-Bloom-Rwanda-1-1157x1536.png" data-open="4" aria-label="Open The Thousand Hills in Bloom at full size"><span class="aon-mat"><span class="aon-pic"><img src="https://perfectnations.com/wp-content/uploads/2026/08/Thousand-Hills-in-Bloom-Rwanda-1-600x797.png" srcset="https://perfectnations.com/wp-content/uploads/2026/08/Thousand-Hills-in-Bloom-Rwanda-1-300x300.png 300w, https://perfectnations.com/wp-content/uploads/2026/08/Thousand-Hills-in-Bloom-Rwanda-1-600x797.png 600w, https://perfectnations.com/wp-content/uploads/2026/08/Thousand-Hills-in-Bloom-Rwanda-1-768x1020.png 768w" sizes="(min-width:1100px) 250px, (min-width:600px) 44vw, 44vw" alt="The Thousand Hills in Bloom: the rolling hills of Rwanda redrawn as a radiant flowering wave in blue, yellow and green" width="600" height="600" loading="lazy" decoding="async"></span></span></a>
         <p class="aon-nation"><i class="aon-sw" style="--sw:linear-gradient(90deg,#00A1DE 0.00% 33.33%,#FAD201 33.33% 66.67%,#20603D 66.67% 100.00%)"></i>Rwanda</p>
         <h3 class="aon-h3">The Thousand Hills in Bloom</h3>
@@ -745,8 +768,8 @@ v4.6 (10 Nov 2026): light reading sections, Earthrise accents (the Steward-Gener
 <section class="aon-band aon-books" id="aon-books" aria-labelledby="aon-books-h">
   <div class="aon-in">
     <div class="aon-head">
-      <div><p class="aon-eb">Coffee table books</p><h2 class="aon-h2" id="aon-books-h">A nation to return to, page after page</h2></div>
-      <p class="aon-note">A national portrait for each of the 195 nations, each in 195 numbered copies. Turn the pages, then reserve a copy.</p>
+      <div><p class="aon-eb">Coming soon &#183; the books</p><h2 class="aon-h2" id="aon-books-h">The National Portrait books</h2></div>
+      <p class="aon-note">One book for each of the 195 nations, in 195 numbered copies. Reserve yours now.</p>
     </div>
     <div class="aon-shelf">
       <article class="aon-bk aon-rv" id="aon-perfect-barbados" data-book="Perfect Barbados" data-enquire="https://perfectnations.com/contact/?about=perfect-barbados-book">
