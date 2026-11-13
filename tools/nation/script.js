@@ -103,7 +103,7 @@
     });
     if (x) x.addEventListener('click', hide);
     if (c) c.addEventListener('click', function () {
-      var addr = 'contact@perfectnations.org';
+      var addr = 'contact@perfectnations.com'; /* v12.8: .com, in place of .org (12 Nov 2026) */
       if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(addr).then(function () { c.textContent = 'Copied'; }, function () { c.textContent = addr; });
       else c.textContent = addr;
     });
