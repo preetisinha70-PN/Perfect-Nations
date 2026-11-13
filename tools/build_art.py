@@ -31,7 +31,7 @@ CAT = ROOT / 'art' / 'catalogue.json'
 TPL = ROOT / 'art' / 'art-of-nations.template.html'
 OUT = ROOT / 'pages' / 'art-of-nations.html'
 MEDIA = 'https://perfectnations.com/wp-content/uploads/'
-DEFAULT_STATUS = 'Available by private enquiry'
+DEFAULT_STATUS = 'Available in the gallery'
 CONTRACTION = re.compile(r"\b\w+(n['’]t|['’](re|ve|ll|d|m))\b|\b(it|that|there|here|what|who|let)['’]s\b", re.I)
 PROBLEMS = []
 
@@ -112,17 +112,15 @@ def card(i, p, cat, n):
     status = p.get('status') or DEFAULT_STATUS
     sw = swatch(p['colours'])
     acts = []
+    # v6.0: every sale is made in the gallery (the Steward-General, 12 Nov 2026). A work with a buy_url
+    # shows Buy, which opens its gallery page; a work not yet in the gallery falls back to Enquire.
     if not for_sale(status):
         enquire = buy = ''
     elif buy:
+        enquire = ''
         acts.append('<a class="aon-btn aon-btn--sm" href="%s">Buy</a>' % buy)
-        acts.append('<a class="aon-btn aon-btn--sm aon-btn--line" href="%s">Enquire</a>' % enquire)
     else:
         acts.append('<a class="aon-btn aon-btn--sm" href="%s">Enquire</a>' % enquire)
-    printq = ''
-    if enquire:
-        printq = link(where, cat['contact'] + '?about=print-' + p['slug'])
-        acts.append('<a class="aon-btn aon-btn--sm aon-btn--line" href="%s">Print</a>' % printq)
     extra = ''
     if price:
         extra += '\n        <p class="aon-price">%s</p>' % price
@@ -133,7 +131,7 @@ def card(i, p, cat, n):
         'statement': copy(where, p['statement']),
         'spec': copy(where, p['spec']), 'alt': copy(where, p['alt']), 'zoom': media(where, p['zoom']),
         'src': media(where, pick(p['images'], 768)), 'srcset': srcset(where, p['images']), 'sw': esc(sw[5:]),
-        'enquire': enquire, 'buy': buy, 'price': price, 'printq': printq,
+        'enquire': enquire, 'buy': buy, 'price': price,
         'status': copy(where, status) if status != DEFAULT_STATUS else '',
         'blueprint': link(where, p['blueprint']) if p.get('blueprint') else '',
     }
@@ -239,13 +237,12 @@ def portrait(j, p, cat, n):
     data = {
         'nation': copy(where, p['nation']), 'title': 'Nation portrait', 'artist': copy(where, p.get('artist') or cat.get('house_artist', 'Preeti Sinha')),
         'statement': copy(where, 'The nation in its own colours, from its Perfect Nations blueprint. Shipped worldwide.'),
-        'spec': 'Original 24 &#215; 24 in', 'alt': copy(where, p['alt']),
+        'spec': 'Original 24 &#215; 24 in: %s' % copy(where, cat['original_price']), 'alt': copy(where, p['alt']),
         'zoom': media(where, p['zoom']), 'src': media(where, pick(p['images'], 300)), 'srcset': srcset(where, p['images']),
         'blueprint': link(where, p['blueprint']), 'print': '1',
-        'enquire': link(where, cat['contact'] + '?about=print-' + p['slug']),
+        'enquire': '' if p.get('buy_url') else link(where, cat['contact'] + '?about=print-' + p['slug']),
         'buy': link(where, p['buy_url']) if p.get('buy_url') else '',
         'price': copy(where, cat.get('print_prices_line', '').replace('\u00b7', '-')),
-        'original': link(where, cat['contact'] + '?about=original-' + p['slug']),
         'status': '',
     }
     attrs = ' '.join('data-%s="%s"' % (k, v) for k, v in data.items() if v != '')
@@ -259,7 +256,7 @@ def portrait(j, p, cat, n):
 def main():
     cat = json.loads(CAT.read_text(encoding='utf-8'))
     tpl = TPL.read_text(encoding='utf-8')
-    need(cat, 'catalogue', 'version', 'updated', 'series_total', 'contact', 'paintings')
+    need(cat, 'catalogue', 'version', 'updated', 'series_total', 'contact', 'paintings', 'shop', 'original_price')
     link('catalogue contact', cat.get('contact', ''))
     paintings = cat.get('paintings') or []
     total = int(cat.get('series_total') or 195)
@@ -285,9 +282,8 @@ def main():
     shown = n + len(portraits)
     dots = ''.join('<i class="on is-new"></i>' if k == shown - 1 else ('<i class="on"></i>' if k < shown else '<i></i>') for k in range(total))
     first = paintings[0] if paintings else {}
-    shop = cat.get('shop') or ''
-    if shop:
-        link('catalogue shop', shop)
+    shop = link('catalogue shop', cat.get('shop') or '').rstrip('/')
+    painted = sum(1 for p in paintings if p.get('buy_url'))
     if PROBLEMS:
         sys.exit('The catalogue needs fixing before the page can be built:\n  - ' + '\n  - '.join(PROBLEMS))
     slots = {
@@ -298,9 +294,8 @@ def main():
         'FIRST_TITLE': esc(first['title']), 'FIRST_NATION': esc(first['nation']), 'FIRST_SW': esc(swatch(first['colours'])),
         'FIRST_ARTIST': esc(first['artist']), 'FIRST_INDEX': str(len(origins)), 'ORIGINS': found,
         'PRINT_SHIP': copy('print_ship', cat.get('print_ship', 'Shipped worldwide.')),
-        'PRINT_VERB': 'buy' if shop else 'reserve',
-        'PRINTS_BTN': ('      <a class="aon-btn" href="%s/collections/nation-portraits">Shop all %d prints</a>' % (esc(shop), len(portraits))) if shop
-                      else '      <a class="aon-btn" href="%s?about=print">Reserve a print</a>' % esc(cat['contact']),
+        'SHOP': shop, 'ORIG_PRICE': copy('original_price', cat['original_price']), 'PAINTED': str(painted),
+        'PAINTED_WORD': ['None', 'One', 'Two', 'Three', 'Four', 'Five', 'Six', 'Seven', 'Eight', 'Nine', 'Ten'][painted] if painted <= 10 else str(painted),
     }
     out = tpl
     for k, v in slots.items():

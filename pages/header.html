@@ -1,5 +1,8 @@
 <!-- ==========================================================================
-PERFECT NATIONS - CUSTOM HEADER - v20.3 EARTHRISE - 2026-11-10
+PERFECT NATIONS - CUSTOM HEADER - v20.4 EARTHRISE - 2026-11-12
+v20.4: the Art of Nations Gallery (https://gallery.perfectnations.com, the shop where every original and print is
+sold) joins Who we are, after Art of Nations, and the search finds it ("gallery", "shop", "buy", "prints"). A search
+entry may now carry a full address. The Steward-General, 12 Nov 2026: "Add the gallery to the header and footer menus".
 v20.3: The 50 States (/50-states/) joins Where we work, under Blueprints of Nations: the section where the
 blueprints of the 50 states of the United States will open (the Steward-General, 10 Nov 2026). The search
 finds each state by name ("U.S. state"); it opens on the map of /50-states/, or its own blueprint once a
@@ -505,6 +508,7 @@ html:has(#pn-hd), html:has(#pn-hd) body{ overflow-x:clip; }
           <ul class="pn-hd__gl" aria-labelledby="pn-hd-g4">
             <li><a href="https://perfectnations.com/about/"><span class="pn-hd__gt">About<small>The Vision, the Mission and the Stewards</small></span></a></li>
             <li><a href="https://perfectnations.com/art-of-nations/"><span class="pn-hd__gt">Art of Nations<small>The nation portraits</small></span></a></li>
+            <li><a href="https://gallery.perfectnations.com/"><span class="pn-hd__gt">Art of Nations Gallery<small>Originals and prints to buy</small></span></a></li>
           </ul>
         </div>
         <div class="pn-hd__grp pn-hd__grp--work">
@@ -592,6 +596,7 @@ html:has(#pn-hd), html:has(#pn-hd) body{ overflow-x:clip; }
       ['Capital Architecture', '/capital-architecture/', 'finance financing bonds debt swaps guarantees instruments capital investors'],
       ['ReDesign Studio', '/design-studio/', 'redesign design studio co design launch'],
       ['Art of Nations', '/art-of-nations/', 'art gallery paintings works portraits books botanical origins preeti sinha perfect nations gallery'],
+      ['Art of Nations Gallery', 'https://gallery.perfectnations.com/', 'gallery shop store buy prints originals paintings canvas order'],
       ['State of Nations', '/state-of-nations/', 'news newswire dispatches capital wire deals'],
       ['About', '/about/', 'about mission vision founder logo story super intelligence si'],
       ['Contact', '/contact/', 'contact conversation partner invest enquiry email']
@@ -659,7 +664,7 @@ html:has(#pn-hd), html:has(#pn-hd) body{ overflow-x:clip; }
       }
       for(i = 0; i < PAGES.length; i++){
         r = score(PAGES[i][0], PAGES[i][2], q);
-        if(r >= 0) out.push({ t: PAGES[i][0], u: SITE + PAGES[i][1], k: 'Page', g: false, r: r, o: 1 });
+        if(r >= 0) out.push({ t: PAGES[i][0], u: (PAGES[i][1].indexOf('https://') === 0 ? '' : SITE) + PAGES[i][1], k: 'Page', g: false, r: r, o: 1 });
       }
       for(i = 0; i < EXTRA.length; i++){
         r = score(EXTRA[i][0], '', q);
