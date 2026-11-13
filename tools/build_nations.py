@@ -99,7 +99,8 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 PAGES, DATA, HERE = ROOT / 'pages', ROOT / 'data', ROOT / 'tools' / 'nation'
-VERSION = '12.7'  # a nation may name its own statistics office as the population source (pop_source in its page words); first, Cuba, re-measured on the delivery test (the Steward-General, 12 Nov 2026)
+VERSION = '12.8'  # every email from a blueprint goes to contact@perfectnations.com, in place of the .org address (the Steward-General, 12 Nov 2026)
+# v12.7: a nation may name its own statistics office as the population source (pop_source in its page words); first, Cuba, re-measured on the delivery test (the Steward-General, 12 Nov 2026)
 # v12.6: portraits for the 151 Nation Stewards who showed initials, generated in the Media Library in the house style (the Steward-General, 12 Nov 2026)
 # v12.5: the globe turns like the real Earth, west to east (continents drift left to right), one turn every 90 seconds, as on the homepage (the Steward-General, 12 Nov 2026)
 # v12.4: Voices of Perfect Nations: great local leaders, honest, dedicated and committed to basic standards of living for every citizen (the Steward-General, 11 Nov 2026)
@@ -209,7 +210,7 @@ def mailto(subject, body=None):
     q = 'subject=' + urllib.parse.quote(subject, safe='')
     if body:
         q += '&body=' + urllib.parse.quote(body, safe='')
-    return 'mailto:contact@perfectnations.org?' + q
+    return 'mailto:contact@perfectnations.com?' + q
 
 
 def short_date(iso):
@@ -1028,7 +1029,7 @@ def close(d, p):
         '<a class="bpx-btn bpx-btn--line" href="https://perfectnations.com/contact/?nation=%s" target="_blank" rel="noopener noreferrer">Write to us</a>'
         '<a class="bpx-btn bpx-btn--line" href="https://perfectnations.com/blueprints/" target="_blank" rel="noopener noreferrer">All 195 nations</a></div>'
         '<details class="bpx-sources" id="bp-sources"><summary>Sources</summary><ol>%s</ol></details></div>%s</div></section>'
-        '<div class="bpx-toast" id="bp-toast" role="status" aria-live="polite" hidden><span>Opening your email app. If nothing opens, write to <b>contact@perfectnations.org</b></span>'
+        '<div class="bpx-toast" id="bp-toast" role="status" aria-live="polite" hidden><span>Opening your email app. If nothing opens, write to <b>contact@perfectnations.com</b></span>'
         '<button type="button" id="bp-toast-copy">Copy address</button><button type="button" class="bpx-x" id="bp-toast-x" aria-label="Close"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6.5 6.5l11 11M17.5 6.5l-11 11" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button></div>'
         % (ent(name), ent(name), ent(one_line(p['close_lead'])), urllib.parse.quote(slug), srcs,
            flag_fig(name, slug, (p.get('portrait') or {}).get('title') or ('%s in Bloom' % name))))

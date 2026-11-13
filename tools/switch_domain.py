@@ -4,7 +4,9 @@ Run from the repository root:  python3 tools/switch_domain.py [--check]
 
 - Every https://perfectnations.org link, image address and the text "perfectnations.org"
   becomes perfectnations.com, in pages/, data/, figures/, art/, src/, tools/, .github/ and README.md.
-- Email addresses stay as they are (anything@perfectnations.org): the mailboxes live on .org.
+- Email addresses are not touched by this tool. Since 12 Nov 2026 the site's address is contact@perfectnations.com
+  (the Steward-General); it was changed by hand in pages/footer.html, pages/contact.html, tools/build_nations.py and
+  tools/nation/script.js.
 - Address checks written as regular expressions (perfectnations\\.org) accept both addresses,
   so a page keeps working whichever address it is opened on.
 - archive/ (old versions) and wordpress/ (the plugin and its changelog) are left alone.

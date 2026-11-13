@@ -1,5 +1,7 @@
 <!-- ===========================================================================
-PERFECT NATIONS - THE CONTACT PAGE - v6.7 LIGHT - 2026-11-11
+PERFECT NATIONS - THE CONTACT PAGE - v6.8 LIGHT - 2026-11-12
+v6.8 (12 Nov 2026, the Steward-General): every message is addressed to contact@perfectnations.com, in place of the
+.org address: the form, the direct link and the note shown without scripts.
 /contact/ (page 12711). Every "Start a conversation", Enquire, Nominate, "Suggest a guest",
 "Write to us", "Ask for this blueprint" and Solution button on the site lands here, carrying its intent
 in the address (?about=, ?topic=, ?nation=, ?country=; the full list is in the steward-contact
@@ -16,7 +18,7 @@ what a visitor can act on and for the logo, drawn in one gold on the letterhead)
     Press and more), the topics of the chosen route and the fields. Beside them, the hero object:
     the letter itself, on Perfect Nations stationery, rising into the hero on laptops. The
     visitor writes the message on the letter; the topic and the signature fill in as they choose
-    and type. Send opens the visitor's own email, addressed to contact@perfectnations.org, with
+    and type. Send opens the visitor's own email, addressed to contact@perfectnations.com, with
     Gmail, Outlook and Copy as fallbacks. Nothing is stored on the site.
   3 What happens next (Earthrise Depth): three steps, the address for own email, Find your nation
     and See the Solutions.
@@ -452,7 +454,7 @@ article:has(#pn-contact) .entry-header{ display:none !important; }
                 <button class="ct-btn ct-btn--line ct-btn--sm" type="button" id="ct-copy2">Copy the letter</button>
               </div>
             </div>
-            <noscript><p class="ct-priv">Please write to contact@perfectnations.org.</p></noscript>
+            <noscript><p class="ct-priv">Please write to contact@perfectnations.com.</p></noscript>
           </div>
         </div>
 
@@ -474,7 +476,7 @@ article:has(#pn-contact) .entry-header{ display:none !important; }
         </ol>
       </div>
       <div class="ct-ctas">
-        <p class="ct-direct">Prefer your own email? Write to <a href="mailto:contact@perfectnations.org">contact@perfectnations.org</a></p>
+        <p class="ct-direct">Prefer your own email? Write to <a href="mailto:contact@perfectnations.com">contact@perfectnations.com</a></p>
         <a class="ct-btn ct-btn--gl ct-btn--sm" href="https://perfectnations.com/blueprints/">Find your nation</a>
         <a class="ct-btn ct-btn--gl ct-btn--sm" href="https://perfectnations.com/state-of-nations/">See the Solutions</a>
       </div>
@@ -490,7 +492,7 @@ article:has(#pn-contact) .entry-header{ display:none !important; }
   if (!root || root.getAttribute('data-ct') === '1') { return; }
   root.setAttribute('data-ct', '1');
 
-  var TO = 'contact@perfectnations.org';
+  var TO = 'contact@perfectnations.com';
   var DATA = { open:[], paintings:[], books:[] };
   try { var dn = document.getElementById('ct-data'); if (dn) { DATA = JSON.parse(dn.textContent) || DATA; } } catch (e) {}
   var COUNTRIES = ["Afghanistan", "Albania", "Algeria", "Andorra", "Angola", "Antigua and Barbuda", "Argentina", "Armenia", "Australia", "Austria", "Azerbaijan", "Bahamas", "Bahrain", "Bangladesh", "Barbados", "Belarus", "Belgium", "Belize", "Benin", "Bhutan", "Bolivia", "Bosnia and Herzegovina", "Botswana", "Brazil", "Brunei", "Bulgaria", "Burkina Faso", "Burundi", "Cabo Verde", "Cambodia", "Cameroon", "Canada", "Central African Republic", "Chad", "Chile", "China", "Colombia", "Comoros", "Costa Rica", "Croatia", "Cuba", "Cyprus", "Czechia", "C\u00f4te d\u2019Ivoire", "DR Congo", "Denmark", "Djibouti", "Dominica", "Dominican Republic", "Ecuador", "Egypt", "El Salvador", "Equatorial Guinea", "Eritrea", "Estonia", "Eswatini", "Ethiopia", "Fiji", "Finland", "France", "Gabon", "Gambia", "Georgia", "Germany", "Ghana", "Greece", "Grenada", "Guatemala", "Guinea", "Guinea-Bissau", "Guyana", "Haiti", "Holy See", "Honduras", "Hungary", "Iceland", "India", "Indonesia", "Iran", "Iraq", "Ireland", "Israel", "Italy", "Jamaica", "Japan", "Jordan", "Kazakhstan", "Kenya", "Kiribati", "Kuwait", "Kyrgyzstan", "Laos", "Latvia", "Lebanon", "Lesotho", "Liberia", "Libya", "Liechtenstein", "Lithuania", "Luxembourg", "Madagascar", "Malawi", "Malaysia", "Maldives", "Mali", "Malta", "Marshall Islands", "Mauritania", "Mauritius", "Mexico", "Micronesia", "Moldova", "Monaco", "Mongolia", "Montenegro", "Morocco", "Mozambique", "Myanmar", "Namibia", "Nauru", "Nepal", "Netherlands", "New Zealand", "Nicaragua", "Niger", "Nigeria", "North Korea", "North Macedonia", "Norway", "Oman", "Pakistan", "Palau", "Palestine", "Panama", "Papua New Guinea", "Paraguay", "Peru", "Philippines", "Poland", "Portugal", "Qatar", "Republic of the Congo", "Romania", "Russia", "Rwanda", "Saint Kitts and Nevis", "Saint Lucia", "Saint Vincent and the Grenadines", "Samoa", "San Marino", "Saudi Arabia", "Senegal", "Serbia", "Seychelles", "Sierra Leone", "Singapore", "Slovakia", "Slovenia", "Solomon Islands", "Somalia", "South Africa", "South Korea", "South Sudan", "Spain", "Sri Lanka", "Sudan", "Suriname", "Sweden", "Switzerland", "Syria", "S\u00e3o Tom\u00e9 and Pr\u00edncipe", "Tajikistan", "Tanzania", "Thailand", "Timor-Leste", "Togo", "Tonga", "Trinidad and Tobago", "Tunisia", "Turkmenistan", "Tuvalu", "T\u00fcrkiye", "Uganda", "Ukraine", "United Arab Emirates", "United Kingdom", "United States", "Uruguay", "Uzbekistan", "Vanuatu", "Venezuela", "Vietnam", "Yemen", "Zambia", "Zimbabwe"];
