@@ -1,5 +1,6 @@
 <!-- ===========================================================================
-PERFECT NATIONS - SOVEREIGN ASSETS PAGE - SOURCE - v7.1 - 2026-11-10
+PERFECT NATIONS - SOVEREIGN ASSETS PAGE - SOURCE - v7.2 - 2026-11-13
+v7.2: the Lobito Corridor card takes the Angola blueprint's own Corridor picture (The Lobito Atlantic Railway); the old photograph carried a white line and a strip of another picture down its left edge. The planet and the ledger count all 195 open blueprints; the list shows forty-eight names on laptops (twelve on phones), then Show all. The page script sits inside an HTML comment marker, as on the blueprints, so the WordPress formatter cannot break it (the Steward-General, 13 Nov 2026).
 v7.1: light reading sections, Earthrise accents (the Steward-General, 10 Nov 2026).
 v7.0 (the Steward-General, 10 Nov 2026: the updates of the homepage and the blueprints):
   - What we do: the five moves are gone from the homepage, so the page now shows its three steps,
@@ -41,7 +42,7 @@ lead is one sentence (the eight classes are on the balance sheet below); each of
 its figure, line, name and source, and its paragraph moves under Read more (a details disclosure,
 class sa-rm); the steps and the ledger drop the sentences that repeated each other.
 =========================================================================== -->
-<div id="pn-sov" class="pnsa" data-v="7.1">
+<div id="pn-sov" class="pnsa" data-v="7.2">
 <style>
 #pn-sov{
   --er:#0B3D45; --lg:#0F4C5C; --dp:#082A30; --plate:#0A3840;
@@ -357,6 +358,9 @@ class sa-rm); the steps and the ledger drop the sentences that repeated each oth
 #pn-sov .sa-nl a::after{ content:"\2192"; font-family:Arial,sans-serif; font-size:.8rem; color:var(--g); transition:transform .25s ease; }
 #pn-sov .sa-nl a:hover::after{ transform:translateX(3px); }
 #pn-sov .sa-all{ display:none; background:none; border:0; border-bottom:1px solid currentColor; border-radius:0; cursor:pointer; min-height:44px; }
+/* 195 blueprints: forty-eight names first on laptops and tablets, twelve on phones, then Show all */
+#pn-sov.is-js .sa-nl:not(.is-all) li:nth-child(n+49){ display:none; }
+#pn-sov.is-js .sa-all{ display:inline-flex; margin-top:10px; }
 
 /* ---------- phones: layouts of their own ---------- */
 @media (max-width:760px){
@@ -655,7 +659,7 @@ class sa-rm); the steps and the ledger drop the sentences that repeated each oth
 
 <script type="application/json" id="saSeed">@@SEED@@</script>
 <script type="application/json" id="saLand">@@LAND@@</script>
-<script>
+<script><!--
 (function(){
   var root = document.getElementById('pn-sov');
   if (!root || root.getAttribute('data-sa') === '1') { return; }
@@ -965,7 +969,7 @@ class sa-rm); the steps and the ledger drop the sentences that repeated each oth
   if (wide.addEventListener) { wide.addEventListener('change', function(){ show(at); kick(); }); }
   document.addEventListener('visibilitychange', kick);
 
-  /* ---------- the full ledger: on phones, twelve nations first ---------- */
+  /* ---------- the full ledger: forty-eight nations first (twelve on phones), then Show all ---------- */
   var allBtn = document.getElementById('saAll'), nl = document.getElementById('saNations');
   if (allBtn && nl){
     allBtn.addEventListener('click', function(){
@@ -1030,5 +1034,5 @@ class sa-rm); the steps and the ledger drop the sentences that repeated each oth
   countUp();
   load(0);
 })();
-</script>
+//--></script>
 </div>

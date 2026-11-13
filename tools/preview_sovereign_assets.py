@@ -37,6 +37,7 @@ PAINT = {  # stand-in colours for each Media Library photograph, top to bottom
     'lobito-corridor': ['#F2B36B', '#D9763A', '#9A3E1F', '#5A2213', '#2A120B'],
     'india-varanasi-ghats': ['#F7B34A', '#D9732B', '#8E3A1E', '#3A1A14', '#160B09'],
     'Sun-India': ['#FCE7A2', '#F0B54A', '#C9782A', '#9C4F12', '#4A260C'],
+    'Corridor-Angola': ['#F6C887', '#C98A4B', '#7E5A3A', '#4A3A2A', '#22201C'],
 }
 
 
@@ -46,7 +47,7 @@ def stand_in(name):
         return f.read_bytes()
     key = next((k for k in PAINT if k in name), None)
     cols = [tuple(int(c[i:i + 2], 16) for i in (1, 3, 5)) for c in (PAINT[key] if key else ['#1F6A78', '#0A3840'])]
-    w, h = (1536, 960) if '1536' in name else (1024, 747) if '1024' in name else (768, 480)
+    w, h = (1536, 960) if '1536' in name else (1024, 747) if '1024' in name else (768, 560) if '768x560' in name else (768, 480)
     im = Image.new('RGB', (w, h))
     d = ImageDraw.Draw(im)
     for y in range(h):
