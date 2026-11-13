@@ -1,7 +1,7 @@
 {
   "nation": "Colombia",
   "page_version": "9.0",
-  "updated": "2026-11-11",
+  "updated": "2026-11-13",
   "steward": {
     "name": "Andres Mejia",
     "role": "Nation Steward of Colombia"
@@ -28,6 +28,13 @@
     "heading": "Colombia arranges its finance before the shock arrives. Next, a safe toilet in every home.",
     "record": [
       {
+        "value": "61.2%",
+        "money": false,
+        "text": "Public sector gross debt, share of GDP, 2024",
+        "source": "IMF, 2025",
+        "url": "https://www.imf.org/en/news/articles/2025/09/30/pr25320-imf-executive-board-concludes-2025-article-iv-consultation-with-colombia"
+      },
+      {
         "value": "$530M",
         "money": true,
         "text": "Bogota Metro Line 1: Viaduct, stations and 23 trains",
@@ -35,11 +42,25 @@
         "url": "https://www.worldbank.org/en/news/press-release/2025/12/05/banco-mundial-respalda-la-fase-de-construccion-mas-importante-del-metro-de-bogota"
       },
       {
+        "value": "COP 1.3T",
+        "money": true,
+        "text": "Bogota Metro Line 1: a BNP Paribas loan to the District, guaranteed by MIGA from October 2026",
+        "source": "MIGA, 2026",
+        "url": "https://www.miga.org/project/district-bogota-metro-line-1-0"
+      },
+      {
         "value": "$200M",
         "money": true,
-        "text": "Disaster risk credit line (Cat DDO), additional financing: Budget support after the 10 August earthquake",
+        "text": "Cat DDO IV, additional financing: budget support after the 10 August 2026 earthquake",
         "source": "World Bank, 2026",
         "url": "https://www.worldbank.org/en/news/press-release/2026/09/24/world-bank-group-provides-additional-financing-to-support-colombia-earthquake"
+      },
+      {
+        "value": "$100M",
+        "money": true,
+        "text": "Bogota water and sewerage: 203,500 new sewer connections expected by 2028",
+        "source": "IDB Invest, 2025",
+        "url": "https://idbinvest.org/en/news-media/idb-invest-finances-modernization-water-and-sanitation-systems-bogota"
       }
     ],
     "register": [
@@ -92,10 +113,27 @@
       },
       {
         "cat": "multi",
-        "status": "Active",
+        "status": "Effective",
         "tone": "active",
-        "name": "Disaster risk credit line (Cat DDO), additional financing",
-        "detail": "Approved September 2026 · Contingent financing",
+        "name": "MIGA guarantee for the Bogota Metro Line 1 loan",
+        "detail": "Effective 16 October 2026 · Non-honoring of sub-sovereign financial obligations · Up to 95% of principal and interest · Up to 10 years",
+        "amount": "COP 2.78T",
+        "money": true,
+        "note": "Covers a BNP Paribas loan of up to COP 1.3 trillion to the District",
+        "text": "MIGA guarantees a senior unsecured loan of up to COP 1,300 billion from BNP Paribas to Bogotá, Distrito Capital, for Metro Line 1, against the District not honoring its financial obligations. The guarantee, of up to COP 2,783 billion, covers up to 95% of principal and interest and related financing costs.",
+        "by": [
+          "MIGA",
+          "BNP Paribas",
+          "District of Bogota"
+        ],
+        "url": "https://www.miga.org/project/district-bogota-metro-line-1-0"
+      },
+      {
+        "cat": "multi",
+        "status": "Approved",
+        "tone": "active",
+        "name": "Fourth Disaster Risk Management DPL with a Cat DDO (Cat DDO IV), additional financing",
+        "detail": "Approved 24 September 2026 · IBRD · Contingent financing",
         "amount": "$200M",
         "money": true,
         "note": "Budget support after the 10 August earthquake",
@@ -107,10 +145,10 @@
       },
       {
         "cat": "multi",
-        "status": "Active",
+        "status": "Approved",
         "tone": "active",
-        "name": "Bogota Metro Line 1",
-        "detail": "Approved December 2025 · Investment project financing",
+        "name": "Support to the Bogota Metro Line 1 Project, Series 2",
+        "detail": "Approved 5 December 2025 · IBRD",
         "amount": "$530M",
         "money": true,
         "note": "Viaduct, stations and 23 trains",
@@ -124,7 +162,7 @@
         "cat": "multi",
         "status": "Approved",
         "tone": "active",
-        "name": "Multipurpose Cadaster expansion",
+        "name": "Program for Results to Scale up Multipurpose Cadaster Implementation",
         "detail": "Approved 18 November 2025 · IBRD loan · Program-for-Results",
         "amount": "$100M",
         "money": true,
@@ -139,7 +177,7 @@
         "cat": "multi",
         "status": "Approved",
         "tone": "active",
-        "name": "Equitable and sustainable development reform program",
+        "name": "Equitable and Green Path Development Policy Financing II",
         "detail": "Approved 20 February 2025 · IBRD loan · Second of a series of two",
         "amount": "$700M",
         "money": true,
@@ -149,6 +187,21 @@
           "World Bank"
         ],
         "url": "https://www.worldbank.org/en/news/press-release/2025/02/20/el-banco-mundial-reitera-su-apoyo-al-desarrollo-equitativo-y-sostenible-de-colombia"
+      },
+      {
+        "cat": "multi",
+        "status": "Approved",
+        "tone": "active",
+        "name": "Fourth Disaster Risk Management DPL with a Cat DDO (Cat DDO IV)",
+        "detail": "Approved 6 February 2025 · IBRD · Contingent financing",
+        "amount": "$200M",
+        "money": true,
+        "note": "The fourth Cat DDO with Colombia",
+        "text": "A contingent credit line that Colombia can draw, in part or in full, after high-impact natural or epidemiological events, as bridge financing. The three before it were drawn in 2011 for La Niña, in 2020 for COVID-19 and in 2022 for La Niña. It brings climate change and resilience into health, transport and tourism.",
+        "by": [
+          "World Bank"
+        ],
+        "url": "https://www.worldbank.org/en/news/press-release/2025/02/06/colombia-tendra-acceso-a-recursos-del-banco-mundial-para-la-gestion-de-riesgo-de-desastres-y-salud-publica"
       },
       {
         "cat": "regional",
@@ -214,6 +267,22 @@
       },
       {
         "cat": "private",
+        "status": "Announced",
+        "tone": "active",
+        "name": "Bogota Water and Sewerage Company (EAAB), corporate loan",
+        "detail": "Announced 19 December 2025 · Senior corporate loan · Colombian pesos",
+        "amount": "$100M",
+        "money": true,
+        "note": "Up to $100 million equivalent, for water and sewer connections",
+        "text": "Supports EAAB’s investment plan: water supply, wider sewer networks and resilience to extreme rainfall, with more than 206,000 new water connections and 203,500 sewer connections expected by 2028. It improves water and sanitation for more than 9.5 million people; safely managed sanitation sets Colombia’s Coverage.",
+        "by": [
+          "IDB Invest",
+          "EAAB"
+        ],
+        "url": "https://idbinvest.org/en/news-media/idb-invest-finances-modernization-water-and-sanitation-systems-bogota"
+      },
+      {
+        "cat": "private",
         "status": "Signed",
         "tone": "active",
         "name": "Buga–Loboguerrero–Buenaventura road, sustainability-linked loan",
@@ -227,6 +296,39 @@
           "SACYR"
         ],
         "url": "https://www.ifc.org/en/pressroom/2025/ifc-firma-pr-stamo-vinculado-a-sostenibilidad-por-us-220-millones-para-financiar-e/ifc-signs-us-220-million-sustainability-linked-loan-to-finance-colombia-s-strategi"
+      },
+      {
+        "cat": "private",
+        "status": "Announced",
+        "tone": "active",
+        "name": "Credifamilia social housing securitization",
+        "detail": "Announced 24 July 2025 · Senior securities in UVR issued by Titularizadora Colombiana · First operation of a programme of up to COP 250 billion",
+        "amount": "COP 79.84B",
+        "money": true,
+        "note": "About $19.6 million, for social housing mortgages",
+        "text": "IDB Invest finances senior securities backed by Credifamilia’s mortgage loans, so that Credifamilia can lend again for social and priority-interest housing (VIS and VIP) and for remodelling and upgrading such homes.",
+        "by": [
+          "IDB Invest",
+          "Credifamilia"
+        ],
+        "url": "https://www.idbinvest.org/en/news-media/idb-invest-expands-access-housing-colombia-low-income-families"
+      },
+      {
+        "cat": "private",
+        "status": "Announced",
+        "tone": "active",
+        "name": "Shangri-La solar plant, Tolima",
+        "detail": "Announced 10 September 2024 · Senior secured loan · With Bancolombia",
+        "amount": "COP 473.77B",
+        "money": true,
+        "note": "About $113 million; 201 MWp",
+        "text": "Finances the Shangri-La solar photovoltaic plant in Tolima, 201 MWp, which contributes 160 MWac to the national grid. The plant is developed by Atlas Renewable Energy.",
+        "by": [
+          "IDB Invest",
+          "Bancolombia",
+          "Atlas Renewable Energy"
+        ],
+        "url": "https://idbinvest.org/en/news-media/idb-invest-bancolombia-and-atlas-renewable-energy-announce-investment-boost-colombias"
       }
     ]
   },
@@ -295,9 +397,9 @@
       },
       {
         "name": "The Power",
-        "figure": "76.2%",
+        "figure": "67%",
         "money": false,
-        "label": "Of energy from renewables, 2021",
+        "label": "Of electricity from renewables, 2023",
         "text": "Sun, wind, water and biomass already carry part of the load; the rest is the opportunity.",
         "alt": "A hydropower reservoir in the mountains of Antioquia, Colombia",
         "images": [
@@ -313,6 +415,13 @@
   "enterprises": {
     "heading": "Already working in Colombia.",
     "items": [
+      {
+        "standard": "Water",
+        "name": "Bogota Water and Sewerage Company (EAAB)",
+        "text": "Colombia’s largest water and sanitation utility, with 19,000 km of networks and seven treatment plants; it expects more than 206,000 new water connections and 203,500 sewer connections by 2028.",
+        "source": "IDB Invest, 2025",
+        "url": "https://idbinvest.org/en/news-media/idb-invest-finances-modernization-water-and-sanitation-systems-bogota"
+      },
       {
         "standard": "Shelter",
         "name": "Habi",
@@ -382,8 +491,8 @@
       "value": 82.0,
       "display": "82",
       "note": "WHO service coverage index",
-      "source": "WHO, 2023",
-      "url": "https://ourworldindata.org/grapher/universal-health-coverage-index?country=~COL"
+      "source": "WHO and World Bank, 2023",
+      "url": "https://documents1.worldbank.org/curated/en/099819212012531233/pdf/IDU-9485b9d9-c08e-4a82-906e-6529db818e15.pdf"
     },
     {
       "name": "Livelihoods",
@@ -462,5 +571,5 @@
   ],
   "dispatches": [],
   "checked": "2026-11-11T11:28Z",
-  "reviewed": "2026-11-07T07:05Z"
+  "reviewed": "2026-11-13T19:16Z"
 }
