@@ -21,6 +21,9 @@ v4.2 (7 Nov 2026): the page is Art of Nations everywhere (menu, footer, address 
 Botanical Origins: acrylic on canvas, 12 x 16 in, 2026, not for sale (no Enquire). A work marked
 "Not for sale" or "Sold" shows its status and no Enquire.
 v4.4 (9 Nov 2026): one clean gold close button on the viewer; links to other pages open in a new tab.
+v6.2 (13 Nov 2026): Kenya and Rwanda hang in their true shape (taller than wide), never cropped: a painting with a
+"size" in the catalogue gets a frame of its own proportion, narrowed so the frames in a row stand about level (the
+Steward-General, 13 Nov 2026). The hero still shows a square detail; the viewer shows the whole painting.
 v6.1 (12 Nov 2026): the books, compact (the Steward-General, 12 Nov 2026: "Make it more compact"). One short band at the
 foot of the page, "Coming soon": small covers with the words beside them, the statement hidden on phones; the books keep
 Look inside and Reserve a copy until a book has a price.
@@ -478,6 +481,12 @@ v4.6 (10 Nov 2026): light reading sections, Earthrise accents (the Steward-Gener
   #pn-art .aon-books .aon-bk .aon-acts{ display:grid; grid-template-columns:1fr 1fr; }
   #pn-art .aon-books .aon-close p{ font-size:1.05rem; }
 }
+/* v6.2 paintings in their true shape: the frame narrows to the painting's proportion and centres in its column */
+#pn-art .aon-card .aon-frame--shape{
+  --edge:calc(clamp(6px,.8vw,11px) + clamp(6px,1vw,14px));
+  width:calc(var(--arw,1) * (100% - 2 * var(--edge)) + 2 * var(--edge)); margin-inline:auto;
+}
+#pn-art .aon-card .aon-frame--shape .aon-pic--land{ aspect-ratio:var(--ar,1/1); }
 </style>
 
 <section class="aon-band aon-hero" aria-labelledby="aon-h1">

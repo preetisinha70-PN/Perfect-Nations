@@ -137,8 +137,17 @@ def card(i, p, cat, n):
     }
     attrs = ' '.join('data-%s="%s"' % (k, v) for k, v in data.items() if v != '')
     by = '' if p['artist'] == cat.get('house_artist') else '\n        <p class="aon-by">by %s</p>' % data['artist']
+    # v6.2: a painting that is not square ("size": [width, height] of its photograph) hangs in its true shape.
+    # Its frame narrows so that every frame in a row is about the same height, and the painting is never cropped.
+    frame_cls, frame_style, pic_cls, iw, ih = 'aon-frame', '', 'aon-pic', 600, 600
+    if p.get('size'):
+        iw, ih = (int(x) for x in p['size'])
+        if iw != ih:
+            frame_cls += ' aon-frame--shape'
+            frame_style = ' style="--ar:%d/%d;--arw:%.4f"' % (iw, ih, min(1.0, iw / float(ih)))
+            pic_cls += ' aon-pic--land'
     return '''      <article class="aon-card aon-rv" id="aon-%(slug)s" data-work %(attrs)s>
-        <a class="aon-frame" href="%(zoom)s" data-open="%(i)d" aria-label="Open %(title)s at full size"><span class="aon-mat"><span class="aon-pic"><img src="%(src)s" srcset="%(srcset)s" sizes="(min-width:1100px) 250px, (min-width:600px) 44vw, 44vw" alt="%(alt)s" width="600" height="600" loading="lazy" decoding="async"></span></span></a>
+        <a class="%(fcls)s"%(fstyle)s href="%(zoom)s" data-open="%(i)d" aria-label="Open %(title)s at full size"><span class="aon-mat"><span class="%(pcls)s"><img src="%(src)s" srcset="%(srcset)s" sizes="(min-width:1100px) 250px, (min-width:600px) 44vw, 44vw" alt="%(alt)s" width="%(iw)d" height="%(ih)d" loading="lazy" decoding="async"></span></span></a>
         <p class="aon-nation"><i class="aon-sw" style="%(sw)s"></i>%(nation)s</p>
         <h3 class="aon-h3">%(title)s</h3>%(by)s
         <p class="aon-stmt">%(statement)s</p>%(extra)s
@@ -147,6 +156,7 @@ def card(i, p, cat, n):
         'slug': esc(p['slug']), 'attrs': attrs, 'zoom': data['zoom'], 'i': n, 'title': data['title'], 'artist': data['artist'],
         'src': media(where, pick(p['images'], 600)), 'srcset': data['srcset'], 'alt': data['alt'], 'sw': esc(sw),
         'nation': data['nation'], 'statement': data['statement'], 'extra': extra, 'acts': ''.join(acts), 'by': by,
+        'fcls': frame_cls, 'fstyle': frame_style, 'pcls': pic_cls, 'iw': iw, 'ih': ih,
     }
 
 
