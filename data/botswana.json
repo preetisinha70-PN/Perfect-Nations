@@ -1,7 +1,7 @@
 {
   "nation": "Botswana",
   "page_version": "9.0",
-  "updated": "2026-11-11",
+  "updated": "2026-11-13",
   "steward": {
     "name": "Kagiso Molefe",
     "role": "Nation Steward of Botswana"
@@ -25,53 +25,77 @@
     ]
   },
   "capital": {
-    "heading": "10 instruments. A repriced diamond deal, budget support from the AfDB and the OPEC Fund, and World Bank programmes for water, power and health.",
+    "heading": "12 instruments. A repriced diamond deal, budget support from the AfDB and the OPEC Fund, a bank loan for water and power, and World Bank programmes for schools, water, power and health.",
     "record": [
       {
         "value": "30% to 40%",
         "money": false,
-        "text": "Debswana sales agreement with De Beers: State share of Debswana sales: 30% for five years, then 40%",
-        "source": "AP, 2025",
-        "url": "https://ny1.com/nyc/all-boroughs/ap-top-news/2025/02/26/botswana-the-country-with-the-biggest-diamonds-gets-an-improved-10-year-deal-with-miner-de-beers"
+        "text": "Share of Debswana’s output sold by the Okavango Diamond Company under the 2025 agreement: 30% for five years, then 40%",
+        "source": "De Beers and Government of Botswana, 2025",
+        "url": "https://www.malaymail.com/news/money/mediaoutreach/2025/02/27/government-of-the-republic-of-botswana-and-de-beers-group-confirm-diamond-partnership-for-the-next-generation/363918"
       },
       {
-        "value": "$145.5M",
-        "money": true,
-        "text": "Emergency Water Security and Efficiency Project: Water security for towns and cities",
-        "source": "World Bank",
-        "url": "https://projects.worldbank.org/en/projects-operations/project-detail/P160911"
+        "value": "33%",
+        "money": false,
+        "text": "Public debt to GDP in 2025/26, up from 19.7% in 2022/23; the statutory ceiling was raised from 40% to 60% of GDP in March 2026",
+        "source": "Daily News, Government of Botswana, 2026",
+        "url": "https://dailynews.gov.bw/news-detail/92706"
       },
       {
-        "value": "$88M",
+        "value": "P6.3bn",
         "money": true,
-        "text": "Renewable Energy Support and Access Accelerator Project: Renewable power and access",
-        "source": "World Bank",
-        "url": "https://projects.worldbank.org/en/projects-operations/project-detail/P181221"
+        "text": "Standard Chartered Bank Botswana loan for water, wastewater and transmission, authorised by Parliament in March 2026",
+        "source": "Daily News, Government of Botswana, 2026",
+        "url": "https://dailynews.gov.bw/news-detail/90805"
       },
       {
-        "value": "$3.5M",
+        "value": "$170M",
         "money": true,
-        "text": "Botswana Renewable Energy Scale Up Support: Preparation and technical support",
-        "source": "World Bank",
-        "url": "https://projects.worldbank.org/en/projects-operations/project-detail/P178822"
+        "text": "OPEC Fund policy-based loan, signed 20 September 2026, in a $674 million programme with the African Development Bank",
+        "source": "OPEC Fund, 2026",
+        "url": "https://opecfund.org/where-we-work/list/governance-and-economic-resilience-support-program-gersp-additional-financing"
+      },
+      {
+        "value": "$104M",
+        "money": true,
+        "text": "World Bank PROPEL operation for participation and learning in schools, approved 30 July 2026",
+        "source": "World Bank, 2026",
+        "url": "https://financesone.worldbank.org/countries/botswana"
       }
     ],
     "register": [
       {
         "cat": "govt",
+        "status": "Authorised",
+        "tone": "pipeline",
+        "name": "Infrastructure loan from Standard Chartered Bank Botswana",
+        "detail": "Authorised by Parliament, March 2026 · Euribor + 1.6% · 15 years, five years’ grace",
+        "amount": "P6.3bn",
+        "money": true,
+        "note": "Backed by a MIGA guarantee, as reported by the Government",
+        "text": "A commercial loan for four projects: rehabilitating the water networks of Kanye, Moshupa and Molepolole, upgrading the Mambo wastewater scheme in Francistown, and the second phase of the North-West Transmission Grid Connection. The Government reports a guarantee from the World Bank Group’s Multilateral Investment Guarantee Agency. It carries water and energy, two of the seven standards.",
+        "by": [
+          "Standard Chartered Bank Botswana",
+          "Multilateral Investment Guarantee Agency",
+          "Government of Botswana"
+        ],
+        "url": "https://dailynews.gov.bw/news-detail/90805"
+      },
+      {
+        "cat": "govt",
         "status": "Active",
         "tone": "active",
         "name": "Debswana sales agreement with De Beers",
-        "detail": "Signed February 2025 · Ten years, licences extended to 2054",
+        "detail": "Signed February 2025 · Ten-year sales agreement · Licences extended to July 2054",
         "amount": "30% to 40%",
         "money": false,
-        "note": "State share of Debswana sales: 30% for five years, then 40%",
-        "text": "Replaces the 25% share in force before. De Beers receives a 25-year extension of its mining licences, from 2029 to 2054, with an option for a five-year extension at an equal split.",
+        "note": "Share of Debswana’s output sold by the Okavango Diamond Company: 30% for five years, then 40%",
+        "text": "The Okavango Diamond Company sells 30% of Debswana’s rough diamonds for the first five years and 40% for the next five, with a possible five-year extension at an equal split. Debswana’s mining licences are extended by 25 years, from August 2029 to July 2054, and De Beers commits BWP 1 billion upfront to a Diamonds for Development Fund.",
         "by": [
           "Government of Botswana",
           "De Beers"
         ],
-        "url": "https://ny1.com/nyc/all-boroughs/ap-top-news/2025/02/26/botswana-the-country-with-the-biggest-diamonds-gets-an-improved-10-year-deal-with-miner-de-beers"
+        "url": "https://www.malaymail.com/news/money/mediaoutreach/2025/02/27/government-of-the-republic-of-botswana-and-de-beers-group-confirm-diamond-partnership-for-the-next-generation/363918"
       },
       {
         "cat": "multi",
@@ -93,8 +117,24 @@
         "cat": "multi",
         "status": "Approved",
         "tone": "active",
+        "name": "Promoting Participation and Enhancing Learning (PROPEL)",
+        "detail": "Approved 30 July 2026 · World Bank",
+        "amount": "$104M",
+        "money": true,
+        "note": "World Bank financing for participation and learning in schools",
+        "text": "A World Bank operation approved on 30 July 2026, named for its two aims: more children taking part in school and better learning. Education is one of the seven standards, and fewer than half of Botswana’s children read a simple text by the end of primary school (World Bank, 2011).",
+        "by": [
+          "World Bank",
+          "Government of Botswana"
+        ],
+        "url": "https://financesone.worldbank.org/countries/botswana"
+      },
+      {
+        "cat": "multi",
+        "status": "Approved",
+        "tone": "active",
         "name": "Health Emergency Preparedness, Response and Resilience Project",
-        "detail": "Announced 26 January 2026 · Five years",
+        "detail": "Approved 9 October 2025 · Announced 26 January 2026 · Five years",
         "amount": "$43M",
         "money": true,
         "note": "World Bank: $40m loan and $3m grant",
@@ -103,7 +143,7 @@
           "World Bank",
           "Ministry of Health"
         ],
-        "url": "https://allafrica.com/stories/202601270081.html"
+        "url": "https://www.worldbank.org/en/news/press-release/2026/01/26/world-bank-supports-a-stronger-and-more-resilient-health-system-in-botswana"
       },
       {
         "cat": "multi",
@@ -123,18 +163,35 @@
       },
       {
         "cat": "multi",
-        "status": "Active",
+        "status": "Approved",
         "tone": "active",
         "name": "Renewable Energy Support and Access Accelerator Project",
-        "detail": "Approved 11 July 2024 · Investment project financing",
+        "detail": "Approved 11 July 2024 · First World Bank lending for renewable energy in Botswana",
         "amount": "$88M",
         "money": true,
-        "note": "Renewable power and access",
-        "text": "Supports the shift from a coal grid to renewable power, and wider access to electricity.",
+        "note": "World Bank loan; a $30m loan and $4m grant from the Green Climate Fund alongside",
+        "text": "The World Bank’s first lending operation for renewable energy in Botswana. It invests in the grid so that the first wave of 335 MW of private renewable projects can be integrated, builds the country’s first 50 MW utility-scale battery storage system, and extends the grid to rural villages. It carries energy, one of the seven standards.",
         "by": [
-          "World Bank"
+          "World Bank",
+          "Green Climate Fund"
         ],
-        "url": "https://projects.worldbank.org/en/projects-operations/project-detail/P181221"
+        "url": "https://www.worldbank.org/en/news/press-release/2024/07/12/world-bank-supports-botswana-to-enhance-renewable-energy-and-afe-electricity"
+      },
+      {
+        "cat": "multi",
+        "status": "Approved",
+        "tone": "active",
+        "name": "Botswana Renewable Energy Scale Up Support",
+        "detail": "ESMAP technical assistance grant · Announced with RESA, July 2024",
+        "amount": "$3.5M",
+        "money": true,
+        "note": "Solar, wind and storage technical assistance",
+        "text": "A $3.5 million technical assistance grant from ESMAP, the World Bank’s energy programme, announced alongside the renewable energy project of July 2024, for solar, wind and storage.",
+        "by": [
+          "World Bank",
+          "ESMAP"
+        ],
+        "url": "https://www.worldbank.org/en/news/press-release/2024/07/12/world-bank-supports-botswana-to-enhance-renewable-energy-and-afe-electricity"
       },
       {
         "cat": "multi",
@@ -168,33 +225,18 @@
       },
       {
         "cat": "multi",
-        "status": "Active",
+        "status": "Approved",
         "tone": "active",
         "name": "Emergency Water Security and Efficiency Project",
-        "detail": "Approved 2 March 2017 · Investment project financing",
+        "detail": "Approved 1 March 2017 · Response to the 2015–2016 drought",
         "amount": "$145.5M",
         "money": true,
-        "note": "Water security for towns and cities",
-        "text": "Aims to raise the security and efficiency of water supply, the standard on which Botswana already performs best.",
+        "note": "World Bank loan to the Republic of Botswana",
+        "text": "Responds to the 2015–2016 drought by improving water supply in drought-vulnerable areas, wastewater management and the efficiency of the Water Utilities Corporation. About 460,000 people stand to gain from upgraded water supply and about 177,000 from better wastewater treatment.",
         "by": [
           "World Bank"
         ],
-        "url": "https://projects.worldbank.org/en/projects-operations/project-detail/P160911"
-      },
-      {
-        "cat": "multi",
-        "status": "Active",
-        "tone": "active",
-        "name": "Botswana Renewable Energy Scale Up Support",
-        "detail": "Investment project financing",
-        "amount": "$3.5M",
-        "money": true,
-        "note": "Preparation and technical support",
-        "text": "Technical support to scale up renewable generation.",
-        "by": [
-          "World Bank"
-        ],
-        "url": "https://projects.worldbank.org/en/projects-operations/project-detail/P178822"
+        "url": "https://www.worldbank.org/en/news/press-release/2017/03/01/botswana-world-bank-approved-1455-million-to-improve-water-availability-in-drought-vulnerable-areas"
       },
       {
         "cat": "regional",
@@ -302,6 +344,20 @@
         "text": "Botswana’s first utility-scale renewable independent power producer, near Selebi-Phikwe, selling solar power to Botswana Power Corporation.",
         "source": "IFC, 2023",
         "url": "https://www.ifc.org/en/pressroom/2023/ifc-partners-with-scatec-to-finance-botswanas-first-utility-scal"
+      },
+      {
+        "standard": "Health",
+        "name": "Lenmed Hospital Group",
+        "text": "Runs 19 hospitals in Botswana, South Africa, Ghana and Mozambique; an IFC loan supports new facilities, medical equipment and staff.",
+        "source": "IFC, 2024",
+        "url": "https://www.ifc.org/en/pressroom/2024/ifc-and-lenmed-hospital-group-partner-to-expand-quality-healthcare-services-in-africa"
+      },
+      {
+        "standard": "Livelihood",
+        "name": "Peo Finance",
+        "text": "A non-bank micro lender making personal loans, mainly to government employees, for education, farming and home improvement. IFC agreed to lend it up to $40 million equivalent.",
+        "source": "IFC, 2022",
+        "url": "https://www.ifc.org/en/pressroom/2022/ifc-peo-finance-proprietary-ltd-partner-to-boost-financial-inclusion-in-botswana"
       }
     ]
   },
@@ -438,5 +494,5 @@
   ],
   "dispatches": [],
   "checked": "2026-11-11T11:27Z",
-  "reviewed": "2026-11-07T00:07Z"
+  "reviewed": "2026-11-13T07:35Z"
 }
