@@ -285,6 +285,9 @@ def main():
     shown = n + len(portraits)
     dots = ''.join('<i class="on is-new"></i>' if k == shown - 1 else ('<i class="on"></i>' if k < shown else '<i></i>') for k in range(total))
     first = paintings[0] if paintings else {}
+    shop = cat.get('shop') or ''
+    if shop:
+        link('catalogue shop', shop)
     if PROBLEMS:
         sys.exit('The catalogue needs fixing before the page can be built:\n  - ' + '\n  - '.join(PROBLEMS))
     slots = {
@@ -294,6 +297,10 @@ def main():
         'FIRST_SRCSET': srcset('hero', first['images']), 'FIRST_ALT': esc(first['alt']),
         'FIRST_TITLE': esc(first['title']), 'FIRST_NATION': esc(first['nation']), 'FIRST_SW': esc(swatch(first['colours'])),
         'FIRST_ARTIST': esc(first['artist']), 'FIRST_INDEX': str(len(origins)), 'ORIGINS': found,
+        'PRINT_SHIP': copy('print_ship', cat.get('print_ship', 'Shipped worldwide.')),
+        'PRINT_VERB': 'buy' if shop else 'reserve',
+        'PRINTS_BTN': ('      <a class="aon-btn" href="%s/collections/nation-portraits">Shop all %d prints</a>' % (esc(shop), len(portraits))) if shop
+                      else '      <a class="aon-btn" href="%s?about=print">Reserve a print</a>' % esc(cat['contact']),
     }
     out = tpl
     for k, v in slots.items():
