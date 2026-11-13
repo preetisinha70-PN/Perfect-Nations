@@ -1,11 +1,11 @@
 {
   "about": "The Art of Nations catalogue: every painting and book shown (origins: the artist’s founding works, shown before the nation portraits and not counted among the 195) on the Art of Nations page (perfectnations.com/art-of-nations/). The Art of Nations Steward keeps this file. tools/build_art.py turns it into pages/art-of-nations.html. Write copy in plain words with curly apostrophes and no contractions; the build turns every non-ASCII character into an HTML entity. Every image URL must already exist in the Media Library; list the 300, 600 and 768 px copies WordPress makes under images (the page never loads more than 768 px until a visitor opens the viewer); zoom is the copy the viewer opens, at most about 1 MB.",
-  "version": "6.2",
-  "updated": "2026-11-12",
+  "version": "6.3",
+  "updated": "2026-11-13",
   "series_total": 195,
   "contact": "https://perfectnations.com/contact/",
   "shop": "https://gallery.perfectnations.com",
-  "shop_note": "The shop is https://gallery.perfectnations.com (Shopify, opened 12 Nov 2026; every sale is made there, the Steward-General, 12 Nov 2026). The four painted originals are products at $2,500 each, one of one (stock 1, tag original-painting, collection original-paintings, SKU PN-<ISO3>-ORIGINAL-PAINTED). Every nation portrait is a product with three editions: print 12 x 12 in on paper $95 or canvas $175 (printed to order) and the original 24 x 24 in, $2,500, painted to order (tag nation-portrait, collection nation-portraits, SKU PN-<ISO3>-12-PAPER, -12-CANVAS, -ORIGINAL-24). Shipping: free in the US, $25 to the rest of the world. The books are not sold yet: Reserve a copy opens the contact form.",
+  "shop_note": "The shop is https://gallery.perfectnations.com (Shopify, opened 12 Nov 2026; every sale is made there, the Steward-General, 12 Nov 2026). The four painted originals are products at $2,500 each, one of one (stock 1, tag original-painting, collection original-paintings, SKU PN-<ISO3>-ORIGINAL-PAINTED). Every nation portrait is a product with three editions: print 24 x 24 in on paper $165 or canvas $295 (printed to order; 24 x 24 in since 13 Nov 2026, the Steward-General) and the original 24 x 24 in, $2,500, painted to order (tag nation-portrait, collection nation-portraits, SKU PN-<ISO3>-24-PAPER, -24-CANVAS, -ORIGINAL-24; address /products/<nation>-nation-portrait, and the old -print-12-12-in addresses redirect). Shipping: free in the US, $25 to the rest of the world. The books are not sold yet: Reserve a copy opens the contact form.",
   "origins": [
     {
       "slug": "botanical-origins",
@@ -289,7 +289,7 @@
       "slug": "angola",
       "nation": "Angola",
       "blueprint": "https://perfectnations.com/blueprints/angola/",
-      "buy_url": "https://gallery.perfectnations.com/products/angola-nation-portrait-print-12-12-in",
+      "buy_url": "https://gallery.perfectnations.com/products/angola-nation-portrait",
       "alt": "Nation portrait of Angola in the nation’s own colours, from its Perfect Nations blueprint",
       "images": [
         [
@@ -311,7 +311,7 @@
       "slug": "bangladesh",
       "nation": "Bangladesh",
       "blueprint": "https://perfectnations.com/blueprints/bangladesh/",
-      "buy_url": "https://gallery.perfectnations.com/products/bangladesh-nation-portrait-print-12-12-in",
+      "buy_url": "https://gallery.perfectnations.com/products/bangladesh-nation-portrait",
       "alt": "Nation portrait of Bangladesh in the nation’s own colours, from its Perfect Nations blueprint",
       "images": [
         [
@@ -333,7 +333,7 @@
       "slug": "botswana",
       "nation": "Botswana",
       "blueprint": "https://perfectnations.com/blueprints/botswana/",
-      "buy_url": "https://gallery.perfectnations.com/products/botswana-nation-portrait-print-12-12-in",
+      "buy_url": "https://gallery.perfectnations.com/products/botswana-nation-portrait",
       "alt": "Nation portrait of Botswana in the nation’s own colours, from its Perfect Nations blueprint",
       "images": [
         [
@@ -355,7 +355,7 @@
       "slug": "brazil",
       "nation": "Brazil",
       "blueprint": "https://perfectnations.com/blueprints/brazil/",
-      "buy_url": "https://gallery.perfectnations.com/products/brazil-nation-portrait-print-12-12-in",
+      "buy_url": "https://gallery.perfectnations.com/products/brazil-nation-portrait",
       "alt": "Nation portrait of Brazil in the nation’s own colours, from its Perfect Nations blueprint",
       "images": [
         [
@@ -377,7 +377,7 @@
       "slug": "burundi",
       "nation": "Burundi",
       "blueprint": "https://perfectnations.com/blueprints/burundi/",
-      "buy_url": "https://gallery.perfectnations.com/products/burundi-nation-portrait-print-12-12-in",
+      "buy_url": "https://gallery.perfectnations.com/products/burundi-nation-portrait",
       "alt": "Nation portrait of Burundi in the nation’s own colours, from its Perfect Nations blueprint",
       "images": [
         [
@@ -399,7 +399,7 @@
       "slug": "colombia",
       "nation": "Colombia",
       "blueprint": "https://perfectnations.com/blueprints/colombia/",
-      "buy_url": "https://gallery.perfectnations.com/products/colombia-nation-portrait-print-12-12-in",
+      "buy_url": "https://gallery.perfectnations.com/products/colombia-nation-portrait",
       "alt": "Nation portrait of Colombia in the nation’s own colours, from its Perfect Nations blueprint",
       "images": [
         [
@@ -421,7 +421,7 @@
       "slug": "cote-divoire",
       "nation": "Côte d’Ivoire",
       "blueprint": "https://perfectnations.com/blueprints/cote-d-ivoire/",
-      "buy_url": "https://gallery.perfectnations.com/products/cote-d-ivoire-nation-portrait-print-12-12-in",
+      "buy_url": "https://gallery.perfectnations.com/products/cote-d-ivoire-nation-portrait",
       "alt": "Nation portrait of Côte d’Ivoire in the nation’s own colours, from its Perfect Nations blueprint",
       "images": [
         [
@@ -443,7 +443,7 @@
       "slug": "dr-congo",
       "nation": "DR Congo",
       "blueprint": "https://perfectnations.com/blueprints/dr-congo/",
-      "buy_url": "https://gallery.perfectnations.com/products/dr-congo-nation-portrait-print-12-12-in",
+      "buy_url": "https://gallery.perfectnations.com/products/dr-congo-nation-portrait",
       "alt": "Nation portrait of DR Congo in the nation’s own colours, from its Perfect Nations blueprint",
       "images": [
         [
@@ -465,7 +465,7 @@
       "slug": "ecuador",
       "nation": "Ecuador",
       "blueprint": "https://perfectnations.com/blueprints/ecuador/",
-      "buy_url": "https://gallery.perfectnations.com/products/ecuador-nation-portrait-print-12-12-in",
+      "buy_url": "https://gallery.perfectnations.com/products/ecuador-nation-portrait",
       "alt": "Nation portrait of Ecuador in the nation’s own colours, from its Perfect Nations blueprint",
       "images": [
         [
@@ -487,7 +487,7 @@
       "slug": "egypt",
       "nation": "Egypt",
       "blueprint": "https://perfectnations.com/blueprints/egypt/",
-      "buy_url": "https://gallery.perfectnations.com/products/egypt-nation-portrait-print-12-12-in",
+      "buy_url": "https://gallery.perfectnations.com/products/egypt-nation-portrait",
       "alt": "Nation portrait of Egypt in the nation’s own colours, from its Perfect Nations blueprint",
       "images": [
         [
@@ -509,7 +509,7 @@
       "slug": "eswatini",
       "nation": "Eswatini",
       "blueprint": "https://perfectnations.com/blueprints/eswatini/",
-      "buy_url": "https://gallery.perfectnations.com/products/eswatini-nation-portrait-print-12-12-in",
+      "buy_url": "https://gallery.perfectnations.com/products/eswatini-nation-portrait",
       "alt": "Nation portrait of Eswatini in the nation’s own colours, from its Perfect Nations blueprint",
       "images": [
         [
@@ -531,7 +531,7 @@
       "slug": "ethiopia",
       "nation": "Ethiopia",
       "blueprint": "https://perfectnations.com/blueprints/ethiopia/",
-      "buy_url": "https://gallery.perfectnations.com/products/ethiopia-nation-portrait-print-12-12-in",
+      "buy_url": "https://gallery.perfectnations.com/products/ethiopia-nation-portrait",
       "alt": "Nation portrait of Ethiopia in the nation’s own colours, from its Perfect Nations blueprint",
       "images": [
         [
@@ -553,7 +553,7 @@
       "slug": "fiji",
       "nation": "Fiji",
       "blueprint": "https://perfectnations.com/blueprints/fiji/",
-      "buy_url": "https://gallery.perfectnations.com/products/fiji-nation-portrait-print-12-12-in",
+      "buy_url": "https://gallery.perfectnations.com/products/fiji-nation-portrait",
       "alt": "Nation portrait of Fiji in the nation’s own colours, from its Perfect Nations blueprint",
       "images": [
         [
@@ -575,7 +575,7 @@
       "slug": "ghana",
       "nation": "Ghana",
       "blueprint": "https://perfectnations.com/blueprints/ghana/",
-      "buy_url": "https://gallery.perfectnations.com/products/ghana-nation-portrait-print-12-12-in",
+      "buy_url": "https://gallery.perfectnations.com/products/ghana-nation-portrait",
       "alt": "Nation portrait of Ghana in the nation’s own colours, from its Perfect Nations blueprint",
       "images": [
         [
@@ -597,7 +597,7 @@
       "slug": "india",
       "nation": "India",
       "blueprint": "https://perfectnations.com/blueprints/india/",
-      "buy_url": "https://gallery.perfectnations.com/products/india-nation-portrait-print-12-12-in",
+      "buy_url": "https://gallery.perfectnations.com/products/india-nation-portrait",
       "alt": "Nation portrait of India in the nation’s own colours, from its Perfect Nations blueprint",
       "images": [
         [
@@ -619,7 +619,7 @@
       "slug": "indonesia",
       "nation": "Indonesia",
       "blueprint": "https://perfectnations.com/blueprints/indonesia/",
-      "buy_url": "https://gallery.perfectnations.com/products/indonesia-nation-portrait-print-12-12-in",
+      "buy_url": "https://gallery.perfectnations.com/products/indonesia-nation-portrait",
       "alt": "Nation portrait of Indonesia in the nation’s own colours, from its Perfect Nations blueprint",
       "images": [
         [
@@ -641,7 +641,7 @@
       "slug": "jamaica",
       "nation": "Jamaica",
       "blueprint": "https://perfectnations.com/blueprints/jamaica/",
-      "buy_url": "https://gallery.perfectnations.com/products/jamaica-nation-portrait-print-12-12-in",
+      "buy_url": "https://gallery.perfectnations.com/products/jamaica-nation-portrait",
       "alt": "Nation portrait of Jamaica in the nation’s own colours, from its Perfect Nations blueprint",
       "images": [
         [
@@ -663,7 +663,7 @@
       "slug": "jordan",
       "nation": "Jordan",
       "blueprint": "https://perfectnations.com/blueprints/jordan/",
-      "buy_url": "https://gallery.perfectnations.com/products/jordan-nation-portrait-print-12-12-in",
+      "buy_url": "https://gallery.perfectnations.com/products/jordan-nation-portrait",
       "alt": "Nation portrait of Jordan in the nation’s own colours, from its Perfect Nations blueprint",
       "images": [
         [
@@ -685,7 +685,7 @@
       "slug": "lesotho",
       "nation": "Lesotho",
       "blueprint": "https://perfectnations.com/blueprints/lesotho/",
-      "buy_url": "https://gallery.perfectnations.com/products/lesotho-nation-portrait-print-12-12-in",
+      "buy_url": "https://gallery.perfectnations.com/products/lesotho-nation-portrait",
       "alt": "Nation portrait of Lesotho in the nation’s own colours, from its Perfect Nations blueprint",
       "images": [
         [
@@ -707,7 +707,7 @@
       "slug": "madagascar",
       "nation": "Madagascar",
       "blueprint": "https://perfectnations.com/blueprints/madagascar/",
-      "buy_url": "https://gallery.perfectnations.com/products/madagascar-nation-portrait-print-12-12-in",
+      "buy_url": "https://gallery.perfectnations.com/products/madagascar-nation-portrait",
       "alt": "Nation portrait of Madagascar in the nation’s own colours, from its Perfect Nations blueprint",
       "images": [
         [
@@ -729,7 +729,7 @@
       "slug": "malawi",
       "nation": "Malawi",
       "blueprint": "https://perfectnations.com/blueprints/malawi/",
-      "buy_url": "https://gallery.perfectnations.com/products/malawi-nation-portrait-print-12-12-in",
+      "buy_url": "https://gallery.perfectnations.com/products/malawi-nation-portrait",
       "alt": "Nation portrait of Malawi in the nation’s own colours, from its Perfect Nations blueprint",
       "images": [
         [
@@ -751,7 +751,7 @@
       "slug": "mexico",
       "nation": "Mexico",
       "blueprint": "https://perfectnations.com/blueprints/mexico/",
-      "buy_url": "https://gallery.perfectnations.com/products/mexico-nation-portrait-print-12-12-in",
+      "buy_url": "https://gallery.perfectnations.com/products/mexico-nation-portrait",
       "alt": "Nation portrait of Mexico in the nation’s own colours, from its Perfect Nations blueprint",
       "images": [
         [
@@ -773,7 +773,7 @@
       "slug": "morocco",
       "nation": "Morocco",
       "blueprint": "https://perfectnations.com/blueprints/morocco/",
-      "buy_url": "https://gallery.perfectnations.com/products/morocco-nation-portrait-print-12-12-in",
+      "buy_url": "https://gallery.perfectnations.com/products/morocco-nation-portrait",
       "alt": "Nation portrait of Morocco in the nation’s own colours, from its Perfect Nations blueprint",
       "images": [
         [
@@ -795,7 +795,7 @@
       "slug": "mozambique",
       "nation": "Mozambique",
       "blueprint": "https://perfectnations.com/blueprints/mozambique/",
-      "buy_url": "https://gallery.perfectnations.com/products/mozambique-nation-portrait-print-12-12-in",
+      "buy_url": "https://gallery.perfectnations.com/products/mozambique-nation-portrait",
       "alt": "Nation portrait of Mozambique in the nation’s own colours, from its Perfect Nations blueprint",
       "images": [
         [
@@ -817,7 +817,7 @@
       "slug": "namibia",
       "nation": "Namibia",
       "blueprint": "https://perfectnations.com/blueprints/namibia/",
-      "buy_url": "https://gallery.perfectnations.com/products/namibia-nation-portrait-print-12-12-in",
+      "buy_url": "https://gallery.perfectnations.com/products/namibia-nation-portrait",
       "alt": "Nation portrait of Namibia in the nation’s own colours, from its Perfect Nations blueprint",
       "images": [
         [
@@ -839,7 +839,7 @@
       "slug": "nigeria",
       "nation": "Nigeria",
       "blueprint": "https://perfectnations.com/blueprints/nigeria/",
-      "buy_url": "https://gallery.perfectnations.com/products/nigeria-nation-portrait-print-12-12-in",
+      "buy_url": "https://gallery.perfectnations.com/products/nigeria-nation-portrait",
       "alt": "Nation portrait of Nigeria in the nation’s own colours, from its Perfect Nations blueprint",
       "images": [
         [
@@ -861,7 +861,7 @@
       "slug": "pakistan",
       "nation": "Pakistan",
       "blueprint": "https://perfectnations.com/blueprints/pakistan/",
-      "buy_url": "https://gallery.perfectnations.com/products/pakistan-nation-portrait-print-12-12-in",
+      "buy_url": "https://gallery.perfectnations.com/products/pakistan-nation-portrait",
       "alt": "Nation portrait of Pakistan in the nation’s own colours, from its Perfect Nations blueprint",
       "images": [
         [
@@ -883,7 +883,7 @@
       "slug": "philippines",
       "nation": "Philippines",
       "blueprint": "https://perfectnations.com/blueprints/philippines/",
-      "buy_url": "https://gallery.perfectnations.com/products/philippines-nation-portrait-print-12-12-in",
+      "buy_url": "https://gallery.perfectnations.com/products/philippines-nation-portrait",
       "alt": "Nation portrait of Philippines in the nation’s own colours, from its Perfect Nations blueprint",
       "images": [
         [
@@ -905,7 +905,7 @@
       "slug": "republic-of-congo",
       "nation": "Republic of the Congo",
       "blueprint": "https://perfectnations.com/blueprints/republic-of-congo/",
-      "buy_url": "https://gallery.perfectnations.com/products/republic-of-the-congo-nation-portrait-print-12-12-in",
+      "buy_url": "https://gallery.perfectnations.com/products/republic-of-the-congo-nation-portrait",
       "alt": "Nation portrait of Republic of the Congo in the nation’s own colours, from its Perfect Nations blueprint",
       "images": [
         [
@@ -927,7 +927,7 @@
       "slug": "senegal",
       "nation": "Senegal",
       "blueprint": "https://perfectnations.com/blueprints/senegal/",
-      "buy_url": "https://gallery.perfectnations.com/products/senegal-nation-portrait-print-12-12-in",
+      "buy_url": "https://gallery.perfectnations.com/products/senegal-nation-portrait",
       "alt": "Nation portrait of Senegal in the nation’s own colours, from its Perfect Nations blueprint",
       "images": [
         [
@@ -949,7 +949,7 @@
       "slug": "somalia",
       "nation": "Somalia",
       "blueprint": "https://perfectnations.com/blueprints/somalia/",
-      "buy_url": "https://gallery.perfectnations.com/products/somalia-nation-portrait-print-12-12-in",
+      "buy_url": "https://gallery.perfectnations.com/products/somalia-nation-portrait",
       "alt": "Nation portrait of Somalia in the nation’s own colours, from its Perfect Nations blueprint",
       "images": [
         [
@@ -971,7 +971,7 @@
       "slug": "south-africa",
       "nation": "South Africa",
       "blueprint": "https://perfectnations.com/blueprints/south-africa/",
-      "buy_url": "https://gallery.perfectnations.com/products/south-africa-nation-portrait-print-12-12-in",
+      "buy_url": "https://gallery.perfectnations.com/products/south-africa-nation-portrait",
       "alt": "Nation portrait of South Africa in the nation’s own colours, from its Perfect Nations blueprint",
       "images": [
         [
@@ -993,7 +993,7 @@
       "slug": "south-sudan",
       "nation": "South Sudan",
       "blueprint": "https://perfectnations.com/blueprints/south-sudan/",
-      "buy_url": "https://gallery.perfectnations.com/products/south-sudan-nation-portrait-print-12-12-in",
+      "buy_url": "https://gallery.perfectnations.com/products/south-sudan-nation-portrait",
       "alt": "Nation portrait of South Sudan in the nation’s own colours, from its Perfect Nations blueprint",
       "images": [
         [
@@ -1015,7 +1015,7 @@
       "slug": "sri-lanka",
       "nation": "Sri Lanka",
       "blueprint": "https://perfectnations.com/blueprints/sri-lanka/",
-      "buy_url": "https://gallery.perfectnations.com/products/sri-lanka-nation-portrait-print-12-12-in",
+      "buy_url": "https://gallery.perfectnations.com/products/sri-lanka-nation-portrait",
       "alt": "Nation portrait of Sri Lanka in the nation’s own colours, from its Perfect Nations blueprint",
       "images": [
         [
@@ -1037,7 +1037,7 @@
       "slug": "tanzania",
       "nation": "Tanzania",
       "blueprint": "https://perfectnations.com/blueprints/tanzania/",
-      "buy_url": "https://gallery.perfectnations.com/products/tanzania-nation-portrait-print-12-12-in",
+      "buy_url": "https://gallery.perfectnations.com/products/tanzania-nation-portrait",
       "alt": "Nation portrait of Tanzania in the nation’s own colours, from its Perfect Nations blueprint",
       "images": [
         [
@@ -1059,7 +1059,7 @@
       "slug": "uganda",
       "nation": "Uganda",
       "blueprint": "https://perfectnations.com/blueprints/uganda/",
-      "buy_url": "https://gallery.perfectnations.com/products/uganda-nation-portrait-print-12-12-in",
+      "buy_url": "https://gallery.perfectnations.com/products/uganda-nation-portrait",
       "alt": "Nation portrait of Uganda in the nation’s own colours, from its Perfect Nations blueprint",
       "images": [
         [
@@ -1081,7 +1081,7 @@
       "slug": "ukraine",
       "nation": "Ukraine",
       "blueprint": "https://perfectnations.com/blueprints/ukraine/",
-      "buy_url": "https://gallery.perfectnations.com/products/ukraine-nation-portrait-print-12-12-in",
+      "buy_url": "https://gallery.perfectnations.com/products/ukraine-nation-portrait",
       "alt": "Nation portrait of Ukraine in the nation’s own colours, from its Perfect Nations blueprint",
       "images": [
         [
@@ -1103,7 +1103,7 @@
       "slug": "vietnam",
       "nation": "Vietnam",
       "blueprint": "https://perfectnations.com/blueprints/vietnam/",
-      "buy_url": "https://gallery.perfectnations.com/products/vietnam-nation-portrait-print-12-12-in",
+      "buy_url": "https://gallery.perfectnations.com/products/vietnam-nation-portrait",
       "alt": "Nation portrait of Vietnam in the nation’s own colours, from its Perfect Nations blueprint",
       "images": [
         [
@@ -1125,7 +1125,7 @@
       "slug": "zambia",
       "nation": "Zambia",
       "blueprint": "https://perfectnations.com/blueprints/zambia/",
-      "buy_url": "https://gallery.perfectnations.com/products/zambia-nation-portrait-print-12-12-in",
+      "buy_url": "https://gallery.perfectnations.com/products/zambia-nation-portrait",
       "alt": "Nation portrait of Zambia in the nation’s own colours, from its Perfect Nations blueprint",
       "images": [
         [
@@ -1147,7 +1147,7 @@
       "slug": "zimbabwe",
       "nation": "Zimbabwe",
       "blueprint": "https://perfectnations.com/blueprints/zimbabwe/",
-      "buy_url": "https://gallery.perfectnations.com/products/zimbabwe-nation-portrait-print-12-12-in",
+      "buy_url": "https://gallery.perfectnations.com/products/zimbabwe-nation-portrait",
       "alt": "Nation portrait of Zimbabwe in the nation’s own colours, from its Perfect Nations blueprint",
       "images": [
         [
@@ -1167,10 +1167,10 @@
     }
   ],
   "print_prices": {
-    "paper": "$95",
-    "canvas": "$175"
+    "paper": "$165",
+    "canvas": "$295"
   },
-  "print_prices_line": "Print 12 × 12 in: paper $95 or canvas $175",
+  "print_prices_line": "Print 24 × 24 in: paper $165 or canvas $295",
   "print_ship": "Prints ship free in the US and for $25 to the rest of the world.",
   "house_artist": "Preeti Sinha",
   "artists": [],
