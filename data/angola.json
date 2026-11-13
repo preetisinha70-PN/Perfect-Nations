@@ -1,7 +1,7 @@
 {
   "nation": "Angola",
   "page_version": "9.0",
-  "updated": "2026-11-11",
+  "updated": "2026-11-13",
   "steward": {
     "name": "Joana Kiala",
     "role": "Nation Steward of Angola"
@@ -20,7 +20,7 @@
       },
       {
         "value": "76%",
-        "label": "Of electricity from renewables, 2022"
+        "label": "Of electricity from renewables, 2023"
       }
     ]
   },
@@ -30,20 +30,20 @@
       {
         "value": "$2.5B",
         "money": true,
-        "text": "Eurobond, March 2026: 7-year at 9.25% and 11-year at 9.8%, with demand of about $5.2 billion",
-        "source": "Reuters, 2026",
-        "url": "https://www.cnbcafrica.com/2026/angola-issues-2-5-billion-of-eurobonds-demand-about-5-2-billion"
+        "text": "Eurobond, March 2026: $1.5 billion of notes due 2033 and $1 billion of notes due 2037, priced 24 March 2026",
+        "source": "Republic of Angola, 2026",
+        "url": "https://www.investegate.co.uk/announcement/rns/republic-of-angola-the---42rv/post-stabilisation-notice-angola-usd-7y-11y/9544024"
       },
       {
         "value": "$1.5B",
         "money": true,
-        "text": "Eurobond, May 2026: 2031 at 8.25% and 2037 at 9.5%, with orders of about $4 billion",
-        "source": "Reuters, 2026",
-        "url": "https://www.cnbcafrica.com/2026/angola-makes-second-eurobond-issuance-this-year-raising-1-5-billion"
+        "text": "Eurobond, May 2026: $600 million of notes due 2031 and $900 million of notes due 2037, priced 20 May 2026, with a tender offer for older notes",
+        "source": "Republic of Angola, 2026",
+        "url": "https://www.investegate.co.uk/announcement/rns/republic-of-angola-the---42rv/tender-offer-results-announcement/9590039"
       },
       {
         "value": "50.5%",
-        "money": true,
+        "money": false,
         "text": "Public debt, % of GDP, 2025, down from 69% in 2021",
         "source": "Public Debt Management Unit, 2026",
         "url": "https://www.verangola.net/va/en/012026/Economy/47533/China-ceased-to-be-Angola%27s-largest-creditor-in-2025.htm"
@@ -58,7 +58,7 @@
       {
         "value": "$553M",
         "money": true,
-        "text": "DFC loan for the Lobito Atlantic Railway, signed December 2025; with $200 million from DBSA, financial close July 2026",
+        "text": "DFC loan for the Lobito Atlantic Railway, signed December 2025; with $200 million from DBSA, financial close reported in July 2026",
         "source": "Ministry of Transport, 2026",
         "url": "https://allafrica.com/stories/202607090022.html"
       }
@@ -66,50 +66,63 @@
     "register": [
       {
         "cat": "govt",
-        "status": "Active",
+        "status": "Priced",
         "tone": "active",
         "name": "Eurobond, dual tranche",
-        "detail": "Priced May 2026 · 2031 at 8.25% · 2037 at 9.5%",
+        "detail": "Priced 20 May 2026 · $600 million of notes due 2031 · $900 million of notes due 2037",
         "amount": "$1.5B",
         "money": true,
-        "note": "Orders of about $4 billion",
-        "text": "The second return to the market in two months; the ministry said the sale reflected confidence in the nation’s macroeconomic path.",
+        "note": "Launched with a tender offer for the notes due 2028 and 2029, capped at $750 million",
+        "text": "The second Eurobond sale of 2026, launched with a tender offer for the notes due 2028 and 2029, so part of the new money retires older debt.",
         "by": [
-          "Ministry of Finance of Angola"
+          "Republic of Angola"
         ],
-        "url": "https://www.cnbcafrica.com/2026/angola-makes-second-eurobond-issuance-this-year-raising-1-5-billion"
+        "url": "https://www.investegate.co.uk/announcement/rns/republic-of-angola-the---42rv/tender-offer-results-announcement/9590039"
       },
       {
         "cat": "govt",
-        "status": "Active",
+        "status": "Priced",
         "tone": "active",
         "name": "Eurobond, dual tranche",
-        "detail": "Priced March 2026 · 7-year at 9.25% · 11-year at 9.8%",
+        "detail": "Priced 24 March 2026 · $1.5 billion of notes due 2033 · $1 billion of notes due 2037",
         "amount": "$2.5B",
         "money": true,
-        "note": "Demand of about $5.2 billion",
-        "text": "Launched with buyback offers for the notes due 2028, so the new money also refinances the old.",
+        "note": "Launched with a tender offer for the notes due 2028, capped at $500 million",
+        "text": "Launched with a tender offer for the notes due 2028, so the new money also refinances the old.",
         "by": [
-          "Ministry of Finance of Angola"
+          "Republic of Angola"
         ],
-        "url": "https://www.cnbcafrica.com/2026/angola-issues-2-5-billion-of-eurobonds-demand-about-5-2-billion"
+        "url": "https://www.investegate.co.uk/announcement/rns/republic-of-angola-the---42rv/post-stabilisation-notice-angola-usd-7y-11y/9544024"
+      },
+      {
+        "cat": "govt",
+        "status": "Priced",
+        "tone": "active",
+        "name": "Eurobond, dual tranche",
+        "detail": "Priced October 2025 · $1 billion of 5-year notes · $750 million of 10-year notes",
+        "amount": "$1.75B",
+        "money": true,
+        "note": "Two tranches, of five and ten years",
+        "text": "A $1.75 billion sale of notes in two tranches, of five and ten years, ahead of the two sales of 2026.",
+        "by": [
+          "Republic of Angola"
+        ],
+        "url": "https://www.investegate.co.uk/announcement/rns/republic-of-angola-the---42rv/post-stabilisation-notice-angola-usd-l5yr-10yr/9226775"
       },
       {
         "cat": "multi",
-        "status": "Active",
+        "status": "Approved",
         "tone": "active",
-        "name": "Debt-for-education swap",
-        "detail": "Guarantees approved 5 March 2026 · Financial close 27 July 2026 · Total cost about 3.80% · Three-year grace",
-        "amount": "$400M",
+        "name": "Foodtec Naval G loan",
+        "detail": "Approved 1 October 2026 · Senior A loan · Pending signing",
+        "amount": "Up to €40M",
         "money": true,
-        "note": "$240 million IBRD guarantee and a MIGA second-loss guarantee",
-        "text": "A $400 million commercial loan from BBVA, guaranteed by the World Bank and MIGA, prepays 13 costlier loans that carried 9% to 10% a year. The World Bank says most of the savings will build 30 more secondary schools, for over 32,000 students.",
+        "note": "Wheat mill and pasta lines",
+        "text": "An IFC loan of up to €40 million to Naval Holding for the €57 million expansion of Foodtec Industria Alimentar, a food manufacturer in Angola that runs a wheat mill and pasta lines. It finances food made in Angola, the standard that sets the nation’s Coverage.",
         "by": [
-          "World Bank (IBRD)",
-          "MIGA",
-          "BBVA"
+          "IFC"
         ],
-        "url": "https://www.worldbank.org/en/news/press-release/2026/03/06/new-world-bank-group-financing-supports-angola-s-economic-reforms-to-promote-inclusive-growth-and-job-creation"
+        "url": "https://disclosures.ifc.org/project-detail/SII/52071/foodtec-naval-g"
       },
       {
         "cat": "multi",
@@ -128,10 +141,26 @@
       },
       {
         "cat": "multi",
-        "status": "Active",
+        "status": "Approved",
+        "tone": "active",
+        "name": "Debt-for-education swap",
+        "detail": "Guarantees approved 5 March 2026 · IBRD policy-based guarantee · MIGA second-loss guarantee",
+        "amount": "$400M",
+        "money": true,
+        "note": "$240 million IBRD guarantee and a MIGA second-loss guarantee",
+        "text": "A $400 million commercial loan, covered by the two guarantees, is meant to prepay costly commercial debt. The World Bank says the savings will go toward expanding access to education.",
+        "by": [
+          "World Bank (IBRD)",
+          "MIGA"
+        ],
+        "url": "https://www.worldbank.org/en/news/press-release/2026/03/06/new-world-bank-group-financing-supports-angola-s-economic-reforms-to-promote-inclusive-growth-and-job-creation"
+      },
+      {
+        "cat": "multi",
+        "status": "Approved",
         "tone": "active",
         "name": "Development Policy Loan, 2026",
-        "detail": "Approved 5 March 2026 · Development policy lending",
+        "detail": "Approved 5 March 2026 · Development policy loan",
         "amount": "$750M",
         "money": true,
         "note": "Budget support for reforms; part of a package of about $1.1 billion",
@@ -143,25 +172,55 @@
       },
       {
         "cat": "multi",
-        "status": "Active",
+        "status": "Approved",
         "tone": "active",
-        "name": "Second Green, Resilient, Inclusive Growth and Diversification Development Policy Loan",
-        "detail": "Approved 30 September 2024 · Development policy lending",
-        "amount": "$500M",
+        "name": "Huila-Cunene Interconnection Project",
+        "detail": "Approved 21 November 2025 · P512716",
+        "amount": "$334M",
         "money": true,
-        "note": "Budget support for reforms",
-        "text": "Supports green, resilient and inclusive growth through economic reform, fiscal and financial stability, social protection and climate-resilient markets.",
+        "note": "Power for the south",
+        "text": "World Bank financing for the Huíla-Cunene interconnection, in the south of the country. It matters for energy.",
         "by": [
           "World Bank"
         ],
-        "url": "https://projects.worldbank.org/en/projects-operations/project-detail/P179513"
+        "url": "https://financesone.worldbank.org/countries/angola"
       },
       {
         "cat": "multi",
-        "status": "Active",
+        "status": "Approved",
+        "tone": "active",
+        "name": "Health Emergency Preparedness, Response, and Resilience Project",
+        "detail": "Approved 21 November 2025 · Multi-phase programmatic approach · P507385",
+        "amount": "$250M",
+        "money": true,
+        "note": "Preparedness and response to health emergencies",
+        "text": "A World Bank loan for the nation’s preparedness and response to health emergencies. It matters for health.",
+        "by": [
+          "World Bank"
+        ],
+        "url": "https://financesone.worldbank.org/countries/angola"
+      },
+      {
+        "cat": "multi",
+        "status": "Approved",
+        "tone": "active",
+        "name": "Angola Youth Employment Opportunities Project",
+        "detail": "Approved March 2025",
+        "amount": "$250M",
+        "money": true,
+        "note": "About 500,000 people expected to benefit",
+        "text": "World Bank financing for entrepreneurship and labour-market programmes, from which approximately 500,000 people are expected to benefit. It matters for livelihood.",
+        "by": [
+          "World Bank"
+        ],
+        "url": "https://www.worldbank.org/en/news/press-release/2025/03/21/world-bank-boosts-support-to-enhance-employment-opportunities-for-500-000-young-people-in-afe-angola"
+      },
+      {
+        "cat": "multi",
+        "status": "Signed",
         "tone": "active",
         "name": "Enhancing the Social Protection System for Human Capital and Resilience",
-        "detail": "Approved 12 September 2024 · Investment project financing",
+        "detail": "Investment project financing · Loan agreement signed December 2024 · Closing date 31 October 2029",
         "amount": "$400M",
         "money": true,
         "note": "Social protection",
@@ -169,29 +228,14 @@
         "by": [
           "World Bank"
         ],
-        "url": "https://projects.worldbank.org/en/projects-operations/project-detail/P181495"
+        "url": "https://documents1.worldbank.org/curated/en/099010225122016167/pdf/P1814951588c8f8d1f59414727199a61dbffa3628018.pdf"
       },
       {
         "cat": "multi",
-        "status": "Active",
-        "tone": "active",
-        "name": "Digital Acceleration Project",
-        "detail": "Approved 27 June 2024 · Investment project financing",
-        "amount": "$300M",
-        "money": true,
-        "note": "Digital inclusion",
-        "text": "Broadens digital inclusion and the adoption of digital tools to grow the digital economy.",
-        "by": [
-          "World Bank"
-        ],
-        "url": "https://projects.worldbank.org/en/projects-operations/project-detail/P180693"
-      },
-      {
-        "cat": "multi",
-        "status": "Active",
+        "status": "Signed",
         "tone": "active",
         "name": "Secondary Cities Support Program",
-        "detail": "Approved 20 June 2024 · Program-for-Results",
+        "detail": "Program-for-Results · Loan agreement signed 13 December 2024 · Closing date 31 December 2029",
         "amount": "$300M",
         "money": true,
         "note": "Housing and urban services",
@@ -199,14 +243,44 @@
         "by": [
           "World Bank"
         ],
-        "url": "https://projects.worldbank.org/en/projects-operations/project-detail/P181160"
+        "url": "https://documents1.worldbank.org/curated/en/099121324094035840/pdf/P18116011ed6990871bbeb1d66f507b9aee.pdf"
       },
       {
         "cat": "multi",
-        "status": "Active",
+        "status": "Signed",
+        "tone": "active",
+        "name": "Second Green, Resilient, Inclusive Growth and Diversification Development Policy Loan",
+        "detail": "Loan agreement signed 25 October 2024 · Closing date 31 December 2026",
+        "amount": "$500M",
+        "money": true,
+        "note": "Budget support for reforms",
+        "text": "Supports green, resilient and inclusive growth through economic reform, fiscal and financial stability, social protection and climate-resilient markets.",
+        "by": [
+          "World Bank"
+        ],
+        "url": "https://documents1.worldbank.org/curated/en/099102524094014234/pdf/P1795131bb333f0171be2910c42f156c860.pdf"
+      },
+      {
+        "cat": "multi",
+        "status": "Announced",
+        "tone": "active",
+        "name": "Digital Acceleration Project",
+        "detail": "World Bank factsheet, 27 June 2024 · $300 million IBRD loan",
+        "amount": "$300M",
+        "money": true,
+        "note": "Digital inclusion",
+        "text": "Broadens digital inclusion and the adoption of digital tools to grow the digital economy.",
+        "by": [
+          "World Bank"
+        ],
+        "url": "https://www.worldbank.org/en/news/factsheet/2024/06/27/inclusive-digitalization-in-eastern-and-southern-africa-program-afe-angola"
+      },
+      {
+        "cat": "multi",
+        "status": "Effective",
         "tone": "active",
         "name": "Human Resources Capacity for Universal Health Coverage",
-        "detail": "Approved 22 June 2023 · Investment project financing",
+        "detail": "Approved 22 June 2023 · Investment project financing · Closing date 31 December 2028",
         "amount": "$200M",
         "money": true,
         "note": "The health workforce",
@@ -214,14 +288,14 @@
         "by": [
           "World Bank"
         ],
-        "url": "https://projects.worldbank.org/en/projects-operations/project-detail/P180631"
+        "url": "https://documents1.worldbank.org/curated/en/099103124072089211/text/P180631-2811b6b6-0d84-4fec-848f-7ec601c1ff2d.txt"
       },
       {
         "cat": "multi",
-        "status": "Active",
+        "status": "Approved",
         "tone": "active",
         "name": "Accelerating Economic Diversification and Job Creation",
-        "detail": "Approved 31 May 2023 · Investment project financing",
+        "detail": "Announced 2 June 2023 · Approved by the World Bank Group Board that week",
         "amount": "$300M",
         "money": true,
         "note": "Mainly along the Lobito corridor",
@@ -229,14 +303,14 @@
         "by": [
           "World Bank"
         ],
-        "url": "https://projects.worldbank.org/en/projects-operations/project-detail/P178035"
+        "url": "https://www.worldbank.org/en/news/press-release/2023/06/02/angola-afe-to-accelerate-job-creation-and-growth-in-private-enterprise-with-focus-on-lobito-corridor"
       },
       {
         "cat": "multi",
-        "status": "Active",
+        "status": "Approved",
         "tone": "active",
         "name": "Smallholder Agricultural Transformation Project",
-        "detail": "Approved 16 June 2022 · Investment project financing",
+        "detail": "Approved June 2022 · IBRD (MOSAP 3)",
         "amount": "$300M",
         "money": true,
         "note": "Farm productivity",
@@ -244,29 +318,30 @@
         "by": [
           "World Bank"
         ],
-        "url": "https://projects.worldbank.org/en/projects-operations/project-detail/P177305"
+        "url": "https://www.worldbank.org/en/results/2024/03/01/enhancing-food-security-and-income-for-smallholder-farmers-in-afe-angola"
       },
       {
         "cat": "multi",
-        "status": "Active",
+        "status": "Approved",
         "tone": "active",
         "name": "Climate Resilience and Water Security (RECLIMA)",
-        "detail": "Approved 30 March 2022 · Investment project financing",
-        "amount": "$450M",
+        "detail": "Approved 30 March 2022",
+        "amount": "$300M",
         "money": true,
-        "note": "Water supply and management",
-        "text": "Improves water supply and water resource management for climate resilience in selected areas.",
+        "note": "Co-financed by AFD with a euro loan equivalent to $150 million",
+        "text": "Improves water supply and water resource management for climate resilience in Zaire, Benguela, Huíla, Cuanza Sul, Cuando Cubango, Cunene, Namibe and Luanda, for nearly 1.2 million people.",
         "by": [
-          "World Bank"
+          "World Bank",
+          "French Development Agency"
         ],
-        "url": "https://projects.worldbank.org/en/projects-operations/project-detail/P177004"
+        "url": "https://www.worldbank.org/en/news/press-release/2022/03/30/world-bank-injects-300-million-to-support-climate-resilience-and-water-security-in-angola"
       },
       {
         "cat": "multi",
-        "status": "Active",
+        "status": "Effective",
         "tone": "active",
         "name": "Girls Empowerment and Learning for All",
-        "detail": "Approved 29 April 2021 · Investment project financing",
+        "detail": "Approved 29 April 2021 · Investment project financing · Closing date 31 December 2025",
         "amount": "$250M",
         "money": true,
         "note": "Learning, especially for girls",
@@ -274,11 +349,11 @@
         "by": [
           "World Bank"
         ],
-        "url": "https://projects.worldbank.org/en/projects-operations/project-detail/P168699"
+        "url": "https://documents1.worldbank.org/curated/en/099010725101522739/text/P168699-98a6cbf0-f279-430a-9f5b-0e7bb3102da8.txt"
       },
       {
         "cat": "regional",
-        "status": "Active",
+        "status": "Financial close",
         "tone": "active",
         "name": "Sonangol receivables purchase facility",
         "detail": "Closed 28 January 2026 · Syndicated",
@@ -323,6 +398,21 @@
       },
       {
         "cat": "regional",
+        "status": "Approved",
+        "tone": "active",
+        "name": "Angola Youth Employment Project",
+        "detail": "Approved July 2024 · 2025 to 2029",
+        "amount": "$79.08M",
+        "money": true,
+        "note": "Part of a $124.68 million project",
+        "text": "An African Development Bank loan to train more than 95,000 young people in digital technology and in skills for climate-smart agriculture and transport, and to support start-ups. It matters for livelihood.",
+        "by": [
+          "African Development Bank"
+        ],
+        "url": "https://allafrica.com/stories/202407300618.html"
+      },
+      {
+        "cat": "regional",
         "status": "Signed",
         "tone": "active",
         "name": "Coastal Towns Inclusive Sanitation Project, Phase 1",
@@ -339,13 +429,45 @@
       },
       {
         "cat": "bilat",
-        "status": "Active",
+        "status": "Provided",
+        "tone": "active",
+        "name": "UK Export Finance, four infrastructure projects",
+        "detail": "Announced 8 September 2026 · Cabinda airport £371 million · Camama-Viana road £73 million · Uíge electrification £93 million · Huambo transmission line £118 million",
+        "amount": "£655M",
+        "money": true,
+        "note": "Unlocks £167 million of UK supply contracts",
+        "text": "UK Export Finance support for four projects, among them transmission lines and substations in Uíge province and a high-voltage line from Belém do Dango in Huambo to Lomaum in Benguela. The two power projects matter for energy.",
+        "by": [
+          "UK Export Finance"
+        ],
+        "url": "https://www.gov.uk/government/news/uk-backing-unlocks-167-million-of-exports-for-british-businesses-in-angola"
+      },
+      {
+        "cat": "bilat",
+        "status": "Arranged",
+        "tone": "active",
+        "name": "Quilonga Grande Water System, Phase 2",
+        "detail": "Announced 20 August 2026 · Export credit with Bpifrance Assurance Export cover · Sfil",
+        "amount": "€538M",
+        "money": true,
+        "note": "A new treatment plant of 518,000 m³ a day",
+        "text": "Financing for the Republic of Angola, arranged by Standard Chartered with cover from Bpifrance Assurance Export, for the second phase of the Quilonga Grande water system. The new plant is expected to bring reliable clean water to approximately five million people. It matters for water.",
+        "by": [
+          "Standard Chartered",
+          "Bpifrance Assurance Export",
+          "Sfil"
+        ],
+        "url": "https://www.sc.com/uk/2026/08/20/standard-chartered-bpifrance-assurance-export-and-sfil-finance-major-water-infrastructure-project-to-expand-access-to-clean-water-in-luanda-angola/"
+      },
+      {
+        "cat": "bilat",
+        "status": "Financial close",
         "tone": "active",
         "name": "Lobito Atlantic Railway",
-        "detail": "Announced 4 December 2024 · Signed December 2025 · Financial close July 2026",
+        "detail": "Announced 4 December 2024 · Signed 17 December 2025 · Financial close reported July 2026",
         "amount": "$553M",
         "money": true,
-        "note": "Alongside $200 million from DBSA; rail line and mineral port",
+        "note": "Alongside up to $200 million from DBSA; rail line and mineral port",
         "text": "Finances the rehabilitation and operation of the mineral port in Lobito and about 1,300 km of rail from Lobito to Luau on the eastern border.",
         "by": [
           "U.S. International Development Finance Corporation",
@@ -356,14 +478,29 @@
       },
       {
         "cat": "bilat",
-        "status": "Active",
+        "status": "Signed",
+        "tone": "active",
+        "name": "Project for Transmission System Reinforcement in Southern Region",
+        "detail": "Signed 21 August 2025 · 1.20% for the project portion · 30 years with 10 years of grace",
+        "amount": "¥39,105M",
+        "money": true,
+        "note": "Japanese ODA loan; maximum amount",
+        "text": "A JICA loan for new transmission lines and substations in southern Angola, including a 220 kV line between the Nombungo and Namibe substations, and for better distribution networks. It matters for energy.",
+        "by": [
+          "JICA"
+        ],
+        "url": "https://www.jica.go.jp/english/information/press/2025/20250821_13.html"
+      },
+      {
+        "cat": "bilat",
+        "status": "Committed",
         "tone": "active",
         "name": "Water treatment plants, southern Angola",
-        "detail": "Announced 4 December 2024 · political risk insurance",
-        "amount": "$150M",
+        "detail": "Announced 4 December 2024 · Political risk insurance",
+        "amount": "Up to $150M",
         "money": true,
         "note": "Insurance cover for new plants",
-        "text": "Political risk insurance for new water treatment plants serving underserved communities in southern Angola.",
+        "text": "A DFC commitment of up to $150 million in political risk insurance for new water treatment plants serving underserved communities in southern Angola.",
         "by": [
           "U.S. International Development Finance Corporation"
         ],
@@ -394,7 +531,7 @@
         "figure": "1,300 km",
         "money": false,
         "label": "Of rail from Lobito to Luau",
-        "text": "Rebuilt with $553 million from the U.S. International Development Finance Corporation and $200 million from the Development Bank of Southern Africa, from the port to the eastern border.",
+        "text": "Its rehabilitation is financed with $553 million from the U.S. International Development Finance Corporation and up to $200 million from the Development Bank of Southern Africa, from the port of Lobito to Luau on the eastern border.",
         "alt": "The Lobito Atlantic Railway",
         "images": [
           "https://perfectnations.com/wp-content/uploads/2026/10/The-Corridor-Angola-768x560.png"
@@ -408,7 +545,7 @@
         "name": "The Rivers",
         "figure": "76%",
         "money": false,
-        "label": "Of electricity from renewables, 2022",
+        "label": "Of electricity from renewables, 2023",
         "text": "A clean grid, and 4,153 m³ of renewable fresh water per person.",
         "alt": "A hydroelectric dam on the Kwanza River",
         "images": [
@@ -464,11 +601,18 @@
         "url": "https://disclosures.ifc.org/project-detail/SII/45735/carrinho-loan"
       },
       {
+        "standard": "Shelter",
+        "name": "HabiTerra",
+        "text": "The housing social enterprise of Development Workshop Angola. Working with Development Workshop Angola, KixiCredito and HabiTerra, Reall has supported the development of over 170 homes.",
+        "source": "Reall, 2025",
+        "url": "https://reall.net/data-dashboard/angola"
+      },
+      {
         "standard": "Energy",
         "name": "MCA solar minigrids",
-        "text": "At Cazombo, 25.4 MWp of solar with storage: the first of 46 minigrids meant to serve about a million people.",
-        "source": "Energy-Storage.News, 2025",
-        "url": "https://www.energy-storage.news/angola-first-solar-plus-storage-minigrid-national-rollout/"
+        "text": "At Cazombo, 25.40 MWp of solar with 75.26 MWh of batteries, built to supply more than 136,000 people: the first park of the programme to be delivered.",
+        "source": "MCA, 2025",
+        "url": "https://www.zawya.com/en/press-release/companies-news/mca-delivers-africas-largest-off-grid-renewable-energy-system-in-angola-i1w1ly9c"
       },
       {
         "standard": "Education",
@@ -480,9 +624,9 @@
       {
         "standard": "Health",
         "name": "Appy Saúde",
-        "text": "Health information and services delivered through mobile apps.",
-        "source": "Tech In Africa",
-        "url": "https://www.techinafrica.com/angolas-startups-are-winning-without-the-hype-heres-how/"
+        "text": "Lets people order, pay for and receive medicines from the main pharmacies in Angola.",
+        "source": "Appy Saúde, App Store",
+        "url": "https://apps.apple.com/us/app/id1220393420"
       },
       {
         "standard": "Livelihood",
@@ -546,8 +690,8 @@
       "value": 44.0,
       "display": "44",
       "note": "WHO service coverage index",
-      "source": "WHO, 2023",
-      "url": "https://ourworldindata.org/grapher/universal-health-coverage-index?country=~AGO"
+      "source": "WHO and World Bank, 2023",
+      "url": "https://cdn.who.int/media/docs/default-source/gho-documents/gmr-2025_conference-edition_online.pdf"
     },
     {
       "name": "Livelihoods",
@@ -626,5 +770,5 @@
   ],
   "dispatches": [],
   "checked": "2026-11-11T04:28Z",
-  "reviewed": "2026-11-06T19:06Z"
+  "reviewed": "2026-11-13T02:03Z"
 }
