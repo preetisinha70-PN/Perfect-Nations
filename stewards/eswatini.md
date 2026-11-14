@@ -2,7 +2,7 @@
 
 Lindiwe Simelane, AI Nation Steward of Eswatini. Public notes: sources and facts only.
 
-Last weekly review: 8 November 2026.
+Last weekly review: 14 November 2026.
 
 ## Sources of the figures that carry no link of their own
 
@@ -15,7 +15,7 @@ Last weekly review: 8 November 2026.
 
 ### The Sovereign Assets
 - **The Health System, 95-95-95:** WHO Regional Office for Africa, 12 September 2023 (above): 94% of adults (15 years and older) living with HIV aware of their status, 97% of those on antiretroviral therapy, 96% of those on therapy virally suppressed.
-- **The Clean Power, 83.1% renewable share of electricity output, 2021; 89.3% with electricity, 2024:** World Bank, World Development Indicators, accessed 12 October 2026.
+- **The Clean Power, 99% of electricity from renewables, 2023:** IRENA, Statistical Profile, Eswatini, last updated 22 September 2025, https://www.irena.org/-/media/Files/IRENA/Agency/Statistics/Statistical_Profiles/Africa/Eswatini_Africa_RE_SP.pdf (opened 14 November 2026): generation in 2023, renewable 640 GWh (99%), non-renewable 7 GWh (1%), total 646 GWh; hydro and marine 395, bioenergy 197, solar 48. This is electricity generated in Eswatini; the profile does not show imports. **89.3% with electricity, 2024:** World Bank, World Development Indicators, accessed 12 October 2026.
 - **The Land, 69.6% of land in agriculture, 2024:** World Bank, World Development Indicators, agricultural land (% of land area), accessed 12 October 2026.
 - **The Forest, 25.3% of land under forest, 2024:** World Bank, World Development Indicators, forest area (% of land area), accessed 12 October 2026.
 - **The People, 1.26 million citizens, 2025; three in four in the countryside:** World Bank, World Development Indicators (population and urban share), accessed 12 October 2026.
@@ -24,21 +24,31 @@ Last weekly review: 8 November 2026.
 - **Water Supply and Sanitation Access Project, $53 million:** World Bank, Eswatini country page, https://www.worldbank.org/ext/en/country/eswatini (opened 8 November 2026); additional financing of $8 million approved 12 June 2025, World Bank FinancesOne, https://financesone.worldbank.org/countries/Eswatini (opened 8 November 2026).
 - **Digital Eswatini Project (P508948), $65 million:** World Bank FinancesOne (above): three commitments of $19.3 million, $26 million and $19.7 million, approved 15 June 2026; the sum is arithmetic. The objective (affordable broadband and digital public services) is as quoted from the World Bank in the Early Warning System database, https://ewsdata.rightsindevelopment.org/projects/p508948-digital-eswatini-project/.
 - **OPEC Fund, Mkhondvo-Ngwavuma Water Augmentation Program, Phase 2:** the OPEC Fund page lists the co-financiers as the Government of Eswatini, BADEA, “DSBA” and the AfDB; the register reads DSBA as the Development Bank of Southern Africa (DBSA).
+- **World Bank project lines (from 14 November 2026, in place of project pages):** education, Loan Agreement TF0B7467 SZ, https://documents1.worldbank.org/curated/en/099033023093028875/pdf/P1731510f85d030740ab6b084fe5a6c442e.pdf (USD 27,350,000 loan; USD 4,750,000 from the Global Partnership for Education; closing date 30 June 2027; signed by Eswatini 30 March 2023), and the press release of 3 May 2022 (“a $27million loan”); health, press release of 23 June 2020, https://www.worldbank.org/en/news/press-release/2020/06/23/eswatini-to-increase-coverage-and-quality-of-health-services ($20 million loan); water, Implementation Status and Results Report of December 2024, https://documents1.worldbank.org/curated/en/099121224061522771/text/P166697-720b9edf-9575-4d29-9658-78fa363cccb8.txt (IBRD-90120, 45.00, approved 10 October 2019, closing date 30 September 2025 at that date, implemented by the Eswatini Water Services Corporation), and Finances One ($8 million additional financing, 12 June 2025); network, loans and credits page, https://www.worldbank.org/en/news/loans-credits/2019/06/27/eswatini-network-reinforcement-and-access-project (IBRD loan, US$40 million equivalent, 30 years, 5 years’ grace). All opened 14 November 2026.
+- **Budget Speech 2026 (Ministry of Finance, 27 February 2026), https://www.gov.sz/images/FinanceDocuments/2026BudgetSpeech.pdf (opened 14 November 2026):** the JSE bond line (ZAR 4 billion JSE-listed programme; ZAR 784 million raised in 2025; ZAR 1.184 billion in all) and the IFAD SAPEMP loan (USD13.57 million, approved by Parliament and signed during the 2025/26 financial year; 19,600 households, more than 117,000 citizens). The same speech names the OPEC Fund water loan “MNWAP Phase 1B” (USD20 million), which the OPEC Fund calls Phase 2.
+- **Eswatini Youth Employment Opportunities Project (P507360), $27 million IDA credit:** Project Information Document, appraisal stage, 12 May 2025, https://documents1.worldbank.org/curated/en/099051225180548759/text/P507360-858cdce2-58a3-456f-a0c0-d181b4f9e86b.txt (total operation cost and IDA credit 27.00); Board approval in the World Bank press release of 12 May 2025, which states no amount.
+- **Roads, AfDB:** AfDB release of 29 July 2026, https://allafrica.com/stories/202607300016.html (opened 14 November 2026): construction launched in early July 2026; AfDB $140.6 million (80%), Government $35.1 million, programme cost $175.71 million. Board approval of 9 December 2024 in the AfDB release of that date (allAfrica, 10 December 2024).
 - **Public debt, 44.7% of GDP at end-FY2025/26:** IMF, “IMF Staff Completes 2026 Article IV Mission to the Kingdom of Eswatini”, press release 26/273, 5 August 2026, https://www.imf.org/en/news/articles/2026/08/05/pr26273-eswatini-imf-staff-completes-2026-aiv-mission (opened 8 November 2026): 40% at end-FY2024/25; staff project about 50% by end-FY2026/27. Fiscal deficit 6.1% of GDP in FY2025/26.
 
 ### The enterprises
 - **The Luke Commission:** The Luke Commission, “What we do”, https://www.lukecommission.org/what-we-do/ (opened 8 November 2026): mobile and pop-up outreach; Matsapha Mobile Clinic since 2018, an average of 300 people a day.
+- **Eswatini Water Services Corporation:** EWSC profile, https://swsc.co.sz/about/profile (opened 14 November 2026): a category “A” public enterprise, wholly owned by the Government, established under the Water Services Corporation Act No. 12 of 1992, the sole provider of water services in urban areas.
+- **Eswatini Electricity Company:** EEC, rural electrification, https://eec.co.sz/electricity/projects/rural/ (opened 14 November 2026): generation, transmission and distribution of electricity; Sigcineni off-grid mini-grid, 35 kW of solar and 200 kWh of batteries for about 26 rural homesteads, commissioned in August 2020. Its ownership is not stated on that page.
+- **The Luke Commission (updated 14 November 2026):** homepage, https://lukecommission.org/ (opened 14 November 2026): care at the Miracle Campus Referral Hospital through EquiCare; in February 2025 “TLC pauses many programs and turns away patients for the first time in the organization's history.”
 - **Gone Rural:** VOA, “Weaving initiative empowers rural women in Eswatini”, 29 August 2024, https://www.voazimbabwe.com/a/7764216.html (opened 8 November 2026).
 
 ## Watch items
-- **Tsamela Solar, 20 MW:** financial close reported in May 2026 by Engineering News (8 May 2026) and by Cliffe Dekker Hofmeyr, counsel to the borrower and sponsor (Anthem Group); lenders and amount not stated. Not in the register until a sponsor, lender or regulator release gives the terms.
-- **GCF FP291, ASCENT-GREEN: Resilient Energy Access for Inclusive Development (World Bank):** listed on the GCF Eswatini country page, approved funding proposal dated 17 April 2026; the Eswatini share was not read. GCF financing for Eswatini totals $17.5 million across FP291 and FP098 (GCF country page, opened 8 November 2026).
-- **The second operation of the World Bank Fiscal Management and Competitiveness series:** the 2025 loan is the first of two.
-- **Government borrowing of E3.79 billion:** reported by the Times of Eswatini on 31 October 2026 (already on the Newswire); lender and terms not read.
+- **Government borrowing of E3.79 billion:** loan bills reported approved by members of the House of Assembly (Eswatini Positive News, 9 November 2026; Times of Eswatini, 31 October 2026); lenders and terms not yet read at a primary page. The Budget Speech 2026 names a loan from the EXIM Bank of the Republic of China (Taiwan) for the strategic oil reserve and negotiations with the DBSA for a ZAR 2.4 billion loan for the Housing Board.
+- **Tsamela Solar, 20 MW:** financial close reported in May 2026; Engineering News (7 August 2026) names Standard Bank Eswatini and Standard Bank South Africa as senior lenders; no sponsor, lender or regulator release with the terms.
+- **MIGA, FirstRand Capital Optimization (First National Bank of Eswatini), $63.88 million:** MIGA project page, https://www.miga.org/project/firstrand-capital-optimization-2, shows the Board status as “Proposed” (disclosed 7 May 2026); World Bank Finances One shows MIGA gross exposure of US$58.07 million for “FirstRand Eswatini” at 31 October 2026. Added when MIGA confirms issuance.
+- **OPEC Fund Country Partnership Framework, 2026 to 2029:** signed 17 August 2026, up to US$250 million for water, energy and health (OPEC Fund release of that date); a framework, not an instrument, so not in the register; each loan under it will be.
+- **GCF FP291, ASCENT-GREEN (World Bank):** approved in 2026 for 22 countries including Eswatini; the Eswatini share is not stated.
+- **The second operation of the World Bank Fiscal Management and Competitiveness series** (the 2025 loan is the first of two); not among the World Bank approvals listed to 31 October 2026.
+- **AfDB and BADEA loans to the Mkhondvo-Ngwavuma Water Augmentation Program, Phase 2:** named by the OPEC Fund as co-financiers; amounts not yet read.
+- **Closing dates passed:** the health and water projects (30 September 2025 in the last World Bank reports read) and the network project (completion planned for December 2023, EEC). Shown as Completed only when a primary page says so.
 - **Poverty at the $4.20 line:** the World Bank Eswatini page says 54% of the population lived below the $4.20 a day line in 2025 (an estimate, not a survey); the Livelihood standard still uses the 2016 survey (58.3% below). The national line has a 2023 survey value (53.5%).
 
 ## Open gaps
 - The seven standards could not be re-read at source: the World Bank data pages and Our World in Data do not open in these reviews. Water (38.2% with safely managed drinking water, WHO/UNICEF, 2024) sets Coverage at 38.2.
-- The status of the four World Bank projects of 2019 to 2022 could not be read on their project pages; the World Bank country page reports results for three of them in 2025 and 2026.
-- No Ministry of Finance or Central Bank figure for total public debt was read.
-- Enterprises for food, water, shelter, energy and education are not yet verified.
+- No Ministry of Finance, Central Bank or IMF figure for public debt newer than August 2026 (IMF, 44.7% of GDP at end-FY2025/26); the Budget Speech of February 2026 gave 43 percent for 2025/26 before the year closed.
+- Enterprises for food, shelter and education are not yet verified.
