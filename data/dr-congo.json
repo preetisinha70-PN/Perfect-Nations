@@ -1,7 +1,7 @@
 {
   "nation": "DR Congo",
   "page_version": "9.0",
-  "updated": "2026-11-11",
+  "updated": "2026-11-14",
   "steward": {
     "name": "Patrick Mbuyi",
     "role": "Nation Steward of DR Congo"
@@ -30,9 +30,16 @@
       {
         "value": "$1.25B",
         "money": true,
-        "text": "Debut Eurobond, April 2026: 2032 at 8.75% and 2037 at 9.5%, with orders above $5 billion",
+        "text": "Debut Eurobond, April 2026: 2032 at a yield of 8.75% and 2037 at 9.50%, with investor interest above $5 billion",
         "source": "Rawbank, 2026",
         "url": "https://rawbank.com/wp-content/uploads/2026/04/Rawbank-announces-the-successful-issuance-of-the-DRCs-first-ever-eurobond-for-a-total-amount-of-USD-125-billion.pdf"
+      },
+      {
+        "value": "18%",
+        "money": false,
+        "text": "Public debt of about 18% of GDP in 2025; the IMF assesses a moderate risk of external and overall debt distress",
+        "source": "IMF, 2026",
+        "url": "https://www.imf.org/-/media/files/publications/cr/2026/english/1codea2026002.pdf"
       },
       {
         "value": "$1.729B",
@@ -40,13 +47,6 @@
         "text": "IMF Extended Credit Facility, approved January 2025; third review completed 26 June 2026",
         "source": "IMF, 2026",
         "url": "https://www.imf.org/en/news/articles/2026/06/26/pr26227-drc-imf-completes-3rd-rev-under-ecf-arrangement-2nd-review-under-rsf-arrangement-for-drc"
-      },
-      {
-        "value": "$1.038B",
-        "money": true,
-        "text": "IMF Resilience and Sustainability Facility for climate and the rainforest",
-        "source": "IMF, 2025",
-        "url": "https://www.imf.org/en/News/Articles/2025/01/15/pr-25003-democratic-republic-of-congo-imf-apv-38-mth-1729-mill-ecf-arr-and-1038-mill-rsf-arr"
       },
       {
         "value": "$8.8B",
@@ -58,22 +58,22 @@
       {
         "value": "$250M",
         "money": true,
-        "text": "World Bank credit to lay the foundations for Inga 3, June 2025",
+        "text": "World Bank IDA credit, first phase of the $1 billion Inga 3 Development Program, approved 3 June 2025",
         "source": "World Bank, 2025",
-        "url": "https://www.worldbank.org/en/news/factsheet/2024/10/09/questions-and-answers-on-world-bank-support-for-the-democratic-republic-of-congos-afe-drc-grand-inga-development-program"
+        "url": "https://www.worldbank.org/en/news/press-release/2025/06/03/new-inga-3-development-program-to-start-with-investments-in-local-afe-congolese-communities"
       }
     ],
     "register": [
       {
         "cat": "govt",
-        "status": "Active",
+        "status": "Issued",
         "tone": "active",
         "name": "Debut Eurobond, dual tranche",
-        "detail": "Priced 9 April 2026 · 2032 at 8.75% · 2037 at 9.5%",
+        "detail": "Announced 9 April 2026 · 2032 at a yield of 8.75% · 2037 at a yield of 9.50%",
         "amount": "$1.25B",
         "money": true,
-        "note": "Orders above $5 billion across both tranches",
-        "text": "The nation’s first international bond, in a five-year and a ten-year tranche, with orders of more than four times the amount raised. It opens a new source of long-term finance for the public budget that carries the seven standards.",
+        "note": "Investor interest above $5 billion across both tranches",
+        "text": "The nation’s first international bond, in a five-year and a ten-year tranche, with investor interest of more than four times the amount raised. It opens a new source of long-term finance for the public budget that carries the seven standards.",
         "by": [
           "Government of the Democratic Republic of the Congo"
         ],
@@ -84,7 +84,7 @@
         "status": "Approved",
         "tone": "active",
         "name": "Health Emergency Preparedness, Response and Resilience, Ebola additional financing",
-        "detail": "Approved 29 September 2026 · IDA · announced 13 October 2026",
+        "detail": "Announced 13 October 2026 · Additional financing",
         "amount": "$80M",
         "money": true,
         "note": "With $13 million for preparedness in 11 countries of the region",
@@ -129,6 +129,21 @@
         "cat": "multi",
         "status": "Approved",
         "tone": "active",
+        "name": "DRC Multisectoral Nutrition and Health Project, 2026 financing",
+        "detail": "Approved 25 June 2026 · World Bank Finances One · project first financed in 2019",
+        "amount": "$75M",
+        "money": true,
+        "note": "Nutrition services for young children and mothers",
+        "text": "New World Bank financing for a project, first financed in 2019, that aims to increase the use of nutrition-specific and nutrition-sensitive interventions. It targets children up to 23 months old and pregnant and lactating women, for the food and health standards.",
+        "by": [
+          "World Bank"
+        ],
+        "url": "https://financesone.worldbank.org/countries/congo%2C%20democratic%20republic%20of"
+      },
+      {
+        "cat": "multi",
+        "status": "Approved",
+        "tone": "active",
         "name": "Kinshasa Urban Transformation and Jobs Program (Kin la Belle), Phase 1",
         "detail": "Approved 28 April 2026 · IDA credit",
         "amount": "$250M",
@@ -158,22 +173,22 @@
       },
       {
         "cat": "multi",
-        "status": "Active",
+        "status": "Approved",
         "tone": "active",
-        "name": "Inga 3 foundations",
-        "detail": "Approved 3 June 2025 · IDA credit",
+        "name": "Inga 3 Development Program, first phase",
+        "detail": "Approved 3 June 2025 · IDA credit · first phase of a $1 billion programme",
         "amount": "$250M",
         "money": true,
-        "note": "To lay the foundations for Inga 3",
-        "text": "Supports the sustainable development of Inga 3, which could generate between 3,000 and 11,000 MW depending on its design.",
+        "note": "About 100 communities, 1.2 million people, near Inga",
+        "text": "The first phase of a $1 billion programme for Inga 3. It begins with the communities living close to Inga in Kongo Central: clean water, distributed renewable energy, rural roads and skills for the jobs Inga will create, for the water, energy and livelihood standards.",
         "by": [
           "World Bank"
         ],
-        "url": "https://www.worldbank.org/en/news/factsheet/2024/10/09/questions-and-answers-on-world-bank-support-for-the-democratic-republic-of-congos-afe-drc-grand-inga-development-program"
+        "url": "https://www.worldbank.org/en/news/press-release/2025/06/03/new-inga-3-development-program-to-start-with-investments-in-local-afe-congolese-communities"
       },
       {
         "cat": "multi",
-        "status": "Active",
+        "status": "Approved",
         "tone": "active",
         "name": "Extended Credit Facility",
         "detail": "Approved 15 January 2025 · 38 months · third review completed 26 June 2026",
@@ -188,7 +203,7 @@
       },
       {
         "cat": "multi",
-        "status": "Active",
+        "status": "Approved",
         "tone": "active",
         "name": "Resilience and Sustainability Facility",
         "detail": "Approved 15 January 2025 · second review completed 26 June 2026",
@@ -203,123 +218,138 @@
       },
       {
         "cat": "multi",
-        "status": "Active",
+        "status": "Approved",
         "tone": "active",
-        "name": "Digital Transformation Project",
-        "detail": "Approved 27 June 2024 · Investment project financing",
+        "name": "DRC Digital Transformation Project",
+        "detail": "Announced 27 June 2024 · IDA credit · financing agreement signed November 2024 · closing 31 December 2029",
         "amount": "$400M",
         "money": true,
-        "note": "Broadband and digital services",
-        "text": "Expands affordable broadband, digital services and digital skills.",
+        "note": "With €100 million of co-financing from AFD",
+        "text": "Part of the Inclusive Digitalization in Eastern and Southern Africa Program, it aims to increase inclusive access to and use of the internet and to strengthen the foundations for digitally enabled services. Affordable connections carry payments, learning and public services to more citizens, for the livelihood and education standards.",
         "by": [
           "World Bank"
         ],
-        "url": "https://projects.worldbank.org/en/projects-operations/project-detail/P180495"
+        "url": "https://www.worldbank.org/en/news/factsheet/2024/06/27/inclusive-digitalization-in-eastern-and-southern-africa-program-democratic-republic-of-congo-afe-drc"
       },
       {
         "cat": "multi",
-        "status": "Active",
+        "status": "Approved",
         "tone": "active",
         "name": "Water Supply and Sanitation Access Program (PASEA)",
-        "detail": "Approved 9 June 2023 · Investment project financing",
+        "detail": "Approved 9 June 2023 · IDA credit",
         "amount": "$400M",
         "money": true,
-        "note": "Drinking water and sanitation",
-        "text": "Expands drinking water and sanitation in selected provinces and builds public and private delivery capacity.",
+        "note": "Basic drinking water for 2.9 million people",
+        "text": "Aims to provide 2.9 million people with access to basic drinking water services in the provinces of Kasai, Kasai Central, Kasai Oriental and Kwilu, for the water standard.",
         "by": [
           "World Bank"
         ],
-        "url": "https://projects.worldbank.org/en/projects-operations/project-detail/P178389"
+        "url": "https://www.worldbank.org/en/news/press-release/2023/06/14/drc-afe-world-bank-approves-700-million-in-financing-to-increase-access-to-water-and-sanitation"
       },
       {
         "cat": "multi",
-        "status": "Active",
+        "status": "Approved",
         "tone": "active",
-        "name": "Forest and Savanna Restoration Investment Program",
-        "detail": "Approved 2 June 2023 · Investment project financing",
+        "name": "Forest and Savanna Restoration",
+        "detail": "Approved 2 June 2023 · $290 million IDA credits · $10 million ESMAP Clean Cooking Fund grants",
         "amount": "$300M",
         "money": true,
-        "note": "Forest landscapes and livelihoods",
-        "text": "Improves forest landscape management and community livelihoods in selected areas.",
+        "note": "Up to 1.2 million people; 640,000 hectares",
+        "text": "Aims to improve livelihoods and resilience for up to 1.2 million people and to bring 640,000 hectares of land under sustainable management practices. A forest that pays its communities serves the livelihood standard.",
         "by": [
           "World Bank"
         ],
-        "url": "https://projects.worldbank.org/en/projects-operations/project-detail/P178642"
+        "url": "https://www.worldbank.org/en/news/press-release/2023/06/14/drc-afe-world-bank-approves-700-million-in-financing-to-increase-access-to-water-and-sanitation"
       },
       {
         "cat": "multi",
-        "status": "Active",
+        "status": "Approved",
         "tone": "active",
-        "name": "Girls Learning and Empowerment Project",
-        "detail": "Approved 28 March 2023 · Investment project financing",
+        "name": "Girls’ Learning and Empowerment Project",
+        "detail": "Approved 28 March 2023 · IDA",
         "amount": "$400M",
         "money": true,
-        "note": "Secondary education for girls",
-        "text": "Improves safe, equitable access to secondary education, especially for girls, and teaching conditions. It is aimed at the standard that holds the nation lowest.",
+        "note": "Secondary schools, with a focus on keeping girls in school",
+        "text": "Strengthens the quality of and access to secondary schools, with a special focus on keeping adolescent girls in school, in the provinces with the lowest participation of girls. It is aimed at the standard that holds the nation lowest.",
         "by": [
           "World Bank"
         ],
-        "url": "https://projects.worldbank.org/en/projects-operations/project-detail/P178684"
+        "url": "https://www.worldbank.org/en/news/press-release/2023/03/29/world-bank-approves-900-million-to-support-critical-governance-reforms-and-girls-learning-and-empowerment-in-afe-drc"
       },
       {
         "cat": "multi",
-        "status": "Active",
+        "status": "Approved",
         "tone": "active",
-        "name": "Stabilization and Recovery in Eastern DR Congo",
-        "detail": "Approved 20 December 2022 · Investment project financing",
+        "name": "Stabilization and Recovery in Eastern DRC Project",
+        "detail": "Announced 20 December 2022 · IDA grant",
         "amount": "$250M",
         "money": true,
-        "note": "Communities affected by conflict",
-        "text": "Improves community infrastructure, supports the reintegration of people affected by conflict and strengthens provincial administrations.",
+        "note": "3.3 million people in Ituri, North Kivu and South Kivu",
+        "text": "Finances community-based stabilization, community-based reintegration and the decentralization of governance for 3.3 million Congolese in the eastern provinces of Ituri, North Kivu and South Kivu, with indirect benefits for the 17 million people who live there.",
         "by": [
           "World Bank"
         ],
-        "url": "https://projects.worldbank.org/en/projects-operations/project-detail/P175834"
+        "url": "https://www.worldbank.org/en/news/press-release/2022/12/22/democratic-republic-of-congo-world-bank-approves-250-million-to-improve-stability-and-resilience"
       },
       {
         "cat": "multi",
-        "status": "Active",
+        "status": "Approved",
         "tone": "active",
         "name": "Transport and Connectivity Support Project",
-        "detail": "Approved 23 June 2022 · Investment project financing",
+        "detail": "Approved 23 June 2022 · IDA · 440 km of roads in Kasai and North Kivu",
         "amount": "$500M",
         "money": true,
-        "note": "Kasai and the east",
-        "text": "Provides resilient, safe connectivity in Kasai and eastern DR Congo and increases transparency in the sector.",
+        "note": "First of three projects linking Kasai and the east",
+        "text": "Upgrades and paves 440 kilometres of climate-resilient roads in the Kasai and North Kivu provinces, lays fibre optic cable along them and supports governance of the sector. Roads that stay open carry food to market and children to school.",
         "by": [
           "World Bank"
         ],
-        "url": "https://projects.worldbank.org/en/projects-operations/project-detail/P161877"
+        "url": "https://www.worldbank.org/en/news/press-release/2022/06/28/world-bank-approves-750-million-to-support-critical-governance-reforms-transport-infrastructure-and-digital-connectivity"
       },
       {
         "cat": "multi",
-        "status": "Active",
+        "status": "Approved",
         "tone": "active",
-        "name": "Access, Governance and Reform for the Electricity and Water Sectors",
-        "detail": "Approved 31 March 2022 · Investment project financing",
-        "amount": "$634M",
+        "name": "Empowering Women Entrepreneurs and Upgrading MSMEs for Economic Transformation and Jobs (TRANSFORME DRC)",
+        "detail": "Approved 2 May 2022 · IDA · seven cities",
+        "amount": "$300M",
+        "money": true,
+        "note": "Additional financing of $200 million sought in April 2026",
+        "text": "Supports the creation of up to 2,500 formal firms, capabilities and market access for up to 25,000 women entrepreneurs and access to finance for up to 5,000 established micro, small and medium enterprises in Bukavu, Bunia, Goma, Kananga, Kinshasa, Matadi and Mbuji-Mayi. It is to contribute to a projected 28,000 jobs, for the livelihood standard.",
+        "by": [
+          "World Bank"
+        ],
+        "url": "https://www.worldbank.org/en/news/press-release/2022/05/02/empowering-women-entrepreneurs-to-boost-economic-transformation-in-the-democratic-republic-of-congo"
+      },
+      {
+        "cat": "multi",
+        "status": "Approved",
+        "tone": "active",
+        "name": "Access Governance and Reform for the Electricity and Water Sectors Project",
+        "detail": "Approved 31 March 2022 · IDA · $34 million of Green Climate Fund grants planned in addition",
+        "amount": "$600M",
         "money": true,
         "note": "Electricity and water together",
-        "text": "Expands renewable electricity and water access, improves utility performance and strengthens institutions.",
+        "text": "Aims to expand access to renewable-based electricity and drinking water in selected urban and peri-urban areas, improve the commercial performance of the electricity and water utilities and strengthen selected provincial and national institutions, for the energy and water standards.",
         "by": [
           "World Bank"
         ],
-        "url": "https://projects.worldbank.org/en/projects-operations/project-detail/P173506"
+        "url": "https://thedocs.worldbank.org/en/doc/cd9fa1e2938c3eb6483e9e2fc0aed728-0090012022/related/WBAR22-App-New-Operations-Approved.pdf"
       },
       {
         "cat": "multi",
-        "status": "Active",
+        "status": "Approved",
         "tone": "active",
-        "name": "Enhancing Collection of Revenue and Expenditure Management",
-        "detail": "Approved 16 December 2021 · Investment project financing",
+        "name": "Enhancing Collection of Revenue and Expenditure Management (ENCORE) Project",
+        "detail": "Approved 16 December 2021 · $125 million grant · $125 million credit",
         "amount": "$250M",
         "money": true,
         "note": "Mining revenue transparency",
-        "text": "Increases the transparency of mining revenue and improves expenditure management, so that the cobalt can pay for Perfect Capita.",
+        "text": "Aims to increase the transparency of mining revenue, bring more of it to the Treasury and strengthen expenditure management at the centre and in selected provinces, so that more of the mining revenue reaches the public services behind the seven standards.",
         "by": [
           "World Bank"
         ],
-        "url": "https://projects.worldbank.org/en/projects-operations/project-detail/P171762"
+        "url": "https://www.worldbank.org/en/news/press-release/2021/12/16/world-bank-supports-the-democratic-republic-of-congo-s-efforts-to-improve-public-resources-management-and-service-delive"
       },
       {
         "cat": "regional",
@@ -353,6 +383,22 @@
         "url": "https://allafrica.com/stories/202512090614.html"
       },
       {
+        "cat": "regional",
+        "status": "Approved",
+        "tone": "active",
+        "name": "Project to Support the Development of Value Chains (PADCV-PTA)",
+        "detail": "Announced 18 July 2024 · $250.4 million African Development Fund loan · $10 million Transition Support Facility loan · total cost $311.6 million",
+        "amount": "$260.4M",
+        "money": true,
+        "note": "295,000 hectares of maize, soya, cassava and rice in six provinces",
+        "text": "Part of the Agriculture Transformation Programme, it lifts production of the main staple crops in Kongo Central, Kwango, Mai-Ndombe, Kasai Oriental, Lomami and South Kivu. About 900,000 farming households, including displaced people, are to benefit directly, for the food and livelihood standards.",
+        "by": [
+          "African Development Bank",
+          "Government of the Democratic Republic of the Congo"
+        ],
+        "url": "https://allafrica.com/stories/202407220534.html"
+      },
+      {
         "cat": "bilat",
         "status": "Signed",
         "tone": "active",
@@ -382,6 +428,21 @@
           "IFC"
         ],
         "url": "https://disclosures.ifc.org/project-detail/SII/53434/mfp-bop-bbdrc"
+      },
+      {
+        "cat": "private",
+        "status": "Active",
+        "tone": "active",
+        "name": "Airtel Congo RDC, loan for the mobile network",
+        "detail": "Approved 18 June 2026 · signed 25 June 2026 · invested 16 July 2026 · A loan",
+        "amount": "$50M",
+        "money": true,
+        "note": "Part of up to $150 million of IFC senior debt for Airtel Africa subsidiaries in DR Congo and Kenya",
+        "text": "An IFC loan to Airtel Congo RDC to support an accelerated expansion of its mobile network across DR Congo and to refinance existing debt. It is expected to strengthen access to quality mobile connectivity through more capacity and wider coverage, for the livelihood standard.",
+        "by": [
+          "IFC"
+        ],
+        "url": "https://disclosures.ifc.org/project-detail/SII/52975/aa-drc-ii-upsiz"
       },
       {
         "cat": "private",
@@ -437,16 +498,33 @@
         "status": "Completed",
         "tone": "completed",
         "name": "Nuru Series B equity",
-        "detail": "Raised July 2023 · equity",
+        "detail": "Closed July 2023 · Series B equity · 13.7 MWp to be built in Goma, Kindu and Bunia",
         "amount": "$40M",
         "money": true,
-        "note": "Investors include IFC, GEAPP and REPP",
-        "text": "Finances solar metrogrids in Goma, Beni and other towns of the east, where the national grid does not reach.",
+        "note": "Investors include IFC, GEAPP, REPP and Proparco",
+        "text": "More than $40 million of Series B equity for Nuru to start building 13.7 MWp of solar metrogrids in Goma, Kindu and Bunia, in the east, where the national grid does not reach, for the energy standard.",
         "by": [
           "Nuru",
-          "IFC"
+          "IFC",
+          "Proparco"
         ],
-        "url": "https://pv-tech.org/drc-energy-firm-nuru-obtains-us40-million-in-latest-round-of-funding"
+        "url": "https://proparco.fr/en/actualites/nuru-closes-over-40m-equity-funding-drive-metrogrid-scaling-democratic-republic-congo"
+      },
+      {
+        "cat": "private",
+        "status": "Signed",
+        "tone": "active",
+        "name": "Equity BCDC, portfolio guarantee for loans to small firms",
+        "detail": "Signed May 2023 · EURIZ portfolio guarantee · denominated in US dollars",
+        "amount": "EUR 10M",
+        "money": true,
+        "note": "With support from the European Union and the Organisation of African, Caribbean and Pacific States",
+        "text": "A Proparco portfolio guarantee to support Equity BCDC’s loans to small and medium enterprises, especially those owned by women and young adults. It lets the bank lend more to the firms that create jobs, for the livelihood standard.",
+        "by": [
+          "Proparco",
+          "European Union"
+        ],
+        "url": "https://proparco.fr/en/actualites/proparco-and-equity-bcdc-renew-their-support-smes-drc"
       },
       {
         "cat": "impact",
@@ -653,9 +731,9 @@
       "name": "Health",
       "value": 41.0,
       "display": "41",
-      "note": "WHO service coverage index",
-      "source": "WHO, 2023",
-      "url": "https://ourworldindata.org/grapher/universal-health-coverage-index?country=~COD"
+      "note": "UHC service coverage index",
+      "source": "WHO and World Bank, 2023",
+      "url": "https://documents1.worldbank.org/curated/en/099819212012531233/pdf/IDU-9485b9d9-c08e-4a82-906e-6529db818e15.pdf"
     },
     {
       "name": "Livelihoods",
@@ -734,5 +812,5 @@
   ],
   "dispatches": [],
   "checked": "2026-11-11T20:20Z",
-  "reviewed": "2026-11-07T19:10Z"
+  "reviewed": "2026-11-14T00:31Z"
 }
