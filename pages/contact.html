@@ -1,5 +1,7 @@
 <!-- ===========================================================================
-PERFECT NATIONS - THE CONTACT PAGE - v6.9 LIGHT - 2026-11-13
+PERFECT NATIONS - THE CONTACT PAGE - v7.0 LIGHT - 2026-11-14
+v7.0 (14 Nov 2026, the Steward-General): ?about=solution&country=<Nation>&idea=<name> opens Discuss a Solution for one
+of the more Solutions stacked on a blueprint, with that Solution named in the message.
 v6.9 (13 Nov 2026, the Steward-General): letters on the Art of Nations route (an original, a print, a book, an
 artist submission, a portrait commission) go to gallery@perfectnations.com, the address of the Art of Nations
 Gallery; every other letter still goes to contact@perfectnations.com. The letterhead shows the address the letter
@@ -586,6 +588,8 @@ article:has(#pn-contact) .entry-header{ display:none !important; }
   /* read the intent from the address */
   var about = (param('about') || '').toLowerCase(), topic = (param('topic') || '').toLowerCase();
   var nslug = (param('nation') || '').toLowerCase(), country = param('country') || '';
+  /* v7.0: ?idea= names one of the more Solutions on a blueprint, for the message (plain text, at most 90 characters) */
+  var idea = (param('idea') || '').replace(/\s+/g, ' ').trim().slice(0, 90);
   var want = '', wantWork = '';
   if (/^original-/.test(about)) { want = 'original'; wantWork = about; if (!nslug) { nslug = about.slice(9); } }
   else if (/^print-/.test(about)) { want = 'print'; if (!nslug) { nslug = about.slice(6); } }
@@ -633,11 +637,13 @@ article:has(#pn-contact) .entry-header{ display:none !important; }
     var match = sol ? solFor(el.country.value.trim()) : null;
     if (wantWork && workOf(wantWork)) { el.work.value = wantWork; wantWork = ''; }
     else if (keep && workOf(keep) && list.indexOf(workOf(keep)) > -1) { el.work.value = keep; }
+    else if (sol && idea) { el.work.value = ''; }
     else if (match) { el.work.value = match.id; }
     else { el.work.value = ''; }
   }
   function autoText(){
     var w = hasWork() ? workOf(el.work.value) : null;
+    if (!w && kind.id === 'solution' && idea) { var c0 = el.country.value.trim(); return 'I would like to discuss ' + idea + (c0 ? ', a Perfect Nations Solution for ' + c0 : '') + '.'; }
     if (w && kind.id === 'solution') { return 'I would like to discuss Solution No. ' + w.no + ', ' + w.title + ', for ' + w.nation + '.'; }
     if (!w && kind.id === 'original' && el.country.value.trim()) { return 'I would like to enquire about the original painting of ' + el.country.value.trim() + ', 24 x 24 in, acrylic on canvas.'; }
     if (w && kind.id === 'original') { return 'I would like to enquire about ' + w.title + ', the original painting of ' + w.nation + '.'; }

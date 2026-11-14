@@ -99,7 +99,8 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 PAGES, DATA, HERE = ROOT / 'pages', ROOT / 'data', ROOT / 'tools' / 'nation'
-VERSION = '12.8'  # every email from a blueprint goes to contact@perfectnations.com, in place of the .org address (the Steward-General, 12 Nov 2026)
+VERSION = '12.9'  # three more Solutions for the nation, stacked beside its lead Solution: title, challenge, advice and Discuss this Solution (the Steward-General, 14 Nov 2026)
+# v12.8: every email from a blueprint goes to contact@perfectnations.com, in place of the .org address (the Steward-General, 12 Nov 2026)
 # v12.7: a nation may name its own statistics office as the population source (pop_source in its page words); first, Cuba, re-measured on the delivery test (the Steward-General, 12 Nov 2026)
 # v12.6: portraits for the 151 Nation Stewards who showed initials, generated in the Media Library in the house style (the Steward-General, 12 Nov 2026)
 # v12.5: the globe turns like the real Earth, west to east (continents drift left to right), one turn every 90 seconds, as on the homepage (the Steward-General, 12 Nov 2026)
@@ -769,6 +770,47 @@ def solution_brief(name, sbn, slug):
         % (ent(name), ent(me['standard']), ent(play.get('head') or ''), how(steps)))
 
 
+COUNT_WORDS = {1: 'One more Solution', 2: 'Two more Solutions', 3: 'Three more Solutions'}
+
+
+def stack_of(name, son):
+    """v12.9: up to three more Solutions for the nation ("more" on its designed Solution in State of Nations)."""
+    for x in (son or {}).get('dispatches', []):
+        if x.get('kind') == 'design' and x.get('nation') == name and x.get('more'):
+            return [m for m in x['more'] if m.get('title') and m.get('challenge') and m.get('advises')][:3]
+    return []
+
+
+def solution_stack(name, more):
+    """v12.9 (the Steward-General, 14 Nov 2026): three more Solutions for the nation, stacked beside its lead Solution.
+    Each card: the standard, the name, The challenge (with its source) and What Perfect Nations advises, then
+    Discuss this Solution (the Contact page, with the Solution named in the message). The cards form a deck beside the
+    lead (below it on phones): a tab, the edge of a card or a swipe brings one forward."""
+    if not more:
+        return ''
+    tabs, cards = [], []
+    for i, m in enumerate(more):
+        st = m.get('standard') or ''
+        c = COLOURS[ORDER.index(st)] if st in ORDER else '#8A3A22'
+        src = m.get('source') or {}
+        ch = ent(m['challenge'])
+        if ok_https(src.get('url')):
+            ch += ' <a href="%s" target="_blank" rel="noopener noreferrer">%s</a>' % (ent(https(src['url'])), ent(src.get('label') or 'Source'))
+        talk = 'https://perfectnations.com/contact/?about=solution&country=%s&idea=%s' % (
+            urllib.parse.quote(plain(name), safe=''), urllib.parse.quote(plain(m['title']), safe=''))
+        tabs.append('<button type="button" class="bpx-stack__t" data-i="%d" aria-pressed="%s" style="--c:%s"><i aria-hidden="true"></i>%s</button>'
+                    % (i, 'true' if i == 0 else 'false', c, ent(lab(st) if st in ORDER else st)))
+        cards.append('<li class="bpx-st" data-i="%d" data-pos="%d" style="--c:%s"><p class="bpx-st__k"><i aria-hidden="true"></i>%s</p>'
+                     '<h4>%s</h4><p class="bpx-st__l">The challenge</p><p class="bpx-st__t">%s</p>'
+                     '<p class="bpx-st__l">What Perfect Nations advises</p><p class="bpx-st__t">%s</p>'
+                     '<a class="bpx-btn bpx-btn--line" href="%s" target="_blank" rel="noopener noreferrer">Discuss this Solution</a></li>'
+                     % (i, i, c, ent(lab(st) if st in ORDER else st), ent(m['title']), ch, ent(m['advises']), ent(https(talk))))
+    return ('<div class="bpx-stack" id="bp-stack"><p class="bpx-stack__h">%s for %s</p>'
+            '<div class="bpx-stack__tabs" aria-label="Bring a Solution to the front">%s</div>'
+            '<ul class="bpx-stack__deck">%s</ul></div>'
+            % (COUNT_WORDS[len(more)], ent(name), ''.join(tabs), ''.join(cards)))
+
+
 def solution_cards(d, p, sbn, son):
     """The Solution for this nation (State of Nations), then every Solution about it, newest first."""
     name, slug = d['nation'], p['slug']
@@ -846,6 +888,7 @@ def solutions(d, p, sbn, son):
                  '<p class="bpx-sum__open">To be set with %s, from its own figures and in its own prices: Perfect Capita times the people of %s, each year.</p></div>'
                  % (ent(name), ent(name), ent(name)))
     cards, more = solution_cards(d, p, sbn, son)
+    stack = solution_stack(name, stack_of(name, son))
     return (
         '<section class="bpx-band bpx-dp bpx-pc" id="bp-pc" aria-labelledby="bp-pcx-h"><div class="bpx-in">'
         '<div class="bpx-pc__grid"><div class="bpx-pc__head">%s<h2 class="bpx-h2" id="bp-pcx-h">Perfect %s, <em>star by star.</em></h2>'
@@ -859,11 +902,11 @@ def solutions(d, p, sbn, son):
         '<div class="bpx-solx" id="bp-solutions"><span id="bp-dispatches"></span>'
         '<div class="bpx-sols-top"><div><h3 class="bpx-h3" id="bp-sol-h">Solutions for Perfect %s</h3></div>'
         '<div class="bpx-sols-go">%s<a class="bpx-link" href="https://perfectnations.com/state-of-nations/#sn-solutions" target="_blank" rel="noopener noreferrer">All Solutions</a></div></div>'
-        '<p class="bpx-swipe" aria-hidden="true">Swipe for every Solution</p><ul class="bpx-sols bpx-rail" id="bp-sols">%s</ul></div>'
+        '<p class="bpx-swipe" aria-hidden="true">Swipe for every Solution</p><div class="bpx-solset%s"><ul class="bpx-sols bpx-rail" id="bp-sols">%s</ul>%s</div></div>'
         '</div></section>'
         % (step_eb('03', 'Solutions', 'The seven stars', 'Perfect Capita'), ent(name), ent(plain(p['capita'].get('pc_text')).replace('The yearly', 'is the yearly', 1)),
            stars_svg(name, g, bind), call, price, ent(name), ''.join(tiles), ent(p['capita']['est']), ent(p['capita']['measures']),
-           ent(name), more, cards))
+           ent(name), more, ' has-stack' if stack else '', cards, stack))
 
 
 def letter(d, p):
