@@ -1,14 +1,14 @@
 {
   "nation": "Ethiopia",
   "page_version": "9.0",
-  "updated": "2026-11-11",
+  "updated": "2026-11-14",
   "steward": {
     "name": "Selam Tesfaye",
     "role": "Nation Steward of Ethiopia"
   },
   "population": 135472051,
   "hero": {
-    "lead": "A nation of 135.5 million on Africa’s great highland plateau, whose energy is almost entirely renewable and whose reform programme the IMF has backed with $3.4 billion.",
+    "lead": "A nation of 135.5 million on Africa’s great highland plateau, whose electricity came entirely from renewable sources in 2023 and whose reform programme the IMF has backed with $3.4 billion.",
     "stats": [
       {
         "value": "135.5m",
@@ -19,8 +19,8 @@
         "label": "IMF programme, approved 2024"
       },
       {
-        "value": "$1B",
-        "label": "World Bank reform loan, 2025"
+        "value": "$1.45B",
+        "label": "World Bank reform financing, 2026"
       }
     ]
   },
@@ -35,9 +35,16 @@
         "url": "https://www.imf.org/en/news/articles/2026/07/01/pr26235-ethiopia-imf-completes-5th-review-under-ecf-arrangement"
       },
       {
+        "value": "$1.45B",
+        "money": true,
+        "text": "Inclusive Growth Development Policy Operation: $850M in IDA grants and a $600M IDA credit, approved 25 June 2026",
+        "source": "World Bank, 2026",
+        "url": "https://financesone.worldbank.org/countries/Ethiopia"
+      },
+      {
         "value": "$1B",
         "money": true,
-        "text": "Development Policy Operation: Support for economic reforms",
+        "text": "Second Sustainable and Inclusive Growth Development Policy Operation: $650M IDA grant and $350M IDA credit, approved 3 July 2025",
         "source": "World Bank, 2025",
         "url": "https://www.worldbank.org/en/news/press-release/2025/07/03/world-bank-steps-up-support-for-ethiopia-economic-reforms-with-1-billion-development-policy-operation"
       },
@@ -59,6 +66,51 @@
     "register": [
       {
         "cat": "multi",
+        "status": "Approved",
+        "tone": "active",
+        "name": "Power Sector Reform, Investment and Modernization in Ethiopia (PRIME-1)",
+        "detail": "Approved 20 July 2026 · First phase of the programme",
+        "amount": "$200M",
+        "money": true,
+        "note": "Reform, investment and modernisation of the power sector",
+        "text": "World Bank financing for the first phase of a programme to reform, invest in and modernise Ethiopia’s power sector. A stronger power system carries Ethiopia’s renewable electricity to more homes and businesses: the energy standard.",
+        "by": [
+          "World Bank"
+        ],
+        "url": "https://financesone.worldbank.org/countries/Ethiopia"
+      },
+      {
+        "cat": "multi",
+        "status": "Approved",
+        "tone": "active",
+        "name": "Inclusive Growth Development Policy Operation",
+        "detail": "Approved 25 June 2026 · $850M IDA grants, including $200M from the Crisis Response Window, and a $600M IDA credit · First tranche $950M, second $500M · Budget support",
+        "amount": "$1.45B",
+        "money": true,
+        "note": "The third World Bank reform operation, after 2024 and 2025",
+        "text": "World Bank budget support for Ethiopia’s efforts to strengthen financial intermediation, fiscal sustainability and economic management, to reduce barriers to competition and private investment, and to increase economic and social inclusion. It builds on the reform operations of 2024 and 2025.",
+        "by": [
+          "World Bank"
+        ],
+        "url": "https://financesone.worldbank.org/countries/Ethiopia"
+      },
+      {
+        "cat": "multi",
+        "status": "Approved",
+        "tone": "active",
+        "name": "Productive Safety Net Project 6",
+        "detail": "Approved March 2026 · IDA credit",
+        "amount": "$200M",
+        "money": true,
+        "note": "Short-term work for six million people",
+        "text": "Pays food-insecure households for public works and helps 700,000 people start small businesses.",
+        "by": [
+          "World Bank"
+        ],
+        "url": "https://www.worldbank.org/en/news/press-release/2026/03/03/ethiopia-a-new-phase-of-support-for-safety-nets-will-foster-resilience-and-create-pathways-to-decent-jobs"
+      },
+      {
+        "cat": "multi",
         "status": "Signed",
         "tone": "active",
         "name": "Urban Productive Safety Net and Jobs Project, additional financing",
@@ -74,29 +126,14 @@
       },
       {
         "cat": "multi",
-        "status": "Active",
-        "tone": "active",
-        "name": "Productive Safety Net Project 6",
-        "detail": "Approved March 2026 · IDA credit",
-        "amount": "$200M",
-        "money": true,
-        "note": "Short-term work for six million people",
-        "text": "Pays food-insecure households for public works and helps 700,000 people start small businesses.",
-        "by": [
-          "World Bank"
-        ],
-        "url": "https://www.worldbank.org/en/news/press-release/2026/03/03/ethiopia-a-new-phase-of-support-for-safety-nets-will-foster-resilience-and-create-pathways-to-decent-jobs"
-      },
-      {
-        "cat": "multi",
-        "status": "Active",
+        "status": "Approved",
         "tone": "active",
         "name": "Clean energy access (ASCENT Ethiopia)",
-        "detail": "Approved July 2025 · Program-for-Results",
+        "detail": "Approval announced 1 August 2025 · Program-for-Results · $400M IDA credit and $24M grant from Denmark",
         "amount": "$424M",
         "money": true,
-        "note": "$400M IDA credit and $24M from Denmark",
-        "text": "Connects households, businesses and towns to the grid, aiming at six million people.",
+        "note": "Electricity for nearly six million people",
+        "text": "Connects households, businesses and towns to clean and reliable electricity, aiming at nearly six million people in Ethiopia: the energy standard.",
         "by": [
           "World Bank"
         ],
@@ -104,14 +141,14 @@
       },
       {
         "cat": "multi",
-        "status": "Completed",
-        "tone": "completed",
-        "name": "Development Policy Operation",
-        "detail": "Approved July 2025 · Budget support",
+        "status": "Signed",
+        "tone": "active",
+        "name": "Second Sustainable and Inclusive Growth Development Policy Operation",
+        "detail": "Approved 3 July 2025 · Signed 4 July 2025 · $650M IDA grant and $350M IDA credit · Budget support",
         "amount": "$1B",
         "money": true,
-        "note": "Support for economic reforms",
-        "text": "Backs the reforms that opened the economy to investment and stabilised prices.",
+        "note": "The second World Bank reform operation",
+        "text": "World Bank budget support for better financial intermediation, fewer barriers to trade and investment, higher revenue collections and more transparent public finances, building on the operation of July 2024.",
         "by": [
           "World Bank"
         ],
@@ -119,10 +156,10 @@
       },
       {
         "cat": "multi",
-        "status": "Active",
+        "status": "Disbursing",
         "tone": "active",
         "name": "Extended Credit Facility",
-        "detail": "Approved 29 July 2024 · Fifth review 1 July 2026",
+        "detail": "Approved 29 July 2024 · 48 months · SDR 2.556 billion · Fifth review 1 July 2026",
         "amount": "$3.4B",
         "money": true,
         "note": "About $464 million released in July 2026; about $2.6 billion disbursed in total",
@@ -137,7 +174,7 @@
         "status": "Signed",
         "tone": "active",
         "name": "First Sustainable and Inclusive Growth Development Policy Operation",
-        "detail": "Approved 30 July 2024 · $1B IDA grant and $500M IDA credit · Budget support",
+        "detail": "Approved 30 July 2024 · Signed 30 July 2024 · $1B IDA grant and $500M IDA credit · Budget support",
         "amount": "$1.5B",
         "money": true,
         "note": "The first World Bank reform operation",
@@ -146,6 +183,69 @@
           "World Bank"
         ],
         "url": "https://www.worldbank.org/en/news/press-release/2024/07/30/world-bank-backs-ethiopia-s-reforms-to-promote-sustainable-and-inclusive-afe-growth"
+      },
+      {
+        "cat": "regional",
+        "status": "Granted",
+        "tone": "granted",
+        "name": "Climate-risk insurance for smallholder farmers, EIB Global grant to the World Food Programme",
+        "detail": "Announced 25 August 2026 · Grant of up to €4M from the ACP Trust Fund · Complements the €110M rural finance credit line",
+        "amount": "€4M",
+        "money": true,
+        "note": "Microinsurance for about 210,000 smallholder farmers",
+        "text": "An EIB Global grant to the World Food Programme for climate-risk insurance, including a Premium Guarantee Fund that pre-finances insurance premiums. Around 210,000 smallholder farmers are expected to be covered by adapted microinsurance: the food and livelihood standards. The EIB says it is the first climate-risk insurance project it has backed.",
+        "by": [
+          "European Investment Bank",
+          "World Food Programme"
+        ],
+        "url": "https://www.eib.org/en/press/all/2026-272-eib-global-and-world-food-programme-expand-climate-risk-insurance-for-ethiopian-smallholder-farmers"
+      },
+      {
+        "cat": "regional",
+        "status": "Approved",
+        "tone": "active",
+        "name": "Climate Proof Water4Food Project (Ethiopia and South Sudan)",
+        "detail": "Approved 15 July 2026 · African Development Fund grant for Ethiopia’s Gambella region and South Sudan’s Unity State · Shared with South Sudan",
+        "amount": "$9.3M",
+        "money": true,
+        "note": "Safe water for nearly 80,000 people; training for 100,000 farmers",
+        "text": "An African Development Fund grant to build or rehabilitate seven solar-powered water supply systems, add sanitation in schools and public institutions, and train more than 100,000 farmers in climate-smart agriculture in Gambella and South Sudan’s Unity State. Nearly 80,000 people gain reliable access to safe drinking water: the water and food standards.",
+        "by": [
+          "African Development Bank"
+        ],
+        "url": "https://allafrica.com/stories/202607230578.html"
+      },
+      {
+        "cat": "regional",
+        "status": "Signed",
+        "tone": "active",
+        "name": "Green African Agri Value Chain: Zemen Bank credit line",
+        "detail": "Signed 7 January 2026 · Announced 20 April 2026 · Zemen Bank matches the sum · Loans of up to 12 years",
+        "amount": "€20M",
+        "money": true,
+        "note": "Loans for agricultural exporters, 30% for firms owned or led by women",
+        "text": "An EIB Global credit line to Zemen Bank, which matches the sum, for small and medium-sized enterprises that export mainly in agriculture, with at least 30% of the funding for businesses owned or led by women and a 30% focus on climate action and environmental sustainability. It serves the food and livelihood standards.",
+        "by": [
+          "European Investment Bank",
+          "Zemen Bank"
+        ],
+        "url": "https://www.eib.org/de/press/all/2026-142-ethiopian-agricultural-businesses-to-get-eur40-million-in-financing-under-eib-global-accord-with-zemen-bank"
+      },
+      {
+        "cat": "regional",
+        "status": "Signed",
+        "tone": "active",
+        "name": "Rural Finance and Development Ethiopia, rural finance credit line (RUFIP III)",
+        "detail": "Signed 5 January 2026 · Announced 20 April 2026 · Channelled by the Development Bank of Ethiopia · €8.5M technical assistance",
+        "amount": "€110M",
+        "money": true,
+        "note": "Half earmarked for women; 20% for climate adaptation",
+        "text": "An EIB Global credit line that the Development Bank of Ethiopia channels to microfinance institutions and rural savings and credit cooperatives under the third phase of the Rural Financial Intermediation Programme, to increase access to finance for rural households, particularly smallholder farmers and women. Half is earmarked for women and 20% targets climate adaptation: the food and livelihood standards.",
+        "by": [
+          "European Investment Bank",
+          "Development Bank of Ethiopia"
+        ],
+        "url": "https://www.eib.org/en/projects/all/20190606"
       },
       {
         "cat": "regional",
@@ -161,6 +261,22 @@
           "African Development Bank"
         ],
         "url": "https://allafrica.com/stories/202512040513.html"
+      },
+      {
+        "cat": "regional",
+        "status": "Approved",
+        "tone": "active",
+        "name": "Green African Agri Value Chain: Dashen Bank credit line",
+        "detail": "Approved 19 November 2025 · Proposed EIB finance · On-lending to exporting small and medium enterprises, mainly in agriculture",
+        "amount": "€20M",
+        "money": true,
+        "note": "Credit for agricultural exporters, with climate and gender targets",
+        "text": "An EIB Global loan to Dashen Bank to on-lend to exporting small and medium-sized enterprises and, to a lesser extent, mid-caps, mainly in agriculture, with climate, environmental and gender targets in line with the 2X Challenge criteria. Credit for farm exporters supports the food and livelihood standards.",
+        "by": [
+          "European Investment Bank",
+          "Dashen Bank"
+        ],
+        "url": "https://www.eib.org/en/projects/all/20230312"
       },
       {
         "cat": "regional",
@@ -325,10 +441,10 @@
       },
       {
         "name": "The Power",
-        "figure": "95.3%",
+        "figure": "100%",
         "money": false,
-        "label": "Of energy from renewables, 2020",
-        "text": "Sun, wind, water and biomass already carry part of the load; the rest is the opportunity.",
+        "label": "Of electricity from renewables, 2023",
+        "text": "Water, wind, sun and biomass generated all 17,750 GWh of the nation’s electricity in 2023; carrying that power to every home and kitchen is the opportunity.",
         "alt": "The Grand Ethiopian Renaissance Dam on the Blue Nile, wide view",
         "images": [
           "https://perfectnations.com/wp-content/uploads/2026/10/The-Power-Ethiopia-768x560.png"
@@ -349,6 +465,20 @@
         "text": "A compound feed producer in Bishoftu, owned by De Heus Animal Nutrition and Alema Farms, expanding its feed mill and building new silos with an IFC loan; it makes compound feed for poultry and livestock farmers.",
         "source": "IFC, 2026",
         "url": "https://disclosures.ifc.org/project-detail/SII/43214/alema-koudijs-fd"
+      },
+      {
+        "standard": "Shelter",
+        "name": "Habitat for Humanity Ethiopia",
+        "text": "Building and improving homes in Ethiopia since 1993, with projects in Addis Ababa, Dire Dawa and Gofa that combine durable housing with sanitation and hygiene; it served 8,270 people in fiscal year 2025.",
+        "source": "Habitat for Humanity, 2025",
+        "url": "https://www.habitat.org/sites/default/files/Ethiopia%20Country%20Profile%202025.pdf"
+      },
+      {
+        "standard": "Education",
+        "name": "Ethiopia Reads",
+        "text": "A literacy organisation that runs reading centres and donkey- and horse-powered mobile libraries; in 2025 it donated 23,815 books to 173 schools and libraries and delivered 9,360 bilingual storybooks to 78 schools in Tigray.",
+        "source": "Ethiopia Reads, 2026",
+        "url": "https://www.ethiopiareads.org/wp-content/uploads/2026/01/2025-ER-Annual-Report.pdf"
       },
       {
         "standard": "Health",
@@ -499,5 +629,5 @@
   ],
   "dispatches": [],
   "checked": "2026-11-11T20:23Z",
-  "reviewed": "2026-11-08T00:05Z"
+  "reviewed": "2026-11-14T07:34Z"
 }
