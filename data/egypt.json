@@ -1,7 +1,7 @@
 {
   "nation": "Egypt",
   "page_version": "9.0",
-  "updated": "2026-11-11",
+  "updated": "2026-11-14",
   "steward": {
     "name": "Omar Farouk",
     "role": "Nation Steward of Egypt"
@@ -28,25 +28,25 @@
     "heading": "Egypt has steadied its economy with the IMF and the World Bank behind it. Next, every child reading by ten.",
     "record": [
       {
+        "value": "86.8%",
+        "money": false,
+        "text": "General government gross debt, share of GDP, fiscal year 2024/25; the IMF estimates 85.6% for 2025/26",
+        "source": "IMF, 2026",
+        "url": "https://www.imf.org/-/media/files/publications/cr/2026/english/1egyea2026002.pdf"
+      },
+      {
         "value": "$7.3B",
         "money": true,
-        "text": "Extended Fund Facility and Resilience and Sustainability Facility: Drawn to date; about $1.77 billion made available in July 2026",
+        "text": "Extended Fund Facility and Resilience and Sustainability Facility: total purchases and disbursements to date, SDR 5.4 billion; about US$1.5 billion (EFF) and US$272 million (RSF) made available in July 2026",
         "source": "IMF, 2026",
         "url": "https://www.imf.org/en/news/articles/2026/07/30/pr26271-egypt-imf-completes-the-7th-review-under-eff-and-2nd-review-under-the-rsf"
       },
       {
         "value": "$1B",
         "money": true,
-        "text": "GROWTH II Development Policy Financing: Includes a $200 million credit guarantee from the United Kingdom",
+        "text": "GROWTH II Development Policy Financing: an IBRD loan approved in May 2026; includes a $200 million credit guarantee from the United Kingdom",
         "source": "World Bank, 2026",
         "url": "https://www.worldbank.org/en/news/press-release/2026/05/08/new-us-1-billion-world-bank-group-development-financing-to-support-egypt-s-private-sector-led-job-creation-macroeconomic"
-      },
-      {
-        "value": "$700M",
-        "money": true,
-        "text": "Support for sustainable, diversified and resilient growth: Budget support for reforms",
-        "source": "World Bank, 2024",
-        "url": "https://www.worldbank.org/en/news/press-release/2024/06/24/new-world-bank-us-700-million-support-to-help-egypt-achieve-more-sustainable-diversified-and-resilient-growth"
       },
       {
         "value": "EUR 5B",
@@ -66,22 +66,23 @@
     "register": [
       {
         "cat": "govt",
-        "status": "Priced",
+        "status": "Issued",
         "tone": "active",
-        "name": "Samurai bond",
-        "detail": "Issued June 2026 · yen market",
-        "amount": "$500M",
+        "name": "Sustainability Samurai bond",
+        "detail": "Issued June 2026 · 5-year tranche rated AA+ and 10-year tranche rated AA · AfDB partial credit guarantee",
+        "amount": "JPY 80B",
         "money": true,
-        "note": "Sovereign borrowing in Japan",
-        "text": "A sovereign bond sold to investors in Japan, widening the base of lenders behind the public budget that carries the seven standards.",
+        "note": "About US$500 million",
+        "text": "A yen bond sold to investors in Japan with a partial credit guarantee from the African Development Bank. Its proceeds go only to eligible sustainable spending, such as healthcare, education, renewable energy and climate adaptation, which carries the seven standards.",
         "by": [
-          "Ministry of Finance of Egypt"
+          "Ministry of Finance of Egypt",
+          "African Development Bank"
         ],
-        "url": "https://www.imf.org/-/media/files/publications/cr/2026/english/1egyea2026002.pdf"
+        "url": "https://allafrica.com/stories/202606300647.html"
       },
       {
         "cat": "govt",
-        "status": "Priced",
+        "status": "Issued",
         "tone": "active",
         "name": "Social Eurobond, 8 years",
         "detail": "Issued May 2026 · five times oversubscribed",
@@ -98,8 +99,23 @@
         "cat": "multi",
         "status": "Active",
         "tone": "active",
+        "name": "Extended Fund Facility and Resilience and Sustainability Facility",
+        "detail": "Seventh review completed 30 July 2026 · EFF extended through 15 December 2026",
+        "amount": "$7.3B",
+        "money": true,
+        "note": "SDR 5.4 billion drawn to date; about US$1.5 billion and US$272 million made available in July 2026",
+        "text": "Inflation eased to 14.3 percent in June 2026, from 15.2 percent in March. The end-September 2026 targets are to be assessed at the eighth review, before the arrangement ends in December 2026.",
+        "by": [
+          "International Monetary Fund"
+        ],
+        "url": "https://www.imf.org/en/news/articles/2026/07/30/pr26271-egypt-imf-completes-the-7th-review-under-eff-and-2nd-review-under-the-rsf"
+      },
+      {
+        "cat": "multi",
+        "status": "Approved",
+        "tone": "active",
         "name": "GROWTH II Development Policy Financing",
-        "detail": "Approved May 2026 · Budget support",
+        "detail": "Approved 7 May 2026 · IBRD loan · Development Policy Financing",
         "amount": "$1B",
         "money": true,
         "note": "Includes a $200 million credit guarantee from the United Kingdom",
@@ -111,33 +127,49 @@
       },
       {
         "cat": "multi",
-        "status": "Active",
-        "tone": "active",
-        "name": "Extended Fund Facility and Resilience and Sustainability Facility",
-        "detail": "Seventh review completed 30 July 2026 · EFF extended through 15 December 2026",
-        "amount": "$7.3B",
-        "money": true,
-        "note": "Drawn to date; about $1.77 billion made available in July 2026",
-        "text": "Inflation eased to 14.3 percent in June 2026, from 15.2 percent in March. The end-September 2026 targets are to be assessed at the eighth review, before the arrangement ends in December 2026.",
-        "by": [
-          "International Monetary Fund"
-        ],
-        "url": "https://www.imf.org/en/news/articles/2026/07/30/pr26271-egypt-imf-completes-the-7th-review-under-eff-and-2nd-review-under-the-rsf"
-      },
-      {
-        "cat": "multi",
         "status": "Completed",
         "tone": "completed",
-        "name": "Support for sustainable, diversified and resilient growth",
-        "detail": "Approved June 2024 · Development policy financing",
+        "name": "Generating Resilience, Opportunities, and Welfare for a Thriving Egypt (GROWTH)",
+        "detail": "Approved 21 June 2024 · Development Policy Financing · first of a programmatic series of three",
         "amount": "$700M",
         "money": true,
         "note": "Budget support for reforms",
-        "text": "The first operation in the series that GROWTH II continues.",
+        "text": "The first of a programmatic series of three Development Policy Financing operations, which GROWTH II continues.",
         "by": [
           "World Bank"
         ],
         "url": "https://www.worldbank.org/en/news/press-release/2024/06/24/new-world-bank-us-700-million-support-to-help-egypt-achieve-more-sustainable-diversified-and-resilient-growth"
+      },
+      {
+        "cat": "multi",
+        "status": "Approved",
+        "tone": "active",
+        "name": "Takaful and Karama Cash Transfer Expansion and Systems Building Project",
+        "detail": "Approved 22 December 2022",
+        "amount": "$500M",
+        "money": true,
+        "note": "Cash transfers and the systems that deliver them",
+        "text": "World Bank financing to expand Takaful and Karama cash transfers and build the systems that deliver them. Cash transfers carry the poorest households toward the livelihood standard.",
+        "by": [
+          "World Bank"
+        ],
+        "url": "https://www.worldbank.org/en/news/press-release/2022/12/23/new-world-bank-financing-will-expand-and-strengthen-egypt-s-flagship-social-protection-program"
+      },
+      {
+        "cat": "regional",
+        "status": "Signed",
+        "tone": "active",
+        "name": "Egypt Grid Modernization and Expansion",
+        "detail": "Signed 24 June 2026 · framework loan, second phase · EIB-supported works 2027–2030",
+        "amount": "EUR 600M",
+        "money": true,
+        "note": "Up to EUR 90 million in EU grants announced with it; up to EUR 690 million in all",
+        "text": "An EIB framework loan, with the government as borrower through the Central Bank of Egypt and the Egyptian Electricity Transmission Company leading the works, to build new substations and transmission lines that connect solar and wind power from the Red Sea and the Gulf of Suez to the national grid. It is aimed at the energy standard.",
+        "by": [
+          "European Investment Bank",
+          "European Union"
+        ],
+        "url": "https://www.eib.org/en/projects/all/20250265"
       },
       {
         "cat": "regional",
@@ -186,6 +218,21 @@
         "url": "https://www.aiib.org/en/projects/details/2024/approved/generating-resilience-opportunities-and-welfare-for-a-thriving-egypt.html"
       },
       {
+        "cat": "regional",
+        "status": "Disbursing",
+        "tone": "active",
+        "name": "Sustainable Rural Sanitation Services Program, Phase 2",
+        "detail": "Signed 9 December 2018 · effective 18 June 2019 · revised closing 31 December 2026 · US$186.29 million disbursed",
+        "amount": "$300M",
+        "money": true,
+        "note": "Alongside US$300 million from the World Bank",
+        "text": "Rural sanitation in Dakahliya, Sharkiya, Damietta, Menoufiya and Gharbiya: about 178,000 households in 133 villages are targeted, and 118,997 household connections had been verified by 31 December 2025. It is aimed at the shelter standard, measured by safely managed sanitation.",
+        "by": [
+          "Asian Infrastructure Investment Bank"
+        ],
+        "url": "https://www.aiib.org/en/projects/details/2026/_download/Egypt/PIMR_SBF_Egypt_P000052_Sustainable-Rural-Sanitation-Services-Program-Phase-2_No12_April_2026_Public-Version.pdf"
+      },
+      {
         "cat": "bilat",
         "status": "Active",
         "tone": "active",
@@ -199,6 +246,36 @@
           "European Union"
         ],
         "url": "https://economy-finance.ec.europa.eu/international-economic-relations/candidate-and-neighbouring-countries/neighbouring-countries-eu/neighbourhood-countries/egypt_en"
+      },
+      {
+        "cat": "bilat",
+        "status": "Signed",
+        "tone": "active",
+        "name": "Universal Health Insurance, second phase",
+        "detail": "Signed 24 June 2026 · loan to the Egyptian State · EUR 2 million of technical cooperation alongside",
+        "amount": "EUR 150M",
+        "money": true,
+        "note": "An EU grant of EUR 30 million for primary care signed the same day",
+        "text": "An AFD loan to accelerate the roll-out of Egypt’s universal health insurance reform, with technical cooperation from Expertise France and the Ministry of Finance. It is aimed at the health standard.",
+        "by": [
+          "Agence française de développement"
+        ],
+        "url": "https://www.afd.fr/fr/commmuniques-de-presse/20-ans-de-partenariat-groupe-afd-egypte-lafd-mobilise-pres-de-300-meur"
+      },
+      {
+        "cat": "bilat",
+        "status": "Signed",
+        "tone": "active",
+        "name": "National Bank of Egypt, sustainable agriculture credit line",
+        "detail": "Signed 23 June 2026 · non-sovereign credit line",
+        "amount": "EUR 50M",
+        "money": true,
+        "note": "With an EU grant of EUR 15 million for sustainable agricultural finance",
+        "text": "An AFD credit line to the National Bank of Egypt for small farmers, cooperatives and agricultural SMEs, to finance more sustainable and inclusive agriculture. It is aimed at the food and livelihood standards.",
+        "by": [
+          "Agence française de développement"
+        ],
+        "url": "https://www.afd.fr/fr/commmuniques-de-presse/20-ans-de-partenariat-groupe-afd-egypte-lafd-mobilise-pres-de-300-meur"
       },
       {
         "cat": "bilat",
@@ -254,7 +331,7 @@
         "detail": "28 October 2026 · non-recourse financing · 569 MW solar and 100 MWh battery · operation targeted for the first half of 2028",
         "amount": "$217M",
         "money": true,
-        "note": "EBRD, AfDB and EIB · power for Egypt Aluminium under a 25-year agreement",
+        "note": "AfDB $66 million and EIB up to $90 million, with the EBRD · power for Egypt Aluminium under a 25-year agreement",
         "text": "Project finance for Scatec’s first phase at Dandara, about 80% of its estimated $271 million cost. It supplies clean power to Egypt Aluminium under a 25-year agreement backed by a sovereign guarantee, for the energy and livelihood standards.",
         "by": [
           "EBRD",
@@ -262,6 +339,21 @@
           "European Investment Bank"
         ],
         "url": "https://www.scatec.com/en/scatec-secures-financing-for-the-first-phase-of-the-dandara-solar-and-bess-project-in-egypt/"
+      },
+      {
+        "cat": "private",
+        "status": "Signed",
+        "tone": "active",
+        "name": "Nile Sugar Company, sugar beet financing",
+        "detail": "Signed 18 May 2026 · 5,713 hectares of sugar beet in Minya, Upper Egypt",
+        "amount": "$40M",
+        "money": true,
+        "note": "Egypt produces only 80 percent of its domestic sugar demand",
+        "text": "An IFC loan to finance sugar beet cultivation in Minya, which the IFC says will help reduce Egypt’s import bill and improve access to finance for smallholder farmers. It is aimed at the food and livelihood standards.",
+        "by": [
+          "IFC"
+        ],
+        "url": "https://www.ifc.org/en/pressroom/2026/world-bank-group-s-ifc-marks-fifty-years-partnership-with-egypt-helping-create-job"
       },
       {
         "cat": "private",
@@ -325,6 +417,21 @@
       },
       {
         "cat": "private",
+        "status": "Signed",
+        "tone": "active",
+        "name": "Obelisk solar and battery project, EIB loan",
+        "detail": "Signed 30 December 2025 · announced 12 January 2026 · USD 150 million (EUR 127 million)",
+        "amount": "$150M",
+        "money": true,
+        "note": "EIB Global, alongside the AfDB, the EBRD and BII",
+        "text": "An EIB loan for Scatec’s 1,125 MWp solar plant with a 100 MW / 200 MWh battery in Qena, whose total cost the EIB puts at US$598 million. Stored solar power carries the energy standard into the evening.",
+        "by": [
+          "European Investment Bank"
+        ],
+        "url": "https://www.eib.org/en/projects/all/20250320"
+      },
+      {
+        "cat": "private",
         "status": "Financial close",
         "tone": "active",
         "name": "Obelisk solar and battery project",
@@ -356,6 +463,21 @@
           "Clean Technology Fund"
         ],
         "url": "https://www.ifc.org/en/pressroom/2025/ifc-and-amea-power-launch-egypt-s-first-battery-energy-storage-system-to-boost-ene"
+      },
+      {
+        "cat": "private",
+        "status": "Approved",
+        "tone": "active",
+        "name": "Minapharm, biosimilars production",
+        "detail": "Approved March 2025 · senior corporate loan",
+        "amount": "EUR 15M",
+        "money": true,
+        "note": "Completes the XpandC biotechnology facility",
+        "text": "An African Development Bank loan to complete Minapharm’s second biotechnology facility, XpandC, and renovate its production lines, for biosimilar medicines used against cancer and autoimmune diseases. It is aimed at the health standard.",
+        "by": [
+          "African Development Bank"
+        ],
+        "url": "https://allafrica.com/stories/202503260597.html"
       },
       {
         "cat": "private",
@@ -470,6 +592,13 @@
         "url": "https://disclosures.ifc.org/project-detail/SII/52184/breadfast-inc"
       },
       {
+        "standard": "Water",
+        "name": "Ridgewood Egypt",
+        "text": "Designs, builds, owns and operates more than 50 reverse-osmosis desalination plants across Egypt, with a total design capacity above 90,000 m³ a day, serving more than 200 resorts, hotels, residential compounds and industrial facilities in Sinai, Hurghada, Marsa Alam, the North Coast and Ain Sokhna.",
+        "source": "Hassan Allam Group",
+        "url": "https://hassanallam.com/subsidaries/ridgewood"
+      },
+      {
         "standard": "Energy",
         "name": "AMEA Power",
         "text": "Runs a 500 MWac solar plant at Kom Ombo, Aswan, in operation since November 2024, with Egypt’s first utility-scale battery of 300 MWh beside it.",
@@ -552,8 +681,8 @@
       "value": 71.0,
       "display": "71",
       "note": "WHO service coverage index",
-      "source": "WHO, 2023",
-      "url": "https://ourworldindata.org/grapher/universal-health-coverage-index?country=~EGY"
+      "source": "WHO and World Bank, 2023",
+      "url": "https://documents1.worldbank.org/curated/en/099819212012531233/pdf/IDU-9485b9d9-c08e-4a82-906e-6529db818e15.pdf"
     },
     {
       "name": "Livelihoods",
@@ -632,5 +761,5 @@
   ],
   "dispatches": [],
   "checked": "2026-11-11T20:22Z",
-  "reviewed": "2026-11-07T19:19Z"
+  "reviewed": "2026-11-14T00:32Z"
 }
