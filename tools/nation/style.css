@@ -896,7 +896,9 @@
    v13.3: the portrait is larger, 88 px on laptops and 72 px on phones, in a gold medallion; the National Day mirrors it at the
    far right, an 88 px gold date tile with its name the same size as the head of state's (the Steward-General, 15 Nov 2026).
    v13.4: the date tile and the National Day line are a little smaller, 76 px and 1.38rem on laptops, 56 px and 1.06rem on phones;
-   on phones the date tile is centred under the portrait (the Steward-General, 15 Nov 2026) */
+   on phones the date tile is centred under the portrait (the Steward-General, 15 Nov 2026).
+   v13.5: every blueprint has the band. Joint heads of state share one medallion with a pair of initials each; where no
+   single head of state can be named from a primary source, the band shows the National Day alone, at the left */
 #R .bpx-nd{ position:relative; background:linear-gradient(90deg, var(--dp), #0A3238 55%, var(--dp)); border-top:1px solid rgba(var(--grgb),.42); border-bottom:1px solid rgba(var(--grgb),.16); }
 #R .bpx-nd .bpx-in{ display:flex; align-items:center; gap:clamp(14px,2.4vw,32px); min-height:96px; padding-top:12px; padding-bottom:12px; }
 #R .bpx-nd__p,#R .bpx-nd__d{ display:flex; align-items:center; gap:16px; min-width:0; }
@@ -907,6 +909,12 @@
   border:2px solid var(--g); box-shadow:0 0 0 5px rgba(var(--grgb),.13), 0 10px 30px rgba(0,0,0,.35), 0 0 34px rgba(var(--grgb),.18);
   background:radial-gradient(circle at 32% 28%, #145863, var(--er2)); color:var(--g); font-family:var(--hd); font-size:1.5rem; font-weight:700; letter-spacing:.06em; }
 #R .bpx-nd__ph img{ display:block; width:100%; height:100%; object-fit:cover; object-position:50% 22%; }
+#R .bpx-nd__ph--two{ display:flex; flex-direction:column; align-items:center; justify-content:center; gap:1px; font-size:1.08rem; line-height:1; }
+#R .bpx-nd__ph--two i{ font-style:normal; }
+#R .bpx-nd__ph--two i + i{ padding-top:3px; border-top:1px solid rgba(var(--grgb),.45); }
+#R .bpx-nd--day .bpx-nd__d{ margin-left:0; }
+#R .bpx-nd--day .bpx-nd__d .bpx-nd__cal{ order:0; }
+#R .bpx-nd--day .bpx-nd__t{ align-items:flex-start; text-align:left; }
 #R .bpx-nd small{ display:block; margin:0 0 3px; font-family:var(--hd); font-size:.64rem; font-weight:700; letter-spacing:.2em; text-transform:uppercase; color:var(--g); line-height:1.25; }
 #R .bpx-nd b{ display:block; font-family:var(--hd); font-weight:600; font-size:1.06rem; line-height:1.15; color:var(--fg); }
 #R .bpx-nd__p b{ font-size:clamp(1.3rem,1.9vw,1.62rem); line-height:1.05; letter-spacing:-.005em; }
@@ -939,4 +947,6 @@
   #R .bpx-nd__t > b{ font-size:1.06rem; }
   #R .bpx-nd__t small{ font-size:.56rem; }
   #R .bpx-nd__c{ margin-top:5px; padding:5px 10px 4px; font-size:.56rem; }
+  #R .bpx-nd__ph--two{ font-size:.9rem; }
+  #R .bpx-nd--day .bpx-nd__d{ padding-top:0; border-top:0; }
 }
