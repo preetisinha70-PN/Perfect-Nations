@@ -303,7 +303,7 @@ Every blueprint carries a slim band under its hero with one person only, the hea
   - `national_day`: `month`, `day`, `name` (the local name), `name_en`, `lang`, `greeting`, `honour` (how the card names the nation, for example "the French Republic") and `source`.
   - `recipients`: the five offices that receive the National Day letters. Each has a `role`, `salutation`, `name`, `title`, `address` lines, `send_by` and `source`, plus `gap` where a source is secondary. The roles are the head of state, the minister of finance, the ambassador in the United States, the consul general (or high commissioner) in New York and the permanent representative to the United Nations.
   - `watch` and `checked`.
-- **Portraits:** official portraits only, uploaded to the Media Library by the Steward-General with their credit. Their https address goes in `portrait`. Until then the band shows the initials. The Steward never takes photographs of heads of state from the web.
+- **Portraits:** official portraits only, uploaded to the Media Library by the Steward-General with their credit: square, 600 × 600 px, JPG or WebP, under 100 KB, named `pn-hos-<slug>`. The band shows them at 88 px on laptops and 72 px on phones (v13.3). Their https address goes in `portrait`. Until then the band shows the initials. The Steward never takes photographs of heads of state from the web.
 - **The head of state changes:** the Steward checks every day. On a change, it updates the file and rebuilds that blueprint, opens a pull request "For approval: head of state of [nation]" and notifies the Steward-General.
 - **The National Day calendar:**
   - 15 days before: the Steward notifies the Steward-General and checks the five recipients again.
