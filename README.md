@@ -294,6 +294,23 @@ Every blueprint shows its lead Solution and, beside it, a deck of up to three mo
 - **The words** live in `tools/more/content_NN.py`, one batch of nations each: `CONTENT = {slug: [(finance, title, advises), ...]}` in the order the build chooses the standards (print it with `python3 tools/build_more_solutions.py --brief [slugs]`). Title at most 60 characters, never used twice; `advises` two sentences at most 520 characters, the finance move first, the second beginning "With super intelligence," and saying what it makes possible; no figures, never "pay", never "FFD", no contractions, never beginning "Perfect Nations advises". The build refuses anything else.
 - **To change one:** edit its batch, run `python3 tools/build_more_solutions.py`, then `python3 tools/build_nations.py <slug> --manifest`, and send both through a pull request "For approval: ...". When a nation's gaps change, run the build with `--brief <slug>` and rewrite the cards it no longer matches.
 
+## The head of state and the National Day (from 15 November 2026; France first)
+
+Every blueprint carries a slim band under its hero with one person only, the head of state, with their title, and the nation's National Day. It shows a live count of the days to the National Day, gold from 15 days out and on the day itself. The name and the date link to their primary sources. The band is built by `protocol_band()` in `tools/build_nations.py` from `data/nation-protocol.json`, kept by the Blueprints Steward.
+
+- **`data/nation-protocol.json`:** `nations[slug]` holds:
+  - `head_of_state`: `title`, `name`, `portrait` and `source`.
+  - `national_day`: `month`, `day`, `name` (the local name), `name_en`, `lang`, `greeting`, `honour` (how the card names the nation, for example "the French Republic") and `source`.
+  - `recipients`: the five offices that receive the National Day letters. Each has a `role`, `salutation`, `name`, `title`, `address` lines, `send_by` and `source`, plus `gap` where a source is secondary. The roles are the head of state, the minister of finance, the ambassador in the United States, the consul general (or high commissioner) in New York and the permanent representative to the United Nations.
+  - `watch` and `checked`.
+- **Portraits:** official portraits only, uploaded to the Media Library by the Steward-General with their credit. Their https address goes in `portrait`. Until then the band shows the initials. The Steward never takes photographs of heads of state from the web.
+- **The head of state changes:** the Steward checks every day. On a change, it updates the file and rebuilds that blueprint, opens a pull request "For approval: head of state of [nation]" and notifies the Steward-General.
+- **The National Day calendar:**
+  - 15 days before: the Steward notifies the Steward-General and checks the five recipients again.
+  - 14 days before: it saves the five letters as Gmail drafts for the Steward-General to sign and send.
+  - On the day: it notifies her and prepares the posts and the share cards, made with `python3 tools/national_day_card.py <slug> --fonts <folder>`. Each post links to the blueprint.
+- **Never automatic:** nothing is sent or posted without the Steward-General.
+
 ## The Perfect Capita page
 
 The page is one file, `pages/perfect-capita.html` (root `pn-pcap`), served by the Live Pages plugin. It is kept by the **Perfect Capita Steward**, which owns the page and nothing else.
