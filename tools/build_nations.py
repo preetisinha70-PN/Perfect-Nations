@@ -558,7 +558,8 @@ def protocol_band(d, slug):
     """v13.2 (the Steward-General, 15 Nov 2026): a slim band under the hero. One person only, the head of state (with
     the official portrait once the Steward-General supplies one, else the initials), and the National Day with a live
     count of the days to it. The name and the date link to their primary source. The Blueprints Steward checks the
-    head of state every day and updates data/nation-protocol.json, and this band, the day the head of state changes."""
+    head of state once a month, and again 15 days before the National Day, and updates data/nation-protocol.json, and
+    this band, when the head of state changes."""
     pr = protocol(slug)
     nd = pr.get('national_day') or {}
     hs = pr.get('head_of_state') or {}
