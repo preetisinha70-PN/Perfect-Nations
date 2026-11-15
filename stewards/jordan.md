@@ -2,7 +2,7 @@
 
 Layla Haddad, AI Nation Steward of Jordan. Public notes: sources and facts only.
 
-Last weekly review: 8 November 2026.
+Last weekly review: 15 November 2026 (previous: 8 November 2026).
 
 ## Sources of the figures that carry no link of their own
 
@@ -30,17 +30,30 @@ Last weekly review: 8 November 2026.
 - **Housing Bank blue bond:** EBRD, 9 July 2026 (the register line); Petra, 8 July 2026: a $100 million loan note under a $200 million programme with the EBRD.
 - **The National Water Carrier:** the sources give different totals: about US$6.3 billion (GCF), about US$6 billion (IFC), about US$5.8 billion including financing (Jordan News Agency and MEED) and about US$6.57 billion (DFC Board notice). No total is shown on the page.
 
+- **Public debt, 83.6% of GDP, end-March 2026:** Ministry of Finance, Public Debt Department, Jordan Debt Quarterly Report No. 37, First Quarter 2026, https://www.mof.gov.jo/ebv4.0/root_storage/ar/eb_list_page/public_debt_quarterly_report_-q1_2026_.pdf (opened 15 November 2026): “Debt outstanding excluding debt holding by SSIF increased by 1.5% from its level at the end of 2025, reaching about JD 37097.9 million, and representing 83.6% of Q.1 2026 estimated (GDP)”. The same report gives general government debt of JD 31,819 million (71.8% of GDP). The report shows no publication date.
+- **AIIB, Aqaba-Amman Water Desalination and Conveyance Project:** AIIB project page, https://www.aiib.org/en/projects/details/2025/approved/jordan-aqaba-amman-water-desalination-and-conveyance-project-aawdcp.html, and Project Summary Information for Board approval, https://www.aiib.org/en/projects/details/2026/_download/Jordan/PSI-P000976-Jordan-AAWDCP_Board-Approval_vF.pdf (both opened 15 November 2026): non-sovereign loan of up to US$250 million to the National Carrier Project Company, approved 25 March 2026; sponsors Meridiam (90%) and Suez International (10%); co-financiers DFC, EBRD, EIB, IFC, Proparco, other development finance institutions and local banks; 300 million cubic metres a year (250 to Amman, 50 to Aqaba); 85% debt, 15% equity.
+- **IFC and Jordan Kuwait Bank, second green bond:** IFC press release, Amman, 15 July 2026, https://www.ifc.org/en/pressroom/2026/ifc-partners-with-kasikornbank-to-expand-sustainable-finance-and-drive-job-creatio/ifc-and-jordan-kuwait-bank-launch-second-green-bond-to-drive-sustainable-investmen (opened 15 November 2026; the address carries another release’s name, the page is the Jordan Kuwait Bank release): IFC up to US$100 million from its own account; up to US$0.69 million under the IFC-UK Market Accelerator for Green Construction. The total size of the issue is not stated.
+- **IFC and Safwa Islamic Bank:** IFC disclosure 51575, https://disclosures.ifc.org/project-detail/SII/51575/safwa-loan (opened 15 November 2026): approved 19 December 2025, signed 25 December 2025, invested 15 January 2026; IFC US$75 million; package of a five-year senior facility of up to US$100 million, a possible further US$50 million and a US$50 million trade line.
+- **EBRD, four Jordan releases (opened 15 November 2026; the EBRD pages show no date of their own):** Bank al Etihad, subordinated loan of up to US$25 million, https://www.ebrd.com/home/news-and-events/news/2026/ebrd-to-expand-green-and-inclusive-finance-in-jordan.html (the Newswire dates it 9 July 2026); Cairo Amman Bank, up to US$20 million with 25% (US$5 million) from the GCF and EU grant incentives, https://www.ebrd.com/home/news-and-events/news/2026/ebrd--gcf-and-eu-join-forces-to-back-jordan-s-green-transition.html (the Newswire dates it 9 July 2026); Kawar Energy, up to US$12.1 million (€10.4 million), https://www.ebrd.com/home/news-and-events/news/2026/ebrd-supports-kawar-energy-s-expansion-in-jordan.html (SolarQuarter reported it on 8 June 2026); Aqaba Digital Hub, JOD 10 million (US$14.1 million) with an EFSD+ first-loss guarantee, https://www.ebrd.com/home/news-and-events/news/2026/ebrd-and-eu-support-growth-of-aqaba-digital-hub-in-jordan.html (Petra reported the JD 10 million agreement on 7 May 2026).
+- **JICA:** press release, 11 November 2025, https://www.jica.go.jp/english/information/press/2025/20251111_11.html (opened 15 November 2026): up to JPY 15,500 million, 1.5%, 15 years with 5 years’ grace, signed in Tokyo; executing agency the Ministry of Planning and International Cooperation.
+- **European Union, €135 million:** Petra, 7 May 2026, https://petra.gov.jo/en/news/jordan-eu-sign-135m-in-grant-agreements%C2%A0to-support-human-capital-digital-transformation (opened 15 November 2026): €30 million Human Capital Development Program, €25 million Integrated Border Management, €80 million for Syrian refugees and host communities (30 + 25 + 80 = 135, arithmetic).
+- **Re-read 15 November 2026, unchanged:** GCF FP288 (approved 30 October 2025; implementation not started), IFC project 47924 (pending signing), EIB project 20190712 (EUR 427 million signed).
+
 ### The enterprises
+- **Kawar Energy:** EBRD release (above), 2026.
+- **Abdali Hospital:** Abdali Hospital, https://www.abdalihospital.com/node/223 (opened 15 November 2026): opened 2019, 200 beds, multi-specialty, Amman; IFC financing package of up to US$30 million announced 26 May 2020.
 - **Microfund for Women:** EBRD news, 2025, https://ebrd.com/home/news-and-events/news/2025/ebrd--eu-and-gcf-boost-access-to-green-finance-for-micro-and-sma.html (opened 8 November 2026): US$4 million under the GCF-GEFF framework, including US$1 million from the GCF; more than 120,000 clients, 63 branches, 45 outside Amman.
 
 ## Watch items
-- **IMF sixth review:** staff-level agreement reported in November 2026, about US$294 million on Board approval (Jordan News, Jordan Times); the IMF release has not been read. The register line still shows the fifth review (17 June 2026).
+- **IMF sixth review:** staff-level agreement reported in November 2026, about US$294 million on Board approval (Jordan News, Jordan Times, Arab News); no Board completion found by 15 November 2026. The register line still shows the fifth review (17 June 2026).
+- **MIGA:** up to US$1.25 billion of guarantees for the sponsors and lenders of the National Water Carrier, Proposed (MIGA project page, opened 15 November 2026).
+- **IFC and Arab Bank:** up to US$100 million in an Adaptation and Resilience Blue Bond, Board date 29 June 2026 (Early Warning System database); IFC disclosure not read.
+- **World Bank grants:** US$4.2 million to extend the Youth, Technology and Jobs Project (AI applications, a National Centre of Excellence in AI, Sanad for businesses), signed 4 November 2026 (TechAfrica News via af.net; Jordan News, 3 November 2026); US$3.5 million preparatory grant for digital public schools (Jordan News, 6 September 2026). No World Bank or Ministry page read.
 - **Greater Amman Municipality sukuk:** JD400 million (about $564 million), five years, 5.5%, ijara muntahia bittamleek, the first of three tranches of about JD1 billion; Cabinet approval reported by Arab News on 12 October 2026. Not yet issued on a primary page.
 - **National Water Carrier, other lenders:** AIIB $250 million (approval reported by Jordan News, 4 August 2026); AFD $97 million (Cabinet approval, July 2026, Jordan Times); EBRD, IsDB, JICA, Proparco and the OPEC Fund are named as lenders (MEED). Financial close not yet reported.
 
 ## Open gaps
 - The seven standards could not be re-read at source: the World Bank data pages and Our World in Data do not open in these reviews. Education (37.8% of children read a simple text by the end of primary school, World Bank, 2021) sets Coverage at 37.8.
 - Livelihood rests on the national poverty line of 2018.
-- No primary figure for public debt read in this review (the IMF release of 17 June 2026 did not open).
-- The indicator behind The Power card (24.9%) is to be confirmed.
-- Enterprises for food, water, shelter, energy, education and health are not yet verified.
+- The indicator behind The Power card (24.9%) is to be confirmed; IRENA’s Jordan profile could not be opened, and the Ministry of Energy annual report 2023 (https://www.memr.gov.jo/ebv4.0/root_storage/en/eb_list_page/annual_report_2023-4.pdf) was read only in summary (a renewable rate of 12.62% whose base is not clear).
+- Enterprises for food, water, shelter and education are not yet verified.
