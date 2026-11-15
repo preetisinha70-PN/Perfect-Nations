@@ -893,25 +893,29 @@
   #R .bpx-st .bpx-btn{ width:100%; }
 }
 /* v13.2 (the Steward-General, 15 Nov 2026): a slim band under the hero: the head of state and the National Day.
-   v13.3: the portrait is larger, 88 px on laptops and 72 px on phones, in a gold medallion (the Steward-General, 15 Nov 2026) */
+   v13.3: the portrait is larger, 88 px on laptops and 72 px on phones, in a gold medallion; the National Day mirrors it at the
+   far right, an 88 px gold date tile with its name the same size as the head of state's (the Steward-General, 15 Nov 2026) */
 #R .bpx-nd{ position:relative; background:linear-gradient(90deg, var(--dp), #0A3238 55%, var(--dp)); border-top:1px solid rgba(var(--grgb),.42); border-bottom:1px solid rgba(var(--grgb),.16); }
 #R .bpx-nd .bpx-in{ display:flex; align-items:center; gap:clamp(14px,2.4vw,32px); min-height:96px; padding-top:12px; padding-bottom:12px; }
 #R .bpx-nd__p,#R .bpx-nd__d{ display:flex; align-items:center; gap:16px; min-width:0; }
-#R .bpx-nd__d{ margin-left:auto; gap:13px; }
+#R .bpx-nd__d{ margin-left:auto; gap:16px; }
+#R .bpx-nd__t{ display:flex; flex-direction:column; align-items:flex-end; text-align:right; min-width:0; }
+#R .bpx-nd__d .bpx-nd__cal{ order:2; }
 #R .bpx-nd__ph{ flex:0 0 auto; display:grid; place-items:center; width:88px; height:88px; border-radius:50%; overflow:hidden; box-sizing:border-box;
   border:2px solid var(--g); box-shadow:0 0 0 5px rgba(var(--grgb),.13), 0 10px 30px rgba(0,0,0,.35), 0 0 34px rgba(var(--grgb),.18);
   background:radial-gradient(circle at 32% 28%, #145863, var(--er2)); color:var(--g); font-family:var(--hd); font-size:1.5rem; font-weight:700; letter-spacing:.06em; }
 #R .bpx-nd__ph img{ display:block; width:100%; height:100%; object-fit:cover; object-position:50% 22%; }
 #R .bpx-nd small{ display:block; margin:0 0 3px; font-family:var(--hd); font-size:.64rem; font-weight:700; letter-spacing:.2em; text-transform:uppercase; color:var(--g); line-height:1.25; }
 #R .bpx-nd b{ display:block; font-family:var(--hd); font-weight:600; font-size:1.06rem; line-height:1.15; color:var(--fg); }
-#R .bpx-nd__p b{ font-size:clamp(1.3rem,1.9vw,1.62rem); line-height:1.05; letter-spacing:-.005em; }
+#R .bpx-nd__p b,#R .bpx-nd__t > b{ font-size:clamp(1.3rem,1.9vw,1.62rem); line-height:1.05; letter-spacing:-.005em; }
 #R .bpx-nd a{ color:inherit; text-decoration:none; background:linear-gradient(var(--g),var(--g)) 0 100% / 0 1px no-repeat; transition:background-size .3s var(--ease); }
 #R .bpx-nd a:hover,#R .bpx-nd a:focus-visible{ background-size:100% 1px; }
-#R .bpx-nd__cal{ flex:0 0 auto; display:flex; flex-direction:column; align-items:center; justify-content:center; width:52px; height:54px; border-radius:10px; box-sizing:border-box;
-  border:1px solid rgba(var(--grgb),.55); background:rgba(var(--grgb),.08); }
-#R .bpx-nd__cal b{ font-size:1.4rem; line-height:1; color:var(--g); }
-#R .bpx-nd__cal small{ margin:2px 0 0; font-size:.54rem; letter-spacing:.16em; color:var(--mut); }
-#R .bpx-nd__c{ flex:0 0 auto; padding:7px 12px 6px; border:1px solid rgba(var(--grgb),.5); border-radius:999px; font-family:var(--hd); font-size:.62rem; font-weight:700;
+#R .bpx-nd__cal{ flex:0 0 auto; display:flex; flex-direction:column; align-items:center; justify-content:center; width:88px; height:88px; border-radius:20px; box-sizing:border-box;
+  border:2px solid var(--g); box-shadow:0 0 0 5px rgba(var(--grgb),.13), 0 10px 30px rgba(0,0,0,.35), 0 0 34px rgba(var(--grgb),.18);
+  background:radial-gradient(circle at 32% 28%, #145863, var(--er2)); }
+#R .bpx-nd__cal b{ font-size:2.4rem; font-weight:700; line-height:.9; color:var(--g); }
+#R .bpx-nd__cal small{ margin:4px 0 0; font-size:.66rem; letter-spacing:.22em; color:var(--fg); }
+#R .bpx-nd__c{ flex:0 0 auto; margin-top:7px; padding:6px 12px 5px; border:1px solid rgba(var(--grgb),.5); border-radius:999px; font-family:var(--hd); font-size:.62rem; font-weight:700;
   letter-spacing:.16em; text-transform:uppercase; color:var(--g); white-space:nowrap; }
 #R .bpx-nd.is-soon .bpx-nd__c{ border-color:var(--g); }
 #R .bpx-nd.is-today{ background:linear-gradient(90deg, #0A3238, #12505A 50%, #0A3238); }
@@ -920,10 +924,13 @@
   #R .bpx-nd .bpx-in{ flex-wrap:wrap; gap:10px 12px; min-height:0; padding-top:14px; padding-bottom:12px; }
   #R .bpx-nd__p{ flex:1 1 100%; gap:14px; }
   #R .bpx-nd__d{ flex:1 1 100%; margin-left:0; padding-top:10px; border-top:1px solid var(--hair); }
-  #R .bpx-nd__d > span:nth-child(2){ flex:1 1 auto; min-width:0; }
-  #R .bpx-nd__ph{ width:72px; height:72px; font-size:1.25rem; box-shadow:0 0 0 4px rgba(var(--grgb),.13), 0 8px 22px rgba(0,0,0,.32); }
-  #R .bpx-nd__p b{ font-size:1.3rem; }
-  #R .bpx-nd__cal{ width:44px; height:46px; }
-  #R .bpx-nd__cal b{ font-size:1.22rem; }
-  #R .bpx-nd b{ font-size:1rem; }
+  #R .bpx-nd__d{ gap:14px; }
+  #R .bpx-nd__d .bpx-nd__cal{ order:0; }
+  #R .bpx-nd__t{ flex:1 1 auto; align-items:flex-start; text-align:left; }
+  #R .bpx-nd__ph,#R .bpx-nd__cal{ width:72px; height:72px; box-shadow:0 0 0 4px rgba(var(--grgb),.13), 0 8px 22px rgba(0,0,0,.32); }
+  #R .bpx-nd__ph{ font-size:1.25rem; }
+  #R .bpx-nd__cal{ border-radius:17px; }
+  #R .bpx-nd__cal b{ font-size:1.95rem; }
+  #R .bpx-nd__cal small{ font-size:.58rem; }
+  #R .bpx-nd__p b,#R .bpx-nd__t > b{ font-size:1.3rem; }
 }

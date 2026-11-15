@@ -99,7 +99,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 PAGES, DATA, HERE = ROOT / 'pages', ROOT / 'data', ROOT / 'tools' / 'nation'
-VERSION = '13.3'  # the head of state's portrait is larger: 88 px on laptops, 72 px on phones, in a gold medallion (the Steward-General, 15 Nov 2026)
+VERSION = '13.3'  # the head of state's portrait is larger (88 px laptops, 72 px phones), and the National Day mirrors it: an 88 px gold date tile at the far right, its name the same size as the head of state's (the Steward-General, 15 Nov 2026)
 # 13.2: a slim band under the hero: the head of state and the National Day, from data/nation-protocol.json (the Steward-General, 15 Nov 2026)
 # 13.1: the Solution card reads "18.6% of people" and "the United Kingdom" (the Steward-General, 15 Nov 2026)
 # 13.0: three more Solutions for every nation from data/more-solutions.json, one each from development banks, private investors and corporate partners, named on each card (the Steward-General, 15 Nov 2026)
@@ -581,7 +581,7 @@ def protocol_band(d, slug):
     local = (' &#183; <span%s>%s</span>' % ((' lang="%s"' % ent(nd['lang'])) if nd.get('lang') else '', ent(nd['name']))) if nd.get('name') and nd.get('name') != nd.get('name_en') else ''
     return ('<section class="bpx-nd" id="bp-nd" aria-label="%s: its head of state and its National Day" data-m="%d" data-d="%d" data-greet="%s">'
             '<div class="bpx-in">%s<div class="bpx-nd__d"><span class="bpx-nd__cal" aria-hidden="true"><b>%d</b><small>%s</small></span>'
-            '<span><small>%s</small><b>%s%s</b></span><span class="bpx-nd__c" id="bp-nd-c" hidden></span></div></div></section>'
+            '<span class="bpx-nd__t"><small>%s</small><b>%s%s</b><span class="bpx-nd__c" id="bp-nd-c" hidden></span></span></div></div></section>'
             % (ent(d['nation']), nd['month'], nd['day'], ent(nd.get('greeting') or ''), ''.join(cells),
                nd['day'], MON[nd['month'] - 1], label, when, local))
 
