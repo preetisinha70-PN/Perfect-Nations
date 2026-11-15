@@ -99,7 +99,8 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 PAGES, DATA, HERE = ROOT / 'pages', ROOT / 'data', ROOT / 'tools' / 'nation'
-VERSION = '13.0'  # three more Solutions for every nation from data/more-solutions.json, one each from development banks, private investors and corporate partners, named on each card (the Steward-General, 15 Nov 2026)
+VERSION = '13.1'  # the Solution card reads as a sentence: "18.6% of people", not "18.6% Of people", and "the United Kingdom" where a name takes "the" (the Steward-General, 15 Nov 2026)
+# 13.0: three more Solutions for every nation from data/more-solutions.json, one each from development banks, private investors and corporate partners, named on each card (the Steward-General, 15 Nov 2026)
 # 12.9: three more Solutions for the nation, stacked beside its lead Solution: title, challenge, advice and Discuss this Solution (the Steward-General, 14 Nov 2026)
 # v12.8: every email from a blueprint goes to contact@perfectnations.com, in place of the .org address (the Steward-General, 12 Nov 2026)
 # v12.7: a nation may name its own statistics office as the population source (pop_source in its page words); first, Cuba, re-measured on the delivery test (the Steward-General, 12 Nov 2026)
@@ -740,6 +741,24 @@ def solution_card(x, sig_name, sig_role):
            ent(sig_name), ent(sig_role), ent(https(href)), 'Deal Note' if deal else 'Solution', talk))
 
 
+THE_NAMES = {'Bahamas', 'Central African Republic', 'Comoros', 'Czech Republic', 'Dominican Republic', 'Gambia', 'Holy See',
+             'Maldives', 'Marshall Islands', 'Netherlands', 'Philippines', 'Solomon Islands', 'United Arab Emirates',
+             'United Kingdom', 'United States', 'Republic of the Congo'}
+
+
+def the_name(name):
+    """v13.1: a name inside a sentence: "the United Kingdom", "the Philippines"; every other name as it is."""
+    return 'the ' + name if name in THE_NAMES else name
+
+
+def gap_sentence(gap, text):
+    """v13.1: the figure and its caption as one sentence: "18.6%" + "Of people in..." reads "18.6% of people in..."."""
+    t = plain(text).strip()
+    if gap and t.startswith('Of '):
+        t = 'of ' + t[3:]
+    return ((gap + ' ') if gap else '') + t
+
+
 def solution_brief(name, sbn, slug):
     me = next((n for n in sbn.get('nations', []) if n.get('slug') == slug), None)
     if not me:
@@ -748,14 +767,14 @@ def solution_brief(name, sbn, slug):
     if not play or not play.get('advises'):
         return ''
     src = me.get('source') or {}
-    ch = ent(((me.get('gap') + ' ') if me.get('gap') else '') + plain(me.get('gap_text')))
+    ch = ent(gap_sentence(me.get('gap'), me.get('gap_text')))
     if src.get('url'):
         ch += ' <a href="%s" target="_blank" rel="noopener noreferrer">%s</a>' % (ent(https(src['url'])), ent(src.get('label') or 'Source'))
     # 02 The deal: the instrument already at work in the nation, or else the deal that proved the playbook
     deal = ''
     aw = me.get('at_work')
     if aw and aw.get('name') and aw.get('url'):
-        deal = ent('At work in %s: %s%s.' % (name, aw['name'], (', ' + aw['amount']) if aw.get('amount') else ''))
+        deal = ent('At work in %s: %s%s.' % (the_name(name), aw['name'], (', ' + aw['amount']) if aw.get('amount') else ''))
         deal += ' <a href="%s" target="_blank" rel="noopener noreferrer">Source</a>' % ent(https(aw['url']))
     elif play.get('proof') and play['proof'].get('url'):
         pr = play['proof']
@@ -768,7 +787,7 @@ def solution_brief(name, sbn, slug):
         '<h3>%s</h3>%s'
         '<div class="bpx-sol__foot"><span class="bpx-sig">Co-design it in<b>The ReDesign Studio</b></span>'
         '<a class="bpx-btn" href="#bp-mandates">The three mandates</a></div></li>'
-        % (ent(name), ent(me['standard']), ent(play.get('head') or ''), how(steps)))
+        % (ent(the_name(name)), ent(me['standard']), ent(play.get('head') or ''), how(steps)))
 
 
 COUNT_WORDS = {1: 'One more Solution', 2: 'Two more Solutions', 3: 'Three more Solutions'}
@@ -827,7 +846,7 @@ def solution_stack(name, more):
     return ('<div class="bpx-stack" id="bp-stack"><p class="bpx-stack__h">%s for %s</p>'
             '<div class="bpx-stack__tabs" aria-label="Bring a Solution to the front">%s</div>'
             '<ul class="bpx-stack__deck">%s</ul></div>'
-            % (COUNT_WORDS[len(more)], ent(name), ''.join(tabs), ''.join(cards)))
+            % (COUNT_WORDS[len(more)], ent(the_name(name)), ''.join(tabs), ''.join(cards)))
 
 
 def solution_cards(d, p, sbn, son):
@@ -1123,7 +1142,7 @@ def build(slug, sbn, son, today):
     globe_cfg = {'root': rid, 'lat': gl['lat'], 'lng': gl['lng'], 'outline': gl['outline'], 'tex': EARTH}
     globe = (HERE / 'globe.js').read_text(encoding='utf-8').replace('/*pn:globe-cfg*/', 'var CFG = %s;' % js_str(globe_cfg))
     steward = d.get('steward') or {}
-    cfg = {'root': rid, 'slug': slug, 'name': d['nation'], 'steward': steward.get('name', ''), 'stewardRole': steward.get('role', ''),
+    cfg = {'root': rid, 'slug': slug, 'name': d['nation'], 'nameIn': the_name(d['nation']), 'steward': steward.get('name', ''), 'stewardRole': steward.get('role', ''),
            'colours': COLOURS}
     script = (HERE / 'script.js').read_text(encoding='utf-8').replace('/*pn:cfg*/', 'var CFG = %s;' % js_str(cfg))
     head = (

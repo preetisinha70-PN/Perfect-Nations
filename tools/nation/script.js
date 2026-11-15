@@ -388,14 +388,16 @@
     var play = null; (sbn.standards || []).forEach(function (s) { if (s && s.standard === me.standard) play = s; });
     if (!play || !T(play.advises)) return null;
     var li = el('li', 'bpx-sol bpx-sol--brief');
-    var k = el('p', 'bpx-sol__k'); k.appendChild(el('b', '', 'The Solution for ' + CFG.name)); k.appendChild(el('span', '', me.standard)); li.appendChild(k);
+    var k = el('p', 'bpx-sol__k'); k.appendChild(el('b', '', 'The Solution for ' + (CFG.nameIn || CFG.name))); k.appendChild(el('span', '', me.standard)); li.appendChild(k);
     li.appendChild(el('h3', '', play.head || ('Close the gap in ' + me.standard.toLowerCase() + '.')));
     var rows = [];
     var src = me.source && okUrl(me.source.url) ? link(el('a', '', me.source.label || 'Source'), me.source.url) : null;
-    rows.push(['01', 'The challenge', (me.gap ? me.gap + ' ' : '') + T(me.gap_text), src]);
+    /* v13.1: the figure and its caption as one sentence: "18.6% of people", not "18.6% Of people" */
+    var cap = T(me.gap_text).trim(); if (me.gap && cap.indexOf('Of ') === 0) cap = 'of ' + cap.slice(3);
+    rows.push(['01', 'The challenge', (me.gap ? me.gap + ' ' : '') + cap, src]);
     /* 02 The deal: the instrument already at work in the nation, or else the deal that proved the playbook */
     var w = '', wa = null;
-    if (me.at_work && T(me.at_work.name) && okUrl(me.at_work.url)) { w = 'At work in ' + CFG.name + ': ' + me.at_work.name + (me.at_work.amount ? ', ' + me.at_work.amount : '') + '.'; wa = link(el('a', '', 'Source'), me.at_work.url); }
+    if (me.at_work && T(me.at_work.name) && okUrl(me.at_work.url)) { w = 'At work in ' + (CFG.nameIn || CFG.name) + ': ' + me.at_work.name + (me.at_work.amount ? ', ' + me.at_work.amount : '') + '.'; wa = link(el('a', '', 'Source'), me.at_work.url); }
     else if (play.proof && okUrl(play.proof.url)) { w = T(play.name) + ', proved in ' + play.proof.where + ', ' + play.proof.year + ': ' + play.proof.figure + ' ' + play.proof.label + '.'; wa = link(el('a', '', play.proof.source || 'Source'), play.proof.url); }
     if (w) rows.push(['02', 'The deal', w, wa]);
     rows.push([w ? '03' : '02', 'What Perfect Nations advises', play.advises, null]);
