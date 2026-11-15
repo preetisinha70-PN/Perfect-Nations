@@ -1,5 +1,12 @@
 <!-- ===========================================================================
-PERFECT NATIONS - THE CONTACT PAGE - v7.0 LIGHT - 2026-11-14
+PERFECT NATIONS - THE CONTACT PAGE - v7.1 LIGHT - 2026-11-15
+v7.1 (15 Nov 2026, the Steward-General: the words sat off centre in the white buttons): the topic and timeframe
+buttons centre their words (they sat at the top when the button was taller than its words). Measured in Chromium
+with the Barlow fonts, the words are within 0.5 px of centre both ways. The slightly larger top padding lifts
+capitals to the optical centre, and the extra left padding equals the letter-spacing after the last letter. The
+route tiles centre their name and line as a block, with no gap opening between them in a tall tile.
+The page script now sits inside an HTML comment within its script tag, so the WordPress formatter cannot rewrite
+its ampersands (the sitewide check of 10 Nov 2026).
 v7.0 (14 Nov 2026, the Steward-General): ?about=solution&country=<Nation>&idea=<name> opens Discuss a Solution for one
 of the more Solutions stacked on a blueprint, with that Solution named in the message.
 v6.9 (13 Nov 2026, the Steward-General): letters on the Art of Nations route (an original, a print, a book, an
@@ -168,7 +175,7 @@ article:has(#pn-contact) .entry-header{ display:none !important; }
 @media (min-width:700px){ #pn-contact .ct-routes{ grid-template-columns:repeat(4,minmax(0,1fr)); } }
 #pn-contact .ct-routes li{ margin:0; padding:0; min-width:0; }
 #pn-contact .ct-route{
-  display:grid; grid-template-columns:22px minmax(0,1fr); align-items:center; gap:3px 10px; width:100%; height:100%; min-height:44px; margin:0; padding:11px 12px 10px;
+  display:grid; grid-template-columns:22px minmax(0,1fr); align-items:center; align-content:center; gap:3px 10px; width:100%; height:100%; min-height:44px; margin:0; padding:11px 12px 10px;
   border-radius:16px; border:1px solid var(--ihair); background:#FBF6EA; color:var(--ink); cursor:pointer; text-align:left; box-shadow:0 6px 16px rgba(60,40,10,.06);
   font-family:var(--hd); transition:background .25s ease, color .25s ease, border-color .25s ease, transform .2s ease;
 }
@@ -183,7 +190,7 @@ article:has(#pn-contact) .entry-header{ display:none !important; }
 /* topics of the chosen route */
 #pn-contact .ct-chips{ display:flex; flex-wrap:wrap; gap:7px; }
 #pn-contact .ct-chip{
-  display:inline-flex; align-items:baseline; gap:8px; min-height:42px; margin:0; padding:11px 15px 9px; border-radius:999px; cursor:pointer;
+  display:inline-flex; align-items:center; justify-content:center; gap:8px; min-height:42px; margin:0; padding:10.25px 15px 9.75px calc(15px + .12em); border-radius:999px; cursor:pointer; text-align:center;
   border:1px solid var(--ihair); background:#FFFFFF; color:var(--im); box-shadow:none;
   font-family:var(--hd); font-size:.7rem; font-weight:700; line-height:1.1; letter-spacing:.12em; text-transform:uppercase; transition:color .2s ease, border-color .2s ease, background .2s ease;
 }
@@ -276,7 +283,7 @@ article:has(#pn-contact) .entry-header{ display:none !important; }
   #pn-contact .ct-route{ padding:10px 10px 9px; border-radius:14px; }
   #pn-contact .ct-route b{ font-size:1rem; }
   #pn-contact .ct-route small{ font-size:.54rem; letter-spacing:.1em; }
-  #pn-contact .ct-chip{ padding:10px 12px 8px; font-size:.64rem; letter-spacing:.09em; }
+  #pn-contact .ct-chip{ padding:10.75px 12px 9.75px calc(12px + .09em); font-size:.64rem; letter-spacing:.09em; }
   #pn-contact .ct-letter__head{ padding:12px 14px; }
   #pn-contact .ct-letter__to{ display:none; }
   #pn-contact .ct-paper{ padding:14px 16px 6px; }
@@ -492,7 +499,7 @@ article:has(#pn-contact) .entry-header{ display:none !important; }
 <!-- GENERATED:DATA (open blueprints from pages/manifest.json, works from art/catalogue.json; do not edit here) -->
 <script type="application/json" id="ct-data">{"open":["afghanistan","albania","algeria","andorra","angola","antigua-and-barbuda","argentina","armenia","australia","austria","azerbaijan","bahamas","bahrain","bangladesh","barbados","belarus","belgium","belize","benin","bhutan","bolivia","bosnia-and-herzegovina","botswana","brazil","brunei","bulgaria","burkina-faso","burundi","cabo-verde","cambodia","cameroon","canada","central-african-republic","chad","chile","china","colombia","comoros","costa-rica","cote-d-ivoire","croatia","cuba","cyprus","czechia","denmark","djibouti","dominica","dominican-republic","dr-congo","ecuador","egypt","el-salvador","equatorial-guinea","eritrea","estonia","eswatini","ethiopia","fiji","finland","france","gabon","gambia","georgia","germany","ghana","greece","grenada","guatemala","guinea","guinea-bissau","guyana","haiti","holy-see","honduras","hungary","iceland","india","indonesia","iran","iraq","ireland","israel","italy","jamaica","japan","jordan","kazakhstan","kenya","kiribati","kuwait","kyrgyzstan","laos","latvia","lebanon","lesotho","liberia","libya","liechtenstein","lithuania","luxembourg","madagascar","malawi","malaysia","maldives","mali","malta","marshall-islands","mauritania","mauritius","mexico","micronesia","moldova","monaco","mongolia","montenegro","morocco","mozambique","myanmar","namibia","nauru","nepal","netherlands","new-zealand","nicaragua","niger","nigeria","north-korea","north-macedonia","norway","oman","pakistan","palau","palestine","panama","papua-new-guinea","paraguay","peru","philippines","poland","portugal","qatar","republic-of-congo","romania","russia","rwanda","saint-kitts-and-nevis","saint-lucia","saint-vincent-and-the-grenadines","samoa","san-marino","sao-tome-and-principe","saudi-arabia","senegal","serbia","seychelles","sierra-leone","singapore","slovakia","slovenia","solomon-islands","somalia","south-africa","south-korea","south-sudan","spain","sri-lanka","sudan","suriname","sweden","switzerland","syria","tajikistan","tanzania","thailand","timor-leste","togo","tonga","trinidad-and-tobago","tunisia","turkiye","turkmenistan","tuvalu","uganda","ukraine","united-arab-emirates","united-kingdom","united-states","uruguay","uzbekistan","vanuatu","venezuela","vietnam","yemen","zambia","zimbabwe"],"paintings":[{"id":"original-afghanistan","title":"Hindu Kush in Bloom","nation":"Afghanistan"},{"id":"original-barbados","title":"The Trident in Bloom","nation":"Barbados"},{"id":"original-kenya","title":"Mount Kenya in Bloom","nation":"Kenya"},{"id":"original-rwanda","title":"The Thousand Hills in Bloom","nation":"Rwanda"}],"books":[{"id":"perfect-barbados-book","title":"Perfect Barbados","nation":"Barbados","status":"In preparation"},{"id":"perfect-kenya-book","title":"Perfect Kenya","nation":"Kenya","status":"In preparation"}],"solutions":[{"id":"solution-39","no":39,"title":"Every Child Learns","nation":"Afghanistan"},{"id":"solution-1","no":1,"title":"The Lobito Food Corridor","nation":"Angola"},{"id":"solution-2","no":2,"title":"The Clean Kitchen Fund","nation":"Bangladesh"},{"id":"solution-44","no":44,"title":"The Blue Food Swap","nation":"Barbados"},{"id":"solution-3","no":3,"title":"The Diamond Enterprise Dividend","nation":"Botswana"},{"id":"solution-41","no":41,"title":"Every Street Connected","nation":"Brazil"},{"id":"solution-4","no":4,"title":"Light for Every Hill","nation":"Burundi"},{"id":"solution-45","no":45,"title":"River Power for Every Home","nation":"Cameroon"},{"id":"solution-46","no":46,"title":"Oil Behind the Sun","nation":"Chad"},{"id":"solution-5","no":5,"title":"The Barrio Bonds","nation":"Colombia"},{"id":"solution-47","no":47,"title":"The Medicine Conversion","nation":"Cuba"},{"id":"solution-6","no":6,"title":"The Cocoa Classroom Fund","nation":"C\u00f4te d\u2019Ivoire"},{"id":"solution-7","no":7,"title":"Cobalt for Classrooms","nation":"DR Congo"},{"id":"solution-8","no":8,"title":"The Learning Conversion","nation":"Ecuador"},{"id":"solution-9","no":9,"title":"The Nile Reading Bond","nation":"Egypt"},{"id":"solution-10","no":10,"title":"Safe Water, Proven Home by Home","nation":"Eswatini"},{"id":"solution-11","no":11,"title":"The Highland Electric Kitchen","nation":"Ethiopia"},{"id":"solution-12","no":12,"title":"The Blue Livelihood Bond","nation":"Fiji"},{"id":"solution-13","no":13,"title":"Pensions for Sanitation","nation":"Ghana"},{"id":"solution-42","no":42,"title":"Solar Schools, Reading Children","nation":"India"},{"id":"solution-14","no":14,"title":"The Water Sukuk","nation":"Indonesia"},{"id":"solution-48","no":48,"title":"Flares to Power","nation":"Iraq"},{"id":"solution-15","no":15,"title":"Hurricane-Proof Harvests","nation":"Jamaica"},{"id":"solution-16","no":16,"title":"The Reading Compact","nation":"Jordan"},{"id":"solution-43","no":43,"title":"The Rift Reading Bond","nation":"Kenya"},{"id":"solution-17","no":17,"title":"Water for Learning","nation":"Lesotho"},{"id":"solution-18","no":18,"title":"The Vanilla Energy Fund","nation":"Madagascar"},{"id":"solution-19","no":19,"title":"Kwacha Solar","nation":"Malawi"},{"id":"solution-20","no":20,"title":"The Water Guarantee","nation":"Mexico"},{"id":"solution-21","no":21,"title":"Sun to Sanitation","nation":"Morocco"},{"id":"solution-22","no":22,"title":"Gas to Kitchens","nation":"Mozambique"},{"id":"solution-23","no":23,"title":"The Hydrogen Skills Bond","nation":"Namibia"},{"id":"solution-50","no":50,"title":"The Solar Market Bond","nation":"Nigeria"},{"id":"solution-24","no":24,"title":"The Diaspora Harvest Bond","nation":"Nigeria"},{"id":"solution-25","no":25,"title":"The Education Sukuk","nation":"Pakistan"},{"id":"solution-49","no":49,"title":"Sunlight for Gaza","nation":"Palestine"},{"id":"solution-26","no":26,"title":"The Archipelago Reading Bond","nation":"Philippines"},{"id":"solution-27","no":27,"title":"Carbon for Classrooms","nation":"Republic of the Congo"},{"id":"solution-40","no":40,"title":"Standard Tokens for Clean Kitchens","nation":"Rwanda"},{"id":"solution-28","no":28,"title":"Water by Results","nation":"Senegal"},{"id":"solution-29","no":29,"title":"The Clean Ledger Kitchen","nation":"Somalia"},{"id":"solution-30","no":30,"title":"A Wildlife Bond for Reading","nation":"South Africa"},{"id":"solution-31","no":31,"title":"Oil to Sunlight","nation":"South Sudan"},{"id":"solution-32","no":32,"title":"Rooftop Kitchens","nation":"Sri Lanka"},{"id":"solution-33","no":33,"title":"Nyerere Power, Every Kitchen","nation":"Tanzania"},{"id":"solution-34","no":34,"title":"Cook-as-You-Go","nation":"Uganda"},{"id":"solution-35","no":35,"title":"The Breadbasket Guarantee","nation":"Ukraine"},{"id":"solution-36","no":36,"title":"The Sanitation Exchange","nation":"Vietnam"},{"id":"solution-37","no":37,"title":"The Copper Windfall for Learning","nation":"Zambia"},{"id":"solution-38","no":38,"title":"Lithium for Living","nation":"Zimbabwe"}]}</script>
 <!-- /GENERATED:DATA -->
-<script>
+<script><!--
 (function(){
   var root = document.getElementById('pn-contact');
   if (!root || root.getAttribute('data-ct') === '1') { return; }
@@ -802,5 +809,5 @@ article:has(#pn-contact) .entry-header{ display:none !important; }
 
   pick(kind.id);
 })();
-</script>
+//--></script>
 </div>
