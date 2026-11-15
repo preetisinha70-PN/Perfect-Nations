@@ -3,7 +3,8 @@ PERFECT NATIONS - THE CONTACT PAGE - v7.1 LIGHT - 2026-11-15
 v7.1 (15 Nov 2026, the Steward-General: the words sat off centre in the white buttons): the topic and timeframe
 buttons centre their words (they sat at the top when the button was taller than its words). Measured in Chromium
 with the Barlow fonts, the words are within 0.5 px of centre both ways. The slightly larger top padding lifts
-capitals to the optical centre, and the extra left padding equals the letter-spacing after the last letter. The
+capitals to the optical centre; half the letter-spacing after the last letter moves from the right padding to
+the left, so each button keeps its width and the rows wrap as before. The
 route tiles centre their name and line as a block, with no gap opening between them in a tall tile.
 The page script now sits inside an HTML comment within its script tag, so the WordPress formatter cannot rewrite
 its ampersands (the sitewide check of 10 Nov 2026).
@@ -190,7 +191,7 @@ article:has(#pn-contact) .entry-header{ display:none !important; }
 /* topics of the chosen route */
 #pn-contact .ct-chips{ display:flex; flex-wrap:wrap; gap:7px; }
 #pn-contact .ct-chip{
-  display:inline-flex; align-items:center; justify-content:center; gap:8px; min-height:42px; margin:0; padding:10.25px 15px 9.75px calc(15px + .12em); border-radius:999px; cursor:pointer; text-align:center;
+  display:inline-flex; align-items:center; justify-content:center; gap:8px; min-height:42px; margin:0; padding:10.25px calc(15px - .06em) 9.75px calc(15px + .06em); border-radius:999px; cursor:pointer; text-align:center;
   border:1px solid var(--ihair); background:#FFFFFF; color:var(--im); box-shadow:none;
   font-family:var(--hd); font-size:.7rem; font-weight:700; line-height:1.1; letter-spacing:.12em; text-transform:uppercase; transition:color .2s ease, border-color .2s ease, background .2s ease;
 }
@@ -283,7 +284,7 @@ article:has(#pn-contact) .entry-header{ display:none !important; }
   #pn-contact .ct-route{ padding:10px 10px 9px; border-radius:14px; }
   #pn-contact .ct-route b{ font-size:1rem; }
   #pn-contact .ct-route small{ font-size:.54rem; letter-spacing:.1em; }
-  #pn-contact .ct-chip{ padding:10.75px 12px 9.75px calc(12px + .09em); font-size:.64rem; letter-spacing:.09em; }
+  #pn-contact .ct-chip{ padding:10.75px calc(12px - .045em) 9.75px calc(12px + .045em); font-size:.64rem; letter-spacing:.09em; }
   #pn-contact .ct-letter__head{ padding:12px 14px; }
   #pn-contact .ct-letter__to{ display:none; }
   #pn-contact .ct-paper{ padding:14px 16px 6px; }
