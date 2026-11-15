@@ -278,11 +278,21 @@ Outline (the comments are notes, not part of the file):
 | `first` | the first move, one sentence |
 | `figure`, `caption`, `gap_seen` | the card figure (at most 18 characters, with a digit), its caption (at most 120), and the nation's gap when the Solution was written (a changed gap means the challenge needs a fresh look) |
 | `sources` | list of {"label", "url"}, every url https: the source of the challenge, then the proof |
-| `more` | optional (from 14 November 2026): up to three more Solutions for the same nation, shown as a deck of stacked cards beside this one on its blueprint. Each: `standard` (as in ORDER: Food, Water, Shelter, Energy, Education, Health, Livelihoods), `title` (at most 60 characters), `challenge` (at most 240, with the figure exactly as the nation's blueprint publishes it), `source` {"label", "url"}, `advises` (two sentences, at most 520, the same rules as above). Each on a different standard from the lead and from each other, nearest gaps first. Its Discuss this Solution opens the Contact page with `?about=solution&country=<Nation>&idea=<title>` |
+| `more` | superseded on 15 November 2026 by `data/more-solutions.json` (below); still read as a fallback for a nation that file does not cover. Each: `standard`, `title`, `challenge`, `source` {"label", "url"}, `advises` |
 
 **Deal Note entry** (`deals`): a landmark market deal read by Perfect Nations (these were the Solutions before 9 November 2026, and keep their numbers). Fields as before: `no`, `kind` "deal", `slug`, `title`, `kicker`, `date`, `nation`, `standards`, `standfirst`, `challenge`, `advises`, `figure`, `caption`, `url` (the WordPress post) or `body` (paragraphs; a line starting "## " is a heading), `figures`, `kick`, `sources`. A Deal Note opens at `/state-of-nations/#deal-NN`. A new Deal Note takes the next number in `deals`, never a number in `dispatches`.
 
 Wire items are committed straight to main. A new Solution or Deal Note is proposed only as a pull request titled "For approval: Solution No. NN" or "For approval: Deal Note No. NN" and goes live when Preeti Sinha, President and CEO, merges it.
+
+## The three more Solutions for every nation (from 15 November 2026)
+
+Every blueprint shows its lead Solution and, beside it, a deck of up to three more Solutions for the nation, each with its standard, the source of its finance, the name, The challenge (with its source), What Perfect Nations advises and Discuss this Solution. The deck is read from `data/more-solutions.json`, built by `python3 tools/build_more_solutions.py` and kept by the State of Nations Steward.
+
+- **Which standards:** the next gaps after the lead: the lead standard is left out, then the standards are sorted by coverage, lowest first, skipping any not yet measured, any at 98 per cent or more and any without an https source. Up to three; a nation with fewer gaps gets fewer cards (the Holy See has none).
+- **Which finance:** every three-card nation has one Solution from each source: `D` development banks (named: the World Bank, the regional development banks, the Council of Europe Development Bank, a national development bank), `P` private investors (impact investors, pension funds, the diaspora, bond buyers) and `C` corporate partners (named by sector only, never a company). The card shows it after the standard, for example "Shelter · Development banks".
+- **The challenge** is written by the build from the nation's `guarantees`, with the figure exactly as the blueprint publishes it (`CHALLENGE_OVERRIDE` in the build holds the few that need their own sentence). Its source is the guarantee's source.
+- **The words** live in `tools/more/content_NN.py`, one batch of nations each: `CONTENT = {slug: [(finance, title, advises), ...]}` in the order the build chooses the standards (print it with `python3 tools/build_more_solutions.py --brief [slugs]`). Title at most 60 characters, never used twice; `advises` two sentences at most 520 characters, the finance move first, the second beginning "With super intelligence," and saying what it makes possible; no figures, never "pay", never "FFD", no contractions, never beginning "Perfect Nations advises". The build refuses anything else.
+- **To change one:** edit its batch, run `python3 tools/build_more_solutions.py`, then `python3 tools/build_nations.py <slug> --manifest`, and send both through a pull request "For approval: ...". When a nation's gaps change, run the build with `--brief <slug>` and rewrite the cards it no longer matches.
 
 ## The Perfect Capita page
 
