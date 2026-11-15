@@ -99,7 +99,8 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 PAGES, DATA, HERE = ROOT / 'pages', ROOT / 'data', ROOT / 'tools' / 'nation'
-VERSION = '12.9'  # three more Solutions for the nation, stacked beside its lead Solution: title, challenge, advice and Discuss this Solution (the Steward-General, 14 Nov 2026)
+VERSION = '13.0'  # three more Solutions for every nation from data/more-solutions.json, one each from development banks, private investors and corporate partners, named on each card (the Steward-General, 15 Nov 2026)
+# 12.9: three more Solutions for the nation, stacked beside its lead Solution: title, challenge, advice and Discuss this Solution (the Steward-General, 14 Nov 2026)
 # v12.8: every email from a blueprint goes to contact@perfectnations.com, in place of the .org address (the Steward-General, 12 Nov 2026)
 # v12.7: a nation may name its own statistics office as the population source (pop_source in its page words); first, Cuba, re-measured on the delivery test (the Steward-General, 12 Nov 2026)
 # v12.6: portraits for the 151 Nation Stewards who showed initials, generated in the Media Library in the house style (the Steward-General, 12 Nov 2026)
@@ -773,8 +774,25 @@ def solution_brief(name, sbn, slug):
 COUNT_WORDS = {1: 'One more Solution', 2: 'Two more Solutions', 3: 'Three more Solutions'}
 
 
-def stack_of(name, son):
-    """v12.9: up to three more Solutions for the nation ("more" on its designed Solution in State of Nations)."""
+MORE_FILE = ROOT / 'data' / 'more-solutions.json'
+_MORE = []
+
+
+def more_solutions():
+    """data/more-solutions.json (tools/build_more_solutions.py), read once per build."""
+    if not _MORE:
+        _MORE.append(json.loads(MORE_FILE.read_text(encoding='utf-8')).get('nations', {}) if MORE_FILE.exists() else {})
+    return _MORE[0]
+
+
+def stack_of(name, son, slug=None):
+    """v13.0: up to three more Solutions for the nation from data/more-solutions.json, one from each source of
+    finance (development banks, private investors, corporate partners). v12.9 fallback: "more" on its designed
+    Solution in State of Nations."""
+    mine = more_solutions().get(slug or '') or {}
+    cards = [m for m in mine.get('cards') or [] if m.get('title') and m.get('challenge') and m.get('advises')]
+    if cards:
+        return cards[:3]
     for x in (son or {}).get('dispatches', []):
         if x.get('kind') == 'design' and x.get('nation') == name and x.get('more'):
             return [m for m in x['more'] if m.get('title') and m.get('challenge') and m.get('advises')][:3]
@@ -800,11 +818,12 @@ def solution_stack(name, more):
             urllib.parse.quote(plain(name), safe=''), urllib.parse.quote(plain(m['title']), safe=''))
         tabs.append('<button type="button" class="bpx-stack__t" data-i="%d" aria-pressed="%s" style="--c:%s"><i aria-hidden="true"></i>%s</button>'
                     % (i, 'true' if i == 0 else 'false', c, ent(lab(st) if st in ORDER else st)))
-        cards.append('<li class="bpx-st" data-i="%d" data-pos="%d" style="--c:%s"><p class="bpx-st__k"><i aria-hidden="true"></i>%s</p>'
+        fin = ('<span class="bpx-st__f"> &#183; %s</span>' % ent(m['finance'])) if m.get('finance') else ''  # v13.0: who finances it
+        cards.append('<li class="bpx-st" data-i="%d" data-pos="%d" style="--c:%s"><p class="bpx-st__k"><i aria-hidden="true"></i>%s%s</p>'
                      '<h4>%s</h4><p class="bpx-st__l">The challenge</p><p class="bpx-st__t">%s</p>'
                      '<p class="bpx-st__l">What Perfect Nations advises</p><p class="bpx-st__t">%s</p>'
                      '<a class="bpx-btn bpx-btn--line" href="%s" target="_blank" rel="noopener noreferrer">Discuss this Solution</a></li>'
-                     % (i, i, c, ent(lab(st) if st in ORDER else st), ent(m['title']), ch, ent(m['advises']), ent(https(talk))))
+                     % (i, i, c, ent(lab(st) if st in ORDER else st), fin, ent(m['title']), ch, ent(m['advises']), ent(https(talk))))
     return ('<div class="bpx-stack" id="bp-stack"><p class="bpx-stack__h">%s for %s</p>'
             '<div class="bpx-stack__tabs" aria-label="Bring a Solution to the front">%s</div>'
             '<ul class="bpx-stack__deck">%s</ul></div>'
@@ -888,7 +907,7 @@ def solutions(d, p, sbn, son):
                  '<p class="bpx-sum__open">To be set with %s, from its own figures and in its own prices: Perfect Capita times the people of %s, each year.</p></div>'
                  % (ent(name), ent(name), ent(name)))
     cards, more = solution_cards(d, p, sbn, son)
-    stack = solution_stack(name, stack_of(name, son))
+    stack = solution_stack(name, stack_of(name, son, p.get('slug')))
     return (
         '<section class="bpx-band bpx-dp bpx-pc" id="bp-pc" aria-labelledby="bp-pcx-h"><div class="bpx-in">'
         '<div class="bpx-pc__grid"><div class="bpx-pc__head">%s<h2 class="bpx-h2" id="bp-pcx-h">Perfect %s, <em>star by star.</em></h2>'
