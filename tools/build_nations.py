@@ -99,7 +99,8 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 PAGES, DATA, HERE = ROOT / 'pages', ROOT / 'data', ROOT / 'tools' / 'nation'
-VERSION = '13.3'  # the head of state's portrait is larger (88 px laptops, 72 px phones), and the National Day mirrors it: an 88 px gold date tile at the far right, its name the same size as the head of state's (the Steward-General, 15 Nov 2026)
+VERSION = '13.4'  # the National Day date tile and line are a little smaller: 76 px and 1.38rem on laptops, 56 px and 1.06rem on phones (the Steward-General, 15 Nov 2026)
+# 13.3: the head of state's portrait is larger (88 px laptops, 72 px phones), and the National Day mirrors it: an 88 px gold date tile at the far right, its name the same size as the head of state's (the Steward-General, 15 Nov 2026)
 # 13.2: a slim band under the hero: the head of state and the National Day, from data/nation-protocol.json (the Steward-General, 15 Nov 2026)
 # 13.1: the Solution card reads "18.6% of people" and "the United Kingdom" (the Steward-General, 15 Nov 2026)
 # 13.0: three more Solutions for every nation from data/more-solutions.json, one each from development banks, private investors and corporate partners, named on each card (the Steward-General, 15 Nov 2026)

@@ -894,7 +894,8 @@
 }
 /* v13.2 (the Steward-General, 15 Nov 2026): a slim band under the hero: the head of state and the National Day.
    v13.3: the portrait is larger, 88 px on laptops and 72 px on phones, in a gold medallion; the National Day mirrors it at the
-   far right, an 88 px gold date tile with its name the same size as the head of state's (the Steward-General, 15 Nov 2026) */
+   far right, an 88 px gold date tile with its name the same size as the head of state's (the Steward-General, 15 Nov 2026).
+   v13.4: the date tile and the National Day line are a little smaller, 76 px and 1.38rem on laptops, 56 px and 1.06rem on phones (the Steward-General, 15 Nov 2026) */
 #R .bpx-nd{ position:relative; background:linear-gradient(90deg, var(--dp), #0A3238 55%, var(--dp)); border-top:1px solid rgba(var(--grgb),.42); border-bottom:1px solid rgba(var(--grgb),.16); }
 #R .bpx-nd .bpx-in{ display:flex; align-items:center; gap:clamp(14px,2.4vw,32px); min-height:96px; padding-top:12px; padding-bottom:12px; }
 #R .bpx-nd__p,#R .bpx-nd__d{ display:flex; align-items:center; gap:16px; min-width:0; }
@@ -907,14 +908,15 @@
 #R .bpx-nd__ph img{ display:block; width:100%; height:100%; object-fit:cover; object-position:50% 22%; }
 #R .bpx-nd small{ display:block; margin:0 0 3px; font-family:var(--hd); font-size:.64rem; font-weight:700; letter-spacing:.2em; text-transform:uppercase; color:var(--g); line-height:1.25; }
 #R .bpx-nd b{ display:block; font-family:var(--hd); font-weight:600; font-size:1.06rem; line-height:1.15; color:var(--fg); }
-#R .bpx-nd__p b,#R .bpx-nd__t > b{ font-size:clamp(1.3rem,1.9vw,1.62rem); line-height:1.05; letter-spacing:-.005em; }
+#R .bpx-nd__p b{ font-size:clamp(1.3rem,1.9vw,1.62rem); line-height:1.05; letter-spacing:-.005em; }
+#R .bpx-nd__t > b{ font-size:clamp(1.12rem,1.55vw,1.38rem); line-height:1.08; }
 #R .bpx-nd a{ color:inherit; text-decoration:none; background:linear-gradient(var(--g),var(--g)) 0 100% / 0 1px no-repeat; transition:background-size .3s var(--ease); }
 #R .bpx-nd a:hover,#R .bpx-nd a:focus-visible{ background-size:100% 1px; }
-#R .bpx-nd__cal{ flex:0 0 auto; display:flex; flex-direction:column; align-items:center; justify-content:center; width:88px; height:88px; border-radius:20px; box-sizing:border-box;
-  border:2px solid var(--g); box-shadow:0 0 0 5px rgba(var(--grgb),.13), 0 10px 30px rgba(0,0,0,.35), 0 0 34px rgba(var(--grgb),.18);
+#R .bpx-nd__cal{ flex:0 0 auto; display:flex; flex-direction:column; align-items:center; justify-content:center; width:76px; height:76px; border-radius:18px; box-sizing:border-box;
+  border:2px solid var(--g); box-shadow:0 0 0 4px rgba(var(--grgb),.13), 0 8px 24px rgba(0,0,0,.32), 0 0 28px rgba(var(--grgb),.16);
   background:radial-gradient(circle at 32% 28%, #145863, var(--er2)); }
-#R .bpx-nd__cal b{ font-size:2.4rem; font-weight:700; line-height:.9; color:var(--g); }
-#R .bpx-nd__cal small{ margin:4px 0 0; font-size:.66rem; letter-spacing:.22em; color:var(--fg); }
+#R .bpx-nd__cal b{ font-size:2.05rem; font-weight:700; line-height:.9; color:var(--g); }
+#R .bpx-nd__cal small{ margin:3px 0 0; font-size:.6rem; letter-spacing:.22em; color:var(--fg); }
 #R .bpx-nd__c{ flex:0 0 auto; margin-top:7px; padding:6px 12px 5px; border:1px solid rgba(var(--grgb),.5); border-radius:999px; font-family:var(--hd); font-size:.62rem; font-weight:700;
   letter-spacing:.16em; text-transform:uppercase; color:var(--g); white-space:nowrap; }
 #R .bpx-nd.is-soon .bpx-nd__c{ border-color:var(--g); }
@@ -927,10 +929,12 @@
   #R .bpx-nd__d{ gap:14px; }
   #R .bpx-nd__d .bpx-nd__cal{ order:0; }
   #R .bpx-nd__t{ flex:1 1 auto; align-items:flex-start; text-align:left; }
-  #R .bpx-nd__ph,#R .bpx-nd__cal{ width:72px; height:72px; box-shadow:0 0 0 4px rgba(var(--grgb),.13), 0 8px 22px rgba(0,0,0,.32); }
-  #R .bpx-nd__ph{ font-size:1.25rem; }
-  #R .bpx-nd__cal{ border-radius:17px; }
-  #R .bpx-nd__cal b{ font-size:1.95rem; }
-  #R .bpx-nd__cal small{ font-size:.58rem; }
-  #R .bpx-nd__p b,#R .bpx-nd__t > b{ font-size:1.3rem; }
+  #R .bpx-nd__ph{ width:72px; height:72px; font-size:1.25rem; box-shadow:0 0 0 4px rgba(var(--grgb),.13), 0 8px 22px rgba(0,0,0,.32); }
+  #R .bpx-nd__cal{ width:56px; height:56px; border-radius:14px; box-shadow:0 0 0 3px rgba(var(--grgb),.12), 0 6px 16px rgba(0,0,0,.28); }
+  #R .bpx-nd__cal b{ font-size:1.5rem; }
+  #R .bpx-nd__cal small{ margin-top:2px; font-size:.5rem; }
+  #R .bpx-nd__p b{ font-size:1.3rem; }
+  #R .bpx-nd__t > b{ font-size:1.06rem; }
+  #R .bpx-nd__t small{ font-size:.56rem; }
+  #R .bpx-nd__c{ margin-top:5px; padding:5px 10px 4px; font-size:.56rem; }
 }
