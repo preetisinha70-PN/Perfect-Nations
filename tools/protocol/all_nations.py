@@ -197,7 +197,7 @@ saint-kitts-and-nevis | Charles III | King of Saint Kitts and Nevis | UN || 09-1
 saint-lucia | Charles III | King of Saint Lucia | UN || 02-22 | National Day | SE
 saint-vincent-and-the-grenadines | Charles III | King of Saint Vincent and the Grenadines | UN || 10-27 | Independence Day | CPH
 samoa | Tuimalealiifano Vaaletoa Sualauvi II | Head of State of Samoa | UN || 06-01 | Independence Day | CPH
-san-marino | The Captains Regent | Heads of State of the Republic of San Marino | SM || 09-03 | National Day | CPH
+san-marino | Gerardo Giovagnoli and William Casali | Captains Regent of the Republic of San Marino | UN | 2026-10-01 | 09-03 | National Day | CPH
 sao-tome-and-principe | Carlos Vila Nova | President of the Democratic Republic of São Tomé and Príncipe | UN || 07-12 | National Day | CPH
 saudi-arabia | Salman bin Abdulaziz Al Saud | King of Saudi Arabia, Custodian of the Two Holy Mosques | UN || 09-23 | National Day | CPH
 senegal | Bassirou Diomaye Faye | President of the Republic of Senegal | UN || 04-04 | National Day | CPH
@@ -245,14 +245,105 @@ zambia | Hakainde Hichilema | President of the Republic of Zambia | UN || 10-24 
 zimbabwe | Emmerson Mnangagwa | President of the Republic of Zimbabwe | UN || 04-18 | Independence Day | CPH
 """
 
+# The leader the band shows (the Steward-General, 15 November 2026): the elected leader who runs the government. Where
+# the head of state is a monarch or a ceremonial president (chosen by parliament, or elected by the people while a
+# prime minister runs the government), the band shows the prime minister. Presidents who run the government keep the
+# band; rulers who are not elected (and leaders of one-party states) stay as they are. Source: the UN Protocol list of
+# 13 November 2026, heads of government, English titles, names without honorifics or post-nominals.
+# slug | name | title | since (if changed in 2026)
+LEADERS = """
+albania | Edi Rama | Prime Minister of the Republic of Albania |
+andorra | Xavier Espot Zamora | Head of Government of the Principality of Andorra |
+antigua-and-barbuda | Gaston Alphonso Browne | Prime Minister of Antigua and Barbuda |
+armenia | Nikol Pashinyan | Prime Minister of the Republic of Armenia |
+australia | Anthony Albanese | Prime Minister of the Commonwealth of Australia |
+austria | Christian Stocker | Federal Chancellor of the Republic of Austria |
+bahamas | Philip Edward Davis | Prime Minister of the Commonwealth of The Bahamas |
+bangladesh | Tarique Rahman | Prime Minister of the People’s Republic of Bangladesh | 2026-02-17
+barbados | Mia Amor Mottley | Prime Minister of Barbados |
+belgium | Bart De Wever | Prime Minister of the Kingdom of Belgium |
+belize | John Briceño | Prime Minister of Belize |
+bhutan | Tshering Tobgay | Prime Minister of the Kingdom of Bhutan |
+bosnia-and-herzegovina | Borjana Krišto | Chairwoman of the Council of Ministers of Bosnia and Herzegovina |
+bulgaria | Rumen Radev | Prime Minister of the Republic of Bulgaria | 2026-05-08
+cabo-verde | Francisco Avelino Vieira de Carvalho | Prime Minister of the Republic of Cabo Verde | 2026-05-17
+cambodia | Hun Manet | Prime Minister of the Kingdom of Cambodia |
+canada | Mark Carney | Prime Minister of Canada |
+croatia | Andrej Plenković | Prime Minister of the Republic of Croatia |
+czechia | Andrej Babiš | Prime Minister of the Czech Republic |
+denmark | Mette Frederiksen | Prime Minister of Denmark |
+dominica | Roosevelt Skerrit | Prime Minister of the Commonwealth of Dominica |
+estonia | Kristen Michal | Prime Minister of the Republic of Estonia |
+ethiopia | Abiy Ahmed | Prime Minister of the Federal Democratic Republic of Ethiopia |
+fiji | Sitiveni Ligamamada Rabuka | Prime Minister of the Republic of Fiji |
+finland | Petteri Orpo | Prime Minister of the Republic of Finland |
+georgia | Irakli Kobakhidze | Prime Minister of Georgia |
+germany | Friedrich Merz | Chancellor of the Federal Republic of Germany |
+greece | Kyriakos Mitsotakis | Prime Minister of the Hellenic Republic |
+grenada | Dickon Mitchell | Prime Minister of Grenada |
+hungary | Péter Magyar | Prime Minister of Hungary | 2026-06-22
+iceland | Kristrún Frostadóttir | Prime Minister of Iceland |
+india | Narendra Modi | Prime Minister of the Republic of India |
+iraq | Ali Falih Al-Zaidi | Prime Minister of the Republic of Iraq | 2026-05-14
+ireland | Micheál Martin | Taoiseach of Ireland |
+israel | Benjamin Netanyahu | Prime Minister of the State of Israel |
+italy | Giorgia Meloni | President of the Council of Ministers of the Italian Republic |
+jamaica | Andrew Holness | Prime Minister of Jamaica |
+japan | Takaichi Sanae | Prime Minister of Japan |
+latvia | Andris Kulbergs | Prime Minister of the Republic of Latvia | 2026-05-28
+lebanon | Nawaf Salam | President of the Council of Ministers of the Republic of Lebanon |
+lesotho | Samuel Ntsokoane Matekane | Prime Minister of the Kingdom of Lesotho |
+liechtenstein | Brigitte Haas | Prime Minister of the Principality of Liechtenstein |
+lithuania | Inga Ruginienė | Prime Minister of the Republic of Lithuania |
+luxembourg | Luc Frieden | Prime Minister of the Grand Duchy of Luxembourg |
+malaysia | Anwar Ibrahim | Prime Minister of Malaysia |
+malta | Robert Abela | Prime Minister of the Republic of Malta |
+mauritius | Navinchandra Ramgoolam | Prime Minister of the Republic of Mauritius |
+moldova | Vasile Tofan | Prime Minister of the Republic of Moldova | 2026-07-22
+mongolia | Uchral Nyam-Osor | Prime Minister of Mongolia | 2026-03-30
+montenegro | Milojko Spajić | Prime Minister of Montenegro |
+morocco | Aziz Akhannouch | Head of Government of the Kingdom of Morocco |
+nepal | Balendra Shah | Prime Minister of Nepal | 2026-03-27
+netherlands | Rob Jetten | Prime Minister of the Kingdom of the Netherlands | 2026-02-23
+new-zealand | Christopher Luxon | Prime Minister of New Zealand |
+north-macedonia | Hristijan Mickoski | President of the Government of the Republic of North Macedonia |
+norway | Jonas Gahr Støre | Prime Minister of Norway |
+pakistan | Muhammad Shehbaz Sharif | Prime Minister of the Islamic Republic of Pakistan |
+papua-new-guinea | James Marape | Prime Minister of the Independent State of Papua New Guinea |
+poland | Donald Tusk | Prime Minister of the Republic of Poland |
+portugal | Luís Montenegro | Prime Minister of the Portuguese Republic |
+romania | Luca-Alexandru Niculescu | Prime Minister of Romania |
+saint-kitts-and-nevis | Terrance Micheal Drew | Prime Minister of Saint Kitts and Nevis |
+saint-lucia | Philip J. Pierre | Prime Minister of Saint Lucia |
+saint-vincent-and-the-grenadines | Godwin Friday | Prime Minister of Saint Vincent and the Grenadines | 2025-12-01
+samoa | Laaulialemalietoa Leuatea Polataivao Fosi Schmidt | Prime Minister of the Independent State of Samoa |
+sao-tome-and-principe | Américo d’Oliveira dos Ramos | Prime Minister of the Democratic Republic of São Tomé and Príncipe |
+serbia | Đuro Macut | Prime Minister of the Republic of Serbia |
+singapore | Lawrence Wong | Prime Minister of the Republic of Singapore |
+slovakia | Robert Fico | Prime Minister of the Slovak Republic |
+slovenia | Janez Janša | Prime Minister of the Republic of Slovenia | 2026-06-04
+solomon-islands | Matthew Cooper Wale | Prime Minister of Solomon Islands |
+somalia | Hamza Abdi Barre | Prime Minister of the Federal Republic of Somalia |
+spain | Pedro Sánchez | President of the Government of Spain |
+sweden | Ulf Kristersson | Prime Minister of Sweden |
+thailand | Anutin Charnvirakul | Prime Minister of the Kingdom of Thailand |
+timor-leste | Xanana Gusmão | Prime Minister of the Democratic Republic of Timor-Leste |
+togo | Faure Gnassingbé | President of the Council of Ministers of the Togolese Republic |
+tonga | Lord Fakafanua | Prime Minister of the Kingdom of Tonga |
+trinidad-and-tobago | Kamla Persad-Bissessar | Prime Minister of the Republic of Trinidad and Tobago |
+tuvalu | Feleti Penitala Teo | Prime Minister of Tuvalu |
+united-kingdom | Andrew Burnham | Prime Minister of the United Kingdom of Great Britain and Northern Ireland | 2026-07-20
+vanuatu | Jotham Napat | Prime Minister of the Republic of Vanuatu |
+"""
+
 # What the Steward watches for each nation; never shown on the page.
 NOTES = {
     'afghanistan': 'The UN Protocol list of 13 November 2026 names no head of state for Afghanistan. The band shows the National Day only, until the Steward-General decides.',
     'myanmar': 'The UN Protocol list of 13 November 2026 still names Win Myint, while the Union Parliament elected a new President on 3 April 2026. The two do not agree, so the band shows the National Day only, until the Steward-General decides.',
-    'andorra': 'Two Co-Princes, the Bishop of Urgell and the President of the French Republic. When the French presidency changes, Andorra changes too.',
+    'andorra': 'The band shows the Head of Government. The two Co-Princes are the Bishop of Urgell and the President of the French Republic.',
     'nicaragua': 'Two Co-Presidents under the constitutional reform of 2025.',
-    'san-marino': 'Two Captains Regent, elected every six months and installed on 1 April and 1 October. Their names are added once the Reggenza publishes them; check on each 1 April and 1 October.',
-    'bosnia-and-herzegovina': 'The Chair of the Presidency rotates every eight months; the next rotation is due about 16 November 2026.',
+    'san-marino': 'Two Captains Regent, elected every six months and installed on 1 April and 1 October; the next pair takes office on 1 April 2027.',
+    'bosnia-and-herzegovina': 'The band shows the Chairwoman of the Council of Ministers. The Chair of the Presidency rotates every eight months.',
     'switzerland': 'The President of the Swiss Confederation changes every 1 January.',
     'united-kingdom': 'The date moves: the King’s Official Birthday, set each year. Confirm the date every January.',
     'israel': 'The date moves: Independence Day follows the Hebrew calendar (5 Iyar). 12 May is the 2027 date; confirm it with the Embassy of Israel and set the next date after each celebration.',
@@ -277,6 +368,7 @@ PORTRAITS = {
     'kenya': (UP + 'pn-hos-kenya-237x300.jpg', 'Government of Kenya', None),
     'cote-divoire': (UP + 'pn-hos-cote-divoire-200x300.jpg', 'Dario Pignatelli, European Union', None),
     'ukraine': (UP + 'pn-hos-ukraine-222x300.jpg', 'President.gov.ua', CC_BY_4),
+    'india': (UP + 'pn-hos-india-240x300.jpg', 'Prime Minister’s Office, Government of India', {'label': 'GODL-India'}),
 }
 
 GREET = {
@@ -313,6 +405,12 @@ def main():
     index = json.loads((ROOT / 'data' / 'blueprints.json').read_text(encoding='utf-8'))
     names = {x['slug']: x['name'] for x in index['open']}
     table = rows()
+    leaders = {}
+    for line in LEADERS.strip().splitlines():
+        p = [x.strip() for x in line.split('|')]
+        if len(p) != 4 or p[0] not in names:
+            raise SystemExit('bad leader row: %r' % line)
+        leaders[p[0]] = dict(name=p[1], title=p[2], since=p[3])
     missing = sorted(set(names) - set(table) - {'france'})
     extra = sorted(set(table) - set(names))
     if missing or extra:
@@ -327,12 +425,7 @@ def main():
         r = table[slug]
         cur = nations.get(slug, {})
         hs = {'title': r['title'], 'name': r['name'], 'portrait': ''}
-        if slug in PORTRAITS:
-            url, credit, licence = PORTRAITS[slug]
-            hs['portrait'], hs['portrait_credit'] = url, credit
-            if licence:
-                hs['portrait_licence'] = licence
-        if r['name'] and ' and ' in r['name'] and slug in ('andorra', 'nicaragua'):
+        if r['name'] and ' and ' in r['name'] and slug in ('andorra', 'nicaragua', 'san-marino'):
             hs['names'] = r['name'].split(' and ')
         if r['hsrc']:
             hs['source'] = src(r['hsrc'])
@@ -344,9 +437,28 @@ def main():
               'greeting': greeting(r['label']), 'source': src(r['dsrc'])}
         if slug in ('united-kingdom', 'israel'):
             nd['movable'] = True
+        ld = None
+        if slug in leaders:
+            l = leaders[slug]
+            ld = {'title': l['title'], 'name': l['name'], 'portrait': '', 'source': src('UN')}
+            if l['since']:
+                ld['since'] = l['since']
+        shown = ld or hs
+        if slug in PORTRAITS and shown.get('name'):
+            for k in ('portrait_credit', 'portrait_licence'):
+                hs.pop(k, None)
+            hs['portrait'] = ''
+            url, credit, licence = PORTRAITS[slug]
+            shown['portrait'], shown['portrait_credit'] = url, credit
+            if licence:
+                shown['portrait_licence'] = licence
         new = dict(cur)
         new['nation'] = names[slug]
         new['head_of_state'] = hs
+        if ld:
+            new['leader'] = ld
+        else:
+            new.pop('leader', None)
         new['national_day'] = nd
         new['checked'] = CHECKED
         if NOTES.get(slug):
@@ -356,6 +468,11 @@ def main():
         nations[slug] = new
     data['nations'] = {k: nations[k] for k in sorted(nations)}
     data['updated'] = CHECKED
+    data['note'] = ('Protocol facts for each blueprint: its head of state, its leader (where a prime minister runs the government), '
+                    'its National Day and the offices that receive the National Day letters. The band on each blueprint shows the leader '
+                    '(the Steward-General, 15 November 2026). Kept by the Blueprints Steward, who checks every leader and head of state once a '
+                    'month, and each nation again 15 days before its National Day. Portraits are supplied by the Steward-General '
+                    '(official portraits uploaded to the Media Library, with their credit); until one is supplied the band shows the initials.')
     print('%d nations, %d changed' % (len(data['nations']), len(changed)))
     if not check:
         OUT.write_text(json.dumps(data, indent=1, ensure_ascii=False) + '\n', encoding='utf-8')
