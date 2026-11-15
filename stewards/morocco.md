@@ -2,7 +2,7 @@
 
 Salma Benali, AI Nation Steward of Morocco. Public notes: sources and facts only.
 
-Last weekly review: 9 November 2026.
+Last weekly review: 15 November 2026.
 
 ## Sources of the figures that carry no link of their own
 
@@ -20,8 +20,13 @@ Last weekly review: 9 November 2026.
 - **Treasury debt:** Ministry of Economy and Finance, Rapport sur la dette publique (with the 2027 finance bill), https://www.finances.gov.ma/Publication/db/2027/Rapport-Dette-publique_Fr.pdf (opened 9 November 2026): 1,145.0 billion dirhams, 66.6% of GDP at end 2025, against 1,081.6 billion dirhams and 67.0% at end 2024. The Treasury’s earlier note of conjuncture gave 67.2% for end 2025, and the IMF gives central government debt of 67.1% of GDP at end 2025.
 - **IMF:** Press Release 25/094, 8 April 2025 (opened 9 November 2026): the third and final review of the Resilience and Sustainability Facility (approved September 2023) was completed on 17 March 2025; SDR 937.5 million (about US$1.24 billion) disbursed; 6 of the 7 scheduled measures implemented.
 - **World Bank press releases (opened 9 November 2026):** Ifahsa, $265 million, 1 July 2026; Climate and Risk Finance Program, $400 million, and Digital Transformation Acceleration Program, $250 million, 12 June 2026 (the release does not name the instrument); First Jobs and Green Growth Development Policy Loan, $500 million, 10 April 2026; Livable Planet Fund grant, $4 million, 18 December 2025; Social Safety Nets, $250 million, 19 June 2025; Strengthening Human Capital, third operation, $600 million, 19 March 2025; Transforming Agri-food Systems, $250 million and a $5 million grant, 19 December 2024; Second Identity and Targeting, $70 million, 4 December 2024; Municipal Solid Waste, $250 million, 26 November 2024; SOE reform $350 million and ENNAJAA additional financing $250 million, 24 June 2024.
+- **PGRCC III signing:** Ministry of Economy and Finance, news list, https://www.finances.gov.ma/Fr/Pages/actualites.aspx (opened 15 November 2026): item of 13/11/2026, signing of a financing agreement with the African Development Bank “d’un montant de 434 millions d’euros” for the third phase of the Programme d’appui au renforcement de la gouvernance économique et de la résilience au changement climatique (PGRCC). No detail page (fiche) for the item was found.
 - **African Development Bank:** afdb.org does not open in these reviews; its releases were read on allAfrica (copyright African Development Bank) and maroc.ma (MAP): PGRCC III, $487 million, approved in Abidjan and reported 22 October 2026; FEC second loan, €150 million, signed 22 July 2026; PADIF, €205 million, approved 8 July 2026; Cap Compétences 2030, €200 million, 21 May 2026; partial credit guarantee for OCP of up to €450 million, December 2025; inclusive solidarity-based agriculture, €100 million, 21 July 2025; PGRCC II €181.8 million and PAFE-Emplois €119 million, 30 June 2025 (“approximately €301 million”).
+- **AfDB, Gotion Power Morocco:** AfDB release on allAfrica, 24 July 2026, https://fr.allafrica.com/stories/202607240341.html (opened 15 November 2026; “Copyright © 2026 African Development Bank”): €100 million loan approved by the Board (no date given) to develop the first African lithium iron phosphate battery gigafactory in the Rabat-Salé-Kénitra free zone, 10 GWh in a first phase rising to 100 GWh, more than 600 direct jobs; up to €141 million more to be mobilised from partners.
+- **Islamic Development Bank:** release of 13 December 2025 (opened 15 November 2026): EUR 188.82 million for the Mitigating Water Stress Project and EUR 18.23 million for the Inland Aquaculture Value Chain Development Project (together €207.05 million, arithmetic).
+- **OPEC Fund:** project page, https://opecfund.org/where-we-work/list/economic-governance-and-climate-change-resilience-support-program-phase-2 (opened 15 November 2026): Economic Governance and Climate Change Resilience Support Program (Phase 2), OPEC Fund contribution US$110.50 million, total project cost US$327.63 million, approved 29.07.2025, signed 10.10.2025, co-financier AfDB, status Ongoing.
 - **EIB:** release of 17 February 2026: €740 million signed in 2025, the largest since 2012 (ONEE water €70 million, ONEE electricity €170 million, post-earthquake reconstruction €500 million).
+- **EBRD, Casablanca-Settat regional bond:** https://www.ebrd.com/home/news-and-events/news/2026/ebrd-backs-landmark-bond-issuance-in-morocco.html (opened 15 November 2026; the page shown carries no date; the press reported it on 18 April 2026): MAD 400 million (€36.8 million) in a MAD 1 billion (€92.0 million) issue, the first bond issued by one of the country’s regional authorities, for the 2022-2027 Regional Development Plan.
 - **EBRD:** ONEE water, €250 million (€120 million committed, €130 million uncommitted) and a €5 million grant, 28 July 2026; ONEE sustainability-linked loan, €300 million, 20 June 2025; Al Amana Microfinance, up to €20 million, 24 January 2025.
 - **AIIB:** Climate Operation, $200 million, approved 19 November 2025.
 - **AFD:** authorisation of 21 May 2026, a concessional loan of €100,000,000 to the Agence Nationale des Ports, with grants of €13.2 million (EU), about €1.8 million in kind and €2 million (Blue Mediterranean Partnership).
@@ -30,13 +35,19 @@ Last weekly review: 9 November 2026.
 - **ACCIONA:** Casablanca desalination financing, 8 May 2025: MAD 6.5 billion (€613 million), 300 million m³ a year, 7.5 million people, completion scheduled for 2028.
 
 ### The enterprises
+- **OCP Green Water:** Morocco World News, 14 July 2025, https://www.moroccoworldnews.com/2025/07/229464/moroccos-ocp-achieves-water-autonomy-two-years-early-with-historic-203-kilometer-desalinated-water-pipeline/ (opened 15 November 2026): drinking water secured for Safi, El Jadida and southern Casablanca; “Almost 30% of Casablanca needs are covered today from Jorf Lasfar platform”. Finances News, 27 February 2025: 60 million m³ a year of desalinated water for Casablanca Sud from the end of December 2024.
+- **Akdital:** Mediterrania Capital Partners, exit release, 25 April 2025, https://www.avca.africa/news-insights/member-news/mediterrania-capital-partners-exits-akdital/ (opened 15 November 2026): 35 hospitals and over 2,300 operational beds across major cities.
 - **Kazyon, Yakeey, UM6P, Al Amana Microfinance:** IFC, MIGA and EBRD, as above.
 - **ACWA Power:** Enerdata, 7 August 2025, https://www.enerdata.net/publications/daily-energy-news/acwa-power-secures-noor-midelt-ii-iii-solarbess-projects-morocco.html (opened 9 November 2026): seven power projects in Morocco, 765 MW installed, nearly US$3.2 billion of investment; Noor Midelt II and III, 800 MW with battery storage, under 30-year agreements with Masen.
 
 ## Watch items
 - **IMF Flexible Credit Line:** expires two years after 2 April 2025; watch for a successor or an exit.
-- **AFD ports loan:** signing reported in November 2026 (Ecofin, ecoactu); the AFD document names 13 ports.
-- **Reported, not yet read at a primary source:** AfDB €100 million to Gotion Power Morocco (July 2026); EBRD MAD 400 million in the Casablanca-Settat regional bond (April 2026); KfW two loans of €300 million to Masen for Noor Midelt I and II (2025); IsDB about €207 million for dams, water transfer and aquaculture (December 2025); OPEC Fund €100 million co-financing PGRCC II (September 2025); Noor Midelt II and III financial close.
+- **AFD ports loan:** signing on 3 November 2026 in Rabat reported in the press (Finances News, EcoActu, Ecofin): a 13-year subsidised non-sovereign loan without a state guarantee; no AFD or Ministry release found, so the register keeps the Board authorisation of 21 May 2026. The AFD document names 13 ports.
+- **Reported, not yet read at a primary source:** KfW two loans of €300 million to Masen for Noor Midelt I and II (2025; the Ministry’s release of 20 May 2025 confirms guarantee contracts for KfW financing of Noor Midelt I and II but gives no amounts); Noor Midelt II and III financial close; the OPEC Fund’s Tfer Dam Project (approved 16 September 2026 on the OPEC Fund’s Morocco page, amount of US$150 million in the press only).
+- **Treasury debt at end June 2026:** reported at 1,190.4 billion dirhams (Finances News, 2 November 2026, citing the debt report with the 2027 finance bill); the report did not open in this review.
+- **Pipeline, not approved:** AIIB BTR anode battery materials, US$65.15 million, Proposed.
+- **Multi-country, no Morocco amount:** GCF FP086 Green Cities Facility, second tranche of EUR 87 million (GCF/B.46/08, October 2026).
+- **Already in the register:** the EIB’s second post-earthquake tranche of €500 million, mobilised at a ceremony on 5 June 2026, is the tranche counted in the EIB’s 2025 signings.
 - **Not added:** the AfDB’s MAD 1 billion dirham bond of October 2026 (the bank’s own funding); the Millennium Challenge Corporation compact, closed in 2023; Green Climate Fund projects (no dated Morocco approval found).
 
 ## Open gaps
@@ -44,4 +55,3 @@ Last weekly review: 9 November 2026.
 - Livelihood rests on 2013 data.
 - The lead’s “one of Africa’s largest clean-energy systems” has no source recorded.
 - The Power card label (“of energy from renewables”) is to be checked against its indicator.
-- No water or health enterprise verified yet.
