@@ -31,6 +31,21 @@
   var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   function q(s) { return root.querySelector(s); }
   function qa(s) { return root.querySelectorAll(s); }
+  /* v13.2: the National Day in the band under the hero: the days to it, counted on the visitor's own calendar */
+  (function () {
+    var nd = root.querySelector('#bp-nd'), c = root.querySelector('#bp-nd-c');
+    if (!nd || !c) return;
+    var m = +nd.getAttribute('data-m'), d = +nd.getAttribute('data-d');
+    if (!m || !d) return;
+    var now = new Date(), today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+    var next = new Date(today.getFullYear(), m - 1, d);
+    if (next < today) next = new Date(today.getFullYear() + 1, m - 1, d);
+    var n = Math.round((next - today) / 864e5);
+    var greet = nd.getAttribute('data-greet') || '';
+    c.textContent = n === 0 ? ('Today' + (greet ? ' \u00b7 ' + greet : '')) : n === 1 ? 'Tomorrow' : 'In ' + n + ' days';
+    if (n === 0) nd.classList.add('is-today'); else if (n <= 15) nd.classList.add('is-soon');
+    c.hidden = false;
+  })();
   function el(tag, cls, txt) { var e = document.createElement(tag); if (cls) e.className = cls; if (txt != null) e.textContent = txt; return e; }
   function T(v) { return typeof v === 'string' ? v : ''; }
   function okUrl(u) { return typeof u === 'string' && /^https:\/\/[^\s'"()<>\\]+$/.test(u); }

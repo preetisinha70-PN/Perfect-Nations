@@ -99,7 +99,8 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 PAGES, DATA, HERE = ROOT / 'pages', ROOT / 'data', ROOT / 'tools' / 'nation'
-VERSION = '13.1'  # the Solution card reads as a sentence: "18.6% of people", not "18.6% Of people", and "the United Kingdom" where a name takes "the" (the Steward-General, 15 Nov 2026)
+VERSION = '13.2'  # a slim band under the hero: the head of state, the head of government and the National Day, from data/nation-protocol.json (the Steward-General, 15 Nov 2026)
+# 13.1: the Solution card reads "18.6% of people" and "the United Kingdom" (the Steward-General, 15 Nov 2026)
 # 13.0: three more Solutions for every nation from data/more-solutions.json, one each from development banks, private investors and corporate partners, named on each card (the Steward-General, 15 Nov 2026)
 # 12.9: three more Solutions for the nation, stacked beside its lead Solution: title, challenge, advice and Discuss this Solution (the Steward-General, 14 Nov 2026)
 # v12.8: every email from a blueprint goes to contact@perfectnations.com, in place of the .org address (the Steward-General, 12 Nov 2026)
@@ -531,6 +532,57 @@ def hero(d, p):
         '</div></section>'
         % (cup(), ent(p['eyebrow']), long_name, ent(name), ent(h.get('lead', '')), ent(name), p['slug'], ent(name),
            globe_svg(p['slug'], p['globe']), ent(name), len(cells), ''.join(cells), ent(name)))
+
+
+PROTOCOL_FILE = ROOT / 'data' / 'nation-protocol.json'
+_PROTOCOL = []
+MON = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+MONTH = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+
+
+def protocol(slug):
+    """data/nation-protocol.json, read once per build."""
+    if not _PROTOCOL:
+        _PROTOCOL.append(json.loads(PROTOCOL_FILE.read_text(encoding='utf-8')).get('nations', {}) if PROTOCOL_FILE.exists() else {})
+    return _PROTOCOL[0].get(slug) or {}
+
+
+def initials(name):
+    w = [x for x in re.split(r'[\s-]+', plain(name)) if x and x[0].isalpha()]
+    return (w[0][0] + (w[-1][0] if len(w) > 1 else '')).upper() if w else ''
+
+
+def protocol_band(d, slug):
+    """v13.2 (the Steward-General, 15 Nov 2026): a slim band under the hero. One person only, the head of state (with
+    the official portrait once the Steward-General supplies one, else the initials), and the National Day with a live
+    count of the days to it. The name and the date link to their primary source. The Blueprints Steward checks the
+    head of state every day and updates data/nation-protocol.json, and this band, the day the head of state changes."""
+    pr = protocol(slug)
+    nd = pr.get('national_day') or {}
+    hs = pr.get('head_of_state') or {}
+    if not (hs.get('name') and hs.get('title')) or not (nd.get('month') and nd.get('day')):
+        return ''
+    def who(x):
+        src = x.get('source') or {}
+        nm = ent(x['name'])
+        if ok_https(src.get('url')):
+            nm = '<a href="%s" target="_blank" rel="noopener noreferrer" title="Source: %s">%s</a>' % (ent(https(src['url'])), ent(src.get('label') or 'Source'), nm)
+        pic = x.get('portrait') or ''
+        face = ('<span class="bpx-nd__ph"><img src="%s" alt="%s" width="44" height="44" loading="lazy" decoding="async"></span>' % (ent(https(pic)), ent(x['name']))
+                if ok_https(pic) else '<span class="bpx-nd__ph" aria-hidden="true">%s</span>' % ent(initials(x['name'])))
+        return '<div class="bpx-nd__p">%s<span><small>%s</small><b>%s</b></span></div>' % (face, ent(x['title']), nm)
+    cells = [who(hs)]
+    src = nd.get('source') or {}
+    day = '%d %s' % (nd['day'], MONTH[nd['month'] - 1])
+    when = ('<a href="%s" target="_blank" rel="noopener noreferrer" title="Source: %s">%s</a>' % (ent(https(src['url'])), ent(src.get('label') or 'Source'), ent(day))
+            if ok_https(src.get('url')) else ent(day))
+    label = ent(nd.get('name_en') or 'National Day')
+    local = (' &#183; <span%s>%s</span>' % ((' lang="%s"' % ent(nd['lang'])) if nd.get('lang') else '', ent(nd['name']))) if nd.get('name') and nd.get('name') != nd.get('name_en') else ''
+    return ('<section class="bpx-nd" id="bp-nd" aria-label="%s: its head of state and its National Day" data-m="%d" data-d="%d" data-greet="%s">'
+            '<div class="bpx-in">%s<div class="bpx-nd__d"><span class="bpx-nd__cal" aria-hidden="true"><b>%d</b><small>%s</small></span>'
+            '<span><small>%s</small><b>%s%s</b></span><span class="bpx-nd__c" id="bp-nd-c" hidden></span></div></div></section>'
+            % (ent(d['nation']), nd['month'], nd['day'], ent(nd.get('greeting') or ''), ''.join(cells),
+               nd['day'], MON[nd['month'] - 1], label, when, local))
 
 
 def what_we_do(d):
@@ -1182,6 +1234,7 @@ def build(slug, sbn, son, today):
         '<div id="%s" class="bpx" data-version="%s">' % (rid, VERSION),
         kit(),
         hero(d, p),
+        protocol_band(d, slug),
         what_we_do(d),
         assets(d),
         RULE,
