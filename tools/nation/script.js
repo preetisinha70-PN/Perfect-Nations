@@ -448,6 +448,33 @@
     b.setAttribute('aria-expanded', open ? 'true' : 'false');
     b.textContent = open ? 'Show fewer' : 'Show all ' + ul.children.length + ' Solutions';
   });
+  /* v12.9: the stack of more Solutions, a deck: a tab, the edge of a card or a swipe brings one forward. */
+  function deckTo(stack, i) {
+    var cards = stack.querySelectorAll('.bpx-st'), tabs = stack.querySelectorAll('.bpx-stack__t'), n = cards.length, k;
+    if (!n) return;
+    i = ((i % n) + n) % n;
+    for (k = 0; k < n; k++) cards[k].setAttribute('data-pos', String(((+cards[k].getAttribute('data-i')) - i + n) % n));
+    for (k = 0; k < tabs.length; k++) tabs[k].setAttribute('aria-pressed', +tabs[k].getAttribute('data-i') === i ? 'true' : 'false');
+    stack.setAttribute('data-top', String(i));
+  }
+  root.addEventListener('click', function (e) {
+    if (!e.target.closest) return;
+    var t = e.target.closest('.bpx-stack__t'), c = t ? null : e.target.closest('.bpx-st'), st = (t || c) ? (t || c).closest('.bpx-stack') : null;
+    if (!st) return;
+    if (t) { deckTo(st, +t.getAttribute('data-i')); return; }
+    if (c.getAttribute('data-pos') !== '0') { e.preventDefault(); deckTo(st, +c.getAttribute('data-i')); }
+  });
+  var sx = null, sy = 0, sdeck = null;
+  root.addEventListener('touchstart', function (e) {
+    sdeck = e.target.closest ? e.target.closest('.bpx-stack__deck') : null;
+    sx = sdeck && e.touches.length === 1 ? e.touches[0].clientX : null; sy = sx === null ? 0 : e.touches[0].clientY;
+  }, { passive: true });
+  root.addEventListener('touchend', function (e) {
+    if (!sdeck || sx === null || !e.changedTouches.length) return;
+    var p = e.changedTouches[0], dx = p.clientX - sx, dy = p.clientY - sy, st = sdeck.closest('.bpx-stack');
+    sx = null; sdeck = null;
+    if (st && Math.abs(dx) > 40 && Math.abs(dx) > Math.abs(dy) * 1.3) deckTo(st, (+st.getAttribute('data-top') || 0) + (dx < 0 ? 1 : -1));
+  }, { passive: true });
   function loadSolutions() {
     if (solDone) return; solDone = true;
     var sbn, son, n = 0;
