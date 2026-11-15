@@ -1,5 +1,10 @@
 <!-- ==========================================================================
-PERFECT NATIONS - CUSTOM HEADER - v20.4 EARTHRISE - 2026-11-12
+PERFECT NATIONS - CUSTOM HEADER - v20.5 EARTHRISE - 2026-11-15
+v20.5: Perfect Nations opens in two tabs at most (the Steward-General, 15 Nov 2026: the logo opens the homepage in
+the same tab, and new blueprints open in a new tab without too many tabs open). The logo, the menu, the search and
+every page of the site open in the same tab. A nation's blueprint, a U.S. state's blueprint and a Letter to a
+Nation open in one second tab (pn-nation), and the next one replaces the last. Other websites open in a new tab.
+The script at the end; the footer carries the same script. It replaces the rule of v20.2.
 v20.4: the Art of Nations Gallery (https://gallery.perfectnations.com, the shop where every original and print is
 sold) joins Who we are, after Art of Nations, and the search finds it ("gallery", "shop", "buy", "prints"). A search
 entry may now carry a full address. The Steward-General, 12 Nov 2026: "Add the gallery to the header and footer menus".
@@ -759,29 +764,78 @@ html:has(#pn-hd), html:has(#pn-hd) body{ overflow-x:clip; }
 })();
 </script>
 <script>
-/* Every link to another page opens in a new tab (the Steward-General, 9 Nov 2026: "open everything in a new tab").
-   Jumps within the page, email and phone links, downloads, links that already name a target and the WordPress
-   admin bar keep their own behaviour. Set once per page: the header and the footer both carry this script. */
+/* Perfect Nations opens in two tabs at most (the Steward-General, 15 Nov 2026: the logo opens the homepage in
+   the same tab, and new blueprints open in a new tab without too many tabs open). It replaces the rule of
+   9 Nov 2026 that opened every page in a new tab.
+   1. The site tab. The logo, the menu, the footer, the search and every page of the site open in the same tab.
+   2. The nation tab. A nation's blueprint, a U.S. state's blueprint and a Letter to a Nation open in one second
+      tab, named pn-nation. The next one opens in that same tab, in place of the last, and the Back button walks
+      back through them, so a visitor never has more than two Perfect Nations tabs.
+   3. Other websites (the sources, the Gallery shop) open in a new tab, and the site stays open behind them.
+   A visitor who Ctrl-, Cmd- or middle-clicks still gets a new tab. Jumps within the page, email and phone links,
+   downloads, links marked data-pn-same-tab and the WordPress admin bar keep their own behaviour. The rule covers
+   links that already name a target, and the pages' own scripts that open a blueprint (window.open), so no page
+   needs rebuilding. Set once per page: the header and the footer both carry this script. */
 (function(){
-  if (window.__pnNewTab) { return; }
-  window.__pnNewTab = 1;
+  if (window.__pnTabs) { return; }
+  window.__pnTabs = 1;
+  window.__pnNewTab = 1;   /* keeps the older script (header v20.4, footer v11.2 and before) switched off */
+  var NATION = 'pn-nation';
+  var SITE = /^(?:www\.)?perfectnations\.(?:com|org)$/i;
   function trim(p){ return String(p || '').replace(/\/+$/, ''); }
+  function ours(u){ return u.origin === window.location.origin || SITE.test(u.hostname); }
+  function nationPage(p){
+    return /^\/blueprints\/[^\/]+/.test(p) || /^\/50-states\/[^\/]+/.test(p) || /^\/dear-[a-z0-9-]+\/?$/.test(p);
+  }
+  /* where a link opens: '' (leave it alone), '_self', the nation tab, or '_blank' */
+  function where(u){
+    if (!/^https?:$/.test(u.protocol)) { return ''; }
+    if (!ours(u)) { return '_blank'; }
+    if (/^\/wp-(?:admin|login)/.test(u.pathname)) { return ''; }
+    return nationPage(u.pathname) ? NATION : '_self';
+  }
   document.addEventListener('click', function(e){
     if (e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) { return; }
     if (document.body && document.body.classList.contains('elementor-editor-active')) { return; }
     var a = e.target && e.target.closest ? e.target.closest('a[href]') : null;
-    if (!a || a.getAttribute('target') || a.hasAttribute('download') || a.hasAttribute('data-pn-same-tab') || a.closest('#wpadminbar')) { return; }
+    if (!a || a.hasAttribute('download') || a.hasAttribute('data-pn-same-tab') || a.closest('#wpadminbar')) { return; }
     var h = a.getAttribute('href') || '';
     if (!h || h.charAt(0) === '#' || /^(mailto|tel|sms|javascript):/i.test(h)) { return; }
     var u;
     try { u = new URL(h, window.location.href); } catch (x) { return; }
-    if (!/^https?:$/.test(u.protocol)) { return; }
     var here = window.location;
     if (u.hash && u.origin === here.origin && trim(u.pathname) === trim(here.pathname) && u.search === here.search) { return; }
-    a.setAttribute('target', '_blank');
+    var t = where(u);
+    if (!t || (t === '_blank' && a.getAttribute('target'))) { return; }
+    a.setAttribute('target', t);
     var rel = (a.getAttribute('rel') || '').split(/\s+/).filter(Boolean);
-    if (rel.indexOf('noopener') < 0) { rel.push('noopener'); }
-    a.setAttribute('rel', rel.join(' '));
+    if (t === NATION) {
+      /* the nation tab can be found again only if it was opened without noopener (it is the site's own page) */
+      rel = rel.filter(function(r){ return r !== 'noopener' && r !== 'noreferrer'; });
+    } else if (t === '_blank' && rel.indexOf('noopener') === -1) {
+      rel.push('noopener');
+    }
+    if (rel.length) { a.setAttribute('rel', rel.join(' ')); } else { a.removeAttribute('rel'); }
   }, true);
+  /* the pages' own scripts (the globe, the Nations menu, the search, the atlas) open blueprints with
+     window.open(url, '_blank'): the same rule applies to them */
+  var open = window.open;
+  if (typeof open === 'function' && !open.__pn) {
+    var routed = function(url, target, features){
+      try {
+        if (url && (!target || target === '_blank') && !features) {
+          var u = new URL(String(url), window.location.href), t = where(u);
+          if (t === NATION || t === '_self') {
+            var w = open.call(window, u.href, t);
+            if (w && t === NATION) { try { w.focus(); } catch (x) {} }
+            return w;
+          }
+        }
+      } catch (x) {}
+      return open.apply(window, arguments);
+    };
+    routed.__pn = 1;
+    window.open = routed;
+  }
 })();
 </script>
