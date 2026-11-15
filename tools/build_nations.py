@@ -99,7 +99,8 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 PAGES, DATA, HERE = ROOT / 'pages', ROOT / 'data', ROOT / 'tools' / 'nation'
-VERSION = '13.2'  # a slim band under the hero: the head of state, the head of government and the National Day, from data/nation-protocol.json (the Steward-General, 15 Nov 2026)
+VERSION = '13.3'  # the head of state's portrait is larger: 88 px on laptops, 72 px on phones, in a gold medallion (the Steward-General, 15 Nov 2026)
+# 13.2: a slim band under the hero: the head of state and the National Day, from data/nation-protocol.json (the Steward-General, 15 Nov 2026)
 # 13.1: the Solution card reads "18.6% of people" and "the United Kingdom" (the Steward-General, 15 Nov 2026)
 # 13.0: three more Solutions for every nation from data/more-solutions.json, one each from development banks, private investors and corporate partners, named on each card (the Steward-General, 15 Nov 2026)
 # 12.9: three more Solutions for the nation, stacked beside its lead Solution: title, challenge, advice and Discuss this Solution (the Steward-General, 14 Nov 2026)
@@ -568,7 +569,7 @@ def protocol_band(d, slug):
         if ok_https(src.get('url')):
             nm = '<a href="%s" target="_blank" rel="noopener noreferrer" title="Source: %s">%s</a>' % (ent(https(src['url'])), ent(src.get('label') or 'Source'), nm)
         pic = x.get('portrait') or ''
-        face = ('<span class="bpx-nd__ph"><img src="%s" alt="%s" width="44" height="44" loading="lazy" decoding="async"></span>' % (ent(https(pic)), ent(x['name']))
+        face = ('<span class="bpx-nd__ph"><img src="%s" alt="%s" width="88" height="88" loading="lazy" decoding="async"></span>' % (ent(https(pic)), ent(x['name']))
                 if ok_https(pic) else '<span class="bpx-nd__ph" aria-hidden="true">%s</span>' % ent(initials(x['name'])))
         return '<div class="bpx-nd__p">%s<span><small>%s</small><b>%s</b></span></div>' % (face, ent(x['title']), nm)
     cells = [who(hs)]
