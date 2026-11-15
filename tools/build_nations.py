@@ -99,7 +99,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 PAGES, DATA, HERE = ROOT / 'pages', ROOT / 'data', ROOT / 'tools' / 'nation'
-VERSION = '13.4'  # the National Day date tile and line are a little smaller: 76 px and 1.38rem on laptops, 56 px and 1.06rem on phones (the Steward-General, 15 Nov 2026)
+VERSION = '13.5'  # the head of state and the National Day on every blueprint, from the UN Protocol list and the diplomatic lists of National Days (the Steward-General, 15 Nov 2026)
 # 13.3: the head of state's portrait is larger (88 px laptops, 72 px phones), and the National Day mirrors it: an 88 px gold date tile at the far right, its name the same size as the head of state's (the Steward-General, 15 Nov 2026)
 # 13.2: a slim band under the hero: the head of state and the National Day, from data/nation-protocol.json (the Steward-General, 15 Nov 2026)
 # 13.1: the Solution card reads "18.6% of people" and "the United Kingdom" (the Steward-General, 15 Nov 2026)
@@ -549,8 +549,16 @@ def protocol(slug):
     return _PROTOCOL[0].get(slug) or {}
 
 
+# v13.5: words that are not part of a person's own name are left out of the initials
+NOT_NAME = {'The', 'King', 'Queen', 'Pope', 'Sultan', 'Sheikh', 'Prince', 'Princess', 'Emperor', 'General', 'Captain',
+            'Colonel', 'Marshal', 'Ratu', 'Al', 'Jr', 'Sr'}
+
+
 def initials(name):
-    w = [x for x in re.split(r'[\s-]+', plain(name)) if x and x[0].isalpha()]
+    """The first letters of the first and last words of a name: no Roman numerals (Charles III is C), no particles
+    (bin, da, de, van) and no honorifics."""
+    w = [x.strip('.,') for x in re.split(r'[\s-]+', plain(name))]
+    w = [x for x in w if x and x[0].isalpha() and x[0].isupper() and x not in NOT_NAME and not re.fullmatch(r'[IVXLC]+', x)]
     return (w[0][0] + (w[-1][0] if len(w) > 1 else '')).upper() if w else ''
 
 
@@ -563,28 +571,37 @@ def protocol_band(d, slug):
     pr = protocol(slug)
     nd = pr.get('national_day') or {}
     hs = pr.get('head_of_state') or {}
-    if not (hs.get('name') and hs.get('title')) or not (nd.get('month') and nd.get('day')):
+    if not (nd.get('month') and nd.get('day')):
         return ''
+    # v13.5: where no single head of state can be named from a primary source, the band shows the National Day only
+    solo = not (hs.get('name') and hs.get('title'))
     def who(x):
         src = x.get('source') or {}
         nm = ent(x['name'])
         if ok_https(src.get('url')):
             nm = '<a href="%s" target="_blank" rel="noopener noreferrer" title="Source: %s">%s</a>' % (ent(https(src['url'])), ent(src.get('label') or 'Source'), nm)
         pic = x.get('portrait') or ''
-        face = ('<span class="bpx-nd__ph"><img src="%s" alt="%s" width="88" height="88" loading="lazy" decoding="async"></span>' % (ent(https(pic)), ent(x['name']))
-                if ok_https(pic) else '<span class="bpx-nd__ph" aria-hidden="true">%s</span>' % ent(initials(x['name'])))
+        two = [n for n in (x.get('names') or []) if n][:2]
+        if ok_https(pic):
+            face = '<span class="bpx-nd__ph"><img src="%s" alt="%s" width="88" height="88" loading="lazy" decoding="async"></span>' % (ent(https(pic)), ent(x['name']))
+        elif len(two) == 2:
+            # v13.5: joint heads of state (Andorra, Nicaragua) share one medallion, one pair of initials each
+            face = '<span class="bpx-nd__ph bpx-nd__ph--two" aria-hidden="true"><i>%s</i><i>%s</i></span>' % (ent(initials(two[0])), ent(initials(two[1])))
+        else:
+            face = '<span class="bpx-nd__ph" aria-hidden="true">%s</span>' % ent(initials(x['name']))
         return '<div class="bpx-nd__p">%s<span><small>%s</small><b>%s</b></span></div>' % (face, ent(x['title']), nm)
-    cells = [who(hs)]
+    cells = [] if solo else [who(hs)]
     src = nd.get('source') or {}
     day = '%d %s' % (nd['day'], MONTH[nd['month'] - 1])
     when = ('<a href="%s" target="_blank" rel="noopener noreferrer" title="Source: %s">%s</a>' % (ent(https(src['url'])), ent(src.get('label') or 'Source'), ent(day))
             if ok_https(src.get('url')) else ent(day))
     label = ent(nd.get('name_en') or 'National Day')
     local = (' &#183; <span%s>%s</span>' % ((' lang="%s"' % ent(nd['lang'])) if nd.get('lang') else '', ent(nd['name']))) if nd.get('name') and nd.get('name') != nd.get('name_en') else ''
-    return ('<section class="bpx-nd" id="bp-nd" aria-label="%s: its head of state and its National Day" data-m="%d" data-d="%d" data-greet="%s">'
+    return ('<section class="bpx-nd%s" id="bp-nd" aria-label="%s: %s" data-m="%d" data-d="%d" data-greet="%s">'
             '<div class="bpx-in">%s<div class="bpx-nd__d"><span class="bpx-nd__cal" aria-hidden="true"><b>%d</b><small>%s</small></span>'
             '<span class="bpx-nd__t"><small>%s</small><b>%s%s</b><span class="bpx-nd__c" id="bp-nd-c" hidden></span></span></div></div></section>'
-            % (ent(d['nation']), nd['month'], nd['day'], ent(nd.get('greeting') or ''), ''.join(cells),
+            % (' bpx-nd--day' if solo else '', ent(d['nation']), 'its National Day' if solo else 'its head of state and its National Day',
+               nd['month'], nd['day'], ent(nd.get('greeting') or ''), ''.join(cells),
                nd['day'], MON[nd['month'] - 1], label, when, local))
 
 
