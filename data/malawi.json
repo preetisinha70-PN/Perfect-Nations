@@ -1,7 +1,7 @@
 {
   "nation": "Malawi",
   "page_version": "9.0",
-  "updated": "2026-11-12",
+  "updated": "2026-11-15",
   "steward": {
     "name": "Chikondi Phiri",
     "role": "Nation Steward of Malawi"
@@ -19,20 +19,20 @@
         "label": "Mbuna fish species in the lake"
       },
       {
-        "value": "80.1%",
-        "label": "Renewable share of electricity output"
+        "value": "79%",
+        "label": "Of electricity from renewables, 2023"
       }
     ]
   },
   "capital": {
-    "heading": "12 instruments. Hydropower, electricity and clean cooking, irrigation, schools, councils, and finance that arrives with the disaster.",
+    "heading": "18 instruments. Hydropower, electricity and clean cooking, water, irrigation, safety nets, schools, councils, and finance that arrives with the disaster.",
     "record": [
       {
-        "value": "88%",
+        "value": "90.9%",
         "money": false,
-        "text": "Total public debt, percent of GDP, end 2024; the IMF calls the debt outlook unsustainable",
-        "source": "IMF, 2025",
-        "url": "https://www.imf.org/en/news/articles/2025/07/22/pr25261-malawi-imf-executive-board-concludes-2025-article-iv-consultation"
+        "text": "Public debt stock, percent of GDP, December 2025: K23.9 trillion, 65 percent of it domestic",
+        "source": "Ministry of Finance, 2026",
+        "url": "https://www.finance.gov.mw/documents/uploads/2026-03/Doc%201_2026-27%20Budget%20Policy%20Statement_0.pdf"
       },
       {
         "value": "$350M",
@@ -67,6 +67,38 @@
       {
         "cat": "multi",
         "status": "Approved",
+        "tone": "granted",
+        "name": "Integrated Social Protection for Resilience and Opportunity Project (INSPIRE-O)",
+        "detail": "Announced 17 September 2026 · Grant · IDA $110 million · Malawi Social Protection Multi-Donor Trust Fund $46.7 million · Global Shield Financing Facility $9.2 million",
+        "amount": "$165.9M",
+        "money": true,
+        "note": "Safety nets and public works in all 25 districts and four cities",
+        "text": "Expands adaptive safety nets built on the Social Cash Transfer Program, pays for climate-smart, labour-intensive public works, and upgrades the social registry, management information system and digital payments. Extra drought-responsive financing targets the 10 most drought-prone districts, in a nation where 81.6% of people are moderately or severely food insecure (FAO, 2024).",
+        "by": [
+          "World Bank",
+          "Malawi Social Protection Multi-Donor Trust Fund",
+          "Global Shield Financing Facility"
+        ],
+        "url": "https://www.worldbank.org/en/news/press-release/2026/09/17/malawi-world-bank-grant-financing-to-improve-resilience-to-climate"
+      },
+      {
+        "cat": "multi",
+        "status": "Approved",
+        "tone": "active",
+        "name": "Transforming High-potential Resilient Value Chains (M-THRiVE)",
+        "detail": "Approved 6 May 2026 · IDA · P508803",
+        "amount": "$50M",
+        "money": true,
+        "note": "High-potential, resilient value chains",
+        "text": "An IDA operation for high-potential, resilient value chains, approved on 6 May 2026. Value chains are where farm work becomes income, in a nation where 75.4% of people live below US$3.00 a day (World Bank, 2019).",
+        "by": [
+          "World Bank"
+        ],
+        "url": "https://financesone.worldbank.org/countries/Malawi"
+      },
+      {
+        "cat": "multi",
+        "status": "Approved",
         "tone": "active",
         "name": "Governance to Enable Service Delivery Project (GESD 2.0)",
         "detail": "Announced 24 April 2026 · IDA grant",
@@ -78,6 +110,21 @@
           "World Bank"
         ],
         "url": "https://www.worldbank.org/en/news/press-release/2026/04/24/malawi-world-bank-group-approves-grant-financing-to-strengthen-local-governance-and-improve-public-services"
+      },
+      {
+        "cat": "multi",
+        "status": "Approved",
+        "tone": "active",
+        "name": "Resilient and Strategic Transport Operational Enhancement Project (RESTORE)",
+        "detail": "Approved 4 September 2025 · IDA · P500625",
+        "amount": "$65M",
+        "money": true,
+        "note": "A more resilient strategic transport network",
+        "text": "An IDA transport operation, approved on 4 September 2025, to make Malawi’s strategic transport network more resilient and better run. A landlocked nation depends on its roads and corridors for food, fuel and medicines.",
+        "by": [
+          "World Bank"
+        ],
+        "url": "https://financesone.worldbank.org/countries/Malawi"
       },
       {
         "cat": "multi",
@@ -232,19 +279,65 @@
         "url": "https://allafrica.com/stories/202606230799.html"
       },
       {
+        "cat": "regional",
+        "status": "Approved",
+        "tone": "granted",
+        "name": "Rehabilitation of the Kapichira I and Nkula B Hydropower Plants",
+        "detail": "Announced 9 December 2025 · African Development Fund grant · Kapichira I 64 MW · Nkula B 100 MW · Initiative of $118.7 million",
+        "amount": "$22.9M",
+        "money": true,
+        "note": "Annual generation from 916 to 1,426 GWh",
+        "text": "Rehabilitates Kapichira I in Chikwawa District and Nkula B, built in 1966, extending their operating life from 22 to 47 years and raising their annual generation from 916 to 1,426 GWh. Energy is the standard that sets Malawi’s Coverage.",
+        "by": [
+          "African Development Bank"
+        ],
+        "url": "https://allafrica.com/stories/202512100631.html"
+      },
+      {
+        "cat": "regional",
+        "status": "Signed",
+        "tone": "active",
+        "name": "Water-Energy Framework Loan Malawi",
+        "detail": "Approved 9 July 2024 · Signed 23 July 2025 · €90 million and €30 million · EU investment grants",
+        "amount": "€120M",
+        "money": true,
+        "note": "Solar pumping, storage and kiosks for the four water boards",
+        "text": "Finances investments by the Lilongwe, Central Region, Northern Region and Southern Region Water Boards: pumps powered mainly by solar plants, more storage, water kiosks and house connections in low-income areas, and SCADA systems and better meter reading. Only 18.2% of Malawians have safely managed drinking water (WHO/UNICEF, 2024).",
+        "by": [
+          "European Investment Bank",
+          "European Commission"
+        ],
+        "url": "https://www.eib.org/en/projects/all/20220718"
+      },
+      {
         "cat": "private",
         "status": "Signed",
         "tone": "active",
-        "name": "IFC loan to Illovo Sugar Malawi",
-        "detail": "Announced 7 November 2025 · Kwacha-linked loan · IDA Private Sector Window Local Currency Facility",
-        "amount": "$36M",
+        "name": "Sustainable Agriculture Malawi: EIB loan to Centenary Bank for MSMEs",
+        "detail": "Signed 3 June 2026 · Up to €15 million proposed · Long-tenor funding and technical assistance",
+        "amount": "€7.5M",
         "money": true,
-        "note": "Irrigation at the Nchalo Sugar Estate",
-        "text": "Upgrades bulk irrigation at Nchalo and links the estate to the main canal of the Shire Valley Transformation Program, saving about 34 million cubic metres of water a year. Illovo employs more than 10,000 people directly and about 5,000 more through its supply chain.",
+        "note": "Half for women-led businesses, half for sustainable agriculture",
+        "text": "Funds on-lending by Centenary Bank Malawi to micro and small enterprises with fewer than 10 employees. Half of the funds go to women-owned or women-led businesses, and half to enterprises in sustainable agriculture.",
+        "by": [
+          "European Investment Bank"
+        ],
+        "url": "https://www.eib.org/en/projects/all/20240001"
+      },
+      {
+        "cat": "private",
+        "status": "Invested",
+        "tone": "active",
+        "name": "IFC loan to Illovo Sugar Malawi",
+        "detail": "Approved 16 April 2025 · Signed 18 September 2025 · Invested 22 January 2026 · Local-currency-linked, 8 years · IDA Private Sector Window hedging",
+        "amount": "Up to $81M",
+        "money": true,
+        "note": "Phase 1 $36 million for irrigation at Nchalo; Phase 2 $45 million for the mill",
+        "text": "Phase 1 upgrades bulk irrigation at the Nchalo Sugar Estate and connects it to the World Bank’s Shire Valley Transformation Program; Phase 2 replaces a boiler and removes bottlenecks in the sugar mill. The loan offers local-currency-linked terms otherwise unavailable in Malawi, with hedging from the IDA Private Sector Window.",
         "by": [
           "IFC"
         ],
-        "url": "https://www.ifc.org/en/pressroom/2025/ifc-partners-with-illovo-sugar-malawi-to-drive-sustainable-agriculture-and-job-cre"
+        "url": "https://disclosures.ifc.org/project-detail/SII/49377/illovo-malawi"
       }
     ]
   },
@@ -268,9 +361,9 @@
       },
       {
         "name": "The Shire River",
-        "figure": "80.1%",
+        "figure": "79%",
         "money": false,
-        "label": "Renewable share of electricity output, 2021",
+        "label": "Of electricity from renewables, 2023, IRENA",
         "text": "Clean power, reaching 15.6% of citizens. The gap is the grid, not the source.",
         "alt": "The Shire River and its hydropower",
         "images": [
@@ -337,6 +430,27 @@
         "text": "A sugar producer whose estates include Nchalo in the Shire Valley, employing more than 10,000 people directly and about 5,000 more through its supply chain. IFC lent it US$36 million in 2025 to upgrade irrigation.",
         "source": "IFC, 2025",
         "url": "https://www.ifc.org/en/pressroom/2025/ifc-partners-with-illovo-sugar-malawi-to-drive-sustainable-agriculture-and-job-cre"
+      },
+      {
+        "standard": "Shelter",
+        "name": "Habitat for Humanity Malawi",
+        "text": "Working in Malawi since 1986, it has partnered with almost 133,600 families to reach decent housing, and builds homes, sanitation and water facilities for vulnerable rural families, with a Blantyre centre that trains young people in construction.",
+        "source": "Habitat for Humanity, FY2025",
+        "url": "https://www.habitat.org/sites/default/files/Malawi_Country_profile%20FY25%201.pdf"
+      },
+      {
+        "standard": "Education",
+        "name": "Imagine Worldwide (BEFIT)",
+        "text": "A non-profit partner of BEFIT, the Government of Malawi’s programme of solar-powered tablets for foundational learning in public primary schools: 811,500 students and 1,088 schools reached, and 18,000 teachers trained.",
+        "source": "Imagine Worldwide, 2026",
+        "url": "https://imagineworldwide.org/our-work/malawi"
+      },
+      {
+        "standard": "Health",
+        "name": "Mwaiwathu Private Hospital",
+        "text": "A private hospital in Blantyre, rated five stars in 2025 under the Ministry of Health and Sanitation’s Step Wise Quality Improvement Programme, up from three stars in 2024.",
+        "source": "The Nation, 2025",
+        "url": "https://mwnation.com/mwaiwathu-blantyre-adventist-hospitals-get-5-star-ratings/"
       },
       {
         "standard": "Livelihood",
@@ -480,5 +594,5 @@
   ],
   "dispatches": [],
   "checked": "2026-11-12T20:22Z",
-  "reviewed": "2026-11-09T00:18Z"
+  "reviewed": "2026-11-15T07:29Z"
 }
