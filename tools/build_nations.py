@@ -99,7 +99,8 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 PAGES, DATA, HERE = ROOT / 'pages', ROOT / 'data', ROOT / 'tools' / 'nation'
-VERSION = '13.3'  # the head of state's portrait is larger (88 px laptops, 72 px phones), and the National Day mirrors it: an 88 px gold date tile at the far right, its name the same size as the head of state's (the Steward-General, 15 Nov 2026)
+VERSION = '13.4'  # the National Day date tile and line are a little smaller: 76 px and 1.38rem on laptops, 56 px and 1.06rem on phones (the Steward-General, 15 Nov 2026)
+# 13.3: the head of state's portrait is larger (88 px laptops, 72 px phones), and the National Day mirrors it: an 88 px gold date tile at the far right, its name the same size as the head of state's (the Steward-General, 15 Nov 2026)
 # 13.2: a slim band under the hero: the head of state and the National Day, from data/nation-protocol.json (the Steward-General, 15 Nov 2026)
 # 13.1: the Solution card reads "18.6% of people" and "the United Kingdom" (the Steward-General, 15 Nov 2026)
 # 13.0: three more Solutions for every nation from data/more-solutions.json, one each from development banks, private investors and corporate partners, named on each card (the Steward-General, 15 Nov 2026)
@@ -557,7 +558,8 @@ def protocol_band(d, slug):
     """v13.2 (the Steward-General, 15 Nov 2026): a slim band under the hero. One person only, the head of state (with
     the official portrait once the Steward-General supplies one, else the initials), and the National Day with a live
     count of the days to it. The name and the date link to their primary source. The Blueprints Steward checks the
-    head of state every day and updates data/nation-protocol.json, and this band, the day the head of state changes."""
+    head of state once a month, and again 15 days before the National Day, and updates data/nation-protocol.json, and
+    this band, when the head of state changes."""
     pr = protocol(slug)
     nd = pr.get('national_day') or {}
     hs = pr.get('head_of_state') or {}
