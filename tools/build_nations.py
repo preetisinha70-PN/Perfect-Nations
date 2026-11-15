@@ -99,7 +99,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 PAGES, DATA, HERE = ROOT / 'pages', ROOT / 'data', ROOT / 'tools' / 'nation'
-VERSION = '13.5'  # the head of state and the National Day on every blueprint, from the UN Protocol list and the diplomatic lists of National Days (the Steward-General, 15 Nov 2026)
+VERSION = '13.6'  # official portraits from the Media Library on the head-of-state band, each with its photo credit (the Steward-General, 15 Nov 2026)
 # 13.3: the head of state's portrait is larger (88 px laptops, 72 px phones), and the National Day mirrors it: an 88 px gold date tile at the far right, its name the same size as the head of state's (the Steward-General, 15 Nov 2026)
 # 13.2: a slim band under the hero: the head of state and the National Day, from data/nation-protocol.json (the Steward-General, 15 Nov 2026)
 # 13.1: the Solution card reads "18.6% of people" and "the United Kingdom" (the Steward-General, 15 Nov 2026)
@@ -582,14 +582,23 @@ def protocol_band(d, slug):
             nm = '<a href="%s" target="_blank" rel="noopener noreferrer" title="Source: %s">%s</a>' % (ent(https(src['url'])), ent(src.get('label') or 'Source'), nm)
         pic = x.get('portrait') or ''
         two = [n for n in (x.get('names') or []) if n][:2]
+        credit = ''
         if ok_https(pic):
-            face = '<span class="bpx-nd__ph"><img src="%s" alt="%s" width="88" height="88" loading="lazy" decoding="async"></span>' % (ent(https(pic)), ent(x['name']))
+            # v13.6: an official portrait supplied by the Steward-General, with its credit (and licence) under the name
+            focus = x.get('portrait_focus') or ''
+            style = (' style="object-position:%s"' % ent(focus)) if re.fullmatch(r'\d{1,3}% \d{1,3}%', focus) else ''
+            face = '<span class="bpx-nd__ph"><img src="%s" alt="%s" width="88" height="88" loading="lazy" decoding="async"%s></span>' % (ent(https(pic)), ent(x['name']), style)
+            if x.get('portrait_credit'):
+                lic = x.get('portrait_licence') or {}
+                credit = '<em class="bpx-nd__cr">Photo: %s%s</em>' % (ent(x['portrait_credit']), (
+                    ' (<a href="%s" target="_blank" rel="noopener noreferrer license">%s</a>)' % (ent(https(lic['url'])), ent(lic.get('label') or 'licence'))
+                    if ok_https(lic.get('url')) else ''))
         elif len(two) == 2:
             # v13.5: joint heads of state (Andorra, Nicaragua) share one medallion, one pair of initials each
             face = '<span class="bpx-nd__ph bpx-nd__ph--two" aria-hidden="true"><i>%s</i><i>%s</i></span>' % (ent(initials(two[0])), ent(initials(two[1])))
         else:
             face = '<span class="bpx-nd__ph" aria-hidden="true">%s</span>' % ent(initials(x['name']))
-        return '<div class="bpx-nd__p">%s<span><small>%s</small><b>%s</b></span></div>' % (face, ent(x['title']), nm)
+        return '<div class="bpx-nd__p">%s<span><small>%s</small><b>%s</b>%s</span></div>' % (face, ent(x['title']), nm, credit)
     cells = [] if solo else [who(hs)]
     src = nd.get('source') or {}
     day = '%d %s' % (nd['day'], MONTH[nd['month'] - 1])

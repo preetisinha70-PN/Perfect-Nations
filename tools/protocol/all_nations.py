@@ -265,6 +265,20 @@ NOTES = {
     'venezuela': 'The UN Protocol list gives an Acting President; check monthly.',
 }
 
+# Official portraits uploaded to the Media Library by the Steward-General (named pn-hos-<slug>). The band uses the
+# WordPress "medium" size (about 300 px tall) and crops it to a circle. Only a portrait whose credit and licence are
+# known is listed; each credit shows under the name. Never take a photograph of a head of state from the web.
+UP = 'https://perfectnations.com/wp-content/uploads/2026/11/'
+CC_BY_SA_3 = {'label': 'CC BY-SA 3.0', 'url': 'https://creativecommons.org/licenses/by-sa/3.0/'}
+CC_BY_4 = {'label': 'CC BY 4.0', 'url': 'https://creativecommons.org/licenses/by/4.0/'}
+PORTRAITS = {
+    'rwanda': (UP + 'pn-hos-rwanda-232x300.jpg', 'Maayan Toaf, Government Press Office of Israel', CC_BY_SA_3),
+    'brazil': (UP + 'pn-hos-brazil-272x300.jpg', 'Ricardo Stuckert, Presidency of Brazil', None),
+    'kenya': (UP + 'pn-hos-kenya-237x300.jpg', 'Government of Kenya', None),
+    'cote-divoire': (UP + 'pn-hos-cote-divoire-200x300.jpg', 'Dario Pignatelli, European Union', None),
+    'ukraine': (UP + 'pn-hos-ukraine-222x300.jpg', 'President.gov.ua', CC_BY_4),
+}
+
 GREET = {
     'Naadam': 'Happy Naadam',
     'The Emperor’s Birthday': 'Felicitations on the Emperor’s Birthday',
@@ -312,7 +326,12 @@ def main():
             continue
         r = table[slug]
         cur = nations.get(slug, {})
-        hs = {'title': r['title'], 'name': r['name'], 'portrait': (cur.get('head_of_state') or {}).get('portrait', '')}
+        hs = {'title': r['title'], 'name': r['name'], 'portrait': ''}
+        if slug in PORTRAITS:
+            url, credit, licence = PORTRAITS[slug]
+            hs['portrait'], hs['portrait_credit'] = url, credit
+            if licence:
+                hs['portrait_licence'] = licence
         if r['name'] and ' and ' in r['name'] and slug in ('andorra', 'nicaragua'):
             hs['names'] = r['name'].split(' and ')
         if r['hsrc']:
