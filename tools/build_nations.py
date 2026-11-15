@@ -99,7 +99,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 PAGES, DATA, HERE = ROOT / 'pages', ROOT / 'data', ROOT / 'tools' / 'nation'
-VERSION = '13.5'  # the head of state and the National Day on every blueprint, from the UN Protocol list and the diplomatic lists of National Days (the Steward-General, 15 Nov 2026)
+VERSION = '13.7'  # the band shows the elected leader (the prime minister where the head of state is a monarch or a ceremonial president); Co-design buttons open the Contact page (the Steward-General, 15 Nov 2026)
 # 13.3: the head of state's portrait is larger (88 px laptops, 72 px phones), and the National Day mirrors it: an 88 px gold date tile at the far right, its name the same size as the head of state's (the Steward-General, 15 Nov 2026)
 # 13.2: a slim band under the hero: the head of state and the National Day, from data/nation-protocol.json (the Steward-General, 15 Nov 2026)
 # 13.1: the Solution card reads "18.6% of people" and "the United Kingdom" (the Steward-General, 15 Nov 2026)
@@ -551,7 +551,7 @@ def protocol(slug):
 
 # v13.5: words that are not part of a person's own name are left out of the initials
 NOT_NAME = {'The', 'King', 'Queen', 'Pope', 'Sultan', 'Sheikh', 'Prince', 'Princess', 'Emperor', 'General', 'Captain',
-            'Colonel', 'Marshal', 'Ratu', 'Al', 'Jr', 'Sr'}
+            'Colonel', 'Marshal', 'Ratu', 'Lord', 'Al', 'Jr', 'Sr'}
 
 
 def initials(name):
@@ -570,7 +570,10 @@ def protocol_band(d, slug):
     this band, when the head of state changes."""
     pr = protocol(slug)
     nd = pr.get('national_day') or {}
-    hs = pr.get('head_of_state') or {}
+    # v13.7 (the Steward-General, 15 Nov 2026): the band shows the nation's elected leader. Where the head of state is a
+    # monarch or a ceremonial president and a prime minister runs the government, `leader` names the prime minister;
+    # elsewhere the head of state is the leader. Rulers who are not elected stay as they are.
+    hs = pr.get('leader') or pr.get('head_of_state') or {}
     if not (nd.get('month') and nd.get('day')):
         return ''
     # v13.5: where no single head of state can be named from a primary source, the band shows the National Day only
@@ -582,14 +585,23 @@ def protocol_band(d, slug):
             nm = '<a href="%s" target="_blank" rel="noopener noreferrer" title="Source: %s">%s</a>' % (ent(https(src['url'])), ent(src.get('label') or 'Source'), nm)
         pic = x.get('portrait') or ''
         two = [n for n in (x.get('names') or []) if n][:2]
+        credit = ''
         if ok_https(pic):
-            face = '<span class="bpx-nd__ph"><img src="%s" alt="%s" width="88" height="88" loading="lazy" decoding="async"></span>' % (ent(https(pic)), ent(x['name']))
+            # v13.6: an official portrait supplied by the Steward-General, with its credit (and licence) under the name
+            focus = x.get('portrait_focus') or ''
+            style = (' style="object-position:%s"' % ent(focus)) if re.fullmatch(r'\d{1,3}% \d{1,3}%', focus) else ''
+            face = '<span class="bpx-nd__ph"><img src="%s" alt="%s" width="88" height="88" loading="lazy" decoding="async"%s></span>' % (ent(https(pic)), ent(x['name']), style)
+            if x.get('portrait_credit'):
+                lic = x.get('portrait_licence') or {}
+                credit = '<em class="bpx-nd__cr">Photo: %s%s</em>' % (ent(x['portrait_credit']), (
+                    ' (<a href="%s" target="_blank" rel="noopener noreferrer license">%s</a>)' % (ent(https(lic['url'])), ent(lic.get('label') or 'licence'))
+                    if ok_https(lic.get('url')) else (' (%s)' % ent(lic['label']) if lic.get('label') else '')))
         elif len(two) == 2:
             # v13.5: joint heads of state (Andorra, Nicaragua) share one medallion, one pair of initials each
             face = '<span class="bpx-nd__ph bpx-nd__ph--two" aria-hidden="true"><i>%s</i><i>%s</i></span>' % (ent(initials(two[0])), ent(initials(two[1])))
         else:
             face = '<span class="bpx-nd__ph" aria-hidden="true">%s</span>' % ent(initials(x['name']))
-        return '<div class="bpx-nd__p">%s<span><small>%s</small><b>%s</b></span></div>' % (face, ent(x['title']), nm)
+        return '<div class="bpx-nd__p">%s<span><small>%s</small><b>%s</b>%s</span></div>' % (face, ent(x['title']), nm, credit)
     cells = [] if solo else [who(hs)]
     src = nd.get('source') or {}
     day = '%d %s' % (nd['day'], MONTH[nd['month'] - 1])
@@ -600,7 +612,7 @@ def protocol_band(d, slug):
     return ('<section class="bpx-nd%s" id="bp-nd" aria-label="%s: %s" data-m="%d" data-d="%d" data-greet="%s">'
             '<div class="bpx-in">%s<div class="bpx-nd__d"><span class="bpx-nd__cal" aria-hidden="true"><b>%d</b><small>%s</small></span>'
             '<span class="bpx-nd__t"><small>%s</small><b>%s%s</b><span class="bpx-nd__c" id="bp-nd-c" hidden></span></span></div></div></section>'
-            % (' bpx-nd--day' if solo else '', ent(d['nation']), 'its National Day' if solo else 'its head of state and its National Day',
+            % (' bpx-nd--day' if solo else '', ent(d['nation']), 'its National Day' if solo else 'its leader and its National Day',
                nd['month'], nd['day'], ent(nd.get('greeting') or ''), ''.join(cells),
                nd['day'], MON[nd['month'] - 1], label, when, local))
 
@@ -1068,8 +1080,11 @@ def one_line(s):
 
 def work(d, p):
     name, slug = d['nation'], p['slug']
-    co = mailto('Becoming a Co-designer of Perfect %s' % name,
-                'Your name:\r\nWhere you live:\r\nHow you would like to contribute (writing, a voice for the podcast, an enterprise, your expertise):\r\n')
+    # v13.7 (the Steward-General, 15 Nov 2026): every button of Co-design it with us opens the Contact page with its
+    # intent and the nation filled in, as the other buttons on the blueprint do, never the visitor's email app
+    def contact(about):
+        return https('https://perfectnations.com/contact/?about=%s&country=%s' % (about, urllib.parse.quote(name, safe='')))
+    co = contact('codesigner')
     moves = ''.join('<li><b>%02d</b>%s</li>' % (i + 1, ent(m)) for i, m in enumerate(MOVES))
     tiers = []
     for t, (k, dur, title, line, leave, cta) in enumerate(TIERS):
@@ -1085,10 +1100,7 @@ def work(d, p):
             '<a class="bpx-btn%s" href="%s" target="_blank" rel="noopener noreferrer">%s</a></li>'
             % (' bpx-tier--top' if t == 2 else '', k, dur, title, line, leave, title, mv, '' if t == 2 else ' bpx-btn--line',
                ent(https('https://perfectnations.com/contact/?about=%s&country=%s' % (('briefing', 'lab', 'commission')[t], urllib.parse.quote(name, safe='')))), cta))
-    wx_mail = mailto('Writing for Perfect %s' % name,
-                     'Your name, or a pen name:\r\nWhere you live:\r\nTitle:\r\n\r\nYour vision of Perfect %s, and the economic solutions to achieve it (up to 1,500 words):\r\n\r\n\r\n'
-                     'I confirm that this is my own original writing, and I give Perfect Nations permission to publish it with credit to me.\r\n' % name)
-    nation_q = urllib.parse.quote(slug)
+    wx_mail = contact('writing')
     return (
         '<section class="bpx-band bpx-er bpx-work" id="bp-studio" aria-labelledby="bp-entry-h"><div class="bpx-in">'
         '<div class="bpx-head"><div><p class="bpx-eb">Work with us &#183; The ReDesign Studio</p>'
@@ -1100,18 +1112,18 @@ def work(d, p):
         '<div class="bpx-co3"><div class="bpx-co3__top"><h3 class="bpx-co3__h">Co-design it with us</h3><p>%s</p></div><p class="bpx-swipe" aria-hidden="true">Swipe for three ways in</p><ul class="bpx-co3__l bpx-rail">'
         '<li id="bp-writings"><p class="bpx-co3__k">Writings</p><h4>Write Perfect %s into being.</h4>'
         '<p>Up to 1,500 words on your vision of Perfect %s, published with your name.</p>'
-        '<a class="bpx-btn bpx-btn--line" href="%s">Submit your writing</a></li>'
+        '<a class="bpx-btn bpx-btn--line" href="%s" target="_blank" rel="noopener noreferrer">Submit your writing</a></li>'
         '<li id="bp-voices"><p class="bpx-co3__k">Voices of Perfect Nations <span class="bpx-air"><i aria-hidden="true"></i>Launching soon</span></p>'
         '<h4 id="bp-voices-h">The local leaders already building Perfect %s.</h4>'
         '<p>Great local leaders: honest, dedicated and committed to basic standards of living for all. Every guest answers one question: &#8220;What does %s already own, and how could it pay for a decent life for every citizen?&#8221;</p>'
-        '<div class="bpx-btns"><a class="bpx-btn bpx-btn--line" href="https://perfectnations.com/contact/?nation=%s&amp;topic=nominate-self" target="_blank" rel="noopener noreferrer">Nominate yourself</a>'
-        '<a class="bpx-btn bpx-btn--line" href="https://perfectnations.com/contact/?nation=%s&amp;topic=guest" target="_blank" rel="noopener noreferrer">Suggest a guest</a></div></li>'
+        '<div class="bpx-btns"><a class="bpx-btn bpx-btn--line" href="%s" target="_blank" rel="noopener noreferrer">Nominate yourself</a>'
+        '<a class="bpx-btn bpx-btn--line" href="%s" target="_blank" rel="noopener noreferrer">Suggest a guest</a></div></li>'
         '<li><p class="bpx-co3__k">Co-designers</p><h4>Join the community.</h4><p>%s</p>'
-        '<a class="bpx-btn bpx-btn--line" href="%s">Become a Co-designer</a></li></ul></div>'
+        '<a class="bpx-btn bpx-btn--line" href="%s" target="_blank" rel="noopener noreferrer">Become a Co-designer</a></li></ul></div>'
         '</div></section>'
         % (ent(name), ent(name), more('<p class="bpx-terms">%s</p>' % ent(p['mandates']['terms']), 'who the mandates are for, and how scope and fees are agreed'),
            moves, ''.join(tiers), ent(p['people']),
-           ent(name), ent(name), ent(wx_mail), ent(name), ent(name), nation_q, nation_q, raw(codesigner(p['codesigner'])), ent(co)))
+           ent(name), ent(name), ent(wx_mail), ent(name), ent(name), ent(contact('voices')), ent(contact('guest')), raw(codesigner(p['codesigner'])), ent(co)))
 
 
 def firms(d):
@@ -1134,11 +1146,11 @@ def firms(d):
         '<div class="bpx-ent__h"><div><h2 class="bpx-ent__t" id="bp-ent-h">%s</h2>'
         '<p class="bpx-ent__l">Independent firms and social enterprises already at work in %s, highlighted by Perfect Nations. '
         'None is a partner of Perfect Nations.</p></div>'
-        '<a class="bpx-link" href="%s">Suggest an enterprise</a></div>'
+        '<a class="bpx-link" href="%s" target="_blank" rel="noopener noreferrer">Suggest an enterprise</a></div>'
         '<p class="bpx-swipe" aria-hidden="true">Swipe for every enterprise</p><ul class="bpx-ents bpx-rail">%s</ul>'
         '</div></section>'
         % (ent(e.get('heading') or 'Already working in %s.' % name), ent(name),
-           ent(mailto('An enterprise already at work in %s' % name)), ents))
+           ent(https('https://perfectnations.com/contact/?about=enterprise&country=%s' % urllib.parse.quote(name, safe=''))), ents))
 
 
 # The second Nation Portrait, the flag edition (painted 31 October 2026; the Steward-General, 8 Nov 2026: "a
