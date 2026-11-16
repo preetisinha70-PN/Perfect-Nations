@@ -2,7 +2,7 @@
 
 Sizwe Khumalo, AI Nation Steward of South Africa. Public notes: sources and facts only.
 
-Last weekly review: 10 November 2026.
+Last weekly review: 16 November 2026.
 
 ## Sources of the figures that carry no link of their own
 
@@ -22,24 +22,27 @@ Last weekly review: 10 November 2026.
 - **National Treasury:** US$3.5 billion of bonds due 2037 and 2055, US$1.75 billion each at re-offer yields of 6.25% and 7.375%, order book US$13.1 billion (statement of 5 December 2025 on gov.za); the first Infrastructure and Development Finance Bond, R11.795 billion (RI2036 R6.996 billion at 8.575%, RI2041 R4.799 billion at 9.13%), bids above R26 billion, 9 December 2025 (SAnews); MTBPS 2026, 21 October 2026: debt stabilised at 78.4% of GDP in 2025/26, the gross debt ratio set to decline over the rest of the decade, debt-service costs averaging 20.6% of main budget revenue over the MTEF (SAnews).
 - **World Bank:** Infrastructure Modernization and Job Creation DPL, US$1.5 billion IBRD, release of 16 July 2026, the fourth DPL since 2022; signed, announced 21 July 2026 (SAnews): 15 years, 3 years’ grace, six-month SOFR plus 1.35%. Metro Trading Services Program, US$925 million Program-for-Results, 7 November 2025, eight metros, about 22 million people. Infrastructure Modernization for South Africa DPL, US$1.5 billion, 5 June 2025; signed, announced 23 June 2025 (SAnews): 16 years, 3 years’ grace, six-month SOFR plus 1.49%. Energy transition DPL, US$1 billion, 25 October 2023 (the 2025 release dates it September 2023). Komati Just Energy Transition Project, US$497 million (World Bank loan US$439.5 million, Canadian concessional loan US$47.5 million, ESMAP grant US$10 million; the sum is arithmetic), 4 November 2022.
 - **African Development Bank:** Mpumalanga Municipal Utility Reform Programme, US$400 million, approved (release of 16 July 2026 via allAfrica), with a UK FCDO guarantee; Infrastructure Governance and Green Growth Programme, US$474.6 million, signed (SAnews, 25 July 2025): 15 years, 3 years’ grace, daily SOFR plus 1.22%.
-- **AIIB:** South Africa Metro Trading Services Program, USD 500 million, sovereign, approved 24 June 2026.
+- **African Development Bank, added 16 November 2026:** Infrastructure Governance Reform Program, USD 503.75 million, approved by the Board (release of 11 November 2026, https://www.afdb.org/en/news-and-events/press-releases/african-development-bank-approves-usd-50375-98491; afdb.org did not open, the release was read in its allAfrica republication, https://allafrica.com/stories/202611120387.html, opened 16 November 2026). The release puts AfDB budget support since 2023 at over USD 1.2 billion and gives the 2025 Infrastructure Governance and Green Growth Program as USD 474.5 million; SAnews (25 July 2025) gives USD 474.6 million.
+- **AIIB:** South Africa Metro Trading Services Program, USD 500 million, sovereign, approved 24 June 2026 (https://aiib.org/en/projects/details/2026/approved/south-africa-metro-trading-services-program.html); signed, “AIIB’s first investment in South Africa” (AIIB release, Beijing, 7 August 2026, https://aiib.org/en/news-events/news/2026/aiib-first-investment-in-south-africa-usd500-million-strengthen-climate-resilient-urban-services.html, opened 16 November 2026).
+- **KfW and AFD, added 16 November 2026:** EUR 300 million concessional loan (KfW EUR 200 million, AFD EUR 100 million; equivalent to R5.6 billion) for the Metro Trading Services Reform programme (SAnews, 3 September 2026, https://www.sanews.gov.za/node/84015, opened 16 November 2026).
 - **New Development Bank:** US$1 billion for the Metro Trading Services Reform Programme, concluded 15 September 2026 (gov.za): 16 years, 3 years’ grace, daily SOFR plus 1.18508%, alongside the World Bank, AIIB, KfW and AFD; US$405 million (Limpopo Central Hospital US$200 million, Magalies Bulk Water Supply Scheme US$205 million), Treasury statement of 28 August 2026 (SAnews): 10 years including 4 years’ grace, daily SOFR plus 0.93508%; US$200 million for Stage 1 of the Olifants Management Model Program (SAnews, 25 September 2026).
-- **IFC releases:** FirstRand Bank (FNB), US$100 million (about R1.8 billion), 18 September 2025; Balwin Properties, ZAR 1 billion (about US$58 million), 15 April 2025, 16,468 housing units at Mooikloof City.
+- **IFC releases:** FirstRand Bank (FNB), US$100 million (about R1.8 billion), 18 September 2025; Balwin Properties, ZAR 1 billion (about US$58 million), 15 April 2025, 16,468 housing units at Mooikloof City; Biovac, added 16 November 2026: IFC US$20 million senior loan and EIB Group EUR 75 million quasi-equity, 16 April 2026 (https://www.ifc.org/en/pressroom/2026/ifc-eib-group-and-european-commission-back-biovac, opened 16 November 2026).
 
 ### The enterprises
 - **Balwin Properties:** IFC, 15 April 2025. Engineering News reported 14,500 apartments on the same day; the IFC release gives 16,468 units.
 - **Kenhardt solar and battery project (Scatec):** Scatec release of 11 December 2023 (via Inderes).
 - **SPARK Schools:** its own site (copyright 2025): 26 schools, more than 17,000 scholars, monthly fees from about R3,000 for primary school.
 - **FNB (FirstRand Bank):** IFC, 18 September 2025.
+- **Biovac (Health):** IFC, 16 April 2026: a Cape Town vaccine maker of routine paediatric vaccines; the new site is to make 30 to 40 million doses a year.
 
 ## Watch items
 - **The debut sovereign green bond** planned for the current fiscal year (Eyewitness News, 15 September 2026).
-- **World Bank:** co-financing of the Metro Trading Services Reform Programme by KfW and AFD (named by Treasury, amounts not read).
 - **IFC and Investec:** a US$200 million loan for sustainable buildings (April 2026, press only).
 - **AfDB and Transnet:** the ZAR 18.85 billion (US$1 billion) corporate loan of 2024 (press only).
+- **MTBPS 2026:** a R10 billion guarantee for the Land Bank (Times Live, 21 October 2026); no Treasury page read.
 - **The Wildlife Conservation Bond:** matures 31 March 2027; the success payment depends on black rhino population growth.
 
 ## Open gaps
 - The seven standards could not be re-read at source: the World Bank data pages and Our World in Data do not open in these reviews. Education (18% of children read for meaning by the end of primary school, 2021) sets Coverage at 18.
 - The National Treasury’s own statements on treasury.gov.za did not open (redirects to its archive); the figures are read in SAnews and gov.za.
-- No food, water or health enterprise verified yet.
+- No food or water enterprise verified yet.
