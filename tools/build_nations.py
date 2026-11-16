@@ -99,7 +99,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 PAGES, DATA, HERE = ROOT / 'pages', ROOT / 'data', ROOT / 'tools' / 'nation'
-VERSION = '13.8'  # eleven more official portraits from the Media Library, each with its credit (the Steward-General, 15 Nov 2026)
+VERSION = '13.9'  # two records for every nation, head of state and head of government; the band shows the office set in `band` (the Steward-General, 15 Nov 2026)
 # 13.3: the head of state's portrait is larger (88 px laptops, 72 px phones), and the National Day mirrors it: an 88 px gold date tile at the far right, its name the same size as the head of state's (the Steward-General, 15 Nov 2026)
 # 13.2: a slim band under the hero: the head of state and the National Day, from data/nation-protocol.json (the Steward-General, 15 Nov 2026)
 # 13.1: the Solution card reads "18.6% of people" and "the United Kingdom" (the Steward-General, 15 Nov 2026)
@@ -573,7 +573,11 @@ def protocol_band(d, slug):
     # v13.7 (the Steward-General, 15 Nov 2026): the band shows the nation's elected leader. Where the head of state is a
     # monarch or a ceremonial president and a prime minister runs the government, `leader` names the prime minister;
     # elsewhere the head of state is the leader. Rulers who are not elected stay as they are.
-    hs = pr.get('leader') or pr.get('head_of_state') or {}
+    # v13.9: every nation keeps two records, head_of_state and head_of_government; `band` names the office shown here
+    shown = pr.get('band') if pr.get('band') in ('head_of_state', 'head_of_government') else 'head_of_state'
+    hs = pr.get(shown) or {}
+    if hs.get('same_as_head_of_state'):
+        hs = pr.get('head_of_state') or {}
     if not (nd.get('month') and nd.get('day')):
         return ''
     # v13.5: where no single head of state can be named from a primary source, the band shows the National Day only

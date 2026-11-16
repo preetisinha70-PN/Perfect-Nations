@@ -245,7 +245,10 @@ zambia | Hakainde Hichilema | President of the Republic of Zambia | UN || 10-24 
 zimbabwe | Emmerson Mnangagwa | President of the Republic of Zimbabwe | UN || 04-18 | Independence Day | CPH
 """
 
-# The leader the band shows (the Steward-General, 15 November 2026): the elected leader who runs the government. Where
+# Two records for every nation (the Steward-General, 15 November 2026): `head_of_state` and `head_of_government`, and
+# `band`, the office the band on the blueprint shows. Both records are kept and checked whichever office the band shows.
+#
+# The office the band shows: the elected leader who runs the government. Where
 # the head of state is a monarch or a ceremonial president (chosen by parliament, or elected by the people while a
 # prime minister runs the government), the band shows the prime minister. Presidents who run the government keep the
 # band; rulers who are not elected (and leaders of one-party states) stay as they are. Source: the UN Protocol list of
@@ -336,6 +339,69 @@ united-kingdom | Andrew Burnham | Prime Minister of the United Kingdom of Great 
 vanuatu | Jotham Napat | Prime Minister of the Republic of Vanuatu |
 """
 
+# Heads of government where the band shows the head of state (a president who leads, a ruler, a one-party state).
+# Source: the UN Protocol list of 13 November 2026, English titles. Nations in neither table have no separate head of
+# government: the head of state leads the government ("Same as Head of State" or "No Prime Minister" on the UN list).
+OTHER_HOG = """
+algeria | Sifi Ghrieb | Prime Minister of the People’s Democratic Republic of Algeria |
+azerbaijan | Ali Asadov | Prime Minister of the Republic of Azerbaijan |
+bahrain | Salman bin Hamad Al Khalifa | Crown Prince and Prime Minister of the Kingdom of Bahrain |
+belarus | Aleksandr Turchin | Prime Minister of the Republic of Belarus |
+burkina-faso | Rimtalba Jean Emmanuel Ouedraogo | Prime Minister, Head of Government of Burkina Faso |
+burundi | Nestor Ntahontuye | Prime Minister of the Republic of Burundi | 2025-08-05
+cameroon | Joseph Dion Ngute | Prime Minister, Head of Government of the Republic of Cameroon |
+central-african-republic | Félix Moloua | Prime Minister, Head of Government of the Central African Republic |
+chad | Allah-Maye Halina | Prime Minister, Head of Government of the Republic of Chad |
+china | Li Qiang | Premier of the State Council of the People’s Republic of China |
+cote-divoire | Robert Beugré Mambé | Prime Minister, Head of Government of Côte d’Ivoire |
+cuba | Manuel Marrero Cruz | Prime Minister of the Republic of Cuba |
+djibouti | Abdoulkader Kamil Mohamed | Prime Minister of the Republic of Djibouti |
+dr-congo | Judith Suminwa Tuluka | Prime Minister, Head of Government of the Democratic Republic of the Congo |
+egypt | Moustafa Kamal Madbouly | Prime Minister of the Arab Republic of Egypt |
+equatorial-guinea | Manuel Osa Nsue Nsuga | Prime Minister of the Republic of Equatorial Guinea |
+eswatini | Russell Mmiso Dlamini | Prime Minister of the Kingdom of Eswatini |
+france | Sébastien Lecornu | Prime Minister of the French Republic |
+guinea | Amadou Oury Bah | Prime Minister, Head of Government of the Republic of Guinea |
+guinea-bissau | Ilídio Vieira Té | Prime Minister of the Republic of Guinea-Bissau |
+guyana | Mark Phillips | Prime Minister of the Co-operative Republic of Guyana |
+haiti | Alix Didier Fils-Aimé | Prime Minister of the Republic of Haiti |
+holy-see | Pietro Parolin | Secretary of State of the Holy See |
+jordan | Jafar Hassan | Prime Minister of the Hashemite Kingdom of Jordan |
+kazakhstan | Olzhas Bektenov | Prime Minister of the Republic of Kazakhstan |
+kuwait | Ahmad Abdullah Al-Ahmad Al-Sabah | Prime Minister of the State of Kuwait |
+kyrgyzstan | Adylbek Kasymaliev | Chairman of the Cabinet of Ministers of the Kyrgyz Republic |
+laos | Saleumxay Kommasith | Prime Minister of the Lao People’s Democratic Republic |
+libya | Abdulhamid Al Dabiba | Prime Minister of the Government of National Unity of Libya |
+madagascar | Mamitiana Rajaonarison | Prime Minister, Head of Government of the Refoundation of the Republic of Madagascar |
+mali | Abdoulaye Maïga | Prime Minister, Head of Government of the Republic of Mali |
+mauritania | Moktar Ould Djay | Prime Minister of the Islamic Republic of Mauritania |
+monaco | Christophe Mirmand | Minister of State, Head of Government of the Principality of Monaco |
+mozambique | Maria Benvinda Delfina Levi | Prime Minister of the Republic of Mozambique |
+namibia | Elijah Ngurare | Prime Minister of the Republic of Namibia |
+niger | Lamine Zeine Ali Mahaman | Prime Minister of the Transitional Government of the Republic of Niger |
+north-korea | Pak Thae Song | Premier of the Cabinet of the Democratic People’s Republic of Korea |
+palestine | Mohammad Mustafa | Prime Minister of the State of Palestine |
+peru | Luis Fernando Galarreta Velarde | President of the Council of Ministers of the Republic of Peru |
+qatar | Mohammed bin Abdulrahman bin Jassim Al-Thani | Prime Minister of the State of Qatar |
+republic-of-congo | Anatole Collinet Makosso | Prime Minister of the Republic of the Congo |
+russia | Mikhail Mishustin | Prime Minister of the Russian Federation |
+rwanda | Justin Nsengiyumva | Prime Minister of the Republic of Rwanda |
+saudi-arabia | Mohammed bin Salman bin Abdulaziz Al Saud | Crown Prince and Prime Minister of the Kingdom of Saudi Arabia |
+senegal | Ahmadou Al Amine Mohamed Lo | Prime Minister of the Republic of Senegal | 2026-05-25
+south-korea | Han Seong-sook | Prime Minister of the Republic of Korea |
+sri-lanka | Harini Amarasuriya | Prime Minister of the Democratic Socialist Republic of Sri Lanka |
+sudan | Kamil El-Tayeb Idris | Transitional Prime Minister of the Republic of the Sudan |
+tajikistan | Kohir Rasulzoda | Prime Minister of the Republic of Tajikistan |
+tanzania | Mwigulu Lameck Nchemba | Prime Minister of the United Republic of Tanzania |
+tunisia | Sarra Zaafrani Zenzri | Head of Government of the Republic of Tunisia |
+uganda | Robinah Nabbanja | Prime Minister of the Republic of Uganda |
+ukraine | Sergii Koretskyi | Prime Minister of Ukraine | 2026-07-16
+united-arab-emirates | Mohammed bin Rashid Al Maktoum | Vice-President and Prime Minister of the United Arab Emirates |
+uzbekistan | Abdulla Aripov | Prime Minister of the Republic of Uzbekistan |
+vietnam | Le Minh Hung | Prime Minister of the Socialist Republic of Viet Nam |
+yemen | Shaya Mohsen Al-Zindani | Prime Minister of the Republic of Yemen |
+"""
+
 # What the Steward watches for each nation; never shown on the page.
 NOTES = {
     'afghanistan': 'The UN Protocol list of 13 November 2026 names no head of state for Afghanistan. The band shows the National Day only, until the Steward-General decides.',
@@ -354,6 +420,9 @@ NOTES = {
     'norway': 'King Haakon VIII succeeded King Harald V on 28 August 2026; the Royal House of Norway is the source.',
     'denmark': 'The Copenhagen list also gives 26 May, the King’s Birthday.',
     'venezuela': 'The UN Protocol list gives an Acting President; check monthly.',
+    'burundi': 'The UN Protocol list prints the Prime Minister as "Ntahontuye Ntahontuye"; appointed 5 August 2025. Confirm the first name.',
+    'gabon': 'The President is Head of State and Head of Government; the UN Protocol list still names Raymond Ndong Sima as Prime Minister.',
+    'syria': 'The President leads the government; the UN Protocol list names no Prime Minister.',
 }
 
 # Official portraits uploaded to the Media Library by the Steward-General (named pn-hos-<slug>). The band uses the
@@ -364,13 +433,19 @@ CC_BY_SA_3 = {'label': 'CC BY-SA 3.0', 'url': 'https://creativecommons.org/licen
 CC_BY_4 = {'label': 'CC BY 4.0', 'url': 'https://creativecommons.org/licenses/by/4.0/'}
 CC_BY_2 = {'label': 'CC BY 2.0', 'url': 'https://creativecommons.org/licenses/by/2.0/'}
 PD = {'label': 'public domain'}
+# Portraits by office (the Steward-General, 15 November 2026): files named pn-hos-<slug> show the head of state, files
+# named pn-hog-<slug> the head of government. PORTRAITS holds heads of state; PORTRAITS_HOG heads of government.
 PORTRAITS = {
     'rwanda': (UP + 'pn-hos-rwanda-232x300.jpg', 'Maayan Toaf, Government Press Office of Israel', CC_BY_SA_3),
     'brazil': (UP + 'pn-hos-brazil-272x300.jpg', 'Ricardo Stuckert, Presidency of Brazil', None),
     'kenya': (UP + 'pn-hos-kenya-237x300.jpg', 'Government of Kenya', None),
     'cote-divoire': (UP + 'pn-hos-cote-divoire-200x300.jpg', 'Dario Pignatelli, European Union', None),
     'ukraine': (UP + 'pn-hos-ukraine-222x300.jpg', 'President.gov.ua', CC_BY_4),
-    'india': (UP + 'pn-hos-india-240x300.jpg', 'Prime Minister’s Office, Government of India', {'label': 'GODL-India'}),
+    'india': (UP + 'pn-hos-india-1-218x300.jpg', 'President’s Secretariat, Government of India', {'label': 'GODL-India'}),
+    'germany': (UP + 'pn-hos-germany-225x300.jpg', 'Jnwnklr', {'label': 'CC BY-SA 4.0', 'url': 'https://creativecommons.org/licenses/by-sa/4.0/'}),
+    'finland': (UP + 'pn-hos-finland-224x300.jpg', 'Jaan Kynnap', CC_BY_4),
+    'singapore': (UP + 'pn-hos-singapore-225x300.jpg', 'Actuall7', CC_BY_4),
+    'mongolia': (UP + 'pn-hos-mongolia-225x300.jpg', 'President.mn', CC_BY_4),
     # second batch, 15 November 2026 evening: the leader shown on the band, with a known credit and licence
     'france': (UP + 'pn-hos-france-241x300.jpg', 'Dati Bendo, European Commission', CC_BY_4),
     'united-states': (UP + 'pn-hos-united-states-240x300.jpg', 'Daniel Torok, The White House', PD),
@@ -383,6 +458,10 @@ PORTRAITS = {
     'south-africa': (UP + 'pn-hos-south-africa-230x300.jpg', 'Ricardo Stuckert, Presidency of Brazil', CC_BY_2),
     'united-arab-emirates': (UP + 'pn-hos-united-arab-emirates-250x300.jpg', 'Alan Santos, Presidency of Brazil', CC_BY_2),
     'oman': (UP + 'pn-hos-oman-250x300.jpg', 'Prime Minister’s Office, Government of India', {'label': 'GODL-India'}),
+}
+PORTRAITS_HOG = {
+    # uploaded as pn-hos-india before the pn-hog- names were agreed
+    'india': (UP + 'pn-hos-india-240x300.jpg', 'Prime Minister’s Office, Government of India', {'label': 'GODL-India'}),
 }
 
 GREET = {
@@ -419,12 +498,40 @@ def main():
     index = json.loads((ROOT / 'data' / 'blueprints.json').read_text(encoding='utf-8'))
     names = {x['slug']: x['name'] for x in index['open']}
     table = rows()
-    leaders = {}
-    for line in LEADERS.strip().splitlines():
-        p = [x.strip() for x in line.split('|')]
-        if len(p) != 4 or p[0] not in names:
-            raise SystemExit('bad leader row: %r' % line)
-        leaders[p[0]] = dict(name=p[1], title=p[2], since=p[3])
+    def hog_table(text):
+        out = {}
+        for line in text.strip().splitlines():
+            p = [x.strip() for x in line.split('|')]
+            if len(p) != 4 or p[0] not in names:
+                raise SystemExit('bad head-of-government row: %r' % line)
+            out[p[0]] = dict(name=p[1], title=p[2], since=p[3])
+        return out
+    leaders = hog_table(LEADERS)
+    others = hog_table(OTHER_HOG)
+    both = set(leaders) & set(others)
+    if both:
+        raise SystemExit('in both tables: %s' % sorted(both))
+
+    def hog_record(slug):
+        l = leaders.get(slug) or others.get(slug)
+        if not l:
+            return {'same_as_head_of_state': True}
+        rec = {'title': l['title'], 'name': l['name'], 'portrait': '', 'source': src('UN')}
+        if l['since']:
+            rec['since'] = l['since']
+        return rec
+
+    def put_portrait(rec, table, slug):
+        if rec.get('same_as_head_of_state'):
+            return
+        for k in ('portrait_credit', 'portrait_licence'):
+            rec.pop(k, None)
+        rec['portrait'] = rec.get('portrait', '') if slug not in table else ''
+        if slug in table and rec.get('name'):
+            url, credit, licence = table[slug]
+            rec['portrait'], rec['portrait_credit'] = url, credit
+            if licence:
+                rec['portrait_licence'] = licence
     missing = sorted(set(names) - set(table) - {'france'})
     extra = sorted(set(table) - set(names))
     if missing or extra:
@@ -434,13 +541,13 @@ def main():
     changed = []
     for slug in sorted(names):
         if slug == 'france':
-            nations[slug].setdefault('checked', CHECKED)
-            if slug in PORTRAITS:
-                url, credit, licence = PORTRAITS[slug]
-                hs = nations[slug]['head_of_state']
-                hs['portrait'], hs['portrait_credit'] = url, credit
-                if licence:
-                    hs['portrait_licence'] = licence
+            fr = nations[slug]
+            fr.setdefault('checked', CHECKED)
+            put_portrait(fr['head_of_state'], PORTRAITS, slug)
+            fr['head_of_government'] = hog_record(slug)
+            put_portrait(fr['head_of_government'], PORTRAITS_HOG, slug)
+            fr['band'] = 'head_of_state'
+            fr.pop('leader', None)
             continue
         r = table[slug]
         cur = nations.get(slug, {})
@@ -457,28 +564,15 @@ def main():
               'greeting': greeting(r['label']), 'source': src(r['dsrc'])}
         if slug in ('united-kingdom', 'israel'):
             nd['movable'] = True
-        ld = None
-        if slug in leaders:
-            l = leaders[slug]
-            ld = {'title': l['title'], 'name': l['name'], 'portrait': '', 'source': src('UN')}
-            if l['since']:
-                ld['since'] = l['since']
-        shown = ld or hs
-        if slug in PORTRAITS and shown.get('name'):
-            for k in ('portrait_credit', 'portrait_licence'):
-                hs.pop(k, None)
-            hs['portrait'] = ''
-            url, credit, licence = PORTRAITS[slug]
-            shown['portrait'], shown['portrait_credit'] = url, credit
-            if licence:
-                shown['portrait_licence'] = licence
+        hg = {'title': '', 'name': '', 'portrait': ''} if not r['name'] else hog_record(slug)
+        put_portrait(hs, PORTRAITS, slug)
+        put_portrait(hg, PORTRAITS_HOG, slug)
         new = dict(cur)
         new['nation'] = names[slug]
         new['head_of_state'] = hs
-        if ld:
-            new['leader'] = ld
-        else:
-            new.pop('leader', None)
+        new['head_of_government'] = hg
+        new['band'] = 'head_of_government' if slug in leaders else 'head_of_state'
+        new.pop('leader', None)
         new['national_day'] = nd
         new['checked'] = CHECKED
         if NOTES.get(slug):
@@ -488,11 +582,13 @@ def main():
         nations[slug] = new
     data['nations'] = {k: nations[k] for k in sorted(nations)}
     data['updated'] = CHECKED
-    data['note'] = ('Protocol facts for each blueprint: its head of state, its leader (where a prime minister runs the government), '
-                    'its National Day and the offices that receive the National Day letters. The band on each blueprint shows the leader '
-                    '(the Steward-General, 15 November 2026). Kept by the Blueprints Steward, who checks every leader and head of state once a '
-                    'month, and each nation again 15 days before its National Day. Portraits are supplied by the Steward-General '
-                    '(official portraits uploaded to the Media Library, with their credit); until one is supplied the band shows the initials.')
+    data['note'] = ('Protocol facts for each blueprint: its head of state, its head of government (or same_as_head_of_state where '
+                    'one person holds both offices), band (the office the band on the blueprint shows), its National Day and the offices '
+                    'that receive the National Day letters. The band shows the elected leader who runs the government (the Steward-General, '
+                    '15 November 2026); both records are kept whichever it shows. Kept by the Blueprints Steward, who checks both offices once '
+                    'a month, and each nation again 15 days before its National Day. Portraits are supplied by the Steward-General: '
+                    'pn-hos-<nation> files for heads of state, pn-hog-<nation> files for heads of government, each with its credit and licence; '
+                    'until one is supplied the band shows the initials.')
     print('%d nations, %d changed' % (len(data['nations']), len(changed)))
     if not check:
         OUT.write_text(json.dumps(data, indent=1, ensure_ascii=False) + '\n', encoding='utf-8')
