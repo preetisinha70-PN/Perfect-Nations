@@ -1,14 +1,10 @@
 #!/usr/bin/env python3
 """Refresh the generated blocks of the About page, pages/about.html.
 
-The page is edited by hand, except the blocks that this script writes in place:
-  GENERATED:NCOUNT    the number of Nation Stewards (one per open blueprint); NCOUNT2 the same,
-                      on the Show all button
-  GENERATED:TCOUNT    the number of SI Researchers (six research Stewards plus the Nation Stewards)
-  GENERATED:NREGIONS  the region chips over the Nation Stewards, each with its count (v12.1)
-  GENERATED:NSTEWARDS the Nation Stewards: one linked card per open blueprint in
-                      data/blueprints.json, with the Steward's name from data/<slug>.json and the
-                      portrait the nation's own blueprint uses (pages/blueprint-<slug>.html)
+The page is edited by hand, except the homepage parts that this script writes in place (below).
+v13.0 (16 Nov 2026): the page profiles Preeti Sinha, President and CEO, alone ("just profile me"); the Stewards stay
+internal. The Council of Stewards and its blocks (NCOUNT, NCOUNT2, TCOUNT, NREGIONS, NSTEWARDS) are gone, and this
+script refuses a page that names a Steward or super intelligence in its copy.
 v11.6 (10 Nov 2026): light reading sections, Earthrise accents (the Steward-General). The parts carry their own
 LIGHT blocks; this script is unchanged but for its version.
 v11.5 (10 Nov 2026): the homepage close opens The Blueprint Lab on ?about=lab (Lab and Solution links).
@@ -42,7 +38,7 @@ homepage shows it too). Each part scopes its style to its own root id, so the pa
 are not unique, or whose first pn- id is not pn-about.
 
 Run from the repository root:  python3 tools/build_about.py
-Run it whenever a blueprint is added. Then run tools/check_page.py on the page, raise "pn-about"
+Run it whenever a homepage part changes. Then run tools/check_page.py on the page, raise "pn-about"
 in pages/manifest.json and open a pull request "For approval: About vX.Y, [what changed]".
 The About Steward (skill steward-about) runs this.
 """
@@ -57,7 +53,7 @@ ROOT = Path(__file__).resolve().parent.parent
 PAGES = ROOT / 'pages'
 DATA = ROOT / 'data'
 PAGE = PAGES / 'about.html'
-VERSION = '12.1'
+VERSION = '13.0'
 RESEARCH_STEWARDS = 6
 # The homepage parts this page shows, by block name (see the docstring).
 PARTS = [
@@ -204,12 +200,6 @@ def put(page, name, body, inline=False):
 
 def main():
     page = PAGE.read_text(encoding='utf-8')
-    rows = stewards()
-    page = put(page, 'NCOUNT', str(len(rows)), inline=True)
-    page = put(page, 'NCOUNT2', str(len(rows)), inline=True)
-    page = put(page, 'TCOUNT', str(len(rows) + RESEARCH_STEWARDS), inline=True)
-    page = put(page, 'NSTEWARDS', stewards_block(rows))
-    page = put(page, 'NREGIONS', regions_block(rows))
     page = put(page, 'LOGO-KIT', logo_kit_block())
     for block, name in PARTS:
         page = put(page, block, part_block(name))
@@ -228,10 +218,11 @@ def main():
         sys.exit('a painted seam is left on the page (the gold line, <div class="pn-rule">, replaced them)')
     if re.search(r'(?:class|id)="[^"]*laurel', page, re.I):
         sys.exit('a class or id contains "laurel" (the header replaces such drawings with the cup mark)')
+    copy = re.sub(r'<!--.*?-->|<(script|style)\b.*?</\1>', '', page, flags=re.S | re.I)
+    if re.search(r'\bStewards?\b|(?i:super ?intelligence)|\(SI\)|SI Researcher', copy):
+        sys.exit('the page names a Steward or super intelligence; the About page profiles the President and CEO alone (16 Nov 2026)')
     PAGE.write_text(page, encoding='utf-8')
-    missing = [r[1] for r in rows if not r[3]]
-    print('pages/about.html v%s,' % VERSION, len(page), 'characters,', len(PARTS), 'homepage parts,', len(rows), 'Nation Stewards',
-          '(no portrait: %s)' % ', '.join(missing) if missing else '(all with portraits)')
+    print('pages/about.html v%s,' % VERSION, len(page), 'characters,', len(PARTS), 'homepage parts')
 
 
 if __name__ == '__main__':

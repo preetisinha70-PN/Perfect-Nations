@@ -1,17 +1,18 @@
 <!-- ===========================================================================
 PERFECT NATIONS - THE BLUEPRINTS PAGE - 01 THE GOLDEN MAP, 02 THE OPEN BLUEPRINTS, 03 EVERY NATION
-part v6.6 - 2026-11-11 - kept by the Blueprints Steward
+part v7.0 - 2026-11-16 - kept by the Blueprints Steward
 This part is the body of pages/blueprints.html. Edit this file, then run tools/build_blueprints.py,
 which fills the slots (the map, the tabs, the tiles, the region lists, the counts and the settings)
 and joins it with the Nations Menu and the gold line. Never edit pages/blueprints.html by hand.
+v7.0: no Steward named on the page (Preeti Sinha, President and CEO, 16 Nov 2026): the tiles carry no credit, the
+  open blueprints line says how they are kept, and the hero lead names innovative financing for development alone.
 v6.6: the lapis map (the Steward-General, 11 Nov 2026). The sea of the golden map is now the lapis lazuli of
   the homepage planet (hero v7.1: #1F45A3 lit, #0A1D5C in shadow; was #0B2A72 and #041238), so the two match.
 v6.5: light reading sections, Earthrise accents (the Steward-General, 10 Nov 2026).
 v6.3: Fewer words (the Steward-General, 9 Nov 2026): one headline and one line per section. The hero
-  lead is one sentence (FfD still before SI); the close asks its question once, beside its button.
+  lead is one sentence; the close asks its question once, beside its button.
 v6.2: Gold line in place of the painted botanical seams (the Steward-General, 9 Nov 2026).
-v6.1 (8 Nov 2026): FfD before SI (the Steward-General, 8 Nov 2026). The lead names innovative financing
-  for development (FfD) first and super intelligence (SI) second.
+v6.1 (8 Nov 2026): the lead names innovative financing for development (FfD).
 v6.0 (6 Nov 2026), the page in one file:
   - One palette: 01 Earthrise, then a painted seam, 02 Lagoon, 03 ivory (the reading band). The old
     terracotta hero, sand bar and six region colours are retired, as on the homepage.
@@ -21,7 +22,7 @@ v6.0 (6 Nov 2026), the page in one file:
     tabs fly the map to a region; the six region maps of the old atlas are gone, and phones no
     longer drag a map sideways.
   - The open blueprints as tiles: each nation in its own gold outline, its headline figure from the
-    blueprint hero, and its Nation Steward. Phones show eight, laptops fifteen, then Show all.
+    blueprint hero. Phones show eight, laptops fifteen, then Show all.
   - Every nation as six folding regions; a nation in preparation opens the Nation Viewer card.
   - Live by itself: on every visit the page reads pages/manifest.json and data/blueprints.json, so a
     blueprint merged on GitHub turns gold, joins the tiles and recounts the page, with no paste.
@@ -396,7 +397,7 @@ sourced money figures. Copy: no contractions, curly apostrophes.
             <p class="pnbpa-eyebrow">The Atlas of Blueprints</p>
           </div>
           <h1 class="pnbpa-h1" id="pnbpaH1">National Blueprints</h1>
-          <p class="pnbpa-lead">Each blueprint shows how innovative financing for development (FfD), drawn up with super intelligence (SI), can secure seven basic standards for all.</p>
+          <p class="pnbpa-lead">Each blueprint shows how innovative financing for development (FfD) can secure seven basic standards for all.</p>
         </div>
         <dl class="pnbpa-stats">
           <div><dt>Blueprints open</dt><dd data-k="live"><!--pn:n-live--></dd></div>
@@ -430,7 +431,7 @@ sourced money figures. Copy: no contractions, curly apostrophes.
     <div class="pnbpa-in">
       <p class="pnbpa-eyebrow">Open now</p>
       <h2 class="pnbpa-h2" id="pnbpaOpenH"><span data-k="live"><!--pn:n-live--></span> blueprints, open to read</h2>
-      <p class="pnbpa-lead">Each one is kept current by its own Nation Steward.</p>
+      <p class="pnbpa-lead">Each one is kept current as new finance is announced, every figure sourced.</p>
       <div class="pnbpa-tools">
         <div class="pnbpa-field">
           <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M10.5 4a6.5 6.5 0 1 0 4.03 11.6l4.43 4.42 1.41-1.41-4.42-4.43A6.5 6.5 0 0 0 10.5 4Zm0 2a4.5 4.5 0 1 1 0 9 4.5 4.5 0 0 1 0-9Z"/></svg>
@@ -753,7 +754,6 @@ sourced money figures. Copy: no contractions, curly apostrophes.
       a.insertBefore(el('span', 'pnbpa-t__v' + (c.figure.money ? ' is-money' : ''), String(c.figure.value)), go);
       a.insertBefore(el('span', 'pnbpa-t__l', String(c.figure.label || '')), go);
     }
-    if (c.steward) { a.insertBefore(el('span', 'pnbpa-t__s', c.steward + ', Nation Steward'), go); }
   }
   function makeTile(s){
     var li = el('li', 'pnbpa-t');
@@ -839,7 +839,7 @@ sourced money figures. Copy: no contractions, curly apostrophes.
         if (!NAT[s] || (LIVE[s] && q1('.pnbpa-t[data-s="' + s + '"]'))) { return; }
         markLive(s, null);
         getJSON('data/' + s + '.json').then(function(d){
-          markLive(s, { steward: (d && d.steward && d.steward.name) || '', figure: figureOf(d && d.hero && d.hero.stats) });
+          markLive(s, { figure: figureOf(d && d.hero && d.hero.stats) });
         }).catch(function(){});
       });
       recount();

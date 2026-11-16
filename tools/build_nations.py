@@ -36,7 +36,7 @@ v11.2 (the Steward-General, 9 Nov 2026): in What we do, the cup is the symbol fo
 whole logo is a seal as large as the tile symbols, with "The whole logo: a Perfect Nation, where every citizen has
 all seven basic standards of living, led by good governance."; in Work with us, Co-design it with us sits on an
 ivory panel so the section does not look all alike.
-v11.1: What Perfect Nations advises, in place of how FfD and SI solve it (the Steward-General, 9 Nov 2026). Each
+v11.1: What Perfect Nations advises (9 Nov 2026). Each
 Solution card reads 01 The challenge, 02 What Perfect Nations advises (the field "advises" of the Solution in
 data/state-of-nations.json); the Solution for <Nation> reads 01 The challenge, 02 The deal (the instrument at work
 in the nation, or the deal that proved it, with its source), 03 What Perfect Nations advises (the "advises" of the
@@ -57,8 +57,7 @@ Nation. The page reads like the country page of a new-age sovereign advisory fir
   coverage score is shown: each standard keeps its own sourced figure.
 v10.2: the second Nation Portrait, the flag edition, closes the page beside "Design Perfect <Nation> with us"
 (40 nations; see FLAG_EDITION). It shows once pn-portrait-flag-<slug>.png is in the Media Library.
-v10.1: FfD before SI (the Steward-General, 8 Nov 2026): innovative financing for development (FfD) is named
-first and super intelligence (SI) second, and the abbreviation is written FfD.
+v10.1: the abbreviation of innovative financing for development is written FfD (8 Nov 2026).
 
 Each page is built from:
   tools/nation/style.css    the design (scoped to the page root #pn-bp-<slug>; written with #R)
@@ -99,7 +98,8 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 PAGES, DATA, HERE = ROOT / 'pages', ROOT / 'data', ROOT / 'tools' / 'nation'
-VERSION = '13.17'  # Estonia, Portugal and the Dominican Republic portraits; Finland's upright portrait (16 Nov 2026)
+VERSION = '14.0'  # no Steward named and no super intelligence on any blueprint (Preeti Sinha, 16 Nov 2026)
+# 13.17: Estonia, Portugal and the Dominican Republic portraits; Finland's upright portrait (16 Nov 2026)
 # 13.16: seven more portraits; Kenya, Ghana and South Africa from pn-hog uploads (16 Nov 2026)
 # 13.3: the head of state's portrait is larger (88 px laptops, 72 px phones), and the National Day mirrors it: an 88 px gold date tile at the far right, its name the same size as the head of state's (the Steward-General, 15 Nov 2026)
 # 13.2: a slim band under the hero: the head of state and the National Day, from data/nation-protocol.json (the Steward-General, 15 Nov 2026)
@@ -525,8 +525,7 @@ def hero(d, p):
         '<section class="bpx-band bpx-er bpx-hero" aria-labelledby="bp-h1"><div class="bpx-in bpx-hero__grid">'
         '<div class="bpx-hero__head"><div class="bpx-kick"><span class="bpx-cup">%s</span><p class="bpx-eb">%s</p></div>'
         '<h1 class="bpx-h1%s" id="bp-h1">%s</h1><p class="bpx-hero__nation">%s</p>'
-        '<p class="bpx-lead">Perfect Nations values what %s owns and raises capital against it, through <b>innovative financing for development (FfD)</b> '
-        'and <b>super intelligence (SI)</b>.</p></div>'
+        '<p class="bpx-lead">Perfect Nations values what %s owns and raises capital against it, through <b>innovative financing for development (FfD)</b>.</p></div>'
         '<div class="bpx-globe-cell"><div class="bpx-globe" id="%s-globe" role="img" aria-label="%s, in gold on the globe">'
         '%s<canvas class="bpx-globe__still"></canvas><canvas class="bpx-globe__gl"></canvas></div></div>'
         '<div class="bpx-glance"><p class="bpx-k">%s at a glance</p><ul class="bpx-stats" data-n="%d">%s</ul></div>'
@@ -749,16 +748,14 @@ def capital(d, p):
         '<ul class="bpx-irs" id="bp-irs">%s</ul><button type="button" class="bpx-showall" id="bp-showall"%s>Show all %d lines</button></div>'
         '<div class="bpx-nw" id="bp-newswire"><div class="bpx-nw__h"><h3>The %s Newswire</h3>'
         '<a class="bpx-link" href="https://perfectnations.com/state-of-nations/#sn-wire" target="_blank" rel="noopener noreferrer">The Solutions Wire</a></div>'
-        '<div class="bpx-stew">%s'
-        '<p><b>%s</b><span>%s &#183; SI Researcher</span><time datetime="%s">Last updated %s</time></p></div>'
+        '<div class="bpx-stew"><p><time datetime="%s">Last updated %s</time></p></div>'
         '<ul class="bpx-wire">%s</ul><button type="button" class="bpx-showall bpx-allnews" hidden>All news</button></div></div>'
         '</div></section>'
         % (ART['wreath'].replace('bpx-art bpx-art--wreath', 'bpx-art bpx-art--wreath bpx-mark'),
            step_eb('02', 'Capital', 'The laurels', 'Capital Architecture'), ent(c.get('heading') or 'Capital tied to human outcomes.'), ent(name),
            ('<p class="bpx-k">The record in figures</p><ul class="bpx-recs bpx-rail">%s</ul>' % recs) if recs else '',
            filters, ''.join(irs), '' if len(lines) > 4 else ' hidden', len(lines),
-           ent(name), stew_face(p.get('steward_photo'), steward),
-           ent(steward.get('name', '')), ent(steward.get('role', '')), ent(d.get('updated', '')), ent(long_date(d.get('updated'))),
+           ent(name), ent(d.get('updated', '')), ent(long_date(d.get('updated'))),
            ''.join(wire)))
 
 
@@ -828,10 +825,10 @@ def solution_card(x, sig_name, sig_role):
     return (
         '<li class="bpx-sol"><p class="bpx-sol__k"><b>%s No. %02d</b><time datetime="%s">%s</time></p>'
         '<h3><a href="%s" target="_blank" rel="noopener noreferrer">%s</a></h3>%s%s'
-        '<div class="bpx-sol__foot"><span class="bpx-sig">From<b>%s</b><small>%s</small></span>'
+        '<div class="bpx-sol__foot"><span class="bpx-sig">From<b>%s</b>%s</span>'
         '<span class="bpx-sol__acts"><a class="bpx-btn" href="%s" target="_blank" rel="noopener noreferrer">Read the %s</a>%s</span></div></li>'
         % ('Deal Note' if deal else 'Solution', no, ent(x.get('date', '')), ent(x.get('label') or short_date(x.get('date'))), ent(https(href)), ent(x['title']), body, fig,
-           ent(sig_name), ent(sig_role), ent(https(href)), 'Deal Note' if deal else 'Solution', talk))
+           ent(sig_name), ('<small>%s</small>' % ent(sig_role)) if sig_role else '', ent(https(href)), 'Deal Note' if deal else 'Solution', talk))
 
 
 THE_NAMES = {'Bahamas', 'Central African Republic', 'Comoros', 'Czech Republic', 'Dominican Republic', 'Gambia', 'Holy See',
@@ -969,7 +966,8 @@ def solution_cards(d, p, sbn, son):
             continue
         seen.add(key)
         if who == 'steward':
-            cards.append(solution_card(x, steward.get('name', ''), '%s &#183; SI Researcher' % steward.get('role', '')))
+            # v14.0: from the research desk, signed by the firm; no Steward is named on the site (16 Nov 2026)
+            cards.append(solution_card(x, 'Perfect Nations', ''))
         else:
             cards.append(solution_card(x, 'Preeti Sinha', 'President and CEO, Perfect Nations'))
     lead = solution_brief(name, sbn, slug) if sbn and not designed else ''
@@ -1234,12 +1232,13 @@ def build(slug, sbn, son, today):
     gl = p['globe']
     globe_cfg = {'root': rid, 'lat': gl['lat'], 'lng': gl['lng'], 'outline': gl['outline'], 'tex': EARTH}
     globe = (HERE / 'globe.js').read_text(encoding='utf-8').replace('/*pn:globe-cfg*/', 'var CFG = %s;' % js_str(globe_cfg))
-    steward = d.get('steward') or {}
-    cfg = {'root': rid, 'slug': slug, 'name': d['nation'], 'nameIn': the_name(d['nation']), 'steward': steward.get('name', ''), 'stewardRole': steward.get('role', ''),
-           'colours': COLOURS}
+    cfg = {'root': rid, 'slug': slug, 'name': d['nation'], 'nameIn': the_name(d['nation']), 'colours': COLOURS}
     script = (HERE / 'script.js').read_text(encoding='utf-8').replace('/*pn:cfg*/', 'var CFG = %s;' % js_str(cfg))
     head = (
         '<!-- PERFECT NATIONS . NATIONAL BLUEPRINT . %s . v%s . %s . Built by tools/build_nations.py: never edit by hand. -->\n'
+        '<!-- v14.0 (16 November 2026): Perfect Nations is run by Preeti Sinha, President and CEO: no Steward is named on the page\n'
+        '     (the Newswire shows its date only; a Solution from the research desk is signed Perfect Nations), and the hero\n'
+        '     names innovative financing for development alone. -->\n'
         '<!-- v12.0 (10 November 2026): light reading sections, Earthrise accents (the Steward-General, 10 Nov 2026). -->\n'
         '<!-- v11.7 (10 November 2026): the letterhead carries the registered mark, Perfect Nations&#174;. -->\n'
         '<!-- v11.5 (9 November 2026): three changes for clarity (the Steward-General, 9 Nov 2026). The register reads\n'
@@ -1249,11 +1248,11 @@ def build(slug, sbn, son, today):
         '<!-- v11.3 (9 November 2026): fewer words (the Steward-General, 9 Nov 2026). One headline and one line a section,\n'
         '     the detail one click away behind Read more; every figure and source kept. -->\n'
         '<!-- v11.2 (9 November 2026): the cup for Assets; the whole logo as a large seal, led by good governance; Co-design on ivory. -->\n'
-        '<!-- v11.1 (9 November 2026): What Perfect Nations advises, in place of how FfD and SI solve it (the Steward-General, 9 Nov 2026)\n'
+        '<!-- v11.1 (9 November 2026): What Perfect Nations advises.\n'
         '     Each Solution reads The challenge, then What Perfect Nations advises. -->\n'
         '<!-- v11.0 (8 November 2026): the blueprint follows the new homepage. Perfect Nations as a new-age sovereign\n'
         '     advisory firm, whose clients are nations: the hero says what it does for this nation\n'
-        '     (FfD before SI) with the nation at a glance in sourced figures; What we do for the nation (Assets. Capital.\n'
+        '     (through FfD) with the nation at a glance in sourced figures; What we do for the nation (Assets. Capital.\n'
         '     Solutions., drawn from the logo kit, with the cup of good governance in one line and the whole logo as a\n'
         '     seal); 01 Assets as typographic cards (no photographs); 02 Capital (the record, the register and the\n'
         '     Newswire side by side, the laurels as its mark); 03 Solutions last (the seven stars of the logo in place\n'
@@ -1262,7 +1261,6 @@ def build(slug, sbn, son, today):
         '     Voices, the Co-designers and the Enterprises); the close and the Sources. Gold hairlines, not painted seams. -->\n'
         '<!-- v10.2 (8 November 2026): the second Nation Portrait, the flag edition, closes the page beside "Design\n'
         '     Perfect <Nation> with us" (40 nations). It shows once pn-portrait-flag-<slug>.png is in the Media Library. -->\n'
-        '<!-- v10.1 (8 November 2026): FfD before SI (the Steward-General, 8 Nov 2026). -->\n'
         '<!-- v10.0 (7 November 2026): one design for all 44 blueprints, in the site palette; the globe drawn by the page\n'
         '     itself. Served live from GitHub by the Perfect Nations Live Pages plugin (root %s); the code below\n'
         '     is also the fallback when a data file cannot be read. -->\n'

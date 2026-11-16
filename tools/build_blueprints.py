@@ -40,7 +40,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 PAGES = ROOT / 'pages'
 DATA = ROOT / 'data'
-VERSION = '6.6'  # the lapis map: the sea of the homepage planet (the Steward-General, 11 Nov 2026)
+VERSION = '7.0'  # no Steward named, no tile credit, FfD alone in the lead (Preeti Sinha, 16 Nov 2026)
 
 ORDER = [
     'nations-menu.html',      # the moving list of 195 nations (also on the homepage)
@@ -312,7 +312,7 @@ def tile_html(c, box):
     if fig:
         fig_html = '<span class="pnbpa-t__v%s">%s</span><span class="pnbpa-t__l">%s</span>' % (
             ' is-money' if fig.get('money') else '', ent(fig['value']), ent(fig.get('label', '')))
-    stw = '<span class="pnbpa-t__s">%s, Nation Steward</span>' % ent(c['steward']) if c.get('steward') else ''
+    stw = ''  # v7.0: no Steward named on a tile (Preeti Sinha, 16 Nov 2026)
     return (
         '<li class="pnbpa-t" data-s="%(slug)s" data-r="%(region)s">'
         '<a href="%(url)s" target="_blank" rel="noopener noreferrer">'
@@ -437,12 +437,13 @@ Built by tools/build_blueprints.py from the parts named below; edit a part, run 
 pull request. Kept by the Blueprints Steward.
 Open blueprints at this build: %d of %d. New blueprints need no new build: the page reads
 pages/manifest.json and data/blueprints.json on every visit.
-v6.1 (8 Nov 2026): FfD before SI (the Steward-General, 8 Nov 2026). The lead names innovative financing for
-development (FfD) first and super intelligence (SI) second.
+v6.1 (8 Nov 2026): the lead names innovative financing for development (FfD).
 v6.2: Gold line in place of the painted botanical seams (the Steward-General, 9 Nov 2026).
 v6.3: Fewer words (the Steward-General, 9 Nov 2026): one headline and one line per section.
 v6.5: light reading sections, Earthrise accents (the Steward-General, 10 Nov 2026).
 v6.6: the lapis map: the sea is the lapis lazuli of the homepage planet (the Steward-General, 11 Nov 2026).
+v7.0: no Steward named on the page and no tile credit; the lead names innovative financing for development alone
+(Preeti Sinha, President and CEO, 16 Nov 2026).
 =========================================================================== -->
 <div id="pn-blueprints" hidden></div>
 ''' % (VERSION, today, n_live, len(nat))

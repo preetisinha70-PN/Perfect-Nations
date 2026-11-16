@@ -24,7 +24,8 @@ ROOT = Path(__file__).resolve().parent.parent
 PAGES = ROOT / 'pages'
 DATA = ROOT / 'data'
 SITE = 'https://perfectnations.com'
-VERSION = '12.5'  # the globe draws the borders of newly opened nations at their raised height (hero v7.9; the Steward-General, 11 Nov 2026)
+VERSION = '13.0'  # the Mission, the hero, Governance first, Imagine, the Studio and the Solutions name innovative financing for development alone; no Steward named (the President and CEO, 16 Nov 2026)
+# v12.5: the globe draws the borders of newly opened nations at their raised height (hero v7.9; the Steward-General, 11 Nov 2026)
 # v12.4: Governance first: one line on great local leadership, honest, dedicated and committed to basic standards of living for every citizen (the Steward-General, 11 Nov 2026)
 # v12.3: the globe's borders are thin dark ribbons, clear on phones (hero v7.8; the Steward-General, 11 Nov 2026)
 # v12.2: the globe draws every border again: long straight borders follow the curve of the planet (hero v7.7; the Steward-General, 10 Nov 2026)
@@ -50,7 +51,7 @@ MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'Augus
 # After the hero and the Capital Wire, the story "Imagine a Perfect Nation" (home-imagine.html, new):
 # the world today, then a nation with all seven standards, then how it is reached; the dots build
 # the logo. Every section keeps one headline and one line, with the detail one click away.
-# v10.1 (9 Nov 2026): What Perfect Nations advises, in place of how FfD and SI solve it (the Steward-General, 9 Nov 2026).
+# v10.1 (9 Nov 2026): What Perfect Nations advises.
 # Each Solution card reads The challenge, then What Perfect Nations advises (the field "advises").
 # v10.0 (8 Nov 2026), the Steward-General's decision, after Goldman Sachs, J.P. Morgan and the World Bank:
 # the homepage leads with outcomes, research and original work, and says only a little about the
@@ -60,7 +61,7 @@ MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'Augus
 # move to the About page (tools/build_about.py copies the parts there); their part files stay.
 # v9.0.1 (8 Nov 2026): the Capital laurels show again (no class name may contain "laurel": header v19.1
 # replaces any such drawing with the cup mark).
-# v9.0 (8 Nov 2026): Assets. Capital. Solutions. (the gold, the laurels, the seven stars); FfD before SI.
+# v9.0 (8 Nov 2026): Assets. Capital. Solutions. (the gold, the laurels, the seven stars).
 ORDER = [
     'nations-menu.html',          # the moving list of 195 nations (also on other pages)
     'home-hero.html',             # 01 Civilization Re-Defined / Designing the Prosperity of Nations

@@ -2,21 +2,23 @@
 """Build the State of Nations page (perfectnations.com/state-of-nations/) and its nation data.
 
 The page is about Solutions: one Solution that Perfect Nations designs for every open blueprint nation,
-to end extreme poverty and secure the seven basic standards of living, with innovative finance first and
-super intelligence second.
+to end extreme poverty and secure the seven basic standards of living through innovative finance.
+v9.0 (16 Nov 2026): no super intelligence on the site (Preeti Sinha, President and CEO): every sentence naming it is
+  gone from the Solutions, the Deal Notes, the playbook and the lead; the page script drops any such sentence a
+  data file carries later (tools/no_si.py holds the same rule).
 v8.0: Perfect Nations Solutions, designed by Perfect Nations (the Steward-General, 9 Nov 2026).
   "dispatches" in data/state-of-nations.json now holds the designed Solutions (kind "design"): no, slug,
-  nation, blueprint, title, standfirst (the idea), challenge (sourced), advises (finance first, then a
-  sentence that begins "With super intelligence,"), how (Assets, Capital, Solutions), proof (the deal that
+  nation, blueprint, title, standfirst (the idea), challenge (sourced), advises (the finance Perfect Nations
+  advises; never a sentence about super intelligence, 16 Nov 2026), how (Assets, Capital, Solutions), proof (the deal that
   proves it, from data/capital-architecture.json or a nation's record), first (the first move), standards,
   figure, caption, gap_seen and sources. The market deals that were Solutions move to "deals" and show as
   Deal Notes above the wire. The nation finder band is retired: the page links each Solution to the
   nation's seven standards in data/solutions-by-nation.json, which now names the nation's design.
-v7.3: fewer words, and richer advice that weaves in super intelligence (the Steward-General, 9 Nov 2026).
+v7.3: fewer words, and richer advice (9 Nov 2026).
   One headline and one line per band, the detail one click away in a Read more disclosure or the
   dispatch; the ticker carries three Solutions and five deals; the count above each standard's nations
   is shorter. The PLAYBOOK advice is unchanged here.
-v7.2: What Perfect Nations advises, in place of how FfD and SI solve it (the Steward-General, 9 Nov 2026).
+v7.2: What Perfect Nations advises (9 Nov 2026).
   Each Solution reads as an advisory firm's advice to a client: the challenge, then what Perfect Nations advises
   (the field "advises" in data/state-of-nations.json and in each standard of the playbook below). The
   steps of a Solution are 01 The challenge, 02 The deal, 03 What Perfect Nations advises.
@@ -59,7 +61,8 @@ OUT = PAGES / 'state-of-nations.html'
 NATION_DATA = DATA / 'solutions-by-nation.json'
 sys.path.insert(0, str(ROOT / 'tools'))
 
-VERSION = '8.5'  # Solutions No. 45 to 50: Cameroon, Chad, Cuba, Iraq, Palestine and Nigeria, after Energy and Health were re-measured (the Steward-General, 12 Nov 2026)
+VERSION = '9.0'  # no closing technology sentence, no Steward named (the President and CEO, 16 Nov 2026)
+# 8.5: Solutions No. 45 to 50: Cameroon, Chad, Cuba, Iraq, Palestine and Nigeria, after Energy and Health were re-measured (the Steward-General, 12 Nov 2026)
 # v8.4: light reading sections, Earthrise accents (the Steward-General, 10 Nov 2026)
 # v8.3: Discuss this Solution in the reader of every Solution (the Steward-General, 10 Nov 2026)
 # v8.2: the close button of every pop-up is one design: a gold X drawn as two strokes, centred in a circle (the Steward-General, 9 Nov 2026)
@@ -73,9 +76,9 @@ SITE = 'https://perfectnations.com'
 
 # ---------------------------------------------------------------------------------------------
 # THE PLAYBOOK: for each standard, the instrument that closes the gap, the deal that proved it, and
-# what Perfect Nations advises ("advises", written from "ffd" and "si" and adding no fact; it opens with
+# what Perfect Nations advises ("advises", written from "ffd" and adding no fact; it opens with
 # the nations it addresses, as the label above it already names Perfect Nations; the page and the
-# blueprints show "advises", and keep "ffd" and "si" in the data only). "lib" names an instrument in
+# blueprints show "advises", and keep "ffd" and the internal "si" notes in the data only). "lib" names an instrument in
 # data/capital-architecture.json, whose figure, place, year and source are used unchanged. Food and
 # Health carry their own primary source.
 # Changing a line here is a page change: raise VERSION and open a pull request.
@@ -90,7 +93,7 @@ PLAYBOOK = {
                   'source': 'African Development Bank, August 2024',
                   'url': 'https://www.afdb.org/en/news-and-events/press-releases/african-development-bank-group-and-african-risk-capacity-group-issue-112-million-insurance-payout-government-malawi-73593'},
         'si': 'SI reads rainfall, harvests and food prices district by district, sets the trigger and prices the cover before the season begins.',
-        'advises': 'Nations where food is furthest from reach should buy drought insurance that releases funds on measured rainfall, with the trigger and the price of the cover set district by district before the season begins. With super intelligence, rainfall and harvests can be read field by field, so that funds reach families within weeks of a failed season, before hunger does.',
+        'advises': 'Nations where food is furthest from reach should buy drought insurance that releases funds on measured rainfall, with the trigger and the price of the cover set district by district before the season begins.',
         'first': 'sovereign drought insurance',
     },
     'Water': {
@@ -99,7 +102,7 @@ PLAYBOOK = {
         'ffd': 'Guarantees replace costly debt with cheaper debt, and the savings are committed to water and sewerage.',
         'lib': 'debt-for-climate',
         'si': 'SI maps every household without safe water at home, prices each connection, and follows the savings into every main and treatment plant.',
-        'advises': 'Nations where water is furthest from reach should swap costly debt for cheaper, guaranteed debt and commit the savings to water and sewerage. With super intelligence, every saving can be followed into each household connection, main and treatment plant, and the next connection planned where the need is greatest.',
+        'advises': 'Nations where water is furthest from reach should swap costly debt for cheaper, guaranteed debt and commit the savings to water and sewerage.',
         'first': 'a debt-for-resilience swap bound to water',
     },
     'Shelter': {
@@ -108,7 +111,7 @@ PLAYBOOK = {
         'ffd': 'The proceeds can be spent only on eligible homes, toilets and sewers, reported to investors every year.',
         'lib': 'social-bond',
         'si': 'SI finds the homes without a safe toilet, groups them into programmes investors can finance, and reports each unit delivered.',
-        'advises': 'Nations where shelter is furthest from reach should issue a social bond whose proceeds can be spent only on eligible homes, toilets and sewers. With super intelligence, each unit can be planned, priced and verified, and reported to investors every year, until every family has a safe home.',
+        'advises': 'Nations where shelter is furthest from reach should issue a social bond whose proceeds can be spent only on eligible homes, toilets and sewers.',
         'first': 'a social bond for homes and sanitation',
     },
     'Energy': {
@@ -117,7 +120,7 @@ PLAYBOOK = {
         'ffd': 'Bond money ring-fenced for clean energy under a published framework, with every allocation reported to investors.',
         'lib': 'green-bond',
         'si': 'SI counts the households still cooking with wood, charcoal or kerosene, prices the switch per home, and tracks every project the bond finances.',
-        'advises': 'Nations where energy is furthest from reach should issue a sovereign green bond ring-fenced for clean power and clean cooking. With super intelligence, the switch can be priced for every household still cooking with wood, charcoal or kerosene, and every project the bond finances reported to investors.',
+        'advises': 'Nations where energy is furthest from reach should issue a sovereign green bond ring-fenced for clean power and clean cooking.',
         'first': 'a sovereign green bond for clean power and cooking',
     },
     'Education': {
@@ -126,7 +129,7 @@ PLAYBOOK = {
         'ffd': 'Each tranche of the loan is released only when pupils reach an agreed learning level, verified independently.',
         'lib': 'program-for-results',
         'si': 'SI tracks reading levels school by school, sets the targets that release each tranche, and flags the schools falling behind.',
-        'advises': 'Nations where education is furthest from reach should borrow on a Program-for-Results basis, releasing each tranche only when pupils reach an agreed learning level, verified independently. With super intelligence, reading levels can be tracked school by school, so that every child who falls behind is reached in time.',
+        'advises': 'Nations where education is furthest from reach should borrow on a Program-for-Results basis, releasing each tranche only when pupils reach an agreed learning level, verified independently.',
         'first': 'a Program-for-Results that rewards learning',
     },
     'Health': {
@@ -138,7 +141,7 @@ PLAYBOOK = {
                   'source': 'Inter-American Development Bank, project BA-U0003',
                   'url': 'https://www.iadb.org/en/project/BA-U0003'},
         'si': 'SI prices the essential services each citizen lacks, finds the costly debt to refinance, and follows every saving into clinics and care.',
-        'advises': 'Nations where health is furthest from reach should refinance costly debt behind a development bank guarantee and bind the savings to the health system before they can be spent elsewhere. With super intelligence, every saving can be followed into clinics and care, and services planned where citizens are furthest from them.',
+        'advises': 'Nations where health is furthest from reach should refinance costly debt behind a development bank guarantee and bind the savings to the health system before they can be spent elsewhere.',
         'first': 'a debt-for-health guarantee',
     },
     'Livelihood': {
@@ -147,7 +150,7 @@ PLAYBOOK = {
         'ffd': 'A facility guarantees most of each small-business loan, so local banks lend to firms they would otherwise turn away.',
         'lib': 'sme-credit-guarantee',
         'si': 'SI matches enterprises to lenders, prices the risk the guarantee must carry, and counts the jobs each loan creates.',
-        'advises': 'Nations where livelihoods are furthest from reach should set up a facility that guarantees most of each small-business loan, so that local banks lend to the firms they would otherwise turn away. With super intelligence, lenders can assess firms that have no credit history, and every job each loan creates can be counted.',
+        'advises': 'Nations where livelihoods are furthest from reach should set up a facility that guarantees most of each small-business loan, so that local banks lend to the firms they would otherwise turn away.',
         'first': 'a small-business credit guarantee',
     },
 }

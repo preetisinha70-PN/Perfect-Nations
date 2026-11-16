@@ -50,7 +50,7 @@ S.append({
     'figure': cv['gap'], 'caption': 'of the electricity a Cameroonian needs is missing',
     'standards': ['Energy'],
     'challenge': 'Cameroonians use about 251 kWh of electricity a person a year, against the Living Line of 1,000: %s of the electricity a person needs is missing.' % cv['gap'],
-    'advises': 'Cameroon should finance the lines, substations and village connections that carry its river power to every home, backed by a development bank guarantee so that private lenders can lend for longer and at lower cost. With super intelligence, river flows, demand and losses on every line can be read as they happen, so each new connection is placed where it lights the most homes for the least money.',
+    'advises': 'Cameroon should finance the lines, substations and village connections that carry its river power to every home, backed by a development bank guarantee so that private lenders can lend for longer and at lower cost.',
     'how': ['Rivers that already give two thirds of the nation’s power, renewed by rain every year.',
             'Guaranteed long-term loans for lines, substations and village connections.',
             'Clean power in every home, and fewer diesel generators in every town.'],
@@ -68,7 +68,7 @@ S.append({
     'figure': cv['gap'], 'caption': 'of the electricity a Chadian needs is missing',
     'standards': ['Energy'],
     'challenge': 'Chadians use about 18 kWh of electricity a person a year, against the Living Line of 1,000: %s of the electricity a person needs is missing.' % cv['gap'],
-    'advises': 'Chad should invite private producers to build solar and storage plants for N’Djamena and every regional capital, with breach-of-contract cover and a reserve, financed from oil revenue, that stands behind every bill the power company owes them. With super intelligence, sunlight, demand and every bill can be followed plant by plant, so investors can see their risk fall and every town can see its hours of power.',
+    'advises': 'Chad should invite private producers to build solar and storage plants for N’Djamena and every regional capital, with breach-of-contract cover and a reserve, financed from oil revenue, that stands behind every bill the power company owes them.',
     'how': ['Oil that earns most of what Chad sells abroad, and sun over 1.26 million square kilometres.',
             'Private solar and storage, made bankable by breach-of-contract cover and a reserve financed from oil revenue.',
             'Power for homes, clinics and water pumps in every regional capital.'],
@@ -86,7 +86,7 @@ S.append({
     'figure': cv['gap'], 'caption': 'of the basic list of medicines is not available to Cubans',
     'standards': ['Health'],
     'challenge': 'Only 30%% of the basic list of medicines is available to Cubans, the President of Cuba said in August 2026: %s is not.' % cv['gap'],
-    'advises': 'Cuba should ask its official creditors to convert part of what it owes into a medicine fund, building on the counterpart fund it already runs with France, with every purchase audited and published. With super intelligence, stocks can be read pharmacy by pharmacy and shortages seen before they happen, so each order goes where patients are waiting.',
+    'advises': 'Cuba should ask its official creditors to convert part of what it owes into a medicine fund, building on the counterpart fund it already runs with France, with every purchase audited and published.',
     'how': ['A debt conversion already proven with France, and its own makers of medicines and vaccines.',
             'A debt-for-medicine conversion: part of what Cuba owes becomes an audited medicine fund.',
             'Medicines back on pharmacy shelves, and fewer patients turned away.'],
@@ -107,7 +107,7 @@ S.append({
     'figure': cv['gap'], 'caption': 'of the electricity Iraq needs is not supplied',
     'standards': ['Energy'],
     'challenge': 'Iraq’s grid produced 24,600 MW in September 2026, against at least 55,000 MW needed for power around the clock: %s of the electricity Iraq needs is not supplied.' % cv['gap'],
-    'advises': 'Iraq should finance the capture of the gas now burned at its oil fields and turn it into power, through project finance repaid from the electricity sold, with solar plants built on the same sites. With super intelligence, every flare can be watched from space and every captured cubic metre followed to the grid, so lenders and citizens alike can see wasted gas become power.',
+    'advises': 'Iraq should finance the capture of the gas now burned at its oil fields and turn it into power, through project finance repaid from the electricity sold, with solar plants built on the same sites.',
     'how': ['Oil fields among the nine that flare the most gas in the world, and sun in every season.',
             'Project finance for gas capture and power plants, repaid from the electricity sold.',
             'More hours of power in every home, and cleaner air over the oil fields.'],
@@ -125,7 +125,7 @@ S.append({
     'figure': cv['gap'], 'caption': 'of Palestinians live in Gaza, where the grid has been down since October 2023',
     'standards': ['Water', 'Energy', 'Health'],
     'challenge': 'Of all Palestinians, %s live in Gaza, where the electricity grid has been down since October 2023.' % cv['gap'],
-    'advises': 'Palestine should open a light fund, published in full, through which Palestinians abroad and development partners finance solar power and storage for Gaza’s hospitals, water plants, schools and homes, beginning where the need is greatest. With super intelligence, damage and sunlight can be mapped roof by roof, so every panel is placed where it restores the most hours of power, clean water and care.',
+    'advises': 'Palestine should open a light fund, published in full, through which Palestinians abroad and development partners finance solar power and storage for Gaza’s hospitals, water plants, schools and homes, beginning where the need is greatest.',
     'how': ['Palestinians abroad who already send home a steady share of the economy, and sun in every season.',
             'A light fund, published in full, pooling diaspora finance and partner grants.',
             'Power for hospitals, water plants, schools and homes, before the grid returns.'],
@@ -144,7 +144,7 @@ S.append({
     'figure': cv['gap'], 'caption': 'of the electricity a Nigerian needs is missing',
     'standards': ['Energy', 'Livelihood'],
     'challenge': 'Nigerians use about 165 kWh of electricity a person a year, against the Living Line of 1,000: %s of the electricity a person needs is missing.' % cv['gap'],
-    'advises': 'Nigeria should dedicate its next sovereign green bond to solar mini-grids and storage for markets, clinics and homes, with private developers matching each connection and the states that open their own electricity markets served first. With super intelligence, rooftops, markets and diesel generators can be mapped from space, so every mini-grid is placed where it replaces the most diesel and serves the most traders.',
+    'advises': 'Nigeria should dedicate its next sovereign green bond to solar mini-grids and storage for markets, clinics and homes, with private developers matching each connection and the states that open their own electricity markets served first.',
     'how': ['Sunlight in every state, and a sovereign green bond market already tested three times.',
             'The next sovereign green bond, dedicated to solar mini-grids and matched by private developers.',
             'Power through the day for markets, clinics and homes, in place of diesel generators.'],
@@ -181,9 +181,8 @@ def check(e):
             bad.append('%s is %d characters (at most %d)' % (k, len(e[k]), n))
     if not re.search(r'\d', e['figure']):
         bad.append('figure has no digit')
-    sents = re.split(r'(?<=\.)\s+', e['advises'])
-    if len(sents) != 2 or not sents[1].startswith('With super intelligence,'):
-        bad.append('advises must be two sentences, the second beginning "With super intelligence,"')
+    if re.search(r'super ?intelligence|\bSI\b', e['advises'], re.I):
+        bad.append('advises names super intelligence; the site never does (Preeti Sinha, 16 Nov 2026)')
     if e['advises'].startswith('Perfect Nations advises'):
         bad.append('advises begins with "Perfect Nations advises"')
     text = ' '.join([e['title'], e['standfirst'], e['challenge'], e['advises'], e['first'], e['caption']] + e['how'] + [e['proof']['label']])
