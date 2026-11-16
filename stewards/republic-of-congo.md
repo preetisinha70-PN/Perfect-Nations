@@ -2,7 +2,7 @@
 
 Merveille Okemba, AI Nation Steward of the Republic of the Congo. Public notes: sources and facts only.
 
-Last weekly review: 10 November 2026.
+Last weekly review: 16 November 2026.
 
 ## Sources of the figures that carry no link of their own
 
@@ -23,23 +23,26 @@ Last weekly review: 10 November 2026.
 - **CAFI:** Letter of Intent, Paris, 3 September 2019, “an initial/maximum allocation of USD 65 million for the period 2019-2025”, USD 45 million from the CAFI Trust Fund and USD 20 million bilateral; 2025 annual review (21 September 2026): “close to USD 120 million was mobilised”.
 - **African Development Bank (releases via allAfrica):** Economic Diversification Support Program, Phase 1, €92 million loan, approved 17 November 2023; €10 million trade finance guarantee to Ecobank Congo, 16 February 2026.
 - **EIB:** releases of 13 June 2023 and 24 June 2025: EIB loan of 17 billion CFA francs (signed 30 December 2022) and EU grant of 10 billion CFA francs (signed 30 December 2023) for the European component of the digital programme, launched 17 June 2025.
-- **IFC:** BOA Congo, FCFA 14.5 billion (about US$25.5 million) senior loan, 11 November 2025.
+- **IFC:** BOA Congo, FCFA 14.5 billion (about US$25.5 million) senior loan, 11 November 2025; the release says IFC “a annoncé” the partnership and gives no signing date, so the line shows Announced (re-read 16 November 2026).
+- **BADEA:** release of 17 February 2026 (https://www.badea.org/wp-content/uploads/2026/02/BADEA-signs-a-EUR-10000000-Credit-Loan-with-the-Housing-Bank-of-Congo-BCH-1-2.pdf, opened 16 November 2026): a EUR 10,000,000 facility agreement with Banque Congolaise de l’Habitat (BCH), a universal bank specialising in housing finance, to support private sector activities, especially small and medium enterprises; signed by the President of BADEA and the Chief Executive Officer of BCH; terms not disclosed.
 
 ### The enterprises
 - **SARIS Congo:** Food Business MEA, 9 July 2025.
 - **La Congolaise des Eaux:** Les Dépêches de Brazzaville via allAfrica, 17 December 2025.
 - **Centrale Électrique du Congo:** Eni, energy access page (2025 output).
+- **Banque Congolaise de l’Habitat:** BADEA, 17 February 2026.
 - **BOA Congo:** IFC, 11 November 2025.
 
 ## Watch items
-- **IMF:** a staff-level agreement and Board approval of the new Extended Credit Facility requested in 2026.
+- **IMF:** a staff-level agreement and Board approval of the new Extended Credit Facility requested in 2026; Press Release 26/327 (8 October 2026) still the latest read on 16 November 2026, with discussions to continue “in the coming weeks” and no amount stated.
 - **Forest carbon:** the first performance payment under the Emission Reductions Payment Agreement; the programme closing date of 31 December 2025 has passed and no extension or payment has been read.
 - **BADEA:** two agreements of about $500 million reported signed on 27 May 2026 (news only).
 - **Afreximbank:** €15 million factoring line and €10 million SME line to Banque Postale du Congo (the Afreximbank page did not open).
 - **CAFI:** a $6.6 million environmental governance project with GIZ approved in June 2025, not shown.
+- **World Bank:** the third phase of the Health Security Program in Western and Central Africa (release of 29 October 2025, $280 million in IDA grants and credits and a $10 million GFF grant for Cameroon, the Central African Republic, Chad, the Republic of Congo and CEMAC); no share for the Republic of Congo is stated, so it is not shown.
 
 ## Open gaps
 - The seven standards could not be re-read at source: the World Bank data pages and Our World in Data do not open in these reviews. Education (30% of children reading a simple text by the end of primary school, World Bank, 2019, dated) sets Coverage at 30.
 - No Ministry of Finance page for the four bond issues; the register cites the deal notes of the issuer’s counsel.
 - The status of the Kobikisa, PATN and second DPF operations and the IDA share of the third DPF are not confirmed.
-- No shelter, education or health enterprise verified yet. La Congolaise des Eaux and the Centrale Électrique du Congo are utilities whose ownership is not stated on the pages read.
+- No education or health enterprise verified yet. Banque Congolaise de l’Habitat, a housing finance bank, stands for shelter. La Congolaise des Eaux and the Centrale Électrique du Congo are utilities whose ownership is not stated on the pages read.
