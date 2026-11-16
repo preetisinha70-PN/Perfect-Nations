@@ -461,8 +461,11 @@ PORTRAITS = {
     'united-arab-emirates': (UP + 'pn-hos-united-arab-emirates-250x300.jpg', 'Alan Santos, Presidency of Brazil', CC_BY_2),
     'oman': (UP + 'pn-hog-oman-250x300.jpg', 'Prime Minister’s Office, Government of India', {'label': 'GODL-India'}),
 }
+GOJ = {'label': 'Government of Japan Standard Terms of Use 2.0, compatible with CC BY 4.0'}
 PORTRAITS_HOG = {
     'india': (UP + 'pn-hog-india-240x300.jpg', 'Prime Minister’s Office, Government of India', {'label': 'GODL-India'}),
+    # licence confirmed by the Steward-General from the Wikimedia Commons file page, 15 November 2026
+    'cambodia': (UP + 'pn-hog-cambodia-229x300.jpg', 'Government of Japan', GOJ),
 }
 
 GREET = {
