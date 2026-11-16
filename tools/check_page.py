@@ -8,7 +8,8 @@ tag (WordPress rejects </?word in CSS); every <script> passes `node --check`; ta
 unique; no backdrop-filter; no static <script src>; every script survives the WordPress formatter
 (wptexturize, which rewrites & as &#038; inside anything it takes for a tag; added 10 Nov 2026 after it broke the
 Mexico blueprint scripts); and, in the copy a visitor reads (text, title, alt, placeholder, aria-label), no
-straight apostrophes and no contractions.
+straight apostrophes, no contractions, no super intelligence (or SI) and no Steward (Preeti Sinha, 16 Nov 2026:
+the Stewards stay internal and the site never names super intelligence; tools/no_si.py checks the whole file).
 Exit status 1 if anything fails. Needs: pip install tinycss2, and node.
 """
 import re
@@ -21,6 +22,8 @@ import tinycss2
 
 VOID = {'area', 'base', 'br', 'col', 'embed', 'hr', 'img', 'input', 'link', 'meta', 'source', 'track', 'wbr'}
 COPY_ATTRS = ('title', 'alt', 'placeholder', 'aria-label')
+NO_SI = re.compile(r'(?i:super ?intelligence|superintelligence)|\(SI\)|SI Researcher|(?<![\w=./-])SI(?![\w.=/-])')
+STEWARD = re.compile(r'\bStewards?\b')
 CONTRACTION = re.compile(r"\b\w+(n['’]t|['’](re|ve|ll|d|m))\b|\b(it|that|there|here|what|who|let)['’]s\b", re.I)
 
 
@@ -143,6 +146,10 @@ def check(path):
         c = CONTRACTION.search(text)
         if c:
             bad.append('line %d: a contraction in the copy: %r' % (line, c.group(0)))
+        if NO_SI.search(text):
+            bad.append('line %d: super intelligence in the copy: %r' % (line, text.strip()[:80]))
+        if STEWARD.search(text):
+            bad.append('line %d: a Steward in the copy: %r' % (line, text.strip()[:80]))
     return bad
 
 

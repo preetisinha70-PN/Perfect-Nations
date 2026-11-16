@@ -1,5 +1,6 @@
 <!-- ===========================================================================
-PERFECT NATIONS - SOVEREIGN ASSETS PAGE - SOURCE - v7.2 - 2026-11-13
+PERFECT NATIONS - SOVEREIGN ASSETS PAGE - SOURCE - v7.3 - 2026-11-16
+v7.3: the ledger line names no Steward: each nation is kept current on its blueprint, every figure sourced (the President and CEO, 16 Nov 2026).
 v7.2: the Lobito Corridor card takes the Angola blueprint's own Corridor picture (The Lobito Atlantic Railway); the old photograph carried a white line and a strip of another picture down its left edge. The planet and the ledger count all 195 open blueprints; the list shows forty-eight names on laptops (twelve on phones), then Show all. The page script sits inside an HTML comment marker, as on the blueprints, so the WordPress formatter cannot break it (the Steward-General, 13 Nov 2026).
 v7.1: light reading sections, Earthrise accents (the Steward-General, 10 Nov 2026).
 v7.0 (the Steward-General, 10 Nov 2026: the updates of the homepage and the blueprints):
@@ -10,9 +11,9 @@ v7.0 (the Steward-General, 10 Nov 2026: the updates of the homepage and the blue
     what About and the blueprints say: each nation's five greatest assets; the planet's sea is the
     homepage's lapis lazuli (#1F45A3 lit, #0A1D5C in shadow).
   - The five assets follow the blueprints: Botswana shows The Diamonds (80% of exports, IMF) and India
-    The Sun (171 GW, MNRE), as their Nation Stewards record them; Inga is Water & Rivers.
+    The Sun (171 GW, MNRE), as their blueprints record them; Inga is Water & Rivers.
   - Every link to a nation, from the planet, the five assets and the full ledger, opens its five
-    assets on its blueprint (#bp-assets). The ledger names its SI Nation Stewards.
+    assets on its blueprint (#bp-assets). The ledger names no Steward (16 Nov 2026).
 v6.5: the close button of every pop-up is one design: a gold X drawn as two strokes, centred in a circle (the Steward-General, 9 Nov 2026).
 This is the SOURCE of the Sovereign Assets page. Never paste it. The page that is served is
 pages/sovereign-assets.html, built from this file by tools/build_sovereign_assets.py, which fills
@@ -28,21 +29,20 @@ the tokens below from data/sovereign-assets.json and data/<nation>.json:
 Kept by the Sovereign Assets Steward (skill steward-sovereign-assets). Every change to the design
 goes through a pull request "For approval: Sovereign Assets vX.Y, [what changed]".
 v6.0 (6 Nov 2026): one file, kept in GitHub; the homepage design system (Earthrise and ivory
-grounds, gold only for actions, the cup icon, the painted seams, the five moves, SI); compact on
+grounds, gold only for actions, the cup icon, the painted seams, the five moves); compact on
 laptops and phones; the ledger counted live from the 44 open blueprints.
 v6.1 (6 Nov 2026): the gold lights open their nation (a tap or click shows the nation, its lead
 asset and a link to its blueprint; a hover names it). On laptops the stage of five assets grows to
 fit its tallest panel, so no figure is cut on shorter laptop windows (seen at 1366 x 657). On
 phones each class label keeps to one line, so the figures in a row line up.
-v6.2 (8 Nov 2026): FfD before SI (the Steward-General, 8 Nov 2026). The lead puts the finance first
-and super intelligence (SI) second.
+v6.2 (8 Nov 2026): the lead puts the finance first.
 v6.3: Gold line in place of the painted botanical seams (the Steward-General, 9 Nov 2026).
 v6.4: Fewer words (the Steward-General, 9 Nov 2026): one headline and one line per section. The hero
 lead is one sentence (the eight classes are on the balance sheet below); each of the five assets keeps
 its figure, line, name and source, and its paragraph moves under Read more (a details disclosure,
 class sa-rm); the steps and the ledger drop the sentences that repeated each other.
 =========================================================================== -->
-<div id="pn-sov" class="pnsa" data-v="7.2">
+<div id="pn-sov" class="pnsa" data-v="7.3">
 <style>
 #pn-sov{
   --er:#0B3D45; --lg:#0F4C5C; --dp:#082A30; --plate:#0A3840;
@@ -645,7 +645,7 @@ class sa-rm); the steps and the ledger drop the sentences that repeated each oth
     <div class="sa-in">
       <p class="sa-eb sa-rv">The full ledger</p>
       <h2 class="sa-h2 sa-rv" id="sa-ledger-h">Every nation&#8217;s assets live on its blueprint</h2>
-      <p class="sa-lead sa-rv"><span data-sa="assets">@@ASSETS@@</span> assets across <span data-sa="nations">@@NATIONS@@</span> nations, each kept current by its SI Nation Steward.</p>
+      <p class="sa-lead sa-rv"><span data-sa="assets">@@ASSETS@@</span> assets across <span data-sa="nations">@@NATIONS@@</span> nations, each kept current on its blueprint, every figure sourced.</p>
       <ul class="sa-nl" id="saNations" aria-label="Nations with an open blueprint">
 @@NATIONLIST@@
       </ul>

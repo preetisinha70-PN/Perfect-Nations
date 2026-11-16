@@ -204,9 +204,8 @@ def check(slug, title, adv):
         errs.append('title over 60')
     if len(adv) > 520:
         errs.append('advice over 520 (%d)' % len(adv))
-    parts = re.split(r'(?<=\.) (?=With super intelligence,)', adv)
-    if len(parts) != 2:
-        errs.append('second sentence must begin "With super intelligence,"')
+    if re.search(r'super ?intelligence|\bSI\b', adv, re.I):
+        errs.append('the advice names super intelligence; the site never does (Preeti Sinha, 16 Nov 2026)')
     if re.search(r"\bpay(s|ing|ment)?\b|FFD|n't|\b(I'm|it's|don't)\b", adv, re.I):
         errs.append('forbidden word')
     if re.search(r'\d', adv):

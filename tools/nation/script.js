@@ -1,6 +1,6 @@
 (function () {
   /* Blueprint v11.9: a designed Solution offers Discuss this Solution; Plan a Blueprint Lab opens The Blueprint Lab.
-     v11.5: the page follows its Nation Steward and the State of Nations.
+     v11.5: the page follows its live data file and the State of Nations.
      v11.5: the register reads "Capital already committed" (the anchor #bp-register and the key capital.register are
        unchanged); "Already working in" the nation is its own band after 02 Capital, its cards built as h3 under
        its h2 (#bp-ent-h, the heading from the live file).
@@ -8,7 +8,7 @@
        and terms; the Newswire shows three headlines, then All news; a Solution shows The challenge, and The deal and
        What Perfect Nations advises open on a click (labels and texts unchanged); a longer summary shows its first
        sentence, then Read more. The tiles of What we do keep one short line each.
-     v11.1: What Perfect Nations advises, in place of how FfD and SI solve it (the Steward-General, 9 Nov 2026):
+     v11.1: What Perfect Nations advises (9 Nov 2026):
        a Solution reads 01 The challenge, 02 What Perfect Nations advises; the Solution for the nation reads
        01 The challenge, 02 The deal, 03 What Perfect Nations advises (as tools/build_nations.py writes them).
      - On load it reads data/<nation>.json (raw.githubusercontent.com, then jsDelivr) for the nation line and
@@ -59,12 +59,20 @@
   function longDate(iso) { var p = String(iso || '').split('-'); if (p.length !== 3) return ''; return (+p[2]) + ' ' + MONTHS[(+p[1]) - 1] + ' ' + p[0]; }
   function shortDate(iso) { var p = String(iso || '').split('-'); if (p.length !== 3) return ''; return (+p[2]) + ' ' + MONTHS[(+p[1]) - 1].slice(0, 3) + ' ' + p[0]; }
   function money(parent, v, m) { if (m) parent.appendChild(el('span', 'bpx-money', v)); else parent.appendChild(document.createTextNode(v)); }
+  /* v14.0: every text from the data passes noSI() first; the rule is in tools/no_si.py (16 Nov 2026) */
+  var NOSI_T = /super ?intelligence|\(SI\)|\bSI\b(?![.\-\/=])/i;
+  var NOSI = /(^|[.!?]\s+)[^.!?]*?(super ?intelligence|\(SI\)|\bSI\b(?![.\-\/=]))[^.!?]*?[.!?](?:\s+|$)/gi;
+  function noSI(o) {
+    if (typeof o === 'string') { for (var n = 0; n < 3 && NOSI_T.test(o); n++) o = o.replace(NOSI, '$1'); return o.replace(/^\s+|\s+$/g, ''); }
+    if (o && typeof o === 'object') for (var k in o) if (Object.prototype.hasOwnProperty.call(o, k) && k !== 'si' && k !== 'url') o[k] = noSI(o[k]);
+    return o;
+  }
   function get(path, done, fail) {
     var i = 0;
     (function next() {
       if (i >= BASES.length) { if (fail) fail(); return; }
       fetch(BASES[i++] + path, { cache: 'no-cache' }).then(function (r) { if (!r.ok) throw 0; return r.json(); })
-        .then(done).catch(next);
+        .then(function (d) { return done(noSI(d)); }).catch(next);
     })();
   }
   function near(target, fn, margin) {
@@ -386,7 +394,7 @@
     }
     if (T(x.figure)) { var f = el('p', 'bpx-sol__fig'); f.appendChild(el('b', '', x.figure)); if (T(x.caption)) f.appendChild(el('span', '', x.caption)); li.appendChild(f); }
     var foot = el('div', 'bpx-sol__foot'), sig = el('span', 'bpx-sig', 'From');
-    sig.appendChild(el('b', '', sigName)); sig.appendChild(el('small', '', sigRole)); foot.appendChild(sig);
+    sig.appendChild(el('b', '', sigName)); if (sigRole) sig.appendChild(el('small', '', sigRole)); foot.appendChild(sig);
     var acts = el('span', 'bpx-sol__acts');
     acts.appendChild(link(el('a', 'bpx-btn', deal ? 'Read the Deal Note' : 'Read the Solution'), href));
     /* v11.9: a designed Solution also offers Discuss this Solution (the Contact page, that Solution chosen) */
@@ -447,8 +455,9 @@
     pool.forEach(function (p) {
       var key = (p.x.kind === 'design' ? 's' : 'd') + p.x.no;
       if (seen[key]) return; seen[key] = 1;
+      /* v14.0: a Solution or Deal Note from the research desk is signed by the firm; no Steward is named (16 Nov 2026) */
       var st = p.who === 'steward';
-      cards.push(solCard(p.x, st ? CFG.steward : 'Preeti Sinha', st ? CFG.stewardRole + ' \u00b7 SI Researcher' : 'President and CEO, Perfect Nations'));
+      cards.push(solCard(p.x, st ? 'Perfect Nations' : 'Preeti Sinha', st ? '' : 'President and CEO, Perfect Nations'));
     });
     if (!lead && !cards.length) return;
     ul.textContent = ''; ul.classList.remove('is-all');
