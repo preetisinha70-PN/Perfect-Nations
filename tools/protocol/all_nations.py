@@ -435,10 +435,12 @@ CC_BY_2 = {'label': 'CC BY 2.0', 'url': 'https://creativecommons.org/licenses/by
 PD = {'label': 'public domain'}
 # Portraits by office (the Steward-General, 15 November 2026): files named pn-hos-<slug> show the head of state, files
 # named pn-hog-<slug> the head of government. PORTRAITS holds heads of state; PORTRAITS_HOG heads of government.
+# Where one person holds both offices (Brazil, Kenya, the United States, Mexico, Ghana, the Philippines, Cyprus, South
+# Africa, Oman), the portrait is a pn-hog- file, copied on 15 November 2026 from the pn-hos- upload, which is kept.
 PORTRAITS = {
     'rwanda': (UP + 'pn-hos-rwanda-232x300.jpg', 'Maayan Toaf, Government Press Office of Israel', CC_BY_SA_3),
-    'brazil': (UP + 'pn-hos-brazil-272x300.jpg', 'Ricardo Stuckert, Presidency of Brazil', None),
-    'kenya': (UP + 'pn-hos-kenya-237x300.jpg', 'Government of Kenya', None),
+    'brazil': (UP + 'pn-hog-brazil-272x300.jpg', 'Ricardo Stuckert, Presidency of Brazil', None),
+    'kenya': (UP + 'pn-hog-kenya-237x300.jpg', 'Government of Kenya', None),
     'cote-divoire': (UP + 'pn-hos-cote-divoire-200x300.jpg', 'Dario Pignatelli, European Union', None),
     'ukraine': (UP + 'pn-hos-ukraine-222x300.jpg', 'President.gov.ua', CC_BY_4),
     'india': (UP + 'pn-hos-india-1-218x300.jpg', 'President’s Secretariat, Government of India', {'label': 'GODL-India'}),
@@ -448,20 +450,19 @@ PORTRAITS = {
     'mongolia': (UP + 'pn-hos-mongolia-225x300.jpg', 'President.mn', CC_BY_4),
     # second batch, 15 November 2026 evening: the leader shown on the band, with a known credit and licence
     'france': (UP + 'pn-hos-france-241x300.jpg', 'Dati Bendo, European Commission', CC_BY_4),
-    'united-states': (UP + 'pn-hos-united-states-240x300.jpg', 'Daniel Torok, The White House', PD),
-    'mexico': (UP + 'pn-hos-mexico-202x300.jpg', 'EneasMx', CC_BY_4),
-    'ghana': (UP + 'pn-hos-ghana-298x300.png', 'U.S. Department of State', PD),
+    'united-states': (UP + 'pn-hog-united-states-240x300.jpg', 'Daniel Torok, The White House', PD),
+    'mexico': (UP + 'pn-hog-mexico-202x300.jpg', 'EneasMx', CC_BY_4),
+    'ghana': (UP + 'pn-hog-ghana-298x300.png', 'U.S. Department of State', PD),
     'tanzania': (UP + 'pn-hos-tanzania-300x300.jpg', 'U.S. Embassy Dar es Salaam', PD),
-    'philippines': (UP + 'pn-hos-philippines-185x300.jpg', 'Department of Foreign Affairs of the Philippines', PD),
-    'cyprus': (UP + 'pn-hos-cyprus-243x300.jpg', 'European Union 2023, European Parliament / Laia Ros', None),
+    'philippines': (UP + 'pn-hog-philippines-185x300.jpg', 'Department of Foreign Affairs of the Philippines', PD),
+    'cyprus': (UP + 'pn-hog-cyprus-243x300.jpg', 'European Union 2023, European Parliament / Laia Ros', None),
     'cuba': (UP + 'pn-hos-cuba-215x300.jpg', 'Ricardo Stuckert, Presidency of Brazil', CC_BY_2),
-    'south-africa': (UP + 'pn-hos-south-africa-230x300.jpg', 'Ricardo Stuckert, Presidency of Brazil', CC_BY_2),
+    'south-africa': (UP + 'pn-hog-south-africa-230x300.jpg', 'Ricardo Stuckert, Presidency of Brazil', CC_BY_2),
     'united-arab-emirates': (UP + 'pn-hos-united-arab-emirates-250x300.jpg', 'Alan Santos, Presidency of Brazil', CC_BY_2),
-    'oman': (UP + 'pn-hos-oman-250x300.jpg', 'Prime Minister’s Office, Government of India', {'label': 'GODL-India'}),
+    'oman': (UP + 'pn-hog-oman-250x300.jpg', 'Prime Minister’s Office, Government of India', {'label': 'GODL-India'}),
 }
 PORTRAITS_HOG = {
-    # uploaded as pn-hos-india before the pn-hog- names were agreed
-    'india': (UP + 'pn-hos-india-240x300.jpg', 'Prime Minister’s Office, Government of India', {'label': 'GODL-India'}),
+    'india': (UP + 'pn-hog-india-240x300.jpg', 'Prime Minister’s Office, Government of India', {'label': 'GODL-India'}),
 }
 
 GREET = {
