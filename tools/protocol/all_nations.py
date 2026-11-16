@@ -362,6 +362,8 @@ NOTES = {
 UP = 'https://perfectnations.com/wp-content/uploads/2026/11/'
 CC_BY_SA_3 = {'label': 'CC BY-SA 3.0', 'url': 'https://creativecommons.org/licenses/by-sa/3.0/'}
 CC_BY_4 = {'label': 'CC BY 4.0', 'url': 'https://creativecommons.org/licenses/by/4.0/'}
+CC_BY_2 = {'label': 'CC BY 2.0', 'url': 'https://creativecommons.org/licenses/by/2.0/'}
+PD = {'label': 'public domain'}
 PORTRAITS = {
     'rwanda': (UP + 'pn-hos-rwanda-232x300.jpg', 'Maayan Toaf, Government Press Office of Israel', CC_BY_SA_3),
     'brazil': (UP + 'pn-hos-brazil-272x300.jpg', 'Ricardo Stuckert, Presidency of Brazil', None),
@@ -369,6 +371,18 @@ PORTRAITS = {
     'cote-divoire': (UP + 'pn-hos-cote-divoire-200x300.jpg', 'Dario Pignatelli, European Union', None),
     'ukraine': (UP + 'pn-hos-ukraine-222x300.jpg', 'President.gov.ua', CC_BY_4),
     'india': (UP + 'pn-hos-india-240x300.jpg', 'Prime Minister’s Office, Government of India', {'label': 'GODL-India'}),
+    # second batch, 15 November 2026 evening: the leader shown on the band, with a known credit and licence
+    'france': (UP + 'pn-hos-france-241x300.jpg', 'Dati Bendo, European Commission', CC_BY_4),
+    'united-states': (UP + 'pn-hos-united-states-240x300.jpg', 'Daniel Torok, The White House', PD),
+    'mexico': (UP + 'pn-hos-mexico-202x300.jpg', 'EneasMx', CC_BY_4),
+    'ghana': (UP + 'pn-hos-ghana-298x300.png', 'U.S. Department of State', PD),
+    'tanzania': (UP + 'pn-hos-tanzania-300x300.jpg', 'U.S. Embassy Dar es Salaam', PD),
+    'philippines': (UP + 'pn-hos-philippines-185x300.jpg', 'Department of Foreign Affairs of the Philippines', PD),
+    'cyprus': (UP + 'pn-hos-cyprus-243x300.jpg', 'European Union 2023, European Parliament / Laia Ros', None),
+    'cuba': (UP + 'pn-hos-cuba-215x300.jpg', 'Ricardo Stuckert, Presidency of Brazil', CC_BY_2),
+    'south-africa': (UP + 'pn-hos-south-africa-230x300.jpg', 'Ricardo Stuckert, Presidency of Brazil', CC_BY_2),
+    'united-arab-emirates': (UP + 'pn-hos-united-arab-emirates-250x300.jpg', 'Alan Santos, Presidency of Brazil', CC_BY_2),
+    'oman': (UP + 'pn-hos-oman-250x300.jpg', 'Prime Minister’s Office, Government of India', {'label': 'GODL-India'}),
 }
 
 GREET = {
@@ -421,6 +435,12 @@ def main():
     for slug in sorted(names):
         if slug == 'france':
             nations[slug].setdefault('checked', CHECKED)
+            if slug in PORTRAITS:
+                url, credit, licence = PORTRAITS[slug]
+                hs = nations[slug]['head_of_state']
+                hs['portrait'], hs['portrait_credit'] = url, credit
+                if licence:
+                    hs['portrait_licence'] = licence
             continue
         r = table[slug]
         cur = nations.get(slug, {})
