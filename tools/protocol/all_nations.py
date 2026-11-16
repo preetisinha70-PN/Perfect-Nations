@@ -420,8 +420,8 @@ NOTES = {
     'norway': 'King Haakon VIII succeeded King Harald V on 28 August 2026; the Royal House of Norway is the source.',
     'denmark': 'The Copenhagen list also gives 26 May, the King’s Birthday.',
     'venezuela': 'The UN Protocol list gives an Acting President; check monthly.',
-    'burundi': 'The UN Protocol list prints the Prime Minister as "Ntahontuye Ntahontuye"; appointed 5 August 2025. Confirm the first name.',
-    'gabon': 'The President is Head of State and Head of Government; the UN Protocol list still names Raymond Ndong Sima as Prime Minister.',
+    'burundi': 'Prime Minister Nestor Ntahontuye, appointed 5 August 2025; the name was confirmed by the Steward-General against official sources on 15 November 2026. The UN Protocol list prints "Ntahontuye Ntahontuye", a repeated surname.',
+    'gabon': 'Under the new constitution the President is both Head of State and Head of Government (confirmed by the Steward-General against official sources on 15 November 2026). The UN Protocol list still names a Prime Minister, Raymond Ndong Sima, from the earlier arrangement.',
     'syria': 'The President leads the government; the UN Protocol list names no Prime Minister.',
 }
 
