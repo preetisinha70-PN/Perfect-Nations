@@ -4,6 +4,8 @@ Ximena Quispe, AI Nation Steward of Bolivia. Public notes: sources and facts onl
 
 First edition: 10 November 2026 (wave 5, the Americas of the remaining nations). The weekly review adds the enterprises, more of the capital already committed and the Newswire.
 
+Last review: 16 November 2026.
+
 ## The seven standards
 
 - **Food, Not measured:** No FAO measure of food insecurity is published for Bolivia. FAO, https://data.worldbank.org/indicator/SN.ITK.MSFI.ZS?locations=BO
@@ -34,7 +36,26 @@ Furthest from reach: Shelter (46.6%). Of city dwellers in Bolivia live in slums.
 - **Resilient Water Management ($150M):** Irrigation and water for farming. https://projects.worldbank.org/en/projects-operations/project-detail/P178861
 - **Road Sector Climate Resilience, first series ($118.5M):** Roads that withstand floods and landslides. https://projects.worldbank.org/en/projects-operations/project-detail/P180770
 
+## Added on 16 November 2026
+
+- **International sovereign bond, USD 1,000 million:** issued May 2026, disbursed in full; sovereign bonds USD 2,286.9 million of external public debt (USD 14,117.2 million, 26.1% of GDP) at 30 September 2026. Banco Central de Bolivia, Deuda externa pública al 30 de septiembre de 2026, https://www.bcb.gob.bo/webdocs/informes_deudaexterna/DEXPU%20sep26%20%282%29.pdf (opened 16 November 2026)
+- **World Bank Group, US$500 million:** general budget support, approved 12 November 2026, the first of a series of two planned operations, coordinated with the IMF, the IDB and CAF. https://www.bancomundial.org/es/news/press-release/2026/11/12/world-bank-group-approves-us-500-million-to-support-fiscal-sustainability-and-job (opened 16 November 2026)
+- **IMF Extended Fund Facility, SDR 1.369 billion (about US$1.9 billion), 570 percent of quota:** approved 2 October 2026; SDR 156 million (about US$214 million) at once. The same release projects real GDP at −3.0% for 2026 and gives total gross NFPS debt of 83.3% of GDP for 2025 (the hero figures). https://www.imf.org/en/news/articles/2026/10/02/pr26317-bolivia-imf-approves-36-month-eff-arrangement (opened 16 November 2026)
+- **IDB, US$204.2 million, energy transition of the Northern Amazon (July 2026):** IDB loan US$142.2 million; Climate Investment Funds loan US$60 million and grant US$2 million. https://www.iadb.org/en/news/idb-supports-strengthening-energy-security-bolivias-northern-amazon-region (opened 16 November 2026)
+- **CAF, US$110 million, Chichas Solar Plant (120 MW):** approved by the CAF Board on 29 June 2025; executed by ENDE. https://www.caf.com/en/currently/news/caf-approves-usd-110-million-for-the-construction-of-chichas-solar-plant-in-bolivia (opened 16 November 2026)
+- **Enterprise, BancoSol (Livelihood):** IDB Invest partial credit guarantee, approved 26 March 2024, project 14388-01. https://idbinvest.org/en/projects/banco-sol-social-gender-bond-pcg (opened 16 November 2026)
+
+## Watch
+
+- IDB package of US$750 million (November 2026): a US$500 million special development loan and a US$250 million policy-based loan, the first of two. The IDB release did not open on 16 November 2026: https://www.iadb.org/en/news/idb-approves-750-million-financial-package-support-bolivias-economic-stabilization-plan
+- IDB social protection: the IDB release states US$500 million for a new social household registry; the IDB project BO-L1245 is listed at US$290 million. To be reconciled at the IDB before it is added.
+- IDB Group package of US$4.5 billion for 2026 to 2028, including up to US$450 million from IDB Invest. https://www.iadb.org/en/news/idb-group-bolivia-agree-major-45-billion-support-package
+- CAF: the US$550 million liquidity loan (November 2025) and the agenda of up to US$3.1 billion; no CAF release found yet.
+- The second World Bank operation of the series; the IMF reviews of the arrangement.
+
 ## Open gaps
 
 - No FAO food insecurity measure.
 - Safely managed sanitation is not measured; the Shelter standard rests on urban slums.
+- No enterprise yet for food, water, shelter, energy, education or health.
+- The World Bank project pages for the Resilient Water Management and Road Sector lines were not re-read on 16 November 2026.

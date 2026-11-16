@@ -58,6 +58,51 @@
   ],
   "register": [
    {
+    "cat": "govt",
+    "status": "Issued",
+    "tone": "active",
+    "name": "International sovereign bond",
+    "detail": "Issued May 2026 · Disbursed in full · Banco Central de Bolivia, external public debt at 30 September 2026",
+    "amount": "$1B",
+    "money": true,
+    "note": "Sovereign bonds made up USD 2,286.9 million of external public debt at 30 September 2026",
+    "text": "A US dollar bond of USD 1,000 million placed by the Plurinational State of Bolivia on international markets in May 2026 and recorded by the Banco Central de Bolivia as disbursed in full. It brings market money to a State whose spending carries much of the seven standards, during a period of adjustment.",
+    "by": [
+     "Plurinational State of Bolivia"
+    ],
+    "url": "https://www.bcb.gob.bo/webdocs/informes_deudaexterna/DEXPU%20sep26%20%282%29.pdf"
+   },
+   {
+    "cat": "multi",
+    "status": "Approved",
+    "tone": "active",
+    "name": "Fiscal sustainability and job creation, first of two operations",
+    "detail": "World Bank Group · Approved 12 November 2026 · General budget support · First of a series of two planned operations",
+    "amount": "$500M",
+    "money": true,
+    "note": "Part of a coordinated package with the IMF, the IDB and CAF",
+    "text": "General budget support backing two sets of measures: stronger public finances with protection for poor and vulnerable households, and an economy more open to private investment. It reaches livelihood through credit, rules for fintech providers and easier farm exports, and energy through greater private participation in electricity.",
+    "by": [
+     "World Bank Group"
+    ],
+    "url": "https://www.bancomundial.org/es/news/press-release/2026/11/12/world-bank-group-approves-us-500-million-to-support-fiscal-sustainability-and-job"
+   },
+   {
+    "cat": "multi",
+    "status": "Approved",
+    "tone": "active",
+    "name": "Extended Fund Facility arrangement, 36 months",
+    "detail": "IMF Executive Board · Approved 2 October 2026 · SDR 1.369 billion, 570 percent of quota · SDR 156 million (about US$214 million) available at once",
+    "amount": "$1.9B",
+    "money": true,
+    "note": "The IMF expects it to catalyze around US$4 billion in additional financing from other institutions",
+    "text": "A three-year IMF arrangement of SDR 1.369 billion, about US$1.9 billion, in support of Bolivia’s economic programme. The Banco Central de Bolivia records the first disbursement, SDR 156.1 million, on 6 October 2026. It stands behind the coordinated support of the World Bank, the IDB and CAF, on which public spending across the seven standards depends.",
+    "by": [
+     "IMF"
+    ],
+    "url": "https://www.imf.org/en/news/articles/2026/10/02/pr26317-bolivia-imf-approves-36-month-eff-arrangement"
+   },
+   {
     "cat": "multi",
     "status": "Approved",
     "tone": "active",
@@ -75,6 +120,20 @@
     "cat": "multi",
     "status": "Approved",
     "tone": "active",
+    "name": "Road Sector Climate Resilience, first series",
+    "detail": "World Bank · Approved 14 June 2024",
+    "amount": "$118.5M",
+    "money": true,
+    "text": "Roads that withstand floods and landslides.",
+    "by": [
+     "World Bank"
+    ],
+    "url": "https://projects.worldbank.org/en/projects-operations/project-detail/P180770"
+   },
+   {
+    "cat": "multi",
+    "status": "Approved",
+    "tone": "active",
     "name": "Resilient Water Management",
     "detail": "World Bank · Approved 20 February 2024",
     "amount": "$150M",
@@ -86,18 +145,35 @@
     "url": "https://projects.worldbank.org/en/projects-operations/project-detail/P178861"
    },
    {
-    "cat": "multi",
+    "cat": "regional",
     "status": "Approved",
     "tone": "active",
-    "name": "Road Sector Climate Resilience, first series",
-    "detail": "World Bank · Approved 14 June 2024",
-    "amount": "$118.5M",
+    "name": "Energy transition of the Northern Amazon",
+    "detail": "July 2026 · IDB loan $142.2 million, 23.5 years, 7-year grace, SOFR-based · Climate Investment Funds loan $60 million, 30 years, 1.33% · CIF grant $2 million",
+    "amount": "$204.2M",
     "money": true,
-    "text": "Roads that withstand floods and landslides.",
+    "note": "About 209,000 people in Beni and Pando",
+    "text": "Links the isolated power systems of Cobija, Guayaramerín and Riberalta to the grids of Acre and Rondônia in Brazil, and adds solar plants and energy storage to cut diesel use. It also upgrades distribution networks, control systems, cybersecurity and smart metering in three cities, for about 209,000 people in Riberalta, Guayaramerín, Cobija and remote communities of Beni and Pando.",
     "by": [
-     "World Bank"
+     "IDB",
+     "Climate Investment Funds"
     ],
-    "url": "https://projects.worldbank.org/en/projects-operations/project-detail/P180770"
+    "url": "https://www.iadb.org/en/news/idb-supports-strengthening-energy-security-bolivias-northern-amazon-region"
+   },
+   {
+    "cat": "regional",
+    "status": "Approved",
+    "tone": "active",
+    "name": "Chichas Solar Plant, 120 MW",
+    "detail": "CAF Board · Approved 29 June 2025 · Executed by ENDE · Hornillos, Tupiza, Potosí",
+    "amount": "$110M",
+    "money": true,
+    "note": "Described by CAF as the largest plant of its technology in Bolivia",
+    "text": "CAF financing for the infrastructure and equipment of a 120 MW solar photovoltaic plant on about 110 hectares at Hornillos, in the municipality of Tupiza, Potosí, with its connection to the National Interconnected System. Executed by the Empresa Nacional de Electricidad (ENDE), it adds clean generation to the energy standard.",
+    "by": [
+     "CAF"
+    ],
+    "url": "https://www.caf.com/en/currently/news/caf-approves-usd-110-million-for-the-construction-of-chichas-solar-plant-in-bolivia"
    }
   ]
  },
@@ -143,7 +219,15 @@
  },
  "enterprises": {
   "heading": "Already working in Bolivia.",
-  "items": []
+  "items": [
+   {
+    "standard": "Livelihood",
+    "name": "BancoSol (Banco Solidario)",
+    "text": "A Bolivian bank that lends to micro and small enterprises, including those owned or led by women. In March 2024 IDB Invest approved a partial credit guarantee of up to 50% of BancoSol’s US$30 million social gender bond, whose proceeds finance these businesses’ productive investment.",
+    "source": "IDB Invest, 2024",
+    "url": "https://idbinvest.org/en/projects/banco-sol-social-gender-bond-pcg"
+   }
+  ]
  },
  "coverage": {
   "set_by": "Shelter",
@@ -303,5 +387,5 @@
   }
  ],
  "checked": "2026-11-16T11:32Z",
- "reviewed": ""
+ "reviewed": "2026-11-16T19:00Z"
 }
