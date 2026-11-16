@@ -466,6 +466,8 @@ PORTRAITS_HOG = {
     'india': (UP + 'pn-hog-india-240x300.jpg', 'Prime Minister’s Office, Government of India', {'label': 'GODL-India'}),
     # licence confirmed by the Steward-General from the Wikimedia Commons file page, 15 November 2026
     'cambodia': (UP + 'pn-hog-cambodia-229x300.jpg', 'Government of Japan', GOJ),
+    'japan': (UP + 'pn-hog-japan-242x300.jpg', 'Government of Japan', GOJ),
+    'canada': (UP + 'pn-hog-canada-251x300.jpg', 'Prime Minister of Canada', {'label': 'CC BY 3.0', 'url': 'https://creativecommons.org/licenses/by/3.0/'}),
 }
 
 GREET = {
