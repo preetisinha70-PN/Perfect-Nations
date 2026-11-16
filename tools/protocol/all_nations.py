@@ -404,6 +404,8 @@ yemen | Shaya Mohsen Al-Zindani | Prime Minister of the Republic of Yemen |
 
 # What the Steward watches for each nation; never shown on the page.
 NOTES = {
+    'tanzania': 'The band shows the President, Samia Suluhu Hassan, as confirmed by the Steward-General on 16 November 2026. The Prime Minister, Mwigulu Lameck Nchemba, is kept on the head-of-government record.',
+    'rwanda': 'The band shows the President, Paul Kagame, as confirmed by the Steward-General on 16 November 2026. The Prime Minister, Justin Nsengiyumva, is kept on the head-of-government record.',
     'afghanistan': 'The UN Protocol list of 13 November 2026 names no head of state for Afghanistan. The band shows the National Day only, until the Steward-General decides.',
     'myanmar': 'The UN Protocol list of 13 November 2026 still names Win Myint, while the Union Parliament elected a new President on 3 April 2026. The two do not agree, so the band shows the National Day only, until the Steward-General decides.',
     'andorra': 'The band shows the Head of Government. The two Co-Princes are the Bishop of Urgell and the President of the French Republic.',
