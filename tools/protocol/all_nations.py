@@ -432,6 +432,7 @@ UP = 'https://perfectnations.com/wp-content/uploads/2026/11/'
 CC_BY_SA_3 = {'label': 'CC BY-SA 3.0', 'url': 'https://creativecommons.org/licenses/by-sa/3.0/'}
 CC_BY_4 = {'label': 'CC BY 4.0', 'url': 'https://creativecommons.org/licenses/by/4.0/'}
 CC_BY_2 = {'label': 'CC BY 2.0', 'url': 'https://creativecommons.org/licenses/by/2.0/'}
+CC_BY_SA_4 = {'label': 'CC BY-SA 4.0', 'url': 'https://creativecommons.org/licenses/by-sa/4.0/'}
 PD = {'label': 'public domain'}
 # Portraits by office (the Steward-General, 15 November 2026): files named pn-hos-<slug> show the head of state, files
 # named pn-hog-<slug> the head of government. PORTRAITS holds heads of state; PORTRAITS_HOG heads of government.
@@ -460,6 +461,12 @@ PORTRAITS = {
     'south-africa': (UP + 'pn-hog-south-africa-230x300.jpg', 'Ricardo Stuckert, Presidency of Brazil', CC_BY_2),
     'united-arab-emirates': (UP + 'pn-hos-united-arab-emirates-250x300.jpg', 'Alan Santos, Presidency of Brazil', CC_BY_2),
     'oman': (UP + 'pn-hog-oman-250x300.jpg', 'Prime Minister’s Office, Government of India', {'label': 'GODL-India'}),
+    # third batch: licences read from the Wikimedia Commons file pages by the Steward-General, 15 November 2026
+    'nigeria': (UP + 'pn-hog-nigeria-240x300.jpg', 'Nosa Asemota, cropped', CC_BY_SA_4),
+    'zambia': (UP + 'pn-hog-zambia-300x200.jpg', 'TheophilusMaurice, cropped', CC_BY_SA_4),
+    'guatemala': (UP + 'pn-hog-guatemala-300x200.jpg', 'Gobierno de Guatemala', {'label': 'Public Domain Mark'}),
+    'uganda': (UP + 'pn-hos-uganda-228x300.jpg', 'Prime Minister’s Office, Government of India', {'label': 'GODL-India'}),
+    'kyrgyzstan': (UP + 'pn-hos-kyrgyzstan-225x300.jpg', 'Ermek Sydykov, Press Service of the President of Kyrgyzstan, cropped', CC_BY_SA_4),
 }
 GOJ = {'label': 'Government of Japan Standard Terms of Use 2.0, compatible with CC BY 4.0'}
 PORTRAITS_HOG = {
