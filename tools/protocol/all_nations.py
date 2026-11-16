@@ -466,6 +466,8 @@ PORTRAITS = {
     'zambia': (UP + 'pn-hog-zambia-300x200.jpg', 'TheophilusMaurice, cropped', CC_BY_SA_4),
     'guatemala': (UP + 'pn-hog-guatemala-300x200.jpg', 'Gobierno de Guatemala', {'label': 'Public Domain Mark'}),
     'uganda': (UP + 'pn-hos-uganda-228x300.jpg', 'Prime Minister’s Office, Government of India', {'label': 'GODL-India'}),
+    # Commons: extracted from "Mattarella Lourenço 2023.jpg"; Quirinale.it permission (VRT) for any use with attribution
+    'angola': (UP + 'pn-hog-angola-217x300.jpg', 'Presidency of the Italian Republic (Quirinale.it), cropped', {'label': 'free use with attribution'}),
     'kyrgyzstan': (UP + 'pn-hos-kyrgyzstan-225x300.jpg', 'Ermek Sydykov, Press Service of the President of Kyrgyzstan, cropped', CC_BY_SA_4),
 }
 GOJ = {'label': 'Government of Japan Standard Terms of Use 2.0, compatible with CC BY 4.0'}
