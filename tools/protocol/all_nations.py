@@ -404,6 +404,8 @@ yemen | Shaya Mohsen Al-Zindani | Prime Minister of the Republic of Yemen |
 
 # What the Steward watches for each nation; never shown on the page.
 NOTES = {
+    'tanzania': 'The band shows the President, Samia Suluhu Hassan, as confirmed by the Steward-General on 16 November 2026. The Prime Minister, Mwigulu Lameck Nchemba, is kept on the head-of-government record.',
+    'rwanda': 'The band shows the President, Paul Kagame, as confirmed by the Steward-General on 16 November 2026. The Prime Minister, Justin Nsengiyumva, is kept on the head-of-government record.',
     'afghanistan': 'The UN Protocol list of 13 November 2026 names no head of state for Afghanistan. The band shows the National Day only, until the Steward-General decides.',
     'myanmar': 'The UN Protocol list of 13 November 2026 still names Win Myint, while the Union Parliament elected a new President on 3 April 2026. The two do not agree, so the band shows the National Day only, until the Steward-General decides.',
     'andorra': 'The band shows the Head of Government. The two Co-Princes are the Bishop of Urgell and the President of the French Republic.',
@@ -478,6 +480,8 @@ PORTRAITS = {
     'micronesia': (UP + 'man-near-private-jet-smile-250x300.jpg', 'Joshua Martin, U.S. Navy, 2008', PD),
     # Commons: Retrato_oficial_Presidente_Milei.png
     'argentina': (UP + 'pn-hog-argentina-209x300.png', 'Government of Argentina', CC_BY_4),
+    # Commons: Luis_Abinader_(25-04-2024).jpg (16 November 2026)
+    'dominican-republic': (UP + 'pn-hog-dominican-republic-225x300.jpg', 'Chairman of the Joint Chiefs of Staff (U.S.), cropped', CC_BY_2),
     'kyrgyzstan': (UP + 'pn-hos-kyrgyzstan-225x300.jpg', 'Ermek Sydykov, Press Service of the President of Kyrgyzstan, cropped', CC_BY_SA_4),
 }
 GOJ = {'label': 'Government of Japan Standard Terms of Use 2.0, compatible with CC BY 4.0'}
@@ -502,7 +506,13 @@ PORTRAITS_HOG = {
     'denmark': (UP + 'pn-hog-denmark-300x266.jpg', 'Pietro Naj-Oleari, European Parliament, cropped', CC_BY_4),
     'greece': (UP + 'pn-hog-greece-228x300.jpg', 'Yorgos Karahalis, European Union, cropped', CC_BY_4),
     'australia': (UP + 'pn-hog-australia-219x300.jpg', 'Australian Government, cropped', CC_BY_4),
-    'finland': (UP + 'professional-executive-portrai-300x200.jpg', 'Lauri Heikkinen, Finnish Prime Minister’s Office', CC_BY_4),
+    # sixth batch (16 November 2026): licences from the Steward-General's captions, citing the Commons files
+    # Commons: Petteri-Orpo-01_(cropped).jpg; an upright crop of the same official portrait, for the circle
+    'finland': (UP + 'pn-hog-finland-214x300.jpg', 'Lauri Heikkinen, Finnish Prime Minister’s Office, cropped', CC_BY_4),
+    # Commons: Kristen_Michal.jpg (2012 government portrait, cropped on Commons in 2024)
+    'estonia': (UP + 'pn-hog-estonia-227x300.jpg', 'Kaupo Kikkas, Estonian Government Office, cropped', {'label': 'CC BY 3.0 EE', 'url': 'https://creativecommons.org/licenses/by/3.0/ee/deed.en'}),
+    # Commons: Luís_Montenegro.jpg (EPP summit, 20 October 2022)
+    'portugal': (UP + 'pn-hog-portugal-202x300.jpg', 'Nicolas Lobet, European People’s Party, cropped', CC_BY_2),
     'sweden': (UP + 'professional-speech-navy-suit-200x300.jpg', 'Christophe Licoppe, European Union', CC_BY_4),
     'canada': (UP + 'pn-hog-canada-251x300.jpg', 'Prime Minister of Canada', {'label': 'CC BY 3.0', 'url': 'https://creativecommons.org/licenses/by/3.0/'}),
 }
