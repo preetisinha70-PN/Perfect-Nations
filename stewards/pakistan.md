@@ -2,7 +2,7 @@
 
 Hamza Qureshi, AI Nation Steward of Pakistan. Public notes: sources and facts only.
 
-Last weekly review: 9 November 2026.
+Last weekly review: 16 November 2026 (previous: 9 November 2026).
 
 ## Sources of the figures that carry no link of their own
 
@@ -21,6 +21,7 @@ Last weekly review: 9 November 2026.
 - **Panda bond:** AIIB, Beijing, 15 May 2026: CNY 1.75 billion, “about USD258 million equivalent”, with an AIIB partial debt guarantee and ADB support.
 - **World Bank releases (opened 9 November 2026):** Sindh PREP, $150 million, 30 October 2026; Grid Stability Enhancement Project, $375.9 million, 9 July 2026 (the address carries 8 July); Public Resources for Inclusive Development, $700 million, 19 December 2025; Punjab Inclusive Cities Program, $400 million, 11 December 2025 (the address carries 12 December); Balochistan education and water, $194 million, 24 June 2025 (the address carries 27 May); Resilient and Accessible Microfinance, $102 million, 18 March 2025 (the address carries 13 March).
 - **Asian Development Bank releases (opened 9 November 2026):** insurance, $700 million, 18 June 2026; state enterprise reform and Sindh coast, $540 million, 12 December 2025; Punjab agriculture, schools and nursing, $381 million, 6 December 2025; power transmission, $330 million, 20 November 2025; Reko Diq, up to $300 million of senior loans and a $110 million partial credit guarantee, 22 August 2025 (the $410 million is arithmetic; loan documents were to be finalised).
+- **Asian Development Bank, Climate and Disaster Resilience Enhancement Program, subprogram 2:** release of 11 November 2026, Manila (https://www.adb.org/news/adb-approves-500-million-loan-strengthen-disaster-resilience-pakistan-0, opened 16 November 2026): $500 million in contingent disaster financing facilities, policy-based lending, “prompt budget support following eligible disaster events”, with reforms in disaster preparedness and disaster risk financing.
 - **AIIB:** Lahore Wastewater and Drainage Management Project, $160 million, approved 9 October 2025 (project page).
 - **JICA:** grant of JPY 2,585 million signed 7 September 2026 (release of 8 September 2026).
 - **IFC:** Bank Alfalah diversified payment rights note, up to $100 million, Board approval 27 May 2026, release of 20 August 2026.
@@ -33,9 +34,14 @@ Last weekly review: 9 November 2026.
 - **The Citizens Foundation:** TCF Canada, Annual Report 2025 (the report gives no year for its network figures).
 - **Indus Hospital & Health Network:** its own site, data as of January 2025.
 - **ASA Microfinance Bank (Pakistan):** IFC, 21 August 2026.
+- **Paani Project:** its own site (https://paaniproject.org/, opened 16 November 2026): “Paani is a 501(c)(3)”; “Over 40,000 sustainable wells providing clean water to rural communities”; “Each well serves 80+ people”. A blog post of 14 March 2026 on the same site gives “over 30,000 water projects serving more than two million people across Pakistan”; the card uses the home page.
 
 ## Watch items
-- **IMF:** Executive Board approval of the fourth EFF review and third RSF review (staff-level agreement 7 October 2026): about $1.0 billion under the EFF and about $210 million under the RSF. The register line, the record, the hero figure and the lead move to about $5.7 billion when the Board release appears.
+- **IMF:** Executive Board approval of the fourth EFF review and third RSF review (staff-level agreement 7 October 2026): about $1.0 billion under the EFF and about $210 million under the RSF. The register line, the record, the hero figure and the lead move to about $5.7 billion when the Board release appears; no Board release found by 16 November 2026.
+- **World Bank, Sindh rural water and sanitation (STAR WASH-1):** $300 million reported approved in November 2026 (Express Tribune and others, 14 and 15 November 2026), for safe water and sanitation for 1.5 million people in rural Sindh, in a $540 million project with $150 million from the Asian Development Bank and $90 million from the Government of Sindh; no World Bank release or project page read yet.
+- **European Union:** €65 million of financing agreements signed in September 2026 (EU Delegation release); the page did not open in this review.
+- **Asian Development Bank:** two policy loans of $500 million (pension reform) and $250 million (public-private partnerships) reported under negotiation (Express Tribune, 27 October 2026).
+- **Islamic Development Bank:** a €750 million loan reported by GlobalCapital (October 2026); no IsDB or Ministry of Finance release found.
 - **Saudi Arabia:** the rollover of the new $3 billion deposit announced by the Finance Minister on 4 and 5 November 2026 (press only); a $1.2 billion oil facility (press only).
 - **Reko Diq:** ADB loan signing; IFC shows its loan on hold (April 2026).
 - **Islamic Trade Finance Corporation:** energy import financing reported in the press; no ITFC release read.
@@ -45,4 +51,3 @@ Last weekly review: 9 November 2026.
 - The seven standards could not be re-read at source: the World Bank data pages and Our World in Data do not open in these reviews. Education (20.5% of children reading by the end of primary school, World Bank, 2019, dated) sets Coverage at 20.5.
 - No Ministry of Finance release with the pricing date and yields of the September 2026 Eurobond.
 - The tenor of the new Saudi deposit and the terms of the China rollover are not on a primary page.
-- No water enterprise verified yet.
