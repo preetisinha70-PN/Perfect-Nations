@@ -467,6 +467,9 @@ PORTRAITS_HOG = {
     # licence confirmed by the Steward-General from the Wikimedia Commons file page, 15 November 2026
     'cambodia': (UP + 'pn-hog-cambodia-229x300.jpg', 'Government of Japan', GOJ),
     'japan': (UP + 'pn-hog-japan-242x300.jpg', 'Government of Japan', GOJ),
+    # Commons gives CC BY 3.0 IT; the Italian Government's site now gives CC BY-NC-SA 3.0 IT for its images. The
+    # Steward-General chose the Commons licence on 15 November 2026.
+    'italy': (UP + 'pn-hog-italy-228x300.jpg', 'Presidency of the Council of Ministers of Italy', {'label': 'CC BY 3.0 IT', 'url': 'https://creativecommons.org/licenses/by/3.0/it/'}),
     'canada': (UP + 'pn-hog-canada-251x300.jpg', 'Prime Minister of Canada', {'label': 'CC BY 3.0', 'url': 'https://creativecommons.org/licenses/by/3.0/'}),
 }
 
