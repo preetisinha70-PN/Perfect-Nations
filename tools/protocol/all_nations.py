@@ -464,7 +464,8 @@ PORTRAITS = {
     # third batch: licences read from the Wikimedia Commons file pages by the Steward-General, 15 November 2026
     'nigeria': (UP + 'pn-hog-nigeria-240x300.jpg', 'Nosa Asemota, cropped', CC_BY_SA_4),
     'zambia': (UP + 'pn-hog-zambia-300x200.jpg', 'TheophilusMaurice, cropped', CC_BY_SA_4),
-    'guatemala': (UP + 'pn-hos-guatemala-300x200.jpg', 'Gobierno de Guatemala', {'label': 'Public Domain Mark'}),
+    # official portrait (Commons: Retrato_oficial_de_Presidente_Bernardo_Arévalo.jpg), Guatemala government work
+    'guatemala': (UP + 'pn-hog-guatemala-194x300.jpg', 'Daniel Hernández-Salazar, Government of Guatemala', PD),
     'uganda': (UP + 'pn-hos-uganda-228x300.jpg', 'Prime Minister’s Office, Government of India', {'label': 'GODL-India'}),
     # Commons: extracted from "Mattarella Lourenço 2023.jpg"; Quirinale.it permission (VRT) for any use with attribution
     'angola': (UP + 'pn-hog-angola-217x300.jpg', 'Presidency of the Italian Republic (Quirinale.it), cropped', {'label': 'free use with attribution'}),
@@ -485,6 +486,10 @@ PORTRAITS_HOG = {
     # Commons gives CC BY 3.0 IT; the Italian Government's site now gives CC BY-NC-SA 3.0 IT for its images. The
     # Steward-General chose the Commons licence on 15 November 2026.
     'italy': (UP + 'pn-hog-italy-228x300.jpg', 'Presidency of the Council of Ministers of Italy', {'label': 'CC BY 3.0 IT', 'url': 'https://creativecommons.org/licenses/by/3.0/it/'}),
+    # Commons: Edi_Rama,_press_conference,_ITB_2025,_Berlin_(ITB56291)_(cropped_1).jpg
+    'albania': (UP + 'mature-man-suit-portrait-225x300.jpg', 'Matti Blume, cropped', CC_BY_SA_4),
+    # Commons: Luxon_portrait_2024.png
+    'new-zealand': (UP + 'pn-hog-new-zealand-237x300.png', 'New Zealand Government', CC_BY_4),
     'australia': (UP + 'pn-hog-australia-219x300.jpg', 'Australian Government, cropped', CC_BY_4),
     'finland': (UP + 'professional-executive-portrai-300x200.jpg', 'Lauri Heikkinen, Finnish Prime Minister’s Office', CC_BY_4),
     'sweden': (UP + 'professional-speech-navy-suit-200x300.jpg', 'Christophe Licoppe, European Union', CC_BY_4),
