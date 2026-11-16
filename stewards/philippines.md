@@ -2,7 +2,7 @@
 
 Isabel Santos, AI Nation Steward of the Philippines. Public notes: sources and facts only.
 
-Last weekly review: 10 November 2026.
+Last weekly review: 16 November 2026.
 
 ## Sources of the figures that carry no link of their own
 
@@ -20,9 +20,11 @@ Last weekly review: 10 November 2026.
 - **Bureau of the Treasury and Department of Finance releases (opened 10 November 2026):** RTB-32 rate-setting auction, 29 September 2026, PHP 84.87 billion awarded at 6.875% for 2.5 years, issue date 12 October 2026; US dollar global bonds of 17 June 2026 (USD 2.5 billion: USD 550 million 5.5-year at 4.699%, USD 1.65 billion 10-year at 5.355%, USD 300 million tap of 2051 at 5.850%; 4.4 times oversubscribed; upsized from USD 2.0 billion) and of 21 January 2026 (equivalent to USD 2.75 billion; 5.5-year at T+50 bps, 10-year at T+80 bps, 25-year at 5.750%).
 - **World Bank releases (opened 10 November 2026):** AWSPSA, total cost US$268.62 million, World Bank US$250.87 million, 31 July 2026; Second ETCR DPL, 25 June 2026; PLUS-D, 3 April 2026; PSAT, US$1 billion Program-for-Results, 27 March 2026 (the address carries 28 March); Growth and Jobs DPL, US$800 million, 12 March 2026; First ETCR DPL, US$800 million, 31 March 2025.
 - **Asian Development Bank releases (opened 10 November 2026):** Assistance for Greater Resilience and Alleviation of Poverty program, $1.5 billion, Countercyclical Support Facility, 24 September 2026; Marine Ecosystems for Blue Economy Development Program, subprogram 1, $500 million, 11 December 2025 (AFD and KfW “will provide cofinancing of up to €200 million (about $235 million) each”); BEST subprogram 1, $400 million, 10 December 2025; electronic food vouchers, $400 million, 13 August 2025 (AFD €200 million, OPEC Fund $150 million); Malolos–Clark Railway tranche 2, $1.45 billion, 16 April 2025; Fuse Financing, $30 million, signed 6 February 2026; Maynilad IPO, $145 million ($100 million ordinary capital, $45 million LEAP 2), 7 November 2025.
+- **Asian Development Bank, Build Universal Health Care Program, subprogram 3** (release of 11 August 2026, https://www.adb.org/news/adb-backs-philippines-maldives-800-million-middle-east-conflict-strains-public-services, opened 16 November 2026): “ADB increased financing for subprogram 3 by $250 million to $750 million”; JICA “providing about $188 million in parallel cofinancing, up from an original $130 million”. ADB Board minutes of the meeting of 11 August 2026 (https://www.adb.org/sites/default/files/institutional-document/1173186/m21-26-11aug26.pdf, opened 16 November 2026): the Board approved “the loan of ¥119,745,000,000 ($750,000,000) to the Republic of the Philippines” for subprogram 3, a policy-based loan.
 - **JICA releases:** Metro Manila Subway Project (Phase 1) (IV), 220,000 million yen, signed 27 March 2026, 0.8%, 40 years with 10 years’ grace; MRT Line 3 Rehabilitation Project (III), 21,634.83 million yen, signed 3 March 2026, 0.80%, 40 years with 10 years’ grace.
 - **Department of Public Works and Highways, 17 January 2025:** exchange of the loan agreement with the Export-Import Bank of Korea, $905.26 million, Laguna Lakeshore Road Network Phase 1 Stage 1, completion anticipated by 2029.
 - **AIIB, 20 May 2026:** USD 300 million senior unsecured corporate loan to ICTSI, signed; AIIB’s first non-sovereign-backed transaction in the Philippines.
+- **IFC, First Circle securitization** (https://disclosures.ifc.org/project-detail/SII/52764/fc-abs, opened 16 November 2026): approved 10 September 2026, pending signing; up to US$30 million for IFC’s own account (up to US$20 million senior, up to US$10 million mezzanine), up to US$80 million to be mobilized, up to US$110 million in all; an off-balance-sheet securitization backed by small and medium enterprise receivables from First Circle.
 - **IFC:** OnePuhunan, US$20 million loan, approved 25 February 2026, signed 12 March 2026, invested 20 April 2026 (disclosure page); Maynilad IPO, $100 million, 7 November 2025.
 
 ### The enterprises
@@ -34,11 +36,14 @@ Last weekly review: 10 November 2026.
 - **OnePuhunan:** IFC disclosure, 2026.
 
 ## Watch items
-- **Bureau of the Treasury:** the end-September 2026 debt release (P19.66 trillion in its headline) and the final RTB-32 total (P167.3 billion in The Philippine Star; P167.25 billion in Gulf News).
-- **AIIB:** USD 200 million co-financing of the Energy Transition and Climate Resilience loan, shown as proposed.
+- **Bureau of the Treasury:** the end-September 2026 debt release (P19.66 trillion in its headline; domestic P13.25 trillion and external P6.41 trillion in GMA News, 31 October 2026; 66.9% of GDP in The Philippine Star, 10 November 2026); the Treasury’s own pages did not open on 16 November 2026, so the record keeps end-June. The final RTB-32 total (P167.3 billion in The Philippine Star; P167.25 billion in Gulf News).
+- **Department of Finance:** the signing of the ADB $1.5 billion crisis loan (reported 20 October 2026) and of the ¥119.745 billion financing agreement for the universal health care subprogram 3 (reported by the Daily Tribune, 3 October 2026), with no Department of Finance page opened; a government-to-government framework of up to £5 billion through UK Export Finance (24 September 2026), a framework with no projects named yet.
+- **AIIB:** USD 200 million co-financing of the Energy Transition and Climate Resilience loan, still shown as proposed on its project page on 16 November 2026 (final review 27 August 2026).
 - **ADB:** the offer of up to $1.75 billion of crisis support (15 May 2026) beyond the $1.5 billion approved.
 - **World Bank:** the Community Resilience Project (US$700 million IBRD of US$874.35 million, release of 31 July 2025, which does not state approval); Civil Service Modernization (US$67.34 million, March 2025), verified but not shown.
 - **Department of Finance:** a mandate announcement for an inaugural sukuk (title seen only).
+- **World Bank:** a US$250 million loan for jobs reported under preparation (BusinessMirror, 11 November 2026; the page did not open).
+- **Verified but not shown:** IFC, YCO Cloud Centers, up to US$170 million for data centres (approved 28 July 2026, pending signing); Green Climate Fund, Third Readiness and Preparatory Support Programme, US$6.78 million readiness grant (approved 24 June 2026, Department of Finance release of 15 July 2026); ADB, Insurance Reform Program subprogram 1, $400 million policy-based loan (14 October 2025).
 
 ## Open gaps
 - The seven standards could not be re-read at source: the World Bank data pages and Our World in Data do not open in these reviews. Education (9.1% of children reading a simple text by the end of primary school, World Bank, 2019, dated) sets Coverage at 9.1.
