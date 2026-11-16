@@ -1,6 +1,6 @@
 {
  "updated": "2026-11-15",
- "note": "Protocol facts for each blueprint: its head of state, its leader (where a prime minister runs the government), its National Day and the offices that receive the National Day letters. The band on each blueprint shows the leader (the Steward-General, 15 November 2026). Kept by the Blueprints Steward, who checks every leader and head of state once a month, and each nation again 15 days before its National Day. Portraits are supplied by the Steward-General (official portraits uploaded to the Media Library, with their credit); until one is supplied the band shows the initials.",
+ "note": "Protocol facts for each blueprint: its head of state, its head of government (or same_as_head_of_state where one person holds both offices), band (the office the band on the blueprint shows), its National Day and the offices that receive the National Day letters. The band shows the elected leader who runs the government (the Steward-General, 15 November 2026); both records are kept whichever it shows. Kept by the Blueprints Steward, who checks both offices once a month, and each nation again 15 days before its National Day. Portraits are supplied by the Steward-General: pn-hos-<nation> files for heads of state, pn-hog-<nation> files for heads of government, each with its credit and licence; until one is supplied the band shows the initials.",
  "nations": {
   "afghanistan": {
    "nation": "Afghanistan",
@@ -21,7 +21,13 @@
     }
    },
    "checked": "2026-11-15",
-   "steward_note": "The UN Protocol list of 13 November 2026 names no head of state for Afghanistan. The band shows the National Day only, until the Steward-General decides."
+   "steward_note": "The UN Protocol list of 13 November 2026 names no head of state for Afghanistan. The band shows the National Day only, until the Steward-General decides.",
+   "head_of_government": {
+    "title": "",
+    "name": "",
+    "portrait": ""
+   },
+   "band": "head_of_state"
   },
   "albania": {
    "nation": "Albania",
@@ -46,7 +52,7 @@
     }
    },
    "checked": "2026-11-15",
-   "leader": {
+   "head_of_government": {
     "title": "Prime Minister of the Republic of Albania",
     "name": "Edi Rama",
     "portrait": "",
@@ -54,7 +60,8 @@
      "label": "United Nations Protocol, list of 13 November 2026",
      "url": "https://www.un.org/dgacm/sites/www.un.org.dgacm/files/Documents_Protocol/hspmfmlist.pdf"
     }
-   }
+   },
+   "band": "head_of_government"
   },
   "algeria": {
    "nation": "Algeria",
@@ -78,7 +85,17 @@
      "url": "https://um.dk/media/3pjjbw5h/copenhagen-diplomatic-list-26102026.pdf"
     }
    },
-   "checked": "2026-11-15"
+   "checked": "2026-11-15",
+   "head_of_government": {
+    "title": "Prime Minister of the People’s Democratic Republic of Algeria",
+    "name": "Sifi Ghrieb",
+    "portrait": "",
+    "source": {
+     "label": "United Nations Protocol, list of 13 November 2026",
+     "url": "https://www.un.org/dgacm/sites/www.un.org.dgacm/files/Documents_Protocol/hspmfmlist.pdf"
+    }
+   },
+   "band": "head_of_state"
   },
   "andorra": {
    "nation": "Andorra",
@@ -108,7 +125,7 @@
    },
    "checked": "2026-11-15",
    "steward_note": "The band shows the Head of Government. The two Co-Princes are the Bishop of Urgell and the President of the French Republic.",
-   "leader": {
+   "head_of_government": {
     "title": "Head of Government of the Principality of Andorra",
     "name": "Xavier Espot Zamora",
     "portrait": "",
@@ -116,7 +133,8 @@
      "label": "United Nations Protocol, list of 13 November 2026",
      "url": "https://www.un.org/dgacm/sites/www.un.org.dgacm/files/Documents_Protocol/hspmfmlist.pdf"
     }
-   }
+   },
+   "band": "head_of_government"
   },
   "angola": {
    "nation": "Angola",
@@ -140,7 +158,11 @@
      "url": "https://um.dk/media/3pjjbw5h/copenhagen-diplomatic-list-26102026.pdf"
     }
    },
-   "checked": "2026-11-15"
+   "checked": "2026-11-15",
+   "head_of_government": {
+    "same_as_head_of_state": true
+   },
+   "band": "head_of_state"
   },
   "antigua-and-barbuda": {
    "nation": "Antigua and Barbuda",
@@ -165,7 +187,7 @@
     }
    },
    "checked": "2026-11-15",
-   "leader": {
+   "head_of_government": {
     "title": "Prime Minister of Antigua and Barbuda",
     "name": "Gaston Alphonso Browne",
     "portrait": "",
@@ -173,7 +195,8 @@
      "label": "United Nations Protocol, list of 13 November 2026",
      "url": "https://www.un.org/dgacm/sites/www.un.org.dgacm/files/Documents_Protocol/hspmfmlist.pdf"
     }
-   }
+   },
+   "band": "head_of_government"
   },
   "argentina": {
    "nation": "Argentina",
@@ -197,7 +220,11 @@
      "url": "https://um.dk/media/3pjjbw5h/copenhagen-diplomatic-list-26102026.pdf"
     }
    },
-   "checked": "2026-11-15"
+   "checked": "2026-11-15",
+   "head_of_government": {
+    "same_as_head_of_state": true
+   },
+   "band": "head_of_state"
   },
   "armenia": {
    "nation": "Armenia",
@@ -222,7 +249,7 @@
     }
    },
    "checked": "2026-11-15",
-   "leader": {
+   "head_of_government": {
     "title": "Prime Minister of the Republic of Armenia",
     "name": "Nikol Pashinyan",
     "portrait": "",
@@ -230,7 +257,8 @@
      "label": "United Nations Protocol, list of 13 November 2026",
      "url": "https://www.un.org/dgacm/sites/www.un.org.dgacm/files/Documents_Protocol/hspmfmlist.pdf"
     }
-   }
+   },
+   "band": "head_of_government"
   },
   "australia": {
    "nation": "Australia",
@@ -255,7 +283,7 @@
     }
    },
    "checked": "2026-11-15",
-   "leader": {
+   "head_of_government": {
     "title": "Prime Minister of the Commonwealth of Australia",
     "name": "Anthony Albanese",
     "portrait": "",
@@ -263,7 +291,8 @@
      "label": "United Nations Protocol, list of 13 November 2026",
      "url": "https://www.un.org/dgacm/sites/www.un.org.dgacm/files/Documents_Protocol/hspmfmlist.pdf"
     }
-   }
+   },
+   "band": "head_of_government"
   },
   "austria": {
    "nation": "Austria",
@@ -288,7 +317,7 @@
     }
    },
    "checked": "2026-11-15",
-   "leader": {
+   "head_of_government": {
     "title": "Federal Chancellor of the Republic of Austria",
     "name": "Christian Stocker",
     "portrait": "",
@@ -296,7 +325,8 @@
      "label": "United Nations Protocol, list of 13 November 2026",
      "url": "https://www.un.org/dgacm/sites/www.un.org.dgacm/files/Documents_Protocol/hspmfmlist.pdf"
     }
-   }
+   },
+   "band": "head_of_government"
   },
   "azerbaijan": {
    "nation": "Azerbaijan",
@@ -320,7 +350,17 @@
      "url": "https://um.dk/media/3pjjbw5h/copenhagen-diplomatic-list-26102026.pdf"
     }
    },
-   "checked": "2026-11-15"
+   "checked": "2026-11-15",
+   "head_of_government": {
+    "title": "Prime Minister of the Republic of Azerbaijan",
+    "name": "Ali Asadov",
+    "portrait": "",
+    "source": {
+     "label": "United Nations Protocol, list of 13 November 2026",
+     "url": "https://www.un.org/dgacm/sites/www.un.org.dgacm/files/Documents_Protocol/hspmfmlist.pdf"
+    }
+   },
+   "band": "head_of_state"
   },
   "bahamas": {
    "nation": "Bahamas",
@@ -345,7 +385,7 @@
     }
    },
    "checked": "2026-11-15",
-   "leader": {
+   "head_of_government": {
     "title": "Prime Minister of the Commonwealth of The Bahamas",
     "name": "Philip Edward Davis",
     "portrait": "",
@@ -353,7 +393,8 @@
      "label": "United Nations Protocol, list of 13 November 2026",
      "url": "https://www.un.org/dgacm/sites/www.un.org.dgacm/files/Documents_Protocol/hspmfmlist.pdf"
     }
-   }
+   },
+   "band": "head_of_government"
   },
   "bahrain": {
    "nation": "Bahrain",
@@ -377,7 +418,17 @@
      "url": "https://um.dk/media/3pjjbw5h/copenhagen-diplomatic-list-26102026.pdf"
     }
    },
-   "checked": "2026-11-15"
+   "checked": "2026-11-15",
+   "head_of_government": {
+    "title": "Crown Prince and Prime Minister of the Kingdom of Bahrain",
+    "name": "Salman bin Hamad Al Khalifa",
+    "portrait": "",
+    "source": {
+     "label": "United Nations Protocol, list of 13 November 2026",
+     "url": "https://www.un.org/dgacm/sites/www.un.org.dgacm/files/Documents_Protocol/hspmfmlist.pdf"
+    }
+   },
+   "band": "head_of_state"
   },
   "bangladesh": {
    "nation": "Bangladesh",
@@ -403,7 +454,7 @@
     }
    },
    "checked": "2026-11-15",
-   "leader": {
+   "head_of_government": {
     "title": "Prime Minister of the People’s Republic of Bangladesh",
     "name": "Tarique Rahman",
     "portrait": "",
@@ -412,7 +463,8 @@
      "url": "https://www.un.org/dgacm/sites/www.un.org.dgacm/files/Documents_Protocol/hspmfmlist.pdf"
     },
     "since": "2026-02-17"
-   }
+   },
+   "band": "head_of_government"
   },
   "barbados": {
    "nation": "Barbados",
@@ -439,7 +491,7 @@
    },
    "checked": "2026-11-15",
    "steward_note": "The UN Protocol list of 13 November 2026 still names the previous President; the Official Gazette of Barbados is the source.",
-   "leader": {
+   "head_of_government": {
     "title": "Prime Minister of Barbados",
     "name": "Mia Amor Mottley",
     "portrait": "",
@@ -447,7 +499,8 @@
      "label": "United Nations Protocol, list of 13 November 2026",
      "url": "https://www.un.org/dgacm/sites/www.un.org.dgacm/files/Documents_Protocol/hspmfmlist.pdf"
     }
-   }
+   },
+   "band": "head_of_government"
   },
   "belarus": {
    "nation": "Belarus",
@@ -471,7 +524,17 @@
      "url": "https://um.dk/media/3pjjbw5h/copenhagen-diplomatic-list-26102026.pdf"
     }
    },
-   "checked": "2026-11-15"
+   "checked": "2026-11-15",
+   "head_of_government": {
+    "title": "Prime Minister of the Republic of Belarus",
+    "name": "Aleksandr Turchin",
+    "portrait": "",
+    "source": {
+     "label": "United Nations Protocol, list of 13 November 2026",
+     "url": "https://www.un.org/dgacm/sites/www.un.org.dgacm/files/Documents_Protocol/hspmfmlist.pdf"
+    }
+   },
+   "band": "head_of_state"
   },
   "belgium": {
    "nation": "Belgium",
@@ -496,7 +559,7 @@
     }
    },
    "checked": "2026-11-15",
-   "leader": {
+   "head_of_government": {
     "title": "Prime Minister of the Kingdom of Belgium",
     "name": "Bart De Wever",
     "portrait": "",
@@ -504,7 +567,8 @@
      "label": "United Nations Protocol, list of 13 November 2026",
      "url": "https://www.un.org/dgacm/sites/www.un.org.dgacm/files/Documents_Protocol/hspmfmlist.pdf"
     }
-   }
+   },
+   "band": "head_of_government"
   },
   "belize": {
    "nation": "Belize",
@@ -529,7 +593,7 @@
     }
    },
    "checked": "2026-11-15",
-   "leader": {
+   "head_of_government": {
     "title": "Prime Minister of Belize",
     "name": "John Briceño",
     "portrait": "",
@@ -537,7 +601,8 @@
      "label": "United Nations Protocol, list of 13 November 2026",
      "url": "https://www.un.org/dgacm/sites/www.un.org.dgacm/files/Documents_Protocol/hspmfmlist.pdf"
     }
-   }
+   },
+   "band": "head_of_government"
   },
   "benin": {
    "nation": "Benin",
@@ -562,7 +627,11 @@
      "url": "https://um.dk/media/3pjjbw5h/copenhagen-diplomatic-list-26102026.pdf"
     }
    },
-   "checked": "2026-11-15"
+   "checked": "2026-11-15",
+   "head_of_government": {
+    "same_as_head_of_state": true
+   },
+   "band": "head_of_state"
   },
   "bhutan": {
    "nation": "Bhutan",
@@ -587,7 +656,7 @@
     }
    },
    "checked": "2026-11-15",
-   "leader": {
+   "head_of_government": {
     "title": "Prime Minister of the Kingdom of Bhutan",
     "name": "Tshering Tobgay",
     "portrait": "",
@@ -595,7 +664,8 @@
      "label": "United Nations Protocol, list of 13 November 2026",
      "url": "https://www.un.org/dgacm/sites/www.un.org.dgacm/files/Documents_Protocol/hspmfmlist.pdf"
     }
-   }
+   },
+   "band": "head_of_government"
   },
   "bolivia": {
    "nation": "Bolivia",
@@ -619,7 +689,11 @@
      "url": "https://um.dk/media/3pjjbw5h/copenhagen-diplomatic-list-26102026.pdf"
     }
    },
-   "checked": "2026-11-15"
+   "checked": "2026-11-15",
+   "head_of_government": {
+    "same_as_head_of_state": true
+   },
+   "band": "head_of_state"
   },
   "bosnia-and-herzegovina": {
    "nation": "Bosnia and Herzegovina",
@@ -645,7 +719,7 @@
    },
    "checked": "2026-11-15",
    "steward_note": "The band shows the Chairwoman of the Council of Ministers. The Chair of the Presidency rotates every eight months.",
-   "leader": {
+   "head_of_government": {
     "title": "Chairwoman of the Council of Ministers of Bosnia and Herzegovina",
     "name": "Borjana Krišto",
     "portrait": "",
@@ -653,7 +727,8 @@
      "label": "United Nations Protocol, list of 13 November 2026",
      "url": "https://www.un.org/dgacm/sites/www.un.org.dgacm/files/Documents_Protocol/hspmfmlist.pdf"
     }
-   }
+   },
+   "band": "head_of_government"
   },
   "botswana": {
    "nation": "Botswana",
@@ -677,7 +752,11 @@
      "url": "https://um.dk/media/3pjjbw5h/copenhagen-diplomatic-list-26102026.pdf"
     }
    },
-   "checked": "2026-11-15"
+   "checked": "2026-11-15",
+   "head_of_government": {
+    "same_as_head_of_state": true
+   },
+   "band": "head_of_state"
   },
   "brazil": {
    "nation": "Brazil",
@@ -702,7 +781,11 @@
      "url": "https://um.dk/media/3pjjbw5h/copenhagen-diplomatic-list-26102026.pdf"
     }
    },
-   "checked": "2026-11-15"
+   "checked": "2026-11-15",
+   "head_of_government": {
+    "same_as_head_of_state": true
+   },
+   "band": "head_of_state"
   },
   "brunei": {
    "nation": "Brunei",
@@ -726,7 +809,11 @@
      "url": "https://um.dk/media/3pjjbw5h/copenhagen-diplomatic-list-26102026.pdf"
     }
    },
-   "checked": "2026-11-15"
+   "checked": "2026-11-15",
+   "head_of_government": {
+    "same_as_head_of_state": true
+   },
+   "band": "head_of_state"
   },
   "bulgaria": {
    "nation": "Bulgaria",
@@ -751,7 +838,7 @@
     }
    },
    "checked": "2026-11-15",
-   "leader": {
+   "head_of_government": {
     "title": "Prime Minister of the Republic of Bulgaria",
     "name": "Rumen Radev",
     "portrait": "",
@@ -760,7 +847,8 @@
      "url": "https://www.un.org/dgacm/sites/www.un.org.dgacm/files/Documents_Protocol/hspmfmlist.pdf"
     },
     "since": "2026-05-08"
-   }
+   },
+   "band": "head_of_government"
   },
   "burkina-faso": {
    "nation": "Burkina Faso",
@@ -784,7 +872,17 @@
      "url": "https://um.dk/media/3pjjbw5h/copenhagen-diplomatic-list-26102026.pdf"
     }
    },
-   "checked": "2026-11-15"
+   "checked": "2026-11-15",
+   "head_of_government": {
+    "title": "Prime Minister, Head of Government of Burkina Faso",
+    "name": "Rimtalba Jean Emmanuel Ouedraogo",
+    "portrait": "",
+    "source": {
+     "label": "United Nations Protocol, list of 13 November 2026",
+     "url": "https://www.un.org/dgacm/sites/www.un.org.dgacm/files/Documents_Protocol/hspmfmlist.pdf"
+    }
+   },
+   "band": "head_of_state"
   },
   "burundi": {
    "nation": "Burundi",
@@ -808,7 +906,19 @@
      "url": "https://um.dk/media/3pjjbw5h/copenhagen-diplomatic-list-26102026.pdf"
     }
    },
-   "checked": "2026-11-15"
+   "checked": "2026-11-15",
+   "head_of_government": {
+    "title": "Prime Minister of the Republic of Burundi",
+    "name": "Nestor Ntahontuye",
+    "portrait": "",
+    "source": {
+     "label": "United Nations Protocol, list of 13 November 2026",
+     "url": "https://www.un.org/dgacm/sites/www.un.org.dgacm/files/Documents_Protocol/hspmfmlist.pdf"
+    },
+    "since": "2025-08-05"
+   },
+   "band": "head_of_state",
+   "steward_note": "The UN Protocol list prints the Prime Minister as \"Ntahontuye Ntahontuye\"; appointed 5 August 2025. Confirm the first name."
   },
   "cabo-verde": {
    "nation": "Cabo Verde",
@@ -833,7 +943,7 @@
     }
    },
    "checked": "2026-11-15",
-   "leader": {
+   "head_of_government": {
     "title": "Prime Minister of the Republic of Cabo Verde",
     "name": "Francisco Avelino Vieira de Carvalho",
     "portrait": "",
@@ -842,7 +952,8 @@
      "url": "https://www.un.org/dgacm/sites/www.un.org.dgacm/files/Documents_Protocol/hspmfmlist.pdf"
     },
     "since": "2026-05-17"
-   }
+   },
+   "band": "head_of_government"
   },
   "cambodia": {
    "nation": "Cambodia",
@@ -867,7 +978,7 @@
     }
    },
    "checked": "2026-11-15",
-   "leader": {
+   "head_of_government": {
     "title": "Prime Minister of the Kingdom of Cambodia",
     "name": "Hun Manet",
     "portrait": "",
@@ -875,7 +986,8 @@
      "label": "United Nations Protocol, list of 13 November 2026",
      "url": "https://www.un.org/dgacm/sites/www.un.org.dgacm/files/Documents_Protocol/hspmfmlist.pdf"
     }
-   }
+   },
+   "band": "head_of_government"
   },
   "cameroon": {
    "nation": "Cameroon",
@@ -899,7 +1011,17 @@
      "url": "https://um.dk/media/3pjjbw5h/copenhagen-diplomatic-list-26102026.pdf"
     }
    },
-   "checked": "2026-11-15"
+   "checked": "2026-11-15",
+   "head_of_government": {
+    "title": "Prime Minister, Head of Government of the Republic of Cameroon",
+    "name": "Joseph Dion Ngute",
+    "portrait": "",
+    "source": {
+     "label": "United Nations Protocol, list of 13 November 2026",
+     "url": "https://www.un.org/dgacm/sites/www.un.org.dgacm/files/Documents_Protocol/hspmfmlist.pdf"
+    }
+   },
+   "band": "head_of_state"
   },
   "canada": {
    "nation": "Canada",
@@ -924,7 +1046,7 @@
     }
    },
    "checked": "2026-11-15",
-   "leader": {
+   "head_of_government": {
     "title": "Prime Minister of Canada",
     "name": "Mark Carney",
     "portrait": "",
@@ -932,7 +1054,8 @@
      "label": "United Nations Protocol, list of 13 November 2026",
      "url": "https://www.un.org/dgacm/sites/www.un.org.dgacm/files/Documents_Protocol/hspmfmlist.pdf"
     }
-   }
+   },
+   "band": "head_of_government"
   },
   "central-african-republic": {
    "nation": "Central African Republic",
@@ -956,7 +1079,17 @@
      "url": "https://um.dk/media/3pjjbw5h/copenhagen-diplomatic-list-26102026.pdf"
     }
    },
-   "checked": "2026-11-15"
+   "checked": "2026-11-15",
+   "head_of_government": {
+    "title": "Prime Minister, Head of Government of the Central African Republic",
+    "name": "Félix Moloua",
+    "portrait": "",
+    "source": {
+     "label": "United Nations Protocol, list of 13 November 2026",
+     "url": "https://www.un.org/dgacm/sites/www.un.org.dgacm/files/Documents_Protocol/hspmfmlist.pdf"
+    }
+   },
+   "band": "head_of_state"
   },
   "chad": {
    "nation": "Chad",
@@ -980,7 +1113,17 @@
      "url": "https://um.dk/media/3pjjbw5h/copenhagen-diplomatic-list-26102026.pdf"
     }
    },
-   "checked": "2026-11-15"
+   "checked": "2026-11-15",
+   "head_of_government": {
+    "title": "Prime Minister, Head of Government of the Republic of Chad",
+    "name": "Allah-Maye Halina",
+    "portrait": "",
+    "source": {
+     "label": "United Nations Protocol, list of 13 November 2026",
+     "url": "https://www.un.org/dgacm/sites/www.un.org.dgacm/files/Documents_Protocol/hspmfmlist.pdf"
+    }
+   },
+   "band": "head_of_state"
   },
   "chile": {
    "nation": "Chile",
@@ -1004,7 +1147,11 @@
      "url": "https://um.dk/media/3pjjbw5h/copenhagen-diplomatic-list-26102026.pdf"
     }
    },
-   "checked": "2026-11-15"
+   "checked": "2026-11-15",
+   "head_of_government": {
+    "same_as_head_of_state": true
+   },
+   "band": "head_of_state"
   },
   "china": {
    "nation": "China",
@@ -1028,7 +1175,17 @@
      "url": "https://um.dk/media/3pjjbw5h/copenhagen-diplomatic-list-26102026.pdf"
     }
    },
-   "checked": "2026-11-15"
+   "checked": "2026-11-15",
+   "head_of_government": {
+    "title": "Premier of the State Council of the People’s Republic of China",
+    "name": "Li Qiang",
+    "portrait": "",
+    "source": {
+     "label": "United Nations Protocol, list of 13 November 2026",
+     "url": "https://www.un.org/dgacm/sites/www.un.org.dgacm/files/Documents_Protocol/hspmfmlist.pdf"
+    }
+   },
+   "band": "head_of_state"
   },
   "colombia": {
    "nation": "Colombia",
@@ -1053,7 +1210,11 @@
      "url": "https://um.dk/media/3pjjbw5h/copenhagen-diplomatic-list-26102026.pdf"
     }
    },
-   "checked": "2026-11-15"
+   "checked": "2026-11-15",
+   "head_of_government": {
+    "same_as_head_of_state": true
+   },
+   "band": "head_of_state"
   },
   "comoros": {
    "nation": "Comoros",
@@ -1077,7 +1238,11 @@
      "url": "https://um.dk/media/3pjjbw5h/copenhagen-diplomatic-list-26102026.pdf"
     }
    },
-   "checked": "2026-11-15"
+   "checked": "2026-11-15",
+   "head_of_government": {
+    "same_as_head_of_state": true
+   },
+   "band": "head_of_state"
   },
   "costa-rica": {
    "nation": "Costa Rica",
@@ -1101,7 +1266,11 @@
      "url": "https://um.dk/media/3pjjbw5h/copenhagen-diplomatic-list-26102026.pdf"
     }
    },
-   "checked": "2026-11-15"
+   "checked": "2026-11-15",
+   "head_of_government": {
+    "same_as_head_of_state": true
+   },
+   "band": "head_of_state"
   },
   "cote-divoire": {
    "nation": "Côte d’Ivoire",
@@ -1126,7 +1295,17 @@
      "url": "https://um.dk/media/3pjjbw5h/copenhagen-diplomatic-list-26102026.pdf"
     }
    },
-   "checked": "2026-11-15"
+   "checked": "2026-11-15",
+   "head_of_government": {
+    "title": "Prime Minister, Head of Government of Côte d’Ivoire",
+    "name": "Robert Beugré Mambé",
+    "portrait": "",
+    "source": {
+     "label": "United Nations Protocol, list of 13 November 2026",
+     "url": "https://www.un.org/dgacm/sites/www.un.org.dgacm/files/Documents_Protocol/hspmfmlist.pdf"
+    }
+   },
+   "band": "head_of_state"
   },
   "croatia": {
    "nation": "Croatia",
@@ -1151,7 +1330,7 @@
     }
    },
    "checked": "2026-11-15",
-   "leader": {
+   "head_of_government": {
     "title": "Prime Minister of the Republic of Croatia",
     "name": "Andrej Plenković",
     "portrait": "",
@@ -1159,7 +1338,8 @@
      "label": "United Nations Protocol, list of 13 November 2026",
      "url": "https://www.un.org/dgacm/sites/www.un.org.dgacm/files/Documents_Protocol/hspmfmlist.pdf"
     }
-   }
+   },
+   "band": "head_of_government"
   },
   "cuba": {
    "nation": "Cuba",
@@ -1188,7 +1368,17 @@
      "url": "https://um.dk/media/3pjjbw5h/copenhagen-diplomatic-list-26102026.pdf"
     }
    },
-   "checked": "2026-11-15"
+   "checked": "2026-11-15",
+   "head_of_government": {
+    "title": "Prime Minister of the Republic of Cuba",
+    "name": "Manuel Marrero Cruz",
+    "portrait": "",
+    "source": {
+     "label": "United Nations Protocol, list of 13 November 2026",
+     "url": "https://www.un.org/dgacm/sites/www.un.org.dgacm/files/Documents_Protocol/hspmfmlist.pdf"
+    }
+   },
+   "band": "head_of_state"
   },
   "cyprus": {
    "nation": "Cyprus",
@@ -1213,7 +1403,11 @@
      "url": "https://um.dk/media/3pjjbw5h/copenhagen-diplomatic-list-26102026.pdf"
     }
    },
-   "checked": "2026-11-15"
+   "checked": "2026-11-15",
+   "head_of_government": {
+    "same_as_head_of_state": true
+   },
+   "band": "head_of_state"
   },
   "czechia": {
    "nation": "Czechia",
@@ -1238,7 +1432,7 @@
     }
    },
    "checked": "2026-11-15",
-   "leader": {
+   "head_of_government": {
     "title": "Prime Minister of the Czech Republic",
     "name": "Andrej Babiš",
     "portrait": "",
@@ -1246,7 +1440,8 @@
      "label": "United Nations Protocol, list of 13 November 2026",
      "url": "https://www.un.org/dgacm/sites/www.un.org.dgacm/files/Documents_Protocol/hspmfmlist.pdf"
     }
-   }
+   },
+   "band": "head_of_government"
   },
   "denmark": {
    "nation": "Denmark",
@@ -1272,7 +1467,7 @@
    },
    "checked": "2026-11-15",
    "steward_note": "The Copenhagen list also gives 26 May, the King’s Birthday.",
-   "leader": {
+   "head_of_government": {
     "title": "Prime Minister of Denmark",
     "name": "Mette Frederiksen",
     "portrait": "",
@@ -1280,7 +1475,8 @@
      "label": "United Nations Protocol, list of 13 November 2026",
      "url": "https://www.un.org/dgacm/sites/www.un.org.dgacm/files/Documents_Protocol/hspmfmlist.pdf"
     }
-   }
+   },
+   "band": "head_of_government"
   },
   "djibouti": {
    "nation": "Djibouti",
@@ -1304,7 +1500,17 @@
      "url": "https://um.dk/media/3pjjbw5h/copenhagen-diplomatic-list-26102026.pdf"
     }
    },
-   "checked": "2026-11-15"
+   "checked": "2026-11-15",
+   "head_of_government": {
+    "title": "Prime Minister of the Republic of Djibouti",
+    "name": "Abdoulkader Kamil Mohamed",
+    "portrait": "",
+    "source": {
+     "label": "United Nations Protocol, list of 13 November 2026",
+     "url": "https://www.un.org/dgacm/sites/www.un.org.dgacm/files/Documents_Protocol/hspmfmlist.pdf"
+    }
+   },
+   "band": "head_of_state"
   },
   "dominica": {
    "nation": "Dominica",
@@ -1329,7 +1535,7 @@
     }
    },
    "checked": "2026-11-15",
-   "leader": {
+   "head_of_government": {
     "title": "Prime Minister of the Commonwealth of Dominica",
     "name": "Roosevelt Skerrit",
     "portrait": "",
@@ -1337,7 +1543,8 @@
      "label": "United Nations Protocol, list of 13 November 2026",
      "url": "https://www.un.org/dgacm/sites/www.un.org.dgacm/files/Documents_Protocol/hspmfmlist.pdf"
     }
-   }
+   },
+   "band": "head_of_government"
   },
   "dominican-republic": {
    "nation": "Dominican Republic",
@@ -1361,7 +1568,11 @@
      "url": "https://um.dk/media/3pjjbw5h/copenhagen-diplomatic-list-26102026.pdf"
     }
    },
-   "checked": "2026-11-15"
+   "checked": "2026-11-15",
+   "head_of_government": {
+    "same_as_head_of_state": true
+   },
+   "band": "head_of_state"
   },
   "dr-congo": {
    "nation": "DR Congo",
@@ -1385,7 +1596,17 @@
      "url": "https://um.dk/media/3pjjbw5h/copenhagen-diplomatic-list-26102026.pdf"
     }
    },
-   "checked": "2026-11-15"
+   "checked": "2026-11-15",
+   "head_of_government": {
+    "title": "Prime Minister, Head of Government of the Democratic Republic of the Congo",
+    "name": "Judith Suminwa Tuluka",
+    "portrait": "",
+    "source": {
+     "label": "United Nations Protocol, list of 13 November 2026",
+     "url": "https://www.un.org/dgacm/sites/www.un.org.dgacm/files/Documents_Protocol/hspmfmlist.pdf"
+    }
+   },
+   "band": "head_of_state"
   },
   "ecuador": {
    "nation": "Ecuador",
@@ -1409,7 +1630,11 @@
      "url": "https://um.dk/media/3pjjbw5h/copenhagen-diplomatic-list-26102026.pdf"
     }
    },
-   "checked": "2026-11-15"
+   "checked": "2026-11-15",
+   "head_of_government": {
+    "same_as_head_of_state": true
+   },
+   "band": "head_of_state"
   },
   "egypt": {
    "nation": "Egypt",
@@ -1433,7 +1658,17 @@
      "url": "https://um.dk/media/3pjjbw5h/copenhagen-diplomatic-list-26102026.pdf"
     }
    },
-   "checked": "2026-11-15"
+   "checked": "2026-11-15",
+   "head_of_government": {
+    "title": "Prime Minister of the Arab Republic of Egypt",
+    "name": "Moustafa Kamal Madbouly",
+    "portrait": "",
+    "source": {
+     "label": "United Nations Protocol, list of 13 November 2026",
+     "url": "https://www.un.org/dgacm/sites/www.un.org.dgacm/files/Documents_Protocol/hspmfmlist.pdf"
+    }
+   },
+   "band": "head_of_state"
   },
   "el-salvador": {
    "nation": "El Salvador",
@@ -1457,7 +1692,11 @@
      "url": "https://um.dk/media/3pjjbw5h/copenhagen-diplomatic-list-26102026.pdf"
     }
    },
-   "checked": "2026-11-15"
+   "checked": "2026-11-15",
+   "head_of_government": {
+    "same_as_head_of_state": true
+   },
+   "band": "head_of_state"
   },
   "equatorial-guinea": {
    "nation": "Equatorial Guinea",
@@ -1481,7 +1720,17 @@
      "url": "https://www.government.se/globalassets/government/dokument/utrikesdepartementet/diplomatportalen/national-days/national-days-20240618.pdf"
     }
    },
-   "checked": "2026-11-15"
+   "checked": "2026-11-15",
+   "head_of_government": {
+    "title": "Prime Minister of the Republic of Equatorial Guinea",
+    "name": "Manuel Osa Nsue Nsuga",
+    "portrait": "",
+    "source": {
+     "label": "United Nations Protocol, list of 13 November 2026",
+     "url": "https://www.un.org/dgacm/sites/www.un.org.dgacm/files/Documents_Protocol/hspmfmlist.pdf"
+    }
+   },
+   "band": "head_of_state"
   },
   "eritrea": {
    "nation": "Eritrea",
@@ -1505,7 +1754,11 @@
      "url": "https://um.dk/media/3pjjbw5h/copenhagen-diplomatic-list-26102026.pdf"
     }
    },
-   "checked": "2026-11-15"
+   "checked": "2026-11-15",
+   "head_of_government": {
+    "same_as_head_of_state": true
+   },
+   "band": "head_of_state"
   },
   "estonia": {
    "nation": "Estonia",
@@ -1531,7 +1784,7 @@
     }
    },
    "checked": "2026-11-15",
-   "leader": {
+   "head_of_government": {
     "title": "Prime Minister of the Republic of Estonia",
     "name": "Kristen Michal",
     "portrait": "",
@@ -1539,7 +1792,8 @@
      "label": "United Nations Protocol, list of 13 November 2026",
      "url": "https://www.un.org/dgacm/sites/www.un.org.dgacm/files/Documents_Protocol/hspmfmlist.pdf"
     }
-   }
+   },
+   "band": "head_of_government"
   },
   "eswatini": {
    "nation": "Eswatini",
@@ -1563,7 +1817,17 @@
      "url": "https://um.dk/media/3pjjbw5h/copenhagen-diplomatic-list-26102026.pdf"
     }
    },
-   "checked": "2026-11-15"
+   "checked": "2026-11-15",
+   "head_of_government": {
+    "title": "Prime Minister of the Kingdom of Eswatini",
+    "name": "Russell Mmiso Dlamini",
+    "portrait": "",
+    "source": {
+     "label": "United Nations Protocol, list of 13 November 2026",
+     "url": "https://www.un.org/dgacm/sites/www.un.org.dgacm/files/Documents_Protocol/hspmfmlist.pdf"
+    }
+   },
+   "band": "head_of_state"
   },
   "ethiopia": {
    "nation": "Ethiopia",
@@ -1588,7 +1852,7 @@
     }
    },
    "checked": "2026-11-15",
-   "leader": {
+   "head_of_government": {
     "title": "Prime Minister of the Federal Democratic Republic of Ethiopia",
     "name": "Abiy Ahmed",
     "portrait": "",
@@ -1596,7 +1860,8 @@
      "label": "United Nations Protocol, list of 13 November 2026",
      "url": "https://www.un.org/dgacm/sites/www.un.org.dgacm/files/Documents_Protocol/hspmfmlist.pdf"
     }
-   }
+   },
+   "band": "head_of_government"
   },
   "fiji": {
    "nation": "Fiji",
@@ -1621,7 +1886,7 @@
     }
    },
    "checked": "2026-11-15",
-   "leader": {
+   "head_of_government": {
     "title": "Prime Minister of the Republic of Fiji",
     "name": "Sitiveni Ligamamada Rabuka",
     "portrait": "",
@@ -1629,17 +1894,23 @@
      "label": "United Nations Protocol, list of 13 November 2026",
      "url": "https://www.un.org/dgacm/sites/www.un.org.dgacm/files/Documents_Protocol/hspmfmlist.pdf"
     }
-   }
+   },
+   "band": "head_of_government"
   },
   "finland": {
    "nation": "Finland",
    "head_of_state": {
     "title": "President of the Republic of Finland",
     "name": "Alexander Stubb",
-    "portrait": "",
+    "portrait": "https://perfectnations.com/wp-content/uploads/2026/11/pn-hos-finland-224x300.jpg",
     "source": {
      "label": "United Nations Protocol, list of 13 November 2026",
      "url": "https://www.un.org/dgacm/sites/www.un.org.dgacm/files/Documents_Protocol/hspmfmlist.pdf"
+    },
+    "portrait_credit": "Jaan Kynnap",
+    "portrait_licence": {
+     "label": "CC BY 4.0",
+     "url": "https://creativecommons.org/licenses/by/4.0/"
     }
    },
    "national_day": {
@@ -1654,7 +1925,7 @@
     }
    },
    "checked": "2026-11-15",
-   "leader": {
+   "head_of_government": {
     "title": "Prime Minister of the Republic of Finland",
     "name": "Petteri Orpo",
     "portrait": "",
@@ -1662,7 +1933,8 @@
      "label": "United Nations Protocol, list of 13 November 2026",
      "url": "https://www.un.org/dgacm/sites/www.un.org.dgacm/files/Documents_Protocol/hspmfmlist.pdf"
     }
-   }
+   },
+   "band": "head_of_government"
   },
   "france": {
    "nation": "France",
@@ -1783,7 +2055,17 @@
     }
    ],
    "watch": "A presidential election is due in spring 2027: the monthly check after the election, and the check of 29 June 2027, update the head of state before the letters of 30 June 2027.",
-   "checked": "2026-11-15"
+   "checked": "2026-11-15",
+   "head_of_government": {
+    "title": "Prime Minister of the French Republic",
+    "name": "Sébastien Lecornu",
+    "portrait": "",
+    "source": {
+     "label": "United Nations Protocol, list of 13 November 2026",
+     "url": "https://www.un.org/dgacm/sites/www.un.org.dgacm/files/Documents_Protocol/hspmfmlist.pdf"
+    }
+   },
+   "band": "head_of_state"
   },
   "gabon": {
    "nation": "Gabon",
@@ -1807,7 +2089,12 @@
      "url": "https://um.dk/media/3pjjbw5h/copenhagen-diplomatic-list-26102026.pdf"
     }
    },
-   "checked": "2026-11-15"
+   "checked": "2026-11-15",
+   "head_of_government": {
+    "same_as_head_of_state": true
+   },
+   "band": "head_of_state",
+   "steward_note": "The President is Head of State and Head of Government; the UN Protocol list still names Raymond Ndong Sima as Prime Minister."
   },
   "gambia": {
    "nation": "Gambia",
@@ -1831,7 +2118,11 @@
      "url": "https://um.dk/media/3pjjbw5h/copenhagen-diplomatic-list-26102026.pdf"
     }
    },
-   "checked": "2026-11-15"
+   "checked": "2026-11-15",
+   "head_of_government": {
+    "same_as_head_of_state": true
+   },
+   "band": "head_of_state"
   },
   "georgia": {
    "nation": "Georgia",
@@ -1856,7 +2147,7 @@
     }
    },
    "checked": "2026-11-15",
-   "leader": {
+   "head_of_government": {
     "title": "Prime Minister of Georgia",
     "name": "Irakli Kobakhidze",
     "portrait": "",
@@ -1864,17 +2155,23 @@
      "label": "United Nations Protocol, list of 13 November 2026",
      "url": "https://www.un.org/dgacm/sites/www.un.org.dgacm/files/Documents_Protocol/hspmfmlist.pdf"
     }
-   }
+   },
+   "band": "head_of_government"
   },
   "germany": {
    "nation": "Germany",
    "head_of_state": {
     "title": "President of the Federal Republic of Germany",
     "name": "Frank-Walter Steinmeier",
-    "portrait": "",
+    "portrait": "https://perfectnations.com/wp-content/uploads/2026/11/pn-hos-germany-225x300.jpg",
     "source": {
      "label": "United Nations Protocol, list of 13 November 2026",
      "url": "https://www.un.org/dgacm/sites/www.un.org.dgacm/files/Documents_Protocol/hspmfmlist.pdf"
+    },
+    "portrait_credit": "Jnwnklr",
+    "portrait_licence": {
+     "label": "CC BY-SA 4.0",
+     "url": "https://creativecommons.org/licenses/by-sa/4.0/"
     }
    },
    "national_day": {
@@ -1889,7 +2186,7 @@
     }
    },
    "checked": "2026-11-15",
-   "leader": {
+   "head_of_government": {
     "title": "Chancellor of the Federal Republic of Germany",
     "name": "Friedrich Merz",
     "portrait": "",
@@ -1897,7 +2194,8 @@
      "label": "United Nations Protocol, list of 13 November 2026",
      "url": "https://www.un.org/dgacm/sites/www.un.org.dgacm/files/Documents_Protocol/hspmfmlist.pdf"
     }
-   }
+   },
+   "band": "head_of_government"
   },
   "ghana": {
    "nation": "Ghana",
@@ -1925,7 +2223,11 @@
      "url": "https://um.dk/media/3pjjbw5h/copenhagen-diplomatic-list-26102026.pdf"
     }
    },
-   "checked": "2026-11-15"
+   "checked": "2026-11-15",
+   "head_of_government": {
+    "same_as_head_of_state": true
+   },
+   "band": "head_of_state"
   },
   "greece": {
    "nation": "Greece",
@@ -1950,7 +2252,7 @@
     }
    },
    "checked": "2026-11-15",
-   "leader": {
+   "head_of_government": {
     "title": "Prime Minister of the Hellenic Republic",
     "name": "Kyriakos Mitsotakis",
     "portrait": "",
@@ -1958,7 +2260,8 @@
      "label": "United Nations Protocol, list of 13 November 2026",
      "url": "https://www.un.org/dgacm/sites/www.un.org.dgacm/files/Documents_Protocol/hspmfmlist.pdf"
     }
-   }
+   },
+   "band": "head_of_government"
   },
   "grenada": {
    "nation": "Grenada",
@@ -1983,7 +2286,7 @@
     }
    },
    "checked": "2026-11-15",
-   "leader": {
+   "head_of_government": {
     "title": "Prime Minister of Grenada",
     "name": "Dickon Mitchell",
     "portrait": "",
@@ -1991,7 +2294,8 @@
      "label": "United Nations Protocol, list of 13 November 2026",
      "url": "https://www.un.org/dgacm/sites/www.un.org.dgacm/files/Documents_Protocol/hspmfmlist.pdf"
     }
-   }
+   },
+   "band": "head_of_government"
   },
   "guatemala": {
    "nation": "Guatemala",
@@ -2015,7 +2319,11 @@
      "url": "https://um.dk/media/3pjjbw5h/copenhagen-diplomatic-list-26102026.pdf"
     }
    },
-   "checked": "2026-11-15"
+   "checked": "2026-11-15",
+   "head_of_government": {
+    "same_as_head_of_state": true
+   },
+   "band": "head_of_state"
   },
   "guinea": {
    "nation": "Guinea",
@@ -2039,7 +2347,17 @@
      "url": "https://um.dk/media/3pjjbw5h/copenhagen-diplomatic-list-26102026.pdf"
     }
    },
-   "checked": "2026-11-15"
+   "checked": "2026-11-15",
+   "head_of_government": {
+    "title": "Prime Minister, Head of Government of the Republic of Guinea",
+    "name": "Amadou Oury Bah",
+    "portrait": "",
+    "source": {
+     "label": "United Nations Protocol, list of 13 November 2026",
+     "url": "https://www.un.org/dgacm/sites/www.un.org.dgacm/files/Documents_Protocol/hspmfmlist.pdf"
+    }
+   },
+   "band": "head_of_state"
   },
   "guinea-bissau": {
    "nation": "Guinea-Bissau",
@@ -2063,7 +2381,17 @@
      "url": "https://um.dk/media/3pjjbw5h/copenhagen-diplomatic-list-26102026.pdf"
     }
    },
-   "checked": "2026-11-15"
+   "checked": "2026-11-15",
+   "head_of_government": {
+    "title": "Prime Minister of the Republic of Guinea-Bissau",
+    "name": "Ilídio Vieira Té",
+    "portrait": "",
+    "source": {
+     "label": "United Nations Protocol, list of 13 November 2026",
+     "url": "https://www.un.org/dgacm/sites/www.un.org.dgacm/files/Documents_Protocol/hspmfmlist.pdf"
+    }
+   },
+   "band": "head_of_state"
   },
   "guyana": {
    "nation": "Guyana",
@@ -2087,7 +2415,17 @@
      "url": "https://um.dk/media/3pjjbw5h/copenhagen-diplomatic-list-26102026.pdf"
     }
    },
-   "checked": "2026-11-15"
+   "checked": "2026-11-15",
+   "head_of_government": {
+    "title": "Prime Minister of the Co-operative Republic of Guyana",
+    "name": "Mark Phillips",
+    "portrait": "",
+    "source": {
+     "label": "United Nations Protocol, list of 13 November 2026",
+     "url": "https://www.un.org/dgacm/sites/www.un.org.dgacm/files/Documents_Protocol/hspmfmlist.pdf"
+    }
+   },
+   "band": "head_of_state"
   },
   "haiti": {
    "nation": "Haiti",
@@ -2111,7 +2449,17 @@
      "url": "https://um.dk/media/3pjjbw5h/copenhagen-diplomatic-list-26102026.pdf"
     }
    },
-   "checked": "2026-11-15"
+   "checked": "2026-11-15",
+   "head_of_government": {
+    "title": "Prime Minister of the Republic of Haiti",
+    "name": "Alix Didier Fils-Aimé",
+    "portrait": "",
+    "source": {
+     "label": "United Nations Protocol, list of 13 November 2026",
+     "url": "https://www.un.org/dgacm/sites/www.un.org.dgacm/files/Documents_Protocol/hspmfmlist.pdf"
+    }
+   },
+   "band": "head_of_state"
   },
   "holy-see": {
    "nation": "Holy See",
@@ -2136,7 +2484,17 @@
     }
    },
    "checked": "2026-11-15",
-   "steward_note": "The anniversary of the election of Pope Leo XIV (8 May 2025). The date changes with each pontificate."
+   "steward_note": "The anniversary of the election of Pope Leo XIV (8 May 2025). The date changes with each pontificate.",
+   "head_of_government": {
+    "title": "Secretary of State of the Holy See",
+    "name": "Pietro Parolin",
+    "portrait": "",
+    "source": {
+     "label": "United Nations Protocol, list of 13 November 2026",
+     "url": "https://www.un.org/dgacm/sites/www.un.org.dgacm/files/Documents_Protocol/hspmfmlist.pdf"
+    }
+   },
+   "band": "head_of_state"
   },
   "honduras": {
    "nation": "Honduras",
@@ -2160,7 +2518,11 @@
      "url": "https://um.dk/media/3pjjbw5h/copenhagen-diplomatic-list-26102026.pdf"
     }
    },
-   "checked": "2026-11-15"
+   "checked": "2026-11-15",
+   "head_of_government": {
+    "same_as_head_of_state": true
+   },
+   "band": "head_of_state"
   },
   "hungary": {
    "nation": "Hungary",
@@ -2186,7 +2548,7 @@
     }
    },
    "checked": "2026-11-15",
-   "leader": {
+   "head_of_government": {
     "title": "Prime Minister of Hungary",
     "name": "Péter Magyar",
     "portrait": "",
@@ -2195,7 +2557,8 @@
      "url": "https://www.un.org/dgacm/sites/www.un.org.dgacm/files/Documents_Protocol/hspmfmlist.pdf"
     },
     "since": "2026-06-22"
-   }
+   },
+   "band": "head_of_government"
   },
   "iceland": {
    "nation": "Iceland",
@@ -2220,7 +2583,7 @@
     }
    },
    "checked": "2026-11-15",
-   "leader": {
+   "head_of_government": {
     "title": "Prime Minister of Iceland",
     "name": "Kristrún Frostadóttir",
     "portrait": "",
@@ -2228,17 +2591,22 @@
      "label": "United Nations Protocol, list of 13 November 2026",
      "url": "https://www.un.org/dgacm/sites/www.un.org.dgacm/files/Documents_Protocol/hspmfmlist.pdf"
     }
-   }
+   },
+   "band": "head_of_government"
   },
   "india": {
    "nation": "India",
    "head_of_state": {
     "title": "President of the Republic of India",
     "name": "Droupadi Murmu",
-    "portrait": "",
+    "portrait": "https://perfectnations.com/wp-content/uploads/2026/11/pn-hos-india-1-218x300.jpg",
     "source": {
      "label": "United Nations Protocol, list of 13 November 2026",
      "url": "https://www.un.org/dgacm/sites/www.un.org.dgacm/files/Documents_Protocol/hspmfmlist.pdf"
+    },
+    "portrait_credit": "President’s Secretariat, Government of India",
+    "portrait_licence": {
+     "label": "GODL-India"
     }
    },
    "national_day": {
@@ -2254,7 +2622,7 @@
    },
    "checked": "2026-11-15",
    "steward_note": "India also celebrates Republic Day on 26 January; the Copenhagen list gives 15 August.",
-   "leader": {
+   "head_of_government": {
     "title": "Prime Minister of the Republic of India",
     "name": "Narendra Modi",
     "portrait": "https://perfectnations.com/wp-content/uploads/2026/11/pn-hos-india-240x300.jpg",
@@ -2266,7 +2634,8 @@
     "portrait_licence": {
      "label": "GODL-India"
     }
-   }
+   },
+   "band": "head_of_government"
   },
   "indonesia": {
    "nation": "Indonesia",
@@ -2290,7 +2659,11 @@
      "url": "https://um.dk/media/3pjjbw5h/copenhagen-diplomatic-list-26102026.pdf"
     }
    },
-   "checked": "2026-11-15"
+   "checked": "2026-11-15",
+   "head_of_government": {
+    "same_as_head_of_state": true
+   },
+   "band": "head_of_state"
   },
   "iran": {
    "nation": "Iran",
@@ -2314,7 +2687,11 @@
      "url": "https://um.dk/media/3pjjbw5h/copenhagen-diplomatic-list-26102026.pdf"
     }
    },
-   "checked": "2026-11-15"
+   "checked": "2026-11-15",
+   "head_of_government": {
+    "same_as_head_of_state": true
+   },
+   "band": "head_of_state"
   },
   "iraq": {
    "nation": "Iraq",
@@ -2340,7 +2717,7 @@
     }
    },
    "checked": "2026-11-15",
-   "leader": {
+   "head_of_government": {
     "title": "Prime Minister of the Republic of Iraq",
     "name": "Ali Falih Al-Zaidi",
     "portrait": "",
@@ -2349,7 +2726,8 @@
      "url": "https://www.un.org/dgacm/sites/www.un.org.dgacm/files/Documents_Protocol/hspmfmlist.pdf"
     },
     "since": "2026-05-14"
-   }
+   },
+   "band": "head_of_government"
   },
   "ireland": {
    "nation": "Ireland",
@@ -2374,7 +2752,7 @@
     }
    },
    "checked": "2026-11-15",
-   "leader": {
+   "head_of_government": {
     "title": "Taoiseach of Ireland",
     "name": "Micheál Martin",
     "portrait": "",
@@ -2382,7 +2760,8 @@
      "label": "United Nations Protocol, list of 13 November 2026",
      "url": "https://www.un.org/dgacm/sites/www.un.org.dgacm/files/Documents_Protocol/hspmfmlist.pdf"
     }
-   }
+   },
+   "band": "head_of_government"
   },
   "israel": {
    "nation": "Israel",
@@ -2409,7 +2788,7 @@
    },
    "checked": "2026-11-15",
    "steward_note": "The date moves: Independence Day follows the Hebrew calendar (5 Iyar). 12 May is the 2027 date; confirm it with the Embassy of Israel and set the next date after each celebration.",
-   "leader": {
+   "head_of_government": {
     "title": "Prime Minister of the State of Israel",
     "name": "Benjamin Netanyahu",
     "portrait": "",
@@ -2417,7 +2796,8 @@
      "label": "United Nations Protocol, list of 13 November 2026",
      "url": "https://www.un.org/dgacm/sites/www.un.org.dgacm/files/Documents_Protocol/hspmfmlist.pdf"
     }
-   }
+   },
+   "band": "head_of_government"
   },
   "italy": {
    "nation": "Italy",
@@ -2442,7 +2822,7 @@
     }
    },
    "checked": "2026-11-15",
-   "leader": {
+   "head_of_government": {
     "title": "President of the Council of Ministers of the Italian Republic",
     "name": "Giorgia Meloni",
     "portrait": "",
@@ -2450,7 +2830,8 @@
      "label": "United Nations Protocol, list of 13 November 2026",
      "url": "https://www.un.org/dgacm/sites/www.un.org.dgacm/files/Documents_Protocol/hspmfmlist.pdf"
     }
-   }
+   },
+   "band": "head_of_government"
   },
   "jamaica": {
    "nation": "Jamaica",
@@ -2475,7 +2856,7 @@
     }
    },
    "checked": "2026-11-15",
-   "leader": {
+   "head_of_government": {
     "title": "Prime Minister of Jamaica",
     "name": "Andrew Holness",
     "portrait": "",
@@ -2483,7 +2864,8 @@
      "label": "United Nations Protocol, list of 13 November 2026",
      "url": "https://www.un.org/dgacm/sites/www.un.org.dgacm/files/Documents_Protocol/hspmfmlist.pdf"
     }
-   }
+   },
+   "band": "head_of_government"
   },
   "japan": {
    "nation": "Japan",
@@ -2508,7 +2890,7 @@
     }
    },
    "checked": "2026-11-15",
-   "leader": {
+   "head_of_government": {
     "title": "Prime Minister of Japan",
     "name": "Takaichi Sanae",
     "portrait": "",
@@ -2516,7 +2898,8 @@
      "label": "United Nations Protocol, list of 13 November 2026",
      "url": "https://www.un.org/dgacm/sites/www.un.org.dgacm/files/Documents_Protocol/hspmfmlist.pdf"
     }
-   }
+   },
+   "band": "head_of_government"
   },
   "jordan": {
    "nation": "Jordan",
@@ -2540,7 +2923,17 @@
      "url": "https://um.dk/media/3pjjbw5h/copenhagen-diplomatic-list-26102026.pdf"
     }
    },
-   "checked": "2026-11-15"
+   "checked": "2026-11-15",
+   "head_of_government": {
+    "title": "Prime Minister of the Hashemite Kingdom of Jordan",
+    "name": "Jafar Hassan",
+    "portrait": "",
+    "source": {
+     "label": "United Nations Protocol, list of 13 November 2026",
+     "url": "https://www.un.org/dgacm/sites/www.un.org.dgacm/files/Documents_Protocol/hspmfmlist.pdf"
+    }
+   },
+   "band": "head_of_state"
   },
   "kazakhstan": {
    "nation": "Kazakhstan",
@@ -2564,7 +2957,17 @@
      "url": "https://www.government.se/globalassets/government/dokument/utrikesdepartementet/diplomatportalen/national-days/national-days-20240618.pdf"
     }
    },
-   "checked": "2026-11-15"
+   "checked": "2026-11-15",
+   "head_of_government": {
+    "title": "Prime Minister of the Republic of Kazakhstan",
+    "name": "Olzhas Bektenov",
+    "portrait": "",
+    "source": {
+     "label": "United Nations Protocol, list of 13 November 2026",
+     "url": "https://www.un.org/dgacm/sites/www.un.org.dgacm/files/Documents_Protocol/hspmfmlist.pdf"
+    }
+   },
+   "band": "head_of_state"
   },
   "kenya": {
    "nation": "Kenya",
@@ -2589,7 +2992,11 @@
      "url": "https://um.dk/media/3pjjbw5h/copenhagen-diplomatic-list-26102026.pdf"
     }
    },
-   "checked": "2026-11-15"
+   "checked": "2026-11-15",
+   "head_of_government": {
+    "same_as_head_of_state": true
+   },
+   "band": "head_of_state"
   },
   "kiribati": {
    "nation": "Kiribati",
@@ -2613,7 +3020,11 @@
      "url": "https://www.mfat.govt.nz/en/embassies/national-days"
     }
    },
-   "checked": "2026-11-15"
+   "checked": "2026-11-15",
+   "head_of_government": {
+    "same_as_head_of_state": true
+   },
+   "band": "head_of_state"
   },
   "kuwait": {
    "nation": "Kuwait",
@@ -2637,7 +3048,17 @@
      "url": "https://um.dk/media/3pjjbw5h/copenhagen-diplomatic-list-26102026.pdf"
     }
    },
-   "checked": "2026-11-15"
+   "checked": "2026-11-15",
+   "head_of_government": {
+    "title": "Prime Minister of the State of Kuwait",
+    "name": "Ahmad Abdullah Al-Ahmad Al-Sabah",
+    "portrait": "",
+    "source": {
+     "label": "United Nations Protocol, list of 13 November 2026",
+     "url": "https://www.un.org/dgacm/sites/www.un.org.dgacm/files/Documents_Protocol/hspmfmlist.pdf"
+    }
+   },
+   "band": "head_of_state"
   },
   "kyrgyzstan": {
    "nation": "Kyrgyzstan",
@@ -2661,7 +3082,17 @@
      "url": "https://um.dk/media/3pjjbw5h/copenhagen-diplomatic-list-26102026.pdf"
     }
    },
-   "checked": "2026-11-15"
+   "checked": "2026-11-15",
+   "head_of_government": {
+    "title": "Chairman of the Cabinet of Ministers of the Kyrgyz Republic",
+    "name": "Adylbek Kasymaliev",
+    "portrait": "",
+    "source": {
+     "label": "United Nations Protocol, list of 13 November 2026",
+     "url": "https://www.un.org/dgacm/sites/www.un.org.dgacm/files/Documents_Protocol/hspmfmlist.pdf"
+    }
+   },
+   "band": "head_of_state"
   },
   "laos": {
    "nation": "Laos",
@@ -2685,7 +3116,17 @@
      "url": "https://um.dk/media/3pjjbw5h/copenhagen-diplomatic-list-26102026.pdf"
     }
    },
-   "checked": "2026-11-15"
+   "checked": "2026-11-15",
+   "head_of_government": {
+    "title": "Prime Minister of the Lao People’s Democratic Republic",
+    "name": "Saleumxay Kommasith",
+    "portrait": "",
+    "source": {
+     "label": "United Nations Protocol, list of 13 November 2026",
+     "url": "https://www.un.org/dgacm/sites/www.un.org.dgacm/files/Documents_Protocol/hspmfmlist.pdf"
+    }
+   },
+   "band": "head_of_state"
   },
   "latvia": {
    "nation": "Latvia",
@@ -2710,7 +3151,7 @@
     }
    },
    "checked": "2026-11-15",
-   "leader": {
+   "head_of_government": {
     "title": "Prime Minister of the Republic of Latvia",
     "name": "Andris Kulbergs",
     "portrait": "",
@@ -2719,7 +3160,8 @@
      "url": "https://www.un.org/dgacm/sites/www.un.org.dgacm/files/Documents_Protocol/hspmfmlist.pdf"
     },
     "since": "2026-05-28"
-   }
+   },
+   "band": "head_of_government"
   },
   "lebanon": {
    "nation": "Lebanon",
@@ -2744,7 +3186,7 @@
     }
    },
    "checked": "2026-11-15",
-   "leader": {
+   "head_of_government": {
     "title": "President of the Council of Ministers of the Republic of Lebanon",
     "name": "Nawaf Salam",
     "portrait": "",
@@ -2752,7 +3194,8 @@
      "label": "United Nations Protocol, list of 13 November 2026",
      "url": "https://www.un.org/dgacm/sites/www.un.org.dgacm/files/Documents_Protocol/hspmfmlist.pdf"
     }
-   }
+   },
+   "band": "head_of_government"
   },
   "lesotho": {
    "nation": "Lesotho",
@@ -2777,7 +3220,7 @@
     }
    },
    "checked": "2026-11-15",
-   "leader": {
+   "head_of_government": {
     "title": "Prime Minister of the Kingdom of Lesotho",
     "name": "Samuel Ntsokoane Matekane",
     "portrait": "",
@@ -2785,7 +3228,8 @@
      "label": "United Nations Protocol, list of 13 November 2026",
      "url": "https://www.un.org/dgacm/sites/www.un.org.dgacm/files/Documents_Protocol/hspmfmlist.pdf"
     }
-   }
+   },
+   "band": "head_of_government"
   },
   "liberia": {
    "nation": "Liberia",
@@ -2809,7 +3253,11 @@
      "url": "https://um.dk/media/3pjjbw5h/copenhagen-diplomatic-list-26102026.pdf"
     }
    },
-   "checked": "2026-11-15"
+   "checked": "2026-11-15",
+   "head_of_government": {
+    "same_as_head_of_state": true
+   },
+   "band": "head_of_state"
   },
   "libya": {
    "nation": "Libya",
@@ -2833,7 +3281,17 @@
      "url": "https://um.dk/media/3pjjbw5h/copenhagen-diplomatic-list-26102026.pdf"
     }
    },
-   "checked": "2026-11-15"
+   "checked": "2026-11-15",
+   "head_of_government": {
+    "title": "Prime Minister of the Government of National Unity of Libya",
+    "name": "Abdulhamid Al Dabiba",
+    "portrait": "",
+    "source": {
+     "label": "United Nations Protocol, list of 13 November 2026",
+     "url": "https://www.un.org/dgacm/sites/www.un.org.dgacm/files/Documents_Protocol/hspmfmlist.pdf"
+    }
+   },
+   "band": "head_of_state"
   },
   "liechtenstein": {
    "nation": "Liechtenstein",
@@ -2858,7 +3316,7 @@
     }
    },
    "checked": "2026-11-15",
-   "leader": {
+   "head_of_government": {
     "title": "Prime Minister of the Principality of Liechtenstein",
     "name": "Brigitte Haas",
     "portrait": "",
@@ -2866,7 +3324,8 @@
      "label": "United Nations Protocol, list of 13 November 2026",
      "url": "https://www.un.org/dgacm/sites/www.un.org.dgacm/files/Documents_Protocol/hspmfmlist.pdf"
     }
-   }
+   },
+   "band": "head_of_government"
   },
   "lithuania": {
    "nation": "Lithuania",
@@ -2891,7 +3350,7 @@
     }
    },
    "checked": "2026-11-15",
-   "leader": {
+   "head_of_government": {
     "title": "Prime Minister of the Republic of Lithuania",
     "name": "Inga Ruginienė",
     "portrait": "",
@@ -2899,7 +3358,8 @@
      "label": "United Nations Protocol, list of 13 November 2026",
      "url": "https://www.un.org/dgacm/sites/www.un.org.dgacm/files/Documents_Protocol/hspmfmlist.pdf"
     }
-   }
+   },
+   "band": "head_of_government"
   },
   "luxembourg": {
    "nation": "Luxembourg",
@@ -2924,7 +3384,7 @@
     }
    },
    "checked": "2026-11-15",
-   "leader": {
+   "head_of_government": {
     "title": "Prime Minister of the Grand Duchy of Luxembourg",
     "name": "Luc Frieden",
     "portrait": "",
@@ -2932,7 +3392,8 @@
      "label": "United Nations Protocol, list of 13 November 2026",
      "url": "https://www.un.org/dgacm/sites/www.un.org.dgacm/files/Documents_Protocol/hspmfmlist.pdf"
     }
-   }
+   },
+   "band": "head_of_government"
   },
   "madagascar": {
    "nation": "Madagascar",
@@ -2956,7 +3417,17 @@
      "url": "https://um.dk/media/3pjjbw5h/copenhagen-diplomatic-list-26102026.pdf"
     }
    },
-   "checked": "2026-11-15"
+   "checked": "2026-11-15",
+   "head_of_government": {
+    "title": "Prime Minister, Head of Government of the Refoundation of the Republic of Madagascar",
+    "name": "Mamitiana Rajaonarison",
+    "portrait": "",
+    "source": {
+     "label": "United Nations Protocol, list of 13 November 2026",
+     "url": "https://www.un.org/dgacm/sites/www.un.org.dgacm/files/Documents_Protocol/hspmfmlist.pdf"
+    }
+   },
+   "band": "head_of_state"
   },
   "malawi": {
    "nation": "Malawi",
@@ -2980,7 +3451,11 @@
      "url": "https://um.dk/media/3pjjbw5h/copenhagen-diplomatic-list-26102026.pdf"
     }
    },
-   "checked": "2026-11-15"
+   "checked": "2026-11-15",
+   "head_of_government": {
+    "same_as_head_of_state": true
+   },
+   "band": "head_of_state"
   },
   "malaysia": {
    "nation": "Malaysia",
@@ -3005,7 +3480,7 @@
     }
    },
    "checked": "2026-11-15",
-   "leader": {
+   "head_of_government": {
     "title": "Prime Minister of Malaysia",
     "name": "Anwar Ibrahim",
     "portrait": "",
@@ -3013,7 +3488,8 @@
      "label": "United Nations Protocol, list of 13 November 2026",
      "url": "https://www.un.org/dgacm/sites/www.un.org.dgacm/files/Documents_Protocol/hspmfmlist.pdf"
     }
-   }
+   },
+   "band": "head_of_government"
   },
   "maldives": {
    "nation": "Maldives",
@@ -3037,7 +3513,11 @@
      "url": "https://www.government.se/globalassets/government/dokument/utrikesdepartementet/diplomatportalen/national-days/national-days-20240618.pdf"
     }
    },
-   "checked": "2026-11-15"
+   "checked": "2026-11-15",
+   "head_of_government": {
+    "same_as_head_of_state": true
+   },
+   "band": "head_of_state"
   },
   "mali": {
    "nation": "Mali",
@@ -3061,7 +3541,17 @@
      "url": "https://um.dk/media/3pjjbw5h/copenhagen-diplomatic-list-26102026.pdf"
     }
    },
-   "checked": "2026-11-15"
+   "checked": "2026-11-15",
+   "head_of_government": {
+    "title": "Prime Minister, Head of Government of the Republic of Mali",
+    "name": "Abdoulaye Maïga",
+    "portrait": "",
+    "source": {
+     "label": "United Nations Protocol, list of 13 November 2026",
+     "url": "https://www.un.org/dgacm/sites/www.un.org.dgacm/files/Documents_Protocol/hspmfmlist.pdf"
+    }
+   },
+   "band": "head_of_state"
   },
   "malta": {
    "nation": "Malta",
@@ -3086,7 +3576,7 @@
     }
    },
    "checked": "2026-11-15",
-   "leader": {
+   "head_of_government": {
     "title": "Prime Minister of the Republic of Malta",
     "name": "Robert Abela",
     "portrait": "",
@@ -3094,7 +3584,8 @@
      "label": "United Nations Protocol, list of 13 November 2026",
      "url": "https://www.un.org/dgacm/sites/www.un.org.dgacm/files/Documents_Protocol/hspmfmlist.pdf"
     }
-   }
+   },
+   "band": "head_of_government"
   },
   "marshall-islands": {
    "nation": "Marshall Islands",
@@ -3118,7 +3609,11 @@
      "url": "https://dfa.gov.ph/office-of-protocol/national-days"
     }
    },
-   "checked": "2026-11-15"
+   "checked": "2026-11-15",
+   "head_of_government": {
+    "same_as_head_of_state": true
+   },
+   "band": "head_of_state"
   },
   "mauritania": {
    "nation": "Mauritania",
@@ -3142,7 +3637,17 @@
      "url": "https://um.dk/media/3pjjbw5h/copenhagen-diplomatic-list-26102026.pdf"
     }
    },
-   "checked": "2026-11-15"
+   "checked": "2026-11-15",
+   "head_of_government": {
+    "title": "Prime Minister of the Islamic Republic of Mauritania",
+    "name": "Moktar Ould Djay",
+    "portrait": "",
+    "source": {
+     "label": "United Nations Protocol, list of 13 November 2026",
+     "url": "https://www.un.org/dgacm/sites/www.un.org.dgacm/files/Documents_Protocol/hspmfmlist.pdf"
+    }
+   },
+   "band": "head_of_state"
   },
   "mauritius": {
    "nation": "Mauritius",
@@ -3167,7 +3672,7 @@
     }
    },
    "checked": "2026-11-15",
-   "leader": {
+   "head_of_government": {
     "title": "Prime Minister of the Republic of Mauritius",
     "name": "Navinchandra Ramgoolam",
     "portrait": "",
@@ -3175,7 +3680,8 @@
      "label": "United Nations Protocol, list of 13 November 2026",
      "url": "https://www.un.org/dgacm/sites/www.un.org.dgacm/files/Documents_Protocol/hspmfmlist.pdf"
     }
-   }
+   },
+   "band": "head_of_government"
   },
   "mexico": {
    "nation": "Mexico",
@@ -3204,7 +3710,11 @@
      "url": "https://um.dk/media/3pjjbw5h/copenhagen-diplomatic-list-26102026.pdf"
     }
    },
-   "checked": "2026-11-15"
+   "checked": "2026-11-15",
+   "head_of_government": {
+    "same_as_head_of_state": true
+   },
+   "band": "head_of_state"
   },
   "micronesia": {
    "nation": "Micronesia",
@@ -3229,7 +3739,11 @@
     }
    },
    "checked": "2026-11-15",
-   "steward_note": "Two government lists disagree: New Zealand MFAT gives 3 November (National Day); other lists give 10 May (Constitution Day). The Steward-General to choose."
+   "steward_note": "Two government lists disagree: New Zealand MFAT gives 3 November (National Day); other lists give 10 May (Constitution Day). The Steward-General to choose.",
+   "head_of_government": {
+    "same_as_head_of_state": true
+   },
+   "band": "head_of_state"
   },
   "moldova": {
    "nation": "Moldova",
@@ -3254,7 +3768,7 @@
     }
    },
    "checked": "2026-11-15",
-   "leader": {
+   "head_of_government": {
     "title": "Prime Minister of the Republic of Moldova",
     "name": "Vasile Tofan",
     "portrait": "",
@@ -3263,7 +3777,8 @@
      "url": "https://www.un.org/dgacm/sites/www.un.org.dgacm/files/Documents_Protocol/hspmfmlist.pdf"
     },
     "since": "2026-07-22"
-   }
+   },
+   "band": "head_of_government"
   },
   "monaco": {
    "nation": "Monaco",
@@ -3287,17 +3802,32 @@
      "url": "https://um.dk/media/3pjjbw5h/copenhagen-diplomatic-list-26102026.pdf"
     }
    },
-   "checked": "2026-11-15"
+   "checked": "2026-11-15",
+   "head_of_government": {
+    "title": "Minister of State, Head of Government of the Principality of Monaco",
+    "name": "Christophe Mirmand",
+    "portrait": "",
+    "source": {
+     "label": "United Nations Protocol, list of 13 November 2026",
+     "url": "https://www.un.org/dgacm/sites/www.un.org.dgacm/files/Documents_Protocol/hspmfmlist.pdf"
+    }
+   },
+   "band": "head_of_state"
   },
   "mongolia": {
    "nation": "Mongolia",
    "head_of_state": {
     "title": "President of Mongolia",
     "name": "Khurelsukh Ukhnaa",
-    "portrait": "",
+    "portrait": "https://perfectnations.com/wp-content/uploads/2026/11/pn-hos-mongolia-225x300.jpg",
     "source": {
      "label": "United Nations Protocol, list of 13 November 2026",
      "url": "https://www.un.org/dgacm/sites/www.un.org.dgacm/files/Documents_Protocol/hspmfmlist.pdf"
+    },
+    "portrait_credit": "President.mn",
+    "portrait_licence": {
+     "label": "CC BY 4.0",
+     "url": "https://creativecommons.org/licenses/by/4.0/"
     }
    },
    "national_day": {
@@ -3312,7 +3842,7 @@
     }
    },
    "checked": "2026-11-15",
-   "leader": {
+   "head_of_government": {
     "title": "Prime Minister of Mongolia",
     "name": "Uchral Nyam-Osor",
     "portrait": "",
@@ -3321,7 +3851,8 @@
      "url": "https://www.un.org/dgacm/sites/www.un.org.dgacm/files/Documents_Protocol/hspmfmlist.pdf"
     },
     "since": "2026-03-30"
-   }
+   },
+   "band": "head_of_government"
   },
   "montenegro": {
    "nation": "Montenegro",
@@ -3346,7 +3877,7 @@
     }
    },
    "checked": "2026-11-15",
-   "leader": {
+   "head_of_government": {
     "title": "Prime Minister of Montenegro",
     "name": "Milojko Spajić",
     "portrait": "",
@@ -3354,7 +3885,8 @@
      "label": "United Nations Protocol, list of 13 November 2026",
      "url": "https://www.un.org/dgacm/sites/www.un.org.dgacm/files/Documents_Protocol/hspmfmlist.pdf"
     }
-   }
+   },
+   "band": "head_of_government"
   },
   "morocco": {
    "nation": "Morocco",
@@ -3379,7 +3911,7 @@
     }
    },
    "checked": "2026-11-15",
-   "leader": {
+   "head_of_government": {
     "title": "Head of Government of the Kingdom of Morocco",
     "name": "Aziz Akhannouch",
     "portrait": "",
@@ -3387,7 +3919,8 @@
      "label": "United Nations Protocol, list of 13 November 2026",
      "url": "https://www.un.org/dgacm/sites/www.un.org.dgacm/files/Documents_Protocol/hspmfmlist.pdf"
     }
-   }
+   },
+   "band": "head_of_government"
   },
   "mozambique": {
    "nation": "Mozambique",
@@ -3411,7 +3944,17 @@
      "url": "https://um.dk/media/3pjjbw5h/copenhagen-diplomatic-list-26102026.pdf"
     }
    },
-   "checked": "2026-11-15"
+   "checked": "2026-11-15",
+   "head_of_government": {
+    "title": "Prime Minister of the Republic of Mozambique",
+    "name": "Maria Benvinda Delfina Levi",
+    "portrait": "",
+    "source": {
+     "label": "United Nations Protocol, list of 13 November 2026",
+     "url": "https://www.un.org/dgacm/sites/www.un.org.dgacm/files/Documents_Protocol/hspmfmlist.pdf"
+    }
+   },
+   "band": "head_of_state"
   },
   "myanmar": {
    "nation": "Myanmar",
@@ -3432,7 +3975,13 @@
     }
    },
    "checked": "2026-11-15",
-   "steward_note": "The UN Protocol list of 13 November 2026 still names Win Myint, while the Union Parliament elected a new President on 3 April 2026. The two do not agree, so the band shows the National Day only, until the Steward-General decides."
+   "steward_note": "The UN Protocol list of 13 November 2026 still names Win Myint, while the Union Parliament elected a new President on 3 April 2026. The two do not agree, so the band shows the National Day only, until the Steward-General decides.",
+   "head_of_government": {
+    "title": "",
+    "name": "",
+    "portrait": ""
+   },
+   "band": "head_of_state"
   },
   "namibia": {
    "nation": "Namibia",
@@ -3456,7 +4005,17 @@
      "url": "https://um.dk/media/3pjjbw5h/copenhagen-diplomatic-list-26102026.pdf"
     }
    },
-   "checked": "2026-11-15"
+   "checked": "2026-11-15",
+   "head_of_government": {
+    "title": "Prime Minister of the Republic of Namibia",
+    "name": "Elijah Ngurare",
+    "portrait": "",
+    "source": {
+     "label": "United Nations Protocol, list of 13 November 2026",
+     "url": "https://www.un.org/dgacm/sites/www.un.org.dgacm/files/Documents_Protocol/hspmfmlist.pdf"
+    }
+   },
+   "band": "head_of_state"
   },
   "nauru": {
    "nation": "Nauru",
@@ -3480,7 +4039,11 @@
      "url": "https://www.mfat.govt.nz/en/embassies/national-days"
     }
    },
-   "checked": "2026-11-15"
+   "checked": "2026-11-15",
+   "head_of_government": {
+    "same_as_head_of_state": true
+   },
+   "band": "head_of_state"
   },
   "nepal": {
    "nation": "Nepal",
@@ -3505,7 +4068,7 @@
     }
    },
    "checked": "2026-11-15",
-   "leader": {
+   "head_of_government": {
     "title": "Prime Minister of Nepal",
     "name": "Balendra Shah",
     "portrait": "",
@@ -3514,7 +4077,8 @@
      "url": "https://www.un.org/dgacm/sites/www.un.org.dgacm/files/Documents_Protocol/hspmfmlist.pdf"
     },
     "since": "2026-03-27"
-   }
+   },
+   "band": "head_of_government"
   },
   "netherlands": {
    "nation": "Netherlands",
@@ -3539,7 +4103,7 @@
     }
    },
    "checked": "2026-11-15",
-   "leader": {
+   "head_of_government": {
     "title": "Prime Minister of the Kingdom of the Netherlands",
     "name": "Rob Jetten",
     "portrait": "",
@@ -3548,7 +4112,8 @@
      "url": "https://www.un.org/dgacm/sites/www.un.org.dgacm/files/Documents_Protocol/hspmfmlist.pdf"
     },
     "since": "2026-02-23"
-   }
+   },
+   "band": "head_of_government"
   },
   "new-zealand": {
    "nation": "New Zealand",
@@ -3573,7 +4138,7 @@
     }
    },
    "checked": "2026-11-15",
-   "leader": {
+   "head_of_government": {
     "title": "Prime Minister of New Zealand",
     "name": "Christopher Luxon",
     "portrait": "",
@@ -3581,7 +4146,8 @@
      "label": "United Nations Protocol, list of 13 November 2026",
      "url": "https://www.un.org/dgacm/sites/www.un.org.dgacm/files/Documents_Protocol/hspmfmlist.pdf"
     }
-   }
+   },
+   "band": "head_of_government"
   },
   "nicaragua": {
    "nation": "Nicaragua",
@@ -3610,7 +4176,11 @@
     }
    },
    "checked": "2026-11-15",
-   "steward_note": "Two Co-Presidents under the constitutional reform of 2025."
+   "steward_note": "Two Co-Presidents under the constitutional reform of 2025.",
+   "head_of_government": {
+    "same_as_head_of_state": true
+   },
+   "band": "head_of_state"
   },
   "niger": {
    "nation": "Niger",
@@ -3634,7 +4204,17 @@
      "url": "https://um.dk/media/3pjjbw5h/copenhagen-diplomatic-list-26102026.pdf"
     }
    },
-   "checked": "2026-11-15"
+   "checked": "2026-11-15",
+   "head_of_government": {
+    "title": "Prime Minister of the Transitional Government of the Republic of Niger",
+    "name": "Lamine Zeine Ali Mahaman",
+    "portrait": "",
+    "source": {
+     "label": "United Nations Protocol, list of 13 November 2026",
+     "url": "https://www.un.org/dgacm/sites/www.un.org.dgacm/files/Documents_Protocol/hspmfmlist.pdf"
+    }
+   },
+   "band": "head_of_state"
   },
   "nigeria": {
    "nation": "Nigeria",
@@ -3658,7 +4238,11 @@
      "url": "https://um.dk/media/3pjjbw5h/copenhagen-diplomatic-list-26102026.pdf"
     }
    },
-   "checked": "2026-11-15"
+   "checked": "2026-11-15",
+   "head_of_government": {
+    "same_as_head_of_state": true
+   },
+   "band": "head_of_state"
   },
   "north-korea": {
    "nation": "North Korea",
@@ -3682,7 +4266,17 @@
      "url": "https://um.dk/media/3pjjbw5h/copenhagen-diplomatic-list-26102026.pdf"
     }
    },
-   "checked": "2026-11-15"
+   "checked": "2026-11-15",
+   "head_of_government": {
+    "title": "Premier of the Cabinet of the Democratic People’s Republic of Korea",
+    "name": "Pak Thae Song",
+    "portrait": "",
+    "source": {
+     "label": "United Nations Protocol, list of 13 November 2026",
+     "url": "https://www.un.org/dgacm/sites/www.un.org.dgacm/files/Documents_Protocol/hspmfmlist.pdf"
+    }
+   },
+   "band": "head_of_state"
   },
   "north-macedonia": {
    "nation": "North Macedonia",
@@ -3707,7 +4301,7 @@
     }
    },
    "checked": "2026-11-15",
-   "leader": {
+   "head_of_government": {
     "title": "President of the Government of the Republic of North Macedonia",
     "name": "Hristijan Mickoski",
     "portrait": "",
@@ -3715,7 +4309,8 @@
      "label": "United Nations Protocol, list of 13 November 2026",
      "url": "https://www.un.org/dgacm/sites/www.un.org.dgacm/files/Documents_Protocol/hspmfmlist.pdf"
     }
-   }
+   },
+   "band": "head_of_government"
   },
   "norway": {
    "nation": "Norway",
@@ -3742,7 +4337,7 @@
    },
    "checked": "2026-11-15",
    "steward_note": "King Haakon VIII succeeded King Harald V on 28 August 2026; the Royal House of Norway is the source.",
-   "leader": {
+   "head_of_government": {
     "title": "Prime Minister of Norway",
     "name": "Jonas Gahr Støre",
     "portrait": "",
@@ -3750,7 +4345,8 @@
      "label": "United Nations Protocol, list of 13 November 2026",
      "url": "https://www.un.org/dgacm/sites/www.un.org.dgacm/files/Documents_Protocol/hspmfmlist.pdf"
     }
-   }
+   },
+   "band": "head_of_government"
   },
   "oman": {
    "nation": "Oman",
@@ -3778,7 +4374,11 @@
      "url": "https://www.fm.gov.om/en/31490/"
     }
    },
-   "checked": "2026-11-15"
+   "checked": "2026-11-15",
+   "head_of_government": {
+    "same_as_head_of_state": true
+   },
+   "band": "head_of_state"
   },
   "pakistan": {
    "nation": "Pakistan",
@@ -3803,7 +4403,7 @@
     }
    },
    "checked": "2026-11-15",
-   "leader": {
+   "head_of_government": {
     "title": "Prime Minister of the Islamic Republic of Pakistan",
     "name": "Muhammad Shehbaz Sharif",
     "portrait": "",
@@ -3811,7 +4411,8 @@
      "label": "United Nations Protocol, list of 13 November 2026",
      "url": "https://www.un.org/dgacm/sites/www.un.org.dgacm/files/Documents_Protocol/hspmfmlist.pdf"
     }
-   }
+   },
+   "band": "head_of_government"
   },
   "palau": {
    "nation": "Palau",
@@ -3835,7 +4436,11 @@
      "url": "https://dfa.gov.ph/office-of-protocol/national-days"
     }
    },
-   "checked": "2026-11-15"
+   "checked": "2026-11-15",
+   "head_of_government": {
+    "same_as_head_of_state": true
+   },
+   "band": "head_of_state"
   },
   "palestine": {
    "nation": "Palestine",
@@ -3859,7 +4464,17 @@
      "url": "https://www.government.se/globalassets/government/dokument/utrikesdepartementet/diplomatportalen/national-days/national-days-20240618.pdf"
     }
    },
-   "checked": "2026-11-15"
+   "checked": "2026-11-15",
+   "head_of_government": {
+    "title": "Prime Minister of the State of Palestine",
+    "name": "Mohammad Mustafa",
+    "portrait": "",
+    "source": {
+     "label": "United Nations Protocol, list of 13 November 2026",
+     "url": "https://www.un.org/dgacm/sites/www.un.org.dgacm/files/Documents_Protocol/hspmfmlist.pdf"
+    }
+   },
+   "band": "head_of_state"
   },
   "panama": {
    "nation": "Panama",
@@ -3883,7 +4498,11 @@
      "url": "https://um.dk/media/3pjjbw5h/copenhagen-diplomatic-list-26102026.pdf"
     }
    },
-   "checked": "2026-11-15"
+   "checked": "2026-11-15",
+   "head_of_government": {
+    "same_as_head_of_state": true
+   },
+   "band": "head_of_state"
   },
   "papua-new-guinea": {
    "nation": "Papua New Guinea",
@@ -3908,7 +4527,7 @@
     }
    },
    "checked": "2026-11-15",
-   "leader": {
+   "head_of_government": {
     "title": "Prime Minister of the Independent State of Papua New Guinea",
     "name": "James Marape",
     "portrait": "",
@@ -3916,7 +4535,8 @@
      "label": "United Nations Protocol, list of 13 November 2026",
      "url": "https://www.un.org/dgacm/sites/www.un.org.dgacm/files/Documents_Protocol/hspmfmlist.pdf"
     }
-   }
+   },
+   "band": "head_of_government"
   },
   "paraguay": {
    "nation": "Paraguay",
@@ -3940,7 +4560,11 @@
      "url": "https://um.dk/media/3pjjbw5h/copenhagen-diplomatic-list-26102026.pdf"
     }
    },
-   "checked": "2026-11-15"
+   "checked": "2026-11-15",
+   "head_of_government": {
+    "same_as_head_of_state": true
+   },
+   "band": "head_of_state"
   },
   "peru": {
    "nation": "Peru",
@@ -3964,7 +4588,17 @@
      "url": "https://um.dk/media/3pjjbw5h/copenhagen-diplomatic-list-26102026.pdf"
     }
    },
-   "checked": "2026-11-15"
+   "checked": "2026-11-15",
+   "head_of_government": {
+    "title": "President of the Council of Ministers of the Republic of Peru",
+    "name": "Luis Fernando Galarreta Velarde",
+    "portrait": "",
+    "source": {
+     "label": "United Nations Protocol, list of 13 November 2026",
+     "url": "https://www.un.org/dgacm/sites/www.un.org.dgacm/files/Documents_Protocol/hspmfmlist.pdf"
+    }
+   },
+   "band": "head_of_state"
   },
   "philippines": {
    "nation": "Philippines",
@@ -3992,7 +4626,11 @@
      "url": "https://um.dk/media/3pjjbw5h/copenhagen-diplomatic-list-26102026.pdf"
     }
    },
-   "checked": "2026-11-15"
+   "checked": "2026-11-15",
+   "head_of_government": {
+    "same_as_head_of_state": true
+   },
+   "band": "head_of_state"
   },
   "poland": {
    "nation": "Poland",
@@ -4017,7 +4655,7 @@
     }
    },
    "checked": "2026-11-15",
-   "leader": {
+   "head_of_government": {
     "title": "Prime Minister of the Republic of Poland",
     "name": "Donald Tusk",
     "portrait": "",
@@ -4025,7 +4663,8 @@
      "label": "United Nations Protocol, list of 13 November 2026",
      "url": "https://www.un.org/dgacm/sites/www.un.org.dgacm/files/Documents_Protocol/hspmfmlist.pdf"
     }
-   }
+   },
+   "band": "head_of_government"
   },
   "portugal": {
    "nation": "Portugal",
@@ -4050,7 +4689,7 @@
     }
    },
    "checked": "2026-11-15",
-   "leader": {
+   "head_of_government": {
     "title": "Prime Minister of the Portuguese Republic",
     "name": "Luís Montenegro",
     "portrait": "",
@@ -4058,7 +4697,8 @@
      "label": "United Nations Protocol, list of 13 November 2026",
      "url": "https://www.un.org/dgacm/sites/www.un.org.dgacm/files/Documents_Protocol/hspmfmlist.pdf"
     }
-   }
+   },
+   "band": "head_of_government"
   },
   "qatar": {
    "nation": "Qatar",
@@ -4082,7 +4722,17 @@
      "url": "https://um.dk/media/3pjjbw5h/copenhagen-diplomatic-list-26102026.pdf"
     }
    },
-   "checked": "2026-11-15"
+   "checked": "2026-11-15",
+   "head_of_government": {
+    "title": "Prime Minister of the State of Qatar",
+    "name": "Mohammed bin Abdulrahman bin Jassim Al-Thani",
+    "portrait": "",
+    "source": {
+     "label": "United Nations Protocol, list of 13 November 2026",
+     "url": "https://www.un.org/dgacm/sites/www.un.org.dgacm/files/Documents_Protocol/hspmfmlist.pdf"
+    }
+   },
+   "band": "head_of_state"
   },
   "republic-of-congo": {
    "nation": "Republic of the Congo",
@@ -4106,7 +4756,17 @@
      "url": "https://um.dk/media/3pjjbw5h/copenhagen-diplomatic-list-26102026.pdf"
     }
    },
-   "checked": "2026-11-15"
+   "checked": "2026-11-15",
+   "head_of_government": {
+    "title": "Prime Minister of the Republic of the Congo",
+    "name": "Anatole Collinet Makosso",
+    "portrait": "",
+    "source": {
+     "label": "United Nations Protocol, list of 13 November 2026",
+     "url": "https://www.un.org/dgacm/sites/www.un.org.dgacm/files/Documents_Protocol/hspmfmlist.pdf"
+    }
+   },
+   "band": "head_of_state"
   },
   "romania": {
    "nation": "Romania",
@@ -4131,7 +4791,7 @@
     }
    },
    "checked": "2026-11-15",
-   "leader": {
+   "head_of_government": {
     "title": "Prime Minister of Romania",
     "name": "Luca-Alexandru Niculescu",
     "portrait": "",
@@ -4139,7 +4799,8 @@
      "label": "United Nations Protocol, list of 13 November 2026",
      "url": "https://www.un.org/dgacm/sites/www.un.org.dgacm/files/Documents_Protocol/hspmfmlist.pdf"
     }
-   }
+   },
+   "band": "head_of_government"
   },
   "russia": {
    "nation": "Russia",
@@ -4163,7 +4824,17 @@
      "url": "https://um.dk/media/3pjjbw5h/copenhagen-diplomatic-list-26102026.pdf"
     }
    },
-   "checked": "2026-11-15"
+   "checked": "2026-11-15",
+   "head_of_government": {
+    "title": "Prime Minister of the Russian Federation",
+    "name": "Mikhail Mishustin",
+    "portrait": "",
+    "source": {
+     "label": "United Nations Protocol, list of 13 November 2026",
+     "url": "https://www.un.org/dgacm/sites/www.un.org.dgacm/files/Documents_Protocol/hspmfmlist.pdf"
+    }
+   },
+   "band": "head_of_state"
   },
   "rwanda": {
    "nation": "Rwanda",
@@ -4192,7 +4863,17 @@
      "url": "https://um.dk/media/3pjjbw5h/copenhagen-diplomatic-list-26102026.pdf"
     }
    },
-   "checked": "2026-11-15"
+   "checked": "2026-11-15",
+   "head_of_government": {
+    "title": "Prime Minister of the Republic of Rwanda",
+    "name": "Justin Nsengiyumva",
+    "portrait": "",
+    "source": {
+     "label": "United Nations Protocol, list of 13 November 2026",
+     "url": "https://www.un.org/dgacm/sites/www.un.org.dgacm/files/Documents_Protocol/hspmfmlist.pdf"
+    }
+   },
+   "band": "head_of_state"
   },
   "saint-kitts-and-nevis": {
    "nation": "Saint Kitts and Nevis",
@@ -4217,7 +4898,7 @@
     }
    },
    "checked": "2026-11-15",
-   "leader": {
+   "head_of_government": {
     "title": "Prime Minister of Saint Kitts and Nevis",
     "name": "Terrance Micheal Drew",
     "portrait": "",
@@ -4225,7 +4906,8 @@
      "label": "United Nations Protocol, list of 13 November 2026",
      "url": "https://www.un.org/dgacm/sites/www.un.org.dgacm/files/Documents_Protocol/hspmfmlist.pdf"
     }
-   }
+   },
+   "band": "head_of_government"
   },
   "saint-lucia": {
    "nation": "Saint Lucia",
@@ -4250,7 +4932,7 @@
     }
    },
    "checked": "2026-11-15",
-   "leader": {
+   "head_of_government": {
     "title": "Prime Minister of Saint Lucia",
     "name": "Philip J. Pierre",
     "portrait": "",
@@ -4258,7 +4940,8 @@
      "label": "United Nations Protocol, list of 13 November 2026",
      "url": "https://www.un.org/dgacm/sites/www.un.org.dgacm/files/Documents_Protocol/hspmfmlist.pdf"
     }
-   }
+   },
+   "band": "head_of_government"
   },
   "saint-vincent-and-the-grenadines": {
    "nation": "Saint Vincent and the Grenadines",
@@ -4283,7 +4966,7 @@
     }
    },
    "checked": "2026-11-15",
-   "leader": {
+   "head_of_government": {
     "title": "Prime Minister of Saint Vincent and the Grenadines",
     "name": "Godwin Friday",
     "portrait": "",
@@ -4292,7 +4975,8 @@
      "url": "https://www.un.org/dgacm/sites/www.un.org.dgacm/files/Documents_Protocol/hspmfmlist.pdf"
     },
     "since": "2025-12-01"
-   }
+   },
+   "band": "head_of_government"
   },
   "samoa": {
    "nation": "Samoa",
@@ -4317,7 +5001,7 @@
     }
    },
    "checked": "2026-11-15",
-   "leader": {
+   "head_of_government": {
     "title": "Prime Minister of the Independent State of Samoa",
     "name": "Laaulialemalietoa Leuatea Polataivao Fosi Schmidt",
     "portrait": "",
@@ -4325,7 +5009,8 @@
      "label": "United Nations Protocol, list of 13 November 2026",
      "url": "https://www.un.org/dgacm/sites/www.un.org.dgacm/files/Documents_Protocol/hspmfmlist.pdf"
     }
-   }
+   },
+   "band": "head_of_government"
   },
   "san-marino": {
    "nation": "San Marino",
@@ -4355,7 +5040,11 @@
     }
    },
    "checked": "2026-11-15",
-   "steward_note": "Two Captains Regent, elected every six months and installed on 1 April and 1 October; the next pair takes office on 1 April 2027."
+   "steward_note": "Two Captains Regent, elected every six months and installed on 1 April and 1 October; the next pair takes office on 1 April 2027.",
+   "head_of_government": {
+    "same_as_head_of_state": true
+   },
+   "band": "head_of_state"
   },
   "sao-tome-and-principe": {
    "nation": "São Tomé and Príncipe",
@@ -4380,7 +5069,7 @@
     }
    },
    "checked": "2026-11-15",
-   "leader": {
+   "head_of_government": {
     "title": "Prime Minister of the Democratic Republic of São Tomé and Príncipe",
     "name": "Américo d’Oliveira dos Ramos",
     "portrait": "",
@@ -4388,7 +5077,8 @@
      "label": "United Nations Protocol, list of 13 November 2026",
      "url": "https://www.un.org/dgacm/sites/www.un.org.dgacm/files/Documents_Protocol/hspmfmlist.pdf"
     }
-   }
+   },
+   "band": "head_of_government"
   },
   "saudi-arabia": {
    "nation": "Saudi Arabia",
@@ -4412,7 +5102,17 @@
      "url": "https://um.dk/media/3pjjbw5h/copenhagen-diplomatic-list-26102026.pdf"
     }
    },
-   "checked": "2026-11-15"
+   "checked": "2026-11-15",
+   "head_of_government": {
+    "title": "Crown Prince and Prime Minister of the Kingdom of Saudi Arabia",
+    "name": "Mohammed bin Salman bin Abdulaziz Al Saud",
+    "portrait": "",
+    "source": {
+     "label": "United Nations Protocol, list of 13 November 2026",
+     "url": "https://www.un.org/dgacm/sites/www.un.org.dgacm/files/Documents_Protocol/hspmfmlist.pdf"
+    }
+   },
+   "band": "head_of_state"
   },
   "senegal": {
    "nation": "Senegal",
@@ -4436,7 +5136,18 @@
      "url": "https://um.dk/media/3pjjbw5h/copenhagen-diplomatic-list-26102026.pdf"
     }
    },
-   "checked": "2026-11-15"
+   "checked": "2026-11-15",
+   "head_of_government": {
+    "title": "Prime Minister of the Republic of Senegal",
+    "name": "Ahmadou Al Amine Mohamed Lo",
+    "portrait": "",
+    "source": {
+     "label": "United Nations Protocol, list of 13 November 2026",
+     "url": "https://www.un.org/dgacm/sites/www.un.org.dgacm/files/Documents_Protocol/hspmfmlist.pdf"
+    },
+    "since": "2026-05-25"
+   },
+   "band": "head_of_state"
   },
   "serbia": {
    "nation": "Serbia",
@@ -4461,7 +5172,7 @@
     }
    },
    "checked": "2026-11-15",
-   "leader": {
+   "head_of_government": {
     "title": "Prime Minister of the Republic of Serbia",
     "name": "Đuro Macut",
     "portrait": "",
@@ -4469,7 +5180,8 @@
      "label": "United Nations Protocol, list of 13 November 2026",
      "url": "https://www.un.org/dgacm/sites/www.un.org.dgacm/files/Documents_Protocol/hspmfmlist.pdf"
     }
-   }
+   },
+   "band": "head_of_government"
   },
   "seychelles": {
    "nation": "Seychelles",
@@ -4493,7 +5205,11 @@
      "url": "https://um.dk/media/3pjjbw5h/copenhagen-diplomatic-list-26102026.pdf"
     }
    },
-   "checked": "2026-11-15"
+   "checked": "2026-11-15",
+   "head_of_government": {
+    "same_as_head_of_state": true
+   },
+   "band": "head_of_state"
   },
   "sierra-leone": {
    "nation": "Sierra Leone",
@@ -4517,17 +5233,26 @@
      "url": "https://um.dk/media/3pjjbw5h/copenhagen-diplomatic-list-26102026.pdf"
     }
    },
-   "checked": "2026-11-15"
+   "checked": "2026-11-15",
+   "head_of_government": {
+    "same_as_head_of_state": true
+   },
+   "band": "head_of_state"
   },
   "singapore": {
    "nation": "Singapore",
    "head_of_state": {
     "title": "President of the Republic of Singapore",
     "name": "Tharman Shanmugaratnam",
-    "portrait": "",
+    "portrait": "https://perfectnations.com/wp-content/uploads/2026/11/pn-hos-singapore-225x300.jpg",
     "source": {
      "label": "United Nations Protocol, list of 13 November 2026",
      "url": "https://www.un.org/dgacm/sites/www.un.org.dgacm/files/Documents_Protocol/hspmfmlist.pdf"
+    },
+    "portrait_credit": "Actuall7",
+    "portrait_licence": {
+     "label": "CC BY 4.0",
+     "url": "https://creativecommons.org/licenses/by/4.0/"
     }
    },
    "national_day": {
@@ -4542,7 +5267,7 @@
     }
    },
    "checked": "2026-11-15",
-   "leader": {
+   "head_of_government": {
     "title": "Prime Minister of the Republic of Singapore",
     "name": "Lawrence Wong",
     "portrait": "",
@@ -4550,7 +5275,8 @@
      "label": "United Nations Protocol, list of 13 November 2026",
      "url": "https://www.un.org/dgacm/sites/www.un.org.dgacm/files/Documents_Protocol/hspmfmlist.pdf"
     }
-   }
+   },
+   "band": "head_of_government"
   },
   "slovakia": {
    "nation": "Slovakia",
@@ -4575,7 +5301,7 @@
     }
    },
    "checked": "2026-11-15",
-   "leader": {
+   "head_of_government": {
     "title": "Prime Minister of the Slovak Republic",
     "name": "Robert Fico",
     "portrait": "",
@@ -4583,7 +5309,8 @@
      "label": "United Nations Protocol, list of 13 November 2026",
      "url": "https://www.un.org/dgacm/sites/www.un.org.dgacm/files/Documents_Protocol/hspmfmlist.pdf"
     }
-   }
+   },
+   "band": "head_of_government"
   },
   "slovenia": {
    "nation": "Slovenia",
@@ -4608,7 +5335,7 @@
     }
    },
    "checked": "2026-11-15",
-   "leader": {
+   "head_of_government": {
     "title": "Prime Minister of the Republic of Slovenia",
     "name": "Janez Janša",
     "portrait": "",
@@ -4617,7 +5344,8 @@
      "url": "https://www.un.org/dgacm/sites/www.un.org.dgacm/files/Documents_Protocol/hspmfmlist.pdf"
     },
     "since": "2026-06-04"
-   }
+   },
+   "band": "head_of_government"
   },
   "solomon-islands": {
    "nation": "Solomon Islands",
@@ -4642,7 +5370,7 @@
     }
    },
    "checked": "2026-11-15",
-   "leader": {
+   "head_of_government": {
     "title": "Prime Minister of Solomon Islands",
     "name": "Matthew Cooper Wale",
     "portrait": "",
@@ -4650,7 +5378,8 @@
      "label": "United Nations Protocol, list of 13 November 2026",
      "url": "https://www.un.org/dgacm/sites/www.un.org.dgacm/files/Documents_Protocol/hspmfmlist.pdf"
     }
-   }
+   },
+   "band": "head_of_government"
   },
   "somalia": {
    "nation": "Somalia",
@@ -4675,7 +5404,7 @@
     }
    },
    "checked": "2026-11-15",
-   "leader": {
+   "head_of_government": {
     "title": "Prime Minister of the Federal Republic of Somalia",
     "name": "Hamza Abdi Barre",
     "portrait": "",
@@ -4683,7 +5412,8 @@
      "label": "United Nations Protocol, list of 13 November 2026",
      "url": "https://www.un.org/dgacm/sites/www.un.org.dgacm/files/Documents_Protocol/hspmfmlist.pdf"
     }
-   }
+   },
+   "band": "head_of_government"
   },
   "south-africa": {
    "nation": "South Africa",
@@ -4712,7 +5442,11 @@
      "url": "https://um.dk/media/3pjjbw5h/copenhagen-diplomatic-list-26102026.pdf"
     }
    },
-   "checked": "2026-11-15"
+   "checked": "2026-11-15",
+   "head_of_government": {
+    "same_as_head_of_state": true
+   },
+   "band": "head_of_state"
   },
   "south-korea": {
    "nation": "South Korea",
@@ -4736,7 +5470,17 @@
      "url": "https://um.dk/media/3pjjbw5h/copenhagen-diplomatic-list-26102026.pdf"
     }
    },
-   "checked": "2026-11-15"
+   "checked": "2026-11-15",
+   "head_of_government": {
+    "title": "Prime Minister of the Republic of Korea",
+    "name": "Han Seong-sook",
+    "portrait": "",
+    "source": {
+     "label": "United Nations Protocol, list of 13 November 2026",
+     "url": "https://www.un.org/dgacm/sites/www.un.org.dgacm/files/Documents_Protocol/hspmfmlist.pdf"
+    }
+   },
+   "band": "head_of_state"
   },
   "south-sudan": {
    "nation": "South Sudan",
@@ -4760,7 +5504,11 @@
      "url": "https://www.government.se/globalassets/government/dokument/utrikesdepartementet/diplomatportalen/national-days/national-days-20240618.pdf"
     }
    },
-   "checked": "2026-11-15"
+   "checked": "2026-11-15",
+   "head_of_government": {
+    "same_as_head_of_state": true
+   },
+   "band": "head_of_state"
   },
   "spain": {
    "nation": "Spain",
@@ -4785,7 +5533,7 @@
     }
    },
    "checked": "2026-11-15",
-   "leader": {
+   "head_of_government": {
     "title": "President of the Government of Spain",
     "name": "Pedro Sánchez",
     "portrait": "",
@@ -4793,7 +5541,8 @@
      "label": "United Nations Protocol, list of 13 November 2026",
      "url": "https://www.un.org/dgacm/sites/www.un.org.dgacm/files/Documents_Protocol/hspmfmlist.pdf"
     }
-   }
+   },
+   "band": "head_of_government"
   },
   "sri-lanka": {
    "nation": "Sri Lanka",
@@ -4817,7 +5566,17 @@
      "url": "https://um.dk/media/3pjjbw5h/copenhagen-diplomatic-list-26102026.pdf"
     }
    },
-   "checked": "2026-11-15"
+   "checked": "2026-11-15",
+   "head_of_government": {
+    "title": "Prime Minister of the Democratic Socialist Republic of Sri Lanka",
+    "name": "Harini Amarasuriya",
+    "portrait": "",
+    "source": {
+     "label": "United Nations Protocol, list of 13 November 2026",
+     "url": "https://www.un.org/dgacm/sites/www.un.org.dgacm/files/Documents_Protocol/hspmfmlist.pdf"
+    }
+   },
+   "band": "head_of_state"
   },
   "sudan": {
    "nation": "Sudan",
@@ -4841,7 +5600,17 @@
      "url": "https://um.dk/media/3pjjbw5h/copenhagen-diplomatic-list-26102026.pdf"
     }
    },
-   "checked": "2026-11-15"
+   "checked": "2026-11-15",
+   "head_of_government": {
+    "title": "Transitional Prime Minister of the Republic of the Sudan",
+    "name": "Kamil El-Tayeb Idris",
+    "portrait": "",
+    "source": {
+     "label": "United Nations Protocol, list of 13 November 2026",
+     "url": "https://www.un.org/dgacm/sites/www.un.org.dgacm/files/Documents_Protocol/hspmfmlist.pdf"
+    }
+   },
+   "band": "head_of_state"
   },
   "suriname": {
    "nation": "Suriname",
@@ -4865,7 +5634,11 @@
      "url": "https://protocol.dfat.gov.au/Public/NationalDays"
     }
    },
-   "checked": "2026-11-15"
+   "checked": "2026-11-15",
+   "head_of_government": {
+    "same_as_head_of_state": true
+   },
+   "band": "head_of_state"
   },
   "sweden": {
    "nation": "Sweden",
@@ -4890,7 +5663,7 @@
     }
    },
    "checked": "2026-11-15",
-   "leader": {
+   "head_of_government": {
     "title": "Prime Minister of Sweden",
     "name": "Ulf Kristersson",
     "portrait": "",
@@ -4898,7 +5671,8 @@
      "label": "United Nations Protocol, list of 13 November 2026",
      "url": "https://www.un.org/dgacm/sites/www.un.org.dgacm/files/Documents_Protocol/hspmfmlist.pdf"
     }
-   }
+   },
+   "band": "head_of_government"
   },
   "switzerland": {
    "nation": "Switzerland",
@@ -4923,7 +5697,11 @@
     }
    },
    "checked": "2026-11-15",
-   "steward_note": "The President of the Swiss Confederation changes every 1 January."
+   "steward_note": "The President of the Swiss Confederation changes every 1 January.",
+   "head_of_government": {
+    "same_as_head_of_state": true
+   },
+   "band": "head_of_state"
   },
   "syria": {
    "nation": "Syria",
@@ -4947,7 +5725,12 @@
      "url": "https://um.dk/media/3pjjbw5h/copenhagen-diplomatic-list-26102026.pdf"
     }
    },
-   "checked": "2026-11-15"
+   "checked": "2026-11-15",
+   "head_of_government": {
+    "same_as_head_of_state": true
+   },
+   "band": "head_of_state",
+   "steward_note": "The President leads the government; the UN Protocol list names no Prime Minister."
   },
   "tajikistan": {
    "nation": "Tajikistan",
@@ -4971,7 +5754,17 @@
      "url": "https://um.dk/media/3pjjbw5h/copenhagen-diplomatic-list-26102026.pdf"
     }
    },
-   "checked": "2026-11-15"
+   "checked": "2026-11-15",
+   "head_of_government": {
+    "title": "Prime Minister of the Republic of Tajikistan",
+    "name": "Kohir Rasulzoda",
+    "portrait": "",
+    "source": {
+     "label": "United Nations Protocol, list of 13 November 2026",
+     "url": "https://www.un.org/dgacm/sites/www.un.org.dgacm/files/Documents_Protocol/hspmfmlist.pdf"
+    }
+   },
+   "band": "head_of_state"
   },
   "tanzania": {
    "nation": "Tanzania",
@@ -4999,7 +5792,17 @@
      "url": "https://um.dk/media/3pjjbw5h/copenhagen-diplomatic-list-26102026.pdf"
     }
    },
-   "checked": "2026-11-15"
+   "checked": "2026-11-15",
+   "head_of_government": {
+    "title": "Prime Minister of the United Republic of Tanzania",
+    "name": "Mwigulu Lameck Nchemba",
+    "portrait": "",
+    "source": {
+     "label": "United Nations Protocol, list of 13 November 2026",
+     "url": "https://www.un.org/dgacm/sites/www.un.org.dgacm/files/Documents_Protocol/hspmfmlist.pdf"
+    }
+   },
+   "band": "head_of_state"
   },
   "thailand": {
    "nation": "Thailand",
@@ -5024,7 +5827,7 @@
     }
    },
    "checked": "2026-11-15",
-   "leader": {
+   "head_of_government": {
     "title": "Prime Minister of the Kingdom of Thailand",
     "name": "Anutin Charnvirakul",
     "portrait": "",
@@ -5032,7 +5835,8 @@
      "label": "United Nations Protocol, list of 13 November 2026",
      "url": "https://www.un.org/dgacm/sites/www.un.org.dgacm/files/Documents_Protocol/hspmfmlist.pdf"
     }
-   }
+   },
+   "band": "head_of_government"
   },
   "timor-leste": {
    "nation": "Timor-Leste",
@@ -5057,7 +5861,7 @@
     }
    },
    "checked": "2026-11-15",
-   "leader": {
+   "head_of_government": {
     "title": "Prime Minister of the Democratic Republic of Timor-Leste",
     "name": "Xanana Gusmão",
     "portrait": "",
@@ -5065,7 +5869,8 @@
      "label": "United Nations Protocol, list of 13 November 2026",
      "url": "https://www.un.org/dgacm/sites/www.un.org.dgacm/files/Documents_Protocol/hspmfmlist.pdf"
     }
-   }
+   },
+   "band": "head_of_government"
   },
   "togo": {
    "nation": "Togo",
@@ -5090,7 +5895,7 @@
     }
    },
    "checked": "2026-11-15",
-   "leader": {
+   "head_of_government": {
     "title": "President of the Council of Ministers of the Togolese Republic",
     "name": "Faure Gnassingbé",
     "portrait": "",
@@ -5098,7 +5903,8 @@
      "label": "United Nations Protocol, list of 13 November 2026",
      "url": "https://www.un.org/dgacm/sites/www.un.org.dgacm/files/Documents_Protocol/hspmfmlist.pdf"
     }
-   }
+   },
+   "band": "head_of_government"
   },
   "tonga": {
    "nation": "Tonga",
@@ -5123,7 +5929,7 @@
     }
    },
    "checked": "2026-11-15",
-   "leader": {
+   "head_of_government": {
     "title": "Prime Minister of the Kingdom of Tonga",
     "name": "Lord Fakafanua",
     "portrait": "",
@@ -5131,7 +5937,8 @@
      "label": "United Nations Protocol, list of 13 November 2026",
      "url": "https://www.un.org/dgacm/sites/www.un.org.dgacm/files/Documents_Protocol/hspmfmlist.pdf"
     }
-   }
+   },
+   "band": "head_of_government"
   },
   "trinidad-and-tobago": {
    "nation": "Trinidad and Tobago",
@@ -5156,7 +5963,7 @@
     }
    },
    "checked": "2026-11-15",
-   "leader": {
+   "head_of_government": {
     "title": "Prime Minister of the Republic of Trinidad and Tobago",
     "name": "Kamla Persad-Bissessar",
     "portrait": "",
@@ -5164,7 +5971,8 @@
      "label": "United Nations Protocol, list of 13 November 2026",
      "url": "https://www.un.org/dgacm/sites/www.un.org.dgacm/files/Documents_Protocol/hspmfmlist.pdf"
     }
-   }
+   },
+   "band": "head_of_government"
   },
   "tunisia": {
    "nation": "Tunisia",
@@ -5188,7 +5996,17 @@
      "url": "https://um.dk/media/3pjjbw5h/copenhagen-diplomatic-list-26102026.pdf"
     }
    },
-   "checked": "2026-11-15"
+   "checked": "2026-11-15",
+   "head_of_government": {
+    "title": "Head of Government of the Republic of Tunisia",
+    "name": "Sarra Zaafrani Zenzri",
+    "portrait": "",
+    "source": {
+     "label": "United Nations Protocol, list of 13 November 2026",
+     "url": "https://www.un.org/dgacm/sites/www.un.org.dgacm/files/Documents_Protocol/hspmfmlist.pdf"
+    }
+   },
+   "band": "head_of_state"
   },
   "turkiye": {
    "nation": "Türkiye",
@@ -5212,7 +6030,11 @@
      "url": "https://um.dk/media/3pjjbw5h/copenhagen-diplomatic-list-26102026.pdf"
     }
    },
-   "checked": "2026-11-15"
+   "checked": "2026-11-15",
+   "head_of_government": {
+    "same_as_head_of_state": true
+   },
+   "band": "head_of_state"
   },
   "turkmenistan": {
    "nation": "Turkmenistan",
@@ -5236,7 +6058,11 @@
      "url": "https://um.dk/media/3pjjbw5h/copenhagen-diplomatic-list-26102026.pdf"
     }
    },
-   "checked": "2026-11-15"
+   "checked": "2026-11-15",
+   "head_of_government": {
+    "same_as_head_of_state": true
+   },
+   "band": "head_of_state"
   },
   "tuvalu": {
    "nation": "Tuvalu",
@@ -5261,7 +6087,7 @@
     }
    },
    "checked": "2026-11-15",
-   "leader": {
+   "head_of_government": {
     "title": "Prime Minister of Tuvalu",
     "name": "Feleti Penitala Teo",
     "portrait": "",
@@ -5269,7 +6095,8 @@
      "label": "United Nations Protocol, list of 13 November 2026",
      "url": "https://www.un.org/dgacm/sites/www.un.org.dgacm/files/Documents_Protocol/hspmfmlist.pdf"
     }
-   }
+   },
+   "band": "head_of_government"
   },
   "uganda": {
    "nation": "Uganda",
@@ -5293,7 +6120,17 @@
      "url": "https://um.dk/media/3pjjbw5h/copenhagen-diplomatic-list-26102026.pdf"
     }
    },
-   "checked": "2026-11-15"
+   "checked": "2026-11-15",
+   "head_of_government": {
+    "title": "Prime Minister of the Republic of Uganda",
+    "name": "Robinah Nabbanja",
+    "portrait": "",
+    "source": {
+     "label": "United Nations Protocol, list of 13 November 2026",
+     "url": "https://www.un.org/dgacm/sites/www.un.org.dgacm/files/Documents_Protocol/hspmfmlist.pdf"
+    }
+   },
+   "band": "head_of_state"
   },
   "ukraine": {
    "nation": "Ukraine",
@@ -5322,7 +6159,18 @@
      "url": "https://um.dk/media/3pjjbw5h/copenhagen-diplomatic-list-26102026.pdf"
     }
    },
-   "checked": "2026-11-15"
+   "checked": "2026-11-15",
+   "head_of_government": {
+    "title": "Prime Minister of Ukraine",
+    "name": "Sergii Koretskyi",
+    "portrait": "",
+    "source": {
+     "label": "United Nations Protocol, list of 13 November 2026",
+     "url": "https://www.un.org/dgacm/sites/www.un.org.dgacm/files/Documents_Protocol/hspmfmlist.pdf"
+    },
+    "since": "2026-07-16"
+   },
+   "band": "head_of_state"
   },
   "united-arab-emirates": {
    "nation": "United Arab Emirates",
@@ -5351,7 +6199,17 @@
      "url": "https://um.dk/media/3pjjbw5h/copenhagen-diplomatic-list-26102026.pdf"
     }
    },
-   "checked": "2026-11-15"
+   "checked": "2026-11-15",
+   "head_of_government": {
+    "title": "Vice-President and Prime Minister of the United Arab Emirates",
+    "name": "Mohammed bin Rashid Al Maktoum",
+    "portrait": "",
+    "source": {
+     "label": "United Nations Protocol, list of 13 November 2026",
+     "url": "https://www.un.org/dgacm/sites/www.un.org.dgacm/files/Documents_Protocol/hspmfmlist.pdf"
+    }
+   },
+   "band": "head_of_state"
   },
   "united-kingdom": {
    "nation": "United Kingdom",
@@ -5378,7 +6236,7 @@
    },
    "checked": "2026-11-15",
    "steward_note": "The date moves: the King’s Official Birthday, set each year. Confirm the date every January.",
-   "leader": {
+   "head_of_government": {
     "title": "Prime Minister of the United Kingdom of Great Britain and Northern Ireland",
     "name": "Andrew Burnham",
     "portrait": "",
@@ -5387,7 +6245,8 @@
      "url": "https://www.un.org/dgacm/sites/www.un.org.dgacm/files/Documents_Protocol/hspmfmlist.pdf"
     },
     "since": "2026-07-20"
-   }
+   },
+   "band": "head_of_government"
   },
   "united-states": {
    "nation": "United States",
@@ -5415,7 +6274,11 @@
      "url": "https://um.dk/media/3pjjbw5h/copenhagen-diplomatic-list-26102026.pdf"
     }
    },
-   "checked": "2026-11-15"
+   "checked": "2026-11-15",
+   "head_of_government": {
+    "same_as_head_of_state": true
+   },
+   "band": "head_of_state"
   },
   "uruguay": {
    "nation": "Uruguay",
@@ -5439,7 +6302,11 @@
      "url": "https://um.dk/media/3pjjbw5h/copenhagen-diplomatic-list-26102026.pdf"
     }
    },
-   "checked": "2026-11-15"
+   "checked": "2026-11-15",
+   "head_of_government": {
+    "same_as_head_of_state": true
+   },
+   "band": "head_of_state"
   },
   "uzbekistan": {
    "nation": "Uzbekistan",
@@ -5463,7 +6330,17 @@
      "url": "https://www.government.se/globalassets/government/dokument/utrikesdepartementet/diplomatportalen/national-days/national-days-20240618.pdf"
     }
    },
-   "checked": "2026-11-15"
+   "checked": "2026-11-15",
+   "head_of_government": {
+    "title": "Prime Minister of the Republic of Uzbekistan",
+    "name": "Abdulla Aripov",
+    "portrait": "",
+    "source": {
+     "label": "United Nations Protocol, list of 13 November 2026",
+     "url": "https://www.un.org/dgacm/sites/www.un.org.dgacm/files/Documents_Protocol/hspmfmlist.pdf"
+    }
+   },
+   "band": "head_of_state"
   },
   "vanuatu": {
    "nation": "Vanuatu",
@@ -5488,7 +6365,7 @@
     }
    },
    "checked": "2026-11-15",
-   "leader": {
+   "head_of_government": {
     "title": "Prime Minister of the Republic of Vanuatu",
     "name": "Jotham Napat",
     "portrait": "",
@@ -5496,7 +6373,8 @@
      "label": "United Nations Protocol, list of 13 November 2026",
      "url": "https://www.un.org/dgacm/sites/www.un.org.dgacm/files/Documents_Protocol/hspmfmlist.pdf"
     }
-   }
+   },
+   "band": "head_of_government"
   },
   "venezuela": {
    "nation": "Venezuela",
@@ -5521,7 +6399,11 @@
     }
    },
    "checked": "2026-11-15",
-   "steward_note": "The UN Protocol list gives an Acting President; check monthly."
+   "steward_note": "The UN Protocol list gives an Acting President; check monthly.",
+   "head_of_government": {
+    "same_as_head_of_state": true
+   },
+   "band": "head_of_state"
   },
   "vietnam": {
    "nation": "Vietnam",
@@ -5545,7 +6427,17 @@
      "url": "https://um.dk/media/3pjjbw5h/copenhagen-diplomatic-list-26102026.pdf"
     }
    },
-   "checked": "2026-11-15"
+   "checked": "2026-11-15",
+   "head_of_government": {
+    "title": "Prime Minister of the Socialist Republic of Viet Nam",
+    "name": "Le Minh Hung",
+    "portrait": "",
+    "source": {
+     "label": "United Nations Protocol, list of 13 November 2026",
+     "url": "https://www.un.org/dgacm/sites/www.un.org.dgacm/files/Documents_Protocol/hspmfmlist.pdf"
+    }
+   },
+   "band": "head_of_state"
   },
   "yemen": {
    "nation": "Yemen",
@@ -5569,7 +6461,17 @@
      "url": "https://um.dk/media/3pjjbw5h/copenhagen-diplomatic-list-26102026.pdf"
     }
    },
-   "checked": "2026-11-15"
+   "checked": "2026-11-15",
+   "head_of_government": {
+    "title": "Prime Minister of the Republic of Yemen",
+    "name": "Shaya Mohsen Al-Zindani",
+    "portrait": "",
+    "source": {
+     "label": "United Nations Protocol, list of 13 November 2026",
+     "url": "https://www.un.org/dgacm/sites/www.un.org.dgacm/files/Documents_Protocol/hspmfmlist.pdf"
+    }
+   },
+   "band": "head_of_state"
   },
   "zambia": {
    "nation": "Zambia",
@@ -5593,7 +6495,11 @@
      "url": "https://um.dk/media/3pjjbw5h/copenhagen-diplomatic-list-26102026.pdf"
     }
    },
-   "checked": "2026-11-15"
+   "checked": "2026-11-15",
+   "head_of_government": {
+    "same_as_head_of_state": true
+   },
+   "band": "head_of_state"
   },
   "zimbabwe": {
    "nation": "Zimbabwe",
@@ -5617,7 +6523,11 @@
      "url": "https://um.dk/media/3pjjbw5h/copenhagen-diplomatic-list-26102026.pdf"
     }
    },
-   "checked": "2026-11-15"
+   "checked": "2026-11-15",
+   "head_of_government": {
+    "same_as_head_of_state": true
+   },
+   "band": "head_of_state"
   }
  }
 }
