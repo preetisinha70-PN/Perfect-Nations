@@ -909,6 +909,9 @@
   border:2px solid var(--g); box-shadow:0 0 0 5px rgba(var(--grgb),.13), 0 10px 30px rgba(0,0,0,.35), 0 0 34px rgba(var(--grgb),.18);
   background:radial-gradient(circle at 32% 28%, #145863, var(--er2)); color:var(--g); font-family:var(--hd); font-size:1.5rem; font-weight:700; letter-spacing:.06em; }
 #R .bpx-nd__ph img{ display:block; width:100%; height:100%; object-fit:cover; object-position:50% 22%; }
+#R .bpx-nd__ph > .bpx-nd__in, #R .bpx-nd__ph > img{ grid-area:1 / 1; }
+#R .bpx-nd__in{ font-style:normal; }
+#R .bpx-nd__p.is-nophoto .bpx-nd__cr{ display:none; }
 #R .bpx-nd__ph--two{ display:flex; flex-direction:column; align-items:center; justify-content:center; gap:1px; font-size:1.08rem; line-height:1; }
 #R .bpx-nd__ph--two i{ font-style:normal; }
 #R .bpx-nd__ph--two i + i{ padding-top:3px; border-top:1px solid rgba(var(--grgb),.45); }

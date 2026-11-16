@@ -441,7 +441,7 @@ PD = {'label': 'public domain'}
 PORTRAITS = {
     'rwanda': (UP + 'pn-hos-rwanda-232x300.jpg', 'Maayan Toaf, Government Press Office of Israel', CC_BY_SA_3),
     'brazil': (UP + 'pn-hog-brazil-272x300.jpg', 'Ricardo Stuckert, Presidency of Brazil', None),
-    'kenya': (UP + 'pn-hog-kenya-237x300.jpg', 'Government of Kenya', None),
+    'kenya': (UP + 'pn-hos-kenya-237x300.jpg', 'Government of Kenya', None),
     'cote-divoire': (UP + 'pn-hos-cote-divoire-200x300.jpg', 'Dario Pignatelli, European Union', None),
     'ukraine': (UP + 'pn-hos-ukraine-222x300.jpg', 'President.gov.ua', CC_BY_4),
     'india': (UP + 'pn-hos-india-1-218x300.jpg', 'President’s Secretariat, Government of India', {'label': 'GODL-India'}),
@@ -453,32 +453,41 @@ PORTRAITS = {
     'france': (UP + 'pn-hos-france-241x300.jpg', 'Dati Bendo, European Commission', CC_BY_4),
     'united-states': (UP + 'pn-hog-united-states-240x300.jpg', 'Daniel Torok, The White House', PD),
     'mexico': (UP + 'pn-hog-mexico-202x300.jpg', 'EneasMx', CC_BY_4),
-    'ghana': (UP + 'pn-hog-ghana-298x300.png', 'U.S. Department of State', PD),
+    'ghana': (UP + 'pn-hos-ghana-298x300.png', 'U.S. Department of State', PD),
     'tanzania': (UP + 'pn-hos-tanzania-300x300.jpg', 'U.S. Embassy Dar es Salaam', PD),
-    'philippines': (UP + 'pn-hog-philippines-185x300.jpg', 'Department of Foreign Affairs of the Philippines', PD),
+    'philippines': (UP + 'pn-hos-philippines-185x300.jpg', 'Department of Foreign Affairs of the Philippines', PD),
     'cyprus': (UP + 'pn-hog-cyprus-243x300.jpg', 'European Union 2023, European Parliament / Laia Ros', None),
     'cuba': (UP + 'pn-hos-cuba-215x300.jpg', 'Ricardo Stuckert, Presidency of Brazil', CC_BY_2),
-    'south-africa': (UP + 'pn-hog-south-africa-230x300.jpg', 'Ricardo Stuckert, Presidency of Brazil', CC_BY_2),
+    'south-africa': (UP + 'pn-hos-south-africa-230x300.jpg', 'Ricardo Stuckert, Presidency of Brazil', CC_BY_2),
     'united-arab-emirates': (UP + 'pn-hos-united-arab-emirates-250x300.jpg', 'Alan Santos, Presidency of Brazil', CC_BY_2),
-    'oman': (UP + 'pn-hog-oman-250x300.jpg', 'Prime Minister’s Office, Government of India', {'label': 'GODL-India'}),
+    'oman': (UP + 'pn-hos-oman-250x300.jpg', 'Prime Minister’s Office, Government of India', {'label': 'GODL-India'}),
     # third batch: licences read from the Wikimedia Commons file pages by the Steward-General, 15 November 2026
     'nigeria': (UP + 'pn-hog-nigeria-240x300.jpg', 'Nosa Asemota, cropped', CC_BY_SA_4),
     'zambia': (UP + 'pn-hog-zambia-300x200.jpg', 'TheophilusMaurice, cropped', CC_BY_SA_4),
-    'guatemala': (UP + 'pn-hog-guatemala-300x200.jpg', 'Gobierno de Guatemala', {'label': 'Public Domain Mark'}),
+    'guatemala': (UP + 'pn-hos-guatemala-300x200.jpg', 'Gobierno de Guatemala', {'label': 'Public Domain Mark'}),
     'uganda': (UP + 'pn-hos-uganda-228x300.jpg', 'Prime Minister’s Office, Government of India', {'label': 'GODL-India'}),
     # Commons: extracted from "Mattarella Lourenço 2023.jpg"; Quirinale.it permission (VRT) for any use with attribution
     'angola': (UP + 'pn-hog-angola-217x300.jpg', 'Presidency of the Italian Republic (Quirinale.it), cropped', {'label': 'free use with attribution'}),
+    # fourth batch (15 November 2026, night): credits and licences from the uploads' captions and file data
+    'dr-congo': (UP + 'pn-hos-democratic-republic-of-the-congo-232x300.jpg', 'Freddie Everett, U.S. Department of State', PD),
+    'botswana': (UP + 'perfect-nations-official-portr-224x300.jpg', 'Freddie Everett, U.S. Department of State', PD),
+    'comoros': (UP + 'brazilian-leaders-portrait-240x300.jpg', 'Ricardo Stuckert, Presidency of Brazil', CC_BY_2),
+    'namibia': (UP + 'pn-hos-namibia-242x300.jpg', 'Prime Minister’s Office, Government of India', {'label': 'GODL-India'}),
+    'micronesia': (UP + 'man-near-private-jet-smile-250x300.jpg', 'Joshua Martin, U.S. Navy, 2008', PD),
     'kyrgyzstan': (UP + 'pn-hos-kyrgyzstan-225x300.jpg', 'Ermek Sydykov, Press Service of the President of Kyrgyzstan, cropped', CC_BY_SA_4),
 }
 GOJ = {'label': 'Government of Japan Standard Terms of Use 2.0, compatible with CC BY 4.0'}
 PORTRAITS_HOG = {
-    'india': (UP + 'pn-hog-india-240x300.jpg', 'Prime Minister’s Office, Government of India', {'label': 'GODL-India'}),
+    'india': (UP + 'pn-hos-india-240x300.jpg', 'Prime Minister’s Office, Government of India', {'label': 'GODL-India'}),
     # licence confirmed by the Steward-General from the Wikimedia Commons file page, 15 November 2026
     'cambodia': (UP + 'pn-hog-cambodia-229x300.jpg', 'Government of Japan', GOJ),
     'japan': (UP + 'pn-hog-japan-242x300.jpg', 'Government of Japan', GOJ),
     # Commons gives CC BY 3.0 IT; the Italian Government's site now gives CC BY-NC-SA 3.0 IT for its images. The
     # Steward-General chose the Commons licence on 15 November 2026.
     'italy': (UP + 'pn-hog-italy-228x300.jpg', 'Presidency of the Council of Ministers of Italy', {'label': 'CC BY 3.0 IT', 'url': 'https://creativecommons.org/licenses/by/3.0/it/'}),
+    'australia': (UP + 'pn-hog-australia-219x300.jpg', 'Australian Government, cropped', CC_BY_4),
+    'finland': (UP + 'professional-executive-portrai-300x200.jpg', 'Lauri Heikkinen, Finnish Prime Minister’s Office', CC_BY_4),
+    'sweden': (UP + 'professional-speech-navy-suit-200x300.jpg', 'Christophe Licoppe, European Union', CC_BY_4),
     'canada': (UP + 'pn-hog-canada-251x300.jpg', 'Prime Minister of Canada', {'label': 'CC BY 3.0', 'url': 'https://creativecommons.org/licenses/by/3.0/'}),
 }
 

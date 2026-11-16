@@ -99,7 +99,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 PAGES, DATA, HERE = ROOT / 'pages', ROOT / 'data', ROOT / 'tools' / 'nation'
-VERSION = '13.13'  # Italy, Nigeria, Uganda, Zambia, Guatemala and Kyrgyzstan portraits (the Steward-General, 15 Nov 2026)
+VERSION = '13.14'  # nine more portraits; files renamed by the Media Library's AI feature re-pointed; initials shown if a photo cannot load (15 Nov 2026)
 # 13.3: the head of state's portrait is larger (88 px laptops, 72 px phones), and the National Day mirrors it: an 88 px gold date tile at the far right, its name the same size as the head of state's (the Steward-General, 15 Nov 2026)
 # 13.2: a slim band under the hero: the head of state and the National Day, from data/nation-protocol.json (the Steward-General, 15 Nov 2026)
 # 13.1: the Solution card reads "18.6% of people" and "the United Kingdom" (the Steward-General, 15 Nov 2026)
@@ -594,7 +594,11 @@ def protocol_band(d, slug):
             # v13.6: an official portrait supplied by the Steward-General, with its credit (and licence) under the name
             focus = x.get('portrait_focus') or ''
             style = (' style="object-position:%s"' % ent(focus)) if re.fullmatch(r'\d{1,3}% \d{1,3}%', focus) else ''
-            face = '<span class="bpx-nd__ph"><img src="%s" alt="%s" width="88" height="88" loading="lazy" decoding="async"%s></span>' % (ent(https(pic)), ent(x['name']), style)
+            # v13.14: the initials sit under the photo; if the file cannot be loaded (renamed or removed in the Media
+            # Library), the photo and its credit step aside and the initials show, never a broken image
+            face = ('<span class="bpx-nd__ph"><i class="bpx-nd__in" aria-hidden="true">%s</i><img src="%s" alt="%s" width="88" height="88" loading="lazy" decoding="async"%s'
+                    ' onerror="var p=this.closest(\'.bpx-nd__p\');if(p)p.classList.add(\'is-nophoto\');this.remove()"></span>') % (
+                ent(initials(x['name'])), ent(https(pic)), ent(x['name']), style)
             if x.get('portrait_credit'):
                 lic = x.get('portrait_licence') or {}
                 credit = '<em class="bpx-nd__cr">Photo: %s%s</em>' % (ent(x['portrait_credit']), (
