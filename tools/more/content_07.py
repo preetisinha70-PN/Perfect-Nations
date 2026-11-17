@@ -100,9 +100,9 @@ CONTENT = {
   ('P', 'The Reading Impact Bond', "The United Kingdom should invite private investors into a social impact bond for reading in the schools where children lag, building on the impact bonds it pioneered, so every child reads by the end of primary school."),
  ],
  'united-states': [
-  ('D', 'Care in Rural America', "The United States should finance rural clinics, hospitals and telehealth with its community development financial institutions, so essential care reaches every county."),
-  ('C', 'Readers in Every American School', "The United States should invite its technology companies and publishers to co-finance reading tutors and school libraries in the schools where children lag, so every child reads by the end of primary school."),
-  ('P', 'Sanitation for Every Rural Home', "The United States should invite private investors to finance wastewater systems for the rural communities, tribal lands and border colonias still without safe sanitation, so every home has it."),
+  ('P', 'Care for Every American, Insured or Not', "The United States should invite private investors to finance community health centers and rural clinics in the counties with the most uninsured people, through New Markets Tax Credits and tax-exempt health facility bonds, so every American can see a doctor whether or not they hold insurance."),
+  ('C', 'The American Reading Fund', "The United States should invite its technology companies, publishers and employers into a reading fund that finances daily tutoring and teacher training in how children learn to read, in the school districts where most children read below the basic level, with the money released as reading improves, so every American child reads well by the end of primary school."),
+  ('D', 'A Home for Every American', "The United States should finance rental homes that families on low incomes can afford, and supportive housing for people living on the street, through its community development banks, loan funds and state housing finance agencies, turning vacant land and empty buildings into homes, so every American has a home."),
  ],
  'uruguay': [
   ('D', 'Credit for Every Uruguayan Family Business', "Uruguay should finance credit for small and family businesses through local banks with the Inter-American Development Bank and CAF, so every family earns above the poverty line."),
