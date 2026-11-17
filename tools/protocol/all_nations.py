@@ -436,6 +436,9 @@ CC_BY_4 = {'label': 'CC BY 4.0', 'url': 'https://creativecommons.org/licenses/by
 CC_BY_2 = {'label': 'CC BY 2.0', 'url': 'https://creativecommons.org/licenses/by/2.0/'}
 CC_BY_SA_4 = {'label': 'CC BY-SA 4.0', 'url': 'https://creativecommons.org/licenses/by-sa/4.0/'}
 PD = {'label': 'public domain'}
+CC_BY_SA_2 = {'label': 'CC BY-SA 2.0', 'url': 'https://creativecommons.org/licenses/by-sa/2.0/'}
+CC_BY_2_5_DK = {'label': 'CC BY 2.5 DK', 'url': 'https://creativecommons.org/licenses/by/2.5/dk/deed.en'}
+GOJ = {'label': 'Government of Japan Standard Terms of Use 2.0, compatible with CC BY 4.0'}
 # Portraits by office (the Steward-General, 15 November 2026): files named pn-hos-<slug> show the head of state, files
 # named pn-hog-<slug> the head of government. PORTRAITS holds heads of state; PORTRAITS_HOG heads of government.
 # Where one person holds both offices (Brazil, Kenya, the United States, Mexico, Ghana, the Philippines, Cyprus, South
@@ -483,8 +486,18 @@ PORTRAITS = {
     # Commons: Luis_Abinader_(25-04-2024).jpg (16 November 2026)
     'dominican-republic': (UP + 'pn-hog-dominican-republic-225x300.jpg', 'Chairman of the Joint Chiefs of Staff (U.S.), cropped', CC_BY_2),
     'kyrgyzstan': (UP + 'pn-hos-kyrgyzstan-225x300.jpg', 'Ermek Sydykov, Press Service of the President of Kyrgyzstan, cropped', CC_BY_SA_4),
+    # sixth batch (17 November 2026): the Steward-General's pn-hog uploads; credits and licences from their captions
+    # (citing the Wikimedia Commons files) and their file data
+    'ecuador': (UP + 'pn-hog-ecuador-235x300.jpg', 'Fernando Sandoval, National Assembly of Ecuador, 2022', CC_BY_SA_2),
+    'indonesia': (UP + 'pn-hog-indonesia-226x300.jpg', 'Ministry of State Secretariat, Republic of Indonesia', {'label': 'public domain under Indonesian law'}),
+    'panama': (UP + 'pn-hog-panama-215x300.jpg', 'Ricardo Stuckert, Presidency of Brazil, cropped', CC_BY_SA_2),
+    'paraguay': (UP + 'pn-hog-paraguay-235x300.jpg', 'Wang Yu Ching, Office of the President, Taiwan, cropped', CC_BY_4),
+    'maldives': (UP + 'pn-hog-maldives-200x300.jpg', 'The President’s Office, Maldives', CC_BY_4),
+    'sri-lanka': (UP + 'pn-hog-sri-lanka-218x300.jpg', 'Cabinet Public Affairs Office, Government of Japan, cropped', GOJ),
+    'kazakhstan': (UP + 'pn-hog-kazakhstan-225x300.jpg', 'Press Service of the President of Azerbaijan, cropped', CC_BY_4),
+    # head of state on record (the band shows the Prime Minister)
+    'albania': (UP + 'pn-hos-albania-296x300.jpg', 'Presidential Press and Information Office of Azerbaijan, cropped', CC_BY_4),
 }
-GOJ = {'label': 'Government of Japan Standard Terms of Use 2.0, compatible with CC BY 4.0'}
 PORTRAITS_HOG = {
     'india': (UP + 'pn-hos-india-240x300.jpg', 'Prime Minister’s Office, Government of India', {'label': 'GODL-India'}),
     # licence confirmed by the Steward-General from the Wikimedia Commons file page, 15 November 2026
@@ -505,6 +518,15 @@ PORTRAITS_HOG = {
     'ireland': (UP + 'pn-hog-ireland-255x300.jpg', 'Houses of the Oireachtas', CC_BY_4),
     'denmark': (UP + 'pn-hog-denmark-300x266.jpg', 'Pietro Naj-Oleari, European Parliament, cropped', CC_BY_4),
     'greece': (UP + 'pn-hog-greece-228x300.jpg', 'Yorgos Karahalis, European Union, cropped', CC_BY_4),
+    # sixth batch (17 November 2026)
+    'luxembourg': (UP + 'pn-hog-luxembourg-225x300.jpg', 'Finnish Prime Minister’s Office, cropped', CC_BY_2),
+    'croatia': (UP + 'pn-hog-croatia-225x300.jpg', 'Claudio Centonze, European Union, cropped', CC_BY_4),
+    'iceland': (UP + 'pn-hog-iceland-225x300.jpg', 'Dati Bendo, European Union, cropped', CC_BY_4),
+    'malta': (UP + 'pn-hog-malta-225x300.jpg', 'Office of the Prime Minister of Malta, cropped', CC_BY_SA_4),
+    'slovakia': (UP + 'pn-hog-slovakia-215x300.jpg', 'Christophe Licoppe, European Union', CC_BY_4),
+    'austria': (UP + 'pn-hog-austria-225x300.jpg', 'Michael Gruber, Austrian Foreign Ministry, cropped', CC_BY_2),
+    'singapore': (UP + 'pn-hog-singapore-225x300.jpg', 'Cabinet Public Relations Office, Government of Japan, cropped', GOJ),
+    'norway': (UP + 'pn-hog-norway-200x300.jpg', 'Johannes Jansson, norden.org, 2011', CC_BY_2_5_DK),
     'australia': (UP + 'pn-hog-australia-219x300.jpg', 'Australian Government, cropped', CC_BY_4),
     # sixth batch (16 November 2026): licences from the Steward-General's captions, citing the Commons files
     # Commons: Petteri-Orpo-01_(cropped).jpg; an upright crop of the same official portrait, for the circle
