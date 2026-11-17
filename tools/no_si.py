@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
 """Keep super intelligence and the Stewards off perfectnations.com (Preeti Sinha, President and CEO, 16 Nov 2026).
+One exception, from the evening of 16 Nov 2026: the Nation Steward card above each blueprint's Newswire
+("Add the SI nations Stewards back in every blueprint above the newswire like it used to be").
 
     "remove all reference to Super intelligence and SI from perfectnations.com. in the about section - just
      profile me. keep the stewards internally for processing at claude but remove the profiles of all stewards
@@ -136,7 +138,12 @@ def check(paths):
                     print('%s: %s' % (f, h))
                 bad += len(hits)
                 continue
+        # the Nation Steward card above a blueprint's Newswire names its Steward, "SI Researcher" (Preeti Sinha,
+        # 16 Nov 2026, evening: "Add the SI nations Stewards back in every blueprint above the newswire")
+        cards = [(c.start(), c.end()) for c in re.finditer(r'<div class="bpx-stew">.*?</p></div>', src, re.S)]
         for m in MENTION.finditer(src):
+            if any(a <= m.start() < b for a, b in cards):
+                continue
             line = src.count('\n', 0, m.start()) + 1
             text = src[src.rfind('\n', 0, m.start()) + 1:src.find('\n', m.end())]
             if 'NOSI' in text:  # the filter itself (the browser-side copy of this rule)

@@ -10,6 +10,8 @@ unique; no backdrop-filter; no static <script src>; every script survives the Wo
 Mexico blueprint scripts); and, in the copy a visitor reads (text, title, alt, placeholder, aria-label), no
 straight apostrophes, no contractions, no super intelligence (or SI) and no Steward (Preeti Sinha, 16 Nov 2026:
 the Stewards stay internal and the site never names super intelligence; tools/no_si.py checks the whole file).
+One exception: the Nation Steward card above a blueprint's Newswire (class bpx-stew), which Preeti Sinha brought
+back on the evening of 16 Nov 2026 ("Add the SI nations Stewards back in every blueprint above the newswire").
 Exit status 1 if anything fails. Needs: pip install tinycss2, and node.
 """
 import re
@@ -47,6 +49,7 @@ class Walk(HTMLParser):
         super().__init__(convert_charrefs=True)
         self.stack, self.ids, self.problems, self.copy = [], {}, [], []
         self.raw = None
+        self.card = None   # the depth of the Nation Steward card (bpx-stew) while inside it
 
     def handle_starttag(self, tag, attrs):
         self._attrs(tag, attrs)
@@ -54,6 +57,8 @@ class Walk(HTMLParser):
             self.raw = tag
         if tag not in VOID:
             self.stack.append((tag, self.getpos()))
+            if self.card is None and 'bpx-stew' in (dict(attrs).get('class') or '').split():
+                self.card = len(self.stack)
 
     def handle_startendtag(self, tag, attrs):
         self._attrs(tag, attrs)
@@ -63,7 +68,7 @@ class Walk(HTMLParser):
             if k == 'id' and v:
                 self.ids.setdefault(v, []).append(self.getpos()[0])
             if k in COPY_ATTRS and v:
-                self.copy.append((self.getpos()[0], v))
+                self.copy.append((self.getpos()[0], v, self.card is not None))
 
     def handle_endtag(self, tag):
         if tag in ('script', 'style'):
@@ -75,6 +80,8 @@ class Walk(HTMLParser):
             return
         if self.stack[-1][0] == tag:
             self.stack.pop()
+            if self.card is not None and len(self.stack) < self.card:
+                self.card = None
             return
         names = [t for t, _ in self.stack]
         if tag in names:
@@ -82,12 +89,14 @@ class Walk(HTMLParser):
                 t, pos = self.stack.pop()
                 self.problems.append('line %d: <%s> is never closed' % (pos[0], t))
             self.stack.pop()
+            if self.card is not None and len(self.stack) < self.card:
+                self.card = None
         else:
             self.problems.append('line %d: </%s> closes nothing' % (self.getpos()[0], tag))
 
     def handle_data(self, data):
         if not self.raw and data.strip():
-            self.copy.append((self.getpos()[0], data))
+            self.copy.append((self.getpos()[0], data, self.card is not None))
 
 
 def check(path):
@@ -140,12 +149,14 @@ def check(path):
     for k, lines in w.ids.items():
         if len(lines) > 1:
             bad.append('id "%s" is used %d times (lines %s)' % (k, len(lines), lines[:4]))
-    for line, text in w.copy:
+    for line, text, card in w.copy:
         if "'" in text:
             bad.append('line %d: a straight apostrophe in the copy: %r' % (line, text.strip()[:80]))
         c = CONTRACTION.search(text)
         if c:
             bad.append('line %d: a contraction in the copy: %r' % (line, c.group(0)))
+        if card:   # the Nation Steward card above a blueprint's Newswire may name its Steward (16 Nov 2026)
+            continue
         if NO_SI.search(text):
             bad.append('line %d: super intelligence in the copy: %r' % (line, text.strip()[:80]))
         if STEWARD.search(text):
