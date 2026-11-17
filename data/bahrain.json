@@ -1,7 +1,7 @@
 {
  "nation": "Bahrain",
  "page_version": "1.0",
- "updated": "2026-11-16",
+ "updated": "2026-11-17",
  "steward": {
   "name": "Noora Al Mahmood",
   "role": "Nation Steward of Bahrain"
@@ -19,7 +19,7 @@
     "label": "Growth projected for 2026, IMF"
    },
    {
-    "value": "$5.4bn",
+    "value": "BHD 2bn",
     "label": "Currency swap with the UAE, April 2026"
    }
   ]
@@ -42,27 +42,60 @@
     "url": "https://www.imf.org/external/datamapper/NGDP_RPCH@WEO/BHR"
    },
    {
-    "value": "$5.4bn",
+    "value": "BHD 2bn",
     "money": true,
-    "text": "Five-year AED 20 billion currency swap from the Central Bank of the UAE, April 2026",
-    "source": "The National, 2026",
-    "url": "https://www.thenationalnews.com/business/economy/2026/04/24/iran-war-puts-bahrains-flimsy-fiscal-buffers-in-spotlight/"
+    "text": "Five-year BHD/AED currency swap with the Central Bank of the UAE, nominal value BHD 2 billion (AED 20 billion), signed 8 April 2026",
+    "source": "Central Bank of Bahrain, 2026",
+    "url": "https://www.cbb.gov.bh/media-center/cbb-and-cbuae-sign-bhd-2-billion-bhd-aed-currency-swap-agreement"
    }
   ],
   "register": [
+   {
+    "cat": "govt",
+    "status": "Issued",
+    "tone": "active",
+    "name": "Long-term Ijara Murabaha Sukuk, Issue No. 2",
+    "detail": "Central Bank of Bahrain for the Government · Domestic Sukuk Programme · expected profit rate 5.75% · 28 August 2025 to 28 August 2029",
+    "amount": "BHD 200M",
+    "money": true,
+    "note": "Oversubscribed by 140%, announced 26 August 2025",
+    "text": "A four-year Bahraini dinar sukuk issued by the Central Bank of Bahrain on behalf of the Government of the Kingdom of Bahrain, the second in the long-term Ijara Murabaha series of the Domestic Sukuk Programme. It raises long-term local-currency finance for the state budget, which carries the public services behind the seven standards.",
+    "by": [
+     "Central Bank of Bahrain",
+     "Government of the Kingdom of Bahrain"
+    ],
+    "url": "https://www.cbb.gov.bh/media-center/cbb-long-term-ijara-murabaha-sukuk-issue-no-2-oversubscribed/"
+   },
+   {
+    "cat": "regional",
+    "status": "Approved",
+    "tone": "active",
+    "name": "Industrial capacity expansion financing",
+    "detail": "Islamic Development Bank · approved by the Board of Executive Directors · 23 February 2026",
+    "amount": "$330.07M",
+    "money": true,
+    "note": "One of the operations in around US$2.41 billion of new financing approved by the IsDB Board",
+    "text": "Islamic Development Bank financing to expand Bahrain’s industrial capacity with modern, investment-ready industrial land on reclaimed land, upgraded utilities and efficient internal connectivity. The IsDB states that this will enable advanced manufacturing and export-oriented industries, catalyse private investment and stimulate job creation, which serves the livelihood standard.",
+    "by": [
+     "Islamic Development Bank"
+    ],
+    "url": "https://www.isdb.org/news/isdb-board-of-executive-directors-approves-around-us-241-billion-in-new-financing-for-strategic-development-sectors"
+   },
    {
     "cat": "bilat",
     "status": "Signed",
     "tone": "active",
     "name": "Currency swap with the Central Bank of the UAE",
-    "detail": "Five years · AED 20 billion · April 2026",
-    "amount": "$5.4bn",
+    "detail": "BHD 2 billion (AED 20 billion) · tenor five years · signed 8 April 2026",
+    "amount": "BHD 2bn",
     "money": true,
-    "text": "Liquidity support from the UAE as the war in the region hit Bahrain’s finances.",
+    "note": "Signed by the governors of the Central Bank of Bahrain and the Central Bank of the UAE",
+    "text": "A five-year BHD/AED currency swap agreement between the Central Bank of Bahrain and the Central Bank of the UAE, with a nominal value of BHD 2 billion (AED 20 billion), signed on 8 April 2026. It gives Bahrain access to liquidity in a second Gulf currency in a year of regional war, which supports the financial system and the public finances behind the seven standards.",
     "by": [
+     "Central Bank of Bahrain",
      "Central Bank of the UAE"
     ],
-    "url": "https://www.thenationalnews.com/business/economy/2026/04/24/iran-war-puts-bahrains-flimsy-fiscal-buffers-in-spotlight/"
+    "url": "https://www.cbb.gov.bh/media-center/cbb-and-cbuae-sign-bhd-2-billion-bhd-aed-currency-swap-agreement"
    }
   ]
  },
@@ -85,9 +118,9 @@
    },
    {
     "name": "The Financial Centre",
-    "figure": "$5.4bn",
+    "figure": "BHD 2bn",
     "money": true,
-    "label": "Swap line secured, April 2026",
+    "label": "Swap line signed, April 2026",
     "text": "A banking and Islamic-finance centre whose standing lets it raise capital when it is needed."
    },
    {
@@ -108,7 +141,29 @@
  },
  "enterprises": {
   "heading": "Already working in Bahrain.",
-  "items": []
+  "items": [
+   {
+    "standard": "Food",
+    "name": "Bahrain Food Bank",
+    "text": "Run by the Conserving Bounties Society, it recovers surplus food that would otherwise be thrown away and distributes it to families and low-income people across Bahrain. More than three million meals have been saved and distributed since it was established in 2014.",
+    "source": "GDN, 2026",
+    "url": "https://www.gdnonline.com/Details/1407936/Food-bank-saves-three-million-meals-for-needy-families"
+   },
+   {
+    "standard": "Food",
+    "name": "Wajba",
+    "text": "A Bahraini platform that links food and beverage vendors with customers so that surplus meals are sold at lower prices instead of wasted, recovering revenue for businesses. It won the first Bahrain edition of the Zain Great Idea accelerator in October 2025.",
+    "source": "StartUp Bahrain, 2025",
+    "url": "https://startupbahrain.com/blog/wajba-wins-zain-great-idea-bahrain-heads-to-silicon-valley"
+   },
+   {
+    "standard": "Livelihood",
+    "name": "Ebdaa Bahrain Microfinance",
+    "text": "Bahrain’s first specialised microfinance institution, established in 2009 at the initiative of the founder of AGFUND, which offers flexible financing to low-income entrepreneurs with the economic empowerment of Bahraini women at its centre. It has provided more than 24,000 financing facilities worth over BD28 million, more than 10,000 of them to Bahraini women.",
+    "source": "TradeArabia, 2026",
+    "url": "https://www.tradearabia.com/News/389302/Ebdaa-celebrates-17-years-of-supporting-entrepreneurs"
+   }
+  ]
  },
  "coverage": {
   "set_by": "Education",
@@ -242,5 +297,5 @@
  ],
  "dispatches": [],
  "checked": "2026-11-16T04:31Z",
- "reviewed": "2026-11-10T23:00Z"
+ "reviewed": "2026-11-17T07:44Z"
 }
