@@ -1,181 +1,246 @@
 {
- "nation": "Ireland",
- "page_version": "1.0",
- "updated": "2026-11-10",
- "steward": {
-  "name": "Aoife Byrne",
-  "role": "Nation Steward of Ireland"
- },
- "population": 5484367,
- "hero": {
-  "lead": "A nation of 5.5 million with farmland across six tenths of its land and a €1.16 billion recovery and resilience plan, where the IMF projects the economy to shrink by 1.0% this year.",
-  "stats": [
-   {
-    "value": "34.8%",
-    "label": "Public debt, share of GDP, 2025"
-   },
-   {
-    "value": "−1%",
-    "label": "Growth projected for 2026, IMF"
-   },
-   {
-    "value": "€1.16bn",
-    "label": "EU recovery and resilience plan"
-   }
-  ]
- },
- "capital": {
-  "heading": "Low debt, and clean rivers and coasts.",
-  "record": [
-   {
-    "value": "€1.16bn",
-    "money": true,
-    "text": "Recovery and resilience plan (grants and loans), as approved by the Council of the EU on 11 March 2025",
-    "source": "Council of the EU, 2025",
-    "url": "https://www.consilium.europa.eu/en/policies/eu-recovery-plan/timeline/"
-   },
-   {
-    "value": "34.8%",
-    "money": false,
-    "text": "General government gross debt, share of GDP, 2025",
-    "source": "IMF, WEO Oct 2026",
-    "url": "https://www.imf.org/external/datamapper/GGXWDG_NGDP@WEO/IRL"
-   },
-   {
-    "value": "−1%",
-    "money": false,
-    "text": "Real GDP growth projected for 2026",
-    "source": "IMF, WEO Oct 2026",
-    "url": "https://www.imf.org/external/datamapper/NGDP_RPCH@WEO/IRL"
-   }
-  ],
-  "register": [
-   {
-    "cat": "regional",
-    "status": "Approved",
-    "tone": "active",
-    "name": "Recovery and resilience plan",
-    "detail": "Council of the EU · Approved 11 March 2025 · EU Recovery and Resilience Facility",
-    "amount": "€1.16bn",
-    "money": true,
-    "text": "EU funding, in grants and loans, for agreed reforms and investments.",
-    "by": [
-     "European Union"
+  "nation": "Ireland",
+  "page_version": "1.0",
+  "updated": "2026-11-17",
+  "steward": {
+    "name": "Aoife Byrne",
+    "role": "Nation Steward of Ireland"
+  },
+  "population": 5484367,
+  "hero": {
+    "lead": "A nation of 5.5 million with farmland across six tenths of its land and a €1.16 billion recovery and resilience plan, where the IMF projects the economy to shrink by 1.0% this year.",
+    "stats": [
+      {
+        "value": "34.8%",
+        "label": "Public debt, share of GDP, 2025"
+      },
+      {
+        "value": "−1%",
+        "label": "Growth projected for 2026, IMF"
+      },
+      {
+        "value": "€1.16bn",
+        "label": "EU recovery and resilience plan"
+      }
+    ]
+  },
+  "capital": {
+    "heading": "Low debt, and clean rivers and coasts.",
+    "record": [
+      {
+        "value": "€1.16bn",
+        "money": true,
+        "text": "Recovery and resilience plan (grants and loans), as approved by the Council of the EU on 11 March 2025",
+        "source": "Council of the EU, 2025",
+        "url": "https://www.consilium.europa.eu/en/policies/eu-recovery-plan/timeline/"
+      },
+      {
+        "value": "34.8%",
+        "money": false,
+        "text": "General government gross debt, share of GDP, 2025",
+        "source": "IMF, WEO Oct 2026",
+        "url": "https://www.imf.org/external/datamapper/GGXWDG_NGDP@WEO/IRL"
+      },
+      {
+        "value": "−1%",
+        "money": false,
+        "text": "Real GDP growth projected for 2026",
+        "source": "IMF, WEO Oct 2026",
+        "url": "https://www.imf.org/external/datamapper/NGDP_RPCH@WEO/IRL"
+      }
     ],
-    "url": "https://www.consilium.europa.eu/en/policies/eu-recovery-plan/timeline/"
-   }
-  ]
- },
- "assets": {
-  "heading": "Five assets no balance sheet counts.",
-  "items": [
-   {
-    "name": "The Farmland",
-    "figure": "60.8%",
-    "money": false,
-    "label": "Of the land in agriculture, 2023",
-    "text": "Land that can feed the nation and earn abroad, valued and financed against its harvest."
-   },
-   {
-    "name": "The People",
-    "figure": "5.5m",
-    "money": false,
-    "label": "Citizens, 2025",
-    "text": "18.1% are under fifteen: the workforce and the market of the next generation."
-   },
-   {
-    "name": "The Fresh Water",
-    "figure": "9,400 m³",
-    "money": false,
-    "label": "Renewable fresh water a person, 2022",
-    "text": "Rain and rivers renewed every year: power, irrigation and drinking water."
-   },
-   {
-    "name": "The Clean Grid",
-    "figure": "37.2%",
-    "money": false,
-    "label": "Of electricity from renewable sources, 2021",
-    "text": "Power from water, wind and sun already flows; every new connection can be clean."
-   },
-   {
-    "name": "The Forest",
-    "figure": "12%",
-    "money": false,
-    "label": "Of the land under forest, 2024",
-    "text": "Standing forest that stores carbon and water, and can earn as it stands."
-   }
-  ]
- },
- "enterprises": {
-  "heading": "Already working in Ireland.",
-  "items": []
- },
- "coverage": {
-  "set_by": "Shelter",
-  "gap": "18.7%",
-  "gap_text": "Of people in Ireland lack safely managed sanitation.",
-  "perfect_capita": "To set"
- },
- "guarantees": [
-  {
-   "name": "Food",
-   "value": 95.2,
-   "display": "95.2%",
-   "note": "Not food insecure; 4.8% are moderately or severely food insecure",
-   "source": "FAO, 2023",
-   "url": "https://data.worldbank.org/indicator/SN.ITK.MSFI.ZS?locations=IE"
+    "register": [
+      {
+        "cat": "regional",
+        "status": "Approved",
+        "tone": "active",
+        "name": "Recovery and resilience plan",
+        "detail": "Council of the EU · Approved 11 March 2025 · EU Recovery and Resilience Facility",
+        "amount": "€1.16bn",
+        "money": true,
+        "text": "EU funding, in grants and loans, for agreed reforms and investments.",
+        "by": [
+          "European Union"
+        ],
+        "url": "https://www.consilium.europa.eu/en/policies/eu-recovery-plan/timeline/"
+      }
+    ]
   },
-  {
-   "name": "Water",
-   "value": 96.1,
-   "display": "96.1%",
-   "note": "Safely managed drinking water",
-   "source": "WHO/UNICEF, 2024",
-   "url": "https://data.worldbank.org/indicator/SH.H2O.SMDW.ZS?locations=IE"
+  "assets": {
+    "heading": "Five assets no balance sheet counts.",
+    "items": [
+      {
+        "name": "The Farmland",
+        "figure": "60.8%",
+        "money": false,
+        "label": "Of the land in agriculture, 2023",
+        "text": "Land that can feed the nation and earn abroad, valued and financed against its harvest."
+      },
+      {
+        "name": "The People",
+        "figure": "5.5m",
+        "money": false,
+        "label": "Citizens, 2025",
+        "text": "18.1% are under fifteen: the workforce and the market of the next generation."
+      },
+      {
+        "name": "The Fresh Water",
+        "figure": "9,400 m³",
+        "money": false,
+        "label": "Renewable fresh water a person, 2022",
+        "text": "Rain and rivers renewed every year: power, irrigation and drinking water."
+      },
+      {
+        "name": "The Clean Grid",
+        "figure": "37.2%",
+        "money": false,
+        "label": "Of electricity from renewable sources, 2021",
+        "text": "Power from water, wind and sun already flows; every new connection can be clean."
+      },
+      {
+        "name": "The Forest",
+        "figure": "12%",
+        "money": false,
+        "label": "Of the land under forest, 2024",
+        "text": "Standing forest that stores carbon and water, and can earn as it stands."
+      }
+    ]
   },
-  {
-   "name": "Shelter",
-   "value": 81.3,
-   "display": "81.3%",
-   "note": "Safely managed sanitation; 8.5% of city dwellers live in slums",
-   "source": "WHO/UNICEF, 2024",
-   "url": "https://data.worldbank.org/indicator/SH.STA.SMSS.ZS?locations=IE"
+  "enterprises": {
+    "heading": "Already working in Ireland.",
+    "items": []
   },
-  {
-   "name": "Energy",
-   "value": 100.0,
-   "display": "100%",
-   "note": "100% cook with clean fuels and technology; 100% have electricity",
-   "source": "World Bank, 2024",
-   "url": "https://data.worldbank.org/indicator/EG.CFT.ACCS.ZS?locations=IE"
+  "coverage": {
+    "set_by": "Shelter",
+    "gap": "18.7%",
+    "gap_text": "Of people in Ireland lack safely managed sanitation.",
+    "perfect_capita": "To set"
   },
-  {
-   "name": "Education",
-   "value": 97.7,
-   "display": "97.7",
-   "note": "97.7% of children read a simple text by the end of primary school",
-   "source": "World Bank, 2021",
-   "url": "https://data.worldbank.org/indicator/SE.LPV.PRIM?locations=IE"
-  },
-  {
-   "name": "Health",
-   "value": 82.0,
-   "display": "82",
-   "note": "WHO service coverage index",
-   "source": "WHO, 2023",
-   "url": "https://ourworldindata.org/grapher/universal-health-coverage-index?country=~IRL"
-  },
-  {
-   "name": "Livelihoods",
-   "value": 86.0,
-   "display": "86%",
-   "note": "Above the national poverty line; 14% live below it",
-   "source": "World Bank, 2021",
-   "url": "https://data.worldbank.org/indicator/SI.POV.NAHC?locations=IE"
-  }
- ],
- "newswire": [],
- "dispatches": [],
- "checked": "2026-11-10T23:00Z",
- "reviewed": "2026-11-10T23:00Z"
+  "guarantees": [
+    {
+      "name": "Food",
+      "value": 95.2,
+      "display": "95.2%",
+      "note": "Not food insecure; 4.8% are moderately or severely food insecure",
+      "source": "FAO, 2023",
+      "url": "https://data.worldbank.org/indicator/SN.ITK.MSFI.ZS?locations=IE"
+    },
+    {
+      "name": "Water",
+      "value": 96.1,
+      "display": "96.1%",
+      "note": "Safely managed drinking water",
+      "source": "WHO/UNICEF, 2024",
+      "url": "https://data.worldbank.org/indicator/SH.H2O.SMDW.ZS?locations=IE"
+    },
+    {
+      "name": "Shelter",
+      "value": 81.3,
+      "display": "81.3%",
+      "note": "Safely managed sanitation; 8.5% of city dwellers live in slums",
+      "source": "WHO/UNICEF, 2024",
+      "url": "https://data.worldbank.org/indicator/SH.STA.SMSS.ZS?locations=IE"
+    },
+    {
+      "name": "Energy",
+      "value": 100.0,
+      "display": "100%",
+      "note": "100% cook with clean fuels and technology; 100% have electricity",
+      "source": "World Bank, 2024",
+      "url": "https://data.worldbank.org/indicator/EG.CFT.ACCS.ZS?locations=IE"
+    },
+    {
+      "name": "Education",
+      "value": 97.7,
+      "display": "97.7",
+      "note": "97.7% of children read a simple text by the end of primary school",
+      "source": "World Bank, 2021",
+      "url": "https://data.worldbank.org/indicator/SE.LPV.PRIM?locations=IE"
+    },
+    {
+      "name": "Health",
+      "value": 82.0,
+      "display": "82",
+      "note": "WHO service coverage index",
+      "source": "WHO, 2023",
+      "url": "https://ourworldindata.org/grapher/universal-health-coverage-index?country=~IRL"
+    },
+    {
+      "name": "Livelihoods",
+      "value": 86.0,
+      "display": "86%",
+      "note": "Above the national poverty line; 14% live below it",
+      "source": "World Bank, 2021",
+      "url": "https://data.worldbank.org/indicator/SI.POV.NAHC?locations=IE"
+    }
+  ],
+  "newswire": [
+    {
+      "date": "2026-10-12",
+      "label": "12 Oct 2026",
+      "title": "Minister Burke and Minister Heydon announce expansion of the Growth and Sustainability Loan Scheme to €1 billion and extension to 2029",
+      "highlight": "€1 billion",
+      "url": "https://enterprise.gov.ie/en/news-and-events/department-news/2026/october/10112026.html",
+      "source": "Department of Enterprise, Tourism and Employment"
+    },
+    {
+      "date": "2026-09-02",
+      "label": "2 Sep 2026",
+      "title": "Uisce Éireann Welcomes Government Approval of €2 Billion Investment to Support New Homes and Stronger Communities Across Ireland",
+      "highlight": "€2 Billion",
+      "url": "https://www.water.ie/news/uisce-eireann-welcomes-government-approval-eur2-billion-investment-support-new-homes-and",
+      "source": "Uisce Éireann"
+    },
+    {
+      "date": "2026-06-29",
+      "label": "29 Jun 2026",
+      "title": "ISIF announces four new housing investments totalling €250 million",
+      "highlight": "€250 million",
+      "url": "https://www.isif.ie/news/isif-announces-four-new-housing-investments-totalling-250-million",
+      "source": "Ireland Strategic Investment Fund"
+    },
+    {
+      "date": "2026-05-21",
+      "label": "21 May 2026",
+      "title": "Ireland receives €249m from EU recovery fund as facility closure looms",
+      "highlight": "€249m",
+      "url": "https://www.brusselstimes.com/2145029/ireland-receives-e249m-from-eu-recovery-fund-as-facility-closure-looms",
+      "source": "The Brussels Times"
+    },
+    {
+      "date": "2026-05-13",
+      "label": "13 May 2026",
+      "title": "Ireland raises €2 billion through the syndicated tap of the 2043 Irish Sovereign Green Bond",
+      "highlight": "€2 billion",
+      "url": "https://www.ntma.ie/news/ireland-raises-2-billion-through-the-syndicated-tap-of-the-2043-irish-sovereign-green-bond",
+      "source": "NTMA"
+    },
+    {
+      "date": "2026-03-18",
+      "label": "18 Mar 2026",
+      "title": "EIB backs €260m solar portfolio with €100m loan to Dolmen Solar",
+      "highlight": "€100m",
+      "url": "https://rte.ie/news/business/2026/0318/1563977-eib-invests-100m-in-dolmen-solars-four-new-projects/",
+      "source": "RTÉ"
+    },
+    {
+      "date": "2026-01-23",
+      "label": "23 Jan 2026",
+      "title": "ISIF commits up to €75m to new fund supporting Ireland’s energy grid",
+      "highlight": "€75m",
+      "url": "https://www.ifsc.ie/news/isif-commits-up-to-75m-to-new-fund-supporting-irelands-energy-grid",
+      "source": "IFSC News"
+    },
+    {
+      "date": "2026-01-14",
+      "label": "14 Jan 2026",
+      "title": "Ireland raises €5 billion from the sale of a new 10-year benchmark bond",
+      "highlight": "€5 billion",
+      "url": "https://www.ntma.ie/news/ireland-raises-5-billion-from-the-sale-of-a-new-10-year-benchmark-bond",
+      "source": "NTMA"
+    }
+  ],
+  "dispatches": [],
+  "checked": "2026-11-17T04:30Z",
+  "reviewed": "2026-11-10T23:00Z"
 }
