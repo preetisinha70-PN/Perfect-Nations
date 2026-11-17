@@ -2,7 +2,7 @@
 
 Sophea Chan, AI Nation Steward of Cambodia. Public notes: sources and facts only.
 
-First edition: 10 November 2026 (wave 3, Asia of the remaining nations). The weekly review adds the enterprises, more of the capital already committed and the Newswire.
+First edition: 10 November 2026 (wave 3, Asia of the remaining nations). The weekly review of 16 November 2026 added thirteen register lines (World Bank, ADB, AIIB, JICA, DEG and a green bond on the Cambodia Securities Exchange) and the first two enterprises.
 
 ## The seven standards
 
@@ -36,7 +36,39 @@ Furthest from reach: Education (90%). Of children in Cambodia cannot read a simp
 - **Water Security Improvement Project ($145M):** Irrigation and water security for farmers. https://projects.worldbank.org/en/projects-operations/project-detail/P176615
 - **Second Higher Education Improvement Project ($80M):** Universities and skills for the next economy. https://projects.worldbank.org/en/projects-operations/project-detail/P180664
 
+## Register lines added in the weekly review (sources opened 16 November 2026)
+
+- **World Bank, Sustainable Energy Transition Project ($110M IDA credit and $5M ESMAP grant), 26 June 2026:** https://www.worldbank.org/en/news/press-release/2026/06/26/strengthening-grid-reliability-and-industrial-energy-efficiency
+- **World Bank, Pre-Service Education for Health Professionals, additional financing ($13M), announced 15 June 2026:** https://www.worldbank.org/en/news/feature/2026/06/18/world-bank-approves-additional-financing-to-strengthen-health-workforce-education-in-cambodia
+- **World Bank, Basic Education Improvement Project ($100M IDA credit and $5M grant), release of 29 August 2025:** https://www.worldbank.org/en/news/press-release/2025/08/31/new-world-bank-support-to-improve-education-and-learning-for-young-children-in-cambodia
+- **ADB, Smallholder Resilient Economic Development Sector Project ($72M), 26 October 2026:** https://www.adb.org/news/adb-advances-resilient-agriculture-and-womens-economic-empowerment-rural-cambodia
+- **AIIB, RISE Program cofinancing ($250M), approved 4 September 2026:** https://www.aiib.org/en/projects/details/2026/approved/cambodia-rapid-intervention-for-stabilization--economy-rise-program-under-energy-food-security-economic-resilience-facility.html
+- **ADB, RISE Program ($250M), 30 July 2026:** release, https://www.adb.org/news/adb-deploy-450-million-shield-cambodia-sri-lanka-middle-east-impact; Board approval and terms, minutes of 30 July 2026, https://www.adb.org/sites/default/files/institutional-document/1173171/m20-26-30jul26.pdf
+- **ADB, Utility-Scale Battery Energy Storage Project ($63.44M), 24 June 2026:** https://www.adb.org/news/adb-supports-cambodia-renewable-energy-transition-major-battery-storage-project
+- **JICA, Emergency Support Loan (up to ¥30 billion), signed 28 October 2026:** https://www.jica.go.jp/english/information/press/2026/20261023_13.html
+- **JICA, Sihanoukville Port New Container Terminal (II) (up to ¥17,776 million), signed 11 August 2026:** https://www.jica.go.jp/english/information/press/2026/20260810_11.html
+- **JICA, Southwest Phnom Penh Irrigation and Drainage (III) (¥24,237 million), signed 25 June 2026:** https://www.jica.go.jp/english/information/press/2026/20260622_11.html
+- **JICA, Flood Protection and Drainage in Phnom Penh (I) (up to ¥6,908 million), signed 30 April 2026:** https://www.jica.go.jp/english/information/press/2026/20260427_11.html
+- **SchneiTec Jupiter green infrastructure project bond ($99M), Cambodia Securities Exchange:** Global Green Growth Institute, release of 16 November 2026, https://gggi.org/record-usd99-million-green-infrastructure-bond-on-cambodia-securities-exchange-anchors-usd150-million-solar-financing-package/
+- **DEG, SchneiTec Beyond ($47M; senior debt of up to $127M), signed August 2025:** https://deginvest-investments.de/portfolio/schneitec-beyond-co-ltd
+
+## The enterprises
+
+- **Food, Amru Rice:** Australian Embassy in Cambodia, joint media release “Cambodia–Australia trade ties grow stronger”, 6 March 2026, https://cambodia.embassy.gov.au/files/PENH/06032026-joint-media-release-Australian-Embassy-Amru-rice-exports-ENG.pdf. Also IFC disclosures, project 41831 (2019) and 603679 (2020).
+- **Energy, SchneiTec:** DEG, SchneiTec Beyond Co., Ltd, https://deginvest-investments.de/portfolio/schneitec-beyond-co-ltd
+
+## Watch items
+
+- A US$182 million syndicated green loan for a battery storage project (reported November 2026; no lender page found).
+- Germany’s €30 million concessional credit (framework agreement of November 2026; the KfW loan agreement is still to come).
+- AIIB, SchneiTec 150 MW Solar PV Power and BESS Project (project P000926; shown as proposed, no approval found).
+- The tenor, coupon, investors and arrangers of the SchneiTec Jupiter bond, and the rest of its $150 million package.
+
 ## Open gaps
 
 - Learning outcomes date from 2019.
-- Asian Development Bank lending: to read in the weekly review.
+- Asian Development Bank lending before 2026 (for example the Energy Transition Sector Development Program of December 2022) not yet read in full.
+- No enterprise yet for water, shelter, education, health or livelihood.
+- The seven standards and the asset figures were not re-read at source in the weekly review of 16 November 2026.
+
+Last weekly review: 16 November 2026.
