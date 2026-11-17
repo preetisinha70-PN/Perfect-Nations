@@ -6,7 +6,7 @@ First edition: 10 November 2026 (wave 5, the Americas of the remaining nations).
 
 ## The seven standards
 
-- **Food, 89.7%:** Not food insecure; 10.3% are moderately or severely food insecure. FAO, 2023, https://data.worldbank.org/indicator/SN.ITK.MSFI.ZS?locations=US
+- **Food, 86.3%:** Households food secure all year; 13.7% were food insecure at times in 2024. USDA ERS, 2025, https://ers.usda.gov/sites/default/files/_laserfiche/publications/113623/ERR-358_Summary.pdf?v=61636 (the national measure, chosen by the Steward-General on 16 November 2026 in place of the FAO figure, 89.7% food secure in 2023)
 - **Water, 97.6%:** Safely managed drinking water. WHO/UNICEF, 2024, https://data.worldbank.org/indicator/SH.H2O.SMDW.ZS?locations=US
 - **Shelter, 97%:** Safely managed sanitation; 0.1% of city dwellers live in slums. WHO/UNICEF, 2024, https://data.worldbank.org/indicator/SH.STA.SMSS.ZS?locations=US
 - **Energy, 100%:** 100% cook with clean fuels and technology; 100% have electricity. World Bank, 2024, https://data.worldbank.org/indicator/EG.CFT.ACCS.ZS?locations=US
@@ -14,7 +14,7 @@ First edition: 10 November 2026 (wave 5, the Americas of the remaining nations).
 - **Health, 88:** WHO service coverage index. WHO, 2023, https://ourworldindata.org/grapher/universal-health-coverage-index?country=~USA
 - **Livelihoods, 98.2%:** Above US$8.30 a day; 1.8% live below it. World Bank, 2024, https://data.worldbank.org/indicator/SI.POV.UMIC?locations=US
 
-Furthest from reach: Food (10.3%). Of Americans are moderately or severely food insecure.
+Furthest from reach: Food (13.7%). Of American households were food insecure at times in 2024.
 
 ## The Sovereign Assets
 
@@ -31,9 +31,24 @@ Furthest from reach: Food (10.3%). Of Americans are moderately or severely food 
 - **124.4%:** General government gross debt, share of GDP, 2025. IMF, WEO Oct 2026, https://www.imf.org/external/datamapper/GGXWDG_NGDP@WEO/USA
 - **2.3%:** Real GDP growth projected for 2026. IMF, WEO Oct 2026, https://www.imf.org/external/datamapper/NGDP_RPCH@WEO/USA
 - **Treasury securities and other public debt ($40.59tn):** Total public debt outstanding, which first passed $40 trillion in August 2026. https://primerates.com/?p=14034
+- **Section 32 food purchase for food banks ($472.5M):** USDA, announced 29 October 2026; dairy $165.5 million the largest line. https://content.govdelivery.com/accounts/USDAOC/bulletins/430ebf7
+- **Healthy Food Financing Initiative, FARE Fund ($16.5M):** Reinvestment Fund for USDA Rural Development, 2024-25 rounds completed 16 April 2026: 62 projects in 39 states, 30 rural; $9 million grants, $6 million loans, $1.5 million technical assistance. https://www.reinvestment.com/insights/healthy-food-financing-initiative-completes-2024-25-funding-cycle-with-16-5-million-to-promote-food-access-nationwide/
+- **Healthy Food Financing Partnerships, 2026 round ($20M):** opened 29 June 2026; grants of $200,000 to $3 million. https://www.reinvestment.com/?p=26386
+- **Ursa Re 2026-1 catastrophe bond ($900M target):** California Earthquake Authority, raised from $600 million on 11 November 2026; about four years, indemnity trigger; not yet priced when read. https://www.artemis.bm/news/california-earthquake-authority-lifts-ursa-re-2026-1-cat-bond-to-target-900m-of-reinsurance/
+- **Pennsylvania Fresh Food Financing Initiative ($30M):** state seed money leveraged with $145 million in additional investment; 88 projects financed as of June 2010 ($73.2 million loans, $12.1 million grants). https://www.reinvestment.com/insights/pennsylvania-fresh-food-financing-initiative/
+
+## Why food insecurity in the United States is not a harvest problem (16 November 2026)
+
+- Until 16 November 2026 the Food standard was the FAO measure (10.3% moderately or severely food insecure, 2023). The Steward-General chose the USDA household measure instead.
+- USDA Economic Research Service, Household Food Security in the United States in 2024 (ERR-358, December 2025, the last edition: USDA ended the report): 13.7% of households (18.3 million) were food insecure at times in 2024 because of a lack of money or other resources. https://ers.usda.gov/sites/default/files/_laserfiche/publications/113623/ERR-358_Summary.pdf?v=61636
+- SNAP: from fiscal year 2027 (1 October 2026) the federal share of state administrative costs falls from 50% to 25% (USDA Food and Nutrition Administration, proposed rule of 24 June 2026 codifying Public Law 119-21). https://www.fna.usda.gov/snap/fr-062426
+- The playbook Solution (sovereign drought insurance) does not fit the United States; Solution No. 51, The American Table Fund, replaces it on the blueprint.
 
 ## Open gaps
 
 - The debt and deficit figures are read in PrimeRates and FinChannel from Treasury data; to cite fiscaldata.treasury.gov directly.
 - The date debt first passed $40 trillion (August 2026) is read in ARY News (Reuters).
-- No Newswire item with a verified date yet.
+- The Newswire now has eight dated items (16 November 2026), each read on its article page. The Ballotpedia, ABA Banking Journal and Artemis items are secondary sources; the register lines cite the issuer where one exists.
+- The Ursa Re 2026-1 cat bond had not priced when read (11 November 2026): update its amount and status once it prices.
+- Decided 16 November 2026: the USDA household measure (13.7%, 2024) sets Food. USDA ended the report after the 2024 edition, so the figure will not refresh; watch for a successor survey.
+- The three more Solutions (16 November 2026) take their challenges from national statistics: Census (uninsured, 2025), the Nation’s Report Card (reading, 2024) and HUD’s 2025 AHAR, read through the Congressional Research Service; cite huduser.gov directly once its report link is confirmed.

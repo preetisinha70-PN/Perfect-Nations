@@ -1563,7 +1563,13 @@
      "https://data.worldbank.org/indicator/SI.POV.LMIC?locations=BJ"
     ]
    ],
-   "at_work": null,
+   "at_work": {
+    "name": "Regional DARES, distributed renewable energy, phase 1",
+    "amount": "$200M",
+    "money": true,
+    "status": "Approved",
+    "url": "https://www.worldbank.org/en/news/press-release/2026/06/22/world-bank-supports-regional-program-to-expand-renewable-energy-access-and-create-jobs-in-west-and-central-africa"
+   },
    "solutions": [],
    "design": null
   },
@@ -2335,7 +2341,13 @@
      "https://data.worldbank.org/indicator/SI.POV.UMIC?locations=CV"
     ]
    ],
-   "at_work": null,
+   "at_work": {
+    "name": "Cabo Verde Airports, concession and refurbishment",
+    "amount": "€20M",
+    "money": true,
+    "status": "Signed",
+    "url": "https://proparco.fr/en/carte-des-projets/aeroports-cv"
+   },
    "solutions": [],
    "design": null
   },
@@ -2409,11 +2421,11 @@
     ]
    ],
    "at_work": {
-    "name": "Second Higher Education Improvement Project",
-    "amount": "$80M",
+    "name": "Basic Education Improvement Project",
+    "amount": "$100M",
     "money": true,
     "status": "Approved",
-    "url": "https://projects.worldbank.org/en/projects-operations/project-detail/P180664"
+    "url": "https://www.worldbank.org/en/news/press-release/2025/08/31/new-world-bank-support-to-improve-education-and-learning-for-young-children-in-cambodia"
    },
    "solutions": [],
    "design": null
@@ -2641,7 +2653,13 @@
      "https://data.worldbank.org/indicator/SI.POV.DDAY?locations=CF"
     ]
    ],
-   "at_work": null,
+   "at_work": {
+    "name": "Emergency rehabilitation of the Boali hydroelectric plant",
+    "amount": "€5.2M",
+    "money": true,
+    "status": "Granted",
+    "url": "https://www.afd.fr/fr/commmuniques-de-presse/le-groupe-afd-consolide-son-engagement-aux-cotes-de-la-republique"
+   },
    "solutions": [],
    "design": null
   },
@@ -4898,7 +4916,13 @@
      "https://data.worldbank.org/indicator/SI.POV.NAHC?locations=GM"
     ]
    ],
-   "at_work": null,
+   "at_work": {
+    "name": "Gambia Renewable Energy",
+    "amount": "€105.5M",
+    "money": true,
+    "status": "Signed",
+    "url": "https://www.eib.org/en/projects/all/20170305"
+   },
    "solutions": [],
    "design": null
   },
@@ -14244,20 +14268,20 @@
    "name": "United States",
    "url": "https://perfectnations.com/blueprints/united-states/",
    "standard": "Food",
-   "gap": "10.3%",
-   "gap_text": "Of Americans are moderately or severely food insecure.",
+   "gap": "13.7%",
+   "gap_text": "Of American households were food insecure at times in 2024.",
    "source": {
-    "label": "FAO, 2023",
-    "url": "https://data.worldbank.org/indicator/SN.ITK.MSFI.ZS?locations=US"
+    "label": "USDA ERS, 2025",
+    "url": "https://ers.usda.gov/sites/default/files/_laserfiche/publications/113623/ERR-358_Summary.pdf?v=61636"
    },
    "seven": [
     [
      "Food",
-     "89.7%",
-     89.7,
-     "Not food insecure; 10.3% are moderately or severely food insecure",
-     "FAO, 2023",
-     "https://data.worldbank.org/indicator/SN.ITK.MSFI.ZS?locations=US"
+     "86.3%",
+     86.3,
+     "Households food secure all year; 13.7% were food insecure at times in 2024",
+     "USDA ERS, 2025",
+     "https://ers.usda.gov/sites/default/files/_laserfiche/publications/113623/ERR-358_Summary.pdf?v=61636"
     ],
     [
      "Water",
@@ -14308,9 +14332,23 @@
      "https://data.worldbank.org/indicator/SI.POV.UMIC?locations=US"
     ]
    ],
-   "at_work": null,
-   "solutions": [],
-   "design": null
+   "at_work": {
+    "name": "Section 32 food purchase for food banks",
+    "amount": "$472.5M",
+    "money": true,
+    "status": "Announced",
+    "url": "https://content.govdelivery.com/accounts/USDAOC/bulletins/430ebf7"
+   },
+   "solutions": [
+    51
+   ],
+   "design": {
+    "no": 51,
+    "title": "The American Table Fund",
+    "idea": "A fresh food fund in every state, seeded by the state and multiplied by community lenders, so the money a family has buys enough good food.",
+    "advises": "The United States should seed a fresh food fund in every state, with state money taking the first loss and community lenders multiplying it with bank capital and New Markets Tax Credits. The fund finances grocers, food banks and the cold chains that carry food from American farms to the counties where families go short, while grocers and health plans match every SNAP dollar a family spends on fruit and vegetables, so the money a family has buys more fresh food.",
+    "url": "https://perfectnations.com/state-of-nations/#solution-51"
+   }
   },
   {
    "slug": "uruguay",

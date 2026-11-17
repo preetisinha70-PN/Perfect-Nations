@@ -1,6 +1,9 @@
 #!/usr/bin/env python3
 """
-PERFECT NATIONS - THE MORE SOLUTIONS FILE - v1.0 - 2026-11-15 (the Steward-General)
+PERFECT NATIONS - THE MORE SOLUTIONS FILE - v1.1 - 2026-11-16 (the Steward-General)
+v1.1 (16 Nov 2026): SOURCE_OVERRIDE lets a nation's own statistics office stand as the source of a challenge in
+  CHALLENGE_OVERRIDE, where the cross-nation indicator misses the nation's real gap (the United States first:
+  the uninsured, reading below the basic level, homelessness; Preeti Sinha, 16 Nov 2026).
 
 Builds data/more-solutions.json: for every open blueprint, up to three more Solutions, shown as a deck of
 stacked cards beside the nation's lead Solution (tools/build_nations.py, v12.9 and later).
@@ -44,6 +47,16 @@ CHALLENGE_OVERRIDE = {
     ('lebanon', 'Energy'): 'The national power company of Lebanon supplies about one third of national demand, and existing plants give 8 to 10 hours of power a day at best.',
     ('palestine', 'Energy'): 'The Gaza grid has been down since October 2023, and 38.3% of Palestinians live in Gaza.',
     ('syria', 'Energy'): 'Generation in Syria passed 3,000 MW in January 2026, against demand of about 6,500 MW.',
+    ('united-states', 'Health'): '26.7 million people in the United States, 7.9% of the population, had no health insurance for the whole of 2025.',
+    ('united-states', 'Education'): 'Around 40% of fourth graders in the United States read below the NAEP Basic level in 2024, the largest share since 2002.',
+    ('united-states', 'Shelter'): '745,652 people in the United States were homeless on a single night in January 2025, and 266,320 of them were unsheltered.',
+}
+
+# v1.1: the source of an overridden challenge, where it is the nation's own statistics and not the guarantee's source.
+SOURCE_OVERRIDE = {
+    ('united-states', 'Health'): {'label': 'US Census Bureau, September 2026', 'url': 'https://www.census.gov/library/publications/2026/demo/p60-291.html'},
+    ('united-states', 'Education'): {'label': 'The Nation’s Report Card, January 2025', 'url': 'https://www.nagb.gov/news-and-events/news-releases/2025/nations-report-card-decline-in-reading-progress-in-math.html'},
+    ('united-states', 'Shelter'): {'label': 'HUD, 2025 AHAR (via Congressional Research Service), 2026', 'url': 'https://www.everycrsreport.com/files/2026-07-16_IF12985_72d0a36116392bd1d0a8436319884dc54412a17c.html'},
 }
 
 
@@ -164,7 +177,7 @@ def choose(slug, son):
             continue
         ch = challenge(slug, d['nation'], g)
         picks.append({'standard': g['name'], 'value': g['value'], 'note': g.get('note'), 'challenge': ch,
-                      'source': {'label': g.get('source') or 'Source', 'url': g['url']}})
+                      'source': SOURCE_OVERRIDE.get((slug, g['name'])) or {'label': g.get('source') or 'Source', 'url': g['url']}})
         if len(picks) == 3:
             break
     return d, lead, picks

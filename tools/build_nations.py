@@ -98,7 +98,9 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 PAGES, DATA, HERE = ROOT / 'pages', ROOT / 'data', ROOT / 'tools' / 'nation'
-VERSION = '14.0'  # no Steward named and no super intelligence on any blueprint (Preeti Sinha, 16 Nov 2026)
+VERSION = '14.2'  # the cup: every sovereign asset, valued; What we do compressed on laptops and phones (the Steward-General, 16 Nov 2026)
+# 14.1: the Nation Steward card is back above the Newswire's news, as before v14.0 (Preeti Sinha, 16 Nov 2026, evening)
+# 14.0: no Steward named and no super intelligence on any blueprint (Preeti Sinha, 16 Nov 2026)
 # 13.17: Estonia, Portugal and the Dominican Republic portraits; Finland's upright portrait (16 Nov 2026)
 # 13.16: seven more portraits; Kenya, Ghana and South Africa from pn-hog uploads (16 Nov 2026)
 # 13.3: the head of state's portrait is larger (88 px laptops, 72 px phones), and the National Day mirrors it: an 88 px gold date tile at the far right, its name the same size as the head of state's (the Steward-General, 15 Nov 2026)
@@ -625,6 +627,9 @@ def protocol_band(d, slug):
                nd['day'], MON[nd['month'] - 1], label, when, local))
 
 
+WORDS = ['No', 'One', 'Two', 'Three', 'Four', 'Five', 'Six', 'Seven', 'Eight', 'Nine', 'Ten']
+
+
 def what_we_do(d):
     name = d['nation']
     g, bind = standards(d)
@@ -632,9 +637,10 @@ def what_we_do(d):
     names = [x['name'] for x in items]
     if len(names) > 1:
         # v11.3: the names are on the cards below, so the tile names the first and the last
-        q1 = '%s sovereign assets, valued, from %s to %s.' % ((['No', 'One', 'Two', 'Three', 'Four', 'Five', 'Six', 'Seven'][len(names)] if len(names) < 8 else str(len(names))), names[0], names[-1])
+        # v14.1: every sovereign asset, not only the five on the cards (the Steward-General, 16 Nov 2026)
+        q1 = 'Every sovereign asset, valued. %s lead the way below.' % (WORDS[len(names)] if len(names) < len(WORDS) else str(len(names)))
     else:
-        q1 = 'We value what %s owns: its sovereign assets, from its people to its land.' % name
+        q1 = 'Every sovereign asset, valued, from the people to the land.'
     lines = [x for x in (d.get('capital') or {}).get('register') or [] if x.get('name') and x.get('cat') and x.get('url')]
     # v11.3: one short line a tile; the kinds of source are the filters of the register, so they are not repeated here
     q2 = (('One instrument on record, sourced.' if len(lines) == 1 else '%d instruments and investments on record, every one sourced.' % len(lines)) if lines
@@ -670,18 +676,23 @@ def assets(d):
             '<p class="bpx-acard__fig"><b>%s</b>%s</p><h3>%s</h3>%s</li>'
             % (i, i + 1, ent(x.get('figure') or ''), '<span>%s</span>' % ent(x['label']) if x.get('label') else '',
                ent(x['name']), '<p>%s</p>' % ent(x['text']) if x.get('text') else ''))
+    # v14.1: Perfect Nations values every sovereign asset a nation owns; the cards show the ones that lead
+    n = len(cards)
+    lead = ('Perfect Nations values every sovereign asset %s owns. These %s lead: each is owned today, earns today and can carry '
+            'the nation toward seven basic standards of living for every citizen.' % (ent(the_name(name)), WORDS[n].lower() if n < len(WORDS) else n)) if n > 1 else (
+            'Perfect Nations values every sovereign asset %s owns, from its people to its land.' % ent(the_name(name)))
     if not cards:
         cards = ['<li class="bpx-acard"><span class="bpx-acard__n" aria-hidden="true">01</span><h3>The ledger of %s is in preparation.</h3>'
                  '<p>The Surveyor values what the nation owns, from its people to its land, with a source for every figure.</p></li>' % ent(name)]
     return (
         '<section class="bpx-band bpx-er bpx-assets" id="bp-assets" aria-labelledby="bp-assets-h"><div class="bpx-in">'
         '<div class="bpx-head"><div>%s<h2 class="bpx-h2" id="bp-assets-h">%s</h2></div>'
-        '<p class="bpx-lead">Each is owned today, earns today, and can carry %s toward seven basic standards of living for every citizen.</p></div>'
+        '<p class="bpx-lead">%s</p></div>'
         '<ul class="bpx-acards" data-n="%d">%s</ul>'
         '<div class="bpx-foot"><a class="bpx-link" href="#bp-sources">Every figure, with its source</a>'
         '<a class="bpx-link" href="https://perfectnations.com/sovereign-assets/" target="_blank" rel="noopener noreferrer">The Sovereign Assets ledger</a></div>'
         '</div></section>' % (step_eb('01', 'Assets', 'The cup', 'Sovereign Assets'),
-                              ent(a.get('heading') or 'Five assets no balance sheet counts.'), ent(name), len(cards), ''.join(cards)))
+                              ent(a.get('heading') or 'Five assets no balance sheet counts.'), lead, len(cards), ''.join(cards)))
 
 
 def stew_face(photo, steward):
@@ -748,14 +759,18 @@ def capital(d, p):
         '<ul class="bpx-irs" id="bp-irs">%s</ul><button type="button" class="bpx-showall" id="bp-showall"%s>Show all %d lines</button></div>'
         '<div class="bpx-nw" id="bp-newswire"><div class="bpx-nw__h"><h3>The %s Newswire</h3>'
         '<a class="bpx-link" href="https://perfectnations.com/state-of-nations/#sn-wire" target="_blank" rel="noopener noreferrer">The Solutions Wire</a></div>'
-        '<div class="bpx-stew"><p><time datetime="%s">Last updated %s</time></p></div>'
+        # v14.1 (Preeti Sinha, 16 Nov 2026, evening: "Add the SI nations Stewards back in every blueprint above the
+        # newswire like it used to be"): the Nation Steward card is back, between the Newswire's heading and its news
+        '<div class="bpx-stew">%s'
+        '<p><b>%s</b><span>%s &#183; SI Researcher</span><time datetime="%s">Last updated %s</time></p></div>'
         '<ul class="bpx-wire">%s</ul><button type="button" class="bpx-showall bpx-allnews" hidden>All news</button></div></div>'
         '</div></section>'
         % (ART['wreath'].replace('bpx-art bpx-art--wreath', 'bpx-art bpx-art--wreath bpx-mark'),
            step_eb('02', 'Capital', 'The laurels', 'Capital Architecture'), ent(c.get('heading') or 'Capital tied to human outcomes.'), ent(name),
            ('<p class="bpx-k">The record in figures</p><ul class="bpx-recs bpx-rail">%s</ul>' % recs) if recs else '',
            filters, ''.join(irs), '' if len(lines) > 4 else ' hidden', len(lines),
-           ent(name), ent(d.get('updated', '')), ent(long_date(d.get('updated'))),
+           ent(name), stew_face(p.get('steward_photo'), steward),
+           ent(steward.get('name', '')), ent(steward.get('role', '')), ent(d.get('updated', '')), ent(long_date(d.get('updated'))),
            ''.join(wire)))
 
 
@@ -1236,6 +1251,9 @@ def build(slug, sbn, son, today):
     script = (HERE / 'script.js').read_text(encoding='utf-8').replace('/*pn:cfg*/', 'var CFG = %s;' % js_str(cfg))
     head = (
         '<!-- PERFECT NATIONS . NATIONAL BLUEPRINT . %s . v%s . %s . Built by tools/build_nations.py: never edit by hand. -->\n'
+        '<!-- v14.2 (16 November 2026): the cup counts every sovereign asset, and What we do is about a third shorter. -->\n'
+        '<!-- v14.1 (16 November 2026, evening): the Nation Steward card is back above the Newswire\'s news, as it was\n'
+        '     before v14.0, on the request of Preeti Sinha, President and CEO. -->\n'
         '<!-- v14.0 (16 November 2026): Perfect Nations is run by Preeti Sinha, President and CEO: no Steward is named on the page\n'
         '     (the Newswire shows its date only; a Solution from the research desk is signed Perfect Nations), and the hero\n'
         '     names innovative financing for development alone. -->\n'
