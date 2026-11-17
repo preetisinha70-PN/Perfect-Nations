@@ -19,6 +19,11 @@ run this build, run tools/check_page.py, preview with tools/preview_art.py, rais
 pages/manifest.json and open a pull request "For approval: Art of Nations vX.Y, [what changed]".
 The build refuses: straight apostrophes or contractions in the copy, image URLs outside the Media
 Library, a missing field, and any non-ASCII character in the result.
+
+v7.0 (17 Nov 2026): the page is about the philosophy of Art of Nations and carries no price (the Steward-General,
+17 Nov 2026). Prices live only in the Art of Nations Gallery (the catalogue's "shop"). The build refuses a price
+field in the catalogue and any amount of money in the page. A work with a buy_url opens its gallery page from the
+viewer ("Acquire in the gallery"); every conversation goes to the Contact page.
 """
 import html
 import json
@@ -32,6 +37,8 @@ TPL = ROOT / 'art' / 'art-of-nations.template.html'
 OUT = ROOT / 'pages' / 'art-of-nations.html'
 MEDIA = 'https://perfectnations.com/wp-content/uploads/'
 DEFAULT_STATUS = 'Available in the gallery'
+MONEY = re.compile(r'(\$|&#36;|&dollar;|\bUSD|\bUS\$)\s?\d')
+PRICE_KEYS = ('price', 'prices', 'original_price', 'print_prices', 'print_prices_line', 'print_ship')
 CONTRACTION = re.compile(r"\b\w+(n['’]t|['’](re|ve|ll|d|m))\b|\b(it|that|there|here|what|who|let)['’]s\b", re.I)
 PROBLEMS = []
 
@@ -108,22 +115,15 @@ def card(i, p, cat, n):
         return ''
     enquire = link(where, cat['contact'] + '?about=' + p['enquire'])
     buy = link(where, p['buy_url']) if p.get('buy_url') else ''
-    price = copy(where, p.get('price', ''))
     status = p.get('status') or DEFAULT_STATUS
     sw = swatch(p['colours'])
-    acts = []
-    # v6.0: every sale is made in the gallery (the Steward-General, 12 Nov 2026). A work with a buy_url
-    # shows Buy, which opens its gallery page; a work not yet in the gallery falls back to Enquire.
+    # v7.0: the wall shows the collection, with no price and no Buy (the Steward-General, 17 Nov 2026). The viewer
+    # offers "Acquire in the gallery" (the work's gallery page) or, for a work not yet in the gallery, a conversation.
     if not for_sale(status):
         enquire = buy = ''
     elif buy:
         enquire = ''
-        acts.append('<a class="aon-btn aon-btn--sm" href="%s">Buy</a>' % buy)
-    else:
-        acts.append('<a class="aon-btn aon-btn--sm" href="%s">Enquire</a>' % enquire)
     extra = ''
-    if price:
-        extra += '\n        <p class="aon-price">%s</p>' % price
     if status != DEFAULT_STATUS:
         extra += '\n        <p class="aon-chip">%s</p>' % copy(where, status)
     data = {
@@ -131,7 +131,7 @@ def card(i, p, cat, n):
         'statement': copy(where, p['statement']),
         'spec': copy(where, p['spec']), 'alt': copy(where, p['alt']), 'zoom': media(where, p['zoom']),
         'src': media(where, pick(p['images'], 768)), 'srcset': srcset(where, p['images']), 'sw': esc(sw[5:]),
-        'enquire': enquire, 'buy': buy, 'price': price,
+        'enquire': enquire, 'buy': buy,
         'status': copy(where, status) if status != DEFAULT_STATUS else '',
         'blueprint': link(where, p['blueprint']) if p.get('blueprint') else '',
     }
@@ -151,11 +151,10 @@ def card(i, p, cat, n):
         <p class="aon-nation"><i class="aon-sw" style="%(sw)s"></i>%(nation)s</p>
         <h3 class="aon-h3">%(title)s</h3>%(by)s
         <p class="aon-stmt">%(statement)s</p>%(extra)s
-        <div class="aon-acts">%(acts)s</div>
       </article>''' % {
         'slug': esc(p['slug']), 'attrs': attrs, 'zoom': data['zoom'], 'i': n, 'title': data['title'], 'artist': data['artist'],
         'src': media(where, pick(p['images'], 600)), 'srcset': data['srcset'], 'alt': data['alt'], 'sw': esc(sw),
-        'nation': data['nation'], 'statement': data['statement'], 'extra': extra, 'acts': ''.join(acts), 'by': by,
+        'nation': data['nation'], 'statement': data['statement'], 'extra': extra, 'by': by,
         'fcls': frame_cls, 'fstyle': frame_style, 'pcls': pic_cls, 'iw': iw, 'ih': ih,
     }
 
@@ -176,16 +175,16 @@ def origin(n, o, cat):
         'title': copy(where, o['title']), 'artist': copy(where, o['artist']), 'statement': copy(where, o['statement']),
         'spec': copy(where, o['spec']), 'alt': copy(where, o['alt']), 'zoom': media(where, o['zoom']),
         'src': media(where, pick(o['images'], 768)), 'srcset': srcset(where, o['images']),
-        'enquire': enquire, 'buy': buy, 'price': copy(where, o.get('price', '')),
+        'enquire': enquire, 'buy': buy,
         'status': copy(where, status) if status != DEFAULT_STATUS else '',
     }
     attrs = ' '.join('data-%s="%s"' % (k, v) for k, v in data.items() if v != '')
     acts = ['<a class="aon-btn aon-btn--sm aon-btn--line" href="%s" data-open="%d">View it whole</a>' % (data['zoom'], n)]
     if buy:
-        acts.append('<a class="aon-btn aon-btn--sm" href="%s">Buy</a>' % buy)
+        acts.append('<a class="aon-btn aon-btn--sm" href="%s">Acquire in the gallery</a>' % buy)
     elif enquire:
-        acts.append('<a class="aon-btn aon-btn--sm" href="%s">Enquire</a>' % enquire)
-    k = ' &#183; '.join(x for x in (copy(where, o.get('price', '')), data['spec'], data['status']) if x)
+        acts.append('<a class="aon-btn aon-btn--sm" href="%s">Ask about this work</a>' % enquire)
+    k = ' &#183; '.join(x for x in (data['spec'], data['status']) if x)
     return '''    <div class="aon-origin aon-rv" id="aon-%(slug)s" data-work %(attrs)s>
       <a class="aon-frame" href="%(zoom)s" data-open="%(n)d" aria-label="Open %(title)s at full size"><span class="aon-mat"><span class="aon-pic aon-pic--land" style="--ar:%(w)d/%(h)d"><img src="%(src)s" srcset="%(srcset)s" sizes="(min-width:900px) 600px, 92vw" alt="%(alt)s" width="%(w)d" height="%(h)d" loading="lazy" decoding="async"></span></span></a>
       <div class="aon-origin__txt">
@@ -216,10 +215,9 @@ def book(b, cat):
     if pages:
         acts.append('<button class="aon-btn aon-btn--sm aon-btn--line" type="button" data-look>Look inside <small>%d</small></button>' % len(pages))
     if buy:
-        acts.append('<a class="aon-btn aon-btn--sm" href="%s">Buy</a>' % buy)
+        acts.append('<a class="aon-btn aon-btn--sm" href="%s">Acquire in the gallery</a>' % buy)
     else:
         acts.append('<a class="aon-btn aon-btn--sm" href="%s">Reserve a copy</a>' % reserve)
-    price = ('\n          <p class="aon-price" style="color:var(--g)">%s</p>' % copy(where, b['price'])) if b.get('price') else ''
     obj = ('<button class="aon-bk__obj" type="button" data-look aria-label="Look inside %s">' % copy(where, b['title'])) if pages else '<span class="aon-bk__obj">'
     end = '</button>' if pages else '</span>'
     return '''      <article class="aon-bk aon-rv" id="aon-%(slug)s" data-book="%(title)s" data-enquire="%(reserve)s">
@@ -228,14 +226,14 @@ def book(b, cat):
           <p class="aon-tag">%(tag)s</p>
           <h3 class="aon-h3">%(title)s</h3>
           <p class="aon-stmt">%(copy)s</p>
-          <p class="aon-spec">%(spec)s</p>%(price)s
+          <p class="aon-spec">%(spec)s</p>
         </div>
         <div class="aon-acts">%(acts)s</div>
         <ol class="aon-pages" hidden>%(items)s</ol>
       </article>''' % {
         'slug': esc(b['slug']), 'title': copy(where, b['title']), 'reserve': buy or reserve, 'obj': obj, 'end': end,
         'src': media(where, pick(b['cover'], 600)), 'srcset': srcset(where, b['cover']), 'alt': copy(where, b['cover_alt']),
-        'tag': copy(where, b['tag']), 'copy': copy(where, b['copy']), 'spec': copy(where, spec), 'price': price,
+        'tag': copy(where, b['tag']), 'copy': copy(where, b['copy']), 'spec': copy(where, spec),
         'acts': ''.join(acts), 'items': items,
     }
 
@@ -246,13 +244,12 @@ def portrait(j, p, cat, n):
     need(p, where, 'slug', 'nation', 'alt', 'images', 'zoom', 'blueprint')
     data = {
         'nation': copy(where, p['nation']), 'title': 'Nation portrait', 'artist': copy(where, p.get('artist') or cat.get('house_artist', 'Preeti Sinha')),
-        'statement': copy(where, 'The nation in its own colours, from its Perfect Nations blueprint. Shipped worldwide.'),
-        'spec': 'Original 24 &#215; 24 in: %s' % copy(where, cat['original_price']), 'alt': copy(where, p['alt']),
+        'statement': copy(where, 'The nation in its own colours, from its Perfect Nations blueprint.'),
+        'spec': 'Nation portrait', 'alt': copy(where, p['alt']),
         'zoom': media(where, p['zoom']), 'src': media(where, pick(p['images'], 300)), 'srcset': srcset(where, p['images']),
         'blueprint': link(where, p['blueprint']), 'print': '1',
         'enquire': '' if p.get('buy_url') else link(where, cat['contact'] + '?about=print-' + p['slug']),
         'buy': link(where, p['buy_url']) if p.get('buy_url') else '',
-        'price': copy(where, cat.get('print_prices_line', '').replace('\u00b7', '-')),
         'status': '',
     }
     attrs = ' '.join('data-%s="%s"' % (k, v) for k, v in data.items() if v != '')
@@ -266,7 +263,16 @@ def portrait(j, p, cat, n):
 def main():
     cat = json.loads(CAT.read_text(encoding='utf-8'))
     tpl = TPL.read_text(encoding='utf-8')
-    need(cat, 'catalogue', 'version', 'updated', 'series_total', 'contact', 'paintings', 'shop', 'original_price')
+    need(cat, 'catalogue', 'version', 'updated', 'series_total', 'contact', 'paintings', 'shop')
+    # v7.0: no price on the page, and none kept here; prices live only in the Art of Nations Gallery
+    for key in PRICE_KEYS:
+        if cat.get(key):
+            PROBLEMS.append('catalogue: "%s" holds a price; prices live only in the gallery (v7.0)' % key)
+    for group in ('origins', 'paintings', 'books', 'portraits'):
+        for w in cat.get(group) or []:
+            for key in PRICE_KEYS:
+                if w.get(key):
+                    PROBLEMS.append('%s %s: "%s" holds a price; prices live only in the gallery (v7.0)' % (group, w.get('slug', '?'), key))
     link('catalogue contact', cat.get('contact', ''))
     paintings = cat.get('paintings') or []
     total = int(cat.get('series_total') or 195)
@@ -293,19 +299,16 @@ def main():
     dots = ''.join('<i class="on is-new"></i>' if k == shown - 1 else ('<i class="on"></i>' if k < shown else '<i></i>') for k in range(total))
     first = paintings[0] if paintings else {}
     shop = link('catalogue shop', cat.get('shop') or '').rstrip('/')
-    painted = sum(1 for p in paintings if p.get('buy_url'))
     if PROBLEMS:
         sys.exit('The catalogue needs fixing before the page can be built:\n  - ' + '\n  - '.join(PROBLEMS))
     slots = {
-        'VERSION': esc(cat['version']), 'DATE': esc(cat['updated']), 'COUNT': str(shown), 'COUNT2': '%02d' % n, 'PAPER': esc(cat['print_prices']['paper']), 'CANVAS': esc(cat['print_prices']['canvas']), 'PCOUNT': str(len(portraits)), 'PORTRAITS': pts, 'CREDIT': copy('credit', credit),
+        'VERSION': esc(cat['version']), 'DATE': esc(cat['updated']), 'COUNT': str(shown), 'COUNT2': '%02d' % n, 'PCOUNT': str(len(portraits)), 'PORTRAITS': pts, 'CREDIT': copy('credit', credit),
         'TOTAL': str(total), 'DOTS': dots, 'CARDS': cards, 'BOOKS': books, 'CONTACT': esc(cat['contact']),
         'FIRST_ZOOM': esc(first['zoom']), 'FIRST_SRC': esc(pick(first['images'], 768)),
         'FIRST_SRCSET': srcset('hero', first['images']), 'FIRST_ALT': esc(first['alt']),
         'FIRST_TITLE': esc(first['title']), 'FIRST_NATION': esc(first['nation']), 'FIRST_SW': esc(swatch(first['colours'])),
         'FIRST_ARTIST': esc(first['artist']), 'FIRST_INDEX': str(len(origins)), 'ORIGINS': found,
-        'PRINT_SHIP': copy('print_ship', cat.get('print_ship', 'Shipped worldwide.')),
-        'SHOP': shop, 'ORIG_PRICE': copy('original_price', cat['original_price']), 'PAINTED': str(painted),
-        'PAINTED_WORD': ['None', 'One', 'Two', 'Three', 'Four', 'Five', 'Six', 'Seven', 'Eight', 'Nine', 'Ten'][painted] if painted <= 10 else str(painted),
+        'SHOP': shop,
     }
     out = tpl
     for k, v in slots.items():
@@ -318,6 +321,9 @@ def main():
         sys.exit('the first pn- id must be pn-art, found %s' % (first_id.group(1) if first_id else None))
     if re.search(r'\bid\s*=\s*["\']pn-(?!art["\'])', out):
         sys.exit('only the root may use an id starting pn- (the Live Pages plugin reads them)')
+    money = MONEY.search(out)
+    if money:
+        sys.exit('the page carries an amount of money (%r); prices live only in the gallery (v7.0)' % out[max(0, money.start() - 60):money.end() + 20])
     bad = [(i, c) for i, c in enumerate(out) if ord(c) > 126]
     if bad:
         sys.exit('non-ASCII characters in the result: %r' % bad[:5])
