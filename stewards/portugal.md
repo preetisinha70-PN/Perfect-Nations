@@ -34,4 +34,6 @@ Furthest from reach: Livelihood (16.4%). Of people in Portugal live below the na
 ## Open gaps
 
 - The tourism share (12.2%, 2020) reflects a pandemic year and is not used.
-- No Newswire item with a verified date yet.
+- Newswire opened 16 November 2026: eight items (EIB, Government of Portugal, Caixin Global), three older ones in archive/newswire/portugal.json. Every headline, date and publisher read on the article page.
+- Two primary figures for the recovery plan: the Government gives €21,905 million as the total allocation (29 September 2026) and €22.2 billion (16.3 grants, 5.9 loans) in its note on the ninth payment; the record keeps the Council figure of 8 October 2024.
+- Watch: the Commission's assessment and payment of the tenth and final RRF request (€4,672 million); the EIB extreme weather package and Lisbon metro loan, expected by the end of 2026; the new 20-year OT syndicated in 2026 (no open page found).
