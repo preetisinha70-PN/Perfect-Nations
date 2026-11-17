@@ -276,7 +276,7 @@
     wireRegister();
     var rg = q('.bpx-stats [data-k="reg"] b'); if (rg) rg.textContent = String(lines.length);
     var t2 = q('.bpx-t[href="#bp-capital"] .bpx-t__q');
-    if (t2) t2.textContent = lines.length + ' instruments and investments on record, every one sourced.';
+    if (t2) t2.textContent = lines.length === 1 ? 'One instrument on record, sourced.' : lines.length + ' instruments and investments on record, every one sourced.';
   }
   function assets(list) {
     var ul = q('.bpx-acards'); if (!ul || !list || !list.length) return;
@@ -293,9 +293,8 @@
     });
     var t1 = q('.bpx-t[href="#bp-assets"] .bpx-t__q');
     if (t1 && items.length > 1) {
-      var words = ['No', 'One', 'Two', 'Three', 'Four', 'Five', 'Six', 'Seven'];
-      var nm = items.map(function (x) { return x.name; });
-      t1.textContent = (words[nm.length] || String(nm.length)) + ' sovereign assets, valued, from ' + nm[0] + ' to ' + nm[nm.length - 1] + '.';
+      var words = ['No', 'One', 'Two', 'Three', 'Four', 'Five', 'Six', 'Seven', 'Eight', 'Nine', 'Ten'];
+      t1.textContent = 'Every sovereign asset, valued. ' + (words[items.length] || String(items.length)) + ' lead the way below.';
     }
   }
   function enterprises(list) {

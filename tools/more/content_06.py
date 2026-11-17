@@ -11,9 +11,9 @@ CONTENT = {
   ('C', 'Reading Partners for Polish Schools', "Poland should invite its publishers, banks and technology companies to co-finance reading support in the schools where children read least, so every child reads by the end of primary school."),
  ],
  'portugal': [
-  ('D', 'A Family Doctor for Every Portuguese', "Portugal should finance health centres and family doctors for the regions where too many people have none, with the Council of Europe Development Bank and the European Investment Bank, so essential care reaches every family."),
-  ('C', 'From the Market to the Family', "Portugal should invite its supermarkets, food producers and fishing companies to co-finance fresh food support for families on low incomes, so every household eats well."),
-  ('P', 'Reading Support for Every School in Portugal', "Portugal should invite private investors to finance reading tutors and school libraries, with returns from the state as reading improves, so every child reads by the end of primary school."),
+  ('D', 'No Portuguese Without a Family Doctor', "Portugal should finance a new generation of family health units in the interior, the Algarve and the outer suburbs of Lisbon with the Council of Europe Development Bank and the European Investment Bank, lending long against the national health service budget, so every family is registered with a doctor and a nurse who know its name."),
+  ('C', 'From Atlantic Catch to Family Table', "Portugal should invite its fishing fleets, canneries, supermarket chains and farm cooperatives into a food partnership that turns surplus catch and harvest into fresh food for families on low incomes, sold through local markets with vouchers the partners co-finance, so every household eats well and nothing good goes to waste."),
+  ('P', 'Impact Bonds for Every Young Reader', "Portugal should scale its social impact bonds into a national reading programme: impact investors finance tutors, school libraries and daily reading time in the schools where children read least, and the state returns their capital only when reading results improve, so every child reads by the end of primary school."),
  ],
  'qatar': [
   ('P', 'Clinics for Every Community', "Qatar should invite private investors and health operators to finance primary care clinics in every community, including those where workers live, so essential care reaches every resident."),
