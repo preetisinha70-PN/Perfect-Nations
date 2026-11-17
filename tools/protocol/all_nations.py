@@ -439,6 +439,8 @@ PD = {'label': 'public domain'}
 CC_BY_SA_2 = {'label': 'CC BY-SA 2.0', 'url': 'https://creativecommons.org/licenses/by-sa/2.0/'}
 CC_BY_2_5_DK = {'label': 'CC BY 2.5 DK', 'url': 'https://creativecommons.org/licenses/by/2.5/dk/deed.en'}
 GOJ = {'label': 'Government of Japan Standard Terms of Use 2.0, compatible with CC BY 4.0'}
+CC_BY_3_CL = {'label': 'CC BY 3.0 CL', 'url': 'https://creativecommons.org/licenses/by/3.0/cl/'}
+CC_BY_SA_2_5 = {'label': 'CC BY-SA 2.5', 'url': 'https://creativecommons.org/licenses/by-sa/2.5/'}
 # Portraits by office (the Steward-General, 15 November 2026): files named pn-hos-<slug> show the head of state, files
 # named pn-hog-<slug> the head of government. PORTRAITS holds heads of state; PORTRAITS_HOG heads of government.
 # Where one person holds both offices (Brazil, Kenya, the United States, Mexico, Ghana, the Philippines, Cyprus, South
@@ -502,6 +504,21 @@ PORTRAITS = {
     'liberia': (UP + 'pn-hos-liberia-234x300.jpg', 'Daniel Torok, The White House, cropped', PD),
     'cameroon': (UP + 'prominent-leader-portrait-233x300.jpg', 'Adam Schultz, The White House, 2022, cropped', PD),
     'eswatini': (UP + 'perfect-nations-leader-portrai-214x300.jpg', 'Lawrence Jackson, The White House, 2009, cropped', PD),
+    # seventh batch (17 November 2026): the Steward-General's pn-hog uploads of 16 and 17 November; credits and licences
+    # from their captions (citing the Wikimedia Commons files) and their file data
+    'uzbekistan': (UP + 'pn-hog-uzbekistan-195x300.jpg', 'Press Service of the President of Uzbekistan, 2018, cropped', CC_BY_SA_4),
+    'azerbaijan': (UP + 'pn-hog-azerbaijan-239x300.jpg', 'Press Service of the President of Azerbaijan, 2018, cropped', CC_BY_4),
+    'turkiye': (UP + 'pn-hog-turkey-300x185.jpg', 'Presidential Executive Office of Russia (kremlin.ru), 2019', CC_BY_4),
+    'el-salvador': (UP + 'pn-hog-el-salvador-200x300.jpg', 'AndreX, 2019', CC_BY_SA_4),
+    'chile': (UP + 'pn-hog-chile-238x300.jpg', 'Government of Chile', CC_BY_3_CL),
+    'bolivia': (UP + 'pn-hog-bolivia-235x300.jpg', 'Press Office, Presidency of Chile, cropped', CC_BY_3_CL),
+    'guyana': (UP + 'pn-hog-guyana-257x300.jpg', 'Alan Santos, Presidency of Brazil, 2022, cropped', CC_BY_2),
+    # Commons: Retrato_presidente_Yamandú_Orsi_(cropped).jpg, the 2025 official portrait (176 x 235, enough for the
+    # 72 px circle); the file data names Ernesto Ryan. The 2014 photograph (pn-hog-uruguay-1) is kept in the library.
+    'uruguay': (UP + 'pn-hog-uruguay.jpg', 'Ernesto Ryan, Presidency of Uruguay, cropped', CC_BY_SA_2_5),
+    'suriname': (UP + 'pn-hog-suriname-212x300.jpg', 'Ricardo Stuckert, Presidency of Brazil, cropped', CC_BY_SA_4),
+    'mozambique': (UP + 'pn-hog-mozambique-224x300.jpg', 'Ricardo Stuckert, Presidency of Brazil, cropped', CC_BY_SA_4),
+    'costa-rica': (UP + 'pn-hog-costa-rica-200x300.jpg', 'Esteban Rojas Saurez, Legislative Assembly of Costa Rica, cropped', {'label': 'public domain in Costa Rica'}),
     # head of state on record (the band shows the Prime Minister)
     'albania': (UP + 'pn-hos-albania-296x300.jpg', 'Presidential Press and Information Office of Azerbaijan, cropped', CC_BY_4),
 }
@@ -544,6 +561,10 @@ PORTRAITS_HOG = {
     'portugal': (UP + 'pn-hog-portugal-202x300.jpg', 'Nicolas Lobet, European People’s Party, cropped', CC_BY_2),
     'sweden': (UP + 'professional-speech-navy-suit-200x300.jpg', 'Christophe Licoppe, European Union', CC_BY_4),
     'canada': (UP + 'pn-hog-canada-251x300.jpg', 'Prime Minister of Canada', {'label': 'CC BY 3.0', 'url': 'https://creativecommons.org/licenses/by/3.0/'}),
+    # seventh batch (17 November 2026)
+    'montenegro': (UP + 'pn-hog-montenegro-224x300.jpg', 'Lukasz Kobus, European Union, 2023, cropped', CC_BY_4),
+    'north-macedonia': (UP + 'pn-hog-north-macedonia-227x300.jpg', 'Government of North Macedonia, 2024, cropped', CC_BY_SA_4),
+    'serbia': (UP + 'pn-hog-serbia-225x300.jpg', 'Ministry of Defence of Serbia', CC_BY_SA_4),
 }
 
 GREET = {
