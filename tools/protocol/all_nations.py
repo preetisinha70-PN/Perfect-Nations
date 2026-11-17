@@ -495,6 +495,13 @@ PORTRAITS = {
     'maldives': (UP + 'pn-hog-maldives-200x300.jpg', 'The President’s Office, Maldives', CC_BY_4),
     'sri-lanka': (UP + 'pn-hog-sri-lanka-218x300.jpg', 'Cabinet Public Affairs Office, Government of Japan, cropped', GOJ),
     'kazakhstan': (UP + 'pn-hog-kazakhstan-225x300.jpg', 'Press Service of the President of Azerbaijan, cropped', CC_BY_4),
+    # White House photos: public domain as U.S. government works; the White House adds a courtesy notice (personal
+    # use, no suggestion of endorsement). The Steward-General decided to use them (16 November 2026, 22:54 New York).
+    'senegal': (UP + 'pn-hog-senegal-225x300.jpg', 'Molly Riley, The White House, cropped', PD),
+    'south-korea': (UP + 'pn-hog-south-korea-214x300.jpg', 'The White House, cropped', PD),
+    'liberia': (UP + 'pn-hos-liberia-234x300.jpg', 'Daniel Torok, The White House, cropped', PD),
+    'cameroon': (UP + 'prominent-leader-portrait-233x300.jpg', 'Adam Schultz, The White House, 2022, cropped', PD),
+    'eswatini': (UP + 'perfect-nations-leader-portrai-214x300.jpg', 'Lawrence Jackson, The White House, 2009, cropped', PD),
     # head of state on record (the band shows the Prime Minister)
     'albania': (UP + 'pn-hos-albania-296x300.jpg', 'Presidential Press and Information Office of Azerbaijan, cropped', CC_BY_4),
 }
