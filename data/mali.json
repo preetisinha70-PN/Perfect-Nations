@@ -1,7 +1,7 @@
 {
  "nation": "Mali",
  "page_version": "1.0",
- "updated": "2026-11-14",
+ "updated": "2026-11-17",
  "steward": {
   "name": "Oumou Traoré",
   "role": "Nation Steward of Mali"
@@ -30,9 +30,9 @@
    {
     "value": "41.9%",
     "money": false,
-    "text": "Central government debt, share of GDP, 2025, projected at 40.9% in 2026",
+    "text": "Total public debt of the central government, share of GDP, 2025 (estimate), down from 44.0% in 2024 and projected at 40.8% in 2026 (second review of the Staff-Monitored Program, July 2026)",
     "source": "IMF, 2026",
-    "url": "https://www.imf.org/-/media/files/publications/cr/2026/english/1mliea2026001.pdf"
+    "url": "https://www.imf.org/fr/publications/cr/issues/2026/07/06/mali-second-review-under-the-staff-monitored-program-press-release-and-staff-report-577497"
    },
    {
     "value": "$800M",
@@ -44,40 +44,19 @@
    {
     "value": "$129M",
     "money": true,
-    "text": "IMF Rapid Credit Facility disbursement, 2025",
+    "text": "IMF Rapid Credit Facility, SDR 93.3 million (50% of quota), disbursed at once on approval on 16 April 2025, for urgent balance of payments needs after the floods",
     "source": "IMF, 2025",
-    "url": "https://meetings.imf.org/-/media/Files/Publications/CR/2025/English/1mliea2025001-print-pdf.ashx"
+    "url": "https://www.imf.org/-/media/files/publications/cr/2025/english/1mliea2025001-print-pdf.pdf"
+   },
+   {
+    "value": "5.5%",
+    "money": false,
+    "text": "Real growth expected to rebound to about 5.5% in 2026, after 4.9% projected for 2025; fiscal deficit projected by IMF staff at 2.4% of GDP in 2026 (July 2026)",
+    "source": "IMF, 2026",
+    "url": "https://www.imf.org/fr/publications/cr/issues/2026/07/06/mali-second-review-under-the-staff-monitored-program-press-release-and-staff-report-577497"
    }
   ],
   "register": [
-   {
-    "cat": "multi",
-    "status": "Completed",
-    "tone": "active",
-    "name": "Staff-Monitored Program",
-    "detail": "IMF · Second and final review approved 2026",
-    "amount": "",
-    "money": false,
-    "text": "Fiscal deficit within the regional ceiling, strong revenue mobilisation and control of current spending.",
-    "by": [
-     "IMF"
-    ],
-    "url": "https://www.imf.org/en/publications/cr/issues/2026/07/06/mali-second-review-under-the-staff-monitored-program-press-release-and-staff-report-577497"
-   },
-   {
-    "cat": "multi",
-    "status": "Disbursed",
-    "tone": "active",
-    "name": "Rapid Credit Facility",
-    "detail": "IMF · 2025",
-    "amount": "$129M",
-    "money": true,
-    "text": "Emergency balance of payments support.",
-    "by": [
-     "IMF"
-    ],
-    "url": "https://meetings.imf.org/-/media/Files/Publications/CR/2025/English/1mliea2025001-print-pdf.ashx"
-   },
    {
     "cat": "govt",
     "status": "Pipeline",
@@ -86,11 +65,258 @@
     "detail": "Government of Mali · Announced August 2026",
     "amount": "$800M",
     "money": true,
-    "text": "Windfall from the 2023 mining code channelled to infrastructure.",
+    "note": "Announced in August 2026, as reported by Mining Weekly",
+    "text": "A fund backed by mining revenue that, the Government says, could unlock up to $800 million for infrastructure projects. It would draw on the windfall from the 2023 mining code to build the roads, power and water behind the seven standards.",
     "by": [
      "Government of Mali"
     ],
     "url": "https://www.miningweekly.com/article/mali-says-mining-backed-fund-could-unlock-up-to-800m-for-infrastructure-projects-2026-08-03"
+   },
+   {
+    "cat": "govt",
+    "status": "Issued",
+    "tone": "active",
+    "name": "Treasury bills and bonds on the regional market (UMOA-Titres)",
+    "detail": "State of Mali · Auction of 10 June 2026, value date 11 June 2026 · 364-day bills, 3-year and 5-year bonds",
+    "amount": "XOF 55bn",
+    "money": true,
+    "note": "XOF 50 billion offered; bids of XOF 88.76 billion; XOF 55 billion retained",
+    "text": "A public auction of Treasury securities by the State of Mali on the regional market of the West African Monetary Union, run by UMOA-Titres. Bids reached XOF 88.76 billion for XOF 50 billion offered, and XOF 55 billion was retained. It is borrowing in CFA francs, on the regional market.",
+    "by": [
+     "Government of Mali (Public Treasury)",
+     "UMOA-Titres"
+    ],
+    "url": "https://www.umoatitres.org/wp-content/uploads/2026/04/Compte-Rendu-ML-ES-10.06.2026.pdf"
+   },
+   {
+    "cat": "multi",
+    "status": "Approved",
+    "tone": "active",
+    "name": "Emergency Access to Essential Services Project",
+    "detail": "World Bank (IDA) · Credit approved 26 March 2026 · health and education",
+    "amount": "$150M",
+    "money": true,
+    "note": "2.3 million people with access to essential health services; 1.1 million students supported",
+    "text": "An IDA credit that pays the operational costs of health facilities, essential vaccines and medicines, and free care for women of reproductive age and children under five. In schools it provides teaching materials, grants to the most vulnerable students and the organisation of national examinations. It serves the health and education standards.",
+    "by": [
+     "World Bank (IDA)"
+    ],
+    "url": "https://www.worldbank.org/en/news/press-release/2026/03/26/world-bank-strengthens-continued-access-to-essential-health-and-education-services-in-mali"
+   },
+   {
+    "cat": "multi",
+    "status": "Completed",
+    "tone": "completed",
+    "name": "Staff-Monitored Program",
+    "detail": "IMF · Approved March 2025 · 11 months · second and final review approved by IMF Management 18 March 2026",
+    "amount": "",
+    "money": false,
+    "note": "Inflation below 3 percent, as in 2025",
+    "text": "An 11-month programme with IMF staff, requested with the Rapid Credit Facility of April 2025 to re-establish a track record. IMF Management approved its second and final review on 18 March 2026; the 2026 budget envisages a fiscal deficit within the West African Economic and Monetary Union ceiling of 3 percent of GDP.",
+    "by": [
+     "IMF"
+    ],
+    "url": "https://www.imf.org/en/news/articles/2026/03/23/pr-26085-mali-imf-approves-2nd-rev-of-the-staff-monitored-program"
+   },
+   {
+    "cat": "multi",
+    "status": "Approved",
+    "tone": "active",
+    "name": "Road Infrastructure Connectivity and Resilience Improvement Program (Mali-NSS)",
+    "detail": "World Bank (IDA) · Credit approved, release of 28 May 2025 · about CFAF 133 billion · 137.7 km Diéma–Sandaré section",
+    "amount": "$219.8M",
+    "money": true,
+    "note": "One million people within 150 km of the road to benefit indirectly",
+    "text": "An IDA credit to rehabilitate and upgrade the 137.7 km Diéma–Sandaré section of the Bamako–Dakar Northern Corridor to climate-resilient standards. It serves the livelihood standard.",
+    "by": [
+     "World Bank (IDA)"
+    ],
+    "url": "https://www.worldbank.org/en/news/press-release/2025/05/28/world-bank-supports-the-connectivity-and-resilience-of-road-infrastructure-in-mali"
+   },
+   {
+    "cat": "multi",
+    "status": "Disbursed",
+    "tone": "active",
+    "name": "Rapid Credit Facility",
+    "detail": "IMF · Approved 16 April 2025 · SDR 93.3 million, 50% of quota · disbursed at once",
+    "amount": "$129M",
+    "money": true,
+    "note": "Accompanied by an 11-month Staff-Monitored Program",
+    "text": "Emergency IMF financing to help the authorities meet urgent balance of payments needs resulting from the floods of 2024. The full amount, SDR 93.3 million, was disbursed on approval.",
+    "by": [
+     "IMF"
+    ],
+    "url": "https://www.imf.org/-/media/files/publications/cr/2025/english/1mliea2025001-print-pdf.pdf"
+   },
+   {
+    "cat": "multi",
+    "status": "Approved",
+    "tone": "active",
+    "name": "Bamako Urban Resilience Project (PRUBA), additional financing",
+    "detail": "World Bank (IDA) · Additional financing announced 1 April 2025 · $100 million for Mali and Chad, $50 million each",
+    "amount": "$50M",
+    "money": true,
+    "note": "Replenishes the project after US$73 million was released through its emergency component",
+    "text": "Additional IDA financing to replenish the Bamako Urban Resilience Project, whose contingent emergency response component released US$73 million immediately after the floods of 2024. More than 370,000 people were affected, and nearly 300 schools and 35 health centres were flooded and damaged. It serves the shelter standard, where 92.5% of city dwellers live in slums.",
+    "by": [
+     "World Bank (IDA)"
+    ],
+    "url": "https://www.worldbank.org/en/news/press-release/2025/04/01/world-bank-increases-support-to-mali-and-chad-to-reduce-the-impacts-of-2024-floods"
+   },
+   {
+    "cat": "multi",
+    "status": "Approved",
+    "tone": "active",
+    "name": "Mali Water Security Support Project (PASEMa)",
+    "detail": "World Bank (IDA) · Credit approved, release of 22 January 2025 · Bamako and secondary towns",
+    "amount": "$100M",
+    "money": true,
+    "note": "About 500,000 people to benefit; 227,000 to gain at least basic water services",
+    "text": "An IDA credit to help Mali increase access to drinking water and improve the conservation of water sources in Bamako and secondary towns. It serves the water standard.",
+    "by": [
+     "World Bank (IDA)"
+    ],
+    "url": "https://www.worldbank.org/en/news/press-release/2025/01/23/world-bank-quenches-the-thirst-of-bamako-and-malis-secondary-cities"
+   },
+   {
+    "cat": "multi",
+    "status": "Approved",
+    "tone": "active",
+    "name": "Community Resilience and Revitalizing Access to Essential Services Project (Malidenko)",
+    "detail": "World Bank (IDA) · Credit approved, release of 14 November 2024 · six regions, 57 communes, 850 villages",
+    "amount": "$150M",
+    "money": true,
+    "note": "1.84 million people to have access to improved basic services",
+    "text": "An IDA credit that uses a community-driven approach to deliver basic services in fragile areas and to strengthen the link between the State and citizens. It includes measures for poor women, youth, internally displaced persons and persons with disabilities, and reaches several of the seven standards at once.",
+    "by": [
+     "World Bank (IDA)"
+    ],
+    "url": "https://www.worldbank.org/en/news/press-release/2024/11/14/world-bank-supports-access-to-basic-services-in-at-risk-areas-in-mali"
+   },
+   {
+    "cat": "multi",
+    "status": "Approved",
+    "tone": "active",
+    "name": "Advancing Resilience and Inclusive Health Systems for Everyone in Mali (Keneya Yiriwali)",
+    "detail": "World Bank (IDA) · Credit approved, release of 28 June 2024 · $100 million IDA credit and $25 million Global Financing Facility grant",
+    "amount": "$125M",
+    "money": true,
+    "note": "15.4 million women, adolescent girls and children to benefit",
+    "text": "A health operation that uses results-based financing to improve the quality of essential health services, particularly reproductive, maternal, newborn, child, adolescent and nutrition services. It serves the health standard, where the WHO service coverage index stands at 41.",
+    "by": [
+     "World Bank (IDA)",
+     "Global Financing Facility"
+    ],
+    "url": "https://www.worldbank.org/en/news/press-release/2024/06/28/the-world-bank-strengthens-the-resilience-of-inclusive-health-systems-for-everyone-in-mali"
+   },
+   {
+    "cat": "regional",
+    "status": "Signed",
+    "tone": "active",
+    "name": "Bamako North 225 kV Loop Project",
+    "detail": "African Development Bank Group · Approved 12 November 2025 · loan agreements signed 25 February 2026 · ratification bill adopted by the National Transitional Council (release of 2 July 2026) · total cost $190 million",
+    "amount": "$68.26M",
+    "money": true,
+    "note": "ADF loan $35.27M, Transition Support Facility loan $18.99M, Climate Investment Funds $5M loan and $6.8M grant, Green Climate Fund $2.2M grant",
+    "text": "A 225 kV line between the Kodialani and Dialakorobougou substations, two new substations at Safo and Kénié and extensions to three others, raising transmission capacity for Bamako to 600 megawatts. It is to connect 10,000 new households and small businesses to the grid, with BOAD and the Islamic Development Bank as co-financiers. It serves energy, the standard furthest from reach.",
+    "by": [
+     "African Development Bank Group",
+     "Climate Investment Funds",
+     "Green Climate Fund"
+    ],
+    "url": "https://www.afdb.org/en/news-and-events/press-releases/mali-ratifies-african-development-bank-loans-strengthen-bamakos-electricity-supply-95156"
+   },
+   {
+    "cat": "regional",
+    "status": "Approved",
+    "tone": "active",
+    "name": "Tiètiguila solar power plant, 50 MWp with battery storage",
+    "detail": "BOAD · Approved at the 151st meeting of the Board of Directors, Lomé, 26 June 2026 · 25 MW/50 MWh of battery energy storage",
+    "amount": "XOF 44.4bn",
+    "money": true,
+    "note": "XOF 44.368 billion to the Republic of Mali",
+    "text": "BOAD financing for a 50 MWp solar photovoltaic power plant with 25 MW/50 MWh of battery storage at Tiètiguila. It will increase the share of renewable energy in the national energy mix and secure electricity coverage, which serves energy, the standard furthest from reach.",
+    "by": [
+     "BOAD"
+    ],
+    "url": "https://admin.boad.org/wp-content/uploads/2026/06/COMPRESS-CA-151-ENGL-1.pdf"
+   },
+   {
+    "cat": "regional",
+    "status": "Approved",
+    "tone": "active",
+    "name": "School Infrastructure Strengthening Project, Phase I",
+    "detail": "BOAD · Approved at the 151st meeting of the Board of Directors, Lomé, 26 June 2026",
+    "amount": "XOF 48bn",
+    "money": true,
+    "note": "To the Republic of Mali",
+    "text": "BOAD financing for the construction, rehabilitation and equipping of educational facilities, to expand access to quality education. It serves the education standard, where 9.6% of children read a simple text by the end of primary school on the last measure.",
+    "by": [
+     "BOAD"
+    ],
+    "url": "https://admin.boad.org/wp-content/uploads/2026/06/COMPRESS-CA-151-ENGL-1.pdf"
+   },
+   {
+    "cat": "regional",
+    "status": "Approved",
+    "tone": "active",
+    "name": "Electricity transmission grid modernisation and expansion",
+    "detail": "IsDB · Approved at the 353rd meeting of the Board of Executive Directors, release of 10 December 2023 · high-voltage transmission",
+    "amount": "€55M",
+    "money": true,
+    "note": "US$58.0 million at approval",
+    "text": "Islamic Development Bank financing to enhance the electricity transmission grid of Mali by modernising and expanding its high-voltage transmission infrastructure. It serves energy, the standard furthest from reach.",
+    "by": [
+     "Islamic Development Bank"
+    ],
+    "url": "https://www.isdb.org/news/isdb-injects-us-212-billion-to-finance-projects-in-education-health-energy-transport-and-youth-development-across-member-countries"
+   },
+   {
+    "cat": "private",
+    "status": "Approved",
+    "tone": "active",
+    "name": "Refinancing facility for BSIC SA Mali",
+    "detail": "BOAD · Approved at the 151st meeting of the Board of Directors, Lomé, 26 June 2026 · Banque Sahélo-Saharienne pour l’Investissement et le Commerce Mali",
+    "amount": "XOF 10bn",
+    "money": true,
+    "note": "For medium-term loans to small businesses, green investments and women-led firms",
+    "text": "BOAD refinancing for a commercial bank, to support medium-term loans to micro, small and medium-sized enterprises, promote green investments and expand access to finance for women-owned and women-led businesses. It serves the livelihood standard, where 45.5% live below the national poverty line.",
+    "by": [
+     "BOAD"
+    ],
+    "url": "https://admin.boad.org/wp-content/uploads/2026/06/COMPRESS-CA-151-ENGL-1.pdf"
+   },
+   {
+    "cat": "private",
+    "status": "Approved",
+    "tone": "active",
+    "name": "SDN Flour Mill Project",
+    "detail": "IFC · Approved on an absence-of-objection basis, 20 May 2026 · senior secured loans · IDA21 Private Sector Window Blended Finance Facility",
+    "amount": "€13M",
+    "money": true,
+    "note": "An A loan of up to €6.5 million for IFC’s own account and concessional loans of up to €4.875 million and €1.625 million",
+    "text": "Senior secured loans of up to €13 million to Societe Diarra Negoce for a flour mill, part of them concessional finance from the IDA21 Private Sector Window. It serves the food standard, where 20.6% of Malians are moderately or severely food insecure.",
+    "by": [
+     "IFC",
+     "IDA21 Private Sector Window"
+    ],
+    "url": "https://documents1.worldbank.org/curated/en/099052126100026866/pdf/BOSIB-2773240c-8036-446b-886c-8dda11263eb1.pdf"
+   },
+   {
+    "cat": "impact",
+    "status": "Under implementation",
+    "tone": "active",
+    "name": "Mali solar rural electrification project",
+    "detail": "GCF FP102 · Approved 28 February 2019 · BOAD · loan and grant · 4% disbursed · completion estimated 10 February 2027",
+    "amount": "$29.1M",
+    "money": true,
+    "note": "Total project value $38.4 million, with $9.3 million of co-financing",
+    "text": "GCF financing, through BOAD, for 4.83 megawatts of isolated solar photovoltaic mini-grids in 50 rural communities. It serves energy, the standard furthest from reach, where 49.5% have electricity.",
+    "by": [
+     "Green Climate Fund",
+     "BOAD"
+    ],
+    "url": "https://www.greenclimate.fund/projects/fp102"
    }
   ]
  },
@@ -136,7 +362,43 @@
  },
  "enterprises": {
   "heading": "Already working in Mali.",
-  "items": []
+  "items": [
+   {
+    "standard": "Food",
+    "name": "myAgro",
+    "text": "A social enterprise whose mobile layaway platform lets farmers save by phone over six to eight months for farm inputs, with prices locked in at the outset. In 2025 it served more than 250,000 farmers across Senegal, Mali and Côte d’Ivoire, 65 percent of them women.",
+    "source": "African Development Bank, 2026",
+    "url": "https://allafrica.com/stories/202604230742.html"
+   },
+   {
+    "standard": "Shelter",
+    "name": "La Voûte Nubienne (AVN)",
+    "text": "An association that trains apprentices, masons and entrepreneurs to build with Nubian Vault earth-brick roofs. Since 2007 its programme in Mali has completed more than 3,000 projects for the benefit of more than 25,000 people.",
+    "source": "La Voûte Nubienne, 2023",
+    "url": "https://lavoutenubienne.org/mali-235"
+   },
+   {
+    "standard": "Energy",
+    "name": "Africa GreenTec",
+    "text": "A green mini-grid developer whose Malian subsidiary, Africa GreenTec Électrification Rurale, produces, distributes and sells renewable energy in 20 communities. In January 2024 CEI Africa Foundation awarded it up to USD 1,953,000 in results-based financing to build seven new mini-grids in rural Mali and extend 18 others.",
+    "source": "SUN-CONNECT, 2024",
+    "url": "https://sun-connect.org/cei-africa-foundation-awards-africa-greentec-an-rbf-grant-to-densify-18-gmgs-and-build-7-new-gmgs-in-rural-mali/"
+   },
+   {
+    "standard": "Education",
+    "name": "Kabakoo Academies",
+    "text": "Founded in Mali in 2018, it runs blended, project-based cohorts for young people that combine mobile learning, community hubs and peer collaboration. It has over 34,000 registered learners.",
+    "source": "Social Enterprise World Forum, 2026",
+    "url": "https://sewfonline.com/kabakoo/"
+   },
+   {
+    "standard": "Livelihood",
+    "name": "OKO",
+    "text": "A company providing crop-specific parametric climate insurance to farmers, with premiums and claims handled through mobile money; in Mali it is part of the Orange Money menu. To date it has insured 33,341 farmers and compensated 8,596, paying USD 482K in claims.",
+    "source": "OKO, 2026",
+    "url": "https://www.oko.finance/"
+   }
+  ]
  },
  "coverage": {
   "set_by": "Energy",
@@ -270,5 +532,5 @@
  ],
  "dispatches": [],
  "checked": "2026-11-14T20:31Z",
- "reviewed": "2026-11-10T21:00Z"
+ "reviewed": "2026-11-17T04:08Z"
 }
