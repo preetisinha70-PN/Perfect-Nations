@@ -1,7 +1,7 @@
 {
  "nation": "Brunei",
  "page_version": "1.0",
- "updated": "2026-11-16",
+ "updated": "2026-11-17",
  "steward": {
   "name": "Siti Nurhaliza Rahman",
   "role": "Nation Steward of Brunei"
@@ -28,6 +28,20 @@
   "heading": "A nation with savings, and the choice of what to build with them.",
   "record": [
    {
+    "value": "BND374M",
+    "money": true,
+    "text": "Government Sukuk Al-Ijarah outstanding on 6 August 2026; BND18.60 billion issued since the first offering on 6 April 2006",
+    "source": "Brunei Darussalam Central Bank, Aug 2026",
+    "url": "https://cms.bdcb.gov.bn/storage/uploads/publications/17859957347762170.pdf"
+   },
+   {
+    "value": "BND480M",
+    "money": true,
+    "text": "Development allocation for 2026/2027 under the 12th National Development Plan, BND309.8 million of it for social well-being",
+    "source": "Ministry of Finance and Economy, Mar 2026",
+    "url": "https://www.mof.gov.bn/wp-content/uploads/2026/03/Slaid-Pembentangan-Kertas-Cadangan-Peruntukan-Wang-Kemajuan-2026-2027.pdf"
+   },
+   {
     "value": "1.6%",
     "money": false,
     "text": "General government gross debt, share of GDP, 2025",
@@ -42,7 +56,88 @@
     "url": "https://www.imf.org/external/datamapper/NGDP_RPCH@WEO/BRN"
    }
   ],
-  "register": []
+  "register": [
+   {
+    "cat": "govt",
+    "status": "Outstanding",
+    "tone": "active",
+    "name": "Brunei Darussalam Government Sukuk Al-Ijarah",
+    "detail": "Brunei Darussalam Central Bank · first offering 6 April 2006 · 263rd series on 6 August 2026 · BND374.00M outstanding at 6 August 2026",
+    "amount": "BND374M",
+    "money": true,
+    "note": "BND374.00 million outstanding on 6 August 2026; BND18.60 billion issued since the first offering in 2006",
+    "text": "Short-term Islamic securities that the Brunei Government issues through the Brunei Darussalam Central Bank, with tenors of 91 to 364 days and rental rates of 1.0625% to 1.25% in 2026. Holdings outstanding stood at BND374.00 million on 6 August 2026. The central bank’s releases do not state the use of the proceeds.",
+    "by": [
+     "Government of Brunei Darussalam",
+     "Brunei Darussalam Central Bank"
+    ],
+    "url": "https://cms.bdcb.gov.bn/storage/uploads/publications/17859957347762170.pdf"
+   },
+   {
+    "cat": "govt",
+    "status": "Issued",
+    "tone": "active",
+    "name": "Government Sukuk Al-Ijarah, 263rd series",
+    "detail": "Issued 6 August 2026 · 182 days · rental rate 1.1875% · matures 4 February 2027 · bids BND61.00M",
+    "amount": "BND50M",
+    "money": true,
+    "note": "BND50.00 million offered; bids of BND61.00 million received",
+    "text": "A six-month Islamic security issued by the Brunei Government through the Brunei Darussalam Central Bank, at a rental rate of 1.1875%. It falls due on 4 February 2027. The release does not state the use of the proceeds.",
+    "by": [
+     "Government of Brunei Darussalam",
+     "Brunei Darussalam Central Bank"
+    ],
+    "url": "https://cms.bdcb.gov.bn/storage/uploads/publications/17859957347762170.pdf"
+   },
+   {
+    "cat": "govt",
+    "status": "Issued",
+    "tone": "active",
+    "name": "Government Sukuk Al-Ijarah, 261st series",
+    "detail": "Issued 4 June 2026 · 364 days · rental rate 1.1875% · matures 3 June 2027 · bids BND55.00M",
+    "amount": "BND50M",
+    "money": true,
+    "note": "BND50.00 million offered; bids of BND55.00 million received",
+    "text": "A one-year Islamic security issued by the Brunei Government through the Brunei Darussalam Central Bank, at a rental rate of 1.1875%. It falls due on 3 June 2027. The release does not state the use of the proceeds.",
+    "by": [
+     "Government of Brunei Darussalam",
+     "Brunei Darussalam Central Bank"
+    ],
+    "url": "https://cms.bdcb.gov.bn/storage/uploads/publications/17806285544832570.pdf"
+   },
+   {
+    "cat": "govt",
+    "status": "Proposed",
+    "tone": "annual",
+    "name": "Development Fund, 12th National Development Plan, 2026/2027",
+    "detail": "Ministry of Finance and Economy · presented to the Legislative Council, March 2026 · social well-being BND309.8M · economy BND148.2M · fiscal governance BND22.0M",
+    "amount": "BND480M",
+    "money": true,
+    "note": "Lists national housing at Kampong Lugu (Phase 2, 1,500 houses) and Tanah Jambu (Phase 7), sewerage upgrades and clean water supply",
+    "text": "The development allocation for the 2026/2027 financial year under the 12th National Development Plan (RKN12), in three areas of focus. BND309.8 million is for social well-being, under which the Ministry lists national housing at Kampong Lugu (Phase 2, 1,500 houses) and Tanah Jambu (Phase 7), the upgrading of the sewerage system and clean water supply. Housing and sanitation make up shelter, the standard furthest from reach in Brunei.",
+    "by": [
+     "Government of Brunei Darussalam",
+     "Ministry of Finance and Economy"
+    ],
+    "url": "https://www.mof.gov.bn/wp-content/uploads/2026/03/Slaid-Pembentangan-Kertas-Cadangan-Peruntukan-Wang-Kemajuan-2026-2027.pdf"
+   },
+   {
+    "cat": "govt",
+    "status": "Issued",
+    "tone": "active",
+    "name": "Government Sukuk Al-Ijarah, 258th series",
+    "detail": "Issued 5 March 2026 · 364 days · rental rate 1.0625% · matures 4 March 2027 · bids BND70.00M",
+    "amount": "BND50M",
+    "money": true,
+    "note": "BND50.00 million offered; bids of BND70.00 million received",
+    "text": "A one-year Islamic security issued by the Brunei Government through the Brunei Darussalam Central Bank, at a rental rate of 1.0625%. It falls due on 4 March 2027. The release does not state the use of the proceeds.",
+    "by": [
+     "Government of Brunei Darussalam",
+     "Brunei Darussalam Central Bank"
+    ],
+    "url": "https://cms.bdcb.gov.bn/storage/uploads/publications/17736274496919540.pdf"
+   }
+  ]
  },
  "assets": {
   "heading": "Five assets no balance sheet counts.",
@@ -86,7 +181,15 @@
  },
  "enterprises": {
   "heading": "Already working in Brunei.",
-  "items": []
+  "items": [
+   {
+    "standard": "Livelihood",
+    "name": "SMARTER Brunei",
+    "text": "A society for autistic people and their families that runs social enterprises, the SMARTER Bakery (2014), the SMARTER Bistro and Café (2017) and the BJAK Café among them, to give autistic adults real jobs, real wages and real pathways to independence. In March 2025 it relaunched the SMARTER Autism Shop, its first social enterprise, opened in 2008.",
+    "source": "Borneo Bulletin, 2025",
+    "url": "https://borneobulletin.com.bn/making-a-difference-for-the-autistic-community"
+   }
+  ]
  },
  "coverage": {
   "set_by": "Shelter",
@@ -212,5 +315,5 @@
  ],
  "dispatches": [],
  "checked": "2026-11-16T11:32Z",
- "reviewed": "2026-11-10T23:00Z"
+ "reviewed": "2026-11-17T19:53Z"
 }
