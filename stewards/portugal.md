@@ -26,14 +26,14 @@ Furthest from reach: Livelihood (16.4%). Of people in Portugal live below the na
 
 ## The record and Capital already committed
 
-- **€22.2bn:** Recovery and resilience plan: €16.3 billion in grants and €5.9 billion in loans, as approved by the Council of the EU on 8 October 2024. Council of the EU, 2024, https://www.consilium.europa.eu/en/policies/eu-recovery-plan/timeline/
+- **€21.9bn:** Recovery and resilience plan: €21.905 billion, the final revised allocation (Steward-General, 16 November 2026; replaces the €22.2 billion approved by the Council of the EU on 8 October 2024). Government of Portugal, 29 September 2026, https://portugal.gov.pt/gc25/comunicacao/comunicados/-portugal-submete-10-e-ultimo-pedido-de-pagamento-a-comissao-europeia-prr-cumprido-a-100 (was: https://www.consilium.europa.eu/en/policies/eu-recovery-plan/timeline/
 - **89.7%:** General government gross debt, share of GDP, 2025. IMF, WEO Oct 2026, https://www.imf.org/external/datamapper/GGXWDG_NGDP@WEO/PRT
 - **2.1%:** Real GDP growth projected for 2026. IMF, WEO Oct 2026, https://www.imf.org/external/datamapper/NGDP_RPCH@WEO/PRT
-- **Recovery and resilience plan (€22.2bn):** EU funding, in grants and loans, for agreed reforms and investments. https://www.consilium.europa.eu/en/policies/eu-recovery-plan/timeline/
+- **Recovery and resilience plan (€21.905bn):** EU funding, in grants and loans, for agreed reforms and investments. https://portugal.gov.pt/gc25/comunicacao/comunicados/-portugal-submete-10-e-ultimo-pedido-de-pagamento-a-comissao-europeia-prr-cumprido-a-100
 
 ## Open gaps
 
 - The tourism share (12.2%, 2020) reflects a pandemic year and is not used.
 - Newswire opened 16 November 2026: eight items (EIB, Government of Portugal, Caixin Global), three older ones in archive/newswire/portugal.json. Every headline, date and publisher read on the article page.
-- Two primary figures for the recovery plan: the Government gives €21,905 million as the total allocation (29 September 2026) and €22.2 billion (16.3 grants, 5.9 loans) in its note on the ninth payment; the record keeps the Council figure of 8 October 2024.
+- Two primary figures for the recovery plan: the Government gives €21,905 million as the total allocation (29 September 2026) and €22.2 billion (16.3 grants, 5.9 loans) in its note on the ninth payment; the Steward-General chose €21.905 billion, the final revised allocation (16 November 2026).
 - Watch: the Commission's assessment and payment of the tenth and final RRF request (€4,672 million); the EIB extreme weather package and Lisbon metro loan, expected by the end of 2026; the new 20-year OT syndicated in 2026 (no open page found).
