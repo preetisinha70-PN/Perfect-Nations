@@ -1,17 +1,17 @@
 {
  "nation": "Belgium",
  "page_version": "1.0",
- "updated": "2026-11-16",
+ "updated": "2026-11-17",
  "steward": {
   "name": "Elise Peeters",
   "role": "Nation Steward of Belgium"
  },
  "population": 11941781,
  "hero": {
-  "lead": "A nation of 11.9 million, home to the institutions of the European Union, with a €5.28 billion recovery and resilience plan approved by the Council of the EU.",
+  "lead": "A nation of 11.9 million, home to the institutions of the European Union, with a €5.24 billion EU recovery and resilience plan of grants and loans.",
   "stats": [
    {
-    "value": "€5.28bn",
+    "value": "€5.24bn",
     "label": "EU recovery and resilience plan"
    },
    {
@@ -28,11 +28,25 @@
   "heading": "The host of Europe, and a living income for every household.",
   "record": [
    {
-    "value": "€5.28bn",
+    "value": "€5.24bn",
     "money": true,
-    "text": "Recovery and resilience plan (grants and loans), as approved by the Council of the EU on 11 March 2025",
-    "source": "Council of the EU, 2025",
-    "url": "https://www.consilium.europa.eu/en/policies/eu-recovery-plan/timeline/"
+    "text": "Recovery and resilience plan: €5.03 billion in grants and €0.21 billion in loans, as amended (Council of the EU, document of 25 August 2026)",
+    "source": "Council of the EU, 2026",
+    "url": "https://data.consilium.europa.eu/doc/document/ST-12323-2026-INIT/en/pdf"
+   },
+   {
+    "value": "€51.6bn",
+    "money": true,
+    "text": "Federal government bonds (OLOs) planned for 2026 (2025: €45.7 billion issued)",
+    "source": "Belgian Debt Agency, 2026",
+    "url": "https://www.debtagency.be/sites/default/files/content/download/files/review_outlook_2025_2026.pdf"
+   },
+   {
+    "value": "€2.6bn",
+    "money": true,
+    "text": "EIB Group financing in Belgium in 2025, of which €157 million from the European Investment Fund",
+    "source": "EIB, 2026",
+    "url": "https://www.eib.org/en/press/all/2026-038-activite-du-groupe-bei-en-2025-26-milliards-d-euros-pour-le-financement-d-infrastructures-sociales-de-l-innovation-et-de-la-transition-ecologique-en-belgique"
    },
    {
     "value": "107.9%",
@@ -51,18 +65,241 @@
   ],
   "register": [
    {
+    "cat": "govt",
+    "status": "Issued",
+    "tone": "active",
+    "name": "OLO 108, five-year benchmark bond",
+    "detail": "Belgian Debt Agency · syndicated 12 May 2026 · matures 22 August 2031 · coupon 3.100% · re-offer yield 3.124% · orderbook above €45bn",
+    "amount": "€8bn",
+    "money": true,
+    "note": "A new five-year benchmark; the orderbook passed €45 billion at closing",
+    "text": "A new five-year benchmark bond of the Kingdom of Belgium, issued by syndication with an annual coupon of 3.100% and a spread of 19 basis points over mid-swaps. It is part of the OLO issuance the Belgian Debt Agency plans for 2026.",
+    "by": [
+     "Kingdom of Belgium"
+    ],
+    "url": "https://news.belgium.be/en/node/43925"
+   },
+   {
+    "cat": "govt",
+    "status": "Plan",
+    "tone": "active",
+    "name": "Federal government bonds (OLOs), 2026",
+    "detail": "Belgian Debt Agency · 2025 Review – 2026 Outlook, 26 January 2026 · gross borrowing requirements €59.55bn · 2025: €45.7bn of OLOs issued",
+    "amount": "€51.6bn",
+    "money": true,
+    "note": "Planned OLO issuance for 2026, €5.90 billion more than in 2025, with three new benchmarks launched by syndication",
+    "text": "The Belgian Debt Agency plans to issue €51.60 billion of OLOs in 2026, within gross borrowing requirements of €59.55 billion, and €0.40 billion of State Notes. In 2025 it issued €45.709 billion of OLOs.",
+    "by": [
+     "Kingdom of Belgium"
+    ],
+    "url": "https://www.debtagency.be/sites/default/files/content/download/files/review_outlook_2025_2026.pdf"
+   },
+   {
+    "cat": "govt",
+    "status": "Issued",
+    "tone": "active",
+    "name": "OLO 106, ten-year benchmark bond",
+    "detail": "Belgian Debt Agency · syndicated 7 January 2026 · matures 22 June 2036 · coupon 3.40% · re-offer yield 3.436% · orderbook over €91bn from over 365 investors",
+    "amount": "€8bn",
+    "money": true,
+    "note": "The first syndication of 2026, in place of the January auction; demand above €91 billion",
+    "text": "A new ten-year benchmark bond of the Kingdom of Belgium, issued by syndication with an annual coupon of 3.40%. Demand grew to over €91 billion from more than 365 investors.",
+    "by": [
+     "Kingdom of Belgium"
+    ],
+    "url": "https://news.belgium.be/en/node/42577"
+   },
+   {
+    "cat": "govt",
+    "status": "Issued",
+    "tone": "active",
+    "name": "Green OLOs, 2025",
+    "detail": "Belgian Debt Agency · green OLO 96 (April 2039) reopened for €2.1bn · green OLO 86 (April 2033) reopened in October 2025 · no new green OLO planned for 2026",
+    "amount": "€2.7bn",
+    "money": true,
+    "note": "Green OLOs issued in 2025 by reopening the Kingdom’s two outstanding green bonds",
+    "text": "The Kingdom of Belgium issued €2.7 billion of green OLOs in 2025 by reopening its two outstanding green bonds, OLO 96 and OLO 86, which finance eligible green expenditure. The Belgian Debt Agency estimates green eligible expenditures at €5.0 billion; both bonds can be reopened in 2026.",
+    "by": [
+     "Kingdom of Belgium"
+    ],
+    "url": "https://www.debtagency.be/sites/default/files/content/download/files/review_outlook_2025_2026.pdf"
+   },
+   {
     "cat": "regional",
-    "status": "Approved",
+    "status": "Active",
     "tone": "active",
     "name": "Recovery and resilience plan",
-    "detail": "Council of the EU · Approved 11 March 2025 · EU Recovery and Resilience Facility",
-    "amount": "€5.28bn",
+    "detail": "European Commission · grants €5.03bn, loans €0.21bn (amended, Council document of 25 August 2026) · fifth payment request of €225M assessed positively 27 July 2026 · fifth instalment decision 21 September 2026",
+    "amount": "€5.24bn",
     "money": true,
-    "text": "EU funding, in grants and loans, for agreed reforms and investments.",
+    "note": "Loans reduced in 2026 from €230.1 million to €209.6 million; grants unchanged at €5.03 billion",
+    "text": "EU support for Belgium’s reforms and investments under the Recovery and Resilience Facility: €5,033,950,235 in grants and €209,604,000 in loans, paid in instalments against agreed milestones and targets. The fifth payment request, submitted on 17 April 2026, covered 19 milestones and targets, among them housing renovation and unemployment benefits; all measures were due by August 2026.",
     "by": [
      "European Union"
     ],
-    "url": "https://www.consilium.europa.eu/en/policies/eu-recovery-plan/timeline/"
+    "url": "https://reforms-investments.ec.europa.eu/recovery-and-resilience-facility-1/country-pages/belgiums-recovery-and-resilience-plan_en"
+   },
+   {
+    "cat": "regional",
+    "status": "Signed",
+    "tone": "active",
+    "name": "Princess Elisabeth Island, phase 2 (Elia Transmission Belgium)",
+    "detail": "EIB · project 20250041 · green credit facility signed 17 July 2026 · first drawdown around the end of July 2026 · after €650M for phase 1 in 2024 · total cost about €2,296M",
+    "amount": "€1bn",
+    "money": true,
+    "note": "The largest financing the EIB has granted to an energy infrastructure project in the Benelux",
+    "text": "An EIB green credit facility to Elia Transmission Belgium for the electrical infrastructure of the Princess Elisabeth Island, an artificial island about 45 km off the Belgian coast that will link offshore wind farms to the onshore grid through a 220 kV substation and six 220 kV cables. The first offshore wind farms in the Princess Elisabeth Zone are to be connected from 2031; it serves the energy standard with clean power.",
+    "by": [
+     "European Investment Bank",
+     "Elia Transmission Belgium"
+    ],
+    "url": "https://www.eib.org/en/press/news/news-elia-transmission-belgium-obtient-une-facilite-de-credit-verte-de-eur1-milliard-de-la-banque-europeenne-d-investissement-pour-son-projet-de-l-ile-princesse-elisabeth"
+   },
+   {
+    "cat": "regional",
+    "status": "Approved",
+    "tone": "active",
+    "name": "Affordable housing finance in Brussels (Fonds du Logement)",
+    "detail": "Council of Europe Development Bank · approval announced 19 June 2026 · socially targeted mortgages and renovations",
+    "amount": "€100M",
+    "money": true,
+    "note": "Wider access to affordable housing finance for households in the Brussels-Capital Region",
+    "text": "A CEB loan to the Fonds du Logement de la Région de Bruxelles-Capitale to increase access to affordable housing finance for households in the capital region, with a focus on socially targeted mortgage lending and renovations. It serves the shelter standard.",
+    "by": [
+     "Council of Europe Development Bank",
+     "Fonds du Logement de la Région de Bruxelles-Capitale"
+    ],
+    "url": "https://coebank.org/en/news-and-publications/news/ceb-approves-fourteen-loans-totalling-1-2-billion-euros/"
+   },
+   {
+    "cat": "regional",
+    "status": "Approved",
+    "tone": "active",
+    "name": "Flanders social housing",
+    "detail": "EIB · project 20250067 · €1.7bn agreement with the Flemish Region · first tranche of €700M signed 10 December 2025 · announced 22 January 2026 · total cost about €2,545M",
+    "amount": "€1.7bn",
+    "money": true,
+    "note": "About 6,350 new social housing units and the energy renovation of 10,100 more",
+    "text": "The EIB’s largest financing in Belgium, a €1.7 billion agreement with the Flemish Region, through the Flemish social housing company VMSW, to build about 6,350 new social housing units and renovate 10,100 existing units for energy efficiency. It serves the shelter standard and lowers energy bills for tenants, mainly middle- and lower-income households.",
+    "by": [
+     "European Investment Bank",
+     "Flemish Region",
+     "VMSW"
+    ],
+    "url": "https://www.eib.org/en/press/all/2026-019-eib-and-belgian-region-of-flanders-agree-landmark-eur1-7-billion-financing-agreement-to-boost-social-housing"
+   },
+   {
+    "cat": "regional",
+    "status": "Signed",
+    "tone": "active",
+    "name": "Home energy renovation in Wallonia (SWCS)",
+    "detail": "EIB · signed 11 December 2025 in Namur · first tranche of a €500M package to be drawn over three years · Rénopack and Rénoprêt loans",
+    "amount": "€250M",
+    "money": true,
+    "note": "More than 16,500 energy retrofits of single-family homes and flats by the end of 2027",
+    "text": "An EIB loan to the Société wallonne du crédit social (SWCS), the first tranche of a €500 million package, to finance energy efficiency retrofits of homes through its Rénopack and Rénoprêt loans. It is to finance more than 16,500 retrofits by the end of 2027, reaching the region’s most vulnerable households; it serves the shelter and energy standards.",
+    "by": [
+     "European Investment Bank",
+     "SWCS"
+    ],
+    "url": "https://www.eib.org/en/press/all/2025-527-bei-250-millions-d-euros-pour-la-renovation-energetique-des-habitations-en-wallonie-avec-la-swcs"
+   },
+   {
+    "cat": "regional",
+    "status": "Announced",
+    "tone": "pipeline",
+    "name": "Mental health infrastructure in Leuven and Kortenberg (Z.org KU Leuven)",
+    "detail": "EIB · release of 11 December 2025 · part of a programme of about €270M for 2026–2040",
+    "amount": "€120M",
+    "money": true,
+    "note": "The redesign of the Kortenberg psychiatric campus, a psychiatric nursing home in Lubbeek and a health and wellbeing centre in Leuven",
+    "text": "An EIB loan to Z.org KU Leuven, the mental health network linked to KU Leuven, for the redesign of the psychiatric campus in Kortenberg, a new psychiatric nursing home in Lubbeek and a municipal health and wellbeing centre in Leuven. It serves the health standard; the EIB-financed parts are to be completed by 2036.",
+    "by": [
+     "European Investment Bank",
+     "Z.org KU Leuven"
+    ],
+    "url": "https://www.eib.org/de/press/all/2025-529-eib-supports-major-renewal-of-mental-health-infrastructure-in-leuven-and-kortenberg-with-eur120-million-loan"
+   },
+   {
+    "cat": "regional",
+    "status": "Active",
+    "tone": "active",
+    "name": "Sustainability investments of small businesses (Wallonie Entreprendre)",
+    "detail": "EIB · 2025 · in the EIB Group’s 2025 figures for Belgium, 2 February 2026",
+    "amount": "€100M",
+    "money": true,
+    "note": "A collaboration to help small businesses with their sustainability investments",
+    "text": "EIB financing in a €100 million collaboration with Wallonie Entreprendre to help small businesses with their sustainability investments. It serves the livelihood standard through small businesses.",
+    "by": [
+     "European Investment Bank",
+     "Wallonie Entreprendre"
+    ],
+    "url": "https://www.eib.org/en/press/all/2026-038-activite-du-groupe-bei-en-2025-26-milliards-d-euros-pour-le-financement-d-infrastructures-sociales-de-l-innovation-et-de-la-transition-ecologique-en-belgique"
+   },
+   {
+    "cat": "regional",
+    "status": "Active",
+    "tone": "active",
+    "name": "Small entrepreneurs in Brussels (finance&invest.brussels)",
+    "detail": "EIB · 2025 · in the EIB Group’s 2025 figures for Belgium, 2 February 2026",
+    "amount": "€50M",
+    "money": true,
+    "note": "Support for small entrepreneurs in the Brussels-Capital Region",
+    "text": "A €50 million EIB deal with finance&invest.brussels in support of small entrepreneurs in the Brussels-Capital Region. It serves the livelihood standard.",
+    "by": [
+     "European Investment Bank",
+     "finance&invest.brussels"
+    ],
+    "url": "https://www.eib.org/en/press/all/2026-038-activite-du-groupe-bei-en-2025-26-milliards-d-euros-pour-le-financement-d-infrastructures-sociales-de-l-innovation-et-de-la-transition-ecologique-en-belgique"
+   },
+   {
+    "cat": "regional",
+    "status": "Signed",
+    "tone": "active",
+    "name": "Flanders smart wastewater and sludge management (Aquafin)",
+    "detail": "EIB · project 20240877 · signed 31 July 2025 · Aquafin investment programme 2025–2028 · total cost about €531M",
+    "amount": "€265M",
+    "money": true,
+    "note": "Sewers, stormwater drainage and treatment plants for a service area of nearly seven million people",
+    "text": "An EIB loan to Aquafin that co-finances part of its 2025–2028 investment programme in Flanders: sewage collectors, stormwater drainage, pumping stations, wastewater treatment plants and two sludge dryers that run on residual heat. It serves the water standard and sanitation, part of the shelter standard, for a service area of nearly seven million people.",
+    "by": [
+     "European Investment Bank",
+     "Aquafin"
+    ],
+    "url": "https://www.eib.org/en/projects/all/20240877"
+   },
+   {
+    "cat": "private",
+    "status": "Announced",
+    "tone": "active",
+    "name": "ING loans for sustainable SMEs and mid-caps in Belgium",
+    "detail": "EIB · €400M loan to ING, matched by ING · €800M in all for the Netherlands and Belgium · announced 15 April 2026",
+    "amount": "€300M",
+    "money": true,
+    "note": "The share for companies in Belgium; €500 million goes to ING business customers in the Netherlands",
+    "text": "An EIB loan to ING, matched by the bank, that makes €800 million available for small and medium-sized enterprises and mid-caps to invest in sustainability, of which €300 million for companies in Belgium. The EIB’s terms let businesses borrow at lower interest rates; it serves the livelihood standard.",
+    "by": [
+     "European Investment Bank",
+     "ING"
+    ],
+    "url": "https://www.eib.org/en/press/all/2026-133-ing-and-eib-unlock-eur800-million-for-smes-and-mid-caps-in-the-netherlands-and-belgium"
+   },
+   {
+    "cat": "private",
+    "status": "Approved",
+    "tone": "active",
+    "name": "Microfinance across Belgium (microStart)",
+    "detail": "Council of Europe Development Bank · approved 12 November 2025 · programme loan backed by the EU through the InvestEU Fund · in progress",
+    "amount": "€10M",
+    "money": true,
+    "note": "Microloans for people shut out of conventional banking, notably migrants, women, unemployed and young people",
+    "text": "A CEB programme loan to microStart, a social-economy cooperative, for its on-lending across Belgium to people shut out of conventional banking who start a business or become self-employed. It serves the livelihood standard, the furthest from reach in Belgium.",
+    "by": [
+     "Council of Europe Development Bank",
+     "European Union",
+     "microStart"
+    ],
+    "url": "https://coebank.org/en/project-financing/projects-approved-administrative-council/microstart-microfinance-facility-in-belgium/"
    }
   ]
  },
@@ -108,7 +345,50 @@
  },
  "enterprises": {
   "heading": "Already working in Belgium.",
-  "items": []
+  "items": [
+   {
+    "standard": "Livelihood",
+    "name": "microStart",
+    "text": "A social-economy cooperative that grants microcredits, with support, to people facing financial and social inequality who want to start or grow a business, many of them excluded from bank credit. In 2025 it granted 538 microcredits worth about €4.96 million from offices in Brussels, Ghent, Antwerp, Liège and Hainaut.",
+    "source": "microStart, Annual report 2025",
+    "url": "https://microstart.be/wp-content/uploads/2026/04/RapAn2025_FR.pdf"
+   },
+   {
+    "standard": "Livelihood",
+    "name": "DUO for a JOB",
+    "text": "An intergenerational mentoring programme that matches young job seekers with a migrant background with volunteer mentors to help them find work. Since 2013 it has created 9,032 duos in Belgium, from offices in Antwerp, Brussels, Hainaut, Liège and East Flanders, and reports that 70% of the young people get a job, an internship or a training.",
+    "source": "DUO for a JOB, 2026",
+    "url": "https://duoforajob.be/en/get-involved/become-a-partner"
+   },
+   {
+    "standard": "Food",
+    "name": "Epi St Gilles",
+    "text": "A social grocery in Saint-Gilles, Brussels, that sells quality food, cleaning and hygiene products at reduced prices to people in precarious situations, as part of its work against poverty and for socio-professional insertion. It is one of the food aid organisations approved as a social enterprise in the Brussels-Capital Region.",
+    "source": "Fédération des Services Sociaux, 2025",
+    "url": "https://www.fdss.be/wp-content/uploads/2025_CAA_PUB_repis_fiche_recon_ent-soc-bxl_V04.pdf"
+   },
+   {
+    "standard": "Shelter",
+    "name": "Community Land Trust Brussels",
+    "text": "A community land trust that owns the land while residents own their homes, with a limited resale price that keeps each home affordable and prevents speculation. In 2025 it reached 200 affordable homes inhabited on its land.",
+    "source": "European Urban Initiative, 2025",
+    "url": "https://www.urban-initiative.eu/sites/default/files/2025-11/Brussels_Case%20study.pdf"
+   },
+   {
+    "standard": "Energy",
+    "name": "Ecopower",
+    "text": "A citizen energy cooperative of 73,026 members that produces green electricity from its own installations, among them 29 wind turbines of 68 MW, and supplies 60,000 customers. Its POWER UP project with the city of Eeklo, completed in 2025, tackled energy poverty with social shares, solar panels on rented homes and budget monitoring.",
+    "source": "Ecopower, Annual report 2026",
+    "url": "https://cdn.nimbu.io/s/4tn7vz5/channelentries/0zfyrgb/files/1775829166940/20260410_jaarverslag_2026_boekjaar_2025.pdf"
+   },
+   {
+    "standard": "Education",
+    "name": "BeCode",
+    "text": "A coding school that has run inclusive bootcamps for job seekers since 2017: free, seven-month programmes in web development, artificial intelligence and cybersecurity, open to people outside formal education, in Brussels, Antwerp, Ghent, Charleroi and Liège.",
+    "source": "EU Digital Skills and Jobs Platform, 2026",
+    "url": "https://digital-skills-jobs.europa.eu/en/opportunities/training/becode-bootcamps-junior-web-developer-ai-devsecops"
+   }
+  ]
  },
  "coverage": {
   "set_by": "Livelihood",
@@ -242,5 +522,5 @@
  ],
  "dispatches": [],
  "checked": "2026-11-16T04:31Z",
- "reviewed": "2026-11-10T23:00Z"
+ "reviewed": "2026-11-17T19:17Z"
 }
