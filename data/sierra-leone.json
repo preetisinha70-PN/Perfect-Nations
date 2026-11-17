@@ -1,7 +1,7 @@
 {
  "nation": "Sierra Leone",
  "page_version": "1.0",
- "updated": "2026-11-15",
+ "updated": "2026-11-17",
  "steward": {
   "name": "Isata Kamara",
   "role": "Nation Steward of Sierra Leone"
@@ -16,7 +16,7 @@
    },
    {
     "value": "47.3%",
-    "label": "Public debt, share of GDP, 2026 projection"
+    "label": "Public debt, share of non-iron ore GDP, 2026 projection"
    },
    {
     "value": "75.3%",
@@ -44,16 +44,16 @@
    {
     "value": "47.3%",
     "money": false,
-    "text": "Public debt, share of GDP, projected for 2026, from 50.8% in 2024; high risk of distress",
-    "source": "Premier Media, 2025",
-    "url": "https://www.premiermedia-sl.com/?p=27063"
+    "text": "Public debt, share of non-iron ore GDP, projected for 2026, from 51.1% in 2024 and 49.3% in 2025; debt remains at high risk of distress",
+    "source": "IMF, 2026",
+    "url": "https://www.imf.org/-/media/files/publications/cr/2026/english/1sleea2026002.pdf"
    },
    {
     "value": "$137M",
     "money": true,
-    "text": "Regional digital integration programme with Benin and Liberia, March 2026",
-    "source": "allAfrica, 2026",
-    "url": "https://allafrica.com/stories/202603120094.html"
+    "text": "World Bank Group regional digital integration programme for Benin, Liberia and Sierra Leone together, approved 10 March 2026; the share of Sierra Leone is not stated",
+    "source": "World Bank, 2026",
+    "url": "https://www.worldbank.org/en/news/press-release/2026/03/11/world-bank-group-provides-137-million-help-accelerate-digital-integration-job-creation-in-benin-liberia-and-sierra-leone"
    }
   ],
   "register": [
@@ -61,11 +61,27 @@
     "cat": "multi",
     "status": "Approved",
     "tone": "active",
+    "name": "Regional Distributed Access through Renewable Energy Solutions (Regional DARES), first phase",
+    "detail": "World Bank · Approved 22 June 2026 · with Benin, the Central African Republic and Liberia · first phase of an $853 million programme",
+    "amount": "",
+    "money": false,
+    "note": "$200 million for the four nations together; the share of Sierra Leone is not stated by the World Bank",
+    "text": "Finances solar home systems, mini-grids and other off-grid renewable technologies for rural, isolated and underserved communities, and power for schools and health centres. It serves energy, the standard furthest from reach: 39.2% of Sierra Leoneans have electricity and 2% cook with clean fuels.",
+    "by": [
+     "World Bank"
+    ],
+    "url": "https://www.banquemondiale.org/fr/news/press-release/2026/06/22/world-bank-supports-regional-program-to-expand-renewable-energy-access-and-create-jobs-in-west-and-central-africa"
+   },
+   {
+    "cat": "multi",
+    "status": "Approved",
+    "tone": "active",
     "name": "Resilience and Sustainability Facility",
-    "detail": "IMF · Approved 18 June 2026",
+    "detail": "IMF · Approved 18 June 2026 · SDR 155.55 million, 75% of quota · alongside the Extended Credit Facility",
     "amount": "$211.5M",
     "money": true,
-    "text": "Climate resilience, public investment and financial stability; SDR 155.55 million.",
+    "note": "Disbursements begin on completion of the first review; to be used for budget support",
+    "text": "The IMF’s climate resilience arrangement with Sierra Leone, approved with the third review of the Extended Credit Facility. Its reforms cover public financial management, disaster risk management and social safety nets, adaptation in water and land management, and financial sector risk management, which bear on the water, food and livelihood standards.",
     "by": [
      "IMF"
     ],
@@ -76,28 +92,198 @@
     "status": "Active",
     "tone": "active",
     "name": "Extended Credit Facility",
-    "detail": "IMF · Approved 31 October 2024 · 38 months",
-    "amount": "",
-    "money": false,
-    "text": "Third review completed 18 June 2026; a safe-harbour pricing formula for iron ore among the prior actions.",
+    "detail": "IMF · Approved 31 October 2024 · 38 months · third review 18 June 2026 · next disbursement available from 15 November 2026, on the fourth review",
+    "amount": "SDR 186.66M",
+    "money": true,
+    "note": "SDR 116.664 million (about US$158.6 million) disbursed after the third review",
+    "text": "The IMF’s main lending programme with Sierra Leone, with access of SDR 186.663 million, 90% of quota. The third review released SDR 23.333 million (about US$31.7 million), and the authorities committed to apply a safe harbour pricing formula for iron ore. It supports the public finances on which spending for the seven standards depends; debt remains at high risk of distress.",
     "by": [
      "IMF"
     ],
-    "url": "https://www.imf.org/en/news/articles/2024/11/22/pr-24432-sierra-leone-imf-concludes-2024-aiv-consultation-approves-req-38-month-arr-under-ecf"
+    "url": "https://www.imf.org/-/media/files/publications/cr/2026/english/1sleea2026002.pdf"
+   },
+   {
+    "cat": "multi",
+    "status": "Approved",
+    "tone": "active",
+    "name": "Sustainable Agricultural Value-chains Intensification for Growth (SAVIG)",
+    "detail": "World Bank (IDA) · Approved 18 June 2026 · grant",
+    "amount": "$40M",
+    "money": true,
+    "note": "Contributes to the Government’s goal of at least 35,000 formal jobs in agriculture",
+    "text": "An IDA grant for production systems, post-harvest handling, processing and market links in priority agricultural value chains, with improved access to finance and digital agriculture solutions, for smallholder farmers, rural entrepreneurs and agribusiness operators. It serves the food and livelihood standards: 88.1% of Sierra Leoneans are moderately or severely food insecure.",
+    "by": [
+     "World Bank (IDA)"
+    ],
+    "url": "https://www.worldbank.org/en/news/press-release/2026/06/18/world-bank-approves-40-million-to-boost-agricultural-value-chains-and-job-creation-in-sierra-leone"
+   },
+   {
+    "cat": "multi",
+    "status": "Approved",
+    "tone": "active",
+    "name": "Western Africa Regional Digital Integration Program, second operation (WARDIP2)",
+    "detail": "World Bank Group · Approved 10 March 2026 · with Benin and Liberia",
+    "amount": "",
+    "money": false,
+    "note": "$137 million for the three nations together; the share of Sierra Leone is not stated",
+    "text": "Expands and upgrades digital infrastructure, fosters a more business-friendly environment and enables businesses to scale and operate across regional markets; about 5.2 million people in the three nations are to be connected to new or enhanced broadband. It serves the livelihood standard through jobs in an integrated regional digital market.",
+    "by": [
+     "World Bank Group"
+    ],
+    "url": "https://www.worldbank.org/en/news/press-release/2026/03/11/world-bank-group-provides-137-million-help-accelerate-digital-integration-job-creation-in-benin-liberia-and-sierra-leone"
+   },
+   {
+    "cat": "multi",
+    "status": "Approved",
+    "tone": "active",
+    "name": "West Africa Food System Resilience Program, Phase 2, additional financing",
+    "detail": "World Bank · Approved 30 October 2025 · grant from the Least Developed Countries Fund of the Global Environment Facility",
+    "amount": "$18.34M",
+    "money": true,
+    "note": "Scales up Phase 2 activities in Sierra Leone with nature-based solutions",
+    "text": "An additional grant for integrated landscape management, biodiversity conservation and climate-sensitive interventions, with investments in research, innovation and community capacity building. It serves the food and livelihood standards, and the farmland and forest on this page.",
+    "by": [
+     "World Bank",
+     "Global Environment Facility"
+    ],
+    "url": "https://www.worldbank.org/en/news/press-release/2025/10/31/world-bank-approves-new-financing-to-enhance-climate-change-mitigation-and-adaptation-in-sierra-leone"
+   },
+   {
+    "cat": "multi",
+    "status": "Approved",
+    "tone": "active",
+    "name": "Water Security and WASH Access Improvement Project",
+    "detail": "World Bank (IDA) · Approved 25 September 2025 · grant · first phase of a $180 million programme over the next decade",
+    "amount": "$40M",
+    "money": true,
+    "note": "Approximately 5 million people expected to benefit",
+    "text": "The first phase of a ten-year water, sanitation and hygiene programme: it improves the operational efficiency of the Guma Valley Water Company, expands toilets and hygiene in schools and health centres and adds fecal sludge treatment capacity. It serves water and shelter, where 10.9% of Sierra Leoneans have safely managed drinking water and 16.8% safely managed sanitation.",
+    "by": [
+     "World Bank (IDA)"
+    ],
+    "url": "https://www.worldbank.org/en/news/press-release/2025/09/25/new-world-bank-project-to-deliver-clean-water-and-sanitation-to-five-million-sierra-leoneans"
+   },
+   {
+    "cat": "multi",
+    "status": "Approved",
+    "tone": "active",
+    "name": "Macro Stability and Resilience Development Policy Operation, with a Catastrophe Deferred Drawdown Option",
+    "detail": "World Bank (IDA) · Approved 13 December 2024 · $60 million grant as budget support · $20 million Cat DDO · first in a series of three",
+    "amount": "$80M",
+    "money": true,
+    "note": "The $20 million Catastrophe Deferred Drawdown Option is contingent financing for the Government",
+    "text": "Budget support for reforms to mobilize domestic revenue and enforce spending discipline, improve access to finance for the private sector by safeguarding financial sector stability, and enable private participation in the energy sector to improve the performance of the electricity utility, EDSA. It also supports climate and disaster resilience; it serves the energy and livelihood standards.",
+    "by": [
+     "World Bank (IDA)"
+    ],
+    "url": "https://www.worldbank.org/en/news/press-release/2024/12/13/world-bank-supports-sierra-leone-with-80-million-to-enhance-macroeconomic-stability-and-resilience"
    },
    {
     "cat": "regional",
     "status": "Approved",
     "tone": "active",
-    "name": "West Africa Regional Digital Integration (WARDIP2)",
-    "detail": "World Bank · Approved 10 March 2026 · With Benin and Liberia",
-    "amount": "$137M",
+    "name": "Freetown WASH and Aquatic Environment Revamping Project",
+    "detail": "IsDB · Endorsed at the 363rd meeting of the Board of Executive Directors · release of 13 December 2025",
+    "amount": "€25.93M",
     "money": true,
-    "text": "Jobs through an integrated regional digital market.",
+    "note": "One of 14 operations approved for 12 member countries, US$1.365 billion in all",
+    "text": "Improves water and sanitation services in Greater Freetown and restores key watershed areas. It serves the water standard, where 10.9% of Sierra Leoneans have safely managed drinking water, and the fresh water on this page.",
     "by": [
-     "World Bank"
+     "Islamic Development Bank"
     ],
-    "url": "https://allafrica.com/stories/202603120094.html"
+    "url": "https://www.isdb.org/hub/turkey/news/isdb-board-of-executive-directors-approves-us-1365-billion-to-spur-infrastructure-energy-security-human-capital-across-12-member-countries"
+   },
+   {
+    "cat": "regional",
+    "status": "Approved",
+    "tone": "active",
+    "name": "Fostering Africa’s Agricultural Productivity through Fertilizer Value Chain Financing (FOSTER)",
+    "detail": "African Development Bank Group · Approved 16 October 2025 · $1.5 million partial credit guarantee from the Africa Fertilizer Financing Mechanism · implemented by Welthungerhilfe",
+    "amount": "$2.25M",
+    "money": true,
+    "note": "9,500 metric tons of fertilizer for more than 126,000 farmers",
+    "text": "A guarantee-led package that helps smallholder farmers obtain quality fertilizer through credit and guarantee schemes. It serves the food and livelihood standards.",
+    "by": [
+     "African Development Bank Group"
+    ],
+    "url": "https://allafrica.com/stories/202510210696.html"
+   },
+   {
+    "cat": "regional",
+    "status": "Signed",
+    "tone": "active",
+    "name": "Livestock and Livelihoods Development Project",
+    "detail": "IsDB · Signed 21 May 2025 in Algiers, at the 2025 IsDB Annual Meetings",
+    "amount": "$38.19M",
+    "money": true,
+    "note": "Expected to boost agricultural productivity and food security in rural areas",
+    "text": "An IsDB financing agreement for livestock and rural livelihoods. It serves the food and livelihood standards.",
+    "by": [
+     "Islamic Development Bank"
+    ],
+    "url": "https://www.isdb.org/news/isdb-signs-landmark-development-agreements-to-advance-youth-health-and-infrastructure-in-member-countries"
+   },
+   {
+    "cat": "bilat",
+    "status": "Active",
+    "tone": "active",
+    "name": "Salone Off-Grid Renewable Energy Acceleration (SOGREA)",
+    "detail": "European Union and Denmark · implemented by UNOPS with SEforALL · launched 26 January 2026 · bidders workshop 10 and 11 June 2026",
+    "amount": "€24M",
+    "money": true,
+    "note": "EUR 22 million of EU grants for private mini-grid developers, paid against verified milestones",
+    "text": "A milestone-triggered partial reimbursement for private companies that finance, build, own and operate green mini-grids in rural Sierra Leone. By 2028 the EU funding is to bring over 31,000 new connections in at least 60 communities and about 5.2 megawatts of solar capacity. It serves energy, the standard furthest from reach.",
+    "by": [
+     "European Union",
+     "Denmark",
+     "UNOPS"
+    ],
+    "url": "https://content.unops.org/documents/libraries/press-releases/2026/en/Press-release-SOGREA-bidders-workshop-signals-a-new-era-for-off-grid-renewable-energy-in-Sierra-Leone.pdf"
+   },
+   {
+    "cat": "bilat",
+    "status": "Signed",
+    "tone": "active",
+    "name": "Sierra Leone Compact",
+    "detail": "Millennium Challenge Corporation · Signed 27 September 2024 · five-year grant · transmission, distribution and access, power sector reform",
+    "amount": "$480M",
+    "money": true,
+    "note": "With a $14.2 million voluntary contribution from the Government of Sierra Leone",
+    "text": "A five-year grant to expand the transmission network, make the grid more reliable and reduce losses and barriers to access, with a focus on schools, health facilities, businesses and households, and to reform the power sector to generate additional private financing. It aims to deliver affordable and reliable electricity for 4.6 million people; it serves energy, the standard furthest from reach.",
+    "by": [
+     "Millennium Challenge Corporation"
+    ],
+    "url": "https://mcc.gov/news-and-events/release/release-092724-mcc-and-sierra-leone-sign-compact"
+   },
+   {
+    "cat": "private",
+    "status": "Announced",
+    "tone": "active",
+    "name": "Planting Naturals, sustainable organic palm oil",
+    "detail": "AgDevCo · Announced 3 September 2025 · investment, with technical assistance",
+    "amount": "$7M",
+    "money": true,
+    "note": "The company buys palm fruit from about 8,000 smallholder farmers and employs over 1,500 people",
+    "text": "An investment by AgDevCo, a specialist impact investor in African agriculture, to increase fruit production and mill capacity and upgrade logistics, with technical assistance for farmer support programmes, including digital and traceability. It serves the livelihood standard in rural Sierra Leone.",
+    "by": [
+     "AgDevCo"
+    ],
+    "url": "https://www.globenewswire.com/news-release/2025/09/03/3143362/0/en/Planting-Naturals-secures-7m-from-AgDevCo-for-sustainable-organic-palm-oil.html"
+   },
+   {
+    "cat": "private",
+    "status": "Active",
+    "tone": "active",
+    "name": "Pee Cee Agriculture, onion farm",
+    "detail": "IFC · Approved 30 September 2024 · signed 1 March 2025 · invested 7 April 2025 · project finance loan · Lungi, Port Loko District",
+    "amount": "$12M",
+    "money": true,
+    "note": "Service agreements with 41 cooperatives, about 1,300 farmers, 80% of them women (2024)",
+    "text": "A loan for a fully irrigated and mechanized 500-hectare farming operation to produce more than 40,000 tons of onions a year. It serves the food and livelihood standards.",
+    "by": [
+     "IFC"
+    ],
+    "url": "https://www.ifc.org/en/pressroom/2025/ifc-partners-with-pee-cee-holding-ltd-to-boost-sierra-leone-s-agricultural-product"
    }
   ]
  },
@@ -143,7 +329,43 @@
  },
  "enterprises": {
   "heading": "Already working in Sierra Leone.",
-  "items": []
+  "items": [
+   {
+    "standard": "Energy",
+    "name": "Easy Solar",
+    "text": "Sells solar power on pay-as-you-go terms, with customers paying in small amounts by mobile money, through an agent network that reaches remote communities across Sierra Leone and Liberia. Since 2016 it has delivered solar access to over one million people across West Africa.",
+    "source": "Acumen",
+    "url": "https://acumen.org/companies/easy-solar-2/"
+   },
+   {
+    "standard": "Energy",
+    "name": "Women in Energy Sierra Leone",
+    "text": "A company that makes Smart Green Stoves for clean cooking and has produced over 3,500 of them; it has trained over 100 women, young people and persons with disabilities, and brought solar-powered cold rooms and smoking kilns to women fishmongers in Freetown.",
+    "source": "UNDP, 2025",
+    "url": "https://www.undp.org/node/515061"
+   },
+   {
+    "standard": "Education",
+    "name": "Rising Academies",
+    "text": "Founded in Sierra Leone in 2014, it improves learning for underserved children through curriculum materials, intensive teacher coaching and actionable data, and serves over 250,000 students across 700 schools in West and East Africa.",
+    "source": "Keeping Children Safe, 2024",
+    "url": "https://www.keepingchildrensafe.global/blog/2024/11/18/rising-academies/"
+   },
+   {
+    "standard": "Livelihood",
+    "name": "A Call to Business",
+    "text": "A social enterprise that makes group and individual microloans, largely to informal entrepreneurs, with know-your-credit training; it collects savings at clients’ places of business through its Osusu account and runs a cashless agricultural lending model that supplies machinery and inputs. As of 30 December 2025 it served over 25,200 borrowers, 68 percent of them women.",
+    "source": "Global Partnerships, 2026",
+    "url": "https://globalpartnerships.org/wp-content/uploads/bsk-pdf-manager/all/Q3-4-2025-Partner-Profile-ACTB-IFF-9.pdf"
+   },
+   {
+    "standard": "Livelihood",
+    "name": "Planting Naturals",
+    "text": "A leading producer of sustainable organic palm oil that buys palm fruit from about 8,000 smallholder farmers in rural Sierra Leone and employs over 1,500 people; AgDevCo invested USD 7 million in September 2025.",
+    "source": "AgDevCo, 2025",
+    "url": "https://www.globenewswire.com/news-release/2025/09/03/3143362/0/en/Planting-Naturals-secures-7m-from-AgDevCo-for-sustainable-organic-palm-oil.html"
+   }
+  ]
  },
  "coverage": {
   "set_by": "Energy",
@@ -277,5 +499,5 @@
  ],
  "dispatches": [],
  "checked": "2026-11-15T04:31Z",
- "reviewed": "2026-11-10T21:00Z"
+ "reviewed": "2026-11-17T04:10Z"
 }
