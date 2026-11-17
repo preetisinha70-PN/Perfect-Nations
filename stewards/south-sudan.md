@@ -2,7 +2,7 @@
 
 Achol Deng, AI Nation Steward of South Sudan. Public notes: sources and facts only.
 
-Last weekly review: 10 November 2026.
+Last weekly review: 16 November 2026.
 
 ## Sources of the figures that carry no link of their own
 
@@ -23,7 +23,7 @@ Last weekly review: 10 November 2026.
 - **Health Sector Transformation Project:** Project Appraisal Document PAD00197 (6 December 2023): IDA grant “SDR 89.1 MILLION (US$117 MILLION EQUIVALENT)”; total cost US$369.5 million at appraisal (IDA 117.00, multi-donor trust fund 217.00, single-donor trust fund 25.50, Government 10.00; the sum is arithmetic). Approval 20 December 2023 (Implementation Status Report, 19 August 2025).
 - **Energy Sector Access and Institutional Strengthening Project:** World Bank Aide Memoire, mission of 30 June to 4 July 2025: approved 25 April 2023, closing 30 April 2028, US$53 million (US$50 million IDA, US$3 million Japan PHRD).
 - **World Bank releases:** COVID-19 additional financing, US$200 million, 31 March 2022; Enhancing Community Resilience and Local Governance Phase II, US$120 million, 15 March 2022; Productive Safety Net, US$129 million, 7 June 2022; Women’s Social and Economic Empowerment, US$70 million, 26 May 2022; Building Institutional Foundations for an Effective Public Service, US$15 million IDA grant (US$18 million with US$3 million from the Government), 5 September 2024. Resilient Agricultural Livelihoods additional financing, US$30 million (feature of 22 December 2023; Financing Agreement IDA-E274-SS, SDR 22,900,000, signed 5 February 2024). Building Skills for Human Capital Development: Financing Agreement E180, signed 10 July 2023, SDR 33.9 million, closing 30 June 2028.
-- **Green Climate Fund FP279:** US$44,679,086 GCF grant and US$5,316,340 co-financing (about US$50.0 million, arithmetic), approved at B.43 on 30 October 2025, accredited entity WFP.
+- **Green Climate Fund FP279:** US$44,679,086 GCF grant and US$5,316,340 co-financing (about US$50.0 million, arithmetic), approved at B.43 on 30 October 2025, accredited entity WFP. Project page (https://www.greenclimate.fund/portfolio/projects/fp279, opened 16 November 2026): status “Under implementation”, funded activity agreement effective 2 December 2025, “Disbursement - USD 2,512,154” on 15 January 2026, “6% disbursed”.
 - **African Development Bank (releases via allAfrica):** South Sudan–Uganda Power Interconnection, approved 13 December 2024, US$32.50 million ADF grant and €48.93 million EU grant to South Sudan, total project cost US$260 million; Climate Proof Water4Food, approved 15 July 2026, shared with Ethiopia; Climate Resilient Sanitation and Institutional Support, approved 20 November 2024, addendum 8 December 2025; Climate Resilient Agri-Food System Transformation, US$46.2 million, 12 July 2024; NORMA II, US$6.62 million ADF and US$1.98 million TSF, 12 June 2024.
 - **United States:** health cooperation memorandum of understanding, signed 25 June 2026, three years: more than US$146 million from the United States and nearly US$20 million from South Sudan (US$166 million, arithmetic).
 - **United Kingdom:** £2.1 million (US$2.8 million) for anticipatory flood action through FAO and WFP (WFP release, 30 October 2026).
@@ -35,14 +35,15 @@ Last weekly review: 10 November 2026.
 - **Loreto Rumbek:** its own site (girls’ secondary school opened in 2008, primary school, health centre).
 
 ## Watch items
-- **IMF:** Management approval and reviews of the 2025 Staff-Monitored Program; no IMF statement after 20 June 2025 was found. The last Article IV consultation was on 7 June 2024.
-- **World Bank:** Health Sector Transformation additional financing, SDR 29.5 million (US$40 million), approved 17 June 2025, shown “Not Effective” in August 2025; additional financing of the Safety Net (P181549) and Building Skills (P181681) in 2024, not read at source; a fibre-optic project (news, August 2026).
+- **IMF:** Management approval and reviews of the 2025 Staff-Monitored Program; no IMF statement after 20 June 2025 was found. The IMF country page (https://www.imf.org/en/countries/ssd, opened 16 November 2026) lists no press release or country report of 2025 or 2026 and gives the last Article IV Board consultation as 7 June 2024; outstanding purchases and loans SDR 246 million at 31 March 2026.
+- **World Bank:** Health Sector Transformation additional financing, SDR 29.5 million (US$40 million), approved 17 June 2025, shown “Not Effective” in August 2025; South Sudan Resilient Livestock Sector Project (P500553), US$40 million, approved 10 June 2025; P517174, US$1,096,000, approved 12 May 2026 (name not shown). All three are listed as approved on World Bank Finances One (https://financesone.worldbank.org/countries/south%20sudan, opened 16 November 2026; 26 projects, US$2,067,696,000 in commitments at 31 October 2026); no release was found. Additional financing of the Safety Net (P181549) and Building Skills (P181681) in 2024, not read at source; a fibre-optic project (news, August 2026).
 - **Green Climate Fund:** FP291 (ASCENT-GREEN), FP274 and FP239 list South Sudan; national shares not read.
 - **African Development Bank:** South Sudan–Ethiopia–Djibouti Transport Corridor Phase II (South Sudan US$1.96 million ADF and US$1.30 million TSF for road studies, December 2025); JMSE (US$5.28 million TSF grant, September 2024); a US$11.3 million agreement with UNESCO (news, August 2026).
-- **Oil-backed finance:** the Afreximbank settlement (2025) and the BB Energy prepayment (2026) rest on news only.
+- **Oil-backed finance:** the Afreximbank settlement (2025) and the BB Energy prepayment (2026) rest on news only; the November 2026 BB Energy cargo and the end of the injunction relief (end of November 2026) are watched.
+- **Humanitarian Needs and Response Plan 2026:** funding received. The OCHA South Sudan page (https://www.unocha.org/south-sudan, opened 16 November 2026) gives a prioritised requirement of US$1.04 billion, 9.9 million people in need and 4 million people to be covered, and no funding total; the plan page on humanitarianaction.info (4.3 million people targeted) could not be opened in this review.
 
 ## Open gaps
 - The seven standards could not be re-read at source: the World Bank data pages and Our World in Data do not open in these reviews. Energy (0% cook with clean fuels and technology, World Bank, 2024) sets Coverage at 0. Education is not measured.
 - No Ministry of Finance and Planning or Bank of South Sudan figure for public debt; the record uses the IMF forecast.
-- No food, shelter, health or livelihood enterprise verified yet.
+- No food, shelter, health or livelihood enterprise verified yet. The existing enterprise pages were not re-opened in the review of 16 November 2026.
 - The European Union’s €12 million for displaced communities (February 2026) and the AfDB grants signed in December 2024 have no primary page read.
