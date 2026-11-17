@@ -26,16 +26,45 @@ Furthest from reach: Education (79.8%). Of young people in Gabon do not complete
 
 ## The record and the register
 
-- **$920M:** Seven-year Eurobond at a 9.375% coupon, above a $750 million target, closed 30 July 2026. Daba Finance, 2026, https://dabafinance.com/en/news/gabon-raises-920-million-in-eurobond-return
-- **70.9%:** Public debt, share of GDP, 2024, projected by the IMF to reach 94.3% in 2027. allAfrica, 2026, https://allafrica.com/stories/202608040660.html
-- **$150M:** Additional World Bank programme for water, sanitation and electricity, signed 16 April 2026. Financial Afrik, 2026, https://www.financialafrik.com/en/2026/05/01/gabon-150-million-additional-from-the-world-bank-and-comprehensive-audit-of-public-debt/
-- **XAF 336bn:** A further Eurobond raised in October 2026. EcoMatin, 2026, https://ecomatin.net/eurobond-le-gabon-leve-336-milliards-fcfa-sur-le-marche-international-de-la-dette
-- **Eurobond due 2033 ($920M):** Gabon’s return to the Eurobond market, larger than its $750 million target. https://dabafinance.com/en/news/gabon-raises-920-million-in-eurobond-return
-- **Water, sanitation and electricity programme ($150M):** Support for sectors of high social sensitivity. https://www.financialafrik.com/en/2026/05/01/gabon-150-million-additional-from-the-world-bank-and-comprehensive-audit-of-public-debt/
-- **Eurobond, October 2026 (XAF 336bn):** A second international issue in 2026. https://ecomatin.net/eurobond-le-gabon-leve-336-milliards-fcfa-sur-le-marche-international-de-la-dette
+Sources opened on 16 November 2026 unless stated.
+
+- **$920M (record):** Seven-year Eurobond: 9.375% amortising notes due 2033, priced 30 July 2026; final offering circular published 6 August 2026. The Gabonese Republic, RNS, https://www.investegate.co.uk/announcement/rns/the-gabonese-republic--sx99/publication-of-the-final-offering-circular/9709353 (opened 16 November 2026). Daba Finance reported a $750 million target: https://dabafinance.com/en/news/gabon-raises-920-million-in-eurobond-return
+- **70.9% (record):** Public debt, share of GDP, 2024, projected by the IMF to reach 94.3% in 2027. allAfrica, 2026, https://allafrica.com/stories/202608040660.html
+- **$150M (record):** World Bank financing for piped water, electricity and safely managed sanitation for about 535,000 people, approved 5 February 2026. World Bank, “World Bank supports Gabon’s Water Supply, Sanitation, and Electricity Services”, 5 February 2026, https://www.worldbank.org/en/news/press-release/2026/02/05/world-bank-supports-gabon-s-water-supply-sanitation-and-electricity-services
+- **$580M (record):** US$580,000,000 9.375% Amortising Notes due 21 October 2034, offering circular of 19 October 2026. The Gabonese Republic, RNS “Publication of Offering Circular”, 19 October 2026, https://www.investegate.co.uk/announcement/rns/the-gabonese-republic--sx99/publication-of-offering-circular-/9829368
+- **Eurobond due 2034 ($580M, govt):** as above.
+- **Eurobond due 2033 ($920M, govt):** US$920,000,000 9.375% Amortising Notes due 2033; pricing announced 30 July 2026, final offering circular published 6 August 2026. The Gabonese Republic, RNS, https://www.investegate.co.uk/announcement/rns/the-gabonese-republic--sx99/publication-of-the-final-offering-circular/9709353 (announcement list: https://www.investegate.co.uk/company/SX99)
+- **CEMAC public bond, EOG 2025 à tranches multiples 2 (XAF 106.5bn, govt):** 10,647,876 bonds of FCFA 10,000 (8,521,635 in tranche A, 5.6% net, 2025–2027; 2,126,241 in tranche B, 6% net, 2025–2028), first listed on the BVMAC on 18 May 2026. BVMAC, Avis N°033/2026/BVMAC/DG, 18 May 2026, https://www.bvm-ac.org/?p=15832; Avis N°028/2026/BVMAC/DG, 13 May 2026, https://www.bvm-ac.org/?p=15810
+- **Debt conversion for ocean conservation ($500M, govt):** US$500 million of Gabon’s debt refinanced, DFC political risk insurance of up to $500 million, an expected $163 million for ocean conservation, $5 million a year for 15 years, an endowment of about $88 million by 2038, marine protected areas from 26% to 30%. The Nature Conservancy, 14 August 2023, https://www.nature.org/en-us/newsroom/tnc-announces-debt-conversion-for-ocean-conservation-in-gabon/. Bonds bought back: US$94,682,000 of the 2025 notes, US$105,318,000 of the February 2031 notes and US$300,000,000 of the November 2031 notes, US$500,000,000 in all. The Gabonese Republic, RNS “Result of Tender Offer”, 8 August 2023, https://www.investegate.co.uk/announcement/rns/the-gabonese-republic--sx99/result-of-tender-offer/7683705
+- **Access to Basic Services and Performance Improvement Project, PASBAP ($150M, multi):** IBRD, approved 5 February 2026, about 535,000 people. World Bank release above.
+- **Trans-Gabon Railway Modernisation and Safety Programme ($173M, bilat):** AFD sovereign loan of €173 million and European Union grant of €30 million, €203 million in all, signed 24 November 2025 in Libreville. AFD, https://www.afd.fr/fr/commmuniques-de-presse/moderniser-le-rail-pour-relier-lavenir-signature-du-programme-de
+- **Trans-Gabon railway, Phase III financing, SETRAG (€312M, private):** Proparco, IFC and SETRAG, release of 20 July 2026; Phase III includes €225 million of new financing and €87 million refinanced. IFC, https://www.ifc.org/en/pressroom/2026/proparco-ifc-and-setrag-sign-a-312-million-financing-agreement-to-modernize-the-tr; Proparco, 21 July 2026, https://proparco.fr/en/news/proparco-ifc-and-setrag-sign-eur312-million-financing-agreement-modernize-trans-gabon-railway
+- **Kinguélé Aval hydropower plant (€151M, private):** IFC €33 million, Canada-IFC up to €20 million, €98 million mobilised from the AfDB, EAIF and DBSA; project cost estimated at €178 million; 35 MW, 203 GWh a year, 32,000 customers. IFC, 3 July 2021, https://www.ifc.org/en/pressroom/2021/ifc-and-canada-invest-in-kinguele-aval-hydropower-plant-to-support-clean-power-generation-in-gabon. Mbei River, 33-year concession of October 2019, “Under construction”: Meridiam, https://www.meridiam.com/assets/kinguele-hydro-dam-gabon/. AfDB share: €20 million, plus €10 million from the Africa Growing Together Fund and €9 million from the Sustainable Energy Fund for Africa (AfDB release distributed by APO Group, 2021), https://www.zawya.com/en/press-release/african-development-bank-to-provide-eur39-million-loan-package-for-gabons-first-independent-hydropower-project-ceko4duj
+- **Results-based payment for reduced forest emissions ($17M, impact):** first payment of $17 million, reductions in 2016 and 2017 at $5 a tonne, $150 million over ten years. UNDP, 22 June 2021, https://www.undp.org/geneva/press-releases/gabon-receives-first-payment-reducing-co2-emissions-under-historic-cafi-agreement; CAFI, “a first payment from Norway”, https://cafi.org/?p=9927; CAFI Executive Board decision EB.2022.13, 13 July 2022 (results for 2016–2017 confirmed), https://cafi.org/sites/default/files/2022-09/EB.2022.13%20-%20Gabon%20-%20approval%20of%20RBPs.pdf
+
+## The enterprises
+
+- **Gozem (Livelihood):** IFC names Gozem among its investments in Gabon, at $11 million (IFC, Libreville, 4 March 2026, https://www.ifc.org/fr/pressroom/2026/ifc-inaugure-un-nouveau-bureau-a-libreville-pour-renforcer-son-engagement-en-faveu). Operates in Benin, Togo, Cameroon and Gabon; Gozem Money supplies motorbikes that drivers own after 15 to 24 months (IFC project 45714, https://disclosures.ifc.org/project-detail/SII/45714/gozem-vehicle-financing-platform).
+
+## Watch
+
+- IMF: the Government has requested an IMF-supported programme; staff visited Libreville from 14 to 25 September 2026 for technical discussions to “pave the way for program discussions” (IMF, 26 September 2026, https://www.imf.org/en/news/articles/2026/09/26/pr2305-imf-staff-concludes-visit-to-gabon). No staff-level agreement yet. The last Article IV consultation was held on 13 May 2024 (https://www.imf.org/en/countries/gab).
+- EOG 2026 on the CEMAC market (target FCFA 85 billion, about FCFA 173.5 billion reported raised) and a further FCFA 60 billion offering launched in October 2026: reported by EcoMatin, Capmad and Gabon Media Time; no BVMAC or Ministry notice opened yet.
+- Oil prepayment of $1 billion with Trafigura and Algest (Financial Afrik, April 2026): no primary source.
+- Afreximbank agreements of June and September 2025 ($3.2 billion to $4 billion reported): no Afreximbank release found, so the instruments and their terms are not confirmed.
+- Kinguélé Aval: commissioning expected by the end of 2026 (Gabon Media Time); add as an energy enterprise once in operation.
+- IFC and Hydroneo: Upstream Engagement Letter for the Irouba hydropower project, about 25 MW, 17 March 2026 (https://www.ifc.org/fr/pressroom/2026/la-soci-t-financi-re-internationale-et-hydroneo-scellent-un-partenariat-strat-giqu); no financing yet.
+- AfDB portfolio in Gabon: $658.62 million across nine projects at 30 June 2026 (AfDB sponsored item, allAfrica, 31 July 2026); no new AfDB approval found.
 
 ## Open gaps
 
 - Public debt figures differ: the IMF (70.9% of GDP in 2024), the authorities (about 70% to 74%) and the World Bank (above 80% in 2025, provisional). Shown with its source; flagged for the Steward-General.
+- The 70.9% record item still rests on news (allAfrica); no IMF page with the 94.3% projection was opened.
+- The signing of the World Bank $150 million on 16 April 2026 is reported by Financial Afrik and Reuters; no World Bank or Ministry page on the signing was opened.
+- Passengers on the Trans-Gabon railway: about 260,000 a year (IFC, July 2026) or more than 300,000 (AFD, November 2025).
+- No enterprise yet for food, water, shelter, energy, education or health.
 - Food insecurity is not measured by FAO for Gabon.
 - Lower-secondary completion dates from 1995; learning outcomes 2019 used.
+- The seven standards and the asset figures were not re-read at source on 16 November 2026.
+
+Last weekly review: 16 November 2026.
