@@ -1,21 +1,21 @@
 {
  "nation": "Israel",
  "page_version": "1.0",
- "updated": "2026-11-10",
+ "updated": "2026-11-18",
  "steward": {
   "name": "Noa Ben-David",
   "role": "Nation Steward of Israel"
  },
  "population": 10122800,
  "hero": {
-  "lead": "A technology economy of 10.1 million that raised $6 billion from international investors in January 2026, where public debt stood at 68.6% of GDP at the end of 2025.",
+  "lead": "A technology economy of 10.1 million that raised $6 billion from international investors in January 2026, where public debt stood at 68.4% of GDP at the end of 2025.",
   "stats": [
    {
     "value": "$6bn",
     "label": "International dollar bonds, January 2026"
    },
    {
-    "value": "68.6%",
+    "value": "68.4%",
     "label": "Public debt, share of GDP, 2025 (Ministry of Finance)"
    },
    {
@@ -35,11 +35,11 @@
     "url": "https://www.gov.il/BlobFolder/dynamiccollectorresultitem/annual-debt-report-2025/en/files-eng_Annual-Debt-Reports_annual-debt-report-2025-accessible-version-en.pdf"
    },
    {
-    "value": "68.6%",
+    "value": "68.4%",
     "money": false,
-    "text": "Public debt, share of GDP, end of 2025, up 0.9 points in the year",
+    "text": "Public debt, share of GDP, end of 2025, up about 0.7 points in the year (Annual Debt Report 2025; the initial estimate of January 2026 was 68.6%)",
     "source": "Ministry of Finance, 2026",
-    "url": "https://www.gov.il/BlobFolder/news/press_25012026/en/PressReleases_eng_press_25012026-en-file.pdf"
+    "url": "https://www.gov.il/BlobFolder/dynamiccollectorresultitem/annual-debt-report-2025/en/files-eng_Annual-Debt-Reports_annual-debt-report-2025-accessible-version-en.pdf"
    },
    {
     "value": "NIS 207bn",
@@ -58,18 +58,68 @@
   ],
   "register": [
    {
-    "cat": "private",
+    "cat": "govt",
     "status": "Issued",
     "tone": "active",
-    "name": "International dollar bonds",
-    "detail": "Ministry of Finance, Accountant General · 5, 10 and 30 years · January 2026",
+    "name": "International dollar bonds, 5, 10 and 30 years",
+    "detail": "Ministry of Finance, Accountant General · completed 6 January 2026 · 5, 10 and 30 years · spreads of 90, 100 and 125 basis points over US Treasuries",
     "amount": "$6bn",
     "money": true,
-    "text": "Demand reached $36 billion; the sale supports the government’s financing needs for 2026.",
+    "note": "Demand of about $36 billion, six times the amount issued",
+    "text": "A public offering by the State of Israel of US dollar bonds of 5, 10 and 30 years in international markets, set at spreads of 90, 100 and 125 basis points over US Treasuries, with demand of about $36 billion, six times the amount issued. The Accountant General plans each year’s issuance from the financing needs derived from the expected budget deficit, so the proceeds finance the State budget as a whole, and with it the public services behind the seven standards.",
     "by": [
-     "Investors"
+     "State of Israel",
+     "Ministry of Finance, Accountant General"
     ],
-    "url": "https://www.ynetnews.com/business/article/bj88gtjnzl"
+    "url": "https://www.gov.il/BlobFolder/dynamiccollectorresultitem/annual-debt-report-2025/en/files-eng_Annual-Debt-Reports_annual-debt-report-2025-accessible-version-en.pdf"
+   },
+   {
+    "cat": "govt",
+    "status": "Issued",
+    "tone": "annual",
+    "name": "Israel Bonds, sales in 2025",
+    "detail": "Israel Bonds Organization · sold through 2025 · about NIS 8.3bn · about $2.5bn in 2024 · Israel Bonds debt about $7.5bn at the end of 2025",
+    "amount": "$2.4bn",
+    "money": true,
+    "note": "Part of about NIS 26bn the State raised in external markets in 2025",
+    "text": "Bonds of the State of Israel sold through the Israel Bonds Organization, which raised about $2.4 billion in 2025 after about $2.5 billion in 2024; the stock of debt raised through Israel Bonds stood at about $7.5 billion at the end of 2025, according to the Accountant General. With the public offerings abroad, they form the State’s borrowing in external markets, which finances the State budget and the public services behind the seven standards.",
+    "by": [
+     "State of Israel",
+     "Israel Bonds"
+    ],
+    "url": "https://www.gov.il/BlobFolder/dynamiccollectorresultitem/annual-debt-report-2025/en/files-eng_Annual-Debt-Reports_annual-debt-report-2025-accessible-version-en.pdf"
+   },
+   {
+    "cat": "govt",
+    "status": "Issued",
+    "tone": "active",
+    "name": "International dollar bonds, 5 and 10 years",
+    "detail": "Ministry of Finance, Accountant General · February 2025 · 5 years, $2.5bn at 5.573%, 120 basis points · 10 years, $2.5bn at 5.891%, 135 basis points",
+    "amount": "$5bn",
+    "money": true,
+    "note": "Demand of 4.6 times the amount issued",
+    "text": "A public offering by the State of Israel of US dollar bonds in international markets in two tranches of $2.5 billion each: five years at a yield of 5.573% and ten years at a yield of 5.891%. Demand reached 4.6 times the amount issued. The proceeds finance the State budget as a whole, and with it the public services behind the seven standards.",
+    "by": [
+     "State of Israel",
+     "Ministry of Finance, Accountant General"
+    ],
+    "url": "https://www.gov.il/BlobFolder/dynamiccollectorresultitem/annual-debt-report-2025/en/files-eng_Annual-Debt-Reports_annual-debt-report-2025-accessible-version-en.pdf"
+   },
+   {
+    "cat": "regional",
+    "status": "Signed",
+    "tone": "active",
+    "name": "Western Galilee Desalination Plant",
+    "detail": "European Investment Bank · project 20210765 · signed 23 December 2023 · borrower: State of Israel, Ministry of Finance · total cost €470M",
+    "amount": "€150M",
+    "money": true,
+    "note": "A seawater reverse osmosis plant of 100 million cubic metres a year, built as a public-private partnership",
+    "text": "A €150 million loan from the European Investment Bank to the State of Israel, through the Ministry of Finance, for the design, construction and operation of a seawater desalination facility in the Western Galilee, a project costing €470 million. The plant is planned to produce 100 million cubic metres of water a year, to meet persistent drought and rising demand. It serves the water standard.",
+    "by": [
+     "European Investment Bank",
+     "State of Israel"
+    ],
+    "url": "https://eib.org/en/projects/all/20210765"
    }
   ]
  },
@@ -115,7 +165,43 @@
  },
  "enterprises": {
   "heading": "Already working in Israel.",
-  "items": []
+  "items": [
+   {
+    "standard": "Shelter",
+    "name": "Amigour",
+    "text": "A subsidiary of the Jewish Agency for Israel that runs 57 sheltered living complexes across Israel, home to 7,500 elderly Israelis, many of them Holocaust survivors, and has provided more than 60,000 housing solutions for new immigrants and disadvantaged citizens since 1972.",
+    "source": "The Jewish Agency for Israel, 2026",
+    "url": "https://www.jewishagency.org/amigour/"
+   },
+   {
+    "standard": "Education",
+    "name": "Center for Educational Technology (CET)",
+    "text": "A non-profit founded in 1971 and Israel’s largest educational publisher, which provides printed and digital learning materials to schools: students from 3,400 schools learn from its content, 18,000 teachers and trainee teachers take its online courses each year, and its Ivritna programme, adopted by the Ministry of Education, gives Arabic-speaking high-school students online Hebrew conversation practice.",
+    "source": "CET, 2026",
+    "url": "https://cet.ac.il/about-us/?lang=en"
+   },
+   {
+    "standard": "Health",
+    "name": "Yad Sarah",
+    "text": "A volunteer organisation that lends medical equipment and offers other services, free or at nominal cost, so that people who are chronically ill, disabled, infirm or terminally ill can live at home: it serves hundreds of thousands of people in Israel each year through more than 125 branches and more than 7,000 volunteers.",
+    "source": "Friends of Yad Sarah, 2026",
+    "url": "https://friendsofyadsarah.org/about-us"
+   },
+   {
+    "standard": "Livelihood",
+    "name": "Na Laga’at Center",
+    "text": "A cultural centre in Jaffa where 70% of the more than 100 employees have sensory disabilities, with a professional theatre, the Black-Out restaurant served in darkness by blind and visually impaired waiters and the Kapish event complex with deaf or hearing-impaired waiters; 60% of its income is self-generated, and more than a million visitors came from 2007 to 2024.",
+    "source": "Zero Project, 2025",
+    "url": "https://zeroproject.org/view/project/f57f8d89-4caa-ef11-b8e9-0022489c2733"
+   },
+   {
+    "standard": "Livelihood",
+    "name": "Koret Israel Economic Development Funds (KIEDF)",
+    "text": "A lender that gives small businesses in Israel’s geographic and social periphery access to credit and business services, through loan funds and bank-loan guarantee funds: it lent about NIS 80 million in 2024, including 1,450 loans to Arab women entrepreneurs, and has provided NIS 1.9 billion in credit since 1994.",
+    "source": "KIEDF, Annual Report 2024",
+    "url": "https://reports.jewishfed.org/wp-content/uploads/2025/06/2024-KIEDF-Annual-Report.pdf"
+   }
+  ]
  },
  "coverage": {
   "set_by": "Education",
@@ -201,5 +287,5 @@
  ],
  "dispatches": [],
  "checked": "2026-11-10T23:00Z",
- "reviewed": "2026-11-10T23:00Z"
+ "reviewed": "2026-11-18T19:26Z"
 }
