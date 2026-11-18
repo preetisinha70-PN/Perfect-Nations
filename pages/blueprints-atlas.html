@@ -1,9 +1,11 @@
 <!-- ===========================================================================
 PERFECT NATIONS - THE BLUEPRINTS PAGE - 01 THE GOLDEN MAP, 02 THE OPEN BLUEPRINTS, 03 EVERY NATION
-part v7.0 - 2026-11-16 - kept by the Blueprints Steward
+part v7.0.1 - 2026-11-18 - kept by the Blueprints Steward
 This part is the body of pages/blueprints.html. Edit this file, then run tools/build_blueprints.py,
 which fills the slots (the map, the tabs, the tiles, the region lists, the counts and the settings)
 and joins it with the Nations Menu and the gold line. Never edit pages/blueprints.html by hand.
+v7.0.1: a headline figure written with an ISO currency code (BHD 2bn, CNY 1.3tn, SDR 1.22bn) or the loti's M
+  now counts as money, so each tile shows its blueprint's first money figure, in gold (Blueprints Steward, 18 Nov 2026).
 v7.0: no Steward named on the page (Preeti Sinha, President and CEO, 16 Nov 2026): the tiles carry no credit, the
   open blueprints line says how they are kept, and the hero lead names innovative financing for development alone.
 v6.6: the lapis map (the Steward-General, 11 Nov 2026). The sea of the golden map is now the lapis lazuli of
@@ -734,11 +736,14 @@ sourced money figures. Copy: no contractions, curly apostrophes.
   }
 
   /* ---------- keeping the page current ---------- */
-  var MONEY = /(US\$|\$|\u20ac|\u00a3|\u00a5|RMB|billion|million|trillion|\bbn\b)/i;
+  /* the same test as tools/build_blueprints.py: a currency sign or word, an ISO 4217 code, or the loti's M */
+  var MONEY = /(US\$|\$|\u00a3|\u00a5|[\u20a0-\u20bf\u09f3]|RMB|\bN\d|\bKSh|\bR\d|billion|million|trillion|\bbn\b)/i;
+  var MONEY_CODE = /\b(?:(?:AED|AFN|ALL|AMD|ANG|AOA|ARS|AUD|AWG|AZN|BAM|BBD|BDT|BGN|BHD|BIF|BMD|BND|BOB|BRL|BSD|BTN|BWP|BYN|BZD|CAD|CDF|CHF|CLP|CNH|CNY|COP|CRC|CUP|CVE|CZK|DJF|DKK|DOP|DZD|EGP|ERN|ETB|EUR|FJD|FKP|GBP|GEL|GHS|GIP|GMD|GNF|GTQ|GYD|HKD|HNL|HTG|HUF|IDR|ILS|INR|IQD|IRR|ISK|JMD|JOD|JPY|KES|KGS|KHR|KMF|KPW|KRW|KWD|KYD|KZT|LAK|LBP|LKR|LRD|LSL|LYD|MAD|MDL|MGA|MKD|MMK|MNT|MOP|MRU|MUR|MVR|MWK|MXN|MYR|MZN|NAD|NGN|NIO|NOK|NPR|NZD|OMR|PAB|PEN|PGK|PHP|PKR|PLN|PYG|QAR|RON|RSD|RUB|RWF|SAR|SBD|SCR|SDG|SDR|SEK|SGD|SHP|SLE|SOS|SRD|SSP|STN|SVC|SYP|SZL|THB|TJS|TMT|TND|TOP|TRY|TTD|TWD|TZS|UAH|UGX|USD|UYU|UZS|VES|VND|VUV|WST|XAF|XCD|XDR|XOF|XPF|YER|ZAR|ZMW|ZWG) ?|M)\d/;
+  function isMoney(v){ v = String(v || ''); return MONEY.test(v) || MONEY_CODE.test(v); }
   function figureOf(stats){
     stats = (stats || []).filter(function(s){ return s && s.value; });
     var i;
-    for (i = 0; i < stats.length; i++){ if (MONEY.test(String(stats[i].value))) { return { value: stats[i].value, label: stats[i].label || '', money: true }; } }
+    for (i = 0; i < stats.length; i++){ if (isMoney(stats[i].value)) { return { value: stats[i].value, label: stats[i].label || '', money: true }; } }
     return stats.length ? { value: stats[0].value, label: stats[0].label || '', money: false } : null;
   }
   function el(tag, cls, text){
