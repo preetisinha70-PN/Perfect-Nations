@@ -1,7 +1,7 @@
 {
  "nation": "Estonia",
  "page_version": "1.0",
- "updated": "2026-11-17",
+ "updated": "2026-11-18",
  "steward": {
   "name": "Liis Tamm",
   "role": "Nation Steward of Estonia"
@@ -19,14 +19,28 @@
     "label": "Growth projected for 2026, IMF"
    },
    {
-    "value": "$34,418",
-    "label": "Income a person, 2025"
+    "value": "€953M",
+    "label": "EU recovery and resilience grants"
    }
   ]
  },
  "capital": {
   "heading": "Low debt and strong schools, and a living income for all.",
   "record": [
+   {
+    "value": "€953M",
+    "money": true,
+    "text": "EU recovery and resilience grants under the plan approved in October 2021, with a REPowerEU chapter added in June 2023; the Commission authorised an instalment on 21 September 2026",
+    "source": "European Commission, 2026",
+    "url": "https://reforms-investments.ec.europa.eu/recovery-and-resilience-facility-1/country-pages/estonias-recovery-and-resilience-plan_en"
+   },
+   {
+    "value": "€1bn",
+    "money": true,
+    "text": "Ten-year government bond issued on 7 May 2026, due 14 May 2036, with a coupon of 3.5% and orders of more than €2.2 billion from 90 investors",
+    "source": "Ministry of Finance, 2026",
+    "url": "https://fin.ee/sites/default/files/documents/2026-05/Republic%20of%20Estonia%202036_kodulehele%20est.pdf"
+   },
    {
     "value": "24%",
     "money": false,
@@ -42,7 +56,201 @@
     "url": "https://www.imf.org/external/datamapper/NGDP_RPCH@WEO/EST"
    }
   ],
-  "register": []
+  "register": [
+   {
+    "cat": "govt",
+    "status": "Issued",
+    "tone": "active",
+    "name": "Ten-year government bond (Republic of Estonia 3.5% 2036)",
+    "detail": "Ministry of Finance · issued 7 May 2026 · settled 14 May 2026 · due 14 May 2036 · coupon 3.5% · yield 3.609% · mid-swaps +60 basis points",
+    "amount": "€1bn",
+    "money": true,
+    "note": "Orders of more than €2.2 billion from 90 investors; arranged by DZ Bank, HSBC and J.P. Morgan",
+    "text": "A ten-year bond of €1 billion issued by the Republic of Estonia at a price of 99.098, with a coupon of 3.5% and a yield to maturity of 3.609%. Asset managers bought 54% and commercial banks 18%. It sets the cost at which the state itself borrows for ten years, the reference for long-term financing of the seven standards.",
+    "by": [
+     "Republic of Estonia",
+     "Ministry of Finance"
+    ],
+    "url": "https://fin.ee/sites/default/files/documents/2026-05/Republic%20of%20Estonia%202036_kodulehele%20est.pdf"
+   },
+   {
+    "cat": "regional",
+    "status": "Active",
+    "tone": "active",
+    "name": "Recovery and resilience plan",
+    "detail": "European Commission · Recovery and Resilience Facility · grants €953M, no loans · Council implementing decision of 29 October 2021 · REPowerEU chapter added 16 June 2023 · Commission decision of 21 September 2026 authorising an instalment",
+    "amount": "€953M",
+    "money": true,
+    "note": "The final payment request, of €190.6 million, was positively assessed on 10 November 2026, as The Brussels Times reports; all milestones and targets were due by August 2026",
+    "text": "EU grants under NextGenerationEU for reforms and investments agreed with Estonia, paid in instalments against milestones and targets; 59% of the plan supports climate objectives. Its measures include €72 million to improve access to health care, the energy-efficient renovation of 3,500 dwellings (€75 million) and €10 million to strengthen social resilience, which serve the health, shelter, energy and livelihood standards.",
+    "by": [
+     "European Union",
+     "European Commission"
+    ],
+    "url": "https://reforms-investments.ec.europa.eu/recovery-and-resilience-facility-1/country-pages/estonias-recovery-and-resilience-plan_en"
+   },
+   {
+    "cat": "regional",
+    "status": "Agreed",
+    "tone": "active",
+    "name": "Green investment programme of the City of Tartu",
+    "detail": "European Investment Bank · announced by the City of Tartu, 9 September 2026 · programme to 2030 · energy-efficient renovation of schools, kindergartens and municipal buildings · cycling and pedestrian routes",
+    "amount": "€25M",
+    "money": true,
+    "note": "The city’s announcement does not give the date of signature or the term of the loan",
+    "text": "An EIB loan to the City of Tartu for an investment programme that runs to 2030. It finances the energy-efficient renovation of schools, kindergartens and other municipal buildings and the upgrade of cycling and pedestrian routes; the schools serve the education standard and the renovation the energy standard.",
+    "by": [
+     "European Investment Bank",
+     "City of Tartu"
+    ],
+    "url": "https://tartu.ee/en/news/city-tartu-take-green-leap-eib-financing-public-buildings-bike-paths-and-walkways"
+   },
+   {
+    "cat": "regional",
+    "status": "Signed",
+    "tone": "active",
+    "name": "Tallinn Sustainable Infrastructure II (framework loan)",
+    "detail": "European Investment Bank · project 20240050 · approved 19 December 2025 · signed 18 June 2026 · announced 22 June 2026 · investment programme to 2030 · total cost about €278M",
+    "amount": "€125M",
+    "money": true,
+    "note": "The loan covers 45% of the programme; about 58% of the investment is projected to serve climate and environmental goals",
+    "text": "A framework loan to the City of Tallinn, home to about 460,000 people, which the city allocates across projects as they are prepared. It focuses on the rehabilitation and upgrade of public buildings, notably schools and social housing, with energy efficiency, parks, streets and cycling paths; the schools serve the education standard and the social housing the shelter standard.",
+    "by": [
+     "European Investment Bank",
+     "City of Tallinn"
+    ],
+    "url": "https://www.eib.org/en/press/all/2026-215-estonian-capital-tallinn-to-upgrade-schools-transport-and-green-spaces-with-eib-financing-of-eur125-million"
+   },
+   {
+    "cat": "regional",
+    "status": "Signed",
+    "tone": "active",
+    "name": "InvestEU risk sharing with Enterprise Estonia",
+    "detail": "European Investment Fund · InvestEU programme · announced 20 June 2025 · loans and guarantees of the Estonian Business and Innovation Agency (EIS)",
+    "amount": "€109M",
+    "money": true,
+    "note": "Financing unlocked for SMEs and microbusinesses, including green investments",
+    "text": "An agreement under the InvestEU programme in which the EIF shares the risk of the loans and guarantees offered by Enterprise Estonia (EIS), unlocking €109 million in financing for Estonian small and micro businesses. Affordable credit for small firms serves the livelihood standard, the one furthest from reach.",
+    "by": [
+     "European Investment Fund",
+     "Enterprise Estonia (EIS)"
+    ],
+    "url": "https://www.eif.org/press/all/eif-and-enterprise-estonia-unlock-eur109-million-to-support-local-businesses-with-affordable-financing"
+   },
+   {
+    "cat": "regional",
+    "status": "Approved",
+    "tone": "active",
+    "name": "Cohesion policy, 2021–2027",
+    "detail": "European Commission · Partnership Agreement adopted 18 July 2022 · European Social Fund Plus €534M · Just Transition Fund €354M",
+    "amount": "€3.5bn",
+    "money": true,
+    "note": "The European Social Fund Plus money also addresses child poverty and supports long-term care reform",
+    "text": "EU cohesion policy funding for Estonia’s economic, social and territorial cohesion in 2021–2027. The European Social Fund Plus share addresses social, health, lifelong learning and labour market needs and child poverty, and the Just Transition Fund helps Estonia’s transition; they serve the livelihood, education and health standards.",
+    "by": [
+     "European Union",
+     "European Commission"
+    ],
+    "url": "https://european-social-fund-plus.ec.europa.eu/cs/node/757"
+   },
+   {
+    "cat": "private",
+    "status": "Committed",
+    "tone": "active",
+    "name": "Inaugural green bond of Eesti Energia",
+    "detail": "European Investment Bank · announced 1 June 2026 · €300M five-year green bond · fixed coupon · the EIB’s first investment in a green senior bond in the Baltic region",
+    "amount": "€20M",
+    "money": true,
+    "note": "The EIB’s share of the €300 million issue",
+    "text": "The EIB committed €20 million to the first green bond of Eesti Energia, a €300 million five-year issue. Its proceeds finance renewable energy generation, electricity networks that integrate more renewables, battery storage and electric vehicle charging, which serve the energy standard with clean power.",
+    "by": [
+     "European Investment Bank",
+     "Eesti Energia"
+    ],
+    "url": "https://www.eib.org/en/press/all/2026-186-eib-invests-eur20-million-in-landmark-green-bond-of-estonian-energy-company-eesti-energia"
+   },
+   {
+    "cat": "private",
+    "status": "Signed",
+    "tone": "active",
+    "name": "Gren Group energy infrastructure in the Baltics",
+    "detail": "Nordic Investment Bank · 7-year loan · announced 5 May 2026 · option to increase by €15M · Estonia, Latvia and Lithuania",
+    "amount": "€60M",
+    "money": true,
+    "note": "Shared across the three Baltic states; the share for Estonia is not given",
+    "text": "A seven-year NIB loan to Gren Group, an energy infrastructure platform in Northern Europe, for district heating and cooling networks, combined heat and power, renewable heat and battery storage in Estonia, Latvia and Lithuania. It serves the energy standard with heat for homes.",
+    "by": [
+     "Nordic Investment Bank",
+     "Gren Group"
+    ],
+    "url": "https://www.nib.int/news/nib-supports-energy-resilience-in-the-baltics"
+   },
+   {
+    "cat": "private",
+    "status": "Signed",
+    "tone": "active",
+    "name": "Synthetic securitisation with Coop Pank",
+    "detail": "European Investment Bank and European Investment Fund · announced December 2025 · frees capital for lending to SMEs and mid-caps through 2028",
+    "amount": "€249M",
+    "money": true,
+    "note": "New lending capacity of up to €249 million, not a loan of that amount",
+    "text": "A synthetic securitisation supported by the EIB and the EIF that frees capital at Coop Pank, an Estonian bank, for up to €249 million of new lending to small and medium-sized firms and mid-caps through 2028. Credit for small firms serves the livelihood standard, the one furthest from reach.",
+    "by": [
+     "European Investment Bank",
+     "European Investment Fund",
+     "Coop Pank"
+    ],
+    "url": "https://www.eib.org/en/press/all/2026-028-estonia-receives-eur336-million-in-eib-group-financing-in-2025-for-energy-rail-and-business-development"
+   },
+   {
+    "cat": "private",
+    "status": "Signed",
+    "tone": "active",
+    "name": "Tallinn wastewater modernisation (AS Tallinna Vesi)",
+    "detail": "Nordic Investment Bank · loan dated 27 November 2025 · announced 11 December 2025 · extends the 2023–2025 project financing through 2026",
+    "amount": "€25M",
+    "money": true,
+    "note": "About 18 km of outdated wastewater networks to be renovated",
+    "text": "A NIB loan to AS Tallinna Vesi, the utility that serves around 500,000 people in Tallinn and its surrounding areas, to replace wastewater assets, renovate about 18 km of outdated networks, upgrade the treatment plant and expand the stormwater system. It serves the water and shelter standards with safe wastewater treatment.",
+    "by": [
+     "Nordic Investment Bank",
+     "AS Tallinna Vesi"
+    ],
+    "url": "https://www.nib.int/news/nib-finances-modernisation-of-tallinns-wastewater-system"
+   },
+   {
+    "cat": "private",
+    "status": "Signed",
+    "tone": "active",
+    "name": "Battery energy storage parks Hertz 1 and Hertz 2",
+    "detail": "Nordic Investment Bank · 10-year loan · announced 30 October 2025 · Kiisa and Aruküla, about 25 km from Tallinn · 200 MW and 400 MWh · InvestEU",
+    "amount": "€27.7M",
+    "money": true,
+    "note": "To Baltic Storage Platform OÜ, a joint venture of Evecon, Corsica Sole and Mirova; the EBRD also finances the project",
+    "text": "A ten-year NIB loan to Baltic Storage Platform OÜ for two battery energy storage parks near Tallinn, together 200 MW of power and 400 MWh of storage, supported by the InvestEU programme. Storage steadies a grid that takes more wind and solar power, which serves the energy standard.",
+    "by": [
+     "Nordic Investment Bank",
+     "Baltic Storage Platform OÜ"
+    ],
+    "url": "https://www.nib.int/news/nib-finances-two-large-scale-battery-energy-storage-parks-in-estonia/"
+   },
+   {
+    "cat": "private",
+    "status": "Signed",
+    "tone": "active",
+    "name": "Risti solar park (244 MW)",
+    "detail": "European Investment Bank · loan to Sunly in 2025 · in the EIB Group’s results for Estonia, 29 January 2026",
+    "amount": "€31M",
+    "money": true,
+    "note": "The release does not give the date of signature or the term",
+    "text": "An EIB loan to Sunly for the 244 MW Risti solar park, part of the €336 million of EIB Group financing in Estonia in 2025. It serves the energy standard with clean power.",
+    "by": [
+     "European Investment Bank",
+     "Sunly"
+    ],
+    "url": "https://www.eib.org/en/press/all/2026-028-estonia-receives-eur336-million-in-eib-group-financing-in-2025-for-energy-rail-and-business-development"
+   }
+  ]
  },
  "assets": {
   "heading": "Five assets no balance sheet counts.",
@@ -86,12 +294,48 @@
  },
  "enterprises": {
   "heading": "Already working in Estonia.",
-  "items": []
+  "items": [
+   {
+    "standard": "Livelihood",
+    "name": "Maarja Küla",
+    "text": "A community in Kiidjärve, Põlva County, run by the Maarja Küla foundation, where adults with intellectual disabilities live, work and grow together, with daily workshops in wood, clay, gardening and art; it has hosted volunteers from more than fifteen countries since 2004.",
+    "source": "European Solidarity Corps, 2026",
+    "url": "https://youth.europa.eu/solidarity/opportunity/51005_en"
+   },
+   {
+    "standard": "Food",
+    "name": "Eesti Toidupank (Estonian Food Bank)",
+    "text": "A food bank with the longest history and the largest network for passing donated edible food to people in need in Estonia: in 2025 it distributed about four million kilograms of food, and its food aid reaches more than 15,000 people every week.",
+    "source": "ERR, 2026",
+    "url": "https://www.err.ee/1610103313/katarina-papp-toidu-annetamine-voiks-muutuda-tavaparaseks-praktikaks"
+   },
+   {
+    "standard": "Food",
+    "name": "FudLoop",
+    "text": "A venture that recovers surplus food from shops and wholesalers before it is thrown away and stocks food lockers in Tallinn, which its users open for a monthly fee.",
+    "source": "ERR, 2026",
+    "url": "https://www.err.ee/1610103313/katarina-papp-toidu-annetamine-voiks-muutuda-tavaparaseks-praktikaks"
+   },
+   {
+    "standard": "Health",
+    "name": "Peaasjad (Peaasi.ee)",
+    "text": "A non-profit that runs Peaasi.ee, a mental health portal for young people with e-counselling and youth counselling, and teaches mental health first aid in trainings, including for companies.",
+    "source": "Peaasi.ee, 2026",
+    "url": "https://peaasi.ee/en"
+   },
+   {
+    "standard": "Shelter",
+    "name": "Uuskasutuskeskus (Reuse Centre)",
+    "text": "An independent social enterprise founded in 2004 that puts used clothes, furniture, household appliances and other goods back into circulation through its reuse shops, and with charity partners donates to people in need the things they ask for.",
+    "source": "RREUSE, 2026",
+    "url": "https://www.rreuse.org/organisations/uuskasutuskeskus-sopruse-puiestee"
+   }
+  ]
  },
  "coverage": {
   "set_by": "Livelihood",
-  "gap": "22.5%",
-  "gap_text": "Of Estonians live below the national poverty line.",
+  "gap": "19.5%",
+  "gap_text": "Of Estonians live below the at-risk-of-poverty threshold.",
   "perfect_capita": "To set"
  },
  "guarantees": [
@@ -145,11 +389,11 @@
   },
   {
    "name": "Livelihoods",
-   "value": 77.5,
-   "display": "77.5%",
-   "note": "Above the national poverty line; 22.5% live below it",
-   "source": "World Bank, 2022",
-   "url": "https://data.worldbank.org/indicator/SI.POV.NAHC?locations=EE"
+   "value": 80.5,
+   "display": "80.5%",
+   "note": "Above the at-risk-of-poverty threshold; 19.5% live below it",
+   "source": "Statistics Estonia, 2024",
+   "url": "https://www.stat.ee/en/find-statistics/statistics-theme/well-being/social-exclusion-and-poverty"
   }
  ],
  "newswire": [
@@ -220,5 +464,5 @@
  ],
  "dispatches": [],
  "checked": "2026-11-17T03:07Z",
- "reviewed": "2026-11-10T23:00Z"
+ "reviewed": "2026-11-18T07:16Z"
 }

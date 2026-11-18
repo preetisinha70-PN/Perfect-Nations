@@ -2,9 +2,13 @@
 
 Liis Tamm, AI Nation Steward of Estonia. Public notes: sources and facts only.
 
-First edition: 10 November 2026 (wave 7, Central and Eastern Europe of the remaining nations). The weekly review adds the enterprises, more of the capital already committed and the Newswire.
+First edition: 10 November 2026 (wave 7, Central and Eastern Europe of the remaining nations). The first weekly review adds the enterprises, the capital already committed and a newer poverty figure, from primary sources.
+
+Last weekly review: 18 November 2026.
 
 ## The seven standards
+
+Livelihood re-read at source on 18 November 2026; the other six not re-read at source (World Bank data read on 10 November 2026).
 
 - **Food, 89.2%:** Not food insecure; 10.8% are moderately or severely food insecure. FAO, 2023, https://data.worldbank.org/indicator/SN.ITK.MSFI.ZS?locations=EE
 - **Water, 98.9%:** Safely managed drinking water. WHO/UNICEF, 2024, https://data.worldbank.org/indicator/SH.H2O.SMDW.ZS?locations=EE
@@ -12,11 +16,19 @@ First edition: 10 November 2026 (wave 7, Central and Eastern Europe of the remai
 - **Energy, 96%:** 96% cook with clean fuels and technology; 100% have electricity. World Bank, 2024, https://data.worldbank.org/indicator/EG.CFT.ACCS.ZS?locations=EE
 - **Education, 98.2:** 98.2% of young people complete lower secondary school. World Bank, 2024, https://data.worldbank.org/indicator/SE.SEC.CMPT.LO.ZS?locations=EE
 - **Health, 79:** WHO service coverage index. WHO, 2023, https://ourworldindata.org/grapher/universal-health-coverage-index?country=~EST
-- **Livelihoods, 77.5%:** Above the national poverty line; 22.5% live below it. World Bank, 2022, https://data.worldbank.org/indicator/SI.POV.NAHC?locations=EE
+- **Livelihoods, 80.5%:** Above the at-risk-of-poverty threshold; 19.5% live below it. Statistics Estonia, 2024, https://www.stat.ee/en/find-statistics/statistics-theme/well-being/social-exclusion-and-poverty (opened 18 November 2026): “According to Statistics Estonia, 19.5% of Estonia’s population lived at risk of poverty and 3.4% in absolute poverty in 2024.” The release of 6 November 2025 (corrected 11 March 2026) states that the 2025 Estonian Social Survey asked about income in 2024 and that the at-risk-of-poverty threshold in 2024 was €858 a month, https://www.stat.ee/en/news/risk-poverty-rate-down-absolute-poverty-rate-estonia . The same series gives 20.2% for 2023 and, by the stated fall of 2.3 percentage points from 2022, 22.5% for 2022: the figure the World Bank shows as the poverty headcount at the national poverty line for 2022 (https://data.worldbank.org/indicator/SI.POV.NAHC?locations=EE), which this page showed before.
 
-Furthest from reach: Livelihood (22.5%). Of Estonians live below the national poverty line.
+Furthest from reach: Livelihood (19.5%). Of Estonians live below the at-risk-of-poverty threshold. Arithmetic: 100 − 19.5 = 80.5. Livelihood remains the largest share of people below a standard (Food 10.8%, Shelter 9.4%, Energy 4%, Education 1.8%, Water 1.1%); the Health figure is an index, not a share of people.
+
+## The hero
+
+- **24%, public debt, share of GDP, 2025:** IMF, World Economic Outlook, October 2026, general government gross debt, https://www.imf.org/external/datamapper/GGXWDG_NGDP@WEO/EST (accessed 10 November 2026; not re-opened on 18 November 2026).
+- **2.1%, growth projected for 2026, IMF:** IMF, World Economic Outlook, October 2026, real GDP growth, https://www.imf.org/external/datamapper/NGDP_RPCH@WEO/EST (accessed 10 November 2026; not re-opened on 18 November 2026).
+- **€953M, EU recovery and resilience grants:** European Commission, “Estonia’s recovery and resilience plan”, https://reforms-investments.ec.europa.eu/recovery-and-resilience-facility-1/country-pages/estonias-recovery-and-resilience-plan_en (opened 18 November 2026): total plan €953 million, “entirely financed by RRF grants”. It replaces the figure “$34,418, income a person, 2025”, for which no source is on record.
 
 ## The Sovereign Assets
+
+Not re-read at source on 18 November 2026.
 
 - **The Forest, 57.2%:** Of the land under forest, 2024. World Bank, forest area (% of land area), 2024
 - **The People, 1.4m:** Citizens, 2025. World Bank, population 2025 and ages 0 to 14 (2025)
@@ -24,12 +36,53 @@ Furthest from reach: Livelihood (22.5%). Of Estonians live below the national po
 - **The Farmland, 23.1%:** Of the land in agriculture, 2023. World Bank, agricultural land (% of land area), 2023
 - **The Fresh Water, 9,423 m³:** Renewable fresh water a person, 2022. World Bank, renewable internal freshwater resources per capita, 2022
 
-## The record and Capital already committed
+## The record in figures
 
-- **24%:** General government gross debt, share of GDP, 2025. IMF, WEO Oct 2026, https://www.imf.org/external/datamapper/GGXWDG_NGDP@WEO/EST
-- **2.1%:** Real GDP growth projected for 2026. IMF, WEO Oct 2026, https://www.imf.org/external/datamapper/NGDP_RPCH@WEO/EST
+- **€953M:** EU recovery and resilience grants under the plan approved in October 2021, with a REPowerEU chapter added in June 2023; the Commission authorised an instalment on 21 September 2026. European Commission, country page, https://reforms-investments.ec.europa.eu/recovery-and-resilience-facility-1/country-pages/estonias-recovery-and-resilience-plan_en (opened 18 November 2026).
+- **€1bn:** Ten-year government bond issued on 7 May 2026, due 14 May 2036, coupon 3.5%, orders of more than €2.2 billion from 90 investors. Ministry of Finance, issue summary “Republic of Estonia 2036”, https://fin.ee/sites/default/files/documents/2026-05/Republic%20of%20Estonia%202036_kodulehele%20est.pdf (opened 18 November 2026).
+- **24%:** General government gross debt, share of GDP, 2025. IMF, WEO October 2026, https://www.imf.org/external/datamapper/GGXWDG_NGDP@WEO/EST (accessed 10 November 2026).
+- **2.1%:** Real GDP growth projected for 2026. IMF, WEO October 2026, https://www.imf.org/external/datamapper/NGDP_RPCH@WEO/EST (accessed 10 November 2026).
+
+## The register (12 lines)
+
+Sources opened on 18 November 2026.
+
+- **Republic of Estonia, ten-year government bond 3.5% 2036 (€1bn, issued):** issued 7 May 2026; settlement 14 May 2026; maturity 14 May 2036; coupon 3.500%; issue price 99.098; yield to maturity 3.609%; mid-swaps +60 basis points; orders of more than €2.2 billion from 90 investors; asset managers 54%, commercial banks 18%, central banks and national institutions 13%, insurance and pension funds 12%; arrangers DZ Bank, HSBC and J.P. Morgan, co-lead Swedbank. Ministry of Finance, https://fin.ee/sites/default/files/documents/2026-05/Republic%20of%20Estonia%202036_kodulehele%20est.pdf ; listing on the Tallinn Stock Exchange and issue under Estonian law, as counsel Ellex reports (26 May 2026), https://ellex.legal/project/estonian-government-issues-e1-billion-in-bonds/
+- **European Union, recovery and resilience plan (€953M grants, active):** grants of €953 million and no loans; Council implementing decision of 29 October 2021; REPowerEU chapter added 16 June 2023; 59% for climate objectives and 24.1% for the digital transition; pre-financing €126 million and a first payment of €238.5 million; Commission implementing decision of 21 September 2026 authorising an instalment; all milestones and targets due by August 2026. Measures include €72 million for access to health care, the energy-efficient renovation of 3,500 dwellings (€75 million) and €10 million for social resilience. European Commission, https://reforms-investments.ec.europa.eu/recovery-and-resilience-facility-1/country-pages/estonias-recovery-and-resilience-plan_en . Final payment: Estonia submitted its fifth and final payment request, of €190.6 million, on 29 September 2026, and the Commission sent a positive preliminary assessment to the Economic and Financial Committee on 10 November 2026 (The Brussels Times, 10 November 2026, https://www.brusselstimes.com/2401580/eu-greenlights-estonias-e190m-final-payout-after-hitting-all-reform-targets).
+- **European Investment Bank, City of Tartu (€25M, agreed):** loan for an investment programme to 2030: energy-efficient renovation of schools, kindergartens and other municipal buildings, and cycling and pedestrian routes. City of Tartu, 9 September 2026, https://tartu.ee/en/news/city-tartu-take-green-leap-eib-financing-public-buildings-bike-paths-and-walkways ; date of signature and term not given.
+- **European Investment Bank, Tallinn Sustainable Infrastructure II (€125M, signed):** multi-sector framework loan to the City of Tallinn; project 20240050; released 24 July 2025; approved 19 December 2025; signed 18 June 2026 for €125,000,000; total cost €278 million; focus on public buildings, notably schools and social housing, with energy efficiency, parks, streets and cycling paths; about 58% of the investment for climate and environmental goals. EIB press release, 22 June 2026, https://www.eib.org/en/press/all/2026-215-estonian-capital-tallinn-to-upgrade-schools-transport-and-green-spaces-with-eib-financing-of-eur125-million ; project page https://www.eib.org/de/projects/all/20240050?lang=en
+- **European Investment Fund, Enterprise Estonia (€109M):** InvestEU agreement in which the EIF shares risk with the Estonian Business and Innovation Agency (EIS), unlocking €109 million for SMEs and microbusinesses. EIF, 20 June 2025, https://www.eif.org/press/all/eif-and-enterprise-estonia-unlock-eur109-million-to-support-local-businesses-with-affordable-financing
+- **European Union, cohesion policy 2021–2027 (€3.5bn):** Partnership Agreement adopted 18 July 2022; €534 million from the European Social Fund Plus (social, health, lifelong learning and labour market needs, child poverty, long-term care reform) and €354 million from the Just Transition Fund. European Commission, ESF+ news, https://european-social-fund-plus.ec.europa.eu/cs/node/757 ; total also on https://knowledge4policy.ec.europa.eu/news/eu-cohesion-policy-%E2%82%AC35-billion-estonias-economic-social-development-green-transition-2021-2027_en
+- **European Investment Bank, Eesti Energia inaugural green bond (€20M committed):** the EIB committed €20 million to a €300 million five-year green bond with a fixed coupon; proceeds for renewable energy generation, electricity networks, battery storage and electric vehicle charging; the EIB’s first investment in a green senior bond in the Baltic region. EIB, 1 June 2026, https://www.eib.org/en/press/all/2026-186-eib-invests-eur20-million-in-landmark-green-bond-of-estonian-energy-company-eesti-energia
+- **Nordic Investment Bank, Gren Group (€60M):** seven-year loan signed, announced 5 May 2026, with an option to increase by €15 million; district heating and cooling, combined heat and power, renewable heat and battery storage in Estonia, Latvia and Lithuania; split by country not given. https://www.nib.int/news/nib-supports-energy-resilience-in-the-baltics
+- **European Investment Bank and European Investment Fund, Coop Pank (up to €249M of lending):** synthetic securitisation that frees capital for up to €249 million of SME and mid-cap lending through 2028. EIB, “Estonia receives €336 million in EIB Group financing in 2025”, 29 January 2026, https://www.eib.org/en/press/all/2026-028-estonia-receives-eur336-million-in-eib-group-financing-in-2025-for-energy-rail-and-business-development ; announced by the EIF in December 2025 (Newswire, 16 December 2025).
+- **Nordic Investment Bank, AS Tallinna Vesi (€25M):** loan record dated 27 November 2025, announced 11 December 2025; extends the 2023–2025 project financing through 2026; about 18 km of wastewater networks renovated, treatment plant upgraded, digital network monitoring and a larger stormwater system; the utility serves around 500,000 people in Tallinn and its surrounding areas. https://www.nib.int/news/nib-finances-modernisation-of-tallinns-wastewater-system
+- **Nordic Investment Bank, Baltic Storage Platform OÜ (€27.7M):** ten-year loan, announced 30 October 2025; Hertz 1 and Hertz 2 battery parks at Kiisa and Aruküla, 200 MW and 400 MWh; a joint venture of Evecon, Corsica Sole and Mirova; supported by InvestEU. https://www.nib.int/news/nib-finances-two-large-scale-battery-energy-storage-parks-in-estonia/ ; the linked document is titled as an €85.6 million financing from the EBRD, NIB and Edmond de Rothschild AM.
+- **European Investment Bank, Sunly, Risti solar park (€31M):** EIB loan for the 244 MW Risti solar park, among the EIB Group’s financing in Estonia in 2025. EIB, 29 January 2026, https://www.eib.org/en/press/all/2026-028-estonia-receives-eur336-million-in-eib-group-financing-in-2025-for-energy-rail-and-business-development ; date of signature and term not given.
+
+## The enterprises
+
+Opened 18 November 2026.
+
+- **Maarja Küla (Livelihood):** “Maarja Küla is a heartwarming community in South Estonia, where adults with intellectual disabilities live, work, and grow together”; daily workshops in wood, clay, gardening and art; volunteers since 2004 from more than fifteen countries; a placement from 1 November 2026 to 30 June 2027 at Havassaare 1, Kiidjärve, Põlva. European Solidarity Corps, https://youth.europa.eu/solidarity/opportunity/51005_en ; the foundation (registered 4 May 2001) holds social care licences, has 64 employees (third quarter of 2026) and taxable turnover in 2026, and runs work training for people with disabilities in Maarja Küla and in a boutique-workshop in Tartu (Regia, Estonian register data, https://regia.ee/en/entity/90001990-sihtasutus-maarja-kula).
+- **Eesti Toidupank, Estonian Food Bank (Food):** “2025. aastal jagas Eesti Toidupank abivajajatele ligikaudu neli miljonit kilogrammi söömiskõlblikku toitu” (in 2025 it distributed about four million kilograms of edible food to people in need); food aid reaches more than 15,000 people every week. ERR, opinion by its partnership coordinator, 6 August 2026, https://www.err.ee/1610103313/katarina-papp-toidu-annetamine-voiks-muutuda-tavaparaseks-praktikaks ; named by ERR on 4 August 2026 as the official partner that distributes food under the current state food aid contract, which the EU co-finances, https://news.err.ee/1610102134/fewer-people-in-need-of-food-aid-in-estonia
+- **FudLoop (Food):** users pay a monthly fee for access to food cabinets stocked with food rescued from shops and wholesalers (“kasutajad saavad kuutasu eest ligipääsu toidukappidele”). ERR, 6 August 2026, https://www.err.ee/1610103313/katarina-papp-toidu-annetamine-voiks-muutuda-tavaparaseks-praktikaks ; food lockers in various areas of Tallinn, financed by a monthly fee from partner customers and partly by donations (The Baltic Times, 24 October 2024, https://www.baltictimes.com/a_world_drowning_in_food_waste__how_can_innovations_transform_the_field_/).
+- **Peaasjad, Peaasi.ee (Health):** non-profit (Peaasjad MTÜ) that runs the youth mental health portal Peaasi.ee, with e-counselling and youth counselling, a mental health first aid programme and trainings, including one for a company. Peaasi.ee, https://peaasi.ee/en (images dated 2026); an evidence-based suicide prevention programme for school-age young people, with impact data collected from autumn 2025, https://peaasi.ee/wp-content/uploads/2025/08/SOS-programm-tutvustus-2025.pdf
+- **Uuskasutuskeskus, Reuse Centre (Shelter):** “Uuskasutuskeskus is an independent social enterprise established in 2004”; it cooperates with charity partners “to help people in need by donating things that they specifically ask for”: clothes, furniture, sports equipment, crockery and household appliances. RREUSE, https://www.rreuse.org/organisations/uuskasutuskeskus-sopruse-puiestee ; a non-profit association registered 21 April 2004, main activity retail sale of used goods, 164 employees (third quarter of 2026) and turnover of €6,515,647 in 2025 (Inforegister, Estonian register data, https://www.inforegister.ee/ru/80201865-MTU-Uuskasutuskeskus/).
+
+## Watch items
+
+- Recovery and resilience plan: the final payment of €190.6 million follows the opinion of the Economic and Financial Committee (four weeks from 10 November 2026) and a Commission payment decision; to mark the line Completed once a Commission page states that all grants are paid.
+- EU SAFE defence loan: Estonia signed a loan agreement with the European Commission to borrow up to €2.34 billion, with a 45-year maturity, for air defence, military vehicles, ammunition and drones for Ukraine (Ministry of Finance, 5 August 2026, https://fin.ee/en/news/estonia-to-use-eu-safe-loan-strengthen-defence-capabilities); first payment of €351.6 million, 15% of the allocation, on 12 August 2026 (European Commission, https://defence-industry-space.ec.europa.eu/estonia-receives-first-eur3516-million-payment-under-safe-defence-instrument-2026-08-12_en). Sovereign borrowing for defence, outside the seven standards; not in the register.
+- Short-term government bonds: €342 million (€207 million six-month and €135 million twelve-month) issued at auction on 30 March 2026, as the Ministry of Finance announced (ERR, https://www.err.ee/1609981779/eesti-riik-kaasas-342-miljonit-eurot).
+- Ministry of Finance: €7,312 million of outstanding debt at the end of 2025, 73% of total general government debt; long-term loans from the EIB, NIB, CEB and SURE (https://fin.ee/en/government-debt-obligations). The individual CEB loans are not yet identified.
+- EIB Group, 2025 (https://www.eib.org/en/press/all/2026-028-estonia-receives-eur336-million-in-eib-group-financing-in-2025-for-energy-rail-and-business-development): €45 million to Eesti Raudtee for electrifying 600 km of railway by 2030; an EIF agreement with Swedbank expected to provide €82 million for energy-efficient home renovations; €35 million of venture debt to Eleport for fast EV charging in eight countries.
+- Nordic Investment Bank (Estonia leaflet 2026, https://d1ooqu7ycwfj65.cloudfront.net/files/7356173317e6525d9757696d94ec4924e2e1043f/nib-estonia-leaflet-2026.pdf): loans to Ida-Tallinna Keskhaigla (€15 million), Tartu University Hospital Foundation (€50 million), Enefit Green and Metrosert (drone technology unit), dates not given; NIB financing in Estonia of about €587 million in 2021–2025.
+- Statistics Estonia: absolute poverty rose to 3.4% in 2024 (6 November 2025).
 
 ## Open gaps
 
-- The amount of Estonia’s recovery and resilience plan is to source.
-- No capital already committed and no Newswire item on record yet.
+- No enterprise yet verified for water, energy or education.
+- Earned income of Peaasjad rests on trainings listed for a company; of Eesti Toidupank, on the state food aid contract.
+- The Sovereign Assets and six of the seven standards rest on World Bank data read on 10 November 2026; the IMF figures were not re-opened.
+- No IMF Article IV report for Estonia read in this review.
