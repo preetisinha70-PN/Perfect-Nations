@@ -40,7 +40,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 PAGES = ROOT / 'pages'
 DATA = ROOT / 'data'
-VERSION = '7.0'  # no Steward named, no tile credit, FfD alone in the lead (Preeti Sinha, 16 Nov 2026)
+VERSION = '7.0.1'  # money figures in ISO codes (BHD, CNY, SDR) count as money (Blueprints Steward, 18 Nov 2026)
 
 ORDER = [
     'nations-menu.html',      # the moving list of 195 nations (also on the homepage)
@@ -149,7 +149,24 @@ def read_open(nations):
     return sorted(set(out))
 
 
-MONEY = re.compile(r'(US\$|\$|€|£|¥|RMB|\bN\d|\bKSh|\bR\d|billion|million|trillion|\bbn\b)', re.I)
+# A money figure carries a currency sign (the Unicode currency block, the taka, $, pound, yen), a
+# currency word, or an ISO 4217 code before the number (BHD 2bn, CNY 1.3tn, SDR 1.22bn), or the
+# loti's M (M4.78bn). The codes are matched in capitals only, so "m3" or "1.49M bpd" stay figures.
+MONEY = re.compile(r'(US\$|\$|£|¥|[\u20a0-\u20bf\u09f3]|RMB|\bN\d|\bKSh|\bR\d|billion|million|trillion|\bbn\b)', re.I)
+ISO_CODES = (
+    'AED AFN ALL AMD ANG AOA ARS AUD AWG AZN BAM BBD BDT BGN BHD BIF BMD BND BOB BRL BSD BTN BWP '
+    'BYN BZD CAD CDF CHF CLP CNH CNY COP CRC CUP CVE CZK DJF DKK DOP DZD EGP ERN ETB EUR FJD FKP '
+    'GBP GEL GHS GIP GMD GNF GTQ GYD HKD HNL HTG HUF IDR ILS INR IQD IRR ISK JMD JOD JPY KES KGS '
+    'KHR KMF KPW KRW KWD KYD KZT LAK LBP LKR LRD LSL LYD MAD MDL MGA MKD MMK MNT MOP MRU MUR MVR '
+    'MWK MXN MYR MZN NAD NGN NIO NOK NPR NZD OMR PAB PEN PGK PHP PKR PLN PYG QAR RON RSD RUB RWF '
+    'SAR SBD SCR SDG SDR SEK SGD SHP SLE SOS SRD SSP STN SVC SYP SZL THB TJS TMT TND TOP TRY TTD '
+    'TWD TZS UAH UGX USD UYU UZS VES VND VUV WST XAF XCD XDR XOF XPF YER ZAR ZMW ZWG').split()
+MONEY_CODE = re.compile(r'\b(?:(?:%s) ?|M)\d' % '|'.join(ISO_CODES))
+
+
+def is_money(value):
+    v = str(value or '')
+    return bool(MONEY.search(v) or MONEY_CODE.search(v))
 
 
 def headline(stats):
@@ -158,7 +175,7 @@ def headline(stats):
     if not stats:
         return None
     for s in stats:
-        if MONEY.search(str(s.get('value', ''))):
+        if is_money(s.get('value', '')):
             return {'value': s['value'], 'label': s.get('label', ''), 'money': True}
     s = stats[0]
     return {'value': s['value'], 'label': s.get('label', ''), 'money': False}
