@@ -1,246 +1,523 @@
 {
-  "nation": "Ireland",
-  "page_version": "1.0",
-  "updated": "2026-11-17",
-  "steward": {
-    "name": "Aoife Byrne",
-    "role": "Nation Steward of Ireland"
-  },
-  "population": 5484367,
-  "hero": {
-    "lead": "A nation of 5.5 million with farmland across six tenths of its land and a €1.16 billion recovery and resilience plan, where the IMF projects the economy to shrink by 1.0% this year.",
-    "stats": [
-      {
-        "value": "34.8%",
-        "label": "Public debt, share of GDP, 2025"
-      },
-      {
-        "value": "−1%",
-        "label": "Growth projected for 2026, IMF"
-      },
-      {
-        "value": "€1.16bn",
-        "label": "EU recovery and resilience plan"
-      }
-    ]
-  },
-  "capital": {
-    "heading": "Low debt, and clean rivers and coasts.",
-    "record": [
-      {
-        "value": "€1.16bn",
-        "money": true,
-        "text": "Recovery and resilience plan (grants and loans), as approved by the Council of the EU on 11 March 2025",
-        "source": "Council of the EU, 2025",
-        "url": "https://www.consilium.europa.eu/en/policies/eu-recovery-plan/timeline/"
-      },
-      {
-        "value": "34.8%",
-        "money": false,
-        "text": "General government gross debt, share of GDP, 2025",
-        "source": "IMF, WEO Oct 2026",
-        "url": "https://www.imf.org/external/datamapper/GGXWDG_NGDP@WEO/IRL"
-      },
-      {
-        "value": "−1%",
-        "money": false,
-        "text": "Real GDP growth projected for 2026",
-        "source": "IMF, WEO Oct 2026",
-        "url": "https://www.imf.org/external/datamapper/NGDP_RPCH@WEO/IRL"
-      }
+ "nation": "Ireland",
+ "page_version": "1.0",
+ "updated": "2026-11-18",
+ "steward": {
+  "name": "Aoife Byrne",
+  "role": "Nation Steward of Ireland"
+ },
+ "population": 5484367,
+ "hero": {
+  "lead": "A nation of 5.5 million with farmland across six tenths of its land and a €1.16 billion recovery and resilience plan, where the IMF projects the economy to shrink by 1.0% this year.",
+  "stats": [
+   {
+    "value": "34.8%",
+    "label": "Public debt, share of GDP, 2025"
+   },
+   {
+    "value": "−1%",
+    "label": "Growth projected for 2026, IMF"
+   },
+   {
+    "value": "€1.16bn",
+    "label": "EU recovery and resilience plan"
+   }
+  ]
+ },
+ "capital": {
+  "heading": "Low debt, and clean rivers and coasts.",
+  "record": [
+   {
+    "value": "€1.16bn",
+    "money": true,
+    "text": "Value of Ireland’s recovery and resilience plan, with €1,154 million in EU grants; the fourth payment, €249 million, was disbursed on 21 May 2026",
+    "source": "European Commission, 2026",
+    "url": "https://reforms-investments.ec.europa.eu/recovery-and-resilience-facility-1/country-pages/irelands-recovery-and-resilience-plan_en"
+   },
+   {
+    "value": "34.8%",
+    "money": false,
+    "text": "General government gross debt, share of GDP, 2025",
+    "source": "IMF, WEO Oct 2026",
+    "url": "https://www.imf.org/external/datamapper/GGXWDG_NGDP@WEO/IRL"
+   },
+   {
+    "value": "−1%",
+    "money": false,
+    "text": "Real GDP growth projected for 2026",
+    "source": "IMF, WEO Oct 2026",
+    "url": "https://www.imf.org/external/datamapper/NGDP_RPCH@WEO/IRL"
+   },
+   {
+    "value": "€210bn",
+    "money": true,
+    "text": "General government debt at the end of 2025, down for the fourth year in a row",
+    "source": "NTMA, 2026",
+    "url": "https://www.ntma.ie/news/ntma-publishes-2026-mid-year-business-update"
+   }
+  ],
+  "register": [
+   {
+    "cat": "govt",
+    "status": "Approved",
+    "tone": "active",
+    "name": "Water and wastewater funding for housing growth",
+    "detail": "Government of Ireland · National Development Plan · approval welcomed by Uisce Éireann on 2 September 2026 · €1.7bn for priority growth locations · €300M for rural communities",
+    "amount": "€2bn",
+    "money": true,
+    "note": "In addition to the €10.2bn Uisce Éireann already holds under the National Development Plan; 72 cities, towns and villages named as priority locations",
+    "text": "An additional €2 billion of State funding for Uisce Éireann under the National Development Plan, focused on unlocking water and wastewater capacity for housing growth, with €1.7 billion for priority growth locations and €300 million for housing and development in rural communities. It serves the water and shelter standards.",
+    "by": [
+     "Government of Ireland",
+     "Uisce Éireann"
     ],
-    "register": [
-      {
-        "cat": "regional",
-        "status": "Approved",
-        "tone": "active",
-        "name": "Recovery and resilience plan",
-        "detail": "Council of the EU · Approved 11 March 2025 · EU Recovery and Resilience Facility",
-        "amount": "€1.16bn",
-        "money": true,
-        "text": "EU funding, in grants and loans, for agreed reforms and investments.",
-        "by": [
-          "European Union"
-        ],
-        "url": "https://www.consilium.europa.eu/en/policies/eu-recovery-plan/timeline/"
-      }
-    ]
+    "url": "https://www.water.ie/news/uisce-eireann-welcomes-government-approval-eur2-billion-investment-support-new-homes-and"
+   },
+   {
+    "cat": "govt",
+    "status": "Issued",
+    "tone": "active",
+    "name": "Irish Sovereign Green Bond 2043, syndicated tap",
+    "detail": "NTMA · syndicated 13 May 2026 · yield 3.642% · order book over €35bn from 235 accounts · almost 70% of the mid-point of the 2026 bond funding range raised",
+    "amount": "€2bn",
+    "money": true,
+    "note": "Green bonds outstanding stood at €11.67bn nominal across two bonds, due 2031 and 2043, in January 2026, before this tap",
+    "text": "A €2 billion addition to Ireland’s sovereign green bond due 2043, sold by syndication to 235 investor accounts. Proceeds of Irish Sovereign Green Bonds go to eligible green spending: in the NTMA’s January 2026 investor presentation, 29.1% of the proceeds allocated went to sustainable water and wastewater management and 3.7% to the built environment and energy efficiency, which serve the water, shelter and energy standards.",
+    "by": [
+     "Ireland",
+     "NTMA"
+    ],
+    "url": "https://www.ntma.ie/news/ireland-raises-2-billion-through-the-syndicated-tap-of-the-2043-irish-sovereign-green-bond"
+   },
+   {
+    "cat": "govt",
+    "status": "Plan",
+    "tone": "active",
+    "name": "Annual Funding Plan, 2026",
+    "detail": "NTMA · published 9 December 2025 · bond funding range €10bn to €14bn · new 10-year bond due June 2036 syndicated 14 January 2026, €5bn at a yield of 3.145% · €8.25bn of benchmark bonds issued by 8 July 2026",
+    "amount": "€10–14bn",
+    "money": true,
+    "note": "About €15bn of debt matures in 2026; the first syndication drew an order book of over €43bn",
+    "text": "The National Treasury Management Agency’s plan to issue €10 billion to €14 billion of government bonds in 2026, set against about €15 billion of debt maturities falling due in the year. It refinances the State’s debt, which carries public spending across the seven standards.",
+    "by": [
+     "Ireland",
+     "NTMA"
+    ],
+    "url": "https://www.ntma.ie/news/ntma-publishes-annual-funding-plan-for-2026"
+   },
+   {
+    "cat": "regional",
+    "status": "Active",
+    "tone": "active",
+    "name": "Growth and Sustainability Loan Scheme, expanded",
+    "detail": "EIB Group guarantee · Strategic Banking Corporation of Ireland · announced 12 October 2026 · capacity raised from €500M to €1bn on 2 October 2026 · loans of €25,000 to €3M over 7 to 10 years · open until 30 June 2029",
+    "amount": "€1bn",
+    "money": true,
+    "note": "At least 30% of lending for environmental sustainability; loans up to €500,000 unsecured; delivered by AIB, Bank of Ireland, PTSB, Close Brothers and Finance Ireland",
+    "text": "A State loan scheme for small and medium-sized enterprises, small mid-caps, farmers, foresters and fishers, delivered by the Strategic Banking Corporation of Ireland through five lenders and guaranteed by the European Investment Bank Group, now doubled to €1 billion. It finances investment in small firms and on farms, and serves the livelihood and food standards.",
+    "by": [
+     "EIB Group",
+     "Strategic Banking Corporation of Ireland",
+     "Government of Ireland"
+    ],
+    "url": "https://www.eib.org/fr/press/all/2026-329-eib-group-partnership-unlocks-eur1-billion-to-help-irish-businesses-and-farmers-invest-grow-and-create-jobs"
+   },
+   {
+    "cat": "regional",
+    "status": "Active",
+    "tone": "active",
+    "name": "Recovery and resilience plan",
+    "detail": "European Commission · Recovery and Resilience Facility · €1,154M in grants · approved 8 September 2021 · amended 14 July 2023 · REPowerEU chapter added 21 June 2024 · fourth payment of €249M disbursed 21 May 2026",
+    "amount": "€1.16bn",
+    "money": true,
+    "note": "Value of the plan €1,163M, including the part financed with national resources; 50.2% of the plan supports climate objectives",
+    "text": "EU grants under NextGenerationEU for reforms and investments agreed with Ireland, paid in instalments against milestones and targets. Its measures include energy efficiency in public buildings, ICT devices for disadvantaged school learners, the digitalisation of the health system and Affordable Purchase homes on public land and Cost Rental homes, which serve the energy, education, health and shelter standards.",
+    "by": [
+     "European Union",
+     "European Commission"
+    ],
+    "url": "https://reforms-investments.ec.europa.eu/recovery-and-resilience-facility-1/country-pages/irelands-recovery-and-resilience-plan_en"
+   },
+   {
+    "cat": "regional",
+    "status": "Signed",
+    "tone": "active",
+    "name": "Social and affordable housing loan facility, Housing Finance Agency",
+    "detail": "European Investment Bank · launched 24 October 2025 · framework loan signed 27 December 2024 · 40-year fixed-rate finance for approved housing bodies and local authorities",
+    "amount": "€400M",
+    "money": true,
+    "note": "Supports cost-rental homes at least 25% below comparable market rents",
+    "text": "An EIB loan facility to the Housing Finance Agency, the State-owned lender to local authorities and approved housing bodies, so that it can offer them 40-year fixed-rate finance. It supports the delivery of hundreds of social and affordable homes, including cost-rental homes at least 25% below comparable market rents, and serves the shelter standard.",
+    "by": [
+     "European Investment Bank",
+     "Housing Finance Agency"
+    ],
+    "url": "https://www.eib.org/en/press/all/2025-412-hfa-and-eib-launch-eur400-million-loan-facility-to-boost-social-and-affordable-housing-in-ireland"
+   },
+   {
+    "cat": "regional",
+    "status": "Signed",
+    "tone": "active",
+    "name": "Irish water infrastructure development",
+    "detail": "European Investment Bank · signed 16 July 2025 · announced 25 July 2025 · loan to the Irish State for Uisce Éireann’s investment programme · total cost €764M",
+    "amount": "€300M",
+    "money": true,
+    "note": "The EIB’s largest ever support for water investment in Ireland",
+    "text": "An EIB loan to co-finance Uisce Éireann’s multi-annual programme to extend and rehabilitate water supply and wastewater treatment infrastructure and sewer networks, raise drinking water standards and reduce leakage. It serves the water and shelter standards; Shelter, measured by safely managed sanitation, is the standard furthest from reach in Ireland.",
+    "by": [
+     "European Investment Bank",
+     "Uisce Éireann"
+    ],
+    "url": "https://www.eib.org/en/press/all/2025-299-taoiseach-visits-eib-and-welcomes-eur-300-million-backing-for-irish-water-investment"
+   },
+   {
+    "cat": "regional",
+    "status": "Signed",
+    "tone": "active",
+    "name": "Irish higher education student accommodation",
+    "detail": "European Investment Bank · framework loan to the Housing Finance Agency · signed 15 November 2023 · total cost €434M",
+    "amount": "€200M",
+    "money": true,
+    "note": "Construction or renovation of student accommodation in the higher education sector",
+    "text": "An EIB framework loan to the Housing Finance Agency for the construction and renovation of student accommodation in Irish higher education. Student homes serve the education and shelter standards.",
+    "by": [
+     "European Investment Bank",
+     "Housing Finance Agency"
+    ],
+    "url": "https://www.eib.org/en/projects/all/20230113"
+   },
+   {
+    "cat": "regional",
+    "status": "In progress",
+    "tone": "active",
+    "name": "Social housing in Ireland",
+    "detail": "Council of Europe Development Bank · programme loans to the Housing Finance Agency · €150M approved 27 September 2019 · additional €125M approved 27 January 2023, bringing the total to €275M",
+    "amount": "€275M",
+    "money": true,
+    "note": "New energy-efficient social homes and the retrofitting of existing rented social housing",
+    "text": "CEB programme loans to the Housing Finance Agency to part-finance new energy-efficient social homes and the retrofitting of existing rented social housing across Ireland. They serve low-income families, older people, people with disabilities and homeless people, and the shelter and energy standards.",
+    "by": [
+     "Council of Europe Development Bank",
+     "Housing Finance Agency"
+    ],
+    "url": "https://coebank.org/en/project-financing/projects-approved-administrative-council/social-housing-ireland-add-1/"
+   },
+   {
+    "cat": "regional",
+    "status": "Signed",
+    "tone": "active",
+    "name": "HFA Irish social and affordable housing programme",
+    "detail": "European Investment Bank · signed 17 December 2021 · financing the social and affordable housing development programme over four years · total cost about €400M",
+    "amount": "€200M",
+    "money": true,
+    "note": "The Housing Finance Agency is the financial intermediary",
+    "text": "An EIB loan to the Housing Finance Agency to finance Ireland’s social and affordable housing development programme over four years. It serves the shelter standard.",
+    "by": [
+     "European Investment Bank",
+     "Housing Finance Agency"
+    ],
+    "url": "https://www.eib.org/en/projects/all/20210015"
+   },
+   {
+    "cat": "regional",
+    "status": "Completed",
+    "tone": "completed",
+    "name": "Student housing in Ireland",
+    "detail": "Council of Europe Development Bank · programme loan to the Housing Finance Agency · approved 10 June 2021 · status Completed",
+    "amount": "€75M",
+    "money": true,
+    "note": "Implemented by seven higher education institutions",
+    "text": "A CEB programme loan to the Housing Finance Agency, and through it to seven higher education institutions, to expand public purpose-built student accommodation and reduce reliance on the traditional rental sector. It served the education and shelter standards.",
+    "by": [
+     "Council of Europe Development Bank",
+     "Housing Finance Agency"
+    ],
+    "url": "https://coebank.org/en/project-financing/projects-approved-administrative-council/student-housing-ireland/"
+   },
+   {
+    "cat": "private",
+    "status": "Committed",
+    "tone": "active",
+    "name": "Four housing investments",
+    "detail": "Ireland Strategic Investment Fund · announced 29 June 2026 · €100M Avenue Ireland Opportunities Fund · €25M Avenue Europe Fund VI · €100M Cardinal Real Estate Finance Fund III · €24M Irish Homebuilding Equity Fund",
+    "amount": "€250M",
+    "money": true,
+    "note": "ISIF housing commitments totalled €2.5bn at the end of 2025",
+    "text": "Commitments by the Ireland Strategic Investment Fund to three debt funds that lend to homebuilders and one equity fund that invests in Irish homebuilding. The NTMA reports that ISIF’s housing investments have supported the delivery of about 27,000 new homes and 2,500 student accommodation beds to the end of 2025. They serve the shelter standard.",
+    "by": [
+     "Ireland Strategic Investment Fund",
+     "Avenue Capital",
+     "Cardinal Capital",
+     "Pearl Capital Managers"
+    ],
+    "url": "https://www.isif.ie/news/isif-announces-four-new-housing-investments-totalling-250-million"
+   },
+   {
+    "cat": "private",
+    "status": "Signed",
+    "tone": "active",
+    "name": "Project Dolmen Solar PV",
+    "detail": "European Investment Bank · signed 12 March 2026 · four solar power plants of about 395 MWp in all · total cost €250M · promoter Power Capital Renewable Energy",
+    "amount": "€100M",
+    "money": true,
+    "note": "Includes grid interconnection lines and substations",
+    "text": "An EIB loan for the construction and operation of a portfolio of four solar power plants in Ireland, about 395 MWp in all, with their grid connections and substations. Clean power serves the energy standard.",
+    "by": [
+     "European Investment Bank",
+     "Power Capital Renewable Energy"
+    ],
+    "url": "https://www.eib.org/en/projects/all/20240743"
+   },
+   {
+    "cat": "private",
+    "status": "Signed",
+    "tone": "active",
+    "name": "Community and social enterprise lending, Social Finance Foundation",
+    "detail": "Council of Europe Development Bank · €20M loan signed in 2022 · first tranche of €8M received, announced 20 February 2023 · loans of €10,000 to €500,000 through Clann Credo and Community Finance Ireland",
+    "amount": "€20M",
+    "money": true,
+    "note": "Also supports environmental and climate-action initiatives in communities",
+    "text": "A CEB loan to the Social Finance Foundation to increase low-cost lending to community and social enterprise projects across Ireland, delivered by its lending partners Clann Credo and Community Finance Ireland. It serves the livelihood standard.",
+    "by": [
+     "Council of Europe Development Bank",
+     "Social Finance Foundation"
+    ],
+    "url": "https://coebank.org/en/news-and-publications/news/8-million-euros-boost-for-community-projects-as-social-finance-foundation-receives-first-tranche-of-20-million-ceb-loan/"
+   }
+  ]
+ },
+ "assets": {
+  "heading": "Five assets no balance sheet counts.",
+  "items": [
+   {
+    "name": "The Farmland",
+    "figure": "60.8%",
+    "money": false,
+    "label": "Of the land in agriculture, 2023",
+    "text": "Land that can feed the nation and earn abroad, valued and financed against its harvest."
+   },
+   {
+    "name": "The People",
+    "figure": "5.5m",
+    "money": false,
+    "label": "Citizens, 2025",
+    "text": "18.1% are under fifteen: the workforce and the market of the next generation."
+   },
+   {
+    "name": "The Fresh Water",
+    "figure": "9,400 m³",
+    "money": false,
+    "label": "Renewable fresh water a person, 2022",
+    "text": "Rain and rivers renewed every year: power, irrigation and drinking water."
+   },
+   {
+    "name": "The Clean Grid",
+    "figure": "37.2%",
+    "money": false,
+    "label": "Of electricity from renewable sources, 2021",
+    "text": "Power from water, wind and sun already flows; every new connection can be clean."
+   },
+   {
+    "name": "The Forest",
+    "figure": "12%",
+    "money": false,
+    "label": "Of the land under forest, 2024",
+    "text": "Standing forest that stores carbon and water, and can earn as it stands."
+   }
+  ]
+ },
+ "enterprises": {
+  "heading": "Already working in Ireland.",
+  "items": [
+   {
+    "standard": "Food",
+    "name": "FoodCloud",
+    "text": "A non-profit founded in 2012 that redistributes surplus food from retailers and food businesses to charities and community groups through its own technology platform, Foodiverse, and hubs in Dublin, Galway and Cork; its Growers Project links 540 food outlets with 685 charities and community groups, and 450 million meals have been redistributed through its international network.",
+    "source": "The Irish Times, 2026",
+    "url": "https://www.irishtimes.com/technology/2026/06/11/tapping-tech-to-ensure-charities-get-food-for-clients-while-providers-avoid-waste/"
+   },
+   {
+    "standard": "Food",
+    "name": "Duhallow Community Food Services",
+    "text": "A social enterprise in County Cork that provides subsidised meals, catering and bakery products to people in the Duhallow area, the winner for retail, hospitality and professional services at the first National Social Enterprise Awards in October 2025.",
+    "source": "Government of Ireland, 2025",
+    "url": "https://www.gov.ie/en/department-of-rural-and-community-development-and-the-gaeltacht/press-releases/social-enterprises-recognised-at-the-first-national-social-enterprise-awards"
+   },
+   {
+    "standard": "Shelter",
+    "name": "Ó Cualann Cohousing Alliance",
+    "text": "A not-for-profit housing developer that sells homes to buyers at cost; in June 2024 it launched 32 social homes for older people at Parkview, Ballymun, while a Killinarden scheme in which it is a partner, with planning permission for 625 homes, 383 of them affordable, was stalled for want of finance.",
+    "source": "Dublin Inquirer, 2024",
+    "url": "https://www.dublininquirer.com/hundreds-of-affordable-homes-held-up-because-of-funding-woes-says-not-for-profit-developer/"
+   },
+   {
+    "standard": "Health",
+    "name": "MyMind",
+    "text": "A not-for-profit social enterprise and registered charity founded in 2006 that offers counselling and therapy in person in Dublin and online, with fees linked to employment status: unemployed people, full-time students and seniors pay reduced rates, and standard fees help fund reduced-fee and free services.",
+    "source": "MyMind, 2026",
+    "url": "https://mymind.org/about/"
+   },
+   {
+    "standard": "Health",
+    "name": "Turn2Me",
+    "text": "A Dublin-based online service where people can gain safe, anonymous and confidential support for their mental health, named Social Enterprise of the Year at the first National Social Enterprise Awards in October 2025.",
+    "source": "Government of Ireland, 2025",
+    "url": "https://www.gov.ie/en/department-of-rural-and-community-development-and-the-gaeltacht/press-releases/social-enterprises-recognised-at-the-first-national-social-enterprise-awards"
+   },
+   {
+    "standard": "Health",
+    "name": "CareBright CLG",
+    "text": "A social enterprise that provides home and community care services for older people and people with disabilities in Limerick and throughout Munster, the winner of the social finance award at the first National Social Enterprise Awards in October 2025.",
+    "source": "Government of Ireland, 2025",
+    "url": "https://www.gov.ie/en/department-of-rural-and-community-development-and-the-gaeltacht/press-releases/social-enterprises-recognised-at-the-first-national-social-enterprise-awards"
+   },
+   {
+    "standard": "Livelihood",
+    "name": "Clann Credo",
+    "text": "A social finance lender that offers bridging and variable-term loans to community groups, charities and social enterprises; in 2024 it issued 234 loan offers worth more than €32 million and ended the year with a loan book of €53.3 million.",
+    "source": "The Irish Times, 2025",
+    "url": "https://www.irishtimes.com/special-reports/2025/12/03/lending-with-a-heart"
+   },
+   {
+    "standard": "Livelihood",
+    "name": "Rise at the Cove",
+    "text": "A social enterprise in Greystones that provides training and employment to people in the Tiglin Challenge rehabilitation programme, the winner of the Buy Social award at the first National Social Enterprise Awards in October 2025.",
+    "source": "Government of Ireland, 2025",
+    "url": "https://www.gov.ie/en/department-of-rural-and-community-development-and-the-gaeltacht/press-releases/social-enterprises-recognised-at-the-first-national-social-enterprise-awards"
+   }
+  ]
+ },
+ "coverage": {
+  "set_by": "Shelter",
+  "gap": "18.7%",
+  "gap_text": "Of people in Ireland lack safely managed sanitation.",
+  "perfect_capita": "To set"
+ },
+ "guarantees": [
+  {
+   "name": "Food",
+   "value": 95.2,
+   "display": "95.2%",
+   "note": "Not food insecure; 4.8% are moderately or severely food insecure",
+   "source": "FAO, 2023",
+   "url": "https://data.worldbank.org/indicator/SN.ITK.MSFI.ZS?locations=IE"
   },
-  "assets": {
-    "heading": "Five assets no balance sheet counts.",
-    "items": [
-      {
-        "name": "The Farmland",
-        "figure": "60.8%",
-        "money": false,
-        "label": "Of the land in agriculture, 2023",
-        "text": "Land that can feed the nation and earn abroad, valued and financed against its harvest."
-      },
-      {
-        "name": "The People",
-        "figure": "5.5m",
-        "money": false,
-        "label": "Citizens, 2025",
-        "text": "18.1% are under fifteen: the workforce and the market of the next generation."
-      },
-      {
-        "name": "The Fresh Water",
-        "figure": "9,400 m³",
-        "money": false,
-        "label": "Renewable fresh water a person, 2022",
-        "text": "Rain and rivers renewed every year: power, irrigation and drinking water."
-      },
-      {
-        "name": "The Clean Grid",
-        "figure": "37.2%",
-        "money": false,
-        "label": "Of electricity from renewable sources, 2021",
-        "text": "Power from water, wind and sun already flows; every new connection can be clean."
-      },
-      {
-        "name": "The Forest",
-        "figure": "12%",
-        "money": false,
-        "label": "Of the land under forest, 2024",
-        "text": "Standing forest that stores carbon and water, and can earn as it stands."
-      }
-    ]
+  {
+   "name": "Water",
+   "value": 96.1,
+   "display": "96.1%",
+   "note": "Safely managed drinking water",
+   "source": "WHO/UNICEF, 2024",
+   "url": "https://data.worldbank.org/indicator/SH.H2O.SMDW.ZS?locations=IE"
   },
-  "enterprises": {
-    "heading": "Already working in Ireland.",
-    "items": []
+  {
+   "name": "Shelter",
+   "value": 81.3,
+   "display": "81.3%",
+   "note": "Safely managed sanitation; 8.5% of city dwellers live in slums",
+   "source": "WHO/UNICEF, 2024",
+   "url": "https://data.worldbank.org/indicator/SH.STA.SMSS.ZS?locations=IE"
   },
-  "coverage": {
-    "set_by": "Shelter",
-    "gap": "18.7%",
-    "gap_text": "Of people in Ireland lack safely managed sanitation.",
-    "perfect_capita": "To set"
+  {
+   "name": "Energy",
+   "value": 100.0,
+   "display": "100%",
+   "note": "100% cook with clean fuels and technology; 100% have electricity",
+   "source": "World Bank, 2024",
+   "url": "https://data.worldbank.org/indicator/EG.CFT.ACCS.ZS?locations=IE"
   },
-  "guarantees": [
-    {
-      "name": "Food",
-      "value": 95.2,
-      "display": "95.2%",
-      "note": "Not food insecure; 4.8% are moderately or severely food insecure",
-      "source": "FAO, 2023",
-      "url": "https://data.worldbank.org/indicator/SN.ITK.MSFI.ZS?locations=IE"
-    },
-    {
-      "name": "Water",
-      "value": 96.1,
-      "display": "96.1%",
-      "note": "Safely managed drinking water",
-      "source": "WHO/UNICEF, 2024",
-      "url": "https://data.worldbank.org/indicator/SH.H2O.SMDW.ZS?locations=IE"
-    },
-    {
-      "name": "Shelter",
-      "value": 81.3,
-      "display": "81.3%",
-      "note": "Safely managed sanitation; 8.5% of city dwellers live in slums",
-      "source": "WHO/UNICEF, 2024",
-      "url": "https://data.worldbank.org/indicator/SH.STA.SMSS.ZS?locations=IE"
-    },
-    {
-      "name": "Energy",
-      "value": 100.0,
-      "display": "100%",
-      "note": "100% cook with clean fuels and technology; 100% have electricity",
-      "source": "World Bank, 2024",
-      "url": "https://data.worldbank.org/indicator/EG.CFT.ACCS.ZS?locations=IE"
-    },
-    {
-      "name": "Education",
-      "value": 97.7,
-      "display": "97.7",
-      "note": "97.7% of children read a simple text by the end of primary school",
-      "source": "World Bank, 2021",
-      "url": "https://data.worldbank.org/indicator/SE.LPV.PRIM?locations=IE"
-    },
-    {
-      "name": "Health",
-      "value": 82.0,
-      "display": "82",
-      "note": "WHO service coverage index",
-      "source": "WHO, 2023",
-      "url": "https://ourworldindata.org/grapher/universal-health-coverage-index?country=~IRL"
-    },
-    {
-      "name": "Livelihoods",
-      "value": 86.0,
-      "display": "86%",
-      "note": "Above the national poverty line; 14% live below it",
-      "source": "World Bank, 2021",
-      "url": "https://data.worldbank.org/indicator/SI.POV.NAHC?locations=IE"
-    }
-  ],
-  "newswire": [
-    {
-      "date": "2026-10-12",
-      "label": "12 Oct 2026",
-      "title": "Minister Burke and Minister Heydon announce expansion of the Growth and Sustainability Loan Scheme to €1 billion and extension to 2029",
-      "highlight": "€1 billion",
-      "url": "https://enterprise.gov.ie/en/news-and-events/department-news/2026/october/10112026.html",
-      "source": "Department of Enterprise, Tourism and Employment"
-    },
-    {
-      "date": "2026-09-02",
-      "label": "2 Sep 2026",
-      "title": "Uisce Éireann Welcomes Government Approval of €2 Billion Investment to Support New Homes and Stronger Communities Across Ireland",
-      "highlight": "€2 Billion",
-      "url": "https://www.water.ie/news/uisce-eireann-welcomes-government-approval-eur2-billion-investment-support-new-homes-and",
-      "source": "Uisce Éireann"
-    },
-    {
-      "date": "2026-06-29",
-      "label": "29 Jun 2026",
-      "title": "ISIF announces four new housing investments totalling €250 million",
-      "highlight": "€250 million",
-      "url": "https://www.isif.ie/news/isif-announces-four-new-housing-investments-totalling-250-million",
-      "source": "Ireland Strategic Investment Fund"
-    },
-    {
-      "date": "2026-05-21",
-      "label": "21 May 2026",
-      "title": "Ireland receives €249m from EU recovery fund as facility closure looms",
-      "highlight": "€249m",
-      "url": "https://www.brusselstimes.com/2145029/ireland-receives-e249m-from-eu-recovery-fund-as-facility-closure-looms",
-      "source": "The Brussels Times"
-    },
-    {
-      "date": "2026-05-13",
-      "label": "13 May 2026",
-      "title": "Ireland raises €2 billion through the syndicated tap of the 2043 Irish Sovereign Green Bond",
-      "highlight": "€2 billion",
-      "url": "https://www.ntma.ie/news/ireland-raises-2-billion-through-the-syndicated-tap-of-the-2043-irish-sovereign-green-bond",
-      "source": "NTMA"
-    },
-    {
-      "date": "2026-03-18",
-      "label": "18 Mar 2026",
-      "title": "EIB backs €260m solar portfolio with €100m loan to Dolmen Solar",
-      "highlight": "€100m",
-      "url": "https://rte.ie/news/business/2026/0318/1563977-eib-invests-100m-in-dolmen-solars-four-new-projects/",
-      "source": "RTÉ"
-    },
-    {
-      "date": "2026-01-23",
-      "label": "23 Jan 2026",
-      "title": "ISIF commits up to €75m to new fund supporting Ireland’s energy grid",
-      "highlight": "€75m",
-      "url": "https://www.ifsc.ie/news/isif-commits-up-to-75m-to-new-fund-supporting-irelands-energy-grid",
-      "source": "IFSC News"
-    },
-    {
-      "date": "2026-01-14",
-      "label": "14 Jan 2026",
-      "title": "Ireland raises €5 billion from the sale of a new 10-year benchmark bond",
-      "highlight": "€5 billion",
-      "url": "https://www.ntma.ie/news/ireland-raises-5-billion-from-the-sale-of-a-new-10-year-benchmark-bond",
-      "source": "NTMA"
-    }
-  ],
-  "dispatches": [],
-  "checked": "2026-11-17T04:30Z",
-  "reviewed": "2026-11-10T23:00Z"
+  {
+   "name": "Education",
+   "value": 97.7,
+   "display": "97.7",
+   "note": "97.7% of children read a simple text by the end of primary school",
+   "source": "World Bank, 2021",
+   "url": "https://data.worldbank.org/indicator/SE.LPV.PRIM?locations=IE"
+  },
+  {
+   "name": "Health",
+   "value": 82.0,
+   "display": "82",
+   "note": "WHO service coverage index",
+   "source": "WHO, 2023",
+   "url": "https://ourworldindata.org/grapher/universal-health-coverage-index?country=~IRL"
+  },
+  {
+   "name": "Livelihoods",
+   "value": 86.0,
+   "display": "86%",
+   "note": "Above the national poverty line; 14% live below it",
+   "source": "World Bank, 2021",
+   "url": "https://data.worldbank.org/indicator/SI.POV.NAHC?locations=IE"
+  }
+ ],
+ "newswire": [
+  {
+   "date": "2026-10-12",
+   "label": "12 Oct 2026",
+   "title": "Minister Burke and Minister Heydon announce expansion of the Growth and Sustainability Loan Scheme to €1 billion and extension to 2029",
+   "highlight": "€1 billion",
+   "url": "https://enterprise.gov.ie/en/news-and-events/department-news/2026/october/10112026.html",
+   "source": "Department of Enterprise, Tourism and Employment"
+  },
+  {
+   "date": "2026-09-02",
+   "label": "2 Sep 2026",
+   "title": "Uisce Éireann Welcomes Government Approval of €2 Billion Investment to Support New Homes and Stronger Communities Across Ireland",
+   "highlight": "€2 Billion",
+   "url": "https://www.water.ie/news/uisce-eireann-welcomes-government-approval-eur2-billion-investment-support-new-homes-and",
+   "source": "Uisce Éireann"
+  },
+  {
+   "date": "2026-06-29",
+   "label": "29 Jun 2026",
+   "title": "ISIF announces four new housing investments totalling €250 million",
+   "highlight": "€250 million",
+   "url": "https://www.isif.ie/news/isif-announces-four-new-housing-investments-totalling-250-million",
+   "source": "Ireland Strategic Investment Fund"
+  },
+  {
+   "date": "2026-05-21",
+   "label": "21 May 2026",
+   "title": "Ireland receives €249m from EU recovery fund as facility closure looms",
+   "highlight": "€249m",
+   "url": "https://www.brusselstimes.com/2145029/ireland-receives-e249m-from-eu-recovery-fund-as-facility-closure-looms",
+   "source": "The Brussels Times"
+  },
+  {
+   "date": "2026-05-13",
+   "label": "13 May 2026",
+   "title": "Ireland raises €2 billion through the syndicated tap of the 2043 Irish Sovereign Green Bond",
+   "highlight": "€2 billion",
+   "url": "https://www.ntma.ie/news/ireland-raises-2-billion-through-the-syndicated-tap-of-the-2043-irish-sovereign-green-bond",
+   "source": "NTMA"
+  },
+  {
+   "date": "2026-03-18",
+   "label": "18 Mar 2026",
+   "title": "EIB backs €260m solar portfolio with €100m loan to Dolmen Solar",
+   "highlight": "€100m",
+   "url": "https://rte.ie/news/business/2026/0318/1563977-eib-invests-100m-in-dolmen-solars-four-new-projects/",
+   "source": "RTÉ"
+  },
+  {
+   "date": "2026-01-23",
+   "label": "23 Jan 2026",
+   "title": "ISIF commits up to €75m to new fund supporting Ireland’s energy grid",
+   "highlight": "€75m",
+   "url": "https://www.ifsc.ie/news/isif-commits-up-to-75m-to-new-fund-supporting-irelands-energy-grid",
+   "source": "IFSC News"
+  },
+  {
+   "date": "2026-01-14",
+   "label": "14 Jan 2026",
+   "title": "Ireland raises €5 billion from the sale of a new 10-year benchmark bond",
+   "highlight": "€5 billion",
+   "url": "https://www.ntma.ie/news/ireland-raises-5-billion-from-the-sale-of-a-new-10-year-benchmark-bond",
+   "source": "NTMA"
+  }
+ ],
+ "dispatches": [],
+ "checked": "2026-11-17T04:30Z",
+ "reviewed": "2026-11-18T19:25Z"
 }
