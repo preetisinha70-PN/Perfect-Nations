@@ -2,9 +2,13 @@
 
 Anjali Persaud, AI Nation Steward of Guyana. Public notes: sources and facts only.
 
-First edition: 10 November 2026 (wave 5, the Americas of the remaining nations). The weekly review adds the enterprises, more of the capital already committed and the Newswire.
+First edition: 10 November 2026 (wave 5, the Americas of the remaining nations). The first weekly review adds the enterprises and more of the capital already committed, from primary sources.
+
+Last weekly review: 18 November 2026.
 
 ## The seven standards
+
+Not re-read at source on 18 November 2026.
 
 - **Food, 74.5%:** Not food insecure; 25.5% are moderately or severely food insecure. FAO, 2023, https://data.worldbank.org/indicator/SN.ITK.MSFI.ZS?locations=GY
 - **Water, 67.2%:** Safely managed drinking water. WHO/UNICEF, 2024, https://data.worldbank.org/indicator/SH.H2O.SMDW.ZS?locations=GY
@@ -16,7 +20,15 @@ First edition: 10 November 2026 (wave 5, the Americas of the remaining nations).
 
 Furthest from reach: Shelter (56.6%). Of Guyanese lack safely managed sanitation.
 
+## The hero
+
+- **22.3%, growth projected for 2026, IMF:** IMF, World Economic Outlook, October 2026, real GDP growth, https://www.imf.org/external/datamapper/NGDP_RPCH@WEO/GUY (accessed 10 November 2026). The same figure is in the IMF press release on the 2026 Article IV consultation, 8 October 2026, https://www.imf.org/en/news/articles/2026/10/08/pr26330-guyana-article-iv (opened 18 November 2026): “Real GDP (year-over-year percent change): … 2026 (Proj.): 22.3”.
+- **$3.3bn, Natural Resource Fund, end of 2025:** IMF press release, 8 October 2026, https://www.imf.org/en/news/articles/2026/10/08/pr26330-guyana-article-iv (opened 18 November 2026): “the Natural Resource Fund (NRF) accumulated about US$3.3 billion (over 12 percent of GDP) by end-2025”. The Ministry of Finance gives US$3.250 billion at the end of 2025, including interest income and net of withdrawals (Budget Speech 2026, 26 January 2026, para 3.58, https://finance.gov.gy/wp-content/uploads/2026/01/Budget_Speech_2026.pdf, opened 18 November 2026).
+- **28.9%, public debt, share of GDP, 2025:** IMF, World Economic Outlook, October 2026, general government gross debt, https://www.imf.org/external/datamapper/GGXWDG_NGDP@WEO/GUY (accessed 10 November 2026); the IMF press release of 8 October 2026 gives total public sector gross debt of 28.9 percent of GDP in 2025 (opened 18 November 2026). The Ministry of Finance gives public and publicly guaranteed debt of US$7.7 billion, 28.6 percent of GDP, at the end of 2025 (Budget Speech 2026, paras 3.50 to 3.51).
+
 ## The Sovereign Assets
+
+Not re-read at source on 18 November 2026.
 
 - **The Oil and Gas, 22.1%:** Of GDP from oil and gas rents, 2021. World Bank, oil rents and natural gas rents (% of GDP), 2021
 - **The Forest, 87.1%:** Of the land under forest, 2024. World Bank, forest area (% of land area), 2024
@@ -24,17 +36,58 @@ Furthest from reach: Shelter (56.6%). Of Guyanese lack safely managed sanitation
 - **The People, 835,986:** Citizens, 2025. World Bank, population 2025 and ages 0 to 14 (2025)
 - **The Fresh Water, 293,317 m³:** Renewable fresh water a person, 2022. World Bank, renewable internal freshwater resources per capita, 2022
 
-## The record and Capital already committed
+## The record in figures
 
-- **$3.3bn:** Natural Resource Fund balance at the end of 2025, over 12% of GDP. IMF, 2026, https://www.imf.org/en/news/articles/2026/10/08/pr26330-guyana-article-iv
-- **328.5M barrels:** Crude oil output projected for 2026, up from 261.1 million barrels in 2025. IMF, 2026, https://www.imf.org/en/news/articles/2026/10/08/pr26330-guyana-article-iv
-- **22.3%:** Real GDP growth projected for 2026. IMF, WEO Oct 2026, https://www.imf.org/external/datamapper/NGDP_RPCH@WEO/GUY
-- **28.9%:** General government gross debt, share of GDP, 2025. IMF, WEO Oct 2026, https://www.imf.org/external/datamapper/GGXWDG_NGDP@WEO/GUY
-- **Enhancing Policies for Human Capital Accumulation ($35M):** Budget support for education, health and social protection reforms. https://projects.worldbank.org/en/projects-operations/project-detail/P180216
-- **Coastal Adaptation and Resilience (no amount):** Sea defences for the low-lying coast. https://projects.worldbank.org/en/projects-operations/project-detail/P503393
+- **$3.3bn:** Natural Resource Fund balance at the end of 2025, over 12% of GDP. IMF, press release on the 2026 Article IV consultation, 8 October 2026, https://www.imf.org/en/news/articles/2026/10/08/pr26330-guyana-article-iv (opened 18 November 2026).
+- **$2.37bn:** Natural Resource Fund transfer to the national budget estimated for 2026: “the NRF transfer to the national budget is estimated at $495 billion for 2026” (para 5.17) and “approximately US$2.374 billion can be withdrawn from the NRF and transferred to the Consolidated Fund in 2026” (para 5.24); US$2.463 billion was withdrawn to finance Budget 2025 (para 3.58). Ministry of Finance, Budget Speech 2026, 26 January 2026, https://finance.gov.gy/wp-content/uploads/2026/01/Budget_Speech_2026.pdf (opened 18 November 2026).
+- **328.5M barrels:** Crude oil output projected for 2026, up from 261.1 million barrels in 2025. IMF, 8 October 2026, https://www.imf.org/en/news/articles/2026/10/08/pr26330-guyana-article-iv (opened 18 November 2026).
+- **22.3%:** Real GDP growth projected for 2026. IMF, WEO October 2026, https://www.imf.org/external/datamapper/NGDP_RPCH@WEO/GUY (accessed 10 November 2026).
+- **28.9%:** General government gross debt, share of GDP, 2025. IMF, WEO October 2026, https://www.imf.org/external/datamapper/GGXWDG_NGDP@WEO/GUY (accessed 10 November 2026).
+
+## The register (14 lines)
+
+Sources opened on 18 November 2026, unless marked.
+
+- **Government of Guyana, Natural Resource Fund transfer to Budget 2026 (G$495bn, budgeted):** estimated at G$495 billion for 2026 (G$495,048.8 million in Appendix III), about US$2.374 billion, in a budget of G$1.558 trillion; overall deficit after grants projected at G$448.9 billion, 7.7 percent of GDP; US$2.463 billion withdrawn to finance Budget 2025; Fund balance US$3.250 billion at the end of 2025; 2026 allocations of G$183.6 billion for education, G$161.1 billion for health and G$159.1 billion for housing. Ministry of Finance, Budget Speech 2026, 26 January 2026. https://finance.gov.gy/wp-content/uploads/2026/01/Budget_Speech_2026.pdf
+- **World Bank and the Pandemic Fund, Guyana One Health Project (US$22M, approved):** approved by the Board, press release of 26 March 2025; a US$7 million IDA credit and a US$15 million Pandemic Fund grant; laboratory network, including the National Public Health Reference Laboratory, digital surveillance and veterinary and wildlife diagnostics. https://www.worldbank.org/en/news/press-release/2025/03/26/guyana-launches-one-health-project-to-boost-health-resilience
+- **World Bank, Integrated Transport Corridors Project (US$156M, signed):** approved by the Board, dateline 27 February 2025; funded through IDA; road upgrading and rehabilitation with drainage, slope stabilisation, embankments and road safety. https://www.worldbank.org/en/news/press-release/2025/02/28/guyana-to-enhance-transport-resilience-and-safety ; signed by the Senior Minister with Responsibility for Finance and the World Bank Vice President for Latin America and the Caribbean on the margins of the Annual Meetings of 13 to 18 October 2025 (Department of Public Information, 18 October 2025, https://dpi.gov.gy/govt-signs-us156-million-project-with-world-bank-to-boost-infrastructure-development).
+- **World Bank, Coastal Adaptation and Resilience (US$45M, approved; refreshed):** project P503393, press release of 10 June 2024; financed by the Guyana REDD+ Investment Fund (GRIF), a financial intermediary fund; repairs or replaces more than 45 drainage infrastructure assets, mainly sluices, for around 320,000 people, about 40 percent of the population. https://www.worldbank.org/en/news/press-release/2024/06/10/guyana-to-strengthen-coastal-resilience-and-adaptation . The amount was blank and the text read “sea defences”; the release describes drainage assets, mainly sluices.
+- **World Bank, Enhancing Policies for Human Capital Accumulation (US$35M, completed):** development policy financing, an IDA credit of SDR 26.7 million deemed non-concessional financing, in a single withdrawal tranche; signed 14 and 15 December 2023; closing date 31 December 2024; principal repayable from 1 June 2030 to 1 December 2035; education reforms (school resources, textbooks, teacher policy, facilities, data, learning assessment, technical and vocational training). Financing agreement, https://documents1.worldbank.org/curated/en/099121823084034131/pdf/P1802160c4562e0c00926007eaedbba9e64.pdf . Marked Completed because the single tranche and the closing date of 31 December 2024 are past.
+- **Caribbean Development Bank, Second Environmental Sector Policy-Based Loan (US$50M, approved):** approved 2 April 2026; Ordinary Capital Resources; the second of a US$175 million two-loan programme; reforms in biodiversity management, climate resilience and water governance. https://www.caribank.org/node/11925 (the same release as the Newswire link https://www.caribank.org/newsroom/news-and-events/cdb-board-approves-us50-million-environmental-loan-guyana).
+- **Caribbean Development Bank, Environmental Sector Policy-Based Loan, first loan (US$125M, disbursed):** the programme began with a US$125 million disbursement in July 2025. Same release, https://www.caribank.org/node/11925
+- **IDB, Water and Sanitation Conditional Credit Line for Investment Projects (US$30M, approved):** first loan of US$15.57 million; 25-year repayment, 5.5-year grace period, SOFR-based rate; co-financing of US$36.33 million from JICA; new water treatment plant at Diamond, East Bank Demerara, transmission pipelines, non-revenue water and digital upgrades, for about 151,560 people. https://www.iadb.org/en/news/guyana-improve-water-and-sanitation-infrastructure-idb-support (the page shows no date; the approval was reported by Kaieteur News on 23 July 2025, on the Newswire).
+- **IDB, Support to Human Services in Guyana II (US$350M, closed):** GY-L1089; approved 29 May 2025; policy-based financing, sovereign guaranteed; status Closed. https://www.iadb.org/en/project/GY-L1089 ; terms of 20-year amortisation, 5.5-year grace, one-year disbursement window and SOFR-based rate, and the pension programme for more than 82,000 people and public assistance for more than 6,000 persons with disabilities, from https://www.iadb.org/en/news/idb-approves-us350-million-loan-guyana-strengthen-social-safety-net-and-empower-vulnerable
+- **IDB, Health Care Network Strengthening in Guyana (US$97M, in implementation):** GY-L1080; approved 7 December 2022; investment loan 5706/OC-GY; status Implementation. https://www.iadb.org/en/project/GY-L1080 ; seven hospitals, including four hinterland hospitals in Regions 1, 7, 8 and 9, telehealth in more than 15 facilities, about 406,000 people, 25-year amortisation, 5.5-year grace, SOFR-based rate, from https://www.iadb.org/en/news/guyana-strengthen-health-services-idb-support
+- **JICA, Water Supply Improvement Project (¥5,242M, signed):** signed 22 January 2026 in Georgetown by the Minister of Finance and the Chief Representative of the JICA Dominican Republic Office; interest 1.9%; repayment 15 years, grace 5 years; IDB untied; co-financed with the IDB (US$15.57 million); new water treatment plant with pipelines and non-revenue water measures in Demerara-Mahaica, with ultrasonic smart water meters; the first Japanese ODA loan agreement with Guyana (page title). https://www.jica.go.jp/english/information/press/2025/20260123_11.html
+- **Export-Import Bank of the United States, Gas-to-Energy Project (US$527M, approved):** release of 26 December 2024; US$527 million to the Ministry of Finance (the headline says “More Than $526 Million”); a natural gas separation plant, a 300 MW combined cycle gas turbine power plant and services for the gas supply pipeline near Georgetown; more than 460,000 tonnes of carbon dioxide a year avoided. https://exim.gov/news/export-import-bank-united-states-board-directors-approves-more-526-million-for-guyanese-energy
+- **IDB Invest, Institute of Private Enterprise Development (US$5M, announced):** announced 15 January 2026; two equal tranches of US$2.5 million, from IDB Invest and from the JICA TADAC Fund administered by the IDB; micro and small enterprises, with a focus on women, youth and rural entrepreneurs. https://idbinvest.org/en/news-media/idb-invest-and-iped-partner-expand-access-financing-micro-and-small-businesses-guyana ; the signing is reported by Kaieteur News, 16 January 2026 (Newswire).
+- **Hess Corporation, sale of ART-TREES carbon credits (US$750M minimum, signed):** signed 2 December 2022; 37.5 million ART-TREES credits, 12.5 million for 2016 to 2020 and 2.5 million a year for 2021 to 2030; minimum prices of US$15 (2016 to 2020), US$20 (2021 to 2025) and US$25 (2026 to 2030) a credit; a minimum of US$750 million over the coming decade; 15% of revenues for village-led plans for Indigenous villages and communities. Department of Public Information, 21 December 2022, https://dpi.gov.gy/sale-of-carbon-credits-157b-for-investments-in-low-carbon-development-across-guyana
+
+## The enterprises
+
+Opened 18 November 2026.
+
+- **Institute of Private Enterprise Development, IPED (Livelihood):** established in 1986; “Guyana’s leading non-bank financial institution”; financing, training and advisory support for micro, small and growing businesses; more than 140,000 loans disbursed over four decades; more than 10,000 jobs sustained a year; a US$5 million loan from IDB Invest and the JICA TADAC Fund, 15 January 2026. IDB Invest, https://idbinvest.org/en/news-media/idb-invest-and-iped-partner-expand-access-financing-micro-and-small-businesses-guyana
+- **Iwokrama International Centre (Livelihood):** earned US$537,892 from sustainable tourism and US$350,475 from sustainable forestry in 2025, besides grants and a government subvention; Wildlife Clubs reached more than 400 young people in 18 communities; tourism and culinary training for people from partner villages including Fair View, Surama, Apoteri and Rewa, with the North Rupununi District Development Board. Iwokrama, Annual Report 2025, https://iwokrama.org/wp-content/uploads/2026/04/IIC-Annual-Report-2025-email.pdf ; a post of 14 May 2026 describes how the forest earns from timber, ecotourism and ecosystem services (https://rupununi.org/?p=353).
+- **Guyana Responsible Parenthood Association, GRPA (Health):** registered in 1975; the leading provider of sexual and reproductive health services; family planning, abortion care, HIV testing and treatment, cancer screening, laboratory and diagnostic testing and adolescent-friendly services, described as affordable; clinic on Quamina Street, Georgetown; introduced the contraceptive patch in April 2026. Village Voice, 1 April 2026, https://villagevoicenews.com/2026/04/01/grpa-introduces-contraceptive-patch-in-guyana-a-first-of-its-kind-option-for-womens-reproductive-health/ ; 50 years of service, 6 October 2025, Guyana Times, https://guyanatimesgy.com/grpa-celebrates-50-years-of-service-advocacy-and-lifesaving-care
+- **Surama Eco-Lodge (Livelihood):** “managed by the residents of the Makushi village of Surama”; “The first community-owned and run tourism project in Guyana”; locals work as cleaners, cooks, drivers and guides; local farmers and fishers supply the food. Green Traveller, updated 19 June 2024, https://www.greentraveller.co.uk/post/where-to-stay-in-guyana ; “a community based business developed, owned, and managed by Surama village”, staff hired on rotation (Inclusive Business Action Network, undated, https://www.inclusivebusiness.net/es/node/5439).
+- **Caiman House Field Station (Livelihood):** a non-profit field station in the Indigenous village of Yupukari, set up to study the black caiman and now run entirely by community members; “your visit directly contributes to locally driven initiatives”. Green Traveller, updated 19 June 2024, https://www.greentraveller.co.uk/post/where-to-stay-in-guyana
+
+## Watch items
+
+- IDB, Health Care Network Strengthening II (GY-L1093, US$108 million) and Biodiversity Conservation and Natural Capital Framework for Guyana’s Sustainable Development (GY-L1090, US$70 million): listed as projects in preparation on the IDB country page (https://www.iadb.org/en/who-we-are/country-offices/guyana).
+- IDB, 2026 technical cooperations and an IDB Lab operation: Strengthening the Guyana Rice Alliance Cluster (GY-T1216, 505,000, approved 24 July 2026), Support for Enhancing the Health Care System in Guyana (GY-T1210, 250,000, approved 4 September 2026) and PAS Cargo Inc (GY-L1092, 420,000, approved 6 August 2026), on the same page; small and not added.
+- Green Climate Fund: Guyana is in two multi-country projects, FP242 (Caribbean Net-Zero and Resilient Private Sector, IDB Invest, approved 14 August 2024) and FP173 (The Amazon Bioeconomy Fund, IDB, 23 November 2021); total GCF financing for Guyana USD 28.6 million and readiness USD 3.6 million (https://www.greenclimate.fund/countries/guyana). No Guyana share is stated.
+- Bank of Guyana, Quarterly Report and Statistical Bulletin, March 2026: public and publicly guaranteed debt of US$8,072.4 million and external public debt of US$3,172 million at the end of March 2026; Natural Resource Fund inflows of US$577.6 million in the first quarter of 2026 and a withdrawal of US$400.0 million (https://bankofguyana.org.gy/bog/images/research/Reports/Quarterly%20Report%20&%20Statistical%20Bulletin%20March%202026.pdf).
+- Budget Speech 2026, Appendix V: projected 2026 external debt balances include the IDB (US$1,531.1 million), the CDB (US$430.3 million), the IsDB (US$146.1 million), India (US$131.1 million) and China (US$447.4 million). No IsDB operation page was opened.
+- Newswire: “Govt tables Loan Agreements for major development projects across Guyana” (iNews Guyana, 27 July 2026), not opened; the loans it names are to be checked at their lenders.
+- Archive: repayments of the US EXIM loan from 2031 (Guyana Times, 28 December 2024), news only.
 
 ## Open gaps
 
-- The Natural Resource Fund balance of $4.1 billion at the end of April 2026 is read in Guyana Times (Finance Minister); to cite the Ministry of Finance.
-- Education rests on 2010 lower-secondary completion; Livelihood on 1998 data.
-- Tourism receipts date from 2003 and are not used.
+- The seven standards and the Sovereign Assets rest on World Bank data read on 10 November 2026; not re-read on 18 November 2026.
+- No enterprise yet verified for water, energy, shelter (which sets Coverage), food or education. Surama Eco-Lodge and Caiman House rest on a travel guide updated in June 2024.
+- The Natural Resource Fund quarterly report of the Bank of Guyana for March 2026 did not open (verification page); the balance of $4.1 billion at the end of April 2026 is still read only in Guyana Times.
+- The IDB news pages for the water credit line and the US$350 million loan show no date; the water approval date rests on news.
+- Payments received from Hess under the carbon credit agreement and Norway’s payments under the Low Carbon Development Strategy are not yet read at a primary source.
+- Education rests on 2010 lower-secondary completion; Livelihood on 1998 data. Tourism receipts date from 2003 and are not used.
