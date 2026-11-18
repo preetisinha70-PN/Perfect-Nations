@@ -519,6 +519,12 @@ PORTRAITS = {
     'suriname': (UP + 'pn-hog-suriname-212x300.jpg', 'Ricardo Stuckert, Presidency of Brazil, cropped', CC_BY_SA_4),
     'mozambique': (UP + 'pn-hog-mozambique-224x300.jpg', 'Ricardo Stuckert, Presidency of Brazil, cropped', CC_BY_SA_4),
     'costa-rica': (UP + 'pn-hog-costa-rica-200x300.jpg', 'Esteban Rojas Saurez, Legislative Assembly of Costa Rica, cropped', {'label': 'public domain in Costa Rica'}),
+    # eighth batch (17 November 2026, evening): the Steward-General's pn-hog uploads; credits and licences from their
+    # captions (citing the Wikimedia Commons files) and their file data
+    'egypt': (UP + 'pn-hog-egypt-240x300.jpg', 'Ministry of Communications and Information Technology, Egypt, 2017', CC_BY_4),
+    'chad': (UP + 'pn-hog-chad-225x300.jpg', 'Christophe Licoppe, European Union, 2022, cropped', CC_BY_4),
+    'seychelles': (UP + 'pn-hog-seychelles-199x300.jpg', 'State House, Seychelles', CC_BY_4),
+    'honduras': (UP + 'pn-hog-honduras-216x300.jpg', 'Joyce N. Boghosian, The White House, cropped', PD),
     # head of state on record (the band shows the Prime Minister)
     'albania': (UP + 'pn-hos-albania-296x300.jpg', 'Presidential Press and Information Office of Azerbaijan, cropped', CC_BY_4),
 }
@@ -565,6 +571,21 @@ PORTRAITS_HOG = {
     'montenegro': (UP + 'pn-hog-montenegro-224x300.jpg', 'Lukasz Kobus, European Union, 2023, cropped', CC_BY_4),
     'north-macedonia': (UP + 'pn-hog-north-macedonia-227x300.jpg', 'Government of North Macedonia, 2024, cropped', CC_BY_SA_4),
     'serbia': (UP + 'pn-hog-serbia-225x300.jpg', 'Ministry of Defence of Serbia', CC_BY_SA_4),
+    # eighth batch (17 November 2026, evening)
+    'fiji': (UP + 'pn-hog-fiji-226x300.jpg', 'Jack Sanders, U.S. Air Force, 2024, cropped', CC_BY_2),
+    'saint-vincent-and-the-grenadines': (UP + 'pn-hog-saint-vincent-and-the-grenadines-244x300.jpg', 'Wang Yu Ching, Office of the President, Taiwan, cropped', CC_BY_4),
+    'saint-lucia': (UP + 'pn-hog-saint-lucia-218x300.jpg', 'Government of Saint Lucia, cropped', {'label': 'CC BY 3.0', 'url': 'https://creativecommons.org/licenses/by/3.0/'}),
+    # Commons: J_Briceño_2023_(cropped).jpg; Commons notes its licence review as pending
+    'belize': (UP + 'pn-hog-belize-225x300.jpg', 'Bogdan Hoyaux, European Union, 2023, cropped', CC_BY_4),
+    # Commons: released by the copyright holder under the Public Domain Mark
+    'antigua-and-barbuda': (UP + 'pn-hog-antigua-and-barbuda-225x300.jpg', 'BLP Photos, 2018, cropped', PD),
+    'grenada': (UP + 'pn-hog-grenada-225x300.jpg', 'Prime Minister’s Office, Government of India, cropped', {'label': 'GODL-India'}),
+    'barbados': (UP + 'pn-hog-barbados-199x300.jpg', 'Barbados Government Information Service, UNCTAD, 2021', CC_BY_2),
+    'trinidad-and-tobago': (UP + 'pn-hog-trinidad-and-tobago-226x300.jpg', 'Freddie Everett, U.S. Department of State, cropped', PD),
+    'bahamas': (UP + 'pn-hog-bahamas-224x300.jpg', 'Hemant Joshi, Prime Minister’s Office, Government of India, cropped', {'label': 'GODL-India'}),
+    # Commons: Andrew_Holness_(portrait).jpg, 136 x 206 (no medium size; the full file is used)
+    'jamaica': (UP + 'pn-hog-jamaica.jpg', 'Ron Przysucha, U.S. Department of State, 2020', PD),
+    'ethiopia': (UP + 'pn-hog-ethiopia-215x300.jpg', 'Presidential Executive Office of Russia (kremlin.ru), 2019', CC_BY_4),
 }
 
 GREET = {
