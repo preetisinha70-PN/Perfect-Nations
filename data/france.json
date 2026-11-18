@@ -1,7 +1,7 @@
 {
  "nation": "France",
  "page_version": "1.0",
- "updated": "2026-11-17",
+ "updated": "2026-11-18",
  "steward": {
   "name": "Camille Laurent",
   "role": "Nation Steward of France"
@@ -35,11 +35,11 @@
     "url": "https://www.aft.gouv.fr/en/node/13632"
    },
    {
-    "value": "53.8%",
+    "value": "55.3%",
     "money": false,
-    "text": "Share of OATs held by non-residents, fourth quarter of 2025",
+    "text": "Share of OATs held by non-residents, first quarter of 2026",
     "source": "Agence France Trésor, 2026",
-    "url": "https://www.aft.gouv.fr/files/medias-aft/7_Publications/7.2_BM/432_Bulletin%20mensuel%20mai%202026.pdf"
+    "url": "https://www.aft.gouv.fr/files/medias-aft/7_Publications/7.2_BM/435_Monthly%20bulletin%20August%202026.pdf"
    },
    {
     "value": "115.5%",
@@ -54,22 +54,206 @@
     "text": "Real GDP growth projected for 2026",
     "source": "IMF, WEO Oct 2026",
     "url": "https://www.imf.org/external/datamapper/NGDP_RPCH@WEO/FRA"
+   },
+   {
+    "value": "€40.3bn",
+    "money": true,
+    "text": "EU recovery and resilience grants, with no loans, under the plan approved in July 2021 and updated in July 2023",
+    "source": "European Commission",
+    "url": "https://commission.europa.eu/business-economy-euro/economic-recovery/recovery-and-resilience-facility/frances-recovery-and-resilience-plan_fr"
    }
   ],
   "register": [
    {
     "cat": "govt",
+    "status": "Issued",
+    "tone": "active",
+    "name": "Caisse des Dépôts sustainable bond, 2031",
+    "detail": "Caisse des Dépôts · priced 21 April 2026 · due 25 February 2031 · 9 basis points above the OAT curve · order book €3.2bn from more than 83 investors",
+    "amount": "€1bn",
+    "money": true,
+    "note": "Its tenth ESG-labelled bond since 2017, under its Green, Social or Sustainable Financing Framework updated in July 2025",
+    "text": "A five-year sustainable bond of the Caisse des Dépôts, the public financial institution, issued under its Green, Social or Sustainable Financing Framework. The current portfolio of eligible assets is 46% social housing, 34% green real estate and 12% renewable energy; the social housing serves the shelter standard.",
+    "by": [
+     "Caisse des Dépôts"
+    ],
+    "url": "https://www.caissedesdepots.fr/sites/cdc.fr/files/2026-04/28042026_PR_Caisse_des_D%C3%A9p%C3%B4ts_Sustainable%20Bond_1Md%E2%82%AC.pdf"
+   },
+   {
+    "cat": "govt",
+    "status": "Issued",
+    "tone": "active",
+    "name": "Green OAT 3.80% 25 June 2037",
+    "detail": "Agence France Trésor · syndicated 14 April 2026 · settlement 21 April 2026 · coupon 3.80% · yield 3.899% · demand above €113bn",
+    "amount": "€10bn",
+    "money": true,
+    "note": "A new green OAT with a shorter maturity than the existing nominal green OATs; green OATs outstanding stood at €105.7bn on 15 August 2026",
+    "text": "A new green sovereign bond of €10 billion maturing on 25 June 2037, placed by syndication with total demand of more than €113 billion. Green OATs target State budget spending dedicated to mitigating climate change, adapting to its impacts, protecting biodiversity and preventing pollution.",
+    "by": [
+     "French Republic",
+     "Agence France Trésor"
+    ],
+    "url": "https://www.aft.gouv.fr/en/node/13717"
+   },
+   {
+    "cat": "govt",
     "status": "Plan",
     "tone": "active",
     "name": "State financing programme, 2026",
-    "detail": "Agence France Trésor · 30 December 2025",
+    "detail": "Agence France Trésor · indicative programme of 30 December 2025 · 71.2% complete at 31 July 2026, €220.8bn issued net of buybacks · index-linked bonds about 10%",
     "amount": "€310bn",
     "money": true,
-    "text": "OATs and index-linked OATs, net of buybacks; by mid-May 2026 the Treasury had completed 50.81% of the programme.",
+    "note": "Medium and long-term issues net of buybacks; €244.7bn issued gross and €23.8bn bought back at 31 July 2026",
+    "text": "The Republic’s plan for medium and long-term borrowing in 2026: OATs and index-linked OATs of €310 billion net of buybacks, with bonds linked to French and European inflation about 10% of the total. At 31 July 2026 the Treasury had completed 71.2% of the programme, according to its monthly bulletin of August 2026.",
     "by": [
-     "French Republic"
+     "French Republic",
+     "Agence France Trésor"
     ],
     "url": "https://www.aft.gouv.fr/en/node/13632"
+   },
+   {
+    "cat": "regional",
+    "status": "Active",
+    "tone": "active",
+    "name": "Recovery and resilience plan",
+    "detail": "European Commission · Recovery and Resilience Facility · grants €40.3bn, no loans · Council approval 13 July 2021 · updated 14 July 2023 with REPowerEU · fifth and final payment request of €6.1bn assessed positively 29 September 2026",
+    "amount": "€40.3bn",
+    "money": true,
+    "note": "All 176 milestones and targets fulfilled, as the Commission assessed; the final €6.1bn was reported paid on 30 October 2026",
+    "text": "EU grants under NextGenerationEU for reforms and investments agreed with France, paid in instalments against milestones and targets; 49.5% of the plan supports climate objectives and 21.6% the digital transition. Its measures include the energy renovation of public and private buildings and investment in hospitals and health facilities, which serve the shelter, energy and health standards.",
+    "by": [
+     "European Union",
+     "European Commission"
+    ],
+    "url": "https://commission.europa.eu/business-economy-euro/economic-recovery/recovery-and-resilience-facility/frances-recovery-and-resilience-plan_fr"
+   },
+   {
+    "cat": "regional",
+    "status": "Signed",
+    "tone": "active",
+    "name": "Bordeaux University Hospital modernisation, first phase",
+    "detail": "European Investment Bank · loan signed at the end of 2025 · announced 8 July 2026 · first phase of a 2024–2029 programme · 18 projects of the property master plan",
+    "amount": "€269M",
+    "money": true,
+    "note": "The first EIB loan to the hospital",
+    "text": "An EIB loan to the Centre Hospitalier Universitaire de Bordeaux for the renovation, refurbishment and extension of its sites and for new buildings, with medical and non-medical equipment, IT and the energy efficiency of its buildings. It serves the health standard.",
+    "by": [
+     "European Investment Bank",
+     "CHU de Bordeaux"
+    ],
+    "url": "https://www.eib.org/en/press/all/2026-241-france-la-bei-soutient-la-modernisation-du-centre-hospitalier-universitaire-de-bordeaux-avec-un-pret-historique"
+   },
+   {
+    "cat": "regional",
+    "status": "Signed",
+    "tone": "active",
+    "name": "Intermediate rental housing, CDC Habitat, second tranche",
+    "detail": "European Investment Bank · signed 30 June 2026 · announced 3 July 2026 · second tranche of a €500M envelope approved in 2025 · about 3,470 homes",
+    "amount": "€250M",
+    "money": true,
+    "note": "A first tranche of €250M was paid out in 2025",
+    "text": "EIB finance for the CDC Habitat group to build about 3,470 energy-efficient intermediate rental homes, let under income conditions, mainly in cities where rents are under strong pressure. They house middle-income households, young workers and essential workers, and serve the shelter standard.",
+    "by": [
+     "European Investment Bank",
+     "CDC Habitat"
+    ],
+    "url": "https://www.eib.org/fr/press/all/2026-235-la-bei-accorde-une-deuxieme-tranche-de-250-millions-d-euros-au-groupe-cdc-habitat-pour-accelerer-le-developpement-de-logements-intermediaires-en-france"
+   },
+   {
+    "cat": "regional",
+    "status": "Approved",
+    "tone": "active",
+    "name": "Project 40, support for vulnerable youth and families (Apprentis d’Auteuil)",
+    "detail": "Council of Europe Development Bank · approved 19 June 2026 · borrower Fondation Apprentis d’Auteuil · redevelopment of its historic site in Paris",
+    "amount": "€40M",
+    "money": true,
+    "note": "News reports that the loan was signed in October 2026 beside a €40M EIB loan, with an InvestEU guarantee",
+    "text": "A CEB loan to the Fondation Apprentis d’Auteuil to increase the capacity, quality and sustainability of its social, educational and housing facilities for vulnerable children, teenagers and young adults. It serves the shelter and education standards.",
+    "by": [
+     "Council of Europe Development Bank",
+     "Fondation Apprentis d’Auteuil"
+    ],
+    "url": "https://coebank.org/en/project-financing/projects-approved-administrative-council/project-40-support-for-vulnerable-youth-and-families/"
+   },
+   {
+    "cat": "regional",
+    "status": "Approved",
+    "tone": "active",
+    "name": "Access to healthcare, social services and education (Crédit Coopératif)",
+    "detail": "Council of Europe Development Bank · approved June 2026 · one of fourteen loans totalling €1.2bn · news of 19 June 2026",
+    "amount": "€150M",
+    "money": true,
+    "note": "Approved in the same round as the Apprentis d’Auteuil loan",
+    "text": "A CEB loan to Crédit Coopératif that will improve access to affordable healthcare, social services, education and professional development. It serves the health, education and livelihood standards.",
+    "by": [
+     "Council of Europe Development Bank",
+     "Crédit Coopératif"
+    ],
+    "url": "https://coebank.org/en/news-and-publications/news/ceb-approves-fourteen-loans-totalling-1-2-billion-euros/"
+   },
+   {
+    "cat": "regional",
+    "status": "Signed",
+    "tone": "active",
+    "name": "Specific housing and child protection (Caisse des Dépôts)",
+    "detail": "Council of Europe Development Bank · signed 11 March 2026 · borrower Caisse des Dépôts, for the Banque des Territoires · CEB support for its initiatives now €650M",
+    "amount": "€200M",
+    "money": true,
+    "note": "Earlier CEB loans of 2016–2021 co-financed more than 15,000 places in care facilities",
+    "text": "A CEB loan package to the Caisse des Dépôts to finance, through the Banque des Territoires, facilities for children in care and the building, renovation and adaptation of housing for people in severe hardship, women who are victims of violence, dependent elderly people, persons with disabilities, and students and young workers of limited means. It serves the shelter standard for those furthest from it.",
+    "by": [
+     "Council of Europe Development Bank",
+     "Caisse des Dépôts"
+    ],
+    "url": "https://coebank.org/en/news-and-publications/news/the-council-of-europe-development-bank-and-caisse-des-depots-strengthen-their-cooperation-in-support-of-child-protection-and-specific-housing-in-france/"
+   },
+   {
+    "cat": "regional",
+    "status": "Signed",
+    "tone": "active",
+    "name": "In’li energy efficiency renovation programme",
+    "detail": "European Investment Bank · project 20240449 · signed 17 December 2025 · total cost about €125M · about 25 residential buildings",
+    "amount": "€80M",
+    "money": true,
+    "note": "About 2,700 affordable homes for middle-income households in the Île-de-France region",
+    "text": "An EIB loan to In’li, an affordable housing provider in the Île-de-France region, for the energy renovation of about 25 residential buildings with some 2,700 homes for middle-income households, to lower their energy use and carbon emissions. It serves the shelter and energy standards.",
+    "by": [
+     "European Investment Bank",
+     "In’li"
+    ],
+    "url": "https://www.eib.org/en/projects/all/20240449?lang=fr"
+   },
+   {
+    "cat": "regional",
+    "status": "Signed",
+    "tone": "active",
+    "name": "Intermediate housing refinancing line (Banque des Territoires)",
+    "detail": "European Investment Bank · signed 24 September 2025, at the HLM congress of the Union sociale pour l’habitat · fixed-rate loan in two tranches of €250M",
+    "amount": "€500M",
+    "money": true,
+    "note": "Towards a national target of 75,000 intermediate rental homes to be built in 2024–2026",
+    "text": "A new EIB loan refinancing line, distributed by the Banque des Territoires, for the building of intermediate rental homes for households that struggle to house themselves on the private market and are not eligible for social housing. It serves the shelter standard.",
+    "by": [
+     "European Investment Bank",
+     "Banque des Territoires"
+    ],
+    "url": "https://www.eib.org/fr/press/all/2025-345-la-bei-et-la-banque-des-territoires-annoncent-une-nouvelle-enveloppe-de-pret-de-500-meur-pour-accroitre-l-offre-de-financements-en-faveur-de-la-construction-de-logements-intermediaires-en-france"
+   },
+   {
+    "cat": "regional",
+    "status": "Approved",
+    "tone": "active",
+    "name": "European Social Fund Plus, 2021–2027",
+    "detail": "European Commission · Partnership Agreement with France adopted, 2 June 2022 · part of €18.4bn of cohesion policy funding for 2021–2027",
+    "amount": "€6.7bn",
+    "money": true,
+    "note": "Jobs, skills and training, and the fight against poverty and social exclusion, including food and material assistance",
+    "text": "The European Social Fund Plus share of France’s €18.4 billion of cohesion policy funding for 2021–2027. It supports access to the job market, skills, training and career guidance, and the fight against poverty and social exclusion, with food and material assistance, including to children; it serves the livelihood standard, the one furthest from reach, and the food standard.",
+    "by": [
+     "European Union",
+     "European Commission"
+    ],
+    "url": "https://ec.europa.eu/commission/presscorner/api/files/document/print/en/ip_22_3368/IP_22_3368_EN.pdf"
    }
   ]
  },
@@ -115,7 +299,50 @@
  },
  "enterprises": {
   "heading": "Already working in France.",
-  "items": []
+  "items": [
+   {
+    "standard": "Livelihood",
+    "name": "Groupe Ares",
+    "text": "A group of work-integration enterprises that has fought social and professional exclusion for more than 30 years, giving people in severe exclusion paid work with social and professional support; it supports more than 2,000 people each year, and 65% to 67% have left for a job or training in recent years.",
+    "source": "Groupe Ares, impact study 2023 (Avise)",
+    "url": "https://www.avise.org/sites/default/files/media/document/MIS%20Ares%202023%20-%20Rapport%20%28taille%20minimale%29.pdf"
+   },
+   {
+    "standard": "Livelihood",
+    "name": "Envie",
+    "text": "A network of 53 enterprises and associations that collect, repair, refurbish and resell household appliances through work-integration jobs: 3,000 of its 3,780 employees are in work integration, for thirteen months on average, and its school trains them in logistics, repair and sales.",
+    "source": "City of Paris, 2024",
+    "url": "https://www.paris.fr/pages/insertion-formation-reparation-le-tierce-gagnant-de-l-ecole-envie-29537"
+   },
+   {
+    "standard": "Food",
+    "name": "Phenix",
+    "text": "A B Corp-certified company founded in 2014 whose digital tools keep unsold food and other goods from going to waste, connecting a network of 12,000 merchants and 1,500 partner associations; it reports saving more than 70 tonnes of products a day and 150 million meals since its creation.",
+    "source": "B Lab",
+    "url": "https://www.bcorporation.net//en-us/find-a-b-corp/company/phenix"
+   },
+   {
+    "standard": "Shelter",
+    "name": "Foncière d’Habitat et Humanisme",
+    "text": "A solidarity property company of the Habitat et Humanisme movement, created in 1986 and approved as an ESUS social enterprise, that buys and renovates homes for people in difficulty, financed by solidarity investment from 11,246 shareholders; it let 6,235 homes at the end of 2025 and raised €21.8 million in 2025.",
+    "source": "Foncière d’Habitat et Humanisme, 2026",
+    "url": "https://www.habitat-humanisme.org/wp-content/uploads/2026/07/ra-fonciere-hh-2025-0426-bd.pdf"
+   },
+   {
+    "standard": "Health",
+    "name": "Siel Bleu",
+    "text": "An association founded in Strasbourg in 1997 that brings adapted physical activity to older people, people with chronic illness or disabilities and people losing their autonomy, with nearly 115,000 participants each week at 10,000 places in France; the Banque des Territoires has invested €1 million in its associative bonds.",
+    "source": "Banque des Territoires, 2026",
+    "url": "https://www.banquedesterritoires.fr/realisation/association-siel-bleu"
+   },
+   {
+    "standard": "Education",
+    "name": "Simplon",
+    "text": "An ESUS-approved training enterprise of the social and solidarity economy, at work since 2013, that makes digital skills and trades accessible to all, open notably to the long-term unemployed, older workers, refugees and people with disabilities; it has trained more than 40,000 people on 120 campuses in France and 24 countries, with 75.2% positive outcomes after training.",
+    "source": "Simplon, makesense profile, 2026",
+    "url": "https://jobs.makesense.org/fr/projects/simplonco-1534/transparency"
+   }
+  ]
  },
  "coverage": {
   "set_by": "Livelihood",
@@ -249,5 +476,5 @@
  ],
  "dispatches": [],
  "checked": "2026-11-17T20:31Z",
- "reviewed": "2026-11-10T23:00Z"
+ "reviewed": "2026-11-18T07:18Z"
 }
