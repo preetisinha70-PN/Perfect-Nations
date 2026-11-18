@@ -462,7 +462,8 @@ PORTRAITS = {
     'mexico': (UP + 'pn-hog-mexico-202x300.jpg', 'EneasMx', CC_BY_4),
     'ghana': (UP + 'pn-hog-ghana-298x300.png', 'U.S. Department of State', PD),
     'tanzania': (UP + 'pn-hos-tanzania-300x300.jpg', 'U.S. Embassy Dar es Salaam', PD),
-    'philippines': (UP + 'pn-hos-philippines-185x300.jpg', 'Department of Foreign Affairs of the Philippines', PD),
+    # replaced 18 November 2026 by the 2023 official presidential portrait (pn-hog-philippines)
+    'philippines': (UP + 'pn-hog-philippines-232x300.jpg', 'Office of the President of the Philippines, 2023', {'label': 'public domain in the Philippines'}),
     'cyprus': (UP + 'pn-hog-cyprus-243x300.jpg', 'European Union 2023, European Parliament / Laia Ros', None),
     'cuba': (UP + 'pn-hos-cuba-215x300.jpg', 'Ricardo Stuckert, Presidency of Brazil', CC_BY_2),
     # Commons: Cyril_Ramaphosa_in_2026.jpg (Planalto, 9 March 2026)
@@ -525,6 +526,12 @@ PORTRAITS = {
     'chad': (UP + 'pn-hog-chad-225x300.jpg', 'Christophe Licoppe, European Union, 2022, cropped', CC_BY_4),
     'seychelles': (UP + 'pn-hog-seychelles-199x300.jpg', 'State House, Seychelles', CC_BY_4),
     'honduras': (UP + 'pn-hog-honduras-216x300.jpg', 'Joyce N. Boghosian, The White House, cropped', PD),
+    # ninth batch (18 November 2026): the Steward-General's uploads; credits and licences from their captions
+    # (citing the Wikimedia Commons files)
+    'libya': (UP + 'pn-hos-libya-263x300.jpg', 'Ministry of Foreign Affairs of Greece, 2021, cropped', CC_BY_SA_2),
+    'tajikistan': (UP + 'pn-hog-tajikistan-225x300.jpg', 'Masato Kanda, 2026', CC_BY_4),
+    'tunisia': (UP + 'pn-hog-tunisia-225x300.jpg', 'Houcemmzoughi, 2019', CC_BY_SA_4),
+    'zimbabwe': (UP + 'pn-hog-zimbabwe-219x300.jpg', 'Presidential Executive Office of Russia (kremlin.ru), 2019', CC_BY_4),
     # head of state on record (the band shows the Prime Minister)
     'albania': (UP + 'pn-hos-albania-296x300.jpg', 'Presidential Press and Information Office of Azerbaijan, cropped', CC_BY_4),
 }
@@ -586,6 +593,14 @@ PORTRAITS_HOG = {
     # Commons: Andrew_Holness_(portrait).jpg, 136 x 206 (no medium size; the full file is used)
     'jamaica': (UP + 'pn-hog-jamaica.jpg', 'Ron Przysucha, U.S. Department of State, 2020', PD),
     'ethiopia': (UP + 'pn-hog-ethiopia-215x300.jpg', 'Presidential Executive Office of Russia (kremlin.ru), 2019', CC_BY_4),
+    # ninth batch (18 November 2026)
+    'bhutan': (UP + 'pn-hog-bhutan-219x300.jpg', 'Tshering Tobgay, 2013', {'label': 'CC BY 3.0', 'url': 'https://creativecommons.org/licenses/by/3.0/'}),
+    'thailand': (UP + 'pn-hog-thailand-200x300.jpg', 'Jonathan Mazin, 2026', CC_BY_SA_4),
+    'pakistan': (UP + 'pn-hog-pakistan-226x300.jpg', 'Hamed Malekpour, Mehr News Agency, 2026', CC_BY_4),
+    # Commons: Jotham_Napat_2019_(cropped).jpg, 210 x 280 (no medium size; the full file is used)
+    'vanuatu': (UP + 'pn-hog-vanuatu.jpg', 'Philippine Embassy in Canberra, 2019, cropped', {'label': 'public domain in the Philippines'}),
+    'papua-new-guinea': (UP + 'pn-hog-papua-new-guinea-225x300.jpg', 'Chuck Kennedy, U.S. Department of State, 2023, cropped', PD),
+    'malaysia': (UP + 'pn-hog-malaysia-225x300.jpg', 'Cabinet Public Affairs Office, Government of Japan, 2026, cropped', CC_BY_4),
 }
 
 GREET = {
