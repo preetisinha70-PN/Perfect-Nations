@@ -1,5 +1,5 @@
 === Perfect Nations Live Pages ===
-Version: 1.3.0
+Version: 1.4.0
 Requires PHP: 7.4
 
 Serves each Perfect Nations page from the Perfect Nations GitHub repository, so a page updates
@@ -36,6 +36,12 @@ Plugins > Add New Plugin > Upload Plugin, choose the new perfect-nations-live.zi
 then "Replace current with uploaded". Settings stay as they are.
 
 == Changes ==
+1.4.0 (19 November 2026) - sitemap
+- An address listed under "redirects" in pages/manifest.json is left out of the Rank Math XML
+  sitemap, so Google is no longer asked to index a page that only leads elsewhere (Search Console:
+  "Page with redirect"). Nothing else changes. After installing, open Rank Math > Sitemap Settings
+  and press Save Changes once, so the stored sitemap is built again.
+
 1.3.0 (7 November 2026) - sitewide CSS
 - When pages/manifest.json names {"additional_css": {"file": "pages/additional.css"}}, that file is
   served as the sitewide Additional CSS in place of the copy in Appearance > Customize > Additional CSS.

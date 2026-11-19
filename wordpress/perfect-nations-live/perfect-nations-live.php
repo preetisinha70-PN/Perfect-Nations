@@ -2,7 +2,7 @@
 /**
  * Plugin Name:       Perfect Nations Live Pages
  * Description:       Serves each Perfect Nations page from the Perfect Nations GitHub repository, so a page updates without copying and pasting its code. Pages stay in Elementor; if GitHub cannot be reached, the page shows the code pasted in its widget.
- * Version:           1.3.0
+ * Version:           1.4.0
  * Requires at least: 6.0
  * Requires PHP:      7.4
  * Author:            Perfect Nations
@@ -30,6 +30,8 @@
  * 5. v1.1: a manifest key may name one post, "pn-disp@post-slug", so posts that share a root id
  *    (dispatches, a duplicate widget) can each be served on their own; and the manifest may list
  *    same-site redirects, {"redirects": {"/old-path/": "/new-path/"}}, answered with a 301.
+ * 7. v1.4: an address listed under "redirects" is left out of the Rank Math XML sitemap, so Google
+ *    is not asked to index a page that only leads elsewhere ("Page with redirect" in Search Console).
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -38,7 +40,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 final class PN_Live_Pages {
 
-	const VERSION  = '1.3.0';
+	const VERSION  = '1.4.0';
 	const REPO     = 'preetisinha70-PN/perfect-nations';
 	const BRANCH   = 'main';
 	const MANIFEST = 'pages/manifest.json';
@@ -74,6 +76,7 @@ final class PN_Live_Pages {
 		add_filter( 'elementor/element/is_dynamic_content', array( $this, 'not_cached' ), 20, 2 );
 		add_shortcode( 'pn_live', array( $this, 'shortcode' ) );
 		add_action( 'template_redirect', array( $this, 'redirects' ), 1 );
+		add_filter( 'rank_math/sitemap/entry', array( $this, 'sitemap_entry' ), 20, 3 );
 		add_action( 'admin_menu', array( $this, 'admin_menu' ) );
 		add_action( 'admin_post_pn_live_refresh', array( $this, 'handle_refresh' ) );
 		add_action( 'admin_post_pn_live_export', array( $this, 'handle_export' ) );
@@ -641,6 +644,20 @@ final class PN_Live_Pages {
 			wp_safe_redirect( home_url( $manifest['redirects'][ $path ] ), 301 );
 			exit;
 		}
+	}
+
+	/** v1.4: leave a redirected address out of the Rank Math sitemap. */
+	public function sitemap_entry( $url, $type = '', $object = null ) {
+		if ( ! is_array( $url ) || empty( $url['loc'] ) || '0' === (string) get_option( self::OPT . 'enabled', '1' ) ) {
+			return $url;
+		}
+		$manifest = $this->manifest();
+		if ( empty( $manifest['redirects'] ) ) {
+			return $url;
+		}
+		$path = strtolower( (string) wp_parse_url( (string) $url['loc'], PHP_URL_PATH ) );
+		$path = '/' . trim( $path, '/' ) . '/';
+		return isset( $manifest['redirects'][ $path ] ) ? false : $url;
 	}
 
 	private function forget_all() {
