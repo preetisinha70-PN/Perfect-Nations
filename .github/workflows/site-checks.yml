@@ -1,4 +1,4 @@
-# Temporary checks of the live site from GitHub's servers (12 Nov 2026, Change of Address fetch). Runs only on the site-checks branch.
+# Temporary checks of the live site from GitHub's servers (19 Nov 2026, 403 report in Search Console). Runs only on the site-checks branch.
 name: site-checks
 on:
   push:
@@ -9,20 +9,15 @@ jobs:
     steps:
       - run: |
           set +e
-          for d in perfectnations.org www.perfectnations.org perfectnations.com; do
-            echo "=== DNS $d"; echo "  A:    $(dig +short A $d | tr '\n' ' ')"; echo "  AAAA: $(dig +short AAAA $d | tr '\n' ' ')"; echo "  CNAME: $(dig +short CNAME $d | tr '\n' ' ')"
-          done
-          echo "  NS org: $(dig +short NS perfectnations.org | tr '\n' ' ')"
-          for ua in "Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)" "Mozilla/5.0 (compatible; Google-InspectionTool/1.0;)" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0 Safari/537.36" "curl/8"; do
-            echo; echo "##### UA: $ua"
-            for u in http://perfectnations.org/ https://perfectnations.org/ http://www.perfectnations.org/ https://www.perfectnations.org/; do
-              curl -s -A "$ua" -o /tmp/b -D /tmp/h -m 30 -w "$u -> %{http_code} %{redirect_url}  (time %{time_total}s)\n" "$u"
-              grep -i -E '^(server|location|x-hcdn|platform|cache|x-litespeed|content-length):' /tmp/h | sed 's/^/     /'
-              [ "$(head -c1 /tmp/b)" ] && head -c 200 /tmp/b | tr '\n' ' ' | sed 's/^/     body: /' && echo
-            done
-          done
-          echo; echo "##### robots.txt"
-          for u in http://perfectnations.org/robots.txt https://perfectnations.org/robots.txt https://perfectnations.com/robots.txt; do curl -s -L -A "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/130.0 Safari/537.36" -o /tmp/r -m 30 -w "$u -> final %{url_effective} %{http_code} hops %{num_redirects}\n" "$u"; head -c 400 /tmp/r | sed 's/^/     /'; echo; done
-          echo; echo "##### full chain with Googlebot UA from http://perfectnations.org/"
-          curl -s -A "Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)" -L -o /dev/null -m 40 -w "final %{url_effective} %{http_code} hops %{num_redirects}\n" http://perfectnations.org/
-          curl -sv -A "Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)" -o /dev/null -m 20 http://perfectnations.org/ 2>&1 | grep -E '^(\*   Trying|\* Connected|< )' | head -20
+          UA="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0 Safari/537.36"
+          curl -s -A "$UA" -m 30 https://perfectnations.com/sitemap_index.xml -o idx.xml -w "index %{http_code}\n"
+          grep -o '<loc>[^<]*</loc>' idx.xml | sed 's/<[^>]*>//g' > children.txt; echo "child sitemaps:"; cat children.txt
+          : > urls.txt
+          while read s; do curl -s -A "$UA" -m 30 "$s" -o c.xml -w "$s %{http_code}\n"; grep -o '<loc>[^<]*</loc>' c.xml | sed 's/<[^>]*>//g' | grep -v -E '\.(jpg|jpeg|png|webp|gif|svg)$' >> urls.txt; done < children.txt
+          sort -u urls.txt -o urls.txt; echo "page urls: $(wc -l < urls.txt)"
+          cat urls.txt | xargs -P 4 -I{} curl -s -A "$UA" -o /dev/null -m 40 -w "%{http_code} {}\n" {} > res.txt
+          echo "== status counts"; cut -d' ' -f1 res.txt | sort | uniq -c
+          echo "== not 200"; grep -v '^200 ' res.txt | head -80
+          echo "== sample of other addresses"
+          for u in https://perfectnations.com/feed/ https://perfectnations.com/wp-json/ https://perfectnations.com/xmlrpc.php https://perfectnations.com/?s=kenya https://perfectnations.com/author/ https://perfectnations.com/wp-login.php https://perfectnations.com/sitemap.xml https://perfectnations.com/news-sitemap.xml; do curl -s -A "$UA" -o /dev/null -m 30 -w "%{http_code} $u\n" "$u"; done
+          echo "== headers of first non-200 page"; f=$(grep -v '^200 ' res.txt | head -1 | cut -d' ' -f2); [ -n "$f" ] && curl -s -A "$UA" -D - -o /tmp/b -m 30 "$f" | head -20 && head -c 400 /tmp/b
