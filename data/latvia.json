@@ -1,246 +1,652 @@
 {
-  "nation": "Latvia",
-  "page_version": "1.0",
-  "updated": "2026-11-17",
-  "steward": {
-    "name": "Ilze Bērziņa",
-    "role": "Nation Steward of Latvia"
-  },
-  "population": 1847785,
-  "hero": {
-    "lead": "A nation of 1.8 million on the Baltic with forest across more than half its land, six tenths of its power renewable and €1.97 billion in EU recovery grants.",
-    "stats": [
-      {
-        "value": "46.9%",
-        "label": "Public debt, share of GDP, 2025"
-      },
-      {
-        "value": "2.3%",
-        "label": "Growth projected for 2026, IMF"
-      },
-      {
-        "value": "€1.97bn",
-        "label": "EU recovery and resilience grants"
-      }
-    ]
-  },
-  "capital": {
-    "heading": "Forests and clean power, and a living income for all.",
-    "record": [
-      {
-        "value": "€1.97bn",
-        "money": true,
-        "text": "Recovery and resilience plan (grants), as approved by the Council of the EU on 18 February 2025",
-        "source": "Council of the EU, 2025",
-        "url": "https://www.consilium.europa.eu/en/policies/eu-recovery-plan/timeline/"
-      },
-      {
-        "value": "46.9%",
-        "money": false,
-        "text": "General government gross debt, share of GDP, 2025",
-        "source": "IMF, WEO Oct 2026",
-        "url": "https://www.imf.org/external/datamapper/GGXWDG_NGDP@WEO/LVA"
-      },
-      {
-        "value": "2.3%",
-        "money": false,
-        "text": "Real GDP growth projected for 2026",
-        "source": "IMF, WEO Oct 2026",
-        "url": "https://www.imf.org/external/datamapper/NGDP_RPCH@WEO/LVA"
-      }
+ "nation": "Latvia",
+ "page_version": "1.0",
+ "updated": "2026-11-19",
+ "steward": {
+  "name": "Ilze Bērziņa",
+  "role": "Nation Steward of Latvia"
+ },
+ "population": 1847785,
+ "hero": {
+  "lead": "A nation of 1.8 million on the Baltic with forest across more than half its land, six tenths of its power renewable and €1.97 billion in EU recovery grants.",
+  "stats": [
+   {
+    "value": "46.9%",
+    "label": "Public debt, share of GDP, 2025"
+   },
+   {
+    "value": "2.3%",
+    "label": "Growth projected for 2026, IMF"
+   },
+   {
+    "value": "€1.97bn",
+    "label": "EU recovery and resilience grants"
+   }
+  ]
+ },
+ "capital": {
+  "heading": "Forests and clean power, and a living income for all.",
+  "record": [
+   {
+    "value": "€1.97bn",
+    "money": true,
+    "text": "Recovery and resilience plan (grants), as approved by the Council of the EU on 18 February 2025",
+    "source": "Council of the EU, 2025",
+    "url": "https://www.consilium.europa.eu/en/policies/rrf/timeline-recovery-and-resilience-facility/"
+   },
+   {
+    "value": "46.9%",
+    "money": false,
+    "text": "General government gross debt, share of GDP, 2025",
+    "source": "IMF, WEO Oct 2026",
+    "url": "https://www.imf.org/external/datamapper/GGXWDG_NGDP@WEO/LVA"
+   },
+   {
+    "value": "€20.2bn",
+    "money": false,
+    "text": "General government consolidated gross debt, 2025: EUR 20,173.9 million, in Latvia’s notification of government deficit and debt of 16 April 2026",
+    "source": "Central Statistical Bureau, 2026",
+    "url": "https://stat.gov.lv/system/files/other_format/2026-04/EDP_tabulas_EN_apr_2026.pdf"
+   },
+   {
+    "value": "€381M",
+    "money": false,
+    "text": "EIB Group financing for Latvia in 2025, a record: more than €305 million from the EIB and over €76 million from the EIF, against an average of €195 million a year over the previous five years",
+    "source": "EIB, 2026",
+    "url": "https://www.eib.org/en/press/all/2026-035-latvia-receives-record-high-eib-group-financing-of-eur381-million-in-2025"
+   },
+   {
+    "value": "2.3%",
+    "money": false,
+    "text": "Real GDP growth projected for 2026",
+    "source": "IMF, WEO Oct 2026",
+    "url": "https://www.imf.org/external/datamapper/NGDP_RPCH@WEO/LVA"
+   }
+  ],
+  "register": [
+   {
+    "cat": "govt",
+    "status": "Priced",
+    "tone": "active",
+    "name": "Inaugural seven-year Swiss franc bond",
+    "detail": "State Treasury · priced 7 July 2026 · seven-year CHF benchmark · yield 1.095%, SARON mid-swaps plus 68 bp · more than 30 investors",
+    "amount": "CHF 130M",
+    "money": true,
+    "note": "Latvia’s debut offering in Swiss francs, to diversify the investor base and lock in funding costs after a cross-currency swap",
+    "text": "The first Swiss franc bond of the Republic of Latvia, a seven-year benchmark of CHF 130 million priced by the State Treasury. It widens the circle of investors who lend to Latvia and funds the state budget, from which the public services behind the seven standards are paid.",
+    "by": [
+     "Republic of Latvia",
+     "State Treasury"
     ],
-    "register": [
-      {
-        "cat": "regional",
-        "status": "Approved",
-        "tone": "active",
-        "name": "Recovery and resilience plan",
-        "detail": "Council of the EU · Approved 18 February 2025 · EU Recovery and Resilience Facility",
-        "amount": "€1.97bn",
-        "money": true,
-        "text": "EU funding, in grants, for agreed reforms and investments.",
-        "by": [
-          "European Union"
-        ],
-        "url": "https://www.consilium.europa.eu/en/policies/eu-recovery-plan/timeline/"
-      }
-    ]
+    "url": "https://www.kase.gov.lv/en/news/latvia-priced-inaugural-7-year-chf-bond"
+   },
+   {
+    "cat": "govt",
+    "status": "Priced",
+    "tone": "active",
+    "name": "Sustainability bond due 2033",
+    "detail": "State Treasury · priced 3 June 2026 · due 10 June 2033 · coupon 3.500% · re-offer yield 3.525% · spread of 60 bp at launch · orders above €2.4bn from more than 70 investors",
+    "amount": "€1bn",
+    "money": true,
+    "note": "Latvia’s second sustainability bond, after €600M in December 2021; the Sustainability Bond Framework of 2021 was updated in May 2026",
+    "text": "A seven-year sustainability bond of the Republic of Latvia under its Sustainability Bond Framework, whose alignment Sustainable Fitch rates “excellent” in its second-party opinion. Its proceeds finance and refinance eligible green spending, such as clean transport and climate adaptation, and social spending on access to essential services and affordable basic infrastructure, which serve the seven standards.",
+    "by": [
+     "Republic of Latvia",
+     "State Treasury"
+    ],
+    "url": "https://www.kase.gov.lv/sites/default/files/public/SSD/SSD%20dar%C4%ABjumu%20kopsavilkumi%20LV_ENG/Sustainability%20Bond_2026_June_Latvia.pdf"
+   },
+   {
+    "cat": "govt",
+    "status": "Issued",
+    "tone": "active",
+    "name": "Savings bonds for citizens, 2025",
+    "detail": "State Treasury · €323M issued in 2025 · €274M redeemed · €370M held by citizens at the end of 2025, up about €48M in the year",
+    "amount": "€323M",
+    "money": true,
+    "note": "Savings bonds held by Latvia’s citizens reached €370M at the end of 2025",
+    "text": "Government savings bonds held by the citizens of Latvia: €323 million were issued in 2025 and €274 million redeemed, and holdings reached €370 million at the end of the year. They let citizens lend to their own State and fund the state budget, from which the public services behind the seven standards are paid.",
+    "by": [
+     "Republic of Latvia",
+     "State Treasury"
+    ],
+    "url": "https://www.kase.gov.lv/sites/default/files/public/Birojs/Public_Report_2025.pdf"
+   },
+   {
+    "cat": "govt",
+    "status": "Issued",
+    "tone": "active",
+    "name": "Latvenergo first European green bond, due 2030",
+    "detail": "Latvenergo AS · placement completed 6 November 2025 · issued 13 November 2025 · fixed rate 3.612% · due 13 November 2030 · EUR 1bn EMTN programme · listed in Luxembourg and on Nasdaq Riga",
+    "amount": "€400M",
+    "money": true,
+    "note": "A second EU green bond of Latvenergo, ISIN XS3412686563, was issued on 25 June 2026",
+    "text": "The first European green bond of Latvenergo, the energy company whose shares are all owned by the State and held by the Ministry of Economics. As an EU green bond, its proceeds go to environmentally sustainable investments of the company, which serve the energy standard.",
+    "by": [
+     "Latvenergo"
+    ],
+    "url": "https://latvenergo.lv/storage/app/media/uploaded-files/LE_reports_2025_12m_unaudited.pdf"
+   },
+   {
+    "cat": "govt",
+    "status": "Launched",
+    "tone": "active",
+    "name": "Loans for purchasing of housing in the regions (ALTUM)",
+    "detail": "Ministry of Economics and ALTUM · State aid programme launched 29 October 2025 · loans up to €74,000 for up to 30 years · first instalment up to 5% · outside Rīga and its adjacent territories",
+    "amount": "€105M",
+    "money": true,
+    "note": "Funding may reach 100% of the value of the property; the ALTUM subsidy “Balsts” is available to multi-child families and families with children with disabilities",
+    "text": "A State aid programme of the Ministry of Economics, run by ALTUM, the Latvian development finance institution, that lends households up to €74,000 for up to 30 years to buy a home outside Rīga and the territories next to it, with a first instalment of up to 5%. It serves the shelter standard in the regions.",
+    "by": [
+     "ALTUM",
+     "Ministry of Economics"
+    ],
+    "url": "https://www.altum.lv/en/altum-begins-to-lend-for-housing-in-regions/"
+   },
+   {
+    "cat": "govt",
+    "status": "Issued",
+    "tone": "active",
+    "name": "Eurobonds, 2025",
+    "detail": "State Treasury · five-year bonds of €1.0bn in May 2025, demand €2.5bn · ten-year bonds of €1.25bn in September 2025, demand €3.3bn",
+    "amount": "€2.25bn",
+    "money": true,
+    "note": "Central government debt was €20.5bn at the end of 2025, up €1.6bn on the end of 2024",
+    "text": "Two bonds of the Republic of Latvia in the international markets in 2025: five-year bonds of €1.0 billion in May and ten-year bonds of €1.25 billion in September, with demand of €2.5 billion and €3.3 billion. They fund the state budget, from which the public services behind the seven standards are paid.",
+    "by": [
+     "Republic of Latvia",
+     "State Treasury"
+    ],
+    "url": "https://www.kase.gov.lv/sites/default/files/public/Birojs/Public_Report_2025.pdf"
+   },
+   {
+    "cat": "govt",
+    "status": "Issued",
+    "tone": "active",
+    "name": "ALTUM five-year bonds, Programme ’25",
+    "detail": "ALTUM · issued 23 May 2025 · fixed annual rate 3.576% · five years · 18 institutional investors, among them the Nordic Investment Bank · part of a €120M programme",
+    "amount": "€70M",
+    "money": true,
+    "note": "ALTUM’s sixth and largest bond issue to date",
+    "text": "Five-year bonds of ALTUM, the Latvian development finance institution, which diversify its funding base and support the Baltic capital market. ALTUM’s programmes include loans for small businesses, home loans in the regions and the renovation of apartment buildings, which serve the livelihood, shelter and energy standards.",
+    "by": [
+     "ALTUM"
+    ],
+    "url": "https://www.altum.lv/en/altum-achieves-its-largest-bond-issuance-to-date/"
+   },
+   {
+    "cat": "regional",
+    "status": "Signed",
+    "tone": "active",
+    "name": "Energy-efficient housing renovation (ALTUM)",
+    "detail": "European Investment Bank · signed 11 November 2026 · announced 13 November 2026 · loans to homeowners’ associations · half of a €140M project · completion targeted for 2029",
+    "amount": "€70M",
+    "money": true,
+    "note": "About 3,900 apartments in some 125 buildings; household energy use and costs to fall by 40% on average",
+    "text": "An EIB loan to ALTUM, the Latvian development finance institution, which lends to homeowners’ associations to insulate apartment buildings, renovate facades and roofs, replace windows and doors and upgrade heating and ventilation. About 3,900 apartments in some 125 buildings are to save about 23,500 MWh a year; it serves the shelter and energy standards.",
+    "by": [
+     "European Investment Bank",
+     "ALTUM"
+    ],
+    "url": "https://www.eib.org/en/press/all/2026-418-latvia-to-step-up-energy-efficient-housing-drive-with-eib-loan-of-eur70-million-to-development-finance-entity-altum"
+   },
+   {
+    "cat": "regional",
+    "status": "Active",
+    "tone": "active",
+    "name": "Recovery and resilience plan",
+    "detail": "European Commission · Recovery and Resilience Facility · grants €1,969M, no loans · approved by the Council 13 July 2021 · REPowerEU chapter added 8 December 2023 · fourth payment of €371.2M received 8 May 2026 · positive preliminary assessment of the fifth and final payment request, €504M, 3 November 2026",
+    "amount": "€1.97bn",
+    "money": true,
+    "note": "Nearly €1.5bn, 75% of the allocation, received by May 2026; 42% of the plan supports climate objectives and 23% the digital transition",
+    "text": "EU grants under NextGenerationEU for reforms and investments agreed with Latvia, paid in instalments against milestones and targets; the final request covers 25 milestones and 31 targets, among them new affordable homes in the regions and new health care services. The plan includes €158 million to modernise hospitals and healthcare providers, €472 million for the energy efficiency of buildings and businesses, €43 million for affordable housing and a minimum income reform, which serve the health, energy, shelter and livelihood standards.",
+    "by": [
+     "European Union",
+     "European Commission"
+    ],
+    "url": "https://reforms-investments.ec.europa.eu/recovery-and-resilience-facility-1/country-pages/latvias-recovery-and-resilience-plan_en"
+   },
+   {
+    "cat": "regional",
+    "status": "Approved",
+    "tone": "active",
+    "name": "Multi-apartment building energy efficiency (ALTUM)",
+    "detail": "Council of Europe Development Bank · approved 2 October 2026 · Public sector Financing Facility · line of action: Promoting Inclusive and Resilient Living Environments",
+    "amount": "€80M",
+    "money": true,
+    "note": "Energy-efficiency upgrades of multi-apartment residential buildings across Latvia",
+    "text": "A CEB loan to ALTUM, under a Public sector Financing Facility, that finances energy-efficiency upgrades and related improvements to multi-apartment residential buildings across Latvia. It serves the shelter and energy standards.",
+    "by": [
+     "Council of Europe Development Bank",
+     "ALTUM"
+    ],
+    "url": "https://coebank.org/en/project-financing/projects-approved-administrative-council/"
+   },
+   {
+    "cat": "regional",
+    "status": "Signed",
+    "tone": "active",
+    "name": "Riga district heating (Rīgas siltums)",
+    "detail": "European Investment Bank · project 20240344 · approved 30 March 2026 · signed 15 April 2026 · four-year investment programme · total cost about €135M",
+    "amount": "€47M",
+    "money": true,
+    "note": "Rehabilitation and extension of the district heating network, to keep heat supplied, connect new users and cut energy losses",
+    "text": "An EIB loan to Rīgas siltums for a four-year programme to rehabilitate and extend the existing district heating network of Riga, maintain the heat supply, connect new users and reduce energy losses. Heat for homes serves the energy and shelter standards.",
+    "by": [
+     "European Investment Bank",
+     "Rīgas siltums"
+    ],
+    "url": "https://www.eib.org/en/projects/all/20240344"
+   },
+   {
+    "cat": "regional",
+    "status": "Agreed",
+    "tone": "active",
+    "name": "SME financing through ALTUM",
+    "detail": "Nordic Investment Bank · 3 March 2026 · seven years · most loans below €1M · small loans below €250,000 in rural areas",
+    "amount": "€50M",
+    "money": true,
+    "note": "About 37% of the loan is estimated to go to environmental loans",
+    "text": "A seven-year NIB loan to ALTUM for small and medium-sized enterprises across sectors, agriculture among them, financing equipment, property and working capital, with small loans in rural areas. It serves the livelihood and food standards.",
+    "by": [
+     "Nordic Investment Bank",
+     "ALTUM"
+    ],
+    "url": "https://www.nib.int/loan/jsc-development-finance-institution-altum-80449"
+   },
+   {
+    "cat": "regional",
+    "status": "Agreed",
+    "tone": "active",
+    "name": "Riga water and wastewater upgrades (Rīgas ūdens, NIB)",
+    "detail": "Nordic Investment Bank · credit facility agreed, release of 12 February 2026 · for the 2025–2028 investment programme",
+    "amount": "€50M",
+    "money": true,
+    "note": "More than 9 km of drinking water pipelines and 14 km of wastewater pipelines to be replaced each year",
+    "text": "A NIB credit facility of up to €50 million to Rīgas ūdens, the largest water utility in Latvia, for its 2025–2028 programme in wastewater treatment and clean-water infrastructure, including the upgrade of the wastewater treatment facility. It serves the water standard and sanitation, part of the shelter standard.",
+    "by": [
+     "Nordic Investment Bank",
+     "Rīgas ūdens"
+    ],
+    "url": "https://www.nib.int/news/nib-to-finance-upgrades-to-riga-water-systems"
+   },
+   {
+    "cat": "regional",
+    "status": "Approved",
+    "tone": "active",
+    "name": "EU funds co-financing, 2021–2027 (structural programme loan)",
+    "detail": "European Investment Bank · project 20240154 · approved 18 December 2025 · co-finances Latvia’s 2021–2027 Cohesion Policy programme · total cost about €5,146M",
+    "amount": "€250M",
+    "money": true,
+    "note": "Proposed EIB finance before signature; sectors include education, health, energy, and water and sewerage",
+    "text": "A structural programme loan to the Republic of Latvia that co-finances, with EU Cohesion Policy funds, the priority investments of its 2021–2027 programme. Its sectors include education, health, energy, and water and sewerage, which serve the education, health, energy and water standards.",
+    "by": [
+     "European Investment Bank",
+     "Republic of Latvia"
+    ],
+    "url": "https://www.eib.org/en/projects/all/20240154"
+   },
+   {
+    "cat": "regional",
+    "status": "Signed",
+    "tone": "active",
+    "name": "Study loans for students (ALTUM, InvestEU)",
+    "detail": "European Investment Fund · announced 20 November 2025 · counter-guarantee to ALTUM, which guarantees bank loans · 2026 to 2029 · backed by InvestEU",
+    "amount": "€66M",
+    "money": true,
+    "note": "Around 8,800 students; interest-free grace periods and no collateral or parental guarantees",
+    "text": "An EIF counter-guarantee, backed by the EU’s InvestEU programme, to ALTUM, which guarantees commercial bank loans to students, unlocking up to €66 million in study loans from 2026 to 2029. Loans without collateral or parental guarantees open higher education to around 8,800 students; it serves the education standard.",
+    "by": [
+     "European Investment Fund",
+     "ALTUM",
+     "European Union"
+    ],
+    "url": "https://www.eif.org/press/all/new-eif-altum-agreement-unlocks-eur66-million-for-latvian-students"
+   },
+   {
+    "cat": "regional",
+    "status": "Signed",
+    "tone": "active",
+    "name": "Riga water and sanitation (Rīgas ūdens, EIB)",
+    "detail": "European Investment Bank · signed 7 April 2025 · 41% of project costs · 2025–2028 investment programme · due for completion by 2028",
+    "amount": "€70M",
+    "money": true,
+    "note": "Rīgas ūdens is wholly owned by the municipality of Riga State City and serves over 600,000 residents",
+    "text": "An EIB loan to Rīgas ūdens, Latvia’s largest water and wastewater company, to curb seepage from the drinking water network, rehabilitate or upgrade nearly 60 km of supply pipes, lay 27 km of new pipes, use more renewable energy at a wastewater treatment plant and handle stormwater better. It serves the water standard and sanitation, part of the shelter standard.",
+    "by": [
+     "European Investment Bank",
+     "Rīgas ūdens"
+    ],
+    "url": "https://www.eib.org/en/press/all/2025-176-latvian-capital-riga-to-get-water-system-upgrades-with-eur70-million-eib-loan-to-utility-rigas-udens"
+   },
+   {
+    "cat": "regional",
+    "status": "Signed",
+    "tone": "active",
+    "name": "Electricity distribution network (Latvenergo, EIB)",
+    "detail": "European Investment Bank · 2025 · repayment term of 15 years · in the EIB Group’s record 2025 figures for Latvia, 30 January 2026",
+    "amount": "€200M",
+    "money": true,
+    "note": "Part of a record €381M of EIB Group financing for Latvia in 2025",
+    "text": "An EIB loan to Latvenergo, the energy company whose shares are all owned by the State, to modernise the electricity-distribution network. It serves the energy standard.",
+    "by": [
+     "European Investment Bank",
+     "Latvenergo"
+    ],
+    "url": "https://www.eib.org/en/press/all/2026-035-latvia-receives-record-high-eib-group-financing-of-eur381-million-in-2025"
+   },
+   {
+    "cat": "regional",
+    "status": "Agreed",
+    "tone": "active",
+    "name": "Latvenergo investments, 2024–2026 (NIB)",
+    "detail": "Nordic Investment Bank · 17 December 2024 · announced 18 December 2024 · 15 years",
+    "amount": "€230M",
+    "money": true,
+    "note": "For the electricity distribution network and the expansion of renewable generation",
+    "text": "A 15-year NIB loan to Latvenergo for its investments of 2024 to 2026 in improving the electricity distribution network and expanding renewable energy generation. It serves the energy standard.",
+    "by": [
+     "Nordic Investment Bank",
+     "Latvenergo"
+    ],
+    "url": "https://www.nib.int/loan/latvenergo-a-s-61893"
+   },
+   {
+    "cat": "regional",
+    "status": "Signed",
+    "tone": "active",
+    "name": "University of Latvia campus, third phase",
+    "detail": "European Investment Bank · project 20230245 · signed 8 November 2024 · announced 28 November 2024 · total cost about €60M",
+    "amount": "€25M",
+    "money": true,
+    "note": "The House of Health, with teaching, research and an outpatient clinic, and the House of Sports",
+    "text": "An EIB loan to the University of Latvia for the third phase of its campus in Riga: the House of Health, which combines teaching and research in medicine, biology, physics and chemistry with an outpatient clinic, and the House of Sports for students. It serves the education and health standards.",
+    "by": [
+     "European Investment Bank",
+     "University of Latvia"
+    ],
+    "url": "https://www.eib.org/en/press/all/2024-476-eib-supports-final-phase-of-new-university-campus-development-in-riga"
+   },
+   {
+    "cat": "private",
+    "status": "Signed",
+    "tone": "active",
+    "name": "Biomethane plant at Lēdurga (Next Biogas)",
+    "detail": "EBRD · signed at the EBRD’s 2026 Annual Meeting in Riga · borrower SIA Next Biogas, a subsidiary of HoSt Group",
+    "amount": "€26M",
+    "money": true,
+    "note": "About 80,070 MWh of biomethane a year",
+    "text": "An EBRD loan to Next Biogas to acquire an existing biogas plant in Lēdurga and convert it into a biomethane facility producing around 80,070 MWh a year. Renewable gas serves the energy standard.",
+    "by": [
+     "EBRD",
+     "Next Biogas",
+     "HoSt Group"
+    ],
+    "url": "https://www.ebrd.com/home/news-and-events/news/2026/ebrd-helps-host-group-boost-biomethane-production-in-latvia.html"
+   },
+   {
+    "cat": "private",
+    "status": "Financed",
+    "tone": "active",
+    "name": "Smiltene onshore wind farm (WPR2)",
+    "detail": "EBRD · release of 2025 · part of a €92M package co-financed by the Nordic Investment Bank and Luminor Bank · 112 MW in northern Latvia",
+    "amount": "€32M",
+    "money": true,
+    "note": "The Nordic Investment Bank lists its own €28M loan to SIA WPR2, dated 10 October 2025",
+    "text": "EBRD financing for the construction and operation of the 112 MW onshore Smiltene wind farm in northern Latvia, which the Bank calls a landmark, built by SIA WPR2, a company set up for the project. New wind power serves the energy standard.",
+    "by": [
+     "EBRD",
+     "Nordic Investment Bank",
+     "Luminor Bank",
+     "WPR2"
+    ],
+    "url": "https://www.ebrd.com/home/news-and-events/news/2025/ebrd-backs-landmark-latvian-wind-farm-with--32-million-package.html"
+   },
+   {
+    "cat": "private",
+    "status": "Financed",
+    "tone": "active",
+    "name": "Hybrid solar, wind and storage parks (Sunly)",
+    "detail": "EBRD · release of 2025 · joint package of €84.8M with the European Investment Bank and SEB · four parks of 329 MW in Valmiera, Krāslava, Madona and Saldus municipalities",
+    "amount": "€35.2M",
+    "money": true,
+    "note": "The EIB Group also counts a €35.2M facility for Sunly in its 2025 figures for Latvia",
+    "text": "An EBRD loan to Sunly, a Baltic renewable energy developer, for four installations that combine solar, wind and battery storage, 329 MW in all, in the Valmiera, Krāslava, Madona and Saldus municipalities. It serves the energy standard with clean power.",
+    "by": [
+     "EBRD",
+     "European Investment Bank",
+     "SEB",
+     "Sunly"
+    ],
+    "url": "https://www.ebrd.com/home/news-and-events/news/2025/ebrd-supports-large-scale-hybrid-solar-energy-rollout-in-latvia.html"
+   }
+  ]
+ },
+ "assets": {
+  "heading": "Five assets no balance sheet counts.",
+  "items": [
+   {
+    "name": "The Forest",
+    "figure": "55.6%",
+    "money": false,
+    "label": "Of the land under forest, 2024",
+    "text": "Standing forest that stores carbon and water, and can earn as it stands."
+   },
+   {
+    "name": "The Clean Grid",
+    "figure": "63.6%",
+    "money": false,
+    "label": "Of electricity from renewable sources, 2021",
+    "text": "Power from water, wind and sun already flows; every new connection can be clean."
+   },
+   {
+    "name": "The People",
+    "figure": "1.8m",
+    "money": false,
+    "label": "Citizens, 2025",
+    "text": "15.2% are under fifteen: the workforce and the market of the next generation."
+   },
+   {
+    "name": "The Farmland",
+    "figure": "31.7%",
+    "money": false,
+    "label": "Of the land in agriculture, 2023",
+    "text": "Land that can feed the nation and earn abroad, valued and financed against its harvest."
+   },
+   {
+    "name": "The Fresh Water",
+    "figure": "9,014 m³",
+    "money": false,
+    "label": "Renewable fresh water a person, 2022",
+    "text": "Rain and rivers renewed every year: power, irrigation and drinking water."
+   }
+  ]
+ },
+ "enterprises": {
+  "heading": "Already working in Latvia.",
+  "items": [
+   {
+    "standard": "Food",
+    "name": "Canape.lv",
+    "text": "A company in Salaspils, granted social enterprise status in October 2025, that supports homeless and low-income people with food assistance and offers people in crisis masterclasses in good nutrition and sensory cooking classes.",
+    "source": "Ministry of Welfare, 2025",
+    "url": "https://www.lm.gov.lv/sites/lm/files/media_file/INFO_112025.pdf"
+   },
+   {
+    "standard": "Education",
+    "name": "Emu skola",
+    "text": "A company in Rīga whose digital tool lets a school follow its pupils’ emotional well-being and needs and gives teachers practical advice to support each pupil and class; it was granted social enterprise status in January 2024.",
+    "source": "Ministry of Welfare, 2024",
+    "url": "https://www.lm.gov.lv/sites/lm/files/media_file/info_012024.pdf"
+   },
+   {
+    "standard": "Education",
+    "name": "EVO Group",
+    "text": "A social enterprise that helps children learn with virtual reality, robots and artificial intelligence, to bring STEAM education into Latvian schools with equal opportunities whatever a child’s home or social and economic situation.",
+    "source": "Ministry of Welfare, 2025",
+    "url": "https://www.lm.gov.lv/sites/lm/files/media_file/INFO_112025.pdf"
+   },
+   {
+    "standard": "Health",
+    "name": "Hospice Latvija",
+    "text": "A company in Rīga that provides palliative and hospice care and aims to create the first full long-term hospice care centre in Latvia; it was granted social enterprise status in January 2026.",
+    "source": "Ministry of Welfare, 2026",
+    "url": "https://www.lm.gov.lv/sites/lm/files/media_file/INFO_032026.pdf"
+   },
+   {
+    "standard": "Livelihood",
+    "name": "Cut Fashion",
+    "text": "A work-integration social enterprise in Rīga that sews clothing and provides adapted workplaces, with psychological and social support, for people with disabilities; it was granted social enterprise status in October 2025.",
+    "source": "Ministry of Welfare, 2025",
+    "url": "https://www.lm.gov.lv/sites/lm/files/media_file/INFO_112025.pdf"
+   },
+   {
+    "standard": "Livelihood",
+    "name": "BIO100",
+    "text": "A work-integration social enterprise in Olaine that processes food waste and employs people at risk of social exclusion, supporting their professional and emotional development; it was granted social enterprise status in July 2025.",
+    "source": "Ministry of Welfare, 2025",
+    "url": "https://www.lm.gov.lv/sites/lm/files/media_file/INFO_092025.pdf"
+   },
+   {
+    "standard": "Livelihood",
+    "name": "Visas Iespējas",
+    "text": "A Latvian social enterprise that reinvests its profits in its mission of opening training, employment, volunteering and cultural exchange to young people through an online platform; one of its projects, funded by the European Social Fund Plus, aims to place at least 120 of 600 young people from vulnerable groups in work.",
+    "source": "European Commission, 2025",
+    "url": "https://transition-pathways.europa.eu/pse/best-practices/visas-iespejas-connecting-youth-opportunities-home-and-abroad"
+   }
+  ]
+ },
+ "coverage": {
+  "set_by": "Livelihood",
+  "gap": "22.5%",
+  "gap_text": "Of Latvians live below the national poverty line.",
+  "perfect_capita": "To set"
+ },
+ "guarantees": [
+  {
+   "name": "Food",
+   "value": 88.8,
+   "display": "88.8%",
+   "note": "Not food insecure; 11.2% are moderately or severely food insecure",
+   "source": "FAO, 2023",
+   "url": "https://data.worldbank.org/indicator/SN.ITK.MSFI.ZS?locations=LV"
   },
-  "assets": {
-    "heading": "Five assets no balance sheet counts.",
-    "items": [
-      {
-        "name": "The Forest",
-        "figure": "55.6%",
-        "money": false,
-        "label": "Of the land under forest, 2024",
-        "text": "Standing forest that stores carbon and water, and can earn as it stands."
-      },
-      {
-        "name": "The Clean Grid",
-        "figure": "63.6%",
-        "money": false,
-        "label": "Of electricity from renewable sources, 2021",
-        "text": "Power from water, wind and sun already flows; every new connection can be clean."
-      },
-      {
-        "name": "The People",
-        "figure": "1.8m",
-        "money": false,
-        "label": "Citizens, 2025",
-        "text": "15.2% are under fifteen: the workforce and the market of the next generation."
-      },
-      {
-        "name": "The Farmland",
-        "figure": "31.7%",
-        "money": false,
-        "label": "Of the land in agriculture, 2023",
-        "text": "Land that can feed the nation and earn abroad, valued and financed against its harvest."
-      },
-      {
-        "name": "The Fresh Water",
-        "figure": "9,014 m³",
-        "money": false,
-        "label": "Renewable fresh water a person, 2022",
-        "text": "Rain and rivers renewed every year: power, irrigation and drinking water."
-      }
-    ]
+  {
+   "name": "Water",
+   "value": 97.0,
+   "display": "97%",
+   "note": "Safely managed drinking water",
+   "source": "WHO/UNICEF, 2024",
+   "url": "https://data.worldbank.org/indicator/SH.H2O.SMDW.ZS?locations=LV"
   },
-  "enterprises": {
-    "heading": "Already working in Latvia.",
-    "items": []
+  {
+   "name": "Shelter",
+   "value": 92.5,
+   "display": "92.5%",
+   "note": "Safely managed sanitation; 0.6% of city dwellers live in slums",
+   "source": "WHO/UNICEF, 2024",
+   "url": "https://data.worldbank.org/indicator/SH.STA.SMSS.ZS?locations=LV"
   },
-  "coverage": {
-    "set_by": "Livelihood",
-    "gap": "22.5%",
-    "gap_text": "Of Latvians live below the national poverty line.",
-    "perfect_capita": "To set"
+  {
+   "name": "Energy",
+   "value": 92.0,
+   "display": "92%",
+   "note": "92% cook with clean fuels and technology; 100% have electricity",
+   "source": "World Bank, 2024",
+   "url": "https://data.worldbank.org/indicator/EG.CFT.ACCS.ZS?locations=LV"
   },
-  "guarantees": [
-    {
-      "name": "Food",
-      "value": 88.8,
-      "display": "88.8%",
-      "note": "Not food insecure; 11.2% are moderately or severely food insecure",
-      "source": "FAO, 2023",
-      "url": "https://data.worldbank.org/indicator/SN.ITK.MSFI.ZS?locations=LV"
-    },
-    {
-      "name": "Water",
-      "value": 97.0,
-      "display": "97%",
-      "note": "Safely managed drinking water",
-      "source": "WHO/UNICEF, 2024",
-      "url": "https://data.worldbank.org/indicator/SH.H2O.SMDW.ZS?locations=LV"
-    },
-    {
-      "name": "Shelter",
-      "value": 92.5,
-      "display": "92.5%",
-      "note": "Safely managed sanitation; 0.6% of city dwellers live in slums",
-      "source": "WHO/UNICEF, 2024",
-      "url": "https://data.worldbank.org/indicator/SH.STA.SMSS.ZS?locations=LV"
-    },
-    {
-      "name": "Energy",
-      "value": 92.0,
-      "display": "92%",
-      "note": "92% cook with clean fuels and technology; 100% have electricity",
-      "source": "World Bank, 2024",
-      "url": "https://data.worldbank.org/indicator/EG.CFT.ACCS.ZS?locations=LV"
-    },
-    {
-      "name": "Education",
-      "value": 91.6,
-      "display": "91.6",
-      "note": "91.6% of children read a simple text by the end of primary school",
-      "source": "World Bank, 2021",
-      "url": "https://data.worldbank.org/indicator/SE.LPV.PRIM?locations=LV"
-    },
-    {
-      "name": "Health",
-      "value": 77.0,
-      "display": "77",
-      "note": "WHO service coverage index",
-      "source": "WHO, 2023",
-      "url": "https://ourworldindata.org/grapher/universal-health-coverage-index?country=~LVA"
-    },
-    {
-      "name": "Livelihoods",
-      "value": 77.5,
-      "display": "77.5%",
-      "note": "Above the national poverty line; 22.5% live below it",
-      "source": "World Bank, 2022",
-      "url": "https://data.worldbank.org/indicator/SI.POV.NAHC?locations=LV"
-    }
-  ],
-  "newswire": [
-    {
-      "date": "2026-11-04",
-      "label": "4 Nov 2026",
-      "title": "EU greenlights final €504m payout for Latvia’s recovery programme reforms",
-      "highlight": "€504m",
-      "url": "https://www.brusselstimes.com/2391622/eu-greenlights-final-e504m-payout-for-latvias-recovery-programme-reforms",
-      "source": "The Brussels Times"
-    },
-    {
-      "date": "2026-09-03",
-      "label": "3 Sep 2026",
-      "title": "NIB finances passenger terminal expansion at Riga Airport",
-      "highlight": "",
-      "url": "https://www.nib.int/news/nib-finances-passenger-terminal-expansion-at-riga-airport/",
-      "source": "Nordic Investment Bank"
-    },
-    {
-      "date": "2026-08-31",
-      "label": "31 Aug 2026",
-      "title": "Bulgaria, Latvia and Romania receive first payments under SAFE defence instrument",
-      "highlight": "",
-      "url": "https://defence-industry-space.ec.europa.eu/bulgaria-latvia-and-romania-receive-first-payments-under-safe-defence-instrument-2026-08-31_en",
-      "source": "European Commission"
-    },
-    {
-      "date": "2026-07-24",
-      "label": "24 Jul 2026",
-      "title": "NIB finances the electrification of Rīga’s trolleybus network",
-      "highlight": "",
-      "url": "https://www.nib.int/news/nib-finances-the-electrification-of-rigas-trolleybus-network",
-      "source": "Nordic Investment Bank"
-    },
-    {
-      "date": "2026-07-09",
-      "label": "9 Jul 2026",
-      "title": "Latvia priced inaugural 7-year CHF bond",
-      "highlight": "",
-      "url": "https://www.kase.gov.lv/en/news/latvia-priced-inaugural-7-year-chf-bond",
-      "source": "State Treasury of Latvia"
-    },
-    {
-      "date": "2026-06-17",
-      "label": "17 Jun 2026",
-      "title": "Latvenergo AS Successfully Completes EUR 300 million EU Green Bond Placement in the International Markets",
-      "highlight": "EUR 300 million",
-      "url": "https://latvenergo.lv/en/pazinojumi/zina/latvenergo-successfully-completes-eur-300-million-eu-green-bond-placement-international-markets",
-      "source": "Latvenergo"
-    },
-    {
-      "date": "2026-06-04",
-      "label": "4 Jun 2026",
-      "title": "Latvia priced 7-year Sustainability Bond",
-      "highlight": "",
-      "url": "https://www.kase.gov.lv/en/news/latvia-priced-7-year-sustainability-bond",
-      "source": "State Treasury of Latvia"
-    },
-    {
-      "date": "2026-03-03",
-      "label": "3 Mar 2026",
-      "title": "NIB strengthens SME financing in Latvia through ALTUM",
-      "highlight": "",
-      "url": "https://www.nib.int/news/nib-strengthens-sme-financing-in-latvia-through-altum/",
-      "source": "Nordic Investment Bank"
-    }
-  ],
-  "dispatches": [],
-  "checked": "2026-11-17T04:30Z",
-  "reviewed": "2026-11-10T23:00Z"
+  {
+   "name": "Education",
+   "value": 91.6,
+   "display": "91.6",
+   "note": "91.6% of children read a simple text by the end of primary school",
+   "source": "World Bank, 2021",
+   "url": "https://data.worldbank.org/indicator/SE.LPV.PRIM?locations=LV"
+  },
+  {
+   "name": "Health",
+   "value": 77.0,
+   "display": "77",
+   "note": "WHO service coverage index",
+   "source": "WHO, 2023",
+   "url": "https://ourworldindata.org/grapher/universal-health-coverage-index?country=~LVA"
+  },
+  {
+   "name": "Livelihoods",
+   "value": 77.5,
+   "display": "77.5%",
+   "note": "Above the national poverty line; 22.5% live below it",
+   "source": "World Bank, 2022",
+   "url": "https://data.worldbank.org/indicator/SI.POV.NAHC?locations=LV"
+  }
+ ],
+ "newswire": [
+  {
+   "date": "2026-11-04",
+   "label": "4 Nov 2026",
+   "title": "EU greenlights final €504m payout for Latvia’s recovery programme reforms",
+   "highlight": "€504m",
+   "url": "https://www.brusselstimes.com/2391622/eu-greenlights-final-e504m-payout-for-latvias-recovery-programme-reforms",
+   "source": "The Brussels Times"
+  },
+  {
+   "date": "2026-09-03",
+   "label": "3 Sep 2026",
+   "title": "NIB finances passenger terminal expansion at Riga Airport",
+   "highlight": "",
+   "url": "https://www.nib.int/news/nib-finances-passenger-terminal-expansion-at-riga-airport/",
+   "source": "Nordic Investment Bank"
+  },
+  {
+   "date": "2026-08-31",
+   "label": "31 Aug 2026",
+   "title": "Bulgaria, Latvia and Romania receive first payments under SAFE defence instrument",
+   "highlight": "",
+   "url": "https://defence-industry-space.ec.europa.eu/bulgaria-latvia-and-romania-receive-first-payments-under-safe-defence-instrument-2026-08-31_en",
+   "source": "European Commission"
+  },
+  {
+   "date": "2026-07-24",
+   "label": "24 Jul 2026",
+   "title": "NIB finances the electrification of Rīga’s trolleybus network",
+   "highlight": "",
+   "url": "https://www.nib.int/news/nib-finances-the-electrification-of-rigas-trolleybus-network",
+   "source": "Nordic Investment Bank"
+  },
+  {
+   "date": "2026-07-09",
+   "label": "9 Jul 2026",
+   "title": "Latvia priced inaugural 7-year CHF bond",
+   "highlight": "",
+   "url": "https://www.kase.gov.lv/en/news/latvia-priced-inaugural-7-year-chf-bond",
+   "source": "State Treasury of Latvia"
+  },
+  {
+   "date": "2026-06-17",
+   "label": "17 Jun 2026",
+   "title": "Latvenergo AS Successfully Completes EUR 300 million EU Green Bond Placement in the International Markets",
+   "highlight": "EUR 300 million",
+   "url": "https://latvenergo.lv/en/pazinojumi/zina/latvenergo-successfully-completes-eur-300-million-eu-green-bond-placement-international-markets",
+   "source": "Latvenergo"
+  },
+  {
+   "date": "2026-06-04",
+   "label": "4 Jun 2026",
+   "title": "Latvia priced 7-year Sustainability Bond",
+   "highlight": "",
+   "url": "https://www.kase.gov.lv/en/news/latvia-priced-7-year-sustainability-bond",
+   "source": "State Treasury of Latvia"
+  },
+  {
+   "date": "2026-03-03",
+   "label": "3 Mar 2026",
+   "title": "NIB strengthens SME financing in Latvia through ALTUM",
+   "highlight": "",
+   "url": "https://www.nib.int/news/nib-strengthens-sme-financing-in-latvia-through-altum/",
+   "source": "Nordic Investment Bank"
+  }
+ ],
+ "dispatches": [],
+ "checked": "2026-11-17T04:30Z",
+ "reviewed": "2026-11-19T00:26Z"
 }
