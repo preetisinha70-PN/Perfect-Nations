@@ -1,246 +1,417 @@
 {
-  "nation": "Luxembourg",
-  "page_version": "1.0",
-  "updated": "2026-11-17",
-  "steward": {
-    "name": "Anne Schmit",
-    "role": "Nation Steward of Luxembourg"
-  },
-  "population": 686970,
-  "hero": {
-    "lead": "A grand duchy of 687,000 with public debt of 26.5% of GDP and €241.1 million in EU recovery grants.",
-    "stats": [
-      {
-        "value": "26.5%",
-        "label": "Public debt, share of GDP, 2025"
-      },
-      {
-        "value": "1.1%",
-        "label": "Growth projected for 2026, IMF"
-      },
-      {
-        "value": "$147,252",
-        "label": "Income a person, 2025"
-      }
-    ]
-  },
-  "capital": {
-    "heading": "A financial centre, and a living income at home.",
-    "record": [
-      {
-        "value": "€241.1M",
-        "money": true,
-        "text": "Recovery and resilience plan (grants), as approved by the Council of the EU on 23 September 2024",
-        "source": "Council of the EU, 2024",
-        "url": "https://www.consilium.europa.eu/en/policies/eu-recovery-plan/timeline/"
-      },
-      {
-        "value": "26.5%",
-        "money": false,
-        "text": "General government gross debt, share of GDP, 2025",
-        "source": "IMF, WEO Oct 2026",
-        "url": "https://www.imf.org/external/datamapper/GGXWDG_NGDP@WEO/LUX"
-      },
-      {
-        "value": "1.1%",
-        "money": false,
-        "text": "Real GDP growth projected for 2026",
-        "source": "IMF, WEO Oct 2026",
-        "url": "https://www.imf.org/external/datamapper/NGDP_RPCH@WEO/LUX"
-      }
+ "nation": "Luxembourg",
+ "page_version": "1.0",
+ "updated": "2026-11-19",
+ "steward": {
+  "name": "Anne Schmit",
+  "role": "Nation Steward of Luxembourg"
+ },
+ "population": 686970,
+ "hero": {
+  "lead": "A grand duchy of 687,000 with public debt of 26.5% of GDP and €241.1 million in EU recovery grants.",
+  "stats": [
+   {
+    "value": "26.5%",
+    "label": "Public debt, share of GDP, 2025"
+   },
+   {
+    "value": "1.1%",
+    "label": "Growth projected for 2026, IMF"
+   },
+   {
+    "value": "$147,252",
+    "label": "Income a person, 2025"
+   }
+  ]
+ },
+ "capital": {
+  "heading": "A financial centre, and a living income at home.",
+  "record": [
+   {
+    "value": "€241.1M",
+    "money": true,
+    "text": "Recovery and resilience plan (grants), as approved by the Council of the EU on 23 September 2024",
+    "source": "Council of the EU, 2024",
+    "url": "https://www.consilium.europa.eu/en/policies/eu-recovery-plan/timeline/"
+   },
+   {
+    "value": "€20.3bn",
+    "money": false,
+    "text": "Central government debt managed by the State Treasury at 31 December 2025, up from €19.25 billion a year earlier; 24.8% of GDP",
+    "source": "Ministry of Finance, 2026",
+    "url": "https://tresorerie.public.lu/dam-assets/fr/publications/rapports-activites/2025-rapport-activite-de-la-tresorerie-etat.pdf"
+   },
+   {
+    "value": "26.5%",
+    "money": false,
+    "text": "General government gross debt, share of GDP, 2025",
+    "source": "IMF, WEO Oct 2026",
+    "url": "https://www.imf.org/external/datamapper/GGXWDG_NGDP@WEO/LUX"
+   },
+   {
+    "value": "1.1%",
+    "money": false,
+    "text": "Real GDP growth projected for 2026",
+    "source": "IMF, WEO Oct 2026",
+    "url": "https://www.imf.org/external/datamapper/NGDP_RPCH@WEO/LUX"
+   }
+  ],
+  "register": [
+   {
+    "cat": "govt",
+    "status": "Issued",
+    "tone": "active",
+    "name": "Ten-year DLT-native sovereign bond (3.70%)",
+    "detail": "State Treasury · announced 14 October 2026 · ten-year maturity · coupon 3.70% · issued on Clearstream’s D7 DLT platform through LuxCSD",
+    "amount": "€1.7bn",
+    "money": true,
+    "note": "The Government calls it a European first: the first sovereign bond issued natively on distributed ledger technology",
+    "text": "A €1.7 billion ten-year bond of the Grand Duchy of Luxembourg, issued natively on distributed ledger technology through Clearstream’s D7 platform and LuxCSD, in service of sovereign financing. It funds the State budget as a whole; its proceeds are not earmarked to any one of the seven standards.",
+    "by": [
+     "Grand Duchy of Luxembourg",
+     "State Treasury"
     ],
-    "register": [
-      {
-        "cat": "regional",
-        "status": "Approved",
-        "tone": "active",
-        "name": "Recovery and resilience plan",
-        "detail": "Council of the EU · Approved 23 September 2024 · EU Recovery and Resilience Facility",
-        "amount": "€241.1M",
-        "money": true,
-        "text": "EU funding, in grants, for agreed reforms and investments.",
-        "by": [
-          "European Union"
-        ],
-        "url": "https://www.consilium.europa.eu/en/policies/eu-recovery-plan/timeline/"
-      }
-    ]
+    "url": "https://gouvernement.lu/fr/actualites/toutes_actualites/communiques/2026/10-octobre/14-luxembourg-emprunt.html"
+   },
+   {
+    "cat": "govt",
+    "status": "Approved",
+    "tone": "pipeline",
+    "name": "Sustainable Bond Framework, 2026",
+    "detail": "State Treasury · approved by the Government Council 2 October 2026 · green, social and sustainability bonds · second-party opinion by Sustainable Fitch · new category for climate change adaptation",
+    "amount": "",
+    "money": false,
+    "note": "A new version of the framework of 2 September 2020, under which a €1.5bn 12-year sustainability bond was issued on 7 September 2020 and fully allocated to green and social projects",
+    "text": "The Grand Duchy’s revised framework for green, social and sustainability bonds, focused on alignment with the European Taxonomy and the latest standards of the International Capital Market Association. Its social categories are access to education, healthcare and social inclusion, and affordable housing; its green categories include renewable energy, green buildings and water and wastewater management, so that a bond under it can serve the education, health, shelter, energy and water standards.",
+    "by": [
+     "Grand Duchy of Luxembourg",
+     "State Treasury"
+    ],
+    "url": "https://tresorerie.public.lu/en/dette-publique/emprunts-thematiques/finance-durable.html"
+   },
+   {
+    "cat": "govt",
+    "status": "Committed",
+    "tone": "annual",
+    "name": "SNCI financing for Luxembourg businesses, 2025",
+    "detail": "Société Nationale de Crédit et d’Investissement · annual report 2025, published 7 July 2026 · loans of €38.5M to 109 projects · about 430 active loans in the portfolio",
+    "amount": "€43.4M",
+    "money": true,
+    "note": "SMEs received over 95% of the financing granted, 48% of it to micro-businesses",
+    "text": "Financing committed in 2025 by the SNCI, a public-law banking institution with a public interest mission to support the economic policies of the Grand Duchy, which lends to businesses, mainly small and medium-sized enterprises, through its proStart, proDevelop, proInnovate and proTransfer programmes. Credit for start-ups and small firms serves the livelihood standard, the standard furthest from reach in Luxembourg.",
+    "by": [
+     "Société Nationale de Crédit et d’Investissement"
+    ],
+    "url": "https://www.snci.lu/en/snci-2025-annual-report-increased-mobilization-to-support-the-resilience-and-growth-of-luxembourg-businesses-2/"
+   },
+   {
+    "cat": "govt",
+    "status": "Spent",
+    "tone": "annual",
+    "name": "Special Fund for Affordable Housing, 2025",
+    "detail": "Ministry of Housing and Spatial Planning · annual report 2025, published 2 July 2026 · €224M in 2024 · 5,348 conventioned homes in 351 projects at 31 December 2025, 1,293 of them added in 2025 · 460 homes bought off-plan by the State",
+    "amount": "€474M",
+    "money": true,
+    "note": "64% of the conventioned homes are for affordable rental and 36% for affordable sale and sale at moderate cost",
+    "text": "The State’s spending in 2025 on the development of affordable housing through the Fonds spécial pour le logement abordable, with partner communes and public and social developers, up from €224 million in 2024. It serves the shelter standard.",
+    "by": [
+     "Government of Luxembourg",
+     "Ministry of Housing and Spatial Planning"
+    ],
+    "url": "https://gouvernement.lu/fr/actualites/toutes_actualites/communiques/2026/07-juillet/02-meisch-rapport.html"
+   },
+   {
+    "cat": "govt",
+    "status": "Issued",
+    "tone": "active",
+    "name": "Ten-year bond (3.125%, March 2026)",
+    "detail": "State Treasury · placed 16 March 2026 · ten-year maturity · coupon 3.125% · book closed at 11:45 with demand above the amount offered",
+    "amount": "€2.5bn",
+    "money": true,
+    "note": "Issued to strengthen the State’s liquidity cushion",
+    "text": "A €2.5 billion ten-year bond of the Grand Duchy of Luxembourg, placed by the State Treasury in one morning with demand above supply. It strengthens the State’s liquidity cushion and funds the budget as a whole; its proceeds are not earmarked to any one of the seven standards.",
+    "by": [
+     "Grand Duchy of Luxembourg",
+     "State Treasury"
+    ],
+    "url": "https://gouvernement.lu/fr/actualites/toutes_actualites/communiques/2026/03-mars/16-tresorerie-etat.html"
+   },
+   {
+    "cat": "govt",
+    "status": "Issued",
+    "tone": "active",
+    "name": "Spuerkeess green bonds, 2025",
+    "detail": "Banque et Caisse d’Epargne de l’Etat · €500M green senior preferred bond issued 19 March 2025, due 13 March 2031 · €10M issued 30 April 2025, due 30 April 2047 · fully allocated at 31 December 2025",
+    "amount": "€510M",
+    "money": true,
+    "note": "Allocated to an eligible portfolio of €2.5bn in 7,039 residential mortgage loans; the inaugural green covered bond of September 2026 is not included",
+    "text": "Green bonds of the Banque et Caisse d’Epargne de l’Etat (Spuerkeess), an autonomous public institution, whose proceeds finance green buildings under its Green Bond Framework; the current portfolio includes only residential properties, 4,861 houses and 2,178 apartments. Energy-efficient homes serve the shelter and energy standards.",
+    "by": [
+     "Banque et Caisse d’Epargne de l’Etat"
+    ],
+    "url": "https://www.spuerkeess.lu/fileadmin/mediatheque/documents/about_us/Sustainability/Green_Bond_Report_March_2026.pdf"
+   },
+   {
+    "cat": "govt",
+    "status": "Issued",
+    "tone": "active",
+    "name": "Ten-year bond (2.90%, September 2035)",
+    "detail": "State Treasury · Luxembourg Government Bond issued September 2025 · due 17 September 2035 · coupon 2.90% · total demand above €18bn",
+    "amount": "€2.5bn",
+    "money": true,
+    "note": "In 2025 the State repaid a €1.5bn bond in April; central government debt rose from €19.25bn to €20.26bn",
+    "text": "A €2.5 billion ten-year Luxembourg Government Bond, for which total demand exceeded €18 billion. It funds the State budget as a whole and the refinancing of its debt; its proceeds are not earmarked to any one of the seven standards.",
+    "by": [
+     "Grand Duchy of Luxembourg",
+     "State Treasury"
+    ],
+    "url": "https://tresorerie.public.lu/dam-assets/fr/publications/rapports-activites/2025-rapport-activite-de-la-tresorerie-etat.pdf"
+   },
+   {
+    "cat": "regional",
+    "status": "Active",
+    "tone": "active",
+    "name": "Recovery and resilience plan",
+    "detail": "European Commission · Recovery and Resilience Facility · grants €241.1M in four instalments · approved by the Council 13 July 2021 · modified plan approved 23 September 2024 · REPowerEU chapter of €176.7M · third payment of €92.2M paid 30 October 2026, bringing receipts to €182M · fourth and final request of €59M assessed positively 10 November 2026",
+    "amount": "€241.1M",
+    "money": true,
+    "note": "The final payment follows the opinion of the Economic and Financial Committee and a Commission payment decision; receipts would then reach €241M, including pre-financing",
+    "text": "EU grants under NextGenerationEU for reforms and investments agreed with Luxembourg, paid in instalments against milestones and targets. The plan covers affordable housing, upskilling and reskilling, healthcare resilience, renewable energy and energy efficiency; the final request reports more than 11,200 grants approved for energy efficiency and renewable energy projects. It serves the shelter, education, health and energy standards.",
+    "by": [
+     "European Union",
+     "European Commission"
+    ],
+    "url": "https://data.consilium.europa.eu/doc/document/ST-10852-2026-ADD-1/en/pdf"
+   },
+   {
+    "cat": "regional",
+    "status": "Approved",
+    "tone": "active",
+    "name": "BCEE affordable housing scheme",
+    "detail": "European Investment Bank · approved 18 August 2025 · loan through the Banque et Caisse d’Epargne de l’Etat (Spuerkeess) as financial intermediary · total cost about €207M",
+    "amount": "€100M",
+    "money": true,
+    "note": "Signature not yet shown on the EIB project page",
+    "text": "An EIB loan of about €100 million through Spuerkeess, an autonomous public institution, to support the construction of affordable housing in Luxembourg. Homes that households can afford serve the shelter standard.",
+    "by": [
+     "European Investment Bank",
+     "Banque et Caisse d’Epargne de l’Etat"
+    ],
+    "url": "https://www.eib.org/en/projects/all/20240115"
+   }
+  ]
+ },
+ "assets": {
+  "heading": "Five assets no balance sheet counts.",
+  "items": [
+   {
+    "name": "The People",
+    "figure": "686,970",
+    "money": false,
+    "label": "Citizens, 2025",
+    "text": "15.7% are under fifteen: the workforce and the market of the next generation."
+   },
+   {
+    "name": "The Farmland",
+    "figure": "51.7%",
+    "money": false,
+    "label": "Of the land in agriculture, 2023",
+    "text": "Land that can feed the nation and earn abroad, valued and financed against its harvest."
+   },
+   {
+    "name": "The Forest",
+    "figure": "34.5%",
+    "money": false,
+    "label": "Of the land under forest, 2024",
+    "text": "Standing forest that stores carbon and water, and can earn as it stands."
+   },
+   {
+    "name": "The Clean Grid",
+    "figure": "89%",
+    "money": false,
+    "label": "Of electricity from renewable sources, 2021",
+    "text": "Power from water, wind and sun already flows; every new connection can be clean."
+   },
+   {
+    "name": "The Fresh Water",
+    "figure": "1,531 m³",
+    "money": false,
+    "label": "Renewable fresh water a person, 2022",
+    "text": "Rain and rivers renewed every year: power, irrigation and drinking water."
+   }
+  ]
+ },
+ "enterprises": {
+  "heading": "Already working in Luxembourg.",
+  "items": [
+   {
+    "standard": "Food",
+    "name": "Croix-Rouge Buttek",
+    "text": "The social groceries of the Luxembourg Red Cross, which sell food and hygiene products to people with low incomes at prices up to 70% below the market price; in 2024 they recorded nearly 40,000 checkouts, helping more than 2,300 households, or 5,836 people.",
+    "source": "Luxembourg Red Cross, 2025",
+    "url": "https://www.croix-rouge.lu/wp-content/uploads/2025/06/CP-20250612-La-Croix-Rouge-luxembourgeoise-renforce-ses-actions-face-a-la-montee-de-la-precarite.pdf"
+   },
+   {
+    "standard": "Energy",
+    "name": "EnerCoop Uelzechtdall",
+    "text": "A citizens’ energy cooperative of about 180 members in Lintgen that develops projects for the generation, storage, purchase and sale of renewable energy, with two photovoltaic systems that produce enough electricity for 210 people; in October 2025 it received a special mention at the Luxembourg Solar Prize for its collaboration with the commune of Steinsel and the Luxembourg Alzheimer Association.",
+    "source": "Chronicle.lu, 2025",
+    "url": "https://chronicle.lu/category/energy/57413-luxembourg-solar-prize-2025-winners-unveiled"
+   },
+   {
+    "standard": "Livelihood",
+    "name": "Co-labor",
+    "text": "A cooperative in horticulture and organic food, on the Luxembourg market since 1983, that helps people out of work back into employment through its organic bistro and shop, fruit and vegetable baskets and green-space maintenance; it has 250 employees, nearly 110 of them supported in reintegration, and in 2026 it has already arranged 24 work placements and signed 13 employment contracts.",
+    "source": "Paperjam, 2026",
+    "url": "https://paperjam.lu/article/co-labor-un-tremplin-vers-lemploi-durable"
+   },
+   {
+    "standard": "Livelihood",
+    "name": "Forum pour l’emploi",
+    "text": "A non-profit association that runs back-to-work projects combining work experience with vocational and social training for job seekers, through five services it offers: organic produce and plants, transport on request, joinery, small household jobs, and laundry and cleaning.",
+    "source": "Lifelong Learning portal, 2026",
+    "url": "https://www.lifelong-learning.lu/article/future-skills-initiative/en"
+   },
+   {
+    "standard": "Livelihood",
+    "name": "ProActif",
+    "text": "A social initiative working with ADEM, the national employment agency, that helps job seekers back to work through six services for individuals and businesses, among them gardening, cleaning, carpentry, building and painting, fruit and vegetable processing and the Zopp & Z’iessen restaurant in Contern.",
+    "source": "Lifelong Learning portal, 2026",
+    "url": "https://www.lifelong-learning.lu/article/future-skills-initiative/en"
+   }
+  ]
+ },
+ "coverage": {
+  "set_by": "Livelihood",
+  "gap": "17.3%",
+  "gap_text": "Of people in Luxembourg live below the national poverty line.",
+  "perfect_capita": "To set"
+ },
+ "guarantees": [
+  {
+   "name": "Food",
+   "value": 97.4,
+   "display": "97.4%",
+   "note": "Not food insecure; 2.6% are moderately or severely food insecure",
+   "source": "FAO, 2023",
+   "url": "https://data.worldbank.org/indicator/SN.ITK.MSFI.ZS?locations=LU"
   },
-  "assets": {
-    "heading": "Five assets no balance sheet counts.",
-    "items": [
-      {
-        "name": "The People",
-        "figure": "686,970",
-        "money": false,
-        "label": "Citizens, 2025",
-        "text": "15.7% are under fifteen: the workforce and the market of the next generation."
-      },
-      {
-        "name": "The Farmland",
-        "figure": "51.7%",
-        "money": false,
-        "label": "Of the land in agriculture, 2023",
-        "text": "Land that can feed the nation and earn abroad, valued and financed against its harvest."
-      },
-      {
-        "name": "The Forest",
-        "figure": "34.5%",
-        "money": false,
-        "label": "Of the land under forest, 2024",
-        "text": "Standing forest that stores carbon and water, and can earn as it stands."
-      },
-      {
-        "name": "The Clean Grid",
-        "figure": "89%",
-        "money": false,
-        "label": "Of electricity from renewable sources, 2021",
-        "text": "Power from water, wind and sun already flows; every new connection can be clean."
-      },
-      {
-        "name": "The Fresh Water",
-        "figure": "1,531 m³",
-        "money": false,
-        "label": "Renewable fresh water a person, 2022",
-        "text": "Rain and rivers renewed every year: power, irrigation and drinking water."
-      }
-    ]
+  {
+   "name": "Water",
+   "value": 99.7,
+   "display": "99.7%",
+   "note": "Safely managed drinking water",
+   "source": "WHO/UNICEF, 2024",
+   "url": "https://data.worldbank.org/indicator/SH.H2O.SMDW.ZS?locations=LU"
   },
-  "enterprises": {
-    "heading": "Already working in Luxembourg.",
-    "items": []
+  {
+   "name": "Shelter",
+   "value": 96.3,
+   "display": "96.3%",
+   "note": "Safely managed sanitation; 0% of city dwellers live in slums",
+   "source": "WHO/UNICEF, 2024",
+   "url": "https://data.worldbank.org/indicator/SH.STA.SMSS.ZS?locations=LU"
   },
-  "coverage": {
-    "set_by": "Livelihood",
-    "gap": "17.3%",
-    "gap_text": "Of people in Luxembourg live below the national poverty line.",
-    "perfect_capita": "To set"
+  {
+   "name": "Energy",
+   "value": 100.0,
+   "display": "100%",
+   "note": "100% cook with clean fuels and technology; 100% have electricity",
+   "source": "World Bank, 2024",
+   "url": "https://data.worldbank.org/indicator/EG.CFT.ACCS.ZS?locations=LU"
   },
-  "guarantees": [
-    {
-      "name": "Food",
-      "value": 97.4,
-      "display": "97.4%",
-      "note": "Not food insecure; 2.6% are moderately or severely food insecure",
-      "source": "FAO, 2023",
-      "url": "https://data.worldbank.org/indicator/SN.ITK.MSFI.ZS?locations=LU"
-    },
-    {
-      "name": "Water",
-      "value": 99.7,
-      "display": "99.7%",
-      "note": "Safely managed drinking water",
-      "source": "WHO/UNICEF, 2024",
-      "url": "https://data.worldbank.org/indicator/SH.H2O.SMDW.ZS?locations=LU"
-    },
-    {
-      "name": "Shelter",
-      "value": 96.3,
-      "display": "96.3%",
-      "note": "Safely managed sanitation; 0% of city dwellers live in slums",
-      "source": "WHO/UNICEF, 2024",
-      "url": "https://data.worldbank.org/indicator/SH.STA.SMSS.ZS?locations=LU"
-    },
-    {
-      "name": "Energy",
-      "value": 100.0,
-      "display": "100%",
-      "note": "100% cook with clean fuels and technology; 100% have electricity",
-      "source": "World Bank, 2024",
-      "url": "https://data.worldbank.org/indicator/EG.CFT.ACCS.ZS?locations=LU"
-    },
-    {
-      "name": "Education",
-      "value": 97.1,
-      "display": "97.1",
-      "note": "97.1% of children read a simple text by the end of primary school; 2006, dated",
-      "source": "World Bank, 2006",
-      "url": "https://data.worldbank.org/indicator/SE.LPV.PRIM?locations=LU"
-    },
-    {
-      "name": "Health",
-      "value": 83.0,
-      "display": "83",
-      "note": "WHO service coverage index",
-      "source": "WHO, 2023",
-      "url": "https://ourworldindata.org/grapher/universal-health-coverage-index?country=~LUX"
-    },
-    {
-      "name": "Livelihoods",
-      "value": 82.7,
-      "display": "82.7%",
-      "note": "Above the national poverty line; 17.3% live below it",
-      "source": "World Bank, 2021",
-      "url": "https://data.worldbank.org/indicator/SI.POV.NAHC?locations=LU"
-    }
-  ],
-  "newswire": [
-    {
-      "date": "2026-11-10",
-      "label": "10 Nov 2026",
-      "title": "EU approves final €59m tranche in Luxembourg’s €241m pandemic recovery plan",
-      "highlight": "€59m",
-      "url": "https://www.brusselstimes.com/2401588/eu-approves-final-e59m-tranche-in-luxembourgs-e241m-pandemic-recovery-plan",
-      "source": "The Brussels Times"
-    },
-    {
-      "date": "2026-10-30",
-      "label": "30 Oct 2026",
-      "title": "EU hands over €92m to Luxembourg as green, digital goals advance",
-      "highlight": "€92m",
-      "url": "https://www.brusselstimes.com/2384934/eu-hands-over-e92m-to-luxembourg-as-green-digital-goals-advance",
-      "source": "The Brussels Times"
-    },
-    {
-      "date": "2026-10-14",
-      "label": "14 Oct 2026",
-      "title": "Luxembourg achieves a European first with the issuance of its first DLT-native sovereign bond",
-      "highlight": "",
-      "url": "https://gouvernement.lu/en/actualites/toutes_actualites/communiques/2026/10-octobre/14-luxembourg-emprunt.html",
-      "source": "Ministry of Finance, Luxembourg"
-    },
-    {
-      "date": "2026-09-30",
-      "label": "30 Sep 2026",
-      "title": "Spuerkeess successfully completes its inaugural Green Covered Bond transaction",
-      "highlight": "",
-      "url": "https://www.spuerkeess.lu/fileadmin/mediatheque/documents/about_us/Communiques_de_presse/CP_Emission_Covered_VF.pdf",
-      "source": "Spuerkeess"
-    },
-    {
-      "date": "2026-09-04",
-      "label": "4 Sep 2026",
-      "title": "Lancement du Luxembourg Future Fund 3",
-      "highlight": "",
-      "url": "https://gouvernement.lu/fr/actualites/toutes_actualites/communiques/2026/09-septembre/04-roth-delles-future-fund.html",
-      "source": "Government of Luxembourg"
-    },
-    {
-      "date": "2026-04-30",
-      "label": "30 Apr 2026",
-      "title": "Lancement du Fonds national de défense, un nouvel instrument pour développer un écosystème national d’entreprises innovantes du secteur de la défense",
-      "highlight": "",
-      "url": "https://gouvernement.lu/fr/actualites/toutes_actualites/communiques/2026/04-avril/30-delles-backes-roth-fonds-defense.html",
-      "source": "Government of Luxembourg"
-    },
-    {
-      "date": "2026-03-16",
-      "label": "16 Mar 2026",
-      "title": "La Trésorerie de l’État a placé avec succès une émission obligataire de 2,5 milliards d’euros",
-      "highlight": "2,5 milliards d’euros",
-      "url": "https://gouvernement.lu/fr/actualites/toutes_actualites/communiques/2026/03-mars/16-tresorerie-etat.html",
-      "source": "Ministry of Finance, Luxembourg"
-    },
-    {
-      "date": "2026-01-16",
-      "label": "16 Jan 2026",
-      "title": "Succès remarquable du Defence Bond, entièrement alloué en moins d’une journée",
-      "highlight": "",
-      "url": "https://gouvernement.lu/fr/actualites/toutes_actualites/communiques/2026/01-janvier/16-roth-defence-bond.html",
-      "source": "Ministry of Finance, Luxembourg"
-    }
-  ],
-  "dispatches": [],
-  "checked": "2026-11-17T04:31Z",
-  "reviewed": "2026-11-10T23:00Z"
+  {
+   "name": "Education",
+   "value": 97.1,
+   "display": "97.1",
+   "note": "97.1% of children read a simple text by the end of primary school; 2006, dated",
+   "source": "World Bank, 2006",
+   "url": "https://data.worldbank.org/indicator/SE.LPV.PRIM?locations=LU"
+  },
+  {
+   "name": "Health",
+   "value": 83.0,
+   "display": "83",
+   "note": "WHO service coverage index",
+   "source": "WHO, 2023",
+   "url": "https://ourworldindata.org/grapher/universal-health-coverage-index?country=~LUX"
+  },
+  {
+   "name": "Livelihoods",
+   "value": 82.7,
+   "display": "82.7%",
+   "note": "Above the national poverty line; 17.3% live below it",
+   "source": "World Bank, 2021",
+   "url": "https://data.worldbank.org/indicator/SI.POV.NAHC?locations=LU"
+  }
+ ],
+ "newswire": [
+  {
+   "date": "2026-11-10",
+   "label": "10 Nov 2026",
+   "title": "EU approves final €59m tranche in Luxembourg’s €241m pandemic recovery plan",
+   "highlight": "€59m",
+   "url": "https://www.brusselstimes.com/2401588/eu-approves-final-e59m-tranche-in-luxembourgs-e241m-pandemic-recovery-plan",
+   "source": "The Brussels Times"
+  },
+  {
+   "date": "2026-10-30",
+   "label": "30 Oct 2026",
+   "title": "EU hands over €92m to Luxembourg as green, digital goals advance",
+   "highlight": "€92m",
+   "url": "https://www.brusselstimes.com/2384934/eu-hands-over-e92m-to-luxembourg-as-green-digital-goals-advance",
+   "source": "The Brussels Times"
+  },
+  {
+   "date": "2026-10-14",
+   "label": "14 Oct 2026",
+   "title": "Luxembourg achieves a European first with the issuance of its first DLT-native sovereign bond",
+   "highlight": "",
+   "url": "https://gouvernement.lu/en/actualites/toutes_actualites/communiques/2026/10-octobre/14-luxembourg-emprunt.html",
+   "source": "Ministry of Finance, Luxembourg"
+  },
+  {
+   "date": "2026-09-30",
+   "label": "30 Sep 2026",
+   "title": "Spuerkeess successfully completes its inaugural Green Covered Bond transaction",
+   "highlight": "",
+   "url": "https://www.spuerkeess.lu/fileadmin/mediatheque/documents/about_us/Communiques_de_presse/CP_Emission_Covered_VF.pdf",
+   "source": "Spuerkeess"
+  },
+  {
+   "date": "2026-09-04",
+   "label": "4 Sep 2026",
+   "title": "Lancement du Luxembourg Future Fund 3",
+   "highlight": "",
+   "url": "https://gouvernement.lu/fr/actualites/toutes_actualites/communiques/2026/09-septembre/04-roth-delles-future-fund.html",
+   "source": "Government of Luxembourg"
+  },
+  {
+   "date": "2026-04-30",
+   "label": "30 Apr 2026",
+   "title": "Lancement du Fonds national de défense, un nouvel instrument pour développer un écosystème national d’entreprises innovantes du secteur de la défense",
+   "highlight": "",
+   "url": "https://gouvernement.lu/fr/actualites/toutes_actualites/communiques/2026/04-avril/30-delles-backes-roth-fonds-defense.html",
+   "source": "Government of Luxembourg"
+  },
+  {
+   "date": "2026-03-16",
+   "label": "16 Mar 2026",
+   "title": "La Trésorerie de l’État a placé avec succès une émission obligataire de 2,5 milliards d’euros",
+   "highlight": "2,5 milliards d’euros",
+   "url": "https://gouvernement.lu/fr/actualites/toutes_actualites/communiques/2026/03-mars/16-tresorerie-etat.html",
+   "source": "Ministry of Finance, Luxembourg"
+  },
+  {
+   "date": "2026-01-16",
+   "label": "16 Jan 2026",
+   "title": "Succès remarquable du Defence Bond, entièrement alloué en moins d’une journée",
+   "highlight": "",
+   "url": "https://gouvernement.lu/fr/actualites/toutes_actualites/communiques/2026/01-janvier/16-roth-defence-bond.html",
+   "source": "Ministry of Finance, Luxembourg"
+  }
+ ],
+ "dispatches": [],
+ "checked": "2026-11-17T04:31Z",
+ "reviewed": "2026-11-19T00:27Z"
 }
