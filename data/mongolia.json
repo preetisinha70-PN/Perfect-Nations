@@ -1,7 +1,7 @@
 {
  "nation": "Mongolia",
  "page_version": "1.0",
- "updated": "2026-11-10",
+ "updated": "2026-11-19",
  "steward": {
   "name": "Oyunchimeg Batbayar",
   "role": "Nation Steward of Mongolia"
@@ -35,6 +35,13 @@
     "url": "https://projects.worldbank.org/en/projects-operations/project-detail/P178190"
    },
    {
+    "value": "$225M",
+    "money": true,
+    "text": "ADB loan for provincial hospitals and health centres, its largest health sector investment in Mongolia, approved August 2026",
+    "source": "ADB, 2026",
+    "url": "https://www.adb.org/news/adb-approves-project-expand-access-life-saving-care-mongolia-provinces"
+   },
+   {
     "value": "45%",
     "money": false,
     "text": "General government gross debt, share of GDP, 2025",
@@ -51,18 +58,260 @@
   ],
   "register": [
    {
+    "cat": "govt",
+    "status": "Issued",
+    "tone": "active",
+    "name": "Century-4 sovereign bond",
+    "detail": "Government of Mongolia · issued 25 February 2025 on the international market · coupon 6.625% · 5-year maturity · order book of $3.8 billion, 7.6 times the offering",
+    "amount": "$500M",
+    "money": true,
+    "note": "Refinanced $391.7 million of Nomad bond payments and $108.3 million of Century-2 bond payments",
+    "text": "A five-year US dollar bond of the Government of Mongolia, priced 2.3 percentage points above US Treasury yields, which the Ministry of Finance calls the lowest risk premium among Mongolia’s bond issues to date. Its proceeds refinanced bonds maturing in 2026 and 2028, which bears on the public finances that pay for public services.",
+    "by": [
+     "Government of Mongolia",
+     "Ministry of Finance"
+    ],
+    "url": "https://mof.gov.mn/en/files/uploads/article/MTDS_2026-2028_English.pdf"
+   },
+   {
+    "cat": "multi",
+    "status": "Approved",
+    "tone": "active",
+    "name": "Fourth Energy Sector Project",
+    "detail": "IBRD loan · announced 22 October 2025 · P509161 · 220 kV line from the Mandal substation to a new Uvurkhangai substation · new and expanded substations in Mandalgovi, Arvaikheer and Bayankhongor",
+    "amount": "$78M",
+    "money": true,
+    "note": "Reliable electricity for about 200,000 people in the Central and Western Regions",
+    "text": "An IBRD loan to build a 220 kV transmission line, with substations and 110 kV connection lines, in the Central and Western Regions. It is expected to improve access to reliable electricity services for about 200,000 people, which serves the energy standard.",
+    "by": [
+     "World Bank"
+    ],
+    "url": "https://www.worldbank.org/en/news/press-release/2025/10/22/world-bank-supports-improved-reliability-and-security-of-electricity-services-in-mongolia-with-new-transmission-project"
+   },
+   {
     "cat": "multi",
     "status": "Approved",
     "tone": "active",
     "name": "Third Energy Sector Project",
-    "detail": "World Bank · Approved 13 November 2024",
+    "detail": "World Bank · approved 13 November 2024 · P178190",
     "amount": "$51.8M",
     "money": true,
-    "text": "Reliable power and heat.",
+    "text": "A World Bank project for reliable power and heat in Mongolia, approved on 13 November 2024. It serves the energy standard in a nation where 59% cook with clean fuels and technology.",
     "by": [
      "World Bank"
     ],
-    "url": "https://projects.worldbank.org/en/projects-operations/project-detail/P178190"
+    "url": "https://projects.worldbank.org/en/projects-operations/project-detail/P178190",
+    "note": "World Bank project P178190"
+   },
+   {
+    "cat": "regional",
+    "status": "Approved",
+    "tone": "active",
+    "name": "Strengthening Fiscal, Financial, and Economic Resilience Program, Subprogram 2",
+    "detail": "ADB · approved 17 November 2026 · $150 million regular loan and $50 million concessional loan · second and final phase of a programme begun in 2023 · all 19 policy actions of the phase completed",
+    "amount": "$200M",
+    "money": true,
+    "note": "The Bank of Mongolia and 11 commercial banks adopted measures to expand finance for women entrepreneurs",
+    "text": "Reform-linked ADB financing for tax administration, oversight of government borrowing, local-currency government bonds and stronger banks. ADB states that it will also help Mongolia maintain priority public spending as energy and transport costs rise, which bears on the public finances that pay for the seven standards.",
+    "by": [
+     "Asian Development Bank"
+    ],
+    "url": "https://www.adb.org/news/adb-approves-200-million-strengthen-mongolia-economy-beyond-mining"
+   },
+   {
+    "cat": "regional",
+    "status": "Approved",
+    "tone": "active",
+    "name": "Sustaining Access to and Quality of Education During Economic Difficulties, second additional financing",
+    "detail": "ADB · approved 11 September 2026 · $63 million regular loan and $67 million concessional loan · $34 million of government counterpart financing · 33 schools and kindergartens, 12 in Ulaanbaatar and 21 in rural areas",
+    "amount": "$130M",
+    "money": true,
+    "note": "Places for an additional 11,000 students and preschoolers",
+    "text": "An ADB loan to reduce overcrowding by building and enlarging 33 schools and kindergartens, with new teaching materials, among them 50 interactive digital primary textbooks, and a modern education management information system. It serves the education standard.",
+    "by": [
+     "Asian Development Bank",
+     "Government of Mongolia"
+    ],
+    "url": "https://www.adb.org/news/adb-expands-access-quality-education-mongolia"
+   },
+   {
+    "cat": "regional",
+    "status": "Approved",
+    "tone": "active",
+    "name": "Provincial Health Service Strengthening and Modernization Sector Project",
+    "detail": "ADB loan · approved 21 August 2026 · 19 provincial hospitals modernised, among them a new 300-bed hospital in Uvurkhangai Province · 11 new soum health centres along highways and border crossings",
+    "amount": "$225M",
+    "money": true,
+    "note": "ADB’s largest health sector investment in Mongolia",
+    "text": "An ADB loan for emergency, trauma and intensive care, operating theatres, ambulances, diagnostic equipment, telemedicine and health worker training across the provinces. It aims to improve access to life-saving and specialised care for more than half of Mongolia’s provincial population by 2031, which serves the health standard.",
+    "by": [
+     "Asian Development Bank"
+    ],
+    "url": "https://www.adb.org/news/adb-approves-project-expand-access-life-saving-care-mongolia-provinces"
+   },
+   {
+    "cat": "bilat",
+    "status": "Signed",
+    "tone": "granted",
+    "name": "Improvement of Environment for Developing Engineers through Japanese-style Tertiary Education in Engineering",
+    "detail": "JICA grant aid · signed 8 October 2025 · up to 1,869 million yen · practical training facility and equipment for three technical colleges in Ulaanbaatar",
+    "amount": "¥1.87bn",
+    "money": true,
+    "note": "Grant agreement between JICA and the Government of Mongolia",
+    "text": "A Japanese grant to build a practical training facility and to procure and install training equipment for three technical colleges in Ulaanbaatar, with consulting services. It strengthens the training of engineers, which serves the education and livelihood standards.",
+    "by": [
+     "JICA"
+    ],
+    "url": "https://www.jica.go.jp/english/information/press/2025/20250930_13.html"
+   },
+   {
+    "cat": "private",
+    "status": "Active",
+    "tone": "active",
+    "name": "Long-term local-currency loan to LendMN",
+    "detail": "EBRD · 16 November 2026 · up to US$10 million (€8.6 million) · for MSMEs led or owned by people under 35",
+    "amount": "$10M",
+    "money": true,
+    "note": "The EBRD’s first loan to a Mongolian fintech company",
+    "text": "An EBRD loan to LendMN, a fintech company specialising in fully digital lending to micro, small and medium-sized enterprises and consumers. It funds long-term local-currency lending to young entrepreneurs across Mongolia, which serves the livelihood standard.",
+    "by": [
+     "EBRD"
+    ],
+    "url": "https://www.ebrd.com/home/news-and-events/news/2026/ebrd-provides-its-first-loan-to-mongolian-fintech-company.html"
+   },
+   {
+    "cat": "private",
+    "status": "Approved",
+    "tone": "active",
+    "name": "Khan Bank green loan",
+    "detail": "AIIB · 23 October 2026 · five-year senior unsecured green loan · AIIB $80 million as lead arranger, Korea Development Bank $20 million in parallel, B-loan participants $30 million",
+    "amount": "$130M",
+    "money": true,
+    "note": "AIIB’s first nonsovereign-backed financing in Mongolia",
+    "text": "A green loan to Khan Bank for renewable energy, energy efficiency, green buildings, pollution control, water management and treatment and clean transport. It mobilises $50 million of additional financing and serves the energy and water standards.",
+    "by": [
+     "AIIB",
+     "Korea Development Bank",
+     "Khan Bank"
+    ],
+    "url": "https://aiib.org/en/news-events/news/2026/aiib-marks-first-private-sector-investment-in-mongolia-with-usd130-million-green-loan-khan-bank.html"
+   },
+   {
+    "cat": "private",
+    "status": "Signed",
+    "tone": "active",
+    "name": "Cashmere value chain and food services loans",
+    "detail": "ADB · 18 September 2026 · togrog equivalent · Gobi Joint Stock Company $15 million, Tavan Bogd Foods LLC $10 million, Tavan Bogd Foods Pizza LLC $5 million",
+    "amount": "$30M",
+    "money": true,
+    "note": "367 new jobs expected, at least 220 of them for women",
+    "text": "ADB loans to Gobi for sustainable purchases of raw cashmere from nomadic herders and its processing, and to two food service companies in and around Ulaanbaatar. The 367 jobs expected serve the livelihood standard.",
+    "by": [
+     "Asian Development Bank",
+     "Gobi",
+     "Tavan Bogd Foods"
+    ],
+    "url": "https://www.adb.org/news/adb-signs-private-sector-deal-strengthen-mongolia-cashmere-value-chain-create-inclusive-jobs"
+   },
+   {
+    "cat": "private",
+    "status": "Active",
+    "tone": "active",
+    "name": "Gerlug Green Apartments",
+    "detail": "ADB · 9 September 2026 · $30 million in togrog equivalent to Tavan Bogd Holdings · four towers, 252 units, Khan-Uul District · EBRD local currency loan of up to €25 million equivalent for the first phase",
+    "amount": "$30M",
+    "money": true,
+    "note": "Targets EDGE certification: 34.6% energy savings and 30.6% water savings",
+    "text": "Loans to Tavan Bogd Holdings for a green residential complex in Ulaanbaatar, which ADB calls Mongolia’s first green-certified residential complex built by the private sector. Its insulation, efficient lighting and smart energy meters are expected to cut the energy and water its homes use, in a city that relies heavily on coal-fired winter heating, which bears on the shelter and energy standards.",
+    "by": [
+     "Asian Development Bank",
+     "EBRD",
+     "Tavan Bogd Holdings"
+    ],
+    "url": "https://www.adb.org/news/adb-supports-mongolias-first-green-certified-residential-complex-built-private-sector"
+   },
+   {
+    "cat": "private",
+    "status": "Signed",
+    "tone": "active",
+    "name": "Social loan to Premium Nexus for food distribution",
+    "detail": "ADB · 7 July 2026 · social loan of $10 million (MNT35.8 billion) · temperature-controlled distribution centre · 240 new CU stores in Ulaanbaatar and rural areas",
+    "amount": "$10M",
+    "money": true,
+    "note": "About 900 jobs expected, employing women and rural workers",
+    "text": "An ADB social loan to Mongolia’s largest convenience store operator for a temperature-controlled distribution centre and retail and logistics upgrades. ADB states that it will improve the consistency and reach of food distribution nationwide, which serves the food and livelihood standards.",
+    "by": [
+     "Asian Development Bank",
+     "Premium Nexus"
+    ],
+    "url": "https://www.adb.org/news/adb-premium-nexus-jsc-sign-social-loan-promote-efficient-and-inclusive-food-distribution-mongolia"
+   },
+   {
+    "cat": "private",
+    "status": "Approved",
+    "tone": "active",
+    "name": "Loans to Khan Bank for small businesses",
+    "detail": "IFC · project 52089 · approved 20 March 2026 · indicative $140 million of loans and $10 million of risk management · a 5-year senior loan of up to $80 million and a 3-year syndicated loan",
+    "amount": "$150M",
+    "money": true,
+    "note": "Use of proceeds 100% MSMEs, among them women-owned SMEs and agri finance",
+    "text": "IFC senior and syndicated loans to Khan Bank for on-lending to micro, small and medium enterprises, women-owned SMEs and farmers. It serves the livelihood standard.",
+    "by": [
+     "IFC",
+     "Khan Bank"
+    ],
+    "url": "https://disclosures.ifc.org/project-detail/SII/52089/mfp-sme-khanbank-osb"
+   },
+   {
+    "cat": "private",
+    "status": "Active",
+    "tone": "active",
+    "name": "Green, Women in Business and Youth in Business loans to Khan Bank",
+    "detail": "EBRD · 2026 · up to US$170 million (€146.7 million) in three senior loans · green loan up to $80 million under the Green Climate Fund and the EBRD Greening Financial Systems framework · Women in Business up to $50 million · Youth in Business up to $40 million",
+    "amount": "$170M",
+    "money": true,
+    "note": "The EBRD’s largest financing package to a bank in Mongolia",
+    "text": "Three EBRD loans to Khan Bank, payable in US dollars or togrog, for green technologies in small businesses and for MSMEs owned by women and by people under 35. The Green Climate Fund funds the green loan and the Women Entrepreneurs Finance Initiative supports the women’s loan; it serves the energy and livelihood standards.",
+    "by": [
+     "EBRD",
+     "Green Climate Fund",
+     "Women Entrepreneurs Finance Initiative",
+     "Khan Bank"
+    ],
+    "url": "https://www.ebrd.com/home/news-and-events/news/2026/ebrd-providing-us--170-million-to-khan-bank0.html"
+   },
+   {
+    "cat": "private",
+    "status": "Active",
+    "tone": "active",
+    "name": "Equity investment in AND Global",
+    "detail": "IFC · 19 August 2025 · Series B round · IFC’s first equity investment in Mongolia in more than a decade",
+    "amount": "$7M",
+    "money": true,
+    "note": "Its digital lender LendMN has over 1.3 million registered users",
+    "text": "An IFC equity investment in AND Global, the Mongolian fintech company behind the digital lender LendMN, to scale inclusive finance. LendMN reaches more than 80% of Mongolia’s economically active population, which serves the livelihood standard.",
+    "by": [
+     "IFC",
+     "AND Global"
+    ],
+    "url": "https://www.ifc.org/en/pressroom/2025/ifc-invests-in-mongolian-fintech-and-global-to-scale-inclusive-finance0"
+   },
+   {
+    "cat": "private",
+    "status": "Active",
+    "tone": "active",
+    "name": "Syndicated loan to XacBank for green and women-owned businesses",
+    "detail": "IFC-led syndicated loan package of $90 million · Finnfund senior loan facility of $10 million, 29 January 2025 · 30% for green projects, 70% for MSMEs",
+    "amount": "$90M",
+    "money": true,
+    "note": "71% of the MSME share earmarked for women-owned enterprises",
+    "text": "An IFC-led syndicated loan to XacBank, with Finnfund among the lenders, for on-lending to green projects and to micro, small and medium enterprises. It serves the livelihood and energy standards.",
+    "by": [
+     "IFC",
+     "Finnfund",
+     "XacBank"
+    ],
+    "url": "https://www.finnfund.fi/en/news-and-publications/news/finnfund-boosts-green-and-women-owned-enterprises-in-mongolia-with-an-investment-in-xacbank/"
    }
   ]
  },
@@ -108,7 +357,36 @@
  },
  "enterprises": {
   "heading": "Already working in Mongolia.",
-  "items": []
+  "items": [
+   {
+    "standard": "Energy",
+    "name": "GerHub",
+    "text": "A non-profit founded in 2016 to bring community-based solutions to the ger districts of Ulaanbaatar, among them a Coal to Solar pilot with around 80 households, that also runs ger district tours whose proceeds go to the families who moved to solar panels.",
+    "source": "The Diplomat, 2025",
+    "url": "https://sv7.thediplomat.com/2025/05/under-the-eternal-blue-sky-how-mongolian-families-are-reimagining-ger-living"
+   },
+   {
+    "standard": "Education",
+    "name": "TomYo",
+    "text": "An education technology platform founded in 2019 that offers courses, language learning, mentoring and educational content to young people by subscription, with the aim of making quality education more accessible.",
+    "source": "The Tech, 2026",
+    "url": "https://the-tech.kz/?p=37814"
+   },
+   {
+    "standard": "Livelihood",
+    "name": "XacBank",
+    "text": "A bank founded in 2001, with 73 retail branches across the country, that lends to micro, small and medium enterprises, especially those owned by women, and finances the green transition.",
+    "source": "Finnfund, 2025",
+    "url": "https://www.finnfund.fi/en/news-and-publications/news/finnfund-boosts-green-and-women-owned-enterprises-in-mongolia-with-an-investment-in-xacbank/"
+   },
+   {
+    "standard": "Livelihood",
+    "name": "LendMN",
+    "text": "A fully digital lender to small businesses and consumers, listed on the Mongolian Stock Exchange, with over 1.3 million registered users and a reach of more than 80% of Mongolia’s economically active population.",
+    "source": "IFC, 2025",
+    "url": "https://www.ifc.org/en/pressroom/2025/ifc-invests-in-mongolian-fintech-and-global-to-scale-inclusive-finance0"
+   }
+  ]
  },
  "coverage": {
   "set_by": "Water",
@@ -202,5 +480,5 @@
  ],
  "dispatches": [],
  "checked": "2026-11-10T23:00Z",
- "reviewed": "2026-11-10T23:00Z"
+ "reviewed": "2026-11-19T07:34Z"
 }
