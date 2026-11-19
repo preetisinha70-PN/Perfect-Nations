@@ -1,253 +1,394 @@
 {
-  "nation": "Maldives",
-  "page_version": "1.0",
-  "updated": "2026-11-18",
-  "steward": {
-    "name": "Aishath Shifa",
-    "role": "Nation Steward of Maldives"
-  },
-  "population": 529676,
-  "hero": {
-    "lead": "An island nation of 530,000 in the Indian Ocean, where visitors earn four fifths of export income, public debt reached 129% of GDP in 2025, and a $500 million sukuk was repaid in full in April 2026.",
-    "stats": [
-      {
-        "value": "78.9%",
-        "label": "Tourism, share of exports, 2020"
-      },
-      {
-        "value": "129.4%",
-        "label": "Public debt, share of GDP, 2025"
-      },
-      {
-        "value": "$500M",
-        "label": "Sukuk repaid in full, April 2026"
-      }
-    ]
-  },
-  "capital": {
-    "heading": "A tourism economy, through its hardest repayment year.",
-    "record": [
-      {
-        "value": "78.9%",
-        "money": false,
-        "text": "Tourism receipts, share of export earnings, 2020",
-        "source": "World Bank, 2020",
-        "url": "https://data.worldbank.org/indicator/ST.INT.RCPT.XP.ZS?locations=MV"
-      },
-      {
-        "value": "129.4%",
-        "money": false,
-        "text": "General government gross debt, share of GDP, 2025",
-        "source": "IMF, WEO Oct 2026",
-        "url": "https://www.imf.org/external/datamapper/GGXWDG_NGDP@WEO/MDV"
-      },
-      {
-        "value": "$524.7M",
-        "money": true,
-        "text": "Repaid on the 2021 sukuk at maturity in April 2026, with its final obligations",
-        "source": "Manohar Parrikar IDSA, 2026",
-        "url": "https://idsa.in/publisher/issuebrief/maldivian-economy-under-muizzu-administration"
-      },
-      {
-        "value": "INR 30bn",
-        "money": false,
-        "text": "New currency swap facility from India, about $319 million, April 2026",
-        "source": "Sun Online (see.mv), 2026",
-        "url": "https://see.mv/104855"
-      }
+ "nation": "Maldives",
+ "page_version": "1.0",
+ "updated": "2026-11-19",
+ "steward": {
+  "name": "Aishath Shifa",
+  "role": "Nation Steward of Maldives"
+ },
+ "population": 529676,
+ "hero": {
+  "lead": "An island nation of 530,000 in the Indian Ocean, where visitors earn four fifths of export income, public debt reached 129% of GDP in 2025, and a $500 million sukuk was repaid in full in April 2026.",
+  "stats": [
+   {
+    "value": "78.9%",
+    "label": "Tourism, share of exports, 2020"
+   },
+   {
+    "value": "129.4%",
+    "label": "Public debt, share of GDP, 2025"
+   },
+   {
+    "value": "$500M",
+    "label": "Sukuk repaid in full, April 2026"
+   }
+  ]
+ },
+ "capital": {
+  "heading": "A tourism economy, through its hardest repayment year.",
+  "record": [
+   {
+    "value": "78.9%",
+    "money": false,
+    "text": "Tourism receipts, share of export earnings, 2020",
+    "source": "World Bank, 2020",
+    "url": "https://data.worldbank.org/indicator/ST.INT.RCPT.XP.ZS?locations=MV"
+   },
+   {
+    "value": "129.4%",
+    "money": false,
+    "text": "General government gross debt, share of GDP, 2025",
+    "source": "IMF, WEO Oct 2026",
+    "url": "https://www.imf.org/external/datamapper/GGXWDG_NGDP@WEO/MDV"
+   },
+   {
+    "value": "$524.7M",
+    "money": true,
+    "text": "Repaid on the 2021 sukuk at maturity in April 2026, with its final obligations",
+    "source": "Manohar Parrikar IDSA, 2026",
+    "url": "https://idsa.in/publisher/issuebrief/maldivian-economy-under-muizzu-administration"
+   },
+   {
+    "value": "INR 30bn",
+    "money": false,
+    "text": "Rupee swap line from the Reserve Bank of India, about $319 million, signed October 2024 and first drawn in April 2026",
+    "source": "Sun Online (see.mv), 2026",
+    "url": "https://see.mv/104855"
+   },
+   {
+    "value": "$1.7bn",
+    "money": true,
+    "text": "External debt service needs estimated for 2026; total public and publicly guaranteed debt an estimated 129.7% of GDP in 2025",
+    "source": "World Bank, June 2026",
+    "url": "https://www.worldbank.org/en/country/maldives/publication/maldives-development-update-2026"
+   }
+  ],
+  "register": [
+   {
+    "cat": "govt",
+    "status": "Completed",
+    "tone": "completed",
+    "name": "Sovereign sukuk, repaid at maturity",
+    "detail": "Maldives Monetary Authority · settlement completed 2 April 2026, with the associated coupon payments · met from official reserves and the Sovereign Development Fund",
+    "amount": "$500M",
+    "money": true,
+    "note": "US$524.68 million paid in all, according to the Manohar Parrikar IDSA",
+    "text": "The US$500 million sovereign sukuk, settled in full at maturity by the Maldives Monetary Authority on 2 April 2026 from official reserves and the Sovereign Development Fund. Its repayment concerns the public finances as a whole: official reserves fell from $1.3 billion in March to $717.9 million in April 2026, according to the World Bank.",
+    "by": [
+     "Government of Maldives",
+     "Maldives Monetary Authority"
     ],
-    "register": [
-      {
-        "cat": "bilat",
-        "status": "Signed",
-        "tone": "active",
-        "name": "Currency swap facility",
-        "detail": "Reserve Bank of India · INR 30 billion · April 2026",
-        "amount": "INR 30bn",
-        "money": false,
-        "text": "A rupee swap line activated as the earlier $400 million swap was repaid.",
-        "by": [
-          "Reserve Bank of India"
-        ],
-        "url": "https://see.mv/104855"
-      }
-    ]
+    "url": "https://mfr.mv/financial-sector/mma-announces-the-settlement-of-usd-500-million-sukuk"
+   },
+   {
+    "cat": "multi",
+    "status": "Approved",
+    "tone": "active",
+    "name": "Maldives Emergency Support for Critical Services Project",
+    "detail": "World Bank · approved 4 May 2026 · principal US$40 million · reallocated from existing projects to support fuel imports, according to Atoll Times",
+    "amount": "$40M",
+    "money": true,
+    "note": "With the ADB’s US$50 million emergency loan, US$90 million arranged for fuel supplies and related services",
+    "text": "World Bank financing approved in May 2026 to support fuel imports, for the purpose the ADB names for its own emergency loan: keeping power and water running. Imported fuel produces 94% of the country’s electricity and runs the desalination plants that supply drinking water, so it bears on the energy and water standards.",
+    "by": [
+     "World Bank"
+    ],
+    "url": "https://financesone.worldbank.org/countries/maldives"
+   },
+   {
+    "cat": "multi",
+    "status": "Approved",
+    "tone": "granted",
+    "name": "Toward Risk-Aware and Climate-resilienT communities (TRACT)",
+    "detail": "Green Climate Fund · SAP050 · grant approved 3 July 2025 (B.42) · accredited entity UNEP · to July 2030 · 15% disbursed",
+    "amount": "$25M",
+    "money": true,
+    "note": "US$248,570 of co-financing in kind; total project value US$25.2 million",
+    "text": "A Green Climate Fund grant that strengthens climate services and impact-based multi-hazard early warning across the Maldives, so that communities on its dispersed islands can prepare for sea-level rise and extreme weather. Earlier warning protects homes and livelihoods, which bears on the shelter and livelihood standards.",
+    "by": [
+     "Green Climate Fund",
+     "UNEP"
+    ],
+    "url": "https://www.greenclimate.fund/project/sap050"
+   },
+   {
+    "cat": "multi",
+    "status": "Approved",
+    "tone": "granted",
+    "name": "Atoll Education Development Project, additional financing",
+    "detail": "World Bank · Global Partnership for Education Multiplier grant · announced 30 October 2024 · P181581 · total project financing $12.775 million",
+    "amount": "$2.7M",
+    "money": true,
+    "note": "The original project, approved in September 2022, carries a $4.5 million IDA grant and a $4.5 million IDA credit",
+    "text": "A grant from the Global Partnership for Education, through the World Bank, added to a project that improves teacher effectiveness and student learning at secondary level in mathematics, science and English, with special focus on the outer atolls. It reaches nearly all of the 100 target schools and serves the education standard.",
+    "by": [
+     "World Bank",
+     "Global Partnership for Education"
+    ],
+    "url": "https://www.worldbank.org/en/news/press-release/2024/10/30/world-bank-approves-additional-financing-to-improve-secondary-education-in-maldives"
+   },
+   {
+    "cat": "regional",
+    "status": "Signed",
+    "tone": "active",
+    "name": "Energy Security Emergency Assistance Project",
+    "detail": "ADB · 60245-001 · approved 11 August 2026 · signed 16 August 2026, with the State Trading Organisation · 1.0% a year · 40 years, including 10 years’ grace · ordinary capital resources",
+    "amount": "$50M",
+    "money": true,
+    "note": "Complements US$40 million from the World Bank for the same purpose",
+    "text": "An ADB emergency loan that funds critical diesel imports to keep power and water running, and also covers food and health-care logistics, the movement of people and cargo between islands and waste management, after the Middle East conflict raised fuel prices and reduced tourist arrivals. Imported fuel produces 94% of the country’s electricity and runs the desalination plants that supply drinking water, so it serves the energy and water standards.",
+    "by": [
+     "ADB",
+     "State Trading Organisation"
+    ],
+    "url": "https://www.adb.org/news/adb-backs-philippines-maldives-800-million-middle-east-conflict-strains-public-services"
+   },
+   {
+    "cat": "regional",
+    "status": "Approved",
+    "tone": "active",
+    "name": "Strengthening Fiscal Management and Sustainability Program",
+    "detail": "AIIB · P000815 · sovereign results-based loan · approved 28 August 2024 · implementation Q3 2024 to Q2 2027 · interest buy-down of about US$2.74 million from the Special Fund Window",
+    "amount": "$15M",
+    "money": true,
+    "note": "Supports the policy actions under ADB’s US$18.7 million policy-based grant of September 2023",
+    "text": "A results-based loan from the AIIB to the Republic of Maldives to strengthen fiscal sustainability and promote climate-resilient investment, with results areas in green taxation and in climate mitigation and adaptation. It finances the public finances as a whole; the Special Fund grant reduces its interest rate by 100 basis points.",
+    "by": [
+     "AIIB",
+     "ADB"
+    ],
+    "url": "https://www.aiib.org/en/projects/details/2024/approved/Maldives-Strengthening-Fiscal-Management-and-Sustainability-Program.html"
+   },
+   {
+    "cat": "bilat",
+    "status": "Active",
+    "tone": "active",
+    "name": "Currency swap facility",
+    "detail": "Reserve Bank of India · INR 30 billion (Rs 3,000 crore) · signed October 2024 · first drawdown approved April 2026 under the SAARC Currency Swap Framework, 2024 to 2027",
+    "amount": "INR 30bn",
+    "money": false,
+    "note": "Drawn as the US$400 million swap was settled; the framework includes concessional interest rate terms",
+    "text": "A rupee swap line from the Reserve Bank of India, signed during the President’s visit to New Delhi in October 2024 and drawn from April 2026, as the earlier US$400 million swap was repaid. It supports the reserves and the public finances as a whole.",
+    "by": [
+     "Reserve Bank of India",
+     "Maldives Monetary Authority"
+    ],
+    "url": "https://see.mv/104855"
+   },
+   {
+    "cat": "bilat",
+    "status": "Signed",
+    "tone": "active",
+    "name": "500 social housing units in Malé",
+    "detail": "China International Development Cooperation Agency · project minutes signed in Beijing, 21 to 22 April 2026 · interest-free facility extended by China",
+    "amount": "",
+    "money": false,
+    "note": "No amount published; further grant aid cooperation was discussed alongside the signing",
+    "text": "Minutes signed with the China International Development Cooperation Agency for 500 social housing units in Malé, to be financed through an interest-free facility extended by China. It serves the shelter standard, the standard furthest from reach in the Maldives.",
+    "by": [
+     "China International Development Cooperation Agency"
+    ],
+    "url": "https://blogs.presidency.gov.mv/daily-blogs/maldives-and-china-sign-agreement-for-500-social-housing-units-in-male"
+   }
+  ]
+ },
+ "assets": {
+  "heading": "Five assets no balance sheet counts.",
+  "items": [
+   {
+    "name": "The Visitors",
+    "figure": "78.9%",
+    "money": false,
+    "label": "Of export earnings from visitors, 2020",
+    "text": "Coral atolls, resorts and reefs: visitors earn four fifths of export income."
+   },
+   {
+    "name": "The People",
+    "figure": "529,676",
+    "money": false,
+    "label": "Citizens, 2025",
+    "text": "19% are under fifteen: the workforce and the market of the next generation."
+   },
+   {
+    "name": "The Forest",
+    "figure": "12.5%",
+    "money": false,
+    "label": "Of the land under forest, 2024",
+    "text": "Coconut palms and mangroves on low coral islands."
+   },
+   {
+    "name": "The Land",
+    "figure": "298 km²",
+    "money": false,
+    "label": "Land area, 2023",
+    "text": "Less than 300 square kilometres of land across a vast ocean territory."
+   },
+   {
+    "name": "The Farmland",
+    "figure": "19.8%",
+    "money": false,
+    "label": "Of the land in agriculture, 2023",
+    "text": "A fifth of the land farmed: coconuts, fruit and vegetables, with most food imported."
+   }
+  ]
+ },
+ "enterprises": {
+  "heading": "Already working in Maldives.",
+  "items": [
+   {
+    "standard": "Food",
+    "name": "Vaadhoo Green Farm",
+    "text": "A community-led hydroponic farm on Vaadhoo, powered by rooftop solar and rainwater harvesting, where 18 women were trained in hydroponic farming; it can grow up to 600 kilograms of cucumbers and 400 kilograms of leafy greens a harvest, for an estimated income of MVR 80,000 a month.",
+    "source": "UNDP Maldives, 2026",
+    "url": "https://www.undp.org/maldives/press-releases/government-and-undp-supports-community-led-green-farm-advancing-womens-empowerment-and-renewable-energy-r-vaadhoo"
+   },
+   {
+    "standard": "Shelter",
+    "name": "Housing Development Finance Corporation (HDFC Maldives)",
+    "text": "The Maldives’ only dedicated housing finance institution, owned by the Government, the ADB, IFC and HDFC Bank, which lends for home construction, purchase and improvement, with conventional, Islamic and Lite financing, and has funded more than 24,000 housing units and created more than 6,000 homeowners.",
+    "source": "HDFC Maldives, 2026",
+    "url": "https://hdfc.com.mv/about-us"
+   },
+   {
+    "standard": "Education",
+    "name": "Syllabi",
+    "text": "A Maldivian education technology company, founded in 2018, whose exam practice platform gives O-Level and A-Level students revision notes, practice questions and instant feedback on phones, tablets and laptops, and is used by more than 70 schools across the Maldives.",
+    "source": "Maldives Voice, 2026",
+    "url": "https://maldivesvoice.mv/3191"
+   }
+  ]
+ },
+ "coverage": {
+  "set_by": "Shelter",
+  "gap": "34.8%",
+  "gap_text": "Of city dwellers in Maldives live in slums.",
+  "perfect_capita": "To set"
+ },
+ "guarantees": [
+  {
+   "name": "Food",
+   "value": 86.6,
+   "display": "86.6%",
+   "note": "Not food insecure; 13.4% are moderately or severely food insecure",
+   "source": "FAO, 2022",
+   "url": "https://data.worldbank.org/indicator/SN.ITK.MSFI.ZS?locations=MV"
   },
-  "assets": {
-    "heading": "Five assets no balance sheet counts.",
-    "items": [
-      {
-        "name": "The Visitors",
-        "figure": "78.9%",
-        "money": false,
-        "label": "Of export earnings from visitors, 2020",
-        "text": "Coral atolls, resorts and reefs: visitors earn four fifths of export income."
-      },
-      {
-        "name": "The People",
-        "figure": "529,676",
-        "money": false,
-        "label": "Citizens, 2025",
-        "text": "19% are under fifteen: the workforce and the market of the next generation."
-      },
-      {
-        "name": "The Forest",
-        "figure": "12.5%",
-        "money": false,
-        "label": "Of the land under forest, 2024",
-        "text": "Coconut palms and mangroves on low coral islands."
-      },
-      {
-        "name": "The Land",
-        "figure": "298 km²",
-        "money": false,
-        "label": "Land area, 2023",
-        "text": "Less than 300 square kilometres of land across a vast ocean territory."
-      },
-      {
-        "name": "The Farmland",
-        "figure": "19.8%",
-        "money": false,
-        "label": "Of the land in agriculture, 2023",
-        "text": "A fifth of the land farmed: coconuts, fruit and vegetables, with most food imported."
-      }
-    ]
+  {
+   "name": "Water",
+   "value": 99.8,
+   "display": "99.8%",
+   "note": "Basic drinking water; safely managed water is not measured (lenient)",
+   "source": "WHO/UNICEF, 2024",
+   "url": "https://data.worldbank.org/indicator/SH.H2O.BASW.ZS?locations=MV"
   },
-  "enterprises": {
-    "heading": "Already working in Maldives.",
-    "items": []
+  {
+   "name": "Shelter",
+   "value": 65.2,
+   "display": "65.2%",
+   "note": "City dwellers outside slums; 34.9% live in slums; safely managed sanitation is not measured",
+   "source": "UN-Habitat, 2022",
+   "url": "https://data.worldbank.org/indicator/EN.POP.SLUM.UR.ZS?locations=MV"
   },
-  "coverage": {
-    "set_by": "Shelter",
-    "gap": "34.8%",
-    "gap_text": "Of city dwellers in Maldives live in slums.",
-    "perfect_capita": "To set"
+  {
+   "name": "Energy",
+   "value": 100.0,
+   "display": "100%",
+   "note": "100% cook with clean fuels and technology; 100% have electricity",
+   "source": "World Bank, 2024",
+   "url": "https://data.worldbank.org/indicator/EG.CFT.ACCS.ZS?locations=MV"
   },
-  "guarantees": [
-    {
-      "name": "Food",
-      "value": 86.6,
-      "display": "86.6%",
-      "note": "Not food insecure; 13.4% are moderately or severely food insecure",
-      "source": "FAO, 2022",
-      "url": "https://data.worldbank.org/indicator/SN.ITK.MSFI.ZS?locations=MV"
-    },
-    {
-      "name": "Water",
-      "value": 99.8,
-      "display": "99.8%",
-      "note": "Basic drinking water; safely managed water is not measured (lenient)",
-      "source": "WHO/UNICEF, 2024",
-      "url": "https://data.worldbank.org/indicator/SH.H2O.BASW.ZS?locations=MV"
-    },
-    {
-      "name": "Shelter",
-      "value": 65.2,
-      "display": "65.2%",
-      "note": "City dwellers outside slums; 34.9% live in slums; safely managed sanitation is not measured",
-      "source": "UN-Habitat, 2022",
-      "url": "https://data.worldbank.org/indicator/EN.POP.SLUM.UR.ZS?locations=MV"
-    },
-    {
-      "name": "Energy",
-      "value": 100.0,
-      "display": "100%",
-      "note": "100% cook with clean fuels and technology; 100% have electricity",
-      "source": "World Bank, 2024",
-      "url": "https://data.worldbank.org/indicator/EG.CFT.ACCS.ZS?locations=MV"
-    },
-    {
-      "name": "Education",
-      "value": 94.6,
-      "display": "94.6",
-      "note": "94.6% of young people complete lower secondary school",
-      "source": "World Bank, 2024",
-      "url": "https://data.worldbank.org/indicator/SE.SEC.CMPT.LO.ZS?locations=MV"
-    },
-    {
-      "name": "Health",
-      "value": 71.0,
-      "display": "71",
-      "note": "WHO service coverage index",
-      "source": "WHO, 2023",
-      "url": "https://ourworldindata.org/grapher/universal-health-coverage-index?country=~MDV"
-    },
-    {
-      "name": "Livelihoods",
-      "value": 88.8,
-      "display": "88.8%",
-      "note": "Above US$8.30 a day; 11.2% live below it, dated",
-      "source": "World Bank, 2019",
-      "url": "https://data.worldbank.org/indicator/SI.POV.UMIC?locations=MV"
-    }
-  ],
-  "newswire": [
-    {
-      "date": "2026-09-06",
-      "label": "6 Sep 2026",
-      "title": "Maldives and ITFC sign USD1.5 billion trade finance framework",
-      "highlight": "USD1.5 billion",
-      "url": "https://mfr.mv/financial-sector/maldives-and-itfc-sign-usd1-5-billion-trade-finance-framework",
-      "source": "Maldives Financial Review"
-    },
-    {
-      "date": "2026-08-11",
-      "label": "11 Aug 2026",
-      "title": "ADB Backs Philippines, Maldives with $800 Million as Middle East Conflict Strains Public Services",
-      "highlight": "$800 Million",
-      "url": "https://www.adb.org/news/adb-backs-philippines-maldives-800-million-middle-east-conflict-strains-public-services",
-      "source": "ADB"
-    },
-    {
-      "date": "2026-05-20",
-      "label": "20 May 2026",
-      "title": "The Maldives and the European Union sign the Financing Agreement for ‘Community-based Mangrove Protection and Regeneration in the Maldives.’",
-      "highlight": "",
-      "url": "https://www.eeas.europa.eu/delegations/sri-lanka/maldives-and-european-union-sign-financing-agreement-%E2%80%98community-based-mangrove-protection-and_en",
-      "source": "EEAS (EU Delegation)"
-    },
-    {
-      "date": "2026-04-22",
-      "title": "Maldivian Economy under Muizzu Administration",
-      "highlight": "",
-      "url": "https://idsa.in/publisher/issuebrief/maldivian-economy-under-muizzu-administration",
-      "source": "Manohar Parrikar IDSA",
-      "label": "22 Apr 2026"
-    },
-    {
-      "date": "2026-04-03",
-      "label": "3 Apr 2026",
-      "title": "MMA announces the settlement of USD 500 million Sukuk",
-      "highlight": "USD 500 million",
-      "url": "https://mfr.mv/financial-sector/mma-announces-the-settlement-of-usd-500-million-sukuk",
-      "source": "Maldives Financial Review"
-    },
-    {
-      "date": "2025-09-18",
-      "label": "18 Sep 2025",
-      "title": "Maldives Secures One-Year Extension on $50M Indian Treasury Bill",
-      "highlight": "$50M",
-      "url": "https://standard.mv/maldives-secures-one-year-extension-on-50m-indian-treasury-bill/",
-      "source": "The Standard Maldives"
-    },
-    {
-      "date": "2025-09-10",
-      "label": "10 Sep 2025",
-      "title": "Japan provides $10.5M grant for Malé disaster resilience project",
-      "highlight": "$10.5M",
-      "url": "https://atolltimes.mv/post/business/13444",
-      "source": "Atoll Times"
-    },
-    {
-      "date": "2025-07-06",
-      "label": "6 Jul 2025",
-      "title": "Maldives secures USD25M GCF grant for nation-wide climate resilience project",
-      "highlight": "USD25M",
-      "url": "https://mfr.mv/32/maldives-secures-usd25m-gcf-grant-for-nation-wide-climate-resilience-project",
-      "source": "Maldives Financial Review"
-    }
-  ],
-  "dispatches": [],
-  "checked": "2026-11-18T11:44Z",
-  "reviewed": "2026-11-10T23:00Z"
+  {
+   "name": "Education",
+   "value": 94.6,
+   "display": "94.6",
+   "note": "94.6% of young people complete lower secondary school",
+   "source": "World Bank, 2024",
+   "url": "https://data.worldbank.org/indicator/SE.SEC.CMPT.LO.ZS?locations=MV"
+  },
+  {
+   "name": "Health",
+   "value": 71.0,
+   "display": "71",
+   "note": "WHO service coverage index",
+   "source": "WHO, 2023",
+   "url": "https://ourworldindata.org/grapher/universal-health-coverage-index?country=~MDV"
+  },
+  {
+   "name": "Livelihoods",
+   "value": 88.8,
+   "display": "88.8%",
+   "note": "Above US$8.30 a day; 11.2% live below it, dated",
+   "source": "World Bank, 2019",
+   "url": "https://data.worldbank.org/indicator/SI.POV.UMIC?locations=MV"
+  }
+ ],
+ "newswire": [
+  {
+   "date": "2026-09-06",
+   "label": "6 Sep 2026",
+   "title": "Maldives and ITFC sign USD1.5 billion trade finance framework",
+   "highlight": "USD1.5 billion",
+   "url": "https://mfr.mv/financial-sector/maldives-and-itfc-sign-usd1-5-billion-trade-finance-framework",
+   "source": "Maldives Financial Review"
+  },
+  {
+   "date": "2026-08-11",
+   "label": "11 Aug 2026",
+   "title": "ADB Backs Philippines, Maldives with $800 Million as Middle East Conflict Strains Public Services",
+   "highlight": "$800 Million",
+   "url": "https://www.adb.org/news/adb-backs-philippines-maldives-800-million-middle-east-conflict-strains-public-services",
+   "source": "ADB"
+  },
+  {
+   "date": "2026-05-20",
+   "label": "20 May 2026",
+   "title": "The Maldives and the European Union sign the Financing Agreement for ‘Community-based Mangrove Protection and Regeneration in the Maldives.’",
+   "highlight": "",
+   "url": "https://www.eeas.europa.eu/delegations/sri-lanka/maldives-and-european-union-sign-financing-agreement-%E2%80%98community-based-mangrove-protection-and_en",
+   "source": "EEAS (EU Delegation)"
+  },
+  {
+   "date": "2026-04-22",
+   "title": "Maldivian Economy under Muizzu Administration",
+   "highlight": "",
+   "url": "https://idsa.in/publisher/issuebrief/maldivian-economy-under-muizzu-administration",
+   "source": "Manohar Parrikar IDSA",
+   "label": "22 Apr 2026"
+  },
+  {
+   "date": "2026-04-03",
+   "label": "3 Apr 2026",
+   "title": "MMA announces the settlement of USD 500 million Sukuk",
+   "highlight": "USD 500 million",
+   "url": "https://mfr.mv/financial-sector/mma-announces-the-settlement-of-usd-500-million-sukuk",
+   "source": "Maldives Financial Review"
+  },
+  {
+   "date": "2025-09-18",
+   "label": "18 Sep 2025",
+   "title": "Maldives Secures One-Year Extension on $50M Indian Treasury Bill",
+   "highlight": "$50M",
+   "url": "https://standard.mv/maldives-secures-one-year-extension-on-50m-indian-treasury-bill/",
+   "source": "The Standard Maldives"
+  },
+  {
+   "date": "2025-09-10",
+   "label": "10 Sep 2025",
+   "title": "Japan provides $10.5M grant for Malé disaster resilience project",
+   "highlight": "$10.5M",
+   "url": "https://atolltimes.mv/post/business/13444",
+   "source": "Atoll Times"
+  },
+  {
+   "date": "2025-07-06",
+   "label": "6 Jul 2025",
+   "title": "Maldives secures USD25M GCF grant for nation-wide climate resilience project",
+   "highlight": "USD25M",
+   "url": "https://mfr.mv/32/maldives-secures-usd25m-gcf-grant-for-nation-wide-climate-resilience-project",
+   "source": "Maldives Financial Review"
+  }
+ ],
+ "dispatches": [],
+ "checked": "2026-11-18T11:44Z",
+ "reviewed": "2026-11-19T07:29Z"
 }
