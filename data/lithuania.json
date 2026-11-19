@@ -1,246 +1,470 @@
 {
-  "nation": "Lithuania",
-  "page_version": "1.0",
-  "updated": "2026-11-17",
-  "steward": {
-    "name": "Eglė Kazlauskienė",
-    "role": "Nation Steward of Lithuania"
-  },
-  "population": 2888774,
-  "hero": {
-    "lead": "A nation of 2.9 million on the Baltic with a €3.85 billion recovery and resilience plan and two thirds of its power renewable.",
-    "stats": [
-      {
-        "value": "€3.85bn",
-        "label": "EU recovery and resilience plan"
-      },
-      {
-        "value": "39.5%",
-        "label": "Public debt, share of GDP, 2025"
-      },
-      {
-        "value": "2.7%",
-        "label": "Growth projected for 2026, IMF"
-      }
-    ]
-  },
-  "capital": {
-    "heading": "Clean power and recovery, and a living income for all.",
-    "record": [
-      {
-        "value": "€3.85bn",
-        "money": true,
-        "text": "Recovery and resilience plan: €2.297 billion in grants and €1.551 billion in loans, as approved by the Council of the EU on 8 October 2024",
-        "source": "Council of the EU, 2024",
-        "url": "https://www.consilium.europa.eu/en/policies/eu-recovery-plan/timeline/"
-      },
-      {
-        "value": "39.5%",
-        "money": false,
-        "text": "General government gross debt, share of GDP, 2025",
-        "source": "IMF, WEO Oct 2026",
-        "url": "https://www.imf.org/external/datamapper/GGXWDG_NGDP@WEO/LTU"
-      },
-      {
-        "value": "2.7%",
-        "money": false,
-        "text": "Real GDP growth projected for 2026",
-        "source": "IMF, WEO Oct 2026",
-        "url": "https://www.imf.org/external/datamapper/NGDP_RPCH@WEO/LTU"
-      }
+ "nation": "Lithuania",
+ "page_version": "1.0",
+ "updated": "2026-11-19",
+ "steward": {
+  "name": "Eglė Kazlauskienė",
+  "role": "Nation Steward of Lithuania"
+ },
+ "population": 2888774,
+ "hero": {
+  "lead": "A nation of 2.9 million on the Baltic with a €3.85 billion recovery and resilience plan and two thirds of its power renewable.",
+  "stats": [
+   {
+    "value": "€3.85bn",
+    "label": "EU recovery and resilience plan"
+   },
+   {
+    "value": "39.5%",
+    "label": "Public debt, share of GDP, 2025"
+   },
+   {
+    "value": "2.7%",
+    "label": "Growth projected for 2026, IMF"
+   }
+  ]
+ },
+ "capital": {
+  "heading": "Clean power and recovery, and a living income for all.",
+  "record": [
+   {
+    "value": "€3.85bn",
+    "money": true,
+    "text": "Recovery and resilience plan: €2.297 billion in grants and €1.551 billion in loans, as approved by the Council of the EU on 8 October 2024; further amendments were approved on 20 June 2025 and 17 February 2026",
+    "source": "Council of the EU, 2026",
+    "url": "https://www.consilium.europa.eu/en/policies/rrf/timeline-recovery-and-resilience-facility/"
+   },
+   {
+    "value": "€3bn",
+    "money": false,
+    "text": "New Eurobond lines issued by the Republic of Lithuania in 2026: €1.25 billion due 2031 and €750 million due 2041 on 22 January, and €1 billion due 2033 on 20 May",
+    "source": "Ministry of Finance, 2026",
+    "url": "https://finmin.lrv.lt/en/competence-areas/state-debt-management/government-securities/eurobonds/"
+   },
+   {
+    "value": "39.5%",
+    "money": false,
+    "text": "General government gross debt, share of GDP, 2025",
+    "source": "IMF, WEO Oct 2026",
+    "url": "https://www.imf.org/external/datamapper/GGXWDG_NGDP@WEO/LTU"
+   },
+   {
+    "value": "2.7%",
+    "money": false,
+    "text": "Real GDP growth projected for 2026",
+    "source": "IMF, WEO Oct 2026",
+    "url": "https://www.imf.org/external/datamapper/NGDP_RPCH@WEO/LTU"
+   }
+  ],
+  "register": [
+   {
+    "cat": "govt",
+    "status": "Issued",
+    "tone": "active",
+    "name": "Eurobond issues, 2026",
+    "detail": "Ministry of Finance · €1.25bn due 22 January 2031, coupon 3.000%, yield 3.019%, and €750M due 22 January 2041, coupon 4.125%, yield 4.244%, issued 22 January 2026 · €1bn due 18 November 2033, coupon 3.625%, yield 3.684%, issued 20 May 2026",
+    "amount": "€3bn",
+    "money": true,
+    "note": "Three new lines of €3 billion in all; in 2025 four new lines raised €3.75 billion (due 2030 and 2040 on 28 January, 2036 and 2045 on 10 September), and lines are reopened in smaller amounts through the year",
+    "text": "Benchmark euro bonds of the Republic of Lithuania, issued under its EMTN programme and listed on the Luxembourg Stock Exchange. They set the cost at which the state itself borrows for five to fifteen years, the reference for long-term financing of the seven standards.",
+    "by": [
+     "Republic of Lithuania",
+     "Ministry of Finance"
     ],
-    "register": [
-      {
-        "cat": "regional",
-        "status": "Approved",
-        "tone": "active",
-        "name": "Recovery and resilience plan",
-        "detail": "Council of the EU · Approved 8 October 2024 · EU Recovery and Resilience Facility",
-        "amount": "€3.85bn",
-        "money": true,
-        "text": "EU funding, in grants and loans, for agreed reforms and investments.",
-        "by": [
-          "European Union"
-        ],
-        "url": "https://www.consilium.europa.eu/en/policies/eu-recovery-plan/timeline/"
-      }
-    ]
+    "url": "https://finmin.lrv.lt/en/competence-areas/state-debt-management/government-securities/eurobonds/"
+   },
+   {
+    "cat": "govt",
+    "status": "Issued",
+    "tone": "active",
+    "name": "Green securitisation of renovation loans (Vytis Reno Loans)",
+    "detail": "ILTE, the national development bank · secured green bond · nine years · variable interest and principal paid quarterly · rated AAA by Fitch and Scope · EBRD investment signed 22 December 2025",
+    "amount": "€112M",
+    "money": true,
+    "note": "Bought by the EBRD (€50M), the Nordic Investment Bank (€31M) and Swedbank (€31M); future issues under the structure could reach €800 million",
+    "text": "The first securitisation of its kind in the Baltic states: ILTE pooled its preferential loans for the renovation of multi-apartment buildings into bonds sold to investors, which unlocks its capital to lend again. The proceeds finance only apartment building renovations, about 145 buildings at average costs, which serve the shelter and energy standards with warmer, more efficient homes.",
+    "by": [
+     "ILTE",
+     "EBRD",
+     "Nordic Investment Bank",
+     "Swedbank"
+    ],
+    "url": "https://ilte.lt/en/news/108/the-first-top-credit-rated-bonds-in-the-baltic-states-ilte-raises-EUR112-million-for-renovation:2043"
+   },
+   {
+    "cat": "regional",
+    "status": "Active",
+    "tone": "active",
+    "name": "Recovery and resilience plan",
+    "detail": "European Commission · Recovery and Resilience Facility · grants €2.3bn and loans €1.55bn · approved by the Council 28 July 2021 · REPowerEU chapter approved 9 November 2023 · amendments approved 8 October 2024, 20 June 2025 and 17 February 2026 · sixth grant instalment authorised 26 June 2026",
+    "amount": "€3.85bn",
+    "money": true,
+    "note": "Payments of €542M, €360M and €463M followed pre-financing of €289M; all milestones and targets were due by August 2026",
+    "text": "EU grants and loans under NextGenerationEU for 48 reforms and investments agreed with Lithuania, paid in instalments against milestones and targets; 37.4% of the plan supports climate objectives. Its measures include €268 million for health facilities, infectious disease centres and digitalisation, €312 million for lifelong learning, €307 million for the energy-efficient renovation of buildings and €109 million for the minimum income reform, unemployment insurance and employment support, which serve the health, education, energy and livelihood standards.",
+    "by": [
+     "European Union",
+     "European Commission"
+    ],
+    "url": "https://reforms-investments.ec.europa.eu/recovery-and-resilience-facility-1/country-pages/lithuanias-recovery-and-resilience-plan_en"
+   },
+   {
+    "cat": "regional",
+    "status": "Announced",
+    "tone": "active",
+    "name": "Climate-neutral investment programme of Tauragė",
+    "detail": "European Investment Bank · announced 20 October 2026 · energy-efficient renovation of schools and public buildings · social housing and care facilities · water and wastewater services · zero-emission buses and 16.9 km of cycling paths",
+    "amount": "€20M",
+    "money": true,
+    "note": "Part of more than €110 million of investment with EU and municipal funds; the release does not give the date of signature or the term",
+    "text": "An EIB loan to the municipality of Tauragė, a district of about 38,000 residents in western Lithuania that aims to be climate neutral by 2030. It finances the energy-efficient renovation of schools and public buildings, social housing and care facilities, and water and wastewater services, which serve the education, shelter, health, water and energy standards.",
+    "by": [
+     "European Investment Bank",
+     "Tauragė District Municipality"
+    ],
+    "url": "https://www.eib.org/en/press/all/2026-345-lithuanian-city-taurage-to-advance-climate-neutral-ambition-with-eur20-million-in-eib-financing"
+   },
+   {
+    "cat": "regional",
+    "status": "Agreed",
+    "tone": "active",
+    "name": "Vilnius stormwater infrastructure (Grinda)",
+    "detail": "Nordic Investment Bank · loan dated 20 October 2026 · 10 years · investment programme 2025–2030",
+    "amount": "€36M",
+    "money": true,
+    "note": "To UAB Grinda, a municipal infrastructure company owned by the Vilnius City Municipality",
+    "text": "A ten-year NIB loan to modernise and expand the stormwater infrastructure of Vilnius, with new drainage, rebuilt pipelines and water treatment facilities. The drainage and treatment of urban runoff serve the water standard.",
+    "by": [
+     "Nordic Investment Bank",
+     "UAB Grinda"
+    ],
+    "url": "https://www.nib.int/loan/uab-grinda-85729/"
+   },
+   {
+    "cat": "regional",
+    "status": "Signed",
+    "tone": "active",
+    "name": "Vilnius district heating modernisation (Miesto Gijos)",
+    "detail": "Nordic Investment Bank · uncommitted credit facility · loan dated 17 June 2026 · announced 18 June 2026 · 20 years · investment programme 2025–2030",
+    "amount": "€118M",
+    "money": true,
+    "note": "Miesto Gijos AB, formerly Vilniaus Šilumos Tinklai, is owned by the Vilnius City Municipality and supplies heat and hot water to more than 236,000 households and businesses",
+    "text": "A credit facility of up to €118 million for the city heat provider’s programme: reconstruction of pipelines to cut heat losses from 13% to 11% by 2030, extension of the network to new districts, smart meters, a new biomass boiler, heat pumps that recover heat from wastewater and thermal storage. Heat and hot water for the capital’s homes serve the energy standard.",
+    "by": [
+     "Nordic Investment Bank",
+     "Miesto Gijos AB"
+    ],
+    "url": "https://www.nib.int/news/nib-to-support-vilnius-district-heating-modernisation"
+   },
+   {
+    "cat": "regional",
+    "status": "Signed",
+    "tone": "active",
+    "name": "Nine schools and kindergartens in Vilnius",
+    "detail": "European Investment Bank €84M and Nordic Investment Bank €84M · signed 15 January 2026 · announced 23 January 2026 · NIB maturity 12.9 years · five kindergartens and four schools",
+    "amount": "€168M",
+    "money": true,
+    "note": "With about €9 million from Vilnius Development Company, €177 million in all; the new premises are to serve about 4,290 children by 2028",
+    "text": "Loans to Vilnius Education Infrastructure, a company created by Vilnius Development Company, which is wholly owned by the Vilnius City Municipality, to build nine educational buildings over three years. Places for about 4,290 children, some 3.5% of the city’s young residents, serve the education standard.",
+    "by": [
+     "European Investment Bank",
+     "Nordic Investment Bank",
+     "Vilnius City Municipality"
+    ],
+    "url": "https://www.eib.org/en/press/all/2026-022-lithuanian-capital-vilnius-to-build-nine-schools-and-kindergartens-with-eur168-million-financing-from-eib-and-nib"
+   },
+   {
+    "cat": "regional",
+    "status": "Signed",
+    "tone": "active",
+    "name": "Water and wastewater upgrades in the capital region (Vilniaus vandenys)",
+    "detail": "European Investment Bank · signed 10 October 2025 · announced 16 October 2025 · 20 years · co-finances the 2025–2028 investment programme",
+    "amount": "€50M",
+    "money": true,
+    "note": "Owned by the municipalities of Vilnius City (87.05%), Švenčionys District, Vilnius District and Šalčininkai District; about half the loan goes to smart city solutions",
+    "text": "An EIB loan to the water utility of the capital region, which serves over 600,000 residents, to digitise, reinforce and expand its water and wastewater operations, including the Viršuliškės water station, the Šalčininkai water supply station and treatment facilities, and new wastewater pressure pipelines. Safe drinking water and wastewater treatment serve the water and shelter standards.",
+    "by": [
+     "European Investment Bank",
+     "Vilniaus vandenys"
+    ],
+    "url": "https://www.eib.org/en/press/all/2025-393-vilnius-to-upgrade-water-services-and-boost-climate-resilience-with-eur50-million-eib-loan-to-utility-vilniaus-vandenys"
+   },
+   {
+    "cat": "private",
+    "status": "Signed",
+    "tone": "active",
+    "name": "Kelmė wind farm (Ignitis Group)",
+    "detail": "European Investment Bank · first loan of €100M signed 22 October 2025 · further €150M announced 16 June 2026 · 314 MW onshore wind",
+    "amount": "€250M",
+    "money": true,
+    "note": "Developed by Ignitis Renewables; the EIB describes it as the largest project of its kind in the Baltics",
+    "text": "EIB loans of €250 million in all to Ignitis Group for the Kelmė wind farm, with an installed capacity of 314 MW, for some 250,000 Lithuanian households. Clean power generated at home serves the energy standard.",
+    "by": [
+     "European Investment Bank",
+     "Ignitis Group"
+    ],
+    "url": "https://www.eib.org/en/press/all/2026-208-eib-completes-eur250-million-backing-for-baltic-s-largest-wind-farm-in-lithuania"
+   },
+   {
+    "cat": "private",
+    "status": "Signed",
+    "tone": "active",
+    "name": "Loans for micro-enterprises (Noviti Finance)",
+    "detail": "Council of Europe Development Bank · financing agreement announced 2 September 2025 · supported by the InvestEU Fund · with an InvestEU Advisory Hub grant to monitor social and climate benefits",
+    "amount": "€10M",
+    "money": true,
+    "note": "Expected to reach over 2,000 micro-enterprises",
+    "text": "A CEB loan to Noviti Finance, a Lithuanian microfinance institution, to improve access to finance for micro-enterprises, which often struggle to obtain traditional bank loans, and to support job creation. Credit for the smallest firms serves the livelihood standard, the one furthest from reach.",
+    "by": [
+     "Council of Europe Development Bank",
+     "Noviti Finance"
+    ],
+    "url": "https://coebank.org/en/news-and-publications/news/noviti-finance-and-the-council-of-europe-development-bank-sign-a-10-million-financing-agreement/"
+   },
+   {
+    "cat": "private",
+    "status": "Agreed",
+    "tone": "active",
+    "name": "Izabelinė and Lieponys solar farms (Green Genius)",
+    "detail": "Nordic Investment Bank · loan dated 8 August 2025 · 3.5 years · two solar farms of 91 MWp, in Ignalina and Trakai district municipalities · €13.7M disbursed",
+    "amount": "€64M",
+    "money": true,
+    "note": "To UAB GG LTU S5 and UAB GG LTU S9, special-purpose companies of Green Genius; an uncommitted accordion facility covers a battery storage system",
+    "text": "A NIB loan for two solar farms of 91 MWp each, Izabelinė in Ignalina district and Lieponys in Trakai district, developed by Green Genius, a Lithuanian renewable energy company with a portfolio of about 2.7 GW. New clean power serves the energy standard.",
+    "by": [
+     "Nordic Investment Bank",
+     "Green Genius"
+    ],
+    "url": "https://www.nib.int/loan/gg-ltu-s5-gg-ltu-s9-75836/"
+   },
+   {
+    "cat": "private",
+    "status": "Agreed",
+    "tone": "active",
+    "name": "Heat networks of Klaipėda and Gargždai (Klaipėdos energija)",
+    "detail": "Nordic Investment Bank · uncommitted credit facility · loan dated 10 July 2025 · announced 14 July 2025 · 20 years · investment programme 2025–2028",
+    "amount": "€32M",
+    "money": true,
+    "note": "The company serves more than 76,000 heat consumers",
+    "text": "A NIB credit facility for AB Klaipėdos energija, the primary supplier of thermal energy in Klaipėda and Gargždai, to renew heat networks, reduce network losses, modernise equipment and produce renewable heat. Heat for homes serves the energy standard.",
+    "by": [
+     "Nordic Investment Bank",
+     "AB Klaipėdos energija"
+    ],
+    "url": "https://www.nib.int/news/nib-finances-ab-klaipedos-energija-infrastructure-expansion-and-modernisation"
+   }
+  ]
+ },
+ "assets": {
+  "heading": "Five assets no balance sheet counts.",
+  "items": [
+   {
+    "name": "The Clean Grid",
+    "figure": "65.6%",
+    "money": false,
+    "label": "Of electricity from renewable sources, 2021",
+    "text": "Power from water, wind and sun already flows; every new connection can be clean."
+   },
+   {
+    "name": "The Farmland",
+    "figure": "45.9%",
+    "money": false,
+    "label": "Of the land in agriculture, 2023",
+    "text": "Land that can feed the nation and earn abroad, valued and financed against its harvest."
+   },
+   {
+    "name": "The Forest",
+    "figure": "35.4%",
+    "money": false,
+    "label": "Of the land under forest, 2024",
+    "text": "Standing forest that stores carbon and water, and can earn as it stands."
+   },
+   {
+    "name": "The People",
+    "figure": "2.9m",
+    "money": false,
+    "label": "Citizens, 2025",
+    "text": "14.5% are under fifteen: the workforce and the market of the next generation."
+   },
+   {
+    "name": "The Fresh Water",
+    "figure": "5,460 m³",
+    "money": false,
+    "label": "Renewable fresh water a person, 2022",
+    "text": "Rain and rivers renewed every year: power, irrigation and drinking water."
+   }
+  ]
+ },
+ "enterprises": {
+  "heading": "Already working in Lithuania.",
+  "items": [
+   {
+    "standard": "Food",
+    "name": "Upės kepyklėlė",
+    "text": "A café in Kupiškis, already operating, listed on the social business platform of the Innovation Agency with a social business model to supply warm meals regularly to the town’s socially vulnerable residents.",
+    "source": "Innovation Agency, 2024",
+    "url": "https://socialinisverslas.inovacijuagentura.lt/en/business/?id=1118"
+   },
+   {
+    "standard": "Shelter",
+    "name": "Orūs namai",
+    "text": "A public institution that rents fully furnished flats to lonely seniors on better than market terms in independent-living buildings in Vilnius (four flats) and Krokialaukis (six flats), all occupied, which since January 2024 has been renovating a third building in Vabalninkas for eleven flats; in February 2025 it received the President’s “Lietuvos galia” award for innovative social initiatives.",
+    "source": "Orūs namai, 2026",
+    "url": "https://orusnamai.lt/"
+   },
+   {
+    "standard": "Shelter",
+    "name": "Socialinis hostelis Chata",
+    "text": "A social hostel in Vilnius, run by the National Institute of Social Integration, that gives accommodation and support to people who have served prison sentences, young people who struggle with social norms and people under domestic violence protection orders, with six accredited crisis places at €24.55 a day that municipalities may pay; 106 people have lived there and 48.11% of its service users found work.",
+    "source": "National Institute of Social Integration, 2024",
+    "url": "https://visiskirtingivisilygus.lt/chata-socialinis-hostelis/"
+   },
+   {
+    "standard": "Health",
+    "name": "SENJORO",
+    "text": "A home-help service of the public institution National Institute of Social Integration that, with a team of 600 employees, gives help at home and day social care to older people in almost 40 Lithuanian municipalities, paid for fully or in part by the municipality, with a small contribution from the client.",
+    "source": "SENJORO, 2026",
+    "url": "https://senjoro.lt/apie-mus/"
+   },
+   {
+    "standard": "Livelihood",
+    "name": "Pirmas blynas",
+    "text": "A catering business and coffee shop in Vilnius, opened in 2018, that employs people with disabilities and has won government catering work awarded with social criteria.",
+    "source": "Open Contracting Partnership, 2026",
+    "url": "https://www.open-contracting.org/2026/09/24/first-opportunities-how-lithuania-integrated-social-criteria-into-public-procurement/"
+   }
+  ]
+ },
+ "coverage": {
+  "set_by": "Livelihood",
+  "gap": "20.9%",
+  "gap_text": "Of Lithuanians live below the national poverty line.",
+  "perfect_capita": "To set"
+ },
+ "guarantees": [
+  {
+   "name": "Food",
+   "value": 93.5,
+   "display": "93.5%",
+   "note": "Not food insecure; 6.5% are moderately or severely food insecure",
+   "source": "FAO, 2023",
+   "url": "https://data.worldbank.org/indicator/SN.ITK.MSFI.ZS?locations=LT"
   },
-  "assets": {
-    "heading": "Five assets no balance sheet counts.",
-    "items": [
-      {
-        "name": "The Clean Grid",
-        "figure": "65.6%",
-        "money": false,
-        "label": "Of electricity from renewable sources, 2021",
-        "text": "Power from water, wind and sun already flows; every new connection can be clean."
-      },
-      {
-        "name": "The Farmland",
-        "figure": "45.9%",
-        "money": false,
-        "label": "Of the land in agriculture, 2023",
-        "text": "Land that can feed the nation and earn abroad, valued and financed against its harvest."
-      },
-      {
-        "name": "The Forest",
-        "figure": "35.4%",
-        "money": false,
-        "label": "Of the land under forest, 2024",
-        "text": "Standing forest that stores carbon and water, and can earn as it stands."
-      },
-      {
-        "name": "The People",
-        "figure": "2.9m",
-        "money": false,
-        "label": "Citizens, 2025",
-        "text": "14.5% are under fifteen: the workforce and the market of the next generation."
-      },
-      {
-        "name": "The Fresh Water",
-        "figure": "5,460 m³",
-        "money": false,
-        "label": "Renewable fresh water a person, 2022",
-        "text": "Rain and rivers renewed every year: power, irrigation and drinking water."
-      }
-    ]
+  {
+   "name": "Water",
+   "value": 96.7,
+   "display": "96.7%",
+   "note": "Safely managed drinking water",
+   "source": "WHO/UNICEF, 2024",
+   "url": "https://data.worldbank.org/indicator/SH.H2O.SMDW.ZS?locations=LT"
   },
-  "enterprises": {
-    "heading": "Already working in Lithuania.",
-    "items": []
+  {
+   "name": "Shelter",
+   "value": 96.4,
+   "display": "96.4%",
+   "note": "Safely managed sanitation; 0.5% of city dwellers live in slums",
+   "source": "WHO/UNICEF, 2024",
+   "url": "https://data.worldbank.org/indicator/SH.STA.SMSS.ZS?locations=LT"
   },
-  "coverage": {
-    "set_by": "Livelihood",
-    "gap": "20.9%",
-    "gap_text": "Of Lithuanians live below the national poverty line.",
-    "perfect_capita": "To set"
+  {
+   "name": "Energy",
+   "value": 99.0,
+   "display": "99%",
+   "note": "99% cook with clean fuels and technology; 100% have electricity",
+   "source": "World Bank, 2024",
+   "url": "https://data.worldbank.org/indicator/EG.CFT.ACCS.ZS?locations=LT"
   },
-  "guarantees": [
-    {
-      "name": "Food",
-      "value": 93.5,
-      "display": "93.5%",
-      "note": "Not food insecure; 6.5% are moderately or severely food insecure",
-      "source": "FAO, 2023",
-      "url": "https://data.worldbank.org/indicator/SN.ITK.MSFI.ZS?locations=LT"
-    },
-    {
-      "name": "Water",
-      "value": 96.7,
-      "display": "96.7%",
-      "note": "Safely managed drinking water",
-      "source": "WHO/UNICEF, 2024",
-      "url": "https://data.worldbank.org/indicator/SH.H2O.SMDW.ZS?locations=LT"
-    },
-    {
-      "name": "Shelter",
-      "value": 96.4,
-      "display": "96.4%",
-      "note": "Safely managed sanitation; 0.5% of city dwellers live in slums",
-      "source": "WHO/UNICEF, 2024",
-      "url": "https://data.worldbank.org/indicator/SH.STA.SMSS.ZS?locations=LT"
-    },
-    {
-      "name": "Energy",
-      "value": 99.0,
-      "display": "99%",
-      "note": "99% cook with clean fuels and technology; 100% have electricity",
-      "source": "World Bank, 2024",
-      "url": "https://data.worldbank.org/indicator/EG.CFT.ACCS.ZS?locations=LT"
-    },
-    {
-      "name": "Education",
-      "value": 96.7,
-      "display": "96.7",
-      "note": "96.7% of children read a simple text by the end of primary school",
-      "source": "World Bank, 2021",
-      "url": "https://data.worldbank.org/indicator/SE.LPV.PRIM?locations=LT"
-    },
-    {
-      "name": "Health",
-      "value": 78.0,
-      "display": "78",
-      "note": "WHO service coverage index",
-      "source": "WHO, 2023",
-      "url": "https://ourworldindata.org/grapher/universal-health-coverage-index?country=~LTU"
-    },
-    {
-      "name": "Livelihoods",
-      "value": 79.1,
-      "display": "79.1%",
-      "note": "Above the national poverty line; 20.9% live below it",
-      "source": "World Bank, 2021",
-      "url": "https://data.worldbank.org/indicator/SI.POV.NAHC?locations=LT"
-    }
-  ],
-  "newswire": [
-    {
-      "date": "2026-10-20",
-      "label": "20 Oct 2026",
-      "title": "€20 million EU loan fuels Lithuanian city’s push for climate neutrality by 2030",
-      "highlight": "€20 million",
-      "url": "https://www.brusselstimes.com/2370070/e20-million-eu-loan-fuels-lithuanian-citys-push-for-climate-neutrality-by-2030",
-      "source": "The Brussels Times"
-    },
-    {
-      "date": "2026-09-15",
-      "label": "15 Sep 2026",
-      "title": "€100m loan modernises vital EU port with military and green upgrades",
-      "highlight": "€100m",
-      "url": "https://www.brusselstimes.com/2318722/e100m-loan-modernises-vital-eu-port-with-military-and-green-upgrades",
-      "source": "The Brussels Times"
-    },
-    {
-      "date": "2026-07-08",
-      "label": "8 Jul 2026",
-      "title": "EU disburses €153m to Lithuania amid tight deadline for recovery goals",
-      "highlight": "€153m",
-      "url": "https://www.brusselstimes.com/2221076/eu-disburses-e153m-to-lithuania-amid-tight-deadline-for-recovery-goals",
-      "source": "The Brussels Times"
-    },
-    {
-      "date": "2026-06-24",
-      "label": "24 Jun 2026",
-      "title": "Lithuania receives first disbursement of almost EUR 1 billion under SAFE",
-      "highlight": "EUR 1 billion",
-      "url": "https://finmin.lrv.lt/en/news/lithuania-receives-first-disbursement-of-almost-eur-1-billion-under-safe-fSIu",
-      "source": "Ministry of Finance of Lithuania"
-    },
-    {
-      "date": "2026-06-18",
-      "label": "18 Jun 2026",
-      "title": "Lithuania’s largest wind farm secures €250m in unsubsidised EU-backed financing",
-      "highlight": "€250m",
-      "url": "https://www.brusselstimes.com/2198768/lithuanias-largest-wind-farm-secures-e250m-in-unsubsidised-eu-backed-financing",
-      "source": "The Brussels Times"
-    },
-    {
-      "date": "2026-06-18",
-      "label": "18 Jun 2026",
-      "title": "NIB to support Vilnius’ district heating modernisation",
-      "highlight": "",
-      "url": "https://www.nib.int/news/nib-to-support-vilnius-district-heating-modernisation",
-      "source": "Nordic Investment Bank"
-    },
-    {
-      "date": "2026-05-25",
-      "label": "25 May 2026",
-      "title": "NIB supports infrastructure investments at Klaipėda Seaport",
-      "highlight": "",
-      "url": "https://www.nib.int/news/nib-supports-infrastructure-investments-at-klaipeda-seaport",
-      "source": "Nordic Investment Bank"
-    },
-    {
-      "date": "2026-05-14",
-      "label": "14 May 2026",
-      "title": "Financial diplomacy result: Lithuania secures almost EUR 6.4 billion for defence through SAFE",
-      "highlight": "EUR 6.4 billion",
-      "url": "https://finmin.lrv.lt/en/news/financial-diplomacy-result-lithuania-secures-almost-eur-64-billion-for-defence-through-safe-jXMm",
-      "source": "Ministry of Finance of Lithuania"
-    }
-  ],
-  "dispatches": [],
-  "checked": "2026-11-17T04:30Z",
-  "reviewed": "2026-11-10T23:00Z"
+  {
+   "name": "Education",
+   "value": 96.7,
+   "display": "96.7",
+   "note": "96.7% of children read a simple text by the end of primary school",
+   "source": "World Bank, 2021",
+   "url": "https://data.worldbank.org/indicator/SE.LPV.PRIM?locations=LT"
+  },
+  {
+   "name": "Health",
+   "value": 78.0,
+   "display": "78",
+   "note": "WHO service coverage index",
+   "source": "WHO, 2023",
+   "url": "https://ourworldindata.org/grapher/universal-health-coverage-index?country=~LTU"
+  },
+  {
+   "name": "Livelihoods",
+   "value": 79.1,
+   "display": "79.1%",
+   "note": "Above the national poverty line; 20.9% live below it",
+   "source": "World Bank, 2021",
+   "url": "https://data.worldbank.org/indicator/SI.POV.NAHC?locations=LT"
+  }
+ ],
+ "newswire": [
+  {
+   "date": "2026-10-20",
+   "label": "20 Oct 2026",
+   "title": "€20 million EU loan fuels Lithuanian city’s push for climate neutrality by 2030",
+   "highlight": "€20 million",
+   "url": "https://www.brusselstimes.com/2370070/e20-million-eu-loan-fuels-lithuanian-citys-push-for-climate-neutrality-by-2030",
+   "source": "The Brussels Times"
+  },
+  {
+   "date": "2026-09-15",
+   "label": "15 Sep 2026",
+   "title": "€100m loan modernises vital EU port with military and green upgrades",
+   "highlight": "€100m",
+   "url": "https://www.brusselstimes.com/2318722/e100m-loan-modernises-vital-eu-port-with-military-and-green-upgrades",
+   "source": "The Brussels Times"
+  },
+  {
+   "date": "2026-07-08",
+   "label": "8 Jul 2026",
+   "title": "EU disburses €153m to Lithuania amid tight deadline for recovery goals",
+   "highlight": "€153m",
+   "url": "https://www.brusselstimes.com/2221076/eu-disburses-e153m-to-lithuania-amid-tight-deadline-for-recovery-goals",
+   "source": "The Brussels Times"
+  },
+  {
+   "date": "2026-06-24",
+   "label": "24 Jun 2026",
+   "title": "Lithuania receives first disbursement of almost EUR 1 billion under SAFE",
+   "highlight": "EUR 1 billion",
+   "url": "https://finmin.lrv.lt/en/news/lithuania-receives-first-disbursement-of-almost-eur-1-billion-under-safe-fSIu",
+   "source": "Ministry of Finance of Lithuania"
+  },
+  {
+   "date": "2026-06-18",
+   "label": "18 Jun 2026",
+   "title": "Lithuania’s largest wind farm secures €250m in unsubsidised EU-backed financing",
+   "highlight": "€250m",
+   "url": "https://www.brusselstimes.com/2198768/lithuanias-largest-wind-farm-secures-e250m-in-unsubsidised-eu-backed-financing",
+   "source": "The Brussels Times"
+  },
+  {
+   "date": "2026-06-18",
+   "label": "18 Jun 2026",
+   "title": "NIB to support Vilnius’ district heating modernisation",
+   "highlight": "",
+   "url": "https://www.nib.int/news/nib-to-support-vilnius-district-heating-modernisation",
+   "source": "Nordic Investment Bank"
+  },
+  {
+   "date": "2026-05-25",
+   "label": "25 May 2026",
+   "title": "NIB supports infrastructure investments at Klaipėda Seaport",
+   "highlight": "",
+   "url": "https://www.nib.int/news/nib-supports-infrastructure-investments-at-klaipeda-seaport",
+   "source": "Nordic Investment Bank"
+  },
+  {
+   "date": "2026-05-14",
+   "label": "14 May 2026",
+   "title": "Financial diplomacy result: Lithuania secures almost EUR 6.4 billion for defence through SAFE",
+   "highlight": "EUR 6.4 billion",
+   "url": "https://finmin.lrv.lt/en/news/financial-diplomacy-result-lithuania-secures-almost-eur-64-billion-for-defence-through-safe-jXMm",
+   "source": "Ministry of Finance of Lithuania"
+  }
+ ],
+ "dispatches": [],
+ "checked": "2026-11-17T04:30Z",
+ "reviewed": "2026-11-19T00:27Z"
 }
