@@ -1,7 +1,7 @@
 {
  "nation": "Kyrgyzstan",
  "page_version": "1.0",
- "updated": "2026-11-10",
+ "updated": "2026-11-19",
  "steward": {
   "name": "Aizada Toktogulova",
   "role": "Nation Steward of Kyrgyzstan"
@@ -30,7 +30,7 @@
    {
     "value": "$95.75M",
     "money": true,
-    "text": "Water security and agricultural productivity, June 2026",
+    "text": "World Bank financing for the National Irrigation Investment Program, approved 12 June 2026: about 82,000 hectares and more than 450,000 people; $172 million committed with co-financiers",
     "source": "World Bank, 2026",
     "url": "https://www.worldbank.org/en/news/press-release/2026/06/12/kyrgyz-republic-to-improve-water-security-and-agricultural-productivity-with-world-bank-support"
    },
@@ -54,20 +54,77 @@
     "text": "General government gross debt, share of GDP, 2025",
     "source": "IMF, WEO Oct 2026",
     "url": "https://www.imf.org/external/datamapper/GGXWDG_NGDP@WEO/KGZ"
+   },
+   {
+    "value": "$981.3M",
+    "money": true,
+    "text": "Sovereign financing approved for Kyrgyzstan by international financial institutions in 2025, the highest level since 2013; EFSD report of 28 April 2026",
+    "source": "EFSD, 2026",
+    "url": "https://efsd.org/en/press-center/news/eurasian-region-attracted-usd-10-3-billion-in-international-financing-in-2025-new-efsd-report/"
    }
   ],
   "register": [
    {
+    "cat": "govt",
+    "status": "Issued",
+    "tone": "active",
+    "name": "First sovereign Eurobond",
+    "detail": "Ministry of Finance of the Kyrgyz Republic · bullet repayment in 2030 · US$0.7 billion, 3.1 percent of GDP",
+    "amount": "$700M",
+    "money": true,
+    "note": "Eldik Bank, the state-owned bank it recapitalised, issued its own US$0.5 billion Eurobond in April 2026, according to the IMF",
+    "text": "The Kyrgyz Republic’s first Eurobond, which the IMF says “established the country’s standing in international markets, at a cost”. The IMF reports that the proceeds, US$0.7 billion or 3.1 percent of GDP, were used to recapitalise the state-owned Eldik Bank, and that the bond is repaid in a single payment in 2030. It bears on the public finances behind all seven standards.",
+    "by": [
+     "Ministry of Finance of the Kyrgyz Republic"
+    ],
+    "url": "https://www.imf.org/-/media/files/publications/cr/2026/english/1kgzea2026001.pdf"
+   },
+   {
     "cat": "multi",
     "status": "Approved",
     "tone": "active",
-    "name": "Water security and agricultural productivity",
-    "detail": "World Bank · June 2026",
+    "name": "Resilient Water Systems for All (RWS4All): Deep Adaptation Pathways for Water Infrastructure in Kyrgyz Republic and Tajikistan",
+    "detail": "Green Climate Fund · FP309 · approved at the 45th meeting of the Board, Dushanbe, 29 June to 2 July 2026 · accredited entity EBRD · Kyrgyz Republic and Tajikistan",
+    "amount": "",
+    "money": false,
+    "note": "One of 10 projects approved at the meeting, US$369.1 million in new GCF approvals in all",
+    "text": "A Green Climate Fund programme, led by the EBRD, to adapt water infrastructure in the Kyrgyz Republic and Tajikistan to a changing climate, approved at the Board’s meeting in Dushanbe. The GCF amount for the programme is not stated in the release. It serves the water standard.",
+    "by": [
+     "Green Climate Fund",
+     "EBRD"
+    ],
+    "url": "https://www.greenclimate.fund/about/news-and-updates/gcf-board-drives-doubling-investments-central-asia-under-regional-model"
+   },
+   {
+    "cat": "multi",
+    "status": "Approved",
+    "tone": "active",
+    "name": "Second Sustainable and Inclusive Growth Development Policy Operation",
+    "detail": "World Bank (IDA) · approved 29 June 2026 · IDA concessional credit $50 million · IDA guarantee $200 million · MIGA guarantee · Policy-Based Guarantee Plus",
+    "amount": "$250M",
+    "money": true,
+    "note": "Designed to let the country access up to $333 million in financing from international commercial loan markets",
+    "text": "IDA support of a $50 million concessional credit and a $200 million guarantee, with a MIGA guarantee, structured so that the Kyrgyz Republic can borrow up to $333 million from commercial lenders on more affordable terms. It supports reforms to strengthen energy security and the finances of the energy sector, better targeting of social programmes, more sustainable water supply and sanitation, and a business environment that attracts private investment and jobs. It serves the energy, water and livelihood standards.",
+    "by": [
+     "World Bank",
+     "MIGA"
+    ],
+    "url": "https://www.worldbank.org/en/news/press-release/2026/06/29/kyrgyz-republic-to-accelerate-reforms-and-job-creation-with-innovative-world-bank-group-financing"
+   },
+   {
+    "cat": "multi",
+    "status": "Approved",
+    "tone": "active",
+    "name": "Kyrgyz Republic National Irrigation Investment Program",
+    "detail": "World Bank (IDA) · P515521 · approved 12 June 2026 · co-financed by AIIB ($50 million), the OPEC Fund ($20 million) and a Swiss SDC grant ($6.25 million) · $172 million committed",
     "amount": "$95.75M",
     "money": true,
-    "text": "Irrigation and water security for farmers.",
+    "note": "About 82,000 hectares and more than 450,000 people; implemented through 2032 by the Water Resources Service",
+    "text": "World Bank financing to improve irrigation services on about 82,000 hectares, raise water conveyance efficiency from 35 to at least 70 percent and create about 85,000 more and better-paid jobs across agricultural value chains. It is one phase of a government programme expected to mobilise $540 million over the next decade for more than 200,000 hectares and nearly one million people. It serves the water, food and livelihood standards.",
     "by": [
-     "World Bank"
+     "World Bank",
+     "Asian Infrastructure Investment Bank",
+     "OPEC Fund for International Development"
     ],
     "url": "https://www.worldbank.org/en/news/press-release/2026/06/12/kyrgyz-republic-to-improve-water-security-and-agricultural-productivity-with-world-bank-support"
    },
@@ -75,15 +132,97 @@
     "cat": "multi",
     "status": "Approved",
     "tone": "active",
-    "name": "Kyrgyz Republic Air Quality Improvement Project",
-    "detail": "World Bank · Approved 29 November 2023",
+    "name": "Innovative Finance for Resilient and Sustainable Energy Transition Project (iFIRST)",
+    "detail": "World Bank · P512264 · approved 9 June 2026 · results-based finance from the Transformative Carbon Asset Facility (TCAF) · $35 million firm, up to $15 million more on results · Ministry of Energy, through 2031",
     "amount": "$50M",
     "money": true,
-    "text": "Cleaner air for Bishkek’s winters.",
+    "note": "Payments follow independently verified emission reductions, about four million tons expected",
+    "text": "Results-based finance that pays the Kyrgyz Republic as emission reductions tied to energy subsidy reform are independently verified, as tariffs move gradually towards cost recovery. The reforms come with lifeline tariffs and other social protection for vulnerable households. It serves the energy standard.",
+    "by": [
+     "World Bank",
+     "Transformative Carbon Asset Facility"
+    ],
+    "url": "https://www.worldbank.org/en/news/press-release/2026/06/09/kyrgyz-republic-to-access-innovative-finance-through-energy-reform-program"
+   },
+   {
+    "cat": "multi",
+    "status": "Approved",
+    "tone": "active",
+    "name": "Learning for the Future Project, additional financing",
+    "detail": "World Bank (IDA) · P509871 · release of 26 June 2025 · IDA credit $4.36 million, zero-interest, 50 years · Early Learning Partnership grant $2 million · to 2028",
+    "amount": "$6.36M",
+    "money": true,
+    "note": "Adds to a project launched with $50 million in 2020",
+    "text": "Additional financing for full-day preschool childcare, the renovation of underused public buildings in rural and low-income areas into kindergartens, better sleeping, play and learning areas in public kindergartens, and a pilot of family-based childcare for children aged one to six. It aims at school readiness and serves the education standard.",
+    "by": [
+     "World Bank",
+     "Early Learning Partnership"
+    ],
+    "url": "https://www.worldbank.org/en/news/press-release/2025/06/26/learning-for-the-future-project-in-the-kyrgyz-republic"
+   },
+   {
+    "cat": "multi",
+    "status": "Approved",
+    "tone": "active",
+    "name": "First Sustainable and Inclusive Growth Development Policy Operation",
+    "detail": "World Bank (IDA) · approved 20 June 2025 · $68 million zero-interest credit over 50 years · $33 million zero-interest loan, 12 years with 6 years’ grace",
+    "amount": "$101M",
+    "money": true,
+    "note": "The first of two operations; the second was approved on 29 June 2026",
+    "text": "Budget support for reforms that revise electricity and heating rates while safeguarding vulnerable households, scale up targeted social programmes, modernise water infrastructure and modernise key legislation for transparency, competition and investor confidence. It finances the public budget behind the seven standards, in particular energy, water and livelihood.",
     "by": [
      "World Bank"
     ],
-    "url": "https://projects.worldbank.org/en/projects-operations/project-detail/P177467"
+    "url": "https://www.worldbank.org/en/news/press-release/2025/06/20/kyrgyz-republic-first-sustainable-and-inclusive-growth-development-policy-operation"
+   },
+   {
+    "cat": "multi",
+    "status": "Approved",
+    "tone": "active",
+    "name": "Kyrgyz Republic Water Supply and Sanitation Universal Access Program, first phase",
+    "detail": "World Bank (IDA) · P500620 · approved 18 April 2025 · co-financed by AIIB ($50 million credit, $3.75 million grant), the OPEC Fund ($20 million) and SDC ($9 million grant) · through 2029",
+    "amount": "$121M",
+    "money": true,
+    "note": "126 rural villages and small towns in Chui, Issyk-Kul and Osh; more than 450,000 people in the first phase",
+    "text": "The first phase of a programme with a $400 million financing envelope over the next decade, for new household piped-water connections and new or upgraded water systems in 126 rural villages and small towns. About 115,000 people, mainly children, benefit in schools and public institutions, and 19,000 vulnerable people gain better sanitation. It serves the water and shelter standards.",
+    "by": [
+     "World Bank",
+     "Asian Infrastructure Investment Bank",
+     "OPEC Fund for International Development",
+     "Swiss Agency for Development and Cooperation"
+    ],
+    "url": "https://www.worldbank.org/en/news/press-release/2025/04/18/kyrgyz-republic-water-supply-and-sanitation-universal-access-program"
+   },
+   {
+    "cat": "multi",
+    "status": "Approved",
+    "tone": "active",
+    "name": "Developing a Sustainable Finance Market for Micro, Small, and Medium Enterprises (MSMEs) in the Kyrgyz Republic",
+    "detail": "World Bank (IDA) · P505643 · approved 18 April 2025 · zero-interest, shorter-maturity loan · co-financed by a $50 million AIIB loan · total $170 million",
+    "amount": "$120M",
+    "money": true,
+    "note": "Expected to mobilise up to $148 million of private investment over five years",
+    "text": "Wholesale financing through participating financial institutions for green and sustainable investment by micro, small and medium enterprises, partial credit guarantees for lenders, and support to set up a government-led Green Finance Fund. It serves the livelihood standard through credit and jobs.",
+    "by": [
+     "World Bank",
+     "Asian Infrastructure Investment Bank"
+    ],
+    "url": "https://www.worldbank.org/en/news/press-release/2025/04/18/advancing-sustainable-finance-for-micro-small-and-medium-enterprises-in-the-kyrgyz-republic"
+   },
+   {
+    "cat": "multi",
+    "status": "Approved",
+    "tone": "active",
+    "name": "Regional Economic Development Project, additional financing",
+    "detail": "World Bank (IDA) · P167428 · release of 26 March 2025 · zero-interest, shorter-maturity loan · through November 2028 · ARIS, under the Ministry of Economy and Commerce",
+    "amount": "$8.5M",
+    "money": true,
+    "note": "Adds to a project launched with $60 million in late 2020, to cover higher prices of construction materials",
+    "text": "Additional financing for Osh city and the Osh region: agri-food supply chains, farming practices and partnerships between businesses and farmers, urban infrastructure and business training. It serves the food and livelihood standards.",
+    "by": [
+     "World Bank"
+    ],
+    "url": "https://www.worldbank.org/en/news/press-release/2025/03/26/world-bank-approves-additional-financing-to-boost-economic-growth-in-kyrgyz-republic-osh-region"
    },
    {
     "cat": "multi",
@@ -117,6 +256,20 @@
     "cat": "multi",
     "status": "Approved",
     "tone": "active",
+    "name": "Kyrgyz Republic Air Quality Improvement Project",
+    "detail": "World Bank · Approved 29 November 2023",
+    "amount": "$50M",
+    "money": true,
+    "text": "Cleaner air for Bishkek’s winters.",
+    "by": [
+     "World Bank"
+    ],
+    "url": "https://projects.worldbank.org/en/projects-operations/project-detail/P177467"
+   },
+   {
+    "cat": "multi",
+    "status": "Approved",
+    "tone": "active",
     "name": "Technical Assistance for Kambarata 1 Hydropower Plant",
     "detail": "World Bank · Approved 31 October 2023",
     "amount": "$5M",
@@ -126,6 +279,206 @@
      "World Bank"
     ],
     "url": "https://projects.worldbank.org/en/projects-operations/project-detail/P181086"
+   },
+   {
+    "cat": "regional",
+    "status": "Signed",
+    "tone": "active",
+    "name": "Rural water supply and sanitation in Osh Region, and the Kambarata-2 surface spillway",
+    "detail": "EFSD · two loan agreements signed 16 July 2026 by the EFSD Managing Director and the Minister of Finance",
+    "amount": "",
+    "money": false,
+    "note": "The release does not state the amounts or terms",
+    "text": "Two loan agreements of the Eurasian Fund for Stabilization and Development: one to improve water supply and sanitation in rural settlements of Osh Region, the other to build the surface spillway of the Kambarata-2 hydropower plant. They serve the water and energy standards.",
+    "by": [
+     "Eurasian Fund for Stabilization and Development"
+    ],
+    "url": "https://efsd.org/en/press-center/news/efsd-and-government-of-kyrgyzstan-sign-two-loan-agreements/"
+   },
+   {
+    "cat": "regional",
+    "status": "Approved",
+    "tone": "active",
+    "name": "Sustainable Fiscal Management and Governance Improvement Program, subprogram 2",
+    "detail": "ADB · concessional loan · approved, release of 1 July 2026 · second subprogram",
+    "amount": "$70M",
+    "money": true,
+    "note": "Programme-based budgeting, digital tax audit, simpler tax processes for small businesses and state-owned enterprise governance",
+    "text": "A concessional ADB loan for the second phase of reforms to public financial management, through a unified system of programme-based budgeting with medium-term expenditure planning, to tax administration and to the governance of state-owned enterprises. Simpler tax processes are aimed at small businesses, particularly those led by women. It strengthens the public finances behind all seven standards.",
+    "by": [
+     "Asian Development Bank"
+    ],
+    "url": "https://www.adb.org/news/adb-approves-70-million-loan-support-fiscal-and-governance-reforms-kyrgyz-republic"
+   },
+   {
+    "cat": "regional",
+    "status": "Signed",
+    "tone": "active",
+    "name": "Developing a Sustainable Finance Market for Micro, Small or Medium Enterprises (MSMEs) Project (AIIB co-financing)",
+    "detail": "AIIB · sovereign · project 000964 · approved 4 December 2025 · loan agreement signed during the AIIB President’s visit, February 2026 · co-financed with the World Bank (IDA)",
+    "amount": "$50M",
+    "money": true,
+    "note": "Co-finances the World Bank project of April 2025; $170 million in total",
+    "text": "An AIIB sovereign loan that co-finances the World Bank’s programme to support the green and sustainable transition and climate resilience of micro, small and medium enterprises, mobilise private capital for sustainable investment and strengthen financial intermediaries. It serves the livelihood standard.",
+    "by": [
+     "Asian Infrastructure Investment Bank",
+     "World Bank"
+    ],
+    "url": "https://www.aiib.org/en/projects/details/2025/approved/kyrgyz-developing-a-sustainable-finance-market-for-micro-small-or-medium-enterprises-msmes-project.html"
+   },
+   {
+    "cat": "regional",
+    "status": "Committed",
+    "tone": "active",
+    "name": "Kemin–Balykchy 500 kV interconnection",
+    "detail": "EBRD · sovereign loan · 2025 · 53 km, 500 kV line and a new 500 kV substation in Balykchy, Issyk-Kul region",
+    "amount": "€62M",
+    "money": true,
+    "note": "Part of the EBRD’s investment of US$212 million (€183 million) in the Kyrgyz Republic in 2025",
+    "text": "An EBRD sovereign loan for a 53-kilometre, 500 kV transmission line and a new 500 kV substation in Balykchy, in the Issyk-Kul region. It serves the energy standard.",
+    "by": [
+     "EBRD"
+    ],
+    "url": "https://www.ebrd.com/home/news-and-events/news/2026/ebrd-invests-almost-us-2-billion-in-central-asia-and-mongolia-20.html"
+   },
+   {
+    "cat": "regional",
+    "status": "Committed",
+    "tone": "active",
+    "name": "Green Cities: Osh water treatment and public transport",
+    "detail": "EBRD · Osh joined the EBRD Green Cities initiative in 2025 · loan of up to €14.7 million · grant of up to €8.3 million",
+    "amount": "€14.7M",
+    "money": true,
+    "note": "Water treatment and greener public transport in Osh",
+    "text": "An EBRD loan of up to €14.7 million and a grant of up to €8.3 million for water treatment and greener public transport in Osh, which joined the EBRD Green Cities initiative in 2025. It serves the water standard.",
+    "by": [
+     "EBRD"
+    ],
+    "url": "https://www.ebrd.com/home/news-and-events/news/2026/ebrd-invests-almost-us-2-billion-in-central-asia-and-mongolia-20.html"
+   },
+   {
+    "cat": "regional",
+    "status": "Approved",
+    "tone": "active",
+    "name": "Water Supply and Sanitation Universal Access Project (AIIB co-financing)",
+    "detail": "AIIB · sovereign · project 000915 · approved 13 May 2025 · jointly co-financed with the World Bank · Project Preparation Special Fund grant of US$4 million",
+    "amount": "$50M",
+    "money": true,
+    "note": "Co-finances the first phase of the World Bank programme approved on 18 April 2025",
+    "text": "An AIIB sovereign loan to increase access to water supply and sanitation services and improve service delivery in selected areas of the Kyrgyz Republic, jointly with the World Bank. It serves the water and shelter standards.",
+    "by": [
+     "Asian Infrastructure Investment Bank",
+     "World Bank"
+    ],
+    "url": "https://www.aiib.org/en/projects/details/2025/approved/kyrgyzstan-water-supply-and-sanitation-universal-access-project.html"
+   },
+   {
+    "cat": "regional",
+    "status": "Signed",
+    "tone": "active",
+    "name": "Agriculture mechanisation, Tamga and Karakol transmission, and Smart-Education",
+    "detail": "IsDB · three financing agreements signed 22 April 2025, Washington, D.C., at the Spring Meetings · Line of Financing for Promoting Agriculture Mechanization · Electricity Transmission Line and Substations in Tamga and Karakol, Issyk-Kul Region · Smart-Education Project",
+    "amount": "$129.11M",
+    "money": true,
+    "note": "The IsDB is also trustee of a US$15 million Global Partnership for Education grant for education",
+    "text": "Three IsDB financing agreements signed by the IsDB President and the Minister of Finance: a line of financing for farm machinery to raise productivity and rural incomes, a transmission line and substations in Tamga and Karakol, and the Smart-Education Project for inclusive learning for children. They serve the food, energy and education standards.",
+    "by": [
+     "Islamic Development Bank"
+    ],
+    "url": "https://www.isdb.org/news/isdb-signs-us129-million-in-new-financing-agreements-with-the-kyrgyz-republic"
+   },
+   {
+    "cat": "regional",
+    "status": "Signed",
+    "tone": "active",
+    "name": "Kyrgyz Resilient Water Resources Programme",
+    "detail": "EBRD and European Union · signed 19 March 2025 by the Ministry of Finance and the EBRD, witnessed by Commissioner Jozef Síkela · EBRD loan €42 million · EU grant €15 million",
+    "amount": "€42M",
+    "money": true,
+    "note": "The EBRD and the EU also finance the Western Great Chui Canal, which waters about 82,000 hectares",
+    "text": "An EBRD loan of €42 million with an EU grant of €15 million to improve irrigation infrastructure, automate water distribution and promote water management systems that strengthen climate resilience. It serves the water and food standards.",
+    "by": [
+     "EBRD",
+     "European Union"
+    ],
+    "url": "https://www.eeas.europa.eu/delegations/kyrgyz-republic/eu-commissioner-jozef-s%C3%ADkela-advances-eu-kyrgyz-partnership-global-gateway-agreements_en"
+   },
+   {
+    "cat": "bilat",
+    "status": "Signed",
+    "tone": "active",
+    "name": "Construction of Public Schools Project, Phase II",
+    "detail": "Saudi Fund for Development · signed 9 October 2025, Bishkek · 25 years with a 5-year grace period, 1.5 percent a year · ratified by the Zhogorku Kenesh, 29 January 2026",
+    "amount": "$50M",
+    "money": true,
+    "note": "Fourteen new schools and school buildings in rural and urban areas, each for 150 to 1,000 students",
+    "text": "A Saudi Fund for Development loan for the second phase of a school construction programme: five new general education schools, two new schools in Chui region and seven new buildings for existing schools in Bishkek, each designed for 150 to 1,000 students. The first phase, financed with a US$30 million concessional loan, built 30 schools that serve 50,000 students a year. It serves the education standard.",
+    "by": [
+     "Saudi Fund for Development"
+    ],
+    "url": "https://mid-east.info/saudi-fund-for-development-commits-usd-50-million-to-build-new-schools-expanding-education-access-for-kyrgyz-students"
+   },
+   {
+    "cat": "bilat",
+    "status": "Signed",
+    "tone": "active",
+    "name": "Improvement of Medical Equipment at Referral Hospitals in Southern Regions",
+    "detail": "JICA grant agreement · signed 12 December 2025, Bishkek · Osh Interregional United Clinical Hospital and Osh Oncology Center",
+    "amount": "¥1,801M",
+    "money": true,
+    "note": "One of four Japanese grants signed that day, ¥6.845 billion in all",
+    "text": "A Japanese grant for equipment to treat cardiovascular disease and cancer at referral hospitals in Osh, with its procurement, installation and consulting services. It serves the health standard in the southern regions.",
+    "by": [
+     "JICA",
+     "Government of Japan"
+    ],
+    "url": "https://www.jica.go.jp/english/information/press/2025/20251222_16.html"
+   },
+   {
+    "cat": "bilat",
+    "status": "Signed",
+    "tone": "active",
+    "name": "Development of Training Facilities for Strengthening Capacity of Power System Operation and Maintenance",
+    "detail": "JICA grant agreement · signed 12 December 2025, Bishkek · maximum grant · new training building, simulators and solar training equipment",
+    "amount": "¥1,535M",
+    "money": true,
+    "note": "The other grants of the day: the Naryn River bridge on the Bishkek–Osh road (¥3,190 million) and ICT equipment for education (¥319 million)",
+    "text": "A Japanese grant for a new training building, simulators and photovoltaic training equipment at the training centre for the operation and maintenance of the power network in Bishkek. It builds the skills that keep electricity flowing and serves the energy standard.",
+    "by": [
+     "JICA",
+     "Government of Japan"
+    ],
+    "url": "https://www.jica.go.jp/english/information/press/2025/20251222_15.html"
+   },
+   {
+    "cat": "private",
+    "status": "Invested",
+    "tone": "active",
+    "name": "Kompanion Bank, financing for micro and small enterprises",
+    "detail": "IFC · 16 July 2025 · up to $3 million in local currency · medium- and long-term loans · MSME Finance Platform, Base of the Pyramid Envelope",
+    "amount": "$3M",
+    "money": true,
+    "note": "40 percent of the proceeds for women-owned businesses and 10 percent for climate finance",
+    "text": "An IFC loan in local currency to Kompanion Bank, which IFC calls one of the leading community development banks, to finance micro and small enterprises across the country. It serves the livelihood standard, with a share reserved for women entrepreneurs.",
+    "by": [
+     "IFC"
+    ],
+    "url": "https://www.ifc.org/en/pressroom/2025/ifc-invests-to-boost-financing-for-micro-and-smaller-businesses-in-the-kyrgyz-repu"
+   },
+   {
+    "cat": "private",
+    "status": "Committed",
+    "tone": "active",
+    "name": "FINCA Bank Kyrgyzstan, women in business and green lending",
+    "detail": "EBRD · 2025 · Women in Business programme for Central Asia US$4 million · Green Economy Financing Facility III (KyrSEFF III) US$4 million",
+    "amount": "$8M",
+    "money": true,
+    "note": "The Women in Business programme is supported by the Women Entrepreneurs Finance Initiative",
+    "text": "An EBRD package of US$8 million (€7.6 million) to FINCA Bank Kyrgyzstan: half for small businesses owned or led by women and half to improve the energy and resource efficiency of small and medium-sized businesses. It serves the livelihood and energy standards.",
+    "by": [
+     "EBRD"
+    ],
+    "url": "https://www.ebrd.com/home/news-and-events/news/2025/ebrd-promotes-green-and-inclusive-lending-in-kyrgyz-republic.html"
    }
   ]
  },
@@ -171,7 +524,43 @@
  },
  "enterprises": {
   "heading": "Already working in Kyrgyzstan.",
-  "items": []
+  "items": [
+   {
+    "standard": "Food",
+    "name": "Eurasia social shop",
+    "text": "The first social shop in Bishkek, opened on 26 August 2025 at 146/1 Toktogul Street, where pensioners, people with disabilities and low-income families buy essential goods at reduced prices.",
+    "source": "Ministry of Labour, Social Security and Migration, 2025",
+    "url": "https://mlsp.gov.kg/ru/2025/08/26/v-bishkeke-otkrylsya-pervyj-soczialnyj-magazin-evraziya/"
+   },
+   {
+    "standard": "Livelihood",
+    "name": "Kompanion Bank",
+    "text": "A community development bank, majority-owned by Mercy Corps, that lends to micro and small enterprises, including in remote areas; in July 2025 IFC lent it up to US$3 million in local currency, 40% of it for women-owned businesses and 10% for climate finance.",
+    "source": "IFC, 2025",
+    "url": "https://www.ifc.org/en/pressroom/2025/ifc-invests-to-boost-financing-for-micro-and-smaller-businesses-in-the-kyrgyz-repu"
+   },
+   {
+    "standard": "Livelihood",
+    "name": "FINCA Bank Kyrgyzstan",
+    "text": "A microlender operating in the Kyrgyz Republic since 1995 and part of FINCA Impact Finance, a worldwide network of social-impact microfinance institutions, which in 2025 received US$8 million from the EBRD for small businesses owned or led by women and for green investments.",
+    "source": "EBRD, 2025",
+    "url": "https://www.ebrd.com/home/news-and-events/news/2025/ebrd-promotes-green-and-inclusive-lending-in-kyrgyz-republic.html"
+   },
+   {
+    "standard": "Livelihood",
+    "name": "Tomo",
+    "text": "A venture founded by Nargiza that makes amigurumi knitted toys and gives mothers, homemakers and people with disabilities the means to earn an income from home, and which grew its online sales through UNDP’s e-commerce incubation programme.",
+    "source": "UNDP, 2025",
+    "url": "https://www.undp.org/kyrgyzstan/stories/driving-womens-economic-empowerment-kyrgyzstan"
+   },
+   {
+    "standard": "Livelihood",
+    "name": "Garments Master",
+    "text": "A garment business led by Mirgul Bolotalieva, a social entrepreneur financed by a loan from the microfinance institution OXUS, de-risked with blended finance by Acted, which has trained nine students, five of them with disabilities, created three jobs for people with disabilities and shares its profits, while its clients grew from about three a month to nearly 100.",
+    "source": "Acted, 2024",
+    "url": "https://www.acted.org/wp-content/uploads/2018/01/acted-eged-case-study-mirgul-bolotalieva-2024.pdf"
+   }
+  ]
  },
  "coverage": {
   "set_by": "Education",
@@ -265,5 +654,5 @@
  ],
  "dispatches": [],
  "checked": "2026-11-10T23:00Z",
- "reviewed": "2026-11-10T23:00Z"
+ "reviewed": "2026-11-19T00:25Z"
 }
