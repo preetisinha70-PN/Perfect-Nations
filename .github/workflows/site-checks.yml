@@ -1,4 +1,4 @@
-# Temporary checks of the live site from GitHub's servers (19 Nov 2026, 403 report in Search Console). Runs only on the site-checks branch.
+# Temporary checks of the live site from GitHub's servers (19 Nov 2026, the wp-*.php 403). Runs only on the site-checks branch.
 name: site-checks
 on:
   push:
@@ -10,14 +10,9 @@ jobs:
       - run: |
           set +e
           UA="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0 Safari/537.36"
-          curl -s -A "$UA" -m 30 https://perfectnations.com/sitemap_index.xml -o idx.xml -w "index %{http_code}\n"
-          grep -o '<loc>[^<]*</loc>' idx.xml | sed 's/<[^>]*>//g' > children.txt; echo "child sitemaps:"; cat children.txt
-          : > urls.txt
-          while read s; do curl -s -A "$UA" -m 30 "$s" -o c.xml -w "$s %{http_code}\n"; grep -o '<loc>[^<]*</loc>' c.xml | sed 's/<[^>]*>//g' | grep -v -E '\.(jpg|jpeg|png|webp|gif|svg)$' >> urls.txt; done < children.txt
-          sort -u urls.txt -o urls.txt; echo "page urls: $(wc -l < urls.txt)"
-          cat urls.txt | xargs -P 4 -I{} curl -s -A "$UA" -o /dev/null -m 40 -w "%{http_code} {}\n" {} > res.txt
-          echo "== status counts"; cut -d' ' -f1 res.txt | sort | uniq -c
-          echo "== not 200"; grep -v '^200 ' res.txt | head -80
-          echo "== sample of other addresses"
-          for u in https://perfectnations.com/feed/ https://perfectnations.com/wp-json/ https://perfectnations.com/xmlrpc.php https://perfectnations.com/?s=kenya https://perfectnations.com/author/ https://perfectnations.com/wp-login.php https://perfectnations.com/sitemap.xml https://perfectnations.com/news-sitemap.xml; do curl -s -A "$UA" -o /dev/null -m 30 -w "%{http_code} $u\n" "$u"; done
-          echo "== headers of first non-200 page"; f=$(grep -v '^200 ' res.txt | head -1 | cut -d' ' -f2); [ -n "$f" ] && curl -s -A "$UA" -D - -o /tmp/b -m 30 "$f" | head -20 && head -c 400 /tmp/b
+          for u in 'https://perfectnations.com/wp-*.php' 'https://perfectnations.com/wp-%2A.php' 'https://perfectnations.com/wp-nothing-here.php' 'https://perfectnations.com/'; do
+            curl -s -g -A "$UA" -o /tmp/b -D /tmp/h -m 30 -w "$u -> %{http_code}\n" "$u"; grep -i -E '^(server|x-hcdn-cache-status|x-litespeed|x-powered-by):' /tmp/h | sed 's/^/   /'
+          done
+          echo "== where wp-*.php appears in the homepage"
+          curl -s -A "$UA" -m 30 https://perfectnations.com/ | grep -o '.\{160\}wp-\*\.php.\{80\}' | head -3
+          echo "== robots.txt"; curl -s -A "$UA" -m 30 https://perfectnations.com/robots.txt
