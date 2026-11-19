@@ -1,7 +1,7 @@
 {
  "nation": "Liechtenstein",
  "page_version": "1.0",
- "updated": "2026-11-18",
+ "updated": "2026-11-19",
  "steward": {
   "name": "Sabine Frick",
   "role": "Nation Steward of Liechtenstein"
@@ -28,6 +28,20 @@
   "heading": "A principality that owes almost nothing.",
   "record": [
    {
+    "value": "CHF 10.8bn",
+    "money": false,
+    "text": "Net worth (Reinvermögen) of the state (central government, municipalities and social security) at the end of 2024, equal to 137.7% of GDP; published 13 May 2026",
+    "source": "Office of Statistics, 2026",
+    "url": "https://www.statistikportal.li/de/publikation/oeffentliche-finanzen-2024/2024/01/v-1/p46934/pdf"
+   },
+   {
+    "value": "2.8%",
+    "money": false,
+    "text": "Fiscal surplus, share of GDP, 2025; net financial assets of the general government, including social security fund assets, estimated above 140% of GDP (2026 Article IV consultation, March 2026)",
+    "source": "IMF, 2026",
+    "url": "https://www.imf.org/en/news/articles/2026/03/27/pr26091-liechtenstein-imf-concludes-2026-aiv-consultation-with-the-principality-of-liechtenstein"
+   },
+   {
     "value": "0.5%",
     "money": false,
     "text": "General government gross debt, share of GDP, 2025",
@@ -35,7 +49,57 @@
     "url": "https://www.imf.org/external/datamapper/GGXWDG_NGDP@WEO/LIE"
    }
   ],
-  "register": []
+  "register": [
+   {
+    "cat": "govt",
+    "status": "Approved",
+    "tone": "active",
+    "name": "Housing for people in need of protection, Unterland",
+    "detail": "Finanzbeschluss of the Landtag of 5 December 2024 · LGBl. 2025 Nr. 64, 24 January 2025 · commitment credit CHF 1.2 million · supplementary credits of CHF 1.405 million for 2025 · up to 70 people in Eschen",
+    "amount": "CHF 1.2M",
+    "money": true,
+    "note": "A vacant commercial building in the Eschen industrial area converted into collective housing; the Government’s timetable set opening for November 2025",
+    "text": "A commitment credit approved by the Landtag to convert a vacant commercial building in Eschen into collective housing for up to 70 people in need of protection, with supplementary credits in the 2025 budget for its first equipment, rent and running costs. It finances a roof for people the state has taken under its protection, which serves the shelter standard.",
+    "by": [
+     "Landtag of the Principality of Liechtenstein",
+     "Government of the Principality of Liechtenstein"
+    ],
+    "url": "https://www.gesetze.li/chrono/pdf/2025064000"
+   },
+   {
+    "cat": "multi",
+    "status": "Active",
+    "tone": "active",
+    "name": "IMF membership quota",
+    "detail": "International Monetary Fund · member since 21 October 2024, the 191st · initial quota SDR 100 million, about US$134.7 million · Article IV consultations concluded March 2025 and March 2026",
+    "amount": "SDR 100M",
+    "money": true,
+    "note": "The quota determines Liechtenstein’s capital subscription to the Fund; the 2026 consultation found a fiscal surplus of 2.8% of GDP in 2025",
+    "text": "Liechtenstein’s initial quota at the International Monetary Fund, which it joined on 21 October 2024 as the 191st member; a member’s quota determines its capital subscription. Membership brings the IMF’s Article IV review of the economy and of the public finances that pay for the seven standards, concluded in March 2025 and again in March 2026.",
+    "by": [
+     "International Monetary Fund",
+     "Government of the Principality of Liechtenstein"
+    ],
+    "url": "https://www.imf.org/en/news/articles/2024/10/21/pr-24387-liechtenstein-principality-of-liechtenstein-becomes-imfs-191st-member"
+   },
+   {
+    "cat": "private",
+    "status": "Issued",
+    "tone": "active",
+    "name": "Inaugural Liechtenstein Pfandbriefe",
+    "detail": "Liechtensteinisches Pfandbriefinstitut · announced 1 April 2026 · two tranches, 5 and 10 years · yields to maturity 0.593% and 0.875% · rated Aaa by Moody’s · listed on SIX Swiss Exchange from 22 April 2026",
+    "amount": "CHF 250M",
+    "money": true,
+    "note": "The first covered bonds of the institute, under the Pfandbriefe act adopted by the Landtag in December 2024",
+    "text": "The first issue of the Liechtensteinisches Pfandbriefinstitut, founded in January 2026 by LGT and Liechtensteinische Landesbank as a shared platform for Liechtenstein banks to issue covered bonds. The bonds are secured by first-lien mortgages on Liechtenstein real estate and broaden the banks’ refinancing base for home loans, which bears on the shelter standard.",
+    "by": [
+     "Liechtensteinisches Pfandbriefinstitut",
+     "LGT",
+     "Liechtensteinische Landesbank"
+    ],
+    "url": "https://www.valuespectrum.com/corporate_news/1400999-liechtensteinisches-pfandbriefinstitut-successfully-issues-inaugural-bonds"
+   }
+  ]
  },
  "assets": {
   "heading": "Five assets no balance sheet counts.",
@@ -79,7 +143,29 @@
  },
  "enterprises": {
   "heading": "Already working in Liechtenstein.",
-  "items": []
+  "items": [
+   {
+    "standard": "Energy",
+    "name": "Solargenossenschaft Liechtenstein",
+    "text": "A cooperative founded in 1992 that builds and runs solar plants on public and company roofs and sells their power; it lists ten plants in operation, six of them commissioned between November 2024 and February 2025, and sells the electricity of its new plants on Triesen’s municipal buildings to the municipality for 20 years at favourable tariffs.",
+    "source": "Solargenossenschaft Liechtenstein, 2024",
+    "url": "https://solargenossenschaft.li/sechs-pv-anlagen-in-triesen-im-bau/"
+   },
+   {
+    "standard": "Health",
+    "name": "Familienhilfe Liechtenstein",
+    "text": "An independent foundation under public law since January 2024 that provides home nursing (Spitex), household support and a meal service, billed by the hour; in 2025 its 260 staff served 1,668 clients with 212,864 billable hours and delivered 29,769 meals to 285 people.",
+    "source": "Familienhilfe Liechtenstein, annual report 2025",
+    "url": "https://www.familienhilfe.li/index.php/download_file/view/07b94884-0372-44d8-86ea-164a4e18af69/621"
+   },
+   {
+    "standard": "Livelihood",
+    "name": "Heilpädagogisches Zentrum (hpz)",
+    "text": "A foundation in Schaan whose workshops give supported work to people with disabilities in six departments that sell products and services; at the end of 2025 some 220 supported workers worked there, and its production earned CHF 1.18 million in the year.",
+    "source": "hpz, annual report 2025",
+    "url": "https://www.hpz.li/wp-content/uploads/2026/05/Jahresbericht_Stiftung_2025.pdf"
+   }
+  ]
  },
  "coverage": {
   "set_by": "Education",
@@ -213,5 +299,5 @@
  ],
  "dispatches": [],
  "checked": "2026-11-18T04:33Z",
- "reviewed": "2026-11-10T23:00Z"
+ "reviewed": "2026-11-19T00:26Z"
 }
