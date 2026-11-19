@@ -1,7 +1,7 @@
 {
  "nation": "Kiribati",
  "page_version": "1.0",
- "updated": "2026-11-18",
+ "updated": "2026-11-19",
  "steward": {
   "name": "Teretia Tabwena",
   "role": "Nation Steward of Kiribati"
@@ -28,18 +28,18 @@
   "heading": "An ocean nation, financed by grants and its fishing grounds.",
   "record": [
    {
-    "value": "$10M",
-    "money": true,
-    "text": "Additional financing for outer islands transport infrastructure, April 2024",
-    "source": "World Bank, 2024",
-    "url": "https://projects.worldbank.org/en/projects-operations/project-detail/P181658"
+    "value": "310%",
+    "money": false,
+    "text": "Revenue Equalization Reserve Fund closing balance, share of GDP, 2025: A$1,677 million, IMF staff, March 2026",
+    "source": "IMF, 2026",
+    "url": "https://www.imf.org/en/news/articles/2026/03/04/pr26070-kiribati-imf-staff-completes-2026-article-iv-consultation-to-kiribati"
    },
    {
-    "value": "$10M",
-    "money": true,
-    "text": "First Resilient Growth Development Policy Operation with a catastrophe drawdown option, November 2023",
-    "source": "World Bank, 2023",
-    "url": "https://projects.worldbank.org/en/projects-operations/project-detail/P177794"
+    "value": "38%",
+    "money": false,
+    "text": "Fishing revenue, share of GDP, 2025; 40% in 2024, IMF staff, March 2026",
+    "source": "IMF, 2026",
+    "url": "https://www.imf.org/en/news/articles/2026/03/04/pr26070-kiribati-imf-staff-completes-2026-article-iv-consultation-to-kiribati"
    },
    {
     "value": "8%",
@@ -49,14 +49,97 @@
     "url": "https://www.imf.org/external/datamapper/GGXWDG_NGDP@WEO/KIR"
    },
    {
-    "value": "6.5%",
-    "money": false,
-    "text": "Remittances received from citizens abroad, share of GDP, 2025",
+    "value": "$110M",
+    "money": true,
+    "text": "IDA grant for the Kiritimati Infrastructure Project, airport and roads, approved December 2024",
     "source": "World Bank, 2025",
-    "url": "https://data.worldbank.org/indicator/BX.TRF.PWKR.DT.GD.ZS?locations=KI"
+    "url": "https://www.worldbank.org/en/news/press-release/2025/02/12/world-bank-supports-kiribati-in-transforming-kiritimati-island-into-new-center-of-growth"
+   },
+   {
+    "value": "$15M",
+    "money": true,
+    "text": "Second Resilient Growth Development Policy Operation with a catastrophe drawdown option, December 2025",
+    "source": "World Bank, 2025",
+    "url": "https://www.worldbank.org/en/news/press-release/2025/12/17/world-bank-backs-kiribati-reforms-to-boost-financial-transparency-ensure-resilient-infrastructure-and-create-jobs"
    }
   ],
   "register": [
+   {
+    "cat": "govt",
+    "status": "Held",
+    "tone": "active",
+    "name": "Revenue Equalization Reserve Fund",
+    "detail": "Government of Kiribati · Closing balance A$1,600M in 2024 and A$1,677M in 2025 · 310% of GDP in 2025 · IMF staff, 4 March 2026",
+    "amount": "A$1,677M",
+    "money": true,
+    "note": "Withdrawals from the fund were 6% of GDP in 2025 and 7% in 2024, according to IMF staff",
+    "text": "Kiribati’s reserve fund, whose withdrawals helped finance an overall deficit of 14 percent of GDP in 2025. IMF staff recommend a withdrawal rule based on the fund’s balance and its integration into a strengthened medium-term fiscal framework. It is the buffer of the public finances on which the seven standards depend.",
+    "by": [
+     "Government of Kiribati"
+    ],
+    "url": "https://www.imf.org/en/news/articles/2026/03/04/pr26070-kiribati-imf-staff-completes-2026-article-iv-consultation-to-kiribati"
+   },
+   {
+    "cat": "multi",
+    "status": "Approved",
+    "tone": "active",
+    "name": "Second Resilient Growth DPO with a Cat DDO",
+    "detail": "World Bank · IDA grant · Approved 16 December 2025 · $10M budget support and $5M contingent financing for disaster response",
+    "amount": "$15M",
+    "money": true,
+    "note": "About 5 percent of Kiribati’s 2025 GDP, according to the World Bank",
+    "text": "Budget support from the International Development Association for reforms that cut the time to publish audited government accounts from almost two years to six months, apply VAT fairly to imports, remove VAT from menstrual health products, strengthen the rules for state-owned enterprises and require elevated, cyclone-resistant foundations for new homes. Its catastrophe drawdown option releases funds quickly when disaster strikes, protecting public spending on the seven standards.",
+    "by": [
+     "World Bank"
+    ],
+    "url": "https://www.worldbank.org/en/news/press-release/2025/12/17/world-bank-backs-kiribati-reforms-to-boost-financial-transparency-ensure-resilient-infrastructure-and-create-jobs"
+   },
+   {
+    "cat": "multi",
+    "status": "Approved",
+    "tone": "active",
+    "name": "Pacific Healthy Islands Transformation Project",
+    "detail": "World Bank · IDA grant for Kiribati $19.6M (national allocation $7.0M, GROW $12.6M) · Approved 9 September 2025 · With Fiji, Tonga and Tuvalu · Closing 28 August 2031",
+    "amount": "$19.6M",
+    "money": true,
+    "note": "Kiribati shares with Tuvalu a Centre of Excellence for Continuity of Care in Disparate Geographies",
+    "text": "A regional project to increase access to quality health services in participating Pacific Island countries, with a focus on the management of non-communicable diseases. In Kiribati it finances health workforce training, digital health and telehealth, and screening and follow-up for non-communicable diseases and cancer across the outer islands, which serves the health standard.",
+    "by": [
+     "World Bank"
+    ],
+    "url": "https://documents1.worldbank.org/curated/en/099081925133531738/pdf/BOSIB-d9529be1-d954-4d46-a0ff-c0bc15cfe0b7.pdf"
+   },
+   {
+    "cat": "multi",
+    "status": "Under implementation",
+    "tone": "active",
+    "name": "Adapting tuna-dependent Pacific Island communities and economies to climate change (FP259)",
+    "detail": "Green Climate Fund · Conservation International · Approved 20 February 2025 · Effective 9 May 2025 · GCF grant $107.4M of $157M for 14 Pacific nations, Kiribati among them · Completion 9 November 2031",
+    "amount": "",
+    "money": false,
+    "note": "No share for Kiribati is published; the GCF financing covers all 14 nations",
+    "text": "A regional programme to build the resilience of tuna-dependent economies and communities by improving access to tuna for coastal and urban communities, through fish aggregating devices, fisher training, better post-harvest handling, market opportunities and science-based tuna forecasting. It addresses food insecurity and the economic risks of climate change, which serves the food and livelihood standards.",
+    "by": [
+     "Green Climate Fund",
+     "Conservation International"
+    ],
+    "url": "https://www.greenclimate.fund/project/fp259"
+   },
+   {
+    "cat": "multi",
+    "status": "Active",
+    "tone": "active",
+    "name": "Kiritimati Infrastructure Project",
+    "detail": "World Bank · IDA grant E391-KI · Approved 13 December 2024 · First restructuring requested 25 November 2025, adding equipment for Bonriki International Airport within the same budget · Closing 31 March 2031",
+    "amount": "$110M",
+    "money": true,
+    "note": "USD 110 million (AUD 175 million), the World Bank’s grant for Kiritimati Island",
+    "text": "A grant from the International Development Association for runway repairs and safety works at Cassidy International Airport and upgrades to the road network of Kiritimati Island, with a contingent emergency response component for disaster response and recovery. Safer, climate-resilient connections link the island to markets, work and services, which serves the livelihood standard.",
+    "by": [
+     "World Bank"
+    ],
+    "url": "https://projects.worldbank.org/en/projects-operations/project-detail/P506425"
+   },
    {
     "cat": "multi",
     "status": "Approved",
@@ -79,6 +162,7 @@
     "detail": "World Bank · Approved 30 November 2023",
     "amount": "$10M",
     "money": true,
+    "note": "Followed by the Second Resilient Growth DPO with a Cat DDO, approved in December 2025",
     "text": "Budget support with funds that release when disaster strikes.",
     "by": [
      "World Bank"
@@ -86,18 +170,161 @@
     "url": "https://projects.worldbank.org/en/projects-operations/project-detail/P177794"
    },
    {
-    "cat": "multi",
+    "cat": "regional",
     "status": "Approved",
     "tone": "active",
-    "name": "Kiritimati Infrastructure Project",
-    "detail": "World Bank · Approved 13 December 2024",
-    "amount": "",
-    "money": false,
-    "text": "Infrastructure for Kiritimati (Christmas Island).",
+    "name": "Pacific Regional Energy Security Emergency Assistance Project",
+    "detail": "Asian Development Bank · Grant to Kiribati · Announced 12 October 2026 · $40.1M in all for Kiribati, Tonga and Tuvalu",
+    "amount": "$12.77M",
+    "money": true,
+    "note": "Tonga receives $15.39M and Tuvalu $11.94M",
+    "text": "Emergency grant financing to help Kiribati manage its exposure to fuel price volatility amid the crisis in the Middle East. It protects the energy standard when fuel prices rise.",
     "by": [
-     "World Bank"
+     "Asian Development Bank"
     ],
-    "url": "https://projects.worldbank.org/en/projects-operations/project-detail/P506425"
+    "url": "https://www.adb.org/news/amid-middle-east-crisis-adb-supports-energy-security-pacific-40-1-million"
+   },
+   {
+    "cat": "regional",
+    "status": "Approved",
+    "tone": "active",
+    "name": "Climate-Resilient Health Infrastructure and Systems Project, additional financing",
+    "detail": "Asian Development Bank · Asian Development Fund grant · Approved with effect from 29 June 2026 · Announced 30 June 2026",
+    "amount": "$11M",
+    "money": true,
+    "note": "Complements New Zealand’s financing for the hospital’s initial construction",
+    "text": "Grant financing to complete the construction of the new Betio Hospital, which will offer modern diagnostic, surgical and specialist services to the people of South Tarawa and to patients from the outer islands. It serves the health standard.",
+    "by": [
+     "Asian Development Bank"
+    ],
+    "url": "https://www.adb.org/news/adb-approves-11-million-grant-boost-health-services-kiribati"
+   },
+   {
+    "cat": "regional",
+    "status": "Approved",
+    "tone": "active",
+    "name": "Sustainable and Inclusive Economic Recovery Program, subprogram 2",
+    "detail": "Asian Development Bank · Policy-based grant from the Asian Development Fund · Announced 2 December 2025 · Parallel cofinancing from the European Union, Australia, New Zealand and the World Bank",
+    "amount": "$10M",
+    "money": true,
+    "note": "Policy-based grants go to countries facing a financing gap in their annual budget",
+    "text": "Budget support for reforms that modernise public financial management, broaden the tax base, strengthen oversight of state-owned enterprises, update the legal framework of the digital economy and raise budget transparency, with a fisheries and ocean resource management policy and a SafeNet database on gender-based violence. Sounder public finances sustain spending on the seven standards.",
+    "by": [
+     "Asian Development Bank"
+    ],
+    "url": "https://www.adb.org/news/adb-approves-10-million-grant-boost-sustainable-growth-and-ocean-conservation-kiribati"
+   },
+   {
+    "cat": "regional",
+    "status": "Approved",
+    "tone": "active",
+    "name": "Equitable Access to Quality Education Project",
+    "detail": "Asian Development Bank · Asian Development Fund grant · Announced 29 October 2025 · With $5M from the Global Partnership for Education",
+    "amount": "$30M",
+    "money": true,
+    "note": "Supplemented by $5 million in cofinancing from the Global Partnership for Education",
+    "text": "Grant financing for modern, disaster-resilient classrooms, recreational facilities and dormitories, vehicles for student transport, digital technology in the curriculum and teacher training, so that more children, especially in outer island communities, finish school. It serves the education standard.",
+    "by": [
+     "Asian Development Bank",
+     "Global Partnership for Education"
+    ],
+    "url": "https://www.adb.org/news/adb-approves-30-million-grant-transform-education-access-kiribati"
+   },
+   {
+    "cat": "regional",
+    "status": "Active",
+    "tone": "active",
+    "name": "South Tarawa Renewable Energy Project (Phase 2)",
+    "detail": "Asian Development Bank · Grant 1010-KIR $24.9M · Approved 10 December 2024 · Signed 11 December 2024 · Effective 31 March 2025 · $0.5M from the Ireland Trust Fund",
+    "amount": "$24.9M",
+    "money": true,
+    "note": "Indicatively 4 MW of floating solar in Betio and a 3 MVA / 3 MWh battery in Bonriki",
+    "text": "Grant financing for climate-adapted floating solar power in Betio and battery energy storage in Bonriki, adding renewable electricity to the South Tarawa grid. It serves the energy standard.",
+    "by": [
+     "Asian Development Bank",
+     "Ireland Trust Fund"
+    ],
+    "url": "https://www.adb.org/projects/49450-030/main"
+   },
+   {
+    "cat": "regional",
+    "status": "Active",
+    "tone": "active",
+    "name": "South Tarawa Water Supply Project",
+    "detail": "Asian Development Bank · ADF $13M and GCF $28.63M approved 30 August 2019 · World Bank $12.96M · Additional financing ADF $20M and GEF LDCF $4.59M approved 13 December 2022 · McKenzie desalination plant commissioned 14 April 2025 · Closing 30 December 2029",
+    "amount": "$79.2M",
+    "money": true,
+    "note": "The sum of the five active grants on the ADB project page; ADB expects the Betio desalination plant to be commissioned by 2028",
+    "text": "Grants for a climate-resilient, low-carbon water supply for South Tarawa, sourced from seawater desalination, with a solar photovoltaic facility. The McKenzie desalination plant, commissioned on 14 April 2025, now supplies potable water to residents of South Tarawa. It serves the water standard, the furthest from reach in Kiribati.",
+    "by": [
+     "Asian Development Bank",
+     "Green Climate Fund",
+     "World Bank",
+     "Global Environment Facility"
+    ],
+    "url": "https://www.adb.org/projects/49453-002/main"
+   },
+   {
+    "cat": "bilat",
+    "status": "Budgeted",
+    "tone": "annual",
+    "name": "Australian development assistance, 2026–27",
+    "detail": "Australian Government · Total ODA budget estimate 2026–27 · A$39.5M in 2025–26 · Country program A$26.1M in each year",
+    "amount": "A$39.3M",
+    "money": true,
+    "note": "Australia is Kiribati’s largest bilateral aid donor, according to DFAT",
+    "text": "Australia’s total official development assistance to Kiribati in its 2026–27 development budget. Its programme invests up to A$50 million over 2024 to 2034 in teacher training and learning environments, strengthens the health system and supplies water tanks within a food security initiative, which serve the education, health, water and food standards.",
+    "by": [
+     "Australia",
+     "Department of Foreign Affairs and Trade"
+    ],
+    "url": "https://www.dfat.gov.au/sites/default/files/oda-development-budget-summary-2026-27.pdf"
+   },
+   {
+    "cat": "bilat",
+    "status": "Signed",
+    "tone": "granted",
+    "name": "Economic and Social Development Programme (Road Maintenance Equipment)",
+    "detail": "Government of Japan · Exchange of Notes signed in Tarawa 17 December 2025 · Grant aid up to ¥400 million",
+    "amount": "¥400M",
+    "money": true,
+    "note": "Road rollers, compressors and asphalt spreaders",
+    "text": "Grant aid for equipment to repair road surfaces damaged by frequent flooding from heavy rain and seawater inundation linked to rising sea levels, strengthening roads and extending their lifespan. Roads that stay open keep people connected to work, markets and services, which serves the livelihood standard.",
+    "by": [
+     "Japan"
+    ],
+    "url": "https://www.mofa.go.jp/press/release/pressite_000001_01933.html"
+   },
+   {
+    "cat": "bilat",
+    "status": "Signed",
+    "tone": "granted",
+    "name": "Economic and Social Development Programme (Infrastructure Development Equipment)",
+    "detail": "Government of Japan · Exchange of Notes signed in Tarawa 28 January 2025 · Grant aid up to ¥236 million",
+    "amount": "¥236M",
+    "money": true,
+    "note": "Motor graders and wheel rollers for Kiritimati (Christmas Island), Teraina and Tabuaeran",
+    "text": "Grant aid for infrastructure development equipment for the Line Islands, to support development beyond the Gilbert Islands, where population and resources are concentrated, and to correct regional disparities. It serves the livelihood standard in the outer islands.",
+    "by": [
+     "Japan"
+    ],
+    "url": "https://www.mofa.go.jp/press/release/pressite_000001_00950.html"
+   },
+   {
+    "cat": "bilat",
+    "status": "Approved",
+    "tone": "active",
+    "name": "New Zealand International Development Cooperation, 2024–27",
+    "detail": "Ministry of Foreign Affairs and Trade · Approved funding for 1 July 2024 to 30 June 2027 · Plan target for Kiribati",
+    "amount": "NZ$100.13M",
+    "money": true,
+    "note": "New Zealand financed the initial construction of the new Betio Hospital",
+    "text": "New Zealand’s approved development cooperation for Kiribati over the three years to June 2027. It financed the initial construction of the new Betio Hospital, which ADB financing now completes, and cofinances ADB’s Sustainable and Inclusive Economic Recovery Program, which serve the health standard and the public finances.",
+    "by": [
+     "New Zealand",
+     "Ministry of Foreign Affairs and Trade"
+    ],
+    "url": "https://www.mfat.govt.nz/en/aid-and-development/our-approach-to-aid/where-our-funding-goes/our-planned-idc-expenditure"
    }
   ]
  },
@@ -143,7 +370,22 @@
  },
  "enterprises": {
   "heading": "Already working in Kiribati.",
-  "items": []
+  "items": [
+   {
+    "standard": "Livelihood",
+    "name": "Kindling Kiribati",
+    "text": "A non-profit founded in 2018 that gives I-Kiribati women ten entrepreneurship classes and small business loans averaging about A$350, repaid in weekly group meetings with interest refunded in full when every payment is on time; in 2025 it made 195 loans worth A$53,913.60, it reports a repayment rate of 95.55%, and it has funded more than 350 small business loans since 2019.",
+    "source": "Kindling Kiribati, annual report 2025",
+    "url": "https://kindlingkiribati.org/wp-content/uploads/2026/02/2025-Annual-Report.pdf"
+   },
+   {
+    "standard": "Livelihood",
+    "name": "Teitoiningaina",
+    "text": "A Catholic women’s organisation that trains women in handicraft skills and runs a facility to which women from around Kiribati supply their handicraft products, giving them a steady source of income and preserving traditional crafts.",
+    "source": "Government of Kiribati, Beijing+30 report, 2024",
+    "url": "https://www.unwomen.org/sites/default/files/2024-09/b30_report_kiribati_en.pdf"
+   }
+  ]
  },
  "coverage": {
   "set_by": "Water",
@@ -277,5 +519,5 @@
  ],
  "dispatches": [],
  "checked": "2026-11-18T04:33Z",
- "reviewed": "2026-11-10T23:00Z"
+ "reviewed": "2026-11-19T00:23Z"
 }
