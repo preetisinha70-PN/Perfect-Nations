@@ -1,22 +1,22 @@
 {
  "nation": "South Korea",
  "page_version": "1.0",
- "updated": "2026-11-19",
+ "updated": "2026-11-20",
  "steward": {
   "name": "Park Ji-yeon",
   "role": "Nation Steward of South Korea"
  },
  "population": 51684564,
  "hero": {
-  "lead": "A nation of 51.7 million that entered the FTSE World Government Bond Index in April 2026 and plans ₩225.7 trillion of treasury bonds in 2026, with public debt of 52% of GDP.",
+  "lead": "A nation of 51.7 million whose government bonds entered the FTSE World Government Bond Index in April 2026, phased in through November 2026, with general government gross debt of 52.4% of GDP.",
   "stats": [
    {
     "value": "52.4%",
     "label": "Public debt, share of GDP, 2025"
    },
    {
-    "value": "₩225.7tn",
-    "label": "Treasury bond issuance plan, 2026"
+    "value": "1.75%",
+    "label": "Weight in the FTSE World Government Bond Index, 2026"
    },
    {
     "value": "3.3%",
@@ -28,18 +28,18 @@
   "heading": "A bond market the world’s index investors now buy.",
   "record": [
    {
-    "value": "₩225.7tn",
+    "value": "1.75%",
     "money": false,
-    "text": "Treasury bond issuance plan for 2026, confirmed 26 December 2025",
-    "source": "Asia Economy, 2025",
-    "url": "https://cm.asiae.co.kr/en/article/2025122617514482250"
+    "text": "Weight of South Korean government bonds in the FTSE World Government Bond Index once fully phased in; inclusion began with the April 2026 index profiles, in eight monthly tranches to November 2026",
+    "source": "FTSE Russell, 2026",
+    "url": "https://www.lseg.com/content/dam/ftse-russell/en_us/documents/country-classification/fixed-income-country-classification-march-2026-results.pdf"
    },
    {
-    "value": "₩6.8tn",
-    "money": false,
-    "text": "Net foreign purchases of Korean treasury bonds in the first days of index inclusion, 30 March to 8 April 2026",
-    "source": "Financial News, 2026",
-    "url": "https://en.fnnews.com/news/202604091058502279"
+    "value": "€800M",
+    "money": true,
+    "text": "Social covered bond of the Korea Housing Finance Corporation, issued 1 September 2026, for housing welfare for low-to-moderate income households",
+    "source": "KHFC, 2026",
+    "url": "https://www.hf.go.kr/en/sub06/sub06_05_02.do?mode=list&&articleLimit=5&article.offset=0"
    },
    {
     "value": "52.4%",
@@ -59,17 +59,49 @@
   "register": [
    {
     "cat": "govt",
-    "status": "Plan",
+    "status": "Active",
     "tone": "active",
-    "name": "2026 Treasury Bond Issuance Plan",
-    "detail": "Ministry of Economy and Finance · Calendar year 2026",
-    "amount": "₩225.7tn",
+    "name": "Korea Treasury Bonds, 2026 auctions",
+    "detail": "Ministry of Finance and Economy · monthly competitive auctions of 2-year to 50-year bonds · about ₩18tn planned for February, ₩19tn for March, ₩16tn for July and ₩12tn for October 2026",
+    "amount": "",
     "money": false,
-    "text": "Annual treasury bond issuance, with October cut by ₩5 trillion as yields rose.",
+    "note": "Fixed-rate bonds in won are phased into the FTSE World Government Bond Index in eight monthly tranches from April to November 2026",
+    "text": "Korea Treasury Bonds sold by competitive auction each month, which fund the government budget as a whole; no one of the seven standards is named. Since April 2026 fixed-rate bonds in won have been phased into the FTSE World Government Bond Index, where they are to make up 1.75% of the index once fully included.",
     "by": [
-     "Ministry of Economy and Finance"
+     "Republic of Korea",
+     "Ministry of Finance and Economy"
     ],
-    "url": "https://cm.asiae.co.kr/en/article/2025122617514482250"
+    "url": "https://english.mofe.go.kr/pc/selectTbPressCenterDtl.do?boardCd=N0001&seq=6494"
+   },
+   {
+    "cat": "govt",
+    "status": "Issued",
+    "tone": "active",
+    "name": "Social covered bond, Korea Housing Finance Corporation",
+    "detail": "Korea Housing Finance Corporation · issued 1 September 2026 · matures 1 September 2029 · ISIN XS3465646365 · under a US$15bn covered bond programme",
+    "amount": "€800M",
+    "money": true,
+    "note": "The Corporation has issued all its covered bonds and mortgage-backed securities as social bonds since March 2019",
+    "text": "A three-year social covered bond of the Korea Housing Finance Corporation in euros, its latest issue. The social value the Corporation names for its bonds is housing welfare for low-to-moderate income households, which serves the shelter standard.",
+    "by": [
+     "Korea Housing Finance Corporation"
+    ],
+    "url": "https://www.hf.go.kr/en/sub06/sub06_05_02.do?mode=list&&articleLimit=5&article.offset=0"
+   },
+   {
+    "cat": "govt",
+    "status": "Issued",
+    "tone": "active",
+    "name": "Social covered bonds of 2024 to 2026, Korea Housing Finance Corporation",
+    "detail": "£500M due 2029, issued 17 June 2026 · €800M due 2031, issued 4 March 2026 · £300M due 2028, issued 14 October 2025 · €500M due 2030, issued 2 September 2025 · $400M due 2030, issued 28 May 2025 · €600M due 2030, issued 5 March 2025 · €650M due 2028, issued 2 October 2024 · €500M due 2029, issued 18 March 2024",
+    "amount": "",
+    "money": false,
+    "note": "A HKD 1.5 billion bond issued on 29 November 2024 had a maturity date of 29 October 2026",
+    "text": "Covered bonds of the Korea Housing Finance Corporation in euros, sterling and dollars, issued as social bonds for housing welfare for low-to-moderate income households. They serve the shelter standard; the issuance list gives their terms, not the households financed.",
+    "by": [
+     "Korea Housing Finance Corporation"
+    ],
+    "url": "https://www.hf.go.kr/en/sub06/sub06_05_02.do?mode=list&&articleLimit=5&article.offset=0"
    }
   ]
  },
@@ -115,7 +147,29 @@
  },
  "enterprises": {
   "heading": "Already working in South Korea.",
-  "items": []
+  "items": [
+   {
+    "standard": "Food",
+    "name": "Happy Dosirak Social Cooperative",
+    "text": "Korea’s first social cooperative, with 26 lunchbox centres across the country among its members, which provides public meal services and makes and delivers lunchboxes for children at risk of missing meals, as for 40 children in Gunpo under an agreement signed in April 2025.",
+    "source": "Seoul Shinmun, 2025",
+    "url": "https://m.go.seoul.co.kr/news/publicnews/local_govern/2025/04/07/20250407500211"
+   },
+   {
+    "standard": "Education",
+    "name": "Dot",
+    "text": "A Korean company that makes the Dot Pad, a tactile display that turns braille text, images, charts and diagrams into touchable graphics, which schools for the blind in South Korea and other countries supply to their students.",
+    "source": "Dot, 2024",
+    "url": "https://www.dotincorp.com/en/news/117"
+   },
+   {
+    "standard": "Livelihood",
+    "name": "Goodwill Store",
+    "text": "A chain of 36 thrift shops across the country, set up in 2011 to hire people with autism and developmental disorders, which sells secondhand goods such as clothes and processed food and employs 451 people with developmental disorders.",
+    "source": "The Korea Times, 2025",
+    "url": "https://koreatimes.co.kr/www/biz/2025/03/602_394395.html"
+   }
+  ]
  },
  "coverage": {
   "set_by": "Food",
@@ -249,5 +303,5 @@
  ],
  "dispatches": [],
  "checked": "2026-11-19T20:32Z",
- "reviewed": "2026-11-10T23:00Z"
+ "reviewed": "2026-11-20T07:31Z"
 }
