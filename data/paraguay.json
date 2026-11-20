@@ -1,7 +1,7 @@
 {
  "nation": "Paraguay",
  "page_version": "1.0",
- "updated": "2026-11-19",
+ "updated": "2026-11-20",
  "steward": {
   "name": "Belén Giménez",
   "role": "Nation Steward of Paraguay"
@@ -54,18 +54,89 @@
     "text": "Real GDP growth projected for 2026",
     "source": "IMF, WEO Oct 2026",
     "url": "https://www.imf.org/external/datamapper/NGDP_RPCH@WEO/PRY"
+   },
+   {
+    "value": "$1bn",
+    "money": true,
+    "text": "Global bond in guaraníes due 2038, the first at 12 years, February 2026, bought by 64 international investors",
+    "source": "Ministry of Economy and Finance, 2026",
+    "url": "https://www.mef.gov.py/es/institucional/sala-de-prensa/noticias/doble-grado-inversion-paraguay-emite-bonos-globales-guaranies"
    }
   ],
   "register": [
    {
+    "cat": "govt",
+    "status": "Issued",
+    "tone": "active",
+    "name": "Twelve-year global bond in guaraníes, due 2038",
+    "detail": "Ministry of Economy and Finance · issued 24 February 2026 · matures 4 April 2038 · coupon 8.5% · ₲6,506,960 million at ₲6,506.96 to the dollar · 64 international investors, demand 1.5 times the amount placed",
+    "amount": "$1bn",
+    "money": true,
+    "note": "Paraguay’s first global bond in guaraníes at 12 years; it replaces dollar debt due in 2027 and 2031",
+    "text": "A global bond of the Republic of Paraguay in its own currency, sold to international investors, which lets the fiscal deficit authorised in the 2026 national budget be financed entirely in local currency and replaces dollar debt due in 2027 and 2031. It funds the budget as a whole, which carries the seven standards; its proceeds are not earmarked to any one of them.",
+    "by": [
+     "Republic of Paraguay",
+     "Ministry of Economy and Finance"
+    ],
+    "url": "https://www.mef.gov.py/es/institucional/sala-de-prensa/noticias/doble-grado-inversion-paraguay-emite-bonos-globales-guaranies"
+   },
+   {
+    "cat": "govt",
+    "status": "Issued",
+    "tone": "active",
+    "name": "Thirty-year dollar bond due 2055, reopened",
+    "detail": "Ministry of Economy and Finance · reopened with the guaraní bond, release of 24 February 2026 · yield 6.00% · first issued 25 February 2025 at a coupon of 6.65% · matures 4 March 2055 · 65 investors, demand 6.3 times the amount",
+    "amount": "$300M",
+    "money": true,
+    "note": "Demand reached USD 1,890 million",
+    "text": "A reopening of the Republic’s thirty-year dollar bond, sold alongside the guaraní bond of February 2026. It funds the budget as a whole, which carries the seven standards; its proceeds are not earmarked to any one of them.",
+    "by": [
+     "Republic of Paraguay",
+     "Ministry of Economy and Finance"
+    ],
+    "url": "https://www.mef.gov.py/es/institucional/sala-de-prensa/noticias/doble-grado-inversion-paraguay-emite-bonos-globales-guaranies"
+   },
+   {
     "cat": "multi",
     "status": "Approved",
     "tone": "active",
-    "name": "Jobs and private sector growth",
-    "detail": "World Bank · Press release, 8 August 2025",
+    "name": "Scaling up Finance for Sustainable Agroforestry in Paraguay",
+    "detail": "World Bank (IBRD) · Board approval 30 April 2026 · project P504535 · variable spread loan, 17.5-year term, 3-year grace period · implemented by the Agencia Financiera de Desarrollo (AFD)",
+    "amount": "$100M",
+    "money": true,
+    "note": "A credit line for smallholder and medium-scale producers and a forestry equity fund",
+    "text": "A World Bank loan, implemented by Paraguay’s national development bank, that finances a line of credit for smallholder and medium-scale producers to invest in sustainable agroforestry and a forestry equity fund for larger plantation projects. It serves the livelihood standard, with jobs in agroforestry value chains in rural areas.",
+    "by": [
+     "World Bank",
+     "Agencia Financiera de Desarrollo"
+    ],
+    "url": "https://www.worldbank.org/en/news/press-release/2026/04/30/the-world-bank-scales-up-sustainable-agroforestry-financing-in-paraguay"
+   },
+   {
+    "cat": "multi",
+    "status": "Completed",
+    "tone": "completed",
+    "name": "Resilience and Sustainability Facility arrangement",
+    "detail": "IMF · approved December 2023 · final reviews completed 22 January 2026, with the sixth review under the Policy Coordination Instrument · SDR 85.6M (about $117M) made available on completion · SDR 146M (about $199M) disbursed in 2025",
+    "amount": "SDR 302.1M",
+    "money": true,
+    "note": "Access of 150% of quota; press release PR 26/014",
+    "text": "An IMF arrangement that supported Paraguay’s climate reforms, among them preserving and expanding its renewable electricity matrix and making public investment more resilient to natural disasters. It serves the energy standard; its resources support the budget as a whole and are not earmarked to any one standard.",
+    "by": [
+     "International Monetary Fund"
+    ],
+    "url": "https://www.imf.org/-/media/files/publications/cr/2026/english/1pryea2026001-source-pdf.pdf"
+   },
+   {
+    "cat": "multi",
+    "status": "Approved",
+    "tone": "active",
+    "name": "Private Sector-Led Growth and Jobs Development Policy Loan",
+    "detail": "World Bank (IBRD) · Board approval 8 August 2025 · project P508227 · variable spread loan, 17.5-year term, 3-year grace period",
     "amount": "$150M",
     "money": true,
-    "text": "Financing to boost jobs and private sector growth.",
+    "note": "Reforms to lower barriers to firm entry and growth, and public-private partnerships",
+    "text": "A World Bank development policy loan that supports reforms to lower the barriers to firm entry and growth and to develop public-private partnerships, to help micro, small and medium-sized enterprises overcome key challenges. It serves the livelihood standard; as a development policy loan, its proceeds are not earmarked to any one standard.",
     "by": [
      "World Bank"
     ],
@@ -75,29 +146,82 @@
     "cat": "multi",
     "status": "Approved",
     "tone": "active",
-    "name": "Sustainable agroforestry, scaled up",
-    "detail": "World Bank · Press release, 30 April 2026",
-    "amount": "",
-    "money": false,
-    "text": "More financing for sustainable agroforestry.",
+    "name": "Joining Efforts for an Education of Excellence (TAPE)",
+    "detail": "World Bank (IBRD) · approved 25 April 2023 · project P180015 · variable rate, 24-year maturity, 6-year grace period · the State adds $54.7M through the Fund for Excellence in Education and Research (FEEI), for $180M in all",
+    "amount": "$125.3M",
+    "money": true,
+    "note": "About 400,000 students and 14,500 teachers",
+    "text": "A World Bank loan for key school infrastructure and learning environments, focused on schools with vulnerable infrastructure, that also trains about 14,500 teachers and 500 staff of the Ministry of Education and Sciences. It serves education, the standard furthest from reach in Paraguay, where 22.3% of children read a simple text by the end of primary school (2019).",
     "by": [
      "World Bank"
     ],
-    "url": "https://www.worldbank.org/en/news/press-release/2026/04/30/the-world-bank-scales-up-sustainable-agroforestry-financing-in-paraguay"
+    "url": "https://www.worldbank.org/en/news/press-release/2023/04/25/banco-mundial-aprueba-prestamo-para-mejorar-infraestructura-educativa-en-paraguay"
    },
    {
     "cat": "multi",
+    "status": "Active",
+    "tone": "active",
+    "name": "Poverty, Reforestation, Energy and Climate Change Project (PROEZA)",
+    "detail": "Green Climate Fund · FP062 · approved 1 March 2018 · effective 20 January 2020 · accredited entity FAO · grant · total project value $90.3M · latest disbursement $5.8M, 3 June 2026 · completion expected 19 June 2027",
+    "amount": "$25.06M",
+    "money": true,
+    "note": "GCF grant fully disbursed by June 2026; 807,000 people with increased resilience projected",
+    "text": "A Green Climate Fund grant, with the FAO and the Government of Paraguay, that pays environmental conditional cash transfers to local households for community-based, climate-sensitive agroforestry and finances credit for forest plantations for bioenergy, timber and silvo-pastoral production. It serves the livelihood and energy standards in poor rural households.",
+    "by": [
+     "Green Climate Fund",
+     "FAO",
+     "Government of Paraguay"
+    ],
+    "url": "https://www.greenclimate.fund/project/fp062"
+   },
+   {
+    "cat": "regional",
+    "status": "Signed",
+    "tone": "active",
+    "name": "Emboscada substation and transmission lines, ANDE",
+    "detail": "EIB loan of up to $70M (€60.6M), approved 17 November 2025, signed 12 March 2026 · IDB loan of up to $70M, PR-L1204, approved 21 November 2025 · EU Global Gateway grant of up to €10M through LACIF · borrower ANDE, with the Republic as guarantor",
+    "amount": "$150M",
+    "money": true,
+    "note": "Estimated to benefit about 2.67 million residents, around 764,000 families, by 2030",
+    "text": "A package from the European Investment Bank, the Inter-American Development Bank and the European Union for ANDE, the national electricity company, to build the new 500/220 kV Emboscada substation and its transmission lines in the Metropolitan and Central systems, which carry a large part of the nation’s consumption. It serves the energy standard, with a more reliable supply and connections for new users.",
+    "by": [
+     "European Investment Bank",
+     "Inter-American Development Bank",
+     "European Union",
+     "ANDE"
+    ],
+    "url": "https://www.eib.org/en/press/all/2026-092-european-union-and-idb-provide-usd150-million-for-major-upgrades-to-paraguay-s-electricity-transmission-network"
+   },
+   {
+    "cat": "regional",
     "status": "Approved",
     "tone": "active",
-    "name": "Joining Efforts for an Education of Excellence",
-    "detail": "World Bank · Approved 25 April 2023",
-    "amount": "$125.3M",
+    "name": "IDB CLIMA: Sanitation Program for the Lake Ypacaraí Watershed",
+    "detail": "IDB · loan 5960/OC-PR, PR-L1193 · approved 27 November 2024 · in implementation · Ordinary Capital · with a $7.7M results-based grant, PR-J0001, approved the same day",
+    "amount": "$154M",
     "money": true,
-    "text": "Better teaching and learning in schools.",
+    "note": "More sewage and wastewater treatment in priority areas of the basin",
+    "text": "An IDB loan to increase sewage and wastewater treatment coverage in prioritised areas of the Lake Ypacaraí basin, restore degraded areas and improve the management of water and sanitation services, with a grant that rewards results on phosphorus in treated effluent and on climate measures. It serves the shelter standard, measured by safely managed sanitation, at 58.5%, and the water standard.",
     "by": [
-     "World Bank"
+     "Inter-American Development Bank"
     ],
-    "url": "https://projects.worldbank.org/en/projects-operations/project-detail/P180015"
+    "url": "https://www.iadb.org/en/project/PR-L1193"
+   },
+   {
+    "cat": "private",
+    "status": "Approved",
+    "tone": "active",
+    "name": "Banco Familiar, credit for microentrepreneurs",
+    "detail": "IDB Invest · project 14827-01 · approved 3 March 2026 · announced 12 March 2026 · funded by IDB Invest’s local-currency bonds in Paraguay, among them a six-year ₲180bn bond of 14 April 2026",
+    "amount": "₲540bn",
+    "money": true,
+    "note": "The project page gives a loan of up to ₲360bn (USD 83,735,200)",
+    "text": "An IDB Invest loan in guaraníes to Banco Familiar to expand credit for microentrepreneurs, particularly in segments the financial system has traditionally excluded, and the reach of its digital wallet. It serves the livelihood standard, through local-currency finance for microenterprises and small entrepreneurs at the base of the pyramid.",
+    "by": [
+     "IDB Invest",
+     "Banco Familiar"
+    ],
+    "url": "https://idbinvest.org/en/news-media/idb-invest-banco-familiar-expand-credit-microentrepreneurs-paraguay"
    }
   ]
  },
@@ -143,7 +267,22 @@
  },
  "enterprises": {
   "heading": "Already working in Paraguay.",
-  "items": []
+  "items": [
+   {
+    "standard": "Livelihood",
+    "name": "Fundación Paraguaya",
+    "text": "A social enterprise dedicated to the elimination of poverty, with 100,521 active microfinance clients, 92% of them women, credit for women’s groups, youth, farmers and people with disabilities, and the Poverty Stoplight, a self-assessment tool adopted by more than 516,100 families in 59 countries.",
+    "source": "Fundación Paraguaya, 2024 results",
+    "url": "https://noticias.fundacionparaguaya.org.py/?p=604"
+   },
+   {
+    "standard": "Livelihood",
+    "name": "Cooperativa Manduvirá",
+    "text": "A cooperative of 950 family farmers in Arroyos y Esteros, about 70 km from Asunción, that runs the world’s first producer-owned Fairtrade organic sugar mill and has become a leading producer and exporter of certified-organic sugar.",
+    "source": "One Degree Organics, 2026",
+    "url": "https://onedegreeorganics.com/?p=10787"
+   }
+  ]
  },
  "coverage": {
   "set_by": "Education",
@@ -277,5 +416,5 @@
  ],
  "dispatches": [],
  "checked": "2026-11-19T20:31Z",
- "reviewed": "2026-11-10T23:00Z"
+ "reviewed": "2026-11-20T00:40Z"
 }
