@@ -1,7 +1,7 @@
 {
  "nation": "San Marino",
  "page_version": "1.0",
- "updated": "2026-11-18",
+ "updated": "2026-11-20",
  "steward": {
   "name": "Francesca Gasperoni",
   "role": "Nation Steward of San Marino"
@@ -28,6 +28,13 @@
   "heading": "The last mile of sanitation.",
   "record": [
    {
+    "value": "€350M",
+    "money": true,
+    "text": "Eurobond at 3.625%, issued 30 April 2026 and due 30 April 2031; it refinances a 6.50% Eurobond due January 2027",
+    "source": "Secretariat for Finance, 2026",
+    "url": "https://finanze.sm/pub2/dam/jcr:656e2b2f-015c-4062-b94b-c2edcfb22979/TABELLA%20emissioni%20su%20Mercato%20Domestico%20e%20Internazionale%20al%2021%20maggio%202026%20EN.pdf"
+   },
+   {
     "value": "59.8%",
     "money": false,
     "text": "General government gross debt, share of GDP, 2025",
@@ -49,7 +56,40 @@
     "url": "https://data.worldbank.org/indicator/BX.TRF.PWKR.DT.GD.ZS?locations=SM"
    }
   ],
-  "register": []
+  "register": [
+   {
+    "cat": "govt",
+    "status": "Issued",
+    "tone": "active",
+    "name": "Eurobond due 2031 (3.625%)",
+    "detail": "Secretariat of State for Finance and Budget · issued 30 April 2026 · ISIN XS3328490423 · coupon 3.625% · due 30 April 2031 · Regulation no. 9/2026",
+    "amount": "€350M",
+    "money": true,
+    "note": "Pre-issued to refinance the 6.50% Eurobond due 19 January 2027, of which €75.8M remained to be repaid on 30 April 2026",
+    "text": "A five-year bond of the Republic of San Marino on the international market, at a coupon of 3.625% against 6.50% on the 2023 issue it refinances. It funds the State budget as a whole; its proceeds are not earmarked to any one of the seven standards.",
+    "by": [
+     "Republic of San Marino",
+     "Secretariat of State for Finance and Budget"
+    ],
+    "url": "https://finanze.sm/pub2/dam/jcr:656e2b2f-015c-4062-b94b-c2edcfb22979/TABELLA%20emissioni%20su%20Mercato%20Domestico%20e%20Internazionale%20al%2021%20maggio%202026%20EN.pdf"
+   },
+   {
+    "cat": "govt",
+    "status": "Issued",
+    "tone": "active",
+    "name": "Domestic government bonds of 2025 (2.00% 2026, 2.15% 2030 and 2.45% 2035)",
+    "detail": "Secretariat of State for Finance and Budget · €50M at 2.00%, issued 23 October 2025, due 23 December 2026 (Delegated Decree no. 125/2025) · €27.5M at 2.15% due 1 July 2030 and €27.5M at 2.45% due 1 July 2035, issued 1 July 2025 (Delegated Decrees nos. 81 and 82/2025)",
+    "amount": "€105M",
+    "money": true,
+    "note": "The amount adds the three issues of €50,000,000, €27,500,000 and €27,500,000 (arithmetic); the table states no total",
+    "text": "Three bonds of the Republic of San Marino sold on the domestic market in 2025, of fourteen months, five years and ten years, each still to be redeemed in full on 1 June 2026. They fund the State budget as a whole; their proceeds are not earmarked to any one of the seven standards.",
+    "by": [
+     "Republic of San Marino",
+     "Secretariat of State for Finance and Budget"
+    ],
+    "url": "https://finanze.sm/pub2/dam/jcr:5e621b0d-a526-488e-8c76-30ec5e45a77b/TABELLA%20emissioni%20su%20Mercato%20Domestico%20%20al%201%C2%B0%20giugno%202026%20GB.pdf"
+   }
+  ]
  },
  "assets": {
   "heading": "Five assets no balance sheet counts.",
@@ -219,5 +259,5 @@
  ],
  "dispatches": [],
  "checked": "2026-11-18T20:32Z",
- "reviewed": "2026-11-10T23:00Z"
+ "reviewed": "2026-11-20T07:30Z"
 }
