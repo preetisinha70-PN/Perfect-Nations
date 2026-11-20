@@ -1,18 +1,18 @@
 {
  "nation": "Spain",
  "page_version": "1.0",
- "updated": "2026-11-17",
+ "updated": "2026-11-20",
  "steward": {
   "name": "Lucía Fernández",
   "role": "Nation Steward of Spain"
  },
  "population": 49355143,
  "hero": {
-  "lead": "A nation of 49.4 million with a €163 billion recovery and resilience plan, where the IMF projects growth of 2.5% this year and almost half the power is renewable.",
+  "lead": "A nation of 49.4 million with a €102.6 billion recovery and resilience plan, where the IMF projects growth of 2.5% this year and almost half the power is renewable.",
   "stats": [
    {
-    "value": "€163bn",
-    "label": "EU recovery and resilience plan"
+    "value": "€102.6bn",
+    "label": "EU recovery and resilience plan, as amended"
    },
    {
     "value": "2.5%",
@@ -28,11 +28,18 @@
   "heading": "Recovery and growth, and every household above the line.",
   "record": [
    {
-    "value": "€163bn",
+    "value": "€102.6bn",
     "money": true,
-    "text": "Recovery and resilience plan (grants and loans), as approved by the Council of the EU on 13 May 2025",
+    "text": "Recovery and resilience plan as amended: €79.85 billion in grants and €22.71 billion in loans, after the loans were cut from €83.16 billion (Commission proposal of 17 December 2025); payments to reach €76 billion, 76% of the plan, with the sixth payment request (July 2026)",
     "source": "Council of the EU, 2025",
-    "url": "https://www.consilium.europa.eu/en/policies/eu-recovery-plan/timeline/"
+    "url": "https://data.consilium.europa.eu/doc/document/ST-16991-2025-INIT/en/pdf"
+   },
+   {
+    "value": "€11bn",
+    "money": true,
+    "text": "EIB Group financing and investment in Spain in 2025, a record year, with nearly €2 billion in 2024 and 2025 to build 11,000 new homes and a record €570 million for efficient water management",
+    "source": "EIB, 2026",
+    "url": "https://www.eib.org/en/press/all/2026-048-el-grupo-bei-invierte-en-espana-cifras-record-en-2025-para-apoyar-la-innovacion-las-redes-electricas-la-seguridad-y-la-defensa-y-la-vivienda"
    },
    {
     "value": "2.5%",
@@ -51,18 +58,198 @@
   ],
   "register": [
    {
-    "cat": "regional",
+    "cat": "govt",
     "status": "Approved",
     "tone": "active",
-    "name": "Recovery and resilience plan",
-    "detail": "Council of the EU · Approved 13 May 2025 · EU Recovery and Resilience Facility",
-    "amount": "€163bn",
+    "name": "Grants for affordable rental homes, CASA 47 concessions",
+    "detail": "Real Decreto 928/2026 of 28 October 2026 · Ministry of Housing and Urban Agenda · up to €201.7M in direct grants · 29 projects, about 2,425 homes · works concessions of up to sixty years · rents below market and at most 30% of the disposable income of a typical median household",
+    "amount": "€201.7M",
     "money": true,
-    "text": "EU funding, in grants and loans, for agreed reforms and investments.",
+    "note": "CASA 47 is the new name of SEPES, the state land and housing company",
+    "text": "Direct grants from the Ministry of Housing and Urban Agenda to the winners of works concessions tendered by CASA 47, who build and run affordable rental homes under the Affordable Rental Housing Plan. Every home must be let at an affordable rent to households that cannot find an affordable home on the market, serving the shelter standard.",
     "by": [
-     "European Union"
+     "Government of Spain",
+     "Ministry of Housing and Urban Agenda",
+     "CASA 47"
     ],
-    "url": "https://www.consilium.europa.eu/en/policies/eu-recovery-plan/timeline/"
+    "url": "https://www.boe.es/boe/dias/2026/10/29/pdfs/BOE-A-2026-22617.pdf"
+   },
+   {
+    "cat": "govt",
+    "status": "Issued",
+    "tone": "active",
+    "name": "Twenty-year sovereign green bond (second green reference)",
+    "detail": "Tesoro Público · syndicated · terms set 9 September 2026 · issued 15 September 2026 · matures 30 July 2047 · coupon 4.25% · price 99.764% · Orden ECM/946/2026",
+    "amount": "€4bn",
+    "money": true,
+    "note": "The second reference issued under the sovereign green bond programme of the Kingdom of Spain",
+    "text": "A twenty-year green bond of the Kingdom of Spain, sold by syndication as the second reference of its sovereign green bond programme. As a green bond its proceeds go to eligible green expenditure, which can carry the energy and water standards; the orders read do not list the projects, and the allocation reports were not read.",
+    "by": [
+     "Kingdom of Spain",
+     "Tesoro Público"
+    ],
+    "url": "https://boe.es/boe/dias/2026/09/10/pdfs/BOE-A-2026-18986.pdf"
+   },
+   {
+    "cat": "govt",
+    "status": "Issued",
+    "tone": "active",
+    "name": "Five-year green bond, ICO (eighth green issue)",
+    "detail": "Instituto de Crédito Oficial · 13 May 2026 · five years · coupon 3.05% · orders over €3.25bn, more than six times the issue · Green Bond Framework updated with circular economy and climate change adaptation",
+    "amount": "€500M",
+    "money": true,
+    "note": "ICO has issued €10.05 billion in 20 sustainable bonds, 12 social and 8 green",
+    "text": "A green bond of Spain’s official credit institute, whose proceeds finance projects for the ecological transition under its Green Bond Framework. It can carry the energy and water standards; the release does not list the projects of this issue.",
+    "by": [
+     "Instituto de Crédito Oficial"
+    ],
+    "url": "https://www.ico.es/web/ico_en/ico-issues-its-eighth-green-bond-for-%E2%82%AC500-million-and-strengthens-its-market-strategy-to-finance-environmental-projects"
+   },
+   {
+    "cat": "govt",
+    "status": "Issued",
+    "tone": "active",
+    "name": "Social bond, ICO (matures April 2030)",
+    "detail": "Instituto de Crédito Oficial · 30 October 2025 · matures 30 April 2030 · coupon 2.45% · orders of up to €2.2bn",
+    "amount": "€500M",
+    "money": true,
+    "note": "ICO’s social bonds now total €6.05 billion",
+    "text": "A social bond of Spain’s official credit institute. Its social bonds fund small firms, companies and the self-employed through public-private financing programmes, and social infrastructure such as hospitals and housing, serving the livelihood standard, the standard furthest from reach, and the health and shelter standards; the release does not list the projects of this issue.",
+    "by": [
+     "Instituto de Crédito Oficial"
+    ],
+    "url": "https://www.ico.es/web/ico_en/new-sustainable-issue-ico-bolsters-its-market-position-with-a-new-issue-of-social-bonds-amounting-to-500-million-euros"
+   },
+   {
+    "cat": "regional",
+    "status": "Signed",
+    "tone": "active",
+    "name": "Drinking water in Asturias, Cadasa",
+    "detail": "European Investment Bank · signed 13 October 2026 · Consorcio de Aguas de Asturias (Cadasa) · new pumping stations and drinking water treatment plants · part of an investment of over 211 million",
+    "amount": "€67M",
+    "money": true,
+    "note": "Cadasa serves 785,000 people, almost 83% of the population of Asturias, and supplies 25 municipalities",
+    "text": "An EIB loan to the Asturias water consortium for the integrated water cycle, including new pumping stations and drinking water treatment plants. It serves the water standard for 785,000 people.",
+    "by": [
+     "European Investment Bank",
+     "Consorcio de Aguas de Asturias"
+    ],
+    "url": "https://www.eib.org/en/press/all/2026-334-el-bei-financiara-con-67-millones-de-euros-las-infraestructuras-de-agua-en-asturias"
+   },
+   {
+    "cat": "regional",
+    "status": "Signed",
+    "tone": "active",
+    "name": "Water and sanitation on the Western Costa del Sol, Acosol",
+    "detail": "European Investment Bank · first tranche of €75M signed 6 July 2026 of a total approved loan of €175M · Acosol, the public company of the association of municipalities of the Western Costa del Sol",
+    "amount": "€175M",
+    "money": true,
+    "note": "For 1 million residents in 11 municipalities, and more than 1.4 million people in summer",
+    "text": "An EIB loan for Acosol’s investment programme: the upgrade and expansion of drinking water supply and sanitation, the Marbella desalination plant, wastewater treatment plants and reclaimed water networks. It serves the water standard.",
+    "by": [
+     "European Investment Bank",
+     "Acosol"
+    ],
+    "url": "https://www.eib.org/en/press/all/2026-238-eib-to-lend-eur175-million-for-water-infrastructure-investments-by-acosol-on-spain-s-costa-del-sol"
+   },
+   {
+    "cat": "regional",
+    "status": "Disbursing",
+    "tone": "active",
+    "name": "Recovery and resilience plan",
+    "detail": "European Union · amended plan: €79.85bn in grants and €22.71bn in loans, the loans cut from €83.16bn (Commission proposal of 17 December 2025) · sixth payment request of €5.7bn assessed positively in part 2 July 2026 · payments to reach €76bn, 76% of the plan",
+    "amount": "€102.6bn",
+    "money": true,
+    "note": "Flagship measures include an update of the statute of SEPES, the state housing company, and a State Agency for Public Health",
+    "text": "EU Recovery and Resilience Facility funding for Spain’s reforms and investments, €79.85 billion in grants and €22.71 billion in loans after Spain’s loans were reduced. Its measures reach housing, public health, vocational training and energy efficiency, serving the shelter, health, education and energy standards.",
+    "by": [
+     "European Union",
+     "European Commission",
+     "Council of the EU"
+    ],
+    "url": "https://data.consilium.europa.eu/doc/document/ST-16991-2025-INIT/en/pdf"
+   },
+   {
+    "cat": "regional",
+    "status": "Paid",
+    "tone": "granted",
+    "name": "EU Solidarity Fund, October 2024 floods",
+    "detail": "European Commission · €100M advance paid March 2025 · €846M payment approved 24 June 2026 · €946,153,691 adopted by the European Parliament 13 November 2025",
+    "amount": "€946M",
+    "money": true,
+    "note": "For the floods that struck the Valencia region in October 2024",
+    "text": "EU grant aid for the recovery of the Valencia region after the floods of October 2024. It pays for the repair of critical infrastructure, among it roads, bridges and water and energy networks, and temporary accommodation for displaced people, serving the water, energy and shelter standards.",
+    "by": [
+     "European Union",
+     "European Commission"
+    ],
+    "url": "https://ec.europa.eu/commission/presscorner/detail/en/ip_26_1445"
+   },
+   {
+    "cat": "regional",
+    "status": "Signed",
+    "tone": "active",
+    "name": "Care homes and day centres in Catalonia, ICF",
+    "detail": "European Investment Bank €150M in two tranches, €100M signed 15 May 2025 and €50M signed March 2026 · Council of Europe Development Bank €50M signed 15 May 2025 · Institut Català de Finances · up to €400M of investment",
+    "amount": "€200M",
+    "money": true,
+    "note": "About 7,500 care places for older people, people with disabilities and other vulnerable groups",
+    "text": "EIB and CEB loans to the public development bank of the Government of Catalonia, which lends to non-profit social organisations, foundations, local administrations and companies building, buying and refurbishing care homes, day centres and assisted living facilities. They serve the health and shelter standards for older people, people with disabilities and other vulnerable groups.",
+    "by": [
+     "European Investment Bank",
+     "Council of Europe Development Bank",
+     "Institut Català de Finances"
+    ],
+    "url": "https://www.eib.org/en/press/all/2026-086-el-bei-e-icf-firman-un-prestamo-50-millones-de-euros-para-impulsar-infraestructuras-sociales-en-cataluna"
+   },
+   {
+    "cat": "regional",
+    "status": "Signed",
+    "tone": "active",
+    "name": "Social rental housing, Barcelona City Council (IMHAB)",
+    "detail": "European Investment Bank · signed 30 October 2025 · Municipal Institute for Housing and Renovation of Barcelona · about 640 new homes built to high energy efficiency standards",
+    "amount": "€113M",
+    "money": true,
+    "note": "Expected to benefit 2,040 vulnerable people, about 70% of them women",
+    "text": "An EIB lending facility to Barcelona City Council, through its housing institute, for about 640 new social rental homes. It serves the shelter standard for 2,040 vulnerable people.",
+    "by": [
+     "European Investment Bank",
+     "Barcelona City Council"
+    ],
+    "url": "https://www.eib.org/en/press/all/2025-421-eib-finances-barcelona-city-council-with-eur113-million-to-deliver-640-social-and-sustainable-rental-housing-units"
+   },
+   {
+    "cat": "private",
+    "status": "Signed",
+    "tone": "active",
+    "name": "Electricity distribution grids, Naturgy",
+    "detail": "Ministry of Economy, Trade and Business and European Investment Bank · €520M from the Regional Resilience Fund (NextGenerationEU), signed 22 July 2026 · €350M EIB loan approved, €200M of it signed · 2,300 km of lines in Andalusia, Castilla-La Mancha, Castile and León, Galicia and Madrid",
+    "amount": "€870M",
+    "money": true,
+    "note": "Over 80% of the investment goes to cohesion regions",
+    "text": "Two loans to Naturgy’s distribution company to build and reinforce 2,300 km of power lines, automate and digitalise the grid, reduce losses and connect new users. It serves the energy standard.",
+    "by": [
+     "European Investment Bank",
+     "Ministry of Economy, Trade and Business",
+     "Naturgy"
+    ],
+    "url": "https://www.eib.org/en/press/all/2026-260-spanish-ministry-of-economy-and-eib-to-finance-naturgy-with-eur870-million-to-reinforce-and-digitalise-electricity-grids"
+   },
+   {
+    "cat": "private",
+    "status": "Signed",
+    "tone": "active",
+    "name": "Rebuilding the flood-hit power grid in Valencia, Iberdrola",
+    "detail": "European Investment Bank · two €25M loans signed 28 July 2025 · reconstruction, redesign, climate adaptation and digitalisation of the distribution grid damaged by the October 2024 floods · il.lumina project · Valencia and Castilla-La Mancha",
+    "amount": "€50M",
+    "money": true,
+    "note": "Expected to benefit more than 650,000 clients",
+    "text": "Two EIB loans to Iberdrola to rebuild and climate-proof the power distribution grid damaged by the floods of October 2024. They restore power to more than 650,000 clients and serve the energy standard.",
+    "by": [
+     "European Investment Bank",
+     "Iberdrola"
+    ],
+    "url": "https://www.eib.org/en/press/all/2025-304-eib-lends-eur50-million-to-iberdrola-to-rebuild-and-climate-proof-flood-hit-power-infrastructure-in-valencia"
    }
   ]
  },
@@ -108,7 +295,43 @@
  },
  "enterprises": {
   "heading": "Already working in Spain.",
-  "items": []
+  "items": [
+   {
+    "standard": "Food",
+    "name": "Fundació Espigoladors",
+    "text": "A non-profit foundation run on a social enterprise model that gleans surplus and imperfect produce, distributes it through social entities and free food distribution services, and turns it into es im-perfect® preserves in a central kitchen that employs people at risk of social exclusion.",
+    "source": "Espigoladors, 2026",
+    "url": "https://espigoladors.cat/en"
+   },
+   {
+    "standard": "Shelter",
+    "name": "Fundació Hàbitat3",
+    "text": "A Catalan foundation for the right to decent housing of people in vulnerable situations, financed by social rents and public funding, that ended 2025 managing 1,325 homes with 3,664 residents.",
+    "source": "UPF Barcelona School of Management, 2026",
+    "url": "https://www.bsm.upf.edu/documents/202605-housing-associations-provisio-gestio-habitatge-social.pdf"
+   },
+   {
+    "standard": "Shelter",
+    "name": "Provivienda",
+    "text": "A housing organisation founded in 1989 that manages more than 3,000 rental homes and in 2023 created LUMVRA, the first nationwide social housing agency in Spain, which earns its income from the professional management of social and affordable rentals for low-income families, women in vulnerable situations, migrants and refugees.",
+    "source": "UPF Barcelona School of Management, 2026",
+    "url": "https://www.bsm.upf.edu/documents/202605-housing-associations-provisio-gestio-habitatge-social.pdf"
+   },
+   {
+    "standard": "Livelihood",
+    "name": "La Fageda",
+    "text": "A social economy cooperative and foundation in Santa Pau, in the Garrotxa, that makes and sells yoghurts, desserts, ice cream and jams, with net sales of €31.6 million in 2024 and 345 people employed, 168 of them in supported employment.",
+    "source": "La Fageda, 2025",
+    "url": "https://www.fageda.com/wp-content/uploads/2025/07/Memoria-2024-esp-web.pdf"
+   },
+   {
+    "standard": "Livelihood",
+    "name": "Fundació Formació i Treball",
+    "text": "A foundation created under Càritas in the early 1990s that runs textile recycling, catering and general services as a social enterprise, invoicing €33.4 million and bringing 1,653 vulnerable people into work in 2024, 782 of them hired directly.",
+    "source": "Diari Catalunya, 2026",
+    "url": "https://diaricatalunya.cat/en/barcelones/barcelona/formacio-i-treball-boosted-job-placement-for-over-1600-vulnerable-people-in-2024"
+   }
+  ]
  },
  "coverage": {
   "set_by": "Livelihood",
@@ -242,5 +465,5 @@
  ],
  "dispatches": [],
  "checked": "2026-11-17T20:30Z",
- "reviewed": "2026-11-10T23:00Z"
+ "reviewed": "2026-11-20T07:31Z"
 }
