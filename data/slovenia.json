@@ -1,17 +1,17 @@
 {
  "nation": "Slovenia",
  "page_version": "1.0",
- "updated": "2026-11-17",
+ "updated": "2026-11-20",
  "steward": {
   "name": "Nina Kovač",
   "role": "Nation Steward of Slovenia"
  },
  "population": 2130986,
  "hero": {
-  "lead": "A nation of 2.1 million with forest across six tenths of its land, a €2.2 billion recovery and resilience plan and growth of 3.2% projected this year.",
+  "lead": "A nation of 2.1 million with forest across six tenths of its land, a €2.08 billion EU recovery and resilience plan, and growth of 3.2% projected by the IMF this year.",
   "stats": [
    {
-    "value": "€2.2bn",
+    "value": "€2.08bn",
     "label": "EU recovery and resilience plan"
    },
    {
@@ -28,11 +28,25 @@
   "heading": "Green and growing, and every drop treated.",
   "record": [
    {
-    "value": "€2.2bn",
+    "value": "€2.08bn",
     "money": true,
-    "text": "Recovery and resilience plan (grants and loans), as approved by the Council of the EU on 20 June 2025",
-    "source": "Council of the EU, 2025",
-    "url": "https://www.consilium.europa.eu/en/policies/eu-recovery-plan/timeline/"
+    "text": "Recovery and resilience plan after its fifth amendment, approved by the Council of the EU in April 2026: €1.61 billion in grants and €469 million in loans",
+    "source": "Government of Slovenia, 2026",
+    "url": "https://www.gov.si/en/news/2026-04-28-council-of-the-eu-approves-fifth-amendment-to-slovenias-recovery-and-resilience-plan/"
+   },
+   {
+    "value": "€428.4M",
+    "money": true,
+    "text": "EU Solidarity Fund aid for the floods of August 2023, received in full by December 2024",
+    "source": "Government of Slovenia, 2024",
+    "url": "https://www.gov.si/novice/2024-12-10-slovenija-prejela-vsa-sredstva-solidarnostnega-sklada/"
+   },
+   {
+    "value": "€300M",
+    "money": true,
+    "text": "Public rental housing programme of SID Bank, financed by €150 million each from the EIB (signed July 2026) and the CEB (approved March 2026)",
+    "source": "EIB, 2026",
+    "url": "https://www.eib.org/en/projects/all/20250692"
    },
    {
     "value": "3.2%",
@@ -51,18 +65,147 @@
   ],
   "register": [
    {
+    "cat": "govt",
+    "status": "Adopted",
+    "tone": "pipeline",
+    "name": "Public rental housing construction, 2027 and 2028",
+    "detail": "Government of Slovenia · spending plan adopted 12 March 2026 · €150M to the Housing Fund of the Republic of Slovenia and €50M to SID Bank · 2,524 public rental and supported rental dwellings in progress at the Housing Fund",
+    "amount": "€200M",
+    "money": true,
+    "note": "SID Bank lends to municipalities, public housing funds and non-profit housing organisations at a 1% fixed rate over 30 years, under a mechanism signed with the ministry on 10 March 2026",
+    "text": "Funds the government has made available for housing construction in 2027 and 2028. The Housing Fund of the Republic of Slovenia acquires public rental dwellings through its own construction, purchase or work with local partners, and SID Bank finances public rental housing built by others. It serves the shelter standard.",
+    "by": [
+     "Government of Slovenia",
+     "Housing Fund of the Republic of Slovenia",
+     "SID Bank"
+    ],
+    "url": "https://www.gov.si/novice/2026-03-12-vlada-sprejela-nacrt-porabe-sredstev-za-stanovanjsko-gradnjo-za-leti-2027-in-2028/"
+   },
+   {
+    "cat": "govt",
+    "status": "Issued",
+    "tone": "active",
+    "name": "Three-year social Samurai bond",
+    "detail": "Ministry of Finance · priced 7 November 2025 · coupon 1.24% · TONA mid-swaps + 20 bp · demand of nearly JPY 50bn · swapped into euros (EUR 175M) · 57:43 split between Japanese and international investors",
+    "amount": "JPY 31bn",
+    "money": true,
+    "note": "Issued under the Sustainability Bond Framework, with a second-party opinion from Morningstar Sustainalytics of January 2023",
+    "text": "A social bond of the Republic of Slovenia sold in the Japanese market, whose proceeds are used exclusively to finance or refinance eligible social projects under the Sustainability Bond Framework. The Ministry’s releases do not name the social categories, so no one of the seven standards is named.",
+    "by": [
+     "Republic of Slovenia",
+     "Ministry of Finance"
+    ],
+    "url": "https://www.gov.si/en/news/2025-11-07-the-republic-of-slovenia-jpy31-0bn-3yr-social-samurai-bond-transaction/"
+   },
+   {
+    "cat": "govt",
+    "status": "Issued",
+    "tone": "active",
+    "name": "Ten-year sustainability-linked bond",
+    "detail": "Ministry of Finance · priced 24 June 2025 · matures 2 July 2035 · coupon 3.125% · yield 3.155% · mid-swaps + 61 bp · books above €6.5bn",
+    "amount": "€1bn",
+    "money": true,
+    "note": "The first sovereign sustainability-linked bond in Europe; the coupon rises by 50 bp from the ninth year if emissions do not fall 35% from 2005 by 2030, and falls by 50 bp if they fall 45%",
+    "text": "A bond whose proceeds may be used without restriction, while the Republic commits to cut total greenhouse gas emissions by 2030 under the Sustainability-linked Bond Framework published in March 2025. It funds the budget as a whole; no one of the seven standards is named.",
+    "by": [
+     "Republic of Slovenia",
+     "Ministry of Finance"
+    ],
+    "url": "https://www.gov.si/en/news/2025-06-24-the-republic-of-slovenia-eur-1-0bn-3-125-percent-10-year-sustainability-linked-notes/"
+   },
+   {
     "cat": "regional",
-    "status": "Approved",
+    "status": "Disbursing",
     "tone": "active",
     "name": "Recovery and resilience plan",
-    "detail": "Council of the EU · Approved 20 June 2025 · EU Recovery and Resilience Facility",
-    "amount": "€2.2bn",
+    "detail": "European Union · €1.61bn in grants and €469M in loans after the fifth amendment (April 2026) · sixth amendment approved 10 July 2026 · €1.81bn received by 31 July 2026 · final payment request of €271.77M submitted 29 September 2026",
+    "amount": "€2.08bn",
     "money": true,
-    "text": "EU funding, in grants and loans, for agreed reforms and investments.",
+    "note": "86.9% of the available funds received by 31 July 2026; €1.7 billion paid to final recipients",
+    "text": "EU grants and loans for 36 reforms and 49 investments across five pillars, tied to 182 milestones and targets. Its measures include flood risk reduction, educational infrastructure, the electricity distribution network and emergency medical vehicles, serving the shelter, education, energy and health standards.",
     "by": [
      "European Union"
     ],
-    "url": "https://www.consilium.europa.eu/en/policies/eu-recovery-plan/timeline/"
+    "url": "https://www.gov.si/en/news/2026-04-28-council-of-the-eu-approves-fifth-amendment-to-slovenias-recovery-and-resilience-plan/"
+   },
+   {
+    "cat": "regional",
+    "status": "Signed",
+    "tone": "active",
+    "name": "Social and affordable housing, SID Bank",
+    "detail": "European Investment Bank · intermediated framework loan · project 20250692 · signed 22 July 2026 · total cost €300M · backed by a statutory State guarantee of SID Bank’s obligations",
+    "amount": "€150M",
+    "money": true,
+    "note": "Matched by a €150 million CEB loan; lent on at a 1% fixed rate over 30 years",
+    "text": "An EIB loan to SID Bank, the Slovenian export and development bank, to finance rental social housing across Slovenia, with new dwellings and the deep refurbishment of ageing stock under regulated rents. It serves the shelter standard by improving the availability of adequate public rental housing.",
+    "by": [
+     "European Investment Bank",
+     "SID Bank"
+    ],
+    "url": "https://www.eib.org/en/projects/all/20250692"
+   },
+   {
+    "cat": "regional",
+    "status": "Approved",
+    "tone": "active",
+    "name": "Social and Affordable Housing Facility, SID Bank",
+    "detail": "Council of Europe Development Bank · programme loan approved 16 March 2026 · on-lending to public and non-profit housing entities and municipalities",
+    "amount": "€150M",
+    "money": true,
+    "note": "About 1,200 housing units and 3,000 citizens expected to benefit",
+    "text": "A CEB loan to SID Bank for public and non-profit housing providers and municipalities to build, renovate and convert housing, expand the public rental stock and improve its energy performance. It serves the shelter standard for low-income households, young families, older people, persons with disabilities and households at risk of housing exclusion.",
+    "by": [
+     "Council of Europe Development Bank",
+     "SID Bank"
+    ],
+    "url": "https://coebank.org/en/project-financing/projects-approved-administrative-council/social-and-affordable-housing-facility/"
+   },
+   {
+    "cat": "regional",
+    "status": "Approved",
+    "tone": "active",
+    "name": "Energy poverty reduction programme 2024–2027, Eco Fund",
+    "detail": "European Regional Development Fund · EU cohesion policy 2021–2027, priority “Green transformation for climate neutrality” · announced 29 May 2025 · total value €32.94M · implemented by Eko sklad, the Eco Fund",
+    "amount": "€23.5M",
+    "money": true,
+    "note": "About 1,100 energy-poor households",
+    "text": "EU cohesion funding for energy-efficiency and renewable-energy investments in energy-poor households, with advice, behaviour-change measures and coordinators who identify and guide eligible households. It serves the energy standard for households in energy poverty.",
+    "by": [
+     "European Union",
+     "Eco Fund"
+    ],
+    "url": "https://www.gov.si/novice/2025-05-29-235-milijona-evrov-evropskih-sredstev-za-zmanjsevanje-energetske-revscine/"
+   },
+   {
+    "cat": "regional",
+    "status": "Approved",
+    "tone": "active",
+    "name": "Municipal infrastructure in Slovenia, SID Bank",
+    "detail": "Council of Europe Development Bank · programme loan approved 5 April 2025 · co-financing of municipal investments across Slovenia · the fourth CEB loan to SID Bank for housing activities",
+    "amount": "€50M",
+    "money": true,
+    "note": "Also responds to disaster-recovery needs after the severe floods of 2023",
+    "text": "A CEB loan to SID Bank to co-finance municipal infrastructure across Slovenia, including social and affordable housing for low-to-middle-income households and other vulnerable groups. It serves the shelter standard and supports recovery after the floods of 2023.",
+    "by": [
+     "Council of Europe Development Bank",
+     "SID Bank"
+    ],
+    "url": "https://coebank.org/en/project-financing/projects-approved-administrative-council/municipal-infrastructure-in-slovenia/"
+   },
+   {
+    "cat": "regional",
+    "status": "Disbursed",
+    "tone": "completed",
+    "name": "EU Solidarity Fund, floods of August 2023",
+    "detail": "European Union · advance of €100M paid 11 December 2023 · balance of €328.4M received 9 December 2024 · implementation period ended 9 June 2026",
+    "amount": "€428.4M",
+    "money": true,
+    "note": "The implementation report is due within six months of the end of the implementation period",
+    "text": "EU grant aid for emergency and recovery operations after the floods of August 2023, which caused nearly three billion euros in direct damage. Eligible operations include restoring energy, water supply and wastewater, healthcare and education facilities, and temporary housing, serving the energy, water, shelter, health and education standards.",
+    "by": [
+     "European Union"
+    ],
+    "url": "https://evropskasredstva.si/en/european-union-solidarity-fund/"
    }
   ]
  },
@@ -108,7 +251,50 @@
  },
  "enterprises": {
   "heading": "Already working in Slovenia.",
-  "items": []
+  "items": [
+   {
+    "standard": "Livelihood",
+    "name": "Center ponovne uporabe (CPU)",
+    "text": "The social enterprise that launched Slovenia’s first reuse centre, which collects, prepares and resells furniture and mattresses at four locations and in 2025 had 36 full-time roles, over half of them on work-integration contracts for people who face barriers in the labour market.",
+    "source": "RREUSE, 2025",
+    "url": "https://www.rreuse.org/our-network/meet-our-members/furniture-and-mattress-to-build-jobs-and-inclusion"
+   },
+   {
+    "standard": "Livelihood",
+    "name": "Korenika eco-social farm (Pribinovina)",
+    "text": "An eco-social farm in Šalovci, in the Goričko Landscape Park, that grows crops, herbs, fruit and vegetables on some twenty hectares and processes them into organic products, employing disabled people and people from other vulnerable groups.",
+    "source": "EPEKA, 2025",
+    "url": "https://epeka.si/en/?p=84627"
+   },
+   {
+    "standard": "Livelihood",
+    "name": "Mozaik – društvo za socialno vključenost",
+    "text": "An association with social enterprise status in Murska Sobota that has worked since 2003 to meet the needs of vulnerable social groups in Pomurje, and ensures their inclusion by developing social entrepreneurship.",
+    "source": "EPEKA, 2025",
+    "url": "https://epeka.si/en/?p=84627"
+   },
+   {
+    "standard": "Livelihood",
+    "name": "EPEKA",
+    "text": "An association with social enterprise status in Maribor, with its own online store and reservation platform, that runs an employment rehabilitation service in 2024 and 2025 for people with disabilities who need support to develop their work abilities and skills.",
+    "source": "EPEKA, 2025",
+    "url": "https://epeka.si/en/?p=83491"
+   },
+   {
+    "standard": "Livelihood",
+    "name": "Društvo Verjamem vate",
+    "text": "A social enterprise in Domžale dedicated to including people with physical and intellectual disabilities in work environments, selected by the Employment Service of Slovenia in December 2025 to employ a person from its Učne delavnice+ training workshops.",
+    "source": "Employment Service of Slovenia, 2025",
+    "url": "https://www.ess.gov.si/fileadmin/user_upload/Delodajalci/Javna_povabila/JP_Zaposlovanje/Ucne_delavnice_subv/Seznam_izbranih_ponudnikov_UcneDelavnicePlus_Spodbude.pdf"
+   },
+   {
+    "standard": "Health",
+    "name": "Zavod VITICA",
+    "text": "A social enterprise in Gornja Radgona that provides home help to families, selected by the Employment Service of Slovenia in December 2025 to employ a person from its Učne delavnice+ training workshops.",
+    "source": "Employment Service of Slovenia, 2025",
+    "url": "https://www.ess.gov.si/fileadmin/user_upload/Delodajalci/Javna_povabila/JP_Zaposlovanje/Ucne_delavnice_subv/Seznam_izbranih_ponudnikov_UcneDelavnicePlus_Spodbude.pdf"
+   }
+  ]
  },
  "coverage": {
   "set_by": "Shelter",
@@ -242,5 +428,5 @@
  ],
  "dispatches": [],
  "checked": "2026-11-17T12:23Z",
- "reviewed": "2026-11-10T23:00Z"
+ "reviewed": "2026-11-20T07:31Z"
 }
