@@ -1,7 +1,7 @@
 {
  "nation": "Trinidad and Tobago",
  "page_version": "1.0",
- "updated": "2026-11-19",
+ "updated": "2026-11-21",
  "steward": {
   "name": "Aaliyah Mohammed",
   "role": "Nation Steward of Trinidad and Tobago"
@@ -37,9 +37,9 @@
    {
     "value": "$800M",
     "money": true,
-    "text": "Notes due 2038 at 6.20%, issued 9 July 2026, oversubscribed about four times",
+    "text": "Notes due 2038 at 6.20%, issued 9 July 2026, oversubscribed by approximately 400%",
     "source": "Ministry of Finance of Trinidad and Tobago, 2026",
-    "url": "https://www.finance.gov.tt/media-release-usd-800-million-sovereign-bond-successfully-issued-in-the-u-s-market/"
+    "url": "https://www.finance.gov.tt/wp-content/uploads/2026/07/Media-Release-USD-800-Million-Sovereign-Bond-Successfully-Issued-in-the-U.S.-Market.pdf"
    },
    {
     "value": "84%",
@@ -54,6 +54,13 @@
     "text": "Real GDP growth projected for 2026",
     "source": "IMF, WEO Oct 2026",
     "url": "https://www.imf.org/external/datamapper/NGDP_RPCH@WEO/TTO"
+   },
+   {
+    "value": "$200M",
+    "money": true,
+    "text": "IDB Invest package to First Citizens Bank for SMEs and residential mortgages for low- and middle-income households, announced 10 November 2026",
+    "source": "IDB Invest, 2026",
+    "url": "https://idbinvest.org/en/news-media/idb-invest-provides-us-200-million-first-citizens-bank-expand-financing-smes-and-low-and"
    }
   ],
   "register": [
@@ -62,28 +69,159 @@
     "status": "Issued",
     "tone": "active",
     "name": "Sovereign bond due 2038",
-    "detail": "Ministry of Finance · 9 July 2026",
+    "detail": "Ministry of Finance · priced 9 July 2026 · settled 16 July 2026 · matures 16 July 2038 · coupon 6.20% · 12-year tenor",
     "amount": "$800M",
     "money": true,
-    "text": "A 12-year bond at 6.20%, oversubscribed about four times.",
+    "note": "Oversubscribed by approximately 400%; proceeds repay the 4.50% notes due August 2026 and go to general budgetary purposes",
+    "text": "A 12-year bond of the Republic of Trinidad and Tobago sold in the United States market, the country’s first international bond with a 12-year tenor. Its net proceeds repay the 4.50% notes due in August 2026 and fund the budget as a whole, so they are not earmarked to any one of the seven standards.",
     "by": [
      "Republic of Trinidad and Tobago"
     ],
-    "url": "https://www.finance.gov.tt/media-release-usd-800-million-sovereign-bond-successfully-issued-in-the-u-s-market/"
+    "url": "https://www.finance.gov.tt/wp-content/uploads/2026/07/Media-Release-USD-800-Million-Sovereign-Bond-Successfully-Issued-in-the-U.S.-Market.pdf"
    },
    {
     "cat": "govt",
     "status": "Issued",
     "tone": "active",
     "name": "Sovereign bond due 2036",
-    "detail": "Ministry of Finance · 22 January 2026",
+    "detail": "Ministry of Finance · priced 22 January 2026 · settled 28 January 2026 · matures 28 January 2036 · coupon 6.500% · price 98.552% · 10-year tenor",
     "amount": "$1bn",
     "money": true,
-    "text": "Refinanced the August 2026 external maturity; subscriptions about 2.5 times the issue.",
+    "note": "Oversubscribed about 2.5 times, on an order book of $2.4bn, the largest in five years",
+    "text": "A ten-year senior unsecured bond of the Republic of Trinidad and Tobago sold in the United States market. Its net proceeds paid a tender offer for the 4.500% notes due 2026 and fund the budget as a whole, so they are not earmarked to any one of the seven standards.",
     "by": [
      "Republic of Trinidad and Tobago"
     ],
     "url": "https://www.finance.gov.tt/wp-content/uploads/2026/01/Media-Release-USD-1.0-Billion-Sovereign-Bond-Successfully-Issued-in-the-U.S.-Market.pdf"
+   },
+   {
+    "cat": "multi",
+    "status": "Approved",
+    "tone": "active",
+    "name": "Hydrometeorological and multi-hazard early warning services, Belize and Trinidad and Tobago",
+    "detail": "Green Climate Fund grant through the Caribbean Development Bank · announced 7 August 2026 · GCF grant $24.1M · CDB grant $1.2M · $1.88M from the two governments",
+    "amount": "$27.1M",
+    "money": true,
+    "note": "Shared by Belize and Trinidad and Tobago; the split is not stated; implemented by the Caribbean Meteorological Organisation",
+    "text": "A grant-financed initiative to scale up hydrometeorological services and multi-hazard early warning systems in Belize and Trinidad and Tobago, for the delivery of timely warnings to vulnerable communities. It finances none of the seven standards directly; it bears on shelter and food by giving vulnerable communities warning of hazards.",
+    "by": [
+     "Green Climate Fund",
+     "Caribbean Development Bank",
+     "Caribbean Meteorological Organisation"
+    ],
+    "url": "https://www.caribank.org/node/12178"
+   },
+   {
+    "cat": "regional",
+    "status": "Approved",
+    "tone": "active",
+    "name": "Fourth Agricultural and Industrial Line of Credit, Development Finance Limited",
+    "detail": "Caribbean Development Bank · approved 26 March 2026 · loan of $10M from Ordinary Capital Resources · grant of $126,000",
+    "amount": "$10M",
+    "money": true,
+    "note": "On-lent to SMEs in agriculture, manufacturing, tourism and energy efficiency; expected to benefit women-owned businesses in particular",
+    "text": "A CDB line of credit to Development Finance Limited, which on-lends it to small and medium-sized enterprises in agriculture, manufacturing, tourism and energy efficiency. CDB expects it to benefit women-owned businesses in particular, which bears on the livelihood and food standards.",
+    "by": [
+     "Caribbean Development Bank",
+     "Development Finance Limited"
+    ],
+    "url": "https://www.caribank.org/node/11919"
+   },
+   {
+    "cat": "regional",
+    "status": "Pipeline",
+    "tone": "pipeline",
+    "name": "National Water Sector Transformation Program, Phase 2 (TT-L1071)",
+    "detail": "Inter-American Development Bank · in preparation · preparation grant of $200,000 (TT-T1176) approved 14 November 2025",
+    "amount": "$235M",
+    "money": true,
+    "note": "Not yet approved; to expand access to potable water and make WASA more efficient",
+    "text": "A second IDB loan for the National Water Sector Transformation Program, now in preparation. It aims to expand access to potable water services, make the Water and Sewerage Authority more efficient and strengthen the governance of the water sector, which carries the water standard.",
+    "by": [
+     "Inter-American Development Bank",
+     "Water and Sewerage Authority"
+    ],
+    "url": "https://www.iadb.org/en/project/TT-L1071"
+   },
+   {
+    "cat": "regional",
+    "status": "Approved",
+    "tone": "active",
+    "name": "Resilient School Infrastructure",
+    "detail": "CAF · approved 5 December 2024 · approved with $150M for the Resilient Road Infrastructure Support Programme, $250M in all",
+    "amount": "$100M",
+    "money": true,
+    "note": "Early childhood and care centres and primary and secondary schools, with the promotion of Spanish",
+    "text": "CAF financing for building and rehabilitating early childhood and care centres and primary and secondary school infrastructure, with the promotion of Spanish at both levels. It carries the education standard.",
+    "by": [
+     "CAF"
+    ],
+    "url": "https://www.caf.com/en/currently/news/caf-approves-usd-250-million-for-resilient-road-infrastructure-and-schools-in-trinidad-and-tobago"
+   },
+   {
+    "cat": "regional",
+    "status": "Active",
+    "tone": "active",
+    "name": "National Water Sector Transformation Program (TT-L1055)",
+    "detail": "Inter-American Development Bank · approved 14 December 2022 · 25-year repayment · 5.5-year grace · SOFR-based rate · executed by WASA",
+    "amount": "$80M",
+    "money": true,
+    "note": "An older loan, in implementation; to benefit about 1,025,000 residents (310,665 households) directly",
+    "text": "The first operation of a $315 million conditional credit line, to improve the efficiency, quality, sustainability and resilience of the drinking water supply through network rehabilitation and water loss reduction. It carries the water standard for an estimated 1,025,000 residents, and 279,500 more in surrounding communities.",
+    "by": [
+     "Inter-American Development Bank",
+     "Water and Sewerage Authority"
+    ],
+    "url": "https://www.iadb.org/en/project/TT-L1055"
+   },
+   {
+    "cat": "regional",
+    "status": "Disbursing",
+    "tone": "active",
+    "name": "Urban Upgrading and Revitalization Program (TT-L1056, TT-L1057)",
+    "detail": "Inter-American Development Bank · approved 12 June 2020 · two loans of $32.5M and $17.5M · 24-year repayment · 6.5-year grace · executed by the Ministry of Housing and Urban Development",
+    "amount": "$50M",
+    "money": true,
+    "note": "An older loan, in implementation; 29% and 65% disbursed by June 2025",
+    "text": "Two IDB loans to improve the livability of urban settlements on State-owned lands and the housing conditions of low-income households. They bear on the shelter standard, the one furthest from reach.",
+    "by": [
+     "Inter-American Development Bank",
+     "Ministry of Housing and Urban Development"
+    ],
+    "url": "https://www.iadb.org/en/news/idb-supports-urban-upgrading-and-revitalization-program-trinidad-and-tobago"
+   },
+   {
+    "cat": "private",
+    "status": "Signed",
+    "tone": "active",
+    "name": "First Citizens Bank, SMEs and mortgages for low- and middle-income households",
+    "detail": "IDB Invest · signed 6 October 2026 · announced 10 November 2026 · senior unsecured · $140M committed, of which $40M from JICA through the TADAC fund · $60M uncommitted · up to seven years",
+    "amount": "$200M",
+    "money": true,
+    "note": "IDB Invest’s largest funding programme to a financial institution in the Caribbean; its project page gives a financing amount of $160M",
+    "text": "A senior loan package to First Citizens Bank to expand credit to small and medium-sized enterprises and to low- and middle-income households seeking residential mortgages, and to support the bank’s digital transformation. It bears on the shelter and livelihood standards.",
+    "by": [
+     "IDB Invest",
+     "Japan International Cooperation Agency",
+     "First Citizens Bank"
+    ],
+    "url": "https://idbinvest.org/en/news-media/idb-invest-provides-us-200-million-first-citizens-bank-expand-financing-smes-and-low-and"
+   },
+   {
+    "cat": "private",
+    "status": "Active",
+    "tone": "active",
+    "name": "Trinidad and Tobago Mortgage Bank social bonds",
+    "detail": "IDB Invest · approved 25 November 2024 · signed 20 December 2024 · Series 1 subscribed, announced 1 July 2025 · senior secured · up to TT$550M in all · up to five years",
+    "amount": "TT$250M",
+    "money": true,
+    "note": "About $36.8M; the first social bond offered to investors in the local capital markets",
+    "text": "IDB Invest subscribed to the first series of senior secured social bonds of the Trinidad and Tobago Mortgage Bank, which expand its mortgage portfolio for middle- and lower-middle-income families and for women and women-led households. It carries the shelter standard through affordable home ownership.",
+    "by": [
+     "IDB Invest",
+     "Trinidad and Tobago Mortgage Bank"
+    ],
+    "url": "https://idbinvest.org/en/news-media/idb-invest-and-ttmb-expand-access-affordable-housing-social-bonds-trinidad-and-tobago"
    }
   ]
  },
@@ -129,7 +267,43 @@
  },
  "enterprises": {
   "heading": "Already working in Trinidad and Tobago.",
-  "items": []
+  "items": [
+   {
+    "standard": "Food",
+    "name": "D Market Movers",
+    "text": "An online platform, launched in 2009, that sources fresh local produce for online ordering and has grown to more than 300 farmers and artisans and more than 10,000 online shoppers, with the mission of enhancing farmers’ livelihoods and reducing food waste.",
+    "source": "ANSA Caribbean Awards, 2025",
+    "url": "https://ansacaribbeanawards.com/laureates/rachel-renie-gonzales/"
+   },
+   {
+    "standard": "Shelter",
+    "name": "Habitat for Humanity Trinidad and Tobago",
+    "text": "A non-profit at work since 1997 that builds homes in stages, repairs homes and offers microfinance to homeowners, with mortgage payments of about US$100 a month over 30 years, and that served 5,630 individuals in fiscal year 2025.",
+    "source": "Habitat for Humanity, 2025",
+    "url": "https://www.habitat.org/sites/default/files/documents/ESP_T%26T_AF25.pdf"
+   },
+   {
+    "standard": "Livelihood",
+    "name": "EcoWash",
+    "text": "A carwash that uses only two litres of water per vehicle and employs young people; it washed more than 45,000 vehicles and saved more than 8 million litres of water in two years, and won Youth Business International’s Social Entrepreneurship Award 2024.",
+    "source": "Youth Business International, 2024",
+    "url": "https://youthbusiness.org/?p=3215"
+   },
+   {
+    "standard": "Livelihood",
+    "name": "Term Finance (SME TT) Limited",
+    "text": "A lender to micro, small and medium-sized enterprises whose portfolio the IDB is financing, under a loan approved in December 2025, with a particular focus on financial inclusion for women-led firms, which are expected to be at least half of the supported portfolio.",
+    "source": "IDB, 2025",
+    "url": "https://www.iadb.org/en/project/TT-L1072"
+   },
+   {
+    "standard": "Livelihood",
+    "name": "oDeliver",
+    "text": "A logistics and payment collection venture financed under the IDB’s Social Entrepreneurship Program, approved in December 2025, to give micro, small and medium-sized enterprises and consumers secure, efficient and accessible access to the digital economy.",
+    "source": "IDB, 2025",
+    "url": "https://www.iadb.org/en/project/TT-L1074"
+   }
+  ]
  },
  "coverage": {
   "set_by": "Shelter",
@@ -263,5 +437,5 @@
  ],
  "dispatches": [],
  "checked": "2026-11-19T20:32Z",
- "reviewed": "2026-11-10T23:00Z"
+ "reviewed": "2026-11-21T07:26Z"
 }
