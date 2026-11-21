@@ -34,13 +34,15 @@ import json
 import math
 import re
 import sys
+import unicodedata
 from datetime import datetime, timezone
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 PAGES = ROOT / 'pages'
 DATA = ROOT / 'data'
-VERSION = '7.0.1'  # money figures in ISO codes (BHD, CNY, SDR) count as money (Blueprints Steward, 18 Nov 2026)
+VERSION = '7.1'  # one alphabetical order, accents set aside; Palestine links to /blueprints/state-of-palestine/ (Preeti Sinha, President and CEO, 21 Nov 2026)
+# 7.0.1: money figures in ISO codes (BHD, CNY, SDR) count as money (Blueprints Steward, 18 Nov 2026)
 
 ORDER = [
     'nations-menu.html',      # the moving list of 195 nations (also on the homepage)
@@ -299,6 +301,12 @@ def tile_box(bb):
 
 
 # ---------------------------------------------------------------- the open blueprints
+def fold(text):
+    """One alphabetical order across the site: letters only, accents set aside (Côte d’Ivoire with C, Türkiye with T),
+    on the request of Preeti Sinha, President and CEO, 21 November 2026."""
+    return ''.join(c for c in unicodedata.normalize('NFD', text) if not unicodedata.combining(c)).lower()
+
+
 def read_cards(open_slugs, nat, paths):
     cards = []
     for slug in open_slugs:
@@ -319,7 +327,7 @@ def read_cards(open_slugs, nat, paths):
             'steward': steward,
             'figure': fig,
         })
-    cards.sort(key=lambda c: c['name'].lower())
+    cards.sort(key=lambda c: fold(c['name']))
     return cards
 
 
@@ -393,7 +401,7 @@ def main():
     blocks = []
     for i, r in enumerate(regions):
         items = []
-        names = sorted(r['slugs'], key=lambda s: plain(nat[s][0]).lower())
+        names = sorted(r['slugs'], key=lambda s: fold(plain(nat[s][0])))
         for s in names:
             nm = ent(nat[s][0])
             if s in open_set:

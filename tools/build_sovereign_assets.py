@@ -24,6 +24,7 @@ import math
 import re
 import subprocess
 import sys
+import unicodedata
 import tempfile
 from datetime import date
 from html.parser import HTMLParser
@@ -106,6 +107,12 @@ PLACES.update({
 MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October',
           'November', 'December']
 
+def fold(text):
+    """One alphabetical order across the site: letters only, accents set aside (Côte d’Ivoire with C, Türkiye with T),
+    on the request of Preeti Sinha, President and CEO, 21 November 2026."""
+    return ''.join(c for c in unicodedata.normalize('NFD', text) if not unicodedata.combining(c)).lower()
+
+
 
 def ent(s):
     """HTML-escape and write every character above ASCII as an entity, so the page stays ASCII."""
@@ -147,7 +154,7 @@ def count_ledger():
                         'lat': lat, 'lon': lon, 'top': top})
     if missing:
         sys.exit('cannot count the ledger:\n  ' + '\n  '.join(missing))
-    nations.sort(key=lambda n: n['name'])
+    nations.sort(key=lambda n: fold(n['name']))
     return {'assets': sum(n['assets'] for n in nations), 'nations': len(nations), 'classes': len(CLASSES)}, nations
 
 

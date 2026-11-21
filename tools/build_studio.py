@@ -17,11 +17,18 @@ import html
 import json
 import re
 import sys
+import unicodedata
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 PAGES = ROOT / 'pages'
 PAGE = PAGES / 'design-studio.html'
+
+def fold(text):
+    """One alphabetical order across the site: letters only, accents set aside (Côte d’Ivoire with C, Türkiye with T),
+    on the request of Preeti Sinha, President and CEO, 21 November 2026."""
+    return ''.join(c for c in unicodedata.normalize('NFD', text) if not unicodedata.combining(c)).lower()
+
 
 
 def ascii_html(text):
@@ -43,7 +50,7 @@ def nations():
         seen.add(url)
         name = re.sub(r'\s*blueprint\b.*$', '', entry.get('title', ''), flags=re.I).strip()
         out.append((name, url))
-    out.sort(key=lambda p: p[0].replace('ô', 'o').lower())
+    out.sort(key=lambda p: fold(p[0]))
     return out
 
 

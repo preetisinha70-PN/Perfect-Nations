@@ -61,7 +61,8 @@ OUT = PAGES / 'state-of-nations.html'
 NATION_DATA = DATA / 'solutions-by-nation.json'
 sys.path.insert(0, str(ROOT / 'tools'))
 
-VERSION = '9.1'  # each standard filter shows the Solutions designed for it (the President and CEO, 21 Nov 2026)
+VERSION = '9.2'  # the nation list sorts by letters alone, accents set aside; Palestine links to its page (Preeti Sinha, President and CEO, 21 Nov 2026)
+# 9.1: each standard filter shows the Solutions designed for it (the President and CEO, 21 Nov 2026)
 # 8.5: Solutions No. 45 to 50: Cameroon, Chad, Cuba, Iraq, Palestine and Nigeria, after Energy and Health were re-measured (the Steward-General, 12 Nov 2026)
 # v8.4: light reading sections, Earthrise accents (the Steward-General, 10 Nov 2026)
 # v8.3: Discuss this Solution in the reader of every Solution (the Steward-General, 10 Nov 2026)
@@ -165,6 +166,12 @@ AT_WORK = {
     'Health': r'\bhealth|hospital|clinic|vaccin|medical',
     'Livelihood': r'\bjobs?\b|employment|small business|\bm?smes?\b|enterprise|livelihood|entrepreneur',
 }
+
+def fold(text):
+    """One alphabetical order across the site: letters only, accents set aside (Côte d’Ivoire with C, Türkiye with T),
+    on the request of Preeti Sinha, President and CEO, 21 November 2026."""
+    return ''.join(c for c in unicodedata.normalize('NFD', text) if not unicodedata.combining(c)).lower()
+
 
 
 def a(text):
@@ -283,7 +290,7 @@ def nations(solutions):
             'solutions': sorted([s['no'] for s in solutions if s.get('nation') == name and is_design(s)], reverse=True),
             'design': design_of(solutions, name),
         })
-    rows.sort(key=lambda r: r['name'].replace('ô', 'o').lower())
+    rows.sort(key=lambda r: fold(r['name']))
     return rows
 
 

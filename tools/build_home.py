@@ -24,7 +24,8 @@ ROOT = Path(__file__).resolve().parent.parent
 PAGES = ROOT / 'pages'
 DATA = ROOT / 'data'
 SITE = 'https://perfectnations.com'
-VERSION = '13.0'  # the Mission, the hero, Governance first, Imagine, the Studio and the Solutions name innovative financing for development alone; no Steward named (the President and CEO, 16 Nov 2026)
+VERSION = '13.1'  # Palestine links to /blueprints/state-of-palestine/ (hero v8.1, nations menu v3.2), 21 Nov 2026
+# 13.0: the Mission, the hero, Governance first, Imagine, the Studio and the Solutions name innovative financing for development alone; no Steward named (the President and CEO, 16 Nov 2026)
 # v12.5: the globe draws the borders of newly opened nations at their raised height (hero v7.9; the Steward-General, 11 Nov 2026)
 # v12.4: Governance first: one line on great local leadership, honest, dedicated and committed to basic standards of living for every citizen (the Steward-General, 11 Nov 2026)
 # v12.3: the globe's borders are thin dark ribbons, clear on phones (hero v7.8; the Steward-General, 11 Nov 2026)
