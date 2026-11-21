@@ -61,7 +61,7 @@ OUT = PAGES / 'state-of-nations.html'
 NATION_DATA = DATA / 'solutions-by-nation.json'
 sys.path.insert(0, str(ROOT / 'tools'))
 
-VERSION = '9.0'  # no closing technology sentence, no Steward named (the President and CEO, 16 Nov 2026)
+VERSION = '9.1'  # each standard filter shows the Solutions designed for it (the President and CEO, 21 Nov 2026)
 # 8.5: Solutions No. 45 to 50: Cameroon, Chad, Cuba, Iraq, Palestine and Nigeria, after Energy and Health were re-measured (the Steward-General, 12 Nov 2026)
 # v8.4: light reading sections, Earthrise accents (the Steward-General, 10 Nov 2026)
 # v8.3: Discuss this Solution in the reader of every Solution (the Steward-General, 10 Nov 2026)
@@ -323,7 +323,8 @@ def nrm(t):
 
 
 def std_chips(stds):
-    return '<ul class="sn-std">%s</ul>' % ''.join('<li>%s</li>' % a(s) for s in stds)
+    """The standards a Solution moves; the first (the one it is designed for) is filled and decides its filter."""
+    return '<ul class="sn-std">%s</ul>' % ''.join(('<li class="is-lead" title="Designed for %s">%s</li>' % (a(s), a(s))) if i == 0 else '<li>%s</li>' % a(s) for i, s in enumerate(stds))
 
 
 def solution_card(s):
