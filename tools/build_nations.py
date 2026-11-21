@@ -92,6 +92,7 @@ import html
 import json
 import math
 import re
+import unicodedata
 import sys
 import urllib.parse
 from datetime import datetime, timezone
@@ -99,7 +100,8 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 PAGES, DATA, HERE = ROOT / 'pages', ROOT / 'data', ROOT / 'tools' / 'nation'
-VERSION = '14.5'  # What we do: the firm line ends at "a new-age sovereign advisory firm." (Preeti Sinha, 21 Nov 2026)
+VERSION = '14.6'  # Previous and next blueprint, A to Z, above All 195 nations (Preeti Sinha, 21 Nov 2026)
+# 14.5: What we do: the firm line ends at "a new-age sovereign advisory firm." (Preeti Sinha, 21 Nov 2026)
 # 14.4: Already working in: the line "None is a partner of Perfect Nations." is removed (Preeti Sinha, 21 Nov 2026)
 # 14.3: page-level corrections from the Nation Stewards' weekly reviews (17 Nov 2026)
 # 14.2: the cup: every sovereign asset, valued; What we do compressed on laptops and phones (the Steward-General, 16 Nov 2026)
@@ -1218,11 +1220,11 @@ def close(d, p):
         '<p class="bpx-lead">%s</p><div class="bpx-btns">'
         '<a class="bpx-btn" href="https://perfectnations.com/design-studio/" target="_blank" rel="noopener noreferrer">Enter the ReDesign Studio</a>'
         '<a class="bpx-btn bpx-btn--line" href="https://perfectnations.com/contact/?nation=%s" target="_blank" rel="noopener noreferrer">Write to us</a>'
-        '<a class="bpx-btn bpx-btn--line" href="https://perfectnations.com/blueprints/" target="_blank" rel="noopener noreferrer">All 195 nations</a></div>'
+        '%s<a class="bpx-btn bpx-btn--line" href="https://perfectnations.com/blueprints/" target="_blank" rel="noopener noreferrer">All 195 nations</a></div>'
         '<details class="bpx-sources" id="bp-sources"><summary>Sources</summary><ol>%s</ol></details></div>%s</div></section>'
         '<div class="bpx-toast" id="bp-toast" role="status" aria-live="polite" hidden><span>Opening your email app. If nothing opens, write to <b>contact@perfectnations.com</b></span>'
         '<button type="button" id="bp-toast-copy">Copy address</button><button type="button" class="bpx-x" id="bp-toast-x" aria-label="Close"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6.5 6.5l11 11M17.5 6.5l-11 11" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button></div>'
-        % (ent(name), ent(name), ent(one_line(p['close_lead'])), urllib.parse.quote(slug), srcs,
+        % (ent(name), ent(name), ent(one_line(p['close_lead'])), urllib.parse.quote(slug), prev_next(slug), srcs,
            flag_fig(name, slug, (p.get('portrait') or {}).get('title') or ('%s in Bloom' % name))))
 
 
@@ -1230,6 +1232,41 @@ RULE = '<div class="bpx-rule" aria-hidden="true"></div>'
 
 
 # ---------------------------------------------------------------- the page
+
+NEIGHBOURS = {}
+
+
+def neighbours(slug):
+    """v14.6: the blueprints before and after this one, in alphabetical order of the names visitors see (accents set
+    aside, so Côte d’Ivoire follows Costa Rica and Türkiye follows Tunisia). The order wraps: Zimbabwe leads to
+    Afghanistan. Paths come from window.PNHG_CFG.paths in pages/home-hero.html (Côte d’Ivoire lives at cote-d-ivoire)."""
+    if not NEIGHBOURS:
+        src = (PAGES / 'home-hero.html').read_text(encoding='utf-8')
+        c = re.search(r'window\.PNHG_CFG=(\{.*?\});\s*\n', src, re.S)
+        paths = json.loads(c.group(1)).get('paths', {}) if c else {}
+        rows = []
+        for sl in open_slugs():
+            f = DATA / ('%s.json' % sl)
+            if f.exists():
+                nm = json.loads(f.read_text(encoding='utf-8'))['nation']
+                key = unicodedata.normalize('NFKD', plain(nm)).encode('ascii', 'ignore').decode().lower()
+                rows.append((key, sl, nm, 'https://perfectnations.com/blueprints/%s/' % paths.get(sl, sl)))
+        rows.sort()
+        for i, r in enumerate(rows):
+            NEIGHBOURS[r[1]] = (rows[i - 1][2:], rows[(i + 1) % len(rows)][2:])
+    return NEIGHBOURS.get(slug)
+
+
+def prev_next(slug):
+    nb = neighbours(slug)
+    if not nb:
+        return ''
+    (pn, pu), (nn, nu) = nb
+    return ('<nav class="bpx-pn" aria-label="Blueprints, A to Z">'
+            '<a class="bpx-btn bpx-btn--line bpx-pn__a bpx-pn__a--prev" href="%s" rel="prev" aria-label="Previous blueprint: %s">%s</a>'
+            '<a class="bpx-btn bpx-btn--line bpx-pn__a" href="%s" rel="next" aria-label="Next blueprint: %s">%s</a></nav>'
+            % (pu, ent(pn), ent(pn), nu, ent(nn), ent(nn)))
+
 
 def open_slugs():
     man = json.loads((PAGES / 'manifest.json').read_text(encoding='utf-8'))
@@ -1255,6 +1292,7 @@ def build(slug, sbn, son, today):
     script = (HERE / 'script.js').read_text(encoding='utf-8').replace('/*pn:cfg*/', 'var CFG = %s;' % js_str(cfg))
     head = (
         '<!-- PERFECT NATIONS . NATIONAL BLUEPRINT . %s . v%s . %s . Built by tools/build_nations.py: never edit by hand. -->\n'
+        '<!-- v14.6 (21 November 2026): above All 195 nations, the previous and next blueprints, A to Z. -->\n'
         '<!-- v14.5 (21 November 2026): What we do: the firm line now ends at "a new-age sovereign advisory firm." -->\n'
         '<!-- v14.4 (21 November 2026): Already working in: the line "None is a partner of Perfect Nations." is removed. -->\n'
         '<!-- v14.2 (16 November 2026): the cup counts every sovereign asset, and What we do is about a third shorter. -->\n'

@@ -485,6 +485,11 @@
 #R .bpx-close h2.bpx-h2{ max-width:26ch; }
 #R .bpx-close .bpx-lead{ margin-top:10px; }
 #R .bpx-close .bpx-btns{ margin-top:14px; }
+/* v14.6: the previous and next blueprints, A to Z, side by side above All 195 nations; the previous one points back */
+#R .bpx-pn{ display:flex; gap:10px 12px; }
+#R .bpx-pn__a--prev{ flex-direction:row-reverse; }
+#R .bpx-pn__a--prev::after{ content:"\2190"; }
+#R .bpx-pn__a--prev:hover::after{ transform:translateX(-5px); }
 #R .bpx-port--flag{ width:260px; max-width:100%; }
 #R .bpx-port--flag .bpx-frame{ width:100%; }
 #R .bpx-port--flag .bpx-frame img{ display:block; width:100%; height:auto; aspect-ratio:1; }
@@ -522,6 +527,7 @@
   #R .bpx-head{ gap:8px; margin-bottom:14px; }
   #R .bpx-btns{ flex-direction:column; align-items:stretch; }
   #R .bpx-btn{ width:100%; padding:12px 16px 10px; font-size:.7rem; letter-spacing:.14em; }
+  #R .bpx-pn .bpx-pn__a{ flex:1 1 0; min-width:0; width:auto; padding:12px 10px 10px; gap:8px; letter-spacing:.1em; }
   #R .bpx-showall{ width:100%; justify-content:center; }
   #R .bpx-rule::after{ width:17px; height:17px; }
   #R .bpx-rule::before{ width:7px; height:7px; }
