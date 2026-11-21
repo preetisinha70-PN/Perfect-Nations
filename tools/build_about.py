@@ -26,9 +26,8 @@ it stands (its banner dropped), with a one-line note naming the file and its ver
   GENERATED:GOVERNANCE Governance first and the Perfect Nations Cup, the whole logo on its seal
                       (pages/home-governance.html, #pn-governance); added in v12.0, straight after the hero
   GENERATED:STEPS     What we do: Assets. Capital. Solutions. (pages/home-steps.html, #pn-steps)
-  GENERATED:ASSETS    01 Assets, the gold: Sovereign Assets (pages/home-assets.html, #pn-assets)
-  GENERATED:CAPITAL   02 Capital, the laurels: Capital Architecture (pages/home-capital.html, #pn-capital)
-  GENERATED:CAPITA    03 Solutions, the seven stars: Perfect Capita (pages/home-perfect-capita.html, #pn-capita)
+  (ASSETS, CAPITAL and CAPITA, the detailed sections, were removed in v13.1, 21 Nov 2026: What we do now
+  opens the Sovereign Assets, Capital Architecture and Perfect Capita pages themselves.)
   GENERATED:VISION    The Founder's Vision (pages/home-vision.html, #pn-vision)
   GENERATED:PLEDGE    the close: What could your nation become? The ReDesign Studio and its three ways
                       to begin (pages/home-pledge.html, #pn-pledge); added in v11.4
@@ -53,15 +52,12 @@ ROOT = Path(__file__).resolve().parent.parent
 PAGES = ROOT / 'pages'
 DATA = ROOT / 'data'
 PAGE = PAGES / 'about.html'
-VERSION = '13.0'
+VERSION = '13.1'
 RESEARCH_STEWARDS = 6
 # The homepage parts this page shows, by block name (see the docstring).
 PARTS = [
     ('GOVERNANCE', 'home-governance.html'),
     ('STEPS', 'home-steps.html'),
-    ('ASSETS', 'home-assets.html'),
-    ('CAPITAL', 'home-capital.html'),
-    ('CAPITA', 'home-perfect-capita.html'),
     ('VISION', 'home-vision.html'),
     ('PLEDGE', 'home-pledge.html'),
 ]
