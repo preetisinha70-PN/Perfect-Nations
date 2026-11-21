@@ -278,15 +278,30 @@
     var t2 = q('.bpx-t[href="#bp-capital"] .bpx-t__q');
     if (t2) t2.textContent = lines.length === 1 ? 'One instrument on record, sourced.' : lines.length + ' instruments and investments on record, every one sourced.';
   }
-  function assets(list) {
+  function assets(list, pics) {
     var ul = q('.bpx-acards'); if (!ul || !list || !list.length) return;
     var items = list.filter(function (x) { return x && T(x.name) && T(x.figure); }); if (!items.length) return;
     ul.textContent = ''; ul.setAttribute('data-n', String(items.length));
+    /* v15.0 test: picture cards when the nation's data switches them on (assets.pictures) */
+    ul.classList.toggle('bpx-acards--pics', !!pics);
     items.forEach(function (x, i) {
       var li = el('li', 'bpx-acard'); li.style.setProperty('--i', String(i));
+      var img = pics && x.images && x.images[0], bar = null;
+      if (img && /^https:\/\//.test(img)) {
+        li.classList.add('bpx-acard--pic');
+        var f = document.createElement('figure'); f.className = 'bpx-acard__pic';
+        var im = document.createElement('img'); im.src = img; im.alt = T(x.alt) ? x.alt : x.name;
+        if (x.thumb && /^https:\/\//.test(x.thumb)) { im.srcset = x.thumb + ' 300w, ' + img + ' 768w'; im.sizes = '(max-width:640px) 80vw, 33vw'; }
+        im.width = 768; im.height = 573; im.loading = 'lazy'; im.decoding = 'async';
+        im.onerror = function () { if (f.parentNode) f.parentNode.removeChild(f); };
+        f.appendChild(im); li.appendChild(f);
+        var m = /^\s*([0-9]+(?:\.[0-9]+)?)\s*%\s*$/.exec(String(x.figure));
+        if (m && +m[1] > 0 && +m[1] <= 100) { bar = el('span', 'bpx-acard__bar'); bar.setAttribute('aria-hidden', 'true'); var bb = el('b', ''); bb.style.width = m[1] + '%'; bar.appendChild(bb); }
+      }
       var n = el('span', 'bpx-acard__n', pad(i + 1)); n.setAttribute('aria-hidden', 'true'); li.appendChild(n);
       var fig = el('p', 'bpx-acard__fig'), b = el('b', '', x.figure); fig.appendChild(b);
       if (T(x.label)) fig.appendChild(el('span', '', x.label)); li.appendChild(fig);
+      if (bar) li.appendChild(bar);
       li.appendChild(el('h3', '', x.name));
       if (T(x.text)) li.appendChild(el('p', '', x.text));
       ul.appendChild(li);
@@ -516,7 +531,7 @@
     try { glance(d, bind); } catch (e) {}
     var c = d.capital, a = d.assets, e2 = d.enterprises;
     if (c) { head('bp-cap-h', c.heading); try { record(c.record); } catch (e) {} try { register(c.register); } catch (e) {} }
-    if (a) { head('bp-assets-h', a.heading); try { assets(a.items); } catch (e) {} }
+    if (a) { head('bp-assets-h', a.heading); try { assets(a.items, a.pictures); } catch (e) {} }
     if (e2) { head('bp-ent-h', e2.heading); try { enterprises(e2.items); } catch (e) {} }
     try { newswire(d); } catch (e) {}
     near(q('#bp-solutions'), loadSolutions, '900px 0px');

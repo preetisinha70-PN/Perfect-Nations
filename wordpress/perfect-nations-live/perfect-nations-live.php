@@ -2,7 +2,7 @@
 /**
  * Plugin Name:       Perfect Nations Live Pages
  * Description:       Serves each Perfect Nations page from the Perfect Nations GitHub repository, so a page updates without copying and pasting its code. Pages stay in Elementor; if GitHub cannot be reached, the page shows the code pasted in its widget.
- * Version:           1.4.0
+ * Version:           1.5.1
  * Requires at least: 6.0
  * Requires PHP:      7.4
  * Author:            Perfect Nations
@@ -32,6 +32,18 @@
  *    same-site redirects, {"redirects": {"/old-path/": "/new-path/"}}, answered with a 301.
  * 7. v1.4: an address listed under "redirects" is left out of the Rank Math XML sitemap, so Google
  *    is not asked to index a page that only leads elsewhere ("Page with redirect" in Search Console).
+ * 8. v1.5: letters from the Contact page are sent straight from the site (POST /wp-json/pn-live/v1/letter),
+ *    by WordPress's own mail, to contact@perfectnations.com (gallery@perfectnations.com for Art of Nations),
+ *    with Reply-To set to the writer. Nothing is kept: no database row, no log of the letter. A hidden field
+ *    turns away robots; a letter sent within three seconds of opening the page, or past the limits (ten an
+ *    hour from one connection, two hundred a day for the site), is not mailed from here. In those cases, and
+ *    whenever the site cannot send, the page opens the visitor's own email with the same letter, as before.
+ *    Settings > Perfect Nations Live > Send a test letter checks that mail leaves the site.
+ * 9. v1.5.1: the Reply-To name is no longer wrapped in quotation marks of its own (WordPress quotes it when
+ *    needed; the double quoting gave a malformed-looking header, "\"Name\"", on letters that landed in
+ *    Spam), and a filled robot trap no longer pretends the letter was sent: the page opens the writer's own
+ *    email instead, so a letter can never be dropped silently (for example if a browser's autofill fills the
+ *    hidden field).
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -40,7 +52,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 final class PN_Live_Pages {
 
-	const VERSION  = '1.4.0';
+	const VERSION  = '1.5.1';
 	const REPO     = 'preetisinha70-PN/perfect-nations';
 	const BRANCH   = 'main';
 	const MANIFEST = 'pages/manifest.json';
@@ -50,6 +62,11 @@ final class PN_Live_Pages {
 	const RETRY    = 120;      // seconds to wait after a failed fetch before trying again
 	const MAX      = 2500000;  // largest file accepted, in bytes
 	const OPT      = 'pn_live_';
+	const LETTER_MAIN = 'contact@perfectnations.com';  // every letter, except
+	const LETTER_ART  = 'gallery@perfectnations.com';  // letters about Art of Nations
+	const LETTER_HOUR = 10;    // letters one connection may send in an hour
+	const LETTER_DAY  = 200;   // letters the whole site may send in a day
+	const LETTER_MIN  = 3000;  // milliseconds a person needs, at least, between opening the page and sending
 
 	/** @var PN_Live_Pages|null */
 	private static $instance = null;
@@ -81,6 +98,7 @@ final class PN_Live_Pages {
 		add_action( 'admin_post_pn_live_refresh', array( $this, 'handle_refresh' ) );
 		add_action( 'admin_post_pn_live_export', array( $this, 'handle_export' ) );
 		add_action( 'admin_post_pn_live_toggle', array( $this, 'handle_toggle' ) );
+		add_action( 'admin_post_pn_live_test_letter', array( $this, 'handle_test_letter' ) );
 		add_filter( 'plugin_action_links_' . plugin_basename( __FILE__ ), array( $this, 'action_links' ) );
 		// v1.2: background refresh, from GitHub's call and from WordPress's own schedule.
 		add_action( 'rest_api_init', array( $this, 'rest_routes' ) );
@@ -590,6 +608,116 @@ final class PN_Live_Pages {
 			'permission_callback' => '__return_true',
 			'callback'            => array( $this, 'rest_refresh' ),
 		) );
+		/* v1.5: the Contact page's letters. Open to anyone, like any contact form; see rest_letter for the limits. */
+		register_rest_route( 'pn-live/v1', '/letter', array(
+			'methods'             => 'POST',
+			'permission_callback' => '__return_true',
+			'callback'            => array( $this, 'rest_letter' ),
+		) );
+	}
+
+	/**
+	 * v1.5: sends one letter from the Contact page. The page writes the letter (subject and body,
+	 * exactly as the visitor's own email would have carried it); the site only checks it and mails it.
+	 * The address it goes to is chosen here, never by the page. Nothing is stored.
+	 */
+	public function rest_letter( $request ) {
+		$p = $request->get_json_params();
+		if ( ! is_array( $p ) ) {
+			$p = $request->get_body_params();
+		}
+		$p = is_array( $p ) ? $p : array();
+
+		// A filled hidden field (a robot, or a browser's autofill): nothing is mailed from here, and the page
+		// opens the writer's own email instead, so a real letter is never lost (v1.5.1).
+		$trap = isset( $p['extra'] ) ? trim( (string) $p['extra'] ) : '';
+		if ( '' !== $trap ) {
+			return new WP_REST_Response( array( 'status' => 'check' ), 400 );
+		}
+		// A letter sent within seconds of opening the page is not mailed from here; the page then opens
+		// the writer's own email, so a real person (a fast one, with autofill) still reaches Perfect Nations.
+		$took = isset( $p['t'] ) ? (int) $p['t'] : 0;
+		if ( $took < self::LETTER_MIN ) {
+			return new WP_REST_Response( array( 'status' => 'too-fast' ), 400 );
+		}
+
+		$name    = isset( $p['name'] ) ? sanitize_text_field( (string) $p['name'] ) : '';
+		$email   = isset( $p['email'] ) ? sanitize_email( (string) $p['email'] ) : '';
+		$subject = isset( $p['subject'] ) ? sanitize_text_field( (string) $p['subject'] ) : '';
+		$body    = isset( $p['body'] ) ? sanitize_textarea_field( (string) $p['body'] ) : '';
+		$to      = ( isset( $p['to'] ) && 'art' === $p['to'] ) ? self::LETTER_ART : self::LETTER_MAIN;
+
+		if ( '' === $name || $this->len( $name ) > 120 ) {
+			return new WP_REST_Response( array( 'status' => 'invalid', 'field' => 'name' ), 400 );
+		}
+		if ( '' === $email || ! is_email( $email ) ) {
+			return new WP_REST_Response( array( 'status' => 'invalid', 'field' => 'email' ), 400 );
+		}
+		if ( $this->len( $body ) < 5 || $this->len( $body ) > 12000 ) {
+			return new WP_REST_Response( array( 'status' => 'invalid', 'field' => 'message' ), 400 );
+		}
+		if ( '' === $subject ) {
+			$subject = 'A letter from the Contact page';
+		}
+		if ( $this->len( $subject ) > 250 ) {
+			$subject = function_exists( 'mb_substr' ) ? mb_substr( $subject, 0, 250 ) : substr( $subject, 0, 250 );
+		}
+
+		// Limits: per connection (kept only as a one-way hash, for an hour) and for the whole site (per day).
+		$ip   = isset( $_SERVER['REMOTE_ADDR'] ) ? (string) $_SERVER['REMOTE_ADDR'] : '';
+		$hour = self::OPT . 'lh_' . substr( md5( $ip . wp_salt( 'nonce' ) ), 0, 20 );
+		$day  = self::OPT . 'ld_' . gmdate( 'Ymd' );
+		$sent_hour = (int) get_transient( $hour );
+		$sent_day  = (int) get_transient( $day );
+		if ( $sent_hour >= self::LETTER_HOUR || $sent_day >= self::LETTER_DAY ) {
+			return new WP_REST_Response( array( 'status' => 'busy' ), 429 );
+		}
+
+		$who     = trim( preg_replace( '/[^\p{L}\p{M}\p{N} .\'\-]/u', '', $name ) );
+		$headers = array(
+			'Content-Type: text/plain; charset=UTF-8',
+			'Reply-To: ' . ( '' !== $who ? $who . ' ' : '' ) . '<' . $email . '>',
+		);
+		$ok = $this->mail( $to, $subject, $body, $headers );
+		if ( ! $ok ) {
+			return new WP_REST_Response( array( 'status' => 'failed' ), 502 );
+		}
+		set_transient( $hour, $sent_hour + 1, HOUR_IN_SECONDS );
+		set_transient( $day, $sent_day + 1, DAY_IN_SECONDS );
+		update_option( self::OPT . 'letters', array( 'last' => time(), 'today' => $sent_day + 1, 'day' => gmdate( 'Y-m-d' ) ), false );
+		return new WP_REST_Response( array( 'status' => 'sent' ), 200 );
+	}
+
+	/* WordPress's own mail, signed "Perfect Nations website" (the From address stays the site's, or the mail plugin's). */
+	private function mail( $to, $subject, $body, $headers ) {
+		$from = function () {
+			return 'Perfect Nations website';
+		};
+		add_filter( 'wp_mail_from_name', $from, 99 );
+		$ok = wp_mail( $to, $subject, $body, $headers );
+		remove_filter( 'wp_mail_from_name', $from, 99 );
+		return (bool) $ok;
+	}
+
+	private function len( $text ) {
+		return function_exists( 'mb_strlen' ) ? mb_strlen( $text ) : strlen( $text );
+	}
+
+	/* Settings > Perfect Nations Live > Send a test letter: shows whether mail leaves the site. */
+	public function handle_test_letter() {
+		if ( ! current_user_can( 'manage_options' ) ) {
+			wp_die( 'Not allowed.' );
+		}
+		check_admin_referer( 'pn_live_test_letter' );
+		$user = wp_get_current_user();
+		$body = "Dear Perfect Nations,\n\nThis is a test letter, sent from Settings > Perfect Nations Live. If it reached this inbox, letters from the Contact page arrive here too.\n\nWith best regards,\nPerfect Nations website\n\n\u{2014}\nSent from perfectnations.com/wp-admin/ on " . gmdate( 'j F Y, H:i' ) . ' UTC';
+		$headers = array( 'Content-Type: text/plain; charset=UTF-8' );
+		if ( $user && is_email( $user->user_email ) ) {
+			$headers[] = 'Reply-To: <' . $user->user_email . '>';
+		}
+		$ok = $this->mail( self::LETTER_MAIN, 'Test letter from the Contact page', $body, $headers );
+		wp_safe_redirect( admin_url( 'options-general.php?page=pn-live&pn-done=' . ( $ok ? 'letter-sent' : 'letter-failed' ) ) );
+		exit;
 	}
 
 	public function rest_refresh() {
@@ -700,6 +828,10 @@ final class PN_Live_Pages {
 			echo '<div class="notice notice-success"><p>The Additional CSS from GitHub is served again.</p></div>';
 		} elseif ( 'toggled' === $notice ) {
 			echo '<div class="notice notice-success"><p>Saved.</p></div>';
+		} elseif ( 'letter-sent' === $notice ) {
+			echo '<div class="notice notice-success"><p>The test letter left the site, addressed to ' . esc_html( self::LETTER_MAIN ) . '. If it is not in that inbox within a few minutes, look in Spam; if it is there, or missing, install a mail plugin such as WP Mail SMTP and connect it to the mailbox of perfectnations.com.</p></div>';
+		} elseif ( 'letter-failed' === $notice ) {
+			echo '<div class="notice notice-error"><p>WordPress could not send the test letter. Until mail works, the Contact page opens each visitor&rsquo;s own email instead, so no letter is lost. A mail plugin such as WP Mail SMTP, connected to the mailbox of perfectnations.com, fixes this.</p></div>';
 		}
 		echo '<p>Pages listed below are served from the GitHub repository <code>' . esc_html( self::REPO ) . '</code> (branch <code>' . esc_html( self::BRANCH ) . '</code>), in place of the code pasted in their Elementor widget. A change merged into GitHub reaches the site within about a minute (GitHub tells the site; the site also checks by itself every ten minutes), or at once with Refresh now. Pages stay in the page cache until their code changes, so visitors never wait for GitHub.</p>';
 		$meta = get_option( self::OPT . 'meta', array() );
@@ -735,6 +867,15 @@ final class PN_Live_Pages {
 		echo '<form method="post" action="' . esc_url( admin_url( 'admin-post.php' ) ) . '" style="display:inline-block;margin:0 0 16px 0">';
 		wp_nonce_field( 'pn_live_toggle' );
 		echo '<input type="hidden" name="action" value="pn_live_toggle"><button class="button">' . ( $on ? 'Turn live pages off' : 'Turn live pages on' ) . '</button></form>';
+
+		echo '<h2>Letters from the Contact page</h2><p>Letters are sent straight from the site to <code>' . esc_html( self::LETTER_MAIN ) . '</code> (Art of Nations: <code>' . esc_html( self::LETTER_ART ) . '</code>), with Reply-To set to the writer, so pressing Reply answers them. Nothing is kept on the site. If the site cannot send, the page opens the visitor&rsquo;s own email instead.</p>';
+		$letters = get_option( self::OPT . 'letters', array() );
+		if ( is_array( $letters ) && ! empty( $letters['last'] ) ) {
+			echo '<p><strong>Last letter sent:</strong> ' . esc_html( human_time_diff( (int) $letters['last'] ) ) . ' ago.</p>';
+		}
+		echo '<form method="post" action="' . esc_url( admin_url( 'admin-post.php' ) ) . '" style="margin:0 0 16px 0">';
+		wp_nonce_field( 'pn_live_test_letter' );
+		echo '<input type="hidden" name="action" value="pn_live_test_letter"><button class="button">Send a test letter</button></form>';
 
 		echo '<h2>Live pages</h2>';
 		if ( empty( $manifest['pages'] ) ) {

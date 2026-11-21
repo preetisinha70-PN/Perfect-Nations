@@ -5,6 +5,11 @@ Pages plugin serves this file in place of the code pasted in the page's one Cust
 BUILT, never edited by hand: edit src/state-of-nations.html, then run
 python3 tools/build_state_of_nations.py. Kept by the State of Nations Steward (the page) and the
 Correspondent (the data: data/state-of-nations.json, data/solutions-by-nation.json).
+v9.2 (21 Nov 2026): one alphabetical order across the site: Find your nation lists by letters alone, accents
+  set aside (Preeti Sinha, President and CEO); the Palestine blueprint opens at /blueprints/state-of-palestine/.
+v9.1 (21 Nov 2026): each standard filter shows the Solutions designed for that standard: the first standard
+  of a Solution (the one its challenge names) decides its filter, and its chip is filled; the standards it also
+  moves follow in plain chips. Before, Water listed every Solution that touched water (the Steward-General).
 v9.0 (16 Nov 2026): the closing technology sentence is gone from the lead of the Solutions, every Solution and
 every Deal Note, and no Steward is named (Preeti Sinha, President and CEO, runs Perfect Nations single-handedly).
 The script drops such a sentence if a data file carries it later (the rule is in tools/no_si.py).
@@ -479,6 +484,7 @@ html.pn-son-lock,html.pn-son-lock body{ overflow:hidden; }
 #pn-son .sn-c__k span{ color:#8A3A22; }
 #pn-son .sn-c h3{ color:#0B3D45 !important; }
 #pn-son .sn-std li{ background:rgba(11,61,69,.08); color:#0B3D45; }
+#pn-son .sn-std li.is-lead{ background:#0B3D45; color:#F5F1E8; }
 #pn-son .sn-c__go{ color:#0B3D45; }
 #pn-son .sn-c:hover .sn-c__go{ color:#8A3A22; }
 #pn-son .sn-c__f b{ color:#8C6A12; }
@@ -498,6 +504,7 @@ html.pn-son-lock,html.pn-son-lock body{ overflow:hidden; }
 #pn-son .sn-c.sn-c--lead .sn-c__x{ background:rgba(245,241,232,.06); box-shadow:inset 0 0 0 1px rgba(245,241,232,.1); }
 #pn-son .sn-c.sn-c--lead .sn-c__x dt{ color:#E3C258; }
 #pn-son .sn-c.sn-c--lead .sn-std li{ background:rgba(245,241,232,.12); color:#F5F1E8; }
+#pn-son .sn-c.sn-c--lead .sn-std li.is-lead{ background:#E3C258; color:#1A140C; }
 #pn-son .sn-c.sn-c--lead .sn-c__go{ color:#E3C258; }
 #pn-son .sn-c.sn-c--lead:hover .sn-c__go{ color:#F0D68F; }
 #pn-son .sn-c.sn-c--lead .sn-c__f b{ color:#E3C258; }
@@ -763,6 +770,13 @@ html.pn-son-lock,html.pn-son-lock body{ overflow:hidden; }
   var sq = document.getElementById('snQ'), sEmpty = document.getElementById('snSEmpty');
   var cards = [], solState = { std: 'all', q: '', all: false }, NAT = null;
   function cardStd(c) { return (c.getAttribute('data-std') || '').split(';').filter(Boolean); }
+  /* the standard a Solution is designed for: the first in its list (the one its challenge names) */
+  function cardLead(c) { return cardStd(c)[0] || ''; }
+  function stdList(stds) {
+    var ul = el('ul', 'sn-std');
+    (stds || []).forEach(function (x, i) { var li = el('li', i ? '' : 'is-lead', x); if (!i) { li.title = 'Designed for ' + x; } ul.appendChild(li); });
+    return ul;
+  }
   function solCard(s) {
     var li = el('li', 'sn-c'), no = +s.no;
     li._d = s; li.setAttribute('data-no', String(no)); li.setAttribute('data-std', (s.standards || []).join(';'));
@@ -776,14 +790,13 @@ html.pn-son-lock,html.pn-son-lock body{ overflow:hidden; }
       if (!r[1]) { return; } var d = el('div'); d.appendChild(el('dt', '', r[0])); d.appendChild(el('dd', '', r[1])); dl.appendChild(d);
     });
     if (dl.children.length) { li.appendChild(dl); }
-    var ft = el('div', 'sn-c__ft'), ul = el('ul', 'sn-std');
-    (s.standards || []).forEach(function (x) { ul.appendChild(el('li', '', x)); });
-    ft.appendChild(ul); ft.appendChild(el('span', 'sn-c__go', 'Read the Solution')); li.appendChild(ft);
+    var ft = el('div', 'sn-c__ft');
+    ft.appendChild(stdList(s.standards)); ft.appendChild(el('span', 'sn-c__go', 'Read the Solution')); li.appendChild(ft);
     return li;
   }
   function solFilters() {
     if (!sFil) { return; }
-    var tally = {}; cards.forEach(function (c) { cardStd(c).forEach(function (x) { tally[x] = (tally[x] || 0) + 1; }); });
+    var tally = {}; cards.forEach(function (c) { var x = cardLead(c); if (x) { tally[x] = (tally[x] || 0) + 1; } });
     var keys = ORDER.filter(function (x) { return tally[x]; });
     sFil.textContent = ''; sFil.hidden = keys.length < 2; if (sFil.hidden) { return; }
     [['all', 'All', cards.length]].concat(keys.map(function (x) { return [x, x, tally[x]]; })).forEach(function (e) {
@@ -798,7 +811,7 @@ html.pn-son-lock,html.pn-son-lock body{ overflow:hidden; }
   function solApply() {
     var n = 0, cut = 0, first = null, open = phone || solState.all || solState.std !== 'all' || !!solState.q;
     cards.forEach(function (c) {
-      var ok = (solState.std === 'all' || cardStd(c).indexOf(solState.std) > -1) && (!solState.q || (c.getAttribute('data-q') || '').indexOf(solState.q) > -1);
+      var ok = (solState.std === 'all' || cardLead(c) === solState.std) && (!solState.q || (c.getAttribute('data-q') || '').indexOf(solState.q) > -1);
       if (ok) { n++; }
       var show = ok && (open || n <= SOL_LIMIT);
       if (ok && !show) { cut++; }

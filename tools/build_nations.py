@@ -16,7 +16,8 @@ and the data key capital.register are unchanged. 2. "Already working in <Nation>
 02 Capital (the record, Capital already committed and the Newswire) and before 03 Solutions, no longer inside Work
 with us, with one line under its heading: "Independent firms and social enterprises already at work in <Nation>,
 highlighted by Perfect Nations. None is a partner of Perfect Nations." Its cards, sources and links are kept.
-3. Perfect Nations is "a new-age sovereign advisory firm, and its clients are nations", never a bank; the names of
+3. Perfect Nations is "a new-age sovereign advisory firm" (the full line since v14.5),
+never a bank; the names of
 real banks and their instruments are kept as they are.
 v11.4: the Solution Perfect Nations designs for the nation leads its Solutions (the Steward-General, 9 Nov 2026:
 "compose solutions that Perfect Nations designs"): its idea, The challenge and What Perfect Nations advises, linked to
@@ -42,7 +43,7 @@ data/state-of-nations.json); the Solution for <Nation> reads 01 The challenge, 0
 in the nation, or the deal that proved it, with its source), 03 What Perfect Nations advises (the "advises" of the
 standard in data/solutions-by-nation.json). The Solutions lead and the empty card say the same.
 v11.0: the blueprint follows the new homepage (the Steward-General, 7-8 Nov 2026): Perfect Nations as a
-new-age sovereign advisory firm, whose clients are nations, doing three things in the
+new-age sovereign advisory firm, doing three things in the
 order of the logo: 01 Assets (the gold), 02 Capital (the laurels), 03 Solutions (the seven stars, Perfect
 Capita, last); the cup (good governance) is referenced in one line, and the whole logo, lit, is a Perfect
 Nation. The page reads like the country page of a new-age sovereign advisory firm, in one scroll (as of v11.5):
@@ -91,6 +92,7 @@ import html
 import json
 import math
 import re
+import unicodedata
 import sys
 import urllib.parse
 from datetime import datetime, timezone
@@ -98,7 +100,14 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 PAGES, DATA, HERE = ROOT / 'pages', ROOT / 'data', ROOT / 'tools' / 'nation'
-VERSION = '14.2'  # the cup: every sovereign asset, valued; What we do compressed on laptops and phones (the Steward-General, 16 Nov 2026)
+VERSION = '14.8'  # the October pictures switched on for the first 44 blueprints (Preeti Sinha, 21 Nov 2026)
+# 14.7.1: the pictures carry no AI illustration mark (Preeti Sinha, 21 Nov 2026)
+# 14.7: picture cards for the assets, switched on per nation by assets.pictures (Austria first; Preeti Sinha, 21 Nov 2026)
+# 14.6: Previous and next blueprint, A to Z, above All 195 nations (Preeti Sinha, 21 Nov 2026)
+# 14.5: What we do: the firm line ends at "a new-age sovereign advisory firm." (Preeti Sinha, 21 Nov 2026)
+# 14.4: Already working in: the line "None is a partner of Perfect Nations." is removed (Preeti Sinha, 21 Nov 2026)
+# 14.3: page-level corrections from the Nation Stewards' weekly reviews (17 Nov 2026)
+# 14.2: the cup: every sovereign asset, valued; What we do compressed on laptops and phones (the Steward-General, 16 Nov 2026)
 # 14.1: the Nation Steward card is back above the Newswire's news, as before v14.0 (Preeti Sinha, 16 Nov 2026, evening)
 # 14.0: no Steward named and no super intelligence on any blueprint (Preeti Sinha, 16 Nov 2026)
 # 13.17: Estonia, Portugal and the Dominican Republic portraits; Finland's upright portrait (16 Nov 2026)
@@ -657,7 +666,7 @@ def what_we_do(d):
         '<section class="bpx-band bpx-iv bpx-do" id="bp-do" aria-labelledby="bp-do-h"><div class="bpx-in">'
         '<div class="bpx-do__head"><div><p class="bpx-eb">What we do for %s</p>'
         '<h2 class="bpx-h2 bpx-do__h" id="bp-do-h"><span>Assets.</span> <span>Capital.</span> <span>Solutions.</span></h2></div>'
-        '<p class="bpx-lead">Perfect Nations is a new-age sovereign advisory firm, and its clients are nations.</p></div>'
+        '<p class="bpx-lead">Perfect Nations is a new-age sovereign advisory firm.</p></div>'
         '<ol class="bpx-map" aria-label="The three steps for %s, one for each part of the logo">%s</ol>'
         '<div class="bpx-all">%s<p><b>The whole logo:</b> a Perfect Nation, where every citizen has all seven basic standards '
         'of living, led by good governance.</p></div>'
@@ -667,15 +676,28 @@ def what_we_do(d):
 def assets(d):
     a = d.get('assets') or {}
     name = d['nation']
+    pics = bool(a.get('pictures'))  # v15.0 test: picture cards, switched on per nation (Austria first, 21 Nov 2026)
     cards = []
     for i, x in enumerate(a.get('items') or []):
         if not x.get('name'):
             continue
+        pic = bar = ''
+        img = (x.get('images') or [None])[0]
+        if pics and ok_https(img):
+            thumb = x.get('thumb') if ok_https(x.get('thumb')) else ''
+            ss = img_attrs(img, (300, 600, 768), '(max-width:640px) 80vw, 33vw') or (
+                ' srcset="%s 300w, %s 768w" sizes="(max-width:640px) 80vw, 33vw"' % (ent(https(thumb)), ent(https(img))) if thumb else '')
+            pic = ('<figure class="bpx-acard__pic"><img src="%s"%s alt="%s" width="768" height="573" loading="lazy" decoding="async" '
+                   'onerror="var f=this.parentNode;if(f)f.remove()">%s</figure>'
+                   % (ent(https(img)), ss, ent(x.get('alt') or x['name']), ''))  # no mark on the picture (Preeti Sinha, 21 Nov 2026); 'ai' stays in the data as a record
+            m = re.match(r'^\s*([0-9]+(?:\.[0-9]+)?)\s*%\s*$', plain(x.get('figure') or ''))
+            if m and 0 < float(m.group(1)) <= 100:
+                bar = '<span class="bpx-acard__bar" aria-hidden="true"><b style="width:%s%%"></b></span>' % m.group(1)
         cards.append(
-            '<li class="bpx-acard" style="--i:%d"><span class="bpx-acard__n" aria-hidden="true">%02d</span>'
-            '<p class="bpx-acard__fig"><b>%s</b>%s</p><h3>%s</h3>%s</li>'
-            % (i, i + 1, ent(x.get('figure') or ''), '<span>%s</span>' % ent(x['label']) if x.get('label') else '',
-               ent(x['name']), '<p>%s</p>' % ent(x['text']) if x.get('text') else ''))
+            '<li class="bpx-acard%s" style="--i:%d">%s<span class="bpx-acard__n" aria-hidden="true">%02d</span>'
+            '<p class="bpx-acard__fig"><b>%s</b>%s</p>%s<h3>%s</h3>%s</li>'
+            % (' bpx-acard--pic' if pic else '', i, pic, i + 1, ent(x.get('figure') or ''), '<span>%s</span>' % ent(x['label']) if x.get('label') else '',
+               bar, ent(x['name']), '<p>%s</p>' % ent(x['text']) if x.get('text') else ''))
     # v14.1: Perfect Nations values every sovereign asset a nation owns; the cards show the ones that lead
     n = len(cards)
     lead = ('Perfect Nations values every sovereign asset %s owns. These %s lead: each is owned today, earns today and can carry '
@@ -688,11 +710,13 @@ def assets(d):
         '<section class="bpx-band bpx-er bpx-assets" id="bp-assets" aria-labelledby="bp-assets-h"><div class="bpx-in">'
         '<div class="bpx-head"><div>%s<h2 class="bpx-h2" id="bp-assets-h">%s</h2></div>'
         '<p class="bpx-lead">%s</p></div>'
-        '<ul class="bpx-acards" data-n="%d">%s</ul>'
+        '<ul class="bpx-acards%s" data-n="%d">%s</ul>%s'
         '<div class="bpx-foot"><a class="bpx-link" href="#bp-sources">Every figure, with its source</a>'
         '<a class="bpx-link" href="https://perfectnations.com/sovereign-assets/" target="_blank" rel="noopener noreferrer">The Sovereign Assets ledger</a></div>'
         '</div></section>' % (step_eb('01', 'Assets', 'The cup', 'Sovereign Assets'),
-                              ent(a.get('heading') or 'Five assets no balance sheet counts.'), lead, len(cards), ''.join(cards)))
+                              ent(a.get('heading') or 'Five assets no balance sheet counts.'), lead,
+                              ' bpx-acards--pics' if pics else '', len(cards), ''.join(cards),
+                              '<p class="bpx-swipe" aria-hidden="true">Swipe for all %s</p>' % (WORDS[len(cards)].lower() if len(cards) < len(WORDS) else len(cards)) if pics else ''))
 
 
 def stew_face(photo, steward):
@@ -1166,8 +1190,8 @@ def firms(d):
     return (
         '<section class="bpx-band bpx-er bpx-firms" id="bp-enterprises" aria-labelledby="bp-ent-h"><div class="bpx-in">'
         '<div class="bpx-ent__h"><div><h2 class="bpx-ent__t" id="bp-ent-h">%s</h2>'
-        '<p class="bpx-ent__l">Independent firms and social enterprises already at work in %s, highlighted by Perfect Nations. '
-        'None is a partner of Perfect Nations.</p></div>'
+        # v14.4: the line "None is a partner of Perfect Nations." is removed (Preeti Sinha, 21 Nov 2026)
+        '<p class="bpx-ent__l">Independent firms and social enterprises already at work in %s, highlighted by Perfect Nations.</p></div>'
         '<a class="bpx-link" href="%s" target="_blank" rel="noopener noreferrer">Suggest an enterprise</a></div>'
         '<p class="bpx-swipe" aria-hidden="true">Swipe for every enterprise</p><ul class="bpx-ents bpx-rail">%s</ul>'
         '</div></section>'
@@ -1214,11 +1238,11 @@ def close(d, p):
         '<p class="bpx-lead">%s</p><div class="bpx-btns">'
         '<a class="bpx-btn" href="https://perfectnations.com/design-studio/" target="_blank" rel="noopener noreferrer">Enter the ReDesign Studio</a>'
         '<a class="bpx-btn bpx-btn--line" href="https://perfectnations.com/contact/?nation=%s" target="_blank" rel="noopener noreferrer">Write to us</a>'
-        '<a class="bpx-btn bpx-btn--line" href="https://perfectnations.com/blueprints/" target="_blank" rel="noopener noreferrer">All 195 nations</a></div>'
+        '%s<a class="bpx-btn bpx-btn--line" href="https://perfectnations.com/blueprints/" target="_blank" rel="noopener noreferrer">All 195 nations</a></div>'
         '<details class="bpx-sources" id="bp-sources"><summary>Sources</summary><ol>%s</ol></details></div>%s</div></section>'
         '<div class="bpx-toast" id="bp-toast" role="status" aria-live="polite" hidden><span>Opening your email app. If nothing opens, write to <b>contact@perfectnations.com</b></span>'
         '<button type="button" id="bp-toast-copy">Copy address</button><button type="button" class="bpx-x" id="bp-toast-x" aria-label="Close"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6.5 6.5l11 11M17.5 6.5l-11 11" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button></div>'
-        % (ent(name), ent(name), ent(one_line(p['close_lead'])), urllib.parse.quote(slug), srcs,
+        % (ent(name), ent(name), ent(one_line(p['close_lead'])), urllib.parse.quote(slug), prev_next(slug), srcs,
            flag_fig(name, slug, (p.get('portrait') or {}).get('title') or ('%s in Bloom' % name))))
 
 
@@ -1226,6 +1250,41 @@ RULE = '<div class="bpx-rule" aria-hidden="true"></div>'
 
 
 # ---------------------------------------------------------------- the page
+
+NEIGHBOURS = {}
+
+
+def neighbours(slug):
+    """v14.6: the blueprints before and after this one, in alphabetical order of the names visitors see (accents set
+    aside, so Côte d’Ivoire follows Costa Rica and Türkiye follows Tunisia). The order wraps: Zimbabwe leads to
+    Afghanistan. Paths come from window.PNHG_CFG.paths in pages/home-hero.html (Côte d’Ivoire lives at cote-d-ivoire)."""
+    if not NEIGHBOURS:
+        src = (PAGES / 'home-hero.html').read_text(encoding='utf-8')
+        c = re.search(r'window\.PNHG_CFG=(\{.*?\});\s*\n', src, re.S)
+        paths = json.loads(c.group(1)).get('paths', {}) if c else {}
+        rows = []
+        for sl in open_slugs():
+            f = DATA / ('%s.json' % sl)
+            if f.exists():
+                nm = json.loads(f.read_text(encoding='utf-8'))['nation']
+                key = unicodedata.normalize('NFKD', plain(nm)).encode('ascii', 'ignore').decode().lower()
+                rows.append((key, sl, nm, 'https://perfectnations.com/blueprints/%s/' % paths.get(sl, sl)))
+        rows.sort()
+        for i, r in enumerate(rows):
+            NEIGHBOURS[r[1]] = (rows[i - 1][2:], rows[(i + 1) % len(rows)][2:])
+    return NEIGHBOURS.get(slug)
+
+
+def prev_next(slug):
+    nb = neighbours(slug)
+    if not nb:
+        return ''
+    (pn, pu), (nn, nu) = nb
+    return ('<nav class="bpx-pn" aria-label="Blueprints, A to Z">'
+            '<a class="bpx-btn bpx-btn--line bpx-pn__a bpx-pn__a--prev" href="%s" rel="prev" aria-label="Previous blueprint: %s">%s</a>'
+            '<a class="bpx-btn bpx-btn--line bpx-pn__a" href="%s" rel="next" aria-label="Next blueprint: %s">%s</a></nav>'
+            % (pu, ent(pn), ent(pn), nu, ent(nn), ent(nn)))
+
 
 def open_slugs():
     man = json.loads((PAGES / 'manifest.json').read_text(encoding='utf-8'))
@@ -1251,6 +1310,12 @@ def build(slug, sbn, son, today):
     script = (HERE / 'script.js').read_text(encoding='utf-8').replace('/*pn:cfg*/', 'var CFG = %s;' % js_str(cfg))
     head = (
         '<!-- PERFECT NATIONS . NATIONAL BLUEPRINT . %s . v%s . %s . Built by tools/build_nations.py: never edit by hand. -->\n'
+        '<!-- v14.8 (21 November 2026): the asset pictures made in October are switched on for the first 44 blueprints. -->\n'
+        '<!-- v14.7.1 (21 November 2026): the asset pictures carry no AI illustration mark (the President and CEO). -->\n'
+        '<!-- v14.7 (21 November 2026): picture cards for the assets where the nation switches them on (Austria first): each asset opens with its picture; phones swipe the cards. -->\n'
+        '<!-- v14.6 (21 November 2026): above All 195 nations, the previous and next blueprints, A to Z. -->\n'
+        '<!-- v14.5 (21 November 2026): What we do: the firm line now ends at "a new-age sovereign advisory firm." -->\n'
+        '<!-- v14.4 (21 November 2026): Already working in: the line "None is a partner of Perfect Nations." is removed. -->\n'
         '<!-- v14.2 (16 November 2026): the cup counts every sovereign asset, and What we do is about a third shorter. -->\n'
         '<!-- v14.1 (16 November 2026, evening): the Nation Steward card is back above the Newswire\'s news, as it was\n'
         '     before v14.0, on the request of Preeti Sinha, President and CEO. -->\n'
@@ -1269,7 +1334,7 @@ def build(slug, sbn, son, today):
         '<!-- v11.1 (9 November 2026): What Perfect Nations advises.\n'
         '     Each Solution reads The challenge, then What Perfect Nations advises. -->\n'
         '<!-- v11.0 (8 November 2026): the blueprint follows the new homepage. Perfect Nations as a new-age sovereign\n'
-        '     advisory firm, whose clients are nations: the hero says what it does for this nation\n'
+        '     advisory firm: the hero says what it does for this nation\n'
         '     (through FfD) with the nation at a glance in sourced figures; What we do for the nation (Assets. Capital.\n'
         '     Solutions., drawn from the logo kit, with the cup of good governance in one line and the whole logo as a\n'
         '     seal); 01 Assets as typographic cards (no photographs); 02 Capital (the record, the register and the\n'
