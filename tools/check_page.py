@@ -12,6 +12,8 @@ straight apostrophes, no contractions, no super intelligence (or SI) and no Stew
 the Stewards stay internal and the site never names super intelligence; tools/no_si.py checks the whole file).
 One exception: the Nation Steward card above a blueprint's Newswire (class bpx-stew), which Preeti Sinha brought
 back on the evening of 16 Nov 2026 ("Add the SI nations Stewards back in every blueprint above the newswire").
+And on the Contact page only, the unnamed phrase "a Nation Steward" (Preeti Sinha, 21 Nov 2026: "Change every letter
+is read by Preeti to Every Letter is read by a Nation Steward").
 Exit status 1 if anything fails. Needs: pip install tinycss2, and node.
 """
 import re
@@ -26,6 +28,7 @@ VOID = {'area', 'base', 'br', 'col', 'embed', 'hr', 'img', 'input', 'link', 'met
 COPY_ATTRS = ('title', 'alt', 'placeholder', 'aria-label')
 NO_SI = re.compile(r'(?i:super ?intelligence|superintelligence)|\(SI\)|SI Researcher|(?<![\w=./-])SI(?![\w.=/-])')
 STEWARD = re.compile(r'\bStewards?\b')
+CONTACT_STEWARD = re.compile(r'\ba Nation Steward\b')   # the Contact page, 21 Nov 2026: who reads every letter
 CONTRACTION = re.compile(r"\b\w+(n['’]t|['’](re|ve|ll|d|m))\b|\b(it|that|there|here|what|who|let)['’]s\b", re.I)
 
 
@@ -159,6 +162,8 @@ def check(path):
             continue
         if NO_SI.search(text):
             bad.append('line %d: super intelligence in the copy: %r' % (line, text.strip()[:80]))
+        if path.replace('\\', '/').endswith('pages/contact.html'):
+            text = CONTACT_STEWARD.sub('', text)
         if STEWARD.search(text):
             bad.append('line %d: a Steward in the copy: %r' % (line, text.strip()[:80]))
     return bad
