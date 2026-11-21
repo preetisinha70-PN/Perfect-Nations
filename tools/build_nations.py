@@ -16,7 +16,8 @@ and the data key capital.register are unchanged. 2. "Already working in <Nation>
 02 Capital (the record, Capital already committed and the Newswire) and before 03 Solutions, no longer inside Work
 with us, with one line under its heading: "Independent firms and social enterprises already at work in <Nation>,
 highlighted by Perfect Nations. None is a partner of Perfect Nations." Its cards, sources and links are kept.
-3. Perfect Nations is "a new-age sovereign advisory firm, and its clients are nations", never a bank; the names of
+3. Perfect Nations is "a new-age sovereign advisory firm" (the full line since v14.5),
+never a bank; the names of
 real banks and their instruments are kept as they are.
 v11.4: the Solution Perfect Nations designs for the nation leads its Solutions (the Steward-General, 9 Nov 2026:
 "compose solutions that Perfect Nations designs"): its idea, The challenge and What Perfect Nations advises, linked to
@@ -42,7 +43,7 @@ data/state-of-nations.json); the Solution for <Nation> reads 01 The challenge, 0
 in the nation, or the deal that proved it, with its source), 03 What Perfect Nations advises (the "advises" of the
 standard in data/solutions-by-nation.json). The Solutions lead and the empty card say the same.
 v11.0: the blueprint follows the new homepage (the Steward-General, 7-8 Nov 2026): Perfect Nations as a
-new-age sovereign advisory firm, whose clients are nations, doing three things in the
+new-age sovereign advisory firm, doing three things in the
 order of the logo: 01 Assets (the gold), 02 Capital (the laurels), 03 Solutions (the seven stars, Perfect
 Capita, last); the cup (good governance) is referenced in one line, and the whole logo, lit, is a Perfect
 Nation. The page reads like the country page of a new-age sovereign advisory firm, in one scroll (as of v11.5):
@@ -98,7 +99,8 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 PAGES, DATA, HERE = ROOT / 'pages', ROOT / 'data', ROOT / 'tools' / 'nation'
-VERSION = '14.4'  # Already working in: the line "None is a partner of Perfect Nations." is removed (Preeti Sinha, 21 Nov 2026)
+VERSION = '14.5'  # What we do: the firm line ends at "a new-age sovereign advisory firm." (Preeti Sinha, 21 Nov 2026)
+# 14.4: Already working in: the line "None is a partner of Perfect Nations." is removed (Preeti Sinha, 21 Nov 2026)
 # 14.3: page-level corrections from the Nation Stewards' weekly reviews (17 Nov 2026)
 # 14.2: the cup: every sovereign asset, valued; What we do compressed on laptops and phones (the Steward-General, 16 Nov 2026)
 # 14.1: the Nation Steward card is back above the Newswire's news, as before v14.0 (Preeti Sinha, 16 Nov 2026, evening)
@@ -659,7 +661,7 @@ def what_we_do(d):
         '<section class="bpx-band bpx-iv bpx-do" id="bp-do" aria-labelledby="bp-do-h"><div class="bpx-in">'
         '<div class="bpx-do__head"><div><p class="bpx-eb">What we do for %s</p>'
         '<h2 class="bpx-h2 bpx-do__h" id="bp-do-h"><span>Assets.</span> <span>Capital.</span> <span>Solutions.</span></h2></div>'
-        '<p class="bpx-lead">Perfect Nations is a new-age sovereign advisory firm, and its clients are nations.</p></div>'
+        '<p class="bpx-lead">Perfect Nations is a new-age sovereign advisory firm.</p></div>'
         '<ol class="bpx-map" aria-label="The three steps for %s, one for each part of the logo">%s</ol>'
         '<div class="bpx-all">%s<p><b>The whole logo:</b> a Perfect Nation, where every citizen has all seven basic standards '
         'of living, led by good governance.</p></div>'
@@ -1253,6 +1255,7 @@ def build(slug, sbn, son, today):
     script = (HERE / 'script.js').read_text(encoding='utf-8').replace('/*pn:cfg*/', 'var CFG = %s;' % js_str(cfg))
     head = (
         '<!-- PERFECT NATIONS . NATIONAL BLUEPRINT . %s . v%s . %s . Built by tools/build_nations.py: never edit by hand. -->\n'
+        '<!-- v14.5 (21 November 2026): What we do: the firm line now ends at "a new-age sovereign advisory firm." -->\n'
         '<!-- v14.4 (21 November 2026): Already working in: the line "None is a partner of Perfect Nations." is removed. -->\n'
         '<!-- v14.2 (16 November 2026): the cup counts every sovereign asset, and What we do is about a third shorter. -->\n'
         '<!-- v14.1 (16 November 2026, evening): the Nation Steward card is back above the Newswire\'s news, as it was\n'
@@ -1272,7 +1275,7 @@ def build(slug, sbn, son, today):
         '<!-- v11.1 (9 November 2026): What Perfect Nations advises.\n'
         '     Each Solution reads The challenge, then What Perfect Nations advises. -->\n'
         '<!-- v11.0 (8 November 2026): the blueprint follows the new homepage. Perfect Nations as a new-age sovereign\n'
-        '     advisory firm, whose clients are nations: the hero says what it does for this nation\n'
+        '     advisory firm: the hero says what it does for this nation\n'
         '     (through FfD) with the nation at a glance in sourced figures; What we do for the nation (Assets. Capital.\n'
         '     Solutions., drawn from the logo kit, with the cup of good governance in one line and the whole logo as a\n'
         '     seal); 01 Assets as typographic cards (no photographs); 02 Capital (the record, the register and the\n'
