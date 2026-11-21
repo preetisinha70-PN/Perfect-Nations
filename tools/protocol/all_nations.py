@@ -532,6 +532,17 @@ PORTRAITS = {
     'tajikistan': (UP + 'pn-hog-tajikistan-225x300.jpg', 'Masato Kanda, 2026', CC_BY_4),
     'tunisia': (UP + 'pn-hog-tunisia-225x300.jpg', 'Houcemmzoughi, 2019', CC_BY_SA_4),
     'zimbabwe': (UP + 'pn-hog-zimbabwe-219x300.jpg', 'Presidential Executive Office of Russia (kremlin.ru), 2019', CC_BY_4),
+    # tenth batch (18 to 21 November 2026): the Steward-General's uploads; credits and licences from their captions
+    # (citing the Wikimedia Commons files)
+    'algeria': (UP + 'pn-hos-algeria-220x300.jpg', 'State Duma of the Russian Federation, 2023, cropped', CC_BY_4),
+    'burkina-faso': (UP + 'pn-hog-burkina-faso-240x300.jpg', 'Josué le photographe, 2026', CC_BY_SA_4),
+    'eritrea': (UP + 'pn-hog-eritrea-249x300.jpg', 'Presidential Executive Office of Russia (kremlin.ru), 2026', CC_BY_4),
+    'gabon': (UP + 'pn-hog-gabon-233x300.jpg', 'Lukasz Kobus, European Union, 2024, cropped', CC_BY_4),
+    'mali': (UP + 'pn-hog-mali-300x185.jpg', 'Presidential Executive Office of Russia (kremlin.ru), 2026', CC_BY_4),
+    'mauritania': (UP + 'pn-hog-mauritania-227x300.jpg', 'Lukasz Kobus, European Union, 2022', CC_BY_4),
+    'niger': (UP + 'pn-hog-niger-300x225.png', 'Voice of America, 2024, cropped', PD),
+    'republic-of-congo': (UP + 'pn-hog-republic-of-the-congo-232x300.jpg', 'Presidential Executive Office of Russia (kremlin.ru), 2026, cropped', CC_BY_4),
+    'south-sudan': (UP + 'pn-hog-south-sudan-300x185.jpg', 'Presidential Executive Office of Russia (kremlin.ru), 2026', CC_BY_4),
     # head of state on record (the band shows the Prime Minister)
     'albania': (UP + 'pn-hos-albania-296x300.jpg', 'Presidential Press and Information Office of Azerbaijan, cropped', CC_BY_4),
 }
@@ -601,6 +612,12 @@ PORTRAITS_HOG = {
     'vanuatu': (UP + 'pn-hog-vanuatu.jpg', 'Philippine Embassy in Canberra, 2019, cropped', {'label': 'public domain in the Philippines'}),
     'papua-new-guinea': (UP + 'pn-hog-papua-new-guinea-225x300.jpg', 'Chuck Kennedy, U.S. Department of State, 2023, cropped', PD),
     'malaysia': (UP + 'pn-hog-malaysia-225x300.jpg', 'Cabinet Public Affairs Office, Government of Japan, 2026, cropped', CC_BY_4),
+    # tenth batch (18 to 21 November 2026)
+    'algeria': (UP + 'pn-hog-algeria-224x300.jpg', 'Presidential Executive Office of Russia (kremlin.ru), 2026, cropped', CC_BY_4),
+    'andorra': (UP + 'pn-hog-andorra-212x300.jpg', 'OSCE Parliamentary Assembly, 2017, cropped', CC_BY_SA_2),
+    'bangladesh': (UP + 'pn-hog-bangladesh-300x214.jpg', 'Press Information Department, Government of Bangladesh, 2026', {'label': 'public domain in Bangladesh'}),
+    'samoa': (UP + 'pn-hog-samoa-232x300.jpg', 'U.S. Embassy New Zealand, U.S. Department of State, 2023', PD),
+    'tonga': (UP + 'pn-hog-tonga-229x300.jpg', 'Daniel Walding, Department of Foreign Affairs and Trade, Australia, 2026', CC_BY_4),
 }
 
 GREET = {
