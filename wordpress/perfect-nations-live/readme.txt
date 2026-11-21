@@ -1,5 +1,5 @@
 === Perfect Nations Live Pages ===
-Version: 1.5.0
+Version: 1.5.1
 Requires PHP: 7.4
 
 Serves each Perfect Nations page from the Perfect Nations GitHub repository, so a page updates
@@ -45,6 +45,12 @@ in Spam). If the test is missing or in Spam, install WP Mail SMTP (free) and con
 mailbox of perfectnations.com; the plugin then sends through it with no other change.
 
 == Changes ==
+1.5.1 (21 November 2026) - cleaner letters
+- The Reply-To line of a letter is written plainly (Cape Verde <name@example.org>), without the
+  extra quotation marks of 1.5.0, which showed as "\"Cape Verde\"" on letters that landed in Spam.
+- A filled robot trap no longer pretends the letter was sent: the page opens the writer's own email
+  instead, so no real letter can be dropped (for example if a browser's autofill fills the field).
+
 1.5.0 (21 November 2026) - letters sent from the site
 - New: POST /wp-json/pn-live/v1/letter, used by the Contact page (v7.3). The page writes the letter;
   the site checks it (name, a real email address, 5 to 12,000 characters) and mails it. The address
