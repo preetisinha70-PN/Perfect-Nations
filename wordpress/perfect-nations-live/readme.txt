@@ -1,5 +1,5 @@
 === Perfect Nations Live Pages ===
-Version: 1.4.0
+Version: 1.5.0
 Requires PHP: 7.4
 
 Serves each Perfect Nations page from the Perfect Nations GitHub repository, so a page updates
@@ -35,7 +35,26 @@ moved into GitHub and updated at once.
 Plugins > Add New Plugin > Upload Plugin, choose the new perfect-nations-live.zip, press Install Now,
 then "Replace current with uploaded". Settings stay as they are.
 
+== Letters from the Contact page (1.5) ==
+Send on perfectnations.com/contact/ delivers the letter from the site, by WordPress's own mail, to
+contact@perfectnations.com (Art of Nations: gallery@perfectnations.com). Reply-To is the writer, so
+Reply answers them. Nothing is kept on the site. If the site cannot send, the page opens the
+visitor's own email with the same letter, so no letter is lost.
+After installing: Settings > Perfect Nations Live > Send a test letter, then look in that inbox (and
+in Spam). If the test is missing or in Spam, install WP Mail SMTP (free) and connect it to the
+mailbox of perfectnations.com; the plugin then sends through it with no other change.
+
 == Changes ==
+1.5.0 (21 November 2026) - letters sent from the site
+- New: POST /wp-json/pn-live/v1/letter, used by the Contact page (v7.3). The page writes the letter;
+  the site checks it (name, a real email address, 5 to 12,000 characters) and mails it. The address
+  it goes to is chosen by the site, never by the page.
+- Robots: a hidden field turns them away. A letter sent within three seconds of opening the page,
+  or past the limits (ten an hour from one connection, two hundred a day for the site), is not
+  mailed from here; the page then opens the writer's own email instead.
+- Settings > Perfect Nations Live: "Send a test letter", and when the last letter was sent.
+- Nothing else changes.
+
 1.4.0 (19 November 2026) - sitemap
 - An address listed under "redirects" in pages/manifest.json is left out of the Rank Math XML
   sitemap, so Google is no longer asked to index a page that only leads elsewhere (Search Console:

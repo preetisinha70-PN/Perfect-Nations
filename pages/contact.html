@@ -1,7 +1,13 @@
 <!-- ===========================================================================
-PERFECT NATIONS - THE CONTACT PAGE - v7.2.1 LIGHT - 2026-11-21
-v7.2.1 (21 Nov 2026, Preeti Sinha, President and CEO): one alphabetical order across the site: the nation menu lists by letters alone, accents
-  set aside (C&#244;te d&#8217;Ivoire with C, S&#227;o Tom&#233; and Pr&#237;ncipe with S, T&#252;rkiye with T).
+PERFECT NATIONS - THE CONTACT PAGE - v7.3.1 LIGHT - 2026-11-21
+v7.3.1 (21 Nov 2026, Preeti Sinha, President and CEO): one alphabetical order across the site: the nation menu lists by
+  letters alone, accents set aside (C&#244;te d&#8217;Ivoire with C, S&#227;o Tom&#233; and Pr&#237;ncipe with S, T&#252;rkiye with T).
+v7.3 (21 Nov 2026, the Steward-General: letters should be sent on the site and reach Perfect Nations, and the
+line under the buttons about email, storage and a mailing list should go): Send now delivers the letter from the
+site (Live Pages 1.5: POST /wp-json/pn-live/v1/letter, mailed to contact@ or gallery@ with Reply-To the writer).
+The panel says "Your letter has been sent" and where the answer will come. If the site cannot send, the
+visitor's own email opens with the same letter, as before. A hidden field turns away robots. The line "Opens in
+your own email. Nothing is stored on this site, and there is no mailing list." is removed.
 v7.2 (21 Nov 2026, the Steward-General: the page read as questions followed by a second form, Send was hard to
 find, the nation box was odd, and every letter is now read by a Nation Steward): one form in two numbered steps.
 1 What brings you here? (route, topic, nation, timeframe). 2 Write and sign your letter: the letter now holds the
@@ -286,6 +292,12 @@ article:has(#pn-contact) .entry-header{ display:none !important; }
 #pn-contact .ct-result__h{ margin:0; font-family:var(--hd); font-size:1.16rem; font-weight:600; line-height:1.1; color:var(--ink); }
 #pn-contact .ct-result__p{ margin:3px 0 9px; font-size:.86rem; line-height:1.4; color:var(--im); }
 #pn-contact .ct-result__acts{ display:flex; flex-wrap:wrap; gap:8px; }
+/* v7.3: the letter is sent from the site; the robot trap is off screen; the panel also says "sent" */
+#pn-contact .ct-hp{ position:absolute; left:-10000px; top:auto; width:1px; height:1px; overflow:hidden; }
+#pn-contact .ct-result--sent .ct-mailonly{ display:none; }
+#pn-contact .ct-result--sent{ border-color:rgba(11,61,69,.38); }
+#pn-contact .ct-btn[disabled]{ cursor:default; opacity:.72; transform:none; }
+#pn-contact .ct-btn[disabled]::after{ content:none; }
 
 /* ---------- 3 what happens next: Earthrise Depth ---------- */
 #pn-contact .ct-close{ padding:clamp(24px,4.2vh,46px) 0 clamp(26px,4.4vh,48px); border-top:1px solid rgba(227,194,88,.5); background:radial-gradient(50% 75% at 20% 0%, rgba(227,194,88,.12) 0%, transparent 65%), linear-gradient(180deg,#0B3D45 0%,#082A30 100%); }
@@ -483,7 +495,8 @@ article:has(#pn-contact) .entry-header{ display:none !important; }
                     <input id="ct-org" name="org" type="text" autocomplete="organization" placeholder="Ministry of Finance &middot; Director">
                   </div>
                 </div>
-                <div class="ct-field" id="ct-perm-wrap" hidden>
+                <div class="ct-hp" aria-hidden="true"><label for="ct-extra">Leave this field empty</label><input id="ct-extra" name="extra" type="text" tabindex="-1" autocomplete="off"></div>
+              <div class="ct-field" id="ct-perm-wrap" hidden>
                   <label class="ct-check"><input type="checkbox" id="ct-perm"> This is my own original work, and Perfect Nations may publish it with credit to me.</label>
                 </div>
               </div>
@@ -493,13 +506,12 @@ article:has(#pn-contact) .entry-header{ display:none !important; }
                 <button class="ct-btn" type="submit" id="ct-send">Send your letter</button>
                 <button class="ct-btn ct-btn--line" type="button" id="ct-copy">Copy instead</button>
               </div>
-              <p class="ct-priv">Opens in your own email. Nothing is stored on this site, and there is no mailing list.</p>
               <div class="ct-result" id="ct-result" hidden aria-live="polite">
                 <p class="ct-result__h" id="ct-result-h">Your email is opening</p>
-                <p class="ct-result__p">If it did not open, send the same letter from your browser, or copy it.</p>
+                <p class="ct-result__p" id="ct-result-p">If it did not open, send the same letter from your browser, or copy it.</p>
                 <div class="ct-result__acts">
-                  <a class="ct-btn ct-btn--line ct-btn--sm" id="ct-gmail" href="https://mail.google.com/" target="_blank" rel="noopener noreferrer">Open in Gmail</a>
-                  <a class="ct-btn ct-btn--line ct-btn--sm" id="ct-outlook" href="https://outlook.office.com/" target="_blank" rel="noopener noreferrer">Open in Outlook</a>
+                  <a class="ct-btn ct-btn--line ct-btn--sm ct-mailonly" id="ct-gmail" href="https://mail.google.com/" target="_blank" rel="noopener noreferrer">Open in Gmail</a>
+                  <a class="ct-btn ct-btn--line ct-btn--sm ct-mailonly" id="ct-outlook" href="https://outlook.office.com/" target="_blank" rel="noopener noreferrer">Open in Outlook</a>
                   <button class="ct-btn ct-btn--line ct-btn--sm" type="button" id="ct-copy2">Copy the letter</button>
                 </div>
               </div>
@@ -588,8 +600,8 @@ article:has(#pn-contact) .entry-header{ display:none !important; }
     form:$('ct-form'), kinds:$('ct-kinds'), compare:$('ct-compare'), workWrap:$('ct-work-wrap'), work:$('ct-work'), workLab:$('ct-work-lab'),
     name:$('ct-name'), email:$('ct-email'), country:$('ct-country'), org:$('ct-org'),
     whenWrap:$('ct-when-wrap'), whens:$('ct-whens'), msg:$('ct-msg'), permWrap:$('ct-perm-wrap'), perm:$('ct-perm'),
-    send:$('ct-send'), copy:$('ct-copy'), copy2:$('ct-copy2'),
-    result:$('ct-result'), resultH:$('ct-result-h'), gmail:$('ct-gmail'), outlook:$('ct-outlook'),
+    send:$('ct-send'), copy:$('ct-copy'), copy2:$('ct-copy2'), extra:$('ct-extra'),
+    result:$('ct-result'), resultH:$('ct-result-h'), resultP:$('ct-result-p'), gmail:$('ct-gmail'), outlook:$('ct-outlook'),
     lDate:$('ct-l-date'), lAbout:$('ct-l-about')
   };
   for (var k in el) { if (!el[k]) { return; } }
@@ -813,17 +825,56 @@ article:has(#pn-contact) .entry-header{ display:none !important; }
     el.gmail.href = 'https://mail.google.com/mail/?view=cm&fs=1&to=' + encodeURIComponent(TO) + '&su=' + encodeURIComponent(m.subject) + '&body=' + encodeURIComponent(m.body);
     el.outlook.href = 'https://outlook.office.com/mail/deeplink/compose?to=' + encodeURIComponent(TO) + '&subject=' + encodeURIComponent(m.subject) + '&body=' + encodeURIComponent(m.body);
   }
-  function show(h, m){
-    links(m); el.resultH.textContent = h; el.result.hidden = false;
+  var MAILP = 'If it did not open, send the same letter from your browser, or copy it.';
+  function show(h, m, p, sent){
+    links(m); el.resultH.textContent = h; el.resultP.textContent = p || MAILP;
+    el.result.classList.toggle('ct-result--sent', !!sent); el.result.hidden = false;
     try { el.result.scrollIntoView({ behavior:'smooth', block:'nearest' }); } catch (e) {}
   }
-  el.form.addEventListener('submit', function(e){
-    e.preventDefault();
-    if (!validate()) { return; }
-    var m = compose(), href = 'mailto:' + TO + '?subject=' + encodeURIComponent(m.subject) + '&body=' + encodeURIComponent(m.body);
+  /* v7.3: Send delivers the letter from the site (Live Pages 1.5, POST /wp-json/pn-live/v1/letter).
+     If the site cannot send (no answer, an error, or the plugin not yet updated), the visitor's own
+     email opens with the same letter, as before, so no letter is lost. */
+  var ENDPOINT = '/wp-json/pn-live/v1/letter', OPENED = Date.now(), busy = false, sentOnce = false;
+  function viaEmail(m){
+    var href = 'mailto:' + TO + '?subject=' + encodeURIComponent(m.subject) + '&body=' + encodeURIComponent(m.body);
     if (href.length > 1900) { show('Your letter is ready. Send it from your browser, or copy it.', m); return; }
     show('Your email is opening', m);
     window.location.href = href;
+  }
+  function sending(on){
+    busy = on; el.send.disabled = on;
+    el.send.textContent = on ? 'Sending\u2026' : 'Send your letter';
+    if (on) { el.send.setAttribute('aria-busy', 'true'); } else { el.send.removeAttribute('aria-busy'); }
+  }
+  function sent(m){
+    sentOnce = true; el.send.disabled = true; el.send.textContent = 'Sent'; el.copy.hidden = true;
+    show('Your letter has been sent', m, 'Thank you. A Nation Steward will read it, and any answer will come to ' + el.email.value.trim() + '.', true);
+  }
+  el.form.addEventListener('input', function(){
+    if (sentOnce) { sentOnce = false; el.send.disabled = false; el.send.textContent = 'Send your letter'; el.copy.hidden = false; el.result.hidden = true; }
+  });
+  el.form.addEventListener('submit', function(e){
+    e.preventDefault();
+    if (busy || sentOnce) { return; }
+    if (!validate()) { return; }
+    var m = compose();
+    if (!window.fetch || !window.JSON) { viaEmail(m); return; }
+    var ctl = window.AbortController ? new AbortController() : null;
+    var timer = setTimeout(function(){ if (ctl) { ctl.abort(); } }, 15000);
+    sending(true);
+    fetch(ENDPOINT, {
+      method:'POST', credentials:'omit', headers:{ 'Content-Type':'application/json' }, signal: ctl ? ctl.signal : undefined,
+      body: JSON.stringify({ to: kind.fam === 'art' ? 'art' : 'main', subject:m.subject, body:m.body, name:el.name.value.trim(),
+        email:el.email.value.trim(), extra:el.extra.value, t: Date.now() - OPENED })
+    }).then(function(r){
+      return r.json().then(function(d){ return { ok:r.ok, status:r.status, d:d || {} }; }, function(){ return { ok:r.ok, status:r.status, d:{} }; });
+    }).then(function(x){
+      clearTimeout(timer); sending(false);
+      if (x.ok && x.d.status === 'sent') { sent(m); return; }
+      if (x.status === 400 && x.d.field === 'email') { bad(el.email, 'ct-email-err', true); el.email.focus(); return; }
+      if (x.status === 400 && x.d.field === 'name') { bad(el.name, 'ct-name-err', true); el.name.focus(); return; }
+      viaEmail(m);
+    }, function(){ clearTimeout(timer); sending(false); viaEmail(m); });
   });
   function legacy(t, done){
     var ta = document.createElement('textarea'); ta.value = t; ta.setAttribute('readonly', '');
