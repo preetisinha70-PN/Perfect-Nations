@@ -98,7 +98,9 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 PAGES, DATA, HERE = ROOT / 'pages', ROOT / 'data', ROOT / 'tools' / 'nation'
-VERSION = '14.2'  # the cup: every sovereign asset, valued; What we do compressed on laptops and phones (the Steward-General, 16 Nov 2026)
+VERSION = '14.4'  # Already working in: the line "None is a partner of Perfect Nations." is removed (Preeti Sinha, 21 Nov 2026)
+# 14.3: page-level corrections from the Nation Stewards' weekly reviews (17 Nov 2026)
+# 14.2: the cup: every sovereign asset, valued; What we do compressed on laptops and phones (the Steward-General, 16 Nov 2026)
 # 14.1: the Nation Steward card is back above the Newswire's news, as before v14.0 (Preeti Sinha, 16 Nov 2026, evening)
 # 14.0: no Steward named and no super intelligence on any blueprint (Preeti Sinha, 16 Nov 2026)
 # 13.17: Estonia, Portugal and the Dominican Republic portraits; Finland's upright portrait (16 Nov 2026)
@@ -1166,8 +1168,8 @@ def firms(d):
     return (
         '<section class="bpx-band bpx-er bpx-firms" id="bp-enterprises" aria-labelledby="bp-ent-h"><div class="bpx-in">'
         '<div class="bpx-ent__h"><div><h2 class="bpx-ent__t" id="bp-ent-h">%s</h2>'
-        '<p class="bpx-ent__l">Independent firms and social enterprises already at work in %s, highlighted by Perfect Nations. '
-        'None is a partner of Perfect Nations.</p></div>'
+        # v14.4: the line "None is a partner of Perfect Nations." is removed (Preeti Sinha, 21 Nov 2026)
+        '<p class="bpx-ent__l">Independent firms and social enterprises already at work in %s, highlighted by Perfect Nations.</p></div>'
         '<a class="bpx-link" href="%s" target="_blank" rel="noopener noreferrer">Suggest an enterprise</a></div>'
         '<p class="bpx-swipe" aria-hidden="true">Swipe for every enterprise</p><ul class="bpx-ents bpx-rail">%s</ul>'
         '</div></section>'
@@ -1251,6 +1253,7 @@ def build(slug, sbn, son, today):
     script = (HERE / 'script.js').read_text(encoding='utf-8').replace('/*pn:cfg*/', 'var CFG = %s;' % js_str(cfg))
     head = (
         '<!-- PERFECT NATIONS . NATIONAL BLUEPRINT . %s . v%s . %s . Built by tools/build_nations.py: never edit by hand. -->\n'
+        '<!-- v14.4 (21 November 2026): Already working in: the line "None is a partner of Perfect Nations." is removed. -->\n'
         '<!-- v14.2 (16 November 2026): the cup counts every sovereign asset, and What we do is about a third shorter. -->\n'
         '<!-- v14.1 (16 November 2026, evening): the Nation Steward card is back above the Newswire\'s news, as it was\n'
         '     before v14.0, on the request of Preeti Sinha, President and CEO. -->\n'
