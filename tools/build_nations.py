@@ -100,7 +100,8 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 PAGES, DATA, HERE = ROOT / 'pages', ROOT / 'data', ROOT / 'tools' / 'nation'
-VERSION = '14.6'  # Previous and next blueprint, A to Z, above All 195 nations (Preeti Sinha, 21 Nov 2026)
+VERSION = '14.7'  # picture cards for the assets, switched on per nation by assets.pictures (Austria first; Preeti Sinha, 21 Nov 2026)
+# 14.6: Previous and next blueprint, A to Z, above All 195 nations (Preeti Sinha, 21 Nov 2026)
 # 14.5: What we do: the firm line ends at "a new-age sovereign advisory firm." (Preeti Sinha, 21 Nov 2026)
 # 14.4: Already working in: the line "None is a partner of Perfect Nations." is removed (Preeti Sinha, 21 Nov 2026)
 # 14.3: page-level corrections from the Nation Stewards' weekly reviews (17 Nov 2026)
@@ -673,15 +674,27 @@ def what_we_do(d):
 def assets(d):
     a = d.get('assets') or {}
     name = d['nation']
+    pics = bool(a.get('pictures'))  # v15.0 test: picture cards, switched on per nation (Austria first, 21 Nov 2026)
     cards = []
     for i, x in enumerate(a.get('items') or []):
         if not x.get('name'):
             continue
+        pic = bar = ''
+        img = (x.get('images') or [None])[0]
+        if pics and ok_https(img):
+            thumb = x.get('thumb') if ok_https(x.get('thumb')) else ''
+            ss = ' srcset="%s 300w, %s 768w" sizes="(max-width:640px) 80vw, 33vw"' % (ent(https(thumb)), ent(https(img))) if thumb else ''
+            pic = ('<figure class="bpx-acard__pic"><img src="%s"%s alt="%s" width="768" height="573" loading="lazy" decoding="async" '
+                   'onerror="var f=this.parentNode;if(f)f.remove()">%s</figure>'
+                   % (ent(https(img)), ss, ent(x.get('alt') or x['name']), '<figcaption>AI illustration</figcaption>' if x.get('ai') else ''))
+            m = re.match(r'^\s*([0-9]+(?:\.[0-9]+)?)\s*%\s*$', plain(x.get('figure') or ''))
+            if m and 0 < float(m.group(1)) <= 100:
+                bar = '<span class="bpx-acard__bar" aria-hidden="true"><b style="width:%s%%"></b></span>' % m.group(1)
         cards.append(
-            '<li class="bpx-acard" style="--i:%d"><span class="bpx-acard__n" aria-hidden="true">%02d</span>'
-            '<p class="bpx-acard__fig"><b>%s</b>%s</p><h3>%s</h3>%s</li>'
-            % (i, i + 1, ent(x.get('figure') or ''), '<span>%s</span>' % ent(x['label']) if x.get('label') else '',
-               ent(x['name']), '<p>%s</p>' % ent(x['text']) if x.get('text') else ''))
+            '<li class="bpx-acard%s" style="--i:%d">%s<span class="bpx-acard__n" aria-hidden="true">%02d</span>'
+            '<p class="bpx-acard__fig"><b>%s</b>%s</p>%s<h3>%s</h3>%s</li>'
+            % (' bpx-acard--pic' if pic else '', i, pic, i + 1, ent(x.get('figure') or ''), '<span>%s</span>' % ent(x['label']) if x.get('label') else '',
+               bar, ent(x['name']), '<p>%s</p>' % ent(x['text']) if x.get('text') else ''))
     # v14.1: Perfect Nations values every sovereign asset a nation owns; the cards show the ones that lead
     n = len(cards)
     lead = ('Perfect Nations values every sovereign asset %s owns. These %s lead: each is owned today, earns today and can carry '
@@ -694,11 +707,13 @@ def assets(d):
         '<section class="bpx-band bpx-er bpx-assets" id="bp-assets" aria-labelledby="bp-assets-h"><div class="bpx-in">'
         '<div class="bpx-head"><div>%s<h2 class="bpx-h2" id="bp-assets-h">%s</h2></div>'
         '<p class="bpx-lead">%s</p></div>'
-        '<ul class="bpx-acards" data-n="%d">%s</ul>'
+        '<ul class="bpx-acards%s" data-n="%d">%s</ul>%s'
         '<div class="bpx-foot"><a class="bpx-link" href="#bp-sources">Every figure, with its source</a>'
         '<a class="bpx-link" href="https://perfectnations.com/sovereign-assets/" target="_blank" rel="noopener noreferrer">The Sovereign Assets ledger</a></div>'
         '</div></section>' % (step_eb('01', 'Assets', 'The cup', 'Sovereign Assets'),
-                              ent(a.get('heading') or 'Five assets no balance sheet counts.'), lead, len(cards), ''.join(cards)))
+                              ent(a.get('heading') or 'Five assets no balance sheet counts.'), lead,
+                              ' bpx-acards--pics' if pics else '', len(cards), ''.join(cards),
+                              '<p class="bpx-swipe" aria-hidden="true">Swipe for all %s</p>' % (WORDS[len(cards)].lower() if len(cards) < len(WORDS) else len(cards)) if pics else ''))
 
 
 def stew_face(photo, steward):
@@ -1292,6 +1307,7 @@ def build(slug, sbn, son, today):
     script = (HERE / 'script.js').read_text(encoding='utf-8').replace('/*pn:cfg*/', 'var CFG = %s;' % js_str(cfg))
     head = (
         '<!-- PERFECT NATIONS . NATIONAL BLUEPRINT . %s . v%s . %s . Built by tools/build_nations.py: never edit by hand. -->\n'
+        '<!-- v14.7 (21 November 2026): picture cards for the assets where the nation switches them on (Austria first): each asset opens with its picture, marked AI illustration; phones swipe the cards. -->\n'
         '<!-- v14.6 (21 November 2026): above All 195 nations, the previous and next blueprints, A to Z. -->\n'
         '<!-- v14.5 (21 November 2026): What we do: the firm line now ends at "a new-age sovereign advisory firm." -->\n'
         '<!-- v14.4 (21 November 2026): Already working in: the line "None is a partner of Perfect Nations." is removed. -->\n'
