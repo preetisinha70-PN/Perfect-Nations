@@ -278,7 +278,7 @@ Outline (the comments are notes, not part of the file):
 | `slug`, `nation`, `blueprint` | the nation exactly as its blueprint names it ("Côte d’Ivoire") and the blueprint url |
 | `title`, `kicker`, `date` | the name of the Solution (at most 60 characters), "Perfect Nations Solution", the date it was designed |
 | `standfirst` | the idea in one line (at most 160 characters) |
-| `standards` | the standards it moves, in the order Food, Water, Shelter, Energy, Education, Health, Livelihood; it always includes the nation's standard furthest from reach |
+| `standards` | the standards it moves. The first is the standard it is designed for, the one its challenge names (usually the nation's standard furthest from reach): it decides the Solution's filter on State of Nations and shows as a filled chip. The rest follow in the order Food, Water, Shelter, Energy, Education, Health, Livelihood |
 | `challenge` | the challenge in one or two sentences (at most 360 characters), with the nation's own sourced figure |
 | `advises` | What Perfect Nations advises (at most 520 characters): the finance move, built on what the nation owns; never a sentence about super intelligence (16 Nov 2026). No new figures, no results claimed, and the word "Finance" in place of "pay" |
 | `how` | three lines: 01 Assets (what the nation owns that carries it), 02 Capital (the instrument), 03 Solutions (what changes for citizens) |
