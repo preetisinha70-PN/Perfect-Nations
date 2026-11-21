@@ -100,7 +100,8 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 PAGES, DATA, HERE = ROOT / 'pages', ROOT / 'data', ROOT / 'tools' / 'nation'
-VERSION = '14.7.1'  # the pictures carry no AI illustration mark (Preeti Sinha, 21 Nov 2026)
+VERSION = '14.8'  # the October pictures switched on for the first 44 blueprints (Preeti Sinha, 21 Nov 2026)
+# 14.7.1: the pictures carry no AI illustration mark (Preeti Sinha, 21 Nov 2026)
 # 14.7: picture cards for the assets, switched on per nation by assets.pictures (Austria first; Preeti Sinha, 21 Nov 2026)
 # 14.6: Previous and next blueprint, A to Z, above All 195 nations (Preeti Sinha, 21 Nov 2026)
 # 14.5: What we do: the firm line ends at "a new-age sovereign advisory firm." (Preeti Sinha, 21 Nov 2026)
@@ -684,7 +685,8 @@ def assets(d):
         img = (x.get('images') or [None])[0]
         if pics and ok_https(img):
             thumb = x.get('thumb') if ok_https(x.get('thumb')) else ''
-            ss = ' srcset="%s 300w, %s 768w" sizes="(max-width:640px) 80vw, 33vw"' % (ent(https(thumb)), ent(https(img))) if thumb else ''
+            ss = img_attrs(img, (300, 600, 768), '(max-width:640px) 80vw, 33vw') or (
+                ' srcset="%s 300w, %s 768w" sizes="(max-width:640px) 80vw, 33vw"' % (ent(https(thumb)), ent(https(img))) if thumb else '')
             pic = ('<figure class="bpx-acard__pic"><img src="%s"%s alt="%s" width="768" height="573" loading="lazy" decoding="async" '
                    'onerror="var f=this.parentNode;if(f)f.remove()">%s</figure>'
                    % (ent(https(img)), ss, ent(x.get('alt') or x['name']), ''))  # no mark on the picture (Preeti Sinha, 21 Nov 2026); 'ai' stays in the data as a record
@@ -1308,6 +1310,7 @@ def build(slug, sbn, son, today):
     script = (HERE / 'script.js').read_text(encoding='utf-8').replace('/*pn:cfg*/', 'var CFG = %s;' % js_str(cfg))
     head = (
         '<!-- PERFECT NATIONS . NATIONAL BLUEPRINT . %s . v%s . %s . Built by tools/build_nations.py: never edit by hand. -->\n'
+        '<!-- v14.8 (21 November 2026): the asset pictures made in October are switched on for the first 44 blueprints. -->\n'
         '<!-- v14.7.1 (21 November 2026): the asset pictures carry no AI illustration mark (the President and CEO). -->\n'
         '<!-- v14.7 (21 November 2026): picture cards for the assets where the nation switches them on (Austria first): each asset opens with its picture; phones swipe the cards. -->\n'
         '<!-- v14.6 (21 November 2026): above All 195 nations, the previous and next blueprints, A to Z. -->\n'
