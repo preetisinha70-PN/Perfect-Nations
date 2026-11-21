@@ -2,7 +2,7 @@
 /**
  * Plugin Name:       Perfect Nations Live Pages
  * Description:       Serves each Perfect Nations page from the Perfect Nations GitHub repository, so a page updates without copying and pasting its code. Pages stay in Elementor; if GitHub cannot be reached, the page shows the code pasted in its widget.
- * Version:           1.5.0
+ * Version:           1.5.1
  * Requires at least: 6.0
  * Requires PHP:      7.4
  * Author:            Perfect Nations
@@ -39,6 +39,11 @@
  *    hour from one connection, two hundred a day for the site), is not mailed from here. In those cases, and
  *    whenever the site cannot send, the page opens the visitor's own email with the same letter, as before.
  *    Settings > Perfect Nations Live > Send a test letter checks that mail leaves the site.
+ * 9. v1.5.1: the Reply-To name is no longer wrapped in quotation marks of its own (WordPress quotes it when
+ *    needed; the double quoting gave a malformed-looking header, "\"Name\"", on letters that landed in
+ *    Spam), and a filled robot trap no longer pretends the letter was sent: the page opens the writer's own
+ *    email instead, so a letter can never be dropped silently (for example if a browser's autofill fills the
+ *    hidden field).
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -47,7 +52,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 final class PN_Live_Pages {
 
-	const VERSION  = '1.5.0';
+	const VERSION  = '1.5.1';
 	const REPO     = 'preetisinha70-PN/perfect-nations';
 	const BRANCH   = 'main';
 	const MANIFEST = 'pages/manifest.json';
@@ -623,10 +628,11 @@ final class PN_Live_Pages {
 		}
 		$p = is_array( $p ) ? $p : array();
 
-		// A robot fills the hidden field: it is told the letter was sent, and nothing is mailed.
+		// A filled hidden field (a robot, or a browser's autofill): nothing is mailed from here, and the page
+		// opens the writer's own email instead, so a real letter is never lost (v1.5.1).
 		$trap = isset( $p['extra'] ) ? trim( (string) $p['extra'] ) : '';
 		if ( '' !== $trap ) {
-			return new WP_REST_Response( array( 'status' => 'sent' ), 200 );
+			return new WP_REST_Response( array( 'status' => 'check' ), 400 );
 		}
 		// A letter sent within seconds of opening the page is not mailed from here; the page then opens
 		// the writer's own email, so a real person (a fast one, with autofill) still reaches Perfect Nations.
@@ -670,7 +676,7 @@ final class PN_Live_Pages {
 		$who     = trim( preg_replace( '/[^\p{L}\p{M}\p{N} .\'\-]/u', '', $name ) );
 		$headers = array(
 			'Content-Type: text/plain; charset=UTF-8',
-			'Reply-To: ' . ( '' !== $who ? '"' . $who . '" ' : '' ) . '<' . $email . '>',
+			'Reply-To: ' . ( '' !== $who ? $who . ' ' : '' ) . '<' . $email . '>',
 		);
 		$ok = $this->mail( $to, $subject, $body, $headers );
 		if ( ! $ok ) {
