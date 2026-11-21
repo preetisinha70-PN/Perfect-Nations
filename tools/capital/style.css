@@ -387,3 +387,36 @@
 
 /* 4 the close on ivory */
 #pn-arch .pca-close .pca-eb{ color:#8A3A22; }
+
+
+/* ---------- v6.1 Who finances the Living Line: six white cards under Earthrise headers, on ivory ---------- */
+#pn-arch .pca-fund{
+  --fg:#0B3D45; --mut:#34464A; --dim:#5C696C; --hair:rgba(16,38,43,.13); color:#10262B;
+  background:radial-gradient(50% 60% at 8% 0%, rgba(227,194,88,.14) 0%, rgba(227,194,88,0) 70%), linear-gradient(180deg,#F7F0DF 0%,#F4ECD8 100%);
+}
+#pn-arch .pca-fns{ display:grid; gap:12px; grid-template-columns:repeat(3,minmax(0,1fr)); margin:clamp(16px,2.4vh,24px) 0 0; padding:0; list-style:none; }
+#pn-arch .pca-fn{ display:flex; flex-direction:column; overflow:hidden; border-radius:14px; background:#FFFDF8; border:1px solid rgba(16,38,43,.12); box-shadow:0 10px 26px rgba(16,38,43,.07); transition:transform .25s ease, box-shadow .25s ease; }
+#pn-arch .pca-fn:hover{ transform:translateY(-3px); box-shadow:0 16px 34px rgba(16,38,43,.13); }
+#pn-arch .pca-fn__h{ display:flex; flex-direction:column; gap:2px; padding:12px 16px 11px; color:#F4ECD8; background:linear-gradient(165deg,#10505F 0%,#0B3D45 60%,#09313A 100%); box-shadow:inset 0 -2px 0 rgba(227,194,88,.7); }
+#pn-arch .pca-fn__h b{ font-family:var(--hd); font-size:1.16rem; font-weight:700; line-height:1.05; }
+#pn-arch .pca-fn__h span{ font-size:.8rem; line-height:1.3; color:rgba(244,236,216,.8); }
+#pn-arch .pca-fn__f{ display:flex; flex-direction:column; gap:2px; margin:0; padding:12px 16px 4px; }
+#pn-arch .pca-fn__f em{ font-style:normal; font-family:var(--hd); font-weight:700; font-size:clamp(1.6rem,2.2vw,2rem); line-height:1; color:#8C6A12; }
+#pn-arch .pca-fn__f span{ font-size:.88rem; line-height:1.35; color:#34464A; }
+#pn-arch .pca-fn__s{ margin:auto 0 0; padding:8px 16px 12px; font-size:.66rem; font-family:var(--hd); font-weight:700; letter-spacing:.1em; text-transform:uppercase; }
+#pn-arch .pca-fn__s a{ color:#5C696C; text-decoration:none; border-bottom:1px solid rgba(16,38,43,.2); }
+#pn-arch .pca-fn__s a:hover{ color:#0B3D45; border-bottom-color:#0B3D45; }
+#pn-arch .pca-fn__s a[target]::after{ content:"\00a0\2197"; font-family:Arial,sans-serif; letter-spacing:0; }
+#pn-arch .pca-fund__foot{ display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:10px 20px; margin-top:14px; }
+#pn-arch .pca-fund__foot .pca-note{ margin:0; max-width:62ch; font-size:.84rem; line-height:1.4; color:#5C696C; }
+@media (max-width:1099px){ #pn-arch .pca-fns{ grid-template-columns:repeat(2,minmax(0,1fr)); } }
+@media (max-width:640px){
+  #pn-arch .pca-fns{ grid-template-columns:minmax(0,1fr); gap:8px; }
+  #pn-arch .pca-fn__h{ padding:10px 13px 9px; }
+  #pn-arch .pca-fn__h b{ font-size:1.06rem; }
+  #pn-arch .pca-fn__f{ flex-direction:row; align-items:baseline; gap:10px; padding:10px 13px 2px; }
+  #pn-arch .pca-fn__f em{ flex:none; font-size:1.45rem; }
+  #pn-arch .pca-fn__f span{ font-size:.82rem; }
+  #pn-arch .pca-fn__s{ padding:6px 13px 10px; }
+  #pn-arch .pca-fund__foot .pca-btn{ width:100%; }
+}

@@ -42,7 +42,7 @@ ROOT = Path(__file__).resolve().parent.parent
 PAGES = ROOT / 'pages'
 DATA = ROOT / 'data'
 HERE = Path(__file__).resolve().parent / 'capital'
-VERSION = '5.4'
+VERSION = '6.1'
 NOT_NATIONS = {'state-of-nations', 'ticker', 'blueprints', 'capital-architecture'}
 
 # Who carries each line on record (the register's cat field), in the words a visitor reads.
@@ -293,6 +293,27 @@ def record(doc):
            read_more(['Closing it brings private capital to the seven basic living standards.', ent(r['note'])]), bars, nats))
 
 
+def funders(doc):
+    """Who finances the Living Line (the Steward-General, 21 Nov 2026): the six largest networks of development
+    and impact funders, each with one sourced figure. Named for reference only, never as partners."""
+    f = doc.get('funders')
+    if not f:
+        return ''
+    cards = ''.join(
+        '<li class="pca-fn"><div class="pca-fn__h"><b>%s</b><span>%s</span></div>'
+        '<p class="pca-fn__f"><em>%s</em><span>%s</span></p>'
+        '<p class="pca-fn__s"><a href="%s" target="_blank" rel="noopener">Source: %s</a></p></li>'
+        % (ent(it['name']), ent(it['kind']), ent(it['figure']), ent(it['label']), ent(https(it['url'])), ent(it['source']))
+        for it in f['items'])
+    b = f['button']
+    return (
+        '<section class="pca-band pca-fund" id="pca-funders" aria-labelledby="pca-fh"><div class="pca-in">'
+        '<p class="pca-eb">%s</p><h2 class="pca-h2" id="pca-fh">%s</h2><p class="pca-lead">%s</p>'
+        '<ul class="pca-fns">%s</ul>'
+        '<div class="pca-fund__foot"><p class="pca-note">%s</p><a class="pca-btn" href="%s">%s</a></div></div></section>'
+        % (ent(f['eyebrow']), ent(f['title']), ent(f['lead']), cards, ent(f['note']), ent(https(b['url'])), ent(b['label'])))
+
+
 def close(doc):
     c = doc['close']
     btns = ''.join('<a class="pca-btn%s" href="%s">%s</a>' % (' pca-btn--line' if b.get('line') else '', ent(https(b['url'])), ent(b['label']))
@@ -347,6 +368,9 @@ disaster risk finance, trade and commodity finance, grants and climate funds (th
 10 Nov 2026). Each deal comes from a blueprint's own record where one exists. Chips with counts choose
 one family at a time on every screen, All shows every line, and a search finds any instrument.
 v5.4: light reading sections, Earthrise accents (the Steward-General, 10 Nov 2026).
+v6.1: Who finances the Living Line, after the record: the six largest networks of development and impact
+funders, each with one sourced figure, named for reference only, and a way on to the For Funders page
+(the Steward-General, 21 Nov 2026).
 =========================================================================== -->
 ''' % (VERSION, today)
     body = '\n'.join([
@@ -356,6 +380,7 @@ v5.4: light reading sections, Earthrise accents (the Steward-General, 10 Nov 202
         hero(doc, n_inst, len(fams)),
         index(doc, open_blueprints()),
         record(doc),
+        funders(doc),
         '<div class="pn-rule" aria-hidden="true"></div>',
         close(doc),
         '</div>',

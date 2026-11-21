@@ -1,0 +1,198 @@
+<!-- ===========================================================================
+PERFECT NATIONS - FOR FUNDERS - THE WHOLE PAGE IN ONE FILE - v1.0 - 2026-11-21
+The /for-funders/ page holds ONE Custom HTML block whose root is pn-fund. The Perfect Nations Live Pages
+plugin serves this file from GitHub in its place, so the page changes only through GitHub. Never edit this
+file by hand: edit data/for-funders.json (words) or tools/funders/style.css (design), run
+python3 tools/build_funders.py, and open a pull request.
+v1.0: the page for funders as clients (the Steward-General, 21 Nov 2026): what funders receive (the deal
+pipeline, Match of the week, introductions), how a deal is checked (Ledger, Living Line, Design, Capital),
+who it serves, and one action: request the deal pipeline. The hero figures are counted from the manifest
+and data/capital-architecture.json. Institutions are named for reference only, never as partners.
+=========================================================================== -->
+<style>
+#pn-fund{
+  --er:#0B3D45; --dp:#082A30; --iv:#F4ECD8; --ink:#10262B; --mut:#34464A; --dim:#5C696C;
+  --g:#E3C258; --gs:#F0D68F; --gd:#8C6A12; --tc:#8A3A22;
+  --hd:var(--pn-font-heading,"Barlow Condensed","Arial Narrow",Arial,sans-serif);
+  --bd:var(--pn-font-body,"Barlow Semi Condensed",Arial,sans-serif);
+  --gut:clamp(18px,4vw,48px); --max:1240px;
+  position:relative; width:100vw; margin-left:calc(50% - 50vw); box-sizing:border-box;
+  overflow-x:hidden; overflow-x:clip; color:var(--ink); background:var(--iv);
+  font-family:var(--bd); font-size:16px; line-height:1.5; -webkit-text-size-adjust:100%;
+}
+#pn-fund *,#pn-fund *::before,#pn-fund *::after{ box-sizing:border-box; }
+#pn-fund a{ color:inherit; }
+#pn-fund a:focus-visible{ outline:2px solid var(--er); outline-offset:3px; }
+#pn-fund h1,#pn-fund h2,#pn-fund h3{ text-transform:none !important; text-shadow:none !important; }
+.elementor-widget-html:has(#pn-fund),.elementor-widget:has(#pn-fund),.elementor-widget-wrap:has(#pn-fund),
+.elementor-container:has(#pn-fund),.elementor-column:has(#pn-fund),.elementor-section:has(#pn-fund),
+.e-con-inner:has(#pn-fund),.e-con:has(#pn-fund),#content:has(#pn-fund),.site-content:has(#pn-fund),.ast-container:has(#pn-fund),
+.entry-content:has(#pn-fund){
+  padding-top:0 !important; padding-bottom:0 !important; margin-top:0 !important; margin-bottom:0 !important;
+  --widgets-spacing:0px !important; row-gap:0 !important;
+}
+#pn-fund .pf-band{ position:relative; padding:clamp(26px,4vh,48px) 0 clamp(24px,3.6vh,42px); }
+#pn-fund .pf-in{ width:100%; max-width:calc(var(--max) + 2 * var(--gut)); margin:0 auto; padding:0 var(--gut); }
+#pn-fund .pf-eb{
+  display:flex; align-items:center; gap:10px; margin:0 0 10px;
+  font-family:var(--hd); font-size:.7rem; font-weight:700; letter-spacing:.3em; text-transform:uppercase; color:var(--tc);
+}
+#pn-fund .pf-eb::before{ content:""; width:22px; height:2px; flex:none; background:rgba(138,58,34,.55); }
+#pn-fund h1.pf-h1{
+  margin:0; max-width:17ch; font-family:var(--hd); font-weight:700; color:var(--er) !important;
+  font-size:clamp(2.5rem,5.4vw,4.9rem); line-height:.92; letter-spacing:-.025em; text-wrap:balance;
+}
+#pn-fund h2.pf-h2{
+  margin:0; max-width:24ch; font-family:var(--hd); font-weight:600; color:var(--er) !important;
+  font-size:clamp(1.9rem,3.4vw,3.1rem); line-height:.95; letter-spacing:-.02em; text-wrap:balance;
+}
+#pn-fund .pf-lead{ margin:12px 0 0; max-width:62ch; font-size:clamp(1rem,1.2vw,1.12rem); line-height:1.5; color:var(--mut); }
+#pn-fund .pf-ll{ margin:10px 0 0; max-width:70ch; font-size:.86rem; line-height:1.45; color:var(--dim); font-style:italic; }
+
+/* 1 the hero on paper, three Earthrise figure plates */
+#pn-fund .pf-hero{
+  background:
+    radial-gradient(48% 60% at 96% 0%, rgba(227,194,88,.2) 0%, rgba(227,194,88,0) 70%),
+    radial-gradient(40% 60% at 0% 100%, rgba(11,61,69,.07) 0%, rgba(11,61,69,0) 70%),
+    linear-gradient(180deg,#FBF8F1 0%,#F6EFE0 100%);
+}
+#pn-fund .pf-figs{ display:grid; gap:12px; grid-template-columns:repeat(3,minmax(0,1fr)); margin:clamp(18px,2.8vh,28px) 0 0; padding:0; list-style:none; }
+#pn-fund .pf-figs a{
+  display:flex; flex-direction:column; gap:4px; height:100%; padding:16px 18px 15px; border-radius:14px; text-decoration:none;
+  color:#F4ECD8; background:radial-gradient(70% 90% at 100% 0%, rgba(227,194,88,.2) 0%, rgba(227,194,88,0) 60%), linear-gradient(160deg,#12586A 0%,#0B3D45 55%,#082A30 100%);
+  box-shadow:0 14px 30px rgba(11,61,69,.22), inset 0 -2px 0 rgba(227,194,88,.7); transition:transform .25s ease, box-shadow .25s ease;
+}
+#pn-fund .pf-figs a:hover{ transform:translateY(-3px); box-shadow:0 20px 38px rgba(11,61,69,.3), inset 0 -2px 0 rgba(227,194,88,.9); }
+#pn-fund .pf-figs b{ font-family:var(--hd); font-weight:700; font-size:clamp(2.2rem,3.6vw,3.2rem); line-height:1; color:var(--g); }
+#pn-fund .pf-figs span{ font-size:.92rem; line-height:1.35; color:rgba(244,236,216,.86); }
+
+@media (min-width:1000px){
+  #pn-fund .pf-hero__g{ display:grid; grid-template-columns:minmax(0,1.35fr) minmax(0,1fr); gap:20px 56px; align-items:center; }
+  #pn-fund .pf-hero .pf-figs{ grid-template-columns:minmax(0,1fr); margin:0; }
+  #pn-fund .pf-hero .pf-figs a{ flex-direction:row; align-items:center; gap:18px; padding:16px 20px; }
+  #pn-fund .pf-hero .pf-figs b{ flex:none; min-width:3.6ch; }
+}
+
+/* 2 what funders receive, on ivory */
+#pn-fund .pf-offer,#pn-fund .pf-who{
+  background:radial-gradient(50% 60% at 92% 0%, rgba(227,194,88,.14) 0%, rgba(227,194,88,0) 70%), linear-gradient(180deg,#F7F0DF 0%,#F4ECD8 100%);
+}
+#pn-fund .pf-cards{ display:grid; gap:12px; grid-template-columns:repeat(3,minmax(0,1fr)); margin:clamp(16px,2.4vh,24px) 0 0; padding:0; list-style:none; }
+#pn-fund .pf-card{
+  position:relative; padding:18px 18px 16px; border-radius:14px; background:#FFFDF8; border:1px solid rgba(16,38,43,.12);
+  box-shadow:0 10px 26px rgba(16,38,43,.07); border-top:3px solid var(--er); transition:transform .25s ease, box-shadow .25s ease;
+}
+#pn-fund .pf-card:hover{ transform:translateY(-3px); box-shadow:0 16px 34px rgba(16,38,43,.13); }
+#pn-fund .pf-card__n{ font-family:var(--hd); font-weight:700; font-size:.78rem; letter-spacing:.2em; color:var(--gd); }
+#pn-fund .pf-card h3,#pn-fund .pf-step h3{ margin:4px 0 6px; font-family:var(--hd); font-weight:700; font-size:1.45rem; line-height:1.05; color:var(--er) !important; }
+#pn-fund .pf-card p,#pn-fund .pf-step p{ margin:0; font-size:.96rem; line-height:1.45; color:var(--mut); }
+
+/* 3 how a deal is checked, on paper: four numbered steps joined by a gold line */
+#pn-fund .pf-method{ background:linear-gradient(180deg,#FBF8F1 0%,#F6EFE0 100%); }
+#pn-fund .pf-steps{ position:relative; display:grid; gap:12px; grid-template-columns:repeat(4,minmax(0,1fr)); margin:clamp(18px,2.6vh,26px) 0 0; padding:0; list-style:none; }
+#pn-fund .pf-steps::before{ content:""; position:absolute; left:28px; right:28px; top:27px; height:2px; background:linear-gradient(90deg,#E3C258,rgba(227,194,88,.25)); }
+#pn-fund .pf-step{ position:relative; padding:0 6px 0 0; }
+#pn-fund .pf-step__n{
+  position:relative; z-index:1; display:inline-grid; place-items:center; width:56px; height:56px; border-radius:50%;
+  font-family:var(--hd); font-weight:700; font-size:1.15rem; color:var(--g); background:linear-gradient(160deg,#12586A 0%,#0B3D45 60%,#082A30 100%);
+  box-shadow:0 0 0 3px #FBF8F1, 0 0 0 4.5px rgba(227,194,88,.7), 0 10px 22px rgba(11,61,69,.25);
+}
+#pn-fund .pf-step h3{ margin-top:12px; }
+
+/* 4 who it serves */
+#pn-fund .pf-chips{ display:flex; flex-wrap:wrap; gap:8px; margin:clamp(14px,2vh,20px) 0 0; padding:0; list-style:none; }
+#pn-fund .pf-chips li{
+  padding:9px 15px 8px; border-radius:999px; background:#FFFDF8; border:1px solid rgba(11,61,69,.22);
+  font-family:var(--hd); font-weight:600; font-size:1.02rem; letter-spacing:.02em; color:var(--er);
+}
+#pn-fund .pf-more{ margin:14px 0 0; }
+#pn-fund .pf-more a{ font-family:var(--hd); font-weight:700; font-size:.78rem; letter-spacing:.16em; text-transform:uppercase; text-decoration:none; color:var(--er); border-bottom:1px solid rgba(11,61,69,.35); }
+#pn-fund .pf-more a::after{ content:" \2192"; font-family:Arial,sans-serif; letter-spacing:0; }
+#pn-fund .pf-more a:hover{ color:var(--tc); border-bottom-color:var(--tc); }
+
+/* 5 the close, Earthrise Depth: the one action */
+#pn-fund .pf-close{
+  text-align:center; color:#F4ECD8;
+  background:radial-gradient(60% 70% at 50% 0%, rgba(18,88,106,.6) 0%, rgba(18,88,106,0) 70%), #082A30;
+}
+#pn-fund .pf-close .pf-eb{ justify-content:center; color:var(--g); }
+#pn-fund .pf-close .pf-eb::before{ background:rgba(227,194,88,.6); }
+#pn-fund .pf-close .pf-eb::after{ content:""; width:22px; height:2px; flex:none; background:rgba(227,194,88,.6); }
+#pn-fund .pf-close h2.pf-h2{ margin:0 auto; color:#F4ECD8 !important; }
+#pn-fund .pf-close .pf-lead{ margin-left:auto; margin-right:auto; max-width:50ch; color:rgba(244,236,216,.84); text-wrap:balance; }
+#pn-fund .pf-btns{ display:flex; flex-wrap:wrap; justify-content:center; gap:10px; margin-top:18px; }
+#pn-fund .pf-btn{
+  display:inline-flex; align-items:center; justify-content:center; gap:12px; min-height:48px; padding:12px 26px; border-radius:999px;
+  font-family:var(--hd); font-weight:700; font-size:.82rem; letter-spacing:.2em; text-transform:uppercase; text-decoration:none;
+  color:#1A140C; background:var(--g); border:1.5px solid var(--g); box-shadow:0 10px 26px rgba(227,194,88,.25);
+  transition:background .25s ease, transform .25s ease;
+}
+#pn-fund .pf-btn::after{ content:"\2192"; font-family:Arial,sans-serif; font-size:1rem; letter-spacing:0; transition:transform .3s cubic-bezier(.22,1,.36,1); }
+#pn-fund .pf-btn:hover{ background:var(--gs); transform:translateY(-2px); }
+#pn-fund .pf-btn:hover::after{ transform:translateX(5px); }
+#pn-fund .pf-btn--line{ background:transparent; color:var(--g); box-shadow:none; border-color:rgba(227,194,88,.65); }
+#pn-fund .pf-btn--line:hover{ background:rgba(227,194,88,.12); }
+#pn-fund .pf-close a:focus-visible{ outline-color:var(--gs); }
+#pn-fund .pf-note{ margin:16px auto 0; max-width:62ch; font-size:.8rem; line-height:1.4; color:rgba(244,236,216,.6); }
+
+/* tablets */
+@media (max-width:1099px){
+  #pn-fund .pf-steps{ grid-template-columns:repeat(2,minmax(0,1fr)); gap:18px 14px; }
+  #pn-fund .pf-steps::before{ display:none; }
+}
+/* phones: their own layout, nothing scrolls sideways */
+@media (max-width:640px){
+  #pn-fund{ --gut:16px; }
+  #pn-fund .pf-band{ padding:22px 0 20px; }
+  #pn-fund h1.pf-h1{ font-size:clamp(2.2rem,10vw,2.8rem); }
+  #pn-fund h2.pf-h2{ font-size:clamp(1.75rem,8vw,2.2rem); }
+  #pn-fund .pf-lead{ font-size:.97rem; }
+  #pn-fund .pf-figs{ grid-template-columns:minmax(0,1fr); gap:8px; }
+  #pn-fund .pf-figs a{ flex-direction:row; align-items:center; gap:14px; padding:12px 14px; }
+  #pn-fund .pf-figs b{ flex:none; min-width:4.2ch; font-size:2rem; }
+  #pn-fund .pf-figs span{ font-size:.86rem; }
+  #pn-fund .pf-cards{ grid-template-columns:minmax(0,1fr); gap:8px; }
+  #pn-fund .pf-card{ padding:13px 14px 12px; }
+  #pn-fund .pf-card h3,#pn-fund .pf-step h3{ font-size:1.25rem; }
+  #pn-fund .pf-card p,#pn-fund .pf-step p{ font-size:.92rem; }
+  #pn-fund .pf-steps{ grid-template-columns:minmax(0,1fr); gap:12px; }
+  #pn-fund .pf-step{ display:grid; grid-template-columns:44px minmax(0,1fr); gap:2px 12px; align-items:start; }
+  #pn-fund .pf-step__n{ grid-row:span 2; width:44px; height:44px; font-size:1rem; }
+  #pn-fund .pf-step h3{ margin:2px 0 2px; }
+  #pn-fund .pf-chips li{ font-size:.94rem; padding:8px 12px 7px; }
+  #pn-fund .pf-btn{ width:100%; }
+}
+@media (prefers-reduced-motion:reduce){ #pn-fund *{ transition:none !important; } }
+</style>
+<div id="pn-fund" data-version="1.0">
+<style>
+.pn-rule{
+  position:relative; z-index:6; display:block; box-sizing:border-box;
+  width:100vw; height:1px; margin:0 0 -1px calc(50% - 50vw); padding:0; pointer-events:none; overflow:visible;
+  background:linear-gradient(90deg, rgba(227,194,88,0) 0%, rgba(227,194,88,.45) 16%, #E3C258 40%, #FBE7A6 50%, #E3C258 60%, rgba(227,194,88,.45) 84%, rgba(227,194,88,0) 100%);
+  box-shadow:0 0 10px rgba(227,194,88,.35);
+}
+.pn-rule::before,.pn-rule::after{
+  content:""; position:absolute; left:50%; top:50%; box-sizing:border-box; transform:translate(-50%,-50%) rotate(45deg);
+}
+.pn-rule::before{
+  width:8px; height:8px; z-index:2;
+  background:linear-gradient(135deg,#FFF1C2 0%,#E3C258 55%,#B48A2C 100%);
+  box-shadow:0 0 10px rgba(227,194,88,.7);
+}
+.pn-rule::after{
+  width:20px; height:20px; z-index:1;
+  border:1px solid rgba(227,194,88,.85); background:#0B3D45;
+}
+@media (max-width:760px){
+  .pn-rule::before{ width:7px; height:7px; }
+  .pn-rule::after{ width:17px; height:17px; }
+}
+</style>
+<section class="pf-band pf-hero" aria-labelledby="pf-h1"><div class="pf-in pf-hero__g"><div><p class="pf-eb">For funders</p><h1 class="pf-h1" id="pf-h1">Deals that start from what a nation&#8217;s people need</h1><p class="pf-lead">Perfect Nations designs a blueprint for every nation: what it owns, what its people need, and the instrument that closes each gap. Funders receive the deals that come out of that work, checked and ready to price.</p><p class="pf-ll">The Living Line: the basic standard of living every citizen should stand above: food, water, shelter, energy, education, health and livelihood.</p></div><ul class="pf-figs" aria-label="Perfect Nations in figures"><li><a href="https://perfectnations.com/blueprints/"><b>195</b><span>nation blueprints</span></a></li><li><a href="https://perfectnations.com/capital-architecture/#pca-record"><b>2,521</b><span>instruments and investments on record across 192 nations</span></a></li><li><a href="https://perfectnations.com/capital-architecture/#pca-index"><b>80</b><span>instruments in the toolkit, each proved by a real deal</span></a></li></ul></div></section>
+<section class="pf-band pf-offer" aria-labelledby="pf-oh"><div class="pf-in"><p class="pf-eb">What funders receive</p><h2 class="pf-h2" id="pf-oh">Three ways in</h2><ul class="pf-cards"><li class="pf-card"><span class="pf-card__n">01</span><h3>The deal pipeline</h3><p>Each deal names the nation, the gap it closes, the instrument and the size, taken from the nation&#8217;s blueprint.</p></li><li class="pf-card"><span class="pf-card__n">02</span><h3>Match of the week</h3><p>Every week, State of Nations pairs one gap in one nation with the instrument and the kind of funder that fit it.</p></li><li class="pf-card"><span class="pf-card__n">03</span><h3>Introductions</h3><p>When a nation and a funder fit, Perfect Nations makes the introduction, on terms agreed in writing before any name is shared.</p></li></ul></div></section>
+<section class="pf-band pf-method" aria-labelledby="pf-mh"><div class="pf-in"><p class="pf-eb">How a deal is checked</p><h2 class="pf-h2" id="pf-mh">Four steps, the same for every nation</h2><ol class="pf-steps"><li class="pf-step"><span class="pf-step__n">01</span><h3>The Ledger</h3><p>What the nation owns: land, water, coast, forest, energy, minerals, institutions and people.</p></li><li class="pf-step"><span class="pf-step__n">02</span><h3>The Living Line</h3><p>What each of the seven standards costs per citizen, and where the nation falls short.</p></li><li class="pf-step"><span class="pf-step__n">03</span><h3>The Design</h3><p>Which asset carries which standard, and in what order.</p></li><li class="pf-step"><span class="pf-step__n">04</span><h3>The Capital</h3><p>The instrument and the funder that close each gap, with a real deal as proof.</p></li></ol></div></section>
+<section class="pf-band pf-who" aria-labelledby="pf-wh"><div class="pf-in"><p class="pf-eb">Who it serves</p><h2 class="pf-h2" id="pf-wh">Built for every kind of development capital</h2><ul class="pf-chips"><li>Development banks</li><li>Development finance institutions</li><li>Impact investors</li><li>Foundations</li><li>Climate funds</li><li>Investment banks and institutional investors</li></ul><p class="pf-more"><a href="https://perfectnations.com/capital-architecture/#pca-funders">See the six networks that hold this capital</a></p></div></section>
+<div class="pn-rule" aria-hidden="true"></div>
+<section class="pf-band pf-close" aria-labelledby="pf-ch"><div class="pf-in"><p class="pf-eb">Start here</p><h2 class="pf-h2" id="pf-ch">Request the deal pipeline</h2><p class="pf-lead">Tell us what you finance, where, and at what size. The first deals that fit come back to you in writing.</p><div class="pf-btns"><a class="pf-btn" href="mailto:contact@perfectnations.com?subject=Request%20the%20deal%20pipeline">Request the deal pipeline</a><a class="pf-btn pf-btn--line" href="https://perfectnations.com/subscribe/">Subscribe to State of Nations</a></div><p class="pf-note">Institutions are named on this site for reference only. None is a partner of Perfect Nations unless it is named as one.</p></div></section>
+</div>
