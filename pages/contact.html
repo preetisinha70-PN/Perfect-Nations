@@ -1,5 +1,13 @@
 <!-- ===========================================================================
-PERFECT NATIONS - THE CONTACT PAGE - v7.1 LIGHT - 2026-11-15
+PERFECT NATIONS - THE CONTACT PAGE - v7.2 LIGHT - 2026-11-21
+v7.2 (21 Nov 2026, the Steward-General: the page read as questions followed by a second form, Send was hard to
+find, the nation box was odd, and every letter is now read by a Nation Steward): one form in two numbered steps.
+1 What brings you here? (route, topic, nation, timeframe). 2 Write and sign your letter: the letter now holds the
+name, email and organisation as its signature, directly above Send, so the last thing a visitor fills in sits
+beside the button. The nation is a menu of the 195 nations, after Choose a nation and Several nations, in place
+of the typed box with suggestions. The letter opens "Dear Perfect Nations," on the page and in the email. The
+hero reads "Every letter is read by a Nation Steward", with the logo in place of the portrait, and is no longer a
+link; What happens next says the same.
 v7.1 (15 Nov 2026, the Steward-General: the words sat off centre in the white buttons): the topic and timeframe
 buttons centre their words (they sat at the top when the button was taller than its words). Measured in Chromium
 with the Barlow fonts, the words are within 0.5 px of centre both ways. The slightly larger top padding lifts
@@ -150,11 +158,10 @@ article:has(#pn-contact) .entry-header{ display:none !important; }
 }
 #pn-contact .ct-h1{ margin:0; font-family:var(--hd); font-weight:600; font-size:clamp(2.5rem,5.6vw,5.4rem); line-height:.92; letter-spacing:-.025em; color:var(--tx) !important; text-wrap:balance; }
 #pn-contact .ct-lead{ margin:12px 0 0; max-width:50ch; font-size:clamp(1.05rem,1.4vw,1.24rem); line-height:1.45; color:var(--tm); text-wrap:pretty; }
-#pn-contact .ct-who{ display:inline-flex; align-items:center; gap:12px; margin:clamp(14px,2.2vh,22px) 0 0; padding:6px 18px 6px 6px; border-radius:999px; border:1px solid var(--hair); background:rgba(8,42,48,.45); text-decoration:none !important; color:var(--tx) !important; transition:border-color .2s ease, background .2s ease; }
-#pn-contact .ct-who:hover{ border-color:rgba(227,194,88,.6); background:rgba(8,42,48,.7); }
-#pn-contact .ct-who img{ display:block; width:46px; height:46px; flex:none; border-radius:50%; object-fit:cover; object-position:50% 22%; box-shadow:0 0 0 1.5px var(--g); }
+#pn-contact .ct-who{ display:inline-flex; align-items:center; gap:12px; margin:clamp(14px,2.2vh,22px) 0 0; padding:6px 20px 6px 6px; border-radius:999px; border:1px solid var(--hair); background:rgba(8,42,48,.45); color:var(--tx); }
+#pn-contact .ct-who img{ display:block; width:46px; height:46px; flex:none; padding:5px; border-radius:50%; object-fit:contain; background:#082A30; box-shadow:0 0 0 1.5px var(--g); }
 #pn-contact .ct-who span{ display:block; font-size:.86rem; line-height:1.25; color:var(--tm); }
-#pn-contact .ct-who b{ display:block; font-family:var(--hd); font-size:1.08rem; font-weight:600; letter-spacing:.01em; color:var(--tx); }
+#pn-contact .ct-who b{ display:block; font-family:var(--hd); font-size:1.12rem; font-weight:600; letter-spacing:.01em; color:var(--tx); }
 
 /* ---------- 2 your letter: ivory ---------- */
 #pn-contact .ct-write{
@@ -170,6 +177,13 @@ article:has(#pn-contact) .entry-header{ display:none !important; }
 #pn-contact .ct-lab,#pn-contact .ct-field > label{ display:block; padding:0; margin:0 0 7px; font-family:var(--hd); font-size:.66rem; font-weight:700; line-height:1.2; letter-spacing:.2em; text-transform:uppercase; color:var(--idm); }
 #pn-contact .ct-lab small,#pn-contact .ct-field > label small{ margin-left:6px; font-size:.58rem; letter-spacing:.14em; color:var(--terra); }
 #pn-contact .ct-field{ min-width:0; margin:0 0 14px; padding:0; border:0; }
+/* v7.2: two numbered steps, one form: 1 what and which nation, 2 the letter, signed, then Send */
+#pn-contact .ct-eb--n{ gap:9px; letter-spacing:.24em; }
+#pn-contact .ct-eb--n::before{ content:none; }
+#pn-contact .ct-num{ display:inline-grid; place-items:center; width:24px; height:24px; flex:none; border-radius:50%; background:#0B3D45; color:#F5F1E8; font-size:.74rem; letter-spacing:0; }
+#pn-contact .ct-pair{ display:grid; gap:0 14px; grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr)); }
+#pn-contact .ct-col2{ min-width:0; }
+#pn-contact .ct-step2{ margin:0 0 10px; }
 
 /* the four routes */
 #pn-contact .ct-routes{ display:grid; gap:8px; margin:0 0 12px; padding:0; list-style:none; grid-template-columns:repeat(2,minmax(0,1fr)); }
@@ -225,7 +239,11 @@ article:has(#pn-contact) .entry-header{ display:none !important; }
   box-shadow:0 30px 70px rgba(8,42,48,.32), 0 0 0 1px rgba(26,20,12,.06);
 }
 @media (min-width:1000px){
-  #pn-contact .ct-letter{ margin-top:calc(-1 * var(--lift)); transition:box-shadow .5s ease; }
+  #pn-contact .ct-col2{ margin-top:calc(-1 * var(--lift) - 34px); }
+  #pn-contact .ct-write .ct-step2{ color:var(--gs); }
+  #pn-contact .ct-step2 .ct-num{ background:var(--g); color:#1A140C; }
+  #pn-contact .ct-letter{ transition:box-shadow .5s ease; }
+  #pn-contact .ct-letter textarea{ min-height:168px; }
   #pn-contact .ct-letter:hover,#pn-contact .ct-letter:focus-within{ box-shadow:0 34px 80px rgba(8,42,48,.38), 0 0 0 1px rgba(126,90,12,.22); }
 }
 #pn-contact .ct-letter__head{ display:flex; align-items:center; gap:12px; padding:13px 20px; background:linear-gradient(165deg,#0F4C5C 0%,#0B3D45 60%,#082A30 100%); color:var(--tx); }
@@ -246,10 +264,20 @@ article:has(#pn-contact) .entry-header{ display:none !important; }
   font-family:var(--bd); font-size:16px; line-height:24px;
 }
 #pn-contact .ct-letter textarea.is-bad{ background-color:rgba(168,50,30,.05) !important; }
-#pn-contact .ct-l-sign{ margin:10px 0 0; font-size:.92rem; line-height:1.4; color:var(--im); }
-#pn-contact .ct-l-sign b{ display:block; margin-top:2px; font-family:var(--hd); font-size:1.16rem; font-weight:600; line-height:1.1; color:var(--ink); }
-#pn-contact .ct-l-sign b.ph{ font-style:italic; font-weight:500; color:var(--idm); }
-#pn-contact .ct-l-sign span{ display:block; }
+#pn-contact .ct-sign{ margin:10px 0 0; }
+#pn-contact .ct-l-close{ margin:0 0 8px; font-size:.92rem; line-height:1.4; color:var(--im); }
+#pn-contact .ct-sign__grid{ display:grid; gap:0 16px; grid-template-columns:minmax(0,1fr); }
+@media (min-width:420px){ #pn-contact .ct-sign__grid{ grid-template-columns:minmax(0,1fr) minmax(0,1fr); } #pn-contact .ct-sf--wide{ grid-column:1 / -1; } }
+#pn-contact .ct-sf{ margin:0 0 10px; }
+#pn-contact .ct-sf > label{ margin:0 0 4px; font-size:.6rem; }
+#pn-contact .ct-form .ct-sign .ct-sf input{
+  min-height:44px; padding:9px 10px 7px !important; border:0 !important; border-bottom:1.5px solid rgba(16,38,43,.34) !important; border-radius:8px 8px 0 0 !important;
+  background:rgba(11,61,69,.045) !important; background-color:rgba(11,61,69,.045) !important; box-shadow:none !important;
+}
+#pn-contact .ct-form .ct-sign .ct-sf input:focus{ border-bottom-color:#0B3D45 !important; box-shadow:0 1.5px 0 0 #0B3D45 !important; }
+#pn-contact .ct-form .ct-sign .ct-sf input.is-bad{ border-bottom-color:var(--bad) !important; box-shadow:0 1.5px 0 0 var(--bad) !important; }
+#pn-contact .ct-form .ct-sign .ct-sf--name input{ font-family:var(--hd); font-size:1.2rem; font-weight:600; letter-spacing:.01em; }
+#pn-contact .ct-sign #ct-perm-wrap{ margin:4px 0 6px; }
 #pn-contact .ct-letter__foot{ margin:0; padding:12px 22px 16px; border-top:1px solid var(--ihair); }
 #pn-contact .ct-actions{ display:flex; flex-wrap:wrap; align-items:center; gap:8px; }
 #pn-contact .ct-priv{ margin:9px 0 0; font-size:.8rem; line-height:1.4; color:var(--idm); }
@@ -377,10 +405,10 @@ article:has(#pn-contact) .entry-header{ display:none !important; }
         <p class="ct-eb">Contact &middot; Perfect Nations</p>
         <h1 class="ct-h1" id="ct-h1">Start a conversation</h1>
         <p class="ct-lead">Perfect Nations is a new-age sovereign advisory firm, and its clients are nations. Name the nation and the question.</p>
-        <a class="ct-who" href="https://perfectnations.com/about/">
-          <img src="https://perfectnations.com/wp-content/uploads/2026/02/Preeti-BW-150x150.jpeg" alt="Preeti Sinha, President and CEO of Perfect Nations" width="150" height="150" decoding="async">
-          <span>Every letter is read by<b>Preeti Sinha &middot; President and CEO</b></span>
-        </a>
+        <p class="ct-who">
+          <img src="https://perfectnations.com/wp-content/uploads/2026/11/pn-logo-7-stars-e3c258.png" alt="" width="256" height="256" decoding="async">
+          <span>Every letter is read by<b>a Nation Steward</b></span>
+        </p>
       </div>
     </div>
   </section>
@@ -391,7 +419,7 @@ article:has(#pn-contact) .entry-header{ display:none !important; }
 
         <div class="ct-fields">
           <fieldset class="ct-field">
-            <legend class="ct-eb">What brings you here?</legend>
+            <legend class="ct-eb ct-eb--n"><span class="ct-num" aria-hidden="true">1</span>What brings you here?</legend>
             <ul class="ct-routes">
               <li><button class="ct-route" type="button" data-fam="adv" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3.2 3.2 3.2 14.8 0 18M12 3c-3.2 3.2-3.2 14.8 0 18"/></svg><b>Advise a nation</b><small>Mandates &middot; Solutions</small></button></li>
               <li><button class="ct-route" type="button" data-fam="join" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="9.5" r="2.4"/><path d="M3.5 19c.8-3.6 3-5.4 5.5-5.4s4.7 1.8 5.5 5.4M14.6 14.6c2.6-.6 5 .9 5.8 4.4"/></svg><b>Join the ReDesign Studio</b><small>Co-design &middot; Write &middot; Speak</small></button></li>
@@ -402,73 +430,80 @@ article:has(#pn-contact) .entry-header{ display:none !important; }
             <a class="ct-compare" id="ct-compare" href="https://perfectnations.com/design-studio/#ds-mandates" target="_blank" rel="noopener" hidden>Compare the three</a>
           </fieldset>
 
-          <div class="ct-field" id="ct-work-wrap" hidden>
-            <label for="ct-work" id="ct-work-lab">Which painting?</label>
-            <select id="ct-work" name="work"></select>
-          </div>
-          <div class="ct-row">
-            <div class="ct-field">
-              <label for="ct-name">Your name <small>required</small></label>
-              <input id="ct-name" name="name" type="text" autocomplete="name" required>
-              <p class="ct-err" id="ct-name-err" hidden>Please add your name.</p>
-            </div>
-            <div class="ct-field">
-              <label for="ct-email">Email <small>required</small></label>
-              <input id="ct-email" name="email" type="email" autocomplete="email" inputmode="email" required>
-              <p class="ct-err" id="ct-email-err" hidden>That does not look like an email address.</p>
-            </div>
-          </div>
-          <div class="ct-row">
+          <div class="ct-pair">
             <div class="ct-field">
               <label for="ct-country">Nation</label>
-              <input id="ct-country" name="country" type="text" list="ct-country-list" autocomplete="off" placeholder="Kenya, Barbados&hellip;">
-              <datalist id="ct-country-list"></datalist>
+              <select id="ct-country" name="country">
+                <option value="">Choose a nation</option>
+                <option value="Several nations">Several nations</option>
+              </select>
             </div>
-            <div class="ct-field">
-              <label for="ct-org">Organisation and role</label>
-              <input id="ct-org" name="org" type="text" autocomplete="organization" placeholder="Ministry of Finance &middot; Director">
+            <div class="ct-field" id="ct-work-wrap" hidden>
+              <label for="ct-work" id="ct-work-lab">Which painting?</label>
+              <select id="ct-work" name="work"></select>
             </div>
           </div>
           <div class="ct-field" id="ct-when-wrap" hidden>
             <span class="ct-lab" id="ct-when-lab">Timeframe</span>
             <div class="ct-chips" id="ct-whens" role="group" aria-labelledby="ct-when-lab"></div>
           </div>
-          <div class="ct-field" id="ct-perm-wrap" hidden>
-            <label class="ct-check"><input type="checkbox" id="ct-perm"> This is my own original work, and Perfect Nations may publish it with credit to me.</label>
-          </div>
         </div>
 
-        <div class="ct-letter" id="ct-letter">
-          <div class="ct-letter__head">
-            <img class="ct-letter__logo" src="https://perfectnations.com/wp-content/uploads/2026/11/pn-logo-7-stars-e3c258.png" alt="" width="256" height="256" decoding="async">
-            <span class="ct-letter__brand">Perfect Nations</span>
-            <span class="ct-letter__to" id="ct-l-to">To contact@<br>perfectnations.com</span>
-          </div>
-          <div class="pn-rule" aria-hidden="true"></div>
-          <div class="ct-paper">
-            <p class="ct-l-meta"><span id="ct-l-date">Today</span><b id="ct-l-about">The Nation Briefing</b></p>
-            <p class="ct-l-dear" aria-hidden="true">Dear Preeti Sinha,</p>
-            <label class="ct-sr" for="ct-msg">Your message</label>
-            <textarea id="ct-msg" name="message" rows="9" required placeholder="Write your letter here: the nation, the question you want answered, and who will be in the room."></textarea>
-            <p class="ct-err" id="ct-msg-err" hidden>Please write a few words about what you need.</p>
-            <p class="ct-l-sign">With best regards,<b id="ct-l-name" class="ph">Your name</b><span id="ct-l-org"></span></p>
-          </div>
-          <div class="ct-letter__foot">
-            <div class="ct-actions">
-              <button class="ct-btn" type="submit" id="ct-send">Send your letter</button>
-              <button class="ct-btn ct-btn--line" type="button" id="ct-copy">Copy instead</button>
+        <div class="ct-col2">
+          <p class="ct-eb ct-eb--n ct-step2"><span class="ct-num" aria-hidden="true">2</span>Write and sign your letter</p>
+          <div class="ct-letter" id="ct-letter">
+            <div class="ct-letter__head">
+              <img class="ct-letter__logo" src="https://perfectnations.com/wp-content/uploads/2026/11/pn-logo-7-stars-e3c258.png" alt="" width="256" height="256" decoding="async">
+              <span class="ct-letter__brand">Perfect Nations</span>
+              <span class="ct-letter__to" id="ct-l-to">To contact@<br>perfectnations.com</span>
             </div>
-            <p class="ct-priv">Opens in your own email. Nothing is stored on this site, and there is no mailing list.</p>
-            <div class="ct-result" id="ct-result" hidden aria-live="polite">
-              <p class="ct-result__h" id="ct-result-h">Your email is opening</p>
-              <p class="ct-result__p">If it did not open, send the same letter from your browser, or copy it.</p>
-              <div class="ct-result__acts">
-                <a class="ct-btn ct-btn--line ct-btn--sm" id="ct-gmail" href="https://mail.google.com/" target="_blank" rel="noopener noreferrer">Open in Gmail</a>
-                <a class="ct-btn ct-btn--line ct-btn--sm" id="ct-outlook" href="https://outlook.office.com/" target="_blank" rel="noopener noreferrer">Open in Outlook</a>
-                <button class="ct-btn ct-btn--line ct-btn--sm" type="button" id="ct-copy2">Copy the letter</button>
+            <div class="pn-rule" aria-hidden="true"></div>
+            <div class="ct-paper">
+              <p class="ct-l-meta"><span id="ct-l-date">Today</span><b id="ct-l-about">The Nation Briefing</b></p>
+              <p class="ct-l-dear" aria-hidden="true">Dear Perfect Nations,</p>
+              <label class="ct-sr" for="ct-msg">Your message</label>
+              <textarea id="ct-msg" name="message" rows="9" required placeholder="Write your letter here: the nation, the question you want answered, and who will be in the room."></textarea>
+              <p class="ct-err" id="ct-msg-err" hidden>Please write a few words about what you need.</p>
+              <div class="ct-sign">
+                <p class="ct-l-close">With best regards,</p>
+                <div class="ct-sign__grid">
+                  <div class="ct-field ct-sf ct-sf--name">
+                    <label for="ct-name">Your name <small>required</small></label>
+                    <input id="ct-name" name="name" type="text" autocomplete="name" required>
+                    <p class="ct-err" id="ct-name-err" hidden>Please add your name.</p>
+                  </div>
+                  <div class="ct-field ct-sf">
+                    <label for="ct-email">Email <small>required</small></label>
+                    <input id="ct-email" name="email" type="email" autocomplete="email" inputmode="email" required>
+                    <p class="ct-err" id="ct-email-err" hidden>That does not look like an email address.</p>
+                  </div>
+                  <div class="ct-field ct-sf ct-sf--wide">
+                    <label for="ct-org">Organisation and role</label>
+                    <input id="ct-org" name="org" type="text" autocomplete="organization" placeholder="Ministry of Finance &middot; Director">
+                  </div>
+                </div>
+                <div class="ct-field" id="ct-perm-wrap" hidden>
+                  <label class="ct-check"><input type="checkbox" id="ct-perm"> This is my own original work, and Perfect Nations may publish it with credit to me.</label>
+                </div>
               </div>
             </div>
-            <noscript><p class="ct-priv">Please write to contact@perfectnations.com.</p></noscript>
+            <div class="ct-letter__foot">
+              <div class="ct-actions">
+                <button class="ct-btn" type="submit" id="ct-send">Send your letter</button>
+                <button class="ct-btn ct-btn--line" type="button" id="ct-copy">Copy instead</button>
+              </div>
+              <p class="ct-priv">Opens in your own email. Nothing is stored on this site, and there is no mailing list.</p>
+              <div class="ct-result" id="ct-result" hidden aria-live="polite">
+                <p class="ct-result__h" id="ct-result-h">Your email is opening</p>
+                <p class="ct-result__p">If it did not open, send the same letter from your browser, or copy it.</p>
+                <div class="ct-result__acts">
+                  <a class="ct-btn ct-btn--line ct-btn--sm" id="ct-gmail" href="https://mail.google.com/" target="_blank" rel="noopener noreferrer">Open in Gmail</a>
+                  <a class="ct-btn ct-btn--line ct-btn--sm" id="ct-outlook" href="https://outlook.office.com/" target="_blank" rel="noopener noreferrer">Open in Outlook</a>
+                  <button class="ct-btn ct-btn--line ct-btn--sm" type="button" id="ct-copy2">Copy the letter</button>
+                </div>
+              </div>
+              <noscript><p class="ct-priv">Please write to contact@perfectnations.com.</p></noscript>
+            </div>
           </div>
         </div>
 
@@ -484,7 +519,7 @@ article:has(#pn-contact) .entry-header{ display:none !important; }
           <h2 class="ct-h2" id="ct-close-h">What happens next</h2>
         </div>
         <ol class="ct-steps">
-          <li><b>Read personally</b><span>Every letter is read by the President and CEO.</span></li>
+          <li><b>Read in full</b><span>Every letter is read by a Nation Steward.</span></li>
           <li><b>An honest answer</b><span>Including when another institution is better placed to help.</span></li>
           <li><b>Scope in writing</b><span>For a mandate: a short call, then scope and fee in writing before work begins.</span></li>
         </ol>
@@ -498,7 +533,7 @@ article:has(#pn-contact) .entry-header{ display:none !important; }
   </section>
 
 <!-- GENERATED:DATA (open blueprints from pages/manifest.json, works from art/catalogue.json; do not edit here) -->
-<script type="application/json" id="ct-data">{"open":["afghanistan","albania","algeria","andorra","angola","antigua-and-barbuda","argentina","armenia","australia","austria","azerbaijan","bahamas","bahrain","bangladesh","barbados","belarus","belgium","belize","benin","bhutan","bolivia","bosnia-and-herzegovina","botswana","brazil","brunei","bulgaria","burkina-faso","burundi","cabo-verde","cambodia","cameroon","canada","central-african-republic","chad","chile","china","colombia","comoros","costa-rica","cote-d-ivoire","croatia","cuba","cyprus","czechia","denmark","djibouti","dominica","dominican-republic","dr-congo","ecuador","egypt","el-salvador","equatorial-guinea","eritrea","estonia","eswatini","ethiopia","fiji","finland","france","gabon","gambia","georgia","germany","ghana","greece","grenada","guatemala","guinea","guinea-bissau","guyana","haiti","holy-see","honduras","hungary","iceland","india","indonesia","iran","iraq","ireland","israel","italy","jamaica","japan","jordan","kazakhstan","kenya","kiribati","kuwait","kyrgyzstan","laos","latvia","lebanon","lesotho","liberia","libya","liechtenstein","lithuania","luxembourg","madagascar","malawi","malaysia","maldives","mali","malta","marshall-islands","mauritania","mauritius","mexico","micronesia","moldova","monaco","mongolia","montenegro","morocco","mozambique","myanmar","namibia","nauru","nepal","netherlands","new-zealand","nicaragua","niger","nigeria","north-korea","north-macedonia","norway","oman","pakistan","palau","palestine","panama","papua-new-guinea","paraguay","peru","philippines","poland","portugal","qatar","republic-of-congo","romania","russia","rwanda","saint-kitts-and-nevis","saint-lucia","saint-vincent-and-the-grenadines","samoa","san-marino","sao-tome-and-principe","saudi-arabia","senegal","serbia","seychelles","sierra-leone","singapore","slovakia","slovenia","solomon-islands","somalia","south-africa","south-korea","south-sudan","spain","sri-lanka","sudan","suriname","sweden","switzerland","syria","tajikistan","tanzania","thailand","timor-leste","togo","tonga","trinidad-and-tobago","tunisia","turkiye","turkmenistan","tuvalu","uganda","ukraine","united-arab-emirates","united-kingdom","united-states","uruguay","uzbekistan","vanuatu","venezuela","vietnam","yemen","zambia","zimbabwe"],"paintings":[{"id":"original-afghanistan","title":"Hindu Kush in Bloom","nation":"Afghanistan"},{"id":"original-barbados","title":"The Trident in Bloom","nation":"Barbados"},{"id":"original-kenya","title":"Mount Kenya in Bloom","nation":"Kenya"},{"id":"original-rwanda","title":"The Thousand Hills in Bloom","nation":"Rwanda"}],"books":[{"id":"perfect-barbados-book","title":"Perfect Barbados","nation":"Barbados","status":"In preparation"},{"id":"perfect-kenya-book","title":"Perfect Kenya","nation":"Kenya","status":"In preparation"}],"solutions":[{"id":"solution-39","no":39,"title":"Every Child Learns","nation":"Afghanistan"},{"id":"solution-1","no":1,"title":"The Lobito Food Corridor","nation":"Angola"},{"id":"solution-2","no":2,"title":"The Clean Kitchen Fund","nation":"Bangladesh"},{"id":"solution-44","no":44,"title":"The Blue Food Swap","nation":"Barbados"},{"id":"solution-3","no":3,"title":"The Diamond Enterprise Dividend","nation":"Botswana"},{"id":"solution-41","no":41,"title":"Every Street Connected","nation":"Brazil"},{"id":"solution-4","no":4,"title":"Light for Every Hill","nation":"Burundi"},{"id":"solution-45","no":45,"title":"River Power for Every Home","nation":"Cameroon"},{"id":"solution-46","no":46,"title":"Oil Behind the Sun","nation":"Chad"},{"id":"solution-5","no":5,"title":"The Barrio Bonds","nation":"Colombia"},{"id":"solution-47","no":47,"title":"The Medicine Conversion","nation":"Cuba"},{"id":"solution-6","no":6,"title":"The Cocoa Classroom Fund","nation":"C\u00f4te d\u2019Ivoire"},{"id":"solution-7","no":7,"title":"Cobalt for Classrooms","nation":"DR Congo"},{"id":"solution-8","no":8,"title":"The Learning Conversion","nation":"Ecuador"},{"id":"solution-9","no":9,"title":"The Nile Reading Bond","nation":"Egypt"},{"id":"solution-10","no":10,"title":"Safe Water, Proven Home by Home","nation":"Eswatini"},{"id":"solution-11","no":11,"title":"The Highland Electric Kitchen","nation":"Ethiopia"},{"id":"solution-12","no":12,"title":"The Blue Livelihood Bond","nation":"Fiji"},{"id":"solution-13","no":13,"title":"Pensions for Sanitation","nation":"Ghana"},{"id":"solution-42","no":42,"title":"Solar Schools, Reading Children","nation":"India"},{"id":"solution-14","no":14,"title":"The Water Sukuk","nation":"Indonesia"},{"id":"solution-48","no":48,"title":"Flares to Power","nation":"Iraq"},{"id":"solution-15","no":15,"title":"Hurricane-Proof Harvests","nation":"Jamaica"},{"id":"solution-16","no":16,"title":"The Reading Compact","nation":"Jordan"},{"id":"solution-43","no":43,"title":"The Rift Reading Bond","nation":"Kenya"},{"id":"solution-17","no":17,"title":"Water for Learning","nation":"Lesotho"},{"id":"solution-18","no":18,"title":"The Vanilla Energy Fund","nation":"Madagascar"},{"id":"solution-19","no":19,"title":"Kwacha Solar","nation":"Malawi"},{"id":"solution-20","no":20,"title":"The Water Guarantee","nation":"Mexico"},{"id":"solution-21","no":21,"title":"Sun to Sanitation","nation":"Morocco"},{"id":"solution-22","no":22,"title":"Gas to Kitchens","nation":"Mozambique"},{"id":"solution-23","no":23,"title":"The Hydrogen Skills Bond","nation":"Namibia"},{"id":"solution-50","no":50,"title":"The Solar Market Bond","nation":"Nigeria"},{"id":"solution-24","no":24,"title":"The Diaspora Harvest Bond","nation":"Nigeria"},{"id":"solution-25","no":25,"title":"The Education Sukuk","nation":"Pakistan"},{"id":"solution-49","no":49,"title":"Sunlight for Gaza","nation":"Palestine"},{"id":"solution-26","no":26,"title":"The Archipelago Reading Bond","nation":"Philippines"},{"id":"solution-27","no":27,"title":"Carbon for Classrooms","nation":"Republic of the Congo"},{"id":"solution-40","no":40,"title":"Standard Tokens for Clean Kitchens","nation":"Rwanda"},{"id":"solution-28","no":28,"title":"Water by Results","nation":"Senegal"},{"id":"solution-29","no":29,"title":"The Clean Ledger Kitchen","nation":"Somalia"},{"id":"solution-30","no":30,"title":"A Wildlife Bond for Reading","nation":"South Africa"},{"id":"solution-31","no":31,"title":"Oil to Sunlight","nation":"South Sudan"},{"id":"solution-32","no":32,"title":"Rooftop Kitchens","nation":"Sri Lanka"},{"id":"solution-33","no":33,"title":"Nyerere Power, Every Kitchen","nation":"Tanzania"},{"id":"solution-34","no":34,"title":"Cook-as-You-Go","nation":"Uganda"},{"id":"solution-35","no":35,"title":"The Breadbasket Guarantee","nation":"Ukraine"},{"id":"solution-36","no":36,"title":"The Sanitation Exchange","nation":"Vietnam"},{"id":"solution-37","no":37,"title":"The Copper Windfall for Learning","nation":"Zambia"},{"id":"solution-38","no":38,"title":"Lithium for Living","nation":"Zimbabwe"}]}</script>
+<script type="application/json" id="ct-data">{"open":["afghanistan","albania","algeria","andorra","angola","antigua-and-barbuda","argentina","armenia","australia","austria","azerbaijan","bahamas","bahrain","bangladesh","barbados","belarus","belgium","belize","benin","bhutan","bolivia","bosnia-and-herzegovina","botswana","brazil","brunei","bulgaria","burkina-faso","burundi","cabo-verde","cambodia","cameroon","canada","central-african-republic","chad","chile","china","colombia","comoros","costa-rica","cote-d-ivoire","croatia","cuba","cyprus","czechia","denmark","djibouti","dominica","dominican-republic","dr-congo","ecuador","egypt","el-salvador","equatorial-guinea","eritrea","estonia","eswatini","ethiopia","fiji","finland","france","gabon","gambia","georgia","germany","ghana","greece","grenada","guatemala","guinea","guinea-bissau","guyana","haiti","holy-see","honduras","hungary","iceland","india","indonesia","iran","iraq","ireland","israel","italy","jamaica","japan","jordan","kazakhstan","kenya","kiribati","kuwait","kyrgyzstan","laos","latvia","lebanon","lesotho","liberia","libya","liechtenstein","lithuania","luxembourg","madagascar","malawi","malaysia","maldives","mali","malta","marshall-islands","mauritania","mauritius","mexico","micronesia","moldova","monaco","mongolia","montenegro","morocco","mozambique","myanmar","namibia","nauru","nepal","netherlands","new-zealand","nicaragua","niger","nigeria","north-korea","north-macedonia","norway","oman","pakistan","palau","panama","papua-new-guinea","paraguay","peru","philippines","poland","portugal","qatar","republic-of-congo","romania","russia","rwanda","saint-kitts-and-nevis","saint-lucia","saint-vincent-and-the-grenadines","samoa","san-marino","sao-tome-and-principe","saudi-arabia","senegal","serbia","seychelles","sierra-leone","singapore","slovakia","slovenia","solomon-islands","somalia","south-africa","south-korea","south-sudan","spain","sri-lanka","state-of-palestine","sudan","suriname","sweden","switzerland","syria","tajikistan","tanzania","thailand","timor-leste","togo","tonga","trinidad-and-tobago","tunisia","turkiye","turkmenistan","tuvalu","uganda","ukraine","united-arab-emirates","united-kingdom","united-states","uruguay","uzbekistan","vanuatu","venezuela","vietnam","yemen","zambia","zimbabwe"],"paintings":[{"id":"original-afghanistan","title":"Hindu Kush in Bloom","nation":"Afghanistan"},{"id":"original-barbados","title":"The Trident in Bloom","nation":"Barbados"},{"id":"original-kenya","title":"Mount Kenya in Bloom","nation":"Kenya"},{"id":"original-rwanda","title":"The Thousand Hills in Bloom","nation":"Rwanda"}],"books":[{"id":"perfect-barbados-book","title":"Perfect Barbados","nation":"Barbados","status":"In preparation"},{"id":"perfect-kenya-book","title":"Perfect Kenya","nation":"Kenya","status":"In preparation"}],"solutions":[{"id":"solution-39","no":39,"title":"Every Child Learns","nation":"Afghanistan"},{"id":"solution-1","no":1,"title":"The Lobito Food Corridor","nation":"Angola"},{"id":"solution-2","no":2,"title":"The Clean Kitchen Fund","nation":"Bangladesh"},{"id":"solution-44","no":44,"title":"The Blue Food Swap","nation":"Barbados"},{"id":"solution-3","no":3,"title":"The Diamond Enterprise Dividend","nation":"Botswana"},{"id":"solution-41","no":41,"title":"Every Street Connected","nation":"Brazil"},{"id":"solution-4","no":4,"title":"Light for Every Hill","nation":"Burundi"},{"id":"solution-45","no":45,"title":"River Power for Every Home","nation":"Cameroon"},{"id":"solution-46","no":46,"title":"Oil Behind the Sun","nation":"Chad"},{"id":"solution-5","no":5,"title":"The Barrio Bonds","nation":"Colombia"},{"id":"solution-47","no":47,"title":"The Medicine Conversion","nation":"Cuba"},{"id":"solution-6","no":6,"title":"The Cocoa Classroom Fund","nation":"C\u00f4te d\u2019Ivoire"},{"id":"solution-7","no":7,"title":"Cobalt for Classrooms","nation":"DR Congo"},{"id":"solution-8","no":8,"title":"The Learning Conversion","nation":"Ecuador"},{"id":"solution-9","no":9,"title":"The Nile Reading Bond","nation":"Egypt"},{"id":"solution-10","no":10,"title":"Safe Water, Proven Home by Home","nation":"Eswatini"},{"id":"solution-11","no":11,"title":"The Highland Electric Kitchen","nation":"Ethiopia"},{"id":"solution-12","no":12,"title":"The Blue Livelihood Bond","nation":"Fiji"},{"id":"solution-13","no":13,"title":"Pensions for Sanitation","nation":"Ghana"},{"id":"solution-42","no":42,"title":"Solar Schools, Reading Children","nation":"India"},{"id":"solution-14","no":14,"title":"The Water Sukuk","nation":"Indonesia"},{"id":"solution-48","no":48,"title":"Flares to Power","nation":"Iraq"},{"id":"solution-15","no":15,"title":"Hurricane-Proof Harvests","nation":"Jamaica"},{"id":"solution-16","no":16,"title":"The Reading Compact","nation":"Jordan"},{"id":"solution-43","no":43,"title":"The Rift Reading Bond","nation":"Kenya"},{"id":"solution-17","no":17,"title":"Water for Learning","nation":"Lesotho"},{"id":"solution-18","no":18,"title":"The Vanilla Energy Fund","nation":"Madagascar"},{"id":"solution-19","no":19,"title":"Kwacha Solar","nation":"Malawi"},{"id":"solution-20","no":20,"title":"The Water Guarantee","nation":"Mexico"},{"id":"solution-21","no":21,"title":"Sun to Sanitation","nation":"Morocco"},{"id":"solution-22","no":22,"title":"Gas to Kitchens","nation":"Mozambique"},{"id":"solution-23","no":23,"title":"The Hydrogen Skills Bond","nation":"Namibia"},{"id":"solution-50","no":50,"title":"The Solar Market Bond","nation":"Nigeria"},{"id":"solution-24","no":24,"title":"The Diaspora Harvest Bond","nation":"Nigeria"},{"id":"solution-25","no":25,"title":"The Education Sukuk","nation":"Pakistan"},{"id":"solution-49","no":49,"title":"Sunlight for Gaza","nation":"Palestine"},{"id":"solution-26","no":26,"title":"The Archipelago Reading Bond","nation":"Philippines"},{"id":"solution-53","no":53,"title":"The People\u2019s Jobs Certificate","nation":"Portugal"},{"id":"solution-27","no":27,"title":"Carbon for Classrooms","nation":"Republic of the Congo"},{"id":"solution-40","no":40,"title":"Standard Tokens for Clean Kitchens","nation":"Rwanda"},{"id":"solution-28","no":28,"title":"Water by Results","nation":"Senegal"},{"id":"solution-29","no":29,"title":"The Clean Ledger Kitchen","nation":"Somalia"},{"id":"solution-30","no":30,"title":"A Wildlife Bond for Reading","nation":"South Africa"},{"id":"solution-31","no":31,"title":"Oil to Sunlight","nation":"South Sudan"},{"id":"solution-32","no":32,"title":"Rooftop Kitchens","nation":"Sri Lanka"},{"id":"solution-33","no":33,"title":"Nyerere Power, Every Kitchen","nation":"Tanzania"},{"id":"solution-34","no":34,"title":"Cook-as-You-Go","nation":"Uganda"},{"id":"solution-35","no":35,"title":"The Breadbasket Guarantee","nation":"Ukraine"},{"id":"solution-51","no":51,"title":"The American Table Fund","nation":"United States"},{"id":"solution-36","no":36,"title":"The Sanitation Exchange","nation":"Vietnam"},{"id":"solution-37","no":37,"title":"The Copper Windfall for Learning","nation":"Zambia"},{"id":"solution-38","no":38,"title":"Lithium for Living","nation":"Zimbabwe"}]}</script>
 <!-- /GENERATED:DATA -->
 <script><!--
 (function(){
@@ -550,11 +585,11 @@ article:has(#pn-contact) .entry-header{ display:none !important; }
   function $(id){ return document.getElementById(id); }
   var el = {
     form:$('ct-form'), kinds:$('ct-kinds'), compare:$('ct-compare'), workWrap:$('ct-work-wrap'), work:$('ct-work'), workLab:$('ct-work-lab'),
-    name:$('ct-name'), email:$('ct-email'), country:$('ct-country'), list:$('ct-country-list'), org:$('ct-org'),
+    name:$('ct-name'), email:$('ct-email'), country:$('ct-country'), org:$('ct-org'),
     whenWrap:$('ct-when-wrap'), whens:$('ct-whens'), msg:$('ct-msg'), permWrap:$('ct-perm-wrap'), perm:$('ct-perm'),
     send:$('ct-send'), copy:$('ct-copy'), copy2:$('ct-copy2'),
     result:$('ct-result'), resultH:$('ct-result-h'), gmail:$('ct-gmail'), outlook:$('ct-outlook'),
-    lDate:$('ct-l-date'), lAbout:$('ct-l-about'), lName:$('ct-l-name'), lOrg:$('ct-l-org')
+    lDate:$('ct-l-date'), lAbout:$('ct-l-about')
   };
   for (var k in el) { if (!el[k]) { return; } }
   var routes = root.querySelectorAll('.ct-route');
@@ -580,6 +615,14 @@ article:has(#pn-contact) .entry-header{ display:none !important; }
   var OPEN = {};
   (DATA.open || []).forEach(function(s){ OPEN[slugify(nameOf(s) || s)] = true; });
   function isOpen(slug){ return !!OPEN[slugify(nameOf(slug) || slug)]; }
+  var MANY = 'Several nations';
+  function setNation(c){
+    c = String(c || '').trim();
+    var ops = el.country.options;
+    for (var i = 0; i < ops.length; i++) { if (ops[i].value === c) { el.country.value = c; return; } }
+    if (c) { var o = document.createElement('option'); o.value = c; o.textContent = c; el.country.insertBefore(o, ops[2] || null); el.country.value = c; }
+  }
+  function cn(){ var c = el.country.value.trim(); return c === MANY ? '' : c; }
   function hasWork(){ return kind.id === 'original' || kind.id === 'book' || kind.id === 'solution'; }
   function solFor(c){
     var t = slugify(c), list = DATA.solutions || [];
@@ -608,6 +651,7 @@ article:has(#pn-contact) .entry-header{ display:none !important; }
   if (!want && ALIAS[topic]) { want = ALIAS[topic]; }
   if (!want && /^\d+$/.test(param('solution') || '')) { want = 'solution'; wantWork = 'solution-' + param('solution'); }
   if (!country && nslug) { country = nameOf(nslug); }
+  if (country && nameOf(country)) { country = nameOf(country); }
   if (!want && nslug) { want = isOpen(nslug) ? 'writing' : 'blueprint'; }
   if (!want) { want = 'briefing'; }
 
@@ -642,7 +686,7 @@ article:has(#pn-contact) .entry-header{ display:none !important; }
     var o2 = document.createElement('option'); o2.value = '';
     o2.textContent = sol ? 'Another Solution, or a new one for my nation' : (book ? 'A future Perfect Nations book' : 'Another painting, or a future portrait');
     el.work.appendChild(o2);
-    var match = sol ? solFor(el.country.value.trim()) : null;
+    var match = sol ? solFor(cn()) : null;
     if (wantWork && workOf(wantWork)) { el.work.value = wantWork; wantWork = ''; }
     else if (keep && workOf(keep) && list.indexOf(workOf(keep)) > -1) { el.work.value = keep; }
     else if (sol && idea) { el.work.value = ''; }
@@ -651,13 +695,13 @@ article:has(#pn-contact) .entry-header{ display:none !important; }
   }
   function autoText(){
     var w = hasWork() ? workOf(el.work.value) : null;
-    if (!w && kind.id === 'solution' && idea) { var c0 = el.country.value.trim(); return 'I would like to discuss ' + idea + (c0 ? ', a Perfect Nations Solution for ' + c0 : '') + '.'; }
+    if (!w && kind.id === 'solution' && idea) { var c0 = cn(); return 'I would like to discuss ' + idea + (c0 ? ', a Perfect Nations Solution for ' + c0 : '') + '.'; }
     if (w && kind.id === 'solution') { return 'I would like to discuss Solution No. ' + w.no + ', ' + w.title + ', for ' + w.nation + '.'; }
-    if (!w && kind.id === 'original' && el.country.value.trim()) { return 'I would like to enquire about the original painting of ' + el.country.value.trim() + ', 24 x 24 in, acrylic on canvas.'; }
+    if (!w && kind.id === 'original' && cn()) { return 'I would like to enquire about the original painting of ' + cn() + ', 24 x 24 in, acrylic on canvas.'; }
     if (w && kind.id === 'original') { return 'I would like to enquire about ' + w.title + ', the original painting of ' + w.nation + '.'; }
-    if (kind.id === 'print' && el.country.value.trim()) { return 'I would like to ask about a 24 x 24 in print of the portrait of ' + el.country.value.trim() + ', on paper or on canvas.'; }
+    if (kind.id === 'print' && cn()) { return 'I would like to ask about a 24 x 24 in print of the portrait of ' + cn() + ', on paper or on canvas.'; }
     if (w && kind.id === 'book') { return 'I would like to reserve a copy of ' + w.title + '.'; }
-    if (kind.id === 'blueprint' && el.country.value.trim()) { return 'I would like to ask for the National Blueprint of ' + el.country.value.trim() + '.'; }
+    if (kind.id === 'blueprint' && cn()) { return 'I would like to ask for the National Blueprint of ' + cn() + '.'; }
     return '';
   }
   function grow(){
@@ -684,7 +728,7 @@ article:has(#pn-contact) .entry-header{ display:none !important; }
     if (art) {
       fillWorks();
       var w = workOf(el.work.value);
-      if (w && w.nation && !el.country.value.trim()) { el.country.value = w.nation; }
+      if (w && w.nation && !el.country.value.trim()) { setNation(w.nation); }
     }
     el.msg.placeholder = 'Write your letter here: ' + kind.ask;
     refreshAuto();
@@ -708,8 +752,9 @@ article:has(#pn-contact) .entry-header{ display:none !important; }
     });
     el.whens.appendChild(b);
   });
-  COUNTRIES.forEach(function(c){ var o = document.createElement('option'); o.value = c; el.list.appendChild(o); });
-  if (country) { el.country.value = country; }
+  /* v7.2: the nation is a menu of the 195 nations, after Choose a nation and Several nations */
+  COUNTRIES.forEach(function(c){ var o = document.createElement('option'); o.value = c; o.textContent = c; el.country.appendChild(o); });
+  if (country) { setNation(country); }
 
   /* the letterhead line and the signature follow the visitor */
   var MONTHS = ['January','February','March','April','May','June','July','August','September','October','November','December'];
@@ -722,24 +767,15 @@ article:has(#pn-contact) .entry-header{ display:none !important; }
     if (when && kind.fam === 'adv') { s += ' \u00b7 ' + when; }
     return s;
   }
-  function render(){
-    el.lAbout.textContent = aboutLine();
-    var n = el.name.value.trim(), o = el.org.value.trim();
-    el.lName.textContent = n || 'Your name';
-    el.lName.className = n ? '' : 'ph';
-    el.lOrg.textContent = o;
-  }
-  [el.name, el.country, el.org].forEach(function(f){
-    f.addEventListener('input', function(){
-      if (f === el.country && kind.id === 'solution' && el.work.value === '') { var m = solFor(el.country.value.trim()); if (m) { el.work.value = m.id; } }
-      if (f === el.country) { refreshAuto(); }
-      render();
-    });
+  function render(){ el.lAbout.textContent = aboutLine(); }
+  el.country.addEventListener('change', function(){
+    if (kind.id === 'solution' && el.work.value === '') { var m = solFor(cn()); if (m) { el.work.value = m.id; } }
+    refreshAuto(); render();
   });
   el.msg.addEventListener('input', grow);
   el.work.addEventListener('change', function(){
     var w = workOf(el.work.value);
-    if (w && w.nation) { el.country.value = w.nation; }
+    if (w && w.nation) { setNation(w.nation); }
     refreshAuto(); render();
   });
 
@@ -747,7 +783,7 @@ article:has(#pn-contact) .entry-header{ display:none !important; }
   function compose(){
     var c = el.country.value.trim(), w = hasWork() ? workOf(el.work.value) : null;
     var wt = w ? (kind.id === 'solution' ? 'No. ' + w.no + ', ' + w.title : w.title) : '';
-    var L = ['Dear Preeti Sinha,', '', el.msg.value.trim(), '', 'With best regards,', el.name.value.trim()];
+    var L = ['Dear Perfect Nations,', '', el.msg.value.trim(), '', 'With best regards,', el.name.value.trim()];
     if (el.org.value.trim()) { L.push(el.org.value.trim()); }
     L.push(el.email.value.trim(), '', '\u2014', pad('About:') + kind.label + (w ? ' (' + wt + ')' : ''));
     if (c) { L.push(pad('Nation:') + c); }
