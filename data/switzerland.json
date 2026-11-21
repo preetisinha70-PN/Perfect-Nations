@@ -1,7 +1,7 @@
 {
  "nation": "Switzerland",
  "page_version": "1.0",
- "updated": "2026-11-19",
+ "updated": "2026-11-21",
  "steward": {
   "name": "Lea Meier",
   "role": "Nation Steward of Switzerland"
@@ -29,10 +29,24 @@
   "record": [
    {
     "value": "CHF 4.5bn",
-    "money": false,
+    "money": true,
     "text": "Confederation bonds planned for 2026, within a funding requirement of just under CHF 7.5 billion",
     "source": "Federal Finance Administration and SNB, 2025",
     "url": "https://www.snb.ch/en/publications/communication/press-releases/2025/pre_20251118"
+   },
+   {
+    "value": "CHF 1.92bn",
+    "money": true,
+    "text": "Federal guarantees for the bonds of non-profit housing developers, 2027 to 2033, requested in December 2025 and approved by Parliament in 2026",
+    "source": "Federal Council, 2025",
+    "url": "https://www.admin.ch/de/newnsb/yd8_h9Dm8JfWMv4Un-GJV"
+   },
+   {
+    "value": "38,000",
+    "money": false,
+    "text": "Dwellings in some 1,030 properties financed at low cost through federally guaranteed bonds of non-profit housing developers, December 2025",
+    "source": "Federal Council, 2025",
+    "url": "https://www.admin.ch/de/newnsb/yd8_h9Dm8JfWMv4Un-GJV"
    },
    {
     "value": "40.1%",
@@ -52,17 +66,83 @@
   "register": [
    {
     "cat": "govt",
-    "status": "Plan",
+    "status": "Issuing",
     "tone": "active",
     "name": "Confederation bonds, 2026",
-    "detail": "Federal Finance Administration · Issuance calendar, 18 November 2025",
+    "detail": "Federal Finance Administration · issuance calendar, 18 November 2025 · monthly auctions except in August · latest auction 11 November 2026: CHF 185.06 million in two reopenings due 2030 and 2040, yields 0.442% and 0.593%",
     "amount": "CHF 4.5bn",
-    "money": false,
-    "text": "Monthly bond auctions, except in August; the outstanding volume of bonds rises by CHF 1 billion.",
+    "money": true,
+    "note": "Within a funding requirement of just under CHF 7.5 billion; the outstanding volume of bonds rises by CHF 1 billion",
+    "text": "The Confederation’s planned bond issuance for 2026, sold at auctions on the second Wednesday of each month, except in August. It funds the federal budget as a whole and is not earmarked to any one of the seven standards.",
+    "by": [
+     "Swiss Confederation",
+     "Federal Finance Administration"
+    ],
+    "url": "https://www.snb.ch/en/publications/communication/press-releases/2025/pre_20251118"
+   },
+   {
+    "cat": "govt",
+    "status": "Approved",
+    "tone": "active",
+    "name": "Federal guarantees for non-profit housing bonds, 2027 to 2033",
+    "detail": "Federal Council request, 5 December 2025 · National Council, 10 March 2026, 130 votes to 62 · approved by Parliament in 2026 (business 25.087) · from mid-2027, for a little over six years",
+    "amount": "CHF 1.92bn",
+    "money": true,
+    "note": "Follows the CHF 1.7 billion framework credit of 2021, which the Federal Council expects to be used up during 2027; a guarantee costs money only if it is called",
+    "text": "A commitment credit under which the Confederation guarantees the bonds of the Emissionszentrale für gemeinnützige Wohnbauträger (EGW), the bond-issuing centre of non-profit housing developers, so that they borrow on better terms. Through these guaranteed bonds about 38,000 dwellings in some 1,030 properties across Switzerland are financed at low cost, which carries the shelter standard.",
+    "by": [
+     "Swiss Confederation",
+     "Federal Office for Housing",
+     "Emissionszentrale für gemeinnützige Wohnbauträger (EGW)"
+    ],
+    "url": "https://www.admin.ch/de/newnsb/yd8_h9Dm8JfWMv4Un-GJV"
+   },
+   {
+    "cat": "govt",
+    "status": "Approved",
+    "tone": "active",
+    "name": "Fonds de Roulement for non-profit housing, increase for 2030 to 2034",
+    "detail": "Federal Council proposal, 26 September 2025 · National Council, 10 March 2026, 129 votes to 62 · approved by Parliament in 2026 (business 25.077) · interest-bearing, repayable loans over 25 years",
+    "amount": "CHF 150M",
+    "money": true,
+    "note": "The Federal Council expects the fund to reach about CHF 754 million by the end of 2029 and a little over CHF 900 million with the increase",
+    "text": "A federal revolving fund, held in trust by the umbrella organisations of non-profit housing, that lends at low interest to non-profit developers to build, renovate and buy affordable rental homes. The increase keeps the fund lending from 2030 to 2034 and carries the shelter standard.",
+    "by": [
+     "Swiss Confederation",
+     "Federal Office for Housing"
+    ],
+    "url": "https://www.wbf.admin.ch/de/newnsb/uDt2kybGjMuqWleGPOnIY"
+   },
+   {
+    "cat": "govt",
+    "status": "Completed",
+    "tone": "completed",
+    "name": "Fonds de Roulement special programme for energy renovation, 2021 to 2025",
+    "detail": "Swiss Confederation · 2021 to 2025 · 71 loans · interest-free for the first ten years · programme closed, reported 24 August 2026",
+    "amount": "CHF 119M",
+    "money": true,
+    "note": "An older programme, now closed; its loans financed the energy renovation of non-profit housing",
+    "text": "A special programme of the Fonds de Roulement that lent to non-profit housing developers, interest-free for the first ten years, to speed up the energy renovation of the non-profit housing stock. It carries the shelter and energy standards for the tenants of non-profit homes.",
     "by": [
      "Swiss Confederation"
     ],
-    "url": "https://www.snb.ch/en/publications/communication/press-releases/2025/pre_20251118"
+    "url": "https://www.nb.admin.ch/de/newnsb/bo6rFbVR5hm5V9conQXTq"
+   },
+   {
+    "cat": "govt",
+    "status": "Issued",
+    "tone": "active",
+    "name": "Green Confederation bond, 1.50% due 2038",
+    "detail": "Federal Treasury · first issued October 2022, CHF 766 million · tapped CHF 671 million in 2023 and CHF 621 million in three auctions in 2024 · ISIN CH0440081567",
+    "amount": "CHF 1.22bn",
+    "money": true,
+    "note": "Proceeds of 2024, including CHF 600 million of own holdings; CHF 2,659 million outstanding at the end of 2024 (CHF 2,059 million in another passage of the same report)",
+    "text": "Switzerland’s first sovereign green bond, whose proceeds are matched to eligible federal spending. Of the 2024 proceeds, 60.7% went to clean transport and 3.3% to green buildings and energy efficiency, with further sums for biodiversity and the revitalisation of water bodies, so it is not earmarked to any one of the seven standards.",
+    "by": [
+     "Swiss Confederation",
+     "Federal Finance Administration"
+    ],
+    "url": "https://www.efv.admin.ch/dam/en/sd-web/4Vcl8Q7ZIhIF/2024-green-bond-allocation-impact-report.pdf"
    }
   ]
  },
@@ -108,7 +188,50 @@
  },
  "enterprises": {
   "heading": "Already working in Switzerland.",
-  "items": []
+  "items": [
+   {
+    "standard": "Food",
+    "name": "Caritas-Markt",
+    "text": "A cooperative whose 22 shops in German- and French-speaking Switzerland give people on a tight budget access to a balanced diet, with more than 1.1 million sales in 2025, about 3,800 shoppers a day and more than 300 people a year supported in work integration.",
+    "source": "Caritas-Markt, 2025",
+    "url": "https://caritas-regio.ch/media/marktDownloads/Jahresbericht-Genossenschaft-Caritas-Markt-2025.pdf"
+   },
+   {
+    "standard": "Shelter",
+    "name": "Stiftung Domicil",
+    "text": "A Zurich foundation that helps people disadvantaged economically, socially or by their cultural background find affordable homes and stands jointly liable for their tenancies; in 2025 it placed 68 flats, a new home for 177 people, 87 of them children, and accompanied 1,068 tenancies, earning most of its income from subletting.",
+    "source": "Stiftung Domicil, 2025",
+    "url": "https://zewo.ch/wp-content/uploads/charity-documents/stiftung-domicil_annual_review_document_de.pdf"
+   },
+   {
+    "standard": "Livelihood",
+    "name": "Surprise",
+    "text": "A non-profit association, financed without state money, whose 525 sellers, people affected by poverty and social exclusion, sold 433,942 copies of the street magazine Surprise in 2025 and so earned about CHF 1.7 million for themselves.",
+    "source": "Surprise, 2026",
+    "url": "https://surprise.ngo/jahresbericht2025/wp-content/uploads/2026/04/III_Kurzportraet_2025.pdf"
+   },
+   {
+    "standard": "Livelihood",
+    "name": "Lernwerk",
+    "text": "A work-integration enterprise in Windisch and Brugg, Aargau, whose social businesses and work groups make products and services for sale, from facility services and catering to a bicycle workshop and a laundry, and which counted 792 programme participants and 566 facility-services orders in 2025.",
+    "source": "Lernwerk, 2026",
+    "url": "https://lernwerk.ch/ueber-lernwerk/jahresberichte"
+   },
+   {
+    "standard": "Livelihood",
+    "name": "GGZ@Work",
+    "text": "An ISO-certified social enterprise of the Gemeinnützige Gesellschaft Zug that advises, employs and places jobless people on social assistance and asylum seekers, aiming at work in the open labour market, while selling transport, clearance, assembly, textile and administrative services to firms and private clients.",
+    "source": "GGZ@Work, 2026",
+    "url": "https://ggzatwork.ch/"
+   },
+   {
+    "standard": "Livelihood",
+    "name": "SEEBURG",
+    "text": "A non-profit social enterprise in Interlaken that has opened work prospects for more than 30 years to young people and adults with cognitive, physical and psychological impairments through its own gardening, painting, joinery and restaurant businesses, which take customer orders.",
+    "source": "SEEBURG, 2026",
+    "url": "https://www.seeburg.ch/"
+   }
+  ]
  },
  "coverage": {
   "set_by": "Livelihood",
@@ -242,5 +365,5 @@
  ],
  "dispatches": [],
  "checked": "2026-11-19T04:31Z",
- "reviewed": "2026-11-10T23:00Z"
+ "reviewed": "2026-11-21T07:25Z"
 }
