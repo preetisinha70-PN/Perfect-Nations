@@ -100,7 +100,8 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 PAGES, DATA, HERE = ROOT / 'pages', ROOT / 'data', ROOT / 'tools' / 'nation'
-VERSION = '14.7'  # picture cards for the assets, switched on per nation by assets.pictures (Austria first; Preeti Sinha, 21 Nov 2026)
+VERSION = '14.7.1'  # the pictures carry no AI illustration mark (Preeti Sinha, 21 Nov 2026)
+# 14.7: picture cards for the assets, switched on per nation by assets.pictures (Austria first; Preeti Sinha, 21 Nov 2026)
 # 14.6: Previous and next blueprint, A to Z, above All 195 nations (Preeti Sinha, 21 Nov 2026)
 # 14.5: What we do: the firm line ends at "a new-age sovereign advisory firm." (Preeti Sinha, 21 Nov 2026)
 # 14.4: Already working in: the line "None is a partner of Perfect Nations." is removed (Preeti Sinha, 21 Nov 2026)
@@ -686,7 +687,7 @@ def assets(d):
             ss = ' srcset="%s 300w, %s 768w" sizes="(max-width:640px) 80vw, 33vw"' % (ent(https(thumb)), ent(https(img))) if thumb else ''
             pic = ('<figure class="bpx-acard__pic"><img src="%s"%s alt="%s" width="768" height="573" loading="lazy" decoding="async" '
                    'onerror="var f=this.parentNode;if(f)f.remove()">%s</figure>'
-                   % (ent(https(img)), ss, ent(x.get('alt') or x['name']), '<figcaption>AI illustration</figcaption>' if x.get('ai') else ''))
+                   % (ent(https(img)), ss, ent(x.get('alt') or x['name']), ''))  # no mark on the picture (Preeti Sinha, 21 Nov 2026); 'ai' stays in the data as a record
             m = re.match(r'^\s*([0-9]+(?:\.[0-9]+)?)\s*%\s*$', plain(x.get('figure') or ''))
             if m and 0 < float(m.group(1)) <= 100:
                 bar = '<span class="bpx-acard__bar" aria-hidden="true"><b style="width:%s%%"></b></span>' % m.group(1)
@@ -1307,7 +1308,8 @@ def build(slug, sbn, son, today):
     script = (HERE / 'script.js').read_text(encoding='utf-8').replace('/*pn:cfg*/', 'var CFG = %s;' % js_str(cfg))
     head = (
         '<!-- PERFECT NATIONS . NATIONAL BLUEPRINT . %s . v%s . %s . Built by tools/build_nations.py: never edit by hand. -->\n'
-        '<!-- v14.7 (21 November 2026): picture cards for the assets where the nation switches them on (Austria first): each asset opens with its picture, marked AI illustration; phones swipe the cards. -->\n'
+        '<!-- v14.7.1 (21 November 2026): the asset pictures carry no AI illustration mark (the President and CEO). -->\n'
+        '<!-- v14.7 (21 November 2026): picture cards for the assets where the nation switches them on (Austria first): each asset opens with its picture; phones swipe the cards. -->\n'
         '<!-- v14.6 (21 November 2026): above All 195 nations, the previous and next blueprints, A to Z. -->\n'
         '<!-- v14.5 (21 November 2026): What we do: the firm line now ends at "a new-age sovereign advisory firm." -->\n'
         '<!-- v14.4 (21 November 2026): Already working in: the line "None is a partner of Perfect Nations." is removed. -->\n'

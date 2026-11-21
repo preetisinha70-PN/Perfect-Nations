@@ -294,7 +294,7 @@
         if (x.thumb && /^https:\/\//.test(x.thumb)) { im.srcset = x.thumb + ' 300w, ' + img + ' 768w'; im.sizes = '(max-width:640px) 80vw, 33vw'; }
         im.width = 768; im.height = 573; im.loading = 'lazy'; im.decoding = 'async';
         im.onerror = function () { if (f.parentNode) f.parentNode.removeChild(f); };
-        f.appendChild(im); if (x.ai) f.appendChild(el('figcaption', '', 'AI illustration')); li.appendChild(f);
+        f.appendChild(im); li.appendChild(f);
         var m = /^\s*([0-9]+(?:\.[0-9]+)?)\s*%\s*$/.exec(String(x.figure));
         if (m && +m[1] > 0 && +m[1] <= 100) { bar = el('span', 'bpx-acard__bar'); bar.setAttribute('aria-hidden', 'true'); var bb = el('b', ''); bb.style.width = m[1] + '%'; bar.appendChild(bb); }
       }
