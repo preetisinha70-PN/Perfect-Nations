@@ -1,7 +1,7 @@
 {
  "nation": "Venezuela",
  "page_version": "1.0",
- "updated": "2026-11-17",
+ "updated": "2026-11-22",
  "steward": {
   "name": "Mariana Briceño",
   "role": "Nation Steward of Venezuela"
@@ -15,18 +15,39 @@
     "label": "Growth projected for 2026, IMF"
    },
    {
-    "value": "4.3%",
-    "label": "Remittances, share of GDP, 2025"
+    "value": "$19.6bn",
+    "label": "Earthquake damage, World Bank estimate, 2026"
    },
    {
-    "value": "28.5m",
-    "label": "People, 2025"
+    "value": "$4.9bn",
+    "label": "Reserve tranche and SDR holdings at the IMF, 2026"
    }
   ]
  },
  "capital": {
   "heading": "Oil beneath, and capital still to be drawn.",
   "record": [
+   {
+    "value": "$4.9bn",
+    "money": true,
+    "text": "Venezuela’s reserve tranche and SDR holdings at the IMF, about SDR 3.6 billion, April 2026, after the IMF resumed dealings with the Government on 16 April 2026",
+    "source": "IMF, 2026",
+    "url": "https://www.imf.org/en/countries/ven/faq-imf-reengagement-with-venezuela"
+   },
+   {
+    "value": "$19.6bn",
+    "money": true,
+    "text": "Direct physical damage from the earthquakes of 24 June 2026, World Bank Group estimate of 23 July 2026",
+    "source": "World Bank, 2026",
+    "url": "https://www.worldbank.org/en/news/press-release/2026/07/23/world-bank-group-estimates-venezuela-earthquakes-damage"
+   },
+   {
+    "value": "$606M",
+    "money": true,
+    "text": "Required by the Humanitarian Response Plan for 2026, launched in December 2025, to reach 5.4 million people",
+    "source": "UN OCHA, 2025",
+    "url": "https://humanitarianaction.info/article/venezuela-4"
+   },
    {
     "value": "5%",
     "money": false,
@@ -42,7 +63,152 @@
     "url": "https://data.worldbank.org/indicator/BX.TRF.PWKR.DT.GD.ZS?locations=VE"
    }
   ],
-  "register": []
+  "register": [
+   {
+    "cat": "govt",
+    "status": "Restructuring",
+    "tone": "pipeline",
+    "name": "External bonds of the Republic and PDVSA: comprehensive debt restructuring",
+    "detail": "Announced by the Bolivarian Republic of Venezuela, Caracas, 13 May 2026 · Eurobonds of the Republic and PDVSA in one unified process · in default since 2017 · Centerview Partners appointed financial advisor · official debt to be addressed through institutional normalization",
+    "amount": "",
+    "money": false,
+    "note": "Budget-wide; the Republic said it expected to present its macroeconomic framework and debt sustainability analysis in June 2026",
+    "text": "The Republic’s process to restructure all relevant external public sector obligations, including the Eurobonds of the Republic and of PDVSA, the state oil company, after a protracted default since 2017. It is not earmarked to any one of the seven standards; it bears on the budget as a whole.",
+    "by": [
+     "Bolivarian Republic of Venezuela",
+     "PDVSA"
+    ],
+    "url": "https://www.businesswire.com/news/home/20260513151766/en/The-Bolivarian-Republic-of-Venezuela-Announces-the-Initiation-of-a-Comprehensive-Public-Debt-Restructuring-Process"
+   },
+   {
+    "cat": "humanitarian",
+    "status": "Appeal",
+    "tone": "appeal",
+    "name": "UNICEF Humanitarian Action for Children 2026, revised after the earthquakes",
+    "detail": "Original appeal US$137.6 million for 2.3 million people · revision of August 2026 adds US$65.7 million for 470,000 people affected by the earthquakes, 169,000 of them children",
+    "amount": "$203.3M",
+    "money": true,
+    "note": "Targets: 2 million people with water, sanitation and hygiene; 437,941 children with nutrition; 174,851 children with education",
+    "text": "UNICEF’s appeal for children in Venezuela in 2026, revised in August after the earthquakes of 24 June. It funds nutrition, water, sanitation and hygiene and education, which reach the food, water, shelter and education standards.",
+    "by": [
+     "UNICEF"
+    ],
+    "url": "https://www.unicef.org/appeals/venezuela"
+   },
+   {
+    "cat": "humanitarian",
+    "status": "Allocated",
+    "tone": "annual",
+    "name": "EU humanitarian aid for Venezuela, 2026",
+    "detail": "€52 million allocated earlier in 2026 for the socio-economic crisis · €5 million in emergency aid after the earthquakes, 29 June 2026 · a Humanitarian Air Bridge flight from Copenhagen with about 50 tonnes of supplies",
+    "amount": "€57M",
+    "money": true,
+    "note": "On 15 July 2026 the Commission announced €20 million more, €10 million of it subject to approval by the budgetary authority",
+    "text": "The European Commission’s humanitarian funding for Venezuela in 2026, for the humanitarian consequences of the socio-economic crisis and, from June, for people affected by the earthquakes. The emergency aid provides shelter and health care, and the flight carried shelter material, water and sanitation equipment and education supplies, which reach the shelter, water, health and education standards.",
+    "by": [
+     "European Commission"
+    ],
+    "url": "https://luxembourg.representation.ec.europa.eu/actualites-et-evenements/actualites/eu-delivers-emergency-aid-and-organises-humanitarian-flight-response-earthquakes-venezuela-2026-06-29_fr"
+   },
+   {
+    "cat": "humanitarian",
+    "status": "Released",
+    "tone": "granted",
+    "name": "UN Central Emergency Response Fund, earthquake response",
+    "detail": "Released by the Emergency Relief Coordinator on 25 June 2026, the day after the earthquakes of 24 June · an earlier rapid-response allocation of US$2 million, 29 April 2026",
+    "amount": "$15M",
+    "money": true,
+    "note": "25 search-and-rescue and medical teams with over 1,000 personnel were deploying, OCHA said on 26 June",
+    "text": "Rapid-response funds from the UN’s emergency fund for the first relief after the earthquakes on Venezuela’s central coast, beside the Venezuela Humanitarian Fund, which the UN also activated. Life-saving relief of this kind bears on the food, water, shelter and health standards.",
+    "by": [
+     "UN CERF",
+     "UN OCHA"
+    ],
+    "url": "https://www.unognewsroom.org/teleprompter/en/3175/un-geneva-press-briefing-26-june-2026"
+   },
+   {
+    "cat": "humanitarian",
+    "status": "Appeal",
+    "tone": "appeal",
+    "name": "Humanitarian Response Plan 2026",
+    "detail": "Launched December 2025 · 7.9 million people in need · 5.4 million targeted · US$184 million for prioritised activities · after the earthquakes, the UN sought US$296 million more for 1.3 million people through an addendum (8 July 2026)",
+    "amount": "$606M",
+    "money": true,
+    "note": "About US$300 million received by 8 July 2026, US$115 million of it before the earthquakes; a gap of US$627 million",
+    "text": "The appeal of the United Nations and humanitarian partners for Venezuela in 2026, with national and local organisations, the Venezuela Humanitarian Fund, the IFRC and the Venezuelan Red Cross. The addendum after the earthquakes covers shelter, health, water, food security, protection, education and early recovery, which reach the food, water, shelter, education and health standards.",
+    "by": [
+     "UN OCHA",
+     "UN agencies and humanitarian partners"
+    ],
+    "url": "https://humanitarianaction.info/article/venezuela-4"
+   },
+   {
+    "cat": "regional",
+    "status": "Established",
+    "tone": "active",
+    "name": "CAF Fund for the Recovery and Reconstruction of Venezuela",
+    "detail": "Established by CAF on 26 June 2026 · the Caribbean Development Bank approved a USD 1 million contribution, 10 August 2026 · open to governments, institutions and development partners",
+    "amount": "",
+    "money": false,
+    "note": "The fund works toward priorities identified by the Government of Venezuela",
+    "text": "A fund set up by CAF, the development bank of Latin America and the Caribbean, after the earthquakes of 24 June 2026, as a transparent and accountable mechanism for contributions. It supports emergency and humanitarian response, the rehabilitation of essential services and infrastructure, and recovery, reconstruction and resilience, which bear on shelter and the essential services behind the seven standards.",
+    "by": [
+     "CAF",
+     "Caribbean Development Bank"
+    ],
+    "url": "https://www.caribank.org/node/12179"
+   },
+   {
+    "cat": "regional",
+    "status": "Approved",
+    "tone": "active",
+    "name": "IDB emergency assistance after the earthquakes (VE-T1117)",
+    "detail": "Approved 1 July 2026 · in implementation · four non-reimbursable operations from Ordinary Capital, the Spanish general cooperation framework and the Korea Poverty Reduction Fund · humanitarian aid with Cáritas Venezuela",
+    "amount": "$800K",
+    "money": true,
+    "note": "The project page shows a total cost of US$500,000; the IDB Group says its grants come to at least US$1 million with member contributions",
+    "text": "Non-reimbursable emergency technical cooperation from the Inter-American Development Bank to support the Government in meeting the immediate needs of people affected by the earthquakes of 24 June 2026, with damage and loss assessments to guide rehabilitation and early recovery. It carries immediate relief to affected households and prepares the restoration of the essential public services behind the seven standards.",
+    "by": [
+     "Inter-American Development Bank"
+    ],
+    "url": "https://www.iadb.org/en/project/VE-T1117"
+   },
+   {
+    "cat": "bilat",
+    "status": "Granted",
+    "tone": "granted",
+    "name": "Australian humanitarian assistance after the earthquakes",
+    "detail": "Department of Foreign Affairs and Trade, 2 July 2026 · through the IFRC and the World Food Programme",
+    "amount": "A$2M",
+    "money": true,
+    "note": "Also funds transport, storage, coordination and logistics for first responders, local authorities and humanitarian partners",
+    "text": "Australia’s humanitarian assistance for people affected by the earthquakes in Venezuela, delivered by the International Federation of Red Cross and Red Crescent Societies and the World Food Programme. It provides emergency food, shelter, water, sanitation, hygiene and psychosocial support, which reach the food, shelter, water and health standards.",
+    "by": [
+     "Australia, DFAT",
+     "IFRC",
+     "World Food Programme"
+    ],
+    "url": "https://www.dfat.gov.au/crisis-hub/earthquakes-venezuela"
+   },
+   {
+    "cat": "bilat",
+    "status": "Granted",
+    "tone": "granted",
+    "name": "Canadian humanitarian assistance after the earthquakes",
+    "detail": "Global Affairs Canada, 25 June 2026 · C$2 million to the World Food Programme, C$2 million to the Pan American Health Organization, C$1 million to the International Rescue Committee · a matching fund of up to C$4 million, 30 June 2026",
+    "amount": "C$5M",
+    "money": true,
+    "note": "With the matching fund, Canada’s humanitarian funding for the earthquakes reaches C$9 million; almost C$4.5 million was allocated earlier in 2026",
+    "text": "Canada’s initial humanitarian funding for the earthquakes in Venezuela, through the World Food Programme, the Pan American Health Organization and the International Rescue Committee, with donations matched through the Canadian Red Cross and the Humanitarian Coalition. It provides emergency food, water, sanitation and health services, protection and logistics, which reach the food, water and health standards.",
+    "by": [
+     "Global Affairs Canada",
+     "World Food Programme",
+     "PAHO",
+     "International Rescue Committee"
+    ],
+    "url": "https://www.canada.ca/en/global-affairs/news/2026/06/canada-provides-humanitarian-assistance-in-response-to-earthquakes-in-venezuela.html"
+   }
+  ]
  },
  "assets": {
   "heading": "Five assets no balance sheet counts.",
@@ -86,7 +252,29 @@
  },
  "enterprises": {
   "heading": "Already working in Venezuela.",
-  "items": []
+  "items": [
+   {
+    "standard": "Water",
+    "name": "Lata de Agua (Arqbiental LSB)",
+    "text": "A rainwater harvesting and treatment system for schools and clinics, developed by the Caracas architecture firm Arqbiental LSB, which UNDP and its partners recognised in October 2025 among seven initiatives of the Premio Nacional Venezuela Productiva 2030 for its work on safe water access and water resilience.",
+    "source": "UNDP, 2025",
+    "url": "https://www.undp.org/es/node/553191"
+   },
+   {
+    "standard": "Education",
+    "name": "Fe y Alegría",
+    "text": "An education network that works with 350 education centres across Venezuela, serving more than 100,000 students and participants with more than 10,000 workers, and is seeking support to repair at least 31 of its centres after the earthquakes of June 2026.",
+    "source": "elDiario, 2026",
+    "url": "https://eldiario.com/2026/08/10/fe-y-alegria-recuperacion-escuelas/"
+   },
+   {
+    "standard": "Livelihood",
+    "name": "Bangente (Banco de la Gente Emprendedora)",
+    "text": "A microfinance bank, set up in 1998 with CAF taking part in its share capital, that lends to micro-entrepreneurs, small businesses and start-ups that struggle to borrow from larger banks; its loan portfolio grew from about US$42,000 to nearly US$11 million within a year, and it plans six new branches.",
+    "source": "Curaçao Chronicle, 2026",
+    "url": "https://www.curacaochronicle.com/post/unknown/a-new-financial-engine-for-venezuela-how-bangente-is-betting-on-entrepreneurs-and-youth"
+   }
+  ]
  },
  "coverage": {
   "set_by": "Shelter",
@@ -196,5 +384,5 @@
  ],
  "dispatches": [],
  "checked": "2026-11-17T20:30Z",
- "reviewed": "2026-11-10T23:00Z"
+ "reviewed": "2026-11-22T07:26Z"
 }
