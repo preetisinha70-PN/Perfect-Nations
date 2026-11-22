@@ -1,18 +1,18 @@
 {
  "nation": "United States",
  "page_version": "1.0",
- "updated": "2026-11-18",
+ "updated": "2026-11-22",
  "steward": {
   "name": "Rachel Morgan",
   "role": "Nation Steward of United States"
  },
  "population": 341784857,
  "hero": {
-  "lead": "A nation of 341.8 million with farmland across almost half its land, where total public debt outstanding reached $40.6 trillion at the end of October 2026.",
+  "lead": "A nation of 341.8 million with farmland across almost half its land, where Treasury securities outstanding reached $40.5 trillion at the end of October 2026.",
   "stats": [
    {
-    "value": "$40.6tn",
-    "label": "Total public debt outstanding, 29 October 2026"
+    "value": "$40.5tn",
+    "label": "Treasury securities outstanding, end of October 2026"
    },
    {
     "value": "124.4%",
@@ -28,18 +28,25 @@
   "heading": "A $40 trillion balance sheet, and every table still to fill.",
   "record": [
    {
-    "value": "$40.59tn",
+    "value": "$40.52tn",
     "money": true,
-    "text": "Total public debt outstanding on 29 October 2026",
-    "source": "US Treasury, Debt to the Penny (via PrimeRates), 2026",
-    "url": "https://primerates.com/?p=14034"
+    "text": "Total Treasury securities outstanding at the close of October 2026; $32.74 trillion of it is debt held by the public",
+    "source": "US Treasury, Monthly Treasury Statement, 2026",
+    "url": "https://fiscaldata.treasury.gov/static-data/published-reports/mts/MonthlyTreasuryStatement_202610.pdf"
    },
    {
     "value": "$1.99tn",
     "money": true,
-    "text": "Federal deficit for fiscal year 2026",
-    "source": "US Treasury, Monthly Treasury Statement (via FinChannel), 2026",
-    "url": "https://finchannel.com/u-s-budget-deficit-rises-to-1-992-trillion-for-fiscal-2026/138454/america/2026/10/"
+    "text": "Federal deficit for fiscal year 2026, which ended on 30 September 2026",
+    "source": "US Treasury, Monthly Treasury Statement, 2026",
+    "url": "https://fiscaldata.treasury.gov/static-data/published-reports/mts/MonthlyTreasuryStatement_202609.pdf"
+   },
+   {
+    "value": "$25bn",
+    "money": true,
+    "text": "Nearly $25 billion of USDA Rural Development investment in rural communities in fiscal year 2026",
+    "source": "USDA Rural Development, 2026",
+    "url": "https://www.rd.usda.gov/newsroom/news-release/usda-rural-development-invests-25-billion-strengthen-rural-communities-nationwide"
    },
    {
     "value": "124.4%",
@@ -61,22 +68,24 @@
     "cat": "govt",
     "status": "Outstanding",
     "tone": "active",
-    "name": "Treasury securities and other public debt",
-    "detail": "US Treasury · Debt to the Penny, 29 October 2026",
-    "amount": "$40.59tn",
+    "name": "Treasury securities outstanding",
+    "detail": "US Treasury · Monthly Treasury Statement, close of October 2026 · up $352.7bn in October · debt held by the public $32.74tn",
+    "amount": "$40.52tn",
     "money": true,
-    "text": "Total public debt outstanding, which first passed $40 trillion in August 2026.",
+    "note": "Budget-wide; $40.17 trillion at the close of fiscal year 2026, on 30 September 2026",
+    "text": "The stock of securities issued by the US Treasury at the close of October 2026, $352.7 billion more than a month earlier; $32.74 trillion of it is debt held by the public. It funds the federal budget as a whole and is not earmarked to any one of the seven standards.",
     "by": [
-     "United States"
+     "United States",
+     "US Department of the Treasury"
     ],
-    "url": "https://primerates.com/?p=14034"
+    "url": "https://fiscaldata.treasury.gov/static-data/published-reports/mts/MonthlyTreasuryStatement_202610.pdf"
    },
    {
     "cat": "govt",
     "status": "Announced",
     "tone": "active",
-    "name": "Section 32 food purchase for food banks",
-    "detail": "USDA Agricultural Marketing Service · announced 29 October 2026",
+    "name": "Section 32 food purchase for food banks (October 2026)",
+    "detail": "USDA Agricultural Marketing Service · announced 29 October 2026 · Section 32 authority · up to $472.5M across 15 products",
     "amount": "$472.5M",
     "money": true,
     "note": "Dairy $165.5 million, the largest line",
@@ -85,6 +94,68 @@
      "US Department of Agriculture"
     ],
     "url": "https://content.govdelivery.com/accounts/USDAOC/bulletins/430ebf7"
+   },
+   {
+    "cat": "govt",
+    "status": "Invested",
+    "tone": "annual",
+    "name": "USDA Rural Development loans and grants, fiscal year 2026",
+    "detail": "USDA Rural Development · announced 7 October 2026 · fiscal year to 30 September 2026 · in West Virginia, $184.2M for housing and $34.2M for water and wastewater systems",
+    "amount": "$25bn",
+    "money": true,
+    "note": "Nearly $25 billion nationwide; more than $265.9 million of it in West Virginia",
+    "text": "Investment by USDA Rural Development in rural communities across the nation in fiscal year 2026. In West Virginia alone its loans and grants financed homeownership and affordable rental housing, water and wastewater systems, hospitals and other community facilities, small businesses and internet access, which carry the shelter, water, health and livelihood standards.",
+    "by": [
+     "US Department of Agriculture",
+     "USDA Rural Development"
+    ],
+    "url": "https://www.rd.usda.gov/newsroom/news-release/usda-rural-development-invests-25-billion-strengthen-rural-communities-nationwide"
+   },
+   {
+    "cat": "govt",
+    "status": "Awarded",
+    "tone": "granted",
+    "name": "CDFI Fund awards: CDFI, NACA, Bank Enterprise Award and Small Dollar Loan Programs",
+    "detail": "US Treasury, CDFI Fund · announced 15 September 2026 · FY 2025 CDFI Program and Native American CDFI Assistance Program awards · FY 2026 Bank Enterprise Award and Small Dollar Loan Program awards · awardees notified by 30 September 2026",
+    "amount": "",
+    "money": false,
+    "note": "The release does not state the amounts awarded",
+    "text": "Treasury awards to community development financial institutions, Native American CDFIs and banks serving underserved communities, made from appropriations that would have expired on 30 September 2026. CDFI Program financial assistance can fund financial products, loan loss reserves and capital reserves, and the awards are meant to help small businesses expand and create jobs, which carries the livelihood standard.",
+    "by": [
+     "US Department of the Treasury",
+     "CDFI Fund"
+    ],
+    "url": "https://www.cdfifund.gov/news/740"
+   },
+   {
+    "cat": "govt",
+    "status": "Announced",
+    "tone": "active",
+    "name": "Section 32 food purchase for schools and food banks (August 2026)",
+    "detail": "USDA Agricultural Marketing Service · announced 24 August 2026 · Section 32 of the Agriculture Act of 1935 · up to $156M across eight products",
+    "amount": "$156M",
+    "money": true,
+    "note": "Walnuts $30 million, the largest line",
+    "text": "American-grown food bought from producers for schools and food banks through the National School Lunch Program and The Emergency Food Assistance Program: walnuts, pork, mandarins, raisins, grape juice, shrimp, prunes and canned peaches. It carries the food standard for children and families who rely on school meals and food banks.",
+    "by": [
+     "US Department of Agriculture"
+    ],
+    "url": "https://www.ams.usda.gov/node/46097"
+   },
+   {
+    "cat": "govt",
+    "status": "Pipeline",
+    "tone": "pipeline",
+    "name": "Healthy Food Financing Partnerships, 2026 round",
+    "detail": "Reinvestment Fund for USDA · opened 29 June 2026 · grants of $200,000 to $3 million",
+    "amount": "$20M",
+    "money": true,
+    "text": "Grants to the public-private partnerships that finance grocers and food enterprises in their own state or region.",
+    "by": [
+     "US Department of Agriculture",
+     "Reinvestment Fund"
+    ],
+    "url": "https://www.reinvestment.com/?p=26386"
    },
    {
     "cat": "govt",
@@ -104,33 +175,18 @@
    },
    {
     "cat": "govt",
-    "status": "Pipeline",
-    "tone": "pipeline",
-    "name": "Healthy Food Financing Partnerships, 2026 round",
-    "detail": "Reinvestment Fund for USDA · opened 29 June 2026 · grants of $200,000 to $3 million",
-    "amount": "$20M",
+    "status": "Announced",
+    "tone": "active",
+    "name": "Section 32 food purchase for food banks (February 2026)",
+    "detail": "USDA Agricultural Marketing Service · announced 19 February 2026 · Section 32 of the Agriculture Act of 1935 · up to $263M across 12 products",
+    "amount": "$263M",
     "money": true,
-    "text": "Grants to the public-private partnerships that finance grocers and food enterprises in their own state or region.",
+    "note": "Butter $75 million, the largest line",
+    "text": "Dairy products, dried beans, chickpeas, lentils, split peas, pears and nuts bought from American producers for food banks and nutrition assistance programs, including The Emergency Food Assistance Program. It carries the food standard through the charitable food network.",
     "by": [
-     "US Department of Agriculture",
-     "Reinvestment Fund"
+     "US Department of Agriculture"
     ],
-    "url": "https://www.reinvestment.com/?p=26386"
-   },
-   {
-    "cat": "private",
-    "status": "Pipeline",
-    "tone": "pipeline",
-    "name": "Ursa Re 2026-1 catastrophe bond",
-    "detail": "California Earthquake Authority · marketing in November 2026 · about four years, indemnity trigger",
-    "amount": "$900M",
-    "money": true,
-    "note": "Target raised from $600 million on 11 November 2026",
-    "text": "Fully collateralized earthquake reinsurance from capital market investors for California’s earthquake insurer.",
-    "by": [
-     "California Earthquake Authority"
-    ],
-    "url": "https://www.artemis.bm/news/california-earthquake-authority-lifts-ursa-re-2026-1-cat-bond-to-target-900m-of-reinsurance/"
+    "url": "https://www.fna.usda.gov/newsroom/usda-0033.26"
    },
    {
     "cat": "govt",
@@ -147,6 +203,22 @@
      "Reinvestment Fund"
     ],
     "url": "https://www.reinvestment.com/insights/pennsylvania-fresh-food-financing-initiative/"
+   },
+   {
+    "cat": "private",
+    "status": "Priced",
+    "tone": "active",
+    "name": "Ursa Re 2026-1 catastrophe bond",
+    "detail": "Ursa Re Ltd. for the California Earthquake Authority · priced in November 2026 · about four years · indemnity trigger, annual aggregate · Class D $500M at a 3.5% spread · Class H $400M at an 8% spread",
+    "amount": "$900M",
+    "money": true,
+    "note": "Upsized from a $600 million target; the second-largest cat bond the Authority has sponsored directly",
+    "text": "Fully collateralized California earthquake reinsurance from capital market investors for the California Earthquake Authority, the state’s earthquake insurer. It helps the insurer pay claims after a major earthquake, which bears on the shelter standard.",
+    "by": [
+     "California Earthquake Authority",
+     "Ursa Re Ltd."
+    ],
+    "url": "https://www.artemis.bm/news/california-earthquake-authority-secures-its-second-largest-cat-bond-900m-ursa-re-2026-1/"
    }
   ]
  },
@@ -192,7 +264,43 @@
  },
  "enterprises": {
   "heading": "Already working in the United States.",
-  "items": []
+  "items": [
+   {
+    "standard": "Food",
+    "name": "DC Central Kitchen",
+    "text": "A Washington, DC non-profit that runs a culinary job training programme with 161 graduates a year and earns its own revenue through three social enterprise cafés and its school food service, which serves 12,000 meals a day at 30 schools, within a regular output of 17,000 meals a day in 2025.",
+    "source": "DC Central Kitchen, 2025",
+    "url": "https://dccentralkitchen.org/impact25/"
+   },
+   {
+    "standard": "Shelter",
+    "name": "Champlain Housing Trust",
+    "text": "A community land trust in northwest Vermont with 2,929 affordable apartments and 706 shared equity homes, which signed 337 new leases in fiscal year 2025, 94 of them with formerly homeless households, and earned 32.2% of its income from rent.",
+    "source": "Champlain Housing Trust, 2025",
+    "url": "https://www.getahome.org/wp-content/uploads/CHT-Annual-Report-2025.pdf"
+   },
+   {
+    "standard": "Energy",
+    "name": "GRID Alternatives",
+    "text": "A non-profit that designs, installs and maintains solar and clean energy systems for economic and environmental justice communities across the country, and administers California’s Disadvantaged Communities Single-Family Solar Homes programme, which installed a record 3,076 kW in 2025.",
+    "source": "GRID Alternatives, 2026",
+    "url": "https://gridalternatives.org/sites/default/files/2026-04/2025%20Q3-Q4%20DAC-SASH%20Semi-Annual%20Report.pdf"
+   },
+   {
+    "standard": "Health",
+    "name": "Civica Rx",
+    "text": "A non-profit generic drug company created by US health systems and philanthropies to prevent and mitigate drug shortages, which supplies more than 50 drugs to 60 health systems with 1,400 hospitals and runs its own sterile injectable plant in Petersburg, Virginia.",
+    "source": "US Senate Special Committee on Aging, 2025",
+    "url": "https://www.aging.senate.gov/download/testimony_coukell-111925pdf?download=1"
+   },
+   {
+    "standard": "Livelihood",
+    "name": "Homeboy Industries",
+    "text": "A Los Angeles organisation for formerly gang-involved and previously incarcerated people that runs an 18-month programme for over 450 people a year and offers more than 300 jobs and training places in its 15 social enterprises, among them Homeboy Bakery and Homegirl Café.",
+    "source": "Homeboy Industries, 2026",
+    "url": "https://homeboyindustries.org/wp-content/uploads/2026/02/Fact-Sheet-2026v2-compressed1.pdf"
+   }
+  ]
  },
  "coverage": {
   "set_by": "Food",
@@ -324,5 +432,5 @@
  ],
  "dispatches": [],
  "checked": "2026-11-10T23:00Z",
- "reviewed": "2026-11-10T23:00Z"
+ "reviewed": "2026-11-22T07:26Z"
 }
