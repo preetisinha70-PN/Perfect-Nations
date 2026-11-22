@@ -1,7 +1,7 @@
 {
   "nation": "Indonesia",
   "page_version": "9.0",
-  "updated": "2026-11-21",
+  "updated": "2026-11-22",
   "steward": {
     "name": "Ayu Pratiwi",
     "role": "Nation Steward of Indonesia"
@@ -129,22 +129,22 @@
         "status": "Issued",
         "tone": "active",
         "name": "US dollar notes",
-        "detail": "2026 · 5-year, 10-year and 30-year tranches",
+        "detail": "Priced 12 January 2026 · Settled 21 January 2026 · 5-year $1.1B at 4.350%, 10-year $1.1B at 4.950%, 30-year $500M at 5.475%",
         "amount": "$2.7B",
         "money": true,
-        "note": "SEC-registered senior notes",
+        "note": "SEC-registered senior notes, due 2031, 2036 and 2056",
         "text": "International bonds sold to global investors for the 2026 state budget, in three tranches out to 30 years.",
         "by": [
           "Government of Indonesia"
         ],
-        "url": "https://www.bi.go.id/en/iru/presentation/Documents/Republic%20of%20Indonesia%20Presentation%20Book%20-%20September%202026.pdf"
+        "url": "https://api-djppr.kemenkeu.go.id/web/api/v1/media/8B697D2C-104C-49D4-AD41-431F79B140D7"
       },
       {
         "cat": "govt",
         "status": "Issued",
         "tone": "active",
         "name": "Global Sukuk, prefunding for 2026",
-        "detail": "Priced 19 November 2025 · Issued 1 December 2025 · 5-year at 4.50%, 10-year at 5.00%",
+        "detail": "Priced 19 November 2025 · Issued 1 December 2025 · 5-year $1.1B at 4.50%, 10-year $900M at 5.00%",
         "amount": "$2B",
         "money": true,
         "note": "Raised in 2025 for the 2026 budget",
@@ -174,10 +174,10 @@
         "status": "Issued",
         "tone": "active",
         "name": "Global Sukuk with a 30-year green tranche",
-        "detail": "Priced 3 June 2021 · Settled 9 June 2021 · 5-year $1.25B at 1.50%, 10-year $1B at 2.55%, 30-year green $750M at 3.55%",
+        "detail": "Announced 3 June 2021 · Settled 9 June 2021 · 5-year $1.25B at 1.50% (due 2026), 10-year $1B at 2.55%, 30-year green $750M at 3.55%",
         "amount": "$3B",
         "money": true,
-        "note": "Green tranche $750M; orders of $10.3 billion",
+        "note": "Green tranche $750M, due 2051; orders of $10.3 billion; the 5-year tranche fell due in 2026",
         "text": "Sharia-compliant bonds for the state budget, with a 30-year green tranche, the Republic’s fourth global green sukuk. Orders reached $10.3 billion, more than 3.4 times the issue.",
         "by": [
           "Government of Indonesia"
@@ -415,6 +415,21 @@
         "cat": "regional",
         "status": "Approved",
         "tone": "active",
+        "name": "Domestic Resource Mobilization Program, Subprogram 1",
+        "detail": "Announced 14 August 2025 · Policy-based loan · First of three subprograms",
+        "amount": "$500M",
+        "money": true,
+        "note": "Budget-wide; tax administration, international tax cooperation and tax policy",
+        "text": "An ADB policy-based loan for the modernisation of Indonesia’s tax system: more efficient tax administration, better international tax cooperation and tax policies that support sustainable development. Stronger domestic revenue pays, year after year, for the public services behind the seven standards.",
+        "by": [
+          "ADB"
+        ],
+        "url": "https://www.adb.org/news/adb-strengthens-indonesias-tax-system-and-supports-fiscal-sustainability"
+      },
+      {
+        "cat": "regional",
+        "status": "Approved",
+        "tone": "active",
         "name": "Affordable and Sustainable Energy Transition Program, Subprogram 1",
         "detail": "Approved 20 September 2024 · Policy-based loan · First of two subprograms",
         "amount": "$500M",
@@ -503,6 +518,21 @@
         "url": "https://jakarta.diplo.de/id-en/jetp-juni-2725664"
       },
       {
+        "cat": "bilat",
+        "status": "Signed",
+        "tone": "active",
+        "name": "Sector Loan for Integrated Fishing Ports and International Fish Markets Phase I",
+        "detail": "Signed 24 December 2024 · Japanese ODA loan · 1.80% for the project · 30 years, with 10 years of grace",
+        "amount": "JPY 15,545M",
+        "money": true,
+        "note": "Fishing ports and fish markets throughout Indonesia",
+        "text": "Japanese financing to build and rehabilitate fishing ports and fish markets, to raise fish landings and the quality of fish and fishery products traded through the supply chain. It serves the food and livelihood standards in fishing communities.",
+        "by": [
+          "JICA"
+        ],
+        "url": "https://www.jica.go.jp/english/information/press/2024/20241224_21.html"
+      },
+      {
         "cat": "private",
         "status": "Guaranteed",
         "tone": "active",
@@ -551,6 +581,23 @@
           "Vena Energy"
         ],
         "url": "https://www.aiib.org/en/projects/details/2025/approved/indonesia-proyek-hijaunesia-staple-financing-pasuruan-100-mw-solar-pv-project.html"
+      },
+      {
+        "cat": "private",
+        "status": "Committed",
+        "tone": "active",
+        "name": "Loan to Amartha for women entrepreneurs",
+        "detail": "Announced 9 May 2025 · Swedfund $25M, Finnfund $15M, BIO $15M · Part of an IFC-led syndicated facility of up to $199M",
+        "amount": "$55M",
+        "money": true,
+        "note": "Proceeds fully directed to supporting women borrowers",
+        "text": "A loan from three European development finance institutions to Amartha, an Indonesian microfinance fintech company, to drive financial inclusion for women entrepreneurs. It finances working capital for women-led micro and small businesses in rural Indonesia, for the livelihood standard.",
+        "by": [
+          "Swedfund",
+          "Finnfund",
+          "BIO"
+        ],
+        "url": "https://www.swedfund.se/en/about-swedfund/news/investment-in-amartha-improves-access-to-finance-for-women-in-rural-indonesia"
       },
       {
         "cat": "private",
@@ -702,11 +749,25 @@
         "url": "https://www.adb.org/news/adb-supports-indonesia-domestic-dairy-production-participation-cimory-ipo"
       },
       {
+        "standard": "Water",
+        "name": "Komodo Water",
+        "text": "A women-led enterprise that builds solar-powered water refill stations and processing units in Nusa Tenggara Timur, run by local women who earn an income as retailers; each station serves up to 500 families, and together they have improved water access for more than 22,000 people.",
+        "source": "UN Women, 2025",
+        "url": "https://asiapacific.unwomen.org/en/stories/news/2025/07/clean-water-while-cutting-plastic-waste"
+      },
+      {
         "standard": "Energy",
         "name": "Supreme Energy Muara Laboh",
         "text": "Runs the Muara Laboh geothermal power plant in West Sumatra, financed by ADB in its first stage, and is adding 83 MW of new capacity with $92.6 million of financing signed with ADB in January 2025.",
         "source": "ADB, 2025",
         "url": "https://www.adb.org/id/news/adb-supports-indonesia-green-energy-transition-geothermal-expansion-project"
+      },
+      {
+        "standard": "Education",
+        "name": "PHINMA Education",
+        "text": "An education company that makes higher education affordable for underserved youth, with low tuition and scholarships, through Horizon University in Karawang, West Java, and, since 2024, Kalbis University in Jakarta; Horizon’s student population grew by 141% from 2019 to 2024.",
+        "source": "ADB, 2025",
+        "url": "https://seads.adb.org/articles/unlocking-opportunities-through-affordable-private-education"
       },
       {
         "standard": "Health",
@@ -718,9 +779,9 @@
       {
         "standard": "Livelihood",
         "name": "Amartha",
-        "text": "One of Indonesia’s largest microfinance lenders, lending through a peer-to-peer platform to women entrepreneurs: about 1.2 million borrowers in 2022.",
-        "source": "IFC, 2023",
-        "url": "https://disclosures.ifc.org/project-detail/SII/47575/amartha-abs"
+        "text": "A microfinance fintech that lends working capital to micro and small businesses in rural Indonesia: by 30 September 2024 it had disbursed more than 23 trillion rupiah to 2.7 million businesses, more than 90 percent of them led by women, in more than 50,000 villages.",
+        "source": "Finnfund, 2025",
+        "url": "https://www.finnfund.fi/en/news-and-publications/news/finnfund-invests-in-amartha-improving-access-to-finance-for-women-in-rural-indonesia/"
       }
     ]
   },
@@ -857,5 +918,5 @@
   ],
   "dispatches": [],
   "checked": "2026-11-12T04:29Z",
-  "reviewed": "2026-11-12T07:16Z"
+  "reviewed": "2026-11-22T07:26Z"
 }
