@@ -24,7 +24,7 @@ ROOT = Path(__file__).resolve().parent.parent
 PAGES = ROOT / 'pages'
 DATA = ROOT / 'data'
 HERE = Path(__file__).resolve().parent / 'funders'
-VERSION = '1.0'
+VERSION = '1.1'
 
 
 def ent(s):
@@ -116,6 +116,8 @@ v1.0: the page for funders as clients (the Steward-General, 21 Nov 2026): what f
 pipeline, Match of the week, introductions), how a deal is checked (Ledger, Living Line, Design, Capital),
 who it serves, and one action: request the deal pipeline. The hero figures are counted from the manifest
 and data/capital-architecture.json. Institutions are named for reference only, never as partners.
+v1.1: Request the deal pipeline opens the contact form at Fund a nation (?about=funders), in place of an
+email (the Steward-General, 22 Nov 2026).
 =========================================================================== -->
 ''' % (VERSION, today)
     body = '\n'.join([

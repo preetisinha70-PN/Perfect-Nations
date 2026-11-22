@@ -1,5 +1,10 @@
 <!-- ===========================================================================
-PERFECT NATIONS - THE CONTACT PAGE - v7.3.1 LIGHT - 2026-11-21
+PERFECT NATIONS - THE CONTACT PAGE - v7.4 LIGHT - 2026-11-22
+v7.4 (22 Nov 2026, the Steward-General: "Open to contact form"): a fifth route, Fund a nation, for funders. It holds
+Request the deal pipeline and Answer a Match of the week, each with a timeframe. ?about=funders (also funder,
+pipeline, deal-pipeline, investor, investors) opens Request the deal pipeline; ?about=match opens Answer a Match of
+the week. The For Funders page and the Capital Architecture funders section send visitors here. Laptops show the
+five routes as three over two; phones show two a row, with Fund a nation across the full width.
 v7.3.1 (21 Nov 2026, Preeti Sinha, President and CEO): one alphabetical order across the site: the nation menu lists by
   letters alone, accents set aside (C&#244;te d&#8217;Ivoire with C, S&#227;o Tom&#233; and Pr&#237;ncipe with S, T&#252;rkiye with T).
 v7.3 (21 Nov 2026, the Steward-General: letters should be sent on the site and reach Perfect Nations, and the
@@ -194,7 +199,9 @@ article:has(#pn-contact) .entry-header{ display:none !important; }
 
 /* the four routes */
 #pn-contact .ct-routes{ display:grid; gap:8px; margin:0 0 12px; padding:0; list-style:none; grid-template-columns:repeat(2,minmax(0,1fr)); }
-@media (min-width:700px){ #pn-contact .ct-routes{ grid-template-columns:repeat(4,minmax(0,1fr)); } }
+#pn-contact .ct-routes{ grid-auto-flow:row dense; }
+#pn-contact .ct-routes li.ct-route-fund{ grid-column:1 / -1; }
+@media (min-width:700px){ #pn-contact .ct-routes{ grid-template-columns:repeat(6,minmax(0,1fr)); } #pn-contact .ct-routes li,#pn-contact .ct-routes li.ct-route-fund{ grid-column:span 2; } #pn-contact .ct-routes li:nth-child(n+4){ grid-column:span 3; } }
 #pn-contact .ct-routes li{ margin:0; padding:0; min-width:0; }
 #pn-contact .ct-route{
   display:grid; grid-template-columns:22px minmax(0,1fr); align-items:center; align-content:center; gap:3px 10px; width:100%; height:100%; min-height:44px; margin:0; padding:11px 12px 10px;
@@ -435,6 +442,7 @@ article:has(#pn-contact) .entry-header{ display:none !important; }
             <legend class="ct-eb ct-eb--n"><span class="ct-num" aria-hidden="true">1</span>What brings you here?</legend>
             <ul class="ct-routes">
               <li><button class="ct-route" type="button" data-fam="adv" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3.2 3.2 3.2 14.8 0 18M12 3c-3.2 3.2-3.2 14.8 0 18"/></svg><b>Advise a nation</b><small>Mandates &middot; Solutions</small></button></li>
+              <li class="ct-route-fund"><button class="ct-route" type="button" data-fam="fund" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 20h16M6 20v-6M10 20V10M14 20v-8M18 20V6"/><path d="M4 9l5-4 4 3 7-5"/></svg><b>Fund a nation</b><small>Deal pipeline &middot; Matches</small></button></li>
               <li><button class="ct-route" type="button" data-fam="join" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="9.5" r="2.4"/><path d="M3.5 19c.8-3.6 3-5.4 5.5-5.4s4.7 1.8 5.5 5.4M14.6 14.6c2.6-.6 5 .9 5.8 4.4"/></svg><b>Join the ReDesign Studio</b><small>Co-design &middot; Write &middot; Speak</small></button></li>
               <li><button class="ct-route" type="button" data-fam="art" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3.5" y="4.5" width="17" height="15" rx="1.5"/><path d="M6.5 16.5l4-5 3 3.5 2-2.5 2.5 4"/><circle cx="15.5" cy="8.5" r="1.4"/></svg><b>Art of Nations</b><small>Paintings &middot; Books</small></button></li>
               <li><button class="ct-route" type="button" data-fam="more" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5.5 11a6.5 6.5 0 0 0 13 0M12 17.5V21M8.5 21h7"/></svg><b>Press and more</b><small>Speaking &middot; Media &middot; Other</small></button></li>
@@ -567,6 +575,8 @@ article:has(#pn-contact) .entry-header{ display:none !important; }
     { id:'sovereign',  fam:'adv',  label:'The Sovereign Mandate',   small:'End to end',  subject:'The Sovereign Mandate', ask:'the nation, the mandate you hold, and the outcome you need.' },
     { id:'solution',   fam:'adv',  label:'Discuss a Solution',      small:'',            subject:'Solution',              ask:'the nation, the Solution, and what your government would need to act on it.' },
     { id:'blueprint',  fam:'adv',  label:'Ask for a blueprint',     small:'195 nations', subject:'Blueprint request',     ask:'the nation, and what its blueprint would help you decide.' },
+    { id:'pipeline',   fam:'fund', label:'Request the deal pipeline', small:'For funders', subject:'Deal pipeline request', ask:'what you finance (the instruments and the living standards), where, and at what ticket size.' },
+    { id:'match',      fam:'fund', label:'Answer a Match of the week', small:'State of Nations', subject:'Match of the week', ask:'which Match of the week, the nation, and how your institution could finance it.' },
     { id:'codesigner', fam:'join', label:'Become a Co-designer',    subject:'Becoming a Co-designer',  ask:'where you live, your nation, and how you would like to contribute.' },
     { id:'writing',    fam:'join', label:'Share a vision or story', subject:'A vision or story for the ReDesign Studio', ask:'your story or vision, or a short description to attach it to once your email opens.' },
     { id:'voices',     fam:'join', label:'Speak on Voices',         subject:'Voices of Perfect Nations, self-nomination', ask:'your nation, your work as a local leader, and the story you would tell on Voices of Perfect Nations.' },
@@ -591,7 +601,8 @@ article:has(#pn-contact) .entry-header{ display:none !important; }
     voices:'voices', 'nominate-self':'voices', guest:'guest', nominate:'nominate', enterprise:'enterprise',
     gallery:'original', artist:'artist', artists:'artist', submit:'artist', print:'print', prints:'print', original:'original', painting:'original', book:'book', books:'book', portrait:'portrait',
     speaking:'speaking', media:'speaking', press:'speaking', podcast:'speaking',
-    masterclass:'other', dispatches:'other', other:'other'
+    masterclass:'other', dispatches:'other', other:'other',
+    funders:'pipeline', funder:'pipeline', fund:'pipeline', pipeline:'pipeline', 'deal-pipeline':'pipeline', investor:'pipeline', investors:'pipeline', match:'match'
   };
   var WHENS = ['Now', 'Next quarter', 'This year', 'Exploring'];
 
@@ -734,7 +745,7 @@ article:has(#pn-contact) .entry-header{ display:none !important; }
     Array.prototype.forEach.call(routes, function(r){ press(r, r.getAttribute('data-fam') === kind.fam); });
     renderKinds();
     el.compare.hidden = kind.fam !== 'adv' || kind.id === 'blueprint';
-    el.whenWrap.hidden = kind.fam !== 'adv';
+    el.whenWrap.hidden = kind.fam !== 'adv' && kind.fam !== 'fund';
     el.permWrap.hidden = kind.id !== 'writing';
     var art = hasWork();
     el.workWrap.hidden = !art;
@@ -777,7 +788,7 @@ article:has(#pn-contact) .entry-header{ display:none !important; }
     var w = hasWork() ? workOf(el.work.value) : null;
     var s = w ? (kind.id === 'solution' ? 'Solution No. ' + w.no + ' \u00b7 ' + w.title : w.title) : kind.label, c = el.country.value.trim();
     if (c && (!w || (w.nation && w.nation !== c))) { s += ' \u00b7 ' + c; }
-    if (when && kind.fam === 'adv') { s += ' \u00b7 ' + when; }
+    if (when && (kind.fam === 'adv' || kind.fam === 'fund')) { s += ' \u00b7 ' + when; }
     return s;
   }
   function render(){ el.lAbout.textContent = aboutLine(); }
@@ -800,7 +811,7 @@ article:has(#pn-contact) .entry-header{ display:none !important; }
     if (el.org.value.trim()) { L.push(el.org.value.trim()); }
     L.push(el.email.value.trim(), '', '\u2014', pad('About:') + kind.label + (w ? ' (' + wt + ')' : ''));
     if (c) { L.push(pad('Nation:') + c); }
-    if (when && kind.fam === 'adv') { L.push(pad('Timeframe:') + when); }
+    if (when && (kind.fam === 'adv' || kind.fam === 'fund')) { L.push(pad('Timeframe:') + when); }
     if (kind.id === 'writing') { L.push(pad('Permission:') + (el.perm.checked ? 'Original work; Perfect Nations may publish it with credit' : 'Not yet given')); }
     L.push('Sent from perfectnations.com/contact/');
     var subject = kind.subject + (w ? (kind.id === 'solution' ? ' No. ' + w.no + ': ' + w.title : ': ' + w.title) : '');
