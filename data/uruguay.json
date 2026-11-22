@@ -1,7 +1,7 @@
 {
  "nation": "Uruguay",
  "page_version": "1.0",
- "updated": "2026-11-19",
+ "updated": "2026-11-22",
  "steward": {
   "name": "Florencia Pereira",
   "role": "Nation Steward of Uruguay"
@@ -42,6 +42,13 @@
     "url": "https://deuda.mef.gub.uy/31296/12/areas/sovereign-debt-report---fourth-quarter-2025.html"
    },
    {
+    "value": "$54.9bn",
+    "money": true,
+    "text": "Central government gross debt at the end of June 2026, an estimated 61.2% of GDP",
+    "source": "Debt Management Unit of Uruguay, 2026",
+    "url": "https://deuda.mef.gub.uy/innovaportal/file/32315/1/sovereign-debt-report_first-and-second-quarter-2026.pdf"
+   },
+   {
     "value": "65.6%",
     "money": false,
     "text": "General government gross debt, share of GDP, 2025",
@@ -62,10 +69,11 @@
     "status": "Issued",
     "tone": "active",
     "name": "Nominal peso and US dollar bonds",
-    "detail": "Ministry of Economy and Finance · 2026",
+    "detail": "Ministry of Economy and Finance · issued 28 July 2026 · peso bond due 2035 reopened at 7.75% (US$1,298 million) · US dollar bond due 2037 reopened at 5.356%, 75 bps over US Treasuries (US$399 million) · demand of up to US$3,353 million",
     "amount": "$1.7bn",
     "money": true,
-    "text": "International issuance equivalent to US$1,697 million.",
+    "note": "Budget-wide; US$447 million of the total went to exchanges and buybacks of shorter bonds",
+    "text": "International issuance equivalent to US$1,697 million, reopening a fixed-rate nominal peso bond due 2035 and a US dollar bond due 2037. Investors could pay in part with shorter peso, inflation-indexed and dollar bonds, which the Ministry says extends the average maturity of the debt and reduces refinancing risk. It funds the budget as a whole and is not earmarked to any one of the seven standards.",
     "by": [
      "Oriental Republic of Uruguay"
     ],
@@ -76,28 +84,182 @@
     "status": "Reporting",
     "tone": "active",
     "name": "Sovereign sustainability-linked bond",
-    "detail": "Ministry of Economy and Finance · Fourth annual report, May 2026",
-    "amount": "",
-    "money": false,
-    "text": "A bond whose coupon is tied to the nation’s climate and native forest targets.",
+    "detail": "Ministry of Economy and Finance · priced 20 October 2022 (US$1.5bn) · reopened November 2023 (US$700 million) · due October 2034 · coupon 5.75% · fourth annual report, 29 May 2026",
+    "amount": "$2.2bn",
+    "money": true,
+    "note": "Greenhouse gas intensity was 48% below 1990 in 2024, against a 2025 target of at least 50%",
+    "text": "A US dollar bond whose coupon rises or falls by 15 basis points on each of two targets: the intensity of greenhouse gas emissions and the area of native forest maintained. The fourth annual report finds native forest fully maintained against its baseline on the latest assessment, of 2021, and the 2025 observation will decide any change in the coupon. It ties the cost of the nation’s borrowing to measured climate and nature results.",
     "by": [
      "Oriental Republic of Uruguay"
     ],
     "url": "https://www.mef.gub.uy/innovaportal/file/30705/23/sslb-4th-annual-report-may-2026.pdf"
    },
    {
+    "cat": "govt",
+    "status": "Issued",
+    "tone": "active",
+    "name": "Global peso bond due 2035 and US dollar bond due 2037",
+    "detail": "Ministry of Economy and Finance · priced 22 October 2025 · new fixed-rate nominal peso bond due 2035 at 8% (US$1,350 million equivalent) · US dollar bond due 2037 reopened at 4.73%, 78 bps over US Treasuries (US$500 million) · demand of up to US$3,835 million",
+    "amount": "$1.85bn",
+    "money": true,
+    "note": "Budget-wide; the peso bond was issued at the lowest rate since Uruguay entered the international markets, the Ministry says",
+    "text": "International issuance equivalent to US$1,850 million: a new nominal peso bond at a fixed rate and a reopening of the US dollar bond due 2037, with up to US$100 million of the peso bond used to exchange shorter peso bonds. It funds the budget as a whole and is not earmarked to any one of the seven standards.",
+    "by": [
+     "Oriental Republic of Uruguay"
+    ],
+    "url": "https://www.mef.gub.uy/31969/14/areas/uruguay-emite-bono-global-en-pesos-nominales-a-la-tasa-mas-baja-desde-que-accede-a-los-mercados-internacionales.html"
+   },
+   {
+    "cat": "govt",
+    "status": "Issued",
+    "tone": "active",
+    "name": "US dollar global bond due 2037",
+    "detail": "Ministry of Economy and Finance · priced 7 February 2025 · coupon 5.442% · 100 bps over US Treasuries · repaid in three annual payments, 2035 to 2037 · US$1.2bn for cash, the rest to buy back bonds due 2027 and 2031 · orders of up to US$5.4bn from more than 234 accounts in 28 countries",
+    "amount": "$1.5bn",
+    "money": true,
+    "note": "Budget-wide; the lowest spread Uruguay has paid on a new US dollar global bond, the Ministry says",
+    "text": "A new US dollar bond with an average life of 11 years, issued together with a tender offer for the bonds due 2027 and 2031. It funds the budget as a whole and is not earmarked to any one of the seven standards.",
+    "by": [
+     "Oriental Republic of Uruguay"
+    ],
+    "url": "https://www.gub.uy/ministerio-economia-finanzas/comunicacion/noticias/uruguay-emitio-bono-global-dolares-vencimiento-final-2037"
+   },
+   {
+    "cat": "multi",
+    "status": "Approved",
+    "tone": "active",
+    "name": "Strengthening Competitiveness, Private Investment and Employment",
+    "detail": "World Bank · approved by the Board 14 September 2026 · variable spread · repayable in 6.5 years with 2.5 years of grace · with a Deferred Drawdown Option for rapid liquidity in economic shocks",
+    "amount": "$300M",
+    "money": true,
+    "note": "Budget-wide; the reforms include the formal hiring of young people, women and vulnerable groups",
+    "text": "World Bank financing for reforms to promote private investment, create more and better jobs and strengthen fiscal sustainability, among them the ratification of the trade agreement with the European Union, simpler customs procedures, wider access to finance for firms and new fiscal rules. Its measures on the formal hiring of young people, women and vulnerable groups bear on the livelihood standard.",
+    "by": [
+     "World Bank"
+    ],
+    "url": "https://www.bancomundial.org/es/news/press-release/2026/09/14/grupo-banco-mundial-respalda-reformas-de-uruguay-para-mejorar-su-competitividad"
+   },
+   {
     "cat": "multi",
     "status": "Approved",
     "tone": "active",
     "name": "Green and Resilient Growth Development Policy Loan",
-    "detail": "World Bank · Approved 16 November 2023",
+    "detail": "World Bank · Board approval announced 17 November 2023 · interest reduced by up to US$12.5 million if livestock methane intensity per unit of product falls at least 33% in 2028 to 2032 and at least 36% in 2033 to 2037",
     "amount": "$350M",
     "money": true,
-    "text": "Budget support for green and resilient growth.",
+    "note": "The first World Bank loan to link its financing terms to ambitious environmental targets, the Bank says",
+    "text": "Budget support for reforms toward a more sustainable economy, including incentives to conserve native forests. Its interest cost falls if Uruguay meets verified targets for the methane intensity of its livestock, assessed each year from 2028. It funds the budget as a whole and is not earmarked to any one of the seven standards.",
     "by": [
      "World Bank"
     ],
-    "url": "https://projects.worldbank.org/en/projects-operations/project-detail/P179367"
+    "url": "https://www.bancomundial.org/es/news/press-release/2023/11/17/banco-mundial-uruguay-recibe-un-prestamo-pionero-que-premia-el-cumplimiento-de-ambiciosas-metas-ambientales"
+   },
+   {
+    "cat": "regional",
+    "status": "Approved",
+    "tone": "active",
+    "name": "Cerro Largo solar photovoltaic park, UTE",
+    "detail": "CAF loan to UTE, guaranteed by the Republic · draft contract approved by the Executive 10 August 2026 · 16 years with 78 months of grace · SOFR plus 1.80%",
+    "amount": "$75M",
+    "money": true,
+    "note": "UTE, the state electricity company, is the borrower and the executing agency",
+    "text": "A CAF loan to UTE, the national electricity company, to build a solar photovoltaic park in the department of Cerro Largo, with the Republic as guarantor. It adds solar power to a grid that is already mostly renewable and serves the energy standard.",
+    "by": [
+     "CAF",
+     "UTE"
+    ],
+    "url": "https://medios.presidencia.gub.uy/legal/2026/resoluciones/08/mef_440.pdf"
+   },
+   {
+    "cat": "regional",
+    "status": "Approved",
+    "tone": "active",
+    "name": "Contingent liquidity credit line",
+    "detail": "CAF · approved by the Executive 23 July 2026, published 17 August 2026 · up to US$750 million for 7 years · first loan of up to US$180 million at SOFR plus 1.50%, 7 years with 24 months of grace",
+    "amount": "$750M",
+    "money": true,
+    "note": "Budget-wide; the first loan backs the public debt management plan",
+    "text": "A contingent, non-revolving and non-committed liquidity credit line from CAF for the Ministry of Economy and Finance, with a first loan of up to US$180 million to support the plan for managing the public debt. It funds the budget as a whole and is not earmarked to any one of the seven standards.",
+    "by": [
+     "CAF"
+    ],
+    "url": "https://www.impo.com.uy/bases/resoluciones/124-2026"
+   },
+   {
+    "cat": "regional",
+    "status": "Approved",
+    "tone": "active",
+    "name": "Más Barrio credit line",
+    "detail": "CAF · approved by CAF’s Board 16 December 2025 · framework agreement approved by the Executive 25 May 2026 · loans of up to 18 years with up to 72 months of grace, guaranteed by the Republic",
+    "amount": "$250M",
+    "money": true,
+    "note": "Approved the day CAF announced US$980 million for four projects in Uruguay, among them vulnerable communities",
+    "text": "A credit line from CAF for the Más Barrio programme, for the infrastructure and housing works the programme needs and for regularisations and relocations. CAF says its December 2025 financing for Uruguay will support the transformation of vulnerable areas. It serves the shelter standard.",
+    "by": [
+     "CAF"
+    ],
+    "url": "https://medios.presidencia.gub.uy/legal/2026/resoluciones/05/mef_366.pdf"
+   },
+   {
+    "cat": "regional",
+    "status": "Signed",
+    "tone": "active",
+    "name": "Casupá dam, OSE",
+    "detail": "CAF loan to OSE · signed 22 May 2026 · a dam on the Casupá stream in Florida storing 118 million m³ · works expected to begin in early 2027 and end in the third quarter of 2029",
+    "amount": "$130M",
+    "money": true,
+    "note": "Fresh water reserves for the metropolitan system are to rise from 80 to 200 million m³",
+    "text": "A loan from CAF to Obras Sanitarias del Estado (OSE), the state water company, to build the Casupá dam, which is to strengthen the water security of the Montevideo metropolitan system and help avoid shortages like those of 2023. CAF also provides technical support. It serves the water standard.",
+    "by": [
+     "CAF",
+     "OSE"
+    ],
+    "url": "https://www.gub.uy/presidencia/comunicacion/noticias/ose-represa-casupa-financiamiento-caf"
+   },
+   {
+    "cat": "regional",
+    "status": "Disbursed",
+    "tone": "active",
+    "name": "Water Resources and Solid Waste Policy Reform Support Programme II",
+    "detail": "IDB loan 6067/OC-UR · approved by the IDB 29 October 2025 · contract approved by the Executive 27 March 2026 · one tranche · 19.5 years with 72 months of grace",
+    "amount": "$100M",
+    "money": true,
+    "note": "The Debt Management Unit records US$100 million from an IDB policy-based loan in January to July 2026",
+    "text": "A policy-based loan from the Inter-American Development Bank, the second of its programme, that supports reforms in water resources and solid waste; the Ministry of Economy and Finance executes it. It serves the water standard.",
+    "by": [
+     "Inter-American Development Bank"
+    ],
+    "url": "https://www.impo.com.uy/diariooficial/2026/04/22/documentos.pdf"
+   },
+   {
+    "cat": "regional",
+    "status": "Approved",
+    "tone": "active",
+    "name": "Innovation to Support the Energy Transition and Climate Action, stage I",
+    "detail": "IDB loan 5931/OC-UR · programmatic policy-based loan with a deferred drawdown option · draft contract approved by the Executive 2 December 2024",
+    "amount": "",
+    "money": false,
+    "note": "The amount is not stated on the resolution page",
+    "text": "The first stage of a programmatic policy-based loan from the Inter-American Development Bank, with deferred drawdown, for innovation in support of Uruguay’s energy transition and climate action. It serves the energy standard.",
+    "by": [
+     "Inter-American Development Bank"
+    ],
+    "url": "https://www.gub.uy/presidencia/institucional/normativa/resolucion-sn024-se-aprueba-proyecto-contrato-prestamo-n-5931oc-ur"
+   },
+   {
+    "cat": "regional",
+    "status": "Signed",
+    "tone": "active",
+    "name": "National Care System Strengthening and Sustainability Programme",
+    "detail": "IDB loan 5897/OC-UR and investment grant 5898/GR-UR · signed 14 October 2024 · executed by the Ministry of Social Development through the National Care Secretariat · amendment approved by the Executive 22 September 2026",
+    "amount": "",
+    "money": false,
+    "note": "The amendment adds CND and INACOOP as sub-executing agencies and leaves the essential financial terms unchanged",
+    "text": "A loan and a grant from the Inter-American Development Bank to strengthen and sustain the National Care System, run by the Ministry of Social Development. Care for people who depend on others bears on the health and livelihood standards.",
+    "by": [
+     "Inter-American Development Bank"
+    ],
+    "url": "https://www.impo.com.uy/diariooficial/2026/10/05/documentos.pdf"
    }
   ]
  },
@@ -143,7 +305,43 @@
  },
  "enterprises": {
   "heading": "Already working in Uruguay.",
-  "items": []
+  "items": [
+   {
+    "standard": "Shelter",
+    "name": "FUCVAM",
+    "text": "The federation of Uruguay’s mutual-aid housing cooperatives, founded in 1970, whose members build their own homes and hold them for their use value rather than their market value; 332 of its cooperatives had been built and were lived in across Montevideo in December 2024, and the model counts more than 80,000 inhabitants.",
+    "source": "Intendencia de Montevideo and FUCVAM, 2025",
+    "url": "https://hic-al.org/wp-content/uploads/2025/11/Guia-de-cooperativas-FUCVAM.pdf"
+   },
+   {
+    "standard": "Health",
+    "name": "Estación Óptica",
+    "text": "An optician in Tacuarembó that refurbishes donated eyeglass frames and gives them to people who cannot obtain them, and turns the plastic lenses that opticians normally throw away into teaching materials for the city’s public schools and kindergartens; it won second prize among small firms in the Uruguay Circular Award 2025.",
+    "source": "Ministry of Industry, Energy and Mining, 2025",
+    "url": "https://www.gub.uy/ministerio-industria-energia-mineria/comunicacion/noticias/premio-uruguay-circular-2025-entrego-sus-reconocimientos-iniciativas"
+   },
+   {
+    "standard": "Education",
+    "name": "ELdeS",
+    "text": "A Uruguayan start-up with the first interactive platform to learn Uruguayan Sign Language with artificial intelligence, used in public schools, cooperatives, companies and agencies, which donates one licence to an educational or social institution for every licence it sells and was among ten ventures recognised by the National Agency for Research and Innovation at the Premio NOVA 2025.",
+    "source": "El Observador, 2025",
+    "url": "https://www.elobservador.com.uy/estos-son-los-10-emprendimientos-mas-destacados-del-ano-uruguay-segun-la-anii-n6019047"
+   },
+   {
+    "standard": "Livelihood",
+    "name": "Kaur",
+    "text": "A Uruguayan impact start-up that reuses hotel textiles to make clothing, creating jobs for women in vulnerable situations and promoting responsible consumption in fashion.",
+    "source": "Forbes Argentina, 2025",
+    "url": "https://www.forbesargentina.com/negocios/por-startups-triple-impacto-mueren-temprano-uruguay-y-algunos-casos-exito-n70004"
+   },
+   {
+    "standard": "Livelihood",
+    "name": "Coopespal NP",
+    "text": "A cooperative of artisanal fishers in Nueva Palmira, Colonia, supported in December 2025 by the Ministry of Industry, Energy and Mining’s call for cooperative investment projects to process river fish into fillets and value-added products made from fish pulp.",
+    "source": "Ministry of Industry, Energy and Mining, 2025",
+    "url": "https://www.gub.uy/ministerio-industria-energia-mineria/comunicacion/noticias/organizaciones-economia-social-solidaria-reciben-apoyo-del-miem-para-impulsar"
+   }
+  ]
  },
  "coverage": {
   "set_by": "Education",
@@ -277,5 +475,5 @@
  ],
  "dispatches": [],
  "checked": "2026-11-19T04:31Z",
- "reviewed": "2026-11-10T23:00Z"
+ "reviewed": "2026-11-22T07:26Z"
 }
