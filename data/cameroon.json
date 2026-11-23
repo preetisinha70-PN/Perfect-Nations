@@ -1,22 +1,22 @@
 {
   "nation": "Cameroon",
   "page_version": "1.0",
-  "updated": "2026-11-14",
+  "updated": "2026-11-23",
   "steward": {
     "name": "Esther Mbarga",
     "role": "Nation Steward of Cameroon"
   },
   "population": 29879337,
   "hero": {
-    "lead": "A nation of 29.9 million with forest over four tenths of its land and two thirds of its power from renewable sources, now negotiating a new programme with the IMF.",
+    "lead": "A nation of 29.9 million with forest over four tenths of its land and two thirds of its power from renewable sources, which completed its IMF programmes in 2025.",
     "stats": [
       {
         "value": "XAF 15.6tn",
         "label": "Public debt stock, end June 2026"
       },
       {
-        "value": "44.3%",
-        "label": "Public-sector debt, share of GDP, March 2026"
+        "value": "44.2%",
+        "label": "Public debt, share of GDP, end June 2026"
       },
       {
         "value": "65.8%",
@@ -30,16 +30,16 @@
       {
         "value": "XAF 15.6tn",
         "money": true,
-        "text": "Public debt stock at end June 2026, about $27 billion, monthly report of the Autonomous Amortization Fund",
+        "text": "Public debt stock at end June 2026, FCFA 15,607 billion or about $27 billion, monthly debt note of the Caisse Autonome d’Amortissement dated 27 July 2026",
         "source": "Financial Afrik, 2026",
-        "url": "https://www.financialafrik.com/en/?p=493963"
+        "url": "https://www.financialafrik.com/2026/07/29/cameroun-pres-de-27-milliards-usd-de-dette-publique-a-fin-juin-2026/"
       },
       {
-        "value": "44.3%",
+        "value": "44.2%",
         "money": false,
-        "text": "Public-sector debt, share of GDP, 31 March 2026, Ministry of Finance",
-        "source": "Capmad, 2026",
-        "url": "https://www.capmad.com/post/imf-yaounde-opens-talks-on-a-new-20262029-program-after-the-end-of-the-fececf-arrangement"
+        "text": "Public debt, share of GDP, end June 2026, Caisse Autonome d’Amortissement",
+        "source": "Cameroon Tribune, 2026",
+        "url": "https://cameroon-tribune.cm/article.html/79284/fr.html/dette-publique-1059-3-milliards-de-f-rembourses"
       },
       {
         "value": "$689.5M",
@@ -54,50 +54,213 @@
         "text": "The PAD power plant public-private partnership, about $1.08 billion",
         "source": "Financial Afrik, 2026",
         "url": "https://www.financialafrik.com/en/?p=493963"
+      },
+      {
+        "value": "$750M",
+        "money": true,
+        "text": "International bond by private placement, January 2026: seven years with two years’ grace, 10.125% at arrangement, Ministry of Finance",
+        "source": "Cameroon Tribune, 2026",
+        "url": "https://cameroon-tribune.cm/article.html/75284/fr.html/details_2"
       }
     ],
     "register": [
       {
-        "cat": "multi",
-        "status": "Completed",
+        "cat": "govt",
+        "status": "Issued",
         "tone": "active",
-        "name": "Extended Credit Facility and Extended Fund Facility",
-        "detail": "IMF · Approved July 2021",
-        "amount": "$689.5M",
+        "name": "International bond by private placement",
+        "detail": "Ministry of Finance · Arranged 26 January 2026 · Seven years, two years’ grace · 10.125% at arrangement; about 7.79% in euros after the currency swap",
+        "amount": "$750M",
         "money": true,
-        "text": "Three-year arrangements; the eighth reviews were completed in July 2025.",
+        "note": "About FCFA 413 billion; offers of nearly $1 billion for $600 million first sought.",
+        "text": "Cameroon’s return to the international market raised $750 million, about FCFA 413 billion, in January 2026. The Ministry of Finance says the proceeds go mainly to clearing payments still due from the previous budget, including works on priority state projects. Every point of interest saved on such debt leaves more of the budget for the seven standards.",
         "by": [
-          "IMF"
+          "Government of Cameroon"
         ],
-        "url": "https://www.imf.org/en/News/Articles/2025/03/12/pr-2559-cameroon-imf-concludes-7th-rev-of-ecf-eff-2nd-review-of-rsf"
+        "url": "https://cameroon-tribune.cm/article.html/75284/fr.html/details_2"
       },
       {
         "cat": "multi",
-        "status": "Active",
+        "status": "Approved",
         "tone": "active",
-        "name": "Resilience and Sustainability Facility",
-        "detail": "IMF · Third review completed 24 July 2025",
-        "amount": "$71M",
+        "name": "Douala–Bangui Economic Corridor Program, Phase 1",
+        "detail": "World Bank · Board approval 12 June 2026 · IBRD $407M and IDA $18M to Cameroon · Phase 1 of $525M in a $1.12B multiphase program",
+        "amount": "$425M",
         "money": true,
-        "text": "The third review made about $71 million available for Cameroon’s climate agenda.",
+        "note": "Cameroon’s share of Phase 1: $407 million from IBRD and $18 million from IDA (sum, arithmetic).",
+        "text": "A multiphase program to rehabilitate priority sections of the road from Douala to Bangui to climate-resilient standards, with axle-load control stations, logistics hubs and feeder roads. The World Bank says the corridor’s barriers raise consumer prices and undermine food security, and expects about 2,000 to 4,000 direct and indirect jobs. It serves food and livelihood.",
+        "by": [
+          "World Bank (IBRD, IDA)"
+        ],
+        "url": "https://www.worldbank.org/en/news/press-release/2026/06/12/world-bank-approves-us-1-12-billion-program-to-modernize-the-douala-bangui-economic-corridor"
+      },
+      {
+        "cat": "multi",
+        "status": "Approved",
+        "tone": "active",
+        "name": "Sustainable Cities and Land Project",
+        "detail": "World Bank · IDA · Release of 30 May 2025 · Yaoundé and Douala",
+        "amount": "$200M",
+        "money": true,
+        "note": "Expected to reach an estimated 2.1 million people.",
+        "text": "Climate-resilient urban infrastructure in Yaoundé and Douala, technical support for sustainable city development and better land administration services. It is expected to reach an estimated 2.1 million people. It serves shelter.",
+        "by": [
+          "World Bank (IDA)"
+        ],
+        "url": "https://www.worldbank.org/en/news/press-release/2025/05/30/new-project-boosts-infrastructure-and-land-services-in-cameroon"
+      },
+      {
+        "cat": "multi",
+        "status": "Approved",
+        "tone": "active",
+        "name": "Cameroon Water Security Program, Phase 1",
+        "detail": "World Bank · IDA · Approved 7 May 2025 · Phase 1 of a $950M multiphase program, May 2025 to May 2036",
+        "amount": "$200M",
+        "money": true,
+        "note": "The program is expected to bring drinking water to about 3.9 million people and sanitation to 2.9 million.",
+        "text": "The first of three phases ($200 million, $400 million and $350 million) of a program for water security and sanitation in rural and semi-urban areas of Adamawa, the North and the Far North, and in Yaoundé and Douala, with support for the utility CAMWATER. It serves water and shelter.",
+        "by": [
+          "World Bank (IDA)"
+        ],
+        "url": "https://www.worldbank.org/en/news/press-release/2025/05/08/world-bank-approves-first-phase-in-a-holistic-approach-to-addressing-water-security-in-cameroon"
+      },
+      {
+        "cat": "multi",
+        "status": "Announced",
+        "tone": "active",
+        "name": "IFC senior loan to Afriland First Bank for small businesses",
+        "detail": "IFC · Yaoundé, 2 April 2025 · $20M from IFC’s own account and $40M mobilized from other lenders · In euros",
+        "amount": "$60M",
+        "money": true,
+        "note": "Up to $60 million equivalent in euros, with incentives for lending to women-owned or women-led businesses.",
+        "text": "A senior loan from IFC that funds Afriland First Bank’s lending to small and medium enterprises, with a focus on women entrepreneurs, and advice on growing that portfolio. IFC says the partnership will reach thousands of smaller businesses. It serves livelihood.",
+        "by": [
+          "IFC",
+          "Afriland First Bank"
+        ],
+        "url": "https://www.ifc.org/en/pressroom/2025/ifc-and-afriland-first-bank-cameroon-partner-to-boost-sme-financing-in-cameroon"
+      },
+      {
+        "cat": "multi",
+        "status": "Approved",
+        "tone": "active",
+        "name": "Fiscal Sustainability DPF and IMPACT Program-for-Results",
+        "detail": "World Bank · IBRD · Board approval 14 March 2025 · Two operations · The DPF is the second of a 2022–2026 series",
+        "amount": "$400M",
+        "money": true,
+        "note": "The two operations together: budget support and a Program-for-Results.",
+        "text": "Budget support for inclusive growth, climate resilience and public financial management, with reforms on teacher distribution, girls’ education, social safety nets and the finances of the electricity sector, beside a Program-for-Results to raise domestic revenue and improve basic services such as health care and water supply. It serves education, health, water, energy and livelihood.",
+        "by": [
+          "World Bank (IBRD)"
+        ],
+        "url": "https://www.worldbank.org/en/news/press-release/2025/03/17/world-bank-group-supports-cameroon-economic-resilience-domestic-revenue-mobilization-and-transparency-public-finances"
+      },
+      {
+        "cat": "multi",
+        "status": "Completed",
+        "tone": "completed",
+        "name": "Resilience and Sustainability Facility",
+        "detail": "IMF · Approved January 2024 · 18 months · Third and final review 24 July 2025",
+        "amount": "$181.7M",
+        "money": true,
+        "note": "SDR 138 million approved; SDR 120.75 million (US$162.3 million) disbursed in all.",
+        "text": "An 18-month arrangement of SDR 138 million (US$181.7 million) for Cameroon’s climate agenda. The third and final review, on 24 July 2025, made SDR 51.75 million (US$71 million) available; the IMF wrote that financing for the uncompleted reform would not become available at expiry. Climate reforms protect the harvests, water and power on which the seven standards rest.",
         "by": [
           "IMF"
         ],
         "url": "https://www.imf.org/en/News/Articles/2025/07/24/pr-25265-cameroon-imf-concludes-8th-rev-under-ecf-and-eff-and-3rd-rev-under-rsf"
       },
       {
-        "cat": "private",
-        "status": "Active",
-        "tone": "active",
-        "name": "Kribi refinery",
-        "detail": "Public-private partnership",
-        "amount": "XAF 540bn",
+        "cat": "multi",
+        "status": "Completed",
+        "tone": "completed",
+        "name": "Extended Credit Facility and Extended Fund Facility",
+        "detail": "IMF · Approved July 2021 · Extended by 12 months in December 2023 · Eighth and final reviews 24 July 2025",
+        "amount": "$689.5M",
         "money": true,
-        "text": "A refinery partnership of about $882 million, carried in the public debt report.",
+        "note": "Approved at SDR 483 million (US$689.5 million); SDR 593.4 million (US$793.8 million) disbursed in all.",
+        "text": "Three-year arrangements approved in July 2021 and extended by 12 months, whose eighth and final reviews were completed on 24 July 2025, with total disbursements of SDR 593.4 million (US$793.8 million). Since then the IMF has followed Cameroon through a post-financing assessment, the review for members with IMF credit outstanding and no active programme.",
         "by": [
-          "Government of Cameroon"
+          "IMF"
         ],
-        "url": "https://www.financialafrik.com/en/?p=493963"
+        "url": "https://www.imf.org/en/News/Articles/2025/03/12/pr-2559-cameroon-imf-concludes-7th-rev-of-ecf-eff-2nd-review-of-rsf"
+      },
+      {
+        "cat": "regional",
+        "status": "Signed",
+        "tone": "active",
+        "name": "Douala–Bafoussam Road Rehabilitation Project",
+        "detail": "IsDB · Signed in Bangkok, 13 October 2026 · 218 km of national roads and 108 km of feeder roads",
+        "amount": "€212.35M",
+        "money": true,
+        "note": "About FCFA 139.2 billion, as reported in the Cameroonian press.",
+        "text": "IsDB financing to rehabilitate the corridor that links the Littoral and West regions to the Port of Douala, with classrooms, health centres, water facilities, markets and agricultural facilities along the road. It serves livelihood, food, education, health and water for the communities on the corridor.",
+        "by": [
+          "Islamic Development Bank"
+        ],
+        "url": "https://www.isdb.org/news/isdb-and-cameroon-sign-eur-21235-million-financing-agreement-for-major-transport-project"
+      },
+      {
+        "cat": "regional",
+        "status": "Approved",
+        "tone": "active",
+        "name": "Agro-Industry in the North, Phase 1 (PDAS-1)",
+        "detail": "African Development Bank · Board approval, release of 14 July 2026 · Total cost €88.74M, with €7.54M from the Government",
+        "amount": "€81.2M",
+        "money": true,
+        "note": "Multi-purpose hillside dams in the North and Far North.",
+        "text": "A loan for multi-purpose hillside dams that supply water for farming and livestock in the North and Far North, with hydrometeorological stations, tree planting and community forests. It is expected to raise farm productivity, give water all year and lift household incomes. It serves food, water and livelihood.",
+        "by": [
+          "African Development Bank"
+        ],
+        "url": "https://allafrica.com/stories/202607150647.html"
+      },
+      {
+        "cat": "regional",
+        "status": "Approved",
+        "tone": "active",
+        "name": "Opening up the East, Phase 1 (PDCBET)",
+        "detail": "African Development Bank · Board approval 18 February 2026 · 156 km of the Ngoura II–Yokadouma road",
+        "amount": "€309.93M",
+        "money": true,
+        "note": "At least 2,500 direct and indirect jobs expected.",
+        "text": "A loan to develop and pave 156 kilometres of the Ngoura II to Yokadouma road, on the route from Bertoua to the border with the Republic of Congo. It gives residents, producers and businesses of the East year-round access to production areas and markets, and is expected to create at least 2,500 jobs. It serves livelihood.",
+        "by": [
+          "African Development Bank"
+        ],
+        "url": "https://allafrica.com/stories/202603110622.html"
+      },
+      {
+        "cat": "bilat",
+        "status": "Approved",
+        "tone": "pipeline",
+        "name": "FMO senior loan to AFG Bank Cameroon",
+        "detail": "FMO · Disclosed 1 April 2026 · In contracting · Part of a syndication of up to €65M · EFSD+ guarantee",
+        "amount": "€30M",
+        "money": true,
+        "note": "Long-term funding for lending to micro, small and medium enterprises.",
+        "text": "FMO approved a €30 million senior loan to give AFG Bank Cameroon long-term funding to expand its lending to the private sector, with a focus on micro, small and medium enterprises. An EFSD+ guarantee supports lending to businesses run by women, young people and migrants. It serves livelihood.",
+        "by": [
+          "FMO",
+          "AFG Bank Cameroon"
+        ],
+        "url": "https://www.fmo.nl/project-detail/66185"
+      },
+      {
+        "cat": "bilat",
+        "status": "Signed",
+        "tone": "active",
+        "name": "ARIZ portfolio guarantee for Advans Cameroun",
+        "detail": "Proparco · Signed in Douala, 26 January 2024 · Covers 80% of a FCFA 1.6bn loan portfolio",
+        "amount": "FCFA 1.3bn",
+        "money": true,
+        "note": "About €2 million; one of five Proparco guarantees to Advans Cameroun since 2010.",
+        "text": "A Proparco guarantee that shares the risk on new microfinance loans by Advans Cameroun, mainly to smallholder farmers in rural areas in the maize and broiler chains. Proparco reports access to financial services for 564 beneficiaries. It serves livelihood and food.",
+        "by": [
+          "Proparco",
+          "Advans Cameroun"
+        ],
+        "url": "https://proparco.fr/en/carte-des-projets/gp-ariz-tpe-advans-cameroun"
       }
     ]
   },
@@ -169,7 +332,50 @@
   },
   "enterprises": {
     "heading": "Already working in Cameroon.",
-    "items": []
+    "items": [
+      {
+        "standard": "Food",
+        "name": "KingsCombo Sarl",
+        "text": "A Cameroonian maize enterprise that grows maize, makes maize products and offers training and consultancy to farmers; its founder was a 2025 finalist of the FAO mentorship programme for young agricultural producers in Africa.",
+        "source": "FAO, 2025",
+        "url": "https://www.fao.org/partnerships/documents/document/es/c/1755426"
+      },
+      {
+        "standard": "Energy",
+        "name": "upOwa",
+        "text": "Sells solar home systems to off-grid households in Cameroon on a lease-to-own basis, with a deposit and monthly payments by mobile money, and counted nearly 28,000 active systems connecting nearly 140,000 people at 31 March 2023.",
+        "source": "REPP, 2023",
+        "url": "https://repp.energy/project/upowa-cameroon/"
+      },
+      {
+        "standard": "Energy",
+        "name": "Mpokem Gaz",
+        "text": "A Douala start-up that builds clean cooking stoves from salvaged sheet metal and cement, with a fan charged by a small solar panel, sold from FCFA 28,000 for a single burner.",
+        "source": "Le360, 2026",
+        "url": "https://afrique.le360.ma/societe/cameroun-le-foyer-ecologique-qui-transforme-la-penurie-de-gaz-en-opportunite_3RJVHNOBCFC6BP2X32AWFAY22U/"
+      },
+      {
+        "standard": "Health",
+        "name": "Waspito",
+        "text": "A Douala-based healthcare network for remote consultations and laboratory tests, with 100,000 paying clients, named among the Top 10 of Africa’s Business Heroes in 2025.",
+        "source": "Africa’s Business Heroes, 2025",
+        "url": "https://africabusinessheroes.org/en/the-prize/2025/top10/jean-lobe-lobe"
+      },
+      {
+        "standard": "Livelihood",
+        "name": "Efarm.cm",
+        "text": "An online platform where Cameroonian farmers list their produce and receive marketing support to find buyers.",
+        "source": "World Bank, 2026",
+        "url": "https://www.worldbank.org/en/news/feature/2026/06/25/connected-farmers-better-harvests-how-cameroon-agritech-innovators-are-transforming-agriculture"
+      },
+      {
+        "standard": "Livelihood",
+        "name": "Advans Cameroun",
+        "text": "A licensed microfinance institution at work since 2007 that lends to craftspeople, traders and smallholder farmers, its rural farm lending backed by a Proparco portfolio guarantee signed in January 2024.",
+        "source": "Proparco, 2024",
+        "url": "https://proparco.fr/en/actualites/advans-cameroun-assists-smes-and-small-farms-support-proparco"
+      }
+    ]
   },
   "coverage": {
     "set_by": "Energy",
@@ -295,5 +501,5 @@
   ],
   "dispatches": [],
   "checked": "2026-11-14T04:23Z",
-  "reviewed": "2026-11-12T19:00Z"
+  "reviewed": "2026-11-23T07:30Z"
 }
