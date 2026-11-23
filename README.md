@@ -236,7 +236,7 @@ The page itself is built, never edited by hand: `pages/sovereign-assets-src.html
 
 **Signals**: `Record` only when the source calls it a record (largest, lowest cost, record demand); `First` only when the source calls it a first (first issue, first in a currency, first of its kind); `Oversubscribed` only when the source reports demand or proceeds above the amount offered or targeted; `Innovative` for debt swaps, guarantees and credit enhancement, catastrophe bonds and parametric cover, forest and nature funds, results-based and outcome finance, carbon and Article 6, and tokenisation.
 
-**Order**: wire items from the last 14 days (30 if fewer than eight qualify): first those with a signal, in the order Record, First, Oversubscribed, Innovative; then the rest, largest amount first (rank by the US dollar size the source gives or implies; the figure shown stays in the source's currency); newest first on ties. At most 12.
+**Order** (the Steward-General, 23 November 2026: chronological, latest deal first): the newest wire items with a sourced amount, newest first by date; on the same date, largest amount first (rank by the US dollar size the source gives or implies; the figure shown stays in the source's currency). Only items from the last 14 days (30 if fewer than eight qualify). At most 12. A signal labels a deal but no longer sets its place on the tape.
 
 ## The State of Nations file
 
