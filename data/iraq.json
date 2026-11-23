@@ -1,7 +1,7 @@
 {
  "nation": "Iraq",
  "page_version": "1.0",
- "updated": "2026-11-19",
+ "updated": "2026-11-23",
  "steward": {
   "name": "Zainab Hassan Kareem",
   "role": "Nation Steward of Iraq"
@@ -51,14 +51,31 @@
   ],
   "register": [
    {
+    "cat": "govt",
+    "status": "Approved",
+    "tone": "active",
+    "name": "Economic stimulus financing package",
+    "detail": "Meeting of 4 October 2026 · $2.7B · IQD 1trn for housing · IQD 500bn for farmers’ dues",
+    "amount": "IQD 3.5trn",
+    "money": true,
+    "note": "Reported by Arab News from the Iraqi News Agency; no government page opened.",
+    "text": "A financing package directed by the Prime Minister to stimulate the economy. It redirects 1 trillion dinars of Central Bank of Iraq initiatives to housing, pays 500 billion dinars owed to farmers and adds at least 1 trillion dinars of liquidity for industrial lending. The housing and farm payments bear on shelter and livelihood.",
+    "by": [
+     "Government of Iraq",
+     "Central Bank of Iraq"
+    ],
+    "url": "https://www.arabnews.pk/business/iraq-approves-27bn-financing-package-to-stimulate-economy-3003229"
+   },
+   {
     "cat": "multi",
     "status": "Approved",
     "tone": "active",
-    "name": "Road connectivity and job creation",
-    "detail": "IBRD · June 2026",
+    "name": "Iraq Transport Economic Corridors (ITREC)",
+    "detail": "Board approval 4 June 2026 · 7.9 million people along the roads",
     "amount": "$900M",
     "money": true,
-    "text": "Improves Iraq’s road connectivity and supports job creation.",
+    "note": "Livelihood: road works create jobs and connect people to markets and services.",
+    "text": "World Bank financing to improve Iraq’s road connectivity and support job creation, for about 7.9 million people who live along new or improved roads, including 3.0 million women and 1.5 million youth. It serves livelihood: road construction and rehabilitation generate jobs, and the roads connect people to markets and services.",
     "by": [
      "World Bank"
     ],
@@ -66,17 +83,66 @@
    },
    {
     "cat": "multi",
+    "status": "Active",
+    "tone": "active",
+    "name": "Climate-resilient livelihoods for food-insecure people in southern Iraq (SAP060)",
+    "detail": "GCF grant · Approved 30 October 2025 · Effective 23 September 2026 · To September 2030",
+    "amount": "$20.2M",
+    "money": true,
+    "note": "Implemented by WFP; total value $22.3M; about 801,000 people.",
+    "text": "A Green Climate Fund grant, implemented by the World Food Programme and co-financed by the Government of Iraq, for efficient irrigation, sustainable farming and renewable energy in southern Iraq. It is expected to raise the resilience of about 801,000 people, 207,000 of them directly. It serves food and livelihood for farming families facing drought and heat.",
+    "by": [
+     "Green Climate Fund",
+     "WFP"
+    ],
+    "url": "https://www.greenclimate.fund/project/sap060"
+   },
+   {
+    "cat": "multi",
     "status": "Approved",
     "tone": "active",
     "name": "Pollution Management Project",
-    "detail": "World Bank · February 2025",
+    "detail": "Board approval, February 2025 · GEF grant $13.49M · I3RF grant $5M",
     "amount": "$18.5M",
     "money": true,
-    "text": "Health and livelihoods of communities affected by pollution.",
+    "note": "Health: lower health risks for about seven million people.",
+    "text": "Destroys, disposes of or contains about 4,000 tons of persistent organic pollutants and hazardous chemicals, and builds the rules and the system to monitor them. It is expected to reduce health risks for about seven million people and to improve livelihoods in the communities affected.",
     "by": [
-     "World Bank"
+     "World Bank",
+     "Global Environment Facility"
     ],
     "url": "https://www.worldbank.org/en/news/press-release/2025/02/20/iraq-pollution-management-project-to-improve-health-and-livelihoods-of-communities"
+   },
+   {
+    "cat": "multi",
+    "status": "Active",
+    "tone": "active",
+    "name": "Climate resilience of vulnerable agriculture livelihoods (SRVALI, FP249)",
+    "detail": "GCF grant · Approved 24 October 2024 · Effective 22 April 2025 · To April 2031",
+    "amount": "$29.3M",
+    "money": true,
+    "note": "Implemented by FAO; total value $39M, with $9.7M of co-financing.",
+    "text": "A Green Climate Fund grant, implemented by the Food and Agriculture Organization, to strengthen the climate resilience of vulnerable farming livelihoods in Iraq. It is expected to raise the resilience of about 2.0 million people. It serves food and livelihood where drought and heat threaten harvests.",
+    "by": [
+     "Green Climate Fund",
+     "FAO"
+    ],
+    "url": "https://www.greenclimate.fund/project/FP249"
+   },
+   {
+    "cat": "bilat",
+    "status": "Signed",
+    "tone": "active",
+    "name": "Sewerage for Khalidiya (Anbar) and Hamza (Diwaniyah)",
+    "detail": "Signed 6 May 2025 · €30M supplementary loan for Khalidiya (€110M in all) · €100M for Hamza",
+    "amount": "€130M",
+    "money": true,
+    "note": "Reported by Iraq Business News from the Ministry of Finance; no AFD page opened.",
+    "text": "Two credit agreements between the Ministry of Finance and the Agence Française de Développement for sewage projects in Khalidiya district, Anbar, and Hamza district, Diwaniyah. They serve shelter and water: safe sanitation for the households of the two districts.",
+    "by": [
+     "AFD"
+    ],
+    "url": "https://www.iraq-businessnews.com/2025/05/07/iraq-signs-e130m-infrastructure-agreements-with-france/"
    }
   ]
  },
@@ -122,7 +188,43 @@
  },
  "enterprises": {
   "heading": "Already working in Iraq.",
-  "items": []
+  "items": [
+   {
+    "standard": "Food",
+    "name": "Al Jabal Agriculture",
+    "text": "Provides smart farming services to farmers across Iraq, using satellite monitoring, GIS and agricultural analytics, and manages and monitors thousands of dunams of farmland.",
+    "source": "Wamda, 2026",
+    "url": "https://www.wamda.com/en/2026/06/mabiati-al-jabal-agriculture-raise-figure-investments-iraqi-investors"
+   },
+   {
+    "standard": "Energy",
+    "name": "Ras Al-Ain Sky",
+    "text": "Sells solar water pumps, solar irrigation systems and inverters to smallholder farmers, with microloans of US$3,000 to US$5,000 repaid quarterly, and serves between 1,001 and 10,000 end users.",
+    "source": "WE4F, 2024",
+    "url": "https://we4f.org/innovators/ras-al-ain-sky"
+   },
+   {
+    "standard": "Energy",
+    "name": "KESK",
+    "text": "Designs, supplies and installs solar energy systems for businesses in Iraq, and had reached an installation capacity of 1,000 kWp a year by 2023.",
+    "source": "Wilson Center, 2023",
+    "url": "https://wilsoncenter.org/blog-post/green-building-addresses-energy-crisis-iraq"
+   },
+   {
+    "standard": "Livelihood",
+    "name": "Kasho Company",
+    "text": "Supplies smallholder farmers with sunflower seeds, buys their harvest and presses it into cold-pressed sunflower oil.",
+    "source": "WE4F, 2024",
+    "url": "https://we4f.org/innovators/kasho-company"
+   },
+   {
+    "standard": "Livelihood",
+    "name": "Vitas Iraq",
+    "text": "A microfinance institution that lends to micro, small and medium-sized enterprises across Iraq, with more than 375,000 clients and 410,000 loans since it began.",
+    "source": "Proparco, 2022",
+    "url": "https://proparco.fr/en/actualites/proparco-and-vitas-group-join-efforts-support-small-entrepreneurs-iraq-new-partnership"
+   }
+  ]
  },
  "coverage": {
   "set_by": "Energy",
@@ -256,5 +358,5 @@
  ],
  "dispatches": [],
  "checked": "2026-11-19T11:39Z",
- "reviewed": "2026-11-12T19:00Z"
+ "reviewed": "2026-11-23T07:31Z"
 }
