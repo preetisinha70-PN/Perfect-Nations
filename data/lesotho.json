@@ -1,7 +1,7 @@
 {
   "nation": "Lesotho",
   "page_version": "9.0",
-  "updated": "2026-11-12",
+  "updated": "2026-11-23",
   "steward": {
     "name": "Thabo Mokoena",
     "role": "Nation Steward of Lesotho"
@@ -25,7 +25,7 @@
     ]
   },
   "capital": {
-    "heading": "15 instruments. Highland water royalties, and loans and grants for lowland water, power, schools, health and farms.",
+    "heading": "17 instruments. Highland water royalties, government bonds, and loans and grants for water, power, schools, health and farms.",
     "record": [
       {
         "value": "M4.78bn",
@@ -35,11 +35,11 @@
         "url": "https://www.rsl.org.ls/sites/default/files/2026-02/2026-27%20Budget%20Speech%2018-02-2026%20.pdf"
       },
       {
-        "value": "M22.48bn",
+        "value": "M21.77bn",
         "money": true,
-        "text": "Total public debt, 52.9% of GDP, end December 2025, down from 54.5% a quarter earlier; the Budget Speech gives M22.7 billion, 50 percent of GDP, at end January 2026",
+        "text": "Total public debt in May 2026, down 2.3 per cent in the month, 81.4 per cent of it external; the Bank’s Q4 2025 Quarterly Review put it at 52.9% of GDP at end December 2025",
         "source": "Central Bank of Lesotho, 2026",
-        "url": "https://centralbank.org.ls/wp-content/uploads/Q4-2025-Quarterly-Review.pdf"
+        "url": "https://centralbank.org.ls/wp-content/uploads/Monthly-Economic-Review-May.pdf"
       },
       {
         "value": "$364M",
@@ -66,6 +66,22 @@
     "register": [
       {
         "cat": "govt",
+        "status": "Announced",
+        "tone": "pipeline",
+        "name": "Government of Lesotho bonds, 2026/27 issuance calendar",
+        "detail": "Issued by the Central Bank of Lesotho for the Government · Four auctions, 17 June 2026 to 17 March 2027 · Bonds due 2033, 2037 and 2041",
+        "amount": "M1.5bn",
+        "money": true,
+        "note": "A new seven-year bond of M600 million, with a M500 million reopening planned for December 2026",
+        "text": "The Central Bank of Lesotho, acting on behalf of the Government, plans M1.5 billion of bonds in 2026/27: a new seven-year bond of M600 million (17 June 2026), M200 million more of the 10.75% bond due 2041 (16 September 2026), a M500 million reopening of the seven-year bond (16 December 2026) and a new ten-year bond of M200 million (17 March 2027). The bonds help finance the budget that pays for schools, clinics and water.",
+        "by": [
+          "Government of Lesotho",
+          "Central Bank of Lesotho"
+        ],
+        "url": "https://centralbank.org.ls/wp-content/uploads/Bond-Issuance-Calendar_2026-27.pdf"
+      },
+      {
+        "cat": "govt",
         "status": "Active",
         "tone": "active",
         "name": "Lesotho Highlands Water Project royalties",
@@ -89,7 +105,7 @@
         "amount": "$50M",
         "money": true,
         "note": "Electricity for nearly 147,000 residents and businesses",
-        "text": "Extends the grid in peri-urban, rural and highland areas, with standalone solar for the last mile and pilots of off-grid power, and supports utility reform and clean cooking. Household access to electricity rose from 7% in 2004 to 59% in 2024; universal access by 2030 needs more than 45,000 connections a year, against about 4,000 a year now.",
+        "text": "Extends grid connections across selected urban, peri-urban and rural areas, pilots off-grid solar and other renewable options, and supports utility reform, electrification planning and clean cooking. Household access to electricity rose from 7% in 2004 to 59% in 2024; universal access by 2030 needs more than 45,000 connections a year, against about 4,000 a year now.",
         "by": [
           "World Bank"
         ],
@@ -190,10 +206,10 @@
         "status": "Active",
         "tone": "active",
         "name": "Smallholder Agriculture Development Project II",
-        "detail": "Announced 30 May 2019 · $50 million IDA · $2 million Japan PHRD grant · Seven years, all ten districts",
+        "detail": "Approved 30 May 2019 · $50 million IDA · $2 million Japan PHRD grant · Closing extended to 31 May 2027",
         "amount": "$52M",
         "money": true,
-        "note": "Farm incomes and household nutrition",
+        "note": "Farm incomes and household nutrition; 76.7% of the IDA credit disbursed by June 2026",
         "text": "Matching grants for on-farm and post-harvest investment, training in climate-smart farming, and nutrition education for rural households. At least half of the farmers and agro-processors reached are to be women and young people.",
         "by": [
           "World Bank"
@@ -277,6 +293,23 @@
           "Government of Lesotho"
         ],
         "url": "https://www.lena.gov.ls/lesotho-usa-sign-health-cooperation-mou/"
+      },
+      {
+        "cat": "bilat",
+        "status": "Launched",
+        "tone": "active",
+        "name": "Metsi a Lesotho, rural water and sanitation programme",
+        "detail": "Launched 22 May 2024 · EU funding of €27 million (LSL 540 million) · With UNICEF",
+        "amount": "€27M",
+        "money": true,
+        "note": "Water and sanitation for 250 rural communities, 125 schools and 15 clinics",
+        "text": "Builds or rehabilitates water, sanitation and hygiene facilities, and systems to collect, treat, store and distribute water, in rural communities, schools and clinics, and supports ReNOKA, the national movement to restore land and water. UNICEF oversees the construction and refurbishment. Safely managed drinking water reaches 31.3% of citizens and safely managed sanitation 43.8%.",
+        "by": [
+          "European Union",
+          "Government of Lesotho",
+          "UNICEF"
+        ],
+        "url": "https://www.eeas.europa.eu/delegations/lesotho/lesotho-and-eu-launch-metsi-lesotho-programme-promoting-clean-water-and-sanitation-rural-areas_en"
       },
       {
         "cat": "bilat",
@@ -390,11 +423,46 @@
     "heading": "Already working in Lesotho.",
     "items": [
       {
+        "standard": "Food",
+        "name": "Lema Agriventures",
+        "text": "Its Farmflex platform pairs sensors in hydroponic and aquaponic reservoirs with AI advice that helps smallholder farmers save water and raise yields, and has supported more than 160 clients; its founder is in the 2026 cohort of the Africa Prize for Engineering Innovation.",
+        "source": "Royal Academy of Engineering, 2026",
+        "url": "https://africaprize.raeng.org.uk/2026-cohort/mochesane-mpali/"
+      },
+      {
+        "standard": "Energy",
+        "name": "OnePower",
+        "text": "Builds and operates solar mini-grids in rural villages with its partner STG International, and reported eight village mini-grids with 1,560 connections, among them 1,260 households, 205 businesses, 28 schools and 4 clinics, in August 2026.",
+        "source": "GlobalGiving, 2026",
+        "url": "https://www.globalgiving.org/projects/stg-solar-minigrid-manufacturing-lesotho/reports/"
+      },
+      {
+        "standard": "Energy",
+        "name": "Mahleseli Energy",
+        "text": "Supplies and installs solar home systems with pay-as-you-go payment, making solar power affordable for households and small businesses, and works on rural water supply projects; a 2026 finalist of UNDP’s Growth Stage Impact Ventures programme.",
+        "source": "UNDP, 2026",
+        "url": "https://www.undp.org/lesotho/press-releases/growth-stage-basotho-ventures-shaping-tomorrows-sustainable-economy"
+      },
+      {
+        "standard": "Health",
+        "name": "Kick4Life",
+        "text": "A Maseru football club and charity, winner of a 2025 Laureus Sport for Good Award, whose programmes have given health education, counselling and voluntary testing to more than 25,000 young people, and which trains young people for work in its own restaurant and hotel.",
+        "source": "Laureus, 2025",
+        "url": "https://www.laureus.com/news/the-golden-goal-kick4life-receives-2025-laureus-sport-for-good-award"
+      },
+      {
         "standard": "Livelihood",
         "name": "Select Africa",
         "text": "A microfinance institution lending to civil servants and other low-income earners in Lesotho, Eswatini and Malawi, for small businesses, farming, school costs and homes. Swedfund lent it up to US$15 million in September 2025.",
         "source": "Swedfund, 2025",
         "url": "https://www.swedfund.se/en/investments-and-projects/select-africa"
+      },
+      {
+        "standard": "Livelihood",
+        "name": "Pay Lesotho",
+        "text": "Provides secure, affordable and accessible digital payment solutions for individuals, small businesses and street vendors; a 2026 finalist of UNDP’s Growth Stage Impact Ventures programme.",
+        "source": "UNDP, 2026",
+        "url": "https://www.undp.org/lesotho/press-releases/growth-stage-basotho-ventures-shaping-tomorrows-sustainable-economy"
       }
     ]
   },
@@ -523,5 +591,5 @@
   ],
   "dispatches": [],
   "checked": "2026-11-12T11:22Z",
-  "reviewed": "2026-11-12T19:00Z"
+  "reviewed": "2026-11-23T07:31Z"
 }
