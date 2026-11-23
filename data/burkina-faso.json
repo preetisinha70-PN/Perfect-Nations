@@ -1,7 +1,7 @@
 {
   "nation": "Burkina Faso",
   "page_version": "1.0",
-  "updated": "2026-11-14",
+  "updated": "2026-11-23",
   "steward": {
     "name": "Aminata Ouédraogo",
     "role": "Nation Steward of Burkina Faso"
@@ -19,8 +19,8 @@
         "label": "Growth, 2025"
       },
       {
-        "value": "52.1%",
-        "label": "Total public debt, share of GDP, 2025 projection"
+        "value": "53.7%",
+        "label": "Total outstanding public debt, share of GDP, 2025"
       }
     ]
   },
@@ -42,44 +42,77 @@
         "url": "https://www.worldbank.org/en/news/press-release/2026/07/15/burkina-faso-new-world-bank-financing-to-expand-economic-opportunities-and-strengthen-social-protection-systems"
       },
       {
-        "value": "$302M",
+        "value": "SDR 288.96M",
         "money": true,
-        "text": "Extended Credit Facility, 48 months, approved September 2023, augmented June 2026",
+        "text": "Extended Credit Facility, 48 months, approved 21 September 2023; total access raised to 240% of quota by an augmentation of SDR 60.20 million on 26 June 2026",
         "source": "IMF, 2026",
         "url": "https://www.imf.org/-/media/files/publications/cr/2026/english/1bfaea2026002.pdf"
       },
       {
-        "value": "52.1%",
+        "value": "53.7%",
         "money": false,
-        "text": "Total public debt, share of GDP, projected for 2025, down from 57.2% in 2024",
-        "source": "Ecofin Agency, 2026",
-        "url": "https://www.ecofinagency.com/news/1902-53078-imf-completes-fourth-review-of-burkina-fasos-extended-credit-facility-and-approves-124-3-million-climate-resilience-program"
+        "text": "Total outstanding public debt, share of GDP, 2025 (CFAF 8,692.7 billion at 31 December 2025), as reported by the Government; projected at 48.3% in 2026",
+        "source": "IMF, 2026",
+        "url": "https://www.imf.org/-/media/files/publications/cr/2026/english/1bfaea2026002.pdf"
       }
     ],
     "register": [
       {
-        "cat": "multi",
-        "status": "Approved",
+        "cat": "govt",
+        "status": "Issued",
         "tone": "active",
-        "name": "Agricultural Transformation Project",
-        "detail": "IDA · Approved 10 March 2026",
-        "amount": "$215.9M",
+        "name": "Diaspora Bonds 2026",
+        "detail": "Treasury bonds 6.75% 2026–2031 and 6.85% 2026–2033 · Target FCFA 125bn · Listed on the BRVM 3 September 2026",
+        "amount": "FCFA 151.5bn",
         "money": true,
-        "text": "Productivity, storage, agro-processing and access to finance in four high-potential regions, with women and youth included.",
+        "note": "FCFA 85bn lent on to SN BRAFASO, SOPAMIB and CIM SAHEL on 6 July 2026",
+        "text": "A State bond offered to Burkinabè at home and abroad, which raised FCFA 151.5 billion against a target of FCFA 125 billion. On 6 July 2026 the Minister of Economy and Finance signed agreements lending FCFA 85 billion of it to three public enterprises, for a beverage plant in Bobo-Dioulasso, the restart of the Perkoa and Taparko mines and more cement capacity. It puts the savings of the diaspora to work in industry at home.",
         "by": [
-          "World Bank"
+          "Government of Burkina Faso",
+          "Vista Bank Burkina (arranger)"
         ],
-        "url": "https://www.worldbank.org/en/news/press-release/2026/03/10/burkina-faso-a-new-project-to-accelerate-the-transformation-of-the-agricultural-sector"
+        "url": "https://www.sikafinance.com/marches/burkina-fasobrvm--le-groupe-vista-fait-coter-les-151-5-milliards-fcfa-des-diaspora-bonds_64023"
+      },
+      {
+        "cat": "govt",
+        "status": "Issued",
+        "tone": "active",
+        "name": "Public bond offer, 2025",
+        "detail": "Treasury bonds 6.60% 2025–2030, 6.80% 2025–2032 and 7% 2025–2035 · Subscribed 22 September to 13 October 2025 · Listed on the BRVM 10 March 2026",
+        "amount": "FCFA 131.35bn",
+        "money": true,
+        "note": "FCFA 120bn sought; 109.46% raised",
+        "text": "A public bond offer by the Treasury of Burkina Faso on the regional market, in tranches of five, seven and ten years with two or three years of grace. It raised FCFA 131.35 billion against FCFA 120 billion sought. Long-term borrowing in the nation’s own currency carries no exchange-rate risk for the budget.",
+        "by": [
+          "Government of Burkina Faso"
+        ],
+        "url": "https://www.fratmat.info/article/2640519/economie/bourse-le-burkina-faso-leve-plus-de-131-milliards-de-fcfa-sur-le-marche-financier-regional"
+      },
+      {
+        "cat": "multi",
+        "status": "Active",
+        "tone": "active",
+        "name": "Extended Credit Facility",
+        "detail": "IMF · 48 months · Approved 21 September 2023 · Augmented and fifth review completed 26 June 2026 · SDR 180.60M disbursed",
+        "amount": "SDR 288.96M",
+        "money": true,
+        "note": "240% of quota after an augmentation of SDR 60.20 million",
+        "text": "The IMF’s concessional programme for Burkina Faso, raised on 26 June 2026 to SDR 288.96 million, or 240% of quota. Completing the fifth review released SDR 60.20 million at once, bringing disbursements to SDR 180.60 million. It supports the budget and the balance of payments.",
+        "by": [
+          "IMF"
+        ],
+        "url": "https://www.imf.org/-/media/files/publications/cr/2026/english/1bfaea2026002.pdf"
       },
       {
         "cat": "multi",
         "status": "Approved",
         "tone": "active",
-        "name": "Economic Opportunities for Resilience",
-        "detail": "IDA and Sahel Adaptive Social Protection Program · Approved 15 June 2026",
+        "name": "Economic Opportunities for Resilience Project",
+        "detail": "IDA credit $100M and $20M grant from the Sahel Adaptive Social Protection Program · Approved 15 June 2026 · Five years",
         "amount": "$120M",
         "money": true,
-        "text": "Economic opportunities for vulnerable households and a stronger social protection system, over five years.",
+        "note": "120,000 beneficiaries",
+        "text": "Economic opportunities for poor and vulnerable households, a new national social assistance programme and a more coordinated social registry, under the National Social Protection Strategy 2024–2028. It targets 120,000 beneficiaries, with skills, food security, nutrition, health and women’s economic empowerment. It serves livelihood and food first.",
         "by": [
           "World Bank"
         ],
@@ -87,17 +120,184 @@
       },
       {
         "cat": "multi",
+        "status": "Approved",
+        "tone": "active",
+        "name": "Agricultural Transformation Project",
+        "detail": "IDA · Approved 10 March 2026 · About CFAF 118.7bn · Four of the seventeen regions",
+        "amount": "$215.9M",
+        "money": true,
+        "note": "Rice, maize and other priority value chains",
+        "text": "Priority value chains such as rice and maize in four of the seventeen regions: higher productivity, better processing infrastructure and access to markets. It also eases the financing constraints that hold back private investment and new technology, with a larger role for women and young people. It serves food and livelihood.",
+        "by": [
+          "World Bank"
+        ],
+        "url": "https://www.worldbank.org/en/news/press-release/2026/03/10/burkina-faso-a-new-project-to-accelerate-the-transformation-of-the-agricultural-sector"
+      },
+      {
+        "cat": "multi",
         "status": "Active",
         "tone": "active",
-        "name": "Extended Credit Facility and Resilience and Sustainability Facility",
-        "detail": "IMF · ECF approved September 2023 · RSF approved February 2026",
-        "amount": "",
-        "money": false,
-        "text": "Fifth ECF review, augmentation and first RSF review completed 26 June 2026.",
+        "name": "Resilience and Sustainability Facility",
+        "detail": "IMF · Approved February 2026 · Runs until 20 September 2027 · First review completed 26 June 2026",
+        "amount": "SDR 90.3M",
+        "money": true,
+        "note": "About US$124.3 million; SDR 16.42 million disbursed at the first review",
+        "text": "Long-term IMF financing for reforms that build resilience to climate change, approved by the Executive Board with the fourth review of the Extended Credit Facility. It runs until 20 September 2027, and its first review was completed on 26 June 2026.",
         "by": [
           "IMF"
         ],
-        "url": "https://www.imf.org/-/media/files/publications/cr/2026/english/1bfaea2026002.pdf"
+        "url": "https://www.imf.org/en/news/articles/2026/02/19/pr-26054-burkina-faso-imf-completes-4th-rev-under-ecf-and-approves-under-the-rsf"
+      },
+      {
+        "cat": "multi",
+        "status": "Signed",
+        "tone": "active",
+        "name": "Human Capital Protection Project, additional financing",
+        "detail": "IDA credit · Signed 22 November 2025 · Continuity of Basic Social Services component",
+        "amount": "$100.4M",
+        "money": true,
+        "note": "Free care for women and children, immunization, examinations and teacher training",
+        "text": "Additional financing to keep basic social services running: free health care for women and children, routine immunization, national examinations and teacher training. It protects health and education for the most vulnerable, including internally displaced people.",
+        "by": [
+          "World Bank"
+        ],
+        "url": "https://www.worldbank.org/en/news/press-release/2025/11/22/burkina-faso-additional-world-bank-financing-to-build-human-capital"
+      },
+      {
+        "cat": "multi",
+        "status": "Approved",
+        "tone": "active",
+        "name": "Restoring Education System Performance and Improving Resilience (REPAIR)",
+        "detail": "IDA · Approved 5 May 2025 · Includes $10M from the Window for Host Communities and Refugees",
+        "amount": "$140M",
+        "money": true,
+        "note": "About 2.2 million students and 40,000 teachers",
+        "text": "Pre-primary and primary schooling, climate-resilient school buildings, emergency education for displaced and refugee children, and teaching and learning materials for foundational learning. It is expected to reach about 2.2 million students and 40,000 teachers. It serves education, where 26.1% of children read a simple text by the end of primary school (2019).",
+        "by": [
+          "World Bank"
+        ],
+        "url": "https://www.worldbank.org/en/news/press-release/2025/05/05/burkina-faso-project-to-boost-the-performance-of-the-education-system-and-strengthen-its-resilience"
+      },
+      {
+        "cat": "multi",
+        "status": "Approved",
+        "tone": "active",
+        "name": "Strengthening Health System Performance and Resilience Project",
+        "detail": "IDA credit €142M ($150M equivalent) and $17M grant from the Global Financing Facility · Approved 24 January 2025 · Nationwide",
+        "amount": "€142M",
+        "money": true,
+        "note": "Plus a $17M grant from the Global Financing Facility",
+        "text": "Disease surveillance and wider use of health and nutrition services across the nation, for adolescents, women and children under five, with a focus on internally displaced people and communities with little access to care. It serves health, where the nation scores 47 of 100 on the WHO service coverage index.",
+        "by": [
+          "World Bank",
+          "Global Financing Facility"
+        ],
+        "url": "https://www.worldbank.org/en/news/press-release/2025/01/24/burkina-faso-new-world-bank-financing-to-strengthen-health-system-performance-equity-and-resilience"
+      },
+      {
+        "cat": "regional",
+        "status": "Approved",
+        "tone": "active",
+        "name": "Komsilga thermal power plant, phase 5",
+        "detail": "BOAD · Approved at the 151st Board session, 26 June 2026 · SONABEL · At least 50 MW",
+        "amount": "FCFA 45bn",
+        "money": true,
+        "note": "Extension of the plant by at least 50 MW",
+        "text": "BOAD financing for SONABEL, the national electricity company, to extend the Komsilga thermal power plant by at least 50 MW. It raises installed capacity and steadies the national power supply. It serves energy, where each person uses about 135 kWh of electricity a year.",
+        "by": [
+          "BOAD"
+        ],
+        "url": "https://admin.boad.org/wp-content/uploads/2026/06/COMPRESS-CA-151-VF-1.pdf"
+      },
+      {
+        "cat": "regional",
+        "status": "Approved",
+        "tone": "active",
+        "name": "Refinancing line for BSIC Burkina",
+        "detail": "BOAD · Approved at the 151st Board session, 26 June 2026",
+        "amount": "FCFA 10bn",
+        "money": true,
+        "note": "For productive small and medium enterprises and industries",
+        "text": "BOAD financing for the Banque Sahélo-Saharienne pour l’Investissement et le Commerce (BSIC Burkina) to lend on to productive small and medium enterprises and industries. It serves livelihood through credit for the firms that create work.",
+        "by": [
+          "BOAD"
+        ],
+        "url": "https://admin.boad.org/wp-content/uploads/2026/06/COMPRESS-CA-151-VF-1.pdf"
+      },
+      {
+        "cat": "regional",
+        "status": "Framework signed",
+        "tone": "pipeline",
+        "name": "ITFC trade finance framework, 2026–2030",
+        "detail": "Islamic Development Bank Group · Signed 19 June 2026, Baku · Five years",
+        "amount": "$1B",
+        "money": true,
+        "note": "A framework agreement for trade finance, not yet a disbursement",
+        "text": "A framework agreement with the International Islamic Trade Finance Corporation for trade finance over five years: energy products, farm inputs, cotton and cashew exports, essential foods and medicines, and credit lines for local banks. It reaches food, energy, health and livelihood through what the nation buys and sells.",
+        "by": [
+          "ITFC"
+        ],
+        "url": "https://www.sidwaya.info/financement-du-commerce-le-burkina-faso-et-litfc-scellent-un-partenariat-strategique-pour-la-periode-2026-2030/"
+      },
+      {
+        "cat": "regional",
+        "status": "Approved",
+        "tone": "active",
+        "name": "Koudougou solar power plant extension",
+        "detail": "BOAD loan · Approved at the 150th Board session, 25–26 March 2026 · SONABEL · 40 MWp with 10 MW/30 MWh storage",
+        "amount": "FCFA 16.468bn",
+        "money": true,
+        "note": "Extension to 40 MWp with battery storage",
+        "text": "A BOAD loan to SONABEL to extend the Koudougou solar plant to 40 MWp, with battery storage of 10 MW and 30 MWh. It widens access to electricity and cuts emissions of carbon dioxide. It serves energy.",
+        "by": [
+          "BOAD"
+        ],
+        "url": "https://admin.boad.org/wp-content/uploads/2026/03/COMPRESS-CA-150-1.pdf"
+      },
+      {
+        "cat": "regional",
+        "status": "Approved",
+        "tone": "active",
+        "name": "Cotton sector inputs, 2026–2027 campaign",
+        "detail": "BOAD loan · Approved at the 150th Board session, 25–26 March 2026",
+        "amount": "FCFA 50bn",
+        "money": true,
+        "note": "120,000 tonnes of agricultural inputs",
+        "text": "A BOAD loan to the cotton sector to buy 120,000 tonnes of agricultural inputs for the 2026–2027 campaign. It serves livelihood, through the harvests of the farming households that grow cotton.",
+        "by": [
+          "BOAD"
+        ],
+        "url": "https://admin.boad.org/wp-content/uploads/2026/03/COMPRESS-CA-150-1.pdf"
+      },
+      {
+        "cat": "regional",
+        "status": "Approved",
+        "tone": "active",
+        "name": "Refinancing lines for Coris Bank International",
+        "detail": "BOAD loan · Approved at the 150th Board session, 25–26 March 2026",
+        "amount": "FCFA 20bn",
+        "money": true,
+        "note": "Renewable energy access and the food stocks of SONAGESS, 2025/2026",
+        "text": "BOAD refinancing lines to Coris Bank International, to widen access to renewable energy and to meet the cash needs of SONAGESS, the national food security stock company, for the 2025/2026 campaign. It serves energy and food.",
+        "by": [
+          "BOAD"
+        ],
+        "url": "https://admin.boad.org/wp-content/uploads/2026/03/COMPRESS-CA-150-1.pdf"
+      },
+      {
+        "cat": "regional",
+        "status": "Approved",
+        "tone": "active",
+        "name": "Emergency Agricultural Production Project, phase 2",
+        "detail": "African Development Fund loan $67.5M and grant $12.1M · Transition Support Facility loan $37.2M · Release of 23 February 2026",
+        "amount": "$116.8M",
+        "money": true,
+        "note": "About 720,000 people directly, at least half of them women and young people",
+        "text": "The second phase of the emergency project to raise farm output, with targets of 712,500 tonnes of rice and 951,391 tonnes of maize and more protein-rich legumes. It is expected to bring the nation closer to self-sufficiency in cereals by 2030. It serves food.",
+        "by": [
+          "African Development Bank Group"
+        ],
+        "url": "https://fr.allafrica.com/stories/202602240716.html"
       }
     ]
   },
@@ -106,9 +306,9 @@
     "items": [
       {
         "name": "The Gold",
-        "figure": "43.2%",
+        "figure": "101.8%",
         "money": false,
-        "label": "Rise in gold exports, 2025",
+        "label": "Rise in the value of gold exports, 2025",
         "text": "Gold carried the current account into surplus in 2025; the task is to bank the windfall into lasting assets.",
         "images": [
           "https://perfectnations.com/wp-content/uploads/2026/11/The-Gold-Burkina-Faso-768x573.jpg"
@@ -169,7 +369,57 @@
   },
   "enterprises": {
     "heading": "Already working in Burkina Faso.",
-    "items": []
+    "items": [
+      {
+        "standard": "Food",
+        "name": "Gebana Burkina Faso",
+        "text": "Processes and exports Fairtrade and organic cashews and dried mango, bought mainly from more than 3,000 smallholder farmers organised in cooperatives.",
+        "source": "BIO, 2025",
+        "url": "https://www.bio-invest.be/en/investments/gebana-burkina-faso-5"
+      },
+      {
+        "standard": "Food",
+        "name": "Faso Elevage",
+        "text": "An agro-livestock company that makes solar incubators and brooders for villages without reliable electricity, produces livestock feed from local crops and trains breeders.",
+        "source": "VC4A, 2025",
+        "url": "https://vc4a.com/blog/2025/09/05/young-african-entrepreneurs-win-top-honors-in-dakar/"
+      },
+      {
+        "standard": "Water",
+        "name": "Uduma",
+        "text": "Operates and maintains rural drinking water services on a profitable model, supplying 1.5 million people across Burkina Faso, Mali, Côte d’Ivoire and Benin.",
+        "source": "Business France, 2025",
+        "url": "https://event.businessfrance.fr/congres-aaea-2025/uduma"
+      },
+      {
+        "standard": "Energy",
+        "name": "Solafrique",
+        "text": "Solar irrigation, mini-grids and household solar kits for rural and peri-urban areas, sold on flexible terms such as pay-as-you-go.",
+        "source": "I&P, 2025",
+        "url": "https://ietp.com/en/node/4566"
+      },
+      {
+        "standard": "Energy",
+        "name": "Nafa Naana",
+        "text": "A Burkinabè social enterprise that sells clean cooking stoves and solar lighting through franchised resellers with payment facilities, with 3,045 pieces of equipment sold in 2024.",
+        "source": "Entrepreneurs du Monde, 2025",
+        "url": "https://www.entrepreneursdumonde.org/app/uploads/2025/11/bf-nafanaana-edm-fiche-programme-2025.pdf"
+      },
+      {
+        "standard": "Education",
+        "name": "Le Grand Frère",
+        "text": "A school and university guidance platform run by DBJ Connect in Ouagadougou, with a free orientation test and a directory of more than 1,200 schools, institutes and universities in seven West African countries.",
+        "source": "Le Grand Frère, 2026",
+        "url": "https://legrandfrere.africa/edtech-faso-forum-2026-le-grand-frere-1er-prix/"
+      },
+      {
+        "standard": "Livelihood",
+        "name": "ACEP Burkina",
+        "text": "A microfinance institution that lends to micro and small businesses, with savings from more than 52,000 clients and branches in the five largest cities.",
+        "source": "BIO, 2025",
+        "url": "https://www.bio-invest.be/en/investments/acep-burkina-faso-2"
+      }
+    ]
   },
   "coverage": {
     "set_by": "Shelter",
@@ -271,5 +521,5 @@
   ],
   "dispatches": [],
   "checked": "2026-11-14T04:22Z",
-  "reviewed": "2026-11-12T19:00Z"
+  "reviewed": "2026-11-23T07:30Z"
 }
