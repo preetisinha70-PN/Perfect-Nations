@@ -42,7 +42,8 @@ ROOT = Path(__file__).resolve().parent.parent
 PAGES = ROOT / 'pages'
 DATA = ROOT / 'data'
 HERE = Path(__file__).resolve().parent / 'capital'
-VERSION = '6.2'  # each family pairs the finance with the AI that makes it work, its "ai" line under the family line (Preeti Sinha, President and CEO, 24 Nov 2026)
+VERSION = '6.3'  # the Sovereign AI Dividend Fund, designed by Perfect Nations (Preeti Sinha, President and CEO, 24 Nov 2026)
+# 6.2: each family pairs the finance with the AI that makes it work, its "ai" line under the family line (Preeti Sinha, President and CEO, 24 Nov 2026)
 NOT_NATIONS = {'state-of-nations', 'ticker', 'blueprints', 'capital-architecture'}
 
 # Who carries each line on record (the register's cat field), in the words a visitor reads.
@@ -376,6 +377,11 @@ funders, each with one sourced figure, named for reference only, and a way on to
 (the Steward-General, 21 Nov 2026).
 v6.2: each of the 13 families pairs the finance with the AI that makes it work: one line, With AI, under the
 family line, and the toolkit lead says so first (Preeti Sinha, President and CEO, 24 Nov 2026).
+v6.3: a new instrument designed by Perfect Nations, the Sovereign AI Dividend Fund, in Equity and funds after the
+Sovereign Wealth Fund: a nation that offers its land, energy, water and spectrum to AI data centres takes a share of
+their gains into a ring-fenced fund that finances the seven standards and a dividend for every citizen, after Alaska's
+Permanent Fund (Preeti Sinha, President and CEO, 24 Nov 2026, after Peter Diamandis's proposal for a per-citizen
+dividend in exchange for public inputs).
 =========================================================================== -->
 ''' % (VERSION, today)
     body = '\n'.join([
