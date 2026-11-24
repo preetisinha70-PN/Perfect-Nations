@@ -1,5 +1,7 @@
 (function () {
-  /* Blueprint v11.9: a designed Solution offers Discuss this Solution; Plan a Blueprint Lab opens The Blueprint Lab.
+  /* Blueprint v14.9 (24 Nov 2026): Now possible with AI: a designed Solution, and the playbook brief, add what AI makes
+       possible after What Perfect Nations advises (the field "ai"; Preeti Sinha, President and CEO).
+     Blueprint v11.9: a designed Solution offers Discuss this Solution; Plan a Blueprint Lab opens The Blueprint Lab.
      v11.5: the page follows its live data file and the State of Nations.
      v11.5: the register reads "Capital already committed" (the anchor #bp-register and the key capital.register are
        unchanged); "Already working in" the nation is its own band after 02 Capital, its cards built as h3 under
@@ -400,7 +402,11 @@
     var h = el('h3'), href = okUrl(x.url) ? x.url : 'https://perfectnations.com/state-of-nations/#' + (deal ? 'deal-' : 'solution-') + pad(x.no || 0);
     h.appendChild(link(el('a', '', x.title), href)); li.appendChild(h);
     if (design && T(x.standfirst)) li.appendChild(el('p', '', x.standfirst));
-    if (T(x.challenge) && T(x.advises)) li.appendChild(howList([['01', 'The challenge', x.challenge], ['02', 'What Perfect Nations advises', x.advises]]));
+    if (T(x.challenge) && T(x.advises)) {
+      var hr = [['01', 'The challenge', x.challenge], ['02', 'What Perfect Nations advises', x.advises]];
+      if (design && T(x.ai)) hr.push(['03', 'Now possible with AI', x.ai]);
+      li.appendChild(howList(hr));
+    }
     else if (T(x.standfirst) || T(x.summary)) {
       var fs = firstSentence(x.standfirst || x.summary);
       li.appendChild(el('p', '', fs[0]));
@@ -438,6 +444,7 @@
     else if (play.proof && okUrl(play.proof.url)) { w = T(play.name) + ', proved in ' + play.proof.where + ', ' + play.proof.year + ': ' + play.proof.figure + ' ' + play.proof.label + '.'; wa = link(el('a', '', play.proof.source || 'Source'), play.proof.url); }
     if (w) rows.push(['02', 'The deal', w, wa]);
     rows.push([w ? '03' : '02', 'What Perfect Nations advises', play.advises, null]);
+    if (T(play.ai)) rows.push([w ? '04' : '03', 'Now possible with AI', play.ai, null]);
     li.appendChild(howList(rows));
     var foot = el('div', 'bpx-sol__foot'), sig = el('span', 'bpx-sig', 'Co-design it in');
     sig.appendChild(el('b', '', 'The ReDesign Studio')); foot.appendChild(sig);

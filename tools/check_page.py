@@ -14,6 +14,10 @@ One exception: the Nation Steward card above a blueprint's Newswire (class bpx-s
 back on the evening of 16 Nov 2026 ("Add the SI nations Stewards back in every blueprint above the newswire").
 And on the Contact page only, the unnamed phrase "a Nation Steward" (Preeti Sinha, 21 Nov 2026: "Change every letter
 is read by Preeti to Every Letter is read by a Nation Steward").
+From 24 Nov 2026 (Preeti Sinha, President and CEO: "I would like to bring SI back into Perfect Nations"): the
+Solutions say AI, which the copy may always name, and the vision says super intelligence, written in full, only inside
+an element with the class pn-vision (for example "Built for the age of super intelligence"). The abbreviation SI is
+still refused in the copy everywhere but the Nation Steward card: a visitor reads the words in full.
 Exit status 1 if anything fails. Needs: pip install tinycss2, and node.
 """
 import re
@@ -26,6 +30,7 @@ import tinycss2
 
 VOID = {'area', 'base', 'br', 'col', 'embed', 'hr', 'img', 'input', 'link', 'meta', 'source', 'track', 'wbr'}
 COPY_ATTRS = ('title', 'alt', 'placeholder', 'aria-label')
+VISION_WORDS = re.compile(r'(?i:super ?intelligence|superintelligence)')   # allowed inside pn-vision (24 Nov 2026)
 NO_SI = re.compile(r'(?i:super ?intelligence|superintelligence)|\(SI\)|SI Researcher|(?<![\w=./-])SI(?![\w.=/-])')
 STEWARD = re.compile(r'\bStewards?\b')
 CONTACT_STEWARD = re.compile(r'\ba Nation Steward\b')   # the Contact page, 21 Nov 2026: who reads every letter
@@ -53,6 +58,7 @@ class Walk(HTMLParser):
         self.stack, self.ids, self.problems, self.copy = [], {}, [], []
         self.raw = None
         self.card = None   # the depth of the Nation Steward card (bpx-stew) while inside it
+        self.vision = None   # the depth of a vision line (pn-vision) while inside it (24 Nov 2026)
 
     def handle_starttag(self, tag, attrs):
         self._attrs(tag, attrs)
@@ -62,6 +68,8 @@ class Walk(HTMLParser):
             self.stack.append((tag, self.getpos()))
             if self.card is None and 'bpx-stew' in (dict(attrs).get('class') or '').split():
                 self.card = len(self.stack)
+            if self.vision is None and 'pn-vision' in (dict(attrs).get('class') or '').split():
+                self.vision = len(self.stack)
 
     def handle_startendtag(self, tag, attrs):
         self._attrs(tag, attrs)
@@ -71,7 +79,7 @@ class Walk(HTMLParser):
             if k == 'id' and v:
                 self.ids.setdefault(v, []).append(self.getpos()[0])
             if k in COPY_ATTRS and v:
-                self.copy.append((self.getpos()[0], v, self.card is not None))
+                self.copy.append((self.getpos()[0], v, self.card is not None, self.vision is not None))
 
     def handle_endtag(self, tag):
         if tag in ('script', 'style'):
@@ -85,6 +93,8 @@ class Walk(HTMLParser):
             self.stack.pop()
             if self.card is not None and len(self.stack) < self.card:
                 self.card = None
+            if self.vision is not None and len(self.stack) < self.vision:
+                self.vision = None
             return
         names = [t for t, _ in self.stack]
         if tag in names:
@@ -94,12 +104,14 @@ class Walk(HTMLParser):
             self.stack.pop()
             if self.card is not None and len(self.stack) < self.card:
                 self.card = None
+            if self.vision is not None and len(self.stack) < self.vision:
+                self.vision = None
         else:
             self.problems.append('line %d: </%s> closes nothing' % (self.getpos()[0], tag))
 
     def handle_data(self, data):
         if not self.raw and data.strip():
-            self.copy.append((self.getpos()[0], data, self.card is not None))
+            self.copy.append((self.getpos()[0], data, self.card is not None, self.vision is not None))
 
 
 def check(path):
@@ -152,7 +164,7 @@ def check(path):
     for k, lines in w.ids.items():
         if len(lines) > 1:
             bad.append('id "%s" is used %d times (lines %s)' % (k, len(lines), lines[:4]))
-    for line, text, card in w.copy:
+    for line, text, card, vision in w.copy:
         if "'" in text:
             bad.append('line %d: a straight apostrophe in the copy: %r' % (line, text.strip()[:80]))
         c = CONTRACTION.search(text)
@@ -160,7 +172,7 @@ def check(path):
             bad.append('line %d: a contraction in the copy: %r' % (line, c.group(0)))
         if card:   # the Nation Steward card above a blueprint's Newswire may name its Steward (16 Nov 2026)
             continue
-        if NO_SI.search(text):
+        if NO_SI.search(VISION_WORDS.sub('', text) if vision else text):
             bad.append('line %d: super intelligence in the copy: %r' % (line, text.strip()[:80]))
         if path.replace('\\', '/').endswith('pages/contact.html'):
             text = CONTACT_STEWARD.sub('', text)

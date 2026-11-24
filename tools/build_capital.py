@@ -42,7 +42,7 @@ ROOT = Path(__file__).resolve().parent.parent
 PAGES = ROOT / 'pages'
 DATA = ROOT / 'data'
 HERE = Path(__file__).resolve().parent / 'capital'
-VERSION = '6.1'
+VERSION = '6.2'  # each family pairs the finance with the AI that makes it work, its "ai" line under the family line (Preeti Sinha, President and CEO, 24 Nov 2026)
 NOT_NATIONS = {'state-of-nations', 'ticker', 'blueprints', 'capital-architecture'}
 
 # Who carries each line on record (the register's cat field), in the words a visitor reads.
@@ -247,8 +247,11 @@ def index(doc, bps):
                    ent(it['headline']), ' &#183; '.join(lm), ent(it['how']), ''.join(links)))
         fams.append(
             '<section class="pca-fam" id="%s" aria-labelledby="%s-h"><div class="pca-fam__h"><span class="pca-fam__n">%02d</span>'
-            '<div><h3 id="%s-h">%s</h3><p>%s</p></div><span class="pca-fam__c">%d</span></div><ul class="pca-rows">%s</ul></section>'
-            % (fid, fid, n, fid, ent(f['name']), ent(f['line']), len(f['items']), ''.join(rows)))
+            '<div><h3 id="%s-h">%s</h3><p>%s</p>%s</div><span class="pca-fam__c">%d</span></div><ul class="pca-rows">%s</ul></section>'
+            % (fid, fid, n, fid, ent(f['name']), ent(f['line']),
+               # v6.2: With AI, after the finance (24 Nov 2026)
+               ('<p class="pca-fam__ai"><b>With AI</b>%s</p>' % ent(f['ai'])) if f.get('ai') else '',
+               len(f['items']), ''.join(rows)))
     jump.append('<li class="pca-jump__all"><a href="#pca-index" data-f="all"><b>All</b>instruments<i>%d</i></a></li>' % n_all)
     return (
         '<section class="pca-band pca-idx" id="pca-index" aria-labelledby="pca-ih"><div class="pca-in">'
@@ -371,6 +374,8 @@ v5.4: light reading sections, Earthrise accents (the Steward-General, 10 Nov 202
 v6.1: Who finances the Living Line, after the record: the six largest networks of development and impact
 funders, each with one sourced figure, named for reference only, and a way on to the For Funders page
 (the Steward-General, 21 Nov 2026).
+v6.2: each of the 13 families pairs the finance with the AI that makes it work: one line, With AI, under the
+family line, and the toolkit lead says so first (Preeti Sinha, President and CEO, 24 Nov 2026).
 =========================================================================== -->
 ''' % (VERSION, today)
     body = '\n'.join([

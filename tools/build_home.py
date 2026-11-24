@@ -24,7 +24,8 @@ ROOT = Path(__file__).resolve().parent.parent
 PAGES = ROOT / 'pages'
 DATA = ROOT / 'data'
 SITE = 'https://perfectnations.com'
-VERSION = '13.1'  # Palestine links to /blueprints/state-of-palestine/ (hero v8.1, nations menu v3.2), 21 Nov 2026
+VERSION = '13.2'  # Now possible: AI joins innovative finance; a slim band before the Solutions, the AI line on each Solution, and AI in Governance first and the Cup (Preeti Sinha, President and CEO, 24 Nov 2026)
+# 13.1: Palestine links to /blueprints/state-of-palestine/ (hero v8.1, nations menu v3.2), 21 Nov 2026
 # 13.0: the Mission, the hero, Governance first, Imagine, the Studio and the Solutions name innovative financing for development alone; no Steward named (the President and CEO, 16 Nov 2026)
 # v12.5: the globe draws the borders of newly opened nations at their raised height (hero v7.9; the Steward-General, 11 Nov 2026)
 # v12.4: Governance first: one line on great local leadership, honest, dedicated and committed to basic standards of living for every citizen (the Steward-General, 11 Nov 2026)
@@ -70,6 +71,7 @@ ORDER = [
     'home-imagine.html',          # 01c Imagine a Perfect Nation: the story in three acts (new, v11.0)
     'home-blueprints.html',       # 02 Blueprints of Nations
     'rule',
+    'home-now-possible.html',     # 02b Now possible: innovative finance funds it, AI makes it possible (v13.2, 24 Nov 2026)
     'home-solutions.html',        # 03 Solutions for Nations: the latest Solutions from State of Nations
     'rule',
     'home-governance.html',       # 03b Governance first, and the Perfect Nations Cup, the whole logo on its seal (v11.9; here from v12.0)
@@ -135,9 +137,11 @@ def solution_card(s, i):
                                                          ascii_html(x[0]), ascii_html(x[1])) for x in figs))
     out.append('</div>')
     if s.get('challenge') and s.get('advises'):
-        out.append('<dl class="pnso-x">%s</dl>' % ''.join(
+        # v13.2: Now possible with AI, after the finance (24 Nov 2026)
+        ai = '<div class="pnso-ai"><dt>Now possible with AI</dt><dd>%s</dd></div>' % ascii_html(s['ai']) if s.get('ai') else ''
+        out.append('<dl class="pnso-x">%s%s</dl>' % (''.join(
             '<div><dt>%s</dt><dd>%s</dd></div>' % (t, ascii_html(s[k]))
-            for t, k in (('The challenge', 'challenge'), ('What Perfect Nations advises', 'advises'))))
+            for t, k in (('The challenge', 'challenge'), ('What Perfect Nations advises', 'advises'))), ai))
     elif s.get('standfirst'):
         out.append('<p class="pnso-sf">%s</p>' % ascii_html(s['standfirst']))
     src = next((x for x in s.get('sources') or [] if x and str(x.get('url', '')).startswith('https://') and source_name(x.get('label'))), None)

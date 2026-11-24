@@ -95,13 +95,14 @@
   "index": {
     "eyebrow": "The toolkit",
     "title": "{n} instruments, one line each",
-    "lead": "Choose a family, or search. Every line is a real deal, dated and sourced; {n_used} are already in use, and Standard Tokens is designed by Perfect Nations. Open a line for how it works and its source.",
+    "lead": "Each family pairs the finance with the AI that makes it work. Choose a family, or search. Every line is a real deal, dated and sourced; {n_used} are already in use, and Standard Tokens is designed by Perfect Nations. Open a line for how it works and its source.",
     "families": [
       {
         "id": "sovereign",
         "name": "Sovereign bonds",
         "short": "Sovereign bonds",
         "line": "Borrowing on the capital markets in the nation’s own name.",
+        "ai": "AI reports where every dollar of proceeds goes, project by project, so investors can follow the bond to the citizen.",
         "items": [
           {
             "id": "international-bond",
@@ -227,6 +228,7 @@
         "name": "Labelled bonds",
         "short": "Labelled bonds",
         "line": "Bonds whose money is ring-fenced for a purpose.",
+        "ai": "AI verifies each project the proceeds reach, from satellite and meter data, so a label is proven rather than promised.",
         "items": [
           {
             "id": "social-bond",
@@ -339,6 +341,7 @@
         "name": "Capital markets",
         "short": "Capital markets",
         "line": "Shares, securitisations and hedges that bring private savings in.",
+        "ai": "AI scores thousands of small loans and watches currency risk, so private savings can price what they buy.",
         "items": [
           {
             "id": "ipo-cornerstone",
@@ -439,6 +442,7 @@
         "name": "Equity and funds",
         "short": "Equity and funds",
         "line": "Ownership capital: shares, stakes and the funds that hold them.",
+        "ai": "AI screens firms and projects for the fund and counts the jobs and services each investment creates.",
         "items": [
           {
             "id": "sovereign-wealth-fund",
@@ -512,6 +516,7 @@
         "name": "Project finance",
         "short": "Project finance",
         "line": "Projects repaid from their own revenues.",
+        "ai": "AI maps demand from satellite images of settlements and forecasts output, so lenders see a project earn its own way.",
         "items": [
           {
             "id": "project-finance",
@@ -585,6 +590,7 @@
         "name": "Impact investment",
         "short": "Impact",
         "line": "Capital that targets a measured social or environmental return.",
+        "ai": "AI measures the return household by household, so impact is counted rather than claimed.",
         "items": [
           {
             "id": "impact-fund",
@@ -671,6 +677,7 @@
         "name": "Pay for results",
         "short": "Pay for results",
         "line": "Money moves only when results are verified.",
+        "ai": "AI verifies results at low cost, from reading checks to meter data, so finance can follow results at national scale.",
         "items": [
           {
             "id": "outcome-bond",
@@ -770,6 +777,7 @@
         "name": "Guarantees and insurance",
         "short": "Guarantees",
         "line": "A stronger balance sheet stands behind the deal.",
+        "ai": "AI prices the risk a guarantee carries from the borrower’s own data, so the same capital can stand behind more loans.",
         "items": [
           {
             "id": "partial-credit-guarantee",
@@ -882,6 +890,7 @@
         "name": "Development loans and the IMF",
         "short": "Loans and IMF",
         "line": "Long-term, low-cost lending from development banks and the IMF.",
+        "ai": "AI tracks each disbursement against the results agreed, so a loan released on progress can move faster.",
         "items": [
           {
             "id": "investment-project-financing",
@@ -968,6 +977,7 @@
         "name": "Debt conversions",
         "short": "Debt swaps",
         "line": "Costly debt refinanced; the savings go to people and nature.",
+        "ai": "AI follows every saving from a conversion into the schools, clinics or forests it was bound to, and publishes it.",
         "items": [
           {
             "id": "debt-for-nature",
@@ -1041,6 +1051,7 @@
         "name": "Disaster risk finance",
         "short": "Disaster risk",
         "line": "Money agreed before the storm, paid within weeks of it.",
+        "ai": "AI forecasts floods, droughts and storms and measures the damage from satellites, so triggers are fair and funds move fast.",
         "items": [
           {
             "id": "catastrophe-bond",
@@ -1114,6 +1125,7 @@
         "name": "Trade and commodity finance",
         "short": "Trade finance",
         "line": "Short-term money that keeps food, fuel and exports moving.",
+        "ai": "AI forecasts harvests and prices and checks goods in transit, so banks can finance the farmers and traders they used to turn away.",
         "items": [
           {
             "id": "trade-finance-facility",
@@ -1174,6 +1186,7 @@
         "name": "Grants and climate funds",
         "short": "Grants",
         "line": "Money that does not have to be repaid.",
+        "ai": "AI finds the people and places in greatest need and tracks every grant to its result.",
         "items": [
           {
             "id": "development-grant",
@@ -1246,50 +1259,50 @@
   },
   "record": {
     "eyebrow": "Capital already committed",
-    "count": 2521,
-    "nations": 192,
+    "count": 2696,
+    "nations": 194,
     "by": [
       {
         "cat": "multi",
         "label": "Multilateral",
         "sub": "World Bank, IMF and peers",
-        "n": 889
+        "n": 934
       },
       {
         "cat": "regional",
         "label": "Regional",
         "sub": "Regional banks and funds",
-        "n": 665
+        "n": 714
       },
       {
         "cat": "govt",
         "label": "Issued by the nation",
         "sub": "Its own bonds and programmes",
-        "n": 366
+        "n": 397
       },
       {
         "cat": "private",
         "label": "Private",
         "sub": "Investors, banks and funds",
-        "n": 365
+        "n": 379
       },
       {
         "cat": "bilat",
         "label": "Bilateral",
         "sub": "Partner governments",
-        "n": 183
+        "n": 206
       },
       {
         "cat": "impact",
         "label": "Impact",
         "sub": "Impact investors, green banks",
-        "n": 34
+        "n": 35
       },
       {
         "cat": "humanitarian",
         "label": "Humanitarian",
         "sub": "Appeals and relief funds",
-        "n": 19
+        "n": 31
       }
     ],
     "list": [
@@ -1314,7 +1327,7 @@
       {
         "slug": "indonesia",
         "name": "Indonesia",
-        "n": 35,
+        "n": 38,
         "url": "https://perfectnations.com/blueprints/indonesia/",
         "top": "Inaugural sovereign panda bonds",
         "amount": "CNY 7B",
@@ -1372,6 +1385,15 @@
         "url": "https://perfectnations.com/blueprints/angola/",
         "top": "Eurobond, dual tranche",
         "amount": "$1.5B",
+        "money": true
+      },
+      {
+        "slug": "zambia",
+        "name": "Zambia",
+        "n": 29,
+        "url": "https://perfectnations.com/blueprints/zambia/",
+        "top": "Buyback of the 2053 Eurobond, a debt-for-development swap for the grid",
+        "amount": "$1.36B",
         "money": true
       },
       {
@@ -1447,12 +1469,12 @@
         "money": false
       },
       {
-        "slug": "zambia",
-        "name": "Zambia",
-        "n": 25,
-        "url": "https://perfectnations.com/blueprints/zambia/",
-        "top": "Buyback of the 2053 Eurobond, a debt-for-development swap for the grid",
-        "amount": "$1.36B",
+        "slug": "jordan",
+        "name": "Jordan",
+        "n": 24,
+        "url": "https://perfectnations.com/blueprints/jordan/",
+        "top": "Eurobond due 2032",
+        "amount": "$700M",
         "money": true
       },
       {
@@ -1537,15 +1559,6 @@
         "money": true
       },
       {
-        "slug": "jordan",
-        "name": "Jordan",
-        "n": 22,
-        "url": "https://perfectnations.com/blueprints/jordan/",
-        "top": "Eurobond due 2032",
-        "amount": "$700M",
-        "money": true
-      },
-      {
         "slug": "latvia",
         "name": "Latvia",
         "n": 22,
@@ -1597,6 +1610,15 @@
         "url": "https://perfectnations.com/blueprints/tunisia/",
         "top": "Central bank interest-free facility, 2027",
         "amount": "TND 9.8bn",
+        "money": true
+      },
+      {
+        "slug": "uzbekistan",
+        "name": "Uzbekistan",
+        "n": 21,
+        "url": "https://perfectnations.com/blueprints/uzbekistan/",
+        "top": "Sovereign international bonds in soum (three years, 12.25%)",
+        "amount": "UZS 12.2tn",
         "money": true
       },
       {
@@ -1744,6 +1766,15 @@
         "money": true
       },
       {
+        "slug": "vanuatu",
+        "name": "Vanuatu",
+        "n": 18,
+        "url": "https://perfectnations.com/blueprints/vanuatu/",
+        "top": "Australia, earthquake humanitarian and recovery assistance",
+        "amount": "A$28M",
+        "money": true
+      },
+      {
         "slug": "zimbabwe",
         "name": "Zimbabwe",
         "n": 18,
@@ -1789,6 +1820,15 @@
         "money": true
       },
       {
+        "slug": "lesotho",
+        "name": "Lesotho",
+        "n": 17,
+        "url": "https://perfectnations.com/blueprints/lesotho/",
+        "top": "Government of Lesotho bonds, 2026/27 issuance calendar",
+        "amount": "M1.5bn",
+        "money": true
+      },
+      {
         "slug": "mali",
         "name": "Mali",
         "n": 17,
@@ -1804,6 +1844,24 @@
         "url": "https://perfectnations.com/blueprints/bhutan/",
         "top": "Bhutan Livable and Resilient Cities Project (FP315)",
         "amount": "$28M",
+        "money": true
+      },
+      {
+        "slug": "burkina-faso",
+        "name": "Burkina Faso",
+        "n": 16,
+        "url": "https://perfectnations.com/blueprints/burkina-faso/",
+        "top": "Diaspora Bonds 2026",
+        "amount": "FCFA 151.5bn",
+        "money": true
+      },
+      {
+        "slug": "cote-divoire",
+        "name": "Côte d’Ivoire",
+        "n": 16,
+        "url": "https://perfectnations.com/blueprints/cote-d-ivoire/",
+        "top": "Treasury bonds by auction, with the first 20-year bond in the Union",
+        "amount": "FCFA 88bn",
         "money": true
       },
       {
@@ -1831,6 +1889,15 @@
         "url": "https://perfectnations.com/blueprints/marshall-islands/",
         "top": "Trust Fund for the People of the Marshall Islands",
         "amount": "$1.6bn",
+        "money": true
+      },
+      {
+        "slug": "mauritania",
+        "name": "Mauritania",
+        "n": 16,
+        "url": "https://perfectnations.com/blueprints/mauritania/",
+        "top": "Resilience and Productive Safety Nets Program",
+        "amount": "$30M",
         "money": true
       },
       {
@@ -1879,15 +1946,6 @@
         "money": true
       },
       {
-        "slug": "lesotho",
-        "name": "Lesotho",
-        "n": 15,
-        "url": "https://perfectnations.com/blueprints/lesotho/",
-        "top": "Lesotho Highlands Water Project royalties",
-        "amount": "M4.78bn",
-        "money": true
-      },
-      {
         "slug": "seychelles",
         "name": "Seychelles",
         "n": 15,
@@ -1921,6 +1979,15 @@
         "url": "https://perfectnations.com/blueprints/canada/",
         "top": "Budget 2026: supportive and transitional homes through Build Canada Homes",
         "amount": "C$10bn",
+        "money": true
+      },
+      {
+        "slug": "chad",
+        "name": "Chad",
+        "n": 14,
+        "url": "https://perfectnations.com/blueprints/chad/",
+        "top": "Water Security and Resilience Support Project (PASER)",
+        "amount": "$160M",
         "money": true
       },
       {
@@ -1987,6 +2054,15 @@
         "money": true
       },
       {
+        "slug": "lebanon",
+        "name": "Lebanon",
+        "n": 14,
+        "url": "https://perfectnations.com/blueprints/lebanon/",
+        "top": "Revised Flash Appeal for Lebanon, March to August 2026",
+        "amount": "$639.9M",
+        "money": true
+      },
+      {
         "slug": "slovakia",
         "name": "Slovakia",
         "n": 14,
@@ -2011,6 +2087,15 @@
         "url": "https://perfectnations.com/blueprints/azerbaijan/",
         "top": "Azerbaijan Scaling-Up Renewable Energy Project (AZURE)",
         "amount": "$173.5M",
+        "money": true
+      },
+      {
+        "slug": "cameroon",
+        "name": "Cameroon",
+        "n": 13,
+        "url": "https://perfectnations.com/blueprints/cameroon/",
+        "top": "International bond by private placement",
+        "amount": "$750M",
         "money": true
       },
       {
@@ -2065,6 +2150,15 @@
         "url": "https://perfectnations.com/blueprints/thailand/",
         "top": "Fifteen-year sustainability-linked bond with a nature target",
         "amount": "THB 25bn",
+        "money": true
+      },
+      {
+        "slug": "uruguay",
+        "name": "Uruguay",
+        "n": 13,
+        "url": "https://perfectnations.com/blueprints/uruguay/",
+        "top": "Nominal peso and US dollar bonds",
+        "amount": "$1.7bn",
         "money": true
       },
       {
@@ -2275,6 +2369,15 @@
         "money": true
       },
       {
+        "slug": "united-kingdom",
+        "name": "United Kingdom",
+        "n": 11,
+        "url": "https://perfectnations.com/blueprints/united-kingdom/",
+        "top": "Gilt financing remit, 2026-27",
+        "amount": "£250.6bn",
+        "money": true
+      },
+      {
         "slug": "argentina",
         "name": "Argentina",
         "n": 10,
@@ -2347,6 +2450,15 @@
         "money": true
       },
       {
+        "slug": "cuba",
+        "name": "Cuba",
+        "n": 10,
+        "url": "https://perfectnations.com/blueprints/cuba/",
+        "top": "EU humanitarian aid for the Cuban population",
+        "amount": "€10M",
+        "money": true
+      },
+      {
         "slug": "cyprus",
         "name": "Cyprus",
         "n": 10,
@@ -2362,6 +2474,15 @@
         "url": "https://perfectnations.com/blueprints/dominican-republic/",
         "top": "Global bond due 2039, with a repurchase of bonds due 2027",
         "amount": "$1.6bn",
+        "money": true
+      },
+      {
+        "slug": "eritrea",
+        "name": "Eritrea",
+        "n": 10,
+        "url": "https://perfectnations.com/blueprints/eritrea/",
+        "top": "Promoting Sustainable Land Management to Achieve Land Degradation Neutrality",
+        "amount": "$8.4M",
         "money": true
       },
       {
@@ -2416,6 +2537,24 @@
         "url": "https://perfectnations.com/blueprints/trinidad-and-tobago/",
         "top": "Sovereign bond due 2038",
         "amount": "$800M",
+        "money": true
+      },
+      {
+        "slug": "united-arab-emirates",
+        "name": "United Arab Emirates",
+        "n": 10,
+        "url": "https://perfectnations.com/blueprints/united-arab-emirates/",
+        "top": "Federal Treasury Bonds and Islamic Treasury Sukuk, 2026 calendar",
+        "amount": "AED 11.15bn",
+        "money": true
+      },
+      {
+        "slug": "united-states",
+        "name": "United States",
+        "n": 10,
+        "url": "https://perfectnations.com/blueprints/united-states/",
+        "top": "Treasury securities outstanding",
+        "amount": "$40.52tn",
         "money": true
       },
       {
@@ -2491,6 +2630,15 @@
         "money": true
       },
       {
+        "slug": "venezuela",
+        "name": "Venezuela",
+        "n": 9,
+        "url": "https://perfectnations.com/blueprints/venezuela/",
+        "top": "External bonds of the Republic and PDVSA: comprehensive debt restructuring",
+        "amount": "",
+        "money": false
+      },
+      {
         "slug": "bolivia",
         "name": "Bolivia",
         "n": 8,
@@ -2563,15 +2711,6 @@
         "money": true
       },
       {
-        "slug": "cote-divoire",
-        "name": "Côte d’Ivoire",
-        "n": 7,
-        "url": "https://perfectnations.com/blueprints/cote-d-ivoire/",
-        "top": "Eurobond, 15 years",
-        "amount": "$1.3B",
-        "money": true
-      },
-      {
         "slug": "equatorial-guinea",
         "name": "Equatorial Guinea",
         "n": 7,
@@ -2623,6 +2762,15 @@
         "url": "https://perfectnations.com/blueprints/iran/",
         "top": "UNHCR Iran, 2026 requirements",
         "amount": "$140M",
+        "money": true
+      },
+      {
+        "slug": "iraq",
+        "name": "Iraq",
+        "n": 6,
+        "url": "https://perfectnations.com/blueprints/iraq/",
+        "top": "Economic stimulus financing package",
+        "amount": "IQD 3.5trn",
         "money": true
       },
       {
@@ -2698,15 +2846,6 @@
         "money": true
       },
       {
-        "slug": "united-states",
-        "name": "United States",
-        "n": 6,
-        "url": "https://perfectnations.com/blueprints/united-states/",
-        "top": "Treasury securities and other public debt",
-        "amount": "$40.59tn",
-        "money": true
-      },
-      {
         "slug": "algeria",
         "name": "Algeria",
         "n": 5,
@@ -2740,15 +2879,6 @@
         "url": "https://perfectnations.com/blueprints/switzerland/",
         "top": "Confederation bonds, 2026",
         "amount": "CHF 4.5bn",
-        "money": true
-      },
-      {
-        "slug": "uzbekistan",
-        "name": "Uzbekistan",
-        "n": 5,
-        "url": "https://perfectnations.com/blueprints/uzbekistan/",
-        "top": "Rural Infrastructure Development Program, second phase",
-        "amount": "$150M",
         "money": true
       },
       {
@@ -2806,33 +2936,6 @@
         "money": true
       },
       {
-        "slug": "burkina-faso",
-        "name": "Burkina Faso",
-        "n": 3,
-        "url": "https://perfectnations.com/blueprints/burkina-faso/",
-        "top": "Agricultural Transformation Project",
-        "amount": "$215.9M",
-        "money": true
-      },
-      {
-        "slug": "cameroon",
-        "name": "Cameroon",
-        "n": 3,
-        "url": "https://perfectnations.com/blueprints/cameroon/",
-        "top": "Extended Credit Facility and Extended Fund Facility",
-        "amount": "$689.5M",
-        "money": true
-      },
-      {
-        "slug": "lebanon",
-        "name": "Lebanon",
-        "n": 3,
-        "url": "https://perfectnations.com/blueprints/lebanon/",
-        "top": "Social protection, economic empowerment and digital transformation",
-        "amount": "$350M",
-        "money": true
-      },
-      {
         "slug": "liechtenstein",
         "name": "Liechtenstein",
         "n": 3,
@@ -2884,60 +2987,6 @@
         "url": "https://perfectnations.com/blueprints/tonga/",
         "top": "Health Enhancement and Resiliency in Tonga Project",
         "amount": "$30M",
-        "money": true
-      },
-      {
-        "slug": "united-arab-emirates",
-        "name": "United Arab Emirates",
-        "n": 3,
-        "url": "https://perfectnations.com/blueprints/united-arab-emirates/",
-        "top": "Abu Dhabi dual-tranche bonds",
-        "amount": "$3bn",
-        "money": true
-      },
-      {
-        "slug": "uruguay",
-        "name": "Uruguay",
-        "n": 3,
-        "url": "https://perfectnations.com/blueprints/uruguay/",
-        "top": "Nominal peso and US dollar bonds",
-        "amount": "$1.7bn",
-        "money": true
-      },
-      {
-        "slug": "chad",
-        "name": "Chad",
-        "n": 2,
-        "url": "https://perfectnations.com/blueprints/chad/",
-        "top": "Extended Credit Facility",
-        "amount": "$625M",
-        "money": true
-      },
-      {
-        "slug": "eritrea",
-        "name": "Eritrea",
-        "n": 2,
-        "url": "https://perfectnations.com/blueprints/eritrea/",
-        "top": "Eritrea Energy Integrated Project",
-        "amount": "$58M",
-        "money": true
-      },
-      {
-        "slug": "iraq",
-        "name": "Iraq",
-        "n": 2,
-        "url": "https://perfectnations.com/blueprints/iraq/",
-        "top": "Road connectivity and job creation",
-        "amount": "$900M",
-        "money": true
-      },
-      {
-        "slug": "mauritania",
-        "name": "Mauritania",
-        "n": 2,
-        "url": "https://perfectnations.com/blueprints/mauritania/",
-        "top": "Extended Credit Facility and Extended Fund Facility, 2026",
-        "amount": "$95.8M",
         "money": true
       },
       {
@@ -3002,28 +3051,10 @@
         "top": "Agrivoltaic plant, Santa Maria di Galeria",
         "amount": "",
         "money": false
-      },
-      {
-        "slug": "united-kingdom",
-        "name": "United Kingdom",
-        "n": 1,
-        "url": "https://perfectnations.com/blueprints/united-kingdom/",
-        "top": "Gilt financing remit, 2026-27",
-        "amount": "£250.6bn",
-        "money": true
-      },
-      {
-        "slug": "vanuatu",
-        "name": "Vanuatu",
-        "n": 1,
-        "url": "https://perfectnations.com/blueprints/vanuatu/",
-        "top": "Climate Resilient Transport Project, additional financing II",
-        "amount": "$30M",
-        "money": true
       }
     ],
     "note": "Counts, never sums: the amounts are in many currencies. Every line is dated and sourced on its blueprint.",
-    "as_of": "2026-11-21T23:01Z"
+    "as_of": "2026-11-24T18:35Z"
   },
   "funders": {
     "eyebrow": "Who finances the Living Line",

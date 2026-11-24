@@ -1,5 +1,5 @@
 <!-- ===========================================================================
-PERFECT NATIONS - HOMEPAGE - THE WHOLE PAGE IN ONE FILE - v13.1 - 2026-11-21
+PERFECT NATIONS - HOMEPAGE - THE WHOLE PAGE IN ONE FILE - v13.2 - 2026-11-24
 Paste this file ONCE into ONE Elementor Custom HTML widget on the homepage (page 13465), in a Full
 Width container with padding 0, and delete every other widget on the page. From then on the Perfect
 Nations Live Pages plugin serves pages/home.html from GitHub in place of the paste (root id pn-home,
@@ -4310,9 +4310,159 @@ Ground: laterite (red earth). Photographs at full colour, no veil; text sits on 
 })();
 </script>
 <div class="pn-rule" aria-hidden="true"></div>
+<!-- ======== part: pages/home-now-possible.html ======== -->
+<!-- ===========================================================================
+PERFECT NATIONS - HOMEPAGE - SECTION 02b - NOW POSSIBLE - v1.0 - 2026-11-24
+v1.0 (homepage v13.2; Preeti Sinha, President and CEO, 24 Nov 2026: technology can now make possible the solutions to
+development challenges that were not feasible before):
+one slim Earthrise band before Solutions for Nations. The headline names innovative finance first and AI second;
+the vision line (class pn-vision, the one place the site's checks allow the long-term word) looks ahead; three
+cards show a deal that was out of reach and is now possible, each led by its instrument (the finance), with one
+sourced figure. Gold only for the button. The Solutions say AI, what exists today; the vision line says where it is
+heading.
+Sources (each opened 24 Nov 2026):
+  01 Togo: Aiken, Bellue, Karlan, Udry and Blumenstock, "Machine learning and phone data can improve targeting of
+     humanitarian aid", Nature 603, 864-870 (2022): "Relative to the geographic targeting options considered by the
+     Government of Togo, the machine-learning approach reduces errors of exclusion by 4-21%."
+     https://doi.org/10.1038/s41586-022-04484-9
+  02 India: Government of India, Ministry of Agriculture and Farmers Welfare (PIB), 12 Sep 2025: AI-based monsoon
+     forecasts sent by SMS to nearly 3.8 crore (38 million) farmers in 13 states, up to four weeks ahead of the rain.
+     https://www.pib.gov.in/PressReleasePage.aspx?PRID=2166074
+  03 Nigeria: World Bank, "From Chalkboards to Chatbots", Policy Research Working Paper 11125 (2025): six weeks of AI
+     tutoring with teacher guidance in Edo State gave gains equal to 1.5 to 2 years of typical schooling.
+     https://openknowledge.worldbank.org/entities/publication/15e1ff08-15ae-4f7a-b2a8-d146e6c113ee
+Part of the one-file homepage (pages/home.html, built by tools/build_home.py). Root id pn-now.
+=========================================================================== -->
+<style>
+#pn-now{
+  --er:#0B3D45; --er2:#0F4C5C; --er3:#082A30;
+  --iv:#F5F1E8; --ivm:rgba(245,241,232,.84); --ivd:rgba(245,241,232,.64); --hair:rgba(245,241,232,.16);
+  --g:#E3C258; --onacc:#1A140C;
+  --hd:var(--pn-font-heading,"Barlow Condensed","Arial Narrow",Arial,sans-serif);
+  --bd:var(--pn-font-body,"Barlow Semi Condensed",Arial,sans-serif);
+  position:relative; isolation:isolate;
+  width:100vw; margin-left:calc(50% - 50vw);
+  overflow-x:hidden; overflow-x:clip;
+  padding:clamp(22px,3.6vh,40px) 0 clamp(20px,3.4vh,36px);
+  box-sizing:border-box; color:var(--iv); font-family:var(--bd); line-height:1.45;
+  scroll-margin-top:var(--pn-head-off,72px);
+  background:radial-gradient(120% 150% at 88% 0%,#0F4C5C 0%,#0B3D45 48%,#082A30 100%);
+}
+#pn-now *,#pn-now *::before,#pn-now *::after{ box-sizing:border-box; }
+.elementor-widget-html:has(#pn-now),
+.elementor-widget:has(#pn-now),
+.e-con-inner:has(#pn-now),
+.e-con:has(#pn-now){
+  padding-top:0 !important; padding-bottom:0 !important;
+  --widgets-spacing:0px !important; row-gap:0 !important;
+}
+#pn-now h2,#pn-now h3,#pn-now p,#pn-now li{ text-shadow:none !important; }
+#pn-now .pnnp-in{ width:100%; max-width:1480px; margin:0 auto; padding:0 clamp(18px,5vw,72px); }
+
+/* the head: eyebrow, the headline, the vision line */
+#pn-now .pnnp-head{ display:grid; grid-template-columns:minmax(0,1.1fr) minmax(0,1fr); gap:10px clamp(24px,4vw,64px); align-items:end; }
+#pn-now .pnnp-eb{
+  display:flex; align-items:center; gap:12px; margin:0;
+  font-family:var(--hd); font-size:.72rem; font-weight:700; letter-spacing:.3em; text-transform:uppercase; color:var(--ivd);
+}
+#pn-now .pnnp-eb::before{ content:""; width:26px; height:1px; background:rgba(245,241,232,.45); }
+#pn-now h2.pnnp-h2{
+  margin:8px 0 0; font-family:var(--hd); font-weight:600; text-transform:none;
+  font-size:clamp(2rem,3.6vw,3.3rem); line-height:.95; letter-spacing:-.025em; color:var(--iv) !important;
+}
+#pn-now h2.pnnp-h2 span{ display:block; color:rgba(245,241,232,.7); }
+#pn-now .pnnp-vision{ margin:0; max-width:54ch; font-size:clamp(.98rem,1.15vw,1.08rem); line-height:1.5; color:var(--ivm); text-wrap:pretty; }
+#pn-now .pnnp-vision b{ font-weight:600; color:var(--iv); }
+
+/* the three cards: then, now, the figure */
+#pn-now .pnnp-cards{ display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:14px; margin:20px 0 0; padding:0; list-style:none; }
+#pn-now .pnnp-c{
+  display:flex; flex-direction:column; gap:8px; margin:0; padding:16px 18px 14px;
+  border:1px solid var(--hair); border-radius:14px; background:rgba(245,241,232,.05);
+}
+#pn-now .pnnp-k{ display:flex; align-items:baseline; gap:10px; margin:0; font-family:var(--hd); font-size:.68rem; font-weight:700; letter-spacing:.2em; text-transform:uppercase; color:var(--ivd); }
+#pn-now .pnnp-k b{ font-weight:700; color:var(--iv); letter-spacing:.16em; }
+#pn-now .pnnp-row{ display:grid; grid-template-columns:3.4em minmax(0,1fr); gap:8px; margin:0; font-size:.9rem; line-height:1.4; }
+#pn-now .pnnp-row > span{ padding-top:2px; font-family:var(--hd); font-size:.64rem; font-weight:700; letter-spacing:.18em; text-transform:uppercase; }
+#pn-now .pnnp-then{ color:var(--ivd); }
+#pn-now .pnnp-then > span{ color:rgba(245,241,232,.5); }
+#pn-now .pnnp-now{ color:var(--iv); }
+#pn-now .pnnp-now > span{ color:#6EC8C4; }
+#pn-now .pnnp-f{ display:flex; align-items:baseline; flex-wrap:wrap; gap:2px 10px; margin:auto 0 0; padding-top:10px; border-top:1px solid var(--hair); }
+#pn-now .pnnp-f b{ font-family:var(--hd); font-weight:600; font-size:clamp(1.9rem,2.3vw,2.3rem); line-height:.95; letter-spacing:-.02em; color:var(--iv); white-space:nowrap; font-variant-numeric:tabular-nums; }
+#pn-now .pnnp-f span{ flex:1 1 16ch; min-width:0; font-size:.82rem; line-height:1.3; color:var(--ivd); }
+#pn-now .pnnp-src{ margin:0; font-size:.76rem; }
+#pn-now .pnnp-src a{ color:var(--ivd); text-decoration:underline; text-underline-offset:2px; }
+#pn-now .pnnp-src a:hover,#pn-now .pnnp-src a:focus-visible{ color:var(--iv); }
+
+/* the action */
+#pn-now .pnnp-ft{ display:flex; flex-wrap:wrap; align-items:center; gap:10px 18px; margin:18px 0 0; }
+#pn-now .pnnp-btn{
+  display:inline-flex; align-items:center; justify-content:center; min-height:44px; padding:0 20px;
+  border-radius:999px; background:var(--g); color:var(--onacc); text-decoration:none;
+  font-family:var(--hd); font-size:.74rem; font-weight:700; letter-spacing:.19em; text-transform:uppercase;
+}
+#pn-now .pnnp-btn:hover,#pn-now .pnnp-btn:focus-visible{ background:#EDD27C; color:var(--onacc); }
+#pn-now .pnnp-note{ margin:0; font-size:.84rem; color:var(--ivd); }
+
+@media (max-width:900px){
+  #pn-now .pnnp-head{ grid-template-columns:1fr; }
+}
+@media (max-width:640px){
+  #pn-now .pnnp-cards{
+    grid-template-columns:none; grid-auto-flow:column; grid-auto-columns:86%; gap:10px;
+    overflow-x:auto; scroll-snap-type:x mandatory; scroll-padding-left:clamp(18px,5vw,72px); scrollbar-width:none;
+    margin:16px calc(-1 * clamp(18px,5vw,72px)) 0; padding:2px clamp(18px,5vw,72px) 6px;
+  }
+  #pn-now .pnnp-cards::-webkit-scrollbar{ display:none; }
+  #pn-now .pnnp-c{ scroll-snap-align:start; padding:14px 15px 12px; }
+  #pn-now .pnnp-btn{ width:100%; }
+}
+</style>
+
+<section id="pn-now" aria-labelledby="pnnp-h">
+  <div class="pnnp-in">
+    <div class="pnnp-head">
+      <div>
+        <p class="pnnp-eb">Now possible</p>
+        <h2 class="pnnp-h2" id="pnnp-h">Innovative finance funds it. <span>AI makes it possible.</span></h2>
+      </div>
+      <p class="pnnp-vision pn-vision"><b>Built for the age of super intelligence.</b> AI can now find the citizen, forecast the season and prove the result, so finance reaches people it could not reach before.</p>
+    </div>
+    <ul class="pnnp-cards">
+      <li class="pnnp-c">
+        <p class="pnnp-k"><span>01</span><b>Cash transfers</b></p>
+        <p class="pnnp-row pnnp-then"><span>Then</span>Without a social registry, a government could not find its poorest citizens.</p>
+        <p class="pnnp-row pnnp-now"><span>Now</span>In Togo, machine learning read satellite images and phone data to send cash to the poorest first.</p>
+        <p class="pnnp-f"><b>4&#8211;21%</b><span>fewer of the poorest left out than with targeting by region</span></p>
+        <p class="pnnp-src"><a href="https://doi.org/10.1038/s41586-022-04484-9" target="_blank" rel="noopener noreferrer">Source: Nature, 2022</a></p>
+      </li>
+      <li class="pnnp-c">
+        <p class="pnnp-k"><span>02</span><b>Parametric insurance</b></p>
+        <p class="pnnp-row pnnp-then"><span>Then</span>Long-range forecasts needed costly supercomputers and rarely reached a farmer in time.</p>
+        <p class="pnnp-row pnnp-now"><span>Now</span>India sent AI forecasts of the monsoon to farmers by text message, up to four weeks ahead of the rain.</p>
+        <p class="pnnp-f"><b>38m</b><span>farmers reached in 2025</span></p>
+        <p class="pnnp-src"><a href="https://www.pib.gov.in/PressReleasePage.aspx?PRID=2166074" target="_blank" rel="noopener noreferrer">Source: Government of India, 2025</a></p>
+      </li>
+      <li class="pnnp-c">
+        <p class="pnnp-k"><span>03</span><b>Learning bonds</b></p>
+        <p class="pnnp-row pnnp-then"><span>Then</span>A personal tutor for every child was beyond any public budget.</p>
+        <p class="pnnp-row pnnp-now"><span>Now</span>In Edo, Nigeria, students learned after school with an AI tutor, guided by their teachers.</p>
+        <p class="pnnp-f"><b>1.5&#8211;2 yrs</b><span>of typical schooling gained in six weeks</span></p>
+        <p class="pnnp-src"><a href="https://openknowledge.worldbank.org/entities/publication/15e1ff08-15ae-4f7a-b2a8-d146e6c113ee" target="_blank" rel="noopener noreferrer">Source: World Bank, 2025</a></p>
+      </li>
+    </ul>
+    <div class="pnnp-ft">
+      <a class="pnnp-btn" href="https://perfectnations.com/state-of-nations/">See it in every Solution</a>
+      <p class="pnnp-note">Good governance first. Then innovative finance. Then AI that proves every result.</p>
+    </div>
+  </div>
+</section>
 <!-- ======== part: pages/home-solutions.html ======== -->
 <!-- ===========================================================================
-PERFECT NATIONS - HOMEPAGE - SECTION 03 - SOLUTIONS FOR NATIONS (STATE OF NATIONS) - v2.1 LIGHT - 2026-11-16
+PERFECT NATIONS - HOMEPAGE - SECTION 03 - SOLUTIONS FOR NATIONS (STATE OF NATIONS) - v2.2 LIGHT - 2026-11-24
+v2.2 (24 Nov 2026): Now possible with AI. Each card adds one line after What Perfect Nations advises: what AI makes
+possible for that Solution (the field "ai"; Preeti Sinha, President and CEO). Innovative finance stays first.
 v2.1 (16 Nov 2026): the advice on each card loses its closing technology sentence, and the live script drops such a
 sentence if the data carries it later (the President and CEO, 16 Nov 2026).
 v2.0 (homepage v11.6): light. An ivory ground and white cards with ink type; Earthrise for the headline, the numbers
@@ -4448,6 +4598,7 @@ fewer than three valid Solutions, keeps the cards written here.
 }
 #pn-solutions .pnso-x dt::before{ content:""; display:inline-block; width:6px; height:6px; margin:0 7px 1px 0; border-radius:50%; border:1px solid rgba(245,241,232,.7); vertical-align:middle; }
 #pn-solutions .pnso-x > div:nth-child(2) dt::before{ background:#6EC8C4; border-color:#6EC8C4; }
+#pn-solutions .pnso-x > div.pnso-ai dt::before{ background:#F5F1E8; border-color:#F5F1E8; }
 #pn-solutions .pnso-x dd{ display:inline; margin:0; font-size:.88rem; line-height:1.4; color:var(--tm); }
 #pn-solutions .pnso-sf{ margin:12px 0 0; font-size:.92rem; line-height:1.45; color:var(--tm); }
 #pn-solutions .pnso-i{ margin:10px 0 0; max-width:40ch; font-size:1.05rem; line-height:1.4; color:var(--iv); }
@@ -4641,19 +4792,19 @@ fewer than three valid Solutions, keeps the cards written here.
         <h2 class="pnso-h2" id="pnso-h"><span>Solutions</span> <span>for Nations</span></h2>
       </div>
       <div>
-        <p class="pnso-lead">A Solution designed by Perfect Nations for every nation, to end extreme poverty: the challenge, and <b>what Perfect Nations advises</b>.</p>
+        <p class="pnso-lead">A Solution designed by Perfect Nations for every nation, to end extreme poverty: the challenge, <b>what Perfect Nations advises</b>, and what AI now makes possible.</p>
         <p class="pnso-stat"><span class="pnso-pulse" aria-hidden="true"></span><span><b data-k="count"><!-- GENERATED:SOLUTIONS-COUNT -->52<!-- /GENERATED:SOLUTIONS-COUNT --></b> Solutions published</span><span>Latest <!-- GENERATED:SOLUTIONS-LATEST --><time data-k="latest" datetime="2026-11-16">16 November 2026</time><!-- /GENERATED:SOLUTIONS-LATEST --></span></p>
       </div>
     </div>
 
     <ol class="pnso-grid" aria-label="The latest Solutions, newest first">
 <!-- GENERATED:SOLUTIONS (from data/state-of-nations.json by tools/build_home.py; do not edit here) -->
-<li class="pnso-c pnso-c--lead" data-no="53" style="--i:0"><span class="pnso-wm" aria-hidden="true">53</span><div class="pnso-l"><p class="pnso-k"><b class="pnso-n">Portugal</b><span>Solution No. 53</span><time datetime="2026-11-16">16 Nov 2026</time></p><h3 class="pnso-t"><a href="https://perfectnations.com/state-of-nations/#solution-53">The People&#8217;s Jobs Certificate</a></h3><p class="pnso-f"><b>~1.8m</b><span>people in Portugal live below the national poverty line</span></p><p class="pnso-i">Portuguese families already trust their state with their savings. A new certificate can turn those savings into jobs where poverty runs deepest.</p><ul class="pnso-std" aria-label="The basic standards of living it serves"><li>Livelihood</li></ul></div><dl class="pnso-x"><div><dt>The challenge</dt><dd>16.4% of people in Portugal, about 1.8 million, live below the national poverty line: of the seven standards, livelihood is the furthest from reach.</dd></div><div><dt>What Perfect Nations advises</dt><dd>Portugal should open a new series of its savings certificates whose proceeds are kept apart for work: guarantees through Banco Portugu&#234;s de Fomento for small firms that hire and train in the towns where poverty runs deepest, and training that moves workers on low wages into better jobs. Families keep the safe return they already trust, and their savings build livelihoods in their own regions.</dd></div></dl><p class="pnso-ft"><a class="pnso-src" href="https://data.worldbank.org/indicator/SI.POV.NAHC?locations=PT" target="_blank" rel="noopener noreferrer">Source: World Bank</a><span class="pnso-go" aria-hidden="true">Read the Solution</span></p></li>
-<li class="pnso-c" data-no="51" style="--i:1"><span class="pnso-wm" aria-hidden="true">51</span><div class="pnso-l"><p class="pnso-k"><b class="pnso-n">United States</b><span>Solution No. 51</span><time datetime="2026-11-16">16 Nov 2026</time></p><h3 class="pnso-t"><a href="https://perfectnations.com/state-of-nations/#solution-51">The American Table Fund</a></h3><p class="pnso-f"><b>13.7%</b><span>of American households were food insecure at times in 2024</span></p></div><dl class="pnso-x"><div><dt>The challenge</dt><dd>The harvest is not the problem: 13.7% of American households went short of food at times in 2024 for lack of money or other resources. Since 1 October 2026 the states also carry 75% of the cost of running SNAP, the national food benefit.</dd></div><div><dt>What Perfect Nations advises</dt><dd>The United States should seed a fresh food fund in every state, with state money taking the first loss and community lenders multiplying it with bank capital and New Markets Tax Credits. The fund finances grocers, food banks and the cold chains that carry food from American farms to the counties where families go short, while grocers and health plans match every SNAP dollar a family spends on fruit and vegetables, so the money a family has buys more fresh food.</dd></div></dl><p class="pnso-ft"><a class="pnso-src" href="https://ers.usda.gov/sites/default/files/_laserfiche/publications/113623/ERR-358_Summary.pdf?v=61636" target="_blank" rel="noopener noreferrer">Source: USDA Economic Research Service</a><span class="pnso-go" aria-hidden="true">Read the Solution</span></p></li>
-<li class="pnso-c" data-no="50" style="--i:2"><span class="pnso-wm" aria-hidden="true">50</span><div class="pnso-l"><p class="pnso-k"><b class="pnso-n">Nigeria</b><span>Solution No. 50</span><time datetime="2026-11-12">12 Nov 2026</time></p><h3 class="pnso-t"><a href="https://perfectnations.com/state-of-nations/#solution-50">The Solar Market Bond</a></h3><p class="pnso-f"><b>83.5%</b><span>of the electricity a Nigerian needs is missing</span></p></div><dl class="pnso-x"><div><dt>The challenge</dt><dd>Nigerians use about 165 kWh of electricity a person a year, against the Living Line of 1,000: 83.5% of the electricity a person needs is missing.</dd></div><div><dt>What Perfect Nations advises</dt><dd>Nigeria should dedicate its next sovereign green bond to solar mini-grids and storage for markets, clinics and homes, with private developers matching each connection and the states that open their own electricity markets served first.</dd></div></dl><p class="pnso-ft"><a class="pnso-src" href="https://ember-energy.org/data/yearly-electricity-data/" target="_blank" rel="noopener noreferrer">Source: Ember</a><span class="pnso-go" aria-hidden="true">Read the Solution</span></p></li>
-<li class="pnso-c" data-no="49" style="--i:3"><span class="pnso-wm" aria-hidden="true">49</span><div class="pnso-l"><p class="pnso-k"><b class="pnso-n">Palestine</b><span>Solution No. 49</span><time datetime="2026-11-12">12 Nov 2026</time></p><h3 class="pnso-t"><a href="https://perfectnations.com/state-of-nations/#solution-49">Sunlight for Gaza</a></h3><p class="pnso-f"><b>38.3%</b><span>of Palestinians live in Gaza, where the grid has been down since October 2023</span></p></div><dl class="pnso-x"><div><dt>The challenge</dt><dd>Of all Palestinians, 38.3% live in Gaza, where the electricity grid has been down since October 2023.</dd></div><div><dt>What Perfect Nations advises</dt><dd>Palestine should open a light fund, published in full, through which Palestinians abroad and development partners finance solar power and storage for Gaza&#8217;s hospitals, water plants, schools and homes, beginning where the need is greatest.</dd></div></dl><p class="pnso-ft"><a class="pnso-src" href="https://www.ochaopt.org/content/humanitarian-situation-report-6-march-2026" target="_blank" rel="noopener noreferrer">Source: OCHA and PCBS</a><span class="pnso-go" aria-hidden="true">Read the Solution</span></p></li>
-<li class="pnso-c" data-no="48" style="--i:4"><span class="pnso-wm" aria-hidden="true">48</span><div class="pnso-l"><p class="pnso-k"><b class="pnso-n">Iraq</b><span>Solution No. 48</span><time datetime="2026-11-12">12 Nov 2026</time></p><h3 class="pnso-t"><a href="https://perfectnations.com/state-of-nations/#solution-48">Flares to Power</a></h3><p class="pnso-f"><b>55.3%</b><span>of the electricity Iraq needs is not supplied</span></p></div><dl class="pnso-x"><div><dt>The challenge</dt><dd>Iraq&#8217;s grid produced 24,600 MW in September 2026, against at least 55,000 MW needed for power around the clock: 55.3% of the electricity Iraq needs is not supplied.</dd></div><div><dt>What Perfect Nations advises</dt><dd>Iraq should finance the capture of the gas now burned at its oil fields and turn it into power, through project finance repaid from the electricity sold, with solar plants built on the same sites.</dd></div></dl><p class="pnso-ft"><a class="pnso-src" href="https://www.iraqinews.com/iraq/iraqs-electricity-shortage-surpasses-35000-megawatts/" target="_blank" rel="noopener noreferrer">Source: Ministry of Electricity</a><span class="pnso-go" aria-hidden="true">Read the Solution</span></p></li>
-<li class="pnso-c" data-no="47" style="--i:5"><span class="pnso-wm" aria-hidden="true">47</span><div class="pnso-l"><p class="pnso-k"><b class="pnso-n">Cuba</b><span>Solution No. 47</span><time datetime="2026-11-12">12 Nov 2026</time></p><h3 class="pnso-t"><a href="https://perfectnations.com/state-of-nations/#solution-47">The Medicine Conversion</a></h3><p class="pnso-f"><b>70%</b><span>of the basic list of medicines is not available to Cubans</span></p></div><dl class="pnso-x"><div><dt>The challenge</dt><dd>Only 30% of the basic list of medicines is available to Cubans, the President of Cuba said in August 2026: 70% is not.</dd></div><div><dt>What Perfect Nations advises</dt><dd>Cuba should ask its official creditors to convert part of what it owes into a medicine fund, building on the counterpart fund it already runs with France, with every purchase audited and published.</dd></div></dl><p class="pnso-ft"><a class="pnso-src" href="https://communistparty.ie/en/2026/08/it-is-not-enough-to-condemn-the-empire-we-must-build-popular-power-at-the-grassroots-level-win-the-streets/" target="_blank" rel="noopener noreferrer">Source: President of Cuba</a><span class="pnso-go" aria-hidden="true">Read the Solution</span></p></li>
+<li class="pnso-c pnso-c--lead" data-no="53" style="--i:0"><span class="pnso-wm" aria-hidden="true">53</span><div class="pnso-l"><p class="pnso-k"><b class="pnso-n">Portugal</b><span>Solution No. 53</span><time datetime="2026-11-16">16 Nov 2026</time></p><h3 class="pnso-t"><a href="https://perfectnations.com/state-of-nations/#solution-53">The People&#8217;s Jobs Certificate</a></h3><p class="pnso-f"><b>~1.8m</b><span>people in Portugal live below the national poverty line</span></p><p class="pnso-i">Portuguese families already trust their state with their savings. A new certificate can turn those savings into jobs where poverty runs deepest.</p><ul class="pnso-std" aria-label="The basic standards of living it serves"><li>Livelihood</li></ul></div><dl class="pnso-x"><div><dt>The challenge</dt><dd>16.4% of people in Portugal, about 1.8 million, live below the national poverty line: of the seven standards, livelihood is the furthest from reach.</dd></div><div><dt>What Perfect Nations advises</dt><dd>Portugal should open a new series of its savings certificates whose proceeds are kept apart for work: guarantees through Banco Portugu&#234;s de Fomento for small firms that hire and train in the towns where poverty runs deepest, and training that moves workers on low wages into better jobs. Families keep the safe return they already trust, and their savings build livelihoods in their own regions.</dd></div><div class="pnso-ai"><dt>Now possible with AI</dt><dd>AI matches the small firms that hire with the workers who need better jobs and counts the jobs each guarantee creates, so savers see the work they finance.</dd></div></dl><p class="pnso-ft"><a class="pnso-src" href="https://data.worldbank.org/indicator/SI.POV.NAHC?locations=PT" target="_blank" rel="noopener noreferrer">Source: World Bank</a><span class="pnso-go" aria-hidden="true">Read the Solution</span></p></li>
+<li class="pnso-c" data-no="51" style="--i:1"><span class="pnso-wm" aria-hidden="true">51</span><div class="pnso-l"><p class="pnso-k"><b class="pnso-n">United States</b><span>Solution No. 51</span><time datetime="2026-11-16">16 Nov 2026</time></p><h3 class="pnso-t"><a href="https://perfectnations.com/state-of-nations/#solution-51">The American Table Fund</a></h3><p class="pnso-f"><b>13.7%</b><span>of American households were food insecure at times in 2024</span></p></div><dl class="pnso-x"><div><dt>The challenge</dt><dd>The harvest is not the problem: 13.7% of American households went short of food at times in 2024 for lack of money or other resources. Since 1 October 2026 the states also carry 75% of the cost of running SNAP, the national food benefit.</dd></div><div><dt>What Perfect Nations advises</dt><dd>The United States should seed a fresh food fund in every state, with state money taking the first loss and community lenders multiplying it with bank capital and New Markets Tax Credits. The fund finances grocers, food banks and the cold chains that carry food from American farms to the counties where families go short, while grocers and health plans match every SNAP dollar a family spends on fruit and vegetables, so the money a family has buys more fresh food.</dd></div><div class="pnso-ai"><dt>Now possible with AI</dt><dd>AI maps the counties where families go short of fresh food, down to the neighbourhood, so each state fund places grocers and cold chains where they matter most.</dd></div></dl><p class="pnso-ft"><a class="pnso-src" href="https://ers.usda.gov/sites/default/files/_laserfiche/publications/113623/ERR-358_Summary.pdf?v=61636" target="_blank" rel="noopener noreferrer">Source: USDA Economic Research Service</a><span class="pnso-go" aria-hidden="true">Read the Solution</span></p></li>
+<li class="pnso-c" data-no="50" style="--i:2"><span class="pnso-wm" aria-hidden="true">50</span><div class="pnso-l"><p class="pnso-k"><b class="pnso-n">Nigeria</b><span>Solution No. 50</span><time datetime="2026-11-12">12 Nov 2026</time></p><h3 class="pnso-t"><a href="https://perfectnations.com/state-of-nations/#solution-50">The Solar Market Bond</a></h3><p class="pnso-f"><b>83.5%</b><span>of the electricity a Nigerian needs is missing</span></p></div><dl class="pnso-x"><div><dt>The challenge</dt><dd>Nigerians use about 165 kWh of electricity a person a year, against the Living Line of 1,000: 83.5% of the electricity a person needs is missing.</dd></div><div><dt>What Perfect Nations advises</dt><dd>Nigeria should dedicate its next sovereign green bond to solar mini-grids and storage for markets, clinics and homes, with private developers matching each connection and the states that open their own electricity markets served first.</dd></div><div class="pnso-ai"><dt>Now possible with AI</dt><dd>AI maps the markets, clinics and homes without power from satellite images, so the bond finances the mini-grids that reach the most people first.</dd></div></dl><p class="pnso-ft"><a class="pnso-src" href="https://ember-energy.org/data/yearly-electricity-data/" target="_blank" rel="noopener noreferrer">Source: Ember</a><span class="pnso-go" aria-hidden="true">Read the Solution</span></p></li>
+<li class="pnso-c" data-no="49" style="--i:3"><span class="pnso-wm" aria-hidden="true">49</span><div class="pnso-l"><p class="pnso-k"><b class="pnso-n">Palestine</b><span>Solution No. 49</span><time datetime="2026-11-12">12 Nov 2026</time></p><h3 class="pnso-t"><a href="https://perfectnations.com/state-of-nations/#solution-49">Sunlight for Gaza</a></h3><p class="pnso-f"><b>38.3%</b><span>of Palestinians live in Gaza, where the grid has been down since October 2023</span></p></div><dl class="pnso-x"><div><dt>The challenge</dt><dd>Of all Palestinians, 38.3% live in Gaza, where the electricity grid has been down since October 2023.</dd></div><div><dt>What Perfect Nations advises</dt><dd>Palestine should open a light fund, published in full, through which Palestinians abroad and development partners finance solar power and storage for Gaza&#8217;s hospitals, water plants, schools and homes, beginning where the need is greatest.</dd></div><div class="pnso-ai"><dt>Now possible with AI</dt><dd>AI maps where the need for power is greatest and tracks each system installed, so the fund can publish what every contribution delivers.</dd></div></dl><p class="pnso-ft"><a class="pnso-src" href="https://www.ochaopt.org/content/humanitarian-situation-report-6-march-2026" target="_blank" rel="noopener noreferrer">Source: OCHA and PCBS</a><span class="pnso-go" aria-hidden="true">Read the Solution</span></p></li>
+<li class="pnso-c" data-no="48" style="--i:4"><span class="pnso-wm" aria-hidden="true">48</span><div class="pnso-l"><p class="pnso-k"><b class="pnso-n">Iraq</b><span>Solution No. 48</span><time datetime="2026-11-12">12 Nov 2026</time></p><h3 class="pnso-t"><a href="https://perfectnations.com/state-of-nations/#solution-48">Flares to Power</a></h3><p class="pnso-f"><b>55.3%</b><span>of the electricity Iraq needs is not supplied</span></p></div><dl class="pnso-x"><div><dt>The challenge</dt><dd>Iraq&#8217;s grid produced 24,600 MW in September 2026, against at least 55,000 MW needed for power around the clock: 55.3% of the electricity Iraq needs is not supplied.</dd></div><div><dt>What Perfect Nations advises</dt><dd>Iraq should finance the capture of the gas now burned at its oil fields and turn it into power, through project finance repaid from the electricity sold, with solar plants built on the same sites.</dd></div><div class="pnso-ai"><dt>Now possible with AI</dt><dd>AI reads satellite data to find and measure every flare, so investors know how much gas each site can turn into power.</dd></div></dl><p class="pnso-ft"><a class="pnso-src" href="https://www.iraqinews.com/iraq/iraqs-electricity-shortage-surpasses-35000-megawatts/" target="_blank" rel="noopener noreferrer">Source: Ministry of Electricity</a><span class="pnso-go" aria-hidden="true">Read the Solution</span></p></li>
+<li class="pnso-c" data-no="47" style="--i:5"><span class="pnso-wm" aria-hidden="true">47</span><div class="pnso-l"><p class="pnso-k"><b class="pnso-n">Cuba</b><span>Solution No. 47</span><time datetime="2026-11-12">12 Nov 2026</time></p><h3 class="pnso-t"><a href="https://perfectnations.com/state-of-nations/#solution-47">The Medicine Conversion</a></h3><p class="pnso-f"><b>70%</b><span>of the basic list of medicines is not available to Cubans</span></p></div><dl class="pnso-x"><div><dt>The challenge</dt><dd>Only 30% of the basic list of medicines is available to Cubans, the President of Cuba said in August 2026: 70% is not.</dd></div><div><dt>What Perfect Nations advises</dt><dd>Cuba should ask its official creditors to convert part of what it owes into a medicine fund, building on the counterpart fund it already runs with France, with every purchase audited and published.</dd></div><div class="pnso-ai"><dt>Now possible with AI</dt><dd>AI audits every medicine purchase against prices and deliveries, so creditors can see each converted dollar reach a pharmacy shelf.</dd></div></dl><p class="pnso-ft"><a class="pnso-src" href="https://communistparty.ie/en/2026/08/it-is-not-enough-to-condemn-the-empire-we-must-build-popular-power-at-the-grassroots-level-win-the-streets/" target="_blank" rel="noopener noreferrer">Source: President of Cuba</a><span class="pnso-go" aria-hidden="true">Read the Solution</span></p></li>
 <!-- /GENERATED:SOLUTIONS -->
     </ol>
     <div class="pnso-dots" aria-hidden="true"></div>
@@ -4790,11 +4941,12 @@ fewer than three valid Solutions, keeps the cards written here.
       }
     }
     li.appendChild(l);
-    var c = txt(s.challenge, 360), adv = txt(s.advises, 520);
+    var c = txt(s.challenge, 360), adv = txt(s.advises, 520), ai = txt(s.ai, 220);
     if (c && adv) {
       var dl = el('dl', 'pnso-x');
-      [['The challenge', c], ['What Perfect Nations advises', adv]].forEach(function(r){
-        var d = el('div'); d.appendChild(el('dt', '', r[0])); d.appendChild(el('dd', '', r[1])); dl.appendChild(d);
+      [['The challenge', c], ['What Perfect Nations advises', adv], ['Now possible with AI', ai, 'pnso-ai']].forEach(function(r){
+        if (!r[1]) { return; }
+        var d = el('div', r[2] || ''); d.appendChild(el('dt', '', r[0])); d.appendChild(el('dd', '', r[1])); dl.appendChild(d);
       });
       li.appendChild(dl);
     } else if (txt(s.standfirst, 400)) {
@@ -4837,7 +4989,11 @@ fewer than three valid Solutions, keeps the cards written here.
 <div class="pn-rule" aria-hidden="true"></div>
 <!-- ======== part: pages/home-governance.html ======== -->
 <!-- ===========================================================================
-PERFECT NATIONS - HOMEPAGE - GOVERNANCE FIRST AND THE PERFECT NATIONS CUP - v1.3 - 2026-11-16
+PERFECT NATIONS - HOMEPAGE - GOVERNANCE FIRST AND THE PERFECT NATIONS CUP - v1.4 - 2026-11-24
+v1.4 (the President and CEO, 24 Nov 2026: AI back in Perfect Nations, after the finance): the lead reads "Even before
+finance and AI"; the order of the work adds 04 AI that proves every result; the Cup's second test reads "Tracked by AI to
+every beneficiary", as the Cup was first defined (10 Nov 2026: instruments led by good governance that track the impact
+on the beneficiaries with technology).
 v1.3 (the President and CEO, 16 Nov 2026): no technology line. The lead reads "Even before finance"; the order of
 the work is 01 Good governance, 02 Great local leadership, 03 Innovative financing for development; the Cup's second
 test reads "Tracked to every beneficiary, with the impact measured and published".
@@ -4978,12 +5134,13 @@ Part of the one-file homepage (pages/home.html, built by tools/build_home.py). R
     <div class="pngv-say">
       <p class="pngv-eb">Governance first</p>
       <h2 class="pngv-h2" id="pngv-h">Good governance comes first.</h2>
-      <p class="pngv-lead">Even before finance. Where no money is lost to corruption, every dollar can reach a citizen.</p>
+      <p class="pngv-lead">Even before finance and AI. Where no money is lost to corruption, every dollar can reach a citizen.</p>
       <p class="pngv-lead2"><b>With great local leadership:</b> honest, dedicated and committed to basic standards of living for every citizen.</p>
       <ol class="pngv-seq" aria-label="The order of the work">
         <li><span>01</span>Good governance</li>
         <li><span>02</span>Great local leadership</li>
         <li><span>03</span>Innovative financing for development</li>
+        <li><span>04</span>AI that proves every result</li>
       </ol>
       <p class="pngv-fig">The IMF estimates that bribery alone costs <b>$1.5 to $2 trillion</b> a year, about 2&#37; of world output.
         <span class="pngv-src">Source: <a href="https://www.imf.org/external/pubs/ft/sdn/2016/sdn1605.pdf" title="IMF, Corruption: Costs and Mitigating Strategies, Staff Discussion Note 16/05, May 2016">IMF Staff Discussion Note 16/05, May 2016</a></span></p>
@@ -4996,7 +5153,7 @@ Part of the one-file homepage (pages/home.html, built by tools/build_home.py). R
         <p class="pngv-d">Awarded only to financing instruments that pass two tests:</p>
         <ul class="pngv-tests">
           <li><span>01</span><p><b>Led by good governance,</b> with no room for corruption.</p></li>
-          <li><span>02</span><p><b>Tracked to every beneficiary,</b> with the impact measured and published.</p></li>
+          <li><span>02</span><p><b>Tracked by AI to every beneficiary,</b> with the impact measured and published.</p></li>
         </ul>
       </div>
     </div>

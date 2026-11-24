@@ -1,5 +1,13 @@
 #!/usr/bin/env python3
-"""Keep super intelligence and the Stewards off perfectnations.com (Preeti Sinha, President and CEO, 16 Nov 2026).
+"""Keep super intelligence and the Stewards off perfectnations.com, except where the President and CEO places it.
+
+From 24 Nov 2026 (Preeti Sinha, President and CEO: "I would like to bring SI back into Perfect Nations ... SI can make
+the solutions to development challenges possible which were not feasible before."): the Solutions name AI, in the
+field "ai" (Now possible with AI), which this check does not touch; the vision names super intelligence, written in
+full, only inside an element with the class pn-vision (for example "Built for the age of super intelligence"). The
+abbreviation SI stays off the copy, and the advice ("advises") stays the finance alone.
+
+The rule of 16 Nov 2026, which still governs everything else: (Preeti Sinha, President and CEO, 16 Nov 2026).
 One exception, from the evening of 16 Nov 2026: the Nation Steward card above each blueprint's Newswire
 ("Add the SI nations Stewards back in every blueprint above the newswire like it used to be").
 
@@ -141,8 +149,12 @@ def check(paths):
         # the Nation Steward card above a blueprint's Newswire names its Steward, "SI Researcher" (Preeti Sinha,
         # 16 Nov 2026, evening: "Add the SI nations Stewards back in every blueprint above the newswire")
         cards = [(c.start(), c.end()) for c in re.finditer(r'<div class="bpx-stew">.*?</p></div>', src, re.S)]
+        # 24 Nov 2026: the vision line may name super intelligence in full (class pn-vision)
+        vision = [(c.start(), c.end()) for c in re.finditer(r'<(\w+)[^>]*class="[^"]*\bpn-vision\b[^"]*"[^>]*>.*?</\1>', src, re.S)]
         for m in MENTION.finditer(src):
             if any(a <= m.start() < b for a, b in cards):
+                continue
+            if any(a <= m.start() < b for a, b in vision) and re.match(r'(?i)super ?intelligence|superintelligence', m.group(0)):
                 continue
             line = src.count('\n', 0, m.start()) + 1
             text = src[src.rfind('\n', 0, m.start()) + 1:src.find('\n', m.end())]

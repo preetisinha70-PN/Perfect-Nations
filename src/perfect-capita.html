@@ -1,5 +1,7 @@
 <!-- ===========================================================================
-PERFECT NATIONS - PERFECT CAPITA PAGE - v10.3 LIGHT - 2026-11-16
+PERFECT NATIONS - PERFECT CAPITA PAGE - v10.4 LIGHT - 2026-11-24
+v10.4: one line under the four numbers: AI keeps Coverage and the Gap current between national surveys (Preeti Sinha,
+  President and CEO, 24 Nov 2026: AI back in Perfect Nations, after the finance).
 v10.3: the closing line names innovative financing for development alone (the President and CEO, 16 Nov 2026).
 /perfect-capita/ (page 9937). One Elementor Custom HTML widget, Full Width, padding 0, Hide Title.
 Served live from GitHub (pages/perfect-capita.html) by the Perfect Nations Live Pages plugin; the
@@ -170,6 +172,9 @@ only in news reports; when RSSB publishes it, the Rwanda card can move to that n
 
 /* 3. the four numbers (ivory) */
 #pn-pcap .pq-four{ display:grid; gap:10px; margin:clamp(16px,2.6vh,26px) 0 0; padding:0; list-style:none; grid-template-columns:repeat(2,minmax(0,1fr)); }
+/* v10.4: AI keeps Coverage and the Gap current (24 Nov 2026) */
+#pn-pcap .pq-ai{ margin:12px 0 0; padding:2px 0 2px 12px; max-width:72ch; border-left:2px solid #0B3D45; font-size:.92rem; line-height:1.45; color:#34464A; }
+#pn-pcap .pq-ai b{ font-weight:600; color:#0B3D45; }
 @media (min-width:1080px){ #pn-pcap .pq-four{ grid-template-columns:repeat(4,minmax(0,1fr)); gap:12px; } }
 #pn-pcap .pq-four li{ display:flex; flex-direction:column; min-width:0; padding:clamp(16px,1.8vw,24px); border-radius:20px; background:var(--iv2); border:1px solid var(--hair); }
 #pn-pcap .pq-four li:first-child{ background:var(--er); border-color:var(--er); color:var(--iv); box-shadow:0 22px 50px rgba(11,61,69,.28); }
@@ -499,6 +504,7 @@ only in news reports; when RSSB publishes it, the Rwanda card can move to that n
         <li><small>How close</small><h3>Coverage</h3><p>Out of 100. A nation is held at its weakest standard.</p><div class="pq-ex"><b data-pc="first.coverage">69</b><span>Barbados, held by <span data-pc="first.set_by">food</span></span></div></li>
         <li><small>Who is below</small><h3>The Gap</h3><p>The people below the Living Line, and the cost of lifting them: the brief for Capital Architecture.</p><div class="pq-ex"><b data-pc="first.gap">~88,000</b><span>Barbadians below the line for <span data-pc="first.set_by">food</span></span></div></li>
       </ul>
+      <p class="pq-ai"><b>Kept current by AI.</b> Satellite images, meter readings and short phone surveys can update Coverage and the Gap as conditions change, between national surveys that come years apart.</p>
     </div>
   </section>
 
