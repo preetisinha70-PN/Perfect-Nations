@@ -1,37 +1,113 @@
 {
   "page": "For Funders",
-  "page_version": "1.1",
-  "updated": "2026-11-22",
+  "page_version": "2.0",
+  "updated": "2026-11-24",
   "hero": {
     "eyebrow": "For funders",
-    "title": "Deals that start from what a nation’s people need",
-    "lead": "Perfect Nations designs a blueprint for every nation: what it owns, what its people need, and the instrument that closes each gap. Funders receive the deals that come out of that work, checked and ready to price.",
-    "living_line": "The Living Line: the basic standard of living every citizen should stand above: food, water, shelter, energy, education, health and livelihood."
+    "title_before": "Finance the ",
+    "title_money": "$4 trillion",
+    "title_after": " gap, nation by nation",
+    "lead": "Perfect Nations designs a blueprint for every nation and turns each gap in its people’s basic standards of living into a Solution a funder can finance: the nation, the gap, the instrument and the funder that fits.",
+    "gap_note": "$4 trillion a year: the financing gap for sustainable development in developing countries, as the United Nations set it out in the Compromiso de Sevilla, 2025.",
+    "gap_source": {
+      "label": "United Nations, A/RES/79/323",
+      "url": "https://digitallibrary.un.org/record/4087700/files/A_RES_79_323-EN.pdf"
+    },
+    "living_line": "The Living Line: the basic standard of living every citizen should stand above: food, water, shelter, energy, education, health and livelihood.",
+    "buttons": [
+      {
+        "label": "Request the deal pipeline",
+        "url": "https://perfectnations.com/contact/?about=funders"
+      },
+      {
+        "label": "See the Match of the week",
+        "url": "#pf-match",
+        "line": true
+      }
+    ]
   },
-  "offer": {
-    "eyebrow": "What funders receive",
-    "title": "Three ways in",
+  "wire": {
+    "label": "Live from the Capital Wire",
+    "link": {
+      "label": "Every deal on State of Nations",
+      "url": "https://perfectnations.com/state-of-nations/"
+    }
+  },
+  "match": {
+    "eyebrow": "Match of the week",
+    "title": "One gap. One instrument. The funder that fits.",
+    "lead": "Every week, Perfect Nations pairs one nation’s gap with the instrument that closes it and the kind of funder it fits. Answer a Match and the conversation starts.",
+    "answer": {
+      "label": "Answer this Match",
+      "url": "https://perfectnations.com/contact/?about=match"
+    },
+    "note": "Matches are designed by Perfect Nations from public data. A Match becomes a mandate only when the nation asks for it.",
     "items": [
+      {
+        "no": 4,
+        "week": "2026-12-14",
+        "solution": 24,
+        "funder": "Nigerians abroad, through a diaspora bond",
+        "networks": ["diaspora", "ib"],
+        "why": "Nigeria sold its first diaspora bond in 2017. A second can finance storage, irrigation and warehouse receipts, so farmers stop selling at harvest-time prices."
+      },
+      {
+        "no": 3,
+        "week": "2026-12-07",
+        "solution": 20,
+        "funder": "Pension funds, behind a World Bank guarantee",
+        "networks": ["pension", "mdb"],
+        "why": "Mexico already has a World Bank credit enhancement drawing private capital into its infrastructure. Pointed at municipal water utilities, it lets domestic pension savings buy guaranteed water bonds."
+      },
+      {
+        "no": 2,
+        "week": "2026-11-30",
+        "solution": 44,
+        "funder": "The guarantors of debt conversions, and the investors in guaranteed debt",
+        "networks": ["mdb", "ib"],
+        "why": "Barbados has completed two debt conversions. The guarantors who priced them can price a third, with the savings bound to local farms, fisheries and sea farming."
+      },
+      {
+        "no": 1,
+        "week": "2026-11-23",
+        "solution": 33,
+        "funder": "Banks, behind a development bank guarantee",
+        "networks": ["mdb", "ib"],
+        "why": "A guaranteed facility brought nine banks to Tanzania’s railway. The same structure can finance last-mile power and electric cookers, recovered through electricity bills."
+      }
+    ]
+  },
+  "pipeline": {
+    "eyebrow": "The deal pipeline",
+    "lead": "Every gap in every blueprint, matched to an instrument and the kind of funder it fits. Choose a standard, a region or a kind of funder.",
+    "stage": "Stage: designed by Perfect Nations from public data. A Solution becomes a mandate only when the nation asks for it.",
+    "matrix_title": "Solutions by standard and kind of funder",
+    "lead_column": "Lead Solutions",
+    "request": {
+      "label": "Request the pipeline for your mandate",
+      "url": "https://perfectnations.com/contact/?about=pipeline"
+    }
+  },
+  "how": {
+    "eyebrow": "How it works",
+    "title": "Three ways in, four checks behind every deal",
+    "offer": [
       {
         "n": "01",
         "name": "The deal pipeline",
-        "line": "Each deal names the nation, the gap it closes, the instrument and the size, taken from the nation’s blueprint."
+        "line": "Every Solution names the nation, the gap it closes, the instrument and the kind of funder it fits, from the nation’s blueprint."
       },
       {
         "n": "02",
         "name": "Match of the week",
-        "line": "Every week, State of Nations pairs one gap in one nation with the instrument and the kind of funder that fit it."
+        "line": "Every week, one gap in one nation, paired with the instrument and the kind of funder that fit it."
       },
       {
         "n": "03",
         "name": "Introductions",
         "line": "When a nation and a funder fit, Perfect Nations makes the introduction, on terms agreed in writing before any name is shared."
       }
-    ]
-  },
-  "method": {
-    "eyebrow": "How a deal is checked",
-    "title": "Four steps, the same for every nation",
+    ],
     "steps": [
       {
         "name": "The Ledger",
@@ -53,24 +129,17 @@
   },
   "who": {
     "eyebrow": "Who it serves",
-    "title": "Built for every kind of development capital",
-    "items": [
-      "Development banks",
-      "Development finance institutions",
-      "Impact investors",
-      "Foundations",
-      "Climate funds",
-      "Investment banks and institutional investors"
-    ],
+    "title": "Built for every kind of capital",
+    "lead": "Fifteen sources of capital finance development. Each one can find its deals in the pipeline.",
     "link": {
-      "label": "See the six networks that hold this capital",
+      "label": "See them on Capital Architecture",
       "url": "https://perfectnations.com/capital-architecture/#pca-funders"
     }
   },
   "close": {
     "eyebrow": "Start here",
     "title": "Request the deal pipeline",
-    "lead": "Tell us what you finance, where, and at what size. The first deals that fit come back to you in writing.",
+    "lead": "Tell us what you finance, where, and at what size. The Solutions that fit come back to you in writing.",
     "buttons": [
       {
         "label": "Request the deal pipeline",

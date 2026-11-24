@@ -3068,69 +3068,183 @@
       }
     ],
     "note": "Counts, never sums: the amounts are in many currencies. Every line is dated and sourced on its blueprint.",
-    "as_of": "2026-11-24T18:59Z"
+    "as_of": "2026-11-24T20:11Z"
   },
   "funders": {
     "eyebrow": "Who finances the Living Line",
-    "title": "Six networks hold the capital a nation can call on",
-    "lead": "Together they hold trillions for development. Perfect Nations prepares deals for networks like these, each one checked against a nation’s blueprint.",
+    "title": "Fifteen sources of capital a nation can call on",
+    "lead": "From development banks to pension funds, from private equity to the diaspora: Perfect Nations prepares deals for each of them, checked against a nation’s blueprint.",
+    "families": [
+      {
+        "id": "public",
+        "name": "Public development capital",
+        "line": "Banks, funds and agencies owned by governments"
+      },
+      {
+        "id": "private",
+        "name": "Private and institutional capital",
+        "line": "Markets, investors and companies"
+      },
+      {
+        "id": "catalytic",
+        "name": "Catalytic and community capital",
+        "line": "Capital that takes the first risk or comes from home"
+      }
+    ],
     "items": [
       {
+        "id": "mdb",
+        "family": "public",
+        "name": "Multilateral development banks",
+        "kind": "Ten banks that report their climate finance together",
+        "names": "AfDB · ADB · AIIB · CEB · EBRD · EIB · IDB Group · IsDB · NDB · World Bank Group",
+        "figure": "~$163 billion",
+        "label": "in climate finance in 2025, almost $103 billion of it in low- and middle-income economies",
+        "source": "EIB, 2025 Joint Summary Report on MDBs’ Climate Finance, July 2026",
+        "url": "https://www.eib.org/en/publications/20260117-2025-joint-summary-report-on-mdbs-climate-finance"
+      },
+      {
         "id": "fic",
-        "name": "Finance in Common",
-        "kind": "Every public development bank",
+        "name": "Public development banks",
+        "kind": "Finance in Common, the coalition of every public development bank",
         "figure": "~$23 trillion",
         "label": "in total assets, 544 public development banks, 2024",
         "source": "Finance in Common, Two Pagers 2026",
-        "url": "https://financeincommon.org/sites/default/files/2026-03/TWO%20PAGERS-%20Digital%20Version_2026.pdf"
+        "url": "https://financeincommon.org/sites/default/files/2026-03/TWO%20PAGERS-%20Digital%20Version_2026.pdf",
+        "family": "public"
       },
       {
         "id": "idfc",
-        "name": "International Development Finance Club",
-        "kind": "27 national and regional development banks",
+        "name": "National and regional development banks",
+        "kind": "International Development Finance Club: 27 banks",
         "figure": "Over $4 trillion",
         "label": "in combined assets",
         "source": "IDFC Green Finance Mapping 2026, Climate Policy Initiative",
-        "url": "https://www.climatepolicyinitiative.org/wp-content/uploads/2026/10/IDFC-GFM-2026-Full-Report-1.pdf"
-      },
-      {
-        "id": "giin",
-        "name": "Global Impact Investing Network",
-        "kind": "3,907 impact investors",
-        "figure": "$1.571 trillion",
-        "label": "in impact assets under management, 2024",
-        "source": "GIIN, Sizing the Impact Investing Market 2024",
-        "url": "https://s3.amazonaws.com/giin-web-assets/giin/assets/publication/climateworks.pdf"
-      },
-      {
-        "id": "conv",
-        "name": "Convergence",
-        "kind": "The global network for blended finance",
-        "figure": "$213 billion",
-        "label": "across 1,123 blended finance deals on its database",
-        "source": "Convergence, State of Blended Finance 2024",
-        "url": "https://ppp.worldbank.org/library/state-blended-finance-2024"
-      },
-      {
-        "id": "gcf",
-        "name": "Green Climate Fund",
-        "kind": "The world’s climate fund for developing countries",
-        "figure": "$20.4 billion",
-        "label": "committed to 359 projects in 135 countries",
-        "source": "GCF, status of resources, 30 June 2026",
-        "url": "https://www.greenclimate.fund/sites/default/files/documents/2026-10/9-status-gcf-resources-pipeline-and-portfolio-performance-gcf-b46-inf10.pdf"
+        "url": "https://www.climatepolicyinitiative.org/wp-content/uploads/2026/10/IDFC-GFM-2026-Full-Report-1.pdf",
+        "family": "public"
       },
       {
         "id": "edfi",
-        "name": "European Development Finance Institutions",
-        "kind": "15 bilateral development finance institutions",
+        "family": "public",
+        "name": "Development finance institutions",
+        "kind": "European Development Finance Institutions: 15 bilateral DFIs",
         "figure": "€59.9 billion",
-        "label": "aggregate portfolio, 2024",
+        "label": "aggregate portfolio across 7,556 investments, 2024",
         "source": "EDFI",
-        "url": "https://www.edfi.eu/"
+        "url": "https://edfi.eu/"
+      },
+      {
+        "id": "eca",
+        "family": "public",
+        "name": "Export credit agencies and investment insurers",
+        "kind": "The Berne Union: official export credit agencies, multilateral insurers and private underwriters",
+        "figure": "$231 billion",
+        "label": "of new medium- and long-term cover in 2025, within $3.7 trillion of trade supported",
+        "source": "Berne Union, Industry trends 2025, June 2026",
+        "url": "https://berneunion.org/Stub/Display/396"
+      },
+      {
+        "id": "gcf",
+        "name": "Climate funds",
+        "kind": "Green Climate Fund, the world’s climate fund for developing countries",
+        "figure": "$20.4 billion",
+        "label": "committed to 359 projects in 135 countries",
+        "source": "GCF, status of resources, 30 June 2026",
+        "url": "https://www.greenclimate.fund/sites/default/files/documents/2026-10/9-status-gcf-resources-pipeline-and-portfolio-performance-gcf-b46-inf10.pdf",
+        "family": "public"
+      },
+      {
+        "id": "ib",
+        "family": "private",
+        "name": "Investment banks and bond markets",
+        "kind": "The banks that arrange green, social and sustainability bonds, and the investors who buy them",
+        "figure": "$6.8 trillion",
+        "label": "of aligned green, social, sustainability and sustainability-linked debt issued to the end of 2025",
+        "source": "Climate Bonds Initiative, Global State of the Market 2025, March 2026",
+        "url": "https://www.climatebonds.net/news-events/press-room/press-releases/sustainable-debt-market-nears-usd7-trillion-aligned-issuance-demonstrating-strong-global-momentum"
+      },
+      {
+        "id": "pe",
+        "family": "private",
+        "name": "Private equity and private credit",
+        "kind": "Global Private Capital Association: over 300 firms managing more than $2 trillion",
+        "figure": "$43.9 billion",
+        "label": "a record, invested in infrastructure across Asia, Latin America, Africa, Central and Eastern Europe and the Middle East in 2025",
+        "source": "GPCA, 2026 Industry Data and Analysis, February 2026",
+        "url": "https://www.globalprivatecapital.org/research/2026-industry-data-analysis/"
+      },
+      {
+        "id": "swf",
+        "family": "private",
+        "name": "Sovereign wealth funds",
+        "kind": "109 sovereign wealth funds",
+        "figure": "$15.1 trillion",
+        "label": "in assets under management, 2026",
+        "source": "IE University and ICEX-Invest in Spain, Sovereign Wealth Funds Report 2026",
+        "url": "https://www.ie.edu/university/news-events/news/sovereign-wealth-funds-surpass-15-trillion-assets-according-new-report-ie-university-icex-invest-spain/"
+      },
+      {
+        "id": "pension",
+        "family": "private",
+        "name": "Pension funds",
+        "kind": "The 22 largest pension markets",
+        "figure": "$68.3 trillion",
+        "label": "in pension assets at the end of 2025",
+        "source": "Thinking Ahead Institute, Global Pension Assets Study 2026",
+        "url": "https://www.thinkingaheadinstitute.org/research-papers/global-pension-assets-study-2026/"
+      },
+      {
+        "id": "corp",
+        "family": "private",
+        "name": "Corporate partners",
+        "kind": "Companies that invest across borders",
+        "figure": "$901 billion",
+        "label": "of foreign direct investment into developing economies in 2025",
+        "source": "UNCTAD, World Investment Report 2026, July 2026",
+        "url": "https://unctad.org/news/global-investment-rises-6-16-trillion-development-gains-remain-uneven"
+      },
+      {
+        "id": "giin",
+        "name": "Impact investors",
+        "kind": "Global Impact Investing Network: 3,907 impact investors",
+        "figure": "$1.571 trillion",
+        "label": "in impact assets under management, 2024",
+        "source": "GIIN, Sizing the Impact Investing Market 2024",
+        "url": "https://s3.amazonaws.com/giin-web-assets/giin/assets/publication/climateworks.pdf",
+        "family": "catalytic"
+      },
+      {
+        "id": "conv",
+        "family": "catalytic",
+        "name": "Blended finance",
+        "kind": "Convergence, the global network for blended finance",
+        "figure": "$249 billion",
+        "label": "across 1,350 blended finance deals on its database",
+        "source": "Convergence, State of Blended Finance 2025, May 2025",
+        "url": "https://www.convergence.finance/news/urVUbSe6NepM9Gzo9KDdt/view"
+      },
+      {
+        "id": "phil",
+        "family": "catalytic",
+        "name": "Philanthropic foundations",
+        "kind": "Private foundations giving for development",
+        "figure": "$68.2 billion",
+        "label": "for development across 2020 to 2023",
+        "source": "OECD, Private Philanthropy for Development, Third Edition, March 2026",
+        "url": "https://www.oecd.org/en/publications/private-philanthropy-for-development-third-edition_98e676c0-en/full-report/conclusions-and-way-forward_1742abe9.html"
+      },
+      {
+        "id": "diaspora",
+        "family": "catalytic",
+        "name": "The diaspora",
+        "kind": "Migrants who send money home, and can invest at home through diaspora bonds",
+        "figure": "$728.6 billion",
+        "label": "sent home to low- and middle-income countries in 2025",
+        "source": "IFAD, September 2026",
+        "url": "https://www.ifad.org/en/w/news/remittances-nearly-doubled-in-a-decade-to-reach-us-729-billion-in-2025-new-ifad-report-finds"
       }
     ],
-    "note": "Named for reference only. No network listed here is a partner of Perfect Nations or has endorsed its work.",
+    "note": "Named for reference only. No institution or network listed here is a partner of Perfect Nations or has endorsed its work. Figures measure different things (assets, portfolios, yearly flows) and are never added together.",
     "button": {
       "label": "For funders: request the deal pipeline",
       "url": "https://perfectnations.com/for-funders/"
