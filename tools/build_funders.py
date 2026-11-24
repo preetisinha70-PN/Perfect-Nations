@@ -340,7 +340,7 @@ plugin serves this file from GitHub in its place, so the page changes only throu
 file by hand: edit data/for-funders.json (words), tools/funders/style.css (design) or tools/funders/script.js
 (behaviour), run python3 tools/build_funders.py, and open a pull request.
 v1.0: the page for funders as clients (the Steward-General, 21 Nov 2026): what funders receive (the deal
-pipeline, Match of the week, introductions), how a deal is checked (Ledger, Living Line, Design, Capital),
+pipeline, Match of the week, introductions), how a deal is checked (Asset Ledger, Living Line, Design, Capital),
 who it serves, and one action: request the deal pipeline. The hero figures are counted from the manifest
 and data/capital-architecture.json. Institutions are named for reference only, never as partners.
 v1.1: Request the deal pipeline opens the contact form at Fund a nation (?about=funders), in place of an

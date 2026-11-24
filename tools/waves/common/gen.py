@@ -351,7 +351,7 @@ def page_words(n, cov, lat, lng, outline):
              ('%s, the standard furthest from reach, and the Gap, explained.' % cov['set_by']) if cov.get('gap') else
              'The seven standards measured with your own data, and the Gap, found.',
              'The instruments that could close the Gap, shortlisted.', 'The path to market, outlined.'],
-            ['The ledger tested against your ministries’ own data.', 'Each of the seven standards costed in local prices.',
+            ['The asset ledger tested against your ministries’ own data.', 'Each of the seven standards costed in local prices.',
              'One financing structure, drawn with your team.', 'A term sheet and the partners to approach.'],
             ['A full sovereign asset ledger, valued and verified.', 'Perfect Capita set and agreed with government, with a monitoring plan.',
              'The full structure: legal form, credit enhancement, guarantees and pricing.',

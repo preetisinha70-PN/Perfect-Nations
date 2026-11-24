@@ -713,7 +713,7 @@ def assets(d):
         '<p class="bpx-lead">%s</p></div>'
         '<ul class="bpx-acards%s" data-n="%d">%s</ul>%s'
         '<div class="bpx-foot"><a class="bpx-link" href="#bp-sources">Every figure, with its source</a>'
-        '<a class="bpx-link" href="https://perfectnations.com/sovereign-assets/" target="_blank" rel="noopener noreferrer">The Sovereign Assets ledger</a></div>'
+        '<a class="bpx-link" href="https://perfectnations.com/sovereign-assets/" target="_blank" rel="noopener noreferrer">The sovereign asset ledger</a></div>'
         '</div></section>' % (step_eb('01', 'Assets', 'The cup', 'Sovereign Assets'),
                               ent(a.get('heading') or 'Five assets no balance sheet counts.'), lead,
                               ' bpx-acards--pics' if pics else '', len(cards), ''.join(cards),
