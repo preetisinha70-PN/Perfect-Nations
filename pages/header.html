@@ -1,5 +1,10 @@
 <!-- ==========================================================================
-PERFECT NATIONS - CUSTOM HEADER - v20.9 EARTHRISE - 2026-11-24
+PERFECT NATIONS - CUSTOM HEADER - v21.0 EARTHRISE - 2026-11-24
+v21.0: the three mandates fold into a drop-down under ReDesign Studio, so Work with us reads as four lines: a small
+"The three mandates" button beside ReDesign Studio opens I The Nation Briefing, II The Blueprint Lab and III The
+Sovereign Mandate, shown for Barbados. Closed by default; the search still finds each. Preeti Sinha, President and
+CEO, 24 Nov 2026: "The three new pages ... are making the menu look quite detailed. Can you put them in a drop down
+for the redesign studio?"
 v20.9: the three mandates of the ReDesign Studio join Work with us, nested under ReDesign Studio: I The Nation
 Briefing, II The Blueprint Lab, III The Sovereign Mandate, each shown for Barbados (/blueprints/barbados/nation-briefing/,
 /blueprint-lab/, /sovereign-mandate/). The search finds each ("briefing", "lab", "mandate"). Preeti Sinha, President
@@ -305,9 +310,23 @@ html:has(.pn-hd__toggle:checked){ overflow:hidden; }
   border:1.5px solid var(--pn-gold); color:var(--pn-gold); font-size:11px; font-weight:700; letter-spacing:.02em; line-height:1;
 }
 .pn-hd__gl a:hover{ color:#F0D68F; }
-/* v20.9: the three mandates, nested under ReDesign Studio */
-.pn-hd__gl .pn-hd__sub a{ align-items:center; gap:10px; margin-left:4px; padding:4px 2px 4px 12px; border-left:1px solid var(--pn-hair); }
+/* v21.0: the three mandates, in a drop-down under ReDesign Studio */
+.pn-hd__dd{ display:flex; flex-wrap:wrap; align-items:center; column-gap:12px; row-gap:2px; }
+.pn-hd__dd > a{ flex:0 1 auto; }
+.pn-hd .pn-hd__ddbtn{
+  display:inline-flex; align-items:center; gap:7px; min-height:34px; padding:0 12px; margin:0; border-radius:999px;
+  border:1px solid rgba(227,194,88,.55); background:transparent; color:var(--pn-gold); cursor:pointer;
+  font-family:var(--pn-head); font-size:11.5px; font-weight:700; letter-spacing:.14em; text-transform:uppercase; line-height:1; white-space:nowrap;
+  transition:background-color .18s ease, color .18s ease;
+}
+.pn-hd .pn-hd__ddbtn svg{ width:11px; height:11px; fill:none; stroke:currentColor; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round; transition:transform .25s ease; }
+.pn-hd .pn-hd__ddbtn:hover,.pn-hd .pn-hd__ddbtn:focus-visible,.pn-hd .pn-hd__ddbtn[aria-expanded="true"]{ background:var(--pn-gold); color:#1A140C; }
+.pn-hd .pn-hd__ddbtn[aria-expanded="true"] svg{ transform:rotate(180deg); }
+.pn-hd__ddl{ flex:1 0 100%; list-style:none; margin:2px 0 6px; padding:0; }
+.pn-hd__ddl[hidden]{ display:none !important; }
+.pn-hd__gl .pn-hd__sub a{ align-items:center; gap:10px; margin-left:4px; padding:5px 2px 5px 12px; border-left:1px solid var(--pn-hair); }
 .pn-hd__gl .pn-hd__sub .pn-hd__gt{ font-size:clamp(16px,1.4vw,18px); }
+.pn-hd__gl .pn-hd__sub .pn-hd__gt small{ margin-top:1px; font-size:12.5px; }
 .pn-hd__gl .pn-hd__sub .pn-hd__gn{ width:24px; height:24px; font-size:9.5px; letter-spacing:0; }
 .pn-hd__gl a:hover .pn-hd__gn{ background:var(--pn-gold); color:#1A140C; }
 .pn-hd__gl a:focus-visible{ outline:2px solid #F0D68F; outline-offset:2px; border-radius:6px; }
@@ -532,10 +551,15 @@ html:has(#pn-hd), html:has(#pn-hd) body{ overflow-x:clip; }
         <div class="pn-hd__grp pn-hd__grp--work">
           <p class="pn-hd__gh" id="pn-hd-g5">Work with us</p>
           <ul class="pn-hd__gl" aria-labelledby="pn-hd-g5">
-            <li><a href="https://perfectnations.com/design-studio/"><span class="pn-hd__gt">ReDesign Studio<small>Co-design your nation. The three mandates, shown for Barbados:</small></span></a></li>
-            <li class="pn-hd__sub"><a href="https://perfectnations.com/blueprints/barbados/nation-briefing/"><span class="pn-hd__gn">I</span><span class="pn-hd__gt">The Nation Briefing</span></a></li>
-            <li class="pn-hd__sub"><a href="https://perfectnations.com/blueprints/barbados/blueprint-lab/"><span class="pn-hd__gn">II</span><span class="pn-hd__gt">The Blueprint Lab</span></a></li>
-            <li class="pn-hd__sub"><a href="https://perfectnations.com/blueprints/barbados/sovereign-mandate/"><span class="pn-hd__gn">III</span><span class="pn-hd__gt">The Sovereign Mandate</span></a></li>
+            <li class="pn-hd__dd">
+              <a href="https://perfectnations.com/design-studio/"><span class="pn-hd__gt">ReDesign Studio<small>Co-design your nation</small></span></a>
+              <button type="button" class="pn-hd__ddbtn" aria-expanded="false" aria-controls="pn-hd-dd-studio">The three mandates<svg viewBox="0 0 12 12" aria-hidden="true" focusable="false"><path d="M2.5 4.5 6 8 9.5 4.5"/></svg></button>
+              <ul class="pn-hd__ddl" id="pn-hd-dd-studio" hidden>
+                <li class="pn-hd__sub"><a href="https://perfectnations.com/blueprints/barbados/nation-briefing/"><span class="pn-hd__gn">I</span><span class="pn-hd__gt">The Nation Briefing<small>3 hours, shown for Barbados</small></span></a></li>
+                <li class="pn-hd__sub"><a href="https://perfectnations.com/blueprints/barbados/blueprint-lab/"><span class="pn-hd__gn">II</span><span class="pn-hd__gt">The Blueprint Lab<small>3 days, shown for Barbados</small></span></a></li>
+                <li class="pn-hd__sub"><a href="https://perfectnations.com/blueprints/barbados/sovereign-mandate/"><span class="pn-hd__gn">III</span><span class="pn-hd__gt">The Sovereign Mandate<small>End to end, shown for Barbados</small></span></a></li>
+              </ul>
+            </li>
             <li><a href="https://perfectnations.com/for-funders/"><span class="pn-hd__gt">For Funders<small>The deal pipeline for development capital</small></span></a></li>
             <li><a href="https://perfectnations.com/contact/"><span class="pn-hd__gt">Contact<small>Start a conversation</small></span></a></li>
           </ul>
@@ -590,6 +614,18 @@ html:has(#pn-hd), html:has(#pn-hd) body{ overflow-x:clip; }
   document.addEventListener('keydown', function(e){
     if(e.key === 'Escape' && toggle && toggle.checked){ toggle.checked = false; syncPanel(); }
   });
+
+  // v21.0: the drop-down under ReDesign Studio
+  var ddbtns = hd.querySelectorAll('.pn-hd__ddbtn');
+  for(var di = 0; di < ddbtns.length; di++){
+    ddbtns[di].addEventListener('click', function(){
+      var list = document.getElementById(this.getAttribute('aria-controls'));
+      if(!list) return;
+      var open = this.getAttribute('aria-expanded') !== 'true';
+      this.setAttribute('aria-expanded', open ? 'true' : 'false');
+      list.hidden = !open;
+    });
+  }
 
   if(panel){
     panel.addEventListener('click', function(e){
