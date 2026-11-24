@@ -1,5 +1,5 @@
 <!-- ===========================================================================
-PERFECT NATIONS - ART OF NATIONS - v7.0 - 2026-11-17
+PERFECT NATIONS - ART OF NATIONS - v7.1 - 2026-11-24
 The whole Art of Nations page in one file: perfectnations.com/art-of-nations/ (page 16839; the old
 address /perfect-nations-gallery/ leads here).
 Root id pn-art. The page's Elementor Custom HTML widget already contains pn-art, so the Perfect
@@ -12,6 +12,9 @@ work is acquired in the Art of Nations Gallery (gallery.perfectnations.com), and
 page. Bands: the Earthrise hero; Our philosophy (four tenets, ivory); The collection (Botanical Origins, the painted
 originals and the nation portraits, shown as a collection, with no price or Buy on the wall; ivory); the books (light);
 Our commitment (Earthrise): collectors to the gallery, artists and institutions to Contact.
+v7.1 (24 Nov 2026): the books are taken out for now, so the page stays on the art (the Steward-General, 24 Nov 2026).
+The catalogue's "show_books" is false: the build leaves out the books band (between the BOOKS markers below) and the
+Contact page hides its book topic. The books stay in the catalogue; set "show_books" to true to bring them back.
 v6.3 (13 Nov 2026): prints 24 x 24 in; Buy links used the gallery's addresses, /products/<nation>-nation-portrait.
 v6.2 (13 Nov 2026): Kenya and Rwanda hang in their true shape (taller than wide), never cropped: a painting with a
 "size" in the catalogue gets a frame of its own proportion, narrowed so the frames in a row stand about level.
@@ -35,7 +38,7 @@ the collection ("Where it began"), shown whole; it is not counted among the 195 
 v4.0 (7 Nov 2026): one root and one file. Earthrise hero with the featured painting in a gilded frame that turns toward
 the visitor. Images use the copies WordPress makes. One viewer for paintings and book pages.
 =========================================================================== -->
-<div id="pn-art" class="aon" data-version="7.0">
+<div id="pn-art" class="aon" data-version="7.1">
 <style>
 #pn-art{
   --er:#0B3D45; --lag:#0F4C5C; --dep:#082A30; --iv:#F4ECD8; --ivt:rgba(244,236,216,.84); --ivd:rgba(244,236,216,.62);
@@ -778,39 +781,6 @@ the visitor. Images use the copies WordPress makes. One viewer for paintings and
   </div>
 </section>
 
-<div class="aon-rule" aria-hidden="true"></div>
-<section class="aon-band aon-books" id="aon-books" aria-labelledby="aon-books-h">
-  <div class="aon-in">
-    <div class="aon-head">
-      <div><p class="aon-eb">Coming soon &#183; the books</p><h2 class="aon-h2" id="aon-books-h">The National Portrait books</h2></div>
-      <p class="aon-note">One book for each of the 195 nations, in 195 numbered copies. Reserve yours now.</p>
-    </div>
-    <div class="aon-shelf">
-      <article class="aon-bk aon-rv" id="aon-perfect-barbados" data-book="Perfect Barbados" data-enquire="https://perfectnations.com/contact/?about=perfect-barbados-book">
-        <button class="aon-bk__obj" type="button" data-look aria-label="Look inside Perfect Barbados"><span class="aon-bk__book"><img src="https://perfectnations.com/wp-content/uploads/2026/10/perfect-barbados-island-wealth-600x600.jpg" srcset="https://perfectnations.com/wp-content/uploads/2026/10/perfect-barbados-island-wealth-300x300.jpg 300w, https://perfectnations.com/wp-content/uploads/2026/10/perfect-barbados-island-wealth-600x600.jpg 600w, https://perfectnations.com/wp-content/uploads/2026/10/perfect-barbados-island-wealth-768x768.jpg 768w" sizes="(min-width:900px) 230px, 36vw" alt="Front cover of Perfect Barbados" width="600" height="600" loading="lazy" decoding="async"></span></button>
-        <div class="aon-bk__txt">
-          <p class="aon-tag">National Portrait No. 1 of 195 &#183; 195 numbered copies</p>
-          <h3 class="aon-h3">Perfect Barbados</h3>
-          <p class="aon-stmt">The sea, the gardens and the island&#8217;s living heritage, and the possibility of a flourishing future.</p>
-          <p class="aon-spec">Large square hardcover &#183; 80 illustrated pages &#183; In preparation</p>
-        </div>
-        <div class="aon-acts"><button class="aon-btn aon-btn--sm aon-btn--line" type="button" data-look>Look inside <small>10</small></button><a class="aon-btn aon-btn--sm" href="https://perfectnations.com/contact/?about=perfect-barbados-book">Reserve a copy</a></div>
-        <ol class="aon-pages" hidden><li data-src="https://perfectnations.com/wp-content/uploads/2026/10/perfect-barbados-island-wealth-1024x1024.jpg">The cover</li><li data-src="https://perfectnations.com/wp-content/uploads/2026/10/pn-book-barbados-preview-04-1024x1024.jpg">Dear Barbados: the Letter</li><li data-src="https://perfectnations.com/wp-content/uploads/2026/10/pn-book-barbados-preview-05-1024x1024.jpg">I. The Island</li><li data-src="https://perfectnations.com/wp-content/uploads/2026/10/pn-book-barbados-preview-06-1024x1024.jpg">Think ocean: a sea 430 times the land</li><li data-src="https://perfectnations.com/wp-content/uploads/2026/10/pn-book-barbados-preview-07-1024x1024.jpg">II. Living Wealth: the reef</li><li data-src="https://perfectnations.com/wp-content/uploads/2026/10/pn-book-barbados-preview-08-1024x1024.jpg">III. Capital, Reimagined</li><li data-src="https://perfectnations.com/wp-content/uploads/2026/10/pn-book-barbados-preview-09-1024x1024.jpg">IV. A Decent Life: the table</li><li data-src="https://perfectnations.com/wp-content/uploads/2026/10/pn-book-barbados-preview-10-1024x1024.jpg">A future taking root</li><li data-src="https://perfectnations.com/wp-content/uploads/2026/10/pn-book-barbados-preview-11-1024x1024.jpg">V. The Island in Bloom</li><li data-src="https://perfectnations.com/wp-content/uploads/2026/10/pn-book-barbados-preview-12-1024x1024.jpg">The back cover</li></ol>
-      </article>
-      <article class="aon-bk aon-rv" id="aon-perfect-kenya" data-book="Perfect Kenya" data-enquire="https://perfectnations.com/contact/?about=perfect-kenya-book">
-        <button class="aon-bk__obj" type="button" data-look aria-label="Look inside Perfect Kenya"><span class="aon-bk__book"><img src="https://perfectnations.com/wp-content/uploads/2026/10/pn-book-kenya-front-600x600.jpg" srcset="https://perfectnations.com/wp-content/uploads/2026/10/pn-book-kenya-front-300x300.jpg 300w, https://perfectnations.com/wp-content/uploads/2026/10/pn-book-kenya-front-600x600.jpg 600w, https://perfectnations.com/wp-content/uploads/2026/10/pn-book-kenya-front-768x768.jpg 768w" sizes="(min-width:900px) 230px, 36vw" alt="Front cover of Perfect Kenya: the peaks of Mount Kenya at sunrise" width="600" height="600" loading="lazy" decoding="async"></span></button>
-        <div class="aon-bk__txt">
-          <p class="aon-tag">In preparation</p>
-          <h3 class="aon-h3">Perfect Kenya</h3>
-          <p class="aon-stmt">From the heat beneath the Rift to the promise of a decent life: mountains and grasslands, farms and cities, and a coast shaped by the Indian Ocean.</p>
-          <p class="aon-spec">Large square hardcover</p>
-        </div>
-        <div class="aon-acts"><button class="aon-btn aon-btn--sm aon-btn--line" type="button" data-look>Look inside <small>2</small></button><a class="aon-btn aon-btn--sm" href="https://perfectnations.com/contact/?about=perfect-kenya-book">Reserve a copy</a></div>
-        <ol class="aon-pages" hidden><li data-src="https://perfectnations.com/wp-content/uploads/2026/10/pn-book-kenya-front-1024x1024.jpg">The front cover</li><li data-src="https://perfectnations.com/wp-content/uploads/2026/10/pn-book-kenya-back-1024x1024.jpg">The back cover</li></ol>
-      </article>
-    </div>
-  </div>
-</section>
 
 <div class="aon-rule" aria-hidden="true"></div>
 <section class="aon-band aon-pledge" id="aon-commitment" aria-labelledby="aon-pl-h">

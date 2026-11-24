@@ -12,6 +12,9 @@ work is acquired in the Art of Nations Gallery (gallery.perfectnations.com), and
 page. Bands: the Earthrise hero; Our philosophy (four tenets, ivory); The collection (Botanical Origins, the painted
 originals and the nation portraits, shown as a collection, with no price or Buy on the wall; ivory); the books (light);
 Our commitment (Earthrise): collectors to the gallery, artists and institutions to Contact.
+v7.1 (24 Nov 2026): the books are taken out for now, so the page stays on the art (the Steward-General, 24 Nov 2026).
+The catalogue's "show_books" is false: the build leaves out the books band (between the BOOKS markers below) and the
+Contact page hides its book topic. The books stay in the catalogue; set "show_books" to true to bring them back.
 v6.3 (13 Nov 2026): prints 24 x 24 in; Buy links used the gallery's addresses, /products/<nation>-nation-portrait.
 v6.2 (13 Nov 2026): Kenya and Rwanda hang in their true shape (taller than wide), never cropped: a painting with a
 "size" in the catalogue gets a frame of its own proportion, narrowed so the frames in a row stand about level.
@@ -587,6 +590,7 @@ the visitor. Images use the copies WordPress makes. One viewer for paintings and
   </div>
 </section>
 
+<!-- BOOKS: shown only while the catalogue's "show_books" is true -->
 <div class="aon-rule" aria-hidden="true"></div>
 <section class="aon-band aon-books" id="aon-books" aria-labelledby="aon-books-h">
   <div class="aon-in">
@@ -599,6 +603,7 @@ the visitor. Images use the copies WordPress makes. One viewer for paintings and
     </div>
   </div>
 </section>
+<!-- /BOOKS -->
 
 <div class="aon-rule" aria-hidden="true"></div>
 <section class="aon-band aon-pledge" id="aon-commitment" aria-labelledby="aon-pl-h">

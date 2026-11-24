@@ -24,6 +24,10 @@ v7.0 (17 Nov 2026): the page is about the philosophy of Art of Nations and carri
 17 Nov 2026). Prices live only in the Art of Nations Gallery (the catalogue's "shop"). The build refuses a price
 field in the catalogue and any amount of money in the page. A work with a buy_url opens its gallery page from the
 viewer ("Acquire in the gallery"); every conversation goes to the Contact page.
+
+v7.1 (24 Nov 2026): the books are taken out for now (the Steward-General, 24 Nov 2026). While the catalogue's
+"show_books" is false, the build drops the template's books band (between <!-- BOOKS --> and <!-- /BOOKS -->)
+and builds no book; the books stay in the catalogue for later.
 """
 import html
 import json
@@ -294,7 +298,13 @@ def main():
             names.append(a)
     credit = ('Artist: %s. A Perfect Nations work.' % names[0]) if len(names) == 1 else ('Artists: %s.' % ', '.join(names))
     pts = '\n'.join(portrait(j, p, cat, len(origins) + n + j) for j, p in enumerate(portraits))
-    books = '\n'.join(book(b, cat) for b in cat.get('books') or [])
+    show_books = cat.get('show_books', True) is not False
+    books = '\n'.join(book(b, cat) for b in cat.get('books') or []) if show_books else ''
+    if not show_books:
+        # v7.1: the books are off the page for now; the band between the markers goes with them
+        tpl, gone = re.subn(r'\n?<!-- BOOKS\b.*?<!-- /BOOKS -->\n?', '\n', tpl, count=1, flags=re.S)
+        if not gone:
+            sys.exit('show_books is false, but the template has no <!-- BOOKS --> band to leave out')
     shown = n + len(portraits)
     dots = ''.join('<i class="on is-new"></i>' if k == shown - 1 else ('<i class="on"></i>' if k < shown else '<i></i>') for k in range(total))
     first = paintings[0] if paintings else {}
@@ -328,7 +338,8 @@ def main():
     if bad:
         sys.exit('non-ASCII characters in the result: %r' % bad[:5])
     OUT.write_text(out, encoding='utf-8')
-    print('%s: v%s, %d origin(s), %d paintings, %d books, %d characters' % (OUT.relative_to(ROOT), cat['version'], len(origins), n, len(cat.get('books') or []), len(out)))
+    print('%s: v%s, %d origin(s), %d paintings, %s, %d characters' % (OUT.relative_to(ROOT), cat['version'], len(origins), n,
+          ('%d books' % len(cat.get('books') or [])) if show_books else 'books taken out (show_books false)', len(out)))
 
 
 if __name__ == '__main__':
