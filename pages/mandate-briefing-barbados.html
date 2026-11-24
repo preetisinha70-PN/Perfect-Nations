@@ -1,8 +1,10 @@
 <!-- ===========================================================================
-PERFECT NATIONS - THE NATION BRIEFING - BARBADOS - v1.0 - 2026-11-24
+PERFECT NATIONS - THE NATION BRIEFING - BARBADOS - v1.1 - 2026-11-24
 perfectnations.com/blueprints/barbados/nation-briefing/ . Root id pn-md-briefing-barbados. Mandate I: three hours, the Gap named and sized.
 An illustration of what a nation receives from the ReDesign Studio: not commissioned by the Government of
 Barbados; no terms agreed. Built by tools/build_mandates.py from tools/mandates/ (never edit this file by hand).
+v1.1 (24 Nov 2026): the section links keep their width on phones (they overlapped), and the theme no longer
+sets the headings in capitals (Preeti Sinha, President and CEO: "There is a problem with the text").
 v1.0 (24 Nov 2026, Preeti Sinha, President and CEO): the three mandates for Barbados, with AI after the finance.
 =========================================================================== -->
 <style>
@@ -27,6 +29,10 @@ v1.0 (24 Nov 2026, Preeti Sinha, President and CEO): the three mandates for Barb
   padding-top:0 !important; padding-bottom:0 !important; --widgets-spacing:0px !important; row-gap:0 !important;
 }
 #pn-md-briefing-barbados h1,#pn-md-briefing-barbados h2,#pn-md-briefing-barbados h3,#pn-md-briefing-barbados h4,#pn-md-briefing-barbados p,#pn-md-briefing-barbados li,#pn-md-briefing-barbados dt,#pn-md-briefing-barbados dd{ text-shadow:none !important; }
+/* v1.1: the site's theme sets its headings in capitals and pads lists, tables and definitions: undone here */
+#pn-md-briefing-barbados h1,#pn-md-briefing-barbados h2,#pn-md-briefing-barbados h3,#pn-md-briefing-barbados h4{ text-transform:none; }
+#pn-md-briefing-barbados dl,#pn-md-briefing-barbados dd{ margin:0; }
+#pn-md-briefing-barbados table{ margin:0; border:0; }
 #pn-md-briefing-barbados a{ color:inherit; }
 #pn-md-briefing-barbados .md-in{ width:100%; max-width:1240px; margin:0 auto; padding:0 var(--px); }
 #pn-md-briefing-barbados .md-band{ padding:clamp(24px,3.8vh,44px) 0 clamp(22px,3.6vh,40px); }
@@ -67,6 +73,7 @@ v1.0 (24 Nov 2026, Preeti Sinha, President and CEO): the three mandates for Barb
 #pn-md-briefing-barbados .md-nav{ position:relative; z-index:3; background:var(--wh); border-bottom:1px solid var(--hair); }
 #pn-md-briefing-barbados .md-nav ul{ display:flex; gap:4px 20px; margin:0 auto; padding:0 var(--px); max-width:1240px; list-style:none; overflow-x:auto; scrollbar-width:none; }
 #pn-md-briefing-barbados .md-nav ul::-webkit-scrollbar{ display:none; }
+#pn-md-briefing-barbados .md-nav li{ flex:none; margin:0; }
 #pn-md-briefing-barbados .md-nav a{ display:flex; align-items:center; min-height:44px; white-space:nowrap; text-decoration:none; font-family:var(--hd); font-size:.74rem; font-weight:700; letter-spacing:.16em; text-transform:uppercase; color:var(--er); }
 #pn-md-briefing-barbados .md-nav a:hover,#pn-md-briefing-barbados .md-nav a:focus-visible{ color:var(--tc); }
 @media (min-width:900px){ #pn-md-briefing-barbados .md-nav{ position:sticky; top:var(--pn-head-off,0px); } }
@@ -117,7 +124,7 @@ v1.0 (24 Nov 2026, Preeti Sinha, President and CEO): the three mandates for Barb
 /* tables */
 #pn-md-briefing-barbados .md-tw{ overflow-x:auto; margin:0; border-radius:14px; border:1px solid var(--hair); background:var(--wh); }
 #pn-md-briefing-barbados table.md-t{ width:100%; border-collapse:collapse; font-size:.92rem; }
-#pn-md-briefing-barbados .md-t th,#pn-md-briefing-barbados .md-t td{ padding:9px 12px; text-align:left; vertical-align:top; border-bottom:1px solid var(--hair); }
+#pn-md-briefing-barbados .md-t th,#pn-md-briefing-barbados .md-t td{ border:0; padding:9px 12px; text-align:left; vertical-align:top; border-bottom:1px solid var(--hair); }
 #pn-md-briefing-barbados .md-t th{ font-family:var(--hd); font-size:.66rem; font-weight:700; letter-spacing:.16em; text-transform:uppercase; color:var(--tc); background:rgba(138,58,34,.04); }
 #pn-md-briefing-barbados .md-t td.n,#pn-md-briefing-barbados .md-t th.n{ text-align:right; white-space:nowrap; font-variant-numeric:tabular-nums; }
 #pn-md-briefing-barbados .md-t td.m{ color:var(--gd); font-weight:600; }
