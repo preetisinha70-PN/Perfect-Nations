@@ -48,7 +48,8 @@ def works():
     for p in cat.get('paintings', []):
         if p.get('enquire') and p.get('title'):
             paintings.append({'id': p['enquire'], 'title': p['title'], 'nation': p.get('nation', '')})
-    for b in cat.get('books', []):
+    # v7.5: while the books are taken out (art/catalogue.json "show_books" false, 24 Nov 2026), no book is offered
+    for b in (cat.get('books', []) if cat.get('show_books', True) is not False else []):
         if b.get('enquire') and b.get('title'):
             nation = re.sub(r'^Perfect\s+', '', b['title']).strip()
             books.append({'id': b['enquire'], 'title': b['title'], 'nation': nation, 'status': b.get('status', '')})

@@ -195,14 +195,17 @@ def run():
             next_title = pg.inner_text('.aon-view__h')
             pg.keyboard.press('Escape')
             pg.wait_for_timeout(300)
-            pg.locator('#aon-perfect-barbados [data-look]').first.scroll_into_view_if_needed()
-            pg.locator('#aon-perfect-barbados .aon-acts [data-look]').click()
-            pg.wait_for_timeout(500)
-            pg.click('.aon-next')
-            pg.wait_for_timeout(900)
-            pg.screenshot(path=str(OUT / ('art-%s-5-viewer-book.png' % name)))
-            book_page = pg.inner_text('.aon-view__h') + ' ' + pg.inner_text('.aon-view__n')
-            pg.keyboard.press('Escape')
+            # v7.1: the books may be taken out (catalogue "show_books" false); then there is no book to open
+            book_page = 'no books on the page'
+            if pg.locator('#aon-perfect-barbados [data-look]').count():
+                pg.locator('#aon-perfect-barbados [data-look]').first.scroll_into_view_if_needed()
+                pg.locator('#aon-perfect-barbados .aon-acts [data-look]').click()
+                pg.wait_for_timeout(500)
+                pg.click('.aon-next')
+                pg.wait_for_timeout(900)
+                pg.screenshot(path=str(OUT / ('art-%s-5-viewer-book.png' % name)))
+                book_page = pg.inner_text('.aon-view__h') + ' ' + pg.inner_text('.aon-view__n')
+                pg.keyboard.press('Escape')
             report[name] = {'page height': ph, 'document width': wide, 'hero': [before, after, clicked],
                             'viewer': [viewer_title, next_title], 'book': book_page, 'origin': origin}
             ctx.close()
