@@ -27,7 +27,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 HERE = ROOT / 'tools' / 'mandates'
 PAGES = ROOT / 'pages'
-VERSION = '1.0'
+VERSION = '1.1'
 KINDS = {
     'briefing': ('The Nation Briefing', 'nation-briefing', 'Mandate I: three hours, the Gap named and sized'),
     'lab': ('The Blueprint Lab', 'blueprint-lab', 'Mandate II: three days, the structure drawn'),
@@ -51,6 +51,8 @@ def build(slug, standalone=None, links=None):
                   'perfectnations.com/blueprints/%s/%s/ . Root id %s. %s.\n'
                   'An illustration of what a nation receives from the ReDesign Studio: not commissioned by the Government of\n'
                   '%s; no terms agreed. Built by tools/build_mandates.py from tools/mandates/ (never edit this file by hand).\n'
+                  'v1.1 (24 Nov 2026): the section links keep their width on phones (they overlapped), and the theme no longer\n'
+                  'sets the headings in capitals (Preeti Sinha, President and CEO: "There is a problem with the text").\n'
                   'v1.0 (24 Nov 2026, Preeti Sinha, President and CEO): the three mandates for %s, with AI after the finance.\n'
                   '=========================================================================== -->\n'
                   % (title.upper(), name.upper(), VERSION, date.today().isoformat(), slug, path, rid, line, name, name))

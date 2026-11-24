@@ -19,6 +19,10 @@
   padding-top:0 !important; padding-bottom:0 !important; --widgets-spacing:0px !important; row-gap:0 !important;
 }
 #R h1,#R h2,#R h3,#R h4,#R p,#R li,#R dt,#R dd{ text-shadow:none !important; }
+/* v1.1: the site's theme sets its headings in capitals and pads lists, tables and definitions: undone here */
+#R h1,#R h2,#R h3,#R h4{ text-transform:none; }
+#R dl,#R dd{ margin:0; }
+#R table{ margin:0; border:0; }
 #R a{ color:inherit; }
 #R .md-in{ width:100%; max-width:1240px; margin:0 auto; padding:0 var(--px); }
 #R .md-band{ padding:clamp(24px,3.8vh,44px) 0 clamp(22px,3.6vh,40px); }
@@ -59,6 +63,7 @@
 #R .md-nav{ position:relative; z-index:3; background:var(--wh); border-bottom:1px solid var(--hair); }
 #R .md-nav ul{ display:flex; gap:4px 20px; margin:0 auto; padding:0 var(--px); max-width:1240px; list-style:none; overflow-x:auto; scrollbar-width:none; }
 #R .md-nav ul::-webkit-scrollbar{ display:none; }
+#R .md-nav li{ flex:none; margin:0; }
 #R .md-nav a{ display:flex; align-items:center; min-height:44px; white-space:nowrap; text-decoration:none; font-family:var(--hd); font-size:.74rem; font-weight:700; letter-spacing:.16em; text-transform:uppercase; color:var(--er); }
 #R .md-nav a:hover,#R .md-nav a:focus-visible{ color:var(--tc); }
 @media (min-width:900px){ #R .md-nav{ position:sticky; top:var(--pn-head-off,0px); } }
@@ -109,7 +114,7 @@
 /* tables */
 #R .md-tw{ overflow-x:auto; margin:0; border-radius:14px; border:1px solid var(--hair); background:var(--wh); }
 #R table.md-t{ width:100%; border-collapse:collapse; font-size:.92rem; }
-#R .md-t th,#R .md-t td{ padding:9px 12px; text-align:left; vertical-align:top; border-bottom:1px solid var(--hair); }
+#R .md-t th,#R .md-t td{ border:0; padding:9px 12px; text-align:left; vertical-align:top; border-bottom:1px solid var(--hair); }
 #R .md-t th{ font-family:var(--hd); font-size:.66rem; font-weight:700; letter-spacing:.16em; text-transform:uppercase; color:var(--tc); background:rgba(138,58,34,.04); }
 #R .md-t td.n,#R .md-t th.n{ text-align:right; white-space:nowrap; font-variant-numeric:tabular-nums; }
 #R .md-t td.m{ color:var(--gd); font-weight:600; }
