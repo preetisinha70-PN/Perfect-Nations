@@ -42,7 +42,7 @@ ROOT = Path(__file__).resolve().parent.parent
 PAGES = ROOT / 'pages'
 DATA = ROOT / 'data'
 HERE = Path(__file__).resolve().parent / 'capital'
-VERSION = '6.3'  # the Sovereign AI Dividend Fund, designed by Perfect Nations (Preeti Sinha, President and CEO, 24 Nov 2026)
+VERSION = '6.4'  # Who finances the Living Line: fifteen sources of capital in three families (the Steward-General, 24 Nov 2026)
 # 6.2: each family pairs the finance with the AI that makes it work, its "ai" line under the family line (Preeti Sinha, President and CEO, 24 Nov 2026)
 NOT_NATIONS = {'state-of-nations', 'ticker', 'blueprints', 'capital-architecture'}
 
@@ -298,24 +298,38 @@ def record(doc):
 
 
 def funders(doc):
-    """Who finances the Living Line (the Steward-General, 21 Nov 2026): the six largest networks of development
-    and impact funders, each with one sourced figure. Named for reference only, never as partners."""
+    """Who finances the Living Line. v6.1 (the Steward-General, 21 Nov 2026): six networks, one sourced figure each.
+    v6.4 (the Steward-General, 24 Nov 2026): fifteen sources of capital in three families (public development capital;
+    private and institutional capital; catalytic and community capital), from multilateral development banks to
+    investment banks, private equity, sovereign wealth, pensions, companies and the diaspora. Each line: the kind of
+    capital, who holds it, one sourced figure, its label and its source. Named for reference only, never as partners;
+    the figures measure different things and are never added together. The same list feeds the For Funders page."""
     f = doc.get('funders')
     if not f:
         return ''
-    cards = ''.join(
-        '<li class="pca-fn"><div class="pca-fn__h"><b>%s</b><span>%s</span></div>'
-        '<p class="pca-fn__f"><em>%s</em><span>%s</span></p>'
-        '<p class="pca-fn__s"><a href="%s" target="_blank" rel="noopener">Source: %s</a></p></li>'
-        % (ent(it['name']), ent(it['kind']), ent(it['figure']), ent(it['label']), ent(https(it['url'])), ent(it['source']))
-        for it in f['items'])
+
+    def row(it):
+        names = '<small class="pca-fs__n">%s</small>' % ent(it['names']) if it.get('names') else ''
+        return ('<li class="pca-fs" id="pca-fs-%s"><div class="pca-fs__t"><b>%s</b><span>%s</span>%s</div>'
+                '<p class="pca-fs__f"><em>%s</em><span>%s <a href="%s" target="_blank" rel="noopener">%s</a></span></p></li>'
+                % (ent(it['id']), ent(it['name']), ent(it['kind']), names, ent(it['figure']), ent(it['label']),
+                   ent(https(it['url'])), ent(it['source'])))
+    fams = f.get('families') or [{'id': '', 'name': '', 'line': ''}]
+    cols = []
+    for fam in fams:
+        items = [it for it in f['items'] if it.get('family', '') == fam['id']]
+        if not items:
+            continue
+        head = ('<div class="pca-fsg__h"><b>%s</b><span>%s</span><i>%d</i></div>' % (ent(fam['name']), ent(fam['line']), len(items))
+                if fam['name'] else '')
+        cols.append('<div class="pca-fsg">%s<ul>%s</ul></div>' % (head, ''.join(row(it) for it in items)))
     b = f['button']
     return (
         '<section class="pca-band pca-fund" id="pca-funders" aria-labelledby="pca-fh"><div class="pca-in">'
         '<p class="pca-eb">%s</p><h2 class="pca-h2" id="pca-fh">%s</h2><p class="pca-lead">%s</p>'
-        '<ul class="pca-fns">%s</ul>'
+        '<div class="pca-fsgs">%s</div>'
         '<div class="pca-fund__foot"><p class="pca-note">%s</p><a class="pca-btn" href="%s">%s</a></div></div></section>'
-        % (ent(f['eyebrow']), ent(f['title']), ent(f['lead']), cards, ent(f['note']), ent(https(b['url'])), ent(b['label'])))
+        % (ent(f['eyebrow']), ent(f['title']), ent(f['lead']), ''.join(cols), ent(f['note']), ent(https(b['url'])), ent(b['label'])))
 
 
 def close(doc):
@@ -382,6 +396,12 @@ Sovereign Wealth Fund: a nation that offers its land, energy, water and spectrum
 their gains into a ring-fenced fund that finances the seven standards and a dividend for every citizen, after Alaska's
 Permanent Fund (Preeti Sinha, President and CEO, 24 Nov 2026, after Peter Diamandis's proposal for a per-citizen
 dividend in exchange for public inputs).
+v6.4: Who finances the Living Line grows from six networks to fifteen sources of capital in three families: public
+development capital (multilateral development banks, public development banks, national and regional development
+banks, development finance institutions, export credit agencies, climate funds), private and institutional capital
+(investment banks and bond markets, private equity and private credit, sovereign wealth funds, pension funds,
+corporate partners) and catalytic and community capital (impact investors, blended finance, foundations, the
+diaspora), each with one sourced figure (the Steward-General, 24 Nov 2026).
 =========================================================================== -->
 ''' % (VERSION, today)
     body = '\n'.join([
