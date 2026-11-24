@@ -1,0 +1,384 @@
+<!-- ===========================================================================
+PERFECT NATIONS - THE NATION BRIEFING - BARBADOS - v1.0 - 2026-11-24
+perfectnations.com/blueprints/barbados/nation-briefing/ . Root id pn-md-briefing-barbados. Mandate I: three hours, the Gap named and sized.
+An illustration of what a nation receives from the ReDesign Studio: not commissioned by the Government of
+Barbados; no terms agreed. Built by tools/build_mandates.py from tools/mandates/ (never edit this file by hand).
+v1.0 (24 Nov 2026, Preeti Sinha, President and CEO): the three mandates for Barbados, with AI after the finance.
+=========================================================================== -->
+<style>
+/* The three mandates of the ReDesign Studio, as a nation receives them (v1.0, 24 Nov 2026).
+   One design for The Nation Briefing, The Blueprint Lab and The Sovereign Mandate. #pn-md-briefing-barbados is the page's root id.
+   Palette: Earthrise hero, ivory reading bands, Lagoon for the structure, Earthrise Depth for the close.
+   Gold only for actions and sourced money; terracotta eyebrows on ivory; Barlow Condensed and Barlow Semi Condensed. */
+#pn-md-briefing-barbados{
+  --er:#0B3D45; --lg:#0F4C5C; --dp:#082A30; --iv:#F4ECD8; --pp:#FBF8F1; --wh:#FFFDF8;
+  --ink:#10262B; --im:#34464A; --mut:#5C696C; --hair:rgba(16,38,43,.13);
+  --tv:#F5F1E8; --tvm:rgba(245,241,232,.84); --tvd:rgba(245,241,232,.64); --thair:rgba(245,241,232,.16);
+  --g:#E3C258; --gd:#7E5A0C; --tc:#8A3A22; --teal:#6EC8C4; --onacc:#1A140C;
+  --hd:var(--pn-font-heading,"Barlow Condensed","Arial Narrow",Arial,sans-serif);
+  --bd:var(--pn-font-body,"Barlow Semi Condensed",Arial,sans-serif);
+  --px:clamp(18px,5vw,72px);
+  position:relative; isolation:isolate; width:100vw; margin-left:calc(50% - 50vw);
+  overflow-x:hidden; overflow-x:clip; box-sizing:border-box;
+  font-family:var(--bd); font-size:16px; line-height:1.5; color:var(--ink); background:var(--pp);
+}
+#pn-md-briefing-barbados *,#pn-md-briefing-barbados *::before,#pn-md-briefing-barbados *::after{ box-sizing:border-box; min-width:0; }
+.elementor-widget-html:has(#pn-md-briefing-barbados),.elementor-widget:has(#pn-md-briefing-barbados),.e-con-inner:has(#pn-md-briefing-barbados),.e-con:has(#pn-md-briefing-barbados){
+  padding-top:0 !important; padding-bottom:0 !important; --widgets-spacing:0px !important; row-gap:0 !important;
+}
+#pn-md-briefing-barbados h1,#pn-md-briefing-barbados h2,#pn-md-briefing-barbados h3,#pn-md-briefing-barbados h4,#pn-md-briefing-barbados p,#pn-md-briefing-barbados li,#pn-md-briefing-barbados dt,#pn-md-briefing-barbados dd{ text-shadow:none !important; }
+#pn-md-briefing-barbados a{ color:inherit; }
+#pn-md-briefing-barbados .md-in{ width:100%; max-width:1240px; margin:0 auto; padding:0 var(--px); }
+#pn-md-briefing-barbados .md-band{ padding:clamp(24px,3.8vh,44px) 0 clamp(22px,3.6vh,40px); }
+
+/* the hero */
+#pn-md-briefing-barbados .md-hero{ padding:clamp(18px,3vh,30px) 0 clamp(22px,3.6vh,38px); color:var(--tv);
+  background:radial-gradient(120% 150% at 86% 0%,#10505F 0%,#0B3D45 46%,#082A30 100%); }
+#pn-md-briefing-barbados .md-top{ display:flex; flex-wrap:wrap; gap:4px 14px; margin:0 0 clamp(14px,2.4vh,24px); font-family:var(--hd); font-size:.72rem; font-weight:700; letter-spacing:.2em; text-transform:uppercase; color:var(--tvd); }
+#pn-md-briefing-barbados .md-top a{ color:var(--tv); text-decoration:none; border-bottom:1px solid var(--thair); }
+#pn-md-briefing-barbados .md-top a:hover,#pn-md-briefing-barbados .md-top a:focus-visible{ border-bottom-color:var(--tv); }
+#pn-md-briefing-barbados .md-hero__g{ display:grid; grid-template-columns:minmax(0,1.08fr) minmax(0,1fr); gap:20px clamp(24px,4vw,60px); align-items:center; }
+#pn-md-briefing-barbados .md-k{ margin:0; font-family:var(--hd); font-size:.72rem; font-weight:700; letter-spacing:.28em; text-transform:uppercase; color:var(--teal); }
+#pn-md-briefing-barbados h1.md-h1{ margin:8px 0 0; font-family:var(--hd); font-weight:600; font-size:clamp(2.4rem,5.4vw,4.8rem); line-height:.92; letter-spacing:-.025em; color:var(--tv) !important; text-wrap:balance; }
+#pn-md-briefing-barbados h1.md-h1 span{ display:block; color:rgba(245,241,232,.66); }
+#pn-md-briefing-barbados .md-lead{ margin:12px 0 0; max-width:56ch; font-size:clamp(1rem,1.25vw,1.14rem); line-height:1.5; color:var(--tvm); }
+#pn-md-briefing-barbados .md-leave{ margin:16px 0 0; padding:12px 16px; border:1px solid var(--thair); border-radius:14px; background:rgba(245,241,232,.05); }
+#pn-md-briefing-barbados .md-leave small{ display:block; font-family:var(--hd); font-size:.64rem; font-weight:700; letter-spacing:.22em; text-transform:uppercase; color:var(--tvd); }
+#pn-md-briefing-barbados .md-leave b{ display:block; margin-top:3px; font-family:var(--hd); font-size:clamp(1.25rem,2vw,1.6rem); font-weight:600; line-height:1.05; color:var(--tv); }
+#pn-md-briefing-barbados .md-leave span{ display:block; margin-top:4px; font-size:.92rem; color:var(--tvm); }
+#pn-md-briefing-barbados .md-acts{ display:flex; flex-wrap:wrap; gap:10px 12px; margin:18px 0 0; }
+#pn-md-briefing-barbados .md-btn{ display:inline-flex; align-items:center; justify-content:center; min-height:44px; padding:0 20px; border-radius:999px; text-decoration:none;
+  font-family:var(--hd); font-size:.74rem; font-weight:700; letter-spacing:.19em; text-transform:uppercase; background:var(--g); color:var(--onacc); border:1px solid var(--g); }
+#pn-md-briefing-barbados .md-btn:hover,#pn-md-briefing-barbados .md-btn:focus-visible{ background:#EDD27C; border-color:#EDD27C; color:var(--onacc); }
+#pn-md-briefing-barbados .md-btn--line{ background:transparent; color:var(--g); }
+#pn-md-briefing-barbados .md-btn--line:hover,#pn-md-briefing-barbados .md-btn--line:focus-visible{ background:rgba(227,194,88,.12); color:var(--g); }
+#pn-md-briefing-barbados .md-ill{ margin:clamp(14px,2.2vh,22px) 0 0; padding-top:10px; border-top:1px solid var(--thair); font-size:.8rem; line-height:1.4; color:var(--tvd); }
+
+/* the four figures in the hero picture */
+#pn-md-briefing-barbados .md-figs{ display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:10px; margin:0; padding:0; list-style:none; }
+#pn-md-briefing-barbados .md-figs li{ padding:14px 16px 12px; border-radius:16px; border:1px solid var(--thair); background:rgba(245,241,232,.05); }
+#pn-md-briefing-barbados .md-figs li.is-lead{ grid-column:1 / -1; background:rgba(245,241,232,.09); border-color:rgba(227,194,88,.35); }
+#pn-md-briefing-barbados .md-figs b{ display:block; font-family:var(--hd); font-weight:600; font-size:clamp(2rem,3.4vw,3rem); line-height:.95; letter-spacing:-.02em; color:var(--tv); font-variant-numeric:tabular-nums; white-space:nowrap; }
+#pn-md-briefing-barbados .md-figs b.is-money{ color:var(--g); }
+#pn-md-briefing-barbados .md-figs span{ display:block; margin-top:5px; font-size:.86rem; line-height:1.35; color:var(--tvm); }
+#pn-md-briefing-barbados .md-figs a{ font-size:.74rem; color:var(--tvd); }
+
+/* the section links */
+#pn-md-briefing-barbados .md-nav{ position:relative; z-index:3; background:var(--wh); border-bottom:1px solid var(--hair); }
+#pn-md-briefing-barbados .md-nav ul{ display:flex; gap:4px 20px; margin:0 auto; padding:0 var(--px); max-width:1240px; list-style:none; overflow-x:auto; scrollbar-width:none; }
+#pn-md-briefing-barbados .md-nav ul::-webkit-scrollbar{ display:none; }
+#pn-md-briefing-barbados .md-nav a{ display:flex; align-items:center; min-height:44px; white-space:nowrap; text-decoration:none; font-family:var(--hd); font-size:.74rem; font-weight:700; letter-spacing:.16em; text-transform:uppercase; color:var(--er); }
+#pn-md-briefing-barbados .md-nav a:hover,#pn-md-briefing-barbados .md-nav a:focus-visible{ color:var(--tc); }
+@media (min-width:900px){ #pn-md-briefing-barbados .md-nav{ position:sticky; top:var(--pn-head-off,0px); } }
+
+/* headings in the reading bands */
+#pn-md-briefing-barbados .md-eb{ display:flex; align-items:center; gap:12px; margin:0; font-family:var(--hd); font-size:.72rem; font-weight:700; letter-spacing:.3em; text-transform:uppercase; color:var(--tc); }
+#pn-md-briefing-barbados .md-eb::before{ content:""; width:26px; height:1px; background:rgba(138,58,34,.6); }
+#pn-md-briefing-barbados h2.md-h2{ margin:8px 0 0; font-family:var(--hd); font-weight:600; font-size:clamp(2rem,3.6vw,3.2rem); line-height:.95; letter-spacing:-.02em; color:var(--er) !important; text-wrap:balance; }
+#pn-md-briefing-barbados .md-sub{ margin:10px 0 0; max-width:64ch; font-size:clamp(1rem,1.2vw,1.1rem); line-height:1.5; color:var(--im); }
+#pn-md-briefing-barbados .md-head{ display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:10px clamp(24px,4vw,60px); align-items:end; margin-bottom:clamp(14px,2.4vh,22px); }
+#pn-md-briefing-barbados .md-ivory{ background:var(--iv); }
+#pn-md-briefing-barbados .md-two{ display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1.1fr); gap:20px clamp(24px,4vw,48px); align-items:start; }
+#pn-md-briefing-barbados .md-two > div > h3{ margin:0 0 10px; font-family:var(--hd); font-size:.72rem; font-weight:700; letter-spacing:.22em; text-transform:uppercase; color:var(--tc); }
+#pn-md-briefing-barbados .md-paper{ background:var(--pp); }
+
+/* the answer first */
+#pn-md-briefing-barbados .md-answer{ display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:12px; margin:0; padding:0; list-style:none; }
+#pn-md-briefing-barbados .md-answer li{ padding:16px 18px; border-radius:16px; background:var(--wh); border:1px solid var(--hair); box-shadow:0 10px 26px rgba(16,38,43,.06); }
+#pn-md-briefing-barbados .md-answer b{ display:block; font-family:var(--hd); font-size:1.28rem; font-weight:600; line-height:1.05; color:var(--er); }
+#pn-md-briefing-barbados .md-answer p{ margin:6px 0 0; font-size:.95rem; line-height:1.45; color:var(--im); }
+
+/* cards, lists and the AI line */
+#pn-md-briefing-barbados .md-cards{ display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr)); gap:12px; margin:0; padding:0; list-style:none; }
+#pn-md-briefing-barbados .md-card{ display:flex; flex-direction:column; gap:6px; padding:16px 18px 14px; border-radius:16px; background:var(--wh); border:1px solid var(--hair); }
+#pn-md-briefing-barbados .md-card small{ font-family:var(--hd); font-size:.64rem; font-weight:700; letter-spacing:.2em; text-transform:uppercase; color:var(--tc); }
+#pn-md-briefing-barbados .md-card h3{ margin:0; font-family:var(--hd); font-weight:600; font-size:1.3rem; line-height:1.05; color:var(--er); }
+#pn-md-briefing-barbados .md-card .md-fig{ font-family:var(--hd); font-weight:600; font-size:clamp(1.7rem,2.4vw,2.2rem); line-height:1; color:var(--er); font-variant-numeric:tabular-nums; }
+#pn-md-briefing-barbados .md-card .md-fig.is-money{ color:var(--gd); }
+#pn-md-briefing-barbados .md-card p{ margin:0; font-size:.92rem; line-height:1.45; color:var(--im); }
+#pn-md-briefing-barbados .md-card .md-src{ margin-top:auto; padding-top:6px; font-size:.76rem; }
+#pn-md-briefing-barbados .md-src a{ color:var(--mut); text-decoration:underline; text-underline-offset:2px; }
+#pn-md-briefing-barbados .md-ai{ margin:clamp(14px,2.2vh,20px) 0 0; padding:12px 16px; border-left:3px solid var(--er); border-radius:0 12px 12px 0; background:rgba(11,61,69,.06); font-size:.96rem; line-height:1.5; color:var(--im); }
+#pn-md-briefing-barbados .md-ai b{ margin-right:6px; font-family:var(--hd); font-size:.7rem; font-weight:700; letter-spacing:.18em; text-transform:uppercase; color:var(--er); }
+#pn-md-briefing-barbados .md-card .md-ai{ margin:6px 0 0; padding:8px 10px; font-size:.86rem; }
+
+/* the seven standards: coverage bars, each to the Living Line */
+#pn-md-briefing-barbados .md-seven{ display:grid; gap:7px; margin:0; padding:0; list-style:none; }
+#pn-md-briefing-barbados .md-seven li{ display:grid; grid-template-columns:7.4em minmax(0,1fr) 4.6em; gap:12px; align-items:center; font-size:.92rem; }
+#pn-md-briefing-barbados .md-seven b{ font-family:var(--hd); font-weight:600; font-size:1.02rem; color:var(--er); }
+#pn-md-briefing-barbados .md-bar{ position:relative; height:12px; border-radius:999px; background:rgba(16,38,43,.08); overflow:hidden; }
+#pn-md-briefing-barbados .md-bar i{ position:absolute; inset:0 auto 0 0; border-radius:999px; background:var(--er); }
+#pn-md-briefing-barbados .md-seven li.is-far .md-bar i{ background:var(--tc); }
+#pn-md-briefing-barbados .md-seven li.is-far b,#pn-md-briefing-barbados .md-seven li.is-far em{ color:var(--tc); }
+#pn-md-briefing-barbados .md-seven em{ font-style:normal; text-align:right; font-family:var(--hd); font-weight:600; font-size:1.02rem; color:var(--er); font-variant-numeric:tabular-nums; }
+#pn-md-briefing-barbados .md-seven small{ grid-column:2 / -1; margin-top:-4px; font-size:.78rem; color:var(--mut); }
+#pn-md-briefing-barbados .md-seven small a{ color:var(--mut); }
+
+/* tables */
+#pn-md-briefing-barbados .md-tw{ overflow-x:auto; margin:0; border-radius:14px; border:1px solid var(--hair); background:var(--wh); }
+#pn-md-briefing-barbados table.md-t{ width:100%; border-collapse:collapse; font-size:.92rem; }
+#pn-md-briefing-barbados .md-t th,#pn-md-briefing-barbados .md-t td{ padding:9px 12px; text-align:left; vertical-align:top; border-bottom:1px solid var(--hair); }
+#pn-md-briefing-barbados .md-t th{ font-family:var(--hd); font-size:.66rem; font-weight:700; letter-spacing:.16em; text-transform:uppercase; color:var(--tc); background:rgba(138,58,34,.04); }
+#pn-md-briefing-barbados .md-t td.n,#pn-md-briefing-barbados .md-t th.n{ text-align:right; white-space:nowrap; font-variant-numeric:tabular-nums; }
+#pn-md-briefing-barbados .md-t td.m{ color:var(--gd); font-weight:600; }
+#pn-md-briefing-barbados .md-t tr:last-child td{ border-bottom:0; }
+#pn-md-briefing-barbados .md-t tfoot td{ font-weight:600; color:var(--er); border-top:2px solid var(--er); }
+#pn-md-briefing-barbados .md-t td a{ color:var(--mut); font-size:.8rem; }
+#pn-md-briefing-barbados .md-note{ margin:10px 0 0; font-size:.82rem; line-height:1.45; color:var(--mut); }
+
+/* steps: the agenda, the days, the phases */
+#pn-md-briefing-barbados .md-steps{ display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr)); gap:12px; margin:0; padding:0; list-style:none; counter-reset:md; }
+#pn-md-briefing-barbados .md-steps li{ position:relative; padding:16px 18px 14px; border-radius:16px; background:var(--wh); border:1px solid var(--hair); }
+#pn-md-briefing-barbados .md-steps li > span{ display:block; font-family:var(--hd); font-size:.68rem; font-weight:700; letter-spacing:.2em; text-transform:uppercase; color:var(--tc); }
+#pn-md-briefing-barbados .md-steps h3{ margin:4px 0 0; font-family:var(--hd); font-weight:600; font-size:1.24rem; line-height:1.05; color:var(--er); }
+#pn-md-briefing-barbados .md-steps p{ margin:6px 0 0; font-size:.9rem; line-height:1.45; color:var(--im); }
+#pn-md-briefing-barbados .md-steps ul{ margin:8px 0 0; padding:0 0 0 16px; font-size:.88rem; line-height:1.45; color:var(--im); }
+#pn-md-briefing-barbados .md-steps li li{ margin:2px 0; }
+
+/* the structure: the flow of the deal, on Lagoon */
+#pn-md-briefing-barbados .md-lagoon{ background:linear-gradient(170deg,#10505F 0%,#0F4C5C 50%,#0B3D45 100%); color:var(--tv); }
+#pn-md-briefing-barbados .md-lagoon .md-eb{ color:var(--tvd); }
+#pn-md-briefing-barbados .md-lagoon .md-eb::before{ background:rgba(245,241,232,.45); }
+#pn-md-briefing-barbados .md-lagoon h2.md-h2{ color:var(--tv) !important; }
+#pn-md-briefing-barbados .md-lagoon .md-sub{ color:var(--tvm); }
+#pn-md-briefing-barbados .md-flow{ display:grid; grid-template-columns:repeat(5,minmax(0,1fr)); gap:26px; margin:0; padding:0; list-style:none; }
+#pn-md-briefing-barbados .md-flow li{ position:relative; padding:14px 14px 12px; border-radius:14px; border:1px solid var(--thair); background:rgba(245,241,232,.06); }
+#pn-md-briefing-barbados .md-flow li::after{ content:""; position:absolute; top:50%; right:-20px; width:14px; height:14px; border-top:2px solid var(--tvd); border-right:2px solid var(--tvd); transform:translateY(-50%) rotate(45deg); }
+#pn-md-briefing-barbados .md-flow li:last-child::after{ display:none; }
+#pn-md-briefing-barbados .md-flow small{ display:block; font-family:var(--hd); font-size:.62rem; font-weight:700; letter-spacing:.2em; text-transform:uppercase; color:var(--teal); }
+#pn-md-briefing-barbados .md-flow b{ display:block; margin-top:4px; font-family:var(--hd); font-weight:600; font-size:1.1rem; line-height:1.05; color:var(--tv); }
+#pn-md-briefing-barbados .md-flow p{ margin:5px 0 0; font-size:.84rem; line-height:1.4; color:var(--tvm); }
+#pn-md-briefing-barbados .md-loop{ margin:16px 0 0; padding:12px 16px; border:1px dashed rgba(110,200,196,.55); border-radius:14px; font-size:.95rem; line-height:1.5; color:var(--tvm); }
+#pn-md-briefing-barbados .md-loop b{ margin-right:6px; font-family:var(--hd); font-size:.7rem; font-weight:700; letter-spacing:.18em; text-transform:uppercase; color:var(--teal); }
+
+/* the term sheet */
+#pn-md-briefing-barbados .md-sheet{ display:grid; grid-template-columns:minmax(0,1fr); margin:0; border-radius:16px; border:1px solid var(--hair); background:var(--wh); overflow:hidden; }
+#pn-md-briefing-barbados .md-sheet div{ display:grid; grid-template-columns:12em minmax(0,1fr); gap:14px; padding:10px 16px; border-bottom:1px solid var(--hair); }
+#pn-md-briefing-barbados .md-sheet div:last-child{ border-bottom:0; }
+#pn-md-briefing-barbados .md-sheet dt{ font-family:var(--hd); font-size:.7rem; font-weight:700; letter-spacing:.16em; text-transform:uppercase; color:var(--tc); padding-top:3px; }
+#pn-md-briefing-barbados .md-sheet dd{ margin:0; font-size:.94rem; line-height:1.45; color:var(--im); }
+#pn-md-briefing-barbados .md-sheet dd i{ font-style:normal; color:var(--mut); }
+
+/* what the nation receives */
+#pn-md-briefing-barbados .md-get{ display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr)); gap:8px 22px; margin:0; padding:0; list-style:none; }
+#pn-md-briefing-barbados .md-get li{ position:relative; padding:8px 0 8px 22px; border-bottom:1px solid var(--hair); font-size:.95rem; line-height:1.45; color:var(--im); }
+#pn-md-briefing-barbados .md-get li::before{ content:""; position:absolute; left:2px; top:15px; width:9px; height:9px; border-radius:50%; background:var(--er); }
+#pn-md-briefing-barbados .md-get b{ color:var(--er); font-weight:600; }
+
+/* the close */
+#pn-md-briefing-barbados .md-close{ background:linear-gradient(180deg,#0B3D45 0%,#082A30 100%); color:var(--tv); }
+#pn-md-briefing-barbados .md-close h2.md-h2{ color:var(--tv) !important; }
+#pn-md-briefing-barbados .md-close .md-eb{ color:var(--tvd); }
+#pn-md-briefing-barbados .md-close .md-eb::before{ background:rgba(245,241,232,.45); }
+#pn-md-briefing-barbados .md-close .md-sub{ color:var(--tvm); }
+#pn-md-briefing-barbados .md-three{ display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:12px; margin:18px 0 0; padding:0; list-style:none; }
+#pn-md-briefing-barbados .md-three a{ display:flex; flex-direction:column; gap:4px; height:100%; padding:14px 16px; border-radius:14px; border:1px solid var(--thair); background:rgba(245,241,232,.05); text-decoration:none; color:var(--tv); }
+#pn-md-briefing-barbados .md-three a:hover,#pn-md-briefing-barbados .md-three a:focus-visible{ border-color:var(--g); }
+#pn-md-briefing-barbados .md-three small{ font-family:var(--hd); font-size:.64rem; font-weight:700; letter-spacing:.2em; text-transform:uppercase; color:var(--tvd); }
+#pn-md-briefing-barbados .md-three b{ font-family:var(--hd); font-weight:600; font-size:1.24rem; line-height:1.05; }
+#pn-md-briefing-barbados .md-three span{ font-size:.86rem; line-height:1.4; color:var(--tvm); }
+#pn-md-briefing-barbados .md-three .is-here a{ border-color:rgba(245,241,232,.4); background:rgba(245,241,232,.1); }
+#pn-md-briefing-barbados .md-vision{ margin:18px 0 0; font-size:.95rem; color:var(--tvm); }
+#pn-md-briefing-barbados .md-vision b{ color:var(--tv); font-weight:600; }
+#pn-md-briefing-barbados .md-fine{ margin:14px 0 0; padding-top:10px; border-top:1px solid var(--thair); font-size:.78rem; line-height:1.45; color:var(--tvd); }
+#pn-md-briefing-barbados .md-fine a{ color:var(--tvd); }
+
+@media (max-width:900px){
+  #pn-md-briefing-barbados .md-hero__g,#pn-md-briefing-barbados .md-head,#pn-md-briefing-barbados .md-two{ grid-template-columns:1fr; }
+  #pn-md-briefing-barbados .md-answer{ grid-template-columns:1fr; }
+  #pn-md-briefing-barbados .md-flow{ grid-template-columns:1fr; gap:22px; }
+  #pn-md-briefing-barbados .md-flow li::after{ top:auto; bottom:-17px; right:auto; left:24px; transform:rotate(135deg); }
+  #pn-md-briefing-barbados .md-three{ grid-template-columns:1fr; }
+}
+@media (max-width:600px){
+  #pn-md-briefing-barbados .md-figs b{ font-size:clamp(1.8rem,9vw,2.4rem); }
+  #pn-md-briefing-barbados .md-seven li{ grid-template-columns:6.2em minmax(0,1fr) 3.8em; gap:8px; font-size:.86rem; }
+  #pn-md-briefing-barbados .md-sheet div{ grid-template-columns:1fr; gap:2px; }
+  #pn-md-briefing-barbados .md-btn{ width:100%; }
+  #pn-md-briefing-barbados table.md-t{ font-size:.82rem; }
+  #pn-md-briefing-barbados .md-t th,#pn-md-briefing-barbados .md-t td{ padding:7px 8px; }
+}
+@media (prefers-reduced-motion:reduce){ #pn-md-briefing-barbados *{ transition:none !important; animation:none !important; } }
+</style>
+<div id="pn-md-briefing-barbados" class="md">
+  <header class="md-hero">
+    <div class="md-in">
+      <p class="md-top"><a href="https://perfectnations.com/blueprints/barbados/">Perfect Barbados</a><span>The ReDesign Studio</span><span>Mandate I of III</span></p>
+      <div class="md-hero__g">
+        <div>
+          <p class="md-k">The Nation Briefing &#183; Barbados</p>
+          <h1 class="md-h1">Three hours. <span>The Gap, named and sized.</span></h1>
+          <p class="md-lead">A private session for the people who decide. The nation&#8217;s assets walked through, Perfect Capita and the Gap explained, the instruments that could close the Gap shortlisted, and the path to market outlined. AI has read the data before anyone enters the room.</p>
+          <div class="md-leave"><small>You leave with</small><b>The Gap, named and sized</b><span>Up to $338 million a year, led by food: about 88,000 Barbadians, three in ten, are moderately or severely food insecure.</span></div>
+          <div class="md-acts">
+            <a class="md-btn" href="https://perfectnations.com/contact/?about=briefing&amp;country=Barbados">Request a Nation Briefing</a>
+            <a class="md-btn md-btn--line" href="https://perfectnations.com/blueprints/barbados/blueprint-lab/" data-md="lab">Next: The Blueprint Lab</a>
+          </div>
+        </div>
+        <ul class="md-figs" aria-label="Barbados in five figures">
+          <li class="is-lead"><b class="is-money">$338m</b><span>The Gap a year: the cost of lifting every Barbadian above the Living Line, an upper bound, 4.2% of GDP</span></li>
+          <li><b class="is-money">$6,204</b><span>Perfect Capita, a person a year (BBD 12,407)</span></li>
+          <li><b class="is-money">$1.75bn</b><span>The price of Perfect Barbados, a year</span></li>
+          <li><b>69</b><span>Coverage out of 100, held by food</span></li>
+          <li><b>~88,000</b><span>Barbadians below the Living Line for food</span></li>
+        </ul>
+      </div>
+      <p class="md-ill">An illustration prepared by Perfect Nations to show what a nation receives. It was not commissioned by the Government of Barbados, and no terms have been agreed with any party. Figures are Perfect Nations estimates from the sources listed at the foot of the page.</p>
+    </div>
+  </header>
+
+  <nav class="md-nav" aria-label="On this page">
+    <ul>
+      <li><a href="#md-answer">The answer</a></li>
+      <li><a href="#md-assets">01 Assets</a></li>
+      <li><a href="#md-capita">02 Perfect Capita</a></li>
+      <li><a href="#md-capital">03 Capital architecture</a></li>
+      <li><a href="#md-launch">04 Launch</a></li>
+      <li><a href="#md-session">The session</a></li>
+      <li><a href="#md-three">The three mandates</a></li>
+    </ul>
+  </nav>
+
+  <section class="md-band md-paper" id="md-answer" aria-labelledby="md-answer-h">
+    <div class="md-in">
+      <div class="md-head">
+        <div><p class="md-eb">The briefing in one page</p><h2 class="md-h2" id="md-answer-h">Barbados is close. Food sets the line.</h2></div>
+        <p class="md-sub">The answer comes first, as it would to a Cabinet. Everything below supports it.</p>
+      </div>
+      <ul class="md-answer">
+        <li><b>Six of the seven standards are above 80.</b><p>Water, shelter, energy and education reach almost everyone; health scores 82 and livelihood 82.5. Food holds Barbados at 69.</p></li>
+        <li><b>The Gap can be financed.</b><p>Up to $338 million a year would lift every Barbadian above the Living Line in all seven standards: 4.2% of GDP. Food is up to $192 million of it.</p></li>
+        <li><b>Barbados has done this before.</b><p>Two debt conversions, in 2022 and 2024, freed savings for the ocean and for climate resilience. A third can be bound to food.</p></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="md-band md-ivory" id="md-assets" aria-labelledby="md-assets-h">
+    <div class="md-in">
+      <div class="md-head">
+        <div><p class="md-eb">01 Assets</p><h2 class="md-h2" id="md-assets-h">What Barbados owns, walked through.</h2></div>
+        <p class="md-sub">Assets that appear on no balance sheet, and one that does: a record of financial design that lenders already trust.</p>
+      </div>
+      <ul class="md-cards">
+        <li class="md-card"><small>The sea</small><span class="md-fig">185,000+ km&#178;</span><p>An exclusive economic zone about 430 times the island. A Marine Spatial Plan now decides where it can earn.</p><p class="md-src"><a href="https://beknowledge.crfm.int/portal/documents/document/34">Source: CRFM, Marine Spatial Planning Profile</a></p></li>
+        <li class="md-card"><small>The reef coast</small><span class="md-fig">97 km</span><p>Coastline with coral reefs, largely protected, beside the beaches that carry the island&#8217;s tourism.</p><p class="md-src"><a href="https://g20gsp.unepgrid.ch/country/barbados">Source: UNEP/GRID-Geneva</a></p></li>
+        <li class="md-card"><small>The aquifer</small><span class="md-fig">86%</span><p>Of all the water Barbados supplies comes from the ground beneath the island.</p><p class="md-src"><a href="https://www.worldbank.org/en/news/press-release/2026/05/20/barbados-to-strengthen-water-security-with-world-bank-support">Source: World Bank, May 2026</a></p></li>
+        <li class="md-card"><small>The sovereign record</small><span class="md-fig is-money">BBD 592.7m</span><p>Domestic debt repurposed in November 2024, in the world&#8217;s first debt-for-climate swap.</p><p class="md-src"><a href="https://www.centralbank.org.bb/news/general-press-release/debt-for-development-swaps">Source: Central Bank of Barbados</a></p></li>
+        <li class="md-card"><small>The people</small><span class="md-fig">282,623</span><p>Barbadians in 2025: the number every standard is measured against.</p><p class="md-src"><a href="https://data.worldbank.org/indicator/SP.POP.TOTL?locations=BB">Source: World Bank, 2025</a></p></li>
+      </ul>
+      <p class="md-ai"><b>Where AI works</b>Before the session, AI reads satellite images, fisheries landings, water records and the national registers, keeps this ledger current, and flags every place where two sources disagree.</p>
+    </div>
+  </section>
+
+  <section class="md-band md-paper" id="md-capita" aria-labelledby="md-capita-h">
+    <div class="md-in">
+      <div class="md-head">
+        <div><p class="md-eb">02 Perfect Capita</p><h2 class="md-h2" id="md-capita-h">Seven standards, and the price of reaching all of them.</h2></div>
+        <p class="md-sub">The Living Line: the basic standard of living every citizen should stand above: food, water, shelter, energy, education, health and livelihood. Coverage holds a nation at its weakest standard.</p>
+      </div>
+      <div class="md-two">
+        <div>
+          <h3>Where Barbados stands</h3>
+          <ul class="md-seven">
+            <li class="is-far"><b>Food</b><span class="md-bar"><i style="width:69%"></i></span><em>69%</em><small>Not food insecure. <a href="https://data.worldbank.org/indicator/SN.ITK.MSFI.ZS?locations=BB">FAO, 2022</a></small></li>
+            <li><b>Water</b><span class="md-bar"><i style="width:99%"></i></span><em>99%</em><small>Basic water at home. <a href="https://data.worldbank.org/indicator/SH.H2O.BASW.ZS?locations=BB">WHO/UNICEF, 2024</a></small></li>
+            <li><b>Shelter</b><span class="md-bar"><i style="width:99.7%"></i></span><em>99.7%</em><small>Durable dwellings. <a href="https://stats.gov.bb/">Census, 2021</a></small></li>
+            <li><b>Energy</b><span class="md-bar"><i style="width:100%"></i></span><em>100</em><small>Electricity and clean cooking for all. <a href="https://data.worldbank.org/indicator/EG.CFT.ACCS.ZS?locations=BB">IRENA and World Bank, 2023</a></small></li>
+            <li><b>Education</b><span class="md-bar"><i style="width:97%"></i></span><em>97%</em><small>Lower-secondary completion. <a href="https://data.worldbank.org/indicator/SE.SEC.CMPT.LO.ZS?locations=BB">UNESCO, 2024</a></small></li>
+            <li><b>Health</b><span class="md-bar"><i style="width:82%"></i></span><em>82</em><small>WHO service coverage index. <a href="https://dashboard.uhc2030.org/pdf/BRB.pdf">WHO and UHC2030, 2023</a></small></li>
+            <li><b>Livelihood</b><span class="md-bar"><i style="width:82.5%"></i></span><em>82.5%</em><small>Above the national poverty line; the survey is dated. <a href="https://data.iadb.org/file/download/338e39ac-3988-4de8-ba03-5bfe36a2459d">IDB and BSS, 2016</a></small></li>
+          </ul>
+        </div>
+        <div>
+          <h3>What it costs</h3>
+          <div class="md-tw">
+            <table class="md-t">
+              <thead><tr><th>Standard</th><th class="n">A person a year</th><th class="n">The Gap a year</th></tr></thead>
+              <tbody>
+                <tr><td>Food</td><td class="n m">$2,190</td><td class="n m">$191.9m</td></tr>
+                <tr><td>Shelter and livelihood</td><td class="n m">$2,234</td><td class="n m">$110.5m</td></tr>
+                <tr><td>Health</td><td class="n m">$536</td><td class="n m">$27.3m</td></tr>
+                <tr><td>Education</td><td class="n m">$956</td><td class="n m">$8.1m</td></tr>
+                <tr><td>Energy</td><td class="n m">$264</td><td class="n">none</td></tr>
+                <tr><td>Water</td><td class="n m">$23</td><td class="n m">under $0.1m</td></tr>
+              </tbody>
+              <tfoot><tr><td>Perfect Capita</td><td class="n">$6,204</td><td class="n">$337.8m</td></tr></tfoot>
+            </table>
+          </div>
+          <p class="md-note">A Perfect Nations estimate of 31 October 2026, to be confirmed with Barbados: the national poverty lines of the <a href="https://data.iadb.org/files/download/a592f739-3619-4c65-996f-6ba20327cd38">2016 Survey of Living Conditions</a>, carried to 2025 prices, plus public spending per person on education and health (World Bank). Shelter is priced with livelihood because the survey does not split them. The Gap charges the full cost for every person below a line, so it is an upper bound. Figures rounded.</p>
+        </div>
+      </div>
+      <p class="md-ai"><b>Where AI works</b>The last national survey of living conditions dates from 2016. Short phone surveys, market prices and estimates of harvest and catch can keep Coverage and the Gap current every quarter, between national surveys.</p>
+    </div>
+  </section>
+
+  <section class="md-band md-ivory" id="md-capital" aria-labelledby="md-capital-h">
+    <div class="md-in">
+      <div class="md-head">
+        <div><p class="md-eb">03 Capital architecture</p><h2 class="md-h2" id="md-capital-h">Four instruments that could close the Gap.</h2></div>
+        <p class="md-sub">Innovative financing for development first: each instrument builds on a deal Barbados has already done. Then what AI makes possible.</p>
+      </div>
+      <ul class="md-cards">
+        <li class="md-card"><small>Food &#183; The lead</small><h3>The Blue Food Swap</h3><p>Make the next debt conversion a blue food swap: refinance costly debt with guaranteed debt and bind the savings to local farms, fisheries and sea farming.</p><p><b>Proved in Barbados:</b> the 2024 debt-for-climate-resilience conversion, <span class="md-fig is-money" style="font-size:1.1rem">$300M</span>, with guarantees of $150m each from the IDB and the EIB.</p><p class="md-ai"><b>With AI</b>AI tracks every farm and fishery the savings reach and forecasts each harvest and catch.</p><p class="md-src"><a href="https://www.iadb.org/en/news/barbados-launched-worlds-first-debt-climate-resilience-operation">Source: IDB, 2024</a></p></li>
+        <li class="md-card"><small>Health &#183; Development banks</small><h3>The Health Dividend</h3><p>Build on the debt-for-health refinancing with the IDB, so the savings finance a family doctor and a health record for every household.</p><p><b>Proved in Barbados:</b> an IDB guarantee of <span class="md-fig is-money" style="font-size:1.1rem">$175M</span> for a debt refinancing, approved October 2026; the savings fund health services.</p><p class="md-ai"><b>With AI</b>AI follows the savings into clinics and reports, district by district, who gained access to care.</p><p class="md-src"><a href="https://www.iadb.org/en/project/BA-U0003">Source: IDB, BA-U0003</a></p></li>
+        <li class="md-card"><small>Livelihood &#183; Private investors</small><h3>The Blue Enterprise Fund</h3><p>Invite private investors into a blue economy fund for fishers, boat builders and small tourism firms, so the sea becomes a livelihood for more Barbadians.</p><p><b>Proved in Barbados:</b> an IDB credit guarantee facility of <span class="md-fig is-money" style="font-size:1.1rem">$50M</span> that covers up to 80% of a small-business loan.</p><p class="md-ai"><b>With AI</b>AI matches small blue-economy firms to lenders and prices the risk the fund carries.</p><p class="md-src"><a href="https://www.iadb.org/en/news/barbados-expands-msmes-access-financing-us50-million-idb-loan">Source: IDB</a></p></li>
+        <li class="md-card"><small>Education &#183; Corporate partners</small><h3>Every Child, a Reader</h3><p>Invite hotels and international business firms to co-finance a national reading assessment and apprenticeships for every school leaver.</p><p><b>Proved in Barbados:</b> a World Bank Program-for-Results of <span class="md-fig is-money" style="font-size:1.1rem">$50M</span>, approved March 2026, released as verifiable milestones are met.</p><p class="md-ai"><b>With AI</b>AI runs short reading checks in every school, so the nation knows that every child can read.</p><p class="md-src"><a href="https://www.worldbank.org/en/news/press-release/2026/03/23/barbados-modernizes-early-education-to-build-skills-for-future-jobs-with-world-bank-support">Source: World Bank, 2026</a></p></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="md-band md-paper" id="md-launch" aria-labelledby="md-launch-h">
+    <div class="md-in">
+      <div class="md-head">
+        <div><p class="md-eb">04 Launch</p><h2 class="md-h2" id="md-launch-h">The path to market for the Blue Food Swap.</h2></div>
+        <p class="md-sub">Any new structure must respect the debt path: public debt stood at 93.7% of GDP in June 2026 (<a href="https://www.centralbank.org.bb/news/economic-reviews/economic-review-january-june-2026">Central Bank of Barbados</a>). A conversion lowers the cost of debt already owed; it adds no new borrowing.</p>
+      </div>
+      <ol class="md-steps">
+        <li><span>Step one</span><h3>Ask the guarantors</h3><p>Ask the guarantors of the 2024 conversion to price a blue food swap.</p></li>
+        <li><span>Step two</span><h3>Choose the debt</h3><p>Identify the costly debt to refinance, with the Ministry of Finance and the Central Bank of Barbados.</p></li>
+        <li><span>Step three</span><h3>Bind the savings</h3><p>Write the savings into a Blue Food Fund that can finance only farms, fisheries and sea farming.</p></li>
+        <li><span>Step four</span><h3>Prove it</h3><p>Agree the indicators, starting with the share of Barbadians who are food insecure, and publish them every quarter, verified by AI and an independent verifier.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="md-band md-ivory" id="md-session" aria-labelledby="md-session-h">
+    <div class="md-in">
+      <div class="md-head">
+        <div><p class="md-eb">The session</p><h2 class="md-h2" id="md-session-h">Three hours, four moves.</h2></div>
+        <p class="md-sub">For the Office of the Prime Minister, the Ministry of Finance, the ministries responsible for agriculture and health, and the Central Bank of Barbados. In person in New York or Washington, or by video.</p>
+      </div>
+      <ol class="md-steps">
+        <li><span>First half hour</span><h3>01 Assets</h3><p>The ledger walked through, and the data the ministries can add to it.</p></li>
+        <li><span>Next 45 minutes</span><h3>02 Perfect Capita</h3><p>Perfect Capita, Coverage and the Gap explained, standard by standard.</p></li>
+        <li><span>Next hour</span><h3>03 Capital architecture</h3><p>The four instruments, the deal that proves each one, and what AI makes possible.</p></li>
+        <li><span>Last 45 minutes</span><h3>04 Launch</h3><p>The path to market for the lead instrument, and the decision Barbados takes next.</p></li>
+      </ol>
+      <h3 class="md-eb" style="margin-top:clamp(18px,3vh,28px)">What Barbados receives</h3>
+      <ul class="md-get" style="margin-top:10px">
+        <li><b>The briefing book</b>, as on this page, in Barbados&#8217;s own figures.</li>
+        <li><b>The Gap, named and sized</b>, standard by standard.</li>
+        <li><b>Four instruments shortlisted</b>, each with the deal that proves it.</li>
+        <li><b>A one-page path to market</b> for the lead instrument.</li>
+        <li><b>A data note</b>: what Barbados measures today, what it does not, and where AI can fill the gaps.</li>
+        <li><b>The next step</b>, The Blueprint Lab, scoped.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="md-band md-close" id="md-three" aria-labelledby="md-three-h">
+    <div class="md-in">
+      <p class="md-eb">The ReDesign Studio</p>
+      <h2 class="md-h2" id="md-three-h">Three mandates, one mission.</h2>
+      <p class="md-sub">Identify the assets, estimate Perfect Capita, co-design the capital architecture and launch the instruments: the same mission at three depths.</p>
+      <ul class="md-three">
+        <li class="is-here"><a href="https://perfectnations.com/blueprints/barbados/nation-briefing/" data-md="briefing"><small>Mandate I &#183; 3 hours &#183; This page</small><b>The Nation Briefing</b><span>You leave with the Gap, named and sized.</span></a></li>
+        <li><a href="https://perfectnations.com/blueprints/barbados/blueprint-lab/" data-md="lab"><small>Mandate II &#183; 3 days</small><b>The Blueprint Lab</b><span>You leave with the structure, drawn.</span></a></li>
+        <li><a href="https://perfectnations.com/blueprints/barbados/sovereign-mandate/" data-md="sovereign"><small>Mandate III &#183; End to end</small><b>The Sovereign Mandate</b><span>You leave with a structure ready for market.</span></a></li>
+      </ul>
+      <div class="md-acts"><a class="md-btn" href="https://perfectnations.com/contact/?about=briefing&amp;country=Barbados">Request a Nation Briefing</a></div>
+      <p class="md-vision pn-vision"><b>Built for the age of super intelligence.</b> Good governance first, then innovative financing for development, then AI that proves every result.</p>
+      <p class="md-fine">Perfect Nations is a new-age sovereign advisory firm. Scope and fees are agreed in writing before any work begins. Institutions are named for reference only; no affiliation or endorsement is implied. Sources: <a href="https://data.worldbank.org/indicator/SN.ITK.MSFI.ZS?locations=BB">FAO via World Bank</a>, <a href="https://data.iadb.org/files/download/a592f739-3619-4c65-996f-6ba20327cd38">Barbados Survey of Living Conditions 2016</a>, <a href="https://data.worldbank.org/indicator/SP.POP.TOTL?locations=BB">World Bank population</a>, <a href="https://www.iadb.org/en/news/barbados-launched-worlds-first-debt-climate-resilience-operation">IDB 2024 conversion</a>, <a href="https://www.nature.org/en-us/newsroom/tnc-announces-barbados-blue-bonds-debt-conversion/">The Nature Conservancy 2022 conversion</a>, <a href="https://www.centralbank.org.bb/news/economic-reviews/economic-review-january-june-2026">Central Bank of Barbados, June 2026</a>. Perfect Capita, the price of Perfect Barbados and the Gap are Perfect Nations estimates in 2025 US dollars (BBD 2.00 to US$1.00).</p>
+    </div>
+  </section>
+</div>
