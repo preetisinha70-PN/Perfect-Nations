@@ -1,5 +1,9 @@
 <!-- ==========================================================================
-PERFECT NATIONS - CUSTOM HEADER - v20.8 EARTHRISE - 2026-11-22
+PERFECT NATIONS - CUSTOM HEADER - v20.9 EARTHRISE - 2026-11-24
+v20.9: the three mandates of the ReDesign Studio join Work with us, nested under ReDesign Studio: I The Nation
+Briefing, II The Blueprint Lab, III The Sovereign Mandate, each shown for Barbados (/blueprints/barbados/nation-briefing/,
+/blueprint-lab/, /sovereign-mandate/). The search finds each ("briefing", "lab", "mandate"). Preeti Sinha, President
+and CEO, 24 Nov 2026: "Where would they be located on a menu? In the header and footer."
 v20.8: For Funders (/for-funders/) joins Work with us, before Contact: the deal pipeline for development capital. The
 search finds it ("funders", "investors", "pipeline", "impact"). The Steward-General, 22 Nov 2026: "add funders to
 header and footer".
@@ -301,6 +305,10 @@ html:has(.pn-hd__toggle:checked){ overflow:hidden; }
   border:1.5px solid var(--pn-gold); color:var(--pn-gold); font-size:11px; font-weight:700; letter-spacing:.02em; line-height:1;
 }
 .pn-hd__gl a:hover{ color:#F0D68F; }
+/* v20.9: the three mandates, nested under ReDesign Studio */
+.pn-hd__gl .pn-hd__sub a{ align-items:center; gap:10px; margin-left:4px; padding:4px 2px 4px 12px; border-left:1px solid var(--pn-hair); }
+.pn-hd__gl .pn-hd__sub .pn-hd__gt{ font-size:clamp(16px,1.4vw,18px); }
+.pn-hd__gl .pn-hd__sub .pn-hd__gn{ width:24px; height:24px; font-size:9.5px; letter-spacing:0; }
 .pn-hd__gl a:hover .pn-hd__gn{ background:var(--pn-gold); color:#1A140C; }
 .pn-hd__gl a:focus-visible{ outline:2px solid #F0D68F; outline-offset:2px; border-radius:6px; }
 /* the open menu scrolls on phones: the bar stays solid above it, so nothing runs under the name */
@@ -524,7 +532,10 @@ html:has(#pn-hd), html:has(#pn-hd) body{ overflow-x:clip; }
         <div class="pn-hd__grp pn-hd__grp--work">
           <p class="pn-hd__gh" id="pn-hd-g5">Work with us</p>
           <ul class="pn-hd__gl" aria-labelledby="pn-hd-g5">
-            <li><a href="https://perfectnations.com/design-studio/"><span class="pn-hd__gt">ReDesign Studio<small>Co-design your nation</small></span></a></li>
+            <li><a href="https://perfectnations.com/design-studio/"><span class="pn-hd__gt">ReDesign Studio<small>Co-design your nation. The three mandates, shown for Barbados:</small></span></a></li>
+            <li class="pn-hd__sub"><a href="https://perfectnations.com/blueprints/barbados/nation-briefing/"><span class="pn-hd__gn">I</span><span class="pn-hd__gt">The Nation Briefing</span></a></li>
+            <li class="pn-hd__sub"><a href="https://perfectnations.com/blueprints/barbados/blueprint-lab/"><span class="pn-hd__gn">II</span><span class="pn-hd__gt">The Blueprint Lab</span></a></li>
+            <li class="pn-hd__sub"><a href="https://perfectnations.com/blueprints/barbados/sovereign-mandate/"><span class="pn-hd__gn">III</span><span class="pn-hd__gt">The Sovereign Mandate</span></a></li>
             <li><a href="https://perfectnations.com/for-funders/"><span class="pn-hd__gt">For Funders<small>The deal pipeline for development capital</small></span></a></li>
             <li><a href="https://perfectnations.com/contact/"><span class="pn-hd__gt">Contact<small>Start a conversation</small></span></a></li>
           </ul>
@@ -606,6 +617,9 @@ html:has(#pn-hd), html:has(#pn-hd) body{ overflow-x:clip; }
       ['Perfect Capita', '/perfect-capita/', 'living line seven standards food water shelter energy education health livelihood cost per person'],
       ['Capital Architecture', '/capital-architecture/', 'finance financing bonds debt swaps guarantees instruments capital investors'],
       ['ReDesign Studio', '/design-studio/', 'redesign design studio co design launch'],
+      ['The Nation Briefing', '/blueprints/barbados/nation-briefing/', 'nation briefing mandate i session three hours gap barbados'],
+      ['The Blueprint Lab', '/blueprints/barbados/blueprint-lab/', 'blueprint lab mandate ii three days structure term sheet barbados'],
+      ['The Sovereign Mandate', '/blueprints/barbados/sovereign-mandate/', 'sovereign mandate iii end to end market close barbados'],
       ['Art of Nations', '/art-of-nations/', 'art gallery paintings works portraits books botanical origins preeti sinha perfect nations gallery'],
       ['State of Nations', '/state-of-nations/', 'news newswire dispatches capital wire deals'],
       ['About', '/about/', 'about mission vision founder president ceo preeti sinha logo story'],
