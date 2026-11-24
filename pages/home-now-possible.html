@@ -1,0 +1,147 @@
+<!-- ===========================================================================
+PERFECT NATIONS - HOMEPAGE - SECTION 02b - NOW POSSIBLE - v1.0 - 2026-11-24
+v1.0 (homepage v13.2; Preeti Sinha, President and CEO, 24 Nov 2026: technology can now make possible the solutions to
+development challenges that were not feasible before):
+one slim Earthrise band before Solutions for Nations. The headline names innovative finance first and AI second;
+the vision line (class pn-vision, the one place the site's checks allow the long-term word) looks ahead; three
+cards show a deal that was out of reach and is now possible, each led by its instrument (the finance), with one
+sourced figure. Gold only for the button. The Solutions say AI, what exists today; the vision line says where it is
+heading.
+Sources (each opened 24 Nov 2026):
+  01 Togo: Aiken, Bellue, Karlan, Udry and Blumenstock, "Machine learning and phone data can improve targeting of
+     humanitarian aid", Nature 603, 864-870 (2022): "Relative to the geographic targeting options considered by the
+     Government of Togo, the machine-learning approach reduces errors of exclusion by 4-21%."
+     https://doi.org/10.1038/s41586-022-04484-9
+  02 India: Government of India, Ministry of Agriculture and Farmers Welfare (PIB), 12 Sep 2025: AI-based monsoon
+     forecasts sent by SMS to nearly 3.8 crore (38 million) farmers in 13 states, up to four weeks ahead of the rain.
+     https://www.pib.gov.in/PressReleasePage.aspx?PRID=2166074
+  03 Nigeria: World Bank, "From Chalkboards to Chatbots", Policy Research Working Paper 11125 (2025): six weeks of AI
+     tutoring with teacher guidance in Edo State gave gains equal to 1.5 to 2 years of typical schooling.
+     https://openknowledge.worldbank.org/entities/publication/15e1ff08-15ae-4f7a-b2a8-d146e6c113ee
+Part of the one-file homepage (pages/home.html, built by tools/build_home.py). Root id pn-now.
+=========================================================================== -->
+<style>
+#pn-now{
+  --er:#0B3D45; --er2:#0F4C5C; --er3:#082A30;
+  --iv:#F5F1E8; --ivm:rgba(245,241,232,.84); --ivd:rgba(245,241,232,.64); --hair:rgba(245,241,232,.16);
+  --g:#E3C258; --onacc:#1A140C;
+  --hd:var(--pn-font-heading,"Barlow Condensed","Arial Narrow",Arial,sans-serif);
+  --bd:var(--pn-font-body,"Barlow Semi Condensed",Arial,sans-serif);
+  position:relative; isolation:isolate;
+  width:100vw; margin-left:calc(50% - 50vw);
+  overflow-x:hidden; overflow-x:clip;
+  padding:clamp(22px,3.6vh,40px) 0 clamp(20px,3.4vh,36px);
+  box-sizing:border-box; color:var(--iv); font-family:var(--bd); line-height:1.45;
+  scroll-margin-top:var(--pn-head-off,72px);
+  background:radial-gradient(120% 150% at 88% 0%,#0F4C5C 0%,#0B3D45 48%,#082A30 100%);
+}
+#pn-now *,#pn-now *::before,#pn-now *::after{ box-sizing:border-box; }
+.elementor-widget-html:has(#pn-now),
+.elementor-widget:has(#pn-now),
+.e-con-inner:has(#pn-now),
+.e-con:has(#pn-now){
+  padding-top:0 !important; padding-bottom:0 !important;
+  --widgets-spacing:0px !important; row-gap:0 !important;
+}
+#pn-now h2,#pn-now h3,#pn-now p,#pn-now li{ text-shadow:none !important; }
+#pn-now .pnnp-in{ width:100%; max-width:1480px; margin:0 auto; padding:0 clamp(18px,5vw,72px); }
+
+/* the head: eyebrow, the headline, the vision line */
+#pn-now .pnnp-head{ display:grid; grid-template-columns:minmax(0,1.1fr) minmax(0,1fr); gap:10px clamp(24px,4vw,64px); align-items:end; }
+#pn-now .pnnp-eb{
+  display:flex; align-items:center; gap:12px; margin:0;
+  font-family:var(--hd); font-size:.72rem; font-weight:700; letter-spacing:.3em; text-transform:uppercase; color:var(--ivd);
+}
+#pn-now .pnnp-eb::before{ content:""; width:26px; height:1px; background:rgba(245,241,232,.45); }
+#pn-now h2.pnnp-h2{
+  margin:8px 0 0; font-family:var(--hd); font-weight:600; text-transform:none;
+  font-size:clamp(2rem,3.6vw,3.3rem); line-height:.95; letter-spacing:-.025em; color:var(--iv) !important;
+}
+#pn-now h2.pnnp-h2 span{ display:block; color:rgba(245,241,232,.7); }
+#pn-now .pnnp-vision{ margin:0; max-width:54ch; font-size:clamp(.98rem,1.15vw,1.08rem); line-height:1.5; color:var(--ivm); text-wrap:pretty; }
+#pn-now .pnnp-vision b{ font-weight:600; color:var(--iv); }
+
+/* the three cards: then, now, the figure */
+#pn-now .pnnp-cards{ display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:14px; margin:20px 0 0; padding:0; list-style:none; }
+#pn-now .pnnp-c{
+  display:flex; flex-direction:column; gap:8px; margin:0; padding:16px 18px 14px;
+  border:1px solid var(--hair); border-radius:14px; background:rgba(245,241,232,.05);
+}
+#pn-now .pnnp-k{ display:flex; align-items:baseline; gap:10px; margin:0; font-family:var(--hd); font-size:.68rem; font-weight:700; letter-spacing:.2em; text-transform:uppercase; color:var(--ivd); }
+#pn-now .pnnp-k b{ font-weight:700; color:var(--iv); letter-spacing:.16em; }
+#pn-now .pnnp-row{ display:grid; grid-template-columns:3.4em minmax(0,1fr); gap:8px; margin:0; font-size:.9rem; line-height:1.4; }
+#pn-now .pnnp-row > span{ padding-top:2px; font-family:var(--hd); font-size:.64rem; font-weight:700; letter-spacing:.18em; text-transform:uppercase; }
+#pn-now .pnnp-then{ color:var(--ivd); }
+#pn-now .pnnp-then > span{ color:rgba(245,241,232,.5); }
+#pn-now .pnnp-now{ color:var(--iv); }
+#pn-now .pnnp-now > span{ color:#6EC8C4; }
+#pn-now .pnnp-f{ display:flex; align-items:baseline; flex-wrap:wrap; gap:2px 10px; margin:auto 0 0; padding-top:10px; border-top:1px solid var(--hair); }
+#pn-now .pnnp-f b{ font-family:var(--hd); font-weight:600; font-size:clamp(1.9rem,2.3vw,2.3rem); line-height:.95; letter-spacing:-.02em; color:var(--iv); white-space:nowrap; font-variant-numeric:tabular-nums; }
+#pn-now .pnnp-f span{ flex:1 1 16ch; min-width:0; font-size:.82rem; line-height:1.3; color:var(--ivd); }
+#pn-now .pnnp-src{ margin:0; font-size:.76rem; }
+#pn-now .pnnp-src a{ color:var(--ivd); text-decoration:underline; text-underline-offset:2px; }
+#pn-now .pnnp-src a:hover,#pn-now .pnnp-src a:focus-visible{ color:var(--iv); }
+
+/* the action */
+#pn-now .pnnp-ft{ display:flex; flex-wrap:wrap; align-items:center; gap:10px 18px; margin:18px 0 0; }
+#pn-now .pnnp-btn{
+  display:inline-flex; align-items:center; justify-content:center; min-height:44px; padding:0 20px;
+  border-radius:999px; background:var(--g); color:var(--onacc); text-decoration:none;
+  font-family:var(--hd); font-size:.74rem; font-weight:700; letter-spacing:.19em; text-transform:uppercase;
+}
+#pn-now .pnnp-btn:hover,#pn-now .pnnp-btn:focus-visible{ background:#EDD27C; color:var(--onacc); }
+#pn-now .pnnp-note{ margin:0; font-size:.84rem; color:var(--ivd); }
+
+@media (max-width:900px){
+  #pn-now .pnnp-head{ grid-template-columns:1fr; }
+}
+@media (max-width:640px){
+  #pn-now .pnnp-cards{
+    grid-template-columns:none; grid-auto-flow:column; grid-auto-columns:86%; gap:10px;
+    overflow-x:auto; scroll-snap-type:x mandatory; scroll-padding-left:clamp(18px,5vw,72px); scrollbar-width:none;
+    margin:16px calc(-1 * clamp(18px,5vw,72px)) 0; padding:2px clamp(18px,5vw,72px) 6px;
+  }
+  #pn-now .pnnp-cards::-webkit-scrollbar{ display:none; }
+  #pn-now .pnnp-c{ scroll-snap-align:start; padding:14px 15px 12px; }
+  #pn-now .pnnp-btn{ width:100%; }
+}
+</style>
+
+<section id="pn-now" aria-labelledby="pnnp-h">
+  <div class="pnnp-in">
+    <div class="pnnp-head">
+      <div>
+        <p class="pnnp-eb">Now possible</p>
+        <h2 class="pnnp-h2" id="pnnp-h">Innovative finance funds it. <span>AI makes it possible.</span></h2>
+      </div>
+      <p class="pnnp-vision pn-vision"><b>Built for the age of super intelligence.</b> AI can now find the citizen, forecast the season and prove the result, so finance reaches people it could not reach before.</p>
+    </div>
+    <ul class="pnnp-cards">
+      <li class="pnnp-c">
+        <p class="pnnp-k"><span>01</span><b>Cash transfers</b></p>
+        <p class="pnnp-row pnnp-then"><span>Then</span>Without a social registry, a government could not find its poorest citizens.</p>
+        <p class="pnnp-row pnnp-now"><span>Now</span>In Togo, machine learning read satellite images and phone data to send cash to the poorest first.</p>
+        <p class="pnnp-f"><b>4&#8211;21%</b><span>fewer of the poorest left out than with targeting by region</span></p>
+        <p class="pnnp-src"><a href="https://doi.org/10.1038/s41586-022-04484-9" target="_blank" rel="noopener noreferrer">Source: Nature, 2022</a></p>
+      </li>
+      <li class="pnnp-c">
+        <p class="pnnp-k"><span>02</span><b>Parametric insurance</b></p>
+        <p class="pnnp-row pnnp-then"><span>Then</span>Long-range forecasts needed costly supercomputers and rarely reached a farmer in time.</p>
+        <p class="pnnp-row pnnp-now"><span>Now</span>India sent AI forecasts of the monsoon to farmers by text message, up to four weeks ahead of the rain.</p>
+        <p class="pnnp-f"><b>38m</b><span>farmers reached in 2025</span></p>
+        <p class="pnnp-src"><a href="https://www.pib.gov.in/PressReleasePage.aspx?PRID=2166074" target="_blank" rel="noopener noreferrer">Source: Government of India, 2025</a></p>
+      </li>
+      <li class="pnnp-c">
+        <p class="pnnp-k"><span>03</span><b>Learning bonds</b></p>
+        <p class="pnnp-row pnnp-then"><span>Then</span>A personal tutor for every child was beyond any public budget.</p>
+        <p class="pnnp-row pnnp-now"><span>Now</span>In Edo, Nigeria, students learned after school with an AI tutor, guided by their teachers.</p>
+        <p class="pnnp-f"><b>1.5&#8211;2 yrs</b><span>of typical schooling gained in six weeks</span></p>
+        <p class="pnnp-src"><a href="https://openknowledge.worldbank.org/entities/publication/15e1ff08-15ae-4f7a-b2a8-d146e6c113ee" target="_blank" rel="noopener noreferrer">Source: World Bank, 2025</a></p>
+      </li>
+    </ul>
+    <div class="pnnp-ft">
+      <a class="pnnp-btn" href="https://perfectnations.com/state-of-nations/">See it in every Solution</a>
+      <p class="pnnp-note">Good governance first. Then innovative finance. Then AI that proves every result.</p>
+    </div>
+  </div>
+</section>

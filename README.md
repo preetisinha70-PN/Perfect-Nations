@@ -39,7 +39,15 @@ Every nation file, Barbados included since 6 November 2026, carries `checked`: t
 
 Rules: every figure must have a primary source; no contractions; plain ASCII where possible. A file that breaks these rules (wrong nation, not seven standards, a value outside 0 to 100) is ignored by the page, which then keeps its pasted version.
 
-## Nothing on the site names super intelligence or a Steward (Preeti Sinha, President and CEO, 16 November 2026)
+## Now possible with AI: AI after the finance (Preeti Sinha, President and CEO, 24 November 2026)
+
+"I would like to bring SI back into Perfect Nations ... I believe SI can make the solutions to development challenges possible which were not feasible before."
+
+- **The words.** Innovative financing for development (FfD) is always named first: it finances the Solution. AI comes second: it makes the Solution possible and proves it. The Solutions and the pages say **AI**, what exists today; the vision says **super intelligence**, written in full, where it is heading ("Built for the age of super intelligence"). The abbreviation SI stays off the copy.
+- **Where AI shows.** Each designed Solution carries `ai` (Now possible with AI): one line, at most 200 characters, beginning "AI ", with no figure, no "pay" and no contraction, written in `tools/ai/solutions_ai.py` (`python3 tools/ai/solutions_ai.py` writes them in; `--check` lists any Solution without one). State of Nations, the homepage and every blueprint show it after What Perfect Nations advises. The playbook shows each standard's `ai`, written from its internal `si` note. Each Capital Architecture family carries `ai` (With AI). The homepage has a slim band, Now possible (`pages/home-now-possible.html`), before the Solutions; Governance first reads 01 Good governance, 02 Great local leadership, 03 Innovative financing for development, 04 AI that proves every result, and the Perfect Nations Cup's second test is "Tracked by AI to every beneficiary". Perfect Capita says AI keeps Coverage and the Gap current.
+- **The checks.** `tools/check_page.py` and `tools/no_si.py --check` allow the words super intelligence only inside an element with the class `pn-vision`, and never the abbreviation SI. `advises` stays the finance alone. Everything else in the rule below still holds.
+
+## Nothing on the site names super intelligence or a Steward (Preeti Sinha, President and CEO, 16 November 2026; AI after the finance from 24 November 2026, above)
 
 "remove all reference to Super intelligence and SI from perfectnations.com. in the about section - just profile me. keep the stewards internally for processing at claude but remove the profiles of all stewards from all visible pages of perfectnations.com. I am going to single-handedly run perfect nations."
 
@@ -281,6 +289,7 @@ Outline (the comments are notes, not part of the file):
 | `standards` | the standards it moves. The first is the standard it is designed for, the one its challenge names (usually the nation's standard furthest from reach): it decides the Solution's filter on State of Nations and shows as a filled chip. The rest follow in the order Food, Water, Shelter, Energy, Education, Health, Livelihood |
 | `challenge` | the challenge in one or two sentences (at most 360 characters), with the nation's own sourced figure |
 | `advises` | What Perfect Nations advises (at most 520 characters): the finance move, built on what the nation owns; never a sentence about super intelligence (16 Nov 2026). No new figures, no results claimed, and the word "Finance" in place of "pay" |
+| `ai` | Now possible with AI (from 24 Nov 2026): what AI makes possible for this Solution, one line of at most 200 characters beginning "AI ", with no figure, no "pay" and no contraction. Written in `tools/ai/solutions_ai.py` and shown after the advice |
 | `how` | three lines: 01 Assets (what the nation owns that carries it), 02 Capital (the instrument), 03 Solutions (what changes for citizens) |
 | `proof` | the deal that proves it: name, where, year, figure, label, source, url, from `data/capital-architecture.json` or the nation's own record; `own` true for an instrument Perfect Nations designed (Standard Tokens, pending compliance review) |
 | `first` | the first move, one sentence |

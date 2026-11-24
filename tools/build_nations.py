@@ -100,7 +100,8 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 PAGES, DATA, HERE = ROOT / 'pages', ROOT / 'data', ROOT / 'tools' / 'nation'
-VERSION = '14.8'  # the October pictures switched on for the first 44 blueprints (Preeti Sinha, 21 Nov 2026)
+VERSION = '14.9'  # Now possible with AI: a Solution adds what AI makes possible, after the finance (Preeti Sinha, President and CEO, 24 Nov 2026)
+# 14.8: the October pictures switched on for the first 44 blueprints (Preeti Sinha, 21 Nov 2026)
 # 14.7.1: the pictures carry no AI illustration mark (Preeti Sinha, 21 Nov 2026)
 # 14.7: picture cards for the assets, switched on per nation by assets.pictures (Austria first; Preeti Sinha, 21 Nov 2026)
 # 14.6: Previous and next blueprint, A to Z, above All 195 nations (Preeti Sinha, 21 Nov 2026)
@@ -848,7 +849,11 @@ def solution_card(x, sig_name, sig_role):
     if x.get('kind') == 'design' and x.get('standfirst'):
         body = '<p>%s</p>' % ent(x['standfirst'])
     if x.get('challenge') and x.get('advises'):
-        body += how([('01', 'The challenge', ent(x['challenge'])), ('02', 'What Perfect Nations advises', ent(x['advises']))])
+        rows = [('01', 'The challenge', ent(x['challenge'])), ('02', 'What Perfect Nations advises', ent(x['advises']))]
+        # v14.9: Now possible with AI, after the finance (24 Nov 2026)
+        if x.get('kind') == 'design' and x.get('ai'):
+            rows.append(('03', 'Now possible with AI', ent(x['ai'])))
+        body += how(rows)
     elif x.get('standfirst') or x.get('summary'):
         one, rest = first_sentence(x.get('standfirst') or x.get('summary'))
         body = '<p>%s</p>%s' % (ent(one), more('<p>%s</p>' % ent(rest), x['title']) if rest else '')
@@ -911,6 +916,8 @@ def solution_brief(name, sbn, slug):
         deal += ' <a href="%s" target="_blank" rel="noopener noreferrer">%s</a>' % (ent(https(pr['url'])), ent(pr.get('source') or 'Source'))
     steps = [('01', 'The challenge', ch)] + ([('02', 'The deal', deal)] if deal else [])
     steps.append(('%02d' % (len(steps) + 1), 'What Perfect Nations advises', ent(play['advises'])))
+    if play.get('ai'):  # v14.9: Now possible with AI, after the finance (24 Nov 2026)
+        steps.append(('%02d' % (len(steps) + 1), 'Now possible with AI', ent(play['ai'])))
     return (
         '<li class="bpx-sol bpx-sol--brief"><p class="bpx-sol__k"><b>The Solution for %s</b><span>%s</span></p>'
         '<h3>%s</h3>%s'
