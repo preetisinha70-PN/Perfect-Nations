@@ -1,4 +1,4 @@
-/* Perfect Nations - For Funders v2.0. No "less than" sign is written in this script, so the WordPress
+/* Perfect Nations - For Funders v2.1. No "less than" sign is written in this script, so the WordPress
    formatter never takes any part of it for a tag. Every text a visitor reads is set with textContent. */
 (function(){
   'use strict';
@@ -21,6 +21,87 @@
     })(0);
   }
   function idle(fn){ if ('requestIdleCallback' in window) { window.requestIdleCallback(fn, { timeout: 3000 }); } else { setTimeout(fn, 1200); } }
+  var fine = window.matchMedia && window.matchMedia('(pointer: fine)').matches;
+  function countUp(b, dur){
+    var n = +b.getAttribute('data-n'), t0 = 0;
+    if (still || !n) { return; }
+    b.textContent = '0';
+    function step(ts){
+      if (!t0) { t0 = ts; }
+      var k = Math.min(1, (ts - t0) / dur), e = 1 - Math.pow(1 - k, 3);
+      b.textContent = comma(e * n);
+      if (1 > k) { window.requestAnimationFrame(step); }
+    }
+    window.requestAnimationFrame(step);
+  }
+
+  /* ---------- the reveal: headings rise word by word, blocks fade up, the grid arrives in a wave ---------- */
+  (function(){
+    var items = qa('.pf-rv, .pf-up, .pf-pipe__mx');
+    if (still || !('IntersectionObserver' in window)) { items.forEach(function(e){ e.classList.add('is-in'); }); return; }
+    root.classList.add('pf-js');
+    var io = new IntersectionObserver(function(es){
+      es.forEach(function(e){
+        if (!e.isIntersecting) { return; }
+        e.target.classList.add('is-in'); io.unobserve(e.target);
+        qa('.pf-cnt', e.target).forEach(function(b){ countUp(b, 1400); });
+      });
+    }, { rootMargin: '0px', threshold: 0 });
+    items.forEach(function(e){ io.observe(e); });
+    /* at the very bottom of the page nothing more can scroll into view: show what is left */
+    window.addEventListener('scroll', function(){
+      var d = document.documentElement;
+      if (window.pageYOffset + window.innerHeight + 4 >= d.scrollHeight) { items.forEach(function(e){ e.classList.add('is-in'); }); }
+    }, { passive: true });
+    setTimeout(function(){ items.forEach(function(e){ var r = e.getBoundingClientRect(); if (window.innerHeight > r.top) { e.classList.add('is-in'); } }); }, 2600);
+  })();
+
+  /* ---------- a gold line shows how far the reader has scrolled ---------- */
+  (function(){
+    var bar = q('.pf-prog'), tick = false;
+    if (!bar) { return; }
+    function set(){
+      var d = document.documentElement, max = Math.max(1, d.scrollHeight - window.innerHeight);
+      bar.style.setProperty('--p', Math.min(1, Math.max(0, window.pageYOffset / max)).toFixed(4)); tick = false;
+    }
+    window.addEventListener('scroll', function(){ if (!tick) { tick = true; window.requestAnimationFrame(set); } }, { passive: true });
+    set();
+  })();
+
+  /* ---------- buttons lean toward the pointer; the Match card tilts (mouse and trackpad only) ---------- */
+  (function(){
+    if (still || !fine) { return; }
+    root.addEventListener('mousemove', function(e){
+      var b = e.target.closest ? e.target.closest('.pf-mag') : null;
+      if (b) {
+        var r = b.getBoundingClientRect();
+        b.style.transform = 'translate(' + ((e.clientX - r.left - r.width / 2) * 0.18).toFixed(1) + 'px,' + ((e.clientY - r.top - r.height / 2) * 0.3).toFixed(1) + 'px)';
+      }
+      var m = e.target.closest ? e.target.closest('.pf-m') : null;
+      if (m) {
+        var c = m.getBoundingClientRect(), x = (e.clientX - c.left) / c.width - 0.5, y = (e.clientY - c.top) / c.height - 0.5;
+        m.style.setProperty('--ry', (x * 5).toFixed(2) + 'deg'); m.style.setProperty('--rx', (-y * 4).toFixed(2) + 'deg');
+      }
+    });
+    root.addEventListener('mouseout', function(e){
+      var b = e.target.closest ? e.target.closest('.pf-mag') : null;
+      if (b && !b.contains(e.relatedTarget)) { b.style.transform = ''; }
+      var m = e.target.closest ? e.target.closest('.pf-m') : null;
+      if (m && !m.contains(e.relatedTarget)) { m.style.setProperty('--ry', '0deg'); m.style.setProperty('--rx', '0deg'); }
+    });
+  })();
+
+  /* ---------- the fifteen sources run as two marquees ---------- */
+  (function(){
+    qa('.pf-mq__l').forEach(function(list){
+      var items = qa('li', list);
+      items.forEach(function(li){
+        var c = li.cloneNode(true); c.removeAttribute('id'); c.setAttribute('aria-hidden', 'true');
+        var a = c.querySelector('a'); if (a) { a.tabIndex = -1; } list.appendChild(c);
+      });
+      list.style.setProperty('--dur', Math.max(40, items.length * 9) + 's');
+    });
+  })();
 
   /* ---------- 01 the hero: capital moving toward the nations ---------- */
   (function(){
@@ -79,19 +160,7 @@
   })();
 
   /* the hero figures count up once; the real figures are written in the page for every reader */
-  (function(){
-    if (still) { return; }
-    var bs = qa('.pf-figs b[data-n]');
-    var t0 = 0, dur = 1300;
-    bs.forEach(function(b){ b.textContent = '0'; });
-    function step(ts){
-      if (!t0) { t0 = ts; }
-      var k = Math.min(1, (ts - t0) / dur), e = 1 - Math.pow(1 - k, 3);
-      bs.forEach(function(b){ b.textContent = comma(e * +b.getAttribute('data-n')); });
-      if (1 > k) { window.requestAnimationFrame(step); }
-    }
-    window.requestAnimationFrame(step);
-  })();
+  qa('.pf-figs b[data-n]').forEach(function(b){ countUp(b, 1300); });
 
   /* ---------- the Capital Wire tape: the newest deals, read live from the wire ---------- */
   (function(){
@@ -132,31 +201,26 @@
     var d = new Date(), today = d.getFullYear() + '-' + ('0' + (d.getMonth() + 1)).slice(-2) + '-' + ('0' + d.getDate()).slice(-2);
     var live = all.filter(function(m){ return today >= m.week; });
     if (!live.length) { live = [all[all.length - 1]]; }
-    function row(h, title, text){
-      var r = el('div', 'pf-m__row'); r.appendChild(el('h4', '', h));
-      if (title) { r.appendChild(el('p', 'pf-m__t', title)); }
-      if (text) { r.appendChild(el('p', '', text)); }
-      return r;
-    }
     function card(m){
-      var a = el('article', 'pf-m'), l = el('div', 'pf-m__l'), r = el('div', 'pf-m__r'), k = el('p', 'pf-m__k');
-      a.setAttribute('data-no', m.no);
-      k.appendChild(el('b', '', 'Match No. ' + m.no)); k.appendChild(el('span', '', m.weekText)); l.appendChild(k);
+      var a = el('article', 'pf-m'), l = el('div', 'pf-m__l'), r = el('div', 'pf-m__r'), k = el('p', 'pf-m__k'), sh = el('span', 'pf-m__sheen');
+      a.setAttribute('data-no', m.no); sh.setAttribute('aria-hidden', 'true'); a.appendChild(sh);
+      k.appendChild(el('b', '', 'No. ' + m.no)); k.appendChild(el('span', '', m.weekText)); l.appendChild(k);
       l.appendChild(el('h3', 'pf-m__n', m.nation)); l.appendChild(el('p', 'pf-m__s', m.standard));
       l.appendChild(el('p', 'pf-m__f', m.figure));
       var cap = el('p', 'pf-m__c', m.caption + '. '); if (safe(m.sourceUrl)) { cap.appendChild(ext(m.sourceUrl, m.source)); } l.appendChild(cap);
-      r.appendChild(row('The Solution', m.title, m.advises));
-      if (m.proof && m.proof.name) {
-        var pr = row('The proof'), p = el('p'), b = el('b', '', m.proof.name), g = el('em', 'pf-gold', m.proof.figure);
-        p.appendChild(b); p.appendChild(document.createTextNode(', ' + m.proof.where + ' ' + m.proof.year + ': ')); p.appendChild(g);
-        p.appendChild(document.createTextNode(' ' + m.proof.label + '. ')); if (safe(m.proof.url)) { p.appendChild(ext(m.proof.url, m.proof.source)); }
-        pr.appendChild(p); r.appendChild(pr);
-      }
-      var fit = row('The funder that fits', m.funder, m.why); fit.className += ' pf-m__fit';
+      r.appendChild(el('p', 'pf-m__lab', 'The Solution')); r.appendChild(el('p', 'pf-m__t', m.title));
+      r.appendChild(el('p', 'pf-m__lab', 'The funder that fits')); r.appendChild(el('p', 'pf-m__fu', m.funder)); r.appendChild(el('p', 'pf-m__why', m.why));
       var chips = el('p', 'pf-chips');
       (m.networks || []).forEach(function(n){ var c = el('a', 'pf-chip', n.name); c.href = '#pf-who-' + n.id; chips.appendChild(c); });
-      fit.appendChild(chips); r.appendChild(fit);
-      var bt = el('div', 'pf-btns'), b1 = el('a', 'pf-btn', answer.label || 'Answer this Match'), b2 = el('a', 'pf-btn pf-btn--line', 'Read the Solution');
+      r.appendChild(chips);
+      if (m.proof && m.proof.name && safe(m.proof.url)) {
+        var pr = ext(m.proof.url, ''); pr.className = 'pf-m__p';
+        pr.appendChild(el('span', '', 'Proof')); pr.appendChild(el('b', '', m.proof.name));
+        pr.appendChild(document.createTextNode(' ' + m.proof.where + ' ' + m.proof.year + ' ')); pr.appendChild(el('em', 'pf-gold', m.proof.figure));
+        r.appendChild(pr);
+      }
+      var bt = el('div', 'pf-btns'), b1 = el('a', 'pf-btn pf-mag'), b2 = el('a', 'pf-btn pf-btn--line pf-mag');
+      b1.appendChild(el('span', '', answer.label || 'Answer this Match')); b2.appendChild(el('span', '', 'Read the Solution'));
       if (safe(answer.url)) { b1.href = answer.url; } if (safe(m.solutionUrl)) { b2.href = m.solutionUrl; }
       bt.appendChild(b1); bt.appendChild(b2); r.appendChild(bt);
       a.appendChild(l); a.appendChild(r);
@@ -172,11 +236,10 @@
       if (2 > live.length) { more.hidden = true; return; }
       live.forEach(function(m, i){
         var li = el('li'), b = el('button'); b.type = 'button'; b.setAttribute('data-no', m.no);
-        b.appendChild(el('b', '', 'No. ' + m.no)); b.appendChild(el('span', '', m.nation)); b.appendChild(el('em', '', i === 0 ? 'This week' : m.weekText));
+        b.appendChild(el('b', '', 'No. ' + m.no)); b.appendChild(el('span', '', m.nation)); if (i === 0) { b.appendChild(el('em', '', 'This week')); }
         b.addEventListener('click', function(){ show(m); });
         li.appendChild(b); rail.appendChild(li);
       });
-      var p = q('p', more); if (p) { p.textContent = 'Every Match'; }
       more.hidden = false;
     }
     buildRail();
@@ -189,7 +252,7 @@
     if (!a) { return; }
     var t = document.getElementById(a.getAttribute('href').slice(1));
     if (!t) { return; }
-    qa('.pf-fam li.is-lit').forEach(function(li){ li.classList.remove('is-lit'); });
+    qa('.pf-mq li.is-lit').forEach(function(li){ li.classList.remove('is-lit'); });
     t.classList.add('is-lit'); setTimeout(function(){ t.classList.remove('is-lit'); }, 2600);
   });
 
@@ -209,11 +272,11 @@
       return true;
     }
     function line(x){
-      var li = el('li', 'pf-line'), k = el('p', 'pf-line__k'), h = el('h3'), a = el('a', '', x.title);
-      k.appendChild(el('b', '', x.nation)); k.appendChild(el('span', '', x.standard));
-      k.appendChild(el('span', '', x.finance || (x.no ? 'Solution No. ' + x.no : 'Lead Solution')));
+      var li = el('li', 'pf-line'), a = el('a'), k = el('span', 'pf-line__k');
+      k.appendChild(el('b', '', x.nation)); k.appendChild(el('i', '', x.standard));
+      k.appendChild(el('i', '', x.finance || (x.no ? 'Solution No. ' + x.no : 'Lead Solution')));
       if (safe(x.url)) { a.href = x.url; }
-      h.appendChild(a); li.appendChild(k); li.appendChild(h); li.appendChild(el('p', '', x.challenge));
+      a.appendChild(k); a.appendChild(el('span', 'pf-line__t', x.title)); li.appendChild(a);
       return li;
     }
     function words(){
@@ -231,7 +294,7 @@
       part.forEach(function(x){ listEl.appendChild(line(x)); });
       count.textContent = hits.length ? comma(hits.length) + ' Solution' + (hits.length === 1 ? '' : 's') + words() : 'No Solution fits these filters yet' + words() + '. Request one below.';
       moreB.hidden = part.length >= hits.length;
-      moreB.textContent = 'Show ' + Math.min(12, hits.length - part.length) + ' more';
+      (moreB.querySelector('span') || moreB).textContent = 'Show ' + Math.min(12, hits.length - part.length) + ' more';
       qa('.pf-cell', sec).forEach(function(b){
         var f = b.getAttribute('data-fin');
         b.classList.toggle('is-on', !!st.std && b.getAttribute('data-std') === st.std && !!st.fin && f === st.fin);

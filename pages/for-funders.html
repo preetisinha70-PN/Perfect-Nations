@@ -1,5 +1,5 @@
 <!-- ===========================================================================
-PERFECT NATIONS - FOR FUNDERS - THE WHOLE PAGE IN ONE FILE - v2.0 - 2026-11-24
+PERFECT NATIONS - FOR FUNDERS - THE WHOLE PAGE IN ONE FILE - v2.1 - 2026-11-24
 The /for-funders/ page holds ONE Custom HTML block whose root is pn-fund. The Perfect Nations Live Pages
 plugin serves this file from GitHub in its place, so the page changes only through GitHub. Never edit this
 file by hand: edit data/for-funders.json (words), tools/funders/style.css (design) or tools/funders/script.js
@@ -19,14 +19,23 @@ blueprints in data/deal-pipeline.json (tools/build_pipeline.py), counted by stan
 heat map; tap a cell or a filter and the whole pipeline loads, to read by standard, funder, region or nation.
 04 How it works: three ways in, four checks. 05 Who it serves: the fifteen sources of capital of Capital
 Architecture in three families, each with its sourced figure. 06 The close. Phones have their own layout.
+v2.1: far fewer words and award-site motion (the Steward-General, 24 Nov 2026: "much less wordy, texty, and add a
+lot more innovation from the Awwwards design"). Headings rise word by word; a giant outline CAPITAL drifts behind the
+hero; figures count up; buttons lean toward the pointer; the Match card tilts and catches a gold sheen; the heat map
+cells arrive in a wave; the fifteen sources run as two marquees in opposite directions; a gold line shows how far
+the reader has scrolled. The heat map numbers sit in the centre of their cells and the first column is wide enough
+for every standard; the filter labels never break (fixes from the Steward-General's phone, 24 Nov 2026). The Match
+card shows the Solution, the funder that fits and why, and the proof in one line; the pipeline cards show the title
+only; How it works is three steps and four checks; Who it serves is two marquees, each source linked to its source.
 =========================================================================== -->
 <style>
-/* ===== Perfect Nations - For Funders v2.0 - every rule scoped to #pn-fund, classes pf-* ===== */
+/* ===== Perfect Nations - For Funders v2.1 - every rule scoped to #pn-fund, classes pf-* ===== */
 #pn-fund{
   --er:#0B3D45; --dp:#082A30; --er2:#12586A; --iv:#F4ECD8; --ink:#10262B; --mut:#34464A; --dim:#5C696C;
   --g:#E3C258; --gs:#F0D68F; --gd:#8C6A12; --tc:#8A3A22; --hair:rgba(16,38,43,.12);
   --hd:var(--pn-font-heading,"Barlow Condensed","Arial Narrow",Arial,sans-serif);
   --bd:var(--pn-font-body,"Barlow Semi Condensed",Arial,sans-serif);
+  --ease:cubic-bezier(.22,1,.36,1);
   --gut:clamp(18px,4vw,48px); --max:1240px;
   position:relative; width:100vw; margin-left:calc(50% - 50vw); box-sizing:border-box;
   overflow-x:hidden; overflow-x:clip; color:var(--ink); background:var(--iv);
@@ -35,9 +44,17 @@ Architecture in three families, each with its sourced figure. 06 The close. Phon
 #pn-fund *,#pn-fund *::before,#pn-fund *::after{ box-sizing:border-box; }
 #pn-fund a{ color:inherit; }
 #pn-fund a:focus-visible,#pn-fund button:focus-visible,#pn-fund input:focus-visible{ outline:2px solid var(--g); outline-offset:3px; }
-#pn-fund h1,#pn-fund h2,#pn-fund h3{ text-transform:none !important; text-shadow:none !important; letter-spacing:normal; }
-#pn-fund h4{ text-transform:uppercase !important; text-shadow:none !important; }
-#pn-fund button{ font:inherit; cursor:pointer; }
+#pn-fund h1,#pn-fund h2,#pn-fund h3{ text-transform:none !important; text-shadow:none !important; letter-spacing:normal; overflow-wrap:normal; word-break:normal; }
+#pn-fund p,#pn-fund li,#pn-fund span,#pn-fund b{ overflow-wrap:normal; word-break:normal; hyphens:manual; }
+/* the theme styles every button and table: undo it here, so only these rules shape them */
+#pn-fund button{
+  -webkit-appearance:none; appearance:none; margin:0; padding:0; min-height:0; width:auto; height:auto;
+  border:0; border-radius:0; background:none; box-shadow:none; color:inherit; cursor:pointer;
+  font:inherit; line-height:1.1; letter-spacing:normal; text-transform:none; text-decoration:none; text-align:center;
+}
+#pn-fund table{ margin:0; padding:0; border:0; border-collapse:separate; background:none; box-shadow:none; }
+#pn-fund th,#pn-fund td{ border:0; padding:0; background:none; text-align:left; vertical-align:middle; }
+#pn-fund input::placeholder{ color:#7B8789; opacity:1; }
 #pn-fund [hidden]{ display:none !important; }
 .elementor-widget-html:has(#pn-fund),.elementor-widget:has(#pn-fund),.elementor-widget-wrap:has(#pn-fund),
 .elementor-container:has(#pn-fund),.elementor-column:has(#pn-fund),.elementor-section:has(#pn-fund),
@@ -46,299 +63,324 @@ Architecture in three families, each with its sourced figure. 06 The close. Phon
   padding-top:0 !important; padding-bottom:0 !important; margin-top:0 !important; margin-bottom:0 !important;
   --widgets-spacing:0px !important; row-gap:0 !important;
 }
-#pn-fund .pf-band{ position:relative; padding:clamp(28px,4.4vh,52px) 0 clamp(26px,4vh,46px); }
+
+/* reading progress: a gold line across the top */
+#pn-fund .pf-prog{ position:fixed; z-index:99990; top:0; left:0; width:100%; height:3px; transform-origin:0 50%; transform:scaleX(var(--p,0)); background:linear-gradient(90deg,#C9A23E,#F0D68F); pointer-events:none; }
+
+#pn-fund .pf-band{ position:relative; padding:clamp(34px,5.4vh,64px) 0 clamp(30px,4.8vh,56px); }
 #pn-fund .pf-in{ position:relative; width:100%; max-width:calc(var(--max) + 2 * var(--gut)); margin:0 auto; padding:0 var(--gut); }
-#pn-fund .pf-head{ display:grid; gap:0; }
 #pn-fund .pf-eb{
-  display:flex; align-items:center; gap:10px; margin:0 0 10px;
-  font-family:var(--hd); font-size:.72rem; font-weight:700; letter-spacing:.3em; text-transform:uppercase; color:var(--tc);
+  display:flex; align-items:center; gap:10px; margin:0 0 12px;
+  font-family:var(--hd); font-size:.74rem; font-weight:700; letter-spacing:.3em; text-transform:uppercase; color:var(--tc);
 }
-#pn-fund .pf-eb::before{ content:""; width:22px; height:2px; flex:none; background:currentColor; opacity:.55; }
+#pn-fund .pf-num{ display:inline-grid; place-items:center; min-width:30px; height:30px; padding:0 6px; border-radius:999px; font-size:.72rem; letter-spacing:.06em; color:var(--iv); background:var(--er); }
 #pn-fund h1.pf-h1{
-  margin:0; max-width:15ch; font-family:var(--hd); font-weight:700; color:#F4ECD8 !important;
-  font-size:clamp(2.7rem,6vw,5.6rem); line-height:.9; letter-spacing:-.025em; text-wrap:balance;
+  margin:0; font-family:var(--hd); font-weight:700; color:#F4ECD8 !important;
+  font-size:clamp(3.2rem,8.4vw,8.2rem); line-height:.86; letter-spacing:-.03em;
 }
 #pn-fund h2.pf-h2{
-  margin:0; max-width:26ch; font-family:var(--hd); font-weight:600; color:var(--er) !important;
-  font-size:clamp(1.9rem,3.4vw,3.1rem); line-height:.96; letter-spacing:-.02em; text-wrap:balance;
+  margin:0; max-width:20ch; font-family:var(--hd); font-weight:700; color:var(--er) !important;
+  font-size:clamp(2.3rem,5.2vw,4.8rem); line-height:.9; letter-spacing:-.025em;
 }
-#pn-fund .pf-lead{ margin:12px 0 0; max-width:64ch; font-size:clamp(1rem,1.2vw,1.12rem); line-height:1.5; color:var(--mut); }
+#pn-fund .pf-lead{ margin:16px 0 0; max-width:40ch; font-size:clamp(1.05rem,1.5vw,1.3rem); line-height:1.4; color:var(--mut); }
 #pn-fund .pf-gold{ font-style:normal; color:var(--gd); font-weight:700; }
-#pn-fund .pf-note{ margin:14px 0 0; max-width:78ch; font-size:.8rem; line-height:1.45; color:var(--dim); }
+#pn-fund .pf-note{ margin:16px 0 0; max-width:78ch; font-size:.78rem; line-height:1.45; color:var(--dim); }
 #pn-fund .pf-note a{ font-weight:700; color:var(--er); }
 #pn-fund a[target="_blank"]::after{ content:"\00a0\2197"; font-family:Arial,sans-serif; font-size:.85em; }
 
-/* buttons: gold for the action, a gold line for the second */
-#pn-fund .pf-btns{ display:flex; flex-wrap:wrap; gap:10px; margin-top:18px; }
-#pn-fund .pf-btn{
-  display:inline-flex; align-items:center; justify-content:center; gap:12px; min-height:48px; padding:12px 24px; border-radius:999px;
-  font-family:var(--hd); font-weight:700; font-size:.8rem; letter-spacing:.2em; text-transform:uppercase; text-decoration:none;
-  color:#1A140C; background:var(--g); border:1.5px solid var(--g); box-shadow:0 10px 26px rgba(227,194,88,.28);
-  transition:background .25s ease, transform .25s ease, box-shadow .25s ease;
-}
-#pn-fund .pf-btn::after{ content:"\2192"; font-family:Arial,sans-serif; font-size:1rem; letter-spacing:0; transition:transform .3s cubic-bezier(.22,1,.36,1); }
-#pn-fund .pf-btn:hover{ background:var(--gs); transform:translateY(-2px); box-shadow:0 14px 30px rgba(227,194,88,.36); }
-#pn-fund .pf-btn:hover::after{ transform:translateX(5px); }
-#pn-fund .pf-btn--line{ background:transparent; color:var(--er); box-shadow:none; border-color:rgba(140,106,18,.65); }
-#pn-fund .pf-btn--line:hover{ background:rgba(227,194,88,.16); box-shadow:none; }
+/* the reveal: each heading word rises out of its own mask; blocks fade up. Without script, all is shown */
+#pn-fund .pf-w{ display:inline-block; overflow:hidden; vertical-align:top; padding-bottom:.08em; margin-bottom:-.08em; }
+#pn-fund .pf-w > span{ display:inline-block; }
+#pn-fund.pf-js .pf-rv .pf-w > span{ transform:translateY(105%); transition:transform .9s var(--ease); transition-delay:calc(var(--i,0) * 70ms); }
+#pn-fund.pf-js .pf-rv.is-in .pf-w > span{ transform:none; }
+#pn-fund.pf-js .pf-up{ opacity:0; transform:translateY(26px); transition:opacity .8s var(--ease), transform .8s var(--ease); transition-delay:calc(var(--d,0) * 90ms + 120ms); }
+#pn-fund.pf-js .pf-up.is-in{ opacity:1; transform:none; }
 
-/* ---------- 01 the hero: Earthrise, a field of moving capital ---------- */
+/* buttons: gold for the action, a gold line for the second; they lean toward the pointer */
+#pn-fund .pf-btns{ display:flex; flex-wrap:wrap; gap:10px; margin-top:22px; }
+#pn-fund .pf-btn{
+  position:relative; overflow:hidden; display:inline-flex; align-items:center; justify-content:center; gap:12px; min-height:52px; padding:14px 26px; border-radius:999px;
+  font-family:var(--hd); font-weight:700; font-size:.82rem; line-height:1; letter-spacing:.2em; text-transform:uppercase; text-decoration:none;
+  color:#1A140C; background:var(--g); border:1.5px solid var(--g); box-shadow:0 10px 26px rgba(227,194,88,.28);
+  transition:transform .35s var(--ease), box-shadow .3s ease, background .3s ease;
+}
+#pn-fund .pf-btn > span{ position:relative; z-index:1; display:inline-flex; align-items:center; gap:12px; }
+#pn-fund .pf-btn > span::after{ content:"\2192"; font-family:Arial,sans-serif; font-size:1rem; letter-spacing:0; transition:transform .4s var(--ease); }
+#pn-fund .pf-btn::before{ content:""; position:absolute; inset:0; border-radius:inherit; background:#FFF3C8; transform:translateY(101%); transition:transform .45s var(--ease); }
+#pn-fund .pf-btn:hover::before{ transform:none; }
+#pn-fund .pf-btn:hover > span::after{ transform:translateX(6px); }
+#pn-fund .pf-btn--line{ background:transparent; color:var(--er); box-shadow:none; border-color:rgba(140,106,18,.65); }
+#pn-fund .pf-btn--line::before{ background:rgba(227,194,88,.2); }
+
+/* ---------- the hero: Earthrise, moving capital, a giant outline word ---------- */
 #pn-fund .pf-hero{
-  position:relative; overflow:hidden; padding:clamp(34px,6vh,74px) 0 clamp(18px,2.6vh,28px); color:#F4ECD8;
+  position:relative; overflow:hidden; padding:clamp(40px,8vh,96px) 0 clamp(26px,4vh,44px); color:#F4ECD8;
   background:
-    radial-gradient(55% 70% at 88% 18%, rgba(227,194,88,.18) 0%, rgba(227,194,88,0) 62%),
+    radial-gradient(55% 70% at 88% 18%, rgba(227,194,88,.2) 0%, rgba(227,194,88,0) 62%),
     radial-gradient(60% 80% at 0% 100%, rgba(18,88,106,.75) 0%, rgba(18,88,106,0) 70%),
     linear-gradient(160deg,#0E4A55 0%,#0B3D45 48%,#082A30 100%);
 }
 #pn-fund .pf-flow{ position:absolute; inset:0; width:100%; height:100%; display:block; pointer-events:none; opacity:.85;
   -webkit-mask-image:linear-gradient(90deg,transparent 0%,rgba(0,0,0,.18) 38%,#000 62%); mask-image:linear-gradient(90deg,transparent 0%,rgba(0,0,0,.18) 38%,#000 62%); }
+#pn-fund .pf-ghost{
+  position:absolute; left:0; bottom:-.16em; margin:0; display:flex; gap:.3em; white-space:nowrap; pointer-events:none;
+  font-family:var(--hd); font-weight:700; font-size:clamp(9rem,26vw,26rem); line-height:1; letter-spacing:-.03em;
+  color:transparent; -webkit-text-stroke:1.5px rgba(227,194,88,.16); animation:pfDrift 60s linear infinite;
+}
+@keyframes pfDrift{ from{ transform:translateX(0); } to{ transform:translateX(-50%); } }
 #pn-fund .pf-hero .pf-in{ z-index:1; }
 #pn-fund .pf-hero .pf-eb{ color:var(--g); }
-#pn-fund .pf-money{ color:var(--g); white-space:nowrap; background:linear-gradient(180deg,#FBE7A6 0%,#E3C258 55%,#C9A23E 100%); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; }
-#pn-fund .pf-hero .pf-lead{ max-width:56ch; color:rgba(244,236,216,.88); }
+#pn-fund .pf-money{ white-space:nowrap; color:var(--g); background:linear-gradient(180deg,#FBE7A6 0%,#E3C258 55%,#C9A23E 100%); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; }
+#pn-fund .pf-hero .pf-lead{ color:rgba(244,236,216,.88); }
 #pn-fund .pf-hero .pf-btn--line{ color:var(--g); border-color:rgba(227,194,88,.65); }
-#pn-fund .pf-src{ margin:16px 0 0; max-width:62ch; font-size:.78rem; line-height:1.45; color:rgba(244,236,216,.62); }
-#pn-fund .pf-src a{ color:rgba(244,236,216,.86); text-decoration:none; border-bottom:1px solid rgba(244,236,216,.35); }
-#pn-fund .pf-ll{ margin-top:clamp(14px,2.2vh,22px); font-size:.78rem; line-height:1.45; font-style:italic; color:rgba(244,236,216,.55); }
-#pn-fund .pf-figs{ display:grid; gap:10px; grid-template-columns:repeat(2,minmax(0,1fr)); margin:24px 0 0; padding:0; list-style:none; }
+#pn-fund .pf-src{ margin:18px 0 0; font-size:.76rem; line-height:1.4; }
+#pn-fund .pf-src a{ color:rgba(244,236,216,.6); text-decoration:none; border-bottom:1px solid rgba(244,236,216,.25); }
+#pn-fund .pf-figs{ display:grid; gap:10px; grid-template-columns:repeat(2,minmax(0,1fr)); margin:28px 0 0; padding:0; list-style:none; }
 #pn-fund .pf-figs a{
-  display:flex; flex-direction:column; gap:4px; height:100%; padding:16px 16px 14px; border-radius:14px; text-decoration:none; color:#F4ECD8;
-  background:linear-gradient(160deg,rgba(255,253,248,.09) 0%,rgba(255,253,248,.03) 100%); border:1px solid rgba(244,236,216,.16);
-  box-shadow:inset 0 -2px 0 rgba(227,194,88,.65), 0 18px 40px rgba(3,20,24,.28); transition:transform .25s ease, border-color .25s ease;
+  display:flex; flex-direction:column; gap:4px; height:100%; padding:18px 18px 16px; border-radius:16px; text-decoration:none; color:#F4ECD8;
+  background:linear-gradient(160deg,rgba(255,253,248,.1) 0%,rgba(255,253,248,.03) 100%); border:1px solid rgba(244,236,216,.16);
+  box-shadow:inset 0 -2px 0 rgba(227,194,88,.65), 0 18px 40px rgba(3,20,24,.28); transition:transform .4s var(--ease), border-color .3s ease;
 }
-#pn-fund .pf-figs a:hover{ transform:translateY(-3px); border-color:rgba(227,194,88,.55); }
-#pn-fund .pf-figs b{ font-family:var(--hd); font-weight:700; font-size:clamp(2.2rem,3.4vw,3.3rem); line-height:1; color:var(--g); font-variant-numeric:tabular-nums; }
-#pn-fund .pf-figs span{ font-size:.88rem; line-height:1.32; color:rgba(244,236,216,.84); }
+#pn-fund .pf-figs a:hover{ transform:translateY(-4px); border-color:rgba(227,194,88,.55); }
+#pn-fund .pf-figs b{ font-family:var(--hd); font-weight:700; font-size:clamp(2.6rem,4vw,3.8rem); line-height:1; color:var(--g); font-variant-numeric:tabular-nums; }
+#pn-fund .pf-figs span{ font-family:var(--hd); font-size:.84rem; font-weight:600; letter-spacing:.16em; text-transform:uppercase; color:rgba(244,236,216,.78); }
 @media (min-width:1000px){
-  #pn-fund .pf-hero__g{ display:grid; grid-template-columns:minmax(0,1.3fr) minmax(0,1fr); gap:24px 56px; align-items:center; }
+  #pn-fund .pf-hero__g{ display:grid; grid-template-columns:minmax(0,1.35fr) minmax(0,1fr); gap:24px 56px; align-items:end; }
   #pn-fund .pf-hero .pf-figs{ margin:0; }
 }
 
-/* the Capital Wire tape, under the hero */
-#pn-fund .pf-tape{
-  position:relative; display:flex; align-items:stretch; min-height:52px; color:#F4ECD8; background:#06232A;
-  border-top:1px solid rgba(227,194,88,.35); border-bottom:1px solid rgba(227,194,88,.35);
-}
-#pn-fund .pf-tape__k{ flex:none; display:flex; flex-direction:column; justify-content:center; gap:1px; padding:6px 18px 6px var(--gut); background:#082A30; z-index:1; }
-#pn-fund .pf-tape__k b{ display:flex; align-items:center; gap:8px; font-family:var(--hd); font-size:.72rem; font-weight:700; letter-spacing:.22em; text-transform:uppercase; color:var(--g); }
-#pn-fund .pf-tape__c{ font-size:.72rem; color:rgba(244,236,216,.6); }
-#pn-fund .pf-pulse{ width:8px; height:8px; border-radius:50%; background:#5FD3A5; box-shadow:0 0 0 0 rgba(95,211,165,.6); animation:pfPulse 2s ease-out infinite; }
+/* the live deals tape */
+#pn-fund .pf-tape{ position:relative; display:flex; align-items:stretch; min-height:54px; color:#F4ECD8; background:#06232A; border-top:1px solid rgba(227,194,88,.35); border-bottom:1px solid rgba(227,194,88,.35); }
+#pn-fund .pf-tape__k{ flex:none; display:flex; align-items:center; padding:6px 18px 6px var(--gut); background:#082A30; z-index:1; }
+#pn-fund .pf-tape__k b{ display:flex; align-items:center; gap:9px; white-space:nowrap; font-family:var(--hd); font-size:.72rem; font-weight:700; letter-spacing:.22em; text-transform:uppercase; color:var(--g); }
+#pn-fund .pf-pulse{ width:8px; height:8px; border-radius:50%; background:#5FD3A5; animation:pfPulse 2s ease-out infinite; }
 @keyframes pfPulse{ 0%{ box-shadow:0 0 0 0 rgba(95,211,165,.55); } 100%{ box-shadow:0 0 0 10px rgba(95,211,165,0); } }
 #pn-fund .pf-tape__v{ position:relative; flex:1; min-width:0; overflow:hidden; display:flex; align-items:center;
   -webkit-mask-image:linear-gradient(90deg,transparent 0,#000 40px,#000 calc(100% - 40px),transparent 100%); mask-image:linear-gradient(90deg,transparent 0,#000 40px,#000 calc(100% - 40px),transparent 100%); }
-#pn-fund .pf-tape__l{ display:flex; flex:none; gap:0; margin:0; padding:0; list-style:none; white-space:nowrap; animation:pfTape var(--dur,80s) linear infinite; }
-#pn-fund .pf-tape__v:hover .pf-tape__l,#pn-fund .pf-tape__v:focus-within .pf-tape__l{ animation-play-state:paused; }
-@keyframes pfTape{ from{ transform:translateX(0); } to{ transform:translateX(-50%); } }
+#pn-fund .pf-tape__l,#pn-fund .pf-mq__l{ display:flex; flex:none; margin:0; padding:0; list-style:none; white-space:nowrap; animation:pfRun var(--dur,80s) linear infinite; }
+#pn-fund .pf-tape__v:hover .pf-tape__l,#pn-fund .pf-mq:hover .pf-mq__l{ animation-play-state:paused; }
+@keyframes pfRun{ from{ transform:translateX(0); } to{ transform:translateX(-50%); } }
 #pn-fund .pf-tape__l li{ flex:none; }
-#pn-fund .pf-tape__l a{ display:flex; align-items:baseline; gap:8px; padding:14px 22px; text-decoration:none; border-right:1px solid rgba(244,236,216,.12); }
-#pn-fund .pf-tape__l a::after{ content:none; }
-#pn-fund .pf-tape__l b{ font-family:var(--hd); font-weight:700; font-size:.98rem; color:#F4ECD8; }
-#pn-fund .pf-tape__l em{ font-style:normal; font-family:var(--hd); font-weight:700; font-size:.98rem; color:var(--g); }
-#pn-fund .pf-tape__l span{ font-size:.84rem; color:rgba(244,236,216,.72); }
+#pn-fund .pf-tape__l a{ display:flex; align-items:baseline; gap:8px; padding:15px 22px; text-decoration:none; border-right:1px solid rgba(244,236,216,.12); }
+#pn-fund .pf-tape__l a::after,#pn-fund .pf-mq a::after{ content:none; }
+#pn-fund .pf-tape__l b{ font-family:var(--hd); font-weight:700; font-size:1rem; color:#F4ECD8; }
+#pn-fund .pf-tape__l em{ font-style:normal; font-family:var(--hd); font-weight:700; font-size:1rem; color:var(--g); }
+#pn-fund .pf-tape__l span{ font-size:.84rem; color:rgba(244,236,216,.7); }
 #pn-fund .pf-tape__l i{ font-style:normal; font-family:var(--hd); font-weight:700; font-size:.64rem; letter-spacing:.16em; text-transform:uppercase; padding:2px 7px; border-radius:999px; color:#06232A; background:rgba(95,211,165,.85); }
-#pn-fund .pf-tape__a{ flex:none; display:flex; align-items:center; padding:0 var(--gut) 0 18px; font-family:var(--hd); font-size:.7rem; font-weight:700; letter-spacing:.18em; text-transform:uppercase; text-decoration:none; color:var(--g); background:#082A30; z-index:1; }
-#pn-fund .pf-tape__a::after{ content:"\00a0\2192"; font-family:Arial,sans-serif; letter-spacing:0; }
+#pn-fund .pf-tape__a{ flex:none; display:flex; align-items:center; padding:0 var(--gut) 0 18px; text-decoration:none; color:var(--g); background:#082A30; z-index:1; }
+#pn-fund .pf-tape__a span{ font-family:var(--hd); font-size:.7rem; font-weight:700; letter-spacing:.18em; text-transform:uppercase; white-space:nowrap; }
+#pn-fund .pf-tape__a span::after{ content:"\00a0\2192"; font-family:Arial,sans-serif; letter-spacing:0; }
 
-/* ---------- 02 Match of the week, on ivory ---------- */
+/* ---------- 01 Match of the week ---------- */
 #pn-fund .pf-match{ background:radial-gradient(50% 60% at 92% 0%, rgba(227,194,88,.16) 0%, rgba(227,194,88,0) 70%), linear-gradient(180deg,#F7F0DF 0%,#F4ECD8 100%); }
-#pn-fund .pf-m__slot{ margin-top:clamp(16px,2.4vh,24px); }
+#pn-fund .pf-m__slot{ margin-top:clamp(18px,3vh,30px); perspective:1400px; }
 #pn-fund .pf-m{
-  display:grid; grid-template-columns:minmax(0,.9fr) minmax(0,1.4fr); overflow:hidden; border-radius:18px; background:#FFFDF8;
-  border:1px solid var(--hair); box-shadow:0 22px 50px rgba(16,38,43,.12); animation:pfIn .5s cubic-bezier(.22,1,.36,1);
+  position:relative; display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1.15fr); overflow:hidden; border-radius:22px; background:#FFFDF8;
+  border:1px solid var(--hair); box-shadow:0 30px 60px rgba(16,38,43,.14); transform:rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg)); transition:transform .5s var(--ease); will-change:transform;
 }
-@keyframes pfIn{ from{ opacity:0; transform:translateY(10px); } to{ opacity:1; transform:none; } }
+#pn-fund .pf-m__sheen{ position:absolute; inset:0; z-index:2; pointer-events:none; background:linear-gradient(105deg,transparent 35%,rgba(255,243,200,.35) 50%,transparent 65%); transform:translateX(-120%); transition:transform 1.1s var(--ease); }
+#pn-fund .pf-m:hover .pf-m__sheen{ transform:translateX(120%); }
 #pn-fund .pf-m__l{
-  position:relative; display:flex; flex-direction:column; gap:4px; padding:clamp(20px,3vw,34px); color:#F4ECD8;
-  background:radial-gradient(70% 60% at 100% 0%, rgba(227,194,88,.22) 0%, rgba(227,194,88,0) 60%), linear-gradient(160deg,#12586A 0%,#0B3D45 55%,#082A30 100%);
+  position:relative; display:flex; flex-direction:column; gap:2px; padding:clamp(22px,3vw,40px); color:#F4ECD8;
+  background:radial-gradient(70% 60% at 100% 0%, rgba(227,194,88,.24) 0%, rgba(227,194,88,0) 60%), linear-gradient(160deg,#12586A 0%,#0B3D45 55%,#082A30 100%);
   box-shadow:inset -2px 0 0 rgba(227,194,88,.7);
 }
 #pn-fund .pf-m__k{ display:flex; flex-wrap:wrap; gap:4px 12px; align-items:baseline; margin:0; }
-#pn-fund .pf-m__k b{ font-family:var(--hd); font-size:.76rem; font-weight:700; letter-spacing:.24em; text-transform:uppercase; color:var(--g); }
+#pn-fund .pf-m__k b{ font-family:var(--hd); font-size:.78rem; font-weight:700; letter-spacing:.24em; text-transform:uppercase; color:var(--g); }
 #pn-fund .pf-m__k span{ font-size:.8rem; color:rgba(244,236,216,.7); }
-#pn-fund h3.pf-m__n{ margin:28px 0 0; font-family:var(--hd); font-weight:700; font-size:clamp(2.6rem,4.6vw,4.4rem); line-height:.9; letter-spacing:-.02em; color:#F4ECD8 !important; }
-#pn-fund .pf-m__s{ margin:0; font-family:var(--hd); font-size:.74rem; font-weight:700; letter-spacing:.24em; text-transform:uppercase; color:rgba(244,236,216,.7); }
-#pn-fund .pf-m__f{ margin:auto 0 0; padding-top:22px; font-family:var(--hd); font-weight:700; font-size:clamp(3rem,5.4vw,4.8rem); line-height:.9; color:#F4ECD8; }
-#pn-fund .pf-m__c{ margin:4px 0 0; max-width:34ch; font-size:.92rem; line-height:1.4; color:rgba(244,236,216,.84); }
-#pn-fund .pf-m__c a{ color:rgba(244,236,216,.9); font-size:.8rem; }
-#pn-fund .pf-m__r{ display:flex; flex-direction:column; gap:0; padding:clamp(16px,2.4vw,28px) clamp(18px,2.8vw,34px); }
-#pn-fund .pf-m__row{ padding:12px 0; border-top:1px solid var(--hair); }
-#pn-fund .pf-m__row:first-child{ border-top:0; padding-top:4px; }
-#pn-fund .pf-m__row h4{ margin:0 0 4px; font-family:var(--hd); font-size:.7rem; font-weight:700; letter-spacing:.24em; text-transform:uppercase; color:var(--tc); }
-#pn-fund .pf-m__row p{ margin:0; font-size:.95rem; line-height:1.48; color:var(--mut); }
-#pn-fund .pf-m__row p a{ font-size:.82rem; color:var(--dim); }
-#pn-fund p.pf-m__t{ margin:0 0 3px; font-family:var(--hd); font-weight:700; font-size:1.42rem; line-height:1.08; color:var(--er); }
-#pn-fund .pf-m__fit{ margin:4px -14px 0; padding:12px 14px; border:0; border-radius:12px; background:linear-gradient(135deg,rgba(227,194,88,.2) 0%,rgba(227,194,88,.07) 100%); }
-#pn-fund .pf-chips{ display:flex; flex-wrap:wrap; gap:6px; margin-top:8px !important; }
-#pn-fund .pf-chip{ display:inline-flex; padding:5px 11px; border-radius:999px; font-family:var(--hd); font-weight:700; font-size:.8rem; letter-spacing:.04em; text-decoration:none; color:var(--er); background:#FFFDF8; border:1px solid rgba(11,61,69,.25); }
-#pn-fund .pf-chip:hover{ border-color:var(--gd); }
-#pn-fund .pf-m__r .pf-btns{ margin-top:14px; }
-#pn-fund .pf-m__more{ display:flex; flex-wrap:wrap; align-items:center; gap:8px 12px; margin-top:14px; }
+#pn-fund h3.pf-m__n{ margin:22px 0 0; font-family:var(--hd); font-weight:700; font-size:clamp(3rem,5.6vw,5.4rem); line-height:.86; letter-spacing:-.025em; color:#F4ECD8 !important; }
+#pn-fund .pf-m__s{ margin:6px 0 0; font-family:var(--hd); font-size:.76rem; font-weight:700; letter-spacing:.24em; text-transform:uppercase; color:rgba(244,236,216,.7); }
+#pn-fund .pf-m__f{ margin:auto 0 0; padding-top:28px; font-family:var(--hd); font-weight:700; font-size:clamp(3.4rem,6vw,5.6rem); line-height:.86; color:#F4ECD8; }
+#pn-fund .pf-m__c{ margin:6px 0 0; max-width:34ch; font-size:.9rem; line-height:1.38; color:rgba(244,236,216,.82); }
+#pn-fund .pf-m__c a{ color:rgba(244,236,216,.75); font-size:.78rem; }
+#pn-fund .pf-m__r{ display:flex; flex-direction:column; padding:clamp(20px,2.8vw,36px) clamp(20px,3vw,40px); }
+#pn-fund .pf-m__lab{ margin:0 0 4px; font-family:var(--hd); font-size:.7rem; font-weight:700; letter-spacing:.26em; text-transform:uppercase; color:var(--tc); }
+#pn-fund .pf-m__t{ margin:0 0 18px; font-family:var(--hd); font-weight:700; font-size:clamp(1.7rem,2.6vw,2.3rem); line-height:1; letter-spacing:-.01em; color:var(--er); }
+#pn-fund .pf-m__fu{ margin:0; font-family:var(--hd); font-weight:700; font-size:1.3rem; line-height:1.1; color:var(--ink); }
+#pn-fund .pf-m__why{ margin:6px 0 0; font-size:.95rem; line-height:1.45; color:var(--mut); }
+#pn-fund .pf-chips{ display:flex; flex-wrap:wrap; gap:6px; margin:12px 0 0; }
+#pn-fund .pf-chip{ display:inline-flex; padding:6px 12px; border-radius:999px; font-family:var(--hd); font-weight:700; font-size:.8rem; letter-spacing:.03em; text-decoration:none; color:var(--er); background:rgba(227,194,88,.18); border:1px solid rgba(140,106,18,.3); transition:background .25s ease; }
+#pn-fund .pf-chip:hover{ background:rgba(227,194,88,.38); }
+#pn-fund .pf-m__p{ display:flex; flex-wrap:wrap; align-items:baseline; gap:4px 8px; margin:16px 0 0; padding:12px 0 0; border-top:1px solid var(--hair); font-size:.88rem; text-decoration:none; color:var(--mut); }
+#pn-fund .pf-m__p span{ font-family:var(--hd); font-size:.68rem; font-weight:700; letter-spacing:.24em; text-transform:uppercase; color:var(--tc); }
+#pn-fund .pf-m__p b{ color:var(--er); }
+#pn-fund .pf-m__p em{ font-family:var(--hd); font-size:1.1rem; }
+#pn-fund .pf-m__p:hover b{ text-decoration:underline; text-decoration-color:var(--g); text-underline-offset:3px; }
+#pn-fund .pf-m__r .pf-btns{ margin-top:18px; }
+#pn-fund .pf-m__more{ display:flex; flex-wrap:wrap; align-items:center; gap:8px 12px; margin-top:16px; }
 #pn-fund .pf-m__more p{ margin:0; font-family:var(--hd); font-size:.7rem; font-weight:700; letter-spacing:.24em; text-transform:uppercase; color:var(--dim); }
 #pn-fund .pf-m__rail{ display:flex; flex-wrap:wrap; gap:8px; margin:0; padding:0; list-style:none; }
-#pn-fund .pf-m__rail button{ display:flex; align-items:baseline; gap:8px; padding:8px 14px; border-radius:999px; border:1px solid rgba(11,61,69,.22); background:#FFFDF8; color:var(--ink); transition:border-color .2s ease, background .2s ease; }
+#pn-fund .pf-m__rail button{ display:flex; align-items:baseline; gap:8px; padding:9px 15px; border-radius:999px; border:1px solid rgba(11,61,69,.22); background:#FFFDF8; transition:border-color .2s ease, background .2s ease; }
 #pn-fund .pf-m__rail button:hover,#pn-fund .pf-m__rail button.is-on{ border-color:var(--er); background:#fff; }
-#pn-fund .pf-m__rail b{ font-family:var(--hd); font-size:.78rem; letter-spacing:.12em; color:var(--gd); }
+#pn-fund .pf-m__rail b{ font-family:var(--hd); font-size:.76rem; font-weight:700; letter-spacing:.12em; color:var(--gd); }
 #pn-fund .pf-m__rail span{ font-family:var(--hd); font-weight:700; font-size:1rem; color:var(--er); }
 #pn-fund .pf-m__rail em{ font-style:normal; font-size:.76rem; color:var(--dim); }
 
-/* ---------- 03 the deal pipeline, on paper ---------- */
+/* ---------- 02 the deal pipeline ---------- */
 #pn-fund .pf-pipe{ background:linear-gradient(180deg,#FBF8F1 0%,#F6EFE0 100%); }
-#pn-fund .pf-big{ color:var(--er); font-variant-numeric:tabular-nums; }
-#pn-fund .pf-stage{ display:inline-flex; align-items:center; gap:8px; justify-self:start; margin:12px 0 0; padding:6px 12px; border-radius:999px; font-size:.8rem; line-height:1.35; color:var(--er); background:rgba(11,61,69,.07); border:1px solid rgba(11,61,69,.14); }
-#pn-fund .pf-stage::before{ content:""; flex:none; width:7px; height:7px; border-radius:50%; background:var(--er); }
-#pn-fund .pf-pipe__g{ display:grid; grid-template-columns:minmax(0,.95fr) minmax(0,1.4fr); gap:22px; align-items:start; margin-top:clamp(16px,2.4vh,24px); }
-#pn-fund .pf-mx{ width:100%; border-collapse:separate; border-spacing:4px; table-layout:fixed; font-family:var(--hd); }
-#pn-fund .pf-mx caption{ caption-side:top; text-align:left; padding:0 4px 6px; font-size:.7rem; font-weight:700; letter-spacing:.22em; text-transform:uppercase; color:var(--tc); }
-#pn-fund .pf-mx thead th{ padding:0 2px 4px; font-size:.74rem; font-weight:700; line-height:1.1; text-align:center; vertical-align:bottom; color:var(--dim); }
-#pn-fund .pf-mx .pf-s{ display:none; }
-#pn-fund .pf-mx tbody th,#pn-fund .pf-mx tfoot th{ width:28%; padding:0 6px 0 2px; text-align:left; font-size:1rem; font-weight:700; color:var(--er); }
-#pn-fund .pf-mx th small{ display:block; font-family:var(--bd); font-size:.7rem; font-weight:400; color:var(--dim); }
-#pn-fund .pf-mx td{ padding:0; }
+#pn-fund .pf-cnt{ font-weight:700; font-variant-numeric:tabular-nums; }
+#pn-fund .pf-stage{ display:inline-flex; align-items:center; gap:8px; margin:16px 0 0; padding:6px 13px; border-radius:999px; font-size:.78rem; line-height:1.35; color:var(--er); background:rgba(11,61,69,.07); border:1px solid rgba(11,61,69,.14); }
+#pn-fund .pf-stage::before{ content:""; flex:none; width:7px; height:7px; border-radius:50%; background:#2F9E77; box-shadow:0 0 0 3px rgba(47,158,119,.18); }
+#pn-fund .pf-pipe__g{ display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1.25fr); gap:28px; align-items:start; margin-top:clamp(18px,3vh,28px); }
+#pn-fund .pf-mx__t{ margin:0 0 6px; font-family:var(--hd); font-size:.7rem; font-weight:700; letter-spacing:.24em; text-transform:uppercase; color:var(--tc); }
+#pn-fund .pf-mx{ width:100%; border-spacing:5px; table-layout:fixed; font-family:var(--hd); }
+#pn-fund .pf-mx__c0{ width:31%; }
+#pn-fund .pf-mx thead th{ padding:0 0 4px; font-size:.74rem; font-weight:700; line-height:1.1; letter-spacing:.06em; text-transform:uppercase; text-align:center; vertical-align:bottom; color:var(--dim); white-space:nowrap; }
+#pn-fund .pf-mx .pf-l{ display:none; }
+#pn-fund .pf-mx tbody th,#pn-fund .pf-mx tfoot th{ padding:0 6px 0 0; white-space:nowrap; }
+#pn-fund .pf-mx th b{ display:block; font-size:1.06rem; font-weight:700; line-height:1.05; color:var(--er); }
+#pn-fund .pf-mx th small{ display:block; font-family:var(--bd); font-size:.7rem; font-weight:400; line-height:1.2; color:var(--dim); }
 #pn-fund .pf-cell{
-  display:block; width:100%; height:40px; border:0; border-radius:8px; font-family:var(--hd); font-weight:700; font-size:1.05rem;
-  color:#F4ECD8; background:rgba(11,61,69,var(--a,.3)); transition:transform .18s ease, box-shadow .18s ease;
+  display:flex !important; align-items:center; justify-content:center; width:100%; height:44px; padding:0 !important; border-radius:10px;
+  font-family:var(--hd); font-weight:700; font-size:1.12rem; line-height:1 !important; letter-spacing:.01em; text-transform:none;
+  color:#F4ECD8; background:rgba(11,61,69,var(--a,.3)); transition:transform .25s var(--ease), box-shadow .25s ease;
 }
 #pn-fund .pf-cell.is-lo{ color:var(--er); }
-#pn-fund .pf-cell:hover,#pn-fund .pf-cell.is-on{ transform:scale(1.06); box-shadow:0 0 0 2px var(--g), 0 8px 16px rgba(11,61,69,.25); }
-#pn-fund .pf-mx tfoot td{ text-align:center; font-size:.95rem; color:var(--er); padding-top:4px; }
-#pn-fund .pf-fs{ display:grid; gap:8px; }
-#pn-fund .pf-f{ display:flex; flex-wrap:wrap; align-items:center; gap:6px; }
-#pn-fund .pf-f > span,#pn-fund .pf-q > span{ min-width:64px; font-family:var(--hd); font-size:.68rem; font-weight:700; letter-spacing:.2em; text-transform:uppercase; color:var(--dim); }
-#pn-fund .pf-fc{ padding:6px 11px; border-radius:999px; border:1px solid rgba(11,61,69,.2); background:#FFFDF8; font-family:var(--hd); font-weight:600; font-size:.86rem; color:var(--er); transition:background .2s ease, color .2s ease; }
+#pn-fund.pf-js .pf-pipe__mx .pf-cell{ opacity:0; transform:scale(.6); }
+#pn-fund.pf-js .pf-pipe__mx.is-in .pf-cell{ opacity:1; transform:none; transition:opacity .5s ease, transform .6s var(--ease); transition-delay:calc(var(--k,0) * 22ms); }
+#pn-fund .pf-pipe__mx.is-in .pf-cell:hover,#pn-fund .pf-cell.is-on{ transform:scale(1.08); box-shadow:0 0 0 2px var(--g), 0 10px 18px rgba(11,61,69,.25); transition-delay:0s; }
+#pn-fund .pf-mx tfoot td{ padding-top:4px; text-align:center; font-size:1rem; font-weight:700; color:var(--er); }
+#pn-fund .pf-fs{ display:grid; gap:10px; }
+#pn-fund .pf-f,#pn-fund .pf-q{ display:grid; grid-template-columns:84px minmax(0,1fr); align-items:center; gap:8px; margin:0; }
+#pn-fund .pf-f__l{ white-space:nowrap; font-family:var(--hd); font-size:.68rem; font-weight:700; letter-spacing:.18em; text-transform:uppercase; color:var(--dim); }
+#pn-fund .pf-f__r{ display:flex; flex-wrap:wrap; gap:6px; }
+#pn-fund .pf-fc{
+  flex:none; padding:7px 13px !important; border-radius:999px; border:1px solid rgba(11,61,69,.2); background:#FFFDF8;
+  font-family:var(--hd); font-weight:600; font-size:.9rem; line-height:1.1 !important; letter-spacing:.02em; text-transform:none !important; color:var(--er); white-space:nowrap;
+  transition:background .2s ease, color .2s ease, border-color .2s ease;
+}
 #pn-fund .pf-fc:hover{ border-color:var(--er); }
 #pn-fund .pf-fc.is-on{ color:#F4ECD8; background:var(--er); border-color:var(--er); }
-#pn-fund .pf-q{ display:flex; align-items:center; gap:6px; }
-#pn-fund .pf-q input{ flex:1; min-width:0; max-width:320px; min-height:36px; padding:6px 12px; border-radius:999px; border:1px solid rgba(11,61,69,.25); background:#FFFDF8; font:inherit; font-size:.92rem; color:var(--ink); }
-#pn-fund .pf-count{ margin:12px 0 8px; font-size:.84rem; color:var(--dim); }
+#pn-fund .pf-q input{ width:100%; max-width:300px; min-height:38px; margin:0; padding:6px 14px; border-radius:999px; border:1px solid rgba(11,61,69,.25); background:#FFFDF8; box-shadow:none; font-family:var(--bd); font-size:.95rem; color:var(--ink); }
+#pn-fund .pf-count{ margin:14px 0 8px; font-size:.84rem; color:var(--dim); }
 #pn-fund .pf-lines{ display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:8px; margin:0; padding:0; list-style:none; }
-#pn-fund .pf-line{ padding:12px 14px 12px; border-radius:12px; background:#FFFDF8; border:1px solid var(--hair); border-left:3px solid var(--er); box-shadow:0 6px 16px rgba(16,38,43,.05); animation:pfIn .35s ease; }
-#pn-fund .pf-line__k{ display:flex; flex-wrap:wrap; gap:4px 8px; margin:0 0 4px; font-family:var(--hd); font-size:.72rem; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--dim); }
-#pn-fund .pf-line__k b{ color:var(--tc); }
-#pn-fund .pf-line h3{ margin:0 0 4px; font-family:var(--hd); font-weight:700; font-size:1.18rem; line-height:1.1; color:var(--er) !important; }
-#pn-fund .pf-line h3 a{ text-decoration:none; }
-#pn-fund .pf-line h3 a:hover{ text-decoration:underline; text-decoration-color:var(--g); text-underline-offset:3px; }
-#pn-fund .pf-line > p:last-child{ margin:0; font-size:.86rem; line-height:1.42; color:var(--mut); display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; overflow:hidden; }
-#pn-fund .pf-pipe .pf-btns{ margin-top:14px; }
-
-/* ---------- 04 how it works, on ivory ---------- */
-#pn-fund .pf-how{ background:radial-gradient(50% 60% at 8% 0%, rgba(227,194,88,.12) 0%, rgba(227,194,88,0) 70%), linear-gradient(180deg,#F7F0DF 0%,#F4ECD8 100%); }
-#pn-fund .pf-cards{ display:grid; gap:10px; grid-template-columns:repeat(3,minmax(0,1fr)); margin:clamp(16px,2.4vh,22px) 0 0; padding:0; list-style:none; }
-#pn-fund .pf-card{ padding:16px 16px 14px; border-radius:14px; background:#FFFDF8; border:1px solid var(--hair); border-top:3px solid var(--er); box-shadow:0 10px 26px rgba(16,38,43,.07); transition:transform .25s ease; }
-#pn-fund .pf-card:hover{ transform:translateY(-3px); }
-#pn-fund .pf-card__n{ font-family:var(--hd); font-weight:700; font-size:.76rem; letter-spacing:.2em; color:var(--gd); }
-#pn-fund .pf-card h3,#pn-fund .pf-step h3{ margin:4px 0 5px; font-family:var(--hd); font-weight:700; font-size:1.36rem; line-height:1.05; color:var(--er) !important; }
-#pn-fund .pf-card p,#pn-fund .pf-step p{ margin:0; font-size:.93rem; line-height:1.45; color:var(--mut); }
-#pn-fund .pf-steps{ position:relative; display:grid; gap:12px; grid-template-columns:repeat(4,minmax(0,1fr)); margin:22px 0 0; padding:0; list-style:none; }
-#pn-fund .pf-steps::before{ content:""; position:absolute; left:24px; right:24px; top:23px; height:2px; background:linear-gradient(90deg,#E3C258,rgba(227,194,88,.2)); }
-#pn-fund .pf-step__n{
-  position:relative; z-index:1; display:inline-grid; place-items:center; width:48px; height:48px; border-radius:50%;
-  font-family:var(--hd); font-weight:700; font-size:1.05rem; color:var(--g); background:linear-gradient(160deg,#12586A 0%,#0B3D45 60%,#082A30 100%);
-  box-shadow:0 0 0 3px #F6EFE0, 0 0 0 4.5px rgba(227,194,88,.7), 0 10px 22px rgba(11,61,69,.22);
+#pn-fund .pf-line a{
+  position:relative; display:flex; flex-direction:column; gap:6px; height:100%; padding:13px 40px 13px 15px; border-radius:14px; text-decoration:none;
+  background:#FFFDF8; border:1px solid var(--hair); box-shadow:0 6px 16px rgba(16,38,43,.05); transition:transform .35s var(--ease), border-color .25s ease, box-shadow .3s ease;
 }
-#pn-fund .pf-step h3{ margin-top:10px; }
+#pn-fund .pf-line a::after{ content:"\2192"; position:absolute; right:15px; top:50%; transform:translateY(-50%); font-family:Arial,sans-serif; color:var(--gd); transition:transform .35s var(--ease); }
+#pn-fund .pf-line a:hover{ transform:translateY(-3px); border-color:rgba(140,106,18,.45); box-shadow:0 14px 26px rgba(16,38,43,.1); }
+#pn-fund .pf-line a:hover::after{ transform:translate(5px,-50%); }
+#pn-fund .pf-line__k{ display:flex; flex-wrap:wrap; gap:3px 8px; font-family:var(--hd); font-size:.7rem; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--dim); }
+#pn-fund .pf-line__k b{ color:var(--tc); }
+#pn-fund .pf-line__k i{ font-style:normal; }
+#pn-fund .pf-line__t{ font-family:var(--hd); font-weight:700; font-size:1.22rem; line-height:1.08; color:var(--er); }
+#pn-fund .pf-pipe .pf-btns{ margin-top:16px; }
 
-/* ---------- 05 who it serves: fifteen sources, three families ---------- */
-#pn-fund .pf-who{ background:linear-gradient(180deg,#FBF8F1 0%,#F6EFE0 100%); }
-#pn-fund .pf-fams{ display:grid; gap:12px; grid-template-columns:repeat(3,minmax(0,1fr)); align-items:start; margin-top:clamp(16px,2.4vh,22px); }
-#pn-fund .pf-fam{ overflow:hidden; border-radius:14px; background:#FFFDF8; border:1px solid var(--hair); box-shadow:0 10px 26px rgba(16,38,43,.07); }
-#pn-fund .pf-fam__h{ display:flex; flex-direction:column; gap:1px; padding:11px 15px 10px; color:#F4ECD8; background:linear-gradient(165deg,#10505F 0%,#0B3D45 60%,#09313A 100%); box-shadow:inset 0 -2px 0 rgba(227,194,88,.7); }
-#pn-fund .pf-fam__h b{ font-family:var(--hd); font-size:1.12rem; font-weight:700; line-height:1.05; }
-#pn-fund .pf-fam__h span{ font-size:.78rem; color:rgba(244,236,216,.78); }
-#pn-fund .pf-fam ul{ margin:0; padding:0; list-style:none; }
-#pn-fund .pf-fam li{ padding:10px 15px; border-top:1px solid var(--hair); scroll-margin-top:90px; transition:background .3s ease; }
-#pn-fund .pf-fam li:first-child{ border-top:0; }
-#pn-fund .pf-fam li:target,#pn-fund .pf-fam li.is-lit{ background:rgba(227,194,88,.22); }
-#pn-fund .pf-fam li > div{ display:flex; flex-direction:column; gap:1px; }
-#pn-fund .pf-fam li b{ font-family:var(--hd); font-size:1.04rem; font-weight:700; line-height:1.1; color:var(--er); }
-#pn-fund .pf-fam li > div span{ font-size:.78rem; line-height:1.3; color:var(--dim); }
-#pn-fund .pf-fam li small{ display:block; margin-top:2px; font-size:.68rem; line-height:1.35; color:var(--dim); }
-#pn-fund .pf-fam li p{ margin:5px 0 0; }
-#pn-fund .pf-fam li em{ display:block; font-size:1.42rem; font-family:var(--hd); line-height:1.05; }
-#pn-fund .pf-fam li p span{ display:block; font-size:.8rem; line-height:1.35; color:var(--mut); }
-#pn-fund .pf-fam li p a{ color:var(--dim); text-decoration:none; border-bottom:1px solid rgba(16,38,43,.2); }
+/* ---------- 03 how it works, Earthrise ---------- */
+#pn-fund .pf-how{ color:#F4ECD8; background:radial-gradient(60% 80% at 100% 0%, rgba(227,194,88,.14) 0%, rgba(227,194,88,0) 60%), linear-gradient(160deg,#0E4A55 0%,#0B3D45 50%,#082A30 100%); }
+#pn-fund .pf-how .pf-eb{ color:var(--g); }
+#pn-fund .pf-how .pf-num{ color:#082A30; background:var(--g); }
+#pn-fund .pf-how h2.pf-h2{ color:#F4ECD8 !important; }
+#pn-fund .pf-steps{ display:grid; gap:12px; grid-template-columns:repeat(3,minmax(0,1fr)); margin:clamp(20px,3vh,32px) 0 0; padding:0; list-style:none; }
+#pn-fund .pf-step{ position:relative; overflow:hidden; padding:22px 22px 20px; border-radius:18px; border:1px solid rgba(244,236,216,.14); background:linear-gradient(160deg,rgba(255,253,248,.07) 0%,rgba(255,253,248,.02) 100%); transition:border-color .3s ease, transform .4s var(--ease); }
+#pn-fund .pf-step:hover{ border-color:rgba(227,194,88,.5); transform:translateY(-4px); }
+#pn-fund .pf-step__n{ display:block; font-family:var(--hd); font-weight:700; font-size:clamp(4.4rem,7vw,6.6rem); line-height:.8; color:transparent; -webkit-text-stroke:1.5px rgba(227,194,88,.75); }
+#pn-fund .pf-step h3{ margin:16px 0 4px; font-family:var(--hd); font-weight:700; font-size:1.55rem; line-height:1.02; color:#F4ECD8 !important; }
+#pn-fund .pf-step p{ margin:0; font-size:.95rem; line-height:1.4; color:rgba(244,236,216,.74); }
+#pn-fund .pf-checks{ display:flex; flex-wrap:wrap; align-items:center; gap:8px 12px; margin:18px 0 0; font-family:var(--hd); }
+#pn-fund .pf-checks span{ margin-right:4px; font-size:.7rem; font-weight:700; letter-spacing:.24em; text-transform:uppercase; color:rgba(244,236,216,.6); }
+#pn-fund .pf-checks b{ padding:6px 14px; border-radius:999px; font-size:.95rem; font-weight:700; color:#F4ECD8; border:1px solid rgba(227,194,88,.45); }
+#pn-fund .pf-checks i{ font-style:normal; color:var(--g); }
 
-/* ---------- 06 the close, Earthrise Depth ---------- */
-#pn-fund .pf-close{ text-align:center; color:#F4ECD8; background:radial-gradient(60% 70% at 50% 0%, rgba(18,88,106,.6) 0%, rgba(18,88,106,0) 70%), #082A30; }
-#pn-fund .pf-close .pf-eb{ justify-content:center; color:var(--g); }
-#pn-fund .pf-close .pf-eb::after{ content:""; width:22px; height:2px; flex:none; background:currentColor; opacity:.55; }
-#pn-fund .pf-close h2.pf-h2{ margin:0 auto; color:#F4ECD8 !important; }
-#pn-fund .pf-close .pf-lead{ margin-left:auto; margin-right:auto; max-width:50ch; color:rgba(244,236,216,.84); text-wrap:balance; }
-#pn-fund .pf-close .pf-btns{ justify-content:center; }
+/* ---------- 04 who it serves: two marquees of the fifteen sources ---------- */
+#pn-fund .pf-who{ background:linear-gradient(180deg,#F7F0DF 0%,#F4ECD8 100%); }
+#pn-fund .pf-mqs{ display:grid; gap:10px; margin-top:clamp(18px,3vh,28px); }
+#pn-fund .pf-mq{ overflow:hidden; -webkit-mask-image:linear-gradient(90deg,transparent 0,#000 6%,#000 94%,transparent 100%); mask-image:linear-gradient(90deg,transparent 0,#000 6%,#000 94%,transparent 100%); }
+#pn-fund .pf-mq__l{ gap:10px; padding:4px 0; }
+#pn-fund .pf-mq--rev .pf-mq__l{ animation-direction:reverse; }
+#pn-fund .pf-mq li{ flex:none; scroll-margin-top:90px; }
+#pn-fund .pf-mq a{
+  display:flex; align-items:baseline; gap:10px; padding:14px 20px; border-radius:999px; text-decoration:none; white-space:nowrap;
+  background:#FFFDF8; border:1px solid var(--hair); box-shadow:0 8px 20px rgba(16,38,43,.06); transition:border-color .25s ease, background .25s ease;
+}
+#pn-fund .pf-mq a:hover,#pn-fund .pf-mq li.is-lit a{ border-color:var(--gd); background:#FFF6DA; }
+#pn-fund .pf-mq b{ font-family:var(--hd); font-weight:700; font-size:1.06rem; color:var(--er); }
+#pn-fund .pf-mq em{ font-style:normal; font-family:var(--hd); font-weight:700; font-size:1.3rem; color:var(--gd); }
+#pn-fund .pf-mq span{ font-size:.8rem; color:var(--dim); }
+
+/* ---------- the close, Earthrise Depth, one giant action ---------- */
+#pn-fund .pf-close{ color:#F4ECD8; background:radial-gradient(60% 70% at 50% 0%, rgba(18,88,106,.6) 0%, rgba(18,88,106,0) 70%), #082A30; }
+#pn-fund .pf-close .pf-eb{ color:var(--g); }
+#pn-fund .pf-close h2.pf-h2{ max-width:none; }
+#pn-fund .pf-big-cta{ display:inline; text-decoration:none; color:#F4ECD8; background:linear-gradient(var(--g),var(--g)) 0 100% / 0% 3px no-repeat; transition:background-size .6s var(--ease), color .3s ease; }
+#pn-fund .pf-big-cta:hover{ color:var(--g); background-size:100% 3px; }
+#pn-fund .pf-big-cta i{ display:inline-block; margin-left:.2em; font-style:normal; font-family:Arial,sans-serif; font-weight:400; color:var(--g); transition:transform .5s var(--ease); }
+#pn-fund .pf-big-cta:hover i{ transform:translateX(.18em); }
+#pn-fund .pf-close .pf-lead{ color:rgba(244,236,216,.8); }
 #pn-fund .pf-close .pf-btn--line{ color:var(--g); border-color:rgba(227,194,88,.65); }
-#pn-fund .pf-close .pf-note{ margin-left:auto; margin-right:auto; color:rgba(244,236,216,.6); }
+#pn-fund .pf-close .pf-note{ color:rgba(244,236,216,.55); }
 
-@media (min-width:1100px){ #pn-fund .pf-pipe__mx{ position:sticky; top:96px; } }
 /* tablets */
 @media (max-width:1099px){
   #pn-fund .pf-pipe__g{ grid-template-columns:minmax(0,1fr); }
   #pn-fund .pf-pipe__mx{ max-width:620px; }
-  #pn-fund .pf-fams{ grid-template-columns:repeat(2,minmax(0,1fr)); }
-  #pn-fund .pf-steps{ grid-template-columns:repeat(2,minmax(0,1fr)); gap:16px 14px; }
-  #pn-fund .pf-steps::before{ display:none; }
 }
+@media (min-width:1100px){ #pn-fund .pf-pipe__mx{ position:sticky; top:96px; } }
 @media (max-width:860px){
   #pn-fund .pf-m{ grid-template-columns:minmax(0,1fr); }
   #pn-fund .pf-m__l{ box-shadow:inset 0 -2px 0 rgba(227,194,88,.7); }
+  #pn-fund .pf-steps{ grid-template-columns:minmax(0,1fr); }
 }
 /* phones: their own layout, nothing scrolls sideways */
 @media (max-width:640px){
   #pn-fund{ --gut:16px; }
-  #pn-fund .pf-band{ padding:24px 0 22px; }
-  #pn-fund .pf-hero{ padding:26px 0 14px; }
-  #pn-fund h1.pf-h1{ font-size:clamp(2.35rem,11vw,3rem); }
-  #pn-fund h2.pf-h2{ font-size:clamp(1.7rem,8vw,2.15rem); }
-  #pn-fund .pf-lead{ font-size:.96rem; }
-  #pn-fund .pf-figs{ gap:8px; margin-top:18px; }
-  #pn-fund .pf-figs a{ padding:11px 12px 10px; }
-  #pn-fund .pf-figs b{ font-size:1.9rem; }
-  #pn-fund .pf-figs span{ font-size:.78rem; }
+  #pn-fund .pf-band{ padding:30px 0 28px; }
+  #pn-fund .pf-hero{ padding:34px 0 22px; }
+  #pn-fund h1.pf-h1{ font-size:clamp(3rem,15vw,4rem); }
+  #pn-fund h2.pf-h2{ font-size:clamp(2.1rem,10.4vw,2.7rem); }
+  #pn-fund .pf-lead{ font-size:1.05rem; }
+  #pn-fund .pf-figs{ gap:8px; margin-top:22px; }
+  #pn-fund .pf-figs a{ padding:13px 13px 12px; }
+  #pn-fund .pf-figs b{ font-size:2.2rem; }
+  #pn-fund .pf-figs span{ font-size:.72rem; letter-spacing:.12em; }
   #pn-fund .pf-btns .pf-btn{ width:100%; }
-  #pn-fund .pf-tape{ min-height:46px; }
+  #pn-fund .pf-tape{ min-height:48px; }
   #pn-fund .pf-tape__k{ padding:6px 10px 6px var(--gut); }
-  #pn-fund .pf-tape__c{ display:none; }
-  #pn-fund .pf-tape__k b{ font-size:.62rem; letter-spacing:.14em; }
+  #pn-fund .pf-tape__k b{ font-size:.64rem; letter-spacing:.16em; }
   #pn-fund .pf-tape__a{ display:none; }
-  #pn-fund .pf-tape__l a{ padding:12px 16px; }
-  #pn-fund h3.pf-m__n{ margin-top:14px; font-size:2.5rem; }
-  #pn-fund .pf-m__f{ padding-top:12px; font-size:2.7rem; }
-  #pn-fund .pf-m__l{ padding:16px 16px 18px; }
-  #pn-fund .pf-m__r{ padding:12px 16px 16px; }
-  #pn-fund .pf-m__row{ padding:10px 0; }
-  #pn-fund .pf-m__row p{ font-size:.9rem; }
-  #pn-fund p.pf-m__t{ font-size:1.24rem; }
-  #pn-fund .pf-m__fit{ margin:2px -8px 0; padding:10px 8px; }
+  #pn-fund .pf-tape__l a{ padding:13px 16px; }
+  #pn-fund .pf-m{ border-radius:18px; }
+  #pn-fund .pf-m__l{ padding:18px 18px 20px; }
+  #pn-fund h3.pf-m__n{ margin-top:14px; font-size:3rem; }
+  #pn-fund .pf-m__f{ padding-top:16px; font-size:3.2rem; }
+  #pn-fund .pf-m__r{ padding:18px 18px 20px; }
+  #pn-fund .pf-m__t{ font-size:1.65rem; margin-bottom:14px; }
+  #pn-fund .pf-m__fu{ font-size:1.18rem; }
+  #pn-fund .pf-m__why{ font-size:.92rem; }
   #pn-fund .pf-mx{ border-spacing:3px; }
-  #pn-fund .pf-mx .pf-l{ display:none; }
-  #pn-fund .pf-mx .pf-s{ display:inline; }
-  #pn-fund .pf-mx thead th{ font-size:.7rem; }
-  #pn-fund .pf-mx tbody th,#pn-fund .pf-mx tfoot th{ font-size:.88rem; width:27%; }
-  #pn-fund .pf-cell{ height:34px; font-size:.95rem; }
-  #pn-fund .pf-f{ flex-wrap:nowrap; overflow-x:auto; padding-bottom:2px; scrollbar-width:none; }
-  #pn-fund .pf-f::-webkit-scrollbar{ display:none; }
-  #pn-fund .pf-fc{ flex:none; font-size:.82rem; }
+  #pn-fund .pf-mx__c0{ width:30%; }
+  #pn-fund .pf-mx thead th{ font-size:.66rem; letter-spacing:.03em; }
+  #pn-fund .pf-mx th b{ font-size:.94rem; }
+  #pn-fund .pf-mx th small{ font-size:.66rem; }
+  #pn-fund .pf-cell{ height:38px; font-size:1rem; border-radius:8px; }
+  #pn-fund .pf-f,#pn-fund .pf-q{ grid-template-columns:minmax(0,1fr); gap:5px; }
+  #pn-fund .pf-f__r{ flex-wrap:nowrap; overflow-x:auto; margin-right:calc(-1 * var(--gut)); padding-right:var(--gut); padding-bottom:2px; scrollbar-width:none; }
+  #pn-fund .pf-f__r::-webkit-scrollbar{ display:none; }
+  #pn-fund .pf-fc{ font-size:.86rem; }
+  #pn-fund .pf-q input{ max-width:none; }
   #pn-fund .pf-lines{ grid-template-columns:minmax(0,1fr); }
-  #pn-fund .pf-line h3{ font-size:1.08rem; }
-  #pn-fund .pf-cards{ grid-template-columns:minmax(0,1fr); gap:8px; }
-  #pn-fund .pf-card{ padding:12px 14px 11px; }
-  #pn-fund .pf-card h3,#pn-fund .pf-step h3{ font-size:1.2rem; }
-  #pn-fund .pf-card p,#pn-fund .pf-step p{ font-size:.9rem; }
-  #pn-fund .pf-steps{ grid-template-columns:minmax(0,1fr); gap:10px; }
-  #pn-fund .pf-step{ display:grid; grid-template-columns:42px minmax(0,1fr); gap:2px 12px; align-items:start; }
-  #pn-fund .pf-step__n{ grid-row:span 2; width:42px; height:42px; font-size:.95rem; }
-  #pn-fund .pf-step h3{ margin:2px 0 2px; }
-  #pn-fund .pf-fams{ grid-template-columns:minmax(0,1fr); gap:8px; }
-  #pn-fund .pf-fam li{ padding:8px 13px; }
-  #pn-fund .pf-fam li > div{ flex-direction:row; flex-wrap:wrap; align-items:baseline; gap:0 8px; }
-  #pn-fund .pf-fam li b{ font-size:.98rem; }
-  #pn-fund .pf-fam li em{ font-size:1.22rem; }
-  #pn-fund .pf-fam li p span{ font-size:.78rem; }
+  #pn-fund .pf-line__t{ font-size:1.12rem; }
+  #pn-fund .pf-steps{ gap:8px; }
+  #pn-fund .pf-step{ display:grid; grid-template-columns:auto minmax(0,1fr); gap:0 16px; align-items:center; padding:16px 18px; }
+  #pn-fund .pf-step__n{ grid-row:span 2; font-size:3.6rem; }
+  #pn-fund .pf-step h3{ margin:0 0 2px; font-size:1.3rem; }
+  #pn-fund .pf-step p{ font-size:.9rem; }
+  #pn-fund .pf-checks{ gap:6px 8px; }
+  #pn-fund .pf-checks span{ flex-basis:100%; }
+  #pn-fund .pf-checks b{ font-size:.86rem; padding:5px 11px; }
+  #pn-fund .pf-mq a{ padding:11px 16px; }
+  #pn-fund .pf-mq b{ font-size:.98rem; }
+  #pn-fund .pf-mq em{ font-size:1.18rem; }
 }
 @media (prefers-reduced-motion:reduce){
   #pn-fund *{ transition:none !important; animation:none !important; }
-  #pn-fund .pf-tape__v{ overflow-x:auto; }
+  #pn-fund.pf-js .pf-rv .pf-w > span,#pn-fund.pf-js .pf-up,#pn-fund.pf-js .pf-pipe__mx .pf-cell{ opacity:1 !important; transform:none !important; }
+  #pn-fund .pf-tape__v,#pn-fund .pf-mq{ overflow-x:auto; }
+  #pn-fund .pf-m{ transform:none !important; }
 }
 </style>
-<div id="pn-fund" data-version="2.0">
+<div id="pn-fund" data-version="2.1"><div class="pf-prog" aria-hidden="true"></div>
 <style>
 .pn-rule{
   position:relative; z-index:6; display:block; box-sizing:border-box;
@@ -363,17 +405,17 @@ Architecture in three families, each with its sourced figure. 06 The close. Phon
   .pn-rule::after{ width:17px; height:17px; }
 }
 </style>
-<section class="pf-hero" aria-labelledby="pf-h1"><canvas class="pf-flow" aria-hidden="true"></canvas><div class="pf-in pf-hero__g"><div class="pf-hero__t"><p class="pf-eb">For funders</p><h1 class="pf-h1" id="pf-h1">Finance the <span class="pf-money">$4 trillion</span> gap, nation by nation</h1><p class="pf-lead">Perfect Nations designs a blueprint for every nation and turns each gap in its people&#8217;s basic standards of living into a Solution a funder can finance: the nation, the gap, the instrument and the funder that fits.</p><div class="pf-btns"><a class="pf-btn" href="https://perfectnations.com/contact/?about=funders">Request the deal pipeline</a><a class="pf-btn pf-btn--line" href="#pf-match">See the Match of the week</a></div><p class="pf-src">$4 trillion a year: the financing gap for sustainable development in developing countries, as the United Nations set it out in the Compromiso de Sevilla, 2025. <a href="https://digitallibrary.un.org/record/4087700/files/A_RES_79_323-EN.pdf" target="_blank" rel="noopener noreferrer">United Nations, A/RES/79/323</a></p></div><ul class="pf-figs" aria-label="Perfect Nations in figures"><li><a href="https://perfectnations.com/blueprints/"><b data-n="195">195</b><span>nation blueprints</span></a></li><li><a href="#pf-pipe"><b data-n="758">758</b><span>Solutions in the pipeline</span></a></li><li><a href="https://perfectnations.com/capital-architecture/#pca-record"><b data-n="2696">2,696</b><span>deals on record across 194 nations</span></a></li><li><a href="https://perfectnations.com/capital-architecture/#pca-index"><b data-n="81">81</b><span>instruments in the toolkit, each proved by a real deal</span></a></li></ul></div><p class="pf-in pf-ll">The Living Line: the basic standard of living every citizen should stand above: food, water, shelter, energy, education, health and livelihood.</p></section>
-<section class="pf-tape" aria-label="Live from the Capital Wire" data-src="https://raw.githubusercontent.com/preetisinha70-PN/perfect-nations/main/data/ticker.json" data-mirror="https://cdn.jsdelivr.net/gh/preetisinha70-PN/perfect-nations@main/data/ticker.json"><div class="pf-tape__k"><b><span class="pf-pulse" aria-hidden="true"></span>Live from the Capital Wire</b><small class="pf-tape__c">179 deals in 82 nations</small></div><div class="pf-tape__v"><ul class="pf-tape__l"><li><a href="https://www.thailand-business-news.com/china/341596-chinas-us2-billion-bond-was-36-times-oversubscribed-with-yields-matching-us-treasuries" target="_blank" rel="noopener noreferrer"><b>China</b><em>US$2bn</em><span>Dollar bond priced level with Treasuries</span><i>Oversubscribed</i></a></li><li><a href="https://www.proparco.fr/en/news/colombia-faces-unprecedented-el-nino-episode-davivienda-and-proparco-mobilise-us125-million" target="_blank" rel="noopener noreferrer"><b>Colombia</b><em>US$125m</em><span>Green loan for buildings and power</span></a></li><li><a href="https://www.hurriyetdailynews.com/treasury-raises-1-25-billion-euros-through-green-bond-issuance-229600" target="_blank" rel="noopener noreferrer"><b>T&#252;rkiye</b><em>EUR 1.25bn</em><span>Eight-year euro green bond</span><i>Oversubscribed</i></a></li><li><a href="https://technode.global/2026/11/19/adb-blackrock-asia-infrastructure-credit-fund/" target="_blank" rel="noopener noreferrer"><b>Asia and the Pacific</b><em>US$57.5m</em><span>ADB stake in Asia infrastructure fund</span></a></li><li><a href="https://english.ahram.org.eg/News/582912.aspx" target="_blank" rel="noopener noreferrer"><b>Nigeria</b><em>US$30m</em><span>Afreximbank SME facility through NEXIM</span></a></li><li><a href="https://www.fmo.nl/news-detail/5ef74f96-7f4e-4b48-8fde-0dc38e3dee6f/fmo-backs-seed-co-to-strengthen-climate-adaptation-and-food-security-in-africa" target="_blank" rel="noopener noreferrer"><b>Africa</b><em>US$25m</em><span>FMO loan for climate-adapted seed</span></a></li><li><a href="https://www.ebrd.com/home/news-and-events/news/2026/ebrd-and-eu-promote-renewable-energy-solutions-for-tunisian-msme.html" target="_blank" rel="noopener noreferrer"><b>Tunisia</b><em>EUR 10m</em><span>EBRD green loan for small firms</span></a></li><li><a href="https://www.fixedincomenews.com.au/aofm-raises-6bn-with-new-2057-bond-as-long-end-demand-holds-up/" target="_blank" rel="noopener noreferrer"><b>Australia</b><em>A$6bn</em><span>New 31-year Treasury bond</span><i>Oversubscribed</i></a></li><li><a href="https://www.centralbank.go.ke//uploads/historical_treasury_bond_results/897831540_RESULTS%20FXD1-2019-015%20AND%20SDB1-2011-030%20DATED%2023-11-2026.pdf" target="_blank" rel="noopener noreferrer"><b>Kenya</b><em>KSh 52.19bn</em><span>Reopened 15- and 30-year bonds</span><i>Oversubscribed</i></a></li><li><a href="https://www.trend.az/casia/uzbekistan/4248046.html" target="_blank" rel="noopener noreferrer"><b>Uzbekistan</b><em>US$300m</em><span>NDB loan for low-carbon energy</span></a></li><li><a href="https://www.ebrd.com/home/news-and-events/news/2026/ebrd-invests-up-to-us--31-million-in-egypt-s-desalination-infras.html" target="_blank" rel="noopener noreferrer"><b>Egypt</b><em>US$31m</em><span>EBRD stake in desalination platform</span></a></li><li><a href="https://thecondia.com/first-circle-capital-closes-26m-africa-fund-i/" target="_blank" rel="noopener noreferrer"><b>Africa</b><em>US$26m</em><span>Fintech fund reaches final close</span></a></li></ul></div><a class="pf-tape__a" href="https://perfectnations.com/state-of-nations/">Every deal on State of Nations</a></section>
-<section class="pf-band pf-match" id="pf-match" aria-labelledby="pf-mh"><div class="pf-in"><div class="pf-head"><p class="pf-eb">Match of the week</p><h2 class="pf-h2" id="pf-mh">One gap. One instrument. The funder that fits.</h2><p class="pf-lead">Every week, Perfect Nations pairs one nation&#8217;s gap with the instrument that closes it and the kind of funder it fits. Answer a Match and the conversation starts.</p></div><div class="pf-m__slot"><article class="pf-m" data-no="1"><div class="pf-m__l"><p class="pf-m__k"><b>Match No. 1</b><span>Week of 23 November 2026</span></p><h3 class="pf-m__n">Tanzania</h3><p class="pf-m__s">Energy</p><p class="pf-m__f">~63m</p><p class="pf-m__c">Tanzanians who cook without clean fuel. <a href="https://data.worldbank.org/indicator/EG.CFT.ACCS.ZS?locations=TZ" target="_blank" rel="noopener noreferrer">World Bank, 2024</a></p></div><div class="pf-m__r"><div class="pf-m__row"><h4>The Solution</h4><p class="pf-m__t">Nyerere Power, Every Kitchen</p><p>Tanzania should turn the power of the Julius Nyerere station into clean kitchens, with a guaranteed facility like the one that brought nine banks to its railway, financing last-mile connections and electric cookers recovered through electricity bills.</p></div><div class="pf-m__row"><h4>The proof</h4><p><b>Partial Credit Guarantee</b>, Tanzania 2026: <em class="pf-gold">Up to $800M</em> behind a $1.2B railway loan. <a href="https://www.afdb.org/en/news-and-events/press-releases/tanzania-african-development-bank-tanzania-close-98246" target="_blank" rel="noopener noreferrer">African Development Bank, November 2026</a></p></div><div class="pf-m__row pf-m__fit"><h4>The funder that fits</h4><p class="pf-m__t">Banks, behind a development bank guarantee</p><p>A guaranteed facility brought nine banks to Tanzania&#8217;s railway. The same structure can finance last-mile power and electric cookers, recovered through electricity bills.</p><p class="pf-chips"><a class="pf-chip" href="#pf-who-mdb">Multilateral development banks</a><a class="pf-chip" href="#pf-who-ib">Investment banks and bond markets</a></p></div><div class="pf-btns"><a class="pf-btn" href="https://perfectnations.com/contact/?about=match">Answer this Match</a><a class="pf-btn pf-btn--line" href="https://perfectnations.com/state-of-nations/#solution-33">Read the Solution</a></div></div></article></div><div class="pf-m__more" hidden><p>Earlier Matches</p><ul class="pf-m__rail"></ul></div><p class="pf-note">Matches are designed by Perfect Nations from public data. A Match becomes a mandate only when the nation asks for it.</p></div><script type="application/json" class="pf-matches">[{"no":4,"week":"2026-12-14","weekText":"Week of 14 December 2026","nation":"Nigeria","blueprint":"https://perfectnations.com/blueprints/nigeria/","standard":"Food","figure":"~182m","caption":"Nigerians who cannot always count on enough good food","source":"FAO, 2024","sourceUrl":"https://data.worldbank.org/indicator/SN.ITK.MSFI.ZS?locations=NG","title":"The Diaspora Harvest Bond","advises":"Nigeria should issue a second diaspora bond to finance storage, irrigation and warehouse receipts, so farmers can borrow against their stored grain instead of selling at harvest-time prices.","first":"Certify the first warehouses that can issue receipts banks will accept.","proof":{"name":"Diaspora Bond","where":"Nigeria","year":"2017","figure":"$300M","label":"Nigeria\u2019s first diaspora bond","source":"Debt Management Office, Nigeria","url":"https://dmo.gov.ng/news-and-events/circulars-releases/2456-nigeria-shines-at-the-emea-awards-wins-3-awards/file"},"solutionUrl":"https://perfectnations.com/state-of-nations/#solution-24","funder":"Nigerians abroad, through a diaspora bond","why":"Nigeria sold its first diaspora bond in 2017. A second can finance storage, irrigation and warehouse receipts, so farmers stop selling at harvest-time prices.","networks":[{"id":"diaspora","name":"The diaspora"},{"id":"ib","name":"Investment banks and bond markets"}]},{"no":3,"week":"2026-12-07","weekText":"Week of 7 December 2026","nation":"Mexico","blueprint":"https://perfectnations.com/blueprints/mexico/","standard":"Water","figure":"~75m","caption":"Mexicans without safely managed drinking water at home","source":"WHO/UNICEF, 2024","sourceUrl":"https://data.worldbank.org/indicator/SH.H2O.SMDW.ZS?locations=MX","title":"The Water Guarantee","advises":"Mexico should direct the World Bank credit enhancement already drawing private capital into its infrastructure toward municipal water utilities, so domestic pension savings finance safe drinking water in every state.","first":"Select the first water utilities and rate them for guaranteed bonds.","proof":{"name":"Infrastructure Guarantee","where":"Mexico","year":"2025","figure":"$500M","label":"for infrastructure and private investment","source":"World Bank, December 2025","url":"https://www.worldbank.org/en/news/press-release/2025/12/18/banco-mundial-aprueba-garantia-por-us-500-millones-para-impulsar-infraestructura-y-atraer-inversion-privada-en-m-xico"},"solutionUrl":"https://perfectnations.com/state-of-nations/#solution-20","funder":"Pension funds, behind a World Bank guarantee","why":"Mexico already has a World Bank credit enhancement drawing private capital into its infrastructure. Pointed at municipal water utilities, it lets domestic pension savings buy guaranteed water bonds.","networks":[{"id":"pension","name":"Pension funds"},{"id":"mdb","name":"Multilateral development banks"}]},{"no":2,"week":"2026-11-30","weekText":"Week of 30 November 2026","nation":"Barbados","blueprint":"https://perfectnations.com/blueprints/barbados/","standard":"Food","figure":"~88,000","caption":"Barbadians moderately or severely food insecure","source":"FAO, 2022","sourceUrl":"https://data.worldbank.org/indicator/SN.ITK.MSFI.ZS?locations=BB","title":"The Blue Food Swap","advises":"Barbados should make its next debt conversion a blue food swap, refinancing costly debt with guaranteed debt and binding the savings to local farms, fisheries and sea farming, so the island grows more of what it eats.","first":"Ask the guarantors of the earlier conversions to price a blue food swap.","proof":{"name":"Debt-for-Nature Swap","where":"Barbados","year":"2022","figure":"$150M","label":"about 30% of its ocean to be protected","source":"The Nature Conservancy, September 2022","url":"https://www.nature.org/en-us/newsroom/tnc-announces-barbados-blue-bonds-debt-conversion/"},"solutionUrl":"https://perfectnations.com/state-of-nations/#solution-44","funder":"The guarantors of debt conversions, and the investors in guaranteed debt","why":"Barbados has completed two debt conversions. The guarantors who priced them can price a third, with the savings bound to local farms, fisheries and sea farming.","networks":[{"id":"mdb","name":"Multilateral development banks"},{"id":"ib","name":"Investment banks and bond markets"}]},{"no":1,"week":"2026-11-23","weekText":"Week of 23 November 2026","nation":"Tanzania","blueprint":"https://perfectnations.com/blueprints/tanzania/","standard":"Energy","figure":"~63m","caption":"Tanzanians who cook without clean fuel","source":"World Bank, 2024","sourceUrl":"https://data.worldbank.org/indicator/EG.CFT.ACCS.ZS?locations=TZ","title":"Nyerere Power, Every Kitchen","advises":"Tanzania should turn the power of the Julius Nyerere station into clean kitchens, with a guaranteed facility like the one that brought nine banks to its railway, financing last-mile connections and electric cookers recovered through electricity bills.","first":"Ask the railway\u2019s guarantor to price a facility for last-mile power and cooking.","proof":{"name":"Partial Credit Guarantee","where":"Tanzania","year":"2026","figure":"Up to $800M","label":"behind a $1.2B railway loan","source":"African Development Bank, November 2026","url":"https://www.afdb.org/en/news-and-events/press-releases/tanzania-african-development-bank-tanzania-close-98246"},"solutionUrl":"https://perfectnations.com/state-of-nations/#solution-33","funder":"Banks, behind a development bank guarantee","why":"A guaranteed facility brought nine banks to Tanzania\u2019s railway. The same structure can finance last-mile power and electric cookers, recovered through electricity bills.","networks":[{"id":"mdb","name":"Multilateral development banks"},{"id":"ib","name":"Investment banks and bond markets"}]}]</script><script type="application/json" class="pf-answer">{"label":"Answer this Match","url":"https://perfectnations.com/contact/?about=match"}</script></section>
-<section class="pf-band pf-pipe" id="pf-pipe" aria-labelledby="pf-ph" data-src="https://raw.githubusercontent.com/preetisinha70-PN/perfect-nations/main/data/deal-pipeline.json" data-mirror="https://cdn.jsdelivr.net/gh/preetisinha70-PN/perfect-nations@main/data/deal-pipeline.json"><div class="pf-in"><div class="pf-head"><p class="pf-eb">The deal pipeline</p><h2 class="pf-h2" id="pf-ph"><span class="pf-big">758</span> Solutions across 194 nations</h2><p class="pf-lead">Every gap in every blueprint, matched to an instrument and the kind of funder it fits. Choose a standard, a region or a kind of funder.</p><p class="pf-stage">Stage: designed by Perfect Nations from public data. A Solution becomes a mandate only when the nation asks for it.</p></div><div class="pf-pipe__g"><div class="pf-pipe__mx"><table class="pf-mx"><caption>Solutions by standard and kind of funder</caption><thead><tr><td></td><th scope="col"><span class="pf-l">Development banks</span><span class="pf-s">Dev. banks</span></th><th scope="col"><span class="pf-l">Private investors</span><span class="pf-s">Private</span></th><th scope="col"><span class="pf-l">Corporate partners</span><span class="pf-s">Corporate</span></th><th scope="col"><span class="pf-l">Lead Solutions</span><span class="pf-s">Lead</span></th></tr></thead><tbody><tr><th scope="row">Food<small>91</small></th><td><button type="button" class="pf-cell is-lo" data-std="Food" data-fin="Development banks" style="--a:0.12" aria-label="4 Food Solutions, Development banks">4</button></td><td><button type="button" class="pf-cell is-lo" data-std="Food" data-fin="Private investors" style="--a:0.21" aria-label="12 Food Solutions, Private investors">12</button></td><td><button type="button" class="pf-cell" data-std="Food" data-fin="Corporate partners" style="--a:0.67" aria-label="55 Food Solutions, Corporate partners">55</button></td><td><button type="button" class="pf-cell is-lo" data-std="Food" data-fin="lead" style="--a:0.30" aria-label="20 Food Solutions, Lead Solutions">20</button></td></tr><tr><th scope="row">Water<small>83</small></th><td><button type="button" class="pf-cell is-lo" data-std="Water" data-fin="Development banks" style="--a:0.37" aria-label="27 Water Solutions, Development banks">27</button></td><td><button type="button" class="pf-cell is-lo" data-std="Water" data-fin="Private investors" style="--a:0.39" aria-label="29 Water Solutions, Private investors">29</button></td><td><button type="button" class="pf-cell is-lo" data-std="Water" data-fin="Corporate partners" style="--a:0.21" aria-label="12 Water Solutions, Corporate partners">12</button></td><td><button type="button" class="pf-cell is-lo" data-std="Water" data-fin="lead" style="--a:0.24" aria-label="15 Water Solutions, Lead Solutions">15</button></td></tr><tr><th scope="row">Shelter<small>123</small></th><td><button type="button" class="pf-cell is-lo" data-std="Shelter" data-fin="Development banks" style="--a:0.54" aria-label="43 Shelter Solutions, Development banks">43</button></td><td><button type="button" class="pf-cell is-lo" data-std="Shelter" data-fin="Private investors" style="--a:0.31" aria-label="21 Shelter Solutions, Private investors">21</button></td><td><button type="button" class="pf-cell is-lo" data-std="Shelter" data-fin="Corporate partners" style="--a:0.24" aria-label="15 Shelter Solutions, Corporate partners">15</button></td><td><button type="button" class="pf-cell" data-std="Shelter" data-fin="lead" style="--a:0.55" aria-label="44 Shelter Solutions, Lead Solutions">44</button></td></tr><tr><th scope="row">Energy<small>76</small></th><td><button type="button" class="pf-cell is-lo" data-std="Energy" data-fin="Development banks" style="--a:0.25" aria-label="16 Energy Solutions, Development banks">16</button></td><td><button type="button" class="pf-cell is-lo" data-std="Energy" data-fin="Private investors" style="--a:0.21" aria-label="12 Energy Solutions, Private investors">12</button></td><td><button type="button" class="pf-cell is-lo" data-std="Energy" data-fin="Corporate partners" style="--a:0.23" aria-label="14 Energy Solutions, Corporate partners">14</button></td><td><button type="button" class="pf-cell is-lo" data-std="Energy" data-fin="lead" style="--a:0.45" aria-label="34 Energy Solutions, Lead Solutions">34</button></td></tr><tr><th scope="row">Education<small>134</small></th><td><button type="button" class="pf-cell is-lo" data-std="Education" data-fin="Development banks" style="--a:0.24" aria-label="15 Education Solutions, Development banks">15</button></td><td><button type="button" class="pf-cell is-lo" data-std="Education" data-fin="Private investors" style="--a:0.35" aria-label="25 Education Solutions, Private investors">25</button></td><td><button type="button" class="pf-cell is-lo" data-std="Education" data-fin="Corporate partners" style="--a:0.53" aria-label="42 Education Solutions, Corporate partners">42</button></td><td><button type="button" class="pf-cell" data-std="Education" data-fin="lead" style="--a:0.64" aria-label="52 Education Solutions, Lead Solutions">52</button></td></tr><tr><th scope="row">Health<small>137</small></th><td><button type="button" class="pf-cell" data-std="Health" data-fin="Development banks" style="--a:0.90" aria-label="76 Health Solutions, Development banks">76</button></td><td><button type="button" class="pf-cell is-lo" data-std="Health" data-fin="Private investors" style="--a:0.48" aria-label="37 Health Solutions, Private investors">37</button></td><td><button type="button" class="pf-cell is-lo" data-std="Health" data-fin="Corporate partners" style="--a:0.33" aria-label="23 Health Solutions, Corporate partners">23</button></td><td><button type="button" class="pf-cell is-lo" data-std="Health" data-fin="lead" style="--a:0.09" aria-label="1 Health Solutions, Lead Solutions">1</button></td></tr><tr><th scope="row">Livelihood<small>114</small></th><td><button type="button" class="pf-cell is-lo" data-std="Livelihood" data-fin="Development banks" style="--a:0.12" aria-label="4 Livelihood Solutions, Development banks">4</button></td><td><button type="button" class="pf-cell" data-std="Livelihood" data-fin="Private investors" style="--a:0.65" aria-label="53 Livelihood Solutions, Private investors">53</button></td><td><button type="button" class="pf-cell is-lo" data-std="Livelihood" data-fin="Corporate partners" style="--a:0.39" aria-label="29 Livelihood Solutions, Corporate partners">29</button></td><td><button type="button" class="pf-cell is-lo" data-std="Livelihood" data-fin="lead" style="--a:0.38" aria-label="28 Livelihood Solutions, Lead Solutions">28</button></td></tr></tbody><tfoot><tr><th scope="row">All<small>758</small></th><td><b>185</b></td><td><b>189</b></td><td><b>190</b></td><td><b>194</b></td></tr></tfoot></table></div><div class="pf-pipe__ls"><div class="pf-fs"><div class="pf-f" role="group" aria-label="Standard"><span>Standard</span><button type="button" class="pf-fc is-on" data-k="std" data-v="">All</button><button type="button" class="pf-fc" data-k="std" data-v="Food">Food</button><button type="button" class="pf-fc" data-k="std" data-v="Water">Water</button><button type="button" class="pf-fc" data-k="std" data-v="Shelter">Shelter</button><button type="button" class="pf-fc" data-k="std" data-v="Energy">Energy</button><button type="button" class="pf-fc" data-k="std" data-v="Education">Education</button><button type="button" class="pf-fc" data-k="std" data-v="Health">Health</button><button type="button" class="pf-fc" data-k="std" data-v="Livelihood">Livelihood</button></div><div class="pf-f" role="group" aria-label="Funder"><span>Funder</span><button type="button" class="pf-fc is-on" data-k="fin" data-v="">All</button><button type="button" class="pf-fc" data-k="fin" data-v="Development banks">Development banks</button><button type="button" class="pf-fc" data-k="fin" data-v="Private investors">Private investors</button><button type="button" class="pf-fc" data-k="fin" data-v="Corporate partners">Corporate partners</button><button type="button" class="pf-fc" data-k="fin" data-v="lead">Lead Solutions</button></div><div class="pf-f" role="group" aria-label="Region"><span>Region</span><button type="button" class="pf-fc is-on" data-k="reg" data-v="">All</button><button type="button" class="pf-fc" data-k="reg" data-v="Africa">Africa 217</button><button type="button" class="pf-fc" data-k="reg" data-v="Americas">Americas 137</button><button type="button" class="pf-fc" data-k="reg" data-v="Asia">Asia 125</button><button type="button" class="pf-fc" data-k="reg" data-v="Europe">Europe 169</button><button type="button" class="pf-fc" data-k="reg" data-v="Middle East">Middle East 54</button><button type="button" class="pf-fc" data-k="reg" data-v="Oceania">Oceania 56</button></div><label class="pf-q"><span>Nation</span><input type="search" placeholder="Search a nation" autocomplete="off"></label></div><p class="pf-count" aria-live="polite">The newest Solutions of State of Nations. Choose a filter to open all 758.</p><ul class="pf-lines"><li class="pf-line"><p class="pf-line__k"><b>Portugal</b><span>Livelihood</span><span>Solution No. 53</span></p><h3><a href="https://perfectnations.com/state-of-nations/#solution-53">The People&#8217;s Jobs Certificate</a></h3><p>16.4% of people in Portugal, about 1.8 million, live below the national poverty line: of the seven standards, livelihood is the furthest from reach.</p></li><li class="pf-line"><p class="pf-line__k"><b>United States</b><span>Food</span><span>Solution No. 51</span></p><h3><a href="https://perfectnations.com/state-of-nations/#solution-51">The American Table Fund</a></h3><p>The harvest is not the problem: 13.7% of American households went short of food at times in 2024 for lack of money or other resources. Since 1 October 2026 the states also carry 75% of the cost of running SNAP, the national food benefit.</p></li><li class="pf-line"><p class="pf-line__k"><b>Nigeria</b><span>Energy</span><span>Solution No. 50</span></p><h3><a href="https://perfectnations.com/state-of-nations/#solution-50">The Solar Market Bond</a></h3><p>Nigerians use about 165 kWh of electricity a person a year, against the Living Line of 1,000: 83.5% of the electricity a person needs is missing.</p></li><li class="pf-line"><p class="pf-line__k"><b>Palestine</b><span>Energy</span><span>Solution No. 49</span></p><h3><a href="https://perfectnations.com/state-of-nations/#solution-49">Sunlight for Gaza</a></h3><p>Of all Palestinians, 38.3% live in Gaza, where the electricity grid has been down since October 2023.</p></li><li class="pf-line"><p class="pf-line__k"><b>Iraq</b><span>Energy</span><span>Solution No. 48</span></p><h3><a href="https://perfectnations.com/state-of-nations/#solution-48">Flares to Power</a></h3><p>Iraq&#8217;s grid produced 24,600 MW in September 2026, against at least 55,000 MW needed for power around the clock: 55.3% of the electricity Iraq needs is not supplied.</p></li><li class="pf-line"><p class="pf-line__k"><b>Cuba</b><span>Health</span><span>Solution No. 47</span></p><h3><a href="https://perfectnations.com/state-of-nations/#solution-47">The Medicine Conversion</a></h3><p>Only 30% of the basic list of medicines is available to Cubans, the President of Cuba said in August 2026: 70% is not.</p></li></ul><div class="pf-btns"><button type="button" class="pf-btn pf-btn--line pf-moreb" hidden>Show more</button><a class="pf-btn" href="https://perfectnations.com/contact/?about=pipeline">Request the pipeline for your mandate</a></div></div></div></div></section>
-<section class="pf-band pf-how" aria-labelledby="pf-hh"><div class="pf-in"><div class="pf-head"><p class="pf-eb">How it works</p><h2 class="pf-h2" id="pf-hh">Three ways in, four checks behind every deal</h2></div><ul class="pf-cards"><li class="pf-card"><span class="pf-card__n">01</span><h3>The deal pipeline</h3><p>Every Solution names the nation, the gap it closes, the instrument and the kind of funder it fits, from the nation&#8217;s blueprint.</p></li><li class="pf-card"><span class="pf-card__n">02</span><h3>Match of the week</h3><p>Every week, one gap in one nation, paired with the instrument and the kind of funder that fit it.</p></li><li class="pf-card"><span class="pf-card__n">03</span><h3>Introductions</h3><p>When a nation and a funder fit, Perfect Nations makes the introduction, on terms agreed in writing before any name is shared.</p></li></ul><ol class="pf-steps"><li class="pf-step"><span class="pf-step__n">01</span><h3>The Ledger</h3><p>What the nation owns: land, water, coast, forest, energy, minerals, institutions and people.</p></li><li class="pf-step"><span class="pf-step__n">02</span><h3>The Living Line</h3><p>What each of the seven standards costs per citizen, and where the nation falls short.</p></li><li class="pf-step"><span class="pf-step__n">03</span><h3>The Design</h3><p>Which asset carries which standard, and in what order.</p></li><li class="pf-step"><span class="pf-step__n">04</span><h3>The Capital</h3><p>The instrument and the funder that close each gap, with a real deal as proof.</p></li></ol></div></section>
-<section class="pf-band pf-who" id="pf-who" aria-labelledby="pf-wh"><div class="pf-in"><div class="pf-head"><p class="pf-eb">Who it serves</p><h2 class="pf-h2" id="pf-wh">Built for every kind of capital</h2><p class="pf-lead">Fifteen sources of capital finance development. Each one can find its deals in the pipeline.</p></div><div class="pf-fams"><div class="pf-fam"><div class="pf-fam__h"><b>Public development capital</b><span>Banks, funds and agencies owned by governments</span></div><ul><li id="pf-who-mdb"><div><b>Multilateral development banks</b><span>Ten banks that report their climate finance together</span></div><small>AfDB &#183; ADB &#183; AIIB &#183; CEB &#183; EBRD &#183; EIB &#183; IDB Group &#183; IsDB &#183; NDB &#183; World Bank Group</small><p><em class="pf-gold">~$163 billion</em><span>in climate finance in 2025, almost $103 billion of it in low- and middle-income economies <a href="https://www.eib.org/en/publications/20260117-2025-joint-summary-report-on-mdbs-climate-finance" target="_blank" rel="noopener noreferrer">EIB, 2025 Joint Summary Report on MDBs&#8217; Climate Finance, July 2026</a></span></p></li><li id="pf-who-fic"><div><b>Public development banks</b><span>Finance in Common, the coalition of every public development bank</span></div><p><em class="pf-gold">~$23 trillion</em><span>in total assets, 544 public development banks, 2024 <a href="https://financeincommon.org/sites/default/files/2026-03/TWO%20PAGERS-%20Digital%20Version_2026.pdf" target="_blank" rel="noopener noreferrer">Finance in Common, Two Pagers 2026</a></span></p></li><li id="pf-who-idfc"><div><b>National and regional development banks</b><span>International Development Finance Club: 27 banks</span></div><p><em class="pf-gold">Over $4 trillion</em><span>in combined assets <a href="https://www.climatepolicyinitiative.org/wp-content/uploads/2026/10/IDFC-GFM-2026-Full-Report-1.pdf" target="_blank" rel="noopener noreferrer">IDFC Green Finance Mapping 2026, Climate Policy Initiative</a></span></p></li><li id="pf-who-edfi"><div><b>Development finance institutions</b><span>European Development Finance Institutions: 15 bilateral DFIs</span></div><p><em class="pf-gold">&#8364;59.9 billion</em><span>aggregate portfolio across 7,556 investments, 2024 <a href="https://edfi.eu/" target="_blank" rel="noopener noreferrer">EDFI</a></span></p></li><li id="pf-who-eca"><div><b>Export credit agencies and investment insurers</b><span>The Berne Union: official export credit agencies, multilateral insurers and private underwriters</span></div><p><em class="pf-gold">$231 billion</em><span>of new medium- and long-term cover in 2025, within $3.7 trillion of trade supported <a href="https://berneunion.org/Stub/Display/396" target="_blank" rel="noopener noreferrer">Berne Union, Industry trends 2025, June 2026</a></span></p></li><li id="pf-who-gcf"><div><b>Climate funds</b><span>Green Climate Fund, the world&#8217;s climate fund for developing countries</span></div><p><em class="pf-gold">$20.4 billion</em><span>committed to 359 projects in 135 countries <a href="https://www.greenclimate.fund/sites/default/files/documents/2026-10/9-status-gcf-resources-pipeline-and-portfolio-performance-gcf-b46-inf10.pdf" target="_blank" rel="noopener noreferrer">GCF, status of resources, 30 June 2026</a></span></p></li></ul></div><div class="pf-fam"><div class="pf-fam__h"><b>Private and institutional capital</b><span>Markets, investors and companies</span></div><ul><li id="pf-who-ib"><div><b>Investment banks and bond markets</b><span>The banks that arrange green, social and sustainability bonds, and the investors who buy them</span></div><p><em class="pf-gold">$6.8 trillion</em><span>of aligned green, social, sustainability and sustainability-linked debt issued to the end of 2025 <a href="https://www.climatebonds.net/news-events/press-room/press-releases/sustainable-debt-market-nears-usd7-trillion-aligned-issuance-demonstrating-strong-global-momentum" target="_blank" rel="noopener noreferrer">Climate Bonds Initiative, Global State of the Market 2025, March 2026</a></span></p></li><li id="pf-who-pe"><div><b>Private equity and private credit</b><span>Global Private Capital Association: over 300 firms managing more than $2 trillion</span></div><p><em class="pf-gold">$43.9 billion</em><span>a record, invested in infrastructure across Asia, Latin America, Africa, Central and Eastern Europe and the Middle East in 2025 <a href="https://www.globalprivatecapital.org/research/2026-industry-data-analysis/" target="_blank" rel="noopener noreferrer">GPCA, 2026 Industry Data and Analysis, February 2026</a></span></p></li><li id="pf-who-swf"><div><b>Sovereign wealth funds</b><span>109 sovereign wealth funds</span></div><p><em class="pf-gold">$15.1 trillion</em><span>in assets under management, 2026 <a href="https://www.ie.edu/university/news-events/news/sovereign-wealth-funds-surpass-15-trillion-assets-according-new-report-ie-university-icex-invest-spain/" target="_blank" rel="noopener noreferrer">IE University and ICEX-Invest in Spain, Sovereign Wealth Funds Report 2026</a></span></p></li><li id="pf-who-pension"><div><b>Pension funds</b><span>The 22 largest pension markets</span></div><p><em class="pf-gold">$68.3 trillion</em><span>in pension assets at the end of 2025 <a href="https://www.thinkingaheadinstitute.org/research-papers/global-pension-assets-study-2026/" target="_blank" rel="noopener noreferrer">Thinking Ahead Institute, Global Pension Assets Study 2026</a></span></p></li><li id="pf-who-corp"><div><b>Corporate partners</b><span>Companies that invest across borders</span></div><p><em class="pf-gold">$901 billion</em><span>of foreign direct investment into developing economies in 2025 <a href="https://unctad.org/news/global-investment-rises-6-16-trillion-development-gains-remain-uneven" target="_blank" rel="noopener noreferrer">UNCTAD, World Investment Report 2026, July 2026</a></span></p></li></ul></div><div class="pf-fam"><div class="pf-fam__h"><b>Catalytic and community capital</b><span>Capital that takes the first risk or comes from home</span></div><ul><li id="pf-who-giin"><div><b>Impact investors</b><span>Global Impact Investing Network: 3,907 impact investors</span></div><p><em class="pf-gold">$1.571 trillion</em><span>in impact assets under management, 2024 <a href="https://s3.amazonaws.com/giin-web-assets/giin/assets/publication/climateworks.pdf" target="_blank" rel="noopener noreferrer">GIIN, Sizing the Impact Investing Market 2024</a></span></p></li><li id="pf-who-conv"><div><b>Blended finance</b><span>Convergence, the global network for blended finance</span></div><p><em class="pf-gold">$249 billion</em><span>across 1,350 blended finance deals on its database <a href="https://www.convergence.finance/news/urVUbSe6NepM9Gzo9KDdt/view" target="_blank" rel="noopener noreferrer">Convergence, State of Blended Finance 2025, May 2025</a></span></p></li><li id="pf-who-phil"><div><b>Philanthropic foundations</b><span>Private foundations giving for development</span></div><p><em class="pf-gold">$68.2 billion</em><span>for development across 2020 to 2023 <a href="https://www.oecd.org/en/publications/private-philanthropy-for-development-third-edition_98e676c0-en/full-report/conclusions-and-way-forward_1742abe9.html" target="_blank" rel="noopener noreferrer">OECD, Private Philanthropy for Development, Third Edition, March 2026</a></span></p></li><li id="pf-who-diaspora"><div><b>The diaspora</b><span>Migrants who send money home, and can invest at home through diaspora bonds</span></div><p><em class="pf-gold">$728.6 billion</em><span>sent home to low- and middle-income countries in 2025 <a href="https://www.ifad.org/en/w/news/remittances-nearly-doubled-in-a-decade-to-reach-us-729-billion-in-2025-new-ifad-report-finds" target="_blank" rel="noopener noreferrer">IFAD, September 2026</a></span></p></li></ul></div></div><p class="pf-note">Named for reference only. No institution or network listed here is a partner of Perfect Nations or has endorsed its work. Figures measure different things (assets, portfolios, yearly flows) and are never added together. <a href="https://perfectnations.com/capital-architecture/#pca-funders">See them on Capital Architecture</a></p></div></section>
+<section class="pf-hero" aria-labelledby="pf-h1"><canvas class="pf-flow" aria-hidden="true"></canvas><p class="pf-ghost" aria-hidden="true"><span>CAPITAL</span><span>CAPITAL</span></p><div class="pf-in pf-hero__g"><div class="pf-hero__t"><p class="pf-eb">For funders</p><h1 class="pf-h1 pf-rv" id="pf-h1"><span class="pf-w"><span style="--i:0">Finance</span></span> <span class="pf-w"><span style="--i:1">the</span></span> <span class="pf-w"><span style="--i:2" class="pf-money">$4 trillion</span></span> <span class="pf-w"><span style="--i:3">gap.</span></span></h1><p class="pf-lead pf-up">Every gap, in every nation, designed into a deal.</p><div class="pf-btns pf-up"><a class="pf-btn pf-mag" href="https://perfectnations.com/contact/?about=funders"><span>Request the pipeline</span></a><a class="pf-btn pf-mag pf-btn--line" href="#pf-match"><span>This week&#8217;s Match</span></a></div><p class="pf-src pf-up"><a href="https://digitallibrary.un.org/record/4087700/files/A_RES_79_323-EN.pdf" target="_blank" rel="noopener noreferrer">$4 trillion a year: the development financing gap, United Nations, 2025</a></p></div><ul class="pf-figs pf-up" aria-label="Perfect Nations in figures"><li><a href="https://perfectnations.com/blueprints/"><b data-n="195">195</b><span>blueprints</span></a></li><li><a href="#pf-pipe"><b data-n="758">758</b><span>Solutions</span></a></li><li><a href="https://perfectnations.com/capital-architecture/#pca-record"><b data-n="2696">2,696</b><span>deals on record</span></a></li><li><a href="https://perfectnations.com/capital-architecture/#pca-index"><b data-n="81">81</b><span>instruments</span></a></li></ul></div></section>
+<section class="pf-tape" aria-label="Live deals" data-src="https://raw.githubusercontent.com/preetisinha70-PN/perfect-nations/main/data/ticker.json" data-mirror="https://cdn.jsdelivr.net/gh/preetisinha70-PN/perfect-nations@main/data/ticker.json"><div class="pf-tape__k"><b><span class="pf-pulse" aria-hidden="true"></span>Live deals</b></div><div class="pf-tape__v"><ul class="pf-tape__l"><li><a href="https://www.thailand-business-news.com/china/341596-chinas-us2-billion-bond-was-36-times-oversubscribed-with-yields-matching-us-treasuries" target="_blank" rel="noopener noreferrer"><b>China</b><em>US$2bn</em><span>Dollar bond priced level with Treasuries</span><i>Oversubscribed</i></a></li><li><a href="https://www.proparco.fr/en/news/colombia-faces-unprecedented-el-nino-episode-davivienda-and-proparco-mobilise-us125-million" target="_blank" rel="noopener noreferrer"><b>Colombia</b><em>US$125m</em><span>Green loan for buildings and power</span></a></li><li><a href="https://www.hurriyetdailynews.com/treasury-raises-1-25-billion-euros-through-green-bond-issuance-229600" target="_blank" rel="noopener noreferrer"><b>T&#252;rkiye</b><em>EUR 1.25bn</em><span>Eight-year euro green bond</span><i>Oversubscribed</i></a></li><li><a href="https://technode.global/2026/11/19/adb-blackrock-asia-infrastructure-credit-fund/" target="_blank" rel="noopener noreferrer"><b>Asia and the Pacific</b><em>US$57.5m</em><span>ADB stake in Asia infrastructure fund</span></a></li><li><a href="https://english.ahram.org.eg/News/582912.aspx" target="_blank" rel="noopener noreferrer"><b>Nigeria</b><em>US$30m</em><span>Afreximbank SME facility through NEXIM</span></a></li><li><a href="https://www.fmo.nl/news-detail/5ef74f96-7f4e-4b48-8fde-0dc38e3dee6f/fmo-backs-seed-co-to-strengthen-climate-adaptation-and-food-security-in-africa" target="_blank" rel="noopener noreferrer"><b>Africa</b><em>US$25m</em><span>FMO loan for climate-adapted seed</span></a></li><li><a href="https://www.ebrd.com/home/news-and-events/news/2026/ebrd-and-eu-promote-renewable-energy-solutions-for-tunisian-msme.html" target="_blank" rel="noopener noreferrer"><b>Tunisia</b><em>EUR 10m</em><span>EBRD green loan for small firms</span></a></li><li><a href="https://www.fixedincomenews.com.au/aofm-raises-6bn-with-new-2057-bond-as-long-end-demand-holds-up/" target="_blank" rel="noopener noreferrer"><b>Australia</b><em>A$6bn</em><span>New 31-year Treasury bond</span><i>Oversubscribed</i></a></li><li><a href="https://www.centralbank.go.ke//uploads/historical_treasury_bond_results/897831540_RESULTS%20FXD1-2019-015%20AND%20SDB1-2011-030%20DATED%2023-11-2026.pdf" target="_blank" rel="noopener noreferrer"><b>Kenya</b><em>KSh 52.19bn</em><span>Reopened 15- and 30-year bonds</span><i>Oversubscribed</i></a></li><li><a href="https://www.trend.az/casia/uzbekistan/4248046.html" target="_blank" rel="noopener noreferrer"><b>Uzbekistan</b><em>US$300m</em><span>NDB loan for low-carbon energy</span></a></li><li><a href="https://www.ebrd.com/home/news-and-events/news/2026/ebrd-invests-up-to-us--31-million-in-egypt-s-desalination-infras.html" target="_blank" rel="noopener noreferrer"><b>Egypt</b><em>US$31m</em><span>EBRD stake in desalination platform</span></a></li><li><a href="https://thecondia.com/first-circle-capital-closes-26m-africa-fund-i/" target="_blank" rel="noopener noreferrer"><b>Africa</b><em>US$26m</em><span>Fintech fund reaches final close</span></a></li></ul></div><a class="pf-tape__a" href="https://perfectnations.com/state-of-nations/" aria-label="Every deal on State of Nations"><span>Every deal on State of Nations</span></a></section>
+<section class="pf-band pf-match" id="pf-match" aria-labelledby="pf-mh"><div class="pf-in"><div class="pf-head"><p class="pf-eb"><span class="pf-num">01</span>Match of the week</p><h2 class="pf-h2 pf-rv" id="pf-mh"><span class="pf-w"><span style="--i:0">One</span></span> <span class="pf-w"><span style="--i:1">gap.</span></span> <span class="pf-w"><span style="--i:2">One</span></span> <span class="pf-w"><span style="--i:3">funder.</span></span></h2></div><div class="pf-m__slot pf-up"><article class="pf-m" data-no="1"><span class="pf-m__sheen" aria-hidden="true"></span><div class="pf-m__l"><p class="pf-m__k"><b>No. 1</b><span>Week of 23 November 2026</span></p><h3 class="pf-m__n">Tanzania</h3><p class="pf-m__s">Energy</p><p class="pf-m__f">~63m</p><p class="pf-m__c">Tanzanians who cook without clean fuel. <a href="https://data.worldbank.org/indicator/EG.CFT.ACCS.ZS?locations=TZ" target="_blank" rel="noopener noreferrer">World Bank, 2024</a></p></div><div class="pf-m__r"><p class="pf-m__lab">The Solution</p><p class="pf-m__t">Nyerere Power, Every Kitchen</p><p class="pf-m__lab">The funder that fits</p><p class="pf-m__fu">Banks, behind a development bank guarantee</p><p class="pf-m__why">A guaranteed facility brought nine banks to Tanzania&#8217;s railway. The same structure can finance last-mile power and electric cookers, recovered through electricity bills.</p><p class="pf-chips"><a class="pf-chip" href="#pf-who-mdb">Multilateral development banks</a><a class="pf-chip" href="#pf-who-ib">Investment banks and bond markets</a></p><a class="pf-m__p" href="https://www.afdb.org/en/news-and-events/press-releases/tanzania-african-development-bank-tanzania-close-98246" target="_blank" rel="noopener noreferrer"><span>Proof</span><b>Partial Credit Guarantee</b> Tanzania 2026<em class="pf-gold">Up to $800M</em></a><div class="pf-btns"><a class="pf-btn pf-mag" href="https://perfectnations.com/contact/?about=match"><span>Answer this Match</span></a><a class="pf-btn pf-btn--line pf-mag" href="https://perfectnations.com/state-of-nations/#solution-33"><span>Read the Solution</span></a></div></div></article></div><div class="pf-m__more" hidden><p>Every Match</p><ul class="pf-m__rail"></ul></div><p class="pf-note">Designed by Perfect Nations from public data. A mandate only when the nation asks.</p></div><script type="application/json" class="pf-matches">[{"no":4,"week":"2026-12-14","weekText":"Week of 14 December 2026","nation":"Nigeria","standard":"Food","figure":"~182m","caption":"Nigerians who cannot always count on enough good food","source":"FAO, 2024","sourceUrl":"https://data.worldbank.org/indicator/SN.ITK.MSFI.ZS?locations=NG","title":"The Diaspora Harvest Bond","proof":{"name":"Diaspora Bond","where":"Nigeria","year":"2017","figure":"$300M","source":"Debt Management Office, Nigeria","url":"https://dmo.gov.ng/news-and-events/circulars-releases/2456-nigeria-shines-at-the-emea-awards-wins-3-awards/file"},"solutionUrl":"https://perfectnations.com/state-of-nations/#solution-24","funder":"Nigerians abroad, through a diaspora bond","why":"Nigeria sold its first diaspora bond in 2017. A second can finance storage, irrigation and warehouse receipts, so farmers stop selling at harvest-time prices.","networks":[{"id":"diaspora","name":"The diaspora"},{"id":"ib","name":"Investment banks and bond markets"}]},{"no":3,"week":"2026-12-07","weekText":"Week of 7 December 2026","nation":"Mexico","standard":"Water","figure":"~75m","caption":"Mexicans without safely managed drinking water at home","source":"WHO/UNICEF, 2024","sourceUrl":"https://data.worldbank.org/indicator/SH.H2O.SMDW.ZS?locations=MX","title":"The Water Guarantee","proof":{"name":"Infrastructure Guarantee","where":"Mexico","year":"2025","figure":"$500M","source":"World Bank, December 2025","url":"https://www.worldbank.org/en/news/press-release/2025/12/18/banco-mundial-aprueba-garantia-por-us-500-millones-para-impulsar-infraestructura-y-atraer-inversion-privada-en-m-xico"},"solutionUrl":"https://perfectnations.com/state-of-nations/#solution-20","funder":"Pension funds, behind a World Bank guarantee","why":"Mexico already has a World Bank credit enhancement drawing private capital into its infrastructure. Pointed at municipal water utilities, it lets domestic pension savings buy guaranteed water bonds.","networks":[{"id":"pension","name":"Pension funds"},{"id":"mdb","name":"Multilateral development banks"}]},{"no":2,"week":"2026-11-30","weekText":"Week of 30 November 2026","nation":"Barbados","standard":"Food","figure":"~88,000","caption":"Barbadians moderately or severely food insecure","source":"FAO, 2022","sourceUrl":"https://data.worldbank.org/indicator/SN.ITK.MSFI.ZS?locations=BB","title":"The Blue Food Swap","proof":{"name":"Debt-for-Nature Swap","where":"Barbados","year":"2022","figure":"$150M","source":"The Nature Conservancy, September 2022","url":"https://www.nature.org/en-us/newsroom/tnc-announces-barbados-blue-bonds-debt-conversion/"},"solutionUrl":"https://perfectnations.com/state-of-nations/#solution-44","funder":"The guarantors of debt conversions, and the investors in guaranteed debt","why":"Barbados has completed two debt conversions. The guarantors who priced them can price a third, with the savings bound to local farms, fisheries and sea farming.","networks":[{"id":"mdb","name":"Multilateral development banks"},{"id":"ib","name":"Investment banks and bond markets"}]},{"no":1,"week":"2026-11-23","weekText":"Week of 23 November 2026","nation":"Tanzania","standard":"Energy","figure":"~63m","caption":"Tanzanians who cook without clean fuel","source":"World Bank, 2024","sourceUrl":"https://data.worldbank.org/indicator/EG.CFT.ACCS.ZS?locations=TZ","title":"Nyerere Power, Every Kitchen","proof":{"name":"Partial Credit Guarantee","where":"Tanzania","year":"2026","figure":"Up to $800M","source":"African Development Bank, November 2026","url":"https://www.afdb.org/en/news-and-events/press-releases/tanzania-african-development-bank-tanzania-close-98246"},"solutionUrl":"https://perfectnations.com/state-of-nations/#solution-33","funder":"Banks, behind a development bank guarantee","why":"A guaranteed facility brought nine banks to Tanzania\u2019s railway. The same structure can finance last-mile power and electric cookers, recovered through electricity bills.","networks":[{"id":"mdb","name":"Multilateral development banks"},{"id":"ib","name":"Investment banks and bond markets"}]}]</script><script type="application/json" class="pf-answer">{"label":"Answer this Match","url":"https://perfectnations.com/contact/?about=match"}</script></section>
+<section class="pf-band pf-pipe" id="pf-pipe" aria-labelledby="pf-ph" data-src="https://raw.githubusercontent.com/preetisinha70-PN/perfect-nations/main/data/deal-pipeline.json" data-mirror="https://cdn.jsdelivr.net/gh/preetisinha70-PN/perfect-nations@main/data/deal-pipeline.json"><div class="pf-in"><div class="pf-head"><p class="pf-eb"><span class="pf-num">02</span>The deal pipeline</p><h2 class="pf-h2 pf-rv" id="pf-ph"><span class="pf-w"><span style="--i:0"><b class="pf-cnt" data-n="758">758</b></span></span> <span class="pf-w"><span style="--i:1">Solutions.</span></span> <span class="pf-w"><span style="--i:2"><b class="pf-cnt" data-n="194">194</b></span></span> <span class="pf-w"><span style="--i:3">nations.</span></span></h2></div><p class="pf-stage pf-up">Designed from public data &#183; a mandate only when the nation asks</p><div class="pf-pipe__g"><div class="pf-pipe__mx pf-up"><p class="pf-mx__t">Standard &#215; funder</p><table class="pf-mx"><colgroup><col class="pf-mx__c0"><col><col><col><col></colgroup><thead><tr><td></td><th scope="col"><span class="pf-l">Development banks</span><span class="pf-s">Banks</span></th><th scope="col"><span class="pf-l">Private investors</span><span class="pf-s">Private</span></th><th scope="col"><span class="pf-l">Corporate partners</span><span class="pf-s">Corporate</span></th><th scope="col"><span class="pf-l">Lead</span><span class="pf-s">Lead</span></th></tr></thead><tbody><tr><th scope="row"><b>Food</b><small>91</small></th><td><button type="button" class="pf-cell is-lo" data-std="Food" data-fin="Development banks" style="--a:0.14;--k:0" aria-label="4 Food Solutions, Development banks">4</button></td><td><button type="button" class="pf-cell is-lo" data-std="Food" data-fin="Private investors" style="--a:0.23;--k:1" aria-label="12 Food Solutions, Private investors">12</button></td><td><button type="button" class="pf-cell" data-std="Food" data-fin="Corporate partners" style="--a:0.72;--k:2" aria-label="55 Food Solutions, Corporate partners">55</button></td><td><button type="button" class="pf-cell is-lo" data-std="Food" data-fin="lead" style="--a:0.32;--k:3" aria-label="20 Food Solutions, Lead">20</button></td></tr><tr><th scope="row"><b>Water</b><small>83</small></th><td><button type="button" class="pf-cell is-lo" data-std="Water" data-fin="Development banks" style="--a:0.40;--k:4" aria-label="27 Water Solutions, Development banks">27</button></td><td><button type="button" class="pf-cell is-lo" data-std="Water" data-fin="Private investors" style="--a:0.42;--k:5" aria-label="29 Water Solutions, Private investors">29</button></td><td><button type="button" class="pf-cell is-lo" data-std="Water" data-fin="Corporate partners" style="--a:0.23;--k:6" aria-label="12 Water Solutions, Corporate partners">12</button></td><td><button type="button" class="pf-cell is-lo" data-std="Water" data-fin="lead" style="--a:0.27;--k:7" aria-label="15 Water Solutions, Lead">15</button></td></tr><tr><th scope="row"><b>Shelter</b><small>123</small></th><td><button type="button" class="pf-cell" data-std="Shelter" data-fin="Development banks" style="--a:0.58;--k:8" aria-label="43 Shelter Solutions, Development banks">43</button></td><td><button type="button" class="pf-cell is-lo" data-std="Shelter" data-fin="Private investors" style="--a:0.33;--k:9" aria-label="21 Shelter Solutions, Private investors">21</button></td><td><button type="button" class="pf-cell is-lo" data-std="Shelter" data-fin="Corporate partners" style="--a:0.27;--k:10" aria-label="15 Shelter Solutions, Corporate partners">15</button></td><td><button type="button" class="pf-cell" data-std="Shelter" data-fin="lead" style="--a:0.59;--k:11" aria-label="44 Shelter Solutions, Lead">44</button></td></tr><tr><th scope="row"><b>Energy</b><small>76</small></th><td><button type="button" class="pf-cell is-lo" data-std="Energy" data-fin="Development banks" style="--a:0.28;--k:12" aria-label="16 Energy Solutions, Development banks">16</button></td><td><button type="button" class="pf-cell is-lo" data-std="Energy" data-fin="Private investors" style="--a:0.23;--k:13" aria-label="12 Energy Solutions, Private investors">12</button></td><td><button type="button" class="pf-cell is-lo" data-std="Energy" data-fin="Corporate partners" style="--a:0.26;--k:14" aria-label="14 Energy Solutions, Corporate partners">14</button></td><td><button type="button" class="pf-cell is-lo" data-std="Energy" data-fin="lead" style="--a:0.48;--k:15" aria-label="34 Energy Solutions, Lead">34</button></td></tr><tr><th scope="row"><b>Education</b><small>134</small></th><td><button type="button" class="pf-cell is-lo" data-std="Education" data-fin="Development banks" style="--a:0.27;--k:16" aria-label="15 Education Solutions, Development banks">15</button></td><td><button type="button" class="pf-cell is-lo" data-std="Education" data-fin="Private investors" style="--a:0.38;--k:17" aria-label="25 Education Solutions, Private investors">25</button></td><td><button type="button" class="pf-cell" data-std="Education" data-fin="Corporate partners" style="--a:0.57;--k:18" aria-label="42 Education Solutions, Corporate partners">42</button></td><td><button type="button" class="pf-cell" data-std="Education" data-fin="lead" style="--a:0.68;--k:19" aria-label="52 Education Solutions, Lead">52</button></td></tr><tr><th scope="row"><b>Health</b><small>137</small></th><td><button type="button" class="pf-cell" data-std="Health" data-fin="Development banks" style="--a:0.95;--k:20" aria-label="76 Health Solutions, Development banks">76</button></td><td><button type="button" class="pf-cell" data-std="Health" data-fin="Private investors" style="--a:0.51;--k:21" aria-label="37 Health Solutions, Private investors">37</button></td><td><button type="button" class="pf-cell is-lo" data-std="Health" data-fin="Corporate partners" style="--a:0.36;--k:22" aria-label="23 Health Solutions, Corporate partners">23</button></td><td><button type="button" class="pf-cell is-lo" data-std="Health" data-fin="lead" style="--a:0.11;--k:23" aria-label="1 Health Solutions, Lead">1</button></td></tr><tr><th scope="row"><b>Livelihood</b><small>114</small></th><td><button type="button" class="pf-cell is-lo" data-std="Livelihood" data-fin="Development banks" style="--a:0.14;--k:24" aria-label="4 Livelihood Solutions, Development banks">4</button></td><td><button type="button" class="pf-cell" data-std="Livelihood" data-fin="Private investors" style="--a:0.69;--k:25" aria-label="53 Livelihood Solutions, Private investors">53</button></td><td><button type="button" class="pf-cell is-lo" data-std="Livelihood" data-fin="Corporate partners" style="--a:0.42;--k:26" aria-label="29 Livelihood Solutions, Corporate partners">29</button></td><td><button type="button" class="pf-cell is-lo" data-std="Livelihood" data-fin="lead" style="--a:0.41;--k:27" aria-label="28 Livelihood Solutions, Lead">28</button></td></tr></tbody><tfoot><tr><th scope="row"><b>All</b><small>758</small></th><td>185</td><td>189</td><td>190</td><td>194</td></tr></tfoot></table></div><div class="pf-pipe__ls pf-up"><div class="pf-fs"><div class="pf-f" role="group" aria-label="Standard"><span class="pf-f__l">Standard</span><div class="pf-f__r"><button type="button" class="pf-fc is-on" data-k="std" data-v="">All</button><button type="button" class="pf-fc" data-k="std" data-v="Food">Food</button><button type="button" class="pf-fc" data-k="std" data-v="Water">Water</button><button type="button" class="pf-fc" data-k="std" data-v="Shelter">Shelter</button><button type="button" class="pf-fc" data-k="std" data-v="Energy">Energy</button><button type="button" class="pf-fc" data-k="std" data-v="Education">Education</button><button type="button" class="pf-fc" data-k="std" data-v="Health">Health</button><button type="button" class="pf-fc" data-k="std" data-v="Livelihood">Livelihood</button></div></div><div class="pf-f" role="group" aria-label="Funder"><span class="pf-f__l">Funder</span><div class="pf-f__r"><button type="button" class="pf-fc is-on" data-k="fin" data-v="">All</button><button type="button" class="pf-fc" data-k="fin" data-v="Development banks">Development banks</button><button type="button" class="pf-fc" data-k="fin" data-v="Private investors">Private investors</button><button type="button" class="pf-fc" data-k="fin" data-v="Corporate partners">Corporate partners</button><button type="button" class="pf-fc" data-k="fin" data-v="lead">Lead Solutions</button></div></div><div class="pf-f" role="group" aria-label="Region"><span class="pf-f__l">Region</span><div class="pf-f__r"><button type="button" class="pf-fc is-on" data-k="reg" data-v="">All</button><button type="button" class="pf-fc" data-k="reg" data-v="Africa">Africa</button><button type="button" class="pf-fc" data-k="reg" data-v="Americas">Americas</button><button type="button" class="pf-fc" data-k="reg" data-v="Asia">Asia</button><button type="button" class="pf-fc" data-k="reg" data-v="Europe">Europe</button><button type="button" class="pf-fc" data-k="reg" data-v="Middle East">Middle East</button><button type="button" class="pf-fc" data-k="reg" data-v="Oceania">Oceania</button></div></div><label class="pf-q"><span class="pf-f__l">Nation</span><input type="search" placeholder="Search" autocomplete="off" aria-label="Search a nation"></label></div><p class="pf-count" aria-live="polite">Newest Solutions. Tap the grid or a filter for all 758.</p><ul class="pf-lines"><li class="pf-line"><a href="https://perfectnations.com/state-of-nations/#solution-53"><span class="pf-line__k"><b>Portugal</b><i>Livelihood</i><i>Solution No. 53</i></span><span class="pf-line__t">The People&#8217;s Jobs Certificate</span></a></li><li class="pf-line"><a href="https://perfectnations.com/state-of-nations/#solution-51"><span class="pf-line__k"><b>United States</b><i>Food</i><i>Solution No. 51</i></span><span class="pf-line__t">The American Table Fund</span></a></li><li class="pf-line"><a href="https://perfectnations.com/state-of-nations/#solution-50"><span class="pf-line__k"><b>Nigeria</b><i>Energy</i><i>Solution No. 50</i></span><span class="pf-line__t">The Solar Market Bond</span></a></li><li class="pf-line"><a href="https://perfectnations.com/state-of-nations/#solution-49"><span class="pf-line__k"><b>Palestine</b><i>Energy</i><i>Solution No. 49</i></span><span class="pf-line__t">Sunlight for Gaza</span></a></li><li class="pf-line"><a href="https://perfectnations.com/state-of-nations/#solution-48"><span class="pf-line__k"><b>Iraq</b><i>Energy</i><i>Solution No. 48</i></span><span class="pf-line__t">Flares to Power</span></a></li><li class="pf-line"><a href="https://perfectnations.com/state-of-nations/#solution-47"><span class="pf-line__k"><b>Cuba</b><i>Health</i><i>Solution No. 47</i></span><span class="pf-line__t">The Medicine Conversion</span></a></li></ul><div class="pf-btns"><button type="button" class="pf-btn pf-btn--line pf-moreb" hidden><span>Show more</span></button><a class="pf-btn pf-mag" href="https://perfectnations.com/contact/?about=pipeline"><span>Request the pipeline</span></a></div></div></div></div></section>
+<section class="pf-band pf-how" aria-labelledby="pf-hh"><div class="pf-in"><div class="pf-head"><p class="pf-eb"><span class="pf-num">03</span>How it works</p><h2 class="pf-h2 pf-rv" id="pf-hh"><span class="pf-w"><span style="--i:0">Three</span></span> <span class="pf-w"><span style="--i:1">steps</span></span> <span class="pf-w"><span style="--i:2">to</span></span> <span class="pf-w"><span style="--i:3">a</span></span> <span class="pf-w"><span style="--i:4">deal</span></span></h2></div><ol class="pf-steps"><li class="pf-step pf-up" style="--d:1"><span class="pf-step__n" aria-hidden="true">01</span><h3>Request the pipeline</h3><p>Tell us what you finance.</p></li><li class="pf-step pf-up" style="--d:2"><span class="pf-step__n" aria-hidden="true">02</span><h3>Answer a Match</h3><p>One gap, every week.</p></li><li class="pf-step pf-up" style="--d:3"><span class="pf-step__n" aria-hidden="true">03</span><h3>Meet the nation</h3><p>Introductions, on terms agreed in writing.</p></li></ol><p class="pf-checks pf-up"><span>Every Solution checked</span><b>Ledger</b><i aria-hidden="true">&#8594;</i><b>Gaps</b><i aria-hidden="true">&#8594;</i><b>Design</b><i aria-hidden="true">&#8594;</i><b>Capital</b></p></div></section>
+<section class="pf-band pf-who" id="pf-who" aria-labelledby="pf-wh"><div class="pf-in"><div class="pf-head"><p class="pf-eb"><span class="pf-num">04</span>Who it serves</p><h2 class="pf-h2 pf-rv" id="pf-wh"><span class="pf-w"><span style="--i:0">Built</span></span> <span class="pf-w"><span style="--i:1">for</span></span> <span class="pf-w"><span style="--i:2">every</span></span> <span class="pf-w"><span style="--i:3">kind</span></span> <span class="pf-w"><span style="--i:4">of</span></span> <span class="pf-w"><span style="--i:5">capital</span></span></h2></div></div><div class="pf-mqs pf-up"><div class="pf-mq"><ul class="pf-mq__l"><li id="pf-who-mdb"><a href="https://www.eib.org/en/publications/20260117-2025-joint-summary-report-on-mdbs-climate-finance" target="_blank" rel="noopener noreferrer" title="~$163 billion in climate finance in 2025, almost $103 billion of it in low- and middle-income economies. EIB, 2025 Joint Summary Report on MDBs&#8217; Climate Finance, July 2026"><b>Multilateral development banks</b><em>~$163 billion</em><span>climate finance, 2025</span></a></li><li id="pf-who-fic"><a href="https://financeincommon.org/sites/default/files/2026-03/TWO%20PAGERS-%20Digital%20Version_2026.pdf" target="_blank" rel="noopener noreferrer" title="~$23 trillion in total assets, 544 public development banks, 2024. Finance in Common, Two Pagers 2026"><b>Public development banks</b><em>~$23 trillion</em><span>public development bank assets</span></a></li><li id="pf-who-idfc"><a href="https://www.climatepolicyinitiative.org/wp-content/uploads/2026/10/IDFC-GFM-2026-Full-Report-1.pdf" target="_blank" rel="noopener noreferrer" title="Over $4 trillion in combined assets. IDFC Green Finance Mapping 2026, Climate Policy Initiative"><b>National and regional development banks</b><em>Over $4 trillion</em><span>combined assets</span></a></li><li id="pf-who-edfi"><a href="https://edfi.eu/" target="_blank" rel="noopener noreferrer" title="&#8364;59.9 billion aggregate portfolio across 7,556 investments, 2024. EDFI"><b>Development finance institutions</b><em>&#8364;59.9 billion</em><span>portfolio, 2024</span></a></li><li id="pf-who-eca"><a href="https://berneunion.org/Stub/Display/396" target="_blank" rel="noopener noreferrer" title="$231 billion of new medium- and long-term cover in 2025, within $3.7 trillion of trade supported. Berne Union, Industry trends 2025, June 2026"><b>Export credit agencies and investment insurers</b><em>$231 billion</em><span>medium- and long-term cover, 2025</span></a></li><li id="pf-who-gcf"><a href="https://www.greenclimate.fund/sites/default/files/documents/2026-10/9-status-gcf-resources-pipeline-and-portfolio-performance-gcf-b46-inf10.pdf" target="_blank" rel="noopener noreferrer" title="$20.4 billion committed to 359 projects in 135 countries. GCF, status of resources, 30 June 2026"><b>Climate funds</b><em>$20.4 billion</em><span>committed to 359 projects</span></a></li><li id="pf-who-ib"><a href="https://www.climatebonds.net/news-events/press-room/press-releases/sustainable-debt-market-nears-usd7-trillion-aligned-issuance-demonstrating-strong-global-momentum" target="_blank" rel="noopener noreferrer" title="$6.8 trillion of aligned green, social, sustainability and sustainability-linked debt issued to the end of 2025. Climate Bonds Initiative, Global State of the Market 2025, March 2026"><b>Investment banks and bond markets</b><em>$6.8 trillion</em><span>GSS+ debt issued to end-2025</span></a></li><li id="pf-who-pe"><a href="https://www.globalprivatecapital.org/research/2026-industry-data-analysis/" target="_blank" rel="noopener noreferrer" title="$43.9 billion a record, invested in infrastructure across Asia, Latin America, Africa, Central and Eastern Europe and the Middle East in 2025. GPCA, 2026 Industry Data and Analysis, February 2026"><b>Private equity and private credit</b><em>$43.9 billion</em><span>into infrastructure, 2025</span></a></li></ul></div><div class="pf-mq pf-mq--rev"><ul class="pf-mq__l"><li id="pf-who-swf"><a href="https://www.ie.edu/university/news-events/news/sovereign-wealth-funds-surpass-15-trillion-assets-according-new-report-ie-university-icex-invest-spain/" target="_blank" rel="noopener noreferrer" title="$15.1 trillion in assets under management, 2026. IE University and ICEX-Invest in Spain, Sovereign Wealth Funds Report 2026"><b>Sovereign wealth funds</b><em>$15.1 trillion</em><span>under management</span></a></li><li id="pf-who-pension"><a href="https://www.thinkingaheadinstitute.org/research-papers/global-pension-assets-study-2026/" target="_blank" rel="noopener noreferrer" title="$68.3 trillion in pension assets at the end of 2025. Thinking Ahead Institute, Global Pension Assets Study 2026"><b>Pension funds</b><em>$68.3 trillion</em><span>pension assets, 2025</span></a></li><li id="pf-who-corp"><a href="https://unctad.org/news/global-investment-rises-6-16-trillion-development-gains-remain-uneven" target="_blank" rel="noopener noreferrer" title="$901 billion of foreign direct investment into developing economies in 2025. UNCTAD, World Investment Report 2026, July 2026"><b>Corporate partners</b><em>$901 billion</em><span>FDI into developing economies, 2025</span></a></li><li id="pf-who-giin"><a href="https://s3.amazonaws.com/giin-web-assets/giin/assets/publication/climateworks.pdf" target="_blank" rel="noopener noreferrer" title="$1.571 trillion in impact assets under management, 2024. GIIN, Sizing the Impact Investing Market 2024"><b>Impact investors</b><em>$1.571 trillion</em><span>impact assets</span></a></li><li id="pf-who-conv"><a href="https://www.convergence.finance/news/urVUbSe6NepM9Gzo9KDdt/view" target="_blank" rel="noopener noreferrer" title="$249 billion across 1,350 blended finance deals on its database. Convergence, State of Blended Finance 2025, May 2025"><b>Blended finance</b><em>$249 billion</em><span>across 1,350 deals</span></a></li><li id="pf-who-phil"><a href="https://www.oecd.org/en/publications/private-philanthropy-for-development-third-edition_98e676c0-en/full-report/conclusions-and-way-forward_1742abe9.html" target="_blank" rel="noopener noreferrer" title="$68.2 billion for development across 2020 to 2023. OECD, Private Philanthropy for Development, Third Edition, March 2026"><b>Philanthropic foundations</b><em>$68.2 billion</em><span>for development, 2020 to 2023</span></a></li><li id="pf-who-diaspora"><a href="https://www.ifad.org/en/w/news/remittances-nearly-doubled-in-a-decade-to-reach-us-729-billion-in-2025-new-ifad-report-finds" target="_blank" rel="noopener noreferrer" title="$728.6 billion sent home to low- and middle-income countries in 2025. IFAD, September 2026"><b>The diaspora</b><em>$728.6 billion</em><span>sent home, 2025</span></a></li></ul></div></div><div class="pf-in"><p class="pf-note">Named for reference only, not as partners. Each figure links to its source; they measure different things and are never added together. <a href="https://perfectnations.com/capital-architecture/#pca-funders">All fifteen sources</a></p></div></section>
 <div class="pn-rule" aria-hidden="true"></div>
-<section class="pf-band pf-close" aria-labelledby="pf-ch"><div class="pf-in"><p class="pf-eb">Start here</p><h2 class="pf-h2" id="pf-ch">Request the deal pipeline</h2><p class="pf-lead">Tell us what you finance, where, and at what size. The Solutions that fit come back to you in writing.</p><div class="pf-btns"><a class="pf-btn" href="https://perfectnations.com/contact/?about=funders">Request the deal pipeline</a><a class="pf-btn pf-btn--line" href="https://perfectnations.com/subscribe/">Subscribe to State of Nations</a></div><p class="pf-note">Institutions are named on this site for reference only. None is a partner of Perfect Nations unless it is named as one.</p></div></section>
+<section class="pf-band pf-close" aria-labelledby="pf-ch"><div class="pf-in"><p class="pf-eb">Start here</p><h2 class="pf-h2 pf-rv" id="pf-ch"><a class="pf-big-cta" href="https://perfectnations.com/contact/?about=funders"><span class="pf-w"><span style="--i:0">Request</span></span> <span class="pf-w"><span style="--i:1">the</span></span> <span class="pf-w"><span style="--i:2">deal</span></span> <span class="pf-w"><span style="--i:3">pipeline<i aria-hidden="true">&#8594;</i></span></span></a></h2><p class="pf-lead pf-up">Tell us what you finance. The Solutions that fit come back in writing.</p><div class="pf-btns pf-up"><a class="pf-btn pf-mag pf-btn--line" href="https://perfectnations.com/subscribe/"><span>Subscribe to State of Nations</span></a></div></div></section>
 </div>
 <script>
-/* Perfect Nations - For Funders v2.0. No "less than" sign is written in this script, so the WordPress
+/* Perfect Nations - For Funders v2.1. No "less than" sign is written in this script, so the WordPress
    formatter never takes any part of it for a tag. Every text a visitor reads is set with textContent. */
 (function(){
   'use strict';
@@ -396,6 +438,87 @@ Architecture in three families, each with its sourced figure. 06 The close. Phon
     })(0);
   }
   function idle(fn){ if ('requestIdleCallback' in window) { window.requestIdleCallback(fn, { timeout: 3000 }); } else { setTimeout(fn, 1200); } }
+  var fine = window.matchMedia && window.matchMedia('(pointer: fine)').matches;
+  function countUp(b, dur){
+    var n = +b.getAttribute('data-n'), t0 = 0;
+    if (still || !n) { return; }
+    b.textContent = '0';
+    function step(ts){
+      if (!t0) { t0 = ts; }
+      var k = Math.min(1, (ts - t0) / dur), e = 1 - Math.pow(1 - k, 3);
+      b.textContent = comma(e * n);
+      if (1 > k) { window.requestAnimationFrame(step); }
+    }
+    window.requestAnimationFrame(step);
+  }
+
+  /* ---------- the reveal: headings rise word by word, blocks fade up, the grid arrives in a wave ---------- */
+  (function(){
+    var items = qa('.pf-rv, .pf-up, .pf-pipe__mx');
+    if (still || !('IntersectionObserver' in window)) { items.forEach(function(e){ e.classList.add('is-in'); }); return; }
+    root.classList.add('pf-js');
+    var io = new IntersectionObserver(function(es){
+      es.forEach(function(e){
+        if (!e.isIntersecting) { return; }
+        e.target.classList.add('is-in'); io.unobserve(e.target);
+        qa('.pf-cnt', e.target).forEach(function(b){ countUp(b, 1400); });
+      });
+    }, { rootMargin: '0px', threshold: 0 });
+    items.forEach(function(e){ io.observe(e); });
+    /* at the very bottom of the page nothing more can scroll into view: show what is left */
+    window.addEventListener('scroll', function(){
+      var d = document.documentElement;
+      if (window.pageYOffset + window.innerHeight + 4 >= d.scrollHeight) { items.forEach(function(e){ e.classList.add('is-in'); }); }
+    }, { passive: true });
+    setTimeout(function(){ items.forEach(function(e){ var r = e.getBoundingClientRect(); if (window.innerHeight > r.top) { e.classList.add('is-in'); } }); }, 2600);
+  })();
+
+  /* ---------- a gold line shows how far the reader has scrolled ---------- */
+  (function(){
+    var bar = q('.pf-prog'), tick = false;
+    if (!bar) { return; }
+    function set(){
+      var d = document.documentElement, max = Math.max(1, d.scrollHeight - window.innerHeight);
+      bar.style.setProperty('--p', Math.min(1, Math.max(0, window.pageYOffset / max)).toFixed(4)); tick = false;
+    }
+    window.addEventListener('scroll', function(){ if (!tick) { tick = true; window.requestAnimationFrame(set); } }, { passive: true });
+    set();
+  })();
+
+  /* ---------- buttons lean toward the pointer; the Match card tilts (mouse and trackpad only) ---------- */
+  (function(){
+    if (still || !fine) { return; }
+    root.addEventListener('mousemove', function(e){
+      var b = e.target.closest ? e.target.closest('.pf-mag') : null;
+      if (b) {
+        var r = b.getBoundingClientRect();
+        b.style.transform = 'translate(' + ((e.clientX - r.left - r.width / 2) * 0.18).toFixed(1) + 'px,' + ((e.clientY - r.top - r.height / 2) * 0.3).toFixed(1) + 'px)';
+      }
+      var m = e.target.closest ? e.target.closest('.pf-m') : null;
+      if (m) {
+        var c = m.getBoundingClientRect(), x = (e.clientX - c.left) / c.width - 0.5, y = (e.clientY - c.top) / c.height - 0.5;
+        m.style.setProperty('--ry', (x * 5).toFixed(2) + 'deg'); m.style.setProperty('--rx', (-y * 4).toFixed(2) + 'deg');
+      }
+    });
+    root.addEventListener('mouseout', function(e){
+      var b = e.target.closest ? e.target.closest('.pf-mag') : null;
+      if (b && !b.contains(e.relatedTarget)) { b.style.transform = ''; }
+      var m = e.target.closest ? e.target.closest('.pf-m') : null;
+      if (m && !m.contains(e.relatedTarget)) { m.style.setProperty('--ry', '0deg'); m.style.setProperty('--rx', '0deg'); }
+    });
+  })();
+
+  /* ---------- the fifteen sources run as two marquees ---------- */
+  (function(){
+    qa('.pf-mq__l').forEach(function(list){
+      var items = qa('li', list);
+      items.forEach(function(li){
+        var c = li.cloneNode(true); c.removeAttribute('id'); c.setAttribute('aria-hidden', 'true');
+        var a = c.querySelector('a'); if (a) { a.tabIndex = -1; } list.appendChild(c);
+      });
+      list.style.setProperty('--dur', Math.max(40, items.length * 9) + 's');
+    });
+  })();
 
   /* ---------- 01 the hero: capital moving toward the nations ---------- */
   (function(){
@@ -454,19 +577,7 @@ Architecture in three families, each with its sourced figure. 06 The close. Phon
   })();
 
   /* the hero figures count up once; the real figures are written in the page for every reader */
-  (function(){
-    if (still) { return; }
-    var bs = qa('.pf-figs b[data-n]');
-    var t0 = 0, dur = 1300;
-    bs.forEach(function(b){ b.textContent = '0'; });
-    function step(ts){
-      if (!t0) { t0 = ts; }
-      var k = Math.min(1, (ts - t0) / dur), e = 1 - Math.pow(1 - k, 3);
-      bs.forEach(function(b){ b.textContent = comma(e * +b.getAttribute('data-n')); });
-      if (1 > k) { window.requestAnimationFrame(step); }
-    }
-    window.requestAnimationFrame(step);
-  })();
+  qa('.pf-figs b[data-n]').forEach(function(b){ countUp(b, 1300); });
 
   /* ---------- the Capital Wire tape: the newest deals, read live from the wire ---------- */
   (function(){
@@ -507,31 +618,26 @@ Architecture in three families, each with its sourced figure. 06 The close. Phon
     var d = new Date(), today = d.getFullYear() + '-' + ('0' + (d.getMonth() + 1)).slice(-2) + '-' + ('0' + d.getDate()).slice(-2);
     var live = all.filter(function(m){ return today >= m.week; });
     if (!live.length) { live = [all[all.length - 1]]; }
-    function row(h, title, text){
-      var r = el('div', 'pf-m__row'); r.appendChild(el('h4', '', h));
-      if (title) { r.appendChild(el('p', 'pf-m__t', title)); }
-      if (text) { r.appendChild(el('p', '', text)); }
-      return r;
-    }
     function card(m){
-      var a = el('article', 'pf-m'), l = el('div', 'pf-m__l'), r = el('div', 'pf-m__r'), k = el('p', 'pf-m__k');
-      a.setAttribute('data-no', m.no);
-      k.appendChild(el('b', '', 'Match No. ' + m.no)); k.appendChild(el('span', '', m.weekText)); l.appendChild(k);
+      var a = el('article', 'pf-m'), l = el('div', 'pf-m__l'), r = el('div', 'pf-m__r'), k = el('p', 'pf-m__k'), sh = el('span', 'pf-m__sheen');
+      a.setAttribute('data-no', m.no); sh.setAttribute('aria-hidden', 'true'); a.appendChild(sh);
+      k.appendChild(el('b', '', 'No. ' + m.no)); k.appendChild(el('span', '', m.weekText)); l.appendChild(k);
       l.appendChild(el('h3', 'pf-m__n', m.nation)); l.appendChild(el('p', 'pf-m__s', m.standard));
       l.appendChild(el('p', 'pf-m__f', m.figure));
       var cap = el('p', 'pf-m__c', m.caption + '. '); if (safe(m.sourceUrl)) { cap.appendChild(ext(m.sourceUrl, m.source)); } l.appendChild(cap);
-      r.appendChild(row('The Solution', m.title, m.advises));
-      if (m.proof && m.proof.name) {
-        var pr = row('The proof'), p = el('p'), b = el('b', '', m.proof.name), g = el('em', 'pf-gold', m.proof.figure);
-        p.appendChild(b); p.appendChild(document.createTextNode(', ' + m.proof.where + ' ' + m.proof.year + ': ')); p.appendChild(g);
-        p.appendChild(document.createTextNode(' ' + m.proof.label + '. ')); if (safe(m.proof.url)) { p.appendChild(ext(m.proof.url, m.proof.source)); }
-        pr.appendChild(p); r.appendChild(pr);
-      }
-      var fit = row('The funder that fits', m.funder, m.why); fit.className += ' pf-m__fit';
+      r.appendChild(el('p', 'pf-m__lab', 'The Solution')); r.appendChild(el('p', 'pf-m__t', m.title));
+      r.appendChild(el('p', 'pf-m__lab', 'The funder that fits')); r.appendChild(el('p', 'pf-m__fu', m.funder)); r.appendChild(el('p', 'pf-m__why', m.why));
       var chips = el('p', 'pf-chips');
       (m.networks || []).forEach(function(n){ var c = el('a', 'pf-chip', n.name); c.href = '#pf-who-' + n.id; chips.appendChild(c); });
-      fit.appendChild(chips); r.appendChild(fit);
-      var bt = el('div', 'pf-btns'), b1 = el('a', 'pf-btn', answer.label || 'Answer this Match'), b2 = el('a', 'pf-btn pf-btn--line', 'Read the Solution');
+      r.appendChild(chips);
+      if (m.proof && m.proof.name && safe(m.proof.url)) {
+        var pr = ext(m.proof.url, ''); pr.className = 'pf-m__p';
+        pr.appendChild(el('span', '', 'Proof')); pr.appendChild(el('b', '', m.proof.name));
+        pr.appendChild(document.createTextNode(' ' + m.proof.where + ' ' + m.proof.year + ' ')); pr.appendChild(el('em', 'pf-gold', m.proof.figure));
+        r.appendChild(pr);
+      }
+      var bt = el('div', 'pf-btns'), b1 = el('a', 'pf-btn pf-mag'), b2 = el('a', 'pf-btn pf-btn--line pf-mag');
+      b1.appendChild(el('span', '', answer.label || 'Answer this Match')); b2.appendChild(el('span', '', 'Read the Solution'));
       if (safe(answer.url)) { b1.href = answer.url; } if (safe(m.solutionUrl)) { b2.href = m.solutionUrl; }
       bt.appendChild(b1); bt.appendChild(b2); r.appendChild(bt);
       a.appendChild(l); a.appendChild(r);
@@ -547,11 +653,10 @@ Architecture in three families, each with its sourced figure. 06 The close. Phon
       if (2 > live.length) { more.hidden = true; return; }
       live.forEach(function(m, i){
         var li = el('li'), b = el('button'); b.type = 'button'; b.setAttribute('data-no', m.no);
-        b.appendChild(el('b', '', 'No. ' + m.no)); b.appendChild(el('span', '', m.nation)); b.appendChild(el('em', '', i === 0 ? 'This week' : m.weekText));
+        b.appendChild(el('b', '', 'No. ' + m.no)); b.appendChild(el('span', '', m.nation)); if (i === 0) { b.appendChild(el('em', '', 'This week')); }
         b.addEventListener('click', function(){ show(m); });
         li.appendChild(b); rail.appendChild(li);
       });
-      var p = q('p', more); if (p) { p.textContent = 'Every Match'; }
       more.hidden = false;
     }
     buildRail();
@@ -564,7 +669,7 @@ Architecture in three families, each with its sourced figure. 06 The close. Phon
     if (!a) { return; }
     var t = document.getElementById(a.getAttribute('href').slice(1));
     if (!t) { return; }
-    qa('.pf-fam li.is-lit').forEach(function(li){ li.classList.remove('is-lit'); });
+    qa('.pf-mq li.is-lit').forEach(function(li){ li.classList.remove('is-lit'); });
     t.classList.add('is-lit'); setTimeout(function(){ t.classList.remove('is-lit'); }, 2600);
   });
 
@@ -584,11 +689,11 @@ Architecture in three families, each with its sourced figure. 06 The close. Phon
       return true;
     }
     function line(x){
-      var li = el('li', 'pf-line'), k = el('p', 'pf-line__k'), h = el('h3'), a = el('a', '', x.title);
-      k.appendChild(el('b', '', x.nation)); k.appendChild(el('span', '', x.standard));
-      k.appendChild(el('span', '', x.finance || (x.no ? 'Solution No. ' + x.no : 'Lead Solution')));
+      var li = el('li', 'pf-line'), a = el('a'), k = el('span', 'pf-line__k');
+      k.appendChild(el('b', '', x.nation)); k.appendChild(el('i', '', x.standard));
+      k.appendChild(el('i', '', x.finance || (x.no ? 'Solution No. ' + x.no : 'Lead Solution')));
       if (safe(x.url)) { a.href = x.url; }
-      h.appendChild(a); li.appendChild(k); li.appendChild(h); li.appendChild(el('p', '', x.challenge));
+      a.appendChild(k); a.appendChild(el('span', 'pf-line__t', x.title)); li.appendChild(a);
       return li;
     }
     function words(){
@@ -606,7 +711,7 @@ Architecture in three families, each with its sourced figure. 06 The close. Phon
       part.forEach(function(x){ listEl.appendChild(line(x)); });
       count.textContent = hits.length ? comma(hits.length) + ' Solution' + (hits.length === 1 ? '' : 's') + words() : 'No Solution fits these filters yet' + words() + '. Request one below.';
       moreB.hidden = part.length >= hits.length;
-      moreB.textContent = 'Show ' + Math.min(12, hits.length - part.length) + ' more';
+      (moreB.querySelector('span') || moreB).textContent = 'Show ' + Math.min(12, hits.length - part.length) + ' more';
       qa('.pf-cell', sec).forEach(function(b){
         var f = b.getAttribute('data-fin');
         b.classList.toggle('is-on', !!st.std && b.getAttribute('data-std') === st.std && !!st.fin && f === st.fin);
