@@ -304,6 +304,9 @@
 #R .bpx-stars__rays line{ stroke:rgba(227,194,88,.3); stroke-width:1.2; stroke-dasharray:2 6; }
 #R .bpx-star{ cursor:pointer; outline:none; transform-origin:center; transform-box:fill-box; }
 #R .bpx-star__s{ fill:url(#pnk-gold); transition:filter .35s ease, opacity .35s ease; }
+/* v15.0: the star filled to its coverage; the empty part shows as a faint gold outline */
+#R .bpx-star__b{ fill:rgba(227,194,88,.14); stroke:rgba(227,194,88,.6); stroke-width:.5; }
+#R .bpx-star__fill{ transform-box:fill-box; transform-origin:50% 100%; }
 #R .bpx-star__halo{ fill:var(--c); opacity:0; transition:opacity .35s ease; }
 #R .bpx-star__ring{ fill:none; stroke:none; }
 #R .bpx-star.is-bind .bpx-star__ring{ stroke:#F2A07E; stroke-width:2.2; stroke-dasharray:5 5; }
@@ -318,9 +321,11 @@
 #R .bpx-star:focus-visible .bpx-star__halo{ opacity:.5; stroke:var(--gs); stroke-width:2; }
 @media (prefers-reduced-motion:no-preference){
   #R .bpx-stars.is-in .bpx-star{ animation:bpxRise 1s var(--ease) backwards; animation-delay:calc(.15s + var(--d)); }
+  #R .bpx-stars.is-in .bpx-star__fill{ animation:bpxFill 2.6s var(--ease) backwards; animation-delay:calc(.5s + var(--d)); }
   #R .bpx-star.is-bind .bpx-star__ring{ animation:bpxPulse 2.6s ease-in-out infinite; }
 }
 @keyframes bpxRise{ from{ opacity:0; transform:translateY(46px) scale(.6); } to{ opacity:1; transform:none; } }
+@keyframes bpxFill{ from{ transform:scaleY(0); } to{ transform:scaleY(1); } }
 @keyframes bpxPulse{ 0%,100%{ opacity:1; } 50%{ opacity:.35; } }
 #R .bpx-call{ position:relative; display:flex; align-items:center; gap:14px; width:100%; max-width:470px; margin-top:6px; padding:11px 16px 11px 20px; border-radius:16px; background:var(--iv2); color:var(--ink); box-shadow:0 18px 40px rgba(2,14,10,.38); overflow:hidden; }
 #R .bpx-call::before{ content:""; position:absolute; left:0; top:0; bottom:0; width:6px; background:var(--c,#8A5A12); transition:background .35s ease; }
