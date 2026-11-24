@@ -100,7 +100,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 PAGES, DATA, HERE = ROOT / 'pages', ROOT / 'data', ROOT / 'tools' / 'nation'
-VERSION = '14.9'  # Now possible with AI: a Solution adds what AI makes possible, after the finance (Preeti Sinha, President and CEO, 24 Nov 2026)
+VERSION = '15.0'  # The seven stars fill with gold to each standard's coverage; the furthest still pulses (Preeti Sinha, President and CEO, 24 Nov 2026)
 # 14.8: the October pictures switched on for the first 44 blueprints (Preeti Sinha, 21 Nov 2026)
 # 14.7.1: the pictures carry no AI illustration mark (Preeti Sinha, 21 Nov 2026)
 # 14.7: picture cards for the assets, switched on per nation by assets.pictures (Austria first; Preeti Sinha, 21 Nov 2026)
@@ -807,6 +807,20 @@ def stars_svg(name, g, bind):
     for k, s, cx, cy, crown in STARS:
         parts.append('<line x1="320.0" y1="232.4" x2="%.1f" y2="%.1f"/>' % (cx, cy + (43.4 if crown else 23.7)))
     parts.append('</g>')
+    # v15.0: each star fills with gold to the nation's coverage on its standard (Preeti Sinha, President and CEO,
+    # 24 Nov 2026, choosing the seven stars over rings: "What will happen to the stars?"). A clip rises from the
+    # foot of each star to the published figure; a standard not measured stays an outline.
+    kit_src = (PAGES / 'home-logo-kit.html').read_text(encoding='utf-8')
+    clips = []
+    for pos, (k, s, cx, cy, crown) in enumerate(STARS):
+        d = re.search(r'id="pnk-%s" d="([^"]+)"' % s, kit_src).group(1)
+        v = [float(c) for c in re.findall(r'-?\d+\.?\d*', d)]
+        x0, x1, y0, y1 = min(v[0::2]), max(v[0::2]), min(v[1::2]), max(v[1::2])
+        val = g[ORDER[k]].get('value')
+        f = max(0.0, min(1.0, float(val) / 100)) if num(val) else 0.0
+        clips.append('<clipPath id="bpx-c%d" clipPathUnits="userSpaceOnUse"><rect class="bpx-star__fill" x="%.1f" y="%.2f" width="%.1f" height="%.2f" style="--d:%.2fs"/></clipPath>'
+                     % (pos, x0 - 1, y1 - f * (y1 - y0), x1 - x0 + 2, f * (y1 - y0) + .5, abs(pos - 3) * 0.12))
+    parts.append('<defs>%s</defs>' % ''.join(clips))
     for pos, (k, s, cx, cy, crown) in enumerate(STARS):
         n = ORDER[k]
         x = g[n]
@@ -816,12 +830,12 @@ def stars_svg(name, g, bind):
         parts.append(
             '<g class="bpx-star%s%s%s" data-i="%d" data-pos="%d" role="button" tabindex="0" aria-pressed="%s" aria-label="%s" style="--c:%s;--d:%.2fs">'
             '<circle class="bpx-star__halo" cx="%.1f" cy="%.1f" r="%.1f"/><circle class="bpx-star__ring" cx="%.1f" cy="%.1f" r="%.1f"/>'
-            '<use class="bpx-star__s" href="#pnk-%s" transform="%s"/>'
+            '<g transform="%s"><use class="bpx-star__b" href="#pnk-%s"/><use class="bpx-star__s" href="#pnk-%s" clip-path="url(#bpx-c%d)"/></g>'
             '<text x="%.1f" y="%.1f" text-anchor="middle" class="bpx-star__l">%s</text>'
             '<text x="%.1f" y="%.1f" text-anchor="middle" class="bpx-star__v">%s</text></g>'
             % (' bpx-star--crown' if crown else '', ' is-bind' if n == bind else '', ' is-on' if n == bind else '', k, pos,
                'true' if n == bind else 'false', ent(label), COLOURS[k], abs(pos - 3) * 0.12,
-               cx, cy, r, cx, cy, 44 if crown else 27, s, STAR_T, cx, ly, lab(n).upper(), cx, vy, star_value(x)))
+               cx, cy, r, cx, cy, 44 if crown else 27, STAR_T, s, s, pos, cx, ly, lab(n).upper(), cx, vy, star_value(x)))
     parts.append('</svg>')
     return ''.join(parts)
 
