@@ -81,6 +81,8 @@ Sources opened on 17 November 2026 unless stated.
 
 ## Open gaps
 
+- Wave 1 full-edition research (25 November 2026) not done for Liberia: the shared web-search budget for the session ran out before Liberia was reached. The register stays at 11 lines, below the target of 20; the record (5 lines) and the enterprises (6) already met target.
+
 - Public debt as a share of GDP: the IMF release of 28 September 2026 lists total public debt of 55.1 (2025) and 54.4 (2026); to be read with its units in the staff report.
 - The share of Liberia in the World Bank’s Regional DARES (US$200 million for four nations).
 - The World Bank approval dates of the RESPITE and SECRAMP additional financings.
