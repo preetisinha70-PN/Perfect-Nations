@@ -42,7 +42,7 @@ ROOT = Path(__file__).resolve().parent.parent
 PAGES = ROOT / 'pages'
 DATA = ROOT / 'data'
 HERE = Path(__file__).resolve().parent / 'capital'
-VERSION = '6.4'  # Who finances the Living Line: fifteen sources of capital in three families (the Steward-General, 24 Nov 2026)
+VERSION = '6.5'  # v6.5: With Perfect Nations Intelligence; our AI is called Perfect Nations Intelligence; other people's programmes keep their own word (Preeti Sinha, President and CEO, 24 Nov 2026)  # Who finances the Living Line: fifteen sources of capital in three families (the Steward-General, 24 Nov 2026)
 # 6.2: each family pairs the finance with the AI that makes it work, its "ai" line under the family line (Preeti Sinha, President and CEO, 24 Nov 2026)
 NOT_NATIONS = {'state-of-nations', 'ticker', 'blueprints', 'capital-architecture'}
 
@@ -251,7 +251,7 @@ def index(doc, bps):
             '<div><h3 id="%s-h">%s</h3><p>%s</p>%s</div><span class="pca-fam__c">%d</span></div><ul class="pca-rows">%s</ul></section>'
             % (fid, fid, n, fid, ent(f['name']), ent(f['line']),
                # v6.2: With AI, after the finance (24 Nov 2026)
-               ('<p class="pca-fam__ai"><b>With AI</b>%s</p>' % ent(f['ai'])) if f.get('ai') else '',
+               ('<p class="pca-fam__ai"><b>With Perfect Nations Intelligence</b>%s</p>' % ent(f['ai'])) if f.get('ai') else '',
                len(f['items']), ''.join(rows)))
     jump.append('<li class="pca-jump__all"><a href="#pca-index" data-f="all"><b>All</b>instruments<i>%d</i></a></li>' % n_all)
     return (

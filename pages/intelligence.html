@@ -1,0 +1,391 @@
+<!-- ===========================================================================
+PERFECT NATIONS - PERFECT NATIONS INTELLIGENCE - v1.0 - 2026-11-24
+v1.0: the page of Perfect Nations Intelligence, the platform that joins four disciplines (identify every human need,
+  design every solution, finance every possibility, leave no human behind), with its first product, the Perfect Capita
+  Civilization Engine, live for Barbados. Built from the mock-up Preeti Sinha, President and CEO, approved on 24 Nov
+  2026 ("I like everything"; "Ok to go with the images"; "Create a perfect nations intelligence page after State of
+  Nations"). The two illustrations are AI-generated (ElevenLabs, 24 Nov 2026; Media Library 18575 and 18576) and are
+  labelled as such. Wording rule (Preeti Sinha, 24 Nov 2026): what Perfect Nations does is Perfect Nations
+  Intelligence; other people's programmes keep their own word; the vision line is unchanged.
+/intelligence/ (WordPress page 18578; the header lists it after State of Nations, under Insights).
+Served live from GitHub (pages/intelligence.html, root pn-intel) by the Perfect Nations Live Pages plugin; the
+code in the page's block is only the fallback.
+Figures: 195 blueprints, 52 Solutions (data/state-of-nations.json), 81 instruments and 2,696 instruments on record
+across 194 nations (data/capital-architecture.json, record of 24 Nov 2026). The Engine starts from the Barbados
+blueprint (data/barbados.json) and the Perfect Capita estimates of 31 Oct 2026.
+=========================================================================== -->
+<style>
+#pn-intel{
+  --er:#0B3D45; --lg:#0F4C5C; --dp:#082A30; --iv:#F4ECD8; --pp:#FBF8F1; --wh:#FFFDF8;
+  --ink:#10262B; --im:#34464A; --mut:#5C696C; --hair:rgba(16,38,43,.13);
+  --tv:#F5F1E8; --tvm:rgba(245,241,232,.84); --tvd:rgba(245,241,232,.62); --thair:rgba(245,241,232,.16);
+  --g:#E3C258; --gd:#7E5A0C; --tc:#8A3A22; --tcl:#F2A58C; --teal:#6EC8C4; --onacc:#1A140C;
+  --hd:var(--pn-font-heading,"Barlow Condensed","Arial Narrow",Arial,sans-serif);
+  --bd:var(--pn-font-body,"Barlow Semi Condensed",Arial,sans-serif);
+  --px:clamp(18px,5vw,72px); --ease:cubic-bezier(.16,.8,.2,1);
+  position:relative; isolation:isolate; width:100vw; margin-left:calc(50% - 50vw);
+  overflow-x:hidden; overflow-x:clip; box-sizing:border-box;
+  font-family:var(--bd); font-size:16px; line-height:1.5; color:var(--ink); background:var(--pp);
+}
+#pn-intel *,#pn-intel *::before,#pn-intel *::after{ box-sizing:border-box; min-width:0; }
+.elementor-widget-html:has(#pn-intel),.elementor-widget:has(#pn-intel),.e-con-inner:has(#pn-intel),.e-con:has(#pn-intel){
+  padding-top:0 !important; padding-bottom:0 !important; --widgets-spacing:0px !important; row-gap:0 !important;
+}
+#pn-intel h1,#pn-intel h2,#pn-intel h3,#pn-intel p,#pn-intel li{ text-shadow:none !important; }
+#pn-intel h1,#pn-intel h2,#pn-intel h3{ text-transform:none; margin:0; }
+#pn-intel p{ margin:0; }
+#pn-intel ul,#pn-intel ol{ margin:0; padding:0; list-style:none; }
+#pn-intel li{ margin:0; }
+#pn-intel figure{ margin:0; }
+#pn-intel a{ color:inherit; }
+#pn-intel .pi-in{ width:100%; max-width:1240px; margin:0 auto; padding:0 var(--px); }
+#pn-intel .pi-band{ padding:clamp(28px,4.6vh,52px) 0; }
+#pn-intel .pi-eb{ font-family:var(--hd); font-size:.76rem; font-weight:700; letter-spacing:.28em; text-transform:uppercase; color:var(--tc); }
+#pn-intel h2.pi-h2{ margin-top:8px; font-family:var(--hd); font-weight:600; font-size:clamp(2.1rem,3.8vw,3.25rem); line-height:.95; letter-spacing:-.015em; color:var(--er) !important; text-wrap:balance; }
+#pn-intel .pi-dark h2.pi-h2,#pn-intel .pi-engine h2.pi-h2{ color:var(--tv) !important; }
+#pn-intel .pi-dark .pi-eb{ color:var(--tvd); }
+#pn-intel .pi-btn{ display:inline-flex; align-items:center; justify-content:center; min-height:46px; padding:0 22px; border-radius:999px; text-decoration:none;
+  font-family:var(--hd); font-size:.8rem; font-weight:700; letter-spacing:.18em; text-transform:uppercase; background:var(--g); color:var(--onacc) !important; border:1px solid var(--g);
+  transition:transform .25s var(--ease), box-shadow .25s ease; }
+#pn-intel .pi-btn:hover,#pn-intel .pi-btn:focus-visible{ transform:translateY(-2px); box-shadow:0 10px 24px rgba(227,194,88,.28); }
+#pn-intel .pi-btn--line{ background:transparent; color:var(--g) !important; }
+#pn-intel .pi-sr{ position:absolute !important; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; border:0; }
+
+/* the hero: the island of plenty behind, the light that follows the cursor */
+#pn-intel .pi-hero{ color:var(--tv);
+  background:radial-gradient(460px circle at var(--mx,70%) var(--my,30%),rgba(110,200,196,.2),transparent 70%),
+    linear-gradient(90deg,rgba(8,42,48,.95) 0%,rgba(11,61,69,.86) 42%,rgba(11,61,69,.5) 100%),
+    url("https://perfectnations.com/wp-content/uploads/2026/11/pn-intelligence-island-of-plenty-1024x576.png") center 60%/cover no-repeat,#0B3D45; }
+#pn-intel .pi-hero__g{ display:grid; grid-template-columns:minmax(0,1.15fr) minmax(0,1fr); gap:28px clamp(28px,4vw,64px); align-items:center; padding:clamp(34px,6vh,64px) 0 clamp(36px,6vh,60px); }
+#pn-intel .pi-k{ font-family:var(--hd); font-size:.8rem; font-weight:700; letter-spacing:.3em; text-transform:uppercase; color:var(--teal); }
+#pn-intel h1.pi-h1{ margin-top:10px; font-family:var(--hd); font-weight:600; font-size:clamp(2.8rem,6vw,5.25rem); line-height:.92; letter-spacing:-.02em; color:var(--tv) !important; text-wrap:balance; }
+#pn-intel .pi-q{ margin-top:12px; font-family:var(--hd); font-weight:500; font-size:clamp(1.35rem,2.4vw,2rem); line-height:1.1; color:rgba(245,241,232,.8); text-wrap:balance; }
+#pn-intel .pi-acts{ display:flex; flex-wrap:wrap; gap:12px; margin-top:22px; }
+#pn-intel .pi-four{ display:grid; gap:10px; }
+#pn-intel .pi-four li{ display:grid; grid-template-columns:50px minmax(0,1fr); gap:14px; align-items:center; padding:13px 16px; border:1px solid var(--thair); border-radius:16px; background:rgba(8,42,48,.55); }
+#pn-intel .pi-four li.is-gold{ border-color:rgba(227,194,88,.45); }
+#pn-intel .pi-ic{ width:50px; height:50px; border-radius:50%; border:1px solid rgba(110,200,196,.6); display:flex; align-items:center; justify-content:center; color:var(--teal); }
+#pn-intel .is-gold .pi-ic{ border-color:rgba(227,194,88,.7); color:var(--g); }
+#pn-intel .pi-ic svg{ width:24px; height:24px; fill:none; stroke:currentColor; stroke-width:1.7; stroke-linecap:round; stroke-linejoin:round; }
+#pn-intel .pi-four b{ display:block; font-family:var(--hd); font-size:1.35rem; font-weight:600; line-height:1.05; }
+#pn-intel .pi-four span{ display:block; font-size:.95rem; color:rgba(245,241,232,.8); }
+
+/* four disciplines, with the illustration of plenty */
+#pn-intel .pi-ivory{ background:var(--iv); }
+#pn-intel .pi-fig{ position:relative; margin-top:20px; border-radius:20px; overflow:hidden; height:clamp(200px,24vw,300px); background:var(--er); }
+#pn-intel .pi-fig img{ display:block; width:100%; height:100%; object-fit:cover; object-position:center 55%; }
+#pn-intel .pi-fig figcaption{ position:absolute; left:0; right:0; bottom:0; display:flex; flex-wrap:wrap; align-items:flex-end; justify-content:space-between; gap:8px; padding:40px 22px 16px; background:linear-gradient(180deg,transparent,rgba(8,42,48,.85)); color:var(--tv); }
+#pn-intel .pi-fig figcaption b{ font-family:var(--hd); font-weight:600; font-size:clamp(1.3rem,2.4vw,1.9rem); line-height:1.05; }
+#pn-intel .pi-fig figcaption small{ font-size:.76rem; color:rgba(245,241,232,.72); }
+#pn-intel .pi-cards{ display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:14px; margin-top:14px; }
+#pn-intel .pi-card{ display:flex; flex-direction:column; gap:8px; padding:18px; border-radius:18px; background:var(--wh); border:1px solid var(--hair); }
+#pn-intel .pi-card.is-gold{ border-color:rgba(126,90,12,.35); }
+#pn-intel .pi-card small{ font-family:var(--hd); font-size:.72rem; font-weight:700; letter-spacing:.2em; text-transform:uppercase; color:var(--tc); }
+#pn-intel .pi-card h3{ font-family:var(--hd); font-weight:600; font-size:1.5rem; line-height:1.05; color:var(--er); }
+#pn-intel .pi-card strong{ font-family:var(--hd); font-weight:600; font-size:2.6rem; line-height:1; color:var(--er); font-variant-numeric:tabular-nums; }
+#pn-intel .pi-card p{ font-size:.95rem; line-height:1.45; color:var(--im); }
+#pn-intel .pi-card p.pi-next{ margin-top:auto; padding-top:10px; border-top:1px dashed rgba(11,61,69,.25); font-size:.9rem; }
+#pn-intel .pi-card p.pi-next b{ color:var(--er); }
+
+/* the loop */
+#pn-intel .pi-dark{ background:linear-gradient(180deg,#0B3D45 0%,#082A30 100%); color:var(--tv); }
+#pn-intel .pi-loop{ display:flex; align-items:stretch; gap:10px; margin-top:22px; }
+#pn-intel .pi-loop li{ flex:1 1 0; position:relative; padding:16px; border-radius:16px; border:1px solid var(--thair); background:rgba(245,241,232,.06); }
+#pn-intel .pi-loop li.is-gold{ border-color:rgba(227,194,88,.45); }
+#pn-intel .pi-loop li:not(:last-child)::after{ content:""; position:absolute; right:-8px; top:50%; width:7px; height:7px; border-top:2px solid var(--g); border-right:2px solid var(--g); transform:translateY(-50%) rotate(45deg); }
+#pn-intel .pi-loop small{ display:block; font-family:var(--hd); font-size:.72rem; font-weight:700; letter-spacing:.2em; text-transform:uppercase; color:var(--teal); }
+#pn-intel .pi-loop span{ display:block; margin-top:6px; font-size:.95rem; line-height:1.4; color:var(--tvm); }
+#pn-intel .pi-note{ margin-top:16px; max-width:70ch; font-size:1rem; line-height:1.5; color:var(--tvm); }
+
+/* the Engine, live for Barbados */
+#pn-intel .pi-engine{ background:radial-gradient(110% 120% at 90% 0%,#10505F 0%,#0B3D45 45%,#082A30 100%); color:var(--tv); }
+#pn-intel .pi-eng{ display:grid; grid-template-columns:minmax(0,1.15fr) minmax(0,1fr); gap:20px; margin-top:20px; align-items:start; }
+#pn-intel .pi-panel{ padding:14px 18px; border-radius:18px; border:1px solid var(--thair); background:rgba(245,241,232,.05); }
+#pn-intel .pi-panel + .pi-panel{ margin-top:12px; }
+#pn-intel .pi-panel.is-teal{ border-color:rgba(110,200,196,.45); background:rgba(110,200,196,.07); }
+#pn-intel .pi-panel > small{ display:block; font-family:var(--hd); font-size:.72rem; font-weight:700; letter-spacing:.2em; text-transform:uppercase; color:var(--tvd); }
+#pn-intel .pi-row{ display:grid; grid-template-columns:7.5em minmax(0,1fr) 4.2em; gap:12px; align-items:center; padding:6px 0; border-bottom:1px solid rgba(245,241,232,.1); }
+#pn-intel .pi-row:last-child{ border-bottom:0; }
+#pn-intel .pi-row b,#pn-intel .pi-row output{ font-family:var(--hd); font-size:1.15rem; font-weight:600; font-variant-numeric:tabular-nums; }
+#pn-intel .pi-row output{ text-align:right; }
+#pn-intel .pi-row.is-far b,#pn-intel .pi-row.is-far output{ color:var(--tcl); }
+#pn-intel input[type=range]{ width:100%; height:28px; margin:0; accent-color:#6EC8C4; background:transparent; }
+#pn-intel .pi-ai{ display:grid; grid-template-columns:minmax(0,1fr) 4.2em; gap:4px 12px; align-items:center; }
+#pn-intel .pi-ai b{ font-family:var(--hd); font-size:1.2rem; font-weight:600; }
+#pn-intel .pi-ai span{ font-size:.88rem; color:var(--tvm); }
+#pn-intel .pi-ai output{ text-align:right; font-family:var(--hd); font-size:1.3rem; font-weight:600; color:var(--teal); }
+#pn-intel .pi-ai input{ grid-column:1 / -1; }
+#pn-intel .pi-gap{ padding:16px 18px; border-radius:18px; background:rgba(245,241,232,.08); border:1px solid rgba(227,194,88,.4); }
+#pn-intel .pi-gap small{ font-family:var(--hd); font-size:.72rem; font-weight:700; letter-spacing:.2em; text-transform:uppercase; color:var(--tvd); }
+#pn-intel .pi-gap strong{ display:block; margin-top:2px; font-family:var(--hd); font-weight:600; font-size:clamp(3.4rem,6vw,5.2rem); line-height:.95; color:var(--g); font-variant-numeric:tabular-nums; }
+#pn-intel .pi-gap span{ display:block; margin-top:4px; font-size:.94rem; color:var(--tvm); }
+#pn-intel .pi-kpis{ display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:10px; margin-top:12px; }
+#pn-intel .pi-kpis li{ padding:12px 14px; border-radius:16px; border:1px solid var(--thair); background:rgba(245,241,232,.05); }
+#pn-intel .pi-kpis small{ display:block; font-size:.82rem; color:rgba(245,241,232,.7); }
+#pn-intel .pi-kpis b{ display:block; font-family:var(--hd); font-weight:600; font-size:1.9rem; line-height:1.05; font-variant-numeric:tabular-nums; }
+#pn-intel .pi-kpis b.is-money{ color:var(--g); }
+#pn-intel .pi-inst{ margin-top:12px; padding:14px 18px; border-radius:18px; background:var(--iv); color:var(--ink); }
+#pn-intel .pi-inst small{ font-family:var(--hd); font-size:.72rem; font-weight:700; letter-spacing:.2em; text-transform:uppercase; color:var(--tc); }
+#pn-intel .pi-inst b{ display:block; margin-top:2px; font-family:var(--hd); font-size:1.5rem; font-weight:600; line-height:1.05; color:var(--er); }
+#pn-intel .pi-inst span{ display:block; margin-top:4px; font-size:.94rem; line-height:1.45; color:var(--im); }
+#pn-intel .pi-reset{ min-height:40px; padding:0 18px; border-radius:999px; border:1px solid rgba(245,241,232,.4); background:transparent; color:var(--tv); cursor:pointer;
+  font-family:var(--hd); font-size:.76rem; font-weight:700; letter-spacing:.18em; text-transform:uppercase; }
+#pn-intel .pi-fine{ margin-top:14px; font-size:.8rem; line-height:1.5; color:var(--tvd); }
+#pn-intel .pi-fine a{ color:var(--tvd); text-decoration:underline; text-underline-offset:2px; }
+
+/* what nations and funders receive */
+#pn-intel .pi-paper{ background:var(--pp); }
+#pn-intel .pi-prod{ display:grid; grid-template-columns:minmax(0,1.1fr) minmax(0,1fr); gap:14px; margin-top:20px; }
+#pn-intel .pi-lead{ display:flex; flex-direction:column; gap:10px; padding:22px; border-radius:20px; text-decoration:none; color:var(--tv) !important;
+  background:radial-gradient(120% 140% at 90% 0%,#10505F 0%,#0B3D45 55%,#082A30 100%); transition:transform .25s var(--ease); }
+#pn-intel .pi-lead:hover,#pn-intel .pi-lead:focus-visible{ transform:translateY(-3px); }
+#pn-intel .pi-lead small{ font-family:var(--hd); font-size:.72rem; font-weight:700; letter-spacing:.2em; text-transform:uppercase; color:var(--teal); }
+#pn-intel .pi-lead b{ font-family:var(--hd); font-weight:600; font-size:clamp(1.9rem,3vw,2.5rem); line-height:1; }
+#pn-intel .pi-lead span{ font-size:1rem; line-height:1.5; color:var(--tvm); }
+#pn-intel .pi-lead i{ align-self:flex-start; margin-top:6px; font-style:normal; display:inline-flex; align-items:center; min-height:44px; padding:0 20px; border-radius:999px; background:var(--g); color:var(--onacc);
+  font-family:var(--hd); font-size:.8rem; font-weight:700; letter-spacing:.18em; text-transform:uppercase; }
+#pn-intel .pi-mini{ display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; }
+#pn-intel .pi-mini a,#pn-intel .pi-mini div{ display:block; padding:16px; border-radius:16px; background:var(--wh); border:1px solid var(--hair); text-decoration:none; transition:border-color .2s ease; }
+#pn-intel .pi-mini a:hover,#pn-intel .pi-mini a:focus-visible{ border-color:rgba(126,90,12,.5); }
+#pn-intel .pi-mini small{ display:block; font-family:var(--hd); font-size:.7rem; font-weight:700; letter-spacing:.2em; text-transform:uppercase; color:var(--tc); }
+#pn-intel .pi-mini b{ display:block; margin-top:4px; font-family:var(--hd); font-weight:600; font-size:1.32rem; color:var(--er); }
+#pn-intel .pi-mini span{ display:block; margin-top:4px; font-size:.92rem; line-height:1.4; color:var(--im); }
+
+/* the close, on the island at dusk */
+#pn-intel .pi-close{ color:var(--tv); padding:clamp(60px,10vh,110px) 0 clamp(30px,5vh,48px);
+  background:linear-gradient(180deg,rgba(8,42,48,.9) 0%,rgba(8,42,48,.78) 55%,rgba(8,42,48,.95) 100%),
+    url("https://perfectnations.com/wp-content/uploads/2026/11/pn-intelligence-island-of-plenty-1024x576.png") center 40%/cover no-repeat,#082A30; }
+#pn-intel .pi-close__g{ display:flex; flex-wrap:wrap; align-items:flex-end; justify-content:space-between; gap:18px; }
+#pn-intel .pi-close h2{ margin-top:8px; font-family:var(--hd); font-weight:600; font-size:clamp(2.1rem,3.8vw,3.25rem); line-height:.95; color:var(--tv) !important; text-wrap:balance; max-width:30ch; }
+#pn-intel .pi-close .pi-eb{ color:var(--tvd); }
+#pn-intel .pi-foot{ margin-top:22px; padding-top:12px; border-top:1px solid var(--thair); font-size:.8rem; line-height:1.5; color:var(--tvd); }
+
+/* arrival: each band rises softly as it comes on screen */
+#pn-intel.pi-js .pi-rise{ transition:opacity .9s ease, transform .9s var(--ease); }
+#pn-intel.pi-js .pi-rise:not(.is-in){ opacity:0; transform:translateY(18px); }
+
+@media (max-width:899px){
+  #pn-intel .pi-hero__g,#pn-intel .pi-eng,#pn-intel .pi-prod{ grid-template-columns:minmax(0,1fr); }
+  #pn-intel .pi-cards{ display:flex; gap:12px; overflow-x:auto; scroll-snap-type:x mandatory; scroll-padding-inline:var(--px); margin-left:calc(var(--px) * -1); margin-right:calc(var(--px) * -1); padding:2px var(--px) 8px; scrollbar-width:none; }
+  #pn-intel .pi-cards::-webkit-scrollbar{ display:none; }
+  #pn-intel .pi-cards > article{ flex:0 0 80%; scroll-snap-align:center; }
+  #pn-intel .pi-loop{ flex-direction:column; gap:14px; }
+  #pn-intel .pi-loop li:not(:last-child)::after{ right:auto; left:50%; top:auto; bottom:-11px; transform:translateX(-50%) rotate(135deg); }
+  #pn-intel .pi-row{ grid-template-columns:6.4em minmax(0,1fr) 3.8em; gap:8px; }
+}
+@media (max-width:560px){
+  #pn-intel .pi-acts .pi-btn{ flex:1 1 100%; }
+  #pn-intel .pi-mini{ grid-template-columns:minmax(0,1fr); }
+  #pn-intel .pi-kpis b{ font-size:1.6rem; }
+}
+@media (prefers-reduced-motion:reduce){
+  #pn-intel *,#pn-intel *::before,#pn-intel *::after{ animation:none !important; transition:none !important; }
+}
+</style>
+<div id="pn-intel">
+
+  <header class="pi-hero">
+    <div class="pi-in pi-hero__g">
+      <div>
+        <p class="pi-k">Perfect Nations Intelligence&#8482;</p>
+        <h1 class="pi-h1">Civilization Re-Defined.</h1>
+        <p class="pi-q">What if every nation had the intelligence, technology and capital architecture to ensure that no citizen was left without the basic necessities of life?</p>
+        <div class="pi-acts">
+          <a class="pi-btn" href="#pi-engine">See the Civilization Engine</a>
+          <a class="pi-btn pi-btn--line" href="https://perfectnations.com/contact/?about=briefing">Request a Nation Briefing</a>
+        </div>
+      </div>
+      <ol class="pi-four" aria-label="The four disciplines">
+        <li><span class="pi-ic" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.5"/><path d="M16 16l4.5 4.5"/></svg></span><div><b>Identify</b><span>Perfect Nations Intelligence to identify every human need.</span></div></li>
+        <li><span class="pi-ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3v3M5.6 5.6l2.1 2.1M3 12h3M18.4 5.6l-2.1 2.1M21 12h-3"/><path d="M8.5 15.5a4.5 4.5 0 1 1 7 0c-.8.8-1.2 1.6-1.2 2.5h-4.6c0-.9-.4-1.7-1.2-2.5z"/><path d="M10 21h4"/></svg></span><div><b>Design</b><span>Social innovation to design every solution.</span></div></li>
+        <li class="is-gold"><span class="pi-ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 20h16M6 20V10M10 20V10M14 20V10M18 20V10M3 8l9-5 9 5z"/></svg></span><div><b>Finance</b><span>Capital architecture to finance every possibility.</span></div></li>
+        <li><span class="pi-ic" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="9" r="2.4"/><path d="M3.5 19c.6-3.2 2.8-5 5.5-5s4.9 1.8 5.5 5M14.5 14.6c.8-.4 1.6-.6 2.5-.6 2.2 0 3.8 1.4 4.3 4"/></svg></span><div><b>Leave no one behind</b><span>Civilization design to leave no human behind.</span></div></li>
+      </ol>
+    </div>
+  </header>
+
+  <section class="pi-band pi-ivory" aria-labelledby="pi-four-h">
+    <div class="pi-in pi-rise">
+      <p class="pi-eb">Four disciplines, one system</p>
+      <h2 class="pi-h2" id="pi-four-h">Already running for 195 nations. Now joined into one intelligence.</h2>
+      <figure class="pi-fig">
+        <img src="https://perfectnations.com/wp-content/uploads/2026/11/pn-intelligence-everyday-plenty-1024x576.png" srcset="https://perfectnations.com/wp-content/uploads/2026/11/pn-intelligence-everyday-plenty-768x432.png 768w, https://perfectnations.com/wp-content/uploads/2026/11/pn-intelligence-everyday-plenty-1024x576.png 1024w" sizes="(max-width:899px) 100vw, 1100px" width="1024" height="576" loading="lazy" decoding="async" alt="Illustration of a busy open-air market with fresh food, children reading under a tree, a community clinic, a water fountain and solar canopies by the sea">
+        <figcaption><b>Food, water, shelter, energy, education, health and livelihood. For every citizen.</b><small>AI-generated illustration</small></figcaption>
+      </figure>
+      <div class="pi-cards">
+        <article class="pi-card"><small>01 Identify</small><h3>Every human need, counted</h3><strong>195</strong><p>nation blueprints, each measuring the seven standards from primary sources.</p><p class="pi-next"><b>Next:</b> coverage updated every quarter from surveys, prices and satellite data.</p></article>
+        <article class="pi-card"><small>02 Design</small><h3>Every solution, designed</h3><strong>52</strong><p>Solutions designed by Perfect Nations, and a playbook for every standard.</p><p class="pi-next"><b>Next:</b> a Solution drafted for any nation in minutes, from its own data.</p></article>
+        <article class="pi-card is-gold"><small>03 Finance</small><h3>Every possibility, financed</h3><strong>81</strong><p>instruments, each proved by a real deal; 2,696 instruments on record across 194 nations.</p><p class="pi-next"><b>Next:</b> each gap matched to its instrument, and funders screened by mandate.</p></article>
+        <article class="pi-card"><small>04 Leave no one behind</small><h3>Every citizen, above the line</h3><strong>7</strong><p>basic standards of living. Coverage holds a nation at its weakest one.</p><p class="pi-next"><b>Next:</b> every citizen counted, until the last one crosses the Living Line.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="pi-band pi-dark" aria-labelledby="pi-loop-h">
+    <div class="pi-in pi-rise">
+      <p class="pi-eb">The loop</p>
+      <h2 class="pi-h2" id="pi-loop-h">Not a report once a decade. A loop that runs every quarter.</h2>
+      <ol class="pi-loop">
+        <li><small>Identify</small><span>Who is below the Living Line, standard by standard.</span></li>
+        <li><small>Design</small><span>The Solution, built on what the nation owns.</span></li>
+        <li class="is-gold"><small>Finance</small><span>The instrument that closes the gap.</span></li>
+        <li><small>Deliver</small><span>Every dollar tracked to a household, a farm, a school.</span></li>
+        <li><small>Measure</small><span>Coverage and the Gap, updated, and the loop begins again.</span></li>
+      </ol>
+      <p class="pi-note">We do not build the models. We build what the models are for: sovereign wealth, development finance and universal human prosperity, in one system.</p>
+    </div>
+  </section>
+
+  <section class="pi-band pi-engine" id="pi-engine" aria-labelledby="pi-engine-h">
+    <div class="pi-in pi-rise">
+      <div style="display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:12px">
+        <div>
+          <p class="pi-eb" style="color:#6EC8C4">The first product &#183; Perfect Capita Civilization Engine&#8482;</p>
+          <h2 class="pi-h2" id="pi-engine-h">Perfect Barbados, live.</h2>
+        </div>
+        <button type="button" class="pi-reset" data-pi="reset">Reset to today</button>
+      </div>
+      <div class="pi-eng">
+        <div>
+          <div class="pi-panel">
+            <small>Coverage, standard by standard</small>
+            <div data-pi="rows"></div>
+          </div>
+          <div class="pi-panel is-teal">
+            <label class="pi-ai"><b>Perfect Nations Intelligence lowers the cost of living</b><output data-pi="aiv">0%</output><span>Cheaper food, energy, care and learning lower Perfect Capita itself.</span><input type="range" min="0" max="60" step="1" value="0" data-pi="ai" aria-label="Cost reduction from Perfect Nations Intelligence, per cent"></label>
+          </div>
+        </div>
+        <div aria-live="polite">
+          <div class="pi-gap"><small>The Gap, a year</small><strong data-pi="gap">$337.8m</strong><span data-pi="gapnote">Today: up to $337.8m a year, 4.2% of GDP.</span></div>
+          <ul class="pi-kpis">
+            <li><small>Perfect Capita, a person a year</small><b class="is-money" data-pi="pc">$6,204</b></li>
+            <li><small>The price of Perfect Barbados</small><b class="is-money" data-pi="price">$1.75bn</b></li>
+            <li><small>Coverage, held by <span data-pi="weak">food</span></small><b data-pi="cov">69</b></li>
+            <li><small>Barbadians below the Living Line</small><b data-pi="below">~88,000</b></li>
+          </ul>
+          <div class="pi-inst"><small>The instrument for the weakest standard</small><b data-pi="iname">The Blue Food Swap</b><span data-pi="iline">Refinance costly debt with guaranteed debt and bind the savings to local farms, fisheries and sea farming.</span></div>
+        </div>
+      </div>
+      <p class="pi-fine">The Living Line: the basic standard of living every citizen should stand above: food, water, shelter, energy, education, health and livelihood. Starting figures from the <a href="https://perfectnations.com/blueprints/barbados/">Barbados blueprint</a>: food 69% (FAO, 2022), water 99% (WHO/UNICEF, 2024), shelter 99.7% (Census, 2021), energy 100 (IRENA and World Bank, 2023), education 97 (UNESCO, 2024), health 82 (WHO and UHC2030, 2023), livelihood 82.5% (IDB and BSS, 2016); 282,623 Barbadians (World Bank, 2025). Perfect Capita and the Gap are Perfect Nations estimates in 2025 US dollars; the Gap is an upper bound. The sliders are scenarios, not forecasts.</p>
+    </div>
+  </section>
+
+  <section class="pi-band pi-paper" aria-labelledby="pi-prod-h">
+    <div class="pi-in pi-rise">
+      <p class="pi-eb">What nations and funders receive</p>
+      <h2 class="pi-h2" id="pi-prod-h">One intelligence, five ways in.</h2>
+      <div class="pi-prod">
+        <a class="pi-lead" href="#pi-engine"><small>The first product</small><b>Perfect Capita Civilization Engine&#8482;</b><span>A nation&#8217;s seven standards, its assets and its instruments in one live model. Move coverage or cost, and Perfect Capita, Coverage and the Gap move. The centrepiece of every Blueprint Lab.</span><i>Open the Engine: Barbados</i></a>
+        <div class="pi-mini">
+          <a href="https://perfectnations.com/blueprints/barbados/nation-briefing/"><small>Mandate I &#183; 3 hours</small><b>The Nation Briefing</b><span>The Gap, named and sized.</span></a>
+          <a href="https://perfectnations.com/blueprints/barbados/blueprint-lab/"><small>Mandate II &#183; 3 days</small><b>The Blueprint Lab</b><span>The structure, drawn, with the Engine live in the room.</span></a>
+          <a href="https://perfectnations.com/blueprints/barbados/sovereign-mandate/"><small>Mandate III &#183; End to end</small><b>The Sovereign Mandate</b><span>A structure ready for market, through to close.</span></a>
+          <a href="https://perfectnations.com/for-funders/"><small>For funders &#183; By subscription</small><b>The Intelligence Feed</b><span>Deals, gaps and Solutions by nation, every week.</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="pi-close" aria-labelledby="pi-close-h">
+    <div class="pi-in">
+      <div class="pi-close__g">
+        <div>
+          <p class="pi-eb pn-vision">Built for the age of super intelligence</p>
+          <h2 id="pi-close-h">Good governance first. Then innovative finance. Then Perfect Nations Intelligence that proves every result.</h2>
+        </div>
+        <a class="pi-btn" href="https://perfectnations.com/contact/">Start a conversation</a>
+      </div>
+      <p class="pi-foot">Illustrations are AI-generated; they are not photographs. Figures from the Perfect Nations data of 24 November 2026: 195 blueprints, 52 Solutions, 81 instruments, and 2,696 instruments on record across 194 nations. Scope and fees are agreed in writing before any work begins.</p>
+    </div>
+  </section>
+</div>
+<script>
+(function () {
+  var R = document.getElementById('pn-intel');
+  if (!R) { return; }
+  R.classList.add('pi-js');
+  var still = window.matchMedia ? window.matchMedia('(prefers-reduced-motion: reduce)').matches : false;
+  var parts = R.querySelectorAll('.pi-rise');
+  var i;
+  if (still || !('IntersectionObserver' in window)) {
+    for (i = 0; i < parts.length; i++) { parts[i].classList.add('is-in'); }
+  } else {
+    var io = new IntersectionObserver(function (seen) {
+      seen.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('is-in'); io.unobserve(e.target); } });
+    }, { threshold: 0.15 });
+    for (i = 0; i < parts.length; i++) { io.observe(parts[i]); }
+  }
+  /* the light that follows the cursor across the hero (laptops only) */
+  var hero = R.querySelector('.pi-hero');
+  var fine = window.matchMedia ? window.matchMedia('(hover: hover) and (pointer: fine)').matches : false;
+  if (hero ? (fine ? !still : false) : false) {
+    hero.addEventListener('pointermove', function (e) {
+      var b = hero.getBoundingClientRect();
+      hero.style.setProperty('--mx', ((e.clientX - b.left) / b.width * 100).toFixed(1) + '%');
+      hero.style.setProperty('--my', ((e.clientY - b.top) / b.height * 100).toFixed(1) + '%');
+    });
+  }
+  /* the Perfect Capita Civilization Engine, policy mode for Barbados */
+  var P = 282623;
+  var U = { Food: 2190.36, Water: 22.63, Energy: 264.45, Education: 956.44, Health: 535.71, SL: 2234.11 };
+  var TODAY = { Food: 69, Water: 99, Shelter: 99.7, Energy: 100, Education: 97, Health: 82, Livelihood: 82.5 };
+  var NAMES = ['Food', 'Water', 'Shelter', 'Energy', 'Education', 'Health', 'Livelihood'];
+  var INST = {
+    Food: ['The Blue Food Swap', 'Refinance costly debt with guaranteed debt and bind the savings to local farms, fisheries and sea farming.'],
+    Water: ['Water Security Program-for-Results', 'Funds released as safe water reaches homes, verified connection by connection.'],
+    Shelter: ['A social bond for homes', 'Proceeds bound to durable homes with a safe toilet, reported home by home.'],
+    Energy: ['A sovereign green bond', 'Solar and storage financed against the savings on imported fuel.'],
+    Education: ['Every Child, a Reader', 'Results-based finance released as children read, checked by short reading tests.'],
+    Health: ['The Health Dividend', 'Debt-for-health savings that finance a family doctor for every household.'],
+    Livelihood: ['The Blue Enterprise Fund', 'Credit guarantees for fishers, boat builders and small tourism firms.']
+  };
+  var c = {}, ai = 0;
+  var rowsEl = R.querySelector('[data-pi="rows"]');
+  if (!rowsEl) { return; }
+  var inputs = {}, outs = {}, rows = {};
+  NAMES.forEach(function (n) {
+    var row = document.createElement('label');
+    row.className = 'pi-row';
+    row.innerHTML = '<b>' + n + '</b><input type="range" min="50" max="100" step="0.5" aria-label="' + n + ' coverage, per cent"><output></output>';
+    rowsEl.appendChild(row);
+    rows[n] = row; inputs[n] = row.querySelector('input'); outs[n] = row.querySelector('output');
+    inputs[n].addEventListener('input', function () { c[n] = parseFloat(this.value); draw(); });
+  });
+  var aiIn = R.querySelector('[data-pi="ai"]');
+  aiIn.addEventListener('input', function () { ai = parseInt(this.value, 10); draw(); });
+  function set(k, v) { var el = R.querySelector('[data-pi="' + k + '"]'); if (el) { el.textContent = v; } }
+  function money(x) {
+    if (x >= 1e9) { return '$' + (x / 1e9).toFixed(2) + 'bn'; }
+    if (x >= 1e6) { return '$' + (x / 1e6).toFixed(1) + 'm'; }
+    return '$' + Math.round(x).toLocaleString('en-US');
+  }
+  function pct(v) { return (v % 1 ? v.toFixed(1) : String(v)) + '%'; }
+  function reset() {
+    NAMES.forEach(function (n) { c[n] = TODAY[n]; inputs[n].value = TODAY[n]; });
+    ai = 0; aiIn.value = 0; draw();
+  }
+  function draw() {
+    var k = 1 - ai / 100;
+    var cov = { Food: c.Food, Water: c.Water, Energy: c.Energy, Education: c.Education, Health: c.Health, SL: Math.min(c.Shelter, c.Livelihood) };
+    var pc = 0, gap = 0;
+    Object.keys(U).forEach(function (s) { pc += U[s] * k; gap += P * (1 - cov[s] / 100) * U[s] * k; });
+    var weak = NAMES[0];
+    NAMES.forEach(function (n) { if (c[n] < c[weak]) { weak = n; } });
+    NAMES.forEach(function (n) { outs[n].textContent = pct(c[n]); rows[n].classList.toggle('is-far', n === weak); });
+    var d = gap - 337.8e6;
+    set('aiv', ai + '%');
+    set('gap', money(gap));
+    set('gapnote', Math.abs(d) < 5e4 ? 'Today: up to $337.8m a year, 4.2% of GDP.' : (d < 0 ? money(-d) + ' less than today' : money(d) + ' more than today') + ' (today: $337.8m).');
+    set('pc', money(pc));
+    set('price', money(pc * P));
+    set('cov', c[weak] % 1 ? c[weak].toFixed(1) : String(c[weak]));
+    set('weak', weak.toLowerCase());
+    set('below', '~' + (Math.round(P * (1 - c[weak] / 100) / 1000) * 1000).toLocaleString('en-US'));
+    set('iname', INST[weak][0]);
+    set('iline', INST[weak][1]);
+  }
+  var rb = R.querySelector('[data-pi="reset"]');
+  if (rb) { rb.addEventListener('click', reset); }
+  reset();
+})();
+</script>

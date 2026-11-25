@@ -24,7 +24,8 @@ ROOT = Path(__file__).resolve().parent.parent
 PAGES = ROOT / 'pages'
 DATA = ROOT / 'data'
 SITE = 'https://perfectnations.com'
-VERSION = '13.3'  # the hero globe's borders are fine engraved bronze lines, not thick dark ones (hero v8.2; the President and CEO, 24 Nov 2026)
+VERSION = '13.4'  # the hero globe's borders are fine engraved bronze lines, not thick dark ones (hero v8.2; the President and CEO, 24 Nov 2026)
+# 13.3: our AI is called Perfect Nations Intelligence; other people's programmes keep their own word (Preeti Sinha, President and CEO, 24 Nov 2026)
 # 13.2: Now possible: AI joins innovative finance; a slim band before the Solutions, the AI line on each Solution, and AI in Governance first and the Cup (Preeti Sinha, President and CEO, 24 Nov 2026)
 # 13.1: Palestine links to /blueprints/state-of-palestine/ (hero v8.1, nations menu v3.2), 21 Nov 2026
 # 13.0: the Mission, the hero, Governance first, Imagine, the Studio and the Solutions name innovative financing for development alone; no Steward named (the President and CEO, 16 Nov 2026)
@@ -139,7 +140,7 @@ def solution_card(s, i):
     out.append('</div>')
     if s.get('challenge') and s.get('advises'):
         # v13.2: Now possible with AI, after the finance (24 Nov 2026)
-        ai = '<div class="pnso-ai"><dt>Now possible with AI</dt><dd>%s</dd></div>' % ascii_html(s['ai']) if s.get('ai') else ''
+        ai = '<div class="pnso-ai"><dt>Now possible with Perfect Nations Intelligence</dt><dd>%s</dd></div>' % ascii_html(s['ai']) if s.get('ai') else ''
         out.append('<dl class="pnso-x">%s%s</dl>' % (''.join(
             '<div><dt>%s</dt><dd>%s</dd></div>' % (t, ascii_html(s[k]))
             for t, k in (('The challenge', 'challenge'), ('What Perfect Nations advises', 'advises'))), ai))
