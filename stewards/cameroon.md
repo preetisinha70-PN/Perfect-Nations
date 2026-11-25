@@ -94,3 +94,21 @@ Opened 23 November 2026.
 - The expiry dates of the IMF arrangements are not stated in the pages opened.
 - No water, shelter or education enterprise verified yet; upOwa rests on 2023 evidence; Efarm.cm and Mpokem Gaz show no reach figures.
 - The seven standards and the Sovereign Assets could not be re-read at source. Energy (about 251 kWh a person a year, against the Living Line of 1,000; Ember, 2024) sets Coverage at 25.1.
+
+## Full edition, wave 1 (25 November 2026)
+
+Brief: Project doc claude/full-blueprints-151.md. Researched 25 November 2026; World Bank lines from the projects API (search.worldbank.org/api/v3, Board approval date and current commitment) and Finances One.
+
+Now on the page: 5 lines in the record, 20 in Capital already committed, 6 enterprises, 5 Sovereign Assets.
+
+Added to Capital already committed:
+
+- **Electricity Transmission and Reform Project, additional financing ($50M):** World Bank · Approved 13 June 2026. EUR 43 million more for the national grid, so the power of the new dams reaches homes and factories. https://projects.worldbank.org/en/projects-operations/project-detail/P515198
+- **Enhancing Connectivity and Resilience in the Far North ($81M):** World Bank · Approved 11 June 2026. Roads and services in the Far North, the region hit hardest by conflict and climate shocks. https://projects.worldbank.org/en/projects-operations/project-detail/P515832
+- **Adaptive Safety Nets and Economic Inclusion Project ($38.6M):** World Bank · Approved 18 August 2025. Cash transfers and help to earn a living for the poorest households, ready to scale up when a shock strikes. https://projects.worldbank.org/en/projects-operations/project-detail/P510425
+- **Trade finance for AFG Bank Cameroon (€40M):** African Development Bank Group · Approved 21 October 2026 · Credit line of up to €30M over 3.5 years and a transaction guarantee. Helps businesses, women and young people above all, import equipment for industry, agro-industry and telecommunications. https://www.afdb.org/en/news-and-events/press-releases/cameroon-african-development-bank-group-grants-97726
+- **Transaction guarantee for CCA-Bank (€25M):** African Development Bank Group · Approved 1 December 2025, Abidjan. Risk cover so Crédit Communautaire d’Afrique-Bank can finance more trade for small and medium-sized enterprises. https://www.afdb.org/en/news-and-events/press-releases/cameroon-african-development-bank-group-approves-eu25-million-trade-finance-facility-enable-credit-communautaire-dafrique-bank-expand-support-smes-89211
+- **Skills for Employability and Entrepreneurship in the Far North (CAP2E) (€136M):** African Development Bank Group · Loan agreements signed 29 September 2025, Yaoundé. Skills, jobs and modern infrastructure for young people in the conflict-affected Far North. https://www.afdb.org/en/news-and-events/press-releases/cameroon-afdb-sign-eu136-million-loan-deal-develop-skills-and-entrepreneurship-far-north-87284
+- **Ngaoundéré–Garoua road (PAST4) (€330.48M):** African Development Bank Group · Signed 19 March 2025, Yaoundé · 246 km of the Douala–N’Djamena corridor. Rebuilds and widens a key section of the corridor that carries trade from the port of Douala to Chad and the Central African Republic. https://www.afdb.org/en/news-and-events/press-releases/cameroon-african-development-bank-group-approves-eu330-million-loan-upgrade-ngaoundere-garoua-road-improve-connectivity-and-strengthen-regional-integration-82017
+
+Still to come: the interim Nation Portrait (Canva, colours edition) and the Letter to the Nations post in WordPress, published after the pull request is merged.

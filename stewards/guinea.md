@@ -92,3 +92,26 @@ Sources opened on 17 November 2026 unless stated.
 - African Development Bank, Islamic Development Bank, BADEA, Afreximbank, Green Climate Fund and MIGA instruments for Guinea since 2024: not yet searched.
 - No enterprise yet for water, shelter, energy or education.
 - The seven standards and the asset figures were not re-read at source.
+
+## Full edition, wave 1 (25 November 2026)
+
+Brief: Project doc claude/full-blueprints-151.md. Researched 25 November 2026; World Bank lines from the projects API (search.worldbank.org/api/v3, Board approval date and current commitment) and Finances One.
+
+Now on the page: 5 lines in the record, 18 in Capital already committed, 5 enterprises, 5 Sovereign Assets.
+
+Added to the record:
+
+- **$200bn:** Investment the Simandou 2040 programme expects over fifteen years; the African Development Bank pledged its support in January 2026. African Development Bank, 2026, https://www.afdb.org/fr/news-and-events/press-releases/guinee-la-banque-africaine-de-developpement-sengage-aux-cotes-du-pays-pour-reussir-le-programme-simandou-2040-un-projet-strategique-de-developpement-90356
+
+Added to Capital already committed:
+
+- **Guinea Electricity Access Scale Up Project, Phase 2, further financing ($27.8M):** World Bank · Approved 29 September 2026. More households connected to power, adding to the US$232 million second phase approved in June 2025. https://projects.worldbank.org/en/projects-operations/project-detail/P518505
+- **Guinea–Mali 225 kV interconnection, additional financing ($25.79M):** African Development Fund · Approved 10 December 2025, Abidjan · Loan of about $22M and grant of $3.79M. Completes the power line that will carry Guinea’s hydropower to Mali. https://www.afdb.org/en/news-and-events/press-releases/african-development-fund-grants-guinea-nearly-26-million-additional-funding-develop-electricity-interconnection-mali-89562
+- **Fertiliser for 45,000 smallholders (MAFDE guarantee) ($2.2M):** African Development Bank Group · Approved 8 October 2026, Abidjan · Partial credit guarantee. A guarantee so suppliers can sell fertiliser on credit to 45,000 small farmers, faster and cheaper. https://www.afdb.org/fr/news-and-events/press-releases/guinee-banque-africaine-developpement-approuve-22-97647
+- **Simandou iron ore: mines, railway and port ($11.6bn):** Operations started November 2025 · First shipment December 2025 · State of Guinea holds 15%. The capital needed for the southern blocks (SimFer: Rio Tinto and Chinese partners); the northern blocks, held by WCS, are additional. The 600 km railway and port are shared, with the state holding a 15% free carried stake. https://www.miningweekly.com/article/simandou-iron-ore-project-guinea-update-2025-12-12
+
+### Open gaps (wave 1)
+
+- Eighteen register lines. Secondary source: the Simandou capital figure (Mining Weekly); Rio Tinto confirms the first shipment and the ownership, not the figure.
+
+Still to come: the interim Nation Portrait (Canva, colours edition) and the Letter to the Nations post in WordPress, published after the pull request is merged.

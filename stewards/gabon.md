@@ -68,3 +68,36 @@ Sources opened on 16 November 2026 unless stated.
 - The seven standards and the asset figures were not re-read at source on 16 November 2026.
 
 Last weekly review: 16 November 2026.
+
+## Full edition, wave 1 (25 November 2026)
+
+Brief: Project doc claude/full-blueprints-151.md. Researched 25 November 2026; World Bank lines from the projects API (search.worldbank.org/api/v3, Board approval date and current commitment) and Finances One.
+
+Now on the page: 5 lines in the record, 15 in Capital already committed, 5 enterprises, 5 Sovereign Assets.
+
+Added to the record:
+
+- **$1bn:** Oil-backed prefinancing with Trafigura, April 2026, seven years. World Bank, 2026, https://documents1.worldbank.org/curated/en/099102526143532234/pdf/P512960-6681a191-8a38-41c7-b257-7f2ae412862a.pdf
+
+Added to Capital already committed:
+
+- **Gabon Urban Development Project (PADIG) ($150M):** World Bank · Approved 11 June 2025. Climate-resilient streets, drainage and public facilities, and less flooding, in the secondary cities. https://projects.worldbank.org/en/projects-operations/project-detail/P177372
+- **Oil-backed prefinancing with Trafigura ($1bn):** Signed 15 April 2026 · Seven years · Repaid from oil deliveries. About XOF 610 billion to ease the budget; the World Bank notes it rests on oil deliveries, so it depends on output and prices. https://documents1.worldbank.org/curated/en/099102526143532234/pdf/P512960-6681a191-8a38-41c7-b257-7f2ae412862a.pdf
+- **Food sovereignty investment conventions (XOF 775bn+):** Signed 4 May 2026, Libreville · Five conventions · Ministers of the Economy and of Agriculture. Five conventions worth more than XOF 775 billion, over €1.2 billion, for farms and food processing, so that more of what Gabon eats is grown and made at home. https://gouvernement.ga/2026/05/04/souverainete-alimentaire-signature-de-cinq-5-conventions-dun-montant-global-de-plus-de-775-milliards-de-fcfa-par-les-ministres-en-charge-de-leconomie-et-de-lagriculture/
+- **Afreximbank loan and memorandum of understanding (200M):** Signed 27 June 2025, Abuja, at the Afreximbank Annual Meetings · Loan to the Ministry of Economy and Finance. A loan for economic reforms, signed with a memorandum for about US$3 billion to develop the manganese value chain, the railway and energy. https://ecomatin.net/energie-minerais-infrastructures-afreximbank-et-le-gabon-signent-deux-accords-de-financement-a-hauteur-de-4-milliards
+- **Afreximbank mobilisation agreement for priority investments (XOF 1,800bn):** Agreed 17 September 2025, Libreville. An agreement to mobilise about XOF 1,800 billion, close to US$3 billion, for the investments of the national development plan. https://www.gabonreview.com/le-gabon-conclut-un-accord-de-3-milliards-de-dollars-avec-afreximbank-pour-soutenir-ses-investissements-prioritaires/
+- **Airtel Mobile Money Gabon ($27.6M):** IFC · Gross exposure as of 31 July 2026. IFC financing for mobile money, which brings payments and savings to people without a bank account. https://financesone.worldbank.org/countries/gabon
+
+Added to Already working in Gabon:
+
+- **Food, Agri-Vert:** A centre that processes and sells farm produce, opened in February 2026 at Bambouchine, Libreville. allAfrica, 2026, https://fr.allafrica.com/stories/202602220064.html
+- **Energy, Solar Box Gabon:** A Libreville company, founded in 2016, that rents and sells solar equipment. Solar Impulse Foundation, https://solarimpulse.com/companies/solar-box-gabon
+- **Education, Finance Solid’:** Financial education for vulnerable people, so families can plan, save and borrow safely. allAfrica, 2026, https://fr.allafrica.com/stories/202606290206.html
+- **Livelihood, Airtel Money Gabon:** Mobile money for payments and savings, backed by IFC financing of US$27.6 million. World Bank Group, 2026, https://financesone.worldbank.org/countries/gabon
+
+### Open gaps (wave 1)
+
+- An honest short list of fifteen: the World Bank has two active operations in Gabon (projects API, 25 November 2026); most capital comes from Eurobonds, the regional market and commodity prefinance.
+- Secondary sources: the Afreximbank loan and memorandum (EcoMatin; Financial Afrik gives the loan in dollars), the mobilisation agreement (Gabonreview). The French Treasury reported an AFD–EU financing of €203 million for the Transgabonais (May 2026) that may overlap the AFD line already listed; not added.
+
+Still to come: the interim Nation Portrait (Canva, colours edition) and the Letter to the Nations post in WordPress, published after the pull request is merged.

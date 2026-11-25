@@ -88,3 +88,25 @@ All pages opened on 17 November 2026.
 - No enterprise yet for water, shelter, education or livelihood.
 - Green Climate Fund, Islamic Development Bank, EBID and bilateral lines (AFD, KfW, JICA and others) not yet read.
 - Learning outcomes date from 2019.
+
+## Full edition, wave 1 (25 November 2026)
+
+Brief: Project doc claude/full-blueprints-151.md. Researched 25 November 2026; World Bank lines from the projects API (search.worldbank.org/api/v3, Board approval date and current commitment) and Finances One.
+
+Now on the page: 5 lines in the record, 19 in Capital already committed, 5 enterprises, 5 Sovereign Assets.
+
+Added to Capital already committed:
+
+- **Energy Sector Governance and Competitiveness Support Programme, phase 2 (PAGSEC-II) ($144.34M):** African Development Bank Group · Approved 21 October 2026, Abidjan · Budget support loan. XOF 80 billion for reforms that widen access to energy and help the private sector grow. https://www.afdb.org/fr/news-and-events/press-releases/niger-groupe-banque-africaine-developpement-97728
+- **Energy Sector Governance and Competitiveness Support Programme, phase 1 (PAGSEC-I) (XOF 81bn):** African Development Fund · Approved 26 September 2025 · Fully disbursed 17 October 2025 · UA 105 million. The first phase of the same programme, paid in full within three weeks of approval. https://www.afdb.org/fr/documents/niger-programme-dappui-gouvernance-secteur-98673
+- **Youth Agripreneurship and Technological and Financial Innovation Programme (PIDAJ) ($180.6M):** African Development Bank Group · Approved 24 April 2026, Abidjan · All eight regions. Five agricultural vocational high schools, an innovation centre and finance for young farmers who turn food into a business. https://www.afdb.org/fr/news-and-events/press-releases/niger-un-financement-de-180-millions-de-dollars-pour-soutenir-les-jeunes-agripreneurs-92876
+- **Drinking water and sanitation for Zinder, Mirriah and nearby villages ($165.5M):** African Development Fund · Loan · Announced 7 November 2025. Safe water and sanitation for more than a million people in the Zinder region. https://www.afdb.org/fr/news-and-events/press-releases/niger-la-banque-africaine-de-developpement-accorde-1655-millions-de-dollars-pour-ameliorer-lacces-leau-potable-et-lassainissement-de-plus-dun-million-de-personnes-88433
+- **Extended Credit Facility, augmentation (SDR 79M):** IMF · Eighth review completed 13 March 2026 · Augmentation equal to 60% of quota. More IMF financing to meet the nation’s balance-of-payments needs. https://www.imf.org/-/media/files/publications/cr/2026/french/1nerfa2026001.pdf
+- **Treasury bonds on the regional market (UMOA-Titres) (XOF 29.6bn):** Auction of 23 April 2026 · 3 and 5-year bonds · XOF 35 billion offered · Due April 2029 and April 2031. XOF 29.582 billion raised from investors across the West African monetary union; every bid was accepted. https://www.umoatitres.org/wp-content/uploads/2026/04/Annonce-au-MTP-NE-ES-23.04.2026.pdf
+- **Treasury bills and bonds with a buyback (UMOA-Titres) (XOF 37.5bn):** Auction of 24 February 2026 · Weighted average yield 10.07% · XOF 12 billion bought back. A new issue joined to the early buyback of older debt, to spread the nation’s repayments. https://www.umoatitres.org/wp-content/uploads/2026/02/Annonce-au-MTP-NE-EC-24.02.2026.pdf
+
+### Open gaps (wave 1)
+
+- Nineteen register lines: every active World Bank operation of 2025 and 2026 is already listed.
+
+Still to come: the interim Nation Portrait (Canva, colours edition) and the Letter to the Nations post in WordPress, published after the pull request is merged.

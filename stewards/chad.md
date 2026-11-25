@@ -89,3 +89,26 @@ Opened 23 November 2026.
 - Three solar projects near N’Djamena may overlap: the African Development Bank’s Gassi and Lamadji plants (two of 15 MWp), the World Bank financing of plants at Gassi, Lamadji and Klessoum reported by EcoMatin on 13 May 2025, and the bank pool’s two plants of 15 MW east of the city.
 - The European Union amount differs by source: FCFA 53 billion (EU Delegation) and €50 million, about FCFA 32 billion (EcoMatin).
 - No energy, education or shelter enterprise verified yet. Searched and not listed: GAZINT, a biogas start-up in N’Djamena (TRT Afrika, undated, a sales target only); Alternaprod Tchad, solar kits by subscription (MIGA, proposed guarantee of 2019, no later evidence); AgriOudah (Tony Elumelu Foundation 2026 cohort and PROJIACE 2026; its products are not stated); Dawa Mobile Health, Lake Chad (MIT Solve 2025, submitted only); CONFRISOL by Ghazi Energy Group (UNDP test, 2021); the Toumaï stove (UNDP, 2020, no company named); MAKANATNA, farm machinery (Entrepreneurship World Cup, 2019).
+
+## Full edition, wave 1 (25 November 2026)
+
+Brief: Project doc claude/full-blueprints-151.md. Researched 25 November 2026; World Bank lines from the projects API (search.worldbank.org/api/v3, Board approval date and current commitment) and Finances One.
+
+Now on the page: 5 lines in the record, 18 in Capital already committed, 5 enterprises, 5 Sovereign Assets.
+
+Added to the record:
+
+- **$170M:** World Bank financing for roads that connect Chad’s farming regions and its neighbours, approved 18 February 2025. World Bank, 2025, https://projects.worldbank.org/en/projects-operations/project-detail/P180915
+
+Added to Capital already committed:
+
+- **Chad Connectivity and Integration Project ($170M):** World Bank · Approved 18 February 2025. Roads that link farming regions to markets and Chad to its neighbours. https://projects.worldbank.org/en/projects-operations/project-detail/P180915
+- **Sahel Resiland Chad: Building Resilience through Sustainable Natural Resource Management ($100M):** World Bank · Approved 26 February 2026. Restores land, water and pasture so farmers and herders can stay and earn through droughts. https://projects.worldbank.org/en/projects-operations/project-detail/P509357
+- **N’Djamena Urban Resilience Project ($50M):** World Bank · Approved 31 March 2025. Drainage and flood protection for the capital, where the river floods have displaced thousands. https://projects.worldbank.org/en/projects-operations/project-detail/P509253
+- **Basic Education Transformation Project ($20M):** Islamic Development Bank · Signed 19 June 2026, Baku. Part of a multi-partner programme to give every Chadian child a basic education. https://www.isdb.org/news/isdb-signs-development-financing-agreements-with-member-countries-during-the-2026-isdb-group-annual-meetings-in-baku
+
+### Open gaps (wave 1)
+
+- Eighteen register lines. The World Bank lists a US$135 million Energy Access Scale Up Project for 24 November 2026; its approval was not confirmed, so it is not on the page.
+
+Still to come: the interim Nation Portrait (Canva, colours edition) and the Letter to the Nations post in WordPress, published after the pull request is merged.

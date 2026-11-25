@@ -86,3 +86,26 @@ Sources opened on 17 November 2026 unless stated.
 - The World Bank approval dates of the RESPITE and SECRAMP additional financings.
 - No enterprise yet for water or shelter.
 - Learning outcomes not measured; lower-secondary completion used.
+
+## Full edition, wave 1 (25 November 2026)
+
+Brief: Project doc claude/full-blueprints-151.md. Researched 25 November 2026; World Bank lines from the projects API (search.worldbank.org/api/v3, Board approval date and current commitment) and Finances One.
+
+Now on the page: 5 lines in the record, 17 in Capital already committed, 6 enterprises, 5 Sovereign Assets.
+
+Added to Capital already committed:
+
+- **Liberia Forest Economy Project (LiFE-P) ($45.4M):** World Bank · Approved 19 November 2026. Community forests, forest governance and an aim of 50,000 new jobs from forests that stay standing. https://projects.worldbank.org/en/projects-operations/project-detail/P508345
+- **Southeastern Corridor Road Asset Management Project ($23M):** World Bank · Approved 26 June 2025. The first financing for the road to the south-east, before the further US$18 million of March 2026. https://projects.worldbank.org/en/projects-operations/project-detail/P509192
+- **Sustainable Urban and Peri-Urban Agriculture for Women Empowerment Project ($4.73M):** World Bank · Approved 11 September 2026. Market gardens and income for women around Monrovia. https://projects.worldbank.org/en/projects-operations/project-detail/P510360
+- **Liberia: Rural Economic Transformation Project ($3.6M):** World Bank · Approved 18 June 2026. Support for farm value chains in rural Liberia. https://projects.worldbank.org/en/projects-operations/project-detail/P517005
+- **Fiscal Sustainability and Mining Sector Governance Support Programme, phase 1 ($16.7M):** African Development Bank Group · Approved, announced 4 June 2026 · Budget support. Reforms that widen the fiscal space for public services and bring more of the mining revenue to the nation. https://www.afdb.org/en/news-and-events/press-releases/liberia-african-development-bank-approves-167-million-strengthen-fiscal-sustainability-and-mining-governance-94159
+- **Private Sector Development grant (€25M):** European Union · Grant agreement signed in Monrovia by the Minister of Finance and the EU Ambassador. A grant to build the private sector and the jobs it creates. https://www.mfdp.gov.lr/index.php/media-center/press-release/gol-and-eu-sign-25-million-financing-agreement-to-boost-private-sector-development
+
+Amounts or notes filled in on lines already listed: Regional Distributed Access through Renewable Energy.
+
+### Open gaps (wave 1)
+
+- Seventeen register lines; the release does not date the EU grant signing (published by the Ministry of Finance in 2025).
+
+Still to come: the interim Nation Portrait (Canva, colours edition) and the Letter to the Nations post in WordPress, published after the pull request is merged.

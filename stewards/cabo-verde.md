@@ -75,3 +75,34 @@ Furthest from reach: Livelihood (65%). Of Cabo Verdeans live below US$8.30 a day
 - The seven standards were not re-read at source on 16 November 2026.
 
 Last weekly review: 16 November 2026.
+
+## Full edition, wave 1 (25 November 2026)
+
+Brief: Project doc claude/full-blueprints-151.md. Researched 25 November 2026; World Bank lines from the projects API (search.worldbank.org/api/v3, Board approval date and current commitment) and Finances One.
+
+Now on the page: 5 lines in the record, 19 in Capital already committed, 5 enterprises, 5 Sovereign Assets.
+
+Added to the record:
+
+- **$1.08bn:** World Bank Group commitments to Cabo Verde across 56 projects, as of 30 September 2026. World Bank, 2026, https://financesone.worldbank.org/countries/Cabo%20Verde
+- **€147M:** For the ports: an EIB framework loan of €114 million (2024) and an EU investment grant of €33.3 million (December 2025), the Blue Economy Sustainable Ports Facility. EIB, 2026, https://www.eib.org/en/press/all/2026-015-eib-global-signs-eur34-million-eu-grant-to-support-sustainable-ports-in-cabo-verde-under-global-gateway
+
+Added to Capital already committed:
+
+- **Improving Connectivity and Urban Infrastructure in Cabo Verde ($40M):** World Bank · Approved 17 March 2026. Roads, urban works and connections between the islands, in two IDA financings of US$30 million and US$10 million. https://projects.worldbank.org/en/projects-operations/project-detail/P514336
+- **Creating Opportunities and Reaching Results on Employment (CORRE) Program ($15M):** World Bank · Approved 23 June 2026. Paid for results: more Cabo Verdeans, women and young people above all, in training and in work. https://projects.worldbank.org/en/projects-operations/project-detail/P508355
+- **Digital Cabo Verde Project ($20M):** World Bank · Approved 2 May 2025. Digital public services and connectivity for an island nation, so a citizen on any island reaches the state online. https://projects.worldbank.org/en/projects-operations/project-detail/P509177
+- **Cabo Verde Human Capital Project ($3.75M):** World Bank · Approved 29 March 2025. Support for health, education and social protection services. https://projects.worldbank.org/en/projects-operations/project-detail/P508181
+
+Added to Already working in Cabo Verde:
+
+- **Water, Águas de Ponta Preta:** A Cabo Verdean water and energy company, part of the consortium investing €6.8 million to rebuild the Palmarejo solar plant in Praia. Lusa, 2025, https://hrportugal.sapo.pt/consorcio-internacional-para-reabilitar-parque-solar-em-cabo-verde-conta-com-empresa-portuguesa/
+- **Energy, OMCV, Luz para as Meninas:** The Organisation of Cape Verdean Women puts solar lighting kits in tin houses on São Vicente, so girls can study after dark. UNDP, https://www.undp.org/acceleratorlabs/blog/luz-para-meninas-light-girls
+- **Health, NhaBex:** Founded in 2015: queue management for health posts, banks and town halls, so people wait less for public services. Startups, 2026, https://startups.com.br/negocios/inovacao/cabo-verde-investe-em-talento-para-levar-startups-ao-mercado-global/
+- **Livelihood, Sintaxy:** A software company founded in 2014 in Cabo Verde that now works for clients in the United States, Portugal and England. Startups, 2026, https://startups.com.br/negocios/inovacao/cabo-verde-investe-em-talento-para-levar-startups-ao-mercado-global/
+
+### Open gaps (wave 1)
+
+- Nineteen register lines: the IFC loan to Cabo Verde Airports (approved 23 October 2025) may be the line already listed as the second sustainability-linked loan, so it is not counted twice.
+
+Still to come: the interim Nation Portrait (Canva, colours edition) and the Letter to the Nations post in WordPress, published after the pull request is merged.
