@@ -100,7 +100,8 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 PAGES, DATA, HERE = ROOT / 'pages', ROOT / 'data', ROOT / 'tools' / 'nation'
-VERSION = '15.2'  # The three mandates: See the gap. Build one solution. Close every gap. (Preeti Sinha, President and CEO, 24 Nov 2026)
+VERSION = '15.3'  # The close in two rows: the Studio and Write to us; then the previous and next nations and All 195 nations (Preeti Sinha, President and CEO, 24 Nov 2026)
+# 15.2: the three mandates: See the gap. Build one solution. Close every gap. (Preeti Sinha, President and CEO, 24 Nov 2026)
 # 15.1: Now possible with Perfect Nations Intelligence; our AI is called Perfect Nations Intelligence; other people's programmes keep their own word (Preeti Sinha, President and CEO, 24 Nov 2026)
 # 15.0: the seven stars fill with gold to each standard's coverage; the furthest still pulses (Preeti Sinha, President and CEO, 24 Nov 2026)
 # 14.8: the October pictures switched on for the first 44 blueprints (Preeti Sinha, 21 Nov 2026)
@@ -1397,8 +1398,8 @@ def close(d, p):
         '<p class="bpx-eb">The %s ReDesign Studio is open</p><h2 class="bpx-h2" id="bp-close-h">Design Perfect %s with us.</h2>'
         '<p class="bpx-lead">%s</p><div class="bpx-btns">'
         '<a class="bpx-btn" href="https://perfectnations.com/design-studio/" target="_blank" rel="noopener noreferrer">Enter the ReDesign Studio</a>'
-        '<a class="bpx-btn bpx-btn--line" href="https://perfectnations.com/contact/?nation=%s" target="_blank" rel="noopener noreferrer">Write to us</a>'
-        '%s<a class="bpx-btn bpx-btn--line" href="https://perfectnations.com/blueprints/" target="_blank" rel="noopener noreferrer">All 195 nations</a></div>'
+        '<a class="bpx-btn bpx-btn--line" href="https://perfectnations.com/contact/?nation=%s" target="_blank" rel="noopener noreferrer">Write to us</a></div>'
+        '<div class="bpx-btns bpx-btns--az">%s<a class="bpx-btn bpx-btn--line" href="https://perfectnations.com/blueprints/" target="_blank" rel="noopener noreferrer">All 195 nations</a></div>'
         '<details class="bpx-sources" id="bp-sources"><summary>Sources</summary><ol>%s</ol></details></div>%s</div></section>'
         '<div class="bpx-toast" id="bp-toast" role="status" aria-live="polite" hidden><span>Opening your email app. If nothing opens, write to <b>contact@perfectnations.com</b></span>'
         '<button type="button" id="bp-toast-copy">Copy address</button><button type="button" class="bpx-x" id="bp-toast-x" aria-label="Close"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6.5 6.5l11 11M17.5 6.5l-11 11" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button></div>'
@@ -1476,6 +1477,9 @@ def build(slug, sbn, son, today):
         '<!-- v14.8 (21 November 2026): the asset pictures made in October are switched on for the first 44 blueprints. -->\n'
         '<!-- v14.7.1 (21 November 2026): the asset pictures carry no AI illustration mark (the President and CEO). -->\n'
         '<!-- v14.7 (21 November 2026): picture cards for the assets where the nation switches them on (Austria first): each asset opens with its picture; phones swipe the cards. -->\n'
+        '<!-- v15.3 (24 November 2026): the close has two rows: Enter the ReDesign Studio and Write to us; then the\n'
+        '     previous and next blueprints, A to Z, and All 195 nations. Phones: the two buttons full width, then the\n'
+        '     previous and next side by side, then All 195 nations (Preeti Sinha, President and CEO). -->\n'
         '<!-- v14.6 (21 November 2026): above All 195 nations, the previous and next blueprints, A to Z. -->\n'
         '<!-- v14.5 (21 November 2026): What we do: the firm line now ends at "a new-age sovereign advisory firm." -->\n'
         '<!-- v14.4 (21 November 2026): Already working in: the line "None is a partner of Perfect Nations." is removed. -->\n'

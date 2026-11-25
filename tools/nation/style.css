@@ -549,6 +549,8 @@
 #R .bpx-close h2.bpx-h2{ max-width:26ch; }
 #R .bpx-close .bpx-lead{ margin-top:10px; }
 #R .bpx-close .bpx-btns{ margin-top:14px; }
+/* v15.3: the close in two rows; the second holds the previous and next blueprints and All 195 nations */
+#R .bpx-close .bpx-btns--az{ margin-top:10px; }
 /* v14.6: the previous and next blueprints, A to Z, side by side above All 195 nations; the previous one points back */
 #R .bpx-pn{ display:flex; gap:10px 12px; }
 #R .bpx-pn__a--prev{ flex-direction:row-reverse; }
