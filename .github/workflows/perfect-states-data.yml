@@ -1,4 +1,4 @@
-# Temporary: official downloads for the Perfect States blueprints (Connecticut, Alaska, New Mexico, Texas, Mississippi).
+# Temporary (run 2, HUD counts): official downloads for the Perfect States blueprints (Connecticut, Alaska, New Mexico, Texas, Mississippi).
 # Census ACS, Census county outlines (GENZ2024), NAEP 2024, HUD Point-in-Time counts, USDA SNAP payment error rates,
 # CBPP SNAP cost-shift table. Branch only: the files are copied into the blueprint pull request, then this branch can go.
 name: perfect-states-data
@@ -18,65 +18,27 @@ jobs:
         run: |
           set +e
           sudo apt-get -qq install -y poppler-utils >/dev/null 2>&1
-          pip install -q pyshp openpyxl >/dev/null 2>&1
-          B=https://www2.census.gov/programs-surveys/acs/summary_file
+          pip install -q pyshp openpyxl pyxlsb >/dev/null 2>&1
           R=data/us/raw
           mkdir -p $R/_shared /tmp/pn
           get(){ for i in 1 2 3; do curl -sSL -m 300 -A "Mozilla/5.0 PerfectNations-data" -o "$1" -w "$1 %{http_code} %{size_download}\n" "$2" && [ -s "$1" ] && head -c 1 "$1" | grep -q . && return 0; sleep 5; done; return 1; }
-          get /tmp/pn/b27001.dat "$B/2025/table-based-SF/data/1YRData/acsdt1y2025-b27001.dat"
-          get /tmp/pn/b17001-5y.dat "$B/2024/table-based-SF/data/5YRData/acsdt5y2024-b17001.dat"
-          get /tmp/pn/geos24.txt "$B/2024/table-based-SF/documentation/Geos20245YR.txt"
-          get /tmp/pn/cb.zip "https://www2.census.gov/geo/tiger/GENZ2024/shp/cb_2024_us_county_20m.zip"
-          for spec in connecticut:09:CT alaska:02:AK new-mexico:35:NM texas:48:TX mississippi:28:MS; do
-            slug=${spec%%:*}; rest=${spec#*:}; f=${rest%%:*}; A=${rest#*:}; a=$(echo $A | tr A-Z a-z)
-            mkdir -p $R/$slug
-            awk -F'|' -v f="$f" 'NR==1 || $1=="0100000US" || $1==("0400000US" f) {print}' /tmp/pn/b27001.dat > $R/$slug/acsdt1y2025-b27001-$a-us.dat
-            awk -F'|' -v f="$f" 'NR==1 || $1==("0400000US" f) || index($1, "0500000US" f)==1 {print $1"|"$2"|"$3"|"$4"|"$5}' /tmp/pn/b17001-5y.dat > $R/$slug/acsdt5y2024-b17001-$a-counties.dat
-            head -1 /tmp/pn/geos24.txt > $R/$slug/geos-2024-5y-$a-counties.txt
-            grep -a -E "^0500000US$f" /tmp/pn/geos24.txt >> $R/$slug/geos-2024-5y-$a-counties.txt
-            get $R/$slug/naep-reading-g4-2024-$a.json "https://www.nationsreportcard.gov/DataService/GetAdhocData.aspx?type=data&subject=reading&grade=4&subscale=RRPCM&variable=TOTAL&jurisdiction=$A&stattype=ALC:AP&Year=2024"
-          done
-          cd /tmp/pn && unzip -o -q cb.zip && cd - >/dev/null
+          # HUD Point-in-Time counts by state (run 2: the file is .xlsb), and the AHAR 2025 Part 1 report
+          get /tmp/pn/pit.xlsb "https://www.huduser.gov/portal/sites/default/files/xls/2007-2025-PIT-Counts-by-State.xlsb"
           python3 - <<'PY'
-          import json, shapefile
-          r = shapefile.Reader('/tmp/pn/cb_2024_us_county_20m')
-          names = [f[0] for f in r.fields[1:]]
-          want = {'09': 'connecticut', '02': 'alaska', '35': 'new-mexico', '48': 'texas', '28': 'mississippi'}
-          out = {s: [] for s in want.values()}
-          for sr in r.iterShapeRecords():
-              rec = dict(zip(names, sr.record))
-              if rec['STATEFP'] in want:
-                  out[want[rec['STATEFP']]].append({'type': 'Feature', 'id': rec['GEOID'], 'properties': {'name': rec['NAME']}, 'geometry': sr.shape.__geo_interface__})
-          for s, feats in out.items():
-              json.dump({'type': 'FeatureCollection', 'source': 'U.S. Census Bureau, cartographic boundary file cb_2024_us_county_20m', 'features': feats},
-                        open('data/us/raw/%s/counties-cb2024-20m.geojson' % s, 'w'), separators=(',', ':'))
-              print(s, len(feats))
+          from pyxlsb import open_workbook
+          with open_workbook('/tmp/pn/pit.xlsb') as wb:
+              print(wb.sheets[:5])
+              out = open('data/us/raw/_shared/hud-pit-2025-by-state.txt', 'w')
+              with wb.get_sheet('2025') as sh:
+                  for i, row in enumerate(sh.rows()):
+                      vals = [('' if c.v is None else str(c.v)) for c in row[:5]]
+                      if i == 0 or (vals and vals[0] in ('State', 'Total', 'CT', 'AK', 'NM', 'TX', 'MS', 'NY')):
+                          out.write('|'.join(vals) + '\n')
           PY
-          # HUD Point-in-Time counts by state
-          for y in 2025 2024; do get /tmp/pn/pit-$y.xlsx "https://www.huduser.gov/portal/sites/default/files/xls/2007-$y-PIT-Counts-by-State.xlsx" && break; done
-          python3 - <<'PY'
-          import glob, openpyxl
-          for p in sorted(glob.glob('/tmp/pn/pit-*.xlsx'), reverse=True):
-              wb = openpyxl.load_workbook(p, read_only=True, data_only=True)
-              print(p, wb.sheetnames[:6])
-              ws = wb[wb.sheetnames[0]]
-              rows = [[('' if v is None else str(v)) for v in r[:6]] for r in ws.iter_rows(values_only=True)]
-              with open('data/us/raw/_shared/hud-pit-%s-first-sheet.txt' % wb.sheetnames[0].strip().replace(' ', '_'), 'w') as f:
-                  for r in rows:
-                      if r and (r[0] in ('State', 'Total', 'CT', 'AK', 'NM', 'TX', 'MS', 'NY') or r[0].startswith('Total')):
-                          f.write('|'.join(r) + '\n')
-              break
-          PY
-          # USDA SNAP payment error rates, FY2025 (the PDF linked from the USDA page)
-          curl -sSL -m 60 -A "Mozilla/5.0 PerfectNations-data" "https://www.fna.usda.gov/snap/qc/per" -o /tmp/pn/per.html
-          grep -o 'href="[^"]*\.pdf"' /tmp/pn/per.html | head -20 > $R/_shared/usda-per-page-pdf-links.txt
-          u=$(grep -o 'href="[^"]*\.pdf"' /tmp/pn/per.html | grep -i -E 'fy25|fy-25|fy2025|2025' | head -1 | sed 's/href="//; s/"$//')
-          case "$u" in /*) u="https://www.fna.usda.gov$u";; esac
-          [ -n "$u" ] && get /tmp/pn/per25.pdf "$u" && pdftotext -layout /tmp/pn/per25.pdf $R/_shared/usda-snap-per-fy2025.txt && echo "$u" > $R/_shared/usda-snap-per-fy2025-url.txt
-          get /tmp/pn/cbpp.pdf "https://www.cbpp.org/sites/default/files/7-23-26fa.pdf" && pdftotext -layout /tmp/pn/cbpp.pdf $R/_shared/cbpp-snap-cost-shift-2026-07-23.txt
-          for d in $R/_shared $R/connecticut $R/alaska $R/new-mexico $R/texas $R/mississippi; do for f in $d/*; do echo "$f $(wc -c < "$f")"; done; done > $R/_shared/manifest-2026-11-25.txt
-          date -u +%Y-%m-%dT%H:%MZ > $R/_shared/pulled-at-2026-11-25.txt
-          cat $R/_shared/manifest-2026-11-25.txt
+          get /tmp/pn/ahar25.pdf "https://www.huduser.gov/portal/sites/default/files/pdf/2025-AHAR-Part-1.pdf" && pdftotext -layout /tmp/pn/ahar25.pdf /tmp/pn/ahar25.txt && grep -n -E '^ *(Connecticut|Alaska|New Mexico|Texas|Mississippi|New York) ' /tmp/pn/ahar25.txt | head -40 > $R/_shared/hud-ahar-2025-part1-state-lines.txt
+          for d in $R/_shared; do for f in $d/*; do echo "$f $(wc -c < "$f")"; done; done > $R/_shared/manifest-2026-11-25-run2.txt
+          date -u +%Y-%m-%dT%H:%MZ > $R/_shared/pulled-at-2026-11-25-run2.txt
+          cat $R/_shared/manifest-2026-11-25-run2.txt
       - name: Commit
         run: |
           git config user.name "Perfect Nations data"
