@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Build the full Letters to the Nations (pages/letter-dear-<slug>.html) for the blueprints that become full editions.
 
-Letters v8.2 (25 November 2026). The first 44 letters are hand files; this script writes the next ones in the same
+Letters v8.2 (25 November 2026); v8.3 adds the More Letters band (tools/letters_band.py). The first 44 letters are hand files; this script writes the next ones in the same
 design (the CSS, the header and the WordPress fallback of pages/letter-dear-kenya.html, v8.1.3), so a Letter reads the
 same whichever nation it is written to. Brief: Project doc claude/full-blueprints-151.md (Preeti Sinha, President and
 CEO, 24 Nov 2026: "We need to develop each of the 195 blueprints as a full blueprint").
@@ -23,6 +23,8 @@ HTML block holding <div id="pn-letter-<code>"> and a fallback line) is published
                                                    that keeps Jetpack from emailing subscribers)
     python3 tools/build_letters.py --manifest      also add or raise pn-letter-<code> in pages/manifest.json and set
                                                    the letter link (letter.url) in tools/nation/<slug>.json
+Each run ends by writing the "More Letters to the Nations" band into every Letter (tools/letters_band.py); with
+--manifest it raises the version of every Letter whose page changed.
 Then: python3 tools/check_page.py pages/letter-dear-*.html, and python3 tools/build_nations.py --manifest so each
 blueprint shows "Read the full letter". Never edit a built letter by hand; change the words and build again.
 """
@@ -192,6 +194,11 @@ def main():
     man = json.loads(mtxt)
     today = date.today().isoformat()
     posts = []
+    before = {}
+    for slug in slugs:
+        r = 'pn-letter-%s' % words[slug]['iso2'].lower()
+        f = PAGES / ('letter-dear-%s.html' % slug)
+        before[r] = f.read_text(encoding='utf-8') if f.exists() else ''
     for slug in slugs:
         f, root, name = build(slug, words[slug], man, today)
         bp = 'https://perfectnations.com/blueprints/%s/' % slug
@@ -204,13 +211,21 @@ def main():
         print('%s: %d characters' % (f.relative_to(ROOT), len(f.read_text(encoding='utf-8'))))
         if '--manifest' in sys.argv:
             url = 'https://perfectnations.com/dear-%s/' % slug
-            man['pages'][root] = {'file': 'pages/letter-dear-%s.html' % slug, 'version': VERSION, 'title': 'Letter: Dear %s' % name, 'url': url}
+            man['pages'][root] = {'file': 'pages/letter-dear-%s.html' % slug, 'version': (man['pages'].get(root) or {}).get('version') or VERSION,
+                                  'title': 'Letter: Dear %s' % name, 'url': url}
             np_ = HERE / 'nation' / ('%s.json' % slug)
             nt = np_.read_text(encoding='utf-8')
             nj = json.loads(nt)
             if nj['letter'].get('url') != url:
                 nj['letter']['url'] = url
                 np_.write_text(dump_like(nj, nt), encoding='utf-8')
+    sys.path.insert(0, str(HERE))
+    import letters_band
+    changed = letters_band.run(man, before)
+    print('More Letters band: %d Letter pages changed' % len(changed))
+    if '--manifest' in sys.argv:
+        for r in changed:
+            man['pages'][r]['version'] = letters_band.bump(man['pages'][r].get('version'))
     if '--posts' in sys.argv:
         (HERE / 'letters' / 'posts.json').write_text(json.dumps({'about': 'WordPress posts for the Letters built by tools/build_letters.py. Publish each only after the pull request that adds its page is merged (Settings > Perfect Nations Live > Refresh now, then LiteSpeed Cache > Purge All).', 'posts': posts}, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
         print('tools/letters/posts.json: %d posts' % len(posts))
