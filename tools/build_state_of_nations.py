@@ -61,7 +61,7 @@ OUT = PAGES / 'state-of-nations.html'
 NATION_DATA = DATA / 'solutions-by-nation.json'
 sys.path.insert(0, str(ROOT / 'tools'))
 
-VERSION = '9.3'  # Now possible with AI: each Solution names what AI makes possible, after the finance (Preeti Sinha, President and CEO, 24 Nov 2026)
+VERSION = '9.4'  # v9.4: our AI is called Perfect Nations Intelligence; other people's programmes keep their own word (Preeti Sinha, President and CEO, 24 Nov 2026)  # Now possible with AI: each Solution names what AI makes possible, after the finance (Preeti Sinha, President and CEO, 24 Nov 2026)
 # 9.2: the nation list sorts by letters alone, accents set aside; Palestine links to its page (Preeti Sinha, President and CEO, 21 Nov 2026)
 # 9.1: each standard filter shows the Solutions designed for it (the President and CEO, 21 Nov 2026)
 # 8.5: Solutions No. 45 to 50: Cameroon, Chad, Cuba, Iraq, Palestine and Nigeria, after Energy and Health were re-measured (the Steward-General, 12 Nov 2026)
@@ -217,7 +217,7 @@ def playbook():
         # v9.3: what AI makes possible for the standard, on the blueprints of nations without a designed Solution
         # (written from the internal "si" note: the site says AI for what exists today, 24 Nov 2026)
         if p.get('si'):
-            p['ai'] = re.sub(r'^SI\b', 'AI', p['si'])
+            p['ai'] = re.sub(r'^SI\b', 'Perfect Nations Intelligence', p['si'])
         p['standard'] = s
         out.append(p)
     return out
@@ -347,7 +347,7 @@ def solution_card(s):
     bp = ' data-bp="%s"' % a(s['blueprint']) if str(s.get('blueprint', '')).startswith('https://') else ''
     rows = [(t, s.get(k)) for t, k in (('The challenge', 'challenge'), ('What Perfect Nations advises', 'advises')) if s.get(k)]
     # v9.3: Now possible with AI, after the finance (24 Nov 2026)
-    ai = '<div class="sn-ai"><dt>Now possible with AI</dt><dd>%s</dd></div>' % a(s['ai']) if s.get('ai') else ''
+    ai = '<div class="sn-ai"><dt>Now possible with Perfect Nations Intelligence</dt><dd>%s</dd></div>' % a(s['ai']) if s.get('ai') else ''
     return ''.join([
         '<li class="sn-c" data-no="%d" data-std="%s"%s data-q="%s">' % (no, a(';'.join(stds)), bp, a(nrm('%s %s' % (s.get('nation', ''), s['title'])))),
         '<div class="sn-c__k"><b>%s</b><span>Solution No. %02d</span></div>' % (a(s.get('nation', '')), no),
