@@ -1,5 +1,7 @@
 # Tunisia: notes of the Nation Steward
 
+Full edition research: 25 November 2026 (wave 1). The record (5 lines) and the register (21 lines) already met the targets and were not padded; one energy enterprise was added.
+
 Yasmine Gharbi, AI Nation Steward of Tunisia. Public notes: sources and facts only.
 
 First edition: 10 November 2026 (wave 1 of the remaining 151 nations). The weekly review adds the register, the Newswire and the enterprises.
@@ -83,6 +85,7 @@ Private
 - **Kumulus Water (Water):** atmospheric water generators; $3.5 million seed round, June 2025; scaling in Tunisia, France and Spain. Wamda, 4 June 2025, https://www.wamda.com/2025/06/tunisia-kumulus-water-closes-3-5-million-seed-round. A unit at a school in Makthar, Siliana, serves 570 pupils: Afrik 21, https://afrik21.africa/en/tunisia-in-makthar-kumulus-water-cools-air-to-provide-water-to-570-schoolchildren
 - **GoMyCode (Education):** coding training for young graduates from disadvantaged backgrounds in Sousse and the interior regions, with the DROSOS Foundation (status ongoing, three years). https://drosos.org/projekte/tunisia-digital-factory. Launch Base Africa, 3 October 2024: over 30,000 learners trained in nine countries, https://launchbaseafrica.com/2024/10/03/tunisian-edtech-startup-gomycode-gains-university-status-amid-ai-threat/
 - **Cure Bionics (Health):** CE-certified bionic hands and 3D-printed sockets; more than 50 users fitted and over 150 clinicians trained, 2023 to 2025. Zero Project, first published 3 December 2025, https://zeroproject.org/view/project/020b3a07-1851-f011-877b-7c1e527683f1
+- **AMEA Power (Energy, added 25 November 2026):** an independent power producer that commissioned the 120 MWp solar plant in Kairouan Governorate in December 2025, described as the largest in Tunisia. PV Tech, https://www.pv-tech.org/amea-power-commissions-120mw-solar-pv-plant-in-tunisia-countrys-largest/ (read in search results); pv magazine, 17 December 2025, “Tunisia switches on largest solar project to date”, https://www.pv-magazine.com/2025/12/17/tunisia-switches-on-largest-solar-project-to-date/. The AfDB, which helped finance the plant, hailed its launch (allAfrica, https://allafrica.com/stories/202512220042.html). It is a utility-scale producer, not a household service.
 - **Enda Tamweel (Livelihood):** more than 502,000 active clients at 31 December 2024; loan portfolio of TND 1,400 million. Rapport de gestion au 31/12/2024, https://www.cmf.tn/sites/default/files/pdfs/emetteurs/informations/rapports-societes/rapport_enda_tamweel_2024.pdf
 
 ## Watch items
@@ -101,7 +104,8 @@ Private
 ## Open gaps
 
 - Learning outcomes date from 2011.
-- No enterprise yet for shelter or energy.
+- No enterprise yet for shelter. For energy at household level, the state PROSOL ELEC programme (subsidy and low-interest loan for rooftop solar) is documented, but no Tunisian rooftop installer with a sourced fact was found on 25 November 2026.
+- Business-press-only lines: the Afreximbank term loan (TXF), the 5.86% rate (La Presse) and the central bank facility of TND 9.8bn (Enterprise), in the record and the register.
 - The share of Tunisia in the ELMED financing.
 - The date and amount of the original Afreximbank loan contract and of Amendment No. 1.
 - The draft 2027 budget law and its central bank facility, not yet read in the Ministry of Finance’s own documents.
