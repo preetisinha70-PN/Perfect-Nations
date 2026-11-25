@@ -24,7 +24,8 @@ ROOT = Path(__file__).resolve().parent.parent
 PAGES = ROOT / 'pages'
 DATA = ROOT / 'data'
 SITE = 'https://perfectnations.com'
-VERSION = '13.2'  # Now possible: AI joins innovative finance; a slim band before the Solutions, the AI line on each Solution, and AI in Governance first and the Cup (Preeti Sinha, President and CEO, 24 Nov 2026)
+VERSION = '13.3'  # the hero globe's borders are fine engraved bronze lines, not thick dark ones (hero v8.2; the President and CEO, 24 Nov 2026)
+# 13.2: Now possible: AI joins innovative finance; a slim band before the Solutions, the AI line on each Solution, and AI in Governance first and the Cup (Preeti Sinha, President and CEO, 24 Nov 2026)
 # 13.1: Palestine links to /blueprints/state-of-palestine/ (hero v8.1, nations menu v3.2), 21 Nov 2026
 # 13.0: the Mission, the hero, Governance first, Imagine, the Studio and the Solutions name innovative financing for development alone; no Steward named (the President and CEO, 16 Nov 2026)
 # v12.5: the globe draws the borders of newly opened nations at their raised height (hero v7.9; the Steward-General, 11 Nov 2026)
