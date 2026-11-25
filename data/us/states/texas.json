@@ -1,0 +1,330 @@
+{
+  "slug": "texas",
+  "name": "Texas",
+  "abbr": "TX",
+  "fips": "48",
+  "version": "1.0",
+  "updated": "2026-11-25",
+  "about": "The blueprint of Texas (perfectnations.com/perfect-states/texas/). Census, NAEP and USDA figures marked \"computed\" are read by tools/build_us_state.py from data/us/raw/texas/ and data/us-states.json. No figure is estimated.",
+  "notes": [
+    "v1.0: Perfect Texas, a Perfect States blueprint (Preeti Sinha, President and CEO, 25 Nov 2026: \"go ahead and implement\" the Perfect States plan). Water and Energy are shown as not yet measured: no primary state figure was confirmed."
+  ],
+  "hero": {
+    "eyebrow": "Perfect Texas · Perfect States",
+    "line": "A computed:gdp_words economy where computed:uninsured of Texans had no health insurance in 2025.",
+    "sub": "Perfect Nations counts what Texas owns, prices the seven basic standards of living for every resident, and designs the capital that closes the gap.",
+    "figures": [
+      {
+        "value": "computed:gdp",
+        "label": "GDP, 2025",
+        "money": true,
+        "src": "gdp"
+      },
+      {
+        "value": "$64.8bn",
+        "label": "The Permanent School Fund, 2026",
+        "money": true,
+        "src": "psf"
+      },
+      {
+        "value": "computed:uninsured",
+        "label": "Without health insurance, 2025",
+        "money": false,
+        "src": "acs_hi"
+      }
+    ]
+  },
+  "assets": {
+    "title": "Five assets that can carry Perfect Texas.",
+    "line": "Each is owned by Texans today and can carry a standard of living.",
+    "items": [
+      {
+        "figure": "$64.8bn",
+        "money": true,
+        "name": "The Permanent School Fund",
+        "line": "The nation’s oldest and largest educational endowment, set aside by the Texas Constitution for every public school.",
+        "src": "psf",
+        "lead": true
+      },
+      {
+        "figure": "$28.5bn",
+        "money": true,
+        "name": "The Rainy Day Fund",
+        "line": "The Economic Stabilization Fund, projected at the end of fiscal 2027, built from oil and gas taxes.",
+        "src": "esf"
+      },
+      {
+        "figure": "13 million acres",
+        "money": false,
+        "name": "The land",
+        "line": "State lands and mineral rights stewarded by the General Land Office, earning for the Permanent School Fund.",
+        "src": "glo"
+      },
+      {
+        "figure": "$1bn a year",
+        "money": true,
+        "name": "The water fund",
+        "line": "Sales tax dedicated by voters to the Texas Water Fund each year from September 2027 to 2047.",
+        "src": "twdb"
+      },
+      {
+        "figure": "computed:people",
+        "money": false,
+        "name": "The people",
+        "line": "Texans on 1 July 2025: the asset every other asset serves.",
+        "src": "pop"
+      }
+    ]
+  },
+  "standards": {
+    "title": "Perfect Texas, star by star.",
+    "line": "One measure for each of the seven basic standards of living. Where no official measure is published yet, the gap is shown, not filled.",
+    "items": [
+      {
+        "key": "food",
+        "name": "Food",
+        "figure": "computed:food",
+        "label": "of households food insecure, 2022–2024 (United States computed:food_us)",
+        "status": "risk",
+        "src": "usda"
+      },
+      {
+        "key": "water",
+        "name": "Water",
+        "figure": "",
+        "label": "Lead service lines still in use: the State’s figure under the 2025 federal update is being confirmed.",
+        "status": "gap",
+        "src": ""
+      },
+      {
+        "key": "shelter",
+        "name": "Shelter",
+        "figure": "28,031",
+        "label": "people without a home on one night, January 2025",
+        "status": "hold",
+        "src": "hud"
+      },
+      {
+        "key": "energy",
+        "name": "Energy",
+        "figure": "",
+        "label": "Households behind on energy bills: awaiting a primary published count.",
+        "status": "gap",
+        "src": ""
+      },
+      {
+        "key": "education",
+        "name": "Education",
+        "figure": "computed:reading",
+        "label": "of fourth graders read at the NAEP Proficient level, 2024 (United States computed:reading_us)",
+        "status": "risk",
+        "src": "naep"
+      },
+      {
+        "key": "health",
+        "name": "Health",
+        "figure": "computed:uninsured",
+        "label": "without health insurance, 2025 (United States computed:uninsured_us)",
+        "status": "binding",
+        "src": "acs_hi"
+      },
+      {
+        "key": "livelihood",
+        "name": "Livelihood",
+        "figure": "computed:poverty",
+        "label": "below the poverty line, 2025 (United States computed:poverty_us)",
+        "status": "risk",
+        "src": "acs_pov"
+      }
+    ],
+    "status_names": {
+      "binding": "Binding",
+      "risk": "At risk",
+      "hold": "Holding",
+      "gap": "Not yet measured"
+    },
+    "map_title": "Where the poverty line falls hardest",
+    "map_line": "Share of people below the poverty line in each of Texas’s 254 counties, 2020–2024.",
+    "map_src": "acs_cty"
+  },
+  "solutions": {
+    "title": "Solutions for Perfect Texas, in order.",
+    "line": "Health first: one Texan in six has no insurance, about twice the national rate.",
+    "items": [
+      {
+        "phase": "Phase 1",
+        "standard": "Health",
+        "status": "binding",
+        "challenge": "computed:uninsured of Texans had no health insurance in 2025, against computed:uninsured_us nationally.",
+        "advises": "Issue a Texas health-access bond for community clinics in the border and rural counties, repaid from savings in uncompensated hospital care and paid on enrolment and outcomes.",
+        "src": "acs_hi"
+      },
+      {
+        "phase": "Phase 2",
+        "standard": "Food",
+        "status": "risk",
+        "challenge": "computed:food of households were food insecure in 2022–2024, above the national computed:food_us.",
+        "advises": "Put the savings from SNAP accuracy (band 05) into a food fund with Texas food banks and grocers, county by county, starting in Dimmit County.",
+        "src": "usda"
+      },
+      {
+        "phase": "Phase 2",
+        "standard": "Education",
+        "status": "risk",
+        "challenge": "computed:reading of fourth graders read at the NAEP Proficient level in 2024.",
+        "advises": "Apply the Permanent School Fund’s guarantee model to reading: an outcome contract, paid only for measured gains, backed by the Fund’s distributions.",
+        "src": "naep"
+      }
+    ],
+    "hold": "Phase 3, hold the line: shelter (28,031 without a home on one night, January 2025) and livelihood (computed:poverty below the poverty line), with water and energy measured next."
+  },
+  "capital": {
+    "title": "Texas already finances at scale.",
+    "line": "Instruments on record that a Perfect Texas can build on.",
+    "items": [
+      {
+        "figure": "$144bn",
+        "prefix": "about",
+        "money": true,
+        "name": "The Bond Guarantee Program",
+        "line": "School district and charter bonds backed by the Permanent School Fund at the end of 2025, lowering what schools pay to borrow.",
+        "year": "2025",
+        "src": "psf_review"
+      },
+      {
+        "figure": "$4.8bn",
+        "prefix": "",
+        "money": true,
+        "name": "School distributions",
+        "line": "Education funding from the Permanent School Fund for the 2026–27 biennium.",
+        "year": "2026–27",
+        "src": "psf_asf"
+      },
+      {
+        "figure": "$20bn",
+        "prefix": "up to",
+        "money": true,
+        "name": "The Texas Water Fund",
+        "line": "Up to $1bn a year of sales tax for water from September 2027 to 2047, approved by voters in November 2025.",
+        "year": "2027–2047",
+        "src": "twdb"
+      }
+    ]
+  },
+  "intelligence": {
+    "title": "A $725m SNAP bill that accuracy can cut.",
+    "line": "From October 2027 every state pays part of its SNAP food benefits unless at least 94 of every 100 dollars are paid exactly right. AI that checks every case before it is paid can shrink that bill.",
+    "bill": "$725m",
+    "bill_label": "a year in SNAP benefits from October 2027, at the 2025 error rate",
+    "bill_src": "cbpp_shift",
+    "facts": [
+      {
+        "value": "9.34%",
+        "label": "of SNAP dollars paid in error, 2025",
+        "src": "usda_per"
+      },
+      {
+        "value": "10%",
+        "label": "share of benefits the State pays from October 2027",
+        "src": "cbpp_shift"
+      }
+    ],
+    "advises": "Bring the error rate under 8% and the share halves to 5%, about $360m a year saved. Fund AI case review from the savings, starting with the fiscal 2027 rate that sets the bill for fiscal 2030, and audit it every quarter for underpayments as well as overpayments."
+  },
+  "close": {
+    "title": "Design Perfect Texas with us.",
+    "line": "State leaders, the Permanent School Fund and investors: start with a briefing."
+  },
+  "sources": {
+    "gdp": {
+      "label": "U.S. Bureau of Economic Analysis, GDP by state, 2025, current dollars (updated 30 September 2026)",
+      "url": "https://www.bea.gov/data/gdp/gdp-state",
+      "short": "BEA, 2025"
+    },
+    "pop": {
+      "label": "U.S. Census Bureau, Vintage 2025 population estimates, 1 July 2025",
+      "url": "https://www.census.gov/data/tables/time-series/demo/popest/2020s-state-total.html",
+      "short": "Census Bureau, 2025"
+    },
+    "acs_pov": {
+      "label": "U.S. Census Bureau, American Community Survey 2025 1-year, table B17001",
+      "url": "https://data.census.gov/table/ACSDT1Y2025.B17001",
+      "short": "Census Bureau, ACS 2025"
+    },
+    "acs_cty": {
+      "label": "U.S. Census Bureau, American Community Survey 2020–2024 5-year, table B17001, Texas counties; outlines from the Census Bureau cartographic boundary file cb_2024_us_county_20m",
+      "url": "https://data.census.gov/table/ACSDT5Y2024.B17001",
+      "short": "Census Bureau, ACS 2020–2024"
+    },
+    "acs_hi": {
+      "label": "U.S. Census Bureau, American Community Survey 2025 1-year, table B27001 (civilian noninstitutionalized population)",
+      "url": "https://data.census.gov/table/ACSDT1Y2025.B27001",
+      "short": "Census Bureau, ACS 2025"
+    },
+    "usda": {
+      "label": "U.S. Department of Agriculture, Economic Research Service, Household Food Security in the United States in 2024 (ERR-358), table 4, average 2022–2024",
+      "url": "https://ers.usda.gov/sites/default/files/_laserfiche/publications/113623/ERR-358.pdf",
+      "short": "USDA, 2025"
+    },
+    "naep": {
+      "label": "National Center for Education Statistics, NAEP 2024 Reading, grade 4, at or above NAEP Proficient, public schools (NAEP Data Service)",
+      "url": "https://www.nationsreportcard.gov/reports/reading/2024/g4_8/",
+      "short": "NAEP, 2024"
+    },
+    "hud": {
+      "label": "U.S. Department of Housing and Urban Development, 2025 Point-in-Time count, in National Alliance to End Homelessness, Texas 2025 PIT data fact sheet",
+      "url": "https://endhomelessness.org/wp-content/uploads/2026/06/TX-2025-PIT-Data-Fact-Sheet.pdf",
+      "short": "HUD, 2025"
+    },
+    "psf": {
+      "label": "Texas Permanent School Fund Corporation, Legislative Appropriations Request 2028–29 (August 2026): over $64.8 billion in investment assets, the nation’s oldest and largest educational endowment",
+      "url": "https://texaspsf.org/wp-content/uploads/2026/08/706-Texas-PSF-2028-29-LAR.pdf",
+      "short": "Texas PSF, 2026"
+    },
+    "psf_review": {
+      "label": "Texas Permanent School Fund Corporation, 2025 Year in Review (about $144 billion of school bonds guaranteed)",
+      "url": "https://texaspsf.org/wp-content/uploads/2026/01/Texas-PSF-2025-Year-in-Review-2.pdf",
+      "short": "Texas PSF, 2026"
+    },
+    "psf_asf": {
+      "label": "Texas Permanent School Fund, Available School Fund distribution for 2026–27 ($4.8 billion in education funding from the PSF)",
+      "url": "https://texaspsf.org/wp-content/uploads/2024/11/ASF-Distribution-for-2026-27-news-release-FINAL-11.22.24.pdf",
+      "short": "Texas PSF, 2024"
+    },
+    "esf": {
+      "label": "Texas Comptroller of Public Accounts, 2026–27 Certification Revenue Estimate: projected Rainy Day Fund balance of $28.48 billion at the end of fiscal 2027",
+      "url": "https://comptroller.texas.gov/about/media-center/infographics/2025/cre26-27",
+      "short": "Texas Comptroller, 2025"
+    },
+    "glo": {
+      "label": "Texas General Land Office, About the GLO: 13 million acres of state lands",
+      "url": "https://www.glo.texas.gov/about-glo?page=1",
+      "short": "General Land Office"
+    },
+    "twdb": {
+      "label": "Texas Water Development Board, Proposition 4 and Texas Water Fund, Frequently Asked Questions (September 2025)",
+      "url": "https://www.twdb.texas.gov/home/doc/Proposition_4_FAQ.pdf",
+      "short": "Water Development Board, 2025"
+    },
+    "usda_per": {
+      "label": "U.S. Department of Agriculture, Food and Nutrition Service, SNAP Quality Control: fiscal year 2025 payment error rates (24 June 2026)",
+      "url": "https://www.fna.usda.gov/sites/default/files/resource-files/snap-qcfy25-per.pdf",
+      "short": "USDA, 2026"
+    },
+    "cbpp_shift": {
+      "label": "Center on Budget and Policy Priorities, New Data Underscore SNAP Cost Shift’s Harm to Low-Income Families and State Budgets, tables 1 and 3 (23 July 2026)",
+      "url": "https://www.cbpp.org/sites/default/files/7-23-26fa.pdf",
+      "short": "CBPP, 2026"
+    },
+    "sas_nv": {
+      "label": "SAS, Nevada selects SAS to help reduce SNAP error rates with AI (June 2026)",
+      "url": "https://www.sas.com/en_us/news/press-releases/2026/june/nevada-snap-payment-integrity.html",
+      "short": "SAS, 2026"
+    },
+    "mi_ai": {
+      "label": "Michigan Public, ACLU of Michigan questions use of AI in assessing SNAP payments across the state (2 August 2026)",
+      "url": "https://www.michiganpublic.org/health/2026-08-02/aclu-of-michigan-questions-use-of-ai-in-assessing-snap-payments-across-the-state",
+      "short": "Michigan Public, 2026"
+    }
+  }
+}

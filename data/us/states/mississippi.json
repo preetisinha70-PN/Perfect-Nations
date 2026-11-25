@@ -1,0 +1,339 @@
+{
+  "slug": "mississippi",
+  "name": "Mississippi",
+  "abbr": "MS",
+  "fips": "28",
+  "version": "1.0",
+  "updated": "2026-11-25",
+  "about": "The blueprint of Mississippi (perfectnations.com/perfect-states/mississippi/). Census, NAEP and USDA figures marked \"computed\" are read by tools/build_us_state.py from data/us/raw/mississippi/ and data/us-states.json. No figure is estimated.",
+  "notes": [
+    "v1.0: Perfect Mississippi, a Perfect States blueprint (Preeti Sinha, President and CEO, 25 Nov 2026: \"go ahead and implement\" the Perfect States plan). Water and Energy are shown as not yet measured: no primary state figure was confirmed."
+  ],
+  "hero": {
+    "eyebrow": "Perfect Mississippi · Perfect States",
+    "line": "A computed:gdp_words economy where computed:poverty of Mississippians live below the poverty line, and fourth graders now read above the national average.",
+    "sub": "Perfect Nations counts what Mississippi owns, prices the seven basic standards of living for every resident, and designs the capital that closes the gap.",
+    "figures": [
+      {
+        "value": "computed:gdp",
+        "label": "GDP, 2025",
+        "money": true,
+        "src": "gdp"
+      },
+      {
+        "value": "$40.4bn",
+        "label": "The public pension fund, 31 May 2026",
+        "money": true,
+        "src": "pers"
+      },
+      {
+        "value": "computed:poverty",
+        "label": "Below the poverty line, 2025",
+        "money": false,
+        "src": "acs_pov"
+      }
+    ]
+  },
+  "assets": {
+    "title": "Five assets that can carry Perfect Mississippi.",
+    "line": "Each is owned by Mississippians today and can carry a standard of living.",
+    "items": [
+      {
+        "figure": "$40.4bn",
+        "money": true,
+        "name": "The pension fund",
+        "line": "The Public Employees’ Retirement System of Mississippi, invested for teachers, state and local workers.",
+        "src": "pers",
+        "lead": true
+      },
+      {
+        "figure": "19.1 million acres",
+        "money": false,
+        "name": "The forests",
+        "line": "Forest covers 64% of the State’s land, a renewable source of timber and carbon value.",
+        "src": "fia"
+      },
+      {
+        "figure": "640,000 acres",
+        "money": false,
+        "name": "The school trust land",
+        "line": "Sixteenth Section lands held in trust for public schools and leased by 101 school districts.",
+        "src": "sixteenth"
+      },
+      {
+        "figure": "$704.2m",
+        "money": true,
+        "name": "The rainy day fund",
+        "line": "The Working Cash Stabilization Reserve Fund, unallocated in the fiscal 2027 budget recommendation.",
+        "src": "lbo"
+      },
+      {
+        "figure": "computed:people",
+        "money": false,
+        "name": "The people",
+        "line": "Mississippians on 1 July 2025: the asset every other asset serves.",
+        "src": "pop"
+      }
+    ]
+  },
+  "standards": {
+    "title": "Perfect Mississippi, star by star.",
+    "line": "One measure for each of the seven basic standards of living. Where no official measure is published yet, the gap is shown, not filled.",
+    "items": [
+      {
+        "key": "food",
+        "name": "Food",
+        "figure": "computed:food",
+        "label": "of households food insecure, 2022–2024 (United States computed:food_us)",
+        "status": "risk",
+        "src": "usda"
+      },
+      {
+        "key": "water",
+        "name": "Water",
+        "figure": "",
+        "label": "Lead service lines still in use: the State’s figure under the 2025 federal update is being confirmed.",
+        "status": "gap",
+        "src": ""
+      },
+      {
+        "key": "shelter",
+        "name": "Shelter",
+        "figure": "1,245",
+        "label": "people without a home on one night, January 2025",
+        "status": "hold",
+        "src": "hud"
+      },
+      {
+        "key": "energy",
+        "name": "Energy",
+        "figure": "",
+        "label": "Households behind on energy bills: awaiting a primary published count.",
+        "status": "gap",
+        "src": ""
+      },
+      {
+        "key": "education",
+        "name": "Education",
+        "figure": "computed:reading",
+        "label": "of fourth graders read at the NAEP Proficient level, 2024 (United States computed:reading_us)",
+        "status": "hold",
+        "src": "naep"
+      },
+      {
+        "key": "health",
+        "name": "Health",
+        "figure": "computed:uninsured",
+        "label": "without health insurance, 2025 (United States computed:uninsured_us)",
+        "status": "risk",
+        "src": "acs_hi"
+      },
+      {
+        "key": "livelihood",
+        "name": "Livelihood",
+        "figure": "computed:poverty",
+        "label": "below the poverty line, 2025 (United States computed:poverty_us)",
+        "status": "binding",
+        "src": "acs_pov"
+      }
+    ],
+    "status_names": {
+      "binding": "Binding",
+      "risk": "At risk",
+      "hold": "Holding",
+      "gap": "Not yet measured"
+    },
+    "map_title": "Where the poverty line falls hardest",
+    "map_line": "Share of people below the poverty line in each of Mississippi’s 82 counties, 2020–2024.",
+    "map_src": "acs_cty"
+  },
+  "solutions": {
+    "title": "Solutions for Perfect Mississippi, in order.",
+    "line": "Livelihood first: the reading reform shows what Mississippi can do; incomes come next.",
+    "items": [
+      {
+        "phase": "Phase 1",
+        "standard": "Livelihood",
+        "status": "binding",
+        "challenge": "computed:poverty of Mississippians lived below the poverty line in 2025; 36.4% in Holmes County (2020–2024).",
+        "advises": "Turn the forests and school trust land into income: a Delta enterprise fund that invests in timber, processing and jobs in the poorest counties, with returns shared with the school trust.",
+        "src": "acs_pov"
+      },
+      {
+        "phase": "Phase 2",
+        "standard": "Food",
+        "status": "risk",
+        "challenge": "computed:food of households were food insecure in 2022–2024, above the national computed:food_us.",
+        "advises": "Put the savings from SNAP accuracy (band 05) into a food fund with Mississippi food banks and grocers, starting in the Delta.",
+        "src": "usda"
+      },
+      {
+        "phase": "Phase 2",
+        "standard": "Health",
+        "status": "risk",
+        "challenge": "computed:uninsured of Mississippians had no health insurance in 2025.",
+        "advises": "Pay rural clinics on outcomes through a health-access bond, repaid from savings in uncompensated hospital care.",
+        "src": "acs_hi"
+      }
+    ],
+    "hold": "Phase 3, hold the line: reading (computed:reading at the NAEP Proficient level, above the nation) and shelter (1,245 without a home on one night, January 2025), with water and energy measured next."
+  },
+  "capital": {
+    "title": "Mississippi already finances its recovery.",
+    "line": "Instruments on record that a Perfect Mississippi can build on.",
+    "items": [
+      {
+        "figure": "$750m",
+        "prefix": "",
+        "money": true,
+        "name": "The BP economic settlement",
+        "line": "Paid to the State from 2016 to 2033 for economic damage from the 2010 oil spill.",
+        "year": "2016–2033",
+        "src": "gcrf"
+      },
+      {
+        "figure": "$30m",
+        "prefix": "",
+        "money": true,
+        "name": "The Gulf Coast Restoration Fund",
+        "line": "A year for growth in the six southernmost counties, from the BP settlement.",
+        "year": "2026",
+        "src": "gcrf"
+      },
+      {
+        "figure": "$1.54bn",
+        "prefix": "",
+        "money": true,
+        "name": "The Capital Expense Fund",
+        "line": "Unallocated in the fiscal 2027 budget recommendation, for one-time investment.",
+        "year": "2027",
+        "src": "lbo"
+      },
+      {
+        "figure": "$356m",
+        "prefix": "",
+        "money": true,
+        "name": "Gulf Environmental Benefit Fund",
+        "line": "For natural resource projects on the Mississippi coast, from the BP and Transocean plea agreements.",
+        "year": "2013–2018",
+        "src": "nfwf"
+      }
+    ]
+  },
+  "intelligence": {
+    "title": "A $75m SNAP bill that accuracy can cut.",
+    "line": "From October 2027 every state pays part of its SNAP food benefits unless at least 94 of every 100 dollars are paid exactly right. AI that checks every case before it is paid can shrink that bill.",
+    "bill": "$75m",
+    "bill_label": "a year in SNAP benefits from October 2027, at the 2025 error rate",
+    "bill_src": "cbpp_shift",
+    "facts": [
+      {
+        "value": "9.51%",
+        "label": "of SNAP dollars paid in error, 2025",
+        "src": "usda_per"
+      },
+      {
+        "value": "10%",
+        "label": "share of benefits the State pays from October 2027",
+        "src": "cbpp_shift"
+      }
+    ],
+    "advises": "Bring the error rate under 8% and the share halves to 5%, about $37m a year saved. Build AI checks into the State’s new eligibility system, and audit them every quarter for underpayments as well as overpayments."
+  },
+  "close": {
+    "title": "Design Perfect Mississippi with us.",
+    "line": "State leaders, treasurers and investors: start with a briefing."
+  },
+  "sources": {
+    "gdp": {
+      "label": "U.S. Bureau of Economic Analysis, GDP by state, 2025, current dollars (updated 30 September 2026)",
+      "url": "https://www.bea.gov/data/gdp/gdp-state",
+      "short": "BEA, 2025"
+    },
+    "pop": {
+      "label": "U.S. Census Bureau, Vintage 2025 population estimates, 1 July 2025",
+      "url": "https://www.census.gov/data/tables/time-series/demo/popest/2020s-state-total.html",
+      "short": "Census Bureau, 2025"
+    },
+    "acs_pov": {
+      "label": "U.S. Census Bureau, American Community Survey 2025 1-year, table B17001",
+      "url": "https://data.census.gov/table/ACSDT1Y2025.B17001",
+      "short": "Census Bureau, ACS 2025"
+    },
+    "acs_cty": {
+      "label": "U.S. Census Bureau, American Community Survey 2020–2024 5-year, table B17001, Mississippi counties; outlines from the Census Bureau cartographic boundary file cb_2024_us_county_20m",
+      "url": "https://data.census.gov/table/ACSDT5Y2024.B17001",
+      "short": "Census Bureau, ACS 2020–2024"
+    },
+    "acs_hi": {
+      "label": "U.S. Census Bureau, American Community Survey 2025 1-year, table B27001 (civilian noninstitutionalized population)",
+      "url": "https://data.census.gov/table/ACSDT1Y2025.B27001",
+      "short": "Census Bureau, ACS 2025"
+    },
+    "usda": {
+      "label": "U.S. Department of Agriculture, Economic Research Service, Household Food Security in the United States in 2024 (ERR-358), table 4, average 2022–2024",
+      "url": "https://ers.usda.gov/sites/default/files/_laserfiche/publications/113623/ERR-358.pdf",
+      "short": "USDA, 2025"
+    },
+    "naep": {
+      "label": "National Center for Education Statistics, NAEP 2024 Reading, grade 4, at or above NAEP Proficient, public schools (NAEP Data Service)",
+      "url": "https://www.nationsreportcard.gov/reports/reading/2024/g4_8/",
+      "short": "NAEP, 2024"
+    },
+    "hud": {
+      "label": "U.S. Department of Housing and Urban Development, 2025 Point-in-Time count, in National Alliance to End Homelessness, Mississippi 2025 PIT data fact sheet",
+      "url": "https://endhomelessness.org/wp-content/uploads/2026/06/MS-2025-PIT-Data-Fact-Sheet.pdf",
+      "short": "HUD, 2025"
+    },
+    "pers": {
+      "label": "Public Employees’ Retirement System of Mississippi, Investment Committee, 23 June 2026: total fund assets of $40.4 billion at the end of May 2026",
+      "url": "https://www.pers.ms.gov/sites/default/files/Content/Board_Materials/2026/June/Materials/Investment%20Committee%20Meeting_June%202026.pdf",
+      "short": "PERS of Mississippi, 2026"
+    },
+    "fia": {
+      "label": "U.S. Forest Service, Forest Inventory and Analysis, Mississippi 2024 (forest land 19,094,744 acres; 64% of sampled land area)",
+      "url": "https://research.fs.usda.gov/download/treesearch/80336.pdf",
+      "short": "U.S. Forest Service, 2024"
+    },
+    "sixteenth": {
+      "label": "Mississippi Secretary of State, 16th Section Lands (more than 640,000 acres of public school trust lands, managed by 101 school districts)",
+      "url": "https://sos.ms.gov/public-Lands/16th-section-lands",
+      "short": "Secretary of State"
+    },
+    "lbo": {
+      "label": "Mississippi Legislative Budget Office, Joint Legislative Budget Committee FY2027 recommendation: unallocated Working Cash Stabilization Reserve Fund $704.2 million and Capital Expense Fund $1,540.6 million",
+      "url": "https://www.lbo.ms.gov/pdfs/fy27_jlbc_rec.pdf",
+      "short": "Legislative Budget Office, 2026"
+    },
+    "gcrf": {
+      "label": "WLOX, Mississippi opens applications for Gulf Coast Restoration Fund grants (1 June 2026): the $750 million BP settlement of 2016 and the $30 million a year for the Gulf Coast Restoration Fund",
+      "url": "https://www.wlox.com/2026/06/02/mississippi-opens-applications-gulf-coast-restoration-fund-grants/",
+      "short": "WLOX, 2026"
+    },
+    "nfwf": {
+      "label": "Mississippi Department of Environmental Quality, Gulf Environmental Benefit Fund ($356 million for natural resource projects in Mississippi)",
+      "url": "https://mdeq.ms.gov/restoration/nfwf/nfwf-projects",
+      "short": "MDEQ"
+    },
+    "usda_per": {
+      "label": "U.S. Department of Agriculture, Food and Nutrition Service, SNAP Quality Control: fiscal year 2025 payment error rates (24 June 2026)",
+      "url": "https://www.fna.usda.gov/sites/default/files/resource-files/snap-qcfy25-per.pdf",
+      "short": "USDA, 2026"
+    },
+    "cbpp_shift": {
+      "label": "Center on Budget and Policy Priorities, New Data Underscore SNAP Cost Shift’s Harm to Low-Income Families and State Budgets, tables 1 and 3 (23 July 2026)",
+      "url": "https://www.cbpp.org/sites/default/files/7-23-26fa.pdf",
+      "short": "CBPP, 2026"
+    },
+    "sas_nv": {
+      "label": "SAS, Nevada selects SAS to help reduce SNAP error rates with AI (June 2026)",
+      "url": "https://www.sas.com/en_us/news/press-releases/2026/june/nevada-snap-payment-integrity.html",
+      "short": "SAS, 2026"
+    },
+    "mi_ai": {
+      "label": "Michigan Public, ACLU of Michigan questions use of AI in assessing SNAP payments across the state (2 August 2026)",
+      "url": "https://www.michiganpublic.org/health/2026-08-02/aclu-of-michigan-questions-use-of-ai-in-assessing-snap-payments-across-the-state",
+      "short": "Michigan Public, 2026"
+    }
+  }
+}

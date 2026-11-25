@@ -1,0 +1,346 @@
+{
+  "slug": "connecticut",
+  "name": "Connecticut",
+  "abbr": "CT",
+  "fips": "09",
+  "version": "1.0",
+  "updated": "2026-11-25",
+  "county_word": "planning regions",
+  "about": "The blueprint of Connecticut (perfectnations.com/perfect-states/connecticut/). Census, NAEP and USDA figures marked \"computed\" are read by tools/build_us_state.py from data/us/raw/connecticut/ and data/us-states.json. Since 2022 the Census Bureau reports Connecticut by nine planning regions in place of its eight former counties; the map follows the Census. No figure is estimated.",
+  "notes": [
+    "v1.0: Perfect Connecticut, a Perfect States blueprint (Preeti Sinha, President and CEO, 25 Nov 2026: \"go ahead and implement\" the Perfect States plan). Water and Energy are shown as not yet measured: no primary state figure was confirmed."
+  ],
+  "hero": {
+    "eyebrow": "Perfect Connecticut · Perfect States",
+    "line": "A computed:gdp_words economy where 3,735 people had no home on a single night.",
+    "sub": "Perfect Nations counts what Connecticut owns, prices the seven basic standards of living for every resident, and designs the capital that closes the gap.",
+    "figures": [
+      {
+        "value": "computed:gdp",
+        "label": "GDP, 2025",
+        "money": true,
+        "src": "gdp"
+      },
+      {
+        "value": "$68.7bn",
+        "label": "The State’s pension and trust funds, 31 December 2025",
+        "money": true,
+        "src": "crptf"
+      },
+      {
+        "value": "3,735",
+        "label": "People without a home on one night, January 2025",
+        "money": false,
+        "src": "hud"
+      }
+    ]
+  },
+  "assets": {
+    "title": "Five assets that can carry Perfect Connecticut.",
+    "line": "Each is owned by the people of Connecticut today and can carry a standard of living.",
+    "items": [
+      {
+        "figure": "$68.7bn",
+        "money": true,
+        "name": "The pension and trust funds",
+        "line": "The Connecticut Retirement Plans and Trust Funds, eight public plans and twelve trusts, invested for teachers and public workers.",
+        "src": "crptf",
+        "lead": true
+      },
+      {
+        "figure": "$4.33bn",
+        "money": true,
+        "name": "The rainy day fund",
+        "line": "The Budget Reserve Fund, full at its legal cap of 18% of the General Fund, fiscal 2026.",
+        "src": "brf"
+      },
+      {
+        "figure": "$411.7m",
+        "money": true,
+        "name": "The early childhood endowment",
+        "line": "Deposited at the close of fiscal 2026 into the nation’s first endowment for early childhood care and education.",
+        "src": "ecee"
+      },
+      {
+        "figure": "$3.28bn",
+        "money": true,
+        "name": "The Green Bank",
+        "line": "Invested in Connecticut’s green economy since 2011 by the nation’s first green bank.",
+        "src": "ctgb"
+      },
+      {
+        "figure": "computed:people",
+        "money": false,
+        "name": "The people",
+        "line": "Connecticut residents on 1 July 2025: the asset every other asset serves.",
+        "src": "pop"
+      }
+    ]
+  },
+  "standards": {
+    "title": "Perfect Connecticut, star by star.",
+    "line": "One measure for each of the seven basic standards of living. Where no official measure is published yet, the gap is shown, not filled.",
+    "items": [
+      {
+        "key": "food",
+        "name": "Food",
+        "figure": "computed:food",
+        "label": "of households food insecure, 2022–2024 (United States computed:food_us)",
+        "status": "hold",
+        "src": "usda"
+      },
+      {
+        "key": "water",
+        "name": "Water",
+        "figure": "",
+        "label": "Lead service lines still in use: the State’s figure under the 2025 federal update is being confirmed.",
+        "status": "gap",
+        "src": ""
+      },
+      {
+        "key": "shelter",
+        "name": "Shelter",
+        "figure": "3,735",
+        "label": "people without a home on one night, January 2025, up 23.1% since 2019",
+        "status": "binding",
+        "src": "hud"
+      },
+      {
+        "key": "energy",
+        "name": "Energy",
+        "figure": "",
+        "label": "Households behind on energy bills: awaiting a primary published count.",
+        "status": "gap",
+        "src": ""
+      },
+      {
+        "key": "education",
+        "name": "Education",
+        "figure": "computed:reading",
+        "label": "of fourth graders read at the NAEP Proficient level, 2024 (United States computed:reading_us)",
+        "status": "hold",
+        "src": "naep"
+      },
+      {
+        "key": "health",
+        "name": "Health",
+        "figure": "computed:uninsured",
+        "label": "without health insurance, 2025 (United States computed:uninsured_us)",
+        "status": "hold",
+        "src": "acs_hi"
+      },
+      {
+        "key": "livelihood",
+        "name": "Livelihood",
+        "figure": "computed:poverty",
+        "label": "below the poverty line, 2025 (United States computed:poverty_us)",
+        "status": "hold",
+        "src": "acs_pov"
+      }
+    ],
+    "status_names": {
+      "binding": "Binding",
+      "risk": "At risk",
+      "hold": "Holding",
+      "gap": "Not yet measured"
+    },
+    "map_title": "Where the poverty line falls hardest",
+    "map_line": "Share of people below the poverty line in each of Connecticut’s nine planning regions, 2020–2024.",
+    "map_src": "acs_cty"
+  },
+  "solutions": {
+    "title": "Solutions for Perfect Connecticut, in order.",
+    "line": "Shelter first: homelessness has risen while every other standard holds.",
+    "items": [
+      {
+        "phase": "Phase 1",
+        "standard": "Shelter",
+        "status": "binding",
+        "challenge": "3,735 people had no home on one night in January 2025, up 23.1% since 2019.",
+        "advises": "Take the Green Bank model to housing: a State housing fund that uses public dollars to draw private capital into supportive homes, repaid in part as households move from shelter into homes of their own.",
+        "src": "hud"
+      },
+      {
+        "phase": "Phase 2",
+        "standard": "Livelihood",
+        "status": "hold",
+        "challenge": "12.4% of people in Greater Bridgeport live below the poverty line, the highest of the nine planning regions (2020–2024).",
+        "advises": "Pair CT Baby Bonds with an outcome contract for jobs in Greater Bridgeport, so the first cohort meets a stronger local economy when it turns 18 in 2041.",
+        "src": "acs_cty"
+      },
+      {
+        "phase": "Phase 2",
+        "standard": "Food",
+        "status": "hold",
+        "challenge": "computed:food of households were food insecure in 2022–2024.",
+        "advises": "Use the State’s $500m reserve for federal actions as first-loss capital in a food-security fund, so lenders and food banks keep households supplied as SNAP rules change.",
+        "src": "usda"
+      }
+    ],
+    "hold": "Phase 3, hold the line: health coverage (computed:uninsured uninsured) and reading (computed:reading at the NAEP Proficient level), with water and energy measured next."
+  },
+  "capital": {
+    "title": "Connecticut already finances at scale.",
+    "line": "Instruments on record that a Perfect Connecticut can build on.",
+    "items": [
+      {
+        "figure": "$2.74bn",
+        "prefix": "",
+        "money": true,
+        "name": "Green Bank private capital",
+        "line": "Drawn by $542.7m of Green Bank money since 2011: $6 of private investment for every $1.",
+        "year": "2012–2026",
+        "src": "ctgb"
+      },
+      {
+        "figure": "$3,200",
+        "prefix": "",
+        "money": true,
+        "name": "CT Baby Bonds",
+        "line": "Invested by the State for every baby born on HUSKY, Connecticut’s Medicaid; the nation’s first state program.",
+        "year": "2023",
+        "src": "babybonds"
+      },
+      {
+        "figure": "$1.3bn",
+        "prefix": "",
+        "money": true,
+        "name": "The volatility cap",
+        "line": "Revenue above the cap paid into the teachers’ and state workers’ pension funds at the close of fiscal 2026.",
+        "year": "2026",
+        "src": "volatility"
+      },
+      {
+        "figure": "$500m",
+        "prefix": "",
+        "money": true,
+        "name": "The federal response reserve",
+        "line": "Set aside by the legislature to respond to federal actions that affect the State budget.",
+        "year": "2025",
+        "src": "fedres"
+      }
+    ]
+  },
+  "intelligence": {
+    "title": "An $80m SNAP bill that accuracy can cut.",
+    "line": "From October 2027 every state pays part of its SNAP food benefits unless at least 94 of every 100 dollars are paid exactly right. AI that checks every case before it is paid can shrink that bill.",
+    "bill": "$80m",
+    "bill_label": "a year in SNAP benefits from October 2027, at the 2025 error rate",
+    "bill_src": "cbpp_shift",
+    "facts": [
+      {
+        "value": "9.08%",
+        "label": "of SNAP dollars paid in error, 2025",
+        "src": "usda_per"
+      },
+      {
+        "value": "10%",
+        "label": "share of benefits the State pays from October 2027",
+        "src": "cbpp_shift"
+      }
+    ],
+    "advises": "Bring the error rate under 8% and the share halves to 5%, about $40m a year saved. Fund AI case review from the savings, starting with the fiscal 2027 rate that sets the bill for fiscal 2030, and audit it every quarter for underpayments as well as overpayments."
+  },
+  "close": {
+    "title": "Design Perfect Connecticut with us.",
+    "line": "State leaders, treasurers and investors: start with a briefing."
+  },
+  "sources": {
+    "gdp": {
+      "label": "U.S. Bureau of Economic Analysis, GDP by state, 2025, current dollars (updated 30 September 2026)",
+      "url": "https://www.bea.gov/data/gdp/gdp-state",
+      "short": "BEA, 2025"
+    },
+    "pop": {
+      "label": "U.S. Census Bureau, Vintage 2025 population estimates, 1 July 2025",
+      "url": "https://www.census.gov/data/tables/time-series/demo/popest/2020s-state-total.html",
+      "short": "Census Bureau, 2025"
+    },
+    "acs_pov": {
+      "label": "U.S. Census Bureau, American Community Survey 2025 1-year, table B17001",
+      "url": "https://data.census.gov/table/ACSDT1Y2025.B17001",
+      "short": "Census Bureau, ACS 2025"
+    },
+    "acs_cty": {
+      "label": "U.S. Census Bureau, American Community Survey 2020–2024 5-year, table B17001, Connecticut planning regions; outlines from the Census Bureau cartographic boundary file cb_2024_us_county_20m",
+      "url": "https://data.census.gov/table/ACSDT5Y2024.B17001",
+      "short": "Census Bureau, ACS 2020–2024"
+    },
+    "acs_hi": {
+      "label": "U.S. Census Bureau, American Community Survey 2025 1-year, table B27001 (civilian noninstitutionalized population)",
+      "url": "https://data.census.gov/table/ACSDT1Y2025.B27001",
+      "short": "Census Bureau, ACS 2025"
+    },
+    "usda": {
+      "label": "U.S. Department of Agriculture, Economic Research Service, Household Food Security in the United States in 2024 (ERR-358), table 4, average 2022–2024",
+      "url": "https://ers.usda.gov/sites/default/files/_laserfiche/publications/113623/ERR-358.pdf",
+      "short": "USDA, 2025"
+    },
+    "naep": {
+      "label": "National Center for Education Statistics, NAEP 2024 Reading, grade 4, at or above NAEP Proficient, public schools (NAEP Data Service)",
+      "url": "https://www.nationsreportcard.gov/reports/reading/2024/g4_8/",
+      "short": "NAEP, 2024"
+    },
+    "hud": {
+      "label": "U.S. Department of Housing and Urban Development, 2025 Point-in-Time count, in National Alliance to End Homelessness, Connecticut 2025 PIT data fact sheet",
+      "url": "https://endhomelessness.org/wp-content/uploads/2026/06/CT-2025-PIT-Data-Fact-Sheet.pdf",
+      "short": "HUD, 2025"
+    },
+    "crptf": {
+      "label": "Chief Investment Officer (ai-CIO), Connecticut Pension Returns 14.2% in 2025: Connecticut Retirement Plans and Trust Funds assets of $68.7 billion at 31 December 2025 (March 2026)",
+      "url": "https://www.ai-cio.com/?p=103694",
+      "short": "ai-CIO, 2026"
+    },
+    "brf": {
+      "label": "Office of the State Comptroller, Letter of the First, 1 July 2026: Budget Reserve Fund at its statutory cap of $4.33 billion (18% of net General Fund appropriations)",
+      "url": "https://osc.ct.gov/wp-content/uploads/2026/07/July-1-2026-Letter-of-the-First.pdf",
+      "short": "State Comptroller, 2026"
+    },
+    "ecee": {
+      "label": "Office of the State Comptroller, Letter of the First, 3 August 2026 ($411.7 million to the Early Childhood Education Endowment); Office of the Treasurer, 2025 Annual Report (first-in-the-nation endowment)",
+      "url": "https://osc.ct.gov/wp-content/uploads/2026/08/August-3-2026-Letter-of-the-First.pdf",
+      "url2": "https://portal.ct.gov/ott/newsroom/news/news-releases/russell-releases-annual-report-investment-returns-taxpayer-savings-and-agency-longterm-public-impact",
+      "short": "State Comptroller, 2026"
+    },
+    "ctgb": {
+      "label": "Connecticut Green Bank, FY12–FY26 Impact Report (14 July 2026)",
+      "url": "https://www.ctgreenbank.com/wp-content/uploads/2026/07/FY12-FY26-CGB-ImpactReport-7-14-2026.pdf",
+      "short": "Connecticut Green Bank, 2026"
+    },
+    "babybonds": {
+      "label": "Office of the Treasurer, CT Baby Bonds turns two: over 33,000 children now eligible",
+      "url": "https://portal.ct.gov/ott/newsroom/news/news-releases/ct-baby-bonds-turns-two-over-33000-children-now-eligible",
+      "short": "State Treasurer"
+    },
+    "volatility": {
+      "label": "Office of the Treasurer, Treasurer Russell Deposits $1.3 Billion Volatility Transfer into State Pension Funds (8 September 2026)",
+      "url": "https://portal.ct.gov/ott/newsroom/news/news-releases/treasurer-russell-deposits-13-billion-volatility-transfer-into-state-pension-funds",
+      "short": "State Treasurer, 2026"
+    },
+    "fedres": {
+      "label": "Office of the State Comptroller, Comptroller Sean Scanlon projects $136.3 million surplus ($500 million reserve for responding to federal actions)",
+      "url": "https://osc.ct.gov/articles/comptroller-sean-scanlon-projects-136-3-million-surplus/",
+      "short": "State Comptroller, 2025"
+    },
+    "usda_per": {
+      "label": "U.S. Department of Agriculture, Food and Nutrition Service, SNAP Quality Control: fiscal year 2025 payment error rates (24 June 2026)",
+      "url": "https://www.fna.usda.gov/sites/default/files/resource-files/snap-qcfy25-per.pdf",
+      "short": "USDA, 2026"
+    },
+    "cbpp_shift": {
+      "label": "Center on Budget and Policy Priorities, New Data Underscore SNAP Cost Shift’s Harm to Low-Income Families and State Budgets, tables 1 and 3 (23 July 2026)",
+      "url": "https://www.cbpp.org/sites/default/files/7-23-26fa.pdf",
+      "short": "CBPP, 2026"
+    },
+    "sas_nv": {
+      "label": "SAS, Nevada selects SAS to help reduce SNAP error rates with AI (June 2026)",
+      "url": "https://www.sas.com/en_us/news/press-releases/2026/june/nevada-snap-payment-integrity.html",
+      "short": "SAS, 2026"
+    },
+    "mi_ai": {
+      "label": "Michigan Public, ACLU of Michigan questions use of AI in assessing SNAP payments across the state (2 August 2026)",
+      "url": "https://www.michiganpublic.org/health/2026-08-02/aclu-of-michigan-questions-use-of-ai-in-assessing-snap-payments-across-the-state",
+      "short": "Michigan Public, 2026"
+    }
+  }
+}

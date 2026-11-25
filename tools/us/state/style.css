@@ -1,5 +1,6 @@
 /* PERFECT NATIONS - A STATE BLUEPRINT - style. Scoped to the page root (#ROOT, for example #pn-us-new-york); classes pnst-.
-   Earthrise hero (the gold state), then light bands: ivory, paper, ivory, paper, ivory. Gold only for money and actions. */
+   Earthrise hero (the gold state), then light bands: ivory, paper, ivory, paper; 05 Perfect Nations Intelligence on
+   Earthrise; the close on ivory. Gold only for money and actions. */
 #ROOT{
   --er:#0B3D45; --dp:#082A30;
   --fg:#F4ECD8; --mut:rgba(244,236,216,.84); --dim:rgba(244,236,216,.64); --hair:rgba(244,236,216,.16);
@@ -171,6 +172,29 @@
 #ROOT .pnst-cap1 p{ margin:0; font-size:.88rem; line-height:1.42; color:var(--body); }
 #ROOT .pnst-cap1 .pnst-src{ color:var(--muted); }
 
+/* ---------- 05 Perfect Nations Intelligence (Earthrise): the SNAP bill, what already runs, what Perfect Nations advises ---------- */
+#ROOT .pnst-si{ color:var(--fg); background:radial-gradient(55% 70% at 90% 10%, rgba(227,194,88,.14) 0%, rgba(227,194,88,0) 62%), radial-gradient(50% 60% at 0% 100%, rgba(47,181,140,.08) 0%, transparent 70%), linear-gradient(180deg,#0B3D45 0%,#093741 60%,#082F37 100%); }
+#ROOT .pnst-si .pnst-eb{ color:var(--g); }
+#ROOT .pnst-si h2.pnst-h2{ color:var(--fg) !important; }
+#ROOT .pnst-si .pnst-lead{ color:var(--mut); }
+#ROOT .pnst-si .pnst-src{ color:var(--dim); }
+#ROOT .pnst-si__grid{ display:grid; gap:12px; grid-template-columns:minmax(0,1fr); }
+@media (min-width:900px){ #ROOT .pnst-si__grid{ grid-template-columns:minmax(0,1.1fr) minmax(0,1fr) minmax(0,1fr); } }
+#ROOT .pnst-si__bill,#ROOT .pnst-si__card{ display:flex; flex-direction:column; gap:8px; padding:18px 20px; border-radius:16px; background:rgba(244,236,216,.05); box-shadow:0 0 0 1px var(--hair); }
+#ROOT .pnst-si__bill{ box-shadow:0 0 0 1px rgba(var(--grgb),.45), 0 22px 44px rgba(8,42,48,.25); }
+#ROOT .pnst-si__card--adv{ background:rgba(227,194,88,.08); }
+#ROOT .pnst-si__k{ margin:0; font-family:var(--hd); font-size:.66rem; font-weight:700; letter-spacing:.22em; text-transform:uppercase; color:var(--g); }
+#ROOT .pnst-si__big{ margin:0; font-family:var(--hd); font-weight:700; font-size:clamp(2.6rem,5vw,4rem); line-height:.95; color:var(--g); font-variant-numeric:tabular-nums; }
+#ROOT .pnst-si__bl{ margin:0; font-size:.92rem; line-height:1.4; color:var(--mut); }
+#ROOT .pnst-si__facts{ display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:0 14px; margin:4px 0 0; padding:10px 0 0; list-style:none; border-top:1px solid var(--hair); }
+#ROOT .pnst-si__facts li{ display:flex; flex-direction:column; gap:3px; }
+#ROOT .pnst-si__facts b{ font-family:var(--hd); font-weight:700; font-size:1.5rem; line-height:1; color:var(--fg); font-variant-numeric:tabular-nums; }
+#ROOT .pnst-si__facts span{ font-size:.76rem; line-height:1.35; color:var(--dim); }
+#ROOT .pnst-si__list{ display:flex; flex-direction:column; gap:10px; margin:0; padding:0; list-style:none; font-size:.9rem; line-height:1.45; color:var(--mut); }
+#ROOT .pnst-si__list b{ color:var(--fg); font-weight:600; }
+#ROOT .pnst-si__t{ margin:0; font-size:.95rem; line-height:1.5; color:var(--fg); }
+#ROOT .pnst-si__tests{ margin:12px 0 0; max-width:96ch; font-size:.8rem; line-height:1.45; color:var(--dim); }
+
 /* ---------- close and sources ---------- */
 #ROOT .pnst-close__in{ display:flex; flex-wrap:wrap; align-items:flex-end; justify-content:space-between; gap:14px 40px; }
 #ROOT .pnst-close .pnst-ctas{ margin-top:0; }
@@ -213,6 +237,9 @@
   #ROOT .pnst-sols::-webkit-scrollbar{ display:none; }
   #ROOT .pnst-sol{ flex:0 0 86%; scroll-snap-align:start; }
   #ROOT .pnst-cap1{ grid-template-columns:84px minmax(0,1fr); gap:2px 12px; }
+  #ROOT .pnst-si__bill,#ROOT .pnst-si__card{ padding:14px 14px 12px; }
+  #ROOT .pnst-si__big{ font-size:2.6rem; }
+  #ROOT .pnst-si__list,#ROOT .pnst-si__t{ font-size:.86rem; }
   #ROOT .pnst-cap1 p.pnst-cap1__f{ font-size:1.4rem; }
   #ROOT .pnst-close .pnst-ctas{ width:100%; display:grid; grid-template-columns:1fr; }
   #ROOT .pnst-srcs ol{ columns:1; }

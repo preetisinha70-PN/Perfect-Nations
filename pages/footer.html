@@ -1,5 +1,6 @@
 <!-- ===========================================================================
-PERFECT NATIONS - FOOTER - v11.8 SLIM - 2026-11-24
+PERFECT NATIONS - FOOTER - v11.9 SLIM - 2026-11-25
+v11.9: 50 States becomes Perfect States, at /perfect-states/ (Preeti Sinha, President and CEO, 25 Nov 2026). Nothing else changes.
 v11.8: The three mandates group leaves the footer (it made the formatting uneven); the mandates stay in the header
 only. Back to three groups, as in v11.5 (Preeti Sinha, President and CEO, 24 Nov 2026). Nothing else changes.
 v11.7: Perfect Nations Intelligence (/intelligence/) follows State of Nations under Where we work (Preeti Sinha, 24 Nov 2026).
@@ -191,7 +192,7 @@ html:has(#pn-ft), html:has(#pn-ft) body{ overflow-x:clip; }
           <span class="pnft-gl">Where we work</span>
           <ul aria-label="Where we work">
             <li><a href="https://perfectnations.com/blueprints/">Blueprints</a></li>
-            <li><a href="https://perfectnations.com/50-states/">50 States</a></li>
+            <li><a href="https://perfectnations.com/perfect-states/">Perfect States</a></li>
             <li><a href="https://perfectnations.com/state-of-nations/">State of Nations</a></li>
             <li><a href="https://perfectnations.com/intelligence/">Perfect Nations Intelligence</a></li>
             <li><a href="https://perfectnations.com/category/letters-to-the-nations/">Letters</a></li>
@@ -235,7 +236,7 @@ html:has(#pn-ft), html:has(#pn-ft) body{ overflow-x:clip; }
   function trim(p){ return String(p || '').replace(/\/+$/, ''); }
   function ours(u){ return u.origin === window.location.origin || SITE.test(u.hostname); }
   function nationPage(p){
-    return /^\/blueprints\/[^\/]+/.test(p) || /^\/50-states\/[^\/]+/.test(p) || /^\/dear-[a-z0-9-]+\/?$/.test(p);
+    return /^\/blueprints\/[^\/]+/.test(p) || /^\/(perfect-states|50-states)\/[^\/]+/.test(p) || /^\/dear-[a-z0-9-]+\/?$/.test(p);
   }
   /* where a link opens: '' (leave it alone), '_self', the nation tab, or '_blank' */
   function where(u){
