@@ -1,4 +1,4 @@
-/* The three mandates of the ReDesign Studio, as a nation receives them (v2.0, 24 Nov 2026).
+/* The three mandates of the ReDesign Studio, as a nation receives them (v2.2, 24 Nov 2026; v2.2: shared on request, see the end).
    v2.0: lighter (about a quarter of the words) and livelier, in the same look (Preeti Sinha, President and CEO:
    "Keep the overall current great style ... Less wordy"): the answer first in one gold figure that counts up, the live
    tape of the nation's own deals, the seven stars of the logo filling to each standard, deal tombstones that turn over,
@@ -250,6 +250,40 @@
 #R.md-js .md-rise:not(.is-in){ opacity:0; transform:translateY(18px); }
 
 /* ---------- phones: nothing scrolls sideways; rows of cards swipe ---------- */
+/* v2.2 shared on request (Preeti Sinha, President and CEO, 24 Nov 2026): what is inside, locked, and the request dialog */
+#R .md-pad{ display:inline-block; flex:none; width:1.25em; height:1.25em; fill:none; stroke:currentColor; stroke-width:1.7; stroke-linecap:round; stroke-linejoin:round; vertical-align:-.2em; }
+#R .md-lock__g{ display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1.1fr); gap:clamp(18px,3vw,48px); align-items:center; }
+#R .md-lock .md-eb .md-pad{ color:var(--gd); }
+#R .md-lock__p{ margin:10px 0 0; max-width:44ch; font-size:clamp(1rem,1.2vw,1.1rem); line-height:1.5; color:var(--im); }
+#R .md-lock .md-acts{ margin-top:16px; }
+#R .md-lock__m{ margin:12px 0 0; font-size:.88rem; color:var(--mut); }
+#R .md-lock__m a{ color:var(--er); font-weight:600; text-underline-offset:3px; }
+#R .md-lock__l{ display:grid; gap:8px; padding:16px; border-radius:20px; background:linear-gradient(165deg,#0F4C5C 0%,#0B3D45 60%,#082A30 100%); box-shadow:0 22px 48px rgba(8,42,48,.28), inset 0 0 0 1px rgba(227,194,88,.35); }
+#R .md-lock__l li{ display:grid; grid-template-columns:auto minmax(0,auto) minmax(0,1fr); align-items:center; gap:12px; padding:10px 14px; border-radius:12px; background:rgba(245,241,232,.06); color:var(--tv); font-family:var(--hd); font-size:.9rem; font-weight:600; letter-spacing:.06em; text-transform:uppercase; }
+#R .md-lock__l li .md-pad{ color:var(--g); }
+#R .md-lock__l li b{ color:var(--g); font-weight:700; }
+#R .md-lock__l li i{ display:block; height:8px; border-radius:4px; background:linear-gradient(90deg,rgba(245,241,232,.22),rgba(245,241,232,.06)); filter:blur(1.5px); }
+#R .md-dlg{ width:min(520px,calc(100vw - 28px)); max-height:calc(100vh - 28px); margin:auto; padding:0; border:0; border-radius:22px; background:var(--pp); color:var(--ink); box-shadow:0 30px 80px rgba(4,20,24,.45), inset 0 0 0 1px rgba(227,194,88,.5); overflow:auto; }
+#R .md-dlg::backdrop{ background:rgba(8,42,48,.66); }
+#R .md-dlg__in{ position:relative; display:grid; gap:12px; padding:clamp(20px,3vw,30px); font-family:var(--bd); }
+#R .md-dlg .md-eb .md-pad{ color:var(--gd); }
+#R .md-dlg .md-h2{ margin:0; padding-right:40px; font-size:clamp(1.6rem,3vw,2.1rem); }
+#R .md-dlg__p{ margin:0; font-size:.98rem; line-height:1.45; color:var(--im); }
+#R .md-dlg__p b{ color:var(--er); }
+#R .md-dlg__f{ display:grid; gap:4px; font-family:var(--hd); font-size:.7rem; font-weight:700; letter-spacing:.16em; text-transform:uppercase; color:var(--im); }
+#R .md-dlg__f input,#R .md-dlg__f textarea{ width:100%; margin:0; padding:10px 12px; border:1px solid rgba(16,38,43,.22); border-radius:12px; background:var(--wh); color:var(--ink); font-family:var(--bd); font-size:1rem; letter-spacing:0; text-transform:none; box-shadow:none; }
+#R .md-dlg__f textarea{ resize:vertical; min-height:72px; }
+#R .md-dlg__f input:focus,#R .md-dlg__f textarea:focus{ outline:2px solid var(--er); outline-offset:1px; border-color:var(--er); }
+#R .md-dlg__b{ display:flex; flex-wrap:wrap; gap:8px; margin-top:4px; }
+#R .md-dlg__b .md-btn{ min-height:42px; padding:0 16px; font-size:.72rem; letter-spacing:.12em; cursor:pointer; }
+#R .md-dlg__b .md-btn:first-child{ flex:1 1 100%; }
+#R .md-btn--ink{ background:transparent; color:var(--er) !important; border-color:rgba(11,61,69,.4); }
+#R .md-btn--ink:hover,#R .md-btn--ink:focus-visible{ border-color:var(--er); box-shadow:none; }
+#R .md-dlg__s{ margin:0; font-size:.78rem; line-height:1.45; color:var(--mut); }
+#R .md-dlg__x{ position:absolute; top:14px; right:14px; width:38px; height:38px; padding:0; border-radius:50%; border:1px solid rgba(227,194,88,.9); background:transparent; cursor:pointer; }
+#R .md-dlg__x span,#R .md-dlg__x span::before{ position:absolute; left:50%; top:50%; width:16px; height:2px; border-radius:1px; background:var(--gd); transform:translate(-50%,-50%) rotate(45deg); }
+#R .md-dlg__x span::before{ content:""; transform:translate(-50%,-50%) rotate(90deg); }
+#R .md-dlg__x:hover,#R .md-dlg__x:focus-visible{ background:var(--g); }
 @media (max-width:899px){
   #R .md-hero__g,#R .md-starband,#R .md-two{ grid-template-columns:minmax(0,1fr); }
   #R .md-big{ padding-left:0; padding-top:16px; border-left:0; border-top:1px solid rgba(227,194,88,.45); }
@@ -276,12 +310,16 @@
   #R .md-qs li{ grid-template-columns:minmax(0,1fr) auto; }
   #R .md-qs li span{ grid-column:1 / -1; }
   #R .md-trio strong{ font-size:1.75rem; }
+  #R .md-lock__g{ grid-template-columns:minmax(0,1fr); }
 }
 @keyframes mdDrawY{ from{ transform:scaleY(0); } to{ transform:scaleY(1); } }
 @media (max-width:560px){
   #R h1.md-h1{ font-size:clamp(2.3rem,11vw,3rem); }
   #R .md-big__n{ font-size:clamp(4.6rem,24vw,6.4rem); }
   #R .md-acts .md-btn{ flex:1 1 100%; }
+  #R .md-lock__l{ padding:12px; }
+  #R .md-lock__l li{ font-size:.8rem; padding:9px 12px; gap:10px; }
+  #R .md-dlg__b .md-btn{ flex:1 1 28%; padding:0 8px; letter-spacing:.06em; }
   #R .md-trio{ gap:8px; }
   #R .md-trio li > span{ font-size:.8rem; }
 }
