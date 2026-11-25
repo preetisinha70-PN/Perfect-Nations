@@ -1,11 +1,12 @@
 #!/usr/bin/env python3
-"""Build a Perfect Nations STATE blueprint: perfectnations.com/50-states/<slug>/ (first: New York, 10 Nov 2026).
+"""Build a Perfect Nations STATE blueprint: perfectnations.com/perfect-states/<slug>/ (first: New York, 10 Nov 2026;
+Connecticut, Alaska, New Mexico, Texas and Mississippi, 25 Nov 2026).
 
   python3 tools/build_us_state.py new-york      writes pages/us-<slug>.html (root pn-us-<slug>)
 
 Reads:
   data/us/states/<slug>.json   the words, the figures found on official pages (each with a source id) and the sources
-  data/us-states.json          population, GDP and the share below the poverty line (the 50 States file)
+  data/us-states.json          population, GDP and the share below the poverty line (the Perfect States file)
   data/us/raw/<slug>/          official downloads: ACS 2025 B27001 (health insurance), ACS 2020-2024 B17001 by county
                                (with the county names), NAEP 2024 reading (NAEP Data Service), USDA ERR-358 table 4
   tools/us/counties-albers-10m.json   us-atlas 3 (ISC): Census Bureau county outlines, Albers USA; the state is drawn
@@ -13,8 +14,8 @@ Reads:
   tools/us/state/style.css, script.js the design (scoped to #ROOT, replaced by the page root)
 A figure written "computed:<name>" in the blueprint file is filled here from those files; nothing is estimated.
 
-The page goes live when pages/manifest.json carries the key pn-us-<slug> with its url; the 50 States page and the
-header search then turn the state bright gold by themselves. The WordPress page /50-states/<slug>/ holds ONE Custom HTML
+The page goes live when pages/manifest.json carries the key pn-us-<slug> with its url; the Perfect States page and the
+header search then turn the state bright gold by themselves. The WordPress page /perfect-states/<slug>/ holds ONE Custom HTML
 block with <div id="pn-us-<slug>"> and a fallback line. Never edit the built page by hand.
 """
 import csv
@@ -45,12 +46,22 @@ def pct(v, d=1):
     return ('%.' + str(d) + 'f%%') % v
 
 
+def rawfile(slug, name):
+    """A file of data/us/raw/<slug>/, or the shared national copy kept with New York (table shells, the United
+    States rows of NAEP and USDA), so each state keeps only its own downloads."""
+    for d in (slug, 'new-york'):
+        p = DATA / 'us' / 'raw' / d / name
+        if p.exists():
+            return p
+    sys.exit('missing raw file %s for %s' % (name, slug))
+
+
 # ------------------------------------------------------------------------------------------- figures
 def computed(st, slug):
     us50 = json.loads((DATA / 'us-states.json').read_text(encoding='utf-8'))
     s = next(x for x in us50['states'] if x['slug'] == slug)
     us = us50['us']
-    raw = DATA / 'us' / 'raw' / slug
+    a = st['abbr'].lower()
     c = {
         'gdp': money(s['gdp_musd']),
         'gdp_words': money(s['gdp_musd']).replace('tn', ' trillion').replace('bn', ' billion'),
@@ -60,9 +71,9 @@ def computed(st, slug):
         'poverty_below': '{:,}'.format(s['poverty']['below']),
     }
     # health insurance: ACS 2025 1-year B27001, the 18 "No health insurance coverage" cells over the universe
-    rows = [l.rstrip('\n').split('|') for l in (raw / 'acsdt1y2025-b27001-ny-us.dat').read_text().splitlines()]
+    rows = [l.rstrip('\n').split('|') for l in rawfile(slug, 'acsdt1y2025-b27001-%s-us.dat' % a).read_text().splitlines()]
     idx = {h: i for i, h in enumerate(rows[0])}
-    shells = (raw / 'shells-2025-B27001.txt').read_text()
+    shells = rawfile(slug, 'shells-2025-B27001.txt').read_text()
     no = [int(m) for m in re.findall(r'\|B27001_(\d{3})\|No health insurance coverage\|', shells)]
     if len(no) != 18:
         sys.exit('B27001: expected 18 uninsured cells, found %d' % len(no))
@@ -73,16 +84,16 @@ def computed(st, slug):
     c['uninsured'] = pct(share['0400000US' + st['fips']])
     c['uninsured_us'] = pct(share['0100000US'])
     # NAEP 2024 reading, grade 4, at or above Proficient (public schools)
-    ny = json.loads((raw / 'naep-reading-g4-2024-ny.json').read_text())['result'][0]
-    nt = json.loads((raw / 'naep-reading-g4-2024-nt.json').read_text())['result'][0]
+    ny = json.loads(rawfile(slug, 'naep-reading-g4-2024-%s.json' % a).read_text())['result'][0]
+    nt = json.loads(rawfile(slug, 'naep-reading-g4-2024-nt.json').read_text())['result'][0]
     if ny['jurisdiction'] != st['abbr'] or ny['stattype'] != 'ALC:AP' or ny['year'] != 2024:
         sys.exit('NAEP file is not %s 2024 at or above Proficient' % st['abbr'])
     c['reading'] = '%d%%' % round(ny['value'])
     c['reading_us'] = '%d%%' % round(nt['value'])
     # USDA ERR-358 table 4: food insecurity, average 2022-2024
-    t4 = (raw / 'usda-err358-table4-states.txt').read_text()
+    t4 = rawfile(slug, 'usda-err358-table4-states.txt').read_text()
     def row(code):
-        m = re.search(r'^%s\s+[\d,]+\s+[\d,]+\s+([\d.]+)\s' % re.escape(code), t4, re.M)
+        m = re.search(r'^%s\s+[\d,]+\s+[\d,]+\s+([\d.]+)\*?\s' % re.escape(code), t4, re.M)  # * = above the U.S. (USDA)
         if not m:
             sys.exit('USDA table 4: no row for %s' % code)
         return float(m.group(1))
@@ -102,12 +113,18 @@ def fill(text, c):
 
 def counties(st, slug):
     raw = DATA / 'us' / 'raw' / slug
+    a = st['abbr'].lower()
     names = {}
-    for l in (raw / 'geos-2024-5y-ny-counties.txt').read_text(encoding='latin-1').splitlines()[1:]:
-        g, n = l.split('|', 1)
-        names[g[-5:]] = n.split(',')[0].replace(' County', '')
+    gj = raw / 'counties-cb2024-20m.geojson'
+    if gj.exists():
+        for f in json.loads(gj.read_text(encoding='utf-8'))['features']:
+            names[f['id']] = f['properties']['name']
+    else:
+        for l in (raw / ('geos-2024-5y-%s-counties.txt' % a)).read_text(encoding='latin-1').splitlines()[1:]:
+            g, n = l.split('|', 1)
+            names[g[-5:]] = n.split(',')[0].replace(' County', '')
     out = {}
-    lines = (raw / 'acsdt5y2024-b17001-ny-counties.dat').read_text().splitlines()
+    lines = (raw / ('acsdt5y2024-b17001-%s-counties.dat' % a)).read_text().splitlines()
     if lines[0].split('|')[:4] != ['GEO_ID', 'B17001_E001', 'B17001_M001', 'B17001_E002']:
         sys.exit('unexpected B17001 county columns')
     for l in lines[1:]:
@@ -119,6 +136,60 @@ def counties(st, slug):
 
 
 # ------------------------------------------------------------------------------------------- the map
+def albers_paths(gj_path, width=1000.0, tol=0.55):
+    """The Census 2024 county outlines (cb_2024_us_county_20m), drawn with an Albers equal-area projection fitted to
+    the state. Used where the 2017 us-atlas outlines no longer match the Census areas (Connecticut's nine planning
+    regions since 2022, Alaska's Chugach and Copper River since 2019), and for every state blueprint from v1.0."""
+    feats = json.loads(gj_path.read_text(encoding='utf-8'))['features']
+
+    def rings(g):
+        polys = g['coordinates'] if g['type'] == 'MultiPolygon' else [g['coordinates']]
+        return [[[(x - 360.0 if x > 0 else x), y] for x, y in ring] for poly in polys for ring in poly]
+    allpts = [p for f in feats for r in rings(f['geometry']) for p in r]
+    lons = [p[0] for p in allpts]
+    lats = [p[1] for p in allpts]
+    lo1, lo2, la1, la2 = min(lons), max(lons), min(lats), max(lats)
+    r = math.radians
+    p1, p2 = r(la1 + (la2 - la1) / 6.0), r(la2 - (la2 - la1) / 6.0)
+    p0, l0 = r((la1 + la2) / 2.0), r((lo1 + lo2) / 2.0)
+    n = (math.sin(p1) + math.sin(p2)) / 2.0
+    C = math.cos(p1) ** 2 + 2 * n * math.sin(p1)
+    rho0 = math.sqrt(C - 2 * n * math.sin(p0)) / n
+
+    def proj(lon, lat):
+        rho = math.sqrt(C - 2 * n * math.sin(r(lat))) / n
+        th = n * (r(lon) - l0)
+        return rho * math.sin(th), -(rho0 - rho * math.cos(th))
+    shapes = {f['id']: [[proj(x, y) for x, y in ring] for ring in rings(f['geometry'])] for f in feats}
+    xs = [p[0] for rs in shapes.values() for rg in rs for p in rg]
+    ys = [p[1] for rs in shapes.values() for rg in rs for p in rg]
+    minx, miny, maxx, maxy = min(xs), min(ys), max(xs), max(ys)
+    k = width / (maxx - minx)
+    pad = 6.0
+    w, h = width + 2 * pad, (maxy - miny) * k + 2 * pad
+    out = {}
+    for gid, rs in shapes.items():
+        d = []
+        for rg in rs:
+            pts = dp([((x - minx) * k + pad, (y - miny) * k + pad) for x, y in rg], tol)
+            pts = [(round(x, 1), round(y, 1)) for x, y in pts]
+            ded = [pts[0]]
+            for q in pts[1:]:
+                if q != ded[-1]:
+                    ded.append(q)
+            if len(ded) < 3:
+                continue
+            s0 = 'M%s,%s' % (num(ded[0][0]), num(ded[0][1]))
+            px, py = ded[0]
+            rel = []
+            for x, y in ded[1:]:
+                rel.append('%s,%s' % (num(round(x - px, 1)), num(round(y - py, 1))))
+                px, py = x, y
+            d.append(s0 + 'l' + ' '.join(rel) + 'z')
+        out[gid] = ''.join(d)
+    return out, (w, h)
+
+
 def state_paths(fips, width=1000.0, tol=0.55):
     topo = json.loads((US / 'counties-albers-10m.json').read_text(encoding='utf-8'))
     sx, sy = topo['transform']['scale']
@@ -205,7 +276,9 @@ def build(slug):
     T = lambda s: ent(fill(s, c))  # noqa: E731
     root = 'pn-us-' + slug
     cty = counties(st, slug)
-    paths, (vw, vh) = state_paths(st['fips'])
+    gj = DATA / 'us' / 'raw' / slug / 'counties-cb2024-20m.geojson'
+    paths, (vw, vh) = albers_paths(gj) if gj.exists() else state_paths(st['fips'])
+    cw = st.get('county_word', 'counties')
     if set(paths) != set(cty):
         sys.exit('counties: outlines %d, figures %d' % (len(paths), len(cty)))
 
@@ -213,30 +286,30 @@ def build(slug):
     h = st['hero']
     figs = ''.join('<li><b class="%s">%s</b><span>%s %s</span></li>' % (
         'pnst-money' if f['money'] else '', T(f['value'].replace('computed:', 'computed:')), T(f['label']), src(f['src'])) for f in h['figures'])
-    hero_svg = ('<svg viewBox="0 0 %s %s" role="img" aria-label="%s, its %d counties, in gold" focusable="false">'
+    hero_svg = ('<svg viewBox="0 0 %s %s" role="img" aria-label="%s, its %d %s, in gold" focusable="false">'
                 '<g class="pnst-ol">%s</g><g class="pnst-cl">%s</g></svg>') % (
-        num(vw), num(vh), ent(st['name']), len(paths),
+        num(vw), num(vh), ent(st['name']), len(paths), ent(cw),
         ''.join('<path d="%s" stroke="#E3C258" stroke-width=".6"/>' % d for d in paths.values()),
         ''.join('<path d="%s"/>' % d for d in paths.values()))
     hero = '''
 <section class="pnst-band pnst-hero" aria-labelledby="pnst-h1">
   <div class="pnst-in pnst-top">
     <div class="pnst-intro">
-      <p class="pnst-eb"><a href="https://perfectnations.com/50-states/" data-pn-same-tab="1">%s</a></p>
+      <p class="pnst-eb"><a href="https://perfectnations.com/perfect-states/" data-pn-same-tab="1">%s</a></p>
       <h1 class="pnst-h1" id="pnst-h1">%s</h1>
       <p class="pnst-line">%s</p>
       <p class="pnst-sub">%s</p>
     </div>
-    <div class="pnst-statemap">%s<p class="pnst-cap">%d counties</p></div>
+    <div class="pnst-statemap">%s<p class="pnst-cap">%d %s</p></div>
     <div class="pnst-facts">
       <ul class="pnst-figs">%s</ul>
       <div class="pnst-ctas">
         <a class="pnst-btn" href="#pnst-solutions" data-pn-same-tab="1">The solutions</a>
-        <a class="pnst-btn pnst-btn--line" href="https://perfectnations.com/50-states/">All 50 states</a>
+        <a class="pnst-btn pnst-btn--line" href="https://perfectnations.com/perfect-states/">All 50 states</a>
       </div>
     </div>
   </div>
-</section>''' % (T(h['eyebrow']), ent(st['name']), T(h['line']), T(h['sub']), hero_svg, len(paths), figs)
+</section>''' % (T(h['eyebrow']), ent(st['name']), T(h['line']), T(h['sub']), hero_svg, len(paths), ent(cw), figs)
 
     # 01 assets
     A = st['assets']
@@ -275,9 +348,9 @@ def build(slug):
       <div class="pnst-ch"><svg viewBox="0 0 %s %s" role="group" aria-label="Map: share below the poverty line by county" focusable="false">%s</svg><div class="pnst-tip" role="status" hidden></div></div>
       <ul class="pnst-legend" aria-label="Share below the poverty line">%s</ul>
       <p class="pnst-mapnote">Highest: %s, %.1f%%. Lowest: %s, %.1f%%. Statewide in 2025: %s.</p>
-      <details><summary>All %d counties</summary><ol class="pnst-ctab">%s</ol></details>
+      <details><summary>All %d %s</summary><ol class="pnst-ctab">%s</ol></details>
     </div>''' % (T(P['map_title']), T(P['map_line']), src(P['map_src']), num(vw), num(vh), ch_paths, legend,
-                 ent(cty[hi][0]), shares[hi], ent(cty[lo][0]), shares[lo], c['poverty'], len(cty), table)
+                 ent(cty[hi][0]), shares[hi], ent(cty[lo][0]), shares[lo], c['poverty'], len(cty), ent(cw), table)
     pc = '''
 <section class="pnst-band pnst-pp" id="pnst-standards" aria-labelledby="pnst-h2b">
   <div class="pnst-in">
@@ -313,6 +386,27 @@ def build(slug):
   </div>
 </section>''' % (T(K['title']), T(K['line']), caps)
 
+    # 05 Perfect Nations Intelligence: the SNAP payment-accuracy bill, the AI programmes already running elsewhere
+    # (data/us/intelligence.json, shared by every state), and what Perfect Nations advises for this state
+    I = st['intelligence']
+    shared = json.loads((DATA / 'us' / 'intelligence.json').read_text(encoding='utf-8'))
+    for k, v in shared['sources'].items():
+        S.setdefault(k, v)
+    facts = ''.join('<li><b>%s</b><span>%s %s</span></li>' % (T(f['value']), T(f['label']), src(f['src'])) for f in I['facts'])
+    proven = ''.join('<li><b>%s</b> %s %s</li>' % (T(x['name']), T(x['line']), src(x['src'])) for x in shared['proven'])
+    intel = '''
+<section class="pnst-band pnst-si" id="pnst-si" aria-labelledby="pnst-h2s">
+  <div class="pnst-in">
+    <div class="pnst-head"><div><p class="pnst-eb">05 &middot; Perfect Nations Intelligence</p><h2 class="pnst-h2" id="pnst-h2s">%s</h2></div><p class="pnst-lead">%s</p></div>
+    <div class="pnst-si__grid">
+      <div class="pnst-si__bill"><p class="pnst-si__k">The bill</p><p class="pnst-si__big">%s</p><p class="pnst-si__bl">%s %s</p><ul class="pnst-si__facts">%s</ul></div>
+      <div class="pnst-si__card"><p class="pnst-si__k">Already running elsewhere</p><ul class="pnst-si__list">%s</ul></div>
+      <div class="pnst-si__card pnst-si__card--adv"><p class="pnst-si__k">What Perfect Nations advises</p><p class="pnst-si__t">%s</p></div>
+    </div>
+    <p class="pnst-si__tests">%s</p>
+  </div>
+</section>''' % (T(I['title']), T(I['line']), T(I['bill']), T(I['bill_label']), src(I['bill_src']), facts, proven, T(I['advises']), T(shared['tests']))
+
     # close and sources (in order of first use)
     for k in S:
         if k not in order:
@@ -330,7 +424,7 @@ def build(slug):
       <div class="pnst-ctas">
         <a class="pnst-btn" href="https://perfectnations.com/contact/?about=briefing&amp;country=%s">Request a briefing</a>
         <a class="pnst-btn pnst-btn--line" href="https://perfectnations.com/design-studio/">The ReDesign Studio</a>
-        <a class="pnst-btn pnst-btn--line" href="https://perfectnations.com/50-states/">All 50 states</a>
+        <a class="pnst-btn pnst-btn--line" href="https://perfectnations.com/perfect-states/">All 50 states</a>
       </div>
     </div>
     <details class="pnst-srcs"><summary>Sources (%d)</summary><ol>%s</ol></details>
@@ -344,17 +438,18 @@ def build(slug):
     js = (US / 'state' / 'script.js').read_text(encoding='utf-8').strip().replace("'ROOT'", "'%s'" % root)
     today = datetime.now(timezone.utc).strftime('%Y-%m-%d')
     head = '''<!-- ===========================================================================
-PERFECT NATIONS - THE BLUEPRINT OF %s (THE 50 STATES) - THE WHOLE PAGE IN ONE FILE - v%s - %s
-perfectnations.com/50-states/%s/ holds ONE Custom HTML block whose root is %s. The Perfect Nations Live Pages
+PERFECT NATIONS - PERFECT %s (PERFECT STATES) - THE WHOLE PAGE IN ONE FILE - v%s - %s
+perfectnations.com/perfect-states/%s/ holds ONE Custom HTML block whose root is %s. The Perfect Nations Live Pages
 plugin serves this file from GitHub in its place. Never edit this file by hand: edit data/us/states/%s.json (words,
-figures, sources) or tools/us/state/ (design), run python3 tools/build_us_state.py %s, and open a pull request.
-v1.0: the first state blueprint (the Steward-General, 10 Nov 2026). Bands: the gold state (Earthrise); 01 Assets
-(ivory); 02 the seven standards and the county map (paper); 03 Solutions, in order (ivory); 04 Capital already
-committed (paper); the gold line; Work with us and Sources (ivory). Water and Energy are shown as not yet measured:
-no primary state figure was confirmed (EDITORIAL: add when the Surveyor confirms one).
+figures, sources), data/us/intelligence.json (shared) or tools/us/state/ (design), run
+python3 tools/build_us_state.py %s, and open a pull request.
+%s
+Bands: the gold state (Earthrise); 01 Assets (ivory); 02 the seven standards and the county map (paper); 03 Solutions,
+in order (ivory); 04 Capital already committed (paper); 05 Perfect Nations Intelligence (Earthrise); the gold line;
+Work with us and Sources (ivory). A standard with no primary state figure is shown as not yet measured.
 =========================================================================== -->
-''' % (ent(st['name'].upper()), st['version'], today, slug, root, slug, slug)
-    body = '<div id="%s" data-version="%s">\n%s\n%s%s%s%s%s%s%s\n</div>\n' % (root, st['version'], rule, logo_parts(), hero, assets, pc, solutions, capital, close)
+''' % (ent(st['name'].upper()), st['version'], today, slug, root, slug, slug, ent('\n'.join(st.get('notes', []))))
+    body = '<div id="%s" data-version="%s">\n%s\n%s%s%s%s%s%s%s%s\n</div>\n' % (root, st['version'], rule, logo_parts(), hero, assets, pc, solutions, capital, intel, close)
     page = head + '<style>\n%s\n</style>\n' % css + body + '<script>\n%s\n</script>\n' % js
     ids = re.findall(r'\bid\s*=\s*["\'](pn-[a-z0-9-]+)["\']', page)
     if ids[:1] != [root] or set(ids) != {root}:

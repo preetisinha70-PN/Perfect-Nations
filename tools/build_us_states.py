@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build the Perfect Nations 50 States page (perfectnations.com/50-states/) and its data file.
+"""Build the Perfect States page (perfectnations.com/perfect-states/; The 50 States until v1.1) and its data file.
 
 Writes two files:
   data/us-states.json     the 50 states: name, postal code, Census region, and three official figures each
@@ -29,7 +29,7 @@ Sources (the downloads and their addresses are listed in data/us/raw/README.md):
 Run from the repository root:
   python3 tools/build_us_states.py --data   rebuild data/us-states.json from data/us/raw/
   python3 tools/build_us_states.py          build pages/us-states.html (and check the data file first)
-Then raise "pn-us" in pages/manifest.json and open a pull request "For approval: The 50 States vX.Y, ...".
+Then raise "pn-us" in pages/manifest.json and open a pull request "For approval: Perfect States vX.Y, ...".
 """
 import csv
 import html
@@ -45,7 +45,7 @@ PAGES = ROOT / 'pages'
 DATA = ROOT / 'data'
 RAW = DATA / 'us' / 'raw'
 HERE = Path(__file__).resolve().parent / 'us'
-VERSION = '1.1'
+VERSION = '1.2'
 
 # Postal codes by FIPS (the Census Bureau's state codes). DC (11) is not a state and is not listed.
 ABBR = {
@@ -157,7 +157,7 @@ def build_data():
     doc = {
         'page': 'us-states',
         'updated': datetime.now(timezone.utc).strftime('%Y-%m-%d'),
-        'about': 'The 50 States page (perfectnations.com/50-states/). Built by python3 tools/build_us_states.py --data '
+        'about': 'The Perfect States page (perfectnations.com/perfect-states/). Built by python3 tools/build_us_states.py --data '
                  'from the official files in data/us/raw/; adds no figure of its own. poverty.share = below / universe, '
                  'one decimal. gdp_musd: millions of current US dollars.',
         'sources': SOURCES,
@@ -426,11 +426,14 @@ def build_page(doc):
     body = re.sub(r'<!--pn:([a-z_]+)-->', sub, tpl)
     today = datetime.now(timezone.utc).strftime('%Y-%m-%d')
     head = '''<!-- ===========================================================================
-PERFECT NATIONS - THE 50 STATES - THE WHOLE PAGE IN ONE FILE - v%s - %s
-perfectnations.com/50-states/ holds ONE Elementor Custom HTML widget (or Custom HTML block) whose root is
+PERFECT NATIONS - PERFECT STATES - THE WHOLE PAGE IN ONE FILE - v%s - %s
+perfectnations.com/perfect-states/ holds ONE Elementor Custom HTML widget (or Custom HTML block) whose root is
 pn-us. The Perfect Nations Live Pages plugin serves this file from GitHub in its place. Never edit this file
 by hand: edit tools/us/ (design and words) or rebuild data/us-states.json, run
 python3 tools/build_us_states.py, and open a pull request.
+v1.2: The 50 States is renamed Perfect States, at /perfect-states/ (/50-states/ answers with a 301 from the
+Live Pages plugin); the hero reads what each state owns, what its seven standards cost and how to finance them
+(Preeti Sinha, President and CEO, 25 Nov 2026: "go ahead and implement" the Perfect States plan).
 v1.1: the page script sits inside an HTML comment marker, so the WordPress formatter cannot turn its double
 ampersands into entities on the block-editor page (10 Nov 2026).
 v1.0: the section for the 50 states of the United States, where state blueprints will open (the

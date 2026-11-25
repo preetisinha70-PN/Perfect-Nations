@@ -4,13 +4,13 @@
   "pages": {
     "pn-hd": {
       "file": "pages/header.html",
-      "version": "21.1",
+      "version": "21.2",
       "title": "Header (every page)",
       "url": "https://perfectnations.com/"
     },
     "pn-ft": {
       "file": "pages/footer.html",
-      "version": "11.8",
+      "version": "11.9",
       "title": "Footer (every page)",
       "url": "https://perfectnations.com/"
     },
@@ -676,15 +676,45 @@
     },
     "pn-us": {
       "file": "pages/us-states.html",
-      "version": "1.1",
-      "title": "The 50 States (the section for the 50 states of the United States: the golden map, every state in one line, how a state blueprint works; built by tools/build_us_states.py from data/us-states.json; a state blueprint is a pn-us-<slug> key)",
-      "url": "https://perfectnations.com/50-states/"
+      "version": "1.2",
+      "title": "Perfect States (the section for the 50 states of the United States, The 50 States until v1.1: the golden map, every state in one line, how a state blueprint works; built by tools/build_us_states.py from data/us-states.json; a state blueprint is a pn-us-<slug> key)",
+      "url": "https://perfectnations.com/perfect-states/"
     },
     "pn-us-new-york": {
       "file": "pages/us-new-york.html",
-      "version": "1.1",
-      "title": "Blueprint of New York (the first state blueprint of the 50 States; built by tools/build_us_state.py from data/us/states/new-york.json)",
-      "url": "https://perfectnations.com/50-states/new-york/"
+      "version": "1.2",
+      "title": "Perfect New York (the first state blueprint of Perfect States; built by tools/build_us_state.py from data/us/states/new-york.json)",
+      "url": "https://perfectnations.com/perfect-states/new-york/"
+    },
+    "pn-us-connecticut": {
+      "file": "pages/us-connecticut.html",
+      "version": "1.0",
+      "title": "Perfect Connecticut (a Perfect States blueprint; built by tools/build_us_state.py from data/us/states/connecticut.json)",
+      "url": "https://perfectnations.com/perfect-states/connecticut/"
+    },
+    "pn-us-alaska": {
+      "file": "pages/us-alaska.html",
+      "version": "1.0",
+      "title": "Perfect Alaska (a Perfect States blueprint; built by tools/build_us_state.py from data/us/states/alaska.json)",
+      "url": "https://perfectnations.com/perfect-states/alaska/"
+    },
+    "pn-us-new-mexico": {
+      "file": "pages/us-new-mexico.html",
+      "version": "1.0",
+      "title": "Perfect New Mexico (a Perfect States blueprint; built by tools/build_us_state.py from data/us/states/new-mexico.json)",
+      "url": "https://perfectnations.com/perfect-states/new-mexico/"
+    },
+    "pn-us-texas": {
+      "file": "pages/us-texas.html",
+      "version": "1.0",
+      "title": "Perfect Texas (a Perfect States blueprint; built by tools/build_us_state.py from data/us/states/texas.json)",
+      "url": "https://perfectnations.com/perfect-states/texas/"
+    },
+    "pn-us-mississippi": {
+      "file": "pages/us-mississippi.html",
+      "version": "1.0",
+      "title": "Perfect Mississippi (a Perfect States blueprint; built by tools/build_us_state.py from data/us/states/mississippi.json)",
+      "url": "https://perfectnations.com/perfect-states/mississippi/"
     },
     "pn-sov": {
       "file": "pages/sovereign-assets.html",
@@ -1809,7 +1839,9 @@
     "/bezos-funds-100-million-prize-for-ai-and-climate-change-revolutionizing-environmental-innovation-2/": "/bezos-funds-100-million-prize-for-ai-and-climate-change-revolutionizing-environmental-innovation/",
     "/world-bank-rhino-bond-for-wildlife-conservation-2/": "/world-bank-rhino-bond-for-wildlife-conservation/",
     "/portfolio-guaranty-3/": "/portfolio-guaranty/",
-    "/blueprints/palestine/": "/blueprints/state-of-palestine/"
+    "/blueprints/palestine/": "/blueprints/state-of-palestine/",
+    "/50-states/": "/perfect-states/",
+    "/50-states/new-york/": "/perfect-states/new-york/"
   },
   "redirects_about": {
     "/cart/": "WooCommerce was switched off on 6 Nov 2026 (works are offered by enquiry from Art of Nations), so the old store pages lead to Art of Nations. Remove this line if the store is switched on again.",
@@ -1835,7 +1867,9 @@
     "/bezos-funds-100-million-prize-for-ai-and-climate-change-revolutionizing-environmental-innovation-2/": "A second copy of the same article, made by a double import in 2024. Search Console reported it as a duplicate (19 Nov 2026), so it leads to the original.",
     "/world-bank-rhino-bond-for-wildlife-conservation-2/": "A second copy of the same article, made by a double import in 2024. Search Console reported it as a duplicate (19 Nov 2026), so it leads to the original.",
     "/portfolio-guaranty-3/": "A second copy of the same article, made by a double import in 2024. Search Console reported it as a duplicate (19 Nov 2026), so it leads to the original. (/portfolio-guaranty-2/ is a different article and stays.)",
-    "/blueprints/palestine/": "The Palestine blueprint lives at /blueprints/state-of-palestine/; /blueprints/palestine/ was a page not found, and the site's pages link to it (19 Nov 2026)."
+    "/blueprints/palestine/": "The Palestine blueprint lives at /blueprints/state-of-palestine/; /blueprints/palestine/ was a page not found, and the site's pages link to it (19 Nov 2026).",
+    "/50-states/": "The 50 States was renamed Perfect States on 25 Nov 2026 (Preeti Sinha, President and CEO); its WordPress page moves from /50-states/ to /perfect-states/, and old links lead to the new address.",
+    "/50-states/new-york/": "The 50 States was renamed Perfect States on 25 Nov 2026 (Preeti Sinha, President and CEO); its WordPress page moves from /50-states/ to /perfect-states/, and old links lead to the new address."
   },
   "additional_css": {
     "file": "pages/additional.css",

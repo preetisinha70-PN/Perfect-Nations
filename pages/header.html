@@ -1,5 +1,8 @@
 <!-- ==========================================================================
-PERFECT NATIONS - CUSTOM HEADER - v21.1 EARTHRISE - 2026-11-24
+PERFECT NATIONS - CUSTOM HEADER - v21.2 EARTHRISE - 2026-11-25
+v21.2: The 50 States becomes Perfect States, at /perfect-states/, under Where we work; the search finds it as
+"Perfect States" (and still as "50 states"), and an American state not yet open goes to /perfect-states/?state=
+(Preeti Sinha, President and CEO, 25 Nov 2026: "go ahead and implement" the Perfect States plan). Nothing else changes.
 v21.1: Perfect Nations Intelligence (/intelligence/) joins Insights, after State of Nations, and the search finds it
   (Preeti Sinha, President and CEO, 24 Nov 2026: "Create a perfect nations intelligence page after State of Nations").
 v21.0: the three mandates fold into a drop-down under ReDesign Studio, so Work with us reads as four lines: a small
@@ -534,7 +537,7 @@ html:has(#pn-hd), html:has(#pn-hd) body{ overflow-x:clip; }
           <p class="pn-hd__gh" id="pn-hd-g2">Where we work</p>
           <ul class="pn-hd__gl" aria-labelledby="pn-hd-g2">
             <li><a href="https://perfectnations.com/blueprints/"><span class="pn-hd__gt">Blueprints of Nations<small>One blueprint for each client nation</small></span></a></li>
-            <li><a href="https://perfectnations.com/50-states/"><span class="pn-hd__gt">The 50 States<small>One blueprint for each American state</small></span></a></li>
+            <li><a href="https://perfectnations.com/perfect-states/"><span class="pn-hd__gt">Perfect States<small>One blueprint for each American state</small></span></a></li>
           </ul>
         </div>
         <div class="pn-hd__grp pn-hd__grp--insights">
@@ -651,7 +654,7 @@ html:has(#pn-hd), html:has(#pn-hd) body{ overflow-x:clip; }
     var liveUS = {};       /* slug: url of an open state blueprint (pn-us-<slug> in the manifest) */
     var PAGES = [
       ['Blueprints', '/blueprints/', 'all nations national blueprints map'],
-      ['The 50 States', '/50-states/', 'united states usa us america american states state blueprints governors'],
+      ['Perfect States', '/perfect-states/', 'perfect states 50 states fifty united states usa us america american states state blueprints governors'],
       ['Sovereign Assets', '/sovereign-assets/', 'assets land water forest minerals coast energy wealth'],
       ['Perfect Capita', '/perfect-capita/', 'living line seven standards food water shelter energy education health livelihood cost per person'],
       ['Capital Architecture', '/capital-architecture/', 'finance financing bonds debt swaps guarantees instruments capital investors'],
@@ -725,7 +728,7 @@ html:has(#pn-hd), html:has(#pn-hd) body{ overflow-x:clip; }
         r = score(STATES[i][1], 'us state usa', q);
         if(r < 0 || r > 1) continue;
         s = liveUS[slug];
-        out.push({ t: STATES[i][1], u: s || SITE + '/50-states/?state=' + slug, k: s ? 'State blueprint' : 'U.S. state', g: !!s, r: r, o: 0.5, nw: !!s });
+        out.push({ t: STATES[i][1], u: s || SITE + '/perfect-states/?state=' + slug, k: s ? 'State blueprint' : 'U.S. state', g: !!s, r: r, o: 0.5, nw: !!s });
       }
       for(i = 0; i < PAGES.length; i++){
         r = score(PAGES[i][0], PAGES[i][2], q);
@@ -845,7 +848,7 @@ html:has(#pn-hd), html:has(#pn-hd) body{ overflow-x:clip; }
   function trim(p){ return String(p || '').replace(/\/+$/, ''); }
   function ours(u){ return u.origin === window.location.origin || SITE.test(u.hostname); }
   function nationPage(p){
-    return /^\/blueprints\/[^\/]+/.test(p) || /^\/50-states\/[^\/]+/.test(p) || /^\/dear-[a-z0-9-]+\/?$/.test(p);
+    return /^\/blueprints\/[^\/]+/.test(p) || /^\/(perfect-states|50-states)\/[^\/]+/.test(p) || /^\/dear-[a-z0-9-]+\/?$/.test(p);
   }
   /* where a link opens: '' (leave it alone), '_self', the nation tab, or '_blank' */
   function where(u){

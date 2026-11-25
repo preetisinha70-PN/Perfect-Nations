@@ -1,0 +1,334 @@
+{
+  "slug": "new-mexico",
+  "name": "New Mexico",
+  "abbr": "NM",
+  "fips": "35",
+  "version": "1.0",
+  "updated": "2026-11-25",
+  "about": "The blueprint of New Mexico (perfectnations.com/perfect-states/new-mexico/). Census, NAEP and USDA figures marked \"computed\" are read by tools/build_us_state.py from data/us/raw/new-mexico/ and data/us-states.json. No figure is estimated.",
+  "notes": [
+    "v1.0: Perfect New Mexico, a Perfect States blueprint (Preeti Sinha, President and CEO, 25 Nov 2026: \"go ahead and implement\" the Perfect States plan). Water and Energy are shown as not yet measured: no primary state figure was confirmed."
+  ],
+  "hero": {
+    "eyebrow": "Perfect New Mexico · Perfect States",
+    "line": "A computed:gdp_words economy with $74.8 billion in permanent funds, where computed:reading of fourth graders read at the NAEP Proficient level.",
+    "sub": "Perfect Nations counts what New Mexico owns, prices the seven basic standards of living for every resident, and designs the capital that closes the gap.",
+    "figures": [
+      {
+        "value": "computed:gdp",
+        "label": "GDP, 2025",
+        "money": true,
+        "src": "gdp"
+      },
+      {
+        "value": "$74.8bn",
+        "label": "Funds of the State Investment Council, 31 May 2026",
+        "money": true,
+        "src": "sic"
+      },
+      {
+        "value": "computed:reading",
+        "label": "Fourth graders reading at NAEP Proficient, 2024",
+        "money": false,
+        "src": "naep"
+      }
+    ]
+  },
+  "assets": {
+    "title": "Five assets that can carry Perfect New Mexico.",
+    "line": "Each is owned by New Mexicans today and can carry a standard of living.",
+    "items": [
+      {
+        "figure": "$40.8bn",
+        "money": true,
+        "name": "The Land Grant Permanent Fund",
+        "line": "Built since 1912 from royalties on state trust land; it pays for public schools and early childhood every year.",
+        "src": "sic",
+        "lead": true
+      },
+      {
+        "figure": "$13.5bn",
+        "money": true,
+        "name": "The Severance Tax Permanent Fund",
+        "line": "Saved from oil and gas taxes not needed for bonds, and paid into the general fund.",
+        "src": "sic"
+      },
+      {
+        "figure": "9 million acres",
+        "money": false,
+        "name": "The trust land",
+        "line": "Surface acres held in trust, with 13 million mineral acres, earning for schools and other beneficiaries in every county.",
+        "src": "slo"
+      },
+      {
+        "figure": "$2.4bn",
+        "money": true,
+        "name": "The Tax Stabilization Reserve",
+        "line": "The State’s reserve for a fall in revenue, managed by the State Investment Council.",
+        "src": "sic_nov"
+      },
+      {
+        "figure": "computed:people",
+        "money": false,
+        "name": "The people",
+        "line": "New Mexicans on 1 July 2025: the asset every other asset serves.",
+        "src": "pop"
+      }
+    ]
+  },
+  "standards": {
+    "title": "Perfect New Mexico, star by star.",
+    "line": "One measure for each of the seven basic standards of living. Where no official measure is published yet, the gap is shown, not filled.",
+    "items": [
+      {
+        "key": "food",
+        "name": "Food",
+        "figure": "computed:food",
+        "label": "of households food insecure, 2022–2024 (United States computed:food_us)",
+        "status": "risk",
+        "src": "usda"
+      },
+      {
+        "key": "water",
+        "name": "Water",
+        "figure": "",
+        "label": "Lead service lines still in use: the State’s figure under the 2025 federal update is being confirmed.",
+        "status": "gap",
+        "src": ""
+      },
+      {
+        "key": "shelter",
+        "name": "Shelter",
+        "figure": "4,683",
+        "label": "people without a home on one night, January 2025",
+        "status": "risk",
+        "src": "hud"
+      },
+      {
+        "key": "energy",
+        "name": "Energy",
+        "figure": "",
+        "label": "Households behind on energy bills: awaiting a primary published count.",
+        "status": "gap",
+        "src": ""
+      },
+      {
+        "key": "education",
+        "name": "Education",
+        "figure": "computed:reading",
+        "label": "of fourth graders read at the NAEP Proficient level, 2024 (United States computed:reading_us)",
+        "status": "binding",
+        "src": "naep"
+      },
+      {
+        "key": "health",
+        "name": "Health",
+        "figure": "computed:uninsured",
+        "label": "without health insurance, 2025 (United States computed:uninsured_us)",
+        "status": "risk",
+        "src": "acs_hi"
+      },
+      {
+        "key": "livelihood",
+        "name": "Livelihood",
+        "figure": "computed:poverty",
+        "label": "below the poverty line, 2025 (United States computed:poverty_us)",
+        "status": "risk",
+        "src": "acs_pov"
+      }
+    ],
+    "status_names": {
+      "binding": "Binding",
+      "risk": "At risk",
+      "hold": "Holding",
+      "gap": "Not yet measured"
+    },
+    "map_title": "Where the poverty line falls hardest",
+    "map_line": "Share of people below the poverty line in each of New Mexico’s 33 counties, 2020–2024.",
+    "map_src": "acs_cty"
+  },
+  "solutions": {
+    "title": "Solutions for Perfect New Mexico, in order.",
+    "line": "Reading first: the State already endows childcare, and reading is where the gap is widest.",
+    "items": [
+      {
+        "phase": "Phase 1",
+        "standard": "Education",
+        "status": "binding",
+        "challenge": "computed:reading of fourth graders read at the NAEP Proficient level in 2024, against computed:reading_us nationally.",
+        "advises": "Tie part of the early childhood fund’s growth to reading: an outcome contract that pays providers for measured gains by third grade, starting in McKinley County.",
+        "src": "naep"
+      },
+      {
+        "phase": "Phase 2",
+        "standard": "Livelihood",
+        "status": "risk",
+        "challenge": "computed:poverty of New Mexicans lived below the poverty line in 2025; 33.2% in McKinley County (2020–2024).",
+        "advises": "Invest a share of the Severance Tax Permanent Fund in New Mexico enterprises that hire in the poorest counties, with the returns shared with the fund.",
+        "src": "acs_pov"
+      },
+      {
+        "phase": "Phase 2",
+        "standard": "Shelter",
+        "status": "risk",
+        "challenge": "4,683 New Mexicans had no home on one night in January 2025.",
+        "advises": "Lease state trust land for homes near jobs: ground rents go to the trust beneficiaries, and investors are repaid as households are housed.",
+        "src": "hud"
+      }
+    ],
+    "hold": "Phase 3, hold the line: food (computed:food of households food insecure) and health (computed:uninsured uninsured), with water and energy measured next."
+  },
+  "capital": {
+    "title": "New Mexico already finances at scale.",
+    "line": "Instruments on record that a Perfect New Mexico can build on.",
+    "items": [
+      {
+        "figure": "$11.7bn",
+        "prefix": "",
+        "money": true,
+        "name": "The early childhood fund",
+        "line": "Grown from $300m in 2020 to pay for the nation’s first free universal childcare, from November 2025.",
+        "year": "2020–2026",
+        "src": "sic_q2"
+      },
+      {
+        "figure": "$981m",
+        "prefix": "",
+        "money": true,
+        "name": "Early childhood, fiscal 2027",
+        "line": "General fund and trust fund money for early childhood, up from $226m in fiscal 2023.",
+        "year": "2027",
+        "src": "sic_nov"
+      },
+      {
+        "figure": "$234m",
+        "prefix": "",
+        "money": true,
+        "name": "The Water Trust Fund",
+        "line": "Managed by the State Investment Council to conserve and protect New Mexico’s water.",
+        "year": "2026",
+        "src": "sic_nov"
+      },
+      {
+        "figure": "$10bn",
+        "prefix": "over",
+        "money": true,
+        "name": "State Land Office earnings",
+        "line": "Earned for schools and other beneficiaries from state trust land since 2019.",
+        "year": "2019–2024",
+        "src": "slo24"
+      }
+    ]
+  },
+  "intelligence": {
+    "title": "A delayed SNAP bill, and the time to cut it.",
+    "line": "From October 2027 every state pays part of its SNAP food benefits unless at least 94 of every 100 dollars are paid exactly right. AI that checks every case before it is paid can shrink that bill.",
+    "bill": "$150m",
+    "bill_label": "a year in SNAP benefits once the delayed start ends, at the full 15% share",
+    "bill_src": "cbpp_shift",
+    "facts": [
+      {
+        "value": "16.81%",
+        "label": "of SNAP dollars paid in error, 2025",
+        "src": "usda_per"
+      },
+      {
+        "value": "Delayed",
+        "label": "start for states at or above 13.33%; then up to 15% of benefits",
+        "src": "cbpp_shift"
+      }
+    ],
+    "advises": "Use the delay. The aim is under 6%, where the State pays nothing; falling only part of the way ends the delay and brings a 15% bill forward. Fund AI case review from the early childhood model, with quarterly audits for underpayments as well as overpayments."
+  },
+  "close": {
+    "title": "Design Perfect New Mexico with us.",
+    "line": "State leaders, the State Investment Council and investors: start with a briefing."
+  },
+  "sources": {
+    "gdp": {
+      "label": "U.S. Bureau of Economic Analysis, GDP by state, 2025, current dollars (updated 30 September 2026)",
+      "url": "https://www.bea.gov/data/gdp/gdp-state",
+      "short": "BEA, 2025"
+    },
+    "pop": {
+      "label": "U.S. Census Bureau, Vintage 2025 population estimates, 1 July 2025",
+      "url": "https://www.census.gov/data/tables/time-series/demo/popest/2020s-state-total.html",
+      "short": "Census Bureau, 2025"
+    },
+    "acs_pov": {
+      "label": "U.S. Census Bureau, American Community Survey 2025 1-year, table B17001",
+      "url": "https://data.census.gov/table/ACSDT1Y2025.B17001",
+      "short": "Census Bureau, ACS 2025"
+    },
+    "acs_cty": {
+      "label": "U.S. Census Bureau, American Community Survey 2020–2024 5-year, table B17001, New Mexico counties; outlines from the Census Bureau cartographic boundary file cb_2024_us_county_20m",
+      "url": "https://data.census.gov/table/ACSDT5Y2024.B17001",
+      "short": "Census Bureau, ACS 2020–2024"
+    },
+    "acs_hi": {
+      "label": "U.S. Census Bureau, American Community Survey 2025 1-year, table B27001 (civilian noninstitutionalized population)",
+      "url": "https://data.census.gov/table/ACSDT1Y2025.B27001",
+      "short": "Census Bureau, ACS 2025"
+    },
+    "usda": {
+      "label": "U.S. Department of Agriculture, Economic Research Service, Household Food Security in the United States in 2024 (ERR-358), table 4, average 2022–2024",
+      "url": "https://ers.usda.gov/sites/default/files/_laserfiche/publications/113623/ERR-358.pdf",
+      "short": "USDA, 2025"
+    },
+    "naep": {
+      "label": "National Center for Education Statistics, NAEP 2024 Reading, grade 4, at or above NAEP Proficient, public schools (NAEP Data Service)",
+      "url": "https://www.nationsreportcard.gov/reports/reading/2024/g4_8/",
+      "short": "NAEP, 2024"
+    },
+    "hud": {
+      "label": "U.S. Department of Housing and Urban Development, 2025 Point-in-Time count, in National Alliance to End Homelessness, New Mexico 2025 PIT data fact sheet",
+      "url": "https://endhomelessness.org/wp-content/uploads/2026/06/NM-2025-PIT-Data-Fact-Sheet.pdf",
+      "short": "HUD, 2025"
+    },
+    "sic": {
+      "label": "New Mexico State Investment Council, update to the Investments and Pensions Oversight Committee, 1 July 2026: assets under management $74.799 billion (31 May 2026), Land Grant Permanent Fund $40,796 million, Severance Tax Permanent Fund $13,478 million, Early Childhood Education and Care Fund $11,669 million",
+      "url": "https://www.nmlegis.gov/handouts/IPOC%20070126%20Item%205%20SIC%20--%20Update%20from%20the%20State%20Investment%20Council.pdf",
+      "short": "State Investment Council, 2026"
+    },
+    "sic_q2": {
+      "label": "New Mexico State Investment Council, Economic Impact, 2026 Q2 (first state to guarantee free universal childcare, from November 2025)",
+      "url": "https://www.sic.state.nm.us/wp-content/uploads/2026/08/Economic-Impact-2-Pager-2026-Q2.pdf",
+      "short": "State Investment Council, 2026"
+    },
+    "sic_nov": {
+      "label": "New Mexico State Investment Council, update to the Investments and Pensions Oversight Committee, 9 November 2026 (Tax Stabilization Reserve $2.4 billion; Water Trust Fund $234 million; early childhood funding by fiscal year)",
+      "url": "https://www.nmlegis.gov/handouts/IPOC%20110926%20Item%205%20SIC%20Final%20Update.pdf",
+      "short": "State Investment Council, 2026"
+    },
+    "slo": {
+      "label": "New Mexico State Land Office, Earnings and Distributions, Legislative Education Study Committee, 15 July 2026 (about 9 million surface acres and 13 million mineral acres in trust)",
+      "url": "https://www.nmlegis.gov/handouts/ALESC%20071526%20Item%204%20.1%20-%20State%20Investment%20Council%20and%20New%20Mexico%20Land%20Office%20Permanent%20Funds%20Update.pdf",
+      "short": "State Land Office, 2026"
+    },
+    "slo24": {
+      "label": "New Mexico State Land Office, overview to the Economic and Rural Development and Policy Committee, 21 August 2024 (over $10 billion earned for beneficiaries since 2019)",
+      "url": "https://www.nmlegis.gov/handouts/ERDPC%20082124%20Item%204%20NMSLO.pdf",
+      "short": "State Land Office, 2024"
+    },
+    "usda_per": {
+      "label": "U.S. Department of Agriculture, Food and Nutrition Service, SNAP Quality Control: fiscal year 2025 payment error rates (24 June 2026)",
+      "url": "https://www.fna.usda.gov/sites/default/files/resource-files/snap-qcfy25-per.pdf",
+      "short": "USDA, 2026"
+    },
+    "cbpp_shift": {
+      "label": "Center on Budget and Policy Priorities, New Data Underscore SNAP Cost Shift’s Harm to Low-Income Families and State Budgets, tables 1 and 3 (23 July 2026)",
+      "url": "https://www.cbpp.org/sites/default/files/7-23-26fa.pdf",
+      "short": "CBPP, 2026"
+    },
+    "sas_nv": {
+      "label": "SAS, Nevada selects SAS to help reduce SNAP error rates with AI (June 2026)",
+      "url": "https://www.sas.com/en_us/news/press-releases/2026/june/nevada-snap-payment-integrity.html",
+      "short": "SAS, 2026"
+    },
+    "mi_ai": {
+      "label": "Michigan Public, ACLU of Michigan questions use of AI in assessing SNAP payments across the state (2 August 2026)",
+      "url": "https://www.michiganpublic.org/health/2026-08-02/aclu-of-michigan-questions-use-of-ai-in-assessing-snap-payments-across-the-state",
+      "short": "Michigan Public, 2026"
+    }
+  }
+}

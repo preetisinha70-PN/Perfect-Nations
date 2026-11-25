@@ -1,0 +1,327 @@
+{
+  "slug": "alaska",
+  "name": "Alaska",
+  "abbr": "AK",
+  "fips": "02",
+  "version": "1.0",
+  "updated": "2026-11-25",
+  "county_word": "boroughs and census areas",
+  "about": "The blueprint of Alaska (perfectnations.com/perfect-states/alaska/). Census, NAEP and USDA figures marked \"computed\" are read by tools/build_us_state.py from data/us/raw/alaska/ and data/us-states.json. Alaska is reported by 30 boroughs and census areas (Chugach and Copper River since 2019); the map follows the Census. No figure is estimated.",
+  "notes": [
+    "v1.0: Perfect Alaska, a Perfect States blueprint (Preeti Sinha, President and CEO, 25 Nov 2026: \"go ahead and implement\" the Perfect States plan). Water and Energy are shown as not yet measured: no primary state figure was confirmed."
+  ],
+  "hero": {
+    "eyebrow": "Perfect Alaska · Perfect States",
+    "line": "A computed:gdp_words economy that owns a $91.9 billion fund, while computed:uninsured of Alaskans have no health insurance.",
+    "sub": "Perfect Nations counts what Alaska owns, prices the seven basic standards of living for every resident, and designs the capital that closes the gap.",
+    "figures": [
+      {
+        "value": "computed:gdp",
+        "label": "GDP, 2025",
+        "money": true,
+        "src": "gdp"
+      },
+      {
+        "value": "$91.9bn",
+        "label": "The Alaska Permanent Fund, audited, fiscal 2026",
+        "money": true,
+        "src": "apfc"
+      },
+      {
+        "value": "computed:uninsured",
+        "label": "Without health insurance, 2025",
+        "money": false,
+        "src": "acs_hi"
+      }
+    ]
+  },
+  "assets": {
+    "title": "Five assets that can carry Perfect Alaska.",
+    "line": "Each is owned by Alaskans today and can carry a standard of living.",
+    "items": [
+      {
+        "figure": "$91.9bn",
+        "money": true,
+        "name": "The Permanent Fund",
+        "line": "The largest sovereign wealth fund in the United States, saved from oil since 1976; its draw supplies more than 66% of the State’s general fund revenue.",
+        "src": "apfc",
+        "lead": true
+      },
+      {
+        "figure": "100 million acres",
+        "money": false,
+        "name": "The land",
+        "line": "Uplands conveyed to the people of Alaska under the Statehood Act, with more still to come.",
+        "src": "dnr"
+      },
+      {
+        "figure": "34,000 miles",
+        "money": false,
+        "name": "The coast",
+        "line": "Coastline, with 65 million acres of tidelands, shorelands and submerged lands managed by the State.",
+        "src": "dnr_mlw"
+      },
+      {
+        "figure": "40%",
+        "money": false,
+        "name": "The water",
+        "line": "The State owns its fresh water, about 40% of the entire nation’s fresh water flow.",
+        "src": "dnr"
+      },
+      {
+        "figure": "computed:people",
+        "money": false,
+        "name": "The people",
+        "line": "Alaskans on 1 July 2025: the asset every other asset serves.",
+        "src": "pop"
+      }
+    ]
+  },
+  "standards": {
+    "title": "Perfect Alaska, star by star.",
+    "line": "One measure for each of the seven basic standards of living. Where no official measure is published yet, the gap is shown, not filled.",
+    "items": [
+      {
+        "key": "food",
+        "name": "Food",
+        "figure": "computed:food",
+        "label": "of households food insecure, 2022–2024 (United States computed:food_us)",
+        "status": "hold",
+        "src": "usda"
+      },
+      {
+        "key": "water",
+        "name": "Water",
+        "figure": "",
+        "label": "Lead service lines still in use: the State’s figure under the 2025 federal update is being confirmed.",
+        "status": "gap",
+        "src": ""
+      },
+      {
+        "key": "shelter",
+        "name": "Shelter",
+        "figure": "2,655",
+        "label": "people without a home on one night, January 2025, up 39.2% since 2019",
+        "status": "risk",
+        "src": "hud"
+      },
+      {
+        "key": "energy",
+        "name": "Energy",
+        "figure": "",
+        "label": "Households behind on energy bills: awaiting a primary published count.",
+        "status": "gap",
+        "src": ""
+      },
+      {
+        "key": "education",
+        "name": "Education",
+        "figure": "computed:reading",
+        "label": "of fourth graders read at the NAEP Proficient level, 2024 (United States computed:reading_us)",
+        "status": "risk",
+        "src": "naep"
+      },
+      {
+        "key": "health",
+        "name": "Health",
+        "figure": "computed:uninsured",
+        "label": "without health insurance, 2025 (United States computed:uninsured_us)",
+        "status": "binding",
+        "src": "acs_hi"
+      },
+      {
+        "key": "livelihood",
+        "name": "Livelihood",
+        "figure": "computed:poverty",
+        "label": "below the poverty line, 2025 (United States computed:poverty_us)",
+        "status": "hold",
+        "src": "acs_pov"
+      }
+    ],
+    "status_names": {
+      "binding": "Binding",
+      "risk": "At risk",
+      "hold": "Holding",
+      "gap": "Not yet measured"
+    },
+    "map_title": "Where the poverty line falls hardest",
+    "map_line": "Share of people below the poverty line in each of Alaska’s 30 boroughs and census areas, 2020–2024.",
+    "map_src": "acs_cty"
+  },
+  "solutions": {
+    "title": "Solutions for Perfect Alaska, in order.",
+    "line": "Health first: no other state’s gap is as wide against the nation.",
+    "items": [
+      {
+        "phase": "Phase 1",
+        "standard": "Health",
+        "status": "binding",
+        "challenge": "computed:uninsured of Alaskans had no health insurance in 2025, against computed:uninsured_us nationally.",
+        "advises": "Create a health dividend: a slice of the Permanent Fund draw that guarantees coverage for uninsured residents, starting in Kusilvak and the rural census areas, with clinics paid on enrolment and outcomes.",
+        "src": "acs_hi"
+      },
+      {
+        "phase": "Phase 2",
+        "standard": "Education",
+        "status": "risk",
+        "challenge": "computed:reading of fourth graders read at the NAEP Proficient level in 2024.",
+        "advises": "Endow early reading from the Fund’s earnings and pay schools on measured reading gains, village by village.",
+        "src": "naep"
+      },
+      {
+        "phase": "Phase 2",
+        "standard": "Shelter",
+        "status": "risk",
+        "challenge": "2,655 Alaskans had no home on one night in January 2025, up 39.2% since 2019.",
+        "advises": "Back an Alaska housing bond with State land: ground leases on surplus land near jobs repay investors as homes are built.",
+        "src": "hud"
+      }
+    ],
+    "hold": "Phase 3, hold the line: food (computed:food of households food insecure) and livelihood (computed:poverty below the poverty line), with water and energy measured next."
+  },
+  "capital": {
+    "title": "Alaska already finances at scale.",
+    "line": "Instruments on record that a Perfect Alaska can build on.",
+    "items": [
+      {
+        "figure": "$1,200",
+        "prefix": "",
+        "money": true,
+        "name": "The 2026 dividend",
+        "line": "Paid to every eligible resident from Permanent Fund earnings, including a $200 energy relief payment.",
+        "year": "2026",
+        "src": "pfd"
+      },
+      {
+        "figure": "$59.4bn",
+        "prefix": "",
+        "money": true,
+        "name": "The Principal",
+        "line": "Permanent savings in the Fund’s Principal, audited for fiscal 2026.",
+        "year": "2026",
+        "src": "apfc"
+      },
+      {
+        "figure": "$114.5bn",
+        "prefix": "",
+        "money": true,
+        "name": "Total return since 1977",
+        "line": "Generated by the Fund since its first deposit, more than its current value.",
+        "year": "1977–2026",
+        "src": "apfc_mid"
+      }
+    ]
+  },
+  "intelligence": {
+    "title": "A delayed SNAP bill, and the time to cut it.",
+    "line": "From October 2027 every state pays part of its SNAP food benefits unless at least 94 of every 100 dollars are paid exactly right. AI that checks every case before it is paid can shrink that bill.",
+    "bill": "$40m",
+    "bill_label": "a year in SNAP benefits once the delayed start ends, at the full 15% share",
+    "bill_src": "cbpp_shift",
+    "facts": [
+      {
+        "value": "23.15%",
+        "label": "of SNAP dollars paid in error, 2025",
+        "src": "usda_per"
+      },
+      {
+        "value": "Delayed",
+        "label": "start for states at or above 13.33%; then up to 15% of benefits",
+        "src": "cbpp_shift"
+      }
+    ],
+    "advises": "Use the delay. The aim is under 6%, where the State pays nothing; falling only part of the way ends the delay and brings a 15% bill forward. Pair AI case review with village caseworkers, and audit it for underpayments as well as overpayments."
+  },
+  "close": {
+    "title": "Design Perfect Alaska with us.",
+    "line": "State leaders, the Permanent Fund and investors: start with a briefing."
+  },
+  "sources": {
+    "gdp": {
+      "label": "U.S. Bureau of Economic Analysis, GDP by state, 2025, current dollars (updated 30 September 2026)",
+      "url": "https://www.bea.gov/data/gdp/gdp-state",
+      "short": "BEA, 2025"
+    },
+    "pop": {
+      "label": "U.S. Census Bureau, Vintage 2025 population estimates, 1 July 2025",
+      "url": "https://www.census.gov/data/tables/time-series/demo/popest/2020s-state-total.html",
+      "short": "Census Bureau, 2025"
+    },
+    "acs_pov": {
+      "label": "U.S. Census Bureau, American Community Survey 2025 1-year, table B17001",
+      "url": "https://data.census.gov/table/ACSDT1Y2025.B17001",
+      "short": "Census Bureau, ACS 2025"
+    },
+    "acs_cty": {
+      "label": "U.S. Census Bureau, American Community Survey 2020–2024 5-year, table B17001, Alaska boroughs and census areas; outlines from the Census Bureau cartographic boundary file cb_2024_us_county_20m",
+      "url": "https://data.census.gov/table/ACSDT5Y2024.B17001",
+      "short": "Census Bureau, ACS 2020–2024"
+    },
+    "acs_hi": {
+      "label": "U.S. Census Bureau, American Community Survey 2025 1-year, table B27001 (civilian noninstitutionalized population)",
+      "url": "https://data.census.gov/table/ACSDT1Y2025.B27001",
+      "short": "Census Bureau, ACS 2025"
+    },
+    "usda": {
+      "label": "U.S. Department of Agriculture, Economic Research Service, Household Food Security in the United States in 2024 (ERR-358), table 4, average 2022–2024",
+      "url": "https://ers.usda.gov/sites/default/files/_laserfiche/publications/113623/ERR-358.pdf",
+      "short": "USDA, 2025"
+    },
+    "naep": {
+      "label": "National Center for Education Statistics, NAEP 2024 Reading, grade 4, at or above NAEP Proficient, public schools (NAEP Data Service)",
+      "url": "https://www.nationsreportcard.gov/reports/reading/2024/g4_8/",
+      "short": "NAEP, 2024"
+    },
+    "hud": {
+      "label": "U.S. Department of Housing and Urban Development, 2025 Point-in-Time count, in National Alliance to End Homelessness, Alaska 2025 PIT data fact sheet",
+      "url": "https://endhomelessness.org/wp-content/uploads/2026/06/AK-2025-PIT-Data-Fact-Sheet.pdf",
+      "short": "HUD, 2025"
+    },
+    "apfc": {
+      "label": "Alaska Permanent Fund Corporation, Board of Trustees meeting, 2 September 2026: audited fund balance of $91.9 billion; the Principal at $59.4 billion; and The Fund (the draw provides more than 66% of general fund revenue)",
+      "url": "https://apfc.org/wp-content/uploads/2026/09/202609_EAC-and-BOT-Regular-Meeting-Press-Release.pdf",
+      "url2": "https://apfc.org/the-fund/",
+      "short": "APFC, 2026"
+    },
+    "apfc_mid": {
+      "label": "Alaska Permanent Fund Corporation, APFC releases the 2026 Mid-Fiscal Year Review ($114.5 billion total return since 1977)",
+      "url": "https://apfc.org/fund-news/apfc-releases-the-2026-mid-fiscal-year-review",
+      "short": "APFC, 2026"
+    },
+    "pfd": {
+      "label": "Alaska Department of Revenue, Permanent Fund Dividend Division: the 2026 PFD amount is $1,200, including a $200 energy relief payment (21 September 2026)",
+      "url": "https://pfd.alaska.gov/",
+      "short": "PFD Division, 2026"
+    },
+    "dnr": {
+      "label": "Alaska Department of Natural Resources, Public Information Center: about the Department (state land and fresh water)",
+      "url": "https://dnr.alaska.gov/commis/pic/about",
+      "short": "Alaska DNR"
+    },
+    "dnr_mlw": {
+      "label": "Alaska Department of Natural Resources, Division of Mining, Land and Water: about the Division (tidelands and coastline)",
+      "url": "https://dnr.alaska.gov/mlw/about/",
+      "short": "Alaska DNR"
+    },
+    "usda_per": {
+      "label": "U.S. Department of Agriculture, Food and Nutrition Service, SNAP Quality Control: fiscal year 2025 payment error rates (24 June 2026)",
+      "url": "https://www.fna.usda.gov/sites/default/files/resource-files/snap-qcfy25-per.pdf",
+      "short": "USDA, 2026"
+    },
+    "cbpp_shift": {
+      "label": "Center on Budget and Policy Priorities, New Data Underscore SNAP Cost Shift’s Harm to Low-Income Families and State Budgets, tables 1 and 3 (23 July 2026)",
+      "url": "https://www.cbpp.org/sites/default/files/7-23-26fa.pdf",
+      "short": "CBPP, 2026"
+    },
+    "sas_nv": {
+      "label": "SAS, Nevada selects SAS to help reduce SNAP error rates with AI (June 2026)",
+      "url": "https://www.sas.com/en_us/news/press-releases/2026/june/nevada-snap-payment-integrity.html",
+      "short": "SAS, 2026"
+    },
+    "mi_ai": {
+      "label": "Michigan Public, ACLU of Michigan questions use of AI in assessing SNAP payments across the state (2 August 2026)",
+      "url": "https://www.michiganpublic.org/health/2026-08-02/aclu-of-michigan-questions-use-of-ai-in-assessing-snap-payments-across-the-state",
+      "short": "Michigan Public, 2026"
+    }
+  }
+}

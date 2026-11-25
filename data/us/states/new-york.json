@@ -3,11 +3,11 @@
   "name": "New York",
   "abbr": "NY",
   "fips": "36",
-  "version": "1.1",
-  "updated": "2026-11-10",
-  "about": "The blueprint of New York State (perfectnations.com/50-states/new-york/). Words and the figures found on official pages are written here, each with its source id; the Census, NAEP and USDA figures marked \"computed\" are read by tools/build_us_state.py from the official files in data/us/raw/new-york/ and data/us-states.json. No figure is estimated.",
+  "version": "1.2",
+  "updated": "2026-11-25",
+  "about": "The blueprint of New York State (perfectnations.com/perfect-states/new-york/). Words and the figures found on official pages are written here, each with its source id; the Census, NAEP and USDA figures marked \"computed\" are read by tools/build_us_state.py from the official files in data/us/raw/new-york/ and data/us-states.json. No figure is estimated.",
   "hero": {
-    "eyebrow": "Perfect New York · A blueprint of the 50 States",
+    "eyebrow": "Perfect New York · Perfect States",
     "line": "A computed:gdp_words economy where 145,560 people had no home on a single night.",
     "sub": "Perfect Nations counts what New York owns, prices the seven basic standards of living for every resident, and designs the capital that closes the gap.",
     "figures": [
@@ -217,6 +217,30 @@
       }
     ]
   },
+  "notes": [
+    "v1.2: Perfect States (Preeti Sinha, President and CEO, 25 Nov 2026): the section is renamed Perfect States at /perfect-states/, and band 05, Perfect Nations Intelligence, shows the State’s SNAP bill and the AI already running elsewhere.",
+    "v1.0-1.1: the first state blueprint (10 Nov 2026). Water and Energy are shown as not yet measured: no primary state figure was confirmed."
+  ],
+  "intelligence": {
+    "title": "A $1.15bn SNAP bill that accuracy can cut.",
+    "line": "From October 2027 every state pays part of its SNAP food benefits unless at least 94 of every 100 dollars are paid exactly right. AI that checks every case before it is paid can shrink that bill.",
+    "bill": "$1.15bn",
+    "bill_label": "a year in SNAP benefits from October 2027, at the 2025 error rate",
+    "bill_src": "cbpp_shift",
+    "facts": [
+      {
+        "value": "13.18%",
+        "label": "of SNAP dollars paid in error, 2025",
+        "src": "usda_per"
+      },
+      {
+        "value": "15%",
+        "label": "share of benefits the State pays from October 2027",
+        "src": "cbpp_shift"
+      }
+    ],
+    "advises": "Bring the error rate under 10% and the share falls to 10%; under 8%, to 5%, about $770m a year saved. Fund AI case review from the first year’s savings, and audit it every quarter for underpayments as well as overpayments."
+  },
   "close": {
     "title": "Design Perfect New York with us.",
     "line": "State leaders, treasurers and investors: start with a briefing."
@@ -302,6 +326,26 @@
       "url": "https://www.budget.ny.gov/pubs/archive/fy20/exec/agencies/appropData/PayForSuccessContingencyReserve.html",
       "url2": "https://govlab.hks.harvard.edu/files/govlabs/files/new_york_state_pfs_reincarceration.pdf",
       "short": "State Budget; Harvard GPL"
+    },
+    "usda_per": {
+      "label": "U.S. Department of Agriculture, Food and Nutrition Service, SNAP Quality Control: fiscal year 2025 payment error rates (24 June 2026)",
+      "url": "https://www.fna.usda.gov/sites/default/files/resource-files/snap-qcfy25-per.pdf",
+      "short": "USDA, 2026"
+    },
+    "cbpp_shift": {
+      "label": "Center on Budget and Policy Priorities, New Data Underscore SNAP Cost Shift’s Harm to Low-Income Families and State Budgets, tables 1 and 3 (23 July 2026)",
+      "url": "https://www.cbpp.org/sites/default/files/7-23-26fa.pdf",
+      "short": "CBPP, 2026"
+    },
+    "sas_nv": {
+      "label": "SAS, Nevada selects SAS to help reduce SNAP error rates with AI (June 2026)",
+      "url": "https://www.sas.com/en_us/news/press-releases/2026/june/nevada-snap-payment-integrity.html",
+      "short": "SAS, 2026"
+    },
+    "mi_ai": {
+      "label": "Michigan Public, ACLU of Michigan questions use of AI in assessing SNAP payments across the state (2 August 2026)",
+      "url": "https://www.michiganpublic.org/health/2026-08-02/aclu-of-michigan-questions-use-of-ai-in-assessing-snap-payments-across-the-state",
+      "short": "Michigan Public, 2026"
     }
   }
 }
