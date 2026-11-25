@@ -96,3 +96,16 @@ Sources opened on 17 November 2026.
 - The share of Togo in IFC’s 2026 loans to Gozem for four nations.
 - No enterprise yet for water, shelter or education.
 - Learning outcomes date from 2019.
+
+## Full edition, wave 1 (25 November 2026)
+
+Brief: Project doc claude/full-blueprints-151.md. Researched 25 November 2026; World Bank lines from the projects API (search.worldbank.org/api/v3, Board approval date and current commitment) and Finances One.
+
+Now on the page: 5 lines in the record, 20 in Capital already committed, 6 enterprises, 5 Sovereign Assets.
+
+Added to Capital already committed:
+
+- **Sustainable Agricultural Transformation Program (ProMAT, phase 1) ($300M):** World Bank and IFC · Approved 11 June 2025 · First phase of the Agricultural Modernization Program 2025–2034. Makes Togo a regional hub for agribusiness and animal feed, led jointly by the World Bank and IFC. https://www.worldbank.org/en/news/press-release/2025/06/11/positioning-togo-as-a-regional-hub-in-agribusiness-and-animal-nutrition
+- **Label d’Or shea processing (XOF 6bn):** BOAD · Approved at the 150th Board session, Dakar, 25 and 26 March 2026. Modernises shea processing at Label d’Or, which buys from 33,000 women. https://admin.boad.org/wp-content/uploads/2026/03/COMPRESS-CA-150-1.pdf
+
+Still to come: the interim Nation Portrait (Canva, colours edition) and the Letter to the Nations post in WordPress, published after the pull request is merged.

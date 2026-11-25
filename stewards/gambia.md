@@ -80,3 +80,31 @@ Sources opened on 16 November 2026 unless stated.
 - The share of The Gambia in the World Bank’s $160 million RAISE project.
 - The size of the IMF Resilience and Sustainability Facility in SDR, not stated in the report read.
 - Learning outcomes not measured; lower-secondary completion used.
+
+## Full edition, wave 1 (25 November 2026)
+
+Brief: Project doc claude/full-blueprints-151.md. Researched 25 November 2026; World Bank lines from the projects API (search.worldbank.org/api/v3, Board approval date and current commitment) and Finances One.
+
+Now on the page: 5 lines in the record, 18 in Capital already committed, 5 enterprises, 5 Sovereign Assets.
+
+Added to the record:
+
+- **$1.73bn:** World Bank Group commitments to The Gambia across 68 projects, as of 31 July 2026. World Bank, 2026, https://financesone.worldbank.org/countries/Gambia,%20The
+
+Added to Capital already committed:
+
+- **Advancing Reforms for Inclusive and Sustainable Economic Growth (ARISE), first operation ($45M):** World Bank · Approved 24 November 2025 · Development policy financing. Budget support for reforms in public finance, energy and the private sector. https://projects.worldbank.org/en/projects-operations/project-detail/P510637
+- **The Gambia Water and Sanitation Project ($30M):** World Bank · Approved 25 September 2026. Safe water and sanitation for more Gambian households. https://projects.worldbank.org/en/projects-operations/project-detail/P513113
+- **The Gambia Resilience, Inclusion, Skills, and Equity Project ($10M):** World Bank · Approved 14 April 2026. Skills and safety nets for the households most exposed to shocks. https://projects.worldbank.org/en/projects-operations/project-detail/P512353
+- **Extended Credit Facility, augmentation and extension ($17M):** IMF · Approved 6 July 2026 · SDR 12.44 million, 20% of quota · Six-month extension of the ECF and the RSF. More IMF financing and more time for the reform programme, as the nation absorbs higher costs. https://www.imf.org/en/news/articles/2026/07/06/pr26239-the-gambia-imf-exec-board-concludes-2026-aiv-consult-completes-5th-rev-ecf-2nd-rev-rsf-arr
+
+Amounts or notes filled in on lines already listed: Resilience and Sustainability Facility; Regional Access Increase and Sustainable Energy.
+
+Added to Already working in The Gambia:
+
+- **Food, Farm Fresh:** Fresh produce from a network of about a thousand farmers, delivered to homes and shops by a tech-enabled platform. TechCabal, 2025, https://techcabal.com/2025/11/05/how-gambias-farm-fresh-is-evolving-into-a-tech-enabled-food-distribution-platform/
+- **Water, Bakaf Farm:** An onion farm in Foni that irrigates with a centre-pivot system, bought with support from the World Bank’s GIRAV project. World Bank, 2024, https://www.worldbank.org/en/news/feature/2024/06/14/transforming-the-gambia-s-agriculture-from-subsistence-to-market-oriented-farming
+- **Education, Songhai Initiative:** Farm training for young Gambians at Chamen, so farming becomes a career of choice. UNDP, 2026, https://www.undp.org/node/575346
+- **Livelihood, Startup Incubator Gambia:** A social enterprise building the next generation of Gambian entrepreneurs. VC4A, https://vc4a.com/ventures/startup-incubator-gambia
+
+Still to come: the interim Nation Portrait (Canva, colours edition) and the Letter to the Nations post in WordPress, published after the pull request is merged.

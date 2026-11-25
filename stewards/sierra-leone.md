@@ -95,3 +95,27 @@ Sources opened on 17 November 2026.
 - Green Climate Fund projects and forest-carbon arrangements not yet reviewed.
 - Iron ore output: no primary page read yet.
 - Learning outcomes not measured; lower-secondary completion used.
+
+## Full edition, wave 1 (25 November 2026)
+
+Brief: Project doc claude/full-blueprints-151.md. Researched 25 November 2026; World Bank lines from the projects API (search.worldbank.org/api/v3, Board approval date and current commitment) and Finances One.
+
+Now on the page: 5 lines in the record, 18 in Capital already committed, 5 enterprises, 5 Sovereign Assets.
+
+Added to the record:
+
+- **$3.34bn:** World Bank Group commitments to Sierra Leone across 103 projects, as of 31 August 2026. World Bank, 2026, https://financesone.worldbank.org/countries/sierra%20leone
+
+Added to Capital already committed:
+
+- **Bumbuna-1 Hydroelectric Power Station Expansion ($45M):** OPEC Fund · Loan · 60 MW more renewable power for Freetown. Expands the nation’s main hydropower station to serve about 1.4 million people in the capital. https://opecfund.org/news-events/press-releases/2026/opec-fund-approves-us-645-million-for-water-security-resilient-transport-and-economic-growth
+- **Enhancing Sierra Leone Energy Access ($14M):** World Bank · Approved 27 June 2025. More homes, clinics and businesses connected to electricity. https://projects.worldbank.org/en/projects-operations/project-detail/P506745
+- **Quality Essential Health Services and Systems Support Project ($12.58M):** World Bank · Approved 25 June 2025. Essential care for mothers and children and a stronger health system. https://projects.worldbank.org/en/projects-operations/project-detail/P510536
+
+Amounts or notes filled in on lines already listed: Regional Distributed Access through Renewable Energy; Western Africa Regional Digital Integration Program.
+
+### Open gaps (wave 1)
+
+- Eighteen register lines.
+
+Still to come: the interim Nation Portrait (Canva, colours edition) and the Letter to the Nations post in WordPress, published after the pull request is merged.

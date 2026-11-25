@@ -96,3 +96,25 @@ Opened 23 November 2026. All five rest on 2025 evidence.
 - A primary figure for the total public debt stock in ouguiya or US dollars: none found (the IMF gives shares of GDP only).
 - No water, energy, shelter or health enterprise verified; three of the five listed are small cooperatives or early-stage businesses.
 - The two IsDB lines of March 2026 rest on news only.
+
+## Full edition, wave 1 (25 November 2026)
+
+Brief: Project doc claude/full-blueprints-151.md. Researched 25 November 2026; World Bank lines from the projects API (search.worldbank.org/api/v3, Board approval date and current commitment) and Finances One.
+
+Now on the page: 5 lines in the record, 19 in Capital already committed, 5 enterprises, 5 Sovereign Assets.
+
+Added to the record:
+
+- **$465M:** World Bank financing for the Mauritania transmission corridor of the West Africa electricity market, approved January 2025. World Bank, 2025, https://projects.worldbank.org/en/projects-operations/project-detail/P505173
+
+Added to Capital already committed:
+
+- **West Africa Regional Electricity Market Program, Phase 1: Mauritania Transmission Corridor ($465M):** World Bank · Approved 24 January 2025. High-voltage lines that tie Mauritania into the West African power market, so its wind and sun can be sold to its neighbours. https://projects.worldbank.org/en/projects-operations/project-detail/P505173
+- **Development of Energy Resources and Mining Sector Support (DREAM), Phase 1 ($82.5M):** World Bank · Approved 27 March 2025. Prepares green hydrogen, energy storage and the mining sector to grow, with private investment to follow. https://projects.worldbank.org/en/projects-operations/project-detail/P179383
+- **Mauritania Public Spending Efficiency ($50M):** World Bank · Approved 3 June 2025. Makes public spending go further in health, education and social protection; US$42 million paid for results. https://projects.worldbank.org/en/projects-operations/project-detail/P506443
+
+### Open gaps (wave 1)
+
+- Nineteen register lines.
+
+Still to come: the interim Nation Portrait (Canva, colours edition) and the Letter to the Nations post in WordPress, published after the pull request is merged.

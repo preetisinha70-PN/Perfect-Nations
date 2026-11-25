@@ -87,3 +87,22 @@ Sources opened on 17 November 2026 unless stated.
 - No OCHA plan or UNDP Stabilization Facility figure for Libya in 2026 read; Derna reconstruction finance not yet traced to a primary source.
 - Learning outcomes and lower-secondary completion not measured; Education shown as not measured.
 - 12 November 2026, delivery test for Energy: no official national figure for the share of demand served was found, so Energy is unchanged. GECOL reinstated load shedding in July 2026 (cuts of 10 hours a day and more) and reported a deficit of about 1,000 MW; no dated national figure for demand served was found. The weekly review looks for one.
+
+## Full edition, wave 1 (25 November 2026)
+
+Brief: Project doc claude/full-blueprints-151.md. Researched 25 November 2026; World Bank lines from the projects API (search.worldbank.org/api/v3, Board approval date and current commitment) and Finances One.
+
+Now on the page: 5 lines in the record, 8 in Capital already committed, 6 enterprises, 5 Sovereign Assets.
+
+Added to the record:
+
+- **$20bn+:** Foreign-financed investment in the 25-year extension of the Waha concessions with TotalEnergies and ConocoPhillips, signed 24 January 2026. The National, 2026, https://www.thenationalnews.com/business/energy/2026/01/24/libya-to-sign-20bn-deal-with-us-and-french-companies-to-boost-oil-output
+
+Amounts or notes filled in on lines already listed: Waha concessions.
+
+### Open gaps (wave 1)
+
+- An honest short list: with two rival governments, the development banks lend almost nothing to Libya; the capital on record is the unified budget, oil partnerships and humanitarian appeals. Memoranda of understanding (Chevron, January 2026; the Libya Energy and Economic Summit, July 2026) are not capital and are not listed.
+- Secondary source: the Waha figure (the Prime Minister, reported by The National; TotalEnergies’ release gives North Gialo, 100,000 barrels a day).
+
+Still to come: the interim Nation Portrait (Canva, colours edition) and the Letter to the Nations post in WordPress, published after the pull request is merged.

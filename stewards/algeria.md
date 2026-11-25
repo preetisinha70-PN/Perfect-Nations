@@ -62,3 +62,35 @@ The register (five lines):
 - The seven standards and the asset figures were not re-read at source on 16 November 2026.
 
 Last weekly review: 16 November 2026
+
+## Full edition, wave 1 (25 November 2026)
+
+Brief: Project doc claude/full-blueprints-151.md. Researched 25 November 2026; World Bank lines from the projects API (search.worldbank.org/api/v3, Board approval date and current commitment) and Finances One.
+
+Now on the page: 5 lines in the record, 12 in Capital already committed, 4 enterprises, 5 Sovereign Assets.
+
+Added to the record:
+
+- **$3.5bn:** Baladna Algeria, the integrated powdered-milk project in Adrar; more than US$1.1 billion of contracts signed in two packages, July 2025 and April 2026. APS, 2026, https://www.aps.dz/fr/economie/agriculture-et-peche/mobq7klc-signature-du-deuxieme-lot-de-contrats-de-realisation-pour-plus-de-635-millions-de-dollars
+
+Added to Capital already committed:
+
+- **Shoreline Power and Arkad facility for Hassi Bir Rekaiz, Phase 2a ($200M):** Afreximbank · Approved June 2026 · Global revolving dual-tranche facility. Finances Arkad’s 44% share of the US$980 million engineering, procurement and construction contract for the Hassi Bir Rekaiz field, one of the largest upstream contracts in Algeria, and brings African contractors into the work. https://www.zawya.com/en/press-release/africa-press-releases/afreximbank-approves-us200-million-facility-for-shoreline-to-support-algerias-energy-development-403154
+- **Strategic Cooperation Framework, 2025 to 2027 ($3bn+):** Islamic Development Bank Group · Signed in Algiers, May 2025 · IsDB, ICD, ITFC, ICIEC and ISF. A three-year framework for the private sector, human capital, infrastructure and Islamic finance. The IsDB Group’s chairman put the financing at more than US$3 billion over three years, with the railways first. https://www.isdb.org/news/the-peoples-democratic-republic-of-algeria-and-isdb-group-sign-a-cooperation-framework-2025-2027
+- **Baladna Algeria powdered-milk project, second package ($635M):** Signed 23 April 2026, Algiers · Herd, services and cattle supply · Adrar. The second package of contracts for the integrated dairy farm and powdered-milk plant in Adrar, a US$3.5 billion project with Qatar’s Baladna that aims to cut the nation’s milk imports. It serves the food standard. https://www.aps.dz/fr/economie/agriculture-et-peche/mobq7klc-signature-du-deuxieme-lot-de-contrats-de-realisation-pour-plus-de-635-millions-de-dollars
+- **Baladna Algeria powdered-milk project, first package ($500M+):** Signed 28 July 2025, Algiers · 14 contracts · Agricultural technology and production lines. The first fourteen contracts of the US$3.5 billion integrated milk project in the south of the country, signed with agricultural technology and equipment suppliers. https://news.radioalgerie.dz/fr/node/68540
+- **Integrated phosphate project, first phase:** Signed 12 August 2026, Algiers · Two engineering, procurement and construction contracts · Saipem and a Chinese contractor. Sonatrach and the Algerian fertiliser company AFC signed the first two construction contracts of the integrated phosphate project, which turns the nation’s phosphate into fertiliser for its farms and for export. https://www.aps.dz/fr/economie/industrieenergie-et-mines/msq6iz8d-sonatrach-et-l-afc-signent-deux-contrats-avec-des-partenaires-italien-et-chinois
+- **Zemoul El Kbar hydrocarbon contract ($1.35bn):** 30-year exploration and development contract · Sonatrach and Eni. A thirty-year contract with Italy’s Eni to develop the Zemoul El Kbar area, financed by the partners. https://www.enerdata.net/publications/daily-energy-news/eni-and-sonatrach-sign-us135-bn-deal-develop-hydrocarbons-algeria.html
+- **Natural gas supply to Germany:** Signed 16 July 2026, Berlin · Deliveries from 1 January 2027 · Sonatrach and VNG. A new contract that expands gas deliveries to the German market from 2027; the two companies are also partners in the SoutH2 hydrogen corridor to Europe. https://sonatrach.com/en/sonatrach-and-the-german-company-vng-sign-contract-for-natural-gas-supply/
+
+Added to Already working in Algeria:
+
+- **Food, Baladna Algeria:** A dairy farm and powdered-milk plant under construction in Adrar, built with Qatar’s Baladna to cut milk imports. APS, 2026, https://www.aps.dz/fr/economie/agriculture-et-peche/mobq7klc-signature-du-deuxieme-lot-de-contrats-de-realisation-pour-plus-de-635-millions-de-dollars
+
+### Open gaps (wave 1)
+
+- An honest short list: Algeria borrows almost nothing abroad (gross external debt 0.8% of GDP, IMF, 2026), so the development banks lend little; its capital comes from the budget, the sovereign sukuk and Sonatrach’s partners. Twelve lines, not twenty.
+- Secondary sources: the IsDB framework figure of more than US$3 billion (business press, May 2025); Zemoul El Kbar, US$1.35 billion (Enerdata); the Afreximbank facility (APO release on Zawya).
+- Enterprises: four found on the public record (no water, shelter, energy or education enterprise with a source).
+
+Still to come: the interim Nation Portrait (Canva, colours edition) and the Letter to the Nations post in WordPress, published after the pull request is merged.

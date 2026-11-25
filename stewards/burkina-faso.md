@@ -96,3 +96,26 @@ Opened 23 November 2026.
 - Total public debt for 2025: 53.7% of GDP in the Government’s memorandum and 53.4% in the IMF staff tables of the same report.
 - The Diaspora Bonds, the 2025 bond offer and the ITFC framework rest on news sources (Sikafinance, Sidwaya, Fraternité Matin, Financial Afrik).
 - The farmland, ground, forest and people figures, and the seven standards, were not re-read at source on 23 November 2026; the share under fifteen (41.2%) is to be re-read with the next release of the World Development Indicators.
+
+## Full edition, wave 1 (25 November 2026)
+
+Brief: Project doc claude/full-blueprints-151.md. Researched 25 November 2026; World Bank lines from the projects API (search.worldbank.org/api/v3, Board approval date and current commitment) and Finances One.
+
+Now on the page: 5 lines in the record, 20 in Capital already committed, 7 enterprises, 5 Sovereign Assets.
+
+Added to the record:
+
+- **XOF 131.5bn:** Approved for Burkina Faso by the BOAD Board on 25 and 26 March 2026: cotton inputs, the Koudougou solar plant, fuel imports and credit lines. BOAD, 2026, https://admin.boad.org/wp-content/uploads/2026/03/COMPRESS-CA-150-1.pdf
+
+Added to Capital already committed:
+
+- **SONABHY energy security imports (XOF 45bn):** BOAD · Approved at the 150th Board session, Dakar, 25 and 26 March 2026 · About 500,000 m³ of liquid and gaseous hydrocarbons. Finances fuel and gas imports by the national hydrocarbons company, to keep power, transport and cooking gas supplied. https://admin.boad.org/wp-content/uploads/2026/03/COMPRESS-CA-150-1.pdf
+- **Ouagadougou-Donsin international airport (XOF 5.9bn):** BOAD loan · Continuation of works. A further BOAD loan, about US$10.5 million, to continue building the new international airport at Donsin, north of Ouagadougou. https://www.financialafrik.com/en/?p=485820
+- **Treasury bills and bonds on the regional market (UMOA-Titres) (XOF 77bn):** Auction of 25 March 2026 · 364-day bills and 3, 5 and 7-year bonds · To finance the 2026 budget. One of the largest of the year’s regional auctions: XOF 76.999 billion raised from investors across the West African monetary union. https://fr.allafrica.com/stories/202603260574.html
+- **Treasury bills and bonds on the regional market (UMOA-Titres) (XOF 66bn):** Auction of 11 February 2026 · Weighted average yields 7.18% (bills), 7.85% (3 years), 6.81% (5 years), 7.28% (7 years). XOF 65.999 billion raised for the 2026 budget; the bonds fall due between January 2029 and January 2033. https://fr.allafrica.com/stories/202602120401.html
+
+### Open gaps (wave 1)
+
+- Secondary sources: the Donsin airport loan (Financial Afrik) and the two UMOA-Titres auctions (Burkinabè press on allAfrica); the UMOA-Titres result notices were not opened.
+
+Still to come: the interim Nation Portrait (Canva, colours edition) and the Letter to the Nations post in WordPress, published after the pull request is merged.

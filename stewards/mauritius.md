@@ -86,3 +86,30 @@ Sources opened on 17 November 2026.
 - Exclusive economic zone: no primary figure read yet.
 - Safely managed sanitation and water are not measured; basic water and slum share used.
 - No outline at map scale: shown with the gold marker.
+
+## Full edition, wave 1 (25 November 2026)
+
+Brief: Project doc claude/full-blueprints-151.md. Researched 25 November 2026; World Bank lines from the projects API (search.worldbank.org/api/v3, Board approval date and current commitment) and Finances One.
+
+Now on the page: 5 lines in the record, 15 in Capital already committed, 5 enterprises, 5 Sovereign Assets.
+
+Added to the record:
+
+- **Rs 231bn:** Public Sector Investment Programme, 2026–27 to 2030–31: five years of public investment. Government of Mauritius, 2026, https://mauritiusassembly.govmu.org/mauritiusassembly/wp-content/uploads/2026/06/Public-Sector-Investment-Programme-2026-2027-to-2030-2031.pdf
+
+Added to Capital already committed:
+
+- **Public Sector Investment Programme, 2026–27 to 2030–31 (Rs 231bn):** Presented with the Budget 2026–27 · Five-year capital programme. About Rs 231 billion of public investment over five years, financed by the budget, loans and lines of credit from partners and private capital; a Government Support Agreement framework now derisks private solar with batteries. https://mauritiusassembly.govmu.org/mauritiusassembly/wp-content/uploads/2026/06/Public-Sector-Investment-Programme-2026-2027-to-2030-2031.pdf
+- **Technical assistance against financial crime ($713K):** African Development Bank · Approved 6 January 2026 · Signed 23 February 2026 · MIC-TAF grant of UA 520,000. Strengthens the policy and capacity to fight money laundering, fraud and illicit financial flows, which protects the nation’s standing as a financial centre. https://mapafrica.afdb.org/en/projects/46002-P-MU-KF0-003
+- **Link Africa-Mauritius SME Development and Access to Finance and Markets ($1.79M):** African Development Bank · Grant · With Bank One. Helps Mauritian small businesses find finance and markets on the African continent. https://ewsdata.rightsindevelopment.org/projects/p-mu-ha0-012-link-africa-mauritius-sme-development-and-access-t/
+- **Credit facility agreement with State Bank of India:** Signed 12 March 2025, during the visit of the Prime Minister of India · Government of Mauritius as borrower. A credit facility for the government, signed with the visit’s other agreements. https://www.narendramodi.in/list-of-outcomes-visit-of-prime-minister-narendra-modi-to-mauritius
+- **Mandatory energy auditing and energy efficiency:** Global Environment Facility · Five years, 2026 to 2031 · Implemented by the Energy Efficiency Management Office with UNDP. Energy audits made mandatory and efficiency financed, so the island uses less imported fuel. https://www.undp.org/mauritius-seychelles/news/mauritius-launches-5-year-project-advance-mandatory-energy-auditing-and-energy-efficiency
+
+Amounts or notes filled in on lines already listed: Special Economic Package: grant-cum-line.
+
+### Open gaps (wave 1)
+
+- An honest short list of fifteen: Mauritius is a high-income island that borrows mainly at home; the development banks lend it little. AFD and the EU are finalising Rs 6.3 billion for the water crisis (Mauritian press, November 2026); not listed until signed.
+- The AfDB Bank One grant rests on the Early Warning System database; the AfDB page was not opened.
+
+Still to come: the interim Nation Portrait (Canva, colours edition) and the Letter to the Nations post in WordPress, published after the pull request is merged.

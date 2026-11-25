@@ -93,3 +93,25 @@ Sources opened on 17 November 2026 unless stated.
 - No enterprise yet for water or health.
 - The Humanitarian Response Plan for 2026 is not yet on the register.
 - Learning outcomes date from 2012.
+
+## Full edition, wave 1 (25 November 2026)
+
+Brief: Project doc claude/full-blueprints-151.md. Researched 25 November 2026; World Bank lines from the projects API (search.worldbank.org/api/v3, Board approval date and current commitment) and Finances One.
+
+Now on the page: 5 lines in the record, 20 in Capital already committed, 5 enterprises, 5 Sovereign Assets.
+
+Added to the record:
+
+- **XOF 25bn:** BOAD financing for the 2025–2026 cotton campaign, approved March 2026: about 433,700 tonnes of seed cotton collected and ginned. BOAD, 2026, https://admin.boad.org/wp-content/uploads/2026/03/COMPRESS-CA-150-1.pdf
+
+Added to Capital already committed:
+
+- **CMDT cotton campaign 2025–2026 (XOF 25bn):** BOAD · Approved at the 150th Board session, Dakar, 25 and 26 March 2026 · About 433,700 tonnes of seed cotton. Finances the collection and ginning of the cotton crop, the cash income of hundreds of thousands of farm families. https://admin.boad.org/wp-content/uploads/2026/03/COMPRESS-CA-150-1.pdf
+- **Treasury bills and bonds on the regional market (UMOA-Titres) (XOF 60.3bn):** Auction of 8 July 2026 · To finance the 2026 budget. XOF 60.333 billion raised from investors across the West African monetary union. https://fr.allafrica.com/stories/202607090266.html
+- **Treasury bills and bonds on the regional market (UMOA-Titres) (XOF 55bn):** Auction of 24 June 2026 · 50 billion offered · 3-year bonds at 6.00%, 5-year at 6.20%. The second XOF 55 billion raised in June 2026 for the budget. https://fr.allafrica.com/stories/202606250699.html
+
+### Open gaps (wave 1)
+
+- Secondary sources: the two UMOA-Titres auctions (Malian press on allAfrica); the UMOA-Titres result notices were not opened.
+
+Still to come: the interim Nation Portrait (Canva, colours edition) and the Letter to the Nations post in WordPress, published after the pull request is merged.

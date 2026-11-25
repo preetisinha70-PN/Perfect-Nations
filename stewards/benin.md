@@ -76,3 +76,37 @@ Furthest from reach: Energy (92%). Of Beninese still cook without clean fuels.
 - Safely managed sanitation is measured; safely managed water is measured.
 - No enterprise verified yet for any of the seven standards.
 - The seven standards and the asset figures not re-read at source on 16 November 2026.
+
+## Full edition, wave 1 (25 November 2026)
+
+Brief: Project doc claude/full-blueprints-151.md. Researched 25 November 2026; World Bank lines from the projects API (search.worldbank.org/api/v3, Board approval date and current commitment) and Finances One.
+
+Now on the page: 5 lines in the record, 24 in Capital already committed, 5 enterprises, 5 Sovereign Assets.
+
+Added to the record:
+
+- **$400M:** World Bank financing for urban mobility in Grand Nokoué, approved May 2025: the largest World Bank operation approved for Benin in 2025 and 2026. World Bank, 2025, https://projects.worldbank.org/en/projects-operations/project-detail/P180579
+
+Added to Capital already committed:
+
+- **Public Resource Management for Jobs and Growth ($70M):** World Bank · Approved 30 September 2026. Raises domestic revenue and makes public spending go further, so the budget can carry more of the seven standards itself. https://projects.worldbank.org/en/projects-operations/project-detail/P513143
+- **First Accelerated Economic Transformation and Jobs operation ($200M):** World Bank · Approved 27 February 2026 · Development policy financing. Budget support for rules that open sectors to private investment, and for investment in people. https://projects.worldbank.org/en/projects-operations/project-detail/P510638
+- **Benin Youth Inclusion Project ($41.3M):** World Bank · Approved 25 June 2025. Brings under-employed young people aged 15 to 30 into work and strengthens the employment and training services that serve them. https://projects.worldbank.org/en/projects-operations/project-detail/P511454
+- **Grand Nokoué Sustainable Urban Mobility Project ($400M):** World Bank · Approved 20 May 2025. Safer, faster and more accessible transport along the main corridors of Cotonou and its neighbours, where most of the nation’s jobs are. https://projects.worldbank.org/en/projects-operations/project-detail/P180579
+- **Land Tenure Management Program ($100M):** World Bank · Approved 30 April 2025. Builds the national cadastre and registers more land rights, so families and farmers can borrow against what they own. https://projects.worldbank.org/en/projects-operations/project-detail/P181259
+- **Gazetted Forests Management Project 2 ($80.7M):** World Bank · Approved 30 April 2025. Protects and manages the classified forests that store water and carbon; a further US$7 million was approved on 14 July 2026. https://projects.worldbank.org/en/projects-operations/project-detail/P508182
+- **Ouidah–Hillacondji road, duplication (XOF 30bn):** BOAD · Approved at the 150th Board session, Dakar, 25 and 26 March 2026. Doubles the Agonkanmey–Hillacondji coastal road to the Togo border to cut travel times and accidents on the main West African corridor. https://admin.boad.org/wp-content/uploads/2026/03/COMPRESS-CA-150-1.pdf
+
+Added to Already working in Benin:
+
+- **Food, BIOPHYTO:** Organic fertiliser and biopesticides made in Benin, in place of chemical pesticides; a €2.75 million loan from BIO in 2025. BIO, 2025, https://www.bio-invest.be/en/our-impact/impact-stories/how-organic-fertilizer-cultivates-sustainable-success
+- **Water, CRIPT:** A Cotonou company founded in 2025 that designs and installs energy and water systems for farms and homes. VC4A, 2025, https://vc4a.com/ventures/centre-de-recherche-dinnovation-et-de-production/?lang=en
+- **Energy, Qotto:** Solar kits for homes, paid for in instalments; US$8 million raised to grow in Benin and beyond. TechCrunch, https://techcrunch.com/?p=2484140
+- **Energy, AXIAN Energy:** Four solar plants, the first developed in Benin by an independent power producer, financed with €30 million. Tech in Africa, 2026, https://www.techinafrica.com/?p=42364
+- **Livelihood, Vital Finance:** Microfinance for small businesses across Benin; a €3 million loan from BIO in January 2026. BIO, 2026, https://www.bio-invest.be/en/investments/biophyto
+
+### Open gaps (wave 1)
+
+- Enterprises: AXIAN Energy (Tech in Africa) and Qotto (TechCrunch) rest on the business press.
+
+Still to come: the interim Nation Portrait (Canva, colours edition) and the Letter to the Nations post in WordPress, published after the pull request is merged.

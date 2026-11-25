@@ -65,3 +65,35 @@ Furthest from reach: Energy (99%). Of Central Africans still cook without clean 
 - The seven standards and the asset figures were not re-read at source on 16 November 2026.
 
 Last weekly review: 16 November 2026.
+
+## Full edition, wave 1 (25 November 2026)
+
+Brief: Project doc claude/full-blueprints-151.md. Researched 25 November 2026; World Bank lines from the projects API (search.worldbank.org/api/v3, Board approval date and current commitment) and Finances One.
+
+Now on the page: 5 lines in the record, 19 in Capital already committed, 2 enterprises, 5 Sovereign Assets.
+
+Added to the record:
+
+- **$3.15bn:** World Bank Group commitments to the Central African Republic across 76 projects, as of 30 September 2026. World Bank, 2026, https://financesone.worldbank.org/countries/Central%20African%20Republic
+- **$583M:** African Development Bank portfolio in the country: 20 projects, half of it in transport and a fifth in water and sanitation (December 2025). African Development Bank, 2025, https://fr.allafrica.com/stories/202512170134.html
+
+Added to Capital already committed:
+
+- **Local Governance and Community Resilience Project ($25M):** World Bank · Approved 20 October 2026. Local councils and communities choose and build the services they need most. https://projects.worldbank.org/en/projects-operations/project-detail/P514772
+- **Emergency Food Crisis Response Project, additional financing ($50M):** World Bank · Approved 10 June 2026. A second IDA grant of US$50 million, bringing the project to US$100 million, to keep farmers producing and families fed. https://projects.worldbank.org/en/projects-operations/project-detail/P515854
+- **Regional DARES, distributed renewable energy, phase 1 ($55M):** World Bank · Approved 22 June 2026 · Central African Republic share · With Benin, Liberia and Sierra Leone. Solar mini-grids and home systems where the grid does not reach; part of a US$200 million first phase. https://www.worldbank.org/en/programs/africa-regional-integration
+- **Sustainable Congo Basin Forest Economies ($60M):** World Bank · Approved 31 March 2026 · Central African Republic share. Jobs from standing forest: sustainable timber, non-timber products and payments for keeping the forest whole. https://financesone.worldbank.org/countries/Central%20African%20Republic
+- **Emergency Infrastructure and Connectivity Recovery Project ($30M):** World Bank · Approved 22 June 2025. Reopens roads and bridges cut by conflict and floods; a further US$10 million was approved on 11 November 2025. https://projects.worldbank.org/en/projects-operations/project-detail/P508925
+- **Health Service Delivery and System Strengthening Project (SENI-Plus) ($21M):** World Bank · Approved 25 June 2025. Free essential care for mothers and children and stronger health centres. https://projects.worldbank.org/en/projects-operations/project-detail/P509689
+- **Adaptive and Productive Social Safety Nets Project ($22M):** World Bank · Approved 30 April 2025. Cash and work for the poorest households, linked to help to earn a living. https://projects.worldbank.org/en/projects-operations/project-detail/P508180
+- **Human Capital and Women and Girls’ Empowerment (Maïngo) Project ($10M):** World Bank · Approved 25 June 2025. Keeps girls in school and opens skills and work to young women. https://projects.worldbank.org/en/projects-operations/project-detail/P510632
+- **Inclusive and Resilient Cities Project ($9.18M):** World Bank · Approved 22 July 2025. Drainage, streets and services in the poorest districts of Bangui and other towns. https://projects.worldbank.org/en/projects-operations/project-detail/P511373
+- **Public Sector Digital Governance, additional financing ($6.4M):** World Bank · Approved 21 May 2025. Digital systems for the state, so revenue, payroll and services work and can be checked. https://projects.worldbank.org/en/projects-operations/project-detail/P181682
+- **Sakaï 2 solar field, Bimbo ($90M):** Global South Utilities (GSU) · Partial commissioning 12 August 2026 · 15 MW first, for up to 300,000 households. A solar field south-west of Bangui financed by an Emirati investor, now feeding the grid of the national utility, ENERCA. https://www.financialafrik.com/2026/08/14/centrafrique-un-fonds-emirati-investit-90-millions-usd-pour-une-centrale-solaire/
+
+### Open gaps (wave 1)
+
+- Secondary source: Sakaï 2, US$90 million (Financial Afrik).
+- Enterprises: two found on the public record; the private sector is small and few firms are reported by name.
+
+Still to come: the interim Nation Portrait (Canva, colours edition) and the Letter to the Nations post in WordPress, published after the pull request is merged.
