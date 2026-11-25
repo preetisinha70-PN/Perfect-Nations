@@ -536,7 +536,7 @@
   /* ---------- v15.1 the three mandates: the stars light as the band arrives; on phones 01 See, 02 Build and
      03 Close move the rail; without an audited Floor, the Lab's standard and the Sovereign Mandate's figures follow
      the live file (an audited Floor, data-floor, sets them in the page code) ---------- */
-  var mdBox = q('#bp-mandates');
+  var mdBox = q('#bp-mandates'), mdFit = function () {};
   (function () {
     if (!mdBox) return;
     if (!reduce && 'IntersectionObserver' in window) {
@@ -546,9 +546,22 @@
     }
     var rail = mdBox.querySelector('.bpx-tiers'), cards = rail ? rail.children : [], tabs = mdBox.querySelectorAll('.bpx-md__steps button');
     if (!rail || !tabs.length || !cards.length) return;
-    function mark(n) {
-      Array.prototype.forEach.call(tabs, function (t, k) { t.classList.toggle('is-on', k === n); t.setAttribute('aria-pressed', k === n ? 'true' : 'false'); });
+    var phone = window.matchMedia ? window.matchMedia('(max-width: 640px)') : null, cur = 0;
+    /* on phones the rail takes the height of the mandate in view, so a short card leaves no empty band below it */
+    function fit() {
+      if (!phone || !phone.matches) { rail.style.height = ''; return; }
+      var cs = getComputedStyle(rail), c = cards[cur];
+      if (c) rail.style.height = (c.offsetHeight + parseFloat(cs.paddingTop) + parseFloat(cs.paddingBottom)) + 'px';
     }
+    mdFit = fit;
+    function mark(n) {
+      cur = n;
+      Array.prototype.forEach.call(tabs, function (t, k) { t.classList.toggle('is-on', k === n); t.setAttribute('aria-pressed', k === n ? 'true' : 'false'); });
+      fit();
+    }
+    fit();
+    window.addEventListener('resize', fit, { passive: true });
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(fit);
     Array.prototype.forEach.call(tabs, function (t, k) {
       t.addEventListener('click', function () {
         if (!cards[k]) return;
@@ -609,6 +622,7 @@
       .forEach(function (n) { row(n, Math.round(g[n].value * 10) / 10, fig(g[n])); });
     ORDER.forEach(function (n) { if (num(g[n].value) && g[n].value >= 100) row(n, null, 'Met', 'is-met'); });
     ORDER.forEach(function (n) { if (n !== lead && !num(g[n].value)) row(n, null, 'Not measured', 'is-met'); });
+    mdFit();
   }
 
   function apply(d) {
