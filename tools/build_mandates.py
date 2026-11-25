@@ -27,7 +27,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 HERE = ROOT / 'tools' / 'mandates'
 PAGES = ROOT / 'pages'
-VERSION = '2.0'
+VERSION = '2.1'  # v2.1: our AI is called Perfect Nations Intelligence; other people's programmes keep their own word (Preeti Sinha, President and CEO, 24 Nov 2026)
 KINDS = {
     'briefing': ('The Nation Briefing', 'nation-briefing', 'Mandate I: three hours, the Gap named and sized'),
     'lab': ('The Blueprint Lab', 'blueprint-lab', 'Mandate II: three days, the structure drawn'),

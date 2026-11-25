@@ -100,7 +100,8 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 PAGES, DATA, HERE = ROOT / 'pages', ROOT / 'data', ROOT / 'tools' / 'nation'
-VERSION = '15.1'  # The three mandates: See the gap. Build one solution. Close every gap. (Preeti Sinha, President and CEO, 24 Nov 2026)
+VERSION = '15.2'  # The three mandates: See the gap. Build one solution. Close every gap. (Preeti Sinha, President and CEO, 24 Nov 2026)
+# 15.1: Now possible with Perfect Nations Intelligence; our AI is called Perfect Nations Intelligence; other people's programmes keep their own word (Preeti Sinha, President and CEO, 24 Nov 2026)
 # 15.0: the seven stars fill with gold to each standard's coverage; the furthest still pulses (Preeti Sinha, President and CEO, 24 Nov 2026)
 # 14.8: the October pictures switched on for the first 44 blueprints (Preeti Sinha, 21 Nov 2026)
 # 14.7.1: the pictures carry no AI illustration mark (Preeti Sinha, 21 Nov 2026)
@@ -150,7 +151,7 @@ COLOURS = ['#8A5A12', '#0E5A80', '#9A3E22', '#C08A12', '#1F4C96', '#167A5F', '#2
 CAT = {'govt': 'Government', 'humanitarian': 'Humanitarian', 'multi': 'Multilateral', 'regional': 'Regional',
        'bilat': 'Bilateral', 'private': 'Private', 'impact': 'Impact'}
 MONEY = re.compile(r'^(?:[A-Z]{0,3}\$|€|£|₹|₦|~?\$|(?:USD|EUR|KSh|Sh|GHS|ZAR|FCFA|CFA|MAD|EGP|ETB|NGN|PKR|BDT|INR|IDR|PHP|VND|LKR|MXN|COP|JOD|FJD|UAH|BBD|BWP|AOA|MZN|TZS|UGX|RWF|ZMW|MWK|NAD|SZL|LSL|SOS|SSP|CDF|BIF|MGA|XAF|XOF|JMD|BRL|R)\s?\d)')
-# v15.1: the three mandates (Preeti Sinha, President and CEO, 24 Nov 2026; Project doc claude/three-mandates.md).
+# v15.2: the three mandates (Preeti Sinha, President and CEO, 24 Nov 2026; Project doc claude/three-mandates.md).
 # Each mandate has its own outcome, and each prepares the next: See the gap. Build one solution. Close every gap.
 # Replaces "One mission, three depths" (the same four moves at three depths, shown as depth dots).
 # (step, kicker, duration, name, you leave with, button, contact intent)
@@ -874,7 +875,7 @@ def solution_card(x, sig_name, sig_role):
         rows = [('01', 'The challenge', ent(x['challenge'])), ('02', 'What Perfect Nations advises', ent(x['advises']))]
         # v14.9: Now possible with AI, after the finance (24 Nov 2026)
         if x.get('kind') == 'design' and x.get('ai'):
-            rows.append(('03', 'Now possible with AI', ent(x['ai'])))
+            rows.append(('03', 'Now possible with Perfect Nations Intelligence', ent(x['ai'])))
         body += how(rows)
     elif x.get('standfirst') or x.get('summary'):
         one, rest = first_sentence(x.get('standfirst') or x.get('summary'))
@@ -939,7 +940,7 @@ def solution_brief(name, sbn, slug):
     steps = [('01', 'The challenge', ch)] + ([('02', 'The deal', deal)] if deal else [])
     steps.append(('%02d' % (len(steps) + 1), 'What Perfect Nations advises', ent(play['advises'])))
     if play.get('ai'):  # v14.9: Now possible with AI, after the finance (24 Nov 2026)
-        steps.append(('%02d' % (len(steps) + 1), 'Now possible with AI', ent(play['ai'])))
+        steps.append(('%02d' % (len(steps) + 1), 'Now possible with Perfect Nations Intelligence', ent(play['ai'])))
     return (
         '<li class="bpx-sol bpx-sol--brief"><p class="bpx-sol__k"><b>The Solution for %s</b><span>%s</span></p>'
         '<h3>%s</h3>%s'
@@ -1153,7 +1154,7 @@ def one_line(s):
     return re.sub(r'\. Every message', ': every message', plain(s), count=1)
 
 
-# ---------------------------------------------------------------- the three mandates (v15.1)
+# ---------------------------------------------------------------- the three mandates (v15.2)
 # Preeti Sinha, President and CEO, 24 Nov 2026 (Project doc claude/three-mandates.md): each mandate has its own
 # outcome, and each prepares the next. The Nation Briefing sees the gap; the Blueprint Lab builds one solution (one
 # standard, by default the weakest, and one instrument); the Sovereign Mandate closes every gap below 100%. The seven
@@ -1269,7 +1270,7 @@ def three_mandates(d, p, contact):
         lab1 = 'One standard, chosen with %s: by default, the weakest.' % wth
     lab_pts = [lab1,
                '<b>FfD</b>, innovative financing for development, designs one instrument to close it.',
-               '<b>AI</b> finds who is below the line and where, prices the cost of reaching them, and tracks delivery.']
+               '<b>Perfect Nations Intelligence</b> finds who is below the line and where, prices the cost of reaching them, and tracks delivery.']
     # Mandate 03: the Sovereign Mandate. Every standard below 100%.
     sov_pts = ['The full set of instruments, backed by the asset ledger of %s, taken to investors and development partners through to close.' % nin,
                'Perfect Capita agreed with %s, and monitored.' % wth]
@@ -1469,7 +1470,7 @@ def build(slug, sbn, son, today):
     script = (HERE / 'script.js').read_text(encoding='utf-8').replace('/*pn:cfg*/', 'var CFG = %s;' % js_str(cfg))
     head = (
         '<!-- PERFECT NATIONS . NATIONAL BLUEPRINT . %s . v%s . %s . Built by tools/build_nations.py: never edit by hand. -->\n'
-        '<!-- v15.1 (24 November 2026): the three mandates, each with its own outcome (Preeti Sinha, President and CEO):\n'
+        '<!-- v15.2 (24 November 2026): the three mandates, each with its own outcome (Preeti Sinha, President and CEO):\n'
         '     See the gap (The Nation Briefing), Build one solution (The Blueprint Lab), Close every gap (The Sovereign Mandate).\n'
         '     The seven stars of the logo replace the depth dots; figures only from an audited Floor (floors/<slug>.md). -->\n'
         '<!-- v14.8 (21 November 2026): the asset pictures made in October are switched on for the first 44 blueprints. -->\n'
