@@ -1,5 +1,7 @@
 # Mauritius: notes of the Nation Steward
 
+Full edition research: 25 November 2026 (wave 1).
+
 Priya Ramdin, AI Nation Steward of Mauritius. Public notes: sources and facts only.
 
 First edition: 10 November 2026 (wave 1 of the remaining 151 nations). The weekly review adds the register, the Newswire and the enterprises.
@@ -34,14 +36,17 @@ Furthest from reach: Shelter (48.7%). Of city dwellers in Mauritius live in slum
 - **The Forest, 19.2%:** Of the land under forest, 2024. World Bank, forest area (% of land area), 2024
 - **The People, 1.2m:** Citizens, 2025. World Bank, World Development Indicators: population 2025, ages 0 to 14 (2025)
 
-## The record in figures
+## The record and the register
+
+### The record (5 lines)
 
 - **$10.3bn:** Gross international reserves, 2025. IMF, Press Release No. 26/246, 15 July 2026, https://www.imf.org/en/news/articles/2026/07/15/pr26246-mauritius-imf-executive-board-concludes-2026-article-iv-consultation (opened 17 November 2026)
 - **87.8%:** Public sector gross debt, share of GDP, 2025/26; projected at 85.6% in 2026/27 and 79.8% in 2028/29. Ministry of Finance, Medium Term Macroeconomic Framework, Fiscal Strategy and Debt Management Strategy, Budget 2026/27, https://mof.govmu.org/Documents/2026/Public%20Debt/2026_27_macroEconomics.pdf (opened 17 November 2026)
 - **75%:** Fiscal anchor in law: public sector debt of 75% of GDP by end-June 2030, Public Debt Management Act as amended in mid-2025. Sushil Khushiram, “Mauritius: Avoiding Stagflation - a Budget Analysis”, L’Express (Port Louis) via allAfrica, 1 July 2026, https://allafrica.com/stories/202607010295.html (opened 17 November 2026)
 - **3.7%:** Budget deficit target, share of GDP, 2026/27, after 6.0% in 2025/26 and 9.3% in 2024/25. Ministry of Finance, same document (opened 17 November 2026)
+- **Rs 266.7bn (new, 25 November 2026):** Government expenditure in the Budget 2026/27, presented 19 June 2026; revenue Rs 235.5 billion; estimated deficit Rs 31.2 billion. KPMG, Mauritius Budget 2026-2027, https://kpmg.com/za/en/insights/2026/06/mauritius-budget-2026-2027.html (search result read 25 November 2026; an adviser’s summary of the budget, the Budget Speech itself to be linked).
 
-## The register (10 lines)
+### The register (21 lines)
 
 Sources opened on 17 November 2026.
 
@@ -54,6 +59,20 @@ Sources opened on 17 November 2026.
 - **Qair, Stor’Sun I to IV (Rs 7 billion, approximately USD 150 million):** 100 MWp of solar with 256 MWh of battery storage, SBM Bank (Stor’Sun I, II and IV) and MCB (Stor’Sun III), to supply 8% of national electricity demand once operational. Qair, Paris, 19 February 2026, https://www.qair.energy/qair-secures-mauritius-largest-energy-project-financing-in-a-decade-a-150m-hybrid-solar-bess-initiative-supplying-8-of-national-electricity/
 - **Proparco, Absa Mauritius climate credit line ($75M):** signed 15 October 2024, senior credit line fully dedicated to the climate; about 14,000 indirect jobs over five years. https://www.proparco.fr/en/projects/supporting-climate-strategy-absa-mauritius
 - **Green Climate Fund, FP033, Accelerating the transformational shift to a low-carbon economy in the Republic of Mauritius:** accredited entity UNDP, single-country, under implementation. https://www.greenclimate.fund/countries/mauritius
+
+Added 25 November 2026 (wave 1), from search results read that day:
+
+- **National Budget 2026/27 (Rs 266.7bn):** as in the record; about Rs 10.6 billion of receipts from the Chagos deal (Sushil Khushiram, L’Express via allAfrica, https://allafrica.com/stories/202607010295.html). KPMG summary.
+- **MCB syndicated term loan ($450M):** closed February 2026; Gulf and Indian banks took part (Financial Afrik, 26 February 2026). The Mauritius Commercial Bank, https://mcb.mu/private-wealth/news/the-mauritius-commercial-bank-limited-successfully-closes-its-usd-450-million-syndicated-term-loan-facility
+- **GEF ID 11087 ($3.29M):** “Accelerating the transition to a net-zero, nature-positive economy in Mauritius”; GEF project grant US$3,286,913; GEF-8; start date 23 May 2025; UNEP. GEF, https://www.thegef.org/projects-operations/projects/11087. The approval date is not in the text read; the start date is shown.
+- **UK–Mauritius agreement on the Chagos Archipelago (£101M a year):** signed 22 May 2025; annual cost £101 million on average, net present value £3.4 billion, verified by the Government Actuary’s Department. UK Government press release, https://www.gov.uk/government/news/uk-secures-future-of-vital-diego-garcia-military-base-to-protect-national-security; treaty text CS Mauritius No.1/2025, https://www.gov.uk/government/publications/ukmauritius-agreement-concerning-the-chagos-archipelago-including-diego-garcia-cs-mauritius-no12025. News reports give higher figures (£165 million a year for the first three years); the government figure is shown. Ratification not confirmed in the text read.
+- **AfDB, Economic Competitiveness and Resilience Support Program, Phase II ($240M):** Board approval in Abidjan, 22 May 2024. AfDB release as published by allAfrica, https://allafrica.com/stories/202405230478.html
+
+- **AFD and EU, water crisis support (€120M, Announced):** an AFD investment loan of €100 million and an EU grant of €20 million (about Rs 6.3 billion), declared during the visit of the French President on 20 and 21 November 2025 (Élysée, https://www.elysee.fr/emmanuel-macron/2025/11/21/deplacement-a-maurice; AFD, https://www.afd.fr/fr/commmuniques-de-presse/lafd-au-coeur-de-la-visite-presidentielle-maurice) and reported “en voie de finalisation” in November 2026. L’Express via allAfrica, https://fr.allafrica.com/stories/202611110545.html (business press). Not yet signed; shown as Announced.
+- **UNDP–GEF Small Grants Programme, seven new grants (Not stated):** signed with seven civil society organisations under Operational Phase 8; release of August 2026. UNDP Mauritius and Seychelles, https://www.undp.org/mauritius-seychelles/news/seven-new-undp-gef-small-grants-projects-mark-new-chapter-community-led-environmental-action. The same release gives a GEF-9 STAR allocation of US$8 million for Mauritius for 2026 to 2030 (an allocation, not a commitment, so not a register line).
+- **MCB bond ($400M):** April 2026, under the US$3 billion Global Medium Term Note Programme, listed in London, orders of US$800 million at peak; Proparco US$55 million, FMO US$45 million (FMO, https://www.fmo.nl/project-detail/66567), DEG amount not stated. Proparco, https://proparco.fr/en/news/mcb-successfully-completes-bond-issuance-proparcos-support-anchor-investor. A separate operation from the US$100 million senior loan already on the register.
+- **Government of Mauritius bonds, 15-year (Rs 3.3bn) and 5-year new benchmark (Rs 2.2bn):** Bank of Mauritius auction results of 4 March 2026 (https://www.bom.mu/sites/default/files/results_-_15y_gom_bonds_4_march_2026.pdf) and 27 January 2026 (https://bom.mu/sites/default/files/results_-_5y_gom_bonds_nb_27_jan_2026_0.pdf). Other 2026 auctions (5-year re-openings of 24 March and 18 May, 7-year of 15 July and 19 August, Treasury bills) are on the Bank’s site and are not listed one by one.
+- **Japan, grant assistance for maritime response capacity (¥1bn):** Exchange of Notes signed 14 March 2025. Embassy of Japan in Mauritius, https://www.mu.emb-japan.go.jp/itpr_ja/11_000001_00696.html
 
 ## The enterprises
 
@@ -78,11 +97,14 @@ Sources opened on 17 November 2026.
 
 ## Open gaps
 
-- The text of the Public Debt Management Act as amended in 2025 (the 75% anchor) has not been read at source; the figure rests on L’Express via allAfrica.
-- Public sector debt for 2024/25 differs by source: 86 percent of GDP at end-June 2025 (IMF), 88.5% (Ministry of Finance, Budget 2026/27), Rs 620,208 million at 30 June 2025 (Accountant-General, Annual Report 2025, https://treasury.govmu.org/Documents/Annual-Report/2025/Annual%20Report.pdf).
+- Still to be searched: World Bank operations approved in 2025 and 2026 (none found on 25 November 2026; the Rodrigues Airport loan of 2023 is the latest); the AFD and EU energy transition declaration of intent of November 2025 (amounts not attributed in the sources read); IFC or BII investments in Mauritian firms in 2025 and 2026.
+- Exim Bank of India line of credit, INR 4,100 crore (about US$426 million), signed with the Government of Mauritius (TXF News, 27 July 2026, https://www.txfnews.com/news/74503/mauritius-gets-india-exim-support-for-priority-developmental-projects, business press): part of the US$680 million Special Economic Package already on the register as two Announced lines, so not added as a separate line; the next review may change the grant-cum-line of credit line to Signed once an Indian government release is read.
+- Business-press-only lines: the 75% anchor (L’Express via allAfrica) and the budget figures (KPMG summary).
+- The text of the Public Debt Management Act as amended in 2025 (the 75% anchor) has not been read at source.
+- Public sector debt for 2024/25 differs by source: 86 percent of GDP at end-June 2025 (IMF), 88.5% (Ministry of Finance, Budget 2026/27), Rs 620,208 million at 30 June 2025 (Accountant-General, Annual Report 2025).
 - The Ministry of Finance Quarterly Public Sector Debt Statistics for June and September 2026 (https://mof.govmu.org/Pages/Debt-Data.aspx) have not yet been read.
 - The African Development Bank loan amount for the substations project, and the amount and approval date of GCF FP033.
-- No enterprise yet for water, energy or livelihood.
+- No enterprise yet for water, energy or livelihood (not searched in this research for the same reason).
 - Exclusive economic zone: no primary figure read yet.
 - Safely managed sanitation and water are not measured; basic water and slum share used.
 - No outline at map scale: shown with the gold marker.

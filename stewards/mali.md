@@ -1,5 +1,7 @@
 # Mali: notes of the Nation Steward
 
+Full edition research: 25 November 2026 (wave 1).
+
 Oumou Traoré, AI Nation Steward of Mali. Public notes: sources and facts only.
 
 First edition: 10 November 2026 (wave 1 of the remaining 151 nations). The weekly review adds the register, the Newswire and the enterprises.
@@ -35,14 +37,17 @@ Furthest from reach: Energy (98%). Of Malians still cook without clean fuels.
 - **The Clean Grid, 62.3%:** Of electricity from renewable sources, 2021. World Bank, renewable electricity output (% of total), 2021
 - **The People, 25.2m:** Citizens, 2025. World Bank, World Development Indicators: population 2025, ages 0 to 14 (2025)
 
-## The record in figures
+## The record and the register
+
+### The record (5 lines)
 
 - **41.9%:** Total public debt of the central government, share of GDP, 2025 (estimate); 44.0% in 2024; projected at 40.8% in 2026. IMF Country Report No. 26/165, July 2026, French edition, https://www.imf.org/fr/publications/cr/issues/2026/07/06/mali-second-review-under-the-staff-monitored-program-press-release-and-staff-report-577497 (opened 17 November 2026). The first review had projected 40.9% for 2026.
+- **XOF 3,993bn:** State spending in the amended finance law for 2026 (XOF 3,993.319 billion, up from XOF 3,578.2 billion in the initial law); revenue XOF 3,372.895 billion; deficit XOF 620.425 billion. Sika Finance, https://www.sikafinance.com/marches/mali-le-budget-2026-porte-a-3-993-31-milliards-fcfa-en-hausse-de-11-6-apres-revision-de-la-loi-de-finances_62756 (business press; the law is to be read at the Ministry of Economy and Finance). The 2027 draft law, adopted in the Council of Ministers on 18 September 2026, projects spending of XOF 4,462.646 billion (La Nouvelle Tribune, September 2026).
 - **$800M:** Infrastructure a mining-backed fund could unlock, from the 2023 mining code. Mining Weekly (Reuters), 3 August 2026, https://www.miningweekly.com/article/mali-says-mining-backed-fund-could-unlock-up-to-800m-for-infrastructure-projects-2026-08-03
 - **$129M:** IMF Rapid Credit Facility, SDR 93.3 million (50% of quota), approved and disbursed on 16 April 2025. IMF Country Report No. 25/106 (Press Release No. 25/111: “an immediate disbursement of US$129 million (SDR 93.3 million)”; the staff report gives “about US$122.5 million”), https://www.imf.org/-/media/files/publications/cr/2025/english/1mliea2025001-print-pdf.pdf (opened 17 November 2026)
 - **5.5%:** Real growth expected in 2026, after 4.9% projected for 2025; fiscal deficit projected by IMF staff at 2.4% of GDP in 2026. IMF Country Report No. 26/165 (above).
 
-## The register (17 lines)
+### The register (20 lines)
 
 Sources opened on 17 November 2026 unless stated.
 
@@ -63,6 +68,12 @@ Sources opened on 17 November 2026 unless stated.
 - **BOAD, refinancing facility for BSIC SA Mali (XOF 10 billion):** same meeting and source as the BOAD lines above.
 - **IFC, SDN Flour Mill Project (up to EUR 13 million):** senior secured loans to Societe Diarra Negoce, approved on an absence-of-objection basis on 20 May 2026 (A loan up to EUR 6.5 million; concessional loans up to EUR 4.875 million from the IDA21 Private Sector Window Blended Finance Facility and up to EUR 1.625 million from IFC’s Concessional Capital Window). https://documents1.worldbank.org/curated/en/099052126100026866/pdf/BOSIB-2773240c-8036-446b-886c-8dda11263eb1.pdf
 - **GCF FP102, Mali solar rural electrification project (USD 29,079,541.33):** approved 28 February 2019; BOAD; loan USD 27,235,084.32 and grant USD 1,844,457.01; 4% disbursed; completion estimated 10 February 2027; 4.83 MW of mini-grids in 50 communities. https://www.greenclimate.fund/projects/fp102 (another GCF page, https://www.greenclimate.fund/node/2334, gives USD 31,100,134).
+
+Added 25 November 2026 (wave 1), from search results read that day:
+
+- **State budget 2026, amended finance law (XOF 3,993.3bn):** as in the record. Sika Finance (business press). The initial 2026 law (spending XOF 3,578.217 billion, revenue XOF 3,057.8 billion, deficit XOF 520.4 billion) was adopted by the National Transitional Council in December 2025 (APA News).
+- **Mali Humanitarian Needs and Response Plan 2026 ($551M):** “partners are seeking $551 million – or roughly 28 per cent less than last year”; 5.1 million people in need, 3.8 million targeted. OCHA, humanitarianaction.info, https://humanitarianaction.info/plan/1511/article/mali-4. APA News reports a requirement of $577.9 million, with $135.6 million (23%) mobilised at 28 September 2026, https://fr.apanews.net/society/mali-le-plan-humanitaire-finance-a-seulement-23/; the difference is not explained, so the OCHA figure is shown.
+- **Global Fund, three grants (€102M):** signed 15 March 2024 by the Global Fund, the Government of Mali, ARCAD Santé PLUS and Plan International Mali, for HIV, tuberculosis, malaria and the health system. The Global Fund, https://www.theglobalfund.org/en/updates/2024/2024-03-15-mali-global-fund-new-grants-continue-fight-aids-tb-malaria-strengthen-health-systems/
 
 ## The enterprises
 
@@ -87,9 +98,10 @@ Sources opened on 17 November 2026 unless stated.
 
 ## Open gaps
 
+- Business-press-only lines: the $800M mining-backed fund (Mining Weekly) and the 2026 budget (Sika Finance).
 - Two figures for public debt: IMF total public debt of the central government 41.9% of GDP (2025) and World Bank 52.9% (2025, broader definition).
 - The 35% state stake is read in a secondary source; the mining code text is to be linked. The IMF reports of 2025 and 2026 give no percentage.
-- The $800M mining-backed fund rests on a news report.
+- The 2026 humanitarian plan: OCHA gives $551 million and APA News $577.9 million; the OCHA figure is shown.
+- IFC, Mbouna SA (project 44642): a wheat flour mill with a solar plant at Sanankoroba, projected Board date 15 May 2026; the loan is given as €10 million in one summary and $11.73 million in the Early Warning System; not added until the IFC disclosure is read.
 - No enterprise yet for water or health.
-- The Humanitarian Response Plan for 2026 is not yet on the register.
 - Learning outcomes date from 2012.

@@ -1,5 +1,7 @@
 # Mauritania: notes of the Nation Steward
 
+Full edition research: 25 November 2026 (wave 1).
+
 Mariem Mint Ahmed, AI Nation Steward of Mauritania. Public notes: sources and facts only.
 
 First edition: 10 November 2026 (wave 1 of the remaining 151 nations). The weekly review adds the register, the Newswire and the enterprises.
@@ -37,15 +39,18 @@ Not re-read at source on 23 November 2026, except The Coast.
 - **The Farmland, 38.5%:** Of the land in agriculture, 2024. World Bank, agricultural land (% of land area), 2024
 - **The People, 5.3m:** Citizens, 2025. World Bank, World Development Indicators: population 2025, ages 0 to 14 (2025)
 
-## The record in figures
+## The record and the register
+
+### The record (5 lines)
 
 Opened 23 November 2026.
 
 - **39.9% and $95.8M:** see the hero.
 - **$91M, disbursed on the fifth reviews, January 2026 (now sourced to the IMF):** IMF press release on the fifth reviews of the ECF and EFF arrangements and the fourth review of the RSF, 28 January 2026 (https://www.imf.org/en/news/articles/2026/01/28/pr-2626-mauritania-imf-completes-5th-rev-of-extended-arrang-under-ecf-eff-and-4th-rev-of-rsf): “Completion of the reviews allows for an immediate disbursement of SDR 65.88 million (about US$ 91 million).” Of this, SDR 6.44 million (about US$9 million) under the ECF and EFF and SDR 59.44 million (about US$82 million) under the RSF; cumulative disbursements SDR 191.8 million (about US$258 million). The record earlier cited Financial Afrik, 30 January 2026, which reports the same release.
 - **$240M:** see the hero.
+- **MRU 140.3bn (new, 25 November 2026):** State budget 2026 in the amended finance law, about US$3.5 billion at MRU 40 to the dollar; initial law MRU 132.18 billion (US$3.30 billion); investment spending down 2.99%. Financial Afrik, 11 August 2026, https://www.financialafrik.com/en/2026/08/11/mauritania-revised-budget-for-2026-at-140-3-billion-mru-equivalent-to-3-5-billion-dollars/ (business press). Capmad gives the adoption by the National Assembly as 29 July 2026 in one passage and 11 August in another. The initial 2026 law is on the Ministry of Finance site in Arabic, https://finances.gov.mr/sites/default/files/2026-01/%D9%82%D8%A7%D9%86%D9%88%D9%86%20%D8%A7%D9%84%D9%85%D8%A7%D9%84%D9%8A%D8%A9%20%D9%84%D8%B3%D9%86%D8%A9%202026.pdf (not read).
 
-## The register (16 lines)
+### The register (22 lines)
 
 Each line links its own source. Opened on 23 November 2026.
 
@@ -62,6 +67,15 @@ Each line links its own source. Opened on 23 November 2026.
 - **Japan, Food Assistance Programme, fiscal year 2024, ¥600M (new):** Embassy of Japan in Mauritania, Nouakchott, 26 January 2026 (https://www.mr.emb-japan.go.jp/files/100970757.pdf): “ont procédé à la cérémonie de réception d’environ 4 331 tonnes de riz”; “Le montant de ce don du peuple japonais correspond à 600 millions de yen, soit environ 150 millions MRU.”; “Le fonds de contrepartie obtenu par la vente du riz a permis au Gouvernement mauritanien, par le biais du CSA,” to distribute food to vulnerable people in emergencies.
 - **European Union, Global Gateway budget support programme, €100M (new):** Delegation of the European Union to Mauritania, 19 December 2024 (https://www.eeas.europa.eu/node/448469_en): “l’Union européenne a approuvé un programme d’appui budgétaire de 100 millions d’euros”, “comprenant des allocations directes au budget national pour un montant de 95 millions d’euros”, with “un premier décaissement de 23 millions d’euros”; its areas are “l’écosystème de l’hydrogène vert, de la gestion des migrations et déplacements forcés, et de la santé”, to “permettre la mise en place de la couverture sanitaire universelle d’ici 2030”.
 - **Iwa Green Energy, 60 MW hybrid solar and wind plant, $300M (new):** African Development Bank release, 1 October 2025, as published by allAfrica (https://allafrica.com/stories/202510020577.html): “Mauritania has signed its first independent power producer contract, a $300 million agreement with Iwa Green Energy” “to develop a 60-megawatt hybrid solar-wind power plant.”; “the fully private financing model will allow the country to expand supply without adding to public debt.”; “The facility, scheduled to come onstream in September 2026, will boost Mauritania’s installed capacity of about 450 megawatts.”
+
+Added 25 November 2026 (wave 1), from search results read that day:
+
+- **State budget 2026, amended finance law (MRU 140.3bn):** as in the record. Financial Afrik (business press).
+- **SNIM railway corridor ($275M):** EIB Global loan US$125 million (guaranteed by the European Union) and AfDB loan US$150 million to SNIM, signed in Rabat on the sidelines of the Africa Investment Forum 2025; rehabilitation of the Zouérat–Nouadhibou line and 42 km of new track to El Aouj and Atomai. EIB press release 2025-478, https://www.eib.org/en/press/all/2025-478-eib-global-and-african-development-bank-invest-ususd-275-million-to-modernise-mauritania-s-main-railway-corridor; Engineering News (Reuters), 28 November 2025. Moved from Watch items; classed private because both loans go to the state company SNIM on private-sector terms.
+- **AfDB, emergency humanitarian grant ($0.5M):** US$500,000 for Malian refugees and host communities in Hodh El Chargui, September 2025. AfDB release as published by allAfrica, https://allafrica.com/stories/202509300687.html
+- **AfDB, Générale de Banque de Mauritanie (€25.5M):** approved June 2025; €15 million trade finance line of credit, €5 million trade finance guarantee, €500,000 AFAWA grant through We-Fi; plus US$5 million co-financing from the Africa Growing Together Fund. Making Finance Work for Africa, https://www.mfw4a.org/news/mauritania-african-development-bank-approves-eu255-million-trade-finance-facility-generale-de (republishing the AfDB release).
+- **World Bank, Public Spending Efficiency (P506443, $50M):** approved 3 June 2025, closing 31 December 2030; third phase of the Public Financial Management Strategy 2025–2030. World Bank press release, https://www.worldbank.org/en/news/press-release/2025/06/03/world-bank-supports-mauritania-with-50-million-to-enhance-public-spending-efficiency
+- **World Bank, DREAM Project (P179383, $82.5M):** approved 27 March 2025, closing 30 June 2030; green hydrogen, energy storage, mining reforms, technical education. World Bank press release, https://www.worldbank.org/en/news/press-release/2025/03/27/mauritania-advances-energy-security-with-world-bank-support. The project record lists US$82.50 million (the project information document US$82.60 million IBRD/IDA) and also a figure of US$660 million, probably the total programme; the World Bank share is shown.
 
 ## The enterprises
 
@@ -82,17 +96,18 @@ Opened 23 November 2026. All five rest on 2025 evidence.
 - **Japan:** financing of more than 2 billion MRO for training, farming support and food aid (Sahara Medias, 3 October 2026; not opened). The Embassy’s small grants (Keur Madiké health post, €66,078, 24 April 2026; Ajouer 2 school, €51,956, 16 January 2026) are too small for the register.
 - **IsDB Group:** the IsDB’s own release on the €116.6 million of March 2026; the ITFC US$1 billion framework agreement of June 2026 (page did not open); the ICD line of US$20 million to Banque Mauritanienne de l’Investissement (not opened).
 - **Abu Dhabi Fund for Development:** the water supply project for Kiffa, “With a total value exceeding US$300 million” (Embassy of the UAE in Nouakchott, page dated 25 December 2025, https://www.mofa.gov.ae/en/Missions/Nouakchott/Media-hub/News/Nouakchott-13-27-9-2026); the share of the ADFD is not stated.
-- **EIB:** loans to Banque El Amana (2025) and BCI (€20 million, 2024) for small businesses (not opened); the railway corridor, US$275 million with the AfDB (28 November 2025, Newswire archive), transport only.
+- **EIB:** loans to Banque El Amana (2025) and BCI (€20 million, 2024) for small businesses (not opened). The railway corridor, US$275 million with the AfDB, is now on the register (25 November 2026).
 - **AfDB:** green mini-grids for rural electrification under PROREV (expression of interest of 13 November 2026, ReTAPS).
 - **Iwa Green Energy:** the plant was scheduled to come onstream in September 2026; commissioning not confirmed.
 - **IMF:** the first reviews of the new ECF and EFF arrangements.
 
 ## Open gaps
 
+- Business-press-only lines: the two IsDB lines of March 2026 (The North Africa Post) and the 2026 budget (Financial Afrik).
 - The seven standards and four of the Sovereign Assets could not be re-read at source (the World Bank API did not open). Education (5.2% of children reading a simple text by the end of primary school, World Bank, 2004) sets Coverage at 5.2.
 - Gas output of the Greater Tortue Ahmeyim field: no primary page read yet.
 - Learning outcomes date from 2004; lower-secondary completion 2020 used where lower.
 - 12 November 2026, Energy re-measured (use test): Electricity demand per person 458 kWh, 2024 (Ember, Yearly Electricity Data, 2026 release, https://ember-energy.org/data/yearly-electricity-data/; read through the Our World in Data energy dataset, accessed 12 November 2026). 458 / 1,000 = 45.8%.
 - A primary figure for the total public debt stock in ouguiya or US dollars: none found (the IMF gives shares of GDP only).
-- No water, energy, shelter or health enterprise verified; three of the five listed are small cooperatives or early-stage businesses.
-- The two IsDB lines of March 2026 rest on news only.
+- MCC threshold programme: a US$27 million grant signed 7 January 2025 (MCC release, https://www.mcc.gov/news-and-events/release/release-010725-mcc-mauritania-sign-grant/) was terminated on 18 December 2025 after an MCC Board vote in August 2025; not on the register.
+- No water, energy, shelter or health enterprise verified; three of the five listed are small cooperatives or early-stage businesses. The search of 25 November 2026 found programmes (UNDP PERZI, Masdar with SOMELEC) rather than independent solar firms with current, sourced figures.

@@ -1,5 +1,7 @@
 # Niger: notes of the Nation Steward
 
+Full edition research: 25 November 2026 (wave 1).
+
 Hadiza Moussa, AI Nation Steward of Niger. Public notes: sources and facts only.
 
 First edition: 10 November 2026 (wave 1 of the remaining 151 nations). The weekly review adds the register, the Newswire and the enterprises.
@@ -34,7 +36,9 @@ Furthest from reach: Energy (94%). Of Nigeriens still cook without clean fuels.
 - **The Land, 1.27M km²:** Land area, 2024. World Bank, land area, 2024.
 - **The People, 27.9m:** Citizens, 2025. World Bank, World Development Indicators: population 2025, ages 0 to 14 (2025).
 
-## The record in figures
+## The record and the register
+
+### The record (5 lines)
 
 - **$4.6bn:** World Bank commitments in grants and loans across 23 operations, 13 national and 10 regional, September 2026. World Bank country page, https://www.worldbank.org/ext/en/country/niger (opened 17 November 2026). World Bank Finances One gives cumulative commitments of US$10,139,333,044 across 132 projects, as of 31 August 2026: https://financesone.worldbank.org/countries/niger (opened 17 November 2026).
 - **45.6%:** Total public and publicly guaranteed debt, share of GDP, 2025. IMF Press Release No. 26/270, 29 July 2026 (not re-opened on 17 November 2026); see the hero above for the figures of Press Release No. 26/076.
@@ -42,7 +46,7 @@ Furthest from reach: Energy (94%). Of Nigeriens still cook without clean fuels.
 - **$306M:** Disbursed under the IMF Extended Credit Facility by March 2026 (SDR 228.0628 million); total disbursements under the Resilience and Sustainability Facility of SDR 98.702 million (about US$131 million). IMF Press Release No. 26/076, 13 March 2026, https://www.imf.org/en/news/articles/2026/03/13/pr-26076-niger-imf-completes-8th-rev-of-ecf-arrang-and-4th-rev-of-arrang-under-rsf (opened 17 November 2026).
 - **$15:** Pipeline tariff a barrel to the Benin terminal, cut from $27 in a May 2026 agreement with CNPC. Coface, 2026, https://www.coface.com/news-economy-and-insights/business-risk-dashboard/country-risk-files/niger (not re-opened on 17 November 2026).
 
-## The register (12 lines)
+### The register (20 lines)
 
 Sources opened on 17 November 2026 unless stated.
 
@@ -59,6 +63,17 @@ Sources opened on 17 November 2026 unless stated.
 - **BOAD, Electricity Generation Capacity Strengthening Project, PRECAP2E (XOF 30.609bn):** diesel power plants and solar photovoltaic mini-plants; approved at the same session, 26 June 2026. Same sources.
 - **CNPC, Niger–Benin pipeline tariff agreement (no amount):** transport rate to the Benin terminal cut from $27 to $15 a barrel, May 2026. Coface, https://www.coface.com/news-economy-and-insights/business-risk-dashboard/country-risk-files/niger (not re-opened on 17 November 2026).
 
+Added 25 November 2026 (wave 1), from search results read that day:
+
+- **AfDB, Energy Sector Governance and Economic Competitiveness Support Programme, Phase II ($144.34M):** approval dated 21 October 2026. Africa Energy Portal, https://africa-energy-portal.org/news/african-development-bank-group-approves-144-million-bolster-nigers-energy-and-private-sector; the AfDB release is https://www.afdb.org/en/news-and-events/press-releases/african-development-bank-group-approves-144-98008 (listed in Watch items earlier; not opened). Moved from Watch items.
+- **AfDB, the same programme, Phase I ($144.27M):** Board approval 29 July 2025 (Financial Afrik); agreement of US$144.7 million signed in October 2025 with AfDB President Sidi Ould Tah and the Prime Minister of Niger (APA News); electricity access from 22.5% to 30% by 2026. AfDB release as published by allAfrica, https://allafrica.com/stories/202508040723.html
+- **African Development Fund, water supply, sanitation and resilience, Zinder and Mirriah ($165.5M):** loan approved, reported 10 November 2025; five years; more than one million people; drinking water access 53.4%, basic sanitation below 6.1%, open defecation above 76.5%. allAfrica (Agence Ecofin), https://fr.allafrica.com/stories/202511100163.html; AfDB release listed in Watch items (not opened). Moved from Watch items.
+- **Afreximbank, structured financing for the State of Niger (€250M):** completion announced by NAB Consulting on 10 June 2026, co-arranged with Coris Bank Niger, for the Ministry of Economy and Finance; about XOF 164 billion; secured on identified export revenue. Financial Afrik, 11 June 2026, https://www.financialafrik.com/en/2026/06/11/nab-consulting-announces-the-completion-of-a-structured-financing-co-arranged-with-coris-bank-niger-of-250-million-euros-for-the-benefit-of-the-state-of-niger-obtained-from-afreximbank/ (business press, from the arranger; no Afreximbank or government release found). Moved from Watch items.
+- **200 MWc solar plant with battery storage, Niamey (XOF 126.1bn):** public-private partnership signed 20 August 2026 by the Minister of Energy, Amadou Haoua, and Adamou Amadou Daouda, Chief Executive Officer of NEPP; 20-year build, operate and transfer; about 1,300 jobs; US$205 million to US$225 million (Green Building Africa). Sika Finance, https://www.sikafinance.com/marches/niger-126-milliards-fcfa-pour-construire-une-centrale-solaire-photovolta%C3%AFque-de-200-mwc_63757 (business press). NEPP was set up in October 2024. Moved from Watch items.
+- **Niger Humanitarian Needs and Response Plan 2026 ($675M):** about US$675 million to reach 2 million people (WFP country brief, April 2026; the March brief gives US$674 million); 32 departments. OCHA, humanitarianaction.info, https://humanitarianaction.info/plan/1513/article/niger-4
+- **CERF, underfunded emergencies ($10M):** Niger’s share of US$160 million released for 12 underfunded crises, October 2026 (UN News gives US$150 million for the bulk allocation). United Nations release carried by Zawya, https://www.zawya.com/en/press-release/africa-press-releases/united-nations-un-releases-160-million-to-save-lives-in-12-underfunded-humanitarian-crises-1491859
+- **CERF, rapid response, Tillabéri displacement ($5M):** CERF-NER-26-RR-1523, February 2026; about US$5 million to IOM, UNHCR, UNICEF and WHO; IOM US$1,000,000 for Tera. CERF, https://cerf.un.org/what-we-do/allocation/2026/summary/CERF-NER-26-RR-1523
+
 ## The enterprises
 
 All pages opened on 17 November 2026.
@@ -68,23 +83,22 @@ All pages opened on 17 November 2026.
 - **Mayaki Trading (Energy):** solar kits, batteries, mini power plants and inverters; about 75% of revenue from clean energy; in the I&P Accélération portfolio since July 2025, with support covering a container of about 3,000 solar kits. I&P, https://ietp.com/en/company/mayaki-trading
 - **Hi-Tech Solutions (Energy):** founded in 2013; distributes solar panels and photovoltaic components to rural and peri-urban communities in Niger; in the I&P Accélération au Sahel portfolio since 2022. I&P, https://ietp.com/en/company/hi-tech-solutions
 - **Likita Care (Health):** a locally made, connected medical monitoring platform for hospitals and clinics; more than 70 monitoring units produced and deployed, used across five medical centres; winner of the 2026 Africa Prize for Engineering Innovation (Royal Academy of Engineering, 28 October 2026). https://raeng.org.uk/news/medical-monitoring-platform-designed-by-nigerien-innovator-mamane-kabirou-ousseini-wins-2026-africa-prize-for-engineering-innovation/
+- **I-Futur (Livelihood, added 25 November 2026):** a Niamey fintech founded in 2017 by Sidikou Boubacar (I&P, https://www.ietp.com/en/node/4306); BIYAN ZAMANI electronic payments with UNCDF; Terra Finance for women’s groups and farm cooperatives. UNCDF, https://www.uncdf.org/article/8946/i-futur-fintech-digital-payment-niger. Approved by the BCEAO as a payment institution in May 2025 (Afrique IT News, business press).
 
 ## Watch items
 
 - IMF Executive Board meeting on the tenth and final review of the Extended Credit Facility and the new 38-month arrangement, expected in early December 2026 (Press Release No. 26/328).
-- African Development Bank Group: four releases on Niger found, pages not yet read: “African Development Bank Group approves $144 million to bolster Niger’s energy and private sector”, https://www.afdb.org/en/news-and-events/press-releases/african-development-bank-group-approves-144-98008 (French version: https://www.afdb.org/fr/news-and-events/press-releases/niger-groupe-banque-africaine-developpement-97728); “Niger : la Banque africaine de développement accorde 165,5 millions de dollars pour améliorer l’accès à l’eau potable et à l’assainissement de plus d’un million de personnes”, https://www.afdb.org/fr/news-and-events/press-releases/niger-la-banque-africaine-de-developpement-accorde-1655-millions-de-dollars-pour-ameliorer-lacces-leau-potable-et-lassainissement-de-plus-dun-million-de-personnes-88433 (November 2025); and the signing of an agreement of nearly $145 million for energy access, competitiveness and economic resilience (October 2025).
-- Afreximbank: a structured financing of €250 million for the State of Niger, co-arranged by NAB Consulting and Coris Bank Niger, reported on 11 June 2026; no Afreximbank or government release found yet.
+- African Development Bank Group: the energy programme (both phases) and the Zinder water project are now on the register (25 November 2026); the AfDB pages themselves are still to be opened.
 - BOAD: the ONAHA and PRECAP2E agreements, reported signed in Niamey on 28 July 2026 (60.6 billion FCFA in all).
 - UMOA-Titres: Treasury auctions of the State of Niger in 2026 (among them 15 January, 5 February, 24 February, 9 April, 7 May and 21 May 2026); the auction reports are to be read at umoatitres.org.
-- A 200 MWc solar photovoltaic plant with battery storage, a public-private partnership of XOF 126.1 billion with Niger Electricity Power Production (NEPP), reported signed in Niamey on 20 August 2026; no primary release found yet.
 - Global Atomic, Dasa uranium project financing update, 16 September 2026: the company’s release is to be read.
 - The pipeline tariff agreement with CNPC: the company or government release is to be linked.
 
 ## Open gaps
 
+- Business-press-only lines: the Afreximbank €250 million (Financial Afrik, from the arranger), the 200 MWc solar partnership (Sika Finance), the Phase II AfDB approval (Africa Energy Portal; the AfDB page is to be opened) and the pipeline tariff (Coface).
 - The year of the 45.6% public debt figure is to be confirmed against IMF Press Release No. 26/270; Press Release No. 26/076 gives 45.6% as the projection for 2026 and 44.0% for 2025.
 - The total access of the current Extended Credit Facility, in SDR, is not stated in the releases read.
-- The pipeline tariff is read in a secondary source; the CNPC or government release is to be linked.
-- No enterprise yet for water, shelter, education or livelihood.
-- Green Climate Fund, Islamic Development Bank, EBID and bilateral lines (AFD, KfW, JICA and others) not yet read.
+- No enterprise yet for Water, Shelter or Education: the searches of 25 November 2026 found only energy, farming and fintech firms with sourced facts (Éditions Afrique Lecture, an education publisher in the I&P portfolio, could not be tied to Niger).
+- Islamic Development Bank: no 2025 or 2026 agreement with the Republic of Niger found (search results were about Niger State, Nigeria). Global Fund grants to Niger for 2024 to 2026 not found. Green Climate Fund, EBID and bilateral lines (AFD, KfW, JICA and others) not yet read.
 - Learning outcomes date from 2019.

@@ -1,5 +1,7 @@
 # Guinea: notes of the Nation Steward
 
+Full edition research: 25 November 2026 (wave 1).
+
 Kadiatou Diallo, AI Nation Steward of Guinea. Public notes: sources and facts only.
 
 First edition: 10 November 2026 (wave 1 of the remaining 151 nations). The weekly review adds the register, the Newswire and the enterprises.
@@ -43,8 +45,9 @@ The asset figures were not re-read at source on 17 November 2026.
 - **SDR 310.59M:** IMF staff-level agreement of 11 August 2026 on a 41-month Extended Credit Facility, 145% of quota, subject to approval by IMF management and the Executive Board, “expected to be considered in September 2026”. IMF Press Release No. 26/275, https://www.imf.org/en/news/articles/2026/08/11/pr26275-guinea-imf-completes-2026-aiv-mission-reaches-sla-41-month-ecf-arrangement (opened 17 November 2026). The IMF release gives no dollar figure; Channel Africa (12 August 2026) reported $425 million and Capmad about $439 million.
 - **$1.5–2bn:** Expected yearly earnings from Simandou exports from 2026. World Bank, Country Partnership Framework FY27–FY33, 2026, https://documents1.worldbank.org/curated/en/099052826164524577/pdf/BOSIB-ed5d0333-e179-487e-b69f-1043c57f1010.pdf
 - **47.9%:** Public debt, share of GDP, 2025; moderate risk of debt distress. World Bank, Macro Poverty Outlook, 2026, https://thedocs.worldbank.org/en/doc/bae48ff2fefc5a869546775b3f010735-0500062021/related/mpo-gin.pdf
+- **GNF 67,925.87bn (new, 25 November 2026):** spending in the revised budget for 2026 (PLFR), adopted by the National Assembly on 7 November 2026; overall deficit GNF 7,861.40 billion, 2.01% of GDP; oil revenue losses of GNF 4,576.7 billion to hold the pump price at GNF 12,000. Guinéenews, 7 November 2026, https://guineenews.org/2026/11/07/guinee-les-deputes-approuvent-un-budget-rectifie-de-67-92587-milliards-gnf-pour-2026/ . The initial Finance Law, L/2026/010/CNT of 31 March 2026, set spending at GNF 64,181.37 billion (Guinéenews; Journal officiel, https://journal-officiel.sgg.gov.gn/JO/2026/guinee-jo-2026-04-sp.pdf). Press figure for the revised law; no Ministry page opened.
 
-## The register (14 lines)
+## The register (21 lines)
 
 Sources opened on 17 November 2026 unless stated.
 
@@ -62,6 +65,14 @@ Sources opened on 17 November 2026 unless stated.
 - **IFC, Vista Gui ($20M):** five-year senior loan; approved 27 March 2026, signed 30 March 2026; at least a quarter for women-owned or women-led businesses. https://disclosures.ifc.org/project-detail/SII/52328/mfp-sme-vista-gui-sl; release of 27 March 2026, https://www.ifc.org/en/pressroom/2026/ifc-and-vista-group-partner-to-expand-access-to-finance-for-msmes-and-support-job-
 - **IFC, Fermav Industries, SONOCO II ($20M):** senior loan of up to $20 million for a $49 million investment programme; approved 17 March 2026, signed 28 March 2026. https://disclosures.ifc.org/project-detail/SII/49912/sonoco-ii; release of 26 March 2026, https://www.ifc.org/en/pressroom/2026/ifc-s-associe-au-groupe-sonoco-pour-renforcer-l-industrie-avicole-am-liorer-la-s-c
 - **Proparco, BCI Guinea ($10M):** senior loan, signed 8 September 2025 in Conakry, Choose Africa. https://www.proparco.fr/en/news/proparco-grants-usd-10-million-loan-bci-guinea-support-sme-financing
+
+- **World Bank (IDA), PRU-APN additional financing ($50M, new, 25 November 2026):** World Bank release of 4 August 2025: “$50 million in additional financing from the International Development Association (IDA)” for the Guinea Emergency Response and Nafa Program Support Project; 120,000 vulnerable households. https://www.worldbank.org/en/news/press-release/2025/08/04/guinea-strengthening-emergency-response-capacity-and-sustaining-support-to-vulnerable-households
+- **IsDB, Guinea–Senegal Road Corridor Construction Project (€140M, new):** IsDB release, Jeddah, 15 December 2024: the Board approved US$575.63 million across several projects, including “the Guinea-Senegal Road Corridor Construction Project which will receive EUR 140 million”, https://www.isdb.org/news/isdb-approves-us-57563-million-in-financing-to-accelerate-job-creation-food-security-quality-education-energy-access-and-regional-transport-infrastructure-in-member-countries . Guinéenews: signed 19 June 2025 (Mali–Gadhalougue section); a decree ratifying the framework and mandate agreements on 13 June (2026). The African Development Fund approved a separate $80.93 million in November 2024 for the same corridor (not on the register: the borrower share was not confirmed).
+- **EBID, three loans (€269.5M, new):** Financial Afrik (EBID sponsored release), 14 September 2026: signed 10 September 2026 in Conakry; Siguiri Regional Hospital €65.8 million, Cissela–Banko–N’Dèma and Banko–Saraya road (84 km) €143.05 million, Tinkisso 2 hydropower €60.6 million; EBID’s August 2026 Board release gives 200 beds and 11 MW, 48 GWh a year. https://www.financialafrik.com/en/2026/09/14/ebid-commits-eur-269-5-million-to-development-in-the-republic-of-guinea/
+- **EBID, agricultural high schools and mini hydropower (€123.45M, new):** EBID release, signed 10 November 2025 in Conakry: €28.28 million for four agricultural high schools, €95.16 million for three micro hydropower plants of 27.6 MW in the Senegal River basin; part of Simandou 2040. https://www.bidc-ebid.org/en/?p=278382
+- **EBID, drinking water ($62.77M, new):** EBID release, Conakry, 9 August 2024: two loans signed by the EBID President and the Minister for the Economy and Finance; $34.3 million for 150 boreholes and 100 water supply systems in Upper and Forest Guinea; $28.4 million for 205,204 people in Beyla, Fria and Koubia by 2035. https://bidc-ebid.org/en/?p=277422
+- **African Development Fund, Guinea–Mali 225 kV interconnection, additional financing ($25.79M, new):** AfDB release: Board approval in Abidjan on 10 December 2025, a loan of about $22 million and a grant of $3.79 million; about 37,500 new connections; cost in Guinea from $346 million to $372 million; first ADF support of about $41 million in December 2017. https://afdb.africa-newsroom.com/press/the-african-development-fund-grants-guinea-nearly-26-million-in-additional-funding-to-develop-an-electricity-interconnection-with-mali
+- **African Development Fund, industrial development and SME resilience ($14.04M, new):** approved by the ADF Board in June 2024, from the Transition Support Facility (AfDB release as carried by Capital Ethiopia, 26 June 2024). https://capitalethiopia.com/2024/06/26/guinea-usd-14-million-loan-from-the-african-development-fund-will-support-industrial-development-and-resilience-of-small-and-medium-sized-enterprises-smes/
 
 ## The enterprises
 
@@ -89,6 +100,7 @@ Sources opened on 17 November 2026 unless stated.
 - The $3bn+ of the Country Partnership Framework at its own document (not re-read in this review) and the Ministry communiqué behind the news reports.
 - The IMF Board approval and the IMF’s dollar figure for the Extended Credit Facility.
 - The approval date of the PRU-APN project.
-- African Development Bank, Islamic Development Bank, BADEA, Afreximbank, Green Climate Fund and MIGA instruments for Guinea since 2024: not yet searched.
+- BADEA, Afreximbank, Green Climate Fund and MIGA instruments for Guinea since 2024: searched on 25 November 2026, none found with a Guinea share and a date. EBID memorandum on six priority projects (April 2026): no amounts, left out.
+- Business-press-only lines: the revised budget record line (Guinéenews); the $3bn+ record line (Capmad). The EBID €269.5 million line is EBID’s own release carried by Financial Afrik; the ADF $14.04 million line is the AfDB release carried by Capital Ethiopia. World Bank lines were read through search results, as worldbank.org does not open in this session.
 - No enterprise yet for water, shelter, energy or education.
 - The seven standards and the asset figures were not re-read at source.
