@@ -100,7 +100,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 PAGES, DATA, HERE = ROOT / 'pages', ROOT / 'data', ROOT / 'tools' / 'nation'
-VERSION = '15.0'  # The seven stars fill with gold to each standard's coverage; the furthest still pulses (Preeti Sinha, President and CEO, 24 Nov 2026)
+VERSION = '15.1'  # v15.1: Now possible with Perfect Nations Intelligence; our AI is called Perfect Nations Intelligence; other people's programmes keep their own word (Preeti Sinha, President and CEO, 24 Nov 2026)  # The seven stars fill with gold to each standard's coverage; the furthest still pulses (Preeti Sinha, President and CEO, 24 Nov 2026)
 # 14.8: the October pictures switched on for the first 44 blueprints (Preeti Sinha, 21 Nov 2026)
 # 14.7.1: the pictures carry no AI illustration mark (Preeti Sinha, 21 Nov 2026)
 # 14.7: picture cards for the assets, switched on per nation by assets.pictures (Austria first; Preeti Sinha, 21 Nov 2026)
@@ -866,7 +866,7 @@ def solution_card(x, sig_name, sig_role):
         rows = [('01', 'The challenge', ent(x['challenge'])), ('02', 'What Perfect Nations advises', ent(x['advises']))]
         # v14.9: Now possible with AI, after the finance (24 Nov 2026)
         if x.get('kind') == 'design' and x.get('ai'):
-            rows.append(('03', 'Now possible with AI', ent(x['ai'])))
+            rows.append(('03', 'Now possible with Perfect Nations Intelligence', ent(x['ai'])))
         body += how(rows)
     elif x.get('standfirst') or x.get('summary'):
         one, rest = first_sentence(x.get('standfirst') or x.get('summary'))
@@ -931,7 +931,7 @@ def solution_brief(name, sbn, slug):
     steps = [('01', 'The challenge', ch)] + ([('02', 'The deal', deal)] if deal else [])
     steps.append(('%02d' % (len(steps) + 1), 'What Perfect Nations advises', ent(play['advises'])))
     if play.get('ai'):  # v14.9: Now possible with AI, after the finance (24 Nov 2026)
-        steps.append(('%02d' % (len(steps) + 1), 'Now possible with AI', ent(play['ai'])))
+        steps.append(('%02d' % (len(steps) + 1), 'Now possible with Perfect Nations Intelligence', ent(play['ai'])))
     return (
         '<li class="bpx-sol bpx-sol--brief"><p class="bpx-sol__k"><b>The Solution for %s</b><span>%s</span></p>'
         '<h3>%s</h3>%s'

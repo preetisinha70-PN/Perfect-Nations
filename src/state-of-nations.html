@@ -5,6 +5,7 @@ Pages plugin serves this file in place of the code pasted in the page's one Cust
 BUILT, never edited by hand: edit src/state-of-nations.html, then run
 python3 tools/build_state_of_nations.py. Kept by the State of Nations Steward (the page) and the
 Correspondent (the data: data/state-of-nations.json, data/solutions-by-nation.json).
+v9.4 (24 Nov 2026): Now possible with Perfect Nations Intelligence: our AI is called Perfect Nations Intelligence; other people's programmes keep their own word (Preeti Sinha, President and CEO, 24 Nov 2026).
 v9.3 (24 Nov 2026): Now possible with AI (Preeti Sinha, President and CEO): technology now makes possible
   solutions to development challenges that were not feasible before. Each Solution keeps The challenge and What
   Perfect Nations advises (the finance, always first), and adds one line, Now possible with AI (the field "ai"),
@@ -633,7 +634,7 @@ html.pn-son-lock,html.pn-son-lock body{ overflow:hidden; }
         <div>
           <p class="sn-eb">Perfect Nations Solutions</p>
           <h2 class="sn-h2" id="sn-sol-h">A Solution for every nation</h2>
-          <p class="sn-lead">Each names a nation&#8217;s challenge and what Perfect Nations advises, starting with the finance that closes the gap, and what AI now makes possible. <span class="sn-swipe">Swipe for all <span data-count-s2><!--pn:n-sol--></span> &#8594;</span></p>
+          <p class="sn-lead">Each names a nation&#8217;s challenge and what Perfect Nations advises, starting with the finance that closes the gap, and what Perfect Nations Intelligence now makes possible. <span class="sn-swipe">Swipe for all <span data-count-s2><!--pn:n-sol--></span> &#8594;</span></p>
           <details class="sn-rm">
             <summary>Read more<span class="sn-sr"> on how a Solution is built</span></summary>
             <div class="sn-rm__b">
@@ -798,7 +799,7 @@ html.pn-son-lock,html.pn-son-lock body{ overflow:hidden; }
     var h = el('h3'), a = el('a', '', s.title); a.href = '#solution-' + pad(no); h.appendChild(a); li.appendChild(h);
     if (s.standfirst) { li.appendChild(el('p', 'sn-c__i', s.standfirst)); }
     var dl = el('dl', 'sn-c__x');
-    [['The challenge', s.challenge], ['What Perfect Nations advises', s.advises], ['Now possible with AI', s.ai, 'sn-ai']].forEach(function (r) {
+    [['The challenge', s.challenge], ['What Perfect Nations advises', s.advises], ['Now possible with Perfect Nations Intelligence', s.ai, 'sn-ai']].forEach(function (r) {
       if (!r[1]) { return; } var d = el('div', r[2] || ''); d.appendChild(el('dt', '', r[0])); d.appendChild(el('dd', '', r[1])); dl.appendChild(d);
     });
     if (dl.children.length) { li.appendChild(dl); }
@@ -945,7 +946,7 @@ html.pn-son-lock,html.pn-son-lock body{ overflow:hidden; }
     var brief = q('.rd-brief'), dl = q('.rd-brief dl'); dl.textContent = ''; brief.hidden = false;
     brief.querySelector('p').textContent = 'The Solution';
     var src0 = (d.sources || [])[0];
-    [['The challenge', d.challenge, src0], ['What Perfect Nations advises', d.advises, null], ['Now possible with AI', d.ai, null, 'rd-ai']].forEach(function (x) {
+    [['The challenge', d.challenge, src0], ['What Perfect Nations advises', d.advises, null], ['Now possible with Perfect Nations Intelligence', d.ai, null, 'rd-ai']].forEach(function (x) {
       if (!x[1]) { return; } var w = el('div', x[3] || ''), dd = el('dd', '', x[1] + ' ');
       if (x[2] && safe(x[2].url)) { var sa = link(x[2].label || 'Source', x[2].url); sa.style.color = '#E3C258'; dd.appendChild(sa); }
       w.appendChild(el('dt', '', x[0])); w.appendChild(dd); dl.appendChild(w);
