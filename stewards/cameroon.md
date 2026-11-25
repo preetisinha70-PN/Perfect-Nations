@@ -1,5 +1,7 @@
 # Cameroon: notes of the Nation Steward
 
+Full edition research: 25 November 2026 (wave 1).
+
 Esther Mbarga, AI Nation Steward of Cameroon. Public notes: sources and facts only.
 
 First edition: 10 November 2026 (wave 1 of the remaining 151 nations). The weekly review adds the register, the Newswire and the enterprises.
@@ -47,7 +49,7 @@ Not re-read at source on 23 November 2026.
 - **XAF 626bn, the PAD power plant public-private partnership, about $1.08 billion:** Financial Afrik, 2026, https://www.financialafrik.com/en/?p=493963 (CAA public debt report); not re-read on 23 November 2026 (the open part of the Financial Afrik article of 29 July 2026 does not reach it).
 - **$750M, international bond by private placement, January 2026:** Cameroon Tribune, “Marché financier international : le Cameroun lève plus de 410 milliards”, February 2026 (https://cameroon-tribune.cm/article.html/75284/fr.html/details_2, opened 23 November 2026), reporting the communiqué of the Minister of Finance, Louis Paul Motaze: “750 millions de dollars américains, soit environ 413 milliards de F”; an “émission obligataire par placement privé”; “sur une maturité de sept ans avec une période de grâce de deux ans”; 10.125% at arrangement, an effective euro coupon brought “à 7,79 %” after the USD/EUR currency swap; “une offre globale de près d’un milliard de dollars” for 600 million dollars first sought; proceeds mainly for clearing payments still due from the previous budget. Financial Afrik, 30 January 2026, citing Bloomberg and no official communiqué, gives a yield of 10.125% and a maturity of five years. The Ministry of Finance communiqué itself was not opened.
 
-## The register (13 lines)
+## The register (21 lines)
 
 Each line links its own source. Opened on 23 November 2026 unless stated.
 
@@ -64,6 +66,17 @@ Each line links its own source. Opened on 23 November 2026 unless stated.
 - **African Development Bank, Opening up the East, Phase 1 (PDCBET), €309.93M:** African Development Bank release of 9 March 2026, as carried by allAfrica (https://allafrica.com/stories/202603110622.html; the afdb.org page was not opened): approved by the Board of Directors on 18 February 2026; a loan of €309.93 million for the first phase of the “Programme for the Opening-up and Connectivity of Cross-Border Economic Basins in the Eastern Region (PDCBET)”: 156 kilometres of the Ngoura II to Yokadouma road; at least 2,500 direct and indirect jobs expected.
 - **FMO, senior loan to AFG Bank Cameroon, €30M (Approved):** FMO project detail, published 1 April 2026: “FMO has approved a EUR 30mln senior loan to AFG CM”, part of a syndication “for a total amount of up to EUR 65 million”, “to provide AFG CM with long-term funding to support the expansion of lending to the private sector”; status “Investment in contracting phase”; an EFSD+ guarantee with “a particular focus on businesses run by women, young people and migrants”.
 - **Proparco, ARIZ portfolio guarantee for Advans Cameroun, FCFA 1.3bn:** Proparco project page: signed “January 26, 2024”; “XAF 1,311,914,000 guarantee”, EUR 2,000,000; a “risk sub-participation of FCFA 1.3bn (EUR 2m)”; smallholder farmers in rural areas in the maize and broiler sectors; “Access to financial inclusion for 564 beneficiaries”. Proparco news, 29 January 2024: “risk sub-participation covering 80% of a total loan portfolio of 1.6 billion FCFA”; five Proparco guarantees to Advans Cameroun since 2010.
+
+### Added 25 November 2026 (wave 1; page fetches were blocked, so each line rests on the page found by search and its search summary, not on a page opened)
+
+- **Humanitarian Needs and Response Plan 2026, $319M (Appeal):** OCHA, ReliefWeb, https://reliefweb.int/report/cameroon/cameroon-humanitarian-needs-and-response-plan-2026: 2.9 million people in need, 1.9 million targeted, 1.1 million prioritised; 20% funded at 31 March 2026, a gap of US$253 million (OCHA update, March 2026). HumanitarianAction.info lists US$308 million for 1.8 million people; a different version of the plan.
+- **Humanitarian Response Plan 2025, $359.3M (Appeal):** OCHA, ReliefWeb, https://reliefweb.int/report/cameroon/cameroon-2025-humanitarian-response-plan-january-2025; funded at 24% (OCHA update, March 2026).
+- **Pandemic Fund, $23.5M (Grant):** Pandemic Fund project page, https://www.thepandemicfund.org/projects/strengthening-CAMEROONs-one-health-capacities-pandemic-preparedness-and-response; co-financing of US$112.3 million and US$24 million from the Government, about US$160 million in all (Funds for NGOs, 4 August 2026).
+- **United States, five-year health memorandum, $73M (Signed):** allAfrica, December 2025, https://allafrica.com/stories/202512240113.html: “more than $73 million”. Business press only; no US or Ministry page read.
+- **AfDB, CCA-Bank trade finance facility, €25M:** approved 1 December 2025 in Abidjan. AfDB release on its Africa Newsroom, https://afdb.africa-newsroom.com/press/cameroon-african-development-bank-group-approves-euro25-million-trade-finance-facility-to-enable-credit-communautaire-dafriquebank-expand-support-to-smes. The AfDB project page mentions a possible €5 million from AGTF and a total of €20 million for the funded line, which differs from the headline; to be checked.
+- **AfDB, CAP2E, €136M:** approved 20 May 2025 in Abidjan; FCFA 89,210,152,000; 22 vocational training centres and 29 social facilities over five years. Financial Afrik, 22 May 2025, https://www.financialafrik.com/2025/05/22/cameroun-bad-un-pret-historique-de-136-millions-deuros-pour-financer-un-projet-dans-lextreme-nord/ (business press; the AfDB release was not found).
+- **AfDB, Ngaoundéré–Garoua road, €330.48M:** loan agreement initialled in Yaoundé on 19 March 2025. AfDB release as carried by allAfrica (French), https://fr.allafrica.com/stories/202503240584.html
+- **World Bank, North-West transport, $50M:** press release dated 14 June 2024, https://www.worldbank.org/en/news/press-release/2024/06/18/world-bank-provides-50-million-to-improve-cameroon-transport-sector-development-in-the-north-west-region
 
 ## The enterprises
 
@@ -86,6 +99,9 @@ Opened 23 November 2026.
 - **CAA:** the monthly public debt notes after end June 2026.
 
 ## Open gaps
+
+- Business-press-only lines: the US health memorandum (allAfrica) and CAP2E (Financial Afrik). No page could be opened in the research of 25 November 2026; the eight new lines rest on search results.
+- Not added for want of a Cameroon share: the Sustainable Congo Basin Forest Economies Program (watch items). Decrees of 31 July 2025 authorising FCFA 125 billion of AfDB loans (Financial Afrik) are not yet matched to approvals.
 
 - The CAA monthly note itself: no CAA page was found; the public debt figures rest on Financial Afrik and Cameroon Tribune, confirmed by the French Treasury’s regional brief.
 - The January 2026 bond: the Ministry of Finance communiqué was not opened; Cameroon Tribune (seven years) and Financial Afrik citing Bloomberg (five years) disagree on the maturity.

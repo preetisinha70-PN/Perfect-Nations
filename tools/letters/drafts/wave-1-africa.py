@@ -1,7 +1,8 @@
 """Write tools/letters/<slug>.json for wave 1. P1 and the quote are the first-edition Letter (already on the page);
 P2 cites the register; P3 the three standards furthest from reach; P4 the vision."""
 import json, sys
-R = '/home/user/Perfect-Nations'
+from pathlib import Path
+R = str(Path(__file__).resolve().parents[3])
 W = 'The work ahead is plain, and it is worth saying plainly. '
 REACH = ' Each of them is within your reach.'
 def VISION(name, dem, lead='Now imagine that same resolve turned toward every home in the country.'):
