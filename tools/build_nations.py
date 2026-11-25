@@ -66,7 +66,7 @@ Each page is built from:
                             data/solutions-by-nation.json and data/state-of-nations.json
   tools/nation/globe.js     the nation globe: a small WebGL Earth with the nation in gold (no globe.gl)
   tools/nation/<slug>.json  the words that belong to the page and not to the data: the Letter, the portrait,
-                            the people of the nation, the mandate moves, how Perfect Capita is measured,
+                            the people of the nation, the mandates (audience, and where audited, the Floor), how Perfect Capita is measured,
                             the sources, the Nation Steward photo and the nation's outline
   data/<slug>.json          the Nation Steward's file: the page is built with today's figures, so the page
                             code (the fallback) matches what the live file shows
@@ -100,7 +100,8 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 PAGES, DATA, HERE = ROOT / 'pages', ROOT / 'data', ROOT / 'tools' / 'nation'
-VERSION = '15.0'  # The seven stars fill with gold to each standard's coverage; the furthest still pulses (Preeti Sinha, President and CEO, 24 Nov 2026)
+VERSION = '15.1'  # The three mandates: See the gap. Build one solution. Close every gap. (Preeti Sinha, President and CEO, 24 Nov 2026)
+# 15.0: the seven stars fill with gold to each standard's coverage; the furthest still pulses (Preeti Sinha, President and CEO, 24 Nov 2026)
 # 14.8: the October pictures switched on for the first 44 blueprints (Preeti Sinha, 21 Nov 2026)
 # 14.7.1: the pictures carry no AI illustration mark (Preeti Sinha, 21 Nov 2026)
 # 14.7: picture cards for the assets, switched on per nation by assets.pictures (Austria first; Preeti Sinha, 21 Nov 2026)
@@ -149,12 +150,19 @@ COLOURS = ['#8A5A12', '#0E5A80', '#9A3E22', '#C08A12', '#1F4C96', '#167A5F', '#2
 CAT = {'govt': 'Government', 'humanitarian': 'Humanitarian', 'multi': 'Multilateral', 'regional': 'Regional',
        'bilat': 'Bilateral', 'private': 'Private', 'impact': 'Impact'}
 MONEY = re.compile(r'^(?:[A-Z]{0,3}\$|€|£|₹|₦|~?\$|(?:USD|EUR|KSh|Sh|GHS|ZAR|FCFA|CFA|MAD|EGP|ETB|NGN|PKR|BDT|INR|IDR|PHP|VND|LKR|MXN|COP|JOD|FJD|UAH|BBD|BWP|AOA|MZN|TZS|UGX|RWF|ZMW|MWK|NAD|SZL|LSL|SOS|SSP|CDF|BIF|MGA|XAF|XOF|JMD|BRL|R)\s?\d)')
-MOVES = ['Identify the assets', 'Estimate Perfect Capita', 'Co-design the capital architecture', 'Launch the instruments']
-TIERS = [
-    ('Mandate 01', '3 hours', 'The Nation Briefing', 'A private session for the people who decide.', 'The gap, named and sized', 'Request a Nation Briefing'),
-    ('Mandate 02', '3 days', 'The Blueprint Lab', 'Your team and ours, working the blueprint together.', 'The structure, drawn', 'Plan a Blueprint Lab'),
-    ('Mandate 03', 'End to end', 'The Sovereign Mandate', 'Led personally by the President and CEO.', 'A structure ready for market', 'Discuss a Sovereign Mandate'),
+# v15.1: the three mandates (Preeti Sinha, President and CEO, 24 Nov 2026; Project doc claude/three-mandates.md).
+# Each mandate has its own outcome, and each prepares the next: See the gap. Build one solution. Close every gap.
+# Replaces "One mission, three depths" (the same four moves at three depths, shown as depth dots).
+# (step, kicker, duration, name, you leave with, button, contact intent)
+MANDATES = [
+    ('01 See', 'See the gap', '3 hours', 'The Nation Briefing', 'The gap sized and the blueprint sketched',
+     'Request a Nation Briefing', 'briefing'),
+    ('02 Build', 'Build one solution', '3 days %s &#183; term sheet in 6 weeks', 'The Blueprint Lab',
+     'One instrument at term sheet, with partners named', 'Plan a Blueprint Lab', 'lab'),
+    ('03 Close', 'Close every gap', 'End to end &#183; led by the President and CEO', 'The Sovereign Mandate',
+     'The sovereign blueprint: every gap with its instrument, price and date', 'Discuss a Sovereign Mandate', 'commission'),
 ]
+NUMBER = ['no', 'one', 'two', 'three', 'four', 'five', 'six', 'seven']
 # The seven stars of the logo, left to right, as the homepage draws them (home-perfect-capita.html v6.1):
 # (index in ORDER, star of the logo kit, centre x, centre y, the crown). Food is the larger centre star.
 STARS = [(1, 's0', 69.5, 171.2, False), (2, 's1', 138.3, 114.2, False), (3, 's2', 219.7, 77.2, False),
@@ -1145,6 +1153,156 @@ def one_line(s):
     return re.sub(r'\. Every message', ': every message', plain(s), count=1)
 
 
+# ---------------------------------------------------------------- the three mandates (v15.1)
+# Preeti Sinha, President and CEO, 24 Nov 2026 (Project doc claude/three-mandates.md): each mandate has its own
+# outcome, and each prepares the next. The Nation Briefing sees the gap; the Blueprint Lab builds one solution (one
+# standard, by default the weakest, and one instrument); the Sovereign Mandate closes every gap below 100%. The seven
+# stars of the logo replace the depth dots: the Briefing outlines all seven, the Lab lights its one standard (food is
+# the centre star, the crown), the Sovereign Mandate lights all seven. Figures only from an audited Floor
+# (mandates.floor in tools/nation/<slug>.json, copied from floors/<slug>.md): the number of standards below 100%, the
+# national Gap and the Gap by standard. Without a Floor nothing is estimated: the Briefing carries no figure and the
+# Sovereign Mandate shows the nation's own published figure for each standard, furthest first.
+
+def usd_words(v):
+    """A Gap in words, as the Floor is quoted: $346&#160;million, $1.2&#160;billion."""
+    if v >= 1e9:
+        return '$%s&#160;billion' % fmt(v / 1e9)
+    return '$%d&#160;million' % round(v / 1e6)
+
+
+def usd_short(v):
+    """A Gap on a bar: $192M, $64K."""
+    if v >= 1e9:
+        return '$%sB' % fmt(v / 1e9)
+    if v >= 1e6:
+        return '$%dM' % round(v / 1e6)
+    if v >= 1e3:
+        return '$%dK' % round(v / 1e3)
+    return '$%d' % round(v)
+
+
+def md_stars(kind, lit, label):
+    """The seven stars of the logo for one mandate: 'outline' (all seven measured), 'one' (the Lab's standard lit) or
+    'all' (every gap closed). Each star is the logo kit's own (pnk-s0..pnk-s6), left to right as in the logo."""
+    uses = []
+    for pos, (k, s, cx, cy, crown) in enumerate(STARS):
+        on = kind == 'all' or (kind == 'one' and ORDER[k] == lit)
+        uses.append('<use class="bpx-md__st%s" href="#pnk-%s" data-n="%s" style="--i:%d"/>'
+                    % (' is-lit' if on else '', s, ORDER[k], pos))
+    return ('<svg class="bpx-md__stars bpx-md__stars--%s" viewBox="98 12 316 104" role="img" aria-label="%s" focusable="false">%s</svg>'
+            % (kind, ent(label), ''.join(uses)))
+
+
+def md_row(label, width, value, cls='', money=False):
+    bar = '<i style="width:%.1f%%"></i>' % width if width is not None else ''
+    return ('<li role="listitem"%s><span class="bpx-md__n">%s</span><span class="bpx-md__b">%s</span><b%s>%s</b></li>'
+            % (' class="%s"' % cls if cls else '', label, bar, ' class="bpx-money"' if money else '', value))
+
+
+def md_floor(name, fl):
+    """The Gap by standard from the audited Floor, largest first; a standard met shows Met."""
+    xs = sorted(fl['standards'], key=lambda x: -(x.get('usd') or 0))
+    top = max(x.get('usd') or 0 for x in xs) or 1
+    rows = []
+    for x in xs:
+        label = ent(x.get('label') or lab(x['name']))
+        if x.get('met') or not x.get('usd'):
+            rows.append(md_row(label, None, 'Met', 'is-met'))
+        else:
+            rows.append(md_row(label, max(1.2, x['usd'] / top * 100), usd_short(x['usd']), money=True))
+    return ('<p class="bpx-md__gh">Every standard below 100%%, priced and sequenced</p>'
+            '<ul class="bpx-md__g" role="list" aria-label="The Gap in %s, by standard, US dollars a year">%s</ul>'
+            % (ent(name), ''.join(rows)))
+
+
+def md_cover(name, g, bind):
+    """No Floor yet: every standard below 100, furthest first, with the nation's own published figure (the bar fills
+    to it out of 100); a standard at 100 shows Met; one not measured says so. Nothing is estimated. The standard the
+    page marks furthest from reach (the Nation Steward's set_by) leads, as in the Lab, then the rest from the lowest."""
+    def fig(x):
+        return shown(x) if len(shown_text(x)) <= 7 else fmt(x['value'])
+    rows = []
+    if bind and not (num(g[bind].get('value')) and g[bind]['value'] >= 100):
+        x = g[bind]
+        rows.append(md_row(lab(bind), x['value'] if num(x.get('value')) else None, fig(x) if num(x.get('value')) else ent((plain(x.get('display')) or 'Not measured')[:12])))
+    below = sorted((n for n in ORDER if n != bind and num(g[n].get('value')) and g[n]['value'] < 100), key=lambda n: g[n]['value'])
+    rows += [md_row(lab(n), g[n]['value'], fig(g[n])) for n in below]
+    rows += [md_row(lab(n), None, 'Met', 'is-met') for n in ORDER if num(g[n].get('value')) and g[n]['value'] >= 100]
+    rows += [md_row(lab(n), None, 'Not measured', 'is-met') for n in ORDER if n != bind and not num(g[n].get('value'))]
+    return ('<p class="bpx-md__gh">Every standard below 100%%, furthest first</p>'
+            '<ul class="bpx-md__g bpx-md__g--cov" role="list" aria-label="%s: the seven standards, out of 100">%s</ul>'
+            % (ent(name), ''.join(rows)))
+
+
+def three_mandates(d, p, contact):
+    """The head of Work with us and the three mandates: See the gap. Build one solution. Close every gap."""
+    name = d['nation']
+    md = p['mandates']
+    fl = md.get('floor')
+    wth = ent(md.get('counterpart') or 'government')
+    g, bind = standards(d)
+    # The Lab's standard: the one the page marks furthest from reach, unless its figure is already 100 (then the
+    # lowest figure below 100), so the Lab never takes a standard that is met.
+    if bind and num(g[bind].get('value')) and g[bind]['value'] >= 100:
+        rest = [n for n in ORDER if num(g[n].get('value')) and g[n]['value'] < 100]
+        bind = min(rest, key=lambda n: g[n]['value']) if rest else None
+    nin = ent(the_name(name))
+    cap = nin[0].upper() + nin[1:]
+    weak = lab(bind).lower() if bind else ''
+    # Mandate 01: the Briefing. Figures only from an audited Floor.
+    if fl:
+        k = fl['below']
+        brief = ['%s measured against the seven standards of the Living Line: <b>%s fall%s short</b>.'
+                 % (cap, NUMBER[k], 's' if k == 1 else ''),
+                 'The Gap: up to <span class="bpx-money">%s</span> a year, %s of GDP.' % (usd_words(fl['gap_usd']), ent(fl['gap_gdp']))]
+    else:
+        brief = ['%s measured against the seven standards of the Living Line.' % cap,
+                 'The Gap sized in US dollars a year, standard by standard.']
+    brief += ['The instruments that could close each gap, shortlisted.',
+              'The sovereign blueprint in outline: what comes first, and why.']
+    # Mandate 02: the Lab. One standard, by default the weakest, and its share of the Gap where the Floor prices it.
+    if bind:
+        share = [x for x in (fl or {}).get('standards', []) if x.get('name') == bind and x.get('usd')]
+        lab1 = ('One standard, chosen with %s. For %s, <b class="bpx-md__std">%s</b>: the weakest standard%s.'
+                % (wth, nin, weak, (', and <span class="bpx-money">%s</span> of the Gap' % usd_words(share[0]['usd'])) if share else ''))
+    else:
+        lab1 = 'One standard, chosen with %s: by default, the weakest.' % wth
+    lab_pts = [lab1,
+               '<b>FfD</b>, innovative financing for development, designs one instrument to close it.',
+               '<b>AI</b> finds who is below the line and where, prices the cost of reaching them, and tracks delivery.']
+    # Mandate 03: the Sovereign Mandate. Every standard below 100%.
+    sov_pts = ['The full set of instruments, backed by the asset ledger of %s, taken to investors and development partners through to close.' % nin,
+               'Perfect Capita agreed with %s, and monitored.' % wth]
+    caps = ['All seven standards measured', ('One standard solved: %s' % weak) if bind else 'One standard solved', 'All seven, every gap closed']
+    kinds = ['outline', 'one', 'all']
+    where = ('in ' + ent(md['where'])) if md.get('where') else 'in-country'
+    cards = []
+    for t, (step, kick, dur, title, leave, cta, about) in enumerate(MANDATES):
+        pts = (brief, lab_pts, sov_pts)[t]
+        extra = (md_floor(name, fl) if fl else md_cover(name, g, bind)) if t == 2 else ''
+        cards.append(
+            '<li class="bpx-tier%s">%s<span class="bpx-md__cap%s">%s</span>'
+            '<p class="bpx-tier__k">Mandate %s &#183; %s</p><h3>%s</h3><span class="bpx-md__t">%s</span>%s'
+            '<ul class="bpx-md__pts">%s</ul>'
+            '<p class="bpx-tier__leave"><span>You leave with</span>%s</p>'
+            '<a class="bpx-btn%s" href="%s" target="_blank" rel="noopener noreferrer">%s</a></li>'
+            % (' bpx-tier--top' if t == 2 else '', md_stars(kinds[t], bind, caps[t]), ' bpx-md__cap--lab' if t == 1 else '', caps[t],
+               step[:2], kick, title, dur % where if '%s' in dur else dur, extra,
+               ''.join('<li>%s</li>' % x for x in pts), leave, '' if t == 2 else ' bpx-btn--line', ent(contact(about)), cta))
+    steps = ''.join('<button type="button"%s aria-pressed="%s">%s</button>'
+                    % (' class="is-on"' if t == 0 else '', 'true' if t == 0 else 'false', m[0]) for t, m in enumerate(MANDATES))
+    note = ((ent(fl['note']) + ' ') if fl else 'Figures: the seven standards on this page, each with its source. ') + \
+        'Scope and fees are agreed in writing before any work begins.'
+    return (
+        '<div class="bpx-head"><div><p class="bpx-eb">The Perfect %s ReDesign Studio</p>'
+        '<h2 class="bpx-h2 bpx-md__h" id="bp-entry-h"><span>See the gap.</span> <em>Build one solution.</em> <span>Close every gap.</span></h2></div>'
+        '<div><p class="bpx-mhead">Three mandates for %s. Each has its own outcome, and each prepares the next.</p></div></div>'
+        '<div id="bp-mandates" class="bpx-md"%s>'
+        '<div class="bpx-md__steps" role="group" aria-label="The three mandates">%s</div>'
+        '<ol class="bpx-tiers bpx-rail">%s</ol><p class="bpx-md__note">%s</p></div>'
+        % (ent(name), ent(md['audience']), ' data-floor="1"' if fl else '', steps, ''.join(cards), note))
+
+
 def work(d, p):
     name, slug = d['nation'], p['slug']
     # v13.7 (the Steward-General, 15 Nov 2026): every button of Co-design it with us opens the Contact page with its
@@ -1152,30 +1310,11 @@ def work(d, p):
     def contact(about):
         return https('https://perfectnations.com/contact/?about=%s&country=%s' % (about, urllib.parse.quote(name, safe='')))
     co = contact('codesigner')
-    moves = ''.join('<li><b>%02d</b>%s</li>' % (i + 1, ent(m)) for i, m in enumerate(MOVES))
-    tiers = []
-    for t, (k, dur, title, line, leave, cta) in enumerate(TIERS):
-        pips = ''.join('<span%s></span>' % (' class="on"' if j <= t else '') for j in range(3))
-        mv = ''.join(
-            '<li><b>%02d</b><span>%s</span><span class="bpx-pips" role="img" aria-label="Depth %d of 3">%s</span></li>'
-            % (i + 1, ent(text), t + 1, pips)
-            for i, text in enumerate(p['mandates']['moves'][t]))
-        tiers.append(
-            '<li class="bpx-tier%s"><p class="bpx-tier__k"><span>%s</span><span>%s</span></p><h3>%s</h3><p>%s</p>'
-            '<p class="bpx-tier__leave"><span>You leave with</span>%s</p>'
-            '<details class="bpx-more"><summary aria-label="Read more: the four moves of %s">Read more</summary><ol class="bpx-mv">%s</ol></details>'
-            '<a class="bpx-btn%s" href="%s" target="_blank" rel="noopener noreferrer">%s</a></li>'
-            % (' bpx-tier--top' if t == 2 else '', k, dur, title, line, leave, title, mv, '' if t == 2 else ' bpx-btn--line',
-               ent(https('https://perfectnations.com/contact/?about=%s&country=%s' % (('briefing', 'lab', 'commission')[t], urllib.parse.quote(name, safe='')))), cta))
+    mandates = three_mandates(d, p, contact)
     wx_mail = contact('writing')
     return (
         '<section class="bpx-band bpx-er bpx-work" id="bp-studio" aria-labelledby="bp-entry-h"><div class="bpx-in">'
-        '<div class="bpx-head"><div><p class="bpx-eb">Work with us &#183; The ReDesign Studio</p>'
-        '<h2 class="bpx-h2" id="bp-entry-h">The Perfect %s <em>ReDesign Studio</em></h2></div>'
-        '<div><p class="bpx-mhead">One mission, three depths: the same four moves for %s, taken as far toward market as you choose.</p>%s</div></div>'
-        '<div id="bp-mandates">'
-        '<ol class="bpx-moves" aria-label="The four moves of every mandate">%s</ol>'
-        '<p class="bpx-swipe" aria-hidden="true">Swipe for the three mandates</p><ol class="bpx-tiers bpx-rail">%s</ol></div>'
+        '%s'
         '<div class="bpx-co3"><div class="bpx-co3__top"><h3 class="bpx-co3__h">Co-design it with us</h3><p>%s</p></div><p class="bpx-swipe" aria-hidden="true">Swipe for three ways in</p><ul class="bpx-co3__l bpx-rail">'
         '<li id="bp-writings"><p class="bpx-co3__k">Writings</p><h4>Write Perfect %s into being.</h4>'
         '<p>Up to 1,500 words on your vision of Perfect %s, published with your name.</p>'
@@ -1188,8 +1327,7 @@ def work(d, p):
         '<li><p class="bpx-co3__k">Co-designers</p><h4>Join the community.</h4><p>%s</p>'
         '<a class="bpx-btn bpx-btn--line" href="%s" target="_blank" rel="noopener noreferrer">Become a Co-designer</a></li></ul></div>'
         '</div></section>'
-        % (ent(name), ent(name), more('<p class="bpx-terms">%s</p>' % ent(p['mandates']['terms']), 'who the mandates are for, and how scope and fees are agreed'),
-           moves, ''.join(tiers), ent(p['people']),
+        % (mandates, ent(p['people']),
            ent(name), ent(name), ent(wx_mail), ent(name), ent(name), ent(contact('voices')), ent(contact('guest')), raw(codesigner(p['codesigner'])), ent(co)))
 
 
@@ -1331,6 +1469,9 @@ def build(slug, sbn, son, today):
     script = (HERE / 'script.js').read_text(encoding='utf-8').replace('/*pn:cfg*/', 'var CFG = %s;' % js_str(cfg))
     head = (
         '<!-- PERFECT NATIONS . NATIONAL BLUEPRINT . %s . v%s . %s . Built by tools/build_nations.py: never edit by hand. -->\n'
+        '<!-- v15.1 (24 November 2026): the three mandates, each with its own outcome (Preeti Sinha, President and CEO):\n'
+        '     See the gap (The Nation Briefing), Build one solution (The Blueprint Lab), Close every gap (The Sovereign Mandate).\n'
+        '     The seven stars of the logo replace the depth dots; figures only from an audited Floor (floors/<slug>.md). -->\n'
         '<!-- v14.8 (21 November 2026): the asset pictures made in October are switched on for the first 44 blueprints. -->\n'
         '<!-- v14.7.1 (21 November 2026): the asset pictures carry no AI illustration mark (the President and CEO). -->\n'
         '<!-- v14.7 (21 November 2026): picture cards for the assets where the nation switches them on (Austria first): each asset opens with its picture; phones swipe the cards. -->\n'

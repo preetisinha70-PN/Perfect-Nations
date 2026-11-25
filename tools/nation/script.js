@@ -1,5 +1,8 @@
 (function () {
-  /* Blueprint v14.9 (24 Nov 2026): Now possible with AI: a designed Solution, and the playbook brief, add what AI makes
+  /* Blueprint v15.1 (24 Nov 2026): the three mandates, See the gap, Build one solution, Close every gap (Preeti Sinha,
+       President and CEO). The stars of each mandate light as the band arrives; on phones 01 See, 02 Build and 03 Close
+       move the rail; without an audited Floor, the Lab's standard and the Sovereign Mandate's figures follow the live file.
+     Blueprint v14.9 (24 Nov 2026): Now possible with AI: a designed Solution, and the playbook brief, add what AI makes
        possible after What Perfect Nations advises (the field "ai"; Preeti Sinha, President and CEO).
      Blueprint v11.9: a designed Solution offers Discuss this Solution; Plan a Blueprint Lab opens The Blueprint Lab.
      v11.5: the page follows its live data file and the State of Nations.
@@ -530,12 +533,91 @@
     get('data/state-of-nations.json', function (d) { if (d && d.page === 'state-of-nations') son = d; both(); }, both);
   }
 
+  /* ---------- v15.1 the three mandates: the stars light as the band arrives; on phones 01 See, 02 Build and
+     03 Close move the rail; without an audited Floor, the Lab's standard and the Sovereign Mandate's figures follow
+     the live file (an audited Floor, data-floor, sets them in the page code) ---------- */
+  var mdBox = q('#bp-mandates');
+  (function () {
+    if (!mdBox) return;
+    if (!reduce && 'IntersectionObserver' in window) {
+      mdBox.classList.add('is-anim');
+      near(mdBox, function () { mdBox.classList.add('is-in'); }, '0px 0px -15% 0px');
+      setTimeout(function () { mdBox.classList.add('is-in'); }, 20000);
+    }
+    var rail = mdBox.querySelector('.bpx-tiers'), cards = rail ? rail.children : [], tabs = mdBox.querySelectorAll('.bpx-md__steps button');
+    if (!rail || !tabs.length || !cards.length) return;
+    function mark(n) {
+      Array.prototype.forEach.call(tabs, function (t, k) { t.classList.toggle('is-on', k === n); t.setAttribute('aria-pressed', k === n ? 'true' : 'false'); });
+    }
+    Array.prototype.forEach.call(tabs, function (t, k) {
+      t.addEventListener('click', function () {
+        if (!cards[k]) return;
+        rail.scrollTo({ left: cards[k].offsetLeft - cards[0].offsetLeft, behavior: reduce ? 'auto' : 'smooth' });
+        mark(k);
+      });
+    });
+    var tick = 0;
+    rail.addEventListener('scroll', function () {
+      if (tick) return;
+      tick = setTimeout(function () {
+        tick = 0;
+        var best = 0, bestD = Infinity;
+        Array.prototype.forEach.call(cards, function (c, k) {
+          var dd = Math.abs(c.offsetLeft - cards[0].offsetLeft - rail.scrollLeft);
+          if (dd < bestD) { bestD = dd; best = k; }
+        });
+        mark(best);
+      }, 80);
+    }, { passive: true });
+  })();
+  function mandates(d, bind) {
+    if (!mdBox || mdBox.hasAttribute('data-floor') || !d.guarantees || d.guarantees.length !== 7) return;
+    var g = {};
+    d.guarantees.forEach(function (x) { if (x && ORDER.indexOf(x.name) >= 0) g[x.name] = x; });
+    if (ORDER.some(function (n) { return !g[n] || !(g[n].value === null || num(g[n].value)); })) return;
+    if (bind && g[bind] && num(g[bind].value) && g[bind].value >= 100) {
+      bind = ORDER.filter(function (n) { return num(g[n].value) && g[n].value < 100; })
+        .reduce(function (a, n) { return a === null || g[n].value < g[a].value ? n : a; }, null);
+    }
+    var std = mdBox.querySelector('.bpx-md__std'), cap = mdBox.querySelector('.bpx-md__cap--lab'), one = mdBox.querySelector('.bpx-md__stars--one');
+    if (bind && std) {
+      var w = lab(bind).toLowerCase();
+      std.textContent = w;
+      if (cap) cap.textContent = 'One standard solved: ' + w;
+      if (one) {
+        one.setAttribute('aria-label', 'One standard solved: ' + w);
+        Array.prototype.forEach.call(one.querySelectorAll('use'), function (u) { u.classList.toggle('is-lit', u.getAttribute('data-n') === bind); });
+      }
+    }
+    var ul = mdBox.querySelector('.bpx-md__g--cov');
+    if (!ul) return;
+    function row(n, width, v, cls) {
+      var li = el('li', cls || ''), b = el('span', 'bpx-md__b');
+      li.setAttribute('role', 'listitem');
+      li.appendChild(el('span', 'bpx-md__n', lab(n)));
+      if (width !== null) { var i = el('i'); i.style.width = width + '%'; b.appendChild(i); }
+      li.appendChild(b);
+      li.appendChild(el('b', '', v));
+      ul.appendChild(li);
+    }
+    function fig(x) { var t = T(x.display); return t && t.length <= 7 ? t : fmt(x.value); }
+    ul.textContent = '';
+    var lead = bind && g[bind] && !(num(g[bind].value) && g[bind].value >= 100) ? bind : null;
+    if (lead) row(lead, num(g[lead].value) ? Math.round(g[lead].value * 10) / 10 : null, num(g[lead].value) ? fig(g[lead]) : (T(g[lead].display) || 'Not measured').slice(0, 12));
+    ORDER.filter(function (n) { return n !== lead && num(g[n].value) && g[n].value < 100; })
+      .sort(function (a, b) { return g[a].value - g[b].value; })
+      .forEach(function (n) { row(n, Math.round(g[n].value * 10) / 10, fig(g[n])); });
+    ORDER.forEach(function (n) { if (num(g[n].value) && g[n].value >= 100) row(n, null, 'Met', 'is-met'); });
+    ORDER.forEach(function (n) { if (n !== lead && !num(g[n].value)) row(n, null, 'Not measured', 'is-met'); });
+  }
+
   function apply(d) {
     if (!d || d.nation !== CFG.name) return;
     nationFile = d;
     var bind = null;
     try { bind = standards(d); } catch (e) {}
     try { glance(d, bind); } catch (e) {}
+    try { mandates(d, bind); } catch (e) {}
     var c = d.capital, a = d.assets, e2 = d.enterprises;
     if (c) { head('bp-cap-h', c.heading); try { record(c.record); } catch (e) {} try { register(c.register); } catch (e) {} }
     if (a) { head('bp-assets-h', a.heading); try { assets(a.items, a.pictures); } catch (e) {} }

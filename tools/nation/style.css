@@ -454,10 +454,6 @@
 /* ---------- Work with us (Earthrise): the mandates and co-design ---------- */
 #R .bpx-mhead{ margin:0; max-width:52ch; font-size:clamp(.98rem,1.15vw,1.08rem); line-height:1.5; color:var(--mut); }
 #R .bpx-work .bpx-head .bpx-more{ margin-top:2px; }
-#R .bpx-work .bpx-moves{ margin-top:0; }
-#R .bpx-moves{ display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:6px; margin:10px 0; padding:0; list-style:none; }
-#R .bpx-moves li{ display:flex; align-items:center; gap:10px; padding:8px 12px; border-radius:10px; background:rgba(8,42,48,.4); border:1px solid var(--hair); color:var(--fg); font-family:var(--hd); font-size:.82rem; font-weight:600; letter-spacing:.03em; line-height:1.15; }
-#R .bpx-moves b{ flex:none; display:grid; place-items:center; width:26px; height:26px; border-radius:50%; border:1.5px solid var(--g); color:var(--g); font-size:.72rem; }
 #R .bpx-tiers{ display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:10px; margin:0; padding:0; list-style:none; }
 #R .bpx-tier{ display:flex; flex-direction:column; gap:6px; min-width:0; padding:14px 16px 16px; border-radius:14px; background:rgba(245,241,232,.06); border:1px solid var(--hair); }
 #R .bpx-tier__k{ display:flex; justify-content:space-between; gap:10px; margin:0; font-family:var(--hd); font-size:.64rem; font-weight:700; letter-spacing:.2em; text-transform:uppercase; color:var(--gs); }
@@ -465,15 +461,58 @@
 #R .bpx-tier > p{ margin:0; font-size:.9rem; line-height:1.4; color:var(--mut); }
 #R .bpx-tier__leave{ font-size:.9rem; color:var(--fg) !important; }
 #R .bpx-tier__leave span{ display:block; font-family:var(--hd); font-size:.6rem; font-weight:700; letter-spacing:.2em; text-transform:uppercase; color:var(--dim); }
-#R .bpx-tier details{ margin-top:0; border-top:1px solid var(--hair); }
-#R .bpx-mv{ margin:0 0 8px; padding:0; list-style:none; display:grid; gap:6px; }
-#R .bpx-mv li{ display:grid; grid-template-columns:auto minmax(0,1fr); gap:2px 10px; font-size:.84rem; line-height:1.35; color:var(--mut); }
-#R .bpx-mv li b{ font-family:var(--hd); font-weight:700; color:var(--fg); }
-#R .bpx-pips{ grid-column:2; display:flex; gap:3px; }
-#R .bpx-pips span{ display:block; width:16px; height:4px; border-radius:2px; background:rgba(245,241,232,.18); }
-#R .bpx-pips span.on{ background:var(--g); }
 #R .bpx-tier .bpx-btn{ margin-top:auto; align-self:flex-start; }
 #R .bpx-tier--top{ background:linear-gradient(170deg,rgba(227,194,88,.16) 0%,rgba(8,42,48,.5) 70%); border-color:rgba(var(--grgb),.6); box-shadow:0 18px 40px rgba(0,0,0,.25); }
+/* v15.1 the three mandates (Preeti Sinha, President and CEO, 24 Nov 2026): See the gap. Build one solution. Close
+   every gap. Each card opens with the seven stars of the logo: the Briefing outlines all seven, the Lab lights its one
+   standard, the Sovereign Mandate lights all seven. The stars light in turn as the band comes into view, and the bars
+   of the Sovereign Mandate grow (no motion for visitors who ask for none). Phones: a swipe rail, with 01 See, 02 Build
+   and 03 Close above it. */
+#R h2.bpx-md__h{ max-width:none; font-size:clamp(2rem,3.4vw,3.2rem); line-height:.98; }
+#R h2.bpx-md__h span,#R h2.bpx-md__h em{ display:block; }
+#R .bpx-md__steps{ display:none; }
+#R .bpx-md .bpx-tiers{ gap:16px; align-items:stretch; }
+#R .bpx-md .bpx-tier{ position:relative; gap:0; padding:16px 18px 18px; border-radius:20px; }
+#R .bpx-md__stars{ display:block; width:min(100%,210px); height:auto; margin:0 auto 2px; overflow:visible; }
+#R .bpx-md__st{ fill:none; stroke:#9C6B12; stroke-width:1.3; stroke-linejoin:round; transition:fill .6s ease, opacity .6s ease; }
+#R .bpx-md__stars--one .bpx-md__st{ opacity:.38; }
+#R .bpx-md__stars--one .bpx-md__st.is-lit{ opacity:1; fill:#E3C258; filter:drop-shadow(0 0 5px rgba(227,194,88,.85)); }
+#R .bpx-md__stars--all .bpx-md__st{ stroke:#E3C258; fill:#E3C258; filter:drop-shadow(0 0 4px rgba(240,214,143,.6)); }
+#R .bpx-md__cap{ display:block; margin:0 0 10px; text-align:center; font-family:var(--hd); font-size:.64rem; font-weight:700; letter-spacing:.18em; text-transform:uppercase; color:var(--dim); }
+#R .bpx-md .bpx-tier__k{ justify-content:flex-start; }
+#R .bpx-md .bpx-tier h3{ margin:5px 0 0; font-size:clamp(1.5rem,2vw,1.9rem); }
+#R .bpx-md__t{ align-self:flex-start; margin-top:8px; padding:4px 11px 3px; border-radius:999px; border:1px solid currentColor; font-family:var(--hd); font-size:.66rem; font-weight:700; letter-spacing:.12em; text-transform:uppercase; opacity:.85; }
+#R .bpx-md__pts{ margin:12px 0 0; padding:0; list-style:none; border-top:1px solid var(--hair); }
+#R .bpx-md__pts li{ position:relative; padding:7px 0 7px 15px; border-bottom:1px solid var(--hair); font-size:.9rem; line-height:1.4; color:var(--mut); }
+#R .bpx-md__pts li::before{ content:""; position:absolute; left:0; top:.95em; width:6px; height:6px; border-radius:50%; background:#9C6B12; }
+#R .bpx-md__pts b{ font-family:var(--hd); font-weight:700; letter-spacing:.04em; color:var(--fg); }
+#R .bpx-md .bpx-md__gh{ margin:14px 0 0; font-family:var(--hd); font-size:.64rem; font-weight:700; letter-spacing:.16em; text-transform:uppercase; color:var(--dim); }
+#R .bpx-md__g{ display:grid; grid-template-columns:auto minmax(0,1fr) auto; align-items:center; gap:5px 10px; margin:6px 0 0; padding:0; list-style:none; }
+#R .bpx-md__g li{ display:contents; }
+#R .bpx-md__n{ font-size:.8rem; color:var(--mut); white-space:nowrap; }
+#R .bpx-md__b{ display:block; height:6px; border-radius:3px; background:rgba(245,241,232,.12); overflow:hidden; }
+#R .bpx-md__b i{ display:block; height:100%; border-radius:3px; background:linear-gradient(90deg,#F5F1E8,#D9CDB4); transform-origin:left center; }
+#R .bpx-md__g b{ font-family:var(--hd); font-size:.9rem; font-weight:700; text-align:right; color:var(--fg); }
+#R .bpx-md__g .is-met b{ font-size:.7rem; letter-spacing:.12em; text-transform:uppercase; color:var(--dim); }
+#R .bpx-md .bpx-tier__leave{ margin:12px 0 14px; padding-top:10px; border-top:1px solid var(--hair); font-family:var(--hd); font-weight:600; font-size:1.04rem; line-height:1.2; }
+#R .bpx-md__note{ margin:12px 0 0; font-size:.78rem; line-height:1.5; color:var(--dim); }
+@media (min-width:900px){
+  #R .bpx-md .bpx-tiers{ grid-template-columns:minmax(0,1fr) minmax(0,1fr) minmax(0,1.24fr); }
+  #R .bpx-md .bpx-tier:not(.bpx-tier--top)::after{ content:"\2192"; position:absolute; z-index:2; top:40px; right:-15px; display:grid; place-items:center; width:24px; height:24px; border-radius:50%; background:#0B3D45; color:#F5F1E8; font-family:Arial,sans-serif; font-size:.8rem; box-shadow:0 0 0 4px #F4ECD8; }
+}
+@media (min-width:641px) and (max-width:899px){
+  #R .bpx-md .bpx-tiers{ grid-template-columns:repeat(2,minmax(0,1fr)); }
+  #R .bpx-md .bpx-tier--top{ grid-column:1 / -1; }
+}
+@media (prefers-reduced-motion:no-preference){
+  #R .bpx-md.is-anim .bpx-md__st{ opacity:0; transform:scale(.6); transform-box:fill-box; transform-origin:center; }
+  #R .bpx-md.is-anim.is-in .bpx-md__st{ opacity:1; transform:none; transition:opacity .5s ease calc(var(--i) * 90ms), transform .7s cubic-bezier(.22,1,.36,1) calc(var(--i) * 90ms), fill .6s ease; }
+  #R .bpx-md.is-anim.is-in .bpx-md__stars--one .bpx-md__st:not(.is-lit){ opacity:.38; }
+  #R .bpx-md.is-anim.is-in .bpx-md__stars--one .bpx-md__st.is-lit{ animation:bpxMdGlow 2.8s ease-in-out 1s infinite; }
+  #R .bpx-md.is-anim .bpx-md__b i{ transform:scaleX(0); }
+  #R .bpx-md.is-anim.is-in .bpx-md__b i{ transform:none; transition:transform 1.1s cubic-bezier(.22,1,.36,1) .5s; }
+}
+@keyframes bpxMdGlow{ 0%,100%{ filter:drop-shadow(0 0 3px rgba(227,194,88,.6)); } 50%{ filter:drop-shadow(0 0 10px rgba(227,194,88,1)); } }
 #R .bpx-terms{ font-size:.82rem; color:var(--mut); }
 #R .bpx-co3{ margin-top:clamp(18px,2.8vh,26px); padding-top:clamp(14px,2.2vh,20px); border-top:1px solid var(--hair); }
 #R .bpx-co3__top{ display:flex; flex-wrap:wrap; align-items:baseline; gap:4px 18px; margin:0 0 10px; }
@@ -539,7 +578,6 @@
   #R .bpx-cap__head > div:last-child{ grid-column:1 / -1; }
   #R .bpx-acards{ grid-template-columns:repeat(2,minmax(0,1fr)); }
   #R .bpx-acard:first-child{ grid-row:auto; grid-column:1 / -1; }
-  #R .bpx-moves{ grid-template-columns:repeat(2,minmax(0,1fr)); }
 }
 
 /* ---------- phones: compact type, full-width buttons, nothing scrolls sideways ---------- */
@@ -670,10 +708,19 @@
   #R .bpx-sheet__q{ font-size:1rem; }
   /* Work with us */
   #R .bpx-mhead{ font-size:.94rem; }
-  #R .bpx-moves{ gap:5px; }
-  #R .bpx-moves li{ font-size:.72rem; padding:7px 8px; gap:7px; }
-  #R .bpx-moves b{ width:22px; height:22px; font-size:.62rem; }
   #R .bpx-tier{ padding:12px 13px 13px; }
+  #R h2.bpx-md__h{ font-size:clamp(1.7rem,7.6vw,2rem); }
+  #R .bpx-md__steps{ display:flex; gap:6px; margin:0 0 8px; }
+  #R .bpx-md__steps button{ flex:1 1 0; min-width:0; min-height:36px; padding:7px 6px 6px; border-radius:999px; border:1px solid rgba(16,38,43,.16); background:rgba(255,253,248,.7); color:#34464A; font-family:var(--hd); font-size:.64rem; font-weight:700; letter-spacing:.08em; text-transform:uppercase; cursor:pointer; white-space:nowrap; }
+  #R .bpx-md__steps button.is-on{ background:#0B3D45; border-color:#0B3D45; color:#F5F1E8; }
+  #R .bpx-md .bpx-tiers{ align-items:start; gap:12px; }
+  #R .bpx-md .bpx-tier{ padding:14px 14px 16px; border-radius:18px; }
+  #R .bpx-md__stars{ width:180px; }
+  #R .bpx-md__t{ font-size:.58rem; letter-spacing:.06em; }
+  #R .bpx-md__pts li{ padding:6px 0 6px 14px; font-size:.84rem; line-height:1.38; }
+  #R .bpx-md__n{ font-size:.76rem; }
+  #R .bpx-md .bpx-tier__leave{ font-size:.96rem; }
+  #R .bpx-md__note{ font-size:.72rem; }
   #R .bpx-tier > p{ font-size:.84rem; }
   #R .bpx-tier .bpx-btn,#R .bpx-co3__l .bpx-btn{ align-self:stretch; width:100%; }
   #R .bpx-co3__l > li{ padding:12px 13px 13px; }
@@ -867,13 +914,15 @@
 #R .bpx-band:not(.bpx-hero) .bpx-frame__cap a{ color:#0B3D45; }
 
 /* Work with us: white mandates, the Sovereign Mandate an Earthrise card; Co-design on a paper panel, its cards Earthrise */
-#R .bpx-band:not(.bpx-hero) .bpx-moves li{ background:#FFFDF8; border-color:rgba(16,38,43,.12); color:#0B3D45; }
-#R .bpx-band:not(.bpx-hero) .bpx-moves b{ border-color:rgba(11,61,69,.55); color:#0B3D45; }
 #R .bpx-band:not(.bpx-hero) .bpx-tier:not(.bpx-tier--top){ background:#FFFDF8; border-color:rgba(16,38,43,.12); box-shadow:0 10px 26px rgba(16,38,43,.08); }
 #R .bpx-band:not(.bpx-hero) .bpx-tier:not(.bpx-tier--top) .bpx-tier__k{ color:#8A3A22; }
 #R .bpx-band:not(.bpx-hero) .bpx-tier:not(.bpx-tier--top) h3{ color:#0B3D45; }
-#R .bpx-band:not(.bpx-hero) .bpx-tier:not(.bpx-tier--top) .bpx-pips span{ background:rgba(16,38,43,.14); }
-#R .bpx-band:not(.bpx-hero) .bpx-tier:not(.bpx-tier--top) .bpx-pips span.on{ background:#0B3D45; }
+#R .bpx-band:not(.bpx-hero) .bpx-tier:not(.bpx-tier--top) .bpx-md__t{ color:#0B3D45; }
+#R .bpx-band:not(.bpx-hero) .bpx-tier:not(.bpx-tier--top) .bpx-tier__leave{ color:#0B3D45 !important; }
+#R .bpx-band:not(.bpx-hero) .bpx-tier--top .bpx-md__pts li::before{ background:#F0D68F; }
+#R .bpx-band:not(.bpx-hero) .bpx-tier--top .bpx-tier__k{ color:#F0D68F; }
+#R .bpx-band:not(.bpx-hero) .bpx-tier--top .bpx-money{ color:#E3C258; }
+#R .bpx-band:not(.bpx-hero) .bpx-md__note{ color:#5C696C; }
 #R .bpx-band:not(.bpx-hero) .bpx-tier--top{
   border-color:rgba(227,194,88,.5); box-shadow:0 18px 44px rgba(11,61,69,.28);
   background:radial-gradient(90% 70% at 100% 0%, rgba(227,194,88,.18) 0%, rgba(227,194,88,0) 62%), linear-gradient(170deg,#12586A 0%,#0B3D45 46%,#082A30 100%);
