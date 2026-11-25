@@ -178,6 +178,7 @@
 
 /* ---------- cards: workstreams, AI jobs, tests ---------- */
 #R .md-cards{ display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr)); gap:12px; }
+#R .md-cards.md-six{ grid-template-columns:repeat(3,minmax(0,1fr)); } /* v2.3: six cards in two rows of three on laptops (the sovereign blueprint) */
 #R .md-card{ padding:16px 18px; border-radius:18px; background:var(--wh); border:1px solid var(--hair); }
 #R .md-card > i{ display:block; font-style:normal; font-family:var(--hd); font-size:2.6rem; font-weight:600; line-height:.9; color:var(--gd); }
 #R .md-card small{ display:block; font-family:var(--hd); font-size:.68rem; font-weight:700; letter-spacing:.2em; text-transform:uppercase; color:var(--tc); }
