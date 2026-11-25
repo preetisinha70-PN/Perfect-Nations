@@ -35,15 +35,16 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 HERE = ROOT / 'tools' / 'mandates'
 PAGES = ROOT / 'pages'
-VERSION = '2.2'  # v2.2: shared on request: the site shows the hero and a request dialog (Preeti Sinha, President and CEO, 24 Nov 2026)
+VERSION = '2.3'  # v2.3: Kenya, priced (floors/kenya.md, audited 25 Nov 2026) and locked like Barbados; the Sovereign Mandate links to contact/?about=commission
+# v2.2: v2.2: shared on request: the site shows the hero and a request dialog (Preeti Sinha, President and CEO, 24 Nov 2026)
 # v2.1: our AI is called Perfect Nations Intelligence; other people's programmes keep their own word (Preeti Sinha, President and CEO, 24 Nov 2026)
 KINDS = {
     'briefing': ('The Nation Briefing', 'nation-briefing', 'Mandate I: three hours, the Gap named and sized'),
     'lab': ('The Blueprint Lab', 'blueprint-lab', 'Mandate II: three days, the structure drawn'),
     'sovereign': ('The Sovereign Mandate', 'sovereign-mandate', 'Mandate III: end to end, a structure ready for market'),
 }
-NAMES = {'barbados': 'Barbados'}
-LOCKED = {'barbados'}   # v2.2: nations whose mandate pages are shared on request; build with --open to publish in full
+NAMES = {'barbados': 'Barbados', 'kenya': 'Kenya'}  # v2.3: Kenya added (Preeti Sinha, President and CEO, 25 Nov 2026: "Let cost kenya and build its three mandate pages")
+LOCKED = {'barbados', 'kenya'}   # v2.2: nations whose mandate pages are shared on request; build with --open to publish in full
 CONTACT = 'contact@perfectnations.com'
 SHORT = {'briefing': 'Nation Briefing', 'lab': 'Blueprint Lab', 'sovereign': 'Sovereign Mandate'}
 PADLOCK = ('<svg class="md-pad" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="4.5" y="10.5" width="15" height="10" rx="2.2"/>'

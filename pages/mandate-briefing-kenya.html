@@ -1,0 +1,538 @@
+<!-- ===========================================================================
+PERFECT NATIONS - THE NATION BRIEFING - KENYA - v2.3 - 2026-11-25
+perfectnations.com/blueprints/kenya/nation-briefing/ . Root id pn-md-briefing-kenya. Mandate I: three hours, the Gap named and sized.
+An illustration of what a nation receives from the ReDesign Studio: not commissioned by the Government of
+Kenya; no terms agreed. Built by tools/build_mandates.py from tools/mandates/ (never edit this file by hand).
+v2.2 (24 Nov 2026): shared on request. The site shows the hero, what is inside and Request access, which
+opens a dialog to contact@perfectnations.com; the rest is not in this file (Preeti Sinha, President and CEO:
+"I am not ready to share these for free yet"). Built locked, on request.
+v2.0 (24 Nov 2026): lighter and livelier in the same look: the answer in one gold figure that counts up, the
+live tape of the nation's deals, the seven stars of the logo filling to each standard, deal tombstones that turn
+over, steps on a drawn gold line, tap to open, a light that follows the cursor, rows that swipe on phones (Preeti
+Sinha, President and CEO: "I find the whole site a bit word heavy ... Less wordy"; "Okay, let's go live").
+v1.1 (24 Nov 2026): the section links keep their width on phones (they overlapped), and the theme no longer
+sets the headings in capitals (Preeti Sinha, President and CEO: "There is a problem with the text").
+v1.0 (24 Nov 2026, Preeti Sinha, President and CEO): the three mandates for Kenya, with AI after the finance.
+=========================================================================== -->
+<style>
+/* The three mandates of the ReDesign Studio, as a nation receives them (v2.2, 24 Nov 2026; v2.2: shared on request, see the end).
+   v2.0: lighter (about a quarter of the words) and livelier, in the same look (Preeti Sinha, President and CEO:
+   "Keep the overall current great style ... Less wordy"): the answer first in one gold figure that counts up, the live
+   tape of the nation's own deals, the seven stars of the logo filling to each standard, deal tombstones that turn over,
+   steps on a drawn gold line, tap to open for the detail, a soft light that follows the cursor, swipe rows on phones.
+   Palette: Earthrise hero, ivory and paper reading bands, Earthrise Depth for the stars and the close, Lagoon for the
+   structure. Gold only for actions, sourced money and the logo; terracotta for eyebrows on ivory and for the standard
+   furthest from reach. #pn-md-briefing-kenya is the page's root id. */
+#pn-md-briefing-kenya{
+  --er:#0B3D45; --lg:#0F4C5C; --dp:#082A30; --iv:#F4ECD8; --pp:#FBF8F1; --wh:#FFFDF8;
+  --ink:#10262B; --im:#34464A; --mut:#5C696C; --hair:rgba(16,38,43,.13);
+  --tv:#F5F1E8; --tvm:rgba(245,241,232,.84); --tvd:rgba(245,241,232,.62); --thair:rgba(245,241,232,.16);
+  --g:#E3C258; --gd:#7E5A0C; --tc:#8A3A22; --tcl:#F2A58C; --teal:#6EC8C4; --onacc:#1A140C;
+  --hd:var(--pn-font-heading,"Barlow Condensed","Arial Narrow",Arial,sans-serif);
+  --bd:var(--pn-font-body,"Barlow Semi Condensed",Arial,sans-serif);
+  --px:clamp(18px,5vw,72px); --ease:cubic-bezier(.16,.8,.2,1);
+  position:relative; isolation:isolate; width:100vw; margin-left:calc(50% - 50vw);
+  overflow-x:hidden; overflow-x:clip; box-sizing:border-box;
+  font-family:var(--bd); font-size:16px; line-height:1.5; color:var(--ink); background:var(--pp);
+}
+#pn-md-briefing-kenya *,#pn-md-briefing-kenya *::before,#pn-md-briefing-kenya *::after{ box-sizing:border-box; min-width:0; }
+.elementor-widget-html:has(#pn-md-briefing-kenya),.elementor-widget:has(#pn-md-briefing-kenya),.e-con-inner:has(#pn-md-briefing-kenya),.e-con:has(#pn-md-briefing-kenya){
+  padding-top:0 !important; padding-bottom:0 !important; --widgets-spacing:0px !important; row-gap:0 !important;
+}
+#pn-md-briefing-kenya h1,#pn-md-briefing-kenya h2,#pn-md-briefing-kenya h3,#pn-md-briefing-kenya h4,#pn-md-briefing-kenya p,#pn-md-briefing-kenya li,#pn-md-briefing-kenya dt,#pn-md-briefing-kenya dd,#pn-md-briefing-kenya summary{ text-shadow:none !important; }
+/* the theme sets headings in capitals and pads lists, tables and definitions: undone here */
+#pn-md-briefing-kenya h1,#pn-md-briefing-kenya h2,#pn-md-briefing-kenya h3,#pn-md-briefing-kenya h4{ text-transform:none; }
+#pn-md-briefing-kenya ul,#pn-md-briefing-kenya ol{ margin:0; padding:0; list-style:none; }
+#pn-md-briefing-kenya li{ margin:0; }
+#pn-md-briefing-kenya dl,#pn-md-briefing-kenya dd{ margin:0; }
+#pn-md-briefing-kenya table{ margin:0; border:0; }
+#pn-md-briefing-kenya a{ color:inherit; }
+#pn-md-briefing-kenya .md-in{ width:100%; max-width:1240px; margin:0 auto; padding:0 var(--px); }
+#pn-md-briefing-kenya .md-band{ padding:clamp(24px,3.8vh,42px) 0; }
+#pn-md-briefing-kenya .md-paper{ background:var(--pp); }
+#pn-md-briefing-kenya .md-ivory{ background:var(--iv); }
+#pn-md-briefing-kenya .md-depth{ background:var(--dp); color:var(--tv); }
+#pn-md-briefing-kenya .md-lagoon{ background:linear-gradient(170deg,#10505F 0%,#0F4C5C 50%,#0B3D45 100%); color:var(--tv); }
+#pn-md-briefing-kenya .md-sr{ position:absolute !important; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; border:0; }
+
+/* ---------- the hero: the answer first, with the light that follows ---------- */
+#pn-md-briefing-kenya .md-hero{ padding:clamp(18px,3vh,28px) 0 clamp(24px,4vh,40px); color:var(--tv);
+  background:radial-gradient(460px circle at var(--mx,72%) var(--my,30%),rgba(110,200,196,.22),rgba(227,194,88,.05) 45%,transparent 70%),
+             radial-gradient(120% 150% at 86% 0%,#10505F 0%,#0B3D45 46%,#082A30 100%); }
+#pn-md-briefing-kenya .md-top{ display:flex; flex-wrap:wrap; gap:4px 14px; margin:0 0 clamp(16px,2.8vh,26px); font-family:var(--hd); font-size:.72rem; font-weight:700; letter-spacing:.2em; text-transform:uppercase; color:var(--tvd); }
+#pn-md-briefing-kenya .md-top a{ color:var(--tv); text-decoration:none; border-bottom:1px solid var(--thair); }
+#pn-md-briefing-kenya .md-top a:hover,#pn-md-briefing-kenya .md-top a:focus-visible{ border-bottom-color:var(--tv); }
+#pn-md-briefing-kenya .md-hero__g{ display:grid; grid-template-columns:minmax(0,1.05fr) minmax(0,1fr); gap:24px clamp(28px,4.4vw,64px); align-items:center; }
+#pn-md-briefing-kenya .md-k{ margin:0; font-family:var(--hd); font-size:.74rem; font-weight:700; letter-spacing:.28em; text-transform:uppercase; color:var(--teal); }
+#pn-md-briefing-kenya h1.md-h1{ margin:8px 0 0; font-family:var(--hd); font-weight:600; font-size:clamp(2.6rem,5.4vw,4.9rem); line-height:.92; letter-spacing:-.025em; color:var(--tv) !important; text-wrap:balance; }
+#pn-md-briefing-kenya h1.md-h1 span{ display:block; color:rgba(245,241,232,.66); }
+#pn-md-briefing-kenya .md-lead{ margin:12px 0 0; max-width:46ch; font-size:clamp(1.02rem,1.3vw,1.16rem); line-height:1.5; color:var(--tvm); }
+#pn-md-briefing-kenya .md-acts{ display:flex; flex-wrap:wrap; gap:10px 12px; margin:18px 0 0; }
+#pn-md-briefing-kenya .md-btn{ display:inline-flex; align-items:center; justify-content:center; min-height:44px; padding:0 22px; border-radius:999px; text-decoration:none;
+  font-family:var(--hd); font-size:.8rem; font-weight:700; letter-spacing:.16em; text-transform:uppercase; background:var(--g); color:var(--onacc) !important; border:1px solid var(--g);
+  transition:transform .25s var(--ease), box-shadow .25s ease; }
+#pn-md-briefing-kenya .md-btn:hover,#pn-md-briefing-kenya .md-btn:focus-visible{ transform:translateY(-2px); box-shadow:0 10px 24px rgba(227,194,88,.28); }
+#pn-md-briefing-kenya .md-btn--line{ background:transparent; color:var(--tv) !important; border-color:rgba(245,241,232,.4); }
+#pn-md-briefing-kenya .md-btn--line:hover,#pn-md-briefing-kenya .md-btn--line:focus-visible{ border-color:var(--tv); box-shadow:none; }
+#pn-md-briefing-kenya .md-big{ padding-left:clamp(18px,3vw,40px); border-left:1px solid rgba(227,194,88,.45); }
+#pn-md-briefing-kenya .md-big__n{ margin:0; font-family:var(--hd); font-weight:600; font-size:clamp(5.2rem,11vw,10.4rem); line-height:.82; letter-spacing:-.03em; color:var(--g); font-variant-numeric:tabular-nums; }
+#pn-md-briefing-kenya .md-big__l{ margin:10px 0 0; font-family:var(--hd); font-weight:600; font-size:clamp(1.3rem,2.2vw,1.85rem); line-height:1.06; color:var(--tv); }
+#pn-md-briefing-kenya .md-chips{ display:flex; flex-wrap:wrap; gap:8px; margin:14px 0 0; }
+#pn-md-briefing-kenya .md-chips li{ padding:6px 12px; border-radius:999px; border:1px solid var(--thair); font-family:var(--hd); font-size:.7rem; font-weight:700; letter-spacing:.16em; text-transform:uppercase; color:var(--tvm); }
+#pn-md-briefing-kenya .md-chips li.is-far{ border-color:rgba(242,165,140,.55); color:var(--tcl); }
+#pn-md-briefing-kenya .md-ill{ margin:clamp(18px,3vh,26px) 0 0; max-width:92ch; font-size:.78rem; line-height:1.45; color:var(--tvd); }
+
+/* the turning word: one word turns through the seven standards */
+#pn-md-briefing-kenya .md-slot{ display:inline-block; height:1.06em; overflow:hidden; vertical-align:bottom; color:var(--g); }
+#pn-md-briefing-kenya .md-slot > span{ display:block; }
+#pn-md-briefing-kenya .md-slot b{ display:block; height:1.06em; line-height:1.06em; font-weight:inherit; }
+#pn-md-briefing-kenya.md-js .md-slot > span{ animation:mdTurn 16s cubic-bezier(.7,0,.2,1) infinite; }
+@keyframes mdTurn{0%,10%{transform:translateY(0)}12.5%,22.5%{transform:translateY(-1.06em)}25%,35%{transform:translateY(-2.12em)}37.5%,47.5%{transform:translateY(-3.18em)}50%,60%{transform:translateY(-4.24em)}62.5%,72.5%{transform:translateY(-5.3em)}75%,85%{transform:translateY(-6.36em)}87.5%,97.5%{transform:translateY(-7.42em)}100%{transform:translateY(-8.48em)}}
+
+/* figures that count up as they arrive on screen: the real figure is in the page; the script counts to it */
+#pn-md-briefing-kenya .md-n{ font-variant-numeric:tabular-nums; }
+
+/* ---------- the live tape: the nation's own deals ---------- */
+#pn-md-briefing-kenya .md-tape{ overflow:hidden; background:var(--dp); color:var(--tv); border-top:1px solid rgba(227,194,88,.35); border-bottom:1px solid rgba(227,194,88,.35); }
+#pn-md-briefing-kenya .md-tape__t{ display:flex; width:max-content; }
+#pn-md-briefing-kenya.md-js .md-tape__t{ animation:mdTape 44s linear infinite; }
+#pn-md-briefing-kenya .md-tape:hover .md-tape__t,#pn-md-briefing-kenya .md-tape:focus-within .md-tape__t{ animation-play-state:paused; }
+@keyframes mdTape{ to{ transform:translateX(-50%); } }
+#pn-md-briefing-kenya .md-tape ul{ display:flex; }
+#pn-md-briefing-kenya .md-tape li{ display:inline-flex; align-items:baseline; gap:10px; padding:10px 26px; border-right:1px solid var(--thair); white-space:nowrap; font-size:.94rem; }
+#pn-md-briefing-kenya .md-tape li b{ font-family:var(--hd); font-size:.7rem; font-weight:700; letter-spacing:.18em; text-transform:uppercase; color:var(--teal); }
+#pn-md-briefing-kenya .md-tape li strong{ font-family:var(--hd); font-size:1.24rem; font-weight:600; color:var(--g); }
+#pn-md-briefing-kenya .md-tape li a{ font-size:.76rem; color:var(--tvd); text-decoration:none; border-bottom:1px solid var(--thair); }
+
+/* ---------- headings ---------- */
+#pn-md-briefing-kenya .md-eb{ display:flex; align-items:center; gap:10px; margin:0; font-family:var(--hd); font-size:.74rem; font-weight:700; letter-spacing:.28em; text-transform:uppercase; color:var(--tc); }
+#pn-md-briefing-kenya .md-eb i{ font-style:normal; color:var(--gd); letter-spacing:.06em; }
+#pn-md-briefing-kenya h2.md-h2{ margin:6px 0 0; font-family:var(--hd); font-weight:600; font-size:clamp(2rem,3.4vw,3rem); line-height:.96; letter-spacing:-.018em; color:var(--er) !important; text-wrap:balance; }
+#pn-md-briefing-kenya .md-sub{ margin:8px 0 0; max-width:62ch; font-size:1rem; line-height:1.5; color:var(--im); }
+#pn-md-briefing-kenya .md-depth .md-eb,#pn-md-briefing-kenya .md-lagoon .md-eb,#pn-md-briefing-kenya .md-depth .md-eb i,#pn-md-briefing-kenya .md-lagoon .md-eb i{ color:var(--g); }
+#pn-md-briefing-kenya .md-depth h2.md-h2,#pn-md-briefing-kenya .md-lagoon h2.md-h2{ color:var(--tv) !important; }
+#pn-md-briefing-kenya .md-depth .md-sub,#pn-md-briefing-kenya .md-lagoon .md-sub{ color:var(--tvm); }
+#pn-md-briefing-kenya .md-src,#pn-md-briefing-kenya .md-src a{ font-size:.76rem; color:var(--mut); }
+#pn-md-briefing-kenya .md-src a{ text-decoration:underline; text-underline-offset:2px; }
+#pn-md-briefing-kenya .md-depth .md-src,#pn-md-briefing-kenya .md-depth .md-src a,#pn-md-briefing-kenya .md-lagoon .md-src,#pn-md-briefing-kenya .md-lagoon .md-src a{ color:var(--tvd); }
+#pn-md-briefing-kenya .md-gap{ margin-top:clamp(14px,2.4vh,22px); }
+
+/* ---------- the answer: three figures ---------- */
+#pn-md-briefing-kenya .md-big3{ display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:12px; }
+#pn-md-briefing-kenya .md-big3 li{ padding:16px 18px; border-radius:18px; background:var(--wh); border:1px solid var(--hair); box-shadow:0 10px 26px rgba(16,38,43,.05); }
+#pn-md-briefing-kenya .md-big3 strong{ display:block; font-family:var(--hd); font-weight:600; font-size:clamp(3rem,5.4vw,4.6rem); line-height:.9; color:var(--er); }
+#pn-md-briefing-kenya .md-big3 li.is-far{ border-color:rgba(138,58,34,.35); }
+#pn-md-briefing-kenya .md-big3 li.is-far strong{ color:var(--tc); }
+#pn-md-briefing-kenya .md-big3 strong.is-money{ color:var(--gd); }
+#pn-md-briefing-kenya .md-big3 li > span{ display:block; margin-top:6px; color:var(--im); }
+
+/* ---------- a row of figures (assets): swipes on phones ---------- */
+#pn-md-briefing-kenya .md-figs{ display:grid; grid-template-columns:repeat(5,minmax(0,1fr)); gap:14px; }
+#pn-md-briefing-kenya .md-figs li{ padding-top:10px; border-top:2px solid var(--er); }
+#pn-md-briefing-kenya .md-figs li.is-money{ border-top-color:var(--gd); }
+#pn-md-briefing-kenya .md-figs strong{ display:block; font-family:var(--hd); font-weight:600; font-size:clamp(2rem,3vw,2.75rem); line-height:.95; color:var(--er); white-space:nowrap; }
+#pn-md-briefing-kenya .md-figs li.is-money strong{ color:var(--gd); }
+#pn-md-briefing-kenya .md-figs b{ display:block; margin-top:4px; font-family:var(--hd); font-size:1.16rem; font-weight:600; line-height:1.1; color:var(--ink); }
+#pn-md-briefing-kenya .md-figs li > span{ display:block; margin-top:3px; font-size:.86rem; line-height:1.35; color:var(--im); }
+
+/* ---------- the seven stars of the logo, filling to each standard ---------- */
+#pn-md-briefing-kenya .md-starband{ display:grid; grid-template-columns:minmax(0,.9fr) minmax(0,1.2fr); gap:24px clamp(28px,4vw,56px); align-items:center; }
+#pn-md-briefing-kenya .md-stars{ display:block; width:100%; max-width:640px; height:auto; overflow:visible; }
+#pn-md-briefing-kenya .md-stars .md-star0{ fill:rgba(227,194,88,.14); stroke:rgba(227,194,88,.6); stroke-width:.5; }
+#pn-md-briefing-kenya .md-stars .md-star1{ fill:var(--g); }
+#pn-md-briefing-kenya .md-stars .md-fill{ transform-box:fill-box; transform-origin:50% 100%; }
+#pn-md-briefing-kenya.md-js .md-io:not(.is-in) .md-fill{ transform:scaleY(0); }
+#pn-md-briefing-kenya.md-js .md-io.is-in .md-fill{ animation:mdFill 2.6s var(--ease) both; }
+@keyframes mdFill{ from{ transform:scaleY(0); } to{ transform:scaleY(1); } }
+#pn-md-briefing-kenya .md-stars .md-far{ fill:none; stroke:#F2A07E; stroke-width:2.2; stroke-dasharray:5 5; transform-box:fill-box; transform-origin:center; }
+#pn-md-briefing-kenya.md-js .md-stars .md-far{ animation:mdPulse 2.6s ease-in-out infinite; }
+@keyframes mdPulse{ 0%,100%{ opacity:.45; transform:scale(1); } 50%{ opacity:1; transform:scale(1.1); } }
+#pn-md-briefing-kenya .md-stars text{ font-family:var(--hd); font-weight:700; }
+#pn-md-briefing-kenya .md-stars .md-l{ font-size:13px; letter-spacing:.14em; fill:rgba(245,241,232,.8); }
+#pn-md-briefing-kenya .md-stars .md-v{ font-size:26px; fill:#FFF4D6; }
+#pn-md-briefing-kenya .md-stars .is-crown .md-l{ font-size:15px; }
+#pn-md-briefing-kenya .md-stars .is-crown .md-v{ font-size:34px; }
+#pn-md-briefing-kenya .md-stars .is-far .md-l,#pn-md-briefing-kenya .md-stars .is-far .md-v{ fill:#F7B798; }
+#pn-md-briefing-kenya .md-trio{ display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:10px; margin-top:16px; }
+#pn-md-briefing-kenya .md-trio strong{ display:block; font-family:var(--hd); font-weight:600; font-size:clamp(1.9rem,2.8vw,2.5rem); line-height:.95; color:var(--g); white-space:nowrap; }
+#pn-md-briefing-kenya .md-trio li > span{ display:block; margin-top:4px; font-size:.88rem; color:var(--tvm); }
+#pn-md-briefing-kenya .md-def{ margin:8px 0 0; max-width:54ch; font-size:.9rem; line-height:1.45; color:var(--tvd); }
+
+/* ---------- deal tombstones: the banker's deal card, turned over on hover or tap ---------- */
+#pn-md-briefing-kenya .md-tombs{ display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr)); gap:12px; }
+#pn-md-briefing-kenya .md-tomb{ position:relative; height:262px; perspective:1000px; outline:none; cursor:pointer; }
+#pn-md-briefing-kenya .md-tomb__in{ position:relative; height:100%; transition:transform .8s cubic-bezier(.3,.7,.2,1); transform-style:preserve-3d; }
+#pn-md-briefing-kenya .md-tomb.is-turned .md-tomb__in{ transform:rotateY(180deg); }
+@media (hover:hover){ #pn-md-briefing-kenya .md-tomb:hover .md-tomb__in{ transform:rotateY(180deg); } }
+#pn-md-briefing-kenya .md-tomb:focus-visible .md-face{ outline:2px solid var(--g); outline-offset:3px; }
+#pn-md-briefing-kenya .md-face{ position:absolute; inset:0; -webkit-backface-visibility:hidden; backface-visibility:hidden; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:7px;
+  padding:18px 16px; border-radius:6px; text-align:center; color:var(--tv); background:var(--er);
+  border:1px solid rgba(227,194,88,.75); box-shadow:inset 0 0 0 5px var(--er),inset 0 0 0 6px rgba(227,194,88,.4); }
+#pn-md-briefing-kenya .md-face small{ font-family:var(--hd); font-size:.68rem; font-weight:700; letter-spacing:.2em; text-transform:uppercase; color:var(--teal); }
+#pn-md-briefing-kenya .md-face small.is-far{ color:var(--tcl); }
+#pn-md-briefing-kenya .md-face h3{ margin:0; font-family:var(--hd); font-size:1.5rem; font-weight:600; line-height:1; color:var(--tv); }
+#pn-md-briefing-kenya .md-face strong{ font-family:var(--hd); font-size:3rem; font-weight:600; line-height:.95; color:var(--g); }
+#pn-md-briefing-kenya .md-face span{ font-size:.86rem; line-height:1.3; color:var(--tvm); }
+#pn-md-briefing-kenya .md-face--back{ transform:rotateY(180deg); background:var(--iv); color:var(--ink); border-color:rgba(126,90,12,.6); box-shadow:inset 0 0 0 5px var(--iv),inset 0 0 0 6px rgba(126,90,12,.3); }
+#pn-md-briefing-kenya .md-face--back p{ margin:0; font-size:.9rem; line-height:1.42; color:var(--ink); }
+#pn-md-briefing-kenya .md-face--back p.md-ai{ color:var(--lg); }
+#pn-md-briefing-kenya .md-face--back p.md-ai b{ font-family:var(--hd); font-size:.68rem; font-weight:700; letter-spacing:.16em; text-transform:uppercase; margin-right:5px; }
+#pn-md-briefing-kenya .md-face--back a{ font-size:.76rem; color:var(--mut); text-decoration:underline; text-underline-offset:2px; }
+#pn-md-briefing-kenya .md-hint{ margin:8px 0 0; font-size:.8rem; color:var(--tvd); }
+
+/* ---------- steps on a drawn gold line ---------- */
+#pn-md-briefing-kenya .md-line{ position:relative; display:grid; grid-template-columns:repeat(var(--cols,4),minmax(0,1fr)); gap:14px; padding-top:2px; }
+#pn-md-briefing-kenya .md-line::before{ content:""; position:absolute; left:16px; right:16px; top:17px; height:2px; background:var(--g); transform-origin:left; }
+#pn-md-briefing-kenya.md-js .md-io:not(.is-in) .md-line::before{ transform:scaleX(0); }
+#pn-md-briefing-kenya.md-js .md-io.is-in .md-line::before{ animation:mdDraw 2.4s cubic-bezier(.6,0,.2,1) .2s both; }
+@keyframes mdDraw{ from{ transform:scaleX(0); } to{ transform:scaleX(1); } }
+#pn-md-briefing-kenya .md-line li{ position:relative; }
+#pn-md-briefing-kenya .md-line li > i{ display:inline-flex; align-items:center; justify-content:center; width:34px; height:34px; border-radius:50%; background:var(--er); color:var(--g); font-style:normal; font-family:var(--hd); font-size:.9rem; font-weight:700; box-shadow:0 0 0 4px var(--pp); }
+#pn-md-briefing-kenya .md-ivory .md-line li > i{ box-shadow:0 0 0 4px var(--iv); }
+#pn-md-briefing-kenya .md-line small{ display:block; margin-top:10px; font-family:var(--hd); font-size:.68rem; font-weight:700; letter-spacing:.2em; text-transform:uppercase; color:var(--tc); }
+#pn-md-briefing-kenya .md-line h3{ margin:4px 0 0; font-family:var(--hd); font-size:1.34rem; font-weight:600; line-height:1.05; color:var(--er); }
+#pn-md-briefing-kenya .md-line p{ margin:4px 0 0; font-size:.92rem; line-height:1.42; color:var(--im); }
+
+/* ---------- cards: workstreams, AI jobs, tests ---------- */
+#pn-md-briefing-kenya .md-cards{ display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr)); gap:12px; }
+#pn-md-briefing-kenya .md-cards.md-six{ grid-template-columns:repeat(3,minmax(0,1fr)); } /* v2.3: six cards in two rows of three on laptops (the sovereign blueprint) */
+#pn-md-briefing-kenya .md-card{ padding:16px 18px; border-radius:18px; background:var(--wh); border:1px solid var(--hair); }
+#pn-md-briefing-kenya .md-card > i{ display:block; font-style:normal; font-family:var(--hd); font-size:2.6rem; font-weight:600; line-height:.9; color:var(--gd); }
+#pn-md-briefing-kenya .md-card small{ display:block; font-family:var(--hd); font-size:.68rem; font-weight:700; letter-spacing:.2em; text-transform:uppercase; color:var(--tc); }
+#pn-md-briefing-kenya .md-card h3{ margin:6px 0 0; font-family:var(--hd); font-size:1.3rem; font-weight:600; line-height:1.05; color:var(--er); }
+#pn-md-briefing-kenya .md-card p{ margin:5px 0 0; font-size:.92rem; line-height:1.42; color:var(--im); }
+#pn-md-briefing-kenya .md-depth .md-card,#pn-md-briefing-kenya .md-lagoon .md-card{ background:rgba(245,241,232,.06); border-color:var(--thair); }
+#pn-md-briefing-kenya .md-depth .md-card h3,#pn-md-briefing-kenya .md-lagoon .md-card h3{ color:var(--tv); }
+#pn-md-briefing-kenya .md-depth .md-card p,#pn-md-briefing-kenya .md-lagoon .md-card p{ color:var(--tvm); }
+#pn-md-briefing-kenya .md-depth .md-card small,#pn-md-briefing-kenya .md-lagoon .md-card small{ color:var(--teal); }
+
+/* ---------- the structure: the flow of the deal, on Lagoon ---------- */
+#pn-md-briefing-kenya .md-flow{ display:grid; grid-template-columns:repeat(5,minmax(0,1fr)); gap:10px; counter-reset:fl; }
+#pn-md-briefing-kenya .md-flow li{ position:relative; padding:14px 16px; border-radius:16px; border:1px solid var(--thair); background:rgba(245,241,232,.06); }
+#pn-md-briefing-kenya .md-flow li:not(:last-child)::after{ content:""; position:absolute; right:-9px; top:50%; width:8px; height:8px; border-top:2px solid var(--g); border-right:2px solid var(--g); transform:translateY(-50%) rotate(45deg); }
+#pn-md-briefing-kenya .md-flow li.is-end{ border-color:rgba(227,194,88,.7); background:rgba(227,194,88,.1); }
+#pn-md-briefing-kenya .md-flow small{ display:block; font-family:var(--hd); font-size:.66rem; font-weight:700; letter-spacing:.2em; text-transform:uppercase; color:var(--teal); }
+#pn-md-briefing-kenya .md-flow b{ display:block; margin-top:4px; font-family:var(--hd); font-size:1.24rem; font-weight:600; line-height:1.05; color:var(--tv); }
+#pn-md-briefing-kenya .md-flow span{ display:block; margin-top:4px; font-size:.86rem; line-height:1.38; color:var(--tvm); }
+#pn-md-briefing-kenya .md-ailine{ margin:14px 0 0; padding:12px 16px; border-left:3px solid var(--g); border-radius:0 12px 12px 0; background:rgba(245,241,232,.06); font-size:.96rem; line-height:1.45; color:var(--tvm); }
+#pn-md-briefing-kenya .md-ailine b{ margin-right:6px; font-family:var(--hd); font-size:.7rem; font-weight:700; letter-spacing:.18em; text-transform:uppercase; color:var(--g); }
+
+/* ---------- tap to open ---------- */
+#pn-md-briefing-kenya details.md-more{ margin-top:14px; border-radius:16px; border:1px solid var(--hair); background:var(--wh); }
+#pn-md-briefing-kenya .md-lagoon details.md-more,#pn-md-briefing-kenya .md-depth details.md-more{ border-color:var(--thair); background:rgba(245,241,232,.06); }
+#pn-md-briefing-kenya details.md-more > summary{ display:flex; align-items:center; justify-content:space-between; gap:12px; min-height:48px; padding:10px 16px; cursor:pointer; list-style:none;
+  font-family:var(--hd); font-size:.8rem; font-weight:700; letter-spacing:.16em; text-transform:uppercase; color:var(--er); }
+#pn-md-briefing-kenya .md-lagoon details.md-more > summary,#pn-md-briefing-kenya .md-depth details.md-more > summary{ color:var(--g); }
+#pn-md-briefing-kenya details.md-more > summary::-webkit-details-marker{ display:none; }
+#pn-md-briefing-kenya details.md-more > summary::after{ content:"+"; flex:none; display:inline-flex; align-items:center; justify-content:center; width:26px; height:26px; border-radius:50%; border:1px solid currentColor; font-size:1rem; letter-spacing:0; }
+#pn-md-briefing-kenya details.md-more[open] > summary::after{ content:"\2212"; }
+#pn-md-briefing-kenya .md-more__in{ padding:0 16px 14px; }
+#pn-md-briefing-kenya .md-terms{ display:grid; grid-template-columns:11em minmax(0,1fr); gap:0; font-size:.92rem; }
+#pn-md-briefing-kenya .md-terms dt,#pn-md-briefing-kenya .md-terms dd{ padding:8px 0; border-top:1px solid var(--thair); }
+#pn-md-briefing-kenya .md-terms dt{ font-family:var(--hd); font-size:.7rem; font-weight:700; letter-spacing:.16em; text-transform:uppercase; color:var(--teal); padding-right:12px; }
+#pn-md-briefing-kenya .md-terms dd{ color:var(--tvm); }
+#pn-md-briefing-kenya .md-terms a,#pn-md-briefing-kenya .md-qs a{ color:inherit; text-decoration:underline; text-underline-offset:2px; }
+#pn-md-briefing-kenya .md-qs{ display:grid; gap:0; font-size:.92rem; }
+#pn-md-briefing-kenya .md-qs li{ display:grid; grid-template-columns:9.5em 4.5em minmax(0,1fr); gap:10px; padding:8px 0; border-top:1px solid var(--thair); color:var(--tvm); }
+#pn-md-briefing-kenya .md-qs b{ font-family:var(--hd); font-weight:600; font-size:1.02rem; color:var(--tv); }
+#pn-md-briefing-kenya .md-qs em{ font-style:normal; font-family:var(--hd); font-weight:600; font-size:1.02rem; color:var(--g); text-align:right; }
+
+/* ---------- the session as a bar of time, and what the nation receives ---------- */
+#pn-md-briefing-kenya .md-two{ display:grid; grid-template-columns:minmax(0,1.1fr) minmax(0,1fr); gap:20px clamp(28px,4vw,56px); align-items:start; }
+#pn-md-briefing-kenya .md-time{ display:flex; margin-top:16px; border-radius:12px; overflow:hidden; min-height:66px; }
+#pn-md-briefing-kenya .md-time li{ flex:var(--f,1); display:flex; flex-direction:column; justify-content:center; padding:8px 10px; background:var(--lg); color:var(--tv); border-right:1px solid rgba(245,241,232,.25); }
+#pn-md-briefing-kenya .md-time li:nth-child(even){ background:var(--er); }
+#pn-md-briefing-kenya .md-time small{ font-family:var(--hd); font-size:.64rem; font-weight:700; letter-spacing:.18em; text-transform:uppercase; color:var(--tvd); }
+#pn-md-briefing-kenya .md-time b{ font-family:var(--hd); font-size:1.06rem; font-weight:600; line-height:1.05; }
+#pn-md-briefing-kenya .md-get{ display:flex; flex-wrap:wrap; gap:8px; margin-top:12px; }
+#pn-md-briefing-kenya .md-get li{ padding:9px 14px; border-radius:999px; background:var(--wh); border:1px solid var(--hair); font-family:var(--hd); font-size:1.08rem; font-weight:600; line-height:1.1; color:var(--er); }
+
+/* ---------- the close: the three mandates ---------- */
+#pn-md-briefing-kenya .md-close{ padding:clamp(26px,4.2vh,46px) 0; background:var(--dp); color:var(--tv); }
+#pn-md-briefing-kenya .md-close h2.md-h2{ color:var(--tv) !important; margin:0; }
+#pn-md-briefing-kenya .md-close__h{ display:flex; flex-wrap:wrap; align-items:flex-end; justify-content:space-between; gap:14px; }
+#pn-md-briefing-kenya .md-three{ display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:12px; margin-top:16px; }
+#pn-md-briefing-kenya .md-three a{ display:block; height:100%; padding:16px 18px; border-radius:18px; border:1px solid var(--thair); text-decoration:none; color:var(--tv); transition:border-color .2s ease, transform .25s var(--ease); }
+#pn-md-briefing-kenya .md-three a:hover,#pn-md-briefing-kenya .md-three a:focus-visible{ border-color:rgba(227,194,88,.8); transform:translateY(-2px); }
+#pn-md-briefing-kenya .md-three li.is-here a{ border-color:rgba(227,194,88,.8); background:rgba(227,194,88,.08); }
+#pn-md-briefing-kenya .md-three small{ display:block; font-family:var(--hd); font-size:.68rem; font-weight:700; letter-spacing:.2em; text-transform:uppercase; color:var(--tvd); }
+#pn-md-briefing-kenya .md-three b{ display:block; margin-top:4px; font-family:var(--hd); font-size:1.6rem; font-weight:600; line-height:1; }
+#pn-md-briefing-kenya .md-three span{ display:block; margin-top:4px; font-size:.94rem; color:var(--tvm); }
+#pn-md-briefing-kenya .md-vision{ margin:18px 0 0; font-family:var(--hd); font-size:clamp(1.15rem,1.6vw,1.4rem); font-weight:600; line-height:1.2; color:var(--tv); }
+#pn-md-briefing-kenya .md-vision span{ color:var(--tvm); }
+#pn-md-briefing-kenya .md-fine{ margin:12px 0 0; max-width:110ch; font-size:.78rem; line-height:1.5; color:var(--tvd); }
+#pn-md-briefing-kenya .md-fine a{ color:var(--tvd); text-decoration:underline; text-underline-offset:2px; }
+
+/* ---------- arrival: each band rises softly as it comes on screen ---------- */
+#pn-md-briefing-kenya.md-js .md-rise{ transition:opacity .9s ease, transform .9s var(--ease); }
+#pn-md-briefing-kenya.md-js .md-rise:not(.is-in){ opacity:0; transform:translateY(18px); }
+
+/* ---------- phones: nothing scrolls sideways; rows of cards swipe ---------- */
+/* v2.2 shared on request (Preeti Sinha, President and CEO, 24 Nov 2026): what is inside, locked, and the request dialog */
+#pn-md-briefing-kenya .md-pad{ display:inline-block; flex:none; width:1.25em; height:1.25em; fill:none; stroke:currentColor; stroke-width:1.7; stroke-linecap:round; stroke-linejoin:round; vertical-align:-.2em; }
+#pn-md-briefing-kenya .md-lock__g{ display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1.1fr); gap:clamp(18px,3vw,48px); align-items:center; }
+#pn-md-briefing-kenya .md-lock .md-eb .md-pad{ color:var(--gd); }
+#pn-md-briefing-kenya .md-lock__p{ margin:10px 0 0; max-width:44ch; font-size:clamp(1rem,1.2vw,1.1rem); line-height:1.5; color:var(--im); }
+#pn-md-briefing-kenya .md-lock .md-acts{ margin-top:16px; }
+#pn-md-briefing-kenya .md-lock__m{ margin:12px 0 0; font-size:.88rem; color:var(--mut); }
+#pn-md-briefing-kenya .md-lock__m a{ color:var(--er); font-weight:600; text-underline-offset:3px; }
+#pn-md-briefing-kenya .md-lock__l{ display:grid; gap:8px; padding:16px; border-radius:20px; background:linear-gradient(165deg,#0F4C5C 0%,#0B3D45 60%,#082A30 100%); box-shadow:0 22px 48px rgba(8,42,48,.28), inset 0 0 0 1px rgba(227,194,88,.35); }
+#pn-md-briefing-kenya .md-lock__l li{ display:grid; grid-template-columns:auto minmax(0,auto) minmax(0,1fr); align-items:center; gap:12px; padding:10px 14px; border-radius:12px; background:rgba(245,241,232,.06); color:var(--tv); font-family:var(--hd); font-size:.9rem; font-weight:600; letter-spacing:.06em; text-transform:uppercase; }
+#pn-md-briefing-kenya .md-lock__l li .md-pad{ color:var(--g); }
+#pn-md-briefing-kenya .md-lock__l li b{ color:var(--g); font-weight:700; }
+#pn-md-briefing-kenya .md-lock__l li i{ display:block; height:8px; border-radius:4px; background:linear-gradient(90deg,rgba(245,241,232,.22),rgba(245,241,232,.06)); filter:blur(1.5px); }
+#pn-md-briefing-kenya .md-dlg{ width:min(520px,calc(100vw - 28px)); max-height:calc(100vh - 28px); margin:auto; padding:0; border:0; border-radius:22px; background:var(--pp); color:var(--ink); box-shadow:0 30px 80px rgba(4,20,24,.45), inset 0 0 0 1px rgba(227,194,88,.5); overflow:auto; }
+#pn-md-briefing-kenya .md-dlg::backdrop{ background:rgba(8,42,48,.66); }
+#pn-md-briefing-kenya .md-dlg__in{ position:relative; display:grid; gap:12px; padding:clamp(20px,3vw,30px); font-family:var(--bd); }
+#pn-md-briefing-kenya .md-dlg .md-eb .md-pad{ color:var(--gd); }
+#pn-md-briefing-kenya .md-dlg .md-h2{ margin:0; padding-right:40px; font-size:clamp(1.6rem,3vw,2.1rem); }
+#pn-md-briefing-kenya .md-dlg__p{ margin:0; font-size:.98rem; line-height:1.45; color:var(--im); }
+#pn-md-briefing-kenya .md-dlg__p b{ color:var(--er); }
+#pn-md-briefing-kenya .md-dlg__f{ display:grid; gap:4px; font-family:var(--hd); font-size:.7rem; font-weight:700; letter-spacing:.16em; text-transform:uppercase; color:var(--im); }
+#pn-md-briefing-kenya .md-dlg__f input,#pn-md-briefing-kenya .md-dlg__f textarea{ width:100%; margin:0; padding:10px 12px; border:1px solid rgba(16,38,43,.22); border-radius:12px; background:var(--wh); color:var(--ink); font-family:var(--bd); font-size:1rem; letter-spacing:0; text-transform:none; box-shadow:none; }
+#pn-md-briefing-kenya .md-dlg__f textarea{ resize:vertical; min-height:72px; }
+#pn-md-briefing-kenya .md-dlg__f input:focus,#pn-md-briefing-kenya .md-dlg__f textarea:focus{ outline:2px solid var(--er); outline-offset:1px; border-color:var(--er); }
+#pn-md-briefing-kenya .md-dlg__b{ display:flex; flex-wrap:wrap; gap:8px; margin-top:4px; }
+#pn-md-briefing-kenya .md-dlg__b .md-btn{ min-height:42px; padding:0 16px; font-size:.72rem; letter-spacing:.12em; cursor:pointer; }
+#pn-md-briefing-kenya .md-dlg__b .md-btn:first-child{ flex:1 1 100%; }
+#pn-md-briefing-kenya .md-btn--ink{ background:transparent; color:var(--er) !important; border-color:rgba(11,61,69,.4); }
+#pn-md-briefing-kenya .md-btn--ink:hover,#pn-md-briefing-kenya .md-btn--ink:focus-visible{ border-color:var(--er); box-shadow:none; }
+#pn-md-briefing-kenya .md-dlg__s{ margin:0; font-size:.78rem; line-height:1.45; color:var(--mut); }
+#pn-md-briefing-kenya .md-dlg__x{ position:absolute; top:14px; right:14px; width:38px; height:38px; padding:0; border-radius:50%; border:1px solid rgba(227,194,88,.9); background:transparent; cursor:pointer; }
+#pn-md-briefing-kenya .md-dlg__x span,#pn-md-briefing-kenya .md-dlg__x span::before{ position:absolute; left:50%; top:50%; width:16px; height:2px; border-radius:1px; background:var(--gd); transform:translate(-50%,-50%) rotate(45deg); }
+#pn-md-briefing-kenya .md-dlg__x span::before{ content:""; transform:translate(-50%,-50%) rotate(90deg); }
+#pn-md-briefing-kenya .md-dlg__x:hover,#pn-md-briefing-kenya .md-dlg__x:focus-visible{ background:var(--g); }
+@media (max-width:899px){
+  #pn-md-briefing-kenya .md-hero__g,#pn-md-briefing-kenya .md-starband,#pn-md-briefing-kenya .md-two{ grid-template-columns:minmax(0,1fr); }
+  #pn-md-briefing-kenya .md-big{ padding-left:0; padding-top:16px; border-left:0; border-top:1px solid rgba(227,194,88,.45); }
+  #pn-md-briefing-kenya .md-big3{ grid-template-columns:minmax(0,1fr); gap:8px; }
+  #pn-md-briefing-kenya .md-big3 li{ display:flex; align-items:baseline; gap:12px; padding:12px 16px; }
+  #pn-md-briefing-kenya .md-big3 strong{ flex:none; font-size:2.6rem; }
+  #pn-md-briefing-kenya .md-big3 li > span{ margin:0; }
+  #pn-md-briefing-kenya .md-figs,#pn-md-briefing-kenya .md-tombs,#pn-md-briefing-kenya .md-cards.md-swipe{ display:flex; gap:12px; overflow-x:auto; scroll-snap-type:x mandatory; scroll-padding-inline:var(--px); margin-left:calc(var(--px) * -1); margin-right:calc(var(--px) * -1); padding:2px var(--px) 8px; scrollbar-width:none; }
+  #pn-md-briefing-kenya .md-figs::-webkit-scrollbar,#pn-md-briefing-kenya .md-tombs::-webkit-scrollbar,#pn-md-briefing-kenya .md-cards.md-swipe::-webkit-scrollbar{ display:none; }
+  #pn-md-briefing-kenya .md-figs > li{ flex:0 0 58%; scroll-snap-align:start; }
+  #pn-md-briefing-kenya .md-tombs > div,#pn-md-briefing-kenya .md-cards.md-swipe > li{ flex:0 0 78%; scroll-snap-align:center; }
+  #pn-md-briefing-kenya .md-line{ grid-template-columns:minmax(0,1fr); gap:16px; padding-left:46px; }
+  #pn-md-briefing-kenya .md-line::before{ left:16px; right:auto; top:8px; bottom:8px; width:2px; height:auto; transform-origin:top; }
+  #pn-md-briefing-kenya.md-js .md-io:not(.is-in) .md-line::before{ transform:scaleY(0); }
+  #pn-md-briefing-kenya.md-js .md-io.is-in .md-line::before{ animation-name:mdDrawY; }
+  #pn-md-briefing-kenya .md-line li > i{ position:absolute; left:-46px; top:0; }
+  #pn-md-briefing-kenya .md-line small{ margin-top:0; }
+  #pn-md-briefing-kenya .md-flow{ grid-template-columns:minmax(0,1fr); gap:14px; }
+  #pn-md-briefing-kenya .md-flow li:not(:last-child)::after{ right:auto; left:50%; top:auto; bottom:-11px; transform:translateX(-50%) rotate(135deg); }
+  #pn-md-briefing-kenya .md-three{ grid-template-columns:minmax(0,1fr); }
+  #pn-md-briefing-kenya .md-terms{ grid-template-columns:minmax(0,1fr); }
+  #pn-md-briefing-kenya .md-terms dt{ padding-bottom:0; }
+  #pn-md-briefing-kenya .md-terms dd{ border-top:0; padding-top:2px; }
+  #pn-md-briefing-kenya .md-qs li{ grid-template-columns:minmax(0,1fr) auto; }
+  #pn-md-briefing-kenya .md-qs li span{ grid-column:1 / -1; }
+  #pn-md-briefing-kenya .md-trio strong{ font-size:1.75rem; }
+  #pn-md-briefing-kenya .md-lock__g{ grid-template-columns:minmax(0,1fr); }
+}
+@keyframes mdDrawY{ from{ transform:scaleY(0); } to{ transform:scaleY(1); } }
+@media (max-width:560px){
+  #pn-md-briefing-kenya h1.md-h1{ font-size:clamp(2.3rem,11vw,3rem); }
+  #pn-md-briefing-kenya .md-big__n{ font-size:clamp(4.6rem,24vw,6.4rem); }
+  #pn-md-briefing-kenya .md-acts .md-btn{ flex:1 1 100%; }
+  #pn-md-briefing-kenya .md-lock__l{ padding:12px; }
+  #pn-md-briefing-kenya .md-lock__l li{ font-size:.8rem; padding:9px 12px; gap:10px; }
+  #pn-md-briefing-kenya .md-dlg__b .md-btn{ flex:1 1 28%; padding:0 8px; letter-spacing:.06em; }
+  #pn-md-briefing-kenya .md-trio{ gap:8px; }
+  #pn-md-briefing-kenya .md-trio li > span{ font-size:.8rem; }
+}
+@media (prefers-reduced-motion:reduce){
+  #pn-md-briefing-kenya *,#pn-md-briefing-kenya *::before,#pn-md-briefing-kenya *::after{ animation:none !important; transition:none !important; }
+  #pn-md-briefing-kenya .md-tomb.is-turned .md-tomb__in{ transform:rotateY(180deg); }
+}
+</style>
+<div id="pn-md-briefing-kenya" class="md">
+  <header class="md-hero">
+    <div class="md-in">
+      <p class="md-top"><a href="https://perfectnations.com/blueprints/kenya/">Perfect Kenya</a><span>The ReDesign Studio</span><span>Mandate I of III</span></p>
+      <div class="md-hero__g">
+        <div>
+          <p class="md-k">The Nation Briefing &#183; Kenya</p>
+          <h1 class="md-h1">Three hours. <span>The Gap, named and sized.</span></h1>
+          <p class="md-lead">A private session for the people who decide. Perfect Nations Intelligence has read the data before anyone enters the room.</p>
+          <div class="md-acts">
+            <a class="md-btn" href="https://perfectnations.com/contact/?about=briefing&amp;country=Kenya">Request a Nation Briefing</a>
+            <a class="md-btn md-btn--line" href="https://perfectnations.com/blueprints/kenya/blueprint-lab/" data-md="lab">Next: The Blueprint Lab</a>
+          </div>
+        </div>
+        <div class="md-big md-io">
+          <p class="md-big__n"><span class="md-sr">$29bn</span><span aria-hidden="true">$<span class="md-n">29</span>bn</span></p>
+          <p class="md-big__l">a year lifts every Kenyan above the Living Line in <span class="md-slot" aria-hidden="true"><span><b>food</b><b>water</b><b>shelter</b><b>energy</b><b>education</b><b>health</b><b>livelihood</b><b>all seven</b><b>food</b></span></span><span class="md-sr">all seven standards</span></p>
+          <ul class="md-chips"><li>21.3% of GDP</li><li>An upper bound</li><li class="is-far">Education sets the line</li></ul>
+        </div>
+      </div>
+      <p class="md-ill">An illustration of what Kenya would receive. It was not commissioned by the Government of Kenya, and no terms have been agreed with any party.</p>
+    </div>
+  </header>
+<section class="md-band md-ivory md-lock" aria-labelledby="md-lock-h">
+    <div class="md-in md-lock__g">
+      <div class="md-lock__c">
+        <p class="md-eb"><svg class="md-pad" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="4.5" y="10.5" width="15" height="10" rx="2.2"/><path d="M8 10.5V7.6a4 4 0 0 1 8 0v2.9"/><circle cx="12" cy="15.4" r="1.4"/></svg> Shared on request</p>
+        <h2 class="md-h2" id="md-lock-h">The full Nation Briefing for Kenya is shared on request.</h2>
+        <p class="md-lock__p">6 sections, prepared for Kenya. Tell us who you are, and Perfect Nations will send it to you.</p>
+        <div class="md-acts"><a class="md-btn md-ask" href="mailto:contact@perfectnations.com?subject=Request%3A%20The%20Nation%20Briefing%20for%20Kenya">Request access</a></div>
+        <p class="md-lock__m">Or write to <a href="mailto:contact@perfectnations.com">contact@perfectnations.com</a></p>
+      </div>
+      <ol class="md-lock__l" aria-label="Inside the full The Nation Briefing"><li><svg class="md-pad" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="4.5" y="10.5" width="15" height="10" rx="2.2"/><path d="M8 10.5V7.6a4 4 0 0 1 8 0v2.9"/><circle cx="12" cy="15.4" r="1.4"/></svg><span>The answer</span><i aria-hidden="true"></i></li><li><svg class="md-pad" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="4.5" y="10.5" width="15" height="10" rx="2.2"/><path d="M8 10.5V7.6a4 4 0 0 1 8 0v2.9"/><circle cx="12" cy="15.4" r="1.4"/></svg><span><b>01</b> Assets</span><i aria-hidden="true"></i></li><li><svg class="md-pad" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="4.5" y="10.5" width="15" height="10" rx="2.2"/><path d="M8 10.5V7.6a4 4 0 0 1 8 0v2.9"/><circle cx="12" cy="15.4" r="1.4"/></svg><span><b>02</b> Perfect Capita</span><i aria-hidden="true"></i></li><li><svg class="md-pad" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="4.5" y="10.5" width="15" height="10" rx="2.2"/><path d="M8 10.5V7.6a4 4 0 0 1 8 0v2.9"/><circle cx="12" cy="15.4" r="1.4"/></svg><span><b>03</b> Capital architecture</span><i aria-hidden="true"></i></li><li><svg class="md-pad" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="4.5" y="10.5" width="15" height="10" rx="2.2"/><path d="M8 10.5V7.6a4 4 0 0 1 8 0v2.9"/><circle cx="12" cy="15.4" r="1.4"/></svg><span><b>04</b> Launch</span><i aria-hidden="true"></i></li><li><svg class="md-pad" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="4.5" y="10.5" width="15" height="10" rx="2.2"/><path d="M8 10.5V7.6a4 4 0 0 1 8 0v2.9"/><circle cx="12" cy="15.4" r="1.4"/></svg><span>The session</span><i aria-hidden="true"></i></li></ol>
+    </div>
+  </section>
+<section class="md-close" aria-labelledby="md-three-h">
+    <div class="md-in">
+      <div class="md-close__h">
+        <h2 class="md-h2" id="md-three-h">Three mandates. One mission.</h2>
+        <a class="md-btn" href="https://perfectnations.com/contact/?about=briefing&amp;country=Kenya">Request a Nation Briefing</a>
+      </div>
+      <ul class="md-three">
+        <li class="is-here"><a href="https://perfectnations.com/blueprints/kenya/nation-briefing/" data-md="briefing"><small>I &#183; 3 hours &#183; This page</small><b>The Nation Briefing</b><span>The Gap, named and sized.</span></a></li>
+        <li><a href="https://perfectnations.com/blueprints/kenya/blueprint-lab/" data-md="lab"><small>II &#183; 3 days</small><b>The Blueprint Lab</b><span>The structure, drawn.</span></a></li>
+        <li><a href="https://perfectnations.com/blueprints/kenya/sovereign-mandate/" data-md="sovereign"><small>III &#183; End to end</small><b>The Sovereign Mandate</b><span>Every gap, ready for market.</span></a></li>
+      </ul>
+      <p class="md-vision pn-vision">Built for the age of super intelligence. <span>Good governance first, then innovative financing for development, then Perfect Nations Intelligence that proves every result.</span></p>
+      <p class="md-fine">An illustration prepared by Perfect Nations to show what a nation receives. It was not commissioned by the Government of Kenya, and no terms have been agreed with any party. Perfect Nations is a new-age sovereign advisory firm. Scope and fees are agreed in writing before any work begins. Institutions are named for reference only; no affiliation or endorsement is implied. Perfect Capita, the price of Perfect Kenya and the Gap are Perfect Nations estimates in 2025 US dollars (KSh 129.30 to US$1.00).</p>
+    </div>
+  </section>
+<dialog class="md-dlg" aria-labelledby="md-dlg-h" data-subject="Request: The Nation Briefing for Kenya" data-what="the full Nation Briefing for Kenya">
+  <div class="md-dlg__in">
+    <button type="button" class="md-dlg__x" aria-label="Close"><span aria-hidden="true"></span></button>
+    <p class="md-eb"><svg class="md-pad" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="4.5" y="10.5" width="15" height="10" rx="2.2"/><path d="M8 10.5V7.6a4 4 0 0 1 8 0v2.9"/><circle cx="12" cy="15.4" r="1.4"/></svg> Request access</p>
+    <h2 class="md-h2" id="md-dlg-h">The Nation Briefing for Kenya</h2>
+    <p class="md-dlg__p">Tell us who you are. Perfect Nations replies from <b>contact@perfectnations.com</b>.</p>
+    <label class="md-dlg__f"><span>Your name</span><input type="text" name="name" autocomplete="name"></label>
+    <label class="md-dlg__f"><span>Organisation and role</span><input type="text" name="org" autocomplete="organization"></label>
+    <label class="md-dlg__f"><span>Why you would like it (optional)</span><textarea name="why" rows="3"></textarea></label>
+    <div class="md-dlg__b"><a class="md-btn" data-via="mail" href="mailto:contact@perfectnations.com?subject=Request%3A%20The%20Nation%20Briefing%20for%20Kenya">Write the email</a><a class="md-btn md-btn--ink" data-via="gmail" href="https://mail.google.com/" target="_blank" rel="noopener noreferrer">Gmail</a><a class="md-btn md-btn--ink" data-via="outlook" href="https://outlook.office.com/" target="_blank" rel="noopener noreferrer">Outlook</a><button type="button" class="md-btn md-btn--ink" data-via="copy">Copy address</button></div>
+    <p class="md-dlg__s">Nothing is stored on this site: the message opens in your own email. Scope and fees are agreed in writing before any work begins.</p>
+  </div>
+</dialog>
+</div>
+
+<script>
+/* The three mandates, v2.0: what moves, and only when it can be seen. ROOT is replaced by the page's root id. */
+(function () {
+  var R = document.getElementById('pn-md-briefing-kenya');
+  if (!R) { return; }
+  R.classList.add('md-js');
+  var still = window.matchMedia ? window.matchMedia('(prefers-reduced-motion: reduce)').matches : false;
+  var parts = R.querySelectorAll('.md-io, .md-rise');
+  var i;
+  /* figures that count up: each .md-n holds its real figure; with motion allowed it starts from data-from (or 0)
+     and counts to the figure when its band comes on screen */
+  var nums = R.querySelectorAll('.md-n');
+  if (!still) {
+    for (i = 0; i < nums.length; i++) {
+      nums[i].setAttribute('data-to', nums[i].textContent);
+      nums[i].textContent = nums[i].getAttribute('data-from') || '0';
+    }
+  }
+  function count(el) {
+    if (still || el.getAttribute('data-done')) { return; }
+    el.setAttribute('data-done', '1');
+    var to = parseInt(el.getAttribute('data-to'), 10);
+    var from = parseInt(el.getAttribute('data-from') || '0', 10);
+    var start = null;
+    function step(ts) {
+      if (start === null) { start = ts; }
+      var p = Math.min(1, (ts - start) / 2400);
+      el.textContent = String(Math.round(from + (to - from) * (1 - Math.pow(1 - p, 4))));
+      if (p < 1) { window.requestAnimationFrame(step); }
+    }
+    window.requestAnimationFrame(step);
+  }
+  function show(el) {
+    el.classList.add('is-in');
+    var n = el.querySelectorAll('.md-n');
+    for (var j = 0; j < n.length; j++) { count(n[j]); }
+  }
+  if (still || !('IntersectionObserver' in window)) {
+    for (i = 0; i < parts.length; i++) { show(parts[i]); }
+  } else {
+    var io = new IntersectionObserver(function (seen) {
+      seen.forEach(function (e) {
+        if (e.isIntersecting) { show(e.target); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.2 });
+    for (i = 0; i < parts.length; i++) { io.observe(parts[i]); }
+  }
+  /* the light that follows the cursor across the hero (laptops only) */
+  var hero = R.querySelector('.md-hero');
+  var fine = window.matchMedia ? window.matchMedia('(hover: hover) and (pointer: fine)').matches : false;
+  if (hero ? (fine ? !still : false) : false) {
+    hero.addEventListener('pointermove', function (e) {
+      var b = hero.getBoundingClientRect();
+      hero.style.setProperty('--mx', ((e.clientX - b.left) / b.width * 100).toFixed(1) + '%');
+      hero.style.setProperty('--my', ((e.clientY - b.top) / b.height * 100).toFixed(1) + '%');
+    });
+  }
+  /* deal tombstones: a tap, Enter or Space turns the card over */
+  function turn(t) {
+    var on = !t.classList.contains('is-turned');
+    t.classList.toggle('is-turned', on);
+    t.setAttribute('aria-pressed', on ? 'true' : 'false');
+  }
+  R.addEventListener('click', function (e) {
+    var t = e.target.closest ? e.target.closest('.md-tomb') : null;
+    if (!t || e.target.closest('a')) { return; }
+    turn(t);
+  });
+  R.addEventListener('keydown', function (e) {
+    var t = e.target;
+    if (!t.classList || !t.classList.contains('md-tomb')) { return; }
+    if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); turn(t); }
+  });
+})();
+</script>
+<script>
+/* The three mandates, v2.2: shared on request. "Request access" opens a dialog that writes to
+   contact@perfectnations.com from the visitor's own email (mail app, Gmail or Outlook), or copies the address.
+   Nothing is stored on the site. Without dialog support or without this script, the link opens the email itself.
+   Written without angle brackets or a literal ampersand, so the WordPress formatter leaves it alone. */
+(function () {
+  var R = document.getElementById('pn-md-briefing-kenya');
+  if (!R) { return; }
+  var dlg = R.querySelector('.md-dlg');
+  if (!dlg) { return; }
+  var TO = 'contact@perfectnations.com', AMP = String.fromCharCode(38);
+  var SUBJ = dlg.getAttribute('data-subject') || 'Request';
+  var WHAT = dlg.getAttribute('data-what') || 'the full mandate';
+  function val(n) { var e = dlg.querySelector('[name="' + n + '"]'); return e ? e.value.replace(/^\s+|\s+$/g, '') : ''; }
+  function body() {
+    var t = ['Dear Perfect Nations,', '', 'I would like to receive ' + WHAT + '.', ''];
+    if (val('why')) { t.push(val('why'), ''); }
+    t.push('Name: ' + val('name'), 'Organisation and role: ' + val('org'));
+    return t.join('\n');
+  }
+  function set(v, u) { var a = dlg.querySelector('[data-via="' + v + '"]'); if (a) { a.href = u; } }
+  function links() {
+    var s = encodeURIComponent(SUBJ), b = encodeURIComponent(body());
+    set('mail', 'mailto:' + TO + '?subject=' + s + AMP + 'body=' + b);
+    set('gmail', 'https://mail.google.com/mail/?view=cm' + AMP + 'fs=1' + AMP + 'to=' + TO + AMP + 'su=' + s + AMP + 'body=' + b);
+    set('outlook', 'https://outlook.office.com/mail/deeplink/compose?to=' + TO + AMP + 'subject=' + s + AMP + 'body=' + b);
+  }
+  function open(e) {
+    if (typeof dlg.showModal !== 'function') { return; }
+    e.preventDefault();
+    links();
+    dlg.showModal();
+    var f = dlg.querySelector('input');
+    if (f) { f.focus(); }
+  }
+  Array.prototype.forEach.call(R.querySelectorAll('.md-ask'), function (a) { a.addEventListener('click', open); });
+  dlg.addEventListener('input', links);
+  var x = dlg.querySelector('.md-dlg__x');
+  if (x) { x.addEventListener('click', function () { dlg.close(); }); }
+  dlg.addEventListener('click', function (e) { if (e.target === dlg) { dlg.close(); } });
+  var cp = dlg.querySelector('[data-via="copy"]');
+  if (cp) {
+    cp.addEventListener('click', function () {
+      function done() { cp.textContent = 'Copied'; }
+      if (navigator.clipboard) { navigator.clipboard.writeText(TO).then(done, function () { cp.textContent = TO; }); }
+      else { cp.textContent = TO; }
+    });
+  }
+})();
+</script>
