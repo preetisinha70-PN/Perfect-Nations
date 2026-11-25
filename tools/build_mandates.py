@@ -10,10 +10,18 @@ receives: each says that it was not commissioned by the nation's government and 
 No prices are shown ("Scope and fees are agreed in writing before any work begins", as on the ReDesign Studio page).
 
     python3 tools/build_mandates.py barbados              write pages/mandate-<kind>-<slug>.html (root pn-md-<kind>-<slug>)
+    python3 tools/build_mandates.py barbados --open       build the site pages in full, not locked
     python3 tools/build_mandates.py barbados --standalone DIR [--links FILE]
                                                          also write whole HTML documents to DIR, for sharing as
                                                          pages of their own; FILE (JSON) maps briefing, lab and
                                                          sovereign to the addresses the cross-links should use
+
+Shared on request (v2.2, Preeti Sinha, President and CEO, 24 Nov 2026: "Can we lock the pages of the three mandates
+... and put a dialog box to contact@perfectnations.com. I'm not ready to share these for free yet."): for a nation in
+LOCKED, each site page carries only its hero (what the mandate is, and the one figure) and, in place of the rest, the
+list of what is inside and Request access, which opens a dialog that writes to contact@perfectnations.com. The full
+pages are not in the site files at all. --standalone always writes the full pages, to send privately once a request
+is agreed. Note: this repository is public, so the words in tools/mandates/ can still be read on GitHub.
 
 Site addresses: https://perfectnations.com/blueprints/<slug>/nation-briefing/, /blueprint-lab/, /sovereign-mandate/.
 Every change goes through a pull request "For approval: The three mandates for <Nation> vX.Y, ...".
@@ -27,13 +35,19 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 HERE = ROOT / 'tools' / 'mandates'
 PAGES = ROOT / 'pages'
-VERSION = '2.1'  # v2.1: our AI is called Perfect Nations Intelligence; other people's programmes keep their own word (Preeti Sinha, President and CEO, 24 Nov 2026)
+VERSION = '2.2'  # v2.2: shared on request: the site shows the hero and a request dialog (Preeti Sinha, President and CEO, 24 Nov 2026)
+# v2.1: our AI is called Perfect Nations Intelligence; other people's programmes keep their own word (Preeti Sinha, President and CEO, 24 Nov 2026)
 KINDS = {
     'briefing': ('The Nation Briefing', 'nation-briefing', 'Mandate I: three hours, the Gap named and sized'),
     'lab': ('The Blueprint Lab', 'blueprint-lab', 'Mandate II: three days, the structure drawn'),
     'sovereign': ('The Sovereign Mandate', 'sovereign-mandate', 'Mandate III: end to end, a structure ready for market'),
 }
 NAMES = {'barbados': 'Barbados'}
+LOCKED = {'barbados'}   # v2.2: nations whose mandate pages are shared on request; build with --open to publish in full
+CONTACT = 'contact@perfectnations.com'
+SHORT = {'briefing': 'Nation Briefing', 'lab': 'Blueprint Lab', 'sovereign': 'Sovereign Mandate'}
+PADLOCK = ('<svg class="md-pad" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="4.5" y="10.5" width="15" height="10" rx="2.2"/>'
+           '<path d="M8 10.5V7.6a4 4 0 0 1 8 0v2.9"/><circle cx="12" cy="15.4" r="1.4"/></svg>')
 FONTS = ('<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>'
          '<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&amp;'
          'family=Barlow+Semi+Condensed:wght@400;500;600&amp;display=swap" rel="stylesheet">')
@@ -85,7 +99,58 @@ def tape(slug):
             '<ul aria-hidden="true">%s</ul></div></div>' % (NAMES[slug], items, again))
 
 
-def build(slug, standalone=None, links=None):
+def lock(body, kind, slug):
+    """v2.2: the page as the site shows it while the nation is in LOCKED: the hero, then what is inside (each band's
+    eyebrow, nothing more), Request access and the dialog, then the close (the three mandates and the fine print).
+    Every other band is left out of the file."""
+    name, title, short = NAMES[slug], KINDS[kind][0], SHORT[kind]
+    a = body.index('</header>') + len('</header>')
+    b = body.index('<section class="md-close"')
+    hero, middle, close = body[:a], body[a:b], body[b:]
+    inside = []
+    for m in re.finditer(r'<section class="md-band[^"]*"[^>]*>.*?<p class="md-eb">(.*?)</p>', middle, re.S):
+        eb = re.sub(r'<i>(.*?)</i>', r'<b>\1</b> ', m.group(1)).strip()
+        inside.append('<li>%s<span>%s</span><i aria-hidden="true"></i></li>' % (PADLOCK, eb))
+    subject = 'Request: The %s for %s' % (short, name)
+    what = 'the full %s for %s' % (short, name)
+    mail = 'mailto:%s?subject=%s' % (CONTACT, subject.replace(' ', '%20').replace(':', '%3A'))
+    band = (
+        '<section class="md-band md-ivory md-lock" aria-labelledby="md-lock-h">\n'
+        '    <div class="md-in md-lock__g">\n'
+        '      <div class="md-lock__c">\n'
+        '        <p class="md-eb">%s Shared on request</p>\n'
+        '        <h2 class="md-h2" id="md-lock-h">The full %s for %s is shared on request.</h2>\n'
+        '        <p class="md-lock__p">%d sections, prepared for %s. Tell us who you are, and Perfect Nations will send it to you.</p>\n'
+        '        <div class="md-acts"><a class="md-btn md-ask" href="%s">Request access</a></div>\n'
+        '        <p class="md-lock__m">Or write to <a href="mailto:%s">%s</a></p>\n'
+        '      </div>\n'
+        '      <ol class="md-lock__l" aria-label="Inside the full %s">%s</ol>\n'
+        '    </div>\n'
+        '  </section>\n'
+        % (PADLOCK, short, name, len(inside), name, mail, CONTACT, CONTACT, title, ''.join(inside)))
+    dialog = (
+        '<dialog class="md-dlg" aria-labelledby="md-dlg-h" data-subject="%s" data-what="%s">\n'
+        '  <div class="md-dlg__in">\n'
+        '    <button type="button" class="md-dlg__x" aria-label="Close"><span aria-hidden="true"></span></button>\n'
+        '    <p class="md-eb">%s Request access</p>\n'
+        '    <h2 class="md-h2" id="md-dlg-h">The %s for %s</h2>\n'
+        '    <p class="md-dlg__p">Tell us who you are. Perfect Nations replies from <b>%s</b>.</p>\n'
+        '    <label class="md-dlg__f"><span>Your name</span><input type="text" name="name" autocomplete="name"></label>\n'
+        '    <label class="md-dlg__f"><span>Organisation and role</span><input type="text" name="org" autocomplete="organization"></label>\n'
+        '    <label class="md-dlg__f"><span>Why you would like it (optional)</span><textarea name="why" rows="3"></textarea></label>\n'
+        '    <div class="md-dlg__b"><a class="md-btn" data-via="mail" href="%s">Write the email</a>'
+        '<a class="md-btn md-btn--ink" data-via="gmail" href="https://mail.google.com/" target="_blank" rel="noopener noreferrer">Gmail</a>'
+        '<a class="md-btn md-btn--ink" data-via="outlook" href="https://outlook.office.com/" target="_blank" rel="noopener noreferrer">Outlook</a>'
+        '<button type="button" class="md-btn md-btn--ink" data-via="copy">Copy address</button></div>\n'
+        '    <p class="md-dlg__s">Nothing is stored on this site: the message opens in your own email. Scope and fees are agreed in writing before any work begins.</p>\n'
+        '  </div>\n'
+        '</dialog>\n'
+        % (subject, what, PADLOCK, short, name, CONTACT, mail))
+    i = close.rindex('</div>')
+    return hero + '\n' + band + close[:i] + dialog + close[i:]
+
+
+def build(slug, standalone=None, links=None, full=False):
     name = NAMES[slug]
     css = (HERE / 'style.css').read_text(encoding='utf-8')
     out = []
@@ -93,13 +158,21 @@ def build(slug, standalone=None, links=None):
         rid = 'pn-md-%s-%s' % (kind, slug)
         body = (HERE / ('%s-%s.html' % (slug, kind))).read_text(encoding='utf-8')
         body = body.replace('<!--md:tape-->', tape(slug)).replace('<!--md:stars-->', stars(slug))
-        body = body.replace('__ROOT__', rid)
-        body += '\n<script>\n%s</script>\n' % (HERE / 'script.js').read_text(encoding='utf-8').replace("'ROOT'", "'%s'" % rid)
+        locked = slug in LOCKED and not full
+        site = lock(body, kind, slug) if locked else body
+        js = '\n<script>\n%s</script>\n' % (HERE / 'script.js').read_text(encoding='utf-8').replace("'ROOT'", "'%s'" % rid)
+        body = body.replace('__ROOT__', rid) + js
+        site = site.replace('__ROOT__', rid) + js
+        if locked:
+            site += '<script>\n%s</script>\n' % (HERE / 'lock.js').read_text(encoding='utf-8').replace("'ROOT'", "'%s'" % rid)
         banner = ('<!-- ===========================================================================\n'
                   'PERFECT NATIONS - %s - %s - v%s - %s\n'
                   'perfectnations.com/blueprints/%s/%s/ . Root id %s. %s.\n'
                   'An illustration of what a nation receives from the ReDesign Studio: not commissioned by the Government of\n'
                   '%s; no terms agreed. Built by tools/build_mandates.py from tools/mandates/ (never edit this file by hand).\n'
+                  'v2.2 (24 Nov 2026): shared on request. The site shows the hero, what is inside and Request access, which\n'
+                  'opens a dialog to contact@perfectnations.com; the rest is not in this file (Preeti Sinha, President and CEO:\n'
+                  '"I am not ready to share these for free yet"). Built %s.\n'
                   'v2.0 (24 Nov 2026): lighter and livelier in the same look: the answer in one gold figure that counts up, the\n'
                   'live tape of the nation\'s deals, the seven stars of the logo filling to each standard, deal tombstones that turn\n'
                   'over, steps on a drawn gold line, tap to open, a light that follows the cursor, rows that swipe on phones (Preeti\n'
@@ -108,17 +181,20 @@ def build(slug, standalone=None, links=None):
                   'sets the headings in capitals (Preeti Sinha, President and CEO: "There is a problem with the text").\n'
                   'v1.0 (24 Nov 2026, Preeti Sinha, President and CEO): the three mandates for %s, with AI after the finance.\n'
                   '=========================================================================== -->\n'
-                  % (title.upper(), name.upper(), VERSION, date.today().isoformat(), slug, path, rid, line, name, name))
+                  % (title.upper(), name.upper(), VERSION, date.today().isoformat(), slug, path, rid, line, name,
+                     'locked, on request' if locked else 'in full', name))
         page = '%s<style>\n%s</style>\n%s' % (banner, css.replace('#R', '#' + rid), body)
-        bad = [(i, c) for i, c in enumerate(page) if ord(c) > 126]
-        if bad:
-            sys.exit('%s: non-ASCII character %r at %d' % (kind, bad[0][1], bad[0][0]))
+        site_page = '%s<style>\n%s</style>\n%s' % (banner, css.replace('#R', '#' + rid), site)
+        for pg in (page, site_page):
+            bad = [(i, c) for i, c in enumerate(pg) if ord(c) > 126]
+            if bad:
+                sys.exit('%s: non-ASCII character %r at %d' % (kind, bad[0][1], bad[0][0]))
         if re.search(r"\b(pay|pays|paid)\b", re.sub(r'<[^>]+>', ' ', body), re.I):
             sys.exit('%s: write "finance", not "pay"' % kind)
         f = PAGES / ('mandate-%s-%s.html' % (kind, slug))
-        f.write_text(page, encoding='utf-8')
+        f.write_text(site_page, encoding='utf-8')
         out.append(f)
-        print('%s: %d characters' % (f.relative_to(ROOT), len(page)))
+        print('%s: %d characters%s' % (f.relative_to(ROOT), len(site_page), ' (locked: shared on request)' if locked else ''))
         if standalone:
             doc = page
             for k, url in (links or {}).items():
@@ -141,4 +217,4 @@ if __name__ == '__main__':
         sys.exit(__doc__)
     sa = args[args.index('--standalone') + 1] if '--standalone' in args else None
     ln = json.loads(Path(args[args.index('--links') + 1]).read_text()) if '--links' in args else None
-    build(args[0], sa, ln)
+    build(args[0], sa, ln, full='--open' in args)
