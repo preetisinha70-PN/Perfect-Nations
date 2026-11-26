@@ -1,14 +1,14 @@
 {
  "nation": "Syria",
  "page_version": "1.0",
- "updated": "2026-11-24",
+ "updated": "2026-11-26",
  "steward": {
   "name": "Nour Kassab",
   "role": "Nation Steward of Syria"
  },
  "population": 25620427,
  "hero": {
-  "lead": "A nation of 25.6 million rebuilding after fourteen years of conflict, where the World Bank estimates reconstruction at $216 billion and returned with $245 million in new financing in 2026.",
+  "lead": "A nation of 25.6 million rebuilding after fourteen years of conflict, where the World Bank estimates reconstruction at $216 billion and approved $345 million in new grants in 2026.",
   "stats": [
    {
     "value": "$216bn",
@@ -47,18 +47,64 @@
     "text": "Grant for public financial management, March 2026",
     "source": "World Bank, 2026",
     "url": "https://www.worldbank.org/en/news/press-release/2026/03/11/new-20-million-grant-to-enhance-public-financial-management-for-syria-s-recovery-and-development"
+   },
+   {
+    "value": "$403M",
+    "money": true,
+    "text": "Six concessional Saudi Fund for Development loans for health, power, housing and water, announced November 2026",
+    "source": "Saudi Fund for Development, 2026",
+    "url": "https://www.bernama.com/en/press/news.php?id=2630770"
+   },
+   {
+    "value": "$760M",
+    "money": true,
+    "text": "Qatar Fund for Development contributions to the electricity sector, over $760 million by July 2025",
+    "source": "Qatar Fund for Development, 2025",
+    "url": "https://www.qatarfund.org.qa/project/in-implementation-of-the-directives-of-his-highness-the-emirqatar-fund-for-development-announces-the-launch-of-the-second-phase-of-electric-power-support-in-syria/"
    }
   ],
   "register": [
    {
+    "cat": "humanitarian",
+    "status": "Appeal",
+    "tone": "appeal",
+    "name": "Humanitarian Needs and Response Plan 2026",
+    "detail": "United Nations and partners · April 2026 · 8.6 million people targeted of 15.6 million in need · $1.5bn prioritised · $478.3M received by 11 May 2026 (16.4%)",
+    "amount": "$2.92bn",
+    "money": true,
+    "note": "An appeal, not committed money; funding received is the latest figure on the plan page (11 May 2026).",
+    "text": "The plan of the United Nations and its partners for humanitarian aid in Syria in 2026, seeking $2.92 billion to reach 8.6 million of the 15.6 million people in need, with 4.3 million people and $1.5 billion prioritised. It funds emergency aid across sectors, including health, shelter and cash assistance, for the people furthest from the seven standards.",
+    "by": [
+     "United Nations",
+     "OCHA"
+    ],
+    "url": "https://humanitarianaction.info/plan/1518"
+   },
+   {
     "cat": "multi",
     "status": "Approved",
     "tone": "active",
-    "name": "Water and health services",
-    "detail": "World Bank · Approved April 2026",
+    "name": "Syria Financial Sector Modernization Project (P517399)",
+    "detail": "IDA grant · Board approval announced 7 August 2026 · payment and financial market infrastructure · Central Bank core banking system",
+    "amount": "$100M",
+    "money": true,
+    "note": "Financial infrastructure, not one standard; livelihood through access to digital payments.",
+    "text": "A World Bank grant to finance payment and financial market infrastructure and the core banking system of the Central Bank, with system-wide asset quality reviews of public and private banks. It aims to bring at least 500,000 people and businesses, including 150,000 women, to use digital payments actively. It serves no single standard directly; it bears on livelihood by widening access to financial services.",
+    "by": [
+     "World Bank"
+    ],
+    "url": "https://www.worldbank.org/en/news/press-release/2026/08/07/syria-world-bank-approves-us-100-million-grant-for-financial-sector-modernization"
+   },
+   {
+    "cat": "multi",
+    "status": "Approved",
+    "tone": "active",
+    "name": "Water security and health system recovery",
+    "detail": "Two IDA grants · Board approval 23 April 2026 · water $150M · health $75M · about 4.5 million people",
     "amount": "$225M",
     "money": true,
-    "text": "Restores water and health services.",
+    "note": "Water and health: water and wastewater in Idlib, Homs, Hama and Damascus; 150 primary health care centres.",
+    "text": "Two World Bank grants: the Syria Emergency Water Security and Resilient Services Project ($150 million) restores bulk water supply and wastewater infrastructure in Idlib, Homs, Hama and Damascus, and the Syria Health System Recovery and Strengthening Project ($75 million) restores primary care and maternal, newborn and child health and nutrition services at 150 primary health care centres. Both are expected to benefit about 4.5 million Syrians, and they serve the water and health standards.",
     "by": [
      "World Bank"
     ],
@@ -68,15 +114,156 @@
     "cat": "multi",
     "status": "Approved",
     "tone": "active",
-    "name": "Public financial management",
-    "detail": "World Bank grant · March 2026",
+    "name": "Public Financial Management Capacity Strengthening Project",
+    "detail": "IDA grant · Approved 5 March 2026 · Syria Integrated Financial Management Information System",
     "amount": "$20M",
     "money": true,
-    "text": "Strengthens public financial management for recovery.",
+    "note": "Budget-wide: public finance systems, not one standard.",
+    "text": "A World Bank grant to improve core public financial management and procurement functions, strengthen budget controls and transparency, and set up the Syria Integrated Financial Management Information System. It serves none of the seven standards directly; it builds the systems through which public money for every standard is budgeted and spent.",
     "by": [
      "World Bank"
     ],
     "url": "https://www.worldbank.org/en/news/press-release/2026/03/11/new-20-million-grant-to-enhance-public-financial-management-for-syria-s-recovery-and-development"
+   },
+   {
+    "cat": "multi",
+    "status": "Approved",
+    "tone": "active",
+    "name": "Syria Electricity Emergency Project (SEEP)",
+    "detail": "IDA grant · Announced 25 June 2025 · two 400 kV interconnectors to Jordan and Türkiye · substations · carried out by PETDE",
+    "amount": "$146M",
+    "money": true,
+    "note": "Energy: the grid that carries power to homes.",
+    "text": "A World Bank grant to rehabilitate damaged transmission lines and transformer substations, including two 400 kV interconnector lines that restore links to Jordan and Türkiye, with spare parts, maintenance equipment and technical assistance. It targets the areas that host the highest numbers of returning refugees and internally displaced people, and serves the energy standard.",
+    "by": [
+     "World Bank"
+    ],
+    "url": "https://www.worldbank.org/en/news/press-release/2025/06/25/syria-world-bank-us-146-million-grant-to-improve-electricity-supply-and-support-sector-development"
+   },
+   {
+    "cat": "bilat",
+    "status": "Signed",
+    "tone": "active",
+    "name": "Six concessional development loans",
+    "detail": "Saudi Fund for Development with the Ministry of Finance · announced 6 November 2026 · health $100M · civil defence $105M · Aleppo power $90M · housing $60M · water $30M · public finance $18M",
+    "amount": "$403M",
+    "money": true,
+    "note": "Rates, tenors and grace periods are not published.",
+    "text": "Six concessional loans from the Saudi Fund for Development to rehabilitate essential infrastructure and public services: hospitals and health centres, 25 civil defence centres, generating units at the Aleppo Thermal Power Plant for about 5 million people, up to 10,000 damaged homes, 300,000 smart water meters for about 1.5 million people, and the digital transformation of the Ministry of Finance. They serve health, energy, shelter and water.",
+    "by": [
+     "Saudi Fund for Development"
+    ],
+    "url": "https://www.bernama.com/en/press/news.php?id=2630770"
+   },
+   {
+    "cat": "bilat",
+    "status": "Announced",
+    "tone": "pipeline",
+    "name": "EU financial support for 2026 and 2027",
+    "detail": "Announced 9 January 2026 · around €620M · humanitarian aid, early recovery and bilateral support",
+    "amount": "€620M",
+    "money": true,
+    "note": "A two-year envelope; amounts by year and by sector are not published.",
+    "text": "The package of around €620 million that the European Union announced for 2026 and 2027, covering humanitarian aid, early recovery and bilateral support for socio-economic recovery. It follows the €2.5 billion pledged by the EU at the ninth Brussels Conference of 17 March 2025, for Syria and the region. Its split across the seven standards is not yet published.",
+    "by": [
+     "European Union"
+    ],
+    "url": "https://north-africa-middle-east-gulf.ec.europa.eu/news/statement-president-von-der-leyen-president-costa-and-syrian-president-al-sharaa-2026-01-09_en"
+   },
+   {
+    "cat": "bilat",
+    "status": "Granted",
+    "tone": "granted",
+    "name": "Qatar Fund for Development electricity support",
+    "detail": "Gas for power · phase one from March 2025, $63.75M through Jordan, 400 MW at Deir Ali for 50 days · phase two from 2 August 2025, 800 MW through Azerbaijan and Türkiye for one year",
+    "amount": "$760M",
+    "money": true,
+    "note": "Over $760 million to the electricity sector, as stated by the Fund on 31 July 2025; the cost of phase two is not published.",
+    "text": "Qatar finances natural gas for Syrian power stations: a first phase through Jordan for 400 MW at the Deir Ali plant, and a second phase from August 2025 through Azerbaijan and Türkiye for 800 MW over one year, which the Fund expected to reach more than 5 million subscribers. The Fund puts its contributions to the Syrian electricity sector at over $760 million. It serves the energy standard.",
+    "by": [
+     "Qatar Fund for Development"
+    ],
+    "url": "https://www.qatarfund.org.qa/project/in-implementation-of-the-directives-of-his-highness-the-emirqatar-fund-for-development-announces-the-launch-of-the-second-phase-of-electric-power-support-in-syria/"
+   },
+   {
+    "cat": "bilat",
+    "status": "Committed",
+    "tone": "granted",
+    "name": "Settlement of arrears to the World Bank Group",
+    "detail": "Joint statement of the Ministries of Finance of Saudi Arabia and Qatar · 27 April 2025 · about $15M",
+    "amount": "$15M",
+    "money": true,
+    "note": "The statement commits to settle; the date of payment is not on it.",
+    "text": "Saudi Arabia and Qatar committed to settle the outstanding arrears of Syria to the World Bank Group, about $15 million, to pave the way for the Bank to resume support and operations in Syria. It finances no standard directly; it opened the way for the World Bank grants for electricity, water, health and public finance on this register.",
+    "by": [
+     "Ministry of Finance, Saudi Arabia",
+     "Ministry of Finance, Qatar"
+    ],
+    "url": "https://www.mof.gov.sa/en/w/joint-press-statement-by-the-kingdom-of-saudi-arabia-and-the-state-of-qatar"
+   },
+   {
+    "cat": "private",
+    "status": "Signed",
+    "tone": "active",
+    "name": "Wadiyan al-Rabi solar and battery storage (760 MW)",
+    "detail": "Al-Harafi Contracting Company with the Syrian Electricity Company · signed 5 August 2026 · three plants, 760 MW · 1,077 MWh of storage · Rural Damascus",
+    "amount": "$1bn",
+    "money": true,
+    "note": "Reported by Enab Baladi from the Ministry of Energy; valued at up to $1 billion.",
+    "text": "Agreements for three solar plants with a combined 760 MW and 1,077 MWh of battery storage at Wadiyan al-Rabi in Rural Damascus, signed by a Riyadh-based contractor and the Syrian Electricity Company and reported as worth up to $1 billion. They are designed to add daytime and stored power to the national grid, and serve the energy standard.",
+    "by": [
+     "Al-Harafi Contracting Company",
+     "Syrian Electricity Company"
+    ],
+    "url": "https://english.enabbaladi.net/archives/2026/08/syrian-electricity-signs-1-billion-saudi-solar-deals/"
+   },
+   {
+    "cat": "private",
+    "status": "Signed",
+    "tone": "active",
+    "name": "Damascus International Airport concession",
+    "detail": "Final concession contracts · 24 November 2025 · UCC Holding-led consortium with Cengiz, Kalyon and Assets Investments · 31 million passengers a year at full build-out",
+    "amount": "$4bn",
+    "money": true,
+    "note": "Terminal 1 works expected to be completed by the end of 2026; the concession term is not published.",
+    "text": "A concession for the redevelopment and operation of Damascus International Airport, valued at $4 billion, signed by the General Authority of Civil Aviation with a consortium led by UCC Holding. It is designed to raise capacity to 31 million passengers a year and is expected to create more than 90,000 direct and indirect jobs. It serves the livelihood standard through jobs and delivers none of the other standards directly.",
+    "by": [
+     "UCC Holding",
+     "General Authority of Civil Aviation"
+    ],
+    "url": "https://uccholding.com/media/read/usd-4-billion-investment-and-a-capacity-of-31-million"
+   },
+   {
+    "cat": "private",
+    "status": "Signed",
+    "tone": "active",
+    "name": "Eight power plants, 5,000 MW concession",
+    "detail": "Final concession agreements · 6 November 2025 · UCC Holding-led consortium with Kalyon, Cengiz and Power International (USA) · four gas plants, 4,000 MW · solar, 1,000 MW",
+    "amount": "",
+    "money": false,
+    "note": "No investment value is stated with the final agreements; $7 billion was reported for the memorandum of 29 May 2025 (news).",
+    "text": "Concession agreements, signed by the Ministry of Energy, for a consortium led by UCC Holding to build and operate four gas-fired combined-cycle plants in North Aleppo, Deir Ezzor, Zayzoun and Mhardeh and 1,000 MW of solar projects in Wadiyan al-Rabi, Deir Ezzor, Aleppo and Homs. The 5,000 MW planned compares with generation of just over 3,000 MW in January 2026. It serves the energy standard.",
+    "by": [
+     "UCC Holding",
+     "Ministry of Energy"
+    ],
+    "url": "https://www.zawya.com/en/press-release/companies-news/the-syrian-ministry-of-energy-signs-the-final-concession-agreements-to-build-and-operate-eight-power-plants-uoaav95l"
+   },
+   {
+    "cat": "private",
+    "status": "Signed",
+    "tone": "active",
+    "name": "Port of Tartus concession",
+    "detail": "30-year concession · signed 13 July 2025 · DP World with the General Authority for Land and Sea Ports · $800M over the concession",
+    "amount": "$800M",
+    "money": true,
+    "note": "No jobs figure is published.",
+    "text": "A 30-year concession under which DP World will invest $800 million in the Port of Tartus, in new infrastructure, cargo-handling equipment and digital systems. It serves none of the seven standards directly; it bears on livelihood through trade and on the cost of the imports every standard needs.",
+    "by": [
+     "DP World",
+     "General Authority for Land and Sea Ports"
+    ],
+    "url": "https://www.dpworld.com/en/news/dp-world-to-develop-syrias-tartus-port-under-landmark-30-year-deal"
    }
   ]
  },
@@ -122,7 +309,50 @@
  },
  "enterprises": {
   "heading": "Already working in Syria.",
-  "items": []
+  "items": [
+   {
+    "standard": "Food",
+    "name": "Nutra-GreeniX",
+    "text": "Founded in 2024, it supplies nutrition products for livestock and raised a $200,000 seed round in February 2026 to widen its support to farmers and livestock breeders across Syria.",
+    "source": "Wamda, 2026",
+    "url": "https://www.wamda.com/index.php/en/2026/02/syrian-agritech-nutra-greenix-secures-200k-seed-round"
+   },
+   {
+    "standard": "Shelter",
+    "name": "Salehli",
+    "text": "Runs a digital marketplace that connects households with maintenance and renovation professionals, and reached more than 15,000 users, 3,500 service professionals and over 10,000 service requests in under a year.",
+    "source": "Wamda, 2026",
+    "url": "https://www.wamda.com/en/2026/10/salehli-raises-100000-expand-home-maintenance-services-syria"
+   },
+   {
+    "standard": "Education",
+    "name": "Professor",
+    "text": "A website and app for students in the twelfth grade, with video lessons by teachers covering the Baccalaureate curriculum.",
+    "source": "AKDN, 2025",
+    "url": "https://the.akdn/en/resources-media/whats-new/spotlights/entrepreneurs-powering-syrias-recovery"
+   },
+   {
+    "standard": "Health",
+    "name": "Alo Hakeem",
+    "text": "Runs a digital platform that connects patients with licensed home healthcare providers for medical consultations, nursing, physiotherapy, elderly care, laboratory tests and imaging in Aleppo, Damascus and Hama.",
+    "source": "Wamda, 2026",
+    "url": "https://www.wamda.com/en/2026/10/syrian-healthtech-alo-hakeem-raises-165000-pre-seed-led-ebla-ventures"
+   },
+   {
+    "standard": "Livelihood",
+    "name": "The First Microfinance Bank (Syria)",
+    "text": "A microfinance bank that, its chief executive said in November 2025, never stopped operating through the war and introduced social loans for food and fuel after December 2024.",
+    "source": "Paperjam, 2025",
+    "url": "https://en.paperjam.lu/article/special-relationship-is-driving-low-default-rates-in-war-zones"
+   },
+   {
+    "standard": "Livelihood",
+    "name": "Wassel",
+    "text": "A goods delivery business in Salamieh run by five women, using only electric vehicles, that grew from three tuk-tuks with a grant and angel investment and employs five young drivers.",
+    "source": "AKDN, 2025",
+    "url": "https://the.akdn/en/resources-media/whats-new/spotlights/entrepreneurs-powering-syrias-recovery"
+   }
+  ]
  },
  "coverage": {
   "set_by": "Education",
@@ -248,5 +478,5 @@
  ],
  "dispatches": [],
  "checked": "2026-11-24T04:29Z",
- "reviewed": "2026-11-12T19:00Z"
+ "reviewed": "2026-11-26T07:32Z"
 }
