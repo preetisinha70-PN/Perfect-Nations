@@ -1,18 +1,18 @@
 {
  "nation": "Palestine",
  "page_version": "1.0",
- "updated": "2026-11-21",
+ "updated": "2026-11-26",
  "steward": {
   "name": "Lina Khalidi",
   "role": "Nation Steward of Palestine"
  },
  "population": 5413596,
  "hero": {
-  "lead": "Five million people in the West Bank and Gaza, where the World Bank, the EU and the UN assessed damages, losses and needs at $53 billion in February 2025.",
+  "lead": "Five million people in the West Bank and Gaza, where the EU, the UN and the World Bank put Gaza’s recovery and reconstruction needs at $71.4 billion over the next decade in April 2026.",
   "stats": [
    {
-    "value": "$53bn",
-    "label": "Damages, losses and needs assessed, February 2025"
+    "value": "$71.4bn",
+    "label": "Gaza recovery and reconstruction needs, April 2026"
    },
    {
     "value": "91.2%",
@@ -28,11 +28,25 @@
   "heading": "Reconstruction at a scale that needs every source of capital.",
   "record": [
    {
-    "value": "$53bn",
+    "value": "$71.4bn",
     "money": true,
-    "text": "Damages, losses and needs in Gaza and the West Bank, assessed by the World Bank, the EU and the UN",
-    "source": "World Bank, 2025",
-    "url": "https://www.worldbank.org/en/news/press-release/2025/02/18/new-report-assesses-damages-losses-and-needs-in-gaza-and-the-west-bank"
+    "text": "Recovery and reconstruction needs in Gaza over the next decade, assessed by the EU, the UN and the World Bank, April 2026",
+    "source": "EU, UN and World Bank, 2026",
+    "url": "https://palestine.un.org/en/node/314095"
+   },
+   {
+    "value": "€883.6M",
+    "money": true,
+    "text": "Financial contributions brought together for Gaza’s early recovery in the Team Gaza Initiative, July 2026",
+    "source": "European Commission, 2026",
+    "url": "https://north-africa-middle-east-gulf.ec.europa.eu/news/eu-steps-international-support-palestinians-major-initiative-gazas-early-recovery-and-stronger-2026-07-13_en"
+   },
+   {
+    "value": "$4.06bn",
+    "money": true,
+    "text": "Required by the 2026 Flash Appeal for the occupied Palestinian territory, published December 2025",
+    "source": "OCHA, 2025",
+    "url": "https://www.ochaopt.org/content/flash-appeal-occupied-palestinian-territory-2026"
    },
    {
     "value": "$60M",
@@ -50,6 +64,75 @@
    }
   ],
   "register": [
+   {
+    "cat": "humanitarian",
+    "status": "Appeal",
+    "tone": "appeal",
+    "name": "Flash Appeal for the Occupied Palestinian Territory 2026",
+    "detail": "Published 16 December 2025 · For 2026 · Gaza $3.72 billion · West Bank $351.2 million · 201 partners",
+    "amount": "$4.06B",
+    "money": true,
+    "note": "3.62 million people in need; 2.97 million targeted",
+    "text": "The 2026 appeal of 201 UN agencies, international and national NGOs and the Red Cross and Red Crescent Movement for Gaza and the West Bank. It finances food assistance, health and nutrition, water and sanitation, shelter, education, cash and protection. It reaches food, water, shelter, education and health.",
+    "by": [
+     "UN OCHA",
+     "UN agencies and partners"
+    ],
+    "url": "https://www.ochaopt.org/content/flash-appeal-occupied-palestinian-territory-2026"
+   },
+   {
+    "cat": "humanitarian",
+    "status": "Appeal",
+    "tone": "appeal",
+    "name": "UNRWA occupied Palestinian territory Flash Appeal 2026",
+    "detail": "For 2026 · Gaza and the West Bank",
+    "amount": "$1.26B",
+    "money": true,
+    "note": "Emergency assistance for Palestine refugees in Gaza and the West Bank",
+    "text": "The 2026 emergency appeal of UNRWA, the UN agency for Palestine refugees, for Gaza and the West Bank. In Gaza it finances food and emergency cash, primary health care and nutrition, water and sanitation, temporary learning spaces, collective shelters and cash-for-work; in the West Bank, cash for shelter and basic needs, food, education and emergency health. It reaches food, water, shelter, education, health and livelihood.",
+    "by": [
+     "UNRWA"
+    ],
+    "url": "https://reliefweb.int/report/occupied-palestinian-territory/unrwa-occupied-palestinian-territory-flash-appeal-2026"
+   },
+   {
+    "cat": "multi",
+    "status": "Active",
+    "tone": "active",
+    "name": "Palestinian Fund for Reconstruction and Development (PFRD)",
+    "detail": "World Bank multi-donor trust fund · $241 million mobilised as of September 2026 · 92% of paid-in funds committed",
+    "amount": "$241M",
+    "money": true,
+    "note": "Canada, France, Iceland, Japan, Norway, Sweden, Switzerland and the United Kingdom",
+    "text": "The World Bank restructured the PURSE multi-donor trust fund into the PFRD at the Palestinian Authority’s request. Its objective is to strengthen sustainable recovery and reconstruction, economic recovery and social resilience in the West Bank and Gaza. It is a pooled fund: the source names no single standard.",
+    "by": [
+     "World Bank",
+     "Canada",
+     "France",
+     "Iceland",
+     "Japan",
+     "Norway",
+     "Sweden",
+     "Switzerland",
+     "United Kingdom"
+    ],
+    "url": "https://www.worldbank.org/ext/en/country/westbankandgaza"
+   },
+   {
+    "cat": "multi",
+    "status": "Approved",
+    "tone": "active",
+    "name": "Replenishment of the World Bank program for the West Bank and Gaza",
+    "detail": "Approved by the Board of Executive Directors 30 June 2026",
+    "amount": "$300M",
+    "money": true,
+    "note": "Gaza early recovery, West Bank services and jobs, and fiscal support",
+    "text": "A $300 million replenishment of the World Bank’s program for the West Bank and Gaza. It supports an integrated multi-sectoral early recovery program in Gaza, subject to Board endorsement of the resumption of activities; investments in essential services and job creation in the West Bank; and fiscal support. It reaches livelihood through job creation.",
+    "by": [
+     "World Bank"
+    ],
+    "url": "https://www.worldbank.org/ext/en/country/westbankandgaza"
+   },
    {
     "cat": "multi",
     "status": "Approved",
@@ -77,6 +160,195 @@
      "World Bank"
     ],
     "url": "https://projects.worldbank.org/en/projects-operations/project-detail/P503036"
+   },
+   {
+    "cat": "multi",
+    "status": "Active",
+    "tone": "active",
+    "name": "Palestinian Partnership for Infrastructure Development Multi-Donor Trust Fund (PID MDTF)",
+    "detail": "Launched 2012 · 18 investment operations co-financed, eight active · Nine partners",
+    "amount": "$299M",
+    "money": true,
+    "note": "Channelled since 2012",
+    "text": "A World Bank multi-donor trust fund for Palestinian infrastructure that has channelled $299 million since its launch in 2012. Its current allocations include $5 million for integrated solid waste management and $5 million for ASPIRE 3, an energy operation. It reaches energy, the standard furthest from reach.",
+    "by": [
+     "World Bank"
+    ],
+    "url": "https://www.worldbank.org/ext/en/country/westbankandgaza"
+   },
+   {
+    "cat": "regional",
+    "status": "Signed",
+    "tone": "active",
+    "name": "Solar Power Field Project",
+    "detail": "Signed 19 June 2026, IsDB Group Annual Meetings, Baku · Two plants, 20 MW, with 55 MWh of storage",
+    "amount": "$22M",
+    "money": true,
+    "note": "Total project cost $37 million, with other funders and the Palestinian government",
+    "text": "An agreement with the Islamic Development Bank for two solar power plants with a total capacity of 20 megawatts and 55 megawatt-hours of energy storage, implemented through the Palestinian Energy and Natural Resources Authority. It reaches energy, the standard furthest from reach.",
+    "by": [
+     "Islamic Development Bank"
+    ],
+    "url": "https://www.isdb.org/news/isdb-signs-development-financing-agreements-with-member-countries-during-the-2026-isdb-group-annual-meetings-in-baku"
+   },
+   {
+    "cat": "regional",
+    "status": "Signed",
+    "tone": "active",
+    "name": "EU Palestine facility for local banks",
+    "detail": "8 June 2026 · Bank of Palestine $150M · Quds Bank $100M · Palestine Investment Bank $70M · The National Bank $50M · Cairo Amman Bank $25M · €2.1M technical assistance",
+    "amount": "$395M",
+    "money": true,
+    "note": "Part of the European Commission’s recovery and resilience programme",
+    "text": "Five sub-loans to local banks, part structured as sub-debt to strengthen their capital base, through which the Palestine Monetary Authority directs credit to Palestinian micro, small and medium-sized enterprises. It aims to sustain business activity and jobs. It reaches livelihood.",
+    "by": [
+     "European Union",
+     "European Investment Bank",
+     "Palestine Monetary Authority"
+    ],
+    "url": "https://www.eib.org/en/press/all/2026-198-eu-implements-palestine-facility-with-usd395-million-for-local-banks-and-eur2-1-million-in-technical-assistance"
+   },
+   {
+    "cat": "regional",
+    "status": "Approved",
+    "tone": "granted",
+    "name": "Urgent Program to Support the Palestinian People, twenty-third phase",
+    "detail": "Approved by the Board of Governors, April 2025 · 124 proposed projects",
+    "amount": "KD 12.06M",
+    "money": true,
+    "note": "Grants; about KD 307.1 million from the Arab Fund to Palestine since 1974",
+    "text": "A grant programme of the Arab Fund for Economic and Social Development for the Palestinian people. Its funds go to rural development (38.7%), associations and civil institutions (21.0%), education (16.6%), health (15.6%) and economic empowerment (6.4%). It reaches education, health and livelihood.",
+    "by": [
+     "Arab Fund for Economic and Social Development"
+    ],
+    "url": "https://www.arabfund.org/wp-content/uploads/2026/05/2026_06_28_08_45_28_Arab-Fund_2025-EN-FINAL.pdf"
+   },
+   {
+    "cat": "bilat",
+    "status": "Signed",
+    "tone": "granted",
+    "name": "French support for rural communities in Area C",
+    "detail": "Signed 17 November 2026 · Near Tubas and Salfit, West Bank · About 22,000 people by early 2027",
+    "amount": "€5M",
+    "money": true,
+    "note": "Signed by the French Consulate General, AFD and the ministries of finance and local government",
+    "text": "A French grant to build and improve water, sanitation, electricity and health services and to support farming and crafts in rural communities near Tubas and Salfit, in Area C of the West Bank. About 22,000 people are expected to benefit by early 2027. It reaches water, shelter, energy, health and livelihood.",
+    "by": [
+     "France",
+     "AFD"
+    ],
+    "url": "https://www.arabnews.pk/middle-east/france-commits-55m-to-boost-infrastructure-in-palestinian-rural-communities-3007310"
+   },
+   {
+    "cat": "bilat",
+    "status": "Signed",
+    "tone": "granted",
+    "name": "Programme for Emergency Recovery (Phase 3)",
+    "detail": "Grant agreement signed 10 November 2026, Ramallah · Gaza Strip and the West Bank",
+    "amount": "¥2,000M",
+    "money": true,
+    "note": "Maximum amount; equipment for solid waste, debris removal and road and land rehabilitation",
+    "text": "A Japanese grant, signed by the Minister of Finance and Planning and JICA, that procures equipment and materials for emergency recovery in the Gaza Strip and the West Bank: solid waste management, debris removal, and road and land rehabilitation. Its objective is to restore living conditions and strengthen public services. It reaches shelter, through the clearing and rehabilitation of land for rebuilding.",
+    "by": [
+     "JICA"
+    ],
+    "url": "https://www.jica.go.jp/english/information/press/2026/20261111_11.html"
+   },
+   {
+    "cat": "bilat",
+    "status": "Launched",
+    "tone": "active",
+    "name": "Team Gaza Initiative",
+    "detail": "Launched 13 July 2026, Palestine Donor Group, Brussels · European Commission, 13 governments, the EIB and the World Bank",
+    "amount": "€883.6M",
+    "money": true,
+    "note": "Early recovery in Gaza",
+    "text": "An initiative that brings together €883.6 million of financial contributions from the European Commission, 13 governments, the European Investment Bank and the World Bank for early recovery in Gaza. It supports water and sanitation, debris removal, health, energy, and agriculture and food systems. It reaches water, energy, health and food.",
+    "by": [
+     "European Commission",
+     "European Investment Bank",
+     "World Bank",
+     "13 governments"
+    ],
+    "url": "https://north-africa-middle-east-gulf.ec.europa.eu/news/eu-steps-international-support-palestinians-major-initiative-gazas-early-recovery-and-stronger-2026-07-13_en"
+   },
+   {
+    "cat": "bilat",
+    "status": "Committed",
+    "tone": "active",
+    "name": "PEGASE support to the Palestinian Authority, 2026 and 2027",
+    "detail": "€310 million committed by the European Commission for 2026 and 2027 · €41.7 million of Member State contribution agreements signed 13 July 2026",
+    "amount": "€310M",
+    "money": true,
+    "note": "€3.8 billion channelled through PEGASE since its creation in 2008",
+    "text": "PEGASE, created by the EU in 2008, has channelled €3.8 billion of support to the Palestinian people. The European Commission committed €310 million through it for 2026 and 2027, and Member States signed €41.7 million of new contribution agreements on 13 July 2026. It is budget-wide support: the source names no single standard.",
+    "by": [
+     "European Commission",
+     "EU Member States"
+    ],
+    "url": "https://north-africa-middle-east-gulf.ec.europa.eu/news/eu-steps-international-support-palestinians-major-initiative-gazas-early-recovery-and-stronger-2026-07-13_en"
+   },
+   {
+    "cat": "bilat",
+    "status": "Signed",
+    "tone": "granted",
+    "name": "TAJDID: wastewater treatment and agricultural reuse in Jenin West",
+    "detail": "Agreements announced 6 May 2026 · EU and AFD €5.5M · KfW €11.2M · Jenin Governorate",
+    "amount": "€31.7M",
+    "money": true,
+    "note": "About 36,000 residents of five towns in the first phase",
+    "text": "A wastewater treatment plant, more than 100 km of collection networks and the safe reuse of treated wastewater in agriculture in Jenin West, co-financed by the EU, AFD and KfW, with emergency repairs to damaged water and wastewater systems. It reaches shelter, through safely managed sanitation, as well as water and food.",
+    "by": [
+     "European Union",
+     "AFD",
+     "KfW"
+    ],
+    "url": "https://www.brusselstimes.com/2116700/eu-backed-wastewater-plan-pledges-new-lifeline-for-palestinian-agriculture"
+   },
+   {
+    "cat": "bilat",
+    "status": "Signed",
+    "tone": "granted",
+    "name": "Programme for Emergency Recovery (Phase 2)",
+    "detail": "Grant agreement signed 15 February 2026 · Gaza Strip and the West Bank",
+    "amount": "¥4,100M",
+    "money": true,
+    "note": "Maximum amount; equipment for solid waste, electricity, medical and water services",
+    "text": "A Japanese grant that provides equipment for solid waste management, electricity, medical services, water services and basic infrastructure in the Gaza Strip and the West Bank, for recovery and reconstruction. It reaches energy, health and water.",
+    "by": [
+     "JICA"
+    ],
+    "url": "https://www.jica.go.jp/english/information/press/2025/1578413_66424.html"
+   },
+   {
+    "cat": "bilat",
+    "status": "Received",
+    "tone": "granted",
+    "name": "Saudi grant to the Palestinian Authority",
+    "detail": "Reported 2 December 2025",
+    "amount": "$90M",
+    "money": true,
+    "note": "Budget-wide grant",
+    "text": "A grant from Saudi Arabia to the Palestinian Authority, reported on 2 December 2025. It is budget-wide: the source names no single standard.",
+    "by": [
+     "Saudi Arabia"
+    ],
+    "url": "https://www.thenationalnews.com/news/mena/2025/12/02/saudi-arabia-gives-90m-to-palestinian-authority-amid-funding-crisis"
+   },
+   {
+    "cat": "bilat",
+    "status": "Adopted",
+    "tone": "active",
+    "name": "Multiannual and Comprehensive Programme to support Palestine’s Recovery and Resilience",
+    "detail": "Adopted by the European Commission, April 2025 · Covers three years",
+    "amount": "€1.6B",
+    "money": true,
+    "note": "The EU facility for local banks is part of it",
+    "text": "The European Commission’s €1.6 billion programme, adopted in April 2025, to support Palestine’s recovery and resilience over three years. The EU facility for local banks is part of it. It is budget-wide: the source names no single standard.",
+    "by": [
+     "European Commission"
+    ],
+    "url": "https://north-africa-middle-east-gulf.ec.europa.eu/news/eu-steps-international-support-palestinians-major-initiative-gazas-early-recovery-and-stronger-2026-07-13_en"
    }
   ]
  },
@@ -95,7 +367,7 @@
     "figure": "64.9%",
     "money": false,
     "label": "Of the land in agriculture, 2023",
-    "text": "Olive groves and orchards across nearly two thirds of the land."
+    "text": "Farms, olive groves and orchards across nearly two thirds of the land."
    },
    {
     "name": "The Diaspora",
@@ -122,7 +394,43 @@
  },
  "enterprises": {
   "heading": "Already working in Palestine.",
-  "items": []
+  "items": [
+   {
+    "standard": "Food",
+    "name": "Canaan Palestine",
+    "text": "Buys olives from more than 2,400 family farms across the West Bank at premiums above the average market rate, and sells its organic, fair trade olive oil and foods in more than 600 US retailers.",
+    "source": "Canaan Palestine, 2025",
+    "url": "https://www.finanzen.net/nachricht/aktien/20-years-strong-canaan-palestine-honors-family-farmers-in-annual-olive-harvest-tradition-14941001"
+   },
+   {
+    "standard": "Water",
+    "name": "Flowless",
+    "text": "A Ramallah-based social enterprise that uses technology to help water utilities and farmers manage water, and a finalist of the 2024 Continuum Spark Awards.",
+    "source": "Philanthropy Age, 2024",
+    "url": "https://www.philanthropyage.org/articles/palestinian-start-ups-shine-in-global-competition/"
+   },
+   {
+    "standard": "Energy",
+    "name": "Comet-ME",
+    "text": "Brings solar micro-grids, solar home systems, safe water and internet to off-grid Palestinian villages, serving over 11,000 people in 131 communities across the West Bank.",
+    "source": "Comet-ME, 2024",
+    "url": "https://comet-me.org/wp-content/uploads/2025/03/Comet-ME-2-pager-November-2024.pdf"
+   },
+   {
+    "standard": "Livelihood",
+    "name": "FATEN",
+    "text": "The largest microfinance institution in the West Bank and Gaza, with 34 branches and nearly 24,000 borrowers, lending to small businesses and women-led firms with EBRD loans.",
+    "source": "EBRD, 2025",
+    "url": "https://www.ebrd.com/home/news-and-events/news/2025/ebrd-and-faten-support-palestinian-msmes-and-women-led-businesse.html"
+   },
+   {
+    "standard": "Livelihood",
+    "name": "BuildPalestine",
+    "text": "Builds skills, partnerships and values-aligned capital for Palestinian social entrepreneurs in Gaza and the West Bank, having mobilised $1.2 million for more than 30 enterprises in nine years.",
+    "source": "Impact Europe, 2025",
+    "url": "https://www.impacteurope.net/insights/buildpalestine-launches-12m-fundraising-drive"
+   }
+  ]
  },
  "coverage": {
   "set_by": "Energy",
@@ -256,5 +564,5 @@
  ],
  "dispatches": [],
  "checked": "2026-11-21T04:26Z",
- "reviewed": "2026-11-12T19:00Z"
+ "reviewed": "2026-11-26T07:31Z"
 }
